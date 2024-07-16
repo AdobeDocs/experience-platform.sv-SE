@@ -2,7 +2,7 @@
 title: Innehålls-API-slutpunkt
 description: Lär dig hur du hämtar åtkomstdata med Privacy Services-API:t.
 role: Developer
-badgePrivateBeta: label="Privat beta" type="Informative"
+badgePrivateBeta: label="Private Beta" type="Informative"
 exl-id: b3b7ea0f-957d-4e51-bf92-121e9ae795f5
 source-git-commit: e3a453ad166fe244b82bd1f90e669579fcf09d17
 workflow-type: tm+mt
@@ -15,19 +15,19 @@ ht-degree: 0%
 
 >[!IMPORTANT]
 >
->The `/content` slutpunkten finns för närvarande i betaversion och din organisation har kanske inte åtkomst till den än. Funktionen och dokumentationen kan komma att ändras.
+>Slutpunkten `/content` är för närvarande i betaversion och din organisation har kanske inte åtkomst till den än. Funktionen och dokumentationen kan komma att ändras.
 
-Använd `/content` slutpunkt för säker hämtning *åtkomstinformation* (den information som en privatperson kan begära åtkomst till) för dina kunder. Hämtnings-URL:en som anges i svaret på en `/jobs/{JOB_ID}` GET-förfrågan pekar på en Adobe-tjänstslutpunkt. Du kan sedan göra en GET-förfrågan till `/jobs/:JOB_ID/content` för att returnera kunddata i JSON-format. Den här åtkomstmetoden implementerar flera lager av autentisering och åtkomstkontroll för att förbättra säkerheten.
+Använd slutpunkten `/content` för att på ett säkert sätt hämta *åtkomstinformation* (den information som ett sekretessämne kan begära åtkomst till) för dina kunder. Hämtnings-URL:en som anges i svaret på en `/jobs/{JOB_ID}` GET-förfrågan pekar på en Adobe-tjänstslutpunkt. Du kan sedan göra en GET-förfrågan till `/jobs/:JOB_ID/content` för att returnera dina kunddata i JSON-format. Den här åtkomstmetoden implementerar flera lager av autentisering och åtkomstkontroll för att förbättra säkerheten.
 
-Innan du använder den här handboken bör du läsa [komma igång-guide](./getting-started.md) om du vill ha information om de autentiseringshuvuden som visas i exemplet på API-anrop nedan.
+Innan du använder den här guiden bör du läsa [kom igång-guiden](./getting-started.md) för att få information om de autentiseringshuvuden som visas i exempelanropet till API nedan.
 
 >[!TIP]
 >
->Om du inte känner till jobb-ID:t för den åtkomstinformation du behöver kan du ringa `/jobs` slutpunkt och använd ytterligare frågeparametrar för att filtrera resultatet. En fullständig lista över tillgängliga frågeparametrar finns i [slutpunktshandbok för sekretessjobb](./privacy-jobs.md).
+>Om du för närvarande inte känner till jobb-ID:t för den åtkomstinformation du behöver kan du ringa till slutpunkten `/jobs` och använda ytterligare frågeparametrar för att filtrera resultaten. En fullständig lista över tillgängliga frågeparametrar finns i [slutpunktshandboken för sekretessjobb](./privacy-jobs.md).
 
 ## Hämta information om sekretessjobb
 
-Om du vill hämta information om ett specifikt jobb, till exempel dess aktuella bearbetningsstatus, inkluderar du det jobbets `jobId` i sökvägen till en GET-begäran till `/jobs` slutpunkt.
+Om du vill hämta information om ett specifikt jobb, till exempel dess aktuella bearbetningsstatus, inkluderar du det jobbets `jobId` i sökvägen till en GET-begäran till slutpunkten `/jobs`.
 
 **API-format**
 
@@ -53,7 +53,7 @@ Ett lyckat svar returnerar information om det angivna jobbet.
 
 >[!NOTE]
 >
->Sekretessjobb måste ha `complete` status som innehåller `downloadUrl`.
+>Sekretessjobb måste ha statusen `complete` för att innehålla `downloadUrl`.
 
 ```json
 {
@@ -87,7 +87,7 @@ Ett lyckat svar returnerar information om det angivna jobbet.
 |----------------------|---------------------------------------------------------------------------------------------------------------|
 | `jobId` | En unik identifierare för sekretessjobbet. |
 | `requestId` | En unik identifierare för den specifika begäran som gjorts till Privacy Servicen. |
-| `userKey` | `userKey` är `key` värde som du angav när du skickade din sekretessförfrågan. The `key` värdet är din möjlighet att ge den registrerade en identifierare som passar dig. Det är vanligtvis en unik identifierare som ditt system har skapat för att spåra den registrerade. TIPS: Du kan lista alla aktiva sekretessjobb och jämföra dina `key` till varje jobb. |
+| `userKey` | `userKey` är det `key`-värde som du angav när du skickade sekretessbegäran. Värdet `key` är din möjlighet att ange en identifierare för den registrerade som passar dig. Det är vanligtvis en unik identifierare som ditt system har skapat för att spåra den registrerade. TIPS: Du kan lista alla aktiva sekretessjobb och jämföra dina `key` med varje jobb. |
 | `action` | Den typ av åtgärd som begärdes. Godkända värden är `access` och `delete`. |
 | `status` | Den aktuella statusen för sekretessjobbet. |
 | `submittedBy` | E-postadressen till den person som skickade sekretessjobbet. |
@@ -96,7 +96,7 @@ Ett lyckat svar returnerar information om det angivna jobbet.
 | `userIds` | En array som innehåller användaridentifierare och relaterad information. |
 | `userIds.namespace` | Det namnutrymme som används för användaridentifieraren. |
 | `userIds.value` | Det faktiska värdet för användaridentifieraren. |
-| `userIds.type` | Typ av identifierare (till exempel `standard` eller `custom`). |
+| `userIds.type` | Identifierartypen (till exempel `standard` eller `custom`). |
 | `userIds.namespaceId` | En identifierare för det namnutrymme som används för att kategorisera och hantera användaridentiteter. |
 | `userIds.isDeletedClientSide` | Ett booleskt värde som anger om identifieraren har tagits bort på klientsidan. |
 | `productResponses` | En array som innehåller svar från olika produkter eller tjänster som rör sekretessjobbet. |
@@ -106,17 +106,17 @@ Ett lyckat svar returnerar information om det angivna jobbet.
 | `productResponses.productStatusResponse` | Ett objekt som innehåller status för produktsvaret. |
 | `productResponses.productStatusResponse.status` | Status för produktsvaret. |
 | `downloadURL` | Det här attributet tillhandahåller en slutpunkt som är tillgänglig att anropa i 60 dagar efter att jobbet har slutförts. Jobbets status måste vara `complete` och `action` måste vara `access`. I annat fall är det här fältet inte tillgängligt. |
-| `regulation` | Det regelverk enligt vilket personuppgiftsinfordran behandlas, t.ex. `gdpr`, `ccpa`, `lgpd_bra`, `pdpa_tha`och så vidare. |
+| `regulation` | Det regelverk som sekretessbegäran behandlas i, till exempel `gdpr`, `ccpa`, `lgpd_bra`, `pdpa_tha` och så vidare. |
 
 {style="table-layout:auto"}
 
 ## Hämta information om kundåtkomst {#retrieve-access-data}
 
-Om du vill få den&quot;åtkomstinformation&quot; som skapas som svar på den fråga som den registrerade ställer, skickar du en GET till `/jobs/{JOB_ID}/content` slutpunkt. Svaret är en zip-fil (*.zip) som innehåller en mapp med undermappar för varje produkt som innehåller data om den registrerade.
+Gör en GET-förfrågan till slutpunkten `/jobs/{JOB_ID}/content` om du vill få den åtkomstinformation som skapas som svar på den fråga som din registrerade har. Svaret är en zip-fil (*.zip) som innehåller en mapp med undermappar för varje produkt som innehåller data om den registrerade.
 
 >[!TIP]
 >
->Du behöver ett specifikt jobb-ID för att kunna göra den här begäran. Om du behöver hämta det specifika jobb-ID:t måste du först göra en GET-förfrågan till `/jobs` slutpunkt och använd ytterligare frågeparametrar för att filtrera resultatet. Detaljerad information med de tillåtna frågeparametrarna finns i [slutpunktshandbok för sekretessjobb](./privacy-jobs.md).
+>Du behöver ett specifikt jobb-ID för att kunna göra den här begäran. Om du behöver hämta det specifika jobb-ID:t skapar du först en GET-förfrågan till `/jobs`-slutpunkten och använder ytterligare frågeparametrar för att filtrera resultaten. Detaljerad information, inklusive tillåtna frågeparametrar, finns i [slutpunktshandboken för sekretessjobb](./privacy-jobs.md).
 
 **API-format**
 

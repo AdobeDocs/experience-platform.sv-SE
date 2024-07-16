@@ -13,8 +13,8 @@ ht-degree: 0%
 
 >[!NOTE]
 >
->Adobe Experience Platform Launch har omklassificerats som en serie datainsamlingstekniker i Adobe Experience Platform. Som ett resultat av detta har flera terminologiska förändringar införts i produktdokumentationen. Se följande [dokument](../../../term-updates.md) för en konsoliderad hänvisning till terminologiska förändringar.
+>Adobe Experience Platform Launch har omklassificerats som en serie datainsamlingstekniker i Adobe Experience Platform. Som ett resultat av detta har flera terminologiska förändringar införts i produktdokumentationen. I följande [dokument](../../../term-updates.md) finns en konsoliderad referens till de ändrade terminologin.
 
 Adobe Experience Platform Web SDK-tillägget skickar data till Adobe Experience Cloud från webbegenskaper via Adobe Experience Platform Edge Network. Tillägget Platform Web SDK gör det möjligt att strömma data till plattformen, synkronisera identiteter, anmäla sig och automatiskt samla in kontextdata.
 
-Mer information om hur du konfigurerar Platform Web SDK-tillägget finns i [Konfigurera SDK-taggtillägget för webben](web-sdk-extension-configuration.md).
+Mer information om hur du konfigurerar Platform Web SDK-tillägget finns i [Konfigurera Web SDK-taggtillägget](web-sdk-extension-configuration.md).

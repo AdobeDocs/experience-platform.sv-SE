@@ -1,18 +1,19 @@
 ---
 title: Lista över lägen, startsamlingens datatyp
 description: Läs mer om datatypen List of states Start Data Type Experience Data Model (XDM).
-source-git-commit: e9107092b60361216744e154752f48546b5bad73
+exl-id: adeb3e91-7266-41ce-b406-f7fd5dbb2236
+source-git-commit: 799a384556b43bc844782d8b67416c7eea77fbf0
 workflow-type: tm+mt
 source-wordcount: '108'
 ht-degree: 0%
 
 ---
 
-# [!UICONTROL List of States Start] datatyp
+# Datatypen [!UICONTROL List of States Start]
 
-The [!UICONTROL List of States Start] datatypen är en XDM-datatyp (Experience Data Model) som utformats för att representera information som relaterar till startläget för olika spelarattribut. Den innehåller [!UICONTROL Player State Name] egenskaper som anger det specifika attributtillståndet (till exempel &quot;fullscreen&quot;, &quot;mute&quot;, &quot;closedCaptioning&quot;). Den här datatypen används för att hämta och beskriva de ursprungliga villkoren för olika spelarlägen.
+Datatypen [!UICONTROL List of States Start] är en XDM-datatyp (Experience Data Model) som utformats för att representera information som relaterar till startläget för olika spelarattribut. Den innehåller egenskaperna [!UICONTROL Player State Name] som anger det specifika attributtillståndet (till exempel &quot;fullscreen&quot;, &quot;mute&quot;, &quot;closedCaptioning&quot;). Den här datatypen används för att hämta och beskriva de ursprungliga villkoren för olika spelarlägen.
 
-![Ett diagram över [!UICONTROL List of States Start] datatyp.](../images/data-types/list-of-states-start-collection.png)
+![Ett diagram med datatypen [!UICONTROL List of States Start].](../images/data-types/list-of-states-start-collection.png)
 
 | Visningsnamn | Egenskap | Datatyp | Obligatoriskt | Beskrivning |
 |--------------------------------|--------------|-----------|-----------|-------------------------------------------------|

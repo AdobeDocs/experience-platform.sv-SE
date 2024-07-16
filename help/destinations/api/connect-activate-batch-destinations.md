@@ -16,33 +16,33 @@ ht-degree: 0%
 
 >[!IMPORTANT]
 > 
->* Om du vill ansluta till ett mål behöver du **[!UICONTROL View Destinations]** och **[!UICONTROL Manage Destinations]** [behörigheter för åtkomstkontroll](/help/access-control/home.md#permissions).
+>* Om du vill ansluta till ett mål behöver du behörigheterna **[!UICONTROL View Destinations]** och **[!UICONTROL Manage Destinations]** [åtkomstkontroll](/help/access-control/home.md#permissions).
 >
->* För att aktivera data behöver du **[!UICONTROL View Destinations]**, **[!UICONTROL Activate Destinations]**, **[!UICONTROL View Profiles]** och **[!UICONTROL View Segments]** [behörigheter för åtkomstkontroll](/help/access-control/home.md#permissions).
+>* För att aktivera data behöver du behörigheterna **[!UICONTROL View Destinations]**, **[!UICONTROL Activate Destinations]**, **[!UICONTROL View Profiles]** och **[!UICONTROL View Segments]** [åtkomstkontroll](/help/access-control/home.md#permissions).
 >
->* Exportera *identiteter* behöver du **[!UICONTROL View Identity Graph]** [behörighet för åtkomstkontroll](/help/access-control/home.md#permissions). <br> ![Markera det identitetsnamnutrymme som är markerat i arbetsflödet för att aktivera målgrupper till mål.](/help/destinations/assets/overview/export-identities-to-destination.png "Markera det identitetsnamnutrymme som är markerat i arbetsflödet för att aktivera målgrupper till mål."){width="100" zoomable="yes"}
+>* Om du vill exportera *identiteter* måste du ha **[!UICONTROL View Identity Graph]** [åtkomstkontrollbehörighet](/help/access-control/home.md#permissions). <br> ![Markera identitetsnamnområdet som är markerat i arbetsflödet för att aktivera målgrupper till mål.](/help/destinations/assets/overview/export-identities-to-destination.png "Markera identitetsnamnområdet som är markerat i arbetsflödet för att aktivera målgrupper till mål."){width="100" zoomable="yes"}
 >
->Läs [åtkomstkontroll - översikt](/help/access-control/ui/overview.md) eller kontakta produktadministratören för att få de behörigheter som krävs.
+>Läs [åtkomstkontrollsöversikten](/help/access-control/ui/overview.md) eller kontakta produktadministratören för att få den behörighet som krävs.
 
-I den här självstudien visas hur du använder API:t för Flow Service för att skapa en filbaserad [e-postmarknadsföringsmål](../catalog/email-marketing/overview.md), skapa ett dataflöde till det nya målet och exportera data till det nya målet via CSV-filer.
+I den här självstudien visas hur du använder API:t för Flow Service för att skapa ett filbaserat [mål för e-postmarknadsföring](../catalog/email-marketing/overview.md), skapa ett dataflöde för det nya målet och exportera data till det nya målet via CSV-filer.
 
 >[!TIP]
 > 
->Läs mer om hur du aktiverar data till molnlagringsmål med API:t för Flow Service i [dedikerad API-självstudiekurs](/help/destinations/api/activate-segments-file-based-destinations.md).
+>Läs [den dedikerade API-självstudiekursen](/help/destinations/api/activate-segments-file-based-destinations.md) om du vill lära dig hur du aktiverar data till molnlagringsmål med API:t för Flow Service.
 
-I den här självstudiekursen används [!DNL Adobe Campaign] mål i alla exempel, men stegen är identiska för filbaserade e-postmarknadsföringsmål.
+I den här självstudien används målet [!DNL Adobe Campaign] i alla exempel, men stegen är identiska för filbaserade e-postmarknadsföringsmål.
 
 ![Översikt - stegen för att skapa ett mål och aktivera målgrupper](../assets/api/email-marketing/overview.png)
 
-Om du föredrar att använda användargränssnittet för plattformen för att ansluta till ett mål och aktivera data finns mer information i [Anslut ett mål](../ui/connect-destination.md) och [Aktivera målgruppsdata för att batchprofilera exportmål](../ui/activate-batch-profile-destinations.md) självstudier.
+Om du föredrar att använda användargränssnittet för plattformen för att ansluta till ett mål och aktivera data kan du titta i självstudiekurserna [Anslut ett mål](../ui/connect-destination.md) och [Aktivera målgruppsdata för att exportera målgrupper](../ui/activate-batch-profile-destinations.md).
 
 ## Komma igång {#get-started}
 
 Handboken kräver en fungerande förståelse av följande komponenter i Adobe Experience Platform:
 
-* [[!DNL Experience Data Model (XDM) System]](../../xdm/home.md): Det standardiserade ramverk som [!DNL Experience Platform] organiserar kundupplevelsedata.
-* [[!DNL Segmentation Service]](../../segmentation/api/overview.md): [!DNL Adobe Experience Platform Segmentation Service] kan ni bygga målgrupper i [!DNL Adobe Experience Platform] från [!DNL Real-Time Customer Profile] data.
-* [[!DNL Sandboxes]](../../sandboxes/home.md): [!DNL Experience Platform] innehåller virtuella sandlådor som partitionerar en enda [!DNL Platform] till separata virtuella miljöer för att utveckla och utveckla applikationer för digitala upplevelser.
+* [[!DNL Experience Data Model (XDM) System]](../../xdm/home.md): Det standardiserade ramverket som [!DNL Experience Platform] organiserar kundupplevelsedata med.
+* [[!DNL Segmentation Service]](../../segmentation/api/overview.md): [!DNL Adobe Experience Platform Segmentation Service] låter dig skapa målgrupper i [!DNL Adobe Experience Platform] utifrån dina [!DNL Real-Time Customer Profile]-data.
+* [[!DNL Sandboxes]](../../sandboxes/home.md): [!DNL Experience Platform] innehåller virtuella sandlådor som partitionerar en enskild [!DNL Platform]-instans till separata virtuella miljöer för att hjälpa till att utveckla och utveckla program för digitala upplevelser.
 
 I följande avsnitt finns ytterligare information som du behöver känna till för att kunna aktivera data till batchdestinationer i Platform.
 
@@ -57,27 +57,27 @@ Om du vill slutföra stegen i den här självstudiekursen bör du ha följande a
 
 >[!NOTE]
 >
->Referenserna `accessId`, `secretKey` for [!DNL Amazon S3] anslutningar och `accessId`, `secretKey` for [!DNL Amazon S3] anslutningar till [!DNL Adobe Campaign] är identiska.
+>Autentiseringsuppgifterna `accessId`, `secretKey` för [!DNL Amazon S3] anslutningar och `accessId`, `secretKey` för [!DNL Amazon S3] anslutningar till [!DNL Adobe Campaign] är identiska.
 
 ### Läser exempel-API-anrop {#reading-sample-api-calls}
 
-I den här självstudiekursen finns exempel-API-anrop som visar hur du formaterar dina begäranden. Det kan vara sökvägar, obligatoriska rubriker och korrekt formaterade begärandenyttolaster. Ett exempel på JSON som returneras i API-svar finns också. Information om konventionerna som används i dokumentationen för exempel-API-anrop finns i avsnittet om [läsa exempel-API-anrop](../../landing/troubleshooting.md#how-do-i-format-an-api-request) i [!DNL Experience Platform] felsökningsguide.
+I den här självstudiekursen finns exempel-API-anrop som visar hur du formaterar dina begäranden. Det kan vara sökvägar, obligatoriska rubriker och korrekt formaterade begärandenyttolaster. Ett exempel på JSON som returneras i API-svar finns också. Information om de konventioner som används i dokumentationen för exempel-API-anrop finns i avsnittet [Så här läser du exempel-API-anrop](../../landing/troubleshooting.md#how-do-i-format-an-api-request) i felsökningsguiden för [!DNL Experience Platform].
 
 ### Samla in värden för obligatoriska och valfria rubriker {#gather-values-headers}
 
-För att ringa [!DNL Platform] API:er måste du först slutföra [självstudiekurs om autentisering](https://www.adobe.com/go/platform-api-authentication-en). När du är klar med självstudiekursen för autentisering visas värdena för var och en av de obligatoriska rubrikerna i alla [!DNL Experience Platform] API-anrop enligt nedan:
+För att kunna anropa [!DNL Platform] API:er måste du först slutföra [autentiseringssjälvstudiekursen](https://www.adobe.com/go/platform-api-authentication-en). När du slutför självstudiekursen för autentisering visas värdena för var och en av de obligatoriska rubrikerna i alla [!DNL Experience Platform] API-anrop, vilket visas nedan:
 
-* Behörighet: Bearer `{ACCESS_TOKEN}`
+* Behörighet: Bärare `{ACCESS_TOKEN}`
 * x-api-key: `{API_KEY}`
 * x-gw-ims-org-id: `{ORG_ID}`
 
-Resurser i [!DNL Experience Platform] kan isoleras till specifika virtuella sandlådor. I förfrågningar till [!DNL Platform] API:er kan du ange namn och ID för sandlådan som åtgärden ska utföras i. Dessa är valfria parametrar.
+Resurser i [!DNL Experience Platform] kan isoleras till specifika virtuella sandlådor. I förfrågningar till [!DNL Platform] API:er kan du ange namnet och ID:t för sandlådan som åtgärden ska utföras i. Dessa är valfria parametrar.
 
 * x-sandbox-name: `{SANDBOX_NAME}`
 
 >[!NOTE]
 >
->Mer information om sandlådor i [!DNL Experience Platform], se [översiktsdokumentation för sandlåda](../../sandboxes/home.md).
+>Mer information om sandlådor i [!DNL Experience Platform] finns i [översiktsdokumentationen för sandlådan](../../sandboxes/home.md).
 
 Alla begäranden som innehåller en nyttolast (POST, PUT, PATCH) kräver ytterligare en medietypsrubrik:
 
@@ -85,13 +85,13 @@ Alla begäranden som innehåller en nyttolast (POST, PUT, PATCH) kräver ytterli
 
 ### API-referensdokumentation {#api-reference-documentation}
 
-Du hittar referensdokumentation för alla API-åtgärder i den här självstudiekursen. Se [API-dokumentation för Flow Service på Adobe I/O](https://www.adobe.io/experience-platform-apis/references/flow-service/). Vi rekommenderar att du använder den här självstudiekursen och API-referensdokumentationen parallellt.
+Du hittar referensdokumentation för alla API-åtgärder i den här självstudiekursen. Se [API-dokumentationen för Flow Service på Adobe I/O](https://www.adobe.io/experience-platform-apis/references/flow-service/). Vi rekommenderar att du använder den här självstudiekursen och API-referensdokumentationen parallellt.
 
 ## Hämta listan över tillgängliga mål {#get-the-list-of-available-destinations}
 
-![Översiktssteg för målsteg 1](../assets/api/batch-destination/step1.png)
+![Översikt över målsteg steg 1](../assets/api/batch-destination/step1.png)
 
-Som ett första steg bör du bestämma vilket mål som data ska aktiveras till. Börja med att ringa ett samtal för att begära en lista över tillgängliga destinationer som du kan ansluta och aktivera målgrupper till. Utför följande GET-förfrågan till `connectionSpecs` slutpunkt för att returnera en lista över tillgängliga destinationer:
+Som ett första steg bör du bestämma vilket mål som data ska aktiveras till. Börja med att ringa ett samtal för att begära en lista över tillgängliga destinationer som du kan ansluta och aktivera målgrupper till. Utför följande GET-begäran till slutpunkten `connectionSpecs` för att returnera en lista över tillgängliga mål:
 
 **API-format**
 
@@ -113,7 +113,7 @@ curl --location --request GET 'https://platform.adobe.io/data/foundation/flowser
 
 **Svar**
 
-Ett lyckat svar innehåller en lista över tillgängliga destinationer och deras unika identifierare (`id`). Lagra värdet för destinationen som du tänker använda, vilket krävs i ytterligare steg. Om du till exempel vill ansluta och leverera målgrupper till [!DNL Adobe Campaign]söker du efter följande utdrag i svaret:
+Ett lyckat svar innehåller en lista över tillgängliga mål och deras unika identifierare (`id`). Lagra värdet för destinationen som du tänker använda, vilket krävs i ytterligare steg. Om du till exempel vill ansluta och leverera målgrupper till [!DNL Adobe Campaign], söker du efter följande kodutdrag i svaret:
 
 ```json
 {
@@ -135,16 +135,16 @@ Tabellen nedan innehåller anslutningsspecifikations-ID:n för vanliga gruppmål
 
 {style="table-layout:auto"}
 
-## Anslut till [!DNL Experience Platform] data {#connect-to-your-experience-platform-data}
+## Anslut till dina [!DNL Experience Platform]-data {#connect-to-your-experience-platform-data}
 
-![Översiktssteg för målsteg 2](../assets/api/batch-destination/step2.png)
+![Översikt över målsteg 2](../assets/api/batch-destination/step2.png)
 
-Sedan måste du ansluta till [!DNL Experience Platform] så att du kan exportera profildata och aktivera dem på det önskade målet. Detta består av två ämnen som beskrivs nedan.
+Därefter måste du ansluta till dina [!DNL Experience Platform]-data, så att du kan exportera profildata och aktivera dem på det önskade målet. Detta består av två ämnen som beskrivs nedan.
 
-1. Först måste du ringa för att ge behörighet till dina data i [!DNL Experience Platform]genom att konfigurera en basanslutning.
-2. Använd sedan basanslutnings-ID för att göra ett annat anrop där du skapar en *källanslutning*, som upprättar anslutningen till [!DNL Experience Platform] data.
+1. Först måste du ringa ett samtal för att auktorisera åtkomst till dina data i [!DNL Experience Platform] genom att konfigurera en basanslutning.
+2. Använd sedan basanslutnings-ID för att utföra ett annat anrop där du skapar en *källanslutning* som upprättar anslutningen till dina [!DNL Experience Platform]-data.
 
-### Ge åtkomst till dina data i [!DNL Experience Platform]
+### Auktorisera åtkomst till dina data i [!DNL Experience Platform]
 
 **API-format**
 
@@ -175,13 +175,13 @@ curl --location --request POST 'https://platform.adobe.io/data/foundation/flowse
 | --------- | ----------- |
 | `name` | Ange ett namn för basanslutningen till Experience Platform [!DNL Profile store]. |
 | `description` | Du kan också ange en beskrivning för basanslutningen. |
-| `connectionSpec.id` | Använd anslutningsspec-ID för [Experience Platform Profile Store](/help/profile/home.md#profile-data-store) - `8a9c3494-9708-43d7-ae3f-cda01e5030e1`. |
+| `connectionSpec.id` | Använd anslutningsspec-ID för profilarkivet [Experience Platform ](/help/profile/home.md#profile-data-store) - `8a9c3494-9708-43d7-ae3f-cda01e5030e1`. |
 
 {style="table-layout:auto"}
 
 **Svar**
 
-Ett godkänt svar innehåller basanslutningens unika identifierare (`id`). Lagra det här värdet som det behövs i nästa steg för att skapa källanslutningen.
+Ett svar innehåller basanslutningsens unika identifierare (`id`). Lagra det här värdet som det behövs i nästa steg för att skapa källanslutningen.
 
 ```json
 {
@@ -189,7 +189,7 @@ Ett godkänt svar innehåller basanslutningens unika identifierare (`id`). Lagra
 }
 ```
 
-### Anslut till [!DNL Experience Platform] data {#connect-to-platform-data}
+### Anslut till dina [!DNL Experience Platform]-data {#connect-to-platform-data}
 
 **API-format**
 
@@ -226,7 +226,7 @@ curl --location --request POST 'https://platform.adobe.io/data/foundation/flowse
 | --------- | ----------- |
 | `name` | Ange ett namn för källanslutningen till Experience Platform [!DNL Profile store]. |
 | `description` | Du kan också ange en beskrivning för källanslutningen. |
-| `connectionSpec.id` | Använd anslutningsspec-ID för [Experience Platform Profile Store](/help/profile/home.md#profile-data-store) - `8a9c3494-9708-43d7-ae3f-cda01e5030e1`. |
+| `connectionSpec.id` | Använd anslutningsspec-ID för profilarkivet [Experience Platform ](/help/profile/home.md#profile-data-store) - `8a9c3494-9708-43d7-ae3f-cda01e5030e1`. |
 | `baseConnectionId` | Använd det grundläggande anslutnings-ID som du fick i föregående steg. |
 | `data.format` | `CSV` är för närvarande det enda filexportformat som stöds. |
 
@@ -234,7 +234,7 @@ curl --location --request POST 'https://platform.adobe.io/data/foundation/flowse
 
 **Svar**
 
-Ett godkänt svar returnerar den unika identifieraren (`id`) för den nyligen skapade källanslutningen till [!DNL Profile store]. Detta bekräftar att du har anslutit till [!DNL Experience Platform] data. Lagra det här värdet som det behövs i ett senare steg.
+Ett svar returnerar den unika identifieraren (`id`) för den nyligen skapade källanslutningen till [!DNL Profile store]. Detta bekräftar att du har anslutit till dina [!DNL Experience Platform]-data. Lagra det här värdet som det behövs i ett senare steg.
 
 ```json
 {
@@ -244,12 +244,12 @@ Ett godkänt svar returnerar den unika identifieraren (`id`) för den nyligen sk
 
 ## Anslut till batchdestination {#connect-to-batch-destination}
 
-![Översikt över destinationssteg 3](../assets/api/batch-destination/step3.png)
+![Översikt över målsteg 3](../assets/api/batch-destination/step3.png)
 
 I det här steget skapar du en anslutning till det batchmolnlagringsutrymme eller e-postmarknadsföringsmål som du vill använda. Detta består av två ämnen som beskrivs nedan.
 
 1. Först måste du ringa för att auktorisera åtkomst till målplattformen genom att konfigurera en basanslutning.
-2. Sedan gör du ett nytt anrop där du skapar en *målanslutning*, som anger platsen på lagringskontot där de exporterade datafilerna ska levereras samt formatet på de data som ska exporteras.
+2. Med basanslutnings-ID:t gör du sedan ett nytt anrop där du skapar en *målanslutning*, som anger platsen i lagringskontot där de exporterade datafilerna ska levereras samt formatet för de data som ska exporteras.
 
 ### Auktorisera åtkomst till batchmålet {#authorize-access-to-batch-destination}
 
@@ -261,7 +261,7 @@ POST /connections
 
 **Begäran**
 
-Begäran nedan upprättar en basanslutning till [!DNL Adobe Campaign] destinationer. Beroende på lagringsplatsen som du vill exportera filer till ([!DNL Amazon S3], SFTP, [!DNL Azure Blob]), `auth` och ta bort de andra.
+Begäran nedan upprättar en basanslutning till [!DNL Adobe Campaign] mål. Beroende på den lagringsplats där du vill exportera filer till ([!DNL Amazon S3], SFTP, [!DNL Azure Blob]), ska du behålla rätt `auth`-specifikation och ta bort de andra.
 
 ```shell
 curl --location --request POST 'https://platform.adobe.io/data/foundation/flowservice/connections' \
@@ -313,9 +313,9 @@ curl --location --request POST 'https://platform.adobe.io/data/foundation/flowse
 
 Se exempelbegärandena nedan för att ansluta till andra batchmolnlagringsmedier och e-postmarknadsföringsmål som stöds.
 
-+++ Exempelbegäran att ansluta till [!DNL Amazon S3] mål
++++ Exempelbegäran om att ansluta till [!DNL Amazon S3] mål
 
-Begäran nedan upprättar en basanslutning till [!DNL Amazon S3] destinationer.
+Begäran nedan upprättar en basanslutning till [!DNL Amazon S3] mål.
 
 ```shell
 curl --location --request POST 'https://platform.adobe.io/data/foundation/flowservice/connections' \
@@ -343,9 +343,9 @@ curl --location --request POST 'https://platform.adobe.io/data/foundation/flowse
 
 +++
 
-+++ Exempelbegäran att ansluta till [!DNL Azure Blob] mål
++++ Exempelbegäran om att ansluta till [!DNL Azure Blob] mål
 
-Begäran nedan upprättar en basanslutning till [!DNL Azure Blob] destinationer.
+Begäran nedan upprättar en basanslutning till [!DNL Azure Blob] mål.
 
 ```shell
 curl --location --request POST 'https://platform.adobe.io/data/foundation/flowservice/connections' \
@@ -372,9 +372,9 @@ curl --location --request POST 'https://platform.adobe.io/data/foundation/flowse
 
 +++
 
-+++ Exempelbegäran att ansluta till [!DNL Oracle Eloqua] mål
++++ Exempelbegäran om att ansluta till [!DNL Oracle Eloqua] mål
 
-Begäran nedan upprättar en basanslutning till [!DNL Oracle Eloqua] destinationer. Beroende på den lagringsplats dit du vill exportera filer till bör du behålla lämplig `auth` och ta bort de andra.
+Begäran nedan upprättar en basanslutning till [!DNL Oracle Eloqua] mål. Beroende på den lagringsplats där du vill exportera filer till, behåller du rätt `auth`-specifikation och tar bort de andra.
 
 ```shell
 curl --location --request POST 'https://platform.adobe.io/data/foundation/flowservice/connections' \
@@ -413,9 +413,9 @@ curl --location --request POST 'https://platform.adobe.io/data/foundation/flowse
 
 +++
 
-+++ Exempelbegäran att ansluta till [!DNL Oracle Responsys] mål
++++ Exempelbegäran om att ansluta till [!DNL Oracle Responsys] mål
 
-Begäran nedan upprättar en basanslutning till [!DNL Oracle Responsys] destinationer. Beroende på den lagringsplats dit du vill exportera filer till bör du behålla lämplig `auth` och ta bort de andra.
+Begäran nedan upprättar en basanslutning till [!DNL Oracle Responsys] mål. Beroende på den lagringsplats där du vill exportera filer till, behåller du rätt `auth`-specifikation och tar bort de andra.
 
 ```shell
 curl --location --request POST 'https://platform.adobe.io/data/foundation/flowservice/connections' \
@@ -454,9 +454,9 @@ curl --location --request POST 'https://platform.adobe.io/data/foundation/flowse
 
 +++
 
-+++ Exempelbegäran att ansluta till [!DNL Salesforce Marketing Cloud] mål
++++ Exempelbegäran om att ansluta till [!DNL Salesforce Marketing Cloud] mål
 
-Begäran nedan upprättar en basanslutning till [!DNL Salesforce Marketing Cloud] destinationer. Beroende på den lagringsplats dit du vill exportera filer till bör du behålla lämplig `auth` och ta bort de andra.
+Begäran nedan upprättar en basanslutning till [!DNL Salesforce Marketing Cloud] mål. Beroende på den lagringsplats där du vill exportera filer till, behåller du rätt `auth`-specifikation och tar bort de andra.
 
 ```shell
 curl --location --request POST 'https://platform.adobe.io/data/foundation/flowservice/connections' \
@@ -531,14 +531,14 @@ curl --location --request POST 'https://platform.adobe.io/data/foundation/flowse
 | `name` | Ange ett namn för basanslutningen till batchmålet. |
 | `description` | Du kan också ange en beskrivning för basanslutningen. |
 | `connectionSpec.id` | Använd anslutningsspec-ID:t för det önskade batchmålet. Du fick detta ID i steget [Hämta listan över tillgängliga mål](#get-the-list-of-available-destinations). |
-| `auth.specname` | Anger målets autentiseringsformat. Om du vill ta reda på ditt måls specName utför du en [GET-anrop till slutpunkten för anslutningsspecifikationer](https://developer.adobe.com/experience-platform-apis/references/flow-service/#operation/retrieveConnectionSpec), med anslutningsspecifikationen för den önskade destinationen. Leta efter parametern `authSpec.name` i svaret. <br> För Adobe Campaign-mål kan du till exempel använda något av `S3`, `SFTP with Password`, eller `SFTP with SSH Key`. |
-| `params` | Beroende på vilket mål du ansluter till måste du ange olika obligatoriska autentiseringsparametrar. För Amazon S3-anslutningar måste du ange ditt åtkomst-ID och din hemliga nyckel till din Amazon S3-lagringsplats. <br> Om du vill ta reda på vilka parametrar som krävs för destinationen utför du en [GET-anrop till slutpunkten för anslutningsspecifikationer](https://developer.adobe.com/experience-platform-apis/references/flow-service/#operation/retrieveConnectionSpec), med anslutningsspecifikationen för den önskade destinationen. Leta efter parametern `authSpec.spec.required` i svaret. |
+| `auth.specname` | Anger målets autentiseringsformat. Om du vill ta reda på specName för ditt mål ska du utföra ett [GET-anrop till slutpunkten för anslutningsspecifikationer](https://developer.adobe.com/experience-platform-apis/references/flow-service/#operation/retrieveConnectionSpec) och ange anslutningsspecifikationen för det önskade målet. Leta efter parametern `authSpec.name` i svaret. <br> För Adobe Campaign-mål kan du till exempel använda något av `S3`, `SFTP with Password` eller `SFTP with SSH Key`. |
+| `params` | Beroende på vilket mål du ansluter till måste du ange olika obligatoriska autentiseringsparametrar. För Amazon S3-anslutningar måste du ange ditt åtkomst-ID och din hemliga nyckel till din Amazon S3-lagringsplats. <br> Utför ett [GET-anrop till slutpunkten för anslutningsspecifikationer](https://developer.adobe.com/experience-platform-apis/references/flow-service/#operation/retrieveConnectionSpec) för att ta reda på vilka parametrar som krävs för ditt mål. Detta anger anslutningsspecifikationen för det önskade målet. Leta efter parametern `authSpec.spec.required` i svaret. |
 
 {style="table-layout:auto"}
 
 **Svar**
 
-Ett godkänt svar innehåller basanslutningens unika identifierare (`id`). Lagra det här värdet som det behövs i nästa steg för att skapa en målanslutning.
+Ett svar innehåller basanslutningsens unika identifierare (`id`). Lagra det här värdet som det behövs i nästa steg för att skapa en målanslutning.
 
 ```json
 {
@@ -548,13 +548,13 @@ Ett godkänt svar innehåller basanslutningens unika identifierare (`id`). Lagra
 
 ### Ange lagringsplats och dataformat {#specify-storage-location-data-format}
 
-[!DNL Adobe Experience Platform] exporterar data för batchmarknadsföring via e-post och molnlagring i form av [!DNL CSV] filer. I det här steget kan du ange sökvägen till lagringsplatsen dit filerna ska exporteras.
+[!DNL Adobe Experience Platform] exporterar data för marknadsföring via batch och molnlagring i form av [!DNL CSV]-filer. I det här steget kan du ange sökvägen till lagringsplatsen dit filerna ska exporteras.
 
 >[!IMPORTANT]
 > 
 >[!DNL Adobe Experience Platform] delar automatiskt upp exportfilerna i 5 miljoner poster (rader) per fil. Varje rad representerar en profil.
 >
->Delade filnamn läggs till med en siffra som anger att filen är en del av en större export: `filename.csv`, `filename_2.csv`, `filename_3.csv`.
+>Delade filnamn läggs till med ett nummer som anger att filen är en del av en större export, till exempel: `filename.csv`, `filename_2.csv`, `filename_3.csv`.
 
 **API-format**
 
@@ -564,7 +564,7 @@ POST /targetConnections
 
 **Begäran**
 
-Begäran nedan upprättar en målanslutning till [!DNL Adobe Campaign] mål, för att bestämma var de exporterade filerna ska landas på lagringsplatsen. Beroende på den lagringsplats dit du vill exportera filer till bör du behålla lämplig `params` och ta bort de andra.
+I begäran nedan upprättas en målanslutning till [!DNL Adobe Campaign] mål för att avgöra var de exporterade filerna kommer att hamna på din lagringsplats. Beroende på den lagringsplats där du vill exportera filer till, behåller du rätt `params`-specifikation och tar bort de andra.
 
 ```shell
 curl --location --request POST 'https://platform.adobe.io/data/foundation/flowservice/targetConnections' \
@@ -611,7 +611,7 @@ Se exempelbegärandena nedan för att konfigurera en lagringsplats för andra ba
 
 +++ Exempelbegäran om att konfigurera en lagringsplats för [!DNL Amazon S3] mål
 
-Begäran nedan upprättar en målanslutning till [!DNL Amazon S3] mål, för att bestämma var de exporterade filerna ska landas på lagringsplatsen.
+I begäran nedan upprättas en målanslutning till [!DNL Amazon S3] mål för att avgöra var de exporterade filerna kommer att hamna på din lagringsplats.
 
 ```shell
 curl --location --request POST 'https://platform.adobe.io/data/foundation/flowservice/targetConnections' \
@@ -647,7 +647,7 @@ curl --location --request POST 'https://platform.adobe.io/data/foundation/flowse
 
 +++ Exempelbegäran om att konfigurera en lagringsplats för [!DNL Azure Blob] mål
 
-Begäran nedan upprättar en målanslutning till [!DNL Azure Blob] mål, för att bestämma var de exporterade filerna ska landas på lagringsplatsen.
+I begäran nedan upprättas en målanslutning till [!DNL Azure Blob] mål för att avgöra var de exporterade filerna kommer att hamna på din lagringsplats.
 
 ```shell
 curl --location --request POST 'https://platform.adobe.io/data/foundation/flowservice/targetConnections' \
@@ -683,7 +683,7 @@ curl --location --request POST 'https://platform.adobe.io/data/foundation/flowse
 
 +++ Exempelbegäran om att konfigurera en lagringsplats för [!DNL Oracle Eloqua] mål
 
-Begäran nedan upprättar en målanslutning till [!DNL Oracle Eloqua] mål, för att bestämma var de exporterade filerna ska landas på lagringsplatsen. Beroende på den lagringsplats dit du vill exportera filer till bör du behålla lämplig `params` och ta bort de andra.
+I begäran nedan upprättas en målanslutning till [!DNL Oracle Eloqua] mål för att avgöra var de exporterade filerna kommer att hamna på din lagringsplats. Beroende på den lagringsplats där du vill exportera filer till, behåller du rätt `params`-specifikation och tar bort de andra.
 
 ```shell
 curl --location --request POST 'https://platform.adobe.io/data/foundation/flowservice/targetConnections' \
@@ -724,7 +724,7 @@ curl --location --request POST 'https://platform.adobe.io/data/foundation/flowse
 
 +++ Exempelbegäran om att konfigurera en lagringsplats för [!DNL Oracle Responsys] mål
 
-Begäran nedan upprättar en målanslutning till [!DNL Oracle Responsys] mål, för att bestämma var de exporterade filerna ska landas på lagringsplatsen. Beroende på den lagringsplats dit du vill exportera filer till bör du behålla lämplig `params` och ta bort de andra.
+I begäran nedan upprättas en målanslutning till [!DNL Oracle Responsys] mål för att avgöra var de exporterade filerna kommer att hamna på din lagringsplats. Beroende på den lagringsplats där du vill exportera filer till, behåller du rätt `params`-specifikation och tar bort de andra.
 
 ```shell
 curl --location --request POST 'https://platform.adobe.io/data/foundation/flowservice/targetConnections' \
@@ -765,7 +765,7 @@ curl --location --request POST 'https://platform.adobe.io/data/foundation/flowse
 
 +++ Exempelbegäran om att konfigurera en lagringsplats för [!DNL Salesforce Marketing Cloud] mål
 
-Begäran nedan upprättar en målanslutning till [!DNL Salesforce Marketing Cloud] mål, för att bestämma var de exporterade filerna ska landas på lagringsplatsen. Beroende på den lagringsplats dit du vill exportera filer till bör du behålla lämplig `params` och ta bort de andra.
+I begäran nedan upprättas en målanslutning till [!DNL Salesforce Marketing Cloud] mål för att avgöra var de exporterade filerna kommer att hamna på din lagringsplats. Beroende på den lagringsplats där du vill exportera filer till, behåller du rätt `params`-specifikation och tar bort de andra.
 
 ```shell
 curl --location --request POST 'https://platform.adobe.io/data/foundation/flowservice/targetConnections' \
@@ -845,17 +845,17 @@ curl --location --request POST 'https://platform.adobe.io/data/foundation/flowse
 | `description` | Du kan också ange en beskrivning för målanslutningen. |
 | `baseConnectionId` | Använd ID:t för basanslutningen som du skapade i steget ovan. |
 | `connectionSpec.id` | Använd anslutningsspec-ID:t för det önskade batchmålet. Du fick detta ID i steget [Hämta listan över tillgängliga mål](#get-the-list-of-available-destinations). |
-| `params` | Beroende på vilket mål du ansluter till måste du ange olika obligatoriska parametrar till lagringsplatsen. För Amazon S3-anslutningar måste du ange ditt åtkomst-ID och din hemliga nyckel till din Amazon S3-lagringsplats. <br> Om du vill ta reda på vilka parametrar som krävs för destinationen utför du en [GET-anrop till slutpunkten för anslutningsspecifikationer](https://developer.adobe.com/experience-platform-apis/references/flow-service/#operation/retrieveConnectionSpec), med anslutningsspecifikationen för den önskade destinationen. Leta efter parametern `targetSpec.spec.required` i svaret. |
-| `params.mode` | Beroende på vilket läge som stöds för målet måste du ange ett annat värde här. Om du vill ta reda på vilka parametrar som krävs för destinationen utför du en [GET-anrop till slutpunkten för anslutningsspecifikationer](https://developer.adobe.com/experience-platform-apis/references/flow-service/#operation/retrieveConnectionSpec), med anslutningsspecifikationen för den önskade destinationen. Leta efter parametern `targetSpec.spec.properties.mode.enum` och välj önskat läge. |
+| `params` | Beroende på vilket mål du ansluter till måste du ange olika obligatoriska parametrar till lagringsplatsen. För Amazon S3-anslutningar måste du ange ditt åtkomst-ID och din hemliga nyckel till din Amazon S3-lagringsplats. <br> Utför ett [GET-anrop till slutpunkten för anslutningsspecifikationer](https://developer.adobe.com/experience-platform-apis/references/flow-service/#operation/retrieveConnectionSpec) för att ta reda på vilka parametrar som krävs för ditt mål. Detta anger anslutningsspecifikationen för det önskade målet. Leta efter parametern `targetSpec.spec.required` i svaret. |
+| `params.mode` | Beroende på vilket läge som stöds för målet måste du ange ett annat värde här. Utför ett [GET-anrop till slutpunkten för anslutningsspecifikationer](https://developer.adobe.com/experience-platform-apis/references/flow-service/#operation/retrieveConnectionSpec) för att ta reda på vilka parametrar som krävs för ditt mål, och ange anslutningsspecifikationen för det önskade målet. Leta efter parametern `targetSpec.spec.properties.mode.enum` i svaret och välj önskat läge. |
 | `params.bucketName` | För S3-anslutningar anger du namnet på den bucket där filerna ska exporteras. |
 | `params.path` | För S3-anslutningar anger du den filsökväg på lagringsplatsen dit filerna ska exporteras. |
-| `params.format` | `CSV` är för närvarande den enda filexporttyp som stöds. |
+| `params.format` | `CSV` är för närvarande den enda filexporttypen som stöds. |
 
 {style="table-layout:auto"}
 
 **Svar**
 
-Ett godkänt svar returnerar den unika identifieraren (`id`) för den nya målanslutningen till batchmålet. Lagra det här värdet som det behövs i senare steg.
+Ett lyckat svar returnerar den unika identifieraren (`id`) för den nyligen skapade målanslutningen till batchmålet. Lagra det här värdet som det behövs i senare steg.
 
 ```json
 {
@@ -865,9 +865,9 @@ Ett godkänt svar returnerar den unika identifieraren (`id`) för den nya målan
 
 ## Skapa ett dataflöde {#create-dataflow}
 
-![Översikt över destinationssteg 4](../assets/api/batch-destination/step4.png)
+![Översikt över målsteg 4](../assets/api/batch-destination/step4.png)
 
-Med hjälp av flödesspecifikationen, källanslutningen och ID:n för målanslutningen som du fick i föregående steg kan du nu skapa ett dataflöde mellan [!DNL Experience Platform] data och det mål där du vill exportera datafiler. Föreställ dig det här steget som att skapa en pipeline genom vilken data senare flödar mellan [!DNL Experience Platform] och det mål du vill ha.
+Med hjälp av flödesspecifikationen, källanslutningen och ID:n för målanslutningen som du fick i föregående steg kan du nu skapa ett dataflöde mellan dina [!DNL Experience Platform]-data och målet där du vill exportera datafiler. Föreställ dig det här steget som att skapa pipeline genom vilken data senare flödar mellan [!DNL Experience Platform] och det önskade målet.
 
 Om du vill skapa ett dataflöde ska du utföra en begäran om POST enligt nedan och samtidigt ange de värden som anges nedan i nyttolasten.
 
@@ -921,9 +921,9 @@ curl -X POST \
 | --------- | ----------- |
 | `name` | Ange ett namn för dataflödet som du skapar. |
 | `description` | Du kan också ange en beskrivning för dataflödet. |
-| `flowSpec.Id` | Använd flödets spec-ID för det batchmål som du vill ansluta till. Utför en GET-åtgärd på `flowspecs` slutpunkt, vilket visas i [API-referensdokumentation för flödesspecifikationer](https://www.adobe.io/experience-platform-apis/references/flow-service/#operation/retrieveFlowSpec). I svaret kan du leta efter `upsTo` och kopiera motsvarande ID för batchmålet som du vill ansluta till. För Adobe Campaign kan du till exempel söka efter `upsToCampaign` och kopiera `id` parameter. |
-| `sourceConnectionIds` | Använd det källanslutnings-ID som du fick i steget [Ansluta till dina Experience Platform-data](#connect-to-your-experience-platform-data). |
-| `targetConnectionIds` | Använd det ID för målanslutning som du fick i steget [Anslut till batchdestination](#connect-to-batch-destination). |
+| `flowSpec.Id` | Använd flödets spec-ID för det batchmål som du vill ansluta till. Om du vill hämta flödets spec-ID utför du en GET-åtgärd på `flowspecs`-slutpunkten, vilket visas i [API-referensdokumentationen för flödesspecifikationer](https://www.adobe.io/experience-platform-apis/references/flow-service/#operation/retrieveFlowSpec). I svaret söker du efter `upsTo` och kopierar motsvarande ID för batchmålet som du vill ansluta till. För Adobe Campaign söker du till exempel efter `upsToCampaign` och kopierar parametern `id`. |
+| `sourceConnectionIds` | Använd det källanslutnings-ID som du fick i steget [Anslut till dina Experience Platform-data](#connect-to-your-experience-platform-data). |
+| `targetConnectionIds` | Använd det målanslutnings-ID som du fick i steget [Anslut till batchmålet](#connect-to-batch-destination). |
 | `transformations` | I nästa steg ska du fylla i det här avsnittet med målgrupper och profilattribut som ska aktiveras. |
 
 Som referens innehåller tabellen nedan ID:n för de vanligaste gruppmålen:
@@ -936,7 +936,7 @@ Som referens innehåller tabellen nedan ID:n för de vanligaste gruppmålen:
 
 **Svar**
 
-Ett godkänt svar returnerar ID:t (`id`) av det nya dataflödet och `etag`. Anteckna båda värdena som du behöver dem i nästa steg för att aktivera målgrupper och exportera datafiler.
+Ett lyckat svar returnerar ID:t (`id`) för det nyskapade dataflödet och `etag`. Anteckna båda värdena som du behöver dem i nästa steg för att aktivera målgrupper och exportera datafiler.
 
 ```json
 {
@@ -952,9 +952,9 @@ Ett godkänt svar returnerar ID:t (`id`) av det nya dataflödet och `etag`. Ante
 
 När du har skapat alla anslutningar och dataflöden kan du nu aktivera dina profildata till målplattformen. I det här steget väljer du vilka målgrupper och vilka profilattribut som ska exporteras till målet.
 
-Du kan också ange namnformatet för de exporterade filerna och vilka attribut som ska användas som [dedupliceringsnycklar](../ui/activate-batch-profile-destinations.md#mandatory-keys) eller [obligatoriska attribut](../ui/activate-batch-profile-destinations.md#mandatory-attributes). I det här steget kan du även bestämma vilket schema som ska användas för att skicka data till målet.
+Du kan också bestämma filnamnsformatet för de exporterade filerna och vilka attribut som ska användas som [dedupliceringstangenter](../ui/activate-batch-profile-destinations.md#mandatory-keys) eller [obligatoriska attribut](../ui/activate-batch-profile-destinations.md#mandatory-attributes). I det här steget kan du även bestämma vilket schema som ska användas för att skicka data till målet.
 
-Om du vill aktivera målgrupper till ditt nya mål måste du utföra en JSON PATCH-åtgärd, som i exemplet nedan. Du kan aktivera flera målgrupper och profilattribut i ett samtal. Mer information om JSON PATCH finns i [RFC-specifikation](https://tools.ietf.org/html/rfc6902).
+Om du vill aktivera målgrupper till ditt nya mål måste du utföra en JSON PATCH-åtgärd, som i exemplet nedan. Du kan aktivera flera målgrupper och profilattribut i ett samtal. Mer information om JSON PATCH finns i [RFC-specifikationen](https://tools.ietf.org/html/rfc6902).
 
 **API-format**
 
@@ -1028,27 +1028,27 @@ curl --location --request PATCH 'https://platform.adobe.io/data/foundation/flows
 | Egenskap | Beskrivning |
 | --------- | ----------- |
 | `{DATAFLOW_ID}` | Använd ID:t för dataflödet som du skapade i föregående steg i URL-adressen. |
-| `{ETAG}` | Skaffa `{ETAG}` från svaret i föregående steg, [Skapa ett dataflöde](#create-dataflow). Svarsformatet i föregående steg har escape-citattecken. Du måste använda värdena för unescape-konvertering i huvudet i begäran. Se exemplet nedan: <br> <ul><li>Exempel på svar: `"etag":""7400453a-0000-1a00-0000-62b1c7a90000""`</li><li>Värde att använda i din begäran: `"etag": "7400453a-0000-1a00-0000-62b1c7a90000"`</li></ul> <br> Värdet för etag uppdateras med varje lyckad uppdatering av ett dataflöde. |
-| `{SEGMENT_ID}` | Ange det målgrupps-ID som du vill exportera till det här målet. Information om hur du hämtar målgrupps-ID:n för de målgrupper du vill aktivera finns i [hämta en publikdefinition](https://www.adobe.io/experience-platform-apis/references/segmentation/#operation/retrieveSegmentDefinitionById) i API-referensen för Experience Platform. |
-| `{PROFILE_ATTRIBUTE}` | Till exempel: `"person.lastName"` |
-| `op` | Åtgärdsanropet som används för att definiera den åtgärd som krävs för att uppdatera dataflödet. Åtgärderna omfattar: `add`, `replace`och `remove`. Använd kommandot `add` operation. |
+| `{ETAG}` | Hämta `{ETAG}` från svaret i föregående steg, [Skapa ett dataflöde](#create-dataflow). Svarsformatet i föregående steg har escape-citattecken. Du måste använda värdena för unescape-konvertering i huvudet i begäran. Se exemplet nedan: <br> <ul><li>Svarsexempel: `"etag":""7400453a-0000-1a00-0000-62b1c7a90000""`</li><li>Värde som ska användas i din begäran: `"etag": "7400453a-0000-1a00-0000-62b1c7a90000"`</li></ul> <br> Tagg-värdet uppdateras med varje lyckad uppdatering av ett dataflöde. |
+| `{SEGMENT_ID}` | Ange det målgrupps-ID som du vill exportera till det här målet. Information om hur du hämtar målgrupps-ID:n för de målgrupper som du vill aktivera finns i [Hämta en målgruppsdefinition](https://www.adobe.io/experience-platform-apis/references/segmentation/#operation/retrieveSegmentDefinitionById) i Experience Platform API-referensen. |
+| `{PROFILE_ATTRIBUTE}` | Exempel: `"person.lastName"` |
+| `op` | Åtgärdsanropet som används för att definiera den åtgärd som krävs för att uppdatera dataflödet. Åtgärderna omfattar: `add`, `replace` och `remove`. Om du vill lägga till en målgrupp i ett dataflöde använder du åtgärden `add`. |
 | `path` | Definierar den del av flödet som ska uppdateras. När du lägger till en målgrupp i ett dataflöde använder du den sökväg som anges i exemplet. |
 | `value` | Det nya värdet som du vill uppdatera parametern med. |
 | `id` | Ange ID:t för målgruppen som du lägger till i måldataflödet. |
 | `name` | *Valfritt*. Ange namnet på målgruppen som du lägger till i måldataflödet. Observera att det här fältet inte är obligatoriskt och att du kan lägga till en målgrupp i måldataflödet utan att ange dess namn. |
-| `filenameTemplate` | Det här fältet avgör filnamnsformatet för de filer som exporteras till ditt mål. <br> Följande alternativ är tillgängliga: <br> <ul><li>`%DESTINATION_NAME%`: Obligatoriskt. De exporterade filerna innehåller målnamnet.</li><li>`%SEGMENT_ID%`: Obligatoriskt. De exporterade filerna innehåller ID:t för den exporterade publiken.</li><li>`%SEGMENT_NAME%`: Valfritt. De exporterade filerna innehåller namnet på den exporterade publiken.</li><li>`DATETIME(YYYYMMdd_HHmmss)` eller `%TIMESTAMP%`: Valfritt. Välj något av dessa två alternativ för filerna så att de innehåller den tid då de genereras av Experience Platform.</li><li>`custom-text`: Valfritt. Ersätt den här platshållaren med eventuell egen text som du vill lägga till i slutet av filnamnen.</li></ul> <br> Mer information om hur du konfigurerar filnamn finns i [konfigurera filnamn](/help/destinations/ui/activate-batch-profile-destinations.md#file-names) i satskörningsguiden. |
-| `exportMode` | Obligatoriskt. Välj `"DAILY_FULL_EXPORT"` eller `"FIRST_FULL_THEN_INCREMENTAL"`. Mer information om de två alternativen finns i [exportera fullständiga filer](/help/destinations/ui/activate-batch-profile-destinations.md#export-full-files) och [exportera inkrementella filer](/help/destinations/ui/activate-batch-profile-destinations.md#export-incremental-files) i satskörningssjälvstudiekursen. |
+| `filenameTemplate` | Det här fältet avgör filnamnsformatet för de filer som exporteras till ditt mål. <br> Följande alternativ är tillgängliga: <br> <ul><li>`%DESTINATION_NAME%`: Obligatoriskt. De exporterade filerna innehåller målnamnet.</li><li>`%SEGMENT_ID%`: Obligatoriskt. De exporterade filerna innehåller ID:t för den exporterade publiken.</li><li>`%SEGMENT_NAME%`: Valfritt. De exporterade filerna innehåller namnet på den exporterade publiken.</li><li>`DATETIME(YYYYMMdd_HHmmss)` eller `%TIMESTAMP%`: Valfritt. Välj något av dessa två alternativ för filerna så att de innehåller den tid då de genereras av Experience Platform.</li><li>`custom-text`: Valfritt. Ersätt den här platshållaren med eventuell egen text som du vill lägga till i slutet av filnamnen.</li></ul> <br> Mer information om hur du konfigurerar filnamn finns i avsnittet [Konfigurera filnamn](/help/destinations/ui/activate-batch-profile-destinations.md#file-names) i självstudiekursen om aktivering av gruppmål. |
+| `exportMode` | Obligatoriskt. Välj `"DAILY_FULL_EXPORT"` eller `"FIRST_FULL_THEN_INCREMENTAL"`. Mer information om de två alternativen finns i [exportera fullständiga filer](/help/destinations/ui/activate-batch-profile-destinations.md#export-full-files) och [exportera inkrementella filer](/help/destinations/ui/activate-batch-profile-destinations.md#export-incremental-files) i självstudiekursen om aktivering av gruppmål. |
 | `startDate` | Välj det datum då målgruppen ska börja exportera profiler till ditt mål. |
-| `frequency` | Obligatoriskt. <br> <ul><li>För `"DAILY_FULL_EXPORT"` exportläge, du kan välja `ONCE` eller `DAILY`.</li><li>För `"FIRST_FULL_THEN_INCREMENTAL"` exportläge, du kan välja `"DAILY"`, `"EVERY_3_HOURS"`, `"EVERY_6_HOURS"`, `"EVERY_8_HOURS"`, `"EVERY_12_HOURS"`.</li></ul> |
-| `triggerType` | För *batchdestinationer* endast. Det här fältet är endast obligatoriskt när du väljer `"DAILY_FULL_EXPORT"` i `frequency` väljare. <br> Obligatoriskt. <br> <ul><li>Välj `"AFTER_SEGMENT_EVAL"` så att aktiveringsjobbet körs omedelbart när det dagliga gruppsegmenteringsjobbet för plattformen har slutförts. Detta garanterar att de senaste profilerna exporteras till ditt mål när aktiveringsjobbet körs.</li><li>Välj `"SCHEDULED"` för att få aktiveringsjobbet att köras på en fast tid. Detta säkerställer att profildata exporteras vid samma tidpunkt varje dag, men de profiler du exporterar kanske inte är de mest aktuella, beroende på om gruppsegmenteringsjobbet har slutförts innan aktiveringsjobbet startar. När du väljer det här alternativet måste du även lägga till en `startTime` ange vid vilken tidpunkt i UTC den dagliga exporten ska ske.</li></ul> |
-| `endDate` | För *batchdestinationer* endast. Det här fältet är endast obligatoriskt när du lägger till en målgrupp i ett dataflöde i exportmål för batchfiler som Amazon S3, SFTP eller Azure Blob. <br> Ej tillämpligt vid val `"exportMode":"DAILY_FULL_EXPORT"` och `"frequency":"ONCE"`. <br> Anger det datum då målgruppsmedlemmar slutar att exporteras till målet. |
-| `startTime` | För *batchdestinationer* endast. Det här fältet är endast obligatoriskt när du lägger till en målgrupp i ett dataflöde i exportmål för batchfiler som Amazon S3, SFTP eller Azure Blob. <br> Obligatoriskt. Välj den tidpunkt då filer som innehåller medlemmar av målgruppen ska skapas och exporteras till ditt mål. |
+| `frequency` | Obligatoriskt. <br> <ul><li>För exportläget `"DAILY_FULL_EXPORT"` kan du välja `ONCE` eller `DAILY`.</li><li>För exportläget `"FIRST_FULL_THEN_INCREMENTAL"` kan du välja `"DAILY"`, `"EVERY_3_HOURS"`, `"EVERY_6_HOURS"`, `"EVERY_8_HOURS"`, `"EVERY_12_HOURS"`.</li></ul> |
+| `triggerType` | Endast för *gruppmål*. Det här fältet är endast obligatoriskt när du väljer läget `"DAILY_FULL_EXPORT"` i `frequency`-väljaren. <br> obligatoriskt. <br> <ul><li>Välj `"AFTER_SEGMENT_EVAL"` om du vill att aktiveringsjobbet ska köras direkt när det dagliga batchsegmenteringsjobbet för plattformen har slutförts. Detta garanterar att de senaste profilerna exporteras till ditt mål när aktiveringsjobbet körs.</li><li>Välj `"SCHEDULED"` om du vill att aktiveringsjobbet ska köras med en fast tidpunkt. Detta säkerställer att profildata exporteras vid samma tidpunkt varje dag, men de profiler du exporterar kanske inte är de mest aktuella, beroende på om gruppsegmenteringsjobbet har slutförts innan aktiveringsjobbet startar. När du väljer det här alternativet måste du också lägga till en `startTime` för att ange vid vilken tidpunkt i UTC som den dagliga exporten ska ske.</li></ul> |
+| `endDate` | Endast för *gruppmål*. Det här fältet är endast obligatoriskt när du lägger till en målgrupp i ett dataflöde i exportmål för batchfiler som Amazon S3, SFTP eller Azure Blob. <br> Gäller inte vid val av `"exportMode":"DAILY_FULL_EXPORT"` och `"frequency":"ONCE"`. <br> Anger det datum då målgruppsmedlemmar slutar att exporteras till målet. |
+| `startTime` | Endast för *gruppmål*. Det här fältet är endast obligatoriskt när du lägger till en målgrupp i ett dataflöde i exportmål för batchfiler som Amazon S3, SFTP eller Azure Blob. <br> obligatoriskt. Välj den tidpunkt då filer som innehåller medlemmar av målgruppen ska skapas och exporteras till ditt mål. |
 
 {style="table-layout:auto"}
 
 >[!TIP]
 >
-> Se [Uppdatera komponenter för en målgrupp i ett dataflöde](/help/destinations/api/update-destination-dataflows.md#update-segment) om du vill lära dig hur du uppdaterar olika komponenter (filnamnsmall, exporttid och så vidare) för exporterade målgrupper.
+> Mer information om hur du uppdaterar olika komponenter (filnamnsmall, exporttid osv.) för exporterade målgrupper finns i [Uppdatera komponenter för en målgrupp i ett dataflöde](/help/destinations/api/update-destination-dataflows.md#update-segment).
 
 **Svar**
 
@@ -1056,7 +1056,7 @@ Leta efter ett svar från 2012. Ingen svarstext returneras. Om du vill verifiera
 
 ## Validera dataflödet {#validate-dataflow}
 
-![Översiktssteg för målsteg 6](../assets/api/batch-destination/step6.png)
+![Översikt över målsteg 6](../assets/api/batch-destination/step6.png)
 
 Som ett sista steg i självstudiekursen bör du validera att målgrupper och profilattribut verkligen har mappats korrekt till dataflödet.
 
@@ -1085,7 +1085,7 @@ curl --location --request PATCH 'https://platform.adobe.io/data/foundation/flows
 
 **Svar**
 
-Det returnerade svaret ska innehålla `transformations` anger målgrupper och profilattribut som du skickade i föregående steg. Ett exempel `transformations` parametern i svaret kan se ut så här:
+Det returnerade svaret ska i parametern `transformations` inkludera de målgrupper och profilattribut som du skickade i föregående steg. En `transformations`-parameter i svaret kan se ut så här:
 
 ```json
 "transformations":[
@@ -1240,7 +1240,7 @@ Det returnerade svaret ska innehålla `transformations` anger målgrupper och pr
 
 ## API-felhantering {#api-error-handling}
 
-API-slutpunkterna i den här självstudiekursen följer de allmänna felmeddelandeprinciperna för Experience Platform API. Se [API-statuskoder](/help/landing/troubleshooting.md#api-status-codes) och [fel i begäranhuvudet](/help/landing/troubleshooting.md#request-header-errors) i felsökningsguiden för plattformen för mer information om hur du tolkar felsvar.
+API-slutpunkterna i den här självstudiekursen följer de allmänna felmeddelandeprinciperna för Experience Platform API. Mer information om hur du tolkar felsvar finns i [API-statuskoder](/help/landing/troubleshooting.md#api-status-codes) och [begäranrubrikfel](/help/landing/troubleshooting.md#request-header-errors) i felsökningsguiden för plattformen.
 
 ## Nästa steg {#next-steps}
 

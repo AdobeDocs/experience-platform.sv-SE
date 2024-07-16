@@ -5,7 +5,7 @@ exl-id: 1f0f2dc0-5f3d-424b-9b22-b1a14ac30039
 source-git-commit: ba39f62cd77acedb7bfc0081dbb5f59906c9b287
 workflow-type: tm+mt
 source-wordcount: '983'
-ht-degree: 1%
+ht-degree: 0%
 
 ---
 
@@ -13,17 +13,17 @@ ht-degree: 1%
 
 ## Översikt {#overview}
 
-[Snapchat-annonser](https://forbusiness.snapchat.com/) är gjort för alla företag, oavsett storlek eller bransch. Bli en del av Snapchatters dagliga samtal med digitala annonser i helskärmsläge som inspirerar till åtgärder från de människor som betyder mest för er verksamhet.
+[Snapchat-annonser](https://forbusiness.snapchat.com/) är gjorda för alla företag, oavsett storlek eller bransch. Bli en del av Snapchatters dagliga samtal med digitala annonser i helskärmsläge som inspirerar till åtgärder från de människor som betyder mest för er verksamhet.
 
 >[!IMPORTANT]
 >
->Målanslutningen och dokumentationssidan skapas och underhålls av *Snap Inc* team. Om du har frågor eller uppdateringsfrågor kontaktar du dem direkt på *dev-support@snap.com*
+>Målanslutningen och dokumentationssidan skapas och underhålls av *Snap Inc* -teamet. Om du har frågor eller uppdateringsfrågor kontaktar du dem direkt på *dev-support@snap.com*
 
 ## Användningsfall {#use-cases}
 
 Med den här destinationen kan marknadsförare importera användarmålgrupper som skapats i Experience Platform till Snapchat Ads och använda dem för att rikta sina annonser.
 
-## Förutsättningar {#prerequisites}
+## Förhandskrav {#prerequisites}
 
 Om du vill använda den här destinationen måste du ha ett Snapchat Ads-konto. I den här dokumentationen finns information om hur du skapar en:
 
@@ -37,9 +37,9 @@ Om du vill använda den här destinationen måste du ha ett Snapchat Ads-konto. 
 
 ## Identiteter som stöds {#supported-identities}
 
-The *Snap Inc* målet har stöd för aktivering av de identiteter som beskrivs i tabellen nedan. Läs mer om [identiteter](/help/identity-service/features/namespaces.md).
+Målet *Snap Inc* stöder aktivering av identiteter som beskrivs i tabellen nedan. Läs mer om [identiteter](/help/identity-service/features/namespaces.md).
 
-Alla identifierare som skickats till *Snap Inc* målet måste hash-kodas i SHA-256-format. Om du vill hash-koda identifierare av oformaterad text innan du skickar dem till målet, markerar du **[!UICONTROL Apply transformation]** när målidentifierare mappas för målet.
+Alla identifierare som skickas till *Snap Inc*-målet måste hash-kodas i SHA-256-format. Om du vill hash-koda identifierare för oformaterad text innan du skickar dem till målet, markerar du alternativet **[!UICONTROL Apply transformation]** när du mappar målidentifierare för målet.
 
 >[!WARNING]
 > 
@@ -54,7 +54,7 @@ Alla identifierare som skickats till *Snap Inc* målet måste hash-kodas i SHA-2
 |---|---|---|
 | E-postadress | SHA-256 hash-e-postadress | Mappa e-postadresser till målidentitetsfältet *emailAddress*. |
 | Telefonnummer | SHA-256 hash-telefonnummer | Mappa e-postadresser till målidentitetsfältet *phoneNumber*. |
-| GAID | SHA-256 hashas Google Advertising ID | Mappa Google Advertising ID:n till målidentitetsfältet *gala*. |
+| GAID | SHA-256 hashas Google Advertising ID | Mappa Google Advertising ID:n till målidentitetsfältet *gaid*. |
 | IDFA | SHA-256 hashas Apple Advertising ID | Mappa Apple Advertising ID:n till målidentitetsfältet *idfa*. |
 
 {style="table-layout:auto"}
@@ -65,8 +65,8 @@ Se tabellen nedan för information om exporttyp och frekvens för destinationen.
 
 | Objekt | Typ | Anteckningar |
 ---------|----------|---------|
-| Exporttyp | **[!UICONTROL Audience export]** | Du exporterar alla medlemmar i en målgrupp med identifierarna (namn, telefonnummer eller andra) som används i *YOURDESTINATION* mål. |
-| Exportfrekvens | **[!UICONTROL Streaming]** | Direktuppspelningsmål är alltid på API-baserade anslutningar. Så snart en profil uppdateras i Experience Platform baserat på målgruppsutvärdering skickar anslutningsprogrammet uppdateringen nedströms till målplattformen. Läs mer om [mål för direktuppspelning](/help/destinations/destination-types.md#streaming-destinations). |
+| Exporttyp | **[!UICONTROL Audience export]** | Du exporterar alla medlemmar i en målgrupp med identifierarna (namn, telefonnummer eller andra) som används i *YOURDESTINATION* -målet. |
+| Exportfrekvens | **[!UICONTROL Streaming]** | Direktuppspelningsmål är alltid på API-baserade anslutningar. Så snart en profil uppdateras i Experience Platform baserat på målgruppsutvärdering skickar anslutningsprogrammet uppdateringen nedströms till målplattformen. Läs mer om [direktuppspelningsmål](/help/destinations/destination-types.md#streaming-destinations). |
 
 {style="table-layout:auto"}
 
@@ -74,31 +74,31 @@ Se tabellen nedan för information om exporttyp och frekvens för destinationen.
 
 >[!IMPORTANT]
 > 
->Om du vill ansluta till målet behöver du **[!UICONTROL View Destinations]** och **[!UICONTROL Manage Destinations]** [behörigheter för åtkomstkontroll](/help/access-control/home.md#permissions). Läs [åtkomstkontroll - översikt](/help/access-control/ui/overview.md) eller kontakta produktadministratören för att få de behörigheter som krävs.
+>Om du vill ansluta till målet behöver du behörigheterna **[!UICONTROL View Destinations]** och **[!UICONTROL Manage Destinations]** [åtkomstkontroll](/help/access-control/home.md#permissions). Läs [åtkomstkontrollsöversikten](/help/access-control/ui/overview.md) eller kontakta produktadministratören för att få den behörighet som krävs.
 
 ### Autentisera till mål {#authenticate}
 
 Så här autentiserar du målet:
 
-1. Hitta *Snap Inc* mål från Adobe Experience Platform målkatalog och välj **Konfigurera**.
-2. Välj **[!UICONTROL Connect to destination]**. Du kommer att omdirigeras till följande skärm:
+1. Hitta *Snap Inc*-målet från Adobe Experience Platform målkatalog och välj **Konfigurera**.
+2. Välj **[!UICONTROL Connect to destination]**.  Du kommer att omdirigeras till följande skärm:
    ![Autentiseringsskärm 1](/help/destinations/assets/catalog/advertising/snapchat-ads/auth1.png)
 3. Ange dina autentiseringsuppgifter för Snapchat och välj **Logga in**.
 4. Du kommer att få se Snapchat-data som Adobe Experience Platform kan komma åt. Välj **Fortsätt** om du vill fortsätta med anslutningsprocessen.
 
-![Autentiseringsskärm 2](/help/destinations/assets/catalog/advertising/snapchat-ads/auth2.png)
+![Auth Screen 2](/help/destinations/assets/catalog/advertising/snapchat-ads/auth2.png)
 
 När du har valt Fortsätt väntar du tills du omdirigeras tillbaka till Adobe Experience Platform.
 
 ### Fyll i målinformation {#destination-details}
 
-![Destinationsinformation](/help/destinations/assets/catalog/advertising/snapchat-ads/destinationdetails.png)
+![Målinformation](/help/destinations/assets/catalog/advertising/snapchat-ads/destinationdetails.png)
 
 Om du vill konfigurera information för målet fyller du i de obligatoriska fälten och väljer **[!UICONTROL Next]**.
 
 * **[!UICONTROL Name]**: Ett namn som du känner igen det här målet med i framtiden.
 * **[!UICONTROL Description]**: En beskrivning som hjälper dig att identifiera det här målet i framtiden.
-* **[!UICONTROL Account ID]**: Det annonskonto-ID som är associerat med annonskontot som du vill importera dina målgrupper till. Mer information finns i [den här dokumentationen om Snapchat Business Help Center](https://businesshelp.snapchat.com/s/article/biz-acct-id?language=en_US).
+* **[!UICONTROL Account ID]**: Det annonskonto-ID som är associerat med annonskontot som du vill importera dina målgrupper till. Mer information om hur du hittar detta finns i [den här dokumentationen på Snapchat Business Help Center](https://businesshelp.snapchat.com/s/article/biz-acct-id?language=en_US).
 
 >[!IMPORTANT]
 > 
@@ -106,25 +106,25 @@ Om du vill konfigurera information för målet fyller du i de obligatoriska fäl
 
 ### Aktivera aviseringar {#enable-alerts}
 
-Du kan aktivera varningar för att få meddelanden om dataflödets status till ditt mål. Välj en avisering i listan om du vill prenumerera och få meddelanden om statusen för ditt dataflöde. Mer information om varningar finns i guiden på [prenumerera på destinationsvarningar med användargränssnittet](../../ui/alerts.md).
+Du kan aktivera varningar för att få meddelanden om dataflödets status till ditt mål. Välj en avisering i listan om du vill prenumerera och få meddelanden om statusen för ditt dataflöde. Mer information om varningar finns i guiden [prenumerera på destinationsvarningar med användargränssnittet](../../ui/alerts.md).
 
-När du är klar med informationen för målanslutningen väljer du **[!UICONTROL Next]**.
+Välj **[!UICONTROL Next]** när du är klar med att ange information för målanslutningen.
 
 ## Aktivera målgrupper till det här målet {#activate}
 
 >[!IMPORTANT]
 > 
->* För att aktivera data behöver du **[!UICONTROL View Destinations]**, **[!UICONTROL Activate Destinations]**, **[!UICONTROL View Profiles]** och **[!UICONTROL View Segments]** [behörigheter för åtkomstkontroll](/help/access-control/home.md#permissions). Läs [åtkomstkontroll - översikt](/help/access-control/ui/overview.md) eller kontakta produktadministratören för att få de behörigheter som krävs.
->* Exportera *identiteter* behöver du **[!UICONTROL View Identity Graph]** [behörighet för åtkomstkontroll](/help/access-control/home.md#permissions). <br> ![Markera det identitetsnamnutrymme som är markerat i arbetsflödet för att aktivera målgrupper till mål.](/help/destinations/assets/overview/export-identities-to-destination.png "Markera det identitetsnamnutrymme som är markerat i arbetsflödet för att aktivera målgrupper till mål."){width="100" zoomable="yes"}
+>* För att aktivera data behöver du behörigheterna **[!UICONTROL View Destinations]**, **[!UICONTROL Activate Destinations]**, **[!UICONTROL View Profiles]** och **[!UICONTROL View Segments]** [åtkomstkontroll](/help/access-control/home.md#permissions). Läs [åtkomstkontrollsöversikten](/help/access-control/ui/overview.md) eller kontakta produktadministratören för att få den behörighet som krävs.
+>* Om du vill exportera *identiteter* måste du ha **[!UICONTROL View Identity Graph]** [åtkomstkontrollbehörighet](/help/access-control/home.md#permissions). <br> ![Markera identitetsnamnområdet som är markerat i arbetsflödet för att aktivera målgrupper till mål.](/help/destinations/assets/overview/export-identities-to-destination.png "Markera identitetsnamnområdet som är markerat i arbetsflödet för att aktivera målgrupper till mål."){width="100" zoomable="yes"}
 
-Läs [Aktivera profiler och målgrupper för att strömma målgruppernas exportdestinationer](/help/destinations/ui/activate-segment-streaming-destinations.md) för instruktioner om hur du aktiverar målgrupper till det här målet.
+Läs [Aktivera profiler och målgrupper för att direktuppspela målgruppsexportdestinationer](/help/destinations/ui/activate-segment-streaming-destinations.md) för instruktioner om hur du aktiverar målgrupper till det här målet.
 
 ## Validera dataexport {#exported-data}
 
-Efter aktivering av målgrupper till *Snap Inc* kommer du att kunna se målgrupperna i Snap Ads Managers [**Målgrupper** section](https://businesshelp.snapchat.com/s/article/audience-sharing). Så här navigerar du till det här avsnittet:
+När du har aktiverat målgrupper för *Snap Inc* kan du se målgrupperna i Snap Ads Managers [**målgrupper** ](https://businesshelp.snapchat.com/s/article/audience-sharing) . Så här navigerar du till det här avsnittet:
 
-1. Logga in på [Snap Ads Manager](https://ads.snapchat.com/)
-2. Välj **Målgrupper** på menyn längst upp till vänster på skärmen. Du ser vilka målgrupper du har aktiverat i Adobe Experience Platform i målgruppsbiblioteket:
+1. Logga in i [hanteraren för ögonblicksbilder](https://ads.snapchat.com/)
+2. Välj **Publiker** på menyn längst upp till vänster på skärmen. Du ser vilka målgrupper du har aktiverat i Adobe Experience Platform i målgruppsbiblioteket:
 
 ![Publiker](/help/destinations/assets/catalog/advertising/snapchat-ads/audiences.png)
 
@@ -132,4 +132,4 @@ Observera att när en Adobe-publik först aktiveras för Snap Inc ser du den fö
 
 ## Dataanvändning och styrning {#data-usage-governance}
 
-Alla [!DNL Adobe Experience Platform] destinationerna är kompatibla med dataanvändningsprinciper när data hanteras. Detaljerad information om hur [!DNL Adobe Experience Platform] använder datastyrning, se [Datastyrning - översikt](/help/data-governance/home.md).
+Alla [!DNL Adobe Experience Platform]-mål är kompatibla med dataanvändningsprinciper när data hanteras. Mer information om hur [!DNL Adobe Experience Platform] använder datastyrning finns i [Datastyrningsöversikten](/help/data-governance/home.md).

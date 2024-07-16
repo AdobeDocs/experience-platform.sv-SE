@@ -16,7 +16,7 @@ En länk mellan två identiteter skapas när identitetsnamnutrymmet och identite
 Det finns två typer av identiteter som länkas:
 
 * **Profilposter**: Dessa identiteter kommer vanligtvis från CRM-system.
-* **Experience Events**: Dessa identiteter kommer vanligtvis från WebSDK-implementering eller Adobe Analytics-källan.
+* **Upplevelsehändelser**: Dessa identiteter kommer vanligtvis från WebSDK-implementeringen eller Adobe Analytics-källan.
 
 ## Semantisk betydelse för att skapa länkar
 
@@ -26,7 +26,7 @@ En identitet representerar en verklighetstrogen enhet. Om det finns en länk mel
 | --- | --- | --- |
 | En slutanvändare loggar in med en dator. | CRM-ID och ECID är sammankopplade. | En person (CRM-ID) äger en enhet med en webbläsare (ECID). |
 | En slutanvändare surfar anonymt med en iPhone. | IDFA är kopplat till ECID. | Apple maskinvaruenhet (IDFA), t.ex. en iPhone, är kopplad till webbläsaren (ECID). |
-| Slutanvändaren loggar in med Google Chrome och sedan Firefox. | CRM-ID är länkat till två olika ECID:n. | En person (CRM-ID) är kopplad till två webbläsare (**Anteckning**: Varje webbläsare har ett eget ECID). |
+| Slutanvändaren loggar in med Google Chrome och sedan Firefox. | CRM-ID är länkat till två olika ECID:n. | En person (CRM-ID) är kopplad till två webbläsare (**Obs!**: Varje webbläsare har ett eget ECID). |
 | En datatekniker importerar en CRM-post som innehåller två fält som är markerade som en identitet: CRM-ID och E-post. | CRM-ID och e-post är länkade. | En person (CRM-ID) är kopplad till e-postadressen. |
 
 ## Länkningslogik för identitetstjänsten
@@ -34,7 +34,7 @@ En identitet representerar en verklighetstrogen enhet. Om det finns en länk mel
 En identitet består av ett identitetsnamnutrymme och ett identitetsvärde.
 
 * Ett identitetsnamnutrymme är kontexten för ett givet identitetsvärde. Vanliga exempel på identitetsnamnutrymmen är CRM-ID, E-post och Telefon.
-* Ett identitetsvärde är den sträng som representerar en faktisk enhet. Till exempel: &quot;julien<span>@acme.com kan vara ett identitetsvärde för ett e-postnamnutrymme och 555-555-1234 kan vara ett motsvarande identitetsvärde för ett Phone-namnområde.
+* Ett identitetsvärde är den sträng som representerar en faktisk enhet. Till exempel:&quot;julien<span>@acme.com&quot; kan vara ett identitetsvärde för ett e-postnamnområde och 555-555-1234 kan vara ett motsvarande identitetsvärde för ett Phone-namnområde.
 
 >[!TIP]
 >
@@ -67,7 +67,7 @@ Ett par identiteter är inkapslade i diagrammet och det här paret innehåller:
 
 Identitetstjänsten känner igen att CRM ID:60013ABC redan finns i diagrammet och länkar därför bara det nya ECID:t
 
-![uppdaterat diagram](../images/identity-settings/updated-graph.png)
+![uppdaterade diagram](../images/identity-settings/updated-graph.png)
 
 >[!ENDTABS]
 
@@ -106,8 +106,8 @@ Den primära identiteten för varje händelse bestäms utifrån [hur du konfigur
 
 I detta exempel:
 
-* `t=1`, använde en stationär dator (ECID:38652) och för att visa hemsidan anonymt.
-* `t=2`, använde samma stationära dator, loggade in (CRM ID:31260XYZ) och sökte sedan efter skor.
+* `t=1` använde en stationär dator (ECID:38652) och för att visa hemsidan anonymt.
+* `t=2` använde samma stationära dator, loggade in (CRM ID:31260XYZ) och sökte sedan efter skor.
    * När en användare är inloggad skickar händelsen både ECID och CRM ID till identitetstjänsten.
 * `t=3`, använde en bärbar dator (ECID:44675) och bläddrade anonymt.
 * `t=4`, använde samma bärbara dator, loggade in (CRM ID: 31260XYZ) och visade sedan inköpshistoriken.
@@ -115,9 +115,9 @@ I detta exempel:
 
 >[!BEGINTABS]
 
->[!TAB timestamp=0]
+>[!TAB tidsstämpel=0]
 
-At `timestamp=0`har du två identitetsdiagram för två olika kunder. Båda representeras av tre länkade identiteter.
+På `timestamp=0` har du två identitetsdiagram för två olika kunder. Båda representeras av tre länkade identiteter.
 
 | | CRM-ID | E-post | Telefon |
 | --- | --- | --- | --- |
@@ -128,25 +128,25 @@ At `timestamp=0`har du två identitetsdiagram för två olika kunder. Båda repr
 
 >[!TAB timestamp=1]
 
-At `timestamp=1`, en kund använder en bärbar dator för att besöka din e-handelswebbplats, visa din hemsida och surfa anonymt. Den här anonyma surfhändelsen identifieras som ECID:38652. Eftersom identitetstjänsten bara lagrar händelser med minst två identiteter lagras inte den här informationen.
+På `timestamp=1` använder en kund en bärbar dator för att besöka din e-handelswebbplats, visa din hemsida och för att bläddra anonymt. Den här anonyma surfhändelsen identifieras som ECID:38652. Eftersom identitetstjänsten bara lagrar händelser med minst två identiteter lagras inte den här informationen.
 
 ![timestamp-one](../images/identity-settings/timestamp-one.png)
 
 >[!TAB timestamp=2]
 
-At `timestamp=2`, en kund använder samma bärbara dator för att besöka din e-handelswebbplats. De loggar in med kombinationen av användarnamn och lösenord och bläddrar efter skor. Identitetstjänsten identifierar kundens konto när de loggar in eftersom det motsvarar deras CRM-ID: 31260XYZ. Dessutom relaterar identitetstjänsten ECID:38562 till CRM ID:31260XYZ eftersom båda använder samma webbläsare på samma enhet.
+På `timestamp=2` använder en kund samma bärbara dator för att besöka din e-handelswebbplats. De loggar in med kombinationen av användarnamn och lösenord och bläddrar efter skor. Identitetstjänsten identifierar kundens konto när de loggar in eftersom det motsvarar deras CRM-ID: 31260XYZ. Dessutom relaterar identitetstjänsten ECID:38562 till CRM ID:31260XYZ eftersom båda använder samma webbläsare på samma enhet.
 
-![tidsstämpel-två](../images/identity-settings/timestamp-two.png)
+![timestamp-two](../images/identity-settings/timestamp-two.png)
 
 >[!TAB timestamp=3]
 
-At `timestamp=3` en kund använder en surfplatta för att besöka din e-handelswebbplats och surfa anonymt. Den här anonyma surfhändelsen identifieras som ECID:44675. Eftersom identitetstjänsten bara lagrar händelser med minst två identiteter lagras inte den här informationen.
+På `timestamp=3` använder en kund en surfplatta för att besöka din e-handelswebbplats och surfa anonymt. Den här anonyma surfhändelsen identifieras som ECID:44675. Eftersom identitetstjänsten bara lagrar händelser med minst två identiteter lagras inte den här informationen.
 
 ![timestamp-three](../images/identity-settings/timestamp-three.png)
 
 >[!TAB timestamp=4]
 
-At `timestamp=4`, en kund använder samma surfplatta, loggar in på sitt konto (CRM-ID:31260XYZ) och visar sin inköpshistorik. Den här händelsen länkar deras CRM-ID:31260XYZ till cookie-identifieraren som tilldelats anonym surfaktivitet, ECID:44675, och länkar ECID:44675 till kundens identitetsdiagram.
+På `timestamp=4` använder en kund samma surfplatta, loggar in på sitt konto (CRM-ID:31260XYZ) och visar sin inköpshistorik. Den här händelsen länkar deras CRM-ID:31260XYZ till cookie-identifieraren som tilldelats anonym surfaktivitet, ECID:44675, och länkar ECID:44675 till kundens identitetsdiagram.
 
 ![tidsstämpel-fyra](../images/identity-settings/timestamp-four.png)
 

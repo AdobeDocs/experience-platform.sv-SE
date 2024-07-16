@@ -22,11 +22,11 @@ ht-degree: 34%
    * [Etikettordlista](labels/reference.md)
    * [Hantera etiketter i användargränssnittet](labels/user-guide.md)
    * [Hantera etiketter för datauppsättningar med API:er](labels/dataset-api.md)
-* Dataanvändningspolicyer {#policies}
+* Dataanvändningsprinciper {#policies}
    * [Översikt](policies/overview.md)
    * [Hantera profiler i användargränssnittet](policies/user-guide.md)
    * [Skapa en princip i API:t](policies/create.md)
-* Politiska åtgärder {#enforcement}
+* Principkontroll {#enforcement}
    * [Översikt](enforcement/overview.md)
    * [Automatisk kontroll](enforcement/auto-enforcement.md)
    * [API-baserad tillämpning](enforcement/api-enforcement.md)

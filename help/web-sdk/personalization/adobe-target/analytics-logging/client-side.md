@@ -16,17 +16,17 @@ ht-degree: 0%
 
 ## Översikt {#overview}
 
-Med Adobe Experience Platform Web SDK kan du samla in [Adobe Analytics for Target (A4T)](https://experienceleague.adobe.com/docs/target/using/integrate/a4t/a4t.html) data på klientsidan av webbprogrammet.
+Med Adobe Experience Platform Web SDK kan du samla in [Adobe Analytics for Target-data (A4T)](https://experienceleague.adobe.com/docs/target/using/integrate/a4t/a4t.html) på klientsidan av webbprogrammet.
 
-Loggning på klientsidan innebär att relevant [!DNL Target] data returneras på klientsidan, vilket gör att ni kan samla in dem och dela dem med Analytics. Det här alternativet bör vara aktiverat om du tänker skicka data manuellt till Analytics med [API för datainfogning](https://experienceleague.adobe.com/docs/analytics/import/c-data-insertion-api.html).
+Loggning på klientsidan innebär att relevanta [!DNL Target]-data returneras på klientsidan, vilket gör att du kan samla in dem och dela dem med Analytics. Det här alternativet bör vara aktiverat om du tänker skicka data manuellt till Analytics med [API:t för datainfogning](https://experienceleague.adobe.com/docs/analytics/import/c-data-insertion-api.html).
 
 >[!NOTE]
 >
->En metod för att utföra detta med [AppMeasurement.js](https://experienceleague.adobe.com/docs/analytics/implementation/js/overview.html) är under utveckling och kommer att finnas tillgängligt inom den närmaste framtiden.
+>En metod för att utföra detta med [AppMeasurement.js](https://experienceleague.adobe.com/docs/analytics/implementation/js/overview.html) håller på att utvecklas och kommer att vara tillgänglig inom den närmaste framtiden.
 
 Det här dokumentet innehåller steg för hur du konfigurerar A4T-loggning på klientsidan för Web SDK och några exempel på implementering för vanliga användningsområden.
 
-## Förutsättningar {#prerequisites}
+## Förhandskrav {#prerequisites}
 
 I den här självstudiekursen förutsätts att du är bekant med de grundläggande begreppen och processerna för att använda Web SDK i personaliseringssyfte. Läs följande dokumentation om du behöver en introduktion:
 
@@ -40,21 +40,21 @@ I följande underavsnitt beskrivs hur du aktiverar loggning på klientsidan för
 
 ### Aktivera loggning på klientsidan för Analytics {#enable-analytics-client-side-logging}
 
-Om du vill ta hänsyn till att Analytics-loggning på klientsidan är aktiverad för implementeringen måste du inaktivera Adobe Analytics-konfigurationen i din [datastream](../../../../datastreams/overview.md).
+Om du vill att Analytics-loggning på klientsidan ska vara aktiverad för implementeringen måste du inaktivera Adobe Analytics-konfigurationen i [datastream](../../../../datastreams/overview.md).
 
-![Analysdataströmskonfiguration har inaktiverats](../assets/disable-analytics-datastream.png)
+![Analytics-datastream-konfiguration inaktiverad](../assets/disable-analytics-datastream.png)
 
-### Hämta [!DNL A4T] data från SDK och skicka dem till Analytics {#a4t-to-analytics}
+### Hämta [!DNL A4T]-data från SDK och skicka dem till Analytics {#a4t-to-analytics}
 
-För att den här rapporteringsmetoden ska fungera på rätt sätt måste du skicka [!DNL A4T] relaterade data som hämtats från [`sendEvent`](/help/web-sdk/commands/sendevent/overview.md) i Analytics-träffen.
+För att den här rapporteringsmetoden ska fungera på rätt sätt måste du skicka [!DNL A4T]-relaterade data som hämtats från kommandot [`sendEvent`](/help/web-sdk/commands/sendevent/overview.md) i Analytics-träffen.
 
-När Target Edge beräknar ett svarsförslag kontrollerar programmet om Analytics-loggning på klientsidan är aktiverat (dvs. om Analytics är inaktiverat i din datastream). Om loggning på klientsidan är aktiverat lägger systemet till en analystoken till varje erbjudande i svaret.
+När Target Edge beräknar ett svar på en offert kontrollerar det om Analytics-loggning på klientsidan är aktiverad (dvs om Analytics är inaktiverat i din datastream). Om loggning på klientsidan är aktiverat lägger systemet till en analystoken till varje erbjudande i svaret.
 
 Flödet ser ut ungefär så här:
 
 ![Loggningsflöde på klientsidan](../assets/analytics-client-side-logging.png)
 
-Följande är ett exempel på en `interact` när loggning på klientsidan för Analytics är aktiverat. Om förslaget gäller en aktivitet som har Analytics-rapportering får den en `scopeDetails.characteristics.analyticsToken` -egenskap.
+Följande är ett exempel på ett `interact`-svar när loggning på klientsidan för Analytics är aktiverat. Om förslaget gäller en aktivitet som har Analytics-rapportering har det en `scopeDetails.characteristics.analyticsToken`-egenskap.
 
 ```json
 {
@@ -136,7 +136,7 @@ Följande är ett exempel på en `interact` när loggning på klientsidan för A
 }
 ```
 
-Förslag för formulärbaserade Experience Composer-aktiviteter kan innehålla både innehåll och klickmätningsobjekt under samma förslag. I stället för att ha en enda analystoken för innehållsvisning i `scopeDetails.characteristics.analyticsToken` -egenskapen kan dessa ha både en visnings- och en klickanalystoken angiven i `scopeDetails.characteristics.analyticsDisplayToken` och `scopeDetails.characteristics.analyticsClickToken` egenskaper.
+Förslag för formulärbaserade Experience Composer-aktiviteter kan innehålla både innehåll och klickmätningsobjekt under samma förslag. I stället för att ha en enda analystoken för visning av innehåll i egenskapen `scopeDetails.characteristics.analyticsToken` kan de därför ha både en visnings- och en klickanalystoken angiven i egenskaperna `scopeDetails.characteristics.analyticsDisplayToken` och `scopeDetails.characteristics.analyticsClickToken`.
 
 ```json
 {
@@ -204,11 +204,11 @@ Förslag för formulärbaserade Experience Composer-aktiviteter kan innehålla b
 }
 ```
 
-Alla värden från `scopeDetails.characteristics.analyticsToken`, samt `scopeDetails.characteristics.analyticsDisplayToken` (för visat innehåll) och `scopeDetails.characteristics.analyticsClickToken` (för klickvärden) är A4T-nyttolasterna som behöver samlas in och inkluderas som `tnta` i [API för datainfogning](https://github.com/AdobeDocs/analytics-1.4-apis/blob/master/docs/data-insertion-api/index.md) ring.
+Alla värden från `scopeDetails.characteristics.analyticsToken` samt `scopeDetails.characteristics.analyticsDisplayToken` (för visat innehåll) och `scopeDetails.characteristics.analyticsClickToken` (för klickvärden) är de A4T-nyttolaster som måste samlas in och inkluderas som `tnta` -tagg i [API-anropet för datainmatning](https://github.com/AdobeDocs/analytics-1.4-apis/blob/master/docs/data-insertion-api/index.md).
 
 >[!IMPORTANT]
 >
->The `analyticsToken`, `analyticsDisplayToken`, `analyticsClickToken` egenskaper kan innehålla flera variabler, sammanfogade som en enda kommaavgränsad sträng.
+>Egenskaperna `analyticsToken`, `analyticsDisplayToken`, `analyticsClickToken` kan innehålla flera tokens, sammanfogade som en kommaavgränsad sträng.
 >
 >I implementeringsexemplen i nästa avsnitt samlas flera analystoken in iterativt. Om du vill sammanfoga en array med analystoken använder du en funktion som ser ut så här:
 >
@@ -227,11 +227,11 @@ I följande underavsnitt visas hur du implementerar loggning på klientsidan fö
 
 ### Formulärbaserade Experience Composer-aktiviteter {#form-based-composer}
 
-Du kan använda Web SDK för att styra hur förslag körs från [Adobe Target formulärbaserad Experience Composer](https://experienceleague.adobe.com/docs/target/using/experiences/form-experience-composer.html) verksamhet.
+Du kan använda Web SDK för att styra körningen av förslag från [Adobe Target Form-Based Experience Composer](https://experienceleague.adobe.com/docs/target/using/experiences/form-experience-composer.html) -aktiviteter.
 
-När du begär förslag för ett specifikt beslutsomfång innehåller det returnerade förslaget en lämplig analystoken. Det bästa sättet är att kedja plattformens SDK `sendEvent` och iterera genom de returnerade förslagen för att köra dem samtidigt som analystoken samlas in.
+När du begär förslag för ett specifikt beslutsomfång innehåller det returnerade förslaget en lämplig analystoken. Det bästa sättet är att kedja på Platform Web SDK `sendEvent`-kommandot och iterera genom de returnerade förslagen för att köra dem samtidigt som Analytics-tokens samlas in.
 
-Du kan aktivera en `sendEvent` för ett formulärbaserat Experience Composer-aktivitetsomfång som detta:
+Du kan utlösa ett `sendEvent`-kommando för en formulärbaserad Experience Composer-aktivitetsomfattning som den här:
 
 ```javascript
 alloy("sendEvent", {
@@ -391,7 +391,7 @@ function getDisplayAnalyticsPayload(proposition) {
 }
 ```
 
-Ett förslag kan ha olika typer av objekt, vilket anges av `schema` objektets egendom. Det finns fyra objektscheman för förslag som stöds för formulärbaserade Experience Composer-aktiviteter:
+Ett förslag kan ha olika typer av objekt, vilket anges av egenskapen `schema` för det aktuella objektet. Det finns fyra objektscheman för förslag som stöds för formulärbaserade Experience Composer-aktiviteter:
 
 ```javascript
 var HTML_SCHEMA = "https://ns.adobe.com/personalization/html-content-item";
@@ -425,12 +425,12 @@ Sammanfattningsvis måste följande steg utföras när formulärbaserade Experie
 
 1. Skicka en händelse som hämtar aktivitetserbjudanden för formulärbaserad Experience Composer.
 1. Använda innehållsändringarna på sidan;
-1. Skicka `decisioning.propositionDisplay` meddelandehändelse,
+1. Skicka meddelandehändelsen `decisioning.propositionDisplay`;
 1. Samla in analytiska visningstoken från SDK-svaret och konstruera en nyttolast för Analytics-träffen.
-1. Skicka nyttolasten till Analytics med [API för datainfogning](https://github.com/AdobeDocs/analytics-1.4-apis/blob/master/docs/data-insertion-api/index.md);
-1. Om det finns klickvärden i levererade offerter bör klickavlyssnarna ställas in så att när klickningen görs skickas `decisioning.propositionInteract` meddelandehändelse. The `onBeforeEventSend` hanteraren bör konfigureras så att vid spärr `decisioning.propositionInteract` -händelser inträffar följande åtgärder:
-   1. Samla in klickanalystoken från `xdm._experience.decisioning.propositions`
-   1. Skicka klickbara Analytics-träffar med den insamlade Analytics-nyttolasten via [API för datainfogning](https://github.com/AdobeDocs/analytics-1.4-apis/blob/master/docs/data-insertion-api/index.md);
+1. Skicka nyttolasten till Analytics med [API för datainmatning](https://github.com/AdobeDocs/analytics-1.4-apis/blob/master/docs/data-insertion-api/index.md);
+1. Om det finns klickvärden i levererade offerter bör klickavlyssnare konfigureras så att när klickningen utförs skickas meddelandehändelsen `decisioning.propositionInteract`. Hanteraren `onBeforeEventSend` bör konfigureras så att följande åtgärder inträffar när `decisioning.propositionInteract`-händelser fångas upp:
+   1. Samlar in klickanalystoken från `xdm._experience.decisioning.propositions`
+   1. Skickar klickanalysen med den insamlade analysnyttolasten via [API för datainmatning](https://github.com/AdobeDocs/analytics-1.4-apis/blob/master/docs/data-insertion-api/index.md);
 
 ```javascript
 alloy("sendEvent", {
@@ -467,13 +467,13 @@ alloy("sendEvent", {
 
 ### Visual Experience Composer-aktiviteter {#visual-experience-composer-acitivties}
 
-Med Web SDK kan du hantera erbjudanden som skapats med [Visual Experience Composer (VEC)](https://experienceleague.adobe.com/docs/target/using/experiences/vec/visual-experience-composer.html).
+Med Web SDK kan du hantera erbjudanden som har skapats med [Visual Experience Composer (VEC)](https://experienceleague.adobe.com/docs/target/using/experiences/vec/visual-experience-composer.html).
 
 >[!NOTE]
 >
->Stegen för implementering av det här användningsexemplet liknar de steg som beskrivs i [Formulärbaserade Experience Composer-aktiviteter](#form-based-composer). Mer information finns i föregående avsnitt.
+>Stegen för implementering av det här användningsexemplet liknar mycket stegen för [formulärbaserade Experience Composer-aktiviteter](#form-based-composer). Mer information finns i föregående avsnitt.
 
-När automatisk återgivning är aktiverat kan du samla in analystoken från de förslag som kördes på sidan. Det bästa sättet är att kedja plattformens SDK `sendEvent` och iterera genom de returnerade förslagen för att filtrera dem som Web SDK har försökt återge.
+När automatisk återgivning är aktiverat kan du samla in analystoken från de förslag som kördes på sidan. Bästa sättet är att kedja på Platform Web SDK `sendEvent`-kommandot och iterera genom de returnerade förslagen för att filtrera dem som Web SDK har försökt återge.
 
 **Exempel**
 
@@ -509,11 +509,11 @@ alloy("sendEvent", {
 });
 ```
 
-### Använda `onBeforeEventSend` för att hantera sidmått {#using-onbeforeeventsend}
+### Använder `onBeforeEventSend` för att hantera sidmått {#using-onbeforeeventsend}
 
 Med hjälp av Adobe Target-aktiviteter kan du ställa in olika mått på sidan, antingen manuellt kopplade till DOM eller automatiskt kopplade till DOM (VEC-skapade aktiviteter). Båda typerna är en fördröjd användarinteraktion på webbsidan.
 
-För att ta hänsyn till detta är det bästa sättet att samla in Analytics-nyttolaster med `onBeforeEventSend` Adobe Experience Platform Web SDK-krok. The `onBeforeEventSend` måste konfigureras med `configure` och återspeglas i alla händelser som skickas via datastream.
+För att ta hänsyn till detta är det bästa sättet att samla in Analytics-nyttolaster med hjälp av Adobe Experience Platform Web SDK-kroken `onBeforeEventSend`. Koppeln `onBeforeEventSend` bör konfigureras med kommandot `configure` och återspeglas i alla händelser som skickas via datastream.
 
 Följande är ett exempel på hur `onBeforeEventSent` kan konfigureras för att utlösa Analytics-träffar:
 
@@ -540,4 +540,4 @@ alloy("configure", {
 
 ## Nästa steg {#next-steps}
 
-Den här guiden täcker loggning på klientsidan för A4T-data i Web SDK. Se guiden på [serverloggning](server-side.md) om du vill ha mer information om hur du hanterar A4T-data på Edge Network.
+Den här guiden täcker loggning på klientsidan för A4T-data i Web SDK. Mer information om hur du hanterar A4T-data på Edge Network finns i handboken om [serverloggning](server-side.md).

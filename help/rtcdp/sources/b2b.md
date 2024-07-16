@@ -15,21 +15,21 @@ ht-degree: 0%
 
 >[!NOTE]
 >
->Om du inte använder Adobe Real-time Customer Data Platform B2B Edition läser du [källöversikt](./sources-overview.md) i stället.
+>Om du inte använder Adobe Real-time Customer Data Platform B2B Edition läser du [källöversikten](./sources-overview.md) i stället.
 
-Med Adobe Real-time Customer Data Platform B2B Edition kan ni hämta in B2B-data via olika källor, bland annat [[!DNL Marketo Engage]](../../sources/connectors/adobe-applications/marketo/marketo.md) källanslutning, Salesforce, Amazon S3 och ADLS med flera. Med detta källintervall kan du strukturera, etikettera och förbättra inkommande data med hjälp av tjänster.
+Med Adobe Real-time Customer Data Platform B2B Edition kan du överföra dina B2B-data via olika källor, bland annat [[!DNL Marketo Engage]](../../sources/connectors/adobe-applications/marketo/marketo.md)-källkopplingen, Salesforce, Amazon S3 och ADLS. Med detta källintervall kan du strukturera, etikettera och förbättra inkommande data med hjälp av tjänster.
 
-Information om hur källorna passar in i ert B2B-arbetsflöde finns i [självstudiekurs från början till slut](../b2b-tutorial.md#ingest-your-data-into-experience-platform).
+Mer information om hur källor passar in i ditt B2B-arbetsflöde finns i [den kompletta självstudiekursen](../b2b-tutorial.md#ingest-your-data-into-experience-platform).
 
-Se [Översikt över källanslutningar](../../sources/home.md) om du vill ha mer information om de olika källtyperna i Adobe Experience Platform.
+Mer information om vilka typer av källor som är tillgängliga i Adobe Experience Platform finns i [översikten över källanslutningar](../../sources/home.md).
 
 >[!IMPORTANT]
 >
->Du måste ha tillgång till [Real-time Customer Data Platform B2B Edition](../../rctcdp/../rtcdp/b2b-overview.md) för att B2B-scheman ska kunna delta i [Kundprofil i realtid](../proile/../../profile/home.md).
+>Du måste ha tillgång till [Real-time Customer Data Platform B2B Edition](../../rctcdp/../rtcdp/b2b-overview.md) för att B2B-scheman ska kunna delta i [kundprofilen i realtid](../proile/../../profile/home.md).
 
-Följande dokument innehåller mer information om hur du använder [!DNL Marketo] för att ta med B2B-data till plattformen:
+Följande dokument innehåller mer information om hur du använder [!DNL Marketo] för att hämta B2B-data till plattformen:
 
-* Mer information om hur du ansluter [!DNL Marketo] data till plattformen, se självstudiekursen om [skapa en Marketo-källanslutning i användargränssnittet](../../sources/tutorials/ui/create/adobe-applications/marketo.md).
+* Mer information om hur du ansluter dina [!DNL Marketo]-data till plattformen finns i självstudiekursen [Skapa en Marketo-källkoppling i användargränssnittet](../../sources/tutorials/ui/create/adobe-applications/marketo.md).
 * Information om den underliggande inställningen för B2B-namnutrymmen och scheman finns i dokumentationen för [B2B-namnutrymmen och scheman](../../sources/connectors/adobe-applications/marketo/marketo-namespaces.md).
-* Om du vill ha information om hur du hittar [!DNL Marketo] Munchkin-ID och generera dina autentiseringsuppgifter finns i [[!DNL Marketo] autentiseringsguide](../../sources/connectors/adobe-applications/marketo/marketo-auth.md).
-* Mer information om mappningsregler som gäller för [!DNL Marketo] datauppsättningar, se dokumentationen om [[!DNL Marketo] fältkopplingar](../../sources/connectors/adobe-applications//mapping/marketo.md).
+* Information om hur du hittar ditt [!DNL Marketo] Munchkin-ID och genererar dina autentiseringsuppgifter finns i [[!DNL Marketo] autentiseringsguiden](../../sources/connectors/adobe-applications/marketo/marketo-auth.md).
+* Mer information om mappningsregler som gäller för [!DNL Marketo]-datauppsättningar finns i dokumentationen om [[!DNL Marketo] fältmappningar](../../sources/connectors/adobe-applications//mapping/marketo.md).

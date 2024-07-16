@@ -11,13 +11,13 @@ ht-degree: 0%
 
 # Dataförberedelse för datainsamling
 
-Data Prep är en Adobe Experience Platform-tjänst som gör att du kan mappa, omvandla och validera data till och från [Experience Data Model (XDM)](../xdm/home.md). När en plattform konfigureras [datastream](./overview.md)kan du använda Data Prep-funktioner för att mappa dina källdata till XDM när du skickar dem till Platform Edge Network.
+Data Prep är en Adobe Experience Platform-tjänst som gör att du kan mappa, omvandla och validera data till och från [Experience Data Model (XDM)](../xdm/home.md). När du konfigurerar en [datastream](./overview.md) som är aktiverad för plattformen kan du använda Data Prep-funktioner för att mappa dina källdata till XDM när du skickar dem till Platform Edge Network.
 
 Alla data som skickas från en webbsida måste landas i Experience Platform som XDM. Det finns tre sätt att översätta data från ett datalager på en sida till den XDM som accepteras av Experience Platform:
 
 1. Formatera om datalagret till XDM på själva webbsidan.
 2. Använd funktionen för taggar för inbyggda dataelement för att formatera om en webbsidas befintliga datalagerformat till XDM.
-3. Formatera om en webbsidas befintliga datalagerformat till XDM via Edge Network med Data Prep för datainsamling.
+3. Formatera om en webbsidas befintliga datalagerformat till XDM via Edge Network, med Data Prep för datainsamling.
 
 Den här guiden fokuserar på det tredje alternativet.
 
@@ -25,14 +25,14 @@ Den här guiden fokuserar på det tredje alternativet.
 
 Det finns två användningsområden där Data Prep för datainsamling är användbart:
 
-1. Webbplatsen har ett välformat, styrt och underhållet datalager och det finns en inställning för att skicka det direkt till Edge Network i stället för att använda JavaScript-manipulering för att konvertera det till XDM på sidan (antingen via tagg-dataelement eller via manuell JavaScript-manipulering).
+1. Webbplatsen har ett välformat, styrt och underhållet datalager och det finns en inställning för att skicka det direkt till Edge Network i stället för att använda JavaScript-manipulering för att konvertera det till XDM på sidan (antingen via taggar eller via manuell manipulering av JavaScript).
 2. Ett annat taggsystem än Taggar distribueras på webbplatsen.
 
 ## Skicka ett befintligt datalager till Edge Network via WebSDK {#send-datalayer-via-websdk}
 
-Det befintliga datalagret måste skickas med [`data`](/help/web-sdk/commands/sendevent/data.md) objekt inuti `sendEvent` -kommando.
+Det befintliga datalagret måste skickas med objektet [`data`](/help/web-sdk/commands/sendevent/data.md) i kommandot `sendEvent`.
 
-Om du använder taggar måste du använda **[!UICONTROL Data]** fält för **[!UICONTROL Send Event]** åtgärdstyp, enligt beskrivningen i [Dokumentation för SDK-taggtillägg](/help/tags/extensions/client/web-sdk/action-types.md).
+Om du använder taggar måste du använda fältet **[!UICONTROL Data]** för åtgärdstypen **[!UICONTROL Send Event]** enligt beskrivningen i [dokumentationen för Web SDK-taggtillägget](/help/tags/extensions/client/web-sdk/action-types.md).
 
 Resten av guiden fokuserar på hur datalagret ska mappas till XDM-standarder när det har skickats av WebSDK.
 
@@ -40,11 +40,11 @@ Resten av guiden fokuserar på hur datalagret ska mappas till XDM-standarder nä
 >
 >Mer utförlig vägledning om alla funktioner för dataförberedelser, inklusive omformningsfunktioner för beräknade fält, finns i följande dokumentation:
 >
->* [Översikt över datapreflight](../data-prep/home.md)
->* [Funktioner för datapersonmappning](../data-prep/functions.md)
+>* [Översikt över dataprep](../data-prep/home.md)
+>* [Funktioner för förprogrammering av data](../data-prep/functions.md)
 >* [Hantera dataformat med Data Prep](../data-prep/data-handling.md)
 
-Den här handboken beskriver hur du mappar data i användargränssnittet. Om du vill följa med i stegen börjar du med att skapa en datastream upp till (och inkludera) [grundläggande konfigurationssteg](./overview.md#create).
+Den här handboken beskriver hur du mappar data i användargränssnittet. Om du vill följa med i stegen börjar du med att skapa ett datastream upp till (och inkluderar) det [grundläggande konfigurationssteget](./overview.md#create).
 
 En snabb demonstration av datainsamlingsprocessen finns i följande video:
 
@@ -52,11 +52,11 @@ En snabb demonstration av datainsamlingsprocessen finns i följande video:
 
 ## [!UICONTROL Select data] {#select-data}
 
-Välj **[!UICONTROL Save and Add Mapping]** när du har slutfört den grundläggande konfigurationen för ett datastream, och **[!UICONTROL Select data]** visas. Härifrån måste du ange ett exempel på ett JSON-objekt som representerar strukturen för de data som du planerar att skicka till Platform.
+Välj **[!UICONTROL Save and Add Mapping]** när du har slutfört den grundläggande konfigurationen för ett datastream och steget **[!UICONTROL Select data]** visas. Härifrån måste du ange ett exempel på ett JSON-objekt som representerar strukturen för de data som du planerar att skicka till Platform.
 
-Om du vill hämta egenskaper direkt från datalagret måste JSON-objektet ha en enda rotegenskap `data`. Underegenskaperna för `data` objektet ska sedan konstrueras på ett sätt som mappar till datalagrets egenskaper som du vill hämta. Markera avsnittet nedan om du vill visa ett exempel på ett korrekt formaterat JSON-objekt med ett `data` rot.
+Om du vill hämta egenskaper direkt från datalagret måste JSON-objektet ha en enda rotegenskap, `data`. Underegenskaperna för objektet `data` ska sedan konstrueras på ett sätt som mappar till de datalageregenskaper som du vill hämta. Markera avsnittet nedan om du vill visa ett exempel på ett korrekt formaterat JSON-objekt med en `data`-rot.
 
-+++Exempel på JSON-fil med `data` root
++++Exempel på JSON-fil med `data` rot
 
 ```json
 {
@@ -119,9 +119,9 @@ Om du vill hämta egenskaper direkt från datalagret måste JSON-objektet ha en 
 
 +++
 
-Om du vill hämta egenskaper från ett XDM-objektdataelement gäller samma regler för JSON-objektet, men rotegenskapen måste anges som `xdm` i stället. Markera avsnittet nedan om du vill visa ett exempel på ett korrekt formaterat JSON-objekt med ett `xdm` rot.
+Om du vill hämta egenskaper från ett XDM-objektdataelement gäller samma regler för JSON-objektet, men rotegenskapen måste anges som `xdm` i stället. Markera avsnittet nedan om du vill visa ett exempel på ett korrekt formaterat JSON-objekt med en `xdm`-rot.
 
-+++Exempel på JSON-fil med `xdm` root
++++Exempel på JSON-fil med `xdm` rot
 
 ```json
 {
@@ -152,7 +152,7 @@ Om du vill hämta egenskaper från ett XDM-objektdataelement gäller samma regle
 
 +++
 
-Du kan välja att överföra objektet som en fil eller klistra in raw-objektet i den angivna textrutan i stället. Om JSON är giltig visas ett förhandsgranskningsschema i den högra panelen. Välj **[!UICONTROL Next]** för att fortsätta.
+Du kan välja att överföra objektet som en fil eller klistra in raw-objektet i den angivna textrutan i stället. Om JSON är giltig visas ett förhandsgranskningsschema i den högra panelen. Välj **[!UICONTROL Next]** om du vill fortsätta.
 
 ![JSON-exempel på förväntade inkommande data.](assets/data-prep/select-data.png)
 
@@ -162,9 +162,9 @@ Du kan välja att överföra objektet som en fil eller klistra in raw-objektet i
 
 ## [!UICONTROL Mapping]
 
-The **[!UICONTROL Mapping]** visas så att du kan mappa fälten i källdata till målhändelseschemats fält i Platform. Här kan du konfigurera mappningen på två sätt:
+Steg **[!UICONTROL Mapping]** visas, så att du kan mappa fälten i källdata till målhändelseschemat i Platform. Här kan du konfigurera mappningen på två sätt:
 
-* [Skapa mappningsregler](#create-mapping) för denna datastream genom en manuell process.
+* [Skapa mappningsregler](#create-mapping) för den här datastream via en manuell process.
 * [Importera mappningsregler](#import-mapping) från en befintlig datastream.
 
 ### Skapa mappningsregler {#create-mapping}
@@ -173,15 +173,15 @@ Om du vill skapa en mappningsregel väljer du **[!UICONTROL Add new mapping]**.
 
 ![Lägger till en ny mappning.](assets/data-prep/add-new-mapping.png)
 
-Välj källikon (![Källikon](assets/data-prep/source-icon.png)) och i den dialogruta som visas väljer du det källfält som du vill mappa på den angivna arbetsytan. När du har valt ett fält använder du **[!UICONTROL Select]** för att fortsätta
+Markera källikonen (![Source-ikon](assets/data-prep/source-icon.png)) och markera det källfält som du vill mappa på den angivna arbetsytan i dialogrutan som visas. När du har valt ett fält använder du knappen **[!UICONTROL Select]** för att fortsätta.
 
-![Markera fältet som ska mappas i källschemat.](assets/data-prep/source-mapping.png)
+![Markerar fältet som ska mappas i källschemat.](assets/data-prep/source-mapping.png)
 
 Välj sedan schemaikonen (![Schemaikon](assets/data-prep/schema-icon.png)) för att öppna en liknande dialogruta för målhändelseschemat. Välj det fält som du vill mappa data till innan du bekräftar med **[!UICONTROL Select]**.
 
-![Markera fältet som ska mappas i målschemat.](assets/data-prep/target-mapping.png)
+![Markerar fältet som ska mappas i målschemat.](assets/data-prep/target-mapping.png)
 
-Mappningssidan visas igen med den ifyllda fältmappningen. The **[!UICONTROL Mapping progress]** avsnittsuppdateringar för att återspegla det totala antalet fält som har mappats.
+Mappningssidan visas igen med den ifyllda fältmappningen. Avsnittet **[!UICONTROL Mapping progress]** uppdateras för att återspegla det totala antalet fält som har mappats.
 
 ![Fältet har mappats med förloppet speglat.](assets/data-prep/field-mapped.png)
 
@@ -199,13 +199,13 @@ Om du tidigare har skapat en datastream kan du återanvända dess konfigurerade 
 >
 >Om du importerar mappningsregler från en annan datastream skrivs eventuella fältmappningar som du har lagt till före importen över.
 
-Börja genom att välja **[!UICONTROL Import Mapping]**.
+Välj **[!UICONTROL Import Mapping]** om du vill starta.
 
 ![Knappen Importera mappning markeras.](assets/data-prep/import-mapping-button.png)
 
-I den dialogruta som visas markerar du datastream vars mappningsregler du vill importera. När du har valt datastream väljer du **[!UICONTROL Preview]**.
+I den dialogruta som visas markerar du datastream vars mappningsregler du vill importera. Välj **[!UICONTROL Preview]** när du har valt datastream.
 
-![Välja en befintlig datastream.](assets/data-prep/select-mapping-rules.png)
+![Väljer en befintlig datastream.](assets/data-prep/select-mapping-rules.png)
 
 >[!NOTE]
 >
@@ -217,16 +217,16 @@ På nästa skärm visas en förhandsvisning av de sparade mappningsreglerna för
 
 >[!NOTE]
 >
->Om några källfält i de importerade mappningsreglerna inte ingår i JSON-exempeldata som du använder [tidigare](#select-data)kommer dessa fältkopplingar inte att inkluderas i importen.
+>Om något av källfälten i de importerade mappningsreglerna inte ingår i JSON-exempeldata som du [angav tidigare](#select-data) inkluderas inte dessa fältmappningar i importen.
 
 ### Slutför mappningen
 
-Följ stegen ovan för att mappa resten av fälten till målschemat. Även om du inte behöver mappa alla tillgängliga källfält, måste alla fält i målschemat som har angetts som obligatoriska mappas för att slutföra det här steget. The **[!UICONTROL Required fields]** anger hur många obligatoriska fält som ännu inte har mappats i den aktuella konfigurationen.
+Följ stegen ovan för att mappa resten av fälten till målschemat. Även om du inte behöver mappa alla tillgängliga källfält, måste alla fält i målschemat som har angetts som obligatoriska mappas för att slutföra det här steget. Räknaren **[!UICONTROL Required fields]** anger hur många obligatoriska fält som ännu inte har mappats i den aktuella konfigurationen.
 
 När det obligatoriska fältantalet har nått noll och du är nöjd med mappningen väljer du **[!UICONTROL Save]** för att slutföra ändringarna.
 
-![Mappningen är klar](assets/data-prep/mapping-complete.png)
+![Mappningen har slutförts](assets/data-prep/mapping-complete.png)
 
 ## Nästa steg
 
-I den här guiden beskrivs hur du mappar data till XDM när du konfigurerar ett datastream i användargränssnittet. Om du följer den allmänna datastreams-självstudiekursen kan du nu gå tillbaka till steget [visa information om dataström](./overview.md).
+I den här guiden beskrivs hur du mappar data till XDM när du konfigurerar ett datastream i användargränssnittet. Om du följde den allmänna datastreams-självstudiekursen kan du nu gå tillbaka till steget [Visa datastream-information](./overview.md).

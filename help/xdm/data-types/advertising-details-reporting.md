@@ -1,16 +1,17 @@
 ---
-title: Typ av rapportering av annonsinformation
+title: Datatypen Advertising Details Reporting
 description: Läs mer om datatypen Advertising Details Reporting Experience Data Model (XDM).
-source-git-commit: a604dc8b541784ace8aedef42030e5bd8b646c28
+exl-id: fbca5b2a-a9bd-4f76-a494-d682cb2cbfbc
+source-git-commit: 799a384556b43bc844782d8b67416c7eea77fbf0
 workflow-type: tm+mt
 source-wordcount: '294'
 ht-degree: 0%
 
 ---
 
-# [!UICONTROL Advertising Details] Typ av rapportdata
+# Datatypen [!UICONTROL Advertising Details] för rapportering
 
-[!UICONTROL Advertising Details] Rapportering är en XDM-datatyp (Standard Experience Data Model) som samlar in viktiga attribut relaterade till annonser. Det innehåller information som annons-ID, annons- och kampanj-ID:n, längd, position i en sekvens, information om spelaren som återger annonsen och så vidare. Ni kan använda den här datatypen för att spåra och analysera olika aspekter av annonsresultat och engagemang, och ge insikter om hur målgrupperna interagerar med och svarar på olika annonser.
+[!UICONTROL Advertising Details]-rapportering är en XDM-datatyp (Standard Experience Data Model) som samlar in nyckelattribut relaterade till annonser. Det innehåller information som annons-ID, annons- och kampanj-ID:n, längd, position i en sekvens, information om spelaren som återger annonsen och så vidare. Ni kan använda den här datatypen för att spåra och analysera olika aspekter av annonsresultat och engagemang, och ge insikter om hur målgrupperna interagerar med och svarar på olika annonser.
 
 +++Välj om du vill visa ett diagram över datatypen Advertising Details Reporting.
 ![Ett diagram över datatypen Advertising Details Reporting.](../images/data-types/advertising-details-information.png)
@@ -35,4 +36,4 @@ ht-degree: 0%
 
 {style="table-layout:auto"}
 
-Mer information om fältgruppen finns i [publik XDM-databas](https://github.com/adobe/xdm/blob/master/components/datatypes/advertisingdetails.schema.json)
+Mer information om fältgruppen finns i [den offentliga XDM-databasen](https://github.com/adobe/xdm/blob/master/components/datatypes/advertisingdetails.schema.json)

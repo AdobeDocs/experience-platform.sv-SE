@@ -13,9 +13,9 @@ ht-degree: 0%
 
 >[!NOTE]
 >
->Adobe Experience Platform Launch har omklassificerats som en serie datainsamlingstekniker i Adobe Experience Platform. Som ett resultat av detta har flera terminologiska förändringar införts i produktdokumentationen. Se följande [dokument](../../term-updates.md) för en konsoliderad hänvisning till terminologiska förändringar.
+>Adobe Experience Platform Launch har omklassificerats som en serie datainsamlingstekniker i Adobe Experience Platform. Som ett resultat av detta har flera terminologiska förändringar införts i produktdokumentationen. I följande [dokument](../../term-updates.md) finns en konsoliderad referens till de ändrade terminologin.
 
 Följande dokument innehåller information som är användbar för tagghanterare i Adobe Experience Platform:
 
 * [Användarbehörigheter](user-permissions.md): Lär dig mer om användarhanteringsprocessen och de tillgängliga åtkomsträttigheterna för taggar.
-* [Företag och fastigheter](companies-and-properties.md): En egenskap, eller webbegenskap, är en samling regler, dataelement, konfigurerade tillägg, miljöer och bibliotek.
+* [Företag och egenskaper](companies-and-properties.md): En egenskap, eller webbegenskap, är en samling regler, dataelement, konfigurerade tillägg, miljöer och bibliotek.

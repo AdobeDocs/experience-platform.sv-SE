@@ -6,7 +6,7 @@ description: Det här dokumentet innehåller svar på vanliga frågor om vilka s
 exl-id: ec553e53-664b-4e18-abb1-4e4063fdd2c9
 source-git-commit: b66a50e40aaac8df312a2c9a977fb8d4f1fb0c80
 workflow-type: tm+mt
-source-wordcount: '1618'
+source-wordcount: '1631'
 ht-degree: 0%
 
 ---
@@ -17,7 +17,7 @@ Det här dokumentet innehåller svar på vanliga frågor om vilka sekretessregle
 
 >[!NOTE]
 >
->Definitioner för de olika termer som används i det här dokumentet finns i [sekretessreglerande terminologi](terminology.md) guide.
+>Definitioner för de olika termerna som används i det här dokumentet finns i handboken [Privata regelterminologi](terminology.md).
 
 ## Allmänna frågor
 
@@ -25,7 +25,7 @@ Följande frågor rör alla sekretessbestämmelser som stöds av Experience Clou
 
 ### Vilka påverkar de sekretessbestämmelser som stöds?
 
-The [sekretessbestämmelser som stöds av Experience Cloud](./overview.md) gäller för alla organisationer som lagrar och behandlar personuppgifter för medborgare inom de olika jurisdiktionerna, oavsett var organisationen befinner sig.
+De [sekretessregler som stöds av Experience Cloud](./overview.md) gäller alla organisationer som lagrar och bearbetar personuppgifter för medborgare inom respektive jurisdiktion, oavsett var organisationen befinner sig.
 
 ### Vad är personuppgifter?
 
@@ -51,15 +51,15 @@ Personlig information kan också omfatta information om internetaktiviteter elle
 
 ### Vad är skillnaden mellan en personuppgiftsansvarig och en personuppgiftsbiträde?
 
-A **datastyrenhet** är den enhet som fastställer syften, villkor och sätt att behandla personuppgifter, medan **dataprocessor** är en enhet som behandlar personuppgifter för den personuppgiftsansvariges räkning.
+En **datakontrollant** är den enhet som bestämmer syften, villkor och sätt att bearbeta personuppgifter, medan **dataprocessorn** är en enhet som bearbetar personuppgifter för den personuppgiftsansvariges räkning.
 
-A **datastyrenhet** är den person eller organisation som har befogenhet och ansvar att fatta beslut om insamling, användning eller utlämnande av personuppgifter. A **dataprocessor** är den person eller organisation som är verksam i samband med insamling, användning eller utlämnande av personuppgifter och den registeransvariges riktning.
+En **personuppgiftsansvarig** är den person eller organisation som har behörighet och ansvar att fatta beslut om insamling, användning eller utlämnande av personuppgifter. En **personuppgiftsbiträde** är den person eller organisation som arbetar med insamling, användning eller utlämnande av personuppgifter och den personuppgiftsansvariges riktning.
 
 ### Vad är skillnaden mellan uttryckligt och otvetydigt samtycke från registrerade?
 
-**Explicit samtycke** hänvisar till en standard för samtycke som inbegriper en specifik, informerad och otvetydig indikation om den registrerades önskemål i oral eller skriftlig form. Enkelt uttryckt måste den registrerade bokstavligen och uttryckligen säga&quot;Jag godkänner&quot; eller&quot;Jag godkänner&quot; för att samtycke ska kunna anses vara explicit. Dessutom måste det vara lika enkelt att dra tillbaka sitt samtycke som att ge det.
+**Explicit samtycke** hänvisar till en standard för samtycke som innefattar en specifik, informerad och otvetydig indikation på den registrerades önskemål i oral eller skriftlig form. Enkelt uttryckt måste den registrerade bokstavligen och uttryckligen säga&quot;Jag godkänner&quot; eller&quot;Jag godkänner&quot; för att samtycke ska kunna anses vara explicit. Dessutom måste det vara lika enkelt att dra tillbaka sitt samtycke som att ge det.
 
-**Tvetydigt (underförstått) samtycke** avser samtycke som inte uttryckligen gavs av den registrerade, men som ändå är entydigt till sin natur. Exempel: under registreringsprocessen för ett företags webbplats får man ett meddelande om att den registrerade genom att ange en e-postadress samtycker till att ta emot e-post om specialerbjudanden. Om den registrerade läser meddelandet är den positiva åtgärden att ange sin e-postadress tillräckligt för att betraktas som otvetydigt samtycke.
+**Tvetydigt (underförstått) samtycke** refererar till samtycke som inte uttryckligen har getts av den registrerade, men som ändå är entydigt. Exempel: under registreringsprocessen för ett företags webbplats får man ett meddelande om att den registrerade genom att ange en e-postadress samtycker till att ta emot e-post om specialerbjudanden. Om den registrerade läser meddelandet är den positiva åtgärden att ange sin e-postadress tillräckligt för att betraktas som otvetydigt samtycke.
 
 För många förordningar som GDPR krävs explicit samtycke för att behandla känsliga personuppgifter, där det inte räcker med&quot;deltagande&quot;. För icke-känsliga uppgifter är dock entydigt (underförstått) samtycke godtagbart.
 
@@ -107,7 +107,7 @@ Om din organisations dataåtgärder faller under jurisdiktionerna för GDPR, LGP
 
 ### Hur kan jag stödja konsumentförfrågningar om jag upprätthåller data som omfattas av sekretesslagstiftningen?
 
-När ni har vidtagit de åtgärder som krävs för att autentisera konsumenter som omfattas av lämplig juridisk behörighet, kan ni med Adobe Experience Platform Privacy Service skicka in förfrågningar om konsumentintegritet till kompatibla Experience Cloud-program. Se [[!DNL Privacy Service] översikt](../home.md) för mer information. Mer information om hur dina Experience Cloud-program kan uppfylla sekretesskrav finns i handboken om [Privacy Service och Experience Cloud](../experience-cloud-apps.md).
+När ni har vidtagit de åtgärder som krävs för att autentisera konsumenter som omfattas av lämplig juridisk behörighet, kan ni med Adobe Experience Platform Privacy Service skicka in förfrågningar om konsumentintegritet till kompatibla Experience Cloud-program. Mer information finns i [[!DNL Privacy Service] översikten](../home.md). Mer information om hur dina Experience Cloud-program kan hantera sekretessförfrågningar finns i handboken om [program för Privacy Service och Experience Cloud](../experience-cloud-apps.md).
 
 >[!NOTE]
 >
@@ -121,8 +121,8 @@ Följande frågor gäller specifikt CCPA.
 
 Enligt CCPA gäller följande roller Adobe och dess kunder:
 
-* Kunder i Adobe (den part som begär insamling och användning av personuppgifter från personer bosatta i Kalifornien) skulle anses vara en **Företag**.
-* Adobe, i sin roll att tillhandahålla tjänsten, skulle anses vara **Tjänsteleverantör**.
+* Adobe-kunder (den part som begär insamling och användning av personuppgifter från personer bosatta i Kalifornien) betraktas som **företag**.
+* Adobe, som tillhandahåller tjänsten, betraktas som en **tjänsteleverantör**.
 
 Som tjänsteleverantör samlar Adobe in och behandlar personuppgifter för företagets räkning och är enligt avtal bundet att använda dessa uppgifter endast för de särskilda ändamål som anges i avtalet.
 
@@ -142,7 +142,7 @@ Följande frågor gäller specifikt den allmänna dataskyddsförordningen.
 
 ### Vad är skillnaden mellan en förordning och ett direktiv?
 
-A **reglering** är en bindande lagstiftningsakt och måste tillämpas i sin helhet i hela EU. A **direktiv** är en lagstiftningsakt som fastställer ett mål som alla EU-länder måste uppnå, men det är de enskilda länderna som bestämmer hur.
+En **förordning** är en bindande lagstiftningsakt och måste tillämpas i sin helhet i hela EU. Ett **direktiv** är en lagstiftningsakt som fastställer ett mål som alla EU-länder måste uppnå, men det är de enskilda länderna som bestämmer hur.
 
 Det är viktigt att notera att den allmänna dataskyddsförordningen är en förordning, i motsats till den tidigare lagstiftningen (dataskyddsdirektivet), som är ett direktiv.
 

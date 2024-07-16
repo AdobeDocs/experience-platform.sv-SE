@@ -14,15 +14,15 @@ ht-degree: 1%
 
 # Slutpunkt för sandlådetyper
 
-Du kan hämta en lista över sandlådetyper som stöds för din organisation genom att göra en GET-förfrågan till `/sandboxTypes` slutpunkt.
+Du kan hämta en lista över sandlådetyper som stöds för din organisation genom att göra en GET-förfrågan till slutpunkten `/sandboxTypes`.
 
 ## Komma igång
 
-API-slutpunkten som används i den här guiden är en del av [[!DNL Sandbox] API](https://www.adobe.io/experience-platform-apis/references/sandbox). Innan du fortsätter bör du granska [komma igång-guide](./getting-started.md) för länkar till relaterad dokumentation, en guide till hur du läser exempelanrop till API:er i det här dokumentet och viktig information om vilka huvuden som behövs för att kunna anropa ett Experience Platform-API.
+API-slutpunkten som används i den här guiden ingår i [[!DNL Sandbox] API](https://www.adobe.io/experience-platform-apis/references/sandbox). Innan du fortsätter bör du läsa [kom igång-guiden](./getting-started.md) för att få länkar till relaterad dokumentation, en guide till hur du läser exempelanropen för API i det här dokumentet och viktig information om vilka huvuden som krävs för att kunna anropa ett Experience Platform-API.
 
 ## Hämta en lista över sandlådetyper som stöds
 
-Du kan hämta en lista över sandlådetyper som stöds för din organisation genom att göra en GET-förfrågan till `/sandboxTypes` slutpunkt.
+Du kan hämta en lista över sandlådetyper som stöds för din organisation genom att göra en GET-förfrågan till slutpunkten `/sandboxTypes`.
 
 **API-format**
 

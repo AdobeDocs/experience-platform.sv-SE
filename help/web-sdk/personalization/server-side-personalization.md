@@ -1,6 +1,6 @@
 ---
 title: Personalisering på serversidan med Edge Network Server API
-description: I den här artikeln visas hur du kan använda Edge Network Server API för att distribuera anpassning på serversidan på dina webbegenskaper.
+description: I den här artikeln visas hur du kan använda Edge Network Server-API:t för att distribuera anpassning på serversidan på dina webbegenskaper.
 keywords: personalisering; server-API; edge network; server-side;
 source-git-commit: b6e084d2beed58339191b53d0f97b93943154f7c
 workflow-type: tm+mt
@@ -14,7 +14,7 @@ ht-degree: 1%
 
 ## Översikt {#overview}
 
-Personalisering på serversidan innebär att använda [API för Edge Network Server](../../server-api/overview.md) för att personalisera kundupplevelsen på era webbegenskaper.
+Personalisering på serversidan innebär att [Edge Network Server-API](../../server-api/overview.md) används för att anpassa kundupplevelsen på dina webbegenskaper.
 
 I det exempel som beskrivs i den här artikeln hämtas personaliseringsinnehåll på serversidan med Server-API:t. Sedan återges HTML på serversidan baserat på det hämtade personaliseringsinnehållet.
 
@@ -22,7 +22,7 @@ Tabellen nedan visar ett exempel på personaliserat och icke-personaliserat inne
 
 | Exempelsida utan personalisering | Exempelsida med personalisering |
 |---|---|
-| ![Exempel på webbsida utan personalisering](assets/plain.png) | ![Exempel på webbsida med personalisering](assets/personalized.png) |
+| ![Exempelwebbsida utan personalisering](assets/plain.png) | ![Exempel på webbsida med personalisering](assets/personalized.png) |
 
 ## Överväganden {#considerations}
 
@@ -37,12 +37,12 @@ Cookies används för att bevara användaridentitet och klusterinformation.  Nä
 
 ### Begär placering {#request-placement}
 
-Personaliseringsbegäranden krävs för att få förslag och skicka ett visningsmeddelande. När du använder en implementering på serversidan skickar programservern dessa begäranden till Edge Network Server API.
+Personalization-begäranden krävs för att få förslag och skicka ett visningsmeddelande. När du använder en implementering på serversidan skickar programservern dessa begäranden till Edge Network Server-API:t.
 
 | Begäran | Skapad av |
 |---|---|
-| Interagera begäran om att hämta förslag | Programserver som anropar Edge Network Server API. |
-| Interagera begäran om att skicka visningsmeddelanden | Programserver som anropar Edge Network Server API. |
+| Interagera begäran om att hämta förslag | Programservern anropar Edge Network Server-API:t. |
+| Interagera begäran om att skicka visningsmeddelanden | Programservern anropar Edge Network Server-API:t. |
 
 ## Exempelprogram {#sample-app}
 
@@ -50,25 +50,25 @@ I processen som beskrivs nedan används ett exempelprogram som du kan använda s
 
 Du kan hämta det här exemplet och anpassa det efter dina egna behov. Du kan till exempel ändra miljövariabler så att exempelprogrammet hämtar in erbjudanden från din egen Experience Platform-konfiguration.
 
-Öppna `.env` på databasens rot och ändra variablerna enligt din konfiguration. Starta om exempelappen så är du redo att experimentera med ditt eget personaliseringsinnehåll.
+Om du vill göra det öppnar du filen `.env` i databasens rot och ändrar variablerna enligt din konfiguration. Starta om exempelappen så är du redo att experimentera med ditt eget personaliseringsinnehåll.
 
 ### Köra exemplet {#running-sample}
 
 Följ stegen nedan för att köra exempelprogrammet.
 
 1. Klona [den här databasen](https://github.com/adobe/alloy-samples) till din lokala dator.
-2. Öppna en terminal och navigera till `personalization-server-side` mapp.
+2. Öppna en terminal och navigera till mappen `personalization-server-side`.
 3. Kör `npm install`.
 4. Kör `npm start`.
-5. Öppna webbläsaren och navigera till `http://localhost`.
+5. Öppna webbläsaren och gå till `http://localhost`.
 
 ## Processöversikt {#process}
 
 I det här avsnittet beskrivs de steg som används för att hämta personaliseringsinnehåll.
 
 1. [Express](https://expressjs.com/) används för en resurssnål implementering på serversidan. Detta hanterar grundläggande serverförfrågningar och routning.
-2. Webbläsaren begär webbsidan. Alla cookies som tidigare lagrats av webbläsaren, prefixerade med `kndctr_`, ingår.
-3. När sidan begärs från programservern skickas en händelse till [slutpunkt för interaktiv datainsamling](../../../server-api/interactive-data-collection.md) för att hämta personaliseringsinnehåll. Exempelappen använder hjälpmetoder för att förenkla byggandet och skicka begäranden till API (se [aepEdgeClient.js](https://github.com/adobe/alloy-samples/blob/main/common/aepEdgeClient.js)). The `POST` begäran innehåller `event` och `query`. Cookies från föregående steg, om sådana finns, ingår i `meta>state>entries` array.
+2. Webbläsaren begär webbsidan. Alla cookies som tidigare lagrats av webbläsaren, med prefix för `kndctr_`, inkluderas.
+3. När sidan begärs från programservern skickas en händelse till [slutpunkten för interaktiv datainsamling](../../../server-api/interactive-data-collection.md) för att hämta personaliseringsinnehåll. Exempelappen använder hjälpmetoder för att förenkla byggandet och skicka begäranden till API:t (se [aepEdgeClient.js](https://github.com/adobe/alloy-samples/blob/main/common/aepEdgeClient.js)). `POST`-begäran innehåller en `event` och en `query`. Cookies från föregående steg, om de är tillgängliga, ingår i `meta>state>entries`-arrayen.
 
    ```js
    fetch(
@@ -196,5 +196,5 @@ I det här avsnittet beskrivs de steg som används för att hämta personaliseri
    }
    ```
 
-6. [!DNL Visual Experience Composer (VEC)] Erbjudandena ignoreras eftersom de bara kan återges via Web SDK.
+6. [!DNL Visual Experience Composer (VEC)] erbjudanden ignoreras eftersom de bara kan återges via Web SDK.
 7. När HTML-svaret returneras ställs identitets- och klustercookies in på programserverns svar.

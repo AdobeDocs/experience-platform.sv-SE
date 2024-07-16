@@ -9,34 +9,34 @@ ht-degree: 0%
 
 ---
 
-# Anslut [!DNL Data Landing Zone] till plattform med användargränssnittet
+# Anslut [!DNL Data Landing Zone] till plattformen med användargränssnittet
 
 >[!IMPORTANT]
 >
->Den här sidan är specifik för [!DNL Data Landing Zone] *källa* i Experience Platform. Information om hur du ansluter till [!DNL Data Landing Zone] *mål* koppling, se [[!DNL Data Landing Zone] måldokumentationssida](/help/destinations/catalog/cloud-storage/data-landing-zone.md).
+>Den här sidan är specifik för [!DNL Data Landing Zone] *source*-kopplingen i Experience Platform. Information om hur du ansluter till [!DNL Data Landing Zone] *destination*-kopplingen finns på [[!DNL Data Landing Zone] dokumentationssidan för målet](/help/destinations/catalog/cloud-storage/data-landing-zone.md).
 
-[!DNL Data Landing Zone] är en säker, molnbaserad fillagringsfunktion för att överföra filer till Adobe Experience Platform. Data tas automatiskt bort från [!DNL Data Landing Zone] efter sju dagar.
+[!DNL Data Landing Zone] är en säker, molnbaserad fillagringsfunktion som hämtar filer till Adobe Experience Platform. Data tas automatiskt bort från [!DNL Data Landing Zone] efter sju dagar.
 
-Den här självstudiekursen innehåller steg för att skapa en [!DNL Data Landing Zone] källanslutning med användargränssnittet för plattformen.
+I den här självstudiekursen beskrivs hur du skapar en [!DNL Data Landing Zone]-källanslutning med hjälp av användargränssnittet för plattformen.
 
 ## Komma igång
 
 Den här självstudiekursen kräver en fungerande förståelse av följande komponenter i Adobe Experience Platform:
 
-* [Källor](../../../../home.md): Experience Platform tillåter att data kan hämtas från olika källor samtidigt som du kan strukturera, märka och förbättra inkommande data med hjälp av plattformstjänster.
-* [Sandlådor](../../../../../sandboxes/home.md): Experience Platform tillhandahåller virtuella sandlådor som partitionerar en enda plattformsinstans i separata virtuella miljöer för att utveckla och utveckla program för digitala upplevelser.
+* [Källor](../../../../home.md): Experience Platform tillåter data att hämtas från olika källor samtidigt som du kan strukturera, etikettera och förbättra inkommande data med hjälp av plattformstjänster.
+* [Sandlådor](../../../../../sandboxes/home.md): Experience Platform tillhandahåller virtuella sandlådor som partitionerar en enda plattformsinstans till separata virtuella miljöer för att utveckla och utveckla program för digitala upplevelser.
 
-## Hämta filer från [!DNL Data Landing Zone] till plattform
+## Hämta filer från [!DNL Data Landing Zone] till plattformen
 
-Välj **[!UICONTROL Sources]** från vänster navigering för att komma åt [!UICONTROL Sources] arbetsyta. The [!UICONTROL Catalog] I visas en mängd olika källor som du kan skapa ett konto med.
+I plattformsgränssnittet väljer du **[!UICONTROL Sources]** i den vänstra navigeringen för att komma åt arbetsytan i [!UICONTROL Sources]. På skärmen [!UICONTROL Catalog] visas en mängd olika källor som du kan skapa ett konto med.
 
 Du kan välja lämplig kategori i katalogen till vänster på skärmen. Du kan också använda sökfältet till att hitta den källa du vill arbeta med.
 
-Under [!UICONTROL cloud storage] kategori, välj [!DNL Data Landing Zone] och sedan **[!UICONTROL Add data]**.
+Under kategorin [!UICONTROL cloud storage] väljer du [!DNL Data Landing Zone] och sedan **[!UICONTROL Add data]**.
 
 ![Källkatalogen med Data Landing Zone vald.](../../../../images/tutorials/create/dlz/catalog.png)
 
-The [!UICONTROL Add data] visas så att du får ett gränssnitt där du kan välja och förhandsgranska de data du vill hämta till plattformen.
+[!UICONTROL Add data]-steget visas med ett gränssnitt där du kan välja och förhandsgranska de data du vill hämta till plattformen.
 
 * Den vänstra delen av gränssnittet är en mappläsare som visar en lista över filer från behållaren som du sedan kan hämta till plattformen.
 * Med den högra delen av gränssnittet kan du förhandsgranska upp till 100 rader data från en kompatibel fil.
@@ -55,41 +55,41 @@ Om du vill förhandsgranska en annan fil markerar du förhandsvisningsikonen bre
 
 När du är klar väljer du **[!UICONTROL Next]**.
 
-![Förhandsgranskningssidan för data på källarbetsytan.](../../../../images/tutorials/create/dlz/file-detection.png)
+![Förhandsgranskningssidan för källans arbetsyta.](../../../../images/tutorials/create/dlz/file-detection.png)
 
-En detaljerad steg-för-steg-guide om hur du skapar ett dataflöde för en molnlagringskälla finns i självstudiekursen om [skapa ett molnlagringsdataflöde för att överföra data till plattformen](../../dataflow/batch/cloud-storage.md).
+En detaljerad steg-för-steg-guide om hur du skapar ett dataflöde för en molnlagringskälla finns i självstudiekursen om att [skapa ett molnlagringsdataflöde för att hämta data till plattformen](../../dataflow/batch/cloud-storage.md).
 
-## Hämta din [!DNL Data Landing Zone] autentiseringsuppgifter
+## Hämta dina [!DNL Data Landing Zone]-autentiseringsuppgifter
 
-[!DNL Data Landing Zone] är en källa som medföljer din Adobe Experience Platform Sources-licens. [!DNL Data Landing Zone] använder en SAS-URI och SAS-tokenbaserad autentisering. Du kan hämta dina autentiseringsuppgifter från [!UICONTROL Sources catalog] sida.
+[!DNL Data Landing Zone] är en källa som medföljer din Adobe Experience Platform Sources-licens. [!DNL Data Landing Zone] använder en SAS-URI och SAS-tokenbaserad autentisering. Du kan hämta autentiseringsuppgifter från sidan [!UICONTROL Sources catalog].
 
-Om du vill hämta dina inloggningsuppgifter väljer du **[!UICONTROL Data Landing Zone]** och sedan kopiera dina inloggningsuppgifter från den högra listen som visas.
+Om du vill hämta dina inloggningsuppgifter markerar du **[!UICONTROL Data Landing Zone]**-kortet och kopierar sedan dina inloggningsuppgifter från den högra listen som visas.
 
 ![En lista med visningsalternativ för Data Landing Zone.](../../../../images/tutorials/create/dlz/view-credentials.png)
 
 En pover visas med ditt behållarnamn, SAS-token, lagringskontonamn, SAS-URI och förfallodatum.
 
-## Uppdatera dina [!DNL Data Landing Zone] autentiseringsuppgifter
+## Uppdatera dina [!DNL Data Landing Zone]-autentiseringsuppgifter
 
-Dina [!DNL Data Landing Zone] inloggningsuppgifterna är inställda på att automatiskt upphöra att gälla efter 90 dagar och du måste använda nya autentiseringsuppgifter för att återansluta till [!DNL Data Landing Zone] efter förfallodatum. Dina dataflöden i Experience Platform påverkas inte av att inloggningsuppgifterna har upphört att gälla och du kan fortfarande arbeta med nya och befintliga dataflöden med dina nya inloggningsuppgifter.
+Dina [!DNL Data Landing Zone]-autentiseringsuppgifter har angetts till att automatiskt upphöra att gälla efter 90 dagar och du måste använda nya autentiseringsuppgifter för att återansluta till [!DNL Data Landing Zone] efter att de har upphört att gälla. Dina dataflöden i Experience Platform påverkas inte av att inloggningsuppgifterna har upphört att gälla och du kan fortfarande arbeta med nya och befintliga dataflöden med dina nya inloggningsuppgifter.
 
-Det finns två sätt att uppdatera [!DNL Data Landing Zone] autentiseringsuppgifter:
+Det finns två sätt att uppdatera autentiseringsuppgifterna för [!DNL Data Landing Zone]:
 
 >[!BEGINTABS]
 
 >[!TAB Använd källkortet]
 
-Om du vill uppdatera dina inloggningsuppgifter från källkatalogsidan markerar du ellipserna (**`...`**) i [!DNL Data Landing Zone] och välj **[!UICONTROL Refresh credentials]**.
+Om du vill uppdatera dina autentiseringsuppgifter från källkatalogsidan markerar du ellipserna (**`...`**) på [!DNL Data Landing Zone]-kortet och väljer sedan **[!UICONTROL Refresh credentials]**.
 
 ![Uppdatera autentiseringsuppgifter med källkortet.](../../../../images/tutorials/create/dlz/refresh-with-card.png)
 
-Ett popup-fönster visas där du uppmanas bekräfta åtgärden innan du kan fortsätta. När du är klar väljer du **[!UICONTROL Refresh credentials]**.
+Ett popup-fönster visas där du uppmanas bekräfta åtgärden innan du kan fortsätta. Välj **[!UICONTROL Refresh credentials]** när du är klar.
 
 ![Bekräftelsefönstret för uppdatering av autentiseringsuppgifter.](../../../../images/tutorials/create/dlz/confirm.png)
 
 >[!TAB Använd rätt spår]
 
-Om du vill uppdatera dina inloggningsuppgifter med rätt spår väljer du **[!UICONTROL Data Landing Zone]** källkort och välj **[!UICONTROL More actions]**. Nästa, välj **[!UICONTROL Refresh Credentials]** och sedan bekräfta med hjälp av popup-fönstret som visas.
+Om du vill uppdatera dina autentiseringsuppgifter med rätt spår väljer du **[!UICONTROL Data Landing Zone]**-källkortet och sedan **[!UICONTROL More actions]**. Välj sedan **[!UICONTROL Refresh Credentials]** och bekräfta med popup-fönstret som visas.
 
 ![Uppdatera autentiseringsuppgifter med rätt spår.](../../../../images/tutorials/create/dlz/refresh-with-right-rail.png)
 
@@ -97,4 +97,4 @@ Om du vill uppdatera dina inloggningsuppgifter med rätt spår väljer du **[!UI
 
 ## Nästa steg
 
-Genom att följa den här självstudiekursen har du använt [!DNL Data Landing Zone] och lärde sig att hämta och uppdatera dina inloggningsuppgifter. Du kan nu gå vidare till nästa självstudiekurs på [skapa ett dataflöde för att hämta data från en molnlagring till plattformen](../../dataflow/batch/cloud-storage.md).
+Genom att följa den här självstudiekursen har du öppnat din [!DNL Data Landing Zone]-behållare och lärt dig att hämta och uppdatera dina autentiseringsuppgifter. Du kan nu gå vidare till nästa självstudiekurs om att [skapa ett dataflöde för att hämta data från ett molnlagringsutrymme till plattformen](../../dataflow/batch/cloud-storage.md).

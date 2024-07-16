@@ -12,8 +12,8 @@ ht-degree: 2%
 
 # Felsökning
 
-Med API:t för Adobe Experience Platform Edge Network Server kan du samla in felsökningsinformation från tjänster när dina händelser bearbetas via Edge Network-datainsamlingsflödet.
+Med API:t för Adobe Experience Platform Edge Network Server kan du hämta felsökningsinformation från tjänster när dina händelser bearbetas via Edge Network datainsamlingsflödet.
 
-Samma mekanism som används av [Felsökning för Experience Platform](https://experienceleague.adobe.com/docs/debugger-learn/tutorials/experience-platform-debugger/introduction-to-the-experience-platform-debugger.html) gör att du kan felsöka API-baserade implementeringar.
+Samma mekanism som används av [Experience Platform Debugger](https://experienceleague.adobe.com/docs/debugger-learn/tutorials/experience-platform-debugger/introduction-to-the-experience-platform-debugger.html) gör att du kan felsöka API-baserade implementeringar.
 
-Använda [Säkerhet](../assurance/home.md)kan du skapa ett felsökningssessions-ID som du kan använda i Edge Network-begäranden för att spåra händelser.
+Med [Assurance](../assurance/home.md) kan du skapa ett felsökningssessions-ID som du kan använda i Edge Network-begäranden för att spåra händelser.

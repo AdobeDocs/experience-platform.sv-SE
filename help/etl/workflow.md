@@ -6,7 +6,7 @@ description: Olika extraherings-, omformnings- och inläsningsverktyg (ETL) kan 
 exl-id: 09de6c50-ad04-4d7c-99e6-33784fb0dd58
 source-git-commit: 1a7ba52b48460d77d0b7695aa0ab2d5be127d921
 workflow-type: tm+mt
-source-wordcount: '213'
+source-wordcount: '225'
 ht-degree: 0%
 
 ---
@@ -19,13 +19,13 @@ Olika extraherings-, omformnings- och inläsningsverktyg (ETL) kan ha olika form
 
 I följande diagram visas modeller av vanliga ETL-åtgärder och en allmän användarupplevelse baserad på standardinteraktioner. Dessa bilder kan enkelt anpassas för en specifik ETL-användarupplevelse.
 
-De åtgärder som visas nedan beskrivs i de steg som beskrivs i [ETL Integration Guide](home.md). Vissa steg hänvisar till specifika&quot;figurer&quot;, andra beskriver liknande åtgärder som arbetsflödet som visas här.
+Åtgärderna som visas nedan beskrivs i de steg som beskrivs i [ETL-integreringshandboken](home.md). Vissa steg hänvisar till specifika&quot;figurer&quot;, andra beskriver liknande åtgärder som arbetsflödet som visas här.
 
 ### Bild 1 - Konfigurera nya Adobe Experience Platform Connector:
 
 ![](images/image2.png)
 
-### Figur 2 - [!DNL Experience Platform] Koppling aktiverad:
+### Bild 2 - [!DNL Experience Platform] Anslutning aktiverad:
 
 ![](images/image3.png)
 
@@ -33,11 +33,11 @@ De åtgärder som visas nedan beskrivs i de steg som beskrivs i [ETL Integration
 
 ![](images/image4.png)
 
-### Figur 4 - Nytt omformningsgränssnitt, välja [!DNL Experience Platform] Anslutning:
+### Bild 4 - Nytt omformningsgränssnitt, välja [!DNL Experience Platform] anslutning:
 
 ![](images/image5.png)
 
-### Figur 5 - Sök efter källa [!DNL Experience Platform] Datauppsättningar:
+### Bild 5 - Söker efter [!DNL Experience Platform]-källdatauppsättningar:
 
 ![](images/image6.png)
 
@@ -57,7 +57,7 @@ De åtgärder som visas nedan beskrivs i de steg som beskrivs i [ETL Integration
 
 ![](images/image10.png)
 
-### Figur 10 - Definiera [!DNL Experience Data Model] (XDM) måldatauppsättning:
+### Bild 10 - Definierar [!DNL Experience Data Model] (XDM) måldatauppsättningen:
 
 ![](images/image11.png)
 

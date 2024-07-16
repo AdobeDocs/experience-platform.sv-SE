@@ -11,7 +11,7 @@ ht-degree: 0%
 
 # Mappa en CSV-fil till ett XDM-schema
 
-För att kunna importera CSV-data till [!DNL Adobe Experience Platform]måste data mappas till en [!DNL Experience Data Model] (XDM) schema. I följande självstudier beskrivs hur du mappar CSV-filer till XDM-scheman med hjälp av [!DNL Platform] användargränssnitt:
+För att kunna importera CSV-data till [!DNL Adobe Experience Platform] måste data mappas till ett [!DNL Experience Data Model] (XDM)-schema. I följande självstudier beskrivs hur du mappar CSV-filer till XDM-scheman med användargränssnittet [!DNL Platform]:
 
 * [Mappa en CSV-fil till ett befintligt XDM-schema](./existing-schema.md)
-* [Mappa en CSV-fil till ett nytt XDM-schema med hjälp av AI-genererade rekommendationer](./recommendations.md) (för närvarande i betaversion)
+* [Mappa en CSV-fil till ett nytt XDM-schema med hjälp av AI-genererade rekommendationer](./recommendations.md) (finns för närvarande i beta)

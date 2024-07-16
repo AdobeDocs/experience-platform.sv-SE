@@ -6,95 +6,95 @@ description: Lär dig hur du ansluter Adobe Experience Platform till MailChimp-m
 exl-id: dc620ef9-624d-4fc9-8475-bb475ea86eb7
 source-git-commit: ed92bdcd965dc13ab83649aad87eddf53f7afd60
 workflow-type: tm+mt
-source-wordcount: '649'
+source-wordcount: '650'
 ht-degree: 1%
 
 ---
 
-# Skapa en [!DNL Mailchimp Members] källanslutning med plattformsgränssnitt
+# Skapa en [!DNL Mailchimp Members]-källanslutning med hjälp av plattformens användargränssnitt
 
-Den här självstudiekursen innehåller steg för att skapa en [!DNL Mailchimp] källkoppling till import [!DNL Mailchimp Members] data till Adobe Experience Platform via användargränssnittet.
+I den här självstudiekursen beskrivs hur du skapar en [!DNL Mailchimp]-källanslutning för import av [!DNL Mailchimp Members]-data till Adobe Experience Platform med användargränssnittet.
 
 ## Komma igång
 
 Handboken kräver en fungerande förståelse av följande komponenter i Adobe Experience Platform:
 
-* [Källor](../../../../home.md): Plattformen gör att data kan hämtas från olika källor samtidigt som du kan strukturera, märka och förbättra inkommande data med [!DNL Platform] tjänster.
+* [Källor](../../../../home.md): Med plattformen kan data hämtas från olika källor samtidigt som du kan strukturera, etikettera och förbättra inkommande data med [!DNL Platform]-tjänster.
 * [Sandlådor](../../../../../sandboxes/home.md): Plattformen innehåller virtuella sandlådor som partitionerar en enda plattformsinstans i separata virtuella miljöer för att utveckla och utveckla program för digitala upplevelser.
 
 ## Samla in nödvändiga inloggningsuppgifter
 
-För att kunna ta med [!DNL Mailchimp Members] data till plattformen måste du först ange lämpliga autentiseringsuppgifter som motsvarar dina [!DNL Mailchimp] konto.
+För att kunna överföra dina [!DNL Mailchimp Members]-data till plattformen måste du först ange de autentiseringsuppgifter som motsvarar ditt [!DNL Mailchimp]-konto.
 
-The [!DNL Mailchimp Members] Källan har stöd för både OAuth 2-uppdateringskod och grundläggande autentisering. Se tabellerna nedan för mer information om dessa autentiseringstyper.
+Källan [!DNL Mailchimp Members] stöder både OAuth 2-uppdateringskod och grundläggande autentisering. Se tabellerna nedan för mer information om dessa autentiseringstyper.
 
 ### OAuth 2-uppdateringskod
 
-| Autentiseringsuppgifter | Beskrivning |
+| Referenser | Beskrivning |
 | --- | --- |
 | Domän | Den rot-URL som används för att ansluta till MailChimp API. Formatet för rot-URL:en är `https://{DC}.api.mailchimp.com`, där `{DC}` representerar det datacenter som motsvarar ditt konto. |
-| Verifieringstestets URL | Verifieringstestets URL används för att validera autentiseringsuppgifter vid anslutning [!DNL Mailchimp] till Platform. Om detta inte anges kontrolleras autentiseringsuppgifterna automatiskt när du skapar en källanslutning i stället. |
+| Verifieringstestets URL | Verifieringstestets URL används för att validera autentiseringsuppgifter vid anslutning av [!DNL Mailchimp] till plattformen. Om detta inte anges kontrolleras autentiseringsuppgifterna automatiskt när källanslutningen skapas. |
 | Åtkomsttoken | Motsvarande åtkomsttoken som används för att autentisera källan. Detta krävs för OAuth-baserad autentisering. |
 
-Mer information om hur du använder OAuth 2 för att autentisera [!DNL Mailchimp] konto till plattform, se detta [[!DNL Mailchimp] dokument om att använda OAuth 2](https://mailchimp.com/developer/marketing/guides/access-user-data-oauth-2/).
+Mer information om hur du använder OAuth 2 för att autentisera ditt [!DNL Mailchimp]-konto för plattformen finns i det här [[!DNL Mailchimp] dokumentet om att använda OAuth 2](https://mailchimp.com/developer/marketing/guides/access-user-data-oauth-2/).
 
 ### Grundläggande autentisering
 
-| Autentiseringsuppgifter | Beskrivning |
+| Referenser | Beskrivning |
 | --- | --- |
 | Domän | Den rot-URL som används för att ansluta till MailChimp API. Formatet för rot-URL:en är `https://{DC}.api.mailchimp.com`, där `{DC}` representerar det datacenter som motsvarar ditt konto. |
 | Användarnamn | Användarnamnet som motsvarar ditt MailChimp-konto. Detta krävs för grundläggande autentisering. |
 | Lösenord | Lösenordet som motsvarar ditt MailChimp-konto. Detta krävs för grundläggande autentisering. |
 
-## Koppla samman [!DNL Mailchimp Members] konto till plattform
+## Anslut ditt [!DNL Mailchimp Members]-konto till plattformen
 
-Välj **[!UICONTROL Sources]** från det vänstra navigeringsfältet för att komma åt [!UICONTROL Sources] arbetsyta. The [!UICONTROL Catalog] visas en mängd olika källor som du kan använda för att skapa ett konto.
+I plattformsgränssnittet väljer du **[!UICONTROL Sources]** i det vänstra navigeringsfältet för att komma åt arbetsytan i [!UICONTROL Sources]. På skärmen [!UICONTROL Catalog] visas en mängd olika källor som du kan använda för att skapa ett konto.
 
 Du kan välja lämplig kategori i katalogen till vänster på skärmen. Du kan också hitta den källa du vill arbeta med med med sökalternativet.
 
-Under [!UICONTROL Marketing automation] kategori, välj **[!UICONTROL Mailchimp Campaign]** och sedan markera **[!UICONTROL Add data]**.
+Under kategorin [!UICONTROL Marketing automation] väljer du **[!UICONTROL Mailchimp Campaign]** och sedan **[!UICONTROL Add data]**.
 
 ![katalog](../../../../images/tutorials/create/mailchimp-members/catalog.png)
 
-The **[!UICONTROL Connect Mailchimp Campaigns account]** visas. På den här sidan kan du välja om du ska öppna ett befintligt konto eller välja att skapa ett nytt konto.
+Sidan **[!UICONTROL Connect Mailchimp Campaigns account]** visas. På den här sidan kan du välja om du ska öppna ett befintligt konto eller välja att skapa ett nytt konto.
 
 ### Befintligt konto
 
-Om du vill använda ett befintligt konto väljer du [!DNL Mailchimp Members] konto som du vill skapa ett nytt dataflöde med och sedan välja **[!UICONTROL Next]** för att fortsätta.
+Om du vill använda ett befintligt konto väljer du det [!DNL Mailchimp Members]-konto som du vill skapa ett nytt dataflöde med och väljer sedan **[!UICONTROL Next]** för att fortsätta.
 
 ![befintlig](../../../../images/tutorials/create/mailchimp-members/existing.png)
 
 ### Nytt konto
 
-Om du skapar ett nytt konto väljer du **[!UICONTROL New account]** och ange sedan ett namn och en beskrivning av [!DNL Mailchimp Members] källanslutningsinformation.
+Om du skapar ett nytt konto väljer du **[!UICONTROL New account]** och anger sedan ett namn och en beskrivning för din [!DNL Mailchimp Members]-källanslutningsinformation.
 
-![new](../../../../images/tutorials/create/mailchimp-members/new.png)
+![ny](../../../../images/tutorials/create/mailchimp-members/new.png)
 
 
 #### Autentisera med OAuth 2
 
-Om du vill använda OAuth 2 väljer du [!UICONTROL OAuth 2 Refresh Code], anger värden för din domän, verifieringstest-URL och åtkomsttoken och väljer sedan **[!UICONTROL Connect to source]**. Låt inloggningsuppgifterna valideras under en stund och välj sedan **[!UICONTROL Next]** för att fortsätta.
+Om du vill använda OAuth 2 väljer du [!UICONTROL OAuth 2 Refresh Code], anger värden för din domän, auktoriseringstestets URL och åtkomsttoken och väljer sedan **[!UICONTROL Connect to source]**. Låt autentiseringsuppgifterna valideras under en stund och välj sedan **[!UICONTROL Next]** för att fortsätta.
 
 ![oauth](../../../../images/tutorials/create/mailchimp-members/oauth.png)
 
 #### Autentisera med grundläggande autentisering
 
-Om du vill använda grundläggande autentisering väljer du [!UICONTROL Basic authentication], anger värden för din domän, ditt användarnamn och lösenord och väljer sedan **[!UICONTROL Connect to source]**. Låt inloggningsuppgifterna valideras under en stund och välj sedan **[!UICONTROL Next]** för att fortsätta.
+Om du vill använda grundläggande autentisering väljer du [!UICONTROL Basic authentication], anger värden för din domän, ditt användarnamn och lösenord och väljer sedan **[!UICONTROL Connect to source]**. Låt autentiseringsuppgifterna valideras under en stund och välj sedan **[!UICONTROL Next]** för att fortsätta.
 
 ![grundläggande](../../../../images/tutorials/create/mailchimp-members/basic.png)
 
 ### Välj [!DNL Mailchimp Members] data
 
-När källan har autentiserats måste du ange `listId` som motsvarar dina [!DNL Mailchimp Members] konto.
+När källan har autentiserats måste du ange den `listId` som motsvarar ditt [!DNL Mailchimp Members]-konto.
 
-På [!UICONTROL Select data] sida, ange `listId` och sedan markera **[!UICONTROL Explore]**.
+Ange `listId` på sidan [!UICONTROL Select data] och välj sedan **[!UICONTROL Explore]**.
 
 ![utforska](../../../../images/tutorials/create/mailchimp-members/explore.png)
 
-Sidan uppdateras till ett interaktivt schematräd där du kan utforska och inspektera datahierarkin. Välj **[!UICONTROL Next]** för att fortsätta.
+Sidan uppdateras till ett interaktivt schematräd där du kan utforska och inspektera datahierarkin. Välj **[!UICONTROL Next]** om du vill fortsätta.
 
 ![select-data](../../../../images/tutorials/create/mailchimp-members/select-data.png)
 
 ## Nästa steg
 
-Med [!DNL Mailchimp] kontot autentiseras och [!DNL Mailchimp Members] markerade data kan du nu börja skapa ett dataflöde för att överföra dina data till plattformen. Detaljerade anvisningar om hur du skapar ett dataflöde finns i dokumentationen om [skapa ett dataflöde för att ta fram automatiserade marknadsföringsdata för plattformen](../../dataflow/marketing-automation.md).
+När ditt [!DNL Mailchimp]-konto är autentiserat och dina [!DNL Mailchimp Members]-data har valts kan du nu börja skapa ett dataflöde för att överföra dina data till plattformen. Detaljerade steg om hur du skapar ett dataflöde finns i dokumentationen om [att skapa ett dataflöde för att överföra data för automatiserad marknadsföring till plattformen](../../dataflow/marketing-automation.md).

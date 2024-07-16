@@ -1,18 +1,19 @@
 ---
 title: Kapitelinformation, rapportdatatyp
 description: Läs mer om datatypen Kapitel Details Reporting Experience Data Model (XDM).
-source-git-commit: fe239bee3c853d43c04200092f59537dfeb00c87
+exl-id: 73ebfbe3-66c3-4ef9-9944-d9cb5772127b
+source-git-commit: 799a384556b43bc844782d8b67416c7eea77fbf0
 workflow-type: tm+mt
 source-wordcount: '230'
 ht-degree: 0%
 
 ---
 
-# [!UICONTROL Chapter Details] Typ av rapportdata
+# Datatypen [!UICONTROL Chapter Details] för rapportering
 
-[!UICONTROL Chapter Details] Rapportering är en XDM-datatyp (Standard Experience Data Model) som beskriver olika attribut som rör kapitel eller segment i medieinnehåll. Använd [!UICONTROL Chapter Details] Rapportera datatyp för att samla in detaljer som kapitelnamn, varaktighet, position, ID, uppspelningsstatus (start/slutförd) och hur lång tid som har ägnats åt varje kapitel. Medierapporteringsfält används av Adobe-tjänster för att analysera de Media Collection-fält som skickas av användarna. Dessa data, tillsammans med andra specifika användarvärden, beräknas och rapporteras utifrån.
+[!UICONTROL Chapter Details]-rapportering är en XDM-datatyp (Standard Experience Data Model) som beskriver olika attribut som relaterar till kapitel eller segment i medieinnehåll. Använd datatypen [!UICONTROL Chapter Details] Reporting för att samla in information som kapitelnamn, varaktighet, position, ID, uppspelningsstatus (start/slutförd) och hur lång tid som har ägnats åt varje kapitel. Medierapporteringsfält används av Adobe-tjänster för att analysera de Media Collection-fält som skickas av användarna. Dessa data, tillsammans med andra specifika användarvärden, beräknas och rapporteras utifrån.
 
-![Ett diagram över datatypen Chapter Details Reporting.](../images/data-types/chapter-details-reporting.png)
+![Ett diagram över datatypen Kapitel Details Reporting.](../images/data-types/chapter-details-reporting.png)
 
 >[!NOTE]
 >

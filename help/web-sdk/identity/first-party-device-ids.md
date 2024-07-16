@@ -12,7 +12,7 @@ ht-degree: 0%
 
 # Första parts enhets-ID i Web SDK
 
-Adobe Experience Platform Web SDK tilldelar [Adobe Experience Cloud ID (ECID)](https://experienceleague.adobe.com/docs/experience-platform/identity/ecid.html) till besökare via cookies för att spåra användarbeteenden. Om du vill ta hänsyn till webbläsarbegränsningar för cookie-intervall kan du välja att ställa in och hantera dina egna enhetsidentifierare i stället. Dessa kallas för FPID (First-party device ID).
+Adobe Experience Platform Web SDK tilldelar [Adobe Experience Cloud ID:n (ECID:n)](https://experienceleague.adobe.com/docs/experience-platform/identity/ecid.html) till webbplatsbesökare genom att använda cookies för att spåra användarbeteenden. Om du vill ta hänsyn till webbläsarbegränsningar för cookie-intervall kan du välja att ställa in och hantera dina egna enhetsidentifierare i stället. Dessa kallas för FPID (First-party device ID).
 
 >[!NOTE]
 >
@@ -20,56 +20,56 @@ Adobe Experience Platform Web SDK tilldelar [Adobe Experience Cloud ID (ECID)](h
 
 >[!IMPORTANT]
 >
->Enhets-ID:n från första part är inte kompatibla med [cookies från tredje part](../../tags/extensions/client/web-sdk/web-sdk-extension-configuration.md#identity) i Web SDK.
+>Första parts enhets-ID är inte kompatibelt med funktionen [cookies](../../tags/extensions/client/web-sdk/web-sdk-extension-configuration.md#identity) från tredje part i Web SDK.
 >Du kan antingen använda enhets-ID:n från en annan leverantör eller använda cookies från tredje part, men du kan inte använda båda funktionerna samtidigt.
 
 I det här dokumentet beskrivs hur du konfigurerar enhets-ID:n från första part för implementeringen av Platform Web SDK.
 
-## Förutsättningar
+## Förhandskrav
 
-I den här handboken förutsätts du känna till hur identitetsdata fungerar för Platform Web SDK, inklusive rollen för ECID och `identityMap`. Se översikten på [identitetsdata i Web SDK](./overview.md) för mer information.
+I den här handboken förutsätts du känna till hur identitetsdata fungerar för Platform Web SDK, inklusive rollen för ECID:n och `identityMap`. Mer information finns i översikten över [identitetsdata i Web SDK](./overview.md).
 
 ## Använda FPID
 
-FPID:n spårar besökare genom att använda cookies från första part. cookies från första part är mest effektiva när de ställs in med en server som använder en DNS [En post](https://datatracker.ietf.org/doc/html/rfc1035) (för IPv4) eller [AAAA-post](https://datatracker.ietf.org/doc/html/rfc3596) (för IPv6), till skillnad från en DNS CNAME- eller JavaScript-kod.
+FPID:n spårar besökare genom att använda cookies från första part. Första parts-cookies är mest effektiva när de ställs in med en server som använder en DNS [A-post](https://datatracker.ietf.org/doc/html/rfc1035) (för IPv4) eller [AAAA-post](https://datatracker.ietf.org/doc/html/rfc3596) (för IPv6), i motsats till en DNS CNAME- eller JavaScript-kod.
 
 >[!IMPORTANT]
 >
->`A` eller `AAAA` poster stöds bara för att ange och spåra cookies. Den primära metoden för datainsamling är via en DNS CNAME. Med andra ord anges FPID:n med en A-post eller AAAA-post och skickas sedan till Adobe med en CNAME.
+>`A`- eller `AAAA`-poster stöds bara för att ange och spåra cookies. Den primära metoden för datainsamling är via en DNS CNAME. Med andra ord anges FPID:n med en A-post eller AAAA-post och skickas sedan till Adobe med en CNAME.
 >
->The [Adobe-hanterat certifikatprogram](https://experienceleague.adobe.com/docs/core-services/interface/administration/ec-cookies/cookies-first-party.html#adobe-managed-certificate-program) stöds fortfarande för datainsamling från första part.
+>Det [Adobe-hanterade certifikatprogrammet](https://experienceleague.adobe.com/docs/core-services/interface/administration/ec-cookies/cookies-first-party.html#adobe-managed-certificate-program) stöds fortfarande för datainsamling från första part.
 
 När en FPID-cookie har angetts kan dess värde hämtas och skickas till Adobe när händelsedata samlas in. Insamlade FPID används som frön för att generera ECID, som även fortsättningsvis är de primära identifierarna i Adobe Experience Cloud-program.
 
-Om du vill skicka ett FPID för en webbplatsbesökare till Platform Edge Network måste du inkludera FPID i `identityMap` för besökaren. Se avsnittet senare i det här dokumentet på [använda FPID i `identityMap`](#identityMap) för mer information.
+Om du vill skicka ett FPID för en webbplatsbesökare till Platform Edge Network måste du inkludera FPID i `identityMap` för den besökaren. Mer information finns i avsnittet senare i det här dokumentet om [att använda FPID:n i `identityMap`](#identityMap).
 
 ### Krav för ID-formatering
 
-Platform Edge Network godkänner endast ID:n som uppfyller [UUIDv4-format](https://datatracker.ietf.org/doc/html/rfc4122). Enhets-ID som inte är i UUIDv4-format kommer att avvisas.
+Platform Edge Network accepterar bara ID:n som är kompatibla med formatet [UIDv4](https://datatracker.ietf.org/doc/html/rfc4122). Enhets-ID som inte är i UUIDv4-format kommer att avvisas.
 
 Generering av ett UUID resulterar nästan alltid i ett unikt, slumpmässigt ID, där sannolikheten för en kollision är försumbar. UUIDv4 kan inte dirigeras med IP-adresser eller någon annan personligt identifierbar information (PII). UUID är vanligt förekommande och bibliotek finns för praktiskt taget alla programmeringsspråk för att generera dem.
 
 ## Ställa in cookie för första parts-ID i användargränssnittet för datastreams {#setting-cookie-datastreams}
 
-Du kan ange ett cookie-namn i användargränssnittet för datastreams, där [!DNL FPID] kan finnas i stället för att du behöver läsa cookie-värdet och inkludera FPID i identitetskartan.
+Du kan ange ett cookie-namn i användargränssnittet för datastreams, där [!DNL FPID] kan finnas, i stället för att behöva läsa cookie-värdet och inkludera FPID i identitetskartan.
 
 >[!IMPORTANT]
 >
->Den här funktionen kräver att du har [Insamling av data från första part](https://experienceleague.adobe.com/docs/core-services/interface/administration/ec-cookies/cookies-first-party.html?lang=en) aktiverat.
+>Den här funktionen kräver att du har [Första part-datainsamling](https://experienceleague.adobe.com/docs/core-services/interface/administration/ec-cookies/cookies-first-party.html?lang=en) aktiverad.
 
-Se [datastreams-dokumentation](../../datastreams/configure.md) för detaljerad information om hur du konfigurerar ett datastream.
+Mer information om hur du konfigurerar ett datastream finns i [datastreams-dokumentationen](../../datastreams/configure.md).
 
-Aktivera **[!UICONTROL First Party ID Cookie]** alternativ. Den här inställningen anger för Edge Network att referera till en angiven cookie när du söker efter ett enhets-ID från en annan leverantör, i stället för att leta upp det här värdet i [Identitetskarta](#identityMap).
+Aktivera alternativet **[!UICONTROL First Party ID Cookie]** när du konfigurerar ditt datastream. Den här inställningen instruerar Edge Network att referera till en angiven cookie när ett enhets-ID från en annan tillverkare identifieras, i stället för att det här värdet slås upp i [identitetskartan](#identityMap).
 
-Läs dokumentationen om [cookies från första part](https://experienceleague.adobe.com/docs/core-services/interface/administration/ec-cookies/cookies-first-party.html) om du vill ha mer information om hur de arbetar med Adobe Experience Cloud.
+Mer information om hur de fungerar med Adobe Experience Cloud finns i dokumentationen om [cookies från första part](https://experienceleague.adobe.com/docs/core-services/interface/administration/ec-cookies/cookies-first-party.html).
 
-![Bild av användargränssnittet för plattformen som visar datastream-konfigurationen och som markerar cookie-inställningen för första parts-ID](../assets/first-party-id-datastreams.png)
+![Plattformens gränssnittsbild visar datastream-konfigurationen som markerar cookie-inställningen för första parts-ID](../assets/first-party-id-datastreams.png)
 
 När du aktiverar den här inställningen måste du ange namnet på den cookie där ID:t ska lagras.
 
-När du använder ID:n för första part kan du inte utföra synkroniseringar av ID:n från tredje part. Synkronisering av tredje parts-ID är beroende av [!DNL Visitor ID] och `UUID` genereras av den tjänsten. När du använder funktionaliteten för första parts-ID genereras ECID utan att [!DNL Visitor ID] , vilket gör det omöjligt att synkronisera tredje parts-ID.
+När du använder ID:n för första part kan du inte utföra synkroniseringar av ID:n från tredje part. Synkronisering av tredje parts-ID är beroende av tjänsten [!DNL Visitor ID] och den `UUID` som genereras av den tjänsten. När du använder funktionen för första parts-ID genereras ECID utan att tjänsten [!DNL Visitor ID] används, vilket gör att synk av tredje parts-ID inte kan användas.
 
-När du använder ID:n från första part stöds inte Audience Manager-funktioner som är inriktade på aktivering på partnerplattformar, eftersom synk för Audience Manager partner-ID i huvudsak baseras på `UUIDs` eller `DIDs`. Det ECID som härleds från ett första parts-ID är inte länkat till en `UUID`, vilket gör det oadresserbart.
+När du använder ID:n för första part stöds inte Audience Manager-funktioner som är avsedda för aktivering på partnerplattformar, eftersom synk för Audience Manager partner-ID oftast baseras på `UUIDs` eller `DIDs`. Det ECID som härleds från ett första part-ID är inte länkat till ett `UUID`, vilket gör det oadresserbart.
 
 ## Ange en cookie med din egen server
 
@@ -82,11 +82,11 @@ När du ställer in en cookie med en server som du äger kan olika metoder anvä
 
 >[!IMPORTANT]
 >
->Cookies som ställs in med JavaScript `document.cookie` Metoden skyddas nästan aldrig av webbläsarprinciper som begränsar varaktigheten för cookies.
+>Cookies som anges med JavaScript `document.cookie`-metod kommer nästan aldrig att skyddas från webbläsarprinciper som begränsar cookie-varaktighet.
 
 ### När cookien ska ställas in
 
-FPID-cookien bör helst anges innan du skickar några förfrågningar till Edge Network. I scenarier där detta inte är möjligt genereras dock ett ECID fortfarande med befintliga metoder och fungerar som primär identifierare så länge som cookien finns.
+FPID-cookien bör helst anges innan någon begäran görs till Edge Network. I scenarier där detta inte är möjligt genereras dock ett ECID fortfarande med befintliga metoder och fungerar som primär identifierare så länge som cookien finns.
 
 Om man utgår ifrån att ECID så småningom påverkas av en policy för borttagning av webbläsare, men inte av FPID, kommer FPID att bli den primära identifieraren vid nästa besök och kommer att användas för att förorsaka ECID vid varje påföljande besök.
 
@@ -108,27 +108,27 @@ Det finns olika cookie-flaggor som påverkar hur cookies hanteras i olika webbl�
 
 ### `HTTPOnly` {#http-only}
 
-Cookies som anges med `HTTPOnly` kan inte nås med skript på klientsidan. Det innebär att om du anger en `HTTPOnly` flagga när du anger FPID måste du använda ett skriptspråk på serversidan för att läsa cookie-värdet som ska inkluderas i `identityMap`.
+Det går inte att komma åt cookies som har angetts med flaggan `HTTPOnly` med skript på klientsidan. Det innebär att om du anger en `HTTPOnly`-flagga när du anger FPID måste du använda ett skriptspråk på serversidan för att läsa cookie-värdet som ska inkluderas i `identityMap`.
 
-Om du väljer att låta Platform Edge Network läsa värdet för FPID-cookien anger du `HTTPOnly` -flaggan säkerställer att värdet inte är tillgängligt för klientskript, men inte har någon negativ inverkan på plattformens Edge-nätverks förmåga att läsa cookien.
+Om du väljer att låta Platform Edge Network läsa värdet för FPID-cookien säkerställer en inställning av flaggan `HTTPOnly` att värdet inte är tillgängligt för klientskript, men inte har någon negativ inverkan på Platform-Edge Network för att läsa cookien.
 
 >[!NOTE]
 >
->Användning av `HTTPOnly` -flaggan påverkar inte cookie-principerna som kan begränsa cookie-livstiden. Men det är fortfarande något du bör tänka på när du anger och läser värdet för FPID.
+>Användning av flaggan `HTTPOnly` påverkar inte cookie-principerna som kan begränsa cookie-livstiden. Men det är fortfarande något du bör tänka på när du anger och läser värdet för FPID.
 
 ### `Secure` {#secure}
 
-Cookies som anges med `Secure` -attribut skickas bara till servern med en krypterad begäran via HTTPS-protokollet. Om du använder den här flaggan kan du se till att angripare i mitten inte lätt kommer åt värdet på cookien. När det är möjligt är det alltid en bra idé att ställa in `Secure` flagga.
+Cookies som angetts med attributet `Secure` skickas bara till servern med en krypterad begäran via HTTPS-protokollet. Om du använder den här flaggan kan du se till att angripare i mitten inte lätt kommer åt värdet på cookien. När det är möjligt är det alltid en bra idé att ange flaggan `Secure`.
 
 ### `SameSite` {#same-site}
 
-The `SameSite` -attribut låter servrar avgöra om cookies skickas med förfrågningar mellan webbplatser. Attributet ger visst skydd mot attacker med förfalskning över flera webbplatser. Det finns tre möjliga värden: `Strict`, `Lax`och `None`. Kontakta ditt interna team för att ta reda på vilken inställning som är rätt för din organisation.
+Med attributet `SameSite` kan servrar avgöra om cookies skickas med förfrågningar mellan webbplatser. Attributet ger visst skydd mot attacker med förfalskning över flera webbplatser. Det finns tre möjliga värden: `Strict`, `Lax` och `None`. Kontakta ditt interna team för att ta reda på vilken inställning som är rätt för din organisation.
 
-Om nej `SameSite` har angetts, standardinställningen för vissa webbläsare är nu `SameSite=Lax`.
+Om inget `SameSite`-attribut anges är standardinställningen för vissa webbläsare nu `SameSite=Lax`.
 
 ## Använda FPID i `identityMap` {#identityMap}
 
-Nedan visas ett exempel på hur du ställer in en FPID i `identityMap`:
+Nedan visas ett exempel på hur du skulle ange ett FPID i `identityMap`:
 
 ```json
 {
@@ -167,7 +167,7 @@ Precis som med andra identitetstyper kan du inkludera FPID med andra identiteter
 }
 ```
 
-Om FPID finns i en cookie som läses av Edge Network när datainsamling från första part är aktiverat, ska du endast hämta det autentiserade CRM-ID:t:
+Om FPID finns i en cookie som läses av Edge Network när datainsamling från första part är aktiverad, ska du endast hämta det autentiserade CRM-ID:t:
 
 ```json
 {
@@ -183,7 +183,7 @@ Om FPID finns i en cookie som läses av Edge Network när datainsamling från f�
 }
 ```
 
-Följande `identityMap` skulle resultera i ett felsvar från Edge Network eftersom det saknar `primary` -indikator för FPID. Minst ett ID finns i `identityMap` måste markeras som `primary`.
+Följande `identityMap` skulle resultera i ett felsvar från Edge Network eftersom den saknar `primary`-indikatorn för FPID. Minst ett av ID:n i `identityMap` måste markeras som `primary`.
 
 ```json
 {
@@ -204,7 +204,7 @@ Följande `identityMap` skulle resultera i ett felsvar från Edge Network efters
 }
 ```
 
-Felsvaret som returneras av Edge Network i det här fallet liknar följande:
+Felsvaret som Edge Network returnerade i det här fallet liknar följande:
 
 ```json
 {
@@ -237,15 +237,15 @@ Om du migrerar till att använda FPID:n från en tidigare implementering kan det
 
 För att illustrera denna process bör du överväga ett scenario där en kund som tidigare besökt er webbplats deltar och vilken inverkan en FPID-migrering skulle ha på hur kunden identifieras i Adobe.
 
-![Bild som visar hur en kunds ID-värden uppdateras mellan besök efter migrering till FPID:n](../assets/identity/tracking/visits.png)
+![Diagram som visar hur en kunds ID-värden uppdateras mellan besök efter migrering till FPID](../assets/identity/tracking/visits.png)
 
 >[!IMPORTANT]
 >
->The `ECID` cookie prioriteras alltid framför `FPID`.
+>Cookien `ECID` prioriteras alltid framför `FPID`.
 
 | Besök | Beskrivning |
 | --- | --- |
-| Första besök | Anta att du ännu inte har börjat ange FPID-cookie. Det ECID som finns i [AMCV cookie](https://experienceleague.adobe.com/docs/id-service/using/intro/cookies.html#section-c55af54828dc4cce89f6118655d694c8) blir den identifierare som används för att identifiera besökaren. |
+| Första besök | Anta att du ännu inte har börjat ange FPID-cookie. Det ECID som finns i [AMCV-cookien](https://experienceleague.adobe.com/docs/id-service/using/intro/cookies.html#section-c55af54828dc4cce89f6118655d694c8) är den identifierare som används för att identifiera besökaren. |
 | Andra besök | Utrullning av första parts enhets-ID-lösning har startats. Befintligt ECID finns fortfarande och är fortfarande den primära identifieraren för besökaridentifiering. |
 | Tredje besök | Mellan det andra och tredje besöket har det gått tillräckligt lång tid innan ECID har tagits bort på grund av webbläsarprincipen. Eftersom FPID angavs med en DNS A-post kvarstår dock FPID:t. FPID betraktas nu som det primära ID:t och används för att skicka ut ECID, som skrivs till slutanvändarens enhet. Användaren skulle nu betraktas som en ny besökare i lösningarna Adobe Experience Platform och Experience Cloud. |
 | Fjärde besök | Mellan det tredje och fjärde besöket har det gått tillräckligt lång tid innan ECID har tagits bort på grund av webbläsarprincipen. Precis som vid det föregående besöket beror FPID fortfarande på hur det var inställt. Nu genereras samma ECID som vid det föregående besöket. Användaren uppfattar Experience Platform och Experience Cloud som samma användare som vid det föregående besöket. |
@@ -271,4 +271,4 @@ För närvarande stöder endast Web SDK FPID.
 
 ### Lagras FPID:n på någon plattforms- eller Experience Cloud-lösning?
 
-När FPID har använts för att förväxla ett ECID tas det bort från `identityMap` och ersatts med det ECID som har genererats. FPID lagras inte i någon Adobe Experience Platform- eller Experience Cloud-lösning.
+När FPID har använts för att skapa ett ECID tas det bort från `identityMap` och ersätts med det ECID som har genererats. FPID lagras inte i någon Adobe Experience Platform- eller Experience Cloud-lösning.

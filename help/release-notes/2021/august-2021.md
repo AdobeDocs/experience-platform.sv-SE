@@ -7,8 +7,8 @@ author: ens28527
 exl-id: 0513b9dc-b16c-43b3-8e17-4be4499308d4
 source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
 workflow-type: tm+mt
-source-wordcount: '712'
-ht-degree: 3%
+source-wordcount: '715'
+ht-degree: 1%
 
 ---
 
@@ -27,9 +27,9 @@ Uppdateringar av befintliga funktioner i Adobe Experience Platform:
 
 Destinationer är färdiga integrationer med målplattformar som möjliggör smidig aktivering av data från Adobe Experience Platform. Ni kan använda destinationer för att aktivera kända och okända data för flerkanalskampanjer, e-postkampanjer, riktad reklam och många andra användningsfall.
 
-**Nya destinationer**
+**Nya mål**
 
-| Destination | Beskrivning |
+| Mål | Beskrivning |
 | ----------- | ----------- |
 | [[!DNL Airship Attributes]](../../destinations/catalog/mobile-engagement/airship-attributes.md) | Målet för Airship Attributes, som tidigare fanns i betaversion, är nu allmänt tillgängligt. |
 | [[!DNL Airship Tags]](../../destinations/catalog/mobile-engagement/airship-tags.md) | Målet för Airship Tags, som tidigare fanns i betaversion, är nu allmänt tillgängligt. |
@@ -43,9 +43,9 @@ Destinationer är färdiga integrationer med målplattformar som möjliggör smi
 | Funktion | Beskrivning |
 | --- | --- |
 | [[!DNL Destination SDK]](../../destinations/destination-sdk/overview.md) | Adobe Experience Platform Destination SDK är en uppsättning konfigurations-API:er som gör att du kan konfigurera målintegreringsmönster så att Experience Platform kan leverera målgrupps- och profildata till slutpunkten, baserat på vilka data- och autentiseringsformat du väljer. Konfigurationerna lagras i Experience Platform och kan hämtas via API för ytterligare uppdateringar. |
-| [Användbarhetsförbättringar för destinationer](../../destinations/ui/activation-overview.md) | Förbättrad användarvänlighet för destinationer gör det möjligt för marknadsförare att smidigt aktivera segment till befintliga destinationer. |
+| [Användbarhetsförbättringar för mål](../../destinations/ui/activation-overview.md) | Förbättrad användarvänlighet för destinationer gör det möjligt för marknadsförare att smidigt aktivera segment till befintliga destinationer. |
 
-Mer allmän information om destinationer finns i [destinationer, översikt](../../destinations/home.md).
+Mer allmän information om destinationer finns i [målöversikten](../../destinations/home.md).
 
 ## Insikter om observerbarhet {#observability}
 
@@ -55,9 +55,9 @@ Med observabilitetsinsikter kan ni övervaka plattformsaktiviteter med hjälp av
 
 | Funktion | Beskrivning |
 | --- | --- |
-| Larm | Du kan nu prenumerera på viktiga aviseringar om arbetsflöden som körs på plattformen. När du har prenumererat på specifika varningsregler får du meddelanden och e-postmeddelanden i användargränssnittet när en viktig livscykelhändelse inträffar (t.ex. slutförd datainmatning) eller om det finns problem som kräver din uppmärksamhet (t.ex. ett intag-flöde som misslyckas eller ett segmentjobb som tar längre tid än förväntat). Mer information finns i [varningsöversikt](../../observability/alerts/overview.md). |
+| Larm | Du kan nu prenumerera på viktiga aviseringar om arbetsflöden som körs på plattformen. När du har prenumererat på specifika varningsregler får du meddelanden och e-postmeddelanden i användargränssnittet när en viktig livscykelhändelse inträffar (t.ex. slutförd datainmatning) eller om det finns problem som kräver din uppmärksamhet (t.ex. ett intag-flöde som misslyckas eller ett segmentjobb som tar längre tid än förväntat). Mer information finns i [varningsöversikten](../../observability/alerts/overview.md). |
 
-Se [Översikt över Insikter i observationer](../../observability/home.md) för mer information om tjänsten.
+Mer information om tjänsten finns i översikten [Insikter om observabilitet](../../observability/home.md).
 
 ## Kundprofil i realtid {#profile}
 
@@ -65,9 +65,9 @@ Med Adobe Experience Platform kan ni skapa samordnade, enhetliga och relevanta u
 
 | Funktion | Beskrivning |
 | ------- | ----------- |
-| Bläddra bland profiler efter sammanfogningsprincip eller identitet | När du bläddrar bland profiler i Experience Platform kan du nu bläddra genom en sammanfogningsprincip och förhandsgranska 20 exempelprofiler baserat på den valda sammanfogningsprincipen. Du kan också bläddra efter identitet för att söka efter en viss profil med hjälp av ett identitetsnamnutrymme och relaterat identitetsvärde. Mer information finns i [Användargränssnittsguide för kundprofil i realtid](../../profile/ui/user-guide.md). |
+| Bläddra bland profiler efter sammanfogningsprincip eller identitet | När du bläddrar bland profiler i Experience Platform kan du nu bläddra genom en sammanfogningsprincip och förhandsgranska 20 exempelprofiler baserat på den valda sammanfogningsprincipen. Du kan också bläddra efter identitet för att söka efter en viss profil med hjälp av ett identitetsnamnutrymme och relaterat identitetsvärde. Mer information finns i [Användargränssnittet för kundprofil i realtid](../../profile/ui/user-guide.md). |
 
-Om du vill veta mer om kundprofilen i realtid, inklusive självstudiekurser och bästa metoder för att arbeta med profildata, kan du börja med att läsa [Översikt över kundprofiler i realtid](../../profile/home.md).
+Om du vill veta mer om kundprofilen i realtid, inklusive självstudiekurser och bästa praxis för arbete med profildata, börjar du med att läsa [Översikt över kundprofilen i realtid](../../profile/home.md).
 
 ## Källor {#sources}
 
@@ -77,6 +77,6 @@ Experience Platform tillhandahåller ett RESTful-API och ett interaktivt använd
 
 | Funktion | Beskrivning |
 | ------- | ----------- |
-| Källanslutning för lokal filöverföring | Kategorin för filinläsning har bytt namn till det lokala systemet, vilket gör att du kan överföra lokala filer direkt till plattformen med den lokala filöverföringskopplingen. Data som hämtas via den här kopplingen kan övervakas via kontrollpanelen för övervakning. Se [Översikt över källa för lokal filöverföring](../../sources/connectors/local-system/local-file-upload.md) för mer information. |
+| Källanslutning för lokal filöverföring | Kategorin för filinläsning har bytt namn till det lokala systemet, vilket gör att du kan överföra lokala filer direkt till plattformen med den lokala filöverföringskopplingen. Data som hämtas via den här kopplingen kan övervakas via kontrollpanelen för övervakning. Mer information finns i [Översikt över den lokala filöverföringskällan](../../sources/connectors/local-system/local-file-upload.md). |
 
-Mer information om källor finns i [källöversikt](../../sources/home.md).
+Mer information om källor finns i [Källöversikt](../../sources/home.md).

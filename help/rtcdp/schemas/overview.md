@@ -5,7 +5,7 @@ feature: Get Started, Data Management, Schemas
 exl-id: e56873d2-825d-4c0f-a0fe-1ae6e83438f0
 source-git-commit: db57fa753a3980dca671d476521f9849147880f1
 workflow-type: tm+mt
-source-wordcount: '146'
+source-wordcount: '143'
 ht-degree: 0%
 
 ---
@@ -16,4 +16,4 @@ Alla data som hämtas in till Adobe Real-time Customer Data Platform måste öve
 
 När du har skapat scheman kan du mappa datastrukturen till XDM så att den kan hämtas in i systemet.
 
-Mer information om XDM och hur du hanterar scheman i användargränssnittet finns i [XDM-dokumentation](../../xdm/home.md). Om du använder Real-Time Customer Platform B2B Edition läser du dokumentet på [scheman i Real-Time CDP B2B Edition](./b2b.md) för information om B2B-specifika program för XDM.
+Mer information om XDM och hur du hanterar scheman i användargränssnittet finns i [XDM-dokumentationen](../../xdm/home.md). Om du använder Real-Time Customer Platform B2B Edition läser du dokumentet om [scheman i Real-Time CDP B2B Edition](./b2b.md) för information om B2B-specifika program för XDM.

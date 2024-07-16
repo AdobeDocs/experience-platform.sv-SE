@@ -7,7 +7,7 @@ role: Developer
 source-git-commit: e828485ad5b0904c9dc66b43d1cdb3c4707885b1
 workflow-type: tm+mt
 source-wordcount: '55'
-ht-degree: 52%
+ht-degree: 50%
 
 ---
 
@@ -15,11 +15,11 @@ ht-degree: 52%
 # Insikter om observerbarhet {#observability}
 
 * [Översikt över Insikter i observationer](./home.md)
-* API för observationsinformation {#api}
+* API {#api} för observationsinformation
    * [Översikt](./api/overview.md)
    * [Komma igång](./api/getting-started.md)
    * [Mätvärden](./api/metrics.md)
-* Larm {#alerts}
+* Varningar {#alerts}
    * [Översikt](./alerts/overview.md)
    * [Standardvarningsregler](./alerts/rules.md)
    * [Användargränssnittsguide](./alerts/ui.md)

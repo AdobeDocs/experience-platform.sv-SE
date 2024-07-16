@@ -1,6 +1,6 @@
 ---
 keywords: Experience Platform;startsida;populära ämnen;bildskärmskonton;bildskärmsdataflöden;dataflöden
-description: Källkopplingar i Adobe Experience Platform gör det möjligt att importera externt källkodsdata på schemalagd basis. I den här självstudiekursen beskrivs hur du visar befintliga dataflöden från arbetsytan Källor.
+description: Source-anslutningar i Adobe Experience Platform gör det möjligt att importera externa data på schemalagd basis. I den här självstudiekursen beskrivs hur du visar befintliga dataflöden från arbetsytan Källor.
 solution: Experience Platform
 title: Övervaka dataflöden i användargränssnittet
 type: Tutorial
@@ -14,6 +14,6 @@ ht-degree: 0%
 
 # Övervaka dataflöden i användargränssnittet
 
-Källkopplingar i Adobe Experience Platform gör det möjligt att importera externt källkodsdata på schemalagd basis.
+Source-anslutningar i Adobe Experience Platform gör det möjligt att importera externa data på schemalagd basis.
 
-Läs mer om att övervaka dataflöden för källanslutningar i [övervaka dataflöden i källor](../../../dataflows/ui/monitor-sources.md) självstudiekurs.
+Läs självstudiekursen [Övervaka dataflöden i källor](../../../dataflows/ui/monitor-sources.md) om du vill veta mer om att övervaka dataflöden för källanslutningar.

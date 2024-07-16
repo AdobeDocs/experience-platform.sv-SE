@@ -11,7 +11,7 @@ ht-degree: 1%
 
 ---
 
-# [!DNL Real-Time Customer Data Platform] hemsida
+# Startsida för [!DNL Real-Time Customer Data Platform]
 
 Hemsidan för Adobe Real-time Customer Data Platform (Real-Time CDP) är den första sida som visas när du har loggat in på Real-Time CDP.
 
@@ -23,12 +23,12 @@ Det här dokumentet innehåller en översikt över Real-Time CDP hemsida och ins
 
 ## Komma igång-widget
 
-The [!UICONTROL Getting started with Real-Time Customer Profile] widgeten är uppdelad i fyra avsnitt:
+Widgeten [!UICONTROL Getting started with Real-Time Customer Profile] är uppdelad i fyra avsnitt:
 
-* **Importera data till plattformen**: Denna widget dirigerar dig till källkatalogen. Använd källkatalogen för att välja en källa och importera data till Experience Platform. Välj **[Konfigurera källor]** för att navigera till källkatalogen. Mer information finns i [källöversikt](../sources/home.md).
-* **Modelldatastrukturer**: Den här widgeten dirigerar dig till översikten över scheman. Använd översikten för att bläddra efter befintliga scheman eller skapa en plan som beskriver datastrukturen. Välj **[!UICONTROL Create schema]** för att navigera till gränssnittet för att skapa scheman. Mer information finns i [scheman, översikt](../xdm/home.md).
-* **Bygg målgrupper**: Den här widgeten dirigerar dig till segmentbyggaren i användargränssnittet. Använd Segment Builder för att interagera med profildataelement och definiera villkoren för segmentdefinitionen. Välj **[!UICONTROL Create audience]** för att navigera till segmentbyggaren. Mer information finns i [Översikt över segmenteringstjänsten](../segmentation/home.md).
-* **Skicka data till mål**: Den här widgeten dirigerar dig till målkatalogen. Använd målkatalogen för att välja en destination som du sedan kan ansluta till och skicka målgrupper till. Välj **[!UICONTROL Set up destinations]** för att navigera till målkatalogen. Mer information finns i [destinationer, översikt](../destinations/home.md).
+* **Infoga data i plattformen**: Den här widgeten dirigerar dig till källkatalogen. Använd källkatalogen för att välja en källa och importera data till Experience Platform. Välj **[Konfigurera källor]** för att navigera till källkatalogen. Mer information finns i [Källöversikt](../sources/home.md).
+* **Modelldatastrukturer**: Den här widgeten dirigerar dig till översikten över scheman. Använd översikten för att bläddra efter befintliga scheman eller skapa en plan som beskriver datastrukturen. Välj **[!UICONTROL Create schema]** om du vill navigera till gränssnittet för att skapa scheman. Mer information finns i översikten [scheman](../xdm/home.md).
+* **Skapa målgrupper**: Den här widgeten dirigerar dig till segmentbyggaren i användargränssnittet. Använd Segment Builder för att interagera med profildataelement och definiera villkoren för segmentdefinitionen. Välj **[!UICONTROL Create audience]** om du vill navigera till segmentbyggaren. Mer information finns i [Översikt över segmenteringstjänsten](../segmentation/home.md).
+* **Skicka data till mål**: Den här widgeten dirigerar dig till målkatalogen. Använd målkatalogen för att välja en destination som du sedan kan ansluta till och skicka målgrupper till. Välj **[!UICONTROL Set up destinations]** för att navigera till målkatalogen. Mer information finns i [målöversikten](../destinations/home.md).
 
 ![Plattformsgränssnittets startsida med widgeten Komma igång](assets/platform-home/getting-started-widget.png)
 
@@ -46,29 +46,29 @@ Kontrollpanelen för mätvärden visar aktuell information om dina Experience Pl
 
 På resultatlistan visas det aktuella totala antalet scheman, datamängder, profiler och målgrupper i organisationen samt deras senaste uppdateringsdatum.
 
-![Ledpanelsavsnittet på startsidan för plattformsgränssnittet.](assets/platform-home/leaderboard.png)
+![Ledningsdelen på startsidan för plattformsgränssnittet.](assets/platform-home/leaderboard.png)
 
-* **Totalt antal scheman**: **Totalt antal scheman** räknaren visar antalet scheman i systemet. Räknaren uppdateras när ett schema skapas. Mer information finns i [scheman, översikt](../xdm/home.md).
-* **Totalt antal datauppsättningar**: **Totalt antal datauppsättningar** räknaren visar antalet datauppsättningar i systemet och datamängden i Experience Platform. Den här räknaren uppdateras när en datauppsättning skapas. Mer information om datauppsättningar finns i [datauppsättningar, översikt](../catalog/datasets/overview.md).
-* **Totalt antal profiler**: **Profiler** antal visar det totala antalet profiler som din organisation har i Experience Platform. Det innehåller inte profilfragment. Det här är er totala adresserbara målgrupp. Det här antalet använder standardvärdet [sammanfogningsprincip](profile/merge-policies.md) som anges i konfigurationen av sammanfogningsprincipen i kundprofilen i realtid. Antalet profiler uppdateras en gång var 24:e timme. Välj **[!UICONTROL Profiles]** om du vill navigera till sidan Profiler - översikt och visa alla dina profilmått. Mer information om profiler finns i [Översikt över kundprofiler i realtid](../profile/home.md).
-* **Totalt antal målgrupper**: **Totalt antal målgrupper** räknaren visar det totala antalet målgrupper som har skapats för din organisation. Numret uppdateras när nya målgrupper skapas. Mer information om målgrupper finns i [Översikt över segmenteringstjänsten](../segmentation/home.md).
+* **Totalt antal scheman**: Räknaren **Totalt antal scheman** visar antalet scheman i systemet. Räknaren uppdateras när ett schema skapas. Mer information finns i översikten [scheman](../xdm/home.md).
+* **Totalt antal datauppsättningar**: Räknaren **Totalt antal datauppsättningar** visar antalet datauppsättningar i systemet och mängden data i Experience Platform. Den här räknaren uppdateras när en datauppsättning skapas. Mer information om datauppsättningar finns i [översikten över datauppsättningar](../catalog/datasets/overview.md).
+* **Totalt antal profiler**: Antalet **profiler** visar det totala antalet profiler som din organisation har i Experience Platform. Det innehåller inte profilfragment. Det här är er totala adresserbara målgrupp. Det här antalet använder standardprincipen [för sammanslagning](profile/merge-policies.md) som angetts i konfigurationen för sammanslagningsprincipen i kundprofilen i realtid. Antalet profiler uppdateras en gång var 24:e timme. Välj **[!UICONTROL Profiles]** om du vill navigera till sidan Profilöversikt och visa alla dina profilmått. Mer information om profiler finns i [Översikt över kundprofiler i realtid](../profile/home.md).
+* **Totalt antal målgrupper**: Räknaren **Totalt antal målgrupper** visar det totala antalet målgrupper som skapats för din organisation. Numret uppdateras när nya målgrupper skapas. Mer information om målgrupper finns i [Översikt över segmenteringstjänsten](../segmentation/home.md).
 
 ### Senaste objekt
 
 Senaste objekt listar de senaste ändringarna i organisationen. I exemplet nedan gäller de senaste ändringarna datamängder, källor, målgrupper och destinationer.
 
-![Avsnittet med de senaste objekten på startsidan för plattformsgränssnittet.](assets/platform-home/recent-items.png)
+![Avsnittet med senaste objekt på startsidan för plattformsgränssnittet.](assets/platform-home/recent-items.png)
 
-* **Senaste datauppsättningar**: **[!UICONTROL Recent datasets]** visar de fem senaste datauppsättningarna som skapats inom organisationen. Listan uppdateras när en ny datauppsättning skapas. Välj en datauppsättning om du vill visa information om objektet eller markera **[!UICONTROL View all]** för en lista med datauppsättningar. Därifrån kan du välja en specifik källa för information. Mer information om datauppsättningar finns i [datauppsättningar, översikt](../catalog/datasets/overview.md).
-* **Senaste källor**: **[!UICONTROL Recent sources]** med ett metriskt kort visas de fem senaste källorna som skapats inom organisationen. Listan uppdateras när en ny källa skapas. Välj en källa för att visa information om objektet eller välj **[!UICONTROL View all]** för en lista över källor. Därifrån kan du välja en specifik källa för information. Mer information om källor finns i [Översikt över källor](../sources/home.md).
-* **Senaste målgrupper**: **[!UICONTROL Recent audiences]** med ett metriskt kort visas de fem senaste målgrupperna som skapats inom organisationen. Listan uppdateras när en ny målgrupp skapas. Välj en målgrupp om du vill visa information om objektet eller välj **[!UICONTROL View all]** för en lista över målgrupper. Mer information om målgrupper finns i [Översikt över segmenteringstjänsten](../segmentation/home.md).
-* **Senaste destinationer**: **[!UICONTROL Recent destinations]** med ett metriskt kort visas de fem senaste destinationerna som skapats inom organisationen. Listan uppdateras när ett nytt mål skapas. Välj ett mål om du vill visa information om det objektet eller välj **[!UICONTROL View all]** för en lista över destinationer. Mer information finns i [destinationer, översikt](../destinations/home.md).
+* **Senaste datauppsättningar**: Kortet **[!UICONTROL Recent datasets]** visar de fem senaste datauppsättningarna som skapats inom organisationen. Listan uppdateras när en ny datauppsättning skapas. Välj en datauppsättning om du vill visa information om objektet eller välj **[!UICONTROL View all]** om du vill visa en lista över datauppsättningar. Därifrån kan du välja en specifik källa för information. Mer information om datauppsättningar finns i [översikten över datauppsättningar](../catalog/datasets/overview.md).
+* **Senaste källor**: Måttkortet **[!UICONTROL Recent sources]** visar de fem senaste källorna som skapats inom organisationen. Listan uppdateras när en ny källa skapas. Välj en källa om du vill visa information om objektet eller välj **[!UICONTROL View all]** om du vill se en lista över källor. Därifrån kan du välja en specifik källa för information. Mer information om källor finns i [Översikt över källor](../sources/home.md).
+* **Senaste målgrupper**: Måttkortet **[!UICONTROL Recent audiences]** visar de fem senaste målgrupperna som skapats inom organisationen. Listan uppdateras när en ny målgrupp skapas. Välj en målgrupp om du vill visa information för det objektet eller välj **[!UICONTROL View all]** om du vill se en lista över målgrupper. Mer information om målgrupper finns i [Översikt över segmenteringstjänsten](../segmentation/home.md).
+* **Senaste destinationer**: Måttkortet **[!UICONTROL Recent destinations]** visar de fem senaste destinationerna som skapats inom organisationen. Listan uppdateras när ett nytt mål skapas. Välj ett mål om du vill visa information om objektet eller välj **[!UICONTROL View all]** om du vill se en lista över mål. Mer information finns i [målöversikten](../destinations/home.md).
 
 ## Resurser
 
 Resurswidgeten innehåller ytterligare dokumentationsresurser som du kan referera till. Bland dessa finns:
 
-![Resursavsnittet på startsidan för användargränssnittet för plattformen.](assets/platform-home/resources.png)
+![Resursavsnittet på startsidan för plattformsgränssnittet.](assets/platform-home/resources.png)
 
 * [Scheman](../xdm/schema/composition.md)
 * [Koppla samman källor](../sources/home.md)

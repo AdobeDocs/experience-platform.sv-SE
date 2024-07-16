@@ -1,18 +1,19 @@
 ---
 title: Fältgrupp för punktidentifiering
 description: Läs mer om schemafältgruppen Punktidentifiering (XDM).
-source-git-commit: de8e944cfec3b52d25bb02bcfebe57d6a2a35e39
+exl-id: 8ade14a8-9a34-4060-95b2-812d1a21deeb
+source-git-commit: 8be502c9eea67119dc537a5d63a6c71e0bff1697
 workflow-type: tm+mt
 source-wordcount: '92'
 ht-degree: 1%
 
 ---
 
-# [!UICONTROL Bot Detection] fältgrupp
+# Fältgrupp [!UICONTROL Bot Detection]
 
-[!UICONTROL Bot Detection] är en standardgrupp för schemafält för [[!DNL XDM ExperienceEvent] class](../../classes/experienceevent.md). Fältgruppen innehåller information om robotgenererad trafik.
+[!UICONTROL Bot Detection] är en standardschemafältgrupp för [[!DNL XDM ExperienceEvent] klassen](../../classes/experienceevent.md). Fältgruppen innehåller information om robotgenererad trafik.
 
-![Ett diagram över [!UICONTROL Bot Detection] fältgrupp.](../../images/field-groups/bot-detection-information.png)
+![Ett diagram över fältgruppen [!UICONTROL Bot Detection].](../../images/field-groups/bot-detection-information.png)
 
 | Visningsnamn | Egenskap | Datatyp | Beskrivning |
 |----------------------------|-----------------|-----------|---------------------------------------------------------|
@@ -25,4 +26,3 @@ Mer information om fältgruppen finns i den offentliga XDM-databasen:
 
 * [Populerat exempel](https://github.com/adobe/xdm/blob/master/components/fieldgroups/experience-event/experienceevent-bot-detection.example.1.json)
 * [Fullständigt schema](https://github.com/adobe/xdm/blob/master/components/fieldgroups/experience-event/experienceevent-bot-detection.schema.json)
-

@@ -10,11 +10,11 @@ ht-degree: 0%
 
 ---
 
-# [!UICONTROL Reservation Details] schemafältgrupp
+# Schemafältgruppen [!UICONTROL Reservation Details]
 
-[!UICONTROL Reservation Details] är en standardgrupp för schemafält för [[!DNL XDM ExperienceEvent] class](../../classes/experienceevent.md) används för att samla in information om en reservation, inklusive längd, ändring, återbetalningsstatus och antal rum.
+[!UICONTROL Reservation Details] är en standardschemafältgrupp för [[!DNL XDM ExperienceEvent] klassen](../../classes/experienceevent.md) som används för att samla in information om en reservation, inklusive längd, ändring, återbetalningsstatus och antal rum.
 
-Fältgruppen innehåller ett enda fält av objekttyp, `reservations`. Egenskaperna i det här objektet förklaras nedan.
+Fältgruppen innehåller ett enskilt fält av objekttyp, `reservations`. Egenskaperna i det här objektet förklaras nedan.
 
 ![Struktur för reservationsinformation](../../images/field-groups/reservation-details.png)
 
@@ -46,7 +46,7 @@ Mer information om fältgruppen finns i den offentliga XDM-databasen:
 
 ## Branschspecifika bokningsfältgrupper
 
-Det finns flera andra standardfältgrupper som utökar [!UICONTROL Reservation Details] för branschspecifika användningsfall. Mer information finns i följande dokumentation:
+Det finns flera andra standardfältgrupper som utökar [!UICONTROL Reservation Details]-schemat för branschspecifika användningsfall. Mer information finns i följande dokumentation:
 
 * [[!UICONTROL Dining Reservation]](./dining-reservation.md)
 * [[!UICONTROL Flight Reservation]](./flight-reservation.md)

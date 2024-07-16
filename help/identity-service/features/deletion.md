@@ -22,22 +22,22 @@ I det här dokumentet finns en översikt över de olika mekanismer som du kan an
 Dokumentet nedan refererar till följande funktioner i Experience Platform:
 
 * [Identitetstjänst](../home.md): Få en bättre bild av enskilda kunder och deras beteende genom att skapa en bro mellan identiteter på olika enheter och system.
-   * [Identitetsdiagram](./identity-graph-viewer.md): Ett identitetsdiagram är en karta över relationer mellan olika identiteter för en viss kund, vilket ger dig en visuell representation av hur kunden interagerar med varumärket i olika kanaler.
-   * [Identitetsnamnutrymmen](./namespaces.md): Identitetsnamnutrymmen är en komponent i identitetstjänsten som fungerar som indikatorer för det sammanhang som en identitet relateras till. De skiljer till exempel på värdet &quot;name&quot;<span>@email.com som e-postadress eller 443522 som ett numeriskt CRM-ID.
-* [Katalogtjänst](../../catalog/home.md): Undersök datalinje, metadata, filbeskrivningar, kataloger och datauppsättningar i sjön.
-* [Datahygien](../../hygiene/home.md): Hantera lagrade konsumentdata genom att schemalägga utgångsdatum för automatiska datauppsättningar eller genom att ta bort enskilda poster från en datauppsättning eller alla datauppsättningar.
-* [Adobe Experience Platform Privacy Service](../../privacy-service/home.md): Hantera kundförfrågningar om åtkomst, avanmälan eller radering av personuppgifter mellan olika Adobe Experience Cloud-program.
+   * [Identitetsdiagram](./identity-graph-viewer.md): Ett identitetsdiagram är en karta över relationer mellan olika identiteter för en viss kund, som ger dig en visuell representation av hur kunden interagerar med varumärket i olika kanaler.
+   * [Identitetsnamnutrymmen](./namespaces.md): Identitetsnamnutrymmen är en komponent i identitetstjänsten som fungerar som indikatorer för det sammanhang som en identitet relateras till. De skiljer till exempel på värdet&quot;name<span>@email.com&quot; som e-postadress eller&quot;443522&quot; som ett numeriskt CRM-ID.
+* [Katalogtjänst](../../catalog/home.md): Utforska datalinje, metadata, filbeskrivningar, kataloger och datauppsättningar i datasjön.
+* [Datahygien](../../hygiene/home.md): Hantera dina lagrade konsumentdata genom att schemalägga utgångsdatum för automatiska datauppsättningar eller ta bort enskilda poster från en datauppsättning eller alla datauppsättningar.
+* [Adobe Experience Platform Privacy Service](../../privacy-service/home.md): Hantera kundförfrågningar om åtkomst, avanmälan från försäljning eller borttagning av personuppgifter mellan Adobe Experience Cloud-program.
 * [Kundprofil i realtid](../../profile/home.md): Tillhandahåller en enhetlig kundprofil i realtid baserad på aggregerade data från flera källor.
 
 ## Ta bort en identitet
 
-Med en begäran om borttagning av en identitet kan du ta bort en identitet i ett diagram, vilket resulterar i att länkar som är kopplade till en enskild användaridentitet som är kopplad till ett identitetsnamnutrymme tas bort. Du kan använda mekanismer från [Privacy Service](../../privacy-service/home.md) för användningsfall som t.ex. kundförfrågningar om radering av uppgifter och efterlevnad av sekretessbestämmelser som den allmänna dataskyddsförordningen (GDPR).
+Med en begäran om borttagning av en identitet kan du ta bort en identitet i ett diagram, vilket resulterar i att länkar som är kopplade till en enskild användaridentitet som är kopplad till ett identitetsnamnutrymme tas bort. Du kan använda mekanismer som tillhandahålls av [Privacy Service](../../privacy-service/home.md) för användningsfall som kundförfrågningar för borttagning av data och efterlevnad av sekretessbestämmelser som den allmänna dataskyddsförordningen (GDPR).
 
 I avsnitten nedan beskrivs de mekanismer som du kan använda för att ta bort enstaka identiteter i Experience Platform.
 
 ### Ta bort en identitet i Privacy Servicen
 
-Privacy Service behandlar kundförfrågningar om åtkomst, avanmälan från försäljning eller radering av personuppgifter enligt sekretessbestämmelser såsom Allmänna dataskyddsförordningen (GDPR) och California Consumer Privacy Act (CCPA). Med Privacy Service kan du skicka jobbbegäranden med API:t eller användargränssnittet. När Experience Platform tar emot en begäran om borttagning från Privacy Servicen skickar Platform en bekräftelse till Privacy Servicen om att begäran har tagits emot och att data som påverkas har markerats för borttagning. Borttagningen av den enskilda identiteten baseras på det angivna namnutrymmet och/eller ID-värdet. Dessutom tas alla sandlådor som är kopplade till en viss organisation bort. Mer information finns i guiden [behandling av sekretessförfrågningar i identitetstjänsten](../privacy.md).
+Privacy Service behandlar kundförfrågningar om åtkomst, avanmälan från försäljning eller radering av personuppgifter enligt sekretessbestämmelser såsom Allmänna dataskyddsförordningen (GDPR) och California Consumer Privacy Act (CCPA). Med Privacy Service kan du skicka jobbbegäranden med API:t eller användargränssnittet. När Experience Platform tar emot en begäran om borttagning från Privacy Servicen skickar Platform en bekräftelse till Privacy Servicen om att begäran har tagits emot och att data som påverkas har markerats för borttagning. Borttagningen av den enskilda identiteten baseras på det angivna namnutrymmet och/eller ID-värdet. Dessutom tas alla sandlådor som är kopplade till en viss organisation bort. Mer information finns i handboken om [bearbetning av sekretessförfrågningar i identitetstjänsten](../privacy.md).
 
 Tabellen nedan innehåller en beskrivning av borttagningen av enstaka identiteter i Privacy Servicen:
 
@@ -56,11 +56,11 @@ I följande avsnitt beskrivs de mekanismer som kan användas för att ta bort da
 
 ### Borttagning av datauppsättning i katalogtjänsten
 
-Du kan använda katalogtjänsten för att skicka begäranden om borttagning av datauppsättningar. Mer information om hur du tar bort datauppsättningar med katalogtjänsten finns i guiden [ta bort objekt med hjälp av katalogtjänstens API](../../catalog/api/delete-object.md). Du kan också använda användargränssnittet för plattformen för att skicka begäranden om borttagning av datauppsättningar. Mer information finns i [användarhandbok för datauppsättningar](../../catalog/datasets/user-guide.md#delete-a-dataset).
+Du kan använda katalogtjänsten för att skicka begäranden om borttagning av datauppsättningar. Mer information om hur du tar bort datauppsättningar med katalogtjänsten finns i guiden om att [ta bort objekt med hjälp av katalogtjänstens API](../../catalog/api/delete-object.md). Du kan också använda användargränssnittet för plattformen för att skicka begäranden om borttagning av datauppsättningar. Mer information finns i användarhandboken för [datauppsättningar](../../catalog/datasets/user-guide.md#delete-a-dataset).
 
 ### Utgångsdatum för datauppsättning i Datahygien
 
-The [[!UICONTROL Data Hygiene] arbetsyta](../../hygiene/ui/overview.md) i Adobe Experience Platform UI kan du schemalägga förfallotider för datauppsättningar. När en datauppsättning når sitt förfallodatum startar datasjön, identitetstjänsten och kundprofilen i realtid separata processer för att ta bort datauppsättningens innehåll från sina respektive tjänster. Mer information finns i guiden [hantera förfallodatum för datauppsättning med [!UICONTROL Data Hygiene] arbetsyta](../../hygiene/ui/dataset-expiration.md).
+Med arbetsytan [[!UICONTROL Data Hygiene] ](../../hygiene/ui/overview.md) i Adobe Experience Platform-gränssnittet kan du schemalägga förfallodatum för datauppsättningar. När en datauppsättning når sitt förfallodatum startar datasjön, identitetstjänsten och kundprofilen i realtid separata processer för att ta bort datauppsättningens innehåll från sina respektive tjänster. Mer information finns i guiden om att [hantera förfallodatum för datauppsättningar med arbetsytan [!UICONTROL Data Hygiene]](../../hygiene/ui/dataset-expiration.md).
 
 Tabellen nedan innehåller en beskrivning av skillnaderna mellan borttagning av datauppsättningar i katalogtjänsten och datahygien:
 

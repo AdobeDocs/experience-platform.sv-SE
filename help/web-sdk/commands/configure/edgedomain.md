@@ -1,7 +1,8 @@
 ---
 title: edgeDomain
 description: Avgör den rotdomän som du vill skicka data till.
-source-git-commit: f75dcfc945be2f45c1638bdd4d670288aef6e1e6
+exl-id: 6beb5116-cd23-42fd-934c-5cf84d1d7153
+source-git-commit: 8be502c9eea67119dc537a5d63a6c71e0bff1697
 workflow-type: tm+mt
 source-wordcount: '200'
 ht-degree: 1%
@@ -10,24 +11,24 @@ ht-degree: 1%
 
 # `edgeDomain`
 
-The `edgeDomain` kan du ändra domänen där Web SDK skickar data. Den här egenskapen används ofta av organisationer som använder [cookies från första part](https://experienceleague.adobe.com/docs/core-services/interface/administration/ec-cookies/cookies-first-party.html). Data skickas till organisationens egen domän, och sedan en CNAME-post vidarebefordrar dessa data till Adobe.
+Med egenskapen `edgeDomain` kan du ändra den domän som Web SDK skickar data till. Den här egenskapen används ofta av organisationer som använder [cookies från första part](https://experienceleague.adobe.com/docs/core-services/interface/administration/ec-cookies/cookies-first-party.html). Data skickas till organisationens egen domän, och sedan en CNAME-post vidarebefordrar dessa data till Adobe.
 
-Organisationen bestämmer korrekt värde för den här egenskapen vid konfiguration [cookies från första part](https://experienceleague.adobe.com/docs/core-services/interface/administration/ec-cookies/cookies-first-party.html). En organisation använder vanligtvis en dedikerad underdomän för detta ändamål. Om du till exempel använder domänen `example.com`kan du konfigurera cookies från första part på `data.example.com`.
+Din organisation fastställer korrekt värde för den här egenskapen när [cookies från första part](https://experienceleague.adobe.com/docs/core-services/interface/administration/ec-cookies/cookies-first-party.html) konfigureras. En organisation använder vanligtvis en dedikerad underdomän för detta ändamål. Om du till exempel använder domänen `example.com` kan du konfigurera cookies från första part på `data.example.com`.
 
 ## Konfigurera en edge-domän med hjälp av taggtillägget Web SDK
 
-Ange **[!UICONTROL Edge domain]** textfält när [konfigurera taggtillägget](/help/tags/extensions/client/web-sdk/web-sdk-extension-configuration.md).
+Ange textfältet **[!UICONTROL Edge domain]** när [du konfigurerar taggtillägget](/help/tags/extensions/client/web-sdk/web-sdk-extension-configuration.md).
 
-1. Logga in på [experience.adobe.com](https://experience.adobe.com) med dina Adobe ID-uppgifter.
+1. Logga in på [experience.adobe.com](https://experience.adobe.com) med dina Adobe ID-inloggningsuppgifter.
 1. Navigera till **[!UICONTROL Data Collection]** > **[!UICONTROL Tags]**.
 1. Välj önskad taggegenskap.
-1. Navigera till **[!UICONTROL Extensions]** och sedan klicka **[!UICONTROL Configure]** på [!UICONTROL Adobe Experience Platform Web SDK] kort.
-1. Hitta textfältet **[!UICONTROL Edge domain]** anger du önskat värde.
-1. Klicka **[!UICONTROL Save]** publicera sedan ändringarna.
+1. Navigera till **[!UICONTROL Extensions]** och klicka sedan på **[!UICONTROL Configure]** på [!UICONTROL Adobe Experience Platform Web SDK]-kortet.
+1. Leta reda på textfältet **[!UICONTROL Edge domain]** och ange önskat värde.
+1. Klicka på **[!UICONTROL Save]** och publicera sedan ändringarna.
 
-## Konfigurera en edge-domän med JavaScript-biblioteket för Web SDK
+## Konfigurera en edge-domän med hjälp av JavaScript-biblioteket för Web SDK
 
-Ange `edgeDomain` sträng när `configure` -kommando. Om du utelämnar den här egenskapen när du konfigurerar SDK blir standardvärdet `edge.adobedc.net`. Ange det här värdet om du vill åsidosätta domänen som Web SDK skickar data till.
+Ange strängen `edgeDomain` när du kör kommandot `configure`. Om du utelämnar den här egenskapen när du konfigurerar SDK blir standardvärdet `edge.adobedc.net`. Ange det här värdet om du vill åsidosätta domänen som Web SDK skickar data till.
 
 ```js
 alloy("configure", {

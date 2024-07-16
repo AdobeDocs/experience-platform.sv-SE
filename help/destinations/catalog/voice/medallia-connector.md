@@ -31,7 +31,7 @@ Ett B2B-varumärke vill utvärdera och effektivisera sitt introduktionsprogram. 
 
 En återförsäljare vill förstå kundernas preferenser bättre för orderhantering. De vill skicka en kort enfråge-SMS-enkät till kunder som har gjort online- och butiksköp den senaste månaden.
 
-## Förutsättningar {#prerequisites}
+## Förhandskrav {#prerequisites}
 
 Följande information krävs för att upprätta en parallellanslutning:
 * **URL för OAuth-tokenslutpunkt**
@@ -59,8 +59,8 @@ Se tabellen nedan för information om exporttyp och frekvens för destinationen.
 
 | Objekt | Typ | Anteckningar |
 ---------|----------|---------|
-| Exporttyp | **[!UICONTROL Profile-based]** | Du exporterar alla nykvalificerade medlemmar i ett segment tillsammans med de önskade schemafälten (t.ex. e-postadress, telefonnummer, efternamn), som du har valt på skärmen Välj profilattribut i [arbetsflöde för målaktivering](/help/destinations/ui/activate-batch-profile-destinations.md#select-attributes). |
-| Exportfrekvens | **[!UICONTROL Streaming]** | Direktuppspelningsmål är alltid på API-baserade anslutningar. Så snart en profil uppdateras i Experience Platform baserat på målgruppsutvärdering skickar anslutningsprogrammet uppdateringen nedströms till målplattformen. Läs mer om [mål för direktuppspelning](/help/destinations/destination-types.md#streaming-destinations). |
+| Exporttyp | **[!UICONTROL Profile-based]** | Du exporterar alla nykvalificerade medlemmar i ett segment tillsammans med de önskade schemafälten (t.ex. e-postadress, telefonnummer, efternamn), som du har valt på skärmen Välj profilattribut i arbetsflödet för [målaktivering](/help/destinations/ui/activate-batch-profile-destinations.md#select-attributes). |
+| Exportfrekvens | **[!UICONTROL Streaming]** | Direktuppspelningsmål är alltid på API-baserade anslutningar. Så snart en profil uppdateras i Experience Platform baserat på målgruppsutvärdering skickar anslutningsprogrammet uppdateringen nedströms till målplattformen. Läs mer om [direktuppspelningsmål](/help/destinations/destination-types.md#streaming-destinations). |
 
 {style="table-layout:auto"}
 
@@ -68,17 +68,17 @@ Se tabellen nedan för information om exporttyp och frekvens för destinationen.
 
 >[!IMPORTANT]
 > 
->Om du vill ansluta till målet behöver du **[!UICONTROL View Destinations]** och **[!UICONTROL Manage Destinations]** [behörigheter för åtkomstkontroll](/help/access-control/home.md#permissions). Läs [åtkomstkontroll - översikt](/help/access-control/ui/overview.md) eller kontakta produktadministratören för att få de behörigheter som krävs.
+>Om du vill ansluta till målet behöver du behörigheterna **[!UICONTROL View Destinations]** och **[!UICONTROL Manage Destinations]** [åtkomstkontroll](/help/access-control/home.md#permissions). Läs [åtkomstkontrollsöversikten](/help/access-control/ui/overview.md) eller kontakta produktadministratören för att få den behörighet som krävs.
 
-Om du vill ansluta till det här målet följer du stegen som beskrivs i [självstudiekurs om destinationskonfiguration](../../ui/connect-destination.md). I arbetsflödet för att konfigurera mål fyller du i fälten som listas i de två avsnitten nedan.
+Om du vill ansluta till det här målet följer du stegen som beskrivs i självstudiekursen [för destinationskonfiguration](../../ui/connect-destination.md). I arbetsflödet för att konfigurera mål fyller du i fälten som listas i de två avsnitten nedan.
 
 ### Autentisera till mål {#authenticate}
 
-Om du vill autentisera mot målet fyller du i de obligatoriska fälten och väljer **[!UICONTROL Connect to destination]**.
+Fyll i de obligatoriska fälten och välj **[!UICONTROL Connect to destination]** om du vill autentisera mot målet.
 
 * **[!UICONTROL OAuth Token Endpoint URL]**: Vanligtvis har formatet https://instance.medallia.tld/oauth/tenant/token.
-* **[!UICONTROL Client ID]**: Hämta material från ert medieteam.
-* **[!UICONTROL Client Secret]**: Hämta material från ert medieteam.
+* **[!UICONTROL Client ID]**: Hämta från ditt team för mediedistribution.
+* **[!UICONTROL Client Secret]**: Hämta från ditt team för mediedistribution.
 
 ![Bild som visar autentiseringsskärmen för det här målet.](/help/destinations/assets/catalog/voice/medallia-destination-oauth.png)
 
@@ -88,50 +88,50 @@ Om du vill konfigurera information för målet fyller du i de obligatoriska och 
 
 * **[!UICONTROL Name]**: Ett namn som du känner igen det här målet med i framtiden.
 * **[!UICONTROL Description]**: En beskrivning som hjälper dig att identifiera det här målet i framtiden.
-* **[!UICONTROL API Gateway URL]**: Hämta material från ert medieteam. Används vanligtvis i formatet https://instance-tenant.apis.medallia.com.
-* **[!UICONTROL Import API Name]**: Hämta material från ert medieteam. Namnet på API:t för medieimport (kallas även webbfeed) som ska användas i den här anslutningen. Du kan aktivera olika målgrupper för olika import-API:er för att starta olika undersökningsprogram.
+* **[!UICONTROL API Gateway URL]**: Hämta från ditt team för mediedistribution. Används vanligtvis i formatet https://instance-tenant.apis.medallia.com.
+* **[!UICONTROL Import API Name]**: Hämta från ditt team för mediedistribution. Namnet på API:t för medieimport (kallas även webbfeed) som ska användas i den här anslutningen. Du kan aktivera olika målgrupper för olika import-API:er för att starta olika undersökningsprogram.
 
-![Bild som visar skärmen för målinformation för det här målet.](/help/destinations/assets/catalog/voice/medallia-destination-details.png)
+![Bild som visar målinformationsskärmen för det här målet.](/help/destinations/assets/catalog/voice/medallia-destination-details.png)
 
 ### Aktivera aviseringar {#enable-alerts}
 
-Du kan aktivera varningar för att få meddelanden om dataflödets status till ditt mål. Välj en avisering i listan om du vill prenumerera och få meddelanden om statusen för ditt dataflöde. Mer information om varningar finns i guiden på [prenumerera på destinationsvarningar med användargränssnittet](../../ui/alerts.md).
+Du kan aktivera varningar för att få meddelanden om dataflödets status till ditt mål. Välj en avisering i listan om du vill prenumerera och få meddelanden om statusen för ditt dataflöde. Mer information om varningar finns i guiden [prenumerera på destinationsvarningar med användargränssnittet](../../ui/alerts.md).
 
-När du är klar med informationen för målanslutningen väljer du **[!UICONTROL Next]**.
+Välj **[!UICONTROL Next]** när du är klar med att ange information för målanslutningen.
 
 ## Aktivera målgrupper till det här målet {#activate}
 
 >[!IMPORTANT]
 > 
->* För att aktivera data behöver du **[!UICONTROL View Destinations]**, **[!UICONTROL Activate Destinations]**, **[!UICONTROL View Profiles]** och **[!UICONTROL View Segments]** [behörigheter för åtkomstkontroll](/help/access-control/home.md#permissions). Läs [åtkomstkontroll - översikt](/help/access-control/ui/overview.md) eller kontakta produktadministratören för att få de behörigheter som krävs.
->* Exportera *identiteter* behöver du **[!UICONTROL View Identity Graph]** [behörighet för åtkomstkontroll](/help/access-control/home.md#permissions). <br> ![Markera det identitetsnamnutrymme som är markerat i arbetsflödet för att aktivera målgrupper till mål.](/help/destinations/assets/overview/export-identities-to-destination.png "Markera det identitetsnamnutrymme som är markerat i arbetsflödet för att aktivera målgrupper till mål."){width="100" zoomable="yes"}
+>* För att aktivera data behöver du behörigheterna **[!UICONTROL View Destinations]**, **[!UICONTROL Activate Destinations]**, **[!UICONTROL View Profiles]** och **[!UICONTROL View Segments]** [åtkomstkontroll](/help/access-control/home.md#permissions). Läs [åtkomstkontrollsöversikten](/help/access-control/ui/overview.md) eller kontakta produktadministratören för att få den behörighet som krävs.
+>* Om du vill exportera *identiteter* måste du ha **[!UICONTROL View Identity Graph]** [åtkomstkontrollbehörighet](/help/access-control/home.md#permissions). <br> ![Markera identitetsnamnområdet som är markerat i arbetsflödet för att aktivera målgrupper till mål.](/help/destinations/assets/overview/export-identities-to-destination.png "Markera identitetsnamnområdet som är markerat i arbetsflödet för att aktivera målgrupper till mål."){width="100" zoomable="yes"}
 
-Läs [Aktivera profiler och målgrupper för att strömma målgruppernas exportdestinationer](/help/destinations/ui/activate-segment-streaming-destinations.md) för instruktioner om hur du aktiverar målgrupper till det här målet.
+Läs [Aktivera profiler och målgrupper för att direktuppspela målgruppsexportdestinationer](/help/destinations/ui/activate-segment-streaming-destinations.md) för instruktioner om hur du aktiverar målgrupper till det här målet.
 
 ### Mappa attribut och identiteter {#map}
 
 Följande namnutrymmen för målidentitet måste mappas beroende på användningsfallet:
-* För e-postbaserade undersökningar **e-post** måste mappas som ett målfält med **Målfält** > **Välj namnområde för identitet** > **e-post**
-* För SMS-baserade undersökningar **telefon** måste mappas som ett målfält med **Målfält** > **Välj namnområde för identitet** > **telefon**. Telefonnummer måste vara i E.164-format, som innehåller ett plustecken (+), en landskod, en lokal områdeskod och ett telefonnummer
+* För e-postbaserade undersökningar måste **email** mappas som ett målfält med **målfält** > **Välj identitetsnamnutrymme** > **e-post**
+* För SMS-baserade enkäter måste **phone** mappas som ett målfält med **målfält** > **Välj identitetsnamnområde** > **telefon**. Telefonnummer måste vara i E.164-format, som innehåller ett plustecken (+), en landskod, en lokal områdeskod och ett telefonnummer
 
 Vi rekommenderar starkt att du även mappar ytterligare anpassade målattribut för att skapa personaliserade enkäter och lägger till ytterligare information om kunden till enkätposten:
 
 * Personaliserade enkäter riktar sig vanligtvis till kunden efter namn
-   * Mappa kundens förnamn till **Målfält** > **Välj anpassade attribut** > **Attributnamn** > **förnamn**
-   * Mappa kundens efternamn till **Målfält** > **Välj anpassade attribut** > **Attributnamn** > **efternamn**
+   * Mappa kundens förnamn till **målfält** > **Välj anpassade attribut** > **Attributnamn** > **förnamn**
+   * Mappa kundens efternamn till **målfält** > **Välj anpassade attribut** > **attributnamn** > **efternamn**
 * Lägg till mappningar för andra anpassade målattribut efter behov
 
 ![Bild som visar en exempelmappning för identiteter och attribut.](/help/destinations/assets/catalog/voice/medallia-destination-mapping.png)
 
 >[!IMPORTANT]
 > 
-> Dela med er Media Delivery-grupp exakt **Attributnamn** för varje anpassat målattribut du mappar med **Målfält** > **Välj anpassade attribut** > **Attributnamn**. Du kan ta en skärmbild av mappningssidan och dela den direkt.
+> Dela exakt **Attributnamn** för varje anpassat målattribut som du mappar med hjälp av **målfält** > **Välj anpassade attribut** > **Attributnamn** med Media-leveransteamet. Du kan ta en skärmbild av mappningssidan och dela den direkt.
 
 ## Exporterade data {#exported-data}
 
 När du har aktiverat segmenten på destinationen ska du informera ditt Media Delivery Team, som ska kunna validera exporterade data från Adobe Experience Platform till MediaMedia. Observera att enkäter endast kan aktiveras inom media efter lyckad dataverifiering. Före detta exporteras data till Medallia men kommer inte att utlösa undersökningar till kunderna.
 
-Ett exempel på JSON för exporterade data anges nedan, som använder exempelmappningen från skärmbilden ovan i **Mappa attribut och identiteter** avsnitt:
+Ett exempel-JSON för exporterade data anges nedan, som använder exempelmappningen från skärmbilden ovan i avsnittet **Karteattribut och identiteter**:
 
 ```json
 [
@@ -150,4 +150,4 @@ Ett exempel på JSON för exporterade data anges nedan, som använder exempelmap
 
 ## Dataanvändning och styrning {#data-usage-governance}
 
-Alla [!DNL Adobe Experience Platform] destinationerna är kompatibla med dataanvändningsprinciper när data hanteras. Detaljerad information om hur [!DNL Adobe Experience Platform] använder datastyrning, se [Datastyrning - översikt](/help/data-governance/home.md).
+Alla [!DNL Adobe Experience Platform]-mål är kompatibla med dataanvändningsprinciper när data hanteras. Mer information om hur [!DNL Adobe Experience Platform] använder datastyrning finns i [Datastyrningsöversikten](/help/data-governance/home.md).

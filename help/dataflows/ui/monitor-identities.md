@@ -6,7 +6,7 @@ type: Tutorial
 exl-id: 735b0e52-74f6-47fe-98c6-e12a633b6f57
 source-git-commit: 1a7ba52b48460d77d0b7695aa0ab2d5be127d921
 workflow-type: tm+mt
-source-wordcount: '1069'
+source-wordcount: '1071'
 ht-degree: 0%
 
 ---
@@ -19,10 +19,10 @@ Kontrollpanelen ger dig en visuell representation av dataaktiviteten inom identi
 
 ## Komma igång {#getting-started}
 
-- [Dataflöden](../home.md): Dataflöden är en representation av datajobb som flyttar data mellan plattformar. Dataflöden konfigureras över olika tjänster, vilket hjälper dig att flytta data från källanslutningar till måldatauppsättningar till [!DNL Identity] och [!DNL Profile]och till [!DNL Destinations].
-   - [Dataflödeskörningar](../../sources/notifications.md): Dataflödeskörningar är återkommande schemalagda jobb som baseras på frekvenskonfigurationen för valda dataflöden.
+- [Dataflöden](../home.md): Dataflöden är en representation av datajobb som flyttar data mellan plattformar. Dataflöden är konfigurerade för olika tjänster, vilket hjälper dig att flytta data från källanslutningar till måldatauppsättningar, till [!DNL Identity] och [!DNL Profile] samt till [!DNL Destinations].
+   - [Dataflöden körs](../../sources/notifications.md): Dataflöden är återkommande schemalagda jobb som baseras på frekvenskonfigurationen för valda dataflöden.
 - [Identitetstjänst](../../identity-service/home.md): Få en bättre bild av enskilda kunder och deras beteende genom att skapa en bro mellan identiteter på olika enheter och system.
-- [Sandlådor](../../sandboxes/home.md): [!DNL Experience Platform] innehåller virtuella sandlådor som partitionerar en enda [!DNL Platform] till separata virtuella miljöer för att utveckla och utveckla applikationer för digitala upplevelser.
+- [Sandlådor](../../sandboxes/home.md): [!DNL Experience Platform] innehåller virtuella sandlådor som partitionerar en enskild [!DNL Platform]-instans till separata virtuella miljöer för att hjälpa till att utveckla och utveckla program för digitala upplevelser.
 
 ## Kontrollpanel för identiteter {#identity-metrics}
 
@@ -37,17 +37,17 @@ Kontrollpanelen ger dig en visuell representation av dataaktiviteten inom identi
 >title="Information om dataflödeskörning"
 >abstract="På sidan med information om dataflödeskörning visas mer information om Identity-dataflödets körning, inklusive dess organisations-ID och dataflödes-ID."
 
-Så här öppnar du **[!UICONTROL Identities]** kontrollpanel, välja **[!UICONTROL Monitoring]** i den vänstra navigeringen. En gång på **[!UICONTROL Monitoring]** väljer du **[!UICONTROL Identities]** kort.
+Om du vill komma åt kontrollpanelen **[!UICONTROL Identities]** väljer du **[!UICONTROL Monitoring]** i den vänstra navigeringen. Välj **[!UICONTROL Identities]**-kortet på sidan **[!UICONTROL Monitoring]**.
 
-![Identitetskortet. Information om antalet mottagna poster, antalet importerade poster och antalet lyckade försök visas.](../assets/ui/monitor-identities/focus-card.png)
+![Identitetskortet. Information om antalet mottagna poster, antalet importerade poster och antalet lyckade åtgärder visas.](../assets/ui/monitor-identities/focus-card.png)
 
-På vänster sida **[!UICONTROL Identities]** kontrollpanelen, **[!UICONTROL Identities]** kortet innehåller information om det totala antalet mottagna poster, antalet importerade poster samt antalet lyckade inspelningar.
+På huvudkontrollpanelen **[!UICONTROL Identities]** visar **[!UICONTROL Identities]**-kortet information om det totala antalet mottagna poster, antalet inmatade poster samt antalet lyckade inspelningar.
 
 Instrumentpanelen i sig innehåller statistik om identitetsbearbetning. Instrumentpanelen visar som standard information om identitetsbearbetning för organisationens källor de senaste 24 timmarna.
 
 ![Kontrollpanelen Identiteter. Information om antalet mottagna poster per källa visas.](../assets/ui/monitor-identities/sources.png)
 
-The [!UICONTROL Identity processing] sidan innehåller information om poster som kapslats till [!DNL Identity Service], inklusive antal tillagda identiteter, skapade diagram och uppdaterade diagram.
+Sidan [!UICONTROL Identity processing] innehåller information om poster som har importerats till [!DNL Identity Service], inklusive antal identiteter som har lagts till, diagram som skapats och diagram som uppdaterats.
 
 Följande mått är tillgängliga för den här instrumentpanelsvyn:
 
@@ -55,18 +55,18 @@ Följande mått är tillgängliga för den här instrumentpanelsvyn:
 | ---------------- | ----------- |
 | **[!UICONTROL Records received]** | Antalet poster som tagits emot från datasjön. |
 | **[!UICONTROL Records failed]** | Antalet poster som inte har importerats till plattformen på grund av datafel. |
-| **[!UICONTROL Records skipped]** | Antalet poster som har importerats, men inte [!DNL Identity Service] därför att det bara fanns en identifierare i postraden. |
-| **[!UICONTROL Records ingested]** | Antalet poster som inhämtats till [!DNL Identity Service]. |
-| **[!UICONTROL Identities added]** | Antalet nya nettoidentifierare som lagts till i [!DNL Identity Service]. |
-| **[!UICONTROL Graphs created]** | Antalet nya identitetsdiagram som skapas i [!DNL Identity Service]. |
+| **[!UICONTROL Records skipped]** | Antalet poster som har importerats, men inte till [!DNL Identity Service], eftersom det bara fanns en identifierare i postraden. |
+| **[!UICONTROL Records ingested]** | Antalet poster som har importerats till [!DNL Identity Service]. |
+| **[!UICONTROL Identities added]** | Antalet nya nettoidentifierare som har lagts till i [!DNL Identity Service]. |
+| **[!UICONTROL Graphs created]** | Antalet nya identitetsdiagram (netto) som har skapats i [!DNL Identity Service]. |
 | **[!UICONTROL Graphs updated]** | Antalet befintliga identitetsdiagram som uppdaterats med nya kanter. |
 | **[!UICONTROL Total failed dataflows]** | Antalet misslyckade dataflödeskörningar. |
 
-Du kan välja filterikonen ![Filterikon](../assets/ui/monitor-identities/filter.png) bredvid källnamnet för att se information om identitetsbearbetning för den valda källans dataflöden.
+Du kan välja filterikonen ![Filterikon](../assets/ui/monitor-identities/filter.png) bredvid källnamnet för att visa information om identitetsbearbetning för den valda källans dataflöden.
 
 ![Filterikonen är markerad. Om du väljer den här ikonen kan du visa den valda källans dataflöden.](../assets/ui/monitor-identities/sources-filter.png)
 
-Du kan också välja **[!UICONTROL Dataflows]** på pekskärmen för att se information om identitetsbearbetning för organisationens dataflöden de senaste 24 timmarna.
+Du kan också välja **[!UICONTROL Dataflows]** på växlingsknappen för att visa information om identitetsbearbetning för organisationens dataflöden de senaste 24 timmarna.
 
 ![Kontrollpanelen Identiteter. Information om antalet identiteter som tas emot per dataflöde visas.](../assets/ui/monitor-identities/dataflows.png)
 
@@ -79,21 +79,21 @@ Följande mått är tillgängliga för den här instrumentpanelsvyn:
 | **[!UICONTROL Source name]** | Namnet på källan som dataflödet tillhör. |
 | **[!UICONTROL Records received]** | Antalet poster som tagits emot från datasjön. |
 | **[!UICONTROL Records failed]** | Antalet poster som inte har importerats till plattformen på grund av datafel. |
-| **[!UICONTROL Records skipped]** | Antalet poster som har importerats, men inte [!DNL Identity Service] därför att det bara fanns en identifierare i postraden. |
-| **[!UICONTROL Records ingested]** | Antalet poster som inhämtats till [!DNL Identity Service]. |
+| **[!UICONTROL Records skipped]** | Antalet poster som har importerats, men inte till [!DNL Identity Service], eftersom det bara fanns en identifierare i postraden. |
+| **[!UICONTROL Records ingested]** | Antalet poster som har importerats till [!DNL Identity Service]. |
 | **[!UICONTROL Total records]** | Totalt antal poster, inklusive poster som misslyckats, poster som hoppats över, identiteter som lagts till och dubblerade poster. |
-| **[!UICONTROL Identities added]** | Antalet nya nettoidentifierare som lagts till i [!DNL Identity Service]. |
-| **[!UICONTROL Graphs created]** | Antalet nya identitetsdiagram som skapas i [!DNL Identity Service]. |
+| **[!UICONTROL Identities added]** | Antalet nya nettoidentifierare som har lagts till i [!DNL Identity Service]. |
+| **[!UICONTROL Graphs created]** | Antalet nya identitetsdiagram (netto) som har skapats i [!DNL Identity Service]. |
 | **[!UICONTROL Graphs updated]** | Antalet befintliga identitetsdiagram som uppdaterats med nya kanter. |
 | **[!UICONTROL Total failed dataflows]** | Antalet misslyckade dataflödeskörningar. |
 
-Markera filterikonen ![filter](../assets/ui/monitor-identities/filter.png) bredvid starttiden för dataflödet för att se mer information om [!DNL Identity] dataflödeskörning.
+Välj filterikonen ![filter](../assets/ui/monitor-identities/filter.png) bredvid starttiden för dataflödeskörningen för att visa mer information om [!DNL Identity]-dataflödeskörningen.
 
-![Filterikonen är markerad. Om du väljer den här ikonen kan du visa information om det markerade dataflödet.](../assets/ui/monitor-identities/dataflows-filter.png)
+![Filterikonen är markerad. Om du väljer den här ikonen kan du visa information om det valda dataflödet.](../assets/ui/monitor-identities/dataflows-filter.png)
 
-The [!UICONTROL Dataflow run details] sidan visar mer information om [!DNL Identity] Dataflödeskörning, inklusive dess organisations-ID och dataflödes-ID. På den här sidan visas även motsvarande felkod och felmeddelande från [!DNL Identity Service], om det uppstår några fel i intagsprocessen.
+På sidan [!UICONTROL Dataflow run details] visas mer information om [!DNL Identity]-dataflödets körning, inklusive dess organisations-ID och dataflödes-ID. På den här sidan visas även motsvarande felkod och felmeddelande från [!DNL Identity Service] om något fel skulle uppstå i importen.
 
-![En kontrollpanel med detaljerad information om det valda dataflödet visas.](../assets/ui/monitor-identities/dataflow-run-details.png)
+![En instrumentpanel med detaljerad information om det valda dataflödet visas.](../assets/ui/monitor-identities/dataflow-run-details.png)
 
 Följande mått är tillgängliga för den här instrumentpanelsvyn:
 
@@ -101,10 +101,10 @@ Följande mått är tillgängliga för den här instrumentpanelsvyn:
 | -------| ----------- |
 | **[!UICONTROL Records received]** | Antalet poster som tagits emot från datasjön. |
 | **[!UICONTROL Records failed]** | Antalet poster som inte har importerats till plattformen på grund av datafel. |
-| **[!UICONTROL Records skipped]** | Antalet poster som har importerats, men inte [!DNL Identity Service] därför att det bara fanns en identifierare i postraden. |
-| **[!UICONTROL Records ingested]** | Antalet poster som inhämtats till [!DNL Identity Service]. |
-| **[!UICONTROL Identities added]** | Antalet nya nettoidentifierare som lagts till i [!DNL Identity Service]. |
-| **[!UICONTROL Graphs created]** | Antalet nya identitetsdiagram som skapas i [!DNL Identity Service]. |
+| **[!UICONTROL Records skipped]** | Antalet poster som har importerats, men inte till [!DNL Identity Service], eftersom det bara fanns en identifierare i postraden. |
+| **[!UICONTROL Records ingested]** | Antalet poster som har importerats till [!DNL Identity Service]. |
+| **[!UICONTROL Identities added]** | Antalet nya nettoidentifierare som har lagts till i [!DNL Identity Service]. |
+| **[!UICONTROL Graphs created]** | Antalet nya identitetsdiagram (netto) som har skapats i [!DNL Identity Service]. |
 | **[!UICONTROL Graphs updated]** | Antalet befintliga identitetsdiagram som uppdaterats med nya kanter. |
 | **[!UICONTROL Status]** | Definierar den övergripande statusen för ett dataflöde. Möjliga statusvärden är: <ul><li>`Success`: Anger att ett dataflöde är aktivt och att data hämtas enligt det schema som det tillhandahölls.</li><li>`Failed`: Anger att aktiveringsprocessen för ett dataflöde har avbrutits på grund av fel. </li><li>`Processing`: Anger att dataflödet ännu inte är aktivt. Denna status inträffar ofta omedelbart efter att ett nytt dataflöde har skapats.</li></ul> |
 | **[!UICONTROL Dataflow run start]** | Det datum och den tidpunkt då dataflödet började köras. |

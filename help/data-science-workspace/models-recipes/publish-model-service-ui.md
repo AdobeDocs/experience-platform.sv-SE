@@ -23,23 +23,23 @@ Adobe Experience Platform Data Science Workspace gör det möjligt att publicera
 
 ## Komma igång
 
-Du måste ha tillgång till [!DNL Experience Platform]. Om du inte har tillgång till en organisation i [!DNL Experience Platform]bör du kontakta systemadministratören innan du fortsätter.
+Du måste ha tillgång till [!DNL Experience Platform] för att kunna slutföra den här självstudiekursen. Om du inte har åtkomst till en organisation i [!DNL Experience Platform], ska du tala med systemadministratören innan du fortsätter.
 
-Den här självstudiekursen kräver en befintlig modell med en lyckad utbildning. Om du inte har någon publicerbar modell följer du [Utbildning och utvärdering av en modell i användargränssnittet](./train-evaluate-model-ui.md) självstudiekurs innan du fortsätter.
+Den här självstudiekursen kräver en befintlig modell med en lyckad utbildning. Om du inte har någon publicerbar modell följer du [Utbildning och utvärderar en modell i användargränssnittet](./train-evaluate-model-ui.md) innan du fortsätter.
 
-Om du föredrar att publicera en modell med Sensei Machine Learning API:er finns i [API, genomgång](./publish-model-service-api.md).
+Om du föredrar att publicera en modell med Sensei Machine Learning API:er, se [API-självstudiekursen](./publish-model-service-api.md).
 
 ## Publish a Model {#publish-a-model}
 
-I Adobe Experience Platform: **[!UICONTROL Models]** i den vänstra navigeringskolumnen väljer du **[!UICONTROL Browse]** om du vill visa en lista över alla befintliga modeller. Välj namnet på den modell som du vill publicera som en tjänst.
+I Adobe Experience Platform väljer du **[!UICONTROL Models]** i den vänstra navigeringskolumnen och sedan fliken **[!UICONTROL Browse]** för att visa alla befintliga modeller. Välj namnet på den modell som du vill publicera som en tjänst.
 
 ![](../images/models-recipes/publish-model/browse_model.png)
 
-Välj **[!UICONTROL Publish]** i det övre högra hörnet på modellöversiktssidan för att starta en process för att skapa en tjänst.
+Välj **[!UICONTROL Publish]** uppe till höger på sidan Modellöversikt för att starta en process för att skapa en tjänst.
 
 ![](../images/models-recipes/publish-model/view_training.png)
 
-Ange ett önskat namn för tjänsten och ange en servicebeskrivning, välj **[!UICONTROL Next]** när du är klar.
+Ange ett önskat namn för tjänsten och ange eventuellt en tjänstbeskrivning. Välj **[!UICONTROL Next]** när du är klar.
 
 ![](../images/models-recipes/publish-model/configure_training.png)
 
@@ -47,17 +47,17 @@ Alla framgångsrika kurser för modellerna listas. Den nya tjänsten ärver utbi
 
 ![](../images/models-recipes/publish-model/select_training_run.png)
 
-Välj **[!UICONTROL Finish]** för att skapa tjänsten och omdirigera till **[!UICONTROL Service Gallery]** för att visa alla tillgängliga tjänster, inklusive den nya tjänsten.
+Välj **[!UICONTROL Finish]** om du vill skapa tjänsten och omdirigera till **[!UICONTROL Service Gallery]** om du vill visa alla tillgängliga tjänster, inklusive den nya tjänsten.
 
 ![](../images/models-recipes/publish-model/service_gallery.png)
 
 ## Poäng med en tjänst {#access-a-service}
 
-I Adobe Experience Platform väljer du **[!UICONTROL Services]** -fliken som finns i den vänstra navigeringskolumnen för att komma åt **[!UICONTROL Service Gallery]**. Hitta den tjänst du vill använda och välj **[!UICONTROL Open]**.
+I Adobe Experience Platform väljer du fliken **[!UICONTROL Services]** i den vänstra navigeringskolumnen för att komma åt **[!UICONTROL Service Gallery]**. Hitta den tjänst som du vill använda och välj **[!UICONTROL Open]**.
 
 ![](../images/models-recipes/publish-model/open_service.png)
 
-Välj **[!UICONTROL Score]**.
+Välj **[!UICONTROL Score]** på tjänstöversiktssidan.
 
 ![](../images/models-recipes/publish-model/score_service.png)
 
@@ -65,11 +65,11 @@ Välj en lämplig indatauppsättning för poängkörningen och välj sedan **[!U
 
 ![](../images/models-recipes/publish-model/select_datasets.png)
 
-När en tjänst skapas ärver den standardpoängkonfigurationer. Du kan granska dessa konfigurationer och justera dem efter behov genom att dubbelklicka på värdena. När du är nöjd med konfigurationen väljer du **[!UICONTROL Finish]** för att börja poängsättningen.
+När en tjänst skapas ärver den standardpoängkonfigurationer. Du kan granska dessa konfigurationer och justera dem efter behov genom att dubbelklicka på värdena. När du är nöjd med konfigurationerna väljer du **[!UICONTROL Finish]** för att påbörja poängkörningen.
 
 ![](../images/models-recipes/publish-model/scoring_configs.png)
 
-På tjänstens **Ökning** sida visas information om det nya poängjobbet och hur det fortskrider. När jobbet är klart **[!UICONTROL Most Recent]** sidhuvud i **[!UICONTROL Scoring]** behållaren uppdateras.
+På tjänstens **översiktssida** visas information om det nya bedömningsjobbet och dess förlopp. När jobbet har slutförts uppdateras rubriken **[!UICONTROL Most Recent]** i behållaren **[!UICONTROL Scoring]**.
 
 ![](../images/models-recipes/publish-model/pending_scoring.png)
 

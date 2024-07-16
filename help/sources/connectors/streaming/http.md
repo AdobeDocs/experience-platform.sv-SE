@@ -11,13 +11,13 @@ ht-degree: 0%
 
 ---
 
-# [!DNL HTTP API] koppling
+# [!DNL HTTP API]-koppling
 
-Med Adobe Experience Platform kan data hämtas från externa källor samtidigt som du kan strukturera, etikettera och förbättra inkommande data med [!DNL Platform] tjänster. Du kan importera data från en mängd olika källor, till exempel Adobe-program, molnbaserad lagring, databaser och många andra.
+Adobe Experience Platform tillåter att data hämtas från externa källor samtidigt som du får möjlighet att strukturera, etikettera och förbättra inkommande data med [!DNL Platform]-tjänster. Du kan importera data från en mängd olika källor, till exempel Adobe-program, molnbaserad lagring, databaser och många andra.
 
-Du kan använda [!DNL HTTP API] källanslutning för att strömma data till plattformen. The [!DNL HTTP API] källan stöds av [!DNL Data Prep] funktioner, så att du kan mappa data som inte är XDM-kompatibla till en XDM-kompatibel datauppsättning.
+Du kan använda [!DNL HTTP API]-källkopplingen för att strömma dina data till plattformen. [!DNL HTTP API]-källan stöds av [!DNL Data Prep]-funktioner, vilket gör att du kan mappa alla data som inte är XDM-kompatibla till en XDM-kompatibel datauppsättning.
 
-Dokumentationen nedan innehåller information om hur du skapar en HTTP API-direktuppspelningskontakt att ansluta till [!DNL Platform] med API:er eller användargränssnittet:
+Dokumentationen nedan innehåller information om hur du skapar en HTTP API-direktuppspelningsanslutare som kan ansluta till [!DNL Platform] med API:er eller användargränssnittet:
 
 ## Skapa en HTTP API-direktuppspelningskontakt med API:er
 

@@ -1,22 +1,22 @@
 ---
 solution: Experience Platform
-title: PQL-strängfunktioner
-description: PQL (Profile Query Language) har funktioner som underlättar interaktion med strängar.
+title: Strängfunktioner i PQL
+description: Profile Query Language (PQL) har funktioner som underlättar interaktion med strängar.
 exl-id: 9fd79d86-0802-4312-abce-f6ef5ba5bb34
 source-git-commit: dbb7e0987521c7a2f6512f05eaa19e0121aa34c6
 workflow-type: tm+mt
-source-wordcount: '823'
-ht-degree: 3%
+source-wordcount: '815'
+ht-degree: 1%
 
 ---
 
 # Strängfunktioner
 
-[!DNL Profile Query Language] (PQL) har funktioner som underlättar interaktion med strängar. Mer information om andra PQL-funktioner finns i [[!DNL Profile Query Language] översikt](./overview.md).
+[!DNL Profile Query Language] (PQL) erbjuder funktioner som gör det enklare att interagera med strängar. Mer information om andra PQL-funktioner finns i [[!DNL Profile Query Language] översikten](./overview.md).
 
 ## Gilla
 
-The `like` används för att avgöra om en sträng matchar ett angivet mönster.
+Funktionen `like` används för att avgöra om en sträng matchar ett angivet mönster.
 
 **Format**
 
@@ -39,7 +39,7 @@ city like "%es%"
 
 ## Börjar med
 
-The `startsWith` -funktionen används för att avgöra om en sträng börjar med en angiven delsträng.
+Funktionen `startsWith` används för att avgöra om en sträng börjar med en angiven delsträng.
 
 **Format**
 
@@ -63,7 +63,7 @@ person.name.startsWith("Joe")
 
 ## Börjar inte med
 
-The `doesNotStartWith` -funktionen används för att avgöra om en sträng inte börjar med en angiven delsträng.
+Funktionen `doesNotStartWith` används för att avgöra om en sträng inte börjar med en angiven delsträng.
 
 **Format**
 
@@ -87,7 +87,7 @@ person.name.doesNotStartWith("Joe")
 
 ## Slutar med
 
-The `endsWith` -funktionen används för att avgöra om en sträng avslutas med en angiven delsträng.
+Funktionen `endsWith` används för att avgöra om en sträng avslutas med en angiven delsträng.
 
 **Format**
 
@@ -111,7 +111,7 @@ person.emailAddress.endsWith(".com")
 
 ## Slutar inte med
 
-The `doesNotEndWith` -funktionen används för att avgöra om en sträng inte avslutas med en angiven delsträng.
+Funktionen `doesNotEndWith` används för att avgöra om en sträng inte avslutas med en angiven delsträng.
 
 **Format**
 
@@ -135,7 +135,7 @@ person.emailAddress.doesNotEndWith(".com")
 
 ## Innehåller
 
-The `contains` -funktionen används för att avgöra om en sträng innehåller en angiven delsträng.
+Funktionen `contains` används för att avgöra om en sträng innehåller en angiven delsträng.
 
 **Format**
 
@@ -159,7 +159,7 @@ person.emailAddress.contains("2010@gm")
 
 ## Innehåller inte
 
-The `doesNotContain` -funktionen används för att avgöra om en sträng inte innehåller en angiven delsträng.
+Funktionen `doesNotContain` används för att avgöra om en sträng inte innehåller en angiven delsträng.
 
 **Format**
 
@@ -181,9 +181,9 @@ Följande PQL-fråga avgör, med skiftlägeskänslighet, om personens e-postadre
 person.emailAddress.doesNotContain("2010@gm")
 ```
 
-## Är lika med
+## Lika med
 
-The `equals` -funktionen används för att avgöra om en sträng är lika med den angivna strängen.
+Funktionen `equals` används för att avgöra om en sträng är lika med den angivna strängen.
 
 **Format**
 
@@ -206,7 +206,7 @@ person.name.equals("John")
 
 ## Inte lika med
 
-The `notEqualTo` används för att avgöra om en sträng inte är lika med den angivna strängen.
+Funktionen `notEqualTo` används för att avgöra om en sträng inte är lika med den angivna strängen.
 
 **Format**
 
@@ -229,7 +229,7 @@ person.name.notEqualTo("John")
 
 ## Matchar
 
-The `matches` används för att avgöra om en sträng matchar ett visst reguljärt uttryck. Se [det här dokumentet](https://docs.oracle.com/javase/8/docs/api/java/util/regex/Pattern.html) för mer information om att matcha mönster i reguljära uttryck.
+Funktionen `matches` används för att avgöra om en sträng matchar ett visst reguljärt uttryck. Mer information om att matcha mönster i reguljära uttryck finns i [det här dokumentet](https://docs.oracle.com/javase/8/docs/api/java/util/regex/Pattern.html).
 
 **Format**
 
@@ -239,7 +239,7 @@ The `matches` används för att avgöra om en sträng matchar ett visst reguljä
 
 **Exempel**
 
-Följande PQL-fråga avgör, utan att vara skiftlägeskänslig, om personens namn börjar med&quot;John&quot;.
+Följande PQL-fråga avgör, utan att vara skiftlägeskänslig, om personens namn börjar med &quot;John&quot;.
 
 ```sql
 person.name.matches("(?i)^John")
@@ -247,11 +247,11 @@ person.name.matches("(?i)^John")
 
 >[!NOTE]
 >
->Om du använder funktioner för reguljära uttryck som `\w`, du **måste** kringgå omvänt snedstreck. I stället för att bara skriva `\w`måste du lägga till ett extra omvänt snedstreck och skriva `\\w`.
+>Om du använder funktioner för reguljära uttryck som `\w`, måste **du** undvika det omvända snedstrecket. I stället för att bara skriva `\w` måste du inkludera ett extra omvänt snedstreck och skriva `\\w`.
 
 ## Grupp för reguljära uttryck
 
-The `regexGroup` -funktionen används för att extrahera specifik information baserat på det reguljära uttrycket.
+Funktionen `regexGroup` används för att extrahera specifik information baserat på det reguljära uttrycket som anges.
 
 **Format**
 
@@ -269,8 +269,8 @@ emailAddress.regexGroup("@(\\w+)", 1)
 
 >[!NOTE]
 >
->Om du använder funktioner för reguljära uttryck som `\w`, du **måste** kringgå omvänt snedstreck. I stället för att bara skriva `\w`måste du lägga till ett extra omvänt snedstreck och skriva `\\w`.
+>Om du använder funktioner för reguljära uttryck som `\w`, måste **du** undvika det omvända snedstrecket. I stället för att bara skriva `\w` måste du inkludera ett extra omvänt snedstreck och skriva `\\w`.
 
 ## Nästa steg
 
-Nu när du har lärt dig om strängfunktioner kan du använda dem i dina PQL-frågor. Mer information om andra PQL-funktioner finns i [Profilfrågespråk - översikt](./overview.md).
+Nu när du har lärt dig om strängfunktioner kan du använda dem i dina PQL-frågor. Mer information om andra PQL-funktioner finns i [Profile Query Language-översikten](./overview.md).

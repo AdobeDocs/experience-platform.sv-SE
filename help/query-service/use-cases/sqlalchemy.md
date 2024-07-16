@@ -4,24 +4,24 @@ description: Lär dig hur du använder SQLAlchemy för att hantera plattformsdat
 exl-id: 9fba942e-9b3d-4efe-ae94-aed685025dea
 source-git-commit: 8644b78c947fd015f6a169c9440b8d1df71e5e17
 workflow-type: tm+mt
-source-wordcount: '565'
+source-wordcount: '568'
 ht-degree: 0%
 
 ---
 
 # Hantera plattformsdata med [!DNL Python] och [!DNL SQLAlchemy]
 
-Lär dig hur du använder SQLAlchemy för större flexibilitet i hanteringen av dina Adobe Experience Platform-data. För dem som inte är lika bekanta med SQL kan SQLAlchemy avsevärt förbättra utvecklingstiden när de arbetar med relationsdatabaser. Det här dokumentet innehåller instruktioner och exempel för att ansluta [!DNL SQLAlchemy] till Query Service och börja använda Python för att interagera med databaser.
+Lär dig hur du använder SQLAlchemy för större flexibilitet i hanteringen av dina Adobe Experience Platform-data. För dem som inte är lika bekanta med SQL kan SQLAlchemy avsevärt förbättra utvecklingstiden när de arbetar med relationsdatabaser. Det här dokumentet innehåller instruktioner och exempel för att ansluta [!DNL SQLAlchemy] till frågetjänsten och börja använda Python för att interagera med dina databaser.
 
-[!DNL SQLAlchemy] är en ORM (Object Relational Mapper) och en [!DNL Python] kodbibliotek som kan överföra data som lagras i en SQL-databas till [!DNL Python] objekt. Sedan kan du utföra CRUD-åtgärder på data som lagras inom sjön för plattformsdata med [!DNL Python] kod. Detta eliminerar behovet av att hantera data med enbart PSQL.
+[!DNL SQLAlchemy] är en ORM (Object Relational Mapper) och ett [!DNL Python]-kodbibliotek som kan överföra data som lagras i en SQL-databas till [!DNL Python]-objekt. Du kan sedan utföra CRUD-åtgärder på data som finns i sjön med plattformsdata med hjälp av koden [!DNL Python]. Detta eliminerar behovet av att hantera data med enbart PSQL.
 
 ## Komma igång
 
-Hämta nödvändiga autentiseringsuppgifter för anslutning [!DNL SQLAlchemy] för Experience Platform måste du ha tillgång till arbetsytan Frågor i användargränssnittet för plattformen. Kontakta din organisationsadministratör om du inte har tillgång till arbetsytan Frågor.
+Om du vill få de nödvändiga autentiseringsuppgifterna för att ansluta [!DNL SQLAlchemy] till Experience Platform måste du ha tillgång till arbetsytan Frågor i plattformsgränssnittet. Kontakta din organisationsadministratör om du inte har tillgång till arbetsytan Frågor.
 
 ## [!DNL Query Service] autentiseringsuppgifter {#credentials}
 
-Logga in på användargränssnittet för plattformen och välj **[!UICONTROL Queries]** från vänster navigering, följt av **[!UICONTROL Credentials]**. Fullständiga anvisningar om hur du hittar dina inloggningsuppgifter finns i [inloggningsguide](../ui/credentials.md).
+Om du vill hitta dina autentiseringsuppgifter loggar du in på plattformsgränssnittet och väljer **[!UICONTROL Queries]** i den vänstra navigeringen, följt av **[!UICONTROL Credentials]**. Fullständiga anvisningar om hur du hittar dina inloggningsuppgifter finns i handboken [för inloggningsuppgifter](../ui/credentials.md).
 
 ![Fliken Autentiseringsuppgifter med utgångsdatum för frågetjänsten är markerad.](../images/use-cases/credentials.png)
 
@@ -29,17 +29,17 @@ Logga in på användargränssnittet för plattformen och välj **[!UICONTROL Que
 
 >[!IMPORTANT]
 >
->Om du använder utgångna inloggningsuppgifter (enligt bilden ovan) för att ansluta till Query Service, kommer sessionstiden för din anslutning att upphöra efter den angivna tidsperiod som anges i organisationens inställningar. Som standard är den här perioden 24 timmar. Läs dokumentationen för att lära dig mer om [ansluta en klient med autentiseringsuppgifter som inte upphör att gälla](../ui/credentials.md#non-expiring-credentials)eller hur [ändra sessionens livslängd för dina förfallande autentiseringsuppgifter](../ui/credentials.md#expiring-credentials).
+>Om du använder utgångna inloggningsuppgifter (enligt bilden ovan) för att ansluta till Query Service, kommer sessionstiden för din anslutning att upphöra efter den angivna tidsperiod som anges i organisationens inställningar. Som standard är den här perioden 24 timmar. Läs dokumentationen om du vill veta mer om hur du [ansluter en klient med autentiseringsuppgifter som inte upphör att gälla](../ui/credentials.md#non-expiring-credentials) eller hur du [ändrar sessionstiden för de autentiseringsuppgifter som upphör att gälla](../ui/credentials.md#expiring-credentials).
 
-När du har åtkomst till dina QS-autentiseringsuppgifter öppnar du [!DNL Python] valfri redigerare.
+När du har åtkomst till dina QS-autentiseringsuppgifter öppnar du den [!DNL Python]-redigerare du vill använda.
 
 ### Lagra autentiseringsuppgifter i [!DNL Python] {#store-credentials}
 
-I [!DNL Python] redigeraren, importera `urllib.parse.quote` bibliotek och spara varje referensvariabel som en parameter. The `urllib.parse` -modulen innehåller ett standardgränssnitt för att dela upp URL-strängar i komponenter. Citattfunktionen ersätter specialtecken i URL-strängen för att göra data säkra att använda som URL-komponenter. Ett exempel på den kod som krävs visas nedan:
+I [!DNL Python]-redigeraren importerar du `urllib.parse.quote`-biblioteket och sparar varje autentiseringsvariabel som en parameter. Modulen `urllib.parse` innehåller ett standardgränssnitt för att bryta URL-strängar i komponenter. Citattfunktionen ersätter specialtecken i URL-strängen för att göra data säkra att använda som URL-komponenter. Ett exempel på den kod som krävs visas nedan:
 
 >[!TIP]
 >
->Använd [!DNL Python]&#39;s triple quotes to enter your multiple lines password string.
+>Använd [!DNL Python]s trippelcitattecken för att ange lösenordssträngen för flera rader.
 
 ```python
 from urllib.parse import quote
@@ -59,19 +59,19 @@ password = quote('''
 
 >[!NOTE]
 >
->Lösenordet du anger för att ansluta [!DNL SQLAlchemy] Experience Platform upphör att gälla om du använder inloggningsuppgifterna. Se [informationssektion](#credentials) för mer information.
+>Lösenordet som du anger för att ansluta [!DNL SQLAlchemy] till Experience Platform går ut om du använder förfalloautentiseringsuppgifter. Mer information finns i avsnittet [autentiseringsuppgifter](#credentials).
 
 ### Skapa en motorinstans [#create-engine]
 
-När variablerna har skapats importerar du `create_engine` och skapa en sträng för att kompilera och formatera dina inloggningsuppgifter för frågetjänsten i SQLAlchemy. The `create_engine` används sedan för att konstruera en motorinstans.
+När variablerna har skapats importerar du funktionen `create_engine` och skapar en sträng för att kompilera och formatera dina autentiseringsuppgifter för frågetjänsten i SQLAlchemy. Funktionen `create_engine` används sedan för att konstruera en motorinstans.
 
 >[!NOTE]
 >
 >`create_engine`returnerar en instans av en motor. Anslutningen till frågetjänsten öppnas dock inte förrän en fråga som kräver en anslutning anropas.
 
-SSL måste vara aktiverat vid åtkomst till plattformen med tredjepartsklienter. Använd `connect_args` om du vill ange ytterligare nyckelordsargument. Du rekommenderas att ange SSL-läget till `require`. Se [Dokumentation för SSL-lägen](../clients/ssl-modes.md) för mer information om godkända värden.
+SSL måste vara aktiverat vid åtkomst till plattformen med tredjepartsklienter. Som en del av motorn använder du `connect_args` för att ange ytterligare nyckelordsargument. Du rekommenderas att ange SSL-läget till `require`. Mer information om godkända värden finns i [dokumentationen för SSL-lägen](../clients/ssl-modes.md).
 
-I exemplet nedan visas [!DNL Python] kod som krävs för att initiera en motor och anslutningssträng.
+I exemplet nedan visas den [!DNL Python]-kod som krävs för att initiera en motor och anslutningssträng.
 
 ```python
 from sqlalchemy import create_engine
@@ -89,9 +89,9 @@ engine = create_engine(db_string, connect_args={'sslmode':'require'})
 
 >[!NOTE]
 >
->Lösenordet du anger för att ansluta [!DNL SQLAlchemy] Experience Platform upphör att gälla om du använder inloggningsuppgifterna. Se [informationssektion](#credentials) för mer information.
+>Lösenordet som du anger för att ansluta [!DNL SQLAlchemy] till Experience Platform går ut om du använder förfalloautentiseringsuppgifter. Mer information finns i avsnittet [autentiseringsuppgifter](#credentials).
 
-Du är nu redo att fråga efter plattformsdata med [!DNL Python]. Exemplet nedan returnerar en array med frågetjänsttabellnamn.
+Du kan nu fråga efter plattformsdata med [!DNL Python]. Exemplet nedan returnerar en array med frågetjänsttabellnamn.
 
 ```python
 from sqlalchemy import inspect

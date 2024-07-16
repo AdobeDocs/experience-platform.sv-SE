@@ -16,7 +16,7 @@ ht-degree: 49%
 # Avancerad livscykelhantering av data {#data-lifecycle}
 
 * [Översikt över livscykelhantering av avancerade data](./home.md)
-* Datatillverkarens gränssnitt {#ui}
+* Livscykelgränssnitt för data {#ui}
    * [Översikt](./ui/overview.md)
    * [Automatiska förfallodatum för datauppsättningar](./ui/dataset-expiration.md)
    * [(Beta) Ta bort poster](./ui/record-delete.md)

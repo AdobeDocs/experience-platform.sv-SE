@@ -10,26 +10,26 @@ ht-degree: 0%
 
 ---
 
-# Skapa en [!DNL Google PubSub] källanslutning i användargränssnittet
+# Skapa en [!DNL Google PubSub]-källanslutning i användargränssnittet
 
 >[!IMPORTANT]
 >
->The [!DNL Google PubSub] Källan är tillgänglig i källkatalogen för användare som har köpt Real-time Customer Data Platform Ultimate.
+>Källan [!DNL Google PubSub] är tillgänglig i källkatalogen för användare som har köpt Real-time Customer Data Platform Ultimate.
 
-Den här självstudiekursen innehåller steg för att skapa en [!DNL Google PubSub] (nedan kallad[!DNL PubSub]&quot;) med användargränssnittet för plattformen.
+I den här självstudiekursen beskrivs hur du skapar en [!DNL Google PubSub] (kallas nedan [!DNL PubSub]) med hjälp av användargränssnittet för plattformen.
 
 ## Kom igång
 
 Den här självstudiekursen kräver en fungerande förståelse av följande komponenter i Adobe Experience Platform:
 
-* [Källor](../../../../home.md): Experience Platform tillåter att data kan hämtas från olika källor samtidigt som du kan strukturera, märka och förbättra inkommande data med hjälp av plattformstjänster.
-* [Sandlådor](../../../../../sandboxes/home.md): Experience Platform tillhandahåller virtuella sandlådor som partitionerar en enda plattformsinstans i separata virtuella miljöer för att utveckla och utveckla program för digitala upplevelser.
+* [Källor](../../../../home.md): Experience Platform tillåter data att hämtas från olika källor samtidigt som du kan strukturera, etikettera och förbättra inkommande data med hjälp av plattformstjänster.
+* [Sandlådor](../../../../../sandboxes/home.md): Experience Platform tillhandahåller virtuella sandlådor som partitionerar en enda plattformsinstans till separata virtuella miljöer för att utveckla och utveckla program för digitala upplevelser.
 
-Om du redan har en giltig [!DNL PubSub] kan du hoppa över resten av dokumentet och gå vidare till självstudiekursen om [konfigurera ett dataflöde](../../dataflow/batch/cloud-storage.md).
+Om du redan har en giltig [!DNL PubSub]-anslutning kan du hoppa över resten av det här dokumentet och gå vidare till självstudiekursen [Konfigurera ett dataflöde](../../dataflow/batch/cloud-storage.md).
 
 ### Samla in nödvändiga inloggningsuppgifter
 
-Du måste ange värden för anslutningsegenskaperna som beskrivs nedan för att kunna ansluta dina [!DNL PubSub] konto till Experience Platform. Mer information om autentisering och nödvändig konfiguration finns i [[!DNL PubSub source] översikt](../../../../connectors/cloud-storage/google-pubsub.md#prerequisites).
+Du måste ange värden för anslutningsegenskaperna som beskrivs nedan för att kunna ansluta ditt [!DNL PubSub]-konto till Experience Platform. Mer information om autentisering och nödvändiga inställningar finns i [[!DNL PubSub source] översikten](../../../../connectors/cloud-storage/google-pubsub.md#prerequisites).
 
 
 >[!BEGINTABS]
@@ -38,42 +38,42 @@ Du måste ange värden för anslutningsegenskaperna som beskrivs nedan för att 
 
 | Autentiseringsuppgifter | Beskrivning |
 | --- | --- |
-| Projekt-ID | Det projekt-ID som krävs för autentisering [!DNL PubSub]. |
-| Referenser | Autentiseringsuppgifterna som krävs för autentisering [!DNL PubSub]. Du måste se till att du skickar den fullständiga JSON-filen när du har tagit bort blanktecknen från inloggningsuppgifterna. |
+| Projekt-ID | Det projekt-ID som krävs för att autentisera [!DNL PubSub]. |
+| Referenser | Autentiseringsuppgifterna som krävs för att autentisera [!DNL PubSub]. Du måste se till att du skickar den fullständiga JSON-filen när du har tagit bort blanktecknen från inloggningsuppgifterna. |
 
 >[!TAB Ämnesbaserad och prenumerationsbaserad autentisering]
 
 | Autentiseringsuppgifter | Beskrivning |
 | --- | --- |
-| Referenser | Autentiseringsuppgifterna som krävs för autentisering [!DNL PubSub]. Du måste se till att du skickar den fullständiga JSON-filen när du har tagit bort blanktecknen från inloggningsuppgifterna. |
-| Ämnesnamn | Namnet på [!DNL PubSub] prenumeration. I [!DNL PubSub]kan du få meddelanden genom att prenumerera på det ämne som meddelanden har publicerats i. **Anteckning**: En enda [!DNL PubSub] prenumerationen kan bara användas för ett dataflöde. Om du vill kunna skapa flera dataflöden måste du ha flera prenumerationer. |
-| Prenumerationsnamn | Namnet på [!DNL PubSub] prenumeration. I [!DNL PubSub]kan du få meddelanden genom att prenumerera på det ämne som meddelanden har publicerats i. |
+| Referenser | Autentiseringsuppgifterna som krävs för att autentisera [!DNL PubSub]. Du måste se till att du skickar den fullständiga JSON-filen när du har tagit bort blanktecknen från inloggningsuppgifterna. |
+| Ämnesnamn | Namnet på din [!DNL PubSub]-prenumeration. I [!DNL PubSub] kan du med prenumerationer ta emot meddelanden genom att prenumerera på det ämne som meddelanden har publicerats i. **Obs!**: En enstaka [!DNL PubSub]-prenumeration kan bara användas för ett dataflöde. Om du vill kunna skapa flera dataflöden måste du ha flera prenumerationer. |
+| Prenumerationsnamn | Namnet på din [!DNL PubSub]-prenumeration. I [!DNL PubSub] kan du med prenumerationer ta emot meddelanden genom att prenumerera på det ämne som meddelanden har publicerats i. |
 
 >[!ENDTABS]
 
-Mer information om dessa värden finns i följande [PubSub-autentisering](https://cloud.google.com/pubsub/docs/authentication) -dokument. Om du använder kontobaserad autentisering för tjänster, se följande [PubSub Guide](https://cloud.google.com/docs/authentication/production#create_service_account) för steg om hur du genererar dina autentiseringsuppgifter.
+Mer information om dessa värden finns i följande [PubSub authentication](https://cloud.google.com/pubsub/docs/authentication) -dokument. Om du använder tjänstkontobaserad autentisering kan du läsa följande [PubSub-guide](https://cloud.google.com/docs/authentication/production#create_service_account) för steg om hur du genererar dina autentiseringsuppgifter.
 
 >[!TIP]
 >
 >Om du använder kontobaserad autentisering för tjänster måste du se till att du har beviljat tillräcklig användaråtkomst till ditt tjänstkonto och att det inte finns några extra tomrum i JSON när du kopierar och klistrar in dina autentiseringsuppgifter.
 
-När du har samlat in dina inloggningsuppgifter kan du följa stegen nedan för att länka dina [!DNL PubSub] konto till plattform.
+När du har samlat in de nödvändiga inloggningsuppgifterna kan du följa stegen nedan för att länka ditt [!DNL PubSub]-konto till plattformen.
 
-## Koppla samman [!DNL PubSub] konto
+## Anslut ditt [!DNL PubSub]-konto
 
-Välj **[!UICONTROL Sources]** från vänster navigering för att komma åt [!UICONTROL Sources] arbetsyta. The [!UICONTROL Catalog] visas en mängd olika källor som du kan skapa ett konto med.
+I plattformsgränssnittet väljer du **[!UICONTROL Sources]** i den vänstra navigeringen för att komma åt arbetsytan i [!UICONTROL Sources]. På skärmen [!UICONTROL Catalog] visas en mängd olika källor som du kan skapa ett konto med.
 
 Du kan välja lämplig kategori i katalogen till vänster på skärmen. Du kan också hitta den källa du vill arbeta med med med sökalternativet.
 
-Under [!UICONTROL Cloud storage] kategori, välj **[!UICONTROL Google PubSub]** och sedan markera **[!UICONTROL Add data]**.
+Under kategorin [!UICONTROL Cloud storage] väljer du **[!UICONTROL Google PubSub]** och sedan **[!UICONTROL Add data]**.
 
 ![Källkatalogen i användargränssnittet i Experience Platform.](../../../../images/tutorials/create/google-pubsub/catalog.png)
 
-The **[!UICONTROL Connect to Google PubSub]** visas. På den här sidan kan du antingen använda nya autentiseringsuppgifter eller befintliga.
+Sidan **[!UICONTROL Connect to Google PubSub]** visas. På den här sidan kan du antingen använda nya autentiseringsuppgifter eller befintliga.
 
 ### Befintligt konto
 
-Välj [!DNL PubSub] konto som du vill skapa ett nytt dataflöde med och sedan välja **[!UICONTROL Next]** för att fortsätta.
+Om du vill använda ett befintligt konto väljer du det [!DNL PubSub]-konto som du vill skapa ett nytt dataflöde med och väljer sedan **[!UICONTROL Next]** för att fortsätta.
 
 ![Det befintliga kontovalet i källarbetsflödet.](../../../../images/tutorials/create/google-pubsub/existing.png)
 
@@ -82,25 +82,25 @@ Välj [!DNL PubSub] konto som du vill skapa ett nytt dataflöde med och sedan v�
 >[!TIP]
 >
 >* När du skapar ett konto med begränsad åtkomst måste du ange minst ett av ämnesnamnen eller prenumerationsnamnen. Autentiseringen misslyckas om båda värdena saknas.
->* När du har skapat en fil kan du inte ändra autentiseringstypen för en [!DNL Google PubSub] basanslutning. Om du vill ändra autentiseringstypen måste du skapa en ny basanslutning.
+>* När du väl har skapat den kan du inte ändra autentiseringstypen för en [!DNL Google PubSub]-basanslutning. Om du vill ändra autentiseringstypen måste du skapa en ny basanslutning.
 
-Om du skapar ett nytt konto väljer du **[!UICONTROL New account]** och ange sedan ett namn och en valfri beskrivning av ditt nya [!DNL PubSub] konto.
+Om du skapar ett nytt konto väljer du **[!UICONTROL New account]** och anger sedan ett namn och en valfri beskrivning för det nya [!DNL PubSub]-kontot.
 
 ![Det nya kontogränssnittet för Google PubSub-källan i källarbetsflödet](../../../../images/tutorials/create/google-pubsub/new.png)
 
-The [!DNL PubSub] Med -källa kan du ange vilken typ av åtkomst du vill tillåta under autentiseringen. Du kan konfigurera ditt konto så att det antingen har projektbaserad autentisering eller ämne- och prenumerationsbaserad autentisering. Projektbaserad autentisering ger dig åtkomst till rotnivåprojektet i ditt konto, medan ämnesbaserad och prenumerationsbaserad autentisering gör att du kan begränsa åtkomsten till ett visst [!DNL PubSub] ämne och prenumeration.
+Med [!DNL PubSub]-källan kan du ange vilken typ av åtkomst du vill tillåta under autentiseringen. Du kan konfigurera ditt konto så att det antingen har projektbaserad autentisering eller ämne- och prenumerationsbaserad autentisering. Med projektbaserad autentisering kan du bevilja åtkomst till rotnivåprojektet i ditt konto, medan ämnesbaserad och prenumerationsbaserad autentisering gör att du kan begränsa åtkomsten till ett visst [!DNL PubSub]-ämne och en viss prenumeration.
 
 >[!BEGINTABS]
 
 >[!TAB Projektbaserad autentisering]
 
-Skapa ett konto med åtkomst till din rot [!DNL PubSub] projektmapp. Välj **[!UICONTROL Google PubSub authentication credentials]** som din autentiseringstyp och ange ditt projekt-ID och dina autentiseringsuppgifter. När du är klar väljer du **[!UICONTROL Connect to source]** och tillåt sedan lite tid för att upprätta den nya anslutningen.
+Om du vill skapa ett konto med åtkomst till rotprojektmappen [!DNL PubSub]. Välj **[!UICONTROL Google PubSub authentication credentials]** som autentiseringstyp och ange ditt projekt-ID och dina autentiseringsuppgifter. När du är klar väljer du **[!UICONTROL Connect to source]** och tillåt sedan lite tid för att upprätta den nya anslutningen.
 
-![Det nya kontogränssnittet för Google PubSub-källan med rotåtkomst vald.](../../../../images/tutorials/create/google-pubsub/root.png)
+![Det nya kontogränssnittet för Google PubSub-källan med rotåtkomst markerad.](../../../../images/tutorials/create/google-pubsub/root.png)
 
 >[!TAB Ämnesbaserad och prenumerationsbaserad autentisering]
 
-Så här skapar du ett konto med begränsad åtkomst endast till en viss [!DNL PubSub] ämne och prenumeration, välja **[!UICONTROL Google PubSub Scoped authentication credentials]** och ange dina uppgifter, ämnesnamn och/eller prenumerationsnamn. När du är klar väljer du **[!UICONTROL Connect to source]** och tillåt sedan lite tid för att upprätta den nya anslutningen.
+Om du vill skapa ett konto med begränsad åtkomst endast till ett visst [!DNL PubSub]-ämne och en viss prenumeration väljer du **[!UICONTROL Google PubSub Scoped authentication credentials]** och anger sedan dina autentiseringsuppgifter, ämnesnamn och/eller prenumerationsnamn. När du är klar väljer du **[!UICONTROL Connect to source]** och tillåt sedan lite tid för att upprätta den nya anslutningen.
 
 ![Det nya kontogränssnittet för Google PubSub-källan med områdesåtkomst vald.](../../../../images/tutorials/create/google-pubsub/scoped.png)
 
@@ -108,32 +108,32 @@ Så här skapar du ett konto med begränsad åtkomst endast till en viss [!DNL P
 
 >[!NOTE]
 >
->Principal (roller) som tilldelats en [!DNL PubSub] -projektet ärvs i alla ämnen och prenumerationer som skapas i ett [!DNL PubSub] projekt. Om du vill att ett huvudämne (en roll) ska ha tillgång till ett visst ämne, måste det huvudämnet (rollen) också läggas till i ämnets motsvarande prenumeration. Mer information finns i [[!DNL PubSub] dokumentation om åtkomstkontroll](<https://cloud.google.com/pubsub/docs/access-control>).
+>Principal (roller) som tilldelats ett [!DNL PubSub]-projekt ärvs i alla ämnen och prenumerationer som skapas i ett [!DNL PubSub]-projekt. Om du vill att ett huvudämne (en roll) ska ha tillgång till ett visst ämne, måste det huvudämnet (rollen) också läggas till i ämnets motsvarande prenumeration. Mer information finns i [[!DNL PubSub] dokumentationen om åtkomstkontroll](<https://cloud.google.com/pubsub/docs/access-control>).
 
 ## Markera data
 
-En lyckad autentisering tar dig till [!UICONTROL Select data] steg, där du kan navigera i [!DNL PubSub] datahierarki och markera de data som du vill hämta till Experience Platform.
+En lyckad autentisering tar dig till steget [!UICONTROL Select data], där du kan navigera genom din [!DNL PubSub]-datthierarki och välja de data som du vill hämta till Experience Platform.
 
 >[!BEGINTABS]
 
 >[!TAB Projektbaserad autentisering]
 
-Om du har autentiserats med projektbaserad åtkomst visas [!UICONTROL Select data] -gränssnittet visar alla prenumerationer i ditt projekt som har ett tema kopplat till sig.
+Om du har autentiserat dig med projektbaserad åtkomst kommer [!UICONTROL Select data]-gränssnittet att visa alla prenumerationer i ditt projekt som har ett ämne kopplat till sig.
 
-![Steg för val av data i källarbetsflödet med projektbaserad autentisering.](../../../../images/tutorials/create/google-pubsub/root-folders.png)
+![Det valda datasteget i källarbetsflödet med projektbaserad autentisering.](../../../../images/tutorials/create/google-pubsub/root-folders.png)
 
 >[!TAB Ämnesbaserad och prenumerationsbaserad autentisering]
 
-Om du har autentiserat dig med ett ämne och en prenumerationsbaserad åtkomst visas [!UICONTROL Select data] hur gränssnittet visas kan variera beroende på vilken information du anger.
+Om du har autentiserat dig med ett ämne och en prenumerationsbaserad åtkomst kan visningen av gränssnittet i [!UICONTROL Select data] variera beroende på vilken information du har angett.
 
 * Om du bara anger ämnesnamnet visas alla avsnitt-prenumerationspar som motsvarar det angivna ämnet i gränssnittet.
 * Om du bara anger prenumerationsnamnet visar gränssnittet alla avsnitt-prenumerationspar som motsvarar det angivna prenumerationsnamnet.
 * Om både ämne- och prenumerationsnamn anges visas det ämne/prenumerationspar som motsvarar båda angivna värden i gränssnittet.
 
-![Steg för val av data i källarbetsflödet med ämne- och prenumerationsbaserad autentisering.](../../../../images/tutorials/create/google-pubsub/scoped-folders.png)
+![Det valda datasteget i källarbetsflödet med ämne- och prenumerationsbaserad autentisering.](../../../../images/tutorials/create/google-pubsub/scoped-folders.png)
 
 >[!ENDTABS]
 
 ## Nästa steg
 
-Genom att följa den här självstudiekursen har du skapat en anslutning mellan [!DNL PubSub] konto och plattform. Du kan nu fortsätta med nästa självstudiekurs och [konfigurera ett dataflöde för att hämta strömmande data från ditt molnlagringsutrymme till plattformen](../../dataflow/streaming/cloud-storage-streaming.md).
+Genom att följa den här självstudiekursen har du skapat en anslutning mellan ditt [!DNL PubSub]-konto och din plattform. Du kan nu fortsätta med nästa självstudie och [konfigurera ett dataflöde för att hämta direktuppspelningsdata från ditt molnlagringsutrymme till plattformen](../../dataflow/streaming/cloud-storage-streaming.md).

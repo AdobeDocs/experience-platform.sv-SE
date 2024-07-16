@@ -17,6 +17,6 @@ ht-degree: 1%
 
 Adobe Experience Platform Debugger kan installeras i webbläsaren Google Chrome. Följ länken nedan för att installera tillägget i din webbläsare:
 
-* [Krom](https://chrome.google.com/webstore/detail/adobe-experience-platform/bfnnokhpnncpkdmbokanobigaccjkpob)
+* [Chrome](https://chrome.google.com/webstore/detail/adobe-experience-platform/bfnnokhpnncpkdmbokanobigaccjkpob)
 
-När du har installerat Chrome-tillägget visas en ikon (![](images/start-icon.jpg)) läggs till i tilläggsfältet. Med den här ikonen öppnar du tillägget.
+När du har installerat Chrome-tillägget läggs en ikon (![](images/start-icon.jpg)) till i tilläggsfältet. Med den här ikonen öppnar du tillägget.

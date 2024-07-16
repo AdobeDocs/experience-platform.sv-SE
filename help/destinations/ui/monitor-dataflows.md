@@ -14,8 +14,8 @@ ht-degree: 0%
 
 # Övervaka dataflöden
 
-[!UICONTROL Destinations] kan ni aktivera data från Adobe Experience Platform för ett oändligt antal externa partner.
+[!UICONTROL Destinations] låter dig aktivera dina data från Adobe Experience Platform till ett oändligt antal externa partner.
 
-Dataflöden är en representation av datajobb som flyttar data över [!DNL Platform]. Dessa dataflöden är konfigurerade för olika tjänster, vilket hjälper dig att flytta data från källanslutningar till måldatauppsättningar, där de sedan används av [!DNL Identity Service] och[!DNL Real-Time Customer Profile] innan de aktiveras till destinationer.
+Dataflöden är en representation av datajobb som flyttar data över [!DNL Platform]. Dessa dataflöden är konfigurerade för olika tjänster, vilket hjälper dig att flytta data från källanslutningar till måldatauppsättningar, där de sedan används av [!DNL Identity Service] och[!DNL Real-Time Customer Profile] innan de aktiveras till mål.
 
-Läs mer om övervakning av dataflöden för destinationer i [Övervaka dataflöden för mål i användargränssnittet](../../dataflows/ui/monitor-destinations.md) självstudiekurs.
+Mer information om övervakning av dataflöden för mål finns i självstudiekursen [Övervaka dataflöden för mål i användargränssnittet](../../dataflows/ui/monitor-destinations.md).

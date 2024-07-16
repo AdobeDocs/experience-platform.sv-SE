@@ -13,7 +13,7 @@ ht-degree: 0%
 
 >[!IMPORTANT]
 >
->Den här sidan förutsätter att sammanfogningsprincipen använder identitetsdiagrammet. Mer information om kopplingsprofiler i kundprofilen i realtid finns i dokumentationen om [sammanfogningsprinciper och identitetssammanfogning](../profile/merge-policies/overview.md#identity-stitching).
+>Den här sidan förutsätter att sammanfogningsprincipen använder identitetsdiagrammet. Mer information om sammanfogningsprinciper i kundprofilen i realtid finns i dokumentationen om [sammanfogningsprinciper och identitetssammanfogning](../profile/merge-policies/overview.md#identity-stitching).
 
 Du kan använda identitetstjänsten och kundprofilen i realtid samtidigt, men de två funktionerna i Adobe Experience Platform är inte desamma.
 
@@ -42,7 +42,7 @@ Läs stegen nedan för att få en bättre förståelse för hur du skapar en sam
 * För det första refererar kundprofilen i realtid till ett identitetsdiagram och hämtar alla identiteter.
 * Därefter hämtar profil profilfragment med primära identiteter i identitetsdiagrammet.
 * Profilera än sammanfogar alla befintliga händelser och attribut när det är klart.
-   * Om attributinformation är i konflikt väljs attribut baserat på sammanfogningsmetoden. Mer information finns i [sammanfogningsprinciper - översikt](../profile/merge-policies/overview.md).
+   * Om attributinformation är i konflikt väljs attribut baserat på sammanfogningsmetoden. Mer information finns i översikten [Sammanslagningsprinciper](../profile/merge-policies/overview.md).
 
 ![Ett flödesdiagram som beskriver hur identitetstjänsten och profilsammanslagningen fungerar.](./images/merge-profile-process.png)
 

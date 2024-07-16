@@ -8,7 +8,7 @@ description: Läs mer om de händelser, inmatningar och utmatningar som Kundens 
 exl-id: 9b21a89c-bf48-4c45-9eb3-ace38368481d
 source-git-commit: 07a110f6d293abff38804b939014e28f308e3b30
 workflow-type: tm+mt
-source-wordcount: '2471'
+source-wordcount: '2492'
 ht-degree: 0%
 
 ---
@@ -26,9 +26,9 @@ Här är stegen för att bygga benägenhetsmodeller och identifiera målgrupper 
 
 2. Prioritera användningsexempel: Vilka är de högsta prioriteringarna för företaget?
 
-3. Bygg modeller i kundens AI: se detta [snabbgenomgång](https://experienceleague.adobe.com/docs/platform-learn/tutorials/intelligent-services/configure-customer-ai.html) och hänvisa till [Användargränssnittsguide](../customer-ai/user-guide/configure.md) för en stegvis process för att skapa en modell.
+3. Bygg modeller i kundens AI: Titta på den här [snabbsjälvstudiekursen](https://experienceleague.adobe.com/docs/platform-learn/tutorials/intelligent-services/configure-customer-ai.html) och se vår [gränssnittshandbok](../customer-ai/user-guide/configure.md) för en steg-för-steg-process för att skapa en modell.
 
-4. [Skapa segment](../customer-ai/user-guide/create-segment.md) med modellresultat.
+4. [Skapa segment](../customer-ai/user-guide/create-segment.md) med hjälp av modellresultat.
 
 5. Målinriktade affärsåtgärder baserade på dessa segment. Övervaka resultaten och iterera över åtgärderna för att förbättra dem.
 
@@ -36,10 +36,10 @@ Här är några exempelkonfigurationer för din första modell.  Exemplmodellen,
 
 | Steg | Definition | Exempel |
 | ---- | ------ | ------- |
-| Konfigurera | Ange grundläggande information om modellen. | **Namn**: Penninköpsbenägenhetsmodell <br> **Modelltyp**: Konvertering |
-| Välj data | Ange de datauppsättningar som används för att skapa modellen. | **Datauppsättning**: Adobe Analytics dataset <br> **Identitet**: Kontrollera att identitetskolumnen för varje datauppsättning har angetts som en gemensam identitet. |
-| Definiera mål | Definiera mål, berättigad population, anpassade händelser och profilattribut. | **Förutsägelsemål**: Välj `commerce.purchases.value` är lika med penna <br> **Resultatfönster**: 30 dagar. |
-| Ange alternativ | Ställ in schemat för modelluppdatering och aktivera bakgrundsmusik för profil | **Schema**: Vecka <br> **Aktivera för profil**: Detta måste vara aktiverat för att modellutdata ska kunna användas vid segmentering. |
+| Konfigurera | Ange grundläggande information om modellen. | **Namn**: Förhållandemodell för pennköp <br> **Modelltyp**: Konvertering |
+| Välj data | Ange de datauppsättningar som används för att skapa modellen. | **Datauppsättning**: Adobe Analytics-datauppsättning <br> **Identitet**: Kontrollera att identitetskolumnen för varje datauppsättning är inställd på en gemensam identitet. |
+| Definiera mål | Definiera mål, berättigad population, anpassade händelser och profilattribut. | **Förutsägelsemål**: Markera `commerce.purchases.value` är lika med penna <br> **Resultatfönster**: 30 dagar. |
+| Ange alternativ | Ställ in schemat för modelluppdatering och aktivera bakgrundsmusik för profil | **Schema**: Varje vecka <br> **Aktivera för profilen**: Detta måste aktiveras för att modellutdata ska kunna användas i segmentering. |
 
 ## Dataöversikt {#data-overview}
 
@@ -47,25 +47,25 @@ I följande avsnitt beskrivs de olika händelser, indata och utdata som krävs o
 
 Kundens AI fungerar genom att analysera följande datauppsättningar för att förutsäga bortfall (när en kund sannolikt kommer att sluta använda produkten) eller konvertering (när en kund sannolikt kommer att göra ett köp).
 
-- Adobe Analytics-data med [Källanslutning för analyser](../../sources/tutorials/ui/create/adobe-applications/analytics.md)
-- Adobe Audience Manager-data med [Audience Manager-källanslutning](../../sources/tutorials/ui/create/adobe-applications/audience-manager.md)
-- [Experience Event-datauppsättning](https://experienceleague.adobe.com/docs/experience-platform/xdm/classes/experienceevent.html)
+- Adobe Analytics-data med [Analytics-källkopplingen](../../sources/tutorials/ui/create/adobe-applications/analytics.md)
+- Adobe Audience Manager-data med [Audience Manager-källkopplingen](../../sources/tutorials/ui/create/adobe-applications/audience-manager.md)
+- [Experience Event, datamängd](https://experienceleague.adobe.com/docs/experience-platform/xdm/classes/experienceevent.html)
 - [Data för kundupplevelsehändelser](https://experienceleague.adobe.com/docs/experience-platform/intelligent-services/data-preparation.html#cee-schema)
 
-Du kan lägga till flera datauppsättningar från olika källor om varje datauppsättning har samma identitetstyp (namnutrymme), till exempel ett ECID. Mer information om hur du lägger till flera datauppsättningar finns på [Användarhandbok för AI](../customer-ai/user-guide/configure.md).
+Du kan lägga till flera datauppsättningar från olika källor om varje datauppsättning har samma identitetstyp (namnutrymme), till exempel ett ECID. Mer information om hur du lägger till flera datauppsättningar finns i användarhandboken för [Kund-AI](../customer-ai/user-guide/configure.md).
 
 >[!IMPORTANT]
 >
->Källkopplingar tar upp till fyra veckor att fylla i data baklänges. Om du nyligen har konfigurerat en anslutning bör du verifiera att datauppsättningen har den minsta datalängd som krävs för kundens AI. Granska [historiska data](#data-requirements) -avsnittet för att bekräfta att du har tillräckligt med data för ditt förutsägelsemål.
+>Source-kontakter tar upp till fyra veckor att fylla i data baklänges. Om du nyligen har konfigurerat en anslutning bör du verifiera att datauppsättningen har den minsta datalängd som krävs för kundens AI. Granska avsnittet [historiska data](#data-requirements) för att verifiera att du har tillräckligt med data för ditt förutsägelsemål.
 
 I följande tabell beskrivs några vanliga termer som används i det här dokumentet:
 
-| Term | Definition |
+| Villkor | Definition |
 | --- | --- |
 | [Experience Data Model (XDM)](../../xdm/home.md) | XDM är det grundläggande ramverk som gör att Adobe Experience Cloud, som drivs av Adobe Experience Platform, kan leverera rätt budskap till rätt person, i rätt kanal, i precis rätt ögonblick. Platform använder XDM System för att organisera data på ett visst sätt som gör det enklare att använda för plattformstjänster. |
 | [XDM-schema](../../xdm/schema/composition.md) | Experience Platform använder scheman för att beskriva datastrukturen på ett konsekvent och återanvändbart sätt. Genom att definiera data på ett enhetligt sätt i olika system blir det enklare att behålla sin betydelse och därmed få värde av data. Innan data kan hämtas in till Platform måste ett schema sättas samman för att beskriva datastrukturen och tillhandahålla begränsningar för den typ av data som kan finnas i varje fält. Scheman består av en XDM-basklass och noll eller flera schemafältgrupper. |
-| [XDM, klass](../../xdm/schema/field-constraints.md) | Alla XDM-scheman beskriver data som kan kategoriseras som `Experience Event`. Databeteendet för ett schema definieras av schemats klass, som tilldelas till ett schema när det skapas första gången. XDM-klasser beskriver det minsta antal egenskaper ett schema måste innehålla för att representera ett visst databeteende. |
-| [Fältgrupper](../../xdm/schema/composition.md) | En komponent som definierar ett eller flera fält i ett schema. Fältgrupper styr hur deras fält visas i schemats hierarki och visar därför samma struktur i varje schema som de ingår i. Fältgrupper är bara kompatibla med specifika klasser, vilket identifieras av deras `meta:intendedToExtend` -attribut. |
+| [XDM-klass](../../xdm/schema/field-constraints.md) | Alla XDM-scheman beskriver data som kan kategoriseras som `Experience Event`. Databeteendet för ett schema definieras av schemats klass, som tilldelas till ett schema när det skapas första gången. XDM-klasser beskriver det minsta antal egenskaper ett schema måste innehålla för att representera ett visst databeteende. |
+| [Fältgrupper](../../xdm/schema/composition.md) | En komponent som definierar ett eller flera fält i ett schema. Fältgrupper styr hur deras fält visas i schemats hierarki och visar därför samma struktur i varje schema som de ingår i. Fältgrupper är bara kompatibla med specifika klasser, vilket identifieras av deras `meta:intendedToExtend`-attribut. |
 | [Datatyp](../../xdm/schema/composition.md) | En komponent som också kan tillhandahålla ett eller flera fält för ett schema. Till skillnad från fältgrupper är datatyperna dock inte begränsade till en viss klass. Detta gör datatyper till ett mer flexibelt alternativ för att beskriva vanliga datastrukturer som kan återanvändas i flera scheman med potentiellt olika klasser. Datatyperna som beskrivs i det här dokumentet stöds av både CEE- och Adobe Analytics-scheman. |
 | [Kundprofil i realtid](../../profile/home.md) | Kundprofilen i realtid utgör en centraliserad konsumentprofil för riktad och personaliserad upplevelsehantering. Varje profil innehåller data som aggregeras över alla system, samt användbara tidsstämplade konton med händelser som involverar den person som har inträffat i något av de system som du använder med Experience Platform. |
 
@@ -73,7 +73,7 @@ I följande tabell beskrivs några vanliga termer som används i det här dokume
 
 För indatauppsättningar, som Adobe Analytics och Adobe Audience Manager, mappas händelser direkt i de här standardfältgrupperna (Commerce, Web, Application och Search) som standard under anslutningsprocessen. Tabellen nedan visar händelsefälten i standardfältgrupperna för kund-AI.
 
-Mer information om mappning av Adobe Analytics-data eller Audience Manager-data finns i fältomappningarna i Analytics eller Audience Manager [guide för fältkopplingar](../../sources/connectors/adobe-applications/mapping/audience-manager.md).
+Mer information om mappning av Adobe Analytics-data eller Audience Manager-data finns i Analytics-fältmappningar eller i [handboken för fältmappningar från Audience Manager ](../../sources/connectors/adobe-applications/mapping/audience-manager.md).
 
 Du kan använda Experience Event- eller Consumer Experience Event XDM-scheman för indatamängder som inte fylls i via någon av de ovanstående anslutningarna. Ytterligare XDM-fältgrupper kan läggas till när schemat skapas. Fältgrupperna kan tillhandahållas av Adobe som standardfältgrupperna eller en anpassad fältgrupp, som matchar datarepresentationen i plattformen.
 
@@ -89,9 +89,9 @@ Experience Events används för att fastställa olika kundbeteenden. Beroende p�
 >
 >Om du använder data från Adobe Analytics eller Adobe Audience Manager skapas schemat automatiskt med de standardhändelser som behövs för att hämta in data. Om du skapar ett eget anpassat EE-schema för att samla in data måste du tänka på vilka fältgrupper som behövs för att hämta in data.
 
-Kund-AI använder händelserna i dessa fyra standardfältgrupper som standard: Commerce, Web, Application och Search. Det är inte nödvändigt att ha data för varje händelse i de standardfältgrupper som anges nedan, men vissa händelser krävs för vissa scenarier. Om du har några händelser i standardfältgrupperna tillgängliga rekommenderar vi att du inkluderar dem i ditt schema. Om du till exempel vill skapa en AI-modell för kunder för att förutsäga köphändelser, kan det vara bra att ha data från fältgrupper för Commerce och webbsidesinformation.
+Kund-AI använder händelserna i dessa fyra standardfältgrupper som standard: Commerce, Web, Application och Search. Det är inte nödvändigt att ha data för varje händelse i de standardfältgrupper som anges nedan, men vissa händelser krävs för vissa scenarier. Om du har några händelser i standardfältgrupperna tillgängliga rekommenderar vi att du inkluderar dem i ditt schema. Om du till exempel vill skapa en AI-modell för kunder för att förutsäga köphändelser, kan det vara bra att ha data från fältgrupperna för Commerce och webbsidesinformation.
 
-Om du vill visa en fältgrupp i plattformsgränssnittet väljer du **[!UICONTROL Schemas]** fliken till vänster, följt av att markera **[!UICONTROL Field groups]** -fliken.
+Om du vill visa en fältgrupp i plattformsgränssnittet väljer du fliken **[!UICONTROL Schemas]** till vänster och sedan fliken **[!UICONTROL Field groups]**.
 
 | Fältgrupp | Händelsetyp | Sökväg till XDM-fält |
 | --- | --- | --- |
@@ -113,11 +113,11 @@ Om du vill visa en fältgrupp i plattformsgränssnittet väljer du **[!UICONTROL
 |  | applicationUpgrades | <li> application.upgrades.value </li> <li> `application.name` </li> |
 | [!UICONTROL Search Details] | sök | `search.keywords` |
 
-Dessutom kan kundens AI använda prenumerationsdata för att skapa bättre kundmodeller. Prenumerationsdata krävs för varje profil som använder [[!UICONTROL Subscription]](../../xdm/data-types/subscription.md) datatypformat. De flesta fält är valfria, men för en optimal omsättningsmodell rekommenderar vi att du anger data för så många fält som möjligt, till exempel: `startDate`, `endDate`och annan relevant information. Kontakta ditt kontoteam om du vill ha ytterligare support för den här funktionen.
+Dessutom kan kundens AI använda prenumerationsdata för att skapa bättre kundmodeller. Prenumerationsdata krävs för varje profil som använder datatypen [[!UICONTROL Subscription]](../../xdm/data-types/subscription.md). De flesta fälten är valfria, men för en optimal omsättningsmodell rekommenderar vi att du anger data för så många fält som möjligt, till exempel `startDate`, `endDate` och andra relevanta uppgifter. Kontakta ditt kontoteam om du vill ha ytterligare support för den här funktionen.
 
 ### Lägga till anpassade händelser och profilattribut {#add-custom-events}
 
-Om du har information som du vill inkludera förutom standardinformationen [standardhändelsefält](#standard-events) som används av kundens AI, kan du använda [konfiguration för anpassad händelse](./user-guide/configure.md#custom-events) för att förstärka de data som används av modellen.
+Om du har information som du vill inkludera utöver standardhändelsefälten [som används av kundens AI, kan du använda den [anpassade händelsekonfigurationen](./user-guide/configure.md#custom-events) för att förstärka de data som används av modellen.](#standard-events)
 
 #### När anpassade händelser ska användas
 
@@ -143,8 +143,8 @@ Här följer ett urval av branschspecifika exempel på anpassade evenemang:
 
 | Bransch | Anpassade händelser |
 | --- | --- |
-| Detaljhandel | Butikstransaktion<br>Registrera dig för ett klubbkort<br>Klipp mobilkupong. |
-| Underhållning | Köpsäsongsmedlemskap <br> Strömma video. |
+| Detaljhandel | Butikstransaktion<br>Registrera dig för klubbkort<br>Mobilkupong för klipp. |
+| Underhållning | Video om direktuppspelning för <br>-köpsäsong. |
 | Hospitalitet | Gör restaurangreservation <br> Köp förmånspoäng. |
 | Resa | Lägg till känd resandeinfo Inköpsavtal. |
 | Kommunikation | Uppgradera/nedgradera/avbryt plan. |
@@ -185,7 +185,7 @@ Så här avgör du den minsta tid som krävs för data som finns i systemet:
 
    - Obligatoriska data = 60 dagar + 30 dagar = 90 dagar
 
-- Du vill förutsäga om användaren sannolikt kommer att köpa en klocka inom de kommande 7 dagarna **utan** tillhandahålla en explicit stödberättigad befolkning. I det här fallet är den stödberättigade populationen som standard&quot;de som har haft aktivitet de senaste 45 dagarna&quot; och resultatfönstret är 7 dagar.
+- Du vill förutsäga om användaren sannolikt kommer att köpa en klocka inom de kommande 7 dagarna **utan att** tillhandahåller en explicit kvalificerad population. I det här fallet är den stödberättigade populationen som standard&quot;de som har haft aktivitet de senaste 45 dagarna&quot; och resultatfönstret är 7 dagar.
 
    - Rätt till uppgraderingssökning = 45 dagar
 
@@ -207,11 +207,11 @@ Så här avgör du den minsta tid som krävs för data som finns i systemet:
 
 ## Kundens AI-utdata {#customer-ai-output-data}
 
-Kund-AI genererar flera attribut för enskilda profiler som anses berättigade. Det finns två sätt att förbruka poängen (utdata) baserat på vad du har etablerat. Om du har en kundprofilaktiverad datauppsättning i realtid kan du ta del av insikter från kundprofilen i realtid i [Segment Builder](../../segmentation/ui/segment-builder.md). Om du inte har någon profilaktiverad datauppsättning kan du [ladda ned kundens AI-utdata](./user-guide/download-scores.md) Data som finns tillgängliga på datasjön.
+Kund-AI genererar flera attribut för enskilda profiler som anses berättigade. Det finns två sätt att förbruka poängen (utdata) baserat på vad du har etablerat. Om du har en kundprofilaktiverad datauppsättning i realtid kan du ta del av insikter från kundprofilen i realtid i [segmentbyggaren](../../segmentation/ui/segment-builder.md). Om du inte har någon profilaktiverad datauppsättning kan du [hämta kundens AI-datauppsättning](./user-guide/download-scores.md) som finns tillgänglig i datasjön.
 
-Du kan hitta utdatadatauppsättningen i plattformen **Datauppsättningar** arbetsyta. Alla AI-utdata för kunder börjar med namnet **AI-poäng för kund - NAMN_PÅ_APP**. På samma sätt börjar alla kundens AI-utdatascheman med namnet **Kundens AI-schema - namn_på_app**.
+Du kan hitta utdatauppsättningen på arbetsytan för **datauppsättningar** för plattformen. Alla AI-utdatauppsättningar för kunder börjar med namnet **AI-poäng för kund - NAME_OF_APP**. På samma sätt börjar alla kundens AI-utdatascheman med namnet **kundens AI-schema - appens_namn**.
 
-![Namn på utdatauppsättningar i kundens AI](./images/user-guide/cai-schema-name-of-app.png)
+![Namn på utdatauppsättningar i kund-AI](./images/user-guide/cai-schema-name-of-app.png)
 
 Tabellen nedan beskriver de olika attribut som finns i utdata från kundens AI:
 
@@ -226,4 +226,4 @@ Tabellen nedan beskriver de olika attribut som finns i utdata från kundens AI:
 
 ## Nästa steg {#next-steps}
 
-När du har gjort i ordning dina data och sett till att alla dina autentiseringsuppgifter och scheman finns på plats, se [Konfigurera en AI-instans för kund](./user-guide/configure.md) som vägleder dig genom en stegvis självstudiekurs för att skapa en AI-instans för kunder.
+När du har förberett dina data och sett till att alla dina autentiseringsuppgifter och scheman finns på plats, se [Konfigurera en AI-instans](./user-guide/configure.md) som vägleder dig genom en stegvis självstudiekurs för att skapa en AI-instans för kunder.

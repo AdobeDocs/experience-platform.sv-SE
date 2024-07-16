@@ -13,7 +13,7 @@ ht-degree: 0%
 
 >[!NOTE]
 >
->Adobe Experience Platform Launch har omklassificerats som en serie datainsamlingstekniker i Adobe Experience Platform. Som ett resultat av detta har flera terminologiska förändringar införts i produktdokumentationen. Se följande [dokument](../../../term-updates.md) för en konsoliderad hänvisning till terminologiska förändringar.
+>Adobe Experience Platform Launch har omklassificerats som en serie datainsamlingstekniker i Adobe Experience Platform. Som ett resultat av detta har flera terminologiska förändringar införts i produktdokumentationen. I följande [dokument](../../../term-updates.md) finns en konsoliderad referens till de ändrade terminologin.
 
 Använd den här referensen för information om hur du konfigurerar tillägget Adobe ContextHub och de alternativ som är tillgängliga när du använder tillägget för att skapa en regel.
 
@@ -21,9 +21,9 @@ Använd den här referensen för information om hur du konfigurerar tillägget A
 
 I det här avsnittet finns en referens för de alternativ som är tillgängliga när du konfigurerar tillägget Adobe ContextHub.
 
-Om Adobe ContextHub-tillägget inte har installerats än öppnar du egenskapen och väljer sedan **[!UICONTROL Extensions > Catalog]** hovra över Adobe ContextHub-tillägget och markera **[!UICONTROL Install]**.
+Om Adobe ContextHub-tillägget inte har installerats än öppnar du egenskapen, väljer **[!UICONTROL Extensions > Catalog]**, hovrar över Adobe ContextHub-tillägget och väljer **[!UICONTROL Install]**.
 
-Om du vill konfigurera tillägget öppnar du [!UICONTROL Extensions] hovra över tillägget och välj **[!UICONTROL Configure]**.
+Om du vill konfigurera tillägget öppnar du fliken [!UICONTROL Extensions], håller pekaren över tillägget och väljer **[!UICONTROL Configure]**.
 
 ![](../../../images/ext-contexthub-config.png)
 

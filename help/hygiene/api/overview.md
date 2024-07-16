@@ -16,13 +16,13 @@ Med Data Hygiene API kan du programmässigt korrigera eller ta bort dina kunders
 
 ## Komma igång
 
-Du kommer åt API:t för datahygien via följande rotsökväg: `https://platform.adobe.io/data/core/hygiene/`
+Du kan komma åt API:t för datahygien via följande rotsökväg: `https://platform.adobe.io/data/core/hygiene/`
 
 I det här avsnittet nedan beskrivs de grundläggande begrepp som du behöver känna till innan du försöker anropa API:t.
 
 ### Samla in värden för obligatoriska rubriker
 
-För att kunna anropa API:t för datahygien måste du först samla in dina autentiseringsuppgifter. Följ [API-autentiseringsguide](../../landing/api-authentication.md) för att generera värden för var och en av de rubriker som krävs för API:t för datahygien, enligt nedan:
+För att kunna anropa API:t för datahygien måste du först samla in dina autentiseringsuppgifter. Följ [API-autentiseringsguiden](../../landing/api-authentication.md) för att generera värden för vart och ett av de obligatoriska rubrikerna för API:t för datahygien, så som visas nedan:
 
 * `Authorization: Bearer {ACCESS_TOKEN}`
 * `x-api-key: {API_KEY}`
@@ -34,27 +34,27 @@ Alla begäranden som innehåller en nyttolast (POST, PUT, PATCH) kräver ytterli
 
 ### Läser exempel-API-anrop
 
-Det här dokumentet innehåller ett exempel-API-anrop som visar hur du formaterar dina begäranden. Information om konventionerna som används i dokumentationen för exempel-API-anrop finns i avsnittet om [läsa exempel-API-anrop](../../landing/api-guide.md#sample-api) i guiden Komma igång för Experience Platform API:er.
+Det här dokumentet innehåller ett exempel-API-anrop som visar hur du formaterar dina begäranden. Information om de konventioner som används i dokumentationen för exempel-API-anrop finns i avsnittet [Så här läser du exempel-API-anrop](../../landing/api-guide.md#sample-api) i Komma igång-guiden för Experience Platform-API:er.
 
 ## Utgångsdatum för datauppsättning
 
-En datamängds förfallodatum är en tidsfördröjd åtgärd,&quot;ta bort en datamängd&quot;. Genom att skapa en förfallotid för en datauppsättning anger du en framtida tidpunkt då den datauppsättningen ska tas bort. Se [Slutpunktshandbok för datauppsättningens förfallodatum](./dataset-expiration.md) om du vill ha mer information om schemaläggning av datauppsättningens förfallodatum i API:t.
+En datamängds förfallodatum är en tidsfördröjd åtgärd,&quot;ta bort en datamängd&quot;. Genom att skapa en förfallotid för en datauppsättning anger du en framtida tidpunkt då den datauppsättningen ska tas bort. Mer information om hur du schemalägger förfallodatum för datauppsättningar i API finns i [slutpunktshandboken för datauppsättningar](./dataset-expiration.md).
 
 ## Posten tas bort
 
 >[!IMPORTANT]
 >
->Begäran om att radera poster är bara tillgänglig för organisationer som har köpt **Adobe Healthcare Shield**.
+>Begäranden om radering av poster är bara tillgängliga för organisationer som har köpt **Adobe Healthcare Shield**.
 >
 >
->Borttagning av poster ska användas för datarensning, borttagning av anonyma data eller datamängning. De är **not** som ska användas för förfrågningar om registrerade rättigheter (överensstämmelse) som rör sekretessbestämmelser som den allmänna dataskyddsförordningen (GDPR). För all användning av regelefterlevnad [Adobe Experience Platform Privacy Service](../../privacy-service/home.md) i stället.
+>Borttagning av poster ska användas för datarensning, borttagning av anonyma data eller datamängning. De **får inte** användas för förfrågningar om rättigheter för registrerade (efterlevnad) som gäller sekretessbestämmelser som den allmänna dataskyddsförordningen (GDPR). Använd [Adobe Experience Platform Privacy Service](../../privacy-service/home.md) i stället för alla kompatibilitetsfall.
 
-Med Data Hygiene API kan du ta bort alla poster som är associerade med en identitet i en eller alla datauppsättningar. Alla uppgifter i datalängden som tar bort identiteter representeras av en konstruktion som kallas arbetsordning. Se [slutpunktsguide för arbetsorder](./workorder.md) om du vill ha information om hur du arbetar med postborttagningar i API:t.
+Med Data Hygiene API kan du ta bort alla poster som är associerade med en identitet i en eller alla datauppsättningar. Alla uppgifter i datalängden som tar bort identiteter representeras av en konstruktion som kallas arbetsordning. Mer information om hur du arbetar med postborttagningar i API finns i [slutpunktshandboken för arbetsorder](./workorder.md).
 
 ## Kvot
 
-Din organisation är begränsad till en fördefinierad månadskvot för varje typ av datalängd, som kan variera beroende på licens. Se [kvotslutpunktshandbok](./quota.md) om du vill ha mer information om hur du ser den aktuella kvotstatusen för datalivscykelprocesserna.
+Din organisation är begränsad till en fördefinierad månadskvot för varje typ av datalängd, som kan variera beroende på licens. Se [kvotslutpunktshandboken](./quota.md) för mer information om hur du visar den aktuella kvotstatusen för dina datalivscykelprocesser.
 
 ## Nästa steg
 
-I den här handboken beskrivs hur du hanterar livscykelbegäranden om data med API-anrop. Information om hur du utför dessa åtgärder i plattformsgränssnittet finns i [användargränssnittshandbok för datalängd](../ui/overview.md).
+I den här handboken beskrivs hur du hanterar livscykelbegäranden om data med API-anrop. Information om hur du utför de här åtgärderna i plattformsgränssnittet finns i [användargränssnittsguiden för datalängd](../ui/overview.md).

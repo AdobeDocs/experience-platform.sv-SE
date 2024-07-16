@@ -4,14 +4,14 @@ description: Det här dokumentet innehåller en översikt över hur du använder
 exl-id: fc9dbc5c-874a-41a9-9b60-c926f3fd6e76
 source-git-commit: cde7c99291ec34be811ecf3c85d12fad09bcc373
 workflow-type: tm+mt
-source-wordcount: '899'
+source-wordcount: '909'
 ht-degree: 5%
 
 ---
 
-# Rotfiltrering in [!DNL Query Service] med maskininlärning
+# Bot-filtrering i [!DNL Query Service] med maskininlärning
 
-Bitaktivitet kan påverka analysstatistik och skada dataintegriteten. Adobe Experience Platform [!DNL Query Service] kan användas för att upprätthålla din datakvalitet genom filtreringsprocessen.
+Bitaktivitet kan påverka analysstatistik och skada dataintegriteten. Adobe Experience Platform [!DNL Query Service] kan användas för att upprätthålla din datakvalitet genom robotfiltrering.
 
 Med punktfiltrering kan ni behålla er datakvalitet genom att i stort sett ta bort datakontaminering som är ett resultat av icke-mänsklig interaktion med er webbplats. Den här processen uppnås genom en kombination av SQL-frågor och maskininlärning.
 
@@ -23,18 +23,18 @@ Det här dokumentet innehåller en översikt och detaljerade exempel på SQL Roo
 
 Som en del av den här processen kräver att du utbildar en maskininlärningsmodell, vilket krävs i det här dokumentet för att du ska kunna lära dig en eller flera maskininlärningsmiljöer.
 
-Det här exemplet använder [!DNL Jupyter Notebook] som en utvecklingsmiljö. Det finns många alternativ, men [!DNL Jupyter Notebook] rekommenderas eftersom det är ett webbprogram med öppen källkod som har låga datorkrav. Det kan vara [hämtat från den officiella webbplatsen](https://jupyter.org/).
+I det här exemplet används [!DNL Jupyter Notebook] som en utvecklingsmiljö. Det finns många alternativ, men [!DNL Jupyter Notebook] rekommenderas eftersom det är ett webbprogram med öppen källkod som har låga datorkrav. Den kan [hämtas från den officiella webbplatsen](https://jupyter.org/).
 
 ## Använd [!DNL Query Service] för att definiera ett tröskelvärde för robotaktivitet
 
 De två attributen som används för att extrahera data för att identifiera robotar är:
 
-* Experience Cloud Visitor-ID (ECID, även kallat MCID): Detta ger ett universellt, beständigt ID som identifierar besökarna i alla Adobe-lösningar.
-* Tidsstämpel: Detta anger tid och datum i UTC-format när en aktivitet inträffade på webbplatsen.
+* Experience Cloud Visitor ID (ECID, även kallat MCID): Detta ger ett universellt, beständigt ID som identifierar besökarna i alla Adobe-lösningar.
+* Tidsstämpel: Här anges tid och datum i UTC-format när en aktivitet inträffade på webbplatsen.
 
 >[!NOTE]
 >
->Användning av `mcid` finns fortfarande i namnutrymmesreferenser till Experience Cloud Visitor-ID:t som i exemplet nedan.
+>Det går fortfarande att använda `mcid` i namnområdesreferenser till Experience Cloud Visitor-ID:t, vilket visas i exemplet nedan.
 
 Följande SQL-sats ger ett inledande exempel för att identifiera robotaktivitet. Programsatsen förutsätter att om en besökare utför 50 klick inom en minut är användaren en robot.
 
@@ -49,7 +49,7 @@ WHERE  enduserids._experience.mcid NOT IN (SELECT enduserids._experi
                                            HAVING Count(*) > 50);  
 ```
 
-Uttrycket filtrerar ECID:n (`mcid`) av alla besökare som uppfyller tröskelvärdet men inte åtgärdar trafiktoppar från andra intervall.
+Uttrycket filtrerar ECID:n (`mcid`) för alla besökare som uppfyller tröskelvärdet, men som inte åtgärdar trafiktoppar från andra intervall.
 
 ## Förbättra robotidentifiering med maskininlärning
 
@@ -57,7 +57,7 @@ Den inledande SQL-satsen kan förfinas så att den blir en funktionsextraherings
 
 Exemplet är expanderat från en minut med upp till 60 klick, och innehåller 5- och 30-minutersperioder med antalet klick på 300 respektive 1 800.
 
-Exemplet samlar in det maximala antalet klick för varje ECID (`mcid`) över de olika varaktigheterna. Den inledande programsatsen har utökats så att den omfattar en minut (60 sekunder), 5 minuter (300 sekunder) och en timme (1 800 sekunder).
+Exemplet samlar in det maximala antalet klick för varje ECID (`mcid`) under de olika varaktigheterna. Den inledande programsatsen har utökats så att den omfattar en minut (60 sekunder), 5 minuter (300 sekunder) och en timme (1 800 sekunder).
 
 ```sql
 SELECT table_count_1_min.mcid AS id, 
@@ -114,13 +114,13 @@ Resultatet av det här uttrycket kan se ut ungefär som tabellen nedan.
 | 3675089655839425960 | 1 | 1 | 1 |
 | 9091930660723241307 | 1 | 1 | 1 |
 
-## Identifiera nya tröskelvärden för spike med hjälp av maskininlärning
+## Identifiera nya tröskelvärden för spike med maskininlärning
 
-Exportera sedan den resulterande frågedatauppsättningen till CSV-format och importera den sedan till [!DNL Jupyter Notebook]. Från den miljön kan du utbilda en maskininlärningsmodell med hjälp av aktuella maskininlärningsbibliotek. Se felsökningsguiden för mer information om [exportera data från [!DNL Query Service] i CSV-format](../troubleshooting-guide.md#export-csv)
+Exportera sedan den resulterande frågedatauppsättningen till CSV-format och importera den sedan till [!DNL Jupyter Notebook]. Från den miljön kan du utbilda en maskininlärningsmodell med hjälp av aktuella maskininlärningsbibliotek. Se felsökningsguiden för mer information om [hur du exporterar data från [!DNL Query Service] i CSV-format](../troubleshooting-guide.md#export-csv)
 
-De tillfälliga topptröskelvärden som ursprungligen fastställdes är inte datadrivna och saknar därför precision. Maskininlärningsmodeller kan användas för att utbilda parametrar som trösklar. Det innebär att du kan öka frågans effektivitet genom att minska antalet `GROUP BY` genom att ta bort onödiga funktioner.
+De tillfälliga topptröskelvärden som ursprungligen fastställdes är inte datadrivna och saknar därför precision. Maskininlärningsmodeller kan användas för att utbilda parametrar som trösklar. Det innebär att du kan öka frågans effektivitet genom att minska antalet `GROUP BY`-nyckelord genom att ta bort onödiga funktioner.
 
-I det här exemplet används datorutbildningsbiblioteket Scikit-Learn som installeras som standard med [!DNL Jupyter Notebook]. Pandafotobiblioteket importeras också för användning här. Följande kommandon matas in i [!DNL Jupyter Notebook].
+I det här exemplet används datorutbildningsbiblioteket Scikit-Learn, som är installerat som standard med [!DNL Jupyter Notebook]. Pandafotobiblioteket importeras också för användning här. Följande kommandon matas in i [!DNL Jupyter Notebook].
 
 ```shell
 import pandas as ps
@@ -153,7 +153,7 @@ tree.plot_tree(clf,feature_names=X.columns)
 plt.show()
 ```
 
-Värdena som returneras från [!DNL Jupyter Notebook] i det här exemplet är följande:
+De värden som returneras från [!DNL Jupyter Notebook] för det här exemplet är följande.
 
 ```text
 Model Accuracy: 0.99935
@@ -163,12 +163,12 @@ Model Accuracy: 0.99935
 
 Resultaten för modellen som visas i exemplet ovan är mer än 99 % exakta.
 
-Eftersom klassificeraren för beslutsträdet kan tränas med data från [!DNL Query Service] på ett regelbundet avbrott med hjälp av schemalagda frågor kan du säkerställa dataintegriteten genom att filtrera robotaktiviteten med stor noggrannhet. Genom att använda de parametrar som härletts från maskininlärningsmodellen kan de ursprungliga frågorna uppdateras med de exakta parametrar som skapas av modellen.
+Eftersom klassificeraren för beslutsträd kan tränas med data från [!DNL Query Service] på ett regelbundet slut med hjälp av schemalagda frågor, kan du säkerställa dataintegriteten genom att filtrera robotaktiviteten med hög noggrannhet. Genom att använda de parametrar som härletts från maskininlärningsmodellen kan de ursprungliga frågorna uppdateras med de exakta parametrar som skapas av modellen.
 
 Exemplmodellen avgör med stor noggrannhet att alla besökare som har mer än 130 interaktioner på fem minuter är upptagna. Den här informationen kan nu användas för att förfina robotfiltreringen av SQL-frågor.
 
 ## Nästa steg
 
-Genom att läsa det här dokumentet får du en bättre förståelse för hur du använder [!DNL Query Service] och maskininlärning för att avgöra och filtrera startaktiviteten.
+Genom att läsa det här dokumentet får du en bättre förståelse för hur du använder [!DNL Query Service] och maskininlärning för att fastställa och filtrera startaktiviteten.
 
-Andra dokument som demonstrerar fördelarna med [!DNL Query Service] till er organisations strategiska affärsinsikter är [övergiven bläddringsmetod](./abandoned-browse.md) exempel.
+Andra dokument som demonstrerar fördelarna med [!DNL Query Service] för din organisations strategiska affärsinsikter är [det övergivna exemplet på bläddringsanvändning](./abandoned-browse.md).

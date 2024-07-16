@@ -1,7 +1,7 @@
 ---
 keywords: Experience Platform;hem;populära ämnen;lokalt system;filöverföring;mappa csv;mappa csv-fil;mappa csv-fil till xdm;mappa csv till xdm;ui guide;
 solution: Experience Platform
-title: Skapa en lokal filuppladdningskällsanslutning i användargränssnittet
+title: Skapa en lokal filöverföring för Source Connector i användargränssnittet
 type: Tutorial
 description: Lär dig hur du skapar en källanslutning för det lokala systemet för att överföra lokala filer till plattformen
 exl-id: 9ce15362-c30d-40cc-9d9c-caa650579390
@@ -14,50 +14,50 @@ ht-degree: 0%
 
 # Skapa en lokal källanslutning för filöverföring i användargränssnittet
 
-I den här självstudiekursen beskrivs hur du skapar en lokal anslutning för filöverföring för att importera lokala filer till plattformen med användargränssnittet.
+I den här självstudiekursen får du hjälp med att skapa en lokal filöverföringsanslutning för att importera lokala filer till plattformen med hjälp av användargränssnittet.
 
 ## Komma igång
 
 Den här självstudiekursen kräver en fungerande förståelse av följande plattformskomponenter:
 
 * [[!DNL Experience Data Model (XDM)] System](../../../../../xdm/home.md): Det standardiserade ramverk som Platform använder för att organisera kundupplevelsedata.
-   * [Grunderna för schemakomposition](../../../../../xdm/schema/composition.md): Lär dig mer om de grundläggande byggstenarna i XDM-scheman, inklusive viktiga principer och bästa praxis när det gäller schemakomposition.
-   * [Schemaredigeraren, genomgång](../../../../../xdm/tutorials/create-schema-ui.md): Lär dig hur du skapar anpassade scheman med hjälp av gränssnittet för Schemaredigeraren.
-* [[!DNL Real-Time Customer Profile]](../../../../../profile/home.md): Ger en enhetlig konsumentprofil i realtid baserad på aggregerade data från flera källor.
+   * [Grundläggande om schemakomposition](../../../../../xdm/schema/composition.md): Lär dig mer om grundstenarna i XDM-scheman, inklusive nyckelprinciper och bästa metoder för schemakomposition.
+   * [Schemaredigeraren, självstudiekurs](../../../../../xdm/tutorials/create-schema-ui.md): Lär dig hur du skapar anpassade scheman med hjälp av gränssnittet för Schemaredigeraren.
+* [[!DNL Real-Time Customer Profile]](../../../../../profile/home.md): Tillhandahåller en enhetlig konsumentprofil i realtid baserad på aggregerade data från flera källor.
 
 ## Överför lokala filer till plattformen
 
-Välj **[!UICONTROL Sources]** från det vänstra navigeringsfältet för att komma åt [!UICONTROL Sources] arbetsyta. The [!UICONTROL Catalog] visas en mängd olika källor som du kan skapa ett konto för.
+I plattformsgränssnittet väljer du **[!UICONTROL Sources]** i det vänstra navigeringsfältet för att komma åt arbetsytan i [!UICONTROL Sources]. På skärmen [!UICONTROL Catalog] visas en mängd olika källor som du kan skapa ett konto för.
 
 Du kan välja lämplig kategori i katalogen till vänster på skärmen. Du kan också hitta den källa du vill arbeta med med med sökalternativet.
 
-Under [!UICONTROL Local system] kategori, välj **[!UICONTROL Local file upload]** och sedan markera **[!UICONTROL Add data]**.
+Under kategorin [!UICONTROL Local system] väljer du **[!UICONTROL Local file upload]** och sedan **[!UICONTROL Add data]**.
 
 ![katalog](../../../../images/tutorials/create/local/catalog.png)
 
-### Använd en befintlig datauppsättning
+### Använd en befintlig datamängd
 
-The [!UICONTROL Dataflow detail] kan du välja om du vill importera dina CSV-data till en befintlig datamängd eller en ny datamängd.
+På sidan [!UICONTROL Dataflow detail] kan du välja om du vill importera dina CSV-data till en befintlig datamängd eller en ny datamängd.
 
-Om du vill importera dina CSV-data till en befintlig datauppsättning väljer du **[!UICONTROL Existing dataset]**. Du kan antingen hämta en befintlig datauppsättning med [!UICONTROL Advanced search] eller genom att bläddra igenom listan med befintliga datauppsättningar i listrutan.
+Om du vill importera dina CSV-data till en befintlig datauppsättning väljer du **[!UICONTROL Existing dataset]**. Du kan antingen hämta en befintlig datauppsättning med alternativet [!UICONTROL Advanced search] eller genom att bläddra igenom listan med befintliga datauppsättningar i listrutan.
 
 Ange ett namn för dataflödet och en valfri beskrivning när du har valt en datauppsättning.
 
-Under den här processen kan du även aktivera [!UICONTROL Error diagnostics] och [!UICONTROL Partial ingestion]. [!UICONTROL Error diagnostics] möjliggör detaljerad generering av felmeddelanden för alla felaktiga poster som inträffar i dataflödet, medan [!UICONTROL Partial ingestion] gör att du kan importera data som innehåller fel, upp till ett visst tröskelvärde som du manuellt anger. Se [partiell batchingång - översikt](../../../../../ingestion/batch-ingestion/partial.md) för mer information.
+Under den här processen kan du även aktivera [!UICONTROL Error diagnostics] och [!UICONTROL Partial ingestion]. [!UICONTROL Error diagnostics] aktiverar detaljerad generering av felmeddelanden för alla felaktiga poster som inträffar i dataflödet, medan [!UICONTROL Partial ingestion] gör att du kan importera data som innehåller fel, upp till ett visst tröskelvärde som du manuellt anger. Mer information finns i [översikten över partiell gruppöverföring](../../../../../ingestion/batch-ingestion/partial.md).
 
-![befintlig datamängd](../../../../images/tutorials/create/local/existing-dataset.png)
+![befintlig-datamängd](../../../../images/tutorials/create/local/existing-dataset.png)
 
 ### Använd en ny datauppsättning
 
-Om du vill importera dina CSV-data till en ny datauppsättning väljer du **[!UICONTROL New dataset]** och ange sedan ett namn och en valfri beskrivning för utdatauppsättningen. Välj sedan ett schema att mappa till med [!UICONTROL Advanced search] eller genom att bläddra igenom listan med befintliga scheman i listrutan.
+Om du vill importera dina CSV-data till en ny datauppsättning väljer du **[!UICONTROL New dataset]** och anger sedan ett namn på utdatauppsättningen och en valfri beskrivning. Välj sedan ett schema att mappa till med alternativet [!UICONTROL Advanced search] eller genom att bläddra igenom listan med befintliga scheman i listrutan.
 
-När du har valt ett schema anger du ett namn för dataflödet och en valfri beskrivning och använder sedan [!UICONTROL Error diagnostics] och [!UICONTROL Partial ingestion] inställningar som du vill använda för dataflödet. När du är klar väljer du **[!UICONTROL Next]**.
+När du har valt ett schema anger du ett namn för dataflödet och en valfri beskrivning och tillämpar sedan de [!UICONTROL Error diagnostics]- och [!UICONTROL Partial ingestion]-inställningar du vill använda för dataflödet. När du är klar väljer du **[!UICONTROL Next]**.
 
-![new-dataset](../../../../images/tutorials/create/local/new-dataset.png)
+![ny-datamängd](../../../../images/tutorials/create/local/new-dataset.png)
 
 ### Markera data
 
-The [!UICONTROL Select data] visas med ett gränssnitt där du kan överföra dina lokala filer och förhandsgranska deras struktur och innehåll. Välj **[!UICONTROL Choose files]** för att överföra en CSV-fil från ditt lokala system. Du kan också dra och släppa CSV-filen som du vill överföra till [!UICONTROL Drag and drop files] -panelen.
+[!UICONTROL Select data]-steget visas med ett gränssnitt för att överföra dina lokala filer och förhandsgranska deras struktur och innehåll. Välj **[!UICONTROL Choose files]** om du vill överföra en CSV-fil från det lokala systemet. Du kan också dra och släppa den CSV-fil som du vill överföra till panelen [!UICONTROL Drag and drop files].
 
 >[!TIP]
 >
@@ -69,7 +69,7 @@ När filen har överförts uppdateras förhandsvisningsgränssnittet för att vi
 
 ![preview-sample-data](../../../../images/tutorials/create/local/preview-sample-data.png)
 
-Beroende på vilken fil du har kan du välja en kolumnavgränsare, t.ex. tabbar, kommatecken, rör eller en anpassad kolumnavgränsare för källdata. Välj **[!UICONTROL Delimiter]** och välj sedan lämplig avgränsare på menyn.
+Beroende på vilken fil du har kan du välja en kolumnavgränsare, t.ex. tabbar, kommatecken, rör eller en anpassad kolumnavgränsare för källdata. Välj listrutepilen **[!UICONTROL Delimiter]** och välj sedan lämplig avgränsare på menyn.
 
 När du är klar väljer du **[!UICONTROL Next]**.
 
@@ -77,18 +77,18 @@ När du är klar väljer du **[!UICONTROL Next]**.
 
 ## Mappning
 
-The [!UICONTROL Mapping] visas med ett gränssnitt för att mappa källfälten från källschemat till rätt mål-XDM-fält i målschemat.
+Steg [!UICONTROL Mapping] visas, och du får ett gränssnitt för att mappa källfälten från källschemat till rätt mål-XDM-fält i målschemat.
 
-Beroende på dina behov kan du välja att mappa fält direkt eller använda förinställningsfunktioner för data för att omvandla källdata för att härleda beräknade eller beräknade värden. Mer information om hur du använder mappningsgränssnittet finns i [Användargränssnittsguide för dataprep](../../../../../data-prep/ui/mapping.md).
+Beroende på dina behov kan du välja att mappa fält direkt eller använda förinställningsfunktioner för data för att omvandla källdata för att härleda beräknade eller beräknade värden. Mer information om hur du använder mappningsgränssnittet finns i [Användargränssnittshandboken för dataförberedelser](../../../../../data-prep/ui/mapping.md).
 
-När mappningsuppsättningarna är klara väljer du **[!UICONTROL Finish]** och kan ta en stund innan det nya dataflödet skapas.
+När mappningsuppsättningarna är klara väljer du **[!UICONTROL Finish]** och tillåt en stund för att skapa det nya dataflödet.
 
 ![mappning](../../../../images/tutorials/create/local/mapping.png)
 
 ## Övervaka datainmatning
 
-När CSV-filen har mappats och skapats kan du övervaka de data som importeras via den via kontrollpanelen. Mer information finns i självstudiekursen om [övervaka källornas dataflöden i användargränssnittet](../../../../../dataflows/ui/monitor-sources.md).
+När CSV-filen har mappats och skapats kan du övervaka de data som importeras via den via kontrollpanelen. Mer information finns i självstudiekursen [Övervaka källans dataflöden i användargränssnittet](../../../../../dataflows/ui/monitor-sources.md).
 
 ## Nästa steg
 
-I den här självstudiekursen har du mappat en platt CSV-fil till ett XDM-schema och infogat den i Platform. Dessa data kan nu användas av underordnade [!DNL Platform] tjänster som [!DNL Real-Time Customer Profile]. Se översikten för [[!DNL Real-Time Customer Profile]](../../../../../profile/home.md) för mer information.
+I den här självstudiekursen har du mappat en platt CSV-fil till ett XDM-schema och infogat den i Platform. Dessa data kan nu användas av [!DNL Platform]-tjänster längre fram i kedjan, till exempel [!DNL Real-Time Customer Profile]. Mer information finns i översikten för [[!DNL Real-Time Customer Profile]](../../../../../profile/home.md).

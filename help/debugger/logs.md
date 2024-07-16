@@ -15,13 +15,13 @@ ht-degree: 0%
 
 # Fliken Loggar
 
-The **Loggar** -fliken innehåller information om taggar och Adobe Experience Platform Web SDK-implementeringar. Du kan filtrera efter lösningar som implementerats via tillhörande verktyg.
+Fliken **Loggar** innehåller information som är specifik för taggar och Adobe Experience Platform Web SDK-implementeringar. Du kan filtrera efter lösningar som implementerats via tillhörande verktyg.
 
 ![](images/logs.jpg)
 
 På fliken Loggar visas information i fyra kolumner:
 
-**[!UICONTROL Solutions]:** Visar ikoner för den Experience Cloud-lösning som påverkas av det loggade objektet. Håll pekaren över ikonen om du vill se en textbeskrivning.
+**[!UICONTROL Solutions]:** Visar ikoner för Experience Cloud som påverkas av det loggade objektet. Håll pekaren över ikonen om du vill se en textbeskrivning.
 
 **[!UICONTROL Occurred at]:** Visar när det loggade problemet uppstod under sessionen.
 
@@ -34,6 +34,6 @@ På fliken Loggar visas information i fyra kolumner:
 
 **[!UICONTROL Log message]:** Beskriver problemet.
 
-Vissa loggmeddelanden innehåller alternativet Visa kod. Välj **[!UICONTROL Show Code]** om du vill visa den villkorskod som avgör om en regel ska utlösas.
+Vissa loggmeddelanden innehåller alternativet Visa kod. Välj **[!UICONTROL Show Code]** om du vill visa villkorskoden som avgör om en regel ska utlösas.
 
 Om du vill rensa loggen väljer du **[!UICONTROL Remove Logs]**.

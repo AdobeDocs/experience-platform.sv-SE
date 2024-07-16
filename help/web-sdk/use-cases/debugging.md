@@ -16,9 +16,9 @@ När felsökning är aktiverat skickar Web SDK meddelanden till webbläsarkonsol
 
 Felsökning är som standard inaktiverat, men kan aktiveras på fyra olika sätt. Du kan använda vilken kombination som helst av dessa metoder för att aktivera eller inaktivera felsökning som passar ditt utvecklingsarbetsflöde bäst.
 
-## Använd `debugEnabled` i `configure` kommando
+## Använd `debugEnabled` i kommandot `configure`
 
-Ange `debugEnabled` boolesk till true när tillägget konfigureras. Det här alternativet används vanligtvis för utvecklingsmiljöer, eftersom det möjliggör felsökning för alla som besöker en sida på webbplatsen:
+Ange det booleska värdet `debugEnabled` som true när tillägget konfigureras. Det här alternativet används vanligtvis för utvecklingsmiljöer, eftersom det möjliggör felsökning för alla som besöker en sida på webbplatsen:
 
 ```js
 alloy("configure", {
@@ -28,9 +28,9 @@ alloy("configure", {
 });
 ```
 
-Se [`debugEnabled`](../commands/configure/debugenabled.md) för mer information.
+Mer information finns i [`debugEnabled`](../commands/configure/debugenabled.md).
 
-## Använd `setDebug` kommando
+## Använd kommandot `setDebug`
 
 På samma sätt som ovanstående booleska uttryck aktiverar det här kommandot felsökning för alla besökare på sidan.
 
@@ -38,11 +38,11 @@ På samma sätt som ovanstående booleska uttryck aktiverar det här kommandot f
 alloy("setDebug", {"enabled": true});
 ```
 
-Se [`setDebug`](../commands/setdebug.md) för mer information.
+Mer information finns i kommandot [`setDebug`](../commands/setdebug.md).
 
 ## Ange en frågesträngsparameter
 
-Du kan aktivera felsökning genom att lägga till frågesträngen `?alloy_debug=true` till slutet av en URL. Exempel:
+Du kan aktivera felsökning genom att lägga till frågesträngen `?alloy_debug=true` i slutet av valfri URL. Exempel:
 
 `http://example.com/?alloy_debug=true`
 
@@ -54,4 +54,4 @@ Adobe Experience Platform Debugger är ett kraftfullt verktyg som undersöker di
 
 ![Aktivera felsökning](../assets/enable-debugging.png)
 
-Se [Adobe Experience Platform Debugger - översikt](/help/debugger/home.md) för mer information.
+Mer information finns i [Översikt över Adobe Experience Platform Debugger](/help/debugger/home.md).

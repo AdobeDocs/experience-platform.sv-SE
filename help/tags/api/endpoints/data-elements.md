@@ -4,24 +4,24 @@ description: Lär dig hur du anropar slutpunkten /data_elements i Reaktors API.
 exl-id: ea346682-441b-415b-af06-094158eb7c71
 source-git-commit: b66a50e40aaac8df312a2c9a977fb8d4f1fb0c80
 workflow-type: tm+mt
-source-wordcount: '1368'
+source-wordcount: '1364'
 ht-degree: 1%
 
 ---
 
 # Slutpunkt för dataelement
 
-Ett dataelement fungerar som en variabel som pekar på en viktig datadel i programmet. Dataelement används i [regler](./rules.md) och [extension](./extensions.md) konfigurationer. När en regel aktiveras vid körning i en webbläsare eller ett program tolkas dataelementets värde och används i regeln. Dataelement fungerar på samma sätt för tilläggskonfigurationer.
+Ett dataelement fungerar som en variabel som pekar på en viktig datadel i programmet. Dataelement används i konfigurationer med [regler](./rules.md) och [tillägg](./extensions.md). När en regel aktiveras vid körning i en webbläsare eller ett program tolkas dataelementets värde och används i regeln. Dataelement fungerar på samma sätt för tilläggskonfigurationer.
 
 Om du använder flera dataelement tillsammans skapas ett datalexikon eller datamappning. Den här ordlistan representerar de data som Adobe Experience Platform känner till och kan använda.
 
-Ett dataelement tillhör exakt ett [property](./properties.md). En egenskap kan ha många dataelement.
+Ett dataelement tillhör exakt en [egenskap](./properties.md). En egenskap kan ha många dataelement.
 
-Mer allmän information om dataelement och hur de används i taggar finns i [dataelementguide](../../ui/managing-resources/data-elements.md) i gränssnittsdokumentationen.
+Mer allmän information om dataelement och hur de används i taggar finns i [dataelementguiden](../../ui/managing-resources/data-elements.md) i gränssnittets dokumentation.
 
 ## Komma igång
 
-Slutpunkten som används i den här guiden ingår i [Reaktors-API](https://www.adobe.io/experience-platform-apis/references/reactor/). Innan du fortsätter bör du granska [komma igång-guide](../getting-started.md) om du vill ha viktig information om hur du autentiserar till API:t.
+Slutpunkten som används i den här guiden ingår i [Reaktors-API](https://www.adobe.io/experience-platform-apis/references/reactor/). Innan du fortsätter bör du läsa [kom igång-guiden](../getting-started.md) för att få viktig information om hur du autentiserar dig för API:t.
 
 ## Hämta en lista med dataelement {#list}
 
@@ -35,13 +35,13 @@ GET /properties/{PROPERTY_ID}/data_elements
 
 | Parameter | Beskrivning |
 | --- | --- |
-| `PROPERTY_ID` | The `id` för den egenskap som äger dataelementen. |
+| `PROPERTY_ID` | `id` för egenskapen som äger dataelementen. |
 
 {style="table-layout:auto"}
 
 >[!NOTE]
 >
->Med hjälp av frågeparametrar kan listade dataelement filtreras baserat på följande attribut:<ul><li>`created_at`</li><li>`dirty`</li><li>`enabled`</li><li>`name`</li><li>`origin_id`</li><li>`published`</li><li>`published_at`</li><li>`revision_number`</li><li>`updated_at`</li></ul>Se guiden på [filtrera svar](../guides/filtering.md) för mer information.
+>Med hjälp av frågeparametrar kan listade dataelement filtreras baserat på följande attribut:<ul><li>`created_at`</li><li>`dirty`</li><li>`enabled`</li><li>`name`</li><li>`origin_id`</li><li>`published`</li><li>`published_at`</li><li>`revision_number`</li><li>`updated_at`</li></ul>Mer information finns i guiden om [filtrering av svar](../guides/filtering.md).
 
 **Begäran**
 
@@ -174,7 +174,7 @@ Du kan söka efter ett dataelement genom att ange dess ID i sökvägen för en G
 
 >[!NOTE]
 >
->När dataelement tas bort markeras de som borttagna men tas inte bort från systemet. Det är därför möjligt att söka efter ett borttaget dataelement. Borttagna dataelement kan identifieras med en `data.meta.deleted_at` -attribut.
+>När dataelement tas bort markeras de som borttagna men tas inte bort från systemet. Det är därför möjligt att söka efter ett borttaget dataelement. Borttagna dataelement kan identifieras med ett `data.meta.deleted_at`-attribut.
 
 **API-format**
 
@@ -184,7 +184,7 @@ GET /data_elements/{DATA_ELEMENT_ID}
 
 | Parameter | Beskrivning |
 | --- | --- |
-| `DATA_ELEMENT_ID` | The `id` för det dataelement som du vill söka efter. |
+| `DATA_ELEMENT_ID` | `id` för det dataelement som du vill söka efter. |
 
 {style="table-layout:auto"}
 
@@ -314,13 +314,13 @@ POST /properties/{PROPERTY_ID}/data_elements
 
 | Parameter | Beskrivning |
 | --- | --- |
-| `PROPERTY_ID` | The `id` i [property](./properties.md) som du definierar dataelementet under. |
+| `PROPERTY_ID` | `id` för [property](./properties.md) som du definierar dataelementet under. |
 
 {style="table-layout:auto"}
 
 **Begäran**
 
-Följande begäran skapar ett nytt dataelement för den angivna egenskapen. Anropet associerar även dataelementet med ett befintligt tillägg via `relationships` -egenskap. Se guiden på [relationer](../guides/relationships.md) för mer information.
+Följande begäran skapar ett nytt dataelement för den angivna egenskapen. Anropet associerar även dataelementet med ett befintligt tillägg via egenskapen `relationships`. Mer information finns i guiden om [relationer](../guides/relationships.md).
 
 ```shell
 curl -X POST \
@@ -356,7 +356,7 @@ curl -X POST \
 | Egenskap | Beskrivning |
 | --- | --- |
 | `attributes.name` | **(Obligatoriskt)** Ett läsbart namn för dataelementet. |
-| `attributes.delegate_descriptor_id` | **(Obligatoriskt)** En formaterad sträng som associerar dataelementet med ett tilläggspaket. Alla dataelement måste kopplas till ett tilläggspaket när de skapas, eftersom varje tilläggspaket definierar kompatibla typer för sina delegatdataelement samt deras avsedda beteende. Se guiden på [delegatbeskrivnings-ID](../guides/delegate-descriptor-ids.md) för mer information. |
+| `attributes.delegate_descriptor_id` | **(Obligatoriskt)** En formaterad sträng som associerar dataelementet med ett tilläggspaket. Alla dataelement måste kopplas till ett tilläggspaket när de skapas, eftersom varje tilläggspaket definierar kompatibla typer för sina delegatdataelement samt deras avsedda beteende. Mer information finns i guiden för [delegatbeskrivnings-ID](../guides/delegate-descriptor-ids.md). |
 | `attributes.settings` | Ett inställnings-JSON-objekt representeras som en sträng. |
 | `attributes.default_value` | Ett standardvärde som returneras om dataelementet utvärderas till `undefined`. |
 | `attributes.enabled` | Ett booleskt värde som anger om dataelementet är aktiverat. |
@@ -480,7 +480,7 @@ PATCH /data_elements/{DATA_ELEMENT_ID}
 
 | Parameter | Beskrivning |
 | --- | --- |
-| `DATA_ELEMENT_ID` | The `id` för det dataelement som du vill uppdatera. |
+| `DATA_ELEMENT_ID` | `id` för det dataelement som du vill uppdatera. |
 
 {style="table-layout:auto"}
 
@@ -508,8 +508,8 @@ curl -X PATCH \
 
 | Egenskap | Beskrivning |
 | --- | --- |
-| `attributes` | Ett objekt vars egenskaper representerar attributen som ska uppdateras för dataelementet. Alla dataelementattribut kan uppdateras. Se exempelanropet för [skapa ett dataelement](#create) om du vill se en lista över attribut och deras användningsfall. |
-| `id` | The `id` för det dataelement som du vill uppdatera. Det här bör matcha `{DATA_ELEMENT_ID}` värdet som anges i sökvägen för begäran. |
+| `attributes` | Ett objekt vars egenskaper representerar attributen som ska uppdateras för dataelementet. Alla dataelementattribut kan uppdateras. Se exempelanropet för [att skapa ett dataelement](#create) för en lista över attribut och deras användningsfall. |
+| `id` | `id` för det dataelement som du vill uppdatera. Det här bör matcha det `{DATA_ELEMENT_ID}`-värde som anges i sökvägen till begäran. |
 | `type` | Den typ av resurs som uppdateras. För den här slutpunkten måste värdet vara `data_elements`. |
 
 {style="table-layout:auto"}
@@ -620,7 +620,7 @@ Ett lyckat svar returnerar information om det uppdaterade dataelementet.
 
 När du ändrar ett dataelement skapas en ny revidering av dataelementet med den aktuella huvudrevisionen. Varje revision av ett dataelement kommer att ha ett eget ID. Det ursprungliga dataelementet kan upptäckas via en origo-länk.
 
-Du kan ändra ett dataelement genom att ange en `meta.action` egenskap med värdet `revise` i en begäran från PATCH.
+Du kan ändra ett dataelement genom att ange en `meta.action`-egenskap med värdet `revise` i en PATCH-begäran.
 
 **API-format**
 
@@ -630,7 +630,7 @@ PATCH /data_elements/{DATA_ELEMENT_ID}
 
 | Parameter | Beskrivning |
 | --- | --- |
-| `DATA_ELEMENT_ID` | The `id` för det dataelement som du vill ändra. |
+| `DATA_ELEMENT_ID` | `id` för det dataelement som du vill revidera. |
 
 {style="table-layout:auto"}
 
@@ -659,16 +659,16 @@ curl -X PATCH \
 
 | Egenskap | Beskrivning |
 | --- | --- |
-| `attributes` | Ett objekt vars egenskaper representerar attributen som ska uppdateras för dataelementet. Alla dataelementattribut kan uppdateras. Se exempelanropet för [skapa ett dataelement](#create) om du vill se en lista över attribut och deras användningsfall. |
-| `meta.action` | När det ingår med värdet `revise`anger den här egenskapen att en ny revision ska skapas för dataelementet. |
-| `id` | The `id` för det dataelement som du vill ändra. Det här bör matcha `{DATA_ELEMENT_ID}` värdet som anges i sökvägen för begäran. |
+| `attributes` | Ett objekt vars egenskaper representerar attributen som ska uppdateras för dataelementet. Alla dataelementattribut kan uppdateras. Se exempelanropet för [att skapa ett dataelement](#create) för en lista över attribut och deras användningsfall. |
+| `meta.action` | När den här egenskapen inkluderas med värdet `revise` anger den att en ny revision ska skapas för dataelementet. |
+| `id` | `id` för det dataelement som du vill revidera. Det här bör matcha det `{DATA_ELEMENT_ID}`-värde som anges i sökvägen till begäran. |
 | `type` | Den typ av resurs som revideras. För den här slutpunkten måste värdet vara `data_elements`. |
 
 {style="table-layout:auto"}
 
 **Svar**
 
-Ett godkänt svar returnerar detaljerna för den nya ändringen av dataelementet, vilket anges i det stegvisa `meta.latest_revision_number` -attribut.
+Ett lyckat svar returnerar informationen om den nya revisionen för dataelementet, vilket anges av det stegvisa `meta.latest_revision_number`-attributet.
 
 ```json
 {
@@ -780,7 +780,7 @@ DELETE /data_elements/{DATA_ELEMENT_ID}
 
 | Parameter | Beskrivning |
 | --- | --- |
-| `DATA_ELEMENT_ID` | The `id` för det dataelement som du vill ta bort. |
+| `DATA_ELEMENT_ID` | `id` för det dataelement som du vill ta bort. |
 
 {style="table-layout:auto"}
 
@@ -800,17 +800,17 @@ Ett lyckat svar returnerar HTTP-status 204 (inget innehåll) utan svarstext, vil
 
 ## Hantera anteckningar för ett dataelement {#notes}
 
-Dataelement är&quot;anmärkningsvärda&quot; resurser, vilket innebär att du kan skapa och hämta textbaserade anteckningar för varje enskild resurs. Se [slutpunktshandbok för anteckningar](./notes.md) om du vill ha mer information om hur du hanterar anteckningar för dataelement och andra kompatibla resurser.
+Dataelement är&quot;anmärkningsvärda&quot; resurser, vilket innebär att du kan skapa och hämta textbaserade anteckningar för varje enskild resurs. Mer information om hur du hanterar anteckningar för dataelement och andra kompatibla resurser finns i [anteckningsguiden](./notes.md).
 
 ## Hämta relaterade resurser för ett dataelement {#related}
 
-Följande anrop visar hur du hämtar relaterade resurser för ett dataelement. När [söka efter ett dataelement](#lookup), listas dessa relationer under `relationships` -egenskap.
+Följande anrop visar hur du hämtar relaterade resurser för ett dataelement. När [söker upp ett dataelement ](#lookup) visas dessa relationer under egenskapen `relationships`.
 
-Se [relationshandbok](../guides/relationships.md) om du vill ha mer information om relationerna i Reactor API.
+Se [relationshandboken](../guides/relationships.md) för mer information om relationer i Reactor API.
 
 ### Lista de relaterade biblioteken för ett dataelement {#libraries}
 
-Du kan lista de bibliotek som använder ett dataelement genom att lägga till `/libraries` till sökvägen för en sökningsbegäran.
+Du kan lista de bibliotek som använder ett dataelement genom att lägga till `/libraries` i sökvägen för en sökningsbegäran.
 
 **API-format**
 
@@ -820,7 +820,7 @@ GET  /data_elements/{DATA_ELEMENT_ID}/libraries
 
 | Parameter | Beskrivning |
 | --- | --- |
-| `{DATA_ELEMENT_ID}` | The `id` för det dataelement vars bibliotek du vill visa. |
+| `{DATA_ELEMENT_ID}` | `id` för dataelementet vars bibliotek du vill visa. |
 
 {style="table-layout:auto"}
 
@@ -932,7 +932,7 @@ Ett godkänt svar returnerar en lista med bibliotek som använder det angivna da
 
 ### Visa en lista över relaterade revisioner för ett dataelement {#revisions}
 
-Du kan lista tidigare revisioner av ett dataelement genom att lägga till `/revisions` till sökvägen för en sökningsbegäran.
+Du kan lista tidigare versioner av ett dataelement genom att lägga till `/revisions` i sökvägen för en sökbegäran.
 
 **API-format**
 
@@ -942,7 +942,7 @@ GET  /data_elements/{DATA_ELEMENT_ID}/revisions
 
 | Parameter | Beskrivning |
 | --- | --- |
-| `{DATA_ELEMENT_ID}` | The `id` för det dataelement vars revideringar du vill lista. |
+| `{DATA_ELEMENT_ID}` | `id` för dataelementet vars revideringar du vill visa. |
 
 {style="table-layout:auto"}
 
@@ -1166,7 +1166,7 @@ Ett lyckat svar returnerar en lista med revideringar för det angivna dataelemen
 
 ### Söka efter det relaterade tillägget för ett dataelement {#extension}
 
-Du kan slå upp tillägget som använder ett dataelement genom att lägga till `/extension` till sökvägen för en GET-begäran.
+Du kan slå upp tillägget som använder ett dataelement genom att lägga till `/extension` i sökvägen för en GET-begäran.
 
 **API-format**
 
@@ -1176,7 +1176,7 @@ GET  /data_elements/{DATA_ELEMENT_ID}/extension
 
 | Parameter | Beskrivning |
 | --- | --- |
-| `{DATA_ELEMENT_ID}` | The `id` för det dataelement vars tillägg du vill söka efter. |
+| `{DATA_ELEMENT_ID}` | `id` för dataelementet vars tillägg du vill söka efter. |
 
 {style="table-layout:auto"}
 
@@ -1286,7 +1286,7 @@ Ett godkänt svar returnerar detaljerna för tillägget som använder det angivn
 
 ### Söka efter relaterat ursprung för ett dataelement {#origin}
 
-Du kan slå upp ett dataelements ursprung genom att lägga till `/origin` till sökvägen för en GET-begäran. Originalet till ett dataelement är den tidigare revisionen som uppdaterades för att skapa den aktuella revisionen.
+Du kan slå upp ett dataelements ursprung genom att lägga till `/origin` i sökvägen för en GET-begäran. Originalet till ett dataelement är den tidigare revisionen som uppdaterades för att skapa den aktuella revisionen.
 
 **API-format**
 
@@ -1296,7 +1296,7 @@ GET  /data_elements/{DATA_ELEMENT_ID}/origin
 
 | Parameter | Beskrivning |
 | --- | --- |
-| `{DATA_ELEMENT_ID}` | The `id` för det dataelement vars ursprung du vill söka efter. |
+| `{DATA_ELEMENT_ID}` | `id` för det dataelement vars ursprung du vill söka efter. |
 
 {style="table-layout:auto"}
 
@@ -1416,7 +1416,7 @@ Ett lyckat svar returnerar detaljerna om det angivna dataelementets ursprung.
 
 ### Söka efter en relaterad egenskap för ett dataelement {#property}
 
-Du kan söka efter egenskapen som äger ett dataelement genom att lägga till `/property` till sökvägen för en GET-begäran.
+Du kan söka efter egenskapen som äger ett dataelement genom att lägga till `/property` i sökvägen för en GET-begäran.
 
 **API-format**
 
@@ -1426,7 +1426,7 @@ GET  /data_elements/{DATA_ELEMENT_ID}/property
 
 | Parameter | Beskrivning |
 | --- | --- |
-| `{DATA_ELEMENT_ID}` | The `id` för det dataelement vars egenskap du vill söka efter. |
+| `{DATA_ELEMENT_ID}` | `id` för det dataelement vars egenskap du vill söka efter. |
 
 {style="table-layout:auto"}
 

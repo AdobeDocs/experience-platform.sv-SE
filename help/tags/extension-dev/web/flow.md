@@ -13,7 +13,7 @@ ht-degree: 0%
 
 >[!NOTE]
 >
->Adobe Experience Platform Launch har omklassificerats som en serie datainsamlingstekniker i Adobe Experience Platform. Som ett resultat av detta har flera terminologiska förändringar införts i produktdokumentationen. Se följande [dokument](../../term-updates.md) för en konsoliderad hänvisning till terminologiska förändringar.
+>Adobe Experience Platform Launch har omklassificerats som en serie datainsamlingstekniker i Adobe Experience Platform. Som ett resultat av detta har flera terminologiska förändringar införts i produktdokumentationen. I följande [dokument](../../term-updates.md) finns en konsoliderad referens till de ändrade terminologin.
 
 I webbtillägg har varje händelse, villkor, åtgärd och dataelementtyp både en vy där användarna kan ändra inställningar och en biblioteksmodul för att agera utifrån de användardefinierade inställningarna.
 
@@ -23,12 +23,12 @@ Som framgår av följande högnivådiagram visas tilläggets händelsetyp inuti 
 
 I följande diagram ser du länken mellan händelser, villkor och åtgärder i regelbearbetningsflödet.
 
-![flödesdiagram för regelbearbetning](../images/flow/web/rule-processing-flow.png)
+![regelbearbetningsflödesdiagram](../images/flow/web/rule-processing-flow.png)
 
 Regelbearbetningsflödet innehåller följande faser:
 
-1. The `settings` och `trigger` -metoden anges till händelsbiblioteksmodulen vid start.
-1. När händelsebiblioteksmodulen avgör om händelsen har inträffat, anropar händelsbiblioteket modulen `trigger`.
-1. Taggar passerar `settings` till regelns villkorsbiblioteksmoduler där villkoren utvärderas.
+1. Metoden `settings` och `trigger` tillhandahålls till händelsebiblioteksmodulen vid start.
+1. När händelsebiblioteksmodulen fastställer att händelsen har inträffat anropar händelsbiblioteket `trigger`.
+1. Taggar skickar `settings` till regelns villkorsbiblioteksmoduler där villkor utvärderas.
 1. Varje villkorsbiblioteksmodul returnerar om ett villkor utvärderas till true.
 1. Om alla villkor godkänns körs regelns åtgärder.

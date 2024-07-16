@@ -3,7 +3,7 @@ description: Lär dig hur du använder fliken Händelser i Adobe Experience Plat
 keywords: felsökare;felsökningstillägg för upplevelseplattform;krom;tillägg;händelser;dtm;target
 seo-description: Experience Platform Debugger Events Screen
 seo-title: Events
-title: Fliken Händelser
+title: Fliken Event
 exl-id: 1f94ca36-d545-4e41-89a9-ed97c45991fb
 source-git-commit: df1a67e4b6f3d2eaeaba2b8d3c9b1588ee0b1461
 workflow-type: tm+mt
@@ -14,7 +14,7 @@ ht-degree: 0%
 
 # Fliken Händelser
 
-The **Händelser** -fliken innehåller en grafisk vy över händelser som inträffar, som visas på en tidslinje.
+Fliken **Händelser** innehåller en grafisk vy över händelser som inträffar, som visas på en tidslinje.
 
 ![](images/events.jpg)
 
@@ -37,7 +37,7 @@ Så här aktiverar du spårning av datalagerändringar på tidslinjen:
 
 1. Välj **[!UICONTROL Save]**.
 
-Information om datalagrets ändringar visar allt som har tagits bort eller lagts till. Du kan välja **{}** för att fördjupa sig i datalagret.
+Information om datalagrets ändringar visar allt som har tagits bort eller lagts till. Du kan markera **{}** om du vill söka djupare i datalagret.
 
 ## Hämta händelseinformation
 

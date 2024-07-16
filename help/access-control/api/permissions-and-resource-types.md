@@ -18,9 +18,9 @@ ht-degree: 0%
 >
 >Om en användartoken skickas måste användaren av token ha rollen&quot;org admin&quot; för den begärda organisationen.
 
-Du kan visa namnen på alla behörigheter och resurstyper genom att göra en GET-förfrågan till `/acl/reference` slutpunkt. Dessa namn kan sedan användas i API-anrop till [visa effektiva åtkomstkontrollprinciper](./effective-policies.md) för den aktuella användaren.
+Du kan lista namnen på alla behörigheter och resurstyper genom att göra en GET-förfrågan till slutpunkten `/acl/reference`. Dessa namn kan sedan användas i API-anrop för att [visa effektiva åtkomstkontrollprinciper](./effective-policies.md) för den aktuella användaren.
 
-En behörighet är en princip som hanteras via Adobe Admin Console och mappar till noll eller flera resurstypsprofiler. En resurstyp är en princip som möjliggör läsning, skrivning och/eller borttagning av funktioner för en viss typ av [!DNL Platform] resurs (som datauppsättningar eller scheman).
+En behörighet är en princip som hanteras via Adobe Admin Console och mappar till noll eller flera resurstypsprofiler. En resurstyp är en princip som aktiverar läs-, skriv- och/eller borttagningsfunktioner för en viss typ av [!DNL Platform]-resurs (till exempel datauppsättningar eller scheman).
 
 **API-format**
 
@@ -40,7 +40,7 @@ curl -X GET \
 
 **Svar**
 
-Ett godkänt svar returnerar ett `permissions` objekt och `resource-types` -objekt som vart och ett innehåller en fullständig lista med namn för åtkomstbehörigheter eller resurstyper.
+Ett godkänt svar returnerar ett `permissions`-objekt och ett `resource-types`-objekt, där vart och ett innehåller en fullständig lista med namn för åtkomstbehörigheter respektive resurstyper.
 
 ```json
 {

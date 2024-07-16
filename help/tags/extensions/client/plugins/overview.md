@@ -4,7 +4,7 @@ description: Läs mer om taggtillägget för Common Analytics i Adobe Experience
 exl-id: 9eeb4589-df90-4356-b927-b2c29c32370b
 source-git-commit: 88939d674c0002590939004e0235d3da8b072118
 workflow-type: tm+mt
-source-wordcount: '406'
+source-wordcount: '399'
 ht-degree: 0%
 
 ---
@@ -13,21 +13,21 @@ ht-degree: 0%
 
 >[!NOTE]
 >
->Adobe Experience Platform Launch har omklassificerats som en serie datainsamlingstekniker i Adobe Experience Platform. Som ett resultat av detta har flera terminologiska förändringar införts i produktdokumentationen. Se följande [dokument](../../../term-updates.md) för en konsoliderad hänvisning till terminologiska förändringar.
+>Adobe Experience Platform Launch har omklassificerats som en serie datainsamlingstekniker i Adobe Experience Platform. Som ett resultat av detta har flera terminologiska förändringar införts i produktdokumentationen. I följande [dokument](../../../term-updates.md) finns en konsoliderad referens till de ändrade terminologin.
 
-Använd den här referensen för information om hur du konfigurerar tillägget Common Analytics Plugins och de alternativ som är tillgängliga när du använder det här tillägget för att förstärka [!DNL Adobe Analytics] Tillägg.
+Använd den här referensen för information om hur du konfigurerar tillägget för Common Analytics-plugin-program och de alternativ som är tillgängliga när du använder det här tillägget för att förstärka tillägget [!DNL Adobe Analytics].
 
 ## Konfigurera tillägget för Common Analytics-plugin-program
 
-I det här avsnittet finns en referens för de alternativ som är tillgängliga när du konfigurerar tillägget Common Analytics-plugin-program.
+I det här avsnittet finns en referens för de alternativ som är tillgängliga när du konfigurerar tillägget för Common Analytics-plugin-program.
 
 >[!IMPORTANT]
 >
->Tillägget Common Analytics Plugins utökar [!DNL Adobe Analytics] tillägg. Du måste ha [!DNL Adobe Analytics] tillägget är installerat på din egenskap för att det ska fungera. Dessutom måste du göra spåraren globalt åtkomlig i dialogrutan [!DNL Adobe Analytics] tillägg.
+>Tillägget för Common Analytics-plugin utökar tillägget [!DNL Adobe Analytics]. Tillägget [!DNL Adobe Analytics] måste vara installerat på din egenskap för att det ska fungera. Dessutom måste du göra spåraren globalt åtkomlig i tillägget [!DNL Adobe Analytics].
 
 Ingen ytterligare konfiguration krävs på tilläggsnivån.
 
-## Lägga till plugin-program i [!DNL Adobe Analytics] extension
+## Lägger till plugin-program i tillägget [!DNL Adobe Analytics]
 
 För att kunna använda de plugin-program som ingår i det här tillägget måste du först initiera de plugin-program som du tänker använda i sin egen regel.
 
@@ -71,4 +71,4 @@ Följande dataelement finns i tillägget Common Analytics-plugin-program, som an
 
 >[!NOTE]
 >
->Mer information om plugin-programmen ovan finns i [Analysdokumentation](https://experienceleague.adobe.com/docs/analytics/implementation/vars/plugins/impl-plugins.html).
+>Mer information om ovanstående plugin-program finns i [Analytics-dokumentationen](https://experienceleague.adobe.com/docs/analytics/implementation/vars/plugins/impl-plugins.html).

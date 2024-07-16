@@ -9,18 +9,18 @@ ht-degree: 0%
 
 ---
 
-# [!UICONTROL Provider] class
+# klassen [!UICONTROL Provider]
 
-I Experience Data Model (XDM) är [!UICONTROL Provider] klassen fångar upp den minsta uppsättning egenskaper som definierar en tjänsteleverantörs affärsenhet (t.ex. en vårdgivare eller försäkringsleverantör).
+I Experience Data Model (XDM) fångar klassen [!UICONTROL Provider] den minsta uppsättningen egenskaper som definierar en leverantörs affärsenhet (till exempel en vårdleverantör eller försäkringsleverantör).
 
 ![Klassstruktur](../images/classes/provider.png)
 
 | Egenskap | Datatyp | Beskrivning |
 | --- | --- | --- |
 | `providerName` | [[!UICONTROL Person name]](../data-types/person-name.md) | Namnet på providern. |
-| `_id` | [!UICONTROL String] | En unik systemgenererad strängidentifierare för posten. Det här fältet används för att spåra en enskild posts unika karaktär, förhindra dubblering av data och för att söka efter posten i underordnade tjänster.<br><br>Eftersom det här fältet genereras av systemet, anges inget explicit värde vid datainmatning. Du kan dock välja att ange egna unika ID-värden om du vill. |
+| `_id` | [!UICONTROL String] | En unik systemgenererad strängidentifierare för posten. Det här fältet används för att spåra en enskild posts unika karaktär, förhindra dubblering av data och för att söka efter posten i underordnade tjänster.<br><br>Eftersom det här fältet är systemgenererat anges inget explicit värde vid datainmatning. Du kan dock välja att ange egna unika ID-värden om du vill. |
 | `providerId` | [!UICONTROL String] | En unik identifierare för providern. |
 
 {style="table-layout:auto"}
 
-Klassen kan utökas med [[!UICONTROL Healthcare Provider] fältgrupp](../field-groups/provider/healthcare-provider.md) Beskriv mer ingående information om en vårdgivare.
+Klassen kan utökas med fältgruppen [[!UICONTROL Healthcare Provider] ](../field-groups/provider/healthcare-provider.md) för att beskriva mer information om en vårdleverantör.

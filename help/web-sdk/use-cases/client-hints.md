@@ -6,7 +6,7 @@ exl-id: a909b1d1-be9d-43ba-bb4b-d28b0c609f65
 source-git-commit: b6e084d2beed58339191b53d0f97b93943154f7c
 workflow-type: tm+mt
 source-wordcount: '1152'
-ht-degree: 1%
+ht-degree: 0%
 
 ---
 
@@ -16,7 +16,7 @@ ht-degree: 1%
 
 Varje gång en webbläsare skickar en begäran till en webbserver innehåller begärans huvud information om webbläsaren och miljön som webbläsaren körs i. Alla dessa data sammanställs i en sträng, som kallas användaragentsträng.
 
-Här är ett exempel på hur en användaragentsträng ser ut på en begäran som kommer från en Chrome-webbläsare som körs på en [!DNL Mac OS] enhet.
+Här är ett exempel på hur en användaragentsträng ser ut på en begäran som kommer från en Chrome-webbläsare som körs på en [!DNL Mac OS]-enhet.
 
 >[!NOTE]
 >
@@ -28,7 +28,7 @@ Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like 
 
 | Fält | Värde |
 |---|---|
-| Programvarunamn | Krom |
+| Programvarunamn | Chrome |
 | Programversion | 105 |
 | Fullversion | 105.0.0.0 |
 | Namn på layoutmotor | AppleWebKit |
@@ -64,7 +64,7 @@ När moderna webbläsare skickar en användare till en webbserver, skickas hela 
 
 ## Stöd för webbläsare {#browser-support}
 
-[Tips för användaragentklient](https://developer.chrome.com/docs/privacy-sandbox/user-agent/) introducerades med [!DNL Google Chrome]version 89.
+[Klienttips för användaragent](https://developer.chrome.com/docs/privacy-sandbox/user-agent/) introducerades med [!DNL Google Chrome]version 89.
 
 Ytterligare Chromium-baserade webbläsare stöder API:t för klienttips, som:
 
@@ -116,17 +116,17 @@ Om du inte aktiverar klienttips för hög entropi i din miljö fungerar inte rap
 
 ### Adobe Analytics rapporterar beroende av klienttips för hög entropi {#analytics}
 
-The [Operativsystem](https://experienceleague.adobe.com/docs/analytics/components/dimensions/operating-systems.html) -dimensionen inkluderar operativsystemsversion som lagras som ett högt entropi-klienttips. Om tips för klienter med hög entropi inte är aktiverat kan det bero på att operativsystemets version inte stämmer för träffar som samlats in från Chromium-webbläsare.
+Dimensionen [Operativsystem](https://experienceleague.adobe.com/docs/analytics/components/dimensions/operating-systems.html) innehåller en operativsystemversion som lagras som ett högt entropi-klienttips. Om tips för klienter med hög entropi inte är aktiverat kan det bero på att operativsystemets version inte stämmer för träffar som samlats in från Chromium-webbläsare.
 
 ### Audience Manager förlitar sig på klienttips med hög entropi {#aam}
 
-[!DNL Google] har uppdaterat [!DNL Chrome] webbläsarfunktioner för att minimera den information som samlas in via `User-Agent` header. Därför använder Audience Manager kunder som använder [DIL](https://experienceleague.adobe.com/docs/audience-manager/user-guide/dil-api/dil-overview.html) inte längre får tillförlitlig information om egenskaper baserat på [tangenter på plattformsnivå](https://experienceleague.adobe.com/docs/audience-manager/user-guide/features/traits/trait-device-targeting.html).
+[!DNL Google] har uppdaterat webbläsarfunktionen [!DNL Chrome] för att minimera den information som samlas in via rubriken `User-Agent`. Detta innebär att Audience Manager-kunder som använder [DIL](https://experienceleague.adobe.com/docs/audience-manager/user-guide/dil-api/dil-overview.html) inte längre får tillförlitlig information om egenskaper baserat på [plattformsnivånycklar](https://experienceleague.adobe.com/docs/audience-manager/user-guide/features/traits/trait-device-targeting.html).
 
-Audience Manager-kunder som använder plattformsnivånycklar för målinriktning måste gå över till [Experience Platform Web SDK](/help/web-sdk/home.md) i stället för [DIL](https://experienceleague.adobe.com/docs/audience-manager/user-guide/dil-api/dil-overview.html)och aktivera [High Entropy Client-tips](#enabling-high-entropy-client-hints) att fortsätta att ta emot tillförlitliga uppgifter om egenskaper.
+Audience Manager-kunder som använder plattformsnivånycklar för målinriktning måste växla till [Experience Platform Web SDK](/help/web-sdk/home.md) i stället för [DIL](https://experienceleague.adobe.com/docs/audience-manager/user-guide/dil-api/dil-overview.html) och aktivera [High Entropy Client-tips](#enabling-high-entropy-client-hints) för att fortsätta få pålitliga trait-data.
 
 ## Aktivera tips för hög entropi-klient {#enabling-high-entropy-client-hints}
 
-Om du vill aktivera klienttips för hög entropi vid Web SDK-distributionen måste du inkludera ytterligare `highEntropyUserAgentHints` kontextalternativ i [`context`](/help/web-sdk/commands/configure/context.md) fält.
+Om du vill aktivera tips för hög entropi-klient i Web SDK-distributionen måste du inkludera det extra alternativet `highEntropyUserAgentHints` i fältet [`context`](/help/web-sdk/commands/configure/context.md).
 
 Om du till exempel vill hämta klienttips för hög entropi från webbegenskaper ser konfigurationen ut så här:
 
@@ -144,7 +144,7 @@ Sec-CH-UA-Mobile: ?0
 Sec-CH-UA-Platform: "macOS
 ```
 
-Motsvarande [!DNL User-Agent] sidhuvud för samma webbläsare skulle se ut så här:
+Motsvarande [!DNL User-Agent]-huvud för samma webbläsare skulle se ut så här:
 
 ```shell
 Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/101.0.4951.54 Safari/537.36
@@ -152,9 +152,9 @@ Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like 
 
 Även om informationen är liknande innehåller den första begäran till servern klienttips. Dessa innehåller bara en delmängd av det som är tillgängligt i användaragentsträngen. Saknas i begäran är operativsystemets arkitektur, operativsystemets fullständiga version, namnet på layoutmotorn, versionen av layoutmotorn och webbläsarversionen.
 
-Vid efterföljande förfrågningar [!DNL Client Hints API] gör att webbservrar kan fråga efter ytterligare information om enheten. När dessa värden begärs, beroende på webbläsarprincipen eller användarinställningarna, kan webbläsarsvaret inkludera den informationen.
+Vid efterföljande begäranden tillåter dock [!DNL Client Hints API] webbservrar att fråga efter ytterligare information om enheten. När dessa värden begärs, beroende på webbläsarprincipen eller användarinställningarna, kan webbläsarsvaret inkludera den informationen.
 
-Nedan visas ett exempel på JSON-objektet som returneras av [!DNL Client Hints API] när höga entropinavärden begärs:
+Nedan visas ett exempel på JSON-objektet som returneras av [!DNL Client Hints API] när höga entropisvärden begärs:
 
 
 ```json

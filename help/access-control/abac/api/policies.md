@@ -18,19 +18,19 @@ ht-degree: 0%
 >
 >Om en användartoken skickas måste användaren av token ha rollen&quot;org admin&quot; för den begärda organisationen.
 
-Åtkomstkontrollprinciper är satser som sammanför attribut för att fastställa tillåtna och otillåtna åtgärder. Dessa profiler kan antingen vara lokala eller globala och kan åsidosätta andra principer. The `/policies` -slutpunkten i det attributbaserade API:t för åtkomstkontroll gör det möjligt att programmässigt hantera principer, inklusive information om reglerna som styr dem samt deras respektive ämnesvillkor.
+Åtkomstkontrollprinciper är satser som sammanför attribut för att fastställa tillåtna och otillåtna åtgärder. Dessa profiler kan antingen vara lokala eller globala och kan åsidosätta andra principer. Med slutpunkten `/policies` i det attributbaserade API:t för åtkomstkontroll kan du programmässigt hantera principer, inklusive information om reglerna som styr dem samt deras respektive ämnesvillkor.
 
 >[!IMPORTANT]
 >
->Den här slutpunkten ska inte blandas ihop med `/policies` slutpunkt i [API för principtjänst](../../../data-governance/api/policies.md), som används för att hantera dataanvändningsprinciper.
+>Den här slutpunkten ska inte blandas ihop med `/policies`-slutpunkten i [ API:t för principtjänst ](../../../data-governance/api/policies.md) som används för att hantera dataanvändningsprinciper.
 
 ## Komma igång
 
-API-slutpunkten som används i den här guiden är en del av det attributbaserade API:t för åtkomstkontroll. Innan du fortsätter bör du granska [komma igång-guide](./getting-started.md) för länkar till relaterad dokumentation, en guide till hur du läser exempelanrop till API:er i det här dokumentet och viktig information om vilka huvuden som behövs för att kunna anropa ett Experience Platform-API.
+API-slutpunkten som används i den här guiden är en del av det attributbaserade API:t för åtkomstkontroll. Innan du fortsätter bör du läsa [kom igång-guiden](./getting-started.md) för att få länkar till relaterad dokumentation, en guide till hur du läser exempelanropen för API i det här dokumentet och viktig information om vilka huvuden som krävs för att kunna anropa ett Experience Platform-API.
 
 ## Hämta en lista med profiler {#list}
 
-Gör en GET-förfrågan till `/policies` slutpunkt för att lista alla befintliga policyer i organisationen.
+Gör en GET-förfrågan till slutpunkten `/policies` om du vill visa alla befintliga principer i organisationen.
 
 **API-format**
 
@@ -136,22 +136,22 @@ Ett godkänt svar returnerar en lista över befintliga principer.
 | `id` | Det ID som motsvarar en princip. Den här identifieraren genereras automatiskt och kan användas för att söka efter, uppdatera och ta bort en princip. |
 | `imsOrgId` | Organisationen där den efterfrågade policyn är tillgänglig. |
 | `createdBy` | ID för den användare som skapade profilen. |
-| `createdAt` | Tiden då profilen skapades. The `createdAt` -egenskapen visas i Unix Epooch-tidsstämpeln. |
+| `createdAt` | Tiden då profilen skapades. Egenskapen `createdAt` visas i Unix Epooch-tidsstämpel. |
 | `modifiedBy` | ID för den användare som senast uppdaterade profilen. |
-| `modifiedAt` | Tidpunkten när profilen senast uppdaterades. The `modifiedAt` -egenskapen visas i Unix Epooch-tidsstämpeln. |
+| `modifiedAt` | Tidpunkten när profilen senast uppdaterades. Egenskapen `modifiedAt` visas i Unix Epooch-tidsstämpel. |
 | `name` | Namnet på principen. |
 | `description` | (Valfritt) En egenskap som kan läggas till för att ge mer information om en viss princip. |
-| `status` | Aktuell status för en princip. Den här egenskapen definierar om en princip används `active` eller `inactive`. |
-| `subjectCondition` | Vilka villkor som gäller för ett motiv. Ett ämne är en användare med vissa attribut som begär åtkomst till en resurs för att utföra en åtgärd. I detta fall `subjectCondition` är frågeliknande villkor som tillämpas på ämnesattributen. |
+| `status` | Aktuell status för en princip. Den här egenskapen definierar om en princip är `active` eller `inactive`. |
+| `subjectCondition` | Vilka villkor som gäller för ett motiv. Ett ämne är en användare med vissa attribut som begär åtkomst till en resurs för att utföra en åtgärd. I det här fallet används `subjectCondition` frågeliknande villkor för ämnesattributen. |
 | `rules` | Den uppsättning regler som definierar en princip. Regler definierar vilka attributkombinationer som är auktoriserade för att ämnet ska kunna utföra en åtgärd på resursen. |
-| `rules.effect` | Effekten som blir resultatet efter att värden bedömts för `action`, `condition` och `resource`. Möjliga värden är: `permit`, `deny`, eller `indeterminate`. |
+| `rules.effect` | Effekten som resulterar efter att värden för `action`, `condition` och `resource` har bedömts. Möjliga värden är: `permit`, `deny` eller `indeterminate`. |
 | `rules.resource` | Resursen eller objektet som ett ämne kan eller inte kan komma åt.  Resurser kan vara filer, program, servrar eller till och med API:er. |
 | `rules.condition` | De villkor som används för en resurs. Om en resurs till exempel är ett schema kan ett schema ha vissa etiketter som bidrar till om en åtgärd mot det schemat är tillåten eller otillåten. |
-| `rules.action` | Den åtgärd som ett ämne tillåts att göra mot en frågad resurs. Möjliga värden är: `read`, `create`, `edit`och `delete`. |
+| `rules.action` | Den åtgärd som ett ämne tillåts att göra mot en frågad resurs. Möjliga värden är: `read`, `create`, `edit` och `delete`. |
 
 ## Slå upp principinformation efter ID {#lookup}
 
-Gör en GET-förfrågan till `/policies` slutpunkten när ett princip-ID angavs i sökvägen för begäran för att hämta information om den enskilda principen.
+Gör en GET-begäran till `/policies`-slutpunkten och ange ett princip-ID i sökvägen för begäran för att hämta information om den enskilda principen.
 
 **API-format**
 
@@ -232,23 +232,23 @@ En slutförd begäran returnerar information om det efterfrågade princip-ID:t.
 | `id` | Det ID som motsvarar en princip. Den här identifieraren genereras automatiskt och kan användas för att söka efter, uppdatera och ta bort en princip. |
 | `imsOrgId` | Organisationen där den efterfrågade policyn är tillgänglig. |
 | `createdBy` | ID för den användare som skapade profilen. |
-| `createdAt` | Tiden då profilen skapades. The `createdAt` -egenskapen visas i Unix Epooch-tidsstämpeln. |
+| `createdAt` | Tiden då profilen skapades. Egenskapen `createdAt` visas i Unix Epooch-tidsstämpel. |
 | `modifiedBy` | ID för den användare som senast uppdaterade profilen. |
-| `modifiedAt` | Tidpunkten när profilen senast uppdaterades. The `modifiedAt` -egenskapen visas i Unix Epooch-tidsstämpeln. |
+| `modifiedAt` | Tidpunkten när profilen senast uppdaterades. Egenskapen `modifiedAt` visas i Unix Epooch-tidsstämpel. |
 | `name` | Namnet på principen. |
 | `description` | (Valfritt) En egenskap som kan läggas till för att ge mer information om en viss princip. |
-| `status` | Aktuell status för en princip. Den här egenskapen definierar om en princip används `active` eller `inactive`. |
-| `subjectCondition` | Vilka villkor som gäller för ett motiv. Ett ämne är en användare med vissa attribut som begär åtkomst till en resurs för att utföra en åtgärd. I detta fall `subjectCondition` är frågeliknande villkor som tillämpas på ämnesattributen. |
+| `status` | Aktuell status för en princip. Den här egenskapen definierar om en princip är `active` eller `inactive`. |
+| `subjectCondition` | Vilka villkor som gäller för ett motiv. Ett ämne är en användare med vissa attribut som begär åtkomst till en resurs för att utföra en åtgärd. I det här fallet används `subjectCondition` frågeliknande villkor för ämnesattributen. |
 | `rules` | Den uppsättning regler som definierar en princip. Regler definierar vilka attributkombinationer som är auktoriserade för att ämnet ska kunna utföra en åtgärd på resursen. |
-| `rules.effect` | Effekten som blir resultatet efter att värden bedömts för `action`, `condition` och `resource`. Möjliga värden är: `permit`, `deny`, eller `indeterminate`. |
+| `rules.effect` | Effekten som resulterar efter att värden för `action`, `condition` och `resource` har bedömts. Möjliga värden är: `permit`, `deny` eller `indeterminate`. |
 | `rules.resource` | Resursen eller objektet som ett ämne kan eller inte kan komma åt.  Resurser kan vara filer, program, servrar eller till och med API:er. |
 | `rules.condition` | De villkor som används för en resurs. Om en resurs till exempel är ett schema kan ett schema ha vissa etiketter som bidrar till om en åtgärd mot det schemat är tillåten eller otillåten. |
-| `rules.action` | Den åtgärd som ett ämne tillåts att göra mot en frågad resurs. Möjliga värden är: `read`, `create`, `edit`och `delete`. |
+| `rules.action` | Den åtgärd som ett ämne tillåts att göra mot en frågad resurs. Möjliga värden är: `read`, `create`, `edit` och `delete`. |
 
 
 ## Skapa en profil {#create}
 
-Om du vill skapa en ny princip skickar du en POST till `/policies` slutpunkt.
+Om du vill skapa en ny princip skickar du en POST till slutpunkten `/policies`.
 
 **API-format**
 
@@ -289,10 +289,10 @@ curl -X POST \
 | `description` | (Valfritt) En egenskap som kan läggas till för att ge mer information om en viss princip. |
 | `imsOrgId` | Organisationen som innehåller policyn. |
 | `rules` | Den uppsättning regler som definierar en princip. Regler definierar vilka attributkombinationer som är auktoriserade för att ämnet ska kunna utföra en åtgärd på resursen. |
-| `rules.effect` | Effekten som blir resultatet efter att värden bedömts för `action`, `condition` och `resource`. Möjliga värden är: `permit`, `deny`, eller `indeterminate`. |
+| `rules.effect` | Effekten som resulterar efter att värden för `action`, `condition` och `resource` har bedömts. Möjliga värden är: `permit`, `deny` eller `indeterminate`. |
 | `rules.resource` | Resursen eller objektet som ett ämne kan eller inte kan komma åt.  Resurser kan vara filer, program, servrar eller till och med API:er. |
 | `rules.condition` | De villkor som används för en resurs. Om en resurs till exempel är ett schema kan ett schema ha vissa etiketter som bidrar till om en åtgärd mot det schemat är tillåten eller otillåten. |
-| `rules.action` | Den åtgärd som ett ämne tillåts att göra mot en frågad resurs. Möjliga värden är: `read`, `create`, `edit`och `delete`. |
+| `rules.action` | Den åtgärd som ett ämne tillåts att göra mot en frågad resurs. Möjliga värden är: `read`, `create`, `edit` och `delete`. |
 
 **Svar**
 
@@ -329,15 +329,15 @@ En lyckad begäran returnerar den nyligen skapade principen, inklusive dess unik
 | `id` | Det ID som motsvarar en princip. Den här identifieraren genereras automatiskt och kan användas för att söka efter, uppdatera och ta bort en princip. |
 | `name` | Namnet på en princip. |
 | `rules` | Den uppsättning regler som definierar en princip. Regler definierar vilka attributkombinationer som är auktoriserade för att ämnet ska kunna utföra en åtgärd på resursen. |
-| `rules.effect` | Effekten som blir resultatet efter att värden bedömts för `action`, `condition` och `resource`. Möjliga värden är: `permit`, `deny`, eller `indeterminate`. |
+| `rules.effect` | Effekten som resulterar efter att värden för `action`, `condition` och `resource` har bedömts. Möjliga värden är: `permit`, `deny` eller `indeterminate`. |
 | `rules.resource` | Resursen eller objektet som ett ämne kan eller inte kan komma åt.  Resurser kan vara filer, program, servrar eller till och med API:er. |
 | `rules.condition` | De villkor som används för en resurs. Om en resurs till exempel är ett schema kan ett schema ha vissa etiketter som bidrar till om en åtgärd mot det schemat är tillåten eller otillåten. |
-| `rules.action` | Den åtgärd som ett ämne tillåts att göra mot en frågad resurs. Möjliga värden är: `read`, `create`, `edit`och `delete`. |
+| `rules.action` | Den åtgärd som ett ämne tillåts att göra mot en frågad resurs. Möjliga värden är: `read`, `create`, `edit` och `delete`. |
 
 
 ## Uppdatera en princip per princip-ID {#put}
 
-Om du vill uppdatera reglerna för en enskild princip skickar du en PUT-begäran till `/policies` slutpunkten när ID för den princip som du vill uppdatera anges i sökvägen till begäran.
+Om du vill uppdatera reglerna för en enskild princip gör du en PUT-begäran till slutpunkten `/policies` samtidigt som du anger ID:t för den princip som du vill uppdatera i sökvägen till begäran.
 
 **API-format**
 
@@ -406,7 +406,7 @@ Ett lyckat svar returnerar den uppdaterade principen.
 
 ## Uppdatera principegenskaper {#patch}
 
-Om du vill uppdatera egenskaperna för en enskild princip skickar du en PATCH-begäran till `/policies` slutpunkten när ID för den princip som du vill uppdatera anges i sökvägen till begäran.
+Om du vill uppdatera egenskaperna för en enskild princip gör du en PATCH-begäran till slutpunkten `/policies` samtidigt som du anger ID:t för den princip som du vill uppdatera i sökvägen till begäran.
 
 **API-format**
 
@@ -420,7 +420,7 @@ PATCH /policies/{POLICY_ID}
 
 **Begäran**
 
-Följande begäran ersätter värdet för `/description` i princip-ID `c3863937-5d40-448d-a7be-416e538f955e`.
+Följande begäran ersätter värdet `/description` i princip-ID `c3863937-5d40-448d-a7be-416e538f955e`.
 
 ```shell
 curl -X PATCH \
@@ -441,7 +441,7 @@ curl -X PATCH \
 
 | Användning | Beskrivning |
 | --- | --- |
-| `op` | Åtgärdsanropet som används för att definiera åtgärden som krävs för att uppdatera rollen. Åtgärderna omfattar: `add`, `replace`och `remove`. |
+| `op` | Åtgärdsanropet som används för att definiera åtgärden som krävs för att uppdatera rollen. Åtgärderna omfattar: `add`, `replace` och `remove`. |
 | `path` | Sökvägen till den parameter som ska uppdateras. |
 | `value` | Det nya värdet som du vill uppdatera parametern med. |
 
@@ -477,7 +477,7 @@ Ett lyckat svar returnerar det efterfrågade princip-ID:t med uppdaterad beskriv
 
 ## Ta bort en profil {#delete}
 
-Om du vill ta bort en princip skickar du en DELETE-begäran till `/policies` slutpunkten när ID för profilen som du vill ta bort anges.
+Om du vill ta bort en princip skickar du en DELETE-begäran till slutpunkten `/policies` och anger ID:t för den princip som du vill ta bort.
 
 **API-format**
 
@@ -491,7 +491,7 @@ DELETE /policies/{POLICY_ID}
 
 **Begäran**
 
-Följande begäran tar bort principen med ID:t för `c3863937-5d40-448d-a7be-416e538f955e`.
+Följande begäran tar bort principen med ID:t `c3863937-5d40-448d-a7be-416e538f955e`.
 
 ```shell
 curl -X DELETE \

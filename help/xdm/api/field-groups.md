@@ -6,26 +6,26 @@ description: Med slutpunkten /fieldGroups i API:t för schemaregister kan du pro
 exl-id: d26257e4-c7d5-4bff-b555-7a2997c88c74
 source-git-commit: 983682489e2c0e70069dbf495ab90fc9555aae2d
 workflow-type: tm+mt
-source-wordcount: '1195'
+source-wordcount: '1197'
 ht-degree: 0%
 
 ---
 
 # Slutpunkt för schemafältgrupper
 
-Schemafältgrupper är återanvändbara komponenter som definierar ett eller flera fält som representerar ett visst koncept, till exempel en enskild person, en postadress eller en webbläsarmiljö. Fältgrupper är avsedda att ingå som en del av ett schema som implementerar en kompatibel klass, beroende på beteendet för de data de representerar (post- eller tidsserie). The `/fieldgroups` slutpunkt i [!DNL Schema Registry] Med API kan ni programmässigt hantera fältgrupper i ert upplevelseprogram.
+Schemafältgrupper är återanvändbara komponenter som definierar ett eller flera fält som representerar ett visst koncept, till exempel en enskild person, en postadress eller en webbläsarmiljö. Fältgrupper är avsedda att ingå som en del av ett schema som implementerar en kompatibel klass, beroende på beteendet för de data de representerar (post- eller tidsserie). Med slutpunkten `/fieldgroups` i API:t [!DNL Schema Registry] kan du programmässigt hantera fältgrupper i ditt upplevelseprogram.
 
 ## Komma igång
 
-Slutpunkten som används i den här guiden är en del av [[!DNL Schema Registry] API](https://www.adobe.io/experience-platform-apis/references/schema-registry/). Läs igenom [komma igång-guide](./getting-started.md) för länkar till relaterad dokumentation, en guide till hur du läser exempelanrop till API:er i det här dokumentet och viktig information om vilka huvuden som behövs för att kunna anropa ett Experience Platform-API.
+Slutpunkten som används i den här guiden ingår i [[!DNL Schema Registry] API](https://www.adobe.io/experience-platform-apis/references/schema-registry/). Innan du fortsätter bör du läsa [kom igång-guiden](./getting-started.md) för att få länkar till relaterad dokumentation, en guide till hur du läser exempelanropen för API i det här dokumentet och viktig information om vilka huvuden som krävs för att kunna anropa ett Experience Platform-API.
 
 ## Hämta en lista med fältgrupper {#list}
 
-Du kan visa alla fältgrupper under `global` eller `tenant` genom att göra en GET-förfrågan till `/global/fieldgroups` eller `/tenant/fieldgroups`, respektive.
+Du kan visa alla fältgrupper under behållaren `global` eller `tenant` genom att göra en GET-förfrågan till `/global/fieldgroups` respektive `/tenant/fieldgroups`.
 
 >[!NOTE]
 >
->När resurser listas begränsas resultatmängden till 300 objekt. Om du vill returnera resurser som överskrider den här gränsen måste du använda sidindelningsparametrar. Vi rekommenderar också att du använder ytterligare frågeparametrar för att filtrera resultaten och minska antalet returnerade resurser. Se avsnittet om [frågeparametrar](./appendix.md#query) i bilagedokumentet om du vill ha mer information.
+>När resurser listas begränsas resultatmängden till 300 objekt. Om du vill returnera resurser som överskrider den här gränsen måste du använda sidindelningsparametrar. Vi rekommenderar också att du använder ytterligare frågeparametrar för att filtrera resultaten och minska antalet returnerade resurser. Mer information finns i avsnittet om [frågeparametrar](./appendix.md#query) i bilagan.
 
 **API-format**
 
@@ -36,13 +36,13 @@ GET /{CONTAINER_ID}/fieldgroups?{QUERY_PARAMS}
 | Parameter | Beskrivning |
 | --- | --- |
 | `{CONTAINER_ID}` | Behållaren som du vill hämta fältgrupper från: `global` för fältgrupper som skapats av Adobe eller `tenant` för fältgrupper som ägs av din organisation. |
-| `{QUERY_PARAMS}` | Valfria frågeparametrar för att filtrera resultat efter. Se [appendix-dokument](./appendix.md#query) för en lista över tillgängliga parametrar. |
+| `{QUERY_PARAMS}` | Valfria frågeparametrar för att filtrera resultat efter. En lista över tillgängliga parametrar finns i [bilagan-dokumentet](./appendix.md#query). |
 
 {style="table-layout:auto"}
 
 **Begäran**
 
-Följande begäran hämtar en lista med fältgrupper från `tenant` behållare, använda `orderby` frågeparameter för att sortera fältgrupperna efter deras `title` -attribut.
+Följande begäran hämtar en lista med fältgrupper från behållaren `tenant` med hjälp av en `orderby`-frågeparameter för att sortera fältgrupperna efter deras `title`-attribut.
 
 ```shell
 curl -X GET \
@@ -54,18 +54,18 @@ curl -X GET \
   -H 'x-sandbox-name: {SANDBOX_NAME}'
 ```
 
-Svarsformatet beror på `Accept` huvud som skickades i begäran. Följande `Accept` Rubriker är tillgängliga för listfältgrupper:
+Svarsformatet beror på det `Accept`-huvud som skickas i begäran. Följande `Accept` rubriker är tillgängliga för att visa fältgrupper:
 
-| `Accept` header | Beskrivning |
+| `Accept` huvud | Beskrivning |
 | --- | --- |
 | `application/vnd.adobe.xed-id+json` | Returnerar en kort sammanfattning av varje resurs. Det här är det rekommenderade huvudet för att lista resurser. (Gräns: 300) |
-| `application/vnd.adobe.xed+json` | Returnerar fullständig JSON-fältgrupp för varje resurs, med ursprunglig `$ref` och `allOf` ingår. (Gräns: 300) |
+| `application/vnd.adobe.xed+json` | Returnerar fullständig JSON-fältgrupp för varje resurs, med ursprunglig `$ref` och `allOf` inkluderat. (Gräns: 300) |
 
 {style="table-layout:auto"}
 
 **Svar**
 
-Ovannämnda begäran använde `application/vnd.adobe.xed-id+json` `Accept` därför innehåller svaret endast `title`, `$id`, `meta:altId`och `version` attribut för varje fältgrupp. Använda den andra `Accept` header (`application/vnd.adobe.xed+json`) returnerar alla attribut för varje fältgrupp. Välj lämplig `Accept` sidhuvudet beroende på vilken information du behöver i ditt svar.
+I begäran ovan användes rubriken `application/vnd.adobe.xed-id+json` `Accept` och därför innehåller svaret bara attributen `title`, `$id`, `meta:altId` och `version` för varje fältgrupp. Om du använder det andra `Accept`-huvudet (`application/vnd.adobe.xed+json`) returneras alla attribut för varje fältgrupp. Välj lämpligt `Accept`-huvud beroende på vilken information du behöver i ditt svar.
 
 ```json
 {
@@ -122,13 +122,13 @@ GET /{CONTAINER_ID}/fieldgroups/{FIELD_GROUP_ID}
 | Parameter | Beskrivning |
 | --- | --- |
 | `{CONTAINER_ID}` | Behållaren som innehåller den fältgrupp som du vill hämta: `global` för en fältgrupp som skapats av Adobe eller `tenant` för en fältgrupp som ägs av din organisation. |
-| `{FIELD_GROUP_ID}` | The `meta:altId` eller URL-kodad `$id` för den fältgrupp som du vill söka efter. |
+| `{FIELD_GROUP_ID}` | `meta:altId` eller URL-kodad `$id` för den fältgrupp som du vill söka efter. |
 
 {style="table-layout:auto"}
 
 **Begäran**
 
-Följande begäran hämtar en fältgrupp med dess `meta:altId` värdet som anges i sökvägen.
+Följande begäran hämtar en fältgrupp med det `meta:altId`-värde som anges i sökvägen.
 
 ```shell
 curl -X GET \
@@ -140,21 +140,21 @@ curl -X GET \
   -H 'x-sandbox-name: {SANDBOX_NAME}'
 ```
 
-Svarsformatet beror på `Accept` huvud som skickades i begäran. Alla sökförfrågningar kräver en `version` ingår i `Accept` header. Följande `Accept` Det finns rubriker:
+Svarsformatet beror på det `Accept`-huvud som skickas i begäran. Alla uppslagsbegäranden kräver att `version` inkluderas i rubriken `Accept`. Följande `Accept` rubriker är tillgängliga:
 
-| `Accept` header | Beskrivning |
+| `Accept` huvud | Beskrivning |
 | ------- | ------------ |
-| `application/vnd.adobe.xed+json; version={MAJOR_VERSION}` | Raw med `$ref` och `allOf`, har rubriker och beskrivningar. |
-| `application/vnd.adobe.xed-full+json; version={MAJOR_VERSION}` | `$ref` och `allOf` har åtgärdats, har rubriker och beskrivningar. |
+| `application/vnd.adobe.xed+json; version={MAJOR_VERSION}` | Raw med `$ref` och `allOf` har rubriker och beskrivningar. |
+| `application/vnd.adobe.xed-full+json; version={MAJOR_VERSION}` | `$ref` och `allOf` har matchats, har rubriker och beskrivningar. |
 | `application/vnd.adobe.xed-notext+json; version={MAJOR_VERSION}` | Raw med `$ref` och `allOf`, inga titlar eller beskrivningar. |
-| `application/vnd.adobe.xed-full-notext+json; version={MAJOR_VERSION}` | `$ref` och `allOf` lösta, inga titlar eller beskrivningar. |
-| `application/vnd.adobe.xed-full-desc+json; version={MAJOR_VERSION}` | `$ref` och `allOf` åtgärdade, beskrivningar inkluderades. |
+| `application/vnd.adobe.xed-full-notext+json; version={MAJOR_VERSION}` | `$ref` och `allOf` har matchats, inga titlar eller beskrivningar. |
+| `application/vnd.adobe.xed-full-desc+json; version={MAJOR_VERSION}` | `$ref` och `allOf` löstes, beskrivningar inkluderades. |
 
 {style="table-layout:auto"}
 
 **Svar**
 
-Ett godkänt svar returnerar informationen för fältgruppen. Vilka fält som returneras beror på `Accept` huvud som skickades i begäran. Experimentera med olika `Accept` rubriker för att jämföra svaren och avgöra vilken rubrik som är bäst för dig.
+Ett godkänt svar returnerar informationen för fältgruppen. Vilka fält som returneras beror på det `Accept`-huvud som skickas i begäran. Experimentera med olika `Accept`-huvuden för att jämföra svaren och avgöra vilken rubrik som är bäst för ditt användningsfall.
 
 ```json
 {
@@ -217,7 +217,7 @@ Ett godkänt svar returnerar informationen för fältgruppen. Vilka fält som re
 
 ## Skapa en fältgrupp {#create}
 
-Du kan definiera en anpassad fältgrupp under `tenant` genom att göra en POST-förfrågan.
+Du kan definiera en anpassad fältgrupp under `tenant`-behållaren genom att göra en POST-förfrågan.
 
 **API-format**
 
@@ -227,11 +227,11 @@ POST /tenant/fieldgroups
 
 **Begäran**
 
-När en ny fältgrupp definieras måste den innehålla en `meta:intendedToExtend` attribut, lista `$id` av de klasser som fältgruppen är kompatibel med. I det här exemplet är fältgruppen kompatibel med en `Property` som har definierats tidigare. Anpassade fält måste kapslas under `_{TENANT_ID}` (vilket visas i exemplet) för att undvika kollisioner med liknande fält som tillhandahålls av klasser och andra fältgrupper.
+När du definierar en ny fältgrupp måste den innehålla ett `meta:intendedToExtend`-attribut med en lista på `$id` för de klasser som fältgruppen är kompatibel med. I det här exemplet är fältgruppen kompatibel med en `Property`-klass som definierats tidigare. Anpassade fält måste kapslas under `_{TENANT_ID}` (vilket visas i exemplet) för att undvika kollisioner med liknande fält som tillhandahålls av klasser och andra fältgrupper.
 
 >[!NOTE]
 >
->Mer information om hur du definierar olika fälttyper som ska inkluderas i fältgruppen finns i handboken [definiera anpassade fält i API](../tutorials/custom-fields-api.md#define-fields).
+>Mer information om hur du definierar olika fälttyper som ska inkluderas i fältgruppen finns i handboken [Definiera anpassade fält i API](../tutorials/custom-fields-api.md#define-fields).
 
 ```SHELL
 curl -X POST \
@@ -300,7 +300,7 @@ curl -X POST \
 
 **Svar**
 
-Ett lyckat svar returnerar HTTP-status 201 (Skapad) och en nyttolast som innehåller information om den nyligen skapade fältgruppen, inklusive `$id`, `meta:altId`och `version`. Dessa värden är skrivskyddade och tilldelas av [!DNL Schema Registry].
+Ett lyckat svar returnerar HTTP-status 201 (Skapad) och en nyttolast som innehåller information om den nyligen skapade fältgruppen, inklusive `$id`, `meta:altId` och `version`. Dessa värden är skrivskyddade och tilldelas av [!DNL Schema Registry].
 
 ```JSON
 {
@@ -384,15 +384,15 @@ Ett lyckat svar returnerar HTTP-status 201 (Skapad) och en nyttolast som innehå
 }
 ```
 
-Utföra en GET-begäran till [visa alla fältgrupper](#list) i innehavarbehållaren nu inkludera fältgruppen Egenskapsinformation, eller så kan du [utföra en uppslagsbegäran (GET)](#lookup) med URL-kodad `$id` URI för att visa den nya fältgruppen direkt.
+Om en GET-begäran om att [visa alla fältgrupper](#list) i innehavarbehållaren utförs, inkluderas nu fältgruppen Egenskapsinformation. Du kan också [utföra en sökning (GET) ](#lookup) med URL-kodad `$id` URI för att visa den nya fältgruppen direkt.
 
 ## Uppdatera en fältgrupp {#put}
 
-Du kan ersätta en hel fältgrupp genom en PUT-åtgärd och skriva om resursen. När en fältgrupp uppdateras via en PUT-begäran måste texten innehålla alla fält som krävs när [skapa en ny fältgrupp](#create) i en POST.
+Du kan ersätta en hel fältgrupp genom en PUT-åtgärd och skriva om resursen. När du uppdaterar en fältgrupp via en PUT-begäran måste texten innehålla alla fält som krävs när [en ny fältgrupp ](#create) skapas i en POST-begäran.
 
 >[!NOTE]
 >
->Om du bara vill uppdatera en del av en fältgrupp i stället för att ersätta den helt, se avsnittet om [uppdatera en del av en fältgrupp](#patch).
+>Om du bara vill uppdatera en del av en fältgrupp i stället för att ersätta den helt, ska du läsa avsnittet [Uppdatera en del av en fältgrupp](#patch).
 
 **API-format**
 
@@ -402,13 +402,13 @@ PUT /tenant/fieldgroups/{FIELD_GROUP_ID}
 
 | Parameter | Beskrivning |
 | --- | --- |
-| `{FIELD_GROUP_ID}` | The `meta:altId` eller URL-kodad `$id` för den fältgrupp som du vill skriva om. |
+| `{FIELD_GROUP_ID}` | `meta:altId` eller URL-kodad `$id` för fältgruppen som du vill skriva om. |
 
 {style="table-layout:auto"}
 
 **Begäran**
 
-Följande begäran skriver om en befintlig fältgrupp och lägger till en ny `propertyCountry` fält.
+Följande begäran skriver om en befintlig fältgrupp och lägger till ett nytt `propertyCountry`-fält.
 
 ```SHELL
 curl -X PUT \
@@ -573,11 +573,11 @@ Ett godkänt svar returnerar information om den uppdaterade fältgruppen.
 
 ## Uppdatera en del av en fältgrupp {#patch}
 
-Du kan uppdatera en del av en fältgrupp genom att använda en PATCH-begäran. The [!DNL Schema Registry] stöder alla vanliga JSON-korrigeringsåtgärder, inklusive `add`, `remove`och `replace`. Mer information om JSON Patch finns i [Grundläggande API-guide](../../landing/api-fundamentals.md#json-patch).
+Du kan uppdatera en del av en fältgrupp genom att använda en PATCH-begäran. [!DNL Schema Registry] stöder alla JSON-standardåtgärder för korrigering, inklusive `add`, `remove` och `replace`. Mer information om JSON Patch finns i guiden [Grundläggande API](../../landing/api-fundamentals.md#json-patch).
 
 >[!NOTE]
 >
->Om du vill ersätta en hel resurs med nya värden i stället för att uppdatera enskilda fält, se avsnittet om [ersätta en fältgrupp med en PUT-åtgärd](#put).
+>Om du vill ersätta en hel resurs med nya värden i stället för att uppdatera enskilda fält läser du avsnittet [Ersätta en fältgrupp med en PUT-åtgärd](#put).
 
 **API-format**
 
@@ -587,15 +587,15 @@ PATCH /tenant/fieldgroups/{FIELD_GROUP_ID}
 
 | Parameter | Beskrivning |
 | --- | --- |
-| `{FIELD_GROUP_ID}` | URL-kodad `$id` URI eller `meta:altId` för den fältgrupp som du vill uppdatera. |
+| `{FIELD_GROUP_ID}` | Den URL-kodade `$id` URI eller `meta:altId` för den fältgrupp som du vill uppdatera. |
 
 {style="table-layout:auto"}
 
 **Begäran**
 
-Exemplet nedan uppdaterar `description` i en befintlig fältgrupp och lägger till en ny `propertyCity` fält.
+Exempelbegäran nedan uppdaterar `description` för en befintlig fältgrupp och lägger till ett nytt `propertyCity`-fält.
 
-Begärandetexten har formen av en array där varje listat-objekt representerar en specifik ändring i ett enskilt fält. Varje objekt innehåller den åtgärd som ska utföras (`op`), vilket fält åtgärden ska utföras på (`path`) och vilken information som ska ingå i åtgärden (`value`).
+Begärandetexten har formen av en array där varje listat-objekt representerar en specifik ändring i ett enskilt fält. Varje objekt innehåller åtgärden som ska utföras (`op`), vilket fält åtgärden ska utföras på (`path`) och vilken information som ska inkluderas i åtgärden (`value`).
 
 ```SHELL
 curl -X PATCH \
@@ -625,7 +625,7 @@ curl -X PATCH \
 
 **Svar**
 
-Svaret visar att båda åtgärderna har utförts. The `description` har uppdaterats, och `propertyCountry` har lagts till under `definitions`.
+Svaret visar att båda åtgärderna utfördes utan fel. `description` har uppdaterats och `propertyCountry` har lagts till under `definitions`.
 
 ```JSON
 {
@@ -726,7 +726,7 @@ DELETE /tenant/fieldgroups/{FIELD_GROUP_ID}
 
 | Parameter | Beskrivning |
 | --- | --- |
-| `{FIELD_GROUP_ID}` | URL-kodad `$id` URI eller `meta:altId` för den fältgrupp som du vill ta bort. |
+| `{FIELD_GROUP_ID}` | URL-kodad `$id` URI eller `meta:altId` för fältgruppen som du vill ta bort. |
 
 {style="table-layout:auto"}
 
@@ -745,4 +745,4 @@ curl -X DELETE \
 
 Ett lyckat svar returnerar HTTP-status 204 (inget innehåll) och en tom brödtext.
 
-Du kan bekräfta borttagningen genom att försöka med en [sökbegäran (GET)](#lookup) till fältgruppen. Du måste inkludera en `Accept` i begäran, men ska få HTTP-status 404 (Hittades inte) eftersom fältgruppen har tagits bort från schemaregistret.
+Du kan bekräfta borttagningen genom att försöka med en [sökbegäran (GET)](#lookup) till fältgruppen. Du måste inkludera ett `Accept`-huvud i begäran, men du bör få HTTP-status 404 (Hittades inte) eftersom fältgruppen har tagits bort från schemaregistret.

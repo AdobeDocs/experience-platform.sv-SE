@@ -21,15 +21,15 @@ En introduktion till taggar finns i resurserna nedan:
 
 ## Hitta taggtillägg i plattformsgränssnittet {#how-to-find-extensions-in-interface}
 
-Om du vill hitta tilläggen i plattformsgränssnittet går du till **[!UICONTROL Destinations]** > **[!UICONTROL Catalog]** och markera **[!UICONTROL Extensions]** i **[!UICONTROL Types]** filter.
+Om du vill hitta tilläggen i plattformsgränssnittet bläddrar du till **[!UICONTROL Destinations]** > **[!UICONTROL Catalog]** och väljer **[!UICONTROL Extensions]** i filtret **[!UICONTROL Types]**.
 
 ![Filtret Tillägg i gränssnittet](../../assets/catalog/launch-extensions/filter.png)
 
 ## Så här fungerar taggtillägg {#how-extensions-work}
 
-A [taggtillägg](../../../tags/home.md#extensions) är ett kodpaket som förbättrar funktionerna för en webbplats eller mobilapp. Detta kan inkludera att skicka råhändelsedata till ett mål som [Google Analytics](/help/destinations/catalog/analytics/google-universal-analytics.md) men de kan också användas för andra funktioner.
+Ett [taggtillägg](../../../tags/home.md#extensions) är ett kodpaket som förbättrar funktionerna för en webbplats eller mobilapp. Detta kan inkludera att skicka råhändelsedata till ett mål som [Google Analytics](/help/destinations/catalog/analytics/google-universal-analytics.md), men de kan även hantera andra funktioner.
 
-Det är viktigt att skilja mellan tillägg för tagg- och händelsevidarebefordran. De tillägg som visas i användargränssnittet för plattformsmål är *taggtillägg*. Mer information om vidarebefordran av händelser finns i översikten [skillnader mellan taggar och händelsevidarebefordran](/help/tags/ui/event-forwarding/overview.md#differences-between-event-forwarding-and-tags).
+Det är viktigt att skilja mellan tillägg för tagg- och händelsevidarebefordran. De tillägg som visas i användargränssnittet för plattformsmål är *taggtillägg*. Mer information om [skillnaderna mellan taggar och händelsevidarebefordran](/help/tags/ui/event-forwarding/overview.md#differences-between-event-forwarding-and-tags) finns i översikten över händelsevidarebefordran.
 
 
 
@@ -47,7 +47,7 @@ Extensions forward raw event data to several types of destinations. Think of ext
 
 Plattformens taggfunktioner är kostnadsfria för befintliga Experience Cloud-kunder. Systemet förenklar taggdistribution på din webbplats med lättanvända tillägg som du kan installera, konfigurera, uppdatera och ta bort. Taggar gör att det inte finns så mycket plats på webbplatsen och gör att du snabbt kan läsa in sidorna.
 
-Du kan inte aktivera målgrupper för taggtillägg, men du kan konfigurera regler så att endast händelsedata vidarebefordras i vissa situationer. Denna kraftfulla funktion gör att du bara kan vidarebefordra händelsedata i vissa situationer, i motsats till att skicka händelsedata för varje interaktion. Mer information finns i reglerna i [taggdokumentation](../../../tags/ui/managing-resources/rules.md).
+Du kan inte aktivera målgrupper för taggtillägg, men du kan konfigurera regler så att endast händelsedata vidarebefordras i vissa situationer. Denna kraftfulla funktion gör att du bara kan vidarebefordra händelsedata i vissa situationer, i motsats till att skicka händelsedata för varje interaktion. Mer information finns i reglerna i [taggdokumentationen](../../../tags/ui/managing-resources/rules.md).
 
 ## Exempel på användningsexempel för tillägg {#extensions-use-cases}
 

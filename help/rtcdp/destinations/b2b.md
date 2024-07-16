@@ -15,16 +15,16 @@ ht-degree: 0%
 
 >[!NOTE]
 >
->Om du inte använder Adobe Real-time Customer Data Platform B2B Edition läser du [översikt över destinationer](../../destinations/home.md) i stället.
+>Om du inte använder Adobe Real-time Customer Data Platform B2B Edition läser du [målöversikten](../../destinations/home.md) i stället.
 
 Experience Platform-destinationer som stöds fullt ut av Real-Time CDP B2B Edition är bland annat Google Customer Match, Facebook, LinkedIn, Marketo Engage, Amazon S3, Google Display &amp; Video 360, Google Ads och Google Ad Manager.
 
-Mer information om hur destinationer passar in i ert B2B-arbetsflöde finns i [självstudiekurs från början till slut](../b2b-tutorial.md#activate-your-evaluated-data-to-a-destination).
+Mer information om hur destinationer passar in i ditt B2B-arbetsflöde finns i [den kompletta självstudiekursen](../b2b-tutorial.md#activate-your-evaluated-data-to-a-destination).
 
 Med Adobe Real-time Customer Data Platform B2B Edition kan du exportera B2B-data via Marketo Engage-målanslutningen. Genom att använda målet Marketo Engage kan du föra över målgrupper som skapats i Adobe Experience Platform till Marketo, där de visas som statiska listor.
 
 Följande dokument innehåller mer information om hur du använder Marketo Engage som mål för att exportera data:
 
-- Information om vilka destinationer som är tillgängliga för Real-time Customer Data Platform B2B Edition finns på [målkatalog](../../destinations/catalog/overview.md).
-- Mer information om vilka identiteter som kan exporteras till Marketo Engage finns i [Dokumentation för destinationen Marketo Engage](../../destinations/catalog/adobe/marketo-engage.md).
-- Mer information om hur du ansluter till Marketo Engage-målet i användargränssnittet i Experience Platform och exporterar data finns i [&quot;Överför ett Adobe Experience Platform-segment till en Marketo Static List&quot;](https://experienceleague.adobe.com/docs/marketo/using/product-docs/core-marketo-concepts/smart-lists-and-static-lists/static-lists/push-an-adobe-experience-platform-segment-to-a-marketo-static-list.html).
+- Mer information om vilka mål som är tillgängliga för Real-time Customer Data Platform B2B Edition finns i [målkatalogen](../../destinations/catalog/overview.md).
+- Mer information om vilka identiteter som kan exporteras till Marketo Engage finns i [dokumentationen för Marketo Engage-målet](../../destinations/catalog/adobe/marketo-engage.md).
+- Mer information om hur du ansluter till Marketo Engage-målet i användargränssnittet i Experience Platform och exporterar data finns i [&#39;Överför ett Adobe Experience Platform-segment till en Marketo-statisk lista&#39;](https://experienceleague.adobe.com/docs/marketo/using/product-docs/core-marketo-concepts/smart-lists-and-static-lists/static-lists/push-an-adobe-experience-platform-segment-to-a-marketo-static-list.html).

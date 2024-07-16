@@ -6,7 +6,7 @@ description: I den här självstudiekursen visas stegen för att ta bort ett bef
 exl-id: 7b672859-e61a-4b3c-9db9-62048258f0aa
 source-git-commit: d6402f22ff50963b06c849cf31cc25267ba62bb1
 workflow-type: tm+mt
-source-wordcount: '401'
+source-wordcount: '399'
 ht-degree: 0%
 
 ---
@@ -21,22 +21,22 @@ Om du tar bort ett mål tas alla befintliga dataflöden till det målet bort. Al
 
 Det finns två sätt att ta bort mål från [!DNL Platform] [!DNL UI]. Du kan:
 
-* [Ta bort mål från [!UICONTROL Browse] tab](#delete-browse-tab)
+* [Ta bort mål från fliken [!UICONTROL Browse]](#delete-browse-tab)
 * [Ta bort mål från sidan med målinformation](#delete-destination-details-page)
 
 ## Ta bort mål från fliken Bläddra{#delete-browse-tab}
 
-Följ stegen nedan för att ta bort ett mål från [!UICONTROL Browse] -fliken.
+Följ stegen nedan för att ta bort ett mål från fliken [!UICONTROL Browse].
 
-1. Logga in på [Experience Platform UI](https://platform.adobe.com/) och markera **[!UICONTROL Destinations]** i det vänstra navigeringsfältet. Om du vill visa dina befintliga mål väljer du **[!UICONTROL Browse]** i det övre sidhuvudet.
+1. Logga in på [Experience Platform-gränssnittet](https://platform.adobe.com/) och välj **[!UICONTROL Destinations]** i det vänstra navigeringsfältet. Om du vill visa dina befintliga mål väljer du **[!UICONTROL Browse]** i det övre huvudet.
 
    ![Bläddra bland mål](../assets/ui/delete-destinations/browse-destinations.png)
 
-2. Markera filterikonen ![Filterikon](../assets/ui/delete-destinations/filter.png) längst upp till vänster för att öppna sorteringspanelen. På sorteringspanelen finns en lista med alla mål. Du kan markera mer än ett mål i listan om du vill visa ett filtrerat urval av dataflöden som är kopplade till det valda målet.
+2. Välj filterikonen ![Filterikon](../assets/ui/delete-destinations/filter.png) längst upp till vänster för att öppna sorteringspanelen. På sorteringspanelen finns en lista med alla mål. Du kan markera mer än ett mål i listan om du vill visa ett filtrerat urval av dataflöden som är kopplade till det valda målet.
 
-   ![Filtermål](../assets/ui/delete-destinations/filter-destinations.png)
+   ![Filtrera mål](../assets/ui/delete-destinations/filter-destinations.png)
 
-3. Välj ![Knappen Mer](../assets/ui/delete-destinations/more-icon.png) i kolumnen Namn och sedan markera ![Knappen Ta bort](../assets/ui/delete-destinations/delete-icon.png) **[!UICONTROL Delete]** för att ta bort en befintlig målanslutning.
+3. Markera knappen ![Mer](../assets/ui/delete-destinations/more-icon.png) i kolumnen Namn och markera sedan knappen ![Ta bort](../assets/ui/delete-destinations/delete-icon.png) **[!UICONTROL Delete]** för att ta bort en befintlig målanslutning.
    ![Ta bort mål](../assets/ui/delete-destinations/delete-destinations.png)
 
 4. Välj **[!UICONTROL Delete]** för att bekräfta borttagningen av målanslutningen.
@@ -47,34 +47,34 @@ Följ stegen nedan för att ta bort ett mål från [!UICONTROL Browse] -fliken.
 
 Följ stegen nedan för att ta bort ett mål från sidan med målinformation.
 
-1. Logga in på [Experience Platform UI](https://platform.adobe.com/) och markera **[!UICONTROL Destinations]** i det vänstra navigeringsfältet. Om du vill visa dina befintliga mål väljer du **[!UICONTROL Browse]** i det övre sidhuvudet.
+1. Logga in på [Experience Platform-gränssnittet](https://platform.adobe.com/) och välj **[!UICONTROL Destinations]** i det vänstra navigeringsfältet. Om du vill visa dina befintliga mål väljer du **[!UICONTROL Browse]** i det övre huvudet.
 
    ![Bläddra bland mål](../assets/ui/delete-destinations/browse-destinations.png)
 
-2. Markera filterikonen ![Filterikon](../assets/ui/delete-destinations/filter.png) längst upp till vänster för att öppna sorteringspanelen. På sorteringspanelen finns en lista med alla mål. Du kan markera mer än ett mål i listan om du vill visa ett filtrerat urval av dataflöden som är kopplade till det valda målet.
+2. Välj filterikonen ![Filterikon](../assets/ui/delete-destinations/filter.png) längst upp till vänster för att öppna sorteringspanelen. På sorteringspanelen finns en lista med alla mål. Du kan markera mer än ett mål i listan om du vill visa ett filtrerat urval av dataflöden som är kopplade till det valda målet.
 
-   ![Filtermål](../assets/ui/delete-destinations/filter-destinations.png)
+   ![Filtrera mål](../assets/ui/delete-destinations/filter-destinations.png)
 
 3. Markera namnet på målet som du vill ta bort.
 
    ![Välj mål](../assets/ui/delete-destinations/delete-destination-select.png)
 
-   * Om målet har befintliga dataflöden tas du till [!UICONTROL Dataflow runs] -fliken.
+   * Om målet har befintliga dataflöden kommer du till fliken [!UICONTROL Dataflow runs].
 
-     ![Fliken Dataflöden körs](../assets/ui/delete-destinations/destination-details-dataflows.png)
+     ![Fliken Körs av dataflöde](../assets/ui/delete-destinations/destination-details-dataflows.png)
 
    * Om målet inte har några befintliga dataflöden kommer du till en tom sida där du kan börja aktivera målgrupper.
 
-     ![Destinationsinformation](../assets/ui/delete-destinations/destination-details-empty.png)
+     ![Målinformation](../assets/ui/delete-destinations/destination-details-empty.png)
 
-4. Välj **[!UICONTROL Delete]** i rätt spår.
+4. Välj **[!UICONTROL Delete]** i den högra listen.
 
    ![Ta bort mål](../assets/ui/delete-destinations/delete-destinations-button.png)
 
-5. Välj **[!UICONTROL Delete]** i bekräftelsedialogrutan för att ta bort målet.
+5. Välj **[!UICONTROL Delete]** i bekräftelsedialogrutan om du vill ta bort målet.
 
-   ![Bekräfta borttagning av mål](..//assets/ui/delete-destinations/delete-destinations-delete.png)
+   ![Ta bort målbekräftelse](..//assets/ui/delete-destinations/delete-destinations-delete.png)
 
    >[!NOTE]
    >
-   >Beroende på serverbelastningen kan det ta några minuter i [!DNL Platform] för att ta bort målet.
+   >Beroende på serverinläsningen kan det ta några minuter för [!DNL Platform] att ta bort målet.

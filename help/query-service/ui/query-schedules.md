@@ -17,35 +17,35 @@ Du kan automatisera frågekörningar genom att skapa frågescheman. Schemalagda 
 >
 >Du kan bara lägga till ett schema i en fråga som redan har skapats och sparats.
 
-Alla schemalagda frågor läggs till i listan i [!UICONTROL Scheduled queries] -fliken. Från den arbetsytan kan du övervaka statusen för alla schemalagda frågejobb via gränssnittet. På [!UICONTROL Scheduled queries] kan du hitta viktig information om frågekörningar och prenumerera på aviseringar. Den tillgängliga informationen omfattar status, schemainformation och felmeddelanden/koder om en körning misslyckas. Se [Övervaka dokument för schemalagda frågor](./monitor-queries.md) för mer information.
+Alla schemalagda frågor läggs till i listan på fliken [!UICONTROL Scheduled queries]. Från den arbetsytan kan du övervaka statusen för alla schemalagda frågejobb via gränssnittet. På fliken [!UICONTROL Scheduled queries] kan du hitta viktig information om frågekörningar och prenumerera på aviseringar. Den tillgängliga informationen omfattar status, schemainformation och felmeddelanden/koder om en körning misslyckas. Mer information finns i dokumentet [Övervaka schemalagda frågor](./monitor-queries.md).
 
-Det här arbetsflödet omfattar schemaläggningsprocessen i användargränssnittet för frågetjänsten. Läs mer om hur du lägger till scheman med API:t i [slutpunktsguide för schemalagda frågor](../api/scheduled-queries.md).
+Det här arbetsflödet omfattar schemaläggningsprocessen i användargränssnittet för frågetjänsten. Om du vill lära dig hur du lägger till scheman med API:t läser du [slutpunktshandboken för schemalagda frågor](../api/scheduled-queries.md).
 
 ## Skapa ett frågeschema {#create-schedule}
 
-Om du vill schemalägga en fråga väljer du en frågemall i [!UICONTROL Templates] eller [!UICONTROL Template] kolumn i [!UICONTROL Scheduled Queries] -fliken. Om du väljer mallnamnet kommer du till frågeredigeraren.
+Om du vill schemalägga en fråga väljer du en frågemall på fliken [!UICONTROL Templates] eller [!UICONTROL Template] på fliken [!UICONTROL Scheduled Queries]. Om du väljer mallnamnet kommer du till frågeredigeraren.
 
 Om du öppnar en sparad fråga från Frågeredigeraren kan du skapa ett schema för frågan eller visa frågans schema från informationspanelen.
 
 >[!TIP]
 >
->Välj **[!UICONTROL View schedule]** om du vill navigera till arbetsytan för scheman och se en översikt över schemalagda frågor.
+>Välj **[!UICONTROL View schedule]** om du vill navigera till arbetsytan för scheman och visa en översikt över schemalagda frågor.
 
-![Frågeredigeraren med [!UICONTROL View schedule] och [!UICONTROL Add schedule] markerad.](../images/ui/query-schedules/view-add-schedule.png)
+![Frågeredigeraren med [!UICONTROL View schedule] och [!UICONTROL Add schedule] markerade.](../images/ui/query-schedules/view-add-schedule.png)
 
-Välj **[!UICONTROL Add schedule]** navigera till [sida med schemainformation](#schedule-details).
+Välj **[!UICONTROL Add schedule]** om du vill navigera till sidan [Schemainformation](#schedule-details).
 
-Du kan även välja **[!UICONTROL Schedules]** -fliken under frågans namn.
+Du kan också välja fliken **[!UICONTROL Schedules]** under frågans namn.
 
 ![Frågeredigeraren med fliken Scheman markerad.](../images/ui/query-schedules/schedules-tab.png)
 
-Arbetsytan för scheman visas. Gränssnittet visar en lista över schemalagda körningar som mallen är kopplad till. Välj **[!UICONTROL Add Schedule]** för att skapa ett schema.
+Arbetsytan för scheman visas. Gränssnittet visar en lista över schemalagda körningar som mallen är kopplad till. Välj **[!UICONTROL Add Schedule]** om du vill skapa ett schema.
 
-![Arbetsytan Schemaläggning i frågeredigeraren med Lägg till schema markerat.](../images/ui/query-schedules/add-schedule.png)
+![Arbetsytan Schema för frågeredigeraren med Lägg till schema är markerad.](../images/ui/query-schedules/add-schedule.png)
 
 ### Lägg till schemainformation {#schedule-details}
 
-Sidan med schemainformation visas. På den här sidan kan du redigera olika detaljer för den schemalagda frågan. Information om [frekvens och veckodag för den schemalagda frågan](#scheduled-query-frequency) kör, start- och slutdatum, datauppsättningen som resultaten ska exporteras till och [fråga om statusaviseringar](#alerts-for-query-status).
+Sidan med schemainformation visas. På den här sidan kan du redigera olika detaljer för den schemalagda frågan. Detaljerna innehåller [frekvens och veckodag för körningen av den schemalagda frågan](#scheduled-query-frequency), start- och slutdatum, datamängden som resultaten ska exporteras till och [frågans statusaviseringar](#alerts-for-query-status).
 
 ![Panelen Schemainformation är markerad.](../images/ui/query-schedules/schedule-details.png)
 
@@ -53,11 +53,11 @@ Sidan med schemainformation visas. På den här sidan kan du redigera olika deta
 
 Du kan välja följande alternativ för **[!UICONTROL Frequency]**:
 
-- **[!UICONTROL Hourly]**: Den schemalagda frågan körs varje timme för den datumperiod du har valt.
-- **[!UICONTROL Daily]**: Den schemalagda frågan kommer att köras var X:e dag vid den tidpunkt och den datumperiod du har valt. Observera att den valda tiden är **UTC** och inte din lokala tidszon.
-- **[!UICONTROL Weekly]**: Den valda frågan körs på veckodagarna, tidsperioden och den datumperiod som du har valt. Observera att den valda tiden är **UTC** och inte din lokala tidszon.
-- **[!UICONTROL Monthly]**: Den valda frågan körs varje månad på den dag, tid och den datumperiod du har valt. Observera att den valda tiden är **UTC** och inte din lokala tidszon.
-- **[!UICONTROL Yearly]**: Den valda frågan kommer att köras varje år på den dag, månad, tid och den datumperiod du har valt. Observera att den valda tiden är **UTC** och inte din lokala tidszon.
+- **[!UICONTROL Hourly]**: Den schemalagda frågan kommer att köras varje timme för den datumperiod du valde.
+- **[!UICONTROL Daily]**: Den schemalagda frågan kommer att köras var X:e dag vid den tidpunkt och den datumperiod du valde. Observera att den valda tiden är i **UTC** och inte i din lokala tidszon.
+- **[!UICONTROL Weekly]**: Den valda frågan kommer att köras på veckodagarna, tiden och den datumperiod som du valde. Observera att den valda tiden är i **UTC** och inte i din lokala tidszon.
+- **[!UICONTROL Monthly]**: Den valda frågan kommer att köras varje månad med dag, tid och den datumperiod som du har valt. Observera att den valda tiden är i **UTC** och inte i din lokala tidszon.
+- **[!UICONTROL Yearly]**: Den valda frågan kommer att köras varje år på den dag, månad, tid och den datumperiod du har valt. Observera att den valda tiden är i **UTC** och inte i din lokala tidszon.
 
 ### Ange datauppsättningsinformation {#dataset-details}
 
@@ -67,29 +67,29 @@ Välj **[!UICONTROL Create and append into new dataset]** om du vill skapa en da
 
 >[!IMPORTANT]
 >
-> Eftersom du använder en befintlig eller skapar en ny datauppsättning gör du det **not** måste innehålla antingen `INSERT INTO` eller `CREATE TABLE AS SELECT` som en del av frågan, eftersom datauppsättningarna redan har angetts. Inklusive antingen `INSERT INTO` eller `CREATE TABLE AS SELECT` som en del av dina schemalagda frågor resulterar i ett fel.
+> Eftersom du antingen använder en befintlig eller skapar en ny datauppsättning, behöver du **inte** ta med `INSERT INTO` eller `CREATE TABLE AS SELECT` som en del av frågan, eftersom datauppsättningarna redan har angetts. Om du inkluderar antingen `INSERT INTO` eller `CREATE TABLE AS SELECT` som en del av dina schemalagda frågor uppstår ett fel.
 
-![Panelen Schemainformation med datauppsättningsinformation och [!UICONTROL Create and append into new dataset] alternativen är markerade.](../images/ui/query-schedules/dataset-details-create-and-append.png)
+![Panelen Schemainformation med datauppsättningsinformation och [!UICONTROL Create and append into new dataset] alternativ markerade.](../images/ui/query-schedules/dataset-details-create-and-append.png)
 
-Du kan också välja **[!UICONTROL Append into existing dataset]** följt av datamängdsikonen (![Datamängdikonen.](../images/ui/query-schedules/dataset-icon.png)).
+Du kan också välja **[!UICONTROL Append into existing dataset]** följt av datamängdikonen (![Datamängdikonen.](../images/ui/query-schedules/dataset-icon.png)).
 
 ![Panelen Schemainformation med datauppsättningsinformation och Lägg till i befintlig datauppsättning markerad.](../images/ui/query-schedules/dataset-details-existing.png)
 
-The **[!UICONTROL Select output dataset]** visas.
+Dialogrutan **[!UICONTROL Select output dataset]** visas.
 
 Därefter kan du antingen bläddra bland befintliga datauppsättningar eller använda sökfältet för att filtrera alternativen. Markera den rad i datauppsättningen som du vill använda. Datauppsättningsinformationen visas i panelen till höger. Välj **[!UICONTROL Done]** för att bekräfta ditt val.
 
-![Dialogrutan Välj utdatamängd med sökfältet, en datamängdsrad och Klar markerat.](../images/ui/query-schedules/select-output-dataset-dialog.png)
+![Dialogrutan Välj utdatamängd med sökfältet, en datamängdsrad och Klar markerad.](../images/ui/query-schedules/select-output-dataset-dialog.png)
 
 ### Karantänfrågor om de kontinuerligt misslyckas {#quarantine}
 
-När du skapar ett schema kan du registrera din fråga i karantänfunktionen för att skydda systemresurser och förhindra eventuella störningar. karantänfunktionen identifierar och isolerar automatiskt frågor som misslyckas upprepade gånger genom att placera dem i en [!UICONTROL Quarantined] tillstånd. Genom att sätta frågor i karantän efter tio på varandra följande misslyckanden kan du ingripa, granska och åtgärda problem innan du tillåter fler körningar. Detta bidrar till att upprätthålla er effektivitet och dataintegritet.
+När du skapar ett schema kan du registrera din fråga i karantänfunktionen för att skydda systemresurser och förhindra eventuella störningar. Karantänfunktionen identifierar och isolerar automatiskt frågor som misslyckas upprepade gånger genom att placera dem i ett [!UICONTROL Quarantined]-läge. Genom att sätta frågor i karantän efter tio på varandra följande misslyckanden kan du ingripa, granska och åtgärda problem innan du tillåter fler körningar. Detta bidrar till att upprätthålla er effektivitet och dataintegritet.
 
-![Arbetsytan Frågor och scheman med [!UICONTROL Query Quarantine] markerat och Ja markerat.](../images/ui/query-schedules/quarantine-enroll.png)
+![Arbetsytan Frågescheman med [!UICONTROL Query Quarantine] markerad och Ja markerad.](../images/ui/query-schedules/quarantine-enroll.png)
 
-När en fråga har registrerats för karantänfunktionen kan du prenumerera på aviseringar för den här frågestatusändringen. Om en schemalagd fråga inte är registrerad i karantän visas den inte som ett alternativ på [dialogrutan Varningar](./monitor-queries.md#alert-subscription).
+När en fråga har registrerats för karantänfunktionen kan du prenumerera på aviseringar för den här frågestatusändringen. Om en schemalagd fråga inte är registrerad i karantän visas den inte som ett alternativ i [varningsdialogrutan](./monitor-queries.md#alert-subscription).
 
-Du kan även registrera en schemalagd fråga i karantänfunktionen från de infogade åtgärderna i [!UICONTROL Scheduled Queries] -fliken. Se [dokumentation för bildskärmsfrågor](./monitor-queries.md#alert-subscription) för mer information.
+Du kan även registrera en schemalagd fråga i karantänfunktionen från de infogade åtgärderna på fliken [!UICONTROL Scheduled Queries]. Mer information finns i [dokumentationen för övervakningsfrågor](./monitor-queries.md#alert-subscription).
 
 ### Ange aviseringar för status för en schemalagd fråga {#alerts-for-query-status}
 
@@ -104,52 +104,52 @@ Tabellen nedan förklarar vilka frågeartikeltyper som stöds:
 | `start` | Den här varningen meddelar dig när en schemalagd frågekörning initieras eller börjar bearbetas. |
 | `success` | Den här varningen informerar dig när en schemalagd frågekörning har slutförts, vilket anger att frågan har körts utan fel. |
 | `failed` | Den här varningen utlöses när en schemalagd frågekörning påträffar ett fel eller misslyckas med att köras. Det hjälper er att snabbt identifiera och åtgärda problem. |
-| `quarantine` | Den här varningen aktiveras när en schemalagd frågekörning sätts i karantän. När en fråga har [registrerad i karantänfunktionen](#quarantine), kommer alla schemalagda frågor som misslyckas tio på varandra följande körningar automatiskt att placeras i [!UICONTROL Quarantined] tillstånd. En fråga i karantän kräver sedan att du gör något innan fler körningar kan utföras. Obs! Frågor måste registreras för karantänfunktionen för att du ska kunna prenumerera på karantänaviseringar. |
-| `delay` | Den här varningen meddelar dig om det finns en [fördröjning av resultatet av en schemalagd frågekörning](./monitor-queries.md#query-run-delay) över ett angivet tröskelvärde. Du kan ange en anpassad tid som utlöser varningen när frågan körs för den aktuella varaktigheten utan att slutföras eller misslyckas. Standardbeteendet anger en varning i 150 minuter efter att frågan börjar bearbetas. |
+| `quarantine` | Den här varningen aktiveras när en schemalagd frågekörning sätts i karantän. När en fråga [har registrerats i karantänfunktionen](#quarantine), kommer alla schemalagda frågor som misslyckas tio på varandra följande körningar automatiskt att hamna i tillståndet [!UICONTROL Quarantined]. En fråga i karantän kräver sedan att du gör något innan fler körningar kan utföras. Obs! Frågor måste registreras för karantänfunktionen för att du ska kunna prenumerera på karantänaviseringar. |
+| `delay` | Den här varningen meddelar dig om det finns en [fördröjning i resultatet av en schemalagd frågekörning](./monitor-queries.md#query-run-delay) över ett angivet tröskelvärde. Du kan ange en anpassad tid som utlöser varningen när frågan körs för den aktuella varaktigheten utan att slutföras eller misslyckas. Standardbeteendet anger en varning i 150 minuter efter att frågan börjar bearbetas. |
 
 >[!NOTE]
 >
->Om du väljer att ställa in en [!UICONTROL Query Run Delay] måste du ange önskad fördröjningstid i minuter i plattformsgränssnittet. Ange längden i minuter. Maximal fördröjning är 24 timmar (1 440 minuter).
+>Om du väljer att ställa in en [!UICONTROL Query Run Delay]-avisering måste du ange önskad fördröjningstid i minuter i plattformens användargränssnitt. Ange längden i minuter. Maximal fördröjning är 24 timmar (1 440 minuter).
 
-En översikt över varningar i Adobe Experience Platform, inklusive strukturen för hur varningsregler definieras, finns i [varningsöversikt](../../observability/alerts/overview.md). Vägledning om hur du hanterar aviseringar och varningsregler i Adobe Experience Platform-gränssnittet finns i [Användargränssnittshandbok för aviseringar](../../observability/alerts/ui.md).
+En översikt över aviseringar i Adobe Experience Platform, inklusive strukturen för hur varningsregler definieras, finns i [varningsöversikten](../../observability/alerts/overview.md). Mer information om hur du hanterar aviseringar och varningsregler i Adobe Experience Platform-gränssnittet finns i [Användargränssnittsguiden för aviseringar](../../observability/alerts/ui.md).
 
 ### Ange parametrar för en schemalagd parametriserad fråga {#set-parameters}
 
 >[!IMPORTANT]
 >
->Funktionen för parametriserat frågegränssnitt är för närvarande tillgänglig i en **Endast begränsad version** och inte är tillgängligt för alla kunder. Om du inte har tillgång till parametriserade frågor fortsätter du till [ta bort eller inaktivera ett schema](#delete-schedule) -avsnitt.
+>Gränssnittsfunktionen för parametriserade frågor är för närvarande tillgänglig i en **begränsad version endast** och är inte tillgänglig för alla kunder. Om du inte har tillgång till parametriserade frågor kan du fortsätta med [ta bort eller inaktivera ett schema](#delete-schedule)-avsnitt.
 
 Om du skapar en schemalagd fråga för en parametriserad fråga måste du nu ange parametervärden för dessa frågekörningar.
 
-![Avsnittet Schemainformation i arbetsflödet för schemaskapande med avsnittet Frågeparametrar markerat.](../images/ui/query-schedules/scheduled-query-parameter.png)
+![Avsnittet Schemainformation i arbetsflödet för att skapa schema med avsnittet Frågeparametrar markerat.](../images/ui/query-schedules/scheduled-query-parameter.png)
 
 När du har bekräftat din schemainformation väljer du **[!UICONTROL Save]** för att skapa ett schema. Du återgår till mallens flik för scheman. På den här arbetsytan visas information om det nya schemat, inklusive schema-ID, själva schemat och schemats utdatamängd.
 
 ## Visa schemalagda frågekörningar {#scheduled-query-runs}
 
-Från mallens [!UICONTROL Schedules] väljer du schema-ID för att navigera till listan med frågekörningar för den nyligen schemalagda frågan.
+På mallens [!UICONTROL Schedules]-flik väljer du schema-ID för att navigera till listan med frågekörningar för den nyligen schemalagda frågan.
 
 ![Arbetsytan för scheman med det nya schemat markerat.](../images/ui/query-schedules/schedules-workspace.png)
 
-Om du vill visa en lista över en frågemalls schemalagda körningar går du till **[!UICONTROL Scheduled queries]** och välj ett mallnamn i listan.
+Om du vill visa en lista över schemalagda körningar för en frågemall går du till fliken **[!UICONTROL Scheduled queries]** och väljer ett mallnamn i listan.
 
 ![Fliken Schemalagda frågor med en namngiven mall markerad.](../images/ui/query-schedules/view-scheduled-runs.png)
 
 Listan över frågekörningar för den schemalagda frågan visas.
 
-![Informationsavsnittet på arbetsytan för schemalagda frågor med en lista över frågekörningar markerade för en schemalagd fråga.](../images/ui/query-schedules/list-of-scheduled-runs.png)
+![Informationsavsnittet på arbetsytan Schemalagda frågor med en lista över frågor som körs markerade för en schemalagd fråga.](../images/ui/query-schedules/list-of-scheduled-runs.png)
 
-Se [guide för övervakning av schemalagd fråga](./monitor-queries.md#inline-actions) om du vill ha fullständig information om hur du övervakar statusen för alla frågejobb via användargränssnittet.
+I guiden [Övervaka schemalagd fråga](./monitor-queries.md#inline-actions) finns fullständig information om hur du övervakar statusen för alla frågefunktioner via användargränssnittet.
 
-Välj en **[!UICONTROL Query run ID]** i listan för att navigera till frågekörningsöversikten. För en fullständig uppdelning av den information som finns tillgänglig på [översikt över frågekörning](./monitor-queries.md#query-run-overview)finns i dokumentationen för övervakningsplanerade frågor.
+Välj en **[!UICONTROL Query run ID]** i listan för att navigera till frågekörningsöversikten. En fullständig beskrivning av informationen som är tillgänglig i [frågekörningsöversikt](./monitor-queries.md#query-run-overview) finns i dokumentationen för övervakningsplanerade frågor.
 
-Om du vill övervaka schemalagda frågor med hjälp av API:t för frågetjänsten läser du [guide för körningsslutpunkter för schemalagda frågor](../api/runs-scheduled-queries.md).
+Om du vill övervaka schemalagda frågor med hjälp av API:t för frågetjänsten läser du [guiden ](../api/runs-scheduled-queries.md) för schemalagda frågekörningsslutpunkter.
 
 ## Aktivera, inaktivera eller ta bort ett schema {#delete-schedule}
 
-Du kan aktivera, inaktivera eller ta bort ett schema från arbetsytan Scheman för en viss fråga eller från [!UICONTROL Scheduled Queries] arbetsyta som visar alla schemalagda frågor.
+Du kan aktivera, inaktivera eller ta bort ett schema från arbetsytan Scheman för en viss fråga eller från arbetsytan [!UICONTROL Scheduled Queries] som listar alla schemalagda frågor.
 
-Så här öppnar du [!UICONTROL Schedules] -fliken för den valda frågan måste du välja namnet på en frågemall från antingen [!UICONTROL Templates] eller [!UICONTROL Scheduled Queries] -fliken. Detta navigerar till frågeredigeraren för den frågan. I frågeredigeraren väljer du **[!UICONTROL Schedules]** för att komma åt arbetsytan för scheman.
+Om du vill få åtkomst till fliken [!UICONTROL Schedules] i den valda frågan måste du välja namnet på en frågemall på fliken [!UICONTROL Templates] eller [!UICONTROL Scheduled Queries] . Detta navigerar till frågeredigeraren för den frågan. Välj **[!UICONTROL Schedules]** i frågeredigeraren för att komma åt arbetsytan för scheman.
 
 Välj ett schema bland raderna med tillgängliga scheman för att fylla i informationspanelen. Använd växlingsknappen för att inaktivera (eller aktivera) den schemalagda frågan.
 
@@ -167,6 +167,6 @@ En bekräftelsedialogruta visas. Välj **[!UICONTROL Disable]** för att bekräf
 
 Välj **[!UICONTROL Delete a schedule]** om du vill ta bort det inaktiverade schemat.
 
-![Arbetsytan för scheman med Ta bort schema markerat.](../images/ui/query-schedules/delete-schedule.png)
+![Arbetsytan för scheman med Ta bort schema är markerad.](../images/ui/query-schedules/delete-schedule.png)
 
-Alternativt kan du [!UICONTROL Scheduled Queries] På -fliken finns en samling med infogade åtgärder för varje schemalagd fråga. De tillgängliga textbundna åtgärderna omfattar [!UICONTROL Disable schedule] eller [!UICONTROL Enable schedule], [!UICONTROL Delete schedule]och [!UICONTROL Subscribe] till aviseringar för den schemalagda frågan. Fullständiga anvisningar om hur du tar bort eller inaktiverar en schemalagd fråga via fliken Schemalagda frågor finns i [guide för övervakning av schemalagd fråga](./monitor-queries.md#inline-actions).
+Fliken [!UICONTROL Scheduled Queries] innehåller också en samling infogade åtgärder för varje schemalagd fråga. De tillgängliga textbundna åtgärderna omfattar [!UICONTROL Disable schedule] eller [!UICONTROL Enable schedule], [!UICONTROL Delete schedule] och [!UICONTROL Subscribe] till varningar för den schemalagda frågan. Fullständiga anvisningar om hur du tar bort eller inaktiverar en schemalagd fråga via fliken Schemalagda frågor finns i guiden [Övervaka schemalagda frågor](./monitor-queries.md#inline-actions).

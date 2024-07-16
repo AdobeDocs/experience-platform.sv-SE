@@ -4,7 +4,7 @@ description: Versionsinformation november 2022 för Adobe Experience Platform.
 exl-id: 1048cfae-6e7a-4d05-a004-c5c095a17fc4
 source-git-commit: ccfc46714069e8c29f1777dea5ba73e318c0a4a6
 workflow-type: tm+mt
-source-wordcount: '451'
+source-wordcount: '453'
 ht-degree: 1%
 
 ---
@@ -27,11 +27,11 @@ Adobe Experience Platform erbjuder en serie teknologier som gör att ni kan saml
 
 | Funktion | Beskrivning |
 | --- | --- |
-| [!DNL AWS] tillägg för händelsevidarebefordran | Nu kan du skicka data till [!DNL Amazon Web Services] ([!DNL AWS]) med [händelsevidarebefordran](../../tags/ui/event-forwarding/overview.md) tillägg. Se [[!DNL AWS] tilläggsöversikt](../../tags/extensions/server/aws/overview.md) för mer information. |
-| [!DNL Google Ads Enhanced Conversions] tillägg för händelsevidarebefordran | Nu kan du skicka konverteringsdata till [!DNL Google Ads] med [händelsevidarebefordran](../../tags/ui/event-forwarding/overview.md) tillägg. Se [[!DNL Google Ads Enhanced Conversions] tilläggsöversikt](../../tags/extensions/server/google-ads-enhanced-conversions/overview.md) för mer information. |
-| [!DNL Microsoft Azure] tillägg för händelsevidarebefordran | Nu kan du skicka data till [!DNL Microsoft Azure] med [händelsevidarebefordran](../../tags/ui/event-forwarding/overview.md) tillägg. Se [[!DNL Microsoft Azure] tilläggsöversikt](../../tags/extensions/server/azure/overview.md) för mer information. |
+| [!DNL AWS]-tillägg för händelsevidarebefordran | Du kan nu skicka data till [!DNL Amazon Web Services] ([!DNL AWS]) med ett [vidarebefordrande](../../tags/ui/event-forwarding/overview.md)-tillägg. Mer information finns i [[!DNL AWS] tilläggsöversikten](../../tags/extensions/server/aws/overview.md). |
+| [!DNL Google Ads Enhanced Conversions]-tillägg för händelsevidarebefordran | Du kan nu skicka konverteringsdata till [!DNL Google Ads] med ett [vidarebefordrande](../../tags/ui/event-forwarding/overview.md)-tillägg. Mer information finns i [[!DNL Google Ads Enhanced Conversions] tilläggsöversikten](../../tags/extensions/server/google-ads-enhanced-conversions/overview.md). |
+| [!DNL Microsoft Azure]-tillägg för händelsevidarebefordran | Du kan nu skicka data till [!DNL Microsoft Azure] med ett [vidarebefordrande](../../tags/ui/event-forwarding/overview.md)-tillägg. Mer information finns i [[!DNL Microsoft Azure] tilläggsöversikten](../../tags/extensions/server/azure/overview.md). |
 
-Mer information om plattformens datainsamlingsfunktioner finns i [datainsamling - översikt](../../collection/home.md).
+Mer information om plattformens datainsamlingsfunktioner finns i [datainsamlingsöversikten](../../collection/home.md).
 
 ## Experience Data Model (XDM) {#xdm}
 
@@ -41,11 +41,11 @@ XDM är en öppen källkodsspecifikation som innehåller gemensamma strukturer o
 
 | Funktion | Beskrivning |
 | --- | --- |
-| Tilldela fält till anpassade klasser när du lägger till direkt i ett schema | När [lägga till ett enskilt fält direkt i ett schema](../../xdm/ui/resources/schemas.md#add-individual-fields)tidigare kunde du bara tilldela fältet till en fältgrupp som överordnad resurs. Förutom fältgrupper kan du nu [tilldela fältet till en anpassad klass](../../xdm/ui/resources/schemas.md#add-to-class) som dess överordnade resurs i stället. |
+| Tilldela fält till anpassade klasser när du lägger till direkt i ett schema | När du [lade till ett enskilt fält direkt i ett schema](../../xdm/ui/resources/schemas.md#add-individual-fields), kunde du tidigare bara tilldela fältet till en fältgrupp som dess överordnade resurs. Utöver fältgrupper kan du nu [tilldela fältet till en anpassad klass](../../xdm/ui/resources/schemas.md#add-to-class) som överordnad resurs i stället. |
 
 {style="table-layout:auto"}
 
-Mer information om XDM i Platform finns i [XDM - systemöversikt](../../xdm/home.md).
+Mer information om XDM i Platform finns i [XDM-systemöversikt](../../xdm/home.md).
 
 ## Källor {#sources}
 
@@ -57,6 +57,6 @@ Experience Platform tillhandahåller ett RESTful-API och ett interaktivt använd
 
 | Funktion | Beskrivning |
 | --- | --- | 
-| Betaversion av Oraclets Service Cloud-källa | Använd Oraclets Service Cloud-källa för att importera data från ditt Oracle Service Cloud-konto till Experience Platform. Mer information finns i dokumentationen för [Oracle Service Cloud-källa](../../sources/connectors/customer-success/oracle-service-cloud.md). |
+| Beta-tillgänglighet för Oracle Service Cloud-källa | Använd Oraclets Service Cloud-källa för att importera data från ditt Oracle Service Cloud-konto till Experience Platform. Mer information finns i dokumentationen om [Oracle Service Cloud-källan](../../sources/connectors/customer-success/oracle-service-cloud.md). |
 
-Läs mer om källor i [källöversikt](../../sources/home.md).
+Läs [Källöversikten](../../sources/home.md) om du vill veta mer om källor.

@@ -16,11 +16,11 @@ ht-degree: 0%
 
 ## Exempel på API-anrop
 
-Följande avsnitt går igenom anrop som du kan göra med `/queries` slutpunkt i [!DNL Query Service] API. Varje anrop innehåller det allmänna API-formatet, en exempelbegäran med obligatoriska rubriker och ett exempelsvar.
+Följande avsnitt går igenom anrop som du kan göra med slutpunkten `/queries` i API:t [!DNL Query Service]. Varje anrop innehåller det allmänna API-formatet, en exempelbegäran med obligatoriska rubriker och ett exempelsvar.
 
 ### Hämta en lista med frågor
 
-Du kan hämta en lista över alla frågor för din organisation genom att göra en GET-förfrågan till `/queries` slutpunkt.
+Du kan hämta en lista med alla frågor för din organisation genom att göra en GET-förfrågan till slutpunkten `/queries`.
 
 **API-format**
 
@@ -29,7 +29,7 @@ GET /queries
 GET /queries?{QUERY_PARAMETERS}
 ```
 
-- `{QUERY_PARAMETERS}`: (*Valfritt*) Parametrar har lagts till i den begärda sökvägen som konfigurerar resultaten som returneras i svaret. Flera parametrar kan inkluderas, avgränsade med et-tecken (`&`). De tillgängliga parametrarna visas nedan.
+- `{QUERY_PARAMETERS}`: (*Valfria*) Parametrar har lagts till i sökvägen för begäran som konfigurerar resultaten som returneras i svaret. Flera parametrar kan inkluderas, avgränsade med et-tecken (`&`). De tillgängliga parametrarna visas nedan.
 
 **Frågeparametrar**
 
@@ -37,13 +37,13 @@ Här följer en lista med tillgängliga frågeparametrar för att lista frågor.
 
 | Parameter | Beskrivning |
 | --------- | ----------- |
-| `orderby` | Anger fältet som resultaten ska sorteras efter. De fält som stöds är `created` och `updated`. Till exempel: `orderby=created` sorterar resultaten efter att de har skapats i stigande ordning. Lägga till en `-` före skapande (`orderby=-created`) sorterar objekt efter att de har skapats i fallande ordning. |
+| `orderby` | Anger fältet som resultaten ska sorteras efter. De fält som stöds är `created` och `updated`. `orderby=created` sorterar till exempel resultat efter skapade i stigande ordning. Om du lägger till en `-` före skapad (`orderby=-created`) sorteras objekt efter att de har skapats i fallande ordning. |
 | `limit` | Anger sidstorleksgränsen för att styra antalet resultat som ska inkluderas på en sida. (*Standardvärde: 20*) |
-| `start` | Ange en tidsstämpel för ISO-format för att beställa resultaten. Om inget startdatum anges returnerar API-anropet den äldsta frågan först och fortsätter sedan att visa de senaste resultaten.<br> ISO-tidsstämplar tillåter olika nivåer av granularitet för datum och tid. De grundläggande ISO-tidsstämplarna har formatet: `2020-09-07` för att uttrycka datumet 7 september 2020. Ett mer komplext exempel skulle skrivas som `2022-11-05T08:15:30-05:00` och motsvarar 5 november 2022, 8:15:30.00, US Eastern Standard Time. En tidszon kan anges med en UTC-förskjutning och markeras med suffixet &quot;Z&quot; (`2020-01-01T01:01:01Z`). Om ingen tidszon anges är standardvärdet noll. |
-| `property` | Filtrera resultat baserat på fält. Filtren **måste** Bli HTML rymd. Kommandon används för att kombinera flera uppsättningar filter. De fält som stöds är `created`, `updated`, `state`och `id`. Listan med operatorer som stöds är `>` (större än), `<` (mindre än), `>=` (större än eller lika med), `<=` (mindre än eller lika med), `==` (lika med), `!=` (inte lika med), och `~` (innehåller). Till exempel: `id==6ebd9c2d-494d-425a-aa91-24033f3abeec` returnerar alla frågor med det angivna ID:t. |
-| `excludeSoftDeleted` | Anger om en fråga som har tagits bort ska tas med. Till exempel: `excludeSoftDeleted=false` kommer **include** mjuka borttagna frågor. (*Boolean, standardvärde: true*) |
-| `excludeHidden` | Anger om icke-användardrivna frågor ska visas. Värdet false kommer att anges **include** icke-användardrivna frågor, som CURSOR-definitioner, FETCH eller metadatafrågor. (*Boolean, standardvärde: true*) |
-| `isPrevLink` | The `isPrevLink` frågeparametern används för sidnumrering. Resultaten av API-anropet sorteras utifrån deras `created` tidsstämpel och `orderby` -egenskap. När du navigerar på resultatsidorna `isPrevLink` är inställt på true vid växling bakåt. Den ändrar ordningen på frågan. Se länkarna &quot;next&quot; och &quot;prev&quot; som exempel. |
+| `start` | Ange en tidsstämpel för ISO-format för att beställa resultaten. Om inget startdatum anges returnerar API-anropet den äldsta frågan först och fortsätter sedan att visa de senaste resultaten.<br> ISO-tidsstämplar tillåter olika nivåer av granularitet för datum och tid. Grundläggande ISO-tidsstämplar har formatet `2020-09-07` för att uttrycka datumet 7 september 2020. Ett mer komplext exempel skrivs som `2022-11-05T08:15:30-05:00` och motsvarar 5 november 2022, 8:15:30 am, US Eastern Standard Time. En tidszon kan anges med en UTC-förskjutning och anges med suffixet Z (`2020-01-01T01:01:01Z`). Om ingen tidszon anges är standardvärdet noll. |
+| `property` | Filtrera resultat baserat på fält. Filtren **måste** vara HTML escape. Kommandon används för att kombinera flera uppsättningar filter. De fält som stöds är `created`, `updated`, `state` och `id`. Listan med operatorer som stöds är `>` (större än), `<` (mindre än), `>=` (större än eller lika med), `<=` (mindre än eller lika med), `==` (lika med), `!=` (inte lika med) och `~` (innehåller). `id==6ebd9c2d-494d-425a-aa91-24033f3abeec` returnerar till exempel alla frågor med det angivna ID:t. |
+| `excludeSoftDeleted` | Anger om en fråga som har tagits bort ska tas med. `excludeSoftDeleted=false` kommer till exempel att **inkludera** mjuka borttagna frågor. (*Boolean, standardvärde: true*) |
+| `excludeHidden` | Anger om icke-användardrivna frågor ska visas. Om värdet är false **inkluderar** icke-användardrivna frågor, som CURSOR-definitioner, FETCH eller metadatafrågor. (*Boolean, standardvärde: true*) |
+| `isPrevLink` | Frågeparametern `isPrevLink` används för sidnumrering. Resultaten av API-anropet sorteras med hjälp av deras `created`-tidsstämpel och egenskapen `orderby`. När du navigerar på resultatsidorna anges `isPrevLink` till true vid sidindelning bakåt. Den ändrar ordningen på frågan. Se länkarna &quot;next&quot; och &quot;prev&quot; som exempel. |
 
 **Begäran**
 
@@ -120,7 +120,7 @@ Ett lyckat svar returnerar HTTP-status 200 med en lista över frågor för den a
 
 ### Skapa en fråga
 
-Du kan skapa en ny fråga genom att göra en POST-förfrågan till `/queries` slutpunkt.
+Du kan skapa en ny fråga genom att göra en POST-förfrågan till slutpunkten `/queries`.
 
 **API-format**
 
@@ -173,14 +173,14 @@ curl -X POST https://platform.adobe.io/data/foundation/query/queries \
 | `sql` | Den SQL-fråga som du vill skapa. |
 | `name` | Namnet på SQL-frågan. |
 | `description` | Beskrivningen av SQL-frågan. |
-| `queryParameters` | Ett nyckelvärdepar som ersätter parametriserade värden i SQL-satsen. Endast obligatoriskt **if** du använder parameterersättningar i den SQL som du anger. Ingen värdetypskontroll utförs för dessa nyckelvärdepar. |
+| `queryParameters` | Ett nyckelvärdepar som ersätter parametriserade värden i SQL-satsen. Det krävs bara **om** du använder parameterersättningar i den SQL som du anger. Ingen värdetypskontroll utförs för dessa nyckelvärdepar. |
 | `templateId` | Den unika identifieraren för en befintlig fråga. Du kan ange detta i stället för en SQL-sats. |
 | `insertIntoParameters` | (Valfritt) Om den här egenskapen är definierad konverteras frågan till en INSERT INTO-fråga. |
 | `ctasParameters` | (Valfritt) Om den här egenskapen är definierad konverteras frågan till en CTAS-fråga. |
 
 **Svar**
 
-Ett lyckat svar returnerar HTTP-status 202 (Accepterad) med information om din nya fråga. När frågan har aktiverats och körts är `state` ändras från `SUBMITTED` till `SUCCESS`.
+Ett lyckat svar returnerar HTTP-status 202 (Accepterad) med information om din nya fråga. När frågan har aktiverats och körts ändras `state` från `SUBMITTED` till `SUCCESS`.
 
 ```json
 {
@@ -223,11 +223,11 @@ Ett lyckat svar returnerar HTTP-status 202 (Accepterad) med information om din n
 
 >[!NOTE]
 >
->Du kan använda värdet för `_links.cancel` till [avbryt din skapade fråga](#cancel-a-query).
+>Du kan använda värdet `_links.cancel` för att [avbryta den skapade frågan](#cancel-a-query).
 
 ### Hämta en fråga via ID
 
-Du kan hämta detaljerad information om en viss fråga genom att göra en GET-förfrågan till `/queries` slutpunkt och som tillhandahåller frågans `id` värdet i begärandesökvägen.
+Du kan hämta detaljerad information om en viss fråga genom att göra en GET-förfrågan till `/queries`-slutpunkten och ange frågans `id`-värde i begärandesökvägen.
 
 **API-format**
 
@@ -237,7 +237,7 @@ GET /queries/{QUERY_ID}
 
 | Egenskap | Beskrivning |
 | -------- | ----------- |
-| `{QUERY_ID}` | The `id` värdet för frågan som du vill hämta. |
+| `{QUERY_ID}` | Värdet `id` för frågan som du vill hämta. |
 
 **Begäran**
 
@@ -294,11 +294,11 @@ Ett lyckat svar returnerar HTTP-status 200 med detaljerad information om den ang
 
 >[!NOTE]
 >
->Du kan använda värdet för `_links.cancel` till [avbryt din skapade fråga](#cancel-a-query).
+>Du kan använda värdet `_links.cancel` för att [avbryta den skapade frågan](#cancel-a-query).
 
 ### Avbryt eller mjuka borttagningar av en fråga
 
-Du kan begära att en viss fråga avbryts eller tas bort på skärmen genom att göra en PATCH-förfrågan till `/queries` slutpunkt och som tillhandahåller frågans `id` värdet i begärandesökvägen.
+Du kan begära att få ta bort eller avbryta en angiven fråga genom att göra en PATCH-begäran till `/queries`-slutpunkten och ange frågans `id`-värde i sökvägen för begäran.
 
 **API-format**
 
@@ -308,7 +308,7 @@ PATCH /queries/{QUERY_ID}
 
 | Parameter | Beskrivning |
 | -------- | ----------- |
-| `{QUERY_ID}` | The `id` värdet för frågan som du vill utföra åtgärden på. |
+| `{QUERY_ID}` | Värdet `id` för frågan som du vill utföra åtgärden på. |
 
 
 **Begäran**

@@ -11,7 +11,7 @@ ht-degree: 0%
 
 # Konfigurera SDK-taggtillägget för webben
 
-The [!DNL Web SDK] -taggtillägget skickar data till Adobe Experience Cloud från webbegenskaper via Experience Platform Edge Network.
+Taggtillägget [!DNL Web SDK] skickar data till Adobe Experience Cloud från webbegenskaper via Experience Platform Edge Network.
 
 Tillägget gör att ni kan strömma data till plattformen, synkronisera identiteter, bearbeta kundens medgivandesignaler och automatiskt samla in kontextdata.
 
@@ -19,15 +19,15 @@ I det här dokumentet förklaras hur du konfigurerar taggtillägget i tagggräns
 
 ## Installera SDK-taggtillägget för webben {#install}
 
-För Web SDK-taggtillägget krävs en egenskap som ska installeras på. Om du inte redan har gjort det läser du i dokumentationen om [skapa en taggegenskap](https://experienceleague.adobe.com/docs/platform-learn/implement-in-websites/configure-tags/create-a-property.html).
+För Web SDK-taggtillägget krävs en egenskap som ska installeras på. Om du inte redan har gjort det läser du dokumentationen om att [skapa en taggegenskap](https://experienceleague.adobe.com/docs/platform-learn/implement-in-websites/configure-tags/create-a-property.html).
 
-När du har skapat en egenskap öppnar du den och väljer **[!UICONTROL Extensions]** till vänster.
+När du har skapat en egenskap öppnar du den och väljer fliken **[!UICONTROL Extensions]** i det vänstra fältet.
 
-Klicka på fliken **[!UICONTROL Catalog]**.  I listan med tillgängliga tillägg hittar du [!DNL Web SDK] tillägg och markera **[!UICONTROL Install]**.
+Klicka på fliken **[!UICONTROL Catalog]**.  Leta reda på tillägget [!DNL Web SDK] i listan över tillgängliga tillägg och välj **[!UICONTROL Install]**.
 
-![Bild som visar användargränssnittet för taggar med tillägget Web SDK markerat](assets/web-sdk-install.png)
+![Bild som visar användargränssnittet för taggar med Web SDK-tillägget markerat](assets/web-sdk-install.png)
 
-Efter markering **[!UICONTROL Install]** måste du konfigurera tillägget för Web SDK-taggen och spara konfigurationen.
+När du har valt **[!UICONTROL Install]** måste du konfigurera Web SDK-taggtillägget och spara konfigurationen.
 
 >[!NOTE]
 >
@@ -39,9 +39,9 @@ Konfigurationsalternativen högst upp på sidan anger för Adobe Experience Plat
 
 ![Bild som visar de allmänna inställningarna för Web SDK-taggtillägget i tagggränssnittet](assets/web-sdk-ext-general.png)
 
-* **[!UICONTROL Name]**: Adobe Experience Platform Web SDK-tillägget stöder flera instanser på sidan. Namnet används för att skicka data till flera organisationer med en taggkonfiguration. Förekomstnamnet är som standard `alloy`. Du kan dock ändra instansnamnet till ett giltigt JavaScript-objektnamn.
+* **[!UICONTROL Name]**: Adobe Experience Platform Web SDK-tillägget stöder flera instanser på sidan. Namnet används för att skicka data till flera organisationer med en taggkonfiguration. Instansnamnet är som standard `alloy`. Du kan dock ändra instansnamnet till ett giltigt JavaScript-objektnamn.
 * **[!UICONTROL IMS organization ID]**: ID:t för organisationen som du vill att data ska skickas till på Adobe. För det mesta använder du standardvärdet som fylls i automatiskt. När du har flera instanser på sidan fyller du i det här fältet med värdet för den andra organisationen som du vill skicka data till.
-* **[!UICONTROL Edge domain]**: Domänen som tillägget skickar och tar emot data från. Adobe rekommenderar att du använder en CNAME (1st-party domain) för det här tillägget. Standarddomänen från tredje part fungerar för utvecklingsmiljöer men är inte lämplig för produktionsmiljöer. Instruktioner om hur du konfigurerar en CNAME från en förstahandsleverantör finns i listan [här](https://experienceleague.adobe.com/docs/core-services/interface/ec-cookies/cookies-first-party.html).
+* **[!UICONTROL Edge domain]**: Domänen som tillägget skickar och tar emot data från. Adobe rekommenderar att du använder en CNAME (1st-party domain) för det här tillägget. Standarddomänen från tredje part fungerar för utvecklingsmiljöer men är inte lämplig för produktionsmiljöer. Instruktioner om hur du konfigurerar en CNAME från en första part visas [här](https://experienceleague.adobe.com/docs/core-services/interface/ec-cookies/cookies-first-party.html).
 
 ## Konfigurera inställningar för dataström {#datastreams}
 
@@ -49,7 +49,7 @@ I det här avsnittet kan du välja de datastreams som ska användas för var och
 
 När en begäran skickas till Edge Network används ett datastream-ID för att referera till konfigurationen på serversidan. Du kan uppdatera konfigurationen utan att behöva göra kodändringar på webbplatsen.
 
-Se guiden på [datastreams](../../../../datastreams/overview.md) för att lära dig hur du konfigurerar ett datastream.
+Mer information om hur du konfigurerar ett datastream finns i guiden för [datastreams](../../../../datastreams/overview.md).
 
 Du kan antingen välja ett datastream från de tillgängliga listrutorna eller välja **[!UICONTROL Enter values]** och ange ett anpassat datastream-ID för varje miljö.
 
@@ -72,7 +72,7 @@ Standardnivån för samtycke sparas inte i användarprofilen.
 
 >[!TIP]
 >
->Använd **[!UICONTROL Out]** eller **[!UICONTROL Pending]** om du kräver uttryckligt användargodkännande för din affärsverksamhet.
+>Använd **[!UICONTROL Out]** eller **[!UICONTROL Pending]** om du kräver uttryckligt användargodkännande för dina affärsåtgärder.
 
 ## Konfigurera identitetsinställningar {#identity}
 
@@ -80,20 +80,20 @@ I det här avsnittet kan du definiera hur Web SDK ska fungera när det gäller h
 
 ![Bild som visar identitetsinställningarna för Web SDK-taggtillägget i tagggränssnittet](assets/web-sdk-ext-identity.png)
 
-* **[!UICONTROL Migrate ECID from VisitorAPI]**: Det här alternativet är aktiverat som standard. När den här funktionen är aktiverad kan SDK läsa `AMCV` och `s_ecid` cookies och ange `AMCV` cookie används av [!DNL Visitor.js]. Den här funktionen är viktig vid migrering till Web SDK, eftersom vissa sidor fortfarande använder [!DNL Visitor.js]. Med det här alternativet kan SDK fortsätta att använda samma [!DNL ECID] så att användare inte identifieras som två separata användare.
+* **[!UICONTROL Migrate ECID from VisitorAPI]**: Det här alternativet är aktiverat som standard. När den här funktionen är aktiverad kan SDK läsa cookies för `AMCV` och `s_ecid` och ange den cookie för `AMCV` som används av [!DNL Visitor.js]. Den här funktionen är viktig vid migrering till Web SDK, eftersom vissa sidor fortfarande använder [!DNL Visitor.js]. Med det här alternativet kan SDK fortsätta att använda samma [!DNL ECID] så att användare inte identifieras som två separata användare.
 * **[!UICONTROL Use third-party cookies]**: När det här alternativet är aktiverat försöker Web SDK lagra en användaridentifierare i en cookie från tredje part. Om det lyckas identifieras användaren som en enskild användare när de navigerar mellan flera domäner, i stället för att identifieras som en separat användare på varje domän. Om det här alternativet är aktiverat kanske SDK fortfarande inte kan lagra användaridentifieraren i en tredjeparts-cookie om webbläsaren inte stöder cookies från tredje part eller har konfigurerats av användaren så att cookies från tredje part inte tillåts. I det här fallet lagrar SDK bara identifieraren i förstahandsdomänen.
 
   >[!IMPORTANT]
-  >>Cookies från tredje part är inte kompatibla med [enhets-ID för första part](../../../../web-sdk/identity/first-party-device-ids.md) i Web SDK.
+  >>Cookies från tredje part är inte kompatibla med funktionen [för första parts enhets-ID](../../../../web-sdk/identity/first-party-device-ids.md) i Web SDK.
 Du kan antingen använda enhets-ID:n från en annan leverantör eller använda cookies från tredje part, men du kan inte använda båda funktionerna samtidigt.
   >
 ## Konfigurera personaliseringsinställningar {#personalization}
 
 I det här avsnittet kan du konfigurera hur du vill dölja vissa delar av en sida medan anpassat innehåll läses in. Detta garanterar att besökarna bara ser den personaliserade sidan.
 
-![Bild som visar anpassningsinställningarna för Web SDK-taggtillägget i tagggränssnittet](assets/web-sdk-ext-personalization.png)
+![Bild som visar personaliseringsinställningarna för Web SDK-taggtillägget i tagggränssnittet](assets/web-sdk-ext-personalization.png)
 
-* **[!UICONTROL Migrate Target from at.js to the Web SDK]**: Använd det här alternativet för att aktivera [!DNL Web SDK] läsa och skriva `mbox` och `mboxEdgeCluster` cookies som används av at.js `1.x` eller `2.x` bibliotek. Detta hjälper dig att behålla besökarprofilen när du går från en sida där Web SDK används till en sida där at.js används `1.x` eller `2.x` bibliotek och vice versa.
+* **[!UICONTROL Migrate Target from at.js to the Web SDK]**: Använd det här alternativet om du vill att [!DNL Web SDK] ska kunna läsa och skriva de gamla `mbox` och `mboxEdgeCluster` cookies som används av at.js `1.x` - eller `2.x`-bibliotek. Detta hjälper dig att behålla besökarprofilen när du flyttar från en sida där Web SDK används till en sida där at.js `1.x`- eller `2.x`-bibliotek används och vice versa.
 
 ### Dölja stil {#prehiding-style}
 
@@ -103,28 +103,28 @@ Med den fördolda formatredigeraren kan du definiera anpassade CSS-regler för a
 
 Det fördolda fragmentet är användbart när Web SDK-biblioteket läses in asynkront. För att undvika flimmer rekommenderar vi att du döljer innehållet innan Web SDK-biblioteket har lästs in.
 
-Om du vill använda det fördolda fragmentet kopierar och klistrar du in det inuti `<head>` element på sidan.
+Om du vill använda det fördolda fragmentet kopierar och klistrar du in det inuti `<head>`-elementet på sidan.
 
 >[!IMPORTANT]
 >
-När du använder det fördolda fragmentet bör du använda samma [!DNL CSS] den som används av [fördölja stil](#prehiding-style).
+När du använder det fördolda fragmentet rekommenderar Adobe att du använder samma [!DNL CSS]-regel som den som används i [fördöljningsformatet](#prehiding-style).
 
 ## Konfigurera inställningar för datainsamling {#data-collection}
 
-Hantera konfigurationsinställningar för datainsamling. Liknande inställningar i JavaScript-biblioteket finns i [`configure`](/help/web-sdk/commands/configure/overview.md) -kommando.
+Hantera konfigurationsinställningar för datainsamling. Liknande inställningar i JavaScript-biblioteket är tillgängliga med kommandot [`configure`](/help/web-sdk/commands/configure/overview.md).
 
 ![Bild som visar inställningarna för datainsamling i Web SDK-taggtillägget i tagggränssnittet.](assets/web-sdk-ext-collection.png)
 
-* **[!UICONTROL On before event send callback]**: En callback-funktion som utvärderar och ändrar nyttolasten som skickas till Adobe. Använd `content` -variabeln i callback-funktionen för att ändra nyttolasten. Det här återanropet motsvarar taggen [`onBeforeEventSend`](/help/web-sdk/commands/configure/onbeforeeventsend.md) i JavaScript bibliotek.
-* **[!UICONTROL Collect internal link clicks]**: En kryssruta som aktiverar insamling av länkspårningsdata internt till din webbplats eller egenskap. När du markerar den här kryssrutan visas alternativ för händelsegruppering:
+* **[!UICONTROL On before event send callback]**: En callback-funktion som utvärderar och ändrar nyttolasten som skickas till Adobe. Använd variabeln `content` i callback-funktionen för att ändra nyttolasten. Det här återanropet motsvarar taggen [`onBeforeEventSend`](/help/web-sdk/commands/configure/onbeforeeventsend.md) i JavaScript-biblioteket.
+* **[!UICONTROL Collect internal link clicks]**: En kryssruta som aktiverar insamling av länkspårningsdata som är interna för din webbplats eller egenskap. När du markerar den här kryssrutan visas alternativ för händelsegruppering:
    * **[!UICONTROL No event grouping]**: Länkspårningsdata skickas till Adobe i olika händelser. Länkklickningar som skickas i olika händelser kan öka den avtalsenliga användningen av data som skickas till Adobe Experience Platform.
-   * **[!UICONTROL Event grouping using session storage]**: Lagra länkspårningsdata i sessionslager fram till nästa sidhändelse. På följande sida skickas data för den lagrade länkspårningen och sidvisningsdata till Adobe samtidigt. Adobe rekommenderar att den här inställningen aktiveras när interna länkar spåras.
+   * **[!UICONTROL Event grouping using session storage]**: Lagra länkspårningsdata i sessionslagring tills nästa sidhändelse. På följande sida skickas data för den lagrade länkspårningen och sidvisningsdata till Adobe samtidigt. Adobe rekommenderar att den här inställningen aktiveras när interna länkar spåras.
    * **[!UICONTROL Event grouping using local object]**: Lagra länkspårningsdata i ett lokalt objekt fram till nästa sidhändelse. Om en besökare navigerar till en ny sida, försvinner länkspårningsdata. Den här inställningen är mest användbar för enkelsidiga program.
 * **[!UICONTROL Collect external link clicks]**: En kryssruta som aktiverar samlingen av externa länkar.
-* **[!UICONTROL Collect download link clicks]**: En kryssruta som aktiverar samlingen med nedladdningslänkar.
+* **[!UICONTROL Collect download link clicks]**: En kryssruta som aktiverar samlingen med hämtningslänkar.
 * **[!UICONTROL Download link qualifier]**: Ett reguljärt uttryck som kvalificerar en länk-URL som en nedladdningslänk.
 * **[!UICONTROL Filter click properties]**: En callback-funktion som utvärderar och ändrar klickrelaterade egenskaper före samlingen. Den här funktionen körs före [!UICONTROL On before event send callback].
-* **Kontextinställningar**: Samla in besöksinformation automatiskt, vilket fyller i specifika XDM-fält åt dig. Du kan **[!UICONTROL All default context information]** eller **[!UICONTROL Specific context information]**. Det är taggen som motsvarar [`context`](/help/web-sdk/commands/configure/context.md) i JavaScript bibliotek.
+* **Kontextinställningar**: Samla in besökarinformation automatiskt, vilket fyller i specifika XDM-fält åt dig. Välj **[!UICONTROL All default context information]** eller **[!UICONTROL Specific context information]**. Det är taggen som motsvarar [`context`](/help/web-sdk/commands/configure/context.md) i JavaScript-biblioteket.
    * **[!UICONTROL Web]**: Samlar in information om den aktuella sidan.
    * **[!UICONTROL Device]**: Samlar in information om användarens enhet.
    * **[!UICONTROL Environment]**: Samlar in information om användarens webbläsare.
@@ -133,7 +133,7 @@ Hantera konfigurationsinställningar för datainsamling. Liknande inställningar
 
 >[!TIP]
 >
-The **[!UICONTROL On before link click send]** fältet är ett föråldrat återanrop som bara är synligt för egenskaper som redan har det konfigurerat. Det är taggen som motsvarar [`onBeforeLinkClickSend`](/help/web-sdk/commands/configure/onbeforelinkclicksend.md) i JavaScript bibliotek. Använd **[!UICONTROL Filter click properties]** återanrop för att filtrera eller justera klickdata eller använda **[!UICONTROL On before event send callback]** om du vill filtrera eller justera den totala nyttolasten som skickas till Adobe. Om båda **[!UICONTROL Filter click properties]** callback och **[!UICONTROL On before link click send]** återanrop är inställda, endast **[!UICONTROL Filter click properties]** återanrop körs.
+Fältet **[!UICONTROL On before link click send]** är ett föråldrat återanrop som bara är synligt för egenskaper som redan har det konfigurerat. Det är taggen som motsvarar [`onBeforeLinkClickSend`](/help/web-sdk/commands/configure/onbeforelinkclicksend.md) i JavaScript-biblioteket. Använd motringningen **[!UICONTROL Filter click properties]** för att filtrera eller justera klickdata, eller använd **[!UICONTROL On before event send callback]** för att filtrera eller justera den totala nyttolasten som skickas till Adobe. Om både **[!UICONTROL Filter click properties]**-återanropet och **[!UICONTROL On before link click send]**-återanropet är inställda körs bara **[!UICONTROL Filter click properties]**-återanropet.
 
 ## Konfigurera inställningar för mediesamling {#media-collection}
 
@@ -147,8 +147,8 @@ De insamlade data kan innehålla information om medieuppspelningar, pauser, slut
 * **[!UICONTROL Channel]**: Namnet på den kanal där mediesamlingen sker. Exempel: `Video channel`.
 * **[!UICONTROL Player Name]**: Namnet på mediespelaren.
 * **[!UICONTROL Application Version]**: Mediespelarprogrammets version.
-* **[!UICONTROL Main ping interval]**: Fästfrekvens för huvudinnehållet, i sekunder. Standardvärdet är `10`. Värdena kan variera från `10` till `50` sekunder.  Om inget värde anges används standardvärdet när du använder [automatiskt spårade sessioner](../../../../web-sdk/commands/createmediasession.md#automatic).
-* **[!UICONTROL Ad ping interval]**: Frekvens för pingingar för annonsinnehåll, i sekunder. Standardvärdet är `10`. Värdena kan variera från `1` till `10` sekunder. Om inget värde anges används standardvärdet när du använder [automatiskt spårade sessioner](../../../../web-sdk/commands/createmediasession.md#automatic)
+* **[!UICONTROL Main ping interval]**: Frekvensen pingar för huvudinnehåll, i sekunder. Standardvärdet är `10`. Värdena kan ligga mellan `10` och `50` sekunder.  Om inget värde anges används standardvärdet när [automatiskt spårade sessioner](../../../../web-sdk/commands/createmediasession.md#automatic) används.
+* **[!UICONTROL Ad ping interval]**: Täthet för pingar för annonsinnehåll, i sekunder. Standardvärdet är `10`. Värdena kan ligga mellan `1` och `10` sekunder. Om inget värde anges används standardvärdet när [automatiskt spårade sessioner](../../../../web-sdk/commands/createmediasession.md#automatic) används
 
 ## Konfigurera åsidosättningar av dataström {#datastream-overrides}
 
@@ -158,10 +158,10 @@ Detta hjälper dig att utlösa andra datastream-beteenden än standardbeteendena
 
 Åsidosättning av dataströmskonfiguration är en tvåstegsprocess:
 
-1. Först måste du definiera åsidosättningar av dataströmskonfigurationer i [konfigurationssida för datastream](/help/datastreams/configure.md).
+1. Först måste du definiera åsidosättningar av datastream-konfigurationen på [datastreams konfigurationssida](/help/datastreams/configure.md).
 2. Sedan måste du skicka åsidosättningarna till Edge Network antingen via ett Web SDK-kommando eller via taggtillägget Web SDK.
 
-Se datastream [dokumentation om åsidosättning av konfiguration](/help/datastreams/overrides.md) om du vill ha detaljerade anvisningar om hur du åsidosätter datastream-konfigurationer.
+Mer information om hur du åsidosätter datastream-konfigurationer finns i [konfigurationen åsidosätter dokumentation](/help/datastreams/overrides.md).
 
 Som ett alternativ till att skicka åsidosättningarna via ett Web SDK-kommando kan du konfigurera åsidosättningarna på taggtilläggsskärmen som visas nedan.
 
@@ -173,6 +173,6 @@ Som ett alternativ till att skicka åsidosättningarna via ett Web SDK-kommando 
 
 ## Konfigurera avancerade inställningar
 
-Använd **[!UICONTROL Edge base path]** om du behöver ändra den grundsökväg som används för att interagera med Edge Network. Det här behöver inte uppdateras, men om du deltar i en beta eller alfa kan Adobe be dig att ändra det här fältet.
+Använd fältet **[!UICONTROL Edge base path]** om du behöver ändra grundsökvägen som används för att interagera med Edge Network. Det här behöver inte uppdateras, men om du deltar i en beta eller alfa kan Adobe be dig att ändra det här fältet.
 
 ![Bild som visar de avancerade inställningarna på tilläggssidan för Web SDK-taggen.](assets/advanced-settings.png)

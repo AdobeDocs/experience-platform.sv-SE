@@ -15,7 +15,7 @@ ht-degree: 4%
 
 # Adobe Experience Platform Use Case Playbooks {#use-case-playbooks}
 
-* Playbooks {#playbooks}
+* Spelböcker {#playbooks}
    * [Översikt](/help/use-case-playbooks/playbooks/overview.md)
    * [Kom igång](/help/use-case-playbooks/playbooks/get-started.md)
    * [Navigera till Använd fallspelningsböcker](/help/use-case-playbooks/playbooks/navigate.md)

@@ -4,24 +4,24 @@ description: Med slutpunkten /export i API:t för schemaregister kan du dela XDM
 exl-id: 1dcbfa59-af98-4db5-b6f4-f848e5bf5e81
 source-git-commit: fcd44aef026c1049ccdfe5896e6199d32b4d1114
 workflow-type: tm+mt
-source-wordcount: '410'
+source-wordcount: '406'
 ht-degree: 0%
 
 ---
 
 # Exportera slutpunkt
 
-Alla resurser i [!DNL Schema Library] finns i en viss sandlåda i Adobe Experience Platform. I vissa fall kanske du vill dela XDM-resurser (Experience Data Model) mellan sandlådor och organisationer. The `/rpc/export` slutpunkt i [!DNL Schema Registry] Med API kan du generera en exportnyttolast för alla scheman, schemafältgrupper och datatyper i [!DNL Schema Library]och sedan använda den nyttolasten för att importera resursen (och alla beroende resurser) till en målsandlåda och organisation via [`/rpc/import` slutpunkt](./import.md).
+Alla resurser i [!DNL Schema Library] finns i en specifik sandlåda i Adobe Experience Platform. I vissa fall kanske du vill dela XDM-resurser (Experience Data Model) mellan sandlådor och organisationer. Med slutpunkten `/rpc/export` i API:t [!DNL Schema Registry] kan du generera en exportnyttolast för alla scheman, schemafältgrupper och datatyper i [!DNL Schema Library] och sedan använda den nyttolasten för att importera resursen (och alla beroende resurser) till en mållandlåda och organisation via [`/rpc/import` endpoint ](./import.md).
 
 ## Komma igång
 
-The `/rpc/export` slutpunkten är en del av [[!DNL Schema Registry] API](https://www.adobe.io/experience-platform-apis/references/schema-registry/). Läs igenom [komma igång-guide](./getting-started.md) för länkar till relaterad dokumentation, en guide till hur du läser exempelanrop till API:er i det här dokumentet och viktig information om vilka huvuden som behövs för att kunna anropa ett Experience Platform-API.
+Slutpunkten `/rpc/export` är en del av [[!DNL Schema Registry] API](https://www.adobe.io/experience-platform-apis/references/schema-registry/). Innan du fortsätter bör du läsa [kom igång-guiden](./getting-started.md) för att få länkar till relaterad dokumentation, en guide till hur du läser exempelanropen för API i det här dokumentet och viktig information om vilka huvuden som krävs för att kunna anropa ett Experience Platform-API.
 
-The `/rpc/export` slutpunkten är en del av RPC-anropen (Remote Procedure Call) som stöds av [!DNL Schema Registry]. Till skillnad från andra slutpunkter i [!DNL Schema Registry] API, RPC-slutpunkter kräver inga ytterligare rubriker som `Accept` eller `Content-Type`, och använd inte `CONTAINER_ID`. Istället måste de använda `/rpc` namespace, vilket visas i API-anropen nedan.
+Slutpunkten `/rpc/export` är en del av RPC-anropen (Remote Procedure Call) som stöds av [!DNL Schema Registry]. Till skillnad från andra slutpunkter i API:t [!DNL Schema Registry] kräver RPC-slutpunkter inga ytterligare rubriker som `Accept` eller `Content-Type`, och använder inte `CONTAINER_ID`. I stället måste de använda namnutrymmet `/rpc`, vilket visas i API-anropen nedan.
 
 ## Generera en exportnyttolast för en resurs {#export}
 
-För alla befintliga scheman, fältgrupper eller datatyper i [!DNL Schema Library]kan du generera en exportnyttolast genom att göra en GET-förfrågan till `/export` slutpunkt som anger ID för resursen i sökvägen.
+För alla befintliga scheman, fältgrupper eller datatyper i [!DNL Schema Library] kan du generera en exportnyttolast genom att göra en GET-begäran till `/export`-slutpunkten, som anger ID:t för resursen i sökvägen.
 
 **API-format**
 
@@ -31,13 +31,13 @@ GET /rpc/export/{RESOURCE_ID}
 
 | Parameter | Beskrivning |
 | --- | --- |
-| `{RESOURCE_ID}` | The `meta:altId` eller URL-kodad `$id` för den XDM-resurs som du vill exportera. |
+| `{RESOURCE_ID}` | `meta:altId` eller URL-kodad `$id` för XDM-resursen som du vill exportera. |
 
 {style="table-layout:auto"}
 
 **Begäran**
 
-Följande begäran hämtar en exportnyttolast för en `Restaurant` fältgrupp.
+Följande begäran hämtar en exportnyttolast för en `Restaurant`-fältgrupp.
 
 ```shell
 curl -X GET \
@@ -51,7 +51,7 @@ curl -X GET \
 
 **Svar**
 
-Ett lyckat svar returnerar en array med objekt, som representerar mål-XDM-resursen och alla dess beroende resurser. I det här exemplet är det första objektet i arrayen ett objekt som skapats av en innehavare `Property` datatypen som `Restaurant` fältgruppen används, medan det andra objektet är `Restaurant` själva fältgruppen. Nyttolasten kan sedan användas för [importera resursen](#import) till en annan sandlåda eller organisation.
+Ett lyckat svar returnerar en array med objekt, som representerar mål-XDM-resursen och alla dess beroende resurser. I det här exemplet är det första objektet i arrayen en datatyp som skapats av en innehavare, `Property`, som används av fältgruppen `Restaurant`, medan det andra objektet är själva fältgruppen `Restaurant`. Den här nyttolasten kan sedan användas för att [importera resursen](#import) till en annan sandlåda eller organisation.
 
 Observera att alla instanser av resursens klient-ID ersätts med `<XDM_TENANTID_PLACEHOLDER>`. Detta gör att schemaregistret automatiskt kan använda rätt klient-ID för resurserna beroende på var de skickas i det efterföljande importanropet.
 
@@ -195,6 +195,6 @@ Observera att alla instanser av resursens klient-ID ersätts med `<XDM_TENANTID_
 
 ## Importera resursen {#import}
 
-När du har genererat exportnyttolasten från CSV-filen kan du skicka den nyttolasten till `/rpc/import` slutpunkt för att generera schemat.
+När du har genererat exportnyttolasten från CSV-filen kan du skicka den nyttolasten till `/rpc/import`-slutpunkten för att generera schemat.
 
-Se [importera slutpunktsguide](./import.md) om du vill ha mer information om hur du genererar scheman från exportnyttolaster.
+Mer information om hur du genererar scheman från exportnyttolaster finns i [importguiden](./import.md).

@@ -20,10 +20,10 @@ Identiteter som är relaterade till ett identitetsdiagram, oavsett namnutrymme, 
 
 Hämta alla klustermedlemmar för en enda identitet.
 
-Du kan använda det valfria `graph-type` parameter som anger identitetsdiagrammet som klustret ska hämtas från. Alternativ:
+Du kan använda den valfria parametern `graph-type` för att ange identitetsdiagrammet för att hämta klustret från. Alternativ:
 
 - Ingen - Utför ingen identitetssammanfogning.
-- Privat diagram - Utför identitetssammanfogning baserat på ditt privata identitetsdiagram. Om nej `graph-type` anges är detta standardvärde.
+- Privat diagram - Utför identitetssammanfogning baserat på ditt privata identitetsdiagram. Om `graph-type` inte anges är detta standardvärde.
 
 **API-format**
 
@@ -33,7 +33,7 @@ GET https://platform-{REGION}.adobe.io/data/core/identity/cluster/members?{PARAM
 
 **Begäran**
 
-Alternativ 1: Ange identiteten som namnutrymme (`nsId`, efter ID) och ID-värde (`id`).
+Alternativ 1: Ange identiteten som namnområde (`nsId`, efter ID) och ID-värde (`id`).
 
 ```shell
 curl -X GET \
@@ -55,7 +55,7 @@ curl -X GET \
   -H 'x-sandbox-name: {SANDBOX_NAME}'
 ```
 
-Alternativ 3: Ange identiteten som XID (`xid`). Mer information om hur du hämtar en identitets XID finns i avsnittet om det här dokumentet [hämta XID för en identitet](./list-native-id.md).
+Alternativ 3: Ange identiteten som XID (`xid`). Mer information om hur du hämtar en identitets XID finns i det här dokumentets avsnitt som handlar om [hämtning av ett XID för en identitet](./list-native-id.md).
 
 ```shell
 curl -X GET \
@@ -68,7 +68,7 @@ curl -X GET \
 
 ## Hämta associerade identiteter för flera identiteter
 
-Använd `POST` som en satmotsvarighet till `GET` metod som beskrivs ovan för att returnera identiteterna i kluster med flera identiteter.
+Använd `POST` som en gruppmotsvarighet till metoden `GET` som beskrivs ovan för att returnera identiteterna i klustren med flera identiteter.
 
 >[!NOTE]
 >
@@ -86,7 +86,7 @@ Följande begäran visar en lista med XID:n som klustermedlemmar ska hämtas fö
 
 **Stub-förfrågan**
 
-Användning av `x-uis-cst-ctx: stub` huvudet returnerar ett stötningssvar. Detta är en tillfällig lösning som underlättar utvecklingen av tidig integration medan tjänsterna är färdiga. Detta kommer att bli inaktuellt när det inte längre behövs.
+Användning av rubriken `x-uis-cst-ctx: stub` returnerar ett stötningssvar. Detta är en tillfällig lösning som underlättar utvecklingen av tidig integration medan tjänsterna är färdiga. Detta kommer att bli inaktuellt när det inte längre behövs.
 
 ```shell
 curl -X POST \
@@ -118,7 +118,7 @@ curl -X POST \
 }' | json_pp
 ```
 
-**Ring med UID**
+**Ring med UID:n**
 
 ```shell
 curl -X POST \
@@ -144,7 +144,7 @@ curl -X POST \
 
 **Svar**
 
-**Stubbed-svar**
+**&#39;Stubbed&#39;-svar**
 
 ```json
 {
@@ -242,4 +242,4 @@ curl -X POST \
 
 ## Nästa steg
 
-Gå till nästa självstudiekurs för att [lista klusterhistoriken för en identitet](./list-cluster-history.md)
+Gå till nästa självstudiekurs för att [visa klusterhistoriken för en identitet](./list-cluster-history.md)

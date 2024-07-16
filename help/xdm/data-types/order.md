@@ -11,20 +11,20 @@ ht-degree: 0%
 
 ---
 
-# [!UICONTROL Order] datatyp
+# Datatypen [!UICONTROL Order]
 
-[!UICONTROL Order] är en XDM-datatyp (Standard Experience Data Model) som beskriver den ordning som används för en produktlista.
+[!UICONTROL Order] är en XDM-datatyp (Standard Experience Data Model) som beskriver ordningen som används för en produktlista.
 
-![Ett diagram över [!UICONTROL Order] datatyp.](../images/data-types/order.png)
+![Ett diagram över datatypen [!UICONTROL Order].](../images/data-types/order.png)
 
 | Visningsnamn | Egenskap | Datatyp | Beskrivning |
 |-------------------------|-------------------------|-----------|------------------------------------------------------------------------------------------------------------------|
 | Inköps-ID | `purchaseID` | Sträng | En unik identifierare som säljaren har tilldelat detta inköp eller kontrakt. Det finns ingen garanti för att ID:t är unikt eftersom ID:t definieras av säljaren. |
 | Inköpsordernummer | `purchaseOrderNumber` | Sträng | En unik identifierare som tilldelats av köparen för detta inköp eller kontrakt. |
-| Betalningslista | `payments` | Array med [[!UICONTROL Payment Items]](./payment-item.md) | Listan över betalningar för den här ordern. Betalningarna beskrivs i [!UICONTROL Payment Items] -specifikation. |
-| Återbetalningslista | `refunds` | Array med [[!UICONTROL Refund Items]](./refund-item.md) | Listan över återbetalningar för den här ordern. Bidragen anges i [!UICONTROL Refund Items] -specifikation. |
-| Returinfo | `returns` | [[!UICONTROL Return Info]](./return.md) | RMA (Return Merchandise Authorization) har utfärdats. Returerna anges i [!UICONTROL Return Info] -specifikation. |
-| Valuta | `currencyCode` | Sträng | ISO 4217-valutakoden som används för ordersummor. Exempel: `USD` och `EUR`. Alla instanser måste matcha mönstret `^[A-Z]{3}$`. |
+| Betalningslista | `payments` | Array med [[!UICONTROL Payment Items]](./payment-item.md) | Listan över betalningar för den här ordern. Betalningar anges i specifikationen [!UICONTROL Payment Items]. |
+| Återbetalningslista | `refunds` | Array med [[!UICONTROL Refund Items]](./refund-item.md) | Listan över återbetalningar för den här ordern. Återbetalningar anges i specifikationen [!UICONTROL Refund Items]. |
+| Returinfo | `returns` | [[!UICONTROL Return Info]](./return.md) | RMA (Return Merchandise Authorization) har utfärdats. Returerna anges i specifikationen [!UICONTROL Return Info]. |
+| Valuta | `currencyCode` | Sträng | ISO 4217-valutakoden som används för ordersummor. Exempel är `USD` och `EUR`. Alla instanser måste matcha mönstret `^[A-Z]{3}$`. |
 | Momsbelopp | `taxAmount` | Nummer | Det skattebelopp som köparen betalar som en del av den slutliga betalningen. |
 | Rabattbelopp | `discountAmount` | Nummer | Skillnaden mellan normalpriset och specialpriset för hela ordern, i stället för enskilda produkter. |
 | Prissumma | `priceTotal` | Nummer | Det totala priset för den här ordern efter att alla rabatter och skatter har tillämpats. |

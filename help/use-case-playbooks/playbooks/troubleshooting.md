@@ -22,11 +22,11 @@ När du skapar en instans av en spelningsbok kan du se meddelandet nedan.
 
 ![Felsökning](/help/use-case-playbooks/assets/playbooks/troubleshooting/troubleshooting-ajo.png)
 
-Detta beror på att Journey Optimizer spelböcker skapar meddelanden för e-post-, push- och SMS-kanaler. Läs [komma igång](/help/use-case-playbooks/playbooks/get-started.md#configure-sandbox-and-channel-surfaces-in-journey-optimizer) för att konfigurera olika ytor.
+Detta beror på att Journey Optimizer spelböcker skapar meddelanden för e-post-, push- och SMS-kanaler. Läs guiden [kom igång](/help/use-case-playbooks/playbooks/get-started.md#configure-sandbox-and-channel-surfaces-in-journey-optimizer) om du vill konfigurera de olika ytorna.
 
-## Status *misslyckades* när en ny instans skapas {#status-failed}
+## Status *misslyckades* när en ny instans skapades {#status-failed}
 
-Om ett felmeddelande visas när du försöker skapa en instans kan det bero på att administratören inte har gett dig de användarbehörigheter som krävs. En spelningsbok innehåller många olika resurser och din användare behöver behörighet att skapa dessa resurser för att kunna skapa instansen av spelboken. Se [behörigheter](/help/use-case-playbooks/playbooks/get-started.md#grant-your-team-the-required-access-permissions) i den här handboken om hur du ställer in behörigheter.
+Om ett felmeddelande visas när du försöker skapa en instans kan det bero på att administratören inte har gett dig de användarbehörigheter som krävs. En spelningsbok innehåller många olika resurser och din användare behöver behörighet att skapa dessa resurser för att kunna skapa instansen av spelboken. Se avsnittet [permissions](/help/use-case-playbooks/playbooks/get-started.md#grant-your-team-the-required-access-permissions) i den här handboken om hur du ställer in behörigheter.
 
 ## Importen misslyckades {#import-failure}
 

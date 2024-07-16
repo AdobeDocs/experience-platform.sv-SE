@@ -1,33 +1,33 @@
 ---
 title: Skapa en källanslutning för SAP Commerce i användargränssnittet
-description: Lär dig hur du skapar en källanslutning för SAP Commerce med hjälp av Adobe Experience Platform-gränssnittet.
+description: Lär dig hur du skapar en källanslutning till en SAP Commerce med hjälp av Adobe Experience Platform användargränssnitt.
 badge: Beta
 exl-id: 6484e51c-77cd-4dbd-9c68-0a4e3372da33
 source-git-commit: b4334b4f73428f94f5a7e5088f98e2459afcaf3c
 workflow-type: tm+mt
-source-wordcount: '989'
-ht-degree: 1%
+source-wordcount: '944'
+ht-degree: 0%
 
 ---
 
-# Skapa en [!DNL SAP Commerce] källanslutning i användargränssnittet
+# Skapa en [!DNL SAP Commerce]-källanslutning i användargränssnittet
 
 >[!NOTE]
 >
->The [!DNL SAP Commerce] källan är i betaversion. Se [källöversikt](../../../../home.md#terms-and-conditions) om du vill ha mer information om hur du använder betamärkta källor.
+>Källan [!DNL SAP Commerce] är i betaversion. Mer information om hur du använder betatecknade källor finns i [källöversikten](../../../../home.md#terms-and-conditions).
 
-I följande självstudiekurs får du hjälp med att skapa en [!DNL SAP Commerce] källanslutning som ska hämta [[!DNL SAP] Prenumerationsfakturering](https://www.sap.com/products/financial-management/subscription-billing.html) kontakter och kunddata med Adobe Experience Platform användargränssnitt.
+I följande självstudiekurs får du hjälp med att skapa en [!DNL SAP Commerce]-källanslutning för att få [[!DNL SAP] faktureringskontakter för prenumerationer](https://www.sap.com/products/financial-management/subscription-billing.html) och kunddata med hjälp av Adobe Experience Platform användargränssnitt.
 
 ## Komma igång {#getting-started}
 
 Den här självstudiekursen kräver en fungerande förståelse av följande komponenter i Experience Platform:
 
-* [[!DNL Experience Data Model (XDM)] System](../../../../../xdm/home.md): Det standardiserade ramverk som [!DNL Experience Platform] organiserar kundupplevelsedata.
-   * [Grunderna för schemakomposition](../../../../../xdm/schema/composition.md): Lär dig mer om de grundläggande byggstenarna i XDM-scheman, inklusive viktiga principer och bästa praxis när det gäller schemakomposition.
-   * [Schemaredigeraren, genomgång](../../../../../xdm/tutorials/create-schema-ui.md): Lär dig hur du skapar anpassade scheman med hjälp av gränssnittet i Schemaredigeraren.
-* [[!DNL Real-Time Customer Profile]](../../../../../profile/home.md): Ger en enhetlig konsumentprofil i realtid baserad på aggregerade data från flera källor.
+* [[!DNL Experience Data Model (XDM)] System](../../../../../xdm/home.md): Det standardiserade ramverk som [!DNL Experience Platform] organiserar kundupplevelsedata med.
+   * [Grundläggande om schemakomposition](../../../../../xdm/schema/composition.md): Lär dig mer om grundstenarna i XDM-scheman, inklusive nyckelprinciper och bästa metoder för schemakomposition.
+   * [Schemaredigeraren, självstudiekurs](../../../../../xdm/tutorials/create-schema-ui.md): Lär dig hur du skapar anpassade scheman med hjälp av gränssnittet för Schemaredigeraren.
+* [[!DNL Real-Time Customer Profile]](../../../../../profile/home.md): Tillhandahåller en enhetlig konsumentprofil i realtid baserad på aggregerade data från flera källor.
 
-Om du redan har en giltig [!DNL SAP Commerce] kan du hoppa över resten av dokumentet och gå vidare till självstudiekursen om [konfigurera ett dataflöde](../../dataflow/ecommerce.md).
+Om du redan har ett giltigt [!DNL SAP Commerce]-konto kan du hoppa över resten av det här dokumentet och gå vidare till självstudiekursen [Konfigurera ett dataflöde](../../dataflow/ecommerce.md).
 
 ### Samla in nödvändiga inloggningsuppgifter {#gather-credentials}
 
@@ -35,16 +35,16 @@ För att kunna ansluta [!DNL SAP Commerce] till Experience Platform måste du an
 
 | Autentiseringsuppgifter | Beskrivning |
 | --- | --- |
-| Klient-ID | Värdet för `clientId` från tjänstnyckeln. |
-| Klienthemlighet | Värdet för `clientSecret` från tjänstnyckeln. |
-| Tokenslutpunkt | Värdet för `url` från tjänstnyckeln kommer den att likna `https://subscriptionbilling.authentication.eu10.hana.ondemand.com`. |
-| Län | Datacentrets plats. Regionen finns i `url` och har ett värde som liknar `eu10` eller `us10`. Till exempel om `url` är `https://eu10.revenue.cloud.sap/api` du behöver `eu10`. |
+| Klient-ID | Värdet `clientId` från tjänstnyckeln. |
+| Klienthemlighet | Värdet `clientSecret` från tjänstnyckeln. |
+| Tokenslutpunkt | Värdet `url` från tjänstnyckeln liknar värdet `https://subscriptionbilling.authentication.eu10.hana.ondemand.com`. |
+| Län | Datacentrets plats. Regionen finns i `url` och har ett värde som liknar `eu10` eller `us10`. Om `url` till exempel är `https://eu10.revenue.cloud.sap/api` behöver du `eu10`. |
 
-Mer information finns i [[!DNL SAP Commerce] dokumentation](https://help.sap.com/docs/CLOUD_TO_CASH_OD/987aec876092428f88162e438acf80d6/c5fcaf96daff4c7a8520188e4d8a1843.html).
+Mer information finns i [[!DNL SAP Commerce] dokumentationen](https://help.sap.com/docs/CLOUD_TO_CASH_OD/987aec876092428f88162e438acf80d6/c5fcaf96daff4c7a8520188e4d8a1843.html).
 
 ### Skapa ett plattformsschema {#create-platform-schema}
 
-Innan du skapar [!DNL SAP Commerce] källanslutning måste du också se till att du först skapar ett Experience Platform-schema som du kan använda för källan. Se självstudiekursen om [skapa ett plattformsschema](../../../../../xdm/schema/composition.md) om du vill ha omfattande anvisningar om hur du skapar ett schema.
+Innan du skapar en [!DNL SAP Commerce]-källanslutning måste du också se till att du först skapar ett Experience Platform-schema som kan användas för källan. I självstudiekursen [Skapa ett plattformsschema](../../../../../xdm/schema/composition.md) finns mer information om hur du skapar ett schema.
 
 Expandera följande avsnitt för att visa ett exempelschema.
 
@@ -141,29 +141,29 @@ Expandera följande avsnitt för att visa ett exempelschema.
 
 +++
 
-## Koppla samman [!DNL SAP Commerce] konto {#connect-account}
+## Anslut ditt [!DNL SAP Commerce]-konto {#connect-account}
 
-Välj **[!UICONTROL Sources]** från det vänstra navigeringsfältet för att komma åt [!UICONTROL Sources] arbetsyta. The [!UICONTROL Catalog] visas en mängd olika källor som du kan använda för att skapa ett konto.
+I plattformsgränssnittet väljer du **[!UICONTROL Sources]** i det vänstra navigeringsfältet för att komma åt arbetsytan i [!UICONTROL Sources]. På skärmen [!UICONTROL Catalog] visas en mängd olika källor som du kan använda för att skapa ett konto.
 
 Du kan välja lämplig kategori i katalogen till vänster på skärmen. Du kan också hitta den källa du vill arbeta med med med sökalternativet.
 
-Under *eCommerce* kategori, välj **[!UICONTROL SAP Commerce]** och sedan markera **[!UICONTROL Add data]**.
+Under kategorin *eCommerce* väljer du **[!UICONTROL SAP Commerce]** och sedan **[!UICONTROL Add data]**.
 
-![Skärmbild för plattformsgränssnitt för katalog med SAP Commerce-kort](../../../../images/tutorials/create/ecommerce/sap-commerce/catalog-card.png)
+![Plattformsgränssnitt, bild för katalog med SAP Commerce-kort](../../../../images/tutorials/create/ecommerce/sap-commerce/catalog-card.png)
 
-The **[!UICONTROL Connect SAP Commerce account]** visas. På den här sidan kan du antingen använda nya autentiseringsuppgifter eller befintliga.
+Sidan **[!UICONTROL Connect SAP Commerce account]** visas. På den här sidan kan du antingen använda nya autentiseringsuppgifter eller befintliga.
 
 ### Befintligt konto {#existing-account}
 
-Välj [!DNL SAP Commerce] konto som du vill skapa ett nytt dataflöde med och sedan välja **[!UICONTROL Next]** för att fortsätta.
+Om du vill använda ett befintligt konto väljer du det [!DNL SAP Commerce]-konto som du vill skapa ett nytt dataflöde med och väljer sedan **[!UICONTROL Next]** för att fortsätta.
 
-![Skärmbild för användargränssnittet för plattformen för att ansluta SAP Commerce-kontot till ett befintligt konto](../../../../images/tutorials/create/ecommerce/sap-commerce/existing.png)
+![Skärmbild för användargränssnitt för plattformen som används för att ansluta SAP Commerce-kontot till ett befintligt konto](../../../../images/tutorials/create/ecommerce/sap-commerce/existing.png)
 
 ### Nytt konto {#new-account}
 
-Om du skapar ett nytt konto väljer du **[!UICONTROL New account]** och ange sedan ett namn, en valfri beskrivning och dina uppgifter. När du är klar väljer du **[!UICONTROL Connect to source]** och tillåt sedan lite tid för att upprätta den nya anslutningen.
+Om du skapar ett nytt konto väljer du **[!UICONTROL New account]** och anger sedan ett namn, en valfri beskrivning och dina autentiseringsuppgifter. När du är klar väljer du **[!UICONTROL Connect to source]** och tillåt sedan lite tid för att upprätta den nya anslutningen.
 
-![Skärmbild av användargränssnittet för plattformen för att ansluta SAP Commerce-konto till ett nytt konto](../../../../images/tutorials/create/ecommerce/sap-commerce/new.png)
+![Skärmbild för användargränssnittet för plattformen som används för att ansluta SAP Commerce-kontot till ett nytt konto](../../../../images/tutorials/create/ecommerce/sap-commerce/new.png)
 
 ### Markera data {#select-data}
 
@@ -178,29 +178,29 @@ Slutligen måste du välja den objekttyp som du vill importera till plattformen.
 
 >[!TAB Kunder]
 
-Om du vill importera kunddata väljer du **[!UICONTROL Customers]** som objekttyp och sedan markera **[!UICONTROL Next]**.
+Om du vill importera kunddata väljer du **[!UICONTROL Customers]** som objekttyp och sedan **[!UICONTROL Next]**.
 
 ![Skärmbild för användargränssnittet för SAP Commerce som visar konfigurationen med alternativet Kunder valt](../../../../images/tutorials/create/ecommerce/sap-commerce/configuration-customers.png)
 
 >[!TAB Kontakter]
 
-Om du vill importera kontaktdata väljer du **[!UICONTROL Contacts]** som objekttyp och sedan markera **[!UICONTROL Next]**.
+Om du vill importera kontaktdata väljer du **[!UICONTROL Contacts]** som objekttyp och sedan **[!UICONTROL Next]**.
 
-![Skärmbild för användargränssnitt för plattformen för SAP Commerce som visar konfigurationen med alternativet Kontakter valt](../../../../images/tutorials/create/ecommerce/sap-commerce/configuration-contacts.png)
+![Skärmbild för användargränssnitt för plattformen för SAP Commerce som visar konfigurationen med alternativet Kontakter markerat](../../../../images/tutorials/create/ecommerce/sap-commerce/configuration-contacts.png)
 
 >[!ENDTABS]
 
 ## Nästa steg {#next-steps}
 
-Genom att följa den här självstudien har du upprättat en anslutning till [!DNL SAP Commerce] konto. Du kan nu fortsätta med nästa självstudiekurs och [konfigurera ett dataflöde för att hämta data till plattformen](../../dataflow/ecommerce.md).
+Genom att följa den här självstudiekursen har du upprättat en anslutning till ditt [!DNL SAP Commerce]-konto. Du kan nu fortsätta till nästa självstudiekurs och [konfigurera ett dataflöde för att hämta data till plattformen](../../dataflow/ecommerce.md).
 
 ## Ytterligare resurser {#additional-resources}
 
-I avsnitten nedan finns ytterligare resurser som du kan använda när du använder [!DNL SAP Commerce] källa.
+Avsnitten nedan innehåller ytterligare resurser som du kan referera till när du använder källan [!DNL SAP Commerce].
 
 ### Mappning {#mapping}
 
-Plattformen ger intelligenta rekommendationer för automatiskt mappade fält baserat på det målschema eller den datamängd du valt. Du kan justera mappningsreglerna manuellt så att de passar dina användningsfall. Beroende på dina behov kan du välja att mappa fält direkt eller använda förinställningsfunktioner för data för att omvandla källdata för att härleda beräknade eller beräknade värden. Mer information om hur du använder mappningsgränssnittet och beräkningsfälten finns i [Användargränssnittsguide för dataprep](../../../../../data-prep/ui/mapping.md).
+Plattformen ger intelligenta rekommendationer för automatiskt mappade fält baserat på det målschema eller den datamängd du valt. Du kan justera mappningsreglerna manuellt så att de passar dina användningsfall. Beroende på dina behov kan du välja att mappa fält direkt eller använda förinställningsfunktioner för data för att omvandla källdata för att härleda beräknade eller beräknade värden. Mer information om hur du använder mappningsgränssnittet och beräkningsfälten finns i [Användargränssnittshandboken för dataförinställningar](../../../../../data-prep/ui/mapping.md).
 
 Mappningskonfigurationerna för dataflödet varierar beroende på schemat och vilken objekttyp du väljer att importera.
 
@@ -208,9 +208,9 @@ Mappningskonfigurationerna för dataflödet varierar beroende på schemat och vi
 
 >[!TAB Kunder]
 
-För kunddata [!DNL SAP Commerce] använder [kunder](https://api.sap.com/api/BusinessPartner_APIs/path/GET_customers) och [kundrelationer](https://api.sap.com/api/BusinessPartner_APIs/path/GET_relationships-customer-contacts) slutpunkter för [!DNL SAP Business Partners] API för att hämta data
+För kunddata använder [!DNL SAP Commerce] slutpunkterna [kunder](https://api.sap.com/api/BusinessPartner_APIs/path/GET_customers) och [kundrelationer](https://api.sap.com/api/BusinessPartner_APIs/path/GET_relationships-customer-contacts) i [!DNL SAP Business Partners]-API:t för att hämta data
 
-Följande är ett exempel på mappningskonfigurationer för [!DNL SAP Commerce] dataflöde för kunddata:
+Följande är ett exempel på mappningskonfigurationer för [!DNL SAP Commerce]-dataflöde för kunddata:
 
 | Målfält | Beskrivning |
 | --- | --- |
@@ -232,9 +232,9 @@ Följande är ett exempel på mappningskonfigurationer för [!DNL SAP Commerce] 
 
 >[!TAB Kontakter]
 
-För kontaktdata [!DNL SAP Commerce] använder [kontakter](https://api.sap.com/api/BusinessPartner_APIs/path/GET_contacts) slutpunkt för [!DNL SAP Business Partners] API för att hämta data.
+För kontaktdata använder [!DNL SAP Commerce] [contact](https://api.sap.com/api/BusinessPartner_APIs/path/GET_contacts)-slutpunkten för [!DNL SAP Business Partners]-API:t för att hämta data.
 
-Följande är ett exempel på mappningskonfigurationer för [!DNL SAP Commerce] dataflöde för kontaktdata:
+Följande är ett exempel på mappningskonfigurationer för [!DNL SAP Commerce]-dataflöde för kontaktdata:
 
 | Målfält | Beskrivning |
 | --- | --- |

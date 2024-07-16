@@ -18,7 +18,7 @@ ht-degree: 0%
 >title="Intelligent Services - översikt"
 >abstract=""
 
-Intelligenta tjänster ger marknadsföringsanalytiker och yrkesverksamma möjlighet att utnyttja artificiell intelligens och maskininlärning i kundupplevelsefall. På så sätt kan marknadsföringsanalytiker skapa prediktioner som är specifika för ett företags behov med hjälp av konfigurationer på företagsnivå utan behov av datavetenskap. Dessutom kan marknadsförare aktivera prognoser i [!DNL Adobe Experience Cloud], [!DNL Adobe Experience Platform]och program från tredje part.
+Intelligenta tjänster ger marknadsföringsanalytiker och yrkesverksamma möjlighet att utnyttja artificiell intelligens och maskininlärning i kundupplevelsefall. På så sätt kan marknadsföringsanalytiker skapa prediktioner som är specifika för ett företags behov med hjälp av konfigurationer på företagsnivå utan behov av datavetenskap. Dessutom kan marknadsförare aktivera prognoser i [!DNL Adobe Experience Cloud]-, [!DNL Adobe Experience Platform]- och tredjepartsprogram.
 
 Följande video är utformad för att ge stöd för din förståelse av intelligenta tjänster. I den här videon förklaras ett arbetsflöde på hög nivå med exempel på hur man använder affärssystem, och dessutom beskrivs funktionerna i både Attribution AI- och kunds-AI.
 
@@ -26,7 +26,7 @@ Följande video är utformad för att ge stöd för din förståelse av intellig
 
 ## Fördelar med intelligenta tjänster
 
-Intelligenta tjänster som bygger på [!DNL Adobe Experience Platform], ger marknadsförare som ansvarar för kundupplevelsen tillgång till AI-as-service, vilket gör det enkelt för alla att förutsäga kundbeteende, mäta effekten av en kampanj eller säkerställa bättre avkastning på varje investering. Nedan anges några av fördelarna med intelligenta tjänster.
+Intelligenta tjänster, som bygger på [!DNL Adobe Experience Platform], ger marknadsförare ansvariga för kundupplevelseåtkomst till AI-as-service, vilket gör det enkelt för alla att förutse kundbeteende, mäta effekten av en kampanj eller säkerställa bättre avkastning på varje investering. Nedan anges några av fördelarna med intelligenta tjänster.
 
 ### Kostnadseffektiv snabbhet på marknaden
 
@@ -44,7 +44,7 @@ Ge marknadsförarna möjlighet att komma igång med AI/ML direkt och börja för
 
 ### Ingest
 
-Kunddata importeras och omvandlas med Experience Data Model (XDM) på [!DNL Adobe Experience Platform]. Mer information om XDM finns på [XDM - översikt](../xdm/home.md).
+Kunddata importeras och omvandlas med Experience Data Model (XDM) på [!DNL Adobe Experience Platform]. Mer information om XDM finns i [XDM-översikten](../xdm/home.md).
 
 ### Konfigurera
 
@@ -56,8 +56,8 @@ När modellerna har avslutat utbildningen och poängsättningen skrivs poängen 
 
 ### Vidta åtgärder
 
-Slutligen kan ni bestämma vilka åtgärder som ska vidtas med prognoserna, som att konsumera insikter, aktivera program i hela [!DNL Adobe Experience Cloud]och bygga anpassade kontrollpaneler.
+Slutligen kan du bestämma vilka åtgärder som ska vidtas med prognoserna, till exempel konsumtionsinsikter, aktivering av program i [!DNL Adobe Experience Cloud] och bygga anpassade instrumentpaneler.
 
 ## Nästa steg
 
-För närvarande erbjuder Intelligent Services Attribution AI och AI. Med Attribution AI kan marknadsförarna på ett intelligent sätt effektivisera marknadsföringen i olika kanaler och kampanjer. Mer information om Attribution AI finns på [Översikt över Attribution AI](./attribution-ai/overview.md). Med kundens AI kan marknadsförarna personalisera kundupplevelserna överhuvudtaget. Mer information om AI för kunder finns på [Översikt över AI för kunder](./customer-ai/overview.md).
+För närvarande erbjuder Intelligent Services Attribution AI och AI. Med Attribution AI kan marknadsförarna på ett intelligent sätt effektivisera marknadsföringen i olika kanaler och kampanjer. Mer information om Attribution AI finns i [Attribution AI overview](./attribution-ai/overview.md). Med kundens AI kan marknadsförarna personalisera kundupplevelserna överhuvudtaget. Mer information om AI för kunder finns i [Översikt över AI för kunder](./customer-ai/overview.md).

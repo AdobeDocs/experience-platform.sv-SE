@@ -11,9 +11,9 @@ ht-degree: 0%
 
 ---
 
-# [!UICONTROL Search] datatyp
+# Datatypen [!UICONTROL Search]
 
-[!UICONTROL Search] är en XDM-datatyp (Experience Data Model) som innehåller information om webbsökningsaktivitet.
+[!UICONTROL Search] är en XDM-datatyp (Standard Experience Data Model) som innehåller information om webbsökningsaktivitet.
 
 <img src="../images/data-types/search.PNG" width="500" /><br />
 
@@ -25,7 +25,7 @@ ht-degree: 0%
 | `position` | Heltal | Listans position eller rangordning på sökresultatsidan. |
 | `searchEngine` | Sträng | Sökmotorn som används av sökningen. |
 | `searchEngineID` | Sträng | Programspecifik identifierare som används för att identifiera sökmotorn. |
-| `slot` | Sträng | Det namngivna avsnittet på sidan där sökresultatet visades. Värdet för den här egenskapen måste vara lika med ett av de kända uppräkningsvärden som du definierar, till exempel `top`, `side`, eller `bottom`. |
+| `slot` | Sträng | Det namngivna avsnittet på sidan där sökresultatet visades. Värdet för den här egenskapen måste vara lika med ett av de kända enum-värden som du definierar, till exempel `top`, `side` eller `bottom`. |
 
 {style="table-layout:auto"}
 

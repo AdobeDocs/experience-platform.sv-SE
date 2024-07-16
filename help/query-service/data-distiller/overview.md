@@ -35,7 +35,7 @@ Scoping parameters are usage limits that relate to the scoping of your required 
 
 ## Guardrails
 
-Se [Skyddsutkast för frågetjänst](../guardrails.md) dokument om standardanvändningsgränser för frågetjänstdata i relation till ditt licensberättigande.
+Se [Query Service-skyddsutkast](../guardrails.md) om standardanvändningsgränser för Query Service-data i relation till ditt licenstillstånd.
 
 <!-- Update these descriptions post 23.3 release
 ## Static limits

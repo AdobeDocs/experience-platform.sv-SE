@@ -13,6 +13,6 @@ ht-degree: 0%
 
 # Källor i Real-time Customer Data Platform
 
-[!DNL Adobe Real-Time Customer Data Platform] kan du importera data från externa källor samtidigt som du får möjlighet att strukturera, etikettera och förbättra inkommande data med [!DNL Platform] tjänster. Du kan importera data från en mängd olika källor som Adobe-appar, molnbaserad lagring, tredjepartsprogramvara, CRM-system och mycket annat.
+Med [!DNL Adobe Real-Time Customer Data Platform] kan du importera data från externa källor samtidigt som du får möjlighet att strukturera, etikettera och förbättra inkommande data med hjälp av [!DNL Platform]-tjänster. Du kan importera data från en mängd olika källor som Adobe-appar, molnbaserad lagring, tredjepartsprogramvara, CRM-system och mycket annat.
 
-En mer detaljerad översikt över källor, inklusive en lista över tillgängliga källor och länkar till självstudiekurser finns i [källdokumentation](../../sources/home.md).
+En mer detaljerad översikt över källor, inklusive en lista över tillgängliga källor och länkar till självstudiekurser, finns i [källdokumentationen](../../sources/home.md).

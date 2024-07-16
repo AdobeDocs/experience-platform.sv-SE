@@ -35,13 +35,13 @@ Adobe Experience Platform har stöd för följande e-postmarknadsföringsmål:
 
 ## Anslut till ett nytt mål för e-postmarknadsföring {#connect-destination}
 
-För att kunna skicka målgrupper till e-postmarknadsföringsmål för era kampanjer måste Platform först ansluta till destinationen. Se [självstudiekurs om att skapa mål](../../ui/connect-destination.md) för detaljerad information om hur du konfigurerar ett nytt mål.
+För att kunna skicka målgrupper till e-postmarknadsföringsmål för era kampanjer måste Platform först ansluta till destinationen. Se självstudiekursen [för att skapa mål](../../ui/connect-destination.md) för mer information om hur du konfigurerar ett nytt mål.
 
 ## Bästa tillvägagångssätt när ni aktiverar målgrupper för e-postmarknadsföring {#best-practices}
 
 ### Identitetsurval {#identity}
 
-Adobe rekommenderar att du väljer en unik identifierare från [union](../../../profile/home.md#profile-fragments-and-union-schemas). Det här är fältet som dina användaridentiteter är avaktiverade i. Oftast är det här fältet e-postadressen, men det kan också vara ett lojalitetsprogram-ID eller ett telefonnummer. I tabellen nedan finns de vanligaste unika identifierarna och deras XDM-fält i schemat.
+Adobe rekommenderar att du väljer en unik identifierare från ditt [union-schema](../../../profile/home.md#profile-fragments-and-union-schemas). Det här är fältet som dina användaridentiteter är avaktiverade i. Oftast är det här fältet e-postadressen, men det kan också vara ett lojalitetsprogram-ID eller ett telefonnummer. I tabellen nedan finns de vanligaste unika identifierarna och deras XDM-fält i schemat.
 
 | Unik identifierare | XDM-fält i Unified Schema |
 |----------------- | ---------------------------|
@@ -74,7 +74,7 @@ Vissa e-postmarknadsföringsmål i katalogexportprofilerna på ett direktuppspel
 
 Andra mål exporterar filer till en molnlagringsplats. När exporten är klar måste du importera data från molnlagringsplatsen till ditt e-postmarknadsföringsmål.
 
-Följ länkarna i [e-postmarknadsföringsmål som stöds](#supported-destinations) om du vill lära dig hur du aktiverar målgrupper för varje e-postmarknadsföringsmål.
+Följ länkarna i avsnittet [e-postmarknadsföringsmål](#supported-destinations) som stöds för att lära dig hur du aktiverar målgrupper för varje e-postmarknadsföringsmål.
 
 ## Ytterligare resurser {#additional-resources}
 

@@ -1,63 +1,63 @@
 ---
-title: Skapa en källanslutning för en blandpanel i användargränssnittet
+title: Skapa en Source-anslutning med flera paneler i användargränssnittet
 description: Lär dig hur du skapar en källanslutning till en blandpanel med Adobe Experience Platform-gränssnittet.
 exl-id: 2a02f6a4-08ed-468c-8052-f5b7be82d183
 source-git-commit: e300e57df998836a8c388511b446e90499185705
 workflow-type: tm+mt
 source-wordcount: '775'
-ht-degree: 1%
+ht-degree: 0%
 
 ---
 
-# Skapa en [!DNL Mixpanel] källanslutning i användargränssnittet
+# Skapa en [!DNL Mixpanel]-källanslutning i användargränssnittet
 
-Den här självstudiekursen innehåller steg för att skapa en [!DNL Mixpanel] källanslutning med användargränssnittet i Adobe Experience Platform Platform.
+I den här självstudiekursen beskrivs hur du skapar en [!DNL Mixpanel]-källanslutning med användargränssnittet för Adobe Experience Platform Platform.
 
 ## Komma igång
 
 Den här självstudiekursen kräver en fungerande förståelse av följande komponenter i Experience Platform:
 
-* [[!DNL Experience Data Model (XDM)] System](../../../../../xdm/home.md): Det standardiserade ramverk som [!DNL Experience Platform] organiserar kundupplevelsedata.
-   * [Grunderna för schemakomposition](../../../../../xdm/schema/composition.md): Lär dig mer om de grundläggande byggstenarna i XDM-scheman, inklusive viktiga principer och bästa praxis när det gäller schemakomposition.
-   * [Schemaredigeraren, genomgång](../../../../../xdm/tutorials/create-schema-ui.md): Lär dig hur du skapar anpassade scheman med hjälp av gränssnittet i Schemaredigeraren.
-* [[!DNL Real-Time Customer Profile]](../../../../../profile/home.md): Ger en enhetlig konsumentprofil i realtid baserad på aggregerade data från flera källor.
+* [[!DNL Experience Data Model (XDM)] System](../../../../../xdm/home.md): Det standardiserade ramverk som [!DNL Experience Platform] organiserar kundupplevelsedata med.
+   * [Grundläggande om schemakomposition](../../../../../xdm/schema/composition.md): Lär dig mer om grundstenarna i XDM-scheman, inklusive nyckelprinciper och bästa metoder för schemakomposition.
+   * [Schemaredigeraren, självstudiekurs](../../../../../xdm/tutorials/create-schema-ui.md): Lär dig hur du skapar anpassade scheman med hjälp av gränssnittet för Schemaredigeraren.
+* [[!DNL Real-Time Customer Profile]](../../../../../profile/home.md): Tillhandahåller en enhetlig konsumentprofil i realtid baserad på aggregerade data från flera källor.
 
 ### Samla in nödvändiga inloggningsuppgifter
 
-För att kunna ansluta [!DNL Mixpanel] till Platform måste du ange värden för följande anslutningsegenskaper:
+För att kunna ansluta [!DNL Mixpanel] till plattformen måste du ange värden för följande anslutningsegenskaper:
 
 | Autentiseringsuppgifter | Beskrivning | Exempel |
 | --- | --- | --- |
-| Användarnamn | Användarnamnet för tjänstkontot som motsvarar ditt [!DNL Mixpanel] konto. Se [[!DNL Mixpanel] dokumentation för tjänstkonton](https://developer.mixpanel.com/reference/service-accounts#authenticating-with-a-service-account) för mer information. | `Test8.6d4ee7.mp-service-account` |
-| Lösenord | Lösenordet för tjänstkontot som motsvarar ditt [!DNL Mixpanel] konto. | `dLlidiKHpCZtJhQDyN2RECKudMeTItX1` |
-| Projekt-ID | Dina [!DNL Mixpanel] projekt-ID. Detta ID krävs för att skapa en källanslutning. Se [[!DNL Mixpanel] dokumentation för projektinställningar](https://help.mixpanel.com/hc/en-us/articles/115004490503-Project-Settings) och [[!DNL Mixpanel] guide för att skapa och hantera projekt](https://help.mixpanel.com/hc/en-us/articles/115004505106-Create-and-Manage-Projects) för mer information. | `2384945` |
-| Tidszon | Den tidszon som motsvarar din [!DNL Mixpanel] projekt. Tidszon krävs för att skapa en källanslutning. Se [Dokumentation för projektinställningar på blandpanelen](https://help.mixpanel.com/hc/en-us/articles/115004490503-Project-Settings) för mer information. | `Pacific Standard Time` |
+| Användarnamn | Användarnamnet för tjänstkontot som motsvarar ditt [!DNL Mixpanel]-konto. Mer information finns i [[!DNL Mixpanel] tjänstkontodokumentationen](https://developer.mixpanel.com/reference/service-accounts#authenticating-with-a-service-account). | `Test8.6d4ee7.mp-service-account` |
+| Lösenord | Lösenordet för tjänstkontot som motsvarar ditt [!DNL Mixpanel]-konto. | `dLlidiKHpCZtJhQDyN2RECKudMeTItX1` |
+| Projekt-ID | Ditt projekt-ID för [!DNL Mixpanel]. Detta ID krävs för att skapa en källanslutning. Mer information finns i [[!DNL Mixpanel] projektinställningsdokumentationen](https://help.mixpanel.com/hc/en-us/articles/115004490503-Project-Settings) och [[!DNL Mixpanel] handboken om att skapa och hantera projekt](https://help.mixpanel.com/hc/en-us/articles/115004505106-Create-and-Manage-Projects) . | `2384945` |
+| Tidszon | Tidszonen som motsvarar ditt [!DNL Mixpanel]-projekt. Tidszon krävs för att skapa en källanslutning. Mer information finns i [dokumentationen för projektinställningar på blandpanelen](https://help.mixpanel.com/hc/en-us/articles/115004490503-Project-Settings). | `Pacific Standard Time` |
 
-Mer information om hur du autentiserar [!DNL Mixpanel] -källa, se [[!DNL Mixpanel] källöversikt](../../../../connectors/analytics/mixpanel.md).
+Mer information om hur du autentiserar [!DNL Mixpanel]-källan finns i [[!DNL Mixpanel] källöversikten](../../../../connectors/analytics/mixpanel.md).
 
-## Koppla samman [!DNL Mixpanel] konto
+## Anslut ditt [!DNL Mixpanel]-konto
 
-Välj **[!UICONTROL Sources]** från det vänstra navigeringsfältet för att komma åt [!UICONTROL Sources] arbetsyta. The [!UICONTROL Catalog] visas en mängd olika källor som du kan använda för att skapa ett konto.
+I plattformsgränssnittet väljer du **[!UICONTROL Sources]** i det vänstra navigeringsfältet för att komma åt arbetsytan i [!UICONTROL Sources]. På skärmen [!UICONTROL Catalog] visas en mängd olika källor som du kan använda för att skapa ett konto.
 
 Du kan välja lämplig kategori i katalogen till vänster på skärmen. Du kan också hitta den källa du vill arbeta med med med sökalternativet.
 
-Under *Analyser* kategori, välj [!DNL Mixpanel]och sedan markera **[!UICONTROL Add data]**.
+Under kategorin *Analyser* väljer du [!DNL Mixpanel] och sedan **[!UICONTROL Add data]**.
 
 ![katalog](../../../../images/tutorials/create/mixpanel-export-events/catalog.png)
 
-The **[!UICONTROL Connect Mixpanel account]** visas. På den här sidan kan du antingen använda nya autentiseringsuppgifter eller befintliga.
+Sidan **[!UICONTROL Connect Mixpanel account]** visas. På den här sidan kan du antingen använda nya autentiseringsuppgifter eller befintliga.
 
 ### Befintligt konto
 
-Välj [!DNL Mixpanel] konto som du vill skapa ett nytt dataflöde med och sedan välja **[!UICONTROL Next]** för att fortsätta.
+Om du vill använda ett befintligt konto väljer du det [!DNL Mixpanel]-konto som du vill skapa ett nytt dataflöde med och väljer sedan **[!UICONTROL Next]** för att fortsätta.
 
 ![befintlig](../../../../images/tutorials/create/mixpanel-export-events/existing.png)
 
 ### Nytt konto
 
-Om du skapar ett nytt konto väljer du **[!UICONTROL New account]** och ange sedan ett namn, en valfri beskrivning och dina uppgifter. När du är klar väljer du **[!UICONTROL Connect to source]** och tillåt sedan lite tid för att upprätta den nya anslutningen.
+Om du skapar ett nytt konto väljer du **[!UICONTROL New account]** och anger sedan ett namn, en valfri beskrivning och dina autentiseringsuppgifter. När du är klar väljer du **[!UICONTROL Connect to source]** och tillåt sedan lite tid för att upprätta den nya anslutningen.
 
-![new](../../../../images/tutorials/create/mixpanel-export-events/new.png)
+![ny](../../../../images/tutorials/create/mixpanel-export-events/new.png)
 
 ## Välj projekt-ID och tidszon {#project-id-and-timezone}
 
@@ -69,7 +69,7 @@ Om du skapar ett nytt konto väljer du **[!UICONTROL New account]** och ange sed
 
 När källan har autentiserats anger du ditt projekt-ID och tidszon och väljer sedan **[!UICONTROL Select]**.
 
-Den tidszon som du anger innan du importerar [!DNL Mixpanel] data till plattformen måste vara samma som [!DNL Mixpanel] inställning för tidszon för profil. Ändringar i tidszonen för dina data kommer endast att tillämpas på nya händelser och gamla händelser kommer att finnas kvar i den tidszon som du angav tidigare. [!DNL Mixpanel] har plats för sommartid och anpassar tidsstämpeln för ditt intag på lämpligt sätt. Mer information om hur tidszoner påverkar dina data finns i [!DNL Mixpanel] stödlinje på [hantera tidszoner för projekt](https://help.mixpanel.com/hc/en-us/articles/115004547203-Manage-Timezones-for-Projects-in-Mixpanel).
+Tidszonen som du anger innan dina [!DNL Mixpanel]-data hämtas till plattformen måste vara samma som tidszonsinställningen för din [!DNL Mixpanel]-profil. Ändringar i tidszonen för dina data kommer endast att tillämpas på nya händelser och gamla händelser kommer att finnas kvar i den tidszon som du angav tidigare. [!DNL Mixpanel] har plats för sommartid och kommer att justera din tidsstämpel för inmatning korrekt. Mer information om hur tidszoner påverkar dina data finns i [!DNL Mixpanel]-guiden om att [hantera tidszoner för projekt](https://help.mixpanel.com/hc/en-us/articles/115004547203-Manage-Timezones-for-Projects-in-Mixpanel).
 
 Efter en liten stund uppdateras rätt gränssnitt till en förhandsgranskningspanel, vilket gör att du kan kontrollera schemat innan du skapar ett dataflöde. När du är klar väljer du **[!UICONTROL Next]**.
 
@@ -77,17 +77,17 @@ Efter en liten stund uppdateras rätt gränssnitt till en förhandsgranskningspa
 
 ## Nästa steg
 
-Genom att följa den här självstudien har du upprättat en anslutning till [!DNL Mixpanel] konto. Du kan nu fortsätta med nästa självstudiekurs och [konfigurera ett dataflöde för att hämta analysdata till plattformen](../../dataflow/analytics.md).
+Genom att följa den här självstudiekursen har du upprättat en anslutning till ditt [!DNL Mixpanel]-konto. Du kan nu fortsätta med nästa självstudie och [konfigurera ett dataflöde för att hämta analysdata till plattformen](../../dataflow/analytics.md).
 
 ## Ytterligare resurser {#additional-resources}
 
-Avsnitten nedan innehåller ytterligare resurser som du kan använda när du använder [!DNL Mixpanel] källa.
+Avsnitten nedan innehåller ytterligare resurser som du kan referera till när du använder källan [!DNL Mixpanel].
 
 ### Validering {#validation}
 
-Följande instruktioner kan du utföra för att verifiera att du har anslutit dina [!DNL Mixpanel] källa och [!DNL Mixpanel] händelser hämtas till Platform.
+I följande beskrivs de steg du kan utföra för att verifiera att du har anslutit källan till [!DNL Mixpanel] och att [!DNL Mixpanel]-händelser importeras till plattformen.
 
-Välj **[!UICONTROL Datasets]** från det vänstra navigeringsfältet för att komma åt [!UICONTROL Datasets] arbetsyta. The [!UICONTROL Dataset Activity] visas information om körningar.
+I plattformsgränssnittet väljer du **[!UICONTROL Datasets]** i det vänstra navigeringsfältet för att komma åt arbetsytan i [!UICONTROL Datasets]. Skärmen [!UICONTROL Dataset Activity] visar information om körningar.
 
 ![datauppsättningsaktivitet](../../../../images/tutorials/create/mixpanel-export-events/dataset-activity.png)
 
@@ -95,11 +95,11 @@ Välj sedan det dataflödes-ID för dataflödet som du vill visa för att se spe
 
 ![dataflödesövervakning](../../../../images/tutorials/create/mixpanel-export-events/dataflow-monitoring.png)
 
-Äntligen väljer du **[!UICONTROL Preview dataset]** för att visa de data som har importerats.
+Välj slutligen **[!UICONTROL Preview dataset]** för att visa de data som har importerats.
 
 ![preview-dataset](../../../../images/tutorials/create/mixpanel-export-events/preview-dataset.png)
 
-Du kan verifiera dessa data mot data på [!DNL Mixpanel] > [!DNL Events] sida. Se [[!DNL Mixpanel] dokument om händelser](https://help.mixpanel.com/hc/en-us/articles/4402837164948-Events-formerly-Live-View-) för mer information.
+Du kan verifiera dessa data mot data på sidan [!DNL Mixpanel] > [!DNL Events]. Mer information finns i [[!DNL Mixpanel] dokumentet om händelser](https://help.mixpanel.com/hc/en-us/articles/4402837164948-Events-formerly-Live-View-).
 
 ![mixpanel-events](../../../../images/tutorials/create/mixpanel-export-events/mixpanel-events.png)
 
@@ -109,10 +109,10 @@ Tabellen nedan visar vilka mappningar som stöds och som måste konfigureras fö
 
 >[!TIP]
 >
->Se [Event Export API > Download](https://developer.mixpanel.com/reference/raw-event-export) om du vill ha mer information om API:t.
+>Mer information om API finns i [API för händelseexport > Hämta](https://developer.mixpanel.com/reference/raw-event-export).
 
 
-| Källa | Typ |
+| Source | Typ |
 |---|---|
 | `distinct_id` | string |
 | `event_name` | string |
@@ -128,4 +128,4 @@ Tabellen nedan visar vilka mappningar som stöds och som måste konfigureras fö
 
 ### Gränser {#limits}
 
-* Du har högst 100 samtidiga frågor och 60 frågor per timme enligt den [Gränser för export av API-hastighet](https://help.mixpanel.com/hc/en-us/articles/115004602563-Rate-Limits-for-API-Endpoints).
+* Du har högst 100 samtidiga frågor och 60 frågor per timme enligt vad som anges i [Gränser för export av API-hastighet](https://help.mixpanel.com/hc/en-us/articles/115004602563-Rate-Limits-for-API-Endpoints).

@@ -9,15 +9,15 @@ ht-degree: 0%
 
 ---
 
-# [!UICONTROL Policy] class
+# klassen [!UICONTROL Policy]
 
-I Experience Data Model (XDM) är [!UICONTROL Policy] klassen hämtar den minsta uppsättning egenskaper som definierar en försäkringsprofil.
+I Experience Data Model (XDM) hämtar klassen [!UICONTROL Policy] den minsta uppsättningen egenskaper som definierar en försäkringsprofil.
 
 ![](../images/classes/policy.png)
 
 | Egenskap | Datatyp | Beskrivning |
 | --- | --- | --- |
-| `assignedBeneficiary` | Array med [[!UICONTROL Person]](../data-types/person.md) datatyper | Fångar den eller de mottagare som tilldelats policyn. |
+| `assignedBeneficiary` | Matris med [[!UICONTROL Person]](../data-types/person.md) datatyper | Fångar den eller de mottagare som tilldelats policyn. |
 | `benefitAmount` | [[!UICONTROL Currency]](../data-types/currency.md) | Det belopp som ska betalas enligt policyvillkoren. |
 | `location` | [[!UICONTROL Postal address]](../data-types/postal-address.md) | Den plats där försäkringsbrevet utfärdas. |
 | `owner` | [!UICONTROL Object] | Hämtar profilinnehavarens profilinformation. |
@@ -27,7 +27,7 @@ I Experience Data Model (XDM) är [!UICONTROL Policy] klassen hämtar den minsta
 | `owner.mobilePhone` | [[!UICONTROL Phone number]](../data-types/phone-number.md) | Ägarens mobiltelefonnummer. |
 | `owner.personalEmail` | [[!UICONTROL Email address]](../data-types/email-address.md) | Ägarens personliga e-postadress. |
 | `ID` | [!UICONTROL String] | En identifierare för försäkringsskyddet. |
-| `_id` | [!UICONTROL String] | En unik systemgenererad strängidentifierare för posten. Det här fältet används för att spåra en enskild posts unika karaktär, förhindra dubblering av data och för att söka efter posten i underordnade tjänster.<br><br>Eftersom det här fältet genereras av systemet, anges inget explicit värde vid datainmatning. Du kan dock välja att ange egna unika ID-värden om du vill. |
+| `_id` | [!UICONTROL String] | En unik systemgenererad strängidentifierare för posten. Det här fältet används för att spåra en enskild posts unika karaktär, förhindra dubblering av data och för att söka efter posten i underordnade tjänster.<br><br>Eftersom det här fältet är systemgenererat anges inget explicit värde vid datainmatning. Du kan dock välja att ange egna unika ID-värden om du vill. |
 | `endDate` | [!UICONTROL DateTime] | Det datum då försäkringsskyddet upphör (eller upphör). |
 | `hasAssignedBeneficiary` | [!UICONTROL Boolean] | Anger om policyn har tilldelats en mottagare. |
 | `name` | [!UICONTROL String] | Namnet på försäkringsavtalet. |

@@ -5,7 +5,7 @@ description: Adobe Experience Platform är det mest kraftfulla, flexibla och öp
 exl-id: 1b74aede-55df-4e81-8360-e49d1932b373
 source-git-commit: 9c46f2eeb563009da52acb629796ee9992136343
 workflow-type: tm+mt
-source-wordcount: '244'
+source-wordcount: '248'
 ht-degree: 3%
 
 ---
@@ -16,11 +16,11 @@ Adobe Experience Platform användargränssnitt (UI) har stöd för flera webblä
 
 ## Webbläsarstöd
 
-Plattformsgränssnittet är utformat för att fungera optimalt i **senaste versionerna** av Google Chrome, Safari, Firefox och Microsoft Edge. Du kan ha problem med att använda vissa funktioner i äldre versioner av webbläsare.
+Plattformsgränssnittet är utformat för att fungera optimalt i de **senaste versionerna** av Google Chrome, Safari, Firefox och Microsoft Edge. Du kan ha problem med att använda vissa funktioner i äldre versioner av webbläsare.
 
 | Operativsystem | Webbläsare som stöds |
 |---|---|
-| **MAC OS X** | Google Chrome, Safari, Firefox |
+| **Mac OS X** | Google Chrome, Safari, Firefox |
 | **Windows 10** | Google Chrome, Microsoft Edge, Firefox |
 | **Windows 7** | Google Chrome, Firefox |
 
@@ -52,10 +52,10 @@ Standardspråket för användargränssnittet avgörs av den region som anges i d
 Så här byter du språk:
 
 1. Logga in på ditt Experience Platform-konto.
-1. Tryck `Ctrl + i` för att öppna menyn för kontoinformation.
+1. Tryck på `Ctrl + i` för att öppna menyn för kontoinformation.
 1. Gå till **[!UICONTROL Preferred Languages]**.
 1. Välj den första och den andra språkinställningen.
-1. Välj **[!UICONTROL Save]** och stänger fönstret.
+1. Välj **[!UICONTROL Save]** och stäng fönstret.
 
 >[!NOTE]
 >

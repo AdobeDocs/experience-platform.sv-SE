@@ -5,7 +5,7 @@ exl-id: ade77b6b-4b62-4b17-a155-ef90a723a4ad
 source-git-commit: 82ba4e62d5bb29ba4fef22c5add864a556e62c12
 workflow-type: tm+mt
 source-wordcount: '563'
-ht-degree: 1%
+ht-degree: 0%
 
 ---
 
@@ -17,12 +17,12 @@ Målleveransavsnittet anger var exporterade data skickas och vilken autentiserin
 
 <!-- When configuring a destination, you must specify an authentication rule and one or more `destinationServerId` parameters, corresponding to the destination servers that define where the data will be delivered to. In most cases, the authentication rule that you should use is `CUSTOMER_AUTHENTICATION`.  -->
 
-Mer information om var den här komponenten passar in i en integrering som skapas med Destination SDK finns i diagrammet i [konfigurationsalternativ](../configuration-options.md) eller se följande sidor med översikt över målkonfigurationen:
+Om du vill veta var den här komponenten passar in i en integrering som skapats med Destination SDK kan du läsa diagrammet i dokumentationen för [konfigurationsalternativ](../configuration-options.md) eller följande sidor med en översikt över målkonfigurationen:
 
 * [Använd Destination SDK för att konfigurera ett direktuppspelningsmål](../../guides/configure-destination-instructions.md#create-destination-configuration)
 * [Använd Destination SDK för att konfigurera ett filbaserat mål](../../guides/configure-file-based-destination-instructions.md#create-destination-configuration)
 
-Du kan konfigurera inställningar för destinationsleverans via `/authoring/destinations` slutpunkt. På följande API-referenssidor finns detaljerade API-anropsexempel där du kan konfigurera komponenterna som visas på den här sidan.
+Du kan konfigurera inställningar för destinationsleverans via slutpunkten `/authoring/destinations`. På följande API-referenssidor finns detaljerade API-anropsexempel där du kan konfigurera komponenterna som visas på den här sidan.
 
 * [Skapa en målkonfiguration](../../authoring-api/destination-configuration/create-destination-configuration.md)
 * [Uppdatera en målkonfiguration](../../authoring-api/destination-configuration/update-destination-configuration.md)
@@ -31,7 +31,7 @@ I den här artikeln beskrivs alla målleveransalternativ som stöds och som du k
 
 >[!IMPORTANT]
 >
->Alla parameternamn och värden som stöds av Destinationen SDK är **skiftlägeskänslig**. Undvik skiftlägeskänslighetsfel genom att använda parameternamn och värden exakt som de visas i dokumentationen.
+>Alla parameternamn och värden som stöds av Destinationen SDK är **skiftlägeskänsliga**. Undvik skiftlägeskänslighetsfel genom att använda parameternamn och värden exakt som de visas i dokumentationen.
 
 ## Integrationstyper som stöds {#supported-integration-types}
 
@@ -48,16 +48,16 @@ När du konfigurerar inställningarna för destinationsleverans kan du använda 
 
 | Parameter | Typ | Beskrivning |
 |---------|----------|------|
-| `authenticationRule` | Sträng | Anger hur [!DNL Platform] ska ansluta till ditt mål. Värden som stöds:<ul><li>`CUSTOMER_AUTHENTICATION`: Använd det här alternativet om plattformskunder loggar in på ditt system via någon av de autentiseringsmetoder som beskrivs [här](customer-authentication.md).</li><li>`PLATFORM_AUTHENTICATION`: Använd det här alternativet om det finns ett globalt autentiseringssystem mellan Adobe och destinationen och [!DNL Platform] Kunden behöver inte ange några autentiseringsuppgifter för att ansluta till ditt mål. I det här fallet måste du skapa ett autentiseringsobjekt med [API för autentiseringsuppgifter](../../credentials-api/create-credential-configuration.md) konfiguration. </li><li>`NONE`: Använd det här alternativet om ingen autentisering krävs för att skicka data till målplattformen. </li></ul> |
-| `destinationServerId` | Sträng | The `instanceId` i [målserver](../../authoring-api/destination-server/create-destination-server.md) som du vill exportera data till. |
-| `deliveryMatchers.type` | Sträng | <ul><li>När destinationsleverans konfigureras för filbaserade mål ska detta alltid anges som `SOURCE`.</li><li>När destinationsleveransen konfigureras för ett direktuppspelningsmål `deliveryMatchers` -avsnittet är inte obligatoriskt.</li></ul> |
-| `deliveryMatchers.value` | Sträng | <ul><li>När destinationsleverans konfigureras för filbaserade mål ska detta alltid anges som `batch`.</li><li>När destinationsleveransen konfigureras för ett direktuppspelningsmål `deliveryMatchers` -avsnittet är inte obligatoriskt.</li></ul> |
+| `authenticationRule` | Sträng | Anger hur [!DNL Platform] ska ansluta till ditt mål. Värden som stöds:<ul><li>`CUSTOMER_AUTHENTICATION`: Använd det här alternativet om plattformskunder loggar in på ditt system via någon av de autentiseringsmetoder som beskrivs [här](customer-authentication.md).</li><li>`PLATFORM_AUTHENTICATION`: Använd det här alternativet om det finns ett globalt autentiseringssystem mellan Adobe och ditt mål och om [!DNL Platform]-kunden inte behöver ange några autentiseringsuppgifter för att ansluta till ditt mål. I det här fallet måste du skapa ett autentiseringsobjekt med hjälp av [API:t för autentiseringsuppgifter](../../credentials-api/create-credential-configuration.md)-konfigurationen. </li><li>`NONE`: Använd det här alternativet om ingen autentisering krävs för att skicka data till målplattformen. </li></ul> |
+| `destinationServerId` | Sträng | `instanceId` för den [målserver](../../authoring-api/destination-server/create-destination-server.md) som du vill exportera data till. |
+| `deliveryMatchers.type` | Sträng | <ul><li>När målleverans konfigureras för filbaserade mål ska du alltid ange det här till `SOURCE`.</li><li>När destinationsleveransen konfigureras för ett direktuppspelningsmål krävs inte avsnittet `deliveryMatchers`.</li></ul> |
+| `deliveryMatchers.value` | Sträng | <ul><li>När målleverans konfigureras för filbaserade mål ska du alltid ange det här till `batch`.</li><li>När destinationsleveransen konfigureras för ett direktuppspelningsmål krävs inte avsnittet `deliveryMatchers`.</li></ul> |
 
 {style="table-layout:auto"}
 
 ## Inställningar för destinationsleverans för direktuppspelningsmål {#destination-delivery-streaming}
 
-I exemplet nedan visas hur leveransinställningarna för målet ska konfigureras för ett direktuppspelningsmål. Observera att `deliveryMatchers` -avsnittet krävs inte för direktuppspelningsmål.
+I exemplet nedan visas hur leveransinställningarna för målet ska konfigureras för ett direktuppspelningsmål. Observera att avsnittet `deliveryMatchers` inte krävs för direktuppspelningsmål.
 
 >[!BEGINSHADEBOX]
 
@@ -76,7 +76,7 @@ I exemplet nedan visas hur leveransinställningarna för målet ska konfigureras
 
 ## Inställningar för destinationsleverans för filbaserade destinationer {#destination-delivery-file-based}
 
-I exemplet nedan visas hur leveransinställningarna för målet ska konfigureras för ett filbaserat mål. Observera att `deliveryMatchers` -avsnittet krävs för filbaserade mål.
+I exemplet nedan visas hur leveransinställningarna för målet ska konfigureras för ett filbaserat mål. Observera att avsnittet `deliveryMatchers` krävs för filbaserade mål.
 
 >[!BEGINSHADEBOX]
 

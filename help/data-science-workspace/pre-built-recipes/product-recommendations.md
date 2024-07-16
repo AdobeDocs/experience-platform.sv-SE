@@ -6,8 +6,8 @@ description: Med Product Recommendations recept kan ni tillhandahålla personali
 exl-id: 508d55af-c33b-4f1d-b1b6-f00ed5d12bf9
 source-git-commit: 86e6924078c115fb032ce39cd678f1d9c622e297
 workflow-type: tm+mt
-source-wordcount: '477'
-ht-degree: 1%
+source-wordcount: '466'
+ht-degree: 0%
 
 ---
 
@@ -21,18 +21,18 @@ I dag kan en återförsäljare erbjuda ett stort antal produkter och ge sina kun
 
 ## Vad gör det här receptet?
 
-Product Recommendations recept använder maskininlärning för att analysera kundens interaktioner med produkter tidigare och generera en personaliserad lista med produktrekommendationer snabbt och enkelt. Detta optimerar processen för produktupptäckt och eliminerar långa, produktiva och irrelevanta sökningar för dina kunder. Resultatet blir att recept på Product Recommendations kan förbättra kundens totala inköpsupplevelse, vilket leder till större engagemang och ökad varumärkeslojalitet.
+Product Recommendations recept använder maskininlärning för att analysera kundens interaktioner med produkter tidigare och generera en personaliserad lista med produktrekommendationer snabbt och enkelt. Detta optimerar processen för produktupptäckt och eliminerar långa, produktiva och irrelevanta sökningar för dina kunder. Resultatet blir att recept på Product Recommendations kan förbättra en kunds totala inköpsupplevelse, vilket leder till större engagemang och ökad varumärkeslojalitet.
 
 ## Hur kommer jag igång?
 
-Du kan komma igång genom att följa självstudiekursen för Adobe Experience Platform Lab (se Lab-länken nedan). I den här självstudiekursen visas hur du skapar recept för produkten Recommendations i en Jupyter-anteckningsbok genom att följa följande [anteckningsbok att hämta](../jupyterlab/create-a-model.md) arbetsflöde och implementera receptet i [!DNL Experience Platform] [!DNL Data Science Workspace].
+Du kan komma igång genom att följa självstudiekursen för Adobe Experience Platform Lab (se Lab-länken nedan). I den här självstudiekursen visas hur du skapar Product Recommendations-receptet i en Jupyter-anteckningsbok genom att följa arbetsflödet för [anteckningsboken för att hämta](../jupyterlab/create-a-model.md) och implementera receptet i [!DNL Experience Platform] [!DNL Data Science Workspace].
 
-* [Lab: Förutse framtiden med datavetenskapen](https://expleague.azureedge.net/labs/L777/index.html)
+* [Lab: Predict the Future with Data Science Workspace](https://expleague.azureedge.net/labs/L777/index.html)
 * [Lab-resurser](https://github.com/adobe/experience-platform-dsw-reference/tree/master/Summit/2019/resources)
 
 ## Datamodell
 
-Det här receptet använder anpassad [XDM-scheman](../../xdm/schema/field-dictionary.md) för att modellera in- och utdata:
+I det här receptet används anpassade [XDM-scheman](../../xdm/schema/field-dictionary.md) för att modellera in- och utdata:
 
 ### Schema för indatadata
 
@@ -54,6 +54,6 @@ Det här receptet använder anpassad [XDM-scheman](../../xdm/schema/field-dictio
 
 Produktens Recommendations-recept använder samverkansfiltrering för att generera en personlig lista med produktrekommendationer för dina kunder. I motsats till innehållsbaserad filtrering kräver inte samarbetsbaserad filtrering information om en viss produkt, utan snarare en kunds historiska preferenser för en uppsättning produkter. Denna kraftfulla rekommendationsteknik använder två enkla antaganden:
 * Det finns kunder med liknande intressen, och de kan grupperas genom att jämföra sina köp- och surfbeteenden.
-* Det är mer sannolikt att en kund är intresserad av en rekommendation baserad på liknande kunder vad gäller deras köp- och surfbeteende.
+* Det är mer sannolikt att en kund är intresserad av en rekommendation som baseras på liknande kunder vad gäller deras köp- och surfbeteende.
 
 Denna process är uppdelad i två huvudsteg. Börja med att definiera en delmängd av liknande kunder. Identifiera sedan liknande funktioner bland kunderna i den uppsättningen för att returnera en rekommendation till målkunden.

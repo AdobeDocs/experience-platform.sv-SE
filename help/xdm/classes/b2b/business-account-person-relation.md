@@ -9,15 +9,15 @@ ht-degree: 0%
 
 ---
 
-# [!UICONTROL XDM Business Account Person Relation] class
+# klassen [!UICONTROL XDM Business Account Person Relation]
 
 >[!IMPORTANT]
 >
->Den här klassen är avsedd att användas av organisationer med åtkomst till [Adobe Real-time Customer Data Platform B2B Edition](../../../rtcdp/b2b-overview.md). Du måste ha tillgång till Real-Time CDP B2B Edition för att den här klassen ska kunna delta i [Kundprofil i realtid](../../../profile/home.md).
+>Den här klassen är avsedd att användas av organisationer med åtkomst till [Adobe Real-time Customer Data Platform B2B Edition](../../../rtcdp/b2b-overview.md). Du måste ha tillgång till Real-Time CDP B2B Edition för att den här klassen ska kunna delta i [kundprofilen i realtid](../../../profile/home.md).
 
-[!UICONTROL XDM Business Account Person Relation] är en XDM-klass (Standard Experience Data Model) som fångar upp de minsta nödvändiga egenskaperna för en person som är kopplad till ett företagskonto.
+[!UICONTROL XDM Business Account Person Relation] är en XDM-klass (Standard Experience Data Model) som fångar de minsta nödvändiga egenskaperna för en person som är associerad med ett företagskonto.
 
-![Strukturen för klassen XDM Business Account Person Relation så som den visas i användargränssnittet](../../images/classes/b2b/business-account-person-relation.png)
+![Strukturen för klassen XDM Business Account Person Relation så som den visas i gränssnittet](../../images/classes/b2b/business-account-person-relation.png)
 
 | Egenskap | Datatyp | Beskrivning |
 | --- | --- | --- |
@@ -30,7 +30,7 @@ ht-degree: 0%
 | `accountPersonID` | Sträng | En unik identifierare för relationsenheten konto-person. |
 | `currencyCode` | Sträng | ISO 4217-valutakoden som används för relationen mellan kontot och personen. |
 | `isActive` | Boolean | Anger om relationen mellan kontot och personen är aktiv. |
-| `isDeleted` | Boolean | Anger om den här förhållandet mellan konto och person har tagits bort i Marketo Engage.<br><br>När du använder [Marketo källanslutning](../../../sources/connectors/adobe-applications/marketo/marketo.md), återspeglas alla poster som tas bort i Marketo automatiskt i kundprofilen i realtid. Poster som rör dessa profiler kan dock fortfarande finnas kvar i datasjön. Efter inställning `isDeleted` till `true`kan du använda fältet för att filtrera bort vilka poster som har tagits bort från dina källor när du frågar efter datasjön. |
+| `isDeleted` | Boolean | Anger om den här förhållandet mellan konto och person har tagits bort i Marketo Engage.<br><br>När du använder [Marketo-källkopplingen](../../../sources/connectors/adobe-applications/marketo/marketo.md) återspeglas alla poster som tas bort i Marketo automatiskt i kundprofilen i realtid. Poster som rör dessa profiler kan dock fortfarande finnas kvar i datasjön. Genom att ställa in `isDeleted` på `true` kan du använda fältet för att filtrera bort vilka poster som har tagits bort från dina källor när du frågar i datasjön. |
 | `isDirect` | Boolean | Anger om detta är en direkt relation mellan kontot och personen. |
 | `isPrimary` | Boolean | Anger om personen är den primära kontakten för det här kontot. |
 | `personID` | Sträng | En unik identifierare för personen i relationen konto-person. |
@@ -41,4 +41,4 @@ ht-degree: 0%
 
 {style="table-layout:auto"}
 
-Se guiden på [schemarelationer i Real-Time CDP B2B Edition](../../tutorials/relationship-b2b.md) om du vill veta hur den här klassen begreppsmässigt relaterar till de andra B2B-klasserna och hur du kan etablera dessa relationer i Adobe Experience Platform-gränssnittet.
+Läs guiden om [schemarelationer i Real-Time CDP B2B Edition](../../tutorials/relationship-b2b.md) om du vill veta hur den här klassen begreppsmässigt relaterar till de andra B2B-klasserna och hur du kan etablera dessa relationer i Adobe Experience Platform användargränssnitt.

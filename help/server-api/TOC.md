@@ -22,12 +22,12 @@ ht-degree: 55%
 * Datainsamling {#data-collection}
    * [Datainsamling för en händelse](interactive-data-collection.md)
    * [Datainsamling för batchhändelse](non-interactive-data-collection.md)
-* Samverka med andra Adobe-lösningar {#interacting-other-adobe-solutions}
+* Samverkar med andra Adobe-lösningar {#interacting-other-adobe-solutions}
    * [Interagera med Adobe Analytics](interacting-adobe-analytics.md)
-* Personanpassning {#personalization}
-   * [Personalisering - översikt](personalization-overview.md)
-   * [Personalisering via Adobe Target](personalization-target.md)
-   * [Personalisering via Offer decisioning](personalization-offer-decisioning.md)
+* Personalisering {#personalization}
+   * [Personalization - översikt](personalization-overview.md)
+   * [Personalization via Adobe Target](personalization-target.md)
+   * [Personalization via Offer decisioning](personalization-offer-decisioning.md)
 * [Platstips](location-hints.md)
 * [Felhantering](error-handling.md)
 * [Felsökning](troubleshooting.md)

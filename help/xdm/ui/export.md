@@ -20,31 +20,31 @@ ht-degree: 0%
 
 Alla resurser i schemabiblioteket finns i en specifik sandlåda i en organisation. I vissa fall kanske du vill dela XDM-resurser (Experience Data Model) mellan sandlådor och organisationer.
 
-För att tillgodose detta behov [!UICONTROL Schemas] Med arbetsytan i Adobe Experience Platform UI kan du generera en exportnyttolast för alla scheman i schemabiblioteket. Denna nyttolast kan sedan användas i ett anrop till API:t för schemaregister för att importera schemat (och alla beroende resurser) till en målsandlåda och en målorganisation.
+För att tillgodose detta behov kan du med arbetsytan [!UICONTROL Schemas] i Adobe Experience Platform UI generera en exportnyttolast för vilket schema som helst i schemabiblioteket. Denna nyttolast kan sedan användas i ett anrop till API:t för schemaregister för att importera schemat (och alla beroende resurser) till en målsandlåda och en målorganisation.
 
 >[!NOTE]
 >
->Du kan också använda API:t för schemafält för att exportera andra resurser utöver scheman, inklusive klasser, schemafältgrupper och datatyper. Se [slutpunktsguide för export](../api/export.md) för mer information.
+>Du kan också använda API:t för schemafält för att exportera andra resurser utöver scheman, inklusive klasser, schemafältgrupper och datatyper. Mer information finns i [exportslutpunktshandboken](../api/export.md).
 
-## Förutsättningar
+## Förhandskrav
 
-Med plattformsgränssnittet kan du exportera XDM-resurser, men du måste använda API:t för schemaregister för att importera dessa resurser till andra sandlådor eller organisationer för att slutföra arbetsflödet. Se vägledningen på [komma igång med API:t för schemaregister](../api/getting-started.md) om du vill ha viktig information om obligatoriska autentiseringshuvuden innan du följer den här handboken.
+Med plattformsgränssnittet kan du exportera XDM-resurser, men du måste använda API:t för schemaregister för att importera dessa resurser till andra sandlådor eller organisationer för att slutföra arbetsflödet. Se guiden [Komma igång med API:t för schemaregister](../api/getting-started.md) för viktig information om obligatoriska autentiseringshuvuden innan du följer den här guiden.
 
 ## Generera en exportnyttolast {#generate-export-payload}
 
-Du kan generera exportnyttolaster i plattformsgränssnittet från informationspanelen på panelen [!UICONTROL Browse] eller direkt från arbetsytan i schemat i Schemaredigeraren.
+Du kan generera exportnyttolaster i plattformsgränssnittet från informationspanelen på fliken [!UICONTROL Browse] eller direkt från arbetsytan för schemat i schemaläggaren.
 
-Om du vill generera en exportnyttolast väljer du **[!UICONTROL Schemas]** i den vänstra navigeringen. I [!UICONTROL Schemas] på arbetsytan väljer du raden för det schema som du vill exportera för att visa schemainformation i den högra sidofältet.
+Om du vill generera en exportnyttolast väljer du **[!UICONTROL Schemas]** i den vänstra navigeringen. I arbetsytan [!UICONTROL Schemas] väljer du raden för det schema som du vill exportera för att visa schemainformation i den högra sidofältet.
 
 >[!TIP]
 >
->Se guiden på [utforska XDM-resurser](./explore.md) om du vill ha mer information om hur du hittar den XDM-resurs du söker.
+>Mer information om hur du söker efter XDM-resursen finns i guiden [Utforska XDM-resurser](./explore.md).
 
-Nästa steg är att välja **[!UICONTROL Copy JSON]** ikon (![Kopiera ikon](../images/ui/export/icon.png)) bland de tillgängliga alternativen.
+Välj sedan ikonen **[!UICONTROL Copy JSON]** (![Kopiera ikon](../images/ui/export/icon.png)) bland de tillgängliga alternativen.
 
 ![Arbetsytan Scheman med en schemarad och [!UICONTROL Copy to JSON] markerad.](../images/ui/export/copy-json.png)
 
-Detta kopierar en JSON-nyttolast till Urklipp, som genereras baserat på schemastrukturen. För &quot;[!DNL Loyalty Members]&quot; som visas ovan genereras följande JSON:
+Detta kopierar en JSON-nyttolast till Urklipp, som genereras baserat på schemastrukturen. För schemat [!DNL Loyalty Members] som visas ovan genereras följande JSON:
 
 +++Välj för att expandera en exempelnyttolast för JSON
 
@@ -212,22 +212,22 @@ Detta kopierar en JSON-nyttolast till Urklipp, som genereras baserat på schemas
 
 +++
 
-Nyttolasten kan också kopieras genom att välja [!UICONTROL More] i det övre högra hörnet i Schemaredigeraren. Det finns två alternativ i en listruta: [!UICONTROL Copy JSON structure] och [!UICONTROL Delete schema].
+Nyttolasten kan också kopieras genom att välja [!UICONTROL More] i det övre högra hörnet i Schemaredigeraren. En nedrullningsbar meny innehåller två alternativ, [!UICONTROL Copy JSON structure] och [!UICONTROL Delete schema].
 
 >[!NOTE]
 >
 >Ett schema kan inte tas bort när det är aktiverat för profilen eller har associerade datauppsättningar.
 
-![Schemaredigeraren med [!UICONTROL More] och [!UICONTROL Copy to JSON] markerad.](../images/ui/export/schema-editor-copy-json.png)
+![Schemaredigeraren med [!UICONTROL More] och [!UICONTROL Copy to JSON] markerat.](../images/ui/export/schema-editor-copy-json.png)
 
-Nyttolasten består av en array där varje arrayobjekt är ett objekt som representerar en anpassad XDM-resurs som ska exporteras. I exemplet ovan är &quot;[!DNL Loyalty details]&quot; egen fältgrupp och &quot;[!DNL Loyalty Members]schemat ingår. Alla huvudresurser som används av schemat inkluderas inte i exporten eftersom dessa resurser är tillgängliga i alla sandlådor och organisationer.
+Nyttolasten består av en array där varje arrayobjekt är ett objekt som representerar en anpassad XDM-resurs som ska exporteras. I exemplet ovan ingår den anpassade fältgruppen [!DNL Loyalty details] och schemat [!DNL Loyalty Members]. Alla huvudresurser som används av schemat inkluderas inte i exporten eftersom dessa resurser är tillgängliga i alla sandlådor och organisationer.
 
-Observera att varje instans av organisationens klientorganisations-ID visas som `<XDM_TENANTID_PLACEHOLDER>` i nyttolasten. Dessa platshållare ersätts automatiskt med rätt innehavar-ID-värde beroende på var du importerar schemat i nästa steg.
+Observera att varje instans av organisationens klient-ID visas som `<XDM_TENANTID_PLACEHOLDER>` i nyttolasten. Dessa platshållare ersätts automatiskt med rätt innehavar-ID-värde beroende på var du importerar schemat i nästa steg.
 
 ## Importera resursen med API:t {#import-resource-with-api}
 
-När du har kopierat export-JSON för schemat kan du använda det som nyttolast för en POST-förfrågan till `/rpc/import` slutpunkt i API:t för schemaregistret. Se [importera slutpunktsguide](../api/import.md) om du vill ha information om hur du konfigurerar anropet för att skicka schemat till önskad organisation och sandlåda.
+När du har kopierat export-JSON för schemat kan du använda det som nyttolast för en POST-begäran till `/rpc/import`-slutpunkten i API:t för schemaregistret. Mer information om hur du konfigurerar anropet för att skicka schemat till önskad organisation och sandlåda finns i [importguiden](../api/import.md).
 
 ## Nästa steg
 
-Genom att följa den här guiden har du exporterat ett XDM-schema till en annan organisation eller sandlåda. Mer information om funktionerna i [!UICONTROL Schemas] Gränssnittet, se [[!UICONTROL Schemas] Översikt över användargränssnittet](./overview.md).
+Genom att följa den här guiden har du exporterat ett XDM-schema till en annan organisation eller sandlåda. Mer information om funktionerna i användargränssnittet för [!UICONTROL Schemas] finns i [[!UICONTROL Schemas] användargränssnittsöversikt ](./overview.md).

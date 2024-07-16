@@ -10,19 +10,19 @@ ht-degree: 0%
 
 ---
 
-# Övervaka aktiviteter i händelsevidarebefordran (beta)
+# Övervaka aktiviteter vid vidarebefordran av händelser (Beta)
 
 >[!IMPORTANT]
 >
 >Den här funktionen är för närvarande i betaversion och din organisation har kanske inte åtkomst till den än. Funktionen och dokumentationen kan komma att ändras.
 
-The **[!UICONTROL Monitoring]** I användargränssnittet för datainsamling kan du övervaka användningsmönster, fel och beräkningstid för egenskaper för vidarebefordran av händelser. Den här guiden ger en översikt på hög nivå över hur du visar och förstår de rapporter som visas på fliken.
+På fliken **[!UICONTROL Monitoring]** i användargränssnittet för datainsamling kan du övervaka användningsmönster, fel och beräkningstid för egenskaperna för vidarebefordran av händelser. Den här guiden ger en översikt på hög nivå över hur du visar och förstår de rapporter som visas på fliken.
 
 ![Bild som visar övervakningsfliken i användargränssnittet för datainsamling](../../images/ui/event-forwarding/monitoring/monitoring-tab.png)
 
-## Förutsättningar
+## Förhandskrav
 
-Den här guiden förutsätter att du har köpt vidarebefordran av händelser och att du har en fungerande förståelse för hur vidarebefordran av händelser fungerar. Se [händelsevidarebefordring - översikt](./overview.md) för mer information.
+Den här guiden förutsätter att du har köpt vidarebefordran av händelser och att du har en fungerande förståelse för hur vidarebefordran av händelser fungerar. Mer information finns i översikten för [vidarebefordran av händelser](./overview.md).
 
 ## Videoöversikt
 
@@ -44,21 +44,21 @@ Om du vill visa mätvärden för en enskild egenskap väljer du egenskapens list
 >
 >Användningsdata uppdateras varje månad efter föregående månads slut.
 
-The **[!UICONTROL Usage]** rapporten visar inkommande och utgående samtal för en viss tidsperiod. Inkommande samtal representerar data som skickas till händelsevidarebefordran. Utgående anrop representerar data som skickas från händelsevidarebefordran. The **[!UICONTROL Total events]** talet i den vänstra rutan är summan av inkommande och utgående samtal för den angivna tidsperioden.
+Rapporten **[!UICONTROL Usage]** visar inkommande och utgående samtal för en given tidsperiod. Inkommande samtal representerar data som skickas till händelsevidarebefordran. Utgående anrop representerar data som skickas från händelsevidarebefordran. Numret **[!UICONTROL Total events]** i den vänstra rutan är summan av inkommande och utgående samtal för den angivna tidsperioden.
 
 ## [!UICONTROL Error Events]
 
-The **[!UICONTROL Error Events]** rapporten visar fel i sammanställningen och som bryts ned av HTTP-svarskoden när du håller markören över linjediagrammet. De fel som visas kommer från utgående samtal och svarskoderna kommer från slutpunkten som händelsevidarebefordran interagerar med.
+Rapporten **[!UICONTROL Error Events]** visar fel i sammanställningen och som bryts ned av HTTP-svarskoden när du håller markören över linjediagrammet. De fel som visas kommer från utgående samtal och svarskoderna kommer från slutpunkten som händelsevidarebefordran interagerar med.
 
 Felen visas för en viss tidsperiod, som kan justeras i den angivna listrutan.
 
-![Bild som visar listrutan för tidsperioden för felhändelserapporten](../../images/ui/event-forwarding/monitoring/error-time.png)
+![Bild som visar listrutan över tidsperioder för felhändelserapporten](../../images/ui/event-forwarding/monitoring/error-time.png)
 
-Med sökrutan för felhändelsen kan du fråga efter vidarebefordran av händelser för att förstå felen för en viss slutpunktsdomän. Du måste ange den exakta domänen eftersom sökfunktionen inte accepterar approximationer eller&quot;luddiga&quot; träffar. När du har angett en exakt domän för vilken det finns utgående feldata trycker du på Retur och rapporten uppdateras för att visa utgående fel för den domänen. Om du till exempel vill se fel från Facebook Conversion API-slutpunkten ska domänen skrivas som `https://graph.facebook.com`.
+Med sökrutan för felhändelsen kan du fråga efter vidarebefordran av händelser för att förstå felen för en viss slutpunktsdomän. Du måste ange den exakta domänen eftersom sökfunktionen inte accepterar approximationer eller&quot;luddiga&quot; träffar. När du har angett en exakt domän för vilken det finns utgående feldata trycker du på Retur och rapporten uppdateras för att visa utgående fel för den domänen. Om du till exempel vill se fel från Facebook Conversions API-slutpunkten ska domänen skrivas som `https://graph.facebook.com`.
 
 ## [!UICONTROL Compute Time]
 
-The **[!UICONTROL Compute Time]** rapporten visar beräkningstiden för alla regler för händelsevidarebefordringsservrar.
+Rapporten **[!UICONTROL Compute Time]** visar beräkningstiden för alla regler för händelsevidarebefordringsservrar.
 
 >[!NOTE]
 >

@@ -1,16 +1,16 @@
 ---
 keywords: Experience Platform;hem;populära ämnen;flödestjänst;Flödestjänst-API;källor;Källor
-title: Filtrera radnivådata för en källa med API:t för flödestjänsten
+title: Filtrera radnivådata för en Source med API:t för flödestjänsten
 description: I den här självstudiekursen beskrivs hur du filtrerar data på källnivå med API:t för Flow Service
 exl-id: 224b454e-a079-4df3-a8b2-1bebfb37d11f
 source-git-commit: b0e2fc4767fb6fbc90bcdd3350b3add965988f8f
 workflow-type: tm+mt
-source-wordcount: '782'
-ht-degree: 1%
+source-wordcount: '778'
+ht-degree: 0%
 
 ---
 
-# Filtrera radnivådata för en källa med [!DNL Flow Service] API
+# Filtrera radnivådata för en källa med API:t [!DNL Flow Service]
 
 >[!IMPORTANT]
 >
@@ -21,18 +21,18 @@ ht-degree: 1%
 >* [Salesforce](../../connectors/crm/salesforce.md)
 >* [Snowflake](../../connectors/databases/snowflake.md)
 
-I den här självstudien beskrivs hur du filtrerar radnivådata för en källa med hjälp av [[!DNL Flow Service] API](https://www.adobe.io/experience-platform-apis/references/flow-service/).
+I den här självstudien beskrivs hur du filtrerar radnivådata för en källa med [[!DNL Flow Service] API](https://www.adobe.io/experience-platform-apis/references/flow-service/).
 
 ## Komma igång
 
 Den här självstudiekursen kräver att du har en fungerande förståelse för följande komponenter i Adobe Experience Platform:
 
-* [Källor](../../home.md): [!DNL Experience Platform] tillåter att data hämtas från olika källor samtidigt som du kan strukturera, etikettera och förbättra inkommande data med [!DNL Platform] tjänster.
-* [Sandlådor](../../../sandboxes/home.md): [!DNL Experience Platform] innehåller virtuella sandlådor som partitionerar en enda [!DNL Platform] till separata virtuella miljöer för att utveckla och utveckla applikationer för digitala upplevelser.
+* [Källor](../../home.md): [!DNL Experience Platform] tillåter att data kan hämtas från olika källor samtidigt som du kan strukturera, etikettera och förbättra inkommande data med [!DNL Platform]-tjänster.
+* [Sandlådor](../../../sandboxes/home.md): [!DNL Experience Platform] innehåller virtuella sandlådor som partitionerar en enskild [!DNL Platform]-instans till separata virtuella miljöer för att hjälpa till att utveckla och utveckla program för digitala upplevelser.
 
 ### Använda plattforms-API:er
 
-Mer information om hur du kan anropa API:er för plattformar finns i handboken [komma igång med plattforms-API:er](../../../landing/api-guide.md).
+Mer information om hur du kan anropa plattforms-API:er finns i guiden [Komma igång med plattforms-API:er](../../../landing/api-guide.md).
 
 ## Filtrera källdata
 
@@ -42,7 +42,7 @@ Följande textkonturer används för att filtrera radnivådata för källan.
 
 Innan du kan använda API:t för att filtrera data på radnivå för en källa måste du först hämta källans anslutningsinformation för att kunna avgöra vilka operatorer och språk som stöds av en viss källa.
 
-Om du vill hämta en viss källas anslutningsspecifikation skickar du en GET-begäran till `/connectionSpecs` slutpunkt för [!DNL Flow Service] API när du anger källans egenskapsnamn som en del av frågeparametrarna.
+Om du vill hämta en viss källas anslutningsspecifikation gör du en GET-förfrågan till `/connectionSpecs`-slutpunkten för [!DNL Flow Service]-API:t och anger egenskapsnamnet för källan som en del av frågeparametrarna.
 
 **API-format**
 
@@ -52,7 +52,7 @@ GET /connectionSpecs/{QUERY_PARAMS}
 
 | Parameter | Beskrivning |
 | --- | --- |
-| `{QUERY_PARAMS}` | De valfria frågeparametrarna som resultaten ska filtreras efter. Du kan hämta [!DNL Google BigQuery] anslutningsspecifikation genom att använda `name` egenskap och ange `"google-big-query"` i sökningen. |
+| `{QUERY_PARAMS}` | De valfria frågeparametrarna som resultaten ska filtreras efter. Du kan hämta anslutningsspecifikationen [!DNL Google BigQuery] genom att använda egenskapen `name` och ange `"google-big-query"` i sökningen. |
 
 **Begäran**
 
@@ -69,7 +69,7 @@ curl -X GET \
 
 **Svar**
 
-Ett lyckat svar returnerar anslutningsspecifikationerna för [!DNL Google BigQuery], inklusive information om vilka frågespråk som stöds och logiska operatorer.
+Ett lyckat svar returnerar anslutningsspecifikationerna för [!DNL Google BigQuery], inklusive information om dess frågespråk och logiska operatorer som stöds.
 
 >[!NOTE]
 >
@@ -111,7 +111,7 @@ Ett lyckat svar returnerar anslutningsspecifikationerna för [!DNL Google BigQue
 
 {style="table-layout:auto"}
 
-#### Jämförelseoperatörer
+#### Jämförelseoperatorer
 
 | Operatör | Beskrivning |
 | --- | --- |
@@ -121,14 +121,14 @@ Ett lyckat svar returnerar anslutningsspecifikationerna för [!DNL Google BigQue
 | `>` | Filtrerar efter om egenskapen är större än det angivna värdet. |
 | `<=` | Filtrerar efter om egenskapen är mindre än eller lika med det angivna värdet. |
 | `>=` | Filtrerar efter om egenskapen är större än eller lika med det angivna värdet. |
-| `like` | Filter genom att användas i en `WHERE` -sats för att söka efter ett angivet mönster. |
+| `like` | Filtrerar genom att användas i en `WHERE`-sats för att söka efter ett angivet mönster. |
 | `in` | Filtrerar efter om egenskapen ligger inom ett angivet intervall. |
 
 {style="table-layout:auto"}
 
 ### Ange filtervillkor för förtäring
 
-När du har identifierat de logiska operatorerna och frågespråket som stöds av källan kan du använda PQL (Profile Query Language) för att ange de filtreringsvillkor som du vill tillämpa på källdata.
+När du har identifierat de logiska operatorerna och frågespråket som din källa stöder kan du använda Profile Query Language (PQL) för att ange de filtreringsvillkor som du vill tillämpa på dina källdata.
 
 I exemplet nedan används villkor bara för att markera data som är lika med de angivna värdena för de nodtyper som anges som parametrar.
 
@@ -155,7 +155,7 @@ I exemplet nedan används villkor bara för att markera data som är lika med de
 
 ### Förhandsgranska data
 
-Du kan förhandsgranska dina data genom att göra en GET-förfrågan till `/explore` slutpunkt för [!DNL Flow Service] API:n ger `filters` som en del av frågeparametrarna och specificera PQL-indatavillkoren i [!DNL Base64].
+Du kan förhandsgranska dina data genom att göra en GET-förfrågan till `/explore`-slutpunkten för [!DNL Flow Service] API:t, samtidigt som du anger `filters` som en del av frågeparametrarna och anger dina PQL-indatavillkor i [!DNL Base64].
 
 **API-format**
 
@@ -330,7 +330,7 @@ En slutförd begäran returnerar följande svar.
 
 ### Skapa en källanslutning för filtrerade data
 
-Om du vill skapa en källanslutning och importera filtrerade data skickar du en POST till `/sourceConnections` slutpunkten samtidigt som du anger filtervillkoren som en del av innehållsparametrarna.
+Om du vill skapa en källanslutning och importera filtrerade data gör du en POST till `/sourceConnections`-slutpunkten samtidigt som du anger filtervillkoren som en del av innehållsparametrarna.
 
 **API-format**
 
@@ -340,7 +340,7 @@ POST /sourceConnections
 
 **Begäran**
 
-Följande begäran skapar en källanslutning för att importera data från `test1.fasTestTable` där `city` = `DDN`.
+Följande begäran skapar en källanslutning för import av data från `test1.fasTestTable` där `city` = `DDN`.
 
 ```shell
 curl -X POST \
@@ -387,7 +387,7 @@ curl -X POST \
 
 **Svar**
 
-Ett godkänt svar returnerar den unika identifieraren (`id`) för den nyligen skapade källanslutningen.
+Ett lyckat svar returnerar den unika identifieraren (`id`) för den nyligen skapade källanslutningen.
 
 ```json
 {
@@ -402,7 +402,7 @@ Det här avsnittet innehåller ytterligare exempel på olika nyttolaster för fi
 
 ### Enkelt villkor
 
-Du kan utesluta den ursprungliga `fnApply` för scenarier som bara kräver ett villkor.
+Du kan utelämna den ursprungliga `fnApply` för scenarier som bara kräver ett villkor.
 
 ```json
 {
@@ -425,7 +425,7 @@ Du kan utesluta den ursprungliga `fnApply` för scenarier som bara kräver ett v
 }
 ```
 
-### Använda `in` operator
+### Använda operatorn `in`
 
 Se exempelnyttolasten nedan för ett exempel på operatorn `in`.
 
@@ -459,7 +459,7 @@ Se exempelnyttolasten nedan för ett exempel på operatorn `in`.
 }
 ```
 
-### Använda `isNull` operator
+### Använda operatorn `isNull`
 
 Se exempelnyttolasten nedan för ett exempel på operatorn `isNull`.
 
@@ -480,7 +480,7 @@ Se exempelnyttolasten nedan för ett exempel på operatorn `isNull`.
 }
 ```
 
-### Använda `NOT` operator
+### Använda operatorn `NOT`
 
 Se exempelnyttolasten nedan för ett exempel på operatorn `NOT`.
 

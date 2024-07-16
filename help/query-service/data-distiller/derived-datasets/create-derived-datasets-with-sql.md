@@ -51,9 +51,9 @@ MAP <data_type, data_type>
 ARRAY <data_type>
 ```
 
-Datamängder kan också aktiveras för profiler via plattformens användargränssnitt. Mer information om hur du markerar en datauppsättning som aktiverad för profilen finns i [aktivera en datauppsättning för kundprofildokumentation i realtid](../../../catalog/datasets/user-guide.md#enable-profile).
+Datamängder kan också aktiveras för profiler via plattformens användargränssnitt. Mer information om hur du markerar en datauppsättning som aktiverad för profil finns i [aktivera en datauppsättning för dokumentation av kundprofiler i realtid](../../../catalog/datasets/user-guide.md#enable-profile).
 
-I exempelfrågan nedan visas `decile_table` datauppsättningen skapas med `id` som den primära identitetskolumnen och har namnutrymmet `IDFA`. Den har även ett fält med namnet `decile1Month` av kartdatatypen. Tabellen som skapades (`decile_table`) är aktiverat för profilen.
+I exempelfrågan nedan skapas datamängden `decile_table` med `id` som primär identitetskolumn och har namnutrymmet `IDFA`. Den har också ett fält med namnet `decile1Month` för mappningsdatatypen. Tabellen som skapades (`decile_table`) är aktiverad för profilen.
 
 ```sql
 CREATE TABLE decile_table (id text PRIMARY KEY NAMESPACE 'IDFA', 
@@ -69,13 +69,13 @@ Created Table DataSet Id
 (1 row)
 ```
 
-Använd `label='PROFILE'` på en `CREATE TABLE` för att skapa en profilaktiverad datauppsättning. The `upsert` funktionen är aktiverad som standard. The `upsert` kan skrivas över med `ALTER` som i exemplet nedan.
+Använd `label='PROFILE'` på ett `CREATE TABLE`-kommando för att skapa en profilaktiverad datauppsättning. Funktionen `upsert` är aktiverad som standard. Funktionen `upsert` kan skrivas över med kommandot `ALTER`, vilket visas i exemplet nedan.
 
 ```sql
 ALTER TABLE <your_table_name> DROP label upsert;
 ```
 
-Mer information om hur du använder [ALTER TABLE](../../sql/syntax.md#alter-table) kommando [etikett som en del av en CTAS-fråga](../../sql/syntax.md#create-table-as-select).
+Mer information om hur du använder kommandot [ALTER TABLE](../../sql/syntax.md#alter-table) och etiketten [som en del av en CTAS-fråga](../../sql/syntax.md#create-table-as-select) finns i dokumentationen för SQl-syntaxen.
 
 ## Konstruerar för hantering av härledda datauppsättningar via SQL
 
@@ -91,7 +91,7 @@ ALTER TABLE your_decile_table ADD label 'PROFILE';
 
 >[!NOTE]
 >
->Vid slutfört körning av `ALTER TABLE` returnerar konsolen `ALTER SUCCESS`.
+>Konsolen returnerar `ALTER SUCCESS` när kommandot `ALTER TABLE` har körts.
 
 ### Lägga till en primär identitet i en befintlig datauppsättning {#add-primary-identity}
 
@@ -107,11 +107,11 @@ Exempel:
 ALTER TABLE test1_dataset ADD CONSTRAINT PRIMARY KEY(id2) NAMESPACE 'IDFA';
 ```
 
-I exemplet som anges `id2` är en befintlig kolumn i `test1_dataset`.
+I det angivna exemplet är `id2` en befintlig kolumn i `test1_dataset`.
 
 ### Inaktivera en datauppsättning för profil {#disable-dataset-for-profile}
 
-Om du vill inaktivera tabellen för profilanvändning måste du använda kommandot DROP. Ett exempel på en SQL-sats som ANVÄNDER `DROP` visas nedan.
+Om du vill inaktivera tabellen för profilanvändning måste du använda kommandot DROP. Ett exempel på en SQL-sats som ANVÄNDS `DROP` visas nedan.
 
 ```sql
 ALTER TABLE table_name DROP LABEL 'PROFILE';
@@ -123,7 +123,7 @@ Exempel:
 ALTER TABLE decile_table DROP label 'PROFILE';
 ```
 
-Den här SQL-satsen är ett effektivt alternativ till att använda ett API-anrop. Mer information finns i dokumentationen om hur du [inaktivera en datauppsättning för användning med Real-Time CDP via API:t för datauppsättningar](../../../catalog/datasets/enable-upsert.md#disable-the-dataset-for-profile).
+Den här SQL-satsen är ett effektivt alternativ till att använda ett API-anrop. Mer information finns i dokumentationen om hur du [inaktiverar en datauppsättning för användning med Real-Time CDP via API:t för datauppsättningar](../../../catalog/datasets/enable-upsert.md#disable-the-dataset-for-profile).
 
 ### Tillåt uppdatering och infogningsfunktioner för datauppsättningen {#enable-upsert-functionality-for-dataset}
 
@@ -141,7 +141,7 @@ Exempel:
 ALTER TABLE table_with_a_decile ADD label 'UPSERT';
 ```
 
-Den här SQL-satsen är ett effektivt alternativ till att använda ett API-anrop. Mer information finns i dokumentationen om hur du [aktivera en datauppsättning för användning med Real-Time CDP och UPSERT med API:t för datauppsättningar](../../../catalog/datasets/enable-upsert.md#enable-the-dataset).
+Den här SQL-satsen är ett effektivt alternativ till att använda ett API-anrop. Mer information finns i dokumentationen om hur du [aktiverar en datauppsättning för användning med Real-Time CDP och UPSERT med API:t för datauppsättningar](../../../catalog/datasets/enable-upsert.md#enable-the-dataset).
 
 ### Inaktivera uppdaterings- och infogningsfunktioner för datauppsättningen {#disable-upsert-functionality-for-dataset}
 
@@ -161,7 +161,7 @@ ALTER TABLE table_with_a_decile DROP label 'UPSERT';
 
 ### Visa ytterligare tabellinformation som är associerad med varje tabell {#show-labels-for-tables}
 
-Ytterligare metadata sparas för profilaktiverade datauppsättningar. Använd `SHOW TABLES` för att visa ett extra `labels` kolumn som innehåller information om etiketter som är kopplade till tabeller.
+Ytterligare metadata sparas för profilaktiverade datauppsättningar. Använd kommandot `SHOW TABLES` om du vill visa en extra `labels`-kolumn som ger information om etiketter som är associerade med tabeller.
 
 Ett exempel på det här kommandots utdata visas nedan:
 
@@ -174,7 +174,7 @@ Ett exempel på det här kommandots utdata visas nedan:
 (3 rows)
 ```
 
-I exemplet ser du att `table_with_a_decile` har aktiverats för profilen och används med etiketter som [&#39;UPSERT&#39;](#enable-upsert-functionality-for-dataset), [PROFIL](#enable-existing-dataset-for-profile) enligt beskrivningen ovan.
+I exemplet kan du se att `table_with_a_decile` har aktiverats för profilen och tillämpats med etiketter som [&#39;UPSERT&#39;](#enable-upsert-functionality-for-dataset), [&#39;PROFILE&#39;](#enable-existing-dataset-for-profile) som beskrivits ovan.
 
 ### Skapa en fältgrupp med SQL
 
@@ -188,8 +188,8 @@ CREATE FIELDGROUP <field_group_name> [IF NOT EXISTS]  (field_name <data_type> pr
 
 >[!IMPORTANT]
 >
->Det går inte att skapa fältgrupper via SQL om `label` ingen flagga anges i satsen eller om fältgruppen redan finns.
->Kontrollera att frågan innehåller en `IF NOT EXISTS` för att undvika att frågan misslyckas eftersom fältgruppen redan finns.
+>Det går inte att skapa fältgrupper via SQL om flaggan `label` inte anges i satsen eller om fältgruppen redan finns.
+>Kontrollera att frågan innehåller en `IF NOT EXISTS`-sats för att undvika att frågan misslyckas eftersom fältgruppen redan finns.
 
 Ett verkligt exempel kan se ut ungefär som det nedan.
 
@@ -199,11 +199,11 @@ CREATE FIELDGROUP field_group_for_test123 (decile1Month map<text, integer>, deci
 
 Den här satsen returnerar det skapade fältgrupps-ID:t. Till exempel `c731a1eafdfdecae1683c6dca197c66ed2c2b49ecd3a9525`.
 
-Läs dokumentationen om hur du [skapa en ny fältgrupp i Schemaredigeraren](../../../xdm/ui/resources/field-groups.md#create) eller med [API för schemaregister](../../../xdm/api/field-groups.md#create) för mer information om alternativa metoder.
+Mer information om alternativa metoder finns i dokumentationen om hur du [skapar en ny fältgrupp i Schemaredigeraren](../../../xdm/ui/resources/field-groups.md#create) eller om hur du använder [schemaregistrets API](../../../xdm/api/field-groups.md#create).
 
 ### Släpp en fältgrupp
 
-Ibland kan det vara nödvändigt att ta bort en fältgrupp från schemaregistret. Detta görs genom att köra `DROP FIELDGROUP` med fältgrupps-ID:t.
+Ibland kan det vara nödvändigt att ta bort en fältgrupp från schemaregistret. Detta görs genom att köra kommandot `DROP FIELDGROUP` med fältgrupps-ID:t.
 
 ```sql
 DROP FIELDGROUP [IF EXISTS] <your_field_group_id>;
@@ -217,11 +217,11 @@ DROP FIELDGROUP field_group_for_test123;
 
 >[!IMPORTANT]
 >
->Borttagning av en fältgrupp via SQL misslyckas om fältgruppen inte finns. Se till att programsatsen innehåller en `IF EXISTS` för att undvika att frågan misslyckas.
+>Borttagning av en fältgrupp via SQL misslyckas om fältgruppen inte finns. Kontrollera att satsen innehåller en `IF EXISTS`-sats för att undvika att frågan misslyckas.
 
 ### Visa alla fältgruppsnamn och ID:n för tabellerna
 
-The `SHOW FIELDGROUPS` returnerar en tabell som innehåller tabellens namn, fältgrupp-ID och ägare.
+Kommandot `SHOW FIELDGROUPS` returnerar en tabell som innehåller tabellens namn, fältgrupp-ID och ägare.
 
 Ett exempel på det här kommandots utdata visas nedan:
 
@@ -237,4 +237,4 @@ Ett exempel på det här kommandots utdata visas nedan:
 
 ## Nästa steg
 
-När du har läst det här dokumentet får du en bättre förståelse för hur du använder SQL för att skapa en profil och en datauppsättning som kan uppdateras baserat på härledda datauppsättningar. Du är nu redo att använda den här datauppsättningen med arbetsflöden för batchimport för att göra uppdateringar av dina profildata. Om du vill veta mer om inmatning av data i Adobe Experience Platform börjar du med att läsa [dataöverföring - översikt](../../../ingestion/home.md).
+När du har läst det här dokumentet får du en bättre förståelse för hur du använder SQL för att skapa en profil och en datauppsättning som kan uppdateras baserat på härledda datauppsättningar. Du är nu redo att använda den här datauppsättningen med arbetsflöden för batchimport för att göra uppdateringar av dina profildata. Om du vill veta mer om hur du importerar data till Adobe Experience Platform börjar du med att läsa översikten över [dataimporten](../../../ingestion/home.md).

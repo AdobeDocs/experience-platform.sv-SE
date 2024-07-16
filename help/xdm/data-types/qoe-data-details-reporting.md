@@ -1,7 +1,8 @@
 ---
 title: QoE (Quality of Experience), datadetaleringsdatatyp
 description: Läs mer om datatypen QoE (Quality of Experience) Data Details Reporting Data Type Experience Data Model (XDM).
-source-git-commit: a604dc8b541784ace8aedef42030e5bd8b646c28
+exl-id: 608baa9b-12ca-466c-a962-1401abc0344e
+source-git-commit: 799a384556b43bc844782d8b67416c7eea77fbf0
 workflow-type: tm+mt
 source-wordcount: '435'
 ht-degree: 0%
@@ -10,7 +11,7 @@ ht-degree: 0%
 
 # QoE (Quality of Experience), datadetaleringsdatatyp
 
-[!UICONTROL QoE Data Details] Rapportering är en XDM-datatyp (Standard Experience Data Model) som ger detaljerade mått för upplevelsekvaliteten (QoE) under medieuppspelningen. Använd [!UICONTROL QoE Data Details] Rapporterar datatyp för att samla in information som bithastighetsinformation, bildrutehastigheter, buffringshändelser, uteslutna bildrutor och så vidare. Medierapporteringsfält används av Adobe-tjänster för att analysera de Media Collection-fält som skickas av användarna. Dessa data, tillsammans med andra specifika användarvärden, beräknas och rapporteras utifrån. Den här datatypen gör det möjligt att analysera uppspelningskvaliteten, vilket ger insikter i direktuppspelningsprestanda, användarupplevelse och eventuella problem som uppstår under uppspelningssessioner.
+[!UICONTROL QoE Data Details] Rapportering är en XDM-datatyp (Standard Experience Data Model) som ger detaljerade mått för upplevelsekvaliteten (QoE) under medieuppspelningen. Använd datatypen [!UICONTROL QoE Data Details] Reporting för att hämta information om till exempel bithastighet, bildrutehastigheter, buffringshändelser, uteslutna bildrutor och så vidare. Medierapporteringsfält används av Adobe-tjänster för att analysera de Media Collection-fält som skickas av användarna. Dessa data, tillsammans med andra specifika användarvärden, beräknas och rapporteras utifrån. Den här datatypen gör det möjligt att analysera uppspelningskvaliteten, vilket ger insikter i direktuppspelningsprestanda, användarupplevelse och eventuella problem som uppstår under uppspelningssessioner.
 
 +++Välj för att visa datatypen QoE Data Details Reporting.
 ![Ett diagram över datatypen QoE (Quality of Experience) Data Details.](../images/data-types/qoe-data-details-reporting.png)

@@ -1,5 +1,5 @@
 ---
-keywords: Experience Platform;Visa en modell;Datavetenskapen;populära ämnen;ensei machine learning api
+keywords: Experience Platform;Visa en modell;Data Science Workspace;populära ämnen;sensei machine learning api
 solution: Experience Platform
 title: Posta en modell med API:t för Sensei Machine Learning
 type: Tutorial
@@ -7,20 +7,20 @@ description: I den här självstudiekursen får du lära dig hur du använder Se
 exl-id: 202c63b0-86d8-4a82-8ec8-d144a8911d08
 source-git-commit: fcd44aef026c1049ccdfe5896e6199d32b4d1114
 workflow-type: tm+mt
-source-wordcount: '550'
+source-wordcount: '547'
 ht-degree: 0%
 
 ---
 
 # Posta en modell med [!DNL Sensei Machine Learning API]
 
-I den här självstudiekursen visas hur du använder API:erna för att skapa en Experiment och en ExperimentKör. En lista över alla slutpunkter i Sensei Machine Learning API finns på [det här dokumentet](https://developer.adobe.com/experience-platform-apis/references/sensei-machine-learning/).
+I den här självstudiekursen får du lära dig hur du använder API:erna för att skapa en Experiment och en Experiment Run. En lista över alla slutpunkter i Sensei Machine Learning API finns i [det här dokumentet](https://developer.adobe.com/experience-platform-apis/references/sensei-machine-learning/).
 
-## Skapa en schemalagd expert för poängsättning
+## Skapa en schemalagd utvärderingsversion för poängberäkning
 
-På samma sätt som schemalagda utbildningsexperter, kan man även skapa en schemalagd utvärdering av poängsättningen genom att inkludera en `template` -avsnittet till body-parametern. Dessutom finns `name` fält under `tasks` i brödtexten är inställd som `score`.
+På samma sätt som schemalagda experiment för utbildning, skapas en schemalagd utvärdering för poängsättning också genom att en `template`-sektion tas med i body-parametern. Dessutom anges fältet `name` under `tasks` i brödtexten som `score`.
 
-Följande är ett exempel på hur du skapar en Experiment som körs var 20:e minut från `startTime` och kommer att köras tills `endTime`.
+Följande är ett exempel på hur du skapar en expert som körs var 20:e minut från och med `startTime` och kommer att köras till `endTime`.
 
 **Begäran**
 
@@ -34,10 +34,10 @@ curl -X POST \
   -d '{JSON_PAYLOAD}'
 ```
 
-`{ORG_ID}`: Dina organisationsuppgifter finns i din unika Adobe Experience Platform-integration.\
-`{ACCESS_TOKEN}`: Ditt specifika värde för innehavartoken som tillhandahålls efter autentisering.\
-`{API_KEY}`: Ditt specifika API-nyckelvärde som finns i din unika Adobe Experience Platform-integrering.\
-`{JSON_PAYLOAD}`: Objekt för experimentkörning som ska skickas. Exemplet vi använder i vår självstudiekurs visas här:
+`{ORG_ID}`: Dina organisationsuppgifter hittades i din unika Adobe Experience Platform-integrering.\
+`{ACCESS_TOKEN}`: Ditt specifika värde för innehavartoken har angetts efter autentiseringen.\
+`{API_KEY}`: Ditt specifika API-nyckelvärde hittades i din unika Adobe Experience Platform-integrering.\
+`{JSON_PAYLOAD}`: Objekt för experimentkörning som ska skickas. Exemplet som vi använder i vår självstudiekurs visas här:
 
 ```JSON
 {
@@ -108,7 +108,7 @@ Följande är svaret efter att den schemalagda experten har skapats.
 
 ### Skapa en provkörning för poängsättning
 
-Med den tränade modellen kan vi nu skapa en Experiment Run för poängsättning. Värdet för `modelId` parametern är `id` parameter som returneras i GET Model-begäran ovan.
+Med den tränade modellen kan vi nu skapa en Experiment Run för poängsättning. Värdet för parametern `modelId` är parametern `id` som returneras i GET Model-begäran ovan.
 
 **Begäran**
 
@@ -122,9 +122,9 @@ curl -X POST \
   -d '{JSON_PAYLOAD}'
 ```
 
-`{ORG_ID}`: Dina organisationsuppgifter finns i din unika Adobe Experience Platform-integration.\
-`{ACCESS_TOKEN}`: Ditt specifika värde för innehavartoken som tillhandahålls efter autentisering.\
-`{API_KEY}`: Ditt specifika API-nyckelvärde som finns i din unika Adobe Experience Platform-integrering.\
+`{ORG_ID}`: Dina organisationsuppgifter hittades i din unika Adobe Experience Platform-integrering.\
+`{ACCESS_TOKEN}`: Ditt specifika värde för innehavartoken har angetts efter autentiseringen.\
+`{API_KEY}`: Ditt specifika API-nyckelvärde hittades i din unika Adobe Experience Platform-integrering.\
 `{EXPERIMENT_ID}`: Det ID som motsvarar den experiment som du vill använda som mål. Det här finns i svaret när du skapar din Experiment.\
 `{JSON_PAYLOAD}`: Data som ska bokföras. Exemplet vi använder i vår självstudiekurs är här:
 
@@ -168,8 +168,8 @@ Svaret från att skapa en Experiment Run visas nedan:
 }
 ```
 
-`{EXPERIMENT_ID}`: Det ID som motsvarar det Experiment som Kör finns under.\
-`{EXPERIMENT_RUN_ID}`: Det ID som motsvarar den Experimentkörning du just skapade.
+`{EXPERIMENT_ID}`: Det ID som motsvarar det experiment som körningen är under.\
+`{EXPERIMENT_RUN_ID}`: Det ID som motsvarar den experimentkörning du just skapade.
 
 
 ### Hämta en status för experimentell körning för schemalagd experimentell körning
@@ -185,9 +185,9 @@ curl -X GET \
   -H 'x-gw-ims-org-id: {ORG_ID}'
 ```
 
-`{EXPERIMENT_ID}`: Det ID som motsvarar det Experiment som Kör finns under.\
-`{ACCESS_TOKEN}`: Ditt specifika värde för innehavartoken som tillhandahålls efter autentisering.\
-`{ORG_ID}`: Dina organisationsuppgifter finns i din unika Adobe Experience Platform-integration.
+`{EXPERIMENT_ID}`: Det ID som motsvarar det experiment som körningen är under.\
+`{ACCESS_TOKEN}`: Ditt specifika värde för innehavartoken har angetts efter autentiseringen.\
+`{ORG_ID}`: Dina organisationsuppgifter hittades i din unika Adobe Experience Platform-integrering.
 
 Eftersom det finns flera Experiment Runs för en viss Experiment har det returnerade svaret en array med Run ID:n.
 
@@ -212,12 +212,12 @@ Eftersom det finns flera Experiment Runs för en viss Experiment har det returne
 }
 ```
 
-`{EXPERIMENT_RUN_ID}`: Det ID som motsvarar Experimentkörningen.\
-`{EXPERIMENT_ID}`: Det ID som motsvarar det Experiment som Kör finns under.
+`{EXPERIMENT_RUN_ID}`: Det ID som motsvarar Experiment Run.\
+`{EXPERIMENT_ID}`: Det ID som motsvarar det experiment som körningen är under.
 
 ### Stoppa och ta bort en schemalagd experiment
 
-Om du vill avbryta körningen av en schemalagd expert innan den körs `endTime`kan du göra detta genom att fråga DELETE till `{EXPERIMENT_ID}`
+Om du vill avbryta körningen av en schemalagd experiment innan `endTime` körs kan du göra det genom att fråga en DELETE-begäran till `{EXPERIMENT_ID}`
 
 **Begäran**
 
@@ -228,9 +228,9 @@ curl -X DELETE \
   -H 'x-gw-ims-org-id: {ORG_ID}'
 ```
 
-`{EXPERIMENT_ID}`: Det ID som motsvarar Experimenten.\
-`{ACCESS_TOKEN}`: Ditt specifika värde för innehavartoken som tillhandahålls efter autentisering.\
-`{ORG_ID}`: Dina organisationsuppgifter finns i din unika Adobe Experience Platform-integration.
+`{EXPERIMENT_ID}`: ID:t som motsvarar Experiment.\
+`{ACCESS_TOKEN}`: Ditt specifika värde för innehavartoken har angetts efter autentiseringen.\
+`{ORG_ID}`: Dina organisationsuppgifter hittades i din unika Adobe Experience Platform-integrering.
 
 >[!NOTE]
 >

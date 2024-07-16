@@ -7,25 +7,25 @@ exl-id: 92477add-2e7d-4d7b-bd81-47d340998ff1
 source-git-commit: c16ce1020670065ecc5415bc3e9ca428adbbd50c
 workflow-type: tm+mt
 source-wordcount: '2040'
-ht-degree: 1%
+ht-degree: 0%
 
 ---
 
 # Slutpunkt för scheman
 
-Scheman är ett verktyg som kan användas för att automatiskt köra batchsegmenteringsjobb en gång om dagen. Du kan använda `/config/schedules` slutpunkt för att hämta en lista med scheman, skapa ett nytt schema, hämta information om ett specifikt schema, uppdatera ett specifikt schema eller ta bort ett specifikt schema.
+Scheman är ett verktyg som kan användas för att automatiskt köra batchsegmenteringsjobb en gång om dagen. Du kan använda slutpunkten `/config/schedules` för att hämta en lista med scheman, skapa ett nytt schema, hämta information om ett specifikt schema, uppdatera ett specifikt schema eller ta bort ett specifikt schema.
 
 ## Komma igång
 
-Slutpunkterna som används i den här guiden är en del av [!DNL Adobe Experience Platform Segmentation Service] API. Innan du fortsätter bör du granska [komma igång-guide](./getting-started.md) för viktig information som du behöver känna till för att kunna anropa API:t, inklusive obligatoriska rubriker och hur du läser exempel-API-anrop.
+Slutpunkterna som används i den här guiden ingår i [!DNL Adobe Experience Platform Segmentation Service]-API:t. Innan du fortsätter bör du läsa [kom igång-guiden](./getting-started.md) för att få viktig information som du behöver känna till för att kunna ringa anrop till API:t, inklusive nödvändiga rubriker och hur du läser exempel-API-anrop.
 
 ## Hämta en lista med scheman {#retrieve-list}
 
-Du kan hämta en lista över alla scheman för din organisation genom att göra en GET-förfrågan till `/config/schedules` slutpunkt.
+Du kan hämta en lista över alla scheman för din organisation genom att göra en GET-förfrågan till slutpunkten `/config/schedules`.
 
 **API-format**
 
-The `/config/schedules` slutpunkten har stöd för flera frågeparametrar som hjälper dig att filtrera dina resultat. Även om dessa parametrar är valfria rekommenderar vi starkt att de används för att minska dyra overheadkostnader. Om du anropar den här slutpunkten utan parametrar hämtas alla scheman som är tillgängliga för din organisation. Flera parametrar kan inkluderas, avgränsade med et-tecken (`&`).
+Slutpunkten `/config/schedules` har stöd för flera frågeparametrar som kan hjälpa dig att filtrera dina resultat. Även om dessa parametrar är valfria rekommenderar vi starkt att de används för att minska dyra overheadkostnader. Om du anropar den här slutpunkten utan parametrar hämtas alla scheman som är tillgängliga för din organisation. Flera parametrar kan inkluderas, avgränsade med et-tecken (`&`).
 
 ```http
 GET /config/schedules
@@ -98,13 +98,13 @@ Ett lyckat svar returnerar HTTP-status 200 med en lista över scheman för den a
 | `children.name` | Schemats namn som en sträng. |
 | `children.type` | Typ av jobb som en sträng. De två typer som stöds är&quot;batch_segmentation&quot; och&quot;export&quot;. |
 | `children.properties` | Ett objekt som innehåller ytterligare egenskaper som är relaterade till schemat. |
-| `children.properties.segments` | Använda `["*"]` säkerställer att alla segment ingår. |
-| `children.schedule` | En sträng som innehåller jobbschemat. Jobb kan bara schemaläggas att köras en gång om dagen, vilket innebär att du inte kan schemalägga ett jobb att köras mer än en gång under en 24-timmarsperiod. Mer information om kundscheman finns i bilagan på [cron, uttrycksformat](#appendix). I det här exemplet betyder &quot;0 0 1 * *&quot; att schemat kommer att köras kl. 1.00 varje dag. |
+| `children.properties.segments` | Om du använder `["*"]` säkerställs att alla segment inkluderas. |
+| `children.schedule` | En sträng som innehåller jobbschemat. Jobb kan bara schemaläggas att köras en gång om dagen, vilket innebär att du inte kan schemalägga ett jobb att köras mer än en gång under en 24-timmarsperiod. Mer information om cron-scheman finns i bilagan i formatet [cron expression](#appendix). I det här exemplet betyder &quot;0 0 1 * *&quot; att schemat kommer att köras kl. 1.00 varje dag. |
 | `children.state` | En sträng som innehåller schematillståndet. De två lägen som stöds är &quot;active&quot; och &quot;inactive&quot;. Som standard är läget inställt på &quot;inaktiv&quot;. |
 
 ## Skapa ett nytt schema {#create}
 
-Du kan skapa ett nytt schema genom att göra en POST-förfrågan till `/config/schedules` slutpunkt.
+Du kan skapa ett nytt schema genom att göra en POST-förfrågan till slutpunkten `/config/schedules`.
 
 **API-format**
 
@@ -137,11 +137,11 @@ curl -X POST https://platform.adobe.io/data/core/ups/config/schedules \
 
 | Egenskap | Beskrivning |
 | -------- | ------------ |
-| `name` | **Obligatoriskt.** Schemats namn som en sträng. |
-| `type` | **Obligatoriskt.** Typ av jobb som en sträng. De två typer som stöds är&quot;batch_segmentation&quot; och&quot;export&quot;. |
-| `properties` | **Obligatoriskt.** Ett objekt som innehåller ytterligare egenskaper som är relaterade till schemat. |
-| `properties.segments` | **Krävs när `type` är lika med&quot;batch_segmentation&quot;.** Använda `["*"]` säkerställer att alla segment ingår. |
-| `schedule` | *Valfritt.* En sträng som innehåller jobbschemat. Jobb kan bara schemaläggas att köras en gång om dagen, vilket innebär att du inte kan schemalägga ett jobb att köras mer än en gång under en 24-timmarsperiod. Mer information om kundscheman finns i bilagan på [cron, uttrycksformat](#appendix). I det här exemplet betyder &quot;0 0 1 * *&quot; att schemat kommer att köras kl. 1.00 varje dag. <br><br>Om strängen inte anges genereras ett systemgenererat schema automatiskt. |
+| `name` | **Krävs.** Schemats namn som en sträng. |
+| `type` | **Krävs.** Den typ av jobb som en sträng. De två typer som stöds är&quot;batch_segmentation&quot; och&quot;export&quot;. |
+| `properties` | **Krävs.** Ett objekt som innehåller ytterligare egenskaper som är relaterade till schemat. |
+| `properties.segments` | **Krävs när `type` är lika med&quot;batch_segmentation&quot;.** Om du använder `["*"]` säkerställs att alla segment inkluderas. |
+| `schedule` | *Valfritt.* En sträng som innehåller jobbschemat. Jobb kan bara schemaläggas att köras en gång om dagen, vilket innebär att du inte kan schemalägga ett jobb att köras mer än en gång under en 24-timmarsperiod. Mer information om cron-scheman finns i bilagan i formatet [cron expression](#appendix). I det här exemplet betyder &quot;0 0 1 * *&quot; att schemat kommer att köras kl. 1.00 varje dag. <br><br>Om strängen inte anges genereras ett systemgenererat schema automatiskt. |
 | `state` | *Valfritt.* En sträng som innehåller schematillståndet. De två lägen som stöds är &quot;active&quot; och &quot;inactive&quot;. Som standard är läget inställt på &quot;inaktiv&quot;. |
 
 **Svar**
@@ -174,7 +174,7 @@ Ett lyckat svar returnerar HTTP-status 200 med information om ditt nyligen skapa
 
 ## Hämta ett specifikt schema {#get}
 
-Du kan hämta detaljerad information om ett specifikt schema genom att göra en GET-förfrågan till `/config/schedules` slutpunkt och ange ID för det schema som du vill hämta i sökvägen för begäran.
+Du kan hämta detaljerad information om ett specifikt schema genom att göra en GET-förfrågan till slutpunkten `/config/schedules` och ange ID:t för det schema som du vill hämta i sökvägen till begäran.
 
 **API-format**
 
@@ -184,7 +184,7 @@ GET /config/schedules/{SCHEDULE_ID}
 
 | Parameter | Beskrivning |
 | --------- | ----------- |
-| `{SCHEDULE_ID}` | The `id` värdet på schemat som du vill hämta. |
+| `{SCHEDULE_ID}` | Värdet `id` för schemat som du vill hämta. |
 
 **Begäran**
 
@@ -229,19 +229,19 @@ Ett lyckat svar returnerar HTTP-status 200 med detaljerad information om det ang
 | `name` | Schemats namn som en sträng. |
 | `type` | Typ av jobb som en sträng. De två typer som stöds är `batch_segmentation` och `export`. |
 | `properties` | Ett objekt som innehåller ytterligare egenskaper som är relaterade till schemat. |
-| `properties.segments` | Använda `["*"]` säkerställer att alla segment ingår. |
-| `schedule` | En sträng som innehåller jobbschemat. Jobb kan bara schemaläggas att köras en gång om dagen, vilket innebär att du inte kan schemalägga ett jobb att köras mer än en gång under en 24-timmarsperiod. Mer information om kundscheman finns i bilagan på [cron, uttrycksformat](#appendix). I det här exemplet betyder &quot;0 0 1 * *&quot; att schemat kommer att köras kl. 1.00 varje dag. |
+| `properties.segments` | Om du använder `["*"]` säkerställs att alla segment inkluderas. |
+| `schedule` | En sträng som innehåller jobbschemat. Jobb kan bara schemaläggas att köras en gång om dagen, vilket innebär att du inte kan schemalägga ett jobb att köras mer än en gång under en 24-timmarsperiod. Mer information om cron-scheman finns i bilagan i formatet [cron expression](#appendix). I det här exemplet betyder &quot;0 0 1 * *&quot; att schemat kommer att köras kl. 1.00 varje dag. |
 | `state` | En sträng som innehåller schematillståndet. De två lägen som stöds är `active` och `inactive`. Som standard är läget inställt på `inactive`. |
 
 ## Uppdatera information för ett specifikt schema {#update}
 
-Du kan uppdatera ett specifikt schema genom att göra en PATCH-förfrågan till `/config/schedules` slutpunkten och ange ID:t för det schema som du försöker uppdatera i sökvägen för begäran.
+Du kan uppdatera ett specifikt schema genom att göra en PATCH-begäran till slutpunkten `/config/schedules` och ange ID:t för det schema som du försöker uppdatera i sökvägen till begäran.
 
-I PATCH kan du uppdatera antingen [läge](#update-state) eller [kreditschema](#update-schedule) för ett individuellt schema.
+Med PATCH-begäran kan du uppdatera antingen [state](#update-state) eller [cron schedule](#update-schedule) för ett enskilt schema.
 
 ### Uppdatera schematillstånd {#update-state}
 
-Du kan använda en JSON-lagningsåtgärd för att uppdatera schemats status. Om du vill uppdatera läget deklarerar du `path` egenskap som `/state` och ange `value` till antingen `active` eller `inactive`. Mer information om JSON Patch finns i [JSON Patch](https://datatracker.ietf.org/doc/html/rfc6902) dokumentation.
+Du kan använda en JSON-lagningsåtgärd för att uppdatera schemats status. Om du vill uppdatera läget deklarerar du egenskapen `path` som `/state` och anger `value` som antingen `active` eller `inactive`. Mer information om JSON Patch finns i [JSON Patch](https://datatracker.ietf.org/doc/html/rfc6902) -dokumentationen.
 
 **API-format**
 
@@ -251,7 +251,7 @@ PATCH /config/schedules/{SCHEDULE_ID}
 
 | Parameter | Beskrivning |
 | --------- | ----------- |
-| `{SCHEDULE_ID}` | The `id` värdet på schemat som du vill uppdatera. |
+| `{SCHEDULE_ID}` | Värdet `id` för schemat som du vill uppdatera. |
 
 **Begäran**
 
@@ -273,8 +273,8 @@ curl -X PATCH https://platform.adobe.io/data/core/ups/config/schedules/4e538382-
 
 | Egenskap | Beskrivning |
 | -------- | ----------- |
-| `path` | Sökvägen för det värde som du vill laga. I det här fallet måste du ange värdet för `path` till /state. |
-| `value` | Det uppdaterade värdet för schemats tillstånd. Värdet kan antingen anges som aktivt eller inaktivt för att aktivera eller inaktivera schemat. Observera att du **inte** inaktivera ett schema om organisationen har aktiverats för direktuppspelning. |
+| `path` | Sökvägen för det värde som du vill laga. I det här fallet måste du ange värdet `path` till /state eftersom du uppdaterar schemats tillstånd. |
+| `value` | Det uppdaterade värdet för schemats tillstånd. Värdet kan antingen anges som aktivt eller inaktivt för att aktivera eller inaktivera schemat. Observera att du **inte kan** inaktivera ett schema om organisationen har aktiverats för direktuppspelning. |
 
 **Svar**
 
@@ -282,7 +282,7 @@ Ett lyckat svar returnerar HTTP-status 204 (inget innehåll).
 
 ### Uppdatera kundschema {#update-schedule}
 
-Du kan använda en JSON-korrigeringsåtgärd för att uppdatera kronschemat. Om du vill uppdatera schemat deklarerar du `path` egenskap som `/schedule` och ange `value` till ett giltigt kreditschema. Mer information om JSON Patch finns i [JSON Patch](https://datatracker.ietf.org/doc/html/rfc6902) dokumentation. Mer information om kundscheman finns i bilagan på [cron, uttrycksformat](#appendix).
+Du kan använda en JSON-korrigeringsåtgärd för att uppdatera kronschemat. Om du vill uppdatera schemat deklarerar du egenskapen `path` som `/schedule` och ställer in `value` på ett giltigt cron-schema. Mer information om JSON Patch finns i [JSON Patch](https://datatracker.ietf.org/doc/html/rfc6902) -dokumentationen. Mer information om cron-scheman finns i bilagan i formatet [cron expression](#appendix).
 
 **API-format**
 
@@ -292,7 +292,7 @@ PATCH /config/schedules/{SCHEDULE_ID}
 
 | Parameter | Beskrivning |
 | --------- | ----------- |
-| `{SCHEDULE_ID}` | The `id` värdet på schemat som du vill uppdatera. |
+| `{SCHEDULE_ID}` | Värdet `id` för schemat som du vill uppdatera. |
 
 **Begäran**
 
@@ -314,7 +314,7 @@ curl -X PATCH https://platform.adobe.io/data/core/ups/config/schedules/4e538382-
 
 | Egenskap | Beskrivning |
 | -------- | ----------- |
-| `path` | Sökvägen för det värde som du vill uppdatera. I det här fallet måste du ange värdet för `path` till `/schedule`. |
+| `path` | Sökvägen för det värde som du vill uppdatera. I det här fallet måste du ange värdet `path` till `/schedule` eftersom du uppdaterar cron-schemat. |
 | `value` | Det uppdaterade värdet för cron-schemat. Värdet måste anges i form av ett kronschema. I det här exemplet körs schemat den andra varje månad. |
 
 **Svar**
@@ -323,7 +323,7 @@ Ett lyckat svar returnerar HTTP-status 204 (inget innehåll).
 
 ## Ta bort ett specifikt schema
 
-Du kan begära att ett visst schema ska tas bort genom att göra en DELETE-förfrågan till `/config/schedules` slutpunkt och ange ID för det schema som du vill ta bort i sökvägen för begäran.
+Du kan begära att ett visst schema ska tas bort genom att göra en DELETE-begäran till slutpunkten `/config/schedules` och ange ID:t för det schema som du vill ta bort i sökvägen till begäran.
 
 **API-format**
 
@@ -333,7 +333,7 @@ DELETE /config/schedules/{SCHEDULE_ID}
 
 | Parameter | Beskrivning |
 | --------- | ----------- |
-| `{SCHEDULE_ID}` | The `id` värdet på schemat som du vill ta bort. |
+| `{SCHEDULE_ID}` | Värdet `id` för schemat som du vill ta bort. |
 
 **Begäran**
 
@@ -377,20 +377,20 @@ I en cron-uttryckssträng representerar det första fältet sekunder, det andra 
 
 >[!NOTE]
 >
->Namnen på månaderna och veckodagarna är **not** skiftlägeskänslig. Därför bör `SUN` motsvarar att använda `sun`.
+>Namnen på månaderna och namnen på veckodagarna är **inte** skiftlägeskänsliga. Därför motsvarar `SUN` användningen av `sun`.
 
 De specialtecken som tillåts har följande betydelse:
 
 | Specialtecken | Beskrivning |
 | ----------------- | ----------- |
-| `*` | Det här värdet används för att markera **alla** värden i ett fält. Skriv `*` i timfältet skulle betyda **var** timme. |
-| `?` | Detta värde innebär att inget specifikt värde krävs. Detta används vanligtvis för att ange något i ett fält där tecknet är tillåtet, men inte för att ange det i det andra. Om du till exempel vill att en händelse ska utlösas var tredje månad, men inte bryr dig om vilken veckodag den är, så ska du skicka `3` på dagen i månadsfältet och `?` på veckodagen. |
-| `-` | Det här värdet används för att ange **inkluderande** intervall för fältet. Om du till exempel placerar `9-15` i fältet timmar innebär detta att timmarna omfattar 9, 10, 11, 12, 13, 14 och 15. |
-| `,` | Det här värdet används för att ange ytterligare värden. Om du till exempel placerar `MON, FRI, SAT` veckodag innebär veckodag måndag, fredag och lördag. |
-| `/` | Det här värdet används för att ange steg. Värdet som placerats före `/` avgör varifrån det ökas, medan värdet placeras efter `/` avgör hur mycket det ökar med. Om du till exempel placerar `1/7` i minutfältet innebär det att minuterna skulle innehålla 1, 8, 15, 22, 29, 36, 43, 50 och 57. |
-| `L` | Det här värdet används för att ange `Last`och har en annan betydelse beroende på vilket fält det används av. Om den används med dagen i månadsfältet representerar det den sista dagen i månaden. Om den används med veckodagen i sig representerar den den sista veckodagen, som är lördag (`SAT`). Om den används med veckodagen i fältet tillsammans med ett annat värde representerar den sista dagen i den typen för månaden. Om du till exempel placerar `5L` på veckodagen **endast** inkluderar sista fredagen i månaden. |
-| `W` | Det här värdet används för att ange närmaste veckodag till angiven dag. Om du till exempel placerar `18W` på dagen i månadsfältet, och den 18:e i den månaden var en lördag, skulle den på fredag utlösa den 17:e, som är den närmaste veckodagen. Om den 18:e månaden var en söndag skulle den utlösas måndag den 19:e, vilket är den närmaste veckodagen. Observera att om du skickar in `1W` på dagen i månadsfältet, och den närmast veckodagen skulle vara föregående månad, kommer händelsen fortfarande att utlösas på den närmaste veckodagen i **aktuell** månad.</br></br>Dessutom kan du kombinera `L` och `W` att skapa `LW`, vilket skulle ange den sista veckodagen i månaden. |
-| `#` | Det här värdet används för att ange den n:e dagen i veckan i en månad. Värdet som placerats före `#` representerar veckodagen, medan värdet placeras efter `#` anger vilken förekomst i månaden den är. Om du till exempel placerar `1#3`, utlöses händelsen den tredje söndagen i månaden. Observera att om du skickar in `X#5` och det inte finns någon femte förekomst av veckodagen den månaden, kommer händelsen **not** aktiveras. Om du till exempel placerar `1#5`, och det blir ingen femte söndag den månaden, **not** aktiveras. |
+| `*` | Det här värdet används för att välja **alla** värden i ett fält. Om du till exempel placerar `*` i timfältet innebär det **var** timme. |
+| `?` | Detta värde innebär att inget specifikt värde krävs. Detta används vanligtvis för att ange något i ett fält där tecknet är tillåtet, men inte för att ange det i det andra. Om du till exempel vill att en händelse ska utlösas var tredje månad, men inte bryr dig om vilken veckodag den är, placerar du `3` i fältet Dag i månaden och `?` i fältet Dag i veckan. |
+| `-` | Det här värdet används för att ange **inkluderande** intervall för fältet. Om du till exempel placerar `9-15` i fältet Timmar innebär det att timmarna skulle innehålla 9, 10, 11, 12, 13, 14 och 15. |
+| `,` | Det här värdet används för att ange ytterligare värden. Om du till exempel placerar `MON, FRI, SAT` i veckodag innebär det att veckodagarna omfattar måndag, fredag och lördag. |
+| `/` | Det här värdet används för att ange steg. Värdet som placeras före `/` avgör varifrån det ökas, medan värdet som placeras efter `/` avgör hur mycket det ökar med. Om du till exempel placerar `1/7` i minutfältet innebär det att minuterna innehåller 1, 8, 15, 22, 29, 36, 43, 50 och 57. |
+| `L` | Det här värdet används för att ange `Last` och har en annan betydelse beroende på vilket fält det används av. Om den används med dagen i månadsfältet representerar det den sista dagen i månaden. Om den används med veckodagen i fältet representerar den den sista veckodagen, som är lördag (`SAT`). Om den används med veckodagen i fältet tillsammans med ett annat värde representerar den sista dagen i den typen för månaden. Om du t.ex. placerar `5L` i veckodag kommer **endast** att inkludera den sista fredagen i månaden. |
+| `W` | Det här värdet används för att ange närmaste veckodag till angiven dag. Om du till exempel placerar `18W` på dagen i månadsfältet, och den 18 i den månaden var en lördag, utlöses den 17:e fredagen, vilket är den närmaste veckodagen. Om den 18:e månaden var en söndag skulle den utlösas måndag den 19:e, vilket är den närmaste veckodagen. Observera, att om du anger `1W` som dag i månadsfältet och den närmast veckodagen kommer att vara föregående månad, kommer händelsen fortfarande att utlösas på den närmaste veckodagen i **current** -månaden.</br></br>Dessutom kan du kombinera `L` och `W` för att skapa `LW`, vilket skulle ange den sista veckodagen i månaden. |
+| `#` | Det här värdet används för att ange den n:e dagen i veckan i en månad. Värdet som placerats före `#` representerar veckodagen, medan värdet som placerats efter `#` representerar vilken förekomst i månaden det är. Om du till exempel placerar `1#3` utlöses händelsen den tredje söndagen i månaden. Observera, att om du skickar `X#5` och det inte finns någon femte förekomst av veckodagen den månaden, kommer händelsen **inte** att utlösas. Om du till exempel skickar `1#5` och det inte finns någon femte söndag den månaden, kommer händelsen **inte** att utlösas. |
 
 ### Exempel
 

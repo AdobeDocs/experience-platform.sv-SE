@@ -9,15 +9,15 @@ ht-degree: 0%
 
 ---
 
-# [!UICONTROL Sitetool Details] schemafältgrupp
+# Schemafältgruppen [!UICONTROL Sitetool Details]
 
-[!UICONTROL Sitetool Details] är en standardgrupp för schemafält för [[!DNL XDM ExperienceEvent] class](../../classes/experienceevent.md). Fältgruppen innehåller en `sitetool` till ett schema, som samlar in information som samlats in av ett sitetool.
+[!UICONTROL Sitetool Details] är en standardschemafältgrupp för [[!DNL XDM ExperienceEvent] klassen](../../classes/experienceevent.md). Fältgruppen tillhandahåller ett enskilt `sitetool`-objekt till ett schema, som samlar in information som samlats in av ett sitetool.
 
-![Fältgruppstruktur](../../images/field-groups/sitetool-details.png)
+![Fältgruppsstruktur](../../images/field-groups/sitetool-details.png)
 
 | Egenskap | Datatyp | Beskrivning |
 | --- | --- | --- |
-| `dataGatheringEvent` | Objekt | Anger om den här händelsen är en datainsamlingshändelse tillsammans med annan relaterad information. Innehåller följande egenskaper:<ul><li>`data`: (Karta) Innehåller JSON-data som samlas in och skickas som en del av frågebatterier, enkäter eller omröstningshändelser.</li><li>`isTrue`: (Boolean) Anger om den här händelsen är en datainsamlingshändelse som frågor, undersökning eller omröstning.</li><li>`score`: (heltal) Det poängvärde som säkras av skådespelaren baserat på händelsesvar.</li></ul> |
+| `dataGatheringEvent` | Objekt | Anger om den här händelsen är en datainsamlingshändelse tillsammans med annan relaterad information. Innehåller följande egenskaper:<ul><li>`data`: (Karta) Innehåller JSON-data som samlas in och skickas som en del av frågesport, enkät eller poll-sändningshändelse.</li><li>`isTrue`: (Boolean) Anger om den här händelsen är en datainsamlingshändelse som frågor, undersökning eller omröstning.</li><li>`score`: (heltal) Det poängvärde som säkras av skådespelaren baserat på händelsesvar.</li></ul> |
 | `actor` | Sträng | En person/medlem som utförde åtgärden. |
 | `actorID` | Sträng | En unik identifierare för den person/medlem som utförde åtgärden. |
 | `isKeyEvent` | Boolean | Anger om händelsen är en nyckelhändelse. |
@@ -26,4 +26,4 @@ ht-degree: 0%
 
 {style="table-layout:auto"}
 
-Mer information om fältgruppen finns i [publik XDM-databas](https://github.com/adobe/xdm/blob/master/components/fieldgroups/experience-event/industry-verticals/experienceevent-healthcare-sitetool.schema.json).
+Mer information om fältgruppen finns i [den offentliga XDM-databasen](https://github.com/adobe/xdm/blob/master/components/fieldgroups/experience-event/industry-verticals/experienceevent-healthcare-sitetool.schema.json).

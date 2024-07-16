@@ -15,37 +15,37 @@ ht-degree: 0%
 
 Det här dokumentet innehåller en självstudiekurs för att utveckla, testa, förhandsgranska och spara en segmentdefinition med [[!DNL Adobe Experience Platform Segmentation Service API]](../api/getting-started.md).
 
-Mer information om hur du skapar segmentdefinitioner med användargränssnittet finns i [Segment Builder Guide](../ui/segment-builder.md).
+Mer information om hur du skapar segmentdefinitioner med användargränssnittet finns i [guiden för segmentbyggaren](../ui/segment-builder.md).
 
 ## Komma igång
 
-Den här självstudiekursen kräver en fungerande förståelse för de olika [!DNL Adobe Experience Platform] tjänster för att skapa segmentdefinitioner. Innan du börjar med den här självstudiekursen bör du läsa dokumentationen för följande tjänster:
+Den här självstudiekursen kräver en fungerande förståelse av de olika [!DNL Adobe Experience Platform]-tjänster som används för att skapa segmentdefinitioner. Innan du börjar med den här självstudiekursen bör du läsa dokumentationen för följande tjänster:
 
-- [[!DNL Real-Time Customer Profile]](../../profile/home.md): Ger en enhetlig konsumentprofil i realtid baserad på aggregerade data från flera källor.
-- [[!DNL Adobe Experience Platform Segmentation Service]](../home.md): Används för att bygga målgrupper med segmentdefinitioner eller andra externa källor från kundprofildata i realtid.
-- [[!DNL Experience Data Model (XDM)]](../../xdm/home.md): Det standardiserade ramverk som [!DNL Platform] organiserar kundupplevelsedata. För att utnyttja segmenteringen på bästa sätt bör du se till att dina data är inmatade som profiler och händelser enligt [bästa praxis för datamodellering](../../xdm/schema/best-practices.md).
+- [[!DNL Real-Time Customer Profile]](../../profile/home.md): Tillhandahåller en enhetlig konsumentprofil i realtid baserad på aggregerade data från flera källor.
+- [[!DNL Adobe Experience Platform Segmentation Service]](../home.md): Gör att du kan skapa målgrupper med segmentdefinitioner eller andra externa källor från kundprofildata i realtid.
+- [[!DNL Experience Data Model (XDM)]](../../xdm/home.md): Det standardiserade ramverket som [!DNL Platform] organiserar kundupplevelsedata med. För att du ska kunna använda segmentering bör du se till att dina data är inmatade som profiler och händelser enligt [bästa praxis för datamodellering](../../xdm/schema/best-practices.md).
 
-Följande avsnitt innehåller ytterligare information som du behöver känna till för att kunna ringa samtal till [!DNL Platform] API.
+I följande avsnitt finns ytterligare information som du behöver känna till för att kunna anropa API:erna för [!DNL Platform].
 
 ### Läser exempel-API-anrop
 
-I den här självstudiekursen finns exempel-API-anrop som visar hur du formaterar dina begäranden. Det kan vara sökvägar, obligatoriska rubriker och korrekt formaterade begärandenyttolaster. Ett exempel på JSON som returneras i API-svar finns också. Information om konventionerna som används i dokumentationen för exempel-API-anrop finns i avsnittet om [läsa exempel-API-anrop](../../landing/troubleshooting.md#how-do-i-format-an-api-request) i [!DNL Experience Platform] felsökningsguide.
+I den här självstudiekursen finns exempel-API-anrop som visar hur du formaterar dina begäranden. Det kan vara sökvägar, obligatoriska rubriker och korrekt formaterade begärandenyttolaster. Ett exempel på JSON som returneras i API-svar finns också. Information om de konventioner som används i dokumentationen för exempel-API-anrop finns i avsnittet [Så här läser du exempel-API-anrop](../../landing/troubleshooting.md#how-do-i-format-an-api-request) i felsökningsguiden för [!DNL Experience Platform].
 
 ### Samla in värden för obligatoriska rubriker
 
-För att ringa [!DNL Platform] API:er måste du först slutföra [självstudiekurs om autentisering](https://www.adobe.com/go/platform-api-authentication-en). När du är klar med självstudiekursen för autentisering visas värdena för var och en av de obligatoriska rubrikerna i alla [!DNL Experience Platform] API-anrop enligt nedan:
+För att kunna anropa [!DNL Platform] API:er måste du först slutföra [autentiseringssjälvstudiekursen](https://www.adobe.com/go/platform-api-authentication-en). När du slutför självstudiekursen för autentisering visas värdena för var och en av de obligatoriska rubrikerna i alla [!DNL Experience Platform] API-anrop, vilket visas nedan:
 
-- Behörighet: Bearer `{ACCESS_TOKEN}`
+- Behörighet: Bärare `{ACCESS_TOKEN}`
 - x-api-key: `{API_KEY}`
 - x-gw-ims-org-id: `{ORG_ID}`
 
-Alla resurser i [!DNL Experience Platform] isoleras till specifika virtuella sandlådor. Alla förfrågningar till [!DNL Platform] API:er kräver en rubrik som anger namnet på sandlådan som åtgärden ska utföras i:
+Alla resurser i [!DNL Experience Platform] är isolerade till specifika virtuella sandlådor. Alla begäranden till [!DNL Platform] API:er kräver en rubrik som anger namnet på sandlådan som åtgärden ska utföras i:
 
 - x-sandbox-name: `{SANDBOX_NAME}`
 
 >[!NOTE]
 >
->Mer information om sandlådor i [!DNL Platform], se [översiktsdokumentation för sandlåda](../../sandboxes/home.md).
+>Mer information om sandlådor i [!DNL Platform] finns i [översiktsdokumentationen för sandlådan](../../sandboxes/home.md).
 
 Alla begäranden som innehåller en nyttolast (POST, PUT, PATCH) kräver ytterligare en rubrik:
 
@@ -53,15 +53,15 @@ Alla begäranden som innehåller en nyttolast (POST, PUT, PATCH) kräver ytterli
 
 ## Utveckla en segmentdefinition
 
-Det första steget i segmenteringen är att definiera en segmentdefinition. En segmentdefinition är ett objekt som kapslar in en fråga skriven i [!DNL Profile Query Language] (PQL) Det här objektet kallas även för ett PQL-predikat. PQL förutser regler för segmentdefinitionen baserat på villkor som relaterar till data från post- eller tidsserier som du skickar till [!DNL Real-Time Customer Profile]. Se [PQL Guide](../pql/overview.md) för mer information om hur du skriver PQL-frågor.
+Det första steget i segmenteringen är att definiera en segmentdefinition. En segmentdefinition är ett objekt som kapslar in en fråga skriven i [!DNL Profile Query Language] (PQL). Det här objektet kallas även för ett PQL-predikat. PQL förutsäger regler för segmentdefinitionen baserat på villkor som relaterar till alla post- eller tidsseriedata som du skickar till [!DNL Real-Time Customer Profile]. Mer information om hur du skriver PQL-frågor finns i [PQL-handboken](../pql/overview.md).
 
-Du kan skapa en ny segmentdefinition genom att göra en POST-förfrågan till `/segment/definitions` slutpunkt i [!DNL Segmentation] API. Följande exempel visar hur du formaterar en definitionsbegäran, inklusive vilken information som krävs för att en segmentdefinition ska kunna definieras korrekt.
+Du kan skapa en ny segmentdefinition genom att göra en POST-förfrågan till `/segment/definitions`-slutpunkten i [!DNL Segmentation] API. Följande exempel visar hur du formaterar en definitionsbegäran, inklusive vilken information som krävs för att en segmentdefinition ska kunna definieras korrekt.
 
-En detaljerad förklaring om hur du definierar en segmentdefinition finns i [Utvecklarhandbok för segmentdefinition](../api/segment-definitions.md#create).
+En detaljerad förklaring om hur du definierar en segmentdefinition finns i [utvecklarhandboken för segmentdefinitioner](../api/segment-definitions.md#create).
 
 ## Beräkna och förhandsgranska en målgrupp {#estimate-and-preview-an-audience}
 
-När du utvecklar segmentdefinitionen kan du använda verktygen för uppskattning och förhandsgranskning i [!DNL Real-Time Customer Profile] för att se information på sammanfattningsnivå för att säkerställa att ni isolerar den förväntade målgruppen. Uppskattningar ger statistisk information om en segmentdefinition, t.ex. förväntad målgruppsstorlek och konfidensintervall. Förhandsvisningar innehåller sidnumrerade listor med kvalificeringsprofiler för en segmentdefinition, så att du kan jämföra resultaten med vad du förväntar dig.
+När du utvecklar din segmentdefinition kan du använda verktygen för uppskattning och förhandsgranskning i [!DNL Real-Time Customer Profile] för att visa information på sammanfattningsnivå för att säkerställa att du isolerar den förväntade målgruppen. Uppskattningar ger statistisk information om en segmentdefinition, t.ex. förväntad målgruppsstorlek och konfidensintervall. Förhandsvisningar innehåller sidnumrerade listor med kvalificeringsprofiler för en segmentdefinition, så att du kan jämföra resultaten med vad du förväntar dig.
 
 Genom att uppskatta och förhandsgranska målgruppen kan ni testa och optimera era era PQL-predikat tills de ger önskat resultat, där de sedan kan användas i en uppdaterad segmentdefinition.
 
@@ -91,17 +91,17 @@ Uppskattningar körs i allmänhet över 10-15 sekunder, med början med en grov 
 
 ### Skapa ett förhandsgranskningsjobb
 
-Du kan skapa ett nytt förhandsgranskningsjobb genom att göra en POST-förfrågan till `/preview` slutpunkt.
+Du kan skapa ett nytt förhandsgranskningsjobb genom att göra en POST-förfrågan till slutpunkten `/preview`.
 
-Detaljerade anvisningar om hur du skapar ett förhandsgranskningsjobb finns i [guide för förhandsgranskningar och uppskattningar av slutpunkter](../api/previews-and-estimates.md#create-preview).
+Detaljerade instruktioner om hur du skapar ett förhandsgranskningsjobb finns i guiden [för förhandsvisningar och uppskattningar av slutpunkter](../api/previews-and-estimates.md#create-preview).
 
 ### Visa en uppskattning eller förhandsgranskning
 
 Uppskattnings- och förhandsgranskningsprocesserna körs asynkront eftersom olika frågor kan ta olika lång tid att slutföra. När en fråga har initierats kan du använda API-anrop för att hämta (GET) det aktuella läget för uppskattningen eller förhandsgranskningen allt eftersom den fortskrider.
 
-Använda [!DNL Segmentation Service] API, du kan söka efter ett förhandsgranskningsjobbs aktuella tillstånd med hjälp av dess ID. Om läget är &quot;RESULT_READY&quot; kan du visa resultatet. Om du vill söka efter ett förhandsgranskningsjobbs aktuella tillstånd kan du läsa avsnittet om [hämta ett förhandsgranskningsjobbavsnitt](../api/previews-and-estimates.md#get-preview) i förhandsgransknings- och uppskattningsguiden för slutpunkter. Om du vill söka efter ett uppskattningsjobbs aktuella tillstånd kan du läsa avsnittet om [hämta ett uppskattningsjobb](../api/previews-and-estimates.md#get-estimate) i förhandsgransknings- och uppskattningsguiden för slutpunkter.
+Med API:t [!DNL Segmentation Service] kan du slå upp ett förhandsgranskningsjobbs aktuella tillstånd med dess ID. Om läget är &quot;RESULT_READY&quot; kan du visa resultatet. Läs avsnittet [Hämta ett förhandsgranskningsjobbavsnitt](../api/previews-and-estimates.md#get-preview) i guiden för förhandsgranskningar och uppskattningar om du vill söka efter ett förhandsgranskningsjobbs aktuella tillstånd. Läs avsnittet [Hämta ett uppskattningsjobb](../api/previews-and-estimates.md#get-estimate) i guiden för förhandsgranskningar och uppskattningar av slutpunkter om du vill söka efter ett uppskattningsjobbs aktuella tillstånd.
 
 
 ## Nästa steg
 
-När du har utvecklat, testat och sparat segmentdefinitionen kan du skapa ett segmentjobb för att skapa en målgrupp med [!DNL Segmentation Service] API. Se självstudiekursen om [utvärdera och komma åt segmentresultat](./evaluate-a-segment.md) för detaljerade steg om hur du uppnår detta.
+När du har utvecklat, testat och sparat segmentdefinitionen kan du skapa ett segmentjobb för att skapa en målgrupp med hjälp av [!DNL Segmentation Service]-API:t. I självstudiekursen [Utvärderar och får åtkomst till segmentresultat](./evaluate-a-segment.md) finns detaljerade anvisningar om hur du gör detta.

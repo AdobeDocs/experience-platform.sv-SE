@@ -16,11 +16,11 @@ ht-degree: 17%
 # Adobe Experience Platform datainmatning {#ingestion}
 
 - [Översikt över datainmatning](home.md)
-- Direktinmatning {#streaming}
+- Direktuppspelningsuppläsning {#streaming}
    - [Översikt](streaming-ingestion/overview.md)
    - [Kafka-kontakt](streaming-ingestion/kafka.md)
    - [Felsökning](streaming-ingestion/troubleshooting.md)
-- Batchförtäring{#batch}
+- Gruppinmatning {#batch}
    - [Komma igång med API:er för gruppinmatning](batch-ingestion/getting-started.md)
    - [API-översikt](batch-ingestion/overview.md)
    - [Utvecklarhandbok för API](batch-ingestion/api-overview.md)
@@ -38,7 +38,7 @@ ht-degree: 17%
    - [Direktuppspelning av postdata](tutorials/streaming-record-data.md)
    - [Strömmande tidsseriedata](tutorials/streaming-time-series-data.md)
    - [Direktuppspelning av flera meddelanden](tutorials/streaming-multiple-messages.md)
-- Datakvalitet och övervakning{#quality}
+- Datakvalitet och övervakning {#quality}
    - [Översikt](quality/overview.md)
    - [Övervaka datainmatning](quality/monitor-data-ingestion.md)
    - [Hämta feldiagnostik](quality/error-diagnostics.md)
@@ -46,7 +46,7 @@ ht-degree: 17%
    - [Direktinmatningsvalidering](quality/streaming-validation.md)
    - [Meddelanden om dataöverföring](quality/subscribe-events.md)
 - [Skyddsritningar för dataöverföring](guardrails.md)
-- [Källkopplingar](source-connectors.md)
+- [Source-anslutningar](source-connectors.md)
 - [API-referens för gruppinmatning](https://developer.adobe.com/experience-platform-apis/references/batch-ingestion/)
-- [API-referens för direktuppspelning](https://developer.adobe.com/experience-platform-apis/references/streaming-ingestion/)
+- [API-referens för direktuppspelad inmatning](https://developer.adobe.com/experience-platform-apis/references/streaming-ingestion/)
 - [Versionsinformation för plattform](https://experienceleague.adobe.com/en/docs/experience-platform/release-notes/latest)

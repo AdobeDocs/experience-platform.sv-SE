@@ -1,38 +1,38 @@
 ---
 title: Kundens tidsstämpelordning
 description: Lär dig hur du lägger till kundens tidsstämpelordning i datauppsättningarna för att säkerställa konsekvens i profildata.
-badgePrivateBeta: label="Privat beta" type="Informative"
+badgePrivateBeta: label="Private Beta" type="Informative"
 hide: true
 hidefromtoc: true
-source-git-commit: dffbdafc3f063906c8c8fb648ace59b2f1aedab8
+exl-id: 1cd9f0b5-6334-4815-860a-78596a9cea1a
+source-git-commit: 57d42d88ec9a93744450a2a352590ab57d9e5bb7
 workflow-type: tm+mt
 source-wordcount: '410'
 ht-degree: 0%
 
 ---
 
-
 # Kundens tidsstämpelordning
 
-I Adobe Experience Platform garanteras inte dataordningen som standard när data hämtas via direktuppspelning till profilarkivet. Med tidsstämpelsortering kan ni garantera att det senaste meddelandet, enligt den angivna kundtidsstämpeln, kommer att behållas i profilbutiken. Alla inaktuella meddelanden tas sedan bort och kommer att **not** vara tillgängliga för användning i tjänster i senare led som använder profildata som segmentering och destinationer. Detta gör att profildata blir konsekventa och att profildata förblir synkroniserade med källsystemen.
+I Adobe Experience Platform garanteras inte dataordningen som standard när data hämtas via direktuppspelning till profilarkivet. Med tidsstämpelsortering kan ni garantera att det senaste meddelandet, enligt den angivna kundtidsstämpeln, kommer att behållas i profilbutiken. Alla inaktuella meddelanden tas sedan bort och **inte** kommer att vara tillgängliga för användning i underordnade tjänster som använder profildata som segmentering och destinationer. Detta gör att profildata blir konsekventa och att profildata förblir synkroniserade med källsystemen.
 
-Använd kommandot `extSourceSystemAudit.lastUpdatedDate` fält i [Fältgruppen Granskningsattribut för externt källsystem](https://github.com/adobe/xdm/blob/master/docs/reference/fieldgroups/shared/external-source-system-audit-details.schema.md) och kontakta Adobe Technical Account Manager eller Adobe Customer Care med information om din sandlåda och datauppsättning.
+Använd fältet `extSourceSystemAudit.lastUpdatedDate` i fältgruppen [Externa Source-systemgranskningsattribut](https://github.com/adobe/xdm/blob/master/docs/reference/fieldgroups/shared/external-source-system-audit-details.schema.md) för att aktivera kundens tidsstämpelordning och kontakta din tekniska kontohanterare på Adobe eller Adobe kundtjänst för din sandlåda och datauppsättningsinformation.
 
 ## Begränsningar
 
 Under den här privata betaversionen gäller följande begränsningar när kundens tidsstämpelordning används:
 
-- Du kan bara använda kundens tidsstämpelordning med **profilattribut** inkapslad med **direktuppspelning** i profilarkivet.
-   - Det finns **no** Beställningsgarantier för data i sjön eller identitetstjänsten.
-- Du kan bara använda kundens tidsstämpelordning på **icke-produktion** sandlådor.
-- Du kan bara tillämpa kundens tidsstämpelordning på **5** datauppsättningar per sandlåda.
-- Du **inte** använda direktuppspelande upserts för att skicka uppdateringar av delar av rader i en datauppsättning där kundens tidsstämpelordning är aktiverad.
-- The `extSourceSystemAudit.lastUpdatedDate` fält **måste** finns i [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. När formatet ISO 8601 används är det **måste** vara som en fullständig datetime i formatet `yyyy-MM-ddTHH:mm:ss.sssZ` (till exempel `2028-11-13T15:06:49.001Z`).
-- Alla rader med data har skickats **måste** innehåller `extSourceSystemAudit.lastUpdatedDate` som en fältgrupp på den översta nivån. Detta innebär att det här fältet **måste** inte kapslas i XDM-schemat. Om det här fältet saknas eller har ett felaktigt format kommer den felaktiga posten att **not** hämtas och ett motsvarande felmeddelande skickas.
-- Alla datauppsättningar aktiverade för kundens tidsstämpelordning **måste** vara en ny datauppsättning utan tidigare inkapslade data.
-- För varje givet profilfragment är det bara rader som innehåller ett senare `extSourceSystemAudit.lastUpdatedDate` kommer att förtäras. Rader som innehåller `extSourceSystemAudit.lastUpdatedDate` antingen är äldre eller också kommer samma ålder att kastas.
+- Du kan bara använda kundens tidsstämpelordning med **profilattribut** som är inkapslade med **direktuppspelningsinmatning** i profilarkivet.
+   - Det finns **inga** beställningsgarantier för data i datasjön eller identitetstjänsten.
+- Du kan bara använda kundens tidsstämpelordning i **icke-produktion** -sandlådor.
+- Du kan bara tillämpa kundens tidsstämpelordning på **5**-datauppsättningar per sandlåda.
+- Du **kan inte** använda direktuppspelande uppdateringar för att skicka uppdateringar på en del rader i en datauppsättning där kundens tidsstämpelordning är aktiverad.
+- Fältet `extSourceSystemAudit.lastUpdatedDate` **måste** vara i formatet [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html). När du använder ISO 8601-formatet måste **vara** som en fullständig datetime i formatet `yyyy-MM-ddTHH:mm:ss.sssZ` (till exempel `2028-11-13T15:06:49.001Z`).
+- Alla rader med data som har infogats **måste** innehålla fältet `extSourceSystemAudit.lastUpdatedDate` som en fältgrupp på den översta nivån. Det innebär att fältet **måste** inte kapslas i XDM-schemat. Om det här fältet saknas eller har ett felaktigt format, kommer den felaktiga posten **inte** att kapslas och ett motsvarande felmeddelande skickas.
+- Alla datauppsättningar som är aktiverade för kundens tidsstämpelsortering **måste** vara en ny datauppsättning utan tidigare inkapslade data.
+- Endast rader som innehåller en senare `extSourceSystemAudit.lastUpdatedDate` kommer att kapslas för alla angivna profilfragment. Rader som innehåller en `extSourceSystemAudit.lastUpdatedDate` som är antingen äldre eller lika gammal ignoreras.
 
-## Recommendations
+## Rekommendationer
 
 Tänk på följande när du implementerar kundens tidsstämpelordning:
 

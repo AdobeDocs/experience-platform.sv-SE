@@ -11,13 +11,13 @@ ht-degree: 0%
 
 ---
 
-# Koppla klienter till [!DNL Query Service]
+# Anslut klienter till [!DNL Query Service]
 
-I det här avsnittet beskrivs hur du ansluter till [!DNL Query Service] från en mängd olika klientprogram och hur du verifierar dessa anslutningar. [!DNL Query Service] använder [!DNL PostgreSQL] så instruktionerna i det här avsnittet förklarar hur du använder [!DNL PostgreSQL] verktyg och drivrutiner för att ansluta och skriva frågor.
+I det här avsnittet beskrivs hur du ansluter till [!DNL Query Service] från en mängd olika klientprogram för datorer och hur du verifierar dessa anslutningar. [!DNL Query Service] använder protokollet [!DNL PostgreSQL], så instruktionerna i det här avsnittet beskriver hur du använder verktyg och drivrutiner i [!DNL PostgreSQL] för att ansluta till och skriva frågor.
 
 >[!IMPORTANT]
 >
->TLS/SSL-certifikaten i produktionsmiljöer för API:t för frågetjänsten Interactive Postgres uppdaterades onsdagen den 24 januari 2024.<br>Även om detta är ett årligt krav har rotcertifikatet i kedjan även ändrats eftersom Adobe TLS/SSL-certifikatprovidern har uppdaterat sin certifikathierarki. Detta kan påverka vissa Postgres-klienter om deras lista över certifikatutfärdare saknar rotcertifikatet. En PSQL CLI-klient kan till exempel behöva lägga till rotcertifikaten i en explicit fil `~/postgresql/root.crt`, annars kan det leda till ett fel. Till exempel: `psql: error: SSL error: certificate verify failed`. Se [officiell PostgreSQL-dokumentation](https://www.postgresql.org/docs/current/libpq-ssl.html#LIBQ-SSL-CERTIFICATES) om du vill ha mer information om problemet.<br>Rotcertifikatet som ska läggas till kan hämtas från [https://cacerts.digicert.com/DigiCertGlobalRootG2.crt.pem](https://cacerts.digicert.com/DigiCertGlobalRootG2.crt.pem).
+>TLS/SSL-certifikaten i produktionsmiljöer för API:t för frågetjänsten Interactive Postgres uppdaterades onsdagen den 24 januari 2024.<br>Även om detta är ett årligt krav har rotcertifikatet i kedjan även ändrats eftersom Adobe TLS/SSL-certifikatprovidern har uppdaterat sin certifikathierarki. Detta kan påverka vissa Postgres-klienter om deras lista över certifikatutfärdare saknar rotcertifikatet. En PSQL CLI-klient kan till exempel behöva lägga till rotcertifikaten i en explicit fil `~/postgresql/root.crt`, annars kan det leda till ett fel. Exempel: `psql: error: SSL error: certificate verify failed`. Mer information om det här problemet finns i den [officiella PostgreSQL-dokumentationen](https://www.postgresql.org/docs/current/libpq-ssl.html#LIBQ-SSL-CERTIFICATES).<br>Rotcertifikatet som ska läggas till kan hämtas från [https://cacerts.digicert.com/DigiCertGlobalRootG2.crt.pem](https://cacerts.digicert.com/DigiCertGlobalRootG2.crt.pem).
 
 Instruktioner finns för följande klienter:
 
@@ -32,4 +32,4 @@ Instruktioner finns för följande klienter:
 
 >[!IMPORTANT]
 >
->Som Power BI- och Tableau-användare kan du ansluta Customer Journey Analytics till dina BI-verktyg från fliken med autentiseringsuppgifter för frågetjänsten. Instruktioner om hur du gör det finns i dokumentationen för inloggningsuppgifterna [koppla dina BI-verktyg till Customer Journey Analytics](../ui/credentials.md#connect-to-customer-journey-analytics).
+>Som Power BI- och Tableau-användare kan du ansluta Customer Journey Analytics till dina BI-verktyg från fliken med autentiseringsuppgifter för frågetjänsten. Instruktioner om hur du [ansluter dina BI-verktyg till Customer Journey Analytics](../ui/credentials.md#connect-to-customer-journey-analytics) finns i dokumentationen för autentiseringsuppgifter.

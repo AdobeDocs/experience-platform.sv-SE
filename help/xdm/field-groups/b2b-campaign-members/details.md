@@ -9,9 +9,9 @@ ht-degree: 0%
 
 ---
 
-# [!UICONTROL XDM Business Campaign Member Details] schemafältgrupp
+# Schemafältgruppen [!UICONTROL XDM Business Campaign Member Details]
 
-[!UICONTROL XDM Business Campaign Member Details] är en standardgrupp för schemafält för [[!UICONTROL XDM Business Campaign Members] class](../../classes/b2b/business-campaign-members.md), som innehåller detaljerad information om en företagskampanj.
+[!UICONTROL XDM Business Campaign Member Details] är en standardschemafältgrupp för klassen [[!UICONTROL XDM Business Campaign Members] ](../../classes/b2b/business-campaign-members.md) som samlar in detaljerad information om en företagskampanj.
 
 ![Strukturen för fältgruppen XDM Business Campaign-medlemsinformation så som den visas i användargränssnittet](../../images/field-groups/b2b/business-campaign-member-details.png)
 
@@ -22,7 +22,7 @@ ht-degree: 0%
 | `firstRespondedDate` | [!UICONTROL DateTime] | En ISO 8601-tidsstämpel som anger när personen först svarade på kampanjen. |
 | `hasReachedSuccess` | [!UICONTROL Boolean] | Anger om den här kampanjmedlemmen har resulterat i en lyckad konvertering. |
 | `hasResponded` | [!UICONTROL Boolean] | Anger om kampanjmedlemmen har svarat på kampanjen. |
-| `isDeleted` | [!UICONTROL Boolean] | Anger om den här kampanjmedlemmen har tagits bort i Marketo Engage.<br><br>När du använder [Marketo källanslutning](../../../sources/connectors/adobe-applications/marketo/marketo.md), återspeglas alla poster som tas bort i Marketo automatiskt i kundprofilen i realtid. Poster som rör dessa profiler kan dock fortfarande finnas kvar i datasjön. Efter inställning `isDeleted` till `true`kan du använda fältet för att filtrera bort vilka poster som har tagits bort från dina källor när du frågar efter datasjön. |
+| `isDeleted` | [!UICONTROL Boolean] | Anger om den här kampanjmedlemmen har tagits bort i Marketo Engage.<br><br>När du använder [Marketo-källkopplingen](../../../sources/connectors/adobe-applications/marketo/marketo.md) återspeglas alla poster som tas bort i Marketo automatiskt i kundprofilen i realtid. Poster som rör dessa profiler kan dock fortfarande finnas kvar i datasjön. Genom att ställa in `isDeleted` på `true` kan du använda fältet för att filtrera bort vilka poster som har tagits bort från dina källor när du frågar i datasjön. |
 | `isExhausted` | [!UICONTROL Boolean] | Anger om kampanjmedlemmen har uttömt alla kampanjinteraktioner. |
 | `lastStatus` | [!UICONTROL String] | Den senaste statusen för kampanjmedlemmen. |
 | `memberStatus` | [!UICONTROL String] | Aktuell status för kampanjmedlemmen. |

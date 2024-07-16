@@ -9,9 +9,9 @@ ht-degree: 1%
 
 ---
 
-# [!UICONTROL Balance Transfers] schemafältgrupp
+# Schemafältgruppen [!UICONTROL Balance Transfers]
 
-[!UICONTROL Balance Transfers] är en standardgrupp för schemafält för [[!DNL XDM ExperienceEvent] class](../../classes/experienceevent.md). Fältgruppen innehåller en `personalFinances.balanceTransfers` objekt till ett schema, som innehåller information om en överföring av ett ekonomiskt saldo mellan konton.
+[!UICONTROL Balance Transfers] är en standardschemafältgrupp för [[!DNL XDM ExperienceEvent] klassen](../../classes/experienceevent.md). Fältgruppen tillhandahåller ett enskilt `personalFinances.balanceTransfers`-objekt till ett schema, som samlar in information om en överföring av ett ekonomiskt saldo mellan konton.
 
 ![](../../images/field-groups/balance-transfers.png)
 
@@ -23,4 +23,4 @@ ht-degree: 1%
 
 {style="table-layout:auto"}
 
-Mer information om fältgruppen finns i [publik XDM-databas](https://github.com/adobe/xdm/blob/master/docs/reference/fieldgroups/experience-event/industry-verticals/experienceevent-balance-transfers.schema.json).
+Mer information om fältgruppen finns i [den offentliga XDM-databasen](https://github.com/adobe/xdm/blob/master/docs/reference/fieldgroups/experience-event/industry-verticals/experienceevent-balance-transfers.schema.json).

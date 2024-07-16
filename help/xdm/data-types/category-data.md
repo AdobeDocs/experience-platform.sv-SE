@@ -1,18 +1,19 @@
 ---
 title: Datatyp för kategori
 description: Läs mer om datatypen XDM (Category data Experience Data Model).
-source-git-commit: de8e944cfec3b52d25bb02bcfebe57d6a2a35e39
+exl-id: f8d52f2d-5fb0-4999-8b31-ddc14225b0ab
+source-git-commit: 8be502c9eea67119dc537a5d63a6c71e0bff1697
 workflow-type: tm+mt
 source-wordcount: '88'
 ht-degree: 1%
 
 ---
 
-# [!UICONTROL Category data] datatyp
+# Datatypen [!UICONTROL Category data]
 
 [!UICONTROL Category data] är en XDM-datatyp (Standard Experience Data Model) som beskriver information som hör till en produkts kategori.
 
-![Ett diagram över datatypen för kategorin.](../images/data-types/category-data.png)
+![Ett diagram över kategoridatatypen.](../images/data-types/category-data.png)
 
 | Visningsnamn | Egenskap | Datatyp | Beskrivning |
 |-----------------|--------------------|-----------|------------------------------------------|

@@ -8,7 +8,7 @@ exl-id: 9b45bba4-fc46-4d69-b36a-5cb91f316612
 source-git-commit: 2704184446f7945c744e7e2d2a8c3cda3fc12527
 workflow-type: tm+mt
 source-wordcount: '1050'
-ht-degree: 1%
+ht-degree: 0%
 
 ---
 
@@ -16,7 +16,7 @@ ht-degree: 1%
 
 Real-Time CDP B2B Edition bygger på Adobe Real-time Customer Data Platform (Real-Time CDP) och är särskilt framtagen för marknadsförare som använder en tjänstmodell som bygger på business-to-business. Den sammanför data från flera källor och kombinerar dem i en enda vy över personer och kontoprofiler. Tack vare dessa enhetliga data kan marknadsförarna inrikta sig exakt på specifika målgrupper och engagera dessa målgrupper i alla tillgängliga kanaler.
 
-Det finns förbättringar i en rad olika Adobe Experience Platform-funktioner som skiljer Real-Time CDP B2B Edition från B2C-motsvarigheten. De innehåller förbättringar av Experience Data Model (XDM) för B2B-användningsfall, uppgraderingar av identitetsupplösning och profilsegmentering samt en anpassad anslutning och destination för [!DNL Marketo Engage]. The [!DNL Marketo] Tack vare kopplingen kan B2B-varumärken koppla sina branschledande B2B-interaktionsdata till beteendeinformation för att vårda leads och förbättra kontobaserade marknadsföringsaktiviteter.
+Det finns förbättringar i en rad olika Adobe Experience Platform-funktioner som skiljer Real-Time CDP B2B Edition från B2C-motsvarigheten. De innehåller förbättringar av Experience Data Model (XDM) för B2B-användningsfall, uppgraderingar av identitetsupplösning och profilsegmentering samt en anpassad anslutning och mål för [!DNL Marketo Engage]. Med [!DNL Marketo]-kontakten kan B2B-varumärken koppla sina branschledande B2B-interaktionsdata till beteendeinformation för att vårda leads och förbättra kontobaserade marknadsföringsaktiviteter.
 
 Med Real-Time CDP B2B Edition kan du
 
@@ -28,9 +28,9 @@ Mer omfattande information om förbättringarna för Real-Time CDP B2B Edition f
 
 ## XML
 
-Real-Time CDP B2B Edition innehåller flera nya XDM-schemaklasser, fältgrupper och relationstyper för att hämta in och strukturera data specifikt för B2B-ändamål. Se översikten på [XDM i Real-Time CDP B2B Edition](./schemas/b2b.md) för en beskrivning av alla dessa förbättringar.
+Real-Time CDP B2B Edition innehåller flera nya XDM-schemaklasser, fältgrupper och relationstyper för att hämta in och strukturera data specifikt för B2B-ändamål. I översikten om [XDM i Real-Time CDP B2B Edition](./schemas/b2b.md) finns en beskrivning av alla dessa förbättringar.
 
-Genom att använda förkonfigurerade B2B-scheman kan du hämta in data i en standardiserad, hanterbar struktur. Många av de nya schemaklasserna mappas nästan direkt till dem som finns i vanliga CRM-system, som [!DNL Salesforce], [!DNL Microsoft Dynamics], [!DNL Marketo]och andra B2B-datakällor. Med Real-Time CDP B2B Edition kan ni enkelt överföra data från B2B-källor till plattformen och få resultat som är enkla att granska.
+Genom att använda förkonfigurerade B2B-scheman kan du hämta in data i en standardiserad, hanterbar struktur. Många av de nya schemaklasserna mappas nästan direkt till de som finns i vanliga CRM-klasser som [!DNL Salesforce], [!DNL Microsoft Dynamics], [!DNL Marketo] och andra B2B-datakällor. Med Real-Time CDP B2B Edition kan ni enkelt överföra data från B2B-källor till plattformen och få resultat som är enkla att granska.
 
 Dessa XDM-förbättringar gör det möjligt att bättre importera och aktivera data via B2B-centrerade källor och mål, vilket förbättrar datainsamlingen och presentationen för fler olika och mer flexibla användningsfall.
 
@@ -59,19 +59,19 @@ När det implementeras korrekt spåras personer som använder unika primära ide
 
 ## B2B-källor
 
-Plattformen gör det möjligt att importera data från externa källor samtidigt som du får möjlighet att strukturera, märka och förbättra inkommande data med hjälp av plattformstjänster. The [!DNL Marketo] Med -källa kan du strömma B2B-data till plattformen och hålla dessa data uppdaterade med plattformsanslutna program. Det stöder valfritt antal förekomster av [!DNL Marketo] (vilket är fördelaktigt för stora företag med flera instanser) och samlas i en enda organisation där data sammanfogas.
+Plattformen gör det möjligt att importera data från externa källor samtidigt som du får möjlighet att strukturera, märka och förbättra inkommande data med hjälp av plattformstjänster. Med källan [!DNL Marketo] kan du strömma B2B-data till plattformen och hålla dessa data uppdaterade med plattformsanslutna program. Det stöder valfritt antal instanser av [!DNL Marketo] (vilket är fördelaktigt för stora företag med flera instanser) och samlas i en enda organisation där data sammanfogas.
 
 >[!NOTE]
 >
->The [!DNL Marketo] källan är **not** krävs för att använda Real-Time CDP B2B Edition.
+>[!DNL Marketo]-källan krävs **inte** för att använda Real-Time CDP B2B Edition.
 
-Se [i Real-Time CDP B2B Edition](./sources/b2b.md) om du vill ha mer information om Marketo och hur man lägger in B2B-data i Platform.
+Se [källorna i dokumentationen för Real-Time CDP B2B Edition](./sources/b2b.md) om du vill ha mer information om Marketo och hur du överför B2B-data till plattformen.
 
 ## B2B-mål
 
 Experience Platform-mål som Google Customer Match, Facebook, LinkedIn, Marketo Engage, Amazon S3, Google Display &amp; Video 360, Google Ads och Google Ad Manager är tillgängliga och stöds fullt ut av Real-Time CDP B2B Edition. Marketo Engage-målet strömmar även data om segmentmedlemskap från Platform och gör dem tillgängliga som listor i Marketo.
 
-Se översikten på [Marketo Engage destination](../destinations/catalog/adobe/marketo-engage.md) för mer information.
+Mer information finns i översikten på [Marketo Engage-målet](../destinations/catalog/adobe/marketo-engage.md).
 
 För företag med mer än en CRM kan Real-Time CDP B2B Edition konfigurera målanslutningar till separata instanser av Marketo eller CRM. Om det behövs kan du konfigurera målanslutningar för varje instans och skicka målgrupper till var och en av CRM-instanserna separat.
 

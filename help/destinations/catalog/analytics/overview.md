@@ -31,7 +31,7 @@ För närvarande stöder Adobe Experience Platform de analysmål som anges nedan
 * [Gainsight PX-anslutning](gainsight-px.md)
 * [Analystillägg för Google Global Site Tag](gtag-analytics.md)
 * [Google Universal Analytics-tillägg](google-universal-analytics.md)
-* [JW Player Analytics-tillägg (beta)](jw-player-analytics.md)
+* [JW Player Analytics-tillägg (Beta)](jw-player-analytics.md)
 * [Nielsen BSDK-tillägg](nielsen-bsdk.md)
 * [Nielsen IMA Handler Extension](nielsen-ima.md)
 * [Nielsen VideoJS Player Handler Extension](nielsen-videojs.md)

@@ -9,7 +9,7 @@ ht-degree: 1%
 
 ---
 
-# [!UICONTROL Implementation details] datatyp
+# Datatypen [!UICONTROL Implementation details]
 
 [!UICONTROL Implementation details] är en XDM-datatyp (Standard Experience Data Model) som beskriver en teknikimplementering, till exempel ett API eller en SDK.
 

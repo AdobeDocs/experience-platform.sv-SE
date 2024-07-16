@@ -4,7 +4,7 @@ description: Den senaste versionsinformationen om taggtillägget Marketo Munchki
 exl-id: 709265fc-f227-4995-8976-6170da60c89e
 source-git-commit: 88939d674c0002590939004e0235d3da8b072118
 workflow-type: tm+mt
-source-wordcount: '140'
+source-wordcount: '146'
 ht-degree: 0%
 
 ---
@@ -13,7 +13,7 @@ ht-degree: 0%
 
 >[!NOTE]
 >
->Adobe Experience Platform Launch har omklassificerats som en serie datainsamlingstekniker i Adobe Experience Platform. Som ett resultat av detta har flera terminologiska förändringar införts i produktdokumentationen. Se följande [dokument](../../../term-updates.md) för en konsoliderad hänvisning till terminologiska förändringar.
+>Adobe Experience Platform Launch har omklassificerats som en serie datainsamlingstekniker i Adobe Experience Platform. Som ett resultat av detta har flera terminologiska förändringar införts i produktdokumentationen. I följande [dokument](../../../term-updates.md) finns en konsoliderad referens till de ändrade terminologin.
 
 ## 2 december 2020
 
@@ -27,7 +27,7 @@ ht-degree: 0%
 ### Marketo Munchkin Extension 1.1.0
 
 * Förbättrat stöd för Initialize-åtgärden, med fullt stöd för alla konfigurerbara parametrar
-* Alla tre API-åtgärdstyper har lagts till: Besök webbsidan, klicka på Länk och Associera lead
+* Alla tre API-åtgärdstyperna har lagts till: Gå till webbsida, klicka på Länk och Associera lead
 
 ## 15 november 2018
 

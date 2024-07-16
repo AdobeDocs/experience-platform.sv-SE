@@ -15,15 +15,15 @@ Med Adobe Experience Platform kan ni helt anpassa strukturen för era anpassade 
 
 Du kan också definiera mappningsfält i Schemaredigeraren för att modellera flexibla och dynamiska datastrukturer eller lagra en samling nyckelvärdepar.
 
-När du definierar ett nytt fält i användargränssnittet för plattformen använder du **[!UICONTROL Type]** listruta och välj &quot;**[!UICONTROL Map]**&quot; i listan.
+När du definierar ett nytt fält i användargränssnittet för plattformen använder du listrutan **[!UICONTROL Type]** och väljer **[!UICONTROL Map]** i listan.
 
 ![Schemaredigeraren med listrutan Typ och kartvärdet markerat.](../../images/ui/fields/special/map.png)
 
-A [!UICONTROL Map value type] visas. Detta värde krävs för [!UICONTROL Map] datatyper. Tillgängliga värden för kartan är [!UICONTROL String] och [!UICONTROL Integer]. Välj ett värde i listrutan med tillgängliga alternativ.
+En [!UICONTROL Map value type]-egenskap visas. Det här värdet krävs för datatyperna [!UICONTROL Map]. Tillgängliga värden för kartan är [!UICONTROL String] och [!UICONTROL Integer]. Välj ett värde i listrutan med tillgängliga alternativ.
 
-![Schemaredigeraren med [!UICONTROL Map value type] listrutan är markerad.](../../images/ui/fields/special/map-value-type.png)
+![Schemaredigeraren med listrutan [!UICONTROL Map value type] markerad.](../../images/ui/fields/special/map-value-type.png)
 
-När du har konfigurerat delfältet måste du tilldela det till en fältgrupp. Använd **[!UICONTROL Field Group]** nedrullningsbar meny eller sökfält och välj **[!UICONTROL Apply]**. Du kan fortsätta lägga till fält i objektet med samma process, eller välja **[!UICONTROL Save]** för att bekräfta inställningarna.
+När du har konfigurerat delfältet måste du tilldela det till en fältgrupp. Använd listrutan **[!UICONTROL Field Group]** eller sökfältet och välj **[!UICONTROL Apply]**. Du kan fortsätta att lägga till fält i objektet med samma process eller välja **[!UICONTROL Save]** för att bekräfta inställningarna.
 
 ![En inspelning av fältgruppsvalet och inställningar som används.](../../images/ui/fields/special/assign-to-field-group.gif)
 
@@ -31,23 +31,23 @@ När du har konfigurerat delfältet måste du tilldela det till en fältgrupp. A
 
 XDM har följande begränsningar för användning av den här datatypen:
 
-* Karttyper MÅSTE vara av typen `object`.
+* Karttyperna MÅSTE vara av typen `object`.
 * Karttyper FÅR INTE ha egenskaper definierade (de definierar med andra ord tomma objekt).
-* Karttyper MÅSTE innehålla en `additionalProperties.type` fält som beskriver värdena som kan placeras på kartan, antingen `string` eller `integer`.
+* Karttyperna MÅSTE innehålla ett `additionalProperties.type`-fält som beskriver de värden som kan placeras i kartan, antingen `string` eller `integer`.
 * Segmentering för flera enheter kan bara definieras baserat på kartnycklarna och inte på värdena.
 * Kartor stöds inte för kontomålgrupper.
 
 Se till att du bara använder karttypsfält när det är absolut nödvändigt, eftersom de har följande prestandanackdelar:
 
-* Svarstid från [Adobe Experience Platform Query Service](../../../query-service/home.md) bryts ned från tre sekunder till tio sekunder för 100 miljoner poster.
+* Svarstiden från [Adobe Experience Platform Query Service](../../../query-service/home.md) försämras från tre sekunder till tio sekunder för 100 miljoner poster.
 * Kartor måste ha färre än 16 tangenter, annars riskerar de att försämras ytterligare.
 
 >[!NOTE]
 >
->Plattformsgränssnittet har begränsningar för hur nycklarna för mappningsfält kan extraheras. Objekttypsfält kan expanderas, men kartor visas i stället som ett enda fält. Mappningsfält som skapats med API:t för schemaregister och som inte är sträng- eller heltalsdatatyper visas som[!UICONTROL Complex]&quot; datatyper.
+>Plattformsgränssnittet har begränsningar för hur nycklarna för mappningsfält kan extraheras. Objekttypsfält kan expanderas, men kartor visas i stället som ett enda fält. Kartfält som skapats med API:t för schemaregister och som inte är sträng- eller heltalsdatatyper visas som [!UICONTROL Complex]-datatyper.
 
 ## Nästa steg
 
-När du har läst det här dokumentet kan du nu definiera kartfält i plattformsgränssnittet. Kom ihåg att du bara kan använda klasser och fältgrupper för att lägga till fält i scheman. Om du vill veta mer om hur du hanterar de här resurserna i användargränssnittet läser du i handböckerna om hur du skapar och redigerar [klasser](../resources/classes.md) och [fältgrupper](../resources/field-groups.md).
+När du har läst det här dokumentet kan du nu definiera kartfält i plattformsgränssnittet. Kom ihåg att du bara kan använda klasser och fältgrupper för att lägga till fält i scheman. Mer information om hur du hanterar de här resurserna i användargränssnittet finns i handböckerna om hur du skapar och redigerar [klasser](../resources/classes.md) och [fältgrupper](../resources/field-groups.md).
 
-Mer information om funktionerna i [!UICONTROL Schemas] arbetsytan, se [[!UICONTROL Schemas] arbetsyta - översikt](../overview.md).
+Mer information om funktionerna för arbetsytan [!UICONTROL Schemas] finns i översikten för arbetsytan [[!UICONTROL Schemas] ](../overview.md).

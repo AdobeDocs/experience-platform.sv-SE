@@ -9,81 +9,81 @@ ht-degree: 0%
 
 ---
 
-# Koppla samman [!DNL Salesforce] konto till Experience Platform med användargränssnittet
+# Anslut ditt [!DNL Salesforce]-konto till Experience Platform med användargränssnittet
 
-Den här självstudiekursen innehåller steg för hur du ansluter [!DNL Salesforce] ta med dina CRM-data till Adobe Experience Platform via användargränssnittet i Experience Platform.
+I den här självstudiekursen beskrivs hur du ansluter ditt [!DNL Salesforce]-konto och överför dina CRM-data till Adobe Experience Platform med användargränssnittet i Experience Platform.
 
 ## Komma igång
 
 Den här självstudiekursen kräver en fungerande förståelse av följande komponenter i Experience Platform:
 
 * [[!DNL Experience Data Model (XDM)] System](../../../../../xdm/home.md): Det standardiserade ramverk som Experience Platform använder för att ordna kundupplevelsedata.
-   * [Grunderna för schemakomposition](../../../../../xdm/schema/composition.md): Lär dig mer om de grundläggande byggstenarna i XDM-scheman, inklusive viktiga principer och bästa praxis när det gäller schemakomposition.
-   * [Schemaredigeraren, genomgång](../../../../../xdm/tutorials/create-schema-ui.md): Lär dig hur du skapar anpassade scheman med hjälp av gränssnittet i Schemaredigeraren.
-* [[!DNL Real-Time Customer Profile]](../../../../../profile/home.md): Ger en enhetlig konsumentprofil i realtid baserad på aggregerade data från flera källor.
+   * [Grundläggande om schemakomposition](../../../../../xdm/schema/composition.md): Lär dig mer om grundstenarna i XDM-scheman, inklusive nyckelprinciper och bästa metoder för schemakomposition.
+   * [Schemaredigeraren, självstudiekurs](../../../../../xdm/tutorials/create-schema-ui.md): Lär dig hur du skapar anpassade scheman med hjälp av gränssnittet för Schemaredigeraren.
+* [[!DNL Real-Time Customer Profile]](../../../../../profile/home.md): Tillhandahåller en enhetlig konsumentprofil i realtid baserad på aggregerade data från flera källor.
 
-Om du redan har en autentiserad [!DNL Salesforce] kan du hoppa över resten av dokumentet och gå vidare till självstudiekursen om [konfigurera ett dataflöde för CRM-data](../../dataflow/crm.md).
+Om du redan har ett autentiserat [!DNL Salesforce]-konto kan du hoppa över resten av det här dokumentet och gå vidare till självstudiekursen [Konfigurera ett dataflöde för CRM-data](../../dataflow/crm.md).
 
 ### Samla in nödvändiga inloggningsuppgifter {#gather-required-credentials}
 
-The [!DNL Salesforce] source stöder grundläggande autentisering och OAuth2-klientautentiseringsuppgifter.
+Källan [!DNL Salesforce] stöder grundläggande autentisering och autentiseringsuppgifter för OAuth2-klient.
 
 >[!BEGINTABS]
 
 >[!TAB Grundläggande autentisering]
 
-Du måste ange värden för följande autentiseringsuppgifter för att kunna ansluta [!DNL Salesforce] konto med grundläggande autentisering.
+Du måste ange värden för följande autentiseringsuppgifter för att kunna ansluta ditt [!DNL Salesforce]-konto med grundläggande autentisering.
 
 | Autentiseringsuppgifter | Beskrivning |
 | --- | --- |
-| Miljö-URL | URL:en för [!DNL Salesforce] källinstans. |
-| Användarnamn | Användarnamnet för [!DNL Salesforce] användarkonto. |
-| Lösenord | Lösenordet för [!DNL Salesforce] användarkonto. |
-| Säkerhetstoken | Säkerhetstoken för [!DNL Salesforce] användarkonto. |
-| API-version | (Valfritt) REST API-versionen av [!DNL Salesforce] -instans som du använder. Värdet för API-versionen måste formateras med ett decimaltecken. Om du till exempel använder API-version `52`måste du ange värdet som `52.0`. Om det här fältet lämnas tomt kommer Experience Platform automatiskt att använda den senaste tillgängliga versionen. |
+| Miljö-URL | URL:en för [!DNL Salesforce]-källinstansen. |
+| Användarnamn | Användarnamnet för användarkontot [!DNL Salesforce]. |
+| Lösenord | Lösenordet för användarkontot [!DNL Salesforce]. |
+| Säkerhetstoken | Säkerhetstoken för användarkontot [!DNL Salesforce]. |
+| API-version | (Valfritt) REST API-versionen för den [!DNL Salesforce]-instans som du använder. Värdet för API-versionen måste formateras med ett decimaltecken. Om du till exempel använder API-version `52` måste du ange värdet som `52.0`. Om det här fältet lämnas tomt kommer Experience Platform automatiskt att använda den senaste tillgängliga versionen. |
 
-Mer information om autentisering finns i [this [!DNL Salesforce] autentiseringsguide](https://developer.salesforce.com/docs/atlas.en-us.api_rest.meta/api_rest/quickstart_oauth.htm).
+Mer information om autentisering finns i [den här [!DNL Salesforce] autentiseringsguiden](https://developer.salesforce.com/docs/atlas.en-us.api_rest.meta/api_rest/quickstart_oauth.htm).
 
 >[!TAB Autentiseringsuppgifter för OAuth2-klient]
 
-Du måste ange värden för följande autentiseringsuppgifter för att kunna ansluta [!DNL Salesforce] konto med OAuth2 Client Credential.
+Du måste ange värden för följande autentiseringsuppgifter för att kunna ansluta ditt [!DNL Salesforce]-konto med hjälp av OAuth2-klientautentiseringsuppgifter.
 
 | Autentiseringsuppgifter | Beskrivning |
 | --- | --- |
-| Miljö-URL | URL:en för [!DNL Salesforce] källinstans. |
-| Klient-ID | Klient-ID används tillsammans med klienthemligheten som en del av OAuth2-autentisering. Tillsammans möjliggör klient-ID och klienthemlighet att ditt program arbetar för ditt kontos räkning genom att identifiera ditt program för [!DNL Salesforce]. |
-| Klienthemlighet | Klienthemligheten används tillsammans med klient-ID som en del av OAuth2-autentiseringen. Tillsammans möjliggör klient-ID och klienthemlighet att ditt program arbetar för ditt kontos räkning genom att identifiera ditt program för [!DNL Salesforce]. |
-| API-version | REST API-versionen av [!DNL Salesforce] -instans som du använder. Värdet för API-versionen måste formateras med ett decimaltecken. Om du till exempel använder API-version `52`måste du ange värdet som `52.0`. Om det här fältet lämnas tomt kommer Experience Platform automatiskt att använda den senaste tillgängliga versionen. |
+| Miljö-URL | URL:en för [!DNL Salesforce]-källinstansen. |
+| Klient-ID | Klient-ID används tillsammans med klienthemligheten som en del av OAuth2-autentisering. Tillsammans gör klient-ID och klienthemlighet att ditt program kan fungera för ditt kontos räkning genom att identifiera ditt program för [!DNL Salesforce]. |
+| Klienthemlighet | Klienthemligheten används tillsammans med klient-ID som en del av OAuth2-autentiseringen. Tillsammans gör klient-ID och klienthemlighet att ditt program kan fungera för ditt kontos räkning genom att identifiera ditt program för [!DNL Salesforce]. |
+| API-version | REST API-versionen för den [!DNL Salesforce]-instans som du använder. Värdet för API-versionen måste formateras med ett decimaltecken. Om du till exempel använder API-version `52` måste du ange värdet som `52.0`. Om det här fältet lämnas tomt kommer Experience Platform automatiskt att använda den senaste tillgängliga versionen. |
 
-Mer information om OAuth för [!DNL Salesforce], läsa [[!DNL Salesforce] guide om OAuth Authorization Flows](https://help.salesforce.com/s/articleView?id=sf.remoteaccess_oauth_flows.htm&amp;type=5).
+Mer information om hur du använder OAuth för [!DNL Salesforce] finns i [[!DNL Salesforce] handboken om OAuth-auktoriseringsflöden](https://help.salesforce.com/s/articleView?id=sf.remoteaccess_oauth_flows.htm&amp;type=5).
 
 >[!ENDTABS]
 
-När du har samlat in dina inloggningsuppgifter kan du följa stegen nedan för att ansluta [!DNL Salesforce] konto till Experience Platform.
+När du har samlat in de nödvändiga inloggningsuppgifterna kan du följa stegen nedan för att ansluta ditt [!DNL Salesforce]-konto till Experience Platform.
 
-## Koppla samman [!DNL Salesforce] konto
+## Anslut ditt [!DNL Salesforce]-konto
 
-Välj **[!UICONTROL Sources]** från vänster navigering för att komma åt [!UICONTROL Sources] arbetsyta. Du kan välja lämplig kategori i katalogen till vänster på skärmen. Du kan också hitta den källa du vill arbeta med med med sökalternativet.
+I plattformsgränssnittet väljer du **[!UICONTROL Sources]** i den vänstra navigeringen för att komma åt arbetsytan i [!UICONTROL Sources]. Du kan välja lämplig kategori i katalogen till vänster på skärmen. Du kan också hitta den källa du vill arbeta med med med sökalternativet.
 
-Välj **[!DNL Salesforce]** under *[!UICONTROL CRM]* och välj **[!UICONTROL Add data]**.
+Välj **[!DNL Salesforce]** under kategorin *[!UICONTROL CRM]* och välj sedan **[!UICONTROL Add data]**.
 
 >[!TIP]
 >
->Källor i källkatalogen visas **[!UICONTROL Set up]** när en viss källa ännu inte har något autentiserat konto. När det finns ett autentiserat konto ändras det här alternativet till **[!UICONTROL Add data]**.
+>Källor i källkatalogen visar alternativet **[!UICONTROL Set up]** när en angiven källa ännu inte har något autentiserat konto. När det finns ett autentiserat konto ändras det här alternativet till **[!UICONTROL Add data]**.
 
 ![Källkatalogen i användargränssnittet i Experience Platform med Salesforce-källkortet markerat.](../../../../images/tutorials/create/salesforce/catalog.png)
 
-The **[!UICONTROL Connect to Salesforce]** visas. På den här sidan kan du antingen använda nya autentiseringsuppgifter eller befintliga.
+Sidan **[!UICONTROL Connect to Salesforce]** visas. På den här sidan kan du antingen använda nya autentiseringsuppgifter eller befintliga.
 
 ### Använd ett befintligt konto
 
-Om du vill använda ett befintligt konto väljer du **[!UICONTROL Existing account]** och välj sedan det konto som du vill använda i listan som visas. När du är klar väljer du **[!UICONTROL Next]** för att fortsätta.
+Om du vill använda ett befintligt konto väljer du **[!UICONTROL Existing account]** och sedan det konto som du vill använda i listan som visas. När du är klar väljer du **[!UICONTROL Next]** för att fortsätta.
 
 ![En lista över autentiserade Salesforce-konton som redan finns i din organisation.](../../../../images/tutorials/create/salesforce/existing.png)
 
 ### Skapa ett nytt konto
 
-Om du vill skapa ett nytt konto väljer du **[!UICONTROL New account]** och ange ett namn och en beskrivning av ditt nya [!DNL Salesforce] konto.
+Om du vill skapa ett nytt konto väljer du **[!UICONTROL New account]** och anger ett namn och en beskrivning för det nya [!DNL Salesforce]-kontot.
 
 ![Gränssnittet där du kan skapa ett nytt Salesforce-konto genom att ange lämpliga autentiseringsuppgifter.](../../../../images/tutorials/create/salesforce/new.png)
 
@@ -93,7 +93,7 @@ Välj sedan den autentiseringstyp som du vill använda för ditt nya konto.
 
 >[!TAB Grundläggande autentisering]
 
-Välj **[!UICONTROL Basic authentication]** och ange sedan värden för följande autentiseringsuppgifter:
+Välj **[!UICONTROL Basic authentication]** för grundläggande autentisering och ange sedan värden för följande autentiseringsuppgifter:
 
 * Miljö-URL
 * Användarnamn
@@ -106,7 +106,7 @@ När du är klar väljer du **[!UICONTROL Connect to source]**.
 
 >[!TAB Autentiseringsuppgifter för OAuth2-klient]
 
-För autentiseringsuppgifter för OAuth 2-klient väljer du **[!UICONTROL OAuth2 Client Credential]** och ange sedan värden för följande autentiseringsuppgifter:
+För autentiseringsuppgifter för OAuth 2-klient väljer du **[!UICONTROL OAuth2 Client Credential]** och anger sedan värden för följande autentiseringsuppgifter:
 
 * Miljö-URL
 * Klient-ID
@@ -121,4 +121,4 @@ När du är klar väljer du **[!UICONTROL Connect to source]**.
 
 ## Nästa steg
 
-Genom att följa den här självstudien har du upprättat en anslutning till [!DNL Salesforce] konto. Du kan nu fortsätta med nästa självstudiekurs och [konfigurera ett dataflöde för att hämta data till [!DNL Platform]](../../dataflow/crm.md).
+Genom att följa den här självstudiekursen har du upprättat en anslutning till ditt [!DNL Salesforce]-konto. Du kan nu fortsätta till nästa självstudiekurs och [konfigurera ett dataflöde för att hämta data till [!DNL Platform]](../../dataflow/crm.md).

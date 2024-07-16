@@ -9,45 +9,45 @@ ht-degree: 0%
 
 ---
 
-# [!UICONTROL Adobe Analytics ExperienceEvent Full Extension] schemafältgrupp
+# Schemafältgruppen [!UICONTROL Adobe Analytics ExperienceEvent Full Extension]
 
-[!UICONTROL Adobe Analytics ExperienceEvent Full Extension] är en standardgrupp för schemafält för [[!DNL XDM ExperienceEvent] class](../../classes/experienceevent.md), som samlar in gemensamma mätvärden från Adobe Analytics.
+[!UICONTROL Adobe Analytics ExperienceEvent Full Extension] är en standardschemafältgrupp för [[!DNL XDM ExperienceEvent] klassen](../../classes/experienceevent.md), som samlar in vanliga mått som samlas in av Adobe Analytics.
 
 Det här dokumentet beskriver strukturen och användningsfallet för fältgruppen för Analytics-tillägget.
 
 >[!NOTE]
 >
->På grund av storleken och antalet upprepade element i den här fältgruppen har många av fälten som visas i den här guiden komprimerats för att spara utrymme. Om du vill utforska den fullständiga strukturen för den här fältgruppen kan du [söka i plattformsgränssnittet](../../ui/explore.md) eller visa hela schemat i [publik XDM-databas](https://github.com/adobe/xdm/blob/master/extensions/adobe/experience/analytics/experienceevent-all.schema.json).
+>På grund av storleken och antalet upprepade element i den här fältgruppen har många av fälten som visas i den här guiden komprimerats för att spara utrymme. Om du vill utforska den fullständiga strukturen för den här fältgruppen kan du [leta upp den i plattformsgränssnittet](../../ui/explore.md) eller visa hela schemat i [den offentliga XDM-databasen](https://github.com/adobe/xdm/blob/master/extensions/adobe/experience/analytics/experienceevent-all.schema.json).
 
 ## Fältgruppstruktur
 
-Fältgruppen innehåller en `_experience` objekt till ett schema, som i sin tur innehåller ett enda `analytics` -objekt.
+Fältgruppen tillhandahåller ett enskilt `_experience`-objekt till ett schema, som i sin tur innehåller ett enskilt `analytics`-objekt.
 
-![Fält på den översta nivån för analysfältgruppen](../../images/field-groups/analytics-full-extension/full-schema.png)
+![Fält på översta nivån för analysfältgruppen](../../images/field-groups/analytics-full-extension/full-schema.png)
 
 | Egenskap | Datatyp | Beskrivning |
 | --- | --- | --- |
-| `customDimensions` | Objekt | Hämtar anpassade dimensioner som spåras av Analytics. Se [underavsnitt nedan](#custom-dimensions) om du vill ha mer information om objektets innehåll. |
-| `endUser` | Objekt | Hämtar webbinteraktionsinformationen för slutanvändaren som utlöste händelsen. Se [underavsnitt nedan](#end-user) om du vill ha mer information om objektets innehåll. |
-| `environment` | Objekt | Hämtar information om den webbläsare och det operativsystem som utlöste händelsen. Se [underavsnitt nedan](#environment) om du vill ha mer information om objektets innehåll. |
-| `event1to100`<br><br>`event101to200`<br><br>`event201to300`<br><br>`event301to400`<br><br>`event401to500`<br><br>`event501to100`<br><br>`event601to700`<br><br>`event701to800`<br><br>`event801to900`<br><br>`event901to1000` | Objekt | Fältgruppen innehåller objektfält för att fånga upp till 1 000 anpassade händelser. Se [underavsnitt nedan](#events) för mer information om dessa fält. |
-| `session` | Objekt | Hämtar information om sessionen som utlöste händelsen. Se [underavsnitt nedan](#session) om du vill ha mer information om objektets innehåll. |
+| `customDimensions` | Objekt | Hämtar anpassade dimensioner som spåras av Analytics. Mer information om innehållet i det här objektet finns i [underavsnittet nedan](#custom-dimensions). |
+| `endUser` | Objekt | Hämtar webbinteraktionsinformationen för slutanvändaren som utlöste händelsen. Mer information om innehållet i det här objektet finns i [underavsnittet nedan](#end-user). |
+| `environment` | Objekt | Hämtar information om den webbläsare och det operativsystem som utlöste händelsen. Mer information om innehållet i det här objektet finns i [underavsnittet nedan](#environment). |
+| `event1to100`<br><br>`event101to200`<br><br>`event201to300`<br><br>`event301to400`<br><br>`event401to500`<br><br>`event501to100`<br><br>`event601to700`<br><br>`event701to800`<br><br>`event801to900`<br><br>`event901to1000` | Objekt | Fältgruppen innehåller objektfält för att fånga upp till 1 000 anpassade händelser. Mer information om dessa fält finns i [underavsnittet nedan](#events). |
+| `session` | Objekt | Hämtar information om sessionen som utlöste händelsen. Mer information om innehållet i det här objektet finns i [underavsnittet nedan](#session). |
 
 {style="table-layout:auto"}
 
 ## `customDimensions` {#custom-dimensions}
 
-`customDimensions` anpassade klipp [dimensioner](https://experienceleague.adobe.com/docs/analytics/components/dimensions/overview.html) som spåras av Analytics.
+`customDimensions` hämtar anpassade [dimensioner](https://experienceleague.adobe.com/docs/analytics/components/dimensions/overview.html) som spåras av Analytics.
 
 ![customDimensions-fält](../../images/field-groups/analytics-full-extension/customDimensions.png)
 
 | Egenskap | Datatyp | Beskrivning |
 | --- | --- | --- |
-| `eVars` | Objekt | Ett objekt som hämtar upp till 250 konverteringsvariabler ([eVars](https://experienceleague.adobe.com/docs/analytics/components/dimensions/evar.html)). Objektets egenskaper är nedtonade `eVar1` till `eVar250` och godkänner bara strängar för sin datatyp. |
-| `hierarchies` | Objekt | Ett objekt som hämtar upp till fem anpassade hierarkivariabler ([värmare](https://experienceleague.adobe.com/docs/analytics/implementation/vars/page-vars/hier.html)). Objektets egenskaper är nedtonade `hier1` till `hier5`, som i sig är objekt med följande underegenskaper:<ul><li>`delimiter`: Den ursprungliga avgränsaren som användes för att generera listan i `values`.</li><li>`values`: En avgränsad lista med namn på hierarkinivåer, representerat som en sträng.</li></ul> |
-| `listProps` | Objekt | Ett objekt som hämtar upp till 75 [lista-proffs](https://experienceleague.adobe.com/docs/analytics/implementation/vars/page-vars/prop.html#list-props). Objektets egenskaper är nedtonade `prop1` till `prop75`, som i sig är objekt med följande underegenskaper:<ul><li>`delimiter`: Den ursprungliga avgränsaren som användes för att generera listan i `values`.</li><li>`values`: En avgränsad lista med värden för propen, representerad som en sträng.</li></ul> |
-| `lists` | Objekt | Ett objekt som hämtar upp till tre [listor](https://experienceleague.adobe.com/docs/analytics/implementation/vars/page-vars/list.html). Objektets egenskaper är nedtonade `list1` till `list3`. Var och en av dessa egenskaper innehåller en `list` array med [[!UICONTROL Key Value Pair]](../../data-types/key-value-pair.md) datatyper. |
-| `props` | Objekt | Ett objekt som hämtar upp till 75 [proppar](https://experienceleague.adobe.com/docs/analytics/implementation/vars/page-vars/prop.html). Objektets egenskaper är nedtonade `prop1` till `prop75` och godkänner bara strängar för sin datatyp. |
+| `eVars` | Objekt | Ett objekt som hämtar upp till 250 konverteringsvariabler ([eVars](https://experienceleague.adobe.com/docs/analytics/components/dimensions/evar.html)). Egenskaperna för det här objektet är `eVar1`-keyade för `eVar250` och accepterar bara strängar för deras datatyp. |
+| `hierarchies` | Objekt | Ett objekt som hämtar upp till fem anpassade hierarkivariabler ([hiers](https://experienceleague.adobe.com/docs/analytics/implementation/vars/page-vars/hier.html)). Egenskaperna för det här objektet är nedtonade `hier1` till `hier5`, som i sin tur är objekt med följande underegenskaper:<ul><li>`delimiter`: Den ursprungliga avgränsaren som användes för att generera listan under `values`.</li><li>`values`: En avgränsad lista med namn på hierarkinivåer, representerat som en sträng.</li></ul> |
+| `listProps` | Objekt | Ett objekt som hämtar upp till 75 [listproppar](https://experienceleague.adobe.com/docs/analytics/implementation/vars/page-vars/prop.html#list-props). Egenskaperna för det här objektet är nedtonade `prop1` till `prop75`, som i sin tur är objekt med följande underegenskaper:<ul><li>`delimiter`: Den ursprungliga avgränsaren som användes för att generera listan under `values`.</li><li>`values`: En avgränsad lista med värden för propen, representerad som en sträng.</li></ul> |
+| `lists` | Objekt | Ett objekt som hämtar upp till tre [listor](https://experienceleague.adobe.com/docs/analytics/implementation/vars/page-vars/list.html). Egenskaperna för det här objektet är nedtonade `list1` till `list3`. Var och en av dessa egenskaper innehåller en enda `list`-matris med [[!UICONTROL Key Value Pair]](../../data-types/key-value-pair.md)-datatyper. |
+| `props` | Objekt | Ett objekt som hämtar upp till 75 [props](https://experienceleague.adobe.com/docs/analytics/implementation/vars/page-vars/prop.html). Egenskaperna för det här objektet är `prop1`-keyade för `prop75` och accepterar bara strängar för deras datatyp. |
 | `postalCode` | Sträng | Ett postnummer som kunden angett. |
 | `stateProvince` | Sträng | En klienttillhandahållen stat eller provinsplats. |
 
@@ -55,7 +55,7 @@ Fältgruppen innehåller en `_experience` objekt till ett schema, som i sin tur 
 
 ## `endUser` {#end-user}
 
-`endUser` hämtar webbinteraktionsinformation för slutanvändaren som utlöste händelsen.
+`endUser` samlar in webbinteraktionsinformation för slutanvändaren som utlöste händelsen.
 
 ![endUser-fält](../../images/field-groups/analytics-full-extension/endUser.png)
 
@@ -66,28 +66,28 @@ Fältgruppen innehåller en `_experience` objekt till ett schema, som i sin tur 
 
 ## `environment` {#environment}
 
-`environment` hämtar information om den webbläsare och det operativsystem som utlöste händelsen.
+`environment` samlar in information om den webbläsare och det operativsystem som utlöste händelsen.
 
 ![miljöfält](../../images/field-groups/analytics-full-extension/environment.png)
 
 | Egenskap | Datatyp | Beskrivning |
 | --- | --- | --- |
 | `browserIDStr` | Sträng | Adobe Analytics-identifieraren för den webbläsare som används (kallas även [webbläsartypdimension](https://experienceleague.adobe.com/docs/analytics/components/dimensions/browser-type.html)). |
-| `operatingSystemIDStr` | Sträng | Adobe Analytics-identifieraren för det operativsystem som används (kallas även [typdimension för operativsystem](https://experienceleague.adobe.com/docs/analytics/components/dimensions/operating-system-types.html)). |
+| `operatingSystemIDStr` | Sträng | Adobe Analytics-identifieraren för det operativsystem som används (kallas annars för [operativsystemtypsdimensionen](https://experienceleague.adobe.com/docs/analytics/components/dimensions/operating-system-types.html)). |
 
 ## Anpassade händelsefält {#events}
 
-Fältgruppen för analystillägg innehåller tio objektfält som fångar upp till 100 [anpassade händelsemått](https://experienceleague.adobe.com/docs/analytics/components/metrics/custom-events.html) var och en, för totalt 1000 för fältgruppen.
+Fältgruppen Analytics-tillägg innehåller tio objektfält som samlar in upp till 100 [anpassade händelsemått](https://experienceleague.adobe.com/docs/analytics/components/metrics/custom-events.html) vardera, vilket ger totalt 1 000 för fältgruppen.
 
-Varje händelseobjekt på den översta nivån innehåller de enskilda händelseobjekten för respektive intervall. Till exempel: `event101to200` innehåller de händelser som klistras in `event101` till `event200`.
+Varje händelseobjekt på den översta nivån innehåller de enskilda händelseobjekten för respektive intervall. `event101to200` innehåller t.ex. händelser som har sparats från `event101` till `event200`.
 
-Varje jämnt objekt använder [[!UICONTROL Measure]](../../data-types/measure.md) datatyp, som ger en unik identifierare och ett kvantifierbart värde.
+Alla jämna objekt använder datatypen [[!UICONTROL Measure]](../../data-types/measure.md), vilket ger en unik identifierare och ett kvantifierbart värde.
 
 ![Anpassat händelsefält](../../images/field-groups/analytics-full-extension/event-vars.png)
 
 ## `session` {#session}
 
-`session` hämtar information om sessionen som utlöste händelsen.
+`session` samlar in information om sessionen som utlöste händelsen.
 
 ![sessionsfält](../../images/field-groups/analytics-full-extension/session.png)
 
@@ -101,6 +101,6 @@ Varje jämnt objekt använder [[!UICONTROL Measure]](../../data-types/measure.md
 
 ## Nästa steg
 
-Det här dokumentet innehöll struktur och användningsfall för fältgruppen för Analytics-tillägget. Mer information om själva fältgruppen finns i [publik XDM-databas](https://github.com/adobe/xdm/blob/master/extensions/adobe/experience/analytics/experienceevent-all.schema.json).
+Det här dokumentet innehöll struktur och användningsfall för fältgruppen för Analytics-tillägget. Mer information om själva fältgruppen finns i [den offentliga XDM-databasen](https://github.com/adobe/xdm/blob/master/extensions/adobe/experience/analytics/experienceevent-all.schema.json).
 
-Om du använder den här fältgruppen för att samla in Analytics-data med Adobe Experience Platform Web SDK läser du i handboken på [konfigurera ett datastream](../../../datastreams/overview.md) om du vill lära dig att mappa data till XDM på serversidan.
+Om du använder den här fältgruppen för att samla in Analytics-data med Adobe Experience Platform Web SDK kan du läsa guiden [Konfigurera ett datastream](../../../datastreams/overview.md) för att lära dig hur du mappar data till XDM på serversidan.

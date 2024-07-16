@@ -6,18 +6,18 @@ description: Det här dokumentet innehåller de steg som krävs för att skapa e
 exl-id: 47558f03-c3f7-4ead-affb-fcbfd7f1e918
 source-git-commit: 7b197f253aa5ce04a682040814cf749407154ebc
 workflow-type: tm+mt
-source-wordcount: '302'
-ht-degree: 1%
+source-wordcount: '294'
+ht-degree: 0%
 
 ---
 
 # Skapa en ny produktprofil i Adobe Admin Console
 
-Navigera till **[!UICONTROL Product Profiles]** och markera **[!UICONTROL New Profile]**.
+Om du vill börja skapa en ny profil går du till fliken **[!UICONTROL Product Profiles]** och väljer **[!UICONTROL New Profile]**.
 
-![new-profile](../images/new-profile.png)
+![ny profil](../images/new-profile.png)
 
-The **[!UICONTROL Create a new product profile]** visas där du uppmanas att ange en profil, ett valfritt visningsnamn och en valfri beskrivning. Under **[!UICONTROL User Notifications]** kan du växla om användare ska meddelas via e-post när de läggs till eller tas bort från profilen.
+Dialogrutan **[!UICONTROL Create a new product profile]** öppnas och du uppmanas att ange en profil, ett valfritt visningsnamn och en valfri beskrivning. Under **[!UICONTROL User Notifications]** kan du växla om användare ska meddelas via e-post när de läggs till eller tas bort från profilen.
 
 När du är klar väljer du **[!UICONTROL Next]**.
 
@@ -27,14 +27,14 @@ Nästa skärm uppmanar dig att välja vilka plattformstjänster som ska ingå i 
 
 ![enable-services](../images/enable-services.png)
 
-Kunder som är berättigade till B2B- eller B2P-versionen har tillgång till B2B-gränssnittet. B2B-gränssnittet kan etableras för användare via [!UICONTROL Enable services menu]. Markera växlingsknappen bredvid [!UICONTROL B2B UI] för att aktivera tjänsten för en viss produktprofil och sedan välja **[!UICONTROL Save]**.
+Kunder som är berättigade till B2B- eller B2P-versionen har tillgång till B2B-gränssnittet. B2B-gränssnittet kan etableras för användare via [!UICONTROL Enable services menu]. Markera växlingsknappen bredvid [!UICONTROL B2B UI] för att aktivera tjänsten för en viss produktprofil och välj sedan **[!UICONTROL Save]**.
 
 Med användargränssnittet för B2B kan användare visa B2B-arbetsflöden för att hantera konton och affärsmöjligheter samt skapa B2B-relaterade segment. Mer information finns i dokumentationen om [[!DNL Adobe Real-Time Customer Data Platform B2B Edition]](../../rtcdp/b2b-overview.md).
 
 ![enable-b2b](../images/enable-b2b.png)
 
-Den nya produktprofilen har skapats och du omdirigeras till profilens [redigera behörighetssida](#edit-permissions). Se avsnitten om [hantera behörigheter](#manage-permissions-for-a-product-profile) och [hantera användare](#manage-users-for-a-product-profile) om du vill ha mer information om hur du hanterar produktprofiler när de har skapats.
+Den nya produktprofilen har skapats och du omdirigeras till profilens [sida för redigeringsbehörigheter](#edit-permissions). Mer information om hur du hanterar produktprofiler när de har skapats finns i avsnitten [Hantera behörigheter](#manage-permissions-for-a-product-profile) och [hantera användare](#manage-users-for-a-product-profile).
 
 ## Nästa steg
 
-När du har skapat en ny produktprofil kan du gå vidare till nästa steg i [hantera behörigheter för en produktprofil](permissions.md)
+När en ny produktprofil har skapats kan du fortsätta till nästa steg för att [hantera behörigheter för en produktprofil](permissions.md)

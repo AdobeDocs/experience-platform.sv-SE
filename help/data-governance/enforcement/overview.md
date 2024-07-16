@@ -13,7 +13,7 @@ ht-degree: 0%
 
 # Översikt över policytillämpning
 
-En gång [etiketter för dataanvändning](../labels/overview.md) har tillämpats och [dataanvändningsprinciper](../policies/overview.md) har definierats kan du tillämpa dessa policyer för att förhindra dataåtgärder som utgör policyöverträdelser.
+När [dataanvändningsetiketter](../labels/overview.md) har tillämpats och [dataanvändningsprinciper](../policies/overview.md) har definierats, kan du tillämpa dessa profiler för att förhindra dataåtgärder som utgör policyöverträdelser.
 
 >[!NOTE]
 >
@@ -23,10 +23,10 @@ Det finns två metoder för policytillämpning i Adobe Experience Platform: auto
 
 ## Automatisk kontroll
 
-Experience Platform utnyttjar funktioner för datalinje, dataklassificering och policyhantering för att automatiskt utvärdera och upptäcka överträdelser av policyer. Se översikten på [automatisk policytillämpning](./auto-enforcement.md) för mer information.
+Experience Platform utnyttjar funktioner för datalinje, dataklassificering och policyhantering för att automatiskt utvärdera och upptäcka överträdelser av policyer. Mer information finns i översikten om [automatisk policytillämpning](./auto-enforcement.md).
 
 ## API-baserad tillämpning
 
-The [!DNL Policy Service] API innehåller slutpunkter som gör att du kan testa marknadsföringsåtgärder mot datauppsättningar eller godtyckliga kombinationer av dataanvändningsetiketter för att kontrollera om några policyöverträdelser inträffar. Baserat på API-svaret kan ni sedan skapa protokoll i ert upplevelseprogram för att på ett lämpligt sätt följa regelefterlevnaden för datastyrning.
+API:t [!DNL Policy Service] innehåller slutpunkter som gör att du kan testa marknadsföringsåtgärder mot datauppsättningar eller godtyckliga kombinationer av dataanvändningsetiketter för att kontrollera om några principöverträdelser inträffar. Baserat på API-svaret kan ni sedan skapa protokoll i ert upplevelseprogram för att på ett lämpligt sätt följa regelefterlevnaden för datastyrning.
 
-Se självstudiekursen om [API-baserad tillämpning](./api-enforcement.md) för steg om hur du utvärderar principer med API:t.
+I självstudiekursen om [API-baserad tillämpning](./api-enforcement.md) finns anvisningar om hur du utvärderar principer med API:t.

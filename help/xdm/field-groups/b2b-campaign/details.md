@@ -9,9 +9,9 @@ ht-degree: 0%
 
 ---
 
-# [!UICONTROL XDM Business Campaign Details] schemafältgrupp
+# Schemafältgruppen [!UICONTROL XDM Business Campaign Details]
 
-[!UICONTROL XDM Business Campaign Details] är en standardgrupp för schemafält för [[!UICONTROL XDM Business Campaign] class](../../classes/b2b/business-campaign.md), som innehåller detaljerad information om en företagskampanj.
+[!UICONTROL XDM Business Campaign Details] är en standardschemafältgrupp för klassen [[!UICONTROL XDM Business Campaign] ](../../classes/b2b/business-campaign.md) som samlar in detaljerad information om en företagskampanj.
 
 ![Strukturen för fältgruppen XDM Business Campaign Details så som den visas i användargränssnittet](../../images/field-groups/b2b/business-campaign-details.png)
 
@@ -29,7 +29,7 @@ ht-degree: 0%
 | `expectedResponse` | [!UICONTROL String] | Det förväntade svaret för kampanjen. |
 | `integrationPartnerName` | [!UICONTROL String] | Namnet på den partner som har integrerats med kampanjen. |
 | `isActive` | [!UICONTROL Boolean] | Anger om kampanjen är aktiv. |
-| `isDeleted` | [!UICONTROL Boolean] | Anger om kampanjen har tagits bort i Marketo Engage.<br><br>När du använder [Marketo källanslutning](../../../sources/connectors/adobe-applications/marketo/marketo.md), återspeglas alla poster som tas bort i Marketo automatiskt i kundprofilen i realtid. Poster som rör dessa profiler kan dock fortfarande finnas kvar i datasjön. Efter inställning `isDeleted` till `true`kan du använda fältet för att filtrera bort vilka poster som har tagits bort från dina källor när du frågar efter datasjön. |
+| `isDeleted` | [!UICONTROL Boolean] | Anger om kampanjen har tagits bort i Marketo Engage.<br><br>När du använder [Marketo-källkopplingen](../../../sources/connectors/adobe-applications/marketo/marketo.md) återspeglas alla poster som tas bort i Marketo automatiskt i kundprofilen i realtid. Poster som rör dessa profiler kan dock fortfarande finnas kvar i datasjön. Genom att ställa in `isDeleted` på `true` kan du använda fältet för att filtrera bort vilka poster som har tagits bort från dina källor när du frågar i datasjön. |
 | `lastActivityDate` | [!UICONTROL DateTime] | En ISO 8601-tidsstämpel för den senaste aktiviteten som är associerad med kampanjen. |
 | `timeZone` | [!UICONTROL String] | Tidszonen som kampanjen körs i. |
 | `timeZoneDelivery` | [!UICONTROL String] | Den leveranstidszon som kampanjen körs i. |
@@ -41,4 +41,4 @@ ht-degree: 0%
 
 {style="table-layout:auto"}
 
-Mer information om fältgruppen finns i [publik XDM-databas](https://github.com/adobe/xdm/blob/master/components/fieldgroups/campaign/campaign-details.schema.json).
+Mer information om fältgruppen finns i [den offentliga XDM-databasen](https://github.com/adobe/xdm/blob/master/components/fieldgroups/campaign/campaign-details.schema.json).

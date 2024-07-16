@@ -17,23 +17,23 @@ Med Adobe Experience Platform användargränssnitt kan du visa historik över mo
 
 >[!NOTE]
 >
->En introduktion till varningar i Experience Platform finns i [varningsöversikt](./overview.md).
+>En introduktion till aviseringar i Experience Platform finns i [varningsöversikten](./overview.md).
 
-För att komma igång väljer du **[!UICONTROL Alerts]** i den vänstra navigeringen.
+Om du vill komma igång väljer du **[!UICONTROL Alerts]** i den vänstra navigeringen.
 
-![Markering av varningssidor [!UICONTROL Alerts] i den vänstra navigeringen.](../images/alerts/ui/workspace.png)
+![Varnar sidmarkering [!UICONTROL Alerts] i den vänstra navigeringen.](../images/alerts/ui/workspace.png)
 
 ## Hantera varningsregler
 
-The **[!UICONTROL Browse]** På -fliken visas de regler som kan aktivera en varning.
+Fliken **[!UICONTROL Browse]** visar de tillgängliga reglerna som kan utlösa en varning.
 
-![En lista över tillgängliga aviseringar visas i [!UICONTROL Browse] -fliken.](../images/alerts/ui/rules.png)
+![En lista över tillgängliga aviseringar visas på fliken [!UICONTROL Browse].](../images/alerts/ui/rules.png)
 
 Välj en regel i listan om du vill visa dess beskrivning och dess konfigurationsparametrar i den högra listen, inklusive tröskelvärde och allvarlighetsgrad.
 
-![En varningsregel markerad som visar information i den högra listen.](../images/alerts/ui/rule-details.png)
+![En varningsregel markerad med information i den högra listen.](../images/alerts/ui/rule-details.png)
 
-Markera ellipsen (**...**) bredvid en regels namn och en listruta visar kontroller för att aktivera eller inaktivera varningen (beroende på dess aktuella status) och för att prenumerera eller avbryta prenumerationen på e-postmeddelanden för varningen.
+Markera ellipsen (**..**) bredvid en regel och i en listruta visas kontroller för att aktivera eller inaktivera aviseringen (beroende på dess aktuella status) och för att prenumerera eller avbryta prenumerationen på e-postmeddelanden för aviseringen.
 
 ![De markerade ellipserna visar den nedrullningsbara menyn.](../images/alerts/ui/disable-subscribe.png)
 
@@ -43,21 +43,21 @@ Markera ellipsen (**...**) bredvid en regels namn och en listruta visar kontroll
 >
 > Om du vill tilldela en avisering till ett Adobe-användar-ID, en extern e-postadress eller en e-postgrupplista måste du vara administratör.
 
-The **[!UICONTROL Browse]** På -fliken visas de regler som kan aktivera en varning.
+Fliken **[!UICONTROL Browse]** visar de tillgängliga reglerna som kan utlösa en varning.
 
-![En lista över tillgängliga varningsregler som visas i [!UICONTROL Browse] -fliken.](../images/alerts/ui/rules.png)
+![En lista över tillgängliga varningsregler visas på fliken [!UICONTROL Browse].](../images/alerts/ui/rules.png)
 
-Markera ellipsen (**...**) bredvid en regels namn visas kontroller i en listruta. Välj **[!UICONTROL Manage alert subscribers]**.
+Markera ellipsen (**...**) bredvid en regels namn, så visas kontroller i en listruta. Välj **[!UICONTROL Manage alert subscribers]**.
 
-![Markera de ellipser som du vill visa den nedrullningsbara menyn. The [!UICONTROL Manage alert subscribers] alternativet är markerat.](../images/alerts/ui/manage-alert-subscribers.png)
+![Markera de ellipser som ska visas i listrutan. Alternativet [!UICONTROL Manage alert subscribers] är markerat.](../images/alerts/ui/manage-alert-subscribers.png)
 
-The [!UICONTROL Manage alert subscribers] visas. Om du vill tilldela aviseringar till specifika användare anger du användar-ID, extern e-postadress eller en e-postgrupplista för Adobe och trycker sedan på Retur.
+Sidan [!UICONTROL Manage alert subscribers] visas. Om du vill tilldela aviseringar till specifika användare anger du användar-ID, extern e-postadress eller en e-postgrupplista för Adobe och trycker sedan på Retur.
 
 >[!NOTE]
 >
 >Om du vill skicka det här meddelandet till flera användare samtidigt anger du en lista med användar-ID:n eller e-postadresser avgränsade med kommatecken.
 
-![Sidan Hantera aviseringsprenumeranter med de angivna e-postadresserna.](../images/alerts/ui/manage-alert-add-email.png)
+![Sidan Hantera aviseringsprenumeranter med de e-postadresser som har angetts.](../images/alerts/ui/manage-alert-add-email.png)
 
 E-postadresserna visas i listan över aktuella prenumeranter. Välj **[!UICONTROL Update]**.
 
@@ -71,15 +71,15 @@ Du har lagt till användare i aviseringslistan. De skickade användarna får nu 
 
 Varningsmeddelanden kan skickas direkt till ditt e-postmeddelande.
 
-Välj klockikonen (![klockikon](../images/alerts/ui/bell-icon.png)) som finns i det övre menyfliksområdet till höger för att visa meddelanden och meddelanden. I listrutan som visas väljer du kodikonen (![cog icon](../images/alerts/ui/cog-icon.png)) för att öppna inställningssidan för Experience Cloud.
+Välj klockikonen (![klockikon](../images/alerts/ui/bell-icon.png)) i det övre menyfliksområdet till höger för att visa meddelanden och meddelanden. I listrutan som visas väljer du kodikonen (![kodikonen](../images/alerts/ui/cog-icon.png)) för att öppna inställningssidan för Experience Cloud.
 
-![En lista med varningar som visar klockikonen och kodikonen.](../images/alerts/ui/edit-preferences.png)
+![En lista över aviseringar som visar klockikonen och kodikonen.](../images/alerts/ui/edit-preferences.png)
 
-The **Profil** visas. Välj **[!UICONTROL Notifications]** i den vänstra navigeringen för att komma åt inställningarna för e-postaviseringar.
+Sidan **Profil** visas. Välj **[!UICONTROL Notifications]** i den vänstra navigeringen för att komma åt inställningarna för e-postaviseringar.
 
-![Markering av profilsidan [!UICONTROL Notifications] i den vänstra navigeringen.](../images/alerts/ui/profile.png)
+![Markeringen av profilsidan [!UICONTROL Notifications] i den vänstra navigeringen.](../images/alerts/ui/profile.png)
 
-Bläddra till **E-post** längst ned på sidan och markera **[!UICONTROL Instant notifications]**
+Bläddra till avsnittet **E-post** längst ned på sidan och välj **[!UICONTROL Instant notifications]**
 
 ![Avsnittet E-post är markerat på profilsidan.](../images/alerts/ui/notifications.png)
 
@@ -87,9 +87,9 @@ Alla aviseringar du prenumererar på levereras nu till den e-postadress som är 
 
 ## Visa aviseringshistorik
 
-The **[!UICONTROL History]** På -fliken visas historiken över mottagna aviseringar för din organisation, inklusive regeln som utlöste aviseringen, utlösande datum och löst datum (om tillämpligt).
+Fliken **[!UICONTROL History]** visar historiken för mottagna aviseringar för din organisation, inklusive regeln som utlöste aviseringen, utlösande datum och löst datum (om tillämpligt).
 
-![En lista över mottagna aviseringar visas i [!UICONTROL History] -fliken.](../images/alerts/ui/history.png)
+![En lista över mottagna aviseringar visas på fliken [!UICONTROL History].](../images/alerts/ui/history.png)
 
 Välj en avisering och mer information visas i den högra listen, inklusive en kort sammanfattning av händelsen som utlöste aviseringen.
 
@@ -97,4 +97,4 @@ Välj en avisering och mer information visas i den högra listen, inklusive en k
 
 ## Nästa steg
 
-Det här dokumentet innehåller en översikt över hur du visar och hanterar aviseringar i plattformsgränssnittet. Se översikten på [Insikter om observerbarhet](../home.md) för mer information om tjänstens funktioner.
+Det här dokumentet innehåller en översikt över hur du visar och hanterar aviseringar i plattformsgränssnittet. Mer information om tjänstens funktioner finns i översikten om [Insights](../home.md).

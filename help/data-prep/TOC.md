@@ -16,12 +16,12 @@ ht-degree: 50%
 
 - [Översikt över datapreflight](home.md)
 - [Förinställningsfunktioner för data](functions.md)
-- API för mappningstjänst {#api}
+- Mappningstjänstens API {#api}
    - [Översikt](./api/overview.md)
    - [Komma igång](./api/getting-started.md)
    - [Funktioner](./api/functions.md)
    - [Mappningsuppsättning](./api/mapping-set.md)
-- UI {#ui}
+- Gränssnitt {#ui}
    - [Användargränssnittsguide för dataprep](./ui/mapping.md)
 - [Hantera dataformat](./data-handling.md)
 - [Mappningsuppsättningar](mapping-set.md)

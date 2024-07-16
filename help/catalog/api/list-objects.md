@@ -24,12 +24,12 @@ GET /{OBJECT_TYPE}?{FILTER}={VALUE}&{FILTER_2}={VALUE}
 
 | Parameter | Beskrivning |
 | --- | --- |
-| `{OBJECT_TYPE}` | Typ av [!DNL Catalog] objekt som ska listas. Giltiga objekt är: <ul><li>`batches`</li><li>`dataSets`</li><li>`dataSetFiles`</li></ul> |
-| `{FILTER}` | En frågeparameter som används för att filtrera resultaten som returneras i svaret. Flera parametrar avgränsas med et-tecken (`&`). Se guiden på [filtrera katalogdata](filter-data.md) för mer information. |
+| `{OBJECT_TYPE}` | Den typ av [!DNL Catalog]-objekt som ska listas. Giltiga objekt är: <ul><li>`batches`</li><li>`dataSets`</li><li>`dataSetFiles`</li></ul> |
+| `{FILTER}` | En frågeparameter som används för att filtrera resultaten som returneras i svaret. Flera parametrar avgränsas med et-tecken (`&`). Mer information finns i guiden [Filtrera katalogdata](filter-data.md). |
 
 **Begäran**
 
-Exempelbegäran nedan hämtar en lista med datauppsättningar, med en `limit` filtrera och reducera svaret till fem resultat, samt `properties` filter som begränsar de egenskaper som visas för varje datauppsättning.
+Exempelbegäran nedan hämtar en lista med datauppsättningar, med ett `limit`-filter som reducerar svaret till fem resultat, och ett `properties`-filter som begränsar vilka egenskaper som visas för varje datauppsättning.
 
 ```shell
 curl -X GET \
@@ -42,11 +42,11 @@ curl -X GET \
 
 **Svar**
 
-Ett godkänt svar returnerar en lista med [!DNL Catalog] objekt i form av nyckelvärdepar, filtrerade efter frågeparametrarna som anges i begäran. För varje nyckelvärdepar representerar nyckeln en unik identifierare för [!DNL Catalog] objektet i fråga, som sedan kan användas i ett annat anrop till [visa det specifika objektet](look-up-object.md) för mer information.
+Ett godkänt svar returnerar en lista med [!DNL Catalog] objekt i form av nyckelvärdepar, filtrerade med frågeparametrarna som anges i begäran. För varje nyckelvärdepar representerar nyckeln en unik identifierare för det aktuella [!DNL Catalog]-objektet, som sedan kan användas i ett annat anrop för att [visa det specifika objektet](look-up-object.md) för mer information.
 
 >[!NOTE]
 >
->Om ett returnerat objekt inte innehåller en eller flera av de begärda egenskaperna som anges av `properties` -frågan returnerar bara de begärda egenskaperna som det innehåller, vilket visas i ***`Sample Dataset 3`*** och ***`Sample Dataset 4`*** nedan.
+>Om ett returnerat objekt inte innehåller en eller flera av de begärda egenskaperna som anges av `properties`-frågan, returnerar svaret endast de begärda egenskaper som det innehåller, vilket visas i ***`Sample Dataset 3`*** och ***`Sample Dataset 4`*** nedan.
 
 ```json
 {

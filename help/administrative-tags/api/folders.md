@@ -2,13 +2,13 @@
 title: Slutpunkt för mappar
 description: Lär dig hur du skapar, uppdaterar, hanterar och tar bort mappar med Adobe Experience Platform API:er.
 role: Developer
-source-git-commit: 8f9a2b5a2063b76518302eb9de38b628c87416e1
+exl-id: ee43d699-725d-4ffd-a71b-049eeb3b4d7c
+source-git-commit: 717a4ea0568200c940cf9b8f26f4dd2aa9c00a3e
 workflow-type: tm+mt
 source-wordcount: '818'
 ht-degree: 1%
 
 ---
-
 
 # Mappslutpunkt
 
@@ -22,11 +22,11 @@ Den här handboken innehåller information som hjälper dig att förstå mappar 
 
 ## Komma igång
 
-Innan du fortsätter bör du granska [komma igång-guide](./getting-started.md) för viktig information som du behöver känna till för att kunna anropa API:t, inklusive obligatoriska rubriker och hur du läser exempel-API-anrop.
+Innan du fortsätter bör du läsa [kom igång-guiden](./getting-started.md) för att få viktig information som du behöver känna till för att kunna ringa anrop till API:t, inklusive nödvändiga rubriker och hur du läser exempel-API-anrop.
 
 ## Hämta en lista med mappar {#list}
 
-Du kan hämta en lista över mappar som tillhör din organisation genom att göra en GET-förfrågan till `/folder` slutpunkt och ange mapptyp och ID för överordnad mapp.
+Du kan hämta en lista över mappar som tillhör din organisation genom att göra en GET-förfrågan till slutpunkten `/folder` och ange mapptypen och det överordnade mapp-ID:t.
 
 **API-format**
 
@@ -113,7 +113,7 @@ Ett lyckat svar returnerar HTTP-status 200 med en lista över alla mappar på de
 
 ## Skapa en ny mapp {#create}
 
-Du kan skapa en ny mapp genom att göra en POST-förfrågan till `/folder` slutpunkt och ange mapptyp.
+Du kan skapa en ny POST genom att göra en mappförfrågan till slutpunkten `/folder` och ange mapptypen.
 
 **API-format**
 
@@ -185,7 +185,7 @@ Ett lyckat svar returnerar HTTP-status 200 med information om din nya mapp.
 
 ## Hämta en specifik mapp {#get}
 
-Du kan hämta en specifik mapp som tillhör din organisation genom att göra en GET-förfrågan till `/folder` slutpunkt och ange mapptyp och mappens ID.
+Du kan hämta en specifik mapp som tillhör din organisation genom att göra en GET-förfrågan till slutpunkten `/folder` och ange mapptypen och mappens ID.
 
 **API-format**
 
@@ -256,7 +256,7 @@ Ett lyckat svar returnerar HTTP-status 200 med information om den begärda mappe
 
 ## Validera en angiven mapp {#validate}
 
-Du kan validera om en mapp är berättigad att ha objekt genom att göra en GET-förfrågan till `/folder/{FOLDER_TYPE}/{FOLDER_ID}/validate` och ange både mapptyp och ID.
+Du kan validera om en mapp är berättigad att ha objekt i den genom att göra en GET-förfrågan till slutpunkten `/folder/{FOLDER_TYPE}/{FOLDER_ID}/validate` och ange både mapptyp och ID.
 
 **API-format**
 
@@ -316,7 +316,7 @@ En lyckad status returnerar HTTP-status 200 med information om mappen som du val
 
 ## Uppdatera en specifik mapp {#update}
 
-Du kan uppdatera informationen om en viss mapp som tillhör din organisation genom att göra en PATCH-förfrågan till `/folder` slutpunkt och ange mapptyp och mappens ID.
+Du kan uppdatera informationen om en viss mapp som tillhör din organisation genom att göra en PATCH-begäran till slutpunkten `/folder` och ange mapptypen och mappens ID.
 
 **API-format**
 
@@ -378,7 +378,7 @@ Ett lyckat svar returnerar HTTP-status 200 med information om den nyligen uppdat
 
 ## Ta bort en specifik mapp {#delete}
 
-Du kan ta bort en viss mapp som tillhör din organisation genom att göra en DELETE-förfrågan till `/folder` och ange mapptyp och mappens ID.
+Du kan ta bort en specifik mapp som tillhör din organisation genom att göra en DELETE-begäran till `/folder` och ange mapptypen och mappens ID.
 
 ***API-format**
 

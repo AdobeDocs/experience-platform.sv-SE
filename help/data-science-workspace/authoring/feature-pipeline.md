@@ -2,11 +2,11 @@
 keywords: Experience Platform;Tutorial;feature pipeline;Data Science Workspace;populära ämnen
 title: Skapa en funktionspipeline med SDK för modellredigering
 type: Tutorial
-description: Med Adobe Experience Platform kan du skapa och skapa anpassade rörledningar för att utföra funktionstekniker i stor skala via Sensei Machine Learning Framework Runtime. I det här dokumentet beskrivs de olika klasserna som finns i en funktionspipeline och här finns en stegvis självstudiekurs för att skapa en anpassad funktionspipeline med hjälp av modellredigerings-SDK i PySpark.
+description: Med Adobe Experience Platform kan du skapa och skapa anpassade rörledningar för att utföra funktionstekniska funktioner i stor skala via Sensei Machine Learning Framework Runtime. I det här dokumentet beskrivs de olika klasserna som finns i en funktionspipeline och här finns en stegvis självstudiekurs för att skapa en anpassad funktionspipeline med hjälp av modellredigerings-SDK i PySpark.
 exl-id: c2c821d5-7bfb-4667-ace9-9566e6754f98
 source-git-commit: 86e6924078c115fb032ce39cd678f1d9c622e297
 workflow-type: tm+mt
-source-wordcount: '1441'
+source-wordcount: '1415'
 ht-degree: 0%
 
 ---
@@ -19,12 +19,12 @@ ht-degree: 0%
 
 Med Adobe Experience Platform kan du skapa och skapa anpassade rörledningar för att utföra funktionstekniker i stor skala via Sensei Machine Learning Framework Runtime (nedan kallad Runtime).
 
-I det här dokumentet beskrivs de olika klasserna som finns i en funktionspipeline och här finns en stegvis självstudiekurs för att skapa en anpassad funktionspipeline med [SDK för modellredigering](./sdk.md) i PySpark.
+I det här dokumentet beskrivs de olika klasserna som finns i en funktionspipeline och här finns en stegvis självstudiekurs för att skapa en anpassad funktionspipeline med [Model Authoring SDK](./sdk.md) i PySpark.
 
 Följande arbetsflöde utförs när en funktionspipeline körs:
 
 1. Mottagaren läser in datauppsättningen till en pipeline.
-2. Funktionstransformering görs på datauppsättningen och skrivs tillbaka till Adobe Experience Platform.
+2. Funktionsomvandlingen görs på datauppsättningen och skrivs tillbaka till Adobe Experience Platform.
 3. De omformade data läses in för utbildning.
 4. Funktionspipelinen definierar faserna med regressorn för övertoning som vald modell.
 5. Rörledningen används för att passa utbildningsdata och den tränade modellen skapas.
@@ -39,7 +39,7 @@ Följande krävs för att köra ett recept i en organisation:
 - Ett transformerat schema och en tom datauppsättning som baseras på det schemat.
 - Ett utdataschema och en tom datauppsättning som baseras på det schemat.
 
-Alla ovanstående datauppsättningar måste överföras till [!DNL Platform] Gränssnitt. Använd Adobe [bootstrap-skript](https://github.com/adobe/experience-platform-dsw-reference/tree/master/bootstrap).
+Alla ovanstående datauppsättningar måste överföras till användargränssnittet för [!DNL Platform]. Om du vill konfigurera detta använder du det Adobe-tillhandahållna [bootstrap-skriptet](https://github.com/adobe/experience-platform-dsw-reference/tree/master/bootstrap).
 
 ## Aktuella pipeline-klasser
 
@@ -69,7 +69,7 @@ JSON-konfigurationsfilen består av nyckelvärdepar och är avsedd för att du s
 
 I följande exempel visas nyckelvärdepar i en konfigurationsfil:
 
-**JSON-exempel för konfiguration**
+**JSON-konfigurationsexempel**
 
 ```json
 [
@@ -101,13 +101,13 @@ Du kan komma åt konfigurations-JSON via alla klassmetoder som definierar `confi
 dataset_id = str(config_properties.get(dataset_id))
 ```
 
-Se [pipeline.json](https://github.com/adobe/experience-platform-dsw-reference/blob/master/recipes/feature_pipeline_recipes/pyspark/pipeline.json) en fil från Data Science Workspace som ger ett mer ingående konfigurationsexempel.
+Se filen [pipeline.json](https://github.com/adobe/experience-platform-dsw-reference/blob/master/recipes/feature_pipeline_recipes/pyspark/pipeline.json) från Data Science Workspace för ett mer ingående konfigurationsexempel.
 
 ### Förbered indata med DataLoader {#prepare-the-input-data-with-dataloader}
 
 DataLoader ansvarar för hämtning och filtrering av indata. Din implementering av DataLoader måste utöka den abstrakta klassen `DataLoader` och åsidosätta den abstrakta metoden `load`.
 
-I följande exempel hämtas en [!DNL Platform] datauppsättning efter ID och returnerar den som en DataFrame, där datauppsättnings-ID (`dataset_id`) är en definierad egenskap i konfigurationsfilen.
+Följande exempel hämtar en [!DNL Platform]-datauppsättning med ID och returnerar den som en DataFrame, där datauppsättnings-ID (`dataset_id`) är en definierad egenskap i konfigurationsfilen.
 
 **PySpark-exempel**
 
@@ -285,7 +285,7 @@ class MyFeaturePipelineFactory(FeaturePipelineFactory):
 
 DataSaver ansvarar för att lagra de resulterande funktionsdatauppsättningarna på en lagringsplats. Din implementering av DataSaver måste utöka den abstrakta klassen `DataSaver` och åsidosätta den abstrakta metoden `save`.
 
-I följande exempel utökas klassen DataSaver som lagrar data till en [!DNL Platform] datauppsättning efter ID, där datauppsättnings-ID (`featureDatasetId`) och innehavar-ID (`tenantId`) är definierade egenskaper i konfigurationen.
+I följande exempel utökas DataSaver-klassen som lagrar data till en [!DNL Platform]-datauppsättning via ID, där datauppsättnings-ID (`featureDatasetId`) och klient-ID (`tenantId`) definieras i konfigurationen.
 
 **PySpark-exempel**
 
@@ -386,11 +386,11 @@ scoring.dataSaver: MyDatasetSaver
 
 ## Skapa en rörlig motor för funktioner med API {#create-feature-pipeline-engine-api}
 
-Nu när du har skapat din funktionspipeline måste du skapa en Docker-bild för att kunna anropa funktionens pipeline-slutpunkter i [!DNL Sensei Machine Learning] API. Du behöver en Docker-bild-URL för att kunna anropa funktionens pipeline-slutpunkter.
+Nu när du har skapat din funktionspipeline måste du skapa en Docker-bild för att kunna anropa funktionens pipeline-slutpunkter i API:t [!DNL Sensei Machine Learning]. Du behöver en Docker-bild-URL för att kunna anropa funktionens pipeline-slutpunkter.
 
 >[!TIP]
 >
->Om du inte har någon Docker URL går du till [Paketera källfiler i ett recept](../models-recipes/package-source-files-recipe.md) självstudiekurs för steg-för-steg-genomgång av hur du skapar en Docker-värd-URL.
+>Om du inte har någon Docker-URL kan du gå till [Paketkällfiler i ett recept](../models-recipes/package-source-files-recipe.md) och få en stegvis genomgång av hur du skapar en Docker-värd-URL.
 
 Du kan också använda följande Postman-samling för att underlätta arbetet med API:t för funktionspipeline:
 
@@ -398,37 +398,37 @@ https://www.postman.com/collections/c5fc0d1d5805a5ddd41a
 
 ### Skapa en rörlig motor för funktioner {#create-engine-api}
 
-När du har en Docker-bildplats kan du [skapa en rörlig motor för funktioner](../api/engines.md#feature-pipeline-docker) med [!DNL Sensei Machine Learning] API genom att utföra en POST till `/engines`. En rörlig motor för funktioner har skapat en unik identifierare för motorn (`id`). Spara värdet innan du fortsätter.
+När du har din Docker-bildplats kan du [skapa en rörlig funktionsmotor](../api/engines.md#feature-pipeline-docker) med API:t [!DNL Sensei Machine Learning] genom att göra en POST till `/engines`. En rörledningsmotor för funktioner har skapat en unik identifierare för motorn (`id`). Spara det här värdet innan du fortsätter.
 
 ### Skapa en MLInstance {#create-mlinstance}
 
-Använda dina nyskapade `engineID`måste du [skapa en MLIstance](../api/mlinstances.md#create-an-mlinstance) genom att göra en POST-förfrågan till `/mlInstance` slutpunkt. Ett godkänt svar returnerar en nyttolast som innehåller information om den nyligen skapade MLInstance-instansen inklusive dess unika identifierare (`id`) som används i nästa API-anrop.
+Med din nyskapade `engineID` måste du [skapa en MLIstance](../api/mlinstances.md#create-an-mlinstance) genom att göra en POST-förfrågan till slutpunkten `/mlInstance`. Ett godkänt svar returnerar en nyttolast som innehåller information om den nyligen skapade MLInstance-instansen, inklusive dess unika identifierare (`id`) som används i nästa API-anrop.
 
 ### Skapa en expert {#create-experiment}
 
-Nästa steg är att [skapa en expert](../api/experiments.md#create-an-experiment). Om du vill skapa en expert måste du ha din unika identifierare för MLIstance (`id`) och göra en POST-förfrågan till `/experiment` slutpunkt. Ett godkänt svar returnerar en nyttolast som innehåller information om den nyligen skapade experten, inklusive dess unika identifierare (`id`) som används i nästa API-anrop.
+Sedan måste du [skapa en expert](../api/experiments.md#create-an-experiment). Om du vill skapa en expert måste du ha en unik identifierare (`id`) för din MLIstance och göra en POST-förfrågan till `/experiment`-slutpunkten. Ett lyckat svar returnerar en nyttolast som innehåller information om den nyligen skapade experten, inklusive dess unika identifierare (`id`) som används i nästa API-anrop.
 
 ### Ange pipeline-uppgiften för funktionen för experimentell körning {#specify-feature-pipeline-task}
 
-När du har skapat en expert måste du ändra Experimentens läge till `featurePipeline`. Om du vill ändra läge gör du ytterligare en POST till [`experiments/{EXPERIMENT_ID}/runs`](../api/experiments.md#experiment-training-scoring) med `EXPERIMENT_ID` och i brödtexten som skickas `{ "mode":"featurePipeline"}` om du vill ange en testkörning av en funktionspipeline.
+När du har skapat en expert måste du ändra Experimentens läge till `featurePipeline`. Om du vill ändra läget gör du ytterligare en POST till [`experiments/{EXPERIMENT_ID}/runs`](../api/experiments.md#experiment-training-scoring) med din `EXPERIMENT_ID` och i brödtexten som skickar `{ "mode":"featurePipeline"}` för att ange en experimentell körning av en funktionspipeline.
 
-När du är klar skickar du en GET-förfrågan till `/experiments/{EXPERIMENT_ID}` till [hämta experimentets status](../api/experiments.md#retrieve-specific) och vänta tills Experimentstatus har uppdaterats.
+När det är klart gör du en GET-förfrågan till `/experiments/{EXPERIMENT_ID}` för att [hämta experimentstatusen](../api/experiments.md#retrieve-specific) och vänta tills Experimentstatusen har uppdaterats.
 
 ### Ange utbildningsuppgift för körning av experiment {#training}
 
-Nästa steg är att [specificera uppgiften att köra kursen](../api/experiments.md#experiment-training-scoring). Gör en POST till `experiments/{EXPERIMENT_ID}/runs` och i brödtexten ställer du in läget på `train` och skicka en rad uppgifter som innehåller utbildningsparametrar. Ett godkänt svar returnerar en nyttolast som innehåller information om den begärda experten.
+Därefter måste du [ange aktiviteten för körning av utbildning](../api/experiments.md#experiment-training-scoring). Gör en POST till `experiments/{EXPERIMENT_ID}/runs` och i brödtexten ställ in läget på `train` och skicka en array med uppgifter som innehåller dina utbildningsparametrar. Ett godkänt svar returnerar en nyttolast som innehåller information om den begärda experten.
 
-När du är klar skickar du en GET-förfrågan till `/experiments/{EXPERIMENT_ID}` till [hämta experimentets status](../api/experiments.md#retrieve-specific) och vänta tills Experimentstatus har uppdaterats.
+När det är klart gör du en GET-förfrågan till `/experiments/{EXPERIMENT_ID}` för att [hämta experimentstatusen](../api/experiments.md#retrieve-specific) och vänta tills Experimentstatusen har uppdaterats.
 
-### Ange poänguppgiften för testkörningen {#scoring}
+### Ange betygsuppgift för provkörning {#scoring}
 
 >[!NOTE]
 >
 > För att slutföra det här steget måste du ha minst en lyckad utbildning kopplad till din Experiment.
 
-Efter en lyckad utbildning måste du [ange poängkörningsuppgift](../api/experiments.md#experiment-training-scoring). Gör en POST till `experiments/{EXPERIMENT_ID}/runs` och i brödtexten anger du `mode` till&quot;score&quot;. Detta startar din resultatutvärderingsexpertsession.
+Efter en lyckad utbildningskörning måste du [ange betygskörningsuppgift](../api/experiments.md#experiment-training-scoring). Gör en POST till `experiments/{EXPERIMENT_ID}/runs` och ange attributet `mode` som score i brödtexten. Detta startar din resultatutvärderingsexpertsession.
 
-När du är klar skickar du en GET-förfrågan till `/experiments/{EXPERIMENT_ID}` till [hämta experimentets status](../api/experiments.md#retrieve-specific) och vänta tills Experimentstatus har uppdaterats.
+När det är klart gör du en GET-förfrågan till `/experiments/{EXPERIMENT_ID}` för att [hämta experimentstatusen](../api/experiments.md#retrieve-specific) och vänta tills Experimentstatusen har uppdaterats.
 
 När poängsättningen är klar bör ditt tillvägagångssätt fungera.
 
@@ -436,4 +436,4 @@ När poängsättningen är klar bör ditt tillvägagångssätt fungera.
 
 [//]: # (Next steps section should refer to tutorials on how to score data using the feature pipeline Engine. Update this document once those tutorials are available)
 
-Genom att läsa det här dokumentet har du skapat en funktionspipeline med hjälp av Model Authoring SDK, skapat en Docker-bild och använt Docker Image URL för att skapa en funktionspipeline med hjälp av [!DNL Sensei Machine Learning] API. Nu kan du fortsätta att omvandla datauppsättningar och extrahera datafunktioner i stor skala med [[!DNL Sensei Machine Learning API]](../api/getting-started.md).
+Genom att läsa det här dokumentet har du skapat en funktionspipeline med hjälp av Model Authoring SDK, skapat en Docker-bild och använt Docker-bildens URL för att skapa en funktionspipeline med hjälp av API:t [!DNL Sensei Machine Learning]. Du kan nu fortsätta att omforma datauppsättningar och extrahera datafunktioner i skala med [[!DNL Sensei Machine Learning API]](../api/getting-started.md).

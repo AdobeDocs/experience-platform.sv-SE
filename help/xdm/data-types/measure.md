@@ -11,15 +11,15 @@ ht-degree: 0%
 
 ---
 
-# [!UICONTROL Measure] datatyp
+# Datatypen [!UICONTROL Measure]
 
-[!UICONTROL Measure] är en XDM-datatyp (Standard Experience Data Model) som innehåller en kvantifierbar datapunkt för ett visst mätvärde. Ett mått består av en unik identifierare och ett värde.
+[!UICONTROL Measure] är en XDM-datatyp (Standard Experience Data Model) som innehåller en konkret kvantifierbar datapunkt för ett visst mått. Ett mått består av en unik identifierare och ett värde.
 
 <img src="../images/data-types/measure.PNG" width="500" /><br />
 
 | Egenskap | Datatyp | Beskrivning |
 | --- | --- | --- |
-| `id` | Sträng | Den unika identifieraren för den här åtgärden. Vid datainsamling med förstörande kommunikationskanaler, t.ex. mobilappar eller webbplatser med offlinefunktion där det inte går att säkerställa överföring av åtgärder, innehåller denna egenskap ett klientgenererat, unikt ID för den vidtagna åtgärden. Det är god praxis att göra detta tillräckligt långt för att säkerställa tillräcklig slumpmässighet. <br><br> Om information som tidsstämpel, enhets-ID, IP, MAC-adress eller andra potentiellt användaridentifierande värden ingår i genereringen av `id`bör resultatet hash-kodas. Detta garanterar att ingen PII-kod kodas i värdet, eftersom målet inte är att identifiera en användare eller enhet, utan det specifika tidsmåttet. |
+| `id` | Sträng | Den unika identifieraren för den här åtgärden. Vid datainsamling med förstörande kommunikationskanaler, t.ex. mobilappar eller webbplatser med offlinefunktion där det inte går att säkerställa överföring av åtgärder, innehåller denna egenskap ett klientgenererat, unikt ID för den vidtagna åtgärden. Det är god praxis att göra detta tillräckligt långt för att säkerställa tillräcklig slumpmässighet. <br><br> Om information som tidsstämpel, enhets-ID, IP-adress, MAC-adress eller andra potentiellt användaridentifieringsvärden ingår i genereringen av `id` bör resultatet hash-kodas. Detta garanterar att ingen PII-kod kodas i värdet, eftersom målet inte är att identifiera en användare eller enhet, utan det specifika tidsmåttet. |
 | `value` | Dubbel | Det kvantifierbara värdet av denna åtgärd. |
 
 {style="table-layout:auto"}

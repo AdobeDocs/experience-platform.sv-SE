@@ -4,7 +4,7 @@ description: Lär dig hur du anropar slutpunkten /companies i Reactor API.
 exl-id: ee435358-ed34-4e0c-93af-796133fb11fc
 source-git-commit: fcd44aef026c1049ccdfe5896e6199d32b4d1114
 workflow-type: tm+mt
-source-wordcount: '239'
+source-wordcount: '237'
 ht-degree: 1%
 
 ---
@@ -13,15 +13,15 @@ ht-degree: 1%
 
 Ett företag representerar en kundorganisation, vanligtvis en verksamhet. I Reactor API matchar dessa företag 1:1 med organisations-ID. API-användare har bara insyn i de företag som de har tillgång till. Ett företag kan innehålla många [egenskaper](./properties.md). En egenskap tillhör exakt ett företag.
 
-The `/companies` -slutpunkten i Reaktors API gör att du kan hämta de företag som du har tillgång till i ditt upplevelseprogram via programkod.
+Slutpunkten `/companies` i Reaktors API gör att du kan hämta de företag som du har tillgång till i ditt upplevelseprogram via programkod.
 
 ## Komma igång
 
-Slutpunkten som används i den här guiden är en del av [Reaktors-API](https://www.adobe.io/experience-platform-apis/references/reactor/). Läs igenom [komma igång-guide](../getting-started.md) om du vill ha viktig information om hur du autentiserar till API:t.
+Slutpunkten som används i den här guiden ingår i [Reaktors-API](https://www.adobe.io/experience-platform-apis/references/reactor/). Innan du fortsätter bör du läsa [kom igång-guiden](../getting-started.md) för att få viktig information om hur du autentiserar dig för API:t.
 
 ## Hämta en lista över företag {#list}
 
-Du kan lista de företag som du är behörig att använda genom att göra en GET-förfrågan till `/companies` slutpunkt. I de flesta fall finns det precis en.
+Du kan lista de företag som du har behörighet att använda genom att göra en GET-förfrågan till slutpunkten `/companies`. I de flesta fall finns det precis en.
 
 **API-format**
 
@@ -31,7 +31,7 @@ GET /companies
 
 >[!NOTE]
 >
->Med hjälp av frågeparametrar kan listade företag filtreras baserat på följande attribut:<ul><li>`created_at`</li><li>`name`</li><li>`org_id`</li><li>`token`</li><li>`updated_at`</li></ul>Se guiden [filtrera svar](../guides/filtering.md) för mer information.
+>Med hjälp av frågeparametrar kan listade företag filtreras baserat på följande attribut:<ul><li>`created_at`</li><li>`name`</li><li>`org_id`</li><li>`token`</li><li>`updated_at`</li></ul>Mer information finns i guiden om [filtrering av svar](../guides/filtering.md).
 
 **Begäran**
 
@@ -119,7 +119,7 @@ GET /companies/{COMPANY_ID}
 
 | Parameter | Beskrivning |
 | --- | --- |
-| `{COMPANY_ID}` | The `id` värdet på det företag du vill söka efter. |
+| `{COMPANY_ID}` | Värdet `id` för företaget som du vill söka efter. |
 
 {style="table-layout:auto"}
 

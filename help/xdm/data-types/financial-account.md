@@ -9,9 +9,9 @@ ht-degree: 1%
 
 ---
 
-# [!UICONTROL Financial Account] datatyp
+# Datatypen [!UICONTROL Financial Account]
 
-[!UICONTROL Financial Account] är en standard-XDM-datatyp som beskriver information om ett finansiellt konto, inklusive typ, ägare och aktuellt saldo.
+[!UICONTROL Financial Account] är en standard-XDM-datatyp som beskriver informationen för ett finansiellt konto, inklusive typ, ägare och aktuellt saldo.
 
 ![](../images/data-types/financial-account.png)
 
@@ -24,4 +24,4 @@ ht-degree: 1%
 
 {style="table-layout:auto"}
 
-Mer information om datatypen finns i [publik XDM-databas](https://github.com/adobe/xdm/blob/master/docs/reference/datatypes/financial-account.schema.json).
+Mer information om datatypen finns i [den offentliga XDM-databasen](https://github.com/adobe/xdm/blob/master/docs/reference/datatypes/financial-account.schema.json).

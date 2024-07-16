@@ -6,26 +6,26 @@ description: Med slutpunkten /schemas i API:t för schemaregister kan du program
 exl-id: d0bda683-9cd3-412b-a8d1-4af700297abf
 source-git-commit: 983682489e2c0e70069dbf495ab90fc9555aae2d
 workflow-type: tm+mt
-source-wordcount: '1441'
+source-wordcount: '1443'
 ht-degree: 0%
 
 ---
 
 # Schemas slutpunkt
 
-Man kan tänka sig ett schema som en plan för de data man vill importera till Adobe Experience Platform. Varje schema består av en klass och noll eller flera schemafältgrupper. The `/schemas` slutpunkt i [!DNL Schema Registry] Med API kan ni programmässigt hantera scheman i ert upplevelseprogram.
+Man kan tänka sig ett schema som en plan för de data man vill importera till Adobe Experience Platform. Varje schema består av en klass och noll eller flera schemafältgrupper. Med slutpunkten `/schemas` i API:t [!DNL Schema Registry] kan du programmässigt hantera scheman i ditt upplevelseprogram.
 
 ## Komma igång
 
-API-slutpunkten som används i den här guiden är en del av [[!DNL Schema Registry] API](https://www.adobe.io/experience-platform-apis/references/schema-registry/). Läs igenom [komma igång-guide](./getting-started.md) för länkar till relaterad dokumentation, en guide till hur du läser exempelanrop till API:er i det här dokumentet och viktig information om vilka huvuden som behövs för att kunna anropa ett Experience Platform-API.
+API-slutpunkten som används i den här guiden ingår i [[!DNL Schema Registry] API](https://www.adobe.io/experience-platform-apis/references/schema-registry/). Innan du fortsätter bör du läsa [kom igång-guiden](./getting-started.md) för att få länkar till relaterad dokumentation, en guide till hur du läser exempelanropen för API i det här dokumentet och viktig information om vilka huvuden som krävs för att kunna anropa ett Experience Platform-API.
 
 ## Hämta en lista med scheman {#list}
 
-Du kan visa alla scheman under `global` eller `tenant` genom att göra en GET-förfrågan till `/global/schemas` eller `/tenant/schemas`, respektive.
+Du kan lista alla scheman under behållaren `global` eller `tenant` genom att göra en GET-förfrågan till `/global/schemas` respektive `/tenant/schemas`.
 
 >[!NOTE]
 >
->När resurser listas begränsas resultatmängden till 300 objekt. Om du vill returnera resurser som överskrider den här gränsen måste du använda sidindelningsparametrar. Vi rekommenderar också att du använder ytterligare frågeparametrar för att filtrera resultaten och minska antalet returnerade resurser. Se avsnittet om [frågeparametrar](./appendix.md#query) i bilagedokumentet om du vill ha mer information.
+>När resurser listas begränsas resultatmängden till 300 objekt. Om du vill returnera resurser som överskrider den här gränsen måste du använda sidindelningsparametrar. Vi rekommenderar också att du använder ytterligare frågeparametrar för att filtrera resultaten och minska antalet returnerade resurser. Mer information finns i avsnittet om [frågeparametrar](./appendix.md#query) i bilagan.
 
 **API-format**
 
@@ -35,14 +35,14 @@ GET /{CONTAINER_ID}/schemas?{QUERY_PARAMS}
 
 | Parameter | Beskrivning |
 | --- | --- |
-| `{CONTAINER_ID}` | Behållaren som innehåller de scheman som du vill hämta: `global` för scheman som skapats av Adobe eller `tenant` för scheman som ägs av din organisation. |
-| `{QUERY_PARAMS}` | Valfria frågeparametrar för att filtrera resultat efter. Se [appendix-dokument](./appendix.md#query) för en lista över tillgängliga parametrar. |
+| `{CONTAINER_ID}` | Behållaren som innehåller scheman som du vill hämta: `global` för scheman som skapats av Adobe eller `tenant` för scheman som ägs av din organisation. |
+| `{QUERY_PARAMS}` | Valfria frågeparametrar för att filtrera resultat efter. En lista över tillgängliga parametrar finns i [bilagan-dokumentet](./appendix.md#query). |
 
 {style="table-layout:auto"}
 
 **Begäran**
 
-Följande begäran hämtar en lista med scheman från `tenant` behållare, använda `orderby` frågeparameter för att sortera resultaten efter deras `title` -attribut.
+Följande begäran hämtar en lista med scheman från behållaren `tenant` och använder en `orderby`-frågeparameter för att sortera resultaten efter deras `title`-attribut.
 
 ```shell
 curl -X GET \
@@ -54,18 +54,18 @@ curl -X GET \
   -H 'x-sandbox-name: {SANDBOX_NAME}'
 ```
 
-Svarsformatet beror på `Accept` huvud som skickades i begäran. Följande `Accept` rubriker är tillgängliga för listscheman:
+Svarsformatet beror på det `Accept`-huvud som skickas i begäran. Följande `Accept` rubriker är tillgängliga för scheman:
 
-| `Accept` header | Beskrivning |
+| `Accept` huvud | Beskrivning |
 | --- | --- |
 | `application/vnd.adobe.xed-id+json` | Returnerar en kort sammanfattning av varje resurs. Det här är det rekommenderade huvudet för att lista resurser. (Gräns: 300) |
-| `application/vnd.adobe.xed+json` | Returnerar det fullständiga JSON-schemat för varje resurs, med det ursprungliga `$ref` och `allOf` ingår. (Gräns: 300) |
+| `application/vnd.adobe.xed+json` | Returnerar det fullständiga JSON-schemat för varje resurs, inklusive original `$ref` och `allOf`. (Gräns: 300) |
 
 {style="table-layout:auto"}
 
 **Svar**
 
-Ovannämnda begäran använde `application/vnd.adobe.xed-id+json` `Accept` därför innehåller svaret endast `title`, `$id`, `meta:altId`och `version` attribut för varje schema. Använda den andra `Accept` header (`application/vnd.adobe.xed+json`) returnerar alla attribut för varje schema. Välj lämplig `Accept` sidhuvudet beroende på vilken information du behöver i ditt svar.
+Begäran ovan använde rubriken `application/vnd.adobe.xed-id+json` `Accept`, och därför innehåller svaret bara attributen `title`, `$id`, `meta:altId` och `version` för varje schema. Om du använder det andra `Accept`-huvudet (`application/vnd.adobe.xed+json`) returneras alla attribut för varje schema. Välj lämpligt `Accept`-huvud beroende på vilken information du behöver i ditt svar.
 
 ```json
 {
@@ -110,13 +110,13 @@ GET /{CONTAINER_ID}/schemas/{SCHEMA_ID}
 | Parameter | Beskrivning |
 | --- | --- |
 | `{CONTAINER_ID}` | Behållaren som innehåller det schema som du vill hämta: `global` för ett schema som skapats av Adobe eller `tenant` för ett schema som ägs av din organisation. |
-| `{SCHEMA_ID}` | The `meta:altId` eller URL-kodad `$id` av schemat som du vill söka efter. |
+| `{SCHEMA_ID}` | `meta:altId` eller URL-kodad `$id` för schemat som du vill söka efter. |
 
 {style="table-layout:auto"}
 
 **Begäran**
 
-Följande begäran hämtar ett schema som anges av dess `meta:altId` i sökvägen.
+Följande begäran hämtar ett schema som anges av dess `meta:altId`-värde i sökvägen.
 
 ```shell
 curl -X GET \
@@ -128,22 +128,22 @@ curl -X GET \
   -H 'x-sandbox-name: {SANDBOX_NAME}'
 ```
 
-Svarsformatet beror på `Accept` huvud som skickades i begäran. Alla sökförfrågningar kräver en `version` ingår i `Accept` header. Följande `Accept` Det finns rubriker:
+Svarsformatet beror på det `Accept`-huvud som skickas i begäran. Alla uppslagsbegäranden kräver att `version` inkluderas i rubriken `Accept`. Följande `Accept` rubriker är tillgängliga:
 
-| `Accept` header | Beskrivning |
+| `Accept` huvud | Beskrivning |
 | ------- | ------------ |
-| `application/vnd.adobe.xed+json; version=1` | Raw med `$ref` och `allOf`, har rubriker och beskrivningar. |
-| `application/vnd.adobe.xed-full+json; version=1` | `$ref` och `allOf` har åtgärdats, har rubriker och beskrivningar. |
+| `application/vnd.adobe.xed+json; version=1` | Raw med `$ref` och `allOf` har rubriker och beskrivningar. |
+| `application/vnd.adobe.xed-full+json; version=1` | `$ref` och `allOf` har matchats, har rubriker och beskrivningar. |
 | `application/vnd.adobe.xed-notext+json; version=1` | Raw med `$ref` och `allOf`, inga titlar eller beskrivningar. |
-| `application/vnd.adobe.xed-full-notext+json; version=1` | `$ref` och `allOf` lösta, inga titlar eller beskrivningar. |
-| `application/vnd.adobe.xed-full-desc+json; version=1` | `$ref` och `allOf` åtgärdade, beskrivningar inkluderades. |
-| `application/vnd.adobe.xed-deprecatefield+json; version=1` | `$ref` och `allOf` har åtgärdats, har rubriker och beskrivningar. Föråldrade fält indikeras med en `meta:status` attribut för `deprecated`. |
+| `application/vnd.adobe.xed-full-notext+json; version=1` | `$ref` och `allOf` har matchats, inga titlar eller beskrivningar. |
+| `application/vnd.adobe.xed-full-desc+json; version=1` | `$ref` och `allOf` löstes, beskrivningar inkluderades. |
+| `application/vnd.adobe.xed-deprecatefield+json; version=1` | `$ref` och `allOf` har matchats, har rubriker och beskrivningar. Föråldrade fält anges med attributet `meta:status` för `deprecated`. |
 
 {style="table-layout:auto"}
 
 **Svar**
 
-Ett lyckat svar returnerar information om schemat. Vilka fält som returneras beror på `Accept` huvud som skickades i begäran. Experimentera med olika `Accept` rubriker för att jämföra svaren och avgöra vilken rubrik som är bäst för dig.
+Ett lyckat svar returnerar information om schemat. Vilka fält som returneras beror på det `Accept`-huvud som skickas i begäran. Experimentera med olika `Accept`-huvuden för att jämföra svaren och avgöra vilken rubrik som är bäst för ditt användningsfall.
 
 ```json
 {
@@ -200,7 +200,7 @@ Schemadispositionsprocessen börjar med att tilldela en klass. Klassen definiera
 
 >[!NOTE]
 >
->Exempelanropet nedan är bara ett grundläggande exempel på hur du skapar ett schema i API:t, med de minimala dispositionskraven för en klass och utan fältgrupper. Fullständiga steg för hur du skapar ett schema i API:t, inklusive hur du tilldelar fält med fältgrupper och datatyper, finns i [självstudiekurs om att skapa scheman](../tutorials/create-schema-api.md).
+>Exempelanropet nedan är bara ett grundläggande exempel på hur du skapar ett schema i API:t, med de minimala dispositionskraven för en klass och utan fältgrupper. Fullständiga steg för hur du skapar ett schema i API:t, inklusive hur du tilldelar fält med fältgrupper och datatyper, finns i [självstudiekursen för att skapa schema](../tutorials/create-schema-api.md).
 
 **API-format**
 
@@ -210,7 +210,7 @@ POST /tenant/schemas
 
 **Begäran**
 
-Begäran måste innehålla en `allOf` som refererar till `$id` av en klass. Det här attributet definierar den &quot;basklass&quot; som schemat ska implementera. I det här exemplet är basklassen en&quot;Egenskapsinformation&quot;-klass som skapades tidigare.
+Begäran måste innehålla ett `allOf`-attribut som refererar till `$id` för en klass. Det här attributet definierar den &quot;basklass&quot; som schemat ska implementera. I det här exemplet är basklassen en&quot;Egenskapsinformation&quot;-klass som skapades tidigare.
 
 ```SHELL
 curl -X POST \
@@ -234,13 +234,13 @@ curl -X POST \
 
 | Egenskap | Beskrivning |
 | --- | --- |
-| `allOf` | En array med objekt, där varje objekt refererar till en klass eller fältgrupp vars fält schemat implementerar. Varje objekt innehåller en enda egenskap (`$ref`) vars värde representerar `$id` för den klass eller fältgrupp som det nya schemat kommer att implementera. En klass måste anges, med noll eller flera ytterligare fältgrupper. I ovanstående exempel är det enda objektet i `allOf` är schemats klass. |
+| `allOf` | En array med objekt, där varje objekt refererar till en klass eller fältgrupp vars fält schemat implementerar. Varje objekt innehåller en enda egenskap (`$ref`) vars värde representerar `$id` för den klass eller fältgrupp som det nya schemat kommer att implementera. En klass måste anges, med noll eller flera ytterligare fältgrupper. I exemplet ovan är det enda objektet i arrayen `allOf` schemaklassen. |
 
 {style="table-layout:auto"}
 
 **Svar**
 
-Ett lyckat svar returnerar HTTP-status 201 (Skapad) och en nyttolast som innehåller information om det nyligen skapade schemat, inklusive `$id`, `meta:altId`och `version`. Dessa värden är skrivskyddade och tilldelas av [!DNL Schema Registry].
+Ett lyckat svar returnerar HTTP-status 201 (Skapad) och en nyttolast som innehåller information om det nyligen skapade schemat, inklusive `$id`, `meta:altId` och `version`. Dessa värden är skrivskyddade och tilldelas av [!DNL Schema Registry].
 
 ```JSON
 {
@@ -275,17 +275,17 @@ Ett lyckat svar returnerar HTTP-status 201 (Skapad) och en nyttolast som innehå
 }
 ```
 
-Utföra en GET-begäran till [lista alla scheman](#list) i innehavarbehållaren skulle nu inkludera det nya schemat. Du kan göra en [sökbegäran (GET)](#lookup) med URL-kodad `$id` URI för att visa det nya schemat direkt.
+Om en GET-förfrågan om att [lista alla scheman](#list) i klientbehållaren utförs, kommer det nya schemat nu att ingå. Du kan utföra en [Lookup-begäran (GET)](#lookup) med URL-kodad `$id` URI för att visa det nya schemat direkt.
 
-Om du vill lägga till fler fält i ett schema kan du utföra en [operationen PATCH](#patch) för att lägga till fältgrupper i schemats `allOf` och `meta:extends` arrayer.
+Om du vill lägga till fler fält i ett schema kan du utföra en [PATCH-åtgärd](#patch) för att lägga till fältgrupper i schemats `allOf`- och `meta:extends`-arrayer.
 
 ## Uppdatera ett schema {#put}
 
-Du kan ersätta ett helt schema genom en PUT-åtgärd, vilket i själva verket innebär att resursen skrivs om. När du uppdaterar ett schema via en PUT-begäran måste texten innehålla alla fält som krävs när [skapa ett nytt schema](#create) i en POST.
+Du kan ersätta ett helt schema med en PUT-åtgärd, vilket i själva verket innebär att resursen skrivs om. När du uppdaterar ett schema via en PUT-begäran måste texten innehålla alla fält som krävs när [ett nytt schema](#create) skapas i en POST-begäran.
 
 >[!NOTE]
 >
->Om du bara vill uppdatera en del av ett schema i stället för att ersätta den helt, se avsnittet om [uppdatera en del av ett schema](#patch).
+>Om du bara vill uppdatera en del av ett schema i stället för att ersätta den helt, ska du läsa avsnittet [Uppdatera en del av ett schema](#patch).
 
 **API-format**
 
@@ -295,13 +295,13 @@ PUT /tenant/schemas/{SCHEMA_ID}
 
 | Parameter | Beskrivning |
 | --- | --- |
-| `{SCHEMA_ID}` | The `meta:altId` eller URL-kodad `$id` av schemat som du vill skriva om. |
+| `{SCHEMA_ID}` | `meta:altId` eller URL-kodad `$id` för schemat som du vill skriva om. |
 
 {style="table-layout:auto"}
 
 **Begäran**
 
-Följande begäran ersätter ett befintligt schema och ändrar dess `title`, `description`och `allOf` attribut.
+Följande begäran ersätter ett befintligt schema och ändrar dess `title`-, `description`- och `allOf`-attribut.
 
 ```SHELL
 curl -X PUT \
@@ -362,11 +362,11 @@ Ett lyckat svar returnerar information om det uppdaterade schemat.
 
 ## Uppdatera en del av ett schema {#patch}
 
-Du kan uppdatera en del av ett schema genom att använda en PATCH-begäran. The [!DNL Schema Registry] stöder alla vanliga JSON-korrigeringsåtgärder, inklusive `add`, `remove`och `replace`. Mer information om JSON Patch finns i [Grundläggande API-guide](../../landing/api-fundamentals.md#json-patch).
+Du kan uppdatera en del av ett schema genom att använda en PATCH-begäran. [!DNL Schema Registry] stöder alla JSON-standardåtgärder för korrigering, inklusive `add`, `remove` och `replace`. Mer information om JSON Patch finns i guiden [Grundläggande API](../../landing/api-fundamentals.md#json-patch).
 
 >[!NOTE]
 >
->Om du vill ersätta en hel resurs med nya värden i stället för att uppdatera enskilda fält, se avsnittet om [ersätta ett schema med en PUT-åtgärd](#put).
+>Om du vill ersätta en hel resurs med nya värden i stället för att uppdatera enskilda fält kan du läsa avsnittet [Ersätta ett schema med en PUT-åtgärd](#put).
 
 En av de vanligaste PATCH-åtgärderna är att lägga till tidigare definierade fältgrupper i ett schema, vilket visas i exemplet nedan.
 
@@ -378,15 +378,15 @@ PATCH /tenant/schemas/{SCHEMA_ID}
 
 | Parameter | Beskrivning |
 | --- | --- |
-| `{SCHEMA_ID}` | URL-kodad `$id` URI eller `meta:altId` för det schema som du vill uppdatera. |
+| `{SCHEMA_ID}` | URL-kodad `$id` URI eller `meta:altId` för schemat som du vill uppdatera. |
 
 {style="table-layout:auto"}
 
 **Begäran**
 
-Exempelbegäran nedan lägger till en ny fältgrupp i ett schema genom att lägga till den fältgruppens `$id` värdet till båda `meta:extends` och `allOf` arrayer.
+Exempelbegäran nedan lägger till en ny fältgrupp i ett schema genom att lägga till fältgruppens `$id`-värde i både `meta:extends`- och `allOf`-arrayerna.
 
-Begärandetexten har formen av en array där varje listat-objekt representerar en specifik ändring i ett enskilt fält. Varje objekt innehåller den åtgärd som ska utföras (`op`), vilket fält åtgärden ska utföras på (`path`) och vilken information som ska ingå i åtgärden (`value`).
+Begärandetexten har formen av en array där varje listat-objekt representerar en specifik ändring i ett enskilt fält. Varje objekt innehåller åtgärden som ska utföras (`op`), vilket fält åtgärden ska utföras på (`path`) och vilken information som ska inkluderas i åtgärden (`value`).
 
 ```SHELL
 curl -X PATCH\
@@ -414,7 +414,7 @@ curl -X PATCH\
 
 **Svar**
 
-Svaret visar att båda åtgärderna har utförts. Fältgruppen `$id` har lagts till i `meta:extends` array och en referens (`$ref`) till fältgruppen `$id` visas nu i `allOf` array.
+Svaret visar att båda åtgärderna utfördes utan fel. Fältgruppen `$id` har lagts till i arrayen `meta:extends` och en referens (`$ref`) till fältgruppen `$id` visas nu i arrayen `allOf`.
 
 ```JSON
 {
@@ -455,7 +455,7 @@ Svaret visar att båda åtgärderna har utförts. Fältgruppen `$id` har lagts t
 
 ## Aktivera ett schema för användning i kundprofilen i realtid {#union}
 
-För att ett schema ska kunna delta i [Kundprofil i realtid](../../profile/home.md)måste du lägga till en `union` -tagg till schemats `meta:immutableTags` array. Du kan uppnå detta genom att göra en PATCH-begäran för det aktuella schemat.
+För att ett schema ska kunna delta i [Kundprofil för realtid](../../profile/home.md) måste du lägga till en `union`-tagg i schemats `meta:immutableTags`-matris. Du kan uppnå detta genom att göra en PATCH-begäran för det aktuella schemat.
 
 >[!IMPORTANT]
 >
@@ -469,13 +469,13 @@ PATCH /tenant/schemas/{SCHEMA_ID}
 
 | Parameter | Beskrivning |
 | --- | --- |
-| `{SCHEMA_ID}` | URL-kodad `$id` URI eller `meta:altId` för det schema som du vill aktivera. |
+| `{SCHEMA_ID}` | URL-kodad `$id` URI eller `meta:altId` för schemat som du vill aktivera. |
 
 {style="table-layout:auto"}
 
 **Begäran**
 
-Exempelbegäran nedan lägger till en `meta:immutableTags` till ett befintligt schema, vilket ger arrayen ett strängvärde av `union` för att aktivera den för användning i profilen.
+Exempelbegäran nedan lägger till en `meta:immutableTags`-matris i ett befintligt schema, vilket ger matrisen strängvärdet `union` för att den ska kunna användas i profilen.
 
 ```SHELL
 curl -X PATCH\
@@ -496,7 +496,7 @@ curl -X PATCH\
 
 **Svar**
 
-Ett godkänt svar returnerar informationen om det uppdaterade schemat, vilket visar att `meta:immutableTags` arrayen har lagts till.
+Ett lyckat svar returnerar information om det uppdaterade schemat, vilket visar att arrayen `meta:immutableTags` har lagts till.
 
 ```JSON
 {
@@ -538,7 +538,7 @@ Ett godkänt svar returnerar informationen om det uppdaterade schemat, vilket vi
 }
 ```
 
-Nu kan du visa unionen för schemats klass för att bekräfta att schemats fält är representerade. Se [slutpunktshandbok för föreningar](./unions.md) för mer information.
+Nu kan du visa unionen för schemats klass för att bekräfta att schemats fält är representerade. Mer information finns i [Fackens slutpunktshandbok](./unions.md).
 
 ## Ta bort ett schema {#delete}
 
@@ -552,7 +552,7 @@ DELETE /tenant/schemas/{SCHEMA_ID}
 
 | Parameter | Beskrivning |
 | --- | --- |
-| `{SCHEMA_ID}` | URL-kodad `$id` URI eller `meta:altId` för det schema som du vill ta bort. |
+| `{SCHEMA_ID}` | URL-kodad `$id` URI eller `meta:altId` för schemat som du vill ta bort. |
 
 {style="table-layout:auto"}
 
@@ -571,4 +571,4 @@ curl -X DELETE \
 
 Ett lyckat svar returnerar HTTP-status 204 (inget innehåll) och en tom brödtext.
 
-Du kan bekräfta borttagningen genom att försöka utföra en sökbegäran (GET) till schemat. Du måste inkludera en `Accept` huvud i begäran, men bör få HTTP-status 404 (Hittades inte) eftersom schemat har tagits bort från schemaregistret.
+Du kan bekräfta borttagningen genom att försöka utföra en sökbegäran (GET) till schemat. Du måste inkludera ett `Accept`-huvud i begäran, men du bör få HTTP-status 404 (Hittades inte) eftersom schemat har tagits bort från schemaregistret.

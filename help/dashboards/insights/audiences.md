@@ -15,11 +15,11 @@ De insikter som bygger på analysen av er datamodell gör era Adobe Real-time Cu
 
 Förstå era målgruppsinsikter genom att få tillgång till den SQL som ligger till grund för dem och generera sedan egna insikter för att ytterligare utforska de identiteter och profiler som era målgrupper består av. Omvandla era rådata till nya användbara insikter genom att använda Real-Time CDP datamodell SQL som inspiration för att skapa frågor som passar just era affärsbehov.
 
-Se [Visa SQL-dokumentation](../view-sql.md) om du vill ha mer information om hur du anpassar dina insikter i SQL direkt via användargränssnittet i PLatform.
+Se [Visa SQL-dokumentation](../view-sql.md) om du vill ha mer information om hur du anpassar dina insikter direkt via användargränssnittet i PLatform.
 
-Du kan använda följande insikter som en del av [Auditions dashboard](../guides/audiences.md) eller en egen [användardefinierad kontrollpanel](../user-defined-dashboards.md). Se [anpassningsöversikt](../customize/overview.md) för instruktioner om hur du anpassar kontrollpanelen eller [skapa och redigera nya widgetar](../customize/custom-widgets.md) i widgetbiblioteket och [användardefinierad kontrollpanel](../user-defined-dashboards.md#create-widget).
+Följande insikter är tillgängliga för dig att använda som en del av [Publikkontrollpanelen](../guides/audiences.md) eller en anpassad [användardefinierad kontrollpanel](../user-defined-dashboards.md). Se [anpassningsöversikten](../customize/overview.md) för instruktioner om hur du anpassar din instrumentpanel eller [skapar och redigerar nya widgetar](../customize/custom-widgets.md) i widgetbiblioteket och [användardefinierad instrumentpanel](../user-defined-dashboards.md#create-widget).
 
-Du kan använda följande insikter som en del av [Auditions dashboard](../guides/audiences.md) eller en anpassad kontrollpanel.
+Du kan använda följande insikter som en del av [Publikkontrollpanelen](../guides/audiences.md) eller en anpassad kontrollpanel.
 
 ## Rapport om publiköverlappning {#audience-overlap-report}
 
@@ -86,7 +86,7 @@ SELECT source_segment_name,
 
 +++
 
-Se [Dokumentation för rapportwidgeten för överlappande målgrupper](../guides/audiences.md#audience-overlap-report) om du vill ha information om hur den här insikten ser ut och fungerar.
+I [Målgruppswidgetens dokumentation ](../guides/audiences.md#audience-overlap-report) finns information om utseendet och funktionaliteten för den här insikten.
 
 ## Målgruppsöverlappning {#audience-overlap}
 
@@ -133,7 +133,7 @@ SELECT Sum(overlap_col1) overlap_col1,
 
 +++
 
-Se [Widgetdokumentation för publiköverlappning](../guides/audiences.md#audience-overlap) om du vill ha information om hur den här insikten ser ut och fungerar.
+Mer information om utseende och funktioner för den här insikten finns i [dokumentationen om widgeten för målgruppsöverlappning](../guides/audiences.md#audience-overlap).
 
 ## Förändring av målgruppsstorlek {#audience-size-change-trend}
 
@@ -174,7 +174,7 @@ SELECT date_key,
 
 +++
 
-Se [Widgetdokumentation för att ändra målgruppsstorlek](../guides/audiences.md#audience-size-change-trend) om du vill ha information om hur den här insikten ser ut och fungerar.
+Mer information om utseende och funktioner för den här insikten finns i [dokumentationen om att ändra trendwidgeten för målgruppsstorlek](../guides/audiences.md#audience-size-change-trend).
 
 ## Målgruppsstorlekstrend efter identitet {#audience-size-trend-by-identity}
 
@@ -207,7 +207,7 @@ SELECT sum(count_of_profiles) AS identities,
 
 +++
 
-Se [Målgruppsstorlekstrend efter identitetswidgetens dokumentation](../guides/audiences.md#audience-size-trend-by-identity) om du vill ha information om hur den här insikten ser ut och fungerar.
+Mer information om utseende och funktioner för den här insikten finns i [Målgruppsstorlekstrend per identitetswidget-dokumentation](../guides/audiences.md#audience-size-trend-by-identity).
 
 ## Trend för målgruppsstorlek {#audience-size-trend}
 
@@ -238,7 +238,7 @@ SELECT date_key,
 
 +++
 
-Se [Widget för målgruppsstorlekstrend, dokumentation](../guides/audiences.md#audience-size-trend) om du vill ha information om hur den här insikten ser ut och fungerar.
+Mer information om utseende och funktioner för den här insikten finns i dokumentationen [Trendwidget för målgruppsstorlek](../guides/audiences.md#audience-size-trend).
 
 ## Målgruppsstorlek {#audience-size}
 
@@ -266,7 +266,7 @@ WHERE
 
 +++
 
-Se [Dokumentation för widgeten Målgruppsstorlek](../guides/audiences.md#audience-size) om du vill ha information om hur den här insikten ser ut och fungerar.
+Mer information om utseendet och funktionaliteten för den här insikten finns i [dokumentationen om widgeten Målgruppsstorlek](../guides/audiences.md#audience-size).
 
 ## Kundens AI-fördelning av poäng {#customer-ai-distribution-of-scores}
 
@@ -409,7 +409,7 @@ SELECT b.model_name,
 
 +++
 
-Se [Kundens AI-distribution av poängwidget-dokumentation](../guides/audiences.md#customer-ai-distribution-of-scores) om du vill ha information om hur den här insikten ser ut och fungerar.
+Mer information om hur den här insikten ser ut och fungerar finns i [Customer AI Distribution of scores widget documentation](../guides/audiences.md#customer-ai-distribution-of-scores).
 
 ## Sammanfattning av AI-poäng för kunder {#customer-ai-scoring-summary}
 
@@ -454,13 +454,13 @@ SELECT model_name,
 
 +++
 
-Se [Sammanfattningswidgeten för kundens AI-poäng](../guides/audiences.md#customer-ai-scoring-summary) om du vill ha information om hur den här insikten ser ut och fungerar.
+Mer information om hur den här insikten ser ut och fungerar finns i [Sammanfattningswidgeten för AI-poäng för kunder](../guides/audiences.md#customer-ai-scoring-summary).
 
 ## Identitetsöverlappning {#identity-overlap}
 
 Frågor som besvaras av den här insikten:
 
-- Vad är den gemensamma skärningspunkten mellan [!UICONTROL Identity Type A] och [!UICONTROL Identity Type B] för en filtrerad publik?
+- Vad är den gemensamma skärningspunkten mellan [!UICONTROL Identity Type A] och [!UICONTROL Identity Type B] för en filtrerad målgrupp?
 - Hur förbättrar jag kundmålgrupperna utifrån överlappningen av specifika identitetstyper för att förbättra de riktade marknadsföringsstrategierna?
 - Vilka insikter kan man få genom att utvärdera kampanjresultatet inom de olika områdena?
 - Baserat på dessa insikter, hur kan framtida marknadsföringssatsningar optimeras?
@@ -514,7 +514,7 @@ SELECT Sum(overlap_col1) overlap_col1,
 
 +++
 
-Se [Dokumentation för widgeten Identitetsöverlappning](../guides/audiences.md#identity-overlap) om du vill ha information om hur den här insikten ser ut och fungerar.
+Mer information om utseendet och funktionaliteten för den här insikten finns i [dokumentationen om widgeten Identitetsöverlappning](../guides/audiences.md#identity-overlap).
 
 ## Profiler efter identitet {#profiles-by-identity}
 
@@ -542,7 +542,7 @@ SELECT qsaccel.profile_agg.adwh_dim_namespaces.namespace_description,
 
 +++
 
-Se [Profiler efter identitetswidgetens dokumentation](../guides/audiences.md#profiles-by-identity) om du vill ha information om hur den här insikten ser ut och fungerar.
+Mer information om utseende och funktioner för den här insikten finns i [Profiler efter identitetswidget-dokumentationen](../guides/audiences.md#profiles-by-identity).
 
 ## Schemalagda aktiveringar {#scheduled-activations}
 
@@ -577,12 +577,12 @@ SELECT p.destination_platform ,
 
 +++
 
-Se [Dokumentation för widgeten för schemalagda aktiveringar](../guides/audiences.md#scheduled-activations) om du vill ha information om hur den här insikten ser ut och fungerar.
+Mer information om utseende och funktioner för den här insikten finns i [dokumentationen för widgeten för schemalagda aktiviteter](../guides/audiences.md#scheduled-activations).
 
 ## Nästa steg
 
 Genom att läsa det här dokumentet förstår du nu vilken SQL-kod som genererar instrumentpanelsinsikter och vilka vanliga frågor som analysen löser. Nu kan du redigera och iterera på SQL för att generera egna insikter.
 
-Se [Visa SQL-dokumentation](../view-sql.md) om du vill ha mer information om hur du anpassar dina insikter i SQL direkt via användargränssnittet i PLatform.
+Se [Visa SQL-dokumentation](../view-sql.md) om du vill ha mer information om hur du anpassar dina insikter direkt via användargränssnittet i PLatform.
 
-Du kan även läsa och förstå den SQL som genererar insikter för [Profiler](./profiles.md), [Kontoprofiler](./account-profiles.md) och [Destinationer](./destinations.md) instrumentpaneler.
+Du kan också läsa och förstå SQL-koden som genererar insikter för kontrollpanelerna [Profiler](./profiles.md), [Kontoprofiler](./account-profiles.md) och [Destinationer](./destinations.md).

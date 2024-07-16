@@ -12,13 +12,13 @@ ht-degree: 0%
 ---
 
 
-# [!UICONTROL Demographic Details] schemafältgrupp
+# Schemafältgruppen [!UICONTROL Demographic Details]
 
 >[!NOTE]
 >
->Namnen på flera schemafältgrupper har ändrats. Visa dokumentet på [uppdaterar fältgruppnamn](../name-updates.md) för mer information.
+>Namnen på flera schemafältgrupper har ändrats. Mer information finns i dokumentet om [uppdatering av fältgruppnamn](../name-updates.md).
 
-[!UICONTROL Demographic Details] är en standardgrupp för schemafält för [[!DNL XDM Individual Profile] class](../../classes/individual-profile.md). Fältgruppen har en rotnivå `person` objekt, vars underfält beskriver information om en enskild person.
+[!UICONTROL Demographic Details] är en standardschemafältgrupp för [[!DNL XDM Individual Profile] klassen](../../classes/individual-profile.md). Fältgruppen tillhandahåller ett `person`-objekt på rotnivå, vars underfält beskriver information om en enskild person.
 
 ![](../../images/field-groups/demographic-details.png)
 

@@ -7,8 +7,8 @@ badgeB2B: label="B2B Edition" type="Informative" url="https://helpx.adobe.com/le
 exl-id: 2f853599-6bca-4ba6-bbba-131a49d8854e
 source-git-commit: db57fa753a3980dca671d476521f9849147880f1
 workflow-type: tm+mt
-source-wordcount: '622'
-ht-degree: 3%
+source-wordcount: '601'
+ht-degree: 0%
 
 ---
 
@@ -29,7 +29,7 @@ Kontobaserad marknadsföring ger möjlighet att länka kända personer och anony
 - Personnamn
 - E-postadress
 - Kontaktnummer
-- Företagsnamn
+- Företag
 - Företagets webbplats
 - Befattning
 - Plats
@@ -45,13 +45,13 @@ Lead till kontomatchning gör att du kan gå med i kända personprofiler till ko
 - **Känd personprofil:** Personprofilen är INTE associerad med någon kontoprofil och minst ett av följande personprofilattribut har ett värde:
 
    - E-postadress
-   - Företagsnamn
+   - Företag
    - Företagets webbplats
 
-- **Anonym personprofil:** Personprofilen är INTE associerad med någon kontoprofil och inget av följande attribut för personprofiler har ett värde:
+- **Anonym personprofil:** Personprofilen är INTE associerad med någon kontoprofil och inga av följande attribut för personprofiler har ett värde:
 
    - E-postadress
-   - Företagsnamn
+   - Företag
    - Företagets webbplats
 
 >[!NOTE]
@@ -72,30 +72,30 @@ Dagliga jobb använder både deterministiska och sannolikhetsfaktorer för att m
 
 Attributen b2b.companyName, b2b.companyWebsite och b2b.personKey.sourceKey finns i fältgruppen b2b i B2B-personschemat.
 
-![Personschema som visar attribut](/help/rtcdp/accounts/images/b2b-person-schema.png)
+![Personschema B2B visar attribut](/help/rtcdp/accounts/images/b2b-person-schema.png)
 
 Attributet workEmail finns på den översta fältgruppen i B2B-personschemat.
 
-![Schema för B2B-person som visar arbeteE-post](/help/rtcdp/accounts/images/b2b-person-workemail.png)
+![Personschema B2B visar workEmail](/help/rtcdp/accounts/images/b2b-person-workemail.png)
 
 Profiler matchas bäst endast om matchningspoängen överstiger ett internt förtroendetröskelvärde. Resultaten sparas i en ny systemdatauppsättning för den befintliga kontopersonens XDM-relation.
 
-Tjänsten lead to account matching körs när en ögonblicksbild av en ny personprofil blir tillgänglig, vilket är en gång var 24:e timme. Mer information om [konfiguration av lead till kontomatchning](/help/rtcdp/accounts/account-profile-ui-guide.md).
+Tjänsten lead to account matching körs när en ögonblicksbild av en ny personprofil blir tillgänglig, vilket är en gång var 24:e timme. Mer information om [konfigurationen av lead-till-konto-matchning](/help/rtcdp/accounts/account-profile-ui-guide.md) finns i dokumentationen.
 
 ## Så här visar du lead-to-account matching-utdata {#how-to-view}
 
 Efter jobbkörningen sparas resultaten i en ny datamängd för den befintliga kontopersonens relation-XDM.
 
-Om du vill förhandsgranska datauppsättningen väljer du **[!UICONTROL Preview dataset]** längst upp till höger.
+Om du vill förhandsgranska datauppsättningen väljer du **[!UICONTROL Preview dataset]** i det övre högra hörnet.
 
 ![Ny datauppsättning](/help/rtcdp/accounts/images/b2b-dataset-output.png)
 
-Datauppsättningen innehåller den matchande kontoinformationen samt matchningspoängen för den valda datauppsättningen. The **[!UICONTROL Relationship Source]** anger om det kom från matchningsprocessen mellan lead och konto.
+Datauppsättningen innehåller den matchande kontoinformationen samt matchningspoängen för den valda datauppsättningen. Fältet **[!UICONTROL Relationship Source]** anger om det kom från lead-till-kontomatchningsprocessen.
 
-![Förhandsgranska datauppsättningens konfidensgrad och resultat](/help/rtcdp/accounts/images/b2b-dataset-preview.png)
+![Förhandsgranska datauppsättningens konfidensgrad och utdata](/help/rtcdp/accounts/images/b2b-dataset-preview.png)
 
 ## Övervaka lead till kontomatchningsjobb {#monitoring-jobs}
 
 Du kan övervaka jobbstatus och associerade mått för alla lead-till-kontomatchningsjobb via kontrollpanelen.
 
-Mer information om [övervaka jobb för lead-kontomatchning](/help/dataflows/ui/b2b/monitor-profile-enrichment.md).
+Mer information om [övervakningsjobben för kontomatchning](/help/dataflows/ui/b2b/monitor-profile-enrichment.md) finns i dokumentationen.

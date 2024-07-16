@@ -5,33 +5,33 @@ description: I den här självstudien används API:t för Flow Service för att 
 exl-id: ba1a9bff-43a6-44fb-a4e7-e6a45b7eeebd
 source-git-commit: 9b9803b4d2aeb2a86ef980f34ee34909679ea3d9
 workflow-type: tm+mt
-source-wordcount: '699'
-ht-degree: 1%
+source-wordcount: '691'
+ht-degree: 0%
 
 ---
 
-# Utforska dina molnlagringsmappar med [!DNL Flow Service] API
+# Utforska dina molnlagringsmappar med API:t för [!DNL Flow Service]
 
-I den här självstudiekursen beskrivs hur du utforskar och förhandsgranskar strukturen och innehållet i ditt molnlagringsutrymme med hjälp av [[!DNL Flow Service]](https://www.adobe.io/experience-platform-apis/references/flow-service/) API.
+I den här självstudiekursen beskrivs hur du utforskar och förhandsgranskar strukturen och innehållet i molnlagringen med hjälp av API:t [[!DNL Flow Service]](https://www.adobe.io/experience-platform-apis/references/flow-service/).
 
 >[!NOTE]
 >
->För att kunna utforska ditt molnlagringsutrymme måste du redan ha ett giltigt ID för basanslutning för en molnlagringskälla. Om du inte har detta ID kan du se [källöversikt](../../../home.md#cloud-storage) för en lista över molnlagringskällor som du kan skapa en basanslutning med.
+>För att kunna utforska ditt molnlagringsutrymme måste du redan ha ett giltigt ID för basanslutning för en molnlagringskälla. Om du inte har det här ID:t kan du se [Källöversikt](../../../home.md#cloud-storage) för en lista över molnlagringskällor som du kan skapa en basanslutning med.
 
 ## Komma igång
 
 Handboken kräver en fungerande förståelse av följande komponenter i Adobe Experience Platform:
 
-* [Källor](../../../home.md): [!DNL Experience Platform] tillåter att data hämtas från olika källor samtidigt som du kan strukturera, etikettera och förbättra inkommande data med [!DNL Platform] tjänster.
-* [Sandlådor](../../../../sandboxes/home.md): [!DNL Experience Platform] innehåller virtuella sandlådor som partitionerar en enda [!DNL Platform] till separata virtuella miljöer för att utveckla och utveckla applikationer för digitala upplevelser.
+* [Källor](../../../home.md): [!DNL Experience Platform] tillåter att data kan hämtas från olika källor samtidigt som du kan strukturera, etikettera och förbättra inkommande data med [!DNL Platform]-tjänster.
+* [Sandlådor](../../../../sandboxes/home.md): [!DNL Experience Platform] innehåller virtuella sandlådor som partitionerar en enskild [!DNL Platform]-instans till separata virtuella miljöer för att hjälpa till att utveckla och utveckla program för digitala upplevelser.
 
 ### Använda plattforms-API:er
 
-Mer information om hur du kan anropa API:er för plattformar finns i handboken [komma igång med plattforms-API:er](../../../../landing/api-guide.md).
+Mer information om hur du kan anropa plattforms-API:er finns i guiden [Komma igång med plattforms-API:er](../../../../landing/api-guide.md).
 
 ## Utforska dina molnlagringsmappar
 
-Du kan hämta information om strukturen för dina molnlagringsmappar genom att göra en GET-förfrågan till [!DNL Flow Service] API när du anger källans anslutnings-ID.
+Du kan hämta information om strukturen för dina molnlagringsmappar genom att göra en GET-förfrågan till [!DNL Flow Service]-API:t och samtidigt ange källans anslutnings-ID.
 
 När du gör GET-förfrågningar för att utforska ditt molnlagringsutrymme måste du inkludera frågeparametrarna som listas i tabellen nedan:
 
@@ -66,7 +66,7 @@ curl -X GET \
 
 **Svar**
 
-Ett lyckat svar returnerar en array med filer och mappar som finns i den efterfrågade katalogen. Observera `path` -egenskapen för filen som du vill överföra, eftersom du måste ange den i nästa steg för att kunna kontrollera dess struktur.
+Ett lyckat svar returnerar en array med filer och mappar som finns i den efterfrågade katalogen. Observera egenskapen `path` för filen som du vill överföra, eftersom du måste ange den i nästa steg för att kunna kontrollera filens struktur.
 
 ```json
 [
@@ -113,8 +113,8 @@ GET /connections/{BASE_CONNECTION_ID}/explore?objectType=FILE&object={FILE_PATH}
 | --------- | ----------- |
 | `{BASE_CONNECTION_ID}` | Anslutnings-ID för din molnlagringskälla. |
 | `{FILE_PATH}` | Sökvägen till filen som du vill inspektera. |
-| `{FILE_TYPE}` | Filtypen. Filtyper som stöds:<ul><li><code>DELIMITED</code>: Avgränsaravgränsat värde. DSV-filer måste vara kommaavgränsade.</li><li><code>JSON</code>: JavaScript-objektnotation. JSON-filer måste vara XDM-kompatibla</li><li><code>PARQUET</code>: Apache Parquet. Parquet-filer måste vara XDM-kompatibla.</li></ul> |
-| `{QUERY_PARAMS}` | Valfria frågeparametrar som kan användas för att filtrera resultat. Se avsnittet om [frågeparametrar](#query) för mer information. |
+| `{FILE_TYPE}` | Filtypen. Filtyper som stöds:<ul><li><code>DELIMITED</code>: Avgränsaravgränsat värde. DSV-filer måste vara kommaavgränsade.</li><li><code>JSON</code>: JavaScript Object Notation. JSON-filer måste vara XDM-kompatibla</li><li><code>PARQUET</code>: Apache Parquet. Parquet-filer måste vara XDM-kompatibla.</li></ul> |
+| `{QUERY_PARAMS}` | Valfria frågeparametrar som kan användas för att filtrera resultat. Mer information finns i avsnittet om [frågeparametrar](#query). |
 
 **Begäran**
 
@@ -158,14 +158,14 @@ Ett lyckat svar returnerar strukturen för den efterfrågade filen inklusive tab
 
 ## Använda frågeparametrar {#query}
 
-The [[!DNL Flow Service] API](https://www.adobe.io/experience-platform-apis/references/flow-service/) har stöd för användning av frågeparametrar för att förhandsgranska och inspektera olika filtyper.
+[[!DNL Flow Service] API](https://www.adobe.io/experience-platform-apis/references/flow-service/) stöder användning av frågeparametrar för att förhandsgranska och inspektera olika filtyper.
 
 | Parameter | Beskrivning |
 | --------- | ----------- |
-| `columnDelimiter` | Värdet för ett tecken som du angav som en kolumnavgränsare för att inspektera CSV- eller TSV-filer. Om parametern inte anges används standardvärdet kommatecken `(,)`. |
+| `columnDelimiter` | Värdet för ett tecken som du angav som en kolumnavgränsare för att inspektera CSV- eller TSV-filer. Om parametern inte anges används standardvärdet för kommatecken `(,)`. |
 | `compressionType` | En obligatorisk frågeparameter för förhandsgranskning av en komprimerad avgränsad fil eller JSON-fil. Komprimerade filer som stöds är: <ul><li>`bzip2`</li><li>`gzip`</li><li>`deflate`</li><li>`zipDeflate`</li><li>`tarGzip`</li><li>`tar`</li></ul> |
-| `encoding` | Definierar vilken kodningstyp som ska användas vid förhandsgranskning av återgivning. Följande kodningstyper stöds: `UTF-8` och `ISO-8859-1`. **Anteckning**: `encoding` -parametern är bara tillgänglig vid inhämtning av avgränsade CSV-filer. Andra filtyper kommer att importeras med standardkodningen, `UTF-8`. |
+| `encoding` | Definierar vilken kodningstyp som ska användas vid förhandsgranskning av återgivning. Följande kodningstyper stöds: `UTF-8` och `ISO-8859-1`. **Obs!**: Parametern `encoding` är bara tillgänglig när du importerar avgränsade CSV-filer. Andra filtyper importeras med standardkodningen, `UTF-8`. |
 
 ## Nästa steg
 
-Genom att följa den här självstudiekursen har du utforskat ditt molnlagringssystem och hittat sökvägen till filen som du vill hämta till [!DNL Platform]och visade sin struktur. Du kan använda den här informationen i nästa självstudie för att [samla in data från din molnlagring och ta in dem på plattformen](../collect/cloud-storage.md).
+Genom att följa den här självstudiekursen har du utforskat ditt molnlagringssystem, hittat sökvägen till filen som du vill hämta till [!DNL Platform] och visat dess struktur. Du kan använda den här informationen i nästa självstudiekurs för att [samla in data från ditt molnlagringsutrymme och överföra dem till plattformen](../collect/cloud-storage.md).

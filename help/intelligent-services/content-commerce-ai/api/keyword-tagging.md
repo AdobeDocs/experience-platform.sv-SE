@@ -6,8 +6,8 @@ description: När tjänsten Nyckelordstaggar anges i ett textdokument extraheras
 exl-id: 56a2da96-5056-4702-9110-a1dfec56f0dc
 source-git-commit: 7c8c1d69f4c4e0a1374603d541b634ac7f64ab38
 workflow-type: tm+mt
-source-wordcount: '447'
-ht-degree: 2%
+source-wordcount: '444'
+ht-degree: 0%
 
 ---
 
@@ -25,7 +25,7 @@ I följande tabell visas de namngivna entiteter som [!DNL Content Tagging] kan i
 | FAC | Byggnader, flygplatser, motorvägar, broar osv. |
 | ORG | Företag, myndigheter, institutioner osv. |
 | PRODUKT | Objekt, fordon, livsmedel osv. (Inte tjänster.) |
-| EVENT | Namngivna orkaner, slag, krig, idrottsevenemang osv. |
+| HÄNDELSE | Namngivna orkaner, slag, krig, idrottsevenemang osv. |
 | WORK_OF_ART | Boktitlar, låtar osv. |
 | LAW | Namngivna dokument som gjorts till lagar. |
 | SPRÅK | Valfritt namngivet språk. |
@@ -42,7 +42,7 @@ Följande begäran extraherar nyckelord från ett dokument baserat på indatapar
 
 Se tabellen under exempelnyttolasten för mer information om de indataparametrar som visas.
 
-Detta [exempel-pdf](../pdf-files/simple-text.pdf) filen användes i exemplet som visas i det här dokumentet.
+Den här [exempelfilen för PDF](../pdf-files/simple-text.pdf) användes i exemplet som visas i det här dokumentet.
 
 ```SHELL
 curl -w'\n' -i -X POST https://sensei.adobe.io/services/v2/predict \
@@ -99,7 +99,7 @@ curl -w'\n' -i -X POST https://sensei.adobe.io/services/v2/predict \
 
 **Dokumentobjekt**
 
-| Namn | Datatyper | Obligatoriskt | Standard | Värden | Beskrivning |
+| Namn | Datatyp | Obligatoriskt | Standard | Värden | Beskrivning |
 | -----| --------- | -------- | ------- | ------ | ----------- |
 | `repo:path` | string | – | – | – | Försignerad URL för det dokument från vilket nyckelfraser ska extraheras. |
 | `sensei:repoType` | string | – | – | HTTPS | Typ av rapport där dokumentet lagras. |
@@ -108,7 +108,7 @@ curl -w'\n' -i -X POST https://sensei.adobe.io/services/v2/predict \
 
 **Svar**
 
-Ett lyckat svar returnerar ett JSON-objekt som innehåller extraherade nyckelord i `response` array.
+Ett lyckat svar returnerar ett JSON-objekt som innehåller extraherade nyckelord i arrayen `response`.
 
 ```json
 {

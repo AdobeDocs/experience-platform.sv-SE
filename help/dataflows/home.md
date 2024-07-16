@@ -17,16 +17,16 @@ I Adobe Experience Platform hämtas data från en mängd olika källor, som anal
 
 ## Använda dataflöden
 
-Dataflöden är en representation av datajobb som flyttar data mellan plattformar. Dessa dataflöden är konfigurerade för olika tjänster, vilket hjälper dig att flytta data från källanslutningar till måldatauppsättningar, där de sedan används av identitetstjänsten och kundprofilen i realtid innan de aktiveras för destinationerna.
+Dataflöden är en representation av datajobb som flyttar data mellan olika plattformar. Dessa dataflöden är konfigurerade för olika tjänster, vilket hjälper dig att flytta data från källanslutningar till måldatauppsättningar, där de sedan används av identitetstjänsten och kundprofilen i realtid innan de aktiveras för destinationerna.
 
-Läs mer om hur du använder dataflöden i källanslutningar i [källöversikt](../sources/home.md).
+Mer information om hur du använder dataflöden i källanslutningar finns i [källresursöversikten](../sources/home.md).
 
 ## Förbereder data
 
 Med Data Prep kan datatekniker mappa, omvandla och validera data till och från Experience Data Model (XDM).
 
-Om du vill veta mer om hur du förbereder data efter att de har importerats kan du läsa [Översikt över datapreflight](../data-prep/home.md).
+Om du vill veta mer om hur du förbereder data efter att de har importerats kan du läsa [översikten för dataprep](../data-prep/home.md).
 
 ## Övervaka dataflöden
 
-Du kan övervaka dataflöden med hjälp av antingen Platform API:er eller Platform UI. Läs mer om hur du övervakar dataflöden med API:t i [övervaka dataflöden API, genomgång](./api/monitor.md). Om du vill lära dig hur du övervakar dataflöden i plattformsgränssnittet kan du läsa självstudiekurserna på [övervaka dataflöden för källor](./ui/monitor-sources.md) och [övervaka dataflöden för destinationer](./ui/monitor-destinations.md).
+Du kan övervaka dataflöden med hjälp av antingen Platform API:er eller Platform UI. Läs [självstudiekursen för övervakning av dataflöden](./api/monitor.md) om du vill lära dig hur du övervakar dataflöden med API:t. Om du vill lära dig hur du övervakar dataflöden i plattformsgränssnittet läser du självstudiekurserna för [övervakning av dataflöden för källor](./ui/monitor-sources.md) och [övervakning av dataflöden för mål](./ui/monitor-destinations.md).

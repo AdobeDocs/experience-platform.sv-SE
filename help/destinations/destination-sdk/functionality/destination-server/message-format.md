@@ -15,14 +15,14 @@ ht-degree: 0%
 
 Om du vill veta mer om meddelandeformat, profilkonfiguration och transformeringsprocess på Adobe kan du bekanta dig med följande koncept för Experience Platform:
 
-* **Experience Data Model (XDM)**. [XDM - översikt](../../../../xdm/home.md) och  [Så här skapar du ett XDM-schema i Adobe Experience Platform](../../../../xdm/tutorials/create-schema-ui.md).
+* **Experience Data Model (XDM)**. [XDM-översikt](../../../../xdm/home.md) och [Så här skapar du ett XDM-schema i Adobe Experience Platform](../../../../xdm/tutorials/create-schema-ui.md).
 * **Klass**. [Skapa och redigera klasser i användargränssnittet](../../../../xdm/ui/resources/classes.md).
-* **IdentityMap**. Identitetskartan representerar en karta över alla slutanvändaridentiteter i Adobe Experience Platform. Se `xdm:identityMap` i [XDM-fältordlista](../../../../xdm/schema/field-dictionary.md).
-* **SegmentMembership**. The [segmentMembership](../../../../xdm/schema/field-dictionary.md) XDM-attributet informerar vilka målgrupper en profil tillhör. För de tre olika värdena i `status` fält, läs dokumentationen om [Schemafältgrupp för målgruppsmedlemskapsdetaljer](../../../../xdm/field-groups/profile/segmentation.md).
+* **IdentityMap**. Identitetskartan representerar en karta över alla slutanvändaridentiteter i Adobe Experience Platform. Se `xdm:identityMap` i [XDM-fältordlistan](../../../../xdm/schema/field-dictionary.md).
+* **Segmentmedlemskap**. XDM-attributet [segmentMembership](../../../../xdm/schema/field-dictionary.md) informerar vilka målgrupper en profil tillhör. Läs dokumentationen om schemafältgruppen [Information om målgruppsmedlemskap](../../../../xdm/field-groups/profile/segmentation.md) för de tre olika värdena i fältet `status`.
 
 >[!IMPORTANT]
 >
->Alla parameternamn och värden som stöds av Destinationen SDK är **skiftlägeskänslig**. Undvik skiftlägeskänslighetsfel genom att använda parameternamn och värden exakt som de visas i dokumentationen.
+>Alla parameternamn och värden som stöds av Destinationen SDK är **skiftlägeskänsliga**. Undvik skiftlägeskänslighetsfel genom att använda parameternamn och värden exakt som de visas i dokumentationen.
 
 ## Integrationstyper som stöds {#supported-integration-types}
 
@@ -43,7 +43,7 @@ Experience Platform kan justera meddelandeformatet för exporterade profiler så
 
 * Källa (1) och mål (2) XDM-schema i Adobe Experience Platform
 * Det förväntade meddelandeformatet på partnersidan (3), och
-* Omformningslagret mellan XDM-schemat och det förväntade meddelandeformatet, som du kan definiera genom att skapa ett [omformningsmall för meddelanden](#using-templating).
+* Omformningslagret mellan XDM-schema och det förväntade meddelandeformatet, som du kan definiera genom att skapa en [meddelandeomformningsmall](#using-templating).
 
 ![Schema till JSON-omvandling](../../assets/functionality/destination-server/transformations-3-steps.png)
 
@@ -55,11 +55,11 @@ Users who want to activate data to your destination need to map the fields in th
 
 -->
 
-**XDM-källschema (1)**: Det här objektet refererar till det schema som kunder använder i Experience Platform. I Experience Platform, på [mappningssteg](../../../ui/activate-segment-streaming-destinations.md#mapping) av arbetsflödet för aktivering av mål mappar kunderna fält från sitt XDM-schema till målschemat (2).
+**Source XDM-schema (1)**: Det här objektet refererar till det schema som kunder använder i Experience Platform. I Experience Platform, i [mappningssteget](../../../ui/activate-segment-streaming-destinations.md#mapping) för aktiveringsmålarbetsflödet, mappar kunder fält från sitt XDM-schema till målschemat (2) för ditt mål.
 
-**Mål-XDM-schema (2)**: Baserat på JSON-standardschemat (3) för målets förväntade format och de attribut som destinationen kan tolka, kan du definiera profilattribut och identiteter i mål-XDM-schemat. Du kan göra detta i destinationskonfigurationen i dialogrutan [schemaConfig](../../functionality/destination-configuration/schema-configuration.md) och [identityNamespaces](../../functionality/destination-configuration/identity-namespace-configuration.md) objekt.
+**Mål-XDM-schema (2)**: Baserat på JSON-standardschemat (3) för målets förväntade format och de attribut som destinationen kan tolka, kan du definiera profilattribut och identiteter i mål-XDM-schemat. Du kan göra detta i målkonfigurationen, i objekten [schemaConfig](../../functionality/destination-configuration/schema-configuration.md) och [identityNamespaces](../../functionality/destination-configuration/identity-namespace-configuration.md) .
 
-**JSON-standardschema för målprofilens attribut (3)**: Det här exemplet representerar [JSON-schema](https://json-schema.org/learn/miscellaneous-examples.html) av alla profilattribut som din plattform stöder och deras typer (t.ex. object, string, array). Exempelfält som ditt mål kan ha stöd för `firstName`, `lastName`, `gender`, `email`, `phone`, `productId`, `productName`och så vidare. Du behöver en [omformningsmall för meddelanden](#using-templating) för att skräddarsy de data som exporteras från Experience Platform till det förväntade formatet.
+**JSON-standardschema för målprofilattributen (3)**: Det här exemplet representerar ett [JSON-schema](https://json-schema.org/learn/miscellaneous-examples.html) med alla profilattribut som din plattform stöder och deras typer (t.ex. objekt, sträng, matris). Exempelfält som ditt mål kan stödja kan vara `firstName`, `lastName`, `gender`, `email`, `phone`, `productId`, `productName` och så vidare. Du behöver en [meddelandeomformningsmall](#using-templating) för att anpassa data som exporteras från Experience Platform till det förväntade formatet.
 
 Baserat på schemaomvandlingarna som beskrivs ovan, är det här hur en profilkonfiguration ändras mellan käll-XDM-schemat och ett exempelschema på partnersidan:
 
@@ -67,11 +67,11 @@ Baserat på schemaomvandlingarna som beskrivs ovan, är det här hur en profilko
 
 ## Komma igång - omforma tre grundläggande attribut {#getting-started}
 
-I exemplet nedan används tre vanliga profilattribut i Adobe Experience Platform för att demonstrera profilomvandlingsprocessen: **förnamn**, **efternamn** och **e-postadress**.
+För att demonstrera profilomvandlingsprocessen använder exemplet nedan tre vanliga profilattribut i Adobe Experience Platform: **förnamn**, **efternamn** och **e-postadress**.
 
 >[!NOTE]
 >
->Kunden mappar attributen från XDM-källschemat till XDM-partnerschemat i Adobe Experience Platform-gränssnittet i **Mappning** steg i [aktivera målarbetsflöde](../../../ui/activate-segment-streaming-destinations.md#mapping).
+>Kunden mappar attributen från XDM-källschemat till XDM-partnerschemat i Adobe Experience Platform-gränssnittet i **Mapping**-steget i [aktivera målarbetsflödet](../../../ui/activate-segment-streaming-destinations.md#mapping).
 
 Anta att din plattform kan ta emot ett meddelandeformat som:
 
@@ -111,8 +111,8 @@ Profiler har tre avsnitt:
 * `identityMap` (finns alltid i en profil)
    * det här avsnittet innehåller alla identiteter som finns i profilen (e-post, Google GAID, Apple IDFA och så vidare) och som användaren har mappat för export i aktiveringsarbetsflödet.
 * attribut (beroende på målkonfigurationen kan dessa finnas i profilen). Det finns också en liten skillnad mellan fördefinierade attribut och frihandsattribut:
-   * for *frihandsattribut* innehåller de `.value` sökväg om attributet finns i profilen (se `lastName` -attribut från exempel 1). Om de inte finns med i profilen innehåller de inte `.value` sökväg (se `firstName` -attribut från exempel 1).
-   * for *fördefinierade attribut*, innehåller de inte `.value` bana. Alla mappade attribut som finns i en profil finns i attributmappningen. De som inte finns kommer inte att finnas (se exempel 2 - `firstName` finns inte i profilen).
+   * för *frihandsattribut* innehåller de en `.value`-sökväg om attributet finns i profilen (se attributet `lastName` från exempel 1). Om de inte finns med i profilen innehåller de inte sökvägen `.value` (se attributet `firstName` från exempel 1).
+   * för *fördefinierade attribut* innehåller de ingen `.value`-sökväg. Alla mappade attribut som finns i en profil finns i attributmappningen. De som inte finns kommer inte att finnas (se exempel 2 - attributet `firstName` finns inte i profilen).
 
 Se två exempel på profiler i Experience Platform nedan:
 
@@ -172,13 +172,13 @@ Se två exempel på profiler i Experience Platform nedan:
 
 ## Använda ett mallspråk för omvandlingar av identitet, attribut och målgruppsmedlemskap {#using-templating}
 
-Adobe använder [Bärbara mallar](https://pebbletemplates.io/), ett mallspråk som liknar [Jinja](https://jinja.palletsprojects.com/en/2.11.x/), för att omvandla fälten från Experience Platform XDM-schemat till ett format som stöds av ditt mål.
+Adobe använder [dubbelmallar](https://pebbletemplates.io/), ett mallspråk som liknar [Jinja](https://jinja.palletsprojects.com/en/2.11.x/), för att omvandla fälten från Experience Platform XDM-schemat till ett format som stöds av ditt mål.
 
 Det här avsnittet innehåller flera exempel på hur dessa omformningar görs - från XDM-indataschemat, via mallen och från utdata i nyttolastformat som accepteras av målet. Exemplen nedan presenteras av ökad komplexitet, enligt följande:
 
-1. Exempel på enkla omformningar. Lär dig hur mallhantering fungerar med enkla omformningar för [Profilattribut](#attributes), [Målgruppsmedlemskap](#segment-membership)och [Identitet](#identities) fält.
-2. Exempel på mallar som kombinerar fälten ovan blir mer komplicerade: [Skapa en mall som skickar målgrupper och identiteter](./message-format.md#segments-and-identities) och [Skapa en mall som skickar segment, identiteter och profilattribut](#segments-identities-attributes).
-3. Mallar som innehåller aggregeringsnyckeln. När du använder [konfigurerbar aggregering](../../functionality/destination-configuration/aggregation-policy.md#configurable-aggregation) i målkonfigurationen grupperar Experience Platform de profiler som exporteras till destinationen baserat på kriterier som målgrupps-ID, målgruppsstatus eller ID-namnutrymmen.
+1. Exempel på enkla omformningar. Lär dig hur mallar fungerar med enkla omformningar för fälten [Profilattribut](#attributes), [Målgruppsmedlemskap](#segment-membership) och [Identitet](#identities).
+2. Exemplen på ökad komplexitet för mallar som kombinerar fälten ovan: [Skapa en mall som skickar målgrupper och identiteter](./message-format.md#segments-and-identities) och [Skapa en mall som skickar segment, identiteter och profilattribut](#segments-identities-attributes).
+3. Mallar som innehåller aggregeringsnyckeln. När du använder [konfigurerbar aggregering](../../functionality/destination-configuration/aggregation-policy.md#configurable-aggregation) i målkonfigurationen grupperar Experience Platform de profiler som exporteras till ditt mål baserat på kriterier som målgrupps-ID, målgruppsstatus eller identitetsnamnutrymmen.
 
 ### Profilattribut {#attributes}
 
@@ -186,7 +186,7 @@ Information om hur du omformar profilattributen som exporteras till ditt mål fi
 
 >[!IMPORTANT]
 >
->En lista över alla tillgängliga profilattribut i Adobe Experience Platform finns i [XDM-fältordlista](../../../../xdm/schema/field-dictionary.md).
+>En lista över alla tillgängliga profilattribut i Adobe Experience Platform finns i [XDM-fältordlistan](../../../../xdm/schema/field-dictionary.md).
 
 
 **Indata**
@@ -223,7 +223,7 @@ Profil 2:
 
 >[!IMPORTANT]
 >
->För alla mallar som du använder måste du undvika ogiltiga tecken, t.ex. dubbla citattecken `""` innan [mall](../../functionality/destination-server/templating-specs.md) i [målserverkonfiguration](../../authoring-api/destination-server/create-destination-server.md). Mer information om att undvika dubbla citattecken finns i kapitel 9 i [JSON-standard](https://www.ecma-international.org/publications-and-standards/standards/ecma-404/).
+>För alla mallar som du använder måste du undvika ogiltiga tecken, till exempel dubbla citattecken `""`, innan du infogar [mallen](../../functionality/destination-server/templating-specs.md) i [målserverkonfigurationen](../../authoring-api/destination-server/create-destination-server.md). Mer information om att undvika dubbla citattecken finns i kapitel 9 i [JSON-standarden](https://www.ecma-international.org/publications-and-standards/standards/ecma-404/).
 
 ```python
 {
@@ -265,8 +265,8 @@ Profil 2:
 
 ### Målgruppsmedlemskap {#audience-membership}
 
-The [segmentMembership](../../../../xdm/schema/field-dictionary.md) XDM-attributet informerar vilka målgrupper en profil tillhör.
-För de tre olika värdena i `status` fält, läs dokumentationen om [Schemafältgrupp för målgruppsmedlemskapsdetaljer](../../../../xdm/field-groups/profile/segmentation.md).
+XDM-attributet [segmentMembership](../../../../xdm/schema/field-dictionary.md) informerar vilka målgrupper en profil tillhör.
+Läs dokumentationen om schemafältgruppen [Information om målgruppsmedlemskap](../../../../xdm/field-groups/profile/segmentation.md) för de tre olika värdena i fältet `status`.
 
 **Indata**
 
@@ -320,7 +320,7 @@ Profil 2:
 
 >[!IMPORTANT]
 >
->För alla mallar som du använder måste du undvika ogiltiga tecken, t.ex. dubbla citattecken `""` innan [mall](../../functionality/destination-server/templating-specs.md) i [målserverkonfiguration](../../authoring-api/destination-server/create-destination-server.md). Mer information om att undvika dubbla citattecken finns i kapitel 9 i [JSON-standard](https://www.ecma-international.org/publications-and-standards/standards/ecma-404/).
+>För alla mallar som du använder måste du undvika ogiltiga tecken, till exempel dubbla citattecken `""`, innan du infogar [mallen](../../functionality/destination-server/templating-specs.md) i [målserverkonfigurationen](../../authoring-api/destination-server/create-destination-server.md). Mer information om att undvika dubbla citattecken finns i kapitel 9 i [JSON-standarden](https://www.ecma-international.org/publications-and-standards/standards/ecma-404/).
 
 
 ```python
@@ -380,7 +380,7 @@ Profil 2:
 
 ### Identiteter {#identities}
 
-Mer information om identiteter i Experience Platform finns i [Översikt över namnområde för identitet](../../../../identity-service/features/namespaces.md).
+Mer information om identiteter i Experience Platform finns i [Namnområdesöversikten för identitet](../../../../identity-service/features/namespaces.md).
 
 **Indata**
 
@@ -424,7 +424,7 @@ Profil 2:
 
 >[!IMPORTANT]
 >
->För alla mallar som du använder måste du undvika ogiltiga tecken, t.ex. dubbla citattecken `""` innan [mall](../../functionality/destination-server/templating-specs.md) i [målserverkonfiguration](../../authoring-api/destination-server/create-destination-server.md). Mer information om att undvika dubbla citattecken finns i kapitel 9 i [JSON-standard](https://www.ecma-international.org/publications-and-standards/standards/ecma-404/).
+>För alla mallar som du använder måste du undvika ogiltiga tecken, till exempel dubbla citattecken `""`, innan du infogar [mallen](../../functionality/destination-server/templating-specs.md) i [målserverkonfigurationen](../../authoring-api/destination-server/create-destination-server.md). Mer information om att undvika dubbla citattecken finns i kapitel 9 i [JSON-standarden](https://www.ecma-international.org/publications-and-standards/standards/ecma-404/).
 
 ```python
 {
@@ -561,7 +561,7 @@ Profil 2:
 
 >[!IMPORTANT]
 >
->För alla mallar som du använder måste du undvika ogiltiga tecken, t.ex. dubbla citattecken `""` innan [mall](../../functionality/destination-server/templating-specs.md) i [målserverkonfiguration](../../authoring-api/destination-server/create-destination-server.md). Mer information om att undvika dubbla citattecken finns i kapitel 9 i [JSON-standard](https://www.ecma-international.org/publications-and-standards/standards/ecma-404/).
+>För alla mallar som du använder måste du undvika ogiltiga tecken, till exempel dubbla citattecken `""`, innan du infogar [mallen](../../functionality/destination-server/templating-specs.md) i [målserverkonfigurationen](../../authoring-api/destination-server/create-destination-server.md). Mer information om att undvika dubbla citattecken finns i kapitel 9 i [JSON-standarden](https://www.ecma-international.org/publications-and-standards/standards/ecma-404/).
 
 ```python
 {
@@ -609,7 +609,7 @@ Profil 2:
 
 **Resultat**
 
-The `json` nedan representerar de data som exporteras från Adobe Experience Platform.
+`json` nedan representerar data som exporteras från Adobe Experience Platform.
 
 ```json
 {
@@ -743,7 +743,7 @@ Profil 2:
 
 >[!IMPORTANT]
 >
->För alla mallar som du använder måste du undvika ogiltiga tecken, t.ex. dubbla citattecken `""` innan [mall](../../functionality/destination-server/templating-specs.md) i [målserverkonfiguration](../../authoring-api/destination-server/create-destination-server.md). Mer information om att undvika dubbla citattecken finns i kapitel 9 i [JSON-standard](https://www.ecma-international.org/publications-and-standards/standards/ecma-404/).
+>För alla mallar som du använder måste du undvika ogiltiga tecken, till exempel dubbla citattecken `""`, innan du infogar [mallen](../../functionality/destination-server/templating-specs.md) i [målserverkonfigurationen](../../authoring-api/destination-server/create-destination-server.md). Mer information om att undvika dubbla citattecken finns i kapitel 9 i [JSON-standarden](https://www.ecma-international.org/publications-and-standards/standards/ecma-404/).
 
 ```python
 {
@@ -801,7 +801,7 @@ Profil 2:
 
 **Resultat**
 
-The `json` nedan representerar de data som exporteras från Adobe Experience Platform.
+`json` nedan representerar data som exporteras från Adobe Experience Platform.
 
 ```json
 {
@@ -859,13 +859,13 @@ The `json` nedan representerar de data som exporteras från Adobe Experience Pla
 
 ### Inkludera aggregeringsnyckel i mallen för att få åtkomst till exporterade profiler grupperade efter olika villkor {#template-aggregation-key}
 
-När du använder [konfigurerbar aggregering](../../functionality/destination-configuration/aggregation-policy.md#configurable-aggregation) i målkonfigurationen kan du gruppera de profiler som exporteras till målet baserat på kriterier som målgrupps-ID, målgruppsalias, målgruppsmedlemskap eller identitetsnamnutrymmen.
+När du använder [konfigurerbar aggregering](../../functionality/destination-configuration/aggregation-policy.md#configurable-aggregation) i målkonfigurationen kan du gruppera de profiler som exporteras till ditt mål baserat på kriterier som målgrupps-ID, målgruppalias, målgruppsmedlemskap eller identitetsnamnutrymmen.
 
 I meddelandeomformningsmallen kan du komma åt de aggregeringsnycklar som nämns ovan, vilket visas i exemplen i följande avsnitt. Använd aggregeringsnycklar för att strukturera HTTP-meddelandet som exporterats utanför Experience Platform så att det matchar de format- och hastighetsbegränsningar som förväntas av ditt mål.
 
 #### Använd aggregeringsnyckeln för målgrupps-ID i mallen {#aggregation-key-segment-id}
 
-Om du [konfigurerbar aggregering](../../functionality/destination-configuration/aggregation-policy.md#configurable-aggregation) och ange `includeSegmentId` till true grupperas profilerna i de HTTP-meddelanden som exporteras till ditt mål efter målgrupps-ID. Se nedan hur du kan komma åt målgrupps-ID i mallen.
+Om du använder [konfigurerbar aggregering](../../functionality/destination-configuration/aggregation-policy.md#configurable-aggregation) och anger `includeSegmentId` som true grupperas profilerna i HTTP-meddelandena som exporteras till ditt mål efter målgrupps-ID. Se nedan hur du kan komma åt målgrupps-ID i mallen.
 
 **Indata**
 
@@ -963,9 +963,9 @@ Profil 4:
 
 >[!IMPORTANT]
 >
->För alla mallar som du använder måste du undvika ogiltiga tecken, t.ex. dubbla citattecken `""` innan [mall](../../functionality/destination-server/templating-specs.md) i [målserverkonfiguration](../../authoring-api/destination-server/create-destination-server.md). Mer information om att undvika dubbla citattecken finns i kapitel 9 i [JSON-standard](https://www.ecma-international.org/publications-and-standards/standards/ecma-404/).
+>För alla mallar som du använder måste du undvika ogiltiga tecken, till exempel dubbla citattecken `""`, innan du infogar [mallen](../../functionality/destination-server/templating-specs.md) i [målserverkonfigurationen](../../authoring-api/destination-server/create-destination-server.md). Mer information om att undvika dubbla citattecken finns i kapitel 9 i [JSON-standarden](https://www.ecma-international.org/publications-and-standards/standards/ecma-404/).
 
-Notera nedan hur `audienceId` används i mallen för att komma åt målgrupps-ID:n. I det här exemplet antas att du använder `audienceId` för medlemskap i er målgrupp. Du kan använda vilket annat fältnamn som helst, beroende på din egen taxonomi.
+Observera nedan hur `audienceId` används i mallen för att komma åt målgrupps-ID:n. I det här exemplet antas att du använder `audienceId` som målgruppsmedlemskap i din måltaxonomi. Du kan använda vilket annat fältnamn som helst, beroende på din egen taxonomi.
 
 ```python
 {
@@ -1017,7 +1017,7 @@ När profilerna exporteras till ditt mål delas de upp i två grupper utifrån d
 
 #### Använd aggregeringsnyckeln för målgruppsalias i mallen {#aggregation-key-segment-alias}
 
-Om du [konfigurerbar aggregering](../../functionality/destination-configuration/aggregation-policy.md#configurable-aggregation) och ange `includeSegmentId` Om värdet är true kan du även få åtkomst till målgruppsalias i mallen.
+Om du använder [konfigurerbar aggregering](../../functionality/destination-configuration/aggregation-policy.md#configurable-aggregation) och anger `includeSegmentId` som true kan du även få åtkomst till målgruppsalias i mallen.
 
 Lägg till raden nedan i mallen för att komma åt de exporterade profilerna grupperade efter målgruppsalias.
 
@@ -1027,7 +1027,7 @@ customerList={{input.aggregationKey.segmentAlias}}
 
 #### Använd aggregeringsnyckeln för målgruppsstatus i mallen {#aggregation-key-segment-status}
 
-Om du [konfigurerbar aggregering](../../functionality/destination-configuration/aggregation-policy.md#configurable-aggregation) och ange `includeSegmentId` och `includeSegmentStatus` till true får du åtkomst till målgruppsstatusen i mallen. På så sätt kan du gruppera profiler i de HTTP-meddelanden som exporteras till ditt mål baserat på om profilerna ska läggas till eller tas bort från segment.
+Om du använder [konfigurerbar aggregering](../../functionality/destination-configuration/aggregation-policy.md#configurable-aggregation) och anger `includeSegmentId` och `includeSegmentStatus` till true kan du komma åt målgruppsstatusen i mallen. På så sätt kan du gruppera profiler i de HTTP-meddelanden som exporteras till ditt mål baserat på om profilerna ska läggas till eller tas bort från segment.
 
 Möjliga värden är:
 
@@ -1043,7 +1043,7 @@ action={% if input.aggregationKey.segmentStatus == "exited" %}REMOVE{% else %}AD
 
 #### Använd aggregering för identitetsnamnrymd i mallen {#aggregation-key-identity}
 
-Nedan visas ett exempel där [konfigurerbar aggregering](../../functionality/destination-configuration/aggregation-policy.md#configurable-aggregation) i målkonfigurationen är inställd på att sammanfoga exporterade profiler efter identitetsnamnutrymmen, i formuläret `"namespaces": ["email", "phone"]` och `"namespaces": ["GAID", "IDFA"]`. Se `groups` -parametern i [skapa destinationskonfiguration](../../authoring-api/destination-configuration/create-destination-configuration.md) dokumentation för mer information om gruppering.
+Nedan visas ett exempel där den [konfigurerbara aggregeringen](../../functionality/destination-configuration/aggregation-policy.md#configurable-aggregation) i målkonfigurationen är inställd på att aggregera exporterade profiler efter identitetsnamnutrymmen, i formatet `"namespaces": ["email", "phone"]` och `"namespaces": ["GAID", "IDFA"]`. Mer information om gruppering finns i `groups`-parametern i dokumentationen för [skapa destinationskonfiguration](../../authoring-api/destination-configuration/create-destination-configuration.md).
 
 **Indata**
 
@@ -1115,7 +1115,7 @@ Profil 2:
 
 >[!IMPORTANT]
 >
->För alla mallar som du använder måste du undvika ogiltiga tecken, t.ex. dubbla citattecken `""` innan [mall](../../functionality/destination-server/templating-specs.md) i [målserverkonfiguration](../../authoring-api/destination-server/create-destination-server.md). Mer information om att undvika dubbla citattecken finns i kapitel 9 i [JSON-standard](https://www.ecma-international.org/publications-and-standards/standards/ecma-404/).
+>För alla mallar som du använder måste du undvika ogiltiga tecken, till exempel dubbla citattecken `""`, innan du infogar [mallen](../../functionality/destination-server/templating-specs.md) i [målserverkonfigurationen](../../authoring-api/destination-server/create-destination-server.md). Mer information om att undvika dubbla citattecken finns i kapitel 9 i [JSON-standarden](https://www.ecma-international.org/publications-and-standards/standards/ecma-404/).
 
 Observera att `input.aggregationKey.identityNamespaces` används i mallen nedan
 
@@ -1199,22 +1199,22 @@ https://api.example.com/audience/{{input.aggregationKey.segmentId}}
 
 ### Referens: Kontext och funktioner som används i omformningsmallar {#reference}
 
-Kontexten som anges för mallen innehåller `input`  (profilerna/data som exporteras i det här anropet) och `destination` (data om målet som Adobe skickar data till, giltigt för alla profiler).
+Kontexten som anges för mallen innehåller `input` (profilerna/data som exporteras i det här anropet) och `destination` (data om målet som Adobe skickar data till, giltigt för alla profiler).
 
 Tabellen nedan innehåller beskrivningar av funktionerna i exemplen ovan.
 
 | Funktion | Beskrivning | Exempel |
 |---------|----------|----------|
-| `input.profile` | Profilen, representerad som [JsonNode](https://fasterxml.github.io/jackson-databind/javadoc/2.11/com/fasterxml/jackson/databind/node/JsonNodeType.html). Följer det XDM-schema för partner som nämns ovan på den här sidan. |
-| `hasSegments` | Den här funktionen tar en karta över ID:n för namnområdesmålgrupp som parameter. Funktionen returnerar `true` om det finns minst en publik på kartan (oavsett dess status), och `false` annars. Du kan använda den här funktionen för att bestämma om du vill iterera över en karta med målgrupper eller inte. | `hasSegments(input.profile.segmentMembership)` |
+| `input.profile` | Profilen, representerad som en [JsonNode](https://fasterxml.github.io/jackson-databind/javadoc/2.11/com/fasterxml/jackson/databind/node/JsonNodeType.html). Följer det XDM-schema för partner som nämns ovan på den här sidan. |
+| `hasSegments` | Den här funktionen tar en karta över ID:n för namnområdesmålgrupp som parameter. Funktionen returnerar `true` om det finns minst en publik på kartan (oavsett dess status), och i annat fall `false`. Du kan använda den här funktionen för att bestämma om du vill iterera över en karta med målgrupper eller inte. | `hasSegments(input.profile.segmentMembership)` |
 | `destination.namespaceSegmentAliases` | Mappa från målgrupps-ID:n i ett specifikt Adobe Experience Platform-namnområde till målgruppsalias i partnerns system. | `destination.namespaceSegmentAliases["ups"]["seg-id-1"]` |
 | `destination.namespaceSegmentNames` | Mappa från målgruppsnamn i specifika Adobe Experience Platform-namnutrymmen till målgruppsnamn i partnersystemet. | `destination.namespaceSegmentNames["ups"]["seg-name-1"]` |
-| `destination.namespaceSegmentTimestamps` | Returnerar den tid då en målgrupp skapades, uppdaterades eller aktiverades i UNIX-tidsstämpelformat. | <ul><li>`destination.namespaceSegmentTimestamps["ups"]["seg-id-1"].createdAt`: returnerar den tidpunkt då segmentet med ID:t `seg-id-1`, från `ups` namespace skapades i UNIX-tidsstämpelformat.</li><li>`destination.namespaceSegmentTimestamps["ups"]["seg-id-1"].updatedAt`: returnerar den tid då målgruppen med ID:t `seg-id-1`, från `ups` namespace, was updated, in UNIX timestamp format.</li><li>`destination.namespaceSegmentTimestamps["ups"]["seg-id-1"].mappingCreatedAt`: returnerar den tid då målgruppen med ID:t `seg-id-1`, från `ups` namnutrymmet aktiverades till målet i UNIX-tidsstämpelformat.</li><li>`destination.namespaceSegmentTimestamps["ups"]["seg-id-1"].mappingUpdatedAt`: returnerar den tidpunkt då målgruppsaktiveringen uppdaterades på målet, i UNIX-tidsstämpelformat.</li></ul> |
-| `addedSegments(mapOfNamespacedSegmentIds)` | Returnerar bara de målgrupper som har status `realized`, i alla namnutrymmen. | `addedSegments(input.profile.segmentMembership)` |
-| `removedSegments(mapOfNamespacedSegmentIds)` | Returnerar bara de målgrupper som har status `exited`, i alla namnutrymmen. | `removedSegments(input.profile.segmentMembership)` |
-| `destination.segmentAliases` | **Föråldrat. Ersatt av`destination.namespaceSegmentAliases`** <br><br> Mappa från målgrupps-ID:n i Adobe Experience Platform-namnområdet till målgruppsalias i partnersystemet. | `destination.segmentAliases["seg-id-1"]` |
-| `destination.segmentNames` | **Föråldrat. Ersatt av`destination.namespaceSegmentNames`** <br><br>  Mappa från målgruppsnamn i Adobe Experience Platform-namnområdet till målgruppsnamn i partnersystemet. | `destination.segmentNames["seg-name-1"]` |
-| `destination.segmentTimestamps` | **Föråldrat. Ersatt av`destination.namespaceSegmentTimestamps`** <br><br> Returnerar den tid då en målgrupp skapades, uppdaterades eller aktiverades i UNIX-tidsstämpelformat. | <ul><li>`destination.segmentTimestamps["seg-id-1"].createdAt`: returnerar den tid då målgruppen med ID:t `seg-id-1` skapades i UNIX-tidsstämpelformat.</li><li>`destination.segmentTimestamps["seg-id-1"].updatedAt`: returnerar den tid då målgruppen med ID:t `seg-id-1` uppdaterades i UNIX-tidsstämpelformat.</li><li>`destination.segmentTimestamps["seg-id-1"].mappingCreatedAt`: returnerar den tid då målgruppen med ID:t `seg-id-1` har aktiverats till målet i UNIX-tidsstämpelformat.</li><li>`destination.segmentTimestamps["seg-id-1"].mappingUpdatedAt`: returnerar den tidpunkt då målgruppsaktiveringen uppdaterades på målet, i UNIX-tidsstämpelformat.</li></ul> |
+| `destination.namespaceSegmentTimestamps` | Returnerar den tid då en målgrupp skapades, uppdaterades eller aktiverades i UNIX-tidsstämpelformat. | <ul><li>`destination.namespaceSegmentTimestamps["ups"]["seg-id-1"].createdAt`: returnerar den tid då segmentet med ID `seg-id-1`, från namnområdet `ups`, skapades i UNIX-tidsstämpelformat.</li><li>`destination.namespaceSegmentTimestamps["ups"]["seg-id-1"].updatedAt`: returnerar den tid då målgruppen med ID `seg-id-1` från namnområdet `ups` uppdaterades i UNIX-tidsstämpelformat.</li><li>`destination.namespaceSegmentTimestamps["ups"]["seg-id-1"].mappingCreatedAt`: returnerar den tid då målgruppen med ID `seg-id-1`, från namnområdet `ups`, aktiverades till målet i UNIX-tidsstämpelformat.</li><li>`destination.namespaceSegmentTimestamps["ups"]["seg-id-1"].mappingUpdatedAt`: returnerar den tid då målgruppsaktiveringen uppdaterades på målet, i UNIX-tidsstämpelformat.</li></ul> |
+| `addedSegments(mapOfNamespacedSegmentIds)` | Returnerar endast de målgrupper som har statusen `realized`, i alla namnutrymmen. | `addedSegments(input.profile.segmentMembership)` |
+| `removedSegments(mapOfNamespacedSegmentIds)` | Returnerar endast de målgrupper som har statusen `exited`, i alla namnutrymmen. | `removedSegments(input.profile.segmentMembership)` |
+| `destination.segmentAliases` | **Föråldrad. Ersatt av`destination.namespaceSegmentAliases`** <br><br> Mappa från målgrupps-ID:n i Adobe Experience Platform-namnområdet till målgruppsalias i partnerns system. | `destination.segmentAliases["seg-id-1"]` |
+| `destination.segmentNames` | **Föråldrad. Ersatt av`destination.namespaceSegmentNames`** <br><br> Mappa från målgruppsnamn i Adobe Experience Platform-namnområdet till målgruppsnamn i partnerns system. | `destination.segmentNames["seg-name-1"]` |
+| `destination.segmentTimestamps` | **Föråldrad. Ersatt av`destination.namespaceSegmentTimestamps`** <br><br> Returnerar den tid då en målgrupp skapades, uppdaterades eller aktiverades i UNIX-tidsstämpelformat. | <ul><li>`destination.segmentTimestamps["seg-id-1"].createdAt`: returnerar den tid då målgruppen med ID:t `seg-id-1` skapades, i UNIX-tidsstämpelformat.</li><li>`destination.segmentTimestamps["seg-id-1"].updatedAt`: returnerar den tid då målgruppen med ID `seg-id-1` uppdaterades, i UNIX-tidsstämpelformat.</li><li>`destination.segmentTimestamps["seg-id-1"].mappingCreatedAt`: returnerar den tid då målgruppen med ID `seg-id-1` aktiverades till målet, i UNIX-tidsstämpelformat.</li><li>`destination.segmentTimestamps["seg-id-1"].mappingUpdatedAt`: returnerar den tid då målgruppsaktiveringen uppdaterades på målet, i UNIX-tidsstämpelformat.</li></ul> |
 
 {style="table-layout:auto"}
 

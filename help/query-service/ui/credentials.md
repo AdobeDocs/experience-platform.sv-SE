@@ -17,7 +17,7 @@ Med Adobe Experience Platform Query Service kan du ansluta till externa klienter
 
 >[!NOTE]
 >
->Autentiseringspanelen är inte automatiskt tillgänglig för alla användare. Kontakta ditt Adobe-kontoteam för att be om [!UICONTROL Credentials] som ska inkluderas i arbetsytan för frågetjänsten om du behöver det. Om så krävs är denna förändring i hela organisationen och genomförs av Adobe ingenjörsteam. Det är inte en inställning som styrs av användare.
+>Autentiseringspanelen är inte automatiskt tillgänglig för alla användare. Kontakta ditt Adobe-kontoteam för att begära att fliken [!UICONTROL Credentials] ska ingå i arbetsytan för frågetjänsten om du behöver det. Om så krävs är denna förändring i hela organisationen och genomförs av Adobe ingenjörsteam. Det är inte en inställning som styrs av användare.
 
 ## Utgående autentiseringsuppgifter {#expiring-credentials}
 
@@ -28,47 +28,47 @@ Med Adobe Experience Platform Query Service kan du ansluta till externa klienter
 
 Du kan använda utgångsuppgifter för att snabbt konfigurera en anslutning till en extern klient.
 
-![Fliken Autentiseringsuppgifter för kontrollpanelen Frågor med avsnittet Utgångsuppgifter markerat.](../images/ui/credentials/expiring-credentials.png)
+![Fliken Autentiseringsuppgifter för kontrollpanelen Frågor med avsnittet Utgående autentiseringsuppgifter markerat.](../images/ui/credentials/expiring-credentials.png)
 
-The **[!UICONTROL Expiring credentials]** innehåller följande information:
+Avsnittet **[!UICONTROL Expiring credentials]** innehåller följande information:
 
-- **[!UICONTROL Host]**: Namnet på den värd som klienten ska anslutas till. Det innehåller namnet på din organisation så som det visas på den översta menyfliken i användargränssnittet för plattformen.
-- **[!UICONTROL Port]**: Portnumret för den värd som ska anslutas till.
-- **[!UICONTROL Database]**: Namnet på den databas som en klient ska anslutas till.
-- **[!UICONTROL Username]**: Det användarnamn som används för att ansluta till frågetjänsten.
-- **[!UICONTROL Password]**: Lösenordet som används för att ansluta till frågetjänsten. Lösenord i användargränssnittet har hashats av säkerhetsskäl. Markera kopieringsikonen (![Kopieringsikonen.](../images/ui/credentials/copy-icon.png)) om du vill kopiera kompletta, ohashad inloggningsuppgifter till Urklipp.
+- **[!UICONTROL Host]**: Namnet på värddatorn som klienten ska anslutas till. Det innehåller namnet på din organisation så som det visas på den översta menyfliken i användargränssnittet för plattformen.
+- **[!UICONTROL Port]**: Portnumret för den värd som ska anslutas.
+- **[!UICONTROL Database]**: Namnet på databasen som en klient ska anslutas till.
+- **[!UICONTROL Username]**: Användarnamnet som används för att ansluta till frågetjänsten.
+- **[!UICONTROL Password]**: Lösenordet som används för att ansluta till frågetjänsten. Lösenord i användargränssnittet har hashats av säkerhetsskäl. Välj kopieringsikonen (![Kopieringsikonen.](../images/ui/credentials/copy-icon.png)) om du vill kopiera dina fullständiga, ohashade autentiseringsuppgifter till Urklipp.
 - **[!UICONTROL PSQL command]**: Ett kommando som automatiskt har infogat all relevant information så att du kan ansluta till frågetjänsten med PSQL på kommandoraden.
-- **[!UICONTROL Expires]**: Giltighetsdatum och -tid för förfalloinformationen. Standardlängden för token är 24 timmar, men den kan ändras i de avancerade inställningarna för Admin Console.
+- **[!UICONTROL Expires]**: Utgångsdatum och förfallotid för autentiseringsuppgifterna. Standardlängden för token är 24 timmar, men den kan ändras i de avancerade inställningarna för Admin Console.
 
 >[!TIP]
 >
->Om du vill ändra sessionstiden för dina utgående inloggningsuppgifter som är kopplade till frågetjänsten går du till [Admin Console](https://adminconsole.adobe.com/) och välj följande på skärmen: **Inställningar** > **Integritet och säkerhet** > **Autentiseringsinställningar** > **Avancerade inställningar** > **Maximal sessionstid**.
+>Om du vill ändra sessionstiden för din utgående inloggningsanslutning till frågetjänsten går du till [Admin Console](https://adminconsole.adobe.com/) och väljer följande på skärmen: **Inställningar** > **Sekretess och säkerhet** > **Autentiseringsinställningar** > **Avancerade inställningar** > **Maximal sessionstid**.
 >
->![Inställningsfliken på Admin Console med sekretess och säkerhet, autentiseringsinställningar och maximal sessionstid markerade.](../images/ui/credentials/max-session-life.png)
+>![Inställningsfliken för Admin Console med sekretess och säkerhet, autentiseringsinställningar och maximal sessionstid markerade.](../images/ui/credentials/max-session-life.png)
 >
->Mer information om Adobe finns i hjälpdokumentationen [Avancerade inställningar](https://helpx.adobe.com/enterprise/using/authentication-settings.html#advanced-settings) som finns i Admin Console.
+>Mer information om de [avancerade inställningarna](https://helpx.adobe.com/enterprise/using/authentication-settings.html#advanced-settings) som Admin Console erbjuder finns i hjälpdokumentationen för Adobe.
 
 ### Ansluta data från Customer Journey Analytics i frågesessioner {#connect-to-customer-journey-analytics}
 
-Använd Customer Journey Analytics BI-tillägget med Power BI eller Tableau för att komma åt Customer Journey Analytics [datavyer](https://experienceleague.adobe.com/en/docs/analytics-platform/using/cja-dataviews/data-views) med SQL. Genom att integrera frågetjänsten med BI-tillägget kan du komma åt dina datavyer direkt i sessioner med frågetjänsten. Den här integreringen effektiviserar funktionaliteten för BI-verktyg som använder Query Service som PostgreSQL-gränssnitt. Den här funktionen eliminerar behovet av att duplicera datavyer i BI-verktyg, säkerställer enhetlig rapportering på olika plattformar och förenklar integrering av Customer Journey Analytics-data med andra källor i BI-plattformar.
+Använd Customer Journey Analytics BI-tillägget med Power BI eller Tableau för att komma åt [datavyer](https://experienceleague.adobe.com/en/docs/analytics-platform/using/cja-dataviews/data-views) från Customer Journey Analytics med SQL. Genom att integrera frågetjänsten med BI-tillägget kan du komma åt dina datavyer direkt i sessioner med frågetjänsten. Den här integreringen effektiviserar funktionaliteten för BI-verktyg som använder Query Service som PostgreSQL-gränssnitt. Den här funktionen eliminerar behovet av att duplicera datavyer i BI-verktyg, säkerställer enhetlig rapportering på olika plattformar och förenklar integrering av Customer Journey Analytics-data med andra källor i BI-plattformar.
 
-Läs dokumentationen för att lära dig mer om [ansluta Query Service till ett antal klientprogram](../clients/overview.md) som [Power BI](../clients/power-bi.md) eller [Tableau](../clients/tableau.md)
+Läs dokumentationen för att lära dig hur du [ansluter frågetjänsten till ett antal klientprogram för stationära datorer](../clients/overview.md), till exempel [Power BI](../clients/power-bi.md) eller [Tableau](../clients/tableau.md)
 
 >[!IMPORTANT]
 >
 >Ett Customer Journey Analytics-arbetsyteprojekt och en datavy krävs för att den här funktionen ska kunna användas.
 
-Om du vill få åtkomst till dina Customer Journey Analytics-data i Power BI eller Tableau väljer du [!UICONTROL Database] rullgardinsmeny och välj `prod:cja` bland de tillgängliga alternativen. Kopiera sedan [!DNL Postgres] autentiseringsparametrar (Host, Port, Database, Username med flera) som kan användas i din Power BI- eller Tableau-konfiguration.
+Om du vill få åtkomst till dina Customer Journey Analytics-data i Power BI eller Tableau väljer du listrutan [!UICONTROL Database] och sedan `prod:cja` bland de tillgängliga alternativen. Kopiera sedan dina [!DNL Postgres]-autentiseringsparametrar (Värd, Port, Databas, Användarnamn med flera) för användning i din Power BI- eller Tableau-konfiguration.
 
-![Fliken med autentiseringsuppgifter för frågetjänsten med listrutan Databas markerad.](../images/ui/credentials/database-dropdown.png)
+![Fliken med autentiseringsuppgifter för frågetjänsten med listrutan för databas markerad.](../images/ui/credentials/database-dropdown.png)
 
 >[!NOTE]
 >
 >När du ansluter Power BI eller Tableau till Customer Journey Analytics förbrukas behörigheten för frågetjänsten &#39;concurrent sessions&#39;. Om ytterligare sessioner och frågor krävs kan ytterligare ett tillägg för ad hoc-frågeanvändarpaket köpas för att erhålla ytterligare fem samtidiga sessioner och ytterligare en samtidiga fråga.
 
-Du kan även komma åt dina Customer Journey Analytics-data direkt från Frågeredigeraren eller Postgres CLI. Om du vill göra det refererar du till `cja` när du skriver din fråga. Se Frågeredigeraren [guide för frågeskapande](./user-guide.md#query-authoring) om du vill ha mer information om hur du skriver, kör och sparar frågor.
+Du kan även komma åt dina Customer Journey Analytics-data direkt från Frågeredigeraren eller Postgres CLI. Om du vill göra det refererar du till databasen `cja` när du skriver din fråga. Mer information om hur du skriver, kör och sparar frågor finns i frågeredigeraren [frågeredigeringsguiden](./user-guide.md#query-authoring).
 
-Se [BI-tilläggsguide](https://experienceleague.adobe.com/en/docs/analytics-platform/using/cja-dataviews/bi-extension) om du vill ha fullständiga anvisningar om hur du får åtkomst till datavyer i Customer Journey Analytics med SQL.
+I [BI-tilläggsguiden](https://experienceleague.adobe.com/en/docs/analytics-platform/using/cja-dataviews/bi-extension) finns fullständiga anvisningar om hur du får åtkomst till datavyer i Customer Journey Analytics med SQL.
 
 ## Ej förfallande autentiseringsuppgifter {#non-expiring-credentials}
 
@@ -76,26 +76,26 @@ Du kan använda autentiseringsuppgifter som inte upphör att gälla för att kon
 
 >[!NOTE]
 >
->Giltiga autentiseringsuppgifter har följande begränsningar:<br><ul><li>Användarna måste logga in med sitt användarnamn och lösenord som består av `{technicalAccountId}:{credential}`. Mer information finns i [Generera autentiseringsuppgifter](#generate-credentials) -avsnitt.</li><li>När inloggningsuppgifterna skapas skapas en ny roll med en uppsättning grundläggande behörigheter som gör att användare kan visa scheman och datauppsättningar. Behörigheten för att hantera frågor har även tilldelats den här rollen för användning med frågetjänsten.</li><li>Tredjepartsklienter kan fungera annorlunda än väntat när frågeobjekt listas. Vissa tredjepartsklienter, som [!DNL DB Visualizer] I visas inte vynamnet i den vänstra panelen. Visningsnamnet är dock tillgängligt om det anropas i en SELECT-fråga. På samma sätt [!DNL PowerUI] kanske inte visar de temporära vyer som har skapats via SQL som ska väljas för att skapa instrumentpaneler.</li></ul>
+>Autentiseringsuppgifter som inte förfaller har följande begränsningar:<br><ul><li>Användare måste logga in med sitt användarnamn och lösenord som består av `{technicalAccountId}:{credential}`. Mer information finns i avsnittet [Generera autentiseringsuppgifter](#generate-credentials).</li><li>När inloggningsuppgifterna skapas skapas en ny roll med en uppsättning grundläggande behörigheter som gör att användare kan visa scheman och datauppsättningar. Behörigheten för att hantera frågor har även tilldelats den här rollen för användning med frågetjänsten.</li><li>Tredjepartsklienter kan fungera annorlunda än väntat när frågeobjekt listas. Vissa tredjepartsklienter, till exempel [!DNL DB Visualizer], visar inte vynamnet på den vänstra panelen. Visningsnamnet är dock tillgängligt om det anropas i en SELECT-fråga. På samma sätt kanske [!DNL PowerUI] inte listar de tillfälliga vyer som har skapats via SQL som ska väljas för att skapa instrumentpaneler.</li></ul>
 
-### Förutsättningar
+### Förhandskrav
 
 Innan du kan generera autentiseringsuppgifter som inte förfaller måste du utföra följande steg i Adobe Admin Console:
 
-1. Logga in [Adobe Admin Console](https://adminconsole.adobe.com/) och välj relevant organisation i det övre navigeringsfältet.
+1. Logga in på [Adobe Admin Console](https://adminconsole.adobe.com/) och välj relevant organisation i det övre navigeringsfältet.
 2. [Välj en produktprofil.](../../access-control/ui/browse.md)
-3. [Konfigurera båda **Sandlådor** och **Hantera integrering av frågetjänster** behörigheter](../../access-control/ui/permissions.md) för produktprofilen.
-4. [Lägga till en ny användare i en produktprofil](../../access-control/ui/users.md) så att de får sina konfigurerade behörigheter.
-5. [Lägg till användaren som produktprofiladministratör](https://helpx.adobe.com/enterprise/using/manage-product-profiles.html) för att tillåta att konton skapas för alla aktiva produktprofiler.
+3. [Konfigurera både **sandlådor** och **Hantera frågetjänstintegration** ](../../access-control/ui/permissions.md) för produktprofilen.
+4. [Lägg till en ny användare i en produktprofil](../../access-control/ui/users.md) så att de får sina konfigurerade behörigheter.
+5. [Lägg till användaren som produktprofiladministratör](https://helpx.adobe.com/enterprise/using/manage-product-profiles.html) om du vill tillåta att ett konto skapas för en aktiv produktprofil.
 6. [Lägg till användaren som produktprofilutvecklare](https://helpx.adobe.com/se/enterprise/using/manage-developers.html) för att skapa en integrering.
 
-Läs dokumentationen om hur du tilldelar behörigheter [åtkomstkontroll](../../access-control/home.md).
+Läs dokumentationen om [åtkomstkontroll](../../access-control/home.md) om du vill veta mer om hur du tilldelar behörigheter.
 
-Alla behörigheter som krävs har nu konfigurerats i Adobe Developer Console så att användaren kan använda funktionen för förfalloinloggningsuppgifter.
+Alla nödvändiga behörigheter har nu konfigurerats i Adobe Developer Console så att användaren kan använda funktionen för förfalloinloggningsuppgifter.
 
 ### Generera autentiseringsuppgifter {#generate-credentials}
 
-Om du vill skapa en uppsättning med autentiseringsuppgifter som inte upphör att gälla går du tillbaka till användargränssnittet för plattformen och väljer **[!UICONTROL Queries]** från vänster navigering för att komma åt [!UICONTROL Queries] arbetsyta. Nästa steg är att välja **[!UICONTROL Credentials]** följt av **[!UICONTROL Generate credentials]**.
+Om du vill skapa en uppsättning autentiseringsuppgifter som inte upphör att gälla går du tillbaka till användargränssnittet för plattformen och väljer **[!UICONTROL Queries]** i den vänstra navigeringen för att komma åt arbetsytan i [!UICONTROL Queries]. Välj sedan fliken **[!UICONTROL Credentials]** följt av **[!UICONTROL Generate credentials]**.
 
 ![Kontrollpanelen Frågor med fliken Autentiseringsuppgifter och Generera autentiseringsuppgifter markerade.](../images/ui/credentials/generate-credentials.png)
 
@@ -104,15 +104,15 @@ En dialogruta visas där du kan generera autentiseringsuppgifter. Om du vill ska
 - **[!UICONTROL Name]**: Namnet på de autentiseringsuppgifter som du genererar.
 - **[!UICONTROL Description]**: (Valfritt) En beskrivning av de autentiseringsuppgifter som du genererar.
 - **[!UICONTROL Assigned to]**: Den användare som autentiseringsuppgifterna ska tilldelas till. Värdet ska vara e-postadressen till den användare som skapar inloggningsuppgifterna.
-- **[!UICONTROL Password]** (Valfritt) Ett valfritt lösenord för dina inloggningsuppgifter. Om lösenordet inte är inställt genererar Adobe automatiskt ett lösenord åt dig.
+- **[!UICONTROL Password]** (Valfritt) Ett valfritt lösenord för dina autentiseringsuppgifter. Om lösenordet inte är inställt genererar Adobe automatiskt ett lösenord åt dig.
 
 När du har angett all nödvändig information väljer du **[!UICONTROL Generate credentials]** för att generera dina autentiseringsuppgifter.
 
-![Dialogrutan Generera inloggningsuppgifter är markerad.](../images/ui/credentials/create-account.png)
+![Dialogrutan Generera autentiseringsuppgifter är markerad.](../images/ui/credentials/create-account.png)
 
 >[!IMPORTANT]
 >
->När **[!UICONTROL Generate credentials]** väljs hämtas en konfigurations-JSON-fil till den lokala datorn. Eftersom Adobe gör **not** spela in de genererade inloggningsuppgifterna, måste du lagra den hämtade filen på ett säkert sätt och spara en inloggningsuppgift.
+>När **[!UICONTROL Generate credentials]** har valts hämtas en konfigurations-JSON-fil till den lokala datorn. Eftersom Adobe **inte** spelar in de genererade inloggningsuppgifterna måste du lagra den hämtade filen på ett säkert sätt och spara inloggningsuppgifterna.
 >
 >Om inloggningsuppgifterna inte används på 90 dagar kommer de dessutom att tas bort.
 
@@ -122,11 +122,11 @@ JSON-konfigurationsfilen innehåller information som namn på tekniskt konto, ID
 {"technicalAccountName":"9F0A21EE-B8F3-4165-9871-846D3C8BC49E@TECHACCT.ADOBE.COM","credential":"3d184fa9e0b94f33a7781905c05203ee","technicalAccountId":"4F2611B8613AA3670A495E55"}
 ```
 
-När du har sparat dina genererade inloggningsuppgifter väljer du **[!UICONTROL Close]**. Nu kan du se en lista över alla dina ej förfallna autentiseringsuppgifter.
+När du har sparat dina genererade autentiseringsuppgifter väljer du **[!UICONTROL Close]**. Nu kan du se en lista över alla dina ej förfallna autentiseringsuppgifter.
 
 ![Fliken Autentiseringsuppgifter för kontrollpanelen Frågor med avsnittet Ej förfallande autentiseringsuppgifter markerat.](../images/ui/credentials/list-credentials.png)
 
-Du kan antingen redigera eller ta bort dina uppgifter som inte förfaller. Om du vill redigera en referens som inte förfaller väljer du pennikonen (![En pennikon.](../images/ui/credentials/edit-icon.png)). Om du vill ta bort en autentiseringsuppgift som inte upphör att gälla väljer du ikonen Ta bort (![En papperskorgsikon.](../images/ui/credentials/delete-icon.png)).
+Du kan antingen redigera eller ta bort dina uppgifter som inte förfaller. Om du vill redigera en referens som inte upphör att gälla väljer du pennikonen (![En pennikon.](../images/ui/credentials/edit-icon.png)). Om du vill ta bort en autentiseringsuppgift som inte upphör att gälla väljer du borttagningsikonen (![En papperskorgsikon.](../images/ui/credentials/delete-icon.png)).
 
 När du redigerar en referens som inte upphör att gälla visas ett modalt värde. Du kan uppdatera följande information:
 
@@ -142,27 +142,27 @@ När du har angett all nödvändig information väljer du **[!UICONTROL Update a
 
 Du kan använda autentiseringsuppgifterna som förfaller eller inte förfaller för att ansluta till externa klienter, som Aqua Data Studio, Looker eller Power BI. Indatametoden för dessa autentiseringsuppgifter varierar beroende på den externa klienten. Mer information om hur du använder dessa autentiseringsuppgifter finns i den externa klientens dokumentation.
 
-Bilden anger platsen för varje parameter som hittas i användargränssnittet, med undantag för lösenordet för de autentiseringsuppgifter som inte förfaller. Även om inloggningsuppgifterna som inte förfaller anges i JSON-konfigurationsfilerna kan du visa dina förfallande inloggningsuppgifter under **Referenser** i användargränssnittet.
+Bilden anger platsen för varje parameter som hittas i användargränssnittet, med undantag för lösenordet för de autentiseringsuppgifter som inte förfaller. Även om autentiseringsuppgifter som inte förfaller anges av deras JSON-konfigurationsfiler, kan du visa dina förfallande autentiseringsuppgifter på fliken **Autentiseringsuppgifter** i användargränssnittet.
 
-![Fliken Autentiseringsuppgifter för arbetsytan Frågor med avsnittet Utgångsuppgifter markerat.](../images/ui/credentials/expiring-credentials.png)
+![Fliken Autentiseringsuppgifter för arbetsytan Frågor med avsnittet Förfallande autentiseringsuppgifter markerat.](../images/ui/credentials/expiring-credentials.png)
 
 Tabellen nedan visar de parametrar som vanligtvis krävs för att ansluta till externa klienter.
 
 >[!NOTE]
 >
->När du ansluter till en värd med autentiseringsuppgifter som inte upphör att gälla, är det fortfarande nödvändigt att använda alla parametrar som anges i [!UICONTROL EXPIRING CREDENTIALS] utom för lösenordet och användarnamnet.
+>När du ansluter till en värd med autentiseringsuppgifter som inte upphör att gälla, är det fortfarande nödvändigt att använda alla parametrar som anges i avsnittet [!UICONTROL EXPIRING CREDENTIALS] förutom lösenordet och användarnamnet.
 >Formatet för att ange ditt användarnamn och lösenord använder kolonavgränsade värden som visas i det här exemplet `username:{your_username}` och `password:{password_string}`.
 
 | Parameter | Beskrivning | Exempel |
 |---|---|---|
-| **Server/värd** | Namnet på den server/värd som du ansluter till. <ul><li>Det här värdet används både för utgångsdatum och icke-utgångsdatum och har formen av `server.adobe.io`. Värdet finns under **[!UICONTROL Host]** i [!UICONTROL EXPIRING CREDENTIALS] -avsnitt.</ul></li> | `acme.platform.adobe.io` |
-| **Port** | Porten för den server/värd som du ansluter till. <ul><li>Det här värdet används både för utgångsdatum och icke-utgångsdatum och finns under **[!UICONTROL Port]** i [!UICONTROL EXPIRING CREDENTIALS] -avsnitt.</ul></li> | `80` |
-| **Databas** | Databasen som du ansluter till. <ul><li>Det här värdet används både för utgångsdatum och icke-utgångsdatum för inloggningsuppgifter och finns under **[!UICONTROL Database]** i [!UICONTROL EXPIRING CREDENTIALS] -avsnitt. </ul></li> | `prod:all` |
-| **Användarnamn** | Användarnamnet för användaren som ansluter till den externa klienten. <ul><li>Det här värdet används både för utgångsdatum och icke-utgångsdatum. Det tar formen av en alfanumerisk sträng före `@AdobeOrg`. Det här värdet finns under **[!UICONTROL Username]**.</li></ul> | `ECBB80245ECFC73E8A095EC9@AdobeOrg` |
-| **Lösenord** | Lösenordet för den användare som ansluter till den externa klienten. <ul><li>Om du använder inloggningsuppgifter som förfaller finns dessa under **[!UICONTROL Password]** inom [!UICONTROL EXPIRING CREDENTIALS] -avsnitt.</li><li>Om du använder inloggningsuppgifter som inte upphör att gälla är det här värdet de sammanfogade argumenten från technicalAccountID och inloggningsuppgifterna från JSON-konfigurationsfilen. Lösenordsvärdet har följande format: `{technicalAccountId}:{credential}`.</li></ul> | <ul><li>Ett lösenord för att ange förfallodatum är längre än tusen alfanumeriska tecken. Inget exempel kommer att ges.</li><li>Ett lösenord som inte förfaller är följande:<br>`4F2611B8613DK3670V495N55:3d182fa9e0b54f33a7881305c06203ee`</li></ul> |
+| **Server/värd** | Namnet på den server/värd som du ansluter till. <ul><li>Det här värdet används både för utgångsdatum och icke-utgångsdatum och har formen `server.adobe.io`. Värdet finns under **[!UICONTROL Host]** i avsnittet [!UICONTROL EXPIRING CREDENTIALS].</ul></li> | `acme.platform.adobe.io` |
+| **Port** | Porten för den server/värd som du ansluter till. <ul><li>Det här värdet används både för förfallodatum och icke-förfallande autentiseringsuppgifter och finns under **[!UICONTROL Port]** i avsnittet [!UICONTROL EXPIRING CREDENTIALS].</ul></li> | `80` |
+| **Databas** | Databasen som du ansluter till. <ul><li>Det här värdet används både för förfallodatum och icke-förfallande autentiseringsuppgifter och finns under **[!UICONTROL Database]** i avsnittet [!UICONTROL EXPIRING CREDENTIALS]. </ul></li> | `prod:all` |
+| **Användarnamn** | Användarnamnet för användaren som ansluter till den externa klienten. <ul><li>Det här värdet används både för utgångsdatum och icke-utgångsdatum. Det har formen av en alfanumerisk sträng före `@AdobeOrg`. Det här värdet finns under **[!UICONTROL Username]**.</li></ul> | `ECBB80245ECFC73E8A095EC9@AdobeOrg` |
+| **Lösenord** | Lösenordet för den användare som ansluter till den externa klienten. <ul><li>Om du använder förfalloinloggningsuppgifter finns dessa under **[!UICONTROL Password]** i avsnittet [!UICONTROL EXPIRING CREDENTIALS].</li><li>Om du använder inloggningsuppgifter som inte upphör att gälla är det här värdet de sammanfogade argumenten från technicalAccountID och inloggningsuppgifterna från JSON-konfigurationsfilen. Lösenordsvärdet har formatet: `{technicalAccountId}:{credential}`.</li></ul> | <ul><li>Ett lösenord för att ange förfallodatum är längre än tusen alfanumeriska tecken. Inget exempel kommer att ges.</li><li>Ett lösenord för autentiseringsuppgifter som inte förfaller är följande:<br>`4F2611B8613DK3670V495N55:3d182fa9e0b54f33a7881305c06203ee`</li></ul> |
 
 {style="table-layout:auto"}
 
 ## Nästa steg
 
-Nu när du förstår hur både förfallodatum och icke-utgångsdatum fungerar kan du använda dessa autentiseringsuppgifter för att ansluta till externa klienter. Mer information om externa klienter finns i [ansluta klienter till frågetjänstguiden](../clients/overview.md).
+Nu när du förstår hur både förfallodatum och icke-utgångsdatum fungerar kan du använda dessa autentiseringsuppgifter för att ansluta till externa klienter. Mer information om externa klienter finns i guiden [Ansluta klienter till frågetjänsten](../clients/overview.md).

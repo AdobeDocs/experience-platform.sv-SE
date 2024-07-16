@@ -9,9 +9,9 @@ ht-degree: 0%
 
 ---
 
-# [!UICONTROL XDM Business Person Details] schemafältgrupp
+# Schemafältgruppen [!UICONTROL XDM Business Person Details]
 
-[!UICONTROL XDM Business Person Details] är en standardgrupp för schemafält för [[!DNL XDM Individual Profile] class](../../classes/individual-profile.md) som samlar in information om en enskild person i samband med ett B2B-företag.
+[!UICONTROL XDM Business Person Details] är en standardschemafältgrupp för [[!DNL XDM Individual Profile] klassen](../../classes/individual-profile.md) som samlar in information om en enskild person i ett B2B-företag (business-to-business).
 
 ![](../../images/field-groups/business-person-details.png)
 
@@ -34,7 +34,7 @@ ht-degree: 0%
 | `b2b.personSource` | Sträng | Källan som personuppgifterna togs emot från. |
 | `b2b.personStatus` | Sträng | Personens aktuella marknadsförings- eller försäljningsstatus. |
 | `b2b.personType` | Sträng | Typ av B2B-person. |
-| `extSourceSystemAudit` | [Granskningsattribut för externt källsystem](../../data-types/external-source-system-audit-attributes.md) | Om affärspersonsrelationen kommer från ett externt källsystem hämtar det här objektet granskningsattribut för det systemet. |
+| `extSourceSystemAudit` | [Externa granskningsattribut för Source-system](../../data-types/external-source-system-audit-attributes.md) | Om affärspersonsrelationen kommer från ett externt källsystem hämtar det här objektet granskningsattribut för det systemet. |
 | `extendedWorkDetails` | Objekt | Hämtar ytterligare arbetsrelaterad information om personen. |
 | `extendedWorkDetails.assistantDetails` | Objekt | Hämtar följande attribut relaterade till personens assistent: <ul><li>`name`: ([Personnamn](../../data-types/person-name.md)) Assistentens fullständiga namn.</li><li>`phone`: ([Telefonnummer](../../data-types/phone-number.md)) Assistentens telefonnummer.</li></ul> |
 | `extendedWorkDetails.departments` | Array med strängar | En lista med avdelningsnamn där personen arbetar. |
@@ -52,8 +52,8 @@ ht-degree: 0%
 | `workAddress` | [Postadress](../../data-types/postal-address.md) | Personens arbetsadress. |
 | `workEmail` | [E-postadress](../../data-types/email-address.md) | Personens e-postadress till arbetet. |
 | `workPhone` | [Telefonnummer](../../data-types/phone-number.md) | Personens telefonnummer till arbetet. |
-| `identityMap` | Karta | Ett kartfält som innehåller en uppsättning namngivna identiteter för personen. Det här fältet uppdateras automatiskt av systemet när identitetsdata hämtas. För att fältet ska kunna användas korrekt [Kundprofil i realtid](../../../profile/home.md)försöker du inte uppdatera fältets innehåll manuellt i dataåtgärderna.<br /><br />Se avsnittet om identitetskartor i [grunderna för schemakomposition](../../schema/composition.md#identityMap) om du vill ha mer information om deras användningsfall. |
-| `isDeleted` | Boolean | Anger om den här personen har tagits bort i Marketo Engage.<br><br>När du använder [Marketo källanslutning](../../../sources/connectors/adobe-applications/marketo/marketo.md), återspeglas alla poster som tas bort i Marketo automatiskt i kundprofilen i realtid. Poster som rör dessa profiler kan dock fortfarande finnas kvar i datasjön. Efter inställning `isDeleted` till `true`kan du använda fältet för att filtrera bort vilka poster som har tagits bort från dina källor när du frågar efter datasjön. |
+| `identityMap` | Karta | Ett kartfält som innehåller en uppsättning namngivna identiteter för personen. Det här fältet uppdateras automatiskt av systemet när identitetsdata hämtas. Om du vill kunna använda det här fältet för [Kundprofil i realtid](../../../profile/home.md) ska du inte försöka uppdatera fältets innehåll manuellt i dataåtgärderna.<br /><br />Mer information om hur de används finns i avsnittet om identitetskartor i [grunderna i schemakomposition](../../schema/composition.md#identityMap). |
+| `isDeleted` | Boolean | Anger om den här personen har tagits bort i Marketo Engage.<br><br>När du använder [Marketo-källkopplingen](../../../sources/connectors/adobe-applications/marketo/marketo.md) återspeglas alla poster som tas bort i Marketo automatiskt i kundprofilen i realtid. Poster som rör dessa profiler kan dock fortfarande finnas kvar i datasjön. Genom att ställa in `isDeleted` på `true` kan du använda fältet för att filtrera bort vilka poster som har tagits bort från dina källor när du frågar i datasjön. |
 | `organizations` | Array med strängar | En lista med organisationsnamn där personen arbetar. |
 
 {style="table-layout:auto"}

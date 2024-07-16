@@ -9,18 +9,18 @@ ht-degree: 0%
 
 ---
 
-# [!UICONTROL Plan] class
+# klassen [!UICONTROL Plan]
 
-I Experience Data Model (XDM) är [!UICONTROL Plan] klassen innehåller den minsta uppsättning egenskaper som definierar en plan, till exempel en hälsoplan eller en försäkringsplan.
+I Experience Data Model (XDM) hämtar klassen [!UICONTROL Plan] den minsta uppsättningen egenskaper som definierar en plan, till exempel en hälsoplan eller en försäkringsplan.
 
 ![Klassstruktur](../images/classes/plan.png)
 
 | Egenskap | Datatyp | Beskrivning |
 | --- | --- | --- |
-| `_id` | [!UICONTROL String] | En unik systemgenererad strängidentifierare för posten. Det här fältet används för att spåra en enskild posts unika karaktär, förhindra dubblering av data och för att söka efter posten i underordnade tjänster.<br><br>Eftersom det här fältet genereras av systemet, anges inget explicit värde vid datainmatning. Du kan dock välja att ange egna unika ID-värden om du vill. |
+| `_id` | [!UICONTROL String] | En unik systemgenererad strängidentifierare för posten. Det här fältet används för att spåra en enskild posts unika karaktär, förhindra dubblering av data och för att söka efter posten i underordnade tjänster.<br><br>Eftersom det här fältet är systemgenererat anges inget explicit värde vid datainmatning. Du kan dock välja att ange egna unika ID-värden om du vill. |
 | `planId` | [!UICONTROL String] | En unik identifierare för planen. |
 | `planName` | [!UICONTROL String] | Namnet på planen. |
 
 {style="table-layout:auto"}
 
-Klassen kan utökas med [[!UICONTROL Healthcare Plan Details] fältgrupp](../field-groups/plan/healthcare-plan-details.md) Beskriv närmare uppgifter om en sjukförsäkringsplan.
+Klassen kan utökas med fältgruppen [[!UICONTROL Healthcare Plan Details] ](../field-groups/plan/healthcare-plan-details.md) för att beskriva mer information om en sjukförsäkringsplan.

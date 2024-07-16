@@ -11,7 +11,7 @@ ht-degree: 0%
 
 ---
 
-# [!UICONTROL Device] datatyp
+# Datatypen [!UICONTROL Device]
 
 [!UICONTROL Device] är en standard-XDM-datatyp som beskriver en identifierad enhet. En enhet är en program- eller webbläsarinstans som kan spåras mellan sessioner, vanligtvis via cookies.
 
@@ -28,7 +28,7 @@ ht-degree: 0%
 | `screenWidth` | Sträng | Antalet vågräta pixlar för enhetens aktiva visning i standardorienteringen. |
 | `type` | Sträng | Den typ av enhet som spåras. Godkända värden är: <ul><li>`mobile`</li><li>`tablet`</li><li>`desktop`</li><li>`ereader`</li><li>`gaming`</li><li>`television`</li><li>`settop`</li><li>`mediaplayer`</li><li>`computers`</li><li>`tv screens`</li></ul> |
 | `typeID` | Sträng | En identifierare för enheten. Detta kan vara en identifierare från DeviceAtlas eller en annan tjänst som identifierar den maskinvara som används. |
-| `typeIDService` | Sträng | Namnutrymmet för den tjänst som används för att identifiera enhetstypen. Se [appendix](#typeIDService) om du vill ha information om godkända värden. |
+| `typeIDService` | Sträng | Namnutrymmet för den tjänst som används för att identifiera enhetstypen. Mer information om godkända värden finns i [bilagan](#typeIDService). |
 
 {style="table-layout:auto"}
 
@@ -39,11 +39,11 @@ Mer information om fältgruppen finns i den offentliga XDM-databasen:
 
 ## Bilaga
 
-Följande avsnitt innehåller ytterligare information om [!UICONTROL Device] datatyp.
+Följande avsnitt innehåller ytterligare information om datatypen [!UICONTROL Device].
 
 ## Godkända värden för typeIDService {#typeIDService}
 
-I följande tabell visas godkända värden för `typeIDService` och deras innebörd:
+I följande tabell visas godkända värden för `typeIDService` och deras associerade betydelse:
 
 | Värde | Beskrivning |
 | --- | --- |

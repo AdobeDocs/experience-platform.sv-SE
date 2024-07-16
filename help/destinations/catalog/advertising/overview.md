@@ -1,6 +1,6 @@
 ---
 keywords: reklamdestinationer;destinationer;plattformsdestinationer
-title: Översikt över reklamdestinationer
+title: Översikt över Advertising destinationer
 description: Koppla Adobe Experience Platform till en annonsplattform från tredje part (t.ex. DSP, annonsnätverk, SSP) och dela pseudonyma målgrupper med dessa plattformar.
 exl-id: 072743a4-fc62-4a61-92ec-8f9640a47ab2
 source-git-commit: 2e8aac316f5e5edf169181b9e371dcd91e81c40d
@@ -10,7 +10,7 @@ ht-degree: 0%
 
 ---
 
-# Översikt över reklamdestinationer {#advertising-destinations}
+# Översikt över Advertising destinationer {#advertising-destinations}
 
 ## Översikt {#overview}
 
@@ -22,7 +22,7 @@ När ni ansluter till en annonsdestination skickas era målgrupper som ID:n till
 
 För närvarande stöder Experience Platform de reklamdestinationer som anges nedan.
 
-Information om skillnaden mellan anslutningar och tillägg finns i [Anslutningar](../../destination-types.md#connections) på sidan Måltyper och -kategorier.
+Mer information om skillnaden mellan anslutningar och tillägg finns i [Anslutningar](../../destination-types.md#connections) på sidan Måltyper och kategorier.
 
 ### Anslutningar
 
@@ -45,7 +45,7 @@ Information om skillnaden mellan anslutningar och tillägg finns i [Anslutningar
 ### Tillägg
 
 * [Adobe Advertising Cloud-tillägg](adobe-advertising-cloud.md)
-* [Tillägget Awin Advertising Conversion Tag](awin-conversiontag.md)
+* [Awin Advertising Conversion Tag extension](awin-conversiontag.md)
 * [Awin Advertising Mastertag-tillägg](awin-mastertag.md)
 * [Bing Ads Universal Event Tracking-tillägg](bing-ads.md)
 * [Förgreningstillägg](branch.md)
@@ -60,4 +60,4 @@ Information om skillnaden mellan anslutningar och tillägg finns i [Anslutningar
 
 ## Anslut till ett nytt annonsmål {#connect-destination}
 
-För att kunna skicka målgrupper till reklamdestinationer för era kampanjer måste Platform först ansluta till destinationen. Se [självstudiekurs om att skapa mål](../../ui/connect-destination.md) för detaljerad information om hur du konfigurerar ett nytt mål.
+För att kunna skicka målgrupper till reklamdestinationer för era kampanjer måste Platform först ansluta till destinationen. Se självstudiekursen [för att skapa mål](../../ui/connect-destination.md) för mer information om hur du konfigurerar ett nytt mål.

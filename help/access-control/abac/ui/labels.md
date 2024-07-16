@@ -27,13 +27,13 @@ Med etiketter kan du kategorisera datauppsättningar och fält utifrån de anvä
 
 >[!NOTE]
 >
->Det finns en enda lista med etiketter för en hel organisation. Om du vill skapa en egen etikett måste du **[!UICONTROL Manage Usage Labels]** behörigheter i produktionssandlådan. Etikettborttagning stöds för närvarande inte.
+>Det finns en enda lista med etiketter för en hel organisation. Om du vill skapa en anpassad etikett måste du ha **[!UICONTROL Manage Usage Labels]** behörigheter i produktionssandlådan. Etikettborttagning stöds för närvarande inte.
 
-Om du vill skapa en ny etikett väljer du **[!UICONTROL Labels]** i sidlisten och välj **[!UICONTROL Create Label]**.
+Om du vill skapa en ny etikett väljer du fliken **[!UICONTROL Labels]** i sidofältet och väljer **[!UICONTROL Create Label]**.
 
-![flash-new-label](../../images/flac-ui/create-label.png)
+![flac-new-label](../../images/flac-ui/create-label.png)
 
-The **[!UICONTROL Create a new label]** visas där du uppmanas att ange ett namn, ett valfritt eget namn och en valfri beskrivning.
+Dialogrutan **[!UICONTROL Create a new label]** visas och du uppmanas att ange ett namn, ett valfritt eget namn och en valfri beskrivning.
 
 ![new-label-info](../../images/flac-ui/new-label-info.png)
 

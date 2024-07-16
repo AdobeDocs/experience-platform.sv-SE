@@ -14,11 +14,11 @@ ht-degree: 0%
 
 # Hämta det inbyggda ID:t för en identitet
 
-Identitetsdata anges vanligtvis som ett ID-strängvärde och identitetsnamnområde i inmatade XDM-data och när en identitet anges för användning i ett API-anrop. När identiteter bevaras i [!DNL Identity Service], genereras ett ID som tilldelas den identiteten, vilket kallas ursprungligt XID. [!DNL Platform] API:er som kräver stöd för identitetsdata med detta mer kompakta formulär för aggregerat ID och namnutrymme. XID är en base64-kodad sträng.
+Identitetsdata anges vanligtvis som ett ID-strängvärde och identitetsnamnområde i inmatade XDM-data och när en identitet anges för användning i ett API-anrop. När identiteter bevaras i [!DNL Identity Service] genereras och tilldelas ett ID till den identiteten, som kallas ursprungligt XID. [!DNL Platform] API:er som kräver stöd för identitetsdata med det här mer kompakta formuläret för aggregerat ID och namnområde. XID är en base64-kodad sträng.
 
 >[!NOTE]
 >
->Formatet är huvudsakligen avsett för intern Adobe. Inbyggt XID som ett enskilt värde är mer utrymmeseffektivt och används internt inom [!DNL Platform] lösningar för lagring och serialisering. Det är dock inte läsbart för människor, det är ogenomskinligt och kräver ett separat anrop för att få det att användas.
+>Formatet är huvudsakligen avsett för intern Adobe. Inbyggt XID som ett enskilt värde är mer utrymmeseffektivt och används internt i [!DNL Platform]-lösningar för lagring och serialisering. Det är dock inte läsbart för människor, det är ogenomskinligt och kräver ett separat anrop för att få det att användas.
 
 Hämta XID för ett givet ID-värde och namnutrymme med den tjänst som beskrivs i det här avsnittet.
 

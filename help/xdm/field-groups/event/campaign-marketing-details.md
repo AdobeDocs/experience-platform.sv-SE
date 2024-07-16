@@ -11,13 +11,13 @@ ht-degree: 0%
 
 ---
 
-# [!UICONTROL Campaign Marketing Details] schemafältgrupp
+# Schemafältgruppen [!UICONTROL Campaign Marketing Details]
 
 >[!NOTE]
 >
->Namnen på flera schemafältgrupper har ändrats. Visa dokumentet på [uppdaterar fältgruppnamn](../name-updates.md) för mer information.
+>Namnen på flera schemafältgrupper har ändrats. Mer information finns i dokumentet om [uppdatering av fältgruppnamn](../name-updates.md).
 
-[!UICONTROL Campaign Marketing Details] är en standardgrupp för schemafält för [[!DNL XDM ExperienceEvent] class](../../classes/experienceevent.md), som används för att beskriva marknadsföringskampanjinformation som kampanjgrupp, namn och spårningskod.
+[!UICONTROL Campaign Marketing Details] är en standardschemafältgrupp för [[!DNL XDM ExperienceEvent] klassen](../../classes/experienceevent.md) som används för att beskriva marknadsföringskampanjinformation, till exempel kampanjgrupp, namn och spårningskod.
 
 ![](../../images/field-groups/campaign-marketing-details.png)
 

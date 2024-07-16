@@ -14,19 +14,19 @@ ht-degree: 0%
 
 # Slutpunkt för profilsystemjobb (Delete-begäranden)
 
-Med Adobe Experience Platform kan ni importera data från flera olika källor och skapa robusta profiler för enskilda kunder. Data insamlade i [!DNL Platform] lagras i [!DNL Data Lake]och om datauppsättningarna har aktiverats för profilen lagras dessa data i [!DNL Real-Time Customer Profile] även datalagring. Ibland kan det vara nödvändigt att ta bort profildata som är kopplade till en datauppsättning från profilarkivet för att ta bort data som inte längre behövs eller som har lagts till av misstag. Detta kräver att du använder [!DNL Real-Time Customer Profile] API för att skapa en [!DNL Profile] systemjobb, eller `delete request`, som också kan ändras, övervakas eller tas bort vid behov.
+Med Adobe Experience Platform kan ni importera data från flera olika källor och skapa robusta profiler för enskilda kunder. Data som inhämtas till [!DNL Platform] lagras i [!DNL Data Lake], och om datauppsättningarna har aktiverats för profilen lagras även dessa data i datalagret [!DNL Real-Time Customer Profile]. Ibland kan det vara nödvändigt att ta bort profildata som är kopplade till en datauppsättning från profilarkivet för att ta bort data som inte längre behövs eller som har lagts till av misstag. Detta kräver att API:t [!DNL Real-Time Customer Profile] används för att skapa ett [!DNL Profile]-systemjobb, eller `delete request`, som också kan ändras, övervakas eller tas bort om det behövs.
 
 >[!NOTE]
 >
->Om du försöker ta bort datauppsättningar eller grupper från [!DNL Data Lake], besök [Katalogtjänst - översikt](../../catalog/home.md) för mer information.
+>Om du försöker ta bort datauppsättningar eller grupper från [!DNL Data Lake] kan du gå till [Katalogtjänstöversikten](../../catalog/home.md) om du vill ha mer information.
 
 ## Komma igång
 
-API-slutpunkten som används i den här guiden är en del av [[!DNL Real-Time Customer Profile API]](https://www.adobe.com/go/profile-apis-en). Innan du fortsätter bör du granska [komma igång-guide](getting-started.md) för länkar till relaterad dokumentation, en guide till hur du läser exempelanrop till API:er i det här dokumentet och viktig information om vilka huvuden som behövs för att kunna anropa ett Experience Platform-API.
+API-slutpunkten som används i den här guiden ingår i [[!DNL Real-Time Customer Profile API]](https://www.adobe.com/go/profile-apis-en). Innan du fortsätter bör du läsa [kom igång-guiden](getting-started.md) för att få länkar till relaterad dokumentation, en guide till hur du läser exempelanropen för API i det här dokumentet och viktig information om vilka huvuden som krävs för att kunna anropa ett Experience Platform-API.
 
 ## Visa borttagningsbegäranden
 
-En borttagningsbegäran är en långvarig, asynkron process, vilket innebär att din organisation kan köra flera borttagningsbegäranden samtidigt. Om du vill visa alla borttagningsbegäranden som din organisation för närvarande kör kan du utföra en GET-förfrågan till `/system/jobs` slutpunkt.
+En borttagningsbegäran är en långvarig, asynkron process, vilket innebär att din organisation kan köra flera borttagningsbegäranden samtidigt. Om du vill visa alla borttagningsbegäranden som din organisation för närvarande kör kan du utföra en GET-förfrågan till slutpunkten `/system/jobs`.
 
 Du kan också använda valfria frågeparametrar för att filtrera listan med borttagningsbegäranden som returneras i svaret. Om du vill använda flera parametrar avgränsar du varje parameter med ett et-tecken (`&`).
 
@@ -42,7 +42,7 @@ GET /system/jobs?{QUERY_PARAMETERS}
 | `start` | Förskjut den returnerade resultatsidan enligt skapandetiden för begäran. Exempel: `start=4` |
 | `limit` | Begränsa antalet returnerade resultat. Exempel: `limit=10` |
 | `page` | Returnera en specifik resultatsida enligt skapandetiden för begäran. Exempel: `page=2` |
-| `sort` | Sortera resultat efter ett specifikt fält i stigande (`asc`) eller fallande (`desc`). Sorteringsparametern fungerar inte när flera resultatsidor returneras. Exempel: `sort=batchId:asc` |
+| `sort` | Sortera resultat efter ett specifikt fält i stigande (`asc`) eller fallande (`desc`) ordning. Sorteringsparametern fungerar inte när flera resultatsidor returneras. Exempel: `sort=batchId:asc` |
 
 **Begäran**
 
@@ -93,18 +93,18 @@ Svaret innehåller en &quot;children&quot;-array med ett objekt för varje bortt
 | Egenskap | Beskrivning |
 |---|---|
 | `_page.count` | Totalt antal begäranden. Svaret har trunkerats för utrymme. |
-| `_page.next` | Om det finns ytterligare en resultatsida kan du visa nästa resultatsida genom att ersätta ID-värdet i en [sökförfrågan](#view-a-specific-delete-request) med `"next"` angivet värde. |
+| `_page.next` | Om det finns ytterligare en resultatsida kan du visa nästa resultatsida genom att ersätta ID-värdet i en [uppslagsbegäran](#view-a-specific-delete-request) med det angivna `"next"`-värdet. |
 | `jobType` | Den typ av jobb som skapas. I det här fallet returneras alltid `"DELETE"`. |
 | `status` | Status för borttagningsbegäran. Möjliga värden är `"NEW"`, `"PROCESSING"`, `"COMPLETED"`, `"ERROR"`. |
-| `metrics` | Ett objekt som innehåller antalet poster som har bearbetats (`"recordsProcessed"`) och tiden i sekunder som begäran har behandlats eller hur lång tid det tog att slutföra begäran (`"timeTakenInSec"`). |
+| `metrics` | Ett objekt som innehåller antalet poster som har bearbetats (`"recordsProcessed"`) och tiden i sekunder som begäran har bearbetats, eller hur lång tid det tog att slutföra begäran (`"timeTakenInSec"`). |
 
 ## Skapa en borttagningsbegäran {#create-a-delete-request}
 
-En ny borttagningsbegäran initieras via en POST till `/systems/jobs` slutpunkt, där ID:t för den datauppsättning eller batch som ska tas bort anges i förfrågningens brödtext.
+Initieringen av en ny borttagningsbegäran görs via en begäran om POST till slutpunkten `/systems/jobs`, där ID:t för den datauppsättning eller batch som ska tas bort anges i förfrågningens innehåll.
 
 ### Ta bort en datauppsättning och associerade profildata
 
-Om du vill ta bort en datauppsättning och alla profildata som är associerade med datauppsättningen från profilarkivet måste datauppsättnings-ID:t inkluderas i POSTENS innehåll. Den här åtgärden tar bort ALLA data för en viss datauppsättning. [!DNL Experience Platform] Med kan du ta bort datauppsättningar baserat på både schema för post- och tidsserier.
+Om du vill ta bort en datauppsättning och alla profildata som är associerade med datauppsättningen från profilarkivet måste datauppsättnings-ID:t inkluderas i POSTENS innehåll. Den här åtgärden tar bort ALLA data för en viss datauppsättning. Med [!DNL Experience Platform] kan du ta bort datauppsättningar baserat på scheman för både post- och tidsserier.
 
 **API-format**
 
@@ -129,11 +129,11 @@ curl -X POST \
 
 | Egenskap | Beskrivning |
 |---|---|
-| `dataSetId` | **(Obligatoriskt)** ID:t för den datauppsättning som du vill ta bort. |
+| `dataSetId` | **(Obligatoriskt)** ID:t för datauppsättningen som du vill ta bort. |
 
 **Svar**
 
-Ett lyckat svar returnerar information om den nyligen skapade borttagningsbegäran, inklusive ett unikt, systemgenererat, skrivskyddat ID för begäran. Detta kan användas för att slå upp begäran och kontrollera dess status. The `status` för begäran när den skapas `"NEW"` tills bearbetningen börjar. The `dataSetId` i svaret ska matcha `dataSetId` skickas i begäran.
+Ett lyckat svar returnerar information om den nyligen skapade borttagningsbegäran, inklusive ett unikt, systemgenererat, skrivskyddat ID för begäran. Detta kan användas för att slå upp begäran och kontrollera dess status. `status` för begäran när den skapas är `"NEW"` tills bearbetningen börjar. `dataSetId` i svaret ska matcha `dataSetId` som skickats i begäran.
 
 ```json
 {
@@ -160,7 +160,7 @@ Om du vill ta bort en batch måste batch-ID:t inkluderas i POSTENS innehåll. Ob
 >
 > Orsaken till att du inte kan ta bort batchar för datauppsättningar baserade på postscheman är att datauppsättningsbatchar skriver över tidigare poster och därför inte kan ångras eller tas bort. Det enda sättet att ta bort effekten av felaktiga batchar för datauppsättningar som baseras på postscheman är att importera om gruppen med rätt data för att skriva över felaktiga poster.
 
-Mer information om hur man beter sig i protokoll och tidsserier finns i [om XDM-databeteenden](../../xdm/home.md#data-behaviors) i [!DNL XDM System] översikt.
+Mer information om post- och tidsseriebeteende finns i avsnittet [om XDM-databeteenden](../../xdm/home.md#data-behaviors) i översikten [!DNL XDM System].
 
 **API-format**
 
@@ -189,7 +189,7 @@ curl -X POST \
 
 **Svar**
 
-Ett lyckat svar returnerar information om den nyligen skapade borttagningsbegäran, inklusive ett unikt, systemgenererat, skrivskyddat ID för begäran. Detta kan användas för att slå upp begäran och kontrollera dess status. The `"status"` för begäran när den skapas `"NEW"` tills bearbetningen börjar. The `"batchId"` värdet i svaret ska matcha `"batchId"` värdet som skickades i begäran.
+Ett lyckat svar returnerar information om den nyligen skapade borttagningsbegäran, inklusive ett unikt, systemgenererat, skrivskyddat ID för begäran. Detta kan användas för att slå upp begäran och kontrollera dess status. `"status"` för begäran när den skapas är `"NEW"` tills bearbetningen börjar. Värdet `"batchId"` i svaret ska matcha värdet `"batchId"` som skickades i begäran.
 
 ```json
 {
@@ -226,7 +226,7 @@ Om du försöker initiera en borttagningsbegäran för en postdatauppsättningsb
 
 ## Visa en specifik borttagningsbegäran {#view-a-specific-delete-request}
 
-Om du vill visa en viss borttagningsbegäran, inklusive information om dess status, kan du utföra en uppslagsbegäran (GET) på `/system/jobs` slutpunkten och ta med ID:t för borttagningsbegäran i sökvägen.
+Om du vill visa en specifik borttagningsbegäran, inklusive information om dess status, kan du utföra en sökningsbegäran (GET) till `/system/jobs`-slutpunkten och inkludera ID:t för borttagningsbegäran i sökvägen.
 
 **API-format**
 
@@ -236,7 +236,7 @@ GET /system/jobs/{DELETE_REQUEST_ID}
 
 | Parameter | Beskrivning |
 |---|---|
-| `{DELETE_REQUEST_ID}` | **(Obligatoriskt)** ID:t för den borttagningsbegäran som du vill visa. |
+| `{DELETE_REQUEST_ID}` | **(Obligatoriskt)** ID:t för borttagningsbegäran som du vill visa. |
 
 **Begäran**
 
@@ -251,7 +251,7 @@ curl -X GET \
 
 **Svar**
 
-Svaret innehåller information om borttagningsbegäran, inklusive dess uppdaterade status. ID för borttagningsbegäran i svaret ( `"id"` värdet) ska matcha det ID som skickades i sökvägen för begäran.
+Svaret innehåller information om borttagningsbegäran, inklusive dess uppdaterade status. ID:t för borttagningsbegäran i svaret (värdet `"id"`) ska matcha det ID som skickades i begärandesökvägen.
 
 ```json
 {
@@ -268,15 +268,15 @@ Svaret innehåller information om borttagningsbegäran, inklusive dess uppdatera
 
 | Egenskaper | Beskrivning |
 |---|---|
-| `jobType` | Den typ av jobb som skapas, i det här fallet returneras alltid `"DELETE"`. |
+| `jobType` | Den typ av jobb som skapas returnerar alltid `"DELETE"`. |
 | `status` | Status för borttagningsbegäran. Möjliga värden: `"NEW"`, `"PROCESSING"`, `"COMPLETED"`, `"ERROR"`. |
-| `metrics` | En array som innehåller antalet poster som har bearbetats (`"recordsProcessed"`) och tiden i sekunder som begäran har behandlats eller hur lång tid det tog att slutföra begäran (`"timeTakenInSec"`). |
+| `metrics` | En matris som innehåller antalet poster som har bearbetats (`"recordsProcessed"`) och tiden i sekunder som begäran har bearbetats, eller hur lång tid det tog att slutföra begäran (`"timeTakenInSec"`). |
 
-När status för borttagningsbegäran är `"COMPLETED"` Du kan bekräfta att data har tagits bort genom att försöka komma åt borttagna data med hjälp av API:t för dataåtkomst. Instruktioner om hur du använder API:t för dataåtkomst för att komma åt datauppsättningar och grupper finns i [Dokumentation för dataåtkomst](../../data-access/home.md).
+När status för borttagningsbegäran är `"COMPLETED"` kan du bekräfta att data har tagits bort genom att försöka komma åt borttagna data med API:t för dataåtkomst. Instruktioner om hur du använder API:t för dataåtkomst för att komma åt datauppsättningar och grupper finns i [dokumentationen för dataåtkomst](../../data-access/home.md).
 
 ## Ta bort en borttagningsbegäran
 
-[!DNL Experience Platform] I kan du ta bort en tidigare begäran, vilket kan vara användbart av flera anledningar, bland annat om borttagningsjobbet inte slutfördes eller fastnade i bearbetningsfasen. Om du vill ta bort en borttagningsbegäran kan du utföra en DELETE-begäran till `/system/jobs` slutpunkten och inkludera ID:t för den borttagningsbegäran som du vill ta bort till sökvägen för begäran.
+Med [!DNL Experience Platform] kan du ta bort en tidigare begäran, vilket kan vara användbart av flera anledningar, bland annat om borttagningsjobbet inte slutfördes eller fastnade i bearbetningsfasen. Om du vill ta bort en borttagningsbegäran kan du utföra en DELETE-begäran till `/system/jobs`-slutpunkten och inkludera ID:t för borttagningsbegäran som du vill ta bort till begärandesökvägen.
 
 **API-format**
 
@@ -305,4 +305,4 @@ En slutförd borttagningsbegäran returnerar HTTP-status 200 (OK) och en tom sva
 
 ## Nästa steg
 
-Nu när du vet vilka steg det handlar om att ta bort datauppsättningar och grupper från [!DNL Profile store] inom [!DNL Experience Platform]kan du ta bort data som har lagts till felaktigt eller som din organisation inte längre behöver. Observera att det inte går att ångra en borttagningsbegäran. Du bör därför bara ta bort data som du är säker på att du inte behöver nu och inte behöver i framtiden.
+Nu när du vet vilka steg som ingår i att ta bort datauppsättningar och batchar från [!DNL Profile store] i [!DNL Experience Platform] kan du ta bort data som har lagts till felaktigt eller som din organisation inte längre behöver. Observera att det inte går att ångra en borttagningsbegäran. Du bör därför bara ta bort data som du är säker på att du inte behöver nu och inte behöver i framtiden.

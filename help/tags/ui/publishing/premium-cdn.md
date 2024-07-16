@@ -11,7 +11,7 @@ ht-degree: 0%
 
 # Experience Platform-taggar (Kina)
 
-När du använder en [värddator som hanteras av Adobe](./hosts/managed-by-adobe-host.md) för att kunna leverera dina Adobe Experience Platform-taggar på din webbplats, distribueras dessa resurser till olika leveransnätverk runt om i världen för att ge snabbast nedladdningshastighet. Det finns dock vissa regioner som kräver att alla webbplatsresurser ska replikeras och lagras på en server i den regionen.
+När du använder en [Adobe-hanterad värd](./hosts/managed-by-adobe-host.md) för att leverera dina Adobe Experience Platform-taggresurser på din webbplats, distribueras dessa resurser mellan olika nätverk för innehållsleverans (CDN) världen över för att ge den snabbaste hämtningshastigheten. Det finns dock vissa regioner som kräver att alla webbplatsresurser ska replikeras och lagras på en server i den regionen.
 
 För att ta hänsyn till detta har taggar i Experience Platform en funktion för Experience Platform-taggar (Kina) som gör att du kan leverera innehåll till dessa specialregioner.
 
@@ -27,20 +27,20 @@ När taggar för Experience Platform (Kina) har aktiverats innebär det inte att
 
 >[!IMPORTANT]
 >
->Bibliotek som byggts innan du aktiverat taggar i Kina fortsätter att fungera som de gör idag. Detta gäller även bibliotek som inte hanteras av Adobe, eftersom [arkiverade miljöer](./environments.md#archive) Använd bara relativa URL:er för sina resurssökvägar. När du har aktiverat Experience Platform-taggar (Kina) fungerar alla bibliotek som du skapar och som inte hanteras av Adobe som om taggarna i Kina inte är aktiverade.
+>Bibliotek som byggts innan du aktiverat taggar i Kina fortsätter att fungera som de gör idag. Detta gäller även bibliotek som inte hanteras av Adobe, eftersom [arkiverade miljöer](./environments.md#archive) bara använder relativa URL:er för sina resurssökvägar. När du har aktiverat Experience Platform-taggar (Kina) fungerar alla bibliotek som du skapar och som inte hanteras av Adobe som om taggarna i Kina inte är aktiverade.
 
 När du har aktiverat taggar i Kina och återskapat bibliotek som du vill använda från de nya värdregionerna, kan du hämta de nya inbäddningskoderna för värdregioner som du vill lägga till på dina webbplatser.
 
 >[!NOTE]
 >
->Bibliotekets inbäddningskod som visas under [!UICONTROL Standard] Värdregionen kommer att fortsätta fungera som den är, liksom alla inbäddningskoder för Sidbörjan eller Sidslutet som redan finns på dina webbplatser.
+>Bibliotekets inbäddningskod som listas under värdregionen [!UICONTROL Standard] fortsätter att fungera som den är, liksom alla inbäddningskoder för Sidbörjan eller Sidslutet som redan finns på dina webbplatser.
 
-Besök **[!UICONTROL Environments]** eller visa installationsanvisningarna för miljön från bibliotekets redigeringsskärm för att hitta de nya inbäddningskoderna. Varje nytt värdregion som stöds visas efter [!UICONTROL Standard] värdregion (används för områden i världen som stöds utan Experience Platform-taggar (Kina)). På skärmbilden nedan visas en inbäddningskod för regionen Kina som använder `.cn` som toppnivådomän (TLD).
+Gå till sidan **[!UICONTROL Environments]** eller visa installationsanvisningarna för miljön från bibliotekets redigeringsskärm för att hitta de nya inbäddningskoderna. Varje nytt värdregion som stöds visas efter värdregionen [!UICONTROL Standard] (används för områden i världen som stöds utan Experience Platform-taggar (Kina)). Skärmbilden nedan visar en inbäddningskod för regionen Kina, som använder `.cn` som toppnivådomän (TLD).
 
 ![Bädda in kod för regionen Kina](../../images/ui/publishing/premium-cdn/embed-codes.png)
 
-Välj lämplig inbäddningskod för webbsidan och klistra in den i `<head>` -taggen i dokumentet. Mer information om hur du använder inbäddningskoder för att installera taggbibliotek finns i [användargränssnittsguide för miljöer](./environments.md#installation).
+Välj lämplig inbäddningskod för webbsidan och klistra in den i taggen `<head>` i dokumentet. Mer information om hur du använder inbäddningskoder för att installera taggbibliotek finns i [användargränssnittshandboken för miljöer](./environments.md#installation).
 
 ## Nästa steg
 
-I den här guiden beskrivs hur du aktiverar och installerar funktionen Experience Platform Tags (China) för taggimplementeringen. Mer information om hur du installerar och testar taggbibliotek på dina webb- och mobilegenskaper finns i [publicera översikt](./overview.md).
+I den här guiden beskrivs hur du aktiverar och installerar funktionen Experience Platform Tags (China) för taggimplementeringen. Mer information om hur du installerar och testar taggbibliotek på dina webb- och mobilegenskaper finns i [publiceringsöversikten](./overview.md).

@@ -11,15 +11,15 @@ ht-degree: 0%
 
 # Slutpunkt för granskningshändelser
 
-Granskningsloggar används för att ge information om användaraktivitet för olika tjänster och funktioner. Varje åtgärd som registreras i en logg innehåller metadata som anger åtgärdstyp, datum och tid, e-post-ID för användaren som utförde åtgärden samt ytterligare attribut som är relevanta för åtgärdstypen. The `/audit/events` slutpunkt i [!DNL Audit Query] Med API kan du programmässigt hämta händelsedata för din organisations aktivitet i [!DNL Platform].
+Granskningsloggar används för att ge information om användaraktivitet för olika tjänster och funktioner. Varje åtgärd som registreras i en logg innehåller metadata som anger åtgärdstyp, datum och tid, e-post-ID för användaren som utförde åtgärden samt ytterligare attribut som är relevanta för åtgärdstypen. Med slutpunkten `/audit/events` i API:t [!DNL Audit Query] kan du hämta händelsedata för din organisations aktivitet i [!DNL Platform] programmatiskt.
 
 ## Komma igång
 
-API-slutpunkten som används i den här guiden är en del av [[!DNL Audit Query] API](https://developer.adobe.com/experience-platform-apis/references/audit-query/). Läs igenom [komma igång-guide](./getting-started.md) för länkar till relaterad dokumentation, en guide till hur du läser exempel-API-anrop i det här dokumentet och viktig information om vilka huvuden som behövs för att kunna ringa anrop till [!DNL Experience Platform] API.
+API-slutpunkten som används i den här guiden ingår i [[!DNL Audit Query] API](https://developer.adobe.com/experience-platform-apis/references/audit-query/). Innan du fortsätter bör du läsa [kom igång-guiden](./getting-started.md) för att få länkar till relaterad dokumentation, en guide till hur du läser exempelanropen för API i det här dokumentet och viktig information om vilka huvuden som krävs för att kunna anropa ett [!DNL Experience Platform] -API.
 
 ## Visa granskningshändelser
 
-Du kan hämta händelsedata genom att göra en GET-förfrågan till `/audit/events` slutpunkt, ange de händelser som du vill hämta i nyttolasten.
+Du kan hämta händelsedata genom att göra en GET-begäran till `/audit/events`-slutpunkten och ange vilka händelser som ska hämtas i nyttolasten.
 
 **API-format**
 
@@ -27,7 +27,7 @@ Du kan hämta händelsedata genom att göra en GET-förfrågan till `/audit/even
 GET /audit/events
 ```
 
-The [!DNL Audit Query] API har stöd för användning av frågeparametrar för att sidgranska och filtrera resultat när händelser listas.
+API:t [!DNL Audit Query] har stöd för användning av frågeparametrar för att visa sidor och filtrera resultat när händelser listas.
 
 | Parameter | Beskrivning |
 | --- | --- |

@@ -4,7 +4,7 @@ description: Lär dig hur du anropar slutpunkten /audit_events i Reactor API.
 exl-id: 59cd58dc-4085-47b7-846f-d3937740dd9b
 source-git-commit: 47a94b00e141b24203b01dc93834aee13aa6113c
 workflow-type: tm+mt
-source-wordcount: '259'
+source-wordcount: '254'
 ht-degree: 1%
 
 ---
@@ -13,11 +13,11 @@ ht-degree: 1%
 
 >[!WARNING]
 >
->Genomförandet av `/audit_events` slutpunkten ändras när funktioner läggs till, tas bort och omarbetas.
+>Implementeringen av slutpunkten `/audit_events` börjar fungera när funktioner läggs till, tas bort och omarbetas.
 
-En granskningshändelse är en post med en specifik ändring av en annan resurs i Reactor API som genereras när ändringen görs. Det här är systemhändelser som du kan prenumerera på via en [callback](./callbacks.md). The `/audit_events` -slutpunkten i Reaktors API gör att du kan hantera granskningshändelser i ditt upplevelseprogram programmatiskt.
+En granskningshändelse är en post med en specifik ändring av en annan resurs i Reactor API som genereras när ändringen görs. Det här är systemhändelser som du kan prenumerera på med hjälp av en [callback](./callbacks.md). Med slutpunkten `/audit_events` i Reactor API kan du programmässigt hantera granskningshändelser i ditt upplevelseprogram.
 
-Granskningshändelser är strukturerade i form av `{RESOURCE_TYPE}.{EVENT}`, till exempel `build.created` eller `rule.updated`.
+Granskningshändelser är strukturerade i formatet `{RESOURCE_TYPE}.{EVENT}`, till exempel `build.created` eller `rule.updated`.
 
 Resurstypen kan vara något av följande:
 
@@ -39,11 +39,11 @@ Följande händelser stöds för varje resurstyp:
 
 ## Komma igång
 
-Slutpunkten som används i den här guiden är en del av [Reaktors-API](https://www.adobe.io/experience-platform-apis/references/reactor/). Läs igenom [komma igång-guide](../getting-started.md) om du vill ha viktig information om hur du autentiserar till API:t.
+Slutpunkten som används i den här guiden ingår i [Reaktors-API](https://www.adobe.io/experience-platform-apis/references/reactor/). Innan du fortsätter bör du läsa [kom igång-guiden](../getting-started.md) för att få viktig information om hur du autentiserar dig för API:t.
 
 ## Hämta en lista med granskningshändelser {#list}
 
-Du kan hämta en lista över granskningshändelser för alla egenskaper som ägs av din organisation genom att göra en GET-förfrågan till `/audit_events` slutpunkt.
+Du kan hämta en lista över granskningshändelser för alla egenskaper som ägs av din organisation genom att göra en GET-förfrågan till slutpunkten `/audit_events`.
 
 **API-format**
 
@@ -170,7 +170,7 @@ GET /audit_events/{AUDIT_EVENT_ID}
 
 | Parameter | Beskrivning |
 | --- | --- |
-| `AUDIT_EVENT_ID` | The `id` av granskningshändelsen som du vill söka efter. |
+| `AUDIT_EVENT_ID` | `id` för den granskningshändelse som du vill söka efter. |
 
 {style="table-layout:auto"}
 

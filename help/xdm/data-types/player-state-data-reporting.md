@@ -1,16 +1,17 @@
 ---
 title: Datatyp för rapportering av spelarlägesdata
 description: Läs mer om datatypen XDM (Player State Data Reporting Experience Data Model).
-source-git-commit: b6b916c76d1b2babb673d419ab69ae414dd42f20
+exl-id: b01e126d-2467-46b3-8da7-8ec4580595b3
+source-git-commit: 799a384556b43bc844782d8b67416c7eea77fbf0
 workflow-type: tm+mt
 source-wordcount: '165'
 ht-degree: 0%
 
 ---
 
-# [!UICONTROL Player State Data Reporting] datatyp
+# Datatypen [!UICONTROL Player State Data Reporting]
 
-[!UICONTROL Player State Data Reporting] är en XDM-datatyp (Standard Experience Data Model) som beskriver de olika lägena och deras förekomster i en mediespelare. Använd [!UICONTROL Player State Data Reporting] datatyp för inhämtning av olika spelarlägen, t.ex. helskärmsläge, stängd bildtext, bild-i-bild-läge och fokusläge. För varje läge registreras om läget är inställt, antalet förekomster och den totala varaktighet som det är aktivt under medieuppspelningen.
+[!UICONTROL Player State Data Reporting] är en XDM-datatyp (Standard Experience Data Model) som beskriver de olika lägena och deras förekomster i en mediespelare. Använd datatypen [!UICONTROL Player State Data Reporting] om du vill hämta olika spelarlägen, till exempel helskärm, stängd bildtext, bild-i-bild- och fokuslägen. För varje läge registreras om läget är inställt, antalet förekomster och den totala varaktighet som det är aktivt under medieuppspelningen.
 
 ![Ett diagram över datatypen Player State Data Reporting.](../images/data-types/player-state-data-information.png)
 
@@ -23,4 +24,4 @@ ht-degree: 0%
 
 {style="table-layout:auto"}
 
-Mer information om fältgruppen finns i [publik XDM-databas](https://github.com/adobe/xdm/blob/master/components/datatypes/playerstatedata.schema.json)
+Mer information om fältgruppen finns i [den offentliga XDM-databasen](https://github.com/adobe/xdm/blob/master/components/datatypes/playerstatedata.schema.json)

@@ -1,20 +1,20 @@
 ---
 keywords: Experience Platform;home;populära topics;query service;Query service;experience event queries;experience event query;Experience Event query;
-title: Visa besökare efter antal sidvisningar
+title: Visa besökare efter antal sidvyer
 description: Lär dig hur du skriver frågor som använder Experience Events för att hämta en lista över besökare ordnade efter antalet sidvisningar.
 exl-id: 6e8eed0c-838e-4cd0-ae8c-453114fbf4ea
 source-git-commit: 05a7b73da610a30119b4719ae6b6d85f93cdc2ae
 workflow-type: tm+mt
-source-wordcount: '272'
+source-wordcount: '273'
 ht-degree: 0%
 
 ---
 
 # Visa besökarna efter deras antal sidvisningar
 
-Det här dokumentet innehåller ett exempel på den SQL som krävs för att hämta en lista över besökare, ordnad efter antalet sidvisningar. Med Adobe Experience Platform Query Service kan du skriva frågor som använder [!DNL Experience Events] för att ta en mängd olika användningsområden. Experience Events representeras av Experience Data Model (XDM) ExperienceEvent-klassen, som fångar en oföränderlig och icke-aggregerad ögonblicksbild av systemet när en användare interagerar med en webbplats eller tjänst. Experience Events kan till och med användas för tidsdomänanalys. Se [nästa steg](#next-steps) för fler användningsfall där [!DNL Experience Events] för att generera besökarrapporter.
+Det här dokumentet innehåller ett exempel på den SQL som krävs för att hämta en lista över besökare, ordnad efter antalet sidvisningar. Med Adobe Experience Platform Query Service kan du skriva frågor som använder [!DNL Experience Events] för att hämta olika användningsfall. Experience Events representeras av Experience Data Model (XDM) ExperienceEvent-klassen, som fångar en oföränderlig och icke-aggregerad ögonblicksbild av systemet när en användare interagerar med en webbplats eller tjänst. Experience Events kan till och med användas för tidsdomänanalys. Se avsnittet [Nästa steg](#next-steps) för fler användningsfall som inbegriper [!DNL Experience Events] för att generera besökarrapporter.
 
-Mer information om XDM och [!DNL Experience Events] finns i [[!DNL XDM System] översikt](../../xdm/home.md). Genom att kombinera frågetjänsten med [!DNL Experience Events]kan ni effektivt spåra beteendetrender bland era användare. Följande dokument innehåller exempel på frågor som innehåller [!DNL Experience Events].
+Mer information om XDM och [!DNL Experience Events] finns i [[!DNL XDM System] översikt](../../xdm/home.md). Genom att kombinera frågetjänsten med [!DNL Experience Events] kan du effektivt spåra beteendetrender bland dina användare. Följande dokument innehåller exempel på frågor som rör [!DNL Experience Events].
 
 ## Syfte
 
@@ -50,10 +50,10 @@ Frågeresultaten visas i tabellen nedan.
 
 ## Nästa steg {#next-steps}
 
-Genom att läsa det här dokumentet får du en bättre förståelse för hur du använder frågetjänsten med [!DNL Experience Events] för att lista användare som har visat de flesta sidor.
+Genom att läsa det här dokumentet får du en bättre förståelse för hur du använder frågetjänsten med [!DNL Experience Events] för att lista användare som har visat de flesta sidorna.
 
 Läs följande användningsexempel om du vill veta mer om andra besöksbaserade användningsfall:
 
 - [Visa en besökares tidigare sessioner.](./list-visitor-sessions.md)
-- [Visa en sammanställningsrapport för en besökare.](./roll-up-report-of-a-visitor.md)
+- [Visa en summeringsrapport för en besökare.](./roll-up-report-of-a-visitor.md)
 - [Skapa en trendrapport över händelser per dag.](./trended-report-of-events.md)

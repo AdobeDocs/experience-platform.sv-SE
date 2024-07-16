@@ -13,9 +13,9 @@ ht-degree: 0%
 
 Med Adobe Experience Platform Web SDK kan du hämta kundens medgivandesignaler som genererats av CMP (Consent Management Platforms) och skicka dem till Adobe Experience Platform när en händelse om ändring av samtycke inträffar.
 
-**SDK:n samverkar inte med några CMP:er**. Det är upp till dig att bestämma hur du ska integrera SDK i din webbplats, lyssna efter medgivandeändringar i CMP och anropa lämpligt kommando. Det här dokumentet innehåller allmän vägledning om hur du integrerar din CMP med Platform Web SDK.
+**SDK:n samverkar inte med några CMP:er i rutan**. Det är upp till dig att bestämma hur du ska integrera SDK i din webbplats, lyssna efter medgivandeändringar i CMP och anropa lämpligt kommando. Det här dokumentet innehåller allmän vägledning om hur du integrerar din CMP med Platform Web SDK.
 
-## Förutsättningar {#prerequisites}
+## Förhandskrav {#prerequisites}
 
 I den här självstudien förutsätts det att du redan har fastställt hur data för samtycke ska genereras i din CMP och att du har skapat en datauppsättning som innehåller medgivandefält som överensstämmer med Adobe-standarden eller standarden IAB Transparency and Consent Framework (TCF) 2.0. Om du inte har skapat den här datauppsättningen än, se följande självstudiekurser innan du återgår till den här guiden:
 
@@ -36,83 +36,83 @@ Installationsstegen i den här handboken kräver en fungerande förståelse för
 
 ## Konfigurera en datastream
 
-För att SDK ska kunna skicka data till Experience Platform måste du först konfigurera ett datastream. I användargränssnittet för datainsamling eller användargränssnittet för Experience Platform väljer du **[!UICONTROL Datastreams]** i den vänstra navigeringen.
+För att SDK ska kunna skicka data till Experience Platform måste du först konfigurera ett datastream. I användargränssnittet för datainsamlingen eller användargränssnittet för Experience Platform väljer du **[!UICONTROL Datastreams]** i den vänstra navigeringen.
 
-När du har skapat ett nytt dataflöde eller valt ett befintligt som du vill redigera, markerar du växlingsknappen bredvid **[!UICONTROL Adobe Experience Platform]**. Använd sedan värdena nedan för att fylla i formuläret.
+När du har skapat ett nytt datastam eller valt ett befintligt som ska redigeras, markerar du växlingsknappen bredvid **[!UICONTROL Adobe Experience Platform]**. Använd sedan värdena nedan för att fylla i formuläret.
 
 ![](../../images/governance-privacy-security/consent/adobe/sdk/edge-config.png)
 
 | Datastream-fält | Värde |
 | --- | --- |
-| [!UICONTROL Sandbox] | Namnet på plattformen [sandlåda](../../../sandboxes/home.md) som innehåller den strömningsanslutning och de datauppsättningar som krävs för att konfigurera dataströmmen. |
-| [!UICONTROL Event Dataset] | An [!DNL XDM ExperienceEvent] datauppsättning som du planerar att skicka händelsedata till med SDK. Du måste tillhandahålla en händelsedatamängd för att kunna skapa ett plattformsdatastam, men observera att data som skickas via händelser inte hanteras i arbetsflöden för efterföljande tillämpning. |
-| [!UICONTROL Profile Dataset] | The [!DNL Profile]-aktiverad datauppsättning med kundmedgivandefält som du har skapat [tidigare](#prerequisites). |
+| [!UICONTROL Sandbox] | Namnet på plattformen [sandlådan](../../../sandboxes/home.md) som innehåller den nödvändiga direktuppspelningsanslutningen och de datauppsättningar som krävs för att konfigurera dataströmmen. |
+| [!UICONTROL Event Dataset] | En [!DNL XDM ExperienceEvent]-datauppsättning som du planerar att skicka händelsedata till med SDK. Du måste tillhandahålla en händelsedatamängd för att kunna skapa ett plattformsdatastam, men observera att data som skickas via händelser inte hanteras i arbetsflöden för efterföljande tillämpning. |
+| [!UICONTROL Profile Dataset] | Den [!DNL Profile]-aktiverade datauppsättningen med kundmedgivandefält som du skapade [tidigare](#prerequisites). |
 
-När du är klar väljer du **[!UICONTROL Save]** längst ned på skärmen och fortsätta att följa eventuella ytterligare anvisningar för att slutföra konfigurationen.
+När du är klar väljer du **[!UICONTROL Save]** längst ned på skärmen och fortsätter att följa eventuella ytterligare uppmaningar för att slutföra konfigurationen.
 
 ## Installera och konfigurera Platform Web SDK
 
-När du har skapat ett datastream enligt beskrivningen i föregående avsnitt måste du konfigurera det Platform Web SDK-tillägg som du slutligen distribuerar på din plats. Om du inte har SDK-tillägget installerat på taggegenskapen väljer du **[!UICONTROL Extensions]** i den vänstra navigeringen, följt av **[!UICONTROL Catalog]** -fliken. Välj sedan **[!UICONTROL Install]** under plattformens SDK-tillägg i listan över tillgängliga tillägg.
+När du har skapat ett datastream enligt beskrivningen i föregående avsnitt måste du konfigurera det Platform Web SDK-tillägg som du slutligen distribuerar på din plats. Om du inte har SDK-tillägget installerat på taggegenskapen väljer du **[!UICONTROL Extensions]** i den vänstra navigeringen, följt av fliken **[!UICONTROL Catalog]**. Välj sedan **[!UICONTROL Install]** under plattforms-SDK-tillägget i listan över tillgängliga tillägg.
 
 ![](../../images/governance-privacy-security/consent/adobe/sdk/install.png)
 
-När SDK konfigureras, under **[!UICONTROL Edge Configurations]** väljer du den datastam du skapade i föregående steg.
+När du konfigurerar SDK, under **[!UICONTROL Edge Configurations]**, markerar du datastream som du skapade i föregående steg.
 
 ![](../../images/governance-privacy-security/consent/adobe/sdk/config-sdk.png)
 
-Välj **[!UICONTROL Save]** för att installera tillägget.
+Välj **[!UICONTROL Save]** om du vill installera tillägget.
 
 ### Skapa ett dataelement för att ange standardsamtycke
 
-Med SDK-tillägget installerat kan du skapa ett dataelement som representerar standardvärdet för datainsamlingsmedgivande (`collect.val`) för dina användare. Detta kan vara användbart om du vill ha olika standardvärden beroende på användaren, till exempel `pending` för användare i Europeiska unionen och `in` för nordamerikanska användare.
+Med SDK-tillägget installerat kan du skapa ett dataelement som representerar standardvärdet för datainsamlingsmedgivande (`collect.val`) för dina användare. Detta kan vara användbart om du vill ha olika standardvärden beroende på användaren, till exempel `pending` för användare i Europeiska unionen och `in` för användare i Nordamerika.
 
 I det här fallet kan du implementera följande för att ange standardsamtycke baserat på användarens region:
 
 1. Identifiera användarens region på webbservern.
-1. Före `script` -tagg (inbäddningskod) på webbsidan, återge en separat `script` tagg som anger `adobeDefaultConsent` variabel som baseras på användarens region.
-1. Konfigurera ett dataelement som använder `adobeDefaultConsent` JavaScript-variabel och använd det här dataelementet som standardvärde för samtycke för användaren.
+1. Före taggen `script` (inbäddningskod) på webbsidan återger du en separat `script` -tagg som anger en `adobeDefaultConsent`-variabel baserat på användarens region.
+1. Konfigurera ett dataelement som använder JavaScript-variabeln `adobeDefaultConsent` och använd det här dataelementet som standardvärde för samtycke för användaren.
 
 Om användarens region bestäms av en CMP kan du använda följande steg i stället:
 
 1. Hantera händelsen &quot;CMP loaded&quot; på sidan.
-1. I händelsehanteraren anger du en `adobeDefaultConsent` variabel som baseras på användarens region och sedan läsa in taggbiblioteksskriptet med JavaScript.
-1. Konfigurera ett dataelement som använder `adobeDefaultConsent` JavaScript-variabel och använd det här dataelementet som standardvärde för samtycke för användaren.
+1. I händelsehanteraren anger du en `adobeDefaultConsent`-variabel baserat på användarens region och läser sedan in taggbiblioteksskriptet med JavaScript.
+1. Konfigurera ett dataelement som använder JavaScript-variabeln `adobeDefaultConsent` och använd det här dataelementet som standardvärde för samtycke för användaren.
 
-Om du vill skapa ett dataelement i användargränssnittet väljer du **[!UICONTROL Data Elements]** i den vänstra navigeringen väljer du **[!UICONTROL Add Data Element]** för att navigera till dialogrutan för att skapa dataelement.
+Om du vill skapa ett dataelement i användargränssnittet väljer du **[!UICONTROL Data Elements]** i den vänstra navigeringen och sedan **[!UICONTROL Add Data Element]** för att navigera till dialogrutan för att skapa dataelement.
 
-Härifrån måste du skapa en [!UICONTROL JavaScript Variable] dataelement baserat på `adobeDefaultConsent`. Välj **[!UICONTROL Save]** när du är klar.
+härifrån måste du skapa ett [!UICONTROL JavaScript Variable]-dataelement baserat på `adobeDefaultConsent`. Välj **[!UICONTROL Save]** när du är klar.
 
 ![](../../images/governance-privacy-security/consent/adobe/sdk/data-element.png)
 
-När dataelementet har skapats går du tillbaka till konfigurationssidan för Web SDK-tillägget. Under [!UICONTROL Privacy] avsnitt, markera **[!UICONTROL Provided by data element]** och använd den angivna dialogrutan för att välja det standardelement för medgivandedata som du skapade tidigare.
+När dataelementet har skapats går du tillbaka till konfigurationssidan för Web SDK-tillägget. Under avsnittet [!UICONTROL Privacy] väljer du **[!UICONTROL Provided by data element]** och använder den angivna dialogrutan för att välja det standardelement med medgivandedata som du skapade tidigare.
 
 ![](../../images/governance-privacy-security/consent/adobe/sdk/default-consent.png)
 
 ### Distribuera tillägget på webbplatsen
 
-När du har konfigurerat tillägget kan det integreras med webbplatsen. Se [publiceringshandbok](../../../tags/ui/publishing/overview.md) i taggdokumentationen för att få detaljerad information om hur du distribuerar din uppdaterade biblioteksversion.
+När du har konfigurerat tillägget kan det integreras med webbplatsen. Mer information om hur du distribuerar det uppdaterade biblioteksbygget finns i [publiceringshandboken](../../../tags/ui/publishing/overview.md) i taggdokumentationen.
 
 ## Kommandon för att ändra samtycke {#commands}
 
-När du har integrerat SDK-tillägget på webbplatsen kan du börja använda Platform Web SDK `setConsent` för att skicka data om samtycke till plattformen.
+När du har integrerat SDK-tillägget på webbplatsen kan du börja använda kommandot Platform Web SDK `setConsent` för att skicka medgivandedata till plattformen.
 
-The `setConsent` kommandot utför två åtgärder:
+Kommandot `setConsent` utför två åtgärder:
 
 1. Uppdaterar användarens profilattribut direkt i profilarkivet. Detta skickar inga data till datasjön.
-1. Skapar en [Experience Event](../../../xdm/classes/experienceevent.md) som registrerar ett tidsstämplat konto för händelsen för tillståndsändring. Dessa data skickas direkt till datasjön och kan användas för att hålla reda på ändringar av medgivandepreferenser över tiden.
+1. Skapar en [upplevelsehändelse](../../../xdm/classes/experienceevent.md) som registrerar ett tidsstämplat konto för medgivandeändringshändelsen. Dessa data skickas direkt till datasjön och kan användas för att hålla reda på ändringar av medgivandepreferenser över tiden.
 
-### När ska du ringa `setConsent`
+### När `setConsent` ska anropas
 
-Det finns två scenarier där `setConsent` ska anropas på din webbplats:
+Det finns två scenarier där `setConsent` ska anropas på din plats:
 
 1. När samtycke har lästs in på sidan (med andra ord vid varje sidinläsning)
 1. Som en del av en CMP-krok eller händelseavlyssnare som upptäcker ändringar i medgivandeinställningarna
 
-### `setConsent` syntax
+### Syntax för `setConsent`
 
-The [`setConsent`](/help/web-sdk/commands/setconsent.md) ett nyttolastobjekt som innehåller en enda arraytypsegenskap förväntas av kommandot: `consent`. The `consent` arrayen måste innehålla minst ett objekt som innehåller de obligatoriska medgivandefälten för Adobe-standarden.
+Kommandot [`setConsent`](/help/web-sdk/commands/setconsent.md) förväntar sig ett nyttolastobjekt som innehåller en enda arraytypsegenskap: `consent`. Arrayen `consent` måste innehålla minst ett objekt som innehåller de obligatoriska medgivandefälten för Adobe-standarden.
 
-De obligatoriska medgivandefälten för Adobe-standarden visas i följande exempel `setConsent` ring:
+De obligatoriska medgivandefälten för Adobe-standarden visas i följande exempel på `setConsent`-anrop:
 
 ```js
 alloy("setConsent", {
@@ -141,13 +141,13 @@ alloy("setConsent", {
 
 | Nyttolastegenskap | Beskrivning |
 | --- | --- |
-| `standard` | Den standard för samtycke som används. För Adobe-standarden måste det här värdet anges till `Adobe`. |
-| `version` | Versionsnumret för den medgivandestandard som anges under `standard`. Värdet måste anges till `2.0` för Adobe-standardiserad behandling av samtycke. |
+| `standard` | Den standard för samtycke som används. Värdet måste anges till `Adobe` för Adobe-standarden. |
+| `version` | Versionsnumret för den medgivandestandard som anges under `standard`. Det här värdet måste anges till `2.0` för Adobe-standardbearbetning av samtycke. |
 | `value` | Kundens uppdaterade medgivandeinformation, som tillhandahålls som ett XDM-objekt som följer strukturen i den profilaktiverade datauppsättningens medgivandefält. |
 
 >[!NOTE]
 >
->Om du använder andra medgivandestandarder i kombination med `Adobe` (till exempel `IAB TCF`) kan du lägga till fler objekt i `consent` arrayen för varje standard. Varje objekt måste innehålla lämpliga värden för `standard`, `version`och `value` för den standard för samtycke de representerar.
+>Om du använder andra medgivandestandarder i samband med `Adobe` (till exempel `IAB TCF`) kan du lägga till ytterligare objekt i arrayen `consent` för varje standard. Varje objekt måste innehålla lämpliga värden för `standard`, `version` och `value` för den medgivandestandard som de representerar.
 
 Följande JavaScript innehåller ett exempel på en funktion som hanterar ändringar av medgivandeinställningar på en webbplats, som kan användas som återanrop i en händelseavlyssnare eller en CMP-krok:
 
@@ -193,9 +193,9 @@ var setConsent = function () {
 
 ## Hantera SDK-svar
 
-Alla [!DNL Platform SDK] kommandon returnerar löften som anger om anropet lyckades eller misslyckades. Du kan sedan använda dessa svar för ytterligare logik, till exempel för att visa bekräftelsemeddelanden för kunden. Se [Kommandosvar](/help/web-sdk/commands/command-responses.md) för mer information.
+Alla [!DNL Platform SDK]-kommandon returnerar löften som anger om anropet lyckades eller misslyckades. Du kan sedan använda dessa svar för ytterligare logik, till exempel för att visa bekräftelsemeddelanden för kunden. Mer information finns i [Kommandosvar](/help/web-sdk/commands/command-responses.md).
 
-När du har gjort det `setConsent` anrop med SDK kan du använda profilvisningsprogrammet i plattformsgränssnittet för att kontrollera om data landas i profilarkivet. Se avsnittet om [söka efter profiler utifrån identitet](../../../profile/ui/user-guide.md#browse-identity) för mer information.
+När du har gjort `setConsent` anrop med SDK kan du använda profilvisningsprogrammet i plattformsgränssnittet för att kontrollera om data landar i profilarkivet. Mer information finns i avsnittet [Bläddra bland profiler efter identitet](../../../profile/ui/user-guide.md#browse-identity).
 
 ## Nästa steg
 

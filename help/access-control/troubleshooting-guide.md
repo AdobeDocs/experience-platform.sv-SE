@@ -6,32 +6,32 @@ description: Det här dokumentet innehåller svar på vanliga frågor om åtkoms
 exl-id: c299c0c4-dbee-4e6d-8af4-2446444bed69
 source-git-commit: 81f48de908b274d836f551bec5693de13c5edaf1
 workflow-type: tm+mt
-source-wordcount: '402'
+source-wordcount: '401'
 ht-degree: 0%
 
 ---
 
 # Felsökningsguide för åtkomstkontroll
 
-Det här dokumentet innehåller svar på vanliga frågor om åtkomstkontroll i Adobe Experience Platform. För frågor och felsökning relaterade till andra [!DNL Platform] tjänster, se [Felsökningsguide för Experience Platform](../landing/troubleshooting.md).
+Det här dokumentet innehåller svar på vanliga frågor om åtkomstkontroll i Adobe Experience Platform. För frågor och felsökning som rör andra [!DNL Platform]-tjänster, se [felsökningsguiden för Experience Platform](../landing/troubleshooting.md).
 
-[!DNL Experience Platform] utnyttjar produktprofiler i [Adobe Admin Console](https://adminconsole.adobe.com) för att tillhandahålla rollbaserad åtkomstkontroll, länka användare med behörigheter och sandlådor.  Se [åtkomstkontroll - översikt](home.md) för mer information.
+[!DNL Experience Platform] använder produktprofiler i [Adobe Admin Console](https://adminconsole.adobe.com) för att tillhandahålla rollbaserad åtkomstkontroll, som länkar användare med behörigheter och sandlådor.  Mer information finns i [åtkomstkontrollsöversikten](home.md).
 
 ## Var hittar jag mina nuvarande åtkomstbehörigheter?
 
-Om du är systemadministratör, produktadministratör eller produktprofiladministratör för din organisation kan du visa din tilldelade produktprofil och de behörigheter den ger inom Adobe Admin Console. Se [användarhandbok för åtkomstkontroll](./ui/overview.md) för instruktioner om hur du navigerar i [!DNL Admin Console] för att visa en produktprofils behörigheter.
+Om du är systemadministratör, produktadministratör eller produktprofiladministratör för din organisation kan du visa din tilldelade produktprofil och de behörigheter den ger inom Adobe Admin Console. I användarhandboken för [åtkomstkontrollen](./ui/overview.md) finns instruktioner om hur du navigerar i [!DNL Admin Console] för att visa en produktprofils behörigheter.
 
-Om du inte är administratör kan du fortfarande visa dina nuvarande åtkomstbehörigheter genom att skicka en begäran till `/acl/effective-policies` slutpunkt i åtkomstkontrolls-API. Se avsnittet&quot;Visa gällande profiler&quot; i [Utvecklarhandbok för åtkomstkontroll](./api/effective-policies.md) för mer information.
+Om du inte är administratör kan du fortfarande visa dina nuvarande åtkomstbehörigheter genom att skicka en begäran till `/acl/effective-policies`-slutpunkten i åtkomstkontrolls-API:t. Mer information finns i avsnittet Visa gällande principer i [Utvecklarhandbok för åtkomstkontroll](./api/effective-policies.md).
 
-## Vissa funktioner i [!DNL Platform] Gränssnittet är inte tillgängligt. Hur styrs åtkomsten till dessa funktioner av behörigheter?
+## Vissa funktioner i användargränssnittet för [!DNL Platform] är inte tillgängliga. Hur styrs åtkomsten till dessa funktioner av behörigheter?
 
-Om du inte har åtkomstbehörighet för en viss [!DNL Platform] funktionen kommer den funktionen att vara dold eller nedtonad i [!DNL Experience Platform] Gränssnitt. Om du till exempel vill visa[!UICONTROL Profiles]&quot; måste du antingen ha &quot;[!UICONTROL View Profiles]&quot; eller &quot;[!UICONTROL Manage Profiles]&quot; behörigheter. Kontakta administratören om du behöver ytterligare behörigheter för [!DNL Experience Platform] funktioner.
+Om du inte har åtkomstbehörighet för en viss [!DNL Platform]-funktion kommer den funktionen att döljas eller nedtonas i [!DNL Experience Platform]-gränssnittet. Om du till exempel vill kunna visa fliken [!UICONTROL Profiles] måste du ha behörighet [!UICONTROL View Profiles] eller [!UICONTROL Manage Profiles]. Kontakta administratören om du behöver ytterligare behörigheter för [!DNL Experience Platform]-funktioner.
 
 ## Hur grupperas behörigheter och vilken grupp innehåller den behörighet jag vill använda?
 
-Behörigheterna grupperas och kategoriseras av [!DNL Platform] funktioner som de gäller för (t.ex. [!DNL Data Management] och [!DNL Profile Management]). En fullständig lista över tillgängliga behörigheter och vilka grupper de tillhör finns i [permissions section](home.md#permissions) i översikten över åtkomstkontrollen.
+Behörigheter grupperas och kategoriseras efter de [!DNL Platform]-funktioner de gäller för (till exempel [!DNL Data Management] och [!DNL Profile Management]). En fullständig lista över tillgängliga behörigheter och vilka grupper de tillhör finns i avsnittet [behörigheter](home.md#permissions) i åtkomstkontrollsöversikten.
 
-Se [åtkomstkontroll - översikt](home.md) för mer information om rollbaserad åtkomstkontroll.
+Mer information om rollbaserad åtkomstkontroll finns i [åtkomstkontrollsöversikten](home.md).
 
 ## Vad händer med behörigheter efter migrering från Adobe IO till företags-ID?
 

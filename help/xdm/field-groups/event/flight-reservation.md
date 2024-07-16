@@ -10,30 +10,30 @@ ht-degree: 0%
 
 ---
 
-# [!UICONTROL Flight Reservation] schemafältgrupp
+# Schemafältgruppen [!UICONTROL Flight Reservation]
 
-[!UICONTROL Flight Reservation] är en standardgrupp för schemafält för [[!DNL XDM ExperienceEvent] class](../../classes/experienceevent.md) används för att samla in information om en flygreservation.
+[!UICONTROL Flight Reservation] är en standardschemafältgrupp för [[!DNL XDM ExperienceEvent] klassen](../../classes/experienceevent.md) som används för att hämta information om en flygreservation.
 
-Fältgruppen är ett tillägg till [!UICONTROL Reservation Details] fältgrupp och innehåller alla samma fält under ett enda fält av objekttyp, `reservations`. Förutom dessa generiska fält [!UICONTROL Flight Reservation] innehåller `flightReservations` array. Den här objektmatrisen används för att beskriva en eller flera reservationer med egenskaper som är unika för flygresor.
+Fältgruppen är ett tillägg till fältgruppen [!UICONTROL Reservation Details] och innehåller alla samma fält under ett enskilt fält av objekttyp, `reservations`. Förutom dessa generiska fält innehåller [!UICONTROL Flight Reservation] även `flightReservations`-matris. Den här objektmatrisen används för att beskriva en eller flera reservationer med egenskaper som är unika för flygresor.
 
 >[!NOTE]
 >
->Det här dokumentet innehåller information om `flightReservations` array. För information om andra fält som anges i `reservations` -objekt, se [[!UICONTROL Reservation Details] fältgruppsreferens](./reservation-details.md).
+>Det här dokumentet innehåller information om arrayen `flightReservations`. Mer information om de andra fälten under objektet `reservations` finns i [[!UICONTROL Reservation Details] fältgruppsreferensen ](./reservation-details.md).
 
 ![Flight Reservation-struktur](../../images/field-groups/flight-reservation/structure.png)
 
 ## `flightReservations`
 
-`flightReservations` är en array med objekt som representerar en lista med flygbokningar. Om en bokningshändelse omfattar reservationer för flera anslutande flygningar på en resa, kan dessa reservationer till exempel anges som enskilda objekt under `flightReservations` för en enda händelse.
+`flightReservations` är en array med objekt som representerar en lista med flygreservationer. Om en reservationshändelse innehåller reservationer för flera anslutningsflygningar på en resa, kan till exempel dessa reservationer listas som enskilda objekt under `flightReservations` för en enda händelse.
 
 Strukturen för varje objekt som anges under `flightReservations` anges nedan.
 
-![flightReservations-struktur](../../images/field-groups/flight-reservation/flightReservations.png)
+![struktur för flightReservations](../../images/field-groups/flight-reservation/flightReservations.png)
 
 | Egenskap | Datatyp | Beskrivning |
 | --- | --- | --- |
-| `flightCheckIn` | Objekt | Hämtar information om incheckningen av flygningen. Objektet innehåller följande egenskaper:<ul><li>`arrivalAirportCode`: (String) Ankomststadens flygplatskod.</li><li>`boardingGroup`: (String) Den flygspecifika indikatorn för ombordstigningsorder.</li><li>`checkInMethod`: (String) Den metod som används för incheckningen, till exempel räknare, online, kioskdator eller självbetjäning.</li><li>`checkedBags`: (heltal) Antalet påsar som kontrolleras för flygningen.</li><li>`checkedPassengers`: (heltal) Det antal passagerare som checkas in för flygningen, om det finns flera passagerare för samma bokningsnummer.</li><li>`confirmationNumber`: (String) Reservationens bekräftelsenummer eller identifierare.</li><li>`departureAirportCode`: (String) Avgångsstadens flygplatskod.</li><li>`flightNumber`: (String) Flygnumret för den flygning som reserveras.</li></ul> |
-| `flightStatusSearch` | Objekt | Hämtar de uppgifter som returneras när flygningens status genomsöks. Objektet innehåller följande egenskaper:<ul><li>`arrivalAirportCode`: (String) Ankomststadens flygplatskod.</li><li>`boardingGroup`: (String) Den flygspecifika indikatorn för ombordstigningsorder.</li><li>`departureAirportCode`: (String) Avgångsstadens flygplatskod.</li><li>`departureDate`: (DateTime) Avgångsdatumet för den flygning som reserveras.</li><li>`flightNumber`: (String) Flygnumret för den flygning som reserveras.</li><li>`searchCount`: (heltal) Det antal gånger som statusen för den reserverade flygningen har sökts efter.</li></ul> |
+| `flightCheckIn` | Objekt | Hämtar information om incheckningen av flygningen. Objektet innehåller följande egenskaper:<ul><li>`arrivalAirportCode`: (String) Ankomststadens flygplatskod.</li><li>`boardingGroup`: (Sträng) Den flygspecifika indikatorn för boardationsorder.</li><li>`checkInMethod`: (String) Den metod som används för incheckning, till exempel räknare, online, kioskdator eller självbetjäning.</li><li>`checkedBags`: (heltal) Antalet påsar som har kontrollerats för flygningen.</li><li>`checkedPassengers`: (heltal) Antalet passagerare som checkas in för flygningen, om det finns flera passagerare för samma reservationsnummer.</li><li>`confirmationNumber`: (Sträng) Reservationsbekräftelsenumret eller identifieraren.</li><li>`departureAirportCode`: (String) Avgångsstadens flygplatskod.</li><li>`flightNumber`: (String) Flightnumret för den flygning som reserveras.</li></ul> |
+| `flightStatusSearch` | Objekt | Hämtar de uppgifter som returneras när flygningens status genomsöks. Objektet innehåller följande egenskaper:<ul><li>`arrivalAirportCode`: (String) Ankomststadens flygplatskod.</li><li>`boardingGroup`: (Sträng) Den flygspecifika indikatorn för boardationsorder.</li><li>`departureAirportCode`: (String) Avgångsstadens flygplatskod.</li><li>`departureDate`: (DateTime) Avgångsdatumet för den flygning som reserveras.</li><li>`flightNumber`: (String) Flightnumret för den flygning som reserveras.</li><li>`searchCount`: (heltal) Antalet gånger som statusen för den reserverade flygningen har sökts efter.</li></ul> |
 | `agentID` | Sträng | Ombudet eller bokgivaren som är ansvarig för bokningen av reservationen, om tillämpligt. |
 | `aircraftID` | Sträng | En identifierare för luftfartyget. |
 | `aircraftType` | Sträng | Typ av luftfartyg. |

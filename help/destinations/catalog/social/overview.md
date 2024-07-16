@@ -20,11 +20,11 @@ Med sociala destinationer kan ni aktivera profiler för era kampanjer för målg
 
 Adobe Experience Platform har för närvarande stöd för följande sociala mål:
 
-* [[!DNL Facebook] anslutning](facebook.md)
-* [[!DNL LinkedIn Matched Audiences] anslutning](linkedin.md)
-* [[!DNL TikTok] anslutning](tiktok.md)
-* [[!DNL Twitter Custom Audiences] anslutning](twitter.md)
+* [[!DNL Facebook]-anslutning](facebook.md)
+* [[!DNL LinkedIn Matched Audiences]-anslutning](linkedin.md)
+* [[!DNL TikTok]-anslutning](tiktok.md)
+* [[!DNL Twitter Custom Audiences]-anslutning](twitter.md)
 
 ## Anslut till ett nytt socialt mål {#connect-destination}
 
-För att kunna skicka målgrupper till sociala mål för era kampanjer måste Platform först ansluta till målet. Se [självstudiekurs om att skapa mål](../../ui/connect-destination.md) för detaljerad information om hur du konfigurerar ett nytt mål.
+För att kunna skicka målgrupper till sociala mål för era kampanjer måste Platform först ansluta till målet. Se självstudiekursen [för att skapa mål](../../ui/connect-destination.md) för mer information om hur du konfigurerar ett nytt mål.

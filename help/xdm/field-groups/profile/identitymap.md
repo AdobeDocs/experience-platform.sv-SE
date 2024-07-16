@@ -10,17 +10,17 @@ ht-degree: 0%
 
 ---
 
-# [!UICONTROL IdentityMap] schemafältgrupp
+# Schemafältgruppen [!UICONTROL IdentityMap]
 
 >[!NOTE]
 >
->Namnen på flera schemafältgrupper har ändrats. Visa dokumentet på [uppdaterar fältgruppnamn](../name-updates.md) för mer information.
+>Namnen på flera schemafältgrupper har ändrats. Mer information finns i dokumentet om [uppdatering av fältgruppnamn](../name-updates.md).
 
-[!UICONTROL IdentityMap] är en standardgrupp för schemafält för [[!DNL XDM Individual Profile] class](../../classes/individual-profile.md). Fältgruppen innehåller ett enda mappningsfält som innehåller en uppsättning användaridentiteter som angetts av namnutrymmet.
+[!UICONTROL IdentityMap] är en standardschemafältgrupp för [[!DNL XDM Individual Profile] klassen](../../classes/individual-profile.md). Fältgruppen innehåller ett enda mappningsfält som innehåller en uppsättning användaridentiteter som angetts av namnutrymmet.
 
-![Ett diagram över [!UICONTROL IdentityMap] schemafältgrupp](../../images/field-groups/identitymap.png)
+![Ett diagram över [!UICONTROL IdentityMap] schemafältgruppen ](../../images/field-groups/identitymap.png)
 
-Se avsnittet om identitetskartor i [grunderna för schemakomposition](../../schema/composition.md#identityMap) om du vill ha mer information om deras användning, inklusive fördelarna och nackdelarna.
+I avsnittet om identitetskartor i [grunderna för schemakomposition](../../schema/composition.md#identityMap) finns mer information om användningsfall, inklusive fördelar och nackdelar.
 
 **exempel**
 
@@ -38,4 +38,4 @@ Se avsnittet om identitetskartor i [grunderna för schemakomposition](../../sche
 }
 ```
 
-Mer information om fältgruppen finns i [fullständigt schema](https://github.com/adobe/xdm/blob/master/components/fieldgroups/shared/identitymap.schema.json) i den offentliga XDM-databasen.
+Mer information om fältgruppen finns i det [fullständiga schemat](https://github.com/adobe/xdm/blob/master/components/fieldgroups/shared/identitymap.schema.json) i den offentliga XDM-databasen.

@@ -1,6 +1,6 @@
 ---
 title: Skapa en kopplingsprofil i Adobe Experience Platform
-description: Den här videon ger en grundläggande förståelse för kopplingsprofiler inom Adobe Experience Platform och visar hur du definierar kopplingsprofiler med hjälp av användargränssnittet för plattformen.
+description: I den här videon får du en grundläggande förståelse för kopplingsprofiler inom Adobe Experience Platform och en översikt över hur du definierar kopplingsprofiler med hjälp av användargränssnittet för plattformen.
 product: experience platform
 type: Documentation
 solution: Experience Platform
@@ -19,10 +19,10 @@ ht-degree: 0%
 
 # Skapa en kopplingsprofil i användargränssnittet för Experience Platform
 
-I den här videon får du en grundläggande förståelse för sammanfogningsprinciper i Adobe Experience Platform och en översikt över hur du definierar sammanfogningsprinciper med hjälp av användargränssnittet för plattformen. Om du vill veta mer om kopplingsregler börjar du med att läsa [sammanfogningsprinciper - översikt](../merge-policies/overview.md).
+I den här videon får du en grundläggande förståelse för sammanfogningsprinciper i Adobe Experience Platform och en översikt över hur du definierar sammanfogningsprinciper med hjälp av användargränssnittet för plattformen. Om du vill veta mer om sammanfogningsprinciper börjar du med att läsa översikten [för sammanfogningsprinciper](../merge-policies/overview.md).
 
 >[!NOTE]
 >
->Användargränssnittet i Experience Platform uppdateras ofta och kan ha ändrats sedan videon spelades in. Den senaste informationen finns i [gränssnittshandbok för sammanslagningsprinciper](../merge-policies/ui-guide.md).
+>Användargränssnittet i Experience Platform uppdateras ofta och kan ha ändrats sedan videon spelades in. Den senaste informationen finns i [användargränssnittshandboken för sammanslagningsprinciper](../merge-policies/ui-guide.md).
 
 >[!VIDEO](https://video.tv.adobe.com/v/330433?quality=12&learn=on&captions=eng)

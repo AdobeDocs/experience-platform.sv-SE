@@ -1,33 +1,33 @@
 ---
 keywords: Experience Platform;hem;populära ämnen;Allmänt REST API
-title: Skapa en allmän REST API-källanslutning i användargränssnittet
+title: Skapa en allmän REST API Source Connection i användargränssnittet
 type: Tutorial
 description: Lär dig hur du skapar en allmän REST API-källanslutning med Adobe Experience Platform UI.
 source-git-commit: e37c00863249e677f1645266859bf40fe6451827
 workflow-type: tm+mt
-source-wordcount: '610'
-ht-degree: 1%
+source-wordcount: '615'
+ht-degree: 0%
 
 ---
 
-# Skapa en [!DNL Generic REST API] källanslutning i användargränssnittet
+# Skapa en [!DNL Generic REST API]-källanslutning i användargränssnittet
 
 >[!NOTE]
 >
-> The [!DNL Generic REST API] källan är i betaversion. Se [Översikt över källor](../../../../home.md#terms-and-conditions) om du vill ha mer information om hur du använder beta-märkta anslutningar.
+> Källan [!DNL Generic REST API] är i betaversion. Mer information om hur du använder betatecknade anslutningar finns i [Källöversikt](../../../../home.md#terms-and-conditions).
 
-Den här självstudiekursen innehåller steg för att skapa en [!DNL Generic REST API] källanslutning med Adobe Experience Platform användargränssnitt.
+I den här självstudiekursen beskrivs hur du skapar en [!DNL Generic REST API]-källanslutning med Adobe Experience Platform-användargränssnittet.
 
 ## Komma igång
 
 Den här självstudiekursen kräver en fungerande förståelse av följande plattformskomponenter:
 
-* [Källor](../../../../home.md): Experience Platform tillåter att data kan hämtas från olika källor samtidigt som du kan strukturera, märka och förbättra inkommande data med hjälp av plattformstjänster.
-* [Sandlådor](../../../../../sandboxes/home.md): Experience Platform tillhandahåller virtuella sandlådor som partitionerar en enda plattformsinstans i separata virtuella miljöer för att utveckla och utveckla program för digitala upplevelser.
+* [Källor](../../../../home.md): Experience Platform tillåter data att hämtas från olika källor samtidigt som du kan strukturera, etikettera och förbättra inkommande data med hjälp av plattformstjänster.
+* [Sandlådor](../../../../../sandboxes/home.md): Experience Platform tillhandahåller virtuella sandlådor som partitionerar en enda plattformsinstans till separata virtuella miljöer för att utveckla och utveckla program för digitala upplevelser.
 
 ### Samla in nödvändiga inloggningsuppgifter
 
-För att få åtkomst till [!DNL Generic REST API] på Platform måste du ange giltiga autentiseringsuppgifter för den autentiseringstyp som du väljer. Allmänt REST API har stöd för både OAuth 2-uppdateringskod och grundläggande autentisering. I följande tabeller finns information om autentiseringsuppgifter för de två autentiseringstyper som stöds.
+För att få åtkomst till ditt [!DNL Generic REST API]-konto på plattformen måste du ange giltiga autentiseringsuppgifter för den autentiseringstyp du väljer. Allmänt REST API har stöd för både OAuth 2-uppdateringskod och grundläggande autentisering. I följande tabeller finns information om autentiseringsuppgifter för de två autentiseringstyper som stöds.
 
 #### OAuth 2-uppdateringskod
 
@@ -53,40 +53,40 @@ För att få åtkomst till [!DNL Generic REST API] på Platform måste du ange g
 
 ## Anslut ditt allmänna REST API-konto
 
-Välj **[!UICONTROL Sources]** från vänster navigering för att komma åt [!UICONTROL Sources] arbetsyta. The [!UICONTROL Catalog] I visas en mängd olika källor som du kan skapa ett konto med.
+I plattformsgränssnittet väljer du **[!UICONTROL Sources]** i den vänstra navigeringen för att komma åt arbetsytan i [!UICONTROL Sources]. På skärmen [!UICONTROL Catalog] visas en mängd olika källor som du kan skapa ett konto med.
 
 Du kan välja lämplig kategori i katalogen till vänster på skärmen. Du kan också använda sökfältet till att hitta den källa du vill arbeta med.
 
-Under [!UICONTROL Protocols] kategori, välj **[!UICONTROL Generic REST API]** och sedan **[!UICONTROL Add data]**.
+Under kategorin [!UICONTROL Protocols] väljer du **[!UICONTROL Generic REST API]** och sedan **[!UICONTROL Add data]**.
 
 ![katalog](../../../../images/tutorials/create/generic-rest/catalog.png)
 
-The **[!UICONTROL Connect to Generic REST API]** visas. På den här sidan kan du antingen använda nya autentiseringsuppgifter eller befintliga.
+Sidan **[!UICONTROL Connect to Generic REST API]** visas. På den här sidan kan du antingen använda nya autentiseringsuppgifter eller befintliga.
 
 ### Befintligt konto
 
-Om du vill ansluta ett befintligt konto väljer du det allmänna REST API-konto som du vill ansluta till och väljer sedan **[!UICONTROL Next]** för att fortsätta.
+Om du vill ansluta ett befintligt konto väljer du det allmänna REST API-konto som du vill ansluta till och sedan **[!UICONTROL Next]** för att fortsätta.
 
 ![befintlig](../../../../images/tutorials/create/generic-rest/existing.png)
 
 ### Nytt konto
 
-Om du skapar ett nytt konto väljer du **[!UICONTROL New account]** och ange sedan ett namn och en alternativbeskrivning för ditt nya [!DNL Generic REST API] konto.
+Om du skapar ett nytt konto väljer du **[!UICONTROL New account]** och anger sedan ett namn och en alternativbeskrivning för det nya [!DNL Generic REST API]-kontot.
 
-![new](../../../../images/tutorials/create/generic-rest/new.png)
+![ny](../../../../images/tutorials/create/generic-rest/new.png)
 
 #### Autentisera med OAuth 2-uppdateringskod
 
-[!DNL Generic REST API] har stöd för både OAuth 2-uppdateringskod och grundläggande autentisering. Om du vill autentisera med en OAuth2-autentisering väljer du **[!UICONTROL OAuth2RefreshCode]**, ange dina OAuth 2-autentiseringsuppgifter och välj sedan **[!UICONTROL Connect to source]**.
+[!DNL Generic REST API] har stöd för både OAuth 2-uppdateringskod och grundläggande autentisering. Om du vill autentisera med en OAuth2-autentisering väljer du **[!UICONTROL OAuth2RefreshCode]**, anger dina OAuth 2-autentiseringsuppgifter och väljer sedan **[!UICONTROL Connect to source]**.
 
 ![](../../../../images/tutorials/create/generic-rest/oauth2.png)
 
 #### Autentisera med grundläggande autentisering
 
-Om du vill använda grundläggande autentisering väljer du **[!UICONTROL Basic authentication]**, ange värden, användarnamn och lösenord och välj **[!UICONTROL Connect to source]**.
+Om du vill använda grundläggande autentisering väljer du **[!UICONTROL Basic authentication]**, anger värden, användarnamn och lösenord och väljer sedan **[!UICONTROL Connect to source]**.
 
 ![](../../../../images/tutorials/create/generic-rest/basic-authentication.png)
 
 ## Nästa steg
 
-Genom att följa den här självstudiekursen har du upprättat en anslutning till ditt allmänna REST API-konto. Du kan nu fortsätta med nästa självstudiekurs och [konfigurera ett dataflöde för att hämta data till plattformen](../../dataflow/protocols.md).
+Genom att följa den här självstudiekursen har du upprättat en anslutning till ditt allmänna REST API-konto. Du kan nu fortsätta till nästa självstudiekurs och [konfigurera ett dataflöde för att hämta data till plattformen](../../dataflow/protocols.md).

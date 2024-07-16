@@ -9,11 +9,11 @@ ht-degree: 0%
 
 ---
 
-# [!UICONTROL MediaAnalytics Interaction Details] schemafältgrupp
+# Schemafältgruppen [!UICONTROL MediaAnalytics Interaction Details]
 
-[!UICONTROL MediaAnalytics Interaction Details] är en standardgrupp för schemafält för [[!DNL XDM ExperienceEvent] class](../../classes/experienceevent.md). Använd den här fältgruppen för att samla in datafält som innehåller omfattande övervakning och analys av interaktioner med mediematerial på olika plattformar eller i olika kanaler.
+[!UICONTROL MediaAnalytics Interaction Details] är en standardschemafältgrupp för [[!DNL XDM ExperienceEvent] klassen](../../classes/experienceevent.md). Använd den här fältgruppen för att samla in datafält som innehåller omfattande övervakning och analys av interaktioner med mediematerial på olika plattformar eller i olika kanaler.
 
-![Ett schemadiagram över [!UICONTROL MediaAnalytics Interaction Details] schemafältgrupp.](../../images/field-groups/mediaanalytics-interaction.png)
+![Ett schemadiagram för schemafältgruppen [!UICONTROL MediaAnalytics Interaction Details].](../../images/field-groups/mediaanalytics-interaction.png)
 
 | Visningsnamn | Egenskap | Datatyp | Beskrivning |
 |---| --- | --- | --- |
@@ -25,7 +25,7 @@ ht-degree: 0%
 
 >[!TIP]
 >
->Du kan dölja fält som inte används av Media Edge API. Om du döljer dessa fält blir schemat enklare att läsa och förstå, men det är inte nödvändigt. Dessa fält refererar endast till fälten i [!UICONTROL MediaAnalytics Interaction Details] fältgrupp. Följ instruktionerna i [Media Analytics-dokumentation om hur du döljer oanvända fält](https://experienceleague.adobe.com/docs/media-analytics/using/implementation/edge-recommended/media-edge-sdk/implementation-edge.html#set-up-the-schema-in-adobe-experience-platform).
+>Du kan dölja fält som inte används av Media Edge API. Om du döljer dessa fält blir schemat enklare att läsa och förstå, men det är inte nödvändigt. Dessa fält refererar endast till fälten i fältgruppen [!UICONTROL MediaAnalytics Interaction Details]. Följ instruktionerna i [Media Analytics-dokumentationen om hur du döljer oanvända fält](https://experienceleague.adobe.com/docs/media-analytics/using/implementation/edge-recommended/media-edge-sdk/implementation-edge.html#set-up-the-schema-in-adobe-experience-platform) för att förbättra läsbarheten i plattformsgränssnittet.
 
 <!-- 
 >[!NOTE]

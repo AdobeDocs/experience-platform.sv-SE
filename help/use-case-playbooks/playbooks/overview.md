@@ -17,7 +17,7 @@ ht-degree: 3%
 
 Vad du hittar i den här handboken:
 
-* **[Översikt över användningsfall för spelböcker](#overview)**
+* **[Översikt över användningsfallsspelningsböcker](#overview)**
 * [Kom igång med de konfigurationer och behörigheter som krävs](/help/use-case-playbooks/playbooks/get-started.md)
 * [Available Use Case Playbooks](/help/use-case-playbooks/playbooks/playbooks-list.md)
 * [Välj bland ett urval av spelböcker](/help/use-case-playbooks/playbooks/choose.md)
@@ -29,7 +29,7 @@ Vad du hittar i den här handboken:
 
 ## Översikt {#overview}
 
-[!UICONTROL Use Case Playbooks] kan hjälpa dig att lösa problemet när du börjar med Real-Time CDP eller Adobe Journey Optimizer när du kanske inte vet exakt vad du ska börja med eller hur du ska skapa rätt resurser för att uppnå dina önskade användningsfall. Använd fallspelsböcker kan hjälpa dig genom att:
+[!UICONTROL Use Case Playbooks] kan hjälpa dig att lösa problemet när du börjar med Real-Time CDP eller Adobe Journey Optimizer när du kanske inte vet exakt vad du ska börja med eller hur du skapar rätt resurser för att uppnå dina önskade användningsfall. Använd fallspelsböcker kan hjälpa dig genom att:
 
 * Visa exempel för inspiration
 * Skapa olika resurser som du kan använda, testa och marknadsföra till produktion när det passar.
@@ -50,12 +50,12 @@ I den här videon får du lära dig hur du identifierar, skapar, publicerar och 
 
 ## Tillgänglighet {#availability}
 
-Några [!UICONTROL Use Case Playbooks] är skräddarsydda för Real-Time CDP medan andra passar bäst för kunder som använder Journey Optimizer. Bläddra i katalogen och hitta de spelböcker som passar bäst för produkten och användningsexemplet. Läs mer om Real-Time CDP och Journey Optimizer i [Adobe produktbeskrivningar](https://helpx.adobe.com/legal/product-descriptions.html).
+Vissa [!UICONTROL Use Case Playbooks] är anpassade efter Real-Time CDP-användningsfall medan andra är bäst lämpade för kunder som använder Journey Optimizer. Bläddra i katalogen och hitta de spelböcker som passar bäst för produkten och användningsexemplet. Läs mer om Real-Time CDP och Journey Optimizer i produktbeskrivningarna för [Adobe](https://helpx.adobe.com/legal/product-descriptions.html).
 
 ## Användargränssnittsguider {#ui-guides}
 
-När du har bestämt dig för vilken spelbok du vill använda väljer du den i användargränssnittet och börjar med den. Läs användargränssnittets riktlinjer på [välja rätt spelbok från en markering](/help/use-case-playbooks/playbooks/choose.md) för dig och [hur du skapar, delar och återanvänder spelningsboksinstanser](/help/use-case-playbooks/playbooks/create-share-reuse.md) om du vill ha fullständig information om hur du skapar instanser och får ut det mesta av en spelbok. Om du vill lära dig att marknadsföra olika resurser från den inspirerande sandlådan till andra utvecklingssandlådor, och sedan till produktion, kan du läsa dokumentationen om [datakunskap](/help/use-case-playbooks/playbooks/data-awareness.md).
+När du har bestämt dig för vilken spelbok du vill använda väljer du den i användargränssnittet och börjar med den. Läs användargränssnittsguiderna för [hur du väljer rätt spelbok från en markering](/help/use-case-playbooks/playbooks/choose.md) åt dig och [hur du skapar, delar och återanvänder spelningsboksinstanser](/help/use-case-playbooks/playbooks/create-share-reuse.md) för att få fullständig information om hur du skapar instanser och får ut det mesta av en spelbok. Om du vill lära dig hur du marknadsför olika resurser från den inspirerande sandlådan till andra utvecklingssandlådor, och sedan till produktionen, kan du läsa dokumentationen om [datainfektion](/help/use-case-playbooks/playbooks/data-awareness.md).
 
 ## Felsökning och kända begränsningar {#trouble-shooting-known-limitations}
 
-Information om eventuella problem du kan råka ut för när du använder spelböcker finns i [felsökning och kända begränsningar](/help/use-case-playbooks/playbooks/troubleshooting.md) sida.
+Information om eventuella problem du kan råka ut för när du använder spelböcker finns på sidan [felsökning och kända begränsningar](/help/use-case-playbooks/playbooks/troubleshooting.md).

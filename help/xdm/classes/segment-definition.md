@@ -10,23 +10,23 @@ ht-degree: 0%
 
 ---
 
-# [!UICONTROL Segment definition] class
+# klassen [!UICONTROL Segment definition]
 
-&quot;[!UICONTROL Segment definition]&quot; är en XDM-klass (Experience Data Model) som hämtar information om en segmentdefinition. Klassen innehåller obligatoriska fält, t.ex. ID:t och namnet på en målgrupp, tillsammans med andra valfria attribut. Den här klassen bör användas om du infogar segmentdefinitioner från externa system i Adobe Experience Platform.
+[!UICONTROL Segment definition] är en XDM-klass (Experience Data Model) som används som standard och som hämtar information om en segmentdefinition. Klassen innehåller obligatoriska fält, t.ex. ID:t och namnet på en målgrupp, tillsammans med andra valfria attribut. Den här klassen bör användas om du infogar segmentdefinitioner från externa system i Adobe Experience Platform.
 
 >[!NOTE]
 >
->Den här klassen ska bara användas för att samla in information om själva segmentdefinitionerna. Om du vill hämta information om målgruppsmedlemskap i dina profildata använder du [Fältgrupp för detaljer för segmentmedlemskap](../field-groups/profile/segmentation.md) i [!UICONTROL XDM Individual Profile] schema.
+>Den här klassen ska bara användas för att samla in information om själva segmentdefinitionerna. Om du vill samla in information om målgruppsmedlemskap i dina profildata bör du använda fältgruppen [Information om segmentmedlemskap](../field-groups/profile/segmentation.md) i ditt [!UICONTROL XDM Individual Profile]-schema.
 
 ![](../images/classes/segment-definition.png)
 
 | Egenskap | Beskrivning |
 | --- | --- |
-| `_repo` | Ett objekt som innehåller följande [!UICONTROL DateTime] fält: <ul><li>`createDate`: Datum och tid då resursen skapades i datalagret, till exempel när data först importerades.</li><li>`modifyDate`: Datum och tid då resursen senast ändrades.</li></ul> |
-| `_id` | En unik systemgenererad strängidentifierare för posten. Det här fältet används för att spåra en enskild posts unika karaktär, förhindra dubblering av data och för att söka efter posten i underordnade tjänster.<br><br>Eftersom det här fältet genereras av systemet, anges inget explicit värde vid datainmatning. Du kan dock välja att ange egna unika ID-värden om du vill.<br><br>Det är viktigt att särskilja att detta fält **inte** representerar en identitet som är relaterad till en enskild person, i stället för själva registreringen av uppgifter. Identitetsuppgifter som rör en person bör begränsas till [identitetsfält](../schema/composition.md#identity) i stället. |
+| `_repo` | Ett objekt som innehåller följande [!UICONTROL DateTime] fält: <ul><li>`createDate`: Det datum och den tidpunkt då resursen skapades i datalagret, till exempel när data först importerades.</li><li>`modifyDate`: Datum och tid då resursen senast ändrades.</li></ul> |
+| `_id` | En unik systemgenererad strängidentifierare för posten. Det här fältet används för att spåra en enskild posts unika karaktär, förhindra dubblering av data och för att söka efter posten i underordnade tjänster.<br><br>Eftersom det här fältet är systemgenererat anges inget explicit värde vid datainmatning. Du kan dock välja att ange egna unika ID-värden om du vill.<br><br>Det är viktigt att skilja på att det här fältet **inte** representerar en identitet som relateras till en enskild person, utan själva dataposten. Identitetsdata som relaterar till en person ska i stället begränsas till [identitetsfält](../schema/composition.md#identity). |
 | `createdByBatchID` | ID:t för den inkapslade batchen som gjorde att posten skapades. |
 | `description` | En beskrivning av segmentdefinitionen. |
-| `identityMap` | Ett kartfält som innehåller en uppsättning namngivna identiteter för de personer som målgruppen gäller för. Se avsnittet om identitetskartor i [grunderna för schemakomposition](../schema/composition.md#identityMap) om du vill ha mer information om deras användningsfall. |
+| `identityMap` | Ett kartfält som innehåller en uppsättning namngivna identiteter för de personer som målgruppen gäller för. Mer information om hur de används finns i avsnittet om identitetskartor i [grunderna för schemakomposition](../schema/composition.md#identityMap). |
 | `modifiedByBatchID` | ID:t för den senaste inkapslade batchen som gjorde att posten uppdaterades. |
 | `repositoryCreatedBy` | ID för den användare som skapade posten. |
 | `repositoryLastModifiedBy` | ID för den användare som senast ändrade posten. |

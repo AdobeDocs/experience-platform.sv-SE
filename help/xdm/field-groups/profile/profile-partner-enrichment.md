@@ -1,19 +1,19 @@
 ---
 title: Fältgrupp för profilpartnerberikning (exempel)
 description: Läs mer om schemafältgruppen Profilpartnerberikning (exempel).
-source-git-commit: de8e944cfec3b52d25bb02bcfebe57d6a2a35e39
+exl-id: 02f7c358-3cf9-45cb-a5c5-e2cb1f140d93
+source-git-commit: 8be502c9eea67119dc537a5d63a6c71e0bff1697
 workflow-type: tm+mt
 source-wordcount: '194'
 ht-degree: 0%
 
 ---
 
+# Schemafältgruppen [!UICONTROL Profile Partner Enrichment (Sample)]
 
-# [!UICONTROL Profile Partner Enrichment (Sample)] schemafältgrupp
+[!UICONTROL Profile Partner Enrichment (Sample)] är en standardschemafältgrupp för [[!DNL XDM Individual Profile] klassen](../../classes/individual-profile.md). Använd den här fältgruppen för att tillhandahålla ytterligare data relaterade till partnerdrivna berikningar för kundprofiler.
 
-[!UICONTROL Profile Partner Enrichment (Sample)] är en standardgrupp för schemafält för [[!DNL XDM Individual Profile] class](../../classes/individual-profile.md). Använd den här fältgruppen för att tillhandahålla ytterligare data relaterade till partnerdrivna berikningar för kundprofiler.
-
-![Ett diagram över [!UICONTROL Profile Partner Enrichment (Sample)] fältgrupp.](../../images/field-groups/profile-partner-enrichment-sample.png)
+![Ett diagram över fältgruppen [!UICONTROL Profile Partner Enrichment (Sample)].](../../images/field-groups/profile-partner-enrichment-sample.png)
 
 | Visningsnamn | Egenskap | Datatyp | Beskrivning |
 |-----------------------------|------------------------|-----------|----------------------------------|
@@ -48,4 +48,4 @@ ht-degree: 0%
 
 {style="table-layout:auto"}
 
-Mer information om fältgruppen finns i [fullständigt schema](https://github.com/adobe/xdm/blob/master/components/fieldgroups/profile/partner-profile-enrichment/profile-partner-enrichment-sample.schema.json) på den offentliga XDM-databasen.
+Mer information om fältgruppen finns i det [fullständiga schemat](https://github.com/adobe/xdm/blob/master/components/fieldgroups/profile/partner-profile-enrichment/profile-partner-enrichment-sample.schema.json) i den offentliga XDM-databasen.

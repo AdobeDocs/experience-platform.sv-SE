@@ -13,7 +13,7 @@ ht-degree: 0%
 
 >[!NOTE]
 >
->Adobe Experience Platform Launch har omklassificerats som en serie datainsamlingstekniker i Adobe Experience Platform. Som ett resultat av detta har flera terminologiska förändringar införts i produktdokumentationen. Se följande [dokument](../term-updates.md) för en konsoliderad hänvisning till terminologiska förändringar.
+>Adobe Experience Platform Launch har omklassificerats som en serie datainsamlingstekniker i Adobe Experience Platform. Som ett resultat av detta har flera terminologiska förändringar införts i produktdokumentationen. I följande [dokument](../term-updates.md) finns en konsoliderad referens till de ändrade terminologin.
 
 Uppdateringar av ett taggtillägg i Adobe Experience Platform måste vara bakåtkompatibla med tidigare versioner av tillägget. Detta innebär att
 
@@ -70,7 +70,7 @@ Om den gamla funktionen inte bara är oönskad, utan faktiskt inte längre finns
 
 ### Återställa borttagna funktioner
 
-Om du redan har tagit bort funktioner och får höra från användarna att saker och ting har gått sönder måste du släppa en ny version av tillägget som återställer de komponenter du har tagit bort.
+Om du redan har tagit bort funktioner och får höra från användarna att saker och ting har gått sönder måste du släppa en ny version av tillägget som återställer de komponenter som du har tagit bort.
 
 Det går bra att återställa dem i ett föråldrat läge enligt beskrivningen ovan, men de måste finnas.
 

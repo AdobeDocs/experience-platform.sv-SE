@@ -5,7 +5,7 @@ title: API-slutpunkt för scheman
 description: Du kan använda ändpunkten "/schemas" i Adobe Experience Platform API för att hämta, skapa och uppdatera scheman för användning med Mapper in Platform.
 source-git-commit: 81f48de908b274d836f551bec5693de13c5edaf1
 workflow-type: tm+mt
-source-wordcount: '611'
+source-wordcount: '616'
 ht-degree: 0%
 
 ---
@@ -14,19 +14,19 @@ ht-degree: 0%
 
 # Schemas slutpunkt
 
-Scheman kan användas med Mapper för att säkerställa att data som du har inhämtat till Adobe Experience Platform matchar det du vill importera. Du kan använda `/schemas` slutpunkt för att skapa, lista och hämta anpassade scheman för användning med Mapper in Platform.
+Scheman kan användas med Mapper för att säkerställa att data som du har inhämtat till Adobe Experience Platform matchar det du vill importera. Du kan använda slutpunkten `/schemas` för att skapa, lista och hämta anpassade scheman för användning med Mapper in Platform.
 
 >[!NOTE]
 >
->Scheman som skapas med den här slutpunkten används exklusivt med mappar- och mappningsuppsättningar. Om du vill skapa scheman som är tillgängliga för andra plattformstjänster läser du [Utvecklarhandbok för schemaregister](../../xdm/api/schemas.md).
+>Scheman som skapas med den här slutpunkten används exklusivt med mappar- och mappningsuppsättningar. Om du vill skapa scheman som är tillgängliga för andra plattformstjänster läser du [utvecklarhandboken för schemaregister](../../xdm/api/schemas.md).
 
 ## Hämta alla scheman
 
-Du kan hämta en lista över alla tillgängliga mappningsscheman för din organisation genom att göra en GET-förfrågan till `/schemas` slutpunkt.
+Du kan hämta en lista över alla tillgängliga mappningsscheman för din organisation genom att göra en GET-förfrågan till slutpunkten `/schemas`.
 
 **API-format**
 
-The `/schemas` slutpunkten har stöd för flera frågeparametrar som hjälper dig att filtrera resultaten. De flesta av dessa parametrar är valfria, men bör användas för att minska kostsamma overheadkostnader. Du måste dock inkludera båda `start` och `limit` parametrar som en del av din begäran. Flera parametrar kan inkluderas, avgränsade med et-tecken (`&`).
+Slutpunkten `/schemas` har stöd för flera frågeparametrar som hjälper dig att filtrera dina resultat. De flesta av dessa parametrar är valfria, men bör användas för att minska kostsamma overheadkostnader. Du måste dock inkludera både parametern `start` och parametern `limit` som en del av din begäran. Flera parametrar kan inkluderas, avgränsade med et-tecken (`&`).
 
 ```http
 GET /schemas?limit={LIMIT}&start={START}
@@ -36,10 +36,10 @@ GET /schemas?limit={LIMIT}&start={START}&orderBy={ORDER_BY}
 
 | Parameter | Beskrivning |
 | --------- | ----------- |
-| `{LIMIT}` | **Obligatoriskt**. Anger antalet returnerade scheman. |
-| `{START}` | **Obligatoriskt**. Anger förskjutningen för resultatsidorna. Om du vill hämta den första resultatsidan anger du värdet till `start=0`. |
+| `{LIMIT}` | **Krävs**. Anger antalet returnerade scheman. |
+| `{START}` | **Krävs**. Anger förskjutningen för resultatsidorna. Om du vill hämta den första resultatsidan anger du värdet till `start=0`. |
 | `{NAME}` | Filtrerar schemat baserat på namnet. |
-| `{ORDER_BY}` | Sorterar resultatens ordning. De fält som stöds är `modifiedDate` och `createdDate`. Du kan lägga till en prepent för egenskapen med `+` eller `-` om du vill sortera den i stigande eller fallande ordning. |
+| `{ORDER_BY}` | Sorterar resultatens ordning. De fält som stöds är `modifiedDate` och `createdDate`. Du kan lägga till egenskapen i `+` eller `-` för att sortera den i stigande eller fallande ordning. |
 
 **Begäran**
 
@@ -132,7 +132,7 @@ Följande svar returnerar HTTP-status 200 med en lista över begärda scheman.
 
 ## Skapa ett schema
 
-Du kan skapa ett schema att validera mot genom att göra en POST-förfrågan till `/schemas` slutpunkt. Det finns tre sätt att skapa ett schema: skicka ett [JSON-schema](https://json-schema.org/), använda exempeldata eller referera till ett befintligt XDM-schema.
+Du kan skapa ett schema att validera mot genom att göra en POST-förfrågan till slutpunkten `/schemas`. Det finns tre sätt att skapa ett schema: skicka ett [JSON-schema](https://json-schema.org/), använda exempeldata eller referera till ett befintligt XDM-schema.
 
 ```http
 POST /schemas
@@ -142,7 +142,7 @@ POST /schemas
 
 **Begäran**
 
-Med följande begäran kan du skapa ett schema genom att skicka en [JSON-schema](https://json-schema.org/).
+Med följande begäran kan du skapa ett schema genom att skicka ett [JSON-schema](https://json-schema.org/).
 
 ```shell
 curl -X POST https://platform.adobe.io/data/foundation/conversion/schemas \
@@ -269,7 +269,7 @@ curl -X POST https://platform.adobe.io/data/foundation/conversion/schemas \
 | -------- | ----------- |
 | `name` | Namnet på schemat som du vill skapa. |
 | `schemaRef.id` | ID:t för schemat som du refererar till. |
-| `schemaRef.contentType` | Bestämmer svarsformatet för det refererade schemat. Mer information om det här fältet finns i [utvecklarhandbok för schemaregister](../../xdm/api/schemas.md#lookup) |
+| `schemaRef.contentType` | Bestämmer svarsformatet för det refererade schemat. Mer information om det här fältet finns i [utvecklarhandboken för schemaregister](../../xdm/api/schemas.md#lookup) |
 
 **Svar**
 
@@ -334,7 +334,7 @@ Ett lyckat svar returnerar HTTP-status 200 med information om ditt nyligen skapa
 
 ## Hämta ett specifikt schema
 
-Du kan hämta information om ett specifikt schema genom att göra en GET-förfrågan till `/schemas` slutpunkt och ange ID för det schema som du vill hämta i sökvägen till begäran.
+Du kan hämta information om ett specifikt schema genom att göra en GET-begäran till `/schemas`-slutpunkten och ange ID:t för det schema som du vill hämta i begärandesökvägen.
 
 **API-format**
 

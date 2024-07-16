@@ -10,27 +10,27 @@ ht-degree: 0%
 
 ---
 
-# Exempel på användningsexempel för Adobe Experience Platform [!DNL Query Service]
+# Exempel på användningsfall för Adobe Experience Platform [!DNL Query Service]
 
-Det här dokumentet och den medföljande videopresentationen ger ett avancerat arbetsflöde som visar hur Adobe Experience Platform [!DNL Query Service] är en fördel för er organisations strategiska affärsinsikter. I den här guiden visas följande viktiga begrepp:
+Det här dokumentet och den medföljande videopresentationen ger ett avancerat arbetsflöde som visar hur Adobe Experience Platform [!DNL Query Service] kan hjälpa din organisations strategiska affärsinsikter. I den här guiden visas följande viktiga begrepp:
 
 * Den centrala vikten av databearbetning för att maximera Adobe Experience Platform potential.
 * Olika sätt att bygga frågan baserat på din befintliga dataarkitektur.
 * Säkerställ den datakvalitet som uppfyller era behov och metoder för att minska eventuella brister.
 * Processen för att schemalägga en fråga att köras med en fast frekvens för användning längre fram i segmenteringen och destinationer för personalisering.
-* Det enkla för marknadsförarna att inkludera härledda datauppsättningar i sina målgrupper tack vare kraften hos [!DNL Query Service].
+* Det är enkelt för marknadsförare att inkludera härledda datauppsättningar i sina målgrupper med kraften hos [!DNL Query Service].
 
 ## Mål {#objectives}
 
 Den här arbetsflödesdemonstrationen bygger på flera Adobe Experience Platform-tjänster. Om du vill följa med i utvecklingen rekommenderar vi att du har en bra förståelse för följande funktioner och tjänster:
 
-* The [grunder för XDM-schemakomposition (Experience Data Model)](../../xdm/schema/composition.md)
-* Så här gör du [skapa datauppsättningar och importera data](https://experienceleague.adobe.com/docs/platform-learn/tutorials/data-ingestion/create-datasets-and-ingest-data.html)
-* Så här gör du [importera data med hjälp av Adobe Analytics källanslutning](https://experienceleague.adobe.com/docs/platform-learn/tutorials/sources/ingest-data-from-adobe-analytics.html)
+* [Grunderna i XDM-schemakompositionen (Experience Data Model)](../../xdm/schema/composition.md)
+* Så här [skapar du datauppsättningar och importerar data](https://experienceleague.adobe.com/docs/platform-learn/tutorials/data-ingestion/create-datasets-and-ingest-data.html)
+* Så här [importerar du data med Adobe Analytics-källanslutningen](https://experienceleague.adobe.com/docs/platform-learn/tutorials/sources/ingest-data-from-adobe-analytics.html)
 * [Segmentering](../../segmentation/home.md)
 * [Mål ](../../destinations/home.md)
 
-Exemplet på övergivna bläddringar handlar om att använda Adobe [!DNL Analytics] data för att skapa en viss användbar målgrupp. Målgruppen är att inkludera alla kunder som har besökt webbplatsen de senaste fyra dagarna men inte har gjort något inköp. Varje profil i målgruppen målgruppsanpassas sedan med den mest prisvärda SKU som följer av kundens beteendemönster.
+Exemplet på bläddringsavhopp fokuserar på att använda data från Adobe [!DNL Analytics] för att skapa en viss åtgärdbar målgrupp. Målgruppen är att inkludera alla kunder som har besökt webbplatsen de senaste fyra dagarna men inte har gjort något inköp. Varje profil i målgruppen målgruppsanpassas sedan med den mest prisvärda SKU som följer av kundens beteendemönster.
 
 Själva frågan är mycket preskriptiv och innehåller bara data som uppfyller användningsfallskriterierna för segmentdefinitionen. Detta förbättrar prestanda genom att minimera mängden [!DNL Analytics] data som bearbetas. Den beställer också data efter pris från högsta till lägsta och väljer den SKU som användaren valde till det högsta priset.
 
@@ -55,31 +55,31 @@ GROUP BY customerId,sku
 order by price desc)D;
 ```
 
-## [!DNL Query Service] se exempel på övergivna användare med hjälp av Adobe Analytics {#video-example}
+## [!DNL Query Service] exempel på bläddring efter övergivna med hjälp av Adobe Analytics {#video-example}
 
-Videopresentationen nedan ger en helhetsbild av hur Experience Platform data kan användas i verkligheten med fokus på [!DNL Query Service] och integreringar med Adobe analytics.
+Videopresentationen nedan innehåller ett helhetsbaserat exempel på hur data i din Experience Platform används för att analysera [!DNL Query Service] och Adobe.
 
 >[!VIDEO](https://video.tv.adobe.com/v/342533?quality=12&learn=on)
 
 ## Fördelar med [!DNL Query Service] {#benefits}
 
-Funktionerna i [!DNL Query Service] har många syften. Ni kan använda den för att få plats med komplex logik för segmentering, för att beräkna olika anpassade attribut för användning längre fram i kedjan eller för att avsevärt förenkla hur ni bygger ut era målgrupper.
+Funktionerna från [!DNL Query Service] har många syften. Ni kan använda den för att få plats med komplex logik för segmentering, för att beräkna olika anpassade attribut för användning längre fram i kedjan eller för att avsevärt förenkla hur ni bygger ut era målgrupper.
 
-[!DNL Query Service] gör att ni kan inkludera begränsningar i era frågor för att förenkla er målgruppsprocess. Detta förbättrar datakvaliteten genom att säkerställa att rätt data kvalificeras för era målgrupper. Att hålla kvaliteten på frågan ger en korrekt målgrupp och bidrar till tillförlitlighet i datan. Du kan också spara målgruppen genom att skapa scheman och anpassade tabeller baserade på attribut som härletts från din fråga. En anpassad tabell kan aktiveras för profil och du kan använda dessa datapunkter för segmentering och personalisering. Den här funktionen hjälper marknadsförare som vill skapa en tydlig målgrupp av människor.
+Med [!DNL Query Service] kan du inkludera begränsningar i dina frågor för att förenkla målgruppsbyggandeprocessen. Detta förbättrar datakvaliteten genom att säkerställa att rätt data kvalificeras för era målgrupper. Att hålla kvaliteten på frågan ger en korrekt målgrupp och bidrar till tillförlitlighet i datan. Du kan också spara målgruppen genom att skapa scheman och anpassade tabeller baserade på attribut som härletts från din fråga. En anpassad tabell kan aktiveras för profil och du kan använda dessa datapunkter för segmentering och personalisering. Den här funktionen hjälper marknadsförare som vill skapa en tydlig målgrupp av människor.
 
-Genom att lägga in logik i frågan som uppfyller alla återkommande eller statiska villkor, [!DNL Query Service] extraherar arbetet med avancerad segmentering.
+Genom att ta med logik i frågan som uppfyller alla återkommande eller statiska villkor, extraherar [!DNL Query Service] även bördan av avancerad segmentering.
 
 Adobe Experience Platform tillhandahåller ett datalager och de verktyg som krävs för att aktivera data på ett effektivt och tillförlitligt sätt. Genom att lagra data i Platform kan ni härleda attribut samtidigt som ni kör andra processer och eliminerar behovet av att exportera data till verktyg från tredje part för manipulering och bearbetning. Sådana allmänna omkostnader kan i hög grad påverka en projekttidslinje när man arbetar med hundratals attribut eller kampanjer. Detta ger marknadsförarna en enda plats där de kan få tillgång till sina data och bygga ut kampanjer samt ett mycket dynamiskt sätt att segmentera och personalisera sina meddelanden.
 
 ## Nästa steg
 
-Genom att läsa det här dokumentet bör du nu förstå hur [!DNL Query Service] påverkar inte bara kvaliteten på era data och hur lätt det är att segmentera, utan även dess betydelse inom dataarkitekturen för hela hela arbetsflödet från början till slut. Fler exempel på SQL som använder Adobe Analytics med [!DNL Query Service], se [Användningsexempel för Adobe Analytics marknadsföringsvariabler](./merchandising-variables.md).
+Genom att läsa det här dokumentet bör du nu förstå hur [!DNL Query Service] påverkar inte bara kvaliteten på dina data och hur lätt det är att segmentera, utan även hur viktig den är i din dataarkitektur för hela arbetsflödet från början till slut. Mer tillämpliga SQL-exempel som använder Adobe Analytics med [!DNL Query Service] finns i [Adobe Analytics marknadsföringsvariabler använder case](./merchandising-variables.md).
 
-Andra dokument som demonstrerar fördelarna med [!DNL Query Service] era strategiska affärsinsikter är [använda versaler för robotfiltrering](./bot-filtering.md) exempel.
+Andra dokument som demonstrerar fördelarna med [!DNL Query Service] för din organisations strategiska affärsinsikter är exemplet med [startsfiltreringsanvändning](./bot-filtering.md).
 
-Dessa dokument kan även hjälpa dig att förstå [!DNL Query Service] funktioner:
+De här dokumenten kan även hjälpa dig att förstå [!DNL Query Service]-funktioner:
 
 * [Vägledning för frågekörning](../best-practices/writing-queries.md)
-* [Vägledning för organisation av datatillgångar](../best-practices/organize-data-assets.md).
+* [Vägledning för dataresursorganisation](../best-practices/organize-data-assets.md).
 
 

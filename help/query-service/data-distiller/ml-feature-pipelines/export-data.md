@@ -4,16 +4,16 @@ description: Lär dig hur du delar en förberedd utbildningsdatauppsättning, so
 exl-id: 75022acf-fafd-41d6-8dfa-ff3fd4c4fa7e
 source-git-commit: 7cde32f841497edca7de0c995cc4c14501206b1a
 workflow-type: tm+mt
-source-wordcount: '537'
-ht-degree: 1%
+source-wordcount: '457'
+ht-degree: 0%
 
 ---
 
 # Exportera data till externa ML-miljöer
 
-I det här dokumentet visas hur du delar en förberedd utbildningsdatauppsättning som skapats med Data Distiller till en molnlagringsplats som din ML-miljö kan läsa för utbildning och bedömning av din modell. Exemplet här exporterar utbildningsdata till [DLZ (Data Landing Zone)](../../../sources/tutorials/api/create/cloud-storage/data-landing-zone.md). Du kan ändra lagringsmålet efter behov för att arbeta med maskininlärningsmiljön.
+I det här dokumentet visas hur du delar en förberedd utbildningsdatauppsättning som skapats med Data Distiller till en molnlagringsplats som din ML-miljö kan läsa för utbildning och bedömning av din modell. Exemplet här exporterar utbildningsdatauppsättningen till [DLZ (Data Landing Zone)](../../../sources/tutorials/api/create/cloud-storage/data-landing-zone.md). Du kan ändra lagringsmålet efter behov för att arbeta med maskininlärningsmiljön.
 
-The [Flödestjänst för destinationer](https://developer.adobe.com/experience-platform-apis/references/destinations/) används för att slutföra funktionspipelinen genom att landa en datauppsättning med beräknade funktioner på en lämplig molnlagringsplats.
+Flödestjänsten [för destinationer](https://developer.adobe.com/experience-platform-apis/references/destinations/) används för att slutföra funktionsflödet genom att landa en datauppsättning med beräknade funktioner på en lämplig molnlagringsplats.
 
 ## Skapa källanslutningen {#create-source-connection}
 
@@ -170,7 +170,7 @@ activation_res
 
 ## Smidig delning till Data Landing Zone
 
-För att enklare kunna dela en datauppsättning med Data Landing Zone `aepp` biblioteket innehåller en `exportDatasetToDataLandingZone` funktion som kör stegen ovan i ett enda funktionsanrop:
+Om du enklare vill dela en datauppsättning med Data Landing Zone tillhandahåller biblioteket `aepp` en `exportDatasetToDataLandingZone`-funktion som utför stegen ovan i ett enda funktionsanrop:
 
 ```python
 from aepp import exportDatasetToDataLandingZone

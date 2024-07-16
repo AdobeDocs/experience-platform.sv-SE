@@ -23,13 +23,13 @@ När du skapar ditt mål konfigurerar du ditt schema och dina identitetsnamnutry
 
 >[!IMPORTANT]
 >
->Alla parameternamn och värden som stöds av Destinationen SDK är **skiftlägeskänslig**. Undvik skiftlägeskänslighetsfel genom att använda parameternamn och värden exakt som de visas i dokumentationen.
+>Alla parameternamn och värden som stöds av Destinationen SDK är **skiftlägeskänsliga**. Undvik skiftlägeskänslighetsfel genom att använda parameternamn och värden exakt som de visas i dokumentationen.
 
 ## Mappningar som stöds för direktuppspelningsmål {#streaming-mappings}
 
 Mål för realtidsströmning som byggts med Destination SDK stöder de mappningskonfigurationer som beskrivs i tabellen nedan.
 
-| Källfält | Målfält |
+| Source | Målfält |
 | --- | --- |
 | XDM-attribut | Eget attribut |
 | Namnutrymme för identitet | Namnutrymme för identitet |
@@ -64,11 +64,11 @@ Användare kan mappa attribut från sin XDM-källprofil till anpassade attribut 
 
 Användarna måste ange namnet på det anpassade målattributet manuellt när de väljer målfältsmappningen.
 
-![Skärmbild av användargränssnittet för plattformen som visar val av anpassat attribut.](../../assets/functionality/destination-configuration/mapping-streaming-select-custom-attribute.png)
+![Skärmbild av användargränssnittet för plattformen visar val av anpassat attribut.](../../assets/functionality/destination-configuration/mapping-streaming-select-custom-attribute.png)
 
 Den resulterande gränssnittsupplevelsen visas i bilden nedan.
 
-![Skärmbild av användargränssnittet för plattformen som visar mappning av XDM-attribut till anpassade attribut för direktuppspelningsmål.](../../assets/functionality/destination-configuration/mapping-streaming-xdm-custom.png)
+![Skärmbild för plattformsgränssnitt som visar XDM-attributmappning till anpassade attribut för direktuppspelningsmål.](../../assets/functionality/destination-configuration/mapping-streaming-xdm-custom.png)
 
 ### Mappa identitetsnamnutrymmen till partneridentitetsnamnutrymmen {#streaming-identity-to-identity}
 
@@ -76,13 +76,13 @@ Användare kan mappa anpassade eller globala identitetsnamnutrymmen från plattf
 
 Den resulterande gränssnittsupplevelsen visas i bilden nedan.
 
-![Skärmbild av användargränssnittet för plattformen som visar identitetsmappning till identitet för direktuppspelningsmål.](../../assets/functionality/destination-configuration/mapping-streaming-identity-identity.png)
+![Skärmbild för plattformsgränssnitt som visar identitetsmappning till identitet för direktuppspelningsmål.](../../assets/functionality/destination-configuration/mapping-streaming-identity-identity.png)
 
 ## Mappningar som stöds för filbaserade mål {#batch-mappings}
 
 Filbaserade mål som skapats med Destination SDK stöder mappningskonfigurationerna som beskrivs i tabellen nedan. I nästa avsnitt finns detaljerade mappningsexempel.
 
-| Källfält | Målfält |
+| Source | Målfält |
 | --- | --- |
 | XDM-attribut | Attribut/anpassat attribut |
 | Namnutrymme för identitet | Attribut/anpassat attribut |
@@ -118,11 +118,11 @@ För filbaserade mål fylls målfältet automatiskt i med ett standardattribut m
 
 Den resulterande gränssnittsupplevelsen visas i bilden nedan.
 
-![Skärmbild av användargränssnittet för plattformen som visar XDM-mappning till anpassade attribut för filbaserade mål.](../../assets/functionality/destination-configuration/mapping-batch-xdm-custom.png)
+![Skärmbild för plattformsgränssnitt som visar XDM-mappning till anpassade attribut för filbaserade mål.](../../assets/functionality/destination-configuration/mapping-batch-xdm-custom.png)
 
 Användare kan lämna standardnamnet på plats eller ange ett eget attributnamn på urvalsskärmen för målfält.
 
-![Skärmbild av användargränssnittet för plattformen med anpassat val av målattribut för filbaserade mål.](../../assets/functionality/destination-configuration/mapping-batch-custom-attribute.png)
+![Skärmbild för plattformsgränssnitt med anpassat val av målattribut för filbaserade mål.](../../assets/functionality/destination-configuration/mapping-batch-custom-attribute.png)
 
 ### Mappa identitetsnamnutrymmen till anpassade attribut {#batch-identity-to-custom}
 
@@ -130,11 +130,11 @@ Användare kan mappa anpassade eller globala identitetsnamnutrymmen från Plattf
 
 När du väljer ett identitetsnamnutrymme som ett källfält fylls målfältet automatiskt i med ett motsvarande identitetsnamnutrymme. Om du vill ersätta målfältet med ett anpassat attribut måste användaren ange ett anpassat attributnamn på målfältets markeringsskärm.
 
-![Skärmbild av användargränssnittet för plattformen med anpassat val av målattribut för filbaserade mål.](../../assets/functionality/destination-configuration/mapping-batch-custom-attribute.png)
+![Skärmbild för plattformsgränssnitt med anpassat val av målattribut för filbaserade mål.](../../assets/functionality/destination-configuration/mapping-batch-custom-attribute.png)
 
 Den resulterande gränssnittsupplevelsen visas i bilden nedan.
 
-![Skärmbild av användargränssnittet för plattformen som visar identitetsmappning till anpassade attribut för filbaserade mål.](../../assets/functionality/destination-configuration/mapping-batch-identity-custom.png)
+![Skärmbild för plattformsgränssnitt som visar identitetsmappning till anpassade attribut för filbaserade mål.](../../assets/functionality/destination-configuration/mapping-batch-identity-custom.png)
 
 ### Mappa identitetsnamnutrymmen till partneridentitetsnamnutrymmen {#batch-identity-to-identity}
 
@@ -144,7 +144,7 @@ När du väljer ett identitetsnamnutrymme som ett källfält fylls målfältet a
 
 Den resulterande gränssnittsupplevelsen visas i bilden nedan.
 
-![Skärmbild av användargränssnittet för plattformen som visar identitetsmappning till identitet för filbaserade mål.](../../assets/functionality/destination-configuration/mapping-batch-identity-identity.png)
+![Skärmbild för plattformsanvändargränssnitt som visar identitetsmappning till identitet för filbaserade mål.](../../assets/functionality/destination-configuration/mapping-batch-identity-identity.png)
 
 
 ## Nästa steg {#next-steps}

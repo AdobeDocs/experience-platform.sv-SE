@@ -4,8 +4,8 @@ description: Lär dig hur du anropar slutpunkten /callback i Reactor API.
 exl-id: dd980f91-89e3-4ba0-a6fc-64d66b288a22
 source-git-commit: 7f3b9ef9270b7748bc3366c8c39f503e1aee2100
 workflow-type: tm+mt
-source-wordcount: '600'
-ht-degree: 1%
+source-wordcount: '606'
+ht-degree: 3%
 
 ---
 
@@ -13,7 +13,7 @@ ht-degree: 1%
 
 Ett återanrop är ett meddelande som Reactor API skickar till en specifik URL (vanligtvis en som din organisation är värd för).
 
-Återanrop är avsedda att användas tillsammans med [granskningshändelser](./audit-events.md) för att följa upp aktiviteter i reaktors-API:t. Varje gång en granskningshändelse av en viss typ genereras kan ett återanrop skicka ett matchande meddelande till den angivna URL:en.
+Återanrop är avsedda att användas tillsammans med [granskningshändelser](./audit-events.md) för att spåra aktiviteter i Reaktors API. Varje gång en granskningshändelse av en viss typ genereras kan ett återanrop skicka ett matchande meddelande till den angivna URL:en.
 
 Tjänsten bakom URL:en som anges i återanropet måste svara med HTTP-statuskoden 200 (OK) eller 201 (Skapad). Om tjänsten inte svarar med någon av dessa statuskoder provas meddelandeleveransen igen med följande intervall:
 
@@ -31,11 +31,11 @@ Tjänsten bakom URL:en som anges i återanropet måste svara med HTTP-statuskode
 
 Om alla leveransförsök misslyckas ignoreras meddelandet.
 
-Ett återanrop tillhör exakt ett [property](./properties.md). En egenskap kan ha många återanrop.
+Ett återanrop tillhör exakt en [egenskap](./properties.md). En egenskap kan ha många återanrop.
 
 ## Komma igång
 
-Slutpunkten som används i den här guiden är en del av [Reaktors-API](https://www.adobe.io/experience-platform-apis/references/reactor/). Läs igenom [komma igång-guide](../getting-started.md) om du vill ha viktig information om hur du autentiserar till API:t.
+Slutpunkten som används i den här guiden ingår i [Reaktors-API](https://www.adobe.io/experience-platform-apis/references/reactor/). Innan du fortsätter bör du läsa [kom igång-guiden](../getting-started.md) för att få viktig information om hur du autentiserar dig för API:t.
 
 ## Visa återanrop {#list}
 
@@ -49,13 +49,13 @@ GET  /properties/{PROPERTY_ID}/callbacks
 
 | Parameter | Beskrivning |
 | --- | --- |
-| `{PROPERTY_ID}` | The `id` för egenskapen vars återanrop du vill visa. |
+| `{PROPERTY_ID}` | `id` för egenskapen vars återanrop du vill visa. |
 
 {style="table-layout:auto"}
 
 >[!NOTE]
 >
->Med hjälp av frågeparametrar kan listade återanrop filtreras baserat på följande attribut:<ul><li>`created_at`</li><li>`updated_at`</li></ul>Se guiden [filtrera svar](../guides/filtering.md) för mer information.
+>Med hjälp av frågeparametrar kan listade återanrop filtreras baserat på följande attribut:<ul><li>`created_at`</li><li>`updated_at`</li></ul>Mer information finns i guiden om [filtrering av svar](../guides/filtering.md).
 
 **Begäran**
 
@@ -128,7 +128,7 @@ GET /callbacks/{CALLBACK_ID}
 
 | Parameter | Beskrivning |
 | --- | --- |
-| `CALLBACK_ID` | The `id` för det återanrop som du vill söka efter. |
+| `CALLBACK_ID` | `id` för det återanrop som du vill söka efter. |
 
 {style="table-layout:auto"}
 
@@ -192,7 +192,7 @@ POST /properties/{PROPERTY_ID}/callbacks
 
 | Parameter | Beskrivning |
 | --- | --- |
-| `PROPERTY_ID` | The `id` i [property](./properties.md) som du definierar återanropet under. |
+| `PROPERTY_ID` | `id` för [egenskapen](./properties.md) som du definierar återanropet under. |
 
 {style="table-layout:auto"}
 
@@ -221,7 +221,7 @@ curl -X POST \
 | Egenskap | Beskrivning |
 | --- | --- |
 | `url` | URL-målet för återanropsmeddelandet. URL:en måste använda HTTPS-protokolltillägget. |
-| `subscriptions` | En array med strängar som anger de granskningshändelsetyper som kommer att utlösa återanropet. Se [slutpunktsguide för granskningshändelser](./audit-events.md) för en lista över möjliga händelsetyper. |
+| `subscriptions` | En array med strängar som anger de granskningshändelsetyper som kommer att utlösa återanropet. En lista med möjliga händelsetyper finns i [slutpunktshandboken för granskningshändelser](./audit-events.md). |
 
 {style="table-layout:auto"}
 
@@ -273,13 +273,13 @@ PATCH /callbacks/{CALLBACK_ID}
 
 | Parameter | Beskrivning |
 | --- | --- |
-| `CALLBACK_ID` | The `id` för det återanrop som du vill uppdatera. |
+| `CALLBACK_ID` | `id` för det återanrop som du vill uppdatera. |
 
 {style="table-layout:auto"}
 
 **Begäran**
 
-Följande begäran uppdaterar `subscriptions` array för ett befintligt återanrop.
+Följande begäran uppdaterar `subscriptions`-arrayen för ett befintligt återanrop.
 
 ```shell
 curl -X PATCH \
@@ -307,7 +307,7 @@ curl -X PATCH \
 | Egenskap | Beskrivning |
 | --- | --- |
 | `attributes` | Ett objekt vars egenskaper representerar de attribut som ska uppdateras för återanropet. Varje nyckel representerar det callback-attribut som ska uppdateras, tillsammans med motsvarande värde som det ska uppdateras till.<br><br>Följande attribut kan uppdateras för återanrop:<ul><li>`subscriptions`</li><li>`url`</li></ul> |
-| `id` | The `id` för det återanrop som du vill uppdatera. Det här bör matcha `{CALLBACK_ID}` värdet som anges i sökvägen för begäran. |
+| `id` | `id` för det återanrop som du vill uppdatera. Det här bör matcha det `{CALLBACK_ID}`-värde som anges i sökvägen till begäran. |
 | `type` | Den typ av resurs som uppdateras. För den här slutpunkten måste värdet vara `callbacks`. |
 
 {style="table-layout:auto"}
@@ -361,7 +361,7 @@ DELETE /callbacks/{CALLBACK_ID}
 
 | Parameter | Beskrivning |
 | --- | --- |
-| `CALLBACK_ID` | The `id` för det återanrop som du vill ta bort. |
+| `CALLBACK_ID` | `id` för det återanrop som du vill ta bort. |
 
 {style="table-layout:auto"}
 

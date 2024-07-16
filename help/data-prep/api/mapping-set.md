@@ -6,22 +6,22 @@ description: Du kan använda slutpunkten "/mappingSets" i Adobe Experience Platf
 exl-id: a4e4ddcd-164e-42aa-b7d1-ba59d70da142
 source-git-commit: 81f48de908b274d836f551bec5693de13c5edaf1
 workflow-type: tm+mt
-source-wordcount: '852'
+source-wordcount: '859'
 ht-degree: 0%
 
 ---
 
 # Slutpunkt för mappningsuppsättningar
 
-Mappningsuppsättningar kan användas för att definiera hur data i ett källschema mappas till data i ett målschema. Du kan använda `/mappingSets` slutpunkt i API:t för dataprep för att hämta, skapa, uppdatera och validera mappningsuppsättningar programmatiskt.
+Mappningsuppsättningar kan användas för att definiera hur data i ett källschema mappas till data i ett målschema. Du kan använda slutpunkten `/mappingSets` i API:t för dataprep för att hämta, skapa, uppdatera och validera mappningsuppsättningar programmatiskt.
 
 ## Listmappningsuppsättningar
 
-Du kan hämta en lista över alla mappningsuppsättningar för din organisation genom att göra en GET-förfrågan till `/mappingSets` slutpunkt.
+Du kan hämta en lista över alla mappningsuppsättningar för din organisation genom att göra en GET-förfrågan till slutpunkten `/mappingSets`.
 
 **API-format**
 
-The `/mappingSets` slutpunkten har stöd för flera frågeparametrar som hjälper dig att filtrera dina resultat. De flesta av dessa parametrar är valfria, men bör användas för att minska kostsamma overheadkostnader. Du måste dock inkludera båda `start` och `limit` parametrar som en del av din begäran. Flera parametrar kan inkluderas, avgränsade med et-tecken (`&`).
+Slutpunkten `/mappingSets` har stöd för flera frågeparametrar som kan hjälpa dig att filtrera dina resultat. De flesta av dessa parametrar är valfria, men bör användas för att minska kostsamma overheadkostnader. Du måste dock inkludera både parametern `start` och parametern `limit` som en del av din begäran. Flera parametrar kan inkluderas, avgränsade med et-tecken (`&`).
 
 ```http
 GET /mappingSets?limit={LIMIT}&start={START}
@@ -33,9 +33,9 @@ GET /mappingSets?limit={LIMIT}&start={START}&expandSchema={EXPAND_SCHEMA}
 | Parameter | Beskrivning |
 | --------- | ----------- |
 | `{LIMIT}` | (**Obligatoriskt**) Anger antalet returnerade mappningsuppsättningar. |
-| `{START}` | (**Obligatoriskt**) Anger förskjutningen för resultatsidorna. Om du vill hämta den första resultatsidan anger du värdet till `start=0`. |
+| `{START}` | (**Obligatorisk**) Anger förskjutningen för resultatsidorna. Om du vill hämta den första resultatsidan anger du värdet till `start=0`. |
 | `{NAME}` | Filtrerar mappningsuppsättningarna efter namn. |
-| `{ORDER_BY}` | Sorterar resultatens ordning. De enda fält som stöds är `createdDate` och `updatedDate`. Du kan lägga till en prepent för egenskapen med `+` eller `-` om du vill sortera den i stigande eller fallande ordning. |
+| `{ORDER_BY}` | Sorterar resultatens ordning. De enda fält som stöds är `createdDate` och `updatedDate`. Du kan lägga till egenskapen i `+` eller `-` för att sortera den i stigande eller fallande ordning. |
 | `{EXPAND_SCHEMA}` | Ett booleskt värde som avgör om det fullständiga utdataschemat returneras som en del av svaret. |
 
 **Begäran**
@@ -165,7 +165,7 @@ curl -X GET https://platform.adobe.io/data/foundation/conversion/mappingSets?lim
 
 ## Skapa en mappningsuppsättning
 
-Du kan skapa en ny mappningsuppsättning genom att göra en POST-förfrågan till `/mappingSets` slutpunkt.
+Du kan skapa en ny mappningsuppsättning genom att göra en POST-förfrågan till slutpunkten `/mappingSets`.
 
 **API-format**
 
@@ -218,7 +218,7 @@ curl -X POST https://platform.adobe.io/data/foundation/conversion/mappingSets \
 | -------- | ----------- |
 | `outputSchema.schemaRef.id` | ID:t för XDM-schemat som du refererar till. |
 | `outputSchema.schemaRef.contentType` | Bestämmer svarsformatet för det refererade schemat. Mer information om det här fältet finns i [Utvecklarhandbok för schemaregister](../../xdm/api/schemas.md#lookup). |
-| `mappings.sourceType` | Källtypen beskriver hur värdet extraheras från källan till målet. Källtypen stöder två möjliga värden: <ul><li>`ATTRIBUTE`: Källtypen `ATTRIBUTE` används när indataattributet kommer från ett källschema.</li><li>`EXPRESSION`: Källtypen `EXPRESSION` används när mappningen slutförs med ett beräkningsfält.</li></ul> **VARNING**: Om du anger källtypsvärden felaktigt kan mappningsuppsättningarna inte redigeras. |
+| `mappings.sourceType` | Källtypen beskriver hur värdet extraheras från källan till målet. Källtypen stöder två möjliga värden: <ul><li>`ATTRIBUTE`: Källtypen `ATTRIBUTE` används när indataattributet kommer från ett källschema.</li><li>`EXPRESSION`: Källtypen `EXPRESSION` används när mappningen slutförs med ett beräkningsfält.</li></ul> **VARNING**: Om du anger källtypsvärden felaktigt kan mappningsuppsättningarna bli oredigerbara. |
 | `mappings.source` | Den plats där du vill att data ska mappas från. |
 | `mappings.destination` | Platsen där du vill att data ska mappas. |
 
@@ -239,7 +239,7 @@ Ett lyckat svar returnerar HTTP-status 200 med information om din nyligen skapad
 
 ## Validera mappningar
 
-Du kan validera att mappningarna fungerar som de ska genom att göra en POST-förfrågan till `/mappingSets/validate` slutpunkt.
+Du kan validera att dina mappningar fungerar som de ska genom att göra en POST-förfrågan till slutpunkten `/mappingSets/validate`.
 
 **API-format**
 
@@ -313,7 +313,7 @@ Ett lyckat svar returnerar HTTP-status 200 med verifieringsinformation för den 
 
 ## Förhandsgranska data för mappningar
 
-Du kan förhandsgranska vilka data som mappas till genom att göra en POST-förfrågan på `/mappingSets/preview` slutpunkt.
+Du kan förhandsgranska vilka data som mappas till genom att göra en POST-förfrågan till slutpunkten `/mappingSets/preview`.
 
 **API-format**
 
@@ -392,7 +392,7 @@ Ett lyckat svar returnerar HTTP-status 200 med en förhandsgranskning av dina ma
 
 ## Söka efter en mappningsuppsättning
 
-Du kan hämta en specifik mappningsuppsättning genom att ange dess ID i sökvägen för en GET-begäran till `/mappingSets` slutpunkt. Den här slutpunkten har också stöd för flera frågeparametrar som hjälper dig att hämta information om den angivna versionen av mappningsuppsättningen.
+Du kan hämta en specifik mappningsuppsättning genom att ange dess ID i sökvägen för en GET-begäran till slutpunkten `/mappingSets`. Den här slutpunkten har också stöd för flera frågeparametrar som hjälper dig att hämta information om den angivna versionen av mappningsuppsättningen.
 
 **API-format**
 
@@ -583,7 +583,7 @@ Ett lyckat svar returnerar HTTP-status 200 med detaljerad information om mappnin
 
 ## Uppdatera en mappningsuppsättning
 
-Du kan uppdatera en mappningsuppsättning genom att ange dess ID i sökvägen till en `PUT` begäran till `mappingSets` slutpunkt.
+Du kan uppdatera en mappningsuppsättning genom att ange dess ID i sökvägen för en `PUT`-begäran till `mappingSets`-slutpunkten.
 
 **API-format**
 

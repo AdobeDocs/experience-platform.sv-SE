@@ -7,7 +7,7 @@ badge: Beta
 source-git-commit: ba72abd9febc6d9e6491748519199b54a26ae1c5
 workflow-type: tm+mt
 source-wordcount: '312'
-ht-degree: 4%
+ht-degree: 5%
 
 ---
 
@@ -42,9 +42,9 @@ I det här scenariot är ett CRM-ID inkapslat och representerar både online- (u
 
 Händelser:
 
-* CRM-ID: Tom, Email_LC_SHA256: Tom<span>@acme.com
+* CRM-ID: Tom, Email_LC_SHA256: tom<span>@acme.com
 * CRM-ID: Tom, ECID: 111
-* CRM ID: Sommar, Email_LC_SHA256: Sommar<span>@acme.com
+* CRM-ID: Sommar, Email_LC_SHA256: Sommar<span>@acme.com
 * CRM-ID: Sommar, ECID: 222
 
 Algoritmkonfiguration:

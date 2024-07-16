@@ -38,45 +38,45 @@ Adobe Experience Platform tillhandahåller flera kontrollpaneler där du kan vis
 
 | Funktion | Beskrivning |
 | --- | --- |
-| Profiler, segment, destinationer och kontrollpaneler för licensanvändning (beta) | **Obs! Instrumentpanelsfunktionen är för närvarande i betaversion och är inte tillgänglig för alla användare. Dokumentationen och funktionaliteten kan komma att ändras.**<br/><br/> Instrumentpaneler ger användningsklara rapporter om organisationens data och är inbyggda direkt i marknadsföringsarbetsflödet inom Platform. Dessa instrumentpaneler är tillgängliga utan behov av ytterligare IT-support eller den tid och ansträngning som annars skulle behövas för att exportera och bearbeta data med ytterligare design och implementering av datalagerhantering. |
+| Profiler, segment, destinationer och kontrollpaneler för licensanvändning (Beta) | **Obs! Instrumentpanelsfunktionen är för närvarande i betaversion och är inte tillgänglig för alla användare. Dokumentationen och funktionaliteten kan komma att ändras.**<br/><br/> Instrumentpaneler tillhandahåller körklar rapportering av organisationens data och är inbyggda direkt i marknadsföringsarbetsflödet inom Platform. Dessa instrumentpaneler är tillgängliga utan behov av ytterligare IT-support eller den tid och ansträngning som annars skulle behövas för att exportera och bearbeta data med ytterligare design och implementering av datalagerhantering. |
 
 ## [!DNL Data Science Workspace] {#dsw}
 
-Data Science Workspace använder maskininlärning och artificiell intelligens för att skapa insikter utifrån era data. Data Science Workspace är integrerat i Adobe Experience Platform och hjälper er att göra prognoser med hjälp av ert innehåll och era dataresurser över alla Adobe-lösningar.
+Data Science Workspace använder maskininlärning och artificiell intelligens för att skapa insikter utifrån era data. Data Science Workspace är integrerat i Adobe Experience Platform och hjälper er att göra prognoser med hjälp av ert innehåll och era datatillgångar i alla Adobe-lösningar.
 
 **Nya funktioner**
 
 | Funktion | Beskrivning |
 | --- | --- |
-| JupyterLab EDA Notebook | Den experimentella dataanalysen (EDA) Python-anteckningsboken finns nu tillgänglig i Jupyterlab. Den här bärbara datorn är utformad för att hjälpa dig att upptäcka datamönster, kontrollera datavården och sammanfatta relevanta data för prediktiva modeller. Se självstudiekursen om [undersöka webbaserade data för prediktiva modeller](../../data-science-workspace/jupyterlab/eda-notebook.md) för mer information. |
+| JupyterLab EDA Notebook | Den experimentella dataanalysen (EDA) Python-anteckningsboken finns nu tillgänglig i Jupyterlab. Den här bärbara datorn är utformad för att hjälpa dig att upptäcka datamönster, kontrollera datavården och sammanfatta relevanta data för prediktiva modeller. Mer information finns i självstudiekursen [Utforska webbaserade data för prediktiva modeller](../../data-science-workspace/jupyterlab/eda-notebook.md). |
 
-Mer allmän information om arbetsytan Datavetenskap finns i [Översikt över arbetsytan Data Science](../../data-science-workspace/home.md).
+Mer allmän information om Data Science Workspace finns i [Data Science Workspace overview](../../data-science-workspace/home.md).
 
 ## [!DNL Dataflows] {#dataflows}
 
 I Adobe Experience Platform hämtas data från en mängd olika källor, som analyseras i Experience Platform och aktiveras till en mängd olika destinationer. Plattformen gör processen att spåra detta potentiellt icke-linjära dataflöde enklare genom att tillhandahålla genomskinlighet med dataflöden.
 
-Dataflöden är en representation av datajobb som flyttar data mellan olika plattformar. Dessa dataflöden är konfigurerade för olika tjänster, vilket hjälper dig att flytta data från källanslutningar till måldatauppsättningar, där de sedan används av [!DNL Identity Service] och [!DNL Real-Time Customer Profile] innan den aktiveras [!DNL Destinations].
+Dataflöden är en representation av datajobb som flyttar data mellan olika plattformar. Dessa dataflöden är konfigurerade för olika tjänster, vilket hjälper dig att flytta data från källanslutningar till måldatauppsättningar, där de sedan används av [!DNL Identity Service] och [!DNL Real-Time Customer Profile] innan de aktiveras till [!DNL Destinations].
 
 **Nya funktioner**
 
 | Funktion | Beskrivning |
 | --- | --- |
-| Ny kontrollpanel | Nu kan du använda kontrollpanelen för genomskinlighet mellan tjänster och åtgärdbara insikter för källdatainhämtning. Den nya kontrollpanelen ger en heltäckande bild av data som bearbetats från [!DNL Data Lake] till [!DNL Identity Service] och till [!DNL Profile], samtidigt som du kan övervaka hur många gånger du har fått tag på produkten, hur många gånger det har gått och hur många fel som har uppstått. Se självstudiekursen om [övervaka källdataflöden i användargränssnittet](../../dataflows/ui/monitor-sources.md) för mer information. |
+| Ny kontrollpanel | Nu kan du använda kontrollpanelen för genomskinlighet mellan tjänster och åtgärdbara insikter för källdatainhämtning. Den nya kontrollpanelen ger en heltäckande vy över data som bearbetats från [!DNL Data Lake] till [!DNL Identity Service] och till [!DNL Profile], samtidigt som du kan övervaka hur många gånger användarna har fått, lyckats och misslyckats. Mer information finns i självstudiekursen [Övervaka källdataflöden i användargränssnittet](../../dataflows/ui/monitor-sources.md). |
 
-Mer allmän information om dataflöden finns i [dataflödesöversikt](../../dataflows/home.md).
+Mer allmän information om dataflöden finns i [dataflödesöversikten](../../dataflows/home.md).
 
 ## [!DNL Destinations] {#destinations}
 
 [!DNL Destinations] är färdiga integreringar med målplattformar som möjliggör smidig aktivering av data från Adobe Experience Platform. Ni kan använda destinationer för att aktivera kända och okända data för flerkanalskampanjer, e-postkampanjer, riktad reklam och många andra användningsfall.
 
-**Nya destinationer**
+**Nya mål**
 
 | Mål | Beskrivning |
 | ----------- | ----------- |
-| [[!DNL LinkedIn Matched Audiences]](../../destinations/catalog/social/linkedin.md) | The [!DNL LinkedIn Matched Audiences] kan du aktivera målgrupper i [!DNL LinkedIn] social plattform. |
+| [[!DNL LinkedIn Matched Audiences]](../../destinations/catalog/social/linkedin.md) | Med anslutningen [!DNL LinkedIn Matched Audiences] kan du aktivera målgrupper på den sociala plattformen [!DNL LinkedIn]. |
 
-Mer allmän information om destinationer finns i [destinationer, översikt](../../destinations/home.md).
+Mer allmän information om destinationer finns i [målöversikten](../../destinations/home.md).
 
 ## [!DNL Experience Data Model (XDM) System] {#xdm}
 
@@ -88,27 +88,27 @@ XDM är en öppet dokumenterad specifikation som utformats för att förbättra 
 
 | Funktion | Beskrivning |
 | --- | --- |
-| Uppgraderat sökgränssnitt | Förbättrade sökfunktioner finns nu i [!UICONTROL Browse] i [!UICONTROL Schemas] arbetsytan och dialogrutan för val av schemafältgrupp i [!DNL Schema Editor].<br><br>När du söker efter en term tidigare innehåller resultatet bara XDM-resurser vars namn matchar sökfrågan. Förutom resurser vars namn matchar frågan kommer resurser som innehåller enskilda attribut som matchar termen att tas med. På så sätt kan du söka efter XDM-resurser baserat på de attribut de innehåller i stället för efter resursnamn.<br><br>Se dokumenten på [utforska XDM-resurser](../../xdm/ui/explore.md) och [hantera scheman](../../xdm/ui/resources/schemas.md) i användargränssnittet för mer information. |
+| Uppgraderat sökgränssnitt | Förbättrade sökfunktioner är nu tillgängliga på fliken [!UICONTROL Browse] på arbetsytan [!UICONTROL Schemas] och i dialogrutan för val av schemafältgrupp i [!DNL Schema Editor].<br><br>När du söker efter en term tidigare innehåller resultaten bara XDM-resurser vars namn matchar sökfrågan. Förutom resurser vars namn matchar frågan kommer resurser som innehåller enskilda attribut som matchar termen att tas med. På så sätt kan du söka efter XDM-resurser baserat på de attribut de innehåller i stället för efter resursnamn.<br><br>Mer information finns i dokumenten om att [utforska XDM-resurser](../../xdm/ui/explore.md) och [hantera scheman](../../xdm/ui/resources/schemas.md) i användargränssnittet. |
 
-Mer allmän information om XDM finns i [XDM - systemöversikt](../../xdm/home.md).
+Mer allmän information om XDM finns i [XDM-systemöversikt](../../xdm/home.md).
 
 ## [!DNL Identity Service] {#identity}
 
 För att kunna leverera relevanta digitala upplevelser måste ni ha en fullständig förståelse för era kunder. Detta blir svårare när era kunddata fragmenteras över olika system, vilket gör att varje enskild kund ser ut att ha flera&quot;identiteter&quot;.
 
-Adobe Experience Platform [!DNL Identity Service] hjälper er att få en bättre bild av era kunder och deras beteende genom att skapa en bro mellan identiteter och enheter, så att ni kan leverera slagkraftiga, personliga digitala upplevelser i realtid.
+Adobe Experience Platform [!DNL Identity Service] hjälper dig att få en bättre bild av kunden och deras beteende genom att överbrygga identiteter mellan olika enheter och system, så att du kan leverera slagkraftiga, personliga digitala upplevelser i realtid.
 
 **Nya funktioner**
 
 | Funktion | Beskrivning |
 | --- | --- |
-| Identitetsdiagramvisningsprogram | Med identitetsdiagramvisningsprogrammet kan du validera och visualisera identiteter som sammanfogats i användargränssnittet, vilket ger förbättrad felsökning och genomskinlighet. Se [dokument för identitetsdiagramvisningsprogram](../../identity-service/features/identity-graph-viewer.md) för mer information. |
+| Identitetsdiagramvisningsprogram | Med identitetsdiagramvisningsprogrammet kan du validera och visualisera identiteter som sammanfogats i användargränssnittet, vilket ger förbättrad felsökning och genomskinlighet. Mer information finns i [identitetsdiagramvisningsdokumentet](../../identity-service/features/identity-graph-viewer.md). |
 
-Mer allmän information om [!DNL Identity Service], se [Översikt över identitetstjänsten](../../identity-service/home.md).
+Mer allmän information om [!DNL Identity Service] finns i [Översikt över identitetstjänsten](../../identity-service/home.md).
 
 ## Kundprofil i realtid {#profile}
 
-Med Adobe Experience Platform kan ni skapa samordnade, enhetliga och relevanta upplevelser för era kunder oavsett var och när de interagerar med ert varumärke. Med kundprofilen i realtid kan ni se en helhetsbild av varje enskild kund som kombinerar data från flera kanaler, inklusive online-, offline-, CRM- och tredjepartsdata. [!DNL Profile] gör att ni kan sammanställa kunddata i en enhetlig vy som ger ett användbart, tidsstämplat konto för varje kundinteraktion.
+Med Adobe Experience Platform kan ni skapa samordnade, enhetliga och relevanta upplevelser för era kunder oavsett var och när de interagerar med ert varumärke. Med kundprofilen i realtid kan ni se en helhetsbild av varje enskild kund som kombinerar data från flera kanaler, inklusive online-, offline-, CRM- och tredjepartsdata. Med [!DNL Profile] kan du konsolidera kunddata i en enhetlig vy med ett åtgärdbart, tidsstämplat konto för varje kundinteraktion.
 
 **Nya funktioner**
 
@@ -116,7 +116,7 @@ Med Adobe Experience Platform kan ni skapa samordnade, enhetliga och relevanta u
 | ------- | ----------- |
 | Beräknade attribut (Alpha) | ***Obs! Den här funktionen är för närvarande alfavärden och är inte tillgänglig för alla användare. Dokumentationen och funktionaliteten kan komma att ändras.*** <br/><br/>Beräknade attribut är funktioner som används för att samla data på händelsenivå i attribut på profilnivå. Sedan kan ni använda aggregaten för segmentering, aktivering och personalisering. Exempel på sådana funktioner är count, sum, Average, min, max, true/false. Beräknade attribut är för närvarande bara tillgängliga via API. |
 
-Mer information om kundprofil i realtid, inklusive självstudiekurser och bästa metoder för att arbeta med [!DNL Profile] data, kan du börja med att läsa [Översikt över kundprofiler i realtid](../../profile/home.md).
+Mer information om kundprofil i realtid, inklusive självstudiekurser och bästa praxis för att arbeta med [!DNL Profile]-data, får du genom att läsa [Översikt över kundprofilen i realtid](../../profile/home.md).
 
 ## [!DNL Sources] {#sources}
 
@@ -128,7 +128,7 @@ Experience Platform tillhandahåller ett RESTful-API och ett interaktivt använd
 
 | Funktion | Beskrivning |
 | --- | --- |
-| [!DNL Google PubSub] | Nu kan du ansluta [!DNL Google PubSub] till [!DNL Experience Platform] med [!DNL Flow Service] API eller gränssnittet. Se [[!DNL Google PubSub] anslutningsöversikt](../../sources/connectors/cloud-storage/google-pubsub.md) för mer information. |
-| [!DNL Oracle Object Storage] | Nu kan du ansluta [!DNL Oracle Object Storage] till [!DNL Experience Platform] med [!DNL Flow Service] API eller gränssnittet. Se [[!DNL Oracle Object Storage] anslutningsöversikt](../../sources/connectors/cloud-storage/oracle-object-storage.md) för mer information. |
+| [!DNL Google PubSub] | Du kan nu ansluta [!DNL Google PubSub] till [!DNL Experience Platform] med API:t [!DNL Flow Service] eller gränssnittet. Mer information finns i [[!DNL Google PubSub] anslutningsöversikten](../../sources/connectors/cloud-storage/google-pubsub.md). |
+| [!DNL Oracle Object Storage] | Du kan nu ansluta [!DNL Oracle Object Storage] till [!DNL Experience Platform] med API:t [!DNL Flow Service] eller gränssnittet. Mer information finns i [[!DNL Oracle Object Storage] anslutningsöversikten](../../sources/connectors/cloud-storage/oracle-object-storage.md). |
 
-Mer allmän information om källor finns i [källöversikt](../../sources/home.md).
+Mer allmän information om källor finns i [Källöversikt](../../sources/home.md).

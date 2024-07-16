@@ -4,8 +4,8 @@ description: Den senaste versionsinformationen för taggtillägget Adobe Media A
 exl-id: 79d92f42-795f-4685-926f-ebe6f4125539
 source-git-commit: 88939d674c0002590939004e0235d3da8b072118
 workflow-type: tm+mt
-source-wordcount: '199'
-ht-degree: 1%
+source-wordcount: '210'
+ht-degree: 0%
 
 ---
 
@@ -13,7 +13,7 @@ ht-degree: 1%
 
 >[!NOTE]
 >
->Adobe Experience Platform Launch har omklassificerats som en serie datainsamlingstekniker i Adobe Experience Platform. Som ett resultat av detta har flera terminologiska förändringar införts i produktdokumentationen. Se följande [dokument](../../../term-updates.md) för en konsoliderad hänvisning till terminologiska förändringar.
+>Adobe Experience Platform Launch har omklassificerats som en serie datainsamlingstekniker i Adobe Experience Platform. Som ett resultat av detta har flera terminologiska förändringar införts i produktdokumentationen. I följande [dokument](../../../term-updates.md) finns en konsoliderad referens till de ändrade terminologin.
 
 ## 25 oktober 2019
 
@@ -26,7 +26,7 @@ ht-degree: 1%
 ### Adobe Media Analytics for Audio and Video Extension 1.2
 
 * Namnet på tillägget har ändrats
-* Stöd för att spåra ljudinnehåll.
+* Stöd för spårning av ljudinnehåll.
 * Uppdatera MediaSDK-biblioteket till 2.2.0
 
 ## 15 juni 2018
@@ -42,7 +42,7 @@ ht-degree: 1%
 
 #### **Funktioner**
 
-The [Adobe Analytics for Video Extension](../media-analytics/overview.md) lägger till JavaScript-biblioteket för Video Analytics. Det här biblioteket innehåller funktioner för att lägga till instansen mediaHeartbeat till en tagg-aktiverad plats eller ett -projekt. Adobe Analytics for Video Extension (VA Extension) kräver ytterligare två tillägg:
+[Adobe Analytics for Video Extension](../media-analytics/overview.md) lägger till JavaScript-biblioteket för videoanalys. Det här biblioteket innehåller funktioner för att lägga till instansen mediaHeartbeat till en tagg-aktiverad plats eller ett -projekt. Adobe Analytics for Video Extension (VA Extension) kräver ytterligare två tillägg:
 
 * Analystillägg
 * Experience Cloud ID-tillägg

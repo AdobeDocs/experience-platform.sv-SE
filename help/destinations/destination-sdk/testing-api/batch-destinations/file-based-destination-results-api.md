@@ -13,36 +13,36 @@ ht-degree: 1%
 
 ## Översikt {#overview}
 
-På den här sidan beskrivs hur du använder `/testing/destinationInstance` API-slutpunkt för att visa fullständig information om filbaserade testresultat för mål.
+På den här sidan beskrivs hur du använder API-slutpunkten `/testing/destinationInstance` för att visa fullständig information om filbaserade måltestningsresultat.
 
-Om du redan har [testade destinationen](file-based-destination-testing-api.md) och har fått ett giltigt API-svar fungerar målet korrekt.
+Om du redan har [testat ditt mål](file-based-destination-testing-api.md) och fått ett giltigt API-svar fungerar ditt mål korrekt.
 
-Om du vill ha mer detaljerad information om aktiveringsflödet kan du använda `results` -egenskapen från [destinationstest](file-based-destination-testing-api.md) endpoint response (endpoint response) enligt beskrivningen nedan.
+Om du vill se mer detaljerad information om aktiveringsflödet kan du använda egenskapen `results` från slutpunktssvaret för [måltestning](file-based-destination-testing-api.md) enligt beskrivningen nedan.
 
 >[!NOTE]
 >
->API-slutpunkten returnerar samma resultat som när du använder [API för flödestjänst](../../../api/update-destination-dataflows.md) för att övervaka dataflöden.
+>Denna API-slutpunkt returnerar samma resultat som du skulle få när du använde [Flow Service API](../../../api/update-destination-dataflows.md) för att övervaka dataflöden.
 
 ## Komma igång {#getting-started}
 
-Läs igenom [komma igång-guide](../../getting-started.md) för viktig information som du behöver känna till för att kunna anropa API:t, inklusive hur du får nödvändig behörighet för målredigering och obligatoriska huvuden.
+Innan du fortsätter bör du läsa igenom [kom igång-guiden](../../getting-started.md) för att få viktig information som du behöver känna till för att kunna ringa anrop till API:t, inklusive hur du får nödvändig behörighet för målredigering och nödvändiga rubriker.
 
-## Förutsättningar {#prerequisites}
+## Förhandskrav {#prerequisites}
 
-Innan du kan använda `/testing/destinationInstance` måste du se till att följande villkor uppfylls:
+Innan du kan använda slutpunkten `/testing/destinationInstance` måste du kontrollera att följande villkor uppfylls:
 
-* Du har ett befintligt filbaserat mål som skapas via Destinationen SDK och du kan se det i [målkatalog](../../../ui/destinations-workspace.md).
+* Du har ett befintligt filbaserat mål som skapats via Destinationen SDK och du kan se det i din [målkatalog](../../../ui/destinations-workspace.md).
 * Du har skapat minst ett aktiveringsflöde för destinationen i användargränssnittet i Experience Platform.
 * För att kunna utföra API-begäran behöver du det målinstans-ID som motsvarar den målinstans som du ska testa. Hämta det målinstans-ID som du bör använda i API-anropet från webbadressen när du bläddrar i en anslutning till målet i plattformsgränssnittet.
 
-  ![Användargränssnittsbild som visar hur du hämtar målinstans-ID från URL:en.](../../assets/testing-api/get-destination-instance-id.png)
-* Du har tidigare [testade målkonfigurationen](file-based-destination-testing-api.md)och fick ett giltigt API-svar, som innehåller `results` -egenskap. Du kommer att använda den här `results` för att ytterligare testa destinationen.
+  ![Gränssnittsbild som visar hur du hämtar målinstans-ID från URL:en.](../../assets/testing-api/get-destination-instance-id.png)
+* Du har tidigare [testat målkonfigurationen](file-based-destination-testing-api.md) och fått ett giltigt API-svar, som innehåller en `results` -egenskap. Du kommer att använda det här `results`-värdet för att testa målet ytterligare.
 
 ## Visa detaljerade testresultat för destinationer {#test-activation-results}
 
-När du har [har verifierat målkonfigurationen](file-based-destination-testing-api.md)kan du se de detaljerade aktiveringsresultaten genom att skicka en GET till `authoring/testing/destinationInstance/` slutpunkt och ange målinstans-ID för det mål som du testar, och ID:n för flödeskörning för de aktiverade målgrupperna.
+När du har [verifierat målkonfigurationen](file-based-destination-testing-api.md) kan du visa detaljerade aktiveringsresultat genom att göra en GET-förfrågan till `authoring/testing/destinationInstance/`-slutpunkten och ange målinstans-ID:t för det mål som du testar samt ID:n för flödeskörning för de aktiverade målgrupperna.
 
-Du hittar den fullständiga API-URL som du behöver i `results` egenskapen som returneras i [svar på destinationstestningsanropet](file-based-destination-testing-api.md).
+Du kan hitta den fullständiga API-URL som du behöver använda i egenskapen `results` som returneras i [svaret för destinationstestningsanropet](file-based-destination-testing-api.md).
 
 **API-format**
 
@@ -52,11 +52,11 @@ GET /authoring/testing/destinationInstance/{DESTINATION_INSTANCE_ID}/results?flo
 
 | Sökvägsparametrar | Beskrivning |
 | -------- | ----------- |
-| `{DESTINATION_INSTANCE_ID}` | ID:t för målinstansen som du genererar exempelprofiler för. Se [krav](#prerequisites) om du vill ha mer information om hur du får detta ID. |
+| `{DESTINATION_INSTANCE_ID}` | ID:t för målinstansen som du genererar exempelprofiler för. I avsnittet [Krav](#prerequisites) finns mer information om hur du får detta ID. |
 
 | Frågesträngsparametrar | Beskrivning |
 | -------- | ----------- |
-| `flowRunIds` | ID för flödeskörning som motsvarar de aktiverade målgrupperna. Du hittar ID:n för flödeskörning i dialogrutan `results` egenskapen som returneras i [svar på destinationstestningsanropet](file-based-destination-testing-api.md). |
+| `flowRunIds` | ID för flödeskörning som motsvarar de aktiverade målgrupperna. Du kan hitta ID:n för flödeskörning i egenskapen `results` som returneras i svaret [på anropet till måltestningen](file-based-destination-testing-api.md). |
 
 **Begäran**
 
@@ -71,7 +71,7 @@ curl -X GET 'https://platform.adobe.io/data/core/activation/authoring/testing/de
 
 **Svar**
 
-Svaret innehåller en fullständig beskrivning av aktiveringsflödet. Du kan få samma svar genom att ringa [API för flödestjänst](../../../api/update-destination-dataflows.md) för att övervaka dataflöden.
+Svaret innehåller en fullständig beskrivning av aktiveringsflödet. Du kan få samma svar genom att anropa [Flow Service API](../../../api/update-destination-dataflows.md) för att övervaka dataflöden.
 
 ```json
 {
@@ -213,10 +213,10 @@ Svaret innehåller en fullständig beskrivning av aktiveringsflödet. Du kan få
 
 ## API-felhantering {#api-error-handling}
 
-Destination SDK-API-slutpunkter följer de allmänna felmeddelandeprinciperna för Experience Platform API. Se [API-statuskoder](../../../../landing/troubleshooting.md#api-status-codes) och [fel i begäranhuvudet](../../../../landing/troubleshooting.md#request-header-errors) i felsökningsguiden för plattformen.
+Destination SDK-API-slutpunkter följer de allmänna felmeddelandeprinciperna för Experience Platform API. Se [API-statuskoder](../../../../landing/troubleshooting.md#api-status-codes) och [begäranrubrikfel](../../../../landing/troubleshooting.md#request-header-errors) i felsökningsguiden för plattformen.
 
 ## Nästa steg
 
 När du har läst det här dokumentet vet du nu hur du testar din filbaserade destinationskonfiguration och ser alla detaljer om aktiveringsresultaten.
 
-Om du skapar ett offentligt mål kan du nu [skicka in målkonfigurationen](../../guides/submit-destination.md) till Adobe för granskning.
+Om du skapar ett offentligt mål kan du nu [skicka målkonfigurationen](../../guides/submit-destination.md) till Adobe för granskning.

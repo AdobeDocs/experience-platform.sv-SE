@@ -21,14 +21,14 @@ När en besökare loggar in på ett företags webbplats skapar företaget vanlig
 
 ### Steg 1: Konfigurera `Target Third Party ID Namespace`
 
-Konfigurera `Target Third Party ID Namespace` i [Datastream](../../../datastreams/overview.md), med det ID-namnutrymme som du vill använda som ett mbox-ID för tredje part.
+Konfigurera `Target Third Party ID Namespace` i [Datastream](../../../datastreams/overview.md) med det ID-namnområde som du vill använda som ett ID för en tredje part i en mbox.
 [Läs mer om ID-namnutrymmen](https://experienceleague.adobe.com/docs/experience-platform/identity/namespaces.html?lang=sv)
 
 ![Plattformsgränssnitt som visar namnområdesfältet för mål-ID för tredje part.](assets/mbox3rdpartyid.png)
 
 ### Steg 2: Skicka `mbox3rdpartyId` till mål
 
-Skicka `mbox3rdpartyId` till Target i `sendEvent` med ID-namnutrymmet som du konfigurerade i steg 1.
+Skicka `mbox3rdpartyId` till mål i kommandot `sendEvent` med ID-namnområdet som du konfigurerade i steg 1.
 [Läs mer om att skicka ID:n](../../identity/overview.md#syncing-identities)
 
 ```javascript

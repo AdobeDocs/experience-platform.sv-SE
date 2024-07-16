@@ -27,7 +27,7 @@ ht-degree: 21%
       * [Frågepro-läge (skapa SQL-diagram)](data-distiller/customizable-insights/query-pro-mode.md)
       * Filter {#filters}
          * [Datumfilter](data-distiller/customizable-insights/filters/date-filter.md)
-         * [Globalt filter](data-distiller/customizable-insights/filters/global-filter.md)
+         * [Global filter](data-distiller/customizable-insights/filters/global-filter.md)
       * [Visa mer](data-distiller/customizable-insights/view-more.md)
       * [Visa SQL](data-distiller/customizable-insights/view-sql.md)
       * [Hämta som CSV](data-distiller/customizable-insights/download-csv.md)
@@ -42,7 +42,7 @@ ht-degree: 21%
    * [Målgrupper](insights/audiences.md)
    * [Mål ](insights/destinations.md)
    * [Kontoprofiler](insights/account-profiles.md)
-* Anpassa kontrollpaneler {#customize}
+* Anpassa instrumentpaneler {#customize}
    * [Anpassningsöversikt](customize/overview.md)
    * [Ändra instrumentpaneler](customize/modify.md)
    * [Widget-bibliotek](customize/widget-library.md)

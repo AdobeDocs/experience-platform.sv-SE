@@ -13,9 +13,9 @@ ht-degree: 0%
 
 I vyn Tilläggsversion kan du snabbt beställa och visa vilka Adobe Experience Platform-mobiltillägg du har installerat och om de är uppdaterade i en klient som är ansluten till en Assurance-session.
 
-## Kom igång med Extension Versions-vyer
+## Kom igång med vyerna för tilläggsversioner
 
-Efter [ställa in Assurance](../tutorials/implement-assurance.md), i **Startsida** visa, välja **[!UICONTROL Extension Versions]**
+När [du har konfigurerat Assurance](../tutorials/implement-assurance.md) väljer du **[!UICONTROL Extension Versions]** i vyn **Hem**
 
 ![Tilläggsversioner](./images/versions/versions-extension.png)
 
@@ -27,6 +27,6 @@ I den här vyn visar en tabell både den senaste versionen av varje Mobile SDK s
 
 ## Exportera versioner
 
-I det övre högra hörnet av vyn kan du välja **[!UICONTROL Export Versions]** som ger dig en JSON-nyttolast med all tilläggsinformation samt den plattform som används av klienten. Du kan välja att exportera dessa data till en JSON-fil eller kopiera dem till Urklipp.
+I vyns övre högra hörn kan du välja **[!UICONTROL Export Versions]** som ger dig en JSON-nyttolast med all tilläggsinformation samt den plattform som används av klienten. Du kan välja att exportera dessa data till en JSON-fil eller kopiera dem till Urklipp.
 
 ![Export av tilläggsversioner](./images/versions/versions-extension-export.png)

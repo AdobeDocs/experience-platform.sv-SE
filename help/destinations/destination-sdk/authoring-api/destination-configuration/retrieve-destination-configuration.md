@@ -4,26 +4,26 @@ title: Hämta en målkonfiguration
 exl-id: aaf4cfa0-3e90-4fcc-b506-b84ff62b3027
 source-git-commit: b4334b4f73428f94f5a7e5088f98e2459afcaf3c
 workflow-type: tm+mt
-source-wordcount: '365'
+source-wordcount: '367'
 ht-degree: 0%
 
 ---
 
 # Hämta en målkonfiguration
 
-Den här sidan innehåller exempel på API-begäran och nyttolast som du kan använda för att hämta information om en befintlig målkonfiguration med hjälp av `/authoring/destination` API-slutpunkt.
+Den här sidan innehåller exempel på API-begäran och nyttolast som du kan använda för att hämta information om en befintlig målkonfiguration med API-slutpunkten `/authoring/destination`.
 
 >[!IMPORTANT]
 >
->Alla parameternamn och värden som stöds av Destinationen SDK är **skiftlägeskänslig**. Undvik skiftlägeskänslighetsfel genom att använda parameternamn och värden exakt som de visas i dokumentationen.
+>Alla parameternamn och värden som stöds av Destinationen SDK är **skiftlägeskänsliga**. Undvik skiftlägeskänslighetsfel genom att använda parameternamn och värden exakt som de visas i dokumentationen.
 
 ## Komma igång med API-åtgärder för målkonfiguration {#get-started}
 
-Innan du fortsätter bör du granska [komma igång-guide](../../getting-started.md) för viktig information som du behöver känna till för att kunna anropa API:t, inklusive hur du får nödvändig behörighet för målredigering och obligatoriska huvuden.
+Innan du fortsätter bör du läsa igenom [kom igång-guiden](../../getting-started.md) för att få viktig information som du behöver känna till för att kunna ringa anrop till API:t, inklusive hur du får nödvändig behörighet för målredigering och nödvändiga rubriker.
 
 ## Hämta en målkonfiguration {#retrieve}
 
-Du kan hämta en [befintlig](create-destination-configuration.md) målkonfiguration genom att skapa en `GET` begäran till `/authoring/destination` slutpunkt.
+Du kan hämta en [befintlig](create-destination-configuration.md) målkonfiguration genom att göra en `GET`-begäran till `/authoring/destination`-slutpunkten.
 
 >[!TIP]
 >
@@ -38,13 +38,13 @@ Använd följande API-format för att hämta alla målkonfigurationer för ditt 
 GET /authoring/destinations
 ```
 
-Använd följande API-format för att hämta en specifik målkonfiguration, som definieras av `{INSTANCE_ID}` parameter.
+Använd följande API-format för att hämta en specifik målkonfiguration, som definieras av parametern `{INSTANCE_ID}`.
 
 ```http
 GET /authoring/destinations/{INSTANCE_ID}
 ```
 
-Följande två begäranden hämtar alla målkonfigurationer för din IMS-organisation, eller en viss målkonfiguration, beroende på om du har godkänt `INSTANCE_ID` -parametern i begäran.
+Följande två begäranden hämtar alla destinationskonfigurationer för din IMS-organisation, eller en viss destinationskonfiguration, beroende på om du skickar parametern `INSTANCE_ID` i begäran.
 
 Välj varje flik nedan för att visa motsvarande nyttolast.
 
@@ -66,7 +66,7 @@ curl -X GET https://platform.adobe.io/data/core/activation/authoring/destination
 
 +++svar
 
-Ett lyckat svar returnerar HTTP-status 200 med en lista över målkonfigurationer som du har åtkomst till, baserat på [!DNL IMS Org ID] och namnet på sandlådan som du använde. Ett `instanceId` motsvarar en målkonfiguration.
+Ett lyckat svar returnerar HTTP-status 200 med en lista över målkonfigurationer som du har åtkomst till, baserat på det [!DNL IMS Org ID]- och sandlådenamn som du använde. En `instanceId` motsvarar en målkonfiguration.
 
 ```json
 {
@@ -194,7 +194,7 @@ curl -X GET https://platform.adobe.io/data/core/activation/authoring/destination
 
 +++svar
 
-Ett lyckat svar returnerar HTTP-status 200 med information om målkonfigurationen som motsvarar `{INSTANCE_ID}` anges i samtalet.
+Ett lyckat svar returnerar HTTP-status 200 med information om målkonfigurationen som motsvarar `{INSTANCE_ID}` som angavs i anropet.
 
 ```json
 {
@@ -306,11 +306,11 @@ Ett lyckat svar returnerar HTTP-status 200 med information om målkonfiguratione
 
 ## API-felhantering {#error-handling}
 
-Destination SDK-API-slutpunkter följer de allmänna felmeddelandeprinciperna för Experience Platform API. Se [API-statuskoder](../../../../landing/troubleshooting.md#api-status-codes) och [fel i begäranhuvudet](../../../../landing/troubleshooting.md#request-header-errors) i felsökningsguiden för plattformen.
+Destination SDK-API-slutpunkter följer de allmänna felmeddelandeprinciperna för Experience Platform API. Se [API-statuskoder](../../../../landing/troubleshooting.md#api-status-codes) och [begäranrubrikfel](../../../../landing/troubleshooting.md#request-header-errors) i felsökningsguiden för plattformen.
 
 ## Nästa steg
 
-När du har läst det här dokumentet vet du nu hur du hämtar en målkonfiguration via Destinationen SDK `/authoring/destinations` API-slutpunkt.
+När du har läst det här dokumentet kan du nu hämta en målkonfiguration via API-slutpunkten för Destinationen SDK `/authoring/destinations`.
 
 Mer information om vad du kan göra med den här slutpunkten finns i följande artiklar:
 

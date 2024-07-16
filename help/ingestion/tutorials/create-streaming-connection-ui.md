@@ -14,8 +14,8 @@ ht-degree: 0%
 
 # Skapa en direktuppspelningsanslutning med användargränssnittet
 
-För att starta direktuppspelning av data till [!DNL Experience Platform]måste du först skapa en direktuppspelad HTTP-anslutning. När du skapar en direktuppspelningsanslutning måste du ange nyckeldetaljer som till exempel källan för direktuppspelningsdata och om du tänker skicka data från en tillförlitlig (autentiserad) eller en otillförlitlig (ej autentiserad) källa eller inte.
+För att kunna starta direktuppspelning av data till [!DNL Experience Platform] måste du först skapa en direktuppspelad HTTP-anslutning. När du skapar en direktuppspelningsanslutning måste du ange nyckeldetaljer som till exempel källan för direktuppspelningsdata och om du tänker skicka data från en tillförlitlig (autentiserad) eller en otillförlitlig (ej autentiserad) källa eller inte.
 
 När du har registrerat en direktuppspelningsanslutning får du en unik URL som kan användas för att strömma data till [!DNL Platform].
 
-Läs mer om hur du skapar en direktuppspelningsanslutning i [Användargränssnittshandbok för HTTP-API-källa](../../sources/tutorials/ui/create/streaming/http.md).
+Om du vill veta mer om hur du skapar en direktuppspelningsanslutning läser du [gränssnittshandboken för HTTP-API-källan](../../sources/tutorials/ui/create/streaming/http.md).

@@ -4,18 +4,18 @@ title: Uppdatera en målserverkonfiguration
 exl-id: 579d2cc1-5110-4fba-9dcc-ff4b8d259827
 source-git-commit: b4334b4f73428f94f5a7e5088f98e2459afcaf3c
 workflow-type: tm+mt
-source-wordcount: '1098'
-ht-degree: 8%
+source-wordcount: '1101'
+ht-degree: 2%
 
 ---
 
 # Uppdatera en målserverkonfiguration
 
-Den här sidan innehåller exempel på API-begäran och nyttolast som du kan använda för att uppdatera en befintlig målserverkonfiguration med hjälp av `/authoring/destination-servers` API-slutpunkt.
+Den här sidan innehåller exempel på API-begäran och nyttolast som du kan använda för att uppdatera en befintlig målserverkonfiguration med API-slutpunkten `/authoring/destination-servers`.
 
 >[!TIP]
 >
->Alla uppdateringsåtgärder för produkterade/publika destinationer visas bara när du har använt [publicerings-API](../../publishing-api/create-publishing-request.md) och skicka in uppdateringen till Adobe för granskning.
+>Alla uppdateringsåtgärder på producerade/publika mål visas först när du har använt [publicerings-API](../../publishing-api/create-publishing-request.md) och skickat uppdateringen för granskning i Adobe.
 
 En detaljerad beskrivning av de funktioner som du kan konfigurera via den här slutpunkten finns i följande artiklar:
 
@@ -26,21 +26,21 @@ En detaljerad beskrivning av de funktioner som du kan konfigurera via den här s
 
 >[!IMPORTANT]
 >
->Alla parameternamn och värden som stöds av Destinationen SDK är **skiftlägeskänslig**. Undvik skiftlägeskänslighetsfel genom att använda parameternamn och värden exakt som de visas i dokumentationen.
+>Alla parameternamn och värden som stöds av Destinationen SDK är **skiftlägeskänsliga**. Undvik skiftlägeskänslighetsfel genom att använda parameternamn och värden exakt som de visas i dokumentationen.
 
 ## Komma igång med API-åtgärder för målserver {#get-started}
 
-Innan du fortsätter bör du granska [komma igång-guide](../../getting-started.md) för viktig information som du behöver känna till för att kunna anropa API:t, inklusive hur du får nödvändig behörighet för målredigering och obligatoriska huvuden.
+Innan du fortsätter bör du läsa igenom [kom igång-guiden](../../getting-started.md) för att få viktig information som du behöver känna till för att kunna ringa anrop till API:t, inklusive hur du får nödvändig behörighet för målredigering och nödvändiga rubriker.
 
 ## Uppdatera en målserverkonfiguration {#update}
 
-Du kan uppdatera en [befintlig](create-destination-server.md) målserverkonfiguration genom att göra en `PUT` begäran till `/authoring/destination-servers` slutpunkt med uppdaterad nyttolast.
+Du kan uppdatera en [befintlig](create-destination-server.md) målserverkonfiguration genom att göra en `PUT`-begäran till `/authoring/destination-servers`-slutpunkten med den uppdaterade nyttolasten.
 
 >[!TIP]
 >
 >**API-slutpunkt**: `platform.adobe.io/data/core/activation/authoring/destination-servers`
 
-Hämta en befintlig målserverkonfiguration och dess motsvarande `{INSTANCE_ID}`, se artikeln om [hämta en målserverkonfiguration](retrieve-destination-server.md).
+Om du vill hämta en befintlig målserverkonfiguration och dess motsvarande `{INSTANCE_ID}` kan du läsa artikeln om att [hämta en målserverkonfiguration](retrieve-destination-server.md).
 
 **API-format**
 
@@ -50,7 +50,7 @@ PUT /authoring/destination-servers/{INSTANCE_ID}
 
 | Parameter | Beskrivning |
 | -------- | ----------- |
-| `{INSTANCE_ID}` | ID:t för målserverkonfigurationen som du vill uppdatera. Hämta en befintlig målserverkonfiguration och dess motsvarande `{INSTANCE_ID}`, se [Hämta en målserverkonfiguration](retrieve-destination-server.md). |
+| `{INSTANCE_ID}` | ID:t för målserverkonfigurationen som du vill uppdatera. Information om hur du hämtar en befintlig målserverkonfiguration och dess motsvarande `{INSTANCE_ID}` finns i [Hämta en målserverkonfiguration](retrieve-destination-server.md). |
 
 Följande begäranden uppdaterar en befintlig målserverkonfiguration som konfigurerats med parametrarna i nyttolasten.
 
@@ -92,14 +92,14 @@ curl -X PUT https://platform.adobe.io/data/core/activation/authoring/destination
 
 | Parameter | Typ | Beskrivning |
 | -------- | ----------- | ----------- |
-| `name` | Sträng | *Obligatoriskt.* Representerar ett eget namn på servern som bara visas för Adobe. Detta namn är inte synligt för partners eller kunder. Exempel `Moviestar destination server`. |
-| `destinationServerType` | Sträng | *Obligatoriskt.* Ange till `URL_BASED` för mål för realtidsströmning. |
-| `urlBasedDestination.url.templatingStrategy` | Sträng | *Obligatoriskt.* <ul><li>Använd `PEBBLE_V1` om Adobe behöver omvandla URL:en i `value` fält nedan. Använd det här alternativet om du har en slutpunkt som: `https://api.moviestar.com/data/{{customerData.region}}/items`. </li><li> Använd `NONE` om ingen omformning behövs på Adobe-sidan, till exempel om du har en slutpunkt som: `https://api.moviestar.com/data/items`.</li></ul> |
-| `urlBasedDestination.url.value` | Sträng | *Obligatoriskt.* Fyll i adressen till API-slutpunkten som Experience Platform ska ansluta till. |
-| `httpTemplate.httpMethod` | Sträng | *Obligatoriskt.* Den metod som Adobe ska använda i anrop till servern. Alternativen är `GET`, `PUT`, `PUT`, `DELETE`, `PATCH`. |
-| `httpTemplate.requestBody.templatingStrategy` | Sträng | *Obligatoriskt.* Använd `PEBBLE_V1`. |
-| `httpTemplate.requestBody.value` | Sträng | *Obligatoriskt.* Den här strängen är den teckenescape-konverterade version som transformerar data för plattformskunder till det format som tjänsten förväntar sig. <br> <ul><li> Mer information om hur du skriver mallen finns i [Använda mallavsnitt](../../functionality/destination-server/message-format.md#using-templating). </li><li> Mer information om teckenigenkänning finns i [RFC JSON-standard, avsnitt sju](https://tools.ietf.org/html/rfc8259#section-7). </li><li> Ett exempel på en enkel omformning finns i [Profilattribut](../../functionality/destination-server/message-format.md#attributes) omformning. </li></ul> |
-| `httpTemplate.contentType` | Sträng | *Obligatoriskt.* Den innehållstyp som servern accepterar. Detta värde är mest sannolikt `application/json`. |
+| `name` | Sträng | *Krävs.* Representerar ett eget namn för servern, som bara visas för Adobe. Detta namn är inte synligt för partners eller kunder. Exempel `Moviestar destination server`. |
+| `destinationServerType` | Sträng | *Krävs.* Ange som `URL_BASED` för mål för realtidsströmning. |
+| `urlBasedDestination.url.templatingStrategy` | Sträng | *Krävs.* <ul><li>Använd `PEBBLE_V1` om Adobe behöver omvandla URL:en i fältet `value` nedan. Använd det här alternativet om du har en slutpunkt som: `https://api.moviestar.com/data/{{customerData.region}}/items`. </li><li> Använd `NONE` om ingen omformning behövs på Adobe, till exempel om du har en slutpunkt som: `https://api.moviestar.com/data/items`.</li></ul> |
+| `urlBasedDestination.url.value` | Sträng | *Krävs.* Fyll i adressen till API-slutpunkten som Experience Platform ska ansluta till. |
+| `httpTemplate.httpMethod` | Sträng | *Krävs.* Den metod som Adobe ska använda i anrop till servern. Alternativen är `GET`, `PUT`, `PUT`, `DELETE`, `PATCH`. |
+| `httpTemplate.requestBody.templatingStrategy` | Sträng | *Krävs.* Använd `PEBBLE_V1`. |
+| `httpTemplate.requestBody.value` | Sträng | *Krävs.* Den här strängen är den teckenescape-version som omformar data för plattformskunder till det format som tjänsten förväntar sig. <br> <ul><li> Mer information om hur du skriver mallen finns i avsnittet [Använda mall](../../functionality/destination-server/message-format.md#using-templating). </li><li> Mer information om teckenigenkänning finns i [RFC JSON-standarden, avsnitt sju](https://tools.ietf.org/html/rfc8259#section-7). </li><li> Ett exempel på en enkel omformning finns i omformningen [Profilattribut](../../functionality/destination-server/message-format.md#attributes). </li></ul> |
+| `httpTemplate.contentType` | Sträng | *Krävs.* Innehållstypen som servern accepterar. Det här värdet är troligen `application/json`. |
 
 {style="table-layout:auto"}
 
@@ -202,12 +202,12 @@ curl -X PUT https://platform.adobe.io/data/core/activation/authoring/destination
 | Parameter | Typ | Beskrivning |
 |---|---|---|
 | `name` | Sträng | Namnet på målanslutningen. |
-| `destinationServerType` | Sträng | Ange det här värdet enligt målplattformen. För [!DNL Amazon S3], ställ in det här på `FILE_BASED_S3`. |
-| `fileBasedS3Destination.bucket.templatingStrategy` | Sträng | *Obligatoriskt.* Använd `PEBBLE_V1`. |
-| `fileBasedS3Destination.bucket.value` | Sträng | Namnet på [!DNL Amazon S3] bucket som ska användas för detta mål. |
-| `fileBasedS3Destination.path.templatingStrategy` | Sträng | *Obligatoriskt.* Använd `PEBBLE_V1`. |
+| `destinationServerType` | Sträng | Ange det här värdet enligt målplattformen. För [!DNL Amazon S3] anger du det här till `FILE_BASED_S3`. |
+| `fileBasedS3Destination.bucket.templatingStrategy` | Sträng | *Krävs.* Använd `PEBBLE_V1`. |
+| `fileBasedS3Destination.bucket.value` | Sträng | Namnet på den [!DNL Amazon S3]-bucket som ska användas av det här målet. |
+| `fileBasedS3Destination.path.templatingStrategy` | Sträng | *Krävs.* Använd `PEBBLE_V1`. |
 | `fileBasedS3Destination.path.value` | Sträng | Sökvägen till målmappen som ska vara värd för de exporterade filerna. |
-| `fileConfigurations` | Ej tillämpligt | Se [filformatskonfiguration](../../functionality/destination-server/file-formatting.md) för detaljerad information om hur du konfigurerar de här inställningarna. |
+| `fileConfigurations` | N/A | Mer information om hur du konfigurerar de här inställningarna finns i [filformateringskonfiguration](../../functionality/destination-server/file-formatting.md). |
 
 {style="table-layout:auto"}
 
@@ -308,14 +308,14 @@ curl -X PUT https://platform.adobe.io/data/core/activation/authoring/destination
 | Parameter | Typ | Beskrivning |
 |---|---|---|
 | `name` | Sträng | Namnet på målanslutningen. |
-| `destinationServerType` | Sträng | Ange det här värdet enligt målplattformen. För [!DNL SFTP] mål, ange detta till `FILE_BASED_SFTP`. |
-| `fileBasedSFTPDestination.rootDirectory.templatingStrategy` | Sträng | *Obligatoriskt.* Använd `PEBBLE_V1`. |
+| `destinationServerType` | Sträng | Ange det här värdet enligt målplattformen. Ange detta till `FILE_BASED_SFTP` för [!DNL SFTP] mål. |
+| `fileBasedSFTPDestination.rootDirectory.templatingStrategy` | Sträng | *Krävs.* Använd `PEBBLE_V1`. |
 | `fileBasedSFTPDestination.rootDirectory.value` | Sträng | Mållagringens rotkatalog. |
-| `fileBasedSFTPDestination.hostName.templatingStrategy` | Sträng | *Obligatoriskt.* Använd `PEBBLE_V1`. |
+| `fileBasedSFTPDestination.hostName.templatingStrategy` | Sträng | *Krävs.* Använd `PEBBLE_V1`. |
 | `fileBasedSFTPDestination.hostName.value` | Sträng | Mållagringens värdnamn. |
 | `port` | Heltal | SFTP-filserverporten. |
 | `encryptionMode` | Sträng | Anger om filkryptering ska användas. Värden som stöds: <ul><li>PGP</li><li>Ingen</li></ul> |
-| `fileConfigurations` | Ej tillämpligt | Se [filformatskonfiguration](../../functionality/destination-server/file-formatting.md) för detaljerad information om hur du konfigurerar de här inställningarna. |
+| `fileConfigurations` | N/A | Mer information om hur du konfigurerar de här inställningarna finns i [filformateringskonfiguration](../../functionality/destination-server/file-formatting.md). |
 
 {style="table-layout:auto"}
 
@@ -327,7 +327,7 @@ Ett lyckat svar returnerar HTTP-status 200 med information om den uppdaterade m�
 
 +++
 
->[!TAB Azure Data Lake-lagring]
+>[!TAB Azure Data Lake Storage]
 
 +++Begäran
 
@@ -414,10 +414,10 @@ curl -X PUT https://platform.adobe.io/data/core/activation/authoring/destination
 | Parameter | Typ | Beskrivning |
 |---|---|---|
 | `name` | Sträng | Namnet på målanslutningen. |
-| `destinationServerType` | Sträng | Ange det här värdet enligt målplattformen. För [!DNL Azure Data Lake Storage] mål, ange detta till `FILE_BASED_ADLS_GEN2`. |
-| `fileBasedAdlsGen2Destination.path.templatingStrategy` | Sträng | *Obligatoriskt.* Använd `PEBBLE_V1`. |
+| `destinationServerType` | Sträng | Ange det här värdet enligt målplattformen. Ange detta till `FILE_BASED_ADLS_GEN2` för [!DNL Azure Data Lake Storage] mål. |
+| `fileBasedAdlsGen2Destination.path.templatingStrategy` | Sträng | *Krävs.* Använd `PEBBLE_V1`. |
 | `fileBasedAdlsGen2Destination.path.value` | Sträng | Sökvägen till målmappen som ska vara värd för de exporterade filerna. |
-| `fileConfigurations` | Ej tillämpligt | Se [filformatskonfiguration](../../functionality/destination-server/file-formatting.md) för detaljerad information om hur du konfigurerar de här inställningarna. |
+| `fileConfigurations` | N/A | Mer information om hur du konfigurerar de här inställningarna finns i [filformateringskonfiguration](../../functionality/destination-server/file-formatting.md). |
 
 {style="table-layout:auto"}
 
@@ -520,12 +520,12 @@ curl -X PUT https://platform.adobe.io/data/core/activation/authoring/destination
 | Parameter | Typ | Beskrivning |
 |---|---|---|
 | `name` | Sträng | Namnet på målanslutningen. |
-| `destinationServerType` | Sträng | Ange det här värdet enligt målplattformen. För [!DNL Azure Blob Storage] mål, ange detta till `FILE_BASED_AZURE_BLOB`. |
-| `fileBasedAzureBlobDestination.path.templatingStrategy` | Sträng | *Obligatoriskt.* Använd `PEBBLE_V1`. |
+| `destinationServerType` | Sträng | Ange det här värdet enligt målplattformen. Ange detta till `FILE_BASED_AZURE_BLOB` för [!DNL Azure Blob Storage] mål. |
+| `fileBasedAzureBlobDestination.path.templatingStrategy` | Sträng | *Krävs.* Använd `PEBBLE_V1`. |
 | `fileBasedAzureBlobDestination.path.value` | Sträng | Sökvägen till målmappen som ska vara värd för de exporterade filerna. |
-| `fileBasedAzureBlobDestination.container.templatingStrategy` | Sträng | *Obligatoriskt.* Använd `PEBBLE_V1`. |
-| `fileBasedAzureBlobDestination.container.value` | Sträng | Namnet på [!DNL Azure Blob Storage] behållare som ska användas av det här målet. |
-| `fileConfigurations` | Ej tillämpligt | Se [filformatskonfiguration](../../functionality/destination-server/file-formatting.md) för detaljerad information om hur du konfigurerar de här inställningarna. |
+| `fileBasedAzureBlobDestination.container.templatingStrategy` | Sträng | *Krävs.* Använd `PEBBLE_V1`. |
+| `fileBasedAzureBlobDestination.container.value` | Sträng | Namnet på behållaren [!DNL Azure Blob Storage] som ska användas av det här målet. |
+| `fileConfigurations` | N/A | Mer information om hur du konfigurerar de här inställningarna finns i [filformateringskonfiguration](../../functionality/destination-server/file-formatting.md). |
 
 {style="table-layout:auto"}
 
@@ -625,10 +625,10 @@ curl -X PUT https://platform.adobe.io/data/core/activation/authoring/destination
 | Parameter | Typ | Beskrivning |
 |---|---|---|
 | `name` | Sträng | Namnet på målanslutningen. |
-| `destinationServerType` | Sträng | Ange det här värdet enligt målplattformen. För [!DNL Data Landing Zone] mål, ange detta till `FILE_BASED_DLZ`. |
-| `fileBasedDlzDestination.path.templatingStrategy` | Sträng | *Obligatoriskt.* Använd `PEBBLE_V1`. |
+| `destinationServerType` | Sträng | Ange det här värdet enligt målplattformen. Ange detta till `FILE_BASED_DLZ` för [!DNL Data Landing Zone] mål. |
+| `fileBasedDlzDestination.path.templatingStrategy` | Sträng | *Krävs.* Använd `PEBBLE_V1`. |
 | `fileBasedDlzDestination.path.value` | Sträng | Sökvägen till målmappen som ska vara värd för de exporterade filerna. |
-| `fileConfigurations` | Ej tillämpligt | Se [filformatskonfiguration](../../functionality/destination-server/file-formatting.md) för detaljerad information om hur du konfigurerar de här inställningarna. |
+| `fileConfigurations` | N/A | Mer information om hur du konfigurerar de här inställningarna finns i [filformateringskonfiguration](../../functionality/destination-server/file-formatting.md). |
 
 {style="table-layout:auto"}
 
@@ -731,12 +731,12 @@ curl -X PUT https://platform.adobe.io/data/core/activation/authoring/destination
 | Parameter | Typ | Beskrivning |
 |---|---|---|
 | `name` | Sträng | Namnet på målanslutningen. |
-| `destinationServerType` | Sträng | Ange det här värdet enligt målplattformen. För [!DNL Google Cloud Storage] mål, ange detta till `FILE_BASED_GOOGLE_CLOUD`. |
-| `fileBasedGoogleCloudStorageDestination.bucket.templatingStrategy` | Sträng | *Obligatoriskt.* Använd `PEBBLE_V1`. |
-| `fileBasedGoogleCloudStorageDestination.bucket.value` | Sträng | Namnet på [!DNL Google Cloud Storage] bucket som ska användas för detta mål. |
-| `fileBasedGoogleCloudStorageDestination.path.templatingStrategy` | Sträng | *Obligatoriskt.* Använd `PEBBLE_V1`. |
+| `destinationServerType` | Sträng | Ange det här värdet enligt målplattformen. Ange detta till `FILE_BASED_GOOGLE_CLOUD` för [!DNL Google Cloud Storage] mål. |
+| `fileBasedGoogleCloudStorageDestination.bucket.templatingStrategy` | Sträng | *Krävs.* Använd `PEBBLE_V1`. |
+| `fileBasedGoogleCloudStorageDestination.bucket.value` | Sträng | Namnet på den [!DNL Google Cloud Storage]-bucket som ska användas av det här målet. |
+| `fileBasedGoogleCloudStorageDestination.path.templatingStrategy` | Sträng | *Krävs.* Använd `PEBBLE_V1`. |
 | `fileBasedGoogleCloudStorageDestination.path.value` | Sträng | Sökvägen till målmappen som ska vara värd för de exporterade filerna. |
-| `fileConfigurations` | Ej tillämpligt | Se [filformatskonfiguration](../../functionality/destination-server/file-formatting.md) för detaljerad information om hur du konfigurerar de här inställningarna. |
+| `fileConfigurations` | N/A | Mer information om hur du konfigurerar de här inställningarna finns i [filformateringskonfiguration](../../functionality/destination-server/file-formatting.md). |
 
 {style="table-layout:auto"}
 
@@ -752,11 +752,11 @@ Ett lyckat svar returnerar HTTP-status 200 med information om den uppdaterade m�
 
 ## API-felhantering {#error-handling}
 
-Destination SDK-API-slutpunkter följer de allmänna felmeddelandeprinciperna för Experience Platform API. Se [API-statuskoder](../../../../landing/troubleshooting.md#api-status-codes) och [fel i begäranhuvudet](../../../../landing/troubleshooting.md#request-header-errors) i felsökningsguiden för plattformen.
+Destination SDK-API-slutpunkter följer de allmänna felmeddelandeprinciperna för Experience Platform API. Se [API-statuskoder](../../../../landing/troubleshooting.md#api-status-codes) och [begäranrubrikfel](../../../../landing/troubleshooting.md#request-header-errors) i felsökningsguiden för plattformen.
 
 ## Nästa steg {#next-steps}
 
-När du har läst det här dokumentet kan du nu uppdatera en målserverkonfiguration via Destinationen SDK `/authoring/destination-servers` API-slutpunkt.
+När du har läst det här dokumentet vet du nu hur du uppdaterar en målserverkonfiguration via API-slutpunkten för Destinationen SDK `/authoring/destination-servers`.
 
 Mer information om vad du kan göra med den här slutpunkten finns i följande artiklar:
 

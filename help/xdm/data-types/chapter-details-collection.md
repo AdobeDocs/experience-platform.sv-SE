@@ -1,18 +1,19 @@
 ---
 title: Datatyp för insamling av kapitelinformation
 description: Lär dig mer om datatypen Kapitel Details Collection Experience Data Model (XDM).
-source-git-commit: c6108bb692c80c79e115ac7b1488d95a7039ffcf
+exl-id: 4f841f5a-3840-4da5-a3a4-ceecde87c684
+source-git-commit: 799a384556b43bc844782d8b67416c7eea77fbf0
 workflow-type: tm+mt
 source-wordcount: '177'
-ht-degree: 2%
+ht-degree: 0%
 
 ---
 
 # [!UICONTROL Chapter Details] Samlingsdatatyp
 
-[!UICONTROL Chapter Details] Samlingen är en XDM-datatyp (Standard Experience Data Model) som beskriver olika attribut som relaterar till kapitel eller segment i medieinnehållet. Använd [!UICONTROL Chapter Details] Samlingsdatatyp för att samla in information som kapitelnamn, förskjutning, varaktighet och kapitelindex. Fält för mediainsamling hämtar data och skickar dem till andra Adobe-tjänster för vidare bearbetning.
+[!UICONTROL Chapter Details]-samlingen är en XDM-datatyp (Standard Experience Data Model) som beskriver olika attribut relaterade till kapitel eller segment i medieinnehållet. Använd datatypen [!UICONTROL Chapter Details] Samling för att hämta information som kapitelnamn, förskjutning, varaktighet och kapitelindex. Fält för mediainsamling hämtar data och skickar dem till andra Adobe-tjänster för vidare bearbetning.
 
-![Ett diagram över datatypen Chapter Details Collection.](../images/data-types/chapter-details-collection.png)
+![Ett diagram över datatypen för kapitelinformationsinsamlingen.](../images/data-types/chapter-details-collection.png)
 
 >[!NOTE]
 >

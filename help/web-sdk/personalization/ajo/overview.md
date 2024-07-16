@@ -12,28 +12,28 @@ ht-degree: 0%
 
 # Använda [!DNL Adobe Journey Optimizer] med [!DNL Platform Web SDK]
 
-[!DNL Adobe Experience Platform] [!DNL Web SDK] kan leverera och återge personaliserade upplevelser som hanteras i [!DNL Adobe Journey Optimizer] till webbkanalen. Du kan använda en WYSIWYG-redigerare, [!DNL Adobe Journey Optimizer] [Webbkanal](https://experienceleague.adobe.com/docs/journey-optimizer/using/web/create-web.html)eller ett icke-visuellt gränssnitt, [Kodbaserad Experience Channel](https://experienceleague.adobe.com/en/docs/journey-optimizer/using/code-based-experience/get-started-code-based) skapa, aktivera och leverera [!DNL Journey Optimizer Web] kampanjer och personaliseringsupplevelser.
+[!DNL Adobe Experience Platform] [!DNL Web SDK] kan leverera och återge personaliserade upplevelser som hanteras i [!DNL Adobe Journey Optimizer] till webbkanalen. Du kan använda en WYSIWYG-redigerare, [!DNL Adobe Journey Optimizer] [Webbkanal](https://experienceleague.adobe.com/docs/journey-optimizer/using/web/create-web.html), eller ett icke-visuellt gränssnitt, [ kodbaserad Experience Channel](https://experienceleague.adobe.com/en/docs/journey-optimizer/using/code-based-experience/get-started-code-based) för att skapa, aktivera och leverera [!DNL Journey Optimizer Web] -kampanjer och personaliseringsupplevelser.
 
 >[!IMPORTANT]
 >
->Läs [Dokumentation för Adobe Journey Optimizer Web Channel](https://experienceleague.adobe.com/docs/journey-optimizer/using/web/get-started-web.html) för information om hur du kommer igång med [!DNL Journey Optimizer Web] skapa och rapportera.
+>Läs [Adobe Journey Optimizer Web Channel-dokumentationen](https://experienceleague.adobe.com/docs/journey-optimizer/using/web/get-started-web.html) om du vill ha information om hur du kommer igång med redigering och rapportering av upplevelser i [!DNL Journey Optimizer Web].
 
 ## Terminologi {#terminology}
 
-**[!UICONTROL Surface]**: En webbyta är en webbsida eller plats på en sida som identifieras av en URI där [!DNL Adobe Journey Optimizer] upplevelseinnehåll kommer att levereras.
+**[!UICONTROL Surface]**: En webbsida är en webbsida eller plats på en sida som identifieras av en URI där [!DNL Adobe Journey Optimizer]-upplevelseinnehållet levereras.
 
-**[!UICONTROL Propositions]**: I [!DNL Adobe Journey Optimizer], korrelerar förslag till upplevelsen som väljs från en [!DNL Journey Optimizer Campaign].
+**[!UICONTROL Propositions]**: I [!DNL Adobe Journey Optimizer] korrelerar förslag till upplevelsen som valts från en [!DNL Journey Optimizer Campaign].
 
-## Aktivering [!DNL Adobe Journey Optimizer] {#enable-ajo}
+## Aktiverar [!DNL Adobe Journey Optimizer] {#enable-ajo}
 
-Börja använda [!DNL Adobe Journey Optimizer]följer du stegen nedan.
+Följ stegen nedan för att börja använda [!DNL Adobe Journey Optimizer].
 
-1. Gå igenom [krav](https://experienceleague.adobe.com/docs/journey-optimizer/using/web/create-web.html#prerequesites) från [!DNL Adobe Journey Optimizer] [Web Experiences Guide](https://experienceleague.adobe.com/docs/journey-optimizer/using/web/create-web.html), särskilt:
+1. Gå igenom [förutsättningarna](https://experienceleague.adobe.com/docs/journey-optimizer/using/web/create-web.html#prerequesites) i [!DNL Adobe Journey Optimizer] [webbupplevelseguiden](https://experienceleague.adobe.com/docs/journey-optimizer/using/web/create-web.html), närmare bestämt:
    * Konfigurera [!DNL Adobe Experience Cloud Visual Editing Helper].
-   * Aktivera [!DNL Adobe Journey Optimizer] i [datastream](../../../datastreams/overview.md).
-   * Aktivera [!UICONTROL Active-On-Edge Merge Policy] alternativ.
+   * Aktivera [!DNL Adobe Journey Optimizer] i din [datastream](../../../datastreams/overview.md).
+   * Aktivera alternativet [!UICONTROL Active-On-Edge Merge Policy].
 
-2. Lägg till `renderDecisions` alternativ för dina händelser. Ange `renderDecisions` till `true` för automatisk återgivning av levererade Journey Optimizer-innehållsutkast på webbsidor.
+2. Lägg till alternativet `renderDecisions` i dina händelser. Ange `renderDecisions` till `true` för automatisk återgivning av levererade Journey Optimizer-innehållsutkast på webbsidesytorna.
 
    ```javascript
    alloy("sendEvent", {
@@ -42,7 +42,7 @@ Börja använda [!DNL Adobe Journey Optimizer]följer du stegen nedan.
    })
    ```
 
-3. Du kan också ange ytterligare ytor i händelserna. Som standard genererar Web SDK automatiskt webbytan för den aktuella webbsidan och tar med den i begäran till Edge Network. Om det behövs kan ytterligare ytor inkluderas i begäran genom att ange dessa i `personalization.surfaces` alternativ för `sendEvent` eller i motsvarande **[!UICONTROL Surfaces]** [[!UICONTROL Send event] åtgärd](../../../tags/extensions/client/web-sdk/action-types.md#send-event) konfiguration av Web SDK-tillägget.
+3. Du kan också ange ytterligare ytor i händelserna. Som standard genererar Web SDK automatiskt webbytan för den aktuella webbsidan och tar med den i begäran till Edge Network. Om det behövs kan ytterligare ytor inkluderas i begäran genom att ange dessa i alternativet `personalization.surfaces` för kommandot `sendEvent` eller i motsvarande **[!UICONTROL Surfaces]** [[!UICONTROL Send event] action ](../../../tags/extensions/client/web-sdk/action-types.md#send-event) -konfiguration för Web SDK-tillägget.
 
    ```javascript
    alloy("sendEvent", {
@@ -55,7 +55,7 @@ Börja använda [!DNL Adobe Journey Optimizer]följer du stegen nedan.
 
    ![extension-add-surface](./assets/extension-add-surface.png)
 
-   Händelsetytor ingår i `query.personalization.surfaces` begärandefält:
+   Händelseytor ingår i `query.personalization.surfaces`-begärandefältet:
 
    ```json
    {
@@ -80,17 +80,17 @@ Börja använda [!DNL Adobe Journey Optimizer]följer du stegen nedan.
    }
    ```
 
-4. På samma sätt som andra personaliseringsfunktioner kan du lägga till en **[dölja fragment](../manage-flicker.md)** om du bara vill dölja vissa delar av sidan när du hämtar upplevelser.
+4. På samma sätt som andra personaliseringsfunktioner kan du lägga till ett **[fördolt fragment](../manage-flicker.md)** för att dölja endast vissa delar av sidan när du hämtar upplevelser.
 
 ## Skapa Adobe Journey Optimizer webbupplevelser {#create-ajo-web-experiences}
 
-Följ [skapa webbkampanjer](https://experienceleague.adobe.com/docs/journey-optimizer/using/web/create-web.html#create-web-campaign) instruktionerna från [!DNL Adobe Journey Optimizer] [Web Experiences Guide](https://experienceleague.adobe.com/docs/journey-optimizer/using/web/create-web.html) att skapa [!DNL Journey Optimizer Web] kampanjer och upplevelser.
+Följ instruktionerna från [webbkampanjen](https://experienceleague.adobe.com/docs/journey-optimizer/using/web/create-web.html#create-web-campaign) i [!DNL Adobe Journey Optimizer] [webbupplevelseguiden](https://experienceleague.adobe.com/docs/journey-optimizer/using/web/create-web.html) för att skapa [!DNL Journey Optimizer Web] kampanjer och upplevelser.
 
 ## Återge personaliserat innehåll {#rendering-personalized-content}
 
-Läs dokumentationen om [återge personaliserat innehåll](../rendering-personalization-content.md) för mer information.
+Mer information finns i dokumentationen om [återgivning av personaliseringsinnehåll](../rendering-personalization-content.md).
 
-Adobe Journey Optimizer-förslag för webbsidor behandlas på ungefär samma sätt som `__view__` förslag om beslutsomfattning. I synnerhet när `renderDecisions` option is set to `true` i `sendEvent` kommer dessa att återges automatiskt av Web SDK.
+Adobe Journey Optimizer-förslag för webbytor behandlas på ungefär samma sätt som förslagen för beslutsomfattning i `__view__`. Om alternativet `renderDecisions` är inställt på `true` i kommandot `sendEvent` återges dessa automatiskt av Web SDK.
 
 Exempel på Journey Optimizer-innehåll:
 
@@ -145,6 +145,6 @@ Exempel på Journey Optimizer-innehåll:
 
 ## Felsökning {#debugging}
 
-Om du vill felsöka Adobe Journey Optimizer personaliseringsimplementeringar använder du [Web SDK-felsökning](/help/web-sdk/use-cases/debugging.md). [!DNL Adobe Journey Optimizer] felsökningsspårningar är tillgängliga vid felsökning med [[!DNL Adobe Experience Platform Assurance]](https://developer.adobe.com/client-sdks/documentation/platform-assurance/). Sök efter händelser med `AJO:` prefix.
+Om du vill felsöka Adobe Journey Optimizer personaliseringsimplementeringar använder du [Web SDK-felsökning](/help/web-sdk/use-cases/debugging.md). [!DNL Adobe Journey Optimizer] felsökningsspårningar är tillgängliga vid felsökning med [[!DNL Adobe Experience Platform Assurance]](https://developer.adobe.com/client-sdks/documentation/platform-assurance/). Sök efter händelser med prefixet `AJO:`.
 
-![trust-ajo-trace](./assets/assurance-ajo-trace.png)
+![asser-ajo-trace](./assets/assurance-ajo-trace.png)

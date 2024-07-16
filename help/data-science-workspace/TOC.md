@@ -16,9 +16,9 @@ ht-degree: 15%
 
 # Arbetsyta för datavetenskap {#data-science-workspace}
 
-* [Översikt över arbetsytan Data Science](home.md)
-* [Åtkomst och funktioner till arbetsytan Data Science](access-features-dsw.md)
-* [Genomgång av datavetenskapens arbetsyta](walkthrough.md)
+* [Data Science Workspace - översikt](home.md)
+* [Data Science Workspace-åtkomst och -funktioner](access-features-dsw.md)
+* [Data Science Workspace Walkthrough](walkthrough.md)
 * JupyterLab-anteckningsböcker {#jupyterlab}
    * [Översikt](jupyterlab/overview.md)
    * [Dataåtkomst](jupyterlab/access-notebook-data.md)
@@ -32,7 +32,7 @@ ht-degree: 15%
    * [Motorer](api/engines.md)
    * [MLInstances (recept)](api/mlinstances.md)
    * [Experimentera](api/experiments.md)
-   * [Modeller](api/models.md)
+   * [Models](api/models.md)
    * [MLServices](api/mlservices.md)
    * [Insikter](api/insights.md)
    * [Bilaga](api/appendix.md)
@@ -60,8 +60,8 @@ ht-degree: 15%
    * [Posta en modell (API)](models-recipes/score-model-api.md)
    * [Optimera en modell](models-recipes/optimize-model.md)
    * [Berika kundprofilen i realtid med maskininlärningsinsikter](models-recipes/enrich-profile.md)
-   * [Publicera en modell som en tjänst (UI)](models-recipes/publish-model-service-ui.md)
-   * [Publicera en modell som en tjänst (API)](models-recipes/publish-model-service-api.md)
+   * [Publish en modell som en tjänst (UI)](models-recipes/publish-model-service-ui.md)
+   * [Publish en modell som en tjänst (API)](models-recipes/publish-model-service-api.md)
    * [Schemalägg automatiserad utbildning och poängsättning för en tjänst (UI)](models-recipes/schedule-models-ui.md)
 * [Felsökningsguide](troubleshooting-guide.md)
 * [API-referens](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/sensei-ml-api.yaml)

@@ -11,12 +11,12 @@ ht-degree: 0%
 
 ---
 
-# [!UICONTROL Profiles] kontrollpanel {#profile-dashboard}
+# Kontrollpanel för [!UICONTROL Profiles] {#profile-dashboard}
 
-I Adobe Experience Platform användargränssnitt finns en kontrollpanel där du kan visa viktig information om ditt [!DNL Real-Time Customer Profile] data, enligt vad som tagits under en daglig ögonblicksbild.
+Adobe Experience Platform användargränssnitt (UI) tillhandahåller en kontrollpanel där du kan visa viktig information om dina [!DNL Real-Time Customer Profile]-data, som de har fångats in under en daglig ögonblicksbild.
 
-Detaljerade anvisningar om hur du får tillgång till och interagerar med [!UICONTROL Profiles] på kontrollpanelen i användargränssnittet, samt om du vill veta mer om tillgängliga mätvärden som visas på kontrollpanelen, kan du besöka [[!UICONTROL Profiles] instrumentpanelsguide](../../dashboards/guides/profiles.md).
+Detaljerade instruktioner om hur du får åtkomst till och interagerar med kontrollpanelen [!UICONTROL Profiles] i gränssnittet, samt hur du lär dig mer om tillgängliga mått som visas på kontrollpanelen, finns i [[!UICONTROL Profiles] instrumentpanelsguiden ](../../dashboards/guides/profiles.md).
 
-Om du vill ha en översikt över alla kontrollpanelsfunktioner i användargränssnittet i Experience Platform börjar du med att läsa [översikt över instrumentpaneler](../../dashboards/home.md).
+Om du vill ha en översikt över alla instrumentpanelsfunktioner i användargränssnittet i Experience Platform börjar du med att läsa översikten [dashboards](../../dashboards/home.md).
 
-![Kontrollpanelen Profil visas.](../images/profile-dashboard/dashboard-overview.png)
+![Kontrollpanelen för profiler visas.](../images/profile-dashboard/dashboard-overview.png)

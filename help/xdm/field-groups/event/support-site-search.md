@@ -9,9 +9,9 @@ ht-degree: 1%
 
 ---
 
-# [!UICONTROL Support Site Search] schemafältgrupp
+# Schemafältgruppen [!UICONTROL Support Site Search]
 
-[!UICONTROL Support Site Search] är en standardgrupp för schemafält för [[!DNL XDM ExperienceEvent] class](../../classes/experienceevent.md). Den ger en `siteKnowledge.supportSiteSearch` till ett schema som samlar in information om en sökning på en supportwebbplats.
+[!UICONTROL Support Site Search] är en standardschemafältgrupp för [[!DNL XDM ExperienceEvent] klassen](../../classes/experienceevent.md). Det tillhandahåller ett enskilt `siteKnowledge.supportSiteSearch`-objekt till ett schema som samlar in information om en sökning på en supportwebbplats.
 
 ![](../../images/field-groups/support-site-search.png)
 
@@ -21,4 +21,4 @@ ht-degree: 1%
 
 {style="table-layout:auto"}
 
-Mer information om fältgruppen finns i [publik XDM-databas](https://github.com/adobe/xdm/blob/master/docs/reference/fieldgroups/experience-event/experienceevent-support-site-search.schema.json).
+Mer information om fältgruppen finns i [den offentliga XDM-databasen](https://github.com/adobe/xdm/blob/master/docs/reference/fieldgroups/experience-event/experienceevent-support-site-search.schema.json).

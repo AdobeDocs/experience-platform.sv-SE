@@ -27,7 +27,7 @@ IP-intervallinformationen på den här sidan gäller följande filbaserade molnl
 
 >[!IMPORTANT]
 >
->IP-intervallen som beskrivs på den här sidan är *not* stöds för följande filbaserade molnlagringsmål: [!UICONTROL Azure Blob], [!UICONTROL Azure Data Lake Storage Gen2] och [!UICONTROL Data Landing Zone].
+>IP-intervallen som dokumenteras på den här sidan stöds *inte* för följande filbaserade molnlagringsmål: [!UICONTROL Azure Blob], [!UICONTROL Azure Data Lake Storage Gen2] och [!UICONTROL Data Landing Zone].
 
 ## Översikt {#overview}
 

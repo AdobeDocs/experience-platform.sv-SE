@@ -19,7 +19,7 @@ Det här dokumentet innehåller anvisningar om hur du sparar dataflöden när du
 
 Dokumentet kräver en fungerande förståelse av följande komponenter i Adobe Experience Platform:
 
-* [Källor](../../home.md): Experience Platform tillåter att data kan hämtas från olika källor samtidigt som du kan strukturera, märka och förbättra inkommande data med hjälp av plattformstjänster.
+* [Källor](../../home.md): Experience Platform tillåter data att hämtas från olika källor samtidigt som du kan strukturera, etikettera och förbättra inkommande data med hjälp av plattformstjänster.
 
 ## Spara ett dataflöde som ett utkast
 
@@ -27,7 +27,7 @@ Du kan när som helst pausa skapandet av dataflödet efter att du har valt de da
 
 Om du till exempel vill spara förloppet under informationsflödet väljer du **[!UICONTROL Save as draft]**.
 
-![Dataflödesdetaljsteget i källarbetsflödet med Spara som utkast valt.](../../images/tutorials/draft/save-as-draft.png)
+![Dataflödets detaljsteg i källarbetsflödet där Spara som utkast är markerat.](../../images/tutorials/draft/save-as-draft.png)
 
 När du har sparat utkastet kommer du till kontosidan där du kan se en lista över dina befintliga dataflöden, inklusive dina utkast.
 
@@ -35,47 +35,47 @@ När du har sparat utkastet kommer du till kontosidan där du kan se en lista ö
 
 >[!TIP]
 >
->Ritade dataflöden aktiveras inte och har statusen inställd på `draft`.
+>Ritade dataflöden kommer inte att aktiveras och har statusen `draft`.
 
-Om du vill fortsätta med utkastet väljer du ellipserna (`...`) bredvid dataflödets namn och välj **[!UICONTROL Update dataflow]**.
+Om du vill fortsätta med utkastet markerar du ellipserna (`...`) bredvid dataflödets namn och väljer sedan **[!UICONTROL Update dataflow]**.
 
 >[!NOTE]
 >
->Om utkastet innehåller schemaläggningsinformation kan du även välja att **[!UICONTROL Edit schedule]**.
+>Om utkastet innehåller schemaläggningsinformation kan du även välja **[!UICONTROL Edit schedule]** i listrutan.
 
-![Ett rullgardinsfönster med uppdateringsdataflöde valt.](../../images/tutorials/draft/update-dataflow.png)
+![Ett nedrullningsbart fönster med uppdateringsdataflöde markerat.](../../images/tutorials/draft/update-dataflow.png)
 
 ### Öppna dina utkast från källkatalogen
 
-Du kan även komma åt dina utkast via dataflödeskatalogen. Välj **[!UICONTROL Dataflows]** i den övre sidhuvudet för att komma åt dataflödeskatalogen. Här hittar du ditt utkast i listan över befintliga dataflöden i organisationen och väljer ellipserna (`...`) bredvid namnet och välj **[!UICONTROL Update dataflow]**.
+Du kan även komma åt dina utkast via dataflödeskatalogen. Välj **[!UICONTROL Dataflows]** i det övre huvudet för att komma åt dataflödeskatalogen. Här hittar du utkastet från listan med befintliga dataflöden i organisationen, markerar ellipserna (`...`) bredvid namnet och väljer sedan **[!UICONTROL Update dataflow]**.
 
 ![En lista med dataflöden för en viss organisation.](../../images/tutorials/draft/catalog-access.png)
 
-## Publicera ditt utkast till dataflöde
+## Publish ditt datautkastflöde
 
-Du kommer tillbaka till [!UICONTROL Add data] steg i källarbetsflödet där du kan bekräfta dataformatet på nytt och fortsätta med dataflödet.
+Du återgår till [!UICONTROL Add data]-steget i arbetsflödet för källor, där du kan bekräfta dataformatet igen och fortsätta arbeta med dataflödet.
 
 När du har bekräftat formatering, avgränsare och komprimeringstyp för dina data väljer du **[!UICONTROL Next]** för att fortsätta.
 
-![Steget Lägg till data i källarbetsflödet.](../../images/tutorials/draft/select-data.png)
+![Stegen för att lägga till data i källarbetsflödet.](../../images/tutorials/draft/select-data.png)
 
 Bekräfta sedan dataflödesinformationen. Använd informationsgränssnittet för dataflöden för att uppdatera konfigurationer som omger dataflödets namn, beskrivning, partiellt intag, inställningar för feldiagnostik och varningsinställningar.
 
 När du är klar med konfigurationerna väljer du **[!UICONTROL Next]** för att fortsätta.
 
-![Dataflödesdetaljsteget i källarbetsflödet.](../../images/tutorials/draft/dataflow-detail.png)
+![Dataflödets detaljsteg i källarbetsflödet.](../../images/tutorials/draft/dataflow-detail.png)
 
-The [!UICONTROL Mapping] visas. Under det här steget kan du konfigurera om mappningskonfigurationerna för ditt dataflöde. En omfattande guide om förinställningsfunktionerna för data som används för mappning finns på [gränssnittsguide för dataförberedelser](../../../data-prep/ui/mapping.md).
+[!UICONTROL Mapping]-steget visas. Under det här steget kan du konfigurera om mappningskonfigurationerna för ditt dataflöde. En utförlig guide om de förinställningsfunktioner som används för mappning finns i [användargränssnittshandboken för dataförinställningar](../../../data-prep/ui/mapping.md).
 
-När du är klar med mappningsomkonfigurationen väljer du **[!UICONTROL Next]** för att fortsätta.
+När du har slutfört mappningsomkonfigurationen väljer du **[!UICONTROL Next]** för att fortsätta.
 
 ![Mappningssteget för källarbetsflödet.](../../images/tutorials/draft/mapping.png)
 
-Använd [!UICONTROL Scheduling] steg för att upprätta ett schema för ditt dataflöde. Du kan ställa in din matningsfrekvens på `once`, `minute`, `hour`, `day`, eller `week`. När du är klar väljer du **[!UICONTROL Next]** för att fortsätta.
+Använd steget [!UICONTROL Scheduling] om du vill upprätta ett intag-schema för dataflödet. Du kan ställa in din matningsfrekvens på `once`, `minute`, `hour`, `day` eller `week`. När du är klar väljer du **[!UICONTROL Next]** för att fortsätta.
 
 ![Schemaläggningssteget för källarbetsflödet.](../../images/tutorials/draft/scheduling.png)
 
-Granska slutligen informationen om dataflödet och välj **[!UICONTROL Finish]** för att publicera utkastet.
+Granska slutligen informationen om dataflödet och välj sedan **[!UICONTROL Finish]** för att publicera utkastet.
 
 ![Granskningssteget för källarbetsflödet.](../../images/tutorials/draft/review.png)
 
@@ -83,4 +83,4 @@ När du har sparat och publicerat ett utkast aktiveras dataflödet och du kan in
 
 ## Nästa steg
 
-Genom att följa den här självstudiekursen har du lärt dig hur du sparar förloppet och anger ett dataflöde som ett utkast. Mer information om källor finns på [källöversikt](../../home.md).
+Genom att följa den här självstudiekursen har du lärt dig hur du sparar förloppet och anger ett dataflöde som ett utkast. Mer information om källor finns i [Källöversikt](../../home.md).

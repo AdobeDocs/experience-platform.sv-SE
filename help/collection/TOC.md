@@ -21,6 +21,6 @@ ht-degree: 63%
 - [Hantering av duplicering av händelser](event-duplication.md)
 - [Behörighetshantering](permissions.md)
 - [Klienttillståndshantering](client-state.md)
-- Besökaridentifiering {#visitor-identification}
+- Identifiering av besökare {#visitor-identification}
    - [Översikt](visitor-identification.md)
    - [Besökaridentifiering via FPID](visitor-identification-fpid.md)

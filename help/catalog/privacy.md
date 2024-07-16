@@ -13,32 +13,32 @@ ht-degree: 0%
 
 # Behandling av förfrågningar om skydd av privatlivet i datasjön
 
-Adobe Experience Platform [!DNL Privacy Service] behandlar kundförfrågningar om åtkomst, avanmälan eller radering av personuppgifter enligt juridiska och organisatoriska sekretessbestämmelser.
+Adobe Experience Platform [!DNL Privacy Service] bearbetar kundförfrågningar om åtkomst, avanmälan från försäljning eller radering av deras personuppgifter enligt juridiska och organisatoriska sekretessbestämmelser.
 
 Det här dokumentet innehåller viktiga begrepp som rör behandling av sekretessförfrågningar för kunddata som lagras i datasjön.
 
 >[!NOTE]
 >
->Den här handboken handlar bara om hur man gör förfrågningar om integritet för sjön med data i Experience Platform. Om du även planerar att göra sekretessförfrågningar för datalagret för kundprofiler i realtid, se guiden om [sekretessförfrågningsbehandling för profil](../profile/privacy.md) förutom den här självstudiekursen.
+>Den här handboken handlar bara om hur man gör förfrågningar om integritet för sjön med data i Experience Platform. Om du även planerar att göra sekretessförfrågningar för datalagret för kundprofiler i realtid, kan du förutom den här självstudiekursen läsa guiden om [bearbetning av sekretessförfrågningar för profilen](../profile/privacy.md).
 >
->Anvisningar om hur du gör sekretessförfrågningar för andra Adobe Experience Cloud-program finns i [Privacy Service](../privacy-service/experience-cloud-apps.md).
+>Anvisningar om hur du gör sekretessförfrågningar för andra Adobe Experience Cloud-program finns i [Privacy Servicens dokumentation](../privacy-service/experience-cloud-apps.md).
 
 ## Komma igång
 
-Vi rekommenderar att du har en fungerande förståelse för följande [!DNL Experience Platform] innan du läser den här guiden:
+Vi rekommenderar att du har en fungerande förståelse för följande [!DNL Experience Platform]-tjänster innan du läser den här handboken:
 
-* [[!DNL Privacy Service]](../privacy-service/home.md): Hanterar kundförfrågningar om åtkomst, avanmälan eller radering av personuppgifter mellan olika Adobe Experience Cloud-program.
-* [[!DNL Catalog Service]](home.md): Registreringssystemet för dataplats och -rader inom [!DNL Experience Platform]. Tillhandahåller ett API som kan användas för att uppdatera datauppsättningsmetadata.
-* [[!DNL Experience Data Model (XDM) System]](../xdm/home.md): Det standardiserade ramverk som [!DNL Experience Platform] organiserar kundupplevelsedata.
-* [[!DNL Identity Service]](../identity-service/home.md): Lös den grundläggande utmaning som fragmenteringen av kundupplevelsedata innebär genom att överbrygga identiteter mellan olika enheter och system.
+* [[!DNL Privacy Service]](../privacy-service/home.md): Hanterar kundförfrågningar om åtkomst, avanmälan från försäljning eller borttagning av deras personuppgifter mellan Adobe Experience Cloud-program.
+* [[!DNL Catalog Service]](home.md): Postsystemet för dataplats och datalinje inom [!DNL Experience Platform]. Tillhandahåller ett API som kan användas för att uppdatera datauppsättningsmetadata.
+* [[!DNL Experience Data Model (XDM) System]](../xdm/home.md): Det standardiserade ramverket som [!DNL Experience Platform] organiserar kundupplevelsedata med.
+* [[!DNL Identity Service]](../identity-service/home.md): Lös den grundläggande utmaning som fragmenteringen av kundupplevelsedata innebär genom att överbrygga identiteter mellan enheter och system.
 
 ## Identitetsnamnutrymmen {#namespaces}
 
-Adobe Experience Platform [!DNL Identity Service] överbryggar kundidentitetsdata mellan system och enheter. [!DNL Identity Service] använder identitetsnamnutrymmen för att ge kontext till identitetsvärden genom att koppla dem till deras ursprungssystem. Ett namnutrymme kan representera ett allmänt koncept, t.ex. en e-postadress (&quot;E-post&quot;) eller associera identiteten med ett visst program, t.ex. ett Adobe Advertising Cloud-id (&quot;AdCloud&quot;) eller ett Adobe Target-id (&quot;TNTID&quot;).
+Adobe Experience Platform [!DNL Identity Service] förenar data för kundidentitet mellan system och enheter. [!DNL Identity Service] använder identitetsnamnutrymmen för att ge kontext till identitetsvärden genom att koppla dem till deras ursprungssystem. Ett namnutrymme kan representera ett allmänt koncept, t.ex. en e-postadress (&quot;E-post&quot;) eller associera identiteten med ett visst program, t.ex. ett Adobe Advertising Cloud-id (&quot;AdCloud&quot;) eller ett Adobe Target-id (&quot;TNTID&quot;).
 
-[!DNL Identity Service] I lagras globalt definierade (standard) och användardefinierade (anpassade) identitetsnamnutrymmen. Standardnamnutrymmen är tillgängliga för alla organisationer (till exempel&quot;E-post&quot; och&quot;ECID&quot;), medan din organisation också kan skapa anpassade namnutrymmen som passar organisationens behov.
+[!DNL Identity Service] underhåller ett lager med globalt definierade (standard) och användardefinierade (anpassade) identitetsnamnutrymmen. Standardnamnutrymmen är tillgängliga för alla organisationer (till exempel&quot;E-post&quot; och&quot;ECID&quot;), medan din organisation också kan skapa anpassade namnutrymmen som passar organisationens behov.
 
-Mer information om identitetsnamnutrymmen i [!DNL Experience Platform], se [Översikt över namnutrymmet identity](../identity-service/features/namespaces.md).
+Mer information om identitetsnamnutrymmen i [!DNL Experience Platform] finns i [översikten över identitetsnamnrymden](../identity-service/features/namespaces.md).
 
 ## Lägga till identitetsdata i datauppsättningar
 
@@ -52,7 +52,7 @@ I det här avsnittet går vi igenom stegen för att lägga till en identitetsbes
 
 >[!IMPORTANT]
 >
->När du bestämmer vilka schemafält som ska anges som identiteter bör du tänka på [begränsningar för att använda kapslade mappningsfält](#nested-maps).
+>När du bestämmer vilka schemafält som ska anges som identiteter bör du tänka på [begränsningarna med att använda kapslade mappningsfält](#nested-maps).
 
 Det finns två metoder för att lägga till en identitetsbeskrivning i ett dataset-schema:
 
@@ -61,19 +61,19 @@ Det finns två metoder för att lägga till en identitetsbeskrivning i ett datas
 
 ### Använda gränssnittet {#identity-ui}
 
-I [!DNL Experience Platform]användargränssnittet, **[!UICONTROL Schemas]** kan du redigera befintliga XDM-scheman. Om du vill lägga till en identitetsbeskrivning till ett schema väljer du schemat från listan och följer stegen för [ange ett schemafält som identitetsfält](../xdm/tutorials/create-schema-ui.md#identity-field) i [!DNL Schema Editor] självstudie.
+I [!DNL Experience Platform]användargränssnittet kan du redigera befintliga XDM-scheman med arbetsytan i **[!UICONTROL Schemas]**. Om du vill lägga till en identitetsbeskrivning till ett schema väljer du schemat från listan och följer stegen för [att ange ett schemafält som ett identitetsfält](../xdm/tutorials/create-schema-ui.md#identity-field) i självstudiekursen [!DNL Schema Editor].
 
-När du har angett rätt fält i schemat som identitetsfält kan du fortsätta till nästa avsnitt i [skicka sekretessförfrågningar](#submit).
+När du har angett rätt fält i schemat som identitetsfält kan du fortsätta till nästa avsnitt om [att skicka sekretessförfrågningar](#submit).
 
 ### Använda API:et {#identity-api}
 
 >[!NOTE]
 >
->I det här avsnittet antas du känna till det unika URI-ID-värdet för datauppsättningens XDM-schema. Om du inte känner till det här värdet kan du hämta det med [!DNL Catalog Service] API. När du har läst [komma igång](./api/getting-started.md) i utvecklarhandboken, följ stegen som beskrivs i för [lista](./api/list-objects.md) eller [söka](./api/look-up-object.md) [!DNL Catalog] objekt för att hitta datauppsättningen. Schema-ID:t finns under `schemaRef.id`
+>I det här avsnittet antas du känna till det unika URI-ID-värdet för datauppsättningens XDM-schema. Om du inte känner till det här värdet kan du hämta det med API:t [!DNL Catalog Service]. När du har läst avsnittet [getting started](./api/getting-started.md) i utvecklarhandboken följer du stegen som beskrivs i för [listning](./api/list-objects.md) eller [sökning](./api/look-up-object.md) [!DNL Catalog] -objekt för att hitta din datauppsättning. Schemats-ID finns under `schemaRef.id`
 >
->I det här avsnittet förutsätts även att du vet hur du anropar API:t för schemaregister. Viktig information om hur du använder API:t finns i `{TENANT_ID}` och konceptet med behållare finns i [komma igång](../xdm/api/getting-started.md) i API-guiden.
+>I det här avsnittet förutsätts även att du vet hur du anropar API:t för schemaregister. Viktig information om hur du använder API:t, inklusive hur du känner till `{TENANT_ID}` och konceptet med behållare, finns i avsnittet [Komma igång](../xdm/api/getting-started.md) i API-handboken.
 
-Du kan lägga till en identitetsbeskrivning i en datauppsättnings XDM-schema genom att göra en POST-förfrågan i `/descriptors` slutpunkt i [!DNL Schema Registry] API.
+Du kan lägga till en identitetsbeskrivning i en datamängds XDM-schema genom att göra en POST-förfrågan till `/descriptors`-slutpunkten i [!DNL Schema Registry] API.
 
 **API-format**
 
@@ -109,9 +109,9 @@ curl -X POST \
 | --- | --- |
 | `@type` | Den typ av beskrivning som skapas. För identitetsbeskrivare måste värdet vara &quot;xdm:descriptorIdentity&quot;. |
 | `xdm:sourceSchema` | Unikt URI-ID för datauppsättningens XDM-schema. |
-| `xdm:sourceVersion` | Den version av XDM-schemat som anges i `xdm:sourceSchema`. |
+| `xdm:sourceVersion` | Den version av XDM-schemat som har angetts i `xdm:sourceSchema`. |
 | `xdm:sourceProperty` | Sökvägen till det schemafält som beskrivningen tillämpas på. |
-| `xdm:namespace` | En av [standardidentitetsnamnutrymmen](../privacy-service/api/appendix.md#standard-namespaces) känns igen av [!DNL Privacy Service]eller ett anpassat namnutrymme som definieras av din organisation. |
+| `xdm:namespace` | Ett av [standardnamnutrymmena för identiteter](../privacy-service/api/appendix.md#standard-namespaces) som känns igen av [!DNL Privacy Service], eller ett anpassat namnutrymme som definieras av din organisation. |
 | `xdm:property` | Antingen &quot;xdm:id&quot; eller &quot;xdm:code&quot;, beroende på vilket namnutrymme som används under `xdm:namespace`. |
 | `xdm:isPrimary` | Ett booleskt värde (tillval). När värdet är true anger detta att fältet är en primär identitet. Scheman får endast innehålla en primär identitet. Standardvärdet är false om det inte inkluderas. |
 
@@ -137,9 +137,9 @@ Ett lyckat svar returnerar HTTP-status 201 (Skapad) och information om den nyska
 
 >[!NOTE]
 >
->I det här avsnittet beskrivs hur du formaterar sekretessförfrågningar för datasjön. Vi rekommenderar att du granskar [[!DNL Privacy Service] UI](../privacy-service/ui/overview.md) eller [[!DNL Privacy Service] API](../privacy-service/api/getting-started.md) dokumentation för fullständiga steg om hur du skickar ett sekretessjobb, inklusive hur inskickade användaridentitetsdata formateras korrekt i begärandenyttolaster.
+>I det här avsnittet beskrivs hur du formaterar sekretessförfrågningar för datasjön. Vi rekommenderar att du läser dokumentationen för [[!DNL Privacy Service] användargränssnittet](../privacy-service/ui/overview.md) eller [[!DNL Privacy Service] API](../privacy-service/api/getting-started.md) för att få information om hur du skickar ett sekretessjobb, inklusive hur du formaterar inskickade användaridentitetsdata i nyttolaster.
 
-I följande avsnitt beskrivs hur du gör sekretessförfrågningar för datasjön med [!DNL Privacy Service] Gränssnitt eller API.
+I följande avsnitt beskrivs hur du gör sekretessförfrågningar för datasjön med hjälp av användargränssnittet eller API:t [!DNL Privacy Service].
 
 >[!IMPORTANT]
 >
@@ -147,17 +147,17 @@ I följande avsnitt beskrivs hur du gör sekretessförfrågningar för datasjön
 
 ### Använda gränssnittet
 
-När du skapar jobbförfrågningar i användargränssnittet måste du välja **[!UICONTROL AEP Data Lake]** under **[!UICONTROL Products]** för att bearbeta jobb för data som lagras i datasjön.
+När du skapar jobbbegäranden i användargränssnittet måste du markera **[!UICONTROL AEP Data Lake]** under **[!UICONTROL Products]** för att kunna bearbeta jobb för data som lagras i datasjön.
 
 ![Bild som visar den Data Lake-produkt som valts i dialogrutan för att skapa sekretessbegäran](./images/privacy/product-value.png)
 
 ### Använda API:et
 
-När jobbförfrågningar skapas i API:t, `userIDs` som tillhandahålls måste använda en specifik `namespace` och `type` beroende på vilket datalager de gäller för. ID:n för datasjön måste använda `unregistered` för `type` värde och `namespace` värde som matchar ett av [sekretessetiketter](#privacy-labels) som har lagts till i tillämpliga datauppsättningar.
+När du skapar jobbförfrågningar i API:t måste alla `userIDs` som anges använda en specifik `namespace` och `type` beroende på vilket datalager de gäller för. ID:n för datasjön måste använda `unregistered` för sitt `type`-värde och ett `namespace`-värde som matchar en av de [sekretessetiketter](#privacy-labels) som har lagts till i tillämpliga datamängder.
 
-Dessutom är `include` arrayen med nyttolasten för begäran måste innehålla produktvärdena för de olika datalager som begäran görs till. När en begäran görs till datasjön måste arrayen innehålla värdet `aepDataLake`.
+Dessutom måste matrisen `include` för nyttolasten för begäran innehålla produktvärden för de olika datalager som begäran görs till. När du gör förfrågningar till datasjön måste matrisen innehålla värdet `aepDataLake`.
 
-Följande begäran skapar ett nytt sekretessjobb för datasjön med hjälp av det oregistrerade `email_label` namnutrymme. Den innehåller också produktvärdet för sjön i `include` array:
+Följande begäran skapar ett nytt sekretessjobb för datasjön med det oregistrerade namnområdet `email_label`. Den innehåller också produktvärdet för datasjön i arrayen `include`:
 
 ```shell
 curl -X POST \
@@ -200,19 +200,19 @@ curl -X POST \
 
 >[!IMPORTANT]
 >
->Plattformsprocessernas sekretessförfrågningar för alla [sandlådor](../sandboxes/home.md) som tillhör din organisation. Detta resulterar i att `x-sandbox-name` huvud som ingår i begäran ignoreras av systemet.
+>Plattformen behandlar sekretessförfrågningar i alla [sandlådor](../sandboxes/home.md) som tillhör din organisation. Därför ignoreras alla `x-sandbox-name`-huvuden som ingår i begäran av systemet.
 
 ## Ta bort bearbetning av begäran
 
-När [!DNL Experience Platform] tar emot en borttagningsbegäran från [!DNL Privacy Service], [!DNL Platform] skickar bekräftelse till [!DNL Privacy Service] att begäran har tagits emot och att data som påverkas har markerats för borttagning. Registren tas sedan bort från sjön inom sju dagar. Under denna sju-dagars period tas data bort på skärmen och är därför inte tillgängliga för alla [!DNL Platform] service.
+När [!DNL Experience Platform] tar emot en borttagningsbegäran från [!DNL Privacy Service], skickar [!DNL Platform] en bekräftelse till [!DNL Privacy Service] om att begäran har tagits emot och att data som påverkas har markerats för borttagning. Registren tas sedan bort från sjön inom sju dagar. Under det sju dagar långa fönstret tas data bort utan att vara tillgängliga för någon [!DNL Platform]-tjänst.
 
-Om du även inkluderat `ProfileService` eller `identity` i sekretessbegäran hanteras tillhörande data separat. Se avsnittet om [ta bort begärandebearbetning för profil](../profile/privacy.md#delete) för mer information.
+Om du även inkluderade `ProfileService` eller `identity` i sekretessbegäran hanteras deras associerade data separat. Mer information finns i avsnittet [Ta bort begärandebearbetning för profilen](../profile/privacy.md#delete).
 
 ## Nästa steg
 
 Genom att läsa det här dokumentet har du lagts till i de viktiga koncept som rör behandling av sekretessförfrågningar för datasjön. Vi rekommenderar att du fortsätter att läsa dokumentationen som finns i den här handboken för att få en djupare förståelse för hur du hanterar identitetsdata och skapar sekretessjobb.
 
-Visa dokumentet på [sekretessförfrågningar för kundprofil i realtid](../profile/privacy.md) för steg för att behandla sekretessförfrågningar för [!DNL Profile] butik.
+I dokumentet om [behandling av sekretessförfrågningar för kundprofil i realtid](../profile/privacy.md) finns anvisningar om hur du hanterar sekretessförfrågningar för butiken [!DNL Profile].
 
 ## Bilaga
 
@@ -225,4 +225,4 @@ Det är viktigt att komma ihåg att det finns två typer av kapslade mappningsf�
 * Ett mappningsfält i ett matristypsfält
 * Ett mappningsfält i ett annat mappningsfält
 
-Bearbetning av sekretessjobb för något av de två exemplen ovan kommer så småningom att misslyckas. Därför rekommenderar vi att du undviker att använda kapslade mappningsfält för att lagra privata kunddata. Relevanta konsument-ID:n ska lagras som en annan datatyp än en karta i `identityMap` fält (i sig ett mappningsfält) för postbaserade datamängder, eller `endUserID` för tidsseriebaserade datauppsättningar.
+Bearbetning av sekretessjobb för något av de två exemplen ovan kommer så småningom att misslyckas. Därför rekommenderar vi att du undviker att använda kapslade mappningsfält för att lagra privata kunddata. Relevanta konsument-ID:n ska lagras som en datatyp som inte är mappad i fältet `identityMap` (i sig ett mappningsfält) för postbaserade datamängder, eller i fältet `endUserID` för tidsseriebaserade datamängder.

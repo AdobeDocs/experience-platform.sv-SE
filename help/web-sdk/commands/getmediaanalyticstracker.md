@@ -1,19 +1,19 @@
 ---
 title: getMediaAnalyticsTracker
 description: Lär dig hur du skapar ett spårningsobjekt för medieanalys och använder det för att spåra mediahändelser.
-source-git-commit: 9384c1cc15441199e898d6cc0850e5422253f106
+exl-id: ae968da8-7763-4b2a-a716-3014ba0d270d
+source-git-commit: 57d42d88ec9a93744450a2a352590ab57d9e5bb7
 workflow-type: tm+mt
 source-wordcount: '302'
-ht-degree: 0%
+ht-degree: 1%
 
 ---
 
-
 # `getMediaAnalyticsTracker`
 
-Detta Web SDK-kommando hämtar en Media Analytics-spårare. Du kan använda det här kommandot för att skapa en objektinstans och sedan använda samma API:er som de som finns i [Media JS-bibliotek](https://adobe-marketing-cloud.github.io/media-sdks/reference/javascript_3x/APIReference.html), spåra mediahändelser.
+Detta Web SDK-kommando hämtar en Media Analytics-spårare. Du kan använda det här kommandot för att skapa en objektinstans och sedan, med samma API:er som de som finns i [Media JS-biblioteket](https://adobe-marketing-cloud.github.io/media-sdks/reference/javascript_3x/APIReference.html), spåra mediahändelser.
 
-The `getMediaAnalyticsTracker` returnerar det gamla Media Analytics-API:t.
+Kommandot `getMediaAnalyticsTracker` returnerar det gamla API:t för medieanalys.
 
 
 | Metodnamn | Beskrivning | Syntax |

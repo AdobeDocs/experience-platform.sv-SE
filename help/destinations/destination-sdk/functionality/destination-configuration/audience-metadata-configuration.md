@@ -15,9 +15,9 @@ När du exporterar data från Experience Platform till målplatsen kan du behöv
 
 Destination SDK innehåller verktyg som du kan använda för att skapa, uppdatera eller ta bort målgrupper programmatiskt på målplattformen.
 
-Mer information om var den här komponenten passar in i en integrering som skapas med Destination SDK finns i diagrammet i [konfigurationsalternativ](../configuration-options.md) eller se guiden om hur du [använd Destination SDK för att konfigurera ett mål för direktuppspelning](../../guides/configure-destination-instructions.md#create-destination-configuration).
+Mer information om var den här komponenten passar in i en integrering som skapats med Destination SDK finns i diagrammet i dokumentationen för [konfigurationsalternativ](../configuration-options.md) eller i guiden om hur du [använder Destination SDK för att konfigurera ett direktuppspelningsmål](../../guides/configure-destination-instructions.md#create-destination-configuration).
 
-Du kan konfigurera metadatamallen för målgruppen via `/authoring/audience-templates` slutpunkt. När du har skapat en konfiguration för målgruppsmetadata kan du använda `/authoring/destinations` slutpunkt för att konfigurera `audienceMetadataConfig` -avsnitt. I det här avsnittet anges vilka målgruppsmetadata som ska mappas till målgruppsmallen.
+Du kan konfigurera metadatamallen för målgruppen via slutpunkten `/authoring/audience-templates`. När du har skapat konfigurationen för målgruppsmetadata kan du använda slutpunkten `/authoring/destinations` för att konfigurera avsnittet `audienceMetadataConfig`. I det här avsnittet anges vilka målgruppsmetadata som ska mappas till målgruppsmallen.
 
 På följande API-referenssidor finns detaljerade API-anropsexempel där du kan konfigurera komponenterna som visas på den här sidan.
 
@@ -28,7 +28,7 @@ På följande API-referenssidor finns detaljerade API-anropsexempel där du kan 
 
 >[!IMPORTANT]
 >
->Alla parameternamn och värden som stöds av Destinationen SDK är **skiftlägeskänslig**. Undvik skiftlägeskänslighetsfel genom att använda parameternamn och värden exakt som de visas i dokumentationen.
+>Alla parameternamn och värden som stöds av Destinationen SDK är **skiftlägeskänsliga**. Undvik skiftlägeskänslighetsfel genom att använda parameternamn och värden exakt som de visas i dokumentationen.
 
 ## Integrationstyper som stöds {#supported-integration-types}
 
@@ -54,10 +54,10 @@ När du skapar din konfiguration för målgruppsmetadata kan du använda de para
 
 | Parameter | Typ | Beskrivning |
 |---------|----------|------|
-| `mapExperiencePlatformSegmentName` | Boolean | Anger om [[!UICONTROL Mapping ID]](../../../ui/activate-segment-streaming-destinations.md#scheduling) värdet i målaktiveringsarbetsflödet ska vara Experience Platform målgruppsnamnet. |
-| `mapExperiencePlatformSegmentId` | Boolean | Anger om [[!UICONTROL Mapping ID]](../../../ui/activate-segment-streaming-destinations.md#scheduling) värdet i målaktiveringsarbetsflödet ska vara Experience Platform målgrupps-ID. |
-| `mapUserInput` | Boolean | Aktiverar eller inaktiverar användarindata för [[!UICONTROL Mapping ID]](../../../ui/activate-segment-streaming-destinations.md#scheduling) i målaktiveringsarbetsflödet. Om inställt på `true`, `audienceTemplateId` kan inte finnas. |
-| `audienceTemplateId` | Sträng | The `instanceId` i [metadatamall för målgrupper](../../metadata-api/create-audience-template.md) används för ditt mål. |
+| `mapExperiencePlatformSegmentName` | Boolean | Anger om värdet [[!UICONTROL Mapping ID]](../../../ui/activate-segment-streaming-destinations.md#scheduling) i målaktiveringsarbetsflödet ska vara Experience Platform målgruppsnamnet. |
+| `mapExperiencePlatformSegmentId` | Boolean | Anger om [[!UICONTROL Mapping ID]](../../../ui/activate-segment-streaming-destinations.md#scheduling)-värdet i målaktiveringsarbetsflödet ska vara Experience Platform målgrupps-ID. |
+| `mapUserInput` | Boolean | Aktiverar eller inaktiverar användarindata för värdet [[!UICONTROL Mapping ID]](../../../ui/activate-segment-streaming-destinations.md#scheduling) i målaktiveringsarbetsflödet. Om `true` anges kan `audienceTemplateId` inte finnas. |
+| `audienceTemplateId` | Sträng | `instanceId` för [målgruppens metadatamall](../../metadata-api/create-audience-template.md) som används för ditt mål. |
 
 {style="table-layout:auto"}
 

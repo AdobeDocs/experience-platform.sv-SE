@@ -1,6 +1,6 @@
 ---
 keywords: Experience Platform;hem;populära ämnen;Oracle Service Cloud;oracle service cloud
-title: Översikt över källanslutning för Oracle Service Cloud
+title: Översikt över Oracle Service Cloud Source Connector
 description: Lär dig hur du ansluter Oracle Service Cloud till Adobe Experience Platform med hjälp av API:er eller användargränssnittet.
 last-substantial-update: 2023-04-26T00:00:00Z
 exl-id: 5c914e8a-d8ed-469f-b17a-26a85705e9ef
@@ -19,7 +19,7 @@ Experience Platform stöder inmatning av data från ett system för kundframgån
 
 ## IP-adress tillåtelselista
 
-En lista med IP-adresser måste läggas till tillåtelselista innan du kan arbeta med källanslutningar. Om du inte lägger till dina regionspecifika IP-adresser i tillåtelselista kan det leda till fel eller sämre prestanda när du använder källor. Se [IP-adress tillåtelselista](../../ip-address-allow-list.md) sida för mer information.
+En lista med IP-adresser måste läggas till tillåtelselista innan du kan arbeta med källanslutningar. Om du inte lägger till dina regionspecifika IP-adresser i tillåtelselista kan det leda till fel eller sämre prestanda när du använder källor. Mer information finns på sidan [IP-adress tillåtelselista](../../ip-address-allow-list.md).
 
 Dokumentationen nedan innehåller information om hur du ansluter Oracle Service Cloud till plattformen med API:er eller användargränssnittet:
 

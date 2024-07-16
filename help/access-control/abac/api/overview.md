@@ -8,7 +8,7 @@ exl-id: 0fc32354-4869-4392-9501-b1dbea1bc55e
 source-git-commit: c16ce1020670065ecc5415bc3e9ca428adbbd50c
 workflow-type: tm+mt
 source-wordcount: '450'
-ht-degree: 4%
+ht-degree: 3%
 
 ---
 
@@ -20,22 +20,22 @@ Det attributbaserade API:t för åtkomstkontroll används för att komma åt rol
 
 >[!IMPORTANT]
 >
->Attributbaserad åtkomstkontroll ska inte blandas ihop med Experience Platform datastyrningsfunktioner, som gör att du kan använda etiketter och policyer för att styra hur data används i plattformar i stället för vilka användare i organisationen har tillgång till dem. Se [API-guide för principtjänst](../../../data-governance/api/overview.md) för steg om hur du programmässigt utnyttjar dessa funktioner.
+>Attributbaserad åtkomstkontroll ska inte blandas ihop med Experience Platform datastyrningsfunktioner, som gör att du kan använda etiketter och policyer för att styra hur data används i plattformar i stället för vilka användare i organisationen har tillgång till dem. I [API-handboken för principtjänsten](../../../data-governance/api/overview.md) finns anvisningar om hur du använder dessa funktioner programmatiskt.
 
-Dessa slutpunkter beskrivs nedan. Mer information finns i de enskilda slutpunktshandböckerna och i [komma igång-guide](./getting-started.md) om du vill ha viktig information om obligatoriska rubriker, läsa exempel-API-anrop med mera.
+Dessa slutpunkter beskrivs nedan. Besök de enskilda slutpunktsguiderna för mer information och se [kom igång-guiden](./getting-started.md) för viktig information om obligatoriska huvuden, läsning av exempel-API-anrop med mera.
 
 ## Roller
 
-Roller definierar åtkomsten som en administratör, en specialist eller en slutanvändare har till resurser i organisationen. I en rollbaserad miljö för åtkomstkontroll är etableringen av användaråtkomst grupperad genom vanliga ansvarsområden och behov. En roll har en given uppsättning behörigheter och medlemmar i organisationen kan tilldelas till en eller flera roller, beroende på vilket synområde eller vilken skrivbehörighet de behöver. Se [rollslutpunktshandbok](./roles.md) om du vill ha mer information om hur du arbetar med roller i API:t.
+Roller definierar åtkomsten som en administratör, en specialist eller en slutanvändare har till resurser i organisationen. I en rollbaserad miljö för åtkomstkontroll är etableringen av användaråtkomst grupperad genom vanliga ansvarsområden och behov. En roll har en given uppsättning behörigheter och medlemmar i organisationen kan tilldelas till en eller flera roller, beroende på vilket synområde eller vilken skrivbehörighet de behöver. Mer information om hur du arbetar med roller i API finns i [rollslutpunktshandboken](./roles.md).
 
 ## Policyer
 
-Profiler är satser som sammanför attribut för att fastställa tillåtna och otillåtna åtgärder. Profiler kan antingen vara lokala eller globala och kan åsidosätta andra profiler. The `/policies` kan du programmässigt hantera principer i organisationen. Se [stödlinje för principslutpunkt](./policies.md) om du vill ha mer information om hur du arbetar med principer i API:t.
+Profiler är satser som sammanför attribut för att fastställa tillåtna och otillåtna åtgärder. Profiler kan antingen vara lokala eller globala och kan åsidosätta andra profiler. Med slutpunkten `/policies` kan du programmässigt hantera principer i din organisation. Mer information om hur du arbetar med principer i API finns i [principslutpunktshandboken](./policies.md).
 
 ## Produkter
 
-The `/products` -slutpunkten i det attributbaserade API:t för åtkomstkontroll gör det möjligt att programmässigt hantera produkter samt behörighetskategorier och behörighetsgrupper som är kopplade till produkter i organisationen. Se [slutpunktsguide för produkter](./products.md) om du vill ha mer information om hur du arbetar med produkter och deras motsvarande behörighetskategorier och behörighetsgrupper i API:t.
+Med slutpunkten `/products` i det attributbaserade API:t för åtkomstkontroll kan du programmässigt hantera produkter samt behörighetskategorier och behörighetsgrupper som är kopplade till produkter i organisationen. Mer information om hur du arbetar med produkter och deras motsvarande behörighetskategorier och behörighetsgrupper i API:t finns i [produktslutpunktshandboken](./products.md).
 
 ## Nästa steg
 
-Om du vill börja ringa anrop med det attributbaserade API:t för åtkomstkontroll läser du [komma igång-guide](./getting-started.md) Välj sedan en av slutpunktsstödlinjerna och lär dig hur du använder specifika slutpunkter.
+Om du vill börja ringa anrop med det attributbaserade API:t för åtkomstkontroll läser du [kom igång-guiden](./getting-started.md) och väljer sedan en av slutpunktshandböckerna för att lära dig hur du använder specifika slutpunkter.

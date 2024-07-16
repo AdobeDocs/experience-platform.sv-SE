@@ -4,14 +4,14 @@ description: Lär dig hur du exporterar granskningshändelser i Experience Platf
 exl-id: 76c5de76-e391-4258-afd8-ddb2c8a9443f
 source-git-commit: c7887391481def872c40dd6ed1193bf562b9d0cf
 workflow-type: tm+mt
-source-wordcount: '157'
-ht-degree: 3%
+source-wordcount: '158'
+ht-degree: 0%
 
 ---
 
 # Exportera en lista med granskningshändelser
 
-Du kan hämta händelsedata genom att göra en GET-förfrågan till `/audit/export` slutpunkt, ange de händelser som du vill hämta i nyttolasten.
+Du kan hämta händelsedata genom att göra en GET-begäran till `/audit/export`-slutpunkten och ange vilka händelser som ska hämtas i nyttolasten.
 
 **API-format**
 
@@ -41,4 +41,4 @@ curl -X POST \
 
 **Svar**
 
-Resultatet genereras i en CSV-fil för export. Ett lyckat svar returnerar HTTP 307 utan svarstext. En länk till exportfilen finns i `Location` svarshuvud.
+Resultatet genereras i en CSV-fil för export. Ett lyckat svar returnerar HTTP 307 utan svarstext. En länk till exportfilen finns i svarsrubriken `Location`.

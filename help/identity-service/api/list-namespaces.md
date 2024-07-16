@@ -8,7 +8,7 @@ exl-id: b65e5f86-143d-4ca5-8b3f-2c0a24433bbf
 source-git-commit: c16ce1020670065ecc5415bc3e9ca428adbbd50c
 workflow-type: tm+mt
 source-wordcount: '79'
-ht-degree: 2%
+ht-degree: 0%
 
 ---
 
@@ -33,7 +33,7 @@ curl -X GET \
 
 **Svar**
 
-Svaret innehåller en array med objekt, där varje objekt representerar ett tillgängligt namnutrymme. Namnutrymmen med ett &quot;[!UICONTROL custom]&quot; värdet &quot;[!UICONTROL false]&quot; är standardnamnutrymmen, medan de med &quot;[!UICONTROL custom]&quot; värdet &quot;[!UICONTROL true]&quot; är namnutrymmen som din organisation har skapat.
+Svaret innehåller en array med objekt, där varje objekt representerar ett tillgängligt namnutrymme. Namnutrymmen med värdet [!UICONTROL custom] för [!UICONTROL false] är standardnamnutrymmen, medan de med värdet [!UICONTROL custom] för [!UICONTROL true] är namnutrymmen som din organisation har skapat.
 
 >[!NOTE]
 >

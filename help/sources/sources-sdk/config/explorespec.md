@@ -6,7 +6,7 @@ exl-id: 423a7e56-9dd1-4071-bd26-ee4f9f206122
 source-git-commit: b66a50e40aaac8df312a2c9a977fb8d4f1fb0c80
 workflow-type: tm+mt
 source-wordcount: '254'
-ht-degree: 1%
+ht-degree: 0%
 
 ---
 
@@ -84,4 +84,4 @@ Utforska specifikationerna och definiera de parametrar som krävs för att utfor
 
 ## Nästa steg
 
-När du har fyllt i dina specifikationer kan du fortsätta att skapa en fullständig anslutningsspecifikation med [!DNL Flow Service] API. Se [Självbetjänade källor (Batch SDK) API-guide](../api/api-overview.md) för mer information.
+När du har fyllt i utforska specifikationerna kan du fortsätta att skapa en fullständig anslutningsspecifikation med API:t [!DNL Flow Service]. Mer information finns i API-handboken för [Självbetjäningskällor (Batch SDK)](../api/api-overview.md).

@@ -5,7 +5,7 @@ description: Hantera kundupplevelsen genom att koppla era data i Platform till a
 exl-id: 15a22a93-b4d6-4b94-bc6c-3634920c7689
 source-git-commit: 461545b7d06a4c54fb4037cf1eb2ba44dd6ee7b9
 workflow-type: tm+mt
-source-wordcount: '231'
+source-wordcount: '224'
 ht-degree: 0%
 
 ---
@@ -20,7 +20,7 @@ Hantera er kundupplevelse genom att koppla era data i Adobe Experience Platform 
 
 För närvarande stöder Platform de Adobe-destinationer som anges nedan.
 
-Information om skillnaden mellan anslutningar och tillägg finns i [Anslutningar](../../destination-types.md#connections) på sidan Måltyper och -kategorier.
+Mer information om skillnaden mellan anslutningar och tillägg finns i [Anslutningar](../../destination-types.md#connections) på sidan Måltyper och kategorier.
 
 ### Anslutningar
 
@@ -48,4 +48,4 @@ Information om skillnaden mellan anslutningar och tillägg finns i [Anslutningar
 
 Använd Experience Platform för målgruppsdelning för att dela era Experience Platform-målgrupper med andra Adobe-destinationer. Se sidan nedan för mer information (öppnas i dokumentationsportalen för Audience Manager):
 
-* [Experience Platform kan dela med sig av sina kunder till Adobe Audience Manager, Adobe Advertising Cloud och Adobe Target via integreringen med bastjänsterna](https://experienceleague.adobe.com/docs/audience-manager/user-guide/implementation-integration-guides/integration-experience-platform/aam-aep-audience-sharing.html)
+* [Experience Platform för målgruppsdelning med Adobe Audience Manager, Adobe Advertising Cloud och Adobe Target via integreringen med bastjänsterna](https://experienceleague.adobe.com/docs/audience-manager/user-guide/implementation-integration-guides/integration-experience-platform/aam-aep-audience-sharing.html)

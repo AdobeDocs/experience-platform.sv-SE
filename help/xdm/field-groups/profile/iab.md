@@ -11,13 +11,13 @@ ht-degree: 0%
 
 ---
 
-# [!UICONTROL IAB TCF 2.0 Consent] fältgrupp för profilscheman
+# Fältgrupp [!UICONTROL IAB TCF 2.0 Consent] för profilscheman
 
 >[!NOTE]
 >
->Det här dokumentet innehåller [!UICONTROL IAB TCF 2.0 Consent] schemafältgrupp för klassen XDM Individual Profile. För fältgruppen som är avsedd för klassen XDM ExperienceEvent, se följande [dokument](../event/iab.md) i stället.
+>Det här dokumentet innehåller schemafältgruppen [!UICONTROL IAB TCF 2.0 Consent] för klassen XDM Individual Profile. För fältgruppen som är avsedd för klassen XDM ExperienceEvent, se följande [dokument](../event/iab.md) i stället.
 
-[!UICONTROL IAB TCF 2.0 Consent] är en standardgrupp för schemafält för [[!DNL XDM Individual Profile] class](../../classes/individual-profile.md) används för att fånga in tidsstämplade IAB-strängar för medgivande för att spåra mönster för samtyckesändringar över tid.
+[!UICONTROL IAB TCF 2.0 Consent] är en standardschemafältgrupp för den [[!DNL XDM Individual Profile] klass](../../classes/individual-profile.md) som används för att hämta en tidsstämplad serie IAB-medgivandesträngar, för att kunna spåra mönster för medgivandeändring över tid.
 
 ![](../../images/field-groups/iab-profile.png)
 
@@ -27,7 +27,7 @@ ht-degree: 0%
 
 {style="table-layout:auto"}
 
-I följande JSON visas strukturen för `identityPrivacyInfo` karta.
+I följande JSON visas strukturen för kartan `identityPrivacyInfo`.
 
 ```json
 {
@@ -50,15 +50,15 @@ I följande JSON visas strukturen för `identityPrivacyInfo` karta.
 }
 ```
 
-Som exemplet visar är varje rotnivånyckel för `xdm:identityPrivacyInfo` motsvarar ett identitetsnamnutrymme som känns igen av identitetstjänsten. Varje namespace-egenskap måste i sin tur ha minst en underegenskap vars nyckel matchar kundens motsvarande identitetsvärde för namnutrymmet. I det här exemplet identifieras kunden med ett Experience Cloud-ID (`ECID`) värde för `13782522493631189`.
+Som exemplet visar motsvarar varje rotnivånyckel på `xdm:identityPrivacyInfo` ett identitetsnamnområde som identifieras av identitetstjänsten. Varje namespace-egenskap måste i sin tur ha minst en underegenskap vars nyckel matchar kundens motsvarande identitetsvärde för namnutrymmet. I det här exemplet identifieras kunden med ett Experience Cloud-ID (`ECID`) på `13782522493631189`.
 
 >[!NOTE]
 >
 >I exemplet ovan används ett namnutrymmes-/värdepar för att representera kundens identitet, men du kan lägga till ytterligare nycklar för andra namnutrymmen, och varje namnområde kan ha flera identitetsvärden, var och en med sin egen uppsättning inställningar för TCF-medgivande.
 
-För varje identitetsvärde `identityIABConsent` egenskapen måste anges, vilket anger TCF-medgivandevärdet för identiteten. Värdet för den här egenskapen måste överensstämma med [[!UICONTROL Consent String] datatyp](../../data-types/consent-string.md).
+För varje identitetsvärde måste en `identityIABConsent`-egenskap anges, som tillhandahåller TCF-medgivandevärdet för identiteten. Värdet för den här egenskapen måste överensstämma med datatypen [[!UICONTROL Consent String] ](../../data-types/consent-string.md).
 
-Se guiden på [Stöd för IAB TCF 2.0 i Platform](../../../landing/governance-privacy-security/consent/iab/overview.md) om du vill ha mer information om hur den här fältgruppen används. Mer information om själva fältgruppen finns i den offentliga XDM-databasen:
+Mer information om hur den här fältgruppen används finns i guiden [IAB TCF 2.0-stöd i Platform](../../../landing/governance-privacy-security/consent/iab/overview.md) . Mer information om själva fältgruppen finns i den offentliga XDM-databasen:
 
 * [Populerat exempel](https://github.com/adobe/xdm/blob/master/components/fieldgroups/profile/profile-privacy.example.1.json)
 * [Fullständigt schema](https://github.com/adobe/xdm/blob/master/components/fieldgroups/profile/profile-privacy.schema.json)

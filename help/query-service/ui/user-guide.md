@@ -15,11 +15,11 @@ ht-degree: 0%
 
 >[!NOTE]
 >
->Den gamla redigeraren togs bort den 24 maj 2024. Det är inte längre tillgängligt för användning. Nu kan du använda [Förbättrad frågeredigerare](#enhanced-editor-toggle) skriva, validera och köra frågor
+>Den gamla redigeraren togs bort den 24 maj 2024. Det är inte längre tillgängligt för användning. Du kan nu använda den [förbättrade frågeredigeraren](#enhanced-editor-toggle) för att skriva, validera och köra frågor
 
-Frågeredigeraren är ett interaktivt verktyg från Adobe Experience Platform Query Service som gör att du kan skriva, validera och köra frågor för kundupplevelsedata i [!DNL Experience Platform] användargränssnitt. Frågeredigeraren har stöd för att utveckla frågor för analys och datautforskande, och gör att du kan köra interaktiva frågor i utvecklingssyfte samt icke-interaktiva frågor för att fylla i datauppsättningar i [!DNL Experience Platform].
+Frågeredigeraren är ett interaktivt verktyg som tillhandahålls av Adobe Experience Platform Query Service, som gör att du kan skriva, validera och köra frågor för kundupplevelsedata i [!DNL Experience Platform]-användargränssnittet. Frågeredigeraren har stöd för att utveckla frågor för analys och datautforskande. Du kan även köra interaktiva frågor i utvecklingssyfte och icke-interaktiva frågor för att fylla i datauppsättningar i [!DNL Experience Platform].
 
-Mer information om funktioner och koncept för tjänsten Query finns i [Översikt över frågetjänsten](../home.md). Mer information om hur du navigerar i användargränssnittet för frågetjänsten på [!DNL Platform], se [Översikt över användargränssnittet i frågetjänsten](./overview.md).
+Mer information om begrepp och funktioner i tjänsten Query Service finns i [Översikt över frågetjänsten](../home.md). Mer information om hur du navigerar i användargränssnittet för frågetjänsten på [!DNL Platform] finns i [Översikt över användargränssnittet för frågetjänsten](./overview.md).
 
 ## Komma igång {#getting-started}
 
@@ -27,9 +27,9 @@ Frågeredigeraren erbjuder flexibel körning av frågor genom att ansluta till f
 
 ## Åtkomst till frågeredigeraren {#accessing-query-editor}
 
-I [!DNL Experience Platform] Gränssnitt, välj **[!UICONTROL Queries]** i den vänstra navigeringsmenyn för att öppna arbetsytan för frågetjänsten. För att börja skriva frågor väljer du **[!UICONTROL Create Query]** längst upp till höger på skärmen. Den här länken är tillgänglig från någon av sidorna på arbetsytan för frågetjänsten.
+I [!DNL Experience Platform]-gränssnittet väljer du **[!UICONTROL Queries]** i den vänstra navigeringsmenyn för att öppna arbetsytan för frågetjänsten. Om du vill börja skriva frågor väljer du **[!UICONTROL Create Query]** längst upp till höger på skärmen. Den här länken är tillgänglig från någon av sidorna på arbetsytan för frågetjänsten.
 
-![Översiktsfliken i arbetsytan Frågor med frågan Skapa markerad.](../images/ui/query-editor/create-query.png)
+![Översiktsfliken för arbetsytan Frågor med frågan Skapa markerad.](../images/ui/query-editor/create-query.png)
 
 ### Ansluter till frågetjänsten {#connecting-to-query-service}
 
@@ -59,7 +59,7 @@ En inställningsikon ovanför inmatningsfältet i Frågeredigeraren innehåller 
 
 Om du vill aktivera mörka eller ljusa teman väljer du inställningsikonen (![En inställningsikon.](../images/ui/query-editor/settings-icon.png)) följt av alternativet i listrutan som visas.
 
-![Frågeredigeraren med inställningsikonen och alternativet Aktivera mörkt tema på den nedrullningsbara menyn markerat.](../images/ui/query-editor/query-editor-settings.png)
+![Frågeredigeraren med inställningsikonen och alternativet Aktivera listruta med mörkt tema markerat.](../images/ui/query-editor/query-editor-settings.png)
 
 #### Komplettera automatiskt {#auto-complete}
 
@@ -73,7 +73,7 @@ Konfigurationsinställningen som slutförs automatiskt är per användare och sp
 
 ### Kör flera sekventiella frågor {#execute-multiple-sequential-queries}
 
-Använd den förbättrade frågeredigeraren för att skriva mer än en fråga och köra alla frågor sekventiellt. Körningen av flera frågor i en sekvens skapar varje loggpost. Endast resultatet av den första frågan visas dock i frågeredigeringskonsolen. Kontrollera frågeloggen om du behöver felsöka eller bekräfta de frågor som kördes. Se [dokumentation för frågeloggar](./query-logs.md) för mer information.
+Använd den förbättrade frågeredigeraren för att skriva mer än en fråga och köra alla frågor sekventiellt. Körningen av flera frågor i en sekvens skapar varje loggpost. Endast resultatet av den första frågan visas dock i frågeredigeringskonsolen. Kontrollera frågeloggen om du behöver felsöka eller bekräfta de frågor som kördes. Mer information finns i [frågeloggsdokumentationen](./query-logs.md).
 
 >[!NOTE]
 > 
@@ -82,57 +82,57 @@ Använd den förbättrade frågeredigeraren för att skriva mer än en fråga oc
 ### Kör markerad fråga {#execute-selected-query}
 
 Om du har skrivit flera frågor men bara behöver köra en fråga, kan du markera den valda frågan och välja
-[!UICONTROL Run selected query] -ikon. Den här ikonen är som standard inaktiverad tills du väljer frågesyntax i redigeraren.
+[!UICONTROL Run selected query]-ikon. Den här ikonen är som standard inaktiverad tills du väljer frågesyntax i redigeraren.
 
-![Frågeredigeraren med [!UICONTROL Run selected query] är markerad.](../images/ui/query-editor/run-selected-query.png)
+![Frågeredigeraren med ikonen [!UICONTROL Run selected query] markerad.](../images/ui/query-editor/run-selected-query.png)
 
 ### Avbryt frågeredigeringssession {#cancel-query}
 
-Ta kontroll över frågekörningen och förbättra produktiviteten genom att avbryta frågor som körs länge. Den här åtgärden rensar frågeredigeraren under en frågekörning. Frågan fortsätter att köras i bakgrunden. Om det är en CTAS-fråga kommer den fortfarande att generera en utdatamängd. Om du vill avbryta körningen i redigeraren och fortsätta att komponera en SQL-sats väljer du **[!UICONTROL Cancel query]** efter att en fråga har körts.
+Ta kontroll över frågekörningen och förbättra produktiviteten genom att avbryta frågor som körs länge. Den här åtgärden rensar frågeredigeraren under en frågekörning. Frågan fortsätter att köras i bakgrunden. Om det är en CTAS-fråga kommer den fortfarande att generera en utdatamängd. Om du vill avbryta körningen i redigeraren och fortsätta komponera en SQL-sats väljer du **[!UICONTROL Cancel query]** efter att du har kört en fråga.
 
-![Frågeredigeraren med [!UICONTROL Cancel query] markerad.](../images/ui/query-editor/cancel-query-run.png)
+![Frågeredigeraren med [!UICONTROL Cancel query] markerat.](../images/ui/query-editor/cancel-query-run.png)
 
-En bekräftelsedialogruta visas. Välj **[!UICONTROL Confirm]** för att avbryta frågekörningen.
+En bekräftelsedialogruta visas. Välj **[!UICONTROL Confirm]** om du vill avbryta frågekörningen.
 
 ![Bekräftelsedialogrutan för Avbryt fråga med Bekräfta markerat.](../images/ui/query-editor/cancel-query-confirmation-dialog.png)
 
 ### Resultatantal {#result-count}
 
-Frågeredigeraren har maximalt 50 000 radutdata. Du kan välja hur många rader som ska visas samtidigt i frågeredigeringskonsolen. Om du vill ändra antalet rader som visas i konsolen väljer du **[!UICONTROL Result count]** och välj mellan alternativen 50, 100, 150, 300 och 500.
+Frågeredigeraren har maximalt 50 000 radutdata. Du kan välja hur många rader som ska visas samtidigt i frågeredigeringskonsolen. Om du vill ändra antalet rader som visas i konsolen väljer du listrutan **[!UICONTROL Result count]** och väljer bland alternativen 50, 100, 150, 300 och 500.
 
 ![Frågeredigeraren med listrutan Resultatantal markerad.](../images/ui/query-editor/result-count.png)
 
 ## Skriver frågor {#writing-queries}
 
-[!UICONTROL Query Editor] är organiserat för att göra det så enkelt att skriva frågor som möjligt. Skärmbilden nedan visar hur redigeraren visas i användargränssnittet, med SQL-postfältet och **Spela upp** markerad.
+[!UICONTROL Query Editor] är organiserat för att göra skrivfrågor så enkla som möjligt. Skärmbilden nedan visar hur redigeraren visas i användargränssnittet, med SQL-inmatningsfältet och **Spela upp** markerat.
 
-![Frågeredigeraren med SQL-indatafältet och uppspelning markerat.](../images/ui/query-editor/editor.png)
+![Frågeredigeraren med SQL-inmatningsfältet och uppspelningen markerad.](../images/ui/query-editor/editor.png)
 
-För att minimera utvecklingstiden rekommenderar vi att du utvecklar frågor med begränsningar för antalet rader som returneras. Till exempel: `SELECT fields FROM table WHERE conditions LIMIT number_of_rows`. När du har verifierat att frågan ger det förväntade resultatet tar du bort gränserna och kör frågan med `CREATE TABLE tablename AS SELECT` för att generera en datauppsättning med utdata.
+För att minimera utvecklingstiden rekommenderar vi att du utvecklar frågor med begränsningar för antalet rader som returneras. Exempel: `SELECT fields FROM table WHERE conditions LIMIT number_of_rows`. När du har verifierat att din fråga skapar förväntade utdata tar du bort gränserna och kör frågan med `CREATE TABLE tablename AS SELECT` för att generera en datauppsättning med utdata.
 
 ## Skrivverktyg i Frågeredigeraren {#writing-tools}
 
 - **Automatisk syntaxmarkering:** Gör det enklare att läsa och ordna SQL.
 
-![En SQL-sats i Frågeredigeraren som visar färgmarkering för syntaxen.](../images/ui/query-editor/syntax-highlight.png)
+![En SQL-sats i Frågeredigeraren som visar färgmarkering för syntax.](../images/ui/query-editor/syntax-highlight.png)
 
-- **SQL-nyckelord har slutförts automatiskt:** Börja skriva frågan, använd sedan piltangenterna för att navigera till önskad term och trycka på **Retur**.
+- **SQL-nyckelord slutförs automatiskt:** Börja skriva din fråga och använd sedan piltangenterna för att navigera till önskad term och tryck på **Retur**.
 
-![Några tecken i SQL med listrutan Komplettera automatiskt som innehåller alternativ från Frågeredigeraren.](../images/ui/query-editor/syntax-auto.png)
+![Några tecken i SQL med listrutan för automatisk slutförande som innehåller alternativ från Frågeredigeraren.](../images/ui/query-editor/syntax-auto.png)
 
-- **Tabell och fält har fyllts i automatiskt:** Börja skriva det tabellnamn som du vill använda `SELECT` navigera sedan till tabellen du letar efter med piltangenterna och tryck på **Retur**. När en tabell har markerats identifieras fält i den tabellen automatiskt.
+- **Tabell och fält har fyllts i automatiskt:** Börja skriva det tabellnamn du vill `SELECT` från, använd sedan piltangenterna för att navigera till tabellen du söker efter och tryck på **Retur**. När en tabell har markerats identifieras fält i den tabellen automatiskt.
 
-![Indata från Frågeredigeraren med förslag på listtabellnamn.](../images/ui/query-editor/tables-auto.png)
+![Indata från Frågeredigeraren med förslag på nedrullningsbara tabellnamn.](../images/ui/query-editor/tables-auto.png)
 
 ### Formatera text {#format-text}
 
-The [!UICONTROL Format text] gör din fråga mer läsbar genom att lägga till en standardiserad syntaxformatering. Välj **[!UICONTROL Format text]** för att standardisera all text i Frågeredigeraren.
+Funktionen [!UICONTROL Format text] gör din fråga mer läsbar genom att lägga till en standardiserad syntaxformatering. Välj **[!UICONTROL Format text]** om du vill standardisera all text i Frågeredigeraren.
 
 >[!NOTE]
 >
->The [!UICONTROL Format text] fungerar inte med anonyma block. Om du vill lära dig att kedja en eller flera SQL-satser sekventiellt läser du i [anonym blockdokumentation](../key-concepts/anonymous-block.md).
+>Funktionen [!UICONTROL Format text] fungerar inte med anonyma block. Mer information om hur du kedjer en eller flera SQL-satser sekventiellt finns i [dokumentationen för det anonyma blocket](../key-concepts/anonymous-block.md).
 
-![Frågeredigeraren med [!UICONTROL Format text] och SQL-satserna är markerade.](../images/ui/query-editor/format-text.png)
+![Frågeredigeraren med [!UICONTROL Format text] och SQL-satserna markerade.](../images/ui/query-editor/format-text.png)
 
 <!-- ### Undo text {#undo-text}
 
@@ -148,35 +148,35 @@ Välj kopieringsikonen om du vill kopiera SQL från Frågeredigeraren till Urkli
 
 ### Frågeinformation {#query-details}
 
-Om du vill visa en fråga i Frågeredigeraren väljer du en sparad mall i dialogrutan [!UICONTROL Templates] -fliken. Panelen Frågeinformation innehåller mer information och verktyg för att hantera den valda frågan. Här visas även användbara metadata, t.ex. den senaste gången frågan ändrades och vem som ändrade den, om tillämpligt.
+Om du vill visa en fråga i frågeredigeraren väljer du en sparad mall på fliken [!UICONTROL Templates]. Panelen Frågeinformation innehåller mer information och verktyg för att hantera den valda frågan. Här visas även användbara metadata, t.ex. den senaste gången frågan ändrades och vem som ändrade den, om tillämpligt.
 
 >[!NOTE]
 >
->The [!UICONTROL View schedule], [!UICONTROL Add schedule] och [!UICONTROL Delete query] är bara tillgängliga när frågan har sparats som en mall. The [!UICONTROL Add schedule] går direkt till schemaläggningsverktyget från Frågeredigeraren. The [!UICONTROL View schedule] går direkt till schemalagret för den frågan. Läs dokumentationen om frågescheman för att lära dig mer om [skapa frågescheman i användargränssnittet](./query-schedules.md#create-schedule).
+>Alternativen [!UICONTROL View schedule], [!UICONTROL Add schedule] och [!UICONTROL Delete query] är bara tillgängliga efter att frågan har sparats som en mall. Alternativet [!UICONTROL Add schedule] tar dig direkt till schemaläggningsverktyget från Frågeredigeraren. Alternativet [!UICONTROL View schedule] tar dig direkt till schemalagret för den frågan. I dokumentationen för frågescheman finns mer information om hur du [skapar frågescheman i användargränssnittet](./query-schedules.md#create-schedule).
 
-![Frågeredigeraren med frågeinformationspanelen markerad.](../images/ui/query-editor/query-details.png)
+![Frågeredigeraren med panelen Frågeinformation markerad.](../images/ui/query-editor/query-details.png)
 
 På informationspanelen kan du generera en utdatauppsättning direkt från användargränssnittet, ta bort eller namnge den visade frågan, visa frågekörningsschemat och lägga till frågan i ett schema.
 
-Om du vill generera en utdatamängd väljer du **[!UICONTROL Run as CTAS]**. The **[!UICONTROL Enter output dataset details]** visas. Ange ett namn och en beskrivning och välj **[!UICONTROL Run as CTAS]**. Den nya datauppsättningen visas i **[!UICONTROL Datasets]** Fliken Bläddra. Se [visa datauppsättningsdokumentation](../../catalog/datasets/user-guide.md#view-datasets) om du vill veta mer om tillgängliga datauppsättningar för din organisation.
+Om du vill generera en utdatamängd väljer du **[!UICONTROL Run as CTAS]**. Dialogrutan **[!UICONTROL Enter output dataset details]** visas. Ange ett namn och en beskrivning och välj sedan **[!UICONTROL Run as CTAS]**. Den nya datauppsättningen visas på fliken **[!UICONTROL Datasets]** Bläddra. Mer information om tillgängliga datauppsättningar för din organisation finns i [dokumentationen för att visa datauppsättningar](../../catalog/datasets/user-guide.md#view-datasets).
 
 >[!NOTE]
 >
->The [!UICONTROL Run as CTAS] alternativet är bara tillgängligt om frågan har **not** har schemalagts.
+>Alternativet [!UICONTROL Run as CTAS] är bara tillgängligt om frågan har **inte** schemalagts.
 
-![The [!UICONTROL Enter output dataset details] -dialogrutan.](../images/ui/query-editor/output-dataset-details.png)
+![Dialogrutan [!UICONTROL Enter output dataset details].](../images/ui/query-editor/output-dataset-details.png)
 
-När du har kört **[!UICONTROL Run as CTAS]** visas ett bekräftelsemeddelande som meddelar dig om åtgärden har slutförts. Det här popup-meddelandet innehåller en länk som gör det enkelt att navigera till arbetsytan för frågeloggar. Se [dokumentation för frågeloggar](./query-logs.md) om du vill ha mer information om frågeloggar.
+När du har utfört åtgärden **[!UICONTROL Run as CTAS]** visas ett bekräftelsemeddelande som meddelar dig om den slutförda åtgärden. Det här popup-meddelandet innehåller en länk som gör det enkelt att navigera till arbetsytan för frågeloggar. Mer information om frågeloggar finns i [frågeloggsdokumentationen](./query-logs.md).
 
 ### Sparar frågor {#saving-queries}
 
-Frågeredigeraren innehåller en funktion för att spara en fråga och arbeta med den senare. Om du vill spara en fråga väljer du **[!UICONTROL Save]** i det övre högra hörnet av Frågeredigeraren. Innan en fråga kan sparas måste ett namn anges för frågan med hjälp av **[!UICONTROL Query Details]** -panelen.
+Frågeredigeraren innehåller en funktion för att spara en fråga och arbeta med den senare. Om du vill spara en fråga väljer du **[!UICONTROL Save]** i det övre högra hörnet i Frågeredigeraren. Innan en fråga kan sparas måste ett namn anges för frågan med hjälp av panelen **[!UICONTROL Query Details]**.
 
 >[!NOTE]
 >
->Frågor som namngivits och sparats i med Frågeredigeraren är tillgängliga som mallar på kontrollpanelen Fråga [!UICONTROL Templates] -fliken. Se [malldokumentation](./query-templates.md) för mer information.
+>Frågor som namngivits och sparats i med hjälp av Frågeredigeraren är tillgängliga som mallar på fliken [!UICONTROL Templates] i frågekontrollpanelen. Mer information finns i [malldokumentationen](./query-templates.md).
 
-När du sparar en fråga i Frågeredigeraren visas ett bekräftelsemeddelande som informerar dig om den slutförda åtgärden. Det här popup-meddelandet innehåller en länk som gör det enkelt att navigera till arbetsytan för schemaläggning av frågor. Se [dokumentation för schemafrågor](./query-schedules.md) om du vill lära dig hur du kör frågor på en anpassad cadence.
+När du sparar en fråga i Frågeredigeraren visas ett bekräftelsemeddelande som informerar dig om den slutförda åtgärden. Det här popup-meddelandet innehåller en länk som gör det enkelt att navigera till arbetsytan för schemaläggning av frågor. Läs [dokumentationen för schemafrågor](./query-schedules.md) om du vill veta hur du kör frågor på en anpassad cache.
 
 ### Schemalagda frågor {#scheduled-queries}
 
@@ -186,18 +186,18 @@ Scheman ställs in i Frågeredigeraren. När du använder Frågeredigeraren kan 
 
 >[!NOTE]
 >
->Schemalagda frågor som misslyckas tio på varandra följande körningar placeras automatiskt i en [!UICONTROL Quarantined] status. En fråga med den här statusen kräver att du gör något innan fler körningar kan utföras. Se [frågor i karantän](./monitor-queries.md#quarantined-queries) mer information.
+>Schemalagda frågor som misslyckas tio på varandra följande körningar får automatiskt statusen [!UICONTROL Quarantined]. En fråga med den här statusen kräver att du gör något innan fler körningar kan utföras. Mer information finns i dokumentationen för [frågor i karantän](./monitor-queries.md#quarantined-queries).
 
-Läs dokumentationen om frågescheman för att lära dig mer om [skapa frågescheman i användargränssnittet](./query-schedules.md). Du kan även läsa mer om hur du lägger till scheman med API:t i [slutpunktsguide för schemalagda frågor](../api/scheduled-queries.md).
+I dokumentationen för frågescheman finns mer information om hur du [skapar frågescheman i användargränssnittet](./query-schedules.md). Om du vill lära dig hur du lägger till scheman med API:t läser du [slutpunktshandboken för schemalagda frågor](../api/scheduled-queries.md).
 
-Alla schemalagda frågor läggs till i listan i [!UICONTROL Scheduled queries] -fliken. Från den arbetsytan kan du övervaka statusen för alla schemalagda frågejobb via gränssnittet. På [!UICONTROL Scheduled queries] kan du hitta viktig information om frågekörningar och prenumerera på aviseringar. Den tillgängliga informationen omfattar status, schemainformation och felmeddelanden/koder om en körning misslyckas. Se [Övervaka dokument för schemalagda frågor](./monitor-queries.md) för mer information.
+Alla schemalagda frågor läggs till i listan på fliken [!UICONTROL Scheduled queries]. Från den arbetsytan kan du övervaka statusen för alla schemalagda frågejobb via gränssnittet. På fliken [!UICONTROL Scheduled queries] kan du hitta viktig information om frågekörningar och prenumerera på aviseringar. Den tillgängliga informationen omfattar status, schemainformation och felmeddelanden/koder om en körning misslyckas. Mer information finns i dokumentet [Övervaka schemalagda frågor](./monitor-queries.md).
 
 
 ### Söka efter tidigare frågor {#previous-queries}
 
-Alla frågor som körs från Frågeredigeraren hämtas i loggtabellen. Du kan använda sökfunktionerna i **[!UICONTROL Log]** för att hitta frågekörningar. Sparade frågor listas i **[!UICONTROL Templates]** -fliken.
+Alla frågor som körs från Frågeredigeraren hämtas i loggtabellen. Du kan använda sökfunktionen på fliken **[!UICONTROL Log]** för att hitta frågekörningar. Sparade frågor visas på fliken **[!UICONTROL Templates]**.
 
-Om en fråga har schemalagts [!UICONTROL Scheduled Queries] -fliken ger förbättrad synlighet via användargränssnittet för dessa frågefunktioner. Se [frågeövervakningsdokumentation](./monitor-queries.md) för mer information.
+Om en fråga har schemalagts ger fliken [!UICONTROL Scheduled Queries] förbättrad synlighet via gränssnittet för dessa frågefunktioner. Mer information finns i [frågeövervakningsdokumentationen](./monitor-queries.md).
 
 >[!NOTE]
 >
@@ -205,13 +205,13 @@ Om en fråga har schemalagts [!UICONTROL Scheduled Queries] -fliken ger förbät
 
 ## Köra frågor med Frågeredigeraren {#executing-queries}
 
-Om du vill köra en fråga i Frågeredigeraren kan du ange SQL i redigeraren eller läsa in en tidigare fråga från **[!UICONTROL Log]** eller **[!UICONTROL Templates]** och markera **Spela upp**. Status för frågekörning visas i **[!UICONTROL Console]** nedan och utdata visas i **[!UICONTROL Results]** -fliken.
+Om du vill köra en fråga i frågeredigeraren kan du ange SQL i redigeraren eller läsa in en tidigare fråga från fliken **[!UICONTROL Log]** eller **[!UICONTROL Templates]** och välja **Spela upp**. Status för frågekörning visas på fliken **[!UICONTROL Console]** nedan och utdata visas på fliken **[!UICONTROL Results]**.
 
 ### Konsol {#console}
 
 Konsolen ger information om status och funktion för frågetjänsten. Konsolen visar anslutningsstatus till frågetjänsten, frågeåtgärder som körs och eventuella felmeddelanden som är ett resultat av dessa frågor.
 
-![Fliken Konsol i frågeredigeringskonsolen.](../images/ui/query-editor/console.png)
+![Konsolfliken i frågeredigeringskonsolen.](../images/ui/query-editor/console.png)
 
 >[!NOTE]
 >
@@ -219,13 +219,13 @@ Konsolen ger information om status och funktion för frågetjänsten. Konsolen v
 
 ### Frågeresultat {#query-results}
 
-När en fråga är klar visas resultatet i **[!UICONTROL Results]** -flik, bredvid **[!UICONTROL Console]** -fliken. I den här vyn visas frågans tabellutdata, med mellan 50 och 500 resultatrader beroende på vad du väljer [antal resultat](#result-count). I den här vyn kan du verifiera att frågan ger förväntat resultat. Om du vill generera en datauppsättning med frågan tar du bort begränsningar för returnerade rader och kör frågan med `CREATE TABLE tablename AS SELECT` för att generera en datauppsättning med utdata. Se [skapa datauppsättningar, genomgång](./create-datasets.md) för instruktioner om hur du genererar en datauppsättning från frågeresultat i Frågeredigeraren.
+När en fråga har slutförts visas resultaten på fliken **[!UICONTROL Results]** bredvid fliken **[!UICONTROL Console]**. I den här vyn visas frågans tabellutdata, med mellan 50 och 500 resultatrader beroende på ditt valda [resultatantal](#result-count). I den här vyn kan du verifiera att frågan ger förväntat resultat. Om du vill generera en datauppsättning med din fråga tar du bort begränsningar för returnerade rader och kör frågan med `CREATE TABLE tablename AS SELECT` för att generera en datauppsättning med utdata. Se självstudiekursen [om att generera datauppsättningar](./create-datasets.md) för instruktioner om hur du genererar en datauppsättning från frågeresultat i Frågeredigeraren.
 
 ![Fliken Resultat i frågeredigeringskonsolen som visar resultatet av en frågekörning.](../images/ui/query-editor/query-results.png)
 
-## Användningsexempel {#use-cases}
+## Användningsfall {#use-cases}
 
-Frågetjänsten ger lösningar på en mängd olika användningsområden i olika branscher och affärsscenarier. Dessa praktiska exempel visar tjänstens flexibilitet och effekt när det gäller att ta itu med olika behov. Till [Upptäck hur frågetjänsten kan ge mervärde till dina specifika affärsbehov](../use-cases/overview.md), utforska den omfattande samlingen av falldokument. Lär dig använda frågetjänsten för att få insikter och lösningar för ökad effektivitet och affärsframgångar.
+Frågetjänsten ger lösningar på en mängd olika användningsområden i olika branscher och affärsscenarier. Dessa praktiska exempel visar tjänstens flexibilitet och effekt när det gäller att ta itu med olika behov. Om du vill [ta reda på hur frågetjänsten kan tillföra värde till dina specifika affärsbehov](../use-cases/overview.md) kan du utforska den omfattande samlingen av falldokument. Lär dig använda frågetjänsten för att få insikter och lösningar för ökad effektivitet och affärsframgångar.
 
 <!-- This video is from 2019. The logic is sounds but the workflow is too outdated. -->
 
@@ -241,4 +241,4 @@ I följande video visas hur du kör frågor i Adobe Experience Platform-gränssn
 
 ## Nästa steg
 
-Nu när du vet vilka funktioner som är tillgängliga i Frågeredigeraren och hur du navigerar i programmet kan du börja skapa egna frågor direkt i [!DNL Platform]. Mer information om hur du kör SQL-frågor mot datauppsättningar i [!DNL Data Lake], se guiden på [köra frågor](../best-practices/writing-queries.md).
+Nu när du vet vilka funktioner som är tillgängliga i Frågeredigeraren och hur du navigerar i programmet kan du börja skapa egna frågor direkt i [!DNL Platform]. Mer information om hur du kör SQL-frågor mot datauppsättningar i [!DNL Data Lake] finns i guiden om [att köra frågor](../best-practices/writing-queries.md).

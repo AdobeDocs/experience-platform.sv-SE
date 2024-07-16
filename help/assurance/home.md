@@ -4,26 +4,26 @@ description: Med Adobe Experience Platform Assurance kan du inspektera, korrektu
 exl-id: e887f5f6-3db0-4521-be2d-20ef3d08e7d0
 source-git-commit: 05a7b73da610a30119b4719ae6b6d85f93cdc2ae
 workflow-type: tm+mt
-source-wordcount: '824'
+source-wordcount: '808'
 ht-degree: 4%
 
 ---
 
 # Adobe Experience Platform Assurance
 
-Adobe Experience Platform Assurance är en produkt från [Adobe Experience Cloud](https://www.adobe.com/experience-cloud.html) för att hjälpa er att inspektera, bevisa, simulera och validera hur ni samlar in data eller levererar upplevelser i er mobilapp.
+Adobe Experience Platform Assurance är en produkt från [Adobe Experience Cloud](https://www.adobe.com/experience-cloud.html) som hjälper dig att inspektera, verifiera, simulera och validera hur du samlar in data eller levererar upplevelser i din mobilapp.
 
 >[!IMPORTANT]
 >
-> Project Griffon kallas nu **Säkerhet**!
+> Projektgaller kallas nu **Assurance**!
 >
-> Project Griffon är nu allmänt tillgänglig för **alla** Adobe Experience Cloud kunder som Assurance. Läs mer om övergången i [användaråtkomstguide](./user-access.md).
+> Project Griffon är nu allmänt tillgängligt för **alla** Adobe Experience Cloud-kunder som Assurance. Läs [användaråtkomstguiden](./user-access.md) om du vill veta mer om övergången.
 
 >[!INFO]
 >
 >Publika API:er för försäkringar är tillgängliga!
 >
->[Assurance-API:er](https://developer.adobe.com/adobe-assurance-public-apis/) är en samling API:er som gör det möjligt för användare att testa och felsöka sina webb- och mobilappar när de är utrustade med Adobe Assurance Mobile SDK.
+>[Assurance-API:erna](https://developer.adobe.com/adobe-assurance-public-apis/) är en samling API:er som gör det möjligt för användare att testa och felsöka sina webb- och mobilappar när de är utrustade med Adobe Assurance Mobile SDK.
 
 ## Allmän tillgänglighet
 
@@ -31,9 +31,9 @@ Från och med 15 oktober 2022 är Assurance allmänt tillgängligt för alla Ado
 
 ### Vad förändras?
 
-Den 15 oktober - åtkomst till Assurance hanteras via Admin Console. Läs [användaråtkomstguide](./user-access.md) för att vara säker på att du har fortsatt tillgång utan avbrott.
+Den 15 oktober - åtkomst till Assurance hanteras via Admin Console. Läs [användaråtkomstguiden](./user-access.md) för att försäkra dig om att du har fortsatt tillgång utan avbrott.
 
-Inga andra ändringar eller avbrott förväntas i befintliga Assurance-integreringar, sessioner och händelser. Försäkring kan fortsätta vara åtkomliga via [https://griffon.adobe.com](https://griffon.adobe.com) **eller** du kan använda (och bokmärke) [https://experience.adobe.com/assurance](https://experience.adobe.com/assurance).
+Inga andra ändringar eller avbrott förväntas i befintliga Assurance-integreringar, sessioner och händelser. Du kan fortsätta få åtkomst till försäkringen via [https://griffon.adobe.com](https://griffon.adobe.com) **eller** som du kan använda (och bokmärke) [https://experience.adobe.com/assurance](https://experience.adobe.com/assurance).
 
 ## Vad kan Assurance göra för dig?
 
@@ -43,7 +43,7 @@ Kom igång snabbt med några rader kod. För mobilappar fungerar Assurance tills
 
 ### Smidig anslutning
 
-Med Assurance är det enkelt och tillförlitligt att koppla appen till plattformen. Du behöver inte använda nätverksproxies, [MiTM](https://en.wikipedia.org/wiki/Man-in-the-middle_attack)) och andra nätverksgymnastik - det är lika enkelt att ansluta appen till Assurance som att skanna en QR-kod eller trycka på en knapp.
+Med Assurance är det enkelt och tillförlitligt att koppla appen till plattformen. Du behöver inte använda nätverksproxies, [MiTM](https://en.wikipedia.org/wiki/Man-in-the-middle_attack)) eller andra nätverksgymnaster - det är lika enkelt att ansluta appen till Assurance som att skanna en QR-kod eller trycka på en knapp.
 
 ![](./images/index/no-hassle-connection.png)
 
@@ -67,7 +67,7 @@ Med Assurance kan du inspektera SDK-råhändelser som genererats av Adobe Experi
 
 ### Adobe Analytics
 
-Vyn Adobe Analytics > Analyshändelser är en fokuserad vy som visar händelser relaterade till din mobilimplementering i Adobe Analytics. I listvyn visas livscykeln eller händelse-/tillståndshändelsen, &quot;status&quot; efter bearbetning, tillsammans med nödvändig händelseinformation i en särskilt formaterad vy. Statusen Efterbearbetad visar hur händelsen bearbetades av Adobe Analytics efter att regler för händelsebearbetning har tillämpats.
+Vyn Adobe Analytics > Analyshändelser är en fokuserad vy som visar händelser relaterade till din mobilimplementering i Adobe Analytics. I listvyn visas livscykeln eller händelse-/tillståndshändelserna, Post-bearbetad &quot;status&quot;, tillsammans med nödvändig händelseinformation i en särskilt formaterad vy. Statusen Post-Bearbetad visar hur händelsen bearbetades av Adobe Analytics efter att regler för händelsebearbetning har tillämpats.
 
 ### Adobe Analytics for Streaming Media
 
@@ -90,6 +90,6 @@ Assurance har följande säkerhetsåtgärder på plats:
 
 ## Komma igång
 
-Om du vill konfigurera Assurance måste du först installera Assurance-tillägget i ditt program. Läs självstudiekursen om du vill veta hur du gör det här [implementera tillägget Assurance](https://developer.adobe.com/client-sdks/documentation/platform-assurance-sdk/#add-the-aep-assurance-extension-to-your-app).
+Om du vill konfigurera Assurance måste du först installera Assurance-tillägget i ditt program. Om du vill veta mer om hur du gör det läser du självstudiekursen om [hur du implementerar Assurance-tillägget](https://developer.adobe.com/client-sdks/documentation/platform-assurance-sdk/#add-the-aep-assurance-extension-to-your-app).
 
-När du har lagt till Assurance till din app kan du skapa en Assurance-session som kan anslutas till din enhet. Läs mer om hur du använder Assurance i [guide om hur man använder Assurance](./tutorials/using-assurance.md).
+När du har lagt till Assurance till din app kan du skapa en Assurance-session som kan anslutas till din enhet. Läs [guiden om hur du använder Assurance](./tutorials/using-assurance.md) om du vill lära dig hur du använder Assurance.

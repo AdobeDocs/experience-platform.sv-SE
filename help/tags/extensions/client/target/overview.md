@@ -4,7 +4,7 @@ description: Läs om taggtillägget för Adobe Target i Adobe Experience Platfor
 exl-id: b1c5e25b-42ea-4835-b2d4-913fa2536e77
 source-git-commit: 88939d674c0002590939004e0235d3da8b072118
 workflow-type: tm+mt
-source-wordcount: '1184'
+source-wordcount: '1171'
 ht-degree: 0%
 
 ---
@@ -13,7 +13,7 @@ ht-degree: 0%
 
 >[!NOTE]
 >
->Adobe Experience Platform Launch har omklassificerats som en serie datainsamlingstekniker i Adobe Experience Platform. Som ett resultat av detta har flera terminologiska förändringar införts i produktdokumentationen. Se följande [dokument](../../../term-updates.md) för en konsoliderad hänvisning till terminologiska förändringar.
+>Adobe Experience Platform Launch har omklassificerats som en serie datainsamlingstekniker i Adobe Experience Platform. Som ett resultat av detta har flera terminologiska förändringar införts i produktdokumentationen. I följande [dokument](../../../term-updates.md) finns en konsoliderad referens till de ändrade terminologin.
 
 Använd den här referensen för information om de alternativ som är tillgängliga när du använder det här tillägget för att skapa en regel.
 
@@ -23,9 +23,9 @@ Använd den här referensen för information om de alternativ som är tillgängl
 >
 > Adobe Target-tillägget kräver at.js. Det stöder inte mbox.js.
 
-Om Adobe Target-tillägget inte är installerat ännu öppnar du din egenskap och väljer **[!UICONTROL Extensions > Catalog]**, hovra över måltillägget och välj **[!UICONTROL Install]**.
+Om Adobe Target-tillägget ännu inte är installerat öppnar du din egenskap, väljer **[!UICONTROL Extensions > Catalog]**, håller pekaren över måltillägget och väljer **[!UICONTROL Install]**.
 
-Om du vill konfigurera tillägget öppnar du [!UICONTROL Extensions] hovra över tillägget och välj **[!UICONTROL Configure]**.
+Om du vill konfigurera tillägget öppnar du fliken [!UICONTROL Extensions], håller pekaren över tillägget och väljer **[!UICONTROL Configure]**.
 
 ![](../../../images/ext-target-config.png)
 
@@ -57,22 +57,22 @@ Kan ändras med dataelement.
 
 Domänen dit Target-begäranden skickas. Detta bör nästan alltid vara kvar som standardvärde.
 
-#### Cross Domain
+#### Korsdomän
 
-Avgör var Target anger cookies i webbläsarna.
+Avgör var Target ställer in cookies i webbläsarna.
 
-* **Inaktiverad:** Anger endast cookies på förstahandsdomänen. Det här är den typiska inställningen.
-* **Aktiverad:** Anger cookies på både den första domänen och måldomänen för tredje part (&quot;serverdomänen&quot;).
+* **Inaktiverad:** Anger endast cookies på förstapartsdomänen. Det här är den typiska inställningen.
+* **Aktiverad:** Anger cookies på både den första domänen och tredjepartsmåldomänen (serverdomänen).
 
 #### Timeout (ms)
 
 Om svaret från Target inte tas emot inom den definierade perioden, går begäran ut och standardinnehållet visas. Ytterligare förfrågningar fortsätter att utföras under besökarens session. Standardvärdet är 3 000 ms, vilket kan vara ett annat värde än den timeout som konfigurerats i målanvändargränssnittet.
 
-Mer information om hur inställningen Timeout fungerar finns i [Hjälp om Adobe Target](https://experienceleague.adobe.com/docs/target/using/implement-target/client-side/deploy-at-js/implementing-target-without-a-tag-manager.html).
+Mer information om hur Timeout-inställningen fungerar finns i [Adobe Target-hjälpen](https://experienceleague.adobe.com/docs/target/using/implement-target/client-side/deploy-at-js/implementing-target-without-a-tag-manager.html).
 
 #### Andra at.js-inställningar som är tillgängliga i målanvändargränssnittet
 
-Flera inställningar som är tillgängliga på [!UICONTROL Edit at.js settings] sidan i målgränssnittet är inte en del av måltillägget. Här är förslag på tillfälliga lösningar:
+Flera inställningar som är tillgängliga på sidan [!UICONTROL Edit at.js settings] i målgränssnittet ingår inte i måltillägget. Här är förslag på tillfälliga lösningar:
 
 * Skapa global mbox automatiskt Den här inställningen ersätts av den globala mbox-åtgärden för Fire i tillägget Target.
 * Bibliotekshuvud Den här inställningen ingår inte i måltillägget. Placera kod som ska läsas in före at.js i en Core Extension>Custom Code-åtgärd innan du använder åtgärden Load Target.
@@ -95,14 +95,14 @@ Ingen konfiguration behövs.
 Lägg till parametrar i alla mbox-begäranden. Åtgärden Läs in mål måste användas tidigare.
 
 1. Ange namn och värde för de parametrar som du vill lägga till.
-1. Välj **plus (+)** om du vill lägga till fler parametrar.
+1. Välj ikonen **plus (+)** om du vill lägga till fler parametrar.
 
 ### Lägg till globala mbox-parametrar
 
 Lägg bara till parametrar i dina globala mbox-begäranden. Åtgärden Läs in mål måste användas tidigare.
 
 1. Ange namn och värde för de parametrar som du vill lägga till.
-1. Välj **plus (+)** om du vill lägga till fler parametrar.
+1. Välj ikonen **plus (+)** om du vill lägga till fler parametrar.
 
 ### Fire Global Mbox
 
@@ -112,10 +112,10 @@ Ange om du vill aktivera dold brödtext för att förhindra flimmer och vilket f
 
 Följande alternativ är tillgängliga:
 
-* **Döljande av brödtext:** Du kan aktivera eller inaktivera den här inställningen. Standardvärdet är Aktiverat, vilket innebär att HTML BODY är dolt.
-* **Dolt format för brödtext:** Standardvärdet är `body{opacity:0}`. Det här värdet kan ändras till något annat, som `body{display:none}`.
+* **Döljning av brödtext:** Du kan aktivera eller inaktivera den här inställningen. Standardvärdet är Aktiverat, vilket innebär att HTML BODY är dolt.
+* **Innehållet i dolt format:** Standardvärdet är `body{opacity:0}`. Värdet kan ändras till något annat, som `body{display:none}`.
 
-Mer information finns i [Ange onlinehjälpdokumentation](https://experienceleague.adobe.com/docs/target/using/implement-target/client-side/mbox-implement/advanced-mboxjs-settings.html).
+Mer information finns i [Målets onlinehjälpdokumentation](https://experienceleague.adobe.com/docs/target/using/implement-target/client-side/mbox-implement/advanced-mboxjs-settings.html).
 
 ## Grundläggande Adobe Target-driftsättning
 

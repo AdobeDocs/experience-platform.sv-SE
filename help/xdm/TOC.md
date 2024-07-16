@@ -51,7 +51,7 @@ ht-degree: 8%
       * [XDM Business Marketing List](./classes/b2b/business-marketing-list.md)
       * [XDM Business Marketing List-medlemmar](./classes/b2b/business-marketing-list-members.md)
 * Fältgrupper {#field-groups}
-   * Individuell XDM-profil {#profile}
+   * XDM-individuell profil {#profile}
       * [Innehåll och inställningar](./field-groups/profile/consents.md)
       * [Demografiska detaljer](./field-groups/profile/demographic-details.md)
       * [IAB TCF 2.0-samtycke](./field-groups/profile/iab.md)
@@ -65,7 +65,7 @@ ht-degree: 8%
       * [Kontaktinformation, arbete](./field-groups/profile/work-contact-details.md)
       * [XDM Business Person Components](./field-groups/profile/business-person-components.md)
       * [Information om XDM Business Person](./field-groups/profile/business-person-details.md)
-   * XDM-profil för enskild potentiell kund {#prospect-profile}
+   * Individuell XDM-profil {#prospect-profile} för potentiell kund
       * [Information om partnerpotentiell kund (exempel)](./field-groups/prospect-profile/partner-prospect-details.md)
    * XDM ExperienceEvent {#event}
       * [Adobe Analytics Full Extension](./field-groups/event/analytics-full-extension.md)
@@ -97,9 +97,9 @@ ht-degree: 8%
       * [Information om XDM Business Campaign](./field-groups/b2b-campaign/details.md)
    * XDM Business Campaign-medlemmar {#b2b-campaign-members}
       * [Information om medlemmar i XDM Business Campaign](./field-groups/b2b-campaign-members/details.md)
-   * Medicin {#medication}
+   * Medication {#medication}
       * [Sjukvård](./field-groups/medication/healthcare-medication.md)
-   * Plan {#plan}
+   * Planera {#plan}
       * [Information om vårdplan](./field-groups/plan/healthcare-plan-details.md)
    * Produkt {#product}
       * [Produktkatalog](./field-groups/product/product-catalog.md)
@@ -187,7 +187,7 @@ ht-degree: 8%
    * [Webbinformation](./data-types/web-information.md)
    * [Webbinteraktion](./data-types/web-interaction.md)
    * [Information om webbsida](./data-types/webpage-details.md)
-* [!UICONTROL Schemas] UI {#ui}
+* [!UICONTROL Schemas]-gränssnitt {#ui}
    * [Översikt](./ui/overview.md)
    * [Utforska XDM-resurser](./ui/explore.md)
    * Skapa och redigera resurser {#resources}
@@ -207,7 +207,7 @@ ht-degree: 8%
    * [Fältbaserade arbetsflöden](./ui/field-based-workflows.md)
    * [Generera XDM-exempeldata](./ui/sample.md)
    * [Exportera XDM-scheman](./ui/export.md)
-* API för schemaregister {#api}
+* API:t för schemaregistret {#api}
    * [Översikt](api/overview.md)
    * [Komma igång](api/getting-started.md)
    * [Scheman](api/schemas.md)

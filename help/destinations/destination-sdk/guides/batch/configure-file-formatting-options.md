@@ -17,20 +17,20 @@ Med Destination SDK kan du i stor utsträckning justera formaterings- och kompri
 
 På den här sidan beskrivs hur du använder Destination SDK för att konfigurera filformateringsalternativ för filbaserade mål.
 
-## Förutsättningar {#prerequisites}
+## Förhandskrav {#prerequisites}
 
-Innan du går vidare till stegen som beskrivs nedan, läs [Komma igång med Destination SDK](../../getting-started.md) för information om hur du får de autentiseringsuppgifter för Adobe I/O och andra krav som krävs för att arbeta med Destination SDK-API:er.
+Innan du går vidare till stegen som beskrivs nedan bör du läsa sidan [Komma igång för Destination SDK](../../getting-started.md) för att få information om hur du får de autentiseringsuppgifter för Adobe I/O och andra krav som krävs för att arbeta med Destination SDK-API:er.
 
 Adobe rekommenderar också att du läser och bekanta dig med följande dokumentation innan du fortsätter:
 
-* Alla tillgängliga filformateringsalternativ beskrivs utförligt i dialogrutan [filformatskonfiguration](../../functionality/destination-server/file-formatting.md) -avsnitt.
+* Alla tillgängliga filformateringsalternativ beskrivs utförligt i avsnittet [filformateringskonfiguration](../../functionality/destination-server/file-formatting.md).
 * Slutför stegen för att [konfigurera ett filbaserat mål](../../guides/configure-file-based-destination-instructions.md) med Destination SDK.
 
 ## Skapa en server- och filkonfiguration {#create-server-file-configuration}
 
-Börja med att använda `/destination-server` slutpunkt för att avgöra vilka filformateringsalternativ du vill ställa in för de exporterade filerna.
+Börja med att använda slutpunkten `/destination-server` för att avgöra vilka filformateringsalternativ du vill ställa in för de exporterade filerna.
 
-Nedan visas ett exempel på en målserverkonfiguration för en [!DNL Amazon S3] mål, med flera filformateringsalternativ markerade.
+Nedan visas ett exempel på en målserverkonfiguration för ett [!DNL Amazon S3]-mål, med flera filformateringsalternativ markerade.
 
 **API-format**
 
@@ -102,13 +102,13 @@ curl -X POST https://platform.adobe.io/data/core/activation/authoring/destinatio
 
 >[!TIP]
 >
->**Verifiera användargränssnittet i Experience Platform**. När du konfigurerar filformateringsalternativen med de konfigurationer som visas i avsnitten nedan, bör du kontrollera hur dessa alternativ återges i användargränssnittet i Experience Platform.
+>**Verifiera användargränssnittet för Experience Platform**. När du konfigurerar filformateringsalternativen med de konfigurationer som visas i avsnitten nedan, bör du kontrollera hur dessa alternativ återges i användargränssnittet i Experience Platform.
 
-När du har lagt till önskade filformateringsalternativ till målservern och filformateringskonfigurationen i föregående steg kan du nu använda `/destinations` API-slutpunkt för att lägga till önskade fält som kunddatafält i målkonfigurationen.
+När du har lagt till önskade filformateringsalternativ till målservern och filformateringskonfigurationen i föregående steg, kan du nu använda API-slutpunkten `/destinations` för att lägga till önskade fält som kunddatafält i målkonfigurationen.
 
 >[!IMPORTANT]
 >
->Det här steget är valfritt och avgör bara vilket av filformateringsalternativen som ska visas för användare i användargränssnittet i Experience Platform. Om du inte anger filformateringsalternativ som kunddatafält fortsätter filexporten med standardvärdena som konfigurerats i dialogrutan [server- och filkonfiguration](#create-server-file-configuration).
+>Det här steget är valfritt och avgör bara vilket av filformateringsalternativen som ska visas för användare i användargränssnittet i Experience Platform. Om du inte anger filformateringsalternativ som kunddatafält fortsätter filexporten med standardvärdena som konfigurerats i [server- och filkonfigurationen](#create-server-file-configuration).
 
 I det här steget kan du gruppera de visade alternativen i vilken ordning du vill, du kan skapa anpassade grupperingar, listrutefält och villkorliga grupperingar baserat på de valda filtyperna. Alla dessa inställningar visas i inspelningen och i avsnitten längre fram nedan.
 
@@ -241,7 +241,7 @@ Den ordning i vilken du lägger till filformateringsalternativen som kunddatafä
 
 Du kan gruppera flera filformateringsalternativ i ett avsnitt. När du konfigurerar anslutningen till målet i användargränssnittet kan användaren se och dra nytta av en visuell gruppering av liknande fält.
 
-Om du vill göra det använder du `"type": "object"` för att skapa en grupp och samla in önskade filformateringsalternativ i en `properties` parameter, som visas i exemplet nedan, där grupperingen **[!UICONTROL CSV Options]** är markerat.
+Det gör du genom att använda `"type": "object"` för att skapa gruppen och samla in de önskade filformateringsalternativen i en `properties` -parameter, vilket visas i exemplet nedan, där grupperingen **[!UICONTROL CSV Options]** är markerad.
 
 ```json {line-numbers="true" start-number="100" highlight="106-128"}
 "customerDataFields":[
@@ -279,13 +279,13 @@ Om du vill göra det använder du `"type": "object"` för att skapa en grupp och
 ]
 ```
 
-![Bild som visar CSV-alternativgrupperingen i användargränssnittet.](../../assets/guides/batch/file-formatting-grouping.png)
+![Bild som visar CSV-alternativgruppering i användargränssnittet.](../../assets/guides/batch/file-formatting-grouping.png)
 
 ### Skapa listruteväljare för filformateringsalternativen {#dropdown-selectors}
 
 I situationer där du vill att användarna ska kunna välja mellan flera alternativ, t.ex. vilket tecken som ska användas för att avgränsa fälten i CSV-filer, kan du lägga till nedrullningsbara fält i användargränssnittet.
 
-Använd `namedEnum` enligt nedan och konfigurera ett `default` värdet för de alternativ som användaren kan välja.
+Om du vill göra det använder du objektet `namedEnum` så som visas nedan och konfigurerar ett `default`-värde för de alternativ som användaren kan välja.
 
 ```json {line-numbers="true" start-number="100" highlight="114-124"}
 [...]
@@ -324,13 +324,13 @@ Använd `namedEnum` enligt nedan och konfigurera ett `default` värdet för de a
 ]
 ```
 
-![Skärminspelning som visar ett exempel på listruteväljare som har skapats med den konfiguration som visas ovan.](../../assets/guides/batch/dropdown-options-file-formatting.gif)
+![Skärminspelning som visar ett exempel på nedrullningsbara väljare som har skapats med konfigurationen ovan.](../../assets/guides/batch/dropdown-options-file-formatting.gif)
 
 ### Skapa formateringsalternativ för villkorsstyrda filer {#conditional-options}
 
 Du kan skapa alternativ för villkorsstyrd filformatering, som bara visas i aktiveringsarbetsflödet när användaren väljer en viss filtyp för export. I konfigurationen nedan skapas till exempel en villkorsstyrd gruppering för CSV-filalternativ. CSV-filalternativen visas bara när användaren väljer CSV som önskad filtyp för export.
 
-Om du vill ange ett fält som villkorligt använder du `conditional` enligt nedan:
+Om du vill ange ett fält som villkorligt använder du parametern `conditional` enligt nedan:
 
 ```json
             "conditional": {
@@ -340,7 +340,7 @@ Om du vill ange ett fält som villkorligt använder du `conditional` enligt neda
             }
 ```
 
-I ett större sammanhang kan du se `conditional` fält som används i målkonfigurationen nedan, tillsammans med `fileType` strängen och `csvOptions` det objekt som det är definierat i.
+I ett större sammanhang kan du se att fältet `conditional` används i målkonfigurationen nedan, tillsammans med strängen `fileType` och objektet `csvOptions` som det definierats i.
 
 ```json
         {
@@ -711,7 +711,7 @@ curl -X POST https://platform.adobe.io/data/core/activation/authoring/destinatio
 }'
 ```
 
-Ett lyckat svar returnerar målkonfigurationen, inklusive den unika identifieraren (`instanceId`) av konfigurationen.
+Ett lyckat svar returnerar målkonfigurationen, inklusive den unika identifieraren (`instanceId`) för konfigurationen.
 
 ## Kända begränsningar {#known-limitations}
 
@@ -726,10 +726,10 @@ emptyValue -> ""
 
 Om du vill belysa begränsningen bör du överväga att exportera en fil med följande värden:
 
-| förnamn | efternamn | land | tillstånd |
+| förnamn | efternamn | land | läge |
 |---------|----------|---------|--------|
 | Michael | ros | USA | NY |
-| James | Smith |  | null |
+| James | Smith |  | noll |
 
 {style="table-layout:auto"}
 
@@ -742,4 +742,4 @@ James,Smith,"","\"\""
 
 ## Nästa steg {#next-steps}
 
-Genom att läsa den här artikeln kan du nu ange egna filformateringsalternativ för de exporterade filerna med hjälp av Destination SDK. Sedan kan ditt team använda [aktiveringsarbetsflöde för filbaserade mål](../../../ui/activate-batch-profile-destinations.md) för att exportera data till målet.
+Genom att läsa den här artikeln kan du nu ange egna filformateringsalternativ för de exporterade filerna med hjälp av Destination SDK. Därefter kan ditt team använda [aktiveringsarbetsflödet för filbaserade mål](../../../ui/activate-batch-profile-destinations.md) för att exportera data till målet.

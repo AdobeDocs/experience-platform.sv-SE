@@ -10,23 +10,23 @@ ht-degree: 0%
 
 ---
 
-# [!DNL Facebook] anslutning
+# [!DNL Facebook]-anslutning
 
 ## Översikt {#overview}
 
-Aktivera profiler för [!DNL Facebook] kampanjer för målgruppsanpassning, personalisering och undertryckande baserat på hashad-e-post.
+Aktivera profiler för dina [!DNL Facebook]-kampanjer för målgruppsanpassning, personalisering och undertryckning baserat på hash-kodade e-postmeddelanden.
 
-Du kan använda det här målet för målgruppsanpassning över [!DNL Facebook's] program som stöds av [!DNL Custom Audiences], inklusive [!DNL Facebook], [!DNL Instagram], [!DNL Audience Network]och [!DNL Messenger]. Valet av det program som du vill köra kampanjen mot anges på placeringsnivån i [!DNL Facebook Ads Manager].
+Du kan använda det här målet för målgrupper över [!DNL Facebook's]-appfamiljen som stöds av [!DNL Custom Audiences], inklusive [!DNL Facebook], [!DNL Instagram], [!DNL Audience Network] och [!DNL Messenger]. Markeringen av programmet som du vill köra kampanjen mot anges på placeringsnivån i [!DNL Facebook Ads Manager].
 
-![Facebook-mål i Adobe Experience Platform användargränssnitt.](../../assets/catalog/social/facebook/catalog.png)
+![Facebook-mål i Adobe Experience Platform-gränssnittet.](../../assets/catalog/social/facebook/catalog.png)
 
 ## Användningsfall
 
-För att du bättre ska förstå hur och när du ska använda [!DNL Facebook] mål, här är två exempel på användningsområden som Adobe Experience Platform-kunder kan lösa med den här funktionen.
+För att du bättre ska kunna förstå hur och när du ska använda målet [!DNL Facebook] finns det två exempel på användningsområden som Adobe Experience Platform-kunder kan lösa genom att använda den här funktionen.
 
 ### Använd skiftläge 1
 
-En webbutik vill nå befintliga kunder via sociala plattformar och visa dem personaliserade erbjudanden baserat på deras tidigare order. Onlinebutiken kan importera e-postadresser från sin egen CRM till Adobe Experience Platform, bygga målgrupper utifrån sina egna offlinedata och skicka dessa till [!DNL Facebook] sociala plattformar, optimera deras annonsutgifter.
+En webbutik vill nå befintliga kunder via sociala plattformar och visa dem personaliserade erbjudanden baserat på deras tidigare order. Onlinebutiken kan importera e-postadresser från sin egen CRM till Adobe Experience Platform, bygga målgrupper utifrån sina egna offlinedata och skicka dessa målgrupper till den sociala [!DNL Facebook]-plattformen, vilket optimerar deras annonsutgifter.
 
 ### Använd skiftläge 2
 
@@ -34,7 +34,7 @@ Ett flygbolag har olika kundnivåer (Bronze, Silver och Gold) och vill kunna erb
 
 För att rikta in dem på sociala medier kan de lägga in kunddata från sina CRM i Adobe Experience Platform med e-postadresserna som identifierare.
 
-Därefter kan de använda sina offlinedata, inklusive tillhörande medlemskaps-ID:n och kundnivåer, för att skapa nya målgrupper som de kan rikta sig till via [!DNL Facebook] mål.
+Därefter kan de använda sina offlinedata, inklusive tillhörande medlemskaps-ID:n och kundnivåer, för att skapa nya målgrupper som de kan rikta sig till via målet [!DNL Facebook].
 
 ## Identiteter som stöds {#supported-identities}
 
@@ -44,8 +44,8 @@ Därefter kan de använda sina offlinedata, inklusive tillhörande medlemskaps-I
 |---|---|---|
 | GAID | GOOGLE ADVERTISING ID | Välj målidentiteten för GAID när källidentiteten är ett GAID-namnområde. |
 | IDFA | Apple ID för annonsörer | Välj IDFA-målidentitet när din källidentitet är ett IDFA-namnutrymme. |
-| phone_sha256 | Telefonnummer hashas med SHA256-algoritmen | Både oformaterad text och SHA256-hashade telefonnummer stöds av Adobe Experience Platform. Följ instruktionerna i [Krav för ID-matchning](#id-matching-requirements-id-matching-requirements) och använd lämpliga namnutrymmen för oformaterad text respektive hashade telefonnummer. När källfältet innehåller ohash-kodade attribut markerar du **[!UICONTROL Apply transformation]** alternativ, att ha [!DNL Platform] automatiskt hash-koda data vid aktiveringen. |
-| email_lc_sha256 | E-postadresser som hashas med SHA256-algoritmen | Både oformaterad text och SHA256-hashade e-postadresser stöds av Adobe Experience Platform. Följ instruktionerna i [Krav för ID-matchning](#id-matching-requirements-id-matching-requirements) och använd lämpliga namnutrymmen för oformaterad text respektive hashade e-postadresser. När källfältet innehåller ohash-kodade attribut markerar du **[!UICONTROL Apply transformation]** alternativ, att ha [!DNL Platform] automatiskt hash-koda data vid aktiveringen. |
+| phone_sha256 | Telefonnummer hashas med SHA256-algoritmen | Både oformaterad text och SHA256-hashade telefonnummer stöds av Adobe Experience Platform. Följ instruktionerna i avsnittet [ID-matchningskrav](#id-matching-requirements-id-matching-requirements) och använd lämpliga namnutrymmen för oformaterad text respektive hashade telefonnummer. Om källfältet innehåller ohashade attribut bör du kontrollera alternativet **[!UICONTROL Apply transformation]** så att [!DNL Platform] automatiskt hash-kodar data vid aktiveringen. |
+| email_lc_sha256 | E-postadresser som hashas med SHA256-algoritmen | Både oformaterad text och SHA256-hashade e-postadresser stöds av Adobe Experience Platform. Följ instruktionerna i avsnittet [ID-matchningskrav](#id-matching-requirements-id-matching-requirements) och använd lämpliga namnutrymmen för oformaterad text respektive hashade e-postadresser. Om källfältet innehåller ohashade attribut bör du kontrollera alternativet **[!UICONTROL Apply transformation]** så att [!DNL Platform] automatiskt hash-kodar data vid aktiveringen. |
 | extern_id | Anpassade användar-ID:n | Välj den här målidentiteten när källidentiteten är ett anpassat namnutrymme. |
 
 ## Målgrupper {#supported-audiences}
@@ -54,8 +54,8 @@ I det här avsnittet beskrivs vilka typer av målgrupper du kan exportera till d
 
 | Målgruppsursprung | Stöds | Beskrivning |
 |---------|----------|----------|
-| [!DNL Segmentation Service] | ✓ | Målgrupper som skapats genom Experience Platform [Segmenteringstjänst](../../../segmentation/home.md). |
-| Anpassade överföringar | ✓ | Målgrupper [importerad](../../../segmentation/ui/audience-portal.md#import-audience) till Experience Platform från CSV-filer. |
+| [!DNL Segmentation Service] | ✓ | Publiker som genererats via Experience Platform [segmenteringstjänsten](../../../segmentation/home.md). |
+| Anpassade överföringar | ✓ | Publikerna [importerade](../../../segmentation/ui/audience-portal.md#import-audience) till Experience Platform från CSV-filer. |
 
 {style="table-layout:auto"}
 
@@ -66,47 +66,47 @@ Se tabellen nedan för information om exporttyp och frekvens för destinationen.
 | Objekt | Typ | Anteckningar |
 ---------|----------|---------|
 | Exporttyp | **[!UICONTROL Audience export]** | Du exporterar alla medlemmar i en målgrupp med de identifierare (namn, telefonnummer eller andra) som används i Facebook-målet. |
-| Exportfrekvens | **[!UICONTROL Streaming]** | Direktuppspelningsmål är alltid på API-baserade anslutningar. Så snart en profil uppdateras i Experience Platform baserat på målgruppsutvärdering skickar anslutningsprogrammet uppdateringen nedströms till målplattformen. Läs mer om [mål för direktuppspelning](/help/destinations/destination-types.md#streaming-destinations). |
+| Exportfrekvens | **[!UICONTROL Streaming]** | Direktuppspelningsmål är alltid på API-baserade anslutningar. Så snart en profil uppdateras i Experience Platform baserat på målgruppsutvärdering skickar anslutningsprogrammet uppdateringen nedströms till målplattformen. Läs mer om [direktuppspelningsmål](/help/destinations/destination-types.md#streaming-destinations). |
 
 {style="table-layout:auto"}
 
 ## Krav för facebook-konton {#facebook-account-prerequisites}
 
-Innan du kan skicka dina målgrupper till [!DNL Facebook]ska du kontrollera att du uppfyller följande krav:
+Innan du kan skicka dina målgrupper till [!DNL Facebook] måste du kontrollera att du uppfyller följande krav:
 
-* Dina [!DNL Facebook] användarkontot måste ha fullständig åtkomst till [!DNL Facebook Business Account] som äger annonskontot som du använder.
-* Dina [!DNL Facebook] användarkontot måste ha **[!DNL Manage campaigns]** behörighet aktiverad för annonskontot som du tänker använda.
-* The **Adobe Experience Cloud** företagskonto måste läggas till som annonspartner i [!DNL Facebook Ad Account]. Använd `business ID=206617933627973`. Se [Lägg till partners i din Business Manager](https://www.facebook.com/business/help/1717412048538897) i Facebook-dokumentationen.
+* Ditt [!DNL Facebook]-användarkonto måste ha fullständig åtkomst till [!DNL Facebook Business Account] som äger det annonskonto som du använder.
+* Ditt [!DNL Facebook]-användarkonto måste ha behörigheten **[!DNL Manage campaigns]** aktiverad för annonskontot som du tänker använda.
+* Affärskontot **Adobe Experience Cloud** måste läggas till som annonspartner i [!DNL Facebook Ad Account]. Använd `business ID=206617933627973`. Mer information finns i [Lägg till partner i din Business Manager](https://www.facebook.com/business/help/1717412048538897) i Facebook-dokumentationen.
   >[!IMPORTANT]
   >
-  > När du konfigurerar behörigheter för Adobe Experience Cloud måste du aktivera **Hantera kampanjer** behörighet. Behörighet krävs för [!DNL Adobe Experience Platform] integrering.
-* Läs och signera [!DNL Facebook Custom Audiences] Användarvillkor. Om du vill göra det går du till `https://business.facebook.com/ads/manage/customaudiences/tos/?act=[accountID]`, där `accountID` är din [!DNL Facebook Ad Account ID].
+  > När du konfigurerar behörigheter för Adobe Experience Cloud måste du aktivera behörigheten **Hantera kampanjer**. Behörighet krävs för integreringen av [!DNL Adobe Experience Platform].
+* Läs och signera [!DNL Facebook Custom Audiences] användarvillkoren. Om du vill göra det går du till `https://business.facebook.com/ads/manage/customaudiences/tos/?act=[accountID]`, där `accountID` är din [!DNL Facebook Ad Account ID].
   >[!IMPORTANT]
   >
-  >När du signerar [!DNL Facebook Custom Audiences] Användarvillkoren måste använda samma användarkonto som du använde för att autentisera i Facebook API.
+  >När du signerar [!DNL Facebook Custom Audiences]-användarvillkoren måste du använda samma användarkonto som du använde för att autentisera i Facebook API.
 
 ## Krav för ID-matchning {#id-matching-requirements}
 
-[!DNL Facebook] kräver att ingen personligt identifierbar information (PII) skickas klart. Därför aktiverades målgrupperna [!DNL Facebook] kan vara avstängd *hash* identifierare, till exempel e-postadresser eller telefonnummer.
+[!DNL Facebook] kräver att ingen personligt identifierbar information (PII) skickas i klartext. Därför kan målgrupper som är aktiverade för [!DNL Facebook] inaktiveras för *hashed*-identifierare, som e-postadresser eller telefonnummer.
 
 Beroende på vilken typ av ID som du importerar till Adobe Experience Platform måste du följa deras motsvarande krav.
 
 ## Krav för telefonnummerhashning {#phone-number-hashing-requirements}
 
-Det finns två sätt att aktivera telefonnummer i [!DNL Facebook]:
+Det finns två metoder för att aktivera telefonnummer i [!DNL Facebook]:
 
-* **Inmatning av telefonnummer i råformat**: du kan importera råa telefonnummer i [!DNL E.164] formatera till [!DNL Platform]. De hashas automatiskt när de aktiveras. Om du väljer det här alternativet måste du alltid importera dina råa telefonnummer till `Phone_E.164` namnutrymme.
-* **Inmatning av hashade telefonnummer**: du kan förhash-koda dina telefonnummer innan du lägger in dem i [!DNL Platform]. Om du väljer det här alternativet måste du alltid importera dina hash-kodade telefonnummer till `Phone_SHA256` namnutrymme.
+* **Hämtar råtelefonnummer**: du kan importera råa telefonnummer i formatet [!DNL E.164] till [!DNL Platform]. De hashas automatiskt när de aktiveras. Om du väljer det här alternativet måste du alltid importera dina råa telefonnummer till namnutrymmet `Phone_E.164`.
+* **Inkommande hashade telefonnummer**: du kan förhash-koda dina telefonnummer innan du lägger in dem i [!DNL Platform]. Om du väljer det här alternativet måste du alltid importera dina hashade telefonnummer till namnutrymmet `Phone_SHA256`.
 
 >[!NOTE]
 >
->Telefonnummer som hämtas till `Phone` namnutrymmet kan inte aktiveras i [!DNL Facebook].
+>Telefonnummer som är inkapslade i namnområdet `Phone` kan inte aktiveras i [!DNL Facebook].
 
 ## Krav för e-posthashning {#email-hashing-requirements}
 
-Du kan hash-koda e-postadresser innan du hämtar dem till Adobe Experience Platform, eller använda e-postadresser utan att märka dem i Experience Platform, och du kan [!DNL Platform] hash-koda dem vid aktiveringen.
+Du kan hash-koda e-postadresser innan du importerar dem till Adobe Experience Platform, eller använda e-postadresser i klartext i Experience Platform, och få [!DNL Platform] hash-kodade adresser när de aktiveras.
 
-Om du vill veta mer om hur du importerar e-postadresser i Experience Platform kan du läsa [batchvis hantering - översikt](/help/ingestion/batch-ingestion/overview.md) och [översikt över direktuppspelning](/help/ingestion/streaming-ingestion/overview.md).
+Om du vill veta mer om hur du kan importera e-postadresser i Experience Platform kan du läsa översikten över [gruppimporten](/help/ingestion/batch-ingestion/overview.md) och översikten över [direktuppspelningsuppläsningen](/help/ingestion/streaming-ingestion/overview.md).
 
 Om du väljer att hash-koda e-postadresserna själv måste du se till att uppfylla följande krav:
 
@@ -119,57 +119,57 @@ Om du väljer att hash-koda e-postadresserna själv måste du se till att uppfyl
 
 >[!NOTE]
 >
->Data från namnutrymmen utan hashning hashas automatiskt av [!DNL Platform] vid aktivering.
-> Attributkälldata hashas inte automatiskt. När källfältet innehåller ohash-kodade attribut markerar du **[!UICONTROL Apply transformation]** alternativ, att ha [!DNL Platform] automatiskt hash-koda data vid aktiveringen.
-> The **[!UICONTROL Apply transformation]** -alternativet visas bara när du väljer attribut som källfält. Den visas inte när du väljer namnutrymmen.
+>Data från namnutrymmen som inte är hash-kodade hashas automatiskt av [!DNL Platform] vid aktiveringen.
+> Attributkälldata hashas inte automatiskt. Om källfältet innehåller ohashade attribut bör du kontrollera alternativet **[!UICONTROL Apply transformation]** så att [!DNL Platform] automatiskt hash-kodar data vid aktiveringen.
+> Alternativet **[!UICONTROL Apply transformation]** visas bara när du väljer attribut som källfält. Den visas inte när du väljer namnutrymmen.
 
-![Använd omformningskontroll som markeras i mappningssteget.](../../assets/ui/activate-destinations/identity-mapping-transformation.png)
+![Använd omformningskontroll markerat i mappningssteget.](../../assets/ui/activate-destinations/identity-mapping-transformation.png)
 
 ## Använda anpassade namnutrymmen {#custom-namespaces}
 
-Innan du kan använda `Extern_ID` namnutrymme som data skickas till [!DNL Facebook]måste du synkronisera dina egna identifierare med [!DNL Facebook Pixel]. Se [Facebook officiella dokumentation](https://developers.facebook.com/docs/marketing-api/audiences/guides/custom-audiences/#external_identifiers) för detaljerad information.
+Innan du kan använda namnområdet `Extern_ID` för att skicka data till [!DNL Facebook] måste du synkronisera dina egna identifierare med [!DNL Facebook Pixel]. Mer information finns i [Facebook officiella dokumentation](https://developers.facebook.com/docs/marketing-api/audiences/guides/custom-audiences/#external_identifiers).
 
 ## Anslut till målet {#connect}
 
 >[!IMPORTANT]
 > 
->Om du vill ansluta till målet behöver du **[!UICONTROL View Destinations]** och **[!UICONTROL Manage Destinations]** [behörigheter för åtkomstkontroll](/help/access-control/home.md#permissions). Läs [åtkomstkontroll - översikt](/help/access-control/ui/overview.md) eller kontakta produktadministratören för att få de behörigheter som krävs.
+>Om du vill ansluta till målet behöver du behörigheterna **[!UICONTROL View Destinations]** och **[!UICONTROL Manage Destinations]** [åtkomstkontroll](/help/access-control/home.md#permissions). Läs [åtkomstkontrollsöversikten](/help/access-control/ui/overview.md) eller kontakta produktadministratören för att få den behörighet som krävs.
 
-Om du vill ansluta till det här målet följer du stegen som beskrivs i [självstudiekurs om destinationskonfiguration](../../ui/connect-destination.md). I arbetsflödet för att konfigurera mål fyller du i fälten som listas i de två avsnitten nedan.
+Om du vill ansluta till det här målet följer du stegen som beskrivs i självstudiekursen [för destinationskonfiguration](../../ui/connect-destination.md). I arbetsflödet för att konfigurera mål fyller du i fälten som listas i de två avsnitten nedan.
 
-I videon nedan visas även hur du konfigurerar en [!DNL Facebook] destinera och aktivera målgrupper.
+I videon nedan visas också stegen för att konfigurera ett [!DNL Facebook]-mål och aktivera målgrupper.
 
 >[!VIDEO](https://video.tv.adobe.com/v/332599/?quality=12&learn=on&captions=eng)
 
 >[!NOTE]
 >
->Användargränssnittet i Experience Platform uppdateras ofta och kan ha ändrats sedan videon spelades in. Den senaste informationen finns i [självstudiekurs om destinationskonfiguration](../../ui/connect-destination.md).
+>Användargränssnittet i Experience Platform uppdateras ofta och kan ha ändrats sedan videon spelades in. Den senaste informationen finns i [självstudiekursen för målkonfiguration](../../ui/connect-destination.md).
 
 ### Autentisera till mål {#authenticate}
 
 1. Hitta Facebook-målet i målkatalogen och välj **[!UICONTROL Set Up]**.
 2. Välj **[!UICONTROL Connect to destination]**.
-   ![Autentisera till Facebook-steget som visas i aktiveringsarbetsflödet.](/help/destinations/assets/catalog/social/facebook/authenticate-facebook-destination.png)
-3. Ange dina Facebook-uppgifter och välj **Logga in**.
+   ![Autentisera till Facebook-steg som visas i aktiveringsarbetsflödet.](/help/destinations/assets/catalog/social/facebook/authenticate-facebook-destination.png)
+3. Ange dina Facebook-autentiseringsuppgifter och välj **Logga in**.
 
 ### Fyll i målinformation {#destination-details}
 
 >[!CONTEXTUALHELP]
 >id="platform_destinations_connect_facebook_accountid"
 >title="Konto-ID"
->abstract="Ditt Facebook-konto-ID. Du hittar detta ID i ditt Facebook Ads Manager-konto. När du anger detta ID ska du alltid prefix det med `act_`."
+>abstract="Ditt Facebook-konto-ID. Du hittar detta ID i ditt Facebook Ads Manager-konto. När du anger detta ID ska du alltid prefix med `act_`."
 
 Om du vill konfigurera information för målet fyller du i de obligatoriska och valfria fälten nedan. En asterisk bredvid ett fält i användargränssnittet anger att fältet är obligatoriskt.
 
 * **[!UICONTROL Name]**: Ett namn som du känner igen det här målet med i framtiden.
 * **[!UICONTROL Description]**: En beskrivning som hjälper dig att identifiera det här målet i framtiden.
-* **[!UICONTROL Account ID]**: din [!DNL Facebook Ad Account ID]. Du hittar detta ID i din [!DNL Facebook Ads Manager] konto. När du anger detta ID ska du alltid prefix det med `act_`.
+* **[!UICONTROL Account ID]**: Din [!DNL Facebook Ad Account ID]. Du kan hitta det här ID:t i ditt [!DNL Facebook Ads Manager]-konto. När du anger detta ID ska du alltid prefix med `act_`.
 
 ### Aktivera aviseringar {#enable-alerts}
 
-Du kan aktivera varningar för att få meddelanden om dataflödets status till ditt mål. Välj en avisering i listan om du vill prenumerera och få meddelanden om statusen för ditt dataflöde. Mer information om varningar finns i guiden på [prenumerera på destinationsvarningar med användargränssnittet](../../ui/alerts.md).
+Du kan aktivera varningar för att få meddelanden om dataflödets status till ditt mål. Välj en avisering i listan om du vill prenumerera och få meddelanden om statusen för ditt dataflöde. Mer information om varningar finns i guiden [prenumerera på destinationsvarningar med användargränssnittet](../../ui/alerts.md).
 
-När du är klar med informationen för målanslutningen väljer du **[!UICONTROL Next]**.
+Välj **[!UICONTROL Next]** när du är klar med att ange information för målanslutningen.
 
 ## Aktivera målgrupper till det här målet {#activate}
 
@@ -195,51 +195,51 @@ När du är klar med informationen för målanslutningen väljer du **[!UICONTRO
 
 >[!IMPORTANT]
 > 
->* För att aktivera data behöver du **[!UICONTROL View Destinations]**, **[!UICONTROL Activate Destinations]**, **[!UICONTROL View Profiles]** och **[!UICONTROL View Segments]** [behörigheter för åtkomstkontroll](/help/access-control/home.md#permissions). Läs [åtkomstkontroll - översikt](/help/access-control/ui/overview.md) eller kontakta produktadministratören för att få de behörigheter som krävs.
->* Exportera *identiteter* behöver du **[!UICONTROL View Identity Graph]** [behörighet för åtkomstkontroll](/help/access-control/home.md#permissions). <br> ![Markera det identitetsnamnutrymme som är markerat i arbetsflödet för att aktivera målgrupper till mål.](/help/destinations/assets/overview/export-identities-to-destination.png "Markera det identitetsnamnutrymme som är markerat i arbetsflödet för att aktivera målgrupper till mål."){width="100" zoomable="yes"}
+>* För att aktivera data behöver du behörigheterna **[!UICONTROL View Destinations]**, **[!UICONTROL Activate Destinations]**, **[!UICONTROL View Profiles]** och **[!UICONTROL View Segments]** [åtkomstkontroll](/help/access-control/home.md#permissions). Läs [åtkomstkontrollsöversikten](/help/access-control/ui/overview.md) eller kontakta produktadministratören för att få den behörighet som krävs.
+>* Om du vill exportera *identiteter* måste du ha **[!UICONTROL View Identity Graph]** [åtkomstkontrollbehörighet](/help/access-control/home.md#permissions). <br> ![Markera identitetsnamnområdet som är markerat i arbetsflödet för att aktivera målgrupper till mål.](/help/destinations/assets/overview/export-identities-to-destination.png "Markera identitetsnamnområdet som är markerat i arbetsflödet för att aktivera målgrupper till mål."){width="100" zoomable="yes"}
 
-Se [Aktivera målgruppsdata för direktuppspelad målgruppsexport](../../ui/activate-segment-streaming-destinations.md) för instruktioner om hur du aktiverar målgrupper till det här målet.
+Se [Aktivera målgruppsdata för att direktuppspela målgruppsexportmål](../../ui/activate-segment-streaming-destinations.md) för instruktioner om hur du aktiverar målgrupper till det här målet.
 
-I **[!UICONTROL Segment schedule]** måste du ange [!UICONTROL Origin of audience] när målgrupper skickas till [!DNL Facebook Custom Audiences].
+I steget **[!UICONTROL Segment schedule]** måste du ange [!UICONTROL Origin of audience] när du skickar målgrupper till [!DNL Facebook Custom Audiences].
 
-![Ursprunget för den meny som visas i Facebook aktiveringssteg.](../../assets/catalog/social/facebook/facebook-origin-audience.png)
+![Audience-listrutans ursprung visas i Facebook aktiveringssteg.](../../assets/catalog/social/facebook/facebook-origin-audience.png)
 
-### Mappningsexempel: aktivera målgruppsdata i [!DNL Facebook Custom Audience] {#example-facebook}
+### Mappningsexempel: aktiverar målgruppsdata i [!DNL Facebook Custom Audience] {#example-facebook}
 
 Nedan visas ett exempel på korrekt identitetsmappning när målgruppsdata aktiveras i [!DNL Facebook Custom Audience].
 
 Välja källfält:
 
-* Välj `Email` namnutrymmet som källidentitet om e-postadresserna du använder inte hashas.
-* Välj `Email_LC_SHA256` namnrymd som källidentitet om du har hasarkiverat e-postadresser till kundens inmatning i [!DNL Platform], enligt [!DNL Facebook] [krav på e-posthashning](#email-hashing-requirements).
-* Välj `PHONE_E.164` namnutrymme som källidentitet om dina data består av icke-hash-kodade telefonnummer. [!DNL Platform] kommer att hash-koda telefonnumren för att uppfylla [!DNL Facebook] krav.
-* Välj `Phone_SHA256` namnrymd som källidentitet om du hashade telefonnummer vid datainmatning till [!DNL Platform], enligt [!DNL Facebook] [hashkrav för telefonnummer](#phone-number-hashing-requirements).
-* Välj `IDFA` namnutrymme som källidentitet om dina data består av [!DNL Apple] enhets-ID.
-* Välj `GAID` namnutrymme som källidentitet om dina data består av [!DNL Android] enhets-ID.
-* Välj `Custom` namnutrymme som källidentitet om dina data består av andra typer av identifierare.
+* Välj namnutrymmet `Email` som källidentitet om de e-postadresser du använder inte hashas.
+* Välj namnutrymmet `Email_LC_SHA256` som källidentitet om du hashas i kundens e-postadresser vid datahämtning till [!DNL Platform], enligt [!DNL Facebook] [e-posthashkraven](#email-hashing-requirements).
+* Välj namnutrymmet `PHONE_E.164` som källidentitet om dina data består av telefonnummer som inte är hashas. [!DNL Platform] hash-kodar telefonnumren så att de uppfyller kraven för [!DNL Facebook].
+* Välj namnutrymmet `Phone_SHA256` som källidentitet om du hashade telefonnummer vid dataöverföring till [!DNL Platform], enligt [!DNL Facebook] [krav för telefonnummerhashning](#phone-number-hashing-requirements).
+* Välj namnutrymmet `IDFA` som källidentitet om dina data består av [!DNL Apple] enhets-ID:n.
+* Välj namnutrymmet `GAID` som källidentitet om dina data består av [!DNL Android] enhets-ID:n.
+* Välj namnutrymmet `Custom` som källidentitet om dina data består av andra typer av identifierare.
 
 Markera målfält:
 
-* Välj `Email_LC_SHA256` namespace som target identity när källnamnutrymmena antingen är `Email` eller `Email_LC_SHA256`.
-* Välj `Phone_SHA256` namespace som target identity när källnamnutrymmena antingen är `PHONE_E.164` eller `Phone_SHA256`.
-* Välj `IDFA` eller `GAID` namnutrymmen som målidentitet när källnamnutrymmen är `IDFA` eller `GAID`.
-* Välj `Extern_ID` namespace som target identity när källnamnutrymmet är ett anpassat.
+* Välj namnutrymmet `Email_LC_SHA256` som målidentitet när källnamnutrymmena är antingen `Email` eller `Email_LC_SHA256`.
+* Välj namnutrymmet `Phone_SHA256` som målidentitet när källnamnutrymmena är antingen `PHONE_E.164` eller `Phone_SHA256`.
+* Välj namnutrymmena `IDFA` eller `GAID` som mål-ID när källnamnutrymmena är `IDFA` eller `GAID`.
+* Välj namnutrymmet `Extern_ID` som målidentitet när källnamnområdet är ett anpassat.
 
 >[!IMPORTANT]
 >
->Data från namnutrymmen utan hashning hashas automatiskt av [!DNL Platform] vid aktivering.
+>Data från namnutrymmen som inte är hash-kodade hashas automatiskt av [!DNL Platform] vid aktiveringen.
 > 
->Attributkälldata hashas inte automatiskt. När källfältet innehåller ohash-kodade attribut markerar du **[!UICONTROL Apply transformation]** alternativ, att ha [!DNL Platform] automatiskt hash-koda data vid aktiveringen.
+>Attributkälldata hashas inte automatiskt. Om källfältet innehåller ohashade attribut bör du kontrollera alternativet **[!UICONTROL Apply transformation]** så att [!DNL Platform] automatiskt hash-kodar data vid aktiveringen.
 
-![Använd omformningskontroll som markeras i mappningssteget.](../../assets/ui/activate-segment-streaming-destinations/mapping-summary.png)
+![Använd omformningskontroll markerat i mappningssteget.](../../assets/ui/activate-segment-streaming-destinations/mapping-summary.png)
 
 ## Exporterade data {#exported-data}
 
-För [!DNL Facebook], innebär en lyckad aktivering att [!DNL Facebook] anpassade målgrupper skulle skapas programmatiskt i [[!DNL Facebook Ads Manager]](https://www.facebook.com/adsmanager/manage/). Målgruppsmedlemskap läggs till och tas bort eftersom användarna är kvalificerade eller diskvalificerade för de aktiverade målgrupperna.
+För [!DNL Facebook] innebär en lyckad aktivering att en anpassad [!DNL Facebook]-målgrupp skapas programmatiskt i [[!DNL Facebook Ads Manager]](https://www.facebook.com/adsmanager/manage/). Målgruppsmedlemskap läggs till och tas bort eftersom användarna är kvalificerade eller diskvalificerade för de aktiverade målgrupperna.
 
 >[!TIP]
 >
->Integrationen mellan Adobe Experience Platform och [!DNL Facebook] har stöd för historiska efterfyllningar av målgrupper. Alla historiska kvalifikationer skickas till [!DNL Facebook] när du aktiverar målgrupperna till målet.
+>Integrationen mellan Adobe Experience Platform och [!DNL Facebook] har stöd för tidigare målgruppsåsidosättningar. Alla historiska målgruppskvalifikationer skickas till [!DNL Facebook] när du aktiverar målgrupperna till målet.
 
 ## Felsökning {#troubleshooting}
 
@@ -249,6 +249,6 @@ När du konfigurerar det här målet kan du få följande fel:
 
 `{"message":"Facebook Error: Permission error","code":"400 BAD_REQUEST"}`
 
-Det här felet inträffar när kunder använder nyligen skapade konton och [!DNL Facebook] behörigheter är ännu inte aktiva.
+Det här felet inträffar när kunder använder nyligen skapade konton och behörigheterna [!DNL Facebook] ännu inte är aktiva.
 
-Om du får `400 Bad Request` felmeddelande efter att ha följt stegen i [Krav för facebook-konton](#facebook-account-prerequisites), kan ta några dagar för [!DNL Facebook] tillstånd att träda i kraft.
+Om du får felmeddelandet `400 Bad Request` efter att du har följt stegen i [Facebook-kontokraven](#facebook-account-prerequisites) kan det ta några dagar innan [!DNL Facebook]-behörigheterna börjar gälla.

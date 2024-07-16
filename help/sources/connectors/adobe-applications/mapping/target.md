@@ -5,7 +5,7 @@ description: Lär dig hur du mappar Adobe Target-händelsefält till ett XDM-sch
 exl-id: dab08ab6-6c1c-460a-bb52-8dcdb5709a34
 source-git-commit: 81412493b096264ce7a89e3ca2348edb2dcd1798
 workflow-type: tm+mt
-source-wordcount: '430'
+source-wordcount: '431'
 ht-degree: 0%
 
 ---
@@ -57,7 +57,7 @@ I följande tabell visas fälten i ett Experience Data Model (XDM) Experience Ev
 | `experience.target.activities[i].activityEvents` | Innehåller information om aktivitetshändelser som användaren har träffats med den här händelsen. |
 | **`device`** |
 | `device.typeIDService` | `XDMDevice.Device.TypeIDService.typeIDService_deviceatlas` |
-| `device.type` | En av följande egenskaper i `deviceAtlas` (eller NULL): <ul><li>`type_mobile`</li><li>`type_tablet`</li><li>`type_desktop`</li><li>`type_ereader`</li><li>`type_television`</li><li>`type_settop`</li><li>`type_mediaplayer`</li></ul> |
+| `device.type` | En av följande egenskaper för `deviceAtlas` (eller NULL): <ul><li>`type_mobile`</li><li>`type_tablet`</li><li>`type_desktop`</li><li>`type_ereader`</li><li>`type_television`</li><li>`type_settop`</li><li>`type_mediaplayer`</li></ul> |
 | `device.typeID` | (tom sträng) |
 | `device.manufacturer` | `deviceAtlas.manufacturer` |
 | `device.model` | `deviceAtlas.model` |

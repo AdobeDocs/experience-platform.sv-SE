@@ -15,7 +15,7 @@ ht-degree: 0%
 
 # Fliken Nätverk
 
-The **Nätverk** På fliken samlas alla Adobe Experience Cloud-lösningsanrop som görs på sidan och visas i ordning från vänster till höger. Standardparametrar etiketteras automatiskt med egna namn och ordnas för att gruppera gemensamma parametrar i samma roll.
+Fliken **Nätverk** samlar alla Adobe Experience Cloud-lösningsanrop som gjorts på sidan och visar dem i ordning från vänster till höger. Standardparametrar etiketteras automatiskt med egna namn och ordnas för att gruppera gemensamma parametrar i samma roll.
 
 ![](images/network.jpg)
 

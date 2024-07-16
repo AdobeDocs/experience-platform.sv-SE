@@ -13,9 +13,9 @@ ht-degree: 1%
 
 # API-guide för dataåtkomst
 
-API:t för dataåtkomst stöder Adobe Experience Platform genom att ge användarna ett RESTful-gränssnitt som fokuserar på att upptäcka och tillgängliggöra inkapslade datauppsättningar i [!DNL Experience Platform].
+API:t för dataåtkomst stöder Adobe Experience Platform genom att förse användarna med ett RESTful-gränssnitt som fokuserar på identifierbarhet och tillgänglighet för kapslade datauppsättningar i [!DNL Experience Platform].
 
-![Ett diagram över hur dataåtkomst gör det lättare att upptäcka och tillgängliggöra importerade datauppsättningar i Experience Platform.](images/Data_Access_Experience_Platform.png)
+![Ett diagram över hur dataåtkomst gör det lättare att hitta och komma åt inkapslade datauppsättningar i Experience Platform.](images/Data_Access_Experience_Platform.png)
 
 ## API-specifikationsreferens
 
@@ -25,7 +25,7 @@ Referenshandboken för Swagger API finns [här](https://developer.adobe.com/expe
 
 Tabellen innehåller en beskrivning av några termer som används ofta i det här dokumentet.
 
-| Term | Beskrivning |
+| Villkor | Beskrivning |
 | ----- | ------------ |
 | Datauppsättning | En samling data som innehåller ett schema och fält. |
 | Grupp | En uppsättning data som samlats in under en tidsperiod och som bearbetas tillsammans som en enda enhet. |
@@ -93,7 +93,7 @@ curl -X GET https://platform.adobe.io/data/foundation/export/batches/{BATCH_ID}/
 }
 ```
 
-The `"data"` arrayen innehåller en lista med alla filer i den angivna gruppen. Varje returnerad fil har ett eget unikt ID (`{FILE_ID}`) som finns i `"dataSetFileId"` fält. Du kan använda detta unika ID för att komma åt eller hämta filen.
+Arrayen `"data"` innehåller en lista med alla filer i den angivna gruppen. Varje returnerad fil har ett eget unikt ID (`{FILE_ID}`) som finns i fältet `"dataSetFileId"`. Du kan använda detta unika ID för att komma åt eller hämta filen.
 
 | Egenskap | Beskrivning |
 | -------- | ----------- |
@@ -114,7 +114,7 @@ GET /files/{FILE_ID}
 
 | Egenskap | Beskrivning |
 | -------- | ----------- |
-| `{FILE_ID}` | Lika med `"dataSetFileId"`, ID:t för filen som ska användas. |
+| `{FILE_ID}` | Samma som `"dataSetFileId"`, ID:t för filen som ska öppnas. |
 
 **Begäran**
 
@@ -202,7 +202,7 @@ När en katalog returneras innehåller den en array med alla filer i katalogen.
 
 ## Åtkomst till innehållet i en fil {#access-file-contents}
 
-Du kan också använda [!DNL Data Access] API för att komma åt innehållet i en fil. Du kan sedan hämta innehållet till en extern källa.
+Du kan också använda API:t [!DNL Data Access] för att komma åt innehållet i en fil. Du kan sedan hämta innehållet till en extern källa.
 
 **API-format**
 
@@ -235,8 +235,8 @@ curl -X GET https://platform.adobe.io/data/foundation/export/files/{FILE_ID}?pat
 
 ## Ytterligare kodexempel
 
-Ytterligare exempel finns i [dataåtkomst, genomgång](tutorials/dataset-data.md).
+Fler exempel finns i [dataåtkomstsjälvstudiekursen](tutorials/dataset-data.md).
 
 ## Prenumerera på dataöverföringshändelser {#subscribe-to-data-ingestion-events}
 
-Du kan prenumerera på specifika värdefulla händelser via [Adobe Developer Console](https://developer.adobe.com/console/). Du kan t.ex. prenumerera på dataöverföringshändelser för att få meddelanden om eventuella förseningar och fel. Se självstudiekursen om [prenumerera på meddelanden om dataöverföring](../ingestion/quality/subscribe-events.md) för mer information.
+Du kan prenumerera på specifika värdefulla händelser via [Adobe Developer Console](https://developer.adobe.com/console/). Du kan t.ex. prenumerera på dataöverföringshändelser för att få meddelanden om eventuella förseningar och fel. Mer information finns i självstudiekursen om att [prenumerera på meddelanden om dataöverföring](../ingestion/quality/subscribe-events.md).

@@ -4,29 +4,29 @@ description: Lär dig hur du skapar utkast för din basanslutning, källanslutni
 exl-id: aad6a302-1905-4a23-bc3d-39e76c9a22da
 source-git-commit: ebd650355a5a4c2a949739384bfd5c8df9577075
 workflow-type: tm+mt
-source-wordcount: '1192'
-ht-degree: 1%
+source-wordcount: '1188'
+ht-degree: 0%
 
 ---
 
-# Skapa utkast av [!DNL Flow Service] enheter som använder API
+# Skapa utkast av dina [!DNL Flow Service]-enheter med API:t
 
-Du kan använda `mode=draft` frågeparametern i [[!DNL Flow Service] API](<https://www.adobe.io/experience-platform-apis/references/flow-service/>) för att [!DNL Flow Service] -entiteter som dina basanslutningar, källanslutningar, målanslutningar och dataflöden till ett utkasttillstånd.
+Du kan använda frågeparametern `mode=draft` i [[!DNL Flow Service] API](<https://www.adobe.io/experience-platform-apis/references/flow-service/>) för att ange dina [!DNL Flow Service]-entiteter som dina basanslutningar, källanslutningar, målanslutningar och dataflöden till ett utkasttillstånd.
 
-Utkasten kan uppdateras senare med ny information och sedan publiceras när de är klara med `op=publish` frågeparameter.
+Utkast kan uppdateras senare med ny information och sedan publiceras när de är klara med frågeparametern `op=publish`.
 
-I den här självstudiekursen beskrivs hur du ställer in [!DNL Flow Service] entiteter till ett utkastläge och gör att du kan pausa och spara dina arbetsflöden för slutförande vid ett senare tillfälle.
+I den här självstudiekursen beskrivs hur du ställer in dina [!DNL Flow Service]-entiteter till ett utkasttillstånd och låter dig pausa och spara arbetsflödena för slutförande vid ett senare tillfälle.
 
 ## Komma igång
 
 Den här självstudiekursen kräver att du har en fungerande förståelse för följande komponenter i Adobe Experience Platform:
 
-* [Källor](../../home.md): Experience Platform tillåter att data kan hämtas från olika källor samtidigt som du kan strukturera, märka och förbättra inkommande data med hjälp av plattformstjänster.
-* [Sandlådor](../../../sandboxes/home.md): Experience Platform tillhandahåller virtuella sandlådor som partitionerar en enda plattformsinstans i separata virtuella miljöer för att utveckla och utveckla program för digitala upplevelser.
+* [Källor](../../home.md): Experience Platform tillåter data att hämtas från olika källor samtidigt som du kan strukturera, etikettera och förbättra inkommande data med hjälp av plattformstjänster.
+* [Sandlådor](../../../sandboxes/home.md): Experience Platform tillhandahåller virtuella sandlådor som partitionerar en enda plattformsinstans till separata virtuella miljöer för att utveckla och utveckla program för digitala upplevelser.
 
 ### Använda plattforms-API:er
 
-Mer information om hur du kan anropa API:er för plattformar finns i handboken [komma igång med plattforms-API:er](../../../landing/api-guide.md).
+Mer information om hur du kan anropa plattforms-API:er finns i guiden [Komma igång med plattforms-API:er](../../../landing/api-guide.md).
 
 ### Kontrollera om det finns stöd för utkastläge
 
@@ -34,9 +34,10 @@ Du måste också kontrollera om anslutningsspecifikations-ID och motsvarande fl�
 
 >[!BEGINTABS]
 
->[!TAB Söka efter anslutningsinformation]
+>[!TAB Sök efter anslutningsinformation]
 
-+++Begäran Följande begäran hämtar anslutningsspecifikationsinformation för [!DNL Azure File Storage]:
++++Begäran
+Följande begäran hämtar anslutningsinformationen för [!DNL Azure File Storage]:
 
 ```shell
 curl -X GET \
@@ -52,7 +53,7 @@ curl -X GET \
 
 +++svar
 
-Ett lyckat svar returnerar anslutningsinformationen för källan. Kontrollera att utkastläget stöds för källan `items[0].attributes.isDraftModeSupported` har värdet `true`.
+Ett lyckat svar returnerar anslutningsinformationen för källan. Kontrollera att `items[0].attributes.isDraftModeSupported` har värdet `true` om du vill verifiera om utkastläget stöds för källan.
 
 ```json {line-numbers="true" start-line="1" highlight="252"}
 {
@@ -340,9 +341,10 @@ Ett lyckat svar returnerar anslutningsinformationen för källan. Kontrollera at
 
 +++
 
->[!TAB Söka efter information om flödesspecifikation]
+>[!TAB Söka efter flödesinformation]
 
-+++Begäran Följande begäran hämtar flödesspecifikationsinformation för en molnlagringskälla:
++++Begäran
+Följande begäran hämtar flödesspecifikationsinformation för en molnlagringskälla:
 
 ```shell
 curl -X GET \
@@ -358,7 +360,7 @@ curl -X GET \
 
 +++svar
 
-Ett lyckat svar returnerar flödesspecifikationsinformationen för källan. Kontrollera att utkastläget stöds för källan `items[0].attributes.isDraftModeSupported` har värdet `true`.
+Ett lyckat svar returnerar flödesspecifikationsinformationen för källan. Kontrollera att `items[0].attributes.isDraftModeSupported` har värdet `true` om du vill verifiera om utkastläget stöds för källan.
 
 ```json {line-numbers="true" start-line="1" highlight="167"}
 {
@@ -569,7 +571,7 @@ Ett lyckat svar returnerar flödesspecifikationsinformationen för källan. Kont
 
 ## Skapa ett utkast till basanslutning {#create-a-draft-base-connection}
 
-Om du vill skapa en grundläggande utkastsanslutning skickar du en POST till `/connections` slutpunkt för [!DNL Flow Service] API och tillhandahåll `mode=draft` som en frågeparameter.
+Om du vill skapa en utkastsbasanslutning skickar du en POST till `/connections`-slutpunkten för [!DNL Flow Service] API:t och anger `mode=draft` som en frågeparameter.
 
 **API-format**
 
@@ -579,11 +581,11 @@ POST /connections?mode=draft
 
 | Parameter | Beskrivning |
 | --- | --- |
-| `mode` | En frågeparameter som användaren anger och som avgör grundanslutningens tillstånd. Ange en basanslutning som ett utkast `mode` till `draft`. |
+| `mode` | En frågeparameter som användaren anger och som avgör grundanslutningens tillstånd. Om du vill ange en basanslutning som ett utkast anger du `mode` till `draft`. |
 
 **Begäran**
 
-Följande begäran skapar utkast till basanslutning för [!DNL Azure File Storage] källa:
+Följande begäran skapar en utkastsbasanslutning för källan [!DNL Azure File Storage]:
 
 ```shell
 curl -X POST \
@@ -622,9 +624,9 @@ Ett lyckat svar returnerar basanslutnings-ID:t och motsvarande tagg för utkaste
 }
 ```
 
-## Publicera utkast till basanslutning {#publish-your-draft-base-connection}
+## Publish din utkastanslutning {#publish-your-draft-base-connection}
 
-När utkastet är klart för publicering skickar du en POST till `/connections` slutpunkten och ange ID:t för den utkastsbasanslutning som du vill publicera samt en åtgärd för publicering.
+När utkastet är klart att publiceras kan du göra en POST-förfrågan till slutpunkten `/connections` och ange ID:t för den utkastbasanslutning som du vill publicera samt en åtgärd för publicering.
 
 **API-format**
 
@@ -634,7 +636,7 @@ POST /connections/{BASE_CONNECTION_ID}/action?op=publish
 
 | Parameter | Beskrivning |
 | --- | --- |
-| `op` | En åtgärd som uppdaterar tillståndet för den efterfrågade basanslutningen. Om du vill publicera ett utkast till en basanslutning anger du `op` till `publish`. |
+| `op` | En åtgärd som uppdaterar tillståndet för den efterfrågade basanslutningen. Om du vill publicera ett utkast till basanslutning anger du `op` till `publish`. |
 
 **Begäran**
 
@@ -663,7 +665,7 @@ Ett lyckat svar returnerar ID:t och motsvarande tagg för din publicerade basans
 
 ## Skapa en utkastskällanslutning {#create-a-draft-source-connection}
 
-Skapa en POST-förfrågan till `/sourceConnections` slutpunkt för [!DNL Flow Service] API och tillhandahåll `mode=draft` som en frågeparameter.
+Om du vill skapa en utkastskällanslutning skickar du en POST till `/sourceConnections`-slutpunkten för [!DNL Flow Service] API:t och anger `mode=draft` som en frågeparameter.
 
 **API-format**
 
@@ -673,7 +675,7 @@ POST /sourceConnections?mode=draft
 
 | Parameter | Beskrivning |
 | --- | --- |
-| `mode` | En frågeparameter som användaren anger och som avgör källanslutningens tillstånd. Ange en källanslutning som ett utkast `mode` till `draft`. |
+| `mode` | En frågeparameter som användaren anger och som avgör källanslutningens tillstånd. Om du vill ange en källanslutning som ett utkast anger du `mode` till `draft`. |
 
 **Begäran**
 
@@ -714,13 +716,13 @@ Ett lyckat svar returnerar källanslutnings-ID och motsvarande tagg för utkastk
 }
 ```
 
-## Publicera utkastet till källanslutning {#publish-your-draft-source-connection}
+## Publish din utkastkällanslutning {#publish-your-draft-source-connection}
 
 >[!NOTE]
 >
 >Du kan inte publicera en källanslutning om dess associerade basanslutning fortfarande är i utkastläge. Kontrollera att din basanslutning är publicerad innan du publicerar källanslutningen.
 
-När utkastet är klart för publicering skickar du en POST till `/sourceConnections` slutpunkten och ange ID:t för den utkastkällanslutning som du vill publicera samt en åtgärd för publicering.
+När utkastet är klart att publiceras gör du en POST till slutpunkten `/sourceConnections` och anger ID:t för den utkastkällanslutning som du vill publicera samt en åtgärd för publicering.
 
 **API-format**
 
@@ -734,7 +736,7 @@ POST /sourceConnections/{SOURCE_CONNECTION_ID}/action?op=publish
 
 **Begäran**
 
-Följande begäran publicerar utkastet till källanslutning för [!DNL Azure File Storage] som skapades i ett tidigare steg.
+Följande begäran publicerar utkastskällanslutningen för [!DNL Azure File Storage] som skapades i ett tidigare steg.
 
 ```shell
 curl -X POST \
@@ -759,7 +761,7 @@ Ett lyckat svar returnerar ID:t och motsvarande tagg för den publicerade källa
 
 ## Skapa en målanslutning för utkast {#create-a-draft-target-connection}
 
-Om du vill skapa ett utkast till målanslutning skickar du en POST till `/targetConnections` slutpunkt för [!DNL Flow Service] API och tillhandahåll `mode=draft` som en frågeparameter.
+Om du vill skapa en målanslutning för utkast, skickar du en POST till `/targetConnections`-slutpunkten för [!DNL Flow Service] API:t och anger `mode=draft` som en frågeparameter.
 
 **API-format**
 
@@ -769,7 +771,7 @@ POST /targetConnections?mode=draft
 
 | Parameter | Beskrivning |
 | --- | --- |
-| `mode` | En frågeparameter som användaren anger och som avgör målanslutningens tillstånd. Ange en målanslutning som ett utkast `mode` till `draft`. |
+| `mode` | En frågeparameter som användaren anger och som avgör målanslutningens tillstånd. Om du vill ange en målanslutning som ett utkast anger du `mode` till `draft`. |
 
 **Begäran**
 
@@ -811,13 +813,13 @@ Ett lyckat svar returnerar målanslutnings-ID och motsvarande tagg för utkastet
 }
 ```
 
-## Publicera utkastet till målanslutning {#publish-your-draft-target-connection}
+## Publish din målanslutning för utkast {#publish-your-draft-target-connection}
 
 >[!NOTE]
 >
 >Du kan inte publicera en målanslutning om den associerade basanslutningen fortfarande är i utkastläge. Kontrollera att din basanslutning är publicerad innan du publicerar målanslutningen.
 
-När utkastet är klart för publicering skickar du en POST till `/targetConnections` slutpunkten och ange ID:t för den utkastmålanslutning som du vill publicera samt en åtgärd för publicering.
+När utkastet är klart att publiceras gör du en POST till slutpunkten `/targetConnections` och anger ID:t för den målanslutning du vill publicera samt en åtgärd för publicering.
 
 **API-format**
 
@@ -856,7 +858,7 @@ Ett lyckat svar returnerar ID:t och motsvarande tagg för den publicerade målan
 
 ## Skapa ett utkast till dataflöde {#create-a-draft-dataflow}
 
-Om du vill ange ett dataflöde som ett utkast gör du en POST-förfrågan till `/flows` slutpunkt när du lägger till `mode=draft` som en frågeparameter. På så sätt kan du skapa ett dataflöde och spara det som ett utkast.
+Om du vill ange ett dataflöde som ett utkast gör du en POST till slutpunkten `/flows` samtidigt som du lägger till `mode=draft` som en frågeparameter. På så sätt kan du skapa ett dataflöde och spara det som ett utkast.
 
 **API-format**
 
@@ -866,7 +868,7 @@ POST /flows?mode=draft
 
 | Parameter | Beskrivning |
 | --- | --- |
-| `mode` | En frågeparameter som användaren anger och som avgör dataflödets tillstånd. Ange ett dataflöde som ett utkast `mode` till `draft`. |
+| `mode` | En frågeparameter som användaren anger och som avgör dataflödets tillstånd. Om du vill ange ett dataflöde som ett utkast anger du `mode` till `draft`. |
 
 **Begäran**
 
@@ -906,13 +908,13 @@ Ett lyckat svar returnerar flödes-ID och motsvarande tagg för utkastet av data
 }
 ```
 
-## Publicera ditt utkast till dataflöde {#publish-your-draft-dataflow}
+## Publish ditt datautkastflöde {#publish-your-draft-dataflow}
 
 >[!NOTE]
 >
 >Du kan inte publicera ett dataflöde om dess associerade käll- och målanslutningar fortfarande är i utkastläge. Kontrollera att käll- och målanslutningarna publiceras först, innan du publicerar dataflödet.
 
-När utkastet är klart för publicering skickar du en POST till `/flows` slutpunkten när du anger ID:t för det dataflöde du vill publicera samt en åtgärd för publicering.
+När utkastet är klart att publiceras kan du göra en POST-förfrågan till `/flows`-slutpunkten och ange ID:t för det utkastdataflöde som du vill publicera samt en åtgärd för publicering.
 
 **API-format**
 
@@ -922,7 +924,7 @@ POST /flows/{FLOW_ID}/action?op=publish
 
 | Parameter | Beskrivning |
 | --- | --- |
-| `op` | En åtgärd som uppdaterar tillståndet för det efterfrågade dataflödet. Om du vill publicera ett utkast anger du `op` till `publish`. |
+| `op` | En åtgärd som uppdaterar tillståndet för det efterfrågade dataflödet. Om du vill publicera ett dataflöde för utkast anger du `op` till `publish`. |
 
 **Begäran**
 
@@ -940,7 +942,7 @@ curl -X POST \
 
 **Svar**
 
-Ett godkänt svar returnerar ID:t och motsvarande `etag` av dataflödet.
+Ett lyckat svar returnerar ID:t och motsvarande `etag` i dataflödet.
 
 ```json
 {
@@ -951,4 +953,4 @@ Ett godkänt svar returnerar ID:t och motsvarande `etag` av dataflödet.
 
 ## Nästa steg
 
-Genom att följa den här självstudiekursen har du lärt dig att skapa utkast av [!DNL Flow Service] samt publicera dessa utkast. Mer information om källor finns i [källöversikt](../../home.md).
+Genom att följa den här självstudiekursen har du lärt dig hur du skapar utkast för dina [!DNL Flow Service]-entiteter och publicerar dessa utkast. Mer information om källor finns i [Källöversikt](../../home.md).

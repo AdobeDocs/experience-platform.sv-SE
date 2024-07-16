@@ -9,9 +9,9 @@ ht-degree: 1%
 
 ---
 
-# [!UICONTROL Product Catalog] schemafältgrupp
+# Schemafältgruppen [!UICONTROL Product Catalog]
 
-[!UICONTROL Product Catalog] är en standardgrupp för schemafält för [[!UICONTROL Product] class](../../classes/product.md) som hämtar egenskaper som är relaterade till en produktkatalog.
+[!UICONTROL Product Catalog] är en standardschemafältgrupp för klassen [[!UICONTROL Product] ](../../classes/product.md) som hämtar egenskaper som är relaterade till en produktkatalog.
 
 ![](../../images/field-groups/product/product-catalog.png)
 
@@ -22,4 +22,4 @@ ht-degree: 1%
 
 {style="table-layout:auto"}
 
-Mer information om fältgruppen finns i [publik XDM-databas](https://github.com/adobe/xdm/blob/master/docs/reference/fieldgroups/product/product-catalog.schema.json).
+Mer information om fältgruppen finns i [den offentliga XDM-databasen](https://github.com/adobe/xdm/blob/master/docs/reference/fieldgroups/product/product-catalog.schema.json).

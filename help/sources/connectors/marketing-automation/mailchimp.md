@@ -11,24 +11,24 @@ ht-degree: 0%
 
 ---
 
-# [!DNL Mailchimp] koppling
+# [!DNL Mailchimp]-koppling
 
-Med Adobe Experience Platform kan data hämtas från externa källor samtidigt som du kan strukturera, etikettera och förbättra inkommande data med [!DNL Platform] tjänster. Du kan importera data från en mängd olika källor, till exempel Adobe-program, molnbaserad lagring, databaser och många andra.
+Adobe Experience Platform tillåter att data hämtas från externa källor samtidigt som du får möjlighet att strukturera, etikettera och förbättra inkommande data med [!DNL Platform]-tjänster. Du kan importera data från en mängd olika källor, till exempel Adobe-program, molnbaserad lagring, databaser och många andra.
 
-Experience Platform stöder inmatning av data från ett system för automatisering av tredjepartsmarknadsföring. Stöd för leverantörer av automatiserad marknadsföring innefattar [!DNL Mailchimp].
+Experience Platform stöder inmatning av data från ett system för automatisering av marknadsföring från tredje part. Stöd för leverantörer av automatiserad marknadsföring inkluderar [!DNL Mailchimp].
 
 ## IP-adress tillåtelselista
 
-En lista med IP-adresser måste läggas till tillåtelselista innan du kan arbeta med källanslutningar. Om du inte lägger till dina regionspecifika IP-adresser i tillåtelselista kan det leda till fel eller sämre prestanda när du använder källor. Se [IP-adress tillåtelselista](../../ip-address-allow-list.md) sida för mer information.
+En lista med IP-adresser måste läggas till tillåtelselista innan du kan arbeta med källanslutningar. Om du inte lägger till dina regionspecifika IP-adresser i tillåtelselista kan det leda till fel eller sämre prestanda när du använder källor. Mer information finns på sidan [IP-adress tillåtelselista](../../ip-address-allow-list.md).
 
-Dokumentationen nedan innehåller information om hur du ansluter [!DNL Mailchimp] till Platform och ta med [!DNL Mailchimp Campaigns] eller [!DNL Mailchimp Members] data med API:er eller användargränssnittet:
+Dokumentationen nedan innehåller information om hur du ansluter [!DNL Mailchimp] till plattformen och hämtar antingen [!DNL Mailchimp Campaigns] - eller [!DNL Mailchimp Members]-data med API:er eller användargränssnittet:
 
-## Anslut [!DNL Mailchimp Campaigns] till plattform
+## Anslut [!DNL Mailchimp Campaigns] till plattformen
 
-* [Skapa en källanslutning att hämta [!DNL Mailchimp Campaigns] data till plattformen med API:er](../../tutorials/api/create/marketing-automation/mailchimp-campaign.md).
-* [Skapa en källanslutning att hämta [!DNL Mailchimp Campaigns] data till plattformen via användargränssnittet](../../tutorials/ui/create/marketing-automation/mailchimp-campaigns.md).
+* [Skapa en källanslutning för att hämta [!DNL Mailchimp Campaigns] data till plattformen med API:er](../../tutorials/api/create/marketing-automation/mailchimp-campaign.md).
+* [Skapa en källanslutning för att hämta [!DNL Mailchimp Campaigns] data till plattformen med användargränssnittet](../../tutorials/ui/create/marketing-automation/mailchimp-campaigns.md).
 
-## Anslut [!DNL Mailchimp Members] till plattform
+## Anslut [!DNL Mailchimp Members] till plattformen
 
-* [Skapa en källanslutning att hämta [!DNL Mailchimp Members] data till plattformen med API:er](../../tutorials/api/create/marketing-automation/mailchimp-members.md).
-* [Skapa en källanslutning att hämta [!DNL Mailchimp Members] data till plattformen via användargränssnittet](../../tutorials/ui/create/marketing-automation/mailchimp-members.md).
+* [Skapa en källanslutning för att hämta [!DNL Mailchimp Members] data till plattformen med API:er](../../tutorials/api/create/marketing-automation/mailchimp-members.md).
+* [Skapa en källanslutning för att hämta [!DNL Mailchimp Members] data till plattformen med användargränssnittet](../../tutorials/ui/create/marketing-automation/mailchimp-members.md).

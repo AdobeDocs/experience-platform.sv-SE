@@ -19,10 +19,10 @@ ht-degree: 0%
 
 # Skapa segment med flera enheter i användargränssnittet för Experience Platform
 
-Följande video är tänkt att ge stöd för din förståelse av att skapa dynamiska segment. Det visar ett exempel på en kundupplevelse följt av en snabb genomgång av de viktigaste funktionerna i [!DNL Platform] gränssnitt. Läs guiden om du vill veta mer om segmentering av flera enheter [segmentering av flera enheter](../multi-entity-segmentation.md).
+Följande video är tänkt att ge stöd för din förståelse av att skapa dynamiska segment. Den visar ett exempel på en kundupplevelse följt av en snabb genomgång av nyckelfunktionerna i gränssnittet [!DNL Platform]. Mer information om segmentering av flera enheter finns i guiden om [segmentering av flera enheter](../multi-entity-segmentation.md).
 
 >[!NOTE]
 >
->Användargränssnittet i Experience Platform uppdateras ofta och kan ha ändrats sedan videon spelades in. Den senaste informationen finns i [Segment Builder Guide](../ui/segment-builder.md).
+>Användargränssnittet i Experience Platform uppdateras ofta och kan ha ändrats sedan videon spelades in. Den senaste informationen finns i [guiden för segmentbyggaren](../ui/segment-builder.md).
 
 >[!VIDEO](https://video.tv.adobe.com/v/32179?quality=12&learn=on)

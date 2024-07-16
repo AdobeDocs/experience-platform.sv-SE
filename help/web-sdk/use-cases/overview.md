@@ -14,4 +14,4 @@ ht-degree: 0%
 
 Adobe Experience Platform Web SDK används av en mängd olika typer av personalisering med andra Adobe-lösningar, som Adobe Analytics, Audience Manager, Target och Experience Platform.
 
-Mer information om hur man implementerar de användningsområden som stöds finns i motsvarande dokumentation i [Projektsida för Web SDK-användningsfall](https://github.com/orgs/adobe/projects/18/views/1?filterQuery=).
+Mer information om hur du implementerar användningsfall som stöds finns i motsvarande dokumentation på [projektsidan för Web SDK-användningsfall](https://github.com/orgs/adobe/projects/18/views/1?filterQuery=).

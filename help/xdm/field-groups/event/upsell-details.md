@@ -9,17 +9,17 @@ ht-degree: 0%
 
 ---
 
-# [!UICONTROL Upsell Details] schemafältgrupp
+# Schemafältgruppen [!UICONTROL Upsell Details]
 
-[!UICONTROL Upsell Details] är en standardgrupp för schemafält för [[!DNL XDM ExperienceEvent] class](../../classes/experienceevent.md) som används för att samla in information om ett marknadsföringsevenemang med merförsäljning, inklusive information om transaktionen och olika sätt som erbjudandet visades för en kund.
+[!UICONTROL Upsell Details] är en standardschemafältgrupp för [[!DNL XDM ExperienceEvent] klassen](../../classes/experienceevent.md) som används för att samla in information om en marknadsföringshändelse för merförsäljning, inklusive information om transaktionen och olika sätt som erbjudandet visades för en kund.
 
-Fältgruppen innehåller ett enda fält av objekttyp, `upsells`. Egenskaperna i det här objektet förklaras nedan.
+Fältgruppen innehåller ett enskilt fält av objekttyp, `upsells`. Egenskaperna i det här objektet förklaras nedan.
 
-![Struktur för merförsäljning](../../images/field-groups/upsell-details.png)
+![Struktur för merförsäljningsinformation](../../images/field-groups/upsell-details.png)
 
 | Egenskap | Datatyp | Beskrivning |
 | --- | --- | --- |
-| `upsellImpressions` | Array med [Impressions](../../data-types/impressions.md) | En matris som listar de inspelade intrycken (digitala vyer eller engagemang med merförsäljningserbjudandet) för kunden. |
+| `upsellImpressions` | Matris med [Impressions](../../data-types/impressions.md) | En matris som listar de inspelade intrycken (digitala vyer eller engagemang med merförsäljningserbjudandet) för kunden. |
 | `upsellTransaction` | [Transaktion](../../data-types/transaction.md) | Beskriver valutatransaktionen för merförsäljningen. |
 
 {style="table-layout:auto"}

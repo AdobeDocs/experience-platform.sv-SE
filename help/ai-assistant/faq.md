@@ -1,7 +1,8 @@
 ---
 title: AI Assistant - Frågor och svar
 description: Läs mer om svar på vanliga frågor om AI Assistant
-source-git-commit: 0820ba0f14e9eae5d89cd48490b1af5f9afcda70
+exl-id: 17a07c11-7bc6-4cba-be0a-d75fdb567053
+source-git-commit: da5a4e099909d7994b9bbe408a70039d34c14b50
 workflow-type: tm+mt
 source-wordcount: '305'
 ht-degree: 0%
@@ -16,7 +17,7 @@ Nedan följer en lista med svar på vanliga frågor om AI Assistant.
 
 Data som presenteras i AI Assistant-svar uppdateras dagligen. Detta innebär att data i svar kan vara upp till 24 timmar äldre än de data som du kan se i användargränssnittet i Experience Platform vid tidpunkten för svaret.
 
-Samma principer gäller för åtkomstkontroll. Det kan ta upp till 24 timmar för AI Assistant att återspegla ändringar som gjorts i åtkomstkontroll och behörighetskonfigurationer. Mer information finns i guiden [sekretess i AI Assistant](./privacy.md).
+Samma principer gäller för åtkomstkontroll. Det kan ta upp till 24 timmar för AI Assistant att återspegla ändringar som gjorts i åtkomstkontroll och behörighetskonfigurationer. Mer information finns i handboken om [sekretess i AI Assistant](./privacy.md).
 
 ## Vilka Adobe-program stöder AI Assistant?
 

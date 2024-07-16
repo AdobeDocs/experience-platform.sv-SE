@@ -4,18 +4,18 @@ description: Tabellerna nedan innehåller mappningarna mellan källfälten i Mic
 exl-id: 32f51761-5de3-4192-8f23-c1412ca12c08
 source-git-commit: ec42cf27c082611acb1a08500b7bbd23fc34d730
 workflow-type: tm+mt
-source-wordcount: '524'
+source-wordcount: '499'
 ht-degree: 0%
 
 ---
 
 # [!DNL Microsoft Dynamics] fältkopplingar
 
-Tabellerna nedan innehåller mappningarna mellan [!DNL Microsoft Dynamics] källfält och deras motsvarande XDM-fält (Experience Data Model).
+Tabellerna nedan innehåller mappningarna mellan [!DNL Microsoft Dynamics]-källfält och deras motsvarande XDM-fält (Experience Data Model).
 
 ## Kontakter {#contacts}
 
-| Källfält | Mål-XDM-fält | Anteckningar |
+| Source | Mål-XDM-fält | Anteckningar |
 | --- | --- | --- |
 | `address1_addressid` | `workAddress._id` |
 | `address1_city` | `workAddress.city` |
@@ -60,7 +60,7 @@ Tabellerna nedan innehåller mappningarna mellan [!DNL Microsoft Dynamics] käll
 
 ## Leads {#leads}
 
-| Källfält | Mål-XDM-fält | Anteckningar |
+| Source | Mål-XDM-fält | Anteckningar |
 | --- | --- | --- |
 | `address1_addressid` | `workAddress._id` |
 | `address1_city` | `workAddress.city` |
@@ -99,7 +99,7 @@ Tabellerna nedan innehåller mappningarna mellan [!DNL Microsoft Dynamics] käll
 
 ## Konton {#accounts}
 
-| Källfält | Mål-XDM-fält | Anteckningar |
+| Source | Mål-XDM-fält | Anteckningar |
 | --- | --- | --- |
 | `"Dynamics"` | `accountKey.sourceType` |
 | `"${CRM_ORG_ID}"` | `accountKey.sourceInstanceID` | Värdet för `"${CRM_ORG_ID}"` ersätts automatiskt. |
@@ -136,7 +136,7 @@ Tabellerna nedan innehåller mappningarna mellan [!DNL Microsoft Dynamics] käll
 
 ## Möjligheter {#opportunities}
 
-| Källfält | Mål-XDM-fält | Anteckningar |
+| Source | Mål-XDM-fält | Anteckningar |
 | --- | --- | --- |
 | `name` | `opportunityName` |
 | `"Dynamics"` | `opportunityKey.sourceType` |
@@ -160,7 +160,7 @@ Tabellerna nedan innehåller mappningarna mellan [!DNL Microsoft Dynamics] käll
 
 ## Kontaktroller för affärsmöjlighet {#opportunity-contact-roles}
 
-| Källfält | Mål-XDM-fält | Anteckningar |
+| Source | Mål-XDM-fält | Anteckningar |
 | --- | --- | --- |
 | `"Dynamics"` | `opportunityPersonKey.sourceType` |
 | `"${CRM_ORG_ID}"` | `opportunityPersonKey.sourceInstanceID` | Värdet för `"${CRM_ORG_ID}"` ersätts automatiskt. |
@@ -171,20 +171,20 @@ Tabellerna nedan innehåller mappningarna mellan [!DNL Microsoft Dynamics] käll
 | `iif(record1id != null && record1id != "", to_object("sourceType", "Dynamics", "sourceInstanceID", "${CRM_ORG_ID}", "sourceID", record1id, "sourceKey", concat(record1id,"@${CRM_ORG_ID}.Dynamics")), null)` | `opportunityKey` |
 | `iif(record2id != null && record2id != "", to_object("sourceType", "Dynamics", "sourceInstanceID", "${CRM_ORG_ID}", "sourceID", record2id, "sourceKey", concat(record2id,"@${CRM_ORG_ID}.Dynamics")), null)` | `personKey` |
 | `connectionrole1.name` | `personRole` |
-| `record1objecttypecode` | *En anpassad fältgrupp måste definieras som ett målschema.* Anvisningar om hur du gör detta finns i avsnittet Bilaga [mappa ett källfält av typen picklist till ett mål-XDM-schema](#picklist-type-fields) för mer information. | För en lista över möjliga värden och värden och etiketter för `record1objecttypecode` källfält, se detta [[!DNL Microsoft Dynamics] referensdokument för anslutningsenhet](https://docs.microsoft.com/en-us/dynamics365/customerengagement/on-premises/developer/entities/connection?view=op-9-1#record1objecttypecode-options). |
-| `record2objecttypecode` | *En anpassad fältgrupp måste definieras som ett målschema.* Anvisningar om hur du gör detta finns i avsnittet Bilaga [mappa ett källfält av typen picklist till ett mål-XDM-schema](#picklist-type-fields) för mer information. | För en lista över möjliga värden och värden och etiketter för `record2objecttypecode` källfält, se detta [[!DNL Microsoft Dynamics] referensdokument för anslutningsenhet](https://docs.microsoft.com/en-us/dynamics365/customerengagement/on-premises/developer/entities/connection?view=op-9-1#record2objecttypecode-options). |
+| `record1objecttypecode` | *En anpassad fältgrupp måste definieras som ett målschema.* I bilagan finns anvisningar om [hur du mappar ett källfält av typen picklist till ett XDM-målschema](#picklist-type-fields) för mer information. | En lista över möjliga värden och värden och etiketter för källfältet `record1objecttypecode` finns i det här [[!DNL Microsoft Dynamics] referensdokumentet för anslutningsenheter](https://docs.microsoft.com/en-us/dynamics365/customerengagement/on-premises/developer/entities/connection?view=op-9-1#record1objecttypecode-options). |
+| `record2objecttypecode` | *En anpassad fältgrupp måste definieras som ett målschema.* I bilagan finns anvisningar om [hur du mappar ett källfält av typen picklist till ett XDM-målschema](#picklist-type-fields) för mer information. | En lista över möjliga värden och värden och etiketter för källfältet `record2objecttypecode` finns i det här [[!DNL Microsoft Dynamics] referensdokumentet för anslutningsenheter](https://docs.microsoft.com/en-us/dynamics365/customerengagement/on-premises/developer/entities/connection?view=op-9-1#record2objecttypecode-options). |
 
 {style="table-layout:auto"}
 
 ## Kampanjer {#campaigns}
 
-| Källfält | Mål-XDM-fält | Anteckningar |
+| Source | Mål-XDM-fält | Anteckningar |
 | --- | --- | --- |
 | `campaignid` | `campaignKey.sourceID` |
 | `"${CRM_ORG_ID}"` | `campaignKey.sourceInstanceID` | Värdet för `"${CRM_ORG_ID}"` ersätts automatiskt. |
 | `concat(campaignid,"@${CRM_ORG_ID}.Dynamics")` | `campaignKey.sourceKey` | Primär identitet. Värdet för `"${CRM_ORG_ID}"` ersätts automatiskt. |
 | `"Dynamics"` | `campaignKey.sourceType` |
-| `iif(campaignid != null && campaignid != "", to_object("sourceType", "Dynamics", "sourceInstanceID", "${CRM_ORG_ID}","sourceID", campaignid, "sourceKey", concat(campaignid,"@${CRM_ORG_ID}.Dynamics")), null)` | `extSourceSystemAudit.externalKey` | The `extSourceSystemAudit.externalKey` är sekundär identitet. Värdet för `"${CRM_ORG_ID}"` ersätts automatiskt. |
+| `iif(campaignid != null && campaignid != "", to_object("sourceType", "Dynamics", "sourceInstanceID", "${CRM_ORG_ID}","sourceID", campaignid, "sourceKey", concat(campaignid,"@${CRM_ORG_ID}.Dynamics")), null)` | `extSourceSystemAudit.externalKey` | `extSourceSystemAudit.externalKey` är den sekundära identiteten. Värdet för `"${CRM_ORG_ID}"` ersätts automatiskt. |
 | `createdon` | `extSourceSystemAudit.createdDate` |
 | `modifiedby` | `extSourceSystemAudit.lastUpdatedBy` |
 | `modifiedon` | `extSourceSystemAudit.lastUpdatedDate` |
@@ -203,7 +203,7 @@ Tabellerna nedan innehåller mappningarna mellan [!DNL Microsoft Dynamics] käll
 
 ## Marknadsföringslista {#marketing-list}
 
-| Källfält | Mål-XDM-fält | Anteckningar |
+| Source | Mål-XDM-fält | Anteckningar |
 | --- | --- | --- |
 | `"Dynamics"` | `marketingListKey.sourceType` |
 | `"${CRM_ORG_ID}"` | `marketingListKey.sourceInstanceID` | Värdet för `"${CRM_ORG_ID}"` ersätts automatiskt. |
@@ -218,7 +218,7 @@ Tabellerna nedan innehåller mappningarna mellan [!DNL Microsoft Dynamics] käll
 
 ## Medlemmar i marknadsföringslistan {#marketing-list-members}
 
-| Källfält | Mål-XDM-fält | Anteckningar |
+| Source | Mål-XDM-fält | Anteckningar |
 | --- | --- | --- |
 | `"Dynamics"` | `marketingListMemberKey.sourceType` |
 | `"${CRM_ORG_ID}"` | `marketingListMemberKey.sourceInstanceID` | Värdet för `"${CRM_ORG_ID}"` ersätts automatiskt. |
@@ -232,32 +232,32 @@ Tabellerna nedan innehåller mappningarna mellan [!DNL Microsoft Dynamics] käll
 
 ## Bilaga
 
-I avsnitten nedan finns ytterligare information som du kan använda när du konfigurerar B2B-mappningar för dina [!DNL Microsoft] Dynamics-källa.
+Avsnitten nedan innehåller ytterligare information som du kan använda när du konfigurerar B2B-mappningar för din [!DNL Microsoft] Dynamics-källa.
 
 ### Fält för plocklistetyp {#picklist-type-fields}
 
 Du kan använda [beräknade fält](../../../../data-prep/ui/mapping.md#calculated-fields) för att mappa ett källfält av plocklistetyp från [!DNL Microsoft Dynamics] till ett mål-XDM-fält.
 
-Till exempel `genderCode` -fältet innehåller två alternativ:
+Fältet `genderCode` innehåller till exempel två alternativ:
 
 | Värde | Etikett |
 | --- | --- |
 | 1 | `male` |
 | 2 | `female` |
 
-Du kan använda följande alternativ för att mappa `genderCode` källfält till `person.gender` målfält:
+Du kan använda följande alternativ för att mappa `genderCode`-källfältet till `person.gender`-målfältet:
 
 #### Använd en logisk operator
 
-| Källfält | Mål-XDM-fält |
+| Source | Mål-XDM-fält |
 | --- | --- |
 | `decode(genderCode, "1", "male", "2", "female", "default")` | `person.gender` |
 
-I det här fallet motsvarar värdet tangenten, om tangenten finns i alternativen, eller `default`, if `default` finns och nyckeln kan inte hittas. Värdet motsvarar `null` om alternativen är `null` eller det inte finns `default` och nyckeln hittades inte.
+I det här scenariot motsvarar värdet nyckeln, om nyckeln hittas i alternativ, eller `default`, om `default` finns och nyckeln inte hittas. Värdet motsvarar `null` om alternativen är `null` eller om det inte finns någon `default` och nyckeln inte hittas.
 
 #### Använd ett beräknat fält
 
-| Källfält | Mål-XDM-fält |
+| Source | Mål-XDM-fält |
 | --- | --- |
 | `iif(gendercode.equals("1"),"male",iif(gendercode.equals("2"),"female",null))` | `person.gender` |
 
@@ -265,4 +265,4 @@ I det här fallet motsvarar värdet tangenten, om tangenten finns i alternativen
 >
 >En kapslad iteration av ovanstående åtgärd skulle likna: `iif(condition, iif(cond1, tv1, fv1), iif(cond2, tv2, fv2))`.
 
-Mer information finns i [dokument om logiska operatorer i [!DNL Data Prep]](../../../../data-prep/functions.md##logical-operators)
+Mer information finns i [dokumentet om logiska operatorer i [!DNL Data Prep]](../../../../data-prep/functions.md##logical-operators)

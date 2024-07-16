@@ -35,7 +35,7 @@ Experimentera med filter och sökalternativ och hitta rätt spelbok för dig.
 
 ## Visa spelbok och generera resurser {#view-playbook-generate-assets}
 
-Innan du slutför en spelbok och skapar instanser av den bör du kontrollera att den passar dina behov. För att du bättre ska förstå vilka användningsområden de omfattar innehåller alla spelböcker avsnitten som listas nedan. När du är redo att fortsätta och generera resurser väljer du **[!UICONTROL Create Instance]**.
+Innan du slutför en spelbok och skapar instanser av den bör du kontrollera att den passar dina behov. För att du bättre ska förstå vilka användningsområden de omfattar innehåller alla spelböcker avsnitten som listas nedan. Välj **[!UICONTROL Create Instance]** när du är redo att fortsätta och generera resurser.
 
 ### Mindmap {#mindmap}
 
@@ -43,7 +43,7 @@ Använd mindmap-avsnittet i en spelbok för att förstå de steg i arbetsflödet
 
 Mindmap börjar med en definition av vem som nås i användarresan och beskriver i varje steg om något levereras av Adobe, som ett nytt meddelande eller en påminnelse, eller om det är något som målpersonen gjorde som utlöser nästa meddelande eller händelse.
 
-![Playbook mindmap selected.](/help/use-case-playbooks/assets/playbooks/ui-guide/playbook-mindmap.png)
+![Spelbokens minimapp är markerad.](/help/use-case-playbooks/assets/playbooks/ui-guide/playbook-mindmap.png)
 
 ### Sammanfattning {#summary}
 
@@ -58,11 +58,11 @@ Inspect i sammanfattningsavsnittet för att förstå vilka resurser som generera
 ---------|----------|
 | **[!UICONTROL Target audience]** | Beskriver de profiler som du vill nå genom den här användningsfallsspelboken. |
 | **[!UICONTROL Marketing Channels]** | Beskriver de kanaler som används för att nå de profiler som spelboken riktar sig till. |
-| **[!UICONTROL Technical assets]** | En lista med tekniska resurser som genereras när du har skapat instanser av spelboken. De genererade resurserna skiljer sig åt i spelboken, beroende på användningsfallet. Vissa spelböcker kan generera scheman, segment och resor. Andra kan generera destinationer. Se [Förstå de genererade tillgångarna](/help/use-case-playbooks/playbooks/create-share-reuse.md#understand-assets) mer information om hur du kan använda och återanvända genererade resurser finns i guiden om hur du skapar och återanvänder instanser. |
+| **[!UICONTROL Technical assets]** | En lista med tekniska resurser som genereras när du har skapat instanser av spelboken. De genererade resurserna skiljer sig åt i spelboken, beroende på användningsfallet. Vissa spelböcker kan generera scheman, segment och resor. Andra kan generera destinationer. Mer information om hur du använder och återanvänder genererade resurser finns i avsnittet [Förstå genererade resurser](/help/use-case-playbooks/playbooks/create-share-reuse.md#understand-assets) mer i guiden om hur du skapar och återanvänder instanser. |
 
 {style="table-layout:auto"}
 
-![Spelbokssammanfattning markerad](/help/use-case-playbooks/assets/playbooks/ui-guide/playbook-summary.png)
+![Sammanfattning av spelböcker markerad](/help/use-case-playbooks/assets/playbooks/ui-guide/playbook-summary.png)
 
 ### Instanser {#instances}
 
@@ -70,8 +70,8 @@ Bläddra ned till avsnittet med instanser för att få en översikt över de ins
 
 | Objekt | Beskrivning |
 |---------|----------|
-| **[!UICONTROL Name]** | Namnet på instansen baserat på spelningsboken. Du kan anpassa namnet och beskrivningen för en instans. Läs avsnittet om [redigera instansmetadata](/help/use-case-playbooks/playbooks/create-share-reuse.md#edit-instance-metadata) för mer information. |
-| **[!UICONTROL Status]** | Anger instansens status. A **[!UICONTROL submitted]** -instansen är klar att användas. |
+| **[!UICONTROL Name]** | Namnet på instansen baserat på spelningsboken. Du kan anpassa namnet och beskrivningen för en instans. Läs avsnittet [Redigera instansmetadata](/help/use-case-playbooks/playbooks/create-share-reuse.md#edit-instance-metadata) om du vill ha mer information. |
+| **[!UICONTROL Status]** | Anger instansens status. En **[!UICONTROL submitted]**-instans är klar att användas. |
 | **[!UICONTROL Created]** | Anger när instansen skapades. |
 | **[!UICONTROL Created By]** | Anger vem som skapade instansen. |
 | **[!UICONTROL Last Modified]** | Anger när instansen senast ändrades. |
@@ -82,4 +82,4 @@ Bläddra ned till avsnittet med instanser för att få en översikt över de ins
 
 ## Nästa steg - Skapa en spelboksinstans {#next-steps-create-instance}
 
-När du är redo att fortsätta med en spelbok och skapa en instans väljer du **[!UICONTROL Create Instance]** för att fortsätta med spelboken och generera tekniska resurser. Läs guiden på [hur du skapar, delar och återanvänder spelningsboksinstanser](/help/use-case-playbooks/playbooks/create-share-reuse.md) för ytterligare information.
+När du är redo att fortsätta med en spelbok och skapa en instans väljer du **[!UICONTROL Create Instance]** för att fortsätta med spelboken och generera tekniska resurser. Läs guiden om [hur du skapar, delar och återanvänder spelningsboksinstanser](/help/use-case-playbooks/playbooks/create-share-reuse.md) om du vill ha mer information.

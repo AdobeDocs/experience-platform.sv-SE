@@ -6,53 +6,53 @@ description: Lär dig hur du ansluter Google Cloud-lagring till Adobe Experience
 exl-id: f7ebd213-f914-4c49-aebd-1df4514ffec0
 source-git-commit: ae22e423119bf378a068349d481f0717a75171bb
 workflow-type: tm+mt
-source-wordcount: '560'
+source-wordcount: '552'
 ht-degree: 0%
 
 ---
 
 # Google Cloud Storage Connector
 
-Adobe Experience Platform erbjuder anslutningsmöjligheter för molnleverantörer som AWS, [!DNL Google Cloud Platform]och [!DNL Azure]så att ni kan hämta in data från dessa system.
+Adobe Experience Platform erbjuder inbyggd anslutning för molnleverantörer som AWS, [!DNL Google Cloud Platform] och [!DNL Azure], vilket gör att du kan hämta data från dessa system.
 
-Lagringskällor i molnet kan hämta dina egna data till plattformen utan att du behöver hämta, formatera eller överföra dem. Inkapslade data kan formateras som JSON eller Parquet som är kompatibelt med Experience Data Model (XDM), eller i ett avgränsat format. Varje steg i processen är integrerat i källarbetsflödet. Plattformen gör att du kan hämta in data från [!DNL Google Cloud Storage] genom grupper.
+Lagringskällor i molnet kan hämta dina egna data till plattformen utan att du behöver hämta, formatera eller överföra dem. Inkapslade data kan formateras som JSON eller Parquet som är kompatibelt med Experience Data Model (XDM), eller i ett avgränsat format. Varje steg i processen är integrerat i källarbetsflödet. Med plattformen kan du hämta data från [!DNL Google Cloud Storage] via batchar.
 
 ## IP-adress tillåtelselista
 
-En lista med IP-adresser måste läggas till tillåtelselista innan du kan arbeta med källanslutningar. Om du inte lägger till dina regionspecifika IP-adresser i tillåtelselista kan det leda till fel eller sämre prestanda när du använder källor. Se [IP-adress tillåtelselista](../../ip-address-allow-list.md) sida för mer information.
+En lista med IP-adresser måste läggas till tillåtelselista innan du kan arbeta med källanslutningar. Om du inte lägger till dina regionspecifika IP-adresser i tillåtelselista kan det leda till fel eller sämre prestanda när du använder källor. Mer information finns på sidan [IP-adress tillåtelselista](../../ip-address-allow-list.md).
 
-## Förutsättningar för att ansluta [!DNL Google Cloud Storage] konto
+## Förutsättningar för att ansluta ditt [!DNL Google Cloud Storage]-konto
 
-För att kunna ansluta till plattformen måste du först aktivera interoperabilitet för [!DNL Google Cloud Storage] konto. Öppna för att få åtkomst till inställningen för interoperabilitet [!DNL Google Cloud Platform] och markera **[!UICONTROL Settings]** från **[!UICONTROL Cloud Storage]** i navigeringspanelen.
+För att kunna ansluta till plattformen måste du först aktivera interoperabilitet för ditt [!DNL Google Cloud Storage]-konto. Om du vill komma åt interoperabilitetsinställningen öppnar du [!DNL Google Cloud Platform] och väljer **[!UICONTROL Settings]** i alternativet **[!UICONTROL Cloud Storage]** på navigeringspanelen.
 
 <!-- ![](../../images/tutorials/create/google-cloud-storage/nav.png) -->
 
-The **[!UICONTROL Settings]** visas. Här kan du se information om [!DNL Google] projekt-ID och information om [!DNL Google Cloud Storage] konto. Välj **[!UICONTROL Interoperability]** i det övre sidhuvudet.
+Sidan **[!UICONTROL Settings]** visas. Här kan du se information om ditt projekt-ID för [!DNL Google] och information om ditt [!DNL Google Cloud Storage]-konto. Välj **[!UICONTROL Interoperability]** i det övre huvudet om du vill komma åt interoperabilitetsinställningarna.
 
 <!-- ![](../../images/tutorials/create/google-cloud-storage/project-access.png) -->
 
-The **[!UICONTROL Interoperability]** sidan innehåller information om autentisering, åtkomstnycklar och standardprojektet som är kopplat till ditt tjänstkonto. Om du vill generera ett nytt åtkomstnyckel-ID och en hemlig åtkomstnyckel för ditt tjänstkonto väljer du **[!UICONTROL Create a Key for a Service Account]**.
+Sidan **[!UICONTROL Interoperability]** innehåller information om autentisering, åtkomstnycklar och standardprojektet som är kopplat till ditt tjänstkonto. Välj **[!UICONTROL Create a Key for a Service Account]** om du vill generera ett nytt åtkomstnyckel-ID och en hemlig åtkomstnyckel för ditt tjänstkonto.
 
 <!-- ![](../../images/tutorials/create/google-cloud-storage/interoperability.png) -->
 
-Du kan använda ditt nyligen genererade ID för åtkomstnyckel och hemlig åtkomstnyckel för att ansluta din [!DNL Google Cloud Storage] konto till plattform.
+Du kan använda ditt nyligen genererade åtkomstnyckel-ID och den hemliga åtkomstnyckeln för att ansluta ditt [!DNL Google Cloud Storage]-konto till plattformen.
 
-Mer information finns i guiden [skapa och hantera tjänstkontonycklar](https://cloud.google.com/iam/docs/creating-managing-service-account-keys) från [!DNL Google Cloud] dokumentation.
+Mer information finns i handboken om att [skapa och hantera tjänstkontonycklar](https://cloud.google.com/iam/docs/creating-managing-service-account-keys) i [!DNL Google Cloud]-dokumentationen.
 
 ## Namnbegränsningar för filer och kataloger
 
 Nedan följer en lista över begränsningar som du måste ta hänsyn till när du namnger molnlagringsfilen eller -katalogen.
 
 - Katalog- och filkomponentnamn får inte innehålla fler än 255 tecken.
-- Katalog- och filnamn får inte sluta med ett snedstreck (`/`). Om det finns kommer det att tas bort automatiskt.
-- Följande reserverade URL-tecken måste escape-konverteras: `! ' ( ) ; @ & = + $ , % # [ ]`
+- Katalog- och filnamn får inte sluta med ett snedstreck (`/`). Den tas bort automatiskt om den anges.
+- Följande reserverade URL-tecken måste ha escape-konverterats: `! ' ( ) ; @ & = + $ , % # [ ]`
 - Följande tecken tillåts inte: `" \ / : | < > * ?`.
-- Ogiltiga URL-sökvägstecken tillåts inte. Kodpunkter som `\uE000`, som är giltigt i NTFS-filnamn, är inte giltiga Unicode-tecken. Dessutom tillåts inte vissa ASCII- eller Unicode-tecken, som kontrolltecken (0x00 till 0x1F, \u0081 osv.). Information om regler för Unicode-strängar i HTTP/1.1 finns i [RFC 2616, avsnitt 2.2: Grundregler](https://www.ietf.org/rfc/rfc2616.txt) och [RFC 3987](https://www.ietf.org/rfc/rfc3987.txt).
-- Följande filnamn är inte tillåtna: LPT1, LPT2, LPT3, LPT4, LPT5, LPT6, LPT7, LPT8, LPT9, COM1, COM2, COM3, COM4, COM5, COM6, COM7, COM8, COM9, PRN, AUX, NUL, CON, CLOCK$, punkttecken (.) och två punkttecken (.).
+- Ogiltiga URL-sökvägstecken tillåts inte. Kodpunkter som `\uE000` är inte giltiga Unicode-tecken, men de är giltiga i NTFS-filnamn. Dessutom tillåts inte vissa ASCII- eller Unicode-tecken, som kontrolltecken (0x00 till 0x1F, \u0081 osv.). Information om regler som styr Unicode-strängar i HTTP/1.1 finns i [RFC 2616, Section 2.2: Basic Rules](https://www.ietf.org/rfc/rfc2616.txt) och [RFC 3987](https://www.ietf.org/rfc/rfc3987.txt).
+- Följande filnamn tillåts inte: LPT1, LPT2, LPT3, LPT4, LPT5, LPT6, LPT7, LPT8, LPT9, COM1, COM2, COM3, COM4, COM5, COM6, COM7, COM8, COM9, PRN, AUX, NUL, CON, CLOCK$, punkttecken (.) och två punkttecken (. .).
 
-## Anslut [!DNL Google Cloud Storage] till plattform
+## Anslut [!DNL Google Cloud Storage] till plattformen
 
-Dokumentationen nedan innehåller information om hur du ansluter [!DNL Google Cloud Storage] till Plattform med API:er eller användargränssnittet:
+Dokumentationen nedan innehåller information om hur du ansluter [!DNL Google Cloud Storage] till plattformen med API:er eller användargränssnittet:
 
 ### Använda API:er
 

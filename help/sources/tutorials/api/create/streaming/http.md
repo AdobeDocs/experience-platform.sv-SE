@@ -11,24 +11,24 @@ ht-degree: 0%
 ---
 
 
-# Skapa en HTTP API-direktuppspelningsanslutning med [!DNL Flow Service] API
+# Skapa en HTTP API-direktuppspelningsanslutning med API:t [!DNL Flow Service]
 
 Flow Service används för att samla in och centralisera kunddata från olika källor inom Adobe Experience Platform. Tjänsten tillhandahåller ett användargränssnitt och RESTful API som alla källor som stöds kan anslutas från.
 
-I den här självstudiekursen används [[!DNL Flow Service] API](https://www.adobe.io/experience-platform-apis/references/flow-service/) för att gå igenom stegen för att skapa en direktuppspelningsanslutning med [!DNL Flow Service] API.
+I den här självstudien används [[!DNL Flow Service] API](https://www.adobe.io/experience-platform-apis/references/flow-service/) för att vägleda dig genom stegen för att skapa en direktuppspelningsanslutning med API:t [!DNL Flow Service].
 
 ## Komma igång
 
 Handboken kräver en fungerande förståelse av följande komponenter i Adobe Experience Platform:
 
-* [[!DNL Experience Data Model (XDM)]](../../../../../xdm/home.md): Det standardiserade ramverk som [!DNL Platform] organiserar upplevelsedata.
-* [[!DNL Real-Time Customer Profile]](../../../../../profile/home.md): Ger en enhetlig konsumentprofil i realtid baserad på aggregerade data från flera källor.
+* [[!DNL Experience Data Model (XDM)]](../../../../../xdm/home.md): Det standardiserade ramverket som [!DNL Platform] organiserar upplevelsedata med.
+* [[!DNL Real-Time Customer Profile]](../../../../../profile/home.md): Tillhandahåller en enhetlig konsumentprofil i realtid baserad på aggregerade data från flera källor.
 
-Om du vill skapa en direktuppspelningsanslutning måste du dessutom ha ett mål-XDM-schema och en datauppsättning. Läs självstudiekursen om du vill veta hur du skapar dessa [data för direktuppspelningspost](../../../../../ingestion/tutorials/streaming-record-data.md) eller självstudiekursen [data i tidsserie för direktuppspelning](../../../../../ingestion/tutorials/streaming-time-series-data.md).
+Om du vill skapa en direktuppspelningsanslutning måste du dessutom ha ett mål-XDM-schema och en datauppsättning. Om du vill lära dig hur du skapar dessa läser du självstudiekursen [om dataströmmar ](../../../../../ingestion/tutorials/streaming-record-data.md) eller självstudiekursen [om dataströmmar i tidsserier](../../../../../ingestion/tutorials/streaming-time-series-data.md).
 
 ### Använda plattforms-API:er
 
-Mer information om hur du kan anropa API:er för plattformar finns i handboken [komma igång med plattforms-API:er](../../../../../landing/api-guide.md).
+Mer information om hur du kan anropa plattforms-API:er finns i guiden [Komma igång med plattforms-API:er](../../../../../landing/api-guide.md).
 
 ## Skapa en basanslutning
 
@@ -38,7 +38,7 @@ En basanslutning anger källan och innehåller den information som krävs för a
 
 Icke-autentiserade anslutningar är den standarddirektuppspelningsanslutning som du kan skapa när du vill strömma data till plattformen.
 
-Om du vill skapa en oautentiserad basanslutning skickar du en POST till `/connections` slutpunkten när du anger ett namn för anslutningen, datatypen och API-anslutningsspecifikations-ID:t för HTTP. Detta ID är `bc7b00d6-623a-4dfc-9fdb-f1240aeadaeb`.
+Om du vill skapa en oautentiserad basanslutning skickar du en POST till slutpunkten `/connections` samtidigt som du anger ett namn för anslutningen, datatypen och ID:t för HTTP API-anslutningsspecifikationen. Detta ID är `bc7b00d6-623a-4dfc-9fdb-f1240aeadaeb`.
 
 **API-format**
 
@@ -52,7 +52,7 @@ Följande begäran skapar en basanslutning för HTTP API.
 
 >[!BEGINTABS]
 
->[!TAB XML]
+>[!TAB XDM]
 
 ```shell
 curl -X POST https://platform.adobe.io/data/foundation/flowservice/connections \
@@ -77,7 +77,7 @@ curl -X POST https://platform.adobe.io/data/foundation/flowservice/connections \
   }'
 ```
 
->[!TAB Rådata]
+>[!TAB Raw-data]
 
 ```shell
 curl -X POST https://platform.adobe.io/data/foundation/flowservice/connections \
@@ -109,12 +109,12 @@ curl -X POST https://platform.adobe.io/data/foundation/flowservice/connections \
 | `name` | Namnet på din basanslutning. Kontrollera att namnet är beskrivande eftersom du kan använda det för att söka efter information om din basanslutning. |
 | `description` | (Valfritt) En egenskap som du kan inkludera för att få mer information om din basanslutning. |
 | `connectionSpec.id` | Anslutningsspecifikations-ID som motsvarar HTTP API. Detta ID är `bc7b00d6-623a-4dfc-9fdb-f1240aeadaeb`. |
-| `auth.params.dataType` | Datatypen för direktuppspelningsanslutningen. Följande värden stöds: `xdm` och `raw`. |
+| `auth.params.dataType` | Datatypen för direktuppspelningsanslutningen. Värden som stöds är: `xdm` och `raw`. |
 | `auth.params.name` | Namnet på den direktuppspelningsanslutning som du vill skapa. |
 
 **Svar**
 
-Ett godkänt svar returnerar HTTP-status 201 med information om den nya anslutningen, inklusive dess unika identifierare (`id`).
+Ett lyckat svar returnerar HTTP-status 201 med information om den nyligen skapade anslutningen, inklusive dess unika identifierare (`id`).
 
 ```json
 {
@@ -125,14 +125,14 @@ Ett godkänt svar returnerar HTTP-status 201 med information om den nya anslutni
 
 | Egenskap | Beskrivning |
 | -------- | ----------- |
-| `id` | The `id` av din nya basanslutning. |
+| `id` | `id` för din nya basanslutning. |
 | `etag` | En identifierare som är tilldelad anslutningen och som anger versionen av basanslutningen. |
 
 ### Autentiserad anslutning
 
 Autentiserade anslutningar bör användas när du behöver skilja mellan poster som kommer från betrodda och ej betrodda källor. Användare som vill skicka information med personligt identifierbar information (PII) bör skapa en autentiserad anslutning vid direktuppspelning av information till plattformen.
 
-Om du vill skapa en autentiserad basanslutning måste du inkludera `authenticationRequired` parametern i din begäran och ange dess värde som `true`. Under det här steget kan du även ange ett käll-ID för din autentiserade basanslutning. Den här parametern är valfri och använder samma värde som `name` om det inte anges.
+Om du vill skapa en autentiserad basanslutning måste du ta med parametern `authenticationRequired` i din begäran och ange dess värde som `true`. Under det här steget kan du även ange ett käll-ID för din autentiserade basanslutning. Den här parametern är valfri och kommer att använda samma värde som attributet `name`, om det inte anges.
 
 
 **API-format**
@@ -147,7 +147,7 @@ Följande begäran skapar en autentiserad basanslutning för HTTP API.
 
 >[!BEGINTABS]
 
->[!TAB XML]
+>[!TAB XDM]
 
 ```shell
 curl -X POST https://platform.adobe.io/data/foundation/flowservice/connections \
@@ -175,7 +175,7 @@ curl -X POST https://platform.adobe.io/data/foundation/flowservice/connections \
  }
 ```
 
->[!TAB Rådata]
+>[!TAB Raw-data]
 
 ```shell
 curl -X POST https://platform.adobe.io/data/foundation/flowservice/connections \
@@ -207,12 +207,12 @@ curl -X POST https://platform.adobe.io/data/foundation/flowservice/connections \
 
 | Egenskap | Beskrivning |
 | -------- | ----------- |
-| `auth.params.sourceId` | En ytterligare identifierare som kan användas när en autentiserad basanslutning skapas. Den här parametern är valfri och använder samma värde som `name` om det inte anges. |
-| `auth.params.authenticationRequired` | Den här parametern anger om direktuppspelningsanslutningen kräver autentisering eller inte. If `authenticationRequired` är inställd på `true` måste autentisering anges för direktuppspelningsanslutningen. If `authenticationRequired` är inställd på `false` behöver du inte autentisera. |
+| `auth.params.sourceId` | En ytterligare identifierare som kan användas när en autentiserad basanslutning skapas. Den här parametern är valfri och kommer att använda samma värde som attributet `name`, om det inte anges. |
+| `auth.params.authenticationRequired` | Den här parametern anger om direktuppspelningsanslutningen kräver autentisering eller inte. Om `authenticationRequired` är inställt på `true` måste autentisering anges för direktuppspelningsanslutningen. Om `authenticationRequired` är inställt på `false` krävs ingen autentisering. |
 
 **Svar**
 
-Ett godkänt svar returnerar HTTP-status 201 med information om den nya anslutningen, inklusive dess unika identifierare (`id`).
+Ett lyckat svar returnerar HTTP-status 201 med information om den nyligen skapade anslutningen, inklusive dess unika identifierare (`id`).
 
 ```json
 {
@@ -233,7 +233,7 @@ GET /flowservice/connections/{BASE_CONNECTION_ID}
 
 | Parameter | Beskrivning |
 | --------- | ----------- |
-| `{BASE_CONNECTION_ID}` | The `id` värdet för anslutningen som du skapade tidigare. |
+| `{BASE_CONNECTION_ID}` | Värdet `id` för anslutningen som du skapade tidigare. |
 
 **Begäran**
 
@@ -247,7 +247,7 @@ curl -X GET https://platform.adobe.io/data/foundation/flowservice/connections/{B
 
 **Svar**
 
-Ett lyckat svar returnerar HTTP-status 200 med detaljerad information om den begärda anslutningen. URL:en för direktuppspelningsslutpunkten skapas automatiskt med anslutningen och kan hämtas med `inletUrl` värde.
+Ett lyckat svar returnerar HTTP-status 200 med detaljerad information om den begärda anslutningen. URL:en för direktuppspelningsslutpunkten skapas automatiskt med anslutningen och kan hämtas med värdet `inletUrl`.
 
 ```json
 {
@@ -290,7 +290,7 @@ Ett lyckat svar returnerar HTTP-status 200 med detaljerad information om den beg
 
 ## Skapa en källanslutning {#source}
 
-Om du vill skapa en källanslutning skickar du en POST till `/sourceConnections` slutpunkt när du anger ditt basanslutnings-ID.
+Om du vill skapa en källanslutning skickar du en POST till slutpunkten `/sourceConnections` samtidigt som du anger ditt grundläggande anslutnings-ID.
 
 **API-format**
 
@@ -321,7 +321,7 @@ curl -X POST \
 
 **Svar**
 
-Ett lyckat svar returnerar HTTP-status 201 med detaljerad information om den nya källanslutningen, inklusive dess unika identifierare (`id`).
+Ett lyckat svar returnerar HTTP-status 201 med detaljerad information om den nyligen skapade källanslutningen, inklusive dess unika identifierare (`id`).
 
 ```json
 {
@@ -334,19 +334,19 @@ Ett lyckat svar returnerar HTTP-status 201 med detaljerad information om den nya
 
 För att källdata ska kunna användas i Platform måste ett målschema skapas för att strukturera källdata efter dina behov. Målschemat används sedan för att skapa en plattformsdatauppsättning där källdata finns.
 
-Ett mål-XDM-schema kan skapas genom att utföra en POST-begäran till [API för schemaregister](https://www.adobe.io/experience-platform-apis/references/schema-registry/).
+Ett mål-XDM-schema kan skapas genom att utföra en POST-begäran till [schemats register-API ](https://www.adobe.io/experience-platform-apis/references/schema-registry/).
 
-Detaljerade anvisningar om hur du skapar ett XDM-målschema finns i självstudiekursen om [skapa ett schema med API](../../../../../xdm/api/schemas.md).
+Detaljerade steg om hur du skapar ett mål-XDM-schema finns i självstudiekursen [Skapa ett schema med API:t](../../../../../xdm/api/schemas.md).
 
 ### Skapa en måldatauppsättning {#target-dataset}
 
-En måldatauppsättning kan skapas genom att en POST till [Katalogtjänstens API](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/catalog.yaml), som tillhandahåller målschemats ID i nyttolasten.
+En måldatamängd kan skapas genom att utföra en POST-begäran till [katalogtjänstens API](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/catalog.yaml), som anger målschemats ID i nyttolasten.
 
-Detaljerade anvisningar om hur du skapar en måldatauppsättning finns i självstudiekursen om [skapa en datauppsättning med API](../../../../../catalog/api/create-dataset.md).
+Detaljerade steg om hur du skapar en måldatauppsättning finns i självstudiekursen [Skapa en datauppsättning med API:t](../../../../../catalog/api/create-dataset.md).
 
 ## Skapa en målanslutning {#target}
 
-En målanslutning representerar anslutningen till målet där inkapslade data kommer in. Om du vill skapa en målanslutning begär du POST till `/targetConnections` när du anger ID:n för måldatauppsättningen och XDM-målschemat. Under det här steget måste du även ange data Lake Connection specification ID. Detta ID är `c604ff05-7f1a-43c0-8e18-33bf874cb11c`.
+En målanslutning representerar anslutningen till målet där inkapslade data kommer in. Om du vill skapa en målanslutning skickar du en POST till `/targetConnections` samtidigt som du anger ID:n för måldatauppsättningen och XDM-målschemat. Under det här steget måste du även ange data Lake Connection specification ID. Detta ID är `c604ff05-7f1a-43c0-8e18-33bf874cb11c`.
 
 **API-format**
 
@@ -398,7 +398,7 @@ Ett lyckat svar returnerar HTTP-status 201 med information om den nya målanslut
 
 För att källdata ska kunna hämtas till en måldatamängd måste den först mappas till målschemat som måldatamängden följer.
 
-Skapa en mappningsuppsättning genom att göra en POST-förfrågan till `mappingSets` slutpunkt för [[!DNL Data Prep] API](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/data-prep.yaml) när du tillhandahöll ditt mål-XDM-schema `$id` och information om de mappningsuppsättningar som du vill skapa.
+Om du vill skapa en mappningsuppsättning skickar du en POST till `mappingSets`-slutpunkten för [[!DNL Data Prep]  API](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/data-prep.yaml) samtidigt som du anger ditt mål-XDM-schema `$id` och information om de mappningsuppsättningar du vill skapa.
 
 **API-format**
 
@@ -439,11 +439,11 @@ curl -X POST \
 
 | Egenskap | Beskrivning |
 | -------- | ----------- |
-| `xdmSchema` | The `$id` av mål-XDM-schemat. |
+| `xdmSchema` | `$id` för mål-XDM-schemat. |
 
 **Svar**
 
-Ett godkänt svar returnerar information om den nyligen skapade mappningen inklusive dess unika identifierare (`id`). Detta ID krävs i ett senare steg för att skapa ett dataflöde.
+Ett lyckat svar returnerar information om den nyligen skapade mappningen inklusive dess unika identifierare (`id`). Detta ID krävs i ett senare steg för att skapa ett dataflöde.
 
 ```json
 {
@@ -458,7 +458,7 @@ Ett godkänt svar returnerar information om den nyligen skapade mappningen inklu
 
 ## Skapa ett dataflöde
 
-När käll- och målanslutningarna har skapats kan du nu skapa ett dataflöde. Dataflödet ansvarar för att schemalägga och samla in data från en källa. Du kan skapa ett dataflöde genom att göra en POST-förfrågan till `/flows` slutpunkt.
+När käll- och målanslutningarna har skapats kan du nu skapa ett dataflöde. Dataflödet ansvarar för att schemalägga och samla in data från en källa. Du kan skapa ett dataflöde genom att utföra en begäran om POST till slutpunkten `/flows`.
 
 **API-format**
 
@@ -502,7 +502,7 @@ curl -X POST \
 
 Följande begäranden skapar ett dataflöde för direktuppspelning för HTTP API med mappningsomformningar tillämpade på dina data.
 
-När du skapar ett dataflöde med omformningar `name` -parametern kan inte ändras. Värdet måste alltid anges till `Mapping`.
+När du skapar ett dataflöde med omformningar kan parametern `name` inte ändras. Värdet måste alltid anges till `Mapping`.
 
 ```shell
 curl -X POST \
@@ -543,14 +543,14 @@ curl -X POST \
 | --- | --- |
 | `name` | Namnet på dataflödet. Kontrollera att namnet på dataflödet är beskrivande, eftersom du kan använda det för att söka efter information om dataflödet. |
 | `description` | (Valfritt) En egenskap som du kan inkludera för att få mer information om dataflödet. |
-| `flowSpec.id` | Flödesspecifikation-ID för [!DNL HTTP API]. Om du vill skapa ett dataflöde med omformningar måste du använda  `c1a19761-d2c7-4702-b9fa-fe91f0613e81`. Om du vill skapa ett dataflöde utan omformningar använder du `d8a6f005-7eaf-4153-983e-e8574508b877`. |
-| `sourceConnectionIds` | The [källanslutnings-ID](#source) hämtat i ett tidigare steg. |
-| `targetConnectionIds` | The [målanslutnings-ID](#target) hämtat i ett tidigare steg. |
-| `transformations.params.mappingId` | The [mappnings-ID](#mapping) hämtat i ett tidigare steg. |
+| `flowSpec.id` | Flödesspecifikations-ID för [!DNL HTTP API]. Om du vill skapa ett dataflöde med omformningar måste du använda `c1a19761-d2c7-4702-b9fa-fe91f0613e81`. Använd `d8a6f005-7eaf-4153-983e-e8574508b877` om du vill skapa ett dataflöde utan omformningar. |
+| `sourceConnectionIds` | [källanslutnings-ID](#source) har hämtats i ett tidigare steg. |
+| `targetConnectionIds` | [målanslutnings-ID](#target) har hämtats i ett tidigare steg. |
+| `transformations.params.mappingId` | [Mappnings-ID](#mapping) hämtades i ett tidigare steg. |
 
 **Svar**
 
-Ett lyckat svar returnerar HTTP-status 201 med information om ditt nya dataflöde, inklusive dess unika identifierare (`id`).
+Ett lyckat svar returnerar HTTP-status 201 med information om det nya dataflödet, inklusive dess unika identifierare (`id`).
 
 ```json
 {
@@ -559,7 +559,7 @@ Ett lyckat svar returnerar HTTP-status 201 med information om ditt nya dataflöd
 }
 ```
 
-## Bokför data som ska importeras till plattformen {#ingest-data}
+## Post-data som ska importeras till plattformen {#ingest-data}
 
 >[!NOTE]
 >
@@ -575,7 +575,7 @@ POST /collection/{INLET_URL}
 
 | Parameter | Beskrivning |
 | --------- | ----------- |
-| `{INLET_URL}` | URL:en för din direktuppspelande slutpunkt. Du kan hämta den här URL:en genom att göra en GET-förfrågan till `/connections` slutpunkt när du anger ditt basanslutnings-ID. |
+| `{INLET_URL}` | URL:en för din direktuppspelande slutpunkt. Du kan hämta den här URL:en genom att göra en GET-förfrågan till slutpunkten `/connections` och samtidigt ange ditt grundläggande anslutnings-ID. |
 | `{FLOW_ID}` | ID:t för HTTP API-direktuppspelningsdataflödet. Detta ID krävs för både XDM- och RAW-data. |
 
 **Begäran**
@@ -646,7 +646,7 @@ curl -X POST https://dcs.adobedc.net/collection/667b41cf2dbf3509927da1ebf7e93c20
   }'
 ```
 
->[!TAB Skicka Raw-data med flödes-ID som frågeparameter]
+>[!TAB Skicka Raw-data med flödes-ID som en frågeparameter]
 
 När du skickar rådata kan du ange ditt flödes-ID som antingen en frågeparameter eller som ett HTTP-huvud. I följande exempel anges flödes-ID som en frågeparameter.
 
@@ -692,9 +692,9 @@ Ett lyckat svar returnerar HTTP-status 200 med information om den nya informatio
 
 ## Nästa steg
 
-Genom att följa den här självstudiekursen har du skapat en HTTP-direktuppspelningsanslutning, vilket gör att du kan använda direktuppspelningsslutpunkten för att importera data till plattformen. Instruktioner om hur du skapar en direktuppspelningsanslutning i användargränssnittet finns i [skapa en självstudiekurs för direktuppspelningsanslutning](../../../ui/create/streaming/http.md).
+Genom att följa den här självstudiekursen har du skapat en HTTP-direktuppspelningsanslutning, vilket gör att du kan använda direktuppspelningsslutpunkten för att importera data till plattformen. Instruktioner om hur du skapar en direktuppspelningsanslutning i användargränssnittet finns i självstudiekursen [Skapa en direktuppspelningsanslutning](../../../ui/create/streaming/http.md).
 
-Om du vill lära dig att strömma data till plattformen kan du läsa självstudiekursen på [data för tidsserie för direktuppspelning](../../../../../ingestion/tutorials/streaming-time-series-data.md) eller självstudiekursen [data för direktuppspelningspost](../../../../../ingestion/tutorials/streaming-record-data.md).
+Om du vill lära dig hur du direktuppspelar data på en plattform kan du läsa självstudiekursen [om att strömma tidsseriedata](../../../../../ingestion/tutorials/streaming-time-series-data.md) eller självstudiekursen om [direktuppspelade postdata](../../../../../ingestion/tutorials/streaming-record-data.md).
 
 ## Bilaga
 
@@ -702,9 +702,9 @@ I det här avsnittet finns ytterligare information om hur du skapar direktuppspe
 
 ### Skicka meddelanden till en autentiserad direktuppspelningsanslutning
 
-Om en direktuppspelningsanslutning har autentisering aktiverat måste klienten lägga till `Authorization` till deras begäran.
+Om en direktuppspelningsanslutning har autentisering aktiverat måste klienten lägga till huvudet `Authorization` i sin begäran.
 
-Om `Authorization` huvudet saknas, eller så skickas en ogiltig/utgången åtkomsttoken, ett otillåtet HTTP 401-svar returneras, med ett liknande svar som nedan:
+Om `Authorization`-huvudet inte finns, eller om en ogiltig/utgången åtkomsttoken skickas, returneras ett otillåtet HTTP 401-svar, med ett liknande svar som nedan:
 
 **Svar**
 

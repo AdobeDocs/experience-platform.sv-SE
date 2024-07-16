@@ -7,13 +7,13 @@ exl-id: 03ce5339-e68d-4adf-8c3c-82846a626dad
 source-git-commit: b6e084d2beed58339191b53d0f97b93943154f7c
 workflow-type: tm+mt
 source-wordcount: '489'
-ht-degree: 3%
+ht-degree: 2%
 
 ---
 
 # Översikt över datainsamling
 
-Adobe Experience Platform erbjuder en serie tekniker som gör att ni kan samla in kundupplevelsedata från källor på klientsidan och skicka dem till Adobe Experience Platform Edge Network där de kan berikas, omformas och distribueras till Adobe eller andra mål på några sekunder.
+Adobe Experience Platform erbjuder en serie teknologier som gör att ni kan samla in kundupplevelsedata från källor på klientsidan och skicka dem till Adobe Experience Platform Edge Network där de kan berikas, omformas och distribueras till Adobe eller icke-Adobe på bara några sekunder.
 
 Datainsamling stöds för följande källor på klientsidan:
 
@@ -38,27 +38,27 @@ Den här guiden ger en introduktion på hög nivå till datainsamling och hur de
 
 ## Taggar, Web SDK och Mobile SDK
 
-Platform Web SDK och Platform Mobile SDK komprimerar och komprimerar alla Adobe-produktbibliotek till ett enda utvecklingspaket för webb- respektive mobilplattformar. Dessa kan implementeras med råkod eller med [taggar](../tags/home.md) via användargränssnittet för datainsamling eller Adobe Experience Platform-gränssnittet.
+Platform Web SDK och Platform Mobile SDK komprimerar och komprimerar alla Adobe-produktbibliotek till ett enda utvecklingspaket för webb- respektive mobilplattformar. Dessa kan implementeras med råkod eller med [tags](../tags/home.md) via användargränssnittet för datainsamling eller Adobe Experience Platform-gränssnittet.
 
-Komprimering av dessa bibliotek snabbar upp datainsamlingen och konsoliderar åtgärder till en enda ström från klientenheter till Platform Edge Network.
+Komprimering av dessa bibliotek snabbar upp datainsamlingen och konsoliderar operationer till en enda ström från klientenheter till Platform Edge Network.
 
 ![Taggar, Web SDK, Mobile SDK](./images/home/tags-sdks.png)
 
 ## Platform Edge Network och datastreams {#edge}
 
-Platform Edge Network är ett globalt, snabbt och tillförlitligt nätverk av servrar som kan ta emot och bearbeta data i otrolig skala. Med hjälp av taggar kan du konfigurera [datastreams](../datastreams/overview.md) för produkter som Adobe Target, Adobe Audience Manager och Adobe Analytics, som gör att du kan aktivera dessa produkter på serversidan utan att ändra klientkoden.
+Platform Edge Network är ett globalt, snabbt och tillförlitligt nätverk av servrar som kan ta emot och bearbeta data i otrolig skala. Med hjälp av taggar kan du konfigurera [datastreams](../datastreams/overview.md) för produkter som Adobe Target, Adobe Audience Manager och Adobe Analytics, så att du kan aktivera de här produkterna på serversidan utan att ändra klientkoden.
 
-Dessutom är datastreams integrerade med flera plattformsfunktioner som säkerställer att känsliga data som du skickar hanteras på rätt sätt med hänsyn till organisationens policyer och rättsliga bestämmelser. Se avsnittet om [hantera känsliga data](../datastreams/overview.md#sensitive) i datastreams-dokumentationen om du vill ha mer information.
+Dessutom är datastreams integrerade med flera plattformsfunktioner som säkerställer att känsliga data som du skickar hanteras på rätt sätt med hänsyn till organisationens policyer och rättsliga bestämmelser. Mer information finns i avsnittet [Hantera känsliga data](../datastreams/overview.md#sensitive) i datastreams-dokumentationen.
 
-![Datastreams and Adobe solutions](./images/home/adobe-solutions.png)
+![Datastreams och Adobe solutions](./images/home/adobe-solutions.png)
 
 >[!NOTE]
 >
->En introduktion på hög nivå till Platform Edge Network finns i följande [interaktiv produktdemo](https://adobe-ideacloud.forgedx.com/adobe-adobe-edge-collection/adobe-experience-edge/public/mx?SUID=hgb1a48ICSCpbM6MzBYHbxnsh9DgjUy1).
+>En introduktion på hög nivå till Platform Edge Network finns i följande [interaktiva produktdemo](https://adobe-ideacloud.forgedx.com/adobe-adobe-edge-collection/adobe-experience-edge/public/mx?SUID=hgb1a48ICSCpbM6MzBYHbxnsh9DgjUy1).
 
 ## Vidarebefordran av händelser
 
-[Vidarebefordran av händelser](../tags/ui/event-forwarding/overview.md) kan utnyttja valfri datastream för Experience Platform så att du kan omvandla, berika och skicka data till andra mål än Adobe med extrem låg latens och utan att lägga till någon kod från tredje part till klientenheten.
+[Vidarebefordring av händelser](../tags/ui/event-forwarding/overview.md) kan utnyttja valfri dataström i Experience Platform, vilket gör att du kan omforma, berika och skicka data till andra mål än Adobe med extrem låg latens och utan att lägga till någon tredjepartskod till klientenheten.
 
 ![Vidarebefordran av händelser](./images/home/event-forwarding.png)
 
@@ -72,4 +72,4 @@ Detta dokument innehåller en översikt på hög nivå över hur datainsamling f
 
 ![Ramverk för datainsamling](./images/home/collection.png)
 
-Mer information om det allmänna arbetsflödet för att skicka händelsedata via Edge-nätverket finns i [end-to-end overview](./e2e.md).
+Mer information om det allmänna arbetsflödet för att skicka händelsedata via Edge Network finns i översikten [från början till slut](./e2e.md).

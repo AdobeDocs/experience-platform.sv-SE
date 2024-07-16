@@ -13,11 +13,11 @@ ht-degree: 0%
 
 # Ta bort ett objekt i API:t
 
-Du kan ta bort en [!DNL Catalog] genom att ange dess ID i sökvägen för en DELETE-begäran.
+Du kan ta bort ett [!DNL Catalog]-objekt genom att ange dess ID i sökvägen för en DELETE-begäran.
 
 >[!WARNING]
 >
->Var extra försiktig när du tar bort objekt, eftersom det inte går att ångra och kan ge upphov till ändringar på andra ställen i [!DNL Experience Platform].
+>Var extra försiktig när du tar bort objekt, eftersom detta inte kan ångras och kan leda till brytningsändringar någon annanstans i [!DNL Experience Platform].
 
 **API-format**
 
@@ -27,11 +27,11 @@ DELETE /{OBJECT_TYPE}/{OBJECT_ID}
 
 >[!IMPORTANT]
 >
->The `DELETE /batches/{ID}` slutpunkten har tagits bort. Om du vill ta bort en grupp bör du använda [API för gruppinmatning](../../ingestion/batch-ingestion/api-overview.md#delete-a-batch).
+>Slutpunkten `DELETE /batches/{ID}` har tagits bort. Om du vill ta bort en grupp bör du använda [API:t för gruppinmatning](../../ingestion/batch-ingestion/api-overview.md#delete-a-batch).
 
 | Parameter | Beskrivning |
 | --- | --- |
-| `{OBJECT_TYPE}` | Typ av [!DNL Catalog] objekt som ska tas bort. Giltiga objekt är: <ul><li>`dataSets`</li><li>`dataSetFiles`</li></ul> |
+| `{OBJECT_TYPE}` | Den typ av [!DNL Catalog]-objekt som ska tas bort. Giltiga objekt är: <ul><li>`dataSets`</li><li>`dataSetFiles`</li></ul> |
 | `{OBJECT_ID}` | Identifieraren för det specifika objekt som du vill uppdatera. |
 
 **Begäran**
@@ -59,4 +59,4 @@ Ett lyckat svar returnerar HTTP-status 200 (OK) och en array som innehåller ID:
 
 >[!NOTE]
 >
->Om nej [!DNL Catalog] -objekt matchar det ID som anges i din begäran. Du kan fortfarande få HTTP-statuskod 200, men svarsmatrisen är tom.
+>Om inga [!DNL Catalog]-objekt matchar det ID som angavs i din begäran kan du fortfarande få HTTP-statuskoden 200, men svarsmatrisen är tom.

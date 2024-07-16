@@ -13,13 +13,13 @@ ht-degree: 1%
 
 >[!NOTE]
 >
->Adobe Experience Platform Launch har omklassificerats som en serie datainsamlingstekniker i Adobe Experience Platform. Som ett resultat av detta har flera terminologiska förändringar införts i produktdokumentationen. Se följande [dokument](./term-updates.md) för en konsoliderad hänvisning till terminologiska förändringar.
+>Adobe Experience Platform Launch har omklassificerats som en serie datainsamlingstekniker i Adobe Experience Platform. Som ett resultat av detta har flera terminologiska förändringar införts i produktdokumentationen. I följande [dokument](./term-updates.md) finns en konsoliderad referens till de ändrade terminologin.
 
 Taggar i Adobe Experience Platform är nästa generation av tagghanteringsfunktioner från Adobe. Taggar ger kunderna ett enkelt sätt att driftsätta och hantera alla analys-, marknadsförings- och annonstaggar som behövs för att driva relevanta kundupplevelser.
 
-Taggar ger alla möjlighet att bygga och underhålla egna integreringar, som kallas *tillägg*. Dessa tillägg är tillgängliga för [!DNL Adobe Experience Cloud] kunderna i en appbutiksupplevelse så att de snabbt kan installera, konfigurera och driftsätta sina taggar.
+Med taggar kan alla skapa och underhålla egna integreringar, som kallas *extensions*. Dessa tillägg är tillgängliga för [!DNL Adobe Experience Cloud]-kunder i en appbutik så att de snabbt kan installera, konfigurera och distribuera sina taggar.
 
-Taggar erbjuds [!DNL Adobe Experience Cloud] kunderna som en inkluderad mervärdesskapande funktion.
+Taggar erbjuds [!DNL Adobe Experience Cloud] kunder som en inkluderad funktion för att lägga till värde.
 
 ## Viktiga fördelar {#key-benefits}
 
@@ -31,7 +31,7 @@ Taggar erbjuds [!DNL Adobe Experience Cloud] kunderna som en inkluderad mervärd
 
 Använd hjälpen för In-produkten i den högra panelen för att lära dig mer om taggar och visa ytterligare tillgängliga resurser.
 
-![Taggar egenskaper i användargränssnittet för datainsamling.](./images/ui/tags-overview/tags-properties.png)
+![Taggegenskaper i användargränssnittet för datainsamling.](./images/ui/tags-overview/tags-properties.png)
 
 ### Tillägg {#extensions}
 
@@ -79,7 +79,7 @@ Automatisera implementeringar av enskilda tekniker eller en grupp av tekniker.
 
 ### Ljus, modulär behållartagg {#modular-tag}
 
-Innehållet i behållaren är minifierat, inklusive din egen kod. Allt är modulärt. Om du inte behöver något objekt inkluderas det inte i ditt bibliotek. Resultatet är en snabb och kompakt implementering. Se [Miniatyr](./ui/publishing/builds.md).
+Innehållet i behållaren är minifierat, inklusive din egen kod. Allt är modulärt. Om du inte behöver något objekt inkluderas det inte i ditt bibliotek. Resultatet är en snabb och kompakt implementering. Se [Minification](./ui/publishing/builds.md).
 
 ## Andra högdagrar {#other-highlights}
 

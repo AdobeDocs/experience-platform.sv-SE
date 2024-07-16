@@ -15,11 +15,11 @@ Använd API:t för avancerad livscykelhantering för data och API:t för datahyg
 
 ## Förhandskrav {#prerequisites}
 
-Den här handboken kräver en fungerande förståelse av arbetsytan Datalängd och [API för datahygien](./api/overview.md). Innan du fortsätter med det här dokumentet bör du bekanta dig med guiderna på [Avancerad livscykelhantering av data](./home.md) och [skapa postborttagningsbegäranden](./ui/record-delete.md) eller [förfallodatum för datauppsättning i användargränssnittet](./ui/dataset-expiration.md)eller via API:t.
+Den här handboken kräver en fungerande förståelse av arbetsytan Datalängd och [API:t för datahygien](./api/overview.md). Innan du fortsätter med det här dokumentet bör du bekanta dig med guiderna för [avancerad livscykelhantering](./home.md) och [att skapa begäranden om postborttagning](./ui/record-delete.md) eller [förfallodatum för datauppsättningar i gränssnittet](./ui/dataset-expiration.md), eller via API:t.
 
 ## Riktlinjer för att skapa arbetsorder {#work-order-creation-guidelines}
 
-Du kan använda `/workorder` slutpunkt i Data Hygiene API för att programmässigt hantera begäranden om postborttagning i Experience Platform. Med den här slutpunkten kan du skapa en borttagningsbegäran, kontrollera dess status eller uppdatera en befintlig begäran. Se [Slutpunktsdokument för arbetsorder](./api/workorder.md) om du vill lära dig hur du utför dessa åtgärder med API:t.
+Du kan använda slutpunkten `/workorder` i API:t för datahygien för att programmässigt hantera begäranden om postborttagning i Experience Platform. Med den här slutpunkten kan du skapa en borttagningsbegäran, kontrollera dess status eller uppdatera en befintlig begäran. Läs [Slutpunktsdokumentet för arbetsorder](./api/workorder.md) om du vill veta mer om hur du utför dessa åtgärder med API:t.
 
 >[!TIP]
 >
@@ -27,27 +27,27 @@ Du kan använda `/workorder` slutpunkt i Data Hygiene API för att programmässi
 
 Följ de här riktlinjerna för att optimera dina inskickade rensningsbegäranden:
 
-1. **Maximera identiteter per begäran:** Inkludera upp till 100 000 identiteter per rensningsförfrågan för att öka effektiviteten. Genom att gruppera flera identiteter i en enda begäran kan du minska antalet API-anrop och minimera risken för prestandaproblem på grund av överdrivna förfrågningar om en identitet. Skicka in förfrågningar med maximalt antal identiteter för att få snabbare behandling, eftersom arbetsorder batchas för att bli effektiva.
-2. **Ange enskilda datauppsättningar:** För maximal effektivitet anger du den enskilda datauppsättning som ska bearbetas.
-3. **Tänk på API-begränsning:** Tänk på API-begränsning för att förhindra långsamma driftstopp. Mindre förfrågningar (&lt; 100 ID:n) med högre frekvens kan resultera i 429 svar och kräva att de skickas in igen med acceptabel frekvens.
+1. **Maximera identiteter per begäran:** Inkludera upp till 100 000 identiteter per rensningsbegäran för att öka effektiviteten. Genom att gruppera flera identiteter i en enda begäran kan du minska antalet API-anrop och minimera risken för prestandaproblem på grund av överdrivna förfrågningar om en identitet. Skicka in förfrågningar med maximalt antal identiteter för att få snabbare behandling, eftersom arbetsorder batchas för att bli effektiva.
+2. **Ange enskilda datauppsättningar:** Ange den enskilda datauppsättning som ska bearbetas för maximal effektivitet.
+3. **Tänk på API-begränsning:** Tänk på API-begränsning för att förhindra långsam hämtning. Mindre förfrågningar (&lt; 100 ID:n) med högre frekvens kan resultera i 429 svar och kräva att de skickas in igen med acceptabel frekvens.
 
 ### Hantera 429 fel {#manage-429-errors}
 
 Om du får ett 429-fel anger det att du har överskridit det tillåtna antalet begäranden under en viss tidsperiod. Följ dessa standarder för att hantera 429 fel effektivt:
 
-- **Läs rubriken Försök igen efter**: När ett 429-fel returneras ska du kontrollera svarsrubriken&quot;Försök igen efter&quot;. Den här rubriken anger väntetiden innan begäran görs om.
-- **Implementera återförsökslogik**: Använd värdet &quot;Försök igen efter&quot; för att implementera återförsökslogik i programmet och se till att försök görs efter den angivna tiden för att undvika efterföljande 429 fel.
+- **Läs huvudet Försök igen**: När ett 429-fel returneras kontrollerar du svarsrubriken Försök igen efter. Den här rubriken anger väntetiden innan begäran görs om.
+- **Implementera återförsökslogik**: Använd värdet för Försök igen efter om du vill implementera återförsökslogik i programmet och se till att försök görs efter den angivna tiden för att undvika efterföljande 429 fel.
 - **Gruppera dina förfrågningar**: Undvik att skicka in många små förfrågningar i snabb följd. Gruppera istället flera identiteter i en enda begäran för att minska antalet anrop och minimera risken för att hacka hastighetsbegränsningar.
 
 ## Utgångsdatum för datauppsättning {#dataset-expiration}
 
-Ställ in automatisk rensning av datauppsättningar för kortlivade data. Använd `/ttl` slutpunkt i Data Hygiene API för att schemalägga förfallodatum för datamängder för rensning baserat på en angiven tid eller ett angivet datum. Läs slutpunktshandboken för datauppsättningens förfallodatum om du vill veta hur du [skapa en förfallotid för datauppsättning](./api/dataset-expiration.md) och [godkända frågeparametrar](./api/dataset-expiration.md#query-params).
+Ställ in automatisk rensning av datauppsättningar för kortlivade data. Använd slutpunkten `/ttl` i API:t för datahygien för att schemalägga förfallodatum för datamängder för rensning baserat på en angiven tid eller ett angivet datum. Läs slutpunktshandboken för datauppsättningens förfallodatum om du vill veta hur du [skapar en förfallotid för en datauppsättning](./api/dataset-expiration.md) och de [godkända frågeparametrarna](./api/dataset-expiration.md#query-params).
 
 ## Övervaka arbetsorder och utgångsstatus för datauppsättning {#monitor}
 
-Ni kan effektivt övervaka hur er livscykelhantering av data fortskrider med hjälp av **I/O-händelser**. En I/O-händelse är en mekanism för att ta emot meddelanden i realtid om ändringar eller uppdateringar i olika tjänster inom plattformen.
+Du kan effektivt övervaka förloppet för din livscykelhantering av data med hjälp av **I/O-händelser**. En I/O-händelse är en mekanism för att ta emot meddelanden i realtid om ändringar eller uppdateringar i olika tjänster inom plattformen.
 
-I/O-händelsemeddelanden kan skickas till en konfigurerad webkrok för att möjliggöra automatisering av aktivitetsövervakning. Om du vill få meddelanden via webkrok måste du registrera din webkrok för plattformsaviseringar i Adobe Developer Console. Se guiden på [prenumerera på händelsemeddelanden från Adobe I/O](../observability/alerts/subscribe.md) för detaljerade anvisningar.
+I/O-händelsemeddelanden kan skickas till en konfigurerad webkrok för att möjliggöra automatisering av aktivitetsövervakning. Om du vill få meddelanden via webkrok måste du registrera din webkrok för plattformsaviseringar i Adobe Developer Console. Detaljerade instruktioner finns i guiden om att [prenumerera på Adobe I/O-händelsemeddelanden](../observability/alerts/subscribe.md).
 
 Använd följande metoder och riktlinjer för livscykeln för data för att effektivt hämta och övervaka jobbstatus:
 
@@ -63,7 +63,7 @@ För att effektivt kunna övervaka förloppet för dina uppgifter under datans l
 
 Använd följande tillvägagångssätt för att få detaljerad information om enskilda arbetsorder:
 
-- Gör en GET-förfrågan till `/workorder/{work_order_id}` slutpunkt för detaljerade svarsdata.
+- Gör en GET-förfrågan till `/workorder/{work_order_id}`-slutpunkten för detaljerade svarsdata.
 - Hämta produktspecifika svar och framgångsmeddelanden.
 - Undvik att använda den här metoden för vanliga avsökningsaktiviteter.
 

@@ -1,16 +1,17 @@
 ---
 title: Datatypen Advertising Details Collection
-description: Läs mer om datatypen Advertising Details Collection Experience Data Model (XDM).
-source-git-commit: fe239bee3c853d43c04200092f59537dfeb00c87
+description: Läs mer om datatypen XDM (Advertising Details Collection Experience Data Model).
+exl-id: 3f6bf1f9-c728-46af-804a-cb41eb29951b
+source-git-commit: 799a384556b43bc844782d8b67416c7eea77fbf0
 workflow-type: tm+mt
 source-wordcount: '303'
-ht-degree: 1%
+ht-degree: 0%
 
 ---
 
 # [!UICONTROL Advertising Details] Samlingsdatatyp
 
-[!UICONTROL Advertising Details] Samlingen är en XDM-datatyp (Standard Experience Data Model) som samlar in viktiga attribut som är relaterade till annonser. Det innehåller information som annons-ID, annons- och kampanj-ID:n, längd, position i en sekvens, information om spelaren som återger annonsen och så vidare. Ni kan använda den här datatypen för att spåra och analysera olika aspekter av annonsresultat och engagemang, och ge insikter om hur målgrupperna interagerar med och svarar på olika annonser. Den här informationen som du anger används för att spåra dina strömmande data.
+[!UICONTROL Advertising Details]-samlingen är en XDM-datatyp (Standard Experience Data Model) som samlar in nyckelattribut relaterade till annonser. Det innehåller information som annons-ID, annons- och kampanj-ID:n, längd, position i en sekvens, information om spelaren som återger annonsen och så vidare. Ni kan använda den här datatypen för att spåra och analysera olika aspekter av annonsresultat och engagemang, och ge insikter om hur målgrupperna interagerar med och svarar på olika annonser. Den här informationen som du anger används för att spåra dina strömmande data.
 
 +++Välj om du vill visa ett diagram över datatypen Advertising Details Collection.
 ![Ett diagram över datatypen Advertising Details Collection.](../images/data-types/advertising-details-collection.png)

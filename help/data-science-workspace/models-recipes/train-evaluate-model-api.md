@@ -7,27 +7,27 @@ description: I den här självstudiekursen visas hur du skapar, utbilda och utv�
 exl-id: 8107221f-184c-426c-a33e-0ef55ed7796e
 source-git-commit: fcd44aef026c1049ccdfe5896e6199d32b4d1114
 workflow-type: tm+mt
-source-wordcount: '1227'
+source-wordcount: '1217'
 ht-degree: 0%
 
 ---
 
-# Tåla och utvärdera en modell med [!DNL Sensei Machine Learning] API
+# Utbilda och utvärdera en modell med API:t [!DNL Sensei Machine Learning]
 
 
 I den här självstudiekursen visas hur du skapar, utbilda och utvärderar en modell med API-anrop. Se [det här dokumentet](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/sensei-ml-api.yaml) för en detaljerad lista över API-dokumentation.
 
-## Förutsättningar
+## Förhandskrav
 
-Följ [Importera en paketerad mottagare med API:t](./import-packaged-recipe-api.md) för att skapa en motor, som krävs för att utbilda och utvärdera en modell med API:t.
+Följ [Importera ett paketerat recept med API:t ](./import-packaged-recipe-api.md) för att skapa en motor, vilket krävs för att träna och utvärdera en modell med API:t.
 
-Följ [Självstudiekurs om autentisering med Experience Platform API](https://www.adobe.com/go/platform-api-authentication-en) för att börja göra API-anrop.
+Följ självstudiekursen [Experience Platform API-autentisering](https://www.adobe.com/go/platform-api-authentication-en) för att börja göra API-anrop.
 
 Från självstudiekursen bör du nu ha följande värden:
 
-- `{ACCESS_TOKEN}`: Ditt specifika värde för innehavartoken som tillhandahålls efter autentisering.
-- `{ORG_ID}`: Dina organisationsuppgifter finns i din unika Adobe Experience Platform-integration.
-- `{API_KEY}`: Ditt specifika API-nyckelvärde som finns i din unika Adobe Experience Platform-integrering.
+- `{ACCESS_TOKEN}`: Ditt specifika värde för innehavartoken har angetts efter autentiseringen.
+- `{ORG_ID}`: Dina organisationsuppgifter hittades i din unika Adobe Experience Platform-integrering.
+- `{API_KEY}`: Ditt specifika API-nyckelvärde hittades i din unika Adobe Experience Platform-integrering.
 
 - Länka till en dockningsbild av en intelligent tjänst
 
@@ -50,7 +50,7 @@ Vi kommer att konsumera API:erna för att skapa en Experimentrunda för utbildni
 
 ### Skapa en MLInstance
 
-Du kan skapa en MLInstance med följande begäran. Du kommer att använda `{ENGINE_ID}` som returnerades när en motor skapades från [Importera en paketerad mottagare med API:t](./import-packaged-recipe-ui.md) självstudiekurs.
+Du kan skapa en MLInstance med följande begäran. Du kommer att använda `{ENGINE_ID}` som returnerades när du skapade en motor från [Importera ett paketerat recept med hjälp av API](./import-packaged-recipe-ui.md)-självstudiekursen.
 
 **Begäran**
 
@@ -64,10 +64,10 @@ curl -X POST \
   -d `{JSON_PAYLOAD}`
 ```
 
-`{ACCESS_TOKEN}`: Ditt specifika värde för innehavartoken som tillhandahålls efter autentisering.\
-`{ORG_ID}`: Dina organisationsuppgifter finns i din unika Adobe Experience Platform-integration.\
-`{API_KEY}`: Ditt specifika API-nyckelvärde som finns i din unika Adobe Experience Platform-integrering.\
-`{JSON_PAYLOAD}`: Konfigurationen av vår MLInstance. Exemplet vi använder i vår självstudiekurs visas här:
+`{ACCESS_TOKEN}`: Ditt specifika värde för innehavartoken har angetts efter autentiseringen.\
+`{ORG_ID}`: Dina organisationsuppgifter hittades i din unika Adobe Experience Platform-integrering.\
+`{API_KEY}`: Ditt specifika API-nyckelvärde hittades i din unika Adobe Experience Platform-integrering.\
+`{JSON_PAYLOAD}`: Konfigurationen av vår MLInstance. Exemplet som vi använder i vår självstudiekurs visas här:
 
 ```JSON
 {
@@ -122,9 +122,9 @@ curl -X POST \
 
 >[!NOTE]
 >
->I `{JSON_PAYLOAD}`definierar vi parametrar för utbildning och poängsättning i `tasks` array. The `{ENGINE_ID}` är ID:t för den motor som du vill använda och `tag` -fältet är en valfri parameter som används för att identifiera instansen.
+>I `{JSON_PAYLOAD}` definierar vi parametrar som används för utbildning och poängsättning i arrayen `tasks`. `{ENGINE_ID}` är ID:t för den motor som du vill använda och fältet `tag` är en valfri parameter som används för att identifiera instansen.
 
-Svaret innehåller `{INSTANCE_ID}` som representerar den skapade MLInstance-instansen. Flera MLInstances-modeller med olika konfigurationer kan skapas.
+Svaret innehåller `{INSTANCE_ID}` som representerar den MLInstance som skapas. Flera MLInstances-modeller med olika konfigurationer kan skapas.
 
 **Svar**
 
@@ -162,7 +162,7 @@ Svaret innehåller `{INSTANCE_ID}` som representerar den skapade MLInstance-inst
 
 ### Skapa en expert
 
-En datavetare använder en expert för att komma fram till en högpresterande modell under utbildningen. Det finns många olika experimentalternativ, till exempel ändrade datauppsättningar, funktioner, inlärningsparametrar och maskinvara. Följande är ett exempel på hur du skapar en expert.
+En datavetare använder en expert för att komma fram till en högpresterande modell under utbildningen. Det finns många olika experimentalternativ, till exempel föränderliga datauppsättningar, funktioner, inlärningsparametrar och maskinvara. Följande är ett exempel på hur du skapar en expert.
 
 **Begäran**
 
@@ -176,10 +176,10 @@ curl -X POST \
   -d `{JSON PAYLOAD}`
 ```
 
-`{ORG_ID}`: Dina organisationsuppgifter finns i din unika Adobe Experience Platform-integration.\
-`{ACCESS_TOKEN}`: Ditt specifika värde för innehavartoken som tillhandahålls efter autentisering.\
-`{API_KEY}`: Ditt specifika API-nyckelvärde som finns i din unika Adobe Experience Platform-integrering.\
-`{JSON_PAYLOAD}`: Experimentera med objekt som skapas. Exemplet vi använder i vår självstudiekurs visas här:
+`{ORG_ID}`: Dina organisationsuppgifter hittades i din unika Adobe Experience Platform-integrering.\
+`{ACCESS_TOKEN}`: Ditt specifika värde för innehavartoken har angetts efter autentiseringen.\
+`{API_KEY}`: Ditt specifika API-nyckelvärde hittades i din unika Adobe Experience Platform-integrering.\
+`{JSON_PAYLOAD}`: Experimentera objekt som skapas. Exemplet som vi använder i vår självstudiekurs visas här:
 
 ```JSON
 {
@@ -218,7 +218,7 @@ Svaret från experten ser ut så här.
 
 Schemalagda experiment används så att vi inte behöver skapa varje enskild Experiment Runs via ett API-anrop. I stället tillhandahåller vi alla parametrar som behövs när du skapar en expertreplikation och varje körning skapas regelbundet.
 
-För att indikera att en schemalagd experiment har skapats måste vi lägga till en `template` i själva förfrågningen. I `template`innehåller alla nödvändiga parametrar för schemaläggning av körningar, till exempel `tasks`, som anger vilken åtgärd som ska utföras, och `schedule`, som anger tidpunkten för de schemalagda körningarna.
+Om du vill ange att en schemalagd utvärderingsprocess ska skapas måste vi lägga till ett `template`-avsnitt i förfrågningens innehåll. I `template` inkluderas alla nödvändiga parametrar för schemaläggning av körningar, till exempel `tasks`, som anger vilken åtgärd och `schedule` som anger tidpunkten för schemalagda körningar.
 
 **Begäran**
 
@@ -232,10 +232,10 @@ curl -X POST \
   -d '{JSON_PAYLOAD}`
 ```
 
-`{ORG_ID}`: Dina organisationsuppgifter finns i din unika Adobe Experience Platform-integration.\
-`{ACCESS_TOKEN}`: Ditt specifika värde för innehavartoken som tillhandahålls efter autentisering.\
-`{API_KEY}`: Ditt specifika API-nyckelvärde som finns i din unika Adobe Experience Platform-integrering.\
-`{JSON_PAYLOAD}`: Datauppsättning som ska bokföras. Exemplet vi använder i vår självstudiekurs visas här:
+`{ORG_ID}`: Dina organisationsuppgifter hittades i din unika Adobe Experience Platform-integrering.\
+`{ACCESS_TOKEN}`: Ditt specifika värde för innehavartoken har angetts efter autentiseringen.\
+`{API_KEY}`: Ditt specifika API-nyckelvärde hittades i din unika Adobe Experience Platform-integrering.\
+`{JSON_PAYLOAD}`: Datauppsättning som ska bokföras. Exemplet som vi använder i vår självstudiekurs visas här:
 
 ```JSON
 {
@@ -265,7 +265,7 @@ curl -X POST \
 }
 ```
 
-När vi skapar en expert, kroppen, `{JSON_PAYLOAD}`, ska innehålla antingen `mlInstanceId` eller `mlInstanceQuery` parameter. I det här exemplet anropar en schemalagd experiment en körning var 20:e minut som anges i `cron` parameter, från `startTime` tills `endTime`.
+När vi skapar en expert ska brödtexten, `{JSON_PAYLOAD}`, innehålla antingen parametern `mlInstanceId` eller `mlInstanceQuery`. I det här exemplet kommer en schemalagd experiment att anropa en körning var 20:e minut som anges i parametern `cron`, med början från `startTime` till `endTime`.
 
 **Svar**
 
@@ -305,7 +305,7 @@ När vi skapar en expert, kroppen, `{JSON_PAYLOAD}`, ska innehålla antingen `ml
 
 ### Skapa en provrunda för utbildning
 
-När en experimentenhet har skapats kan en övning skapas och köras med hjälp av samtalet nedan. Du behöver `{EXPERIMENT_ID}` och ange vad `mode` som du vill utlösa i begärandetexten.
+När en experimentenhet har skapats kan en övning skapas och köras med hjälp av samtalet nedan. Du behöver `{EXPERIMENT_ID}` och anger vad `mode` du vill utlösa i begärandetexten.
 
 **Begäran**
 
@@ -320,10 +320,10 @@ curl -X POST \
 ```
 
 `{EXPERIMENT_ID}`: Det ID som motsvarar den experiment som du vill använda som mål. Det här finns i svaret när du skapar din Experiment.\
-`{ORG_ID}`: Dina organisationsuppgifter finns i din unika Adobe Experience Platform-integration.\
-`{ACCESS_TOKEN}`: Ditt specifika värde för innehavartoken som tillhandahålls efter autentisering.\
-`{API_KEY}`: Ditt specifika API-nyckelvärde som finns i din unika Adobe Experience Platform-integrering.\
-`{JSON_PAYLOAD}`: För att kunna genomföra en utbildning måste du inkludera följande i brödtexten:
+`{ORG_ID}`: Dina organisationsuppgifter hittades i din unika Adobe Experience Platform-integrering.\
+`{ACCESS_TOKEN}`: Ditt specifika värde för innehavartoken har angetts efter autentiseringen.\
+`{API_KEY}`: Ditt specifika API-nyckelvärde hittades i din unika Adobe Experience Platform-integrering.\
+`{JSON_PAYLOAD}`: Om du vill skapa en utbildningskurs måste du inkludera följande i brödtexten:
 
 ```JSON
 {
@@ -331,7 +331,7 @@ curl -X POST \
 }
 ```
 
-Du kan även åsidosätta konfigurationsparametrarna genom att ta med en `tasks` array:
+Du kan även åsidosätta konfigurationsparametrarna genom att ta med en `tasks`-matris:
 
 ```JSON
 {
@@ -350,7 +350,7 @@ Du kan även åsidosätta konfigurationsparametrarna genom att ta med en `tasks`
 }
 ```
 
-Du kommer att få följande svar som talar om för dig `{EXPERIMENT_RUN_ID}` och konfigurationen under `tasks`.
+Du får följande svar som meddelar dig om `{EXPERIMENT_RUN_ID}` och konfigurationen under `tasks`.
 
 **Svar**
 
@@ -390,13 +390,13 @@ curl -X GET \
 
 `{EXPERIMENT_ID}`: Det ID som representerar Experimenten.\
 `{EXPERIMENT_RUN_ID}`: Det ID som representerar Experimentkörningen.\
-`{ACCESS_TOKEN}`: Ditt specifika värde för innehavartoken som tillhandahålls efter autentisering.\
-`{ORG_ID}`: Dina organisationsuppgifter finns i din unika Adobe Experience Platform-integration.\
-`{API_KEY}`: Ditt specifika API-nyckelvärde som finns i din unika Adobe Experience Platform-integrering.
+`{ACCESS_TOKEN}`: Ditt specifika värde för innehavartoken har angetts efter autentiseringen.\
+`{ORG_ID}`: Dina organisationsuppgifter hittades i din unika Adobe Experience Platform-integrering.\
+`{API_KEY}`: Ditt specifika API-nyckelvärde hittades i din unika Adobe Experience Platform-integrering.
 
 **Svar**
 
-GET-samtalet ger status i `state` enligt nedan:
+GET-anropet ger status i parametern `state` enligt nedan:
 
 ```JSON
 {
@@ -432,12 +432,12 @@ GET-samtalet ger status i `state` enligt nedan:
 `{EXPERIMENT_RUN_ID}`: Det ID som representerar Experimentkörningen.\
 `{EXPERIMENT_ID}`: Det ID som representerar den experimentversion som Experiment Run är under.
 
-Förutom `DONE` delstat, andra lägen:
+Förutom läget `DONE` innehåller andra lägen:
 - `PENDING`
 - `RUNNING`
 - `FAILED`
 
-Detaljerade loggar finns under `tasklogs` parameter.
+Mer information finns i detaljerade loggar under parametern `tasklogs`.
 
 ### Hämta den tränade modellen
 
@@ -453,8 +453,8 @@ curl -X GET \
 ```
 
 `{EXPERIMENT_RUN_ID}`: Det ID som motsvarar den Experimentkörning som du vill använda som mål. Detta finns i svaret när du skapar en Experiment Run.\
-`{ACCESS_TOKEN}`: Ditt specifika värde för innehavartoken som tillhandahålls efter autentisering.\
-`{ORG_ID}`: Dina organisationsuppgifter finns i din unika Adobe Experience Platform-integration.
+`{ACCESS_TOKEN}`: Ditt specifika värde för innehavartoken har angetts efter autentiseringen.\
+`{ORG_ID}`: Dina organisationsuppgifter hittades i din unika Adobe Experience Platform-integrering.
 
 Svaret representerar den tränade modell som skapades.
 
@@ -483,12 +483,12 @@ Svaret representerar den tränade modell som skapades.
 ```
 
 `{MODEL_ID}`: Det ID som motsvarar modellen.\
-`{EXPERIMENT_ID}`: Det ID som motsvarar den Experiment som Experiment Run finns under.\
-`{EXPERIMENT_RUN_ID}`: Det ID som motsvarar Experimentkörningen.
+`{EXPERIMENT_ID}`: Det ID som motsvarar det experiment som Experiment Run körs under.\
+`{EXPERIMENT_RUN_ID}`: Det ID som motsvarar Experiment Run.
 
 ### Stoppa och ta bort en schemalagd experiment
 
-Om du vill avbryta körningen av en schemalagd expert innan den körs `endTime`kan du göra detta genom att fråga DELETE till `{EXPERIMENT_ID}`
+Om du vill avbryta körningen av en schemalagd experiment innan `endTime` körs kan du göra det genom att fråga en DELETE-begäran till `{EXPERIMENT_ID}`
 
 **Begäran**
 
@@ -499,9 +499,9 @@ curl -X DELETE \
   -H 'x-gw-ims-org-id: {ORG_ID}'
 ```
 
-`{EXPERIMENT_ID}`: Det ID som motsvarar Experimenten.\
-`{ACCESS_TOKEN}`: Ditt specifika värde för innehavartoken som tillhandahålls efter autentisering.\
-`{ORG_ID}`: Dina organisationsuppgifter finns i din unika Adobe Experience Platform-integration.
+`{EXPERIMENT_ID}`: ID:t som motsvarar Experiment.\
+`{ACCESS_TOKEN}`: Ditt specifika värde för innehavartoken har angetts efter autentiseringen.\
+`{ORG_ID}`: Dina organisationsuppgifter hittades i din unika Adobe Experience Platform-integrering.
 
 >[!NOTE]
 >
@@ -521,4 +521,4 @@ Här följer ett svar som meddelar att experten har tagits bort.
 
 ## Nästa steg
 
-Den här självstudiekursen gick igenom hur du använder API:erna för att skapa en motor, en experimentell, schemalagda Experimentrunda och tränade modeller. I [nästa övning](./score-model-api.md)kommer du att göra prognoser genom att betygsätta en ny datamängd med hjälp av den mest högpresterande tränade modellen.
+Den här självstudiekursen gick igenom hur du använder API:erna för att skapa en motor, en experimentell, schemalagda Experimentrunda och tränade modeller. I [nästa övning](./score-model-api.md) kommer du att göra prognoser genom att göra en bedömning av en ny datauppsättning med hjälp av den bäst fungerande, tränade modellen.

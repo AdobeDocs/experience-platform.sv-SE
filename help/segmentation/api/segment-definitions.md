@@ -7,27 +7,27 @@ exl-id: e7811b96-32bf-4b28-9abb-74c17a71ffab
 source-git-commit: c16ce1020670065ecc5415bc3e9ca428adbbd50c
 workflow-type: tm+mt
 source-wordcount: '1228'
-ht-degree: 1%
+ht-degree: 0%
 
 ---
 
 # Slutpunkt för segmentdefinitioner
 
-Med Adobe Experience Platform kan du skapa segmentdefinitioner som definierar en grupp med specifika attribut eller beteenden från en grupp profiler. En segmentdefinition är ett objekt som kapslar in en fråga skriven i [!DNL Profile Query Language] (PQL). Segmentdefinitioner används på profiler för att skapa målgrupper. Det här objektet (segmentdefinitionen) kallas också för ett PQL-predikat. PQL-predikat definierar reglerna för segmentdefinitionen baserat på villkor som relaterar till data från poster eller tidsserier som du skickar till [!DNL Real-Time Customer Profile]. Se [PQL-guide](../pql/overview.md) för mer information om hur du skriver PQL-frågor.
+Med Adobe Experience Platform kan du skapa segmentdefinitioner som definierar en grupp med specifika attribut eller beteenden från en grupp profiler. En segmentdefinition är ett objekt som kapslar in en fråga skriven i [!DNL Profile Query Language] (PQL). Segmentdefinitioner används på profiler för att skapa målgrupper. Det här objektet (segmentdefinitionen) kallas också för ett PQL-predikat. PQL förutsäger regler för segmentdefinitionen baserat på villkor som relaterar till alla post- eller tidsseriedata som du skickar till [!DNL Real-Time Customer Profile]. Mer information om hur du skriver PQL-frågor finns i [PQL-handboken](../pql/overview.md).
 
 Den här handboken innehåller information som hjälper dig att förstå segmentdefinitioner bättre och innehåller exempel på API-anrop för att utföra grundläggande åtgärder med API:t.
 
 ## Komma igång
 
-Slutpunkterna som används i den här guiden är en del av [!DNL Adobe Experience Platform Segmentation Service] API. Innan du fortsätter bör du granska [komma igång-guide](./getting-started.md) för viktig information som du behöver känna till för att kunna anropa API:t, inklusive obligatoriska rubriker och hur du läser exempel-API-anrop.
+Slutpunkterna som används i den här guiden ingår i [!DNL Adobe Experience Platform Segmentation Service]-API:t. Innan du fortsätter bör du läsa [kom igång-guiden](./getting-started.md) för att få viktig information som du behöver känna till för att kunna ringa anrop till API:t, inklusive nödvändiga rubriker och hur du läser exempel-API-anrop.
 
 ## Hämta en lista med segmentdefinitioner {#list}
 
-Du kan hämta en lista över alla segmentdefinitioner för din organisation genom att göra en GET-förfrågan till `/segment/definitions` slutpunkt.
+Du kan hämta en lista över alla segmentdefinitioner för din organisation genom att göra en GET-förfrågan till slutpunkten `/segment/definitions`.
 
 **API-format**
 
-The `/segment/definitions` slutpunkten har stöd för flera frågeparametrar som hjälper dig att filtrera dina resultat. Även om dessa parametrar är valfria rekommenderar vi starkt att de används för att minska dyra overheadkostnader. Om du anropar den här slutpunkten utan parametrar hämtas alla segmentdefinitioner som är tillgängliga för organisationen. Flera parametrar kan inkluderas, avgränsade med et-tecken (`&`).
+Slutpunkten `/segment/definitions` har stöd för flera frågeparametrar som kan hjälpa dig att filtrera dina resultat. Även om dessa parametrar är valfria rekommenderar vi starkt att de används för att minska dyra overheadkostnader. Om du anropar den här slutpunkten utan parametrar hämtas alla segmentdefinitioner som är tillgängliga för organisationen. Flera parametrar kan inkluderas, avgränsade med et-tecken (`&`).
 
 ```http
 GET /segment/definitions
@@ -41,7 +41,7 @@ GET /segment/definitions?{QUERY_PARAMETERS}
 | `start` | Anger startförskjutningen för de returnerade segmentdefinitionerna. | `start=4` |
 | `limit` | Anger antalet segmentdefinitioner som returneras per sida. | `limit=20` |
 | `page` | Anger vilken sida som resultatet av segmentdefinitioner ska börja från. | `page=5` |
-| `sort` | Anger vilket fält som resultaten ska sorteras efter. Skrivs i följande format: `[attributeName]:[desc|asc]`. | `sort=updateTime:desc` |
+| `sort` | Anger vilket fält som resultaten ska sorteras efter. Har skrivits i följande format: `[attributeName]:[desc|asc]`. | `sort=updateTime:desc` |
 | `evaluationInfo.continuous.enabled` | Anger om segmentdefinitionen är direktuppspelningsaktiverad. | `evaluationInfo.continuous.enabled=true` |
 
 **Begäran**
@@ -152,11 +152,11 @@ Ett lyckat svar returnerar HTTP-status 200 med en lista över segmentdefinitione
 
 ## Skapa en ny segmentdefinition {#create}
 
-Du kan skapa en ny segmentdefinition genom att göra en POST-förfrågan till `/segment/definitions` slutpunkt.
+Du kan skapa en ny segmentdefinition genom att göra en POST-förfrågan till slutpunkten `/segment/definitions`.
 
 >[!IMPORTANT]
 >
->Segmentdefinitioner skapade med API **inte** kan redigeras med segmentbyggaren.
+>Segmentdefinitioner som har skapats med API:t **kan inte** redigeras med segmentverktyget.
 
 **API-format**
 
@@ -205,11 +205,11 @@ curl -X POST https://platform.adobe.io/data/core/ups/segment/definitions
 | -------- | ----------- |
 | `name` | Ett unikt namn som ska referera till segmentdefinitionen. |
 | `description` | (Valfritt.) En beskrivning av segmentdefinitionen som du skapar. |
-| `evaluationInfo` | (Valfritt.) Den typ av segmentdefinition som du skapar. Om du vill skapa ett gruppsegment anger du `evaluationInfo.batch.enabled` att vara sant. Om du vill skapa ett direktuppspelningssegment anger du `evaluationInfo.continuous.enabled` att vara sant. Om du vill skapa ett kantsegment anger du `evaluationInfo.synchronous.enabled` att vara sant. Om den lämnas tom skapas segmentdefinitionen som **batch** segment. |
-| `schema` | Det schema som är associerat med entiteterna i segmentet. Består av antingen en `id` eller `name` fält. |
+| `evaluationInfo` | (Valfritt.) Den typ av segmentdefinition som du skapar. Om du vill skapa ett gruppsegment anger du `evaluationInfo.batch.enabled` som true. Om du vill skapa ett direktuppspelningssegment anger du `evaluationInfo.continuous.enabled` som true. Om du vill skapa ett kantsegment anger du `evaluationInfo.synchronous.enabled` som true. Om segmentdefinitionen lämnas tom skapas den som ett **batch**-segment. |
+| `schema` | Det schema som är associerat med entiteterna i segmentet. Består av antingen ett `id`- eller `name`-fält. |
 | `expression` | En entitet som innehåller fältinformation om segmentdefinitionen. |
-| `expression.type` | Anger uttryckstypen. För närvarande stöds bara PQL. |
-| `expression.format` | Anger strukturen för uttrycket i värdet. Följande format stöds för närvarande: <ul><li>`pql/text`: En textbeteckning för en segmentdefinition enligt den publicerade PQL-grammatiken.  Till exempel: `workAddress.stateProvince = homeAddress.stateProvince`.</li></ul> |
+| `expression.type` | Anger uttryckstypen. För närvarande stöds bara &quot;PQL&quot;. |
+| `expression.format` | Anger strukturen för uttrycket i värdet. Följande format stöds för närvarande: <ul><li>`pql/text`: En textbeteckning för en segmentdefinition enligt den publicerade PQL-grammatiken.  Exempel: `workAddress.stateProvince = homeAddress.stateProvince`.</li></ul> |
 | `expression.value` | Ett uttryck som överensstämmer med typen som anges i `expression.format`. |
 
 <!-- >[!NOTE]
@@ -271,7 +271,7 @@ Ett lyckat svar returnerar HTTP-status 200 med information om den segmentdefinit
 
 ## Hämta en specifik segmentdefinition {#get}
 
-Du kan hämta detaljerad information om en viss segmentdefinition genom att göra en GET-förfrågan till `/segment/definitions` slutpunkt och ange ID:t för segmentdefinitionen som du vill hämta i sökvägen för begäran.
+Du kan hämta detaljerad information om en specifik segmentdefinition genom att göra en GET-förfrågan till slutpunkten `/segment/definitions` och ange ID:t för segmentdefinitionen som du vill hämta i sökvägen till begäran.
 
 **API-format**
 
@@ -281,7 +281,7 @@ GET /segment/definitions/{SEGMENT_ID}
 
 | Parameter | Beskrivning |
 | --------- | ----------- |
-| `{SEGMENT_ID}` | The `id` värdet för segmentdefinitionen som du vill hämta. |
+| `{SEGMENT_ID}` | Värdet `id` för segmentdefinitionen som du vill hämta. |
 
 **Begäran**
 
@@ -343,17 +343,17 @@ Ett lyckat svar returnerar HTTP-status 200 med detaljerad information om den ang
 | -------- | ----------- |
 | `id` | Ett systemgenererat skrivskyddat ID för segmentdefinitionen. |
 | `name` | Ett unikt namn som ska referera till segmentdefinitionen. |
-| `schema` | Det schema som är associerat med entiteterna i segmentet. Består av antingen en `id` eller `name` fält. |
+| `schema` | Det schema som är associerat med entiteterna i segmentet. Består av antingen ett `id`- eller `name`-fält. |
 | `expression` | En entitet som innehåller fältinformation om segmentdefinitionen. |
-| `expression.type` | Anger uttryckstypen. För närvarande stöds bara PQL. |
-| `expression.format` | Anger strukturen för uttrycket i värdet. Följande format stöds för närvarande: <ul><li>`pql/text`: En textbeteckning för en segmentdefinition enligt den publicerade PQL-grammatiken.  Till exempel: `workAddress.stateProvince = homeAddress.stateProvince`.</li></ul> |
+| `expression.type` | Anger uttryckstypen. För närvarande stöds bara &quot;PQL&quot;. |
+| `expression.format` | Anger strukturen för uttrycket i värdet. Följande format stöds för närvarande: <ul><li>`pql/text`: En textbeteckning för en segmentdefinition enligt den publicerade PQL-grammatiken.  Exempel: `workAddress.stateProvince = homeAddress.stateProvince`.</li></ul> |
 | `expression.value` | Ett uttryck som överensstämmer med typen som anges i `expression.format`. |
 | `description` | En läsbar beskrivning av definitionen. |
 | `evaluationInfo` | Ett objekt som anger vilken typ av utvärdering, batch, direktuppspelning (kallas även kontinuerlig) eller kant (kallas även synkron), kommer segmentdefinitionen att genomgå. |
 
 ## Hämta segmentdefinitioner gruppvis {#bulk-get}
 
-Du kan hämta detaljerad information om flera angivna segmentdefinitioner genom att göra en POST-förfrågan till `/segment/definitions/bulk-get` slutpunkt och tillhandahåller `id` värden för segmentdefinitionerna i begärandetexten.
+Du kan hämta detaljerad information om flera angivna segmentdefinitioner genom att göra en POST-förfrågan till `/segment/definitions/bulk-get`-slutpunkten och ange `id`-värdena för segmentdefinitionerna i begärandetexten.
 
 **API-format**
 
@@ -476,21 +476,21 @@ Ett lyckat svar returnerar HTTP-status 207 med de begärda segmentdefinitionerna
 | -------- | ----------- |
 | `id` | Ett systemgenererat skrivskyddat ID för segmentdefinitionen. |
 | `name` | Ett unikt namn som ska referera till segmentdefinitionen. |
-| `schema` | Det schema som är associerat med entiteterna i segmentet. Består av antingen en `id` eller `name` fält. |
+| `schema` | Det schema som är associerat med entiteterna i segmentet. Består av antingen ett `id`- eller `name`-fält. |
 | `expression` | En entitet som innehåller fältinformation om segmentdefinitionen. |
-| `expression.type` | Anger uttryckstypen. För närvarande stöds bara PQL. |
-| `expression.format` | Anger strukturen för uttrycket i värdet. Följande format stöds för närvarande: <ul><li>`pql/text`: En textbeteckning för en segmentdefinition enligt den publicerade PQL-grammatiken.  Till exempel: `workAddress.stateProvince = homeAddress.stateProvince`.</li></ul> |
+| `expression.type` | Anger uttryckstypen. För närvarande stöds bara &quot;PQL&quot;. |
+| `expression.format` | Anger strukturen för uttrycket i värdet. Följande format stöds för närvarande: <ul><li>`pql/text`: En textbeteckning för en segmentdefinition enligt den publicerade PQL-grammatiken.  Exempel: `workAddress.stateProvince = homeAddress.stateProvince`.</li></ul> |
 | `expression.value` | Ett uttryck som överensstämmer med typen som anges i `expression.format`. |
 | `description` | En läsbar beskrivning av definitionen. |
 | `evaluationInfo` | Ett objekt som anger vilken typ av utvärdering, batch, direktuppspelning (kallas även kontinuerlig) eller kant (kallas även synkron), kommer segmentdefinitionen att genomgå. |
 
 ## Ta bort en specifik segmentdefinition {#delete}
 
-Du kan begära att få ta bort en viss segmentdefinition genom att göra en DELETE-förfrågan till `/segment/definitions` slutpunkt och ange ID:t för segmentdefinitionen som du vill ta bort i sökvägen för begäran.
+Du kan begära att få ta bort en viss segmentdefinition genom att göra en DELETE-begäran till `/segment/definitions`-slutpunkten och ange ID:t för segmentdefinitionen som du vill ta bort i sökvägen till begäran.
 
 >[!NOTE]
 >
-> En segmentdefinition som används i en målaktivering **inte** tas bort.
+> En segmentdefinition som används i målaktiveringen **kan inte tas bort**.
 
 **API-format**
 
@@ -500,7 +500,7 @@ DELETE /segment/definitions/{SEGMENT_ID}
 
 | Parameter | Beskrivning |
 | --------- | ----------- |
-| `{SEGMENT_ID}` | The `id` värdet för segmentdefinitionen som du vill ta bort. |
+| `{SEGMENT_ID}` | Värdet `id` för segmentdefinitionen som du vill ta bort. |
 
 **Begäran**
 
@@ -518,7 +518,7 @@ Ett lyckat svar returnerar HTTP-status 200 utan något meddelande.
 
 ## Uppdatera en specifik segmentdefinition
 
-Du kan uppdatera en specifik segmentdefinition genom att göra en PATCH-begäran till `/segment/definitions` slutpunkt och ange ID:t för segmentdefinitionen som du vill uppdatera i sökvägen för begäran.
+Du kan uppdatera en specifik segmentdefinition genom att göra en PATCH-begäran till `/segment/definitions`-slutpunkten och ange ID:t för segmentdefinitionen som du vill uppdatera i begärandesökvägen.
 
 **API-format**
 
@@ -528,7 +528,7 @@ PATCH /segment/definitions/{SEGMENT_ID}
 
 | Parameter | Beskrivning |
 | --------- | ----------- |
-| `{SEGMENT_ID}` | The `id` värdet för segmentdefinitionen som du vill uppdatera. |
+| `{SEGMENT_ID}` | Värdet `id` för segmentdefinitionen som du vill uppdatera. |
 
 **Begäran**
 
@@ -611,7 +611,7 @@ Ett lyckat svar returnerar HTTP-status 200 med information om den nyligen uppdat
 
 ## Konvertera segmentdefinition
 
-Du kan konvertera en segmentdefinition mellan `pql/text` och `pql/json` eller `pql/json` till `pql/text` genom att göra en POST-förfrågan till `/segment/conversion` slutpunkt.
+Du kan konvertera en segmentdefinition mellan `pql/text` och `pql/json` eller `pql/json` till `pql/text` genom att göra en POST-förfrågan till `/segment/conversion`-slutpunkten.
 
 **API-format**
 
@@ -672,4 +672,4 @@ Ett lyckat svar returnerar HTTP-status 200 med information om din nyligen konver
 
 ## Nästa steg
 
-När du har läst den här guiden får du nu en bättre förståelse för hur segmentdefinitioner fungerar. Mer information om hur du skapar ett segment finns i [skapa ett segment](../tutorials/create-a-segment.md) självstudie.
+När du har läst den här guiden får du nu en bättre förståelse för hur segmentdefinitioner fungerar. Mer information om hur du skapar ett segment finns i självstudiekursen [Skapa ett segment](../tutorials/create-a-segment.md).

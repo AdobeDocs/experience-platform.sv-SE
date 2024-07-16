@@ -15,28 +15,28 @@ Med Real-time Customer Data Platform kan ni spåra kundens livstidsvärde (CLV) 
 
 Följande grafik visar den cykel med datainsamling, hantering, analys och aktivering som genererar högpresterande data för att förbättra era marknadsföringskampanjer.
 
-![Grund-trip-grafik av data från observation till analys till åtgärd.](../images/use-cases/infographic-use-case-cycle.png)
+![Grund-trip-infografik för data från observation till analys till åtgärd.](../images/use-cases/infographic-use-case-cycle.png)
 
 Det här heltäckande användningsexemplet visar hur datasignaler kan hämtas och ändras för att beräkna det härledda attributet för kundens livstidsvärde. Dessa härledda datauppsättningar kan sedan tillämpas på dina Real-Time CDP-profildata och kan användas med användardefinierade instrumentpaneler för att skapa en instrumentpanel för insiktsanalys. Med Data Distiller kan ni utöka Real-Time CDP insiktsdatamodell och använda CLV-härledda datauppsättningar och instrumentpanelsinsikter för att skapa en ny målgrupp och aktivera den till önskat mål. Dessa högpresterande målgrupper kan sedan användas som stöd för nästa marknadsföringskampanj.
 
 Den här guiden är utformad för att hjälpa er att förstå kundupplevelsen bättre genom att mäta datasignaler över viktiga kontaktytor som driver CLV och implementerar ett liknande användningsfall i er miljö. Hela processen sammanfattas i bilden nedan.
 
-![En bild av de breda steg som krävs för att utnyttja kundens livstidsvärde.](../images/use-cases/implementation-steps.png)
+![En grafik över de steg som krävs för att utnyttja kundens livstidsvärde.](../images/use-cases/implementation-steps.png)
 
 ## Komma igång {#getting-started}
 
 Den här handboken kräver att du har en fungerande förståelse för följande komponenter i Adobe Experience Platform:
 
-* [Frågetjänst](../home.md): Innehåller ett användargränssnitt och ett RESTful API där du kan använda SQL-frågor för att analysera och förbättra dina data.
-* [Segmenteringstjänst](../../segmentation/home.md): Gör att ni kan generera målgrupper från era kundprofildata i realtid.
+* [Frågetjänst](../home.md): Tillhandahåller ett användargränssnitt och ett RESTful API där du kan använda SQL-frågor för att analysera och förbättra dina data.
+* [Segmenteringstjänst](../../segmentation/home.md): Gör att du kan generera målgrupper från kundprofildata i realtid.
 
-## Förutsättningar
+## Förhandskrav
 
-Du måste ha [Data Distiller](../data-distiller/overview.md) SKU som en del av paketerbjudandet. Om du är osäker på om du har detta eller inte kan du kontakta din Adobe-representant.
+Den här guiden kräver att du har [Data Distiller](../data-distiller/overview.md) som en del av ditt paketerbjudande. Om du är osäker på om du har detta eller inte kan du kontakta din Adobe-representant.
 
 ## Skapa en härledd datauppsättning {#create-derived-dataset}
 
-Det första steget i att etablera CLV är att skapa en härledd datauppsättning från datasignaler som hämtats från användaråtgärder. Det här användningsexemplet finns i ett separat dokument om ett lojalitetsprogram för flygbolag. Läs guiden och lär dig hur du [använd frågetjänsten för att skapa decimalbaserade härledda datauppsättningar som kan användas med dina profildata](./deciles-use-case.md). Fullständiga exempel och förklaringar finns i dokumentet som förklarar följande steg:
+Det första steget i att etablera CLV är att skapa en härledd datauppsättning från datasignaler som hämtats från användaråtgärder. Det här användningsexemplet finns i ett separat dokument om ett lojalitetsprogram för flygbolag. Se guiden för att lära dig hur du [använder frågetjänsten för att skapa decimalbaserade härledda datauppsättningar som kan användas med dina profildata](./deciles-use-case.md). Fullständiga exempel och förklaringar finns i dokumentet som förklarar följande steg:
 
 * Skapa ett schema som tillåter dekorblockering.
 * Använd frågetjänsten för att skapa decimaler.
@@ -47,7 +47,7 @@ Det första steget i att etablera CLV är att skapa en härledd datauppsättning
 
 ## Utöka datamodellen för insikter och schemalägg uppdateringar {#extend-data-model-and-set-refresh-schedule}
 
-Därefter måste ni skapa en anpassad datamodell eller utöka en befintlig datamodell från Adobe Real-Time CDP för att kunna utnyttja era insikter i CLV-rapporterna. Läs dokumentationen för att lära dig mer om [skapa en datamodell med rapportinsikter via frågetjänsten som kan användas med accelererade lagringsdata och användardefinierade instrumentpaneler](../data-distiller/customizable-insights/reporting-insights-data-model.md#build-a-reporting-insights-data-model). Självstudiekursen innehåller följande steg:
+Därefter måste ni skapa en anpassad datamodell eller utöka en befintlig datamodell från Adobe Real-Time CDP för att kunna utnyttja era insikter i CLV-rapporterna. Läs dokumentationen om du vill veta mer om hur du [skapar en datamodell för rapportinsikter med hjälp av frågetjänsten för användning med accelererade lagringsdata och användardefinierade instrumentpaneler](../data-distiller/customizable-insights/reporting-insights-data-model.md#build-a-reporting-insights-data-model). Självstudiekursen innehåller följande steg:
 
 * Skapa en modell för att rapportera insikter med Data Distiller.
 * Skapa tabeller, relationer och fyll i data.
@@ -56,13 +56,13 @@ Därefter måste ni skapa en anpassad datamodell eller utöka en befintlig datam
 * Skapa dimensionstabeller för att utöka er modell för rapportinsikter.
 * Fråga om datamodell för utökad accelererad butiksrapportering
 
-Läs dokumentationen om Real-time Customer Data Platform Insights-datamodellen om du vill veta mer om [anpassa dina SQL-frågemallar för att skapa Real-Time CDP-rapporter för dina KPI-fall (Marketing and Key Performance Indicator)](../../dashboards/data-models/cdp-insights-data-model-b2c.md).
+Läs dokumentationen för Real-time Customer Data Platform Insights-datamodellen om du vill veta hur du [anpassar dina SQL-frågemallar för att skapa Real-Time CDP-rapporter för dina KPI-användningsfall ](../../dashboards/data-models/cdp-insights-data-model-b2c.md) för marknadsföring och nyckeltal.
 
-Se till att du ställer in ett schema för att uppdatera din anpassade datamodell med en vanlig stängsel. Detta garanterar att data kommer in igen som en del av din inmatningsprocess efter behov och fyller i dina användardefinierade instrumentpaneler. Se [guide för schemafrågor](../ui/query-schedules.md#create-schedule) om du vill veta hur du ställer in ditt schema.
+Se till att du ställer in ett schema för att uppdatera din anpassade datamodell med en vanlig stängsel. Detta garanterar att data kommer in igen som en del av din inmatningsprocess efter behov och fyller i dina användardefinierade instrumentpaneler. Se guiden [Schemafrågor](../ui/query-schedules.md#create-schedule) för att lära dig hur du ställer in ditt schema.
 
 ## Bygg en instrumentpanel för att få insikter {#build-a-custom-dashboard}
 
-Nu när du har skapat en anpassad datamodell är du redo att visualisera dina data med anpassade frågor och användardefinierade dashboards. I den användardefinierade översikten över kontrollpaneler finns fullständig vägledning om hur du [bygga en anpassad kontrollpanel](../../dashboards/user-defined-dashboards.md). Användargränssnittshandboken innehåller information om:
+Nu när du har skapat en anpassad datamodell är du redo att visualisera dina data med anpassade frågor och användardefinierade dashboards. Mer information om hur du [skapar en anpassad kontrollpanel](../../dashboards/user-defined-dashboards.md) finns i översikten över användardefinierade kontrollpaneler. Användargränssnittshandboken innehåller information om:
 
 * Skapa en widget.
 * Så här använder du widgetens disposition.
@@ -73,7 +73,7 @@ Exempel på anpassade CLV-widgetar som använder decimalluckor visas nedan.
 
 ## Skapa och aktivera högpresterande målgrupper {#create-and-activate-audiences}
 
-Nästa steg är att skapa en segmentdefinition och generera målgrupper utifrån kundprofildata i realtid. Läs användargränssnittsguiden för segmentbyggaren om du vill veta hur du [skapa och aktivera målgrupper i Platform](../../segmentation/ui/segment-builder.md). Handboken innehåller avsnitt om hur du:
+Nästa steg är att skapa en segmentdefinition och generera målgrupper utifrån kundprofildata i realtid. Se användargränssnittsguiden för segmentbyggaren för att lära dig hur du [skapar och aktiverar målgrupper i plattformen](../../segmentation/ui/segment-builder.md). Handboken innehåller avsnitt om hur du:
 
 * Skapa segmentdefinitioner med en kombination av attribut, händelser och befintliga målgrupper som byggstenar.
 * Använd regelbyggarens arbetsyta och behållare för att styra i vilken ordning segmenteringsreglerna ska köras.
@@ -81,17 +81,17 @@ Nästa steg är att skapa en segmentdefinition och generera målgrupper utifrån
 * Aktivera alla segmentdefinitioner för schemalagd segmentering.
 * Aktivera angivna segmentdefinitioner för direktuppspelningssegmentering.
 
-Det finns även en [videosjälvstudiekurs om segmentbyggare](https://experienceleague.adobe.com/docs/platform-learn/tutorials/audiences/create-segments.html) finns för mer information.
+Det finns också en videosjälvstudiekurs [för segmentbyggaren](https://experienceleague.adobe.com/docs/platform-learn/tutorials/audiences/create-segments.html) som ger mer information.
 
 ## Aktivera er målgrupp för en e-postkampanj {#activate-audience-for-campaign}
 
 När ni har byggt er målgrupp är ni redo att aktivera den till ett mål. Plattformen har stöd för en rad e-postleverantörer (ESP) som gör att du kan hantera dina e-postmarknadsföringsaktiviteter, till exempel skicka e-postkampanjer med reklam.
 
-Kontrollera [Översikt över destinationer för e-postmarknadsföring](../../destinations/catalog/email-marketing/overview.md#connect-destination) för en lista över de mål som stöds som du vill exportera data till (till exempel [Oracle Eloqua](../../destinations/catalog/email-marketing/oracle-eloqua-api.md) sida).
+Kontrollera översikten över [e-postmarknadsföringsmål](../../destinations/catalog/email-marketing/overview.md#connect-destination) för en lista över de mål som stöds och som du vill exportera data till (till exempel sidan [Oracle Eloqua](../../destinations/catalog/email-marketing/oracle-eloqua-api.md)).
 
 ## Se returnerade analysdata från kampanjen {#post-campaign-data-analysis}
 
-Data från källor kan nu [inkrementellt bearbetade](../key-concepts/incremental-load.md) som en del av en schemalagd uppdatering av din datamodell i det accelererade datalagret. Kundernas svarshändelser kan hämtas in till Adobe Experience Platform när de inträffar eller gruppvis. Datamodellen kan uppdateras en gång eller flera gånger dagligen beroende på dina inställningar eller källanslutningarna. Se [API-översikt över batchimport](../../ingestion/batch-ingestion/api-overview.md) eller [översikt över direktuppspelning](../../ingestion/streaming-ingestion/overview.md) för mer information.
+Data från källor kan nu [bearbetas stegvis](../key-concepts/incremental-load.md) som en del av en schemalagd uppdatering av din datamodell i det accelererade datalagret. Kundernas svarshändelser kan hämtas in till Adobe Experience Platform när de inträffar eller gruppvis. Datamodellen kan uppdateras en gång eller flera gånger dagligen beroende på dina inställningar eller källanslutningarna. Mer information finns i översikten över API:t för gruppinhämtning [eller [översikten över direktuppspelning](../../ingestion/streaming-ingestion/overview.md).](../../ingestion/batch-ingestion/api-overview.md)
 
 När datamodellen har uppdaterats tillhandahåller dina anpassade widgetar meningsfulla signaler som gör att du kan mäta och visualisera kundens livstidsvärde.
 

@@ -11,13 +11,13 @@ ht-degree: 1%
 
 # Slutpunkt för användningsauktorisering för tilläggspaket
 
-Ett tilläggspaket representerar ett [extension](./extensions.md) som skrivits av en tilläggsutvecklare. Ytterligare funktioner som kan göras tillgängliga för tagganvändare definieras av ett tilläggspaket. Funktionerna kan omfatta huvudmoduler och delade moduler, men tillhandahålls oftast som [regelkomponenter](./rule-components.md) (händelser, villkor och åtgärder) och [dataelement](./data-elements.md).
+Ett tilläggspaket representerar ett [tillägg](./extensions.md) som har skapats av en tilläggsutvecklare. Ytterligare funktioner som kan göras tillgängliga för tagganvändare definieras av ett tilläggspaket. Dessa funktioner kan omfatta huvudmoduler och delade moduler, men tillhandahålls oftast som [regelkomponenter](./rule-components.md) (händelser, villkor och åtgärder) och [dataelement](./data-elements.md).
 
 Ett tilläggspaket ägs av utvecklarens [företag](./companies.md). Ägare till tilläggspaket kan auktorisera andra företag att använda sina privata versioner av paketen. Varje auktoriserat företag får en användarbehörighet för ett enda tilläggspaket som är giltigt för alla framtida och aktuella privata versioner av paketet.
 
 ## Komma igång
 
-Slutpunkten som används i den här guiden ingår i [Reaktors-API](https://www.adobe.io/experience-platform-apis/references/reactor/). Innan du fortsätter bör du granska [komma igång-guide](../getting-started.md) om du vill ha viktig information om hur du autentiserar till API:t.
+Slutpunkten som används i den här guiden ingår i [Reaktors-API](https://www.adobe.io/experience-platform-apis/references/reactor/). Innan du fortsätter bör du läsa [kom igång-guiden](../getting-started.md) för att få viktig information om hur du autentiserar dig för API:t.
 
 ## Hämta användningstillstånd för tilläggspaket för ett tilläggspaket {#list}
 
@@ -31,7 +31,7 @@ GET /extension_packages/{EXTENSION_PACKAGE_ID}/extension_package_usage_authoriza
 
 | Parameter | Beskrivning |
 | --- | --- |
-| `{PROPERTY_ID}` | The `ID` för egenskapen vars användningsbehörighet för tilläggspaketet du vill visa. |
+| `{PROPERTY_ID}` | `ID` för egenskapen vars användningsbehörighet för tilläggspaketet du vill visa. |
 
 {style="table-layout:auto"}
 
@@ -102,7 +102,7 @@ Ett godkänt svar returnerar en lista med tilläggspaket.
 
 ## Skapa en användningsbehörighet för tilläggspaket {#create}
 
-Skapa en användningsbehörighet för tilläggspaket för varje [tilläggspaket](./extension-packages.md) och `{ORG_ID}` för den organisation du vill auktorisera. Om du vill skapa en ny användningsbehörighet för tilläggspaket skickar du en POST till slutpunkten nedan.
+Skapa en användningsbehörighet för tilläggspaket för varje [tilläggspaket](./extension-packages.md) och `{ORG_ID}` i organisationen som du vill auktorisera. Om du vill skapa en ny användningsbehörighet för tilläggspaket skickar du en POST till slutpunkten nedan.
 
 **API-format**
 
@@ -112,7 +112,7 @@ POST /extension_packages/{EXTENSION_PACKAGE_ID}/extension_package_usage_authoriz
 
 | Parameter | Beskrivning |
 | --- | --- |
-| `EXTENSION_PACKAGE_ID` | The `ID` för det tilläggspaket som du vill skapa en auktorisering för.&quot; |
+| `EXTENSION_PACKAGE_ID` | `ID` för tilläggspaketet som du vill skapa en auktorisering för.&quot; |
 
 {style="table-layout:auto"}
 
@@ -137,7 +137,7 @@ curl -X POST \
 
 | Egenskap | Beskrivning |
 | --- | --- |
-| `attributes.authorized_org_id` | The `ID` för den organisation du vill auktorisera. |
+| `attributes.authorized_org_id` | `ID` för organisationen som du vill auktorisera. |
 
 **Svar**
 
@@ -183,7 +183,7 @@ Ett godkänt svar returnerar information om användningsauktoriseringen för det
 
 >[!NOTE]
 >
->I exempelsvaret ovan finns auktoriseringen för närvarande i `pending_approval` stage. Organisationen måste godkänna behörigheten innan tilläggspaketet används. Organisationens användare kan bläddra i det privata tilläggspaketet medan auktoriseringen väntar på godkännande, men de kan inte installera det och kan inte hitta det i sin tilläggskatalog.
+>I exempelsvaret ovan är auktoriseringen för närvarande i `pending_approval`-steget. Organisationen måste godkänna behörigheten innan tilläggspaketet används. Organisationens användare kan bläddra i det privata tilläggspaketet medan auktoriseringen väntar på godkännande, men de kan inte installera det och kan inte hitta det i sin tilläggskatalog.
 
 ## Hämta en lista över användningstillstånd för tilläggspaket {#list_authorizations}
 
@@ -264,7 +264,7 @@ Ett godkänt svar returnerar en lista med tilläggspaket.
 
 ## Ta bort en användningsbehörighet för tilläggspaket {#delete}
 
-Om du vill ta bort en användningsbehörighet för tilläggspaket inkluderar du den `ID` på sökvägen till en begäran från DELETE. Detta förhindrar att den auktoriserade organisationen kan visa de privata versionerna av tilläggspaketet i katalogen och inte installera det på sina egenskaper.
+Om du vill ta bort en användningsbehörighet för tilläggspaket tar du med `ID` i sökvägen till en DELETE-begäran. Detta förhindrar att den auktoriserade organisationen kan visa de privata versionerna av tilläggspaketet i katalogen och inte installera det på sina egenskaper.
 
 >[!NOTE]
 >
@@ -278,7 +278,7 @@ DELETE /extension_package_usage_authorizations/{ID}
 
 | Parameter | Beskrivning |
 | --- | --- |
-| `ID` | The `ID` av den användningsbehörighet för tilläggspaket som du vill ta bort. |
+| `ID` | `ID` för den användningsbehörighet för tilläggspaketet som du vill ta bort. |
 
 {style="table-layout:auto"}
 
@@ -298,11 +298,11 @@ Ett lyckat svar returnerar HTTP-status 204 (inget innehåll) utan svarstext. Det
 
 ## Uppdatera användningsbehörighet för tilläggspaket {#update}
 
-Om du vill godkänna eller avvisa en behörighet för användning av tilläggspaket inkluderar du `ID` på sökvägen till en begäran från PATCH.
+Om du vill godkänna eller avvisa en användningsbehörighet för tilläggspaket tar du med `ID` i sökvägen till en PATCH-begäran.
 
 >[!NOTE]
 >
->Om du vill godkänna eller avvisa en behörighet för användning av tilläggspaket för ditt företag måste du ha `manage_properties` rättigheter.
+>Om du vill godkänna eller avvisa en användningsbehörighet för tilläggspaket för ditt företag måste du ha `manage_properties` rättigheter.
 
 **API-format**
 
@@ -312,7 +312,7 @@ PATCH /extension_package_usage_authorizations/{ID}
 
 | Parameter | Beskrivning |
 | --- | --- |
-| `ID` | The `ID` av den användningsbehörighet för tilläggspaket som du vill ta bort. |
+| `ID` | `ID` för den användningsbehörighet för tilläggspaketet som du vill ta bort. |
 
 {style="table-layout:auto"}
 
@@ -338,7 +338,7 @@ curl -X PATCH \
 
 | Egenskap | Beskrivning |
 | --- | --- |
-| `attributes` | De attribut som du vill ändra. För användningsauktoriseringar för tilläggspaket kan du ändra deras `state`. |
+| `attributes` | De attribut som du vill ändra. För användningsauktoriseringar för tilläggspaket kan du revidera deras `state`. |
 
 **Svar**
 
@@ -398,7 +398,7 @@ GET /extension_package_usage_authorizations/{ID}/extension_package
 
 | Parameter | Beskrivning |
 | --- | --- |
-| `ID` | The `ID` av den användningsbehörighet för tilläggspaket som du vill hämta. |
+| `ID` | `ID` för den användningsbehörighet för tilläggspaketet som du vill hämta. |
 
 {style="table-layout:auto"}
 

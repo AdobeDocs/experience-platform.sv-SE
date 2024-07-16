@@ -25,16 +25,16 @@ Det här dokumentet innehåller en självstudiekurs för att hantera åtkomst ti
 
 Handboken kräver en fungerande förståelse av följande komponenter i Adobe Experience Platform:
 
-* [Experience Data Model (XDM) System](../../xdm/home.md): Det standardiserade ramverk som Experience Platform använder för att ordna kundupplevelsedata.
+* [XDM-system (Experience Data Model)](../../xdm/home.md): Det standardiserade ramverk som Experience Platform använder för att ordna kundupplevelsedata.
    * [[!DNL Schema Editor]](../../xdm/ui/overview.md): Lär dig hur du skapar och hanterar scheman och andra resurser i plattformsgränssnittet.
-* [[!DNL Data Governance]](../../data-governance/home.md): Lär dig mer [!DNL Data Governance] gör att ni kan hantera kunddata och säkerställa att ni följer regler, begränsningar och policyer som gäller för dataanvändning.
+* [[!DNL Data Governance]](../../data-governance/home.md): Lär dig hur [!DNL Data Governance] gör att du kan hantera kunddata och säkerställa efterlevnad av regler, begränsningar och principer som gäller för dataanvändning.
 * [Attributbaserad åtkomstkontroll](../../access-control/abac/overview.md): Attributbaserad åtkomstkontroll är en funktion i Adobe Experience Platform som gör att administratörer kan styra åtkomsten till specifika objekt och/eller funktioner baserat på attribut. Attribut kan läggas till i ett objekt, t.ex. en etikett som lagts till i ett ad hoc- eller reguljärt schemafält. En administratör definierar åtkomstprinciper som innehåller attribut för att hantera behörigheter för användaråtkomst.
 
 ## Skapa ett ad hoc-schema
 
 När frågan har körts och resultaten har genererats genereras ett ad hoc-schema automatiskt och läggs till i schemalagret.
 
-Om du vill lägga till en dataetikett går du till [!UICONTROL Schemas] kontrollpanelens flik genom att välja [!UICONTROL Schemas] till vänster i användargränssnittet för plattformen. Schemalagret visas.
+Om du vill lägga till en dataetikett går du till [!UICONTROL Schemas]-fliken för instrumentpanelsbläddring genom att välja [!UICONTROL Schemas] i den vänstra listen i plattformsgränssnittet. Schemalagret visas.
 
 >[!NOTE]
 >
@@ -44,7 +44,7 @@ Om du vill lägga till en dataetikett går du till [!UICONTROL Schemas] kontroll
 
 Om du vill aktivera visning av ad hoc-scheman i plattformsgränssnittet väljer du filterikonen (![En filterikon.](../images/data-governance/filter.png)) till vänster om sökfältet och välj sedan **[!UICONTROL Show adhoc schemas] i den vänstra listen som visas.
 
-![Filteralternativen för kontrollpanelen Schema har en vänsterkant med alternativet Visa ad hoc-schema aktiverat.](../images/data-governance/adhoc-schema-toggle.png)
+![Filteralternativen för kontrollpanelen Schema har en vänsterkant med växeln Visa ad hoc-schema aktiverad.](../images/data-governance/adhoc-schema-toggle.png)
 
 Markera namnet på det senast skapade ad hoc-schemat i listan över tillgängliga. En visualisering av ad hoc-schemastrukturen visas.
 
@@ -52,31 +52,31 @@ Markera namnet på det senast skapade ad hoc-schemat i listan över tillgänglig
 
 ## Redigera styrningsetiketter
 
-Om du vill redigera dataetiketter för ditt ad hoc-schema väljer du [!UICONTROL Labels] -fliken. På arbetsytan Etiketter kan du använda, skapa och redigera etiketter i dina ad hoc-schemafält och styra åtkomstbehörigheter via gränssnittet. Alla fält i ad hoc-schemat visas här.
+Om du vill redigera dataetiketter för ditt ad hoc-schema väljer du fliken [!UICONTROL Labels]. På arbetsytan Etiketter kan du använda, skapa och redigera etiketter i dina ad hoc-schemafält och styra åtkomstbehörigheter via gränssnittet. Alla fält i ad hoc-schemat visas här.
 
 ## Redigera etiketter för schemat eller fältet
 
-Om du vill redigera etiketterna för hela schemat väljer du pennikonen (![En pennikon.](../images/data-governance/edit-icon.png)) till sidan av schemats namn under [!UICONTROL Labels] -fliken.
+Om du vill redigera etiketterna för hela schemat väljer du pennikonen (![En pennikon.](../images/data-governance/edit-icon.png)) till sidan av schemats namn på fliken [!UICONTROL Labels].
 
 ![Vyn Etiketter på arbetsytan för scheman med pennikonen markerad.](../images/data-governance/edit-entire-schema-labels.png)
 
-Om du vill använda en etikett på ett befintligt fält väljer du ett eller flera fält i listan följt av [!UICONTROL Edit governance labels] till höger.
+Om du vill använda en etikett på ett befintligt fält väljer du ett eller flera fält i listan följt av [!UICONTROL Edit governance labels] i den högra sidofältet.
 
 ![Vyn Etiketter på arbetsytan för scheman med alternativet Redigera styrningsetiketter markerat i den högra sidofältet.](../images/data-governance/edit-governance-labels.png)
 
 ## Redigera etikettpekaren
 
-The [!UICONTROL Edit labels] popover visas. I den här vyn kan du skapa eller redigera befintliga styrningsetiketter via användargränssnittet.
+[!UICONTROL Edit labels]-pekaren visas. I den här vyn kan du skapa eller redigera befintliga styrningsetiketter via användargränssnittet.
 
-![Redigeringsetiketterna poppar.](../images/data-governance/edit-labels-popover.png)
+![The Edit labels pover.](../images/data-governance/edit-labels-popover.png)
 
-I dokumentationen finns anvisningar om hur du [skapa eller redigera etiketter för det valda schemat eller fältet](../../xdm/tutorials/labels.md#edit-the-labels-for-the-schema-or-field).
+Mer information om hur du [skapar eller redigerar etiketter för det markerade schemat eller fältet ](../../xdm/tutorials/labels.md#edit-the-labels-for-the-schema-or-field) finns i dokumentationen.
 
 >[!NOTE]
 >
 >Om du vill skapa en ny etikett eller redigera en befintlig etikett måste du ha administratörsbehörighet för organisationen. Om du inte har administratörsbehörighet kontaktar du systemadministratören för att ordna åtkomst.
 
-Etiketter kan också skapas med arbetsytan Behörigheter. Se [guide om hur du skapar etiketter på arbetsytan Behörigheter](../../access-control/abac/ui/labels.md) för instruktioner.
+Etiketter kan också skapas med arbetsytan Behörigheter. Mer information finns i [guiden om att skapa etiketter på arbetsytan för behörigheter](../../access-control/abac/ui/labels.md).
 
 När rätt nivå av attributbaserad åtkomstkontroll har tillämpats gäller följande systembeteende för frågor som körs via frågetjänsten när en användare försöker få åtkomst till data som inte är tillgängliga:
 

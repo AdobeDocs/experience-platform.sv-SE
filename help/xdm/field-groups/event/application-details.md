@@ -9,9 +9,9 @@ ht-degree: 0%
 
 ---
 
-# [!UICONTROL Application Details] schemafältgrupp
+# Schemafältgruppen [!UICONTROL Application Details]
 
-[!UICONTROL Application Details] är en standardgrupp för schemafält för [[!DNL XDM ExperienceEvent] class](../../classes/experienceevent.md). Fältgruppen innehåller en `application` till ett schema, som samlar in programrelaterad information som krascher, funktionsanvändning, starter och uppgraderingar.
+[!UICONTROL Application Details] är en standardschemafältgrupp för [[!DNL XDM ExperienceEvent] klassen](../../classes/experienceevent.md). Fältgruppen tillhandahåller ett enskilt `application`-objekt till ett schema, som samlar in programrelaterad information som krascher, funktionsanvändning, starter och uppgraderingar.
 
 ![](../../images/field-groups/application-details.png)
 
@@ -21,4 +21,4 @@ ht-degree: 0%
 
 {style="table-layout:auto"}
 
-Mer information om fältgruppen finns i [publik XDM-databas](https://github.com/adobe/xdm/blob/master/docs/reference/fieldgroups/experience-event/experienceevent-application.schema.json).
+Mer information om fältgruppen finns i [den offentliga XDM-databasen](https://github.com/adobe/xdm/blob/master/docs/reference/fieldgroups/experience-event/experienceevent-application.schema.json).

@@ -16,17 +16,17 @@ Tagga kategorier grupperar taggar i meningsfulla uppsättningar för att ge mer 
 
 ## Skapa en taggkategori {#create-tag-category}
 
-Om du vill skapa en ny kategori väljer du **[!UICONTROL tags]** i den vänstra navigeringen väljer du [!UICONTROL Create tag category].
+Om du vill skapa en ny kategori väljer du **[!UICONTROL tags]** i den vänstra navigeringen och sedan [!UICONTROL Create tag category].
 
 ![Skapa en taggkategori](./images/create-tag-category.png)
 
-The **[!UICONTROL Create tag category]** visas och du uppmanas att ange ett unikt kategorinamn och en valfri beskrivning. När du är klar väljer du **[!UICONTROL Save]**.
+Dialogrutan **[!UICONTROL Create tag category]** visas och du uppmanas att ange ett unikt kategorinamn och en valfri beskrivning. När du är klar väljer du **[!UICONTROL Save]**.
 
 ![Dialogrutan Skapa taggkategori](./images/create-tag-category-dialog.png)
 
-Den nya taggkategorin har skapats och du omdirigeras till sidan där du skapar taggar där du kan tilldela nya taggar. Mer information om hur du skapar taggar finns i [hantera taggar](./managing-tags.md#create-a-tag-create-tag) -dokument.
+Den nya taggkategorin har skapats och du omdirigeras till sidan där du skapar taggar där du kan tilldela nya taggar. Mer information om hur du skapar taggar finns i dokumentet [Hantera taggar](./managing-tags.md#create-a-tag-create-tag).
 
-![Ny taggkategori i taggkategorilagret](./images/new-tag-cateogry-listed.png)
+![Taggkategorin som skapades nyligen i taggkategorilagret](./images/new-tag-cateogry-listed.png)
 
 ## Redigera taggkategori {#edit-tag-category}
 
@@ -34,15 +34,15 @@ Den nya taggkategorin har skapats och du omdirigeras till sidan där du skapar t
 >
 >Om du redigerar eller byter namn på en taggkategori behålls taggens koppling till de objekt där de används.
 
-Om du vill redigera en taggkategori väljer du **[!UICONTROL tags]** i den vänstra navigeringen markerar du den taggkategori som du vill redigera.
+Om du vill redigera en taggkategori väljer du **[!UICONTROL tags]** i den vänstra navigeringen och väljer sedan den taggkategori som du vill redigera.
 
 ![Redigera en taggkategori](./images/edit-tag-category.png)
 
-Markera ellipsen i kategorin Taggar (`...`) bredvid [!UICONTROL Create Tag]. I listrutan visas kontroller för att redigera kategori eller ta bort, markera **[!UICONTROL Edit category]**.
+Markera ellipsen (`...`) bredvid [!UICONTROL Create Tag] i taggkategorin. I en listruta visas kontroller för att redigera kategori eller ta bort. Välj **[!UICONTROL Edit category]**.
 
-![Välj redigeringskategori i listruta](./images/select-edit-tag-category.png)
+![Välj redigeringskategori i listrutan](./images/select-edit-tag-category.png)
 
-The **[!UICONTROL Edit category]** visas och du uppmanas att uppdatera kategorinamnet och den valfria beskrivningen. När du är klar väljer du **[!UICONTROL Save]**.
+Dialogrutan **[!UICONTROL Edit category]** visas och du uppmanas att uppdatera kategorinamnet och den valfria beskrivningen. När du är klar väljer du **[!UICONTROL Save]**.
 
 ![Dialogrutan Redigera taggkategori](./images/edit-category-dialog.png)
 
@@ -56,20 +56,20 @@ Taggkategorin har uppdaterats och du omdirigeras till taggkategorin.
 >
 >Innan en taggkategori kan tas bort måste den vara tom och fri från taggar.
 
-Om du vill ta bort en taggkategori väljer du **[!UICONTROL tags]** i den vänstra navigeringen markerar du den taggkategori som du vill ta bort.
+Om du vill ta bort en taggkategori väljer du **[!UICONTROL tags]** i den vänstra navigeringen och väljer sedan den taggkategori som du vill ta bort.
 
 ![Ta bort en taggkategori](./images/edit-tag-category.png)
 
-Markera ellipsen i kategorin Taggar (`...`) bredvid [!UICONTROL Create Tag]. I listrutan visas kontroller för att redigera kategori eller ta bort, markera **[!UICONTROL Delete category]**.
+Markera ellipsen (`...`) bredvid [!UICONTROL Create Tag] i taggkategorin. I en listruta visas kontroller för att redigera kategori eller ta bort. Välj **[!UICONTROL Delete category]**.
 
 ![Välj Ta bort taggkategori i listrutan](./images/select-delete-tag-category.png)
 
-The **[!UICONTROL Delete category]** visas där du uppmanas att bekräfta borttagning av taggkategori. Välj **[!UICONTROL Delete]** för att bekräfta.
+Dialogrutan **[!UICONTROL Delete category]** visas och du uppmanas att bekräfta borttagning av taggkategori. Bekräfta genom att välja **[!UICONTROL Delete]**.
 
-![Ta bort kategoridialogruta](./images/delete-category-dialog.png)
+![Dialogrutan Ta bort kategori](./images/delete-category-dialog.png)
 
 Taggkategorin har tagits bort och du omdirigeras till lagersidan för taggkategorin. Taggkategorin visas inte längre i listan och har tagits bort helt.
 
 ## Nästa steg
 
-Du har nu lärt dig hur du hanterar taggkategorier. Du kan fortsätta till nästa steg till [hantera taggar](./managing-tags.md).
+Du har nu lärt dig hur du hanterar taggkategorier. Du kan fortsätta till nästa steg för att [hantera taggar](./managing-tags.md).

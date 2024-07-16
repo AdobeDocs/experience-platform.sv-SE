@@ -4,7 +4,7 @@ description: Lär dig hur du lägger till föreslagna värden i ett strängfält
 exl-id: 96897a5d-e00a-410f-a20e-f77e223bd8c4
 source-git-commit: a3140d5216857ef41c885bbad8c69d91493b619d
 workflow-type: tm+mt
-source-wordcount: '658'
+source-wordcount: '654'
 ht-degree: 0%
 
 ---
@@ -13,26 +13,26 @@ ht-degree: 0%
 
 För alla strängfält i Experience Data Model (XDM) kan du definiera en **enum** som begränsar de värden som fältet kan importera till en fördefinierad uppsättning. Om du försöker importera data till ett uppräkningsfält och värdet inte matchar någon av dem som definierats i konfigurationen, nekas intag.
 
-I motsats till enum lägger du till **föreslagna värden** till ett strängfält begränsar inte de värden som kan importeras. Föreslagna värden påverkar i stället vilka fördefinierade värden som är tillgängliga i [Segmenteringsgränssnitt](../../segmentation/ui/overview.md) när strängfältet inkluderas som ett attribut.
+Om du till skillnad från enum lägger till **föreslagna värden** i ett strängfält begränsas inte de värden som det kan importera. Föreslagna värden påverkar i stället vilka fördefinierade värden som är tillgängliga i [segmenteringsgränssnittet](../../segmentation/ui/overview.md) när strängfältet inkluderas som ett attribut.
 
 >[!NOTE]
 >
 >Det finns en fördröjning på ungefär fem minuter för ett fälts uppdaterade föreslagna värden som ska återspeglas i segmenteringsgränssnittet.
 
-Den här guiden beskriver hur du hanterar föreslagna värden med [API för schemaregister](https://developer.adobe.com/experience-platform-apis/references/schema-registry/). Anvisningar om hur du gör detta i användargränssnittet i Adobe Experience Platform finns i [Användargränssnittsguide för uppräkningar och föreslagna värden](../ui/fields/enum.md).
+Den här guiden beskriver hur du hanterar föreslagna värden med [API:t för schemaregister](https://developer.adobe.com/experience-platform-apis/references/schema-registry/). Anvisningar om hur du gör detta i Adobe Experience Platform användargränssnitt finns i [användargränssnittshandboken på enum och föreslagna värden](../ui/fields/enum.md).
 
-## Förutsättningar
+## Förhandskrav
 
 I den här handboken förutsätts du känna till elementen i schemakompositionen i XDM och hur du använder API:t för schemaregister för att skapa och redigera XDM-resurser. Om du behöver en introduktion läser du i följande dokumentation:
 
 * [Grunderna för schemakomposition](../schema/composition.md)
 * [API-guide för schemaregister](../api/overview.md)
 
-Vi rekommenderar att du läser [Utvecklingsregler för enum och föreslagna värden](../ui/fields/enum.md#evolution) om du uppdaterar befintliga fält. Om du hanterar föreslagna värden för scheman som ingår i en union kan du läsa [regler för att sammanfoga fasttext och föreslagna värden](../ui/fields/enum.md#merging).
+Vi rekommenderar även att du granskar [everingsreglerna för enum och föreslagna värden](../ui/fields/enum.md#evolution) om du uppdaterar befintliga fält. Om du hanterar föreslagna värden för scheman som deltar i en union läser du [reglerna för att sammanfoga enum och föreslagna värden](../ui/fields/enum.md#merging).
 
 ## Disposition
 
-I API:t är de begränsade värdena för **enum** fältet representeras av ett `enum` array, while a `meta:enum` -objektet innehåller egna visningsnamn för dessa värden:
+I API representeras de begränsade värdena för ett **enum**-fält av en `enum`-array, medan ett `meta:enum`-objekt tillhandahåller egna visningsnamn för dessa värden:
 
 ```json
 "exampleStringField": {
@@ -51,9 +51,9 @@ I API:t är de begränsade värdena för **enum** fältet representeras av ett `
 }
 ```
 
-För uppräkningsfält tillåts inte schemaregistret `meta:enum` att utsträckas utöver de värden som anges i `enum`, eftersom ett försök att importera strängvärden utanför dessa begränsningar inte godkänns i valideringen.
+För uppräkningsfält tillåter schemaregistret inte att `meta:enum` utökas utöver de värden som anges i `enum`, eftersom ett försök att importera strängvärden utanför dessa begränsningar inte klarar valideringen.
 
-Du kan också definiera ett strängfält som inte innehåller ett `enum` -arrayen och använder bara `meta:enum` objekt att ange **föreslagna värden**:
+Du kan också definiera ett strängfält som inte innehåller en `enum`-array och bara använder `meta:enum`-objektet för att ange **föreslagna värden**:
 
 ```json
 "exampleStringField": {
@@ -67,7 +67,7 @@ Du kan också definiera ett strängfält som inte innehåller ett `enum` -arraye
 }
 ```
 
-Eftersom strängen inte har en `enum` matris för att definiera begränsningar, dess `meta:enum` kan utökas så att den innehåller nya värden.
+Eftersom strängen inte har någon `enum`-matris för att definiera begränsningar, kan egenskapen `meta:enum` utökas så att den innehåller nya värden.
 
 <!-- ## Manage suggested values for standard fields
 
@@ -75,13 +75,13 @@ For existing standard fields, you can [add suggested values](#add-suggested-stan
 
 ## Lägga till föreslagna värden i ett standardfält {#add-suggested-standard}
 
-Utöka `meta:enum` av ett standardsträngfält kan du skapa [egen namnbeskrivning](../api/descriptors.md#friendly-name) för fältet i fråga i ett visst schema.
+Om du vill utöka `meta:enum` för ett standardsträngfält kan du skapa en [egen namnbeskrivning](../api/descriptors.md#friendly-name) för fältet i fråga i ett visst schema.
 
 >[!NOTE]
 >
->Föreslagna värden för strängfält kan bara läggas till på schemanivå. Med andra ord, utöka `meta:enum` för ett standardfält i ett schema påverkar inte andra scheman som använder samma standardfält.
+>Föreslagna värden för strängfält kan bara läggas till på schemanivå. Att utöka `meta:enum` för ett standardfält i ett schema påverkar alltså inte andra scheman som använder samma standardfält.
 
-Följande begäran lägger till föreslagna värden i standarden `eventType` fält (tillhandahålls av [Klassen XDM ExperienceEvent](../classes/experienceevent.md)) för det schema som identifieras under `sourceSchema`:
+Följande begäran lägger till föreslagna värden i standardfältet `eventType` (tillhandahålls av klassen [ XDM ExperienceEvent](../classes/experienceevent.md)) för det schema som identifieras under `sourceSchema`:
 
 ```curl
 curl -X POST \
@@ -134,10 +134,9 @@ När du har använt beskrivningen svarar schemaregistret med följande när sche
 
 >[!NOTE]
 >
->Om standardfältet redan innehåller värden under `meta:enum`skriver inte de nya värdena från beskrivningen över de befintliga fälten och läggs till i stället:
+>Om standardfältet redan innehåller värden under `meta:enum` skrivs inte de nya värdena från beskrivningen över de befintliga fälten och läggs till i stället:
 >
->
-```json
+>```json
 >"standardField": {
 >   "type":"string",
 >   "title": "Example standard enum field",
@@ -215,18 +214,17 @@ A successful response returns HTTP status 201 (Created) and the details of the n
 
 ## Hantera föreslagna värden för ett anpassat fält {#suggested-custom}
 
-Hantera `meta:enum` för ett anpassat fält kan du uppdatera fältets överordnade klass, fältgrupp eller datatyp genom en PATCH-begäran.
+Om du vill hantera `meta:enum` för ett anpassat fält kan du uppdatera fältets överordnade klass, fältgrupp eller datatyp via en PATCH-begäran.
 
 >[!WARNING]
 >
->I motsats till standardfält uppdaterar du `meta:enum` för ett anpassat fält påverkar alla andra scheman som använder det fältet. Om du inte vill att ändringarna ska spridas över olika scheman kan du skapa en ny anpassad resurs i stället:
+>Om du uppdaterar `meta:enum` för ett anpassat fält påverkas alla andra scheman som använder det fältet, till skillnad från standardfält. Om du inte vill att ändringarna ska spridas över olika scheman kan du skapa en ny anpassad resurs i stället:
 >
 >* [Skapa en anpassad klass](../api/classes.md#create)
 >* [Skapa en anpassad fältgrupp](../api/field-groups.md#create)
 >* [Skapa en anpassad datatyp](../api/data-types.md#create)
 
-
-Följande begäran uppdaterar `meta:enum` av ett fält för&quot;lojalitetsnivå&quot; som tillhandahålls av en anpassad datatyp:
+Följande begäran uppdaterar `meta:enum` för ett&quot;lojalitetsnivåfält&quot; som tillhandahålls av en anpassad datatyp:
 
 ```curl
 curl -X PATCH \
@@ -276,4 +274,4 @@ När ändringen har tillämpats svarar schemaregistret med följande när schema
 
 ## Nästa steg
 
-I den här guiden beskrivs hur du hanterar föreslagna värden för strängfält i API:t för schemaregister. Se guiden [definiera anpassade fält i API](./custom-fields-api.md) om du vill ha mer information om hur du skapar olika fälttyper.
+I den här guiden beskrivs hur du hanterar föreslagna värden för strängfält i API:t för schemaregister. Mer information om hur du skapar olika fälttyper finns i guiden [definierar anpassade fält i API](./custom-fields-api.md).

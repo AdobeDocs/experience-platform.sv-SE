@@ -20,15 +20,15 @@ ht-degree: 1%
 
 Roller definierar åtkomsten som en administratör, en specialist eller en slutanvändare har till resurser i organisationen. I en rollbaserad miljö för åtkomstkontroll är etableringen av användaråtkomst grupperad genom vanliga ansvarsområden och behov. En roll har en given uppsättning behörigheter och medlemmar i organisationen kan tilldelas till en eller flera roller, beroende på vilket synområde eller vilken skrivbehörighet de behöver.
 
-The `/roles` -slutpunkten i det attributbaserade API:t för åtkomstkontroll gör att du kan hantera roller i organisationen programmatiskt.
+Med slutpunkten `/roles` i det attributbaserade API:t för åtkomstkontroll kan du programmässigt hantera roller i din organisation.
 
 ## Komma igång
 
-API-slutpunkten som används i den här guiden är en del av det attributbaserade API:t för åtkomstkontroll. Innan du fortsätter bör du granska [komma igång-guide](./getting-started.md) för länkar till relaterad dokumentation, en guide till hur du läser exempelanrop till API:er i det här dokumentet och viktig information om vilka huvuden som behövs för att kunna anropa ett Experience Platform-API.
+API-slutpunkten som används i den här guiden är en del av det attributbaserade API:t för åtkomstkontroll. Innan du fortsätter bör du läsa [kom igång-guiden](./getting-started.md) för att få länkar till relaterad dokumentation, en guide till hur du läser exempelanropen för API i det här dokumentet och viktig information om vilka huvuden som krävs för att kunna anropa ett Experience Platform-API.
 
 ## Hämta en lista med roller {#list}
 
-Du kan visa alla befintliga roller som tillhör din organisation genom att göra en GET-förfrågan till `/roles` slutpunkt.
+Du kan lista alla befintliga roller som tillhör din organisation genom att göra en GET-förfrågan till slutpunkten `/roles`.
 
 **API-format**
 
@@ -113,7 +113,7 @@ Ett godkänt svar returnerar en lista med roller i organisationen, inklusive inf
 
 ## Söka efter en roll {#lookup}
 
-Du kan söka efter en enskild roll genom att göra en GET-förfrågan som innehåller motsvarande `roleId` i sökvägen till begäran.
+Du kan söka efter en enskild roll genom att göra en GET-förfrågan som innehåller motsvarande `roleId` i sökvägen för begäran.
 
 **API-format**
 
@@ -127,7 +127,7 @@ GET /roles/{ROLE_ID}
 
 **Begäran**
 
-Följande begäran hämtar information om `{ROLE_ID}`.
+Följande begäran hämtar information för `{ROLE_ID}`.
 
 ```shell
 curl -X GET \
@@ -180,7 +180,7 @@ Ett godkänt svar returnerar information om det efterfrågade roll-ID:t, inklusi
 
 ## Söka efter ämnen efter roll-ID
 
-Du kan även hämta ämnen genom att göra en GET-förfrågan till `/roles` slutpunkt när en {ROLE_ID}.
+Du kan även hämta ämnen genom att göra en GET-förfrågan till slutpunkten `/roles` och ange en {ROLE_ID}.
 
 **API-format**
 
@@ -256,7 +256,7 @@ Ett lyckat svar returnerar de ämnen som är associerade med det efterfrågade r
 
 ## Skapa en roll {#create}
 
-Om du vill skapa en ny roll skickar du en POST till `/roles` slutpunkt med värden för rollens namn, beskrivning och rolltyp.
+Om du vill skapa en ny roll skickar du en POST till slutpunkten `/roles` och anger värden för rollens namn, beskrivning och rolltyp.
 
 **API-format**
 
@@ -328,7 +328,7 @@ Ett svar returnerar din nya roll, med dess motsvarande roll-ID, samt information
 
 ## Uppdatera en roll {#patch}
 
-Du kan uppdatera egenskaperna för en roll genom att göra en PATCH-förfrågan till `/roles` slutpunkten när du anger motsvarande roll-ID och värden för de åtgärder du vill använda.
+Du kan uppdatera egenskaperna för en roll genom att göra en PATCH-begäran till slutpunkten `/roles` och samtidigt ange motsvarande roll-ID och värden för de åtgärder som du vill tillämpa.
 
 **API-format**
 
@@ -361,7 +361,7 @@ curl -X PATCH \
 
 | Användning | Beskrivning |
 | --- | --- |
-| `op` | Åtgärdsanropet som används för att definiera åtgärden som krävs för att uppdatera rollen. Åtgärderna omfattar: `add`, `replace`och `remove`. |
+| `op` | Åtgärdsanropet som används för att definiera åtgärden som krävs för att uppdatera rollen. Åtgärderna omfattar: `add`, `replace` och `remove`. |
 | `path` | Sökvägen till den parameter som ska uppdateras. |
 | `value` | Det nya värdet som du vill uppdatera parametern med. |
 
@@ -408,7 +408,7 @@ Ett lyckat svar returnerar den uppdaterade rollen, inklusive nya värden för de
 
 ## Uppdatera en roll efter roll-ID {#put}
 
-Du kan uppdatera en roll genom att göra en PUT-förfrågan till `/roles` slutpunkt och ange det roll-ID som motsvarar den roll som du vill uppdatera.
+Du kan uppdatera en roll genom att göra en PUT-förfrågan till slutpunkten `/roles` och ange det roll-ID som motsvarar den roll som du vill uppdatera.
 
 **API-format**
 
@@ -482,7 +482,7 @@ Ett godkänt svar returnerar din uppdaterade roll, inklusive nya värden för na
 
 ## Uppdatera ämne efter roll-ID
 
-Om du vill uppdatera de ämnen som är associerade med en roll skickar du en PATCH-förfrågan till `/roles` slutpunkten när du anger roll-ID för de ämnen du vill uppdatera.
+Om du vill uppdatera de ämnen som är associerade med en roll gör du en PATCH-förfrågan till slutpunkten `/roles` samtidigt som du anger roll-ID för de ämnen som du vill uppdatera.
 
 **API-format**
 
@@ -515,7 +515,7 @@ curl --location --request PATCH 'https://platform.adobe.io/data/foundation/acces
 
 | Användning | Beskrivning |
 | --- | --- |
-| `op` | Åtgärdsanropet som används för att definiera åtgärden som krävs för att uppdatera rollen. Åtgärderna omfattar: `add`, `replace`och `remove`. |
+| `op` | Åtgärdsanropet som används för att definiera åtgärden som krävs för att uppdatera rollen. Åtgärderna omfattar: `add`, `replace` och `remove`. |
 | `path` | Sökvägen till den parameter som ska uppdateras. |
 | `value` | Det nya värdet som du vill uppdatera parametern med. |
 
@@ -552,7 +552,7 @@ Ett lyckat svar returnerar din uppdaterade roll, inklusive nya värden för pers
 
 ## Ta bort en roll {#delete}
 
-Om du vill ta bort en roll gör du en DELETE-förfrågan till `/roles` slutpunkten när du anger ID:t för rollen som du vill ta bort.
+Om du vill ta bort en roll gör du en DELETE-förfrågan till slutpunkten `/roles` samtidigt som du anger ID:t för rollen som du vill ta bort.
 
 **API-format**
 
@@ -566,7 +566,7 @@ DELETE /roles/{ROLE_ID}
 
 **Begäran**
 
-Följande begäran tar bort rollen med ID för `{ROLE_ID}`.
+Följande begäran tar bort rollen med ID:t `{ROLE_ID}`.
 
 ```shell
 curl -X DELETE \
@@ -584,7 +584,7 @@ Du kan bekräfta borttagningen genom att försöka utföra en sökning (GET) til
 
 ## Lägg till API-autentiseringsuppgifter {#apicredential}
 
-Om du vill lägga till en API-autentiseringsuppgift ska du göra en PATCH-begäran på `/roles` slutpunkt när du anger deltagarnas roll-ID.
+Om du vill lägga till en API-autentiseringsuppgift gör du en PATCH-begäran till `/roles`-slutpunkten och anger ämnenas roll-ID.
 
 **API-format**
 
@@ -605,7 +605,7 @@ curl --location --request PATCH 'https://platform.adobe.io/data/foundation/acces
 
 | Användning | Beskrivning |
 | --- | --- |
-| `op` | Åtgärdsanropet som används för att definiera åtgärden som krävs för att uppdatera rollen. Åtgärderna omfattar: `add`, `replace`och `remove`. |
+| `op` | Åtgärdsanropet som används för att definiera åtgärden som krävs för att uppdatera rollen. Åtgärderna omfattar: `add`, `replace` och `remove`. |
 | `path` | Sökvägen till den parameter som ska läggas till. |
 | `value` | Värdet som du vill lägga till parametern med. |
 

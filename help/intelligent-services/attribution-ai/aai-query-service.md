@@ -13,17 +13,17 @@ ht-degree: 0%
 
 # Analyserar attribueringspoäng med hjälp av frågetjänsten
 
-Varje rad i data representerar en konvertering där information för relaterade kontaktytor lagras som en array med strukturer under `touchpointsDetail` kolumn.
+Varje rad i data representerar en konvertering där information för relaterade kontaktytor lagras som en array med strukturer under kolumnen `touchpointsDetail`.
 
 | Kontaktpunktsinformation | Kolumn |
 | ---------------------- | ------ |
-| Namn på kontaktpunkt | `touchpointsDetail. touchpointName` |
+| Kontaktpunktsnamn | `touchpointsDetail. touchpointName` |
 | Pekpunktskanal | `touchpointsDetail.touchPoint.mediaChannel` |
 | Algoritmisk poängsättning för Attribution AI vid beröringspunkt | <li>`touchpointsDetail.scores.algorithmicSourced`</li> <li> `touchpointsDetail.scores.algorithmicInfluenced` </li> |
 
 ## Söka efter datasökvägar
 
-I användargränssnittet för Adobe Experience Platform väljer du **[!UICONTROL Datasets]** i den vänstra navigeringen. The **[!UICONTROL Datasets]** visas. Välj sedan **[!UICONTROL Browse]** och hitta utdata för dina Attribution AI.
+I Adobe Experience Platform-gränssnittet väljer du **[!UICONTROL Datasets]** i den vänstra navigeringen. Sidan **[!UICONTROL Datasets]** visas. Välj sedan fliken **[!UICONTROL Browse]** och sök efter utdata för dina Attribution AI.
 
 ![Åtkomst till din modell](./images/aai-query/datasets_browse.png)
 
@@ -31,29 +31,29 @@ Välj din utdatamängd. Sidan för datauppsättningsaktivitet visas.
 
 ![aktivitetssida för datauppsättning](./images/aai-query/select_preview.png)
 
-På sidan för datauppsättningsaktivitet väljer du **[!UICONTROL Preview dataset]** i det övre högra hörnet om du vill förhandsgranska dina data och se till att de har importerats som förväntat.
+På aktivitetssidan för datauppsättningen väljer du **[!UICONTROL Preview dataset]** i det övre högra hörnet för att förhandsgranska dina data och kontrollera att de har importerats som förväntat.
 
 ![förhandsgranska datauppsättning](./images/aai-query/preview_dataset.JPG)
 
 När du har förhandsgranskat dina data väljer du schemat i den högra listen. En pover visas med schemanamnet och beskrivningen. Markera hyperlänken för schemanamnet för att omdirigera till bedömningsschemat.
 
-![välj schema](./images/aai-query/select_schema.png)
+![välj schemat](./images/aai-query/select_schema.png)
 
-Med hjälp av poängschemat kan du välja eller söka efter ett värde. När du har valt **[!UICONTROL Field properties]** sida vid sida-rail öppnas så att du kan kopiera sökvägen för användning när du skapar frågor.
+Med hjälp av poängschemat kan du välja eller söka efter ett värde. När du har markerat sidospåret **[!UICONTROL Field properties]** öppnas det så att du kan kopiera sökvägen för användning när du skapar frågor.
 
 ![kopiera sökvägen](./images/aai-query/copy_path.png)
 
 ## Access Query Service
 
-Om du vill få åtkomst till frågetjänsten inifrån plattformsgränssnittet börjar du med att välja **[!UICONTROL Queries]** i den vänstra navigeringen väljer du **[!UICONTROL Browse]** -fliken. En lista över tidigare sparade frågor läses in.
+Om du vill få åtkomst till frågetjänsten inifrån plattformsgränssnittet börjar du med att välja **[!UICONTROL Queries]** i den vänstra navigeringen och sedan väljer du fliken **[!UICONTROL Browse]**. En lista över tidigare sparade frågor läses in.
 
-![frågetjänstens bläddring](./images/aai-query/query_tab.png)
+![frågetjänsten bläddrar](./images/aai-query/query_tab.png)
 
-Nästa, välj **[!UICONTROL Create query]** i det övre högra hörnet. Frågeredigeraren läses in. Med frågeredigeraren kan du börja skapa frågor med dina poängdata.
+Välj sedan **[!UICONTROL Create query]** i det övre högra hörnet. Frågeredigeraren läses in. Med frågeredigeraren kan du börja skapa frågor med dina poängdata.
 
-![frågeredigerare](./images/aai-query/query_example.png)
+![frågeredigeraren](./images/aai-query/query_example.png)
 
-Mer information om Frågeredigeraren finns på [Användarhandbok för Frågeredigeraren](../../query-service/ui/user-guide.md).
+Mer information om Frågeredigeraren finns i användarhandboken för [Frågeredigeraren](../../query-service/ui/user-guide.md).
 
 ## Frågemallar för attribueringspoänganalys
 
@@ -61,7 +61,7 @@ Frågorna nedan kan användas som mall för olika poänganalysscenarier. Du mås
 
 >[!NOTE]
 >
-> Beroende på hur dina data har importerats, används värdena nedan, till exempel `timestamp` kan ha ett annat format.
+> Beroende på hur data har importerats kan värdena som används nedan, till exempel `timestamp`, ha ett annat format.
 
 ### Exempel på validering
 
@@ -88,7 +88,7 @@ Frågorna nedan kan användas som mall för olika poänganalysscenarier. Du mås
         conversionName
 ```
 
-**Totalt antal konverteringshändelser (i ett konverteringsfönster)**
+**Totalt antal händelser som endast är konverterade (i ett konverteringsfönster)**
 
 ```sql
     SELECT
@@ -129,7 +129,7 @@ Frågorna nedan kan användas som mall för olika poänganalysscenarier. Du mås
 
 ### Exempel på distributionsanalys
 
-**Mängd kontaktytor på konverteringsbanor efter definierad typ (i ett konverteringsfönster)**
+**Mängd kontaktytor i konverteringsbanor efter definierad typ (i ett konverteringsfönster)**
 
 ```sql
     SELECT conversionName,
@@ -206,7 +206,7 @@ Frågorna nedan kan användas som mall för olika poänganalysscenarier. Du mås
     LIMIT 20
 ```
 
-**Sammanlagda poäng för en viss typ av kontaktyta för alla poängmodeller (i ett konverteringsfönster)**
+**Aggregerade poäng för en viss typ av kontaktyta för alla bedömningsmodeller (i ett konverteringsfönster)**
 
 ```sql
     SELECT
@@ -268,7 +268,7 @@ Hämta en sökväg för varje typ av konverteringshändelse:
         conversionName, path_length
 ```
 
-**Avancerat - distinkt antal kontaktytor i analys av konverteringsvägar**
+**Avancerat - distinkt antal kontaktytor i analys av konverteringssökvägar**
 
 Hämta fördelningen för antalet distinkta kontaktytor på en konverteringsbana för varje konverteringshändelsetyp:
 
@@ -305,7 +305,7 @@ Den här frågan förenklar strukturkolumnen i flera enskilda kolumner och utlö
 
 >[!TIP]
 >
-> I det här exemplet måste du ersätta `{COLUMN_NAME}` förutom `_tenantId` och `your_score_output_dataset`. The `COLUMN_NAME` variabeln kan anta värden för valfria skicka genom kolumnnamn (rapportkolumner) som lades till när din Attribution AI konfigurerades. Granska ditt resultatschema för att hitta `{COLUMN_NAME}` värden som behövs för att slutföra den här frågan.
+> I det här exemplet måste du ersätta `{COLUMN_NAME}` förutom `_tenantId` och `your_score_output_dataset`. Variabeln `COLUMN_NAME` kan hämta värden för valfria genomströmningskolumner (rapportkolumner) som lades till när din Attribution AI konfigurerades. Granska ditt resultatschema för att hitta de `{COLUMN_NAME}`-värden som behövs för att slutföra den här frågan.
 
 ```sql
 SELECT 

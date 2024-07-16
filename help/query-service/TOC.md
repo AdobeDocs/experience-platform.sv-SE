@@ -19,7 +19,7 @@ ht-degree: 13%
 - [Paket för frågetjänst](packaging.md)
 - [Skyddsutkast för frågetjänst](guardrails.md)
 - Kom igång {#get-started}
-   - [Förutsättningar](get-started/prerequisites.md)
+   - [Förhandskrav](get-started/prerequisites.md)
 - Data Distiller {#data-distiller}
    - [Översikt](data-distiller/overview.md)
    - [Licensanvändning](data-distiller/license-usage.md)
@@ -32,7 +32,7 @@ ht-degree: 13%
       - [Frågepro-läge](data-distiller/customizable-insights/query-pro-mode.md)
       - [Skicka accelererade frågor](data-distiller/customizable-insights/send-accelerated-queries.md)
       - [Datamodellguide för rapportinsikter](data-distiller/customizable-insights/reporting-insights-data-model.md)
-   - AI/ML-rörledningar {#ml-feature-pipelines}
+   - AI/ML-funktionspipelinjer {#ml-feature-pipelines}
       - [Översikt](data-distiller/ml-feature-pipelines/overview.md)
       - [Anslut till Jupyter-anteckningsböcker](data-distiller/ml-feature-pipelines/establish-connection.md)
       - [Förberedande dataanalys](data-distiller/ml-feature-pipelines/exploratory-analysis.md)
@@ -113,7 +113,7 @@ ht-degree: 13%
    - [Spark SQL-funktioner](sql/spark-sql-functions.md)
    - [Metadata-kommandon](sql/metadata.md)
    - [Förberedda programsatser](sql/prepared-statements.md)
-- [Frågor och svar](troubleshooting-guide.md)
+- [Vanliga frågor och svar](troubleshooting-guide.md)
 - [IP-adress tillåtelselista](ip-address-allowlist.md)
 - [API-referens](https://www.adobe.io/experience-platform-apis/references/query-service/)
 - [Versionsinformation för plattform](https://experienceleague.adobe.com/en/docs/experience-platform/release-notes/latest)

@@ -13,12 +13,12 @@ ht-degree: 0%
 
 # Synkronisera identiteter mellan Audience Manager och Experience Platform
 
-Adobe Experience Platform Web SDK har stöd för att deklarera kund-ID:n och deras autentiseringstillstånd via [sendEvent](./overview.md#syncing-identities) -kommando.
+Adobe Experience Platform Web SDK har stöd för att deklarera kund-ID:n och deras autentiseringstillstånd via kommandot [sendEvent](./overview.md#syncing-identities).
 
-Välj namnutrymmen på [Identitetstjänstens namnutrymmen](../../identity/../identity-service/features/namespaces.md) om du vill ange sammanhanget som en identitet relaterar till, genom att använda värdena i kolumnen Identitetssymbol:
+Välj dina namnutrymmen från [Identitetstjänstens namnutrymmen](../../identity/../identity-service/features/namespaces.md) för att ange kontexten som en identitet relaterar till genom att använda värdena i kolumnen Identitetssymbol:
 
 ![Vy över namnutrymmesgränssnittet](../assets/identity/edge_namespaceUI_identity-symbol.png)
 
-Som Audience Manager-kund har alla befintliga datakällor som använder ID-typ: Enhetsöverskridande har automatiskt ett motsvarande identitetsnamnutrymme. Om du vill hitta motsvarande Identity Namespace för Audience Manager-datakällan loggar du in på Adobe Experience Platform och navigerar till avsnittet Identiteter.
+Som Audience Manager-kund har alla befintliga datakällor som använder ID-typ: Enhetsöverskridande har automatiskt ett motsvarande identitetsnamnutrymme. Om du vill hitta motsvarande Identity Namespace för din Audience Manager Data Source loggar du in på Adobe Experience Platform och navigerar till avsnittet Identiteter.
 
-Alla nya [!DNL Audience Manager] Datakälla som använder ID-typ: Enheten genererar ett motsvarande identitetsnamnområde. ID-typerna Cookie och Device Advertising ID stöds för närvarande inte. Alla Identity Namespace som skapas i Adobe Experience Platform genererar dessutom en motsvarande [!DNL Audience Manager] Datakälla men observera att metoden syncIdentity bara stöder identitetssymboler för namnområde.
+Alla nya [!DNL Audience Manager]-data-Source som använder ID-typ: Enhetsövergripande genererar ett motsvarande identitetsnamnområde. Source-ID-typerna Cookie och Advertising-ID för enhet stöds för närvarande inte. Dessutom kommer alla Identity Namespace som skapas i Adobe Experience Platform att generera motsvarande [!DNL Audience Manager] Data Source, men observera att syncIdentity-metoden bara stöder Namespace Identity Symbols.

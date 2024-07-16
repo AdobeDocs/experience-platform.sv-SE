@@ -4,7 +4,7 @@ title: Konfigurera filformateringsalternativ för filbaserade mål
 exl-id: f59b1952-e317-40ba-81d1-35535e132a72
 source-git-commit: 0eb17d4d7ad9db3737a14f383bdafe40d59eb12c
 workflow-type: tm+mt
-source-wordcount: '1153'
+source-wordcount: '1156'
 ht-degree: 0%
 
 ---
@@ -15,7 +15,7 @@ ht-degree: 0%
 > 
 >Filformateringsalternativen som beskrivs i det här dokumentet är för närvarande bara tillgängliga för CSV-filer.
 
-Du kan välja att konfigurera olika filformateringsalternativ för de exporterade filerna när du [koppla](/help/destinations/ui/connect-destination.md) till ett filbaserat mål, som [Amazon S3](/help/destinations/catalog/cloud-storage/amazon-s3.md#connect), [Azure Blob](/help/destinations/catalog/cloud-storage/azure-blob.md#connect), eller [SFTP](/help/destinations/catalog/cloud-storage/sftp.md#connect).
+Alternativet att konfigurera olika filformateringsalternativ för de exporterade filerna är tillgängligt när du [ansluter](/help/destinations/ui/connect-destination.md) till ett filbaserat mål, till exempel [Amazon S3](/help/destinations/catalog/cloud-storage/amazon-s3.md#connect), [Azure Blob](/help/destinations/catalog/cloud-storage/azure-blob.md#connect) eller [SFTP](/help/destinations/catalog/cloud-storage/sftp.md#connect).
 
 Du kan konfigurera olika filformateringsalternativ för exporterade filer med hjälp av användargränssnittet i Experience Platform. Du kan ändra flera egenskaper för de exporterade filerna så att de matchar kraven i filmottagningssystemet på din sida för att optimera läsningen och tolkningen av de filer som tas emot från Experience Platform.
 
@@ -26,13 +26,13 @@ Du kan konfigurera olika filformateringsalternativ för exporterade filer med hj
 
 ## Filformateringskonfiguration för CSV-filer {#file-configuration}
 
-Om du vill visa filformateringsalternativen startar du [ansluta till mål](/help/destinations/ui/connect-destination.md) arbetsflöde. Välj **Datatyp: Segment** och **Filtyp: CSV** för att visa de filformateringsinställningar som är tillgängliga för den exporterade filen `CSV` filer.
+Om du vill visa filformateringsalternativen startar du arbetsflödet [Ansluta till mål](/help/destinations/ui/connect-destination.md). Välj **Datatyp: Segment** och **Filtyp: CSV** om du vill visa de filformateringsinställningar som är tillgängliga för de exporterade `CSV` filerna.
 
 >[!IMPORTANT]
 >
 >Målet som du ansluter till kanske inte har alla dessa alternativ tillgängliga. Det är upp till målutvecklaren att avgöra vilka filformateringsalternativ som stöds i målet. Målutvecklaren kan avgöra vilka alternativ som är tillgängliga vid anslutning till målet. Obligatoriska alternativ är markerade med en asterisk i användargränssnittet för Experience Platform.
 > 
->De molnbaserade lagringsplatserna som skapats av Adobe - [Amazon S3](/help/destinations/catalog/cloud-storage/amazon-s3.md), [Azure Blob](/help/destinations/catalog/cloud-storage/azure-blob.md), [Azure Data Lake Storage Gen2](/help/destinations/catalog/cloud-storage/adls-gen2.md), [Datallandningszon](/help/destinations/catalog/cloud-storage/data-landing-zone.md), [Google Cloud-lagring](/help/destinations/catalog/cloud-storage/google-cloud-storage.md), [SFTP](/help/destinations/catalog/cloud-storage/sftp.md) - stöder för närvarande endast de sex CSV-alternativen som markeras nedan.
+>De molnbaserade lagringsplatserna som skapats av Adobe - [Amazon S3](/help/destinations/catalog/cloud-storage/amazon-s3.md), [Azure Blob](/help/destinations/catalog/cloud-storage/azure-blob.md), [Azure Data Lake Storage Gen2](/help/destinations/catalog/cloud-storage/adls-gen2.md), [Data Landing Zone](/help/destinations/catalog/cloud-storage/data-landing-zone.md), [Google Cloud Storage](/help/destinations/catalog/cloud-storage/google-cloud-storage.md), [SFTP](/help/destinations/catalog/cloud-storage/sftp.md) - stöder för närvarande endast de sex CSV-alternativ som markerats nedan.
 
 ![Bild som visar några av de tillgängliga filformateringsalternativen.](../assets/ui/batch-destinations-file-formatting-options/file-formatting-options.png)
 
@@ -45,11 +45,11 @@ Om du vill visa filformateringsalternativen startar du [ansluta till mål](/help
 
 Använd den här kontrollen om du vill ange en avgränsare för varje fält och värde i de exporterade CSV-filerna. Tillgängliga alternativ är:
 
-* Colon `(:)`
+* Kolon `(:)`
 * Komma `(,)`
 * Pipe `(|)`
 * Semikolon `(;)`
-* Tabb `(\t)`
+* Flik `(\t)`
 
 #### Exempel
 
@@ -90,7 +90,7 @@ Visa exemplen nedan för innehållet från de exporterade CSV-filerna tillsamman
 Använd det här alternativet om du vill ange ett enskilt tecken för att undvika citattecken inuti ett redan citattecken. Det här alternativet är till exempel användbart när du har en sträng omsluten av citattecken där en del av strängen redan omsluts av citattecken. Med det här alternativet anger du vilket tecken som ska ersätta de inre dubbla citattecknen med. Tillgängliga alternativ är:
 
 * Snedstreck `(\)`
-* Enskilt citattecken `(')`
+* Enkelt citattecken `(')`
 
 #### Exempel
 
@@ -109,7 +109,7 @@ Visa exemplen nedan för innehållet från de exporterade CSV-filerna tillsamman
 Använd den här kontrollen för att ange strängbeteckningen för ett tomt värde. Det här alternativet avgör hur tomma värden representeras i dina exporterade CSV-filer. Tillgängliga alternativ är:
 
 * **[!UICONTROL Null (null)]**
-* **Tom sträng med dubbla citattecken (&quot;&quot;)**
+* **Tom sträng inom dubbla citattecken (&quot;&quot;&quot;)**
 * **[!UICONTROL Empty string]**
 
 #### Exempel
@@ -117,7 +117,7 @@ Använd den här kontrollen för att ange strängbeteckningen för ett tomt vär
 Visa exemplen nedan för innehållet från de exporterade CSV-filerna tillsammans med varje val i användargränssnittet.
 
 * Exempelutdata med **[!UICONTROL null]** markerat: `male,NULL,TestLastName`. I det här fallet omformar Experience Platform det tomma värdet till ett null-värde.
-* Exempelutdata med **&quot;&quot;** markerat: `male,"",TestLastName`. I det här fallet omformar Experience Platform det tomma värdet till ett par dubbla citattecken.
+* Exempelutdata med **&quot;** valt: `male,"",TestLastName`. I det här fallet omformar Experience Platform det tomma värdet till ett par dubbla citattecken.
 * Exempelutdata med **[!UICONTROL Empty string]** markerat: `male,,TestLastName`. I det här fallet behåller Experience Platform det tomma värdet och exporterar det som det är (utan dubbla citattecken).
 
 >[!TIP]
@@ -134,7 +134,7 @@ Visa exemplen nedan för innehållet från de exporterade CSV-filerna tillsamman
 Använd den här kontrollen för att ange strängbeteckningen för ett null-värde i de exporterade filerna. Det här alternativet avgör hur null-värden återges i dina exporterade CSV-filer. Tillgängliga alternativ är:
 
 * **[!UICONTROL Null (null)]**
-* **Tom sträng med dubbla citattecken (&quot;&quot;)**
+* **Tom sträng inom dubbla citattecken (&quot;&quot;&quot;)**
 * **[!UICONTROL Empty string]**
 
 #### Exempel
@@ -142,7 +142,7 @@ Använd den här kontrollen för att ange strängbeteckningen för ett null-vär
 Visa exemplen nedan för innehållet från de exporterade CSV-filerna tillsammans med varje val i användargränssnittet.
 
 * Exempelutdata med **[!UICONTROL null]** markerat: `male,NULL,TestLastName`. I det här fallet sker ingen omformning och CSV-filen innehåller null-värdet.
-* Exempelutdata med **&quot;&quot;** markerat: `male,"",TestLastName`. I det här fallet ersätter Experience Platform null-värdet med dubbla citattecken runt en tom sträng.
+* Exempelutdata med **&quot;** valt: `male,"",TestLastName`. I det här fallet ersätter Experience Platform null-värdet med dubbla citattecken runt en tom sträng.
 * Exempelutdata med **[!UICONTROL Empty string]** markerat: `male,,TestLastName`. I det här fallet ersätter Experience Platform null-värdet med en tom sträng (utan dubbla citattecken).
 
 ### Komprimeringsformat {#compression-format}
@@ -156,21 +156,21 @@ Anger vilken komprimeringstyp som ska användas när data sparas i filen. Altern
 
 ### Kodning
 
-*Visas inte i skärmbilden för användargränssnittet*. Anger kodning (teckenuppsättning) för sparade CSV-filer. Alternativen är UTF-8 eller UTF-16.
+*Visas inte på skärmbilden för användargränssnittet*. Anger kodning (teckenuppsättning) för sparade CSV-filer. Alternativen är UTF-8 eller UTF-16.
 
 ### Char to escape quote
 
-*Visas inte i skärmbilden för användargränssnittet*. En flagga som anger om värden som innehåller citattecken alltid ska omslutas av citattecken.
+*Visas inte på skärmbilden för användargränssnittet*. En flagga som anger om värden som innehåller citattecken alltid ska omslutas av citattecken.
 
 Standard är att undvika alla värden som innehåller ett citattecken.
 
 ### Radavgränsare
 
-*Visas inte i skärmbilden för användargränssnittet*. Definierar den radavgränsare som ska användas för att skriva. Maxlängden är 1 tecken.
+*Visas inte på skärmbilden för användargränssnittet*. Definierar den radavgränsare som ska användas för att skriva. Maxlängden är 1 tecken.
 
 ### Ignorera inledande blanksteg
 
-*Visas inte i skärmbilden för användargränssnittet*. En flagga som anger om inledande blanksteg från värden som exporteras ska hoppas över.
+*Visas inte på skärmbilden för användargränssnittet*. En flagga som anger om inledande blanksteg från värden som exporteras ska hoppas över.
 
 Exempelutdata med **[!UICONTROL True]** markerat: `"male","John","TestLastName"`
 Exempelutdata med **[!UICONTROL False]** markerat: `" male","John","TestLastName"`
@@ -184,4 +184,4 @@ Exempelutdata med **[!UICONTROL False]** markerat: `"male ","John","TestLastName
 
 ### Nästa steg {#next-steps}
 
-När du har läst det här dokumentet vet du nu hur du konfigurerar alternativ för filexport för dina CSV-datafiler för att anpassa filinnehållet efter kraven i det underordnade filmottagningssystemet. Nu kan du läsa [filbaserade mål - självstudiekurs](/help/destinations/ui/activate-batch-profile-destinations.md) för att börja exportera filer till den önskade molnlagringsplatsen.
+När du har läst det här dokumentet vet du nu hur du konfigurerar alternativ för filexport för dina CSV-datafiler för att anpassa filinnehållet efter kraven i det underordnade filmottagningssystemet. Sedan kan du läsa den [filbaserade självstudiekursen för aktivering av mål](/help/destinations/ui/activate-batch-profile-destinations.md) för att börja exportera filer till den önskade molnlagringsplatsen.

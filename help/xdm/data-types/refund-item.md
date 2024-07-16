@@ -1,18 +1,19 @@
 ---
 title: Datatyp för återbetalningsartikel
 description: Läs mer om datatypen XDM (Refund Item Experience Data Model).
-source-git-commit: de8e944cfec3b52d25bb02bcfebe57d6a2a35e39
+exl-id: 9968d314-c6f3-49d9-b860-709d7478c43a
+source-git-commit: 8be502c9eea67119dc537a5d63a6c71e0bff1697
 workflow-type: tm+mt
 source-wordcount: '121'
 ht-degree: 0%
 
 ---
 
-# [!UICONTROL Refund Item] datatyp
+# Datatypen [!UICONTROL Refund Item]
 
 [!UICONTROL Refund Item] är en XDM-datatyp (Standard Experience Data Model) som beskriver samlar in information som är relaterad till en återbetalning som är kopplad till en order.
 
-![Ett diagram över datatypen återbetalningsartikel.](../images/data-types/refund-item.png)
+![Ett diagram över datatypen Återbetalningsartiklar.](../images/data-types/refund-item.png)
 
 | Visningsnamn | Egenskap | Datatyp | Beskrivning |
 |--------------------|-----------------------|-----------|---------------------------------------------------------------------------------------------------|

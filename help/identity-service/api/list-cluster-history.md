@@ -14,12 +14,12 @@ ht-degree: 0%
 
 # Hämta klusterhistoriken för en identitet
 
-Identiteter kan flytta kluster under olika enhetsgrafkörningar. [!DNL Identity Service] ger synlighet i klusterassociationerna för en viss identitet över tid.
+Identiteter kan flytta kluster under olika enhetsgrafkörningar. [!DNL Identity Service] ger synlighet i klusterassociationerna för en viss identitet över tiden.
 
-Använd valfritt `graph-type` parameter som anger vilken utdatatyp som klustret ska hämtas från. Alternativ:
+Använd den valfria parametern `graph-type` för att ange vilken utdatatyp som klustret ska hämtas från. Alternativ:
 
 - `None` - Utför ingen identitetssammanslagning.
-- `Private Graph` - Utför identitetssammanfogning baserat på ditt privata identitetsdiagram. Om nej `graph-type` anges är detta standardvärde.
+- `Private Graph` - Utför identitetssammanfogning baserat på ditt privata identitetsdiagram. Om `graph-type` inte anges är detta standardvärde.
 
 ## Hämta klusterhistoriken för en enskild identitet
 
@@ -31,7 +31,7 @@ GET https://platform-{REGION}.adobe.io/data/core/identity/cluster/history
 
 **Begäran**
 
-Alternativ 1: Ange identiteten som namnutrymme (`nsId`, efter ID) och ID-värde (`id`).
+Alternativ 1: Ange identiteten som namnområde (`nsId`, efter ID) och ID-värde (`id`).
 
 ```shell
 curl -X GET \
@@ -53,7 +53,7 @@ curl -X GET \
   -H 'x-sandbox-name: {SANDBOX_NAME}'
 ```
 
-Alternativ 3: Ange identiteten som XID (`xid`). Mer information om hur du hämtar en identitets XID finns i avsnittet om det här dokumentet [hämta XID för en identitet](./list-native-id.md).
+Alternativ 3: Ange identiteten som XID (`xid`). Mer information om hur du hämtar en identitets XID finns i det här dokumentets avsnitt som handlar om [hämtning av ett XID för en identitet](./list-native-id.md).
 
 ```shell
 curl -X GET \
@@ -66,7 +66,7 @@ curl -X GET \
 
 ## Hämta klusterhistoriken för flera identiteter
 
-Använd `POST` metod som en batchmotsvarighet till `GET` som beskrivs ovan för att returnera klusterhistorik för flera identiteter.
+Använd metoden `POST` som en gruppmotsvarighet till metoden `GET` som beskrivs ovan för att returnera klusterhistoriken för flera identiteter.
 
 >[!NOTE]
 >
@@ -78,7 +78,7 @@ Använd `POST` metod som en batchmotsvarighet till `GET` som beskrivs ovan för 
 POST https://platform-va7.adobe.io/data/core/identity/clusters/history
 ```
 
-**Begärandetext**
+**Begär brödtext**
 
 Alternativ 1: Ange en lista med XID:n som klustermedlemmar ska hämtas för.
 
@@ -109,7 +109,7 @@ Alternativ 2: Ange en lista över identiteter som sammansatta ID:n, där varje n
 
 **Stub-förfrågan**
 
-Användning av `x-uis-cst-ctx: stub` huvudet returnerar ett stötningssvar. Detta är en tillfällig lösning som underlättar utvecklingen av tidig integration medan tjänsterna är färdiga. Detta kommer att bli inaktuellt när det inte längre behövs.
+Användning av rubriken `x-uis-cst-ctx: stub` returnerar ett stötningssvar. Detta är en tillfällig lösning som underlättar utvecklingen av tidig integration medan tjänsterna är färdiga. Detta kommer att bli inaktuellt när det inte längre behövs.
 
 ```shell
 curl -X POST \
@@ -142,7 +142,7 @@ curl -X POST \
       }' | json_pp
 ```
 
-**Använda UID**
+**Använder UID**
 
 ```shell
 curl -X POST \
@@ -166,7 +166,7 @@ curl -X POST \
       }' | json_pp
 ```
 
-**Ändra**
+**Omdömen**
 
 ```json
 {

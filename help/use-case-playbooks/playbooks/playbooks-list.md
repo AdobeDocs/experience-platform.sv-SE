@@ -39,7 +39,7 @@ Läs den här sidan för att få en översikt över alla tillgängliga spelböck
 | Öka köp av produkter och tjänster under vistelsen | Knuffa gästerna för att köpa produkter och tjänster medan de är i branschen. |
 | Öka köp av enstaka spel | Rikta in er på fans för att öka antalet upprepade köp av enstaka spel. |
 | Post Event Survey and Incentive Promo | Knuffa fansen för att besvara en enkät efter evenemanget genom att erbjuda en stimulanskampanj. |
-| Undersökning efter resan | Knuffa gästerna för att besvara en enkät efter resan genom att erbjuda en stimulanskampanj. |
+| Post Trip Survey | Knuffa gästerna för att besvara en enkät efter resan genom att erbjuda en stimulanskampanj. |
 | Produktkampanj | Knuffa kunderna för att köpa produkter under en pågående produktkampanjkampanj. |
 | Inköpsbekräftelse: Merchandise | Bekräfta en ny varuexponering. |
 | Inköpsbekräftelse: Produkt | Bekräfta att du köpt en ny produkt. |
@@ -77,4 +77,4 @@ Läs den här sidan för att få en översikt över alla tillgängliga spelböck
 
 ## Nästa steg
 
-Nu när du är medveten om de tillgängliga spelböckerna kan du läsa detta [stödlinje](/help/use-case-playbooks/playbooks/choose.md) om du vill veta hur du kommer igång med spelböckerna och välja rätt för dig i användargränssnittet.
+Nu när du är medveten om de tillgängliga spelböckerna kan du läsa den här [handboken](/help/use-case-playbooks/playbooks/choose.md) för att få reda på hur du kommer igång med spelböckerna och välja rätt för dig i användargränssnittet.

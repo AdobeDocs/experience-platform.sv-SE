@@ -1,7 +1,8 @@
 ---
 title: QoE-datainsamling (Quality of Experience), datatyp
 description: Lär dig mer om datatypen QoE (Quality of Experience) Datainsamling av typen XDM (Experience Data Model).
-source-git-commit: e1c94635b691c68de6154d19e974bfdf2e250923
+exl-id: d99816d9-e207-434a-9a40-ee9ded46c4d2
+source-git-commit: 799a384556b43bc844782d8b67416c7eea77fbf0
 workflow-type: tm+mt
 source-wordcount: '225'
 ht-degree: 0%
@@ -10,10 +11,10 @@ ht-degree: 0%
 
 # Datatypen QoE (Quality of Experience) för datainsamling
 
-[!UICONTROL QoE Data Details] Samlingen är en XDM-datatyp (Standard Experience Data Model) som ger detaljerade mått för upplevelsekvaliteten (QoE) under medieuppspelningen. Använd [!UICONTROL QoE Data Details] Samlingsdatatyp för att samla in information om till exempel bithastigheter, bildrutehastigheter, buffringshändelser, uteslutna bildrutor och så vidare. Fält för mediainsamling hämtar data och skickar dem till andra Adobe-tjänster för vidare bearbetning. Den här datatypen gör det möjligt att analysera uppspelningskvaliteten, vilket ger insikter i direktuppspelningsprestanda, användarupplevelse och eventuella problem som uppstår under uppspelningssessioner.
+[!UICONTROL QoE Data Details]-samlingen är en XDM-datatyp (Standard Experience Data Model) som ger detaljerade mått för upplevelsekvaliteten (QoE) under medieuppspelningen. Använd datatypen [!UICONTROL QoE Data Details] Samling för att hämta information som bithastighetsinformation, bildrutehastigheter, buffringshändelser, uteslutna bildrutor och så vidare. Fält för mediainsamling hämtar data och skickar dem till andra Adobe-tjänster för vidare bearbetning. Den här datatypen gör det möjligt att analysera uppspelningskvaliteten, vilket ger insikter i direktuppspelningsprestanda, användarupplevelse och eventuella problem som uppstår under uppspelningssessioner.
 
 +++Välj för att visa datatypen QoE Data Details.
-![Ett diagram över datatypen QoE (Quality of Experience) Data Details Collection.](../images/data-types/qoe-data-details-collection.png)
+![Ett diagram över datatypen QoE-datainsamling (Quality of Experience).](../images/data-types/qoe-data-details-collection.png)
 +++
 
 >[!NOTE]

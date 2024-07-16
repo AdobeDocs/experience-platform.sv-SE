@@ -6,8 +6,8 @@ description: I API:t för innehållstaggning kan OCR-tjänsten (Text Presence/Op
 exl-id: 85b976a7-0229-43e9-b166-cdbd213b867f
 source-git-commit: 82722ddf7ff543361177b555fffea730a7879886
 workflow-type: tm+mt
-source-wordcount: '688'
-ht-degree: 2%
+source-wordcount: '693'
+ht-degree: 0%
 
 ---
 
@@ -74,12 +74,12 @@ curl -w'\n' -i -X POST https://sensei.adobe.io/services/v2/predict \
 
 **Svar**
 
-Ett godkänt svar returnerar texten som upptäcktes i `tags` lista för varje bild som skickades i begäran. Om det inte finns någon text i en viss bild `is_text_present` är 0 och `tags` är en tom lista.
+Ett godkänt svar returnerar texten som upptäcktes i listan `tags` för varje bild som skickades i begäran. Om det inte finns någon text i en viss bild är `is_text_present` 0 och `tags` är en tom lista.
 
 [result0, result1, ...]: lista med svar för varje indatadokument. Varje resultat är en ordlista med nycklar:
 
 1. request_element_id: motsvarande index till indatafilen för det här svaret, 0 för den första bilden i dokumentlistan för begäran, 1 för nästa och så vidare.
-2. taggar: lista med ordlistor. Varje ordlista har två nycklar: text, som är ett känt ord från bilden, och relevans, som beräknas som den del av den extraherade textens begränsningsram som är i jämförelse med hela bilden. 0,01 skulle motsvara en text som upptar minst 1 % av bilden.
+2. taggar: lista med ordlistor, har varje ordlista två nycklar: text, som är ett godkänt ord från bilden, och relevans, som beräknas som andelen av den extraherade textens begränsningsram jämfört med den fullständiga bilden. 0,01 skulle motsvara en text som upptar minst 1 % av bilden.
 3. is_text_present: 0 eller 1 beroende på om det finns text i bilden. Om taggarna är 0 är listan tom.
 
 ```json
@@ -201,13 +201,13 @@ curl -w'\n' -i -X POST https://sensei.adobe.io/services/v2/predict \
 | `sensei:multipart_field_name` | field_name att läsa indatafilens sökväg från. | Ja |
 | `repo:path` | Försignerad URL till bildresurs. | Ja |
 | `sensei:repoType` | &quot;HTTP&quot; (för presigned-url). | Nej |
-| `dc:format` | Kodat format för indatabilden. Endast bildformat som jpeg, jpg, png och tiff tillåts för bildkodning. dc:format matchas mot tillåtna format. | Nej |
-| `correct_with_dictionary` | Om orden ska korrigeras med en engelsk ordbok? Om detta inte är aktiverat kan det finnas risk för att ord som inte är engelska identifieras. Standardvärdet är Sant: aktiverad.) Observera att när ordlistan är aktiverad behöver du inte alltid få ett engelskt ord. Vi försöker rätta till det, men om det inte går inom ett visst redigeringsavstånd, returnerar vi det ursprungliga ordet. | Nej |
-| `filter_with_dictionary` | Om orden ska filtreras så att de bara innehåller orden från den engelska ordboken? Om detta är aktiverat kommer de returnerade orden alltid att tillhöra den stora engelska som innehåller 470 kB-ord. | Nej |
+| `dc:format` | Kodat format för indatabilden. Endast bildformat som jpeg, jpg, png och tiff tillåts för bildkodning. dc:format matchar tillåtna format. | Nej |
+| `correct_with_dictionary` | Om orden ska korrigeras med en engelsk ordbok? Om detta inte är aktiverat kan det finnas risk för att andra ord än engelska känns igen. Standard är Sant: aktiverat.) Observera att när ordlistan är aktiverad behöver du inte alltid få ett engelskt ord. Vi försöker rätta till det, men om det inte går inom ett visst redigeringsavstånd, returnerar vi det ursprungliga ordet. | Nej |
+| `filter_with_dictionary` | Om orden ska filtreras så att de bara innehåller orden från den engelska ordboken? Om detta är aktiverat kommer de returnerade orden alltid att tillhöra den stora engelska som innehåller 470 kB. | Nej |
 | `min_probability` | Hur stor är den minsta sannolikheten för de identifierade orden? Endast de ord som extraheras från bilden och som har större sannolikhet än min_sannolikhet returneras av tjänsten. Standardvärdet är 0,2. | Nej |
 | `min_relevance` | Vilken är den minsta relevansen för de identifierade orden? Endast de ord som extraheras från bilden och har större relevans än min_relevant returneras av tjänsten. Standardvärdet är 0,01. Relevansen beräknas som andelen av den extraherade textens begränsningsram jämfört med hela bilden. 0,01 skulle motsvara en text som upptar minst 1 % av bilden. | Nej |
 
-| Namn | Datatyper | Obligatoriskt | Standard | Värden | Beskrivning |
+| Namn | Datatyp | Obligatoriskt | Standard | Värden | Beskrivning |
 | -----| --------- | -------- | ------- | ------ | ----------- |
 | `repo:path` | string | – | – | – | Försignerad URL för bilden som texten ska extraheras från. |
 | `sensei:repoType` | string | – | – | HTTPS | Typ av rapport där bilden lagras. |

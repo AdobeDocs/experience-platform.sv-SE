@@ -11,7 +11,7 @@ ht-degree: 0%
 
 ---
 
-# [!UICONTROL Place context] datatyp
+# Datatypen [!UICONTROL Place context]
 
 [!UICONTROL Place context] är en standard-XDM-datatyp som beskriver platsen för en observerad händelse, inklusive intressepunktsinformation och geografiska koordinater.
 
@@ -22,8 +22,8 @@ ht-degree: 0%
 | `POIinteraction` | [[!UICONTROL Point of interest interaction]](./poi-interaction.md) | Beskriver information om POI-interaktionen (point-of-interest). |
 | `activePOIs` | Array med [[!UICONTROL Point of interest details]](./poi-details.md) | Beskriver de POI:er som orsakade händelsen. |
 | `geo` | [[!UICONTROL Geo]](./geo.md) | Beskriver den geografiska plats där upplevelsen levererades. |
-| `localTime` | DateTime | En tidsstämpel i [RFC 3339](https://tools.ietf.org/html/rfc3339) format, som anger lokal tid med en angiven tidszonsförskjutning. Formateringsmönstret är `yyyy-MM-dd'T'HH:mm:ssXXX` (till exempel `2001-07-04T12:08:56-07:00`). |
-| `localTimezoneOffset` | Heltal | Aktuell lokal tidszonsförskjutning i minuter från UTC för `localTime` värde. Detta bör inkludera aktuell DST-förskjutning om tillämpligt. |
+| `localTime` | DateTime | En tidsstämpel i formatet [RFC 339](https://tools.ietf.org/html/rfc3339) som anger lokal tid med en angiven tidszonsförskjutning. Formateringsmönstret är `yyyy-MM-dd'T'HH:mm:ssXXX` (till exempel `2001-07-04T12:08:56-07:00`). |
+| `localTimezoneOffset` | Heltal | Den aktuella lokala tidszonsförskjutningen i minuter från UTC för värdet `localTime`. Detta bör inkludera aktuell DST-förskjutning om tillämpligt. |
 
 {style="table-layout:auto"}
 

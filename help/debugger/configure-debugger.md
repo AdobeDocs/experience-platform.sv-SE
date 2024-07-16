@@ -20,15 +20,15 @@ Du kan konfigurera vissa aspekter av hur Adobe Experience Platform Debugger ser 
 
 ## Ljust eller mörkt läge
 
-När plattformsfelsökaren har öppnats kan du välja vilket utseende du vill genom att gå till **[!UICONTROL Settings]** och välja antingen **Mörkt läge** (standard) eller **Ljusläge**.
+När plattformsfelsökaren har öppnats kan du välja önskat utseende genom att gå till **[!UICONTROL Settings]** och välja antingen **Mörkt läge** (standard) eller **Ljust läge**.
 
 ## Återställ
 
-Välj **[!UICONTROL Reset all Data and Settings]** för att återgå till att rensa alla data och återgå till standardinställningarna.
+Välj **[!UICONTROL Reset all Data and Settings]** om du vill återgå till att rensa alla data och återgå till standardinställningarna.
 
 ## Lås felsökaren för Experience Platform på en sida
 
-När du ändrar sidor på webbplatsen uppdateras felsökningsfönstret i Experience Platform så att information om sidan visas. Namnet på den sida som du är ansluten till visas längst ned på skärmen. Om du vill att Experience Platform Debugger ska vara låst på en sida väljer du **[!UICONTROL Lock]** i det nedre högra hörnet av fönstret för plattformsfelsökning.
+När du ändrar sidor på webbplatsen uppdateras felsökningsfönstret i Experience Platform så att information om sidan visas. Namnet på den sida som du är ansluten till visas längst ned på skärmen. Om du vill att Experience Platform Debugger ska vara låst på en sida väljer du **[!UICONTROL Lock]** längst ned till höger i fönstret för plattformsfelsökning.
 
 ![](images/lock.jpg)
 

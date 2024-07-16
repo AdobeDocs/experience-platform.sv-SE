@@ -1,7 +1,8 @@
 ---
 title: Hantera matriser och mappa datatyper med funktioner i högre ordning
 description: Lär dig hur du hanterar matriser och mappar datatyper med funktioner för högre ordning i frågetjänsten. Praktiska exempel finns i vanliga användningsfall.
-source-git-commit: 27eab04e409099450453a2a218659e576b8f6ab4
+exl-id: dec4e4f6-ad6b-4482-ae8c-f10cc939a634
+source-git-commit: 8be502c9eea67119dc537a5d63a6c71e0bff1697
 workflow-type: tm+mt
 source-wordcount: '1471'
 ht-degree: 0%
@@ -18,7 +19,7 @@ Följande lista över användningsfall innehåller exempel på funktioner för a
 
 `transform(array<T>, function<T, U>): array<U>`
 
-Ovanstående kodutdrag använder en funktion för varje element i arrayen och returnerar en ny array med omformade element. I synnerhet `transform` -funktionen tar en array av typen T och konverterar varje element från typen T till typ U. Sedan returneras en array av typen U. De faktiska typerna T och U beror på den specifika användningen av omformningsfunktionen.
+Ovanstående kodutdrag använder en funktion för varje element i arrayen och returnerar en ny array med omformade element. Funktionen `transform` tar en array av typen T och konverterar varje element från typen T till typ U. Sedan returneras en array av typen U. De faktiska typerna T och U beror på den specifika användningen av omformningsfunktionen.
 
 `transform(array<T>, function<T, Int, U>): array<U>`
 
@@ -26,7 +27,7 @@ Den här arrayomformningsfunktionen liknar det föregående exemplet, men det fi
 
 **Exempel**
 
-I SQL-exemplet nedan visas det här användningsexemplet. Frågan hämtar en begränsad uppsättning rader från den angivna tabellen och omformar `productListItems` genom att multiplicera `priceTotal` attribut för varje post med 73. Resultatet innehåller `_id`, `productListItems`och den omformade `price_in_inr` kolumner. Markeringen baseras på ett specifikt tidsstämpelintervall.
+I SQL-exemplet nedan visas det här användningsexemplet. Frågan hämtar en begränsad uppsättning rader från den angivna tabellen och omformar `productListItems`-arrayen genom att multiplicera `priceTotal`-attributet för varje objekt med 73. Resultatet innehåller kolumnerna `_id`, `productListItems` och omformade `price_in_inr`. Markeringen baseras på ett specifikt tidsstämpelintervall.
 
 ```sql
 SELECT _id,
@@ -59,11 +60,11 @@ Resultaten för denna SQL skulle se ut ungefär som de nedan.
 
 `exists(array<T>, function<T, boolean>): boolean`
 
-I fragmentet ovan visas `exists` -funktionen används för varje element i arrayen och returnerar ett booleskt värde. Det booleska värdet anger om det finns ett eller flera element i arrayen som uppfyller ett angivet villkor. I det här fallet bekräftar den om det finns en produkt med en specifik SKU.
+I fragmentet ovan tillämpas funktionen `exists` på alla element i arrayen och returnerar ett booleskt värde. Det booleska värdet anger om det finns ett eller flera element i arrayen som uppfyller ett angivet villkor. I det här fallet bekräftar den om det finns en produkt med en specifik SKU.
 
 **Exempel**
 
-I SQL-exemplet nedan hämtar frågan `productListItems` från `geometrixxx_999_xdm_pqs_1batch_10k_rows` tabell och utvärderar om ett element med en SKU är lika med `123679` i `productListItems` arrayen finns. Sedan filtreras resultaten baserat på ett visst intervall med tidsstämplar och slutresultatet begränsas till tio rader.
+I SQL-exemplet nedan hämtar frågan `productListItems` från tabellen `geometrixxx_999_xdm_pqs_1batch_10k_rows` och utvärderar om det finns ett element med en SKU som är lika med `123679` i arrayen `productListItems`. Sedan filtreras resultaten baserat på ett visst intervall med tidsstämplar och slutresultatet begränsas till tio rader.
 
 ```sql
 SELECT productListItems
@@ -102,7 +103,7 @@ Den här funktionen filtrerar en array med element baserat på ett givet villkor
 
 **Exempel**
 
-Frågan nedan väljer `productListItems` använder ett filter för att inkludera endast element med en SKU på över 10000, och begränsar resultatuppsättningen till rader inom ett visst tidsstämpelintervall. Den filtrerade arrayen kantutjämnas sedan som `_filter` i utdata.
+Frågan nedan markerar kolumnen `productListItems`, använder ett filter för att endast inkludera element med en SKU som är större än 10000 och begränsar resultatet som angetts till rader inom ett visst tidsstämpelintervall. Den filtrerade arrayen kantutjämnas sedan som `_filter` i utdata.
 
 ```sql
 SELECT productListItems,
@@ -136,7 +137,7 @@ Den här aggregeringsåtgärden använder en binär operator på ett initialt l�
 
 **Exempel**
 
-I det här frågeexemplet beräknas det maximala SKU-värdet från `productListItems` -arrayen inom det angivna tidsstämpelintervallet och dubblerar resultatet. Utdata innehåller originalet `productListItems` och den beräknade `max_value`.
+Det här frågeexemplet beräknar det maximala SKU-värdet från arrayen `productListItems` inom det angivna tidsstämpelintervallet och dubblerar resultatet. Utdata innehåller den ursprungliga `productListItems`-arrayen och den beräknade `max_value`.
 
 ```sql
 SELECT productListItems,
@@ -175,7 +176,7 @@ Detta kodutdrag kombinerar elementen i två arrayer till en enda ny array. Åtg�
 
 **Exempel**
 
-Följande fråga använder `zip_with` om du vill skapa värdepar från två arrayer. Det gör du genom att lägga till SKU-värden från `productListItems` till en heltalssekvens, som genereras med `Sequence` funktion. Resultatet markeras bredvid originalet `productListItems` kolumnen och är begränsad baserat på ett tidsstämpelintervall.
+Följande fråga använder funktionen `zip_with` för att skapa värdepar från två arrayer. Det gör du genom att lägga till SKU-värdena från arrayen `productListItems` i en heltalssekvens, som genererades med funktionen `Sequence`. Resultatet markeras tillsammans med den ursprungliga kolumnen `productListItems` och begränsas baserat på ett tidsstämpelintervall.
 
 ```sql
 SELECT productListItems,
@@ -250,7 +251,7 @@ productListItems     | map_from_entries
 
 `map_form_arrays(array<K>, array<V>): map<K, V>`
 
-The `map_form_arrays` skapar en karta med kopplade värden från två arrayer.
+Funktionen `map_form_arrays` skapar en karta med parade värden från två arrayer.
 
 >[!IMPORTANT]
 >
@@ -258,7 +259,7 @@ The `map_form_arrays` skapar en karta med kopplade värden från två arrayer.
 
 **Exempel**
 
-SQL nedan skapar en karta där nycklarna är sekvensnummer som genereras med `Sequence` och värdena är element från `productListItems` array. Frågan väljer `productListItems` kolumn och använder `Map_from_arrays` funktionen för att skapa kartan baserat på den genererade sekvensen med siffror och elementen i arrayen. Resultatet begränsas till tio rader och filtreras baserat på ett tidsstämpelintervall.
+SQL nedan skapar en karta där nycklarna är sekvensnummer som genereras med funktionen `Sequence` och värdena är element från arrayen `productListItems`. Frågan markerar kolumnen `productListItems` och använder funktionen `Map_from_arrays` för att skapa kartan baserat på den genererade nummersekvensen och elementen i arrayen. Resultatet begränsas till tio rader och filtreras baserat på ett tidsstämpelintervall.
 
 ```sql
 SELECT productListItems,
@@ -296,7 +297,7 @@ productListItems     | map_from_entries
 
 `map_concat(map<K, V>, ...): map<K, V>`
 
-The `map_concat` i fragmentet ovan tar flera kartor som argument och returnerar en ny karta som kombinerar alla nyckelvärdepar från indatamappningarna. Funktionen sammanfogar flera kartor till en enda karta, och den resulterande kartan innehåller alla nyckelvärdepar från indatamappningarna.
+Funktionen `map_concat` i fragmentet ovan tar flera kartor som argument och returnerar en ny karta som kombinerar alla nyckel/värde-par från indatamappningarna. Funktionen sammanfogar flera kartor till en enda karta, och den resulterande kartan innehåller alla nyckelvärdepar från indatamappningarna.
 
 **Exempel**
 
@@ -345,7 +346,7 @@ För kartor returnerar den antingen ett värde för den angivna nyckeln eller nu
 
 **Exempel**
 
-Frågan väljer `identitymap` kolumn från tabellen `geometrixxx_999_xdm_pqs_1batch_10k_rows` och extraherar värdet som är associerat med nyckeln `AAID` för varje rad. Resultatet begränsas till rader som ligger inom det angivna tidsstämpelintervallet och frågan begränsar utdata till tio rader.
+Frågan markerar kolumnen `identitymap` från tabellen `geometrixxx_999_xdm_pqs_1batch_10k_rows` och extraherar värdet som är associerat med nyckeln `AAID` för varje rad. Resultatet begränsas till rader som ligger inom det angivna tidsstämpelintervallet och frågan begränsar utdata till tio rader.
 
 ```sql
 SELECT identitymap,
@@ -383,7 +384,7 @@ Det här fragmentet returnerar storleken på en viss array eller karta och ger e
 
 **Exempel**
 
-Frågan nedan hämtar `identitymap` kolumn, och `Cardinality` funktionen beräknar antalet element i varje karta i `identitymap`. Resultaten begränsas till tio rader och filtreras baserat på ett angivet tidsstämpelintervall.
+Frågan nedan hämtar kolumnen `identitymap` och funktionen `Cardinality` beräknar antalet element i varje karta i `identitymap`. Resultaten begränsas till tio rader och filtreras baserat på ett angivet tidsstämpelintervall.
 
 ```sql
 SELECT identitymap,
@@ -421,7 +422,7 @@ Ovanstående kodutdrag tar bort dubblettvärden från den angivna arrayen.
 
 **Exempel**
 
-Frågan nedan väljer `productListItems` tar bort dubblettobjekt från arrayerna och begränsar utdata till tio rader baserat på ett angivet tidsstämpelintervall.
+Frågan nedan markerar kolumnen `productListItems`, tar bort dubblettobjekt från arrayerna och begränsar utdata till tio rader baserat på ett angivet tidsstämpelintervall.
 
 ```sql
 SELECT productListItems,
@@ -457,8 +458,8 @@ productListItems     | array_distinct(productListItems)
 
 Följande exempel på funktioner i högre ordning förklaras som en del av hämtningen av liknande poster använder skiftläget. Ett exempel och en förklaring till hur de olika funktionerna används finns i respektive avsnitt i dokumentet.
 
-The [`transform` funktionsexempel](../use-cases/retrieve-similar-records.md#length-adjustment) omfattar tokenisering av en produktlista.
+Funktionsexemplet [`transform` ](../use-cases/retrieve-similar-records.md#length-adjustment) beskriver tokeniseringen för en produktlista.
 
-The [`filter` funktionsexempel](../use-cases/retrieve-similar-records.md#filter-results) visar en mer detaljerad extrahering av relevant information från textdata.
+Funktionsexemplet [`filter` ](../use-cases/retrieve-similar-records.md#filter-results) visar en mer detaljerad extrahering av relevant information från textdata.
 
-The [`reduce` function](../use-cases/retrieve-similar-records.md#higher-order-function-solutions) ger ett sätt att härleda kumulativa värden eller aggregat, som kan vara avgörande i olika analys- och planeringsprocesser.
+[`reduce`-funktionen ](../use-cases/retrieve-similar-records.md#higher-order-function-solutions) erbjuder ett sätt att härleda kumulativa värden eller aggregat, som kan vara avgörande i olika analys- och planeringsprocesser.

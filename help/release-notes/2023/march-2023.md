@@ -1,10 +1,10 @@
 ---
 title: Versionsinformation om Adobe Experience Platform mars 2023
-description: Versionsinformation mars 2023 för Adobe Experience Platform.
+description: Versionsinformationen för Adobe Experience Platform i mars 2023.
 exl-id: 3f4d764a-77cd-4e4a-ae11-e97a23006a53
 source-git-commit: e300e57df998836a8c388511b446e90499185705
 workflow-type: tm+mt
-source-wordcount: '2143'
+source-wordcount: '2018'
 ht-degree: 3%
 
 ---
@@ -33,11 +33,11 @@ Adobe Experience Platform tillhandahåller flera instrumentpaneler där du kan s
 
 | Funktion | Beskrivning |
 | --- | --- |
-| Användardefinierade kontrollpaneler | Nu kan du **samplingsattributvärden** innan du lägger till ett attribut i en widget i den användardefinierade widgetdispositionen för instrumentpaneler. Ett fåtal exempelvärden från den attributkolumnen är tillgängliga för enskilda attribut när du skapar en widget.<br>Nu kan du **byta X- och Y-axel** på widgeten med utbytesaxelknappen. Detta sparar tid och ger en mer ergonomisk upplevelse när du lägger till attribut i widgetar. Den här sparningen måste hitta båda attributen igen från attributpanelen.<br> Nu kan du **ändra teckenförklaringens placering och rubrik** i widgetarna. När det finns en teckenförklaring på en widget kan du flytta den var som helst runt diagrammet och även ge den ett nytt namn, som du kan med axeletiketter och widgetens rubrik. |
+| Användardefinierade kontrollpaneler | Du kan nu **sampla attributvärden** innan du lägger till ett attribut i en widget i den användardefinierade widgetdispositionen för instrumentpaneler. Ett fåtal exempelvärden från den attributkolumnen är tillgängliga för enskilda attribut när du skapar en widget.<br>Du kan nu **byta X- och Y-axel** i widgeten mot utbytesaxelknappen. Detta sparar tid och ger en mer ergonomisk upplevelse när du lägger till attribut i widgetar. Den här sparningen måste hitta båda attributen igen från attributpanelen.<br> Du kan nu **ändra plats och rubrik för teckenförklaringen** i dina widgetar. När det finns en teckenförklaring på en widget kan du flytta den var som helst runt diagrammet och även ge den ett nytt namn, som du kan med axeletiketter och widgetens rubrik. |
 
 {style="table-layout:auto"}
 
-Mer information om kontrollpaneler, inklusive hur du ger åtkomstbehörigheter och skapar anpassade widgetar, får du genom att läsa [översikt över instrumentpaneler](../../dashboards/home.md).
+Mer information om kontrollpaneler, inklusive hur du ger åtkomstbehörigheter och skapar anpassade widgetar, får du genom att läsa [översikten för kontrollpaneler](../../dashboards/home.md).
 
 ## Datainsamling {#data-collection}
 
@@ -47,11 +47,11 @@ Adobe Experience Platform erbjuder en serie teknologier som gör att ni kan saml
 
 | Funktion | Beskrivning |
 | --- | --- |
-| Nytt snabbstartarbetsflöde för Meta Conversions API (beta) | Kom åt nya snabbstartarbetsflöden via&quot;Komma igång&quot; från startskärmen för datainsamling! The [snabbstartsarbetsflöde för Meta Conversion API](https://experienceleague.adobe.com/docs/experience-platform/tags/extensions/server/meta/overview.html#quick-start) gör det möjligt för kunderna att snabbt samla in och vidarebefordra händelsedata, från serversidan till Meta för annonskonverteringar med bara några få enkla steg. |
-| Nytt snabbstartarbetsflöde för Mobile SDK (beta) | Kom åt nya snabbstartarbetsflöden via&quot;Komma igång&quot; från startskärmen för datainsamling! The [snabbstartarbetsflöde för Mobile SDK](https://developer.adobe.com/client-sdks/documentation/) gör att du snabbt kan implementera Mobile SDK och validera grundläggande mobilhändelser med bara några få enkla steg. |
-| [!DNL Braze] tillägg för händelsevidarebefordring | The [[!DNL Braze Track Events API]](https://experienceleague.adobe.com/docs/experience-platform/tags/extensions/server/braze/overview.html) tillägg för händelsevidarebefordran gör att du kan utnyttja data som samlats in i Adobe Experience Platform Edge Network och skicka dem till [!DNL Braze] i form av händelser på serversidan med [!DNL Braze] API:er för användarspårning. |
-| [!DNL Epsilon] tillägg för händelsevidarebefordring | The [[!DNL Epsilon Events API]](https://experienceleague.adobe.com/docs/experience-platform/tags/extensions/server/overview.html) kan du utnyttja händelsevidarebefordran för att samla in händelseinformation i Adobe Experience Platform Edge Network och skicka den till [!DNL Epsilon] med [!DNL Epsilon] Händelse-API. |
-| [!DNL Mixpanel] tillägg för händelsevidarebefordring | The [[!DNL Mixpanel Track Events API]](https://experienceleague.adobe.com/docs/experience-platform/tags/extensions/server/braze/overview.html) Med hjälp av tillägget kan kunder utnyttja händelsevidarebefordran för att hämta händelseinformation i Adobe Experience Platform Edge Network och skicka den till Mixpanel med API:t för spårningshändelser. |
+| Nytt snabbstartsarbetsflöde för Meta Conversions API (Beta) | Kom åt nya snabbstartarbetsflöden via&quot;Komma igång&quot; från startskärmen för datainsamling! Med [snabbstartsarbetsflödet för Meta Conversions API](https://experienceleague.adobe.com/docs/experience-platform/tags/extensions/server/meta/overview.html#quick-start) kan kunderna snabbt samla in och vidarebefordra händelsedata, från serversidan till Meta för annonskonverteringar med bara några få enkla steg. |
+| Nytt snabbstartarbetsflöde för Mobile SDK (Beta) | Kom åt nya snabbstartarbetsflöden via&quot;Komma igång&quot; från startskärmen för datainsamling! Med [snabbstartsarbetsflödet för Mobile SDK](https://developer.adobe.com/client-sdks/documentation/) kan du snabbt implementera Mobile SDK och validera grundläggande mobilhändelser i några enkla steg. |
+| [!DNL Braze]-tillägg för händelsevidarebefordring | Med tillägget [[!DNL Braze Track Events API]](https://experienceleague.adobe.com/docs/experience-platform/tags/extensions/server/braze/overview.html) för vidarebefordran av händelser kan du utnyttja data som samlats in i Adobe Experience Platform Edge Network och skicka det till [!DNL Braze] i form av händelser på serversidan med API:erna för användarspårning i [!DNL Braze]. |
+| [!DNL Epsilon]-tillägg för händelsevidarebefordring | Med tillägget [[!DNL Epsilon Events API]](https://experienceleague.adobe.com/docs/experience-platform/tags/extensions/server/overview.html) kan du utnyttja händelsevidarebefordran för att hämta händelseinformation i Adobe Experience Platform Edge Network och skicka den till [!DNL Epsilon] med hjälp av händelse-API:t [!DNL Epsilon]. |
+| [!DNL Mixpanel]-tillägg för händelsevidarebefordring | Tillägget [[!DNL Mixpanel Track Events API]](https://experienceleague.adobe.com/docs/experience-platform/tags/extensions/server/braze/overview.html) gör att kunder kan utnyttja händelsevidarebefordran för att hämta händelseinformation i Adobe Experience Platform Edge Network och skicka den till Mixpanel med API:t för spårningshändelser. |
 
 {style="table-layout:auto"}
 
@@ -63,34 +63,34 @@ Med Data Prep kan datatekniker mappa, omvandla och validera data till och från 
 
 | Funktion | Beskrivning |
 | --- | --- |
-| Allmän tillgång till filtrering av Adobe Analytics-data | Ni kan nu använda funktionerna för dataförberedelser för att tillämpa regler och villkor för att filtrera era era analysdata innan ni hämtar dem till kundprofilen i realtid. Mer information finns i guiden [filtrera analysdata för profilinmatning](../../sources/tutorials/ui/create/adobe-applications/analytics.md#filtering-for-profile). |
-| Nya funktioner för kodning och avkodning av URL-strängar | <ul><li>The `get_url_encoded` funktionen tar en URL som indata och ersätter eller kodar specialtecken med ASCII-tecken.</li><li>The `get_url_decoded` funktionen tar en URL som indata och avkodar ASCII-tecken till specialtecken.</li></ul> Mer information finns i [Handbok för dataprefixfunktioner](../../data-prep/functions.md). En omfattande lista över reserverade tecken och motsvarande kodade tecken finns i guiden [specialtecken](../../data-prep/functions.md#special-characters). |
+| Allmän tillgång till filtrering av Adobe Analytics-data | Ni kan nu använda funktionerna för dataförberedelser för att tillämpa regler och villkor för att filtrera era era analysdata innan ni hämtar dem till kundprofilen i realtid. Mer information finns i handboken om [filtrering av analysdata för profilintagning](../../sources/tutorials/ui/create/adobe-applications/analytics.md#filtering-for-profile). |
+| Nya funktioner för kodning och avkodning av URL-strängar | <ul><li>Funktionen `get_url_encoded` tar en URL som indata och ersätter eller kodar specialtecken med ASCII-tecken.</li><li>Funktionen `get_url_decoded` tar en URL som indata och avkodar ASCII-tecken till specialtecken.</li></ul> Mer information finns i handboken [Dataförberedelser ](../../data-prep/functions.md). En omfattande lista över reserverade tecken och deras motsvarande kodade tecken finns i handboken om [specialtecken](../../data-prep/functions.md#special-characters). |
 
-Mer information om Data Prep finns i [Översikt över datapreflight](../../data-prep/home.md).
+Mer information om dataprep finns i [översikten för dataprep](../../data-prep/home.md).
 
 ## Mål  {#destinations}
 
 [!DNL Destinations] är färdiga integreringar med målplattformar som möjliggör smidig aktivering av data från Adobe Experience Platform. Ni kan använda destinationer för att aktivera kända och okända data för flerkanalskampanjer, e-postkampanjer, riktad reklam och många andra användningsfall.
 
-**Nya destinationer** {#new-destinations}
+**Nya mål** {#new-destinations}
 
-| Destination | Beskrivning |
+| Mål | Beskrivning |
 | ----------- | ----------- |
-| [[!DNL Adobe Commerce] anslutning GA](../../destinations/catalog/personalization/adobe-commerce.md) | The [!DNL Adobe Commerce] målanslutning (nu allmänt tillgänglig) låter dig välja en eller flera Real-Time CDP-målgrupper att aktivera för din [!DNL Adobe Commerce] för att leverera en dynamisk personaliserad upplevelse till era kunder. |
-| [[!DNL Snap Inc] anslutning GA](../../destinations/catalog/advertising/snap-inc.md) | The [!DNL Snap Inc] destinationsanslutning (nu allmänt tillgänglig) tillåter marknadsförare att importera användarsegment som skapats i Experience Platform till [!DNL Snapchat Ads] och använda dem för att rikta in sina annonser. |
-| [(API) Oraclena Eloqua-anslutning](../../destinations/catalog/email-marketing/oracle-eloqua-api.md) | Använd den API-baserade anslutningen för att [!DNL Oracle Eloqua] att planera och genomföra kampanjer samtidigt som ni levererar en personaliserad kundupplevelse för sina kunder i [!DNL Oracle Eloqua]. |
-| [(Beta) [!DNL Amazon Ads] anslutning](../../destinations/catalog/advertising/amazon-ads.md) | The [!DNL Amazon Ads] integrering med Adobe Experience Platform ger nyckelfärdig integrering med [!DNL Amazon Ads] produkter, inklusive [!DNL Amazon DSP (ADSP)]. Använda [!DNL Amazon Ads] i Adobe Experience Platform kan man definiera målgrupper för annonsering och aktivering på [!DNL Amazon DSP]. |
+| [[!DNL Adobe Commerce] anslutning GA](../../destinations/catalog/personalization/adobe-commerce.md) | Med målanslutningen [!DNL Adobe Commerce] (som nu är allmänt tillgänglig) kan du välja en eller flera Real-Time CDP-målgrupper att aktivera för ditt [!DNL Adobe Commerce]-konto för att leverera en dynamisk, personlig upplevelse till era kunder. |
+| [[!DNL Snap Inc] anslutning GA](../../destinations/catalog/advertising/snap-inc.md) | Med målkopplingen [!DNL Snap Inc] (som nu är allmänt tillgänglig) kan marknadsförare importera användarsegment som skapats i Experience Platform till [!DNL Snapchat Ads] och använda dem för att rikta sina annonser. |
+| [(API) Oraclet Eloqua-anslutning](../../destinations/catalog/email-marketing/oracle-eloqua-api.md) | Använd den API-baserade anslutningen till [!DNL Oracle Eloqua] för att planera och köra kampanjer samtidigt som en anpassad kundupplevelse för deras potentiella kunder i [!DNL Oracle Eloqua] levereras. |
+| [(Beta) [!DNL Amazon Ads] connection](../../destinations/catalog/advertising/amazon-ads.md) | Integrationen [!DNL Amazon Ads] med Adobe Experience Platform ger körklar integrering med [!DNL Amazon Ads]-produkter, inklusive [!DNL Amazon DSP (ADSP)]. Med målplatsen [!DNL Amazon Ads] i Adobe Experience Platform kan användare definiera annonsörer för målinriktning och aktivering på [!DNL Amazon DSP]. |
 | [[!DNL Marketo Measure Ultimate] anslutning](../../destinations/catalog/adobe/marketo-measure-ultimate.md) | [!DNL Marketo Measure] (tidigare Bizible) ger marknadsförarna insikt i vilka marknadsföringssatsningar som är mest effektiva när det gäller att öka intäkterna och maximera avkastningen på investeringen för deras företag. Målet möjliggör dataflöden mellan företag (B2B) från Adobe Experience Platform till [!DNL Marketo Measure]. Kortet är bara tillgängligt för [!DNL Marketo Measure Ultimate] kunder. |
-| [TikTok](../../destinations/catalog/social/tiktok.md) | Bygg anpassade målgrupper på TikTok med era data för målinriktning med era annonskampanjer. |
-| [Zendesk-anslutning](../../destinations/catalog/crm/zendesk.md) | Använd det här målet för att skapa och uppdatera identiteter inom ett segment som kontakter inom [!DNL Zendesk]. |
+| [TikTok-anslutning](../../destinations/catalog/social/tiktok.md) | Bygg anpassade målgrupper på TikTok med era data för målinriktning med era annonskampanjer. |
+| [Zendesk-anslutning](../../destinations/catalog/crm/zendesk.md) | Använd det här målet om du vill skapa och uppdatera identiteter inom ett segment som kontakter inom [!DNL Zendesk]. |
 
 {style="table-layout:auto"}
 
-**Ny eller uppdaterad funktionalitet** {#destinations-new-updated-functionality}
+**Ny eller uppdaterad funktion** {#destinations-new-updated-functionality}
 
 | Funktionalitet | Beskrivning |
 | ----------- | ----------- |
-| Ny åtkomstkontrollbehörighet för mål: [[!DNL Activate Segments without Mapping]](../../access-control/home.md#permissions) | Den nya behörigheten ger användarna möjlighet att aktivera segment för befintliga destinationer, utan att visa [mappningssteg](../../destinations/ui/activate-batch-profile-destinations.md#mapping). Användare kan lägga till och ta bort segment i aktiveringsarbetsflöden, men kan inte lägga till eller ta bort mappade attribut eller identiteter. |
+| Ny åtkomstkontrollbehörighet för mål: [[!DNL Activate Segments without Mapping]](../../access-control/home.md#permissions) | Den nya behörigheten ger användarna möjlighet att aktivera segment till befintliga mål, utan att visa [mappningssteget](../../destinations/ui/activate-batch-profile-destinations.md#mapping). Användare kan lägga till och ta bort segment i aktiveringsarbetsflöden, men kan inte lägga till eller ta bort mappade attribut eller identiteter. |
 
 {style="table-layout:auto"}
 
@@ -98,10 +98,10 @@ Mer information om Data Prep finns i [Översikt över datapreflight](../../data-
 
 Vi släpper en felkorrigering för PGP/GPG-kryptering i filbaserade mål för Real-Time CDP. Den här ändringen innebär att befintliga filbaserade mål som använder kryptering genererar ett filnamn med ett annat filtillägg än tidigare.
 
-- Aktuellt tillägg när kryptering används: `filename.csv`
-- Framtida tillägg när kryptering används: `filename.csv.gpg`
+- Aktuellt tillägg vid användning av kryptering: `filename.csv`
+- Framtida tillägg vid användning av kryptering: `filename.csv.gpg`
 
-Mer allmän information om destinationer finns i [destinationer, översikt](../../destinations/home.md).
+Mer allmän information om destinationer finns i [målöversikten](../../destinations/home.md).
 
 ## Experience Data Model (XDM) {#xdm}
 
@@ -111,7 +111,7 @@ XDM är en öppen källkodsspecifikation som innehåller gemensamma strukturer o
 
 | Funktion | Beskrivning |
 | --- | --- |
-| CSV till schemarapport | Du kan nu överföra dina lokala filer för att skapa scheman som genereras av maskininlärning och som eliminerar behovet av att skapa ett schema manuellt. Från [!UICONTROL Sources] arbetsyta, ladda upp en CSV-exempelfil och Adobe maskininlärningsalgoritmer föreslår ett schema åt dig baserat på målfälten. Se [dokumentation](../../ingestion/tutorials/map-csv/recommendations.md) för mer information.&quot; |
+| CSV till schemarapport | Du kan nu överföra dina lokala filer för att skapa scheman som genereras av maskininlärning och som eliminerar behovet av att skapa ett schema manuellt. Ladda upp en CSV-exempelfil från arbetsytan [!UICONTROL Sources], så föreslår maskininlärningsalgoritmerna i Adobe ett schema åt dig baserat på målfälten. Mer information finns i [dokumentationen](../../ingestion/tutorials/map-csv/recommendations.md).&quot; |
 
 {style="table-layout:auto"}
 
@@ -123,8 +123,8 @@ XDM är en öppen källkodsspecifikation som innehåller gemensamma strukturer o
 | Klass | [[!UICONTROL Decision Item]](https://github.com/adobe/xdm/pull/1678/files) | En artikel som kan bli föremål för beslut. Resultatet av en beslutsprocess är en eller flera beslutsposter. |
 | Klass | [[!UICONTROL Media Session Server Timeout]](https://github.com/adobe/xdm/pull/1676/files) | Detta anger hur lång tid (i sekunder) som har gått mellan användarens senaste kända interaktion och tidpunkten då sessionen stängdes. |
 | Fältgrupp | [[!UICONTROL XDM Profile Computed Attributes]](https://github.com/adobe/xdm/pull/1686/files) | Detta lägger till beräknade attribut från interna Adobe-tjänster till inkommande kunddata. Detta bör inte användas av kunder för att importera data. |
-| Datatyper | [[!UICONTROL Refund Item]](https://github.com/adobe/xdm/pull/1685/files) | Anger om en återbetalning är kopplad till en order och definierar typ av återbetalning, belopp och associerad valuta. |
-| Datatyper | [[!UICONTROL Category data]](https://github.com/adobe/xdm/pull/1677/files) | Den här nya datatypen representerar kategorin för en produkt. |
+| Datatyp | [[!UICONTROL Refund Item]](https://github.com/adobe/xdm/pull/1685/files) | Anger om en återbetalning är kopplad till en order och definierar typ av återbetalning, belopp och associerad valuta. |
+| Datatyp | [[!UICONTROL Category data]](https://github.com/adobe/xdm/pull/1677/files) | Den här nya datatypen representerar kategorin för en produkt. |
 | Schema | [[!UICONTROL Adobe Target Classification Fields]](https://github.com/adobe/xdm/pull/1682/files) | Ett nytt XDM-schema skapades för målklassificeringsdatamängder. Det innehåller en uppsättning metadatafält som klassificerar Target-aktiviteter och -upplevelser. |
 
 {style="table-layout:auto"}
@@ -134,24 +134,24 @@ XDM är en öppen källkodsspecifikation som innehåller gemensamma strukturer o
 | Komponenttyp | Namn | Beskrivning |
 | --- | --- | --- |
 | Fältgrupp | [[!UICONTROL Content Component Details]](https://github.com/adobe/xdm/pull/1674/files) | `uri-reference` togs bort från [!UICONTROL Content Component Details] |
-| Fältgrupp | [[!UICONTROL AJO Entity tags]](https://github.com/adobe/xdm/pull/1672/files) | Lagt till AJO-enhetstaggar i [!UICONTROL AJO Entity Fields], som motsvarar en resa eller kampanj |
-| Fältgrupp | (Flera) | Flera fält för [[!UICONTROL Journey Orchestration Step Event Common Fields]](https://github.com/adobe/xdm/pull/1671/files) |
+| Fältgrupp | [[!UICONTROL AJO Entity tags]](https://github.com/adobe/xdm/pull/1672/files) | AJO Entity-taggar har lagts till i [!UICONTROL AJO Entity Fields], som motsvarar en resa eller kampanj |
+| Fältgrupp | (Flera) | Flera fält har lagts till för [[!UICONTROL Journey Orchestration Step Event Common Fields]](https://github.com/adobe/xdm/pull/1671/files) |
 | Fältgrupp | (Flera) | [Flera XDM-händelsetyper har lagts till för [!UICONTROL Media Reporting]](https://github.com/adobe/xdm/pull/1670/files). |
-| Fältgrupp | [!UICONTROL Workfront Change Event] | The `Full Record` och `Accessor Employee Ids` fältgrupper lades till. |
-| Datatyper | [[!UICONTROL Product list item]](https://github.com/adobe/xdm/pull/1685/files) | The [!UICONTROL Refund Amount] har lagts till för att ange det belopp som återbetalats för posten, om ett sådant finns. |
-| Datatyper | [[!UICONTROL Order ]](https://github.com/adobe/xdm/pull/1685/files) | [!UICONTROL Refunds List] har lagts till i listan över återbetalningar för den här ordern. |
-| Datatyper | [[!UICONTROL Product List Item ]](https://github.com/adobe/xdm/pull/1677/files) | Produktkategorierna har lagts till i listan över kategoridata för den här produkten. |
-| Datatyp | [!UICONTROL Session details information] | Lagt till `pev3` strängfält som [anger vilken typ av medieström som används för rapportering](https://github.com/adobe/xdm/pull/1676/files). Dessutom lades `pccr` anger om en omdirigering har gjorts. |
-| Datatyp | [!UICONTROL Requisition List] | Tillhandahåller [egenskaper för rekvisitionslista](https://github.com/adobe/xdm/pull/1675/files). De innehåller namn, ID och beskrivning. |
-| Datatyp | [!UICONTROL Commerce] | The [Commerce-datatypen har uppdaterats](https://github.com/adobe/xdm/pull/1675/files) att inkludera `requisitionListOpens`, `requisitionListAdds`, `requisitionListRemovals`och `requisitionList`. |
+| Fältgrupp | [!UICONTROL Workfront Change Event] | Fältgrupperna `Full Record` och `Accessor Employee Ids` lades till. |
+| Datatyp | [[!UICONTROL Product list item]](https://github.com/adobe/xdm/pull/1685/files) | [!UICONTROL Refund Amount] lades till för att ange det belopp som återbetalats för artikeln, om någon. |
+| Datatyp | [[!UICONTROL Order ]](https://github.com/adobe/xdm/pull/1685/files) | [!UICONTROL Refunds List] har lagts till i listan över återbetalningar för den här ordern. |
+| Datatyp | [[!UICONTROL Product List Item ]](https://github.com/adobe/xdm/pull/1677/files) | Produktkategorierna har lagts till i listan över kategoridata för den här produkten. |
+| Datatyp | [!UICONTROL Session details information] | `pev3`-strängfältet som [anger vilken typ av medieström som används för rapportering](https://github.com/adobe/xdm/pull/1676/files) har lagts till. Egenskapen `pccr` har också lagts till och anger om en omdirigering har gjorts. |
+| Datatyp | [!UICONTROL Requisition List] | Tillhandahåller egenskaperna för [rekvisitionslistan](https://github.com/adobe/xdm/pull/1675/files). De innehåller namn, ID och beskrivning. |
+| Datatyp | [!UICONTROL Commerce] | Datatypen [Commerce har uppdaterats](https://github.com/adobe/xdm/pull/1675/files) så att den omfattar `requisitionListOpens`, `requisitionListAdds`, `requisitionListRemovals` och `requisitionList`. |
 
 {style="table-layout:auto"}
 
-Mer information om XDM in Platform finns i [XDM - systemöversikt](../../xdm/home.md).
+Mer information om XDM i Platform finns i [XDM-systemöversikt](../../xdm/home.md).
 
 ## Frågetjänst {#query-service}
 
-Med frågetjänsten kan du använda standard-SQL för att fråga data i Adobe Experience Platform [!DNL Data Lake]. Du kan ansluta alla datauppsättningar från datasjön och samla in frågeresultaten som en ny datauppsättning som kan användas i rapporter, Data Science Workspace eller för att matas in i kundprofilen i realtid.
+Med frågetjänsten kan du använda standard-SQL för att fråga efter data i Adobe Experience Platform [!DNL Data Lake]. Du kan koppla till alla datauppsättningar från datasjön och samla in frågeresultaten som en ny datamängd som kan användas för rapportering, Data Science Workspace eller för förtäring i kundprofilen i realtid.
 
 **Uppdaterade funktioner**
 
@@ -175,21 +175,21 @@ Real-Time CDP B2B Edition bygger på Real-time Customer Data Platform (Real-Time
 
 {style="table-layout:auto"}
 
-Läs mer om Real-Time CDP B2B Edition i [Real-Time CDP B2B Edition - översikt](../../rtcdp/overview.md).
+Mer information om Real-Time CDP B2B Edition finns i [Real-Time CDP B2B Edition-översikten](../../rtcdp/overview.md).
 
 ## Segmenteringstjänst {#segmentation}
 
-[!DNL Segmentation Service] definierar en viss deluppsättning av profiler genom att beskriva kriterierna som särskiljer en säljbar grupp av personer inom kundbasen. Segment kan baseras på registerdata (t.ex. demografisk information) eller tidsseriehändelser som representerar kundinteraktioner med ert varumärke.
+[!DNL Segmentation Service] definierar en viss delmängd av profiler genom att beskriva kriterierna som särskiljer en marknadsföringsbar grupp av personer inom din kundbas. Segment kan baseras på registerdata (t.ex. demografisk information) eller tidsseriehändelser som representerar kundinteraktioner med ert varumärke.
 
 **Nya eller uppdaterade funktioner**
 
 | Funktion | Beskrivning |
 | ------- | ----------- |
-| Profilmått | För att ni ska få en mer korrekt återgivning av profilmätvärden kombineras uppdelning efter medlemskap och omsättningsstatistik och beräknas nu över en 24-timmarsperiod. Mer information finns i [Användargränssnittsguide för segmentering](../../segmentation/ui/overview.md#browse) |
+| Profilmått | För att ni ska få en mer korrekt återgivning av profilmätvärden kombineras uppdelning efter medlemskap och omsättningsstatistik och beräknas nu över en 24-timmarsperiod. Mer information finns i [Användargränssnittsguiden för segmentering](../../segmentation/ui/overview.md#browse) |
 
 {style="table-layout:auto"}
 
-Mer information om [!DNL Segmentation Service], se [Översikt över segment](../../segmentation/home.md).
+Mer information om [!DNL Segmentation Service] finns i [Segmenteringsöversikt](../../segmentation/home.md).
 
 ## Källor {#sources}
 
@@ -201,11 +201,11 @@ Experience Platform tillhandahåller ett RESTful-API och ett interaktivt använd
 
 | Funktion | Beskrivning |
 | --- | --- |
-| Tillgänglighet för betaversion av [!DNL Chatlio] | The [!DNL Chatlio] finns nu i betaversionen. Använd [!DNL Chatlio] strömma [!DNL Chatlio] händelsedata till Experience Platform. Mer information finns i [[!DNL Chatlio] översikt](../../sources/connectors/marketing-automation/chatlio-webhook.md). |
-| Tillgänglighet för betaversion av [!DNL Customer.io] | The [!DNL Customer.io] finns nu i betaversionen. Använd [!DNL Customer.io] för att strömma era kundhändelsedata till Experience Platform. Mer information finns i [[!DNL Customer.io] översikt](../../sources/connectors/marketing-automation/customerio-webhook.md). |
-| Tillgänglighet för betaversion av [!DNL Pendo] | The [!DNL Pendo] finns nu i betaversionen. Använd [!DNL Pendo] för att strömma era produktanalysdata till Experience Platform. Mer information finns i [[!DNL Pendo] översikt](../../sources/connectors/analytics/pendo-webhook.md). |
-| Stöd för dataflöden | Du kan nu använda API:t för Flow Service för att ställa in dataflödena till ett utkasttillstånd. Ritade dataflöden kan senare uppdateras och publiceras med ny information. Mer information finns i guiden [ange källans dataflöden som utkast](../../sources/tutorials/api/draft.md). |
+| Beta-tillgänglighet för [!DNL Chatlio] | [!DNL Chatlio]-källan är nu tillgänglig i betaversion. Använd [!DNL Chatlio]-källan för att strömma dina [!DNL Chatlio]-händelsedata till Experience Platform. Mer information finns i [[!DNL Chatlio] översikten](../../sources/connectors/marketing-automation/chatlio-webhook.md). |
+| Beta-tillgänglighet för [!DNL Customer.io] | [!DNL Customer.io]-källan är nu tillgänglig i betaversion. Använd [!DNL Customer.io]-källan för att strömma dina kundhändelsedata till Experience Platform. Mer information finns i [[!DNL Customer.io] översikten](../../sources/connectors/marketing-automation/customerio-webhook.md). |
+| Beta-tillgänglighet för [!DNL Pendo] | [!DNL Pendo]-källan är nu tillgänglig i betaversion. Använd [!DNL Pendo]-källan för att strömma produktanalysdata till Experience Platform. Mer information finns i [[!DNL Pendo] översikten](../../sources/connectors/analytics/pendo-webhook.md). |
+| Stöd för dataflöden | Du kan nu använda API:t för Flow Service för att ställa in dataflödena till ett utkasttillstånd. Ritade dataflöden kan senare uppdateras och publiceras med ny information. Mer information finns i guiden om att [ställa in källans dataflöden som utkast](../../sources/tutorials/api/draft.md). |
 
 {style="table-layout:auto"}
 
-Läs mer om källor i [källöversikt](../../sources/home.md).
+Läs [Källöversikten](../../sources/home.md) om du vill veta mer om källor.

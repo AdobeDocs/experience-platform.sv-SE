@@ -1,7 +1,8 @@
 ---
 title: Skapa ett datumfilter
 description: Lär dig hur du filtrerar dina anpassade insikter efter datum.
-source-git-commit: 17ad52864bbca09844c0241b6451e6811bd8f413
+exl-id: fa05d651-ea43-41f0-9b7d-f19c4a9ac256
+source-git-commit: 5bb954da7c1e05922a4e0f8d0bc7d3ab5c8e0e58
 workflow-type: tm+mt
 source-wordcount: '653'
 ht-degree: 0%
@@ -10,25 +11,25 @@ ht-degree: 0%
 
 # Skapa ett datumfilter {#create-date-filter}
 
-Om du vill filtrera dina insikter efter datum måste du lägga till parametrar i dina SQL-frågor som kan acceptera datumbegränsningar. Detta görs som en del av arbetsflödet för att skapa insikter för proffsläget. Se [dokumentation för frågeproffsläge](#query-pro-mode) om du vill lära dig hur du anger SQL för dina insikter.
+Om du vill filtrera dina insikter efter datum måste du lägga till parametrar i dina SQL-frågor som kan acceptera datumbegränsningar. Detta görs som en del av arbetsflödet för att skapa insikter för proffsläget. Läs [frågedokumentationen för proffsläget](#query-pro-mode) om du vill veta hur du anger SQL för dina insikter.
 
 Frågeparametrar gör att du kan arbeta med dynamiska data när de fungerar som platshållare för de värden du lägger till vid körning. Dessa platshållarvärden kan uppdateras via användargränssnittet och ger mindre tekniska användare möjlighet att uppdatera insikterna baserat på datumintervall.
 
-Om du inte känner till frågeparametrarna läser du i dokumentationen för [riktlinjer för hur du implementerar parametriserade frågor](../../../../query-service/ui/parameterized-queries.md).
+Om du inte känner till frågeparametrar kan du läsa dokumentationen för [vägledning om hur du implementerar parametriserade frågor](../../../../query-service/ui/parameterized-queries.md).
 
 ## Använd ett datumfilter på instrumentpanelen {#apply-date-filter}
 
-Om du vill använda ett datumfilter väljer du **[!UICONTROL Add filter]** sedan **[!UICONTROL Date Filter]** i listrutan i vyn Kontrollpanel.
+Om du vill använda ett datumfilter väljer du **[!UICONTROL Add filter]** och sedan **[!UICONTROL Date Filter]** på den nedrullningsbara menyn i instrumentpanelsvyn.
 
-![En anpassad kontrollpanel med Lägg till filter och dess listruta markerad.](../../../images/customizable-insights/add-filter.png)
+![En anpassad kontrollpanel med filtret Lägg till och den nedrullningsbara menyn markerad.](../../../images/customizable-insights/add-filter.png)
 
 ## Redigera din SQL för att inkludera datumfrågeparametrar {#include-date-parameters}
 
-Se sedan till att SQL innehåller frågeparametrar som tillåter ett datumintervall. Om du ännu inte har införlivat frågeparametrar i din SQL-databas kan du redigera dina insikter och inkludera dessa parametrar. I dokumentationen finns instruktioner om hur du [redigera insikter](../query-pro-mode.md#edit).
+Se sedan till att SQL innehåller frågeparametrar som tillåter ett datumintervall. Om du ännu inte har införlivat frågeparametrar i din SQL-databas kan du redigera dina insikter och inkludera dessa parametrar. I dokumentationen finns instruktioner om hur du [redigerar en insikt](../query-pro-mode.md#edit).
 
 >[!TIP]
 >
->Du rekommenderas att lägga till `$START_DATE` och `$END_DATE` parametrar till SQL-satsen i alla diagram som du vill aktivera datumfilter för.
+>Du rekommenderas att lägga till `$START_DATE`- och `$END_DATE`-parametrar i SQL-satsen i alla diagram som du vill aktivera datumfilter för.
 
 >[!NOTE]
 >
@@ -36,7 +37,7 @@ Se sedan till att SQL innehåller frågeparametrar som tillåter ett datuminterv
 
 Om datamodellen eller tabellerna som du analyserar har en tidskomponent kan du gruppera data efter datum och sedan använda datumfiltren.
 
-SQL-satsen nedan visar hur du inkluderar `$START_DATE` och `$END_DATE` parametrar och använder `cast` om du vill bildruta tidskomponenten som ett datum.
+Exemplet på SQL-satsen nedan visar hur du inkluderar parametrarna `$START_DATE` och `$END_DATE` och använder `cast` för att rama in tidskomponenten som ett datum.
 
 ```sql
 SELECT Sum(personalization_consent_count) AS Personalization,
@@ -59,21 +60,21 @@ Skärmbilden nedan visar datumbegränsningarna som ingår i SQL-satsen och nycke
 >
 >När du komponerar en sats i frågeproffsläge måste du ange exempelvärden för varje parameter för att kunna köra SQL-satsen och skapa diagrammet. De exempelvärden som du anger när du komponerar programsatsen ersätts med de faktiska värden som du väljer för datumfiltret (eller det globala filtret) vid körning.
 
-![The [!UICONTROL Enter SQL] med datumparametrarna markerade i SQL.](../../../images/customizable-insights/sql-date-parameters.png)
+![Dialogrutan [!UICONTROL Enter SQL] med datumparametrar markerade i SQL.](../../../images/customizable-insights/sql-date-parameters.png)
 
 ## Aktivera datumparametrar i alla insikter {#enable-date-parameters}
 
-När du har implementerat rätt parametrar i din insikts SQL-databas kan `Start_date` och `End_date` variabler är nu tillgängliga som växlar i widgetens disposition. Se [fråga om populationssektion för proffswidget](#populate-widget) om du vill ha information om hur du redigerar en insikt.
+När du har införlivat de lämpliga parametrarna i dina insikter i SQL är variablerna `Start_date` och `End_date` nu tillgängliga som växlar i widgetens disposition. Se avsnittet [fråga efter populationssiffra för professionellt läge](#populate-widget) för mer information om hur du redigerar en insikt.
 
-I widgetens disposition väljer du att aktivera `Start_date` och `End_date` parametrar.
+I widgetens disposition väljer du för att aktivera parametrarna `Start_date` och `End_date`.
 
-![Widgetdispositionen med verktygen Start_date och End_date markerade.](../../../images/customizable-insights/widget-composer-date-filter-toggles.png)
+![Widgetdispositionen med kontrollerna Start_date och End_date markerade.](../../../images/customizable-insights/widget-composer-date-filter-toggles.png)
 
 Välj sedan lämpliga frågeparametrar i listrutorna.
 
 ![Widgetdispositionen med listrutan Start_date markerad.](../../../images/customizable-insights/widget-composer-date-filter-dropdown.png)
 
-Äntligen väljer du **[!UICONTROL Save and close]** för att gå tillbaka till kontrollpanelen. Datumfilter är nu aktiverade för alla insikter som har start- och slutdatumparametrar.
+Välj slutligen **[!UICONTROL Save and close]** om du vill gå tillbaka till instrumentpanelen. Datumfilter är nu aktiverade för alla insikter som har start- och slutdatumparametrar.
 
 ## Använda datumfiltret
 
@@ -93,6 +94,6 @@ När du har valt ett datumintervall på instrumentpanelen, kommer insikter med d
 
 ## Ta bort ett datumfilter {#delete-date-filter}
 
-Om du vill ta bort datumfiltret markerar du ikonen för att ta bort filtret (![Ikonen Ta bort filter.](../../../images/customizable-insights/delete-filter-icon.png)).
+Om du vill ta bort datumfiltret väljer du ikonen Ta bort filter (![Ikonen Ta bort filter.](../../../images/customizable-insights/delete-filter-icon.png)).
 
 ![En anpassad kontrollpanel med filterborttagningsikonen markerad.](../../../images/customizable-insights/delete-date-filter.png)

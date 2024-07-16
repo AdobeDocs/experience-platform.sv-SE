@@ -14,15 +14,15 @@ ht-degree: 1%
 
 # Kontoslutpunkt
 
-I Adobe Experience Platform Query Service används konton för att skapa autentiseringsuppgifter som inte förfaller och som du kan använda med externa SQL-klienter. Du kan använda `/accounts` -slutpunkten i frågetjänstens API, som gör att du kan skapa, hämta, redigera och ta bort integrationskonton för frågetjänsten automatiskt (kallas även tekniskt konto).
+I Adobe Experience Platform Query Service används konton för att skapa autentiseringsuppgifter som inte förfaller och som du kan använda med externa SQL-klienter. Du kan använda slutpunkten `/accounts` i API:t för frågetjänsten, som gör att du kan skapa, hämta, redigera och ta bort integrationskonton för frågetjänsten (kallas även för ett tekniskt konto).
 
 ## Komma igång
 
-Slutpunkterna som används i den här guiden ingår i API:t för frågetjänsten. Innan du fortsätter bör du granska [komma igång-guide](./getting-started.md) för viktig information som du behöver känna till för att kunna anropa API:t, inklusive obligatoriska rubriker och hur du läser exempel-API-anrop.
+Slutpunkterna som används i den här guiden ingår i API:t för frågetjänsten. Innan du fortsätter bör du läsa [kom igång-guiden](./getting-started.md) för att få viktig information som du behöver känna till för att kunna ringa anrop till API:t, inklusive nödvändiga rubriker och hur du läser exempel-API-anrop.
 
 ## Skapa ett konto
 
-Du kan skapa ett integrationskonto för frågetjänsten genom att göra en POST-förfrågan till `/accounts` slutpunkt.
+Du kan skapa ett integrationskonto för frågetjänsten genom att göra en POST-förfrågan till slutpunkten `/accounts`.
 
 **API-format**
 
@@ -54,7 +54,7 @@ curl -X POST https://platform.adobe.io/data/foundation/queryauth/accounts \
 | -------- | ----------- |
 | `accountName` | **Obligatoriskt** Namnet på Query Service-integrationskontot. |
 | `assignedToUser` | **Obligatoriskt** Det Adobe ID som Query Service-integrationskontot ska skapas för. |
-| `credential` | *(Valfritt)* Autentiseringsuppgiften som används för integreringen av frågetjänsten. Om inget anges genereras en autentiseringsuppgift automatiskt. |
+| `credential` | *(Valfritt)* Autentiseringsuppgifterna som används för integreringen av frågetjänsten. Om inget anges genereras en autentiseringsuppgift automatiskt. |
 | `description` | *(Valfritt)* En beskrivning av Query Service-integrationskontot. |
 
 **Svar**
@@ -72,12 +72,12 @@ Ett lyckat svar returnerar HTTP-status 200, med information om ditt nya Query Se
 | Egenskap | Beskrivning |
 | -------- | ----------- |
 | `technicalAccountName` | Namnet på ditt Query Service-integrationskonto. |
-| `technicalAccountId` | ID:t för ditt Query Service-integrationskonto. Detta, tillsammans med `credential`skapar ditt lösenord för ditt konto. |
-| `credential` | Autentiseringsuppgifterna för ditt Query Service-integrationskonto. Detta, tillsammans med `technicalAccountId`skapar ditt lösenord för ditt konto. |
+| `technicalAccountId` | ID:t för ditt Query Service-integrationskonto. Det här, tillsammans med `credential`, komponerar ditt lösenord för ditt konto. |
+| `credential` | Autentiseringsuppgifterna för ditt Query Service-integrationskonto. Det här, tillsammans med `technicalAccountId`, komponerar ditt lösenord för ditt konto. |
 
 ## Uppdatera ett konto
 
-Du kan uppdatera integrationskontot för frågetjänsten genom att göra en PUT-förfrågan till `/accounts` slutpunkt.
+Du kan uppdatera integrationskontot för frågetjänsten genom att göra en PUT-begäran till slutpunkten `/accounts`.
 
 **API-format**
 
@@ -110,7 +110,7 @@ curl -X PUT https://platform.adobe.io/data/foundation/queryauth/accounts/E09A0DF
 | Egenskap | Beskrivning |
 | -------- | ----------- |
 | `accountName` | *(Valfritt)* Det uppdaterade namnet för Query Service-integrationskontot. |
-| `assignedToUser` | *(Valfritt)* Det uppdaterade Adobe ID som Query Service-integrationskontot är länkat till. |
+| `assignedToUser` | *(Valfritt)* Uppdaterat Adobe ID som Query Service-integrationskontot är länkat till. |
 | `credential` | *(Valfritt)* Uppdaterade autentiseringsuppgifter för ditt Query Service-konto. |
 | `description` | *(Valfritt)* Den uppdaterade beskrivningen för Query Service-integrationskontot. |
 
@@ -135,7 +135,7 @@ Ett lyckat svar returnerar HTTP-status 200 med information om ditt nya Query Ser
 
 ## Visa alla konton
 
-Du kan hämta en lista över alla integrationskonton för frågetjänsten genom att göra en GET-förfrågan till `/accounts` slutpunkt.
+Du kan hämta en lista över alla integrationskonton för frågetjänsten genom att göra en GET-förfrågan till slutpunkten `/accounts`.
 
 **API-format**
 
@@ -206,7 +206,7 @@ Ett lyckat svar returnerar HTTP-status 200 med en lista över alla Query Service
 
 ## Ta bort ett konto
 
-Du kan ta bort integrationskontot för frågetjänsten genom att göra en DELETE-förfrågan till `/accounts` slutpunkt.
+Du kan ta bort integrationskontot för frågetjänsten genom att göra en DELETE-begäran till slutpunkten `/accounts`.
 
 **API-format**
 

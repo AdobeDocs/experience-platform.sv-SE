@@ -6,30 +6,30 @@ description: Lär dig hur du ansluter Adobe Experience Platform till MailChimp-m
 exl-id: 900d4073-129c-47ba-b7df-5294d25a7219
 source-git-commit: 90eb6256179109ef7c445e2a5a8c159fb6cbfe28
 workflow-type: tm+mt
-source-wordcount: '2123'
+source-wordcount: '2102'
 ht-degree: 0%
 
 ---
 
 # Skapa ett dataflöde för [!DNL Mailchimp Members] med API:t för Flow Service
 
-I följande självstudiekurs får du hjälp med att skapa en källanslutning och ett dataflöde som ger [!DNL Mailchimp Members] data till plattformen med [[!DNL Flow Service] API](https://www.adobe.io/experience-platform-apis/references/flow-service/).
+I följande självstudiekurs får du hjälp med att skapa en källanslutning och ett dataflöde för att överföra [!DNL Mailchimp Members]-data till plattformen med hjälp av [[!DNL Flow Service] API](https://www.adobe.io/experience-platform-apis/references/flow-service/) .
 
-## Förutsättningar
+## Förhandskrav
 
-Innan du kan ansluta [!DNL Mailchimp] till Adobe Experience Platform med OAuth 2-uppdateringskod måste du först hämta din åtkomsttoken för [!DNL MailChimp.] Se [[!DNL Mailchimp] OAuth 2 guide](https://mailchimp.com/developer/marketing/guides/access-user-data-oauth-2/) om du vill ha detaljerade anvisningar om hur du hittar din åtkomsttoken.
+Innan du kan ansluta [!DNL Mailchimp] till Adobe Experience Platform med OAuth 2-uppdateringskod måste du först hämta din åtkomsttoken för [!DNL MailChimp.] Se [[!DNL Mailchimp] OAuth 2-guiden](https://mailchimp.com/developer/marketing/guides/access-user-data-oauth-2/) för detaljerade instruktioner om hur du hittar din åtkomsttoken.
 
 ## Skapa en basanslutning {#base-connection}
 
-När du har hämtat [!DNL Mailchimp] autentiseringsreferenser, du kan nu starta processen att skapa dataflöde för att [!DNL Mailchimp Members] data till plattformen. Det första steget i att skapa ett dataflöde är att skapa en basanslutning.
+När du har hämtat dina autentiseringsuppgifter för [!DNL Mailchimp] kan du nu starta processen att skapa dataflöde för att överföra [!DNL Mailchimp Members]-data till plattformen. Det första steget i att skapa ett dataflöde är att skapa en basanslutning.
 
 En basanslutning bevarar information mellan källan och plattformen, inklusive källans autentiseringsuppgifter, anslutningsstatus och ditt unika basanslutnings-ID. Med det grundläggande anslutnings-ID:t kan du utforska och navigera bland filer inifrån källan och identifiera de specifika objekt som du vill importera, inklusive information om deras datatyper och format.
 
 [!DNL Mailchimp] har stöd för både grundläggande autentisering och OAuth 2-uppdateringskod. I följande exempel finns vägledning om hur du autentiserar med någon av autentiseringstyperna.
 
-### Skapa en [!DNL Mailchimp] basanslutning med grundläggande autentisering
+### Skapa en [!DNL Mailchimp]-basanslutning med grundläggande autentisering
 
-Skapa en [!DNL Mailchimp] basanslutning med grundläggande autentisering, gör en POST-förfrågan till `/connections` slutpunkt för [!DNL Flow Service] API:t anger autentiseringsuppgifter för `authorizationTestUrl`, `username`och `password`.
+Om du vill skapa en [!DNL Mailchimp]-basanslutning med grundläggande autentisering gör du en POST-förfrågan till `/connections`-slutpunkten för [!DNL Flow Service] API samtidigt som du anger autentiseringsuppgifter för `authorizationTestUrl`, `username` och `password`.
 
 **API-format**
 
@@ -71,15 +71,15 @@ curl -X POST \
 | --- | --- |
 | `name` | Namnet på din basanslutning. Kontrollera att namnet på din basanslutning är beskrivande, eftersom du kan använda detta för att söka efter information om din basanslutning. |
 | `description` | (Valfritt) En egenskap som du kan inkludera för att få mer information om din basanslutning. |
-| `connectionSpec.id` | Anslutningsspecifikations-ID för källan. Detta ID kan hämtas när källan har registrerats och godkänts via [!DNL Flow Service] API. |
+| `connectionSpec.id` | Anslutningsspecifikations-ID för källan. Detta ID kan hämtas när källan har registrerats och godkänts via API:t [!DNL Flow Service]. |
 | `auth.specName` | Autentiseringstypen som du använder för att ansluta källan till plattformen. |
 | `auth.params.authorizationTestUrl` | (Valfritt) URL:en för auktoriseringstestet används för att validera autentiseringsuppgifter när en basanslutning skapas. Om inget anges kontrolleras autentiseringsuppgifterna automatiskt när du skapar en källanslutning i stället. |
-| `auth.params.username` | Användarnamnet som motsvarar ditt [!DNL Mailchimp] konto. Detta krävs för grundläggande autentisering. |
-| `auth.params.password` | Lösenordet som motsvarar [!DNL Mailchimp] konto. Detta krävs för grundläggande autentisering. |
+| `auth.params.username` | Användarnamnet som motsvarar ditt [!DNL Mailchimp]-konto. Detta krävs för grundläggande autentisering. |
+| `auth.params.password` | Lösenordet som motsvarar ditt [!DNL Mailchimp]-konto. Detta krävs för grundläggande autentisering. |
 
 **Svar**
 
-Ett lyckat svar returnerar den nyskapade basanslutningen, inklusive dess unika anslutnings-ID (`id`). Detta ID krävs för att undersöka källans filstruktur och innehåll i nästa steg.
+Ett svar returnerar den nyskapade basanslutningen, inklusive dess unika anslutnings-ID (`id`). Detta ID krävs för att undersöka källans filstruktur och innehåll i nästa steg.
 
 ```json
 {
@@ -88,9 +88,9 @@ Ett lyckat svar returnerar den nyskapade basanslutningen, inklusive dess unika a
 }
 ```
 
-### Skapa en [!DNL Mailchimp] basanslutning med OAuth 2-uppdateringskod
+### Skapa en [!DNL Mailchimp]-basanslutning med OAuth 2-uppdateringskod
 
-Skapa en [!DNL Mailchimp] basanslutning med OAuth 2-uppdateringskod, gör en POST-förfrågan till `/connections` slutpunkt när autentiseringsuppgifter anges för `authorizationTestUrl`och `accessToken`.
+Om du vill skapa en [!DNL Mailchimp]-basanslutning med OAuth 2-uppdateringskod gör du en POST-förfrågan till `/connections`-slutpunkten samtidigt som du anger autentiseringsuppgifter för `authorizationTestUrl` och `accessToken`.
 
 **API-format**
 
@@ -131,14 +131,14 @@ curl -X POST \
 | --- | --- |
 | `name` | Namnet på din basanslutning. Kontrollera att namnet på din basanslutning är beskrivande, eftersom du kan använda detta för att söka efter information om din basanslutning. |
 | `description` | (Valfritt) En egenskap som du kan inkludera för att få mer information om din basanslutning. |
-| `connectionSpec.id` | Anslutningsspecifikations-ID för källan. Detta ID kan hämtas när du har registrerat källan med [!DNL Flow Service] API. |
+| `connectionSpec.id` | Anslutningsspecifikations-ID för källan. Detta ID kan hämtas efter att du har registrerat källan med API:t [!DNL Flow Service]. |
 | `auth.specName` | Autentiseringstypen som du använder för att autentisera källan till plattformen. |
 | `auth.params.authorizationTestUrl` | (Valfritt) URL:en för auktoriseringstestet används för att validera autentiseringsuppgifter när en basanslutning skapas. Om inget anges kontrolleras autentiseringsuppgifterna automatiskt när du skapar en källanslutning i stället. |
 | `auth.params.accessToken` | Motsvarande åtkomsttoken som används för att autentisera källan. Detta krävs för OAuth-baserad autentisering. |
 
 **Svar**
 
-Ett lyckat svar returnerar den nyskapade basanslutningen, inklusive dess unika anslutnings-ID (`id`). Detta ID krävs för att undersöka källans filstruktur och innehåll i nästa steg.
+Ett svar returnerar den nyskapade basanslutningen, inklusive dess unika anslutnings-ID (`id`). Detta ID krävs för att undersöka källans filstruktur och innehåll i nästa steg.
 
 ```json
 {
@@ -153,7 +153,7 @@ Med det grundläggande anslutnings-ID som du skapade i det föregående steget k
 
 >[!TIP]
 >
->Hämta den godkända formattypen för `{SOURCE_PARAMS}`måste du koda hela `list_id` sträng i base64. Till exempel: `"list_id": "10c097ca71"` kodad i base64 motsvarar `eyJsaXN0SWQiOiIxMGMwOTdjYTcxIn0=`.
+>Om du vill hämta den godkända formattypen för `{SOURCE_PARAMS}` måste du koda hela `list_id`-strängen i base64. Till exempel är `"list_id": "10c097ca71"` som är kodad i base64 lika med `eyJsaXN0SWQiOiIxMGMwOTdjYTcxIn0=`.
 
 **API-format**
 
@@ -170,7 +170,7 @@ När du gör en GET-förfrågan om att utforska källans filstruktur och innehå
 | `{OBJECT}` | Objektet som du vill utforska. |
 | `{FILE_TYPE}` | Den här parametern krävs bara när du visar en viss katalog. Dess värde representerar sökvägen till den katalog du vill utforska. |
 | `{PREVIEW}` | Ett booleskt värde som definierar om innehållet i anslutningen stöder förhandsvisning. |
-| `{SOURCE_PARAMS}` | En base64-kodad sträng i `list_id`. |
+| `{SOURCE_PARAMS}` | En base64-kodad sträng av `list_id`. |
 
 **Begäran**
 
@@ -322,7 +322,7 @@ Ett lyckat svar returnerar strukturen för den efterfrågade filen.
 
 ## Skapa en källanslutning {#source-connection}
 
-Du kan skapa en källanslutning genom att göra en POST-förfrågan till [!DNL Flow Service] API. En källanslutning består av ett anslutnings-ID, en sökväg till källdatafilen och ett anslutnings-spec-ID.
+Du kan skapa en källanslutning genom att göra en POST-förfrågan till API:t [!DNL Flow Service]. En källanslutning består av ett anslutnings-ID, en sökväg till källdatafilen och ett anslutnings-spec-ID.
 
 Om du vill skapa en källanslutning måste du också definiera ett uppräkningsvärde för dataformatattributet.
 
@@ -334,7 +334,7 @@ Använd följande uppräkningsvärden för filbaserade källor:
 | JSON | `json` |
 | Parquet | `parquet` |
 
-För alla tabellbaserade källor anger du värdet till `tabular`.
+Ange värdet `tabular` för alla tabellbaserade källor.
 
 **API-format**
 
@@ -376,13 +376,13 @@ curl -X POST \
 | `name` | Namnet på källanslutningen. Kontrollera att namnet på källanslutningen är beskrivande, eftersom du kan använda det här för att söka efter information om källanslutningen. |
 | `description` | (Valfritt) En egenskap som du kan inkludera för att ange mer information om din källanslutning. |
 | `baseConnectionId` | Basanslutnings-ID för [!DNL Mailchimp]. Detta ID genererades i ett tidigare steg. |
-| `connectionSpec.id` | Det ID för anslutningsspecifikation som motsvarar källan. |
-| `data.format` | Formatet på [!DNL Mailchimp] data som du vill importera. |
-| `params.listId` | Kallas även målgrupps-ID, [!DNL Mailchimp] list-ID tillåter överföring av målgruppsdata till andra integreringar. |
+| `connectionSpec.id` | Anslutningsspecifikations-ID som motsvarar källan. |
+| `data.format` | Formatet på de [!DNL Mailchimp]-data som du vill importera. |
+| `params.listId` | Listans ID [!DNL Mailchimp] kallas även målgrupps-ID och tillåter överföring av målgruppsdata till andra integreringar. |
 
 **Svar**
 
-Ett godkänt svar returnerar den unika identifieraren (`id`) för den nyligen skapade källanslutningen. Detta ID krävs i ett senare steg för att skapa ett dataflöde.
+Ett lyckat svar returnerar den unika identifieraren (`id`) för den nyligen skapade källanslutningen. Detta ID krävs i ett senare steg för att skapa ett dataflöde.
 
 ```json
 {
@@ -395,21 +395,21 @@ Ett godkänt svar returnerar den unika identifieraren (`id`) för den nyligen sk
 
 För att källdata ska kunna användas i Platform måste ett målschema skapas för att strukturera källdata efter dina behov. Målschemat används sedan för att skapa en plattformsdatauppsättning där källdata finns.
 
-Ett mål-XDM-schema kan skapas genom att utföra en POST-begäran till [API för schemaregister](https://www.adobe.io/experience-platform-apis/references/schema-registry/).
+Ett mål-XDM-schema kan skapas genom att utföra en POST-begäran till [schemats register-API ](https://www.adobe.io/experience-platform-apis/references/schema-registry/).
 
-Detaljerade anvisningar om hur du skapar ett XDM-målschema finns i självstudiekursen om [skapa ett schema med API](../../../../../xdm/api/schemas.md).
+Detaljerade steg om hur du skapar ett mål-XDM-schema finns i självstudiekursen [Skapa ett schema med API:t](../../../../../xdm/api/schemas.md).
 
 ### Skapa en måldatauppsättning {#target-dataset}
 
-En måldatauppsättning kan skapas genom att en POST till [Katalogtjänstens API](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/catalog.yaml), med ID:t för målschemat i nyttolasten.
+En måldatamängd kan skapas genom att utföra en POST-begäran till [katalogtjänstens API](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/catalog.yaml), som anger målschemats ID i nyttolasten.
 
-Detaljerade anvisningar om hur du skapar en måldatauppsättning finns i självstudiekursen om [skapa en datauppsättning med API](../../../../../catalog/api/create-dataset.md).
+Detaljerade steg om hur du skapar en måldatauppsättning finns i självstudiekursen [Skapa en datauppsättning med API:t](../../../../../catalog/api/create-dataset.md).
 
 ## Skapa en målanslutning {#target-connection}
 
 En målanslutning representerar anslutningen till målet där inkapslade data kommer in. Om du vill skapa en målanslutning måste du ange det fasta ID för anslutningsspecifikationen som motsvarar [!DNL Data Lake]. Detta ID är: `c604ff05-7f1a-43c0-8e18-33bf874cb11c`.
 
-Du har nu de unika identifierarna ett målschema, en måldatamängd och ett anslutningsspec-ID till [!DNL Data Lake]. Med dessa identifierare kan du skapa en målanslutning med [!DNL Flow Service] API för att ange den datauppsättning som ska innehålla inkommande källdata.
+Du har nu de unika identifierarna för ett målschema, en måldatamängd och ett anslutningsspec-ID för [!DNL Data Lake]. Med hjälp av dessa identifierare kan du skapa en målanslutning med API:t [!DNL Flow Service] för att ange den datauppsättning som ska innehålla inkommande källdata.
 
 **API-format**
 
@@ -454,13 +454,13 @@ curl -X POST \
 | `name` | Namnet på målanslutningen. Kontrollera att namnet på målanslutningen är beskrivande, eftersom du kan använda det här för att söka efter information om målanslutningen. |
 | `description` | (Valfritt) En egenskap som du kan inkludera för att ange mer information om målanslutningen. |
 | `connectionSpec.id` | Anslutningsspecifikations-ID som motsvarar [!DNL Data Lake]. Detta fasta ID är: `c604ff05-7f1a-43c0-8e18-33bf874cb11c`. |
-| `data.format` | Formatet på [!DNL Mailchimp] data som du vill ta med till plattformen. |
+| `data.format` | Formatet för de [!DNL Mailchimp]-data som du vill hämta till plattformen. |
 | `params.dataSetId` | Måldatauppsättnings-ID som hämtades i ett tidigare steg. |
 
 
 **Svar**
 
-Ett godkänt svar returnerar den nya målanslutningens unika identifierare (`id`). Detta ID krävs i senare steg.
+Ett svar returnerar den nya målanslutningens unika identifierare (`id`). Detta ID krävs i senare steg.
 
 ```json
 {
@@ -471,7 +471,7 @@ Ett godkänt svar returnerar den nya målanslutningens unika identifierare (`id`
 
 ## Skapa en mappning {#mapping}
 
-För att källdata ska kunna hämtas till en måldatamängd måste den först mappas till målschemat som måldatamängden följer. Detta uppnås genom att en POST begär [[!DNL Data Prep] API](https://www.adobe.io/experience-platform-apis/references/data-prep/) med datamappningar definierade i nyttolasten för begäran.
+För att källdata ska kunna hämtas till en måldatamängd måste den först mappas till målschemat som måldatamängden följer. Detta uppnås genom att utföra en begäran om POST till [[!DNL Data Prep] API](https://www.adobe.io/experience-platform-apis/references/data-prep/) med datamappningar definierade i nyttolasten för begäran.
 
 **API-format**
 
@@ -512,14 +512,14 @@ curl -X POST \
 
 | Egenskap | Beskrivning |
 | --- | --- |
-| `xdmSchema` | ID för [mål-XDM-schema](#target-schema) som genererats i ett tidigare steg. |
+| `xdmSchema` | ID:t för [mål-XDM-schemat](#target-schema) genererades i ett tidigare steg. |
 | `mappings.destinationXdmPath` | Mål-XDM-sökvägen dit källattributet mappas. |
 | `mappings.sourceAttribute` | Källattributet som måste mappas till en mål-XDM-sökväg. |
 | `mappings.identity` | Ett booleskt värde som anger om mappningsuppsättningen ska markeras för [!DNL Identity Service]. |
 
 **Svar**
 
-Ett godkänt svar returnerar information om den nyligen skapade mappningen inklusive dess unika identifierare (`id`). Detta värde krävs i ett senare steg för att skapa ett dataflöde.
+Ett lyckat svar returnerar information om den nyligen skapade mappningen inklusive dess unika identifierare (`id`). Detta värde krävs i ett senare steg för att skapa ett dataflöde.
 
 ```json
 {
@@ -534,15 +534,15 @@ Ett godkänt svar returnerar information om den nyligen skapade mappningen inklu
 
 ## Skapa ett flöde {#flow}
 
-Det sista steget mot att [!DNL Mailchimp] data till plattformen är att skapa ett dataflöde. Nu har du förberett följande obligatoriska värden:
+Det sista steget mot att överföra [!DNL Mailchimp] data till plattformen är att skapa ett dataflöde. Nu har du förberett följande obligatoriska värden:
 
-* [Källanslutnings-ID](#source-connection)
+* [Source-anslutnings-ID](#source-connection)
 * [Målanslutnings-ID](#target-connection)
 * [Mappnings-ID](#mapping)
 
 Ett dataflöde ansvarar för att schemalägga och samla in data från en källa. Du kan skapa ett dataflöde genom att utföra en begäran om POST samtidigt som du anger de tidigare angivna värdena i nyttolasten.
 
-Om du vill schemalägga ett intag måste du först ange starttidsvärdet till epok time i sekunder. Sedan måste du ange frekvensvärdet till ett av de fem alternativen: `once`, `minute`, `hour`, `day`, eller `week`. Intervallvärdet anger perioden mellan två på varandra följande inmatningar och att skapa en engångsinmatning kräver inget intervall. För alla andra frekvenser måste intervallvärdet anges till lika med eller större än `15`.
+Om du vill schemalägga ett intag måste du först ange starttidsvärdet till epok time i sekunder. Sedan måste du ange frekvensvärdet till ett av de fem alternativen: `once`, `minute`, `hour`, `day` eller `week`. Intervallvärdet anger perioden mellan två på varandra följande inmatningar och att skapa en engångsinmatning kräver inget intervall. Intervallvärdet måste vara lika med eller större än `15` för alla andra frekvenser.
 
 
 **API-format**
@@ -597,19 +597,19 @@ curl -X POST \
 | `description` | (Valfritt) En egenskap som du kan inkludera för att få mer information om dataflödet. |
 | `flowSpec.id` | Det ID för flödesspecifikation som krävs för att skapa ett dataflöde. Detta fasta ID är: `6499120c-0b15-42dc-936e-847ea3c24d72`. |
 | `flowSpec.version` | Motsvarande version av flödesspecifikations-ID. Standardvärdet är `1.0`. |
-| `sourceConnectionIds` | The [källanslutnings-ID](#source-connection) som genererats i ett tidigare steg. |
-| `targetConnectionIds` | The [målanslutnings-ID](#target-connection) som genererats i ett tidigare steg. |
+| `sourceConnectionIds` | [källanslutnings-ID](#source-connection) genererades i ett tidigare steg. |
+| `targetConnectionIds` | [målanslutnings-ID](#target-connection) genererades i ett tidigare steg. |
 | `transformations` | Den här egenskapen innehåller de olika omformningar som behövs för att dina data ska kunna användas. Den här egenskapen krävs när data som inte är XDM-kompatibla skickas till plattformen. |
 | `transformations.name` | Det namn som tilldelats omformningen. |
-| `transformations.params.mappingId` | The [mappnings-ID](#mapping) som genererats i ett tidigare steg. |
+| `transformations.params.mappingId` | [Mappnings-ID](#mapping) genererades i ett tidigare steg. |
 | `transformations.params.mappingVersion` | Motsvarande version av mappnings-ID. Standardvärdet är `0`. |
 | `scheduleParams.startTime` | Den angivna starttiden för när det första intaget av data börjar. |
-| `scheduleParams.frequency` | Frekvensen med vilken dataflödet samlar in data. Godtagbara värden är: `once`, `minute`, `hour`, `day`, eller `week`. |
+| `scheduleParams.frequency` | Frekvensen med vilken dataflödet samlar in data. Godtagbara värden är: `once`, `minute`, `hour`, `day` eller `week`. |
 | `scheduleParams.interval` | Intervallet anger perioden mellan två på varandra följande flödeskörningar. Intervallets värde ska vara ett heltal som inte är noll. Intervall krävs inte när frekvens har angetts som `once` och ska vara större än eller lika med `15` för andra frekvensvärden. |
 
 **Svar**
 
-Ett godkänt svar returnerar ID:t (`id`) av det nya dataflödet. Du kan använda det här ID:t för att övervaka, uppdatera eller ta bort dataflödet.
+Ett lyckat svar returnerar ID:t (`id`) för det nyskapade dataflödet. Du kan använda det här ID:t för att övervaka, uppdatera eller ta bort dataflödet.
 
 ```json
 {
@@ -624,20 +624,20 @@ Följande avsnitt innehåller information om hur du övervakar, uppdaterar och t
 
 ### Övervaka dataflödet
 
-När dataflödet har skapats kan du övervaka de data som importeras genom det för att se information om flödeskörningar, slutförandestatus och fel. Fullständiga API-exempel finns i guiden [övervaka källans dataflöden med API](../../monitor.md).
+När dataflödet har skapats kan du övervaka de data som importeras genom det för att se information om flödeskörningar, slutförandestatus och fel. Fullständiga API-exempel finns i handboken om [att övervaka källans dataflöden med API:t](../../monitor.md).
 
 ### Uppdatera ditt dataflöde
 
-Uppdatera information om dataflödet, t.ex. namn och beskrivning, samt körningsschema och tillhörande mappningsuppsättningar genom att göra en PATCH-begäran till `/flows` slutpunkt för [!DNL Flow Service] API, samtidigt som du anger ID:t för dataflödet. När du gör en begäran från PATCH måste du ange dataflödets unika `etag` i `If-Match` header. Fullständiga API-exempel finns i guiden [uppdatera källans dataflöde med API](../../update-dataflows.md).
+Uppdatera informationen om dataflödet, till exempel namn och beskrivning, samt körningsschema och associerade mappningsuppsättningar genom att göra en PATCH-begäran till `/flows`-slutpunkten i [!DNL Flow Service]-API:t, samtidigt som du anger ID:t för dataflödet. När du gör en PATCH-begäran måste du ange dataflödets unika `etag` i rubriken `If-Match`. Fullständiga API-exempel finns i guiden om att [uppdatera källkodsdataflöden med API:t](../../update-dataflows.md).
 
 ### Uppdatera ditt konto
 
-Uppdatera namn, beskrivning och autentiseringsuppgifter för källkontot genom att utföra en PATCH-begäran till [!DNL Flow Service] API när du anger ditt grundläggande anslutnings-ID som en frågeparameter. När du gör en PATCH-begäran måste du ange källkontots unika `etag` i `If-Match` header. Fullständiga API-exempel finns i guiden [uppdatera ditt källkonto med API](../../update.md).
+Uppdatera namn, beskrivning och autentiseringsuppgifter för källkontot genom att utföra en PATCH-begäran till [!DNL Flow Service]-API:t och ange ditt grundläggande anslutnings-ID som en frågeparameter. När du gör en PATCH-begäran måste du ange källkontots unika `etag` i rubriken `If-Match`. Fullständiga API-exempel finns i handboken [Uppdatera ditt källkonto med API](../../update.md).
 
 ### Ta bort ditt dataflöde
 
-Ta bort dataflödet genom att göra en DELETE-förfrågan till [!DNL Flow Service] API när du anger ID:t för det dataflöde som du vill ta bort som en del av frågeparametern. Fullständiga API-exempel finns i guiden [ta bort dataflöden med API](../../delete-dataflows.md).
+Ta bort dataflödet genom att utföra en DELETE-begäran till [!DNL Flow Service]-API:t och ange ID:t för det dataflöde som du vill ta bort som en del av frågeparametern. Fullständiga API-exempel finns i guiden om att [ta bort dataflöden med API:t](../../delete-dataflows.md).
 
 ### Ta bort ditt konto
 
-Ta bort ditt konto genom att göra en DELETE-förfrågan till [!DNL Flow Service] API när du anger basanslutnings-ID för det konto du vill ta bort. Fullständiga API-exempel finns i guiden [ta bort ditt källkonto med API](../../delete.md).
+Ta bort ditt konto genom att utföra en DELETE-begäran till [!DNL Flow Service]-API:t och ange det grundläggande anslutnings-ID:t för kontot som du vill ta bort. Fullständiga API-exempel finns i guiden om att [ta bort ditt källkonto med API](../../delete.md).

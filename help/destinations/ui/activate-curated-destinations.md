@@ -5,20 +5,20 @@ description: Lär dig hur du aktiverar målgrupper från Adobe Experience Platfo
 exl-id: 37e5bab9-588f-40b3-b65b-68f1a4b868f1
 source-git-commit: c2e308b5e743f07062be9a34e23c4bc700b27463
 workflow-type: tm+mt
-source-wordcount: '663'
+source-wordcount: '660'
 ht-degree: 0%
 
 ---
 
 # Aktivera målgrupper för kuraterade destinationer baserat på LiveRamp-identifierare
 
-Integrera Adobe Real-Time CDP med [!DNL LiveRamp] att aktivera målgrupper i en förvaltad lista över destinationer som använder [!DNL [LiveRamp RampID]](https://docs.liveramp.com/connect/en/interpreting-rampid,-liveramp-s-people-based-identifier.html) för aktivering, inklusive anslutna TV- och ljuddestinationer, t.ex. de som anges nedan.
+Använd Adobe Real-Time CDP-integreringen med [!DNL LiveRamp] för att aktivera målgrupper till en förvaltad lista med mål som använder [!DNL [LiveRamp RampID]](https://docs.liveramp.com/connect/en/interpreting-rampid,-liveramp-s-people-based-identifier.html) för aktivering, inklusive anslutna TV- och ljudmål, som de som listas nedan.
 
 >[!IMPORTANT]
 >
 >Du behöver inte importera eller på något sätt arbeta med LiveRamp-ID:n i Experience Platform-gränssnittet.
 >
-> Du kan exportera identiteter från Real-Time CDP, till exempel PII-baserade identifierare, kända identifierare och anpassade ID:n, enligt beskrivningen i [LiveRamp-dokumentation](https://docs.liveramp.com/connect/en/identity-and-identifier-terms-and-concepts.html#known-identifiers). Dessa identiteter matchas sedan med [!DNL LiveRamp RampIDs] längre fram i processen.
+> Du kan exportera identiteter från Real-Time CDP, till exempel PII-baserade identifierare, kända identifierare och anpassade ID:n, enligt beskrivningen i den officiella [LiveRamp-dokumentationen](https://docs.liveramp.com/connect/en/identity-and-identifier-terms-and-concepts.html#known-identifiers). Dessa identiteter matchas sedan med [!DNL LiveRamp RampIDs] längre fram i aktiveringsprocessen.
 
 
 * [[!DNL 4C Insights]](#insights)
@@ -46,17 +46,17 @@ I den här artikeln förklaras det arbetsflöde som krävs för att aktivera må
 
 ## Aktiveringsarbetsflöde {#workflow}
 
-Du kan aktivera målgrupper till anslutna TV- och ljuddestinationer genom att gå igenom en tvåstegsprocess och använda [LiveRamp - introduktion](../catalog/advertising/liveramp-onboarding.md) och [LiveRamp - Distribution](../catalog/advertising/liveramp-distribution.md) mål, vilket visas i bilden nedan.
+Du aktiverar målgrupper till anslutna TV- och ljuddestinationer genom att gå igenom en tvåstegsprocess och genom att använda [LiveRamp - OnBoarding](../catalog/advertising/liveramp-onboarding.md) och [LiveRamp - Distribution](../catalog/advertising/liveramp-distribution.md) -destinationerna, vilket visas i bilden nedan.
 
-![Bild som visar arbetsflödet för aktivering av målgrupper från Real-Time CDP till kuraterade destinationer via LiveRamp.](../assets/ui/activate-curated-destinations-liveramp/workflow-diagram.png){width="1920" zoomable="yes"}
+![Bild som visar arbetsflödet för aktivering av målgrupper från Real-Time CDP till kuraterade mål via LiveRamp.](../assets/ui/activate-curated-destinations-liveramp/workflow-diagram.png){width="1920" zoomable="yes"}
 
-Först exporterar ni era målgrupper från Real-Time CDP till [[!DNL LiveRamp - Onboarding]](../catalog/advertising/liveramp-onboarding.md) mål, som CSV-filer.
+Först exporterar du dina målgrupper från Real-Time CDP till målet [[!DNL LiveRamp - Onboarding]](../catalog/advertising/liveramp-onboarding.md) som CSV-filer.
 
-När du har exporterat dina målgrupper kan du aktivera dem med [[!DNL LiveRamp - Distribution]](../catalog/advertising/liveramp-distribution.md) mål.
+När du har exporterat dina målgrupper aktiverar du dem med hjälp av målet [[!DNL LiveRamp - Distribution]](../catalog/advertising/liveramp-distribution.md).
 
 >[!TIP]
 >
->Med den här processen kan ni aktivera era målgrupper för t.ex. [[!DNL Roku]](../catalog/advertising/liveramp-distribution.md#roku), [[!DNL Disney]](../catalog/advertising/liveramp-distribution.md#disney)och mycket mer, direkt från Real-Time CDP UI, utan att du behöver logga in på [!DNL LiveRamp] aktiveringskonto.
+>Med den här processen kan du aktivera dina målgrupper till mål som [[!DNL Roku]](../catalog/advertising/liveramp-distribution.md#roku), [[!DNL Disney]](../catalog/advertising/liveramp-distribution.md#disney) med flera, direkt från användargränssnittet i Real-Time CDP, utan att behöva logga in på ditt [!DNL LiveRamp]-konto för aktivering.
 
 ### Videosjälvstudiekurs {#video}
 
@@ -64,53 +64,53 @@ Titta på videon nedan för att få en komplett förklaring av arbetsflödet som
 
 >[!VIDEO](https://video.tv.adobe.com/v/3425367)
 
-### Steg 1: Skicka era målgrupper från Experience Platform till LiveRamp via [!DNL LiveRamp - Onboarding] mål {#onboarding}
+### Steg 1: Skicka dina målgrupper från Experience Platform till LiveRamp via målet [!DNL LiveRamp - Onboarding] {#onboarding}
 
-Det första du måste göra för att kunna aktivera dina målgrupper till kuraterade destinationer baserade på LiveRamp-ramp-ID:n är att **exportera era målgrupper från Experience Platform till[!DNL LiveRamp]**.
+Det första du måste göra för att aktivera dina målgrupper till kuraterade mål baserat på LiveRamp-ramp-ID:n är att **exportera dina målgrupper från Experience Platform till[!DNL LiveRamp]**.
 
-Du gör detta med **[!DNL LiveRamp - Onboarding]** mål.
+Det gör du med målet **[!DNL LiveRamp - Onboarding]**.
 
 ![Experience Platform-gränssnittsbild som visar LiveRamp - Destinationskort för introduktion](../assets/ui/activate-curated-destinations-liveramp/liveramp-onboarding-catalog.png)
 
-Så här konfigurerar du [!DNL LiveRamp - Onboarding] destinera och exportera era målgrupper från Experience Platform, läsa [[!DNL LiveRamp - Onboarding]](../catalog/advertising/liveramp-onboarding.md) måldokumentation.
+Läs [[!DNL LiveRamp - Onboarding]](../catalog/advertising/liveramp-onboarding.md)-måldokumentationen om du vill lära dig hur du konfigurerar [!DNL LiveRamp - Onboarding]-målet och exporterar dina målgrupper från Experience Platform.
 
 >[!IMPORTANT]
 >
->Vid export av filer till [!DNL LiveRamp - Onboarding] mål, Platform genererar en CSV-fil för varje [princip-ID för sammanslagning](../../profile/merge-policies/overview.md). Se [[!DNL LiveRamp - Onboarding]](../catalog/advertising/liveramp-onboarding.md) måldokumentation som innehåller detaljerad information om hur du validerar dataexporten till LiveRamp.
+>När du exporterar filer till målet [!DNL LiveRamp - Onboarding] genererar Plattform en CSV-fil för varje [ID för sammanfogningsprincip](../../profile/merge-policies/overview.md). Mer information om hur du validerar dataexporten till LiveRamp finns i [[!DNL LiveRamp - Onboarding]](../catalog/advertising/liveramp-onboarding.md)-måldokumentationen.
 
 
-När du har exporterat dina målgrupper till LiveRamp kan du fortsätta [steg 2](#distribution).
+När du har exporterat dina målgrupper till LiveRamp fortsätter du till [steg 2](#distribution).
 
 >[!TIP]
 >
->Innan du går till [steg 2](#distribution), [validera](../catalog/advertising/liveramp-onboarding.md#exported-data) att era målgrupper har exporterats till LiveRamp. Läs dokumentationen om [övervaka måldataflöden](../../dataflows/ui/monitor-destinations.md#dataflow-runs-for-batch-destinations) och läs om den specifika övervakningsinformationen för [[!DNL LiveRamp - Onboarding]](../catalog/advertising/liveramp-onboarding.md#exported-data).
+>Innan du går till [steg 2](#distribution) [validera](../catalog/advertising/liveramp-onboarding.md#exported-data) att dina målgrupper har exporterats till LiveRamp. Se dokumentationen om [övervakning av måldataflöden](../../dataflows/ui/monitor-destinations.md#dataflow-runs-for-batch-destinations) och läs om den specifika övervakningsinformationen för [[!DNL LiveRamp - Onboarding]](../catalog/advertising/liveramp-onboarding.md#exported-data).
 
-### Steg 2: Aktivera den medföljande målgruppen för uppkopplade TV- och ljuddestinationer via [!DNL LiveRamp - Distribution] mål {#distribution}
+### Steg 2: Aktivera de inbyggda målgrupperna till anslutna TV- och ljuddestinationer via målet [!DNL LiveRamp - Distribution] {#distribution}
 
-Efter att du har [validerad](../catalog/advertising/liveramp-onboarding.md#exported-data) när era målgrupper har exporterats till LiveRamp är det dags att aktivera målgrupperna till de destinationer du föredrar, som [[!DNL Roku]](../catalog/advertising/liveramp-distribution.md#roku), [[!DNL Disney]](../catalog/advertising/liveramp-distribution.md#disney), med mera.
+När du har [verifierat](../catalog/advertising/liveramp-onboarding.md#exported-data) att dina målgrupper har exporterats till LiveRamp är det dags att aktivera målgrupperna till önskade målplatser, till exempel [[!DNL Roku]](../catalog/advertising/liveramp-distribution.md#roku), [[!DNL Disney]](../catalog/advertising/liveramp-distribution.md#disney).
 
-Du aktiverar målgrupperna (exporterade i [steg 1](#onboarding)) genom att använda **[!DNL LiveRamp - Distribution]** mål.
+Du aktiverar målgrupperna (exporterade i [steg 1](#onboarding)) med hjälp av målet **[!DNL LiveRamp - Distribution]**.
 
-![Experience Platform-gränssnittsbild som visar LiveRamp-distributionskortet](../assets/ui/activate-curated-destinations-liveramp/liveramp-distribution-catalog.png)
+![Experience Platform-gränssnittsbild som visar LiveRamp - distributionskortet](../assets/ui/activate-curated-destinations-liveramp/liveramp-distribution-catalog.png)
 
-Så här konfigurerar du **[!DNL LiveRamp - Distribution]** och aktivera de målgrupper som du har exporterat i [steg 1](#onboarding), läsa [[!DNL LiveRamp - Distribution]](../catalog/advertising/liveramp-distribution.md) måldokumentation.
+Läs [[!DNL LiveRamp - Distribution]](../catalog/advertising/liveramp-distribution.md)-måldokumentationen om du vill lära dig hur du konfigurerar **[!DNL LiveRamp - Distribution]**-målet och aktiverar de målgrupper som du har exporterat i [steg 1](#onboarding).
 
 >[!IMPORTANT]
 >
->I **målgruppsval** steg i **[!DNL LiveRamp - Distribution]** mål måste du välja *exakt samma målgrupper* som du har exporterat till [LiveRamp - introduktion](../catalog/advertising/liveramp-onboarding.md) mål in [steg 1](#onboarding).
+>I steget **målgruppsval** för målet **[!DNL LiveRamp - Distribution]** måste du välja *exakt samma målgrupper* som du har exporterat till målet [LiveRamp - onboarding](../catalog/advertising/liveramp-onboarding.md) i [steg 1](#onboarding).
 
-När du konfigurerar **[!DNL LiveRamp - Distribution]** måste du skapa en dedikerad anslutning för varje nedladdningsbart mål som du vill använda (Roku, Disney osv.).
+När du konfigurerar **[!DNL LiveRamp - Distribution]**-målet måste du skapa en dedikerad anslutning för varje nedladdningsbart mål som du vill använda (Roku, Disney osv.).
 
 >[!TIP]
 >
->När du namnger målet rekommenderar Adobe följande format: `LiveRamp - Downstream Destination Name`. Det här namnmönstret hjälper dig att snabbt identifiera dina mål i [Bläddra](../ui/destinations-workspace.md#browse) -fliken i målarbetsytan.
+>När du namnger målet rekommenderar Adobe följande format: `LiveRamp - Downstream Destination Name`. Det här namnmönstret hjälper dig att snabbt identifiera dina mål på fliken [Bläddra](../ui/destinations-workspace.md#browse) på arbetsytan för mål.
 ><br>
 >Exempel: `LiveRamp - Roku`.
 
-![Skärmbild av användargränssnittet för plattformen med flera LiveRamp-mål.](../assets/ui/activate-curated-destinations-liveramp/liveramp-naming.png)
+![Skärmbild för användargränssnittet för plattformen med flera LiveRamp-mål.](../assets/ui/activate-curated-destinations-liveramp/liveramp-naming.png)
 
 ## Exporterade data/Validera dataexport {#exported-data}
 
-Så här validerar du den lyckade exporten av era målgrupper till [[!DNL LiveRamp - Onboarding]](../catalog/advertising/liveramp-onboarding.md) mål, se dokumentationen om [övervaka måldataflöden](../../dataflows/ui/monitor-destinations.md#dataflow-runs-for-batch-destinations) och läs om den specifika övervakningsinformationen för [[!DNL LiveRamp - Onboarding]](../catalog/advertising/liveramp-onboarding.md#exported-data).
+Om du vill validera den lyckade exporten av dina målgrupper till [[!DNL LiveRamp - Onboarding]](../catalog/advertising/liveramp-onboarding.md)-målet läser du dokumentationen om [övervakning av måldataflöden](../../dataflows/ui/monitor-destinations.md#dataflow-runs-for-batch-destinations) och läser om den specifika övervakningsinformationen för [[!DNL LiveRamp - Onboarding]](../catalog/advertising/liveramp-onboarding.md#exported-data).
 
 Om du vill validera att era målgrupper har aktiverats på valfri annonsplattform (som Roku, Disney med flera) loggar du in på målplattformskontot och kontrollerar aktiveringsvärdena.

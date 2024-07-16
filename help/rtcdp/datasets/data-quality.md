@@ -17,4 +17,4 @@ Med Adobe Real-time Customer Data Platform (Real-Time CDP) kan ni samla data fr�
 
 Real-Time CDP bygger p책 Adobe Experience Platform och utnyttjar m책nga av Experience Platform tj채nster och funktioner. Du kan allts책 vara s채ker p책 att dina data kommer att kontrolleras och valideras n채r de importeras.
 
-Mer detaljerad information om kontroller och b채sta praxis vid datainmatning finns i [dokumentation om datakvalitet](../../ingestion/quality/overview.md).
+Mer detaljerad information om kontroller och b채sta praxis vid inmatning av data finns i [dokumentationen om datakvalitet](../../ingestion/quality/overview.md).

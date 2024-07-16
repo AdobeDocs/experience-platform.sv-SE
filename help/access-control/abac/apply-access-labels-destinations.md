@@ -1,40 +1,40 @@
 ---
 title: Använd åtkomstetiketter för att hantera användaråtkomst till måldataflöden
 description: Lär dig hur du använder åtkomstetiketter för att hantera användaråtkomst till måldataflöden så att bara en delmängd av användarna i organisationen får åtkomst till specifika måldataflöden.
-badgePrivateBeta: label="Privat beta" type="Informative"
+badgePrivateBeta: label="Private Beta" type="Informative"
 hide: true
 hidefromtoc: true
 role: Developer, Admin, User
-source-git-commit: 5e5dc2f755be0f396dec1d3f19c166bae3bc9575
+exl-id: 85944720-8551-491c-8991-dd9668beb0ca
+source-git-commit: 62bcaa532cdec68a2f4f62e5784c35b91b7d5743
 workflow-type: tm+mt
 source-wordcount: '937'
 ht-degree: 0%
 
 ---
 
-
 # Använd åtkomstetiketter för att hantera användaråtkomst till måldataflöden
 
-Som en del av [!UICONTROL Attribute-based access control] i Real-Time CDP kan du nu använda åtkomstetiketter i måldataflöden. På så sätt kan du se till att bara en delmängd av användarna i organisationen får tillgång till specifika måldataflöden.
+Som en del av funktionen [!UICONTROL Attribute-based access control] i Real-Time CDP kan du nu använda åtkomstetiketter i måldataflöden. På så sätt kan du se till att bara en delmängd av användarna i organisationen får tillgång till specifika måldataflöden.
 
 När du lägger till en åtkomstetikett till ett visst mål kan bara användare som har tillgång till en roll som är tilldelad den etiketten se och redigera måldataflödet. Om ett måldataflöde inte har någon etikett visas det för alla användare som tillhör din organisation.
 
 Läs den här sidan om du vill veta mer om exempel på användning, krav innan du kan använda åtkomstetiketter på måldataflöden och andra viktiga pratbubblor när du använder den här funktionen.
 
-## Förutsättningar {#prerequisites}
+## Förhandskrav {#prerequisites}
 
-Observera följande krav innan du börjar använda den här funktionen. För att bekanta dig med [!UICONTROL Attribute-based access control] Adobe rekommenderar även att du läser följande artiklar:
+Observera följande krav innan du börjar använda den här funktionen. Om du vill bekanta dig med funktionen [!UICONTROL Attribute-based access control] rekommenderar Adobe att du läser följande artiklar:
 
 * [Attributbaserad åtkomstkontroll - översikt](/help/access-control/abac/overview.md)
 * [Attributbaserad åtkomstkontroll från början till slut](/help/access-control/abac/end-to-end-guide.md)
 
 ### Åtkomst till behörighetsgränssnittet {#access-permissions-ui}
 
-[!UICONTROL Permissions] är det område i Experience Cloud där administratörer kan definiera användarroller och profiler för att hantera behörigheter för funktioner och objekt i ett produktprogram. Läs [permissions section](/help/access-control/abac/end-to-end-guide.md#permissions) för att komma igång.
+[!UICONTROL Permissions] är det område på Experience Cloud där administratörer kan definiera användarroller och profiler för att hantera behörigheter för funktioner och objekt i ett produktprogram. Läs avsnittet [permissions](/help/access-control/abac/end-to-end-guide.md#permissions) för att komma igång.
 
 ### Skapa roller, etiketter och tilldela användare {#create-roles-labels-assign-users}
 
-När du har fått åtkomst till [!UICONTROL permissions] Gränssnittet, du eller en medlem i ditt team måste konfigurera roller och lägga till de nödvändiga etiketterna till de rollerna. Slutligen måste de användare som ska ha åtkomst till resurser som är märkta med de specifika etiketterna läggas till i rollen. Läs följande dokumentationsavsnitt:
+När du har fått åtkomst till användargränssnittet för [!UICONTROL permissions] måste du eller en medlem i ditt team konfigurera roller och lägga till de nödvändiga etiketterna till de rollerna. Slutligen måste de användare som ska ha åtkomst till resurser som är märkta med de specifika etiketterna läggas till i rollen. Läs följande dokumentationsavsnitt:
 
 * [Skapa en ny roll](/help/access-control/abac/ui/roles.md)
 * [Lägg till etiketter i en roll](/help/access-control/abac/end-to-end-guide.md#label-roles)
@@ -44,7 +44,7 @@ När du har fått åtkomst till [!UICONTROL permissions] Gränssnittet, du eller
 
 Du måste först ansluta till det önskade målet och skapa ett dataflöde för att exportera data, innan du kan använda åtkomstetiketter för dataflödet.
 
-Läs stödlinjerna på [ansluta till ett mål](/help/destinations/ui/connect-destination.md) och [aktivera data till målet](/help/destinations/ui/activation-overview.md). Välj sedan önskat mål på menyn [katalog över tillgängliga anslutningar](/help/destinations/catalog/overview.md).
+Läs stödlinjerna för [att ansluta till ett mål](/help/destinations/ui/connect-destination.md) och [aktivera data till målet](/help/destinations/ui/activation-overview.md). Välj sedan önskat mål i [katalogen med tillgängliga kopplingar](/help/destinations/catalog/overview.md).
 
 ## Redan tillgängligt: Använd åtkomstetiketter på andra Experience Platform-resurser {#apply-labels-other-resources}
 
@@ -59,10 +59,10 @@ Med åtkomstkontroll på objektnivå för destinationer kan du begränsa specifi
 Så här använder du åtkomstetiketter för ett specifikt dataflöde:
 
 1. Navigera till **[!UICONTROL Destinations]** > **[!UICONTROL Browse]** och leta reda på måldataflödet som du vill begränsa användarnas åtkomst till.
-1. Markera ellipsen (`...`) i [!UICONTROL Name] kolumn och använd ![Redigera informationskontroll](/help/access-control/images/olac/key-icon.svg) **[!UICONTROL Apply access labels]** för att lägga till nya etiketter och hantera befintliga etiketter för dataflödet.
-   ![Välj Använd åtkomstetiketter i bläddringsvyn på arbetsytan för mål.](/help/access-control/images/olac/apply-access-labels.png)
+1. Markera ellipsen (`...`) i kolumnen [!UICONTROL Name] och använd kontrollen ![Redigera detaljer](/help/access-control/images/olac/key-icon.svg) **[!UICONTROL Apply access labels]** för att lägga till nya etiketter och hantera befintliga etiketter för dataflödet.
+   ![Välj Använd åtkomstetiketter i sökvyn på arbetsytan för mål.](/help/access-control/images/olac/apply-access-labels.png)
 1. Markera etiketterna som du vill lägga till i måldataflödet och välj **[!UICONTROL Save]**.
-   ![Välj de åtkomstetiketter i som ska användas för måldataflödet.](/help/access-control/images/olac/view-access-labels.png)
+   ![Välj de åtkomstetiketter i som ska gälla för måldataflödet.](/help/access-control/images/olac/view-access-labels.png)
 1. Observera hur dataflödet nu har en åtkomstetikett som visas i användargränssnittet.
    ![Vy över flera måldataflöden med det valda dataflödet, hur en åtkomstetikett visas.](/help/access-control/images/olac/dataflow-with-access-label.png)
 
@@ -72,7 +72,7 @@ Du kan lägga till standardetiketter och anpassade etiketter i måldataflöden. 
 
 * Användare som tilldelas roller med åtkomst till samma etikett kan visa dataflödet med den nya etiketten i användargränssnittet. De kan visa och redigera måldataflödet i användargränssnittet eller via API:er.
 
-* Användare som *not* roller som har åtkomst till samma etikett har inte åtkomst till måldataflödet för att visa eller redigera det i användargränssnittet eller via API:er.
+* Användare som *inte* har tilldelats roller med åtkomst till samma etikett har inte åtkomst till måldataflödet för att visa eller redigera det i användargränssnittet eller via API:er.
 
 ## Viktiga hänvisningar och objekt att känna till {#important-callouts}
 
@@ -88,4 +88,4 @@ När du lägger till flera etiketter i ett måldataflöde måste användare som 
 
 Genom att följa stegen i det här dokumentet vet du nu hur du använder åtkomstetiketter i måldataflöden, så att bara en delmängd av användarna i organisationen får tillgång till specifika måldataflöden.
 
-Därefter kan du läsa mer om andra funktioner som stöds av [!UICONTROL Attribute-based access control] när data aktiveras till destinationer. Du kan till exempel begränsa användarnas åtkomst till [visa och aktivera endast specifika fält](/help/access-control/abac/overview.md#destinations).
+Därefter kan du läsa mer om andra funktioner som stöds av [!UICONTROL Attribute-based access control] när du aktiverar data till mål. Du kan till exempel begränsa användarnas åtkomst till [vyn och endast aktivera specifika fält](/help/access-control/abac/overview.md#destinations).

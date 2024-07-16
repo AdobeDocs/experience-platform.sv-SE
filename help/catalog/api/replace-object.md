@@ -13,11 +13,11 @@ ht-degree: 0%
 
 # Ersätta ett katalogobjekt
 
-Du kan skriva över innehållet i en [!DNL Catalog] objekt som använder en PUT-begäran, där hela resursen ersätts med den begärda nyttolasten.
+Du kan skriva över innehållet i ett [!DNL Catalog]-objekt med en PUT-begäran, där hela resursen ersätts med den begärda nyttolasten.
 
 >[!NOTE]
 >
->Om du bara behöver uppdatera ett fåtal specifika fält i en [!DNL Catalog] kan det vara mer effektivt att använda en PATCH-begäran.
+>Om du bara behöver uppdatera ett fåtal specifika fält i ett [!DNL Catalog]-objekt kan det vara mer effektivt att använda en PATCH-begäran.
 
 **API-format**
 
@@ -27,7 +27,7 @@ PUT /{OBJECT_TYPE}/{OBJECT_ID}
 
 | Parameter | Beskrivning |
 | --- | --- |
-| `{OBJECT_TYPE}` | Typ av [!DNL Catalog] objekt som ska ersättas. Giltiga objekt är: <ul><li>`batches`</li><li>`dataSets`</li><li>`dataSetFiles`</li></ul> |
+| `{OBJECT_TYPE}` | Den typ av [!DNL Catalog]-objekt som ska ersättas. Giltiga objekt är: <ul><li>`batches`</li><li>`dataSets`</li><li>`dataSetFiles`</li></ul> |
 | `{OBJECT_ID}` | Identifieraren för det specifika objekt som du vill uppdatera. |
 
 **Begäran**

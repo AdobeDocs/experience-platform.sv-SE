@@ -6,7 +6,7 @@ description: Det här dokumentet innehåller anvisningar om hur du använder din
 exl-id: 4cc89d1d-bc42-473d-ba54-ab3d1a2cd0d6
 source-git-commit: e300e57df998836a8c388511b446e90499185705
 workflow-type: tm+mt
-source-wordcount: '640'
+source-wordcount: '600'
 ht-degree: 0%
 
 ---
@@ -17,59 +17,59 @@ Det här dokumentet innehåller anvisningar om hur du använder din lokala milj�
 
 >[!TIP]
 >
->Följande dokument från Adobe medverkande kan användas som ytterligare stöd för din dokumentationsprocess: <ul><li>[Installera Git- och Markdown Authoring tools](https://experienceleague.adobe.com/docs/contributor/contributor-guide/setup/install-tools.html)</li><li>[Konfigurera Git-databasen lokalt för dokumentation](https://experienceleague.adobe.com/docs/contributor/contributor-guide/setup/local-repo.html)</li><li>[Arbetsflöde för GitHub-bidrag för större ändringar](https://experienceleague.adobe.com/docs/contributor/contributor-guide/setup/full-workflow.html)</li></ul>
+>Följande dokument från Adobe medverkande kan användas som ytterligare stöd för din dokumentationsprocess: <ul><li>[Installera Git- och Markdown-redigeringsverktygen](https://experienceleague.adobe.com/docs/contributor/contributor-guide/setup/install-tools.html)</li><li>[Konfigurera Git-databasen lokalt för dokumentation](https://experienceleague.adobe.com/docs/contributor/contributor-guide/setup/local-repo.html)</li><li>[Arbetsflöde för GitHub-bidrag för större ändringar](https://experienceleague.adobe.com/docs/contributor/contributor-guide/setup/full-workflow.html)</li></ul>
 
-## Förutsättningar
+## Förhandskrav
 
 I följande självstudie måste du ha installerat GitHub Desktop på din lokala dator. Om du inte har GitHub Desktop kan du hämta programmet [här](https://desktop.github.com/).
 
 ## Anslut till GitHub och konfigurera din lokala redigeringsmiljö
 
-Det första steget i att konfigurera din lokala redigeringsmiljö är att navigera till [Adobe Experience Platform GitHub-databas](https://github.com/AdobeDocs/experience-platform.en).
+Det första steget i att konfigurera din lokala redigeringsmiljö är att navigera till [Adobe Experience Platform GitHub-databasen](https://github.com/AdobeDocs/experience-platform.en).
 
 ![platform-repo](../assets/platform-repo.png)
 
-På huvudsidan i GitHub-databasen väljer du **Gaffel**.
+På huvudsidan i GitHub-databasen för plattformen väljer du **Förgrening**.
 
-![gaffel](../assets/fork.png)
+![förgrening](../assets/fork.png)
 
-Om du vill klona databasen till din lokala dator väljer du **Code**. I listrutan som visas väljer du **HTTPS** och sedan väljer **Öppna med GitHub Desktop**.
+Välj **Kod** om du vill klona databasen till din lokala dator. I listrutan som visas väljer du **HTTPS** och sedan **Öppna med GitHub Desktop**.
 
 >[!TIP]
 >
->Mer information finns i självstudiekursen om [konfigurera Git-databasen lokalt för dokumentation](https://experienceleague.adobe.com/docs/contributor/contributor-guide/setup/local-repo.html#create-a-local-clone-of-the-repository).
+>Mer information finns i självstudiekursen [Konfigurera Git-databasen lokalt för dokumentation](https://experienceleague.adobe.com/docs/contributor/contributor-guide/setup/local-repo.html#create-a-local-clone-of-the-repository).
 
 ![open-git-desktop](../assets/open-git-desktop.png)
 
-Låt sedan GitHub Desktop klona `experience-platform.en` databas.
+Tillåt sedan några ögonblick för GitHub Desktop att klona databasen `experience-platform.en`.
 
 ![kloning](../assets/cloning.png)
 
-När kloningsprocessen är klar går du till GitHub Desktop och skapar en ny gren. Välj **Master** i den övre navigeringen och välj **Ny gren**
+När kloningsprocessen är klar går du till GitHub Desktop och skapar en ny gren. Välj **Huvudsida** i den övre navigeringen och välj sedan **Ny gren**
 
 ![ny gren](../assets/new-branch.png)
 
-Ange ett beskrivande namn för din gren på pover-panelen som visas och välj sedan **Skapa gren**.
+Ange ett beskrivande namn för din gren i pover-panelen som visas och välj sedan **Skapa gren**.
 
 ![create-branch-vs](../assets/create-branch-vs.png)
 
-Nästa, välj **Publicera gren**.
+Välj sedan **Publish-gren**.
 
 ![publish-branch](../assets/publish-branch.png)
 
 ## Skriv dokumentationssidan för källan
 
-När databasen är klonad till din lokala dator och en ny gren skapas kan du nu börja skapa dokumentationssidan för den nya källan via [valfri textredigerare](https://experienceleague.adobe.com/docs/contributor/contributor-guide/setup/install-tools.html#understand-markdown-editors).
+När databasen är klonad till din lokala dator och en ny gren har skapats kan du nu börja skapa dokumentationssidan för den nya källan med den [textredigerare som du väljer](https://experienceleague.adobe.com/docs/contributor/contributor-guide/setup/install-tools.html#understand-markdown-editors).
 
-Adobe rekommenderar att du använder [Visual Studio Code](https://code.visualstudio.com/) och att du installerar tillägget för redigering av Adobe Markdown. Starta Visual Studio Code och välj sedan **Tillägg** från vänster navigering.
+Adobe rekommenderar att du använder [Visual Studio Code](https://code.visualstudio.com/) och att du installerar redigeringstillägget Adobe Markdown. Om du vill installera tillägget startar du Visual Studio-kod och väljer sedan fliken **Tillägg** i den vänstra navigeringen.
 
-![extension](../assets/extension.png)
+![tillägg](../assets/extension.png)
 
-Nästa, ange `Adobe Markdown Authoring` i sökfältet och välj **Installera** från sidan som visas.
+Ange sedan `Adobe Markdown Authoring` i sökfältet och välj **Installera** på sidan som visas.
 
 ![installera](../assets/install.png)
 
-Ladda ned [dokumentationsmall för källor](../assets/api-template.zip) och extrahera filen till `experience-platform.en/help/sources/tutorials/api/create/...` med [`...`] som representerar den kategori som du väljer. Om du t.ex. skapar en datakälla väljer du databasmappen.
+När den lokala datorn är klar hämtar du dokumentationsmallen för [källor](../assets/api-template.zip) och extraherar filen till `experience-platform.en/help/sources/tutorials/api/create/...` med [`...`] som representerar den kategori som du väljer. Om du t.ex. skapar en datakälla väljer du databasmappen.
 
 Till sist följer du instruktionerna i mallen och redigerar mallen med relevant information om källan.
 
@@ -77,11 +77,11 @@ Till sist följer du instruktionerna i mallen och redigerar mallen med relevant 
 
 ## Skicka in din dokumentation för granskning
 
-Om du vill skapa en pull-begäran (PR) och skicka in din dokumentation för granskning sparar du först ditt arbete i [!DNL Visual Studio Code] (eller den textredigerare du valt). Sedan anger du ett implementeringsmeddelande med hjälp av GitHub Desktop och väljer **Verkställ för att skapa källdokumentation**.
+Om du vill skapa en pull-begäran (PR) och skicka din dokumentation för granskning måste du först spara ditt arbete i [!DNL Visual Studio Code] (eller den textredigerare du valt). Sedan anger du ett implementeringsmeddelande med hjälp av GitHub Desktop och väljer **Verkställ för att skapa källdokumentation**.
 
 ![commit-vs](../assets/commit-vs.png)
 
-Nästa, välj **Penselursprung** för att överföra ditt arbete till fjärrgrenen.
+Välj sedan **Push origin** för att överföra ditt arbete till fjärrgrenen.
 
 ![push-origin](../assets/push-origin.png)
 
@@ -89,11 +89,11 @@ Om du vill skapa en pull-begäran väljer du **Skapa pull-begäran**.
 
 ![create-pr-vs](../assets/create-pr-vs.png)
 
-Kontrollera att bas- och jämförelsegrenarna är korrekta. Lägg till en anteckning i PR-rapporten som beskriver uppdateringen och välj sedan **Skapa pull-begäran**. Då öppnas en PR för att sammanfoga arbetsgrenen i ditt arbete med huvudgrenen i Adobe-databasen.
+Kontrollera att bas- och jämförelsegrenarna är korrekta. Lägg till en anteckning i PR, som beskriver uppdateringen och välj sedan **Skapa pull-begäran**. Då öppnas en PR för att sammanfoga arbetsgrenen i ditt arbete med huvudgrenen i Adobe-databasen.
 
 >[!TIP]
 >
->Lämna **Tillåt redigeringar av underhållare** kryssrutan markerad för att säkerställa att dokumentationsteamet på Adobe kan göra ändringar i PR.
+>Låt kryssrutan **Tillåt redigeringar av underhållare** vara markerad så att dokumentationsteamet i Adobe kan göra ändringar i PR-dokumentet.
 
 ![create-pr](../assets/create-pr.png)
 

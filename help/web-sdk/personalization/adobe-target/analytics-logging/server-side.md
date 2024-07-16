@@ -8,17 +8,17 @@ exl-id: 26c25f58-e43c-4147-8595-69ea85af561f
 source-git-commit: b6e084d2beed58339191b53d0f97b93943154f7c
 workflow-type: tm+mt
 source-wordcount: '163'
-ht-degree: 1%
+ht-degree: 0%
 
 ---
 
 # Logga A4T-data på serversidan i Platform Web SDK
 
-Med Adobe Experience Platform Web SDK kan du implementera Adobe Analytics for Target-funktioner (A4T) på Platform Edge Network. När loggning på serversidan är aktiverat utökas alla Analytics-träffar som skickas via Edge Network med Target-information på serversidan, utan att någon träffsammanfogningsprocess behöver utföras.
+Med Adobe Experience Platform Web SDK kan du implementera Adobe Analytics for Target-funktioner (A4T) på Platform Edge Network. När loggning på serversidan är aktiverad utökas alla Analytics-träffar som skickas via Edge Network med Target-information på serversidan, utan att du behöver gå igenom träffsammanfogningsprocessen.
 
 Loggning på serversidan för Analytics aktiveras när Analytics är aktiverat i datastream-konfigurationen:
 
-![Analysdataströmskonfiguration har aktiverats](../assets/enable-analytics-datastream.png)
+![Dataströmskonfiguration för analys har aktiverats](../assets/enable-analytics-datastream.png)
 
 I följande diagram visas hur data flödar genom systemet när Analytics-loggning på serversidan är aktiverat:
 
@@ -26,4 +26,4 @@ I följande diagram visas hur data flödar genom systemet när Analytics-loggnin
 
 ## Nästa steg
 
-Den här guiden täcker serverloggning av A4T-data i Web SDK. Se guiden på [loggning på klientsidan](./client-side.md) om du vill ha mer information om hur du hanterar A4T-data på klientsidan.
+Den här guiden täcker serverloggning av A4T-data i Web SDK. Mer information om hur du hanterar A4T-data på klientsidan finns i handboken om [klientloggning](./client-side.md).

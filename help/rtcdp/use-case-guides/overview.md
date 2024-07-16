@@ -2,7 +2,8 @@
 title: Exempel på användningsområden i Real-Time CDP
 description: Se exempel på olika användningsområden för olika tjänster för att få ut det mesta av er Real-Time CDP-implementering.
 feature: Use Cases
-source-git-commit: a58476e0a52cce763a114b2b4f4314fdb2e3f4c9
+exl-id: 2d92a9d3-7648-4241-904e-48f5b2e16023
+source-git-commit: 8be502c9eea67119dc537a5d63a6c71e0bff1697
 workflow-type: tm+mt
 source-wordcount: '351'
 ht-degree: 0%
@@ -35,11 +36,11 @@ Exemplen kan grupperas i kundvärvning och profilanrikning. På dokumentationsl�
     </a>
     <div>
       <a href="../partner-data/prospecting.md">
-    <strong>Nytt kundförvärv</strong>
+    <strong> Ny kundvärvning </strong>
     </a>
     </div>
     <p>
-    <em>Engagera och skaffa nya kunder utan att vara beroende av cookies från tredje part</em>
+    <em>Engagera och få nya kunder utan att vara beroende av cookies från tredje part</em>
     <p>
   </td>
   <td>
@@ -48,11 +49,11 @@ Exemplen kan grupperas i kundvärvning och profilanrikning. På dokumentationsl�
     </a>
     <div>
       <a href="../partner-data/onsite-personalization.md">
-    <strong>Personalisering på plats</strong>
+    <strong> Personalisering på plats </strong>
     </a>
     </div>
     <p>
-    <em>Personalisera upplevelser på plats för okända besökare med partnerstödd besökarigenkänning</em>
+    <em>Anpassa upplevelser på plats för okända besökare med partnerstödd besöksigenkänning</em>
     <p>
   </td>
   <td>
@@ -61,11 +62,11 @@ Exemplen kan grupperas i kundvärvning och profilanrikning. På dokumentationsl�
     </a>
     <div>
       <a href="../partner-data/offsite-retargeting.md">
-    <strong>Återannonsering utanför webbplatsen av oautentiserade besökare</strong>
+    <strong> Omdirigering offline för oautentiserade besökare </strong>
     </a>
     </div>
     <p>
-    <em>Lär dig hur du skapar en publik med oautentiserade besökare och omdirigerar dem med partnertillhandahållna varaktiga ID:n.</em>
+    <em>Lär dig hur du skapar en publik med oautentiserade besökare och omdirigerar dem med varaktiga ID:n från partner.</em>
     <p>
   </td>
   </tr>
@@ -81,7 +82,7 @@ Exemplen kan grupperas i kundvärvning och profilanrikning. På dokumentationsl�
     </a>
     <div>
       <a href="../partner-data/supplement-first-party-profiles.md">
-    <strong>Komplettera förstahandsprofiler med attribut som tillhandahålls av partner</strong>
+    <strong> Komplettera förstapartsprofiler med attribut som tillhandahålls av partner </strong>
     </a>
     </div>
     <p>
@@ -91,7 +92,7 @@ Exemplen kan grupperas i kundvärvning och profilanrikning. På dokumentationsl�
   </tr>
   </table>
 
-## Personalisering, insikter, engagemang {#personalization-insights-engagement}
+## Personalization, insikter, engagemang {#personalization-insights-engagement}
 
 <table style="margin-top: 0 !important">
 <tr>
@@ -101,11 +102,11 @@ Exemplen kan grupperas i kundvärvning och profilanrikning. På dokumentationsl�
     </a>
     <div>
       <a href="../partner-data/prospecting.md">
-    <strong>Intelligent återengagemang</strong>
+    <strong> Intelligent återengagemang </strong>
     </a>
     </div>
     <p>
-    <em>Engagera kunderna på nytt som har övergett konverteringsgraden på ett intelligent och ansvarsfullt sätt. Engagera kunderna med upplevelser för att öka konverteringsgraden och öka kundens livstidsvärde.</em>
+    <em>Engagera igen kunder som har övergett en konvertering på ett intelligent och ansvarsfullt sätt. Engagera kunderna med upplevelser för att öka konverteringen och öka kundens livstidsvärde.</em>
     <p>
   </td>
   </tr>

@@ -1,19 +1,19 @@
 ---
-keywords: Experience Platform;hemmabruk;populära ämnen; meddelanden
+keywords: Experience Platform;hem;populära ämnen; meddelanden
 description: Genom att prenumerera på Adobe I/O Events kan du använda webbhooks för att få meddelanden om flödeskörningsstatus för dina källanslutningar. Dessa meddelanden innehåller information om hur flödeskörningen lyckades eller om fel som bidragit till ett körningsfel.
 solution: Experience Platform
 title: Flödeskörningsmeddelanden
 exl-id: 0f1cde97-3030-4b8e-be08-21f64e78b794
 source-git-commit: 59dfa862388394a68630a7136dee8e8988d0368c
 workflow-type: tm+mt
-source-wordcount: '772'
-ht-degree: 1%
+source-wordcount: '756'
+ht-degree: 0%
 
 ---
 
 # Flödeskörningsmeddelanden
 
-Med Adobe Experience Platform kan data hämtas från externa källor samtidigt som du kan strukturera, etikettera och förbättra inkommande data med [!DNL Platform] tjänster. Du kan importera data från en mängd olika källor, till exempel Adobe-program, molnbaserad lagring, databaser och många andra.
+Adobe Experience Platform tillåter att data hämtas från externa källor samtidigt som du får möjlighet att strukturera, etikettera och förbättra inkommande data med [!DNL Platform]-tjänster. Du kan importera data från en mängd olika källor, till exempel Adobe-program, molnbaserad lagring, databaser och många andra.
 
 [[!DNL Flow Service] API](https://www.adobe.io/experience-platform-apis/references/flow-service/) används för att samla in och centralisera kunddata från olika källor inom [!DNL Platform]. Tjänsten tillhandahåller ett användargränssnitt och RESTful API som alla källor som stöds kan anslutas från.
 
@@ -23,23 +23,22 @@ Det här dokumentet innehåller anvisningar om hur du prenumererar på händelse
 
 ## Komma igång
 
-I den här självstudien antas att du redan har skapat minst en källanslutning vars flöde du vill övervaka. Om du ännu inte har konfigurerat en källanslutning kan du börja med att gå till [källöversikt](./home.md) om du vill konfigurera källan innan du återgår till den här guiden.
+I den här självstudien antas att du redan har skapat minst en källanslutning vars flöde du vill övervaka. Om du ännu inte har konfigurerat en källanslutning kan du börja med att gå till [källöversikten](./home.md) för att konfigurera valfri källa innan du går tillbaka till den här guiden.
 
-Det här dokumentet kräver också en fungerande förståelse för webbhooks och hur du ansluter en webkrok från ett program till ett annat. Se [[!DNL I/O Events] dokumentation](https://www.adobe.io/apis/experienceplatform/events/docs.html#!adobedocs/adobeio-events/master/intro/webhook_docs_intro.md) för en introduktion till webbhooks.
+Det här dokumentet kräver också en fungerande förståelse för webbhooks och hur du ansluter en webkrok från ett program till ett annat. Se [[!DNL I/O Events] dokumentationen](https://www.adobe.io/apis/experienceplatform/events/docs.html#!adobedocs/adobeio-events/master/intro/webhook_docs_intro.md) för en introduktion till webbhooks.
 
 ## Registrera en webkrok för meddelanden om flödeskörning
 
-För att få meddelanden om flödeskörning måste du använda Adobe Developer Console för att registrera en webkrok på din [!DNL Experience Platform] integrering.
+För att kunna ta emot meddelanden om flödeskörning måste du använda Adobe Developer Console för att registrera en webkrok för din [!DNL Experience Platform]-integrering.
 
-Följ självstudiekursen på [prenumererar på [!DNL I/O Event]-meddelanden](../observability/alerts/subscribe.md) för detaljerade steg om hur du uppnår detta.
+Följ självstudiekursen om att [prenumerera på [!DNL I/O Event]-meddelanden](../observability/alerts/subscribe.md) om du vill ha mer information om hur du gör detta.
 
 >[!IMPORTANT]
 >
->Se till att du väljer **[!UICONTROL Platform notifications]** som händelseleverantör och välj följande händelseprenumerationer:
+>Under prenumerationsprocessen måste du välja **[!UICONTROL Platform notifications]** som händelseleverantör och välja följande händelseprenumerationer:
 >
 >* **[!UICONTROL Experience Platform Source's Flow Run Succeeded]**
 >* **[!UICONTROL Experience Platform Source's Flow Run Failed]**
-
 
 ## Ta emot meddelanden om flödeskörning
 
@@ -49,11 +48,11 @@ Ett meddelande returnerar information som antalet överföringsjobb som körs, f
 
 >[!IMPORTANT]
 >
->Om partiellt intag är aktiverat när flödet skapas markeras ett flöde som innehåller både lyckade och misslyckade inmatningar som `sources_flow_run_success` endast om antalet fel ligger under det tröskelvärde för felprocent som angavs när flödet skapades. Om en lyckad flödeskörning innehåller fel inkluderas dessa fel fortfarande som en del av returnyttolasten.
+>Om partiellt intag är aktiverat under skapandet av flödet markeras ett flöde som innehåller både lyckade och misslyckade inmatningar som `sources_flow_run_success` endast om antalet fel är under det tröskelvärde för fel som angetts när flödet skapades. Om en lyckad flödeskörning innehåller fel inkluderas dessa fel fortfarande som en del av den returnerade nyttolasten.
 
 ### Lyckades
 
-Ett godkänt svar returnerar en uppsättning `metrics` som definierar egenskaper för ett visst flöde, och `activities` som visar hur data omformas.
+Ett lyckat svar returnerar en uppsättning `metrics` som definierar egenskaper för en specifik flödeskörning och `activities` som anger hur data omformas.
 
 ```json
 {
@@ -312,11 +311,11 @@ Följande svar är ett exempel på en misslyckad flödeskörning, där ett fel i
 
 >[!NOTE]
 >
->Se [appendix](#errors) för mer information om felmeddelanden.
+>Mer information om felmeddelanden finns i [bilagan](#errors).
 
 ## Nästa steg
 
-Du kan nu prenumerera på händelser som gör att du kan få meddelanden i realtid om flödeskörningsstatus. Mer information om flödeskörningar och källor finns i [källöversikt](./home.md).
+Du kan nu prenumerera på händelser som gör att du kan få meddelanden i realtid om flödeskörningsstatus. Mer information om flödeskörningar och källor finns i [Källöversikt](./home.md).
 
 ## Bilaga
 

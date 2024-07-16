@@ -1,22 +1,22 @@
 ---
 solution: Experience Platform
-title: PQL Övriga funktioner
-description: Följande funktion är en annan funktion för PQL (Profile Query Language).
+title: PQL övriga funktioner
+description: Följande funktion är en annan funktion för Profile Query Language (PQL).
 exl-id: a6ed31a2-a649-4dc8-89b1-48c1170b7f16
 source-git-commit: dbb7e0987521c7a2f6512f05eaa19e0121aa34c6
 workflow-type: tm+mt
-source-wordcount: '115'
-ht-degree: 2%
+source-wordcount: '117'
+ht-degree: 0%
 
 ---
 
 # Diverse funktioner
 
-Följande funktion är en annan funktion för [!DNL Profile Query Language] (PQL). Mer information om andra PQL-funktioner finns i [[!DNL Profile Query Language] översikt](./overview.md).
+Följande funktion är en annan funktion för [!DNL Profile Query Language] (PQL). Mer information om andra PQL-funktioner finns i [[!DNL Profile Query Language] översikten](./overview.md).
 
 ## Låt
 
-The `let` -funktionen tillåter att ett uttryck lagras som en variabel som kan användas senare i en fråga.
+Funktionen `let` tillåter att ett uttryck lagras som en variabel som kan användas senare i en fråga.
 
 **Format**
 
@@ -34,4 +34,4 @@ let S = (sum X.commerce.order.priceTotal over X from xEvent where X.commerce.ord
 
 ## Nästa steg
 
-Nu när du har lärt dig mer om olika funktioner kan du använda dem i dina PQL-frågor. Mer information om andra PQL-funktioner finns i [Profilfrågespråk - översikt](./overview.md).
+Nu när du har lärt dig mer om olika funktioner kan du använda dem i dina PQL-frågor. Mer information om andra PQL-funktioner finns i [Profile Query Language-översikten](./overview.md).

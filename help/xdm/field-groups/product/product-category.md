@@ -9,9 +9,9 @@ ht-degree: 1%
 
 ---
 
-# [!UICONTROL Product Category] schemafältgrupp
+# Schemafältgruppen [!UICONTROL Product Category]
 
-[!UICONTROL Product Category] är en standardgrupp för schemafält för [[!UICONTROL Product] class](../../classes/product.md) som hämtar egenskaper som hör till en produkts kategori.
+[!UICONTROL Product Category] är en standardschemafältgrupp för [[!UICONTROL Product] class ](../../classes/product.md) som hämtar egenskaper som är relaterade till en produkts kategori.
 
 ![](../../images/field-groups/product/product-category.png)
 
@@ -24,4 +24,4 @@ ht-degree: 1%
 
 {style="table-layout:auto"}
 
-Mer information om fältgruppen finns i [publik XDM-databas](https://github.com/adobe/xdm/blob/master/docs/reference/fieldgroups/product/product-category.schema.json).
+Mer information om fältgruppen finns i [den offentliga XDM-databasen](https://github.com/adobe/xdm/blob/master/docs/reference/fieldgroups/product/product-category.schema.json).

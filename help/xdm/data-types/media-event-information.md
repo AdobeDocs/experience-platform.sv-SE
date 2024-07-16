@@ -9,18 +9,18 @@ ht-degree: 1%
 
 ---
 
-# [!UICONTROL Media Event Information] datatyp
+# Datatypen [!UICONTROL Media Event Information]
 
-[!UICONTROL Media Event Information] är en XDM-datatyp (Standard Experience Data Model) som beskriver medieinformationsinformation som rör upplevelsehändelsen.
+[!UICONTROL Media Event Information] är en XDM-datatyp (Standard Experience Data Model) som beskriver information om mediedetaljer som rör upplevelsehändelsen.
 
 ![Ett diagram över datatypen Media Event Information.](../images/data-types/media-event-information.png)
 
 | Egenskap | Datatyp | Beskrivning |
 | --- | --- | --- |
-| `mediaCollection` | [!UICONTROL mediaDetails] | Medieinformation som rör upplevelsehändelsen. Den här datatypen används för båda [mediedatainsamling](./media-collection-details.md) och [medierapporter](./media-reporting-details.md). |
+| `mediaCollection` | [!UICONTROL mediaDetails] | Medieinformation som rör upplevelsehändelsen. Den här datatypen används för både [mediedatainsamling](./media-collection-details.md) och [mediedatarapportering](./media-reporting-details.md). |
 | `mediaEventTimestamp` | [!UICONTROL String] | Den tid då en mediahändelse inträffade. |
 | `mediaEventType` | [!UICONTROL String] | Mediehändelsetypen. |
 
 {style="table-layout:auto"}
 
-Mer information om fältgruppen finns i [publik XDM-databas](https://github.com/adobe/xdm/blob/master/components/datatypes/mediaevent.schema.json)
+Mer information om fältgruppen finns i [den offentliga XDM-databasen](https://github.com/adobe/xdm/blob/master/components/datatypes/mediaevent.schema.json)

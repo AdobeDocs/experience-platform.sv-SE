@@ -4,7 +4,7 @@ description: Lär dig mer om taggmiljöerna och hur de fungerar i Adobe Experien
 exl-id: 0bf641c9-412e-4737-9b76-232d980385b2
 source-git-commit: 8ded2aed32dffa4f0923fedac7baf798e68a9ec9
 workflow-type: tm+mt
-source-wordcount: '1452'
+source-wordcount: '1450'
 ht-degree: 0%
 
 ---
@@ -13,12 +13,12 @@ ht-degree: 0%
 
 >[!NOTE]
 >
->Adobe Experience Platform Launch har omklassificerats som en serie datainsamlingstekniker i Adobe Experience Platform. Som ett resultat av detta har flera terminologiska förändringar införts i produktdokumentationen. Se följande [dokument](../../term-updates.md) för en konsoliderad hänvisning till terminologiska förändringar.
+>Adobe Experience Platform Launch har omklassificerats som en serie datainsamlingstekniker i Adobe Experience Platform. Som ett resultat av detta har flera terminologiska förändringar införts i produktdokumentationen. I följande [dokument](../../term-updates.md) finns en konsoliderad referens till de ändrade terminologin.
 
 Taggmiljöer definierar flera viktiga aspekter av de biblioteksbyggen som du distribuerar på din webbplats eller i din app:
 
 * Budets filnamn.
-* Domän och sökväg för bygget, beroende på miljöns tilldelade värd.
+* Domänen och sökvägen för bygget, beroende på miljöns tilldelade värd.
 * Filformatet för bygget, beroende på vilket arkivalternativ som har valts.
 
 När du skapar en biblioteksversion måste du tilldela den till en miljö. Byggnadens tillägg, regler och dataelement kompileras sedan och placeras i den tilldelade miljön. Varje miljö har en unik inbäddningskod som gör att du kan integrera den tilldelade inbäddningen på din plats.
@@ -29,13 +29,13 @@ Det här dokumentet innehåller anvisningar om hur du installerar, konfigurerar 
 
 ## Miljötyper
 
-Taggar har stöd för tre olika miljötyper, som alla motsvarar olika lägen i [publiceringsarbetsflöde](./publishing-flow.md):
+Taggar har stöd för tre olika miljötyper, som alla motsvarar olika lägen i [publiceringsarbetsflödet](./publishing-flow.md):
 
 | Miljötyp | Beskrivning |
 | --- | --- |
-| Utveckling | Den här miljön motsvarar **Utveckling** -kolumnen i publiceringsarbetsflödet. |
-| Mellanlagring | Den här miljön motsvarar **Skickat** och **Godkänd** kolumner i publiceringsarbetsflödet. |
-| Produktion | Den här miljön motsvarar **Publicerad** -kolumnen i publiceringsarbetsflödet. |
+| Utveckling | Den här miljön motsvarar kolumnen **Utveckling** i publiceringsarbetsflödet. |
+| Mellanlagring | Den här miljön motsvarar kolumnerna **Skickat** och **Godkänt** i publiceringsarbetsflödet. |
+| Produktion | Den här miljön motsvarar kolumnen **Publicerad** i publiceringsarbetsflödet. |
 
 Olika artefakter kan finnas i varje miljö. På så sätt kan du testa olika bibliotek i olika miljöer samtidigt som du använder dem i publiceringsarbetsflödet.
 
@@ -53,35 +53,35 @@ Varje miljö har en uppsättning instruktioner som används för att ansluta den
 >
 >Produktionens inbäddningskod för en webbegenskap stöder webbläsarcachelagring, medan inbäddningskoderna för utveckling och staging inte gör det. Därför bör du inte använda utvecklingskoder eller mellanlagringsinbäddningskoder i hög trafik- eller produktionskontext.
 
-Om du vill få tillgång till installationsinstruktionerna för en miljö går du till **[!UICONTROL Environments]** -fliken för din egenskap och välj sedan **[!UICONTROL Install]** ikon för den miljön.
+Om du vill få tillgång till installationsinstruktionerna för en miljö går du till fliken **[!UICONTROL Environments]** för egenskapen och väljer sedan ikonen **[!UICONTROL Install]** för den miljön.
 
 ![](./images/environments/install-buttons.png)
 
-Om du använder en webbegenskap får du en inbäddningskod att användas i `<head>` -taggen i dokumentet. Du får också möjlighet att distribuera biblioteksfiler synkront eller asynkront vid körning. Beroende på vilken inställning du väljer visas olika installationsanvisningar. Inbäddningskoder förklaras närmare senare i det här dokumentet.
+Om du använder en webbegenskap får du en inbäddningskod som ska användas i taggen `<head>` i dokumentet. Du får också möjlighet att distribuera biblioteksfiler synkront eller asynkront vid körning. Beroende på vilken inställning du väljer visas olika installationsanvisningar. Inbäddningskoder förklaras närmare senare i det här dokumentet.
 
 ![](./images/environments/web-instructions.png)
 
-Om du använder en mobil egenskap får du separata instruktioner för hur du installerar beroenden för Android (via [Gråta](https://gradle.org/)) och iOS (via [CocoaPods](https://cocoapods.org/)).
+Om du använder en mobil egenskap får du separata instruktioner för hur du installerar beroenden för Android (via [Gradle](https://gradle.org/)) och iOS (via [CocoaPods](https://cocoapods.org/)).
 
 ![](./images/environments/mobile-instructions.png)
 
 ## Mobilkonfiguration
 
-För mobila egenskaper kan du visa konfigurationsalternativen för en miljö genom att välja den i listan. Här kan du ändra miljöns namn. I mobilmiljöer kan för närvarande endast värdar som hanteras av Adobe användas.
+För mobila egenskaper kan du visa konfigurationsalternativen för en miljö genom att välja den i listan. Härifrån kan du ändra namnet på miljön. I mobilmiljöer kan för närvarande endast värdar som hanteras av Adobe användas.
 
 ![](./images/environments/mobile-config.png)
 
-Se översikten på [värdar](./hosts/hosts-overview.md) för mer information.
+Mer information finns i översikten på [värdar](./hosts/hosts-overview.md).
 
 ## Webbkonfiguration
 
 Inställningarna från den tilldelade miljön avgör följande för webbegenskaper:
 
-* **Värd**: Serverplatsen där du vill att bygget ska distribueras.
-* **Arkivinställning**: Anger om systemet ska generera en distributionsbar uppsättning filer eller låta dem komprimeras i ett arkivformat.
-* **Bädda in kod**: The `<script>` kod som ska bäddas in HTML på webbplatsens sidor, som används för att distribuera biblioteksbygget vid körning.
+* **Värd**: Den serverplats där du vill att din version ska distribueras.
+* **Arkivinställning**: Anger om systemet ska skapa en distributionsbar uppsättning filer eller låta dem komprimeras i ett arkivformat.
+* **Bädda in kod**: Den `<script>`-kod som ska bäddas in HTML på webbplatsens sidor, som används för att distribuera biblioteksbygget vid körning.
 
-I [!UICONTROL Environments] väljer du en listad miljö för att visa dess konfigurationskontroller.
+På fliken [!UICONTROL Environments] väljer du en listad miljö för att visa dess konfigurationskontroller.
 
 ![](./images/environments/environment-config.png)
 
@@ -91,13 +91,13 @@ Välj **[!UICONTROL Host]** om du vill välja en förkonfigurerad värd för mil
 
 ![](./images/environments/select-host.png)
 
-När ett bygge skapas levereras det till den plats som du angav för den tilldelade värden. Mer information om hur du skapar och konfigurerar taggvärdar finns i [Översikt över värdar](./hosts/hosts-overview.md).
+När ett bygge skapas levereras det till den plats som du angav för den tilldelade värden. Mer information om hur du skapar och konfigurerar taggvärdar finns i [värdöversikten](./hosts/hosts-overview.md).
 
 ### Arkivinställning {#archive}
 
 De flesta byggen består av flera filer. Flerfilsbyggen innehåller en huvudbiblioteksfil (länkad i inbäddningskoden) som innehåller interna referenser till andra filer som hämtas in efter behov.
 
-The **[!UICONTROL Create archive]** kan du växla systemens arkivinställning. Som standard är arkivalternativet inaktiverat och bygget levereras i ett format som körs i befintligt skick (JavaScript för webbegenskaper och JSON för mobilegenskaper).
+Med knappen **[!UICONTROL Create archive]** kan du växla systemens arkivinställning. Som standard är arkivalternativet inaktiverat och bygget levereras i ett format som körs i befintligt skick (JavaScript för webbegenskaper och JSON för mobilegenskaper).
 
 Om du aktiverar arkivinställningen visas ytterligare konfigurationsinställningar i användargränssnittet, vilket gör att du kan kryptera arkivfilen och definiera en sökväg till biblioteket om du använder självbetjäning.
 
@@ -113,7 +113,7 @@ Om du använder arkivalternativet levereras alla byggfiler som en ZIP-fil i stä
 
 ### Bädda in kod {#embed-code}
 
-En inbäddningskod är en `<script>` som måste placeras i `<head>` -avsnitt på webbplatsens sidor för att läsa in och köra koden som du skapar. Varje miljökonfiguration genererar automatiskt sin egen inbäddningskod, så du behöver bara kopiera och klistra in den på din plats på de sidor där du vill att taggar ska köras.
+En inbäddningskod är en `<script>`-tagg som måste placeras i `<head>` -avsnitten på webbplatsens sidor för att koden som du skapar ska kunna läsas in och köras. Varje miljökonfiguration genererar automatiskt sin egen inbäddningskod, så du behöver bara kopiera och klistra in den på din plats på de sidor där du vill att taggar ska köras.
 
 När du visar installationsinstruktionerna kan du välja att skriptet ska läsa in biblioteksfilerna synkront eller asynkront. Den här inställningen är inte beständig och återspeglar inte hur du har implementerat taggar på din plats. Istället är det bara tänkt att visa rätt sätt att installera miljön.
 
@@ -125,13 +125,13 @@ När du visar installationsinstruktionerna kan du välja att skriptet ska läsa 
 
 Asynkron distribution gör att webbläsaren kan fortsätta läsa in resten av sidan medan biblioteket hämtas. Det finns bara en inbäddningskod när den här inställningen används, som måste placeras i dokumentet `<head>`.
 
-Mer information om den här inställningen finns i handboken [asynkron distribution](../client-side/asynchronous-deployment.md).
+Mer information om den här inställningen finns i guiden om [asynkron distribution](../client-side/asynchronous-deployment.md).
 
 #### Synkron distribution
 
 När webbläsaren läser en inbäddningskod med synkron distribution, hämtas taggbiblioteket och körs innan sidan läses in.
 
-Synkrona inbäddningskoder består av två `<script>` -taggar som måste placeras HTML på webbplatsen. Ett `<script>` -taggen måste placeras i dokumentet `<head>`, medan den andra måste placeras precis före stängningen `</body>` -tagg.
+Synkrona inbäddningskoder består av två `<script>`-taggar som måste placeras HTML på webbplatsen. En `<script>`-tagg måste placeras i dokumentet `<head>`, medan den andra måste placeras precis före den avslutande `</body>`-taggen.
 
 #### Bädda in koduppdateringar
 
@@ -149,11 +149,11 @@ Eftersom inbäddningskoder genereras baserat på dina miljökonfigurationer, kom
 
 Tre miljöer tilldelas automatiskt till en egenskap när egenskapen skapas: utveckling, staging och produktion. Detta räcker för att köra publiceringsarbetsflödet. Om du vill kan du dock lägga till ytterligare utvecklingsmiljöer, eftersom detta kan vara användbart för större team där flera utvecklare arbetar med olika projekt samtidigt.
 
-På [!UICONTROL Environments] -flik för din egenskap, välj **[!UICONTROL Add Environment]**.
+Välj **[!UICONTROL Add Environment]** på fliken [!UICONTROL Environments] för egenskapen.
 
 ![](./images/environments/create-new.png)
 
-På nästa skärm väljer du **[!UICONTROL Development]** alternativ.
+På nästa skärm väljer du alternativet **[!UICONTROL Development]**.
 
 ![](./images/environments/create-development.png)
 
@@ -161,7 +161,7 @@ På nästa skärm kan du namnge den nya miljön, välja en värd och välja en a
 
 ![](./images/environments/create-config.png)
 
-The [!UICONTROL Environments] -fliken visas igen med installationsanvisningarna för den nya miljön.
+Fliken [!UICONTROL Environments] visas igen och installationsanvisningarna för den nya miljön visas.
 
 ![](./images/environments/create-install.png)
 
@@ -169,4 +169,4 @@ The [!UICONTROL Environments] -fliken visas igen med installationsanvisningarna 
 
 Genom att läsa det här dokumentet bör du ha en fungerande förståelse för hur du konfigurerar miljöer i användargränssnittet och installerar dem på din webbplats eller i din app. Nu kan du börja publicera dina biblioteksbyggen.
 
-När du publicerar versioner av ditt bibliotek över tid kan du behöva spåra och arkivera tidigare versioner för felsökning och återställning. Se guiden [publicera om äldre bibliotek](./republish.md) för mer information.
+När du publicerar versioner av ditt bibliotek över tid kan du behöva spåra och arkivera tidigare versioner för felsökning och återställning. Mer information finns i guiden [Publicera om äldre bibliotek](./republish.md).

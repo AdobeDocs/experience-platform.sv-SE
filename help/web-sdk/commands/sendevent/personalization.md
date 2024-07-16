@@ -1,7 +1,8 @@
 ---
 title: personalisering
 description: Återge olika innehåll till olika användare och skapa en personlig upplevelse för dem.
-source-git-commit: f75dcfc945be2f45c1638bdd4d670288aef6e1e6
+exl-id: 4bd370c8-8d8d-469e-9666-b5b6d0e3a660
+source-git-commit: 8be502c9eea67119dc537a5d63a6c71e0bff1697
 workflow-type: tm+mt
 source-wordcount: '69'
 ht-degree: 0%
@@ -10,9 +11,9 @@ ht-degree: 0%
 
 # `personalization`
 
-The `personalization` -objektet innehåller flera egenskaper som gör att du kan anpassa användarupplevelsen beroende på användaren. Det är särskilt värdefullt i Adobe Target- och Adobe Journey Optimizer-implementeringar, eftersom det är den pådrivande kraften som gör att du kan anpassa visuellt innehåll per användare.
+Objektet `personalization` innehåller flera egenskaper som gör att du kan anpassa användarupplevelsen beroende på användaren. Det är särskilt värdefullt i Adobe Target- och Adobe Journey Optimizer-implementeringar, eftersom det är den pådrivande kraften som gör att du kan anpassa visuellt innehåll per användare.
 
-Läs dokumentationen om hur du [återge personaliserat innehåll](../../personalization/rendering-personalization-content.md) för mer information.
+Mer information finns i dokumentationen om hur du [återger anpassat innehåll](../../personalization/rendering-personalization-content.md).
 
 <!--
 ## Properties within this object

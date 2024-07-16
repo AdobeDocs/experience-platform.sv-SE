@@ -15,4 +15,4 @@ ht-degree: 0%
 
 Självstudiekursen för att aktivera en datauppsättning för användning i kundprofilen i realtid och Adobe Experience Platform Identity Service innehåller steg för att skapa en ny datauppsättning och konfigurera en befintlig datauppsättning. Självstudiekursen omfattar även steg för inmatning av data i datauppsättningen och för att bekräfta att data har importerats till profiltjänsten och identitetstjänsten.
 
-Gå till [Aktivera en datauppsättning för profil och identitet med API:er, självstudiekurs](../../catalog/datasets/enable-for-profile.md), som ingår i datamängdsdokumentationen.
+Gå till [Aktivera en datauppsättning för profil och identitet med hjälp av självstudiekursen för API:er](../../catalog/datasets/enable-for-profile.md), som ingår i dokumentationen för datauppsättningar, för att få tillgång till den här självstudiekursen.

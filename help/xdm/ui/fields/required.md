@@ -16,19 +16,19 @@ I Experience Data Model (XDM) anger ett obligatoriskt fält att det måste anges
 
 >[!IMPORTANT]
 >
->Oavsett om ett schemafält krävs eller inte accepterar inte plattformen `null` eller tomma värden för inkapslade fält. Om det inte finns något värde för ett visst fält i en post eller händelse, ska nyckeln för det fältet uteslutas från inmatningsnyttolasten.
+>Oavsett om ett schemafält krävs eller inte, accepterar inte plattformen `null` eller tomma värden för inkapslade fält. Om det inte finns något värde för ett visst fält i en post eller händelse, ska nyckeln för det fältet uteslutas från inmatningsnyttolasten.
 
-När [definiera ett nytt fält](./overview.md#define) i Adobe Experience Platform-användargränssnittet kan du ange det som ett obligatoriskt fält genom att välja **[!UICONTROL Required]** i den högra listen. Välj **[!UICONTROL Apply]** för att tillämpa ändringen på schemat.
+När du [definierar ett nytt fält](./overview.md#define) i Adobe Experience Platform-användargränssnittet kan du ange det som ett obligatoriskt fält genom att markera kryssrutan **[!UICONTROL Required]** i den högra listen. Välj **[!UICONTROL Apply]** om du vill tillämpa ändringen på schemat.
 
-![Kryssrutan Obligatoriskt](../../images/ui/fields/required/root.png)
+![Krävs kryssruta](../../images/ui/fields/required/root.png)
 
-Om fältet är ett rotnivåattribut under klientorganisations-ID-objektet visas sökvägen omedelbart under **[!UICONTROL Required fields]** till vänster.
+Om fältet är ett rotnivåattribut under klientorganisations-ID-objektet visas sökvägen omedelbart under **[!UICONTROL Required fields]** i den vänstra listen.
 
-![Obligatoriskt fält på rotnivå](../../images/ui/fields/required/applied.png)
+![Obligatoriskt rotfält](../../images/ui/fields/required/applied.png)
 
-Om ett obligatoriskt fält är kapslat i ett objekt som inte är markerat som obligatoriskt, visas emellertid inte det kapslade fältet under **[!UICONTROL Required fields]** till vänster.
+Om ett obligatoriskt fält är kapslat i ett objekt som inte är markerat som obligatoriskt, visas emellertid inte det kapslade fältet under **[!UICONTROL Required fields]** i den vänstra listen.
 
-I exemplet nedan är `internalSKU` fältet anges som obligatoriskt, men dess överordnade objekt `SKUs` inte. I det här fallet uppstår inga valideringsfel om `SKUs` tas inte med vid inmatning av data, även om det underordnade fältet `internalSKU` markeras som obligatoriskt. Med andra ord: `SKUs` är valfri måste den innehålla `internalSKU` -fältet i den händelse det inkluderas.
+I exemplet nedan anges fältet `internalSKU` som obligatoriskt, men det överordnade objektet `SKUs` är det inte. I det här fallet uppstår inga valideringsfel om `SKUs` utelämnas vid inmatning av data, även om det underordnade fältet `internalSKU` markeras som obligatoriskt. Det innebär att även om `SKUs` är valfritt måste det innehålla ett `internalSKU`-fält i den händelse det inkluderas.
 
 ![Kapslat obligatoriskt fält](../../images/ui/fields/required/nested.png)
 
@@ -38,4 +38,4 @@ Om du vill att ett kapslat fält alltid ska vara obligatoriskt i ett schema, må
 
 ## Nästa steg
 
-I den här handboken beskrivs hur du definierar ett obligatoriskt fält i användargränssnittet. Se översikten på [definiera fält i användargränssnittet](./overview.md#special) för att lära dig hur du definierar andra XDM-fälttyper i [!DNL Schema Editor].
+I den här handboken beskrivs hur du definierar ett obligatoriskt fält i användargränssnittet. Mer information om hur du definierar andra XDM-fälttyper i [!DNL Schema Editor] finns i översikten [Definiera fält i användargränssnittet](./overview.md#special).

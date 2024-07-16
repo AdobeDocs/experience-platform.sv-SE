@@ -6,14 +6,14 @@ description: Det här dokumentet innehåller information om de Adobe-definierade
 exl-id: 275aa14e-f555-4365-bcd6-0dd6df2456b3
 source-git-commit: 58eadaaf461ecd9598f3f508fab0c192cf058916
 workflow-type: tm+mt
-source-wordcount: '1486'
-ht-degree: 2%
+source-wordcount: '1468'
+ht-degree: 1%
 
 ---
 
 # Adobe-definierade SQL-funktioner i frågetjänsten
 
-Adobe-definierade funktioner, nedan kallade ADF:er, är färdiga funktioner i Adobe Experience Platform Query Service som hjälper till att utföra vanliga affärsrelaterade uppgifter på [!DNL Experience Event] data. De innehåller funktioner för [Yrkesställning](https://experienceleague.adobe.com/docs/analytics/components/virtual-report-suites/vrs-mobile-visit-processing.html) och [Attribut](https://experienceleague.adobe.com/docs/analytics/analyze/analysis-workspace/attribution/overview.html) som de som finns i Adobe Analytics.
+Funktioner som definieras av Adobe, och som kallas för ADF, är färdiga funktioner i Adobe Experience Platform Query Service som hjälper till att utföra vanliga affärsrelaterade uppgifter på [!DNL Experience Event]-data. Dessa innehåller funktioner för [Sessioner](https://experienceleague.adobe.com/docs/analytics/components/virtual-report-suites/vrs-mobile-visit-processing.html) och [Attribution](https://experienceleague.adobe.com/docs/analytics/analyze/analysis-workspace/attribution/overview.html) som de som finns i Adobe Analytics.
 
 Det här dokumentet innehåller information om funktioner som definieras av Adobe i [!DNL Query Service].
 
@@ -23,11 +23,11 @@ Det här dokumentet innehåller information om funktioner som definieras av Adob
 
 ## Fönsterfunktioner {#window-functions}
 
-Huvuddelen av affärslogiken kräver att man samlar kontaktytorna för en kund och beställer dem med tiden. Den här supporten tillhandahålls av [!DNL Spark] SQL i form av fönsterfunktioner. Fönsterfunktioner är en del av standard-SQL och stöds av många andra SQL-motorer.
+Huvuddelen av affärslogiken kräver att man samlar kontaktytorna för en kund och beställer dem med tiden. Det här stödet tillhandahålls av [!DNL Spark] SQL i form av fönsterfunktioner. Fönsterfunktioner är en del av standard-SQL och stöds av många andra SQL-motorer.
 
-En fönsterfunktion uppdaterar en aggregering och returnerar ett enda objekt för varje rad i den ordnade delmängden. Den mest grundläggande aggregeringsfunktionen är `SUM()`. `SUM()` tar raderna och ger en summa. Om du i stället använder `SUM()` till ett fönster, som gör det till en fönsterfunktion, får du en kumulativ summa för varje rad.
+En fönsterfunktion uppdaterar en aggregering och returnerar ett enda objekt för varje rad i den ordnade delmängden. Den mest grundläggande aggregeringsfunktionen är `SUM()`. `SUM()` tar dina rader och ger dig en summa. Om du i stället använder `SUM()` för ett fönster och förvandlar det till en fönsterfunktion, får du en kumulativ summa för varje rad.
 
-Huvuddelen av [!DNL Spark] SQL-hjälpredor är fönsterfunktioner som uppdaterar varje rad i fönstret, med radens status tillagd.
+Huvuddelen av [!DNL Spark] SQL-hjälpen är fönsterfunktioner som uppdaterar varje rad i fönstret, med radstatus tillagd.
 
 **Frågesyntax**
 
@@ -43,11 +43,11 @@ OVER ({PARTITION} {ORDER} {FRAME})
 
 ## Yrkesställning
 
-När du arbetar med [!DNL Experience Event] data som kommer från en webbplats, en mobiltillämpning, ett interaktivt röstsvarssystem eller någon annan kundinteraktionskanal, hjälper till om händelser kan grupperas runt en relaterad aktivitetsperiod. Vanligtvis har du en specifik avsikt att driva din aktivitet, som att söka efter en produkt, betala en räkning, kontrollera kontosaldot, fylla i ett program och så vidare.
+När du arbetar med [!DNL Experience Event]-data från en webbplats, ett mobilprogram, ett interaktivt röstsvarssystem eller någon annan kundinteraktionskanal, är det bra om händelser kan grupperas runt en relaterad aktivitetsperiod. Vanligtvis har du en specifik avsikt att driva din aktivitet, som att söka efter en produkt, betala en räkning, kontrollera kontosaldot, fylla i ett program och så vidare.
 
 Denna gruppering, eller sammanställning av data, hjälper till att associera händelserna för att hitta mer kontext om kundupplevelsen.
 
-Mer information om sessioner i Adobe Analytics finns i dokumentationen om [sammanhangsberoende sessioner](https://experienceleague.adobe.com/docs/analytics/components/virtual-report-suites/vrs-mobile-visit-processing.html).
+Mer information om sessioner i Adobe Analytics finns i dokumentationen om [kontextmedvetna sessioner](https://experienceleague.adobe.com/docs/analytics/components/virtual-report-suites/vrs-mobile-visit-processing.html).
 
 **Frågesyntax**
 
@@ -57,10 +57,10 @@ SESS_TIMEOUT({TIMESTAMP}, {EXPIRATION_IN_SECONDS}) OVER ({PARTITION} {ORDER} {FR
 
 | Parameter | Beskrivning |
 | --------- | ----------- |
-| `{TIMESTAMP}` | Tidsstämpelfältet som finns i datauppsättningen. |
+| `{TIMESTAMP}` | Tidsstämpelfältet i datauppsättningen. |
 | `{EXPIRATION_IN_SECONDS}` | Antalet sekunder som behövs mellan händelser för att kvalificera slutet av den aktuella sessionen och början av en ny session. |
 
-En förklaring av parametrarna i `OVER()` finns i [fönsterfunktionsavsnitt](#window-functions).
+En förklaring av parametrarna i funktionen `OVER()` finns i avsnittet [fönsterfunktioner](#window-functions).
 
 **Exempelfråga**
 
@@ -96,7 +96,7 @@ LIMIT 10
 (10 rows)
 ```
 
-För den givna exempelfrågan anges resultaten i `session` kolumn. The `session` kolumnen består av följande komponenter:
+För den angivna exempelfrågan anges resultaten i kolumnen `session`. Kolumnen `session` består av följande komponenter:
 
 ```sql
 ({TIMESTAMP_DIFF}, {NUM}, {IS_NEW}, {DEPTH})
@@ -121,10 +121,10 @@ SESS_START_IF({TIMESTAMP}, {TEST_EXPRESSION}) OVER ({PARTITION} {ORDER} {FRAME})
 
 | Parameter | Beskrivning |
 | --------- | ----------- |
-| `{TIMESTAMP}` | Tidsstämpelfältet som finns i datauppsättningen. |
-| `{TEST_EXPRESSION}` | Ett uttryck som du vill kontrollera datafälten mot. Exempel, `application.launches > 0`. |
+| `{TIMESTAMP}` | Tidsstämpelfältet i datauppsättningen. |
+| `{TEST_EXPRESSION}` | Ett uttryck som du vill kontrollera datafälten mot. Exempel: `application.launches > 0`. |
 
-En förklaring av parametrarna i `OVER()` finns i [fönsterfunktionsavsnitt](#window-functions).
+En förklaring av parametrarna i funktionen `OVER()` finns i avsnittet [fönsterfunktioner](#window-functions).
 
 **Exempelfråga**
 
@@ -161,7 +161,7 @@ SELECT
 (10 rows)
 ```
 
-För den givna exempelfrågan anges resultaten i `session` kolumn. The `session` kolumnen består av följande komponenter:
+För den angivna exempelfrågan anges resultaten i kolumnen `session`. Kolumnen `session` består av följande komponenter:
 
 ```sql
 ({TIMESTAMP_DIFF}, {NUM}, {IS_NEW}, {DEPTH})
@@ -186,10 +186,10 @@ SESS_END_IF({TIMESTAMP}, {TEST_EXPRESSION}) OVER ({PARTITION} {ORDER} {FRAME})
 
 | Parameter | Beskrivning |
 | --------- | ----------- |
-| `{TIMESTAMP}` | Tidsstämpelfältet som finns i datauppsättningen. |
-| `{TEST_EXPRESSION}` | Ett uttryck som du vill kontrollera datafälten mot. Exempel, `application.launches > 0`. |
+| `{TIMESTAMP}` | Tidsstämpelfältet i datauppsättningen. |
+| `{TEST_EXPRESSION}` | Ett uttryck som du vill kontrollera datafälten mot. Exempel: `application.launches > 0`. |
 
-En förklaring av parametrarna i `OVER()` finns i [fönsterfunktionsavsnitt](#window-functions).
+En förklaring av parametrarna i funktionen `OVER()` finns i avsnittet [fönsterfunktioner](#window-functions).
 
 **Exempelfråga**
 
@@ -226,7 +226,7 @@ SELECT
 (10 rows)
 ```
 
-För den givna exempelfrågan anges resultaten i `session` kolumn. The `session` kolumnen består av följande komponenter:
+För den angivna exempelfrågan anges resultaten i kolumnen `session`. Kolumnen `session` består av följande komponenter:
 
 ```sql
 ({TIMESTAMP_DIFF}, {NUM}, {IS_NEW}, {DEPTH})
@@ -240,7 +240,7 @@ För den givna exempelfrågan anges resultaten i `session` kolumn. The `session`
 | `{DEPTH}` | Djupet på den aktuella posten i sessionen. |
 
 
-## Sökvägsanalys
+## Pathing
 
 Målningen kan användas för att förstå kundens engagemang, bekräfta att de tänkta stegen i en upplevelse fungerar som avsett och identifiera potentiella problempunkter som påverkar kunden.
 
@@ -248,7 +248,7 @@ Följande ADF:er har stöd för att skapa sökningsvyer från sina tidigare och 
 
 ### Föregående sida
 
-Avgör det föregående värdet för ett visst fält ett definierat antal steg bort i fönstret. Observera i exemplet att `WINDOW` -funktionen är konfigurerad med en bildruta på `ROWS BETWEEN UNBOUNDED PRECEDING AND CURRENT ROW` ange att ADF ska granska den aktuella raden och alla efterföljande rader.
+Avgör det föregående värdet för ett visst fält med ett definierat antal steg bort i fönstret. Observera i exemplet att funktionen `WINDOW` är konfigurerad med en bildruta på `ROWS BETWEEN UNBOUNDED PRECEDING AND CURRENT ROW` som ställer in ADF så att den tittar på den aktuella raden och alla efterföljande rader.
 
 **Frågesyntax**
 
@@ -260,9 +260,9 @@ PREVIOUS({KEY}, {SHIFT}, {IGNORE_NULLS}) OVER ({PARTITION} {ORDER} {FRAME})
 | --------- | ----------- |
 | `{KEY}` | Kolumnen eller fältet från händelsen. |
 | `{SHIFT}` | (Valfritt) Antalet händelser utanför den aktuella händelsen. Som standard är värdet 1. |
-| `{IGNORE_NULLS}` | (Valfritt) Ett booleskt värde som anger om null `{KEY}` värden ska ignoreras. Som standard är värdet `false`. |
+| `{IGNORE_NULLS}` | (Valfritt) Ett booleskt värde som anger om `{KEY}`-värden ska ignoreras. Som standard är värdet `false`. |
 
-En förklaring av parametrarna i `OVER()` finns i [fönsterfunktionsavsnitt](#window-functions).
+En förklaring av parametrarna i funktionen `OVER()` finns i avsnittet [fönsterfunktioner](#window-functions).
 
 **Exempelfråga**
 
@@ -295,11 +295,11 @@ ORDER BY endUserIds._experience.mcid.id, timestamp ASC
 (10 rows)
 ```
 
-För den givna exempelfrågan anges resultaten i `previous_page` kolumn. Värdet i `previous_page` kolumnen baseras på `{KEY}` används i ADF.
+För den angivna exempelfrågan anges resultaten i kolumnen `previous_page`. Värdet i kolumnen `previous_page` baseras på `{KEY}` som används i ADF.
 
 ### Nästa sida
 
-Bestämmer nästa värde för ett visst fält med ett definierat antal steg bort i fönstret. Observera i exemplet att `WINDOW` -funktionen är konfigurerad med en bildruta på `ROWS BETWEEN CURRENT ROW AND UNBOUNDED FOLLOWING` ange att ADF ska granska den aktuella raden och alla efterföljande rader.
+Bestämmer nästa värde för ett visst fält med ett definierat antal steg bort i fönstret. Observera i exemplet att funktionen `WINDOW` är konfigurerad med en bildruta på `ROWS BETWEEN CURRENT ROW AND UNBOUNDED FOLLOWING` som ställer in ADF så att den tittar på den aktuella raden och alla efterföljande rader.
 
 **Frågesyntax**
 
@@ -311,9 +311,9 @@ NEXT({KEY}, {SHIFT}, {IGNORE_NULLS}) OVER ({PARTITION} {ORDER} {FRAME})
 | --------- | ----------- |
 | `{KEY}` | Kolumnen eller fältet från händelsen. |
 | `{SHIFT}` | (Valfritt) Antalet händelser utanför den aktuella händelsen. Som standard är värdet 1. |
-| `{IGNORE_NULLS}` | (Valfritt) Ett booleskt värde som anger om null `{KEY}` värden ska ignoreras. Som standard är värdet `false`. |
+| `{IGNORE_NULLS}` | (Valfritt) Ett booleskt värde som anger om `{KEY}`-värden ska ignoreras. Som standard är värdet `false`. |
 
-En förklaring av parametrarna i `OVER()` finns i [fönsterfunktionsavsnitt](#window-functions).
+En förklaring av parametrarna i funktionen `OVER()` finns i avsnittet [fönsterfunktioner](#window-functions).
 
 **Exempelfråga**
 
@@ -347,7 +347,7 @@ LIMIT 10
 (10 rows)
 ```
 
-För den givna exempelfrågan anges resultaten i `previous_page` kolumn. Värdet i `previous_page` kolumnen baseras på `{KEY}` används i ADF.
+För den angivna exempelfrågan anges resultaten i kolumnen `previous_page`. Värdet i kolumnen `previous_page` baseras på `{KEY}` som används i ADF.
 
 ## Tid mellan
 
@@ -371,7 +371,7 @@ TIME_BETWEEN_PREVIOUS_MATCH(
 | `{EVENT_DEFINITION}` | Uttrycket som kvalificerar föregående händelse. |
 | `{TIME_UNIT}` | Utdataenheten. Möjligt värde är dagar, timmar, minuter och sekunder. Som standard är värdet sekunder. |
 
-En förklaring av parametrarna i `OVER()` finns i [fönsterfunktionsavsnitt](#window-functions).
+En förklaring av parametrarna i funktionen `OVER()` finns i avsnittet [fönsterfunktioner](#window-functions).
 
 **Exempelfråga**
 
@@ -415,7 +415,7 @@ LIMIT 10
 (10 rows)
 ```
 
-För den givna exempelfrågan anges resultaten i `average_minutes_since_registration` kolumn. Värdet i `average_minutes_since_registration` kolumn är skillnaden i tid mellan aktuella och föregående händelser. Tidsenheten definierades tidigare i `{TIME_UNIT}`.
+För den angivna exempelfrågan anges resultaten i kolumnen `average_minutes_since_registration`. Värdet i kolumnen `average_minutes_since_registration` är skillnaden i tid mellan aktuella och tidigare händelser. Tidsenheten definierades tidigare i `{TIME_UNIT}`.
 
 ### Tid mellan nästa matchning
 
@@ -433,7 +433,7 @@ TIME_BETWEEN_NEXT_MATCH({TIMESTAMP}, {EVENT_DEFINITION}, {TIME_UNIT}) OVER ({PAR
 | `{EVENT_DEFINITION}` | Uttrycket som kvalificerar nästa händelse. |
 | `{TIME_UNIT}` | (Valfritt) Utdataenheten. Möjligt värde är dagar, timmar, minuter och sekunder. Som standard är värdet sekunder. |
 
-En förklaring av parametrarna i `OVER()` finns i [fönsterfunktionsavsnitt](#window-functions).
+En förklaring av parametrarna i funktionen `OVER()` finns i avsnittet [fönsterfunktioner](#window-functions).
 
 **Exempelfråga**
 
@@ -477,11 +477,11 @@ LIMIT 10
 (10 rows)
 ```
 
-För den givna exempelfrågan anges resultaten i `average_minutes_until_order_confirmation` kolumn. Värdet i `average_minutes_until_order_confirmation` kolumn är skillnaden i tid mellan den aktuella och nästa händelsen. Tidsenheten definierades tidigare i `{TIME_UNIT}`.
+För den angivna exempelfrågan anges resultaten i kolumnen `average_minutes_until_order_confirmation`. Värdet i kolumnen `average_minutes_until_order_confirmation` är skillnaden i tid mellan den aktuella och nästa händelse. Tidsenheten definierades tidigare i `{TIME_UNIT}`.
 
 ## Nästa steg
 
-Med funktionerna som beskrivs här kan du skriva frågor för att få tillgång till dina egna [!DNL Experience Event] datauppsättningar med [!DNL Query Service]. Mer information om redigeringsfrågor finns i [!DNL Query Service], se dokumentationen om [skapa frågor](../best-practices/writing-queries.md).
+Med funktionerna som beskrivs här kan du skriva frågor för att få tillgång till dina egna [!DNL Experience Event]-datauppsättningar med [!DNL Query Service]. Mer information om redigeringsfrågor i [!DNL Query Service] finns i dokumentationen om att [skapa frågor](../best-practices/writing-queries.md).
 
 ## Ytterligare resurser
 

@@ -9,11 +9,11 @@ ht-degree: 1%
 
 ---
 
-# [!UICONTROL Key Value Pair] datatyp
+# Datatypen [!UICONTROL Key Value Pair]
 
-[!UICONTROL Key Value Pair] är en XDM-datatyp (Standard Experience Data Model) som samlar in information om ett generiskt nyckelvärdepar. Den här datatypen används i [[!UICONTROL Adobe Analytics ExperienceEvent Full Extension] fältgrupp](../field-groups/event/analytics-full-extension.md) för att beskriva arrayobjekten i en listvariabel.
+[!UICONTROL Key Value Pair] är en XDM-datatyp (Standard Experience Data Model) som samlar in information om ett generiskt nyckelvärdepar. Den här datatypen används i fältgruppen [[!UICONTROL Adobe Analytics ExperienceEvent Full Extension] ](../field-groups/event/analytics-full-extension.md) för att beskriva arrayobjekten i en listvariabel.
 
-![Key Value Pair Structure](../images/data-types/key-value-pair.png)
+![Pair-struktur för nyckelvärdepar](../images/data-types/key-value-pair.png)
 
 | Egenskap | Datatyp | Beskrivning |
 | --- | --- | --- |

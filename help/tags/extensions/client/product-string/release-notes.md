@@ -4,8 +4,8 @@ description: Den senaste versionsinformationen om Adobe Analytics produktsträng
 exl-id: 3ddc3e6f-412c-42d5-8cbf-25273c1794d5
 source-git-commit: 88939d674c0002590939004e0235d3da8b072118
 workflow-type: tm+mt
-source-wordcount: '131'
-ht-degree: 3%
+source-wordcount: '135'
+ht-degree: 0%
 
 ---
 
@@ -13,11 +13,11 @@ ht-degree: 3%
 
 >[!NOTE]
 >
->Adobe Experience Platform Launch har omklassificerats som en serie datainsamlingstekniker i Adobe Experience Platform. Som ett resultat av detta har flera terminologiska förändringar införts i produktdokumentationen. Se följande [dokument](../../../term-updates.md) för en konsoliderad hänvisning till terminologiska förändringar.
+>Adobe Experience Platform Launch har omklassificerats som en serie datainsamlingstekniker i Adobe Experience Platform. Som ett resultat av detta har flera terminologiska förändringar införts i produktdokumentationen. I följande [dokument](../../../term-updates.md) finns en konsoliderad referens till de ändrade terminologin.
 
 ## 31 januari 2020
 
-[!DNL Adobe Analytics Product String] Tillägg 2.0.1
+[!DNL Adobe Analytics Product String]-tillägg 2.0.1
 
 **Funktioner**
 
@@ -25,7 +25,7 @@ ht-degree: 3%
 
 ## 31 januari 2020
 
-[!DNL Adobe Analytics Product String] Tillägg 2.0.0
+[!DNL Adobe Analytics Product String]-tillägg 2.0.0
 
 **Funktioner**
 
@@ -37,4 +37,4 @@ ht-degree: 3%
 
 **Felkorrigeringar**
 
-* Ett fel har korrigerats där produktsträngen inte ingick i vissa versioner av [!DNL Adobe Analytics] tillägg.
+* Ett fel har korrigerats där produktsträngen inte ingick i vissa versioner av tillägget [!DNL Adobe Analytics].

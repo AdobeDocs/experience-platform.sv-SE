@@ -16,11 +16,11 @@ Roller definierar åtkomsten som en administratör, en specialist eller en sluta
 
 ## Skapa en ny roll
 
-Om du vill skapa en ny roll väljer du **[!UICONTROL Roles]** i sidlisten och välj **[!UICONTROL Create Role]**.
+Om du vill skapa en ny roll väljer du fliken **[!UICONTROL Roles]** i sidofältet och väljer **[!UICONTROL Create Role]**.
 
 ![flac-new-role](../../images/flac-ui/flac-new-role.png)
 
-The **[!UICONTROL Create a new role]** visas där du uppmanas att ange ett namn och en valfri beskrivning.
+Dialogrutan **[!UICONTROL Create a new role]** visas och du uppmanas att ange ett namn och en valfri beskrivning.
 
 När du är klar väljer du **[!UICONTROL Confirm]**.
 
@@ -28,25 +28,25 @@ När du är klar väljer du **[!UICONTROL Confirm]**.
 
 Välj sedan de resursbehörigheter som du vill inkludera i rollen med hjälp av listrutan.
 
-![flash-add-role-permission](../../images/flac-ui/flac-add-role-permission.png)
+![flac-add-role-permission](../../images/flac-ui/flac-add-role-permission.png)
 
-Om du vill lägga till ytterligare resurser väljer du **[!UICONTROL Adobe Experience Platform]** från den vänstra navigeringspanelen, som visar en lista med resurser. Du kan också ange resursnamnet i sökfältet i den vänstra navigeringspanelen.
+Om du vill lägga till ytterligare resurser väljer du **[!UICONTROL Adobe Experience Platform]** i den vänstra navigeringspanelen, som visar en lista med resurser. Du kan också ange resursnamnet i sökfältet i den vänstra navigeringspanelen.
 
 ![flac-add-additional-resources](../../images/flac-ui/flac-add-additional-resources.png)
 
 Klicka och dra den aktuella resursen och släpp den på huvudpanelen.
 
-![flash-additional-resources-added](../../images/flac-ui/flac-additional-resources-added.png)
+![flac-additional-resources-added](../../images/flac-ui/flac-additional-resources-added.png)
 
 Välj de resursbehörigheter som du vill inkludera i rollen med hjälp av listrutan. Upprepa detta för alla resurser som du vill inkludera för rollen. När du är klar väljer du **[!UICONTROL Save and exit]**.
 
 ![flac-save-resources](../../images/flac-ui/flac-save-resources.png)
 
-Den nya rollen har skapats och du omdirigeras till **[!UICONTROL Roles]** sidan där du ser den nya rollen visas i listan.
+Den nya rollen har skapats och du omdirigeras till sidan **[!UICONTROL Roles]** där du ser den nya rollen i listan.
 
-![sparad med nyckelroll](../../images/flac-ui/flac-role-saved.png)
+![flac-role-saved](../../images/flac-ui/flac-role-saved.png)
 
-Se avsnitten om [hantera behörigheter för en roll](#manage-permissions-for-a-role) om du vill ha mer information om hur du hanterar rollbehörigheter när de har skapats.
+Mer information om hur du hanterar rollbehörigheter när de har skapats finns i avsnitten [Hantera behörigheter för en roll](#manage-permissions-for-a-role).
 
 Följande video är tänkt att ge stöd för din förståelse för att skapa en ny roll och hantera användare för den rollen.
 
@@ -54,40 +54,40 @@ Följande video är tänkt att ge stöd för din förståelse för att skapa en 
 
 ## Duplicera en roll
 
-Om du vill duplicera en befintlig roll väljer du rollen från **[!UICONTROL Roles]** -fliken. Du kan också använda filteralternativet för att filtrera resultatet och hitta den roll du vill duplicera.
+Om du vill duplicera en befintlig roll väljer du rollen på fliken **[!UICONTROL Roles]**. Du kan också använda filteralternativet för att filtrera resultatet och hitta den roll du vill duplicera.
 
 ![flac-duplicate-role](../../images/flac-ui/flac-duplicate-role.png)
 
-Nästa, välj **[!UICONTROL Duplicate]** från skärmens övre högra hörn.
+Välj sedan **[!UICONTROL Duplicate]** längst upp till höger på skärmen.
 
 ![flac-duplicate](../../images/flac-ui/flac-duplicate.png)
 
-The **[!UICONTROL Duplicate role]** visas och du uppmanas att bekräfta dupliceringen.
+Dialogrutan **[!UICONTROL Duplicate role]** visas och du uppmanas att bekräfta dupliceringen.
 
 ![flac-duplicate-confirm](../../images/flac-ui/flac-duplicate-confirm.png)
 
-Därefter kommer du till rollens detaljsida där du kan ändra rollens namn och behörigheter. Information, etiketter och sandlådor dupliceras från den tidigare rollen. Användare måste läggas till via fliken Användare. Du kan visa [hantera behörigheter för en roll](permissions.md) om du vill veta mer om hur du lägger till detaljer, etiketter, sandlådor och användare i en roll.
+Därefter kommer du till rollens detaljsida där du kan ändra rollens namn och behörigheter. Information, etiketter och sandlådor dupliceras från den tidigare rollen. Användare måste läggas till via fliken Användare. Du kan visa [hantera behörigheter för ett rolldokument](permissions.md) om du vill veta mer om hur du lägger till information, etiketter, sandlådor och användare i en roll.
 
-Klicka på vänsterpilen för att gå tillbaka till **[!UICONTROL Roles]** -fliken.
+Klicka på vänsterpilen för att återgå till fliken **[!UICONTROL Roles]**.
 
-![flash-return-to-roles](../../images/flac-ui/flac-return-to-roles.png)
+![flac-return-to-roles](../../images/flac-ui/flac-return-to-roles.png)
 
-Den nya rollen visas i listan på **[!UICONTROL Roles]** sida.
+Den nya rollen visas i listan på sidan **[!UICONTROL Roles]**.
 
 ![flac-role-duplicate-saved](../../images/flac-ui/flac-role-duplicate-saved.png)
 
 ## Ta bort en roll
 
-Markera ellipsen (`…`) bredvid en rolls namn och en listruta visar kontroller för att redigera, ta bort eller duplicera rollen. Välj Ta bort i listrutan.
+Markera ellipsen (`…`) bredvid en rolls namn, så visas kontroller för att redigera, ta bort eller duplicera rollen i en listruta. Välj Ta bort i listrutan.
 
-![flash-role-delete](../../images/flac-ui/flac-role-delete.png)
+![flac-role-delete](../../images/flac-ui/flac-role-delete.png)
 
-The **[!UICONTROL Delete user role]** visas och du uppmanas att bekräfta borttagningen.
+Dialogrutan **[!UICONTROL Delete user role]** visas och du uppmanas att bekräfta borttagningen.
 
 ![flac-confirm-role-delete](../../images/flac-ui/flac-confirm-role-delete.png)
 
-Du kommer tillbaka till **[!UICONTROL Roles]** -fliken.
+Du återgår till fliken **[!UICONTROL Roles]**.
 
 ## Nästa steg
 
-När en ny roll har skapats kan du fortsätta till nästa steg i [hantera behörigheter för en roll](permissions.md).
+När en ny roll har skapats kan du fortsätta till nästa steg för att [hantera behörigheter för en roll](permissions.md).

@@ -11,23 +11,23 @@ ht-degree: 0%
 
 # `sendEvent`
 
-The `sendEvent` kommandot är det primära sättet att skicka data till Adobe för att hämta personaliserat innehåll, identiteter och målgruppsmål. Använd [`xdm`](xdm.md) objekt för att skicka data som mappar till ditt Adobe Experience Platform-schema. Använd [`data`](data.md) objekt för att skicka data som inte är XDM. Du kan använda datastream-mapparen för att justera data inom det här objektet mot schemafält.
+Kommandot `sendEvent` är det primära sättet att skicka data till Adobe för att hämta personaliserat innehåll, identiteter och målgruppsmål. Använd objektet [`xdm`](xdm.md) för att skicka data som mappar till ditt Adobe Experience Platform-schema. Använd objektet [`data`](data.md) för att skicka data som inte är XDM. Du kan använda datastream-mapparen för att justera data inom det här objektet mot schemafält.
 
 ## Skicka händelsedata med tillägget Web SDK-tagg
 
 Att skicka händelsedata utförs som en åtgärd i en regel i tagggränssnittet för Adobe Experience Platform Data Collection.
 
-1. Logga in på [experience.adobe.com](https://experience.adobe.com) med dina Adobe ID-uppgifter.
+1. Logga in på [experience.adobe.com](https://experience.adobe.com) med dina Adobe ID-inloggningsuppgifter.
 1. Navigera till **[!UICONTROL Data Collection]** > **[!UICONTROL Tags]**.
 1. Välj önskad taggegenskap.
-1. Navigera till **[!UICONTROL Rules]** markerar du önskad regel.
-1. Under [!UICONTROL Actions]väljer du en befintlig åtgärd eller skapar en åtgärd.
-1. Ange [!UICONTROL Extension] listruta till **[!UICONTROL Adobe Experience Platform Web SDK]** och ange [!UICONTROL Action Type] till **[!UICONTROL Send event]**.
-1. Ange önskade fält och klicka på **[!UICONTROL Keep Changes]** och sedan köra ditt publiceringsarbetsflöde.
+1. Navigera till **[!UICONTROL Rules]** och markera önskad regel.
+1. Välj en befintlig åtgärd under [!UICONTROL Actions] eller skapa en åtgärd.
+1. Ställ in listrutefältet [!UICONTROL Extension] på **[!UICONTROL Adobe Experience Platform Web SDK]** och ställ in [!UICONTROL Action Type] på **[!UICONTROL Send event]**.
+1. Ange önskade fält, klicka på **[!UICONTROL Keep Changes]** och kör sedan ditt publiceringsarbetsflöde.
 
-## Skicka händelsedata med JavaScript-biblioteket för Web SDK
+## Skicka händelsedata med hjälp av JavaScript-biblioteket för Web SDK
 
-Kör `sendEvent` när du anropar den konfigurerade instansen av Web SDK. Se till att du ringer [`configure`](../configure/overview.md) innan du anropar `sendEvent` -kommando.
+Kör kommandot `sendEvent` när du anropar den konfigurerade instansen av Web SDK. Kontrollera att du anropar kommandot [`configure`](../configure/overview.md) innan du anropar kommandot `sendEvent`.
 
 ```js
 alloy("sendEvent", {
@@ -42,8 +42,8 @@ alloy("sendEvent", {
 
 ## Svarsobjekt
 
-Om du väljer att [hantera svar](../command-responses.md) med det här kommandot är följande egenskaper tillgängliga i svarsobjektet:
+Om du bestämmer dig för att [hantera svar](../command-responses.md) med det här kommandot är följande egenskaper tillgängliga i svarsobjektet:
 
-* **`propositions`**: En array med förslag som returneras av Edge Network. Exempel på förslag som återges automatiskt är flaggan `renderAttempted` ange till `true`.
+* **`propositions`**: En matris med förslag som returneras av Edge Network. Föreslag som återges automatiskt innehåller flaggan `renderAttempted` inställd på `true`.
 * **`inferences`**: En array med härledningsobjekt som innehåller maskininlärningsinformation om den här användaren.
 * **`destinations`**: En array med målobjekt som returneras av Edge Network.

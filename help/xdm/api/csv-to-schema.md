@@ -11,13 +11,13 @@ ht-degree: 3%
 
 # CSV-mall till API-slutpunkt för schemakonvertering
 
-The `/rpc/csv2schema` slutpunkt i [!DNL Schema Registry] Med API kan du automatiskt skapa ett XDM-schema (Experience Data Model) med en CSV-fil som mall. Med den här slutpunkten kan du skapa mallar för att massimportera schemafält och skära ned på manuellt API- eller gränssnittsarbete.
+Med slutpunkten `/rpc/csv2schema` i API:t [!DNL Schema Registry] kan du automatiskt skapa ett XDM-schema (Experience Data Model) med en CSV-fil som mall. Med den här slutpunkten kan du skapa mallar för att massimportera schemafält och skära ned på manuellt API- eller gränssnittsarbete.
 
 ## Komma igång
 
-The `/rpc/csv2schema` slutpunkten är en del av [[!DNL Schema Registry] API](https://www.adobe.io/experience-platform-apis/references/schema-registry/). Innan du fortsätter bör du granska [komma igång-guide](./getting-started.md) för länkar till relaterad dokumentation, en guide till hur du läser exempelanrop till API:er i det här dokumentet och viktig information om vilka huvuden som behövs för att kunna anropa ett Adobe Experience Platform-API.
+Slutpunkten `/rpc/csv2schema` är en del av [[!DNL Schema Registry] API](https://www.adobe.io/experience-platform-apis/references/schema-registry/). Innan du fortsätter bör du läsa [kom igång-guiden](./getting-started.md) för att få länkar till relaterad dokumentation, en guide till hur du läser exempelanropen för API i det här dokumentet och viktig information om vilka huvuden som krävs för att kunna anropa ett Adobe Experience Platform-API.
 
-The `/rpc/csv2schema` slutpunkten är en del av RPC-anropen (Remote Procedure Call) som stöds av [!DNL Schema Registry]. Till skillnad från andra slutpunkter i [!DNL Schema Registry] API, RPC-slutpunkter kräver inga ytterligare rubriker som `Accept` eller `Content-Type`, och använd inte `CONTAINER_ID`. Istället måste de använda `/rpc` namespace, vilket visas i API-anropen nedan.
+Slutpunkten `/rpc/csv2schema` är en del av RPC-anropen (Remote Procedure Call) som stöds av [!DNL Schema Registry]. Till skillnad från andra slutpunkter i API:t [!DNL Schema Registry] kräver RPC-slutpunkter inga ytterligare rubriker som `Accept` eller `Content-Type`, och använder inte `CONTAINER_ID`. I stället måste de använda namnutrymmet `/rpc`, vilket visas i API-anropen nedan.
 
 ## Krav för CSV-filer
 
@@ -25,18 +25,18 @@ Om du vill använda den här slutpunkten måste du först skapa en CSV-fil med l
 
 | CSV-rubrikposition | CSV-rubriknamn | Obligatoriskt/valfritt | Beskrivning |
 | --- | --- | --- | --- |
-| 1 | `isIgnored` | Valfritt | Vid inkludering och inställd på `true`anger att fältet inte är klart för API-överföring och ska ignoreras. |
+| 1 | `isIgnored` | Valfritt | När det är inkluderat och inställt på `true`, anger att fältet inte är klart för API-överföring och ska ignoreras. |
 | 2 | `isCustom` | Obligatoriskt | Anger om fältet är ett anpassat fält eller inte. |
 | 3 | `fieldGroupId` | Valfritt | ID:t för fältgruppen som ett anpassat fält ska associeras med. |
-| 4 | `fieldGroupName` | (Se beskrivning) | Namnet på fältgruppen som det här fältet ska associeras med.<br><br>Valfritt för anpassade fält som inte utökar befintliga standardfält. Om inget anges tilldelas namnet automatiskt.<br><br>Krävs för standardfält eller anpassade fält som utökar standardfältgrupper, som används för att fråga efter `fieldGroupId`. |
-| 5 | `fieldPath` | Obligatoriskt | Den fullständiga XED-punktnotation-sökvägen för fältet. Inkludera alla fält från en standardfältgrupp (enligt vad som anges under `fieldGroupName`), ange värdet till `ALL`. |
+| 4 | `fieldGroupName` | (Se beskrivning) | Namnet på fältgruppen som det här fältet ska associeras med.<br><br>Valfritt för anpassade fält som inte utökar befintliga standardfält. Om inget anges tilldelas namnet automatiskt.<br><br>Krävs för standardfält eller anpassade fält som utökar standardfältgrupper, som används för att fråga `fieldGroupId`. |
+| 5 | `fieldPath` | Obligatoriskt | Den fullständiga XED-punktnotation-sökvägen för fältet. Om du vill ta med alla fält från en standardfältgrupp (som anges under `fieldGroupName`) anger du värdet `ALL`. |
 | 6 | `displayName` | Valfritt | Fältets rubrik eller egna visningsnamn. Kan även vara ett alias för titeln om det finns något. |
 | 7 | `fieldDescription` | Valfritt | En beskrivning av fältet. Kan även vara ett alias för beskrivningen om det finns ett sådant. |
-| 8 | `dataType` | (Se beskrivning) | Anger [grundläggande datatyp](../schema/field-constraints.md#basic-types) för fältet. Krävs för alla anpassade fält.<br><br>If `dataType` är inställd på `object`, antingen `properties` eller `$ref` måste också definieras för samma rad, men inte för båda. |
+| 8 | `dataType` | (Se beskrivning) | Anger fältets [grundläggande datatyp](../schema/field-constraints.md#basic-types). Krävs för alla anpassade fält.<br><br>Om `dataType` är inställt på `object` måste antingen `properties` eller `$ref` också definieras för samma rad, men inte båda. |
 | 9 | `isRequired` | Valfritt | Anger om fältet är obligatoriskt för dataöverföring. |
-| 10 | `isArray` | Valfritt | Anger om fältet är en matris av dess angivna `dataType`. |
+| 10 | `isArray` | Valfritt | Anger om fältet är en matris av det angivna `dataType`. |
 | 11 | `isIdentity` | Valfritt | Anger om fältet är ett identitetsfält. |
-| 12 | `identityNamespace` | Obligatoriskt om `isIdentity` är sant | The [namnutrymme för identitet](../../identity-service/features/namespaces.md) för identitetsfältet. |
+| 12 | `identityNamespace` | Krävs om `isIdentity` är sant | [ID-namnområdet](../../identity-service/features/namespaces.md) för identitetsfältet. |
 | 13 | `isPrimaryIdentity` | Valfritt | Anger om fältet är schemats primära identitet. |
 | 14 | `minimum` | Valfritt | (Endast för numeriska fält) Det lägsta värdet för fältet. |
 | 15 | `maximum` | Valfritt | (Endast för numeriska fält) Det maximala värdet för fältet. |
@@ -45,17 +45,17 @@ Om du vill använda den här slutpunkten måste du först skapa en CSV-fil med l
 | 18 | `format` | Valfritt | (Endast för strängfält) Strängfältets format. |
 | 19 | `minLength` | Valfritt | (Endast för strängfält) Strängfältets minimilängd. |
 | 20 | `maxLength` | Valfritt | (Endast för strängfält) Strängfältets maximala längd. |
-| 21 | `properties` | (Se beskrivning) | Obligatoriskt om `dataType` är inställd på `object` och `$ref` är inte definierad. Detta definierar objektets brödtext som en JSON-sträng (t.ex. `{"myField": {"type": "string"}}`). |
-| 22 | `$ref` | (Se beskrivning) | Obligatoriskt om `dataType` är inställd på `object` och `properties` är inte definierad. Detta definierar `$id` av det refererade objektet för objekttypen (t.ex. `https://ns.adobe.com/xdm/context/person`). |
-| 23 | `comment` | Valfritt | När `isIgnored` är inställd på `true`, används den här kolumnen för att ange schemats rubrikinformation. |
+| 21 | `properties` | (Se beskrivning) | Krävs om `dataType` är inställt på `object` och `$ref` inte är definierad. Detta definierar objektets innehåll som en JSON-sträng (t.ex. `{"myField": {"type": "string"}}`). |
+| 22 | `$ref` | (Se beskrivning) | Krävs om `dataType` är inställt på `object` och `properties` inte är definierad. Detta definierar `$id` för det refererade objektet för objekttypen (till exempel `https://ns.adobe.com/xdm/context/person`). |
+| 23 | `comment` | Valfritt | När `isIgnored` är inställt på `true` används den här kolumnen för att ange schemats rubrikinformation. |
 
 {style="table-layout:auto"}
 
-Se följande [CSV-mall](../assets/sample-csv-template.csv) för att avgöra hur CSV-filen ska formateras.
+Mer information om hur CSV-filen ska formateras finns i följande [CSV-mall](../assets/sample-csv-template.csv).
 
 ## Skapa en exportnyttolast från en CSV-fil
 
-När du har konfigurerat CSV-mallen kan du skicka filen till `/rpc/csv2schema` slutpunkt och konvertera den till en exportnyttolast.
+När du har konfigurerat CSV-mallen kan du skicka filen till `/rpc/csv2schema`-slutpunkten och konvertera den till en exportnyttolast.
 
 **API-format**
 
@@ -83,7 +83,7 @@ curl -X POST \
 | Egenskap | Beskrivning |
 | --- | --- |
 | `csv-file` | Sökvägen till CSV-mallen som lagras på den lokala datorn. |
-| `schema-class-id` | The `$id` XDM [class](../schema/composition.md#class) som det här schemat kommer att använda. |
+| `schema-class-id` | `$id` för XDM-klassen [class](../schema/composition.md#class) som det här schemat använder. |
 | `schema-name` | Schemats visningsnamn. |
 | `schema-description` | En beskrivning av schemat. |
 
@@ -360,6 +360,6 @@ Ett godkänt svar returnerar en exportnyttolast som genererades från CSV-filen.
 
 ## Importera schemanyttolasten
 
-När du har genererat exportnyttolasten från CSV-filen kan du skicka den nyttolasten till `/rpc/import` slutpunkt för att generera schemat.
+När du har genererat exportnyttolasten från CSV-filen kan du skicka den nyttolasten till `/rpc/import`-slutpunkten för att generera schemat.
 
-Se [importera slutpunktsguide](./import.md) om du vill ha mer information om hur du genererar scheman från exportnyttolaster.
+Mer information om hur du genererar scheman från exportnyttolaster finns i [importguiden](./import.md).

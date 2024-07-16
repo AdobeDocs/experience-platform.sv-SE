@@ -1,8 +1,8 @@
 ---
 keywords: Experience Platform;hem;populära ämnen;schema;schema;XDM;fields;schemas;scheman;commerce;datatype;data type;data type;
 solution: Experience Platform
-title: Commerce-datatyp
-description: Läs mer om datatypen XDM (Commerce Experience Data Model).
+title: Commerce datatyp
+description: Läs mer om datatypen Commerce Experience Data Model (XDM).
 exl-id: c9cc569b-1a91-4a6e-8bfd-7f8ec07d01d4
 source-git-commit: f70ca0d8ab0e92cc0e1007021c0778361701dc84
 workflow-type: tm+mt
@@ -11,11 +11,11 @@ ht-degree: 0%
 
 ---
 
-# [!UICONTROL Commerce] datatyp
+# Datatypen [!UICONTROL Commerce]
 
-[!UICONTROL Commerce] är en XDM-datatyp (Standard Experience Data Model) som beskriver posterna för inköp och försäljning.
+[!UICONTROL Commerce] är en XDM-datatyp (Standard Experience Data Model) som beskriver posterna som rör inköp och försäljning.
 
-![Ett diagram över [!UICONTROL Commerce] datatyp.](../images/data-types/commerce.png)
+![Ett diagram över datatypen [!UICONTROL Commerce].](../images/data-types/commerce.png)
 
 | Visningsnamn | Egenskap | Datatyp | Beskrivning |
 |------------------------------------------|-----------------------|------------------------------------|----------------------------------------------------------------------------------------------------------|
@@ -45,9 +45,9 @@ ht-degree: 0%
 
 {style="table-layout:auto"}
 
-## [!UICONTROL billing] datatyp {#billing}
+## Datatypen [!UICONTROL billing] {#billing}
 
-[!UICONTROL billing] är en XDM-datatyp (Experience Data Model) som innehåller information om faktureringsdetaljer. Fokuseringen fokuserar på faktureringsadressen.
+[!UICONTROL billing] är en XDM-datatyp (Standard Experience Data Model) som innehåller information om faktureringsinformation. Fokuseringen fokuserar på faktureringsadressen.
 
 ![Ett diagram över faktureringsdatatypen.](../images/data-types/billing.png)
 
@@ -57,7 +57,7 @@ ht-degree: 0%
 
 {style="table-layout:auto"}
 
-Mer information om [!UICONTROL Commerce] datatyp, se den offentliga XDM-databasen:
+Mer information om datatypen [!UICONTROL Commerce] finns i den offentliga XDM-databasen:
 
 * [Populerat exempel](https://github.com/adobe/xdm/blob/master/components/datatypes/marketing/commerce.example.1.json)
 * [Fullständigt schema](https://github.com/adobe/xdm/blob/master/components/datatypes/marketing/commerce.schema.json)

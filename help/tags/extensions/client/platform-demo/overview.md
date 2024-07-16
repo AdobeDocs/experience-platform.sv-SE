@@ -13,11 +13,11 @@ ht-degree: 0%
 
 >[!NOTE]
 >
->Adobe Experience Platform Launch har omklassificerats som en serie datainsamlingstekniker i Adobe Experience Platform. Som ett resultat av detta har flera terminologiska förändringar införts i produktdokumentationen. Se följande [dokument](../../../term-updates.md) för en konsoliderad hänvisning till terminologiska förändringar.
+>Adobe Experience Platform Launch har omklassificerats som en serie datainsamlingstekniker i Adobe Experience Platform. Som ett resultat av detta har flera terminologiska förändringar införts i produktdokumentationen. I följande [dokument](../../../term-updates.md) finns en konsoliderad referens till de ändrade terminologin.
 
 >[!NOTE]
 >
->Utbyggnaden har ersatts med [Adobe Experience Platform Web SDK](../web-sdk/overview.md).
+>Det här tillägget har ersatts med [Adobe Experience Platform Web SDK](../web-sdk/overview.md).
 
 Funktionerna i det här tillägget porteras till ett nytt tillägg. Här är en snabb jämförelse av aktuella funktioner.
 
@@ -37,21 +37,21 @@ Funktionerna i det här tillägget porteras till ett nytt tillägg. Här är en 
 
 I det här avsnittet finns en referens för de alternativ som är tillgängliga när du konfigurerar Adobe Experience Platform-tillägget.
 
-Om Adobe Experience Platform-tillägget inte är installerat ännu öppnar du din egenskap och väljer **[!UICONTROL Extensions > Catalog]** hovra över Adobe Experience Platform-tillägget och välj **[!UICONTROL Install]**.
+Om Adobe Experience Platform-tillägget ännu inte är installerat öppnar du din egenskap, väljer **[!UICONTROL Extensions > Catalog]**, håller pekaren över Adobe Experience Platform-tillägget och väljer **[!UICONTROL Install]**.
 
-Konfigurera tillägget genom att öppna [!UICONTROL Extensions] hovra över tillägget och välj **[!UICONTROL Configure]**.
+Om du vill konfigurera tillägget öppnar du fliken [!UICONTROL Extensions], håller pekaren över tillägget och väljer **[!UICONTROL Configure]**.
 
 ![](../../../images/adobe-experience-platform-extension-configuration.png)
 
 ### Direktuppspelningsanslutning
 
-Att välja en direktuppspelningsanslutning är det första steget för dig att börja direktuppspela data till Adobe Experience Platform. Du kan välja en från kombinationsrutan för direktuppspelningsanslutning. Direktuppspelningsanslutning är ett obligatoriskt fält. Om du inte har någon direktuppspelningsanslutning kan du skapa en genom att välja **[!UICONTROL Create a streaming connection]** -knappen.
+Att välja en direktuppspelningsanslutning är det första steget för dig att börja direktuppspela data till Adobe Experience Platform. Du kan välja en från kombinationsrutan för direktuppspelningsanslutning. Direktuppspelningsanslutning är ett obligatoriskt fält. Om du inte har skapat någon direktuppspelningsanslutning kan du skapa en genom att välja knappen **[!UICONTROL Create a streaming connection]**.
 
-Om du väljer **[!UICONTROL Create a streaming connection]** ett modalt fönster visas.
+Om du väljer **[!UICONTROL Create a streaming connection]** visas ett modalt fönster.
 
 ![](../../../images/adobe-experienc-platform-create-streaming-connection.png)
 
-Den modala innehåller fält med förifyllda värden som kan ändras efter dina behov. Om du planerar att skapa mer än en direktuppspelningsanslutning bör du vara medveten om att **[!UICONTROL Data Source]** fältet måste vara unikt. Försöker skapa en annan direktuppspelningsanslutning med en **[!UICONTROL Data Source]** som redan används på en annan anslutning kommer att misslyckas.
+Den modala innehåller fält med förifyllda värden som kan ändras efter dina behov. Om du planerar att skapa mer än en direktuppspelningsanslutning bör du vara medveten om att fältet **[!UICONTROL Data Source]** måste vara unikt. Försök att skapa en annan direktuppspelningsanslutning med en **[!UICONTROL Data Source]** som redan används på en annan anslutning kommer att misslyckas.
 
 När du har valt en slutpunkt för direktuppspelning används URL:en för direktuppspelningsslutpunkten och källan.
 
@@ -85,7 +85,7 @@ Målschemafältet innehåller sökvägen till ett XDM-fält som definierats i da
 
 ### Väljare för schemafält
 
-Tillägget ger också möjlighet att välja ett målschemafält med hjälp av en visuell väljare. Om du väljer målknappen som finns bredvid målschemafältets indata, visas en modal där du ser datamängdens schematräd. Du kan välja ett fält och sedan välja **Välj** och indata från målschemafältet uppdateras och innehåller rätt XDM-sökväg.
+Tillägget ger också möjlighet att välja ett målschemafält med hjälp av en visuell väljare. Om du väljer målknappen som finns bredvid målschemafältets indata, visas en modal där du ser datamängdens schematräd. Du kan välja ett fält, sedan markera knappen **Markera** och målschemafältets indata uppdateras och innehåller rätt XDM-sökväg.
 
 ![](../../../images/adobe-experience-platform-send-beacon-schema-field-selector.png)
 
@@ -95,7 +95,7 @@ Registrera datamodeller och tidsseriedatcheman kan innehålla ett eller flera id
 
 Identitetsfält kan definieras på två sätt i schemat:
 
-1. Scheman för inspelnings- och tidsserier innehåller båda ett specialfält med namnet `xdm:identityMap` som kan innehålla en karta över identiteter.
+1. Scheman för post- och tidsserier innehåller båda ett specialfält med namnet `xdm:identityMap` som kan innehålla en karta över identiteter.
 1. Nyckelfält kan markeras som Identity-fält i schemat.
 
 ### Identitetsfält i Adobe Experience Platform Extension
@@ -112,7 +112,7 @@ Ett schemafält som är definierat som ett icke-primärt identitetsfält läggs 
 
 En varningsikon visas intill varje icke-primärt identitetsfält som inte innehåller något värde.
 
-Ett identitetsavsnitt visas om schemat innehåller ett `xdm:identityMap` fält. Du kan använda det här avsnittet om du föredrar att skicka data relaterade till identiteter med `xdm:identityMap`.
+Ett identitetsavsnitt visas om schemat innehåller ett `xdm:identityMap`-fält. Du kan använda det här avsnittet om du föredrar att skicka data relaterade till identiteter med `xdm:identityMap`.
 
 ![](../../../images/adobe-experience-platform-send-beacon-identity-section.png)
 
@@ -120,7 +120,7 @@ Avsnittet för identitetsmappning kan innehålla flera rader. Varje rad kan defi
 
 Om du har flera identiteter i avsnittet för identitetsmappning kan bara en identitet markeras som primär.
 
-Om du har ett schema som har ett `xdm:identityMap` och samtidigt som ett annat fält är markerat som ett primärt identitetsfält, kommer den primära kolumnen i området för identitetsmappning inte att vara synlig.
+Om du har ett schema som har ett `xdm:identityMap`-fält och samtidigt ett annat fält markeras som ett primärt identitetsfält, visas inte den primära kolumnen i identitetsmappningsavsnittet.
 
 ![](../../../images/adobe-experience-platform-send-beacon-identity-section-not-primary.png)
 
@@ -128,4 +128,4 @@ Om du har ett schema som har ett `xdm:identityMap` och samtidigt som ett annat f
 
 Vissa scheman kommer att ha obligatoriska fält på den översta nivån. De vanligaste är `timestamp` och `_id`. Om du inte definierar de här fälten misslyckas beacon. Du kan definiera dem i schemamappningsavsnittet.
 
-Om schemamappningsavsnittet inte innehåller `timestamp` eller `_id`men enligt datasetchemat skickas en signal som innehåller automatiskt genererade värden så att beacon inte misslyckas. De automatiskt genererade värdena läggs bara till i beacon-data om du inte har definierat fälten i schemamappningsavsnittet.
+Om schemamappningsavsnittet inte innehåller `timestamp` eller `_id`, men datamängdsschemat kräver det, skickar Adobe Experience Platform-tillägget en fyr med automatiskt genererade värden så att beacon inte misslyckas. De automatiskt genererade värdena läggs bara till i beacon-data om du inte har definierat fälten i schemamappningsavsnittet.

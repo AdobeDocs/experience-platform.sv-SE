@@ -8,7 +8,7 @@ role: User
 source-git-commit: e828485ad5b0904c9dc66b43d1cdb3c4707885b1
 workflow-type: tm+mt
 source-wordcount: '136'
-ht-degree: 23%
+ht-degree: 20%
 
 ---
 
@@ -35,7 +35,7 @@ ht-degree: 23%
 - Innehållstaggning {#content-commerce-ai}
    - [Översikt](content-commerce-ai/overview.md)
    - [Komma igång](content-commerce-ai/getting-started.md)
-   - API för innehållstaggning{#api}
+   - API för innehållstaggning {#api}
       - [Färgtaggning](content-commerce-ai/api/color-tagging.md)
       - [Nyckelordstaggning](content-commerce-ai/api/keyword-tagging.md)
       - [Textnärvaro och optisk teckenigenkänning](content-commerce-ai/api/optical-character-recognition.md)
@@ -48,7 +48,7 @@ ht-degree: 23%
       - [Upptäck insikter](customer-ai/user-guide/discover-insights.md)
       - [Skapa segment med hjälp av AI-poäng för kunder](customer-ai/user-guide/create-segment.md)
       - [Hämta bakgrundsmusik](customer-ai/user-guide/download-scores.md)
-   - [Fel vid felsökning](customer-ai/troubleshooting.md)
+   - [Felsökning](customer-ai/troubleshooting.md)
    - Datastyrning {#cai-data-governance}
       - [Åtkomstkontroller](customer-ai/cai-data-governance/access-controls.md)
       - [Granskningsloggar](customer-ai/cai-data-governance/audit-logs.md)

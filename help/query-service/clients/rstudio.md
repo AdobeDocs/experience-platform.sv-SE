@@ -6,38 +6,38 @@ description: Det här dokumentet går igenom stegen för att ansluta R Studio me
 exl-id: 8dd82bad-6ffb-4536-9c27-223f471a49c6
 source-git-commit: 668b2624b7a23b570a3869f87245009379e8257c
 workflow-type: tm+mt
-source-wordcount: '444'
+source-wordcount: '434'
 ht-degree: 0%
 
 ---
 
-# Anslut [!DNL RStudio] till frågetjänst
+# Anslut [!DNL RStudio] till frågetjänsten
 
-Det här dokumentet går igenom stegen för att ansluta [!DNL RStudio] med Adobe Experience Platform [!DNL Query Service].
+Det här dokumentet går igenom stegen för att ansluta [!DNL RStudio] till Adobe Experience Platform [!DNL Query Service].
 
 >[!NOTE]
 >
-> [!DNL RStudio] har nu omklassificerats som [!DNL Posit]. [!DNL RStudio] produkterna har bytt namn till [!DNL Posit Connect], [!DNL Posit Workbench], [!DNL Posit Package] chef, [!DNL Posit Cloud]och [!DNL Posit Academy].
+> [!DNL RStudio] har nu omklassificerats som [!DNL Posit]. [!DNL RStudio] produkter har bytt namn till [!DNL Posit Connect], [!DNL Posit Workbench], [!DNL Posit Package] Manager, [!DNL Posit Cloud] och [!DNL Posit Academy].
 >
-> Den här handboken förutsätter att du redan har tillgång till [!DNL RStudio] och känner till hur den används. Mer information om [!DNL RStudio] finns i [officiell [!DNL RStudio] dokumentation](https://rstudio.com/products/rstudio/).
+> Den här handboken förutsätter att du redan har tillgång till [!DNL RStudio] och är bekant med hur du använder den. Mer information om [!DNL RStudio] finns i [officiell [!DNL RStudio] dokumentation](https://rstudio.com/products/rstudio/).
 > 
-> Dessutom, att använda [!DNL RStudio] med Query Service måste du installera [!DNL PostgreSQL] JDBC 4.2-drivrutin. Du kan hämta JDBC-drivrutinen från [[!DNL PostgreSQL] officiell webbplats](https://jdbc.postgresql.org/download/).
+> Om du vill använda [!DNL RStudio] med Query Service måste du installera drivrutinen [!DNL PostgreSQL] JDBC 4.2. Du kan hämta JDBC-drivrutinen från den [[!DNL PostgreSQL] officiella platsen](https://jdbc.postgresql.org/download/).
 
-## Skapa en [!DNL Query Service] anslutningen i [!DNL RStudio] gränssnitt
+## Skapa en [!DNL Query Service]-anslutning i gränssnittet [!DNL RStudio]
 
-Efter installation [!DNL RStudio]måste du installera RJDBC-paketet. Instruktioner om hur du [koppla en databas via kommandoraden](https://solutions.posit.co/connections/db/best-practices/drivers/#connecting-to-a-database-in-r) finns i den officiella postdokumentationen.
+När du har installerat [!DNL RStudio] måste du installera RJDBC-paketet. Instruktioner om hur du [ansluter en databas via kommandoraden](https://solutions.posit.co/connections/db/best-practices/drivers/#connecting-to-a-database-in-r) finns i den officiella besöksdokumentationen.
 
-Om du använder ett Mac OS kan du välja **[!UICONTROL Tools]** på menyraden följt av **[!UICONTROL Install Packages]** i listrutan. Du kan även välja **[!DNL Packages]** från RStudio-gränssnittet och välj **[!DNL Install]**.
+Om du använder ett Mac-operativsystem kan du välja **[!UICONTROL Tools]** på menyraden följt av **[!UICONTROL Install Packages]** på den nedrullningsbara menyn. Du kan också välja fliken **[!DNL Packages]** i användargränssnittet för RStudio och välja **[!DNL Install]**.
 
-Ett popup-fönster visas med **[!DNL Install Packages]** skärm. Se till att **[!DNL Repository (CRAN)]** är markerat för **[!DNL Install from]** -avsnitt. Värdet för **[!DNL Packages]** bör `RJDBC`. Säkerställ **[!DNL Install dependencies]** är markerat. När du har bekräftat att alla värden är korrekta väljer du **[!DNL Install]** för att installera paketen. Nu när RJDBC-paketet har installerats startar du om [!DNL RStudio] för att slutföra installationen.
+Ett popup-fönster med skärmen **[!DNL Install Packages]** visas. Kontrollera att **[!DNL Repository (CRAN)]** är markerat för avsnittet **[!DNL Install from]**. Värdet för **[!DNL Packages]** ska vara `RJDBC`. Kontrollera att **[!DNL Install dependencies]** är markerat. När du har bekräftat att alla värden är korrekta väljer du **[!DNL Install]** för att installera paketen. Nu när RJDBC-paketet har installerats startar du om [!DNL RStudio] för att slutföra installationsprocessen.
 
-Efter [!DNL RStudio] har startats om kan du nu ansluta till frågetjänsten. Välj **[!DNL RJDBC]** i **[!DNL Packages]** och ange följande kommando i konsolen:
+När [!DNL RStudio] har startats om kan du ansluta till frågetjänsten. Markera paketet **[!DNL RJDBC]** i rutan **[!DNL Packages]** och ange följande kommando i konsolen:
 
 ```console
 pgsql <- JDBC("org.postgresql.Driver", "{PATH TO THE POSTGRESQL JDBC JAR}", "`")
 ```
 
-Plats `{PATH TO THE POSTGRESQL JDBC JAR}` representerar sökvägen till [!DNL PostgreSQL] JDBC JAR som installerades på datorn.
+Där `{PATH TO THE POSTGRESQL JDBC JAR}` representerar sökvägen till den [!DNL PostgreSQL] JDBC JAR som installerades på datorn.
 
 Nu kan du skapa anslutningen till frågetjänsten. Ange följande kommando i konsolen:
 
@@ -47,17 +47,17 @@ qsconnection <- dbConnect(pgsql, "jdbc:postgresql://{HOSTNAME}:{PORT}/{DATABASE_
 
 >[!IMPORTANT]
 >
->Se [[!DNL Query Service] SSL-dokumentation](./ssl-modes.md) om du vill veta mer om SSL-stöd för tredjepartsanslutningar till Adobe Experience Platform Query Service och hur du ansluter med `verify-full` SSL-läge.
+>Läs [[!DNL Query Service] SSL-dokumentationen](./ssl-modes.md) om du vill veta mer om SSL-stöd för tredjepartsanslutningar till Adobe Experience Platform Query Service och hur du ansluter i SSL-läge `verify-full`.
 
-Mer information om hur du hittar databasnamn, värd, port och inloggningsuppgifter finns i [inloggningsguide](../ui/credentials.md). Logga in på [!DNL Platform]väljer **[!UICONTROL Queries]**, följt av **[!UICONTROL Credentials]**.
+Mer information om hur du söker efter databasnamn, värd, port och inloggningsuppgifter finns i [referenshandboken](../ui/credentials.md). Logga in på [!DNL Platform] och välj sedan **[!UICONTROL Queries]** följt av **[!UICONTROL Credentials]** för att hitta dina autentiseringsuppgifter.
 
 Ett meddelande i konsolutdata bekräftar anslutningen till frågetjänsten.
 
 ## Skriver frågor
 
-Nu när du har anslutit till [!DNL Query Service]kan du skriva frågor för att köra och redigera SQL-satser. Du kan till exempel använda `dbGetQuery(con, sql)` för att köra frågor, där `sql` är den SQL-fråga som du vill köra.
+Nu när du har anslutit till [!DNL Query Service] kan du skriva frågor för att köra och redigera SQL-satser. Du kan till exempel använda `dbGetQuery(con, sql)` för att köra frågor, där `sql` är den SQL-fråga som du vill köra.
 
-I följande fråga används en datauppsättning som innehåller [Experience Events](../../xdm/classes/experienceevent.md) och skapar ett histogram med sidvyer av en webbplats utifrån enhetens skärmhöjd.
+Följande fråga använder en datauppsättning som innehåller [Experience Events](../../xdm/classes/experienceevent.md) och skapar ett histogram med sidvyer för en webbplats utifrån enhetens skärmhöjd.
 
 ```sql
 df_pageviews <- dbGetQuery(con,
@@ -94,4 +94,4 @@ df_pageviews
 
 ## Nästa steg
 
-Mer information om hur du skriver och kör frågor finns i guiden [köra frågor](../best-practices/writing-queries.md).
+Mer information om hur du skriver och kör frågor finns i guiden för [frågor som körs](../best-practices/writing-queries.md).

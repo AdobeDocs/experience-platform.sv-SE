@@ -16,11 +16,11 @@ ht-degree: 0%
 
 ## Exempel på API-anrop
 
-I följande avsnitt beskrivs API-anropet som du kan göra med [!DNL Query Service] API. Anropet innehåller det allmänna API-formatet, en exempelbegäran med obligatoriska rubriker och ett exempelsvar.
+I följande avsnitt får du hjälp med API-anropet som du kan göra med API:t [!DNL Query Service]. Anropet innehåller det allmänna API-formatet, en exempelbegäran med obligatoriska rubriker och ett exempelsvar.
 
 ### Begär anslutningsparametrar
 
-Du kan hämta anslutningsparametrarna genom att göra en GET-förfrågan till `/connection_parameters` slutpunkt. Mer information om klienter som använder anslutningsparametrar för att ansluta via den interaktiva tjänsten finns i dokumentationen om [Query Service-klienter](../clients/overview.md).
+Du kan hämta anslutningsparametrar genom att göra en GET-förfrågan till slutpunkten `/connection_parameters`. Mer information om klienter som använder anslutningsparametrar för att ansluta via den interaktiva tjänsten finns i dokumentationen om [frågetjänstklienter](../clients/overview.md).
 
 **API-format**
 

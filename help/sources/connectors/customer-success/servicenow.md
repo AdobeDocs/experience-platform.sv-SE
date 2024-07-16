@@ -11,19 +11,19 @@ ht-degree: 0%
 
 ---
 
-# [!DNL ServiceNow] koppling
+# [!DNL ServiceNow]-koppling
 
-Med Adobe Experience Platform kan data hämtas från externa källor samtidigt som du kan strukturera, etikettera och förbättra inkommande data med [!DNL Platform] tjänster. Du kan importera data från en mängd olika källor, till exempel Adobe-program, molnbaserad lagring, databaser och många andra.
+Adobe Experience Platform tillåter att data hämtas från externa källor samtidigt som du får möjlighet att strukturera, etikettera och förbättra inkommande data med [!DNL Platform]-tjänster. Du kan importera data från en mängd olika källor, till exempel Adobe-program, molnbaserad lagring, databaser och många andra.
 
-[!DNL Experience Platform] har stöd för inmatning av data från ett lyckat system från tredje part. Bland leverantörerna av nöjda kunder finns [!DNL ServiceNow].
+[!DNL Experience Platform] har stöd för inhämtning av data från ett lyckat system från en tredje part. Stöd för leverantörer av kundframgångar omfattar [!DNL ServiceNow].
 
 ## IP-adress tillåtelselista
 
-En lista med IP-adresser måste läggas till tillåtelselista innan du kan arbeta med källanslutningar. Om du inte lägger till dina regionspecifika IP-adresser i tillåtelselista kan det leda till fel eller sämre prestanda när du använder källor. Se [IP-adress tillåtelselista](../../ip-address-allow-list.md) sida för mer information.
+En lista med IP-adresser måste läggas till tillåtelselista innan du kan arbeta med källanslutningar. Om du inte lägger till dina regionspecifika IP-adresser i tillåtelselista kan det leda till fel eller sämre prestanda när du använder källor. Mer information finns på sidan [IP-adress tillåtelselista](../../ip-address-allow-list.md).
 
 Dokumentationen nedan innehåller information om hur du ansluter [!DNL ServiceNow] till [!DNL Platform] med API:er eller användargränssnittet:
 
-## Anslut [!DNL ServiceNow] till [!DNL Platform] använda API:er
+## Anslut [!DNL ServiceNow] till [!DNL Platform] med API:er
 
 - [Skapa en ServiceNow-basanslutning med API:t för Flow Service](../../tutorials/api/create/customer-success/servicenow.md)
 - [Utforska datatabeller med API:t för Flow Service](../../tutorials/api/explore/tabular.md)

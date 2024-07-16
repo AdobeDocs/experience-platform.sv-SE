@@ -4,7 +4,7 @@ description: I det här dokumentet förklaras hur du kan använda Query Service 
 exl-id: d62cd349-06fc-4ce6-a5e8-978f11186927
 source-git-commit: e33d59c4ac28f55ba6ae2fc073d02f8738159263
 workflow-type: tm+mt
-source-wordcount: '1419'
+source-wordcount: '1418'
 ht-degree: 0%
 
 ---
@@ -17,14 +17,14 @@ Attribution är ett analytiskt koncept som hjälper till att fastställa marknad
 
 SQL-exemplen i det här dokumentet är frågor som ofta används med Adobe Analytics-data. Den här självstudiekursen kräver en fungerande förståelse av följande komponenter:
 
-* [Adobe Analytics källanslutning för rapportsvitens dataöversikt](../../sources/connectors/adobe-applications/mapping/analytics.md).
-* [Dokumentation om mappningar av analysfält](../../sources/connectors/adobe-applications/mapping/analytics.md) ger mer information om inmatning och mappning av analysdata för användning med Query Service.
-* [Översikt över Attribution IQ](https://experienceleague.adobe.com/docs/analytics/analyze/analysis-workspace/attribution/overview.html)
-* [Guiden i panelen Adobe Analytics Attribution](https://experienceleague.adobe.com/docs/analytics/analyze/analysis-workspace/panels/attribution.html).
+* [Adobe Analytics-källkopplingen för rapportsvitens dataöversikt](../../sources/connectors/adobe-applications/mapping/analytics.md).
+* [Analysfältmappningsdokumentationen](../../sources/connectors/adobe-applications/mapping/analytics.md) innehåller mer information om hur analysdata hämtas och mappas för användning med frågetjänsten.
+* [Attribution IQ - översikt](https://experienceleague.adobe.com/docs/analytics/analyze/analysis-workspace/attribution/overview.html)
+* [Guiden för Adobe Analytics-panelen Attribution](https://experienceleague.adobe.com/docs/analytics/analyze/analysis-workspace/panels/attribution.html).
 
-En förklaring av parametrarna i `OVER()` finns i [fönsterfunktionsavsnitt](../sql/adobe-defined-functions.md#window-functions). The [Adobe Marketing and Commerce Term Glossary](https://business.adobe.com/glossary/index.html) kan också användas.
+En förklaring av parametrarna i funktionen `OVER()` finns i avsnittet [fönsterfunktioner](../sql/adobe-defined-functions.md#window-functions). [Adobe Marketing och Commerce Term Glossary](https://business.adobe.com/glossary/index.html) kan också användas.
 
-För vart och ett av följande användningsfall anges ett parametriserat SQL-frågeexempel som en mall som du kan anpassa. Ange parametrar var du än ser `{ }` i de SQL-exempel som du är intresserad av att utvärdera.
+För vart och ett av följande användningsfall anges ett parametriserat SQL-frågeexempel som en mall som du kan anpassa. Ange parametrar där du ser `{ }` i de SQL-exempel som du är intresserad av att utvärdera.
 
 ## Mål
 
@@ -42,7 +42,7 @@ Tabellen nedan innehåller en beskrivning av parametrarna och deras beskrivninga
 
 | Parameter | Beskrivning |
 |---|---|
-| `{TIMESTAMP}` | Tidsstämpelfältet som finns i datauppsättningen. |
+| `{TIMESTAMP}` | Tidsstämpelfältet i datauppsättningen. |
 | `{CHANNEL_NAME}` | Etiketten för det returnerade objektet. |
 | `{CHANNEL_VALUE}` | Kolumnen eller fältet som är målkanalen för frågan. |
 | `{EXP_TIMEOUT}` | Tidsfönstret före kanalhändelsen, i sekunder, som frågan söker efter en första beröringshändelse. |
@@ -51,7 +51,7 @@ Tabellen nedan innehåller en beskrivning av parametrarna och deras beskrivninga
 
 ## Frågeresultatkolumnkomponenter {#query-result-column-components}
 
-Resultaten för attribueringsfrågorna anges i antingen `first_touch` eller `last_touch` kolumn. Kolumnerna består av följande komponenter:
+Resultaten för attribueringsfrågorna anges antingen i kolumnen `first_touch` eller `last_touch`. Kolumnerna består av följande komponenter:
 
 ```console
 ({NAME}, {VALUE}, {TIMESTAMP}, {FRACTION})
@@ -59,8 +59,8 @@ Resultaten för attribueringsfrågorna anges i antingen `first_touch` eller `las
 
 | Parametrar | Beskrivning |
 | ---------- | ----------- |
-| `{NAME}` | The `{CHANNEL_NAME}`, anges som en etikett i Azure Data Factory (ADF). |
-| `{VALUE}` | Värdet från `{CHANNEL_VALUE}` som är den sista beröringen inom det angivna `{EXP_TIMEOUT}` intervall |
+| `{NAME}` | `{CHANNEL_NAME}`, angiven som en etikett i Azure Data Factory (ADF). |
+| `{VALUE}` | Värdet från `{CHANNEL_VALUE}` som är den sista beröringen inom det angivna `{EXP_TIMEOUT}`-intervallet |
 | `{TIMESTAMP}` | Tidsstämpeln för [!DNL Experience Event] där den senaste beröringen inträffade |
 | `{FRACTION}` | Den sista pektens attribuering, uttryckt i decimaltal. |
 
@@ -68,7 +68,7 @@ Resultaten för attribueringsfrågorna anges i antingen `first_touch` eller `las
 
 Den första beröringsattribueringen ger 100 % av ansvaret för ett lyckat resultat för den initiala kanal som konsumenten stötte på. Det här SQL-exemplet används för att markera den interaktion som ledde till en serie kundåtgärder.
 
-Frågan nedan returnerar det första beröringsattributvärdet och information om kanalen i målet [!DNL Experience Event] datauppsättning. Den returnerar också en `struct` objekt för den valda kanalen med det första beröringsvärdet, tidsstämpeln och attribueringen för varje rad.
+Frågan nedan returnerar det första beröringsattribueringsvärdet och kanalens information i måldatauppsättningen [!DNL Experience Event]. Det returnerar också ett `struct`-objekt för den valda kanalen med det första beröringsvärdet, tidsstämpeln och attribueringen för varje rad.
 
 >[!NOTE]
 >
@@ -80,7 +80,7 @@ Frågan nedan returnerar det första beröringsattributvärdet och information o
 ATTRIBUTION_FIRST_TOUCH({TIMESTAMP}, {CHANNEL_NAME}, {CHANNEL_VALUE}) OVER ({PARTITION} {ORDER} {FRAME})
 ```
 
-En fullständig lista över parametrar som kan vara obligatoriska och deras beskrivningar finns i [attribueringsfrågeparameteravsnitt](#attribution-query-parameters).
+En fullständig lista över parametrar som kan vara obligatoriska och deras beskrivningar finns i avsnittet [attribueringsfrågeparametrar](#attribution-query-parameters).
 
 **Exempelfråga**
 
@@ -98,7 +98,7 @@ LIMIT 10
 
 **Resultat**
 
-I resultaten nedan är den inledande spårningskoden `em:946426` tas från [!DNL Experience Event] datauppsättning. Den här spårningskoden tilldelas till 100 % (`1.0`) av ansvaret för kundens åtgärder eftersom det var den första interaktionen.
+I resultaten nedan hämtas den inledande spårningskoden `em:946426` från datamängden [!DNL Experience Event]. Den här spårningskoden tilldelas 100 % (`1.0`) av ansvaret för kundens åtgärder eftersom det var den första interaktionen.
 
 ```console
                  id                 |       timestamp       | trackingCode |                   first_touch                   
@@ -116,13 +116,13 @@ I resultaten nedan är den inledande spårningskoden `em:946426` tas från [!DNL
 (10 rows)
 ```
 
-För en beskrivning av resultaten som visas i `first_touch` -kolumn, se [kolumnkomponentavsnitt](#query-result-column-components).
+En beskrivning av resultaten som visas i kolumnen `first_touch` finns i avsnittet [kolumnkomponenter](#query-result-column-components).
 
 ### Senaste beröringsattribuering {#second-touch}
 
 Senaste beröringsattribuering ger 100 % av ansvaret för ett lyckat resultat till den sista kanal som konsumenten stötte på. Det här SQL-exemplet används för att markera den slutliga interaktionen i en serie kundåtgärder.
 
-Frågan returnerar det sista beröringsattributvärdet och information om kanalen i målet [!DNL Experience Event] datauppsättning. Den returnerar också en `struct` objekt för den valda kanalen med det senaste beröringsvärdet, tidsstämpeln och attribueringen för varje rad.
+Frågan returnerar det sista beröringsattributvärdet och kanalens detaljer i måldatauppsättningen [!DNL Experience Event]. Det returnerar också ett `struct`-objekt för den valda kanalen med det senaste beröringsvärdet, tidsstämpeln och attribueringen för varje rad.
 
 **Frågesyntax**
 
@@ -145,7 +145,7 @@ ORDER BY endUserIds._experience.mcid.id, timestamp ASC
 
 **Resultat**
 
-I resultaten som visas nedan är spårningskoden i det returnerade objektet den sista interaktionen i varje [!DNL Experience Event] post. Varje kod tilldelas 100 % (`1.0`) ansvar för kundens agerande, som det var den sista interaktionen.
+I resultaten som visas nedan är spårningskoden i det returnerade objektet den sista interaktionen i varje [!DNL Experience Event]-post. Varje kod tilldelas 100 % (`1.0`) ansvar för kundens åtgärder, eftersom det var den senaste interaktionen.
 
 ```console
                  id                |       timestamp       | trackingCode |                   last_touch                   
@@ -163,13 +163,13 @@ I resultaten som visas nedan är spårningskoden i det returnerade objektet den 
 (10 rows)
 ```
 
-För en beskrivning av resultaten som visas i `last_touch` -kolumn, se [kolumnkomponentavsnitt](#query-result-column-components).
+En beskrivning av resultaten som visas i kolumnen `last_touch` finns i avsnittet [kolumnkomponenter](#query-result-column-components).
 
 ### Första beröringsattribuering med förfallovillkor {#first-touch-attribution-with-expiration-condition}
 
-Den här frågan används för att se vilken interaktion som ledde till en serie kundåtgärder inom en del av [!DNL Experience Event] datauppsättningen bestäms av ett villkor som du väljer.
+Den här frågan används för att se vilken interaktion som ledde till en serie kundåtgärder inom en del av datamängden [!DNL Experience Event] som bestäms av ett villkor som du väljer.
 
-Frågan returnerar det första beröringsattributvärdet och information för en enskild kanal i målet [!DNL Experience Event] datauppsättning som slutar gälla efter eller före ett villkor. Den returnerar också en `struct` objekt med det första beröringsvärdet, tidsstämpeln och attribueringen för varje rad som returneras för den valda kanalen.
+Frågan returnerar det första beröringsattribueringsvärdet och information för en enskild kanal i måldatauppsättningen [!DNL Experience Event], som går ut efter eller före ett villkor. Det returnerar också ett `struct`-objekt med det första beröringsvärdet, tidsstämpeln och attribueringen för varje rad som returneras för den valda kanalen.
 
 **Frågesyntax**
 
@@ -179,11 +179,11 @@ ATTRIBUTION_FIRST_TOUCH_EXP_IF(
     OVER ({PARTITION} {ORDER} {FRAME})
 ```
 
-En fullständig lista över parametrar som kan vara obligatoriska och deras beskrivningar finns i [attribueringsfrågeparameteravsnitt](#attribution-query-parameters).
+En fullständig lista över parametrar som kan vara obligatoriska och deras beskrivningar finns i avsnittet [attribueringsfrågeparametrar](#attribution-query-parameters).
 
 **Exempelfråga**
 
-I exemplet nedan registreras ett köp (`commerce.purchases.value IS NOT NULL`) för var och en av de fyra dagar som visas i resultaten (15, 21, 23 och 29 juli) och den inledande spårningskoden för varje dag tilldelas 100 % (`1.0`) ansvar för kundens åtgärder.
+I exemplet nedan registreras ett köp (`commerce.purchases.value IS NOT NULL`) för var och en av de fyra dagar som visas i resultaten (15, 21, 23 och 29 juli), och den inledande spårningskoden för varje dag tilldelas 100 % (`1.0`) ansvar för kundåtgärderna.
 
 ```sql
 SELECT endUserIds._experience.mcid.id, timestamp, marketing.trackingCode,
@@ -214,13 +214,13 @@ ORDER BY endUserIds._experience.mcid.id, timestamp ASC
 (10 rows)
 ```
 
-För en beskrivning av resultaten som visas i `first_touch` -kolumn, se [kolumnkomponentavsnitt](#query-result-column-components).
+En beskrivning av resultaten som visas i kolumnen `first_touch` finns i avsnittet [kolumnkomponenter](#query-result-column-components).
 
 ### Första beröringsattribuering med tidsgräns för förfallodatum {#first-touch-attribution-with-expiration-timeout}
 
 Den här frågan används för att hitta den interaktion, inom en viss tidsperiod, som ledde till att kunden slutfördes.
 
-Frågan nedan returnerar det första beröringsattributvärdet och information för en enskild kanal i målet [!DNL Experience Event] datauppsättning för en angiven tidsperiod. Frågan returnerar en `struct` objekt med det första beröringsvärdet, tidsstämpeln och attribueringen för varje rad som returneras för den valda kanalen.
+Frågan nedan returnerar det första beröringsattribueringsvärdet och information för en enskild kanal i måldatauppsättningen [!DNL Experience Event] för en angiven tidsperiod. Frågan returnerar ett `struct`-objekt med det första beröringsvärdet, tidsstämpeln och attribueringen för varje rad som returneras för den valda kanalen.
 
 **Frågesyntax**
 
@@ -230,7 +230,7 @@ ATTRIBUTION_FIRST_TOUCH_EXP_IF(
     OVER ({PARTITION} {ORDER} {FRAME})
 ```
 
-En fullständig lista över parametrar som kan vara obligatoriska och deras beskrivningar finns i [attribueringsfrågeparameteravsnitt](#attribution-query-parameters).
+En fullständig lista över parametrar som kan vara obligatoriska och deras beskrivningar finns i avsnittet [attribueringsfrågeparametrar](#attribution-query-parameters).
 
 **Exempelfråga**
 
@@ -265,13 +265,13 @@ ORDER BY endUserIds._experience.mcid.id, timestamp ASC
 (10 rows)
 ```
 
-För en beskrivning av resultaten som visas i `first_touch` -kolumn, se [kolumnkomponentavsnitt](#query-result-column-components).
+En beskrivning av resultaten som visas i kolumnen `first_touch` finns i avsnittet [kolumnkomponenter](#query-result-column-components).
 
 ### Senaste beröringsattribuering med förfallovillkor {#last-touch-attribution-with-expiration-condition}
 
-Den här frågan används för att hitta den senaste interaktionen i en serie kundåtgärder inom en del av [!DNL Experience Event] datauppsättningen bestäms av ett villkor som du väljer.
+Den här frågan används för att hitta den senaste interaktionen i en serie kundåtgärder inom en del av datamängden [!DNL Experience Event] som bestäms av ett villkor som du väljer.
 
-Frågan nedan returnerar det sista beröringsattributvärdet och information för en enskild kanal i målet [!DNL Experience Event] datauppsättning som slutar gälla efter eller före ett villkor. Frågan returnerar en `struct` objekt med det sista beröringsvärdet, tidsstämpeln och attribueringen för varje rad som returneras för den valda kanalen.
+Frågan nedan returnerar det sista beröringsattributvärdet och information för en enskild kanal i måldatauppsättningen [!DNL Experience Event], som går ut efter eller före ett villkor. Frågan returnerar ett `struct`-objekt med det senaste beröringsvärdet, tidsstämpeln och attribueringen för varje rad som returneras för den valda kanalen.
 
 **Frågesyntax**
 
@@ -281,11 +281,11 @@ ATTRIBUTION_LAST_TOUCH_EXP_IF(
     OVER ({PARTITION} {ORDER} {FRAME})
 ```
 
-En fullständig lista över parametrar som kan vara obligatoriska och deras beskrivningar finns i [attribueringsfrågeparameteravsnitt](#attribution-query-parameters).
+En fullständig lista över parametrar som kan vara obligatoriska och deras beskrivningar finns i avsnittet [attribueringsfrågeparametrar](#attribution-query-parameters).
 
 **Exempelfråga**
 
-I exemplet nedan registreras ett köp (`commerce.purchases.value IS NOT NULL`) på var och en av de fyra dagar som visas i resultaten (15, 21, 23 och 29 juli) och den sista spårningskoden varje dag tilldelas 100 % (`1.0`) ansvar för kundens åtgärder.
+I exemplet nedan registreras ett köp (`commerce.purchases.value IS NOT NULL`) för var och en av de fyra dagar som visas i resultaten (15, 21, 23 och 29 juli), och den sista spårningskoden varje dag tilldelas 100 % (`1.0`) ansvar för kundåtgärderna.
 
 ```sql
 SELECT endUserIds._experience.mcid.id, timestamp, marketing.trackingCode,
@@ -316,11 +316,11 @@ ORDER BY endUserIds._experience.mcid.id, timestamp ASC
 (10 rows)
 ```
 
-För en beskrivning av resultaten som visas i `last_touch` -kolumn, se [kolumnkomponentavsnitt](#query-result-column-components).
+En beskrivning av resultaten som visas i kolumnen `last_touch` finns i avsnittet [kolumnkomponenter](#query-result-column-components).
 
 ### Senaste beröringsattribuering med tidsgräns för förfallodatum {#last-touch-attribution-with-expiration-timeout}
 
-Den här frågan används för att hitta den senaste interaktionen inom ett valt tidsintervall. Frågan returnerar det sista beröringsattributvärdet och information för en enskild kanal i målet [!DNL Experience Event] datauppsättning för en angiven tidsperiod. Frågan returnerar en `struct` objekt med det sista beröringsvärdet, tidsstämpeln och attribueringen för varje rad som returneras för den valda kanalen.
+Den här frågan används för att hitta den senaste interaktionen inom ett valt tidsintervall. Frågan returnerar det sista beröringsattributvärdet och detaljer för en enskild kanal i måldatauppsättningen [!DNL Experience Event] för en angiven tidsperiod. Frågan returnerar ett `struct`-objekt med det senaste beröringsvärdet, tidsstämpeln och attribueringen för varje rad som returneras för den valda kanalen.
 
 **Frågesyntax**
 
@@ -330,11 +330,11 @@ ATTRIBUTION_LAST_TOUCH_EXP_TIMEOUT(
     OVER ({PARTITION} {ORDER} {FRAME})
 ```
 
-En fullständig lista över parametrar som kan vara obligatoriska och deras beskrivningar finns i [attribueringsfrågeparameteravsnitt](#attribution-query-parameters).
+En fullständig lista över parametrar som kan vara obligatoriska och deras beskrivningar finns i avsnittet [attribueringsfrågeparametrar](#attribution-query-parameters).
 
 **Exempelfråga**
 
-I exemplet nedan är den sista tryckningen som returneras för varje kundåtgärd den slutliga interaktionen inom de följande sju dagarna (`expTimeout = 86400 * 7`).
+I exemplet som visas nedan är den sista beröringen som returneras för varje kundåtgärd den slutliga interaktionen inom de följande sju dagarna (`expTimeout = 86400 * 7`).
 
 ```sql
 SELECT endUserIds._experience.mcid.id, timestamp, marketing.trackingCode,
@@ -365,4 +365,4 @@ ORDER BY endUserIds._experience.mcid.id, timestamp ASC
 (10 rows)
 ```
 
-För en beskrivning av resultaten som visas i `last_touch` -kolumn, se [kolumnkomponentavsnitt](#query-result-column-components).
+En beskrivning av resultaten som visas i kolumnen `last_touch` finns i avsnittet [kolumnkomponenter](#query-result-column-components).

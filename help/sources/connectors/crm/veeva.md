@@ -11,19 +11,19 @@ ht-degree: 0%
 
 ---
 
-# [!DNL Veeva CRM] källa
+# [!DNL Veeva CRM]-källa
 
-Med Adobe Experience Platform kan data hämtas från externa källor samtidigt som du kan strukturera, etikettera och förbättra inkommande data med [!DNL Platform] tjänster. Du kan importera data från en mängd olika källor, till exempel Adobe-program, molnbaserad lagring, databaser och många andra.
+Adobe Experience Platform tillåter att data hämtas från externa källor samtidigt som du får möjlighet att strukturera, etikettera och förbättra inkommande data med [!DNL Platform]-tjänster. Du kan importera data från en mängd olika källor, till exempel Adobe-program, molnbaserad lagring, databaser och många andra.
 
-Experience Platform har stöd för inmatning av data från ett CRM-system från tredje part. Stöd för CRM-leverantörer innefattar [!DNL Veeva CRM].
+Experience Platform har stöd för inmatning av data från ett CRM-system från tredje part. Stöd för CRM-providers omfattar [!DNL Veeva CRM].
 
 ## IP-adress tillåtelselista
 
-En lista med IP-adresser måste läggas till tillåtelselista innan du kan arbeta med källanslutningar. Om du inte lägger till dina regionspecifika IP-adresser i tillåtelselista kan det leda till fel eller sämre prestanda när du använder källor. Se [IP-adress tillåtelselista](../../ip-address-allow-list.md) sida för mer information.
+En lista med IP-adresser måste läggas till tillåtelselista innan du kan arbeta med källanslutningar. Om du inte lägger till dina regionspecifika IP-adresser i tillåtelselista kan det leda till fel eller sämre prestanda när du använder källor. Mer information finns på sidan [IP-adress tillåtelselista](../../ip-address-allow-list.md).
 
-Dokumentationen nedan innehåller information om hur du ansluter [!DNL Veeva CRM] till Plattform med API:er eller användargränssnittet:
+Dokumentationen nedan innehåller information om hur du ansluter [!DNL Veeva CRM] till plattformen med API:er eller användargränssnittet:
 
-## Anslut [!DNL Veeva CRM] till [!DNL Platform] använda API:er
+## Anslut [!DNL Veeva CRM] till [!DNL Platform] med API:er
 
 - [Skapa en Veeva CRM-basanslutning med API:t för Flow Service](../../tutorials/api/create/crm/veeva.md)
 - [Utforska datatabeller med API:t för Flow Service](../../tutorials/api/explore/tabular.md)

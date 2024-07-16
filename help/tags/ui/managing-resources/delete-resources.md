@@ -13,9 +13,9 @@ ht-degree: 0%
 
 >[!NOTE]
 >
->Adobe Experience Platform Launch har omklassificerats som en serie datainsamlingstekniker i Adobe Experience Platform. Som ett resultat av detta har flera terminologiska förändringar införts i produktdokumentationen. Se följande [dokument](../../term-updates.md) för en konsoliderad hänvisning till terminologiska förändringar.
+>Adobe Experience Platform Launch har omklassificerats som en serie datainsamlingstekniker i Adobe Experience Platform. Som ett resultat av detta har flera terminologiska förändringar införts i produktdokumentationen. I följande [dokument](../../term-updates.md) finns en konsoliderad referens till de ändrade terminologin.
 
-Att ta bort en resurs är en permanent borttagning av den från Adobe Experience Platform. Om du vill ta bort en resurs från ett visst taggbibliotek, men ändå vill att resursen ska vara tillgänglig för användning i andra bibliotek, se guiden [ta bort resurser från ett bibliotek](remove-resources-from-library.md).
+Att ta bort en resurs är en permanent borttagning av den från Adobe Experience Platform. Om du vill ta bort en resurs från ett visst taggbibliotek, men ändå vill att resursen ska vara tillgänglig för användning i andra bibliotek, kan du läsa guiden om att [ta bort resurser från ett bibliotek](remove-resources-from-library.md).
 
 Du kan ta bort dataelement, regler, tillägg, värdar, miljöer och egenskaper. När resurserna har tagits bort går de inte att återställa.
 
@@ -42,7 +42,7 @@ Regler är beroende av andra resurser (tillägg och dataelement), men de har ing
 
 Dataelement är beroende av tillägg, men till skillnad från regler kan dataelement ha regler och tillägg som är beroende av dem. Om du tar bort ett dataelement påverkas alla regler och tillägg som är beroende av det här dataelementet.
 
-När dataelementet tagits bort returneras inte längre korrekt värde vid körning. Antingen returneras en tom sträng eller så returneras namnet på det borttagna dataelementet i %% (exempel: `%data-element-name%`). Det här beteendet kan konfigureras i egenskapsinställningarna.
+När dataelementet tagits bort returneras inte längre korrekt värde vid körning. Antingen returneras en tom sträng eller så returneras namnet på det borttagna dataelementet i %% (exempel: `%data-element-name%`). Detta beteende kan konfigureras i egenskapsinställningarna.
 
 Du kan lösa dessa beroenden före eller efter att du har tagit bort dataelementet.
 
@@ -73,9 +73,9 @@ Innan du kan ta bort en resurs måste du ta bort den från alla bibliotek där d
 #### Produktion
 
 1. Inaktivera resursen.
-1. Publicera den inaktiverade resursen till Production.
+1. Publish the disabled resource through to Production.
 1. Ta bort resursen.
 
 ## Ta bort en resurs
 
-I lämplig listvy väljer du den resurs du vill ta bort och väljer sedan **[!UICONTROL Delete]**.
+I lämplig listvy väljer du den resurs som du vill ta bort och sedan **[!UICONTROL Delete]**.

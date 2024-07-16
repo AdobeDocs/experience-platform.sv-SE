@@ -13,13 +13,13 @@ ht-degree: 1%
 
 # [!DNL Observability Insights] översikt
 
-Adobe Experience Platform [!DNL Observability Insights] gör att ni kan övervaka plattformsaktiviteter med hjälp av statistiska värden och händelsemeddelanden. Det här dokumentet innehåller en översikt över de olika funktioner som tjänsten tillhandahåller, tillsammans med länkar till ytterligare dokumentation för mer information.
+Med Adobe Experience Platform [!DNL Observability Insights] kan du övervaka plattformsaktiviteter med hjälp av statistik och händelsemeddelanden. Det här dokumentet innehåller en översikt över de olika funktioner som tjänsten tillhandahåller, tillsammans med länkar till ytterligare dokumentation för mer information.
 
 ## [!DNL Observability Insights] API
 
-The [!DNL Observability Insights] API är ett RESTful-API som gör att du kan visa viktiga mätvärden för observerbarhet i Adobe Experience Platform. Dessa mätvärden ger insikter om [!DNL Platform] användningsstatistik, hälsokontroller för [!DNL Platform] tjänster, historiska trender och resultatindikatorer för olika [!DNL Platform] funktioner.
+API:t [!DNL Observability Insights] är ett RESTful-API som gör att du kan visa viktiga observationsmått i Adobe Experience Platform. Dessa mått ger insikter om [!DNL Platform]-användningsstatistik, hälsokontroller för [!DNL Platform]-tjänster, historiska trender och prestandaindikatorer för olika [!DNL Platform]-funktioner.
 
-Mer information om hur du arbetar med API:t finns i [[!DNL Observability Insights] Utvecklarhandbok för API](./api/overview.md).
+Mer information om hur du arbetar med API:t finns i [[!DNL Observability Insights] API-utvecklarhandboken](./api/overview.md).
 
 ## Larm
 
@@ -27,8 +27,8 @@ Med Experience Platform kan ni prenumerera på aviseringar baserade på specifik
 
 Genom att prenumerera på varningar kan du skapa egna underordnade protokoll för när ett jobb har slutförts, om en viss milstolpe i ett arbetsflöde har nåtts eller om fel uppstod under processen.
 
-Se översikten på [varningar](./alerts/overview.md) för mer information.
+Mer information finns i översikten för [varningar](./alerts/overview.md).
 
 ## Nästa steg
 
-Dokumentet innehåller de olika funktionerna i [!DNL Observability Insights]. Mer information om de olika funktionerna finns i dokumentationen som är länkad till i hela den här översikten.
+Det här dokumentet innehåller de olika funktionerna i [!DNL Observability Insights]. Läs dokumentationen som är länkad till i hela den här översikten om du vill veta mer om de olika funktionerna.

@@ -14,15 +14,15 @@ ht-degree: 1%
 
 # Slutpunkt för sandlådehantering
 
-Sandlådor i Adobe Experience Platform har isolerade utvecklingsmiljöer där du kan testa funktioner, köra experiment och göra anpassade konfigurationer utan att påverka produktionsmiljön. The `/sandboxes` slutpunkt i [!DNL Sandbox] Med API kan du programmässigt hantera sandlådor i plattformen.
+Sandlådor i Adobe Experience Platform har isolerade utvecklingsmiljöer där du kan testa funktioner, köra experiment och göra anpassade konfigurationer utan att påverka produktionsmiljön. Med slutpunkten `/sandboxes` i API:t [!DNL Sandbox] kan du programmässigt hantera sandlådor i plattformen.
 
 ## Komma igång
 
-API-slutpunkten som används i den här guiden är en del av [[!DNL Sandbox] API](https://www.adobe.io/experience-platform-apis/references/sandbox). Innan du fortsätter bör du granska [komma igång-guide](./getting-started.md) för länkar till relaterad dokumentation, en guide till hur du läser exempelanrop till API:er i det här dokumentet och viktig information om vilka huvuden som behövs för att kunna anropa ett Experience Platform-API.
+API-slutpunkten som används i den här guiden ingår i [[!DNL Sandbox] API](https://www.adobe.io/experience-platform-apis/references/sandbox). Innan du fortsätter bör du läsa [kom igång-guiden](./getting-started.md) för att få länkar till relaterad dokumentation, en guide till hur du läser exempelanropen för API i det här dokumentet och viktig information om vilka huvuden som krävs för att kunna anropa ett Experience Platform-API.
 
 ## Hämta en lista med sandlådor {#list}
 
-Du kan lista alla sandlådor som tillhör din organisation (aktiv eller annan) genom att göra en GET-förfrågan till `/sandboxes` slutpunkt.
+Du kan lista alla sandlådor som tillhör din organisation (aktiva eller andra) genom att göra en GET-förfrågan till slutpunkten `/sandboxes`.
 
 **API-format**
 
@@ -32,7 +32,7 @@ GET /sandboxes?{QUERY_PARAMS}
 
 | Parameter | Beskrivning |
 | --------- | ----------- |
-| `{QUERY_PARAMS}` | Valfria frågeparametrar för att filtrera resultat efter. Se avsnittet om [frågeparametrar](./appendix.md#query) för mer information. |
+| `{QUERY_PARAMS}` | Valfria frågeparametrar för att filtrera resultat efter. Mer information finns i avsnittet om [frågeparametrar](./appendix.md#query). |
 
 **Begäran**
 
@@ -47,7 +47,7 @@ curl -X GET \
 
 **Svar**
 
-Ett lyckat svar returnerar en lista med sandlådor som tillhör din organisation, inklusive information som `name`, `title`, `state`och `type`.
+Ett lyckat svar returnerar en lista med sandlådor som tillhör din organisation, inklusive information som `name`, `title`, `state` och `type`.
 
 ```json
 {
@@ -130,14 +130,14 @@ Ett lyckat svar returnerar en lista med sandlådor som tillhör din organisation
 | --- | --- |
 | `name` | Namnet på sandlådan. Den här egenskapen används för uppslagssyften i API-anrop. |
 | `title` | Visningsnamnet för sandlådan. |
-| `state` | Sandlådans aktuella bearbetningstillstånd. En sandlådestatus kan vara något av följande: <br/><ul><li>`creating`: Sandlådan har skapats, men etableras fortfarande av systemet.</li><li>`active`: Sandlådan skapas och är aktiv.</li><li>`failed`: På grund av ett fel kunde sandlådan inte etableras av systemet och är inaktiverad.</li><li>`deleted`: Sandlådan har inaktiverats manuellt.</li></ul> |
+| `state` | Sandlådans aktuella bearbetningstillstånd. En sandlådestatus kan vara något av följande: <br/><ul><li>`creating`: Sandlådan har skapats, men etableras fortfarande av systemet.</li><li>`active`: Sandlådan har skapats och är aktiv.</li><li>`failed`: På grund av ett fel kunde sandlådan inte etableras av systemet och är inaktiverad.</li><li>`deleted`: Sandlådan har inaktiverats manuellt.</li></ul> |
 | `type` | Sandlådetypen. De sandlådetyper som stöds för närvarande är `development` och `production`. |
 | `isDefault` | En boolesk egenskap som anger om den här sandlådan är standardproduktionssandlådan för organisationen. |
 | `eTag` | En identifierare för en specifik version av sandlådan. Detta värde används för versionskontroll och cachelagring av effektivitet och uppdateras varje gång en ändring görs i sandlådan. |
 
 ## Söka efter en sandlåda {#lookup}
 
-Du kan söka efter en enskild sandlåda genom att göra en GET-begäran som innehåller sandlådans `name` i sökvägen för begäran.
+Du kan söka efter en enskild sandlåda genom att göra en GET-begäran som innehåller sandlådans `name`-egenskap i sökvägen för begäran.
 
 **API-format**
 
@@ -147,7 +147,7 @@ GET /sandboxes/{SANDBOX_NAME}
 
 | Parameter | Beskrivning |
 | --- | --- |
-| `{SANDBOX_NAME}` | The `name` egenskapen för den sandlåda som du vill söka efter. |
+| `{SANDBOX_NAME}` | Egenskapen `name` för den sandlåda som du vill söka efter. |
 
 **Begäran**
 
@@ -163,7 +163,7 @@ curl -X GET \
 
 **Svar**
 
-Ett lyckat svar returnerar informationen om sandlådan, inklusive dess `name`, `title`, `state`och `type`.
+Ett lyckat svar returnerar informationen om sandlådan, inklusive dess `name`, `title`, `state` och `type`.
 
 ```json
 {
@@ -185,7 +185,7 @@ Ett lyckat svar returnerar informationen om sandlådan, inklusive dess `name`, `
 | --- | --- |
 | `name` | Namnet på sandlådan. Den här egenskapen används för uppslagssyften i API-anrop. |
 | `title` | Visningsnamnet för sandlådan. |
-| `state` | Sandlådans aktuella bearbetningstillstånd. En sandlådestatus kan vara något av följande: <ul><li>**skapa**: Sandlådan har skapats, men etableras fortfarande av systemet.</li><li>**aktiv**: Sandlådan skapas och är aktiv.</li><li>**misslyckades**: På grund av ett fel kunde sandlådan inte etableras av systemet och är inaktiverad.</li><li>**borttagen**: Sandlådan har inaktiverats manuellt.</li></ul> |
+| `state` | Sandlådans aktuella bearbetningstillstånd. En sandlådestatus kan vara något av följande: <ul><li>**skapar**: Sandlådan har skapats, men etableras fortfarande av systemet.</li><li>**active**: Sandlådan skapas och är aktiv.</li><li>**misslyckades**: På grund av ett fel kunde inte sandlådan etableras av systemet och är inaktiverad.</li><li>**borttagen**: Sandlådan har inaktiverats manuellt.</li></ul> |
 | `type` | Sandlådetypen. De sandlådetyper som stöds för närvarande är: `development` och `production`. |
 | `isDefault` | En boolesk egenskap som anger om den här sandlådan är standardsandlådan för organisationen. Vanligtvis är det här produktionssandlådan. |
 | `eTag` | En identifierare för en specifik version av sandlådan. Detta värde används för versionskontroll och cachelagring av effektivitet och uppdateras varje gång en ändring görs i sandlådan. |
@@ -194,13 +194,13 @@ Ett lyckat svar returnerar informationen om sandlådan, inklusive dess `name`, `
 
 >[!NOTE]
 >
->När en ny sandlåda skapas måste du först lägga till den nya sandlådan i din produktprofil i [Adobe Admin Console](https://adminconsole.adobe.com/) innan du kan börja använda den nya sandlådan. Läs dokumentationen om [hantera behörigheter för en produktprofil](../../access-control/ui/permissions.md) om du vill ha information om hur du distribuerar en sandlåda till en produktprofil.
+>När en ny sandlåda skapas måste du först lägga till den nya sandlådan i din produktprofil i [Adobe Admin Console](https://adminconsole.adobe.com/) innan du kan börja använda den nya sandlådan. Mer information om hur du distribuerar en sandlåda till en produktprofil finns i dokumentationen om [hantering av behörigheter för en produktprofil](../../access-control/ui/permissions.md) .
 
-Du kan skapa en ny utvecklings- eller produktionssandlåda genom att göra en POST-förfrågan till `/sandboxes` slutpunkt.
+Du kan skapa en ny utvecklings- eller produktionssandlåda genom att göra en POST-förfrågan till slutpunkten `/sandboxes`.
 
 ### Skapa en utvecklingssandlåda
 
-Om du vill skapa en utvecklingssandlåda måste du ange en `type` attribut med värdet `development` i nyttolasten för begäran.
+Om du vill skapa en utvecklingssandlåda måste du ange ett `type`-attribut med värdet `development` i nyttolasten för begäran.
 
 **API-format**
 
@@ -234,7 +234,7 @@ curl -X POST \
 
 **Svar**
 
-Ett lyckat svar returnerar informationen om den nya sandlådan, vilket visar att dess `state` är &quot;creating&quot;.
+Ett lyckat svar returnerar information om den nyligen skapade sandlådan, vilket visar att `state` är&quot;skapar&quot;.
 
 ```json
 {
@@ -248,11 +248,11 @@ Ett lyckat svar returnerar informationen om den nya sandlådan, vilket visar att
 
 >[!NOTE]
 >
->Sandlådor tar cirka 30 sekunder att tilldela av systemet, varefter deras `state` blir &quot;aktiv&quot; eller &quot;misslyckades&quot;.
+>Det tar cirka 30 sekunder för sandlådor att etableras av systemet. Därefter blir deras `state`&quot;aktiv&quot; eller&quot;misslyckades&quot;.
 
 ### Skapa en produktionssandlåda
 
-Om du vill skapa en produktionssandlåda måste du ange en `type` attribut med värdet `production` i nyttolasten för begäran.
+Om du vill skapa en produktionssandlåda måste du ange ett `type`-attribut med värdet `production` i nyttolasten för begäran.
 
 **API-format**
 
@@ -287,7 +287,7 @@ curl -X POST \
 
 **Svar**
 
-Ett lyckat svar returnerar informationen om den nya sandlådan, vilket visar att dess `state` är &quot;creating&quot;.
+Ett lyckat svar returnerar information om den nyligen skapade sandlådan, vilket visar att `state` är&quot;skapar&quot;.
 
 ```json
 {
@@ -301,15 +301,15 @@ Ett lyckat svar returnerar informationen om den nya sandlådan, vilket visar att
 
 >[!NOTE]
 >
->Sandlådor tar cirka 30 sekunder att tilldela av systemet, varefter deras `state` blir &quot;aktiv&quot; eller &quot;misslyckades&quot;.
+>Det tar cirka 30 sekunder för sandlådor att etableras av systemet. Därefter blir deras `state`&quot;aktiv&quot; eller&quot;misslyckades&quot;.
 
 ## Uppdatera en sandlåda {#put}
 
-Du kan uppdatera ett eller flera fält i en sandlåda genom att göra en PATCH-begäran som innehåller sandlådans `name` i sökvägen till begäran och egenskapen som ska uppdateras i nyttolasten för begäran.
+Du kan uppdatera ett eller flera fält i en sandlåda genom att göra en PATCH-begäran som innehåller sandlådans `name` i sökvägen för begäran och egenskapen som ska uppdateras i nyttolasten för begäran.
 
 >[!NOTE]
 >
->För närvarande är det bara en sandlåda `title` kan uppdateras.
+>För närvarande kan bara egenskapen `title` i en sandlåda uppdateras.
 
 **API-format**
 
@@ -319,11 +319,11 @@ PATCH /sandboxes/{SANDBOX_NAME}
 
 | Parameter | Beskrivning |
 | --- | --- |
-| `{SANDBOX_NAME}` | The `name` egenskapen för den sandlåda som du vill uppdatera. |
+| `{SANDBOX_NAME}` | Egenskapen `name` för den sandlåda som du vill uppdatera. |
 
 **Begäran**
 
-Följande begäran uppdaterar `title` i sandlådan med namnet&quot;acme&quot;.
+Följande begäran uppdaterar egenskapen `title` i sandlådan med namnet &quot;acme&quot;.
 
 ```shell
 curl -X PATCH \
@@ -353,7 +353,7 @@ Ett lyckat svar returnerar HTTP-status 200 (OK) med information om den nyligen u
 
 ## Återställ en sandlåda {#reset}
 
-Sandlådor har en &quot;fabriksåterställningsfunktion&quot; som tar bort alla icke-standardresurser från en sandlåda. Du kan återställa en sandlåda genom att göra en PUT-begäran som innehåller sandlådans `name` i sökvägen till begäran.
+Sandlådor har en &quot;fabriksåterställningsfunktion&quot; som tar bort alla icke-standardresurser från en sandlåda. Du kan återställa en sandlåda genom att göra en PUT-begäran som innehåller sandlådans `name` i sökvägen för begäran.
 
 **API-format**
 
@@ -363,8 +363,8 @@ PUT /sandboxes/{SANDBOX_NAME}
 
 | Parameter | Beskrivning |
 | --- | --- |
-| `{SANDBOX_NAME}` | The `name` egenskapen för den sandlåda som du vill återställa. |
-| `validationOnly` | En valfri parameter som gör att du kan utföra en kontroll före flygning av sandlådeåterställningsåtgärden utan att göra den faktiska begäran. Ställ in den här parametern på `validationOnly=true` om du vill kontrollera om sandlådan du håller på att återställa innehåller Adobe Analytics-, Adobe Audience Manager- eller segmentdelningsdata. |
+| `{SANDBOX_NAME}` | Egenskapen `name` för den sandlåda som du vill återställa. |
+| `validationOnly` | En valfri parameter som gör att du kan utföra en kontroll före flygning av sandlådeåterställningsåtgärden utan att göra den faktiska begäran. Ange den här parametern till `validationOnly=true` för att kontrollera om sandlådan som du ska återställa innehåller Adobe Analytics-, Adobe Audience Manager- eller segmentdelningsdata. |
 
 **Begäran**
 
@@ -392,7 +392,7 @@ curl -X PUT \
 >
 >När en sandlåda har återställts tar det cirka 30 sekunder att etablera den av systemet.
 
-Ett godkänt svar returnerar informationen om den uppdaterade sandlådan, vilket visar att `state` är &quot;resetting&quot;.
+Ett lyckat svar returnerar informationen om den uppdaterade sandlådan, vilket visar att `state` är &quot;återställ&quot;.
 
 ```json
 {
@@ -405,7 +405,7 @@ Ett godkänt svar returnerar informationen om den uppdaterade sandlådan, vilket
 }
 ```
 
-Standardproduktionssandlådan och alla användarskapade produktionssandlådor kan inte återställas om identitetsdiagrammet som finns i den också används av Adobe Analytics för [CDA (Cross Device Analytics)](https://experienceleague.adobe.com/docs/analytics/components/cda/overview.html?lang=sv) eller om identitetsdiagrammet som finns i det också används av Adobe Audience Manager för [Personbaserade mål (PBD)](https://experienceleague.adobe.com/docs/audience-manager/user-guide/features/destinations/people-based/people-based-destinations-overview.html?lang=sv) -funktion.
+Standardproduktionssandlådan och alla användarskapade produktionssandlådor kan inte återställas om identitetsdiagrammet som finns i den också används av Adobe Analytics för funktionen [Cross Device Analytics (CDA)](https://experienceleague.adobe.com/docs/analytics/components/cda/overview.html?lang=sv) eller om identitetsdiagrammet som finns i den också används av Adobe Audience Manager för funktionen [People Based Destinations (PBD)](https://experienceleague.adobe.com/docs/audience-manager/user-guide/features/destinations/people-based/people-based-destinations-overview.html?lang=sv) .
 
 Nedan följer en lista över möjliga undantag som kan förhindra att en sandlåda återställs:
 
@@ -432,7 +432,7 @@ Nedan följer en lista över möjliga undantag som kan förhindra att en sandlå
 }
 ```
 
-Du kan återställa en produktionssandlåda som används för dubbelriktad segmentdelning med [!DNL Audience Manager] eller [!DNL Audience Core Service] genom att lägga till `ignoreWarnings` parameter till din begäran.
+Du kan återställa en produktionssandlåda som används för dubbelriktad segmentdelning med [!DNL Audience Manager] eller [!DNL Audience Core Service] genom att lägga till parametern `ignoreWarnings` i din begäran.
 
 **API-format**
 
@@ -442,8 +442,8 @@ PUT /sandboxes/{SANDBOX_NAME}?ignoreWarnings=true
 
 | Parameter | Beskrivning |
 | --- | --- |
-| `{SANDBOX_NAME}` | The `name` egenskapen för den sandlåda som du vill återställa. |
-| `ignoreWarnings` | En valfri parameter som gör att du kan hoppa över valideringskontrollen och tvinga fram återställningen av en produktionssandlåda som används för dubbelriktad segmentdelning med [!DNL Audience Manager] eller [!DNL Audience Core Service]. Den här parametern kan inte tillämpas på en standardproduktionssandlåda. |
+| `{SANDBOX_NAME}` | Egenskapen `name` för den sandlåda som du vill återställa. |
+| `ignoreWarnings` | En valfri parameter som gör att du kan hoppa över valideringskontrollen och framtvinga återställningen av en produktionssandlåda som används för dubbelriktad segmentdelning med [!DNL Audience Manager] eller [!DNL Audience Core Service]. Den här parametern kan inte tillämpas på en standardproduktionssandlåda. |
 
 **Begäran**
 
@@ -463,7 +463,7 @@ curl -X PUT \
 
 **Svar**
 
-Ett godkänt svar returnerar informationen om den uppdaterade sandlådan, vilket visar att `state` är &quot;resetting&quot;.
+Ett lyckat svar returnerar informationen om den uppdaterade sandlådan, vilket visar att `state` är &quot;återställ&quot;.
 
 ```json
 {
@@ -482,11 +482,11 @@ Ett godkänt svar returnerar informationen om den uppdaterade sandlådan, vilket
 >
 >Det går inte att ta bort standardproduktionssandlådan.
 
-Du kan ta bort en sandlåda genom att göra en DELETE-begäran som innehåller sandlådans `name` i sökvägen till begäran.
+Du kan ta bort en sandlåda genom att göra en DELETE-begäran som innehåller sandlådans `name` i sökvägen för begäran.
 
 >[!NOTE]
 >
->Göra detta API-anrop uppdaterar sandlådans `status` egenskapen till&quot;deleted&quot; och inaktiverar den. GET-begäranden kan fortfarande hämta sandlådans information efter att den har tagits bort.
+>Om du gör det här API-anropet uppdateras sandlådans `status`-egenskap till&quot;Borttagen&quot; och inaktiveras. GET-begäranden kan fortfarande hämta sandlådans information efter att den har tagits bort.
 
 **API-format**
 
@@ -496,8 +496,8 @@ DELETE /sandboxes/{SANDBOX_NAME}
 
 | Parameter | Beskrivning |
 | --- | --- |
-| `{SANDBOX_NAME}` | The `name` för den sandlåda som du vill ta bort. |
-| `validationOnly` | En valfri parameter som gör att du kan utföra en kontroll före flygning av sandlådeborttagningsåtgärden utan att göra den faktiska begäran. Ställ in den här parametern på `validationOnly=true` om du vill kontrollera om sandlådan du håller på att återställa innehåller Adobe Analytics-, Adobe Audience Manager- eller segmentdelningsdata. |
+| `{SANDBOX_NAME}` | `name` för den sandlåda som du vill ta bort. |
+| `validationOnly` | En valfri parameter som gör att du kan utföra en kontroll före flygning av sandlådeborttagningsåtgärden utan att göra den faktiska begäran. Ange den här parametern till `validationOnly=true` för att kontrollera om sandlådan som du ska återställa innehåller Adobe Analytics-, Adobe Audience Manager- eller segmentdelningsdata. |
 | `ignoreWarnings` | En valfri parameter som gör att du kan hoppa över valideringskontrollen och framtvinga borttagning av en användarskapad produktionssandlåda som används för dubbelriktad segmentdelning med [!DNL Audience Manager] eller [!DNL Audience Core Service]. Den här parametern kan inte tillämpas på en standardproduktionssandlåda. |
 
 **Begäran**
@@ -514,7 +514,7 @@ curl -X DELETE \
 
 **Svar**
 
-Ett lyckat svar returnerar sandlådans uppdaterade information, vilket visar att dess `state` är &quot;deleted&quot;.
+Ett lyckat svar returnerar sandlådans uppdaterade information, vilket visar att dess `state` har tagits bort.
 
 ```json
 {

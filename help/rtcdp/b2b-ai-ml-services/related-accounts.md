@@ -28,21 +28,21 @@ B2B-företag har ofta sin kundinformation lagrad i flera system, där alla bara 
 
 {style="table-layout:auto"}
 
-Med relaterade konton [!DNL Real-Time CDP B2B] visar nu en lista över konton som liknar det konto du bläddrar i.
+Med relaterade konton visar [!DNL Real-Time CDP B2B] nu en lista över konton som liknar det konto du bläddrar i.
 
-![Skärm som visar relaterade konton i användargränssnittet för Experience Platform.](/help/rtcdp/b2b-ai-ml-services/assets/related-accounts-in-ui.png)
+![Skärm med relaterade konton i användargränssnittet för Experience Platform.](/help/rtcdp/b2b-ai-ml-services/assets/related-accounts-in-ui.png)
 
 Använd den här funktionen om du vill visa relaterade kontoprofiler för en kontoprofil i användargränssnittet i Experience Platform och sedan inkludera de relaterade kontona i segmentdefinitionerna för att bredda din räckvidd eller tillämpa bredare kriterier i dina målgrupper.
 
 ## Aktivera tjänsten för relaterade konton {#enable}
 
-Aktivera tjänsten genom att välja **[!UICONTROL Profiles]** i sidlisten följt av **[!UICONTROL Settings]**.
+Om du vill aktivera tjänsten väljer du **[!UICONTROL Profiles]** i sidofältet följt av **[!UICONTROL Settings]**.
 
-![Markeringsprofiler och inställningar för användargränssnittet i Experience Platform.](../assets/../b2b-ai-ml-services/assets/related-account-settings.png)
+![Användargränssnittet för Experience Platform markerar profiler och inställningar.](../assets/../b2b-ai-ml-services/assets/related-account-settings.png)
 
-Markera växlingsknappen bredvid [!UICONTROL Enable related accounts] för att aktivera tjänsten och sedan välja **[!UICONTROL Save]**.
+Markera växlingsknappen bredvid [!UICONTROL Enable related accounts] för att aktivera tjänsten och välj sedan **[!UICONTROL Save]**.
 
-![Skärmmarkeringen för kontoinställningar visar hur du växlar och sparar.](../assets/../b2b-ai-ml-services/assets/related-account-toggle.png)
+![Skärmen Kontoinställningar visar växlingen och sparandet.](../assets/../b2b-ai-ml-services/assets/related-account-toggle.png)
 
 ## Så fungerar det {#how-it-works}
 
@@ -52,18 +52,18 @@ Maskininlärningsjobb som körs dagligen använder en hierarkisk algoritm för a
 * Webbdomän
 * Kontonamn
 
-Efter ett slutfört bearbetningsjobb taggas varje medlem i kontoprofilgruppen med listan Relaterade konton. Du kan visa listan i **Relaterade konton** på sidan Kontoprofil och använd de relaterade kontona i segmentdefinitioner.
+Efter ett slutfört bearbetningsjobb taggas varje medlem i kontoprofilgruppen med listan Relaterade konton. Du kan visa listan på fliken **Relaterade konton** på sidan Kontoprofil och använda relaterade konton i segmentdefinitioner.
 
-Mer information om [profilanrikningsrelaterade kontojobb](/help/dataflows/ui/b2b/monitor-profile-enrichment.md).
+Mer information om [profilanrikningsrelaterade kontojobb](/help/dataflows/ui/b2b/monitor-profile-enrichment.md) finns i dokumentationen.
 
 ## Visa relaterade konton {#how-to-view}
 
 Du kan visa relaterade konton för ett konto som du surfar på i användargränssnittet för Experience Platform.
 
-Mer information om [söka efter relaterade konton i användargränssnittet](/help/rtcdp/accounts/account-profile-ui-guide.md#related-accounts-tab).
+Mer information om [hur du hittar relaterade konton i användargränssnittet](/help/rtcdp/accounts/account-profile-ui-guide.md#related-accounts-tab) finns i dokumentationen.
 
 ## Så här kan du använda relaterade konton {#how-to-use}
 
 Du kan använda konton och relaterade konton i segmenteringen. Beslutet om ni ska använda relaterade konton i era segmentdefinitioner beror på ert marknadsföringsexempel. Ni kan till exempel använda relaterade konton för e-postmarknadsföring eller annonskampanjer där ni kan acceptera en lägre noggrannhet i utbyte mot en större räckvidd.
 
-Se en [segmenteringsexempel](/help/rtcdp/segmentation/b2b.md#related-accounts) som använder relaterade konton.
+Se ett [exempel på segmentering](/help/rtcdp/segmentation/b2b.md#related-accounts) som använder relaterade konton.

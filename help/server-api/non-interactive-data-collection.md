@@ -1,6 +1,6 @@
 ---
 title: Icke-interaktiv datainsamling
-description: Läs om hur API:t för Adobe Experience Platform Edge Network Server utför icke-interaktiv datainsamling.
+description: Lär dig hur Adobe Experience Platform Edge Network Server API utför icke-interaktiv datainsamling.
 exl-id: 1a704e8f-8900-4f56-a843-9550007088fe
 source-git-commit: 3bf13c3f5ac0506ac88effc56ff68758deb5f566
 workflow-type: tm+mt
@@ -18,7 +18,7 @@ Icke-interaktiva slutpunkter för händelsedatainsamling används för att skick
 
 Du bör skicka grupphändelser när slutanvändarhändelser köas lokalt under en kort tidsperiod (t.ex. när det inte finns någon nätverksanslutning).
 
-Batchhändelser bör inte nödvändigtvis tillhöra samma slutanvändare, vilket innebär att händelser kan ha olika identiteter inom sina `identityMap` -objekt.
+Batchhändelser bör inte nödvändigtvis tillhöra samma slutanvändare, vilket innebär att händelser kan innehålla olika identiteter i sina `identityMap`-objekt.
 
 ## Exempel på icke-interaktiva API-anrop {#example}
 
@@ -91,16 +91,16 @@ curl -X POST "https://server.adobedc.net/ee/v2/collect?dataStreamId={DATASTREAM_
 | Parameter | Typ | Obligatoriskt | Beskrivning |
 | --- | --- | --- | --- |
 | `dataStreamId` | `String` | Ja | ID för datastream som används av datainsamlingsslutpunkten. |
-| `requestId` | `String` | Nej | Ange ett ID för extern spårning av begäran. Om inget anges genereras ett Edge-nätverk åt dig och returneras i svarstexten/sidhuvudena. |
-| `silent` | `Boolean` | Nej | Valfri boolesk parameter som anger om Edge Network ska returnera en `204 No Content` svar med en tom nyttolast eller inte. Kritiska fel rapporteras med motsvarande HTTP-statuskod och nyttolast. |
+| `requestId` | `String` | Nej | Ange ett ID för extern spårning av begäran. Om ingen anges genererar Edge Network en åt dig och returnerar den i svarstexten/sidhuvudena. |
+| `silent` | `Boolean` | Nej | Valfri boolesk parameter som anger om Edge Network ska returnera ett `204 No Content`-svar med en tom nyttolast eller inte. Kritiska fel rapporteras med motsvarande HTTP-statuskod och nyttolast. |
 
 ### Svar {#response}
 
-Ett godkänt svar returnerar en av följande statusvärden och en `requestID` om ingen har angetts i begäran.
+Ett lyckat svar returnerar en av följande statusvärden och en `requestID` om ingen har angetts i begäran.
 
-* `202 Accepted` när begäran har behandlats utan fel,
-* `204 No Content` när begäran bearbetades och `silent` parametern är inställd på `true`;
-* `400 Bad Request` när begäran inte var korrekt formulerad (t.ex. den obligatoriska primära identiteten inte hittades).
+* `202 Accepted` när begäran bearbetades,
+* `204 No Content` när begäran bearbetades och parametern `silent` ställdes in på `true`;
+* `400 Bad Request` när begäran inte var korrekt formaterad (t.ex. den obligatoriska primära identiteten hittades inte).
 
 ```json
 {

@@ -10,43 +10,43 @@ ht-degree: 0%
 
 ---
 
-# [!DNL HubSpot] anslutning
+# [!DNL HubSpot]-anslutning
 
-[[!DNL HubSpot]](https://www.hubspot.com) är en CRM-plattform med all programvara, alla integreringar och resurser ni behöver för att koppla samman marknadsföring, försäljning, innehållshantering och kundservice. Ni kan koppla samman data, team och kunder på en och samma CRM-plattform.
+[[!DNL HubSpot]](https://www.hubspot.com) är en CRM-plattform med all programvara, alla integreringar och resurser du behöver för att koppla samman marknadsföring, försäljning, innehållshantering och kundtjänst. Ni kan koppla samman data, team och kunder på en och samma CRM-plattform.
 
-Detta [!DNL Adobe Experience Platform] [mål](/help/destinations/home.md) utnyttjar [[!DNL HubSpot] Kontakt-API](https://developers.hubspot.com/docs/api/crm/contacts), för att uppdatera kontakter i [!DNL HubSpot] från en befintlig Experience Platform-publik efter aktiveringen.
+Det här [!DNL Adobe Experience Platform] [målet](/help/destinations/home.md) använder [[!DNL HubSpot] kontakt-API](https://developers.hubspot.com/docs/api/crm/contacts) för att uppdatera kontakter inom [!DNL HubSpot] från en befintlig Experience Platform-målgrupp efter aktivering.
 
-Instruktioner för hur du autentiserar [!DNL HubSpot] -instansen är längre ned, i [Autentisera till mål](#authenticate) -avsnitt.
+Instruktioner för autentisering till din [!DNL HubSpot]-instans finns längre ned i avsnittet [Autentisera till mål](#authenticate).
 
 ## Användningsfall {#use-cases}
 
-För att du bättre ska förstå hur och när du ska använda [!DNL HubSpot] mål, här är ett exempel på användning som Adobe Experience Platform-kunder kan lösa genom att använda den här destinationen.
+För att du bättre ska kunna förstå hur och när du ska använda målet [!DNL HubSpot] finns det ett exempel på användning som Adobe Experience Platform-kunder kan lösa genom att använda det här målet.
 
-[!DNL HubSpot] kontakter lagrar information om de personer som interagerar med ert företag. Ditt team använder de kontakter som finns i [!DNL HubSpot] för att bygga målgrupper i Experience Platform. När dessa målgrupper har skickats till [!DNL HubSpot], uppdateras deras information och varje kontakt tilldelas en egenskap med ett värde som målgruppsnamn som anger vilken målgrupp kontakten tillhör.
+[!DNL HubSpot] kontakter lagrar information om de personer som interagerar med ditt företag. Ditt team använder de kontakter som finns i [!DNL HubSpot] för att skapa målgrupper i Experience Platform. När dessa målgrupper har skickats till [!DNL HubSpot] uppdateras deras information och varje kontakt tilldelas en egenskap med dess värde som målgruppsnamn som anger vilken målgrupp kontakten tillhör.
 
 ## Förhandskrav {#prerequisites}
 
-I avsnitten nedan finns information om alla krav som du måste ställa in i Experience Platform och [!DNL HubSpot] och för information som du måste samla in innan du arbetar med [!DNL HubSpot] mål.
+I avsnitten nedan finns information om eventuella krav som du måste ställa in i Experience Platform och [!DNL HubSpot] och om information som du måste samla in innan du kan arbeta med målet för [!DNL HubSpot].
 
 ### Förutsättningar för Experience Platform {#prerequisites-in-experience-platform}
 
-Innan du aktiverar data för [!DNL HubSpot] mål, du måste ha [schema](/help/xdm/schema/composition.md), a [datauppsättning](https://experienceleague.adobe.com/docs/platform-learn/tutorials/data-ingestion/create-datasets-and-ingest-data.html)och [målgrupper](https://experienceleague.adobe.com/docs/platform-learn/tutorials/audiences/create-audiences.html) som [!DNL Experience Platform].
+Innan du aktiverar data till målet [!DNL HubSpot] måste du ha ett [schema](/help/xdm/schema/composition.md), en [datamängd](https://experienceleague.adobe.com/docs/platform-learn/tutorials/data-ingestion/create-datasets-and-ingest-data.html) och [målgrupper](https://experienceleague.adobe.com/docs/platform-learn/tutorials/audiences/create-audiences.html) som skapats i [!DNL Experience Platform].
 
-Se Experience Platform dokumentation för [Schemafältgrupp för målgruppsmedlemskapsdetaljer](/help/xdm/field-groups/profile/segmentation.md) om ni behöver vägledning om målgruppsstatus.
+Se Experience Platform-dokumentationen för schemafältgruppen [Information om målgruppsmedlemskap](/help/xdm/field-groups/profile/segmentation.md) om du behöver vägledning om målgruppsstatus.
 
-### Krav för [!DNL HubSpot] mål {#prerequisites-destination}
+### Krav för målet [!DNL HubSpot] {#prerequisites-destination}
 
-Observera följande krav för att kunna exportera data från Platform till [!DNL HubSpot] konto:
+Observera följande krav för att kunna exportera data från Platform till ditt [!DNL HubSpot]-konto:
 
-#### Du måste ha en [!DNL HubSpot] konto {#prerequisites-account}
+#### Du måste ha ett [!DNL HubSpot]-konto {#prerequisites-account}
 
-För att kunna exportera data från Platform till [!DNL Hubspot] konto du behöver ha [!DNL HubSpot] konto. Om du inte redan har en går du till [Konfigurera ditt HubSpot-konto](https://knowledge.hubspot.com/get-started/set-up-your-account) och följ anvisningarna för att registrera och skapa ditt konto.
+Du måste ha ett [!DNL HubSpot]-konto för att kunna exportera data från Platform till ditt [!DNL Hubspot]-konto. Om du inte redan har en kan du gå till sidan [Konfigurera ditt HubSpot-konto](https://knowledge.hubspot.com/get-started/set-up-your-account) och följa anvisningarna för att registrera och skapa ditt konto.
 
-#### Samla [!DNL HubSpot] åtkomsttoken för privat app {#gather-credentials}
+#### Samla in åtkomsttoken för det privata programmet [!DNL HubSpot] {#gather-credentials}
 
-Du behöver dina [!DNL HubSpot] `Access token` för att [!DNL HubSpot] mål för att göra API-anrop via [!DNL HubSpot] privat app i din [!DNL HubSpot] konto. The `Access token` fungerar som `Bearer token` när du [autentisera målet](#authenticate).
+Du behöver din [!DNL HubSpot] `Access token` för att [!DNL HubSpot]-destinationen ska kunna göra API-anrop via din privata [!DNL HubSpot]-app i ditt [!DNL HubSpot]-konto. `Access token` fungerar som `Bearer token` när du [autentiserar målet](#authenticate).
 
-Om du inte har någon privat app följer du dokumentationen till [Skapa en privat app i [!DNL HubSpot]](https://developers.hubspot.com/docs/api/private-apps).
+Om du inte har någon privat app följer du dokumentationen för att [skapa en privat app i [!DNL HubSpot]](https://developers.hubspot.com/docs/api/private-apps).
 
 >[!IMPORTANT]
 >
@@ -56,11 +56,11 @@ Om du inte har någon privat app följer du dokumentationen till [Skapa en priva
 
 | Autentiseringsuppgifter | Beskrivning | Exempel |
 | --- | --- | --- |
-| `Bearer token` | The `Access token` på [!DNL HubSpot] privat app. <br>För att få [!DNL HubSpot] `Access token` följer [!DNL HubSpot] dokumentation till [göra API-anrop med appens åtkomsttoken](https://developers.hubspot.com/docs/api/private-apps#make-api-calls-with-your-app-s-access-token). | `pat-na1-11223344-abcde-12345-9876-1234a1b23456` |
+| `Bearer token` | `Access token` för din privata [!DNL HubSpot]-app. <br>Om du vill hämta din [!DNL HubSpot] `Access token` följer du [!DNL HubSpot]-dokumentationen för att [göra API-anrop med din apps åtkomsttoken](https://developers.hubspot.com/docs/api/private-apps#make-api-calls-with-your-app-s-access-token). | `pat-na1-11223344-abcde-12345-9876-1234a1b23456` |
 
 ## Guardrails {#guardrails}
 
-[!DNL HubSpot] privata appar är beroende av [Hastighetsgränser](https://developers.hubspot.com/docs/api/usage-details). Antalet samtal som din privata app kan ringa baseras på din [!DNL HubSpot] kontoprenumeration och om du har köpt API-tillägget. Se även [Andra begränsningar](https://developers.hubspot.com/docs/api/usage-details#other-limits).
+[!DNL HubSpot] privata appar omfattas av [tariffgränser](https://developers.hubspot.com/docs/api/usage-details). Antalet samtal som din privata app kan ringa baseras på din [!DNL HubSpot]-kontoprenumeration och om du har köpt API-tillägget. Se även [Andra gränser](https://developers.hubspot.com/docs/api/usage-details#other-limits).
 
 ## Identiteter som stöds {#supported-identities}
 
@@ -74,13 +74,13 @@ Om du inte har någon privat app följer du dokumentationen till [Skapa en priva
 
 I det här avsnittet beskrivs alla målgrupper som du kan exportera till det här målet.
 
-Detta mål stöder aktivering av alla målgrupper som genererats via Experience Platform [Segmenteringstjänst](../../../segmentation/home.md).
+Det här målet stöder aktivering av alla målgrupper som genereras via Experience Platform [segmenteringstjänsten](../../../segmentation/home.md).
 
 Detta mål stöder även aktivering av målgrupperna som beskrivs i tabellen nedan.
 
 | Målgruppstyp | Beskrivning |
 |---------|----------|
-| Anpassade överföringar | Målgrupper [importerad](../../../segmentation/ui/audience-portal.md#import-audience) till Experience Platform från CSV-filer. |
+| Anpassade överföringar | Publikerna [importerade](../../../segmentation/ui/audience-portal.md#import-audience) till Experience Platform från CSV-filer. |
 
 {style="table-layout:auto"}
 
@@ -90,8 +90,8 @@ Se tabellen nedan för information om exporttyp och frekvens för destinationen.
 
 | Objekt | Typ | Anteckningar |
 ---------|----------|---------|
-| Exporttyp | **[!UICONTROL Profile-based]** | <ul><li>Du exporterar alla medlemmar i en målgrupp tillsammans med de önskade schemafälten *(t.ex. e-postadress, telefonnummer, efternamn)*, enligt fältmappningen.</li><li> Dessutom skapas en ny egenskap i [!DNL HubSpot] med målgruppsnamnet och dess värde med motsvarande målgruppsstatus från Platform, för var och en av de valda målgrupperna.</li></ul> |
-| Exportfrekvens | **[!UICONTROL Streaming]** | <ul><li>Direktuppspelningsmål är alltid på API-baserade anslutningar. Så snart en profil uppdateras i Experience Platform baserat på målgruppsutvärdering skickar anslutningsprogrammet uppdateringen nedströms till målplattformen. Läs mer om [mål för direktuppspelning](/help/destinations/destination-types.md#streaming-destinations).</li></ul> |
+| Exporttyp | **[!UICONTROL Profile-based]** | <ul><li>Du exporterar alla medlemmar i en målgrupp tillsammans med de önskade schemafälten *(till exempel e-postadress, telefonnummer, efternamn)*, enligt fältmappningen.</li><li> Dessutom skapas en ny egenskap i [!DNL HubSpot] med målgruppsnamnet och dess värde är med motsvarande målgruppsstatus från Platform, för var och en av de valda målgrupperna.</li></ul> |
+| Exportfrekvens | **[!UICONTROL Streaming]** | <ul><li>Direktuppspelningsmål är alltid på API-baserade anslutningar. Så snart en profil uppdateras i Experience Platform baserat på målgruppsutvärdering skickar anslutningsprogrammet uppdateringen nedströms till målplattformen. Läs mer om [direktuppspelningsmål](/help/destinations/destination-types.md#streaming-destinations).</li></ul> |
 
 {style="table-layout:auto"}
 
@@ -99,78 +99,78 @@ Se tabellen nedan för information om exporttyp och frekvens för destinationen.
 
 >[!IMPORTANT]
 >
->Om du vill ansluta till målet behöver du **[!UICONTROL View Destinations]** och **[!UICONTROL Manage Destinations]** [behörigheter för åtkomstkontroll](/help/access-control/home.md#permissions). Läs [åtkomstkontroll - översikt](/help/access-control/ui/overview.md) eller kontakta produktadministratören för att få de behörigheter som krävs.
+>Om du vill ansluta till målet behöver du behörigheterna **[!UICONTROL View Destinations]** och **[!UICONTROL Manage Destinations]** [åtkomstkontroll](/help/access-control/home.md#permissions). Läs [åtkomstkontrollsöversikten](/help/access-control/ui/overview.md) eller kontakta produktadministratören för att få den behörighet som krävs.
 
-Om du vill ansluta till det här målet följer du stegen som beskrivs i [självstudiekurs om destinationskonfiguration](../../ui/connect-destination.md). I arbetsflödet för att konfigurera mål fyller du i fälten som listas i de två avsnitten nedan.
+Om du vill ansluta till det här målet följer du stegen som beskrivs i självstudiekursen [för destinationskonfiguration](../../ui/connect-destination.md). I arbetsflödet för att konfigurera mål fyller du i fälten som listas i de två avsnitten nedan.
 
-Inom **[!UICONTROL Destinations]** > **[!UICONTROL Catalog]** sök efter [!DNL HubSpot]. Du kan även hitta den under **[!UICONTROL CRM]** kategori.
+I **[!UICONTROL Destinations]** > **[!UICONTROL Catalog]** söker du efter [!DNL HubSpot]. Du kan också hitta den under kategorin **[!UICONTROL CRM]**.
 
 ### Autentisera till mål {#authenticate}
 
-Fyll i de obligatoriska fälten nedan. Se [Samla [!DNL HubSpot] åtkomsttoken för privat app](#gather-credentials) för vägledning.
-* **[!UICONTROL Bearer token]**: Åtkomsttoken för [!DNL HubSpot] privat app.
+Fyll i de obligatoriska fälten nedan. Mer information finns i avsnittet [Samla in  [!DNL HubSpot] åtkomsttoken för privata appar](#gather-credentials).
+* **[!UICONTROL Bearer token]**: Åtkomsttoken för din privata [!DNL HubSpot]-app.
 
-Om du vill autentisera mot målet väljer du **[!UICONTROL Connect to destination]**.
-![Skärmbild av användargränssnittet för plattformen som visar hur man autentiserar.](../../assets/catalog/crm/hubspot/authenticate-destination.png)
+Om du vill autentisera till målet väljer du **[!UICONTROL Connect to destination]**.
+![Skärmbild av användargränssnittet för plattformen som visar hur du autentiserar.](../../assets/catalog/crm/hubspot/authenticate-destination.png)
 
-Om den angivna informationen är giltig visas en **[!UICONTROL Connected]** status med en grön bockmarkering. Du kan sedan gå vidare till nästa steg.
+Om den angivna informationen är giltig visas statusen **[!UICONTROL Connected]** med en grön bockmarkering. Du kan sedan gå vidare till nästa steg.
 
 ### Fyll i målinformation {#destination-details}
 
 Om du vill konfigurera information för målet fyller du i de obligatoriska och valfria fälten nedan. En asterisk bredvid ett fält i användargränssnittet anger att fältet är obligatoriskt.
-![Skärmbild för användargränssnittet för plattformen som visar målinformationen.](../../assets/catalog/crm/hubspot/destination-details.png)
+![Skärmbild för plattformsgränssnitt som visar målinformationen.](../../assets/catalog/crm/hubspot/destination-details.png)
 
 * **[!UICONTROL Name]**: Ett namn som du känner igen det här målet med i framtiden.
 * **[!UICONTROL Description]**: En beskrivning som hjälper dig att identifiera det här målet i framtiden.
 
 ### Aktivera aviseringar {#enable-alerts}
 
-Du kan aktivera varningar för att få meddelanden om dataflödets status till ditt mål. Välj en avisering i listan om du vill prenumerera och få meddelanden om statusen för ditt dataflöde. Mer information om varningar finns i guiden på [prenumerera på destinationsvarningar med användargränssnittet](../../ui/alerts.md).
+Du kan aktivera varningar för att få meddelanden om dataflödets status till ditt mål. Välj en avisering i listan om du vill prenumerera och få meddelanden om statusen för ditt dataflöde. Mer information om varningar finns i guiden [prenumerera på destinationsvarningar med användargränssnittet](../../ui/alerts.md).
 
-När du är klar med informationen för målanslutningen väljer du **[!UICONTROL Next]**.
+Välj **[!UICONTROL Next]** när du är klar med att ange information för målanslutningen.
 
 ## Aktivera målgrupper till det här målet {#activate}
 
 >[!IMPORTANT]
 >
->För att aktivera data behöver du **[!UICONTROL View Destinations]**, **[!UICONTROL Activate Destinations]**, **[!UICONTROL View Profiles]** och **[!UICONTROL View Segments]** [behörigheter för åtkomstkontroll](/help/access-control/home.md#permissions). Läs [åtkomstkontroll - översikt](/help/access-control/ui/overview.md) eller kontakta produktadministratören för att få de behörigheter som krävs.
+>För att aktivera data behöver du behörigheterna **[!UICONTROL View Destinations]**, **[!UICONTROL Activate Destinations]**, **[!UICONTROL View Profiles]** och **[!UICONTROL View Segments]** [åtkomstkontroll](/help/access-control/home.md#permissions). Läs [åtkomstkontrollsöversikten](/help/access-control/ui/overview.md) eller kontakta produktadministratören för att få den behörighet som krävs.
 
-Läs [Aktivera profiler och målgrupper för att strömma målgruppernas exportdestinationer](/help/destinations/ui/activate-segment-streaming-destinations.md) för instruktioner om hur du aktiverar målgrupper till det här målet.
+Läs [Aktivera profiler och målgrupper för att direktuppspela målgruppsexportdestinationer](/help/destinations/ui/activate-segment-streaming-destinations.md) för instruktioner om hur du aktiverar målgrupper till det här målet.
 
 ### Mappa attribut och identiteter {#map}
 
-Så här skickar du målgruppsdata från Adobe Experience Platform till [!DNL HubSpot] mål måste du gå igenom fältmappningssteget. Mappningen består av att skapa en länk mellan XDM-schemafälten (Experience Data Model) i ditt plattformskonto och motsvarande motsvarigheter från målmålet.
+Om du vill skicka målgruppsdata från Adobe Experience Platform till målet [!DNL HubSpot] måste du gå igenom fältmappningssteget. Mappningen består av att skapa en länk mellan XDM-schemafälten (Experience Data Model) i ditt plattformskonto och motsvarande motsvarigheter från målmålet.
 
-Mappa XDM-fälten korrekt till [!DNL HubSpot] målfält, följ stegen nedan:
+Följ stegen nedan för att mappa dina XDM-fält korrekt till målfälten för [!DNL HubSpot]:
 
-#### Mappa `Email` identity
+#### Mappar identiteten `Email`
 
-The `Email` Identitet är en obligatorisk mappning för det här målet. Följ stegen nedan för att mappa den:
-1. I **[!UICONTROL Mapping]** steg, välja **[!UICONTROL Add new mapping]**. Nu kan du se en ny mappningsrad på skärmen.
-   ![Skärmbild för plattformsgränssnitt med knappen Lägg till ny mappning markerad.](../../assets/catalog/crm/hubspot/mapping-add-new-mapping.png)
-1. I **[!UICONTROL Select source field]** väljer du **[!UICONTROL Select identity namespace]** och välj en identitet.
-   ![Skärmbild för plattformsgränssnitt som väljer e-post som ett källattribut att mappa som identitet.](../../assets/catalog/crm/hubspot/mapping-select-source-identity.png)
-1. I **[!UICONTROL Select target field]** väljer du **[!UICONTROL Select attributes]** och markera `email`.
-   ![Skärmbild för plattformsgränssnitt som väljer e-post som ett målattribut att mappa som identitet.](../../assets/catalog/crm/hubspot/mapping-select-target-identity.png)
+Identiteten `Email` är en obligatorisk mappning för det här målet. Följ stegen nedan för att mappa den:
+1. Välj **[!UICONTROL Add new mapping]** i steget **[!UICONTROL Mapping]**. Nu kan du se en ny mappningsrad på skärmen.
+   ![Skärmbild för plattformsgränssnitt med knappen för att lägga till ny mappning markerad.](../../assets/catalog/crm/hubspot/mapping-add-new-mapping.png)
+1. I fönstret **[!UICONTROL Select source field]** väljer du **[!UICONTROL Select identity namespace]** och väljer en identitet.
+   ![Plattformsgränssnitt, skärmbild som väljer e-post som ett källattribut att mappa som identitet.](../../assets/catalog/crm/hubspot/mapping-select-source-identity.png)
+1. I fönstret **[!UICONTROL Select target field]** väljer du **[!UICONTROL Select attributes]** och sedan `email`.
+   ![Plattformsgränssnitt, skärmbild som väljer e-post som målattribut att mappa som identitet.](../../assets/catalog/crm/hubspot/mapping-select-target-identity.png)
 
 | Source Field | Målfält | Obligatoriskt |
 | --- | --- | --- |
 | `IdentityMap: Email` | `Identity: email` | Ja |
 
 Ett exempel med identitetsmappning visas nedan:
-![Exempel på skärmavbild för plattformsgränssnitt med mappning av e-postidentitet.](../../assets/catalog/crm/hubspot/mapping-identities.png)
+![Exempel på skärmbild för plattformsgränssnitt med mappning av e-postidentitet.](../../assets/catalog/crm/hubspot/mapping-identities.png)
 
-#### Mappning **valfri** attributes
+#### Mappa **valfria** attribut
 
-Lägga till andra attribut som du vill uppdatera mellan XDM-profilschemat och [!DNL HubSpot] upprepa stegen nedan:
-1. I **[!UICONTROL Mapping]** steg, välja **[!UICONTROL Add new mapping]**. Nu kan du se en ny mappningsrad på skärmen.
-   ![Skärmbild för plattformsgränssnitt med knappen Lägg till ny mappning markerad.](../../assets/catalog/crm/hubspot/mapping-add-new-mapping.png)
-1. I **[!UICONTROL Select source field]** väljer du **[!UICONTROL Select attributes]** och välj XDM-attributet.
-   ![Skärmbild för plattformsgränssnitt där förnamn väljs som källattribut.](../../assets/catalog/crm/hubspot/mapping-select-source-attribute.png)
-1. I **[!UICONTROL Select target field]** fönster, välja **[!UICONTROL Select attributes]** och välj i listan över attribut som automatiskt fylls i från [!DNL HubSpot] konto. Målet använder [[!DNL HubSpot] Egenskaper](https://developers.hubspot.com/docs/api/crm/properties) API för att hämta den här informationen. Båda [!DNL HubSpot] [standardegenskaper](https://knowledge.hubspot.com/contacts/hubspots-default-contact-properties) och anpassade egenskaper hämtas för markering som målfält.
-   ![Skärmbild för plattformsgränssnitt där förnamn väljs som målattribut.](../../assets/catalog/crm/hubspot/mapping-select-target-attribute.png)
+Om du vill lägga till andra attribut som du vill uppdatera mellan XDM-profilschemat och ditt [!DNL HubSpot]-konto upprepar du stegen nedan:
+1. Välj **[!UICONTROL Add new mapping]** i steget **[!UICONTROL Mapping]**. Nu kan du se en ny mappningsrad på skärmen.
+   ![Skärmbild för plattformsgränssnitt med knappen för att lägga till ny mappning markerad.](../../assets/catalog/crm/hubspot/mapping-add-new-mapping.png)
+1. I fönstret **[!UICONTROL Select source field]** väljer du kategorin **[!UICONTROL Select attributes]** och väljer XDM-attributet.
+   ![Plattformsgränssnitt, skärmbild som väljer Förnamn som källattribut.](../../assets/catalog/crm/hubspot/mapping-select-source-attribute.png)
+1. Välj kategorin **[!UICONTROL Select attributes]** i fönstret **[!UICONTROL Select target field]** och välj i listan över attribut som fylls i automatiskt från ditt [!DNL HubSpot]-konto. Målet använder API:t [[!DNL HubSpot] Properties](https://developers.hubspot.com/docs/api/crm/properties) för att hämta den här informationen. Både [!DNL HubSpot] [standardegenskaper](https://knowledge.hubspot.com/contacts/hubspots-default-contact-properties) och eventuella anpassade egenskaper hämtas för markering som målfält.
+   ![Plattformsgränssnitt, skärmbild som väljer Förnamn som målattribut.](../../assets/catalog/crm/hubspot/mapping-select-target-attribute.png)
 
-Några tillgängliga mappningar mellan XDM-profilschemat och [!DNL Hubspot] visas nedan:
+Några tillgängliga mappningar mellan ditt XDM-profilschema och [!DNL Hubspot] visas nedan:
 
 | Source Field | Målfält |
 | --- | --- |
@@ -181,29 +181,29 @@ Några tillgängliga mappningar mellan XDM-profilschemat och [!DNL Hubspot] visa
 | `xdm: workAddress.country` | `Attribute: country` |
 
 Ett exempel som använder dessa attributmappningar visas nedan:
-![Skärmbild för plattformsgränssnitt med attributmappningar.](../../assets/catalog/crm/hubspot/mapping-attributes.png)
+![Exempel på skärmbild för plattformsgränssnitt med attributmappningar.](../../assets/catalog/crm/hubspot/mapping-attributes.png)
 
-När du är klar med mappningarna för målanslutningen väljer du **[!UICONTROL Next]**.
+Välj **[!UICONTROL Next]** när du är klar med mappningarna för målanslutningen.
 
 ## Validera dataexport {#exported-data}
 
 Följ stegen nedan för att verifiera att du har konfigurerat målet korrekt:
 
-1. Logga in på [!DNL HubSpot] webbplatsen och sedan navigera till **[!UICONTROL Contacts]** sida för att kontrollera målgruppsstatus. Den här listan kan konfigureras för att visa kolumner för anpassade egenskaper som har skapats med målgruppens namn och deras värde är målgruppsstatus.
+1. Logga in på webbplatsen [!DNL HubSpot] och navigera sedan till sidan **[!UICONTROL Contacts]** för att kontrollera målgruppsstatus. Den här listan kan konfigureras för att visa kolumner för anpassade egenskaper som har skapats med målgruppens namn och deras värde är målgruppsstatus.
    ![HubSpot UI, skärmbild som visar sidan Kontakter med kolumnrubriker som visar målgruppsnamnet och cellernas målgruppsstatus](../../assets/catalog/crm/hubspot/contacts.png)
 
-1. Du kan även gå ned i en individ **[!UICONTROL Person]** och navigera till egenskaperna som visar målgruppsnamnet och målgruppsstatus.
-   ![HubSpot-användargränssnittet visar kontaktsidan med anpassade egenskaper som visar målgruppsnamnet och målgruppsstatus.](../../assets/catalog/crm/hubspot/contact.png)
+1. Du kan även gå ned på en enskild **[!UICONTROL Person]**-sida och navigera till egenskaperna som visar målgruppens namn och målgruppens status.
+   ![HubSpot UI-skärmbild som visar kontaktsidan med anpassade egenskaper som visar målgruppens namn och målgruppens status.](../../assets/catalog/crm/hubspot/contact.png)
 
 ## Dataanvändning och styrning {#data-usage-governance}
 
-Alla [!DNL Adobe Experience Platform] destinationerna är kompatibla med dataanvändningsprinciper när data hanteras. Detaljerad information om hur [!DNL Adobe Experience Platform] använder datastyrning, se [Datastyrning - översikt](/help/data-governance/home.md).
+Alla [!DNL Adobe Experience Platform]-mål är kompatibla med dataanvändningsprinciper när data hanteras. Mer information om hur [!DNL Adobe Experience Platform] använder datastyrning finns i [Datastyrningsöversikten](/help/data-governance/home.md).
 
 ## Ytterligare resurser {#additional-resources}
 
-Ytterligare användbar information från [!DNL HubSpot] dokumentationen nedan:
+Ytterligare användbar information från dokumentationen för [!DNL HubSpot] finns nedan:
 * [Autentiseringsmetoder på HubSpot](https://developers.hubspot.com/docs/api/intro-to-auth)
-* [!DNL HubSpot] API-referenser för [Kontakter](https://developers.hubspot.com/docs/api/crm/contacts) och [Egenskaper](https://developers.hubspot.com/docs/api/crm/properties) API.
+* [!DNL HubSpot] API-referenser för API:erna [Kontakter](https://developers.hubspot.com/docs/api/crm/contacts) och [Egenskaper](https://developers.hubspot.com/docs/api/crm/properties).
 
 ### Changelog
 

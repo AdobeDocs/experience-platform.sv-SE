@@ -2,13 +2,13 @@
 title: Slutpunkt för enhetliga taggar
 description: Lär dig hur du skapar, uppdaterar, hanterar och tar bort taggkategorier och taggar med Adobe Experience Platform API:er.
 role: Developer
-source-git-commit: ede314d0cbe50514090915fccf7ef3c2a5254b7a
+exl-id: 6687d1da-a5e4-435a-9f99-1b0f9ac98088
+source-git-commit: 717a4ea0568200c940cf9b8f26f4dd2aa9c00a3e
 workflow-type: tm+mt
 source-wordcount: '1860'
 ht-degree: 1%
 
 ---
-
 
 # Slutpunkt för enhetliga taggar
 
@@ -22,19 +22,19 @@ Den här handboken innehåller information som hjälper dig att förstå taggar 
 
 ## Komma igång
 
-Slutpunkterna som används i den här handboken är en del av Adobe Experience Platform API:er. Innan du fortsätter bör du granska [komma igång-guide](./getting-started.md) för viktig information som du behöver känna till för att kunna anropa API:t, inklusive obligatoriska rubriker och hur du läser exempel-API-anrop
+Slutpunkterna som används i den här handboken är en del av Adobe Experience Platform API:er. Innan du fortsätter bör du läsa [kom igång-guiden](./getting-started.md) för att få viktig information som du behöver känna till för att kunna ringa anrop till API:t, inklusive nödvändiga rubriker och hur du läser exempel-API-anrop
 
 ### Ordlista
 
-Följande ordlista visar skillnaden mellan **tag** och **taggkategori**.
+I följande ordlista markeras skillnaden mellan en **tagg** och en **taggkategori**.
 
 - **Tagg**: Med en tagg kan du hantera metadatataxonomin för affärsobjekt, vilket gör att du kan klassificera dessa objekt för enklare identifiering och kategorisering.
    - **Okategoriserad tagg**: En okategoriserad tagg är en tagg som inte tillhör en taggkategori. Som standard delas skapade taggar upp.
-- **Kategorin Tagg**: Med en taggkategori kan du gruppera dina taggar i meningsfulla uppsättningar, så att du kan skapa mer kontext för taggens syfte.
+- **Taggkategori**: Med en taggkategori kan du gruppera dina taggar i meningsfulla uppsättningar, så att du kan skapa mer kontext för taggens syfte.
 
 ## Hämta en lista med taggkategorier {#get-tag-categories}
 
-Du kan hämta en lista över taggkategorier som tillhör din organisation genom att göra en GET-förfrågan till `/tagCategory` slutpunkt.
+Du kan hämta en lista med taggkategorier som tillhör din organisation genom att göra en GET-förfrågan till slutpunkten `/tagCategory`.
 
 **API-format**
 
@@ -49,8 +49,8 @@ Följande valfria frågeparametrar kan användas när taggkategorier hämtas.
 | --------------- | ----------- | ------- |
 | `start` | Platsen där resultatlistan börjar. Du kan använda detta för att ange startindex för numrering av resultat. | `start=a` |
 | `limit` | Det maximala antalet taggkategorier som du vill hämta per sida. | `limit=20` |
-| `property` | Det attribut som du vill filtrera efter när du hämtar taggkategorier. Följande värden stöds: &lt;ul><li>`name`: Namnet på taggkategorin.</li></ul> | `property=name==category` |
-| `sortBy` | Den ordning i vilken taggkategorierna sorteras. Värden som stöds är `name`, `createdAt`och `modifiedAt`. | `sortBy=name` |
+| `property` | Det attribut som du vill filtrera efter när du hämtar taggkategorier. Värden som stöds är: &lt;ul≥<li>`name`: Namnet på taggkategorin.</li></ul> | `property=name==category` |
+| `sortBy` | Den ordning i vilken taggkategorierna sorteras. Värden som stöds är `name`, `createdAt` och `modifiedAt`. | `sortBy=name` |
 | `sortOrder` | Den riktning som taggkategorierna sorteras efter. Värden som stöds är `asc` och `desc`. | `sortOrder=asc` |
 
 **Begäran**
@@ -104,7 +104,7 @@ Ett lyckat svar returnerar HTTP-status 200 med en lista över alla taggkategorie
 >
 >Endast systemadministratören och produktadministratören kan använda detta API-anrop.
 
-Du kan skapa en ny taggkategori genom att göra en POST-förfrågan till `/tagCategory` slutpunkt.
+Du kan skapa en ny taggkategori genom att göra en POST-förfrågan till slutpunkten `/tagCategory`.
 
 **API-format**
 
@@ -159,7 +159,7 @@ Ett exempelsvar returnerar HTTP-status 200 med information om din nyligen skapad
 
 ## Hämta en specifik taggkategori {#get-tag-category}
 
-Du kan hämta en specifik taggkategori som tillhör din organisation genom att göra en GET-förfrågan till `/tagCategory` slutpunkt och ange taggkategorins ID.
+Du kan hämta en specifik taggkategori som tillhör din organisation genom att göra en GET-förfrågan till `/tagCategory`-slutpunkten och ange taggkategorins ID.
 
 **API-format**
 
@@ -224,7 +224,7 @@ Ett lyckat svar returnerar HTTP-status 200 med information om den angivna taggka
 >
 >Endast systemadministratören och produktadministratören kan använda detta API-anrop.
 
-Du kan uppdatera information om en viss taggkategori som tillhör din organisation genom att göra en PATCH-förfrågan till `/tagCategory` slutpunkt och ange taggkategorins ID.
+Du kan uppdatera information om en specifik taggkategori som tillhör din organisation genom att göra en PATCH-begäran till `/tagCategory`-slutpunkten och ange taggkategorins ID.
 
 **API-format**
 
@@ -256,7 +256,7 @@ curl -X PATCH https://experience.adobe.io/unifiedtags/tagCategory/e2b7c656-067b-
 
 | Parameter | Beskrivning |
 | --------- | ----------- |
-| `op` | Den slutförda åtgärden. Om du vill uppdatera en viss taggkategori anger du det här värdet till `replace`. |
+| `op` | Den slutförda åtgärden. Om du vill uppdatera en specifik taggkategori anger du värdet `replace`. |
 | `path` | Sökvägen till det fält som ska uppdateras. Värden som stöds är `name` och `description`. |
 | `value` | Det uppdaterade värdet för fältet som du vill uppdatera. |
 | `from` | Det ursprungliga värdet för det fält som du vill uppdatera. |
@@ -291,7 +291,7 @@ HTTP-status 200 med information om den nyligen uppdaterade taggkategorin har slu
 >
 >Endast systemadministratören och produktadministratören kan använda detta API-anrop.
 
-Du kan ta bort en specifik taggkategori som tillhör din organisation genom att göra en DELETE-förfrågan till `/tagCategory` slutpunkt och ange taggkategorins ID.
+Du kan ta bort en specifik taggkategori som tillhör din organisation genom att göra en DELETE-begäran till `/tagCategory`-slutpunkten och ange taggkategorins ID.
 
 **API-format**
 
@@ -323,7 +323,7 @@ Ett lyckat svar returnerar HTTP-status 200 tillsammans med ett tomt svar.
 
 ## Hämta en lista med taggar {#get-tags}
 
-Du kan hämta en lista över taggar som tillhör din organisation genom att göra en GET-förfrågan till `/tags` slutpunkten och ID:t för taggkategorin.
+Du kan hämta en lista med taggar som tillhör din organisation genom att göra en GET-förfrågan till slutpunkten `/tags` och ID:t för taggkategorin.
 
 **API-format**
 
@@ -338,8 +338,8 @@ Följande valfria frågeparametrar kan användas vid hämtning av taggar.
 | --------------- | ----------- | ------- |
 | `start` | Platsen där resultatlistan börjar. Du kan använda detta för att ange startindex för numrering av resultat. | `start=a` |
 | `limit` | Det maximala antalet taggar som du vill hämta per sida. | `limit=20` |
-| `property` | Det attribut som du vill filtrera efter när du hämtar taggar. Följande värden stöds:<ul><li>`name`: Namnet på taggen.</li><li>`archived`: Om taggarna är arkiverade eller inte arkiverade. Du kan ange det här värdet till antingen `true` eller `false`.</li><li>`tagCategoryId`: ID:t för den taggkategori som taggen tillhör.</li></ul> | <ul><li>`property=name==TestTag`</li><li>`property=archived==false`</li><li>`property=tagCategoryId==e2b7c656-067b-4413-a366-adde0401df50`</li> |
-| `sortBy` | Den ordning i vilken taggarna sorteras. Värden som stöds är `name`, `createdAt`och `modifiedAt`. | `sortBy=name` |
+| `property` | Det attribut som du vill filtrera efter när du hämtar taggar. Följande värden stöds:<ul><li>`name`: Namnet på taggen.</li><li>`archived`: Om taggarna har arkiverats eller inte har arkiverats. Du kan ange det här värdet till antingen `true` eller `false`.</li><li>`tagCategoryId`: ID:t för den taggkategori som taggen tillhör.</li></ul> | <ul><li>`property=name==TestTag`</li><li>`property=archived==false`</li><li>`property=tagCategoryId==e2b7c656-067b-4413-a366-adde0401df50`</li> |
+| `sortBy` | Den ordning i vilken taggarna sorteras. Värden som stöds är `name`, `createdAt` och `modifiedAt`. | `sortBy=name` |
 | `sortOrder` | Den riktning som taggkategorierna sorteras efter. Värden som stöds är `asc` och `desc`. | `sortOrder=asc` |
 
 
@@ -506,9 +506,9 @@ Ett lyckat svar returnerar HTTP-status 200 med information om taggarna som tillh
 >
 >Det är bara systemadministratören och produktadministratören som kan använda det här API-anropet för att skapa en ny tagg i en angiven taggkategori.
 >
->Om du skapar en okategoriserad tagg gör du det **not** behöver administratörsbehörighet.
+>Om du skapar en tagg som inte är kategoriserad behöver du **inte** administratörsbehörighet.
 
-Du kan skapa en ny tagg genom att göra en POST-förfrågan till `/tags` slutpunkt.
+Du kan skapa en ny tagg genom att göra en POST-förfrågan till slutpunkten `/tags`.
 
 **API-format**
 
@@ -533,7 +533,7 @@ curl -X POST https://experience.adobe.io/unifiedtags/tags
 
 | Egenskap | Beskrivning |
 | -------- | ----------- |
-| `name` | **Obligatoriskt**. Namnet på taggen som du vill skapa. |
+| `name` | **Krävs**. Namnet på taggen som du vill skapa. |
 | `tagCategoryId` | *Valfritt*. ID:t för den taggkategori som du vill att taggen ska tillhöra. Om den inte anges skapas taggen som en del av kategorin Ej kategoriserad. |
 
 +++
@@ -575,7 +575,7 @@ Ett lyckat svar returnerar HTTP-status 201 med information om taggen som du nyss
 
 ## Hämta en specifik tagg {#get-tag}
 
-Du kan hämta en specifik tagg som tillhör din organisation genom att göra en GET-förfrågan till `/tags` slutpunkt och ange ID:t för taggen som du vill hämta.
+Du kan hämta en specifik tagg som tillhör din organisation genom att göra en GET-förfrågan till slutpunkten `/tags` och ange ID:t för taggen som du vill hämta.
 
 **API-format**
 
@@ -633,13 +633,13 @@ Ett lyckat svar returnerar HTTP-status 200 med information om den angivna taggen
 | `modifiedBy` | ID för den användare som senast uppdaterade taggen. |
 | `tagCategoryId` | ID:t för den taggkategori som taggen tillhör. |
 | `tagCategoryName` | Namnet på den taggkategori som taggen tillhör. |
-| `archived` | Taggens arkiveringsstatus. Om inställt på `true`betyder det att taggen arkiveras. |
+| `archived` | Taggens arkiveringsstatus. Om värdet är `true` betyder det att taggen arkiveras. |
 
 +++
 
 ## Validera taggar {#validate-tags}
 
-Du kan validera om det finns taggar genom att göra en POST-förfrågan till `/tags/validate` slutpunkt.
+Du kan validera om det finns taggar genom att göra en POST-förfrågan till slutpunkten `/tags/validate`.
 
 **API-format**
 
@@ -668,7 +668,7 @@ curl -X POST https://experience.adobe.io/unifiedtags/tags/validate
 | Egenskap | Beskrivning |
 | -------- | ----------- |
 | `ids` | En array som innehåller en lista med tagg-ID:n som du vill validera. |
-| `entity` | Den entitet som begär valideringen. Du kan använda `{API_KEY}` värde för den här parametern. |
+| `entity` | Den entitet som begär valideringen. Du kan använda värdet `{API_KEY}` för den här parametern. |
 
 +++
 
@@ -705,7 +705,7 @@ Ett lyckat svar returnerar HTTP-status 200 med information om vilka taggar som �
 
 ## Uppdatera en specifik tagg {#update-tag}
 
-Du kan uppdatera en angiven tagg genom att göra en PATCH-förfrågan till `/tags` slutpunkt och ange ID:t för taggen som du vill uppdatera.
+Du kan uppdatera en angiven tagg genom att göra en PATCH-förfrågan till slutpunkten `/tags` och ange ID:t för taggen som du vill uppdatera.
 
 **API-format**
 
@@ -738,7 +738,7 @@ curl -X GET https://experience.adobe.io/unifiedtags/tags/2bd5ddd9-7284-4767-81d9
 | Egenskap | Beskrivning |
 | -------- | ----------- |
 | `op` | Den åtgärd som måste utföras. I det här fallet ställs den alltid in på `replace`. |
-| `path` | Sökvägen till det fält som ska uppdateras. Värden som stöds är `name`, `archived`och `tagCategoryId`. |
+| `path` | Sökvägen till det fält som ska uppdateras. Värden som stöds är `name`, `archived` och `tagCategoryId`. |
 | `value` | Det uppdaterade värdet för fältet som du vill uppdatera. |
 | `from` | Det ursprungliga värdet för det fält som du vill uppdatera. |
 
@@ -773,9 +773,9 @@ Ett lyckat svar returnerar HTTP-status 200 med information om den nyligen uppdat
 >
 >Endast systemadministratören och produktadministratören kan använda detta API-anrop.
 >
->Dessutom är taggen **inte** kopplas till alla affärsobjekt och **måste** arkiveras innan du kan ta bort taggen. Du kan arkivera taggen med [update tag endpoint](#update-tag).
+>Dessutom kan taggen **inte** kopplas till några affärsobjekt och **måste** arkiveras innan du kan ta bort taggen. Du kan arkivera taggen med [slutpunkten för uppdateringstaggen](#update-tag).
 
-Du kan ta bort en viss tagg genom att lägga till taggen DELETE i `/tags` slutpunkt och ange ID:t för taggen som du vill ta bort.
+Du kan ta bort en viss tagg genom att lägga till taggen DELETE i `/tags`-slutpunkten och ange ID:t för taggen som du vill ta bort.
 
 **API-format**
 
@@ -807,4 +807,4 @@ Ett lyckat svar returnerar HTTP-status 200 tillsammans med ett tomt svar.
 
 ## Nästa steg
 
-När du har läst den här guiden får du en bättre förståelse för hur du skapar, hanterar och tar bort taggar och taggkategorier med Adobe Experience Platform API:er. Mer information om hur du hanterar taggar med användargränssnittet finns i [hantering av taggguide](../ui/managing-tags.md). Mer information om hur du hanterar taggkategorier med hjälp av användargränssnittet finns i [guide för taggkategorier](../ui/tags-categories.md).
+När du har läst den här guiden får du en bättre förståelse för hur du skapar, hanterar och tar bort taggar och taggkategorier med Adobe Experience Platform API:er. Mer information om hur du hanterar taggar med användargränssnittet finns i [handboken om hantering av taggar](../ui/managing-tags.md). Mer information om hur du hanterar taggkategorier med hjälp av användargränssnittet finns i [guiden för taggkategorier](../ui/tags-categories.md).

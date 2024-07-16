@@ -11,9 +11,9 @@ ht-degree: 0%
 
 ---
 
-# [!UICONTROL Web information] datatyp
+# Datatypen [!UICONTROL Web information]
 
-[!UICONTROL Web information] är en XDM-datatyp (Standard Experience Data Model) som beskriver information som spelats in via en Experience Event som är specifik för webbkanalen, inklusive webbsidan, referenten och/eller länken som relaterar till interaktionen på sidan.
+[!UICONTROL Web information] är en XDM-datatyp (Standard Experience Data Model) som beskriver information som spelats in via en Experience Event som är specifik för webbkanalen på World Wide, inklusive webbsidan, referenten och/eller länken som är relaterad till interaktionen på sidan.
 
 ![](../images/data-types/web-information.png)
 
@@ -21,7 +21,7 @@ ht-degree: 0%
 | --- | --- | --- |
 | `webInteraction` | [[!UICONTROL Web interaction]](./web-interaction.md) | Beskriver informationen om den webblänk eller URL som motsvarar interaktionen. |
 | `webPageDetails` | [[!UICONTROL Web page details]](./webpage-details.md) | Beskriver information om webbsidan där webbinteraktionen inträffade. |
-| `webReferrer` | [!UICONTROL Object] | Beskriver referenten till en webbinteraktion, vilket är den URL som en besökare kom från omedelbart innan den aktuella webbinteraktionen spelades in. Innehåller följande underegenskaper: <ul><li>`URL`: Referentens-URL.</li><li>`type`: Refererartypen.</li></ul> |
+| `webReferrer` | [!UICONTROL Object] | Beskriver referenten till en webbinteraktion, vilket är den URL som en besökare kom från omedelbart innan den aktuella webbinteraktionen spelades in. Innehåller följande underegenskaper: <ul><li>`URL`: Refererar-URL:en.</li><li>`type`: Refererartypen.</li></ul> |
 
 {style="table-layout:auto"}
 

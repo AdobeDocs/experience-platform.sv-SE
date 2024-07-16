@@ -19,12 +19,12 @@ ht-degree: 0%
 
 # Skapa ett segment i användargränssnittet för Experience Platform
 
-Följande video är avsedd att ge en bättre förståelse för hur man skapar segment. Det visar ett exempel på en kundupplevelse följt av en snabb genomgång av de viktigaste funktionerna i [!DNL Platform] gränssnitt. Läs mer om segmentering och hur du skapar segment i användargränssnittet i [Segment Builder Guide](../ui/segment-builder.md).
+Följande video är avsedd att ge en bättre förståelse för hur man skapar segment. Den visar ett exempel på en kundupplevelse följt av en snabb genomgång av nyckelfunktionerna i gränssnittet [!DNL Platform]. Om du vill veta mer om segmentering och hur du skapar segment i användargränssnittet läser du [guiden för segmentbyggare](../ui/segment-builder.md).
 
 Om du är intresserad av att skapa ett segment med segmenterings-API:t kan du läsa [skapa en API-guide för segment](../tutorials/create-a-segment.md).
 
 >[!NOTE]
 >
->Användargränssnittet i Experience Platform uppdateras ofta och kan ha ändrats sedan videon spelades in. Den senaste informationen finns i [Segment Builder Guide](../ui/segment-builder.md).
+>Användargränssnittet i Experience Platform uppdateras ofta och kan ha ändrats sedan videon spelades in. Den senaste informationen finns i [guiden för segmentbyggaren](../ui/segment-builder.md).
 
 >[!VIDEO](https://video.tv.adobe.com/v/27254?quality=12&learn=on)

@@ -6,38 +6,38 @@ description: Med slutpunkten /union i API:t för schemaregister kan du programm�
 exl-id: d0ece235-72e8-49d9-856b-5dba44e16ee7
 source-git-commit: 3da2e8f66f08a7bb9533795f7854ad583734911c
 workflow-type: tm+mt
-source-wordcount: '897'
+source-wordcount: '899'
 ht-degree: 0%
 
 ---
 
 # Unions slutpunkt
 
-Unioner (eller unionsvyer) är systemgenererade, skrivskyddade scheman som sammanställer fälten för alla scheman som delar samma klass ([!DNL XDM ExperienceEvent] eller [!DNL XDM Individual Profile]) och aktiveras för [[!DNL Real-Time Customer Profile]](../../profile/home.md).
+Unioner (eller unionsvyer) är systemgenererade, skrivskyddade scheman som sammanställer fälten för alla scheman som delar samma klass ([!DNL XDM ExperienceEvent] eller [!DNL XDM Individual Profile]) och är aktiverade för [[!DNL Real-Time Customer Profile]](../../profile/home.md).
 
 Det här dokumentet innehåller viktiga koncept för att arbeta med fackföreningar i API:t för schemaregister, inklusive exempelanrop för olika åtgärder. Mer allmän information om fackföreningar i XDM finns i avsnittet om fackföreningar i [grunderna för schemakomposition](../schema/composition.md#union).
 
 ## Unionsschemafält
 
-The [!DNL Schema Registry] innehåller automatiskt tre nyckelfält i ett unionsschema: `identityMap`, `timeSeriesEvents`och `segmentMembership`.
+[!DNL Schema Registry] innehåller automatiskt tre nyckelfält i ett unionsschema: `identityMap`, `timeSeriesEvents` och `segmentMembership`.
 
 ### Identitetskarta
 
-Ett unionsschema `identityMap` är en representation av kända identiteter inom unionens associerade postscheman. Identitetskartan delar upp identiteter i olika arrayer som skrivs med namnutrymme. Varje angiven identitet är i sig ett objekt som innehåller ett unikt `id` värde. Se [Identitetstjänstens dokumentation](../../identity-service/home.md) för mer information.
+Ett unionsschemats `identityMap` är en representation av kända identiteter inom unionens associerade postscheman. Identitetskartan delar upp identiteter i olika arrayer som skrivs med namnutrymme. Varje angiven identitet är i sig ett objekt som innehåller ett unikt `id`-värde. Mer information finns i [identitetstjänstens dokumentation](../../identity-service/home.md).
 
 ### Tidsseriehändelser
 
-The `timeSeriesEvents` arrayen är en lista över händelser i tidsserier som relaterar till postscheman som är associerade med unionen. När profildata exporteras till datauppsättningar inkluderas den här arrayen för varje post. Detta är användbart för olika användningsområden, t.ex. maskininlärning där modeller behöver en profils hela beteendehistorik utöver dess postattribut.
+Arrayen `timeSeriesEvents` är en lista över händelser i tidsserier som relaterar till postscheman som är associerade med unionen. När profildata exporteras till datauppsättningar inkluderas den här arrayen för varje post. Detta är användbart för olika användningsområden, t.ex. maskininlärning där modeller behöver en profils hela beteendehistorik utöver dess postattribut.
 
 ### Segmentmedlemskapskarta
 
-The `segmentMembership` kartan lagrar resultatet av en utvärdering av en segmentdefinition. När segmentjobben har körts med [Segmenterings-API](https://www.adobe.io/experience-platform-apis/references/segmentation/)uppdateras kartan. `segmentMembership` lagrar även alla förutvärderade målgrupper som är inkapslade i Platform, vilket möjliggör integrering med andra lösningar som Adobe Audience Manager. Se självstudiekursen om [skapa målgrupper med API:er](../../segmentation/tutorials/create-a-segment.md) för mer information.
+Kartan `segmentMembership` lagrar resultaten av utvärderingen av en segmentdefinition. När segmentjobb körs med [Segmenterings-API](https://www.adobe.io/experience-platform-apis/references/segmentation/) uppdateras kartan. `segmentMembership` lagrar även alla förutvärderade målgrupper som är inkapslade i Platform, vilket möjliggör integrering med andra lösningar som Adobe Audience Manager. Mer information finns i självstudiekursen [Skapa målgrupper med API:er](../../segmentation/tutorials/create-a-segment.md).
 
 ## Hämta en lista över föreningar {#list}
 
-När du anger `union` -taggen i ett schema, [!DNL Schema Registry] lägger automatiskt till schemat i unionen för den klass som schemat baseras på. Om det inte finns någon union för den aktuella klassen skapas en ny union automatiskt. The `$id` for the union is similar to the standard `$id` andra [!DNL Schema Registry] , där den enda skillnaden är att det finns två understreck och ordet &quot;union&quot; (`__union`).
+När du anger taggen `union` i ett schema lägger [!DNL Schema Registry] automatiskt till schemat i unionen för den klass som schemat baseras på. Om det inte finns någon union för den aktuella klassen skapas en ny union automatiskt. `$id` för unionen liknar standarden `$id` för andra [!DNL Schema Registry]-resurser. Den enda skillnaden är att den läggs till med två understreck och ordet &quot;union&quot; (`__union`).
 
-Du kan visa en lista över tillgängliga fackföreningar genom att göra en GET-förfrågan till `/tenant/unions` slutpunkt.
+Du kan visa en lista över tillgängliga fackföreningar genom att göra en GET-förfrågan till slutpunkten `/tenant/unions`.
 
 **API-format**
 
@@ -57,18 +57,18 @@ curl -X GET \
   -H 'Accept: application/vnd.adobe.xed-id+json'
 ```
 
-Svarsformatet beror på `Accept` huvud som skickades i begäran. Följande `Accept` Det finns rubriker för fackliga listor:
+Svarsformatet beror på det `Accept`-huvud som skickas i begäran. Följande `Accept` huvuden är tillgängliga för att lista fackföreningar:
 
-| `Accept` header | Beskrivning |
+| `Accept` huvud | Beskrivning |
 | --- | --- |
 | `application/vnd.adobe.xed-id+json` | Returnerar en kort sammanfattning av varje resurs. Det här är det rekommenderade huvudet för att lista resurser. (Gräns: 300) |
-| `application/vnd.adobe.xed+json` | Returnerar en fullständig JSON-klass för varje resurs, med ursprunglig `$ref` och `allOf` ingår. (Gräns: 300) |
+| `application/vnd.adobe.xed+json` | Returnerar en fullständig JSON-klass för varje resurs, med original `$ref` och `allOf` inkluderade. (Gräns: 300) |
 
 {style="table-layout:auto"}
 
 **Svar**
 
-Ett godkänt svar returnerar HTTP-status 200 (OK) och en `results` i svarstexten. Om facken har definierats, anges informationen för varje union som objekt i arrayen. Om inga fackföreningar har definierats returneras HTTP-status 200 (OK) men `results` matrisen kommer att vara tom.
+Ett lyckat svar returnerar HTTP-status 200 (OK) och en `results`-matris i svarstexten. Om facken har definierats, anges informationen för varje union som objekt i arrayen. Om inga fackföreningar har definierats returneras HTTP-status 200 (OK), men `results`-matrisen kommer att vara tom.
 
 ```JSON
 {
@@ -91,11 +91,11 @@ Ett godkänt svar returnerar HTTP-status 200 (OK) och en `results` i svarstexten
 
 ## Slå upp en union {#lookup}
 
-Du kan visa en specifik union genom att utföra en GET-förfrågan som innehåller `$id` och, beroende på sidhuvudet Godkänn, en del eller all information om unionen.
+Du kan visa en specifik union genom att utföra en GET-förfrågan som innehåller `$id` och, beroende på accepteringshuvudet, vissa eller alla detaljer om unionen.
 
 >[!NOTE]
 >
->Unionssökningar är tillgängliga med `/unions` och `/schemas` slutpunkt för att aktivera dem för användning i [!DNL Profile] exporterar till en datauppsättning.
+>Unionssökningar är tillgängliga med hjälp av slutpunkten `/unions` och `/schemas` för att aktivera dem för användning i [!DNL Profile]-exporter till en datamängd.
 
 **API-format**
 
@@ -106,7 +106,7 @@ GET /tenant/schemas/{UNION_ID}
 
 | Parameter | Beskrivning |
 | --- | --- |
-| `{UNION_ID}` | Den URL-kodade `$id` URI för den union som du vill söka efter. URI:er för föreningsscheman läggs till med &quot;__union&quot;. |
+| `{UNION_ID}` | URL-kodad `$id`-URI för den union som du vill söka efter. URI:er för föreningsscheman läggs till med &quot;__union&quot;. |
 
 {style="table-layout:auto"}
 
@@ -122,20 +122,20 @@ curl -X GET \
   -H 'Accept: application/vnd.adobe.xed+json; version=1'
 ```
 
-Unionssökningsbegäranden kräver en `version` tas med i sidhuvudet Godkänn.
+Förfrågningar om unionsuppslag kräver att `version` inkluderas i huvudet Godkänn.
 
 Följande accepterande huvuden är tillgängliga för fackschemasökningar:
 
 | Acceptera | Beskrivning |
 | -------|------------ |
 | `application/vnd.adobe.xed+json; version=1` | Raw med `$ref` och `allOf`. Innehåller rubriker och beskrivningar. |
-| `application/vnd.adobe.xed-full+json; version=1` | `$ref` attribut och `allOf` löstes. Innehåller rubriker och beskrivningar. |
+| `application/vnd.adobe.xed-full+json; version=1` | `$ref` attribut och `allOf` matchades. Innehåller rubriker och beskrivningar. |
 
 {style="table-layout:auto"}
 
 **Svar**
 
-Ett lyckat svar returnerar unionsvyn för alla scheman som implementerar klassen vars `$id` angavs i sökvägen till begäran.
+Ett lyckat svar returnerar unionsvyn för alla scheman som implementerar den klass vars `$id` angavs i begärandesökvägen.
 
 Svarsformatet beror på vilket Acceptera-huvud som skickas i begäran. Experimentera med olika Acceptera-huvuden för att jämföra svaren och ta reda på vilken rubrik som är bäst för dig.
 
@@ -180,11 +180,11 @@ Svarsformatet beror på vilket Acceptera-huvud som skickas i begäran. Experimen
 
 ## Aktivera ett schema för fackmedlemskap {#enable}
 
-För att ett schema ska inkluderas i unionen för sin klass, är en `union` -taggen måste läggas till i schemats `meta:immutableTags` -attribut. Du kan uppnå detta genom att göra en PATCH-förfrågan om att lägga till en `meta:immutableTags` array med ett strängvärde på `union` till det aktuella schemat. Se [slutpunktshandbok för scheman](./schemas.md#union) för ett detaljerat exempel.
+För att ett schema ska kunna inkluderas i unionen för sin klass måste en `union`-tagg läggas till i schemats `meta:immutableTags`-attribut. Du kan uppnå detta genom att göra en PATCH-begäran om att lägga till en `meta:immutableTags`-matris med ett strängvärde på `union` i det aktuella schemat. Ett detaljerat exempel finns i [schemas slutpunktshandbok](./schemas.md#union).
 
 ## Visa scheman i en union {#list-schemas}
 
-Om du vill se vilka scheman som ingår i en viss union kan du göra en GET-förfrågan till `/tenant/schemas` slutpunkt. Använda `property` frågeparameter, du kan konfigurera svaret så att endast returnerade scheman som innehåller en `meta:immutableTags` fält och en `meta:class` är lika med klassen vars union du går till.
+Om du vill se vilka scheman som ingår i en specifik union kan du utföra en GET-förfrågan till slutpunkten `/tenant/schemas`. Med frågeparametern `property` kan du konfigurera svaret så att det bara returnerar scheman som innehåller ett `meta:immutableTags`-fält och en `meta:class` som är lika med den klass vars union du använder.
 
 **API-format**
 
@@ -194,13 +194,13 @@ GET /tenant/schemas?property=meta:immutableTags==union&property=meta:class=={CLA
 
 | Parameter | Beskrivning |
 | --- | --- |
-| `{CLASS_ID}` | The `$id` för den klass vars unionsaktiverade scheman du vill visa. |
+| `{CLASS_ID}` | `$id` för den klass vars unionsanpassade scheman du vill visa. |
 
 {style="table-layout:auto"}
 
 **Begäran**
 
-Följande begäran hämtar en lista med alla scheman som är en del av unionen för [!DNL XDM Individual Profile] klassen.
+Följande begäran hämtar en lista över alla scheman som är en del av unionen för klassen [!DNL XDM Individual Profile].
 
 ```SHELL
 curl -X GET \
@@ -212,12 +212,12 @@ curl -X GET \
   -H 'x-sandbox-name: {SANDBOX_NAME}'
 ```
 
-Svarsformatet beror på `Accept` huvud som skickades i begäran. Följande `Accept` rubriker är tillgängliga för listscheman:
+Svarsformatet beror på det `Accept`-huvud som skickas i begäran. Följande `Accept` rubriker är tillgängliga för scheman:
 
-| `Accept` header | Beskrivning |
+| `Accept` huvud | Beskrivning |
 | --- | --- |
 | `application/vnd.adobe.xed-id+json` | Returnerar en kort sammanfattning av varje resurs. Det här är det rekommenderade huvudet för att lista resurser. (Gräns: 300) |
-| `application/vnd.adobe.xed+json` | Returnerar det fullständiga JSON-schemat för varje resurs, med det ursprungliga `$ref` och `allOf` ingår. (Gräns: 300) |
+| `application/vnd.adobe.xed+json` | Returnerar det fullständiga JSON-schemat för varje resurs, inklusive original `$ref` och `allOf`. (Gräns: 300) |
 
 {style="table-layout:auto"}
 

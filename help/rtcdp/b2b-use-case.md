@@ -8,7 +8,7 @@ exl-id: 15505980-ac33-44b2-8989-c08cbabd212b
 source-git-commit: 2704184446f7945c744e7e2d2a8c3cda3fc12527
 workflow-type: tm+mt
 source-wordcount: '1151'
-ht-degree: 2%
+ht-degree: 1%
 
 ---
 
@@ -16,8 +16,8 @@ ht-degree: 2%
 
 Real-time Customer Data Platform B2B Edition utökar de befintliga erbjudandena från Real-Time CDP och Adobe Experience Platform med stöd för B2B-data och arbetsflöden. Det här dokumentet innehåller ett exempel på hur man kan använda B2B-versionen för att demonstrera de ytterligare fördelarna. De omfattar följande:
 
-- Kombinera person- och kontodata från olika externa datakällor för att skapa en heltäckande bild som ger en bättre förståelse för kunderna och mer korrekt segmentering. Läs dokumentationen om [skapa XDM-schemarelationer](./schemas/b2b.md) för användning med olika B2B-källor för mer information.
-- Segmentera en målgrupp baserat på attribut för relaterade enheter. Detta inkluderar konton, säljprojekt, kampanjer och marknadsföringslistor. Publiken begränsas inte längre till bara personattribut och upplevelsehändelser. Se [Dokumentation för B2B-segmentering](./segmentation/b2b.md) för fler exempel på hur man skapar B2B-specifika målgrupper.
+- Kombinera person- och kontodata från olika externa datakällor för att skapa en heltäckande bild som ger en bättre förståelse för kunderna och mer korrekt segmentering. Mer information finns i dokumentationen om [att skapa XDM-schemarelationer](./schemas/b2b.md) som kan användas med olika B2B-källor.
+- Segmentera en målgrupp baserat på attribut för relaterade enheter. Detta inkluderar konton, säljprojekt, kampanjer och marknadsföringslistor. Publiken begränsas inte längre till bara personattribut och upplevelsehändelser. Se [B2B-segmenteringsdokumentationen](./segmentation/b2b.md) för fler exempel på hur du skapar B2B-specifika målgrupper.
 - Inbyggt stöd för användning av en person som är relaterad till flera konton.
 
 ## Användningsfall
@@ -38,7 +38,7 @@ I Marketo 2 registreras Townsend som Konto 2. Konto 2 har också två samhörand
 
 För integrerings- och kontrolländamål har Bodea också ett MDM-system (Master Data Management) där man har en post som anger att konto 1 i Marketo 1 (och CRM 1) och konto 2 i Marketo 2 (och CRM 2) är samma företag.
 
-Under den senaste månaden `p2@townsend.com` besökte den nya produktsidan och webbbesöket gjordes av Marketo 1.
+Under den senaste månaden besökte `p2@townsend.com` den nya produktsidan och webbbesöket spelades in av Marketo 1.
 
 ![kontoinformationsdiagram](./assets/account-info.png)
 
@@ -60,7 +60,7 @@ Med Real-Time CDP B2B Edition kan Bodeas marknadsförare
 
 - Kombinera data från olika källor (olika Marketo- och CRM-instanser samt Master Data Management) till Real-Time CDP B2B Edition.
 
-Med RT-CDP B2B Edition kan Bodea använda Marketo Engage Source Connector för att hämta B2B-data från Marketo 1 och Marketo 2 till Experience Platform och hålla dessa data aktuella med plattformsanslutna applikationer. Se [Marketo källanslutning](../sources/connectors/adobe-applications/marketo/marketo.md) mer information.
+Med RT-CDP B2B Edition kan Bodea använda Marketo Engage Source Connector för att hämta B2B-data från Marketo 1 och Marketo 2 till Experience Platform och hålla dessa data aktuella med plattformsanslutna applikationer. Mer information finns i dokumentationen för [Marketo-källanslutningen](../sources/connectors/adobe-applications/marketo/marketo.md).
 
 B2B-data (personer, konton, säljprojekt och aktiviteter) från CRM1 synkroniseras till Marketo 1. På samma sätt synkroniseras alla B2B-data från CRM 2 till Marketo 2. De synkas till Adobe Experience Platform via Marketo källanslutning. Om Bodea vill hämta ytterligare data från en CRM till Experience Platform kan de använda befintliga CRM Connectors.
 
@@ -83,7 +83,7 @@ För enkelhetens skull och i det här exemplet identifieras människor av sina e
    - OCH
    - Har besökt produktsidan den senaste månaden
 
-- Skapa en målgrupp som är de mest effektiva mottagarna av Bodeas nya marknadsföringskampanj. I det här exemplet hjälper RT-CDP, B2B Edition marknadsföraren att identifiera `p2@townsend.com` som det rätta målet för denna marknadsföringskampanj.
+- Skapa en målgrupp som är de mest effektiva mottagarna av Bodeas nya marknadsföringskampanj. I det här exemplet hjälper RT-CDP, B2B Edition marknadsföraren att identifiera `p2@townsend.com` som rätt mål för den här marknadsföringskampanjen.
 
 Genom att använda destinationerna Marketo Engage och LinkedIn har Bodea en totallösning för kundupplevelsehantering (CXM) för marknadsföringsteamet. Den målgrupp som skapas i Experience Platform flyttas till Marketo-målet där den visas som en statisk lista. Den här målgruppen läggs sedan automatiskt till i en marknadsföringskampanj från Marketo. Samtidigt kan målgruppen även skickas till en marknadsföringskampanj från LinkedIn via RT-CDP B2B Edition.
 

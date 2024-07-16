@@ -1,7 +1,8 @@
 ---
 title: Implementeringshandbok för identitetstjänsten
 description: Lär dig hur data som tillhandahålls till Adobe Experience Platform behandlas innan de används av identitetstjänsten för att skapa identitetsdiagram.
-source-git-commit: f1273c1deac32559e214d1d99d10f6ca25fe4264
+exl-id: c961bbf6-6b46-470f-a671-93ff4173876c
+source-git-commit: 8be502c9eea67119dc537a5d63a6c71e0bff1697
 workflow-type: tm+mt
 source-wordcount: '581'
 ht-degree: 0%
@@ -22,7 +23,7 @@ Beroende på er strategi för insamling av företagsdata avgör de datafält som
 
 ## Skapa ytterligare identitetsnamnutrymmen
 
-Experience Platform har en mängd standardnamnutrymmen, men du kan behöva skapa ytterligare namnutrymmen för att kategorisera dina identiteter ordentligt. Mer information finns i guiden [skapa anpassade namnutrymmen för din organisation](./features/namespaces.md).
+Experience Platform har en mängd standardnamnutrymmen, men du kan behöva skapa ytterligare namnutrymmen för att kategorisera dina identiteter ordentligt. Mer information finns i guiden om att [skapa anpassade namnutrymmen för din organisation](./features/namespaces.md).
 
 >[!NOTE]
 >
@@ -30,13 +31,13 @@ Experience Platform har en mängd standardnamnutrymmen, men du kan behöva skapa
 
 ## Inkludera identitetsdata i Experience Data Model (XDM)
 
-Som det standardiserade ramverk som Experience Platform organiserar kunddata inom gör Experience Data Model (XDM) det möjligt att dela och förstå data mellan Experience Platform och andra tjänster som interagerar med Experience Platform. Mer information finns i [XDM - systemöversikt](../xdm/home.md).
+Som det standardiserade ramverk som Experience Platform organiserar kunddata inom gör Experience Data Model (XDM) det möjligt att dela och förstå data mellan Experience Platform och andra tjänster som interagerar med Experience Platform. Mer information finns i [XDM-systemöversikt](../xdm/home.md).
 
 Både schema för inspelnings- och tidsserier ger möjlighet att inkludera identitetsdata. När data importeras skapar identitetsdiagrammet nya relationer mellan datafragment från olika namnutrymmen om de visar sig dela gemensamma identitetsdata.
 
 ## Ange etiketter för XDM-fält som identitet
 
-Alla textfält `string` i scheman som implementerar antingen post- eller tidsseriens XDM-klasser kan märkas som ett identitetsfält. Därför betraktas alla data som hämtas in till det fältet som identitetsdata.
+Alla fält av typen `string` i scheman som implementerar antingen post- eller tidsseriens XDM-klasser kan märkas som ett identitetsfält. Därför betraktas alla data som hämtas in till det fältet som identitetsdata.
 
 I identitetsfält går det också att länka identiteter om de delar gemensamma PII-data.
 Genom att till exempel märka fält med telefonnummer som identitetsfält kan identitetstjänsten automatiskt skapa relationer med andra personer som använder samma telefonnummer.
@@ -46,15 +47,15 @@ Genom att till exempel märka fält med telefonnummer som identitetsfält kan id
 >* Array- och mappningstypsfält stöds inte och kan inte markeras och märkas som identitetsfält.
 >* Namnutrymmet för resulterande identiteter anges när fältet etiketteras.
 
-Mer information finns i guiden [definiera identitetsfält i användargränssnittet](../xdm/ui/fields/identity.md).
+Mer information finns i guiden om att [definiera identitetsfält i användargränssnittet](../xdm/ui/fields/identity.md).
 
 ## Konfigurera en datauppsättning för identitetstjänsten
 
-Under direktuppspelningsprocessen hämtar identitetstjänsten automatiskt identitetsdata från post- och tidsseriedata. Innan data kan importeras måste de dock aktiveras för identitetstjänsten. Läs självstudiekursen om  [konfigurera en datauppsättning för kundprofil och identitetstjänst i realtid med API:er](../profile/tutorials/dataset-configuration.md) för mer information.
+Under direktuppspelningsprocessen hämtar identitetstjänsten automatiskt identitetsdata från post- och tidsseriedata. Innan data kan importeras måste de dock aktiveras för identitetstjänsten. Mer information finns i självstudiekursen [Konfigurera en datauppsättning för kundprofil och identitetstjänst i realtid med API:er](../profile/tutorials/dataset-configuration.md).
 
 ## Importera data till identitetstjänsten
 
-Identitetstjänsten använder XDM-kompatibla data som skickas till Experience Platform antingen av [batchintag](../ingestion/batch-ingestion/overview.md) eller [direktuppspelning](../ingestion/streaming-ingestion/overview.md).
+Identitetstjänsten förbrukar XDM-kompatibla data som skickas till Experience Platform antingen av [batchinmatning](../ingestion/batch-ingestion/overview.md) eller [direktuppspelning](../ingestion/streaming-ingestion/overview.md).
 
 Följande video är avsedd att ge stöd för din förståelse av identitetstjänsten. I den här videon visas hur du kan märka datafält som identiteter, importera identitetsdata och sedan verifiera att data har skickats till Adobe Experience Platform Identity Service Private Graph.
 

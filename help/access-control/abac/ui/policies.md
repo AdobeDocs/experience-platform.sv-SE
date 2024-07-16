@@ -16,7 +16,7 @@ ht-degree: 0%
 
 >[!IMPORTANT]
 >
->Åtkomstprinciper får inte blandas ihop med dataanvändningsprinciper, som styr hur data används i Adobe Experience Platform i stället för vilka användare i organisationen har tillgång till dem. Se guiden om hur du skapar [dataanvändningsprinciper](../../../data-governance/policies/create.md) för mer information.
+>Åtkomstprinciper får inte blandas ihop med dataanvändningsprinciper, som styr hur data används i Adobe Experience Platform i stället för vilka användare i organisationen har tillgång till dem. Mer information finns i guiden om att skapa [dataanvändningsprinciper](../../../data-governance/policies/create.md).
 
 <!-- ## Create a new policy
 
@@ -120,29 +120,29 @@ You are returned to the **[!UICONTROL policies]** tab and a confirmation of dele
 
 >[!IMPORTANT]
 >
->Som standard är [!UICONTROL Auto-include] funktionen är aktiverad för alla kunder, vilket innebär att alla sandlådor läggs till i profilen.
+>Som standard är funktionen [!UICONTROL Auto-include] aktiverad för alla kunder, vilket innebär att alla sandlådor läggs till i principen.
 
 >[!NOTE]
 >
->The **[!UICONTROL Default-Label-Based-Access-Control-Policy]** principen är för närvarande den enda som är tillgänglig för konfiguration.
+>Principen **[!UICONTROL Default-Label-Based-Access-Control-Policy]** är för närvarande den enda som är tillgänglig för konfiguration.
 
-Om du vill visa sandlådor som är associerade med en profil väljer du principen på menyn **[!UICONTROL Policies]** -fliken.
+Om du vill visa sandlådor som är associerade med en princip väljer du principen på fliken **[!UICONTROL Policies]**.
 
-![Profilsidan med en lista över befintliga profiler som är tillgängliga.](../../images/abac-end-to-end-user-guide/abac-policies-page.png)
+![Policysidan med en lista över befintliga profiler som är tillgängliga.](../../images/abac-end-to-end-user-guide/abac-policies-page.png)
 
-Välj sedan profilen och välj **[!UICONTROL Sandboxes]** -fliken. En lista över sandlådor som är associerade med profilen visas.
+Välj sedan profilen och sedan fliken **[!UICONTROL Sandboxes]**. En lista över sandlådor som är associerade med profilen visas.
 
-![Profilsidan med en lista över befintliga profiler som är tillgängliga.](../../images/flac-ui/abac-policies-sandboxes-tab.png)
+![Policysidan med en lista över befintliga profiler som är tillgängliga.](../../images/flac-ui/abac-policies-sandboxes-tab.png)
 
 ### Lägg till princip i alla sandlådor
 
-Använd **[!UICONTROL Auto-include]** växla till **[!UICONTROL Sandboxes]** om du vill aktivera principen för alla sandlådor.
+Använd växlingsknappen **[!UICONTROL Auto-include]** på fliken **[!UICONTROL Sandboxes]** för att aktivera principen för alla sandlådor.
 
-![The [!UICONTROL Sandboxes] flik som visar [!UICONTROL Auto-include] växla.](../../images/flac-ui/abac-policies-auto-include.png)
+![Fliken [!UICONTROL Sandboxes] som visar växlingsknappen [!UICONTROL Auto-include].](../../images/flac-ui/abac-policies-auto-include.png)
 
-The **[!UICONTROL Enable Auto-include]** visas en uppmaning om att bekräfta ditt val. Välj **[!UICONTROL Enable]** för att slutföra konfigurationsinställningen.
+Dialogrutan **[!UICONTROL Enable Auto-include]** visas och du uppmanas att bekräfta ditt val. Välj **[!UICONTROL Enable]** för att slutföra konfigurationsinställningen.
 
-![The [!UICONTROL Enable Auto-include] markering av dialogruta [!UICONTROL Enable].](../../images/flac-ui/abac-policies-auto-include-enable.png)
+![Markering av [!UICONTROL Enable] i dialogrutan [!UICONTROL Enable Auto-include].](../../images/flac-ui/abac-policies-auto-include-enable.png)
 
 >[!SUCCESS]
 >
@@ -152,19 +152,19 @@ The **[!UICONTROL Enable Auto-include]** visas en uppmaning om att bekräfta dit
 
 >[!IMPORTANT]
 >
->Framtida sandlådor inkluderas inte som standard i principen om [!UICONTROL Auto-include] växlingsknappen är inaktiverad. Du måste hantera och lägga till sandlådor manuellt i profilen.
+>Framtida sandlådor inkluderas inte som standard i principen om växeln [!UICONTROL Auto-include] är inaktiverad. Du måste hantera och lägga till sandlådor manuellt i profilen.
 
-Använd **[!UICONTROL Auto-include]** växla till **[!UICONTROL Sandboxes]** om du vill inaktivera principen för alla sandlådor.
+Använd växlingsknappen **[!UICONTROL Auto-include]** på fliken **[!UICONTROL Sandboxes]** för att inaktivera principen för alla sandlådor.
 
-![The [!UICONTROL Sandboxes] flik som visar [!UICONTROL Auto-include] växla.](../../images/flac-ui/abac-policies-auto-include.png)
+![Fliken [!UICONTROL Sandboxes] som visar växlingsknappen [!UICONTROL Auto-include].](../../images/flac-ui/abac-policies-auto-include.png)
 
-Från **[!UICONTROL Sandboxes]** flik, välja **[!UICONTROL Add Sandboxes]** för att välja sandlådor som den här principen ska gälla för.
+På fliken **[!UICONTROL Sandboxes]** väljer du **[!UICONTROL Add Sandboxes]** för att välja sandlådor som den här principen ska gälla för.
 
-![The [!UICONTROL Sandboxes] -flik som visar en lista med sandlådor som har lagts till i profilen.](../../images/flac-ui/abac-policies-sandboxes-tab-add.png)
+![Fliken [!UICONTROL Sandboxes] som visar en lista med sandlådor som har lagts till i principen.](../../images/flac-ui/abac-policies-sandboxes-tab-add.png)
 
 En lista över sandlådor visas. Markera den sandlåda som du vill lägga till i listan. Du kan också använda sökfältet för att söka efter sandlådan. Välj **[!UICONTROL Save]**.
 
-![The [!UICONTROL Add Sandboxes] sida med en lista över befintliga sandlådor som är tillgängliga att lägga till i profilen.](../../images/flac-ui/abac-policies-sandboxes-list.png)
+![Sidan [!UICONTROL Add Sandboxes] med en lista över befintliga sandlådor som är tillgängliga att lägga till i principen.](../../images/flac-ui/abac-policies-sandboxes-list.png)
 
 >[!SUCCESS]
 >
@@ -172,13 +172,13 @@ En lista över sandlådor visas. Markera den sandlåda som du vill lägga till i
 
 ### Ta bort sandlådor från en profil
 
-Om du vill ta bort en sandlåda markerar du **X** -ikonen bredvid namnet på sandlådan.
+Om du vill ta bort en sandlåda markerar du ikonen **X** bredvid namnet på sandlådan.
 
-![The [!UICONTROL Sandboxes] flik som visar en lista med sandlådor, markera [!UICONTROL X] att ta bort.](../../images/flac-ui/abac-policies-remove-sandbox-x.png)
+![Fliken [!UICONTROL Sandboxes] som visar en lista med sandlådor och markerar [!UICONTROL X] som ska tas bort.](../../images/flac-ui/abac-policies-remove-sandbox-x.png)
 
-The **[!UICONTROL Remove]** visas en uppmaning om att bekräfta ditt val. Välj **[!UICONTROL Confirm]** för att slutföra borttagningen.
+Dialogrutan **[!UICONTROL Remove]** visas och du uppmanas att bekräfta ditt val. Välj **[!UICONTROL Confirm]** för att slutföra borttagningen.
 
-![The [!UICONTROL Remove] markering av dialogruta [!UICONTROL Confirm].](../../images/flac-ui/abac-policies-remove-sandbox.png)
+![Markering av [!UICONTROL Confirm] i dialogrutan [!UICONTROL Remove].](../../images/flac-ui/abac-policies-remove-sandbox.png)
 
 >[!SUCCESS]
 >
@@ -186,23 +186,23 @@ The **[!UICONTROL Remove]** visas en uppmaning om att bekräfta ditt val. Välj 
 
 ## Aktivera en profil
 
-Om du vill aktivera en befintlig princip väljer du den i dialogrutan **[!UICONTROL Policies]** -fliken.
+Om du vill aktivera en befintlig princip väljer du den på fliken **[!UICONTROL Policies]**.
 
 ![flac-policy-select](../../images/abac-end-to-end-user-guide/abac-policies-page.png)
 
-Välj sedan ellipsen (`…`) bredvid ett profilnamn och en listruta med kontroller för att redigera, aktivera, ta bort eller duplicera rollen. Välj Aktivera i listrutan.
+Därefter markerar du ellipsen (`…`) bredvid ett profilnamn, och i en listruta visas kontroller för att redigera, aktivera, ta bort eller duplicera rollen. Välj Aktivera i listrutan.
 
 ![flac-policy-activate](../../images/abac-end-to-end-user-guide/abac-policies-activate.png)
 
-The **[!UICONTROL Activate policy]** visas och du uppmanas att bekräfta aktiveringen.
+Dialogrutan **[!UICONTROL Activate policy]** visas och du uppmanas att bekräfta aktiveringen.
 
 ![flac-policy-activate-confirm](../../images/abac-end-to-end-user-guide/abac-activate-policies-dialog.png)
 
 
-Du kommer tillbaka till **[!UICONTROL policies]** och en bekräftelse på aktiveringen visas. Policystatusen visas som aktiv.
+Du återgår till fliken **[!UICONTROL policies]** och en bekräftelse på att aktiveringen är aktiverad visas. Policystatusen visas som aktiv.
 
 ![flash-policy-activated](../../images/abac-end-to-end-user-guide/abac-policies-confirm-activate.png)
 
 ## Nästa steg
 
-När en profil är aktiverad kan du gå vidare till nästa steg i [hantera behörigheter för en roll](permissions.md).
+När en profil är aktiverad kan du fortsätta till nästa steg för att [hantera behörigheter för en roll](permissions.md).

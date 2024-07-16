@@ -14,11 +14,11 @@ ht-degree: 0%
 
 >[!AVAILABILITY]
 >
->Den här funktionen är tillgänglig för kunder som har licens för Real-Time CDP (App Service), Adobe Experience Platform Activation, Real-Time CDP, Real-Time CDP Prime, Real-Time CDP Ultimate. Läs mer om dessa paket i [produktbeskrivningar](https://helpx.adobe.com/legal/product-descriptions.html) och kontakta Adobe för mer information.
+>Den här funktionen är tillgänglig för kunder som har licens för Real-Time CDP (App Service), Adobe Experience Platform Activation, Real-Time CDP, Real-Time CDP Prime, Real-Time CDP Ultimate. Läs mer om de här paketen i [produktbeskrivningarna](https://helpx.adobe.com/legal/product-descriptions.html) och kontakta din Adobe-representant för mer information.
 
 Lär dig hur du skapar en publik med oautentiserade besökare och omdirigerar dem med partnertillhandahållna varaktiga ID:n.
 
-![En infografik som visar flödet av partnerdata från intag till Adobe Experience Platform till utdata via målgrupper till en nedströmsdestination.](../assets/offsite-retargeting/header.png)
+![En infografik som visar flödet av partnerdata från förtäring till Adobe Experience Platform till utdata via målgrupper till ett nedströmsmål.](../assets/offsite-retargeting/header.png)
 
 ## Varför ska man överväga det här användningsexemplet? {#why-use-case}
 
@@ -45,51 +45,51 @@ För att implementera användningsexemplet använder du dessutom följande Real-
 
 Om ni vill skapa en publik med oautentiserade besökare måste ni först få in era partnerdata i Real-Time CDP.
 
-Läs mer om hur du bäst importerar data till Real-Time CDP med Web SDK i [sektioner för datahantering och insamling av händelsedata](./onsite-personalization.md#data-management) av användningsexemplet för personalisering på plats.
+Om du vill lära dig hur du bäst importerar data till Real-Time CDP med Web SDK läser du [avsnitten om datahantering och händelsedatainsamling](./onsite-personalization.md#data-management) i användningsexemplet om anpassning av webbplatser.
 
 ## Förse partnern med ID:n {#bring-partner-ids-forward}
 
 När du har importerat partnertillhandahållna ID:n till en händelsedatamängd måste du hämta dessa data till profilposterna. Du kan göra detta genom att använda beräknade attribut.
 
-Med beräknade attribut kan du snabbt konvertera profilbeteendedata till aggregerade värden på profilnivå. Det innebär att du kan använda dessa uttryck, till exempel&quot;total köptid för livstid&quot; i profilen, så att du enkelt kan använda det beräknade attributet inom dina målgrupper. Mer information om beräknade attribut finns i [översikt över beräknade attribut](../../profile/computed-attributes/overview.md).
+Med beräknade attribut kan du snabbt konvertera profilbeteendedata till aggregerade värden på profilnivå. Det innebär att du kan använda dessa uttryck, till exempel&quot;total köptid för livstid&quot; i profilen, så att du enkelt kan använda det beräknade attributet inom dina målgrupper. Mer information om beräknade attribut finns i [översikten över beräknade attribut](../../profile/computed-attributes/overview.md).
 
 Om du vill komma åt beräknade attribut väljer du **[!UICONTROL Profiles]** följt av **[!UICONTROL Computed attributes]** och **[!UICONTROL Create computed attribute]**.
 
-![The [!UICONTROL Create computed attributes] knappen markeras förutom [!UICONTROL Computed attributes] -fliken i [!UICONTROL Profiles] arbetsyta.](../assets/offsite-retargeting/create-ca.png)
+![Knappen [!UICONTROL Create computed attributes] markeras förutom fliken [!UICONTROL Computed attributes] på arbetsytan i [!UICONTROL Profiles].](../assets/offsite-retargeting/create-ca.png)
 
-The **[!UICONTROL Create computed attribute]** visas. På den här sidan kan du använda komponenterna för att skapa ett beräknat attribut.
+Sidan **[!UICONTROL Create computed attribute]** visas. På den här sidan kan du använda komponenterna för att skapa ett beräknat attribut.
 
 ![Arbetsytan för att skapa beräknade attribut visas.](../assets/offsite-retargeting/ca-page.png)
 
 >[!NOTE]
 >
->Mer information om hur du skapar beräknade attribut finns i [gränssnittshandbok för beräknade attribut](../../profile/computed-attributes/ui.md).
+>Mer information om hur du skapar beräknade attribut finns i [användargränssnittshandboken för beräknade attribut](../../profile/computed-attributes/ui.md).
 
 I det här fallet kan du skapa ett beräknat attribut som, om partner-ID:t finns, hämtar det senaste värdet för partner-ID:t inom de senaste 24 timmarna.
 
-Med sökfältet kan du söka efter och lägga till händelsen &quot;Partner-ID&quot; som [som du skapade under anpassning på plats](#get-data-in) till den beräknade attributarbetsytan.
+Med hjälp av sökfältet kan du hitta och lägga till händelsen &quot;Partner-ID&quot; som [du skapade under användningsexemplet ](#get-data-in) för anpassning på plats i den beräknade attributarbetsytan.
 
-![The [!UICONTROL Events] och sökfältet markeras.](../assets/offsite-retargeting/ca-add-partner-id.png)
+![Fliken [!UICONTROL Events] och sökfältet är markerade.](../assets/offsite-retargeting/ca-add-partner-id.png)
 
-När du har lagt till händelsen &quot;Partner ID&quot; i definitionen anger du villkoret för händelsefiltrering till **[!UICONTROL Exists]** anger du att händelsefiltreringsvillkoret ska vara **[!UICONTROL Most Recent]** värdet på det partner-ID som lagts till och med en uppslagsperiod på 24 timmar.
+När du har lagt till händelsen &quot;Partner ID&quot; i definitionen anger du villkoret för händelsefiltrering till **[!UICONTROL Exists]**, anger att villkoret för händelsefiltrering ska vara **[!UICONTROL Most Recent]**-värdet för det partner-ID som lagts till och med en uppslagsperiod på 24 timmar.
 
-![Definitionen av det beräknade attribut som du vill skapa markeras.](../assets/offsite-retargeting/ca-add-definition.png)
+![Definitionen av det beräknade attribut som du vill skapa är markerad.](../assets/offsite-retargeting/ca-add-definition.png)
 
-Ge det beräknade attributet ett passande namn (t.ex.&quot;Partner-ID&quot;) och en beskrivning, välj sedan **[!UICONTROL Publish]** för att slutföra den beräknade processen för att skapa attribut.
+Ge det beräknade attributet ett lämpligt namn (till exempel&quot;partner-ID&quot;) och en beskrivning, och välj sedan **[!UICONTROL Publish]** för att slutföra den beräknade processen för att skapa attribut.
 
-![Grundinformationen för det beräknade attribut som du vill skapa markeras.](../assets/offsite-retargeting/ca-publish.png)
+![Grundinformationen för det beräknade attribut som du vill skapa är markerad.](../assets/offsite-retargeting/ca-publish.png)
 
 ## Skapa en målgrupp med det beräknade attributet {#create-audience}
 
 Nu när du har skapat det beräknade attributet kan du använda det här beräknade attributet för att skapa en målgrupp. I det här exemplet kommer du att skapa en målgrupp bestående av besökare som besökt din webbplats mer än fem gånger den här månaden, men som ännu inte har registrerat sig.
 
-Om du vill skapa en målgrupp väljer du **[!UICONTROL Audiences]**, följt av **[!UICONTROL Create audience]**.
+Om du vill skapa en målgrupp väljer du **[!UICONTROL Audiences]** följt av **[!UICONTROL Create audience]**.
 
-![The [!UICONTROL Create audience] knappen är markerad.](../assets/offsite-retargeting/create-audience.png)
+![Knappen [!UICONTROL Create audience] är markerad.](../assets/offsite-retargeting/create-audience.png)
 
 En dialogruta visas där du uppmanas att välja mellan [!UICONTROL Compose audience] och [!UICONTROL Build rule]. Välj **[!UICONTROL Build rule]** följt av **[!UICONTROL Create]**.
 
-![The [!UICONTROL Build rule] knappen är markerad.](../assets/offsite-retargeting/select-build-rule.png)
+![Knappen [!UICONTROL Build rule] är markerad.](../assets/offsite-retargeting/select-build-rule.png)
 
 Sidan Segment Builder visas. På den här sidan kan du använda komponenterna för att skapa en målgrupp.
 
@@ -97,69 +97,69 @@ Sidan Segment Builder visas. På den här sidan kan du använda komponenterna f�
 
 >[!NOTE]
 >
->Mer information om hur du använder Segment Builder finns i [Användargränssnittsguide för segmentbyggare](../../segmentation/ui/segment-builder.md).
+>Mer information om hur du använder segmentbyggaren finns i [gränssnittsguiden för segmentbyggaren](../../segmentation/ui/segment-builder.md).
 
-För att nå målet att hitta besökarna måste du först lägga till en **[!UICONTROL Page View]** för er målgrupp. Välj **[!UICONTROL Events]** flik under **[!UICONTROL Fields]** och sedan dra och släppa **[!UICONTROL Page View]** och lägga till den i händelseavsnittets arbetsyta.
+För att kunna hitta de här besökarna måste du först lägga till en **[!UICONTROL Page View]**-händelse till din målgrupp. Välj fliken **[!UICONTROL Events]** under **[!UICONTROL Fields]**, dra och släpp sedan händelsen **[!UICONTROL Page View]** och lägg till den på arbetsytan för händelseavsnittet.
 
-![The [!UICONTROL Events] i [!UICONTROL Fields] -avsnittet är markerat medan [!UICONTROL Page View]-händelse.](../assets/offsite-retargeting/add-page-view.png)
+![Fliken [!UICONTROL Events] i avsnittet [!UICONTROL Fields] är markerad när [!UICONTROL Page View]händelsen ](../assets/offsite-retargeting/add-page-view.png) visas.
 
-Markera den nya tillagda filen **[!UICONTROL Page View]** -händelse. Ändra uppslagsperioden från **[!UICONTROL Any time]** till **[!UICONTROL This month]** och ändra händelseregeln till att inkludera **Minst 5**.
+Välj den nyligen tillagda **[!UICONTROL Page View]**-händelsen. Ändra uppslagsperioden från **[!UICONTROL Any time]** till **[!UICONTROL This month]** och ändra händelseregeln så att den omfattar **minst 5**.
 
-![Information om tillagda [!UICONTROL Page View] -händelsen visas.](../assets/offsite-retargeting/edit-event.png)
+![Information om den tillagda [!UICONTROL Page View]-händelsen visas.](../assets/offsite-retargeting/edit-event.png)
 
 När du har lagt till händelsen måste du lägga till ett attribut. Eftersom du arbetar med oautentiserade besökare kan du lägga till det beräknade attributet som du nyss skapade. Det nya beräknade attributet gör att du kan länka partner-ID:n till en målgrupp.
 
-Lägga till det beräknade attributet under **[!UICONTROL Attributes]**, markera **[!UICONTROL XDM Individual Profile]**, följt av **[din organisations klient-ID](../../xdm/api/getting-started.md#know-your-tenant-id).**, **[!UICONTROL SystemComputedAttributes]** och **[!UICONTROL PartnerID]**. Lägg till **[!UICONTROL Value]** av det beräknade attributet till attributavsnittet på arbetsytan.
+Om du vill lägga till det beräknade attributet väljer du **[!UICONTROL XDM Individual Profile]** under **[!UICONTROL Attributes]**, följt av **[organisationens klient-ID](../../xdm/api/getting-started.md#know-your-tenant-id).**, **[!UICONTROL SystemComputedAttributes]** och **[!UICONTROL PartnerID]**. Lägg till **[!UICONTROL Value]** av det beräknade attributet i attributavsnittet på arbetsytan.
 
-![Mappsökvägen för att komma åt det beräknade attributet visas.](../assets/offsite-retargeting/access-computed-attribute.png)
+![Mappsökvägen för åtkomst av det beräknade attributet visas.](../assets/offsite-retargeting/access-computed-attribute.png)
 
-Sök dessutom efter **[!UICONTROL Personal Email]** och lägg till **[!UICONTROL Address]** attribut nedan **[!UICONTROL PartnerID]** till attributdelen av arbetsytan.
+Sök dessutom efter **[!UICONTROL Personal Email]** och lägg till attributet **[!UICONTROL Address]** nedan **[!UICONTROL PartnerID]** i attributavsnittet på arbetsytan.
 
-![The [!UICONTROL PartnerID] beräknat attribut och [!UICONTROL Personal Email Address] attribut markeras på arbetsytan i Segment Builder.](../assets/offsite-retargeting/added-attributes.png)
+![Det [!UICONTROL PartnerID] beräknade attributet och attributet [!UICONTROL Personal Email Address] markeras på arbetsytan i Segment Builder.](../assets/offsite-retargeting/added-attributes.png)
 
-Nu när du har lagt till dina attribut måste du ange deras utvärderingskriterier. För **[!UICONTROL PartnerID]**, ange att kriteriet ska vara **[!UICONTROL exists]** och för **[!UICONTROL Address]**, ange att kriteriet ska vara **[!UICONTROL does not exist]**.
+Nu när du har lagt till dina attribut måste du ange deras utvärderingskriterier. För **[!UICONTROL PartnerID]** anger du villkoret till **[!UICONTROL exists]** och för **[!UICONTROL Address]** anger du villkoret till **[!UICONTROL does not exist]**.
 
-![De korrekta värdena för attributen markeras.](../assets/offsite-retargeting/set-attribute-values.png)
+![De korrekta värdena för attributen är markerade.](../assets/offsite-retargeting/set-attribute-values.png)
 
-Du har nu skapat en målgrupp som letar efter besökare med hög intensitet som har ett partnertillhandahållet ID men som ännu inte har registrerat sig för webbplatsen. Namnge målgruppen&quot;Återannonsera oautentiserade användare&quot; och välj **[!UICONTROL Save]** för att slutföra målgruppsarbetet.
+Du har nu skapat en målgrupp som letar efter besökare med hög intensitet som har ett partnertillhandahållet ID men som ännu inte har registrerat sig för webbplatsen. Ge din målgrupp namnet&quot;Återannonsera oautentiserade användare&quot; och välj **[!UICONTROL Save]** för att slutföra målgruppen.
 
-![Publiken visas i markeringar.](../assets/offsite-retargeting/save-audience-properties.png)
+![Publiken har markerats.](../assets/offsite-retargeting/save-audience-properties.png)
 
 ## Aktivera er målgrupp {#activate-audience}
 
-När ni har skapat er målgrupp kan ni nu aktivera målgruppen för efterföljande destinationer. Välj **[!UICONTROL Audiences]** till vänster i navigeringsfältet letar du efter den nya målgruppen, väljer ellipsikonen och väljer **[!UICONTROL Activate to destination]**.
+När ni har skapat er målgrupp kan ni nu aktivera målgruppen för efterföljande destinationer. Välj **[!UICONTROL Audiences]** i den vänstra navigeringslisten, sök efter den nya målgruppen, markera ellipsikonen och välj **[!UICONTROL Activate to destination]**.
 
-![The [!UICONTROL Activate to destination] knappen är markerad.](../assets/offsite-retargeting/activate-to-destination.png)
+![Knappen [!UICONTROL Activate to destination] är markerad.](../assets/offsite-retargeting/activate-to-destination.png)
 
 >[!NOTE]
 >
 >Alla måltyper, inklusive filbaserade mål, stöder målgruppsaktivering med partner-ID:n.
 >
->Mer information om hur du aktiverar målgrupper till ett mål finns i [aktiveringsöversikt](../../destinations/ui/activation-overview.md).
+>Mer information om hur du aktiverar målgrupper till ett mål finns i [aktiveringsöversikten](../../destinations/ui/activation-overview.md).
 
-The **[!UICONTROL Activate destination]** visas. På den här sidan kan du välja vilket mål du vill aktivera målet till. När du har valt önskat mål väljer du **[!UICONTROL Next]**.
+Sidan **[!UICONTROL Activate destination]** visas. På den här sidan kan du välja vilket mål du vill aktivera målet till. Välj **[!UICONTROL Next]** när du har valt önskat mål.
 
 ![Målet som du vill aktivera målgruppen för markeras.](../assets/offsite-retargeting/select-destination.png)
 
-The **[!UICONTROL Scheduling]** visas. På den här sidan kan du skapa ett schema som anger hur ofta du vill att målgruppen ska aktiveras. Välj **[!UICONTROL Create schedule]** för att skapa ett schema för målgruppsaktiveringen.
+Sidan **[!UICONTROL Scheduling]** visas. På den här sidan kan du skapa ett schema som anger hur ofta du vill att målgruppen ska aktiveras. Välj **[!UICONTROL Create schedule]** om du vill skapa ett schema för målgruppsaktiveringen.
 
-![The [!UICONTROL Create schedule] knappen är markerad.](../assets/offsite-retargeting/select-create-schedule.png)
+![Knappen [!UICONTROL Create schedule] är markerad.](../assets/offsite-retargeting/select-create-schedule.png)
 
-The [!UICONTROL Scheduling] popover visas. På den här sidan kan du skapa ett schema för målgruppsaktivering. När du har konfigurerat schemat väljer du **[!UICONTROL Create]** för att fortsätta.
+[!UICONTROL Scheduling]-pekaren visas. På den här sidan kan du skapa ett schema för målgruppsaktivering. När du har konfigurerat schemat väljer du **[!UICONTROL Create]** för att fortsätta.
 
-![Konfigurationsschemapovern visas.](../assets/offsite-retargeting/configure-schedule.png)
+![Schemaläggningsdrivrutinen för konfiguration visas.](../assets/offsite-retargeting/configure-schedule.png)
 
 När du har bekräftat schemaläggningsinformationen väljer du **[!UICONTROL Next]**.
 
 ![Information om schemat visas.](../assets/offsite-retargeting/created-schedule.png)
 
-The **[!UICONTROL Select attributes]** visas. På den här sidan kan du välja vilka attribut du vill exportera tillsammans med den aktiva målgruppen. Du bör åtminstone inkludera partner-ID, eftersom detta gör att du kan identifiera de besökare som du planerar att återannonsera. Välj **[!UICONTROL Add new mapping]** och söka efter det beräknade attributet. När du har lagt till de nödvändiga attributen väljer du **[!UICONTROL Next]**.
+Sidan **[!UICONTROL Select attributes]** visas. På den här sidan kan du välja vilka attribut du vill exportera tillsammans med den aktiva målgruppen. Du bör åtminstone inkludera partner-ID, eftersom detta gör att du kan identifiera de besökare som du planerar att återannonsera. Välj **[!UICONTROL Add new mapping]** och sök efter det beräknade attributet. När du har lagt till de nödvändiga attributen väljer du **[!UICONTROL Next]**.
 
-![Båda [!UICONTROL Add new mapping] och det beräknade attributet markeras.](../assets/offsite-retargeting/add-new-mapping.png)
+![Både knappen [!UICONTROL Add new mapping] och det beräknade attributet är markerade.](../assets/offsite-retargeting/add-new-mapping.png)
 
-The **[!UICONTROL Review]** visas. På den här sidan kan du läsa mer om målgruppsaktiveringen. Om du är nöjd med informationen väljer du **[!UICONTROL Finish]**.
+Sidan **[!UICONTROL Review]** visas. På den här sidan kan du läsa mer om målgruppsaktiveringen. Om du är nöjd med den angivna informationen väljer du **[!UICONTROL Finish]**.
 
-![The [!UICONTROL Review] visas med information om målgruppsaktiveringen.](../assets/offsite-retargeting/review-destination-activation.png)
+![Sidan [!UICONTROL Review] visas med information om målgruppsaktiveringen.](../assets/offsite-retargeting/review-destination-activation.png)
 
 Du har nu aktiverat en publik av oautentiserade användare till en nedladdad destination för ytterligare återmarknadsföring.
 
@@ -167,6 +167,6 @@ Du har nu aktiverat en publik av oautentiserade användare till en nedladdad des
 
 Du kan utforska fler användningsfall som aktiveras via partnerdatasupport i Real-Time CDP:
 
-- [Engagera och skaffa nya kunder](./prospecting.md) genom att använda partnerdata.
-- [Personalisera upplevelser på plats](./offsite-retargeting.md) med partnerstödd besökarigenkänning.
-- [Komplettera förstapartsprofiler](./supplement-first-party-profiles.md) med attribut som tillhandahålls av partners.
+- [Engagera och skaffa nya kunder](./prospecting.md) med partnerdata.
+- [Anpassa upplevelser på plats](./offsite-retargeting.md) med partnerstödd besökarigenkänning.
+- [Komplettera förstapartsprofiler](./supplement-first-party-profiles.md) med attribut som tillhandahålls av partner.

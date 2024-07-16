@@ -12,19 +12,19 @@ ht-degree: 0%
 
 # Slutpunkt för accelererade frågor
 
-Som en del av Data Distiller SKU [API för frågetjänst](https://developer.adobe.com/experience-platform-apis/references/query-service/) gör att du kan ställa tillståndslösa frågor till det accelererade arkivet. De returnerade resultaten baseras på aggregerade data. Den försämrade tidsfördröjningen för resultaten möjliggör ett mer interaktivt informationsutbyte. API:erna för accelererade frågor används också för att driva [användardefinierade kontrollpaneler](../../dashboards/user-defined-dashboards.md).
+Som en del av Data Distiller SKU kan du med [Query Service API](https://developer.adobe.com/experience-platform-apis/references/query-service/) skapa tillståndslösa frågor i det accelererade arkivet. De returnerade resultaten baseras på aggregerade data. Den försämrade tidsfördröjningen för resultaten möjliggör ett mer interaktivt informationsutbyte. API:erna för accelererade frågor används även för att driva [användardefinierade instrumentpaneler](../../dashboards/user-defined-dashboards.md).
 
-Innan du fortsätter med den här handboken bör du kontrollera att du har läst och förstått [API-guide för frågetjänst](./getting-started.md) för att kunna använda API:t för frågetjänsten.
+Innan du fortsätter med den här guiden kontrollerar du att du har läst och förstått [API-handboken för frågetjänsten](./getting-started.md) för att kunna använda API:t för frågetjänsten.
 
 ## Komma igång
 
-Data Distiller SKU krävs för att använda det frågeaccelererade arkivet. Se [packning](../packaging.md) och [skyddsräcken](../guardrails.md#query-accelerated-store)och [licensiering](../data-distiller/license-usage.md) dokumentation som relaterar till Data Distiller SKU. Om du inte har Data Distiller SKU kontaktar du Adobe kundtjänstrepresentanten för mer information.
+Data Distiller SKU krävs för att använda det frågeaccelererade arkivet. Se dokumentationen för [paketering](../packaging.md), [skyddsutkast](../guardrails.md#query-accelerated-store) och [licensiering](../data-distiller/license-usage.md) som gäller Data Distiller SKU. Om du inte har Data Distiller SKU kontaktar du Adobe kundtjänstrepresentanten för mer information.
 
 I följande avsnitt beskrivs de API-anrop som krävs för att komma åt det frågeaccelererade arkivet på ett tillståndslöst sätt via API:t för frågetjänsten. Varje anrop innehåller det allmänna API-formatet, en exempelbegäran med obligatoriska rubriker och ett exempelsvar.
 
 ## Kör en accelererad fråga {#run-accelerated-query}
 
-Gör en förfrågan om POST till `/accelerated-queries` slutpunkt för att köra en accelererad fråga. Frågan finns antingen direkt i nyttolasten eller refereras till med ett mall-ID.
+Gör en begäran om POST till slutpunkten `/accelerated-queries` om du vill köra en accelererad fråga. Frågan finns antingen direkt i nyttolasten eller refereras till med ett mall-ID.
 
 **API-format**
 
@@ -36,7 +36,7 @@ POST /accelerated-queries
 
 >[!IMPORTANT]
 >
->Begäranden till `/accelerated-queries` slutpunkten kräver antingen en SQL-sats ELLER ett mall-ID, men inte båda. Om du skickar båda i en begäran uppstår ett fel.
+>Begäranden till slutpunkten `/accelerated-queries` kräver antingen en SQL-sats ELLER ett mall-ID, men inte båda. Om du skickar båda i en begäran uppstår ett fel.
 
 Följande begäran skickar en SQL-fråga i begärandetexten till det accelererade arkivet.
 
@@ -80,9 +80,9 @@ curl -X POST https://platform.adobe.io/data/foundation/query/accelerated-queries
 
 | Egenskap | Beskrivning |
 |---|---|
-| `dbName` | Namnet på databasen som du gör en accelererad fråga till. Värdet för `dbName` bör ha formatet `{SANDBOX_NAME}:{ACCELERATED_STORE_DATABASE}.{ACCELERATED_STORE_SCHEMA}`. Den angivna databasen måste finnas i det accelererade arkivet, annars genereras ett fel. Du måste också se till att `x-sandbox-name` rubrik och sandlådenamn i `dbName` referera till samma sandlåda. |
+| `dbName` | Namnet på databasen som du gör en accelererad fråga till. Värdet för `dbName` ska ha formatet `{SANDBOX_NAME}:{ACCELERATED_STORE_DATABASE}.{ACCELERATED_STORE_SCHEMA}`. Den angivna databasen måste finnas i det accelererade arkivet, annars genereras ett fel. Du måste också se till att namnet på `x-sandbox-name`-huvudet och sandlådan i `dbName` refererar till samma sandlåda. |
 | `sql` | En SQL-satsträng. Den största tillåtna storleken är 100000 tecken. |
-| `templateId` | Den unika identifieraren för en fråga som skapats och sparats som en mall när en begäran om POST görs till `/templates` slutpunkt. |
+| `templateId` | Den unika identifieraren för en fråga som skapats och sparats som en mall när en POST begärs till slutpunkten `/templates`. |
 | `name` | Ett valfritt användarvänligt beskrivande namn för den accelererade frågan. |
 | `description` | En valfri kommentar om syftet med frågan för att hjälpa andra användare förstå syftet. Den största tillåtna storleken är 1 000 byte. |
 

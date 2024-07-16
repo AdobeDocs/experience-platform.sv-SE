@@ -19,7 +19,7 @@ ht-degree: 0%
 
 ## Översikt {#overview}
 
-Den här sidan innehåller IP-adresser som du kan lägga till i tillåtelselista för att på ett säkert sätt exportera data från Experience Platform till [SFTP-server](../destinations/catalog/cloud-storage/sftp.md).
+Den här sidan innehåller IP-adresser som du kan lägga till på tillåtelselista för att exportera data från Experience Platform till [SFTP-servern](../destinations/catalog/cloud-storage/sftp.md) på ett säkert sätt.
 
 Du kan definiera nätverksåtkomstkontroller via nätverkets brandvägg. Genom att ange rätt IP-intervall kan du tillåta trafik för dataöverföringstjänsten.
 

@@ -1,11 +1,11 @@
 ---
-title: Versionsinformation för tillägget Common Analytics-plugin-program
+title: Versionsinformation för tillägget för Common Analytics-plugin-program
 description: Den senaste versionsinformationen om taggtillägget Common Analytics Plugins i Adobe Experience Platform.
 exl-id: 5ea4b709-4e21-4f5d-be99-e72e4889ed99
 source-git-commit: 88939d674c0002590939004e0235d3da8b072118
 workflow-type: tm+mt
-source-wordcount: '329'
-ht-degree: 5%
+source-wordcount: '352'
+ht-degree: 0%
 
 ---
 
@@ -84,7 +84,7 @@ ht-degree: 5%
 
 * Ett problem som förhindrade bakåtkompatibilitet med version 2.0.X har korrigerats
 * Ett problem där dokumentationslänkar pekade på fel dokumentation har åtgärdats
-* Ett problem där `getTimeSinceLastVisit` har visats två gånger i initieringsåtgärden
+* Ett problem där `getTimeSinceLastVisit` påträffades två gånger i initieringsåtgärden har korrigerats
 
 ## 15 november 2019
 
@@ -93,9 +93,9 @@ ht-degree: 5%
 #### Felkorrigeringar
 
 * Omarbetade enskilda plugin-åtgärder för bakåtkompatibilitet
-* Ett problem med `cleanStr` plugin
-* Ett problem med `getResponsiveLayout` plugin
-* Ett problem med `getPageName` plugin
+* Ett problem med plugin-programmet `cleanStr` har korrigerats
+* Ett problem med plugin-programmet `getResponsiveLayout` har korrigerats
+* Ett problem med plugin-programmet `getPageName` har korrigerats
 
 #### Funktioner
 
@@ -127,5 +127,5 @@ ht-degree: 5%
 
 #### Funktioner
 
-* Tillägget har släppts med sju plugin-program
+* Tillägget har släppts med sju plugins
 * Enskilda åtgärder för att initiera varje plugin-program

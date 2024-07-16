@@ -13,6 +13,6 @@ ht-degree: 0%
 
 # Komma igång med Adobe Experience Platform
 
-I den här videon får du en snabb introduktion till [!DNL Experience Platform] och sammanfattar några av de utmaningar som företaget klarar av.
+Den här videon ger en snabb introduktion till [!DNL Experience Platform] och visar några av de affärsutmaningar som den löser.
 
 >[!VIDEO](https://video.tv.adobe.com/v/32797?quality=12&learn=on)

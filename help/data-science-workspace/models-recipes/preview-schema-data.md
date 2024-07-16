@@ -14,26 +14,26 @@ ht-degree: 0%
 
 # Förhandsgranska försäljningsschema och datauppsättning för återförsäljning
 
-När Bootstrap-skriptet från [försäljningsschema och datauppsättning för butik](./create-retails-sales-dataset.md) självstudiekurs. Utdatamodeller och datauppsättningar kan visas på [!DNL Experience Platform]. Följ stegen nedan för att visa scheman och datauppsättningar:
+När bootstrap-skriptet från självstudiekursen [Retail Sales schema and dataset](./create-retails-sales-dataset.md) har slutförts. Utdatamodeller och datauppsättningar kan visas på [!DNL Experience Platform]. Följ stegen nedan för att visa scheman och datauppsättningar:
 
-Välj **[!UICONTROL Schemas]** -fliken som finns i den vänstra navigeringen och söker efter det inmatningsschema som har skapats av bootstrap-skriptet. Schemats namn motsvarar det som definierades i `config.yaml` från föregående steg. Visa schemainformationen och dess komposition genom att klicka på den.
+Välj fliken **[!UICONTROL Schemas]** som finns i den vänstra navigeringen och sök efter det indatabema som har skapats av bootstrap-skriptet. Schemats namn motsvarar det som definierades i `config.yaml` från föregående steg. Visa schemainformationen och dess komposition genom att klicka på den.
 
 ![](../images/models-recipes/access-data/schema.PNG)
 
-Välj **[!UICONTROL Datasets]** -fliken som finns i den vänstra navigeringen och öppnar den indatauppsättning som skapades genom att välja namnet på datauppsättningen. Namnet på datauppsättningen motsvarar det som definierades i `config.yaml` från föregående steg.
+Välj fliken **[!UICONTROL Datasets]** som finns i den vänstra navigeringen och öppna den indatauppsättning som skapades genom att välja namnet på datauppsättningen. Namnet på datauppsättningen motsvarar det som definierades i `config.yaml` från föregående steg.
 
 ![](../images/models-recipes/access-data/dataset.PNG)
 
-Välj **[!UICONTROL Preview Dataset]** längst upp till höger för att förhandsgranska en delmängd av datauppsättningen.
+Välj **[!UICONTROL Preview Dataset]** längst upp till höger om du vill förhandsgranska en delmängd av datauppsättningen.
 
 ![](../images/models-recipes/access-data/preview.PNG)
 
 ## Nästa steg
 
-Du har nu importerat exempeldata för butiksförsäljning till [!DNL Experience Platform] med det medföljande bootstrap-skriptet.
+Du har nu importerat exempeldata för butiksförsäljning till [!DNL Experience Platform] med det angivna bootstrap-skriptet.
 
 Så här fortsätter du att arbeta med inkapslade data:
 - [Analysera dina data med Jupyter Notebooks](../jupyterlab/analyze-your-data.md)
-   - Använd Jupyter-anteckningsböcker i [!DNL Data Science Workspace] för att få tillgång till, utforska, visualisera och förstå era data.
+   - Använd Jupyter-anteckningsböcker i [!DNL Data Science Workspace] för att få tillgång till, utforska, visualisera och förstå dina data.
 - [Paketera källfiler i en mottagare](./package-source-files-recipe.md)
-   - Följ den här självstudiekursen för att lära dig hur du kan använda din egen modell i [!DNL Data Science Workspace] genom att paketera källfiler i en importerbar Recipe-fil.
+   - Följ den här självstudiekursen för att lära dig hur du kan ta med din egen modell till [!DNL Data Science Workspace] genom att paketera källfiler i en importerbar Recipe-fil.

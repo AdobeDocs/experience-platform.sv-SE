@@ -26,12 +26,12 @@ Innan du provar den här självstudiekursen måste du skapa en giltig och autent
 
 Den här självstudiekursen kräver en fungerande förståelse av följande komponenter i Adobe Experience Platform:
 
-- [Dataflöden](../../../../../dataflows/home.md): Dataflöden är en representation av datajobb som flyttar data mellan plattformar. Dataflöden konfigureras för olika tjänster, från källor till [!DNL Identity Service], till [!DNL Profile]och till [!DNL Destinations].
-- [Dataprep](../../../../../data-prep/home.md): Med Data Prep kan datatekniker mappa, omvandla och validera data till och från Experience Data Model (XDM). Dataförinställning visas som ett steg för&quot;Karta&quot; i dataöverföringsprocesserna, inklusive arbetsflödet för CSV-inmatning.
-- [[!DNL Experience Data Model (XDM)] System](../../../../../xdm/home.md): Det standardiserade ramverk som [!DNL Experience Platform] organiserar kundupplevelsedata.
-   - [Grunderna för schemakomposition](../../../../../xdm/schema/composition.md): Lär dig mer om de grundläggande byggstenarna i XDM-scheman, inklusive viktiga principer och bästa praxis när det gäller schemakomposition.
-   - [Schemaredigeraren, genomgång](../../../../../xdm/tutorials/create-schema-ui.md): Lär dig hur du skapar anpassade scheman med hjälp av gränssnittet i Schemaredigeraren.
-- [[!DNL Real-Time Customer Profile]](../../../../../profile/home.md): Ger en enhetlig konsumentprofil i realtid baserad på aggregerade data från flera källor.
+- [Dataflöden](../../../../../dataflows/home.md): Dataflöden är en representation av datajobb som flyttar data mellan plattformar. Dataflöden är konfigurerade för olika tjänster, från källor till [!DNL Identity Service], till [!DNL Profile] och till [!DNL Destinations].
+- [Data Prep](../../../../../data-prep/home.md): Med Data Prep kan datatekniker mappa, omvandla och validera data till och från Experience Data Model (XDM). Dataförinställning visas som ett steg för&quot;Karta&quot; i dataöverföringsprocesserna, inklusive arbetsflödet för CSV-inmatning.
+- [[!DNL Experience Data Model (XDM)] System](../../../../../xdm/home.md): Det standardiserade ramverk som [!DNL Experience Platform] organiserar kundupplevelsedata med.
+   - [Grundläggande om schemakomposition](../../../../../xdm/schema/composition.md): Lär dig mer om grundstenarna i XDM-scheman, inklusive nyckelprinciper och bästa metoder för schemakomposition.
+   - [Schemaredigeraren, självstudiekurs](../../../../../xdm/tutorials/create-schema-ui.md): Lär dig hur du skapar anpassade scheman med hjälp av gränssnittet för Schemaredigeraren.
+- [[!DNL Real-Time Customer Profile]](../../../../../profile/home.md): Tillhandahåller en enhetlig konsumentprofil i realtid baserad på aggregerade data från flera källor.
 
 ## Lägg till data
 
@@ -39,14 +39,14 @@ Den här självstudiekursen kräver en fungerande förståelse av följande komp
 >
 >Du kan bara skapa ett källdataflöde per konsumentgrupp för en given händelsehubb.
 
-När du har skapat ditt autentiserade molnlagringskonto för direktuppspelning kan du **[!UICONTROL Select data]** visas, där du får ett gränssnitt där du kan välja vilken dataström du vill ta med till plattformen.
+När du har skapat ett autentiserat molnlagringskonto för direktuppspelning visas steget **[!UICONTROL Select data]** som ger dig ett gränssnitt där du kan välja vilken dataström du vill ta med till plattformen.
 
 - Den vänstra delen av gränssnittet är en webbläsare som gör att du kan visa tillgängliga dataströmmar på ditt konto;
 - Med den högra delen av gränssnittet kan du förhandsgranska upp till 100 rader data från en JSON-fil.
 
 ![gränssnitt](../../../../images/tutorials/dataflow/cloud-storage/streaming/interface.png)
 
-Markera den dataström som du vill använda och välj sedan **[!UICONTROL Choose file]** för att överföra ett exempelschema.
+Markera dataströmmen som du vill använda och välj sedan **[!UICONTROL Choose file]** för att överföra ett exempelschema.
 
 >[!TIP]
 >
@@ -54,7 +54,7 @@ Markera den dataström som du vill använda och välj sedan **[!UICONTROL Choose
 
 ![select-stream](../../../../images/tutorials/dataflow/cloud-storage/streaming/select-stream.png)
 
-När schemat har överförts uppdateras förhandsgranskningsgränssnittet för att visa en förhandsgranskning av schemat som du har överfört. I förhandsvisningsgränssnittet kan du inspektera innehållet och strukturen i en fil. Du kan också använda [!UICONTROL Search field] för att komma åt specifika objekt inifrån schemat.
+När schemat har överförts uppdateras förhandsgranskningsgränssnittet för att visa en förhandsgranskning av schemat som du har överfört. I förhandsvisningsgränssnittet kan du inspektera innehållet och strukturen i en fil. Du kan också använda verktyget [!UICONTROL Search field] för att komma åt specifika objekt från schemat.
 
 När du är klar väljer du **[!UICONTROL Next]**.
 
@@ -62,53 +62,53 @@ När du är klar väljer du **[!UICONTROL Next]**.
 
 ## Mappning
 
-The **[!UICONTROL Mapping]** visas med ett gränssnitt för att mappa källdata till en plattformsdatauppsättning.
+Steg **[!UICONTROL Mapping]** visas med ett gränssnitt för att mappa källdata till en plattformsdatauppsättning.
 
 Välj en datauppsättning för inkommande data som ska importeras till. Du kan antingen använda en befintlig datauppsättning eller skapa en ny.
 
 ### Ny datauppsättning
 
-Om du vill importera data till en ny datauppsättning väljer du **[!UICONTROL New dataset]** och ange ett namn och en beskrivning för datauppsättningen i de angivna fälten. Om du vill lägga till ett schema kan du ange ett befintligt schemanamn i **[!UICONTROL Select schema]** -dialogrutan. Du kan också välja **[!UICONTROL Schema advanced search]** om du vill söka efter ett lämpligt schema.
+Om du vill importera data till en ny datauppsättning väljer du **[!UICONTROL New dataset]** och anger ett namn och en beskrivning för datauppsättningen i de angivna fälten. Om du vill lägga till ett schema kan du ange ett befintligt schemanamn i dialogrutan **[!UICONTROL Select schema]**. Du kan också välja **[!UICONTROL Schema advanced search]** om du vill söka efter ett lämpligt schema.
 
-![new-dataset](../../../../images/tutorials/dataflow/cloud-storage/streaming/new-dataset.png)
+![ny-datamängd](../../../../images/tutorials/dataflow/cloud-storage/streaming/new-dataset.png)
 
-The [!UICONTROL Select schema] visas så att du får en lista över tillgängliga scheman att välja mellan. Välj ett schema i listan för att uppdatera den högra listen så att den visar information som är specifik för det schema du valde, inklusive information om huruvida schemat är aktiverat för [!DNL Profile].
+Fönstret [!UICONTROL Select schema] visas med en lista över tillgängliga scheman att välja mellan. Välj ett schema i listan om du vill uppdatera högerspåret så att det visas information som är specifik för det schema som du har valt, inklusive information om huruvida schemat är aktiverat för [!DNL Profile].
 
 När du har identifierat och valt det schema som du vill använda väljer du **[!UICONTROL Done]**.
 
 ![select-schema](../../../../images/tutorials/dataflow/cloud-storage/streaming/select-schema.png)
 
-The [!UICONTROL Target dataset] siduppdateringar med det valda schemat som visas som en del av datauppsättningen. Under det här steget kan du aktivera datauppsättningen för [!DNL Profile] och skapa en helhetsbild av ett företags attribut och beteenden. Data från alla aktiverade datauppsättningar inkluderas i [!DNL Profile] och ändringarna tillämpas när du sparar dataflödet.
+Sidan [!UICONTROL Target dataset] uppdateras med det valda schemat som visas som en del av datauppsättningen. Under det här steget kan du aktivera datauppsättningen för [!DNL Profile] och skapa en helhetsbild av en entitets attribut och beteenden. Data från alla aktiverade datauppsättningar inkluderas i [!DNL Profile] och ändringar tillämpas när du sparar dataflödet.
 
-Växla **[!UICONTROL Profile dataset]** för att aktivera måldatauppsättningen för [!DNL Profile].
+Aktivera måldatauppsättningen för [!DNL Profile] genom att växla **[!UICONTROL Profile dataset]**.
 
-![new-profile](../../../../images/tutorials/dataflow/cloud-storage/streaming/new-profile.png)
+![ny profil](../../../../images/tutorials/dataflow/cloud-storage/streaming/new-profile.png)
 
 ### Befintlig datauppsättning
 
-Om du vill importera data till en befintlig datauppsättning väljer du **[!UICONTROL Existing dataset]** väljer du datamängdikonen.
+Om du vill importera data till en befintlig datauppsättning väljer du **[!UICONTROL Existing dataset]** och sedan datamängdikonen.
 
-![befintlig datamängd](../../../../images/tutorials/dataflow/cloud-storage/streaming/existing-dataset.png)
+![befintlig-datamängd](../../../../images/tutorials/dataflow/cloud-storage/streaming/existing-dataset.png)
 
-The **[!UICONTROL Select dataset]** visas med en lista över tillgängliga datauppsättningar att välja mellan. Välj en datauppsättning från listan för att uppdatera högerspåret så att den visar information som är specifik för den datauppsättning du valde, inklusive information om huruvida datauppsättningen kan aktiveras för [!DNL Profile].
+Dialogrutan **[!UICONTROL Select dataset]** visas med en lista över tillgängliga datauppsättningar att välja mellan. Välj en datauppsättning i listan om du vill uppdatera den högra listen för att visa information som är specifik för den datauppsättning du valde, inklusive information om huruvida datauppsättningen kan aktiveras för [!DNL Profile].
 
-När du har identifierat och valt den datauppsättning du vill använda väljer du **[!UICONTROL Done]**.
+När du har identifierat och valt den datauppsättning som du vill använda väljer du **[!UICONTROL Done]**.
 
 ![select-dataset](../../../../images/tutorials/dataflow/cloud-storage/streaming/select-dataset.png)
 
-När du har valt datauppsättningen väljer du [!DNL Profile] växla för att aktivera datauppsättningen för [!DNL Profile].
+När du har valt datauppsättningen väljer du [!DNL Profile] för att aktivera datauppsättningen för [!DNL Profile].
 
-![existing-profile](../../../../images/tutorials/dataflow/cloud-storage/streaming/existing-profile.png)
+![befintlig-profil](../../../../images/tutorials/dataflow/cloud-storage/streaming/existing-profile.png)
 
 ### Mappa standardfält
 
-När din datauppsättning och ditt schema är upprättat, **[!UICONTROL Map standard fields]** -gränssnittet visas så att du kan konfigurera mappningsfält manuellt för dina data.
+När din datauppsättning och ditt schema har etablerats visas gränssnittet **[!UICONTROL Map standard fields]**, vilket gör att du kan konfigurera mappningsfält manuellt för dina data.
 
 >[!TIP]
 >
 >Plattformen ger intelligenta rekommendationer för automatiskt mappade fält baserat på det målschema eller den datamängd du valt. Du kan justera mappningsreglerna manuellt så att de passar dina användningsfall.
 
-Beroende på dina behov kan du välja att mappa fält direkt eller använda förinställningsfunktioner för data för att omvandla källdata för att härleda beräknade eller beräknade värden. Mer information om hur du använder mappningsgränssnittet och beräkningsfälten finns i [Användargränssnittsguide för dataprep](../../../../../data-prep/ui/mapping.md).
+Beroende på dina behov kan du välja att mappa fält direkt eller använda förinställningsfunktioner för data för att omvandla källdata för att härleda beräknade eller beräknade värden. Mer information om hur du använder mappningsgränssnittet och beräkningsfälten finns i [Användargränssnittshandboken för dataförinställningar](../../../../../data-prep/ui/mapping.md).
 
 När källdata har mappats väljer du **[!UICONTROL Next]**.
 
@@ -116,26 +116,26 @@ När källdata har mappats väljer du **[!UICONTROL Next]**.
 
 ## Dataflödesdetaljer
 
-The **[!UICONTROL Dataflow detail]** visas så att du kan namnge och ge en kort beskrivning av det nya dataflödet.
+**[!UICONTROL Dataflow detail]**-steget visas så att du kan namnge och ge en kort beskrivning av det nya dataflödet.
 
 Ange värden för dataflödet och välj **[!UICONTROL Next]**.
 
-![dataflöde-detail](../../../../images/tutorials/dataflow/cloud-storage/streaming/dataflow-detail.png)
+![dataflödesdetalj](../../../../images/tutorials/dataflow/cloud-storage/streaming/dataflow-detail.png)
 
 ### Granska
 
-The **[!UICONTROL Review]** visas så att du kan granska det nya dataflödet innan det skapas. Informationen är grupperad i följande kategorier:
+Steg **[!UICONTROL Review]** visas, så att du kan granska det nya dataflödet innan det skapas. Informationen är grupperad i följande kategorier:
 
 - **[!UICONTROL Connection]**: Visar ditt kontonamn, typ av källa och annan information som är specifik för den strömmande molnlagringskällan som du använder.
 - **[!UICONTROL Assign dataset and map fields]**: Visar måldatauppsättningen och målschemat som du använder för dataflödet.
 
-När du har granskat dataflödet väljer du **[!UICONTROL Finish]** så att dataflödet kan skapas.
+När du har granskat dataflödet väljer du **[!UICONTROL Finish]** och tillåt en tid innan dataflödet skapas.
 
-![recension](../../../../images/tutorials/dataflow/cloud-storage/streaming/review.png)
+![granskning](../../../../images/tutorials/dataflow/cloud-storage/streaming/review.png)
 
 ## Övervaka och ta bort dataflödet
 
-När du har skapat ett direktuppspelat molnlagringsdataflöde kan du övervaka de data som hämtas genom det. Mer information om övervakning och borttagning av dataflöden för direktuppspelning finns i självstudiekursen om [övervaka strömmande dataflöden](../../monitor-streaming.md).
+När du har skapat ett direktuppspelat molnlagringsdataflöde kan du övervaka de data som hämtas genom det. Mer information om hur du övervakar och tar bort dataflöden för direktuppspelning finns i självstudiekursen [Övervaka dataflöden för direktuppspelning](../../monitor-streaming.md).
 
 ## Nästa steg
 

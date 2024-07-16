@@ -10,25 +10,25 @@ ht-degree: 0%
 
 ---
 
-# Uppdatera flödesspecifikationer med [!DNL Flow Service] API
+# Uppdatera flödesspecifikationer med API:t [!DNL Flow Service]
 
 >[!NOTE]
 >
->SDK för självbetjäningsströmning för källor är i betaversion. Läs [källöversikt](../../home.md#terms-and-conditions) om du vill ha mer information om hur du använder betamärkta källor.
+>SDK för självbetjäningsströmning för källor är i betaversion. Läs [källöversikten](../../home.md#terms-and-conditions) om du vill ha mer information om hur du använder betatecknade källor.
 
 När du har genererat ett nytt anslutningsspecifikations-ID måste du lägga till det här ID:t i en flödesspecifikation för att kunna skapa ett dataflöde.
 
-Flödesspecifikationer innehåller information som definierar ett flöde, inklusive käll- och målanslutnings-ID:n som stöds, transformeringsspecifikationer som behövs för att kunna tillämpas på data samt schemaläggningsparametrar som krävs för att generera ett flöde. Du kan redigera flödesspecifikationer med `/flowSpecs` slutpunkt.
+Flödesspecifikationer innehåller information som definierar ett flöde, inklusive käll- och målanslutnings-ID:n som stöds, transformeringsspecifikationer som behövs för att kunna tillämpas på data samt schemaläggningsparametrar som krävs för att generera ett flöde. Du kan redigera flödesspecifikationer med slutpunkten `/flowSpecs`.
 
-I följande dokument beskrivs hur du hämtar och uppdaterar flödesspecifikationer med [!DNL Flow Service] API för självbetjäningskällor (Streaming SDK).
+Följande dokument innehåller steg om hur du hämtar och uppdaterar flödesspecifikationer med [!DNL Flow Service] API för självbetjäningskällor (Streaming SDK).
 
 ## Komma igång
 
-Innan du fortsätter bör du granska [komma igång-guide](./getting-started.md) för länkar till relaterad dokumentation, en guide till hur du läser exempelanrop till API:er i det här dokumentet och viktig information om vilka huvuden som behövs för att kunna anropa ett Experience Platform-API.
+Innan du fortsätter bör du läsa [kom igång-guiden](./getting-started.md) för att få länkar till relaterad dokumentation, en guide till hur du läser exempelanropen för API i det här dokumentet och viktig information om vilka huvuden som krävs för att kunna anropa ett Experience Platform-API.
 
 ## Söka efter en flödesspecifikation {#lookup}
 
-Källor skapade med `generic-streaming` -mallen använder alla `GenericStreamingAEP` flödesspecifikation. Den här flödesspecifikationen kan hämtas genom att en GET-begäran görs till `/flowSpecs/` slutpunkt och tillhandahåller `flowSpec.id` av `e77fde5a-22a8-11ed-861d-0242ac120002`.
+Källor som skapats med mallen `generic-streaming` använder alla flödesspecifikationen `GenericStreamingAEP`. Den här flödesspecifikationen kan hämtas genom att en GET-förfrågan görs till `/flowSpecs/`-slutpunkten och `flowSpec.id` av `e77fde5a-22a8-11ed-861d-0242ac120002` tillhandahålls.
 
 **API-format**
 
@@ -38,7 +38,7 @@ GET /flowSpecs/e77fde5a-22a8-11ed-861d-0242ac120002
 
 **Begäran**
 
-Följande begäran hämtar `e77fde5a-22a8-11ed-861d-0242ac120002` flödesspecifikation.
+Följande begäran hämtar flödesspecifikationen `e77fde5a-22a8-11ed-861d-0242ac120002`.
 
 ```shell
 curl -X GET \
@@ -154,7 +154,7 @@ Du kan uppdatera fälten i en flödesspecifikation genom en PUT-åtgärd. När d
 
 >[!IMPORTANT]
 >
->När du skapar en anslutningsspecifikation för en ny källa måste du lägga till dess spec ID i `sourceConnectionSpecIds` array med flödesspecifikationer som motsvarar källan. Detta garanterar att den nya källan stöds av en befintlig flödesspecifikation, vilket gör att du kan slutföra dataflödesskapandet med den nya källan.
+>När du skapar en anslutningsspecifikation för en ny källa måste du lägga till dess spec ID i arrayen `sourceConnectionSpecIds` för flödesspecifikationerna som motsvarar källan. Detta garanterar att den nya källan stöds av en befintlig flödesspecifikation, vilket gör att du kan slutföra dataflödesskapandet med den nya källan.
 
 **API-format**
 
@@ -164,7 +164,7 @@ PUT /flowSpecs/e77fde5a-22a8-11ed-861d-0242ac120002
 
 **Begäran**
 
-Följande begäran uppdaterar flödesspecifikationen för `e77fde5a-22a8-11ed-861d-0242ac120002` att inkludera anslutningsspecifikations-ID `bdb5b792-451b-42de-acf8-15f3195821de`.
+Följande begäran uppdaterar flödesspecifikationen för `e77fde5a-22a8-11ed-861d-0242ac120002` så att den inkluderar anslutningsspecifikation-ID:t `bdb5b792-451b-42de-acf8-15f3195821de`.
 
 ```shell
 PUT -X GET \
@@ -266,7 +266,7 @@ PUT -X GET \
 
 **Svar**
 
-Ett godkänt svar returnerar information om den efterfrågade flödesspecifikationen, inklusive dess uppdaterade lista över `sourceConnectionSpecIds`.
+Ett lyckat svar returnerar information om den efterfrågade flödesspecifikationen, inklusive dess uppdaterade lista över `sourceConnectionSpecIds`.
 
 ```json
 {
@@ -368,4 +368,4 @@ Ett godkänt svar returnerar information om den efterfrågade flödesspecifikati
 
 ## Nästa steg
 
-När den nya anslutningsspecifikationen har lagts till i rätt flödesspecifikation kan du nu testa och skicka den nya källan. Se guiden på [testa och skicka en ny källa](./submit.md) för mer information.
+När den nya anslutningsspecifikationen har lagts till i rätt flödesspecifikation kan du nu testa och skicka den nya källan. Mer information finns i guiden [Testa och skicka en ny källa](./submit.md).

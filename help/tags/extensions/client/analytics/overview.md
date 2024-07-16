@@ -1,11 +1,11 @@
 ---
 title: Adobe Analytics Extension - översikt
-description: Läs om Adobe Analytics-taggtillägget i Adobe Experience Platform.
+description: Läs mer om Adobe Analytics-taggtillägg i Adobe Experience Platform.
 exl-id: 33ebdcb6-9bf0-44e6-b016-e93fe78af578
 source-git-commit: 88939d674c0002590939004e0235d3da8b072118
 workflow-type: tm+mt
-source-wordcount: '2253'
-ht-degree: 2%
+source-wordcount: '2083'
+ht-degree: 1%
 
 ---
 
@@ -13,7 +13,7 @@ ht-degree: 2%
 
 >[!NOTE]
 >
->Adobe Experience Platform Launch har omklassificerats som en serie datainsamlingstekniker i Adobe Experience Platform. Som ett resultat av detta har flera terminologiska förändringar införts i produktdokumentationen. Se följande [dokument](../../../term-updates.md) för en konsoliderad hänvisning till terminologiska förändringar.
+>Adobe Experience Platform Launch har omklassificerats som en serie datainsamlingstekniker i Adobe Experience Platform. Som ett resultat av detta har flera terminologiska förändringar införts i produktdokumentationen. I följande [dokument](../../../term-updates.md) finns en konsoliderad referens till de ändrade terminologin.
 
 Använd den här referensen för information om hur du konfigurerar Adobe Analytics-tillägget och de alternativ som är tillgängliga när du använder det här tillägget för att skapa en regel.
 
@@ -21,9 +21,9 @@ Använd den här referensen för information om hur du konfigurerar Adobe Analyt
 
 I det här avsnittet finns en referens för de alternativ som är tillgängliga när du konfigurerar Adobe Analytics-tillägget.
 
-Om Adobe Analytics-tillägget inte är installerat ännu öppnar du din egenskap och väljer **[!UICONTROL Extensions > Catalog]** hovra över Adobe Analytics-tillägget och välj **[!UICONTROL Install]**.
+Om Adobe Analytics-tillägget ännu inte är installerat öppnar du din egenskap, väljer **[!UICONTROL Extensions > Catalog]**, håller pekaren över Adobe Analytics-tillägget och väljer **[!UICONTROL Install]**.
 
-Om du vill konfigurera tillägget öppnar du fliken Tillägg, håller pekaren över tillägget och väljer sedan **[!UICONTROL Configure]**.
+Om du vill konfigurera tillägget öppnar du fliken Tillägg, håller pekaren över tillägget och väljer **[!UICONTROL Configure]**.
 
 ![](../../../images/ext-analytics-config.png)
 
@@ -57,7 +57,7 @@ Aktivitetskartan läses in som en separat modul (som AAM). Som standard är akti
 
 #### Spåraren är tillgänglig på den globala variabeln med namnet
 
-Om du markerar den här rutan kan spårningsobjektet användas globalt. Du kan till exempel definiera variabeln `window.s.pageName` var som helst på din webbplats.
+Om du markerar den här rutan kan spårningsobjektet användas globalt. Du kan till exempel definiera variabeln `window.s.pageName` var som helst på platsen.
 
 ### Läsa in biblioteket från en anpassad URL
 
@@ -85,11 +85,11 @@ Ange spårningsobjektet som ska användas globalt.
 
 #### Öppna redigeraren
 
-Gör att du kan infoga kärnan [AppMeasurement.js](https://experienceleague.adobe.com/docs/analytics/implementation/js/overview.html) kod. Den här koden fylls i automatiskt när den automatiska konfigurationsmetoden används.
+Gör att du kan infoga [AppMeasurement.js](https://experienceleague.adobe.com/docs/analytics/implementation/js/overview.html)-kärnkod. Den här koden fylls i automatiskt när den automatiska konfigurationsmetoden används.
 
 >[!NOTE]
 >
->Valideraren som används i kodredigeraren är utformad för att identifiera problem med kod som skrivits av utvecklare. Kod som har genomgått en miniatyrprocess, t.ex. den AppMeasurement.js-kod som hämtats från kodhanteraren, kan felaktigt flaggas som att den har problem av taggvalideraren, som vanligtvis kan ignoreras.
+>Valideraren som används i kodredigeraren för taggar är utformad för att identifiera problem med kod som skrivits av utvecklare. Kod som har genomgått en miniatyrprocess, t.ex. AppMeasurement.js-koden som hämtats från kodhanteraren, kan felaktigt flaggas som att den har problem av taggvalideraren, som vanligtvis kan ignoreras.
 
 #### Ange följande rapportsviter för spåraren
 
@@ -111,7 +111,7 @@ Välj ett alternativ i avsnittet Allmänt på konfigurationssidan. Följande kon
 
 Aktiverar eller inaktiverar spårning baserat på EU:s sekretess-cookie.
 
-När du markerar kryssrutan EU-efterlevnad visas [!UICONTROL Tracking Cookie Name] visas. Spårningskakikonen åsidosätter standardnamnet på spårningskakien. Du kan anpassa det namn som taggar använder för att spåra din avanmälningsstatus för att ta emot andra cookies.
+När du markerar kryssrutan EU-efterlevnad visas fältet [!UICONTROL Tracking Cookie Name]. Spårningskakikonen åsidosätter standardnamnet på spårningskakien. Du kan anpassa det namn som taggar använder för att spåra din avanmälningsstatus för att ta emot andra cookies.
 
 När en sida har lästs in kontrollerar systemet om en cookie med namnet sat\_track har ställts in (eller det egna cookie-namnet som har angetts på sidan Redigera egenskap). Tänk på följande information:
 
@@ -132,10 +132,10 @@ _satellite.cookie.set("sat_track", "true");
 
 ### Teckenuppsättning
 
-Anger hur bildbegäran kodas. Om implementeringen eller webbplatsen använder tecken som inte är ASCII-tecken är det viktigt att definiera teckenuppsättningen här. Du kan välja en förinställd teckenuppsättning eller ange en anpassad teckenuppsättning. Adobe rekommenderar att du använder samma teckenkodning som din webbplats. Vanligtvis är det här värdet UTF-8.
+Avgör hur bildbegäran kodas. Om implementeringen eller webbplatsen använder tecken som inte är ASCII-tecken är det viktigt att definiera teckenuppsättningen här. Du kan välja en förinställd teckenuppsättning eller ange en anpassad teckenuppsättning. Adobe rekommenderar att du använder samma teckenkodning som för din webbplats. Vanligtvis är det här värdet UTF-8.
 
-Teckenuppsättning kan anges i anpassad kod för Analytics med variabeln `s.charSet`.
-Mer information om teckenuppsättningar finns i [charSet-dokumentation](https://experienceleague.adobe.com/docs/analytics/implementation/vars/config-vars/charset.html).
+Teckenuppsättning kan anges i anpassad Analytics-kod med variabeln `s.charSet`.
+Mer information om teckenuppsättningar finns i [charSet-dokumentationen](https://experienceleague.adobe.com/docs/analytics/implementation/vars/config-vars/charset.html).
 
 ### Valutakod
 
@@ -147,25 +147,25 @@ Mer information om vilka valutakoder som stöds finns i [currencyCode](https://e
 
 Används för cookie-implementeringar från första part för att bestämma var cookie-filen ska lagras. Om du använder Experience Cloud ID-tjänsten rekommenderar Adobe att du inte fyller i det här fältet.
 
-Spårningsservern kan anges i anpassad Analytics-kod med hjälp av variabeln `s.trackingServer`.
+Spårningsservern kan anges i anpassad Analytics-kod med variabeln `s.trackingServer`.
 
-Se [trackingServer](https://experienceleague.adobe.com/docs/analytics/implementation/vars/config-vars/trackingserver.html) i Adobe Analytics Implementeringshandbok.
+Se [trackingServer](https://experienceleague.adobe.com/docs/analytics/implementation/vars/config-vars/trackingserver.html) i implementeringsguiden för Adobe Analytics.
 
 ### SSL-spårningsserver
 
-Används för SSL-cookie-implementeringar från första part för att bestämma var cookie-filen ska lagras. Om du använder Experience Cloud ID-tjänsten rekommenderar Adobe att du inte fyller i det här fältet. Om det inte definieras använder SSL-data en spårningsserver.
+Används för SSL-cookie-implementeringar från första part för att bestämma var cookie-filen ska lagras. Om du använder Experience Cloud ID-tjänsten rekommenderar Adobe att du inte fyller i det här fältet. Om det inte är definierat använder SSL-data en spårningsserver.
 
-SSL Tracking Server kan anges i anpassad Analytics-kod med variabeln `s.trackingServerSecure`.
+SSL-spårningsservern kan anges i anpassad Analytics-kod med variabeln `s.trackingServerSecure`.
 
 Se [trackingServerSecure](https://experienceleague.adobe.com/docs/analytics/implementation/vars/config-vars/trackingserversecure.html).
 
 ## Globala variabler
 
-Använd det här avsnittet för att konfigurera [eVars and Props](https://experienceleague.adobe.com/docs/analytics/implementation/vars/page-vars/evar.html)och för att skapa hierarkier.
+Använd det här avsnittet för att konfigurera [eVars och Props](https://experienceleague.adobe.com/docs/analytics/implementation/vars/page-vars/evar.html) och för att skapa hierarkier.
 
 Globala variabler är variabler som ställs in på Analytics-spårningsobjektet när det objektet initieras på sidan. Alla variabler som du anger här ställs in när spårningsobjektet skapas på varje sida. När variablerna har angetts fungerar de precis som andra variabler har angetts på något annat sätt. Detta innebär i synnerhet att en regel kan ändra, ändra eller rensa dessa variabler.
 
-Om webbprogrammet vanligtvis skickar en beacon per sida kan det här avsnittet göra det enklare att ställa in variablerna på ett ställe. Om programmet skickar mer än en fyr per sida (till exempel i ett enkelsidigt program) och du behöver rensa variablerna och återställa dem med samma spårningsobjekt, är det enklare att förlita sig på regler för att ställa in och rensa variablerna.
+Om webbprogrammet vanligtvis skickar en beacon per sida kan det här avsnittet göra det enklare att ställa in variablerna på ett ställe. Om ditt program skickar mer än en fyr per sida (till exempel i ett enkelsidigt program), och du behöver rensa variablerna och återställa dem med samma spårningsobjekt, är det enklare att förlita dig på regler för att ställa in och rensa variablerna.
 
 ## Länkspårning
 
@@ -173,7 +173,7 @@ Välj ett alternativ under Länkspårning på konfigurationssidan. Följande kon
 
 ### Aktivera ClickMap
 
-[ClickMap](https://experienceleague.adobe.com/docs/analytics/analyze/activity-map/activity-map.html) är ett plugin-program för Internet Explorer och Firefox samt en modul för rapporter och analyser.
+[ClickMap](https://experienceleague.adobe.com/docs/analytics/analyze/activity-map/activity-map.html) är en plugin för Internet Explorer och Firefox, samt en modul för rapporter och analyser.
 
 ### Spåra nedladdningslänkar
 
@@ -193,16 +193,16 @@ Avgör om en markerad länk är en slutlänk.
 
 Se [s.trackExternalLinks](https://experienceleague.adobe.com/docs/analytics/implementation/vars/config-vars/trackexternallinks.html).
 
-**Överväganden om ensidiga appar:** På grund av hur vissa SPA webbplatser kodas kan en intern länk till en sida på den SPA webbplatsen se ut som om den är en utgående länk.
+**Överväganden för ensidiga appar:** På grund av hur vissa SPA webbplatser kodas kan en intern länk till en sida på den SPA webbplatsen se ut som en utgående länk.
 
 Du kan använda någon av följande metoder för att spåra utgående länkar från SPA platser:
 
-* Om du inte vill spåra några utgående länkar från SPA infogar du en post i avsnittet Spåra aldrig.  Exempel, `http://testsite.com/spa/\#`. Alla \#-länkar till den här värden ignoreras. Alla utgående länkar till andra värdar spåras, till exempel [https://www.google.com](https://www.google.com).
+* Om du inte vill spåra några utgående länkar från SPA infogar du en post i avsnittet Spåra aldrig.  Exempel: `http://testsite.com/spa/\#`. Alla \#-länkar till den här värden ignoreras. Alla utgående länkar till andra värdar spåras, till exempel [https://www.google.com](https://www.google.com).
 * Om det finns länkar som du vill spåra på SPA använder du avsnittet Spåra alltid.
 
 Om du t.ex. har en spa/\#/about-sida kan du skriva &quot;about&quot; i avsnittet Always Track.
 
-Om-sidan är den enda utgående länken som spåras. Andra länkar på sidan (till exempel [https://www.google.com](https://www.google.com)) spåras inte.
+Om-sidan är den enda utgående länken som spåras. Eventuella andra länkar på sidan (till exempel [https://www.google.com](https://www.google.com)) spåras inte.
 
 >[!NOTE]
 >
@@ -232,13 +232,13 @@ Se [visitorNamespace](https://experienceleague.adobe.com/docs/analytics/implemen
 
 ### Domänperioder
 
-Domänen som Analytics-cookien `s_cc` och `s_sq` anges genom att bestämma antalet punkter i domänen för sidans URL. Den här variabeln används även av vissa plugin-program för att fastställa rätt domän för att ange plugin-programmets cookie.
+Domänen som Analytics-cookien `s_cc` och `s_sq` ställs in på genom att fastställa antalet punkter i domänen för sidans URL. Den här variabeln används även av vissa plugin-program för att fastställa rätt domän för att ange plugin-programmets cookie.
 
 Se [s.cookieDomainPeriods](https://experienceleague.adobe.com/docs/analytics/implementation/vars/config-vars/cookiedomainperiods.html).
 
 ### Domänperioder för första part
 
-The `fpCookieDomainPeriods` är för cookies som anges av JavaScript (`s_sq`, `s_cc`, plugin-program) som i sig är cookies från första part, även om din implementering använder domänerna 2o7.net eller omtrdc.net från tredje part.
+Variabeln `fpCookieDomainPeriods` är för cookies som anges av JavaScript (`s_sq`, `s_cc`, plugin-program) som är förstapartscookies, även om implementeringen använder domänerna 2o7.net eller omtrdc.net från tredje part.
 
 Se [s.fpCookieDomainPeriods](https://experienceleague.adobe.com/docs/analytics/implementation/vars/config-vars/fpcookiedomainperiods.html).
 
@@ -250,7 +250,7 @@ Se [s.cookieLifetime](https://experienceleague.adobe.com/docs/analytics/implemen
 
 ### Säkra cookies
 
-Den här variabeln tillåter AppMeasurement att skriva säkra cookies.
+Den här variabeln gör att AppMeasurementet kan skriva säkra cookies.
 
 Se [writeSecureCookies](https://experienceleague.adobe.com/docs/analytics/implementation/vars/config-vars/writesecurecookies.html)
 
@@ -275,7 +275,7 @@ Du kan konfigurera avancerade inställningar genom att välja **Visa avancerade 
 
 ![](../../../images/an-ext-aam-adv.png)
 
-Om du vill ha information om varje inställning väljer du informationsikonen eller läser [Adobe Audience Manager-dokumentation](https://experienceleague.adobe.com/docs/audience-manager/user-guide/aam-home.html).
+Om du vill ha information om de olika inställningarna väljer du informationsikonen eller läser [Adobe Audience Manager-dokumentationen](https://experienceleague.adobe.com/docs/audience-manager/user-guide/aam-home.html).
 
 ## Åtgärdstyper för analystillägg
 
@@ -289,26 +289,26 @@ Analystillägget innehåller följande åtgärder:
 
 ### Ange variabler {#set-variables}
 
-Viktigt: Beacon skickas inte när du använder åtgärden &quot;ange variabler&quot;. Du måste använda åtgärden&quot;skicka fyr&quot;.
+Viktigt: Beacon skickas inte om du använder en åtgärd av typen &quot;ange variabler&quot;. Du måste använda åtgärden&quot;skicka fyr&quot;.
 
 #### eVars
 
 Ange en eller flera [eVars](https://experienceleague.adobe.com/docs/analytics/implementation/vars/page-vars/evar.html).
 
 1. Välj en eVar i listrutan.
-1. Ange om du vill ange eVar som ett värde (Ange som) eller kopiera (Duplicera från) en annan eVar.
+1. Ange om du vill ange eVarna som ett värde (Ange som) eller kopiera (Duplicera från) en annan eVar.
 1. Ange ett Ange som-värde eller markera den eVar som du vill duplicera.
 1. (Valfritt) Välj Lägg till eVar för att ange fler eVars.
 1. Välj **[!UICONTROL Keep Changes]**.
 
 #### Props
 
-Ange en eller flera [proppar](https://experienceleague.adobe.com/docs/analytics/implementation/vars/page-vars/prop.html).
+Ange en eller flera [props](https://experienceleague.adobe.com/docs/analytics/implementation/vars/page-vars/prop.html).
 
 1. Välj en profil i listrutan.
 1. Ange om du vill ange att svällningen ska vara ett annat eVar (Ange som) eller kopiera (Duplicera från).
-1. Ange ett Ange som-värde eller markera den eVar du vill duplicera utkastet från.
-1. (Valfritt) Välj **[!UICONTROL Add prop]** för att få fler avtryck.
+1. Ange ett Ange som-värde eller markera den eVar som du vill duplicera utkastet från.
+1. (Valfritt) Välj **[!UICONTROL Add prop]** om du vill ange fler utkast.
 1. Välj **[!UICONTROL Keep Changes]**.
 
 #### Händelser
@@ -317,32 +317,32 @@ Ange en eller flera [händelser](https://experienceleague.adobe.com/docs/analyti
 
 1. Välj en händelse i listrutan.
 1. (Valfritt) Välj eller ange ett dataelement som används för [händelseserialisering](https://experienceleague.adobe.com/docs/analytics/implementation/vars/page-vars/events/event-serialization.html).
-1. (Valfritt) Välj **[!UICONTROL Add event]** för att ställa in fler händelser.
+1. (Valfritt) Välj **[!UICONTROL Add event]** om du vill ange fler händelser.
 1. Välj **[!UICONTROL Keep Changes]**.
 
 #### Hierarki
 
-Ange Analytics [Hierarki](https://experienceleague.adobe.com/docs/analytics/implementation/vars/page-vars/hier.html) variabel.
+Ange variabeln [Hierarki](https://experienceleague.adobe.com/docs/analytics/implementation/vars/page-vars/hier.html) för analysen.
 
 Ange varje nivå i hierarkin.
 
-Om du vill kan du konfigurera ytterligare hierarkier.
+Konfigurera ytterligare hierarkier om du vill.
 
 #### Sidnamn
 
-Detta värde refererar till namnet på en viss sida och motsvarar [`pageName` variabel](https://experienceleague.adobe.com/docs/analytics/implementation/vars/page-vars/pagename.html) i Analytics.
+Det här värdet refererar till namnet på en viss sida och motsvarar variabeln [`pageName` ](https://experienceleague.adobe.com/docs/analytics/implementation/vars/page-vars/pagename.html) i Analytics.
 
 >[!IMPORTANT]
 >
 >I Adobe Experience Manager-implementeringar anger den här variabeln var den hämtade Analytics-rapporten ska lagras AEM. För att rapporterna ska bli korrekt beständiga måste sidnamnssträngen formateras som en kolonavgränsad sökväg till webbplatsen.
 >
->En webbsida på `content/we-retail/language-masters/en/men.html` ska ha sidnamnsvärdet `content:we-retail:language-masters:en:men`.
+>En webbsida på `content/we-retail/language-masters/en/men.html` bör till exempel ha sidnamnsvärdet `content:we-retail:language-masters:en:men`.
 
 #### Annan information
 
 Ange annan information som används av sidorna.
 
-Dessa inställningar inkluderar:
+De här inställningarna är:
 
 * Sidans URL
 * Server
@@ -351,7 +351,7 @@ Dessa inställningar inkluderar:
 * Campaign
 * Inköps-ID
 
-   Ange ett värde eller en frågeparameter
+  Ange ett värde eller en frågeparameter
 
 * Läge
 * Postnummer
@@ -387,13 +387,13 @@ Välj det här alternativet om du inte vill stega upp en sidvy.
 
    Du kan välja något av följande:
 
-   * Anpassad länk
+   * Egen länk
    * Hämta länk
    * Avsluta länk
 
 1. Ange parametern för den markerade länken.
-   * Egen länk: Ange länknamnet.
-   * Ladda ned länk: Ange ett filnamn.
+   * Egen länk: Ange länkens namn.
+   * Hämta länk: Ange ett filnamn.
    * Avsluta länk: Ange mål-URL.
 1. Välj **[!UICONTROL Keep Changes]**.
 

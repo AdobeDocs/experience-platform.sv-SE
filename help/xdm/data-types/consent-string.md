@@ -10,9 +10,9 @@ ht-degree: 0%
 
 ---
 
-# [!UICONTROL Consent String] datatyp
+# Datatypen [!UICONTROL Consent String]
 
-[!UICONTROL Consent String] är en standard-XDM-datatyp som beskriver ett strängvärde som representerar kundens samtycke. Den innehåller sammanhangsberoende information som standarden för medgivandesträngen (till exempel [IAB Transparency and Consent Framework (TCF) 2.0](../field-groups/profile/iab.md)).
+[!UICONTROL Consent String] är en standard-XDM-datatyp som beskriver ett strängvärde som representerar en kunds samtycke. Den innehåller sammanhangsbaserad information som standard för medgivandesträngen (till exempel [IAB Transparency och Consent Framework (TCF) 2.0](../field-groups/profile/iab.md)).
 
 ![](../images/data-types/consent-string.png)
 

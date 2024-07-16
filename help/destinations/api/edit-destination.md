@@ -13,7 +13,7 @@ ht-degree: 0%
 
 # Redigera målanslutningar med API:t för Flow Service
 
-I den här självstudiekursen beskrivs stegen för redigering av olika komponenter i en målanslutning. Lär dig hur du uppdaterar inloggningsuppgifter, exporterar plats med mera med hjälp av [[!DNL Flow Service] API](https://www.adobe.io/experience-platform-apis/references/flow-service/).
+I den här självstudiekursen beskrivs stegen för redigering av olika komponenter i en målanslutning. Lär dig hur du uppdaterar autentiseringsuppgifter, exporterar plats och mycket mer med [[!DNL Flow Service] API](https://www.adobe.io/experience-platform-apis/references/flow-service/).
 
 >[!NOTE]
 >
@@ -21,52 +21,52 @@ I den här självstudiekursen beskrivs stegen för redigering av olika komponent
 
 ## Komma igång {#get-started}
 
-Den här självstudien kräver att du har ett giltigt dataflödes-ID. Om du inte har något giltigt dataflödes-ID väljer du önskat mål på menyn [målkatalog](../catalog/overview.md) och följa de steg som beskrivs nedan för att [ansluta till målet](../ui/connect-destination.md) och [aktivera data](../ui/activation-overview.md) innan du provar den här självstudiekursen.
+Den här självstudien kräver att du har ett giltigt dataflödes-ID. Om du inte har något giltigt dataflödes-ID väljer du önskat mål i [målkatalogen](../catalog/overview.md) och följer instruktionerna som beskrivs för att [ansluta till målet](../ui/connect-destination.md) och [aktivera data](../ui/activation-overview.md) innan du provar den här självstudiekursen.
 
 >[!NOTE]
 >
-> Villkoren *flöde* och *dataflöde* används omväxlande i den här kursen. I den här självstudiekursen har de samma betydelse.
+> I den här självstudien används termerna *flow* och *dataflow* omväxlande. I den här självstudiekursen har de samma betydelse.
 
 Den här självstudiekursen kräver även att du har en fungerande förståelse för följande komponenter i Adobe Experience Platform:
 
 * [Destinationer](../home.md): [!DNL Destinations] är färdiga integreringar med målplattformar som möjliggör smidig aktivering av data från Adobe Experience Platform. Ni kan använda destinationer för att aktivera kända och okända data för flerkanalskampanjer, e-postkampanjer, riktad reklam och många andra användningsfall.
-* [Sandlådor](../../sandboxes/home.md): Experience Platform tillhandahåller virtuella sandlådor som partitionerar en enda plattformsinstans i separata virtuella miljöer för att utveckla och utveckla program för digitala upplevelser.
+* [Sandlådor](../../sandboxes/home.md): Experience Platform tillhandahåller virtuella sandlådor som partitionerar en enda plattformsinstans till separata virtuella miljöer för att utveckla och utveckla program för digitala upplevelser.
 
-Följande avsnitt innehåller ytterligare information som du behöver känna till för att kunna uppdatera ditt dataflöde med [!DNL Flow Service] API.
+I följande avsnitt finns ytterligare information som du behöver känna till för att kunna uppdatera dataflödet med API:t [!DNL Flow Service].
 
 ### Läser exempel-API-anrop {#reading-sample-api-calls}
 
-I den här självstudiekursen finns exempel-API-anrop som visar hur du formaterar dina begäranden. Det kan vara sökvägar, obligatoriska rubriker och korrekt formaterade begärandenyttolaster. Ett exempel på JSON som returneras i API-svar finns också. Information om konventionerna som används i dokumentationen för exempel-API-anrop finns i avsnittet om [läsa exempel-API-anrop](../../landing/troubleshooting.md#how-do-i-format-an-api-request) i felsökningsguiden för Experience Platform.
+I den här självstudiekursen finns exempel-API-anrop som visar hur du formaterar dina begäranden. Det kan vara sökvägar, obligatoriska rubriker och korrekt formaterade begärandenyttolaster. Ett exempel på JSON som returneras i API-svar finns också. Information om de konventioner som används i dokumentationen för exempel-API-anrop finns i avsnittet [Så här läser du exempel-API-anrop](../../landing/troubleshooting.md#how-do-i-format-an-api-request) i felsökningsguiden för Experience Platform.
 
 ### Samla in värden för obligatoriska rubriker {#gather-values-for-required-headers}
 
-För att kunna ringa anrop till plattforms-API:er måste du först slutföra [självstudiekurs om autentisering](https://www.adobe.com/go/platform-api-authentication-en). När du slutför självstudiekursen för autentisering visas värdena för var och en av de obligatoriska rubrikerna i alla API-anrop för Experience Platform, vilket visas nedan:
+För att kunna ringa anrop till plattforms-API:er måste du först slutföra [autentiseringssjälvstudiekursen](https://www.adobe.com/go/platform-api-authentication-en). När du slutför självstudiekursen för autentisering visas värdena för var och en av de obligatoriska rubrikerna i alla API-anrop för Experience Platform, vilket visas nedan:
 
 * `Authorization: Bearer {ACCESS_TOKEN}`
 * `x-api-key: {API_KEY}`
 * `x-gw-ims-org-id: {ORG_ID}`
 
-Alla resurser i Experience Platform, inklusive sådana som tillhör [!DNL Flow Service], isoleras till specifika virtuella sandlådor. Alla begäranden till Platform API:er kräver en rubrik som anger namnet på sandlådan som åtgärden ska utföras i:
+Alla resurser i Experience Platform, inklusive de som tillhör [!DNL Flow Service], isoleras till specifika virtuella sandlådor. Alla begäranden till Platform API:er kräver en rubrik som anger namnet på sandlådan som åtgärden ska utföras i:
 
 * `x-sandbox-name: {SANDBOX_NAME}`
 
 >[!NOTE]
 >
->Om `x-sandbox-name` ingen rubrik har angetts, begäranden har lösts under `prod` sandlåda.
+>Om rubriken `x-sandbox-name` inte anges löses förfrågningar under sandlådan `prod`.
 
-Alla begäranden som innehåller en nyttolast (`POST`, `PUT`, `PATCH`) kräver ytterligare en medietypsrubrik:
+Alla begäranden som innehåller en nyttolast (`POST`, `PUT`, `PATCH`) kräver en ytterligare medietypsrubrik:
 
 * `Content-Type: application/json`
 
 ## Söka efter dataflödesdetaljer {#look-up-dataflow-details}
 
-Det första steget i att redigera målanslutningen är att hämta dataflödesinformation med ditt flödes-ID. Du kan visa den aktuella informationen om ett befintligt dataflöde genom att göra en GET-förfrågan till `/flows` slutpunkt.
+Det första steget i att redigera målanslutningen är att hämta dataflödesinformation med ditt flödes-ID. Du kan visa den aktuella informationen om ett befintligt dataflöde genom att göra en GET-förfrågan till slutpunkten `/flows`.
 
 >[!TIP]
 >
->Du kan använda användargränssnittet i Experience Platform för att hämta det önskade dataflödes-ID:t för ett mål. Gå till **[!UICONTROL Destinations]** > **[!UICONTROL Browse]** markerar du måldataflödet och söker efter mål-ID:t i den högra listen. Mål-ID är det värde som du kommer att använda som flödes-ID i nästa steg.
+>Du kan använda användargränssnittet i Experience Platform för att hämta det önskade dataflödes-ID:t för ett mål. Gå till **[!UICONTROL Destinations]** > **[!UICONTROL Browse]**, välj önskat måldataflöde och hitta mål-ID:t i den högra listen. Mål-ID är det värde som du kommer att använda som flödes-ID i nästa steg.
 >
-> ![Hämta mål-ID med Experience Platform-användargränssnittet](/help/destinations/assets/api/edit-destination/get-destination-id.png)
+> ![Hämta mål-ID med Experience Platform-gränssnittet](/help/destinations/assets/api/edit-destination/get-destination-id.png)
 
 >[!BEGINSHADEBOX]
 
@@ -78,7 +78,7 @@ GET /flows/{FLOW_ID}
 
 | Parameter | Beskrivning |
 | --------- | ----------- |
-| `{FLOW_ID}` | Unika `id` värdet för måldataflödet som du vill hämta. |
+| `{FLOW_ID}` | Det unika `id`-värdet för måldataflödet som du vill hämta. |
 
 **Begäran**
 
@@ -95,7 +95,7 @@ curl -X GET \
 
 **Svar**
 
-Ett godkänt svar returnerar aktuell information om dataflödet, inklusive version, unik identifierare (`id`) och annan relevant information. Det viktigaste för den här självstudiekursen är de ID:n för målanslutning och basanslutning som markeras i svaret nedan. Du använder dessa ID:n i nästa avsnitt för att uppdatera olika komponenter i målanslutningen.
+Ett lyckat svar returnerar aktuell information om dataflödet, inklusive version, unik identifierare (`id`) och annan relevant information. Det viktigaste för den här självstudiekursen är de ID:n för målanslutning och basanslutning som markeras i svaret nedan. Du använder dessa ID:n i nästa avsnitt för att uppdatera olika komponenter i målanslutningen.
 
 ```json {line-numbers="true" start-line="1" highlight="27,38"}
 {
@@ -175,21 +175,21 @@ Ett godkänt svar returnerar aktuell information om dataflödet, inklusive versi
 
 ## Redigera målanslutningskomponenter (lagringsplats och andra komponenter) {#patch-target-connection}
 
-Komponenterna för en målanslutning skiljer sig åt beroende på mål. Till exempel [!DNL Amazon S3] -mål kan du uppdatera den bucket och sökväg dit filerna exporteras. För [!DNL Pinterest] mål kan du uppdatera [!DNL Pinterest Advertiser ID] och for [!DNL Google Customer Match] du kan uppdatera [!DNL Pinterest Account ID].
+Komponenterna för en målanslutning skiljer sig åt beroende på mål. För [!DNL Amazon S3]-mål kan du till exempel uppdatera den bucket och sökvägen dit filerna exporteras. För [!DNL Pinterest] mål kan du uppdatera [!DNL Pinterest Advertiser ID] och för [!DNL Google Customer Match] kan du uppdatera [!DNL Pinterest Account ID].
 
-Om du vill uppdatera komponenter för en målanslutning utför du en `PATCH` begäran till `/targetConnections/{TARGET_CONNECTION_ID}` slutpunkt när du anger ditt anslutnings-ID, version och de nya värden som du vill använda. Kom ihåg att du fick ditt målanslutnings-ID i föregående steg när du inspekterade ett befintligt dataflöde till önskat mål.
+Om du vill uppdatera komponenter för en målanslutning utför du en `PATCH`-begäran till `/targetConnections/{TARGET_CONNECTION_ID}`-slutpunkten samtidigt som du anger ditt målanslutnings-ID, version och de nya värden som du vill använda. Kom ihåg att du fick ditt målanslutnings-ID i föregående steg när du inspekterade ett befintligt dataflöde till önskat mål.
 
 >[!IMPORTANT]
 >
->The `If-Match` måste anges när du skapar en `PATCH` begäran. Värdet för den här rubriken är den unika versionen av målanslutningen som du vill uppdatera. Taggen-värdet uppdateras med alla lyckade uppdateringar av en flödenhet som dataflöde, målanslutning och andra.
+>Rubriken `If-Match` krävs när en `PATCH`-begäran görs. Värdet för den här rubriken är den unika versionen av målanslutningen som du vill uppdatera. Taggen-värdet uppdateras med alla lyckade uppdateringar av en flödenhet som dataflöde, målanslutning och andra.
 >
-> Om du vill hämta den senaste versionen av taggvärdet gör du en GET-förfrågan till `/targetConnections/{TARGET_CONNECTION_ID}` slutpunkt, där `{TARGET_CONNECTION_ID}` är det målanslutnings-ID som du vill uppdatera.
+> Om du vill hämta den senaste versionen av taggvärdet ska du utföra en GET-begäran till `/targetConnections/{TARGET_CONNECTION_ID}`-slutpunkten, där `{TARGET_CONNECTION_ID}` är det målanslutnings-ID som du vill uppdatera.
 >
-> Se till att radbryta värdet för `If-Match` rubrik inom dubbla citattecken, som i exemplen nedan, när du skapar `PATCH` förfrågningar.
+> Se till att radbryta värdet för rubriken `If-Match` inom citattecken, som i exemplen nedan, när du gör `PATCH` -begäranden.
 
 Nedan visas några exempel på hur du uppdaterar parametrar i målanslutningsspecifikationen för olika typer av destinationer. Men den allmänna regeln för uppdatering av parametrar för alla mål är följande:
 
-Hämta anslutningens dataflödes-ID > hämta målanslutnings-ID > `PATCH` målanslutningen med uppdaterade värden för de önskade parametrarna.
+Hämta dataflödes-ID för anslutningen > hämta målanslutnings-ID > `PATCH` målanslutningen med uppdaterade värden för de önskade parametrarna.
 
 >[!BEGINSHADEBOX]
 
@@ -205,7 +205,7 @@ PATCH /targetConnections/{TARGET_CONNECTION_ID}
 
 **Begäran**
 
-Följande begäran uppdaterar `bucketName` och `path` parametrar för en [[!DNL Amazon S3]](/help/destinations/catalog/cloud-storage/amazon-s3.md#destination-details) målanslutning.
+Följande begäran uppdaterar parametrarna `bucketName` och `path` för en [[!DNL Amazon S3]](/help/destinations/catalog/cloud-storage/amazon-s3.md#destination-details)-målanslutning.
 
 ```shell
 curl -X PATCH \
@@ -229,13 +229,13 @@ curl -X PATCH \
 
 | Egenskap | Beskrivning |
 | --------- | ----------- |
-| `op` | Åtgärdsanropet som används för att definiera den åtgärd som krävs för att uppdatera dataflödet. Åtgärderna omfattar: `add`, `replace`och `remove`. |
+| `op` | Åtgärdsanropet som används för att definiera den åtgärd som krävs för att uppdatera dataflödet. Åtgärderna omfattar: `add`, `replace` och `remove`. |
 | `path` | Definierar den del av flödet som ska uppdateras. |
 | `value` | Det nya värdet som du vill uppdatera parametern med. |
 
 **Svar**
 
-Ett lyckat svar returnerar ditt målanslutnings-ID och en uppdaterad Etag. Du kan verifiera uppdateringen genom att göra en GET-förfrågan till [!DNL Flow Service] API, samtidigt som du anger ditt målanslutnings-ID.
+Ett lyckat svar returnerar ditt målanslutnings-ID och en uppdaterad Etag. Du kan verifiera uppdateringen genom att göra en GET-förfrågan till API:t [!DNL Flow Service], samtidigt som du anger ditt målanslutnings-ID.
 
 ```json
 {
@@ -248,7 +248,7 @@ Ett lyckat svar returnerar ditt målanslutnings-ID och en uppdaterad Etag. Du ka
 
 **Begäran**
 
-Följande begäran uppdaterar parametrarna för en [[!DNL Google Ad Manager]](/help/destinations/catalog/advertising/google-ad-manager.md) eller [[!DNL Google Ad Manager 360] mål](/help/destinations/catalog/advertising/google-ad-manager-360-connection.md#destination-details) anslutning för att lägga till den nya [**[!UICONTROL Append audience ID to audience name]**](/help/release-notes/2023/april-2023.md#destinations) fält.
+Följande begäran uppdaterar parametrarna för en [[!DNL Google Ad Manager]](/help/destinations/catalog/advertising/google-ad-manager.md)- eller [[!DNL Google Ad Manager 360] målanslutning](/help/destinations/catalog/advertising/google-ad-manager-360-connection.md#destination-details) för att lägga till det nya [**[!UICONTROL Append audience ID to audience name]**](/help/release-notes/2023/april-2023.md#destinations)-fältet.
 
 ```shell
 curl -X PATCH \
@@ -269,13 +269,13 @@ curl -X PATCH \
 
 | Egenskap | Beskrivning |
 | --------- | ----------- |
-| `op` | Åtgärdsanropet som används för att definiera den åtgärd som krävs för att uppdatera dataflödet. Åtgärderna omfattar: `add`, `replace`och `remove`. |
+| `op` | Åtgärdsanropet som används för att definiera den åtgärd som krävs för att uppdatera dataflödet. Åtgärderna omfattar: `add`, `replace` och `remove`. |
 | `path` | Definierar den del av flödet som ska uppdateras. |
 | `value` | Det nya värdet som du vill uppdatera parametern med. |
 
 **Svar**
 
-Ett lyckat svar returnerar ditt målanslutnings-ID och en uppdaterad tagg. Du kan verifiera uppdateringen genom att göra en GET-förfrågan till [!DNL Flow Service] API, samtidigt som du anger ditt målanslutnings-ID.
+Ett lyckat svar returnerar ditt målanslutnings-ID och en uppdaterad tagg. Du kan verifiera uppdateringen genom att göra en GET-förfrågan till API:t [!DNL Flow Service], samtidigt som du anger ditt målanslutnings-ID.
 
 ```json
 {
@@ -288,7 +288,7 @@ Ett lyckat svar returnerar ditt målanslutnings-ID och en uppdaterad tagg. Du ka
 
 **Begäran**
 
-Följande begäran uppdaterar `advertiserId` parameter för en [[!DNL Pinterest] målanslutning](/help/destinations/catalog/advertising/pinterest.md#parameters).
+Följande begäran uppdaterar parametern `advertiserId` för en [[!DNL Pinterest] målanslutning](/help/destinations/catalog/advertising/pinterest.md#parameters).
 
 ```shell
 curl -X PATCH \
@@ -311,13 +311,13 @@ curl -X PATCH \
 
 | Egenskap | Beskrivning |
 | --------- | ----------- |
-| `op` | Åtgärdsanropet som används för att definiera den åtgärd som krävs för att uppdatera dataflödet. Åtgärderna omfattar: `add`, `replace`och `remove`. |
+| `op` | Åtgärdsanropet som används för att definiera den åtgärd som krävs för att uppdatera dataflödet. Åtgärderna omfattar: `add`, `replace` och `remove`. |
 | `path` | Definierar den del av flödet som ska uppdateras. |
 | `value` | Det nya värdet som du vill uppdatera parametern med. |
 
 **Svar**
 
-Ett lyckat svar returnerar ditt målanslutnings-ID och en uppdaterad tagg. Du kan verifiera uppdateringen genom att göra en GET-förfrågan till [!DNL Flow Service] API, samtidigt som du anger ditt målanslutnings-ID.
+Ett lyckat svar returnerar ditt målanslutnings-ID och en uppdaterad tagg. Du kan verifiera uppdateringen genom att göra en GET-förfrågan till API:t [!DNL Flow Service], samtidigt som du anger ditt målanslutnings-ID.
 
 ```json
 {
@@ -332,23 +332,23 @@ Ett lyckat svar returnerar ditt målanslutnings-ID och en uppdaterad tagg. Du ka
 
 ## Redigera basanslutningskomponenter (autentiseringsparametrar och andra komponenter) {#patch-base-connection}
 
-Redigera basanslutningen när du vill uppdatera autentiseringsuppgifterna för ett mål. Komponenterna i en basanslutning skiljer sig åt beroende på mål. Till exempel [!DNL Amazon S3] mål kan du uppdatera åtkomstnyckeln och den hemliga nyckeln till [!DNL Amazon S3] plats.
+Redigera basanslutningen när du vill uppdatera autentiseringsuppgifterna för ett mål. Komponenterna i en basanslutning skiljer sig åt beroende på mål. För [!DNL Amazon S3] mål kan du till exempel uppdatera åtkomstnyckeln och den hemliga nyckeln till din [!DNL Amazon S3]-plats.
 
-Om du vill uppdatera komponenter för en basanslutning utför du en `PATCH` begäran till `/connections` slutpunkt när du anger ditt grundläggande anslutnings-ID, version och de nya värden som du vill använda.
+Om du vill uppdatera komponenter för en basanslutning utför du en `PATCH`-begäran till `/connections`-slutpunkten samtidigt som du anger ditt grundläggande anslutnings-ID, version och de nya värden som du vill använda.
 
-Kom ihåg att du fick ditt grundläggande anslutnings-ID i en [föregående steg](#look-up-dataflow-details)när du inspekterade ett befintligt dataflöde till det önskade målet för parametern `baseConnection`.
+Kom ihåg att du fick ditt grundläggande anslutnings-ID i ett [föregående steg](#look-up-dataflow-details) när du inspekterade ett befintligt dataflöde till det önskade målet för parametern `baseConnection`.
 
 >[!IMPORTANT]
 >
->The `If-Match` måste anges när du skapar en `PATCH` begäran. Värdet för den här rubriken är den unika versionen av basanslutningen som du vill uppdatera. Värdet för etag uppdateras med varje lyckad uppdatering av en flödenhet, till exempel dataflöde, basanslutning och andra.
+>Rubriken `If-Match` krävs när en `PATCH`-begäran görs. Värdet för den här rubriken är den unika versionen av basanslutningen som du vill uppdatera. Värdet för etag uppdateras med varje lyckad uppdatering av en flödenhet, till exempel dataflöde, basanslutning och andra.
 >
-> Om du vill hämta den senaste versionen av Etag-värdet gör du en GET-förfrågan till `/connections/{BASE_CONNECTION_ID}` slutpunkt, där `{BASE_CONNECTION_ID}` är det grundläggande anslutnings-ID som du vill uppdatera.
+> Om du vill hämta den senaste versionen av Etag-värdet utför du en GET-förfrågan till `/connections/{BASE_CONNECTION_ID}`-slutpunkten, där `{BASE_CONNECTION_ID}` är det grundläggande anslutnings-ID som du vill uppdatera.
 >
-> Se till att radbryta värdet för `If-Match` rubrik inom dubbla citattecken, som i exemplen nedan, när du skapar `PATCH` förfrågningar.
+> Se till att radbryta värdet för rubriken `If-Match` inom citattecken, som i exemplen nedan, när du gör `PATCH` -begäranden.
 
 Nedan visas några exempel på hur du uppdaterar parametrar i basanslutningsspecifikationen för olika typer av destinationer. Men den allmänna regeln för uppdatering av parametrar för alla mål är följande:
 
-Hämta anslutningens dataflödes-ID > hämta basanslutnings-ID > `PATCH` basanslutningen med uppdaterade värden för de önskade parametrarna.
+Hämta dataflödes-ID för anslutningen > hämta basanslutnings-ID > `PATCH` basanslutningen med uppdaterade värden för de önskade parametrarna.
 
 >[!BEGINSHADEBOX]
 
@@ -364,7 +364,7 @@ PATCH /connections/{BASE_CONNECTION_ID}
 
 **Begäran**
 
-Följande begäran uppdaterar `accessId` och `secretKey` parametrar för en [[!DNL Amazon S3]](/help/destinations/catalog/cloud-storage/amazon-s3.md#destination-details) målanslutning.
+Följande begäran uppdaterar parametrarna `accessId` och `secretKey` för en [[!DNL Amazon S3]](/help/destinations/catalog/cloud-storage/amazon-s3.md#destination-details)-målanslutning.
 
 ```shell
 curl -X PATCH \
@@ -388,13 +388,13 @@ curl -X PATCH \
 
 | Egenskap | Beskrivning |
 | --------- | ----------- |
-| `op` | Åtgärdsanropet som används för att definiera den åtgärd som krävs för att uppdatera dataflödet. Åtgärderna omfattar: `add`, `replace`och `remove`. |
+| `op` | Åtgärdsanropet som används för att definiera den åtgärd som krävs för att uppdatera dataflödet. Åtgärderna omfattar: `add`, `replace` och `remove`. |
 | `path` | Definierar den del av flödet som ska uppdateras. |
 | `value` | Det nya värdet som du vill uppdatera parametern med. |
 
 **Svar**
 
-Ett lyckat svar returnerar ditt grundläggande anslutnings-ID och en uppdaterad tagg. Du kan verifiera uppdateringen genom att göra en GET-förfrågan till [!DNL Flow Service] API, samtidigt som du anger ditt grundläggande anslutnings-ID.
+Ett lyckat svar returnerar ditt grundläggande anslutnings-ID och en uppdaterad tagg. Du kan verifiera uppdateringen genom att göra en GET-förfrågan till API:t [!DNL Flow Service] och samtidigt ange ditt grundläggande anslutnings-ID.
 
 ```json
 {
@@ -403,11 +403,11 @@ Ett lyckat svar returnerar ditt grundläggande anslutnings-ID och en uppdaterad 
 }
 ```
 
->[!TAB Azure Blob]
+>[!TAB Azure-blob]
 
 **Begäran**
 
-Följande begäran uppdaterar parametrarna för en [[!DNL Azure Blob] mål](/help/destinations/catalog/cloud-storage/azure-blob.md#authenticate) anslutning för att uppdatera den anslutningssträng som krävs för att ansluta till en Azure Blob-instans.
+Följande begäran uppdaterar parametrarna för en [[!DNL Azure Blob] mål](/help/destinations/catalog/cloud-storage/azure-blob.md#authenticate)-anslutning för att uppdatera anslutningssträngen som krävs för att ansluta till en Azure Blob-instans.
 
 ```shell
 curl -X PATCH \
@@ -430,13 +430,13 @@ curl -X PATCH \
 
 | Egenskap | Beskrivning |
 | --------- | ----------- |
-| `op` | Åtgärdsanropet som används för att definiera den åtgärd som krävs för att uppdatera dataflödet. Åtgärderna omfattar: `add`, `replace`och `remove`. |
+| `op` | Åtgärdsanropet som används för att definiera den åtgärd som krävs för att uppdatera dataflödet. Åtgärderna omfattar: `add`, `replace` och `remove`. |
 | `path` | Definierar den del av flödet som ska uppdateras. |
 | `value` | Det nya värdet som du vill uppdatera parametern med. |
 
 **Svar**
 
-Ett lyckat svar returnerar ditt grundläggande anslutnings-ID och en uppdaterad tagg. Du kan verifiera uppdateringen genom att göra en GET-förfrågan till [!DNL Flow Service] API, samtidigt som du anger ditt grundläggande anslutnings-ID.
+Ett lyckat svar returnerar ditt grundläggande anslutnings-ID och en uppdaterad tagg. Du kan verifiera uppdateringen genom att göra en GET-förfrågan till API:t [!DNL Flow Service] och samtidigt ange ditt grundläggande anslutnings-ID.
 
 ```json
 {
@@ -451,8 +451,8 @@ Ett lyckat svar returnerar ditt grundläggande anslutnings-ID och en uppdaterad 
 
 ## API-felhantering {#api-error-handling}
 
-API-slutpunkterna i den här självstudiekursen följer de allmänna felmeddelandeprinciperna för Experience Platform API. Se [API-statuskoder](/help/landing/troubleshooting.md#api-status-codes) och [fel i begäranhuvudet](/help/landing/troubleshooting.md#request-header-errors) i felsökningsguiden för plattformen för mer information om hur du tolkar felsvar.
+API-slutpunkterna i den här självstudiekursen följer de allmänna felmeddelandeprinciperna för Experience Platform API. Mer information om hur du tolkar felsvar finns i [API-statuskoder](/help/landing/troubleshooting.md#api-status-codes) och [begäranrubrikfel](/help/landing/troubleshooting.md#request-header-errors) i felsökningsguiden för plattformen.
 
 ## Nästa steg {#next-steps}
 
-Genom att följa den här självstudiekursen har du lärt dig hur du uppdaterar olika komponenter i en målanslutning med [!DNL Flow Service] API. Mer information om destinationer finns i [destinationer, översikt](../home.md).
+Genom att följa den här självstudiekursen har du lärt dig hur du uppdaterar olika komponenter i en målanslutning med API:t [!DNL Flow Service]. Mer information om mål finns i [målöversikten](../home.md).

@@ -4,7 +4,7 @@ description: Med slutpunkten /tools i Sandbox Tooling API kan du hämta JSON-job
 exl-id: 529cb7d6-6b3f-459c-be03-35fc28b891cf
 source-git-commit: 308d07cf0c3b4096ca934a9008a13bf425dc30b6
 workflow-type: tm+mt
-source-wordcount: '152'
+source-wordcount: '150'
 ht-degree: 0%
 
 ---
@@ -13,11 +13,11 @@ ht-degree: 0%
 
 Med sandlådeverktygen kan du välja olika artefakter och exportera dem till ett paket. Ett paket kan bestå av ett eller flera objekt. Alla objekt som ingår i ett paket måste komma från samma sandlåda.
 
-The `/tools` kan du visa och hämta JSON-data för jobb i sandlådeverktygets API.
+Med slutpunkten `/tools` i sandlådeverktygets API kan du visa och hämta JSON-jobbdata.
 
 ## Jobbinformation {#details}
 
-Om du vill hämta JSON-jobbdata oberoende av varandra, skickar du en GET-förfrågan till `/tools` slutpunkt och ange ID för jobbet.
+Om du vill hämta JSON-jobbdata oberoende av varandra, gör du en GET-förfrågan till `/tools`-slutpunkten och anger ID:t för jobbet.
 
 **API-format**
 
@@ -31,7 +31,7 @@ GET /tools/job/{JOB_ID}
 
 **Begäran**
 
-Följande begäran hämtar information om {JOB_ID}.
+Följande begäran hämtar information för {JOB_ID}.
 
 ```shell
 curl -X GET \
@@ -43,7 +43,7 @@ curl -X GET \
 
 **Svar**
 
-Ett godkänt svar returnerar information för det efterfrågade jobb-ID:t, vilket ger statusuppdateringar i realtid som `completedTasks` och `failedTasks` uppdateras allt eftersom jobbet utförs.
+Ett lyckat svar returnerar information för det efterfrågade jobb-ID:t, vilket ger statusuppdateringar i realtid som `completedTasks` och `failedTasks` uppdateras allt eftersom jobbet fortskrider.
 
 ```json
 {

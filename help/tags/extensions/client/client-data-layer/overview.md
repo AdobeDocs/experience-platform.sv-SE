@@ -35,7 +35,7 @@ ACDL-skriptet skapar som standard ett nytt datalager med variabelnamnet `adobeDa
 
 >[!NOTE]
 >
->När objektnamnet ändras är originalet `adobeDataLayer` objektet instansieras fortfarande och dupliceras sedan till det nya variabelnamnet som du har valt.
+>När du ändrar objektnamnet skapas fortfarande det ursprungliga `adobeDataLayer`-objektet och dupliceras sedan till det nya variabelnamnet som du har valt.
 
 ## Händelser
 
@@ -75,14 +75,14 @@ Följande exempel på push-händelse spåras inte av avlyssnaren:
 
 Om du anger en händelse spårar händelseavlyssnaren alla händelser som matchar en viss sträng.
 
-Ange till exempel `myEvent` när du använder den här konfigurationen spåras endast följande push-händelse i avlyssnaren:
+Om du till exempel anger `myEvent` när du använder den här konfigurationen spåras endast följande push-händelse:
 
 * `adobeDataLayer.push({"event":"myEvent"})`
 
 Du kan också ändra omfattningen för din händelseavlyssnare. De olika alternativen sammanfattas nedan:
 
-* `all`: Det här är standardalternativet och aktiverar regeln varje gång det villkor du har valt ovan har uppfyllts tidigare, eller kommer att pushas in i framtiden. Det här är det säkraste alternativet om du använder en asynkron implementering.
-* `future`: Med det här alternativet aktiveras regeln endast när nya push-händelser som matchar ditt villkor skickas till datalagret.
+* `all`: Det här är standardalternativet och utlöser regeln varje gång som det villkor du har valt ovan har uppfyllts tidigare, eller kommer att skickas i framtiden. Det här är det säkraste alternativet om du använder en asynkron implementering.
+* `future`: Det här alternativet utlöser endast regeln när nya push-händelser som matchar ditt villkor skickas till datalagret.
 * `past`: Det här alternativet utlöser endast regeln för gamla push-händelser som matchar ditt villkor. Nya penslar som matchar ditt villkor ignoreras och utlöser inte regeln längre.
 
 ## Instruktioner
@@ -95,7 +95,7 @@ Tillägget ger dig ett sätt att återställa datalagrets längd, vilket kan hj�
 
 Det finns dock för närvarande ingen möjlighet att helt ta bort information som tidigare ställts in under push-metoderna.
 
-The **Återställ och ange beräknat läge** åtgärden kopierar det senaste beräknade läget, tömmer datalagret och återställer det senaste läget.
+Åtgärden **Återställ och ange beräknat läge** kopierar det senaste beräknade läget, tömmer datalagrets objekt och återställer det senaste läget.
 
 ### Överför till datalager
 
@@ -119,12 +119,12 @@ Avsnitten nedan beskriver de unika dataelementtyperna som tillägget tillhandah�
 
 Datalagrets dataelement för beräknat läge kan returnera en av två saker, beroende på hur du konfigurerar det:
 
-* Det fullständiga datalagrets tillstånd: Som standard returneras hela datalagrets beräknade tillstånd.
-* En specifik sökväg: Du kan ange den sökväg som du vill returnera i datalagret. Banor anges med punktnotation (till exempel `data.foo`).
+* Det fullständiga datalagrets tillstånd: Som standard returneras det fullständiga datalagrets beräknade läge.
+* En specifik sökväg: Du kan ange sökvägen som du vill returnera i datalagret. Banor anges med punktnotation (till exempel `data.foo`).
 
 ### Datalagerstorlek
 
-Det här dataelementet returnerar datalagrets storlek. Datalagrets storlek representeras av antalet element som har skickats till det här objektet.
+Detta dataelement returnerar datalagrets storlek. Datalagrets storlek representeras av antalet element som har skickats till det här objektet.
 
 Med följande lista över push-händelser returnerar det här dataelementet heltalet `2`:
 

@@ -9,17 +9,17 @@ ht-degree: 0%
 
 ---
 
-# [!UICONTROL Upgrade Details] schemafältgrupp
+# Schemafältgruppen [!UICONTROL Upgrade Details]
 
-[!UICONTROL Upgrade Details] är en standardgrupp för schemafält för [[!DNL XDM ExperienceEvent] class](../../classes/experienceevent.md) används för att samla in information om ett uppgraderingsevenemang, inklusive information om transaktionen och olika sätt som erbjudandet visades för en kund.
+[!UICONTROL Upgrade Details] är en standardschemafältgrupp för [[!DNL XDM ExperienceEvent] klassen](../../classes/experienceevent.md) som används för att samla in information om en marknadsföringshändelse för en uppgradering, inklusive information om transaktionen och olika sätt som erbjudandet visades för en kund.
 
-Fältgruppen innehåller ett enda fält av objekttyp, `upgrades`. Egenskaperna i det här objektet förklaras nedan.
+Fältgruppen innehåller ett enskilt fält av objekttyp, `upgrades`. Egenskaperna i det här objektet förklaras nedan.
 
 ![Struktur för uppgraderingsinformation](../../images/field-groups/upgrade-details.png)
 
 | Egenskap | Datatyp | Beskrivning |
 | --- | --- | --- |
-| `upgradeImpressions` | Array med [Impressions](../../data-types/impressions.md) | En matris som listar de inspelade avbildningarna (digitala vyer eller engagemang med uppgraderingserbjudandet) för kunden. |
+| `upgradeImpressions` | Matris med [Impressions](../../data-types/impressions.md) | En matris som listar de inspelade avbildningarna (digitala vyer eller engagemang med uppgraderingserbjudandet) för kunden. |
 | `upgradeTransaction` | [Transaktion](../../data-types/transaction.md) | Beskriver valutatransaktionen för uppgraderingen. |
 
 {style="table-layout:auto"}

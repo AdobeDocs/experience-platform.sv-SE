@@ -4,7 +4,7 @@ description: Lär dig hur fel hanteras i Reactor API.
 exl-id: 336c0ced-1067-4519-94e1-85aea700fce6
 source-git-commit: f3c23665229a83d6c63c7d6026ebf463069d8ad9
 workflow-type: tm+mt
-source-wordcount: '1062'
+source-wordcount: '1057'
 ht-degree: 0%
 
 ---
@@ -13,12 +13,12 @@ ht-degree: 0%
 
 När ett problem inträffar när ett anrop görs till Reactor API, kan ett fel returneras på något av följande sätt:
 
-* **Omedelbara fel**: När du utför en begäran som resulterar i ett omedelbart fel returneras ett felsvar av API:t, där HTTP-statusen återspeglar den allmänna feltypen som inträffade.
-* **Försenade fel**: När du utför en API-begäran som resulterar i ett fördröjt fel (t.ex. en asynkron aktivitet) kan ett fel returneras av API:t i `meta.status_details` för en relaterad resurs.
+* **Omedelbara fel**: När en begäran som resulterar i ett omedelbart fel utförs returneras ett felsvar från API:t, där HTTP-statusen återspeglar den allmänna feltypen som inträffade.
+* **Fördröjda fel**: När en API-begäran utförs som resulterar i ett fördröjt fel (till exempel en asynkron aktivitet) kan ett fel returneras av API:t i `meta.status_details` för en relaterad resurs.
 
 ## Felformat
 
-Felsvar syftar till att anpassa [JSON:API-felspecifikation](http://jsonapi.org/format/#errors)och i allmänhet följa följande struktur:
+Felsvar syftar till att följa [JSON:API-felspecifikationen](http://jsonapi.org/format/#errors) och följer vanligtvis följande struktur:
 
 ```json
 {
@@ -44,9 +44,9 @@ Felsvar syftar till att anpassa [JSON:API-felspecifikation](http://jsonapi.org/f
 | `id` | En unik identifierare för den aktuella förekomsten av problemet. |
 | `status` | HTTP-statuskoden som gäller det här problemet, uttryckt som ett strängvärde. |
 | `code` | En programspecifik felkod, uttryckt som ett strängvärde. |
-| `title` | En kort, läsbar sammanfattning av problemet som **bör inte ändras** från förekomst till förekomst, utom för lokalisering. |
-| `detail` | En läsbar förklaring som är specifik för den här förekomsten av problemet. Gilla `title`kan fältets värde lokaliseras. |
-| `source` | Ett objekt som innehåller referenser till felets källa, eventuellt inklusive någon av följande medlemmar:<ul><li>`pointer`: a [JSON-pekare (RFC6901)](https://datatracker.ietf.org/doc/html/rfc6901) sträng som refererar till den associerade entiteten i begärandedokumentet (som `/data` för ett primärt dataobjekt, eller `/data/attributes/title` för ett specifikt attribut).</li></ul> |
+| `title` | En kort, läsbar sammanfattning av problemet som **inte ska ändras** från förekomst till förekomst, utom för lokaliseringsändamål. |
+| `detail` | En läsbar förklaring som är specifik för den här förekomsten av problemet. Precis som `title` kan fältets värde lokaliseras. |
+| `source` | Ett objekt som innehåller referenser till felets källa, eventuellt inklusive någon av följande medlemmar:<ul><li>`pointer`: en [ JSON-pekare (RFC6901)](https://datatracker.ietf.org/doc/html/rfc6901)-sträng som refererar till den associerade entiteten i begärandedokumentet (till exempel `/data` för ett primärt dataobjekt eller `/data/attributes/title` för ett specifikt attribut).</li></ul> |
 | `meta` | Ett objekt som innehåller metadata om felet som inte är standard. |
 
 {style="table-layout:auto"}
@@ -64,9 +64,9 @@ I följande tabell visas de olika fel som API:t kan returnera.
 | `decrypt-no-data` | Data kan inte dekrypteras utan en privat nyckel. Ange en krypterad privat nyckel. |
 | `delegate-descriptor-unresolved` | Tillägget tillhandahöll inte den förväntade definitionen för den här delegatbeskrivningen. Tillägget kan behöva uppdateras. |
 | `deleted-resources` | Resurserna som du försöker lägga till i biblioteket har tagits bort. |
-| `environment-in-use` | En miljö kan bara tilldelas ett bibliotek i taget. Alternativ 1 är att välja en annan miljö. Alternativ 2 är att frigöra miljön genom att flytta biblioteket till en annan miljö eller ta bort biblioteket. |
+| `environment-in-use` | En miljö kan bara tilldelas till ett bibliotek i taget. Alternativ 1 är att välja en annan miljö. Alternativ 2 är att frigöra miljön genom att flytta biblioteket till en annan miljö eller ta bort biblioteket. |
 | `environment-required` | Biblioteket måste ha tilldelats en miljö innan du kan skapa ett bygge. |
-| `extension-not-found` | Tillägget som definierar ett dataelement eller en regelkomponent inkluderas inte i biblioteket. Kontrollera att alla nödvändiga tillägg har lagts till i biblioteket. |
+| `extension-not-found` | Tillägget som definierar ett dataelement eller en regelkomponent tas inte med i biblioteket. Kontrollera att alla nödvändiga tillägg har lagts till i biblioteket. |
 | `extension-package-path-error` | En sökväg som definierats i extension.json var felaktigt konstruerad. |
 | `extension-package-transform-definition-error` | Du har definierat en ogiltig omformning för en objektegenskap. Varje objektegenskap kan ha en definierad omformning och måste vara en filomformning eller en funktionsomformning. |
 | `extension-package-zip-error` | Ett fel inträffade när ExtensionPackage packades upp eller när filerna packades upp för distribution. |
@@ -83,7 +83,7 @@ I följande tabell visas de olika fel som API:t kan returnera.
 | `invalid-extension_package_id` | Du kan bara ändra vissa av objektegenskaperna i ett tilläggspaket. Du försökte ändra en av de som inte är tillåtna. |
 | `invalid-new-owner-org-id` | Org-ID:t som du försökte tilldela är inte ett giltigt Org-ID. |
 | `invalid-org` | Din aktiva organisation har inte åtkomst till API:t. Kontrollera att du använder rätt organisation. |
-| `invalid-rule` | Det går inte att lägga till en ogiltig regel i ett bibliotek. |
+| `invalid-rule` | En ogiltig regel kan inte läggas till i ett bibliotek. |
 | `invalid-settings-syntax` | Ett syntaxfel påträffades när inställningarna för JSON parsades. |
 | `library-file-not-found` | Det gick inte att hitta en nödvändig fil som definierats i extension.json inuti zip-paketet. |
 | `minification-error` | Koden kunde inte kompileras på grund av ogiltig kod. |
@@ -91,8 +91,8 @@ I följande tabell visas de olika fel som API:t kan returnera.
 | `no-available-orgs` | Det här användarkontot tillhör inte en produktprofil som har åtkomst till taggar. Använd Admin Console för att lägga till den här användaren i en produktprofil med taggrättigheter. |
 | `not-authorized` | Det här användarkontot har inte den behörighet som krävs för att utföra den här åtgärden. |
 | `not-found` | Posten kunde inte hittas. Verifiera ID:t för objektet som du försöker hämta. |
-| `not-unique` | Namnet som du försöker använda används redan. Egenskapen name måste vara unik för den här resursen. |
-| `public-release-not-authorized` | Den offentliga releasen av förlängningar samordnas av `launch-ext-dev@adobe.com`. Visa dokumentet på [frigöra tillägg](../../extension-dev/submit/release.md) för mer information. |
+| `not-unique` | Namnet som du försöker använda används redan. Egenskapen name måste vara unik för resursen. |
+| `public-release-not-authorized` | Den offentliga versionen av tillägg samordnas av `launch-ext-dev@adobe.com`. Mer information finns i dokumentet om [att släppa tillägg](../../extension-dev/submit/release.md). |
 | `read-only` | Den här resursen är skrivskyddad och kan inte ändras. |
 | `session-timeout` | Användarsessionen har gått ut. Logga ut och logga in igen. |
 | `sftp-authentication-failed` | Autentiseringen misslyckades för SFTP-anslutningen. |

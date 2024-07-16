@@ -11,13 +11,13 @@ ht-degree: 0%
 
 ---
 
-# [!UICONTROL Web Details] schemafältgrupp
+# Schemafältgruppen [!UICONTROL Web Details]
 
 >[!NOTE]
 >
->Namnen på flera schemafältgrupper har ändrats. Visa dokumentet på [uppdaterar fältgruppnamn](../name-updates.md) för mer information.
+>Namnen på flera schemafältgrupper har ändrats. Mer information finns i dokumentet om [uppdatering av fältgruppnamn](../name-updates.md).
 
-[!UICONTROL Web Details] är en standardgrupp för schemafält för [[!DNL XDM ExperienceEvent] class](../../classes/experienceevent.md), som används för att beskriva information om händelser i webbinformation, som interaktion, sidinformation och referent.
+[!UICONTROL Web Details] är en standardschemafältgrupp för [[!DNL XDM ExperienceEvent] klassen](../../classes/experienceevent.md) som används för att beskriva information om webbinformationshändelser som interaktion, sidinformation och referent.
 
 ![](../../images/field-groups/web-details.png)
 

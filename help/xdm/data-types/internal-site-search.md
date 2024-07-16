@@ -9,7 +9,7 @@ ht-degree: 0%
 
 ---
 
-# [!UICONTROL Internal Site Search] datatyp
+# Datatypen [!UICONTROL Internal Site Search]
 
 [!UICONTROL Internal Site Search] är en standard-XDM-datatyp som beskriver en intern webbplatssökning, inklusive alla relaterade sökbeteenden och detaljer.
 
@@ -26,7 +26,7 @@ ht-degree: 0%
 | `numberOfResults` | [!UICONTROL Integer] | Det totala antalet returnerade sökresultat. |
 | `postalCode` | [!UICONTROL String] | Postnummer som används för sökningen, om tillämpligt. |
 | `productFindingMethods` | [!UICONTROL String] | Det interna söktermvärdet för webbplatsen med försäljningsbindning. Det här värdet anger vilken term som sökdes efter omedelbart innan en produkt visades. |
-| `radiusDistance` | [!UICONTROL Integer] | Kombinerat med `radiusType`, anger det markerade avståndet för sökradien. |
+| `radiusDistance` | [!UICONTROL Integer] | I kombination med `radiusType` anger det valda avståndet för sökradien. |
 | `radiusType` | [!UICONTROL Integer] | Den valda avståndstypen för `radiusDistance`, antingen engelska mil eller kilometer. |
 | `refinementInstances` | [!UICONTROL Integer] | Antalet gånger som den interna webbplatssökningen har förfinats. |
 | `refinementType` | Array med strängar | Visar de förfiningstyper som använts på sökresultaten. Exempel är avdelning, varumärke, pris, butiker, recensioner, färg, material och så vidare. |
@@ -34,9 +34,9 @@ ht-degree: 0%
 | `resultsPageNumber` | [!UICONTROL Integer] | För sidnumrerade sökresultat spårar det här värdet den resultatsida som besökaren visar. |
 | `resultsPerPage` | [!UICONTROL Integer] | För sidnumrerade sökresultat spårar det här värdet antalet sökresultat som visas per sida. |
 | `searchType` | [!UICONTROL String] | Hämtar den sökmetod som körs, om tillämpligt. Exempel kan vara typsnittssökning, direkttypssökning eller någon annan typ av anpassad sökfunktion som en webbplats kan ha. |
-| `sortOrder` | [!UICONTROL String] | Kombinerat med `sortType`, anger sorteringsordningen för sökresultaten, antingen stigande eller fallande. |
+| `sortOrder` | [!UICONTROL String] | I kombination med `sortType` anger du sorteringsordningen för sökresultaten, antingen stigande eller fallande. |
 | `term` | [!UICONTROL String] | Den interna sökterm som anges av besökaren. |
 
 {style="table-layout:auto"}
 
-Mer information om datatypen finns i [publik XDM-databas](https://github.com/adobe/xdm/blob/master/docs/reference/datatypes/internal-site-search.schema.json).
+Mer information om datatypen finns i [den offentliga XDM-databasen](https://github.com/adobe/xdm/blob/master/docs/reference/datatypes/internal-site-search.schema.json).

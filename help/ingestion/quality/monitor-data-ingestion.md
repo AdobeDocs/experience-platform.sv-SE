@@ -13,7 +13,7 @@ ht-degree: 0%
 
 # Övervaka datainmatning
 
-Med dataöverföring kan du importera data till Adobe Experience Platform. Du kan antingen använda gruppinmatning, vilket gör att du kan infoga data med olika filtyper (t.ex. CSV-filer), eller direktuppspelning, vilket gör att du kan importera data till [!DNL Platform] med direktuppspelande slutpunkter i realtid.
+Med dataöverföring kan du importera data till Adobe Experience Platform. Du kan antingen använda gruppinmatning, vilket gör att du kan infoga data med olika filtyper (t.ex. CSV-filer), eller direktuppspelning, vilket gör att du kan importera data till [!DNL Platform] med direktuppspelningsslutpunkter i realtid.
 
 Den här användarhandboken innehåller anvisningar om hur du övervakar data i Adobe Experience Platform användargränssnitt. Den här guiden kräver att du har en Adobe ID och tillgång till Adobe Experience Platform.
 
@@ -28,11 +28,11 @@ Den här användarhandboken innehåller anvisningar om hur du övervakar data i 
 
 >[!TIP]
 >
->Använd uttrycket för att beräkna det totala antalet händelser för ett visst datum: `total events / day = ingestion rate * 60 * 60 * 24`.
+>Använd uttrycket `total events / day = ingestion rate * 60 * 60 * 24` för att beräkna det totala antalet händelser för ett visst datum.
 
-I [Experience Platform UI](https://platform.adobe.com), markera **[!UICONTROL Monitoring]** till vänster navigeringsmeny, följt av **[!UICONTROL Streaming end-to-end]**.
+I [Experience Platform-gränssnittet](https://platform.adobe.com) väljer du **[!UICONTROL Monitoring]** på den vänstra navigeringsmenyn följt av **[!UICONTROL Streaming end-to-end]**.
 
-The **[!UICONTROL Streaming end-to-end]** övervakningssidan visas. Den här arbetsytan innehåller ett diagram som visar hur många direktuppspelade händelser som tas emot av [!DNL Platform], ett diagram som visar hur många direktuppspelade händelser som bearbetades av [[!DNL Real-Time Customer Profile]](../../profile/home.md)samt en detaljerad lista över inkommande data.
+Övervakningssidan **[!UICONTROL Streaming end-to-end]** visas. Den här arbetsytan innehåller ett diagram som visar hastigheten för direktuppspelade händelser som togs emot av [!DNL Platform], ett diagram som visar hastigheten för direktuppspelade händelser som bearbetades av [[!DNL Real-Time Customer Profile]](../../profile/home.md) samt en detaljerad lista över inkommande data.
 
 ![](../images/quality/monitor-data-flows/list-streams.png)
 
@@ -40,11 +40,11 @@ Som standard visas i det övre diagrammet hur snabbt du har fått i sig något u
 
 ![](../images/quality/monitor-data-flows/events-received.png)
 
-I det nedre diagrammet visas antalet lyckade direktuppspelade händelser per [!DNL Profile] de senaste sju dagarna. Du kan justera datumintervallet så att olika tidsperioder visas genom att markera den markerade knappen.
+I det nedre diagrammet visas antalet lyckade bearbetade direktuppspelade händelser med [!DNL Profile] under de senaste sju dagarna. Du kan justera datumintervallet så att olika tidsperioder visas genom att markera den markerade knappen.
 
 >[!NOTE]
 >
->För att data ska kunna visas i det här diagrammet måste data **explicit** aktiverad för [!DNL Profile]. Så här aktiverar du direktuppspelningsdata för [!DNL Profile], läsa [användarhandbok för datauppsättningar](../../catalog/datasets/user-guide.md#enable-a-dataset-for-real-time-customer-profile).
+>För att data ska kunna visas i det här diagrammet måste data vara **explicit** aktiverat för [!DNL Profile]. Läs användarhandboken för [datauppsättningar](../../catalog/datasets/user-guide.md#enable-a-dataset-for-real-time-customer-profile) om du vill lära dig hur du aktiverar direktuppspelningsdata för [!DNL Profile].
 
 ![](../images/quality/monitor-data-flows/ingested-by-profile.png)
 
@@ -66,15 +66,15 @@ Misslyckade poster innehåller dessutom information om de fel som uppstod när g
 
 >[!NOTE]
 >
->Om det finns fel i inkapslade rader kommer dessa rader att **not** tas bort om inte det resulterande meddelandet resulterar i ogiltig XDM.
+>Om det finns fel i inkapslade rader kommer dessa rader **inte** att tas bort om inte det resulterande meddelandet resulterar i ogiltig XDM.
 
 ![](../images/quality/monitor-data-flows/failed-batch-error.png)
 
 ## Övervaka dataöverföring från slutpunkt till slutpunkt
 
-I [[!DNL Experience Platform UI]](https://platform.adobe.com), markera **[!UICONTROL Monitoring]** på den vänstra navigeringsmenyn.
+I [[!DNL Experience Platform UI]](https://platform.adobe.com) väljer du **[!UICONTROL Monitoring]** på den vänstra navigeringsmenyn.
 
-The **[!UICONTROL Batch end-to-end]** övervakningssidan visas med en lista över tidigare importerade batchar. Du kan välja vilken grupp som helst för mer detaljerad information om posten.
+Övervakningssidan **[!UICONTROL Batch end-to-end]** visas med en lista över tidigare inkapslade batchar. Du kan välja vilken grupp som helst för mer detaljerad information om posten.
 
 ![](../images/quality/monitor-data-flows/batch-monitoring.png)
 
@@ -92,6 +92,6 @@ Dessutom innehåller misslyckade batchar detaljerad information om de fel som up
 
 >[!NOTE]
 >
->Om det finns fel i inkapslade rader kommer dessa rader att **not** tas bort om inte det resulterande meddelandet resulterar i ogiltig XDM.
+>Om det finns fel i inkapslade rader kommer dessa rader **inte** att tas bort om inte det resulterande meddelandet resulterar i ogiltig XDM.
 
 ![](../images/quality/monitor-data-flows/failed-streaming-error.png)

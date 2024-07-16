@@ -1,22 +1,22 @@
 ---
-title: Phoenix Source Overview
+title: Phoenix Source - översikt
 description: Lär dig hur du ansluter ditt Phoenix-konto till Adobe Experience Platform med hjälp av API:er eller användargränssnittet.
 last-substantial-update: 2023-07-26T00:00:00Z
 exl-id: 45e6ef18-a0b7-4bb2-b099-b2a878e96637
 source-git-commit: efffd6ce1ed541ce20ee6500e42165465f2fa6a0
 workflow-type: tm+mt
-source-wordcount: '186'
+source-wordcount: '184'
 ht-degree: 0%
 
 ---
 
 # [!DNL Phoenix]
 
-Adobe Experience Platform Sources stöder datainmatning från tredjepartsdatabaser som [[!DNL Phoenix]](https://phoenix.apache.org/index.html). Det här dokumentet innehåller information som krävs innan du ansluter [!DNL Phoenix] via [!DNL Flow Service] API eller användargränssnittet i Experience Platform.
+Adobe Experience Platform Sources har stöd för datainhämtning från tredjepartsdatabaser som [[!DNL Phoenix]](https://phoenix.apache.org/index.html). Det här dokumentet innehåller information om krav innan du ansluter ditt [!DNL Phoenix]-konto via [!DNL Flow Service] API:t eller användargränssnittet i Experience Platform.
 
 ## IP-adress tillåtelselista
 
-En lista med IP-adresser måste läggas till tillåtelselista innan du kan arbeta med källanslutningar. Om du inte lägger till dina regionspecifika IP-adresser i tillåtelselista kan det leda till fel eller sämre prestanda när du använder källor. Se [IP-adress tillåtelselista](../../ip-address-allow-list.md) sida för mer information.
+En lista med IP-adresser måste läggas till tillåtelselista innan du kan arbeta med källanslutningar. Om du inte lägger till dina regionspecifika IP-adresser i tillåtelselista kan det leda till fel eller sämre prestanda när du använder källor. Mer information finns på sidan [IP-adress tillåtelselista](../../ip-address-allow-list.md).
 
 Dokumentationen nedan innehåller information om hur du ansluter [!DNL Phoenix] till Experience Platform med API:er eller användargränssnittet:
 
@@ -28,5 +28,5 @@ Dokumentationen nedan innehåller information om hur du ansluter [!DNL Phoenix] 
 
 ## Anslut [!DNL Phoenix] till Experience Platform med användargränssnittet
 
-* [Koppla samman [!DNL Phoenix] konto med användargränssnittet i Experience Platform](../../tutorials/ui/create/databases/phoenix.md)
+* [Anslut ditt [!DNL Phoenix] konto med användargränssnittet i Experience Platform](../../tutorials/ui/create/databases/phoenix.md)
 * [Skapa ett dataflöde för en datakällanslutning i användargränssnittet](../../tutorials/ui/dataflow/databases.md)

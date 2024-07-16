@@ -19,7 +19,7 @@ Med tillgång till den SQL som ger er insikt kan ni bättre förstå era B2B-dat
 
 <!-- Add link to new generate insights with SQL workflow doc after April release.-->
 
-Du kan använda följande insikter som en del av [Kontrollpanel för kontoprofiler](../guides/account-profiles.md) eller en [anpassad kontrollpanel](../user-defined-dashboards.md). Se [anpassningsöversikt](../customize/overview.md) för instruktioner om hur du anpassar kontrollpanelen eller [skapa och redigera nya widgetar](../customize/custom-widgets.md) i widgetbiblioteket och [användardefinierad kontrollpanel](../user-defined-dashboards.md#create-widget).
+Följande insikter är tillgängliga för dig att använda som en del av kontrollpanelen [Kontoprofiler](../guides/account-profiles.md) eller en [anpassad kontrollpanel](../user-defined-dashboards.md). Se [anpassningsöversikten](../customize/overview.md) för instruktioner om hur du anpassar din instrumentpanel eller [skapar och redigerar nya widgetar](../customize/custom-widgets.md) i widgetbiblioteket och [användardefinierad instrumentpanel](../user-defined-dashboards.md#create-widget).
 
 ## Kontoprofiler har lagts till {#account-profiles-added}
 
@@ -287,4 +287,4 @@ Genom att läsa det här dokumentet förstår du nu vilken SQL som genererar ins
 
 <!-- Add link above Learn how to [generate insights with SQL](). after April release -->
 
-Du kan även läsa och förstå den SQL som genererar insikter för [Profiler](./profiles.md), [Målgrupper](./audiences.md)och [Destinationer](./destinations.md) instrumentpaneler.
+Du kan också läsa och förstå SQL-koden som genererar insikter för kontrollpanelerna [Profiler](./profiles.md), [Publiker](./audiences.md) och [Destinationer](./destinations.md).

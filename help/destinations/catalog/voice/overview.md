@@ -16,7 +16,7 @@ ht-degree: 0%
 
 Röstplattformarna samlar in och samlar in data från olika källor, inklusive röstmeddelanden, samtalsdata och chattsamtal. Den sammanställda informationen kan filtreras och analyseras så att företag kan optimera sin webbplats så att den uppfyller deras behov.
 
-## Stöd för kundens val {#supported-destinations}
+## Supported Voice of the Customer Destines {#supported-destinations}
 
 För närvarande stöder Adobe Experience Platform Voice för de kunddestinationer som anges nedan. Information om hur du ansluter till dessa mål finns i de enskilda länkarna:
 

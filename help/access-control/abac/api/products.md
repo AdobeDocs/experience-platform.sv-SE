@@ -18,15 +18,15 @@ ht-degree: 1%
 >
 >Om en användartoken skickas måste användaren av token ha rollen&quot;org admin&quot; för den begärda organisationen.
 
-The `/products` -slutpunkten i det attributbaserade API:t för åtkomstkontroll gör det möjligt att programmässigt hantera produkter samt behörighetskategorier och behörighetsgrupper som är kopplade till produkter i organisationen.
+Med slutpunkten `/products` i det attributbaserade API:t för åtkomstkontroll kan du programmässigt hantera produkter samt behörighetskategorier och behörighetsgrupper som är kopplade till produkter i organisationen.
 
 ## Komma igång
 
-API-slutpunkten som används i den här guiden är en del av det attributbaserade API:t för åtkomstkontroll. Innan du fortsätter bör du granska [komma igång-guide](./getting-started.md) för länkar till relaterad dokumentation, en guide till hur du läser exempelanrop till API:er i det här dokumentet och viktig information om vilka huvuden som behövs för att kunna anropa ett Experience Platform-API.
+API-slutpunkten som används i den här guiden är en del av det attributbaserade API:t för åtkomstkontroll. Innan du fortsätter bör du läsa [kom igång-guiden](./getting-started.md) för att få länkar till relaterad dokumentation, en guide till hur du läser exempelanropen för API i det här dokumentet och viktig information om vilka huvuden som krävs för att kunna anropa ett Experience Platform-API.
 
 ## Hämta en lista över berättigade produkter {#list}
 
-Du kan hämta en lista över berättigade produkter genom att göra en GET-förfrågan till `/products` slutpunkt.
+Du kan hämta en lista över berättigade produkter genom att göra en GET-förfrågan till slutpunkten `/products`.
 
 **API-format**
 
@@ -70,7 +70,7 @@ Ett godkänt svar returnerar en lista över berättigade produkter som tillhör 
 
 ## Sök behörighetskategorier efter produkt-ID
 
-Du kan slå upp behörighetskategorier för en viss produkt genom att göra en GET-förfrågan till `/products/{PRODUCT_ID}/categories` slutpunkt när du anger produkt-id:t.
+Du kan slå upp behörighetskategorier för en viss produkt genom att göra en GET-förfrågan till `/products/{PRODUCT_ID}/categories`-slutpunkten samtidigt som du anger ditt produkt-ID.
 
 **API-format**
 
@@ -145,7 +145,7 @@ Ett godkänt svar returnerar de behörighetskategorier som är associerade med d
 
 ## Söka efter behörighetsgrupper efter produkt-ID
 
-Du kan söka efter behörighetsgrupper för en viss produkt genom att göra en GET-förfrågan till `/products/{PRODUCT_ID}/permission-sets` slutpunkt när du anger produkt-id:t.
+Du kan söka efter behörighetsgrupper för en viss produkt genom att göra en GET-förfrågan till `/products/{PRODUCT_ID}/permission-sets`-slutpunkten samtidigt som du anger ditt produkt-ID.
 
 **API-format**
 
@@ -242,4 +242,4 @@ Ett godkänt svar returnerar de behörighetsgrupper som är kopplade till det pr
 | `category` | Den tillgängliga behörighetskategorin. |
 | `permissions` | Behörigheter omfattar möjligheten att visa och/eller använda plattformsfunktioner, som att skapa sandlådor, definiera scheman och hantera datauppsättningar. |
 | `permissions.resource` | Den tillgång eller det objekt som ett ämne kan eller inte kan komma åt. Resurser kan vara filer, program, servrar eller till och med API:er. |
-| `permissions.actions` | Den åtgärd som ett ämne tillåts att göra mot en frågad resurs. Möjliga värden är: `view`, `read`, `create`, `edit`och `delete` |
+| `permissions.actions` | Den åtgärd som ett ämne tillåts att göra mot en frågad resurs. Möjliga värden är: `view`, `read`, `create`, `edit` och `delete` |

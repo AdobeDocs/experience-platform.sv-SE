@@ -5,7 +5,7 @@ exl-id: 1b06e755-b6a9-42dd-96c1-98ad67e7d222
 source-git-commit: f8434746c4a023ec895d23a59e04fca4baecfc36
 workflow-type: tm+mt
 source-wordcount: '179'
-ht-degree: 2%
+ht-degree: 1%
 
 ---
 
@@ -17,9 +17,9 @@ Slutpunkter för interaktiv datainsamling tar emot en enda händelse och använd
 
 >[!IMPORTANT]
 >
->The `/interact` Slutpunkten är främst avsedd att användas av Experience Platform SDK:er. Den här slutpunkten kan ändras ytterligare och beteendet kan utvecklas utan föregående meddelande. Nya objekt kan till exempel läggas till i svarsnyttolasten i framtiden.
+>Slutpunkten `/interact` är främst avsedd att användas av SDK:er för Experience Platform. Den här slutpunkten kan ändras ytterligare och beteendet kan utvecklas utan föregående meddelande. Nya objekt kan till exempel läggas till i svarsnyttolasten i framtiden.
 
-Serversvaret innehåller en eller flera `Handle` objekt, enligt nedan.
+Serversvaret innehåller ett eller flera `Handle`-objekt, vilket visas nedan.
 
 ## Exempel på API-anrop
 
@@ -67,11 +67,11 @@ curl -X POST "https://server.adobedc.net/ee/v2/interact?dataStreamId={DATASTREAM
 | Parameter | Typ | Obligatoriskt | Beskrivning |
 | --- | --- | --- | --- |
 | `dataStreamId` | `String` | Ja. | Datastream-ID. |
-| `requestId` | `String` | Nej | Ange ett slumpmässigt klient-ID för korrelering av interna serverförfrågningar. Om inget anges genereras ett Edge-nätverk och returneras som svar. |
+| `requestId` | `String` | Nej | Ange ett slumpmässigt klient-ID för korrelering av interna serverförfrågningar. Om inget anges genereras ett Edge Network och det returneras i svaret. |
 
 ### Svar {#response}
 
-Ett godkänt svar returnerar HTTP-status `200 OK`, med en eller flera `Handle` objekt, beroende på vilka edge-tjänster i realtid som är aktiverade i datastream-konfigurationen.
+Ett lyckat svar returnerar HTTP-statusen `200 OK`, med ett eller flera `Handle`-objekt, beroende på vilka edge-tjänster i realtid som är aktiverade i datastream-konfigurationen.
 
 ```json
 {

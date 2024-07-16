@@ -13,9 +13,9 @@ ht-degree: 0%
 
 # Felsökningsguide för kundprofiler i realtid
 
-Det här dokumentet innehåller svar på vanliga frågor om kundprofilen i realtid samt en felsökningsguide för vanliga fel. För frågor och felsökning som rör andra tjänster i Adobe Experience Platform, se [Felsökningsguide för Experience Platform](../landing/troubleshooting.md).
+Det här dokumentet innehåller svar på vanliga frågor om kundprofilen i realtid samt en felsökningsguide för vanliga fel. För frågor och felsökning som rör andra tjänster i Adobe Experience Platform, se [felsökningsguiden för Experience Platform](../landing/troubleshooting.md).
 
-Med [!DNL Real-Time Customer Profile]kan ni få en helhetsbild av varje enskild kund genom att kombinera data från flera kanaler, inklusive online, offline, CRM och tredje part. Detta gör att marknadsförarna kan skapa samordnade, enhetliga och relevanta kundupplevelser i flera kanaler.
+Med [!DNL Real-Time Customer Profile] kan du se en helhetsbild av varje enskild kund genom att kombinera data från flera kanaler, inklusive online, offline, CRM och tredje part. Detta gör att marknadsförarna kan skapa samordnade, enhetliga och relevanta kundupplevelser i flera kanaler.
 
 ## Vanliga frågor och svar
 
@@ -23,11 +23,11 @@ Nedan följer en lista med svar på vanliga frågor om kundprofilen i realtid.
 
 ### Vilka typer av data accepteras för kundprofilen i realtid?
 
-Profilen godkänner båda **record** och **tidsserie** data, förutsatt att uppgifterna i fråga innehåller minst ett identitetsvärde som associerar data med en unik enskild person.
+Profilen godkänner både **post**- och **tidsserie**-data, förutsatt att data i fråga innehåller minst ett identitetsvärde som associerar data med en unik individ.
 
-Precis som alla plattformstjänster kräver Profile att data i profilen ska vara semantiskt strukturerade under ett XDM-schema (Experience Data Model). Det här schemat måste i sin tur ha en **primär identitet** definieras och aktiveras för användning i profilen.
+Precis som alla plattformstjänster kräver Profile att data i profilen ska vara semantiskt strukturerade under ett XDM-schema (Experience Data Model). Schemat måste i sin tur ha en **primär identitet** definierad och vara aktiverat för användning i profilen.
 
-Om du inte känner till XDM kan du börja med [XDM - översikt](../xdm/home.md) om du vill veta mer. Läs sedan användarhandboken för XDM om hur du [ange identitetsfält](../xdm/tutorials/create-schema-ui.md#identity-field) och [aktivera ett schema för profil](../xdm/tutorials/create-schema-ui.md#profile).
+Om du inte känner till XDM kan du börja med [XDM-översikten](../xdm/home.md) och lära dig mer. Gå sedan till användarhandboken för XDM för steg om hur du [anger identitetsfält](../xdm/tutorials/create-schema-ui.md#identity-field) och [aktiverar ett schema för profil](../xdm/tutorials/create-schema-ui.md#profile).
 
 ### Var lagras profildata?
 
@@ -37,7 +37,7 @@ Kundprofilen i realtid underhåller ett eget datalager (kallas&quot;profilarkiv&
 
 Om data har importerats till en datauppsättning som inte är en profildatauppsättning måste du importera dessa data på nytt till en profilaktiverad datauppsättning för att kunna göra dem tillgängliga i profilarkivet. Det går att aktivera en befintlig datauppsättning för profilen, men alla data som har importerats före den konfigurationen visas fortfarande inte i profilarkivet.
 
-Om du vill lägga till tidigare importerade data i profilarkivet följer du [självstudiekurs om konfiguration av datauppsättning](./tutorials/dataset-configuration.md) för att skapa en ny datauppsättning eller konvertera en befintlig datauppsättning som ska aktiveras för profilen och sedan importera önskade data till datauppsättningen igen.
+Om du vill lägga till tidigare inkapslade data i profilarkivet följer du [självstudiekursen för konfiguration av datauppsättning](./tutorials/dataset-configuration.md) för att skapa en ny datauppsättning eller konverterar en befintlig datauppsättning som ska aktiveras för profilen, och sedan importerar du önskade data till datauppsättningen igen.
 
 ### Hur kan jag visa mina inkapslade profildata?
 
@@ -45,19 +45,19 @@ Det finns flera sätt att visa profildata, beroende på om du använder API:t el
 
 #### Använda API:et
 
-Om du känner till ID:n för de profilenheter du vill komma åt kan du använda `/entities` (Profilåtkomst) slutpunkt i profil-API för att söka efter dessa enheter. Se avsnittet om [enheter](./api/entities.md) i utvecklarhandboken för mer information.
+Om du känner till ID:n för de profilentiteter som du vill komma åt kan du använda slutpunkten `/entities` (profilåtkomst) i profil-API:t för att söka efter dessa entiteter. Mer information finns i avsnittet om [entiteter](./api/entities.md) i utvecklarhandboken.
 
-Du kan också använda API:t för Adobe Experience Platform segmenteringstjänst för att få tillgång till de enskilda profilerna för kunder som har kvalificerat sig för ett målgruppsmedlemskap. Se [Översikt över segmenteringstjänsten](../segmentation/home.md) för mer information.
+Du kan också använda API:t för Adobe Experience Platform segmenteringstjänst för att få tillgång till de enskilda profilerna för kunder som har kvalificerat sig för ett målgruppsmedlemskap. Mer information finns i [Översikt över segmenteringstjänsten](../segmentation/home.md).
 
 #### Använda gränssnittet
 
-I användargränssnittet i Experience Platform **[!UICONTROL Browse]** i **[!UICONTROL Profiles]** kan du visa det totala antalet profiler och söka efter enskilda profiler utifrån deras identitetsvärde. Se [Användarhandbok för profil](./ui/user-guide.md) för mer information.
+På fliken **[!UICONTROL Browse]** i arbetsytan **[!UICONTROL Profiles]** i användargränssnittet i Experience Platform kan du visa det totala antalet profiler och söka efter enskilda profiler utifrån deras identitetsvärde. Mer information finns i [Användarhandboken för profilen](./ui/user-guide.md).
 
-Du kan även visa en lista över dina målgrupper under **[!UICONTROL Browse]** i **[!UICONTROL Audiences]** arbetsyta. När du har valt en målgrupp visas ett exempel på profiler som är kvalificerade för den målgruppen. Du kan sedan välja någon av profilerna i listan för att visa deras information. Se [Översikt över segmenteringsgränssnittet](../segmentation/ui/overview.md) för mer information.
+Du kan även visa en lista över dina målgrupper på fliken **[!UICONTROL Browse]** på arbetsytan i **[!UICONTROL Audiences]**. När du har valt en målgrupp visas ett exempel på profiler som är kvalificerade för den målgruppen. Du kan sedan välja någon av profilerna i listan för att visa deras information. Mer information finns i [Översikt över segmenteringsgränssnittet](../segmentation/ui/overview.md).
 
 ## Felkoder
 
-Nedan följer en lista över felmeddelanden som du kan stöta på när du arbetar med kundprofils-API:t i realtid. Om felet som du stöter på inte finns med här kan du hitta det i det allmänna [Felsökningsguide för plattformen](../landing/troubleshooting.md) i stället.
+Nedan följer en lista över felmeddelanden som du kan stöta på när du arbetar med kundprofils-API:t i realtid. Om felet som du stöter på inte listas här kan du hitta det i den allmänna [felsökningsguiden för plattformen](../landing/troubleshooting.md) i stället.
 
 ### Det gick inte att hitta schemat för det beräknade attributet för den angivna sökvägen
 
@@ -68,7 +68,7 @@ Nedan följer en lista över felmeddelanden som du kan stöta på när du arbeta
 }
 ```
 
-När ett nytt beräknat attribut skapas inträffar det här felet när systemet inte kan hitta schemat som anges i nyttolasten för begäran. Kontrollera att du har angett rätt innehavar-ID i nyttolastens `path` och att värdena för `schema.name` är ett giltigt schema.
+När ett nytt beräknat attribut skapas inträffar det här felet när systemet inte kan hitta schemat som anges i nyttolasten för begäran. Kontrollera att du har angett rätt innehavar-ID i nyttolastens `path`-egenskap och att värdena för `schema.name` är ett giltigt schemanamn.
 
 Om du inte känner till ditt klient-ID kan du hämta det genom att följa stegen i [Utvecklarhandbok för schemaregister](../xdm/api/getting-started.md).
 
@@ -81,7 +81,7 @@ Om du inte känner till ditt klient-ID kan du hämta det genom att följa stegen
 }
 ```
 
-När du skapar ett nytt beräknat attribut inträffar det här felet när den angivna `name` egenskapen används redan för schemat som anges under `schema.name`. Ersätt värdet med ett unikt namn innan du försöker igen.
+När du skapar ett nytt beräknat attribut inträffar det här felet när den angivna `name`-egenskapen redan används för det schema som anges under `schema.name`. Ersätt värdet med ett unikt namn innan du försöker igen.
 
 ### Returschemat för uttrycket är inte detsamma som schemat för det beräknade attributet i XDM-schemat
 
@@ -92,7 +92,7 @@ När du skapar ett nytt beräknat attribut inträffar det här felet när den an
 }
 ```
 
-När du skapar ett nytt beräknat attribut inträffar det här felet när den angivna `name` egenskapen används redan för schemat som anges under `schema.name`. Ersätt värdet med ett unikt namn innan du försöker igen.
+När du skapar ett nytt beräknat attribut inträffar det här felet när den angivna `name`-egenskapen redan används för det schema som anges under `schema.name`. Ersätt värdet med ett unikt namn innan du försöker igen.
 
 ### Ogiltig borttagningsbegäran (profilsystemjobb)
 
@@ -103,7 +103,7 @@ När du skapar ett nytt beräknat attribut inträffar det här felet när den an
 }
 ```
 
-Det här felet inträffar när en ogiltig nyttolast anges för ett raderingssystemjobb. Se till att du tillhandahåller en giltig datauppsättning eller ett batch-ID under nyttolastens `dataSetID` eller `batchID` egenskapen. Se avsnittet om [skapa en borttagningsbegäran](./api/profile-system-jobs.md#create-a-delete-request) i Profilutvecklarhandboken för mer information.
+Det här felet inträffar när en ogiltig nyttolast anges för ett raderingssystemjobb. Se till att du anger ett giltigt data- eller batch-ID under nyttolastens `dataSetID`- respektive `batchID`-egenskap. Mer information finns i avsnittet [Skapa en borttagningsbegäran](./api/profile-system-jobs.md#create-a-delete-request) i guiden för profilutvecklare.
 
 ### Det gick inte att hitta någon grupp för profildatauppsättningen
 

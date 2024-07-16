@@ -6,8 +6,8 @@ description: Läs mer om de allmänna tillgänglighetsfunktionerna i Adobe Exper
 exl-id: 4b7e2f2b-af51-4376-8a63-16c921cc7135
 source-git-commit: 7b197f253aa5ce04a682040814cf749407154ebc
 workflow-type: tm+mt
-source-wordcount: '484'
-ht-degree: 1%
+source-wordcount: '481'
+ht-degree: 0%
 
 ---
 
@@ -31,11 +31,11 @@ Följande navigeringselement underlättar tillgängligheten:
 * Esc-tangenten fungerar som en Avbryt-knapp för att stänga en dialogruta när den finns.
 * Experience Platform visar en blå kantlinje runt ett markerat element för att visa en tydlig indikation på vilket UI-element som är i fokus.
 
-![En blå kant visas runt ett markerat element för att ange att fokus har använts.](images/profile-overview-tab.png)
+![En blå kantlinje visas runt ett markerat element som anger att fokus har använts.](images/profile-overview-tab.png)
 
 ## Färgpaletter och kontrast
 
-Experience Platform strävar efter [WCAG 2.1 AA](https://www.w3.org/TR/WCAG/) överensstämmelse, inklusive krav på färgkontrast. Användargränssnittet i Experience Platform ger tillräckligt med kontrast i programmet för att du ska få en lättillgänglig visningsupplevelse för användare med nedsatt syn eller färgbrister.
+Experience Platform strävar efter [WCAG 2.1 AA](https://www.w3.org/TR/WCAG/)-överensstämmelse, inklusive krav på färgkontrast. Användargränssnittet i Experience Platform ger tillräckligt med kontrast i programmet för att du ska få en lättillgänglig visningsupplevelse för användare med nedsatt syn eller färgbrister.
 
 ![Färgpaletten och kontrasten på Experience Platform-gränssnittets hemsida.](images/homepage.png)
 

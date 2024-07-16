@@ -1,18 +1,19 @@
 ---
 title: Returdatatyp
 description: Läs mer om datatypen XDM (Return Experience Data Model).
-source-git-commit: de8e944cfec3b52d25bb02bcfebe57d6a2a35e39
+exl-id: 1fd99a25-547f-49e7-8980-dda7db2ebb8a
+source-git-commit: 8be502c9eea67119dc537a5d63a6c71e0bff1697
 workflow-type: tm+mt
 source-wordcount: '100'
 ht-degree: 1%
 
 ---
 
-# [!UICONTROL Return] datatyp
+# Datatypen [!UICONTROL Return]
 
-[!UICONTROL Return] är en XDM-datatyp (Standard Experience Data Model) som samlar in viktig information som rör en Return Merchandise Authorization (RMA).
+[!UICONTROL Return] är en XDM-datatyp (Standard Experience Data Model) som samlar in viktig information som rör en RMA (Return Merchandise Authorization).
 
-![Ett diagram över datatypen Return.](../images/data-types/return.png)
+![Ett diagram över returdatatypen.](../images/data-types/return.png)
 
 | Visningsnamn | Egenskap | Datatyp | Beskrivning |
 |----------------------------------|----------------------|-----------|--------------------------------------------------|
@@ -26,4 +27,3 @@ Mer information om datatypen finns i den offentliga XDM-databasen:
 
 * [Populerat exempel](https://github.com/adobe/xdm/blob/master/components/datatypes/return.example.1.json)
 * [Fullständigt schema](https://github.com/adobe/xdm/blob/master/components/datatypes/return.schema.json)
-

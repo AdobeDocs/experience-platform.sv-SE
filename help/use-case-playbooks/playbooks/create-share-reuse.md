@@ -22,13 +22,13 @@ Om du vill använda en spelbok går du till **[!UICONTROL Use Case Playbooks]>[!
 >title="Skapa instans"
 >abstract="Generera en lista över resurser som resor, målgrupper, scheman eller destinationer som ska användas under resan eller aktiveringsscenarier."
 
-Innan du skapar en spelboksinstans bör du utforska de tillgängliga spelböckerna för att [välj rätt spelbok](/help/use-case-playbooks/playbooks/choose.md). När du är redo att fortsätta med en spelbok och skapa en instans väljer du **[!UICONTROL Create Instance]** för att fortsätta med spelboken och generera tekniska resurser.
+Innan du skapar en spelboksinstans bör du utforska de tillgängliga spelböckerna och [välja rätt spelningsbok](/help/use-case-playbooks/playbooks/choose.md). När du är redo att fortsätta med en spelbok och skapa en instans väljer du **[!UICONTROL Create Instance]** för att fortsätta med spelboken och generera tekniska resurser.
 
 ![Skapa en instans av en spelningsbok.](/help/use-case-playbooks/assets/playbooks/ui-guide/create-playbook-instance.png)
 
 Den här åtgärden genererar flera resurser som du kan använda för att uppnå det användningsfall som beskrivs i spelboken.
 
-![Spelboksvy över genererade resurser när de har aktiverats.](/help/use-case-playbooks/assets/playbooks/ui-guide/play-view.png)
+![Spelningsboksvy över genererade resurser efter att de har aktiverats.](/help/use-case-playbooks/assets/playbooks/ui-guide/play-view.png)
 
 ### Använd konfigurationskontrollerna för att redigera instansnamn och beskrivningar {#edit-instance-metadata}
 
@@ -45,11 +45,11 @@ När du har skapat en instans baserad på en spelningsbok kan du anpassa den så
 Det är viktigt att förstå att de genererade resurserna skiljer sig åt beroende på vilket användningsfall du aktiverar:
 
 * Olika resurser genereras för olika typer av spelböcker. Dessa resurser skapas specifikt för det användningsfall som uppnås via spelboken. En spelningsbok genererar till exempel ett schema, en målgrupp, en resa och meddelanden. En annan spelningsbok genererar ett schema, en målgrupp och ett mål som data ska aktiveras till.
-* Resurserna skiljer sig åt mellan spelböcker. För **[!UICONTROL Send A Birthday Message To Guests]** spelbok, målgruppen som skapas har regeln `birthday=today AND year=any`.
+* Resurserna skiljer sig åt mellan spelböcker. För spelboken **[!UICONTROL Send A Birthday Message To Guests]** har till exempel målgruppen som skapas regeln `birthday=today AND year=any`.
 
-Så här illustrerar du ett exempel för **[!UICONTROL Abandoned Cart: Merchandise]** spelbok, kan du se att en viss resa skapas som innehåller de meddelanden som har skapats för det här användningsfallet.
+För att illustrera ett exempel kan du se att en viss resa skapas som innehåller de meddelanden som skapats för det här användningsfallet för spelboken **[!UICONTROL Abandoned Cart: Merchandise]**.
 
-![Resan skapad från fallspelsbok.](/help/use-case-playbooks/assets/playbooks/ui-guide/journey-preview.png)
+![Resan har skapats från fallspelningsboken.](/help/use-case-playbooks/assets/playbooks/ui-guide/journey-preview.png)
 
 ### Använda och redigera genererade resurser {#use-and-edit-assets}
 
@@ -63,7 +63,7 @@ Beteendet som beskrivs ovan gäller för alla resurser som skapas, förutom sche
 >
 >Testa i utvecklingssandlådan och gå till produktion när det är klart.
 >
->När objekt har genererats kan du fortsätta att testa dem i utvecklingssandlådorna genom att lägga till data. Du kan testa resurserna så länge du vill i utvecklingssandlådan och du kan replikera resurslogiken (målgruppsdefinitioner, resor, scheman och så vidare) i produktionssandlådan när du är klar. Du kan gå till utvecklingssandlådan och sedan till produktionssandlådan med [funktioner för datainlärning](/help/use-case-playbooks/playbooks/data-awareness.md).
+>När objekt har genererats kan du fortsätta att testa dem i utvecklingssandlådorna genom att lägga till data. Du kan testa resurserna så länge du vill i utvecklingssandlådan och du kan replikera resurslogiken (målgruppsdefinitioner, resor, scheman och så vidare) i produktionssandlådan när du är klar. Du kan gå till utvecklingssandlådan och sedan till produktionssandlådan med hjälp av [dataidentifieringsfunktionen](/help/use-case-playbooks/playbooks/data-awareness.md).
 
 ## Återanvänd spelningsböcker {#reuse-playbooks}
 
@@ -85,4 +85,4 @@ I den här videon får du lära dig hur du identifierar, skapar, publicerar och 
 
 Genom att läsa den här guiden och den som handlar om att hitta rätt spelbok för dig, vet du nu hur du tolkar de olika avsnitten i en spelbok och hur du använder de resurser som genereras när du har skapat en instans av en spelbok.
 
-Sedan kan du bläddra i katalogen för spelböcker för att hitta rätt spelbok för ditt användningssätt och läsa [felsökningsguide](/help/use-case-playbooks/playbooks/troubleshooting.md) om du stöter på några problem.
+Därefter kan du bläddra i katalogen med spelböcker för att hitta rätt spelbok för ditt användningsfall och läsa [felsökningsguiden](/help/use-case-playbooks/playbooks/troubleshooting.md) om du stöter på några problem.

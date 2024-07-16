@@ -20,9 +20,9 @@ Lär dig felsöka när du arbetar med Use Case Playbooks och förstå de kända 
 
 Ett par kända begränsningar visas när du skapar en instans av en spelbok och genererar resurser.
 
-* Om ett schema genereras i en instans av en spelningsbok och du redigerar det för genererade scheman, kommer ett annat schema *inte* genereras om du aktiverar en annan instans av spelboken. Fortsätt i stället att använda det schema som du redigerade i instansen också.
+* Om ett schema genereras i en instans av en spelningsbok och du redigerar det för genererade scheman, genereras inte *ett annat schema* om du aktiverar en annan instans av spelningsboken. Fortsätt i stället att använda det schema som du redigerade i instansen också.
 
-* När du använder [funktioner för datainlärning](/help/use-case-playbooks/playbooks/data-awareness.md) om du vill befordra schemat från den inspirerande sandlådan till utvecklingssandlådan kan du se några fel som liknar dem nedan:
+* När du använder [dataidentifieringsfunktionen](/help/use-case-playbooks/playbooks/data-awareness.md) för att befordra schemat från den inspirerande sandlådan till utvecklingssandlådan kan du se några fel som liknar dem nedan:
 
 ![Fel som visas i arbetsflödet för schemamappning.](/help/use-case-playbooks/assets/playbooks/troubleshooting/schema-errors.png){width="1000" zoomable="yes"}
 

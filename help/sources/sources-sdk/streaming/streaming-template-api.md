@@ -10,52 +10,52 @@ ht-degree: 0%
 
 ---
 
-# Skapa en källanslutning och ett dataflöde för direktuppspelning *DIN KÄLLA* data med [!DNL Flow Service] API
+# Skapa en källanslutning och ett dataflöde för att strömma *YOURCE*-data med API:t [!DNL Flow Service]
 
-*När du går igenom den här mallen ersätter eller tar du bort alla stycken i kursiv stil (med början från det här).*
+*När du går igenom den här mallen ersätter eller tar du bort alla stycken i kursiv stil (med början från den här).*
 
-*Börja med att uppdatera metadata (rubrik och beskrivning) högst upp på sidan. Please ignore all instances of DNL on this page. Det här är en tagg som hjälper våra maskinöversättningsprocesser att översätta sidan korrekt till flera språk som stöds. Vi lägger till taggar i dokumentationen när du har skickat in den.*
+*Börja med att uppdatera metadata (rubrik och beskrivning) högst upp på sidan. Please ignore all instances of DNL on this page. Det här är en tagg som hjälper våra maskinöversättningsprocesser att översätta sidan korrekt till flera språk som stöds. Vi lägger till taggar i dokumentationen när du har skickat den.*
 
 ## Översikt
 
-*Ge en kort översikt över ditt företag, inklusive det värde det ger kunderna. Ta med en länk till produktdokumentationens hemsida för ytterligare läsning.*
+*Ge en kort översikt över ditt företag, inklusive det värde det ger kunderna. Ta med en länk till din produktdokumentationswebbplats för ytterligare läsning.*
 
 >[!IMPORTANT]
 >
->Den här källanslutnings- och dokumentationssidan skapas och underhålls av *DIN KÄLLA* team. Om du har frågor eller uppdateringsfrågor kontaktar du dem direkt på *Infoga länk- eller e-postadress där du kan komma åt uppdateringar*.
+>Den här källkopplingen och dokumentationssidan skapas och underhålls av *YOURSOURCE* -teamet. Om du har frågor eller uppdateringsfrågor kontaktar du dem direkt på *Infoga länk eller e-postadress där du kan komma åt uppdateringar*.
 
-## Förutsättningar
+## Förhandskrav
 
-*Lägg till information i det här avsnittet om allt som kunderna behöver känna till innan de börjar konfigurera källan i Adobe Experience Platform användargränssnitt. Det här kan handla om:*
+*Lägg till information i det här avsnittet om allt som kunderna behöver känna till innan de börjar konfigurera källan i Adobe Experience Platform användargränssnitt. Det här kan vara om:*
 
-* *behöver läggas till tillåtelselista*
+* *måste läggas till i en tillåtelselista*
 * *krav för e-posthashning*
 * *kontoinformation på din sida*
-* *hur du får en API-nyckel för att ansluta till din plattform*
+* *Så här hämtar du en API-nyckel för att ansluta till din plattform*
 
 ### Samla in nödvändiga inloggningsuppgifter
 
-För att kunna ansluta *DIN KÄLLA* till Experience Platform måste du ange värden för följande anslutningsegenskaper:
+För att kunna ansluta *YOURSOURCE* till Experience Platform måste du ange värden för följande anslutningsegenskaper:
 
 | Autentiseringsuppgifter | Beskrivning | Exempel |
 | --- | --- | --- |
-| *autentiseringsuppgifter ett* | *Lägg till en kort beskrivning till källans autentiseringsuppgifter här* | *Lägg till ett exempel på källans autentiseringsuppgifter här* |
+| *autentiseringsuppgifter en* | *Lägg till en kort beskrivning till källans autentiseringsuppgifter här* | *Lägg till ett exempel på källans autentiseringsuppgifter här* |
 | *autentiseringsuppgifter två* | *Lägg till en kort beskrivning till källans autentiseringsuppgifter här* | *Lägg till ett exempel på källans autentiseringsuppgifter här* |
 | *autentiseringsuppgifter tre* | *Lägg till en kort beskrivning till källans autentiseringsuppgifter här* | *Lägg till ett exempel på källans autentiseringsuppgifter här* |
 
-Mer information om dessa autentiseringsuppgifter finns i *DIN KÄLLA* autentiseringsdokumentation. *Lägg till en länk till plattformens autentiseringsdokumentation här*.
+Mer information om de här autentiseringsuppgifterna finns i *YOURSOURCE* -autentiseringsdokumentationen. *Lägg till en länk till din plattforms autentiseringsdokumentation här*.
 
-### Integrera *DIN KÄLLA* med din webbkrok
+### Integrera *DIN KÄLLA* med din webkrok
 
-*SDK för direktuppspelning kräver att din källa har stöd för webbhooks för att kunna kommunicera med Experience Platform. I det här avsnittet måste du ange de steg som användarna måste följa för att kunna integrera YOURSOURCE med en webkrok.*
+*SDK för direktuppspelning kräver att din källa har stöd för webhooks för att kunna kommunicera med Experience Platform. I det här avsnittet måste du ange de steg som användarna måste följa för att kunna integrera YOURSOURCE med en webkrok.*
 
-## Anslut *DIN KÄLLA* till plattform med [!DNL Flow Service] API
+## Anslut *DIN KÄLLA* till plattformen med API:t [!DNL Flow Service]
 
-I följande självstudiekurs får du hjälp med att skapa en *DIN KÄLLA* källanslutning och skapa ett dataflöde som ger *DIN KÄLLA* data till plattformen med [[!DNL Flow Service] API](https://www.adobe.io/experience-platform-apis/references/flow-service/).
+I följande självstudiekurs får du hjälp med att skapa en *YOURSOURCE* -källanslutning och skapa ett dataflöde för att överföra *YOURCE*-data till plattformen med [[!DNL Flow Service] API](https://www.adobe.io/experience-platform-apis/references/flow-service/).
 
 ### Skapa en källanslutning {#source-connection}
 
-Skapa en källanslutning genom att göra en POST-förfrågan till [!DNL Flow Service] API, som innehåller källans anslutningsspec-ID, information som namn och beskrivning samt dataformatet.
+Skapa en källanslutning genom att göra en POST-förfrågan till [!DNL Flow Service]-API:t och ange källans anslutningsspec-ID, information som namn och beskrivning samt dataformatet.
 
 **API-format**
 
@@ -65,7 +65,7 @@ POST /sourceConnections
 
 **Begäran**
 
-Följande begäran skapar en källanslutning för *DIN KÄLLA*:
+Följande begäran skapar en källanslutning för *YOURSOURCE*:
 
 ```shell
 curl -X POST \
@@ -94,11 +94,11 @@ curl -X POST \
 | `name` | Namnet på källanslutningen. Kontrollera att namnet på källanslutningen är beskrivande, eftersom du kan använda det här för att söka efter information om källanslutningen. |
 | `description` | Ett valfritt värde som du kan ta med för att ange mer information om din källanslutning. |
 | `connectionSpec.id` | Anslutningsspecifikations-ID som motsvarar källan. |
-| `data.format` | Formatet på *DIN KÄLLA* data som du vill importera. För närvarande är det enda dataformatet som stöds `json`. |
+| `data.format` | Formatet på de *YOURSOURCE*-data som du vill importera. För närvarande är det enda dataformat som stöds `json`. |
 
 **Svar**
 
-Ett godkänt svar returnerar den unika identifieraren (`id`) för den nyligen skapade källanslutningen. Detta ID krävs i ett senare steg för att skapa ett dataflöde.
+Ett lyckat svar returnerar den unika identifieraren (`id`) för den nyligen skapade källanslutningen. Detta ID krävs i ett senare steg för att skapa ett dataflöde.
 
 ```json
 {
@@ -111,21 +111,21 @@ Ett godkänt svar returnerar den unika identifieraren (`id`) för den nyligen sk
 
 För att källdata ska kunna användas i Platform måste ett målschema skapas för att strukturera källdata efter dina behov. Målschemat används sedan för att skapa en plattformsdatauppsättning där källdata finns.
 
-Ett mål-XDM-schema kan skapas genom att utföra en POST-begäran till [API för schemaregister](https://developer.adobe.com/experience-platform-apis/references/schema-registry/).
+Ett mål-XDM-schema kan skapas genom att utföra en POST-begäran till [schemats register-API ](https://developer.adobe.com/experience-platform-apis/references/schema-registry/).
 
-Detaljerade anvisningar om hur du skapar ett XDM-målschema finns i självstudiekursen om [skapa ett schema med API](https://experienceleague.adobe.com/docs/experience-platform/xdm/api/schemas.html#create).
+Detaljerade steg om hur du skapar ett mål-XDM-schema finns i självstudiekursen [Skapa ett schema med API:t](https://experienceleague.adobe.com/docs/experience-platform/xdm/api/schemas.html#create).
 
 ### Skapa en måldatauppsättning {#target-dataset}
 
-En måldatauppsättning kan skapas genom att en POST till [Katalogtjänstens API](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/catalog.yaml), som tillhandahåller målschemats ID i nyttolasten.
+En måldatamängd kan skapas genom att utföra en POST-begäran till [katalogtjänstens API](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/catalog.yaml), som anger målschemats ID i nyttolasten.
 
-Detaljerade anvisningar om hur du skapar en måldatauppsättning finns i självstudiekursen om [skapa en datauppsättning med API](https://experienceleague.adobe.com/docs/experience-platform/catalog/api/create-dataset.html).
+Detaljerade steg om hur du skapar en måldatauppsättning finns i självstudiekursen [Skapa en datauppsättning med API:t](https://experienceleague.adobe.com/docs/experience-platform/catalog/api/create-dataset.html).
 
 ### Skapa en målanslutning {#target-connection}
 
 En målanslutning representerar anslutningen till målet där inmatade data ska lagras. Om du vill skapa en målanslutning måste du ange det fasta anslutningsspecifikations-ID som motsvarar datasjön. Detta ID är: `c604ff05-7f1a-43c0-8e18-33bf874cb11c`.
 
-Nu har du de unika identifierarna ett målschema, en måldatamängd och ett anslutningsspec-ID till datasjön. Med dessa identifierare kan du skapa en målanslutning med [!DNL Flow Service] API för att ange den datauppsättning som ska innehålla inkommande källdata.
+Nu har du de unika identifierarna ett målschema, en måldatamängd och ett anslutningsspec-ID till datasjön. Med hjälp av dessa identifierare kan du skapa en målanslutning med API:t [!DNL Flow Service] för att ange den datauppsättning som ska innehålla inkommande källdata.
 
 **API-format**
 
@@ -135,7 +135,7 @@ POST /targetConnections
 
 **Begäran**
 
-Följande begäran skapar en målanslutning för *DIN KÄLLA*:
+Följande begäran skapar en målanslutning för *YOURSOURCE*:
 
 
 ```shell
@@ -172,13 +172,13 @@ curl -X POST \
 | `name` | Namnet på målanslutningen. Kontrollera att namnet på målanslutningen är beskrivande, eftersom du kan använda det här för att söka efter information om målanslutningen. |
 | `description` | Ett valfritt värde som du kan inkludera för att ange mer information om målanslutningen. |
 | `connectionSpec.id` | Anslutningsspecifikations-ID som motsvarar datasjön. Detta fasta ID är: `c604ff05-7f1a-43c0-8e18-33bf874cb11c`. |
-| `data.format` | Formatet på *DIN KÄLLA* data som du vill ta med till plattformen. |
+| `data.format` | Formatet för de *YOURSOURCE*-data som du vill hämta till plattformen. |
 | `params.dataSetId` | Måldatauppsättnings-ID som hämtades i ett tidigare steg. |
 
 
 **Svar**
 
-Ett godkänt svar returnerar den nya målanslutningens unika identifierare (`id`). Detta ID krävs i senare steg.
+Ett svar returnerar den nya målanslutningens unika identifierare (`id`). Detta ID krävs i senare steg.
 
 ```json
 {
@@ -189,7 +189,7 @@ Ett godkänt svar returnerar den nya målanslutningens unika identifierare (`id`
 
 ### Skapa en mappning {#mapping}
 
-För att källdata ska kunna hämtas till en måldatamängd måste den först mappas till målschemat som måldatamängden följer. Detta uppnås genom att en POST begär att [[!DNL Data Prep] API](https://www.adobe.io/experience-platform-apis/references/data-prep/) med datamappningar definierade i nyttolasten för begäran.
+För att källdata ska kunna hämtas till en måldatamängd måste den först mappas till målschemat som måldatamängden följer. Detta uppnås genom att utföra en begäran om POST till [[!DNL Data Prep] API](https://www.adobe.io/experience-platform-apis/references/data-prep/) med datamappningar definierade i nyttolasten för begäran.
 
 **API-format**
 
@@ -230,14 +230,14 @@ curl -X POST \
 
 | Egenskap | Beskrivning |
 | --- | --- |
-| `xdmSchema` | ID:t för [mål-XDM-schema](#target-schema) som har genererats i ett tidigare steg. |
+| `xdmSchema` | ID:t för [mål-XDM-schemat](#target-schema) genererades i ett tidigare steg. |
 | `mappings.destinationXdmPath` | Mål-XDM-sökvägen dit källattributet mappas. |
 | `mappings.sourceAttribute` | Källattributet som måste mappas till en mål-XDM-sökväg. |
 | `mappings.identity` | Ett booleskt värde som anger om mappningsuppsättningen ska markeras för [!DNL Identity Service]. |
 
 **Svar**
 
-Ett godkänt svar returnerar information om den nyligen skapade mappningen inklusive dess unika identifierare (`id`). Detta värde krävs i ett senare steg för att skapa ett dataflöde.
+Ett lyckat svar returnerar information om den nyligen skapade mappningen inklusive dess unika identifierare (`id`). Detta värde krävs i ett senare steg för att skapa ett dataflöde.
 
 ```json
 {
@@ -252,9 +252,9 @@ Ett godkänt svar returnerar information om den nyligen skapade mappningen inklu
 
 ### Skapa ett flöde {#flow}
 
-Det sista steget mot att hämta in data från *DIN KÄLLA* till Platform är att skapa ett dataflöde. Nu har du förberett följande obligatoriska värden:
+Det sista steget mot att överföra data från *YOURSOURCE* till plattformen är att skapa ett dataflöde. Nu har du förberett följande obligatoriska värden:
 
-* [Källanslutnings-ID](#source-connection)
+* [Source-anslutnings-ID](#source-connection)
 * [Målanslutnings-ID](#target-connection)
 * [Mappnings-ID](#mapping)
 
@@ -306,16 +306,16 @@ curl -X POST \
 | `description` | Ett valfritt värde som du kan inkludera för att få mer information om dataflödet. |
 | `flowSpec.id` | Det ID för flödesspecifikation som krävs för att skapa ett dataflöde. Detta fasta ID är: `e77fde5a-22a8-11ed-861d-0242ac120002`. |
 | `flowSpec.version` | Motsvarande version av flödesspecifikations-ID. Standardvärdet är `1.0`. |
-| `sourceConnectionIds` | The [källanslutnings-ID](#source-connection) som har genererats i ett tidigare steg. |
-| `targetConnectionIds` | The [målanslutnings-ID](#target-connection) som har genererats i ett tidigare steg. |
+| `sourceConnectionIds` | [källanslutnings-ID](#source-connection) genererades i ett tidigare steg. |
+| `targetConnectionIds` | [målanslutnings-ID](#target-connection) genererades i ett tidigare steg. |
 | `transformations` | Den här egenskapen innehåller de olika omformningar som behövs för att dina data ska kunna användas. Den här egenskapen krävs när data som inte är XDM-kompatibla skickas till plattformen. |
 | `transformations.name` | Det namn som tilldelats omformningen. |
-| `transformations.params.mappingId` | The [mappnings-ID](#mapping) som har genererats i ett tidigare steg. |
+| `transformations.params.mappingId` | [Mappnings-ID](#mapping) genererades i ett tidigare steg. |
 | `transformations.params.mappingVersion` | Motsvarande version av mappnings-ID. Standardvärdet är `0`. |
 
 **Svar**
 
-Ett godkänt svar returnerar ID:t (`id`) av det nya dataflödet. Du kan använda det här ID:t för att övervaka, uppdatera eller ta bort dataflödet.
+Ett lyckat svar returnerar ID:t (`id`) för det nyskapade dataflödet. Du kan använda det här ID:t för att övervaka, uppdatera eller ta bort dataflödet.
 
 ```json
 {
@@ -328,7 +328,7 @@ Ett godkänt svar returnerar ID:t (`id`) av det nya dataflödet. Du kan använda
 
 När dataflödet har skapats kan du nu hämta URL:en för direktuppspelningsslutpunkten. Du använder den här slutpunkts-URL:en för att prenumerera källan på en webkrok, vilket gör att källan kan kommunicera med Experience Platform.
 
-Om du vill hämta URL:en för direktuppspelningsslutpunkten gör du en GET-förfrågan till `/flows` slutpunkt och ange ID:t för dataflödet.
+Om du vill hämta URL:en för direktuppspelningsslutpunkten gör du en GET-förfrågan till `/flows`-slutpunkten och anger ID:t för dataflödet.
 
 **API-format**
 
@@ -349,7 +349,7 @@ curl -X GET \
 
 **Svar**
 
-Ett godkänt svar returnerar information om dataflödet, inklusive URL:en för slutpunkten, markerad som `inletUrl`.
+Ett lyckat svar returnerar information om ditt dataflöde, inklusive din slutpunkts-URL, markerad som `inletUrl`.
 
 ```json
 {
@@ -434,20 +434,20 @@ Följande avsnitt innehåller information om hur du övervakar, uppdaterar och t
 
 ### Övervaka dataflödet
 
-När dataflödet har skapats kan du övervaka de data som importeras genom det för att se information om flödeskörningar, slutförandestatus och fel. Fullständiga API-exempel finns i guiden [övervaka källans dataflöden med API](https://experienceleague.adobe.com/docs/experience-platform/sources/api-tutorials/monitor.html).
+När dataflödet har skapats kan du övervaka de data som importeras genom det för att se information om flödeskörningar, slutförandestatus och fel. Fullständiga API-exempel finns i handboken om [att övervaka källans dataflöden med API:t](https://experienceleague.adobe.com/docs/experience-platform/sources/api-tutorials/monitor.html).
 
 ### Uppdatera ditt dataflöde
 
-Uppdatera information om dataflödet, t.ex. namn och beskrivning, samt körningsschema och tillhörande mappningsuppsättningar genom att göra en PATCH-begäran till `/flows` slutpunkt för [!DNL Flow Service] API, samtidigt som du anger ID:t för dataflödet. När du gör en begäran från PATCH måste du ange dataflödets unika `etag` i `If-Match` header. Fullständiga API-exempel finns i guiden [uppdatera källans dataflöde med API](https://experienceleague.adobe.com/docs/experience-platform/sources/api-tutorials/update-dataflows.html)
+Uppdatera informationen om dataflödet, till exempel namn och beskrivning, samt körningsschema och associerade mappningsuppsättningar genom att göra en PATCH-begäran till `/flows`-slutpunkten i [!DNL Flow Service]-API:t, samtidigt som du anger ID:t för dataflödet. När du gör en PATCH-begäran måste du ange dataflödets unika `etag` i rubriken `If-Match`. Fullständiga API-exempel finns i handboken om att [uppdatera källkodsdataflöden med API](https://experienceleague.adobe.com/docs/experience-platform/sources/api-tutorials/update-dataflows.html)
 
 ### Uppdatera ditt konto
 
-Uppdatera namn, beskrivning och autentiseringsuppgifter för ditt källkonto genom att utföra en PATCH-begäran till [!DNL Flow Service] API när du anger ditt grundläggande anslutnings-ID som en frågeparameter. När du gör en PATCH-begäran måste du ange källkontots unika `etag` i `If-Match` header. Fullständiga API-exempel finns i guiden [uppdatera ditt källkonto med API](https://experienceleague.adobe.com/docs/experience-platform/sources/api-tutorials/update.html).
+Uppdatera namn, beskrivning och autentiseringsuppgifter för källkontot genom att utföra en PATCH-begäran till [!DNL Flow Service]-API:t och ange ditt grundläggande anslutnings-ID som en frågeparameter. När du gör en PATCH-begäran måste du ange källkontots unika `etag` i rubriken `If-Match`. Fullständiga API-exempel finns i handboken [Uppdatera ditt källkonto med API](https://experienceleague.adobe.com/docs/experience-platform/sources/api-tutorials/update.html).
 
 ### Ta bort ditt dataflöde
 
-Ta bort dataflödet genom att göra en DELETE-förfrågan till [!DNL Flow Service] API när du anger ID:t för det dataflöde som du vill ta bort som en del av frågeparametern. Fullständiga API-exempel finns i guiden [ta bort dataflöden med API](https://experienceleague.adobe.com/docs/experience-platform/sources/api-tutorials/delete-dataflows.html).
+Ta bort dataflödet genom att utföra en DELETE-begäran till [!DNL Flow Service]-API:t och ange ID:t för det dataflöde som du vill ta bort som en del av frågeparametern. Fullständiga API-exempel finns i guiden om att [ta bort dataflöden med API:t](https://experienceleague.adobe.com/docs/experience-platform/sources/api-tutorials/delete-dataflows.html).
 
 ### Ta bort ditt konto
 
-Ta bort ditt konto genom att göra en DELETE-förfrågan till [!DNL Flow Service] API när du anger det grundläggande anslutnings-ID:t för kontot som du vill ta bort. Fullständiga API-exempel finns i guiden [ta bort ditt källkonto med API](https://experienceleague.adobe.com/docs/experience-platform/sources/api-tutorials/delete.html).
+Ta bort ditt konto genom att utföra en DELETE-begäran till [!DNL Flow Service]-API:t och ange det grundläggande anslutnings-ID:t för kontot som du vill ta bort. Fullständiga API-exempel finns i guiden om att [ta bort ditt källkonto med API](https://experienceleague.adobe.com/docs/experience-platform/sources/api-tutorials/delete.html).

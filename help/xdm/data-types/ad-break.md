@@ -9,7 +9,7 @@ ht-degree: 1%
 
 ---
 
-# [!UICONTROL Ad break] datatyp
+# Datatypen [!UICONTROL Ad break]
 
 [!UICONTROL Ad break] är en XDM-datatyp (Standard Experience Data Model) som beskriver hur en tidsbestämd annons infogas i ett tidsbestämt medium.
 

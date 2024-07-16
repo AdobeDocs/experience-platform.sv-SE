@@ -13,7 +13,7 @@ ht-degree: 0%
 
 >[!NOTE]
 >
->Adobe Experience Platform Launch har omklassificerats som en serie datainsamlingstekniker i Adobe Experience Platform. Som ett resultat av detta har flera terminologiska förändringar införts i produktdokumentationen. Se följande [dokument](../../../term-updates.md) för en konsoliderad hänvisning till terminologiska förändringar.
+>Adobe Experience Platform Launch har omklassificerats som en serie datainsamlingstekniker i Adobe Experience Platform. Som ett resultat av detta har flera terminologiska förändringar införts i produktdokumentationen. I följande [dokument](../../../term-updates.md) finns en konsoliderad referens till de ändrade terminologin.
 
 Ett tillägg är en paketerad koduppsättning som utökar funktionerna som anges i taggar eller vidarebefordran av händelser.
 
@@ -27,13 +27,13 @@ Tillägg avgör vilka element som är tillgängliga när du skapar egenskaper, r
 
 Använd länkarna högst upp i listan Tillägg om du vill visa installerade tillägg, katalogen för tillägg eller uppdateringar.
 
-Välj ett tillägg och välj sedan [!UICONTROL Configure] om du vill visa och ändra tilläggets inställningar. Mer information finns i avsnittet om [lägga till ett nytt tillägg](#add-a-new-extension) om du vill ha information om tilläggsalternativ.
+Välj ett tillägg och välj sedan [!UICONTROL Configure] för att visa och ändra tilläggets inställningar. Mer information om tilläggsalternativ finns i avsnittet [Lägga till ett nytt tillägg](#add-a-new-extension).
 
 >[!IMPORTANT]
 >
->Ändringarna börjar inte gälla förrän de är [publicerad](../../publishing/overview.md).
+>Ändringarna börjar inte gälla förrän de [publiceras](../../publishing/overview.md).
 
-Som standard har Adobe tillägg som stöder vanliga integreringar. Tillägg kan ändras med anpassade konfigurationer. Konfigurationer tillhandahålls via tilläggen. Om du vill skapa en konfiguration markerar du tilläggskortet och väljer sedan **[!UICONTROL Add New Configuration]**.
+Som standard har Adobe tillägg som stöder vanliga integreringar. Tillägg kan ändras med anpassade konfigurationer. Konfigurationer tillhandahålls via tilläggen. Om du vill skapa en konfiguration väljer du tilläggskortet och sedan **[!UICONTROL Add New Configuration]**.
 
 ## Tilläggskatalog
 
@@ -51,9 +51,9 @@ Sidan Tillägg innehåller tre vyer:
 
   Visar uppdateringar av installerade tillägg.
 
-Välj **[!UICONTROL Extensions]** för att se alla installerade tillägg. Du kan också använda katalogen för att visa en lista över alla tillgängliga tillägg och vilka tillägg som har tillgängliga uppdateringar.
+Välj **[!UICONTROL Extensions]** om du vill visa alla installerade tillägg. Du kan också använda katalogen för att visa en lista över alla tillgängliga tillägg och vilka tillägg som har tillgängliga uppdateringar.
 
-Se [Referens för tillägg](../../../extensions/client/overview.md) om du vill ha information om tillägg som ägs av Adobe.
+Mer information om tillägg som ägs av Adobe finns i [Referens för tillägg](../../../extensions/client/overview.md).
 
 ## Lägg till ett nytt tillägg {#add-a-new-extension}
 
@@ -63,7 +63,7 @@ Taggar är mycket utökningsbara. Tillägg lägger till kärnfunktioner i taggar
 >
 >Använd hjälpen för produkten i den högra panelen för att lära dig mer om tillägg och visa ytterligare tillgängliga resurser.
 
-1. Från en egenskaps översiktssida öppnar du **[!UICONTROL Extensions]** -fliken.
+1. Öppna fliken **[!UICONTROL Extensions]** från en egenskaps översiktssida.
 1. Välj ett tillägg.
 
    ![Fliken Katalog med huvudtillägg på fliken Tillägg.](../../../images/extensions.png)
@@ -80,11 +80,11 @@ Taggar är mycket utökningsbara. Tillägg lägger till kärnfunktioner i taggar
 
    Dessa standardinställningar är grunden för de anpassade regler som du skapar för att skapa tillägget.
 
-När du skapar eller redigerar element kan du spara och bygga på [aktivt bibliotek](../../publishing/libraries.md#active-library). Ändringen sparas omedelbart i biblioteket och en bygge körs. Byggets status visas. Du kan också skapa ett nytt bibliotek från listrutan Aktiva bibliotek.
+När du skapar eller redigerar element kan du spara och skapa i ditt [aktiva bibliotek](../../publishing/libraries.md#active-library). Ändringen sparas omedelbart i biblioteket och en bygge körs. Byggets status visas. Du kan också skapa ett nytt bibliotek från listrutan Aktiva bibliotek.
 
 ## Konfigurera ett tillägg
 
-Musknapp över ett installerat tillägg och välj **[!UICONTROL Configure]**.
+För musen över ett installerat tillägg och välj **[!UICONTROL Configure]**.
 
 >[!NOTE]
 >

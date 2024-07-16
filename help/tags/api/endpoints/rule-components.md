@@ -4,24 +4,24 @@ description: Lär dig hur du anropar /rule_components-slutpunkten i Reactor API.
 exl-id: 8a878a89-7f41-45fc-88f3-17f0f743e29c
 source-git-commit: b66a50e40aaac8df312a2c9a977fb8d4f1fb0c80
 workflow-type: tm+mt
-source-wordcount: '1150'
+source-wordcount: '1146'
 ht-degree: 1%
 
 ---
 
 # Slutpunkt för regelkomponenter
 
-I datainsamlingstaggar [regler](./rules.md) styra beteendet för resurserna i en distribuerad [bibliotek](./libraries.md). **Regelkomponenter** är de enskilda delar som utgör en regel. Om en regel är ett recept är en regelkomponent en av ingredienserna. The `/rule_components` -slutpunkten i Reaktors API gör att du kan hantera regelkomponenter programmatiskt.
+I datainsamlingstaggar styr [regler](./rules.md) beteendet för resurserna i ett distribuerat [bibliotek](./libraries.md). **Regelkomponenter** är de enskilda delar som utgör en regel. Om en regel är ett recept är en regelkomponent en av ingredienserna. Med slutpunkten `/rule_components` i Reaktors API kan du programmässigt hantera regelkomponenter.
 
 >[!NOTE]
 >
->Det här dokumentet beskriver hur du hanterar regelkomponenter i Reaktors-API:t. Mer information om hur du interagerar med regler och regelkomponenter i användargränssnittet finns i [Användargränssnittsguide](../../ui/managing-resources/rules.md).
+>Det här dokumentet beskriver hur du hanterar regelkomponenter i Reaktors-API:t. Mer information om hur du interagerar med regler och regelkomponenter i användargränssnittet finns i [gränssnittshandboken](../../ui/managing-resources/rules.md).
 
 Regelkomponenter har tre grundläggande typer:
 
 | Regelkomponenttyp | Beskrivning |
 | --- | --- |
-| Händelser | En händelse är utlösaren för en regel. Regeln startar när händelsen inträffar vid körning på klientenheten. &quot;[!UICONTROL Library Load]&quot;, &quot;[!UICONTROL Page Top]&quot;, och &quot;[!UICONTROL Click]&quot; är exempel på händelser. |
+| Händelser | En händelse är utlösaren för en regel. Regeln startar när händelsen inträffar vid körning på klientenheten. [!UICONTROL Library Load], [!UICONTROL Page Top] och [!UICONTROL Click] är exempel på händelser. |
 | Villkor | Ett villkor är en utvärdering av om vissa kriterier uppfylls innan några åtgärder utförs. När en händelse inträffar utvärderas villkoren. Regelns åtgärder körs bara om alla villkor uppfylls. |
 | Instruktioner | Detta är de åtgärder som du vill att regeln faktiskt ska utföra, som att skicka en Adobe Analytics-fyr, hämta ett anpassat besökar-ID eller bränna en viss ruta. |
 
@@ -29,11 +29,11 @@ Regelkomponenter har tre grundläggande typer:
 
 En regelkomponent tillhör exakt en regel. En regel kan (och bör) ha många regelkomponenter.
 
-En regelkomponent tillhandahålls av exakt en [extension](./extensions.md). Tillägg kan innehålla många regelkomponenttyper.
+En regelkomponent tillhandahålls av exakt ett [tillägg](./extensions.md). Tillägg kan innehålla många regelkomponenttyper.
 
 ## Komma igång
 
-Slutpunkten som används i den här guiden ingår i [Reaktors-API](https://www.adobe.io/experience-platform-apis/references/reactor/). Innan du fortsätter bör du granska [komma igång-guide](../getting-started.md) om du vill ha viktig information om hur du autentiserar till API:t.
+Slutpunkten som används i den här guiden ingår i [Reaktors-API](https://www.adobe.io/experience-platform-apis/references/reactor/). Innan du fortsätter bör du läsa [kom igång-guiden](../getting-started.md) för att få viktig information om hur du autentiserar dig för API:t.
 
 ## Hämta en lista med regelkomponenter {#list}
 
@@ -47,13 +47,13 @@ GET /rules/{RULE_ID}/rule_components
 
 | Parameter | Beskrivning |
 | --- | --- |
-| `RULE_ID` | The `id` för den regel vars komponenter du vill visa. |
+| `RULE_ID` | `id` för regeln vars komponenter du vill visa. |
 
 {style="table-layout:auto"}
 
 >[!NOTE]
 >
->Med hjälp av frågeparametrar kan listade regelkomponenter filtreras baserat på följande attribut:<ul><li>`created_at`</li><li>`dirty`</li><li>`enabled`</li><li>`name`</li><li>`negate`</li><li>`origin_id`</li><li>`published`</li><li>`published_at`</li><li>`revision_number`</li><li>`updated_at`</li></ul>Se guiden på [filtrera svar](../guides/filtering.md) för mer information.
+>Med hjälp av frågeparametrar kan listade regelkomponenter filtreras baserat på följande attribut:<ul><li>`created_at`</li><li>`dirty`</li><li>`enabled`</li><li>`name`</li><li>`negate`</li><li>`origin_id`</li><li>`published`</li><li>`published_at`</li><li>`revision_number`</li><li>`updated_at`</li></ul>Mer information finns i guiden om [filtrering av svar](../guides/filtering.md).
 
 **Begäran**
 
@@ -186,7 +186,7 @@ GET /rule_components/{RULE_COMPONENT_ID}
 
 | Parameter | Beskrivning |
 | --- | --- |
-| `RULE_COMPONENT_ID` | The `id` för regelkomponenten som du vill söka efter. |
+| `RULE_COMPONENT_ID` | `id` för regelkomponenten som du vill söka efter. |
 
 {style="table-layout:auto"}
 
@@ -310,13 +310,13 @@ POST /properties/{PROPERTY_ID}/rule_components
 
 | Parameter | Beskrivning |
 | --- | --- |
-| `PROPERTY_ID` | The `id` för egenskapen som du definierar regelkomponenten under. |
+| `PROPERTY_ID` | `id` för egenskapen som du definierar regelkomponenten under. |
 
 {style="table-layout:auto"}
 
 **Begäran**
 
-Följande begäran skapar en ny regelkomponent. I nyttolasten `relationships` -egenskapen associerar komponenten med specifika regler och ett befintligt tillägg. Se guiden på [relationer](../guides/relationships.md) för mer information.
+Följande begäran skapar en ny regelkomponent. I nyttolasten associerar egenskapen `relationships` komponenten med specifika regler och ett befintligt tillägg. Mer information finns i guiden om [relationer](../guides/relationships.md).
 
 ```shell
 curl -X POST \
@@ -359,14 +359,14 @@ curl -X POST \
 
 | Egenskap | Beskrivning |
 | --- | --- |
-| `attributes.delegate_descriptor_id` | **(Obligatoriskt)** De typer av regelkomponenter som du kan definiera tillhandahålls av [tilläggspaket](./extension-packages.md). När du skapar en ny regelkomponent måste du ange ett delegatbeskrivnings-ID som anger vilket tilläggspaket som regelkomponenten baseras på, komponentens typ (händelse, villkor eller åtgärd) och namnet på den specifika komponenten som definieras av tillägget (till exempel händelsen&quot;Click&quot; i tillägget Core).<br><br>Se guiden på [delegatbeskrivnings-ID](../guides/delegate-descriptor-ids.md) för mer information. |
-| `attributes.name` | **(Obligatoriskt)** Ett namn som kan läsas av människor för regelkomponenten. |
+| `attributes.delegate_descriptor_id` | **(Obligatoriskt)** De typer av regelkomponenter som du kan definiera tillhandahålls av [tilläggspaket](./extension-packages.md). När du skapar en ny regelkomponent måste du ange ett delegatbeskrivnings-ID som anger vilket tilläggspaket som regelkomponenten baseras på, komponentens typ (händelse, villkor eller åtgärd) och namnet på den specifika komponenten som definieras av tillägget (till exempel händelsen&quot;Click&quot; i tillägget Core).<br><br>Mer information finns i handboken om [delegatbeskrivnings-ID](../guides/delegate-descriptor-ids.md). |
+| `attributes.name` | **(Obligatoriskt)** Ett läsbart namn för regelkomponenten. |
 | `attributes.delay_next` | Ett booleskt värde som anger om senare åtgärder ska fördröjas. |
 | `attributes.order` | Ett heltal som anger i vilken ordning komponenten ska läsas in efter typ. |
 | `attributes.rule_order` | Ett heltal som anger prioriteten för den associerade regeln som ska utlösas. |
 | `attributes.settings` | Ett inställnings-JSON-objekt representeras som en sträng. |
 | `attributes.timeout` | Ett heltal som anger timeout för åtgärden som körs i sekvens. |
-| `relationships` | Ett objekt som upprättar nödvändiga relationer för regelkomponenten. Två relationer måste upprättas: <ol><li>`extension`: Det tillägg som definierar den här regelkomponenten. Detta måste vara samma tillägg vars tilläggspaket anges av `delegate_descriptor_id`.</li><li>`rules`: Den regel som den här komponenten definieras under.</li></ol>Mer allmän information om relationer finns i [relationshandbok](../guides/relationships.md). |
+| `relationships` | Ett objekt som upprättar nödvändiga relationer för regelkomponenten. Två relationer måste upprättas: <ol><li>`extension`: Det tillägg som definierar den här regelkomponenten. Detta måste vara samma tillägg vars tilläggspaket anges av `delegate_descriptor_id`.</li><li>`rules`: Regeln som den här komponenten definieras under.</li></ol>Mer allmän information om relationer finns i [relationsguiden](../guides/relationships.md). |
 | `type` | Den typ av resurs som skapas. För den här slutpunkten måste värdet vara `rule_components`. |
 
 {style="table-layout:auto"}
@@ -473,7 +473,7 @@ Du kan uppdatera en regelkomponent genom att ta med dess ID i sökvägen för en
 
 >[!NOTE]
 >
->Uppdatering av en regelkomponent uppdaterar även den överordnade regelns `updated_at` tidsstämpel.
+>Om du uppdaterar en regelkomponent uppdateras även den överordnade regelns `updated_at`-tidsstämpel.
 
 **API-format**
 
@@ -483,13 +483,13 @@ PATCH /rule_components/{RULE_COMPONENT_ID}
 
 | Parameter | Beskrivning |
 | --- | --- |
-| `RULE_COMPONENT_ID` | The `id` för regelkomponenten som du vill uppdatera. |
+| `RULE_COMPONENT_ID` | `id` för regelkomponenten som du vill uppdatera. |
 
 {style="table-layout:auto"}
 
 **Begäran**
 
-Följande begäran uppdaterar `order` och `settings` attribut för en befintlig regelkomponent.
+Följande begäran uppdaterar attributen `order` och `settings` för en befintlig regelkomponent.
 
 ```shell
 curl -X PATCH \
@@ -513,7 +513,7 @@ curl -X PATCH \
 | Egenskap | Beskrivning |
 | --- | --- |
 | `attributes` | Ett objekt vars regelkomponenter representerar attributen som ska uppdateras för regelkomponenten. Följande attribut kan uppdateras för en regelkomponent: <ul><li>`delay_next`</li><li>`delegate_descriptor_id`</li><li>`name`</li><li>`order`</li><li>`rule_order`</li><li>`settings`</li><li>`timeout`</li></ul> |
-| `id` | The `id` för regelkomponenten som du vill uppdatera. Det här bör matcha `{RULE_COMPONENT_ID}` värdet som anges i sökvägen för begäran. |
+| `id` | `id` för regelkomponenten som du vill uppdatera. Det här bör matcha det `{RULE_COMPONENT_ID}`-värde som anges i sökvägen till begäran. |
 | `type` | Den typ av resurs som uppdateras. För den här slutpunkten måste värdet vara `rule_components`. |
 
 {style="table-layout:auto"}
@@ -626,7 +626,7 @@ DELETE /rule_components/{RULE_COMPONENT_ID}
 
 | Parameter | Beskrivning |
 | --- | --- |
-| `RULE_COMPONENT_ID` | The `id` för regelkomponenten som du vill ta bort. |
+| `RULE_COMPONENT_ID` | `id` för regelkomponenten som du vill ta bort. |
 
 {style="table-layout:auto"}
 
@@ -646,17 +646,17 @@ Ett lyckat svar returnerar HTTP-status 204 (inget innehåll) utan svarstext, vil
 
 ## Hantera anteckningar för en regelkomponent {#notes}
 
-Regelkomponenter är&quot;anmärkningsvärda&quot; resurser, vilket innebär att du kan skapa och hämta textbaserade anteckningar för varje enskild resurs. Se [slutpunktshandbok för anteckningar](./notes.md) om du vill ha mer information om hur du hanterar anteckningar för regelkomponenter och andra kompatibla resurser.
+Regelkomponenter är&quot;anmärkningsvärda&quot; resurser, vilket innebär att du kan skapa och hämta textbaserade anteckningar för varje enskild resurs. Mer information om hur du hanterar anteckningar för regelkomponenter och andra kompatibla resurser finns i [anteckningsguiden](./notes.md).
 
 ## Hämta relaterade resurser för en regelkomponent {#related}
 
-Följande anrop visar hur du hämtar relaterade resurser för en regelkomponent. När [söka efter en regelkomponent](#lookup), listas dessa relationer under `relationships` regelkomponent.
+Följande anrop visar hur du hämtar relaterade resurser för en regelkomponent. När [söker upp en regelkomponent](#lookup) visas de här relationerna under regelkomponenten `relationships`.
 
-Se [relationshandbok](../guides/relationships.md) om du vill ha mer information om relationerna i Reactor API.
+Se [relationshandboken](../guides/relationships.md) för mer information om relationer i Reactor API.
 
 ### Visa relaterade regler för en regelkomponent {#rules}
 
-Du kan lista reglerna som använder en viss regelkomponent genom att lägga till `/rules` till sökvägen för en sökningsbegäran.
+Du kan lista reglerna som använder en viss regelkomponent genom att lägga till `/rules` i sökvägen för en sökningsbegäran.
 
 **API-format**
 
@@ -666,7 +666,7 @@ GET  /rule_components/{RULE_COMPONENT_ID}/rules
 
 | Parameter | Beskrivning |
 | --- | --- |
-| `{RULE_COMPONENT_ID}` | The `id` för regelkomponenten vars regler du vill visa. |
+| `{RULE_COMPONENT_ID}` | `id` för regelkomponenten vars regler du vill visa. |
 
 {style="table-layout:auto"}
 
@@ -760,7 +760,7 @@ Ett godkänt svar returnerar en lista med regler som använder den angivna regel
 
 ### Söka efter det relaterade tillägget för en regelkomponent {#extension}
 
-Du kan leta upp tillägget som innehåller en regelkomponent genom att lägga till `/extension` till sökvägen för en sökningsbegäran.
+Du kan slå upp tillägget som innehåller en regelkomponent genom att lägga till `/extension` i sökvägen för en sökbegäran.
 
 **API-format**
 
@@ -770,7 +770,7 @@ GET /rule_components/{RULE_COMPONENT_ID}/extension
 
 | Parameter | Beskrivning |
 | --- | --- |
-| `{RULE_COMPONENT_ID}` | The `id` för regelkomponenten vars tillägg du vill söka efter. |
+| `{RULE_COMPONENT_ID}` | `id` för regelkomponenten vars tillägg du vill söka efter. |
 
 {style="table-layout:auto"}
 
@@ -880,7 +880,7 @@ Ett godkänt svar returnerar information om den angivna regelkomponentens tillä
 
 ### Söka efter relaterat ursprung för en regelkomponent {#origin}
 
-Du kan slå upp origo (föregående revision) för en regelkomponent genom att lägga till `/origin` till sökvägen för en sökningsbegäran.
+Du kan söka efter ursprung (tidigare revision) för en regelkomponent genom att lägga till `/origin` i sökvägen för en uppslagsbegäran.
 
 **API-format**
 
@@ -890,7 +890,7 @@ GET /rule_components/{RULE_COMPONENT_ID}/origin
 
 | Parameter | Beskrivning |
 | --- | --- |
-| `{RULE_COMPONENT_ID}` | The `id` för regelkomponenten vars ursprung du vill söka efter. |
+| `{RULE_COMPONENT_ID}` | `id` för regelkomponenten vars ursprung du vill söka efter. |
 
 {style="table-layout:auto"}
 

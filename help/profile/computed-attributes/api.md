@@ -4,7 +4,7 @@ description: Lär dig hur du skapar, visar, uppdaterar och tar bort beräknade a
 exl-id: f217891c-574d-4a64-9d04-afc436cf16a9
 source-git-commit: 94c94b8a3757aca1a04ff4ffc3c62e84602805cc
 workflow-type: tm+mt
-source-wordcount: '1654'
+source-wordcount: '1664'
 ht-degree: 0%
 
 ---
@@ -15,28 +15,28 @@ ht-degree: 0%
 >
 >Åtkomsten till API:t är begränsad. Kontakta Adobe Support om du vill veta hur du får åtkomst till API:t för beräknade attribut.
 
-Beräknade attribut är funktioner som används för att samla data på händelsenivå i attribut på profilnivå. Funktionerna beräknas automatiskt så att de kan användas för segmentering, aktivering och personalisering. Den här guiden innehåller exempel på API-anrop för att utföra grundläggande CRUD-åtgärder med `/attributes` slutpunkt.
+Beräknade attribut är funktioner som används för att samla data på händelsenivå i attribut på profilnivå. Funktionerna beräknas automatiskt så att de kan användas för segmentering, aktivering och personalisering. Den här guiden innehåller exempel på API-anrop för att utföra grundläggande CRUD-åtgärder med slutpunkten `/attributes`.
 
-Om du vill veta mer om beräknade attribut börjar du med att läsa [översikt över beräknade attribut](overview.md).
+Om du vill veta mer om beräknade attribut börjar du med att läsa översikten [beräknade attribut](overview.md).
 
 ## Komma igång
 
-API-slutpunkten som används i den här guiden är en del av [Kundprofil-API i realtid](https://www.adobe.com/go/profile-apis-en).
+API-slutpunkten som används i den här guiden ingår i [Real-Time Customer Profile API](https://www.adobe.com/go/profile-apis-en).
 
-Innan du fortsätter bör du granska [Starthandbok för att komma igång med profil-API](../api/getting-started.md) för länkar till rekommenderad dokumentation, en guide till hur du läser de exempel-API-anrop som visas i det här dokumentet samt viktig information om vilka huvuden som krävs för att anropa ett Experience Platform-API.
+Innan du fortsätter bör du gå igenom [guiden Komma igång-start för profil-API](../api/getting-started.md) för att få länkar till rekommenderad dokumentation, en guide till hur du läser exempelanrop till API:er som visas i det här dokumentet samt viktig information om vilka huvuden som krävs för att kunna ringa anrop till valfritt Experience Platform-API.
 
 Läs även dokumentationen för följande tjänst:
 
-- [[!DNL Experience Data Model (XDM) System]](../../xdm/home.md): Det standardiserade ramverk som [!DNL Experience Platform] organiserar kundupplevelsedata.
-   - [Guiden Komma igång med schemaregister](../../xdm/api/getting-started.md#know-your-tenant_id): Information om `{TENANT_ID}`, som visas i svaren i hela den här handboken, tillhandahålls.
+- [[!DNL Experience Data Model (XDM) System]](../../xdm/home.md): Det standardiserade ramverket som [!DNL Experience Platform] organiserar kundupplevelsedata med.
+   - [Guiden Komma igång för schemaregister](../../xdm/api/getting-started.md#know-your-tenant_id): Information om `{TENANT_ID}`, som visas i svaren i den här guiden, tillhandahålls.
 
 ## Hämta en lista med beräknade attribut {#list}
 
-Du kan hämta en lista över alla beräknade attribut för din organisation genom att göra en GET-förfrågan till `/attributes` slutpunkt.
+Du kan hämta en lista över alla beräknade attribut för din organisation genom att göra en GET-förfrågan till slutpunkten `/attributes`.
 
 **API-format**
 
-The `/attributes` slutpunkten har stöd för flera frågeparametrar som hjälper dig att filtrera dina resultat. Även om dessa parametrar är valfria rekommenderar vi starkt att de används för att minska dyra overheadkostnader när du listar resurser. Om du anropar den här slutpunkten utan parametrar hämtas alla beräknade attribut som är tillgängliga för din organisation. Flera parametrar kan inkluderas, avgränsade med et-tecken (`&`).
+Slutpunkten `/attributes` har stöd för flera frågeparametrar som kan hjälpa dig att filtrera dina resultat. Även om dessa parametrar är valfria rekommenderar vi starkt att de används för att minska dyra overheadkostnader när du listar resurser. Om du anropar den här slutpunkten utan parametrar hämtas alla beräknade attribut som är tillgängliga för din organisation. Flera parametrar kan inkluderas, avgränsade med et-tecken (`&`).
 
 ```http
 GET /attributes
@@ -49,8 +49,8 @@ Följande frågeparametrar kan användas när en lista med beräknade attribut h
 | --------------- | ----------- | ------- |
 | `limit` | En parameter som anger det maximala antalet objekt som returneras som en del av svaret. Det minsta värdet för den här parametern är 1 och det högsta värdet är 40. Om den här parametern inte ingår returneras som standard 20 objekt. | `limit=20` |
 | `offset` | En parameter som anger antalet objekt som ska hoppas över innan objekten returneras. | `offset=5` |
-| `sortBy` | En parameter som anger i vilken ordning de returnerade objekten sorteras. Tillgängliga alternativ inkluderar `name`, `status`, `updateEpoch`och `createEpoch`. Du kan också välja om du vill sortera i stigande eller fallande ordning genom att inte inkludera eller inkludera en `-` framför sorteringsalternativet. Som standard sorteras objekten efter `updateEpoch` i fallande ordning. | `sortBy=name` |
-| `property` | En parameter som gör att du kan filtrera på olika beräknade attributfält. Egenskaper som stöds är bland annat `name`, `createEpoch`, `mergeFunction.value`, `updateEpoch`och `status`. Vilka åtgärder som stöds beror på vilken egenskap som visas. <ul><li>`name`: `EQUAL` (=), `NOT_EQUAL` (!=), `CONTAINS` (=contains()), `NOT_CONTAINS` (=!contains())</li><li>`createEpoch`: `GREATER_THAN_OR_EQUALS` (&lt;=), `LESS_THAN_OR_EQUALS` (>=) </li><li>`mergeFunction.value`: `EQUAL` (=), `NOT_EQUAL` (!=), `CONTAINS` (=contains()), `NOT_CONTAINS` (=!contains())</li><li>`updateEpoch`: `GREATER_THAN_OR_EQUALS` (&lt;=), `LESS_THAN_OR_EQUALS` (>=)</li><li>`status`: `EQUAL` (=), `NOT_EQUAL` (!=), `CONTAINS` (=contains()), `NOT_CONTAINS` (=!contains())</li></ul> | `property=updateEpoch>=1683669114845`<br/>`property=name!=testingrelease`<br/>`property=status=contains(new,processing,disabled)` |
+| `sortBy` | En parameter som anger i vilken ordning de returnerade objekten sorteras. De tillgängliga alternativen är `name`, `status`, `updateEpoch` och `createEpoch`. Du kan också välja om du vill sortera i stigande eller fallande ordning genom att inte ta med eller ta med `-` framför sorteringsalternativet. Som standard sorteras objekten efter `updateEpoch` i fallande ordning. | `sortBy=name` |
+| `property` | En parameter som gör att du kan filtrera på olika beräknade attributfält. Egenskaper som stöds är `name`, `createEpoch`, `mergeFunction.value`, `updateEpoch` och `status`. Vilka åtgärder som stöds beror på vilken egenskap som visas. <ul><li>`name`: `EQUAL` (=), `NOT_EQUAL` (!=), `CONTAINS` (=contains()), `NOT_CONTAINS` (=!contains())</li><li>`createEpoch`: `GREATER_THAN_OR_EQUALS` (&lt;=), `LESS_THAN_OR_EQUALS` (>=) </li><li>`mergeFunction.value`: `EQUAL` (=), `NOT_EQUAL` (!=), `CONTAINS` (=contains()), `NOT_CONTAINS` (=!contains())</li><li>`updateEpoch`: `GREATER_THAN_OR_EQUALS` (&lt;=), `LESS_THAN_OR_EQUALS` (>=)</li><li>`status`: `EQUAL` (=), `NOT_EQUAL` (!=), `CONTAINS` (=contains()), `NOT_CONTAINS` (=!contains())</li></ul> | `property=updateEpoch>=1683669114845`<br/>`property=name!=testingrelease`<br/>`property=status=contains(new,processing,disabled)` |
 
 **Begäran**
 
@@ -211,14 +211,14 @@ Ett lyckat svar returnerar HTTP-status 200 med en lista över de tre senaste upp
 | Egenskap | Beskrivning |
 | -------- | ----------- |
 | `_links` | Ett objekt som innehåller den sidnumreringsinformation som krävs för att komma åt den sista resultatsidan, nästa resultatsida, föregående resultatsida eller den aktuella resultatsidan. |
-| `computedAttributes` | En array som innehåller de beräknade attributen baserat på dina frågeparametrar. Mer information om den beräknade attributarrayen finns i [hämta ett visst beräknat attributavsnitt](#get). |
+| `computedAttributes` | En array som innehåller de beräknade attributen baserat på dina frågeparametrar. Mer information om den beräknade attributarrayen finns i [hämtningen av ett visst beräknat attributavsnitt](#get). |
 | `_page` | Ett objekt som innehåller metadata om de returnerade resultaten. Detta inkluderar information om aktuell förskjutning, antalet returnerade beräknade attribut, det totala antalet beräknade attribut samt gränsen för returnerade beräknade attribut. |
 
 +++
 
 ## Skapa ett beräknat attribut {#create}
 
-Om du vill skapa ett beräknat attribut börjar du med att göra en POST-förfrågan till `/attributes` slutpunkt med en begärandebrödtext som innehåller information om det beräknade attributet som du vill skapa.
+Om du vill skapa ett beräknat attribut börjar du med att göra en POST-förfrågan till slutpunkten `/attributes` med en begärandebrödtext som innehåller information om det beräknade attributet som du vill skapa.
 
 **API-format**
 
@@ -257,17 +257,17 @@ curl -X POST https://platform.adobe.io/data/core/ca/attributes \
 
 | Egenskap | Beskrivning |
 | -------- | ----------- |
-| `name` | Namnet på det beräknade attributfältet, som en sträng. Namnet på det beräknade attributet får endast bestå av alfanumeriska tecken utan mellanslag eller understreck. Detta värde **måste** vara unik bland alla beräknade attribut. Det här namnet bör vara en cameraCase-version av `displayName`. |
+| `name` | Namnet på det beräknade attributfältet, som en sträng. Namnet på det beräknade attributet får endast bestå av alfanumeriska tecken utan mellanslag eller understreck. Värdet **måste** vara unikt bland alla beräknade attribut. Det här namnet bör vara en cameraCase-version av `displayName`. |
 | `description` | En beskrivning av det beräknade attributet. Detta är särskilt användbart när flera beräknade attribut har definierats, eftersom det kommer att hjälpa andra inom organisationen att fastställa rätt beräknat attribut att använda. |
 | `displayName` | Det beräknade attributets visningsnamn. Det här namnet visas när du anger dina beräknade attribut i Adobe Experience Platform-gränssnittet. |
 | `expression` | Ett objekt som representerar frågeuttrycket för det beräknade attribut som du försöker skapa. |
-| `expression.type` | Uttryckets typ. För närvarande stöds bara PQL. |
-| `expression.format` | Uttryckets format. För närvarande, endast `pql/text` stöds. |
+| `expression.type` | Uttryckets typ. För närvarande stöds endast PQL. |
+| `expression.format` | Uttryckets format. För närvarande stöds bara `pql/text`. |
 | `expression.value` | Uttryckets värde. |
-| `keepCurrent` | Ett booleskt värde som avgör om det beräknade attributets värde uppdateras eller inte med hjälp av snabb uppdatering. För närvarande ska det här värdet anges till `false`. |
+| `keepCurrent` | Ett booleskt värde som avgör om det beräknade attributets värde uppdateras eller inte med hjälp av snabb uppdatering. För närvarande bör det här värdet anges till `false`. |
 | `duration` | Ett objekt som representerar uppslagsperioden för det beräknade attributet. Uppslagsperioden representerar hur långt tillbaka som kan slås tillbaka för att beräkna det beräknade attributet. |
-| `duration.count` | Ett tal som representerar längden för uppslagsperioden. Möjliga värden beror på värdet på `duration.unit` fält. <ul><li>`HOURS`: 1-24</li><li>`DAYS`: 1-7</li><li>`WEEKS`: 1-4</li><li>`MONTHS`: 1-6</li></ul> |
-| `duration.unit` | En sträng som representerar den tidsenhet som ska användas för uppslagsperioden. Möjliga värden är: `HOURS`, `DAYS`, `WEEKS`och `MONTHS`. |
+| `duration.count` | Ett tal som representerar längden för uppslagsperioden. Möjliga värden beror på värdet för fältet `duration.unit`. <ul><li>`HOURS`: 1-24</li><li>`DAYS`: 1-7</li><li>`WEEKS`: 1-4</li><li>`MONTHS`: 1-6</li></ul> |
+| `duration.unit` | En sträng som representerar den tidsenhet som ska användas för uppslagsperioden. Möjliga värden är: `HOURS`, `DAYS`, `WEEKS` och `MONTHS`. |
 | `status` | Status för beräknat attribut. Möjliga värden är `DRAFT` och `NEW`. |
 
 +++
@@ -325,7 +325,7 @@ Ett lyckat svar returnerar HTTP-status 200 med information om det nya beräknade
 
 ## Hämta ett specifikt beräknat attribut {#get}
 
-Du kan hämta detaljerad information om ett specifikt beräknat attribut genom att göra en GET-förfrågan till `/attributes` slutpunkt och ange ID:t för det beräknade attribut som du vill hämta i sökvägen för begäran.
+Du kan hämta detaljerad information om ett specifikt beräknat attribut genom att göra en GET-förfrågan till slutpunkten `/attributes` och ange ID:t för det beräknade attribut som du vill hämta i sökvägen till begäran.
 
 **API-format**
 
@@ -396,13 +396,13 @@ Ett lyckat svar returnerar HTTP-status 200 med detaljerad information om det ang
 | `displayName` | Det beräknade attributets visningsnamn. Det här namnet visas när du anger dina beräknade attribut i Adobe Experience Platform-gränssnittet. |
 | `description` | En beskrivning av det beräknade attributet. Detta är särskilt användbart när flera beräknade attribut har definierats, eftersom det kommer att hjälpa andra inom organisationen att fastställa rätt beräknat attribut att använda. |
 | `imsOrgId` | ID:t för organisationen som det beräknade attributet tillhör. |
-| `sandbox` | Sandlådeobjektet innehåller information om den sandlåda som det beräknade attributet konfigurerades i. Den här informationen hämtas från sandlådehuvudet som skickas i begäran. Mer information finns i [översikt över sandlådor](../../sandboxes/home.md). |
-| `path` | The `path` till det beräknade attributet. |
+| `sandbox` | Sandlådeobjektet innehåller information om den sandlåda som det beräknade attributet konfigurerades i. Den här informationen hämtas från sandlådehuvudet som skickas i begäran. Mer information finns i översikten över [sandlådor](../../sandboxes/home.md). |
+| `path` | `path` till beräknat attribut. |
 | `keepCurrent` | Ett booleskt värde som avgör om det beräknade attributets värde uppdateras eller inte med hjälp av snabb uppdatering. |
 | `expression` | Ett objekt som innehåller attributets uttryck. |
-| `mergeFunction` | Ett objekt som innehåller kopplingsfunktionen för det beräknade attributet. Det här värdet baseras på motsvarande aggregeringsparameter i det beräknade attributets uttryck. Möjliga värden är `SUM`, `MIN`, `MAX`och `MOST_RECENT`. |
-| `status` | Det beräknade attributets status. Detta kan vara något av följande värden: `DRAFT`, `NEW`, `INITIALIZING`, `PROCESSING`, `PROCESSED`, `FAILED`, eller `DISABLED`. |
-| `schema` | Ett objekt som innehåller information om schemat där uttrycket utvärderas i. För närvarande, endast `_xdm.context.profile` stöds. |
+| `mergeFunction` | Ett objekt som innehåller kopplingsfunktionen för det beräknade attributet. Det här värdet baseras på motsvarande aggregeringsparameter i det beräknade attributets uttryck. Möjliga värden är `SUM`, `MIN`, `MAX` och `MOST_RECENT`. |
+| `status` | Det beräknade attributets status. Detta kan vara något av följande värden: `DRAFT`, `NEW`, `INITIALIZING`, `PROCESSING`, `PROCESSED`, `FAILED` eller `DISABLED`. |
+| `schema` | Ett objekt som innehåller information om schemat där uttrycket utvärderas i. För närvarande stöds bara `_xdm.context.profile`. |
 | `lastEvaluationTs` | En tidsstämpel som representerar när det beräknade attributet senast utvärderades. |
 | `createEpoch` | Tiden då det beräknade attributet skapades, i sekunder. |
 | `updateEpoch` | Den tidpunkt då det beräknade attributet senast uppdaterades, i sekunder. |
@@ -412,11 +412,11 @@ Ett lyckat svar returnerar HTTP-status 200 med detaljerad information om det ang
 
 ## Ta bort ett visst beräknat attribut {#delete}
 
-Du kan ta bort ett visst beräknat attribut genom att göra en DELETE-begäran till `/attributes` slutpunkt och ange ID:t för det beräknade attribut som du vill ta bort i sökvägen för begäran.
+Du kan ta bort ett specifikt beräknat attribut genom att göra en DELETE-begäran till `/attributes`-slutpunkten och ange ID:t för det beräknade attribut som du vill ta bort i sökvägen till begäran.
 
 >[!IMPORTANT]
 >
->Begäran om borttagning kan bara användas för att ta bort beräknade attribut med statusen **utkast** (`DRAFT`). Den här slutpunkten **inte** används för att ta bort beräknade attribut i något annat läge.
+>Borttagningsbegäran kan bara användas för att ta bort beräknade attribut med statusen **draft** (`DRAFT`). Slutpunkten **kan inte** användas för att ta bort beräknade attribut i något annat läge.
 
 **API-format**
 
@@ -426,7 +426,7 @@ DELETE /attributes/{ATTRIBUTE_ID}
 
 | Parameter | Beskrivning |
 | --------- | ----------- |
-| `{ATTRIBUTE_ID}` | The `id` värdet på det beräknade attributet som du vill ta bort. |
+| `{ATTRIBUTE_ID}` | Värdet `id` för det beräknade attributet som du vill ta bort. |
 
 **Begäran**
 
@@ -487,15 +487,15 @@ Ett lyckat svar returnerar HTTP-status 202 med information om det borttagna ber�
 
 ## Uppdatera ett specifikt beräknat attribut
 
-Du kan uppdatera ett specifikt beräknat attribut genom att göra en PATCH-begäran till `/attributes` slutpunkt och ange ID:t för det beräknade attribut som du vill uppdatera i sökvägen för begäran.
+Du kan uppdatera ett specifikt beräknat attribut genom att göra en PATCH-begäran till slutpunkten `/attributes` och ange ID:t för det beräknade attribut som du vill uppdatera i sökvägen till begäran.
 
 >[!IMPORTANT]
 >
 >När du uppdaterar ett beräknat attribut kan endast följande fält uppdateras:
 >
->- Om aktuell status är `NEW`kan statusen bara ändras till `DISABLED`.
->- Om aktuell status är `DRAFT`kan du ändra värdena för följande fält: `name`, `description`, `keepCurrent`, `expression`och `duration`. Du kan också ändra status från `DRAFT` till `NEW`. Ändringar i systemgenererade fält, till exempel `mergeFunction` eller `path` returnerar ett fel.
->- Om aktuell status är antingen `PROCESSING` eller `PROCESSED`kan statusen bara ändras till `DISABLED`.
+>- Om den aktuella statusen är `NEW` kan statusen bara ändras till `DISABLED`.
+>- Om den aktuella statusen är `DRAFT` kan du ändra värdena för följande fält: `name`, `description`, `keepCurrent`, `expression` och `duration`. Du kan också ändra status från `DRAFT` till `NEW`. Ändringar i systemgenererade fält, som `mergeFunction` eller `path`, returnerar ett fel.
+>- Om den aktuella statusen är antingen `PROCESSING` eller `PROCESSED` kan statusen bara ändras till `DISABLED`.
 
 **API-format**
 
@@ -505,7 +505,7 @@ PATCH /attributes/{ATTRIBUTE_ID}
 
 | Parameter | Beskrivning |
 | --------- | ----------- |
-| `{ATTRIBUTE_ID}` | The `id` värdet på det beräknade attributet som du vill uppdatera. |
+| `{ATTRIBUTE_ID}` | Värdet `id` för det beräknade attribut som du vill uppdatera. |
 
 **Begäran**
 
@@ -579,4 +579,4 @@ Ett lyckat svar returnerar HTTP-status 200 med information om ditt nyligen uppda
 
 ## Nästa steg
 
-Nu när du har lärt dig grunderna i beräknade attribut kan du börja definiera dem för din organisation. Om du vill veta hur du använder beräknade attribut i användargränssnittet för Experience Platform kan du läsa [gränssnittshandbok för beräknade attribut](./ui.md).
+Nu när du har lärt dig grunderna i beräknade attribut kan du börja definiera dem för din organisation. Om du vill lära dig hur du använder beräknade attribut i användargränssnittet för Experience Platform kan du läsa [användargränssnittshandboken för beräknade attribut](./ui.md).

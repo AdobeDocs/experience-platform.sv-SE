@@ -19,7 +19,7 @@ ht-degree: 0%
 
 >[!IMPORTANT]
 >
->Du kan bara använda tidsbegränsningen&quot;ignorera år&quot; i en segmentdefinition som utvärderas med **gruppsegmentering**. Om du lägger till tidsbegränsningen&quot;ignorera år&quot; i din segmentdefinition blir den resulterande målgruppen **ej berättigade** för strömning eller kantsegmentering.
+>Du kan bara använda tidsbegränsningen&quot;ignorera år&quot; i en segmentdefinition som utvärderats med **gruppsegmentering**. Om du lägger till tidsbegränsningen&quot;ignorera år&quot; i din segmentdefinition blir den resulterande målgruppen **oanvändbar** för direktuppspelning eller kantsegmentering.
 
 I februari 2024-utgåvan av Adobe Experience Platform har ändringar gjorts i Adobe Experience Platform Segmentation Service, vilket löser ett problem med alternativet&quot;ignorera år&quot; när det gäller att skapa och utvärdera målgrupper.
 

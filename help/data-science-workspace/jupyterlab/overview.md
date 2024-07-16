@@ -6,16 +6,16 @@ description: JupyterLab är ett webbaserat användargränssnitt för Project Jup
 exl-id: 13786fbd-ef16-49cd-8bcf-46320c33e902
 source-git-commit: 86e6924078c115fb032ce39cd678f1d9c622e297
 workflow-type: tm+mt
-source-wordcount: '1814'
+source-wordcount: '1806'
 ht-degree: 0%
 
 ---
 
-# [!DNL JupyterLab] Översikt över användargränssnittet
+# Översikt över användargränssnittet för [!DNL JupyterLab]
 
-[!DNL JupyterLab] är ett webbaserat användargränssnitt för [Project Jupyter](https://jupyter.org/) och är nära integrerat i Adobe Experience Platform. Den utgör en interaktiv utvecklingsmiljö där datavetare kan arbeta med Jupyter-anteckningsböcker, kod och data.
+[!DNL JupyterLab] är ett webbaserat användargränssnitt för [Project Jupyter](https://jupyter.org/) och är nära integrerat med Adobe Experience Platform. Den utgör en interaktiv utvecklingsmiljö där datavetare kan arbeta med Jupyter-anteckningsböcker, kod och data.
 
-Dokumentet innehåller en översikt över [!DNL JupyterLab] och dess funktioner samt instruktioner för att utföra vanliga åtgärder.
+Det här dokumentet innehåller en översikt över [!DNL JupyterLab] och dess funktioner samt instruktioner om hur du utför vanliga åtgärder.
 
 ## [!DNL JupyterLab] på [!DNL Experience Platform]
 
@@ -25,33 +25,33 @@ I följande lista beskrivs några av funktionerna som är unika för JupyterLab 
 
 | Funktion | Beskrivning |
 | --- | --- |
-| **Kernlar** | Kerneler har bärbara datorer och andra [!DNL JupyterLab] I gränssnittet kan du köra och granska kod i olika programmeringsspråk. [!DNL Experience Platform] har ytterligare kernel som stöd för utveckling i [!DNL Python], R, PySpark, och [!DNL Spark]. Se [kernels](#kernels) för mer information. |
+| **Kernlar** | På panelerna finns anteckningsbok och andra [!DNL JupyterLab]-gränssnitt med funktioner för att köra och granska kod i olika programmeringsspråk. [!DNL Experience Platform] innehåller ytterligare kernlar som stöder utveckling i [!DNL Python], R, PySpark och [!DNL Spark]. Mer information finns i avsnittet [kernels](#kernels). |
 | **Dataåtkomst** | Få tillgång till befintliga datauppsättningar direkt inifrån [!DNL JupyterLab] med fullt stöd för läs- och skrivfunktioner. |
-| **[!DNL Platform]tjänstintegration** | Inbyggda integreringar gör att du kan använda andra [!DNL Platform] tjänster direkt inifrån [!DNL JupyterLab]. En fullständig lista över integreringar som stöds finns i avsnittet om [Integrering med andra plattformstjänster](#service-integration). |
-| **Autentisering** | Förutom <a href="https://jupyter-notebook.readthedocs.io/en/stable/security.html" target="_blank">JupyterLab:s inbyggda säkerhetsmodell</a>, krypteras och autentiseras all interaktion mellan applikationen och Experience Platform, inklusive kommunikation från tjänst till tjänst, via <a href="https://www.adobe.io/authentication/auth-methods.html" target="_blank">[!DNL Adobe Identity Management System] (IMS)</a>. |
-| **Utvecklingsbibliotek** | I [!DNL Experience Platform], [!DNL JupyterLab] innehåller förinstallerade bibliotek för [!DNL Python], R och PySpark. Se [appendix](#supported-libraries) för en fullständig lista över bibliotek som stöds. |
-| **Bibliotekshanterare** | När de förinstallerade biblioteken saknas för dina behov kan ytterligare bibliotek installeras för Python och R, och lagras tillfälligt i isolerade behållare för att bibehålla integriteten hos [!DNL Platform] och skydda era data. Se [kernels](#kernels) för mer information. |
+| Tjänstintegrering för **[!DNL Platform]** | Inbyggda integreringar gör att du kan använda andra [!DNL Platform]-tjänster direkt inifrån [!DNL JupyterLab]. En fullständig lista över integreringar som stöds finns i avsnittet [Integrering med andra plattformstjänster](#service-integration). |
+| **Autentisering** | Utöver <a href="https://jupyter-notebook.readthedocs.io/en/stable/security.html" target="_blank">JupyterLab:s inbyggda säkerhetsmodell</a> krypteras och autentiseras all interaktion mellan ditt program och Experience Platform, inklusive kommunikation mellan plattformstjänster och tjänster, via <a href="https://www.adobe.io/authentication/auth-methods.html" target="_blank">[!DNL Adobe Identity Management System] (IMS)</a>. |
+| **Utvecklingsbibliotek** | I [!DNL Experience Platform] innehåller [!DNL JupyterLab] förinstallerade bibliotek för [!DNL Python], R och PySpark. En fullständig lista över bibliotek som stöds finns i [bilagan](#supported-libraries). |
+| **Bibliotekskontrollen** | När de förinstallerade biblioteken saknas för dina behov kan ytterligare bibliotek installeras för Python och R, och lagras tillfälligt i isolerade behållare för att bibehålla integriteten för [!DNL Platform] och skydda dina data. Mer information finns i avsnittet [kernels](#kernels). |
 
 >[!NOTE]
 >
 >Ytterligare bibliotek är bara tillgängliga för den session där de installerades. Du måste installera om alla ytterligare bibliotek som du behöver när du startar nya sessioner.
 
-## Integrering med andra [!DNL Platform] tjänster {#service-integration}
+## Integrering med andra [!DNL Platform]-tjänster {#service-integration}
 
-Standardisering och interoperabilitet är viktiga begrepp bakom [!DNL Experience Platform]. Integreringen av [!DNL JupyterLab] på [!DNL Platform] som en inbäddad IDE-miljö som gör att den kan interagera med andra [!DNL Platform] tjänster, så att du kan använda [!DNL Platform] till fullo utnyttja sin potential. Följande [!DNL Platform] finns i [!DNL JupyterLab]:
+Standardisering och interoperabilitet är viktiga begrepp bakom [!DNL Experience Platform]. Integreringen av [!DNL JupyterLab] på [!DNL Platform] som en inbäddad IDE gör att den kan interagera med andra [!DNL Platform]-tjänster, vilket gör att du kan utnyttja [!DNL Platform] fullt ut. Följande [!DNL Platform] tjänster är tillgängliga i [!DNL JupyterLab]:
 
-* **[!DNL Catalog Service]:** Få tillgång till och utforska datauppsättningar med läs- och skrivfunktioner.
-* **[!DNL Query Service]:** Få åtkomst till och utforska datauppsättningar med SQL, vilket ger lägre dataåtkomstkostnader när du hanterar stora mängder data.
-* **[!DNL Sensei ML Framework]:** Modellutveckling med möjlighet att träna och poängsätta data, liksom att skapa recept med ett enda klick.
-* **[!DNL Experience Data Model (XDM)]:** Standardisering och interoperabilitet är viktiga begrepp bakom Adobe Experience Platform. [Experience Data Model (XDM)](https://www.adobe.com/go/xdm-home-en)som drivs av Adobe, är ett försök att standardisera kundupplevelsedata och definiera scheman för kundupplevelsehantering.
+* **[!DNL Catalog Service]:** Få åtkomst till och utforska datauppsättningar med läs- och skrivfunktioner.
+* **[!DNL Query Service]:** Få åtkomst till och utforska datauppsättningar med SQL, vilket ger lägre dataåtkomstkostnader vid hantering av stora mängder data.
+* **[!DNL Sensei ML Framework]:** Modellutveckling med möjlighet att träna och poängsätta data, samt att skapa recept med ett enda klick.
+* **[!DNL Experience Data Model (XDM)]:** Standardisering och interoperabilitet är nyckelbegrepp bakom Adobe Experience Platform. [Experience Data Model (XDM)](https://www.adobe.com/go/xdm-home-en), som drivs av Adobe, är ett försök att standardisera kundupplevelsedata och definiera scheman för kundupplevelsehantering.
 
 >[!NOTE]
 >
->Några [!DNL Platform] tjänstintegreringar på [!DNL JupyterLab] begränsas till särskilda kärnor. Se avsnittet om [kernels](#kernels) för mer information.
+>Vissa [!DNL Platform]-tjänstintegreringar på [!DNL JupyterLab] är begränsade till specifika kärnor. Mer information finns i avsnittet [kernels](#kernels).
 
 ## Viktiga funktioner och vanliga åtgärder
 
-Information om viktiga funktioner i [!DNL JupyterLab] och instruktioner om hur man utför vanliga åtgärder finns i avsnitten nedan:
+Information om de viktigaste funktionerna i [!DNL JupyterLab] och instruktioner om hur du utför vanliga åtgärder finns i avsnitten nedan:
 
 * [Åtkomst till JupyterLab](#access-jupyterlab)
 * [Gränssnittet JupyterLab](#jupyterlab-interface)
@@ -60,38 +60,38 @@ Information om viktiga funktioner i [!DNL JupyterLab] och instruktioner om hur m
 * [Kernel-sessioner](#kernel-sessions)
 * [Startprogram](#launcher)
 
-### Öppna [!DNL JupyterLab] {#access-jupyterlab}
+### Åtkomst [!DNL JupyterLab] {#access-jupyterlab}
 
-I [Adobe Experience Platform](https://platform.adobe.com), markera **[!UICONTROL Notebooks]** från den vänstra navigeringskolumnen. Ge lite tid till [!DNL JupyterLab] för att initiera.
+I [Adobe Experience Platform](https://platform.adobe.com) väljer du **[!UICONTROL Notebooks]** i den vänstra navigeringskolumnen. Ge [!DNL JupyterLab] lite tid att initiera helt.
 
 ![](../images/jupyterlab/user-guide/access_jupyterlab.png)
 
-### [!DNL JupyterLab] gränssnitt {#jupyterlab-interface}
+### Gränssnitt för [!DNL JupyterLab] {#jupyterlab-interface}
 
-The [!DNL JupyterLab] -gränssnittet består av en menyrad, ett infällbart vänster sidofält och huvudarbetsytan som innehåller flikar med dokument och aktiviteter.
+Gränssnittet [!DNL JupyterLab] består av en menyrad, ett infällt vänster sidofält och huvudarbetsytan som innehåller flikar med dokument och aktiviteter.
 
-**Menyrad**
+**Menyraden**
 
 Menyraden högst upp i gränssnittet har menyer på översta nivån som visar åtgärder som är tillgängliga i [!DNL JupyterLab] med sina kortkommandon:
 
-* **Fil:** Åtgärder för filer och kataloger
+* **Fil:** Åtgärder som rör filer och kataloger
 * **Redigera:** Åtgärder som rör redigering av dokument och andra aktiviteter
 * **Visa:** Åtgärder som ändrar utseendet på [!DNL JupyterLab]
-* **Kör:** Åtgärder för att köra kod i olika aktiviteter, t.ex. anteckningsböcker och kodkonsoler
+* **Kör:** Åtgärder för att köra kod i olika aktiviteter, till exempel anteckningsböcker och kodkonsoler
 * **Kernel:** Åtgärder för hantering av kärnor
-* **Tabbar:** En lista över öppna dokument och aktiviteter
+* **Flikar:** En lista över öppna dokument och aktiviteter
 * **Inställningar:** Vanliga inställningar och en avancerad inställningsredigerare
-* **Hjälp:** En lista med [!DNL JupyterLab] och kernelhjälplänkar
+* **Hjälp:** En lista med [!DNL JupyterLab]- och kernel-hjälplänkar
 
 **Vänster sidofält**
 
 Den vänstra sidlisten innehåller klickbara flikar som ger åtkomst till följande funktioner:
 
-* **Filwebbläsare:** En lista över sparade anteckningsboksdokument och kataloger
-* **Datautforskaren:** Bläddra bland, få tillgång till och utforska datauppsättningar och scheman
+* **Filläsaren:** En lista över sparade anteckningsboksdokument och kataloger
+* **Datautforskaren:** Bläddra, få åtkomst till och utforska datauppsättningar och scheman
 * **Löpande kärnor och terminaler:** En lista över aktiva kernel- och terminalsessioner med möjlighet att avsluta
 * **Kommandon:** En lista med användbara kommandon
-* **Cellkontroll:** En cellredigerare som ger tillgång till verktyg och metadata som är användbara när du ställer in en anteckningsbok för presentationsändamål
+* **Cellkontroll:** En cellredigerare som ger åtkomst till verktyg och metadata som är användbara när du konfigurerar en anteckningsbok för presentationsändamål
 * **tabbar:** En lista med öppna flikar
 
 Markera en flik för att visa dess funktioner, eller markera den på en utökad flik för att komprimera den vänstra sidopanelen så som visas nedan:
@@ -100,13 +100,13 @@ Markera en flik för att visa dess funktioner, eller markera den på en utökad 
 
 **Huvudarbetsyta**
 
-Huvudarbetsytan i [!DNL JupyterLab] I kan du ordna dokument och andra aktiviteter i flikpaneler som kan storleksändras eller delas upp. Dra en flik till mitten av en tabbpanel för att migrera fliken. Dela upp en panel genom att dra en flik till vänster, höger, överst eller nederst på panelen:
+Med huvudarbetsytan i [!DNL JupyterLab] kan du ordna dokument och andra aktiviteter i flikpaneler som kan storleksändras eller delas upp. Dra en flik till mitten av en tabbpanel för att migrera fliken. Dela upp en panel genom att dra en flik till vänster, höger, överst eller nederst på panelen:
 
 ![](../images/jupyterlab/user-guide/main_work_area.gif)
 
 ### GPU- och minnesserverkonfiguration i [!DNL Python]/R
 
-I [!DNL JupyterLab] markera kugghjulsikonen i det övre högra hörnet för att öppna *Konfiguration av anteckningsboksserver*. Du kan växla GPU på och tilldela den mängd minne du behöver med hjälp av skjutreglaget. Hur mycket minne du kan allokera beror på hur mycket organisationen har allokerat. Välj **[!UICONTROL Update configs]** att spara.
+I [!DNL JupyterLab] väljer du kugghjulsikonen i det övre högra hörnet för att öppna *serverkonfigurationen för bärbara datorer*. Du kan växla GPU på och tilldela den mängd minne du behöver med hjälp av skjutreglaget. Hur mycket minne du kan allokera beror på hur mycket organisationen har allokerat. Välj **[!UICONTROL Update configs]** att spara.
 
 >[!NOTE]
 >
@@ -116,9 +116,9 @@ I [!DNL JupyterLab] markera kugghjulsikonen i det övre högra hörnet för att 
 
 ### Avsluta och starta om [!DNL JupyterLab]
 
-I [!DNL JupyterLab]kan du avsluta din session för att förhindra att ytterligare resurser används. Börja med att välja **ikon för ström** ![ikon för ström](../images/jupyterlab/user-guide/power_button.png)väljer **[!UICONTROL Shut Down]** från poveren som verkar avsluta sessionen. Anteckningsbokssessioner avslutas automatiskt efter 12 timmars ingen aktivitet.
+Om du använder [!DNL JupyterLab] kan du avsluta din session för att förhindra att fler resurser används. Börja med att välja **strömikonen** ![strömikonen](../images/jupyterlab/user-guide/power_button.png) och välj sedan **[!UICONTROL Shut Down]** i den port som visas för att avsluta sessionen. Anteckningsbokssessioner avslutas automatiskt efter 12 timmars ingen aktivitet.
 
-Starta om [!DNL JupyterLab]väljer du **omstartsikon** ![omstartsikon](../images/jupyterlab/user-guide/restart_button.png) placerad direkt till vänster om strömikonen och välj **[!UICONTROL Restart]** från poveren som visas.
+Om du vill starta om [!DNL JupyterLab] väljer du ikonen **starta om** ![starta om ](../images/jupyterlab/user-guide/restart_button.png) som finns direkt till vänster om strömikonen och väljer sedan **[!UICONTROL Restart]** i den port som visas.
 
 ![avsluta jupyterlab](../images/jupyterlab/user-guide/shutdown-jupyterlab.gif)
 
@@ -130,17 +130,17 @@ Kodceller är det primära innehållet i anteckningsböcker. De innehåller käl
 
 Vanliga cellåtgärder beskrivs nedan:
 
-* **Lägg till en cell:** Klicka på plustecknet (**+**) på anteckningsbokens meny för att lägga till en tom cell. Nya celler placeras under den cell som för närvarande interagerar med, eller i slutet av anteckningsboken om ingen viss cell är i fokus.
+* **Lägg till en cell:** Klicka på plustecknet (**+**) på anteckningsboksmenyn för att lägga till en tom cell. Nya celler placeras under den cell som för närvarande interagerar med, eller i slutet av anteckningsboken om ingen viss cell är i fokus.
 
 * **Flytta en cell:** Placera markören till höger om cellen som du vill flytta, klicka och dra sedan cellen till en ny plats. Om du flyttar en cell från en anteckningsbok till en annan kopieras cellen tillsammans med dess innehåll.
 
-* **Kör en cell:** Klicka på texten i cellen som du vill köra och klicka sedan på **play** ikon (**Tourism**) på anteckningsbokens meny. En asterisk (**\***) visas i cellens körningsräknare när kärnan bearbetar körningen och ersätts med ett heltal när den är klar.
+* **Kör en cell:** Klicka på brödtexten i den cell som du vill köra och klicka sedan på ikonen **play** (**▶**) på anteckningsbokens meny. En asterisk (**\***) visas i cellens körningsräknare när kärnan bearbetar körningen och ersätts med ett heltal vid slutförandet.
 
-* **Ta bort en cell:** Klicka på cellen som du vill ta bort och klicka sedan på **sax** ikon.
+* **Ta bort en cell:** Klicka på cellen som du vill ta bort och klicka sedan på ikonen **sax** .
 
 ### Kernlar {#kernels}
 
-Anteckningsbokskärnor är språkspecifika datormotorer för bearbetning av bärbara datorer. Förutom [!DNL Python], [!DNL JupyterLab] har ytterligare språkstöd i R, PySpark och [!DNL Spark] (Scala). När du öppnar ett anteckningsboksdokument startas den tillhörande kärnan. När en anteckningsbokscell körs utför kärnan beräkningen och ger resultat som kan ta mycket processorkraft och minnesresurser i anspråk. Observera att allokerat minne inte frigörs förrän kärnan stängs av.
+Anteckningsbokskärnor är språkspecifika datormotorer för bearbetning av bärbara datorer. Utöver [!DNL Python] har [!DNL JupyterLab] ytterligare språkstöd i R, PySpark och [!DNL Spark] (Scala). När du öppnar ett anteckningsboksdokument startas den tillhörande kärnan. När en anteckningsbokscell körs utför kärnan beräkningen och ger resultat som kan ta mycket processorkraft och minnesresurser i anspråk. Observera att allokerat minne inte frigörs förrän kärnan stängs av.
 
 Vissa funktioner är begränsade till särskilda kärnor enligt tabellen nedan:
 
@@ -148,15 +148,15 @@ Vissa funktioner är begränsade till särskilda kärnor enligt tabellen nedan:
 | :----: | :--------------------------: | :-------------------- |
 | **[!DNL Python]** | Ja | <ul><li>[!DNL Sensei ML Framework]</li><li>[!DNL Catalog Service]</li><li>[!DNL Query Service]</li></ul> |
 | **R** | Ja | <ul><li>[!DNL Sensei ML Framework]</li><li>[!DNL Catalog Service]</li></ul> |
-| **Scala** | Nej | <ul><li>[!DNL Sensei ML Framework]</li><li>[!DNL Catalog Service]</li></ul> |
+| **Skala** | Nej | <ul><li>[!DNL Sensei ML Framework]</li><li>[!DNL Catalog Service]</li></ul> |
 
 ### Kernel-sessioner {#kernel-sessions}
 
-Varje aktiv anteckningsbok eller aktivitet på [!DNL JupyterLab] använder en kernel-session. Alla aktiva sessioner kan hittas genom att utöka **Löpande terminaler och kärnor** från vänster sidospalt. Den bärbara datorns typ och tillstånd för kärnan kan identifieras genom att man observerar den övre högra delen av gränssnittet. I diagrammet nedan är anteckningsbokens tillhörande kärna **[!DNL Python]3** och det aktuella läget representeras av en grå cirkel till höger. En ihålig cirkel innebär en inaktiv kärna och en fylld cirkel betyder en upptagen kärna.
+Varje aktiv anteckningsbok eller aktivitet på [!DNL JupyterLab] använder en kernel-session. Alla aktiva sessioner kan hittas genom att utöka fliken **Löpande terminaler och kärnor** från vänster sidofält. Den bärbara datorns typ och tillstånd för kärnan kan identifieras genom att man observerar den övre högra delen av gränssnittet. I diagrammet nedan är anteckningsbokens associerade kärna **[!DNL Python]3** och det aktuella läget representeras av en grå cirkel till höger. En ihålig cirkel innebär en inaktiv kärna och en fylld cirkel betyder en upptagen kärna.
 
 ![](../images/jupyterlab/user-guide/kernel_and_state_1.png)
 
-Om kärnan är avstängd eller inaktiv under en längre tid, ska du **Ingen kernel!** med en fylld cirkel visas. Aktivera en kärna genom att klicka på kernelstatusen och välja lämplig kerneltyp enligt nedan:
+Om kärnan är avstängd eller inaktiv under en längre period **Ingen kernel!** med en fylld cirkel visas. Aktivera en kärna genom att klicka på kernelstatusen och välja lämplig kerneltyp enligt nedan:
 
 ![](../images/jupyterlab/user-guide/switch_kernel.gif)
 
@@ -164,18 +164,18 @@ Om kärnan är avstängd eller inaktiv under en längre tid, ska du **Ingen kern
 
 [//]: # (Talk about the different Notebooks, introduce that certain starter notebooks are limited to particular kernels)
 
-Den anpassade *Startprogram* innehåller användbara mallar för bärbara datorer för de kernel som stöds som hjälper dig att komma igång snabbt, inklusive:
+Med den anpassade *startguiden* får du användbara anteckningsboksmallar för de paneler som stöds så att du snabbt kan komma igång med din uppgift, inklusive:
 
 | Mall | Beskrivning |
 | --- | --- |
 | Tom | En tom anteckningsboksfil. |
 | Starter | En förfylld anteckningsbok som visar datautforskandet med exempeldata. |
-| Detaljhandel | En förfylld anteckningsbok med [säljrecept](../pre-built-recipes/retail-sales.md) med exempeldata. |
-| Recipe Builder | En anteckningsboksmall för att skapa ett recept i [!DNL JupyterLab]. Den är förfylld med kod och kommentarer som demonstrerar och beskriver processen att skapa recept. Se [självstudiekurs om anteckningsbok till recept](https://www.adobe.com/go/data-science-create-recipe-notebook-tutorial-en) för en detaljerad genomgång. |
-| [!DNL Query Service] | En förfylld anteckningsbok som visar hur [!DNL Query Service] direkt i [!DNL JupyterLab] med exempelarbetsflöden som analyserar data i stor skala. |
+| Detaljhandel | En förfylld anteckningsbok med [säljrecept](../pre-built-recipes/retail-sales.md) för detaljhandeln som använder exempeldata. |
+| Recipe Builder | En anteckningsboksmall för att skapa ett recept i [!DNL JupyterLab]. Den är förfylld med kod och kommentarer som demonstrerar och beskriver processen att skapa recept. I [anteckningsboken finns självstudiekursen](https://www.adobe.com/go/data-science-create-recipe-notebook-tutorial-en) om du vill se en detaljerad genomgång. |
+| [!DNL Query Service] | En förfylld anteckningsbok som visar hur [!DNL Query Service] används direkt i [!DNL JupyterLab] med medföljande exempelarbetsflöden som analyserar data i stor skala. |
 | XDM-händelser | En förfylld anteckningsbok som visar datautforskande av Experience Event-data efter värde, med fokus på gemensamma funktioner i datastrukturen. |
 | XDM-frågor | En förfylld anteckningsbok som visar exempel på affärsfrågor om Experience Event-data. |
-| Aggregera | En förfylld anteckningsbok som visar exempel på arbetsflöden för att samla stora mängder data i mindre, hanterbara segment. |
+| Aggregering | En förfylld anteckningsbok som visar exempel på arbetsflöden för att samla stora mängder data i mindre, hanterbara segment. |
 | Klustring | En förfylld anteckningsbok som demonstrerar maskininlärningsmodelleringsprocessen från början till slut med hjälp av klusteralgoritmer. |
 
 Vissa mallar för bärbara datorer är begränsade till vissa kärnor. Malltillgängligheten för varje kärna mappas i följande tabell:
@@ -190,7 +190,7 @@ Vissa mallar för bärbara datorer är begränsade till vissa kärnor. Malltillg
         <th><strong>[!DNL Query Service]</strong></th>
         <th><strong>XDM-händelser</strong></th>
         <th><strong>XDM-frågor</strong></th>
-        <th><strong>Aggregera</strong></th>
+        <th><strong>Aggregering</strong></th>
         <th><strong>Klustring</strong></th>
     </tr>
     <tr>
@@ -243,17 +243,17 @@ Vissa mallar för bärbara datorer är begränsade till vissa kärnor. Malltillg
     </tr>
 </table>
 
-Så här öppnar du en ny *Startprogram*, klicka **Arkiv > Nytt startprogram**. Du kan även utöka **Filläsare** från vänster sidofält och klicka på plustecknet (**+**):
+Om du vill öppna en ny *startfunktion* klickar du på **Arkiv > Ny startfunktion**. Du kan också expandera **filläsaren** från vänster sidofält och klicka på plustecknet (**+**):
 
 ![](../images/jupyterlab/user-guide/new_launcher.gif)
 
 ## Nästa steg
 
-Om du vill veta mer om var och en av de bärbara datorer som stöds och hur du använder dem går du till [Dataåtkomst för Jupyterlab-anteckningsböcker](./access-notebook-data.md) utvecklarhandbok. Den här guiden fokuserar på hur du använder JupyterLab-anteckningsböcker för att få tillgång till dina data, inklusive läsning, skrivning och frågor. Dataåtkomstguiden innehåller även information om den maximala mängden data som kan läsas av varje bärbar dator som stöds.
+Om du vill veta mer om de bärbara datorer som stöds och hur du använder dem kan du gå till utvecklarhandboken för [Jupyterlab-anteckningsböcker för dataåtkomst](./access-notebook-data.md) . Den här guiden fokuserar på hur du använder JupyterLab-anteckningsböcker för att få tillgång till dina data, inklusive läsning, skrivning och frågor. Dataåtkomstguiden innehåller även information om den maximala mängden data som kan läsas av varje bärbar dator som stöds.
 
 ## Bibliotek som stöds {#supported-libraries}
 
-Kopiera och klistra in om du vill se en lista över paket som stöds i Python, R och PySpark `!conda list` i en ny cell och kör sedan cellen. En lista över paket som stöds visas i alfabetisk ordning.
+Om du vill visa en lista över paket som stöds i Python, R och PySpark kopierar och klistrar du in `!conda list` i en ny cell och kör sedan cellen. En lista över paket som stöds visas i alfabetisk ordning.
 
 ![exempel](../images/jupyterlab/user-guide/libraries.PNG)
 

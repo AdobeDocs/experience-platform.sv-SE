@@ -13,18 +13,18 @@ ht-degree: 0%
 
 Om din organisation har flera tillgängliga kontrollpaneler i Adobe Experience Platform kan du granska kontrollpanelens lager i användargränssnittet.
 
-Om du vill visa de instrumentpaneler som din organisation har konfigurerat väljer du **[!UICONTROL Dashboards]** i den vänstra navigeringen och välj sedan **[!UICONTROL Browse]** -fliken.
+Om du vill visa de instrumentpaneler som din organisation har konfigurerat väljer du **[!UICONTROL Dashboards]** i den vänstra navigeringen och väljer sedan fliken **[!UICONTROL Browse]**.
 
-En lista över alla instrumentpaneler som är tillgängliga på din plattformsinstans visas under [!UICONTROL Browse] -fliken. Detta inkluderar integrerade kontrollpaneler som skapats av organisationen och som har konfigurerats via tredjepartsprogram.
+En lista över alla instrumentpaneler som är tillgängliga på din plattformsinstans visas på fliken [!UICONTROL Browse]. Detta inkluderar integrerade kontrollpaneler som skapats av organisationen och som har konfigurerats via tredjepartsprogram.
 
-![Fliken Bläddra i kontrollpanelsavsnittet i användargränssnittet.](./images/inventory/browse-tab.png)
+![Fliken Bläddra i instrumentpanelsdelen av användargränssnittet.](./images/inventory/browse-tab.png)
 
 Du kan visa en enskild kontrollpanel genom att välja namnet på kontrollpanelen i listan.
 
-![Fliken Bläddra med namnet på en kontrollpanel markerat.](./images/inventory/dashboard-name.png)
+![Fliken Bläddra med namnet på en instrumentpanel markerat.](./images/inventory/dashboard-name.png)
 
 När du väljer det här alternativet öppnas instrumentpanelen antingen i plattformsgränssnittet eller i en helt integrerad programarbetsyta där du måste logga in med de nödvändiga inloggningsuppgifterna.
 
 ## Skapa anpassade instrumentpaneler
 
-Med Adobe Experience Platform Dashboards kan ni skapa och hantera anpassade kontrollpaneler där ni kan skapa, lägga till och redigera anpassade widgetar för att visualisera viktiga nyckeltal som är relevanta för organisationen. Se [handbok för användardefinierade instrumentpaneler](./user-defined-dashboards.md) om du vill ha fullständiga anvisningar om hur du skapar och konfigurerar anpassade kontrollpaneler.
+Med Adobe Experience Platform Dashboards kan ni skapa och hantera anpassade kontrollpaneler där ni kan skapa, lägga till och redigera anpassade widgetar för att visualisera viktiga nyckeltal som är relevanta för organisationen. I handboken [för användardefinierade kontrollpaneler](./user-defined-dashboards.md) finns fullständiga anvisningar om hur du skapar och konfigurerar anpassade kontrollpaneler.

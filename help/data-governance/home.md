@@ -20,7 +20,7 @@ ht-degree: 0%
 >additional-url="https://experienceleague.adobe.com/docs/experience-platform/data-governance/home.html" text="Datastyrning - översikt"
 >additional-url="https://experienceleague.adobe.com/docs/experience-platform/data-governance/labels/overview.html" text="Översikt över etiketter för datastyrning"
 
-En av de viktigaste funktionerna i Adobe Experience Platform är att samla data från olika affärssystem så att marknadsförarna bättre kan identifiera, förstå och engagera sina kunder. Dessa data kan vara föremål för användarbegränsningar som fastställts av din organisation eller av juridiska bestämmelser. Det är därför viktigt att se till att era dataåtgärder inom [!DNL Platform] är kompatibla med dataanvändningsprinciper.
+En av de viktigaste funktionerna i Adobe Experience Platform är att samla data från olika affärssystem så att marknadsförarna bättre kan identifiera, förstå och engagera sina kunder. Dessa data kan vara föremål för användarbegränsningar som fastställts av din organisation eller av juridiska bestämmelser. Det är därför viktigt att se till att dina dataåtgärder i [!DNL Platform] är kompatibla med dataanvändningsprinciper.
 
 Hantera kunddata och säkerställ att regler, begränsningar och regler som gäller för dataanvändning följs med Adobe Experience Platform Data Governance. Datastyrning spelar en viktig roll inom Experience Platform på olika nivåer, inklusive katalogisering, datalinje, etikettering av dataanvändning, dataanvändningspolicyer och kontroll av användningen av data för marknadsföringsåtgärder.
 
@@ -34,7 +34,7 @@ Som begrepp är datastyrning varken automatisk eller sker i ett vakuum. Det som 
 
 Även om datastyrning bör vara ansvaret för varje enskild person i organisationen finns det några av de viktigaste rollerna inom datastyrningscykeln:
 
-![Grafik för att förmedla de fyra rollerna för datastyrning, med citat om respektive rolls arbetsuppgifter.](./images/overview/roles.png)
+![Bild som förmedlar de fyra datastyrningsrollerna, med citattecken om rollernas skyldigheter.](./images/overview/roles.png)
 
 ### Stegvis data {#data-steward}
 
@@ -57,9 +57,9 @@ Datastyrningsramverket förenklar och effektiviserar processen att kategorisera 
 
 Det finns tre viktiga element i ramverket för datastyrning: etiketter, policyer och verkställighet.
 
-1. **Etiketter:** Klassificera data som återspeglar integritetsrelaterade överväganden och avtalsvillkor så att de överensstämmer med regler och organisationsprofiler.
-1. **Profiler:** Beskriv vilka typer av marknadsföringsåtgärder som är tillåtna eller inte får vidtas på specifika data.
-1. **Tvingande:** Använder policyramverket för att ge råd och tillämpa policyer för olika dataåtkomstmönster.
+1. **Etiketter:** Klassificera data som återspeglar sekretessrelaterade överväganden och avtalsvillkor så att de följer regler och organisationsprofiler.
+1. **Principer:** Beskriv vilka typer av marknadsföringsåtgärder som tillåts eller inte får vidtas för specifika data.
+1. **Tvingande:** Använder policyramverket för att ge råd och tillämpa principer över olika dataåtkomstmönster.
 
 ## Dataanvändningsetiketter {#data-usage-labels}
 
@@ -67,19 +67,19 @@ Med Datastyrning kan datasegmentering tillämpa användningsetiketter på schema
 
 Ramverket för datastyrning innehåller fördefinierade etiketter för dataanvändning som kan användas för att kategorisera data på tre sätt:
 
-![De tre kategorierna för dataanvändningsetiketter.](./images/overview/label-categories.png)
+![De tre etiketterna för dataanvändning.](./images/overview/label-categories.png)
 
-* **Kontraktets&quot;C&quot;-dataetiketter:** Märk och kategorisera data som har avtalsmässiga skyldigheter eller som är relaterade till policyer för styrning av kunddata.
-* **Identitet&quot;I&quot;-dataetiketter:** Märk och kategorisera data som kan identifiera eller kontakta en viss person.
-* **Känsliga&quot;S&quot;-dataetiketter:** Märk och kategorisera data relaterade till känsliga data, t.ex. geografiska data.
+* **Dataetiketter för kontrakt C:** Ange och kategorisera data som har avtalsmässiga skyldigheter eller som är relaterade till policyer för kunddatastyrning.
+* **Identitet&quot;I&quot;-dataetiketter:** Ange etiketter och kategorisera data som kan identifiera eller kontakta en viss person.
+* **Känsliga dataetiketter för&quot;S&quot;:** Ange etiketter och kategorisera data som är relaterade till känsliga data, till exempel geografiska data.
 
 >[!NOTE]
 >
->Se guiden på [etiketter för dataanvändning](labels/reference.md) för en fullständig lista över tillgängliga etiketter och definitioner för varje etiketttyp.
+>I guiden om [dataanvändningsetiketter som stöds](labels/reference.md) finns en fullständig lista över tillgängliga etiketter och definitioner för varje etiketttyp.
 
 Etiketter kan användas när som helst, vilket ger flexibilitet i hur du väljer att styra data. Bästa praxis uppmuntrar till etikettdata när de hämtas till Experience Platform, eller så snart data blir tillgängliga i [!DNL Platform].
 
-Se översikten på [etiketter för dataanvändning](./labels/overview.md) om du vill ha mer information om hur dataanvändningsetiketter används för att säkerställa regelefterlevnad för datastyrning.
+Mer information om hur dataanvändningsetiketter används för att framtvinga regelefterlevnad för datastyrning finns i översikten för [dataanvändningsetiketter](./labels/overview.md).
 
 ## Dataanvändningspolicyer {#data-usage-policies}
 
@@ -91,9 +91,9 @@ Ett exempel på en marknadsföringsåtgärd kan vara en önskan att exportera en
 Det finns två typer av principer:
 
 * **[!UICONTROL Data governance policy]**: Begränsa dataaktiveringen baserat på den marknadsföringsåtgärd som utförs och de dataanvändningsetiketter som medföljer data i fråga.
-* **[!UICONTROL Consent policy]**: Filtrera de profiler som kan aktiveras för [mål](../destinations/home.md) baserat på kundernas samtycke eller önskemål.
+* **[!UICONTROL Consent policy]**: Filtrera de profiler som kan aktiveras till [mål](../destinations/home.md) baserat på dina kunders samtycke eller önskemål.
 
-När dataanvändningsetiketterna har tillämpats kan datafördelare skapa principer med hjälp av principtjänstens API eller användargränssnittet i Experience Platform. Mer information om dataanvändningspolicyer och marknadsföringsåtgärder finns i [profiler, översikt](./policies/overview.md).
+När dataanvändningsetiketterna har tillämpats kan datafördelare skapa principer med hjälp av principtjänstens API eller användargränssnittet i Experience Platform. Mer information om dataanvändningsprinciper och marknadsföringsåtgärder finns i [principöversikt](./policies/overview.md).
 
 >[!IMPORTANT]
 >
@@ -101,7 +101,7 @@ När dataanvändningsetiketterna har tillämpats kan datafördelare skapa princi
 
 ## Nästa steg
 
-Detta dokument gav en introduktion på hög nivå till datastyrning och ramverket för datastyrning. Du kan nu fortsätta till [användarhandbok för dataanvändningsrubriker](labels/user-guide.md) och börja lägga till användningsetiketter i era upplevelsedata.
+Detta dokument gav en introduktion på hög nivå till datastyrning och ramverket för datastyrning. Du kan nu fortsätta med användarhandboken för [dataanvändningsetiketter](labels/user-guide.md) och börja lägga till användningsetiketter till dina upplevelsedata.
 
 ## Bilaga
 
@@ -111,20 +111,20 @@ Följande avsnitt innehåller ytterligare information om datastyrning.
 
 I följande tabell beskrivs nyckeltermer för datastyrning och ramverket för datastyrning.
 
-| Term | Definition |
+| Villkor | Definition |
 |---|---|
 | **Kontraktsetiketter** | Kontraktets&quot;C&quot;-etiketter används för att kategorisera data som har avtalsmässiga skyldigheter eller som är relaterade till organisationens policyer för datastyrning. |
-| **Data för flera webbplatser** | Data på olika platser är en kombination av data från flera platser. Data för olika webbplatser omfattar både data på plats och utanför platsen, eller en kombination av data från flera externa källor. |
+| **Data på flera webbplatser** | Data på olika platser är en kombination av data från flera platser. Data för olika webbplatser omfattar både data på plats och utanför platsen, eller en kombination av data från flera externa källor. |
 | **Datastyrning** | Datastyrning omfattar strategier och tekniker som används för att säkerställa att data överensstämmer med regler och företagspolicyer när det gäller dataanvändning. |
-| **Stegvis data** | Dataförvaltningarna är den person som ansvarar för förvaltning, tillsyn och verkställighet av en organisations datatillgångar. Ett dataflöde säkerställer också att policyer för datastyrning skyddas och upprätthålls så att de följer myndighetsregler och organisationsregler. |
+| **Stega data** | Dataförvaltningarna är den person som ansvarar för förvaltning, tillsyn och verkställighet av en organisations datatillgångar. Ett dataflöde säkerställer också att policyer för datastyrning skyddas och upprätthålls så att de följer myndighetsregler och organisationsregler. |
 | **Dataanvändningsetiketter** | Etiketter för dataanvändning ger användarna möjlighet att kategorisera data som speglar integritetsrelaterade överväganden och avtalsvillkor så att de uppfyller regler och företagspolicyer. |
 | **Datauppsättningsetiketter** | Etiketter kan läggas till i ett schema. Alla fält i en datauppsättning ärver schemats etiketter. |
 | **Fältetiketter** | Fältetiketter är datastyrningsetiketter som antingen ärvs från ett schema eller används direkt i ett fält. Datastyrningsetiketter som används i ett fält ärvs inte upp till schemanivå. |
 | **Geofence** | En geofence är en virtuell geografisk gräns, som definieras av GPS- eller RFID-teknik, som gör att programvara kan utlösa ett svar när en mobil enhet kommer in i eller lämnar ett visst område. |
 | **Identitetsetiketter** | Identitet&quot;I&quot;-etiketter används för att kategorisera data som kan identifiera eller kontakta en viss person. |
-| **Intressebaserad målinriktning** | Intressebaserad målinriktning, som också kallas personalisering, uppstår om följande tre villkor uppfylls:<br>Data som samlas in på plats är<br><ul><li>Används för att dra slutsatser om en användares intresse,</li><li>Används i ett annat sammanhang, t.ex. på en annan webbplats eller i en annan app (utanför webbplatsen)</li><li>Används för att välja vilket innehåll eller vilka annonser som ska hanteras baserat på dessa slutsatser.</li></ul> |
+| **Intressebaserad målinriktning** | Intressebaserad målinriktning, som också kallas personalisering, inträffar om följande tre villkor uppfylls:<br>Data som samlas in på webbplatsen är <br><ul><li>Används för att dra slutsatser om en användares intresse,</li><li>Används i ett annat sammanhang, t.ex. på en annan webbplats eller i en annan app (utanför webbplatsen)</li><li>Används för att välja vilket innehåll eller vilka annonser som ska hanteras baserat på dessa slutsatser.</li></ul> |
 | **Marknadsföringsåtgärd** | En marknadsföringsåtgärd, inom ramen för datastyrningsramverket, är en åtgärd som en datakonsument i Experience Platform vidtar, där det finns ett behov av att kontrollera överträdelser av dataanvändningspolicyer |
-| **Policy** | I ramverket för datastyrning är en regel som beskriver vilka typer av marknadsföringsåtgärder som tillåts eller inte får vidtas för specifika data. |
+| **Princip** | I ramverket för datastyrning är en regel som beskriver vilka typer av marknadsföringsåtgärder som tillåts eller inte får vidtas för specifika data. |
 | **Schemaetiketter** | Hantera etiketterna för datastyrning, samtycke och åtkomstkontroll på schemanivå. Detta sprider etiketterna till alla datauppsättningar som använder det schemat. |
 | **Känsliga etiketter** | Känsliga S-etiketter används för att kategorisera data som du, och din organisation, anser vara känsliga. |
 

@@ -14,35 +14,35 @@ ht-degree: 0%
 
 I Adobe Experience Platform kan du visa och interagera med organisationens data via flera kontrollpaneler. Du kan även uppdatera vissa instrumentpaneler genom att lägga till nya widgetar i instrumentpanelsvyn. I Adobe finns ett urval av standardwidgetar som du kan välja att lägga till på dina instrumentpaneler.
 
-The [[!UICONTROL Profiles]](../guides/profiles.md#default-widgets), [[!UICONTROL Audiences]](../guides/audiences.md#default-widgets)och [[!UICONTROL Destinations]](../guides/destinations.md#default-widgets) Instrumentpaneler har en standardwidget som laddas ut när en ny plattformsinstans skapas. Den här handboken innehåller stegvisa instruktioner för hur du lägger till standardwidgetar för att anpassa [!UICONTROL Profiles], [!UICONTROL Audiences]och [!UICONTROL Destinations] kontrollpaneler i plattformsgränssnittet.
+Kontrollpanelerna [[!UICONTROL Profiles]](../guides/profiles.md#default-widgets), [[!UICONTROL Audiences]](../guides/audiences.md#default-widgets) och [[!UICONTROL Destinations]](../guides/destinations.md#default-widgets) har båda en standardwidget för inläsning när en ny plattformsinstans skapas. Den här handboken innehåller stegvisa anvisningar om hur du lägger till standardwidgetar för att anpassa [!UICONTROL Profiles]-, [!UICONTROL Audiences]- och [!UICONTROL Destinations]-instrumentpanelerna i plattformsgränssnittet.
 
 >[!NOTE]
 >
 >Alla uppdateringar som görs på kontrollpanelerna görs per organisation och per sandlåda.
 
-Om du vill veta mer om anpassade widgetar kan du läsa guiden för [skapa anpassade widgetar](custom-widgets.md).
+Mer information om anpassade widgetar finns i guiden för [att skapa anpassade widgetar](custom-widgets.md).
 
 ## Widget-bibliotek {#widget-library}
 
-Den här guiden kräver åtkomst till [!UICONTROL Widget library] i Experience Platform. Om du vill veta mer om widgetbiblioteket och hur du kommer åt det i användargränssnittet börjar du med att läsa [widgetbibliotek - översikt](widget-library.md).
+Den här handboken kräver åtkomst till [!UICONTROL Widget library] i Experience Platform. Om du vill veta mer om widgetbiblioteket och hur du kommer åt det i användargränssnittet kan du börja med att läsa översikten för [widgetbiblioteket](widget-library.md).
 
 ## Komma igång med standardwidgetar {#standard-widgets}
 
-I widgetbiblioteket **[!UICONTROL Standard]** -fliken innehåller widgetar som har skapats av Adobe, uppdelade i kategorier baserat på tillgängliga instrumentpaneler.
+I widgetbiblioteket innehåller fliken **[!UICONTROL Standard]** widgetar som skapats av Adobe, uppdelade i kategorier baserat på tillgängliga instrumentpaneler.
 
-Den valda kategorin matchar den instrumentpanel som du angav widgetbiblioteket från. Det innebär att om du valde widgetbiblioteket inifrån [!UICONTROL Profiles] kontrollpanelen, [!UICONTROL Profiles] är markerad och de andra kategorierna är nedtonade.
+Den valda kategorin matchar den instrumentpanel som du angav widgetbiblioteket från. Det innebär att om du valde widgetbiblioteket från kontrollpanelen [!UICONTROL Profiles] väljs kategorin [!UICONTROL Profiles] och de andra kategorierna visas nedtonade.
 
 Standardwidgetarna för den valda kategorin visas. Varje widget visas som ett kort med rubrik, beskrivning och en exempelvisualisering av måttet.
 
 >[!NOTE]
 >
->Det går bara att lägga till widgetar i instrumentpanelen som matchar den valda kategorin. Endast widgetar från [!UICONTROL Profiles] kan läggas till i [!UICONTROL Profiles] kontrollpanel.
+>Det går bara att lägga till widgetar i instrumentpanelen som matchar den valda kategorin. Till exempel kan bara widgetar från kategorin [!UICONTROL Profiles] läggas till på kontrollpanelen [!UICONTROL Profiles].
 
 ![Widgetbibliotekets arbetsyta med fliken Standard och tillgängliga kategorier markerade.](../images/customization/standard-widgets.png)
 
 ## Lägg till standardwidget på kontrollpanelen
 
-Om du vill välja en standardwidget att lägga till på kontrollpanelen markerar du widgeten och markerar kryssrutan. Med minst en widget markerad **[!UICONTROL Add widget]** knappen blir tillgänglig.
+Om du vill välja en standardwidget att lägga till på kontrollpanelen markerar du widgeten och markerar kryssrutan. När minst en widget är markerad blir knappen **[!UICONTROL Add widget]** tillgänglig.
 
 >[!NOTE]
 >
@@ -54,4 +54,4 @@ Välj **[!UICONTROL Add widget]** om du vill lägga till de valda widgetarna på
 
 ## Nästa steg
 
-När du har läst det här dokumentet kan du komma åt widgetbiblioteket och använda det för att lägga till standardwidgetar på en instrumentpanel. Om du vill ändra storlek och plats för widgetarna som visas på kontrollpanelen läser du [ändra guiden för instrumentpaneler](modify.md).
+När du har läst det här dokumentet kan du komma åt widgetbiblioteket och använda det för att lägga till standardwidgetar på en instrumentpanel. Om du vill ändra storlek och plats för widgetar som visas på kontrollpanelen läser du [Ändra instrumentpanelsguiden](modify.md).

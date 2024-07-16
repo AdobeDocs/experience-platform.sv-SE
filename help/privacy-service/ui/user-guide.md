@@ -18,7 +18,7 @@ ht-degree: 0%
 >title="Följa förfrågningar om integritetsskydd för registrerade"
 >abstract="<h2>Beskrivning</h2><p>Med Adobe Experience Platform Privacy Service kan ni skapa och hantera sekretessförfrågningar för kunder som vill få tillgång till eller ta bort sina personuppgifter i enlighet med juridiska sekretessbestämmelser.</p>"
 
-Det här dokumentet innehåller steg för att skapa och hantera sekretessförfrågningar med [!DNL Privacy Service] användargränssnitt.
+Det här dokumentet innehåller steg för att skapa och hantera sekretessbegäranden med användargränssnittet [!DNL Privacy Service].
 
 >[!IMPORTANT]
 >
@@ -26,9 +26,9 @@ Det här dokumentet innehåller steg för att skapa och hantera sekretessförfr�
 >
 >Det finns nu en hög överföringsgräns per dag för att förhindra missbruk av tjänsten. Användare som råkar missbruka systemet kommer att ha åtkomst till tjänsten inaktiverad. Därefter kommer ett möte att hållas med dem för att diskutera deras åtgärder och hur Privacy Servicen kan användas.
 
-## Sök i [!DNL Privacy Service] Kontrollpanel för användargränssnitt
+## Bläddra i [!DNL Privacy Service]-gränssnittspanelen
 
-Kontrollpanelen för [!DNL Privacy Service] Gränssnittet innehåller två widgetar som gör att du kan visa status för dina sekretessjobb: &quot;[!UICONTROL Status Report]och &quot;[!UICONTROL Job Requests]&quot;. Kontrollpanelen visar även den aktuella valda regeln för de visade jobben.
+Kontrollpanelen för användargränssnittet [!DNL Privacy Service] innehåller två widgetar som gör att du kan visa statusen för dina sekretessjobb: [!UICONTROL Status Report] och [!UICONTROL Job Requests]. Kontrollpanelen visar även den aktuella valda regeln för de visade jobben.
 
 ![Kontrollpanel för användargränssnitt](../images/user-guide/dashboard.png)
 
@@ -38,19 +38,19 @@ Kontrollpanelen för [!DNL Privacy Service] Gränssnittet innehåller två widge
 
 | Gränssnittsetikett | Förordning |
 | --- | --- |
-| [!UICONTROL APA_AUS] | The [!DNL Australia Privacy Act (Privacy Act)] |
-| [!UICONTROL CPA] | The [!DNL Colorado Privacy Act] |
-| [!UICONTROL CCPA] | The [!DNL California Consumer Privacy Act] |
-| [!UICONTROL CPRA_USA] | The [!DNL California Consumer Privacy Rights Act (CPRA)] |
-| [!UICONTROL CTDPA] | The [!DNL Connecticut Data Privacy Act] |
+| [!UICONTROL APA_AUS] | [!DNL Australia Privacy Act (Privacy Act)] |
+| [!UICONTROL CPA] | [!DNL Colorado Privacy Act] |
+| [!UICONTROL CCPA] | [!DNL California Consumer Privacy Act] |
+| [!UICONTROL CPRA_USA] | [!DNL California Consumer Privacy Rights Act (CPRA)] |
+| [!UICONTROL CTDPA] | [!DNL Connecticut Data Privacy Act] |
 | [!UICONTROL GDPR] | Europeiska unionens [!DNL General Data Protection Regulation] |
-| [!UICONTROL HIPAA_AUS] | The [!DNL Health Insurance Portability and Accountability Act] |
-| [!UICONTROL LGPD_BRA] | Brasilien [!DNL Lei Geral de Proteção de Dados] |
-| [!UICONTROL MHMDA] | The [!DNL Washington My Health My Data Act] |
+| [!UICONTROL HIPAA_AUS] | [!DNL Health Insurance Portability and Accountability Act] |
+| [!UICONTROL LGPD_BRA] | Brasiliens [!DNL Lei Geral de Proteção de Dados] |
+| [!UICONTROL MHMDA] | [!DNL Washington My Health My Data Act] |
 | [!UICONTROL NZPA_NZL] | Nya Zeeland [!DNL Privacy Act] |
-| [!UICONTROL PDPA_THA] | Thailand [!DNL Personal Data Protection Act] |
-| [!UICONTROL UCPA] | The [!DNL Utah Consumer Privacy Act] |
-| [!UICONTROL VCDPA_USA] | The [!DNL Virginia Consumer Data Protection Act] |
+| [!UICONTROL PDPA_THA] | Thailands [!DNL Personal Data Protection Act] |
+| [!UICONTROL UCPA] | [!DNL Utah Consumer Privacy Act] |
+| [!UICONTROL VCDPA_USA] | [!DNL Virginia Consumer Data Protection Act] |
 
 {style="table-layout:auto"}
 
@@ -60,11 +60,11 @@ Kontrollpanelen för [!DNL Privacy Service] Gränssnittet innehåller två widge
 
 >[!NOTE]
 >
->Se översikten på [sekretessbestämmelser](../regulations/overview.md) för mer information om den rättsliga ramen för varje förordning.
+>Mer information om det juridiska sammanhanget för varje regel finns i översikten om [sekretessregler](../regulations/overview.md) som stöds.
 
-Jobb för varje regeltyp spåras separat. Om du vill växla mellan olika regeltyper väljer du **[!UICONTROL Regulation Type]** och välj önskad regel i listan.
+Jobb för varje regeltyp spåras separat. Om du vill växla mellan olika regeltyper väljer du listrutan **[!UICONTROL Regulation Type]** och väljer önskad regel i listan.
 
-![Privacy Service Console med listrutan Regeltyp.](../images/user-guide/regulation.png)
+![Privacy Service-konsolen med listrutan Regeltyp.](../images/user-guide/regulation.png)
 
 När du ändrar regeltypen uppdateras instrumentpanelen så att alla åtgärder, filter, widgetar och dialogrutor för att skapa jobb som gäller för den valda förordningen visas.
 
@@ -88,17 +88,17 @@ Om du vill visa mer information om en viss datapunkt markerar du datapunkten i f
 
 >[!NOTE]
 >
->När ett filter har tillämpats på widgeten Jobbförfrågningar kan du ta bort filtret genom att välja **X** på filterpillret. Jobbförfrågningar återgår sedan till standardspårningslistan.
+>När ett filter har tillämpats på widgeten Jobbförfrågningar kan du ta bort filtret genom att välja **X** i filterpillet. Jobbförfrågningar återgår sedan till standardspårningslistan.
 
 ### Jobbförfrågningar {#job-requests}
 
-The [!UICONTROL Job Requests] arbetsytan innehåller information om de senaste jobbförfrågningarna i din organisation. Informationen innehåller typ av begäran, aktuell status, förfallodatum, e-postadress till begärande och så vidare. Uppsättningar om 100 poster läses in samtidigt. Som standard visas de senast skapade jobben överst med fler uppsättningar poster inlästa när du bläddrar nedåt.
+Arbetsytan [!UICONTROL Job Requests] innehåller information om de senaste jobbförfrågningarna i din organisation. Informationen innehåller typ av begäran, aktuell status, förfallodatum, e-postadress till begärande och så vidare. Uppsättningar om 100 poster läses in samtidigt. Som standard visas de senast skapade jobben överst med fler uppsättningar poster inlästa när du bläddrar nedåt.
 
 >[!NOTE]
 >
 >Data för tidigare skapade jobb är bara tillgängliga i 30 dagar efter slutförandedatumet.
 
-Du kan filtrera listan genom att skriva nyckelord i sökfältet nedanför [!UICONTROL Job Requests] titel. Listan filtreras automatiskt medan du skriver och visar begäranden som innehåller värden som matchar söktermerna. Sökfältet utför en snabbsökning som matchar sekretessposter-ID:n för de återgivna/inlästa jobben i användargränssnittet. Det är inte en omfattande sökning efter alla dina skickade jobb. Det är i stället ett filter som tillämpas på de inlästa resultaten. Använd Privacy Service-API:t för att [returnera jobb baserat på en viss regel, datumintervall eller ett enskilt jobb](../api/privacy-jobs.md#list).
+Du kan filtrera listan genom att skriva nyckelord i sökfältet under rubriken [!UICONTROL Job Requests]. Listan filtreras automatiskt medan du skriver och visar begäranden som innehåller värden som matchar söktermerna. Sökfältet utför en snabbsökning som matchar sekretessposter-ID:n för de återgivna/inlästa jobben i användargränssnittet. Det är inte en omfattande sökning efter alla dina skickade jobb. Det är i stället ett filter som tillämpas på de inlästa resultaten. Använd Privacy Service-API:t för att [returnera jobb baserat på en viss regel, datumintervall eller ett enskilt jobb ](../api/privacy-jobs.md#list).
 
 >[!TIP]
 >
@@ -106,15 +106,15 @@ Du kan filtrera listan genom att skriva nyckelord i sökfältet nedanför [!UICO
 
 ![Avsnittet Sekretesskonsolens jobbbegäran med sökfältet markerat.](../images/user-guide/job-search.png)
 
-Du kan också använda sökknappen för att utföra en sekretessjobbfråga som sträcker sig över ett visst datumintervall. Den här åtgärden returnerar alla sekretessjobb som skickats in av organisationen under den angivna tidsramen. Välj **[!UICONTROL Requested on]** i listrutan för att välja ett start- och avslutsdatum för frågan. De tillgängliga alternativen omfattar [!UICONTROL Today], [!UICONTROL Last 7 Days], [!UICONTROL Last 2 Weeks], [!UICONTROL Last 30 Days], eller [!UICONTROL Custom]. Vid användning med [!UICONTROL Requested on] om du vill att sökfunktionen bara ska visa jobbförfrågningar som har skickats mellan de datumintervall du har valt.
+Du kan också använda sökknappen för att utföra en sekretessjobbfråga som sträcker sig över ett visst datumintervall. Den här åtgärden returnerar alla sekretessjobb som skickats in av organisationen under den angivna tidsramen. Välj listrutan **[!UICONTROL Requested on]** för att välja ett start- och avslutsdatum för frågan. De tillgängliga alternativen är [!UICONTROL Today], [!UICONTROL Last 7 Days], [!UICONTROL Last 2 Weeks], [!UICONTROL Last 30 Days] eller [!UICONTROL Custom]. När sökfunktionen används med alternativet [!UICONTROL Requested on] visas endast jobbbegäranden som har skickats mellan de valda datumintervallen.
 
 ![Avsnittet Jobbbegäran med sökfältet, listrutan Begärd och knappen Sök markerad.](../images/user-guide/requested-on-dropdown-menu.png)
 
-Om du vill visa information om en viss jobbförfrågan väljer du begärans jobb-ID i listan för att öppna **[!UICONTROL Job Details]** sida.
+Om du vill visa information om en viss jobbförfrågan väljer du begärans jobb-ID i listan för att öppna sidan **[!UICONTROL Job Details]**.
 
-![Information om användargränssnittsjobb för GDPR](../images/user-guide/job-details.png)
+![GDPR-gränssnittsjobbinformation](../images/user-guide/job-details.png)
 
-Den här dialogrutan innehåller statusinformation om varje [!DNL Experience Cloud] lösningen och dess nuvarande status i förhållande till det övergripande jobbet. Eftersom alla sekretessjobb är asynkrona visar sidan det senaste datumet och den senaste tiden (GMT) för varje lösning, eftersom vissa kräver mer tid än andra för att behandla begäran.
+Den här dialogrutan innehåller statusinformation om varje [!DNL Experience Cloud]-lösning och dess aktuella tillstånd i relation till det övergripande jobbet. Eftersom alla sekretessjobb är asynkrona visar sidan det senaste datumet och den senaste tiden (GMT) för varje lösning, eftersom vissa kräver mer tid än andra för att behandla begäran.
 
 Om en lösning har tillhandahållit ytterligare data kan den visas i den här dialogrutan. Du kan visa dessa data genom att markera enskilda produktrader.
 
@@ -125,13 +125,13 @@ Om du vill hämta alla jobbdata som en CSV-fil väljer du **[!UICONTROL Export t
 >[!CONTEXTUALHELP]
 >id="platform_privacyConsole_requests_instructions"
 >title="Instruktioner"
->abstract="<ul><li>Välj <a href="https://experienceleague.adobe.com/docs/experience-platform/privacy/ui/overview.html#logging-in-from-experience-platform">Begäranden</a> i den vänstra navigeringen för att öppna sekretesspolicyn och välj sedan <b>Skapa förfrågan</b>.</li><li>Härifrån kan du antingen använda begärandeverktyget eller överföra en JSON-fil med registrerade.</li><li>Om du använder begärandebyggaren väljer du jobbtyp (åtkomst och/eller borttagning) och sedan den typ av identitet som du anger (e-post, ECID eller AAID) eller anger ett anpassat ID-namnutrymme. Ange lämpliga identitetsvärden för kunderna och välj <b>Skapa</b> när du är klar.</li><li>Om du överför en JSON-fil markerar du pilen bredvid Skapa begäran. Välj i listan med alternativ <b>Överför JSON</b> och ladda upp filen. Om du inte har någon JSON-fil att överföra väljer du <b>Ladda ned Adobe-GDPR-Request.json</b> om du vill hämta en mall som du kan fylla i. Överför JSON och välj <b>Skapa</b> när du är klar.</li><li>Mer hjälp om den här funktionen finns i <a href="https://experienceleague.adobe.com/docs/experience-platform/privacy/ui/user-guide.html">Användarhandbok för Privacy Service</a> på Experience League.</li></ul>"
+>abstract="<ul><li>Välj <a href="https://experienceleague.adobe.com/docs/experience-platform/privacy/ui/overview.html#logging-in-from-experience-platform">Förfrågningar</a> i den vänstra navigeringen för att öppna sekretesspolicyn och välj sedan <b>Skapa förfrågan</b>.</li><li>Härifrån kan du antingen använda begärandeverktyget eller överföra en JSON-fil med registrerade.</li><li>Om du använder begärandebyggaren väljer du jobbtyp (åtkomst och/eller borttagning) och sedan den typ av identitet som du anger (e-post, ECID eller AAID) eller anger ett anpassat ID-namnutrymme. Ange lämpliga identitetsvärden för kunderna och välj <b>Skapa</b> när du är klar.</li><li>Om du överför en JSON-fil markerar du pilen bredvid Skapa begäran. I listan med alternativ väljer du <b>Överför JSON</b> och överför filen. Om du inte har någon JSON-fil att överföra väljer du <b>Hämta Adobe-GDPR-Request.json</b> för att hämta en mall som du kan fylla i. Ladda upp JSON och välj <b>Create</b> när du är klar.</li><li>Mer hjälp om den här funktionen finns i <a href="https://experienceleague.adobe.com/docs/experience-platform/privacy/ui/user-guide.html">Privacy Servicens användarhandbok</a> på Experience League.</li></ul>"
 
 >[!NOTE]
 >
->För att kunna skapa en begäran om ett sekretessjobb måste du ange identitetsinformation för de specifika kunder vars data ska nås eller tas bort. Granska dokumentet den [identitetsdata för sekretessförfrågningar](../identity-data.md) innan du fortsätter med det här avsnittet.
+>För att kunna skapa en begäran om ett sekretessjobb måste du ange identitetsinformation för de specifika kunder vars data ska nås eller tas bort. Granska dokumentet om [identitetsdata för sekretessförfrågningar](../identity-data.md) innan du fortsätter med det här avsnittet.
 
-The [!DNL Privacy Service] Det finns två metoder i gränssnittet för att skapa nya jobbbegäranden:
+Gränssnittet [!DNL Privacy Service] innehåller två metoder för att skapa nya jobbbegäranden:
 
 * [Använda Request Builder](#request-builder)
 * [Överföra en JSON-fil](#json)
@@ -140,27 +140,27 @@ Steg för att använda dessa metoder finns i följande avsnitt.
 
 ### Använda Request Builder {#request-builder}
 
-Med hjälp av Request Builder kan du manuellt skapa en ny begäran om sekretessjobb i användargränssnittet. Request Builder är bäst att använda för enklare och mindre uppsättningar av begäranden eftersom Request Builder begränsar antalet begäranden som bara har ID-typ per användare. För mer komplicerade förfrågningar kan det vara bättre att [ladda upp en JSON-fil](#json) i stället.
+Med hjälp av Request Builder kan du manuellt skapa en ny begäran om sekretessjobb i användargränssnittet. Request Builder är bäst att använda för enklare och mindre uppsättningar av begäranden eftersom Request Builder begränsar antalet begäranden som bara har ID-typ per användare. För mer komplicerade begäranden är det bättre att [överföra en JSON-fil](#json) i stället.
 
-Om du vill börja använda Request Builder väljer du **[!UICONTROL Create Request]** nedanför widgeten Statusrapport till höger på skärmen.
+Om du vill börja använda Request Builder väljer du **[!UICONTROL Create Request]** under widgeten Statusrapport till höger på skärmen.
 
 ![Välj Skapa begäran](../images/user-guide/create-request.png)
 
-The **[!UICONTROL Create Request]** öppnas och visar tillgängliga alternativ för att skicka en begäran om sekretessjobb för den valda regeltypen.
+Dialogrutan **[!UICONTROL Create Request]** öppnas och visar tillgängliga alternativ för att skicka en begäran om sekretessjobb för den valda regeltypen.
 
 <img src="../images/user-guide/request-builder.png" width="500" /><br/>
 
-Välj **[!UICONTROL Job Type]** av begäran (&quot;Ta bort&quot; eller&quot;Åtkomst&quot;) och en eller flera tillgängliga produkter i listan.
+Välj **[!UICONTROL Job Type]** för begäran (&quot;Ta bort&quot; eller&quot;Åtkomst&quot;) och en eller flera tillgängliga produkter i listan.
 
-Privacy Servicen stöder två typer av arbetsförfrågningar för personuppgifter: [!UICONTROL Access] (läs) och/eller [!UICONTROL Delete]. Du kan antingen skicka in en begäran om att få alla uppgifter som finns i produkten och som rör ämnet för förfrågan, eller begära att få ta bort alla uppgifter som rör ämnet för förfrågan.
+Privacy Servicen stöder två typer av jobbförfrågningar för personliga data: [!UICONTROL Access] (läs) och/eller [!UICONTROL Delete]. Du kan antingen skicka in en begäran om att få alla uppgifter som finns i produkten och som rör ämnet för förfrågan, eller begära att få ta bort alla uppgifter som rör ämnet för förfrågan.
 
 <img src="../images/user-guide/type-and-products.png" width="500" /><br/>
 
-Under **[!UICONTROL Namespace type]** väljer du lämplig namnområdestyp för de kund-ID:n som skickas till [!DNL Privacy Service].
+Under **[!UICONTROL Namespace type]** väljer du lämplig namnområdestyp för de kund-ID som skickas till [!DNL Privacy Service].
 
 <img src="../images/user-guide/namespace-type.png" width="500" /><br/>
 
-När du använder standardtypen av namnutrymme väljer du ett namnutrymme på den nedrullningsbara menyn (e-post, ECID eller AAID), skriver sedan ID-värdena i textrutan till höger och trycker på **\&lt;enter>** för varje ID att lägga till det i listan.
+När du använder standardnamnområdestypen väljer du ett namnutrymme på den nedrullningsbara menyn (e-post, ECID eller AAID), skriver sedan ID-värdena i textrutan till höger och trycker på **\&lt;enter>** för varje ID för att lägga till det i listan.
 
 <img src="../images/user-guide/standard-namespace.png" width="500" /><br/>
 
@@ -178,15 +178,15 @@ Dialogrutan försvinner och det nya jobbet (eller de nya jobben) visas i widgete
 
 När du skapar mer komplicerade begäranden, till exempel sådana som använder flera ID-typer för varje registrerade som behandlas, kan du skapa en begäran genom att överföra en JSON-fil.
 
-Välj pilen bredvid **[!UICONTROL Create Request]**, under widgeten Statusrapport till höger på skärmen. Välj **[!UICONTROL Upload JSON]**.
+Välj pilen bredvid **[!UICONTROL Create Request]**, under widgeten Statusrapport till höger på skärmen. Välj **[!UICONTROL Upload JSON]** i listan med alternativ som visas.
 
-![Alternativ för att skapa förfrågningar](../images/user-guide/create-options.png)
+![Alternativ för att skapa begäranden](../images/user-guide/create-options.png)
 
-The **[!UICONTROL Upload JSON]** visas med ett fönster där du kan dra och släppa JSON-filen i.
+Dialogrutan **[!UICONTROL Upload JSON]** visas med ett fönster där du kan dra och släppa JSON-filen i.
 
 <img src="../images/user-guide/upload-json.png" width="500" /><br/>
 
-Om du inte har någon JSON-fil att överföra väljer du **[!UICONTROL Download Adobe-GDPR-Request.json]** om du vill hämta en mall som du kan fylla i enligt de värden som du har samlat in från dina registrerade.
+Om du inte har någon JSON-fil att överföra väljer du **[!UICONTROL Download Adobe-GDPR-Request.json]** för att hämta en mall som du kan fylla i enligt de värden som du har samlat in från dina registrerade.
 
 
 <img src="../images/user-guide/privacy-template.png" width="500" /><br/>
@@ -198,6 +198,6 @@ När du är klar väljer du **[!UICONTROL Create]**. Dialogrutan försvinner och
 
 ### Nästa steg
 
-Genom att läsa det här dokumentet har du lärt dig hur du använder [!DNL Privacy Service] Gränssnitt för att skapa ett sekretessjobb, visa information om ett jobb och övervaka dess bearbetningsstatus, och ladda ned resultaten när det är klart.
+Genom att läsa det här dokumentet har du lärt dig att använda användargränssnittet i [!DNL Privacy Service] för att skapa ett sekretessjobb, visa information om ett jobb och övervaka dess bearbetningsstatus, och hämta resultaten när det är klart.
 
-För steg om hur du utför dessa åtgärder programmatiskt med [!DNL Privacy Service] API, se [API-guide](../api/overview.md).
+Anvisningar om hur du utför dessa åtgärder programmatiskt med API:t [!DNL Privacy Service] finns i [API-handboken](../api/overview.md).

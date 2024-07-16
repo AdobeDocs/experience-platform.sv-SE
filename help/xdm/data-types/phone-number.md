@@ -11,7 +11,7 @@ ht-degree: 0%
 
 ---
 
-# [!UICONTROL Phone number] datatyp
+# Datatypen [!UICONTROL Phone number]
 
 [!UICONTROL Phone number] är en standard-XDM-datatyp som beskriver informationen för ett telefonnummer.
 
@@ -20,8 +20,8 @@ ht-degree: 0%
 | Egenskap | Beskrivning |
 | --- | --- |
 | `extension` | Det interna uppringningsnummer som används för anrop från en privat börs, operator eller instrumentpanel. |
-| `number` | Telefonnumret. Observera att telefonnumret är en sträng och kan innehålla meningsfulla tecken som hakparenteser `()`, bindestreck `-`, eller tecken som anger underuppringningsidentifierare som tillägg `x` till exempel `1-353(0)18391111` eller `+613 9403600x1234`. |
-| `primary` | Ett booleskt värde som anger om det här är personens primära telefonnummer. Till skillnad från adress och e-postadress kan det finnas flera primära telefonnummer, ett per kommunikationskanal. Kommunikationskanalen definieras av typen (anges med namnet på den överordnade egenskapen): `textMessaging`, `mobile`, `phone`, `home`, `work`, `unknown`och `fax`. |
+| `number` | Telefonnumret. Observera att telefonnumret är en sträng och kan innehålla meningsfulla tecken som hakparenteser `()`, bindestreck `-` eller tecken för att indikera underordnade identifierare som tillägg `x`, till exempel `1-353(0)18391111` eller `+613 9403600x1234`. |
+| `primary` | Ett booleskt värde som anger om det här är personens primära telefonnummer. Till skillnad från adress och e-postadress kan det finnas flera primära telefonnummer, ett per kommunikationskanal. Kommunikationskanalen definieras av typen (anges med namnet på den överordnade egenskapen): `textMessaging`, `mobile`, `phone`, `home`, `work`, `unknown` och `fax`. |
 | `status` | Anger om telefonnumret kan användas. |
 | `statusReason` | En beskrivning av aktuell status. |
 | `validity` | Telefonnumrets tekniska korrekthet. |

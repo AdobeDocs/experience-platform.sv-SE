@@ -4,7 +4,7 @@ description: Lär dig vilka exportinställningar i destinationer som kan konfigu
 exl-id: 3f4706cb-6d51-4567-81f6-5b2bf167b576
 source-git-commit: 47197b745bebb6564d912d9dc045593bc076ae2a
 workflow-type: tm+mt
-source-wordcount: '842'
+source-wordcount: '834'
 ht-degree: 0%
 
 ---
@@ -17,22 +17,22 @@ När du tänker på exportbeteendet till destinationer i Experience Platform må
 * På en andra nivå kan vissa inställningar anpassas på en målnivå av målutvecklaren när måldestinationer skapas med Destination SDK.
 * På en tredje nivå finns det konfigurationsinställningar som Real-Time CDP-användare kan ange i aktiveringsarbetsflödena.
 
-![Bild som visar hur vanliga och konfigurerbara exportinställningar för destinationer samverkar](/help/destinations/assets/how-destinations-work/profile-export-behavior-diagram.png)
+![Diagram som visar hur exporten mellan vanliga och konfigurerbara exportinställningar för destinationer fungerar ](/help/destinations/assets/how-destinations-work/profile-export-behavior-diagram.png)
 
 Den här sidan beskriver eller länkar ut till alla vanliga och konfigurerbara exportinställningar för destinationer på de tre nivåer som beskrivs ovan.
 
 ## Gemensamma exportinställningar för olika måltyper {#common-settings-across-destination-types}
 
-Beteendet för destinationsexport är konsekvent för destinationer som tillhör en destinationstyp med avseende på *vad som utlöser en målexport* och *vad som ingår i målexporten*. Destinationsexporter utlöses av meddelanden om att destinationstjänsten tar emot från [tjänst för kundprofil i realtid](https://experienceleague.adobe.com/docs/blueprints-learn/architecture/architecture-overview/platform-applications.html#adobe-experience-platform-%26-applications-detailed-architecture-diagram).
+Destinationsexportbeteendet är konsekvent mellan mål som tillhör en måltyp med avseende på *vad som utlöser en målexport* och *vad som ingår i målexporten*. Målexporter utlöses av meddelanden om att måltjänsten får från [den överordnade kundprofiltjänsten](https://experienceleague.adobe.com/docs/blueprints-learn/architecture/architecture-overview/platform-applications.html#adobe-experience-platform-%26-applications-detailed-architecture-diagram) i realtid.
 
-Vad som ingår i målexporten varierar något mellan olika måltyper. Läs mer om [mönster för vanliga exportbeteenden per måltyp](/help/destinations/how-destinations-work/profile-export-behavior.md). Dessa inställningar kan inte redigeras av målutvecklare eller Real-Time CDP-användare.
+Vad som ingår i målexporten varierar något mellan olika måltyper. Läs mer om de [vanligaste exportbeteendemönstren per måltyp](/help/destinations/how-destinations-work/profile-export-behavior.md). Dessa inställningar kan inte redigeras av målutvecklare eller Real-Time CDP-användare.
 
 ## Anpassningsbara exportinställningar per målutvecklare {#customizable-settings-by-destination-developers}
 
-Målutvecklare kan använda [Destination SDK](/help/destinations/destination-sdk/overview.md) för att skapa anpassade eller producerade (privata eller offentliga) destinationer. Destination SDK ger utvecklare stor flexibilitet att konfigurera destinationer baserat på funktionaliteten i senare led i API-slutpunkterna och filmottagningssystemen. Baserat på de underordnade funktionerna har målutvecklare följande konfigurationsalternativ tillgängliga när de konfigurerar ett mål med Destination SDK:
+Målutvecklare kan använda [Destination SDK](/help/destinations/destination-sdk/overview.md) för att skapa anpassade eller producerade (privata eller offentliga) mål. Destination SDK ger utvecklare stor flexibilitet att konfigurera destinationer baserat på funktionaliteten i senare led i API-slutpunkterna och filmottagningssystemen. Baserat på de underordnade funktionerna har målutvecklare följande konfigurationsalternativ tillgängliga när de konfigurerar ett mål med Destination SDK:
 
 * Avgör vilka attribut och identiteter som kan exporteras från Experience Platform till målet. Avgör också vilka identiteter som krävs av deras mål för att dataexporten ska lyckas.
-* Ange en aggregeringsprincip som bestämmer hur lång tid Experience Platform ska vänta när HTTP-meddelanden som ska skickas till API-integreringar samlas in. Målutvecklare kan konfigurera olika aggregeringstyper för att avgöra hur många profiler som ska inkluderas i utgående HTTP-meddelanden och hur länge Experience Platform ska vänta tills HTTP-meddelandet skickas. Här finns omfattande information om [konfigurationsalternativ för aggregeringsprincip](../destination-sdk/functionality/destination-configuration/aggregation-policy.md) som är tillgängliga för målutvecklare i Destinationens SDK dokumentation.
+* Ange en aggregeringsprincip som bestämmer hur lång tid Experience Platform ska vänta när HTTP-meddelanden som ska skickas till API-integreringar samlas in. Målutvecklare kan konfigurera olika aggregeringstyper för att avgöra hur många profiler som ska inkluderas i utgående HTTP-meddelanden och hur länge Experience Platform ska vänta tills HTTP-meddelandet skickas. Mer information om konfigurationsalternativen för [aggregeringsprinciper](../destination-sdk/functionality/destination-configuration/aggregation-policy.md) som är tillgängliga för målutvecklare finns i Destinationens SDK dokumentation.
 * Kontrollera om HTTP-meddelandeexport ska innehålla profiler som är kvalificerade för segment, som tas bort från segment eller båda.
 * Avgör vilka filnamn och filformateringskonfigurationer som ska vara tillgängliga för användare vid export av filer.
 
@@ -42,11 +42,11 @@ Förutom de icke-redigerbara inställningarna som är beroende av måltyp och de
 
 Vilka inställningar som är tillgängliga för användare vid anslutning till ett mål beror på hur målet konfigurerades av målutvecklaren och vilka inställningar de gjorde tillgängliga för användarna.
 
-Till exempel [mål för direktuppspelning](/help/destinations/destination-types.md#streaming-destinations)kan en målutvecklare konfigurera vilka identiteter som deras mål godkänner och endast de identiteterna visas för användaren i [mappningssteg för aktiveringsarbetsflödet](/help/destinations/ui/activate-segment-streaming-destinations.md#mapping), enligt nedan:
+För [direktuppspelningsmål](/help/destinations/destination-types.md#streaming-destinations) kan en målutvecklare konfigurera vilka identiteter som deras mål accepterar och endast dessa identiteter visas för användaren i [mappningssteget i aktiveringsarbetsflödet](/help/destinations/ui/activate-segment-streaming-destinations.md#mapping), vilket visas nedan:
 
 ![Skärminspelning av identitetsvalet för målfältet i mappningssteget i aktiveringsarbetsflödet. ](/help/destinations/assets/how-destinations-work/identity-mapping-example.gif)
 
-På samma sätt gäller för [filbaserade mål](/help/destinations/destination-types.md#file-based)kan målutvecklaren avgöra vilken [filnamnstillägg](/help/destinations/ui/activate-batch-profile-destinations.md#file-names) de vill göra tillgängliga för sina destinationer, eller som [filformateringsalternativ](/help/destinations/destination-sdk/guides/batch/configure-file-formatting-options.md) de vill göra tillgängliga och användaren kan välja bland dessa alternativ, vilket visas nedan:
+På samma sätt kan målutvecklaren för [filbaserade mål](/help/destinations/destination-types.md#file-based) avgöra vilka [filnamnstillägg ](/help/destinations/ui/activate-batch-profile-destinations.md#file-names) som ska vara tillgängliga för respektive mål, eller vilka [filformateringsalternativ](/help/destinations/destination-sdk/guides/batch/configure-file-formatting-options.md) som ska vara tillgängliga, och användaren kan endast välja mellan dessa alternativ, vilket visas nedan:
 
 ![Skärminspelning av filformateringsalternativet vid anslutning till ett filbaserat mål.](/help/destinations/assets/how-destinations-work/file-formatting-options.gif)
 
@@ -64,6 +64,6 @@ Läs mer om de olika alternativen och stegen i aktiveringsarbetsflödet:
 
 När du har läst det här dokumentet vet du nu vilka exportinställningar för mål som är gemensamma för olika måltyper, som kan konfigureras på en enskild målnivå av utvecklare, och vilka inställningar som kan redigeras av användare i aktiveringsarbetsflödet.
 
-Nu kan du läsa mer om [mönster för vanliga exportbeteenden per måltyp](/help/destinations/how-destinations-work/profile-export-behavior.md).
+Därefter kan du läsa mer om de [vanligaste exportbeteendemönstren per måltyp](/help/destinations/how-destinations-work/profile-export-behavior.md).
 
-För målutvecklare kan du [komma igång](/help/destinations/destination-sdk/getting-started.md) med Destination SDK. För användare som vill aktivera data kan du ta en titt på alla tillgängliga mål i [katalog](/help/destinations/catalog/overview.md).
+För målutvecklare kan du [komma igång](/help/destinations/destination-sdk/getting-started.md) med Destination SDK. För användare som vill aktivera data kan du checka ut alla tillgängliga mål i [katalogen](/help/destinations/catalog/overview.md).

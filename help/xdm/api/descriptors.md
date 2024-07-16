@@ -17,13 +17,13 @@ Scheman definierar en statisk vy av datatabeller, men ger inga specifika detalje
 
 Schemabeskrivare är metadata på tenant-nivå, vilket innebär att de är unika för din organisation och att alla beskrivningsåtgärder utförs i innehavarbehållaren.
 
-Varje schema kan ha en eller flera schemabeskrivningsentiteter tillämpade. Varje schemabeskrivningsentitet innehåller en beskrivning `@type` och `sourceSchema` som den är tillämplig på. När dessa beskrivningar har tillämpats gäller de alla datauppsättningar som har skapats med schemat.
+Varje schema kan ha en eller flera schemabeskrivningsentiteter tillämpade. Varje schemabeskrivningsentitet innehåller en beskrivning `@type` och den `sourceSchema` som den gäller för. När dessa beskrivningar har tillämpats gäller de alla datauppsättningar som har skapats med schemat.
 
-The `/descriptors` slutpunkt i [!DNL Schema Registry] Med API kan ni programmässigt hantera beskrivningar i ert upplevelseprogram.
+Med slutpunkten `/descriptors` i API:t [!DNL Schema Registry] kan du programmässigt hantera beskrivningar i ditt upplevelseprogram.
 
 ## Komma igång
 
-Slutpunkten som används i den här guiden ingår i [[!DNL Schema Registry] API](https://developer.adobe.com/experience-platform-apis/references/schema-registry/). Innan du fortsätter bör du granska [komma igång-guide](./getting-started.md) för länkar till relaterad dokumentation, en guide till hur du läser exempelanrop till API:er i det här dokumentet och viktig information om vilka huvuden som behövs för att kunna anropa ett Experience Platform-API.
+Slutpunkten som används i den här guiden ingår i [[!DNL Schema Registry] API](https://developer.adobe.com/experience-platform-apis/references/schema-registry/). Innan du fortsätter bör du läsa [kom igång-guiden](./getting-started.md) för att få länkar till relaterad dokumentation, en guide till hur du läser exempelanropen för API i det här dokumentet och viktig information om vilka huvuden som krävs för att kunna anropa ett Experience Platform-API.
 
 ## Hämta en lista med beskrivningar {#list}
 
@@ -47,26 +47,26 @@ curl -X GET \
   -H 'Accept: application/vnd.adobe.xdm-link+json'
 ```
 
-Svarsformatet beror på `Accept` huvud som skickades i begäran. Observera att `/descriptors` slutpunktsanvändning `Accept` huvuden som skiljer sig från andra slutpunkter i [!DNL Schema Registry] API.
+Svarsformatet beror på det `Accept`-huvud som skickas i begäran. Observera att slutpunkten `/descriptors` använder `Accept` rubriker som skiljer sig från alla andra slutpunkter i API:t [!DNL Schema Registry].
 
 >[!IMPORTANT]
 >
->Beskrivningar kräver unika `Accept` rubriker som ersätter `xed` med `xdm`och erbjuder `link` som är unikt för beskrivare. Den rätta `Accept` rubrikerna har tagits med i exempelanropen nedan, men var extra försiktig för att se till att rätt rubriker används när du arbetar med beskrivningar.
+>Beskrivningar kräver unika `Accept`-huvuden som ersätter `xed` med `xdm` och erbjuder även ett `link`-alternativ som är unikt för beskrivningar. Rätt `Accept` rubriker har inkluderats i exempelanropen nedan, men var extra försiktig för att se till att rätt rubriker används när du arbetar med beskrivningar.
 
-| `Accept` header | Beskrivning |
+| `Accept` huvud | Beskrivning |
 | -------|------------ |
 | `application/vnd.adobe.xdm-id+json` | Returnerar en array med beskrivande ID:n |
 | `application/vnd.adobe.xdm-link+json` | Returnerar en array med API-sökvägar för beskrivningar |
 | `application/vnd.adobe.xdm+json` | Returnerar en array med expanderade beskrivningsobjekt |
-| `application/vnd.adobe.xdm-v2+json` | Detta `Accept` sidhuvudet måste användas för att sidindelningsfunktionerna ska kunna användas. |
+| `application/vnd.adobe.xdm-v2+json` | Det här `Accept`-huvudet måste användas för att växlingsfunktioner ska kunna användas. |
 
 {style="table-layout:auto"}
 
 **Svar**
 
-Svaret innehåller en array för varje beskrivningstyp som har definierade beskrivningar. Med andra ord, om det inte finns några beskrivningar av en viss `@type` definierade returnerar registret inte en tom array för den beskrivningstypen.
+Svaret innehåller en array för varje beskrivningstyp som har definierade beskrivningar. Om det inte finns några beskrivningar av en viss `@type` definierad returnerar registret alltså inte en tom matris för den beskrivningstypen.
 
-När du använder `link` `Accept` header visas varje beskrivning som ett arrayobjekt i formatet `/{CONTAINER}/descriptors/{DESCRIPTOR_ID}`
+När du använder rubriken `link` `Accept` visas varje beskrivning som ett arrayobjekt i formatet `/{CONTAINER}/descriptors/{DESCRIPTOR_ID}`
 
 ```JSON
 {
@@ -86,7 +86,7 @@ När du använder `link` `Accept` header visas varje beskrivning som ett arrayob
 
 ## Söka efter en beskrivning {#lookup}
 
-Om du vill visa information om en viss beskrivning kan du söka efter (GET) en enskild beskrivning med hjälp av dess `@id`.
+Om du vill visa information om en viss beskrivning kan du slå upp (GET) en enskild beskrivning med hjälp av dess `@id`.
 
 **API-format**
 
@@ -96,13 +96,13 @@ GET /tenant/descriptors/{DESCRIPTOR_ID}
 
 | Parameter | Beskrivning |
 | --- | --- |
-| `{DESCRIPTOR_ID}` | The `@id` för den beskrivning som du vill söka efter. |
+| `{DESCRIPTOR_ID}` | `@id` för beskrivningen som du vill söka efter. |
 
 {style="table-layout:auto"}
 
 **Begäran**
 
-Följande begäran hämtar en beskrivning med dess `@id` värde. Beskrivningar har ingen version och därför behöver de inte `Accept` header krävs i sökbegäran.
+Följande begäran hämtar en beskrivning med dess `@id`-värde. Beskrivningar har ingen version, därför krävs ingen `Accept`-rubrik i sökningsbegäran.
 
 ```SHELL
 curl -X GET \
@@ -115,7 +115,7 @@ curl -X GET \
 
 **Svar**
 
-Ett lyckat svar returnerar information om beskrivningen, inklusive dess `@type` och `sourceSchema`samt ytterligare information som varierar beroende på typen av beskrivning. Den returnerade `@id` ska matcha beskrivningen `@id` anges i begäran.
+Ett lyckat svar returnerar information om beskrivningen, inklusive dess `@type` och `sourceSchema`, samt ytterligare information som varierar beroende på typen av beskrivning. Den returnerade `@id` ska matcha beskrivningen `@id` som anges i begäran.
 
 ```JSON
 {
@@ -139,11 +139,11 @@ Ett lyckat svar returnerar information om beskrivningen, inklusive dess `@type` 
 
 ## Skapa en beskrivning {#create}
 
-Du kan skapa en ny beskrivning genom att göra en POST-förfrågan till `/tenant/descriptors` slutpunkt.
+Du kan skapa en ny beskrivning genom att göra en POST-förfrågan till slutpunkten `/tenant/descriptors`.
 
 >[!IMPORTANT]
 >
->The [!DNL Schema Registry] I kan du definiera flera olika beskrivningstyper. Varje beskrivningstyp kräver att dess egna specifika fält skickas i begärandetexten. Se [appendix](#defining-descriptors) för en fullständig lista över beskrivningar och de fält som behövs för att definiera dem.
+>Med [!DNL Schema Registry] kan du definiera flera olika beskrivningstyper. Varje beskrivningstyp kräver att dess egna specifika fält skickas i begärandetexten. I [bilagan](#defining-descriptors) finns en fullständig lista över beskrivningar och de fält som krävs för att definiera dem.
 
 **API-format**
 
@@ -153,7 +153,7 @@ POST /tenant/descriptors
 
 **Begäran**
 
-Följande begäran definierar en identitetsbeskrivning i ett e-postadressfält i ett exempelschema. Det här säger [!DNL Experience Platform] om du vill använda e-postadressen som en identifierare för att sammanfoga information om den enskilda personen.
+Följande begäran definierar en identitetsbeskrivning i ett e-postadressfält i ett exempelschema. Detta anger för [!DNL Experience Platform] att använda e-postadressen som en identifierare för att hjälpa till att sammanfoga information om personen.
 
 ```SHELL
 curl -X POST \
@@ -177,7 +177,7 @@ curl -X POST \
 
 **Svar**
 
-Ett lyckat svar returnerar HTTP-status 201 (Skapad) och information om den nyskapade beskrivningen, inklusive dess `@id`. The `@id` är ett skrivskyddat fält som tilldelats av [!DNL Schema Registry] och används för att referera till beskrivningen i API:t.
+Ett lyckat svar returnerar HTTP-status 201 (Skapad) och information om den nyskapade beskrivningen, inklusive `@id`. `@id` är ett skrivskyddat fält som tilldelats av [!DNL Schema Registry] och används för att referera till beskrivningen i API:t.
 
 ```JSON
 {
@@ -195,7 +195,7 @@ Ett lyckat svar returnerar HTTP-status 201 (Skapad) och information om den nyska
 
 ## Uppdatera en beskrivning {#put}
 
-Du kan uppdatera en beskrivning genom att inkludera dess `@id` på sökvägen till en begäran från PUT.
+Du kan uppdatera en beskrivning genom att ta med dess `@id` i sökvägen för en PUT-begäran.
 
 **API-format**
 
@@ -205,19 +205,19 @@ PUT /tenant/descriptors/{DESCRIPTOR_ID}
 
 | Parameter | Beskrivning |
 | --- | --- |
-| `{DESCRIPTOR_ID}` | The `@id` för den beskrivning som du vill uppdatera. |
+| `{DESCRIPTOR_ID}` | `@id` för beskrivningen som du vill uppdatera. |
 
 {style="table-layout:auto"}
 
 **Begäran**
 
-Denna begäran skriver i princip om beskrivningen, så begärandetexten måste innehålla alla fält som krävs för att definiera en beskrivning av den typen. Med andra ord är nyttolasten för begäran om att uppdatera (PUT) en beskrivning samma som nyttolasten som [skapa (POST) en beskrivning](#create) av samma typ.
+Denna begäran skriver i princip om beskrivningen, så begärandetexten måste innehålla alla fält som krävs för att definiera en beskrivning av den typen. Med andra ord är nyttolasten som ska uppdatera (PUT) en beskrivning densamma som nyttolasten för att [skapa (POST) en beskrivning](#create) av samma typ.
 
 >[!IMPORTANT]
 >
->Precis som när du skapar beskrivningar med hjälp av POST-begäranden, kräver varje beskrivningstyp att egna specifika fält skickas i nyttolasterna för PUT-begäran. Se [appendix](#defining-descriptors) för en fullständig lista över beskrivningar och de fält som behövs för att definiera dem.
+>Precis som när du skapar beskrivningar med hjälp av POST-begäranden, kräver varje beskrivningstyp att egna specifika fält skickas i nyttolasterna för PUT-begäran. I [bilagan](#defining-descriptors) finns en fullständig lista över beskrivningar och de fält som krävs för att definiera dem.
 
-I följande exempel uppdateras en identitetsbeskrivning så att den refererar till en annan `xdm:sourceProperty` (`mobile phone`) och ändra `xdm:namespace` till `Phone`.
+I följande exempel uppdateras en identitetsbeskrivning så att den refererar till en annan `xdm:sourceProperty` (`mobile phone`) och `xdm:namespace` ändras till `Phone`.
 
 ```SHELL
 curl -X PUT \
@@ -240,7 +240,7 @@ curl -X PUT \
 
 **Svar**
 
-Ett lyckat svar returnerar HTTP-status 201 (Skapad) och `@id` för den uppdaterade beskrivningen (som ska matcha `@id` skickas i begäran).
+Ett lyckat svar returnerar HTTP-status 201 (Skapad) och `@id` för den uppdaterade beskrivningen (som ska matcha `@id` som skickades i begäran).
 
 ```JSON
 {
@@ -248,11 +248,11 @@ Ett lyckat svar returnerar HTTP-status 201 (Skapad) och `@id` för den uppdatera
 }
 ```
 
-Utföra en [sökbegäran (GET)](#lookup) för att visa beskrivningen visar att fälten nu har uppdaterats för att återspegla de ändringar som skickats i PUT-begäran.
+Om du utför en [sökbegäran (GET)](#lookup) för att visa beskrivningen visas att fälten nu har uppdaterats för att återspegla de ändringar som skickats i PUT-begäran.
 
 ## Ta bort en beskrivning {#delete}
 
-Ibland kan du behöva ta bort en beskrivning som du har definierat från [!DNL Schema Registry]. Detta görs genom att en DELETE-begäran som refererar till `@id` för den beskrivning som du vill ta bort.
+Ibland kan du behöva ta bort en beskrivning som du har definierat från [!DNL Schema Registry]. Detta görs genom att en DELETE-begäran refererar till `@id` för den beskrivning som du vill ta bort.
 
 **API-format**
 
@@ -262,7 +262,7 @@ DELETE /tenant/descriptors/{DESCRIPTOR_ID}
 
 | Parameter | Beskrivning |
 | --- | --- |
-| `{DESCRIPTOR_ID}` | The `@id` för den beskrivning som du vill ta bort. |
+| `{DESCRIPTOR_ID}` | `@id` för beskrivningen som du vill ta bort. |
 
 {style="table-layout:auto"}
 
@@ -281,11 +281,11 @@ curl -X DELETE \
 
 Ett lyckat svar returnerar HTTP-status 204 (inget innehåll) och en tom brödtext.
 
-Om du vill bekräfta att beskrivningen har tagits bort kan du utföra en [sökförfrågan](#lookup) mot beskrivningen `@id`. Svaret returnerar HTTP-status 404 (Hittades inte) eftersom beskrivningen har tagits bort från [!DNL Schema Registry].
+Om du vill bekräfta att beskrivningen har tagits bort kan du utföra en [uppslagsbegäran](#lookup) mot beskrivningen `@id`. Svaret returnerar HTTP-status 404 (Hittades inte) eftersom beskrivningen har tagits bort från [!DNL Schema Registry].
 
 ## Bilaga
 
-I följande avsnitt finns ytterligare information om hur du arbetar med beskrivningar i [!DNL Schema Registry] API.
+Följande avsnitt innehåller ytterligare information om hur du arbetar med beskrivningar i API:t [!DNL Schema Registry].
 
 ### Definiera beskrivningar {#defining-descriptors}
 
@@ -301,7 +301,7 @@ I följande avsnitt ges en översikt över tillgängliga beskrivningstyper, inkl
 
 #### Identitetsbeskrivare
 
-En identitetsbeskrivning signalerar att[!UICONTROL sourceProperty]&quot; i &quot;[!UICONTROL sourceSchema]&quot; är en [!DNL Identity] fält enligt beskrivning [Adobe Experience Platform Identity Service](../../identity-service/home.md).
+En identitetsbeskrivare signalerar att [!UICONTROL sourceProperty] för [!UICONTROL sourceSchema] är ett [!DNL Identity]-fält enligt beskrivningen i [Adobe Experience Platform Identity Service](../../identity-service/home.md).
 
 ```json
 {
@@ -319,18 +319,18 @@ En identitetsbeskrivning signalerar att[!UICONTROL sourceProperty]&quot; i &quot
 | Egenskap | Beskrivning |
 | --- | --- |
 | `@type` | Den typ av beskrivning som definieras. För en identitetsbeskrivning måste det här värdet anges till `xdm:descriptorIdentity`. |
-| `xdm:sourceSchema` | The `$id` URI för schemat där beskrivningen definieras. |
+| `xdm:sourceSchema` | URI `$id` för schemat där beskrivningen definieras. |
 | `xdm:sourceVersion` | Huvudversionen av källschemat. |
 | `xdm:sourceProperty` | Sökvägen till den specifika egenskap som ska vara identiteten. Sökvägen ska börja med ett &quot;/&quot; och inte sluta med ett. Ta inte med &quot;egenskaper&quot; i sökvägen (använd till exempel &quot;/personalEmail/address&quot; istället för &quot;/properties/personalEmail/properties/address&quot;) |
-| `xdm:namespace` | The `id` eller `code` identitetsnamnutrymmets värde. En lista med namnutrymmen finns med [[!DNL Identity Service API]](https://developer.adobe.com/experience-platform-apis/references/identity-service). |
-| `xdm:property` | Antingen `xdm:id` eller `xdm:code`, beroende på `xdm:namespace` används. |
+| `xdm:namespace` | Värdet `id` eller `code` för identitetsnamnområdet. En lista med namnutrymmen kan hittas med [[!DNL Identity Service API]](https://developer.adobe.com/experience-platform-apis/references/identity-service). |
+| `xdm:property` | Antingen `xdm:id` eller `xdm:code`, beroende på vilken `xdm:namespace` som används. |
 | `xdm:isPrimary` | Ett booleskt värde (tillval). När värdet är true anges fältet som primär identitet. Scheman får endast innehålla en primär identitet. |
 
 {style="table-layout:auto"}
 
 #### Egen namnbeskrivning {#friendly-name}
 
-Med egna namnbeskrivningar kan användaren ändra `title`, `description`och `meta:enum` värden för huvudbibliotekets schemafält. Detta är särskilt användbart när du arbetar med&quot;eVars&quot; och andra&quot;generiska&quot; fält som du vill märka som innehåller information som är specifik för din organisation. Gränssnittet kan använda dessa för att visa ett mer användarvänligt namn eller för att endast visa fält som har ett eget namn.
+Med egna namnbeskrivningar kan en användare ändra värdena `title`, `description` och `meta:enum` för huvudbibliotekets schemafält. Detta är särskilt användbart när du arbetar med&quot;eVars&quot; och andra&quot;generiska&quot; fält som du vill märka som innehåller information som är specifik för din organisation. Gränssnittet kan använda dessa för att visa ett mer användarvänligt namn eller för att endast visa fält som har ett eget namn.
 
 ```json
 {
@@ -358,20 +358,20 @@ Med egna namnbeskrivningar kan användaren ändra `title`, `description`och `met
 
 | Egenskap | Beskrivning |
 | --- | --- |
-| `@type` | Den typ av beskrivning som definieras. För en egen namnbeskrivning måste det här värdet anges till `xdm:alternateDisplayInfo`. |
-| `xdm:sourceSchema` | The `$id` URI för schemat där beskrivningen definieras. |
+| `@type` | Den typ av beskrivning som definieras. Värdet måste anges till `xdm:alternateDisplayInfo` för en egen namnbeskrivning. |
+| `xdm:sourceSchema` | URI `$id` för schemat där beskrivningen definieras. |
 | `xdm:sourceVersion` | Huvudversionen av källschemat. |
-| `xdm:sourceProperty` | Sökvägen till den specifika egenskap vars information du vill ändra. Sökvägen ska börja med ett snedstreck (`/`) och inte sluta med en. Inkludera inte `properties` i sökvägen (använd till exempel `/personalEmail/address` i stället för `/properties/personalEmail/properties/address`). |
+| `xdm:sourceProperty` | Sökvägen till den specifika egenskap vars information du vill ändra. Sökvägen ska börja med ett snedstreck (`/`) och inte sluta med ett. Ta inte med `properties` i sökvägen (använd till exempel `/personalEmail/address` i stället för `/properties/personalEmail/properties/address`). |
 | `xdm:title` | Den nya rubriken som du vill visa för det här fältet, skriven i Inledande versal. |
 | `xdm:description` | En valfri beskrivning kan läggas till tillsammans med titeln. |
-| `meta:enum` | Om fältet anges av `xdm:sourceProperty` är ett strängfält, `meta:enum` kan användas för att lägga till föreslagna värden för fältet i segmenteringsgränssnittet. Det är viktigt att notera att `meta:enum` deklarerar inte en uppräkning eller tillhandahåller någon datavalidering för XDM-fältet.<br><br>Detta ska endast användas för XDM-fält som definieras av Adobe. Om egenskapen source är ett anpassat fält som definieras av din organisation bör du i stället redigera fältets `meta:enum` direkt via en PATCH-begäran till fältets överordnade resurs. |
-| `meta:excludeMetaEnum` | Om fältet anges av `xdm:sourceProperty` är ett strängfält som har befintliga föreslagna värden som anges under en `meta:enum` kan du inkludera det här objektet i en egen namnbeskrivning för att utesluta vissa eller alla värden från segmenteringen. Nyckeln och värdet för varje post måste matcha de som ingår i originalet `meta:enum` av fältet för att bidraget ska kunna uteslutas. |
+| `meta:enum` | Om fältet som anges av `xdm:sourceProperty` är ett strängfält kan `meta:enum` användas för att lägga till föreslagna värden för fältet i segmenteringsgränssnittet. Observera att `meta:enum` inte deklarerar en uppräkning eller tillhandahåller någon datavalidering för XDM-fältet.<br><br>Detta ska endast användas för XDM-fält som definieras av Adobe. Om källegenskapen är ett anpassat fält som definieras av din organisation bör du i stället redigera fältets `meta:enum`-egenskap direkt via en PATCH-begäran till fältets överordnade resurs. |
+| `meta:excludeMetaEnum` | Om fältet som anges av `xdm:sourceProperty` är ett strängfält som har befintliga föreslagna värden i ett `meta:enum`-fält, kan du inkludera det här objektet i en egen namnbeskrivning för att utesluta vissa eller alla dessa värden från segmenteringen. Nyckeln och värdet för varje post måste matcha de som finns i fältets ursprungliga `meta:enum` för att posten ska kunna uteslutas. |
 
 {style="table-layout:auto"}
 
 #### Relationsbeskrivning
 
-Relationsbeskrivare beskriver en relation mellan två olika scheman, aktiverade för egenskaperna som beskrivs i `sourceProperty` och `destinationProperty`. Se självstudiekursen om [definiera en relation mellan två scheman](../tutorials/relationship-api.md) för mer information.
+Relationsbeskrivare beskriver en relation mellan två olika scheman, som är aktiverade för egenskaperna som beskrivs i `sourceProperty` och `destinationProperty`. Mer information finns i självstudiekursen [om hur du definierar en relation mellan två scheman](../tutorials/relationship-api.md).
 
 ```json
 {
@@ -389,11 +389,11 @@ Relationsbeskrivare beskriver en relation mellan två olika scheman, aktiverade 
 
 | Egenskap | Beskrivning |
 | --- | --- |
-| `@type` | Den typ av beskrivning som definieras. För en relationsbeskrivning måste det här värdet anges till `xdm:descriptorOneToOne`. |
-| `xdm:sourceSchema` | The `$id` URI för schemat där beskrivningen definieras. |
+| `@type` | Den typ av beskrivning som definieras. För en relationsbeskrivare måste det här värdet anges till `xdm:descriptorOneToOne`. |
+| `xdm:sourceSchema` | URI `$id` för schemat där beskrivningen definieras. |
 | `xdm:sourceVersion` | Huvudversionen av källschemat. |
 | `xdm:sourceProperty` | Sökväg till fältet i källschemat där relationen definieras. Ska börja med ett &quot;/&quot; och inte sluta med ett. Ta inte med&quot;egenskaper&quot; i sökvägen (till exempel&quot;/personalEmail/address&quot; istället för&quot;/properties/personalEmail/properties/address&quot;). |
-| `xdm:destinationSchema` | The `$id` URI för referensschemat som den här beskrivningen definierar en relation med. |
+| `xdm:destinationSchema` | URI `$id` för det referensschema som den här beskrivningen definierar en relation med. |
 | `xdm:destinationVersion` | Huvudversionen av referensschemat. |
 | `xdm:destinationProperty` | Valfri sökväg till ett målfält i referensschemat. Om den här egenskapen utelämnas härleds målfältet av alla fält som innehåller en matchande identitetsbeskrivning för referens (se nedan). |
 
@@ -416,7 +416,7 @@ Referensidentitetsbeskrivningar ger en referenskontext till den primära identit
 | Egenskap | Beskrivning |
 | --- | --- |
 | `@type` | Den typ av beskrivning som definieras. För en referensidentitetsbeskrivning måste det här värdet anges till `xdm:descriptorReferenceIdentity`. |
-| `xdm:sourceSchema` | The `$id` URI för schemat där beskrivningen definieras. |
+| `xdm:sourceSchema` | URI `$id` för schemat där beskrivningen definieras. |
 | `xdm:sourceVersion` | Huvudversionen av källschemat. |
 | `xdm:sourceProperty` | Sökväg till fältet i källschemat som ska användas för att referera till referensschemat. Ska börja med ett &quot;/&quot; och inte sluta med ett. Ta inte med &quot;egenskaper&quot; i sökvägen (till exempel `/personalEmail/address` i stället för `/properties/personalEmail/properties/address`). |
 | `xdm:identityNamespace` | Identitetsnamnområdeskoden för egenskapen source. |
@@ -425,7 +425,7 @@ Referensidentitetsbeskrivningar ger en referenskontext till den primära identit
 
 #### Borttagen fältbeskrivning
 
-Du kan [ta bort ett fält i en anpassad XDM-resurs](../tutorials/field-deprecation-api.md#custom) genom att lägga till en `meta:status` attribut inställt på `deprecated` till fältet i fråga. Om du vill ta bort fält från standard-XDM-resurser i dina scheman kan du tilldela schemat en inaktuell fältbeskrivning för att uppnå samma effekt. Använda [korrigera `Accept` header](../tutorials/field-deprecation-api.md#verify-deprecation)kan du sedan visa vilka standardfält som är inaktuella för ett schema när du söker efter det i API:t.
+Du kan [ta bort ett fält i en anpassad XDM-resurs](../tutorials/field-deprecation-api.md#custom) genom att lägga till ett `meta:status`-attribut med värdet `deprecated` i fältet i fråga. Om du vill ta bort fält från standard-XDM-resurser i dina scheman kan du tilldela schemat en inaktuell fältbeskrivning för att uppnå samma effekt. Med [korrekt `Accept` header](../tutorials/field-deprecation-api.md#verify-deprecation) kan du sedan visa vilka standardfält som är inaktuella för ett schema när du söker efter det i API:t.
 
 ```json
 {
@@ -438,9 +438,9 @@ Du kan [ta bort ett fält i en anpassad XDM-resurs](../tutorials/field-deprecati
 
 | Egenskap | Beskrivning |
 | --- | --- |
-| `@type` | Beskrivningstypen. För en deskriptor för fältborttagning måste det här värdet anges till `xdm:descriptorDeprecated`. |
-| `xdm:sourceSchema` | URI `$id` för det schema som du använder beskrivningen på. |
+| `@type` | Beskrivningstypen. För en deskriptor för fältborttagning måste värdet anges till `xdm:descriptorDeprecated`. |
+| `xdm:sourceSchema` | URI `$id` för schemat som du tillämpar beskrivningen på. |
 | `xdm:sourceVersion` | Den version av schemat som du tillämpar beskrivningen på. Ska anges till `1`. |
-| `xdm:sourceProperty` | Sökvägen till egenskapen i schemat som du tillämpar beskrivningen på. Om du vill tillämpa beskrivningen på flera egenskaper kan du ange en lista med sökvägar i form av en array (till exempel `["/firstName", "/lastName"]`). |
+| `xdm:sourceProperty` | Sökvägen till egenskapen i schemat som du tillämpar beskrivningen på. Om du vill tillämpa beskrivningen på flera egenskaper kan du tillhandahålla en lista med sökvägar i form av en array (till exempel `["/firstName", "/lastName"]`). |
 
 {style="table-layout:auto"}

@@ -4,35 +4,35 @@ title: Generera exempelprofiler baserat på ett källschema
 exl-id: aea50d2e-e916-4ef0-8864-9333a4eafe80
 source-git-commit: c1ba465a8a866bd8bdc9a2b294ec5d894db81e11
 workflow-type: tm+mt
-source-wordcount: '651'
-ht-degree: 1%
+source-wordcount: '652'
+ht-degree: 0%
 
 ---
 
 
 # Generera exempelprofiler baserat på ett källschema
 
-Det första steget för att testa det filbaserade målet är att använda `/sample-profiles` slutpunkt för att generera en exempelprofil baserat på ditt befintliga källschema.
+Det första steget i testningen av ditt filbaserade mål är att använda slutpunkten `/sample-profiles` för att generera en exempelprofil baserat på ditt befintliga källschema.
 
 Exempelprofiler kan hjälpa dig att förstå JSON-strukturen för en profil. Dessutom får du ett standardvärde som du kan anpassa med dina egna profildata för ytterligare destinationstestning.
 
 ## Komma igång {#getting-started}
 
-Läs igenom [komma igång-guide](../../getting-started.md) för viktig information som du behöver känna till för att kunna anropa API:t, inklusive hur du får nödvändig behörighet för målredigering och obligatoriska huvuden.
+Innan du fortsätter bör du läsa igenom [kom igång-guiden](../../getting-started.md) för att få viktig information som du behöver känna till för att kunna ringa anrop till API:t, inklusive hur du får nödvändig behörighet för målredigering och nödvändiga rubriker.
 
-## Förutsättningar {#prerequisites}
+## Förhandskrav {#prerequisites}
 
-Innan du kan använda `/sample-profiles` måste du se till att följande villkor uppfylls:
+Innan du kan använda slutpunkten `/sample-profiles` måste du kontrollera att följande villkor uppfylls:
 
-* Du har ett befintligt filbaserat mål som skapas via Destinationen SDK och du kan se det i [målkatalog](../../../ui/destinations-workspace.md).
-* Du har skapat minst ett aktiveringsflöde för destinationen i användargränssnittet i Experience Platform. The `/sample-profiles` slutpunkten skapar profilerna baserat på det källschema som du definierade i aktiveringsflödet. Se [självstudiekurs om aktivering](../../../ui/activate-batch-profile-destinations.md) om du vill veta hur du skapar ett aktiveringsflöde.
+* Du har ett befintligt filbaserat mål som skapats via Destinationen SDK och du kan se det i din [målkatalog](../../../ui/destinations-workspace.md).
+* Du har skapat minst ett aktiveringsflöde för destinationen i användargränssnittet i Experience Platform. Slutpunkten `/sample-profiles` skapar profilerna baserat på det källschema som du definierade i ditt aktiveringsflöde. Se självstudiekursen [aktivering](../../../ui/activate-batch-profile-destinations.md) om du vill veta mer om hur du skapar ett aktiveringsflöde.
 * För att kunna utföra API-begäran behöver du det målinstans-ID som motsvarar den målinstans som du ska testa. Hämta det målinstans-ID som du bör använda i API-anropet från webbadressen när du bläddrar i en anslutning till målet i plattformsgränssnittet.
 
-  ![Användargränssnittsbild som visar hur du hämtar målinstans-ID från URL:en.](../../assets/testing-api/get-destination-instance-id.png)
+  ![Gränssnittsbild som visar hur du hämtar målinstans-ID från URL:en.](../../assets/testing-api/get-destination-instance-id.png)
 
 ## Generera exempelprofiler för måltestning {#generate-sample-profiles}
 
-Du kan generera exempelprofiler baserat på ditt källschema genom att göra en GET-förfrågan till `/sample-profiles` slutpunkten med målinstans-ID:t för målet som du vill testa.
+Du kan generera exempelprofiler baserat på ditt källschema genom att göra en GET-förfrågan till `/sample-profiles`-slutpunkten med målförekomstens ID för det mål som du vill testa.
 
 **API-format**
 
@@ -42,12 +42,12 @@ GET /authoring/sample-profiles?destinationInstanceId={DESTINATION_INSTANCE_ID}&c
 
 | Frågeparametrar | Beskrivning |
 | -------- | ----------- |
-| `destinationInstanceId` | ID:t för målinstansen som du genererar exempelprofiler för. Se [krav](#prerequisites) om du vill ha mer information om hur du får detta ID. |
+| `destinationInstanceId` | ID:t för målinstansen som du genererar exempelprofiler för. I avsnittet [Krav](#prerequisites) finns mer information om hur du får detta ID. |
 | `count` | *Valfritt*. Antalet exempelprofiler som du vill generera. Parametern kan ha värden mellan `1 - 1000`. Om den här egenskapen inte definieras genererar API:t en enda exempelprofil. |
 
 **Begäran**
 
-Följande begäran genererar en exempelprofil baserad på det källschema som definierats i målinstansen med motsvarande `destinationInstanceId`.
+Följande begäran genererar en exempelprofil baserat på det källschema som definierats i målinstansen med motsvarande `destinationInstanceId`.
 
 ```shell
 curl -X GET 'https://platform.adobe.io/data/core/activation/authoring/sample-profiles?destinationInstanceId={DESTINATION_INSTANCE_ID}' \
@@ -105,19 +105,19 @@ Ett lyckat svar returnerar HTTP-status 200 med det angivna antalet exempelprofil
 
 | Egenskap | Beskrivning |
 | -------- | ----------- |
-| `segmentMembership` | Ett kartobjekt som beskriver personens målgruppsmedlemskap. Mer information om `segmentMembership`, läsa [Information om målgruppsmedlemskap](../../../../xdm/field-groups/profile/segmentation.md). |
+| `segmentMembership` | Ett kartobjekt som beskriver personens målgruppsmedlemskap. Mer information om `segmentMembership` finns i [Information om målgruppsmedlemskap](../../../../xdm/field-groups/profile/segmentation.md). |
 | `lastQualificationTime` | En tidsstämpel från den senaste gången profilen kvalificerades för segmentet. |
-| `status` | Ett strängfält som anger om målgruppsmedlemskapet har realiserats som en del av den aktuella begäran. Följande värden accepteras: <ul><li>`realized`: Profilen är en del av segmentet.</li><li>`exited`: Profilen avslutar publiken som en del av den aktuella begäran.</li></ul> |
-| `identityMap` | Ett mappningsfält som beskriver de olika identitetsvärdena för en individ, tillsammans med deras associerade namnutrymmen. Mer information om `identityMap`, se [grund för schemakomposition](../../../../xdm/schema/composition.md#identityMap). |
+| `status` | Ett strängfält som anger om målgruppsmedlemskapet har realiserats som en del av den aktuella begäran. Följande värden accepteras: <ul><li>`realized`: Profilen ingår i segmentet.</li><li>`exited`: Profilen avslutar målgruppen som en del av den aktuella begäran.</li></ul> |
+| `identityMap` | Ett mappningsfält som beskriver de olika identitetsvärdena för en individ, tillsammans med deras associerade namnutrymmen. Mer information om `identityMap` finns i [Bas för schemakomposition](../../../../xdm/schema/composition.md#identityMap). |
 
 {style="table-layout:auto"}
 
 ## API-felhantering {#api-error-handling}
 
-Destination SDK-API-slutpunkter följer de allmänna felmeddelandeprinciperna för Experience Platform API. Se [API-statuskoder](../../../../landing/troubleshooting.md#api-status-codes) och [fel i begäranhuvudet](../../../../landing/troubleshooting.md#request-header-errors) i felsökningsguiden för plattformen.
+Destination SDK-API-slutpunkter följer de allmänna felmeddelandeprinciperna för Experience Platform API. Se [API-statuskoder](../../../../landing/troubleshooting.md#api-status-codes) och [begäranrubrikfel](../../../../landing/troubleshooting.md#request-header-errors) i felsökningsguiden för plattformen.
 
 ## Nästa steg
 
-När du har läst det här dokumentet vet du nu hur du genererar exempelprofiler baserat på källschemat som du konfigurerade i målet [aktiveringsflöde](../../../ui/activate-batch-profile-destinations.md).
+När du har läst det här dokumentet vet du nu hur du genererar exempelprofiler baserat på källschemat som du konfigurerade i [aktiveringsflödet](../../../ui/activate-batch-profile-destinations.md) för ditt mål.
 
-Du kan nu anpassa de här profilerna eller använda dem som de returneras av API:t för att [testa din filbaserade destinationskonfiguration](file-based-destination-testing-api.md).
+Du kan nu anpassa de här profilerna eller använda dem när de returneras av API:t för att [testa din filbaserade målkonfiguration](file-based-destination-testing-api.md).

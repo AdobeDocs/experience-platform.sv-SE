@@ -19,24 +19,24 @@ I följande processflödesdiagram visas hur Experience Platform importerar, kryp
 
 ## Uppgifter under transport {#in-transit}
 
-Alla data som överförs mellan plattformen och alla externa komponenter utförs via säkra, krypterade anslutningar med HTTPS [TLS v1.2](https://datatracker.ietf.org/doc/html/rfc5246).
+Alla data som överförs mellan plattformen och alla externa komponenter utförs över säkra, krypterade anslutningar med HTTPS [TLS v1.2](https://datatracker.ietf.org/doc/html/rfc5246).
 
 I allmänhet hämtas data till plattformen på tre sätt:
 
-- [Datainsamling](../../collection/home.md) gör det möjligt för webbplatser och mobilappar att skicka data till Platform Edge Network för mellanlagring och förberedelse för förtäring.
-- [Källkopplingar](../../sources/home.md) strömma data direkt till plattformen från Adobe Experience Cloud-program och andra företagsdatakällor.
-- ETL-verktyg som inte är Adobe (extrahera, omforma, läsa in) skickar data till [API för gruppinmatning](../../ingestion/batch-ingestion/overview.md) för konsumtion.
+- [Funktionerna för datainsamling](../../collection/home.md) gör att webbplatser och mobilprogram kan skicka data till Platform Edge Network för mellanlagring och förberedelse för förtäring.
+- [Source kopplar](../../sources/home.md) strömma data direkt till plattformen från Adobe Experience Cloud-program och andra företagsdatakällor.
+- ETL-verktyg som inte är Adobe (extrahera, omforma, läsa in) skickar data till [API:t för batchförbrukning](../../ingestion/batch-ingestion/overview.md).
 
-När data har hämtats in i systemet och [krypterad i vila](#at-rest), plattformstjänster förbättrar och exporterar data på följande sätt:
+När data har hämtats till systemet och [krypterats i viloläge](#at-rest) förbättrar och exporterar plattformstjänsterna data på följande sätt:
 
-- [Destinationer](../../destinations/home.md) gör att du kan aktivera data för Adobe-program och partnerprogram.
-- Applikationer för olika plattformar som [Customer Journey Analytics](https://experienceleague.adobe.com/docs/analytics-platform/using/cja-overview/cja-overview.html) och [Adobe Journey Optimizer](https://experienceleague.adobe.com/en/docs/journey-optimizer/using/ajo-home) kan också använda data.
+- Med [Destinationer](../../destinations/home.md) kan du aktivera data för Adobe-program och partnerprogram.
+- Inbyggda plattformsprogram som [Customer Journey Analytics](https://experienceleague.adobe.com/docs/analytics-platform/using/cja-overview/cja-overview.html) och [Adobe Journey Optimizer](https://experienceleague.adobe.com/en/docs/journey-optimizer/using/ajo-home) kan också använda data.
 
 ### Stöd för mTLS-protokoll {#mtls-protocol-support}
 
-Nu kan du använda mTLS (Mutual Transport Layer Security) för att förbättra säkerheten vid utgående anslutningar till [HTTP API-mål](../../destinations/catalog/streaming/http-destination.md) och Adobe Journey Optimizer [anpassade åtgärder](https://experienceleague.adobe.com/en/docs/journey-optimizer/using/orchestrate-journeys/about-journey-building/using-custom-actions). mTLS är en heltäckande säkerhetsmetod för ömsesidig autentisering som ser till att båda parter delar information är de som gör anspråk på att vara innan data delas. mTLS innehåller ytterligare ett steg jämfört med TLS, där servern också frågar efter klientens certifikat och verifierar det i slutet.
+Nu kan du använda mTLS (Mutual Transport Layer Security) för att förbättra säkerheten i utgående anslutningar till [HTTP API-målet](../../destinations/catalog/streaming/http-destination.md) och Adobe Journey Optimizer [anpassade åtgärder](https://experienceleague.adobe.com/en/docs/journey-optimizer/using/orchestrate-journeys/about-journey-building/using-custom-actions). mTLS är en heltäckande säkerhetsmetod för ömsesidig autentisering som ser till att båda parter delar information är de som gör anspråk på att vara innan data delas. mTLS innehåller ytterligare ett steg jämfört med TLS, där servern också frågar efter klientens certifikat och verifierar det i slutet.
 
-Om du vill [använda mTLS med Adobe Journey Optimizer anpassade åtgärder](https://experienceleague.adobe.com/en/docs/journey-optimizer/using/configuration/configure-journeys/action-journeys/about-custom-action-configuration) och målarbetsflödena för Experience Platform HTTP API måste TLS-protokoll vara inaktiverade för den serveradress som du angav i Adobe Journey Optimizer kundåtgärdsgränssnitt eller i målgränssnittet, och endast mTLS är aktiverat. Om TLS 1.2-protokollet fortfarande är aktiverat på den slutpunkten skickas inget certifikat för klientautentisering. Det innebär att om du vill använda mTLS med dessa arbetsflöden måste den&quot;mottagande&quot; serverslutpunkten vara en mTLS **endast** aktiverad slutpunkt för anslutning.
+Om du vill [använda mTLS med Adobe Journey Optimizer anpassade åtgärder](https://experienceleague.adobe.com/en/docs/journey-optimizer/using/configuration/configure-journeys/action-journeys/about-custom-action-configuration) och Experience Platform HTTP API-målarbetsflöden, måste TLS-protokoll vara inaktiverade för den serveradress som du angav i Adobe Journey Optimizer kundåtgärdsgränssnitt eller målgränssnittet och bara mTLS är aktiverade. Om TLS 1.2-protokollet fortfarande är aktiverat på den slutpunkten skickas inget certifikat för klientautentisering. Det innebär att om du vill använda mTLS med de här arbetsflödena måste den &quot;mottagande&quot; serverslutpunkten vara en mTLS **only** -aktiverad anslutningsslutpunkt.
 
 >[!IMPORTANT]
 >
@@ -57,10 +57,10 @@ Om du vill kontrollera KN eller SAN för att göra ytterligare validering från 
 
 ## Vilande uppgifter {#at-rest}
 
-Data som importeras och används av Platform lagras i datasjön, ett mycket detaljerat datalager som innehåller alla data som hanteras av systemet, oavsett ursprung eller filformat. Alla data som lagras i datasjön krypteras, lagras och hanteras i en isolerad [[!DNL Microsoft Azure Data Lake] Lagring](https://docs.microsoft.com/en-us/azure/storage/blobs/data-lake-storage-introduction) instans som är unik för din organisation.
+Data som importeras och används av Platform lagras i datasjön, ett mycket detaljerat datalager som innehåller alla data som hanteras av systemet, oavsett ursprung eller filformat. Alla data som lagras i datasjön krypteras, lagras och hanteras i en isolerad [[!DNL Microsoft Azure Data Lake] Storage](https://docs.microsoft.com/en-us/azure/storage/blobs/data-lake-storage-introduction) -instans som är unik för din organisation.
 
-Mer information om hur vilande data krypteras i Azure Data Lake Storage finns i [officiell Azure-dokumentation](https://learn.microsoft.com/en-us/azure/storage/common/storage-service-encryption).
+Mer information om hur vilande data krypteras i Azure Data Lake Storage finns i den [officiella Azure-dokumentationen](https://learn.microsoft.com/en-us/azure/storage/common/storage-service-encryption).
 
 ## Nästa steg
 
-Det här dokumentet innehåller en översikt på hög nivå över hur data krypteras i Platform. Mer information om säkerhetsprocedurer i Platform finns i översikten om [styrning, integritet och säkerhet](./overview.md) på Experience League, eller ta en titt på [Informationsdokument om plattformssäkerhet](https://www.adobe.com/content/dam/cc/en/security/pdfs/AEP_SecurityOverview.pdf).
+Det här dokumentet innehåller en översikt på hög nivå över hur data krypteras i Platform. Mer information om säkerhetsprocedurer i Platform finns i översikten om [styrning, sekretess och säkerhet](./overview.md) på Experience League, eller i faktabladet om [plattformssäkerhet](https://www.adobe.com/content/dam/cc/en/security/pdfs/AEP_SecurityOverview.pdf).

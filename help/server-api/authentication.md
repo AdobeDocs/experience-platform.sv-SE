@@ -13,34 +13,34 @@ ht-degree: 1%
 
 ## Översikt
 
-The [!DNL Edge Network Server API] hanterar både autentiserad och oautentiserad datainsamling, beroende på händelsekällan och API-samlingsdomänen.
+[!DNL Edge Network Server API] hanterar både autentiserad och oautentiserad datainsamling, beroende på händelsekällan och API-samlingsdomänen.
 
-För varje begäran ska [!DNL Server API] verifierar datastream [!DNL access type] inställning. Med den här inställningen kan kunderna konfigurera en datastam för att acceptera antingen autentiserade data eller både autentiserade och oautentiserade data. Som standard accepteras båda datatyperna.
+För varje begäran verifierar [!DNL Server API] datastream [!DNL access type]-inställningen. Med den här inställningen kan kunderna konfigurera en datastam för att acceptera antingen autentiserade data eller både autentiserade och oautentiserade data. Som standard accepteras båda datatyperna.
 
-Mer information om hur du konfigurerar dataströmmens åtkomsttyp finns i dokumentationen om hur du [skapa och konfigurera ett datastream](../datastreams/overview.md#create).
+Mer information om hur du konfigurerar åtkomsttypen för datastream finns i dokumentationen om hur du [skapar och konfigurerar ett datastream](../datastreams/overview.md#create).
 
-Nedan visas en sammanfattning av beteendet utifrån datastream [!DNL Access Type] konfiguration och slutpunkten som begäran tas emot på.
+Nedan visas en sammanfattning av beteendet, baserat på datastream [!DNL Access Type]-konfigurationen och slutpunkten som begäran tas emot på.
 
 | [!DNL Access Type] | edge.adobedc.net | server.adobedc.net |
 |-----------------|-------------------------------|-----------------------|
 | blandad (standard) | Autentiserar inte begäran | Autentiserar begäran |
 | autentiserad | Autentiserar begäran | Autentiserar begäran |
 
-API-anrop från en privat server på `server.adobedc.net` ska alltid vara autentiserade.
+API-anrop från en privat server på `server.adobedc.net` ska alltid autentiseras.
 
-## Förutsättningar {#prerequisites}
+## Förhandskrav {#prerequisites}
 
-Innan du kan ringa [!DNL Server API]kontrollerar du att följande krav uppfylls:
+Innan du kan ringa samtal till [!DNL Server API] måste du kontrollera att du uppfyller följande krav:
 
 * Du har ett organisationskonto med tillgång till Adobe Experience Platform.
-* Ditt Experience Platform-konto har `developer` och `user` roller har aktiverats för Adobe Experience Platform API-produktprofilen. Kontakta [Admin Console](../access-control/home.md) administratör för att aktivera de här rollerna för ditt konto.
-* Du har en Adobe ID. Om du inte har någon Adobe ID går du till [Adobe Developer Console](https://developer.adobe.com/console) och skapa ett nytt konto.
+* Ditt Experience Platform-konto har rollerna `developer` och `user` aktiverade för Adobe Experience Platform API-produktprofilen. Kontakta din [Admin Console](../access-control/home.md)-administratör om du vill aktivera de här rollerna för ditt konto.
+* Du har en Adobe ID. Om du inte har någon Adobe ID går du till [Adobe Developer Console](https://developer.adobe.com/console) och skapar ett nytt konto.
 
 ## Samla in inloggningsuppgifter {#credentials}
 
-För att kunna ringa anrop till plattforms-API:er måste du först slutföra [självstudiekurs om autentisering](../landing/api-authentication.md). När du slutför självstudiekursen för autentisering visas värdena för var och en av de obligatoriska rubrikerna i alla API-anrop för Experience Platform, vilket visas nedan:
+För att kunna ringa anrop till plattforms-API:er måste du först slutföra [autentiseringssjälvstudiekursen](../landing/api-authentication.md). När du slutför självstudiekursen för autentisering visas värdena för var och en av de obligatoriska rubrikerna i alla API-anrop för Experience Platform, vilket visas nedan:
 
-* Behörighet: Bearer `{ACCESS_TOKEN}`
+* Behörighet: Bärare `{ACCESS_TOKEN}`
 * x-api-key: `{API_KEY}`
 * x-gw-ims-org-id: `{ORG_ID}`
 
@@ -50,7 +50,7 @@ Resurser i Experience Platform kan isoleras till specifika virtuella sandlådor.
 
 >[!NOTE]
 >
->Mer information om sandlådor i Experience Platform finns i [översiktsdokumentation för sandlåda](../sandboxes/home.md).
+>Mer information om sandlådor i Experience Platform finns i översiktsdokumentationen för [sandlådan](../sandboxes/home.md).
 
 Alla begäranden som innehåller en nyttolast (POST, PUT, PATCH) kräver ytterligare en medietypsrubrik:
 
@@ -58,19 +58,19 @@ Alla begäranden som innehåller en nyttolast (POST, PUT, PATCH) kräver ytterli
 
 ## Konfigurera skrivbehörigheter för datauppsättning {#dataset-write-permissions}
 
-Om du vill konfigurera skrivbehörigheter för datauppsättningar går du till [Admin Console](https://adminconsole.adobe.com), leta reda på produktprofilen som är kopplad till din API-nyckel och ange följande behörigheter:
+Om du vill konfigurera skrivbehörigheter för datauppsättningar går du till [Admin Console](https://adminconsole.adobe.com), letar reda på produktprofilen som är kopplad till din API-nyckel och anger följande behörigheter:
 
-* I [!UICONTROL Sandboxes] markerar du datastream-sandlådan.
-* I [!UICONTROL Data Management] väljer du **[!UICONTROL Manage Datasets]** behörighet.
+* I avsnittet [!UICONTROL Sandboxes] markerar du datastream-sandlådan.
+* Välj behörigheten **[!UICONTROL Manage Datasets]** i avsnittet [!UICONTROL Data Management].
 
 ## Felsöka auktoriseringsfel {#troubleshooting-authorization}
 
 | Felkod | Felmeddelande | Beskrivning |
 | --- | --- | --- |
-| `EXEG-0500-401` | Ogiltig auktoriseringstoken | Det här felmeddelandet visas i följande situationer:  <ul><li>The `authorization` rubrikvärde saknas.</li><li>The `authorization` rubrikvärdet innehåller inte det obligatoriska `Bearer` token.</li><li>Angiven auktoriseringstoken har ett ogiltigt format.</li><li>Datastream kräver autentisering, men begäran saknar obligatoriska huvuden.</li></ul> |
-| `EXEG-0501-401` | Ogiltig token för användarauktorisering | Det här felmeddelandet visas i följande situationer: <ul><li>API-anropet saknar det nödvändiga `x-user-token` header.</li><li>Angiven användartoken har ett ogiltigt format.</li></ul> |
-| `EXEG-0502-401` | Ogiltig auktoriseringstoken | Det här felmeddelandet visas när den angivna auktoriseringstoken har ett giltigt format (JWT), men signaturen är ogiltig. Kontrollera [självstudiekurs om autentisering](../landing/api-authentication.md) om du vill lära dig hur du får en giltig JWT-token. |
-| `EXEG-0503-401` | Ogiltig auktoriseringstoken | Det här felmeddelandet visas när den angivna auktoriseringstoken har upphört att gälla. Gå igenom [självstudiekurs om autentisering](../landing/api-authentication.md) för att generera en ny token. |
+| `EXEG-0500-401` | Ogiltig auktoriseringstoken | Det här felmeddelandet visas i följande situationer:  <ul><li>Rubrikvärdet `authorization` saknas.</li><li>Rubrikvärdet `authorization` innehåller inte den nödvändiga `Bearer`-token.</li><li>Angiven auktoriseringstoken har ett ogiltigt format.</li><li>Datastream kräver autentisering, men begäran saknar obligatoriska huvuden.</li></ul> |
+| `EXEG-0501-401` | Ogiltig token för användarauktorisering | Det här felmeddelandet visas i följande situationer: <ul><li>API-anropet saknar det obligatoriska `x-user-token`-huvudet.</li><li>Angiven användartoken har ett ogiltigt format.</li></ul> |
+| `EXEG-0502-401` | Ogiltig auktoriseringstoken | Det här felmeddelandet visas när den angivna auktoriseringstoken har ett giltigt format (JWT), men signaturen är ogiltig. Gå till självstudiekursen [för autentisering](../landing/api-authentication.md) och lär dig hur du hämtar en giltig JWT-token. |
+| `EXEG-0503-401` | Ogiltig auktoriseringstoken | Det här felmeddelandet visas när den angivna auktoriseringstoken har upphört att gälla. Gå igenom självstudiekursen [för autentisering](../landing/api-authentication.md) och generera en ny token. |
 | `EXEG-0504-401` | Den obligatoriska produktkontexten saknas | Det här felmeddelandet visas i följande situationer:  <ul><li>Utvecklarkontot har inte åtkomst till Adobe Experience Platform produktkontext.</li><li>Företaget har ännu inte rätt till Adobe Experience Platform.</li></ul> |
-| `EXEG-0505-401` | Obligatoriskt auktoriseringstokenomfång saknas | Detta fel gäller endast autentisering av tjänstkonto. Felmeddelandet visas när tjänstauktoriseringstoken som ingår i anropet tillhör ett tjänstkonto som inte har åtkomst till `acp.foundation` IMS-scope. |
-| `EXEG-0506-401` | Sandlådan är inte tillgänglig för skrivning | Det här felmeddelandet visas när utvecklarkontot inte har `WRITE` åtkomst till sandlådan Experience Platform där datastream definieras. |
+| `EXEG-0505-401` | Obligatoriskt auktoriseringstokenomfång saknas | Detta fel gäller endast autentisering av tjänstkonto. Felmeddelandet visas när tjänstauktoriseringstoken som ingår i anropet tillhör ett tjänstkonto som inte har åtkomst till IMS-scopet `acp.foundation`. |
+| `EXEG-0506-401` | Sandlådan är inte tillgänglig för skrivning | Det här felmeddelandet visas när utvecklarkontot inte har `WRITE`-åtkomst till sandlådan Experience Platform där datastream definieras. |

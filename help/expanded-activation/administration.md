@@ -1,13 +1,13 @@
 ---
 title: Kontoadministration för utökad aktivering
 description: Lär dig hur du utför administrativa uppgifter på ditt utökade aktiveringskonto, som att övervaka licensanvändningen och tilldela rätt behörigheter.
-source-git-commit: 5bc8d6c7173f221c2830a9b15c8ec6241e8bc59d
+exl-id: ee0ec4b9-a083-447b-b7a7-e1307e90c646
+source-git-commit: 2222e9fbf75f3082d331868f820247e0c0ce3ba2
 workflow-type: tm+mt
 source-wordcount: '373'
 ht-degree: 0%
 
 ---
-
 
 # Kontoadministration
 
@@ -17,50 +17,50 @@ På den här sidan beskrivs hur du skapar ett användarkonto i Admin Console och
 
 ## Skapa användarkonton {#create-users}
 
-Innan du kan använda [!DNL Audience Manager Expanded Activation]måste du skapa ett användarkonto.
+Du måste skapa ett användarkonto innan du kan använda [!DNL Audience Manager Expanded Activation].
 
-Skapa ett användarkonto för [!DNL Expanded Activation]följer du instruktionerna för att hantera användare från [Adobe Admin Console](https://helpx.adobe.com/enterprise/using/manage-users-individually.html) dokumentation.
+Om du vill skapa ett användarkonto för [!DNL Expanded Activation] följer du anvisningarna om hur du hanterar användare i [Adobe Admin Console](https://helpx.adobe.com/enterprise/using/manage-users-individually.html) -dokumentationen.
 
 ## Lägg till användare i behörighetsrollen {#permissions}
 
-När du har skapat ett användarkonto måste du lägga till det i [!DNL Expanded Activation] behörighetsroll, i [!DNL Expanded Activation] användargränssnitt.
+När du har skapat ett användarkonto måste du lägga till det i behörighetsrollen [!DNL Expanded Activation] i användargränssnittet för [!DNL Expanded Activation].
 
-Gå till **[!UICONTROL Administration]** -> **[!UICONTROL Permissions]** -> **[!UICONTROL Roles]** och väljer **[!UICONTROL Expanded Activation Default Role]**.
+Gå till **[!UICONTROL Administration]** -> **[!UICONTROL Permissions]** -> **[!UICONTROL Roles]** och välj **[!UICONTROL Expanded Activation Default Role]**.
 
 ![Bilden på användargränssnittet för utökad aktivering visar sidan Roller.](assets/expanded-activation-role.png)
 
-Gå till **[!UICONTROL Users]** och markera **[!UICONTROL Add Users]**.
+Gå till fliken **[!UICONTROL Users]** och välj **[!UICONTROL Add Users]**.
 
-![Bilden på användargränssnittet för den utökade aktiveringen visar sidan Användare.](assets/add-users.png)
+![Bilden på användargränssnittet för utökad aktivering visar sidan Användare.](assets/add-users.png)
 
 Markera den nyskapade användaren i listan och välj **[!UICONTROL Save]**.
 
 ![Bilden på användargränssnittet för utökad aktivering visar sidan Lägg till användare.](assets/add-user.png)
 
-Användarkontot har nu skapats och tilldelats till rätt roll. Nu kan du komma åt **[!UICONTROL Expanded Activation]** användargränssnitt.
+Användarkontot har nu skapats och tilldelats till rätt roll. Det går nu att komma åt användargränssnittet **[!UICONTROL Expanded Activation]**.
 
 ## Övervaka licensanvändning {#license-usage}
 
-Dina [!DNL Audience Manager Expanded Activation] kontraktet anger maximalt antal hashkodade e-postmeddelanden som du kan importera till ditt konto.
+Ditt [!DNL Audience Manager Expanded Activation]-kontrakt anger det maximala antalet hash-kodade e-postmeddelanden som du kan importera till ditt konto.
 
-Du kan hitta den här informationen genom att gå till **[!UICONTROL Administration]** -> **[!UICONTROL License Usage]** sida.
+Du kan hitta den här informationen genom att gå till sidan **[!UICONTROL Administration]** -> **[!UICONTROL License Usage]**.
 
-![Bilden av det utökade användargränssnittet för aktivering visar licensanvändningsskärmen.](assets/license-usage.png)
+![En utökad bild av användargränssnittet för aktivering som visar licensanvändningsskärmen.](assets/license-usage.png)
 
 På den här sidan hittar du följande information:
 
-* **[!UICONTROL Product]**: Den Adobe-produkt du har licens för. Det här kommer alltid att **[!UICONTROL Audience Manager Expanded Activation]**.
-* **[!UICONTROL Primary metric]**: Namnet på det mätvärde som spåras för användning. Det här kommer alltid att **[!UICONTROL Addressable audience]**.
-* **[!UICONTROL License amount]**: Maximalt antal hash-kodade e-postmeddelanden som du har licens att importera.
+* **[!UICONTROL Product]**: Den Adobe-produkt som du har licens för. Det här kommer alltid att vara **[!UICONTROL Audience Manager Expanded Activation]**.
+* **[!UICONTROL Primary metric]**: Namnet på det mätvärde som spåras för användning. Det här kommer alltid att vara **[!UICONTROL Addressable audience]**.
+* **[!UICONTROL License amount]**: Det maximala antalet hash-kodade e-postmeddelanden som du har licens att importera.
 
   >[!TIP]
   >
-  >Du har hashat e-postmeddelanden genom [Audience Manager-källanslutning](../sources/connectors/adobe-applications/audience-manager.md). Läs dokumentationen om [aktivera målgrupper](activate-audiences.md) för mer information.
+  >Du skickade hashade e-postmeddelanden via [Audience Manager-källkopplingen](../sources/connectors/adobe-applications/audience-manager.md). Mer information finns i dokumentationen om [hur du aktiverar målgrupper](activate-audiences.md).
 
 * **[!UICONTROL Usage]**: antalet hash-kodade e-postmeddelanden som du har kapslat.
 * **[!UICONTROL Usage %]**: den procentandel av licensbeloppet som du har använt.
 
-Mer information om licensanvändning i Experience Platform finns i [dokumentation om licensanvändning](../dashboards/guides/license-usage.md).
+Mer information om licensanvändning i Experience Platform finns i [licensanvändningsdokumentationen](../dashboards/guides/license-usage.md).
 
 ## Nästa steg {#next-steps}
 

@@ -10,13 +10,13 @@ ht-degree: 0%
 
 ---
 
-# Guardrails för [!DNL Identity Service] data
+# Guardrutor för [!DNL Identity Service]-data
 
-Det här dokumentet innehåller information om användning och hastighetsbegränsningar för [!DNL Identity Service] data som hjälper dig att optimera användningen av identitetsdiagrammet. När du granskar följande skyddsutkast förutsätts det att du har modellerat data korrekt. Om du har frågor om hur du modellerar data kan du kontakta kundtjänstrepresentanten.
+Det här dokumentet innehåller information om användning och hastighetsgränser för [!DNL Identity Service]-data som hjälper dig att optimera din användning av identitetsdiagrammet. När du granskar följande skyddsutkast förutsätts det att du har modellerat data korrekt. Om du har frågor om hur du modellerar data kan du kontakta kundtjänstrepresentanten.
 
 >[!IMPORTANT]
 >
->Kontrollera dina licensrättigheter i din försäljningsorder och motsvarande [Produktbeskrivning](https://helpx.adobe.com/legal/product-descriptions.html) på faktiska användningsbegränsningar utöver denna garantisida.
+>Kontrollera dina licensrättigheter i din försäljningsorder och motsvarande [produktbeskrivning](https://helpx.adobe.com/legal/product-descriptions.html) om faktiska användningsbegränsningar, utöver den här sidan med skyddsförslag.
 
 ## Kom igång
 
@@ -35,7 +35,7 @@ I följande tabell visas statiska gränser för identitetsdata.
 
 | Guardrail | Gräns | Anteckningar |
 | --- | --- | --- |
-| Antal identiteter i ett diagram | 50 | När ett diagram med 50 länkade identiteter uppdateras kommer identitetstjänsten att använda en&quot;första-in-först-ut-mekanism&quot; och tar bort den äldsta identiteten för att skapa utrymme för den senaste identiteten för det här diagrammet (**Anteckning**: Kundprofilen i realtid påverkas inte). Borttagningen baseras på identitetstyp och tidsstämpel. Gränsen tillämpas på sandlådenivå. Mer information finns i avsnittet [förstå borttagningslogiken](#deletion-logic). |
+| Antal identiteter i ett diagram | 50 | När ett diagram med 50 länkade identiteter uppdateras kommer identitetstjänsten att tillämpa en&quot;första-in-ut-funktion&quot; och ta bort den äldsta identiteten för att skapa utrymme för den senaste identiteten för det här diagrammet (**Obs**: Kundprofilen i realtid påverkas inte). Borttagningen baseras på identitetstyp och tidsstämpel. Gränsen tillämpas på sandlådenivå. Mer information finns i avsnittet [om att förstå borttagningslogiken](#deletion-logic). |
 | Antal länkar till en identitet för ett enskilt batchintag | 50 | En enda batch kan innehålla avvikande identiteter som orsakar oönskade diagramsammanfogningar. För att förhindra detta kommer identitetstjänsten inte att importera identiteter som redan är länkade till 50 eller fler identiteter. |
 | Antal identiteter i en XDM-post | 20 | Det minsta antalet XDM-poster som krävs är två. |
 | Antal anpassade namnutrymmen | Ingen | Det finns inga gränser för hur många anpassade namnutrymmen du kan skapa. |
@@ -56,7 +56,7 @@ Följande tabell visar befintliga regler som du måste följa för att identitet
 
 ### Inläsning av namnområde för identitet
 
-Från och med 31 mars 2023 blockerar identitetstjänsten intag av Adobe Analytics ID (AAID) för nya kunder. Den här identiteten hämtas vanligtvis via [Adobe Analytics-källa](../sources/connectors/adobe-applications/analytics.md) och [Adobe Audience Manager-källa](../sources//connectors/adobe-applications/audience-manager.md) och är redundant eftersom ECID representerar samma webbläsare. Om du vill ändra den här standardkonfigurationen kontaktar du ditt Adobe-kontoteam.
+Från och med 31 mars 2023 blockerar identitetstjänsten intag av Adobe Analytics ID (AAID) för nya kunder. Den här identiteten importeras vanligtvis via [Adobe Analytics-källan](../sources/connectors/adobe-applications/analytics.md) och [Adobe Audience Manager-källan](../sources//connectors/adobe-applications/audience-manager.md) och är överflödig eftersom ECID representerar samma webbläsare. Om du vill ändra den här standardkonfigurationen kontaktar du ditt Adobe-kontoteam.
 
 ## Förstå borttagningslogiken när ett identitetsdiagram med kapacitet uppdateras {#deletion-logic}
 
@@ -98,7 +98,7 @@ När den här funktionen är tillgänglig kommer diagram som överskrider gräns
 Borttagning sker endast med data i identitetstjänsten och inte med kundprofilen i realtid.
 
 * Detta beteende kan följaktligen skapa fler profiler med ett enda ECID, eftersom ECID inte längre är en del av identitetsdiagrammet.
-* För att du ska kunna hålla dig inom de adresserbara målgruppernas berättigandenummer rekommenderar vi att du aktiverar [pseudonymt utgångsdatum för profildata](../profile/pseudonymous-profiles.md) för att ta bort dina gamla profiler.
+* För att du ska kunna hålla dig inom dina adresserbara målgruppsberättigandenummer rekommenderar vi att du aktiverar [pseudonymt utgångsdatum](../profile/pseudonymous-profiles.md) för att ta bort dina gamla profiler.
 
 #### Kundprofil och WebSDK i realtid: borttagning av primär identitet
 
@@ -114,11 +114,11 @@ Om du vill bevara dina autentiserade händelser mot CRM-ID:t rekommenderar vi at
 *Diagramanteckningar:*
 
 * `t` = tidsstämpel.
-* Värdet för en tidsstämpel motsvarar nyheten för en viss identitet. Till exempel: `t1` representerar den första länkade identiteten (äldst) och `t51` representerar den senaste länkade identiteten.
+* Värdet för en tidsstämpel motsvarar nyheten för en viss identitet. `t1` representerar till exempel den första länkade identiteten (den äldsta) och `t51` den senaste länkade identiteten.
 
-I det här exemplet tar identitetstjänsten först bort den befintliga identiteten med den äldsta tidsstämpeln innan diagrammet till vänster kan uppdateras med en ny identitet. Men eftersom den äldsta identiteten är ett enhets-ID, hoppar identitetstjänsten över den identiteten tills den kommer till namnutrymmet med en typ som är högre i listan över borttagningsprioriteter, vilket i det här fallet är `ecid-3`. När den äldsta identiteten med en högre prioritetstyp för borttagning har tagits bort uppdateras diagrammet med en ny länk, `ecid-51`.
+I det här exemplet tar identitetstjänsten först bort den befintliga identiteten med den äldsta tidsstämpeln innan diagrammet till vänster kan uppdateras med en ny identitet. Eftersom den äldsta identiteten är ett enhets-ID, hoppar identitetstjänsten över den identiteten tills den kommer till namnområdet med en typ som ligger högre i listan över borttagningsprioriteter, som i det här fallet är `ecid-3`. När den äldsta identiteten med en högre borttagningsprioritetstyp har tagits bort uppdateras diagrammet med en ny länk, `ecid-51`.
 
-* I det sällsynta fallet att det finns två identiteter med samma tidsstämpel och identitetstyp sorteras ID:n baserat på [XID](./api/list-native-id.md) och genomföra radering.
+* Om det i sällsynta fall finns två identiteter med samma tidsstämpel och identitetstyp sorteras ID:n baserat på [XID](./api/list-native-id.md) och tas bort.
 
 ![Ett exempel på den äldsta identiteten som tas bort för den senaste identiteten](./images/graph-limits-v3.png)
 
@@ -130,10 +130,10 @@ I det här exemplet tar identitetstjänsten först bort den befintliga identitet
 
 *Diagramanteckningar:*
 
-* I följande diagram antas att `timestamp=50`finns det 50 identiteter i identitetsdiagrammet.
-* `(...)` anger de andra identiteter som redan är länkade i diagrammet.
+* I följande diagram antas att det finns 50 identiteter i identitetsdiagrammet vid `timestamp=50`.
+* `(...)` betecknar de andra identiteter som redan är länkade i diagrammet.
 
-I det här exemplet är ECID:32110 inkapslat och länkat till ett stort diagram vid `timestamp=51`och därmed överträffa gränsen på 50 identiteter.
+I det här exemplet importeras ECID:32110 och länkas till ett stort diagram vid `timestamp=51`, vilket överskrider gränsen på 50 identiteter.
 
 ![](./images/guardrails/before-split.png)
 
@@ -143,7 +143,7 @@ Därför tar identitetstjänsten bort den äldsta identiteten baserat på tidsst
 
 ![](./images/guardrails/during-split.png)
 
->[!TAB Diagram]
+>[!TAB Diagramutdata]
 
 Som ett resultat av att ECID:35577 togs bort kommer även kanterna som kopplade CRM ID:60013 och CRM ID:25212 med det nu borttagna ECID:35577 att tas bort. Borttagningsprocessen gör att diagrammet delas upp i två mindre diagram.
 
@@ -159,12 +159,12 @@ Som ett resultat av att ECID:35577 togs bort kommer även kanterna som kopplade 
 
 *Diagramanteckningar:*
 
-* I följande diagram antas att `timestamp=50`finns det 50 identiteter i identitetsdiagrammet.
-* `(...)` anger de andra identiteter som redan är länkade i diagrammet.
+* I följande diagram antas att det finns 50 identiteter i identitetsdiagrammet vid `timestamp=50`.
+* `(...)` betecknar de andra identiteter som redan är länkade i diagrammet.
 
 På grund av borttagningslogiken kan vissa nav-identiteter också tas bort. Dessa navidentiteter refererar till noder som är länkade till flera individuella identiteter som annars skulle vara olänkade.
 
-I exemplet nedan är ECID:21011 inkapslat och länkat till diagrammet vid `timestamp=51`och därmed överträffa gränsen på 50 identiteter.
+I exemplet nedan importeras ECID:21011 och länkas till diagrammet vid `timestamp=51`, vilket överskrider gränsen på 50 identiteter.
 
 ![](./images/guardrails/hub-and-spoke-start.png)
 
@@ -173,11 +173,11 @@ I exemplet nedan är ECID:21011 inkapslat och länkat till diagrammet vid `times
 Därför tar identitetstjänsten endast bort den äldsta identiteten från identitetsdiagrammet, som i det här fallet är ECID:35577. Borttagningen av ECID:35577 leder också till att följande tas bort:
 
 * Länken mellan CRM-ID: 60013 och det nu borttagna ECID:35577, vilket resulterar i ett delat diagram.
-* IDFA: 32110, IDFA: 02383, och de återstående identiteterna som representeras av `(...)`. Dessa identiteter tas bort eftersom de inte är länkade till några andra identiteter separat och därför inte kan representeras i ett diagram.
+* IDFA: 32110, IDFA: 02383 och de återstående identiteterna representerade av `(...)`. Dessa identiteter tas bort eftersom de inte är länkade till några andra identiteter separat och därför inte kan representeras i ett diagram.
 
 ![](./images/guardrails/hub-and-spoke-process.png)
 
->[!TAB Diagram]
+>[!TAB Diagramutdata]
 
 Slutligen ger borttagningsprocessen två mindre diagram.
 
@@ -187,7 +187,7 @@ Slutligen ger borttagningsprocessen två mindre diagram.
 
 ## Nästa steg
 
-Mer information om [!DNL Identity Service]:
+Mer information om [!DNL Identity Service] finns i följande dokumentation:
 
 * [[!DNL Identity Service] översikt](home.md)
 * [Identitetsdiagramvisningsprogram](features/identity-graph-viewer.md)
@@ -196,6 +196,6 @@ Följande dokumentation innehåller mer information om andra Experience Platform
 
 * [Real-Time CDP skyddsräcken](/help/rtcdp/guardrails/overview.md)
 * [Latensdiagram från början till slut](https://experienceleague.adobe.com/docs/blueprints-learn/architecture/architecture-overview/deployment/guardrails.html?lang=en#end-to-end-latency-diagrams) för olika Experience Platform-tjänster.
-* [Real-time Customer Data Platform (B2C Edition - Prime- och Ultimate-paket)](https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform-b2c-edition-prime-and-ultimate-packages.html)
+* [Real-time Customer Data Platform (B2C-utgåva - Premiere- och Ultimate-paket)](https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform-b2c-edition-prime-and-ultimate-packages.html)
 * [Real-time Customer Data Platform (B2P - Prime- och Ultimate-paket)](https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform-b2p-edition-prime-and-ultimate-packages.html)
 * [Real-time Customer Data Platform (B2B - Prime- och Ultimate-paket)](https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform-b2b-edition-prime-and-ultimate-packages.html)

@@ -4,14 +4,14 @@ description: Lär dig hur du anropar slutpunkten /properties i Reactor API.
 exl-id: 7830c519-312f-4f73-b3f5-64ab0420d902
 source-git-commit: b66a50e40aaac8df312a2c9a977fb8d4f1fb0c80
 workflow-type: tm+mt
-source-wordcount: '1103'
+source-wordcount: '1100'
 ht-degree: 1%
 
 ---
 
 # Egenskapsslutpunkt
 
-En egenskap är en behållarkonstruktion som innehåller de flesta andra resurser som är tillgängliga i Reaktors-API:t. Du hanterar egenskaper programmatiskt med `/properties` slutpunkt.
+En egenskap är en behållarkonstruktion som innehåller de flesta andra resurser som är tillgängliga i Reaktors-API:t. Du hanterar egenskaper programmatiskt med slutpunkten `/properties`.
 
 I resurshierarkin är en egenskap ägare av följande:
 
@@ -25,13 +25,13 @@ I resurshierarkin är en egenskap ägare av följande:
 * [Regelkomponenter](./rule-components.md)
 * [Regler](./rules.md)
 
-En egenskap tillhör exakt en [företag](./companies.md). Ett företag kan ha många egenskaper.
+En egenskap tillhör exakt ett [företag](./companies.md). Ett företag kan ha många egenskaper.
 
-Mer allmän information om egenskaper och deras roll i tagghantering finns i översikten på [företag och egendomar](../../ui/administration/companies-and-properties.md).
+Mer allmän information om egenskaper och deras roll i tagghantering finns i översikten över [företag och egenskaper](../../ui/administration/companies-and-properties.md).
 
 ## Komma igång
 
-Slutpunkten som används i den här guiden ingår i [Reaktors-API](https://www.adobe.io/experience-platform-apis/references/reactor/). Innan du fortsätter bör du granska [komma igång-guide](../getting-started.md) om du vill ha viktig information om hur du autentiserar till API:t.
+Slutpunkten som används i den här guiden ingår i [Reaktors-API](https://www.adobe.io/experience-platform-apis/references/reactor/). Innan du fortsätter bör du läsa [kom igång-guiden](../getting-started.md) för att få viktig information om hur du autentiserar dig för API:t.
 
 ## Hämta en lista med egenskaper {#list}
 
@@ -45,13 +45,13 @@ GET /companies/{COMPANY_ID}/properties
 
 | Parameter | Beskrivning |
 | --- | --- |
-| `COMPANY_ID` | The `id` för det företag som äger de egenskaper som du vill visa. |
+| `COMPANY_ID` | `id` för företaget som äger de egenskaper som du vill visa. |
 
 {style="table-layout:auto"}
 
 >[!NOTE]
 >
->Med hjälp av frågeparametrar kan listade egenskaper filtreras baserat på följande attribut:<ul><li>`copying`</li><li>`created_at`</li><li>`enabled`</li><li>`name`</li><li>`platform`</li><li>`token`</li><li>`updated_at`</li></ul>Se guiden på [filtrera svar](../guides/filtering.md) för mer information.
+>Med hjälp av frågeparametrar kan listade egenskaper filtreras baserat på följande attribut:<ul><li>`copying`</li><li>`created_at`</li><li>`enabled`</li><li>`name`</li><li>`platform`</li><li>`token`</li><li>`updated_at`</li></ul>Mer information finns i guiden om [filtrering av svar](../guides/filtering.md).
 
 **Begäran**
 
@@ -269,7 +269,7 @@ GET /properties/{PROPERTY_ID}
 
 | Parameter | Beskrivning |
 | --- | --- |
-| `PROPERTY_ID` | The `id` för egenskapen som du vill söka efter. |
+| `PROPERTY_ID` | `id` för egenskapen som du vill söka efter. |
 
 {style="table-layout:auto"}
 
@@ -392,13 +392,13 @@ POST /company/{COMPANY_ID}/properties
 
 | Parameter | Beskrivning |
 | --- | --- |
-| `COMPANY_ID` | The `id` för företaget som du definierar egendomen under. |
+| `COMPANY_ID` | `id` för företaget som du definierar egenskapen under. |
 
 {style="table-layout:auto"}
 
 **Begäran**
 
-I följande begäran skapas en ny egenskap för den angivna egenskapen. Anropet associerar även egenskapen med ett befintligt tillägg via `relationships` -egenskap. Se guiden på [relationer](../guides/relationships.md) för mer information.
+I följande begäran skapas en ny egenskap för den angivna egenskapen. Anropet associerar även egenskapen med ett befintligt tillägg via egenskapen `relationships`. Mer information finns i guiden om [relationer](../guides/relationships.md).
 
 ```shell
 curl -X POST \
@@ -428,8 +428,8 @@ curl -X POST \
 | Egenskap | Beskrivning |
 | --- | --- |
 | `attributes.name` | **(Obligatoriskt)** Ett läsbart namn för egenskapen. |
-| `attributes.platform` | **(Obligatoriskt)** Plattformen för egenskapen. Kan vara antingen `web` för webbegenskaper, eller `mobile` eller `edge` för mobila egenskaper. |
-| `attributes.domains` | **(Krävs för webbegenskaper)** En array med URL-domäner för egenskapen. |
+| `attributes.platform` | **(Obligatoriskt)** Plattformen för egenskapen. Kan vara antingen `web` för webbegenskaper eller `mobile` eller `edge` för mobila egenskaper. |
+| `attributes.domains` | **(Krävs för webbegenskaper)** En matris med URL-domäner för egenskapen. |
 | `attributes.development` | Ett booleskt värde som anger om det här är en utvecklingsegenskap. |
 | `attributes.privacy` | En sträng som kan användas för att referera till sekretessrelaterade överväganden för egenskapen. |
 | `attributes.rule_component_sequencing_enabled` | Ett booleskt värde för om regelkomponentsekvensering ska aktiveras för den här egenskapen. |
@@ -546,7 +546,7 @@ PATCH /properties/{PROPERTY_ID}
 
 | Parameter | Beskrivning |
 | --- | --- |
-| `PROPERTY_ID` | The `id` för egenskapen som du vill uppdatera. |
+| `PROPERTY_ID` | `id` för egenskapen som du vill uppdatera. |
 
 {style="table-layout:auto"}
 
@@ -578,7 +578,7 @@ curl -X PATCH \
 | Egenskap | Beskrivning |
 | --- | --- |
 | `attributes` | Ett objekt vars egenskaper representerar de attribut som ska uppdateras för egenskapen. Följande attribut kan uppdateras för en egenskap: <ul><li>`development`</li><li>`domains`</li><li>`name`</li><li>`platform`</li><li>`privacy`</li><li>`rule_component_sequencing_enabled`</li><li>`ssl_enabled`</li><li>`undefined_vars_return_empty`</li></ul> |
-| `id` | The `id` för den egenskap som du vill uppdatera. Det här bör matcha `{PROPERTY_ID}` värdet som anges i sökvägen för begäran. |
+| `id` | `id` för egenskapen som du vill uppdatera. Det här bör matcha det `{PROPERTY_ID}`-värde som anges i sökvägen till begäran. |
 | `type` | Den typ av resurs som uppdateras. För den här slutpunkten måste värdet vara `properties`. |
 
 {style="table-layout:auto"}
@@ -690,7 +690,7 @@ DELETE /properties/{PROPERTY_ID}
 
 | Parameter | Beskrivning |
 | --- | --- |
-| `PROPERTY_ID` | The `id` för egenskapen som du vill ta bort. |
+| `PROPERTY_ID` | `id` för egenskapen som du vill ta bort. |
 
 {style="table-layout:auto"}
 
@@ -710,17 +710,17 @@ Ett lyckat svar returnerar HTTP-status 204 (inget innehåll) utan svarstext, vil
 
 ## Hantera anteckningar för en egenskap {#notes}
 
-Egenskaperna är&quot;anmärkningsvärda&quot; resurser, vilket innebär att du kan skapa och hämta textbaserade anteckningar för varje enskild resurs. Se [slutpunktshandbok för anteckningar](./notes.md) om du vill ha mer information om hur du hanterar anteckningar för egenskaper och andra kompatibla resurser.
+Egenskaperna är&quot;anmärkningsvärda&quot; resurser, vilket innebär att du kan skapa och hämta textbaserade anteckningar för varje enskild resurs. Mer information om hur du hanterar anteckningar för egenskaper och andra kompatibla resurser finns i [anteckningsguiden](./notes.md).
 
 ## Hämta relaterade resurser för en egenskap {#related}
 
-Följande anrop visar hur du hämtar relaterade resurser för en egenskap. När [söka efter en egenskap](#lookup), listas dessa relationer under `relationships` -egenskap.
+Följande anrop visar hur du hämtar relaterade resurser för en egenskap. När [söker upp en egenskap ](#lookup) visas dessa relationer under egenskapen `relationships`.
 
-Se [relationshandbok](../guides/relationships.md) om du vill ha mer information om relationerna i Reactor API.
+Se [relationshandboken](../guides/relationships.md) för mer information om relationer i Reactor API.
 
 ### Lista relaterade återanrop för en egenskap {#callbacks}
 
-Du kan lista [återanrop](./callbacks.md) som är registrerade i en egenskap genom att lägga till `/callbacks` till sökvägen för en sökningsbegäran.
+Du kan lista de [återanrop](./callbacks.md) som är registrerade för en egenskap genom att lägga till `/callbacks` i sökvägen för en sökningsbegäran.
 
 **API-format**
 
@@ -730,7 +730,7 @@ GET  /properties/{PROPERTY_ID}/callbacks
 
 | Parameter | Beskrivning |
 | --- | --- |
-| `{PROPERTY_ID}` | The `id` för egenskapen vars återanrop du vill visa. |
+| `{PROPERTY_ID}` | `id` för egenskapen vars återanrop du vill visa. |
 
 {style="table-layout:auto"}
 
@@ -795,7 +795,7 @@ Ett lyckat svar returnerar en lista med återanrop som ägs av den angivna egens
 
 ### Lista relaterade dataelement för en egenskap {#data-elements}
 
-Du kan lista [dataelement](./data-elements.md) som ägs av en egendom genom att lägga till `/data_elements` till sökvägen för en sökningsbegäran.
+Du kan lista de [dataelement](./data-elements.md) som ägs av en egenskap genom att lägga till `/data_elements` i sökvägen för en sökbegäran.
 
 **API-format**
 
@@ -805,7 +805,7 @@ GET  /properties/{PROPERTY_ID}/data_elements
 
 | Parameter | Beskrivning |
 | --- | --- |
-| `{PROPERTY_ID}` | The `id` för egenskapen vars dataelement du vill lista. |
+| `{PROPERTY_ID}` | `id` för egenskapen vars dataelement du vill visa. |
 
 {style="table-layout:auto"}
 
@@ -936,7 +936,7 @@ Ett lyckat svar returnerar en lista med dataelement som ägs av den angivna egen
 
 ### Lista de relaterade miljöerna för en egenskap {#environments}
 
-Du kan lista [miljöer](./environments.md) som ägs av en egendom genom att lägga till `/environments` till sökvägen för en sökningsbegäran.
+Du kan lista de [miljöer](./environments.md) som ägs av en egenskap genom att lägga till `/environments` i sökvägen för en sökbegäran.
 
 **API-format**
 
@@ -946,7 +946,7 @@ GET  /properties/{PROPERTY_ID}/environments
 
 | Parameter | Beskrivning |
 | --- | --- |
-| `{PROPERTY_ID}` | The `id` för den egenskap vars miljöer du vill visa. |
+| `{PROPERTY_ID}` | `id` för egenskapen vars miljöer du vill visa. |
 
 {style="table-layout:auto"}
 
@@ -1056,7 +1056,7 @@ Ett lyckat svar returnerar en lista över miljöer som ägs av den angivna egens
 
 ### Lista relaterade tillägg för en egenskap {#extensions}
 
-Du kan lista [tillägg](./extensions.md) som ägs av en egendom genom att lägga till `/extensions` till sökvägen för en sökningsbegäran.
+Du kan lista de [tillägg](./extensions.md) som ägs av en egenskap genom att lägga till `/extensions` i sökvägen för en sökbegäran.
 
 **API-format**
 
@@ -1066,7 +1066,7 @@ GET  /properties/{PROPERTY_ID}/extensions
 
 | Parameter | Beskrivning |
 | --- | --- |
-| `{PROPERTY_ID}` | The `id` för egenskapen vars tillägg du vill visa. |
+| `{PROPERTY_ID}` | `id` för egenskapen vars tillägg du vill visa. |
 
 {style="table-layout:auto"}
 
@@ -1187,7 +1187,7 @@ Ett godkänt svar returnerar en lista med tillägg som ägs av den angivna egens
 
 ### Lista de relaterade värdarna för en egenskap {#hosts}
 
-Du kan lista [värdar](./hosts.md) som används av en egenskap genom att lägga till `/hosts` till sökvägen för en sökningsbegäran.
+Du kan lista de [värdar](./hosts.md) som används av en egenskap genom att lägga till `/hosts` i sökvägen för en sökbegäran.
 
 **API-format**
 
@@ -1197,7 +1197,7 @@ GET  /properties/{PROPERTY_ID}/hosts
 
 | Parameter | Beskrivning |
 | --- | --- |
-| `{PROPERTY_ID}` | The `id` för den egenskap vars värdar du vill visa. |
+| `{PROPERTY_ID}` | `id` för egenskapen vars värdar du vill visa. |
 
 {style="table-layout:auto"}
 
@@ -1265,7 +1265,7 @@ Ett lyckat svar returnerar en lista med värdar som används av en angiven egens
 
 ### Visa de relaterade reglerna för en egenskap {#rules}
 
-Du kan lista [regler](./rules.md) som används av en egenskap genom att lägga till `/rules` till sökvägen för en sökningsbegäran.
+Du kan lista de [regler](./rules.md) som används av en egenskap genom att lägga till `/rules` i sökvägen för en sökbegäran.
 
 **API-format**
 
@@ -1275,7 +1275,7 @@ GET  /properties/{PROPERTY_ID}/rules
 
 | Parameter | Beskrivning |
 | --- | --- |
-| `{PROPERTY_ID}` | The `id` för egenskapen vars regler du vill visa. |
+| `{PROPERTY_ID}` | `id` för egenskapen vars regler du vill visa. |
 
 {style="table-layout:auto"}
 
@@ -1378,7 +1378,7 @@ Ett godkänt svar returnerar en lista med regler som används av en angiven egen
 
 ### Söka efter en egenskap i det relaterade företaget {#company}
 
-Du kan leta upp företaget som äger en egendom genom att lägga till `/company` till sökvägen för en sökningsbegäran.
+Du kan söka efter företaget som äger en egenskap genom att lägga till `/company` i sökvägen för en sökbegäran.
 
 **API-format**
 
@@ -1388,7 +1388,7 @@ GET /properties/{PROPERTY_ID}/company
 
 | Parameter | Beskrivning |
 | --- | --- |
-| `{PROPERTY_ID}` | The `id` av den egendom vars företag du vill söka efter. |
+| `{PROPERTY_ID}` | `id` för egenskapen vars företag du vill söka efter. |
 
 {style="table-layout:auto"}
 

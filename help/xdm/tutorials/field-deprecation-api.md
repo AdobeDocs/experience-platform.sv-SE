@@ -4,24 +4,24 @@ description: Lär dig hur du ersätter XDM-fält (Experience Data Model) i API:t
 exl-id: e49517c4-608d-4e05-8466-75724ca984a8
 source-git-commit: f9f783b75bff66d1bf3e9c6d1ed1c543bd248302
 workflow-type: tm+mt
-source-wordcount: '587'
+source-wordcount: '583'
 ht-degree: 0%
 
 ---
 
 # Ta bort ett XDM-fält i API:t
 
-I Experience Data Model (XDM) kan du ersätta ett fält i ett schema eller en anpassad resurs med hjälp av [API för schemaregister](https://developer.adobe.com/experience-platform-apis/references/schema-registry/). När ett fält tas bort döljs det från användargränssnitt längre ned, t.ex. [!UICONTROL Profiles] arbetsytan och Customer Journey Analytics, men det är i övrigt en oföränderlig ändring och påverkar inte befintliga dataflöden negativt.
+I Experience Data Model (XDM) kan du ta bort ett fält i ett schema eller en anpassad resurs med [API:t för schemaregister](https://developer.adobe.com/experience-platform-apis/references/schema-registry/). När ett fält tas bort döljs det från användargränssnitt längre fram i kedjan, till exempel arbetsytan [!UICONTROL Profiles] och Customer Journey Analytics, men det är i övrigt en oförändrad ändring och påverkar inte befintliga dataflöden negativt.
 
-Det här dokumentet beskriver hur du ersätter fält för olika XDM-resurser. Anvisningar om hur du tar bort ett XDM-fält med Schemaredigeraren i användargränssnittet i Experience Platform finns i självstudiekursen om [ta bort ett XDM-fält i användargränssnittet](./field-deprecation-ui.md).
+Det här dokumentet beskriver hur du ersätter fält för olika XDM-resurser. Anvisningar om hur du tar bort ett XDM-fält med Schemaredigeraren i användargränssnittet i Experience Platform finns i självstudiekursen [om hur du tar bort ett XDM-fält i användargränssnittet](./field-deprecation-ui.md).
 
 ## Komma igång
 
-Den här självstudien kräver anrop till API:t för schemaregistret. Granska [utvecklarhandbok](../api/getting-started.md) för viktig information som du behöver känna till för att kunna göra dessa API-anrop. Detta inkluderar `{TENANT_ID}`, begreppet &quot;behållare&quot; och de rubriker som krävs för att göra en förfrågan (med särskild uppmärksamhet på `Accept` header och dess möjliga värden).
+Den här självstudien kräver anrop till API:t för schemaregistret. Granska [utvecklarhandboken](../api/getting-started.md) för viktig information som du behöver känna till för att kunna göra dessa API-anrop. Detta inkluderar din `{TENANT_ID}`, begreppet&quot;behållare&quot; och de huvuden som krävs för att göra förfrågningar (med särskild uppmärksamhet på rubriken `Accept` och dess möjliga värden).
 
 ## Föråldrade ett anpassat fält {#custom}
 
-Om du vill ersätta ett fält i en anpassad klass, fältgrupp eller datatyp uppdaterar du den anpassade resursen via en PUT- eller PATCH-begäran och lägger till attributet `meta:status: deprecated` till fältet i fråga.
+Om du vill ta bort ett fält i en anpassad klass, fältgrupp eller datatyp uppdaterar du den anpassade resursen via en PUT- eller PATCH-begäran och lägger till attributet `meta:status: deprecated` i fältet i fråga.
 
 >[!NOTE]
 >
@@ -30,7 +30,6 @@ Om du vill ersätta ett fält i en anpassad klass, fältgrupp eller datatyp uppd
 >* [Uppdatera en klass](../api/classes.md#patch)
 >* [Uppdatera en fältgrupp](../api/field-groups.md#patch)
 >* [Uppdatera en datatyp](../api/data-types.md#patch)
-
 
 Exemplet på API-anrop nedan tar bort ett fält i en anpassad datatyp.
 
@@ -42,7 +41,7 @@ PATCH /tenant/datatypes/{DATA_TYPE_ID}
 
 **Begäran**
 
-Följande begäran tar bort `expansionArea` fält för en datatyp som beskriver en fastighet.
+Följande begäran tar bort fältet `expansionArea` för en datatyp som beskriver en fastighetsegenskap.
 
 ```shell
 curl -X PATCH \
@@ -63,7 +62,7 @@ curl -X PATCH \
 
 **Svar**
 
-Ett lyckat svar returnerar uppdateringsinformationen för den anpassade resursen, där det borttagna fältet innehåller ett `meta:status` värde för `deprecated`. Exemplet nedan har trunkerats för blanksteg.
+Ett lyckat svar returnerar uppdateringsinformationen för den anpassade resursen, med det borttagna fältet som innehåller `meta:status`-värdet `deprecated`. Exemplet nedan har trunkerats för blanksteg.
 
 ```json
 {
@@ -169,7 +168,7 @@ Fält från standardklasser, fältgrupper och datatyper kan inte tas bort direkt
 
 ### Skapa en beskrivning för fältborttagning {#create-descriptor}
 
-Om du vill skapa en beskrivning för de schemafält som du vill ta bort gör du en POST till `/tenant/descriptors` slutpunkt.
+Om du vill skapa en beskrivning för de schemafält som du vill ta bort gör du en POST till slutpunkten `/tenant/descriptors`.
 
 **API-format**
 
@@ -197,10 +196,10 @@ curl -X POST \
 
 | Egenskap | Beskrivning |
 | --- | --- |
-| `@type` | Beskrivningstypen. För en deskriptor för fältborttagning måste det här värdet anges till `xdm:descriptorDeprecated`. |
-| `xdm:sourceSchema` | URI `$id` för det schema som du använder beskrivningen på. |
+| `@type` | Beskrivningstypen. För en deskriptor för fältborttagning måste värdet anges till `xdm:descriptorDeprecated`. |
+| `xdm:sourceSchema` | URI `$id` för schemat som du tillämpar beskrivningen på. |
 | `xdm:sourceVersion` | Den version av schemat som du tillämpar beskrivningen på. Ska anges till `1`. |
-| `xdm:sourceProperty` | Sökvägen till egenskapen i schemat som du tillämpar beskrivningen på. Om du vill tillämpa beskrivningen på flera egenskaper kan du ange en lista med sökvägar i form av en array (till exempel `["/firstName", "/lastName"]`). |
+| `xdm:sourceProperty` | Sökvägen till egenskapen i schemat som du tillämpar beskrivningen på. Om du vill tillämpa beskrivningen på flera egenskaper kan du tillhandahålla en lista med sökvägar i form av en array (till exempel `["/firstName", "/lastName"]`). |
 
 **Svar**
 
@@ -221,7 +220,7 @@ curl -X POST \
 
 ### Verifiera det inaktuella fältet {#verify-deprecation}
 
-När beskrivningen har tillämpats kan du verifiera om fältet har tagits bort genom att leta upp schemat i fråga och använda rätt `Accept` header.
+När beskrivningen har tillämpats kan du verifiera om fältet har ersatts genom att leta upp schemat i fråga med rätt `Accept`-rubrik.
 
 >[!NOTE]
 >
@@ -235,7 +234,7 @@ GET /tenant/schemas
 
 **Begäran**
 
-Om du vill ta med information om inaktuella fält i API-svaret måste du ange `Accept` sidhuvud till `application/vnd.adobe.xed-deprecatefield+json; version=1`.
+Om du vill ta med information om inaktuella fält i API-svaret måste du ange `Accept` som `application/vnd.adobe.xed-deprecatefield+json; version=1`.
 
 ```shell
 curl -X GET \
@@ -249,7 +248,7 @@ curl -X GET \
 
 **Svar**
 
-Ett lyckat svar returnerar informationen om schemat, där det borttagna fältet innehåller ett `meta:status` värde för `deprecated`. Exemplet nedan har trunkerats för blanksteg.
+Ett lyckat svar returnerar information om schemat, med det borttagna fältet som innehåller `meta:status`-värdet `deprecated`. Exemplet nedan har trunkerats för blanksteg.
 
 ```json
 "faxPhone": {
@@ -266,4 +265,4 @@ Ett lyckat svar returnerar informationen om schemat, där det borttagna fältet 
 
 ## Nästa steg
 
-I det här dokumentet beskrivs hur XDM-fält skrivs ut med API:t för schemaregister. Mer information om hur du konfigurerar fält för anpassade resurser finns i handboken [definiera XDM-fält i API](./custom-fields-api.md). Mer information om hur du hanterar beskrivningar finns i [slutpunktshandbok för beskrivningar](../api/descriptors.md).
+I det här dokumentet beskrivs hur XDM-fält skrivs ut med API:t för schemaregister. Mer information om hur du konfigurerar fält för anpassade resurser finns i guiden [definierar XDM-fält i API](./custom-fields-api.md). Mer information om hur du hanterar beskrivningar finns i [slutpunktshandboken för beskrivningar](../api/descriptors.md).

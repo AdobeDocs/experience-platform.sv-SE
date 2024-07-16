@@ -9,9 +9,9 @@ ht-degree: 0%
 
 ---
 
-# [!UICONTROL Quote Request Details] schemafältgrupp
+# Schemafältgruppen [!UICONTROL Quote Request Details]
 
-[!UICONTROL Quote Request Details] är en standardgrupp för schemafält för [[!DNL XDM ExperienceEvent] class](../../classes/experienceevent.md). Fältgruppen innehåller en `quotes` invänder mot ett schema som innehåller information om förfrågningsprocessen för olika typer av offerter, inklusive försäkringsbrev, hälso- och sjukvård, tillverkningsorder och hightech-order.
+[!UICONTROL Quote Request Details] är en standardschemafältgrupp för [[!DNL XDM ExperienceEvent] klassen](../../classes/experienceevent.md). Fältgruppen tillhandahåller ett enskilt `quotes`-objekt till ett schema, som samlar in processinformation för olika typer av offerter, inklusive försäkringspolicyer, hälso- och sjukvård, tillverkningsorder och hightech-order.
 
 ![](../../images/field-groups/quote-request-details.png)
 
@@ -25,4 +25,4 @@ ht-degree: 0%
 
 {style="table-layout:auto"}
 
-Mer information om fältgruppen finns i [publik XDM-databas](https://github.com/adobe/xdm/blob/master/docs/reference/fieldgroups/experience-event/experienceevent-quote-request-details.schema.json).
+Mer information om fältgruppen finns i [den offentliga XDM-databasen](https://github.com/adobe/xdm/blob/master/docs/reference/fieldgroups/experience-event/experienceevent-quote-request-details.schema.json).

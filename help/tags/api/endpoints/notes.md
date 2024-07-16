@@ -4,7 +4,7 @@ description: Lär dig hur du anropar slutpunkten /notes i Reactor API.
 exl-id: fa3bebc0-215e-4515-87b9-d195c9ab76c1
 source-git-commit: 47a94b00e141b24203b01dc93834aee13aa6113c
 workflow-type: tm+mt
-source-wordcount: '515'
+source-wordcount: '512'
 ht-degree: 1%
 
 ---
@@ -19,7 +19,7 @@ I Reaktors-API:t är anteckningar textanteckningar som du kan lägga till i viss
 * Ge instruktioner till andra teammedlemmar
 * Inspelningshistorik
 
-The `/notes` -slutpunkten i Reaktors API gör att du kan hantera anteckningarna programmatiskt.
+Med slutpunkten `/notes` i Reaktors API kan du hantera anteckningarna programmatiskt.
 
 Anteckningar kan användas med följande resurser:
 
@@ -37,15 +37,15 @@ Dessa sex typer kallas tillsammans för&quot;betydande&quot; resurser. När en a
 >
 >För resurser som kan ha flera versioner måste anteckningar skapas för den aktuella huvudrevisionen. De får inte bifogas andra revisioner.
 >
->Anteckningar kan dock fortfarande läsas från revisioner. I sådana fall returnerar API bara de anteckningar som fanns innan ändringen skapades. De ger en ögonblicksbild av anteckningarna som de var när revisionen klipptes ut. Om du däremot läser anteckningar från den aktuella huvudrevisionen, returneras alla anteckningar.
+>Anteckningar kan dock fortfarande läsas från revideringar. I sådana fall returnerar API bara de anteckningar som fanns innan ändringen skapades. De ger en ögonblicksbild av anteckningarna som de var när revisionen klipptes ut. Om du däremot läser anteckningar från den aktuella huvudrevisionen, returneras alla anteckningar.
 
 ## Komma igång
 
-Slutpunkten som används i den här guiden är en del av [Reaktors-API](https://www.adobe.io/experience-platform-apis/references/reactor/). Läs igenom [komma igång-guide](../getting-started.md) om du vill ha viktig information om hur du autentiserar till API:t.
+Slutpunkten som används i den här guiden ingår i [Reaktors-API](https://www.adobe.io/experience-platform-apis/references/reactor/). Innan du fortsätter bör du läsa [kom igång-guiden](../getting-started.md) för att få viktig information om hur du autentiserar dig för API:t.
 
 ## Hämta en lista med anteckningar {#list}
 
-Du kan hämta en lista över anteckningar för en resurs genom att lägga till `/notes` till sökvägen för en GET-begäran för den aktuella resursen.
+Du kan hämta en lista med anteckningar för en resurs genom att lägga till `/notes` i sökvägen för en GET-förfrågan för den aktuella resursen.
 
 **API-format**
 
@@ -56,7 +56,7 @@ GET /{RESOURCE_TYPE}/{RESOURCE_ID}/notes
 | Parameter | Beskrivning |
 | --- | --- |
 | `RESOURCE_TYPE` | Den typ av resurs som du hämtar anteckningar för. Måste vara något av följande värden: <ul><li>`data_elements`</li><li>`extensions`</li><li>`libraries`</li><li>`properties`</li><li>`rule_components`</li><li>`rules`</li></ul> |
-| `RESOURCE_ID` | The `id` för den specifika resurs vars anteckningar du vill visa. |
+| `RESOURCE_ID` | `id` för den specifika resurs vars anteckningar du vill visa. |
 
 {style="table-layout:auto"}
 
@@ -131,7 +131,7 @@ GET /notes/{NOTE_ID}
 
 | Parameter | Beskrivning |
 | --- | --- |
-| `NOTE_ID` | The `id` som du vill söka efter. |
+| `NOTE_ID` | `id` av anteckningen som du vill söka efter. |
 
 {style="table-layout:auto"}
 
@@ -187,7 +187,7 @@ Ett godkänt svar returnerar informationen i anteckningen.
 >
 >Innan du skapar en ny anteckning bör du tänka på att anteckningar inte kan redigeras, och det enda sättet att ta bort dem är att ta bort motsvarande resurs.
 
-Du kan skapa en ny anteckning genom att lägga till `/notes` till sökvägen för en begäran om POST av den aktuella resursen.
+Du kan skapa en ny anteckning genom att lägga till `/notes` i sökvägen för en POST-förfrågan för resursen i fråga.
 
 **API-format**
 
@@ -198,7 +198,7 @@ POST /{RESOURCE_TYPE}/{RESOURCE_ID}/notes
 | Parameter | Beskrivning |
 | --- | --- |
 | `RESOURCE_TYPE` | Den typ av resurs som du skapar en anteckning för. Måste vara något av följande värden: <ul><li>`data_elements`</li><li>`extensions`</li><li>`libraries`</li><li>`properties`</li><li>`rule_components`</li><li>`rules`</li></ul> |
-| `RESOURCE_ID` | The `id` av den specifika resurs som du vill skapa en anteckning för. |
+| `RESOURCE_ID` | `id` för den specifika resurs som du vill skapa en anteckning för. |
 
 {style="table-layout:auto"}
 
@@ -226,7 +226,7 @@ curl -X POST \
 | Egenskap | Beskrivning |
 | --- | --- |
 | `type` | **(Obligatoriskt)** Den typ av resurs som uppdateras. För den här slutpunkten måste värdet vara `notes`. |
-| `attributes.text` | **(Obligatoriskt)** Den text som innehåller anteckningen. Varje anteckning är begränsad till 512 Unicode-tecken. |
+| `attributes.text` | **(Obligatoriskt)** Texten som omfattar anteckningen. Varje anteckning är begränsad till 512 Unicode-tecken. |
 
 {style="table-layout:auto"}
 

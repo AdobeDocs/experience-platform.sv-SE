@@ -14,9 +14,9 @@ ht-degree: 0%
 
 # Slutpunkter för principutvärdering
 
-När marknadsföringsåtgärder har skapats och dataanvändningspolicyer har definierats kan du använda [!DNL Policy Service] API för att utvärdera om några profiler överträds av vissa åtgärder. De returnerade begränsningarna har formen av en uppsättning principer som skulle överträdas om marknadsföringsåtgärden utförs på de angivna data som innehåller dataanvändningsetiketter.
+När marknadsföringsåtgärder har skapats och dataanvändningsprinciper har definierats, kan du använda [!DNL Policy Service]-API:t för att utvärdera om några profiler överträds av vissa åtgärder. De returnerade begränsningarna har formen av en uppsättning principer som skulle överträdas om marknadsföringsåtgärden utförs på de angivna data som innehåller dataanvändningsetiketter.
 
-Som standard är det bara profiler vars status är inställd på `ENABLED` delta i utvärderingen. Du kan dock använda frågeparametern `?includeDraft=true` att inkludera `DRAFT` Utvärderingsprinciper.
+Som standard deltar endast principer vars status är inställd på `ENABLED` i utvärderingen. Du kan dock använda frågeparametern `?includeDraft=true` för att inkludera `DRAFT` profiler i utvärderingen.
 
 Begäran om utvärdering kan göras på ett av tre sätt:
 
@@ -26,11 +26,11 @@ Begäran om utvärdering kan göras på ett av tre sätt:
 
 ## Komma igång
 
-API-slutpunkterna som används i den här handboken är en del av [[!DNL Policy Service] API](https://www.adobe.io/experience-platform-apis/references/policy-service/). Innan du fortsätter bör du granska [komma igång-guide](./getting-started.md) för länkar till relaterad dokumentation, en guide till hur du läser exempel-API-anrop i det här dokumentet och viktig information om vilka huvuden som behövs för att kunna ringa anrop till [!DNL Experience Platform] API.
+API-slutpunkterna som används i den här guiden ingår i [[!DNL Policy Service] API](https://www.adobe.io/experience-platform-apis/references/policy-service/). Innan du fortsätter bör du läsa [kom igång-guiden](./getting-started.md) för att få länkar till relaterad dokumentation, en guide till hur du läser exempelanropen för API i det här dokumentet och viktig information om vilka huvuden som krävs för att kunna anropa ett [!DNL Experience Platform] -API.
 
 ## Utvärdera för policyöverträdelser med hjälp av dataanvändningsetiketter {#labels}
 
-Du kan utvärdera om det finns principöverträdelser baserat på en viss uppsättning dataanvändningsetiketter med hjälp av `duleLabels` frågeparameter i en GET-begäran.
+Du kan utvärdera om det finns principfel baserat på om det finns en viss uppsättning dataanvändningsetiketter genom att använda frågeparametern `duleLabels` i en GET-begäran.
 
 **API-format**
 
@@ -41,8 +41,8 @@ GET /marketingActions/custom/{MARKETING_ACTION_NAME}/constraints?duleLabels={LAB
 
 | Parameter | Beskrivning |
 | --- | --- |
-| `{MARKETING_ACTION_NAME}` | Namnet på marknadsföringsåtgärden som ska testas mot en uppsättning dataanvändningsetiketter. Du kan hämta en lista över tillgängliga marknadsföringsåtgärder genom att skapa en [GET-begäran till slutpunkten för marknadsföringsåtgärder](./marketing-actions.md#list). |
-| `{LABELS_LIST}` | En kommaavgränsad lista med namn på dataanvändningsetiketter som marknadsföringsåtgärden ska testas mot. Till exempel: `duleLabels=C1,C2,C3`<br><br>Observera att etikettnamn är skiftlägeskänsliga. Se till att du använder rätt skiftläge när du listar dem i `duleLabels` parameter. |
+| `{MARKETING_ACTION_NAME}` | Namnet på marknadsföringsåtgärden som ska testas mot en uppsättning dataanvändningsetiketter. Du kan hämta en lista över tillgängliga marknadsföringsåtgärder genom att göra en [GET-förfrågan till slutpunkten för marknadsföringsåtgärderna](./marketing-actions.md#list). |
+| `{LABELS_LIST}` | En kommaavgränsad lista med namn på dataanvändningsetiketter som marknadsföringsåtgärden ska testas mot. Till exempel: `duleLabels=C1,C2,C3`<br><br>Observera att etikettnamn är skiftlägeskänsliga. Se till att du använder rätt skiftläge när du listar dem i parametern `duleLabels`. |
 
 **Begäran**
 
@@ -50,7 +50,7 @@ Exemplet nedan utvärderar en marknadsföringsåtgärd mot etiketterna C1 och C3
 
 >[!IMPORTANT]
 >
->Var medveten om `AND` och `OR` -operatorer i dina policyuttryck. I exemplet nedan, om någon av etiketterna`C1` eller `C3`) hade framträtt ensam i begäran och marknadsföringsåtgärden skulle inte ha brutit mot denna policy. Det krävs båda etiketterna (`C1` och `C3`) för att återlämna den felaktiga policyn. Se till att ni utvärderar policyer noggrant och definierar politiska uttryck med lika stor omsorg.
+>Observera operatorerna `AND` och `OR` i dina principuttryck. Om etiketten (`C1` eller `C3`) hade funnits ensam i begäran i exemplet nedan skulle marknadsföringsåtgärden inte ha brutit mot den här principen. Det krävs båda etiketterna (`C1` och `C3`) för att returnera den felaktiga principen. Se till att ni utvärderar policyer noggrant och definierar politiska uttryck med lika stor omsorg.
 
 ```shell
 curl -X GET \
@@ -63,7 +63,7 @@ curl -X GET \
 
 **Svar**
 
-Ett lyckat svar innehåller `violatedPolicies` array, som innehåller detaljerna om de policyer som överträtts som ett resultat av marknadsföringsåtgärden mot de angivna etiketterna. Om inga policyer överträds `violatedPolicies` matrisen kommer att vara tom.
+Ett lyckat svar innehåller en `violatedPolicies`-matris, som innehåller information om de principer som överträtts som ett resultat av marknadsföringsåtgärden mot de angivna etiketterna. Om inga principer överträds kommer `violatedPolicies`-arrayen att vara tom.
 
 ```JSON
 {
@@ -123,7 +123,7 @@ Ett lyckat svar innehåller `violatedPolicies` array, som innehåller detaljerna
 
 ## Utvärdera för policyöverträdelser med datauppsättningar {#datasets}
 
-Du kan utvärdera om det finns principfel baserat på en uppsättning med en eller flera datauppsättningar från vilka dataanvändningsetiketter kan samlas in. Detta gör du genom att göra en POST till `/constraints` slutpunkt för en specifik marknadsföringsåtgärd och tillhandahålla en lista med datauppsättnings-ID:n i begärandetexten.
+Du kan utvärdera om det finns principfel baserat på en uppsättning med en eller flera datauppsättningar från vilka dataanvändningsetiketter kan samlas in. Detta görs genom att utföra en begäran om POST till `/constraints`-slutpunkten för en viss marknadsföringsåtgärd och tillhandahålla en lista med datauppsättnings-ID:n i begärandetexten.
 
 **API-format**
 
@@ -134,11 +134,11 @@ POST /marketingActions/custom/{MARKETING_ACTION_NAME}/constraints
 
 | Parameter | Beskrivning |
 | --- | --- |
-| `{MARKETING_ACTION_NAME}` | Namnet på marknadsföringsåtgärden som ska testas mot en eller flera datauppsättningar. Du kan hämta en lista över tillgängliga marknadsföringsåtgärder genom att skapa en [GET-begäran till slutpunkten för marknadsföringsåtgärder](./marketing-actions.md#list). |
+| `{MARKETING_ACTION_NAME}` | Namnet på marknadsföringsåtgärden som ska testas mot en eller flera datauppsättningar. Du kan hämta en lista över tillgängliga marknadsföringsåtgärder genom att göra en [GET-förfrågan till slutpunkten för marknadsföringsåtgärderna](./marketing-actions.md#list). |
 
 **Begäran**
 
-Följande begäran utför `crossSiteTargeting` marknadsföringsåtgärder mot en uppsättning av tre datauppsättningar som ska utvärderas för eventuella policyöverträdelser.
+Följande begäran utför marknadsföringsåtgärden `crossSiteTargeting` mot en uppsättning av tre datauppsättningar för att utvärdera eventuella principöverträdelser.
 
 ```shell
 curl -X POST \
@@ -166,12 +166,12 @@ curl -X POST \
 
 | Egenskap | Beskrivning |
 | --- | --- |
-| `entityType` | Typen av enhet vars ID anges i jämställda `entityId` -egenskap. För närvarande är det enda godkända värdet `dataSet`. |
-| `entityId` | ID:t för en datauppsättning som marknadsföringsåtgärden ska testas mot. En lista över datauppsättningar och deras motsvarande ID:n kan hämtas genom att en GET-begäran görs till `/dataSets` slutpunkt i [!DNL Catalog Service] API. Se guiden på [lista [!DNL Catalog] objekt](../../catalog/api/list-objects.md) för mer information. |
+| `entityType` | Den typ av entitet vars ID anges i egenskapen `entityId` på samma nivå. För närvarande är det enda godkända värdet `dataSet`. |
+| `entityId` | ID:t för en datauppsättning som marknadsföringsåtgärden ska testas mot. En lista över datauppsättningar och deras motsvarande ID:n kan hämtas genom att en GET-begäran görs till `/dataSets`-slutpunkten i [!DNL Catalog Service] API:t. Mer information finns i guiden om [att lista [!DNL Catalog] objekt](../../catalog/api/list-objects.md). |
 
 **Svar**
 
-Ett lyckat svar innehåller `violatedPolicies` -array, som innehåller detaljer om de principer som överträtts som ett resultat av att marknadsföringsåtgärden utfördes mot de angivna datauppsättningarna. Om inga policyer överträds `violatedPolicies` matrisen kommer att vara tom.
+Ett lyckat svar innehåller en `violatedPolicies`-matris, som innehåller information om de principer som överträtts som ett resultat av marknadsföringsåtgärden mot de angivna datauppsättningarna. Om inga principer överträds kommer `violatedPolicies`-arrayen att vara tom.
 
 ```JSON
 {
@@ -344,8 +344,8 @@ Ett lyckat svar innehåller `violatedPolicies` -array, som innehåller detaljer 
 
 | Egenskap | Beskrivning |
 | --- | --- |
-| `duleLabels` | Responsobjektet innehåller en `duleLabels` en array som innehåller en konsoliderad lista med alla etiketter som finns i de angivna datauppsättningarna. Den här listan innehåller datauppsättnings- och fältnivåetiketter för alla fält i datauppsättningen. |
-| `discoveredLabels` | Svaret innehåller även en `discoveredLabels` array som innehåller objekt för varje datamängd, visa `datasetLabels` uppdelat i etiketter på datamängd- och fältnivå. Varje etikett på fältnivå visar sökvägen till det specifika fältet med den etiketten. |
+| `duleLabels` | Svarsobjektet innehåller en `duleLabels`-matris som innehåller en konsoliderad lista över alla etiketter som hittats i de angivna datauppsättningarna. Den här listan innehåller datauppsättnings- och fältnivåetiketter för alla fält i datauppsättningen. |
+| `discoveredLabels` | Svaret innehåller också en `discoveredLabels`-array som innehåller objekt för varje datamängd, och som visar `datasetLabels` uppdelat i etiketter på datamängd- och fältnivå. Varje etikett på fältnivå visar sökvägen till det specifika fältet med den etiketten. |
 
 ## Utvärdera för policyöverträdelser med hjälp av specifika datauppsättningsfält {#fields}
 
@@ -354,7 +354,7 @@ Du kan utvärdera om det finns principfel som baseras på en delmängd av fält 
 När du utvärderar principer med hjälp av datauppsättningsfält bör du tänka på följande:
 
 * **Fältnamn är skiftlägeskänsliga**: När du anger fält måste de skrivas exakt som de visas i datauppsättningen (till exempel `firstName` vs `firstname`).
-* **Arv av datauppsättningsetikett**: Enskilda fält i en datauppsättning ärver alla etiketter som har tillämpats på datauppsättningsnivån. Om dina principutvärderingar inte returneras som förväntat ska du kontrollera om det finns etiketter som kan ha ärvts från datauppsättningsnivån ned till fält, utöver de som tillämpas på fältnivån.
+* **Ärv av datauppsättningsetikett**: Individuella fält i en datauppsättning ärver alla etiketter som har tillämpats på datauppsättningsnivå. Om dina principutvärderingar inte returneras som förväntat ska du kontrollera om det finns etiketter som kan ha ärvts från datauppsättningsnivån ned till fält, utöver de som tillämpas på fältnivån.
 
 **API-format**
 
@@ -365,11 +365,11 @@ POST /marketingActions/custom/{MARKETING_ACTION_NAME}/constraints
 
 | Parameter | Beskrivning |
 | --- | --- |
-| `{MARKETING_ACTION_NAME}` | Namnet på marknadsföringsåtgärden som ska testas mot en delmängd av datamängdsfält. Du kan hämta en lista över tillgängliga marknadsföringsåtgärder genom att skapa en [GET-begäran till slutpunkten för marknadsföringsåtgärder](./marketing-actions.md#list). |
+| `{MARKETING_ACTION_NAME}` | Namnet på marknadsföringsåtgärden som ska testas mot en delmängd av datamängdsfält. Du kan hämta en lista över tillgängliga marknadsföringsåtgärder genom att göra en [GET-förfrågan till slutpunkten för marknadsföringsåtgärderna](./marketing-actions.md#list). |
 
 **Begäran**
 
-Följande förfrågan testar marknadsföringsåtgärden `crossSiteTargeting` på en specifik uppsättning fält som tillhör tre datamängder. Nyttolasten liknar [utvärderingsbegäran som endast innehåller datauppsättningar](#datasets), lägger till specifika fält för varje datauppsättning att samla in etiketter från.
+Följande begäran testar marknadsföringsåtgärden `crossSiteTargeting` för en specifik uppsättning fält som tillhör tre datamängder. Nyttolasten liknar en [utvärderingsbegäran som endast innehåller datamängder](#datasets), och lägger till specifika fält för varje datamängd som etiketter ska samlas in från.
 
 ```shell
 curl -X POST \
@@ -414,15 +414,15 @@ curl -X POST \
 
 | Egenskap | Beskrivning |
 | --- | --- |
-| `entityType` | Typen av enhet vars ID anges i jämställda `entityId` -egenskap. För närvarande är det enda godkända värdet `dataSet`. |
-| `entityId` | ID:t för en datauppsättning vars fält ska utvärderas mot marknadsföringsåtgärden. En lista över datauppsättningar och deras motsvarande ID:n kan hämtas genom att en GET-begäran görs till `/dataSets` slutpunkt i [!DNL Catalog Service] API. Se guiden på [lista [!DNL Catalog] objekt](../../catalog/api/list-objects.md) för mer information. |
-| `entityMeta.fields` | En array med sökvägar till specifika fält i datasetets schema, som tillhandahålls i form av JSON-pekarsträngar. Se avsnittet om [JSON-pekare](../../landing/api-fundamentals.md#json-pointer) i guiden om grundläggande API-funktioner om du vill ha mer information om den godkända syntaxen för de här strängarna. |
+| `entityType` | Den typ av entitet vars ID anges i egenskapen `entityId` på samma nivå. För närvarande är det enda godkända värdet `dataSet`. |
+| `entityId` | ID:t för en datauppsättning vars fält ska utvärderas mot marknadsföringsåtgärden. En lista över datauppsättningar och deras motsvarande ID:n kan hämtas genom att en GET-begäran görs till `/dataSets`-slutpunkten i [!DNL Catalog Service] API:t. Mer information finns i guiden om [att lista [!DNL Catalog] objekt](../../catalog/api/list-objects.md). |
+| `entityMeta.fields` | En array med sökvägar till specifika fält i datasetets schema, som tillhandahålls i form av JSON-pekarsträngar. I avsnittet [JSON-pekare](../../landing/api-fundamentals.md#json-pointer) i guiden om grundläggande API-funktioner finns mer information om den godkända syntaxen för de här strängarna. |
 
 **Svar**
 
-Ett lyckat svar innehåller `violatedPolicies` -matris, som innehåller information om de principer som överträtts till följd av att marknadsföringsåtgärden utfördes mot de angivna datauppsättningsfälten. Om inga policyer överträds `violatedPolicies` matrisen kommer att vara tom.
+Ett lyckat svar innehåller en `violatedPolicies`-matris, som innehåller information om de principer som överträtts som ett resultat av marknadsföringsåtgärden mot de angivna datamängdsfälten. Om inga principer överträds kommer `violatedPolicies`-arrayen att vara tom.
 
-Jämföra exempelsvaret nedan med [svar som endast innehåller datauppsättningar](#datasets)Observera att listan med samlade etiketter är kortare. The `discoveredLabels` för varje datauppsättning har också reducerats, eftersom de endast innehåller de fält som anges i begärandetexten. Dessutom bröt den tidigare principen `Targeting Ads or Content` kräver båda `C4 AND C6` etiketter som ska visas och som därför inte längre bryts enligt de tomma `violatedPolicies` array.
+Om du jämför exempelsvaret nedan med [svaret som endast innehåller datamängder](#datasets) kan du komma ihåg att listan med samlade etiketter är kortare. `discoveredLabels` för varje datauppsättning har också reducerats, eftersom de bara innehåller de fält som anges i begärandetexten. Dessutom kräver den tidigare överträdande principen `Targeting Ads or Content` att båda `C4 AND C6`-etiketterna finns och bryts därför inte längre, vilket anges av den tomma `violatedPolicies`-arrayen.
 
 ```JSON
 {
@@ -524,7 +524,7 @@ Jämföra exempelsvaret nedan med [svar som endast innehåller datauppsättninga
 
 ## Utvärdera policyer i grupp {#bulk}
 
-The `/bulk-eval` kan du köra flera utvärderingsjobb i ett enda API-anrop.
+Med slutpunkten `/bulk-eval` kan du köra flera utvärderingsjobb i ett enda API-anrop.
 
 **API-format**
 
@@ -534,11 +534,11 @@ POST /bulk-eval
 
 **Begäran**
 
-Nyttolasten för en grupputvärderingsbegäran ska vara en array med objekt, en för varje utvärderingsjobb som ska utföras. För jobb som utvärderas baserat på datamängder och fält kan `entityList` matris måste anges. För jobb som utvärderas baserat på dataanvändningsetiketter är en `labels` matris måste anges.
+Nyttolasten för en grupputvärderingsbegäran ska vara en array med objekt, en för varje utvärderingsjobb som ska utföras. För jobb som utvärderas baserat på datauppsättningar och fält måste en `entityList`-matris anges. För jobb som utvärderas baserat på dataanvändningsetiketter måste en `labels`-matris anges.
 
 >[!WARNING]
 >
->Om ett utvärderingsjobb i listan innehåller båda `entityList` och `labels` -matrisen resulterar ett fel. Om du vill utvärdera samma marknadsföringsåtgärd baserat på både datauppsättningar och etiketter måste du inkludera separata utvärderingsjobb för den marknadsföringsåtgärden.
+>Om ett utvärderingsjobb som finns med i listan innehåller både en `entityList`- och en `labels`-matris uppstår ett fel. Om du vill utvärdera samma marknadsföringsåtgärd baserat på både datauppsättningar och etiketter måste du inkludera separata utvärderingsjobb för den marknadsföringsåtgärden.
 
 ```shell
 curl -X POST \
@@ -579,10 +579,10 @@ curl -X POST \
 | Egenskap | Beskrivning |
 | --- | --- |
 | `evalRef` | URI:n för marknadsföringsåtgärden som ska testas mot etiketter eller datauppsättningar för policyöverträdelser. |
-| `includeDraft` | Som standard deltar endast aktiverade profiler i utvärderingen. If `includeDraft` är inställd på `true`, profiler som `DRAFT` kommer också att delta. |
-| `labels` | En matris med dataanvändningsetiketter för att testa marknadsföringsåtgärden mot.<br><br>**VIKTIGT**: När den här egenskapen används, `entityList` får INTE ingå i samma objekt. Om du vill utvärdera samma marknadsföringsåtgärd med hjälp av datauppsättningar och/eller fält måste du inkludera ett separat objekt i nyttolasten som innehåller en `entityList` array. |
-| `entityList` | En array med datauppsättningar och (eventuellt) specifika fält i dessa datauppsättningar för att testa marknadsföringsåtgärden mot.<br><br>**VIKTIGT**: När den här egenskapen används, `labels` får INTE ingå i samma objekt. Om du vill utvärdera samma marknadsföringsåtgärd med hjälp av specifika etiketter för dataanvändning måste du inkludera ett separat objekt i nyttolasten som innehåller en `labels` array. |
-| `entityType` | Den typ av enhet som marknadsföringsåtgärden ska testas mot. För närvarande, endast `dataSet` stöds. |
+| `includeDraft` | Som standard deltar endast aktiverade profiler i utvärderingen. Om `includeDraft` är inställt på `true`, kommer profiler med statusen `DRAFT` också att delta. |
+| `labels` | En matris med dataanvändningsetiketter för att testa marknadsföringsåtgärden mot.<br><br>**VIKTIGT**: När den här egenskapen används får INTE en `entityList`-egenskap ingå i samma objekt. Om du vill utvärdera samma marknadsföringsåtgärd med datauppsättningar och/eller fält måste du inkludera ett separat objekt i nyttolasten för begäran som innehåller en `entityList`-matris. |
+| `entityList` | En array med datauppsättningar och (eventuellt) specifika fält i dessa datauppsättningar för att testa marknadsföringsåtgärden mot.<br><br>**VIKTIGT**: När den här egenskapen används får INTE en `labels`-egenskap ingå i samma objekt. Om du vill utvärdera samma marknadsföringsåtgärd med hjälp av specifika dataanvändningsetiketter måste du inkludera ett separat objekt i nyttolasten för begäran som innehåller en `labels`-matris. |
+| `entityType` | Den typ av enhet som marknadsföringsåtgärden ska testas mot. För närvarande stöds bara `dataSet`. |
 | `entityId` | ID:t för en datauppsättning som marknadsföringsåtgärden ska testas mot. |
 | `entityMeta.fields` | (Valfritt) En lista med specifika fält i datauppsättningen som marknadsföringsåtgärden ska testas mot. |
 
@@ -682,6 +682,6 @@ Ett lyckat svar returnerar en array med utvärderingsresultat, ett för varje pr
 ]
 ```
 
-## Policyutvärdering för [!DNL Real-Time Customer Profile]
+## Principutvärdering för [!DNL Real-Time Customer Profile]
 
-The [!DNL Policy Service] API kan också användas för att kontrollera om det finns policyöverträdelser där [!DNL Real-Time Customer Profile] segment. Se självstudiekursen om [se till att dataanvändningen efterlevs för målgruppssegment](../../segmentation/tutorials/governance.md) för mer information.
+API:t [!DNL Policy Service] kan också användas för att kontrollera om det finns principöverträdelser där [!DNL Real-Time Customer Profile]-segment används. Mer information finns i självstudiekursen [framtvingar efterlevnad av dataanvändning för målgruppssegment](../../segmentation/tutorials/governance.md).

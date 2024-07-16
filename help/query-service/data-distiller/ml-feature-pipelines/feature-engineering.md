@@ -4,27 +4,27 @@ description: Lär dig hur du omvandlar data i Adobe Experience Platform till fun
 exl-id: 7fe017c9-ec46-42af-ac8f-734c4c6e24b5
 source-git-commit: 308d07cf0c3b4096ca934a9008a13bf425dc30b6
 workflow-type: tm+mt
-source-wordcount: '1161'
-ht-degree: 13%
+source-wordcount: '1140'
+ht-degree: 11%
 
 ---
 
 # Ingenjörsfunktioner för maskininlärning
 
-Det här dokumentet visar hur du kan omvandla data i Adobe Experience Platform till **funktioner**, eller variabler, som kan användas av en maskininlärningsmodell. Den här processen kallas **funktionsutveckling**. Använd Data Distiller för att beräkna HTML-funktioner i stor skala och dela dem med din maskininlärningsmiljö. Detta inbegriper följande:
+Det här dokumentet visar hur du kan omvandla data i Adobe Experience Platform till **funktioner**, eller variabler, som kan användas av en maskininlärningsmodell. Den här processen kallas **funktionsteknik**. Använd Data Distiller för att beräkna HTML-funktioner i stor skala och dela dem med din maskininlärningsmiljö. Detta inbegriper följande:
 
 1. Skapa en frågemall för att definiera de måletiketter och funktioner som du vill beräkna för modellen
 2. Kör frågan och lagra resultaten i en utbildningsdatauppsättning
 
 ## Definiera utbildningsdata {#define-training-data}
 
-I följande exempel visas en fråga om att hämta utbildningsdata från en Experience Events-datauppsättning för en modell för att förutsäga en användares benägenhet att prenumerera på ett nyhetsbrev. Prenumerationshändelser representeras av händelsetypen `web.formFilledOut`och andra beteendehändelser i datauppsättningen används för att härleda funktioner på profilnivå för att förutsäga prenumerationer.
+I följande exempel visas en fråga om att hämta utbildningsdata från en Experience Events-datauppsättning för en modell för att förutsäga en användares benägenhet att prenumerera på ett nyhetsbrev. Prenumerationshändelser representeras av händelsetypen `web.formFilledOut`, och andra beteendehändelser i datauppsättningen används för att härleda profilnivåfunktioner för att förutsäga prenumerationer.
 
 ### Frågepositiva och negativa etiketter {#query-positive-and-negative-labels}
 
 En komplett datauppsättning för utbildning av en (övervakad) maskininlärningsmodell innehåller en målvariabel eller en etikett som representerar det resultat som ska förutses och en uppsättning funktioner eller förklarande variabler som används för att beskriva de exempelprofiler som används för att utbilda modellen.
 
-I det här fallet är etiketten en variabel som kallas `subscriptionOccurred` som är lika med 1 om användarprofilen har en händelse av typen `web.formFilledOut` och i annat fall 0. Följande fråga returnerar en uppsättning om 50 000 användare från händelsedatamängden, inklusive alla användare med positiva etiketter (`subscriptionOccurred = 1`) plus en uppsättning slumpmässigt valda användare med negativa etiketter för att slutföra 50 000 samplingsstorlekar. Detta garanterar att utbildningsdata innehåller både positiva och negativa exempel för modellen att lära sig av.
+I det här fallet är etiketten en variabel med namnet `subscriptionOccurred` som är lika med 1 om användarprofilen har en händelse med typen `web.formFilledOut` , i annat fall 0. Följande fråga returnerar en uppsättning om 50 000 användare från händelsedatamängden, inklusive alla användare med positiva etiketter (`subscriptionOccurred = 1`) plus en uppsättning slumpmässigt valda användare med negativa etiketter för att slutföra exempelstorleken för 50 000 användare. Detta garanterar att utbildningsdata innehåller både positiva och negativa exempel för modellen att lära sig av.
 
 ```python
 from aepp import queryservice
@@ -70,13 +70,13 @@ Antal klasser: 50000
 
 Med en lämplig fråga kan du samla ihop händelserna i datauppsättningen till meningsfulla numeriska funktioner som kan användas för att utbilda en benägenhetsmodell. Exempelhändelser visas nedan:
 
-- **Antal mejl** som har skickats i marknadsföringssyfte och tagits emot av användaren.
-- Delar av de här e-postmeddelandena som **öppnad**.
-- Delar av dessa e-postmeddelanden där användaren **markerad** länken.
-- **Antal produkter** som har visats.
+- **Antal e-postmeddelanden** som skickades i marknadsföringssyfte och togs emot av användaren.
+- En del av de här e-postmeddelandena som **öppnades**.
+- Delar av de här e-postmeddelandena där användaren **markerade** länken.
+- **Antal produkter** som visades.
 - Antal **förslag som interagerats med**.
 - Antal **förslag som avvisats**.
-- Antal **markerade länkar**.
+- Antal **länkar som markerats**.
 - Antal minuter mellan två på varandra följande e-postmeddelanden som tagits emot.
 - Antal minuter mellan två på varandra följande e-postmeddelanden som öppnats.
 - Antal minuter mellan två på varandra följande e-postmeddelanden där användaren faktiskt markerade länken.
@@ -148,11 +148,11 @@ df_features.head()
 
 |   | userId | emailsReceived | e-postÖppnad | emailsClickade | productsViewed | propositionInteracts | propositionDisjected | webLinkClicks | minutes_since_emailSent | minutes_since_emailOpened | minutes_since_emailClick | minutes_since_productView | minutes_since_propositionInteract | minutes_since_propositionDismiss | minutes_since_linkClick |
 | --- |    --- |    ---   |  ---  |   ---  |   ---  |  ---  |  ---  |   ---  |   ---  |   ---  |   ---  |   ---  |   ---  |   ---  |   --- | 
-| 0 | 01102546977582484968046916668339306826 | 1 | 0 | 0 | 0 | 0 | 0 | 0 | 0.0 | NaN | NaN | NaN | NaN | Ingen | NaN |
-| 1 | 01102546977582484968046916668339306826 | 2 | 0 | 0 | 0 | 0 | 0 | 0 | 0.0 | NaN | NaN | NaN | NaN | Ingen | NaN |
-| 2 | 01102546977582484968046916668339306826 | 3 | 0 | 0 | 0 | 0 | 0 | 0 | 0.0 | NaN | NaN | NaN | NaN | Ingen | NaN |
-| 3 | 01102546977582484968046916668339306826 | 3 | 1 | 0 | 0 | 0 | 0 | 0 | 540.0 | 0.0 | NaN | NaN | NaN | Ingen | NaN |
-| 4 | 01102546977582484968046916668339306826 | 3 | 2 | 0 | 0 | 0 | 0 | 0 | 588.0 | 0.0 | NaN | NaN | NaN | Ingen | NaN |
+| 0 | 01102546977582484968046916668339306826 | 1 | 0 | 0 | 0 | 0 | 0 | 0 | 0,0 | NaN | NaN | NaN | NaN | Ingen | NaN |
+| 1 | 01102546977582484968046916668339306826 | 2 | 0 | 0 | 0 | 0 | 0 | 0 | 0,0 | NaN | NaN | NaN | NaN | Ingen | NaN |
+| 2 | 01102546977582484968046916668339306826 | 3 | 0 | 0 | 0 | 0 | 0 | 0 | 0,0 | NaN | NaN | NaN | NaN | Ingen | NaN |
+| 3 | 01102546977582484968046916668339306826 | 3 | 1 | 0 | 0 | 0 | 0 | 0 | 540,0 | 0,0 | NaN | NaN | NaN | Ingen | NaN |
+| 4 | 01102546977582484968046916668339306826 | 3 | 2 | 0 | 0 | 0 | 0 | 0 | 588,0 | 0,0 | NaN | NaN | NaN | Ingen | NaN |
 
 {style="table-layout:auto"}
 
@@ -231,11 +231,11 @@ df_training_set.head()
 
 |  | userId | eventType | tidsstämpel | subscriptionOcced | emailsReceived | e-postÖppnad | emailsClickade | productsViewed | propositionInteracts | propositionDisjected | webLinkClicks | minutes_since_emailSent | minutes_since_emailOpened | minutes_since_emailClick | minutes_since_productView | minutes_since_propositionInteract | minutes_since_propositionDismiss | minutes_since_linkClick | random_row_number_for_user |
 | ---  |  --- |   ---  |  ---  |  ---  |  ---  |  ---  |  ---  |  ---  |  ---  |  ---  |  ---  |  ---  |  ---  |  ---  |  ---   | ---  |  ---  |  ---  |  --- |    
-| 0 | 02554909162592418347780983091131567290 | directMarketing.emailSent | 2023-06-17 13:44:59.086 | 0 | 2 | 0 | 0 | 0 | 0 | 0 | 0 | 0.0 | NaN | NaN | NaN | NaN | Ingen | NaN | 1 |
-| 1 | 01130334080340815140184601481559659945 | directMarketing.emailOpened | 2023-06-19 06:01:55.366 | 0 | 1 | 3 | 0 | 1 | 0 | 0 | 0 | 1921.0 | 0.0 | NaN | 1703.0 | NaN | Ingen | NaN | 1 |
-| 2 | 01708961660028351393477273586554010192 | web.formFilledOut | 2023-06-19 18:36:49.083 | 1 | 1 | 2 | 2 | 0 | 0 | 0 | 0 | 2365.0 | 26.0 | 1.0 | NaN | NaN | Ingen | NaN | 7 |
-| 3 | 01809182902320674899156240602124740853 | directMarketing.emailSent | 2023-06-21 19:17:12.535 | 0 | 1 | 0 | 0 | 0 | 0 | 0 | 0 | 0.0 | NaN | NaN | NaN | NaN | Ingen | NaN | 1 |
-| 4 | 03441761949943678951106193028739001197 | directMarketing.emailSent | 2023-06-21 21:58:29.482 | 0 | 1 | 0 | 0 | 0 | 0 | 0 | 0 | 0.0 | NaN | NaN | NaN | NaN | Ingen | NaN | 1 |
+| 0 | 02554909162592418347780983091131567290 | directMarketing.emailSent | 2023-06-17 13:44:59.086 | 0 | 2 | 0 | 0 | 0 | 0 | 0 | 0 | 0,0 | NaN | NaN | NaN | NaN | Ingen | NaN | 1 |
+| 1 | 01130334080340815140184601481559659945 | directMarketing.emailOpened | 2023-06-19 06:01:55.366 | 0 | 1 | 3 | 0 | 1 | 0 | 0 | 0 | 1921,0 | 0,0 | NaN | 1703,0 | NaN | Ingen | NaN | 1 |
+| 2 | 01708961660028351393477273586554010192 | web.formFilledOut | 2023-06-19 18:36:49.083 | 1 | 1 | 2 | 2 | 0 | 0 | 0 | 0 | 2365,0 | 26,0 | 1,0 | NaN | NaN | Ingen | NaN | 7 |
+| 3 | 01809182902320674899156240602124740853 | directMarketing.emailSent | 2023-06-21 19:17:12.535 | 0 | 1 | 0 | 0 | 0 | 0 | 0 | 0 | 0,0 | NaN | NaN | NaN | NaN | Ingen | NaN | 1 |
+| 4 | 03441761949943678951106193028739001197 | directMarketing.emailSent | 2023-06-21 21:58:29.482 | 0 | 1 | 0 | 0 | 0 | 0 | 0 | 0 | 0,0 | NaN | NaN | NaN | NaN | Ingen | NaN | 1 |
 
 {style="table-layout:auto"}
 
@@ -246,9 +246,9 @@ Det är typiskt att regelbundet utbilda om en modell med uppdaterade utbildnings
 Om du gör det måste du göra några ändringar i utbildningsfrågan:
 
 - Lägg till logik för att skapa en ny utbildningsdatauppsättning om den inte finns, och infoga de nya etiketterna och funktionerna i den befintliga utbildningsdatauppsättningen i annat fall. Detta kräver en serie med två versioner av frågan om utbildningsuppsättningen:
-   - Först använder du `CREATE TABLE IF NOT EXISTS {table_name} AS` programsats
-   - Sedan använder du `INSERT INTO {table_name}` beskrivning av det fall där det redan finns utbildningsdata
-- Lägg till en `SNAPSHOT BETWEEN $from_snapshot_id AND $to_snapshot_id` -sats för att begränsa frågan till händelsedata som har lagts till inom ett angivet intervall. The `$` -prefixet för ögonblicksbilds-ID:n anger att de är variabler som kommer att skickas när frågemallen körs.
+   - Först använder du programsatsen `CREATE TABLE IF NOT EXISTS {table_name} AS`
+   - Därefter använder du programsatsen `INSERT INTO {table_name}` för det fall där utbildningsdatauppsättningen redan finns
+- Lägg till en `SNAPSHOT BETWEEN $from_snapshot_id AND $to_snapshot_id`-sats för att begränsa frågan till händelsedata som har lagts till inom ett angivet intervall. Prefixet `$` för ögonblicksbilds-ID:n anger att de är variabler som skickas in när frågemallen körs.
 
 Om du tillämpar dessa ändringar får du följande fråga:
 
@@ -484,4 +484,4 @@ Query completed successfully in 473.8 seconds
 
 ## Nästa steg:
 
-Genom att läsa det här dokumentet har du lärt dig att omvandla data i Adobe Experience Platform till funktioner, eller variabler, som kan användas av en maskininlärningsmodell. Nästa steg på vägen från Experience Platform till anpassade modeller i maskininlärningsmiljön är att [exportera funktionsdatamängder](./export-data.md).
+Genom att läsa det här dokumentet har du lärt dig att omvandla data i Adobe Experience Platform till funktioner, eller variabler, som kan användas av en maskininlärningsmodell. Nästa steg på vägen mot att skapa funktionsledningar från Experience Platform till anpassade modeller i maskininlärningsmiljön är att [exportera funktionsdatauppsättningar](./export-data.md).

@@ -13,7 +13,7 @@ ht-degree: 0%
 
 >[!NOTE]
 >
->Adobe Experience Platform Launch har omklassificerats som en serie datainsamlingstekniker i Adobe Experience Platform. Som ett resultat av detta har flera terminologiska förändringar införts i produktdokumentationen. Se följande [dokument](../../term-updates.md) för en konsoliderad hänvisning till terminologiska förändringar.
+>Adobe Experience Platform Launch har omklassificerats som en serie datainsamlingstekniker i Adobe Experience Platform. Som ett resultat av detta har flera terminologiska förändringar införts i produktdokumentationen. I följande [dokument](../../term-updates.md) finns en konsoliderad referens till de ändrade terminologin.
 
 När du inte längre vill att en resurs ska ha en effekt i ett bygge måste du ta bort den från biblioteket som innehåller resursen och skapa ett nytt bygge.
 
@@ -30,7 +30,7 @@ Resurser i utvecklingsbibliotek kan ändras direkt.
 1. Öppna biblioteket.
 1. Ta bort resursen.
 1. Spara biblioteket.
-1. Bygg biblioteket.
+1. Skapa biblioteket.
 
 ## Skickade och godkända bibliotek
 
@@ -49,7 +49,7 @@ Du måste i stället inaktivera resursen. Den här inaktiveringen är en ändrin
    1. Välj resursen i listvyn.
    1. Välj **[!UICONTROL Disable]**.
 1. Skapa ett nytt utvecklingsbibliotek.
-1. Lägg till `latest` version av den inaktiverade resursen.
+1. Lägg till `latest`-versionen av den inaktiverade resursen.
 1. Spara och bygg.
 1. Följ den normala processen för att marknadsföra bibliotek till produktion.
-1. Publicera i produktion för att ta bort resursen.
+1. Publish till produktion för att ta bort resursen.

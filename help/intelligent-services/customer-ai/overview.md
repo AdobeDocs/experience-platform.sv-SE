@@ -38,7 +38,7 @@ Kunden är inte byggd för att:
 
 - Kundens AI bör inte användas för att förutsäga dynamisk prissättning, eller den prisnivå där kunden ska göra ett köp.
 - Kundens AI kan inte avgöra om det är mer sannolikt att kunden köper en artikel genom att lämna ett erbjudande. Även om ni kanske bestämmer er för att skicka rabatterbjudanden baserat på poängen är det inte nödvändigtvis det bästa sättet att konvertera dessa kunder.
-- Kundens AI är inte ett verktyg för produktrekommendationer. Om du har tusentals SKU:er ska du inte använda kundens AI som proxyserver för en riktig produktrekommendationslösning som [!DNL Adobe Target].
+- Kundens AI är inte ett verktyg för produktrekommendationer. Om du har tusentals SKU:er ska du inte använda kundens AI som proxy för en riktig produktrekommendationslösning som [!DNL Adobe Target].
 - Kunds-AI kan inte förutsäga i vilket skede av köpresan kunden befinner sig, t.ex. om de befinner sig i&quot;medvetande&quot;,&quot;bedömning&quot;,&quot;inköp&quot; eller&quot;kundlojalitet&quot;.
 - Använd inte kundens AI för att avgöra vilka kunder som sannolikt kommer att köpa en produktlansering i framtiden. Detta kräver att vissa framgångshändelser ska finnas i det förflutna så att kundens AI kan utbilda maskininlärningsalgoritmen på dina data.
 
@@ -52,4 +52,4 @@ Kunds-AI fungerar genom att analysera befintliga data om kundupplevelsehändelse
 
 ## Nästa steg
 
-Du kan börja med att följa [komma igång](./getting-started.md) guide. I den här guiden får du hjälp med att konfigurera alla nödvändiga förutsättningar för kundens AI. Om du redan har alla dina uppgifter tillgängliga går du till  [konfigurera en AI-instans för kund](./user-guide/configure.md). Här beskrivs hur du använder AI för kunder.
+Du kan börja med att följa guiden [Komma igång](./getting-started.md). I den här guiden får du hjälp med att konfigurera alla nödvändiga förutsättningar för kundens AI. Om du redan har alla dina autentiseringsuppgifter och data klara går du till [Konfigurera en AI-instans](./user-guide/configure.md) för kunder. Här beskrivs hur du använder AI för kunder.

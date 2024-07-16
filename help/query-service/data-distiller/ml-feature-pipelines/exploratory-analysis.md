@@ -4,18 +4,18 @@ description: Lär dig hur du använder Data Distiller för att utforska och anal
 exl-id: 1dd4cf6e-f7cc-4f4b-afbd-bfc1d342a2c3
 source-git-commit: 27834417a1683136a173996cff1fd422305e65b9
 workflow-type: tm+mt
-source-wordcount: '808'
-ht-degree: 14%
+source-wordcount: '760'
+ht-degree: 13%
 
 ---
 
 # Förberedande dataanalys
 
-Det här dokumentet innehåller några grundläggande exempel och metodtips för att använda Data Distiller för att utforska och analysera data från en [!DNL Python] anteckningsbok.
+Det här dokumentet innehåller några grundläggande exempel och metodtips för att använda Data Distiller för att utforska och analysera data från en [!DNL Python]-anteckningsbok.
 
 ## Komma igång
 
-Kontrollera att du har skapat en anslutning till Data Distiller i [!DNL Python] anteckningsbok. I dokumentationen finns instruktioner om hur du [koppla en [!DNL Python] anteckningsbok till Data Distiller](./establish-connection.md).
+Innan du fortsätter med den här guiden kontrollerar du att du har skapat en anslutning till Data Distiller i din [!DNL Python]-anteckningsbok. I dokumentationen finns instruktioner om hur du [ansluter en [!DNL Python] anteckningsbok till Data Distiller](./establish-connection.md).
 
 ## Hämta grundläggande statistik {#basic-statistics}
 
@@ -42,9 +42,9 @@ df
 
 ## Skapa en provversion av stora datamängder {#create-dataset-sample}
 
-Om den datauppsättning du vill fråga är mycket stor, eller om exakta resultat från undersökande frågor inte är nödvändiga, använder du [samplingsfunktion](../../key-concepts/dataset-samples.md) finns för frågor om Data Distiller. Detta är en tvåstegsprocess:
+Om datauppsättningen som du vill fråga är mycket stor, eller om exakta resultat från undersökningsfrågor inte behövs, använder du [samplingsfunktionen](../../key-concepts/dataset-samples.md) som är tillgänglig för Data Distiller-frågor. Detta är en tvåstegsprocess:
 
-- Första, **analysera** datauppsättningen för att skapa en provversion med en angiven samplingsproportion
+- Först **analyserar** datauppsättningen för att skapa en provversion med en angiven samplingsproportion
 - Fråga sedan efter den samplade versionen av datauppsättningen. Beroende på vilka funktioner du använder för den samplade datauppsättningen kanske du vill skala utdata till siffrorna i hela datauppsättningen
 
 ### Skapa ett prov på 5 % {#create-sample}
@@ -64,7 +64,7 @@ qs_cursor.query(analyze_table_query, output="raw")
 
 ### Visa dina exempel {#view-sample}
 
-Du kan använda `sample_meta` för att visa alla exempel som har skapats från en viss datauppsättning. Kodfragmentet nedan visar hur du använder `sample_meta` funktion.
+Du kan använda funktionen `sample_meta` för att visa alla exempel som har skapats från en viss datauppsättning. Kodfragmentet nedan visar hur du använder funktionen `sample_meta`.
 
 ```python
 sampled_version_of_table_query = f'''SELECT sample_meta('{table_name}')'''
@@ -77,7 +77,7 @@ df_samples
 
 |   | sample_table_name | sample_dataset_id | parent_dataset_id | sample_type | samplingsfrekvens | filter_condition_on_source_dataset | sample_num_rows | skapad |
 |---|---|---|---|---|---|---|---|---|
-| 0 | cmle_sync_data_experience_event_dataset_c.. | 650f7a09ed6c3e28d34d7fc2 | 64fb4d7a7d748828d304a2f4 | enhetlig | 0.5 | 6427 | 23/09/2023 | 11:51:37 |
+| 0 | cmle_sync_data_experience_event_dataset_c.. | 650f7a09ed6c3e28d34d7fc2 | 64fb4d7a7d748828d304a2f4 | enhetlig | 0,5 | 6427 | 23/09/2023 | 11:51:37 |
 
 {style="table-layout:auto"}
 
@@ -105,7 +105,7 @@ Approximate count: 1284600.0 using 5.0% sample
 
 ## E-posttrattanalys {#email-funnel-analysis}
 
-En trattanalys är ett sätt att förstå de steg som krävs för att nå ett målresultat och hur många användare som får igenom varje steg. Exemplet nedan visar en enkel trattanalys av de steg som leder till att en användare prenumererar på ett nyhetsbrev. Prenumerationsresultatet representeras av en händelsetyp av `web.formFilledOut`.
+En trattanalys är ett sätt att förstå de steg som krävs för att nå ett målresultat och hur många användare som får igenom varje steg. Exemplet nedan visar en enkel trattanalys av de steg som leder till att en användare prenumererar på ett nyhetsbrev. Prenumerationsresultatet representeras av händelsetypen `web.formFilledOut`.
 
 Kör först en fråga för att hämta antalet användare i varje steg.
 
@@ -138,7 +138,7 @@ funnel_df
 
 ### Resultat av ritningsfråga {#plot-results}
 
-Därefter ritar du frågeresultaten med [!DNL Python] `plotly` bibliotek:
+Därefter anger du frågeresultaten med hjälp av biblioteket [!DNL Python] `plotly`:
 
 ```python
 import plotly.express as px
@@ -156,14 +156,14 @@ fig.show()
 
 ## Händelsekorrelationer {#event-correlations}
 
-En annan vanlig analys är att beräkna korrelationer mellan händelsetyper och händelsetyp för målkonvertering. I det här exemplet representeras prenumerationshändelsen av `web.formFilledOut`. I det här exemplet används [!DNL Spark] funktioner som är tillgängliga i Data Distiller queries för att utföra följande steg:
+En annan vanlig analys är att beräkna korrelationer mellan händelsetyper och händelsetyp för målkonvertering. I detta exempel representeras prenumerationshändelsen av `web.formFilledOut`. I det här exemplet används de [!DNL Spark]-funktioner som är tillgängliga i Data Distiller-frågor för att utföra följande steg:
 
 1. Räkna antalet händelser för varje händelsetyp per profil.
-2. Sammanställ antalet för varje händelsetyp i olika profiler och beräkna korrelationer för varje händelsetyp med `web,formFilledOut`.
+2. Sammanställ antalet för varje händelsetyp i alla profiler och beräkna korrelationer för varje händelsetyp med `web,formFilledOut`.
 3. Omvandla bildrutan med antal och korrelationer till en tabell med Pearson-korrelationskoefficienter för varje funktion (antal händelsetyper) med målhändelsen.
 4. Visualisera resultatet i en teckning.
 
-The [!DNL Spark] funktioner sammanställer data för att returnera en liten resultattabell, så att du kan köra den här typen av fråga på hela datauppsättningen.
+Funktionerna [!DNL Spark] samlar in data för att returnera en liten resultattabell, så att du kan köra den här typen av fråga på den fullständiga datauppsättningen.
 
 ```python
 large_correlation_query=f'''
@@ -215,7 +215,7 @@ large_correlation_df
 
 |   | webFormsFilled_totalUsers | advertisingClicks_totalUsers | productViews_totalUsers | productPurchases_totalUsers | propositionDismisses_toUsers | propositionDisplay_toUsers | propositionInteracts_totalUsers | emailClicks_totalUsers | emailOpen_totalUsers | webLinksClicks_totalUsers | ... | webForms_advertisingClicks | webForms_productViews | webForms_productPurchases | webForms_propositionDismisses | webForms_propositionInteracts | webForms_emailClicks | webForms_emailOpen | webForms_emailSends | webForms_webLinkClicks | webForms_webPageViews |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
-| 0 | 17860 | 7610 | 37915 | 0 | 2889 | 37650 | 2964 | 51581 | 239028 | 37581 | … | 0.026805 | 0.2779 | Ingen | 0.06014 | 0.143656 | 0.305657 | 0.218874 | 0.192836 | 0.259353 | Ingen |
+| 0 | 17860 | 7610 | 37915 | 0 | 2889 | 37650 | 2964 | 51581 | 239028 | 37581 | ... | 0,026805 | 0,2779 | Ingen | 0,06014 | 0,143656 | 0,305657 | 0,218874 | 0,192836 | 0,259353 | Ingen |
 
 {style="table-layout:auto"}
 
@@ -236,20 +236,20 @@ corrdf.fillna(0)
 
 |    | variabel | value | funktion | pearsonCorrelation |
 | --- | ---  |  ---  |  ---  | --- |
-| 0 | `webForms_EmailOpens` | 0.218874 | EmailOpen | 0.218874 |
-| 1 | `webForms_advertisingClicks` | 0.026805 | advertisingClicks | 0.026805 |
-| 2 | `webForms_productViews` | 0.277900 | productViews | 0.277900 |
-| 3 | `webForms_productPurchases` | 0.000000 | productPurchases | 0.000000 |
-| 4 | `webForms_propositionDismisses` | 0.060140 | propositionDismisses | 0.060140 |
-| 5 | `webForms_propositionInteracts` | 0.143656 | propositionInteracts | 0.143656 |
-| 6 | `webForms_emailClicks` | 0.305657 | emailClicks | 0.305657 |
-| 7 | `webForms_emailOpens` | 0.218874 | emailOpen | 0.218874 |
-| 8 | `webForms_emailSends` | 0.192836 | emailSends | 0.192836 |
-| 9 | `webForms_webLinkClicks` | 0.259353 | webLinkClicks | 0.259353 |
-| 10 | `webForms_webPageViews` | 0.000000 | webPageViews | 0.000000 |
+| 0 | `webForms_EmailOpens` | 0,218874 | EmailOpen | 0,218874 |
+| 1 | `webForms_advertisingClicks` | 0,026805 | advertisingClicks | 0,026805 |
+| 2 | `webForms_productViews` | 0,277900 | productViews | 0,277900 |
+| 3 | `webForms_productPurchases` | 0,000000 | productPurchases | 0,000000 |
+| 4 | `webForms_propositionDismisses` | 0,060140 | propositionDismisses | 0,060140 |
+| 5 | `webForms_propositionInteracts` | 0,143656 | propositionInteracts | 0,143656 |
+| 6 | `webForms_emailClicks` | 0,305657 | emailClicks | 0,305657 |
+| 7 | `webForms_emailOpens` | 0,218874 | emailOpen | 0,218874 |
+| 8 | `webForms_emailSends` | 0,192836 | emailSends | 0,192836 |
+| 9 | `webForms_webLinkClicks` | 0,259353 | webLinkClicks | 0,259353 |
+| 10 | `webForms_webPageViews` | 0,000000 | webPageViews | 0,000000 |
 
 
-Slutligen kan du visualisera korrelationerna med `matplotlib` [!DNL Python] bibliotek:
+Slutligen kan du visualisera korrelationer med biblioteket `matplotlib` [!DNL Python]:
 
 ```python
 import matplotlib.pyplot as plt
@@ -258,8 +258,8 @@ sns.barplot(data=corrdf.fillna(0), y="feature", x="pearsonCorrelation")
 ax.set_title("Pearson Correlation of Events with the outcome event")
 ```
 
-![Ett stolpdiagram över Pearson Correlation of events of event results](../../images/data-distiller/pearson-correlations.png)
+![Ett stolpdiagram över Pearson-korrelationen för händelseresultat](../../images/data-distiller/pearson-correlations.png)
 
 ## Nästa steg
 
-Genom att läsa det här dokumentet har du lärt dig att använda Data Distiller för att utforska och analysera data från en [!DNL Python] anteckningsbok. Nästa steg på vägen från Experience Platform till anpassade modeller i maskininlärningsmiljön är att [maskininlärningsfunktioner](./feature-engineering.md).
+Genom att läsa det här dokumentet har du lärt dig att använda Data Distiller för att utforska och analysera data från en [!DNL Python]-anteckningsbok. Nästa steg med att skapa funktionsledningar från Experience Platform till anpassade modeller i maskininlärningsmiljön är att [skapa maskininlärningsfunktioner](./feature-engineering.md).

@@ -4,7 +4,7 @@ description: Lär dig mer om de delade biblioteksmodulerna i Adobe Analytics-tag
 exl-id: f1d7cb2b-0058-46f9-983c-079079e06057
 source-git-commit: 88939d674c0002590939004e0235d3da8b072118
 workflow-type: tm+mt
-source-wordcount: '431'
+source-wordcount: '425'
 ht-degree: 0%
 
 ---
@@ -13,15 +13,15 @@ ht-degree: 0%
 
 >[!NOTE]
 >
->Adobe Experience Platform Launch har omklassificerats som en serie datainsamlingstekniker i Adobe Experience Platform. Som ett resultat av detta har flera terminologiska förändringar införts i produktdokumentationen. Se följande [dokument](../../../term-updates.md) för en konsoliderad hänvisning till terminologiska förändringar.
+>Adobe Experience Platform Launch har omklassificerats som en serie datainsamlingstekniker i Adobe Experience Platform. Som ett resultat av detta har flera terminologiska förändringar införts i produktdokumentationen. I följande [dokument](../../../term-updates.md) finns en konsoliderad referens till de ändrade terminologin.
 
-The [Adobe Analytics-tillägg](./overview.md) innehåller två olika [delade moduler](../../../extension-dev/web/shared.md) som ni kan integrera i era upplevelseapplikationer. Dessa moduler beskrivs i avsnitten nedan.
+[Adobe Analytics-tillägget](./overview.md) innehåller två olika [delade moduler](../../../extension-dev/web/shared.md) som du kan integrera i ditt upplevelseprogram. Dessa moduler beskrivs i avsnitten nedan.
 
 ## [!DNL get-tracker]
 
-Innan Adobe Analytics skickar några beacons måste spårningsobjektet initieras. Initieringsprocessen börjar med att läsa in [AppMeasurement](https://experienceleague.adobe.com/docs/analytics/implementation/js/overview.html), följt av att skapa ett spårningsobjekt.
+Innan Adobe Analytics skickar några beacons måste spårningsobjektet initieras. Initieringsprocessen börjar med att läsa in [AppMeasurement](https://experienceleague.adobe.com/docs/analytics/implementation/js/overview.html), följt av att skapa ett spårarobjekt.
 
-Du kommer åt spårningsobjektet efter att det har initierats fullständigt med hjälp av `get-tracker` delad modul enligt följande:
+Du kan komma åt spårningsobjektet efter att det har initierats fullständigt med den delade modulen `get-tracker` enligt följande:
 
 ```js
 var getTracker = turbine.getSharedModule('adobe-analytics', 'get-tracker');
@@ -33,7 +33,7 @@ getTracker().then(function(tracker) {
 
 ### Verifierar att Adobe Analytics har installerats
 
-Det är möjligt att Adobe Analytics inte har installerats eller inkluderats i samma taggbibliotek som ditt tillägg. Därför rekommenderar vi att du kontrollerar detta fall i koden och hanterar det på rätt sätt. Följande JavaScript är ett exempel på hur du kan implementera detta:
+Det är möjligt att Adobe Analytics inte har installerats eller inkluderats i samma taggbibliotek som tillägget. Därför rekommenderar vi att du söker efter det här fallet i koden och hanterar det på rätt sätt. Följande JavaScript är ett exempel på hur du kan implementera detta:
 
 ```js
 var getTracker = turbine.getSharedModule('adobe-analytics', 'get-tracker');
@@ -47,7 +47,7 @@ if (getTracker) {
 }
 ```
 
-If `getTracker` är `undefined`, finns inte Adobe Analytics-tillägget i taggbiblioteket. Du kan anpassa det loggade meddelandet så att det korrekt återspeglar vilka funktioner som kan förloras om Adobe Analytics inte är installerat.
+Om `getTracker` är `undefined` finns inte Adobe Analytics-tillägget i taggbiblioteket. Du kan anpassa det loggade meddelandet så att det korrekt återspeglar vilka funktioner som kan förloras om Adobe Analytics inte är installerat.
 
 
 ## [!DNL augment-tracker]
@@ -56,7 +56,7 @@ När spårningsobjektet har initierats utökas nästa steg i processen. I det h�
 
 Dessutom har tillägget möjlighet att pausa initieringsprocessen för spåraren medan tillägget utför en egen asynkron åtgärd, som att hämta data eller JavaScript från en server.
 
-Du kan implementera `augment-tracker` i en sådan modul:
+Du kan implementera modulen `augment-tracker` på följande sätt:
 
 ```js
 var augmentTracker = turbine.getSharedModule('adobe-analytics', 'augment-tracker');
@@ -66,7 +66,7 @@ augmentTracker(function(tracker) {
 });
 ```
 
-Funktionen som skickades till `augmentTracker()` kommer att anropas så snart som den förstärkande fasen av initieringsprocessen för spåraren har nåtts.
+Funktionen som skickas till `augmentTracker()` anropas så snart utökningen av initieringsprocessen för spåraren har nåtts.
 
 Om ditt tillägg måste slutföra en asynkron åtgärd innan spåraren utökas kan du returnera ett löfte från din funktion enligt följande:
 

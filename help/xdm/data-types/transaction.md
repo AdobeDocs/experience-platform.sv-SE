@@ -10,9 +10,9 @@ ht-degree: 1%
 
 ---
 
-# [!UICONTROL Transaction] datatyp
+# Datatypen [!UICONTROL Transaction]
 
-[!UICONTROL Transaction] är en XDM-datatyp (Standard Experience Data Model) som beskriver detaljerna i en monetär transaktion.
+[!UICONTROL Transaction] är en XDM-datatyp (Standard Experience Data Model) som beskriver informationen för en monetär transaktion.
 
 ![Transaktionsstruktur](../images/data-types/transaction.png)
 

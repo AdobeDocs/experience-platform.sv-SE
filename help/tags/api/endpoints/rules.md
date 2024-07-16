@@ -4,24 +4,24 @@ description: Lär dig hur du anropar /rules-slutpunkten i Reactor API.
 exl-id: 79ef4389-e4b7-461e-8579-16a1a78cdd43
 source-git-commit: b66a50e40aaac8df312a2c9a977fb8d4f1fb0c80
 workflow-type: tm+mt
-source-wordcount: '896'
+source-wordcount: '893'
 ht-degree: 1%
 
 ---
 
 # Regelslutpunkt
 
-När det gäller datainsamlingstaggar styr reglerna beteendet för resurserna i ett distribuerat bibliotek. En regel består av en eller flera [regelkomponenter](./rule-components.md), finns för att knyta ihop regelkomponenterna på ett logiskt sätt. The `/rules` -slutpunkten i Reaktors API gör att du kan hantera taggregler programmatiskt.
+När det gäller datainsamlingstaggar styr reglerna beteendet för resurserna i ett distribuerat bibliotek. En regel består av en eller flera [regelkomponenter](./rule-components.md) som finns för att knyta ihop regelkomponenterna på ett logiskt sätt. Med slutpunkten `/rules` i Reaktors API kan du hantera taggregler programmatiskt.
 
 >[!NOTE]
 >
->I det här dokumentet beskrivs hur du hanterar regler i Reactor API. Information om hur du interagerar med regler i användargränssnittet finns i [Användargränssnittsguide](../../ui/managing-resources/rules.md).
+>I det här dokumentet beskrivs hur du hanterar regler i Reactor API. Mer information om hur du interagerar med regler i användargränssnittet finns i [användargränssnittshandboken](../../ui/managing-resources/rules.md).
 
-En regel tillhör exakt en [property](./properties.md). En egenskap kan ha många regler.
+En regel tillhör exakt en [egenskap](./properties.md). En egenskap kan ha många regler.
 
 ## Komma igång
 
-Slutpunkten som används i den här guiden ingår i [Reaktors-API](https://www.adobe.io/experience-platform-apis/references/reactor/). Innan du fortsätter bör du granska [komma igång-guide](../getting-started.md) om du vill ha viktig information om hur du autentiserar till API:t.
+Slutpunkten som används i den här guiden ingår i [Reaktors-API](https://www.adobe.io/experience-platform-apis/references/reactor/). Innan du fortsätter bör du läsa [kom igång-guiden](../getting-started.md) för att få viktig information om hur du autentiserar dig för API:t.
 
 ## Hämta en lista med regler {#list}
 
@@ -35,13 +35,13 @@ GET /properties/{PROPERTY_ID}/rules
 
 | Parameter | Beskrivning |
 | --- | --- |
-| `PROPERTY_ID` | The `id` för egenskapen vars komponenter du vill visa. |
+| `PROPERTY_ID` | `id` för egenskapen vars komponenter du vill visa. |
 
 {style="table-layout:auto"}
 
 >[!NOTE]
 >
->Med hjälp av frågeparametrar kan listade regler filtreras baserat på följande attribut:<ul><li>`created_at`</li><li>`dirty`</li><li>`enabled`</li><li>`name`</li><li>`origin_id`</li><li>`published`</li><li>`published_at`</li><li>`revision_number`</li><li>`updated_at`</li></ul>Se guiden på [filtrera svar](../guides/filtering.md) för mer information.
+>Med hjälp av frågeparametrar kan listade regler filtreras baserat på följande attribut:<ul><li>`created_at`</li><li>`dirty`</li><li>`enabled`</li><li>`name`</li><li>`origin_id`</li><li>`published`</li><li>`published_at`</li><li>`revision_number`</li><li>`updated_at`</li></ul>Mer information finns i guiden om [filtrering av svar](../guides/filtering.md).
 
 **Begäran**
 
@@ -146,7 +146,7 @@ Du kan söka efter en regel genom att ange dess ID i sökvägen för en GET-beg�
 
 >[!NOTE]
 >
->När regler tas bort markeras de som borttagna men tas inte bort från systemet. Det är därför möjligt att hämta en borttagen regel. Borttagna regler kan identifieras med en `meta.deleted_at` -egenskap.
+>När regler tas bort markeras de som borttagna men tas inte bort från systemet. Det är därför möjligt att hämta en borttagen regel. Borttagna regler kan identifieras med en `meta.deleted_at`-egenskap.
 
 **API-format**
 
@@ -156,7 +156,7 @@ GET /rules/{RULE_ID}
 
 | Parameter | Beskrivning |
 | --- | --- |
-| `RULE_ID` | The `id` av regeln som du vill söka efter. |
+| `RULE_ID` | `id` för regeln som du vill söka efter. |
 
 {style="table-layout:auto"}
 
@@ -258,7 +258,7 @@ POST /properties/{PROPERTY_ID}/rules
 
 | Parameter | Beskrivning |
 | --- | --- |
-| `PROPERTY_ID` | The `id` för egenskapen som du definierar en regel under. |
+| `PROPERTY_ID` | `id` för egenskapen som du definierar en regel under. |
 
 {style="table-layout:auto"}
 
@@ -366,7 +366,7 @@ Ett godkänt svar returnerar information om den nyligen skapade regeln.
 
 ## Lägga till händelser, villkor och åtgärder i en regel {#components}
 
-En gång har du [skapade en regel](#create)kan du börja bygga ut logiken genom att lägga till händelser, villkor och åtgärder (kallas gemensamt för regelkomponenter). Se avsnittet om [skapa en regelkomponent](./rule-components.md#create) i `/rule_components` Slutpunktshandbok som visar hur du gör detta i Reaktors API.
+När du har [skapat en regel](#create) kan du börja bygga ut dess logik genom att lägga till händelser, villkor och åtgärder (kallas gemensamt för regelkomponenter). Läs avsnittet [Skapa en regelkomponent](./rule-components.md#create) i `/rule_components`-slutpunktshandboken om du vill veta hur du gör det i Reaktors-API:t.
 
 ## Uppdatera en regel {#update}
 
@@ -380,7 +380,7 @@ PATCH /rules/{RULE_ID}
 
 | Parameter | Beskrivning |
 | --- | --- |
-| `RULE_ID` | The `id` av regeln som du vill uppdatera. |
+| `RULE_ID` | `id` för regeln som du vill uppdatera. |
 
 {style="table-layout:auto"}
 
@@ -409,7 +409,7 @@ curl -X PATCH \
 | Egenskap | Beskrivning |
 | --- | --- |
 | `attributes` | Ett objekt vars regler representerar attributen som ska uppdateras för regeln. Följande attribut kan uppdateras för en regel: <ul><li>`name`</li><li>`enabled`</li></ul> |
-| `id` | The `id` för regeln som du vill uppdatera. Det här bör matcha `{RULE_ID}` värdet som anges i sökvägen för begäran. |
+| `id` | `id` för regeln som du vill uppdatera. Det här bör matcha det `{RULE_ID}`-värde som anges i sökvägen till begäran. |
 | `type` | Den typ av resurs som uppdateras. För den här slutpunkten måste värdet vara `rules`. |
 
 {style="table-layout:auto"}
@@ -500,7 +500,7 @@ DELETE /rules/{RULE_ID}
 
 | Parameter | Beskrivning |
 | --- | --- |
-| `RULE_ID` | The `id` av regeln som du vill ta bort. |
+| `RULE_ID` | `id` för regeln som du vill ta bort. |
 
 {style="table-layout:auto"}
 
@@ -520,17 +520,17 @@ Ett lyckat svar returnerar HTTP-status 204 (inget innehåll) utan svarstext, vil
 
 ## Hantera anteckningar för en regel {#notes}
 
-Regler är&quot;anmärkningsvärda&quot; resurser, vilket innebär att du kan skapa och hämta textbaserade anteckningar för varje enskild resurs. Se [slutpunktshandbok för anteckningar](./notes.md) om du vill ha mer information om hur du hanterar anteckningar för regler och andra kompatibla resurser.
+Regler är&quot;anmärkningsvärda&quot; resurser, vilket innebär att du kan skapa och hämta textbaserade anteckningar för varje enskild resurs. Mer information om hur du hanterar anteckningar för regler och andra kompatibla resurser finns i [anteckningsguiden](./notes.md).
 
 ## Hämta relaterade resurser för en regel {#related}
 
-Följande anrop visar hur du hämtar relaterade resurser för en regel. När [hitta en regel](#lookup), listas dessa relationer under `relationships` regel.
+Följande anrop visar hur du hämtar relaterade resurser för en regel. När [söker efter en regel ](#lookup) visas de här relationerna under regeln `relationships`.
 
-Se [relationshandbok](../guides/relationships.md) om du vill ha mer information om relationerna i Reactor API.
+Se [relationshandboken](../guides/relationships.md) för mer information om relationer i Reactor API.
 
 ### Lista relaterade bibliotek för en regel {#libraries}
 
-Du kan lista bibliotek som använder en viss regel genom att lägga till `/libraries` till sökvägen för en sökningsbegäran.
+Du kan lista bibliotek som använder en viss regel genom att lägga till `/libraries` i sökvägen för en sökningsbegäran.
 
 **API-format**
 
@@ -540,7 +540,7 @@ GET  /rules/{RULE_ID}/libraries
 
 | Parameter | Beskrivning |
 | --- | --- |
-| `{RULE_ID}` | The `id` för regeln vars bibliotek du vill visa. |
+| `{RULE_ID}` | `id` för regeln vars bibliotek du vill visa. |
 
 {style="table-layout:auto"}
 
@@ -652,7 +652,7 @@ Ett godkänt svar returnerar en lista med bibliotek som använder den angivna re
 
 ### Lista relaterade revisioner för en regel {#revisions}
 
-Du kan lista ändringarna för en regel genom att lägga till `/revisions` till sökvägen för en sökningsbegäran.
+Du kan lista revideringarna för en regel genom att lägga till `/revisions` i sökvägen för en uppslagsbegäran.
 
 **API-format**
 
@@ -662,7 +662,7 @@ GET  /rules/{RULE_ID}/revisions
 
 | Parameter | Beskrivning |
 | --- | --- |
-| `{RULE_ID}` | The `id` för regeln vars ändringar du vill visa. |
+| `{RULE_ID}` | `id` för regeln vars revisioner du vill visa. |
 
 {style="table-layout:auto"}
 
@@ -830,7 +830,7 @@ Ett godkänt svar returnerar en lista med revisioner som använder den angivna r
 
 ### Söka efter relaterat ursprung för en regel {#origin}
 
-Du kan slå upp regelns ursprung (tidigare version) genom att lägga till `/origin` till sökvägen för en sökningsbegäran.
+Du kan slå upp regelns ursprung (tidigare version) genom att lägga till `/origin` i sökvägen för en sökningsbegäran.
 
 **API-format**
 
@@ -840,7 +840,7 @@ GET /rules/{RULE_ID}/origin
 
 | Parameter | Beskrivning |
 | --- | --- |
-| `{RULE_ID}` | The `id` för den regel vars ursprung du vill söka efter. |
+| `{RULE_ID}` | `id` för regeln vars ursprung du vill söka efter. |
 
 {style="table-layout:auto"}
 
@@ -932,7 +932,7 @@ Ett godkänt svar returnerar information om den angivna regelns tillägg.
 
 ### Söka efter den relaterade egenskapen för en regel {#property}
 
-Du kan leta upp den egenskap som äger en regel genom att lägga till `/property` till sökvägen för en sökningsbegäran.
+Du kan söka efter egenskapen som äger en regel genom att lägga till `/property` i sökvägen för en sökbegäran.
 
 **API-format**
 
@@ -942,7 +942,7 @@ GET /rules/{RULE_ID}/property
 
 | Parameter | Beskrivning |
 | --- | --- |
-| `{RULE_ID}` | The `id` för den regel vars egenskap du vill söka efter. |
+| `{RULE_ID}` | `id` för regeln vars egenskap du vill söka efter. |
 
 {style="table-layout:auto"}
 

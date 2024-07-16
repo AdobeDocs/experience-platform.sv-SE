@@ -11,7 +11,7 @@ ht-degree: 0%
 
 ---
 
-# [!UICONTROL Web interaction] datatyp
+# Datatypen [!UICONTROL Web interaction]
 
 [!UICONTROL Web interaction] är en XDM-datatyp (Standard Experience Data Model) som beskriver information om interaktioner som inträffade på en webbsida efter att den första sidinläsningen slutfördes. Den är avsedd för inspelning av interaktioner i webbprogram som inte aktiverar en ny sidinläsning, t.ex. ett webbprogram (SPA).
 

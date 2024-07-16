@@ -6,7 +6,7 @@ exl-id: 506991e8-701c-49b8-9d9d-265415779876
 source-git-commit: ae6c6d21b1eea900d01be3287827296071429d30
 workflow-type: tm+mt
 source-wordcount: '853'
-ht-degree: 2%
+ht-degree: 1%
 
 ---
 
@@ -14,34 +14,34 @@ ht-degree: 2%
 
 ## Översikt {#overview}
 
-Hybridpersonalisering beskriver processen att hämta innehåll på serversidan för personalisering med hjälp av [API för Edge Network Server](../../server-api/overview.md)och återge den på klientsidan med [Web SDK](../home.md).
+Hybridanpassning beskriver processen att hämta innehåll på serversidan för personalisering med [Edge Network Server-API](../../server-api/overview.md) och återge den på klientsidan med [Web SDK](../home.md).
 
-Ni kan använda hybridpersonalisering med personaliseringslösningar som Adobe Target, Adobe Journey Optimizer eller Offer decisioning. Skillnaden är innehållet i [!UICONTROL Server API] nyttolast.
+Du kan använda hybridpersonalisering med personaliseringslösningar som Adobe Target, Adobe Journey Optimizer eller Offer decisioning. Skillnaden är innehållet i [!UICONTROL Server API]-nyttolasten.
 
-## Förutsättningar {#prerequisites}
+## Förhandskrav {#prerequisites}
 
 Innan du implementerar hybridanpassning på dina webbegenskaper måste du se till att du uppfyller följande villkor:
 
-* Ni har bestämt vilken personaliseringslösning ni vill använda. Detta påverkar innehållet i [!UICONTROL Server API] nyttolast.
-* Du har tillgång till en programserver som du kan använda för att skapa [!UICONTROL Server API] samtal.
-* Du har tillgång till [API för Edge Network Server](../../server-api/authentication.md).
-* Du har rätt [konfigurerad](/help/web-sdk/commands/configure/overview.md) och distribuerade Web SDK på de sidor som du vill personalisera.
+* Ni har bestämt vilken personaliseringslösning ni vill använda. Detta påverkar innehållet i nyttolasten [!UICONTROL Server API].
+* Du har åtkomst till en programserver som du kan använda för att ringa [!UICONTROL Server API]-anropen.
+* Du har åtkomst till [Edge Network Server-API](../../server-api/authentication.md).
+* Du har [konfigurerat](/help/web-sdk/commands/configure/overview.md) korrekt och distribuerat Web SDK på de sidor som du vill anpassa.
 
 ## Flödesdiagram {#flow-diagram}
 
 Flödesdiagrammet nedan beskriver ordningen för de steg som vidtas för att leverera hybridpersonalisering.
 
-![Visuellt flödesdiagram som visar ordningen för de steg som har tagits för att leverera hybridanpassning.](assets/hybrid-personalization-diagram.png)
+![Visuellt flödesdiagram som visar ordningen för de steg som har vidtagits för att leverera hybridanpassning.](assets/hybrid-personalization-diagram.png)
 
-1. Alla befintliga cookies som tidigare lagrats av webbläsaren, prefixerade med `kndctr_`, ingår i webbläsarbegäran.
+1. Alla befintliga cookies som tidigare lagrats av webbläsaren, med prefixet `kndctr_`, ingår i webbläsarbegäran.
 1. Klientens webbläsare begär webbsidan från programservern.
-1. När programservern tar emot sidbegäran skapas en `POST` begäran till [Slutpunkt för interaktiv datainsamling i Server API](../../server-api/interactive-data-collection.md) för att hämta personaliseringsinnehåll. The `POST` begäran innehåller `event` och `query`. Cookies från föregående steg, om sådana finns, ingår i `meta>state>entries` array.
+1. När programservern tar emot sidbegäran görs en `POST`-begäran till den interaktiva datainsamlingsslutpunkten [ för Server API ](../../server-api/interactive-data-collection.md) för att hämta personaliseringsinnehåll. `POST`-begäran innehåller en `event` och en `query`. Cookies från föregående steg, om de är tillgängliga, ingår i `meta>state>entries`-arrayen.
 1. Server-API:t returnerar personaliseringsinnehållet till programservern.
-1. Programservern returnerar ett HTML-svar till klientwebbläsaren med [identitets- och klustercookies](#cookies).
-1. På klientsidan visas [!DNL Web SDK] `applyResponse` anropas och skickas i sidhuvuden och brödtexten i [!UICONTROL Server API] svar från föregående steg.
-1. The [!DNL Web SDK] återger mål [[!DNL Visual Experience Composer (VEC)]](https://experienceleague.adobe.com/docs/target/using/experiences/vec/visual-experience-composer.html) erbjudanden och Journey Optimizer Web Channel-objekt automatiskt, eftersom `renderDecisions` flaggan är inställd på `true`.
-1. Målformulärsbaserad [!DNL HTML]/[!DNL JSON] erbjudanden och Journey Optimizer kodbaserade upplevelser tillämpas manuellt via `applyProposition` metod, för att uppdatera [!DNL DOM] baserat på personaliseringsinnehållet i förslaget.
-1. För målformulärsbaserad [!DNL HTML]/[!DNL JSON] erbjudanden och Journey Optimizer kodbaserade upplevelser, måste webbannonseringshändelser skickas manuellt för att ange när det returnerade innehållet har visats. Detta görs via `sendEvent` -kommando.
+1. Programservern returnerar ett HTML-svar till klientwebbläsaren som innehåller [identitets- och klustercookies](#cookies).
+1. På klientsidan anropas kommandot [!DNL Web SDK] `applyResponse` som skickar sidhuvuden och brödtexten i [!UICONTROL Server API]-svaret från föregående steg.
+1. [!DNL Web SDK] återger mål [[!DNL Visual Experience Composer (VEC)]](https://experienceleague.adobe.com/docs/target/using/experiences/vec/visual-experience-composer.html)-erbjudanden och Journey Optimizer Web Channel-objekt automatiskt, eftersom flaggan `renderDecisions` är inställd på `true`.
+1. Målformulärbaserade [!DNL HTML]/[!DNL JSON]-erbjudanden och kodbaserade Journey Optimizer-upplevelser tillämpas manuellt med metoden `applyProposition` för att uppdatera [!DNL DOM] baserat på personaliseringsinnehållet i förslaget.
+1. För målformulärbaserade [!DNL HTML]/[!DNL JSON]-erbjudanden och kodbaserade Journey Optimizer-upplevelser måste visningshändelser skickas manuellt för att ange när det returnerade innehållet har visats. Detta görs via kommandot `sendEvent`.
 
 ## Cookies {#cookies}
 
@@ -65,7 +65,7 @@ Server-API-begäranden krävs för att hämta förslag och skicka ett visningsme
 
 När ni implementerar hybridpersonalisering måste ni vara särskilt uppmärksamma på att sidträffar inte räknas flera gånger i Analytics.
 
-När du [konfigurera ett datastream](../../datastreams/overview.md) För Analytics vidarebefordras händelser automatiskt så att sidträffar hämtas.
+När du [konfigurerar en datastream](../../datastreams/overview.md) för Analytics vidarebefordras händelser automatiskt så att sidträffar hämtas.
 
 Exemplet från den här implementeringen använder två olika datastreams:
 
@@ -162,8 +162,8 @@ curl -X POST "https://edge.adobedc.net/ee/v2/interact?dataStreamId={DATASTREAM_I
 
 | Parameter | Typ | Obligatoriskt | Beskrivning |
 | --- | --- | --- | --- |
-| `dataStreamId` | `String` | Ja. | ID:t för den datastream som du använder för att skicka interaktionerna till Edge Network. Se [datastreams - översikt](../../datastreams/overview.md) för att lära dig hur du konfigurerar ett datastream. |
-| `requestId` | `String` | Nej | Ett slumpmässigt ID för korrelering av interna serverförfrågningar. Om inget anges genereras ett Edge-nätverk och returneras som svar. |
+| `dataStreamId` | `String` | Ja. | ID:t för den datastream som du använder för att skicka interaktionen till Edge Network. Mer information om hur du konfigurerar ett datastream finns i [datastreams-översikten](../../datastreams/overview.md). |
+| `requestId` | `String` | Nej | Ett slumpmässigt ID för korrelering av interna serverförfrågningar. Om inget anges genereras ett Edge Network och det returneras i svaret. |
 
 ### Serversidans svar {#server-response}
 
@@ -203,7 +203,7 @@ Exemplet nedan visar hur Server-API-svaret kan se ut.
 
 ## Begäran på klientsidan {#client-request}
 
-På klientsidan visas [!DNL Web SDK] `applyResponse` anropas och skickar sidhuvuden och brödtext för svaret på serversidan.
+På klientsidan anropas kommandot [!DNL Web SDK] `applyResponse` som skickar sidhuvuden och brödtext för svaret på serversidan.
 
 ```js
    alloy("applyResponse", {
@@ -253,7 +253,7 @@ På klientsidan visas [!DNL Web SDK] `applyResponse` anropas och skickar sidhuvu
    ).then(applyPersonalization("sample-json-offer"));
 ```
 
-Formulärbaserad [!DNL JSON] erbjudandena tillämpas manuellt via `applyPersonalization` metod, för att uppdatera [!DNL DOM] baserat på personaliseringserbjudandet. För formulärbaserade aktiviteter måste visningshändelser skickas manuellt för att ange när erbjudandet har visats. Detta görs via `sendEvent` -kommando.
+Formulärbaserade [!DNL JSON]-erbjudanden tillämpas manuellt med metoden `applyPersonalization` för att uppdatera [!DNL DOM] baserat på personaliseringserbjudandet. För formulärbaserade aktiviteter måste visningshändelser skickas manuellt för att ange när erbjudandet har visats. Detta görs via kommandot `sendEvent`.
 
 ```js
 function sendDisplayEvent(decision) {
@@ -280,4 +280,4 @@ function sendDisplayEvent(decision) {
 
 ## Exempelprogram {#sample-app}
 
-För att du ska kunna experimentera och lära dig mer om den här typen av personalisering tillhandahåller vi ett exempelprogram som du kan hämta och använda för testning. Du kan hämta programmet tillsammans med detaljerade anvisningar om hur du använder det här [GitHub-databas](https://github.com/adobe/alloy-samples).
+För att du ska kunna experimentera och lära dig mer om den här typen av personalisering tillhandahåller vi ett exempelprogram som du kan hämta och använda för testning. Du kan hämta programmet tillsammans med detaljerade anvisningar om hur du använder det från den här [GitHub-databasen](https://github.com/adobe/alloy-samples).

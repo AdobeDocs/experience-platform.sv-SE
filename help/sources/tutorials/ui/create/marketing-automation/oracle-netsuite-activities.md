@@ -1,48 +1,49 @@
 ---
-title: Skapa en [!DNL Oracle NetSuite Activities] källanslutning i användargränssnittet
+title: Skapa en  [!DNL Oracle NetSuite Activities] källanslutning i användargränssnittet
 description: Lär dig hur du skapar en källanslutning till en NetSuite-aktivitet i Oracle med hjälp av Adobe Experience Platform användargränssnitt.
 hide: true
 hidefromtoc: true
 badge: Beta
-source-git-commit: 053cf0af327b39830f025686e0f8f67c27f1c45c
+exl-id: 99ef0b50-c8d6-48d6-895f-46b7ade47520
+source-git-commit: 8be502c9eea67119dc537a5d63a6c71e0bff1697
 workflow-type: tm+mt
 source-wordcount: '602'
-ht-degree: 1%
+ht-degree: 0%
 
 ---
 
-# Skapa en [!DNL Oracle NetSuite Activities] källanslutning i användargränssnittet
+# Skapa en [!DNL Oracle NetSuite Activities]-källanslutning i användargränssnittet
 
 >[!NOTE]
 >
->The [!DNL Oracle NetSuite Activities] källan är i betaversion. Se [källöversikt](../../../../home.md#terms-and-conditions) om du vill ha mer information om hur du använder betamärkta källor.
+>Källan [!DNL Oracle NetSuite Activities] är i betaversion. Mer information om hur du använder betatecknade källor finns i [källöversikten](../../../../home.md#terms-and-conditions).
 
-Läs följande självstudiekurs för att lära dig hur du kan hämta händelsedata från [!DNL Oracle NetSuite Activities] för Adobe Experience Platform i användargränssnittet.
+Läs följande självstudiekurs om du vill lära dig hur du överför händelsedata från ditt [!DNL Oracle NetSuite Activities]-konto till Adobe Experience Platform i användargränssnittet.
 
 ## Komma igång {#getting-started}
 
 Den här självstudiekursen kräver en fungerande förståelse av följande komponenter i Experience Platform:
 
-* [[!DNL Experience Data Model (XDM)] System](../../../../../xdm/home.md): Det standardiserade ramverk som [!DNL Experience Platform] organiserar kundupplevelsedata.
-   * [Grunderna för schemakomposition](../../../../../xdm/schema/composition.md): Lär dig mer om de grundläggande byggstenarna i XDM-scheman, inklusive viktiga principer och bästa praxis när det gäller schemakomposition.
-   * [Schemaredigeraren, genomgång](../../../../../xdm/tutorials/create-schema-ui.md): Lär dig hur du skapar anpassade scheman med hjälp av gränssnittet i Schemaredigeraren.
-* [[!DNL Real-Time Customer Profile]](../../../../../profile/home.md): Ger en enhetlig konsumentprofil i realtid baserad på aggregerade data från flera källor.
+* [[!DNL Experience Data Model (XDM)] System](../../../../../xdm/home.md): Det standardiserade ramverk som [!DNL Experience Platform] organiserar kundupplevelsedata med.
+   * [Grundläggande om schemakomposition](../../../../../xdm/schema/composition.md): Lär dig mer om grundstenarna i XDM-scheman, inklusive nyckelprinciper och bästa metoder för schemakomposition.
+   * [Schemaredigeraren, självstudiekurs](../../../../../xdm/tutorials/create-schema-ui.md): Lär dig hur du skapar anpassade scheman med hjälp av gränssnittet för Schemaredigeraren.
+* [[!DNL Real-Time Customer Profile]](../../../../../profile/home.md): Tillhandahåller en enhetlig konsumentprofil i realtid baserad på aggregerade data från flera källor.
 
-Om du redan har en giltig [!DNL Oracle NetSuite] kan du hoppa över resten av dokumentet och gå vidare till självstudiekursen om [konfigurera ett dataflöde](../../dataflow/marketing-automation.md).
+Om du redan har ett giltigt [!DNL Oracle NetSuite]-konto kan du hoppa över resten av det här dokumentet och gå vidare till självstudiekursen [Konfigurera ett dataflöde](../../dataflow/marketing-automation.md).
 
 >[!TIP]
 >
->Läs [[!DNL Oracle NetSuite] översikt](../../../../connectors/marketing-automation/oracle-netsuite.md) om du vill ha information om hur du hämtar autentiseringsuppgifter.
+>Läs [[!DNL Oracle NetSuite] översikten](../../../../connectors/marketing-automation/oracle-netsuite.md) om du vill ha mer information om hur du hämtar autentiseringsuppgifter.
 
-## Koppla samman [!DNL Oracle NetSuite] konto {#connect-account}
+## Anslut ditt [!DNL Oracle NetSuite]-konto {#connect-account}
 
-Välj **[!UICONTROL Sources]** från vänster navigering för att komma åt [!UICONTROL Sources] arbetsyta. Du kan välja lämplig kategori i katalogen till vänster på skärmen. Du kan också hitta den källa du vill arbeta med med med sökalternativet.
+I plattformsgränssnittet väljer du **[!UICONTROL Sources]** i den vänstra navigeringen för att komma åt arbetsytan i [!UICONTROL Sources]. Du kan välja lämplig kategori i katalogen till vänster på skärmen. Du kan också hitta den källa du vill arbeta med med med sökalternativet.
 
-Under *Marknadsföringsautomatisering* kategori, välj **[!DNL Oracle NetSuite Activities]** och sedan markera **[!UICONTROL Add data]**.
+Under kategorin *Marknadsföringsautomatisering* väljer du **[!DNL Oracle NetSuite Activities]** och sedan **[!UICONTROL Add data]**.
 
-![Skärmbild för plattformsgränssnitt för katalog med aktivitetskort i Oracle NetSuite](../../../../images/tutorials/create/marketing-automation/oracle-netsuite-activities/catalog-card.png)
+![Plattformsgränssnitt, bild för katalog med Oracle NetSuite-aktivitetskort](../../../../images/tutorials/create/marketing-automation/oracle-netsuite-activities/catalog-card.png)
 
-The **[!UICONTROL Connect Oracle NetSuite Activities account]** visas. På den här sidan kan du antingen använda nya autentiseringsuppgifter eller befintliga.
+Sidan **[!UICONTROL Connect Oracle NetSuite Activities account]** visas. På den här sidan kan du antingen använda nya autentiseringsuppgifter eller befintliga.
 
 >[!IMPORTANT]
 >
@@ -50,42 +51,42 @@ The **[!UICONTROL Connect Oracle NetSuite Activities account]** visas. På den h
 
 ### Befintligt konto {#existing-account}
 
-Välj [!DNL Oracle NetSuite Activities] konto som du vill skapa ett nytt dataflöde med och sedan välja **[!UICONTROL Next]** för att fortsätta.
+Om du vill använda ett befintligt konto väljer du det [!DNL Oracle NetSuite Activities]-konto som du vill skapa ett nytt dataflöde med och väljer sedan **[!UICONTROL Next]** för att fortsätta.
 
-![Skärmbild för användargränssnittet för plattformen som används för att ansluta ett NetSuite-aktivitetskonto för Oraclet till ett befintligt konto](../../../../images/tutorials/create/marketing-automation/oracle-netsuite-activities/existing.png)
+![Skärmbild för plattformsanvändargränssnitt som används för att ansluta Oracle NetSuite-aktivitetskonto till ett befintligt konto](../../../../images/tutorials/create/marketing-automation/oracle-netsuite-activities/existing.png)
 
 ### Nytt konto {#new-account}
 
-Om du skapar ett nytt konto väljer du **[!UICONTROL New account]** och ange sedan ett namn, en valfri beskrivning och dina uppgifter. När du är klar väljer du **[!UICONTROL Connect to source]** och tillåt sedan lite tid för att upprätta den nya anslutningen.
+Om du skapar ett nytt konto väljer du **[!UICONTROL New account]** och anger sedan ett namn, en valfri beskrivning och dina autentiseringsuppgifter. När du är klar väljer du **[!UICONTROL Connect to source]** och tillåt sedan lite tid för att upprätta den nya anslutningen.
 
-![Skärmbild för användargränssnittet för plattformen för att ansluta ett NetSuite-aktivitetskonto för Oracle till ett nytt konto](../../../../images/tutorials/create/marketing-automation/oracle-netsuite-activities/new.png)
+![Skärmbild för plattformsgränssnitt som används för att ansluta Oracle NetSuite-aktivitetskonto till ett nytt konto](../../../../images/tutorials/create/marketing-automation/oracle-netsuite-activities/new.png)
 
 ## Nästa steg {#next-steps}
 
-Genom att följa den här självstudien har du upprättat en anslutning till [!DNL Oracle NetSuite Activities] konto. Du kan nu fortsätta med nästa självstudiekurs och [konfigurera ett dataflöde för att hämta data till plattformen](../../dataflow/marketing-automation.md).
+Genom att följa den här självstudiekursen har du upprättat en anslutning till ditt [!DNL Oracle NetSuite Activities]-konto. Du kan nu fortsätta till nästa självstudiekurs och [konfigurera ett dataflöde för att hämta data till plattformen](../../dataflow/marketing-automation.md).
 
 ## Ytterligare resurser {#additional-resources}
 
-I avsnitten nedan finns ytterligare resurser som du kan använda när du använder [!DNL Oracle NetSuite Activities] källa.
+Avsnitten nedan innehåller ytterligare resurser som du kan referera till när du använder källan [!DNL Oracle NetSuite Activities].
 
 ### Mappning {#mapping}
 
-Plattformen ger intelligenta rekommendationer för automatiskt mappade fält baserat på det målschema eller den datamängd du valt. Du kan justera mappningsreglerna manuellt så att de passar dina användningsfall. Beroende på dina behov kan du välja att mappa fält direkt eller använda förinställningsfunktioner för data för att omvandla källdata för att härleda beräknade eller beräknade värden. Mer information om hur du använder mappningsgränssnittet och beräkningsfälten finns i [Användargränssnittsguide för dataprep](../../../../../data-prep/ui/mapping.md).
+Plattformen ger intelligenta rekommendationer för automatiskt mappade fält baserat på det målschema eller den datamängd du valt. Du kan justera mappningsreglerna manuellt så att de passar dina användningsfall. Beroende på dina behov kan du välja att mappa fält direkt eller använda förinställningsfunktioner för data för att omvandla källdata för att härleda beräknade eller beräknade värden. Mer information om hur du använder mappningsgränssnittet och beräkningsfälten finns i [Användargränssnittshandboken för dataförinställningar](../../../../../data-prep/ui/mapping.md).
 
 >[!NOTE]
 >
->Fälten som visas beror på de prenumerationer som [!DNL Oracle NetSuite] kontot har åtkomst till. Om du till exempel inte har tillgång till fakturering kommer du inte att se faktureringsrelaterade fält.
+>Vilka fält som visas beror på vilka prenumerationer ditt [!DNL Oracle NetSuite]-konto har åtkomst till. Om du till exempel inte har tillgång till fakturering kommer du inte att se faktureringsrelaterade fält.
 
 ### Schemaläggning {#scheduling}
 
-När du schemalägger [!DNL Oracle NetSuite Activities] dataflöde för förtäring måste du välja följande frekvens- och intervallkonfiguration:
+När du schemalägger [!DNL Oracle NetSuite Activities]-dataflödet för förtäring måste du välja följande frekvens- och intervallkonfiguration:
 
 | Frekvens | Intervall |
 | --- | --- |
 | `Once` | 1 |
 
-När data hämtas kan [!DNL Oracle NetSuite] svarar med det senast ändrade eller skapade datumet som ett datumformat i stället för som en tidsstämpel. Schemaläggningen är därför begränsad till en dag.
+När data hämtas svarar [!DNL Oracle NetSuite] med det senast ändrade eller skapade datumet som ett datumformat i stället för en tidsstämpel. Schemaläggningen är därför begränsad till en dag.
 
-När du har angett värdena för schemat väljer du **[!UICONTROL Next]**.
+När du har angett värden för ditt schema väljer du **[!UICONTROL Next]**.
 
 ![Schemaläggningssteget för källarbetsflödet.](../../../../images/tutorials/create/marketing-automation/oracle-netsuite-activities/scheduling.png)

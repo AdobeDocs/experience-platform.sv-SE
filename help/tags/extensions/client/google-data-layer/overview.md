@@ -11,9 +11,9 @@ ht-degree: 0%
 
 # Google Data Layer-tillägg
 
-Med Google datalagertillägg kan du använda ett Google-datalager i taggimplementeringen. Tillägget kan användas fristående eller samtidigt med Google-lösningar och med Google öppen källkod [Hjälpbibliotek för datalager](https://github.com/google/data-layer-helper).
+Med Google datalagertillägg kan du använda ett Google-datalager i taggimplementeringen. Tillägget kan användas fristående eller samtidigt med Google-lösningar och med Google [Data Layer Helper Library](https://github.com/google/data-layer-helper) med öppen källkod.
 
-Hjälpbiblioteket har liknande händelsestyrda funktioner som Adobe Client Data Layer (ACDL). Dataelementen, reglerna och åtgärderna i Google Data Layer-tillägget har liknande funktioner som i [ACDL-tillägg](../client-data-layer/overview.md).
+Hjälpbiblioteket har liknande händelsestyrda funktioner som Adobe Client Data Layer (ACDL). Dataelementen, reglerna och åtgärderna i Google datalagertillägg har liknande funktioner som i [ACDL-tillägget](../client-data-layer/overview.md).
 
 ## Installation
 
@@ -35,27 +35,27 @@ Standardnamnet för datalagret är Google standardnamn `dataLayer`.
 
 >[!NOTE]
 >
->Ordet _event_ överbelastas när ett händelsestyrt datalager används i Adobe Experience Platform Tags. _Händelser_ kan vara:
+>Ordet _event_ överläses när ett händelsedrivet datalager används i Adobe Experience Platform-taggar. _Händelser_ kan vara:
 > - Adobe Experience Platform Tags-händelser (Bibliotek inläst och så vidare).
-> - JavaScript-händelser.
-> - Data överförs till datalagret med _event_ nyckelord.
+> - JavaScript event.
+> - Data överfördes till datalagret med nyckelordet _event_.
 
 Tillägget ger dig möjlighet att lyssna efter ändringar i datalagret.
 
 >[!NOTE]
 >
->Det är viktigt att förstå hur _event_ nyckelord när data skickas till ett Google-datalager, på samma sätt som datalagret Adobe Client. The _event_ nyckelordet ändrar beteendet för Google datalager och därför det här tillägget.\
+>Det är viktigt att du förstår hur nyckelordet _event_ används när data överförs till ett Google-datalager, på samma sätt som datalagret Adobe Client. Nyckelordet _event_ ändrar beteendet för Google datalager och därför det här tillägget.\
 > Läs Google dokumentation eller gör en undersökning om du är osäker.
 
 ### Google Event Types
 
-Google har stöd för två metoder för push-händelser: Google Tag Manager med `push()` och Google Analytics 4 med `gtag()` -metod.
+Google har stöd för två metoder för push-händelser: Google Tag Manager med metoden `push()` och Google Analytics 4 med metoden `gtag()`.
 
-Tilläggsversioner för Google datalager före 1.2.1 stöds endast händelser som skapats av `push()`, vilket visas i kodexemplen på den här sidan.
+Tilläggsversioner av Google datalager före 1.2.1 har endast stöd för händelser som skapats av `push()`, vilket visas i kodexemplen på den här sidan.
 
-Versioner 1.2.1 och senare supporthändelser som skapats med `gtag()`.  Detta är valfritt och kan aktiveras i dialogrutan för tilläggskonfiguration.
+Versioner 1.2.1 och senare supporthändelser skapade med `gtag()`.  Detta är valfritt och kan aktiveras i dialogrutan för tilläggskonfiguration.
 
-Mer information om `push()` och `gtag()` händelser, se [Google-dokumentation](https://developers.google.com/analytics/devguides/collection/ga4/reference/events?client_type=gtag).  Information finns också i dialogrutorna för konfiguration och regel för tillägget.
+Mer information om `push()`- och `gtag()`-händelser finns i [Google-dokumentationen](https://developers.google.com/analytics/devguides/collection/ga4/reference/events?client_type=gtag).  Information finns också i dialogrutorna för konfiguration och regel för tillägget.
 
 ### Lyssna efter alla penslar till datalagret
 
@@ -99,13 +99,13 @@ dataLayer.push({"data":"something"})
 
 Om du anger en händelse spårar händelseavlyssnaren alla händelser som matchar en viss sträng.
 
-Ange till exempel `myEvent` när du använder den här konfigurationen spåras endast följande push-händelse i avlyssnaren:
+Om du till exempel anger `myEvent` när du använder den här konfigurationen spåras endast följande push-händelse:
 
 ```js
 dataLayer.push({"event":"myEvent"})
 ```
 
-En (ECMAScript/JavaScript)-regex kan användas för att matcha händelsenamn.
+En (ECMAScript / JavaScript) regex kan användas för att matcha händelsenamn.
 
 Om du till exempel anger &#39;myEvent\d&#39; spåras `myEvent` med en siffra (\d):
 
@@ -122,7 +122,7 @@ Tillägget ger dig två åtgärder för att överföra JSON till datalagret, ett
 
 #### JSON för fritext
 
-Åtgärden för fri text gör det möjligt att använda dataelement direkt i JSON. I JSON-redigeraren ska dataelement refereras med procentnotation. Till exempel: `%dataElementName%`.
+Åtgärden för fri text gör det möjligt att använda dataelement direkt i JSON. I JSON-redigeraren ska dataelement refereras med procentnotation. Exempel: `%dataElementName%`.
 
 ```json
 {
@@ -157,4 +157,4 @@ Dataelementet kan därför returnera:
 
 Tilläggets dialogrutor för dataelement och händelser innehåller detaljerad användarinformation och exempel.
 
-Ytterligare allmän information finns i [README för projekt](https://github.com/adobe/reactor-extension-googledatalayer/blob/main/README.md)
+Ytterligare allmän information finns i [projektet README](https://github.com/adobe/reactor-extension-googledatalayer/blob/main/README.md)

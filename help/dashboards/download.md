@@ -23,13 +23,13 @@ Det här dokumentet innehåller en sammanfattning av hur du hämtar instrumentpa
 
 ## Hämta instrumentpanel
 
-Börja hämta en kontrollpanel genom att navigera till den kontrollpanel som du vill hämta (till exempel [!UICONTROL Profiles] kontrollpanelen) och välj sedan menyn för fler alternativ (**`...`**) i panelens övre högra hörn. Nästa, välj **[!UICONTROL Download]**.
+Om du vill börja hämta en instrumentpanel går du till den instrumentpanel som du vill hämta (till exempel kontrollpanelen [!UICONTROL Profiles]) och väljer menyn med fler alternativ (**`...`**) i det övre högra hörnet av instrumentpanelen. Välj sedan **[!UICONTROL Download]**.
 
 ![Kontrollpanelen Experience Platform Profiles med ellipsen och listrutan Download (Hämta) markerad.](images/download/download-button.png)
 
 ## Förhandsgranska PDF
 
-Efter markering **[!UICONTROL Download]**&#x200B;öppnas webbläsarens standardutskriftsmeny. I det här exemplet visas utskriftsmenyn i Google Chrome.
+När du har valt **[!UICONTROL Download]** öppnas standardutskriftsmenyn för webbläsaren. I det här exemplet visas utskriftsmenyn i Google Chrome.
 
 På utskriftsmenyn kan du förhandsgranska PDF som ska sparas. PDF är en sann representation av instrumentpanelswidgetarna så som de visas i plattformsgränssnittet och storleken på PDF justeras automatiskt så att alla instrumentpanelswidgetar som visas för tillfället visas på en enda sida visas.
 
@@ -37,7 +37,7 @@ På utskriftsmenyn kan du förhandsgranska PDF som ska sparas. PDF är en sann r
 
 PDF innehåller ett automatiskt genererat huvud som innehåller Experience Platform-logotypen, namnet på kontrollpanelen, ditt namn samt datum och tid då kontrollpanelen hämtades. Informationen är skrivskyddad och kan inte redigeras i PDF.
 
-![En närbild av förhandsvisningen med det automatiskt genererade sidhuvudet markerat.](images/download/download-pdf.png)
+![En närbild av förhandsvisningen med det automatiskt genererade huvudet markerat.](images/download/download-pdf.png)
 
 ## Spara som PDF
 
@@ -45,9 +45,9 @@ När du har förhandsgranskat PDF väljer du **Spara** för att välja den plats
 
 >[!NOTE]
 >
->Om det behövs kan du använda **Mål** listruta att välja **Spara som PDF** om det alternativet inte väljs automatiskt.
+>Om det behövs kan du använda listrutan **Mål** och välja **Spara som PDF** om det alternativet inte väljs automatiskt.
 
-![Profilöversikten visas på ett enda sidformat med alternativet Spara som PDF i listrutan Mål markerat.](images/download/download-chrome-print-destination.png)
+![Profilöversikten visas i ett ensidigt format med utskriftsalternativet Spara som PDF i listrutan Mål markerat.](images/download/download-chrome-print-destination.png)
 
 ## Anpassa PDF för kontrollpanel
 
@@ -55,13 +55,13 @@ PDF som genereras matchar den instrumentpanel som du kan se i användargränssni
 
 Du kan till exempel ändra utseendet på din profilkontrollpanel så att den innehåller flera widgetar med full bredd som är staplade över tre standardwidgetar.
 
-![Kontrollpanelen Profil som visar utdragen widget.](images/download/download-modify.png)
+![Profilinstrumentpanelen som visar utdragen widget.](images/download/download-modify.png)
 
 Om du väljer att hämta den uppdaterade kontrollpanelen får du en ny förhandsvisning i PDF som matchar utseendet på den anpassade profilkontrollpanelen. Det justerar också automatiskt storleken på PDF för att säkerställa att alla synliga widgetar inkluderas i en enkelsidig PDF.
 
 ![Profilöversikten visas på ett enda sidformat med panelen Utskriftsalternativ till höger.](images/download/download-chrome-print-modified.png)
 
-Om du vill veta mer om hur du anpassar kontrollpaneler börjar du med att läsa [översikt över anpassning av instrumentpanel](customize/overview.md).
+Om du vill veta mer om hur du anpassar kontrollpaneler börjar du med att läsa [översikten över anpassning av kontrollpanelen](customize/overview.md).
 
 ## Nästa steg
 

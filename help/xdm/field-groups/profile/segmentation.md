@@ -11,17 +11,17 @@ ht-degree: 0%
 ---
 
 
-# [!UICONTROL Segment Membership Details] schemafältgrupp
+# Schemafältgruppen [!UICONTROL Segment Membership Details]
 
 >[!NOTE]
 >
->Namnen på flera schemafältgrupper har ändrats. Visa dokumentet på [uppdaterar fältgruppnamn](../name-updates.md) för mer information.
+>Namnen på flera schemafältgrupper har ändrats. Mer information finns i dokumentet om [uppdatering av fältgruppnamn](../name-updates.md).
 
-[!UICONTROL Segment Membership Details] är en standardgrupp för schemafält för [[!DNL XDM Individual Profile] class](../../classes/individual-profile.md). Fältgruppen innehåller ett enda kartfält som samlar in information om segmentmedlemskap, inklusive vilka segment den enskilda personen tillhör, senaste kvalificeringstid och när medlemskapet är giltigt till.
+[!UICONTROL Segment Membership Details] är en standardschemafältgrupp för [[!DNL XDM Individual Profile] klassen](../../classes/individual-profile.md). Fältgruppen innehåller ett enda kartfält som samlar in information om segmentmedlemskap, inklusive vilka segment den enskilda personen tillhör, senaste kvalificeringstid och när medlemskapet är giltigt till.
 
 >[!WARNING]
 >
->Med `segmentMembership` fältet måste läggas till manuellt i profilschemat med den här fältgruppen. Du bör inte försöka fylla i eller uppdatera det här fältet manuellt. Systemet uppdaterar automatiskt `segmentMembership` mappning för varje profil när segmenteringsjobb utförs.
+>Fältet `segmentMembership` måste läggas till manuellt i ditt profilschema med den här fältgruppen, men du bör inte försöka fylla i eller uppdatera det här fältet manuellt. Systemet uppdaterar automatiskt kartan `segmentMembership` för varje profil när segmenteringsjobb utförs.
 
 <img src="../../images/data-types/profile-segmentation.png" width="400" /><br />
 
@@ -31,7 +31,7 @@ ht-degree: 0%
 
 {style="table-layout:auto"}
 
-Följande är ett exempel `segmentMembership` mappning som systemet har fyllt i för en viss profil. Segmentmedlemskap sorteras efter namnutrymme, vilket anges av objektets rotnivånycklar. De enskilda nycklarna under varje namnutrymme representerar i sin tur ID:n för de segment som profilen är medlem i. Varje segmentobjekt innehåller flera underfält med mer information om medlemskapet:
+Följande är ett exempel på `segmentMembership`-mappning som systemet har fyllt i för en viss profil. Segmentmedlemskap sorteras efter namnutrymme, vilket anges av objektets rotnivånycklar. De enskilda nycklarna under varje namnutrymme representerar i sin tur ID:n för de segment som profilen är medlem i. Varje segmentobjekt innehåller flera underfält med mer information om medlemskapet:
 
 ```json
 {
@@ -74,15 +74,15 @@ Följande är ett exempel `segmentMembership` mappning som systemet har fyllt i 
 | --- | --- |
 | `xdm:version` | Den version av segmentet som den här profilen är kvalificerad för. |
 | `xdm:lastQualificationTime` | En tidsstämpel från den senaste gången profilen kvalificerades för segmentet. |
-| `xdm:validUntil` | En tidsstämpel som anger när segmentmedlemskapet inte längre ska antas vara giltigt. Om det här fältet inte är inställt för externa målgrupper behålls segmentmedlemskapet endast i 30 dagar från `lastQualificationTime`. |
+| `xdm:validUntil` | En tidsstämpel som anger när segmentmedlemskapet inte längre ska antas vara giltigt. Om det här fältet inte har angetts för externa målgrupper behålls segmentmedlemskapet endast i 30 dagar från `lastQualificationTime`. |
 | `xdm:status` | Ett strängfält som anger om segmentmedlemskapet har realiserats som en del av den aktuella begäran. Följande värden accepteras: <ul><li>`realized`: Profilen kvalificerar för segmentet.</li><li>`exited`: Profilen avslutar segmentet som en del av den aktuella begäran.</li></ul> |
-| `xdm:payload` | Vissa segmentmedlemskap innehåller en nyttolast som beskriver ytterligare värden som är direkt relaterade till medlemskapet. Endast en nyttolast av en viss typ kan anges för varje medlemskap. `xdm:payloadType` anger typ av nyttolast (`boolean`, `number`, `propensity`, eller `string`), medan dess jämställda egenskap tillhandahåller värdet för nyttolasttypen. |
+| `xdm:payload` | Vissa segmentmedlemskap innehåller en nyttolast som beskriver ytterligare värden som är direkt relaterade till medlemskapet. Endast en nyttolast av en viss typ kan anges för varje medlemskap. `xdm:payloadType` anger typen av nyttolast (`boolean`, `number`, `propensity` eller `string`), medan dess jämställda egenskap anger värdet för nyttolasttypen. |
 
 {style="table-layout:auto"}
 
 >[!NOTE]
 >
->Alla segmentmedlemskap som finns i `exited` status i mer än 30 dagar, baserat på `lastQualificationTime`, kan tas bort.
+>Alla segmentmedlemskap som har statusen `exited` i mer än 30 dagar, baserat på `lastQualificationTime`, kan tas bort.
 
 Mer information om fältgruppen finns i den offentliga XDM-databasen:
 

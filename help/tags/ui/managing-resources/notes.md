@@ -4,7 +4,7 @@ description: Lär dig hur du lägger till textanteckningar i vissa taggresurser 
 exl-id: 14d6b6a1-3bd0-4181-8181-e6b35c197a44
 source-git-commit: a8b0282004dd57096dfc63a9adb82ad70d37495d
 workflow-type: tm+mt
-source-wordcount: '306'
+source-wordcount: '307'
 ht-degree: 0%
 
 ---
@@ -13,7 +13,7 @@ ht-degree: 0%
 
 >[!NOTE]
 >
->Adobe Experience Platform Launch har omklassificerats som en serie datainsamlingstekniker i Adobe Experience Platform. Som ett resultat av detta har flera terminologiska förändringar införts i produktdokumentationen. Se följande [dokument](../../term-updates.md) för en konsoliderad hänvisning till terminologiska förändringar.
+>Adobe Experience Platform Launch har omklassificerats som en serie datainsamlingstekniker i Adobe Experience Platform. Som ett resultat av detta har flera terminologiska förändringar införts i produktdokumentationen. I följande [dokument](../../term-updates.md) finns en konsoliderad referens till de ändrade terminologin.
 
 Anteckningar är textanteckningar som du kan lägga till i vissa taggresurser i Adobe Experience Platform. Anteckningar kan bifogas följande resurser:
 
@@ -32,7 +32,7 @@ Anteckningar är kommentarer som inte har någon effekt på beteendet för de re
 * Funktion som att göra-lista för framtida förbättringar
 * Skicka resursanvändningsråd till andra användare
 * Ge instruktioner till andra teammedlemmar
-* Posthistorik
+* Registrera historik
 * Påminn dig själv om vad en resurs gör, varför den har byggts som den är eller var den används
 
 ## Skapa en anteckning
@@ -44,5 +44,5 @@ Välj **[!UICONTROL Notes]** om du vill expandera den högra listen och visa ant
 ## Övriga
 
 * Anteckningar om taggresurser matchar anteckningarna i DTM, eftersom de inte kan ändras och inte kan redigeras eller tas bort.
-* När äldre versioner av en resurs visas, är det bara de anteckningar som skapades före den revisionen `created_at` datum visas.
+* När äldre versioner av en resurs visas endast de anteckningar som skapades före den revisionens `created_at`-datum.
 * När du tar bort en resurs tas även alla anteckningar som är kopplade till resursen bort.

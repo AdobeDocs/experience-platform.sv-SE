@@ -12,12 +12,12 @@ ht-degree: 0%
 
 # Kundhanterade nycklar i kundens AI
 
-Kunds-AI ger möjlighet att [Hälsovårdssköld](https://www.adobe.com/trust/compliance/hipaa-ready.html) och kunder som använder skölden för skydd av privatlivet och säkerhet för att använda Azure Customer Managed Keys (CMK) som ska användas på dina kunds AI-data. Konfigurationsprocessen är densamma som [Adobe Experience Platform CMK-inställningar](../../../landing/governance-privacy-security/customer-managed-keys/overview.md) och du kan följa de steg som beskrivs däri.
+Kund-AI ger möjlighet för kunder med [vårdsköld](https://www.adobe.com/trust/compliance/hipaa-ready.html) och skölden för sekretess och säkerhet att använda Azure Customer Managed Keys (CMK) för att tillämpa dina kundens AI-data. Installationsprocessen är densamma som [Adobe Experience Platform CMK-konfigurationen](../../../landing/governance-privacy-security/customer-managed-keys/overview.md) och du kan följa stegen som beskrivs i den.
 
-Du kan läsa dokumentationen om [Kundhanterade nycklar i Adobe Experience Platform](../../../landing/governance-privacy-security/encryption.md) och följer instruktionerna för att gå igenom installationsprocessen.
+Du kan läsa dokumentationen om [Kundhanterade nycklar i Adobe Experience Platform](../../../landing/governance-privacy-security/encryption.md) och följa de steg som beskrivs för att gå igenom installationsprocessen.
 
 >[!NOTE]
 >
->[!DNL Customer Managed Keys] är för närvarande bara tillgängliga för organisationer som har köpt [!DNL Healthcare Shield or Privacy & Security Shield] tilläggserbjudande.
+>[!DNL Customer Managed Keys] är för närvarande bara tillgängligt för organisationer som har köpt tilläggserbjudandet [!DNL Healthcare Shield or Privacy & Security Shield].
 
-Alla data som används av Platform krypteras under överföring och i vila för att skydda data, med eller utan CMK. Mer information om Adobe Experience Platform-kryptering finns i dokumentationen om [Datakryptering](../../../landing/governance-privacy-security/encryption.md).
+Alla data som används av Platform krypteras under överföring och i vila för att skydda data, med eller utan CMK. Mer information om Adobe Experience Platform-kryptering finns i dokumentationen om [datakryptering](../../../landing/governance-privacy-security/encryption.md).

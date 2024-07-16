@@ -11,9 +11,9 @@ ht-degree: 0%
 
 ---
 
-# [!UICONTROL Point of interest details] datatyp
+# Datatypen [!UICONTROL Point of interest details]
 
-[!UICONTROL Point of interest details] är en standard-XDM-datatyp som beskriver geografiska data där en händelse observerades.
+[!UICONTROL Point of interest details] är en standard-XDM-datatyp som beskriver de geografiska data där en händelse observerades.
 
 <img src="../images/data-types/poi-details.png" width="550" /><br />
 

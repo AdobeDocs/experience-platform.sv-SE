@@ -6,18 +6,18 @@ description: Det här dokumentet beskriver hur du skapar ett datauppsättningsob
 exl-id: f3e5de7f-1781-4898-ac42-063eb51e661a
 source-git-commit: 74867f56ee13430cbfd9083a916b7167a9a24c01
 workflow-type: tm+mt
-source-wordcount: '253'
+source-wordcount: '252'
 ht-degree: 0%
 
 ---
 
 # Skapa en datauppsättning i API:t
 
-För att skapa en datauppsättning med [!DNL Catalog] API, du måste känna till `$id` värdet på [!DNL Experience Data Model] (XDM)-schema som datauppsättningen ska baseras på. När du har ett schema-ID kan du skapa en datauppsättning genom att göra en POST-förfrågan till `/datasets` slutpunkt i [!DNL Catalog] API.
+Om du vill skapa en datauppsättning med API:t [!DNL Catalog] måste du känna till `$id`-värdet för det [!DNL Experience Data Model] (XDM)-schema som datauppsättningen ska baseras på. När du har ett schema-ID kan du skapa en datauppsättning genom att göra en POST-förfrågan till `/datasets`-slutpunkten i [!DNL Catalog] API.
 
 >[!NOTE]
 >
->Det här dokumentet innehåller bara information om hur du skapar ett datauppsättningsobjekt i [!DNL Catalog]. För fullständiga steg om hur du skapar, fyller i och övervakar en datauppsättning, se följande [självstudiekurs](../datasets/create.md).
+>Det här dokumentet beskriver bara hur du skapar ett datauppsättningsobjekt i [!DNL Catalog]. Fullständiga anvisningar om hur du skapar, fyller i och övervakar en datauppsättning finns i följande [självstudiekurs](../datasets/create.md).
 
 **API-format**
 
@@ -49,12 +49,12 @@ curl -X POST \
 | Egenskap | Beskrivning |
 | --- | --- |
 | `name` | Namnet på datauppsättningen som ska skapas. |
-| `schemaRef.id` | URI `$id` värdet för XDM-schemat som datauppsättningen baseras på. |
-| `schemaRef.contentType` | Anger schemats format och version. Se avsnittet om [schemaversion](../../xdm/api/getting-started.md#versioning) i XDM API-guiden för mer information. |
+| `schemaRef.id` | URI `$id`-värdet för XDM-schemat som datamängden baseras på. |
+| `schemaRef.contentType` | Anger schemats format och version. Mer information finns i avsnittet [schemaversion](../../xdm/api/getting-started.md#versioning) i XDM API-guiden. |
 
 >[!NOTE]
 >
->I det här exemplet används [Apache Parquet](https://parquet.apache.org/docs/) filformat för dess `containerFormat` -egenskap. Ett exempel som använder JSON-filformatet finns i [Utvecklarhandbok för batchintag](../../ingestion/batch-ingestion/api-overview.md).
+>I det här exemplet används filformatet [Apache Parquet](https://parquet.apache.org/docs/) för egenskapen `containerFormat`. Ett exempel som använder JSON-filformatet finns i [Utvecklarhandboken för gruppfrågor](../../ingestion/batch-ingestion/api-overview.md).
 
 **Svar**
 

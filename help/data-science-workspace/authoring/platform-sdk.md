@@ -1,19 +1,19 @@
 ---
-keywords: Experience Platform;utvecklarguide;SDK;Data Access SDK;Data Science Workspace;populära topics
+keywords: Experience Platform;utvecklarguide;SDK;Data Access SDK;Data Science Workspace;populära ämnen
 solution: Experience Platform
 title: Modellredigering med Adobe Experience Platform Platform SDK
 description: I den här självstudien får du information om hur du konverterar data_access_sdk_python till den nya Python-plattformen_sdk i både Python och R.
 exl-id: 20909cae-5cd2-422b-8dbb-35bc63e69b2a
 source-git-commit: 81f48de908b274d836f551bec5693de13c5edaf1
 workflow-type: tm+mt
-source-wordcount: '489'
-ht-degree: 5%
+source-wordcount: '486'
+ht-degree: 0%
 
 ---
 
 # Skapa modeller med Adobe Experience Platform [!DNL Platform] SDK
 
-Den här självstudiekursen innehåller information om hur du konverterar `data_access_sdk_python` till nya Python `platform_sdk` i både Python och R. I den här självstudiekursen finns information om följande åtgärder:
+I den här självstudien får du information om hur du konverterar `data_access_sdk_python` till den nya Python `platform_sdk` i både Python och R. I den här självstudien finns information om följande åtgärder:
 
 - [Bygg autentisering](#build-authentication)
 - [Grundläggande läsning av data](#basic-reading-of-data)
@@ -21,7 +21,7 @@ Den här självstudiekursen innehåller information om hur du konverterar `data_
 
 ## Bygg autentisering {#build-authentication}
 
-Autentisering krävs för att anropa [!DNL Adobe Experience Platform]och består av API-nyckel, organisations-ID, en användartoken och en tjänsttoken.
+Autentisering krävs för att anropa [!DNL Adobe Experience Platform] och består av API-nyckel, organisations-ID, en användartoken och en tjänsttoken.
 
 ### Python
 
@@ -68,7 +68,7 @@ client_context <- psdk$client_context$ClientContext(api_key={API_KEY},
 
 ## Grundläggande läsning av data {#basic-reading-of-data}
 
-Med nya [!DNL Platform] SDK, den maximala lässtorleken är 32 GB med en maximal lästid på 10 minuter.
+Med nya [!DNL Platform] SDK är den maximala lässtorleken 32 GB, med en maximal lästid på 10 minuter.
 
 Om lästiden är för lång kan du försöka med att använda något av följande filtreringsalternativ:
 
@@ -79,7 +79,7 @@ Om lästiden är för lång kan du försöka med att använda något av följand
 
 >[!NOTE]
 >
->Organisationen finns inom `client_context`.
+>Organisationen anges i `client_context`.
 
 ### Python
 
@@ -105,7 +105,7 @@ df
 
 ## Filtrera efter förskjutning och begränsning {#filter-by-offset-and-limit}
 
-Eftersom det inte längre finns stöd för att filtrera efter batch-ID måste du använda `offset` och `limit`.
+Eftersom filtrering med batch-ID inte längre stöds, måste du använda `offset` och `limit` för att kunna omfång för läsning av data.
 
 ### Python
 
@@ -145,16 +145,16 @@ df2 <- dataset_reader$where(
 df2
 ```
 
-Den nya [!DNL Platform] SDK har stöd för följande åtgärder:
+Den nya SDK:n [!DNL Platform] stöder följande åtgärder:
 
-| Åtgärd |  -funktion |
+| Åtgärd | Funktion |
 | --------- | -------- |
-| Är lika med (`=`) | `eq()` |
-| Greater than (`>`) | `gt()` |
-| Greater than or equal to (`>=`) | `ge()` |
-| Less than (`<`) | `lt()` |
-| Less than or equal to (`<=`) | `le()` |
-| And (`&`) | `And()` |
+| Lika med (`=`) | `eq()` |
+| Större än (`>`) | `gt()` |
+| Större än eller lika med (`>=`) | `ge()` |
+| Mindre än (`<`) | `lt()` |
+| Mindre än eller lika med (`<=`) | `le()` |
+| Och (`&`) | `And()` |
 | Eller (`|`) | `Or()` |
 
 ## Filtrera efter markerade kolumner {#filter-by-selected-columns}
@@ -195,7 +195,7 @@ df <- dataset_reader$sort(c(('column-a', 'asc'), ('column-b', 'desc')))$read()
 
 >[!NOTE]
 >
->Organisationen finns inom `client_context`.
+>Organisationen anges i `client_context`.
 
 Om du vill skriva data i Python och R använder du ett av följande exempel:
 
@@ -220,4 +220,4 @@ write_tracker <- dataset_writer$write({PANDA_DATAFRAME}, file_format='json')
 
 ## Nästa steg
 
-När du har konfigurerat `platform_sdk` datainläsaren, bearbetas och delas sedan upp i `train` och `val` datauppsättningar. Läs mer om dataförberedelse och funktionskonstruktion i avsnittet om [dataförberedelse och funktionsteknik](../jupyterlab/create-a-model.md#data-preparation-and-feature-engineering) i självstudiekursen för att skapa ett recept med [!DNL JupyterLab] bärbara datorer.
+När du har konfigurerat datainläsaren `platform_sdk` förbereds data och delas sedan upp i datamängderna `train` och `val`. Om du vill veta mer om dataförberedelser och funktionskonstruktion kan du gå till avsnittet [dataförberedelser och funktionskonstruktion](../jupyterlab/create-a-model.md#data-preparation-and-feature-engineering) i självstudiekursen för att skapa ett recept med hjälp av [!DNL JupyterLab] bärbara datorer.

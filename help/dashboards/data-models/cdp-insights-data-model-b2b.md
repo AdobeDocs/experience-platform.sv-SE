@@ -13,19 +13,19 @@ ht-degree: 0%
 
 # Real-time Customer Data Platform Insights, datamodell B2B Edition
 
-Datamodellen Real-time Customer Data Platform Insights för B2B Edition visar de datamodeller och SQL som ligger till grund för insikterna för [kontoprofiler](https://experienceleague.adobe.com/en/docs/experience-platform/rtcdp/account/account-profile-overview). Du kan anpassa de här SQL-frågemallarna för att skapa Real-Time CDP-rapporter för användning av B2B-marknadsföring och KPI-indikatorer. Dessa insikter kan sedan användas som anpassade widgetar för dina instrumentpaneler.
+Datamodellen Real-time Customer Data Platform Insights för B2B Edition visar de datamodeller och SQL som används för insikterna för [kontoprofiler](https://experienceleague.adobe.com/en/docs/experience-platform/rtcdp/account/account-profile-overview). Du kan anpassa de här SQL-frågemallarna för att skapa Real-Time CDP-rapporter för användning av B2B-marknadsföring och KPI-indikatorer. Dessa insikter kan sedan användas som anpassade widgetar för dina instrumentpaneler.
 
 >[!AVAILABILITY]
 >
->Den här funktionaliteten är tillgänglig för kunder som har köpt Real-Time CDP Prime- och Ultimate-paketet. Se dokumentationen om [Real-Time CDP editions](../../rtcdp/overview.md#rtcdp-editions) om du vill ha mer information eller kontakta din Adobe-representant.
+>Den här funktionaliteten är tillgänglig för kunder som har köpt Real-Time CDP Prime- och Ultimate-paketet. Mer information finns i dokumentationen om [Real-Time CDP-utgåvorna](../../rtcdp/overview.md#rtcdp-editions), eller kontakta din Adobe-representant.
 
 <!-- 
 See the query accelerated store reporting insights documentation to learn [how to build a reporting insights data model through Query Service for use with accelerated store data and user-defined dashboards](../../query-service/data-distiller/customizable-insights/reporting-insights-data-model.md).
  -->
 
-## Förutsättningar
+## Förhandskrav
 
-Den här handboken kräver en fungerande förståelse av anpassade instrumentpaneler. Läs dokumentationen på [hur du skapar en anpassad kontrollpanel](../user-defined-dashboards.md) innan du fortsätter med den här guiden.
+Den här handboken kräver en fungerande förståelse av anpassade instrumentpaneler. Läs dokumentationen om [hur du skapar en anpassad kontrollpanel](../user-defined-dashboards.md) innan du fortsätter med den här guiden.
 
 ## Real-Time CDP B2B-rapporter och användningsexempel {#B2B-insight-reports-and-use-cases}
 
@@ -52,13 +52,13 @@ I diagrammet nedan visas de relevanta datafälten i varje datauppsättning, dera
 
 #### De nya kontona efter bransch {#accounts-by-industry}
 
-Den logik som används för [!UICONTROL New accounts by industry] insight returnerar de fem främsta branscherna utifrån deras antal kontoprofiler och deras relativa storlek till varandra. Se [[!UICONTROL New accounts By Industry] widgetdokumentation](../guides/account-profiles.md#accounts-by-industry) för mer information.
+Logiken som används för insikten [!UICONTROL New accounts by industry] returnerar de fem främsta branscherna utifrån deras antal kontoprofiler och deras relativa storlek till varandra. Mer information finns i [[!UICONTROL New accounts By Industry]-widgetens dokumentation ](../guides/account-profiles.md#accounts-by-industry).
 
 >[!TIP]
 >
 >Du kan anpassa den här SQL-frågan så att den returnerar mer eller mindre än de fem främsta branscherna.
 
-Den SQL som genererar [!UICONTROL New accounts by industry] finns i det infällbara avsnittet nedan.
+Den SQL som genererar insikten [!UICONTROL New accounts by industry] visas i det infällbara avsnittet nedan.
 
 +++SQL-fråga
 
@@ -97,9 +97,9 @@ LIMIT 5000;
 
 #### De nya kontona efter typ av användningsfall {#accounts-by-type}
 
-Den logik som används för [!UICONTROL New accounts by type] insight returnerar den numeriska uppdelningen av konton efter typ. Denna insikt kan hjälpa till att vägleda affärsstrategier och -åtgärder, inklusive resursallokering och marknadsföringsstrategier. Se [[!UICONTROL New accounts by type] widgetdokumentation](../guides/account-profiles.md#accounts-by-type) för mer information.
+Logiken som används för insikten [!UICONTROL New accounts by type] returnerar den numeriska uppdelningen av konton efter typ. Denna insikt kan hjälpa till att vägleda affärsstrategier och -åtgärder, inklusive resursallokering och marknadsföringsstrategier. Mer information finns i [[!UICONTROL New accounts by type]-widgetens dokumentation ](../guides/account-profiles.md#accounts-by-type).
 
-Den SQL som genererar [!UICONTROL New accounts by type] finns i det infällbara avsnittet nedan.
+Den SQL som genererar insikten [!UICONTROL New accounts by type] visas i det infällbara avsnittet nedan.
 
 +++SQL-fråga
 

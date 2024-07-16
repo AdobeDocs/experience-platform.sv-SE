@@ -20,13 +20,13 @@ Självidentifieringsundersökningen är ett kort frågeformulär som presenteras
 
 Det här dokumentet innehåller information om hur du kan använda självidentifieringsundersökningen i plattformsgränssnittet för att få relevant innehåll baserat på dina mål och uppgifter, samt hur du konfigurerar om dina personliga profilattribut med användargränssnittet.
 
-Läs mer om Adobe Experience Platform i [Experience Platform - översikt](home.md).
+Mer information om Adobe Experience Platform finns i översikten [Experience Platform](home.md).
 
 ## Självidentifieringsundersökning i plattformsgränssnittet
 
 Uppmaningen om självidentifiering visas längst ned till höger på startsidan för användargränssnittet för plattformen när du loggar in.
 
-Välj **[!UICONTROL Start]**.
+Välj **[!UICONTROL Start]** om du vill påbörja undersökningen.
 
 ![Plattformsgränssnittets startsida med popup-meddelandet som uppmanar dig att starta självidentifieringsundersökningen.](./images/survey/survey-prompt.png)
 
@@ -42,9 +42,9 @@ De tillgängliga alternativen är:
 
 >[!NOTE]
 >
->Du kan välja mer än en funktion i listan med alternativ. Om du väljer [!UICONTROL Other]blir du ombedd att lämna uppgifter om ditt mål.
+>Du kan välja mer än en funktion i listan med alternativ. Om du väljer [!UICONTROL Other] uppmanas du att ange information om ditt mål.
 
-Om du vill fortsätta väljer du den eller de funktioner som bäst beskriver ditt nuvarande arbete och väljer sedan **[!UICONTROL Next]**.
+Om du vill fortsätta väljer du de funktioner som bäst beskriver ditt nuvarande arbete och väljer sedan **[!UICONTROL Next]**.
 
 ![Självidentifieringsundersökningen med två valda jobbfunktioner.](./images/survey/select-functions.png)
 
@@ -67,9 +67,9 @@ Förteckningen över tillgängliga mål omfattar följande:
 
 När du är klar väljer du **[!UICONTROL Submit]**.
 
-![Självidentifieringsundersökningen visar en lista med mål som du kan välja bland.](./images/survey/select-objectives.png)
+![Självidentifieringsundersökningen som visar en lista med mål som du kan välja mellan.](./images/survey/select-objectives.png)
 
-När självidentifieringsundersökningen är klar väljer du **[!UICONTROL Done]**.
+Välj **[!UICONTROL Done]** när din självidentifieringsundersökning är klar.
 
 ![Det sista bekräftelsesteget i självidentifieringsundersökningen.](./images/survey/survey-complete.png)
 
@@ -81,16 +81,16 @@ När självidentifieringsundersökningen är klar väljer du **[!UICONTROL Done]
 
 Uppdatera dina jobbfunktioner och objekt på inställningsmenyn i Experience Cloud. Du öppnar inställningsmenyn genom att markera din profilikon i den övre navigeringen och sedan välja **[!UICONTROL Preferences]**.
 
-![Plattformsgränssnittets startsida med profilikonen och inställningsknapparna valda.](./images/survey/preferences.png)
+![Plattformsgränssnittets startsida med profilikonen och inställningsknapparna markerade.](./images/survey/preferences.png)
 
-Nästa, i [!UICONTROL General] väljer du **[!UICONTROL Update your job functions and objectives]**.
+Välj sedan **[!UICONTROL Update your job functions and objectives]** i avsnittet [!UICONTROL General] på menyn för profilinställningar.
 
-![Det allmänna avsnittet på sidan Inställningar för användargränssnittsprofilen för plattformen](./images/survey/update.png)
+![Det allmänna avsnittet på sidan Inställningar för användargränssnittsprofil för plattform](./images/survey/update.png)
 
 Självidentifieringsundersökningen visas, så att du kan konfigurera om dina svar och uppdatera din profil.
 
-![På sidan med inställningar för användargränssnittsprofiler visas självidentifieringsundersökningen så att en användare kan uppdatera sin personliga profil.](./images/survey/new-survey.png)
+![På sidan med inställningar för användargränssnittsprofiler för plattformen visas självidentifieringsundersökningen så att en användare kan uppdatera sin personliga profil.](./images/survey/new-survey.png)
 
 ## Nästa steg
 
-Genom att läsa det här dokumentet har du nu skickat in och uppdaterat information om dina jobbfunktioner och mål för att få mer relevant innehåll när du använder plattformsgränssnittet. Mer information om plattformsgränssnitt finns i [Experience Platform - översikt](home.md).
+Genom att läsa det här dokumentet har du nu skickat in och uppdaterat information om dina jobbfunktioner och mål för att få mer relevant innehåll när du använder plattformsgränssnittet. Mer information om plattformsgränssnittet finns i översikten [Experience Platform](home.md).

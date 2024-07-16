@@ -15,4 +15,4 @@ ht-degree: 0%
 
 Destinationer är färdiga integrationer med målplattformar som möjliggör smidig aktivering av data från Adobe Experience Platform. Ni kan använda destinationer för att aktivera kända och okända data för flerkanalskampanjer, e-postkampanjer, riktad reklam och många andra användningsfall.
 
-Mer information om destinationer, inklusive en lista över tillgängliga destinationer och länkar till självstudiekurser finns i [destinationsdokumentation](../../destinations/home.md).
+Mer information om destinationer, inklusive en lista över tillgängliga destinationer och länkar till självstudiekurser finns i [måldokumentationen](../../destinations/home.md).

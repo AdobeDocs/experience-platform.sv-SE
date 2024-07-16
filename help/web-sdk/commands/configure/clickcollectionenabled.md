@@ -11,7 +11,7 @@ ht-degree: 0%
 
 # `clickCollectionEnabled`
 
-The `clickCollectionEnabled` egenskapen är ett booleskt värde som avgör om Web SDK automatiskt samlar in länkdata. Om du inte anger den här variabeln är standardvärdet `true` vilket innebär att länkspårningsdata samlas in automatiskt som standard. Anger den här egenskapen till `false` är värdefullt om du föredrar att spåra länkdata manuellt.
+Egenskapen `clickCollectionEnabled` är en boolesk egenskap som avgör om Web SDK automatiskt samlar in länkdata. Om du inte anger den här variabeln är standardvärdet `true`, vilket innebär att länkspårningsdata samlas in automatiskt som standard. Det är värdefullt att ange den här egenskapen till `false` om du föredrar att spåra länkdata manuellt.
 
 När `clickCollectionEnabled` är aktiverat fylls följande XDM-element automatiskt i med data:
 
@@ -19,32 +19,32 @@ När `clickCollectionEnabled` är aktiverat fylls följande XDM-element automati
 * `xdm.web.webInteraction.type`
 * `xdm.web.webInteraction.URL`
 
-Interna länkar, nedladdningslänkar och avslutningslänkar spåras automatiskt som standard när det här booleska alternativet är aktiverat. Om du vill ha större kontroll över automatisk länkspårning rekommenderar Adobe att du använder [`clickCollection`](clickcollection.md) -objekt.
+Interna länkar, nedladdningslänkar och avslutningslänkar spåras automatiskt som standard när det här booleska alternativet är aktiverat. Om du vill ha mer kontroll över automatisk länkspårning rekommenderar Adobe att du använder objektet [`clickCollection`](clickcollection.md).
 
 ## Automatisk länkspårningslogik
 
-Web SDK spårar alla klick på `<a>` och `<area>` HTML-element om det inte har en `onClick` -attribut. Klickningar fångas med en [hämtning](https://www.w3.org/TR/uievents/#capture-phase) klicka på händelseavlyssnaren som är kopplad till dokumentet. När användaren klickar på en giltig länk körs följande logik i rätt ordning:
+Web SDK spårar alla klick på `<a>`- och `<area>` HTML-element om det inte har något `onClick`-attribut. Klickningar hämtas med en [capture](https://www.w3.org/TR/uievents/#capture-phase)-klickhändelseavlyssnare som är kopplad till dokumentet. När användaren klickar på en giltig länk körs följande logik i rätt ordning:
 
-1. Om länken matchar villkor baserade på värden i [`downloadLinkQualifier`](downloadlinkqualifier.md)eller om länken innehåller en `download` HTML-attribut, `xdm.web.webInteraction.type` är inställd på `"download"` (om `clickCollection.downloadLinkEnabled` är aktiverat).
-1. Om länkmåldomänen skiljer sig från den aktuella `window.location.hostname`, `xdm.web.webInteraction.type` är inställd på `"exit"` (om `clickCollection.exitLinkEnabled` är aktiverat).
-1. Om länken inte är berättigad till något av `"download"` eller `"exit"`, `xdm.web.webInteraction.type` är inställd på `"other"`.
+1. Om länken matchar villkor baserade på värden i [`downloadLinkQualifier`](downloadlinkqualifier.md), eller om länken innehåller ett `download` HTML-attribut, ställs `xdm.web.webInteraction.type` in på `"download"` (om `clickCollection.downloadLinkEnabled` är aktiverat).
+1. Om måldomänen för länken skiljer sig från den aktuella `window.location.hostname` anges `xdm.web.webInteraction.type` till `"exit"` (om `clickCollection.exitLinkEnabled` är aktiverat).
+1. Om länken inte uppfyller kraven för antingen `"download"` eller `"exit"` ställs `xdm.web.webInteraction.type` in på `"other"`.
 
-I samtliga fall `xdm.web.webInteraction.name` är inställt på länktextetiketten och `xdm.web.webInteraction.URL` är inställd på länkens mål-URL. Om du även vill ange länknamnet till URL:en kan du åsidosätta det här XDM-fältet med hjälp av `filterClickDetails` callback i `clickCollection` -objekt.
+I samtliga fall är `xdm.web.webInteraction.name` inställd på länktextetiketten och `xdm.web.webInteraction.URL` är inställd på länkens mål-URL. Om du även vill ange länknamnet till URL:en kan du åsidosätta det här XDM-fältet med hjälp av `filterClickDetails`-återanropet i `clickCollection`-objektet.
 
 ## Aktivera automatisk länkspårning med taggtillägget Web SDK {#tag-extension}
 
-Välj **[!UICONTROL Enable click data collection]** kryssruta när [konfigurera taggtillägget](/help/tags/extensions/client/web-sdk/web-sdk-extension-configuration.md).
+Markera kryssrutan **[!UICONTROL Enable click data collection]** när du [konfigurerar taggtillägget](/help/tags/extensions/client/web-sdk/web-sdk-extension-configuration.md).
 
-1. Logga in på [experience.adobe.com](https://experience.adobe.com) med dina Adobe ID-uppgifter.
+1. Logga in på [experience.adobe.com](https://experience.adobe.com) med dina Adobe ID-inloggningsuppgifter.
 1. Navigera till **[!UICONTROL Data Collection]** > **[!UICONTROL Tags]**.
 1. Välj önskad taggegenskap.
-1. Navigera till **[!UICONTROL Extensions]** och sedan klicka **[!UICONTROL Configure]** på [!UICONTROL Adobe Experience Platform Web SDK] kort.
-1. Bläddra nedåt till [!UICONTROL Data Collection] markerar du kryssrutan **[!UICONTROL Enable click data collection]**.
-1. Klicka **[!UICONTROL Save]** publicera sedan ändringarna.
+1. Navigera till **[!UICONTROL Extensions]** och klicka sedan på **[!UICONTROL Configure]** på [!UICONTROL Adobe Experience Platform Web SDK]-kortet.
+1. Bläddra ned till avsnittet [!UICONTROL Data Collection] och markera kryssrutan **[!UICONTROL Enable click data collection]**.
+1. Klicka på **[!UICONTROL Save]** och publicera sedan ändringarna.
 
 ## Aktivera automatisk länkspårning med Web SDK JavaScript-biblioteket {#library}
 
-Ange `clickCollectionEnabled` boolesk när `configure` -kommando. Om du utelämnar den här egenskapen när du konfigurerar Web SDK blir standardvärdet `true`. Ange det här värdet till `false` om du föredrar att ange `xdm.web.webInteraction.type` och `xdm.web.webInteraction.value` manuellt.
+Ange det booleska värdet `clickCollectionEnabled` när du kör kommandot `configure`. Om du utelämnar den här egenskapen när du konfigurerar Web SDK blir standardvärdet `true`. Ange det här värdet till `false` om du föredrar att ställa in `xdm.web.webInteraction.type` och `xdm.web.webInteraction.value` manuellt.
 
 ```js
 alloy(configure, {

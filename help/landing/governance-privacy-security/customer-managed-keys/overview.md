@@ -21,19 +21,19 @@ Det här dokumentet ger en översikt på hög nivå över processen för att akt
 
 >[!NOTE]
 >
->För Customer Journey Analytics-kunder, följ instruktionerna i [Customer Journey Analytics dokumentation](https://experienceleague.adobe.com/docs/analytics-platform/using/cja-privacy/cmk.html).
+>För Customer Journey Analytics-kunder följer du instruktionerna i [Customer Journey Analytics-dokumentationen](https://experienceleague.adobe.com/docs/analytics-platform/using/cja-privacy/cmk.html).
 
-## Förutsättningar
+## Förhandskrav
 
-Visa och gå till [!UICONTROL Encryption] i Adobe Experience Platform måste du ha skapat en roll och tilldelat [!UICONTROL Manage Customer Managed Key] behörighet till den rollen. Alla användare som har [!UICONTROL Manage Customer Managed Key] behörighet kan aktivera CMK för sin organisation.
+Om du vill visa och gå till avsnittet [!UICONTROL Encryption] i Adobe Experience Platform måste du ha skapat en roll och tilldelat behörigheten [!UICONTROL Manage Customer Managed Key] till den rollen. Alla användare som har behörigheten [!UICONTROL Manage Customer Managed Key] kan aktivera CMK för sin organisation.
 
-Mer information om hur du tilldelar roller och behörigheter i Experience Platform finns i [konfigurera behörighetsdokumentation](https://experienceleague.adobe.com/docs/platform-learn/getting-started-for-data-architects-and-data-engineers/configure-permissions.html).
+Mer information om hur du tilldelar roller och behörigheter i Experience Platform finns i [Konfigurera behörigheter](https://experienceleague.adobe.com/docs/platform-learn/getting-started-for-data-architects-and-data-engineers/configure-permissions.html).
 
-Om du vill aktivera CMK måste du [!DNL Azure] Nyckelvalv måste konfigureras med följande inställningar:
+Om du vill aktivera CMK måste nyckelvalvet för [!DNL Azure] konfigureras med följande inställningar:
 
 * [Aktivera rensningsskydd](https://learn.microsoft.com/en-us/azure/key-vault/general/soft-delete-overview#purge-protection)
 * [Aktivera mjuk borttagning](https://learn.microsoft.com/en-us/azure/key-vault/general/soft-delete-overview)
-* [Konfigurera åtkomst med [!DNL Azure] rollbaserad åtkomstkontroll](https://learn.microsoft.com/en-us/azure/role-based-access-control/)
+* [Konfigurera åtkomst med  [!DNL Azure] rollbaserad åtkomstkontroll](https://learn.microsoft.com/en-us/azure/role-based-access-control/)
 
 Läs den länkade dokumentationen för att få en bättre förståelse för processen.
 
@@ -43,16 +43,16 @@ CMK ingår i hälso- och sjukvårdsskölden och i skölden för skydd av privatl
 
 >[!WARNING]
 >
->När du har konfigurerat CMK kan du inte återgå till systemhanterade nycklar. Du ansvarar för att hantera dina nycklar på ett säkert sätt och ge åtkomst till dina Key Vault-, Key- och CMK-appar i [!DNL Azure] för att förhindra att dataåtkomsten går förlorad.
+>När du har konfigurerat CMK kan du inte återgå till systemhanterade nycklar. Du ansvarar för att hantera dina nycklar på ett säkert sätt och ge åtkomst till dina Key Vault-, Key- och CMK-appar i [!DNL Azure] för att förhindra att åtkomsten till dina data går förlorad.
 
 Processen är följande:
 
-1. [Konfigurera en [!DNL Azure] Key Vault](./azure-key-vault-config.md) baserat på organisationens policyer, och sedan [generera en krypteringsnyckel](./azure-key-vault-config.md#generate-a-key) som till slut kommer att delas med Adobe.
-1. Konfigurera CMK-appen med [!DNL Azure] via antingen [API-samtal](./api-set-up.md#register-app) eller [UI](./ui-set-up.md#register-app).
-1. Skicka ditt krypteringsnyckel-ID till Adobe och starta aktiveringsprocessen för funktionen antingen [i användargränssnittet](./ui-set-up.md#send-to-adobe) eller med [API-anrop](./api-set-up.md#send-to-adobe).
-1. Kontrollera statusen för konfigurationen för att verifiera om CMK har aktiverats [i användargränssnittet](./ui-set-up.md#check-status) eller med [API-anrop](./api-set-up.md#check-status).
+1. [Konfigurera ett [!DNL Azure] nyckelvalv](./azure-key-vault-config.md) baserat på din organisations principer och [generera sedan en krypteringsnyckel](./azure-key-vault-config.md#generate-a-key) som slutligen delas med Adobe.
+1. Konfigurera CMK-appen med din [!DNL Azure]-klientorganisation genom antingen [API-anrop](./api-set-up.md#register-app) eller [användargränssnittet](./ui-set-up.md#register-app).
+1. Skicka ditt krypteringsnyckel-ID till Adobe och starta aktiveringsprocessen för funktionen [ i användargränssnittet](./ui-set-up.md#send-to-adobe) eller med ett [API-anrop](./api-set-up.md#send-to-adobe).
+1. Kontrollera konfigurationsstatusen för att verifiera om CMK har aktiverats antingen [ i användargränssnittet ](./ui-set-up.md#check-status) eller med ett [API-anrop](./api-set-up.md#check-status).
 
-När konfigurationen är klar krypteras alla data som är inbyggda i Platform i alla sandlådor med hjälp av [!DNL Azure] nyckelinställningar. Om du vill använda CMK använder du [!DNL Microsoft Azure] funktioner som kan vara en del av [offentligt förhandsvisningsprogram](https://azure.microsoft.com/en-ca/support/legal/preview-supplemental-terms/).
+När installationsprocessen är klar krypteras alla data som är inskrivna i Platform i alla sandlådor med hjälp av nyckelkonfigurationen för [!DNL Azure]. Om du vill använda CMK använder du [!DNL Microsoft Azure]-funktioner som kan ingå i deras [allmänna förhandsvisningsprogram](https://azure.microsoft.com/en-ca/support/legal/preview-supplemental-terms/).
 
 ## Återkalla åtkomst {#revoke-access}
 
@@ -62,12 +62,12 @@ Om du vill återkalla plattformsåtkomst till dina data kan du ta bort den anvä
 >
 >Om du inaktiverar nyckelvalvet, tangenten eller CMK-appen kan det leda till en förändring. När nyckelvalvet, nyckeln eller CMK-appen är inaktiverad och data inte längre är tillgängliga i Platform, kommer eventuella åtgärder som rör dessa data inte längre att vara möjliga. Se till att du förstår vilka konsekvenser det kan få om plattformsåtkomst återkallas längre fram i kedjan innan du gör några ändringar i konfigurationen.
 
-När du har tagit bort tangentåtkomsten eller inaktiverat/tagit bort nyckeln från [!DNL Azure] nyckelvalv, det kan ta från några minuter till 24 timmar att sprida den här konfigurationen till primära datalager. Plattformsarbetsflödena omfattar även cachelagrade och tillfälliga datalager som krävs för prestanda och centrala programfunktioner. Spridningen av CMK-spärrning via sådana cachelagrade och tillfälliga butiker kan ta upp till sju dagar enligt deras arbetsflöden för databehandling. Detta innebär till exempel att kontrollpanelen Profil behåller och visar data från sitt cache-datalager och tar sju dagar att förfalla data som lagras i cache-datalager som en del av uppdateringscykeln. Samma tidsfördröjning gäller för data som ska bli tillgängliga igen när åtkomsten till programmet återaktiveras.
+När du har tagit bort nyckelåtkomst eller inaktiverat/tagit bort nyckeln från nyckelvalvet [!DNL Azure] kan det ta från några minuter till 24 timmar innan den här konfigurationen kan spridas till primära datalager. Plattformsarbetsflödena omfattar även cachelagrade och tillfälliga datalager som krävs för prestanda och centrala programfunktioner. Spridningen av CMK-spärrning via sådana cachelagrade och tillfälliga butiker kan ta upp till sju dagar enligt deras arbetsflöden för databehandling. Detta innebär till exempel att kontrollpanelen Profil behåller och visar data från sitt cache-datalager och tar sju dagar att förfalla data som lagras i cache-datalager som en del av uppdateringscykeln. Samma tidsfördröjning gäller för data som ska bli tillgängliga igen när åtkomsten till programmet återaktiveras.
 
 >[!NOTE]
 >
->Det finns två användningsspecifika undantag för sju dagars datauppsättning som förfaller på icke-primära (cachelagrade/tillfälliga) data. Mer information om dessa funktioner finns i respektive dokumentation.<ul><li>[Adobe Journey Optimizer URL Shortener](https://experienceleague.adobe.com/docs/journey-optimizer/using/sms/sms-configuration.html#message-preset-sms)</li><li>[Kantprojektioner](https://experienceleague.adobe.com/docs/experience-platform/profile/home.html#edge-projections)</li></ul>
+>Det finns två användningsspecifika undantag för sju dagars datauppsättning som förfaller på icke-primära (cachelagrade/tillfälliga) data. Mer information om dessa funktioner finns i respektive dokumentation.<ul><li>[Adobe Journey Optimizer URL Shortener](https://experienceleague.adobe.com/docs/journey-optimizer/using/sms/sms-configuration.html#message-preset-sms)</li><li>[Edge Projection](https://experienceleague.adobe.com/docs/experience-platform/profile/home.html#edge-projections)</li></ul>
 
 ## Nästa steg
 
-Börja med [konfigurera en [!DNL Azure] Key Vault](./azure-key-vault-config.md) och [generera en krypteringsnyckel](./azure-key-vault-config.md#generate-a-key) att dela med Adobe.
+Börja med att [konfigurera ett  [!DNL Azure] nyckelvalv](./azure-key-vault-config.md) och [generera en krypteringsnyckel](./azure-key-vault-config.md#generate-a-key) som du kan dela med Adobe.

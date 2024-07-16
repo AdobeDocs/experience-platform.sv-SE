@@ -1,7 +1,8 @@
 ---
 title: targetMigrationEnabled
 description: Tillåt att Web SDK läser och skriver Adobe Target-cookies.
-source-git-commit: b6e084d2beed58339191b53d0f97b93943154f7c
+exl-id: 4b9203c6-31b7-45af-a6a6-a206d7edac3f
+source-git-commit: 8be502c9eea67119dc537a5d63a6c71e0bff1697
 workflow-type: tm+mt
 source-wordcount: '169'
 ht-degree: 1%
@@ -10,22 +11,22 @@ ht-degree: 1%
 
 # `targetMigrationEnabled`
 
-The `targetMigrationEnabled` egenskapen är en boolesk funktion som gör att Web SDK kan läsa och skriva de mbox- och mboxEdgeCluster-cookies som används i Adobe Target 1.x- och 2.x-biblioteken. Med det här alternativet kan du bevara besökarprofilen mellan sidor som använder tidigare Adobe Target-implementeringar och sidor som använder Web SDK.
+Egenskapen `targetMigrationEnabled` är en boolesk egenskap som gör att Web SDK kan läsa och skriva de mbox- och mboxEdgeCluster-cookies som används i Adobe Target 1.x- och 2.x-biblioteken. Med det här alternativet kan du bevara besökarprofilen mellan sidor som använder tidigare Adobe Target-implementeringar och sidor som använder Web SDK.
 
 ## Aktivera målmigrering från at.js med hjälp av taggtillägget Web SDK
 
-Välj **[!UICONTROL Migrate Target from at.js to the Web SDK]** kryssruta när [konfigurera taggtillägget](/help/tags/extensions/client/web-sdk/web-sdk-extension-configuration.md).
+Markera kryssrutan **[!UICONTROL Migrate Target from at.js to the Web SDK]** när du [konfigurerar taggtillägget](/help/tags/extensions/client/web-sdk/web-sdk-extension-configuration.md).
 
-1. Logga in på [experience.adobe.com](https://experience.adobe.com) med dina Adobe ID-uppgifter.
+1. Logga in på [experience.adobe.com](https://experience.adobe.com) med dina Adobe ID-inloggningsuppgifter.
 1. Navigera till **[!UICONTROL Data Collection]** > **[!UICONTROL Tags]**.
 1. Välj önskad taggegenskap.
-1. Navigera till **[!UICONTROL Extensions]** och sedan klicka **[!UICONTROL Configure]** på [!UICONTROL Adobe Experience Platform Web SDK] kort.
-1. Bläddra nedåt till [!UICONTROL Personalization] markerar du kryssrutan **[!UICONTROL Migrate Target from at.js to the Web SDK]**.
-1. Klicka **[!UICONTROL Save]** publicera sedan ändringarna.
+1. Navigera till **[!UICONTROL Extensions]** och klicka sedan på **[!UICONTROL Configure]** på [!UICONTROL Adobe Experience Platform Web SDK]-kortet.
+1. Bläddra ned till avsnittet [!UICONTROL Personalization] och markera kryssrutan **[!UICONTROL Migrate Target from at.js to the Web SDK]**.
+1. Klicka på **[!UICONTROL Save]** och publicera sedan ändringarna.
 
-## Aktivera målmigrering från at.js med JavaScript-biblioteket för Web SDK
+## Aktivera målmigrering från at.js med Web SDK JavaScript-biblioteket
 
-Ange `targetMigrationEnabled` boolesk när `configure` -kommando. Om du utelämnar den här egenskapen när du konfigurerar Web SDK blir standardvärdet `false`. Ange det här värdet till `true` om du har sidor som fortfarande använder Adobe Target 1.x- eller 2.x-biblioteken.
+Ange det booleska värdet `targetMigrationEnabled` när du kör kommandot `configure`. Om du utelämnar den här egenskapen när du konfigurerar Web SDK blir standardvärdet `false`. Ange det här värdet till `true` om du har sidor som fortfarande använder Adobe Target 1.x- eller 2.x-bibliotek.
 
 ```js
 alloy("configure", {

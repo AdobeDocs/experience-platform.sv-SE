@@ -5,18 +5,18 @@ description: Du kan använda slutpunkten "/functions" i API:t för dataförbered
 exl-id: dc24bfb4-2d96-4757-a610-0c2ee960d41d
 source-git-commit: 05e63064dc8eb3f070a383f508cc4a86d4f5e9cc
 workflow-type: tm+mt
-source-wordcount: '209'
+source-wordcount: '213'
 ht-degree: 0%
 
 ---
 
 # Funktionsslutpunkter
 
-Med mappningsfunktionerna kan du omforma data mellan käll- och målscheman. Du kan använda `/languages/el` slutpunkt för att validera dina uttryck och få en lista över alla tillgängliga mappningsfunktioner.
+Med mappningsfunktionerna kan du omforma data mellan käll- och målscheman. Du kan använda slutpunkten `/languages/el` för att validera dina uttryck och få en lista över alla tillgängliga mappningsfunktioner.
 
 ## Validera uttryck
 
-Du kan validera om det aktuella uttrycket är giltigt genom att göra en POST-förfrågan till `/languages/el/validate` slutpunkt.
+Du kan validera om det aktuella uttrycket är giltigt genom att göra en POST-förfrågan till slutpunkten `/languages/el/validate`.
 
 **API-format**
 
@@ -50,9 +50,9 @@ Ett lyckat svar returnerar HTTP-status 200 med uttryckets valideringsstatus.
 }
 ```
 
-## Funktioner för listmappningsuppsättning
+## Listmappningsfunktioner
 
-Du kan hämta en lista över alla mappningsfunktioner som är tillgängliga genom att göra en GET-förfrågan till `/languages/el/functions` slutpunkt.
+Du kan hämta en lista över alla mappningsfunktioner som är tillgängliga för dig genom att göra en GET-förfrågan till slutpunkten `/languages/el/functions`.
 
 **API-format**
 
@@ -117,7 +117,7 @@ Ett lyckat svar returnerar HTTP-status 200 med en lista över alla tillgängliga
 
 ## Operatorer för listmappningsuppsättning
 
-Du kan hämta en lista över alla mappningsoperatorer som är tillgängliga för dig genom att göra en GET-förfrågan till `/languages/el/operators` slutpunkt.
+Du kan hämta en lista över alla mappningsoperatorer som är tillgängliga för dig genom att göra en GET-förfrågan till slutpunkten `/languages/el/operators`.
 
 **API-format**
 

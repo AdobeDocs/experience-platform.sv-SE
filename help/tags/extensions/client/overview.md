@@ -13,21 +13,21 @@ ht-degree: 2%
 
 >[!NOTE]
 >
->Adobe Experience Platform Launch har omklassificerats som en serie datainsamlingstekniker i Adobe Experience Platform. Som ett resultat av detta har flera terminologiska förändringar införts i produktdokumentationen. Se följande [dokument](../../term-updates.md) för en konsoliderad hänvisning till terminologiska förändringar.
+>Adobe Experience Platform Launch har omklassificerats som en serie datainsamlingstekniker i Adobe Experience Platform. Som ett resultat av detta har flera terminologiska förändringar införts i produktdokumentationen. I följande [dokument](../../term-updates.md) finns en konsoliderad referens till de ändrade terminologin.
 
-Nedan följer en lista med dokumentation för taggtillägg på klientsidan. En lista över tillgängliga tillägg på serversidan finns i [referens för tillägg för händelsevidarebefordring](../server/overview.md) i stället.
+Nedan följer en lista med dokumentation för taggtillägg på klientsidan. En lista över tillgängliga tillägg på serversidan finns i [referensen för tillägg för vidarebefordran](../server/overview.md) i stället.
 
 >[!NOTE]
 >
 >Alla tilläggsnamn följt av en asterisk (*) länkar till tilläggets lista på Adobe Exchange, som innehåller installations- och användningsinstruktioner. Alla andra länkar pekar på tilläggets dokumentation på Adobe Experience League.
 
-* [Tillgängliga värden för webbplatshastighet](https://exchange.adobe.com/apps/ec/103053)*
+* [Tillgängliga hastighetsmått för webbplats](https://exchange.adobe.com/apps/ec/103053)*
 * [Activity Map Customizer](https://exchange.adobe.com/apps/ec/101531)*
-* [Uppdatera åtgärdssida](https://exchange.adobe.com/apps/ec/102848)*
+* [Åtgärdssiduppdatering](https://exchange.adobe.com/apps/ec/102848)*
 * [Anpassa webbplatsspårning](https://exchange.adobe.com/apps/ec/103195)*
 * [Adobe Advertising Cloud](https://exchange.adobe.com/apps/ec/100155)*
 * [Adobe Analytics](./analytics/overview.md)
-* [ADOBE ANALYTICS &amp; ADOBE TARGET](https://exchange.adobe.com/apps/ec/105363/*6sense-for-analytics-and-target)*
+* [Adobe Analytics &amp; Adobe Target](https://exchange.adobe.com/apps/ec/105363/*6sense-for-analytics-and-target)*
 * [Adobe Analytics &amp; Microsoft Dynamics](https://exchange.adobe.com/apps/ec/102966)*
 * [Adobe Analytics &amp; Salesforce](https://exchange.adobe.com/apps/ec/101530)*
 * [Adobe Analytics produktsträng](./product-string/overview.md)
@@ -51,38 +51,38 @@ Nedan följer en lista med dokumentation för taggtillägg på klientsidan. En l
 * [Adobe Target Toolkit](https://exchange.adobe.com/apps/ec/100640)*
 * [Advertising Cloud](https://exchange.adobe.com/apps/ec/100640)*
 * [AEM tillgångsinsikter](https://exchange.adobe.com/apps/ec/103406)*
-* [Airbroms JS Notifier](https://exchange.adobe.com/apps/ec/103342)*
+* [Airbroms-JS-aviserare](https://exchange.adobe.com/apps/ec/103342)*
 * [Amplitud](https://exchange.adobe.com/apps/ec/108010)*
 * [Apollo QAX](https://exchange.adobe.com/apps/ec/105068)*
 * [Awin Advertiser MasterTag](https://exchange.adobe.com/apps/ec/103176)*
 * [Awin-konverteringstagg](https://exchange.adobe.com/apps/ec/103240)*
 * [Beemray Human Context](https://exchange.adobe.com/apps/ec/101063)*
-* [Bing Ads Universal Event Tracking](https://exchange.adobe.com/apps/ec/100154)*
-* [Gren](https://exchange.adobe.com/apps/ec/101382)*
+* [Bing lägger till universell händelsespårning](https://exchange.adobe.com/apps/ec/100154)*
+* [Förgrening](https://exchange.adobe.com/apps/ec/101382)*
 * [[!DNL BrightCove] videospårning](./brightcove/overview.md)
 * [CallTrackingMetrics](https://exchange.adobe.com/apps/ec/107695)*
-* [Kanalkällidentifierare](https://exchange.adobe.com/apps/ec/101412)*
+* [Kanal-Source-identifierare](https://exchange.adobe.com/apps/ec/101412)*
 * [Cheetah Experiences](https://exchange.adobe.com/apps/ec/102759)*
-* [Clicktale](https://exchange.adobe.com/apps/ec/100082)*
+* [Klickbar](https://exchange.adobe.com/apps/ec/100082)*
 * [Plugin-program för vanlig analys](./plugins/overview.md)
 * [Vanliga SDK-plugin-program för webben](./web-sdk/web-sdk-plugins.md)
-* [Concat](https://exchange.adobe.com/apps/ec/104690)*
+* [Koncat](https://exchange.adobe.com/apps/ec/104690)*
 * [ContentSquare](https://exchange.adobe.com/apps/ec/100364)*
-* [Cookie-innehållshantering av användarcentrics CMP v2](https://exchange.adobe.com/apps/ec/*107037)*
+* [Hantering av cookie-samtycke av Usercentrics CMP v2](https://exchange.adobe.com/apps/ec/*107037)*
 * [Core](./core/overview.md)
-* [Anpassad felsökningslogg](https://exchange.adobe.com/apps/ec/104698)*
-* [Kundidentifiering](https://exchange.adobe.com/apps/ec/100688)*
-* [DEA (Data Element Assistant)](https://exchange.adobe.com/apps/ec/101413)*
-* [Datalagerhanteraren](https://exchange.adobe.com/apps/ec/101462)*
+* [Anpassad felsökningsloggare](https://exchange.adobe.com/apps/ec/104698)*
+* [Kundigenkänning](https://exchange.adobe.com/apps/ec/100688)*
+* [Dataelementassistenten (DEA)](https://exchange.adobe.com/apps/ec/101413)*
+* [Hanteraren för datalager](https://exchange.adobe.com/apps/ec/101462)*
 * [Decibel](https://exchange.adobe.com/apps/ec/100913)*
 * [Demandbase](https://exchange.adobe.com/apps/ec/101605)*
 * [Differentiell sekretess](https://exchange.adobe.com/apps/ec/104535)*
-* [Dynamic Media Viewers](https://exchange.adobe.com/apps/ec/103048)*
+* [Dynamic Media-visningsprogram](https://exchange.adobe.com/apps/ec/103048)*
 * [EDDL-hjälp](https://exchange.adobe.com/apps/ec/107691)*
 * [Flashtalk OneTag](https://exchange.adobe.com/apps/ec/101392)*
 * [ForeSee](https://exchange.adobe.com/apps/ec/100164)*
 * [Gainsight PX](https://exchange.adobe.com/apps/ec/103343)*
-* [Genesys Predictive Engagement](https://exchange.adobe.com/apps/ec/106148)*
+* [Förutsägande engagemang för genesys](https://exchange.adobe.com/apps/ec/106148)*
 * [Google datalager](./google-data-layer/overview.md)
 * [Google Global Site Tag (gtag)](https://exchange.adobe.com/apps/ec/101437/*google-global-site-tag-gtag)*
 * [InMoment](https://exchange.adobe.com/apps/ec/100847)*
@@ -99,25 +99,25 @@ Nedan följer en lista med dokumentation för taggtillägg på klientsidan. En l
 * [Pepperjam](https://exchange.adobe.com/apps/ec/103587)*
 * [Persado Connect](https://exchange.adobe.com/apps/ec/103745)*
 * [Pinterest Conversion Tracking](https://exchange.adobe.com/apps/ec/100523)*
-* [Pixel Loader](https://exchange.adobe.com/apps/ec/100152)*
-* [Qualtrics Website Feedback](https://exchange.adobe.com/apps/ec/101569)*
+* [Pixelinläsare](https://exchange.adobe.com/apps/ec/100152)*
+* [Frågor och svar om webbplatsen ](https://exchange.adobe.com/apps/ec/101569)*
 * [Quantum Metric](https://exchange.adobe.com/apps/ec/101535)*
-* [Lös momentum](https://exchange.adobe.com/apps/ec/108352)*
+* [Lös kortskrift](https://exchange.adobe.com/apps/ec/108352)*
 * [Rokt](https://exchange.adobe.com/apps/ec/107591)*
 * [SDI Survey](https://exchange.adobe.com/apps/ec/102991)*
 * [SDI Toolkit](https://exchange.adobe.com/apps/ec/101460)*
 * [SessionCam](https://exchange.adobe.com/apps/ec/100517)*
 <!-- * [SPA View Change Event](https://partners.adobe.com/exchangeprogram/experiencecloud/exchange.details.105867.html) -->
-* [Lagringsspanner](https://exchange.adobe.com/apps/ec/102990)*
-* [TAGGAR efter loophorisont](https://exchange.adobe.com/apps/ec/106092)*
+* [Lagringsfördelare](https://exchange.adobe.com/apps/ec/102990)*
+* [TAGGAR efter loop-Horisont](https://exchange.adobe.com/apps/ec/106092)*
 * [Tealium Collect](https://exchange.adobe.com/apps/ec/104217)*
 * [Tealium Data Enrichment](https://exchange.adobe.com/apps/ec/104217)*
-* [TMMData Foundation Platform](https://exchange.adobe.com/apps/ec/100148)*
+* [TMMData Foundation-plattform](https://exchange.adobe.com/apps/ec/100148)*
 * [TrustArc Cookie Consent Manager](https://exchange.adobe.com/apps/ec/107037)*
 * [Vimeo Playback](https://exchange.adobe.com/apps/ec/108937)*
-* [Webbinarier](https://exchange.adobe.com/apps/ec/106769)*
+* [Webbsäkra](https://exchange.adobe.com/apps/ec/106769)*
 * [XDM-disposition](https://exchange.adobe.com/apps/ec/106062)*
-* [Yahoo Dot](https://exchange.adobe.com/apps/ec/106062)*
-* [Konverteringsspårning för text](https://exchange.adobe.com/apps/ec/103174)*
+* [Yahoo-punkt](https://exchange.adobe.com/apps/ec/106062)*
+* [ÅttaKonverteringsspårning](https://exchange.adobe.com/apps/ec/103174)*
 * [[!DNL Youtube] Uppspelning](https://exchange.adobe.com/apps/ec/103174)*
 * [[!DNL YouTube] videospårning](./youtube/overview.md)

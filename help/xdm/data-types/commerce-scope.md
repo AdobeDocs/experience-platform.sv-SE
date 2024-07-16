@@ -1,14 +1,15 @@
 ---
-title: Datatyp för handelsomfång
-description: Läs mer om datatypen XDM (Commerce Scope Experience Data Model).
-source-git-commit: de8e944cfec3b52d25bb02bcfebe57d6a2a35e39
+title: Commerce Scope-datatyp
+description: Läs mer om datatypen Commerce Scope Experience Data Model (XDM).
+exl-id: c2888c3a-a49c-43c4-8d36-0a485cb76a58
+source-git-commit: 8be502c9eea67119dc537a5d63a6c71e0bff1697
 workflow-type: tm+mt
 source-wordcount: '112'
 ht-degree: 0%
 
 ---
 
-# [!UICONTROL Commerce Scope] datatyp
+# Datatypen [!UICONTROL Commerce Scope]
 
 [!UICONTROL Commerce Scope] är en XDM-datatyp (Standard Experience Data Model) som definierar identifierare för var en händelse inträffade i ett e-handelssystem. Det skiljer ut miljöer, webbplatser, butiker och butiksvyer.
 

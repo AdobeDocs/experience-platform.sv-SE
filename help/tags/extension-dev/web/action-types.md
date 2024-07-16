@@ -13,7 +13,7 @@ ht-degree: 0%
 
 >[!NOTE]
 >
->Adobe Experience Platform Launch har omklassificerats som en serie datainsamlingstekniker i Adobe Experience Platform. Som ett resultat av detta har flera terminologiska förändringar införts i produktdokumentationen. Se följande [dokument](../../term-updates.md) för en konsoliderad hänvisning till terminologiska förändringar.
+>Adobe Experience Platform Launch har omklassificerats som en serie datainsamlingstekniker i Adobe Experience Platform. Som ett resultat av detta har flera terminologiska förändringar införts i produktdokumentationen. I följande [dokument](../../term-updates.md) finns en konsoliderad referens till de ändrade terminologin.
 
 När det gäller datainsamlingstaggar är en åtgärd en åtgärd som utförs efter att en regelhändelse har inträffat och alla villkor har utvärderats.
 
@@ -23,13 +23,13 @@ Det här dokumentet beskriver hur du definierar åtgärdstyper för ett webbtill
 
 >[!IMPORTANT]
 >
->Det här dokumentet innehåller åtgärdstyper för webbtillägg. Om du utvecklar ett kanttillägg läser du i handboken [åtgärdstyper för kanttillägg](../edge/action-types.md) i stället.
+>Det här dokumentet innehåller åtgärdstyper för webbtillägg. Om du utvecklar ett kanttillägg läser du i handboken om [åtgärdstyper för kanttillägg](../edge/action-types.md) i stället.
 >
->I det här dokumentet förutsätts även att du känner till biblioteksmoduler och hur de är integrerade i webbtillägg. Om du behöver en introduktion kan du se översikten på [formatering av biblioteksmodul](./format.md) innan du återgår till den här guiden.
+>I det här dokumentet förutsätts även att du känner till biblioteksmoduler och hur de är integrerade i webbtillägg. Om du behöver en introduktion läser du översikten om [biblioteksmodulens formatering](./format.md) innan du går tillbaka till den här guiden.
 
 Åtgärdstyper består vanligtvis av följande:
 
-1. A [visa](./views.md) som visas i användargränssnittet för Experience Platform och datainsamlingen där användare kan ändra inställningar för åtgärden.
+1. En [vy](./views.md) som visas i användargränssnittet för Experience Platform och datainsamlingen och som gör att användare kan ändra inställningarna för åtgärden.
 2. En biblioteksmodul som skickas i taggens körningsbibliotek för att tolka inställningarna och utföra en åtgärd.
 
 ```js
@@ -64,11 +64,11 @@ module.exports = function(settings, event) {
 };
 ```
 
-The `event` -objektet måste innehålla följande egenskaper:
+Objektet `event` måste innehålla följande egenskaper:
 
 | Egenskap | Beskrivning |
 | --- | --- |
-| `$type` | En sträng som beskriver tilläggets namn och händelsenamn, som förenas med en punkt. Exempel, `youtube.play`. |
+| `$type` | En sträng som beskriver tilläggets namn och händelsenamn, som förenas med en punkt. Exempel: `youtube.play`. |
 | `$rule` | Ett objekt som innehåller information om den regel som körs. Objektet måste innehålla följande underegenskaper:<ul><li>`id`: ID:t för den regel som körs.</li><li>`name`: Namnet på den regel som körs.</li></ul> |
 
-Tillägget som anger händelsetypen som utlöste regeln kan eventuellt lägga till annan användbar information till den här `event` -objekt.
+Tillägget som innehåller händelsetypen som utlöste regeln kan eventuellt lägga till annan användbar information till det här `event`-objektet.

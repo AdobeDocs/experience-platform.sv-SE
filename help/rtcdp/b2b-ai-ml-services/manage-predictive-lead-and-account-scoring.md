@@ -7,7 +7,7 @@ badgeB2B: label="B2B Edition" type="Informative" url="https://helpx.adobe.com/le
 exl-id: fe7eb94e-5cf1-46bf-80e5-affe5735c998
 source-git-commit: db57fa753a3980dca671d476521f9849147880f1
 workflow-type: tm+mt
-source-wordcount: '975'
+source-wordcount: '984'
 ht-degree: 2%
 
 ---
@@ -22,37 +22,37 @@ I den här självstudiekursen får du hjälp med att hantera poängmål för den
 
 ## Skapa ett nytt musikspår
 
-Om du vill skapa en ny poäng väljer du **[!UICONTROL Services]** i sidlisten och välj **[!UICONTROL Create score]**.
+Om du vill skapa en ny bakgrundsmusik markerar du **[!UICONTROL Services]** i sidlisten och väljer **[!UICONTROL Create score]**.
 
 ![plas-new-score](../assets/../b2b-ai-ml-services/assets/plas-create-score.png)
 
-The **[!UICONTROL Basic information]** visas. Du uppmanas att välja en profiltyp, ange ett namn och en valfri beskrivning. När du är klar väljer du **[!UICONTROL Next]**.
+Skärmen **[!UICONTROL Basic information]** visas och du uppmanas att välja en profiltyp, ange ett namn och en valfri beskrivning. När du är klar väljer du **[!UICONTROL Next]**.
 
 ![plas-enter-basic-information](../assets/../b2b-ai-ml-services/assets/plas-basic-information.png)
 
-The **[!UICONTROL Define your goal]** visas. Välj listrutepilen och välj sedan en måltyp i listrutan som visas.
+Skärmen **[!UICONTROL Define your goal]** visas. Välj listrutepilen och välj sedan en måltyp i listrutan som visas.
 
 ![plas-select-a-target](../assets/../b2b-ai-ml-services/assets/plas-define-goal.png)
 
-The **[!UICONTROL Goal specifics]** öppnas. Markera listrutepilen och välj sedan målfältets namn i listrutan som visas.
+Dialogrutan **[!UICONTROL Goal specifics]** öppnas. Markera listrutepilen och välj sedan målfältets namn i listrutan som visas.
 
 ![plas-select-a-target-field-name](../assets/../b2b-ai-ml-services/assets/plas-goal-specifics-field-name.png)
 
-The **[!UICONTROL Goal conditions]** markeringen visas. Markera listrutepilen och välj sedan ett villkor i listrutan som visas.
+Markeringen **[!UICONTROL Goal conditions]** visas. Markera listrutepilen och välj sedan ett villkor i listrutan som visas.
 
 ![plas-target-specific-condition](../assets/../b2b-ai-ml-services/assets/plas-goal-specidics-condition.png)
 
-The **[!UICONTROL Goal value]** visas. Konfigurera sedan [!UICONTROL Goal specifics]. Välj [!UICONTROL Enter Field Value] och ange målvärde.
+Fältet **[!UICONTROL Goal value]** visas. Konfigurera sedan din [!UICONTROL Goal specifics]. Välj panelen [!UICONTROL Enter Field Value] och ange ditt målvärde.
 
 >[!NOTE]
 >
 >Flera målvärden kan läggas till.
 
-![plas-target-specifying-field-value](../assets/../b2b-ai-ml-services/assets/plas-goal-specifics-field-value.png)
+![plas-target-specific-field-value](../assets/../b2b-ai-ml-services/assets/plas-goal-specifics-field-value.png)
 
 Om du vill lägga till fler fält väljer du **[!UICONTROL Add field]**.
 
-![plas-target-specifying-add-event](../assets/../b2b-ai-ml-services/assets/plas-goal-specifics-add-event.png)
+![plas-target-specific-add-event](../assets/../b2b-ai-ml-services/assets/plas-goal-specifics-add-event.png)
 
 Om du vill konfigurera tidsramen för förutsägelse väljer du listrutepilen och väljer sedan önskad tidsram.
 
@@ -60,7 +60,7 @@ Om du vill konfigurera tidsramen för förutsägelse väljer du listrutepilen oc
 
 Den valda sammanfogningsprincipen avgör hur fältvärdena för en personprofil markeras. Använd listrutepilen och välj önskad kopplingsprofil och välj sedan **[!UICONTROL Finish]**.
 
-The **[!UICONTROL Scoring setup is complete]** visas som bekräftar att det nya poängtalet har skapats. Välj **[!UICONTROL OK]**.
+Dialogrutan **[!UICONTROL Scoring setup is complete]** visas som bekräftar att det nya poängtalet har skapats. Välj **[!UICONTROL OK]**.
 
 ![plas-score-complete](../assets/../b2b-ai-ml-services/assets/plas-score-complete.png)
 
@@ -68,7 +68,7 @@ The **[!UICONTROL Scoring setup is complete]** visas som bekräftar att det nya 
 >
 >Det kan ta upp till 24 timmar för varje poängprocess att slutföra.
 
-Du kommer tillbaka till **[!UICONTROL Services]** -fliken där du kan se det nya resultatet som har skapats i listan med bakgrundsmusik.
+Du återgår till fliken **[!UICONTROL Services]** där du kan se det nya resultatet som har skapats i listan med bakgrundsmusik.
 
 ![plas-score-created](../assets/../b2b-ai-ml-services/assets/plas-score-created.png)
 
@@ -76,15 +76,15 @@ Välj bakgrundsmusik om du vill visa information och ytterligare information om 
 
 ![plas-score-additional-information](../assets/../b2b-ai-ml-services/assets/plas-score-info.png)
 
-Mer detaljerad information om felkoder som kan visas under den senaste körningen finns i avsnittet om [leads AI pipeline-felkoder](#leads-ai-pipeline-error-codes) i det här dokumentet.
+Mer detaljerad information om felkoder som kan visas under den senaste körningen finns i avsnittet [leads AI-pipeline-felkoder](#leads-ai-pipeline-error-codes) i det här dokumentet.
 
 ## Redigera ett musikspår
 
-Om du vill redigera ett musikspår väljer du ett musikspår i **[!UICONTROL Services]** och markera **[!UICONTROL Edit]** från panelen med ytterligare information till höger på skärmen.
+Om du vill redigera ett musikspår väljer du ett musikspår på fliken **[!UICONTROL Services]** och väljer **[!UICONTROL Edit]** på panelen med ytterligare information till höger på skärmen.
 
 ![plas-edit-score](../assets/../b2b-ai-ml-services/assets/plas-edit-score.png)
 
-The **[!UICONTROL Edit instance]** visas där du kan redigera beskrivningen för poängen. Gör ändringarna och markera **[!UICONTROL Save]**.
+Dialogrutan **[!UICONTROL Edit instance]** visas där du kan redigera beskrivningen för poängen. Gör ändringarna och välj **[!UICONTROL Save]**.
 
 ![plas-edit-save](../assets/../b2b-ai-ml-services/assets/plas-edit-save.png)
 
@@ -92,33 +92,33 @@ The **[!UICONTROL Edit instance]** visas där du kan redigera beskrivningen för
 >
 >Det går inte att ändra poängkonfigurationen eftersom detta kommer att utlösa omskolning och ompoängtering av modellen. Det motsvarar att ta bort poängen och skapa en ny poäng. Om du vill redigera konfigurationen av poängen måste du klona poängen eller skapa en ny poäng.
 
-Du kommer tillbaka till **[!UICONTROL Services]** -fliken. Välj bakgrundsmusik om du vill visa den uppdaterade beskrivningsinformationen på panelen med ytterligare information till höger på skärmen.
+Du återgår till fliken **[!UICONTROL Services]**. Välj bakgrundsmusik om du vill visa den uppdaterade beskrivningsinformationen på panelen med ytterligare information till höger på skärmen.
 
 ## Klona en poäng
 
-Om du vill klona ett musikspår väljer du ett musikspår i **[!UICONTROL Services]** och markera **[!UICONTROL Clone]** från panelen med ytterligare information till höger på skärmen.
+Om du vill klona ett musikspår väljer du ett musikspår på fliken **[!UICONTROL Services]** och väljer **[!UICONTROL Clone]** på panelen med ytterligare information till höger på skärmen.
 
 ![plas-clone-score](../assets/../b2b-ai-ml-services/assets/plas-clone-score.png)
 
-The **[!UICONTROL Basic information]** visas. Profiltypen, namnet och beskrivningen klonas från det ursprungliga resultatet. Ändra informationen och välj **[!UICONTROL Next]**.
+Skärmen **[!UICONTROL Basic information]** visas. Profiltypen, namnet och beskrivningen klonas från det ursprungliga resultatet. Ändra informationen och välj **[!UICONTROL Next]**.
 
 ![plas-clone-basic-info](../assets/../b2b-ai-ml-services/assets/plas-clone-basic-info.png)
 
-The **[!UICONTROL Define your goal]** visas. Slutför målavsnittet på samma sätt som när du skapar ett nytt poängvärde och väljer **[!UICONTROL Finish]**.
+Skärmen **[!UICONTROL Define your goal]** visas. Slutför målavsnittet på samma sätt som när du skapar en ny poäng och välj **[!UICONTROL Finish]**.
 
-Du kommer tillbaka till **[!UICONTROL Services]** där du kan se det nya klonade poängen i listan.
+Du återgår till fliken **[!UICONTROL Services]** där du kan se det nya klonade poängen i listan.
 
 >[!NOTE]
 >
->The **[!UICONTROL Define your goal]** -avsnittet klonas inte från det ursprungliga poängtalet.
+>Avsnittet **[!UICONTROL Define your goal]** är inte klonat från det ursprungliga poängtalet.
 
 ## Ta bort ett musikspår
 
-Om du vill ta bort ett musikspår väljer du ett musikspår i **[!UICONTROL Services]** och markera **[!UICONTROL Delete]** från panelen med ytterligare information till höger på skärmen.
+Om du vill ta bort ett musikspår väljer du ett musikspår på fliken **[!UICONTROL Services]** och väljer **[!UICONTROL Delete]** på panelen med ytterligare information till höger på skärmen.
 
 ![plas-delete-score](../assets/../b2b-ai-ml-services/assets/plas-delete-score.png)
 
-The **[!UICONTROL Delete documentation]** bekräftelsedialogrutan visas. Välj **[!UICONTROL Delete]**.
+Bekräftelsedialogrutan **[!UICONTROL Delete documentation]** visas. Välj **[!UICONTROL Delete]**.
 
 ![plas-delete-score-confirmation](../assets/../b2b-ai-ml-services/assets/plas-delete-score-confirmation.png)
 
@@ -126,7 +126,7 @@ The **[!UICONTROL Delete documentation]** bekräftelsedialogrutan visas. Välj *
 >
 >Om du tar bort poängdefinitionen tas även alla prediktiva poäng i personprofilen eller kontoprofilen bort, men inte fältgruppen som skapats för poängdefinitionen. Fältgruppen lämnas &quot;överbliven&quot; i datamodellen.
 
-Du kommer tillbaka till **[!UICONTROL Services]** där du inte längre kan se poängen i listan.
+Du återgår till fliken **[!UICONTROL Services]** där du inte längre kan se poängen i listan.
 
 ## Leads-AI-pipeline-felkoder
 
@@ -147,12 +147,12 @@ Du kommer tillbaka till **[!UICONTROL Services]** där du inte längre kan se po
 
 | Varnings-/infokod | Meddelande |
 | --- | --- |
-| 100 | INFORMATION 100. Leads AI-kvalitetskontroll: antalet konton är: {}. |
-| 101 | INFORMATION 101. Leads-AI-kvalitetskontroll: antalet kontakter är: {}. |
-| 102 | INFORMATION 102. Leads AI-kvalitetskontroll: antalet möjligheter är: {}. |
-| 103 | INFORMATION 103. Leads AI-kvalitetskontroll: det är lågt att testa auc. Starta parameterjustering. Testljud: {}. |
-| 200 | VARNING 200. Leads AI-kvalitetskontroll: frekvensen av saknade firmografiska funktioner är: {}. |
-| 201 | VARNING 201. Leads-AI-kvalitetskontroll: antalet saknade aktivitetsfunktioner är: {}. |
+| 100 | INFORMATION 100. Leads-AI-kvalitetskontroll: antalet konton är: {}. |
+| 101 | INFORMATION 101. Kvalitetskontroll av lead-AI: antalet kontakter är: {}. |
+| 102 | INFORMATION 102. Kvalitetskontroll av lead-AI: antalet affärsmöjligheter är: {}. |
+| 103 | INFORMATION 103. Leads AI-kvalitetskontroll: det är lågt att testa auc. Starta parameterjustering. Testar auc: {}. |
+| 200 | VARNING 200. Leads-AI-kvalitetskontroll: Frekvensen med saknade firmografiska funktioner är: {}. |
+| 201 | VARNING 201. Leads-AI-kvalitetskontroll: aktivitetsfunktionerna som saknas är: {}. |
 
 ## Nästa steg
 

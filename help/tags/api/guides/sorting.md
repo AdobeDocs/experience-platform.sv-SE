@@ -11,22 +11,25 @@ ht-degree: 0%
 
 # Sortera svar i Reactor API
 
-Genom att visa slutpunkter i Reaktors API kan du sortera returnerade resurser baserat på angivna attribut. Du kan konfigurera sorteringsordningen för svaret genom att ange en `sort` -parametern i begärandesökvägen.
+Genom att visa slutpunkter i Reaktors API kan du sortera returnerade resurser baserat på angivna attribut. Du kan konfigurera sorteringsordningen för svaret genom att ange en `sort`-parameter i sökvägen för begäran.
 
 ## Sortera stigande
 
-Resurserna kan sorteras efter ett attribut i stigande ordning genom att ange vilket attribut de ska sorteras efter och sedan prefixera det med en `+`:
+Resurserna kan sorteras efter ett attribut i stigande ordning genom att ange
+attribut att sortera efter och prefixera det med en `+`:
 
 `GET /companies/:company_id/properties?sort=+name`
 
 ## Sortera fallande
 
-Resurserna kan sorteras efter ett attribut i fallande ordning genom att ange vilket attribut de ska sorteras efter och sedan prefixera det med en `-`:
+Resurserna kan sorteras efter ett attribut i fallande ordning genom att ange
+attribut att sortera efter och prefixera det med en `-`:
 
 `GET /companies/:company_id/properties?sort=-name`
 
 ## Flera sorters
 
-Om du vill sortera efter flera värden anger du sorteringsdirektiven som en kommaavgränsad lista:
+Om du vill sortera efter flera värden anger du sorteringsdirektiven som kommaavgränsade
+lista:
 
 `GET /companies/:company_id/properties?sort=+name,-org_id`

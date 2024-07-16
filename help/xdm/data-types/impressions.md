@@ -9,9 +9,9 @@ ht-degree: 0%
 
 ---
 
-# [!UICONTROL Impressions] datatyp
+# Datatypen [!UICONTROL Impressions]
 
-[!UICONTROL Impressions] är en standard-XDM-datatyp som beskriver ett marknadsföringsintryck, som är ett mått som används för att kvantifiera antalet digitala vyer eller engagemang för en del av innehåll som en annons, ett digitalt inlägg eller en webbsida.
+[!UICONTROL Impressions] är en standard-XDM-datatyp som beskriver ett marknadsföringsintryck, som är ett mått som används för att kvantifiera antalet digitala vyer eller engagemang för en del av innehållet, till exempel en annons, ett digitalt inlägg eller en webbsida.
 
 ![](../images/data-types/impressions.png)
 

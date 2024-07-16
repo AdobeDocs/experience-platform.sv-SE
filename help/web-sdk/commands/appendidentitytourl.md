@@ -11,9 +11,9 @@ ht-degree: 1%
 
 # `appendIdentityToUrl`
 
-The `appendIdentityToUrl` kan du lägga till en användaridentifierare till URL:en som en frågesträng. Den här åtgärden gör att du kan föra en besökares identitet mellan domäner, vilket förhindrar att besökarantal dupliceras för datauppsättningar som innehåller både domäner och kanaler. Det finns på Web SDK version 2.11.0 eller senare.
+Med kommandot `appendIdentityToUrl` kan du lägga till en användaridentifierare i URL:en som en frågesträng. Den här åtgärden gör att du kan föra en besökares identitet mellan domäner, vilket förhindrar att besökarantal dupliceras för datauppsättningar som innehåller både domäner och kanaler. Det finns på Web SDK version 2.11.0 eller senare.
 
-Frågesträngen som genereras och läggs till i URL:en är `adobe_mc`. Om Web SDK inte kan hitta ett ECID anropas `/acquire` slutpunkt för att generera en.
+Frågesträngen som genereras och läggs till i URL:en är `adobe_mc`. Om Web SDK inte kan hitta ett ECID anropar den `/acquire`-slutpunkten för att generera ett.
 
 >[!NOTE]
 >
@@ -23,19 +23,19 @@ Frågesträngen som genereras och läggs till i URL:en är `adobe_mc`. Om Web SD
 
 En URL-adress läggs till som en åtgärd i en regel i tagggränssnittet för Adobe Experience Platform Data Collection.
 
-1. Logga in på [experience.adobe.com](https://experience.adobe.com) med dina Adobe ID-uppgifter.
+1. Logga in på [experience.adobe.com](https://experience.adobe.com) med dina Adobe ID-inloggningsuppgifter.
 1. Navigera till **[!UICONTROL Data Collection]** > **[!UICONTROL Tags]**.
 1. Välj önskad taggegenskap.
-1. Navigera till **[!UICONTROL Rules]** markerar du önskad regel.
-1. Under [!UICONTROL Actions]väljer du en befintlig åtgärd eller skapar en åtgärd.
-1. Ange [!UICONTROL Extension] listruta till **[!UICONTROL Adobe Experience Platform Web SDK]** och ange [!UICONTROL Action Type] till **[!UICONTROL Redirect with identity]**.
-1. Klicka **[!UICONTROL Keep Changes]** och sedan köra ditt publiceringsarbetsflöde.
+1. Navigera till **[!UICONTROL Rules]** och markera önskad regel.
+1. Välj en befintlig åtgärd under [!UICONTROL Actions] eller skapa en åtgärd.
+1. Ställ in listrutefältet [!UICONTROL Extension] på **[!UICONTROL Adobe Experience Platform Web SDK]** och ställ in [!UICONTROL Action Type] på **[!UICONTROL Redirect with identity]**.
+1. Klicka på **[!UICONTROL Keep Changes]** och kör sedan ditt publiceringsarbetsflöde.
 
 Det här kommandot används vanligtvis med en viss regel som lyssnar efter klickningar och kontrollerar vilka domäner du vill använda.
 
 +++Villkor för regelhändelse
 
-Utlöses när en ankartagg med en `href` -egenskapen klickas.
+Utlöses när någon klickar på en ankartagg med egenskapen `href`.
 
 * **[!UICONTROL Extension]**: Kärna
 * **[!UICONTROL Event type]**: Klicka
@@ -72,9 +72,9 @@ Lägg till identiteten i URL:en.
 
 +++
 
-## Lägg till identitet i URL med JavaScript-biblioteket för Web SDK
+## Bifoga identitet till URL med hjälp av JavaScript-biblioteket för Web SDK
 
-Kör `appendIdentityToUrl` med en URL som parameter. Metoden returnerar en URL med identifieraren tillagd som en frågesträng.
+Kör kommandot `appendIdentityToUrl` med en URL som parameter. Metoden returnerar en URL med identifieraren tillagd som en frågesträng.
 
 ```js
 alloy("appendIdentityToUrl",document.location);
@@ -100,4 +100,4 @@ document.addEventListener("click", event => {
 
 ## Svarsobjekt
 
-Om du väljer att [hantera svar](command-responses.md) med det här kommandot innehåller svarsobjektet **`url`**, den nya URL-adressen med identitetsinformation som har lagts till som en frågesträngsparameter.
+Om du bestämmer dig för att [hantera svar](command-responses.md) med det här kommandot innehåller svarsobjektet **`url`**, den nya URL-adressen med identitetsinformation som lagts till som en frågesträngsparameter.

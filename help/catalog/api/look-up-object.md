@@ -13,11 +13,11 @@ ht-degree: 0%
 
 # Söka efter ett katalogobjekt
 
-Om du känner till den unika identifieraren för en specifik [!DNL Catalog] kan du utföra en GET-begäran för att visa information om det objektet.
+Om du känner till den unika identifieraren för ett specifikt [!DNL Catalog]-objekt kan du utföra en GET-förfrågan för att visa objektets information.
 
 >[!NOTE]
 >
->När du visar specifika objekt är det fortfarande bäst att [filtrera efter egenskaper](filter-data.md) och returnerar bara de egenskaper du är intresserad av.
+>När du visar specifika objekt är det fortfarande bra att [filtrera efter egenskaper](filter-data.md) och bara returnera de egenskaper som du är intresserad av.
 
 **API-format**
 
@@ -28,12 +28,12 @@ GET /{OBJECT_TYPE}/{OBJECT_ID}?properties={PROPERTY_1},{PROPERTY_2},{PROPERTY_3}
 
 | Parameter | Beskrivning |
 | --- | --- |
-| `{OBJECT_TYPE}` | Typ av [!DNL Catalog] objekt som ska hämtas. Giltiga objekt är: <ul><li>`batches`</li><li>`dataSets`</li><li>`dataSetFiles`</li></ul> |
+| `{OBJECT_TYPE}` | Den typ av [!DNL Catalog]-objekt som ska hämtas. Giltiga objekt är: <ul><li>`batches`</li><li>`dataSets`</li><li>`dataSetFiles`</li></ul> |
 | `{OBJECT_ID}` | Identifieraren för det specifika objekt som du vill hämta. |
 
 **Begäran**
 
-Följande begäran hämtar en datauppsättning med dess ID och returnerar dess `name`, `description`, `tags`och `files` egenskaper.
+Följande begäran hämtar en datauppsättning med dess ID och returnerar egenskaperna `name`, `description`, `tags` och `files`.
 
 ```shell
 curl -X GET \
@@ -46,7 +46,7 @@ curl -X GET \
 
 **Svar**
 
-Ett lyckat svar returnerar den angivna datauppsättningen med endast den begärda `properties` i kroppen.
+Ett lyckat svar returnerar den angivna datauppsättningen med endast den begärda `properties` i brödtexten.
 
 ```json
 {
@@ -65,4 +65,4 @@ Ett lyckat svar returnerar den angivna datauppsättningen med endast den begärd
 
 >[!NOTE]
 >
->Egenskaper vars värden har prefixet `@` representerar relaterade objekt. Se avsnittet om bilagan [visa relaterade objekt](appendix.md#view-interrelated-objects) för steg om hur du visar information om dessa objekt.
+>Egenskaper vars värden har prefixet `@` representerar relaterade objekt. Avsnittet i bilagan [Visa relaterade objekt](appendix.md#view-interrelated-objects) innehåller anvisningar om hur du visar information om dessa objekt.

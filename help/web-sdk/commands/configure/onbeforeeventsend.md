@@ -11,7 +11,7 @@ ht-degree: 0%
 
 # `onBeforeEventSend`
 
-The `onBeforeEventSend` Med callback kan du registrera en JavaScript-funktion som kan ändra de data du skickar precis innan dessa data skickas till Adobe. Med det här återanropet kan du ändra `xdm` eller `data` -objekt, inklusive möjligheten att lägga till, redigera eller ta bort element. Du kan också villkorligt avbryta sändningen av data helt och hållet, t.ex. med identifierad robottrafik på klientsidan.
+Med `onBeforeEventSend`-återanropet kan du registrera en JavaScript-funktion som kan ändra de data du skickar precis innan dessa data skickas till Adobe. Med det här återanropet kan du ändra objektet `xdm` eller `data`, inklusive möjligheten att lägga till, redigera eller ta bort element. Du kan också villkorligt avbryta sändningen av data helt och hållet, t.ex. med identifierad robottrafik på klientsidan.
 
 >[!WARNING]
 >
@@ -19,24 +19,24 @@ The `onBeforeEventSend` Med callback kan du registrera en JavaScript-funktion so
 
 ## Konfigurera före händelsens sändning av återanrop med hjälp av taggtillägget Web SDK {#tag-extension}
 
-Välj **[!UICONTROL Provide on before event send callback code]** knapp när [konfigurera taggtillägget](/help/tags/extensions/client/web-sdk/web-sdk-extension-configuration.md). Med den här kommandoknappen öppnas ett modalt fönster där du kan infoga den önskade koden.
+Klicka på knappen **[!UICONTROL Provide on before event send callback code]** när du [konfigurerar taggtillägget](/help/tags/extensions/client/web-sdk/web-sdk-extension-configuration.md). Med den här kommandoknappen öppnas ett modalt fönster där du kan infoga den önskade koden.
 
-1. Logga in på [experience.adobe.com](https://experience.adobe.com) med dina Adobe ID-uppgifter.
+1. Logga in på [experience.adobe.com](https://experience.adobe.com) med dina Adobe ID-inloggningsuppgifter.
 1. Navigera till **[!UICONTROL Data Collection]** > **[!UICONTROL Tags]**.
 1. Välj önskad taggegenskap.
-1. Navigera till **[!UICONTROL Extensions]** och sedan klicka **[!UICONTROL Configure]** på [!UICONTROL Adobe Experience Platform Web SDK] kort.
-1. Bläddra nedåt till [!UICONTROL Data Collection] markerar du knappen **[!UICONTROL Provide on before event send callback code]**.
+1. Navigera till **[!UICONTROL Extensions]** och klicka sedan på **[!UICONTROL Configure]** på [!UICONTROL Adobe Experience Platform Web SDK]-kortet.
+1. Bläddra ned till avsnittet [!UICONTROL Data Collection] och markera sedan knappen **[!UICONTROL Provide on before event send callback code]**.
 1. Den här knappen öppnar ett modalt fönster med en kodredigerare. Infoga den önskade koden och klicka sedan på **[!UICONTROL Save]** för att stänga det modala fönstret.
-1. Klicka **[!UICONTROL Save]** publicera ändringarna under tilläggsinställningarna.
+1. Klicka på **[!UICONTROL Save]** under tilläggsinställningarna och publicera sedan ändringarna.
 
 I kodredigeraren har du tillgång till följande variabler:
 
-* **`content.xdm`**: [XML](../sendevent/xdm.md) nyttolast för händelsen.
-* **`content.data`**: [data](../sendevent/data.md) objektnyttolast för händelsen.
-* **`return true`**: Avsluta återanropet omedelbart och skicka data till Adobe med de aktuella värdena i dialogrutan `content` -objekt.
-* **`return false`**: Avsluta omedelbart återanropet och avbryt överföringen av data till Adobe.
+* **`content.xdm`**: [XDM](../sendevent/xdm.md)-nyttolasten för händelsen.
+* **`content.data`**: [data](../sendevent/data.md)-objektnyttolasten för händelsen.
+* **`return true`**: Avsluta återanropet omedelbart och skicka data till Adobe med de aktuella värdena i `content` -objektet.
+* **`return false`**: Avsluta återanropet omedelbart och avbryt överföringen av data till Adobe.
 
-Alla variabler som definierats utanför `content` kan användas, men ingår inte i nyttolasten som skickas till Adobe.
+Alla variabler som definierats utanför `content` kan användas, men inkluderas inte i nyttolasten som skickas till Adobe.
 
 ```js
 // Use nullish coalescing assignments to add objects if they don't yet exist
@@ -64,11 +64,11 @@ if (myBotDetector.isABot()) {
 ```
 
 >[!TIP]
->Undvik att returnera `false` på den första händelsen på en sida. Returnerar `false` den första händelsen kan påverka personaliseringen negativt.
+>Undvik att returnera `false` vid den första händelsen på en sida. Om `false` returneras för den första händelsen kan personaliseringen påverkas negativt.
 
 ## Konfigurera på före händelsemeddelande av återanrop med Web SDK JavaScript-biblioteket {#library}
 
-Registrera `onBeforeEventSend` återanrop när programmet körs `configure` -kommando. Du kan ändra `content` variabelnamn till ett värde som du vill ha genom att ändra parametervariabeln inuti den infogade funktionen.
+Registrera `onBeforeEventSend`-återanropet när du kör kommandot `configure`. Du kan ändra variabelnamnet `content` till vilket värde som helst genom att ändra parametervariabeln inuti den infogade funktionen.
 
 ```js
 alloy("configure", {

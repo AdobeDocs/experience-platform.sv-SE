@@ -4,33 +4,33 @@ title: Konfiguration av kundautentisering
 exl-id: 3912012e-0870-47d2-9a6f-7f1fc469a781
 source-git-commit: 82ba4e62d5bb29ba4fef22c5add864a556e62c12
 workflow-type: tm+mt
-source-wordcount: '1085'
+source-wordcount: '1092'
 ht-degree: 0%
 
 ---
 
 # Konfiguration av kundautentisering
 
-Experience Platform erbjuder stor flexibilitet i de autentiseringsprotokoll som är tillgängliga för partners och kunder. Du kan konfigurera destinationen så att den stöder någon av de autentiseringsmetoder som är branschstandard, som [!DNL OAuth2], autentisering av innehavartoken, lösenordsautentisering och många andra.
+Experience Platform erbjuder stor flexibilitet i de autentiseringsprotokoll som är tillgängliga för partners och kunder. Du kan konfigurera ditt mål så att det stöder någon av de autentiseringsmetoder som är branschstandard, som [!DNL OAuth2], autentisering med innehavartoken, lösenordsautentisering och många andra.
 
 På den här sidan beskrivs hur du konfigurerar målet med den autentiseringsmetod du föredrar. Baserat på den autentiseringskonfiguration som du använder när du skapar målet, kommer kunderna att se olika typer av autentiseringssidor när de ansluter till målet i användargränssnittet i Experience Platform.
 
-Mer information om var den här komponenten passar in i en integrering som skapas med Destination SDK finns i diagrammet i [konfigurationsalternativ](../configuration-options.md) eller se följande sidor med översikt över målkonfigurationen:
+Om du vill veta var den här komponenten passar in i en integrering som skapats med Destination SDK kan du läsa diagrammet i dokumentationen för [konfigurationsalternativ](../configuration-options.md) eller följande sidor med en översikt över målkonfigurationen:
 
 * [Använd Destination SDK för att konfigurera ett direktuppspelningsmål](../../guides/configure-destination-instructions.md#create-destination-configuration)
 * [Använd Destination SDK för att konfigurera ett filbaserat mål](../../guides/configure-file-based-destination-instructions.md#create-destination-configuration)
 
-Innan kunderna kan exportera data från Platform till ditt mål måste de skapa en ny anslutning mellan Experience Platform och ditt mål genom att följa stegen som beskrivs i [målanslutning](../../../ui/connect-destination.md) självstudie.
+Innan kunder kan exportera data från Platform till ditt mål måste de skapa en ny anslutning mellan Experience Platform och ditt mål genom att följa stegen som beskrivs i självstudiekursen [målanslutning](../../../ui/connect-destination.md).
 
-När [skapa ett mål](../../authoring-api/destination-configuration/create-destination-configuration.md) via Destination SDK, `customerAuthenticationConfigurations` -avsnittet definierar vad kunderna ser i [autentiseringsskärm](../../../ui/connect-destination.md#authenticate). Beroende på autentiseringstypen för målet måste kunderna tillhandahålla olika autentiseringsdetaljer, som:
+När [skapar ett mål](../../authoring-api/destination-configuration/create-destination-configuration.md) via Destination SDK, definierar avsnittet `customerAuthenticationConfigurations` vad kunderna ser på [autentiseringsskärmen](../../../ui/connect-destination.md#authenticate). Beroende på autentiseringstypen för målet måste kunderna tillhandahålla olika autentiseringsdetaljer, som:
 
-* För destinationer som använder [grundläggande autentisering](#basic)måste användare ange ett användarnamn och lösenord direkt på inloggningssidan för användargränssnittet i Experience Platform.
-* För destinationer som använder [innehavarautentisering](#bearer)måste användaren ange en innehavartoken.
-* För destinationer som använder [OAuth2-auktorisering](#oauth2), dirigeras användare till målets inloggningssida där de kan logga in med sina inloggningsuppgifter.
-* För [Amazon S3](#s3) mål, användare måste ange sina [!DNL Amazon S3] åtkomstnyckel och hemlig nyckel.
-* För [Azure Blob](#blob) mål, användare måste ange sina [!DNL Azure Blob] anslutningssträng.
+* För mål som använder [grundläggande autentisering](#basic) måste användare ange ett användarnamn och lösenord direkt på Experience Platform användargränssnittets autentiseringssida.
+* För mål som använder [innehavarautentisering](#bearer) måste användarna ange en innehavartoken.
+* För mål som använder [OAuth2-auktorisering](#oauth2) omdirigeras användare till målets inloggningssida där de kan logga in med sina autentiseringsuppgifter.
+* För [Amazon S3](#s3)-mål måste användare ange sin [!DNL Amazon S3]-åtkomstnyckel och hemlig nyckel.
+* För [Azure Blob](#blob)-mål måste användarna ange sin [!DNL Azure Blob]-anslutningssträng.
 
-Du kan konfigurera kundautentiseringsinformation via `/authoring/destinations` slutpunkt. På följande API-referenssidor finns detaljerade API-anropsexempel där du kan konfigurera komponenterna som visas på den här sidan.
+Du kan konfigurera kundautentiseringsinformation via slutpunkten `/authoring/destinations`. På följande API-referenssidor finns detaljerade API-anropsexempel där du kan konfigurera komponenterna som visas på den här sidan.
 
 * [Skapa en målkonfiguration](../../authoring-api/destination-configuration/create-destination-configuration.md)
 * [Uppdatera en målkonfiguration](../../authoring-api/destination-configuration/update-destination-configuration.md)
@@ -39,11 +39,11 @@ I den här artikeln beskrivs alla kompatibla konfigurationer för kundautentiser
 
 >[!IMPORTANT]
 >
->Konfigurationen för kundautentisering kräver inte att du konfigurerar några parametrar. Du kan kopiera och klistra in kodavsnitten som visas på den här sidan i dina API-anrop när [skapa](../../authoring-api/destination-configuration/create-destination-configuration.md) eller [uppdatera](../../authoring-api/destination-configuration/update-destination-configuration.md) en målkonfiguration, så ser dina användare motsvarande autentiseringsskärm i plattformsgränssnittet.
+>Konfigurationen för kundautentisering kräver inte att du konfigurerar några parametrar. Du kan kopiera och klistra in kodavsnitten som visas på den här sidan i dina API-anrop när [skapar](../../authoring-api/destination-configuration/create-destination-configuration.md) eller [uppdaterar](../../authoring-api/destination-configuration/update-destination-configuration.md) en målkonfiguration, och dina användare ser motsvarande autentiseringsskärm i plattformsgränssnittet.
 
 >[!IMPORTANT]
 >
->Alla parameternamn och värden som stöds av Destinationen SDK är **skiftlägeskänslig**. Undvik skiftlägeskänslighetsfel genom att använda parameternamn och värden exakt som de visas i dokumentationen.
+>Alla parameternamn och värden som stöds av Destinationen SDK är **skiftlägeskänsliga**. Undvik skiftlägeskänslighetsfel genom att använda parameternamn och värden exakt som de visas i dokumentationen.
 
 ## Integrationstyper som stöds {#supported-integration-types}
 
@@ -56,7 +56,7 @@ Se tabellen nedan för mer ingående information om vilka typer av integreringar
 
 ## Konfiguration av autentiseringsregel {#authentication-rule}
 
-När du använder någon av de konfigurationer för kundautentisering som beskrivs på den här sidan ska du alltid ange `authenticationRule` parameter in [destinationsleverans](destination-delivery.md) till `"CUSTOMER_AUTHENTICATION"`, vilket visas nedan.
+När du använder någon av de konfigurationer för kundautentisering som beskrivs på den här sidan ska du alltid ange parametern `authenticationRule` i [målleverans](destination-delivery.md) till `"CUSTOMER_AUTHENTICATION"`, vilket visas nedan.
 
 ```json {line-numbers="true" highlight="4"
 {
@@ -77,7 +77,7 @@ När du konfigurerar den grundläggande autentiseringstypen måste användarna a
 
 ![Gränssnittsåtergivning med grundläggande autentisering](../../assets/functionality/destination-configuration/basic-authentication-ui.png)
 
-Konfigurera `customerAuthenticationConfigurations` via `/destinations` slutpunkt enligt nedan:
+Konfigurera avsnittet `customerAuthenticationConfigurations` via `/destinations`-slutpunkten så som visas nedan för att konfigurera grundläggande autentisering för ditt mål:
 
 ```json
 "customerAuthenticationConfigurations":[
@@ -91,9 +91,9 @@ Konfigurera `customerAuthenticationConfigurations` via `/destinations` slutpunkt
 
 När du konfigurerar typen för innehavarautentisering måste användarna ange den innehavartoken som de får från ditt mål.
 
-![Gränssnittsåtergivning med innehavarautentisering](../../assets/functionality/destination-configuration/bearer-authentication-ui.png)
+![Gränssnittet återges med innehavarautentisering](../../assets/functionality/destination-configuration/bearer-authentication-ui.png)
 
-Konfigurera `customerAuthenticationConfigurations` via `/destinations` slutpunkt enligt nedan:
+Konfigurera avsnittet `customerAuthenticationConfigurations` via `/destinations`-slutpunkten så som visas nedan om du vill konfigurera autentisering av bearer-typ för ditt mål:
 
 ```json
 "customerAuthenticationConfigurations":[
@@ -105,11 +105,11 @@ Konfigurera `customerAuthenticationConfigurations` via `/destinations` slutpunkt
 
 ## OAuth 2-autentisering {#oauth2}
 
-Användarna väljer **[!UICONTROL Connect to destination]** för att utlösa OAuth 2-autentiseringsflödet till ditt mål, vilket visas i exemplet nedan för Twitternas anpassade målgrupper. Mer information om hur du konfigurerar OAuth 2-autentisering till målslutpunkten finns i den dedikerade [Destination SDK OAuth 2-autentiseringssida](oauth2-authorization.md).
+Användare väljer **[!UICONTROL Connect to destination]** för att utlösa OAuth 2-autentiseringsflödet till ditt mål, vilket visas i exemplet nedan för Twitternas anpassade målgrupper. Mer information om hur du konfigurerar OAuth 2-autentisering till målslutpunkten finns på den dedikerade [Destination SDK OAuth 2-autentiseringssidan](oauth2-authorization.md).
 
 ![Gränssnittsåtergivning med OAuth 2-autentisering](../../assets/functionality/destination-configuration/oauth2-authentication-ui.png)
 
-Så här konfigurerar du [!DNL OAuth2] autentisering för ditt mål, konfigurera `customerAuthenticationConfigurations` via `/destinations` slutpunkt enligt nedan:
+Konfigurera `customerAuthenticationConfigurations`-avsnittet via `/destinations`-slutpunkten så som visas nedan för att konfigurera [!DNL OAuth2]-autentisering för ditt mål:
 
 ```json
 "customerAuthenticationConfigurations":[
@@ -121,13 +121,13 @@ Så här konfigurerar du [!DNL OAuth2] autentisering för ditt mål, konfigurera
 
 ## Amazon S3-autentisering {#s3}
 
-[!DNL Amazon S3] autentisering stöds för filbaserade mål i Experience Platform.
+[!DNL Amazon S3]-autentisering stöds för filbaserade mål i Experience Platform.
 
 När du konfigurerar autentiseringstypen Amazon S3 måste användare ange sina S3-inloggningsuppgifter.
 
 ![Gränssnittsåtergivning med S3-autentisering](../../assets/functionality/destination-configuration/s3-authentication-ui.png)
 
-Så här konfigurerar du [!DNL Amazon S3] autentisering för ditt mål, konfigurera `customerAuthenticationConfigurations` via `/destinations` slutpunkt enligt nedan:
+Konfigurera `customerAuthenticationConfigurations`-avsnittet via `/destinations`-slutpunkten så som visas nedan för att konfigurera [!DNL Amazon S3]-autentisering för ditt mål:
 
 ```json
 "customerAuthenticationConfigurations":[
@@ -139,13 +139,13 @@ Så här konfigurerar du [!DNL Amazon S3] autentisering för ditt mål, konfigur
 
 ## Azure Blob-autentisering  {#blob}
 
-[!DNL Azure Blob Storage] autentisering stöds för filbaserade mål i Experience Platform.
+[!DNL Azure Blob Storage]-autentisering stöds för filbaserade mål i Experience Platform.
 
 När du konfigurerar autentiseringstypen Azure Blob måste användarna ange anslutningssträngen.
 
-![Gränssnittsåtergivning med blobautentisering](../../assets/functionality/destination-configuration/blob-authentication-ui.png)
+![Användargränssnittet återges med blobautentisering](../../assets/functionality/destination-configuration/blob-authentication-ui.png)
 
-Så här konfigurerar du [!DNL Azure Blob] autentisering för ditt mål, konfigurera `customerAuthenticationConfigurations` -parametern i `/destinations` slutpunkt enligt nedan:
+Konfigurera parametern `customerAuthenticationConfigurations` i slutpunkten `/destinations` så som visas nedan om du vill konfigurera [!DNL Azure Blob]-autentisering för ditt mål:
 
 ```json
 "customerAuthenticationConfigurations":[
@@ -157,13 +157,13 @@ Så här konfigurerar du [!DNL Azure Blob] autentisering för ditt mål, konfigu
 
 ## [!DNL Azure Data Lake Storage] autentisering {#adls}
 
-[!DNL Azure Data Lake Storage] autentisering stöds för filbaserade mål i Experience Platform.
+[!DNL Azure Data Lake Storage]-autentisering stöds för filbaserade mål i Experience Platform.
 
-När du konfigurerar [!DNL Azure Data Lake Storage] autentiseringstyp, användare måste ange autentiseringsuppgifter för Azure Service Principal och klientinformation.
+När du konfigurerar autentiseringstypen [!DNL Azure Data Lake Storage] måste användarna ange autentiseringsuppgifterna för Azure Service Principal och deras klientinformation.
 
 ![Gränssnittsåtergivning med [!DNL Azure Data Lake Storage] autentisering](../../assets/functionality/destination-configuration/adls-authentication-ui.png)
 
-Så här konfigurerar du [!DNL Azure Data Lake Storage] (ADLS) autentisering för ditt mål, konfigurera `customerAuthenticationConfigurations` -parametern i `/destinations` slutpunkt enligt nedan:
+Konfigurera parametern `customerAuthenticationConfigurations` i slutpunkten `/destinations` så som visas nedan om du vill konfigurera [!DNL Azure Data Lake Storage]-autentisering (ADLS) för ditt mål:
 
 ```json
 "customerAuthenticationConfigurations":[
@@ -175,13 +175,13 @@ Så här konfigurerar du [!DNL Azure Data Lake Storage] (ADLS) autentisering fö
 
 ## SFTP med lösenordsautentisering
 
-[!DNL SFTP] autentisering med lösenord stöds för filbaserade mål i Experience Platform.
+[!DNL SFTP]-autentisering med lösenord stöds för filbaserade mål i Experience Platform.
 
 När du konfigurerar SFTP med lösenordsautentiseringstypen måste användarna ange SFTP-användarnamn och -lösenord samt SFTP-domän och -port (standardport är 22).
 
-![Användargränssnittet återges med SFTP med lösenordsautentisering](../../assets/functionality/destination-configuration/sftp-password-authentication-ui.png)
+![Gränssnittet återges med SFTP med lösenordsautentisering](../../assets/functionality/destination-configuration/sftp-password-authentication-ui.png)
 
-Konfigurera `customerAuthenticationConfigurations` -parametern i `/destinations` slutpunkt enligt nedan:
+Konfigurera parametern `customerAuthenticationConfigurations` i slutpunkten `/destinations` så som visas nedan om du vill konfigurera SFTP-autentisering med lösenord för målet:
 
 ```json
 "customerAuthenticationConfigurations":[
@@ -193,13 +193,13 @@ Konfigurera `customerAuthenticationConfigurations` -parametern i `/destinations`
 
 ## SFTP med autentisering med SSH-nyckel
 
-[!DNL SFTP] autentisering med [!DNL SSH] -nyckeln stöds för filbaserade mål i Experience Platform.
+[!DNL SFTP]-autentisering med [!DNL SSH]-nyckel stöds för filbaserade mål i Experience Platform.
 
 När du konfigurerar SFTP med autentiseringstypen SSH-nyckel måste användarna ange SFTP-användarnamnet och SSH-nyckeln samt SFTP-domänen och -porten (standardporten är 22).
 
-![Gränssnittsåtergivning med SFTP med SSH-nyckelautentisering](../../assets/functionality/destination-configuration/sftp-key-authentication-ui.png)
+![Gränssnittet återges med SFTP med autentisering med SSH-nyckel](../../assets/functionality/destination-configuration/sftp-key-authentication-ui.png)
 
-Konfigurera `customerAuthenticationConfigurations` -parametern i `/destinations` slutpunkt enligt nedan:
+Om du vill konfigurera SFTP-autentisering med SSH-nyckel för målet konfigurerar du parametern `customerAuthenticationConfigurations` i slutpunkten `/destinations` enligt nedan:
 
 ```json
 "customerAuthenticationConfigurations":[
@@ -211,13 +211,13 @@ Konfigurera `customerAuthenticationConfigurations` -parametern i `/destinations`
 
 ## [!DNL Google Cloud Storage] autentisering {#gcs}
 
-[!DNL Google Cloud Storage] autentisering stöds för filbaserade mål i Experience Platform.
+[!DNL Google Cloud Storage]-autentisering stöds för filbaserade mål i Experience Platform.
 
-När du konfigurerar [!DNL Google Cloud Storage] autentiseringstyp, användare måste ange sina [!DNL Google Cloud Storage] [!UICONTROL access key ID] och [!UICONTROL secret access key].
+När du konfigurerar autentiseringstypen [!DNL Google Cloud Storage] måste användarna ange [!DNL Google Cloud Storage] [!UICONTROL access key ID] och [!UICONTROL secret access key].
 
-![Gränssnittsåtergivning med Google Cloud Storage-autentisering](../../assets/functionality/destination-configuration/google-cloud-storage-ui.png)
+![Användargränssnittet återges med autentisering av Google Cloud-lagring](../../assets/functionality/destination-configuration/google-cloud-storage-ui.png)
 
-Så här konfigurerar du [!DNL Google Cloud Storage] autentisering för ditt mål, konfigurera `customerAuthenticationConfigurations` -parametern i `/destinations` slutpunkt enligt nedan:
+Konfigurera parametern `customerAuthenticationConfigurations` i slutpunkten `/destinations` så som visas nedan om du vill konfigurera [!DNL Google Cloud Storage]-autentisering för ditt mål:
 
 ```json
 "customerAuthenticationConfigurations":[

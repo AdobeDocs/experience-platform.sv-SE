@@ -1,22 +1,22 @@
 ---
 solution: Experience Platform
-title: PQL-booleska funktioner
-description: Booleska funktioner används för att utföra boolesk logik för olika element i PQL (Profile Query Language).
+title: PQL booleska funktioner
+description: Booleska funktioner används för att utföra boolesk logik för olika element i Profile Query Language (PQL).
 exl-id: 68a4a8cc-88ad-41b1-b9fc-c2b4ab7d0122
 source-git-commit: dbb7e0987521c7a2f6512f05eaa19e0121aa34c6
 workflow-type: tm+mt
-source-wordcount: '237'
-ht-degree: 2%
+source-wordcount: '239'
+ht-degree: 0%
 
 ---
 
 # Booleska funktioner
 
-Booleska funktioner används för att utföra boolesk logik för olika element i [!DNL Profile Query Language] (PQL).  Mer information om andra PQL-funktioner finns i [[!DNL Profile Query Language] översikt](./overview.md).
+Booleska funktioner används för att utföra boolesk logik för olika element i [!DNL Profile Query Language] (PQL).  Mer information om andra PQL-funktioner finns i [[!DNL Profile Query Language] översikten](./overview.md).
 
 ## Och
 
-The `and` -funktionen används för att skapa en logisk koppling.
+Funktionen `and` används för att skapa en logisk koppling.
 
 **Format**
 
@@ -34,7 +34,7 @@ homeAddress.countryISO = "CA" and person.birthYear = 1985
 
 ## eller
 
-The `or` används för att skapa en logisk förskjutning.
+Funktionen `or` används för att skapa en logisk förskjutning.
 
 **Format**
 
@@ -52,7 +52,7 @@ homeAddress.countryISO = "CA" or person.birthYear = 1985
 
 ## Inte
 
-The `not` (eller `!`) används för att skapa en logisk negation.
+Funktionen `not` (eller `!`) används för att skapa en logisk negation.
 
 **Format**
 
@@ -63,7 +63,7 @@ not ({QUERY})
 
 **Exempel**
 
-Följande PQL-fråga returnerar alla personer som inte har sitt hemland som Kanada.
+Följande PQL-fråga returnerar alla som inte har sitt hemland som Kanada.
 
 ```sql
 not (homeAddress.countryISO = "CA")
@@ -71,7 +71,7 @@ not (homeAddress.countryISO = "CA")
 
 ## If
 
-The `if` -funktionen används för att matcha ett uttryck beroende på om ett angivet villkor är sant.
+Funktionen `if` används för att matcha ett uttryck beroende på om ett angivet villkor är sant.
 
 **Format**
 
@@ -82,8 +82,8 @@ if ({TEST_EXPRESSION}, {TRUE_EXPRESSION}, {FALSE_EXPRESSION})
 | Argument | Beskrivning |
 | --------- | ----------- |
 | `{TEST_EXPRESSION}` | Det booleska uttryck som testas. |
-| `{TRUE_EXPRESSION}` | Det uttryck vars värde ska användas om `{TEST_EXPRESSION}` är sant. |
-| `{FALSE_EXPRESSION}` | Det uttryck vars värde ska användas om `{TEST_EXPRESSION}` är false. |
+| `{TRUE_EXPRESSION}` | Uttrycket vars värde ska användas om `{TEST_EXPRESSION}` är true. |
+| `{FALSE_EXPRESSION}` | Uttrycket vars värde ska användas om `{TEST_EXPRESSION}` är false. |
 
 **Exempel**
 
@@ -95,4 +95,4 @@ if (homeAddress.countryISO = "CA", 1, 2)
 
 ## Nästa steg
 
-Nu när du har lärt dig om booleska funktioner kan du använda dem i dina PQL-frågor. Mer information om andra PQL-funktioner finns i [Profilfrågespråk - översikt](./overview.md).
+Nu när du har lärt dig om booleska funktioner kan du använda dem i dina PQL-frågor. Mer information om andra PQL-funktioner finns i [Profile Query Language-översikten](./overview.md).

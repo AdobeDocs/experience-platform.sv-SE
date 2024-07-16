@@ -16,14 +16,14 @@ ht-degree: 0%
 
 >[!IMPORTANT]
 > 
-> * Aktivera data och aktivera [mappningssteg](#mapping) i arbetsflödet behöver du **[!UICONTROL View Destinations]**, **[!UICONTROL Activate Destinations]**, **[!UICONTROL View Profiles]** och **[!UICONTROL View Segments]** [behörigheter för åtkomstkontroll](/help/access-control/home.md#permissions).
-> * Aktivera data utan att gå igenom [mappningssteg](#mapping) i arbetsflödet behöver du **[!UICONTROL View Destinations]**, **[!UICONTROL Activate Segment without Mapping]**, **[!UICONTROL View Profiles]** och **[!UICONTROL View Segments]** [behörigheter för åtkomstkontroll](/help/access-control/home.md#permissions).
+> * Om du vill aktivera data och aktivera [mappningssteget](#mapping) för arbetsflödet behöver du behörigheterna **[!UICONTROL View Destinations]**, **[!UICONTROL Activate Destinations]**, **[!UICONTROL View Profiles]** och **[!UICONTROL View Segments]** [åtkomstkontroll](/help/access-control/home.md#permissions).
+> * Om du vill aktivera data utan att gå igenom [mappningssteget](#mapping) i arbetsflödet behöver du behörigheterna **[!UICONTROL View Destinations]**, **[!UICONTROL Activate Segment without Mapping]**, **[!UICONTROL View Profiles]** och **[!UICONTROL View Segments]** [åtkomstkontroll](/help/access-control/home.md#permissions).
 > 
-> Läs [åtkomstkontroll - översikt](/help/access-control/ui/overview.md) eller kontakta produktadministratören för att få de behörigheter som krävs.
+> Läs [åtkomstkontrollsöversikten](/help/access-control/ui/overview.md) eller kontakta produktadministratören för att få den behörighet som krävs.
 
 ## Översikt {#overview}
 
-I den här artikeln beskrivs det arbetsflöde som krävs för att aktivera målgruppsdata i Adobe Experience Platform för att direktuppspela profilbaserade mål (kallas även för [företagsmål](/help/destinations/destination-types.md#streaming-profile-export)).
+I den här artikeln förklaras det arbetsflöde som krävs för att aktivera målgruppsdata i Adobe Experience Platform för att direktuppspela profilbaserade mål (kallas även [företagsmål](/help/destinations/destination-types.md#streaming-profile-export)).
 
 Denna artikel gäller följande tre destinationer:
 
@@ -33,23 +33,23 @@ Denna artikel gäller följande tre destinationer:
 
 ## Förhandskrav {#prerequisites}
 
-Om du vill aktivera data till mål måste du ha lyckats [ansluten till ett mål](./connect-destination.md). Om du inte redan har gjort det går du till [målkatalog](../catalog/overview.md), bläddra bland de mål som stöds och konfigurera det mål som du vill använda.
+Om du vill aktivera data till mål måste du ha [anslutit till ett mål](./connect-destination.md). Om du inte redan har gjort det går du till [målkatalogen](../catalog/overview.md), bläddrar bland de mål som stöds och konfigurerar det mål som du vill använda.
 
 ## Välj mål {#select-destination}
 
-1. Gå till **[!UICONTROL Connections > Destinations]** och väljer **[!UICONTROL Catalog]** -fliken.
+1. Gå till **[!UICONTROL Connections > Destinations]** och välj fliken **[!UICONTROL Catalog]**.
 
    ![Bild som visar fliken för målkatalogen.](../assets/ui/activate-streaming-profile-destinations/catalog-tab.png)
 
-1. Välj **[!UICONTROL Activate audiences]** på kortet som motsvarar destinationen där du vill aktivera målgrupperna, vilket visas i bilden nedan.
+1. Välj **[!UICONTROL Activate audiences]** på det kort som motsvarar målet där du vill aktivera målgrupperna, vilket visas i bilden nedan.
 
-   ![Bild som markerar kontrollen för att aktivera målgrupper på fliken Målkatalog.](../assets/ui/activate-streaming-profile-destinations/activate-audiences-button.png)
+   ![Bild som markerar kontrollen för att aktivera målgrupper på fliken för målkatalogen.](../assets/ui/activate-streaming-profile-destinations/activate-audiences-button.png)
 
-1. Välj den målanslutning som du vill använda för att aktivera dina målgrupper och välj sedan **[!UICONTROL Next]**.
+1. Markera målanslutningen som du vill använda för att aktivera målgrupperna och välj sedan **[!UICONTROL Next]**.
 
    ![Bild som visar ett urval av två mål som du kan ansluta till.](../assets/ui/activate-streaming-profile-destinations/select-destination.png)
 
-1. Gå till nästa avsnitt till [välj era målgrupper](#select-audiences).
+1. Gå till nästa avsnitt för att [välja dina målgrupper](#select-audiences).
 
 ## Välj målgrupper {#select-audiences}
 
@@ -57,41 +57,41 @@ Om du vill välja vilka målgrupper du vill aktivera för målet använder du kr
 
 Du kan välja mellan flera typer av målgrupper, beroende på deras ursprung:
 
-* **[!UICONTROL Segmentation Service]**: Målgrupper som genererats i Experience Platform av segmenteringstjänsten. Se [Målgruppsportalens dokumentation](../../segmentation/ui/audience-portal.md) för mer information.
-* **[!UICONTROL Custom upload]**: Publiker som genererats utanför Experience Platform och överförts till Platform som CSV-filer. Mer information om externa målgrupper finns i dokumentationen om [importera en publik](../../segmentation/ui/audience-portal.md#import-audience).
-* Andra typer av målgrupper som härrör från andra Adobe-lösningar, t.ex. [!DNL Audience Manager].
+* **[!UICONTROL Segmentation Service]**: Publiker som genererats i Experience Platform av segmenteringstjänsten. Mer information finns i dokumentationen för [målportalen](../../segmentation/ui/audience-portal.md).
+* **[!UICONTROL Custom upload]**: Publiker som genererats utanför Experience Platform och överförts till Platform som CSV-filer. Mer information om externa målgrupper finns i dokumentationen om att [importera en målgrupp](../../segmentation/ui/audience-portal.md#import-audience).
+* Andra typer av målgrupper som kommer från andra Adobe-lösningar, till exempel [!DNL Audience Manager].
 
-![Markera kryssrutorna i steget Välj målgrupper i aktiveringsarbetsflödet.](../assets/ui/activate-streaming-profile-destinations/select-audiences.png)
+![Bild som markerar kryssrutorna i steget Välj målgrupper i aktiveringsarbetsflödet.](../assets/ui/activate-streaming-profile-destinations/select-audiences.png)
 
 ## Välj profilattribut {#select-attributes}
 
-I **[!UICONTROL Mapping]** markerar du de profilattribut som du vill skicka till målmålet.
+I steget **[!UICONTROL Mapping]** väljer du de profilattribut som du vill skicka till målmålet.
 
-1. I **[!UICONTROL Select attributes]** sida, markera **[!UICONTROL Add new field]**.
+1. Välj **[!UICONTROL Add new field]** på sidan **[!UICONTROL Select attributes]**.
 
    ![Bild som markerar kontrollen Lägg till nytt fält i mappningssteget.](../assets/ui/activate-streaming-profile-destinations/add-new-field.png)
 
-1. Markera pilen till höger om **[!UICONTROL Schema field]** post.
+1. Markera pilen till höger om posten **[!UICONTROL Schema field]**.
 
-   ![Bilden visar hur du väljer ett källfält i mappningssteget.](../assets/ui/activate-streaming-profile-destinations/select-schema-field.png)
+   ![Bild som visar hur du väljer ett källfält i mappningssteget.](../assets/ui/activate-streaming-profile-destinations/select-schema-field.png)
 
-1. I **[!UICONTROL Select field]** väljer du de XDM-attribut som du vill skicka till målet och väljer **[!UICONTROL Select]**.
+1. På sidan **[!UICONTROL Select field]** markerar du de XDM-attribut som du vill skicka till målet och väljer sedan **[!UICONTROL Select]**.
 
-   ![Bild som visar ett urval av XDM-fält som du kan välja som källfält.](../assets/ui/activate-streaming-profile-destinations/target-field-page.png)
+   ![Bild som visar ett urval XDM-fält som du kan välja som källfält.](../assets/ui/activate-streaming-profile-destinations/target-field-page.png)
 
 1. Om du vill lägga till fler fält upprepar du steg 1 till 3 och väljer sedan **[!UICONTROL Next]**.
 
 ## Granska {#review}
 
-På **[!UICONTROL Review]** kan du se en sammanfattning av markeringen. Välj **[!UICONTROL Cancel]** för att bryta upp flödet, **[!UICONTROL Back]** för att ändra dina inställningar, eller **[!UICONTROL Finish]** för att bekräfta ditt val och börja skicka data till målet.
+På sidan **[!UICONTROL Review]** kan du se en sammanfattning av ditt val. Välj **[!UICONTROL Cancel]** om du vill dela upp flödet, **[!UICONTROL Back]** om du vill ändra inställningarna eller **[!UICONTROL Finish]** om du vill bekräfta ditt val och börja skicka data till målet.
 
 ![Markeringssammanfattning i granskningssteget.](../assets/ui/activate-streaming-profile-destinations/review.png)
 
 ### Principutvärdering av samtycke {#consent-policy-evaluation}
 
-[Principutvärdering av samtycke](/help/data-governance/enforcement/auto-enforcement.md#consent-policy-evaluation) stöds för närvarande inte vid export till de tre företagsmålen - Amazon Kinesis, Azure Event Hubs och HTTP API.
+[Principutvärdering av samtycke](/help/data-governance/enforcement/auto-enforcement.md#consent-policy-evaluation) stöds för närvarande inte i exporter till de tre företagsmålen - Amazon Kinesis, Azure Event Hubs och HTTP API.
 
-Detta innebär att profiler som inte har samtyckt till att vara riktade *ingår* i exporten till dessa tre destinationer.
+Detta innebär att profiler som inte har samtyckt till att vara *som mål inkluderas* i exporten till dessa tre mål.
 
 <!--
 
@@ -101,7 +101,7 @@ If your organization purchased **Adobe Healthcare Shield** or **Adobe Privacy & 
 
 ### Kontroller av policyer för dataanvändning {#data-usage-policy-checks}
 
-I **[!UICONTROL Review]** Experience Platform kontrollerar också om dataanvändningspolicyn har överträtts. Nedan visas ett exempel där en princip överträds. Du kan inte slutföra arbetsflödet för målgruppsaktivering förrän du har löst överträdelsen. Mer information om hur du löser policyöverträdelser finns i [brott mot dataanvändningsprinciper](/help/data-governance/enforcement/auto-enforcement.md#data-usage-violation) i dokumentationsavsnittet för datastyrning.
+I steget **[!UICONTROL Review]** söker Experience Platform även efter överträdelser av dataanvändningsprinciper. Nedan visas ett exempel där en princip överträds. Du kan inte slutföra arbetsflödet för målgruppsaktivering förrän du har löst överträdelsen. Mer information om hur du löser policyöverträdelser finns i [brott mot dataanvändningsprinciper](/help/data-governance/enforcement/auto-enforcement.md#data-usage-violation) i dokumentationsavsnittet för datastyrning.
 
 ![dataprincipöverträdelse](../assets/common/data-policy-violation.png)
 
@@ -111,11 +111,11 @@ I det här steget kan du även använda de tillgängliga filtren på sidan för 
 
 ![Skärminspelning som visar tillgängliga målgruppsfilter i granskningssteget.](../assets/ui/activate-streaming-profile-destinations/filter-audiences-review-step.gif)
 
-Om du är nöjd med ditt val och inga policyöverträdelser har identifierats väljer du **[!UICONTROL Finish]** för att bekräfta ditt val och börja skicka data till målet.
+Om du är nöjd med ditt val och inga principöverträdelser har identifierats, markerar du **[!UICONTROL Finish]** för att bekräfta ditt val och börja skicka data till målet.
 
 ## Verifiera målgruppsaktivering {#verify}
 
-Dina exporterade [!DNL Experience Platform] i måldestinationen i JSON-format. Händelsen nedan innehåller till exempel e-postadressattributet för en profil som har kvalificerats för en viss målgrupp och avslutat en annan målgrupp. Identiteterna för den här potentiella kunden är `ECID` och `email_lc_sha256`.
+Dina exporterade [!DNL Experience Platform]-data kommer in i måldestinationen i JSON-format. Händelsen nedan innehåller till exempel e-postadressattributet för en profil som har kvalificerats för en viss målgrupp och avslutat en annan målgrupp. Identiteterna för den här potentiella kunden är `ECID` och `email_lc_sha256`.
 
 ```json
 {

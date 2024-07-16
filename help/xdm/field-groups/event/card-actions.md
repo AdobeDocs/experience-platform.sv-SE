@@ -9,9 +9,9 @@ ht-degree: 0%
 
 ---
 
-# [!UICONTROL Card Actions] schemafältgrupp
+# Schemafältgruppen [!UICONTROL Card Actions]
 
-[!UICONTROL Card Actions] är en standardgrupp för schemafält för [[!DNL XDM ExperienceEvent] class](../../classes/experienceevent.md). Fältgruppen innehåller en `personalFinances.cardActions` till ett schema, som innehåller information om en kortåtgärd som korttyp, aktiveringsstatus och låsstatus.
+[!UICONTROL Card Actions] är en standardschemafältgrupp för [[!DNL XDM ExperienceEvent] klassen](../../classes/experienceevent.md). Fältgruppen tillhandahåller ett enskilt `personalFinances.cardActions`-fält till ett schema, som samlar in information om en kortåtgärd som korttyp, aktiveringsstatus och låsstatus.
 
 ![](../../images/field-groups/card-actions.png)
 
@@ -31,4 +31,4 @@ ht-degree: 0%
 
 {style="table-layout:auto"}
 
-Mer information om fältgruppen finns i [publik XDM-databas](https://github.com/adobe/xdm/blob/master/docs/reference/fieldgroups/experience-event/experienceevent-card-actions.schema.json).
+Mer information om fältgruppen finns i [den offentliga XDM-databasen](https://github.com/adobe/xdm/blob/master/docs/reference/fieldgroups/experience-event/experienceevent-card-actions.schema.json).

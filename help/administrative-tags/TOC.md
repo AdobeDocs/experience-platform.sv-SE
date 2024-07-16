@@ -1,12 +1,12 @@
 ---
 audience: user
-user-guide-title: Enhetliga taggar i hjälpen för Adobe Experience Platform
-breadcrumb-title: Guide för enhetliga taggar
+user-guide-title: Hjälp med enhetliga taggar i Adobe Experience Platform
+breadcrumb-title: Användarhandbok om enhetliga taggar
 user-guide-description: Använd enhetliga taggar för att hantera metadata-taxonomier. Lär dig hur du skapar taggkategorier och taggar.
 source-git-commit: cc8e7074eafae11887486b0cec54154d96eb5a5c
 workflow-type: tm+mt
 source-wordcount: '45'
-ht-degree: 8%
+ht-degree: 64%
 
 ---
 

@@ -18,6 +18,6 @@ ht-degree: 0%
 
 I den här videon får du en snabb introduktion till Experience Platform och en översikt över några av de affärsutmaningar som det löser.
 
-Om du vill veta mer börjar du med att läsa [Experience Platform - översikt](../home.md).
+Börja med att läsa översikten [Experience Platform](../home.md) om du vill veta mer.
 
 >[!VIDEO](https://video.tv.adobe.com/v/32797?quality=12&learn=on)

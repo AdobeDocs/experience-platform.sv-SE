@@ -11,24 +11,24 @@ ht-degree: 0%
 
 ---
 
-# [!UICONTROL Telecom Subscription] schemafältgrupp
+# Schemafältgruppen [!UICONTROL Telecom Subscription]
 
 >[!NOTE]
 >
->Namnen på flera schemafältgrupper har ändrats. Visa dokumentet på [uppdaterar fältgruppnamn](../name-updates.md) för mer information.
+>Namnen på flera schemafältgrupper har ändrats. Mer information finns i dokumentet om [uppdatering av fältgruppnamn](../name-updates.md).
 
-[!UICONTROL Telecom Subscription] är en standardgrupp för schemafält för [[!DNL XDM Individual Profile] class](../../classes/individual-profile.md) som beskriver en kunds prenumerationsplan för telekom, inklusive priser, paket och enskilda produktprenumerationer.
+[!UICONTROL Telecom Subscription] är en standardschemafältgrupp för [[!DNL XDM Individual Profile] klassen](../../classes/individual-profile.md) som beskriver en kunds telefonabonnemang, inklusive priser, paket och enskilda produktprenumerationer.
 
-Fältgruppen innehåller ett enda fält av objekttyp, `telecomSubscription`, vars egenskaper beskrivs nedan.
+Fältgruppen innehåller ett enskilt fält av objekttyp, `telecomSubscription`, vars egenskaper beskrivs nedan.
 
 ![Telecom Subscription structure](../../images/field-groups/telecom-subscription/structure.png)
 
 | Egenskap | Datatyp | Beskrivning |
 | --- | --- | --- |
-| `internetSubscription` | Array med objekt | Beskriver information om prenumerationsplaner för Internet, t.ex. databegränsning, anslutningstyp och hastighetsinformation. Se [avsnitt nedan](#internetSubscription) för mer information. |
-| `landlineSubscription` | Array med objekt | Beskriver information om prenumeration på fast linje, inklusive valda funktioner, minuter och uppringningsplaner. Se [avsnitt nedan](#landlineSubscription) för mer information. |
-| `mediaSubscription` | Array med objekt | Beskriver information om prenumerationsplaner för media, inklusive antalet kanaler och inkluderade direktuppspelningstjänster. Se [avsnitt nedan](#mediaSubscription) för mer information. |
-| `mobileSubscription` | Array med objekt | Beskriver information om prenumerationsplaner för mobila enheter, inklusive antal rader, datahastigheter, kostnad och mycket mer. Se [avsnitt nedan](#mobileSubscription) för mer information. |
+| `internetSubscription` | Array med objekt | Beskriver information om prenumerationsplaner för Internet, t.ex. databegränsning, anslutningstyp och hastighetsinformation. Mer information finns i avsnittet [nedan](#internetSubscription). |
+| `landlineSubscription` | Array med objekt | Beskriver information om prenumeration på fast linje, inklusive valda funktioner, minuter och uppringningsplaner. Mer information finns i avsnittet [nedan](#landlineSubscription). |
+| `mediaSubscription` | Array med objekt | Beskriver information om prenumerationsplaner för media, inklusive antalet kanaler och inkluderade direktuppspelningstjänster. Mer information finns i avsnittet [nedan](#mediaSubscription). |
+| `mobileSubscription` | Array med objekt | Beskriver information om prenumerationsplaner för mobila enheter, inklusive antal rader, datahastigheter, kostnad och mycket mer. Mer information finns i avsnittet [nedan](#mobileSubscription). |
 | `primarySubscriber` | [[!UICONTROL Person]](../../data-types/person.md) | Beskriver prenumerationens ägare. |
 | `bundleName` | Sträng | Hämtar namnet på alla typer av prenumerationspaket där kunden är registrerad, till exempel `Internet + Media`. |
 | `primaryPartyID` | Sträng | En identifierare för den primära person som ansvarar för prenumerationen, som vanligtvis kan vara enhetens telefonnummer. |
@@ -42,9 +42,9 @@ Mer information om fältgruppen finns i den offentliga XDM-databasen:
 
 ## `internetSubscription` {#internetSubscription}
 
-`internetSubscription` anges som en array med objekt. Strukturen för varje objekt beskrivs nedan.
+`internetSubscription` tillhandahålls som en array med objekt. Strukturen för varje objekt beskrivs nedan.
 
-![internetSubscription](../../images/field-groups/telecom-subscription/internetSubscription.png)
+![InternetSubscription](../../images/field-groups/telecom-subscription/internetSubscription.png)
 
 | Egenskap | Datatyp | Beskrivning |
 | --- | --- | --- |
@@ -59,7 +59,7 @@ Mer information om fältgruppen finns i den offentliga XDM-databasen:
 
 ## `landlineSubscription` {#landlineSubscription}
 
-`landlineSubscription` anges som en array med objekt. Strukturen för varje objekt beskrivs nedan.
+`landlineSubscription` tillhandahålls som en array med objekt. Strukturen för varje objekt beskrivs nedan.
 
 ![landlineSubscription](../../images/field-groups/telecom-subscription/landlineSubscription.png)
 
@@ -82,13 +82,13 @@ Mer information om fältgruppen finns i den offentliga XDM-databasen:
 
 ## `mediaSubscription` {#mediaSubscription}
 
-`mediaSubscription` anges som en array med objekt. Strukturen för varje objekt beskrivs nedan.
+`mediaSubscription` tillhandahålls som en array med objekt. Strukturen för varje objekt beskrivs nedan.
 
 ![mediaSubscription](../../images/field-groups/telecom-subscription/mediaSubscription.png)
 
 | Egenskap | Datatyp | Beskrivning |
 | --- | --- | --- |
-| `streamingServices` | Array med objekt | En lista över alla direktuppspelningstjänster som ingår i prenumerationen. Varje arrayobjekt innehåller följande egenskaper: <ul><li>`promotionLength`: Kampanjens längd, i månader, om direktuppspelningstjänsten lades till som en del av en kampanj.</li><li>`promotionalAddition`: Anger om direktuppspelningstjänsten lades till som en del av en befordran.</li><li>`serviceName`: Strömningstjänstens namn.</li></ul> |
+| `streamingServices` | Array med objekt | En lista över alla direktuppspelningstjänster som ingår i prenumerationen. Varje arrayobjekt innehåller följande egenskaper: <ul><li>`promotionLength`: Kampanjens längd, i månader, om direktuppspelningstjänsten lades till som en del av en befordran.</li><li>`promotionalAddition`: Anger om direktuppspelningstjänsten har lagts till som en del av en befordran.</li><li>`serviceName`: Namnet på direktuppspelningstjänsten.</li></ul> |
 | `subscriptionDetails` | [[!UICONTROL Telecom Subscription]](../../data-types/telecom-subscription.md) | Beskriver allmän information om prenumerationen, inklusive prenumerationslängd, avgifter, status med mera. |
 | `channels` | Heltal | Antalet kanaler som ingår i medieprenumerationen. |
 
@@ -96,7 +96,7 @@ Mer information om fältgruppen finns i den offentliga XDM-databasen:
 
 ## `mobileSubscription` {#mobileSubscription}
 
-`mobileSubscription` anges som en array med objekt. Strukturen för varje objekt beskrivs nedan.
+`mobileSubscription` tillhandahålls som en array med objekt. Strukturen för varje objekt beskrivs nedan.
 
 ![mobileSubscription](../../images/field-groups/telecom-subscription/mobileSubscription.png)
 

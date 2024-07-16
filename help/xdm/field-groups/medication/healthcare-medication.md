@@ -9,15 +9,15 @@ ht-degree: 0%
 
 ---
 
-# [!UICONTROL Healthcare medication] schemafältgrupp
+# Schemafältgruppen [!UICONTROL Healthcare medication]
 
-[!UICONTROL Healthcare medication] är en standardgrupp för schemafält för [[!UICONTROL Medication] class](../../classes/medication.md). Det innehåller ett enda objekttypsfält `medication` som innehåller information om t.ex. varumärkesnamn, partinummer och kvantitet.
+[!UICONTROL Healthcare medication] är en standardschemafältgrupp för klassen [[!UICONTROL Medication] ](../../classes/medication.md). Det innehåller ett enskilt objekttypsfält `medication` som samlar in information som varumärkesnamn, partinummer och kvantitet.
 
 ![](../../images/field-groups/healthcare-medication.png)
 
 | Egenskap | Datatyp | Beskrivning |
 | --- | --- | --- |
-| `ingredients` | Array med objekt | Listar ingredienserna som finns i medicinen. Varje objekt innehåller följande egenskaper: <ul><li>`isActive`: (Boolean) Anger om denna ingrediens fortfarande används aktivt i detta läkemedel.</li><li>`name`: (String) Namnet på komponenten.</li><li>`quantity`: (String) Mängden av ingrediensen som ingår i medicineringen.</li></ul> |
+| `ingredients` | Array med objekt | Listar ingredienserna som finns i medicinen. Varje objekt innehåller följande egenskaper: <ul><li>`isActive`: (Boolean) Anger om den här ingrediensen fortfarande används aktivt i det här läkemedlet.</li><li>`name`: (String) Namnet på komponenten.</li><li>`quantity`: (String) Mängden ingrediens som finns i medicineringen.</li></ul> |
 | `brandName` | Sträng | Läkemedlets varumärke. |
 | `codes` | Array med strängar | En lista med koder som identifierar detta läkemedel. |
 | `dosageUnitNumber` | Dubbel | Dosenhetsnumret för läkemedlet. |
@@ -32,4 +32,4 @@ ht-degree: 0%
 
 {style="table-layout:auto"}
 
-Mer information om fältgruppen finns i [publik XDM-databas](https://github.com/adobe/xdm/blob/master/components/fieldgroups/medication/healthcare-medication.schema.json).
+Mer information om fältgruppen finns i [den offentliga XDM-databasen](https://github.com/adobe/xdm/blob/master/components/fieldgroups/medication/healthcare-medication.schema.json).

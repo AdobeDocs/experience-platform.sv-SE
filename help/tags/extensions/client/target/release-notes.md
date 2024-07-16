@@ -4,8 +4,8 @@ description: Den senaste versionsinformationen om taggtillägget Adobe Target i 
 exl-id: ba29f614-c3cd-4e0b-b043-2b1c17567def
 source-git-commit: 88939d674c0002590939004e0235d3da8b072118
 workflow-type: tm+mt
-source-wordcount: '520'
-ht-degree: 3%
+source-wordcount: '578'
+ht-degree: 0%
 
 ---
 
@@ -13,20 +13,20 @@ ht-degree: 3%
 
 >[!NOTE]
 >
->Adobe Experience Platform Launch har omklassificerats som en serie datainsamlingstekniker i Adobe Experience Platform. Som ett resultat av detta har flera terminologiska förändringar införts i produktdokumentationen. Se följande [dokument](../../../term-updates.md) för en konsoliderad hänvisning till terminologiska förändringar.
+>Adobe Experience Platform Launch har omklassificerats som en serie datainsamlingstekniker i Adobe Experience Platform. Som ett resultat av detta har flera terminologiska förändringar införts i produktdokumentationen. I följande [dokument](../../../term-updates.md) finns en konsoliderad referens till de ändrade terminologin.
 
 ## 16 september 2021
 
 ### Adobe Target Extension 0.11.4
 
 * Uppdaterat till at.js v1.8.3
-* Tillagd `SameSite=None` och `Secure` attribut när cookies anges
+* `SameSite=None`- och `Secure`-attribut har lagts till när cookies anges
 
 ## 24 juli 2020
 
 ### Adobe Target Extension 0.11.3
 
-* Korrigerade ett fel när tillägget misslyckas om ett skript eller en kod läggs till `default` egenskapen till `window` eller `document`
+* Korrigerade ett fel när tillägget misslyckas om ett skript eller en kod lägger till egenskapen `default` i `window` eller `document`
 
 ## 15 juni 2020
 
@@ -58,11 +58,11 @@ ht-degree: 3%
 
 * Programfix för parametrar som hanterar taggtillägget för Adobe Target
 
-## 4 maj 2019
+## 4 maj 2019
 
 ### Adobe Target Extension 0.10.0
 
-* Ett dataelementproblem som orsakades av de senaste Google Chrome-ändringarna har korrigerats
+* Ett dataelementproblem som orsakades av de senaste ändringarna i Google Chrome har korrigerats
 
 ## 14 mars 2019
 
@@ -114,7 +114,7 @@ ht-degree: 3%
 ### Adobe Target Extension 0.7.2
 
 * Mindre ändringar
-* Uppdaterade `exchangeUrl` -egenskapen i `extension.json` fil
+* Egenskapen `exchangeUrl` i filen `extension.json` har uppdaterats
 
 ## 1 augusti 2018
 
@@ -143,7 +143,7 @@ ht-degree: 3%
 
 #### **Funktioner**
 
-* Adobe Exchange-listan har lagts till i extension.json
+* Listan Adobe Exchange har lagts till i extension.json
 * Tillagda kontroller för att se om Target är inaktiverat och om Authoring är aktiverat
 
 #### **Felkorrigeringar**

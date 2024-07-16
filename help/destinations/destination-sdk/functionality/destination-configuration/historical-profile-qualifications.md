@@ -5,7 +5,7 @@ exl-id: 8880cff9-865b-4d45-a24d-a78e77419670
 source-git-commit: 82ba4e62d5bb29ba4fef22c5add864a556e62c12
 workflow-type: tm+mt
 source-wordcount: '214'
-ht-degree: 1%
+ht-degree: 0%
 
 ---
 
@@ -13,11 +13,11 @@ ht-degree: 1%
 
 Alla destinationer som skapas via Destination SDK har som standard stöd för historiska profilkvalifikationer. Det innebär att när användarna först ställer in ett aktiveringsdataflöde för destinationerna innehåller den första exporten alla målgrupper som någonsin kvalificerat sig för det segmentet.
 
-Det här beteendet definieras av `"backfillHistoricalProfileData":true` -parametern i målkonfigurationen.
+Detta beteende definieras av parametern `"backfillHistoricalProfileData":true` i målkonfigurationen.
 
 >[!IMPORTANT]
 >
->Historiska profilkvalifikationer aktiveras för alla destinationer som skapas via Destinationen SDK och `backfillHistoricalProfileData` parametern kan inte konfigureras av användaren.
+>Historiska profilkvalifikationer är aktiverade för alla mål som skapats via Destination SDK och parametern `backfillHistoricalProfileData` är inte användarkonfigurerbar.
 
 ## Integrationstyper som stöds {#supported-integration-types}
 

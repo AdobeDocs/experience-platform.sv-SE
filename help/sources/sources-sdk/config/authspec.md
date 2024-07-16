@@ -5,8 +5,8 @@ description: Det här dokumentet innehåller en översikt över de konfiguration
 exl-id: 68ed22fe-1f22-46d2-9d58-72ad8a9e6b98
 source-git-commit: b66a50e40aaac8df312a2c9a977fb8d4f1fb0c80
 workflow-type: tm+mt
-source-wordcount: '518'
-ht-degree: 1%
+source-wordcount: '522'
+ht-degree: 0%
 
 ---
 
@@ -14,7 +14,7 @@ ht-degree: 1%
 
 Autentiseringsspecifikationer definierar hur Adobe Experience Platform-användare kan ansluta till din källa.
 
-The `authSpec` arrayen innehåller information om de autentiseringsparametrar som krävs för att ansluta en källa till plattformen. Alla angivna källor har stöd för flera olika typer av autentisering.
+Arrayen `authSpec` innehåller information om de autentiseringsparametrar som krävs för att ansluta en källa till plattformen. Alla angivna källor har stöd för flera olika typer av autentisering.
 
 ## Autentiseringsspecifikationer
 
@@ -181,7 +181,7 @@ Grundläggande autentisering är en autentiseringstyp som gör att du kan komma 
 
 ## Exempel på autentiseringsspecifikation
 
-Följande är ett exempel på en slutförd autentiseringsspecifikation som använder en [[!DNL MailChimp Members]](../../tutorials/api/create/marketing-automation/mailchimp-members.md) källa.
+Följande är ett exempel på en slutförd autentiseringsspecifikation som använder en [[!DNL MailChimp Members]](../../tutorials/api/create/marketing-automation/mailchimp-members.md)-källa.
 
 ```json
   "authSpec": [
@@ -237,4 +237,4 @@ Följande är ett exempel på en slutförd autentiseringsspecifikation som anvä
 
 ## Nästa steg
 
-När autentiseringsspecifikationerna är ifyllda kan du fortsätta att konfigurera källspecifikationerna för den källa som du vill integrera med plattformen. Visa dokumentet på [konfigurera källspecifikationer](./sourcespec.md) för mer information.
+När autentiseringsspecifikationerna är ifyllda kan du fortsätta att konfigurera källspecifikationerna för den källa som du vill integrera med plattformen. Mer information finns i dokumentet om [konfigurering av källspecifikationer](./sourcespec.md).

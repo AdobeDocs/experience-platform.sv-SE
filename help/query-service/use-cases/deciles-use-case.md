@@ -25,12 +25,12 @@ Följande viktiga begrepp visas:
 
 ## Komma igång
 
-Den här guiden kräver en fungerande förståelse av [frågekörning i frågetjänsten](../best-practices/writing-queries.md) och följande komponenter i Adobe Experience Platform:
+Guiden kräver en fungerande förståelse av [frågekörningen i Query Service](../best-practices/writing-queries.md) och följande komponenter i Adobe Experience Platform:
 
-* [Översikt över kundprofiler i realtid](../../profile/home.md): Ger en enhetlig konsumentprofil i realtid baserad på aggregerade data från flera källor.
-* [Grunderna för schemakomposition](../../xdm/schema/composition.md): En introduktion till XDM-scheman (Experience Data Model) och byggstenar, principer och bästa praxis för dispositionsscheman.
+* [Kundprofilöversikt i realtid](../../profile/home.md): Tillhandahåller en enhetlig kundprofil i realtid baserad på aggregerade data från flera källor.
+* [Grunderna för schemakomposition](../../xdm/schema/composition.md): En introduktion till XDM-scheman (Experience Data Model) och byggstenarna, principerna och de bästa sätten att komponera scheman.
 * [Så här aktiverar du ett schema för kundprofil i realtid](../../profile/tutorials/add-profile-data.md): I den här självstudien beskrivs de steg som krävs för att lägga till data i kundprofilen i realtid.
-* [Definiera en anpassad datatyp](../../xdm/api/data-types.md): Datatyper används som referenstypfält i klasser eller schemafältgrupper och gör det möjligt att konsekvent använda en flerfältstruktur som kan inkluderas var som helst i schemat.
+* [Så här definierar du en anpassad datatyp](../../xdm/api/data-types.md): Datatyper används som referenstypfält i klasser eller schemafältgrupper och möjliggör konsekvent användning av en flerfältstruktur som kan inkluderas var som helst i schemat.
 
 ## Mål
 
@@ -46,17 +46,17 @@ I den här guiden används en datauppsättning om flygbolagets lojalitet för at
 
 Med hjälp av frågetjänsten kan du skapa en datauppsättning som innehåller kategoriserade decilar, som sedan kan segmenteras för att skapa målgrupper baserat på attribueringsrankning. De begrepp som visas i följande exempel kan användas för att skapa andra datauppsättningar med decimalintervall, så länge som en kategori definieras och ett mätvärde är tillgängligt.
 
-I exemplet med flygbolagets lojalitetsdata används en [Klassen XDM ExperienceEvents](../../xdm/classes/experienceevent.md). Varje händelse är ett kvitto på en affärstransaktion för milage, antingen krediterad eller debiterad, och medlemskapets lojalitetsstatus för antingen &quot;Flyer&quot;, &quot;Frequent&quot;, &quot;Silver&quot; eller &quot;Gold&quot;. Det primära identitetsfältet är `membershipNumber`.
+I exemplet med flygbolagets lojalitetsdata används en [XDM ExperienceEvents-klass](../../xdm/classes/experienceevent.md). Varje händelse är ett kvitto på en affärstransaktion för milage, antingen krediterad eller debiterad, och medlemskapets lojalitetsstatus för antingen &quot;Flyer&quot;, &quot;Frequent&quot;, &quot;Silver&quot; eller &quot;Gold&quot;. Det primära identitetsfältet är `membershipNumber`.
 
 ### Exempeldatauppsättningar
 
 Den första datamängden för flygbolagets lojalitet i det här exemplet är&quot;Airline Loyalty Data&quot; och har följande schema. Observera att schemats primära identitet är `_profilefoundationreportingstg.membershipNumber`.
 
-![Ett diagram över Airline Loyalty Data-schemat.](../images/use-cases/airline-loyalty-data.png)
+![Ett diagram över Airline-schemat för lojalitetsdata.](../images/use-cases/airline-loyalty-data.png)
 
 **Exempeldata**
 
-I följande tabell visas exempeldata i `_profilefoundationreportingstg` som används för det här exemplet. Den ger kontext för användning av decimalluckor för att skapa komplexa härledda datauppsättningar.
+I följande tabell visas exempeldata i objektet `_profilefoundationreportingstg` som används i det här exemplet. Den ger kontext för användning av decimalluckor för att skapa komplexa härledda datauppsättningar.
 
 >[!NOTE]
 >
@@ -74,31 +74,31 @@ I följande tabell visas exempeldata i `_profilefoundationreportingstg` som anv�
 
 ## Generera decimaldatauppsättningar
 
-I de data om flygbolagets lojalitet som visas ovan `.mileage` Värdet anger antalet engelska mil som en medlem flyger med för varje enskild flygning som utförs. Dessa data används för att skapa deciler för antalet engelska mil som flugit över livslängdslookback och en mängd olika lookback-perioder. För detta ändamål skapas en datauppsättning som innehåller deciler i en kartdatatyp för varje uppslagsperiod och en lämplig decimal för varje uppslagsperiod som tilldelas enligt `membershipNumber`.
+I de data om flygbolagets lojalitet som visas ovan innehåller värdet `.mileage` antalet engelska mil som en medlem har följt för varje enskild flygning som utförs. Dessa data används för att skapa deciler för antalet engelska mil som flugit över livslängdslookback och en mängd olika lookback-perioder. Därför skapas en datauppsättning som innehåller deciler i en mappningsdatatyp för varje uppslagsperiod och en lämplig decimal för varje uppslagsperiod som tilldelats under `membershipNumber`.
 
 Skapa ett&quot;Airline Loyalty Decile Schema&quot; om du vill skapa en decimaldatauppsättning med hjälp av Query Service.
 
-![Ett diagram över&quot;Airline Loyalty Decile Schema&quot;.](../images/use-cases/airline-loyalty-decile-schema.png)
+![Ett diagram över &quot;Airline Loyalty Decile Schema&quot;.](../images/use-cases/airline-loyalty-decile-schema.png)
 
 ### Aktivera schemat för kundprofil i realtid
 
-Data som hämtas in till Experience Platform för användning av kundprofilen i realtid måste överensstämma med [ett XDM-schema (Experience Data Model) som är aktiverat för profilen](../../xdm/ui/resources/schemas.md). För att ett schema ska kunna aktiveras för profilen måste det implementera antingen klassen XDM Individual Profile eller klassen XDM ExperienceEvent.
+Data som hämtas till Experience Platform för användning av kundprofilen i realtid måste överensstämma med [ett XDM-schema (Experience Data Model) som är aktiverat för profilen ](../../xdm/ui/resources/schemas.md). För att ett schema ska kunna aktiveras för profilen måste det implementera antingen klassen XDM Individual Profile eller klassen XDM ExperienceEvent.
 
-[Aktivera schemat för användning i kundprofilen i realtid med API:t för schemaregister](../../xdm/tutorials/create-schema-api.md) eller [Användargränssnittet i Schemaredigeraren](../../xdm/tutorials/create-schema-ui.md).  Detaljerade anvisningar om hur du aktiverar ett schema för profil finns i deras respektive dokumentation.
+[Aktivera ditt schema för användning i kundprofilen i realtid med API:t för schemaregister](../../xdm/tutorials/create-schema-api.md) eller användargränssnittet för [Schemaredigeraren](../../xdm/tutorials/create-schema-ui.md).  Detaljerade anvisningar om hur du aktiverar ett schema för profil finns i deras respektive dokumentation.
 
 Skapa sedan en datatyp som ska återanvändas för alla decimalrelaterade fältgrupper. Skapandet av decimalfältgruppen är ett steg per sandlåda. Den kan också återanvändas för alla decimalrelaterade scheman.
 
 ### Skapa ett identitetsnamnutrymme och markera det som primär identifierare {#identity-namespace}
 
-Alla scheman som skapas för användning med deciler måste ha en primär identitet tilldelad. Du kan [definiera ett identitetsfält i användargränssnittet för Adobe Experience Platform-scheman](../../xdm/ui/fields/identity.md#define-an-identity-field)eller genom [API för schemaregister](../../xdm/api/descriptors.md#create).
+Alla scheman som skapas för användning med deciler måste ha en primär identitet tilldelad. Du kan [definiera ett identitetsfält i Adobe Experience Platform Schemas-gränssnittet](../../xdm/ui/fields/identity.md#define-an-identity-field) eller via [API:t för schemaregister](../../xdm/api/descriptors.md#create).
 
-Med frågetjänsten kan du även ange en identitet eller en primär identitet för ad hoc-schemadatauppsättningsfält direkt via SQL. Läs dokumentationen om [ange en sekundär identitet och primär identitet i ad hoc-schemaidentiteter](../data-governance/ad-hoc-schema-identities.md) för mer information.
+Med frågetjänsten kan du även ange en identitet eller en primär identitet för ad hoc-schemadatauppsättningsfält direkt via SQL. Mer information finns i dokumentationen om [att ange en sekundär identitet och primär identitet i ad hoc-schemaidentiteter](../data-governance/ad-hoc-schema-identities.md).
 
 ### Skapa en fråga för att beräkna decimaler över en uppslagsperiod {#create-a-query}
 
 I följande exempel visas SQL-frågan för att beräkna en decimal över en uppslagsperiod.
 
-En mall kan skapas antingen med hjälp av Frågeredigeraren i användargränssnittet eller via [API för frågetjänst](../api/query-templates.md#create-a-query-template).
+En mall kan skapas antingen med hjälp av frågeredigeraren i användargränssnittet eller med [API:t för frågetjänsten](../api/query-templates.md#create-a-query-template).
 
 ```sql
 CREATE TABLE AS airline_loyality_decile 
@@ -212,11 +212,11 @@ summed_miles_1 AS (
 
 Blocket upprepas två gånger i mallen (`summed_miles_3` och `summed_miles_6`) med en ändring i datumberäkningen för att generera data för de andra uppslagsperioderna.
 
-Det är viktigt att notera identitets-, dimension- och måttkolumnerna för frågan (`membershipNumber`, `loyaltyStatus` och `totalMiles` respektive).
+Det är viktigt att notera identitets-, dimension- och måttkolumnerna för frågan (`membershipNumber`, `loyaltyStatus` respektive `totalMiles`).
 
 #### Rankning
 
-Med Deciles kan du utföra kategoriserad bucketning. Om du vill skapa ett rangordningsnummer väljer du `NTILE` -funktionen används med en parameter för `10` i ett FÖNSTER grupperat efter `loyaltyStatus` fält. Detta resulterar i en rankning från 1 till 10. Ange `ORDER BY` -satsen i `WINDOW` till `DESC` för att säkerställa att rankningsvärdet `1` ges till **störst** mått i dimensionen.
+Med Deciles kan du utföra kategoriserad bucketning. Om du vill skapa rangordningsnumret används funktionen `NTILE` med parametern `10` i ett WINDOW som grupperas i fältet `loyaltyStatus`. Detta resulterar i en rankning från 1 till 10. Ange `ORDER BY`-satsen för `WINDOW` till `DESC` för att säkerställa att ett rangordningsvärde på `1` ges till det **största**-måttet i dimensionen.
 
 ```sql
 rankings_1 AS (
@@ -230,7 +230,7 @@ rankings_1 AS (
 
 #### Kartaggregering
 
-Om du har flera uppslagsperioder måste du skapa en decimal-karta i förväg med `MAP_FROM_ARRAYS` och `COLLECT_LIST` funktioner. I exempelfragmentet `MAP_FROM_ARRAYS` skapar en karta med ett par tangenter (`loyaltyStatus`) och värden (`decileBucket`). `COLLECT_LIST` returnerar en array med alla värden i den angivna kolumnen.
+Om du har flera uppslagsperioder måste du skapa dekorfärgskartor i förväg med funktionerna `MAP_FROM_ARRAYS` och `COLLECT_LIST`. I exempelfragmentet skapar `MAP_FROM_ARRAYS` en karta med ett par nycklar (`loyaltyStatus`) och värden (`decileBucket`)-arrayer. `COLLECT_LIST` returnerar en array med alla värden i den angivna kolumnen.
 
 ```sql
 map_1 AS (
@@ -257,7 +257,7 @@ all_memberships AS (
 
 >[!NOTE]
 >
->Om decimalrangordning bara krävs för en livstid kan det här steget utelämnas och aggregeras med `membershipNumber` kan göras i det sista steget.
+>Om decimalrankning bara krävs för en livstid, kan det här steget utelämnas och aggregering av `membershipNumber` kan göras i det sista steget.
 
 #### Sammanfoga alla temporära data
 
@@ -295,8 +295,8 @@ Ett samband mellan rangordningsnumret och percentilen garanteras i frågeresulta
 
 ### Kör frågemallen
 
-Kör frågan för att fylla i decimaldatauppsättningen. Du kan också spara frågan som en mall och schemalägga den så att den körs vid en avslutning. När frågan sparas som en mall kan den också uppdateras för att använda mönstret för att skapa och infoga som refererar till `table_exists` -kommando. Mer information om hur du använder `table_exists`finns i [SQL-syntaxguide](../sql/syntax.md#table-exists).
+Kör frågan för att fylla i decimaldatauppsättningen. Du kan också spara frågan som en mall och schemalägga den så att den körs vid en avslutning. När frågan sparas som en mall kan den också uppdateras för att använda det mönster för att skapa och infoga som refererar till kommandot `table_exists`. Mer information om hur du använder kommandot `table_exists`finns i [SQL-syntaxguiden](../sql/syntax.md#table-exists).
 
 ## Nästa steg
 
-Exemplet visar hur man gör decimalbaserade härledda datauppsättningar tillgängliga i kundprofilen i realtid. På så sätt kan segmenteringstjänsten, antingen via ett användargränssnitt eller RESTful API, generera målgrupper baserat på dessa decimalgrupper. Se [Översikt över segmenteringstjänsten](../../segmentation/home.md) om du vill ha information om hur du skapar, utvärderar och får tillgång till segment.
+Exemplet visar hur man gör decimalbaserade härledda datauppsättningar tillgängliga i kundprofilen i realtid. På så sätt kan segmenteringstjänsten, antingen via ett användargränssnitt eller RESTful API, generera målgrupper baserat på dessa decimalgrupper. Se [Översikt över segmenteringstjänsten](../../segmentation/home.md) för mer information om hur du skapar, utvärderar och får tillgång till segment.

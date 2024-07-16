@@ -14,25 +14,25 @@ ht-degree: 0%
 
 # Slutpunkt för arbetsorder {#work-order-endpoint}
 
-The `/workorder` -slutpunkten i Data Hygiene API gör att du kan hantera begäranden om postborttagning i Adobe Experience Platform programmässigt.
+Med slutpunkten `/workorder` i API:t för datahygien kan du programmässigt hantera begäranden om postborttagning i Adobe Experience Platform.
 
 >[!IMPORTANT]
 > 
->Funktionen Ta bort post är för närvarande i betaversionen och endast tillgänglig i en **begränsad release**. Det är inte tillgängligt för alla kunder. Begäranden om postborttagning är bara tillgängliga för organisationer i den begränsade versionen.
+>Funktionen Ta bort post finns för närvarande i Beta och är endast tillgänglig i en **begränsad version**. Det är inte tillgängligt för alla kunder. Begäranden om postborttagning är bara tillgängliga för organisationer i den begränsade versionen.
 >
->Borttagning av poster ska användas för datarensning, borttagning av anonyma data eller datamängning. De är **not** som ska användas för förfrågningar om registrerade rättigheter (överensstämmelse) som rör sekretessbestämmelser som den allmänna dataskyddsförordningen (GDPR). För all användning av regelefterlevnad [Adobe Experience Platform Privacy Service](../../privacy-service/home.md) i stället.
+>Borttagning av poster ska användas för datarensning, borttagning av anonyma data eller datamängning. De **får inte** användas för förfrågningar om rättigheter för registrerade (efterlevnad) som gäller sekretessbestämmelser som den allmänna dataskyddsförordningen (GDPR). Använd [Adobe Experience Platform Privacy Service](../../privacy-service/home.md) i stället för alla kompatibilitetsfall.
 
 ## Komma igång
 
-Slutpunkten som används i den här guiden är en del av API:t för datahygien. Innan du fortsätter bör du granska [översikt](./overview.md) för länkar till relaterad dokumentation, en guide till hur du läser exempelanrop till API:er i det här dokumentet och viktig information om vilka huvuden som behövs för att kunna anropa ett Experience Platform-API.
+Slutpunkten som används i den här guiden är en del av API:t för datahygien. Innan du fortsätter bör du gå igenom [översikten](./overview.md) och se om det finns länkar till relaterad dokumentation, en guide till hur du läser exempel-API-anrop i det här dokumentet samt viktig information om vilka huvuden som krävs för att anropa ett Experience Platform-API.
 
 ## Skapa en begäran om postborttagning {#create}
 
-Du kan ta bort en eller flera identiteter från en enskild datauppsättning eller alla datauppsättningar genom att göra en POST-förfrågan till `/workorder` slutpunkt.
+Du kan ta bort en eller flera identiteter från en enskild datauppsättning eller alla datauppsättningar genom att göra en POST-förfrågan till slutpunkten `/workorder`.
 
 >[!IMPORTANT]
 > 
->Det finns olika gränser för det totala antalet unika ID-postborttagningar som kan skickas varje månad. Dessa begränsningar baseras på ditt licensavtal. Organisationer som har köpt alla utgåvor av Adobe Real-time Customer Data Platform och Adobe Journey Optimizer kan skicka in upp till 100 000 identitetspostborttagningar varje månad. Organisationer som har köpt **Adobe Healthcare Shield** eller **Adobe Privacy &amp; Security Shield** kan skicka in upp till 600 000 identitetsposter som tas bort varje månad.<br>En enstaka [posta borttagningsbegäran via användargränssnittet](../ui/record-delete.md) kan du skicka 10 000 ID:n åt gången. API-metoden för att ta bort poster tillåter att 100 000 ID:n skickas samtidigt.<br>Det är en god vana att skicka så många ID:n som möjligt per begäran, upp till din ID-gräns. Om du tänker ta bort en stor mängd ID:n bör du inte skicka in en låg volym eller ett enda ID per postborttagningsbegäran.
+>Det finns olika gränser för det totala antalet unika ID-postborttagningar som kan skickas varje månad. Dessa begränsningar baseras på ditt licensavtal. Organisationer som har köpt alla utgåvor av Adobe Real-time Customer Data Platform och Adobe Journey Optimizer kan skicka in upp till 100 000 identitetspostborttagningar varje månad. Organisationer som har köpt **Adobe Healthcare Shield** eller **Adobe Privacy &amp; Security Shield** kan skicka in upp till 600 000 identitetspostborttagningar varje månad.<br>En enstaka [begäran om borttagning av post via användargränssnittet](../ui/record-delete.md) gör att du kan skicka 10 000 ID:n åt gången. API-metoden för att ta bort poster tillåter att 100 000 ID:n skickas samtidigt.<br>Det är bäst att skicka så många ID:n som möjligt per begäran, upp till din ID-gräns. Om du tänker ta bort en stor mängd ID:n bör du inte skicka in en låg volym eller ett enda ID per postborttagningsbegäran.
 
 **API-format**
 
@@ -46,7 +46,7 @@ POST /workorder
 
 **Begäran**
 
-Beroende på värdet på `datasetId` som anges i nyttolasten för begäran tar API-anropet bort identiteter från alla datauppsättningar eller en enskild datauppsättning som du anger. Följande begäran tar bort tre identiteter från en specifik datauppsättning.
+Beroende på värdet för `datasetId` som anges i den begärda nyttolasten, tar API-anropet bort identiteter från alla datauppsättningar eller en enskild datauppsättning som du anger. Följande begäran tar bort tre identiteter från en specifik datauppsättning.
 
 ```shell
 curl -X POST \
@@ -86,11 +86,11 @@ curl -X POST \
 
 | Egenskap | Beskrivning |
 | --- | --- |
-| `action` | Den åtgärd som ska utföras. Värdet måste anges till `delete_identity` för radering av poster. |
-| `datasetId` | Om du tar bort från en enskild datauppsättning måste det här värdet vara ID:t för datauppsättningen i fråga. Om du tar bort från alla datauppsättningar anger du värdet till `ALL`.<br><br>Om du anger en enskild datauppsättning måste datamängdens associerade XDM-schema (Experience Data Model) ha en primär identitet definierad. Om datauppsättningen inte har någon primär identitet måste den ha en identitetskarta för att kunna ändras av en begäran om datatillägslivet.<br>Om det finns en identitetskarta finns den som ett fält på den översta nivån med namnet `identityMap`.<br>Observera att en datauppsättningsrad kan ha många identiteter i sin identitetskarta, men bara en kan markeras som primär. `"primary": true` måste inkluderas för att tvinga `id` som matchar en primär identitet. |
+| `action` | Den åtgärd som ska utföras. Värdet måste anges till `delete_identity` för postborttagningar. |
+| `datasetId` | Om du tar bort från en enskild datauppsättning måste det här värdet vara ID:t för datauppsättningen i fråga. Om du tar bort från alla datauppsättningar anger du värdet till `ALL`.<br><br>Om du anger en enskild datauppsättning måste datasetens associerade XDM-schema (Experience Data Model) ha en primär identitet definierad. Om datauppsättningen inte har någon primär identitet måste den ha en identitetskarta för att kunna ändras av en begäran om datatillägslivet.<br>Om det finns en identitetskarta kommer den att finnas som ett fält på den översta nivån med namnet `identityMap`.<br>Observera att en datauppsättningsrad kan ha många identiteter i sin identitetskarta, men bara en kan markeras som primär. `"primary": true` måste inkluderas för att `id` ska matcha en primär identitet. |
 | `displayName` | Visningsnamnet för postborttagningsbegäran. |
 | `description` | En beskrivning av postborttagningsbegäran. |
-| `identities` | En array som innehåller identiteterna för minst en användare vars information du vill ta bort. Varje identitet består av en [namnutrymme för identitet](../../identity-service/features/namespaces.md) och ett värde:<ul><li>`namespace`: Innehåller en enda strängegenskap, `code`, som representerar identitetsnamnutrymmet. </li><li>`id`: Identitetsvärdet.</ul>If `datasetId` anger en enda datauppsättning, varje enhet under `identities` måste använda samma identitetsnamnutrymme som schemats primära identitet.<br><br>If `datasetId` är inställd på `ALL`, `identities` arrayen är inte begränsad till ett enda namnutrymme eftersom varje datamängd kan vara olika. Dina förfrågningar är dock fortfarande begränsade till de namnutrymmen som är tillgängliga för din organisation, enligt rapporter från [Identitetstjänst](https://developer.adobe.com/experience-platform-apis/references/identity-service/#operation/getIdNamespaces). |
+| `identities` | En array som innehåller identiteterna för minst en användare vars information du vill ta bort. Varje identitet består av ett [ID-namnområde](../../identity-service/features/namespaces.md) och ett värde:<ul><li>`namespace`: Innehåller en enda strängegenskap, `code`, som representerar identitetsnamnutrymmet. </li><li>`id`: Identitetsvärdet.</ul>Om `datasetId` anger en enskild datauppsättning måste varje entitet under `identities` använda samma identitetsnamnutrymme som schemats primära identitet.<br><br>Om `datasetId` är `ALL` begränsas inte arrayen `identities` till ett enda namnutrymme eftersom varje datauppsättning kan vara olika. Dina förfrågningar är dock fortfarande begränsade till de namnutrymmen som är tillgängliga för din organisation, vilket rapporteras av [identitetstjänsten](https://developer.adobe.com/experience-platform-apis/references/identity-service/#operation/getIdNamespaces). |
 
 {style="table-layout:auto"}
 
@@ -130,7 +130,7 @@ Ett godkänt svar returnerar informationen om postborttagningen.
 
 ## Hämta status för en postborttagning {#lookup}
 
-Efter dig [skapa en begäran om radering av post](#create)kan du kontrollera status med hjälp av en GET-förfrågan.
+När du har [skapat en begäran om postborttagning](#create) kan du kontrollera dess status med hjälp av en GET-begäran.
 
 **API-format**
 
@@ -140,7 +140,7 @@ GET /workorder/{WORK_ORDER_ID}
 
 | Parameter | Beskrivning |
 | --- | --- |
-| `{WORK_ORDER_ID}` | The `workorderId` av den post som du letar upp. |
+| `{WORK_ORDER_ID}` | `workorderId` för den post som du letar upp tas bort. |
 
 {style="table-layout:auto"}
 
@@ -207,7 +207,7 @@ Ett godkänt svar returnerar information om borttagningsåtgärden, inklusive de
 
 ## Uppdatera en begäran om radering av post
 
-Du kan uppdatera `displayName` och `description` om du vill ta bort en post genom att göra en PUT-begäran.
+Du kan uppdatera `displayName` och `description` för en postborttagning genom att göra en PUT-begäran.
 
 **API-format**
 
@@ -217,7 +217,7 @@ PUT /workorder{WORK_ORDER_ID}
 
 | Parameter | Beskrivning |
 | --- | --- |
-| `{WORK_ORDER_ID}` | The `workorderId` av den post som du letar upp. |
+| `{WORK_ORDER_ID}` | `workorderId` för den post som du letar upp tas bort. |
 
 {style="table-layout:auto"}
 

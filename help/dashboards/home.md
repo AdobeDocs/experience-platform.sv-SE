@@ -22,9 +22,9 @@ Instrumentpaneler ger användningsklara rapporter om organisationens data och ä
 
 ## Komma igång med instrumentpaneler
 
-Om du vill visa och hantera kontrollpaneler går du till **[!UICONTROL Dashboards]** i användargränssnittet för Experience Platform och välj **[!UICONTROL Browse]** -fliken för att komma åt instrumentpanelens lager.
+Om du vill visa och hantera instrumentpaneler går du till **[!UICONTROL Dashboards]** i användargränssnittet för Experience Platform och väljer fliken **[!UICONTROL Browse]** för att komma åt instrumentpanelens lager.
 
-Du kan även komma åt kontrollpaneler genom att navigera till rätt avsnitt i användargränssnittet för den kontrollpanel som du vill visa. Om du vill visa kontrollpanelen för profiler navigerar du till **[!UICONTROL Profiles]** arbetsytan och välj **[!UICONTROL Overview]** -fliken.
+Du kan även komma åt kontrollpaneler genom att navigera till rätt avsnitt i användargränssnittet för den kontrollpanel som du vill visa. Om du vill visa kontrollpanelen för profiler går du till arbetsytan **[!UICONTROL Profiles]** och väljer fliken **[!UICONTROL Overview]**.
 
 Data i ögonblicksbilden visar data exakt som de visas vid den specifika tidpunkten när ögonblicksbilden togs. Ögonblicksbilden är alltså inte en uppskattning eller ett urval av data och instrumentpanelerna uppdateras inte i realtid.
 
@@ -34,7 +34,7 @@ Data i ögonblicksbilden visar data exakt som de visas vid den specifika tidpunk
 
 ## Instrumentpanelslager
 
-Detaljerade anvisningar om hur du använder **[!UICONTROL Dashboards]** arbetsytan för att visa alla tillgängliga instrumentpaneler finns på [lagerguide för instrumentpanel](./inventory.md).
+Detaljerade anvisningar om hur du använder arbetsytan **[!UICONTROL Dashboards]** för att visa alla tillgängliga instrumentpaneler finns i [inventeringsguiden för instrumentpanelen](./inventory.md).
 
 ## Tillgängliga instrumentpaneler
 

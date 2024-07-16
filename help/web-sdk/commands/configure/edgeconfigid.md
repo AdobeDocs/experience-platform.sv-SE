@@ -1,7 +1,8 @@
 ---
 title: edgeConfigId
 description: Fastställ det datastream-ID som du vill skicka data till.
-source-git-commit: f75dcfc945be2f45c1638bdd4d670288aef6e1e6
+exl-id: 2d709f70-c014-4868-b2f5-17e8b88343d1
+source-git-commit: 8be502c9eea67119dc537a5d63a6c71e0bff1697
 workflow-type: tm+mt
 source-wordcount: '272'
 ht-degree: 1%
@@ -10,34 +11,34 @@ ht-degree: 1%
 
 # `edgeConfigId`
 
-The `edgeConfigId` egenskap är en sträng som avgör vilken [datastream](../../../datastreams/overview.md) i Adobe Experience Platform som du vill skicka data till. Den här egenskapen krävs när du skickar data till Adobe.
+Egenskapen `edgeConfigId` är en sträng som avgör vilken [datastream](../../../datastreams/overview.md) i Adobe Experience Platform du vill skicka data till. Den här egenskapen krävs när du skickar data till Adobe.
 
 Så här hittar du ett datastream-ID:
 
-1. Logga in på [experience.adobe.com](https://experience.adobe.com) med dina Adobe ID-uppgifter.
+1. Logga in på [experience.adobe.com](https://experience.adobe.com) med dina Adobe ID-inloggningsuppgifter.
 1. Navigera till **[!UICONTROL Data Collection]** > **[!UICONTROL Datastreams]**.
-1. Använd sökfältet för att hitta det önskade dataflödet och välj sedan **[!UICONTROL Copy]** ![Kopiera](../../assets/copy.png) bredvid datastream-ID:t.
+1. Använd sökfältet för att hitta det önskade dataflödet och välj sedan **[!UICONTROL Copy]** ![Kopiera](../../assets/copy.png) bredvid dataström-ID:t.
 
 Du kan också välja önskat datastream-namn så visas det dataStream-ID:t i den högra kolumnen som du vill kopiera.
 
 ## Välj ett datastream-ID med hjälp av taggtillägget Web SDK
 
-Välj från en lista över tillgängliga datastreams eller ange ett datastream-ID direkt när [konfigurera taggtillägget](/help/tags/extensions/client/web-sdk/web-sdk-extension-configuration.md).
+Välj från en lista med tillgängliga datastreams eller ange ett datastream-ID direkt när [du konfigurerar taggtillägget](/help/tags/extensions/client/web-sdk/web-sdk-extension-configuration.md).
 
-1. Logga in på [experience.adobe.com](https://experience.adobe.com) med dina Adobe ID-uppgifter.
+1. Logga in på [experience.adobe.com](https://experience.adobe.com) med dina Adobe ID-inloggningsuppgifter.
 1. Navigera till **[!UICONTROL Data Collection]** > **[!UICONTROL Tags]**.
 1. Välj önskad taggegenskap.
-1. Navigera till **[!UICONTROL Extensions]** och sedan klicka **[!UICONTROL Configure]** på [!UICONTROL Adobe Experience Platform Web SDK] kort.
-1. Leta reda på [!UICONTROL Datastreams] väljer du sedan den metod som du vill använda för att bestämma datastream.
+1. Navigera till **[!UICONTROL Extensions]** och klicka sedan på **[!UICONTROL Configure]** på [!UICONTROL Adobe Experience Platform Web SDK]-kortet.
+1. Leta reda på avsnittet [!UICONTROL Datastreams] och välj sedan önskad metod för att bestämma datastream.
    * Om du väljer från en lista markerar du sandlådan och datastream i respektive listruta.
    * Om du anger värden anger du det önskade dataStream-ID:t.
-1. Klicka **[!UICONTROL Save]** publicera sedan ändringarna.
+1. Klicka på **[!UICONTROL Save]** och publicera sedan ändringarna.
 
 Du kan skicka data till olika datastreams för produktions-, staging- och utvecklingstaggsmiljöer.
 
-## Välj data-ID:t med JavaScript-biblioteket för Web SDK
+## Markera data-ID:t med hjälp av Web SDK JavaScript-biblioteket
 
-Ange `edgeConfigId` string-egenskap när den körs `configure` -kommando. Den här egenskapen krävs för alla Web SDK-implementeringar. Om du utelämnar den här egenskapen vet Web SDK inte vilket datastream som data ska skickas till, vilket gör att dessa data går förlorade permanent.
+Ange strängegenskapen `edgeConfigId` när du kör kommandot `configure`. Den här egenskapen krävs för alla Web SDK-implementeringar. Om du utelämnar den här egenskapen vet Web SDK inte vilket datastream som data ska skickas till, vilket gör att dessa data går förlorade permanent.
 
 ```js
 alloy("configure", {
@@ -46,4 +47,4 @@ alloy("configure", {
 });
 ```
 
-Om du konfigurerar flera instanser av Web SDK på en sida måste du konfigurera en annan `edgeConfigId` för varje instans.
+Om du konfigurerar flera instanser av Web SDK på en sida måste du konfigurera olika `edgeConfigId` för varje instans.

@@ -1,7 +1,8 @@
 ---
 title: prehideStyle
 description: Skapa en CSS-definition som gör att anpassat innehåll kan läsas in utan att det flimrar.
-source-git-commit: b6e084d2beed58339191b53d0f97b93943154f7c
+exl-id: 3693542a-69d3-4ad8-bea4-4cabf7d80563
+source-git-commit: 8be502c9eea67119dc537a5d63a6c71e0bff1697
 workflow-type: tm+mt
 source-wordcount: '252'
 ht-degree: 0%
@@ -10,27 +11,27 @@ ht-degree: 0%
 
 # `prehidingStyle`
 
-The `prehidingStyle` Med -egenskapen kan du definiera en CSS-väljare för att dölja anpassat innehåll tills det läses in. Den här egenskapen är värdefull i synkrona Web SDK-implementeringar för att undvika flimmer. Adobe rekommenderar att du använder [dölja fragment](../../personalization/manage-flicker.md) för asynkrona Web SDK-implementeringar.
+Med egenskapen `prehidingStyle` kan du definiera en CSS-väljare för att dölja anpassat innehåll tills det läses in. Den här egenskapen är värdefull i synkrona Web SDK-implementeringar för att undvika flimmer. Adobe rekommenderar att du använder [prehide-fragmentet](../../personalization/manage-flicker.md) för asynkrona Web SDK-implementeringar.
 
-CSS-väljarna som du definierar i den här egenskapen börjar dölja innehåll när du kör den första [`sendEvent`](../sendevent/overview.md) på en sida. Innehållet döljs när ett svar från Adobe tas emot, vilket vanligtvis inkluderar personaliserat innehåll. Innehållet döljs också om `sendEvent` kommandot misslyckas eller timeout inträffar.
+CSS-väljarna som du definierar i den här egenskapen börjar dölja innehåll när du kör det första [`sendEvent`](../sendevent/overview.md)-kommandot på en sida. Innehållet döljs när ett svar från Adobe tas emot, vilket vanligtvis inkluderar personaliserat innehåll. Innehållet döljs också om kommandot `sendEvent` misslyckas eller om timeout uppstår.
 
-Om du inkluderar båda `prehidingStyle` och det föregående dolda fragmentet i implementeringen, prioriterar det föregående dolda fragmentet framför den här konfigurationsegenskapen.
+Om du inkluderar både `prehidingStyle` och det föregående fragmentet i implementeringen får det föregående fragmentet högre prioritet än den här konfigurationsegenskapen.
 
 ## Dölja format med tillägget Web SDK-tagg
 
-Välj **[!UICONTROL Provide prehiding style]** knapp när [konfigurera taggtillägget](/help/tags/extensions/client/web-sdk/web-sdk-extension-configuration.md).
+Klicka på knappen **[!UICONTROL Provide prehiding style]** när du [konfigurerar taggtillägget](/help/tags/extensions/client/web-sdk/web-sdk-extension-configuration.md).
 
-1. Logga in på [experience.adobe.com](https://experience.adobe.com) med dina Adobe ID-uppgifter.
+1. Logga in på [experience.adobe.com](https://experience.adobe.com) med dina Adobe ID-inloggningsuppgifter.
 1. Navigera till **[!UICONTROL Data Collection]** > **[!UICONTROL Tags]**.
 1. Välj önskad taggegenskap.
-1. Navigera till **[!UICONTROL Extensions]** och sedan klicka **[!UICONTROL Configure]** på [!UICONTROL Adobe Experience Platform Web SDK] kort.
-1. Bläddra nedåt till [!UICONTROL Personalization] markerar du knappen **[!UICONTROL Provide prehiding style]**.
+1. Navigera till **[!UICONTROL Extensions]** och klicka sedan på **[!UICONTROL Configure]** på [!UICONTROL Adobe Experience Platform Web SDK]-kortet.
+1. Bläddra ned till avsnittet [!UICONTROL Personalization] och markera sedan knappen **[!UICONTROL Provide prehiding style]**.
 1. Den här knappen öppnar ett modalt fönster med en CSS-redigerare. Infoga önskad CSS-väljare och deklarationsblock och klicka sedan på **[!UICONTROL Save]** för att stänga det modala fönstret.
-1. Klicka **[!UICONTROL Save]** publicera ändringarna under tilläggsinställningarna.
+1. Klicka på **[!UICONTROL Save]** under tilläggsinställningarna och publicera sedan ändringarna.
 
-## Dölja format med JavaScript-biblioteket för Web SDK
+## Dölja format med hjälp av JavaScript-biblioteket för Web SDK
 
-Ange `prehidingStyle` sträng när `configure` -kommando. Om du utelämnar den här egenskapen när du konfigurerar Web SDK döljs ingenting när du kör den första `sendEvent` på en sida. Ange det här värdet till önskad CSS-väljare och deklarationsblock för synkront inlästa bibliotek.
+Ange strängen `prehidingStyle` när du kör kommandot `configure`. Om du utelämnar den här egenskapen när du konfigurerar Web SDK döljs ingenting när du kör det första `sendEvent`-kommandot på en sida. Ange det här värdet till önskad CSS-väljare och deklarationsblock för synkront inlästa bibliotek.
 
 ```js
 alloy("configure", {

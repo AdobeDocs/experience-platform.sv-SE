@@ -2,30 +2,30 @@
 keywords: Experience Platform;hem;populära ämnen
 solution: Experience Platform
 title: API-slutpunkt för mått
-description: Lär dig hur du hämtar mätvärden för observerbarhet i Experience Platform med API:t för observabilitetsinsikter.
+description: Lär dig hur du hämtar mätvärden för observerbarhet i Experience Platform med API:t för observationsinsikter.
 exl-id: 08d416f0-305a-44e2-a2b7-d563b2bdd2d2
 source-git-commit: fcd44aef026c1049ccdfe5896e6199d32b4d1114
 workflow-type: tm+mt
-source-wordcount: '1384'
+source-wordcount: '1360'
 ht-degree: 0%
 
 ---
 
 # Måttslutpunkt
 
-Mätvärden för observerbarhet ger insikt i användningsstatistik, historiska trender och resultatindikatorer för olika funktioner i Adobe Experience Platform. The `/metrics` slutpunkt i [!DNL Observability Insights API] gör att du kan hämta mätdata för organisationens aktiviteter i [!DNL Platform].
+Mätvärden för observerbarhet ger insikt i användningsstatistik, historiska trender och resultatindikatorer för olika funktioner i Adobe Experience Platform. Med slutpunkten `/metrics` i [!DNL Observability Insights API] kan du hämta mätdata för organisationens aktivitet i [!DNL Platform] programmatiskt.
 
 >[!NOTE]
 >
->Den tidigare versionen av måttslutpunkten (V1) har tagits bort. Det här dokumentet fokuserar enbart på den aktuella versionen (V2). Mer information om V1-slutpunkten för äldre implementeringar finns i [API-referens](https://www.adobe.io/experience-platform-apis/references/observability-insights/#operation/retrieveMetricsV1).
+>Den tidigare versionen av måttslutpunkten (V1) har tagits bort. Det här dokumentet fokuserar enbart på den aktuella versionen (V2). Mer information om V1-slutpunkten för äldre implementeringar finns i [API-referensen](https://www.adobe.io/experience-platform-apis/references/observability-insights/#operation/retrieveMetricsV1).
 
 ## Komma igång
 
-API-slutpunkten som används i den här guiden är en del av [[!DNL Observability Insights] API](https://www.adobe.io/experience-platform-apis/references/observability-insights/). Läs igenom [komma igång-guide](./getting-started.md) för länkar till relaterad dokumentation, en guide till hur du läser exempel-API-anrop i det här dokumentet och viktig information om vilka huvuden som behövs för att kunna ringa anrop till [!DNL Experience Platform] API.
+API-slutpunkten som används i den här guiden ingår i [[!DNL Observability Insights] API](https://www.adobe.io/experience-platform-apis/references/observability-insights/). Innan du fortsätter bör du läsa [kom igång-guiden](./getting-started.md) för att få länkar till relaterad dokumentation, en guide till hur du läser exempelanropen för API i det här dokumentet och viktig information om vilka huvuden som krävs för att kunna anropa ett [!DNL Experience Platform] -API.
 
 ## Hämta mätvärden för observerbarhet
 
-Du kan hämta mätdata genom att göra en POST-förfrågan till `/metrics` slutpunkt, ange de mått som du vill hämta i nyttolasten.
+Du kan hämta mätdata genom att göra en begäran om POST till `/metrics`-slutpunkten och ange de mätvärden som du vill hämta i nyttolasten.
 
 **API-format**
 
@@ -79,12 +79,12 @@ curl -X POST \
 | --- | --- |
 | `start` | Det tidigaste datum/den tidigaste tid från vilken mätdata ska hämtas. |
 | `end` | Det senaste datumet/den senaste tiden från vilket mätdata ska hämtas. |
-| `granularity` | Ett valfritt fält som anger tidsintervallet för att dividera mätdata med. Ett värde på `DAY` returnerar mått för varje dag mellan `start` och `end` datum, medan värdet `MONTH` skulle gruppera mätresultaten per månad i stället. När du använder det här fältet, en `downsample` Egenskapen måste också anges för att ange den aggregeringsfunktion som data ska grupperas efter. |
+| `granularity` | Ett valfritt fält som anger tidsintervallet för att dividera mätdata med. Värdet `DAY` returnerar till exempel mått för varje dag mellan `start` och `end`, medan värdet `MONTH` grupperar mätresultaten per månad i stället. När du använder det här fältet måste även en motsvarande `downsample`-egenskap anges för att ange aggregeringsfunktionen som data ska grupperas med. |
 | `metrics` | En array med objekt, en för varje mätvärde som du vill hämta. |
-| `name` | Namnet på ett mätvärde som identifieras av observabilitetsinsikter. Se [appendix](#available-metrics) om du vill ha en fullständig lista över godkända måttnamn. |
-| `filters` | Ett valfritt fält där du kan filtrera mätvärden efter specifika datauppsättningar. Fältet är en array med objekt (ett för varje filter), där varje objekt innehåller följande egenskaper: <ul><li>`name`: Den typ av entitet som mätvärden ska filtreras mot. För närvarande, endast `dataSets` stöds.</li><li>`value`: ID för en eller flera datauppsättningar. Flera datauppsättnings-ID:n kan anges som en enda sträng, där varje ID avgränsas med lodräta streck (`\|`).</li><li>`groupBy`: Om värdet är true anger det att motsvarande `value` representerar flera datauppsättningar vars mätresultat ska returneras separat. Om värdet är false grupperas mätresultaten för de datauppsättningarna tillsammans.</li></ul> |
-| `aggregator` | Anger den aggregeringsfunktion som ska användas för att gruppera poster med flera serier till enstaka resultat. Detaljerad information om tillgängliga aggregatorer finns i [OpenTSDB-dokumentation](https://docs.w3cub.com/opentsdb/user_guide/query/aggregators). |
-| `downsample` | Ett valfritt fält som gör att du kan ange en aggregeringsfunktion för att minska samplingsfrekvensen för mätdata genom att sortera fält i intervall (eller&quot;bucket&quot;). Intervallet för nedsampling bestäms av `granularity` -egenskap. Mer information om nedsampling finns i [OpenTSDB-dokumentation](https://docs.w3cub.com/opentsdb/user_guide/query/aggregators). |
+| `name` | Namnet på ett mätvärde som identifieras av observabilitetsinsikter. I [bilagan](#available-metrics) finns en fullständig lista över giltiga måttnamn. |
+| `filters` | Ett valfritt fält där du kan filtrera mätvärden efter specifika datauppsättningar. Fältet är en array med objekt (ett för varje filter), där varje objekt innehåller följande egenskaper: <ul><li>`name`: Den typ av entitet som mätvärden ska filtreras mot. För närvarande stöds bara `dataSets`.</li><li>`value`: ID för en eller flera datauppsättningar. Flera datauppsättnings-ID kan anges som en enda sträng, där varje ID avgränsas med lodräta streck (`\|`).</li><li>`groupBy`: Om värdet är true anger det att motsvarande `value` representerar flera datauppsättningar vars mätresultat ska returneras separat. Om värdet är false grupperas mätresultaten för de datauppsättningarna tillsammans.</li></ul> |
+| `aggregator` | Anger den aggregeringsfunktion som ska användas för att gruppera poster med flera serier till enstaka resultat. Mer information om tillgängliga aggregerare finns i [OpenTSDB-dokumentationen](https://docs.w3cub.com/opentsdb/user_guide/query/aggregators). |
+| `downsample` | Ett valfritt fält som gör att du kan ange en aggregeringsfunktion för att minska samplingsfrekvensen för mätdata genom att sortera fält i intervall (eller&quot;bucket&quot;). Intervallet för nedsampling bestäms av egenskapen `granularity`. Mer information om nedsampling finns i [OpenTSDB-dokumentationen](https://docs.w3cub.com/opentsdb/user_guide/query/aggregators). |
 
 {style="table-layout:auto"}
 
@@ -177,18 +177,18 @@ Ett lyckat svar returnerar de resulterande datapunkterna för de mätvärden och
 | `metric` | Namnet på ett av måtten som anges i begäran. |
 | `filters` | Filterkonfigurationen för det angivna måttet. |
 | `datapoints` | En array vars objekt representerar resultatet av det angivna måttet och filtren. Antalet objekt i arrayen beror på de filteralternativ som anges i begäran. Om inga filter har angetts innehåller arrayen bara ett objekt som representerar alla datauppsättningar. |
-| `groupBy` | Om flera datauppsättningar har angetts i `filter` för ett mätresultat och `groupBy` alternativet var inställt på true i begäran, kommer det här objektet att innehålla ID:t för datauppsättningen som motsvarar `dps` egenskapen gäller för.<br><br>Om objektet är tomt i svaret visas motsvarande `dps` egenskapen gäller för alla datauppsättningar som finns i `filters` array (eller alla datauppsättningar i [!DNL Platform] om inga filter har angetts). |
-| `dps` | Returnerade data för angivet mått, filter och tidsintervall. Varje nyckel i det här objektet representerar en tidsstämpel med ett motsvarande värde för det angivna måttet. Tidsperioden mellan varje datapunkt beror på `granularity` det värde som anges i begäran. |
+| `groupBy` | Om flera datauppsättningar har angetts i egenskapen `filter` för ett mätresultat och alternativet `groupBy` har angetts till true i begäran, kommer objektet att innehålla ID:t för datauppsättningen som motsvarande `dps` -egenskap gäller för.<br><br>Om det här objektet verkar vara tomt i svaret gäller motsvarande `dps` -egenskap för alla datamängder som finns i `filters` -arrayen (eller alla datamängder i [!DNL Platform] om inga filter har angetts). |
+| `dps` | Returnerade data för angivet mått, filter och tidsintervall. Varje nyckel i det här objektet representerar en tidsstämpel med ett motsvarande värde för det angivna måttet. Tidsperioden mellan varje datapunkt beror på det `granularity`-värde som anges i begäran. |
 
 {style="table-layout:auto"}
 
 ## Bilaga
 
-Följande avsnitt innehåller ytterligare information om hur du arbetar med `/metrics` slutpunkt.
+Följande avsnitt innehåller ytterligare information om hur du arbetar med slutpunkten `/metrics`.
 
 ### Tillgängliga mått {#available-metrics}
 
-I följande tabeller visas alla mätvärden som visas av [!DNL Observability Insights], uppdelat efter [!DNL Platform] service. Varje mätvärde innehåller en beskrivning och en godkänd ID-frågeparameter.
+I följande tabeller visas alla mätvärden som visas av [!DNL Observability Insights], uppdelade efter [!DNL Platform]-tjänst. Varje mätvärde innehåller en beskrivning och en godkänd ID-frågeparameter.
 
 >[!NOTE]
 >
@@ -219,13 +219,13 @@ I följande tabell visas mätvärden för Adobe Experience Platform [!DNL Identi
 
 | Insikter - mått | Beskrivning | ID-frågeparameter |
 | ---- | ---- | ---- |
-| timeseries.identity.dataset.recordsuccess.count | Antal poster som skrivits till datakällan per [!DNL Identity Service], för en datauppsättning eller alla datauppsättningar. | Datauppsättnings-ID |
+| timeseries.identity.dataset.recordsuccess.count | Antal poster som skrivits till deras datakälla av [!DNL Identity Service], för en datamängd eller alla datamängder. | Datauppsättnings-ID |
 | timeseries.identity.dataset.recordfailed.count | Antal poster som misslyckades av [!DNL Identity Service], för en datauppsättning eller för alla datauppsättningar. | Datauppsättnings-ID |
 | timeseries.identity.dataset.namespacecode.recordfailed.count | Antal Identity-poster som misslyckades av ett namnutrymme. | Namnområdes-ID (**Obligatoriskt**) |
 | timeseries.identity.dataset.namespacecode.recordskipped.count | Antal Identitetsposter som hoppats över av ett namnutrymme. | Namnområdes-ID (**Obligatoriskt**) |
-| timeseries.identity.graph.imsorg.uniqueidentities.count | Antal unika identiteter som lagras i identitetsdiagrammet för din organisation. | Ej tillämpligt |
+| timeseries.identity.graph.imsorg.uniqueidentities.count | Antal unika identiteter som lagras i identitetsdiagrammet för din organisation. | N/A |
 | timeseries.identity.graph.imsorg.namespacecode.uniqueidentities.count | Antal unika identiteter som lagras i identitetsdiagrammet för ett namnutrymme. | Namnområdes-ID (**Obligatoriskt**) |
-| timeseries.identity.graph.imsorg.graphstrength.uniqueidentities.count | Antal unika identiteter som lagras i identitetsdiagrammet för din organisation för en viss grafikstyrka (&quot;unknown&quot;,&quot;svag&quot; eller&quot;strong&quot;). | Diagramstyrka (**Obligatoriskt**) |
+| timeseries.identity.graph.imsorg.graphstrength.uniqueidentities.count | Antal unika identiteter som lagras i identitetsdiagrammet för din organisation för en viss grafikstyrka (&quot;unknown&quot;,&quot;svag&quot; eller&quot;strong&quot;). | Diagramstyrka (**krävs**) |
 
 {style="table-layout:auto"}
 
@@ -236,14 +236,14 @@ Följande tabell visar mätvärden för [!DNL Real-Time Customer Profile].
 | Insikter - mått | Beskrivning | ID-frågeparameter |
 | ---- | ---- | ---- |
 | timeseries.profiles.dataset.recordread.count | Antal poster som har lästs från [!DNL Data Lake] av [!DNL Profile], för en datauppsättning eller för alla datauppsättningar. | Datauppsättnings-ID |
-| timeseries.profiles.dataset.recordsuccess.count | Antal poster som skrivits till datakällan per [!DNL Profile], för en datauppsättning eller för alla datauppsättningar. | Datauppsättnings-ID |
-| timeseries.profiles.dataset.batchsuccess.count | Antal [!DNL Profile] batchar som har kapslats för en datauppsättning eller för alla datauppsättningar. | Datauppsättnings-ID |
+| timeseries.profiles.dataset.recordsuccess.count | Antal poster som skrivits till deras datakälla av [!DNL Profile], för en datamängd eller för alla datamängder. | Datauppsättnings-ID |
+| timeseries.profiles.dataset.batchsuccess.count | Antal [!DNL Profile] batchar som har kapslats in för en datauppsättning eller för alla datauppsättningar. | Datauppsättnings-ID |
 
 {style="table-layout:auto"}
 
 ### Felmeddelanden
 
-Svar från `/metrics` slutpunkten kan returnera felmeddelanden under vissa förhållanden. Dessa felmeddelanden returneras i följande format:
+Svar från slutpunkten `/metrics` kan returnera felmeddelanden under vissa förhållanden. Dessa felmeddelanden returneras i följande format:
 
 ```json
 {
@@ -280,10 +280,10 @@ I följande tabell visas de olika felkoderna som kan returneras av API:t:
 
 | Felkod | Titel | Beskrivning |
 | --- | --- | --- |
-| `INSGHT-1000-400` | Ogiltig nyttolast för begäran | Något var fel med nyttolasten för begäran. Kontrollera att du matchar nyttolastens formatering exakt som den visas [ovan](#v2). Alla möjliga orsaker kan utlösa det här felet:<ul><li>Obligatoriska fält saknas, till exempel `aggregator`</li><li>Ogiltiga mått</li><li>Begäran innehåller en ogiltig aggregator</li><li>Ett startdatum infaller efter ett slutdatum</li></ul> |
+| `INSGHT-1000-400` | Ogiltig nyttolast för begäran | Det uppstod ett fel med nyttolasten för begäran. Kontrollera att du matchar nyttolastens formatering exakt så som visas [ovan](#v2). Alla möjliga orsaker kan utlösa det här felet:<ul><li>Obligatoriska fält som `aggregator` saknas</li><li>Ogiltiga mått</li><li>Begäran innehåller en ogiltig aggregator</li><li>Ett startdatum infaller efter ett slutdatum</li></ul> |
 | `INSGHT-1001-400` | Mätningsfrågan misslyckades | Det uppstod ett fel när mätdatabasen skulle frågas på grund av en felaktig begäran eller att själva frågan inte kunde tolkas. Kontrollera att din begäran är korrekt formaterad innan du försöker igen. |
 | `INSGHT-1001-500` | Mätningsfrågan misslyckades | Det uppstod ett fel när mätdatabasen skulle frågas på grund av ett serverfel. Försök igen. Om problemet kvarstår kan du kontakta Adobe support. |
 | `INSGHT-1002-500` | Tjänstfel | Begäran kunde inte behandlas på grund av ett internt fel. Försök igen. Om problemet kvarstår kan du kontakta Adobe support. |
-| `INSGHT-1003-401` | Valideringsfel för sandlådan | Begäran kunde inte behandlas på grund av ett valideringsfel i sandlådan. Kontrollera att namnet på sandlådan som du angav finns i `x-sandbox-name` header representerar en giltig, aktiverad sandlåda för din organisation innan du försöker utföra begäran igen. |
+| `INSGHT-1003-401` | Valideringsfel för sandlådan | Begäran kunde inte behandlas på grund av ett valideringsfel i sandlådan. Kontrollera att namnet på sandlådan som du angav i rubriken `x-sandbox-name` representerar en giltig, aktiverad sandlåda för din organisation innan du försöker utföra begäran igen. |
 
 {style="table-layout:auto"}

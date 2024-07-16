@@ -6,7 +6,7 @@ exl-id: c490f6f0-f673-4a56-b87a-22884f8be92d
 source-git-commit: d6402f22ff50963b06c849cf31cc25267ba62bb1
 workflow-type: tm+mt
 source-wordcount: '140'
-ht-degree: 6%
+ht-degree: 0%
 
 ---
 
@@ -27,15 +27,15 @@ Bläddra i katalogen för att fastställa vilka målplattformar som är bäst f�
 
 Du kan aktivera dina data till olika målkategorier i Adobe Experience Platform. Länkarna nedan ger mer information om varje målkategori:
 
-- [Adobe [!UICONTROL destinations] översikt](adobe/overview.md)
-- [[!UICONTROL Advertising] [!UICONTROL destinations] översikt](advertising/overview.md)
-- [[!UICONTROL Analytics] [!UICONTROL destinations] översikt](analytics/overview.md)
-- [[!UICONTROL Cloud storage] [!UICONTROL destinations] översikt](cloud-storage/overview.md)
-- [[!UICONTROL Data Management Platform] (DMP) [!UICONTROL destinations] översikt](data-management/overview.md)
-- [[!UICONTROL Email marketing] [!UICONTROL destinations] översikt](email-marketing/overview.md)
-- [[!UICONTROL Mobile engagement] [!UICONTROL destinations] översikt](mobile-engagement/overview.md)
-- [[!UICONTROL Personalization] [!UICONTROL destinations] översikt](personalization/overview.md)
-- [[!UICONTROL Social] [!UICONTROL destinations] översikt](social/overview.md)
+- [Översikt över Adobe [!UICONTROL destinations]](adobe/overview.md)
+- [[!UICONTROL Advertising] [!UICONTROL destinations] - översikt](advertising/overview.md)
+- [[!UICONTROL Analytics] [!UICONTROL destinations] - översikt](analytics/overview.md)
+- [[!UICONTROL Cloud storage] [!UICONTROL destinations] - översikt](cloud-storage/overview.md)
+- [[!UICONTROL Data Management Platform] (DMP) [!UICONTROL destinations] - översikt](data-management/overview.md)
+- [[!UICONTROL Email marketing] [!UICONTROL destinations] - översikt](email-marketing/overview.md)
+- [[!UICONTROL Mobile engagement] [!UICONTROL destinations] - översikt](mobile-engagement/overview.md)
+- [[!UICONTROL Personalization] [!UICONTROL destinations] - översikt](personalization/overview.md)
+- [[!UICONTROL Social] [!UICONTROL destinations] - översikt](social/overview.md)
 - [[!UICONTROL Streaming] [!UICONTROL destinations] (länkar till HTTP-mål)](streaming/http-destination.md)
-- [[!UICONTROL Survey] [!UICONTROL destinations] översikt](survey/overview.md)
-- [[!UICONTROL Voice of the Customer] [!UICONTROL destinations] översikt](voice/overview.md)
+- [[!UICONTROL Survey] [!UICONTROL destinations] - översikt](survey/overview.md)
+- [[!UICONTROL Voice of the Customer] [!UICONTROL destinations] - översikt](voice/overview.md)

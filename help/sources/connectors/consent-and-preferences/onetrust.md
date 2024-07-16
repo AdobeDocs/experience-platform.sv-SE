@@ -12,23 +12,23 @@ ht-degree: 0%
 
 ---
 
-# [!DNL OneTrust Integration] källa
+# [!DNL OneTrust Integration]-källa
 
 >[!NOTE]
 >
->The [!DNL OneTrust Integration] Källan stöder endast konsumtion av medgivanden och inställningsdata och inte cookies. Kontakta OneTrust-supporten på https://support.onetrust.com om du har problem med källkopplingen
+>Källan [!DNL OneTrust Integration] stöder endast inmatning av medgivanden och inställningsdata, inte cookies. Kontakta OneTrust-supporten på https://support.onetrust.com om du har problem med källkopplingen
 
 Med Adobe Experience Platform kan data hämtas från externa källor samtidigt som du kan strukturera, märka och förbättra inkommande data med hjälp av plattformstjänster. Du kan importera data från en mängd olika källor, till exempel Adobe-program, molnbaserad lagring, databaser och många andra.
 
-Experience Platform har stöd för inmatning av data från en plattform för hantering av samtycke och preferenser från tredje part. Stöd för att skapa samtycke och preferenser innefattar [!DNL OneTrust Integration].
+Experience Platform har stöd för inmatning av data från en plattform för hantering av samtycke och preferenser från tredje part. Stöd för samtycka- och inställningsleverantörer inkluderar [!DNL OneTrust Integration].
 
-Dokumentationen nedan innehåller information om hur du ansluter [!DNL OneTrust Integration] till Plattform med API:er eller användargränssnittet:
+Dokumentationen nedan innehåller information om hur du ansluter [!DNL OneTrust Integration] till plattformen med API:er eller användargränssnittet:
 
-## Anslut [!DNL OneTrust Integration] till plattform med API:er
+## Anslut [!DNL OneTrust Integration] till plattformen med API:er
 
-- [Skapa en [!DNL OneTrust Integration] källanslutning och dataflöde med API:t för Flow Service](../../tutorials/api/create/consent-and-preferences/onetrust.md)
+- [Skapa en  [!DNL OneTrust Integration] källanslutning och ett dataflöde med API:t för Flow Service](../../tutorials/api/create/consent-and-preferences/onetrust.md)
 
-## Anslut [!DNL OneTrust Integration] till plattform med användargränssnittet
+## Anslut [!DNL OneTrust Integration] till plattformen med användargränssnittet
 
-- [Skapa en [!DNL OneTrust Integration] källanslutning i användargränssnittet](../../tutorials/ui/create/consent-and-preferences/onetrust.md)
+- [Skapa en  [!DNL OneTrust Integration] källanslutning i användargränssnittet](../../tutorials/ui/create/consent-and-preferences/onetrust.md)
 - [Skapa ett dataflöde för en källanslutning för samtycke och inställningar i användargränssnittet](../../tutorials/ui/dataflow/consent-and-preferences.md)

@@ -9,15 +9,15 @@ ht-degree: 0%
 
 ---
 
-# [!UICONTROL XDM Business Campaign Members] class
+# klassen [!UICONTROL XDM Business Campaign Members]
 
 >[!IMPORTANT]
 >
->Den här klassen är avsedd att användas av organisationer med åtkomst till [Adobe Real-time Customer Data Platform B2B Edition](../../../rtcdp/b2b-overview.md). Du måste ha tillgång till Real-Time CDP B2B Edition för att den här klassen ska kunna delta i [Kundprofil i realtid](../../../profile/home.md).
+>Den här klassen är avsedd att användas av organisationer med åtkomst till [Adobe Real-time Customer Data Platform B2B Edition](../../../rtcdp/b2b-overview.md). Du måste ha tillgång till Real-Time CDP B2B Edition för att den här klassen ska kunna delta i [kundprofilen i realtid](../../../profile/home.md).
 
-[!UICONTROL XDM Business Campaign Members] är en XDM-klass (Experience Data Model) som beskriver en kontakt eller ett lead som är kopplat till en företagskampanj.
+[!UICONTROL XDM Business Campaign Members] är en XDM-standardklass (Experience Data Model) som beskriver en kontakt eller lead som är associerad med en företagskampanj.
 
-![Strukturen för XDM Business Campaign-klassen som den visas i användargränssnittet](../../images/classes/b2b/business-campaign-members.png)
+![Strukturen för XDM Business Campaign-medlemsklassen så som den visas i användargränssnittet](../../images/classes/b2b/business-campaign-members.png)
 
 | Egenskap | Datatyp | Beskrivning |
 | --- | --- | --- |
@@ -29,6 +29,6 @@ ht-degree: 0%
 
 {style="table-layout:auto"}
 
-Om du vill veta hur den här klassen begreppsmässigt relaterar till de andra B2B-klasserna och hur du kan etablera dessa relationer i Adobe Experience Platform-gränssnittet läser du i handboken [schemarelationer i Real-Time CDP B2B Edition](../../tutorials/relationship-b2b.md)
+Om du vill lära dig hur den här klassen begreppsmässigt relaterar till de andra B2B-klasserna och hur du kan etablera dessa relationer i Adobe Experience Platform-gränssnittet läser du guiden om [schemarelationer i Real-Time CDP B2B Edition](../../tutorials/relationship-b2b.md)
 
 Ytterligare fält som är kompatibla med den här klassen finns i fältgruppsreferensen för [[!UICONTROL XDM Business Campaign Member Details]](../../field-groups/b2b-campaign-members/details.md).

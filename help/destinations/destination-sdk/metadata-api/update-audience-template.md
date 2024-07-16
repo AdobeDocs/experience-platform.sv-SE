@@ -4,7 +4,7 @@ title: Uppdatera en målgruppsmall
 exl-id: 8185a015-256d-46a7-af33-8475832fb6c1
 source-git-commit: b4334b4f73428f94f5a7e5088f98e2459afcaf3c
 workflow-type: tm+mt
-source-wordcount: '319'
+source-wordcount: '320'
 ht-degree: 0%
 
 ---
@@ -15,23 +15,23 @@ ht-degree: 0%
 >
 >**API-slutpunkt**: `platform.adobe.io/data/core/activation/authoring/audience-templates`
 
-Den här sidan innehåller exempel på API-begäran och nyttolast som du kan använda för att uppdatera en målgruppsmall med hjälp av `/authoring/audience-templates` API-slutpunkt.
+Den här sidan innehåller exempel på API-begäran och nyttolast som du kan använda för att uppdatera en målgruppsmall med API-slutpunkten `/authoring/audience-templates`.
 
-En detaljerad beskrivning av de funktioner som du kan konfigurera via den här slutpunkten finns i [hantering av målmetadata](../functionality/audience-metadata-management.md).
+En detaljerad beskrivning av de funktioner som du kan konfigurera via den här slutpunkten finns i [hantering av målgruppsmetadata](../functionality/audience-metadata-management.md).
 
 >[!IMPORTANT]
 >
->Alla parameternamn och värden som stöds av Destinationen SDK är **skiftlägeskänslig**. Undvik skiftlägeskänslighetsfel genom att använda parameternamn och värden exakt som de visas i dokumentationen.
+>Alla parameternamn och värden som stöds av Destinationen SDK är **skiftlägeskänsliga**. Undvik skiftlägeskänslighetsfel genom att använda parameternamn och värden exakt som de visas i dokumentationen.
 
 ## Komma igång med API-åtgärder för målgruppsmallar {#get-started}
 
-Innan du fortsätter bör du granska [komma igång-guide](../getting-started.md) för viktig information som du behöver känna till för att kunna anropa API:t, inklusive hur du får nödvändig behörighet för målredigering och obligatoriska huvuden.
+Innan du fortsätter bör du läsa igenom [kom igång-guiden](../getting-started.md) för att få viktig information som du behöver känna till för att kunna ringa anrop till API:t, inklusive hur du får nödvändig behörighet för målredigering och nödvändiga rubriker.
 
 ## Uppdatera en målgruppsmall {#create}
 
-Du kan uppdatera en [befintlig](create-audience-template.md) målgruppsmall genom att skapa `PUT` begäran till `/authoring/audience-templates` slutpunkt med uppdaterad nyttolast.
+Du kan uppdatera en [befintlig](create-audience-template.md) målgruppsmall genom att göra en `PUT`-förfrågan till `/authoring/audience-templates`-slutpunkten med den uppdaterade nyttolasten.
 
-Så här hämtar du en befintlig målgruppsmall och dess motsvarande `{INSTANCE_ID}`, se artikeln om [hämta en målgruppsmall](retrieve-audience-template.md).
+Om du vill hämta en befintlig målgruppsmall och dess motsvarande `{INSTANCE_ID}` kan du läsa artikeln om att [hämta en målgruppsmall](retrieve-audience-template.md).
 
 **API-format**
 
@@ -41,7 +41,7 @@ PUT /authoring/audience-templates/{INSTANCE_ID}
 
 | Parameter | Beskrivning |
 | -------- | ----------- |
-| `{INSTANCE_ID}` | ID:t för målgruppsmallen som du vill uppdatera. Så här hämtar du en befintlig målgruppsmall och dess motsvarande `{INSTANCE_ID}`, se [Hämta en målgruppsmall](retrieve-audience-template.md). |
+| `{INSTANCE_ID}` | ID:t för målgruppsmallen som du vill uppdatera. Mer information om hur du hämtar en befintlig målgruppsmall och dess motsvarande `{INSTANCE_ID}` finns i [Hämta en målgruppsmall](retrieve-audience-template.md). |
 
 Följande begäran uppdaterar en befintlig målgruppsmetadatamall som konfigurerats med parametrarna i nyttolasten.
 
@@ -153,8 +153,8 @@ Ett lyckat svar returnerar HTTP-status 200 med information om den uppdaterade m�
 
 ## API-felhantering
 
-Destination SDK-API-slutpunkter följer de allmänna felmeddelandeprinciperna för Experience Platform API. Se [API-statuskoder](../../../landing/troubleshooting.md#api-status-codes) och [fel i begäranhuvudet](../../../landing/troubleshooting.md#request-header-errors) i felsökningsguiden för plattformen.
+Destination SDK-API-slutpunkter följer de allmänna felmeddelandeprinciperna för Experience Platform API. Se [API-statuskoder](../../../landing/troubleshooting.md#api-status-codes) och [begäranrubrikfel](../../../landing/troubleshooting.md#request-header-errors) i felsökningsguiden för plattformen.
 
 ## Nästa steg
 
-När du har läst det här dokumentet vet du nu när du ska använda målgruppsmallar och hur du uppdaterar en målgruppsmall med `/authoring/audience-templates` API-slutpunkt. Läs [Så här använder du Destination SDK för att konfigurera ditt mål](../guides/configure-destination-instructions.md) för att förstå var det här steget passar in i processen att konfigurera målet.
+När du har läst det här dokumentet vet du nu när du ska använda målgruppsmallar och hur du uppdaterar en målgruppsmall med API-slutpunkten `/authoring/audience-templates`. Läs [om hur du använder Destination SDK för att konfigurera ditt mål](../guides/configure-destination-instructions.md) och förstå var det här steget passar in i processen att konfigurera ditt mål.

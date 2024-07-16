@@ -11,11 +11,11 @@ ht-degree: 0%
 
 ---
 
-# [!DNL Segmentation Service] in [!DNL Real-Time Customer Data Platform]
+# [!DNL Segmentation Service] i [!DNL Real-Time Customer Data Platform]
 
-[!DNL Adobe Real-Time Customer Data Platform] (Real-Time CDP) kan ni hämta data från flera olika källor för att skapa en samordnad och enhetlig upplevelse för era kunder. Leverera relevanta personaliserade marknadsföringskampanjer med [!DNL Segmentation Service], ingår i Adobe Experience Platform.
+Med [!DNL Adobe Real-Time Customer Data Platform] (Real-Time CDP) kan du hämta data från flera källor för att skapa en samordnad och enhetlig upplevelse för dina kunder. Du kan leverera relevanta personaliserade marknadsföringskampanjer med hjälp av [!DNL Segmentation Service], en del av Adobe Experience Platform.
 
-Real-Time CDP är byggt på Adobe Experience Platform och utnyttjar många av [!DNL Experience Platform] tjänster och funktioner. Använda [!DNL Segmentation Service]kan ni erbjuda skräddarsydd marknadsföring genom att dela upp kunderna i mindre grupper med liknande egenskaper.
+Real-Time CDP är byggt ovanpå Adobe Experience Platform och utnyttjar många av [!DNL Experience Platform]-tjänsterna och -funktionerna. Med [!DNL Segmentation Service] kan du tillhandahålla skräddarsydd marknadsföring genom att dela upp dina kunder i mindre grupper med liknande egenskaper.
 
 ## Segmentering
 
@@ -23,7 +23,7 @@ Segmentering är processen att definiera specifika attribut eller beteenden som 
 
 ## [!DNL Segment Builder]
 
-[!DNL Platform] gör att ni enkelt kan skapa och komma åt segmentdefinitioner, samt använda olika byggstenar för att ytterligare beskriva era målgrupper. Mer information om hur du använder Segment Builder finns i [Segment Builder Guide](./segment-builder-guide.md).
+Med [!DNL Platform] kan du enkelt skapa och komma åt segmentdefinitioner, samt använda olika byggstenar för att ytterligare beskriva målgrupperna. Mer information om hur du använder Segment Builder finns i [guiden för segmentbyggaren](./segment-builder-guide.md).
 
 ## Kund-AI
 
@@ -38,19 +38,19 @@ Med hjälp av inflytelserika faktorer kan kundens AI tala om för er vad en kund
 * Förbättra kundprofiler med inflytelserika faktorer för benägenhetspoäng.
 * Skapa kundmålgrupper baserat på inflytelserika faktorer och benägenhetspoäng.
 
-Kundens AI finns i **[!UICONTROL Services]** flik under **[!UICONTROL Adobe services]**.
+Kund-AI finns på fliken **[!UICONTROL Services]** under **[!UICONTROL Adobe services]**.
 
 ![Kundens AI-plats](../assets/overview/rtcdp-customer-ai.png)
 
 ### Komma igång med kundens AI
 
-För att komma igång med kundens AI måste du följa [självstudiekurs om datapreperation](../../intelligent-services/data-preparation.md) och konfigurera indataschemat baserat på ditt användningsfall. Nästa steg är att [konfigurera en AI-instans för kund](../../intelligent-services/customer-ai/user-guide/configure.md). När du har konfigurerat en instans genereras en modell där du kan [visa era insikter och resultat](../../intelligent-services/customer-ai/user-guide/discover-insights.md). Med hjälp av data som genererats från din modell kan du skapa målgrupper för datadriven aktivering.
+För att komma igång med kundens AI måste du följa självstudiekursen [för datapreperation](../../intelligent-services/data-preparation.md) och konfigurera indatarammet baserat på ditt användningsfall. Därefter måste du [konfigurera en AI-instans](../../intelligent-services/customer-ai/user-guide/configure.md) för kunder. När du har konfigurerat en instans genereras en modell där du kan [visa dina insikter och poäng](../../intelligent-services/customer-ai/user-guide/discover-insights.md). Med hjälp av data som genererats från din modell kan du skapa målgrupper för datadriven aktivering.
 
-Om du vill veta mer om kundens AI börjar du med att besöka [Översikt över AI för kunder](../../intelligent-services/customer-ai/overview.md). I följande video visas dessutom hur kundens AI förbättrar kundprofiler med AI-baserade egenskaper och stärker kundsegmenterings- och målinriktningsarbetet.
+Om du vill veta mer om kundens AI kan du börja med att gå till [Översikt över kundens AI](../../intelligent-services/customer-ai/overview.md). I följande video visas dessutom hur kundens AI förbättrar kundprofiler med AI-baserade egenskaper och stärker kundsegmenterings- och målinriktningsarbetet.
 
 >[!VIDEO](https://video.tv.adobe.com/v/40374/?quality=12&learn=on)
 
 
 ## Nästa steg
 
-När du har läst den här översikten bör du nu förstå hur Real-Time CDP utnyttjar [!DNL Segmentation Service] för att förbättra anpassning och personalisering av marknadsföringskampanjer. Mer information om [!DNL Segmentation Service], kan du läsa [Segmenteringsdokumentation](../../segmentation/home.md).
+När du har läst den här översikten bör du nu förstå hur Real-Time CDP använder [!DNL Segmentation Service] för att förbättra anpassningen och personaliseringen av marknadsföringskampanjer. Mer information om [!DNL Segmentation Service] finns i [Segmenteringsdokumentationen](../../segmentation/home.md).

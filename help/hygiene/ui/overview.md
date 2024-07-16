@@ -14,20 +14,20 @@ ht-degree: 0%
 >[!CONTEXTUALHELP]
 >id="platform_hygiene_privacyconsole_consumer"
 >title="Status för datalivscykel"
->abstract="Den här widgeten visar det totala antalet postborttagningsjobb för skapad, misslyckad och slutförd datalängd. Om du vill ha mer information om dina datalivscykler väljer du **Datas livscykel** i den vänstra navigeringen."
+>abstract="Den här widgeten visar det totala antalet postborttagningsjobb för skapad, misslyckad och slutförd datalängd. Om du vill ha mer information om dina datalivscyklsprocesser väljer du **Datalifecykel** i den vänstra navigeringen."
 
 >[!CONTEXTUALHELP]
 >id="platform_hygiene_privacyconsole_recents"
 >title="Senaste arbetsorder för livscykel"
->abstract="Den här widgeten visar de fem senast skapade eller uppdaterade arbetsordningarna för livscykeln för data, beroende på vilket alternativ du väljer högst upp till höger. Om du vill ha mer information om dina datalivscykler väljer du **Datas livscykel** i den vänstra navigeringen."
+>abstract="Den här widgeten visar de fem senast skapade eller uppdaterade arbetsordningarna för livscykeln för data, beroende på vilket alternativ du väljer högst upp till höger. Om du vill ha mer information om dina datalivscyklsprocesser väljer du **Datalifecykel** i den vänstra navigeringen."
 
-The **[!UICONTROL Data Lifecycle]** Med arbetsytan i Adobe Experience Platform UI kan du skapa och övervaka olika livscykelhanteringsuppgifter för data, inklusive att ta bort poster och schemalägga förfallotider för datauppsättningar.
+Med arbetsytan **[!UICONTROL Data Lifecycle]** i Adobe Experience Platform-användargränssnittet kan du skapa och övervaka olika hanteringsuppgifter för datalängd, inklusive borttagning av poster och schemaläggning av förfallodatum för datauppsättningar.
 
-Den här guiden beskriver hur du hanterar livscykelaktiviteter för data i plattformens användargränssnitt. Information om hur du utför dessa åtgärder med API-anrop finns i [API-guide för datahygien](../api/overview.md).
+Den här guiden beskriver hur du hanterar livscykelaktiviteter för data i plattformens användargränssnitt. Information om hur du utför dessa åtgärder med API-anrop finns i [API-handboken för datahygien](../api/overview.md).
 
-Om du vill komma åt arbetsytan väljer du **Datas livscykel** i den vänstra navigeringen.
+Om du vill få åtkomst till arbetsytan väljer du **Datalifecykel** i den vänstra navigeringen.
 
-![The [!UICONTROL Data Lifecycle] arbetsytan i plattformsgränssnittet med [!UICONTROL Data Lifecycle] markerat i den vänstra navigeringen.](../images/ui/overview/home.png)
+![Arbetsytan [!UICONTROL Data Lifecycle] i plattformsgränssnittet, med [!UICONTROL Data Lifecycle] markerat i den vänstra navigeringen.](../images/ui/overview/home.png)
 
 Härifrån kan du bläddra bland befintliga arbetsorder och konfigurera nya livscykelåtgärder för data. Läs mer i följande avsnitt i den här handboken:
 

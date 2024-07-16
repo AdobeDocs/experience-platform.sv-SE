@@ -11,7 +11,7 @@ ht-degree: 0%
 
 ---
 
-# [!UICONTROL Person name] datatyp
+# Datatypen [!UICONTROL Person name]
 
 [!UICONTROL Person name] är en standard-XDM-datatyp som beskriver en persons fullständiga namn. Eftersom konventionerna för namnstrukturer skiljer sig mycket åt mellan olika språk och kulturer bör namn alltid modelleras med den här datatypen.
 
@@ -21,12 +21,12 @@ Dessutom innehåller datatypen ett antal valfria egenskaper som kan användas i 
 
 | Egenskap | Beskrivning |
 | --- | --- |
-| `courtesyTitle` | En förkortning av en persons titel, ära eller hälsningsfras (till exempel `Mr.`, `Miss.`, eller `Dr.`). |
+| `courtesyTitle` | En förkortning av en persons titel, ära eller hälsningsfras (till exempel `Mr.`, `Miss.` eller `Dr.`). |
 | `firstName` | Det första segmentet i namnet i den skrivordning som oftast används på namnet. |
 | `fullName` | Personens fullständiga namn, i den skrivordning som är vanligast på namnets språk. |
 | `lastName` | Det sista segmentet i namnet i den skrivordning som oftast används på namnet. |
 | `middleName` | Mellannamn, alternativa namn eller ytterligare namn som anges mellan förnamnet och efternamnet. |
-| `suffix` | En grupp bokstäver efter en persons namn som ger ytterligare information (till exempel `Jr.`, `Sr.`, `M.D.`, `PhD`, `I`, `II`, `III`och så vidare). |
+| `suffix` | En grupp bokstäver som anges efter en persons namn för att ge ytterligare information (som `Jr.`, `Sr.`, `M.D.`, `PhD`, `I`, `II`, `III` och så vidare). |
 
 {style="table-layout:auto"}
 

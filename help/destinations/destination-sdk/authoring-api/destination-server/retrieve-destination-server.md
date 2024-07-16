@@ -4,14 +4,14 @@ title: Hämta en målserverkonfiguration
 exl-id: 1b375343-e793-4c91-856f-af66fe71822e
 source-git-commit: b4334b4f73428f94f5a7e5088f98e2459afcaf3c
 workflow-type: tm+mt
-source-wordcount: '464'
-ht-degree: 1%
+source-wordcount: '466'
+ht-degree: 0%
 
 ---
 
 # Hämta en målserverkonfiguration
 
-Den här sidan innehåller exempel på API-begäran och nyttolast som du kan använda för att hämta information om en befintlig målserverkonfiguration med `/authoring/destination-servers` API-slutpunkt.
+Den här sidan innehåller exempel på API-begäran och nyttolast som du kan använda för att hämta information om en befintlig målserverkonfiguration med API-slutpunkten `/authoring/destination-servers`.
 
 En detaljerad beskrivning av de funktioner som används av målservrar finns i följande artiklar:
 
@@ -22,15 +22,15 @@ En detaljerad beskrivning av de funktioner som används av målservrar finns i f
 
 >[!IMPORTANT]
 >
->Alla parameternamn och värden som stöds av Destinationen SDK är **skiftlägeskänslig**. Undvik skiftlägeskänslighetsfel genom att använda parameternamn och värden exakt som de visas i dokumentationen.
+>Alla parameternamn och värden som stöds av Destinationen SDK är **skiftlägeskänsliga**. Undvik skiftlägeskänslighetsfel genom att använda parameternamn och värden exakt som de visas i dokumentationen.
 
 ## Komma igång med API-åtgärder för målserver {#get-started}
 
-Innan du fortsätter bör du granska [komma igång-guide](../../getting-started.md) för viktig information som du behöver känna till för att kunna anropa API:t, inklusive hur du får nödvändig behörighet för målredigering och obligatoriska huvuden.
+Innan du fortsätter bör du läsa igenom [kom igång-guiden](../../getting-started.md) för att få viktig information som du behöver känna till för att kunna ringa anrop till API:t, inklusive hur du får nödvändig behörighet för målredigering och nödvändiga rubriker.
 
 ## Hämta en målserverkonfiguration {#retrieve}
 
-Du kan hämta en befintlig målserverkonfiguration genom att skapa en `GET` begäran till `/authoring/destination-servers` slutpunkt.
+Du kan hämta en befintlig målserverkonfiguration genom att göra en `GET`-begäran till `/authoring/destination-servers`-slutpunkten.
 
 >[!TIP]
 >
@@ -44,13 +44,13 @@ Använd följande API-format för att hämta alla målserverkonfigurationer för
 GET /authoring/destination-servers
 ```
 
-Använd följande API-format för att hämta en specifik målserverkonfiguration, som definieras av `{INSTANCE_ID}` parameter.
+Använd följande API-format för att hämta en specifik målserverkonfiguration, som definieras av parametern `{INSTANCE_ID}`.
 
 ```http
 GET /authoring/destination-servers/{INSTANCE_ID}
 ```
 
-Följande två begäranden hämtar alla målserverkonfigurationer för din IMS-organisation, eller en viss målserverkonfiguration, beroende på om du skickar `INSTANCE_ID` -parametern i begäran.
+Följande två begäranden hämtar alla målserverkonfigurationer för din IMS-organisation, eller en viss målserverkonfiguration, beroende på om du skickar parametern `INSTANCE_ID` i begäran.
 
 Välj varje flik nedan för att visa motsvarande nyttolast och deras svar.
 
@@ -58,7 +58,7 @@ Välj varje flik nedan för att visa motsvarande nyttolast och deras svar.
 
 >[!TAB Hämta alla målserverkonfigurationer]
 
-Följande begäran hämtar listan över målserverkonfigurationer som du har åtkomst till, baserat på [!DNL IMS Org ID] och sandlådekonfiguration.
+Följande begäran hämtar listan över målserverkonfigurationer som du har åtkomst till, baserat på [!DNL IMS Org ID]- och sandlådekonfiguration.
 
 +++Begäran
 
@@ -74,7 +74,7 @@ curl -X GET https://platform.adobe.io/data/core/activation/authoring/destination
 
 +++svar
 
-Ett lyckat svar returnerar HTTP-status 200 med en lista över målserverkonfigurationer som du har åtkomst till, baserat på [!DNL IMS Org ID] och namnet på sandlådan som du använde. Ett `instanceId` motsvarar en målserver. Exemplet nedan innehåller två målserverkonfigurationer.
+Ett lyckat svar returnerar HTTP-status 200 med en lista över målserverkonfigurationer som du har åtkomst till, baserat på namnet på [!DNL IMS Org ID] och sandlådan som du använde. En `instanceId` motsvarar en målserver. Exemplet nedan innehåller två målserverkonfigurationer.
 
 ```json
 {
@@ -153,7 +153,7 @@ Ett lyckat svar returnerar HTTP-status 200 med en lista över målserverkonfigur
 
 >[!TAB Hämta en specifik målserverkonfiguration]
 
-Följande begäran hämtar en specifik målserverkonfiguration som definieras av `{INSTANCE_ID}` parameter.
+Följande begäran hämtar en specifik målserverkonfiguration som definieras av parametern `{INSTANCE_ID}`.
 
 +++Begäran
 
@@ -173,7 +173,7 @@ curl -X GET https://platform.adobe.io/data/core/activation/authoring/destination
 
 +++svar
 
-Ett lyckat svar returnerar HTTP-status 200 med målserverns konfiguration som motsvarar `{INSTANCE_ID}` du tillhandahöll.
+Ett lyckat svar returnerar HTTP-status 200 med den konfiguration av målservern som motsvarar `{INSTANCE_ID}` som du angav.
 
 ```json
 {
@@ -221,11 +221,11 @@ Ett lyckat svar returnerar HTTP-status 200 med målserverns konfiguration som mo
 
 ## API-felhantering {#error-handling}
 
-Destination SDK-API-slutpunkter följer de allmänna felmeddelandeprinciperna för Experience Platform API. Se [API-statuskoder](../../../../landing/troubleshooting.md#api-status-codes) och [fel i begäranhuvudet](../../../../landing/troubleshooting.md#request-header-errors) i felsökningsguiden för plattformen.
+Destination SDK-API-slutpunkter följer de allmänna felmeddelandeprinciperna för Experience Platform API. Se [API-statuskoder](../../../../landing/troubleshooting.md#api-status-codes) och [begäranrubrikfel](../../../../landing/troubleshooting.md#request-header-errors) i felsökningsguiden för plattformen.
 
 ## Nästa steg {#next-steps}
 
-När du har läst det här dokumentet kan du nu hämta en målserverkonfiguration via Destinationen SDK `/authoring/destination-servers` API-slutpunkt.
+När du har läst det här dokumentet vet du nu hur du hämtar en målserverkonfiguration via API-slutpunkten för Destinationen SDK `/authoring/destination-servers`.
 
 Mer information om vad du kan göra med den här slutpunkten finns i följande artiklar:
 

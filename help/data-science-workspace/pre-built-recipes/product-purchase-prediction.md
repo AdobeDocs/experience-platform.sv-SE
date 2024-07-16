@@ -6,8 +6,8 @@ description: Med recept för produktinköpsförutsägelse kan du förutsäga san
 exl-id: 66a45629-33a3-4081-8dbd-b864983b8f57
 source-git-commit: 86e6924078c115fb032ce39cd678f1d9c622e297
 workflow-type: tm+mt
-source-wordcount: '397'
-ht-degree: 5%
+source-wordcount: '392'
+ht-degree: 0%
 
 ---
 
@@ -31,31 +31,31 @@ recept på produktinköpsförutsägelse använder maskininlärning för att för
 
 ## Datamodell
 
-Det här receptet använder [XDM-scheman](../../xdm/home.md) för att modellera data. Schemat som används för det här receptet visas nedan:
+I det här receptet används [XDM-scheman](../../xdm/home.md) för att modellera data. Schemat som används för det här receptet visas nedan:
 
 | Fältnamn | Typ |
 | --- | --- |
 | userId | Sträng |
-| könRatio | Siffra |
-| ageY | Siffra |
-| ageM | Siffra |
+| könRatio | Nummer |
+| ageY | Nummer |
+| ageM | Nummer |
 | optinEmail | Boolean |
 | optinMobile | Boolean |
 | optinAddress | Boolean |
 | skapad | Heltal |
-| totalOrders | Siffra |
-| totalItems | Siffra |
-| orderDate1 | Siffra |
-| shippingDate1 | Siffra |
-| totalPrice1 | Siffra |
-| tax1 | Siffra |
-| orderDate2 | Siffra |
-| shippingDate2 | Siffra |
-| totalPrice2 | Siffra |
+| totalOrders | Nummer |
+| totalItems | Nummer |
+| orderDate1 | Nummer |
+| shippingDate1 | Nummer |
+| totalPrice1 | Nummer |
+| tax1 | Nummer |
+| orderDate2 | Nummer |
+| shippingDate2 | Nummer |
+| totalPrice2 | Nummer |
 
 
 ## Algoritm
 
-Först utbildningsinformationen i *ProduktFörutsättning* schemat har lästs in. Härifrån utbildas modellen med en [slumpmässig skogsklassificering](https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.RandomForestClassifier.html). Slumpmässig skogsklassificerare är en typ av ensemberad algoritm som refererar till en algoritm som kombinerar flera algoritmer för att få bättre prediktiva prestanda. Tanken bakom algoritmen är att den slumpmässiga skogsklassificeraren bygger flera beslutsträd och sammanfogar dem för att skapa en mer korrekt och stabil förutsägelse.
+Först läses utbildningsdatauppsättningen i *ProductPredication* -schemat in. Härifrån utbildas modellen med en [slumpmässig skogsklassificerare](https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.RandomForestClassifier.html). Slumpmässig skogsklassificerare är en typ av ensemberad algoritm som refererar till en algoritm som kombinerar flera algoritmer för att få bättre prediktiva prestanda. Tanken bakom algoritmen är att den slumpmässiga skogsklassificeraren bygger flera beslutsträd och sammanfogar dem för att skapa en mer korrekt och stabil förutsägelse.
 
 Denna process börjar med att skapa en uppsättning beslutsträd som slumpvis väljer ut undergrupper av utbildningsdata. Därefter beräknas medelvärdet för resultaten av varje beslutsträd.

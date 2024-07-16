@@ -4,8 +4,8 @@ description: Lär dig återanvända flera villkor i flera frågor med infogade m
 exl-id: 78959070-f9e5-4736-b72a-a8ef518bfa4f
 source-git-commit: 37aeff5131b9f67dbc99f6199918403e699478c8
 workflow-type: tm+mt
-source-wordcount: '485'
-ht-degree: 1%
+source-wordcount: '486'
+ht-degree: 0%
 
 ---
 
@@ -15,9 +15,9 @@ Med infogade mallar kan du återanvända flera villkor i flera frågor. Du kan s
 
 Det här dokumentet innehåller information om användning och begränsningar för infogade mallar i Frågeredigeraren.
 
-## Förutsättningar
+## Förhandskrav
 
-Textbundna mallar stöds både av API:t för användargränssnittet och frågetjänsten. Innan du fortsätter med den här guiden ska du läsa dokumentationen om hur du [skapa en frågemall via API](../api/query-templates.md#create-a-query-template) eller med [Frågeredigeraren](../ui/user-guide.md#query-authoring).
+Textbundna mallar stöds både av API:t för användargränssnittet och frågetjänsten. Läs dokumentationen om hur du [skapar en frågemall via API:t ](../api/query-templates.md#create-a-query-template) eller med [frågeredigeraren](../ui/user-guide.md#query-authoring) innan du fortsätter med den här guiden.
 
 ## Syntax för infogad mall {#syntax}
 
@@ -40,14 +40,14 @@ När frågan körs ersätter frågetjänsten mallnamnet med början från hash-s
 >
 >Frågemallar kan anropa valfritt antal andra infogade mallar. Det finns ingen begränsning för hur många infogade mallar du kan anropa från en enstaka fråga. Mallar kan också kapslas i andra infogade mallar.
 
-Du kan använda mallar för att lagra ett eller flera villkor. De behöver inte vara en komplett fråga själva. Om mallen innehåller en giltig fråga kan du köra frågan genom att anropa mallnamnet som föregås av en hash-symbol. Om du till exempel lagrade `SELECT * FROM JUNE_2023_LOYALTY_MEMBERS;` som en mall `JUNE_2023_LOYALTY_MEMBERS`, kommandot  `#JUNE_2023_LOYALTY_MEMBERS;` skulle köra den giltiga fråga som finns i mallen.
+Du kan använda mallar för att lagra ett eller flera villkor. De behöver inte vara en komplett fråga själva. Om mallen innehåller en giltig fråga kan du köra frågan genom att anropa mallnamnet som föregås av en hash-symbol. Om du till exempel lagrade `SELECT * FROM JUNE_2023_LOYALTY_MEMBERS;` som en mall med namnet `JUNE_2023_LOYALTY_MEMBERS` kör kommandot `#JUNE_2023_LOYALTY_MEMBERS;` den giltiga frågan som finns i mallen.
 
 >
 >
->I Adobe Experience Platform-användargränssnittet stöds textbundna mallar i form av parametriserade frågor bara på överordnad nivå. Detta innebär att parametriserade frågor bara fungerar när de används i den ursprungliga mallen. Den underordnade mallen måste vara en statisk mall och kan inte ha dynamiska parametrar. Se [parametriserad frågedokumentation](../ui/parameterized-queries.md) om du vill veta mer.
+>I Adobe Experience Platform-användargränssnittet stöds textbundna mallar i form av parametriserade frågor bara på överordnad nivå. Detta innebär att parametriserade frågor bara fungerar när de används i den ursprungliga mallen. Den underordnade mallen måste vara en statisk mall och kan inte ha dynamiska parametrar. Mer information finns i [dokumentationen för parametriserade frågor](../ui/parameterized-queries.md).
 
 ## Nästa steg
 
 När du har läst det här dokumentet vet du nu hur du refererar till andra mallar i SQL, antingen i frågeredigeraren eller via API:t för frågetjänsten.
 
-Dessutom bör du läsa [anonym blockguide](./anonymous-block.md), som förklarar hur du minimerar utvecklingsutgifter genom att koppla ihop en eller flera SQL-satser som körs i följd.
+Dessutom bör du läsa [guiden för anonyma block](./anonymous-block.md), som förklarar hur du minimerar utvecklingsutgifter genom att länka en eller flera SQL-satser som körs i sekvens.

@@ -12,7 +12,7 @@ ht-degree: 0%
 
 # Översikt över segmentering av flera enheter
 
-Flerenhetssegmentering är en avancerad funktion som ingår i Adobe Experience Platform [!DNL Segmentation Service]. Med den här funktionen kan du utöka [!DNL Real-Time Customer Profile] data med ytterligare&quot;icke-persondata&quot; (kallas även&quot;dimensionsenheter&quot;) som din organisation kan definiera, t.ex. data relaterade till produkter eller butiker. Segmentering för flera enheter ger flexibilitet när det gäller att definiera segmentdefinitioner baserat på data som är relevanta för era unika affärsbehov och kan utföras utan att ni behöver ha expertis inom databaser. Med segmentering av flera enheter kan du lägga till nyckeldata till segmentdefinitionerna utan att behöva göra kostsamma ändringar i dataströmmar eller vänta på en datasammanfogning.
+Flerenhetssegmentering är en avancerad funktion som är tillgänglig som en del av Adobe Experience Platform [!DNL Segmentation Service]. Med den här funktionen kan du utöka [!DNL Real-Time Customer Profile]-data med ytterligare&quot;icke-persondata&quot; (kallas även&quot;dimensionsenheter&quot;) som din organisation kan definiera, till exempel data relaterade till produkter eller butiker. Segmentering för flera enheter ger flexibilitet när det gäller att definiera segmentdefinitioner baserat på data som är relevanta för era unika affärsbehov och kan utföras utan att ni behöver ha expertis inom databaser. Med segmentering av flera enheter kan du lägga till nyckeldata till segmentdefinitionerna utan att behöva göra kostsamma ändringar i dataströmmar eller vänta på en datasammanfogning.
 
 ## Komma igång
 
@@ -20,9 +20,9 @@ Segmentering på flera enheter kräver en fungerande förståelse av de olika Ad
 
 * [[!DNL Real-Time Customer Profile]](../profile/home.md): Tillhandahåller en enhetlig konsumentprofil i realtid baserat på aggregerade data från flera källor.
    * [Profilskyddsutkast](../profile/guardrails.md): Bästa tillvägagångssätt för att skapa datamodeller som stöds av [!DNL Profile].
-* [[!DNL Adobe Experience Platform Segmentation Service]](./home.md): Används för att bygga målgrupper utifrån [!DNL Real-Time Customer Profile] data.
+* [[!DNL Adobe Experience Platform Segmentation Service]](./home.md): Gör att du kan skapa målgrupper från [!DNL Real-Time Customer Profile]-data.
 * [[!DNL Experience Data Model (XDM)]](../xdm/home.md): Det standardiserade ramverk som Experience Platform använder för att ordna kundupplevelsedata.
-   * [Grunderna för schemakomposition](../xdm/schema/composition.md#union): Lär dig de bästa sätten att skapa scheman som ska användas i Experience Platform. För att utnyttja segmenteringen på bästa sätt bör du se till att dina data är inmatade som profiler och händelser enligt [bästa praxis för datamodellering](../xdm/schema/best-practices.md).
+   * [Grundläggande om schemakomposition](../xdm/schema/composition.md#union): Lär dig de bästa sätten att komponera scheman som ska användas i Experience Platform. För att du ska kunna använda segmentering bör du se till att dina data är inmatade som profiler och händelser enligt [bästa praxis för datamodellering](../xdm/schema/best-practices.md).
 
 ## Användningsfall
 
@@ -38,7 +38,7 @@ Det är komplicerat att skapa och kvalificera användare i segmentdefinitioner f
 
 ## Skapa segmentdefinitioner för flera enheter
 
-Om du vill skapa en segmentdefinition för flera enheter måste du definiera relationer mellan scheman innan du använder [!DNL Segmentation] API eller segmentbyggargränssnitt för att skapa segmentdefinitionen.
+Om du vill skapa en segmentdefinition för flera entiteter först måste du definiera relationer mellan scheman innan du kan använda gränssnittet för [!DNL Segmentation] eller segmentbyggaren för att skapa segmentdefinitionen.
 
 ### Definiera relationer
 
@@ -58,4 +58,4 @@ När du har definierat de nödvändiga XDM-relationerna kan du börja skapa en s
 
 ## Utvärdera och få tillgång till segmentdefinitioner för flera enheter
 
-När du har skapat en segmentdefinition kan du utvärdera och komma åt resultaten med segmenterings-API:t. Utvärderingen av en segmentdefinition som består av flera enheter påminner mycket om utvärderingen av en standardsegmentdefinition. Den här processen kan bara utföras med segmenterings-API:t. En detaljerad guide som visar hur du använder API:t för att utvärdera och komma åt segmentdefinitioner finns i [utvärdera och komma åt segmentdefinitioner](./tutorials/evaluate-a-segment.md) självstudie.
+När du har skapat en segmentdefinition kan du utvärdera och komma åt resultaten med segmenterings-API:t. Utvärderingen av en segmentdefinition som består av flera enheter påminner mycket om utvärderingen av en standardsegmentdefinition. Den här processen kan bara utföras med segmenterings-API:t. En detaljerad guide som visar hur du använder API:t för att utvärdera och komma åt segmentdefinitioner finns i självstudiekursen [Utvärderar och använder segmentdefinitioner](./tutorials/evaluate-a-segment.md).

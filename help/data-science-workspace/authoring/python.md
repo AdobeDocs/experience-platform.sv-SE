@@ -1,24 +1,24 @@
 ---
 keywords: Experience Platform;hem;populära ämnen;dataåtkomst;python sdk;dataåtkomst api;read python;write python
 solution: Experience Platform
-title: Åtkomst till data med Python i datavetenskapen
+title: Åtkomst till data med Python i Data Science Workspace
 type: Tutorial
-description: Följande dokument innehåller exempel på hur du får åtkomst till data i Python för användning i Data Science Workspace.
+description: Följande dokument innehåller exempel på hur man får tillgång till data i Python för användning i Data Science Workspace.
 exl-id: 75aafd58-634a-4df3-a2f0-9311f93deae4
 source-git-commit: 86e6924078c115fb032ce39cd678f1d9c622e297
 workflow-type: tm+mt
-source-wordcount: '420'
+source-wordcount: '412'
 ht-degree: 0%
 
 ---
 
-# Åtkomst till data med Python i Data Science Workspace
+# Få tillgång till data med Python in Data Science Workspace
 
-Följande dokument innehåller exempel på hur du får åtkomst till data med Python för användning i Data Science Workspace. Information om hur du får åtkomst till data med JupyterLab-anteckningsböcker finns på [Dataåtkomst för JupyterLab-anteckningsböcker](../jupyterlab/access-notebook-data.md) dokumentation.
+Följande dokument innehåller exempel på hur du får åtkomst till data med Python för användning i Data Science Workspace. Information om hur du får åtkomst till data med JupyterLab-anteckningsböcker finns i [dokumentationen för JupyterLab-anteckningsböcker för dataåtkomst](../jupyterlab/access-notebook-data.md).
 
 ## Läsa en datauppsättning
 
-När du har angett miljövariablerna och slutfört installationen kan din datauppsättning nu läsas i pandabilden.
+När du har ställt in miljövariablerna och slutfört installationen kan din datauppsättning nu läsas i pandabilden.
 
 ```python
 import pandas as pd
@@ -40,7 +40,7 @@ df = dataset_reader.read()
 df = dataset_reader.select(['column-a','column-b']).read()
 ```
 
-### Hämta partitionsinformation:
+### Hämta information om partitionering:
 
 ```python
 client_context = get_client_context(config_properties)
@@ -53,7 +53,7 @@ partitions = dataset.get_partitions_info()
 
 Med DISTINCT-satsen kan du hämta alla distinkta värden på rad-/kolumnnivå och ta bort alla dubblettvärden från svaret.
 
-Ett exempel på hur du använder `distinct()` finns nedan:
+Ett exempel på hur funktionen `distinct()` används visas nedan:
 
 ```python
 df = dataset_reader.select(['column-a']).distinct().read()
@@ -85,9 +85,9 @@ df = dataset_reader.where(experience_ds['timestamp'].gt(87879779797).And(experie
 
 ### ORDER BY-instruktion
 
-ORDER BY-satsen tillåter att mottagna resultat sorteras efter en angiven kolumn i en viss ordning (stigande eller fallande). Detta görs genom att använda `sort()` funktion.
+ORDER BY-satsen tillåter att mottagna resultat sorteras efter en angiven kolumn i en viss ordning (stigande eller fallande). Detta görs med funktionen `sort()`.
 
-Ett exempel på hur du använder `sort()` finns nedan:
+Ett exempel på hur funktionen `sort()` används visas nedan:
 
 ```python
 df = dataset_reader.sort([('column_1', 'asc'), ('column_2', 'desc')])
@@ -97,7 +97,7 @@ df = dataset_reader.sort([('column_1', 'asc'), ('column_2', 'desc')])
 
 Med LIMIT-satsen kan du begränsa antalet poster som tas emot från datauppsättningen.
 
-Ett exempel på hur du använder `limit()` finns nedan:
+Ett exempel på hur funktionen `limit()` används visas nedan:
 
 ```python
 df = dataset_reader.limit(100).read()
@@ -107,7 +107,7 @@ df = dataset_reader.limit(100).read()
 
 Med satsen OFFSET kan du hoppa över rader från början och börja returnera rader från en senare punkt. I kombination med LIMIT kan detta användas för att iterera rader i block.
 
-Ett exempel på hur du använder `offset()` finns nedan:
+Ett exempel på hur funktionen `offset()` används visas nedan:
 
 ```python
 df = dataset_reader.offset(100).read()
@@ -136,7 +136,7 @@ För längre jobb som körs kan du behöva lagra mellanliggande steg. I instanse
 
 >[!NOTE]
 >
->Sökvägar till data är **not** lagrad. Du måste lagra motsvarande sökväg till respektive data.
+>Sökvägar till data lagras **inte**. Du måste lagra motsvarande sökväg till respektive data.
 
 ### Skriv till användarområde
 
@@ -158,4 +158,4 @@ my_df = user_helper.read(path=<path_to_directory>, ref_dataset_id=<ref_dataset_i
 
 ## Nästa steg
 
-Adobe Experience Platform Data Science Workspace innehåller ett recept som använder ovanstående kodexempel för att läsa och skriva data. Om du vill veta mer om hur du använder Python för att få tillgång till dina data kan du läsa [Data Science Workspace Python GitHub-databas](https://github.com/adobe/experience-platform-dsw-reference/tree/master/recipes/python/retail).
+Adobe Experience Platform Data Science Workspace tillhandahåller ett recept som använder ovanstående kodexempel för att läsa och skriva data. Om du vill veta mer om hur du använder Python för att få tillgång till dina data kan du läsa [Data Science Workspace Python GitHub Repository](https://github.com/adobe/experience-platform-dsw-reference/tree/master/recipes/python/retail).

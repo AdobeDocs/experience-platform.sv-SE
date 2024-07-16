@@ -14,7 +14,7 @@ ht-degree: 0%
 
 När SDK försöker återge personaliseringsinnehåll måste det se till att det inte blir någon flimmer. Flimmer, som även kallas FOOC (Flash av ursprungligt innehåll), är när ett ursprungligt innehåll visas kort innan alternativet visas under testning/personalisering. SDK försöker tillämpa CSS-format på element på sidan för att säkerställa att dessa element döljs tills personaliseringsinnehållet återges korrekt.
 
-Hur du hanterar flimmer beror på om du distribuerar Web SDK synkront eller asynkront. Kontrollera `<head>` tagg där du distribuerar `alloy.js` eller tagginläsaren. Förekomsten av `async` i `<script>` -taggen avgör om Web SDK läses in asynkront.
+Hur du hanterar flimmer beror på om du distribuerar Web SDK synkront eller asynkront. Kontrollera taggen `<head>` där du distribuerar `alloy.js` eller tagginläsaren. Förekomsten av attributet `async` i taggen `<script>` avgör om Web SDK läses in asynkront.
 
 ```html
 <!-- This tag loads synchronously -->
@@ -38,9 +38,9 @@ Synkron flimmerhantering är uppdelad i tre faser:
 1. Förbehandling
 1. Återgivning
 
-Under **fördöljningsfas** använder SDK [`prehidingStyle`](../commands/configure/prehidingstyle.md) konfigurationsegenskap för att skapa en tagg av typen HTML och lägga till den i DOM för att se till att önskade avsnitt på sidan är dolda. Om du är osäker på vilka delar av sidan som ska personaliseras bör du ange `prehidingStyle` till `body { opacity: 0 !important }`. Detta säkerställer att hela sidan är dold. Detta har dock lett till sämre sidåtergivningsprestanda som rapporterats av verktyg som Lightroom, Web Page Tests osv. För att få bästa sidåtergivningsprestanda bör du ange `prehidingStyle` till en lista med behållarelement som innehåller de delar av sidan som ska personaliseras.
+Under **fördöljningsfasen** använder SDK konfigurationsegenskapen [`prehidingStyle`](../commands/configure/prehidingstyle.md) för att skapa en tagg av typen HTML och lägga till den i DOM för att se till att önskade avsnitt på sidan är dolda. Om du är osäker på vilka delar av sidan som ska anpassas, bör du ange `prehidingStyle` till `body { opacity: 0 !important }`. Detta säkerställer att hela sidan är dold. Detta har dock lett till sämre sidåtergivningsprestanda som rapporterats av verktyg som Lightroom, Web Page Tests osv. För att få bästa sidåtergivningsprestanda bör du ställa in `prehidingStyle` på en lista med behållarelement som innehåller de delar av sidan som ska anpassas.
 
-Anta att du har en HTML-sida som den nedan och att bara `bar` och `bazz` behållarelement personaliseras någonsin:
+Anta att du har en HTML-sida som den nedan och du vet att bara `bar` och `bazz` behållarelement någonsin kommer att personaliseras:
 
 ```html
 <html>
@@ -62,11 +62,11 @@ Anta att du har en HTML-sida som den nedan och att bara `bar` och `bazz` behåll
 </html>
 ```
 
-Sedan `prehidingStyle` ska vara inställd på något som `#bar, #bazz { opacity: 0 !important }`.
+Därefter ska `prehidingStyle` anges till något som `#bar, #bazz { opacity: 0 !important }`.
 
-När SDK har tagit emot anpassat innehåll från servern är **förbearbetningsfas** börjar. Under den här fasen är svaret förbearbetat, så att element som måste innehålla personaliserat innehåll döljs. När de här elementen är dolda, är det formatmärkord för HTML som har skapats baserat på `prehidingStyle` konfigurationsalternativet tas bort och HTML-brödtexten eller de dolda behållarelementen visas.
+När SDK har tagit emot anpassat innehåll från servern startar **förbearbetningsfasen**. Under den här fasen är svaret förbearbetat, så att element som måste innehålla personaliserat innehåll döljs. När de här elementen är dolda tas den tagg av typen HTML som har skapats baserat på konfigurationsalternativet `prehidingStyle` bort och HTML-brödtexten eller de dolda behållarelementen visas.
 
-När allt personaliseringsinnehåll har renderats, eller om något fel uppstod, **återgivningsfas** börjar. Alla tidigare dolda element visas för att säkerställa att det inte finns några dolda element på sidan som doldes av SDK:n.
+När allt anpassningsinnehåll har renderats, eller om något fel uppstod, startar **återgivningsfasen**. Alla tidigare dolda element visas för att säkerställa att det inte finns några dolda element på sidan som doldes av SDK:n.
 
 ## Hantera flimmer för asynkrona distributioner
 
@@ -84,4 +84,4 @@ Rekommendationen är att alltid läsa in SDK asynkront för att få bästa sidå
 </script>
 ```
 
-För att vara säker på att HTML-delen eller behållarelementen inte döljs under en längre tid använder det fördolda fragmentet en timer som som standard tar bort fragmentet efter `3000` millisekunder. The `3000` millisekunder är den maximala väntetiden. Om svaret från servern har tagits emot och bearbetats tidigare tas den tidigare HTML-stiltaggen bort så snart som möjligt.
+För att vara säker på att HTML-delen eller behållarelementen inte döljs under en längre tid använder det fördolda fragmentet en timer som som standard tar bort fragmentet efter `3000` millisekunder. `3000` millisekunder är den maximala väntetiden. Om svaret från servern har tagits emot och bearbetats tidigare tas den tidigare HTML-stiltaggen bort så snart som möjligt.

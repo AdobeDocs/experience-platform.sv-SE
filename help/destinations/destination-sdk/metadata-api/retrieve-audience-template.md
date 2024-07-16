@@ -4,7 +4,7 @@ title: Hämta en målgruppsmall
 exl-id: 44f2d571-49c5-4112-b3ee-bc839f2b0874
 source-git-commit: b4334b4f73428f94f5a7e5088f98e2459afcaf3c
 workflow-type: tm+mt
-source-wordcount: '418'
+source-wordcount: '420'
 ht-degree: 0%
 
 ---
@@ -15,21 +15,21 @@ ht-degree: 0%
 >
 >**API-slutpunkt**: `platform.adobe.io/data/core/activation/authoring/audience-templates`
 
-Den här sidan innehåller exempel på API-begäran och nyttolast som du kan använda för att hämta en målgruppsmetadatamall med hjälp av `/authoring/audience-templates` API-slutpunkt.
+Den här sidan innehåller exempel på API-begäran och nyttolast som du kan använda för att hämta en målgruppsmetadatamall med API-slutpunkten `/authoring/audience-templates`.
 
-En detaljerad beskrivning av de funktioner som du kan konfigurera via den här slutpunkten finns i [hantering av målmetadata](../functionality/audience-metadata-management.md).
+En detaljerad beskrivning av de funktioner som du kan konfigurera via den här slutpunkten finns i [hantering av målgruppsmetadata](../functionality/audience-metadata-management.md).
 
 >[!IMPORTANT]
 >
->Alla parameternamn och värden som stöds av Destinationen SDK är **skiftlägeskänslig**. Undvik skiftlägeskänslighetsfel genom att använda parameternamn och värden exakt som de visas i dokumentationen.
+>Alla parameternamn och värden som stöds av Destinationen SDK är **skiftlägeskänsliga**. Undvik skiftlägeskänslighetsfel genom att använda parameternamn och värden exakt som de visas i dokumentationen.
 
 ## Komma igång med API-åtgärder för målgruppsmallar {#get-started}
 
-Innan du fortsätter bör du granska [komma igång-guide](../getting-started.md) för viktig information som du behöver känna till för att kunna anropa API:t, inklusive hur du får nödvändig behörighet för målredigering och obligatoriska huvuden.
+Innan du fortsätter bör du läsa igenom [kom igång-guiden](../getting-started.md) för att få viktig information som du behöver känna till för att kunna ringa anrop till API:t, inklusive hur du får nödvändig behörighet för målredigering och nödvändiga rubriker.
 
 ## Hämta en målgruppsmall {#retrieve}
 
-Du kan hämta en befintlig målgruppsmall genom att skapa en `GET` begäran till `/authoring/audience-templates` slutpunkt.
+Du kan hämta en befintlig målgruppsmall genom att göra en `GET`-begäran till `/authoring/audience-templates`-slutpunkten.
 
 **API-format**
 
@@ -39,21 +39,21 @@ Använd följande API-format för att hämta alla målgruppsmallar för ditt kon
 GET /authoring/audience-templates
 ```
 
-Använd följande API-format för att hämta en specifik målgruppsmall, som definieras av `{INSTANCE_ID}` parameter.
+Använd följande API-format för att hämta en specifik målgruppsmall som definieras av parametern `{INSTANCE_ID}`.
 
 ```http
 GET /authoring/audience-templates/{INSTANCE_ID}
 ```
 
-Följande två förfrågningar hämtar alla målgruppsmallar för din IMS-organisation, eller en viss målgruppsmall, beroende på om du har godkänt `INSTANCE_ID` -parametern i begäran.
+Följande två begäranden hämtar alla målgruppsmallar för din IMS-organisation, eller en viss målgruppsmall, beroende på om du skickar parametern `INSTANCE_ID` i begäran.
 
 Välj varje flik nedan för att visa motsvarande nyttolast.
 
 >[!BEGINTABS]
 
->[!TAB Hämta alla målgruppsmallar]
+>[!TAB Hämta alla publikmallar]
 
-Följande begäran hämtar listan med målgruppsmallar som du har åtkomst till, baserat på [!DNL IMS Org ID] och sandlådekonfiguration.
+Följande begäran hämtar listan med målgruppsmallar som du har åtkomst till, baserat på konfigurationen för [!DNL IMS Org ID] och sandlådan.
 
 +++Begäran
 
@@ -69,7 +69,7 @@ curl -X GET https://platform.adobe.io/data/core/activation/authoring/audience-te
 
 +++svar
 
-Ett lyckat svar returnerar HTTP-status 200 med en lista över målgruppsmallar som du har tillgång till, baserat på [!DNL IMS Org ID] och namnet på sandlådan som du använde. Ett `instanceId` motsvarar en målgruppsmall.
+Ett lyckat svar returnerar HTTP-status 200 med en lista över målgruppsmallar som du har åtkomst till, baserat på det [!DNL IMS Org ID]- och sandlådenamn som du använde. En `instanceId` motsvarar en målgruppsmall.
 
 ```json
 {
@@ -182,7 +182,7 @@ Ett lyckat svar returnerar HTTP-status 200 med en lista över målgruppsmallar s
 
 >[!TAB Hämta en specifik målgruppsmall]
 
-Följande begäran hämtar listan med målgruppsmallar som du har åtkomst till, baserat på [!DNL IMS Org ID] och sandlådekonfiguration.
+Följande begäran hämtar listan med målgruppsmallar som du har åtkomst till, baserat på konfigurationen för [!DNL IMS Org ID] och sandlådan.
 
 +++Begäran
 
@@ -202,7 +202,7 @@ curl -X GET https://platform.adobe.io/data/core/activation/authoring/audience-te
 
 +++svar
 
-Ett godkänt svar returnerar HTTP-status 200 med information om målgruppsmallen som motsvarar `{INSTANCE_ID}` anges på samtalet.
+Ett lyckat svar returnerar HTTP-status 200 med information om målgruppsmallen som motsvarar `{INSTANCE_ID}` som anges i samtalet.
 
 ```json
 {
@@ -317,8 +317,8 @@ Ett godkänt svar returnerar HTTP-status 200 med information om målgruppsmallen
 
 ## API-felhantering {#error-handling}
 
-Destination SDK-API-slutpunkter följer de allmänna felmeddelandeprinciperna för Experience Platform API. Se [API-statuskoder](../../../landing/troubleshooting.md#api-status-codes) och [fel i begäranhuvudet](../../../landing/troubleshooting.md#request-header-errors) i felsökningsguiden för plattformen.
+Destination SDK-API-slutpunkter följer de allmänna felmeddelandeprinciperna för Experience Platform API. Se [API-statuskoder](../../../landing/troubleshooting.md#api-status-codes) och [begäranrubrikfel](../../../landing/troubleshooting.md#request-header-errors) i felsökningsguiden för plattformen.
 
 ## Nästa steg {#next-steps}
 
-När du har läst det här dokumentet vet du nu hur du hämtar information om målserverkonfigurationen med `/authoring/destination-servers` API-slutpunkt. Läs [Så här använder du Destination SDK för att konfigurera ditt mål](../guides/configure-destination-instructions.md) för att förstå var det här steget passar in i processen att konfigurera målet.
+När du har läst det här dokumentet vet du nu hur du hämtar information om målserverkonfigurationen med API-slutpunkten `/authoring/destination-servers`. Läs [om hur du använder Destination SDK för att konfigurera ditt mål](../guides/configure-destination-instructions.md) och förstå var det här steget passar in i processen att konfigurera ditt mål.

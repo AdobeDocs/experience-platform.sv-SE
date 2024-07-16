@@ -11,9 +11,9 @@ ht-degree: 0%
 
 ---
 
-# [!UICONTROL Geo interaction details] datatyp
+# Datatypen [!UICONTROL Geo interaction details]
 
-[!UICONTROL Geo interaction details] är en standard-XDM-datatyp som beskriver det aktuella läget för inkludering i ett geografiskt definierat område.
+[!UICONTROL Geo interaction details] är en standard-XDM-datatyp som beskriver det aktuella inkluderingstillståndet i ett geografiskt definierat område.
 
 <img src="../images/data-types/geo-interaction-details.png" width="400" /><br />
 

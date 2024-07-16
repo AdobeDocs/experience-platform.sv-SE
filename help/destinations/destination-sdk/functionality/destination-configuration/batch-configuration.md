@@ -4,8 +4,8 @@ title: Batchkonfiguration
 exl-id: 0ffbd558-a83c-4c3d-b4fc-b6f7a23a163a
 source-git-commit: 82ba4e62d5bb29ba4fef22c5add864a556e62c12
 workflow-type: tm+mt
-source-wordcount: '1045'
-ht-degree: 3%
+source-wordcount: '1025'
+ht-degree: 0%
 
 ---
 
@@ -22,9 +22,9 @@ När du skapar filbaserade mål via Destination SDK kan du konfigurera standardp
 
 Batchkonfigurationsinställningarna ingår i målkonfigurationen för filbaserade mål.
 
-Mer information om var den här komponenten passar in i en integrering som skapas med Destination SDK finns i diagrammet i [konfigurationsalternativ](../configuration-options.md) eller se guiden om hur du [använd Destination SDK för att konfigurera ett filbaserat mål](../../guides/configure-file-based-destination-instructions.md#create-server-file-configuration).
+Mer information om var den här komponenten passar in i en integrering som skapats med Destination SDK finns i diagrammet i dokumentationen för [konfigurationsalternativ](../configuration-options.md) eller i guiden om hur du [använder Destination SDK för att konfigurera ett filbaserat mål](../../guides/configure-file-based-destination-instructions.md#create-server-file-configuration).
 
-Du kan konfigurera inställningarna för filnamngivning och exportscheman via `/authoring/destinations` slutpunkt. På följande API-referenssidor finns detaljerade API-anropsexempel där du kan konfigurera komponenterna som visas på den här sidan.
+Du kan konfigurera inställningarna för filnamngivning och exportschema via slutpunkten `/authoring/destinations`. På följande API-referenssidor finns detaljerade API-anropsexempel där du kan konfigurera komponenterna som visas på den här sidan.
 
 * [Skapa en målkonfiguration](../../authoring-api/destination-configuration/create-destination-configuration.md)
 * [Uppdatera en målkonfiguration](../../authoring-api/destination-configuration/update-destination-configuration.md)
@@ -33,7 +33,7 @@ I den här artikeln beskrivs alla gruppkonfigurationsalternativ som stöds och s
 
 >[!IMPORTANT]
 >
->Alla parameternamn och värden som stöds av Destinationen SDK är **skiftlägeskänslig**. Undvik skiftlägeskänslighetsfel genom att använda parameternamn och värden exakt som de visas i dokumentationen.
+>Alla parameternamn och värden som stöds av Destinationen SDK är **skiftlägeskänsliga**. Undvik skiftlägeskänslighetsfel genom att använda parameternamn och värden exakt som de visas i dokumentationen.
 
 ## Integrationstyper som stöds {#supported-integration-types}
 
@@ -46,7 +46,7 @@ Se tabellen nedan för mer ingående information om vilka typer av integreringar
 
 ## parametrar som stöds {#supported-parameters}
 
-Värdena som du ställer in här visas i [Schemalägg målgruppsexport](../../../ui/activate-batch-profile-destinations.md#scheduling) steg i det filbaserade arbetsflödet för målaktivering.
+Värdena som du anger här visas i steget [Schemalägg målexport](../../../ui/activate-batch-profile-destinations.md#scheduling) i det filbaserade arbetsflödet för målaktivering.
 
 ```json
 "batchConfig":{
@@ -88,27 +88,27 @@ Värdena som du ställer in här visas i [Schemalägg målgruppsexport](../../..
 
 | Parameter | Typ | Beskrivning |
 |---------|----------|------|
-| `allowMandatoryFieldSelection` | Boolean | Ange till `true` så att kunderna kan ange vilka profilattribut som är obligatoriska. Standardvärdet är `false`. Se [Obligatoriska attribut](../../../ui/activate-batch-profile-destinations.md#mandatory-attributes) för mer information. |
-| `allowDedupeKeyFieldSelection` | Boolean | Ange till `true` så att kunderna kan ange dedupliceringsnycklar. Standardvärdet är `false`.  Se [Dedupliceringsnycklar](../../../ui/activate-batch-profile-destinations.md#deduplication-keys) för mer information. |
-| `defaultExportMode` | Enum | Definierar standardläget för filexport. Värden som stöds:<ul><li>`DAILY_FULL_EXPORT`</li><li>`FIRST_FULL_THEN_INCREMENTAL`</li></ul> Standardvärdet är `DAILY_FULL_EXPORT`. Se [batchaktiveringsdokumentation](../../../ui/activate-batch-profile-destinations.md#scheduling) om du vill ha mer information om schemaläggning av filexport. |
+| `allowMandatoryFieldSelection` | Boolean | Ange som `true` så att kunderna kan ange vilka profilattribut som är obligatoriska. Standardvärdet är `false`. Mer information finns i [Obligatoriska attribut](../../../ui/activate-batch-profile-destinations.md#mandatory-attributes). |
+| `allowDedupeKeyFieldSelection` | Boolean | Ange som `true` så att kunderna kan ange dedupliceringsnycklar. Standardvärdet är `false`.  Mer information finns i [Dedupliceringsnycklar](../../../ui/activate-batch-profile-destinations.md#deduplication-keys). |
+| `defaultExportMode` | Enum | Definierar standardläget för filexport. Värden som stöds:<ul><li>`DAILY_FULL_EXPORT`</li><li>`FIRST_FULL_THEN_INCREMENTAL`</li></ul> Standardvärdet är `DAILY_FULL_EXPORT`. Mer information om schemaläggning av filexport finns i [dokumentationen för batchaktivering](../../../ui/activate-batch-profile-destinations.md#scheduling). |
 | `allowedExportModes` | Lista | Definierar vilka filexportlägen som är tillgängliga för kunderna. Värden som stöds:<ul><li>`DAILY_FULL_EXPORT`</li><li>`FIRST_FULL_THEN_INCREMENTAL`</li></ul> |
 | `allowedScheduleFrequency` | Lista | Definierar den filexportfrekvens som är tillgänglig för kunder. Värden som stöds:<ul><li>`ONCE`</li><li>`EVERY_3_HOURS`</li><li>`EVERY_6_HOURS`</li><li>`EVERY_8_HOURS`</li><li>`EVERY_12_HOURS`</li><li>`DAILY`</li></ul> |
 | `defaultFrequency` | Enum | Definierar standardexportfrekvensen för filer.Värden som stöds:<ul><li>`ONCE`</li><li>`EVERY_3_HOURS`</li><li>`EVERY_6_HOURS`</li><li>`EVERY_8_HOURS`</li><li>`EVERY_12_HOURS`</li><li>`DAILY`</li></ul> Standardvärdet är `DAILY`. |
 | `defaultStartTime` | Sträng | Definierar standardstarttiden för filexporten. Använder 24-timmars filformat. Standardvärdet är &quot;00:00&quot;. |
-| `filenameConfig.allowedFilenameAppendOptions` | Sträng | *Obligatoriskt*. Lista över tillgängliga filnamnsmappar som användare kan välja mellan. Detta avgör vilka objekt som läggs till i de exporterade filnamnen (målgrupps-ID, organisationsnamn, exportdatum och exporttid med mera). Vid inställning `defaultFilename`bör du se till att du inte duplicerar makron. <br><br>Värden som stöds: <ul><li>`DESTINATION`</li><li>`SEGMENT_ID`</li><li>`SEGMENT_NAME`</li><li>`DESTINATION_INSTANCE_ID`</li><li>`DESTINATION_INSTANCE_NAME`</li><li>`ORGANIZATION_NAME`</li><li>`SANDBOX_NAME`</li><li>`DATETIME`</li><li>`CUSTOM_TEXT`</li></ul>Oavsett i vilken ordning du definierar makrona visas de alltid i den ordning som de anges här i användargränssnittet för Experience Platform. <br><br> If `defaultFilename` är tom, `allowedFilenameAppendOptions` listan måste innehålla minst ett makro. |
-| `filenameConfig.defaultFilenameAppendOptions` | Sträng | *Obligatoriskt*. Förvalda standardmakron för filnamn som användare kan avmarkera.<br><br> Makrona i den här listan är en delmängd av de som definieras i `allowedFilenameAppendOptions`. |
-| `filenameConfig.defaultFilename` | Sträng | *Valfritt*. Definierar standardmakron för filnamn för de exporterade filerna. Användarna kan inte skriva över dem. <br><br>Alla makron som definieras av `allowedFilenameAppendOptions` läggs till efter `defaultFilename` makron. <br><br>If `defaultFilename` är tom, du måste definiera minst ett makro i `allowedFilenameAppendOptions`. |
-| `segmentGroupingEnabled` | Boolean | Definierar om de aktiverade målgrupperna ska exporteras i en eller flera filer, baserat på målgrupp [sammanfogningsprincip](../../../../profile/merge-policies/overview.md). Värden som stöds: <ul><li>`true`: exporterar en fil per sammanfogningsprincip.</li><li>`false`: exporterar en fil per målgrupp, oavsett kopplingsregel. Detta är standardbeteendet. Du kan uppnå samma resultat genom att helt utelämna den här parametern.</li></ul> |
+| `filenameConfig.allowedFilenameAppendOptions` | Sträng | *Krävs*. Lista över tillgängliga filnamnsmappar som användare kan välja mellan. Detta avgör vilka objekt som läggs till i de exporterade filnamnen (målgrupps-ID, organisationsnamn, exportdatum och exporttid med mera). När du anger `defaultFilename` bör du se till att du inte duplicerar makron. <br><br>Värden som stöds: <ul><li>`DESTINATION`</li><li>`SEGMENT_ID`</li><li>`SEGMENT_NAME`</li><li>`DESTINATION_INSTANCE_ID`</li><li>`DESTINATION_INSTANCE_NAME`</li><li>`ORGANIZATION_NAME`</li><li>`SANDBOX_NAME`</li><li>`DATETIME`</li><li>`CUSTOM_TEXT`</li></ul>Oavsett i vilken ordning du definierar makrona visas de alltid i den ordning som de anges här i användargränssnittet för Experience Platform. <br><br> Om `defaultFilename` är tom måste listan `allowedFilenameAppendOptions` innehålla minst ett makro. |
+| `filenameConfig.defaultFilenameAppendOptions` | Sträng | *Krävs*. Förvalda standardmakron för filnamn som användare kan avmarkera.<br><br> Makrona i den här listan är en delmängd av de som definieras i `allowedFilenameAppendOptions`. |
+| `filenameConfig.defaultFilename` | Sträng | *Valfritt*. Definierar standardmakron för filnamn för de exporterade filerna. Användarna kan inte skriva över dem. <br><br>Alla makron som definieras av `allowedFilenameAppendOptions` läggs till efter makrona `defaultFilename`. <br><br>Om `defaultFilename` är tomt måste du definiera minst ett makro i `allowedFilenameAppendOptions`. |
+| `segmentGroupingEnabled` | Boolean | Definierar om de aktiverade målgrupperna ska exporteras i en eller flera filer, baserat på målgruppens [sammanfogningsprincip](../../../../profile/merge-policies/overview.md). Värden som stöds: <ul><li>`true`: exporterar en fil per sammanfogningsprincip.</li><li>`false`: exporterar en fil per målgrupp, oavsett kopplingsprofilen. Detta är standardbeteendet. Du kan uppnå samma resultat genom att helt utelämna den här parametern.</li></ul> |
 
 {style="table-layout:auto"}
 
 ## Filnamnskonfiguration {#file-name-configuration}
 
-Använd konfigurationsmakron för filnamn för att definiera vad de exporterade filnamnen ska innehålla. Makrona i tabellen nedan beskriver element som finns i användargränssnittet i [filnamnskonfiguration](../../../ui/activate-batch-profile-destinations.md#file-names) skärm.
+Använd konfigurationsmakron för filnamn för att definiera vad de exporterade filnamnen ska innehålla. Makrona i tabellen nedan beskriver element som finns i gränssnittet på skärmen [filnamnskonfiguration](../../../ui/activate-batch-profile-destinations.md#file-names).
 
 >[!TIP]
 > 
->Som en god praxis bör du alltid inkludera `SEGMENT_ID` makro i de exporterade filnamnen. Segment-ID:n är unika, så om du tar med dem i filnamnet är det bästa sättet att se till att filnamnen också är unika.
+>Du bör alltid inkludera makrot `SEGMENT_ID` i de exporterade filnamnen. Segment-ID:n är unika, så om du tar med dem i filnamnet är det bästa sättet att se till att filnamnen också är unika.
 
 | Makro | Gränssnittsetikett | Beskrivning | Exempel |
 |---|---|---|---|
@@ -116,14 +116,14 @@ Använd konfigurationsmakron för filnamn för att definiera vad de exporterade 
 | `SEGMENT_ID` | [!UICONTROL Segment ID] | Unikt, plattformsgenererat målgrupps-ID | ce5c5482-2813-4a80-99bc-57113f6acde2 |
 | `SEGMENT_NAME` | [!UICONTROL Segment Name] | Användardefinierat publiknamn | VIP prenumerant |
 | `DESTINATION_INSTANCE_ID` | [!UICONTROL Destination ID] | Unikt, plattformsgenererat ID för målinstansen | 7b891e5f-025a-4f0d-9e73-1919e71da3b0 |
-| `DESTINATION_INSTANCE_NAME` | [!UICONTROL Destination Name] | Användardefinierat namn för målinstansen. | Mål för min 2022-annons |
+| `DESTINATION_INSTANCE_NAME` | [!UICONTROL Destination Name] | Användardefinierat namn för målinstansen. | Mål för My 2022 Advertising |
 | `ORGANIZATION_NAME` | [!UICONTROL Organization Name] | Namn på kundorganisationen i Adobe Experience Platform. | Organisationsnamn |
 | `SANDBOX_NAME` | [!UICONTROL Sandbox Name] | Namn på den sandlåda som används av kunden. | prod |
-| `DATETIME` / `TIMESTAMP` | [!UICONTROL Date and time] | `DATETIME` och `TIMESTAMP` båda definierar när filen skapades, men i olika format. <br><br><ul><li>`DATETIME` använder följande format: YYYMMDD_HMMSS.</li><li>`TIMESTAMP` använder det 10-siffriga Unix-formatet. </li></ul> `DATETIME` och `TIMESTAMP` utesluter varandra och kan inte användas samtidigt. | <ul><li>`DATETIME`: 20220509_210543</li><li>`TIMESTAMP`: 1652131584</li></ul> |
+| `DATETIME` / `TIMESTAMP` | [!UICONTROL Date and time] | `DATETIME` och `TIMESTAMP` definierar båda när filen skapades, men i olika format. <br><br><ul><li>`DATETIME` har följande format: YYYMMDD_HMMSS.</li><li>`TIMESTAMP` använder det 10-siffriga Unix-formatet. </li></ul> `DATETIME` och `TIMESTAMP` kan inte användas samtidigt. | <ul><li>`DATETIME`: 20220509_210543</li><li>`TIMESTAMP`: 1652131584</li></ul> |
 | `CUSTOM_TEXT` | [!UICONTROL Custom text] | Användardefinierad egen text som ska inkluderas i filnamnet. Kan inte användas i `defaultFilename`. | Min_egen_text |
 | `TIMESTAMP` | [!UICONTROL Date and time] | 10-siffrig tidsstämpel i Unix-format för den tid då filen skapades. | 1652131584 |
-| `MERGE_POLICY_ID` | [!UICONTROL Merge Policy ID] | ID:t för [sammanfogningsprincip](../../../../profile/merge-policies/overview.md) används för att generera den exporterade målgruppen. Använd det här makrot när du grupperar exporterade målgrupper i filer, baserat på kopplingsprofilen. Använd makrot tillsammans med `segmentGroupingEnabled:true`. | e8591fdb-2873-4b12-b63e-15275b1c1439 |
-| `MERGE_POLICY_NAME` | [!UICONTROL Merge Policy Name] | Namnet på [sammanfogningsprincip](../../../../profile/merge-policies/overview.md) används för att generera den exporterade målgruppen. Använd det här makrot när du grupperar exporterade målgrupper i filer, baserat på kopplingsprofilen. Använd makrot tillsammans med `segmentGroupingEnabled:true`. | Min egen sammanfogningsprincip |
+| `MERGE_POLICY_ID` | [!UICONTROL Merge Policy ID] | ID för [sammanfogningsprincipen](../../../../profile/merge-policies/overview.md) som används för att generera den exporterade målgruppen. Använd det här makrot när du grupperar exporterade målgrupper i filer, baserat på kopplingsprofilen. Använd makrot tillsammans med `segmentGroupingEnabled:true`. | e8591fdb-2873-4b12-b63e-15275b1c1439 |
+| `MERGE_POLICY_NAME` | [!UICONTROL Merge Policy Name] | Namnet på [sammanfogningsprincipen](../../../../profile/merge-policies/overview.md) som används för att generera den exporterade målgruppen. Använd det här makrot när du grupperar exporterade målgrupper i filer, baserat på kopplingsprofilen. Använd makrot tillsammans med `segmentGroupingEnabled:true`. | Min egen sammanfogningsprincip |
 
 {style="table-layout:auto"}
 
@@ -146,7 +146,7 @@ I konfigurationsexemplet nedan visas korrespondensen mellan konfigurationen som 
 }
 ```
 
-![Användargränssnittsbild som visar konfigurationsskärmen för filnamn med förvalda makron](../../assets/functionality/destination-configuration/file-name-configuration.png)
+![Gränssnittsbild som visar konfigurationsskärmen för filnamn med förvalda makron](../../assets/functionality/destination-configuration/file-name-configuration.png)
 
 ## Nästa steg {#next-steps}
 

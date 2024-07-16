@@ -1,7 +1,8 @@
 ---
 title: Datatyp för insamling av anpassad metadatainformation
 description: Läs mer om datatypen XDM (Custom Metadata Details Collection Experience Data Model).
-source-git-commit: e9107092b60361216744e154752f48546b5bad73
+exl-id: e2fa65ea-b738-43c6-90f1-1968dd83b963
+source-git-commit: 799a384556b43bc844782d8b67416c7eea77fbf0
 workflow-type: tm+mt
 source-wordcount: '94'
 ht-degree: 1%
@@ -10,9 +11,9 @@ ht-degree: 1%
 
 # [!UICONTROL Custom Metadata Details] Samlingsdatatyp
 
-[!UICONTROL Custom Metadata Details] Samlingen är en XDM-datatyp (Experience Data Model) som definierar en struktur för lagring av anpassade metadata. Använd [!UICONTROL Custom Metadata Details] Samlingsdatatyp för att samla in information som namn och värde på anpassade metadata som är associerade med innehåll eller interaktioner.
+[!UICONTROL Custom Metadata Details]-samlingen är en XDM-datatyp (Standard Experience Data Model) som definierar en struktur för lagring av anpassade metadata. Använd datatypen [!UICONTROL Custom Metadata Details] Samling för att samla in information som namn och värde på anpassade metadata som är associerade med innehåll eller interaktioner.
 
-![Ett diagram över datatypen Custom Metadata Details Collection.](../images/data-types/the-custom-metadata-collection.png)
+![Ett diagram med datatypen Custom Metadata Details Collection.](../images/data-types/the-custom-metadata-collection.png)
 
 | Visningsnamn | Egenskap | Datatyp | Obligatoriskt | Beskrivning |
 |--------------------------------------------|------------------|-----------|----------|-------------------------------|

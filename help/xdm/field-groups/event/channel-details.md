@@ -11,19 +11,19 @@ ht-degree: 0%
 
 ---
 
-# [!UICONTROL Channel Details] schemafältgrupp
+# Schemafältgruppen [!UICONTROL Channel Details]
 
 >[!NOTE]
 >
->Namnen på flera schemafältgrupper har ändrats. Visa dokumentet på [uppdaterar fältgruppnamn](../name-updates.md) för mer information.
+>Namnen på flera schemafältgrupper har ändrats. Mer information finns i dokumentet om [uppdatering av fältgruppnamn](../name-updates.md).
 
-[!UICONTROL Channel Details] är en standardgrupp för schemafält för [[!DNL XDM ExperienceEvent] class](../../classes/experienceevent.md), används för att beskriva kanalinformation som ID, kanaltyp, medietyp och platstyp.
+[!UICONTROL Channel Details] är en standardschemafältgrupp för [[!DNL XDM ExperienceEvent] klassen](../../classes/experienceevent.md) som används för att beskriva kanalinformation som ID, kanaltyp, medietyp och platstyp.
 
 ![](../../images/field-groups/channel-details.png)
 
 | Egenskap | Datatyp | Beskrivning |
 | --- | --- | --- |
-| `channel` | [Experience channel](../../data-types/experience-channel.md) | Ett objekt som beskriver produktreturer, garantiregistrering och kundvagns-/orderprocesser. |
+| `channel` | [Upplevelsekanal](../../data-types/experience-channel.md) | Ett objekt som beskriver produktreturer, garantiregistrering och kundvagns-/orderprocesser. |
 
 {style="table-layout:auto"}
 

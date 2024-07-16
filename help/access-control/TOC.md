@@ -8,7 +8,7 @@ role: Admin
 source-git-commit: e27695a96d7b61e2552387611c4eb63ebc6daf47
 workflow-type: tm+mt
 source-wordcount: '127'
-ht-degree: 37%
+ht-degree: 34%
 
 ---
 
@@ -28,13 +28,13 @@ ht-degree: 37%
       * [Roller](abac/ui/roles.md)
       * [Sandlådor](abac/ui/sandboxes.md)
       * [Användare](abac/ui/users.md)
-   * Attributbaserad API för åtkomstkontroll {#abac-api}
+   * Attributbaserad åtkomstkontroll-API {#abac-api}
       * [Översikt](abac/api/overview.md)
       * [Komma igång](abac/api/getting-started.md)
       * [Roller](abac/api/roles.md)
       * [Policyer](abac/api/policies.md)
       * [Produkter](abac/api/products.md)
-* Gränssnitt för åtkomstkontroll {#ui}
+* Användargränssnitt för åtkomstkontroll {#ui}
    * [Översikt](ui/overview.md)
    * [Välj en produktprofil](ui/browse.md)
    * [Hantera behörigheter för en produktprofil](ui/permissions.md)

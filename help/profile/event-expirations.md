@@ -13,7 +13,7 @@ ht-degree: 0%
 
 # Förfallodatum för upplevelsehändelser
 
-I Adobe Experience Platform kan du konfigurera förfallotider för alla Experience Events-händelser som är inkapslade i en datauppsättning som är aktiverad för [Kundprofil i realtid](./home.md). På så sätt kan du automatiskt ta bort data från profilarkivet som inte längre är giltiga eller användbara för dina användningsfall.
+I Adobe Experience Platform kan du konfigurera förfallotider för alla Experience Events som är inkapslade i en datauppsättning som är aktiverad för [kundprofil i realtid](./home.md). På så sätt kan du automatiskt ta bort data från profilarkivet som inte längre är giltiga eller användbara för dina användningsfall.
 
 Händelseförfallotider för upplevelser kan inte konfigureras via plattformens gränssnitt eller API:er. Istället måste ni kontakta supporten för att aktivera Experience Event-förfallotider för era nödvändiga datauppsättningar.
 
@@ -30,7 +30,7 @@ När Experience Event-förfallotider har aktiverats för en profilaktiverad data
 
 >[!WARNING]
 >
->När det används är alla data som är äldre än det antal dagar som utgångsvärdet tillåter. **permanent borttagen** och kan inte återställas.
+>När data har tillämpats är alla data som är äldre än det antal dagar som tillåts av utgångsvärdet **permanent borttagna** och kan inte återställas.
 
 Om du t.ex. angav ett förfallodatum på 30 dagar den 15 maj utförs följande steg:
 
@@ -44,7 +44,7 @@ För att resultaten ska bli korrekta måste du se till att sökfönstren för er
 
 Du bör därför behålla samma utgångsvärde för Experience Event för alla datauppsättningar, om det är möjligt, för att undvika att olika utgångsvärden påverkar olika datauppsättningar i segmenteringslogiken.
 
-## Frågor och svar {#faq}
+## Vanliga frågor och svar {#faq}
 
 I följande avsnitt visas vanliga frågor om när Experience Event-data förfaller:
 
@@ -54,26 +54,26 @@ Experience Event-data förfaller och Pseudonymous Profile-data förfaller är ko
 
 #### Kornighet
 
-Förfallodatum för Experience Event fungerar på en **datauppsättning** nivå. Därför kan varje datauppsättning ha olika inställningar för när data förfaller.
+Utgångsdatumet för händelsens data fungerar på en **datamängd**-nivå. Därför kan varje datauppsättning ha olika inställningar för när data förfaller.
 
-Förfallodatum för pseudonyma profildata fungerar på en **sandlåda** nivå. Därför kommer förfallodatumet för data att påverka alla profiler i sandlådan.
+Pseudonym förfallotid för profildata fungerar på en **sandbox**-nivå. Därför kommer förfallodatumet för data att påverka alla profiler i sandlådan.
 
 #### Identitetstyper
 
-Utgångsdatum för Experience Event-data tar bort händelser **endast** baserat på händelsepostens tidsstämpel. De identitetsnamnutrymmen som ingår är **ignorerad** för utgångsändamål.
+Utgångsdatum för Experience Event-data tar bort händelserna **only** baserat på händelsepostens tidsstämpel. Identitetsnamnutrymmena som ingår **ignoreras** i förfallosyfte.
 
-Pseudonymt utgångsdatum för profildata **endast** hanterar profiler som har identitetsdiagram som innehåller identitetsnamnutrymmen som valts av kunden, som `ECID`, `AAID`eller andra typer av cookies. Om profilen innehåller **alla** ytterligare ID-namnutrymme som **not** i kundens lista kommer profilen att **not** tas bort.
+Pseudonyma profildata som förfaller **endast** hanterar profiler som har identitetsdiagram som innehåller identitetsnamnutrymmen som valts av kunden, t.ex. `ECID`, `AAID` eller andra typer av cookies. Om profilen innehåller **valfri** ytterligare identitetsnamnrymd som **inte** fanns i kundens lista tas profilen **inte** bort.
 
 #### Borttagna objekt
 
-Utgångsdatum för Experience Event-data **endast** tar bort händelser och gör **not** ta bort profilklassdata. Profilklassdata tas bara bort när alla data tas bort från **alla** datauppsättningar och det finns **no** återstående profilklassposter för profilen.
+Experience Event-data förfaller **endast** och händelser tas **inte** bort profilklassdata. Profilklassdata tas bara bort när alla data har tagits bort från **alla** datauppsättningar och det finns **inga** profilklassposter kvar för profilen.
 
-Förfallodatum för pseudonyma profiler tar bort **båda** händelse- och profilposter. Detta innebär att även profilklassdata tas bort.
+Pseudonym förfallotid för profildata tar bort **både** händelse- och profilposter. Detta innebär att även profilklassdata tas bort.
 
 ### Hur kan Pseudonymous Profile data förfalla i samband med att Experience Event-data förfaller?
 
 Pseudonyma utgångsdatum för profildata och utgångsdatum för Experience Event-data kan användas som komplement till varandra.
 
-Du borde **alltid** konfigurera Experience Event-dataförfallodatum i era datauppsättningar, baserat på era behov av att lagra data om era kända kunder. När Experience Event-data har förfallit kan du använda Pseudonymous Profile data som förfaller för att automatiskt ta bort pseudonyma profiler. Vanligtvis är dataförfalloperioden för pseudonyma profiler kortare än dataförfalloperioden för Experience Events.
+Du bör **alltid** ställa in Experience Event-dataförfallodatum i dina datauppsättningar, baserat på dina behov av att lagra data om dina kända kunder. När Experience Event-data har förfallit kan du använda Pseudonymous Profile data som förfaller för att automatiskt ta bort pseudonyma profiler. Vanligtvis är dataförfalloperioden för pseudonyma profiler kortare än dataförfalloperioden för Experience Events.
 
 I ett typiskt fall kan du ange att Experience Event-data ska upphöra att gälla baserat på värdena för dina kända användardata, och du kan ange att Pseudonymous-profildata ska ha en mycket kortare varaktighet för att begränsa effekten av pseudonyma profiler på plattformslicensens efterlevnad.

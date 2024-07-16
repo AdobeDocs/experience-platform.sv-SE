@@ -11,23 +11,23 @@ ht-degree: 0%
 
 ---
 
-# (Beta) [!DNL Apache Spark] på [!DNL Azure HDInsights] koppling
+# (Beta) [!DNL Apache Spark] på [!DNL Azure HDInsights]-anslutning
 
 >[!NOTE]
 >
->The [!DNL Apache Spark] på [!DNL Azure HDInsights] anslutningen är i betaversion. Se [Översikt över källor](../../home.md#terms-and-conditions) om du vill ha mer information om hur du använder beta-märkta anslutningar.
+>[!DNL Apache Spark] på [!DNL Azure HDInsights]-anslutningen är i betaversion. Mer information om hur du använder betatecknade anslutningar finns i [Källöversikt](../../home.md#terms-and-conditions).
 
-Med Adobe Experience Platform kan data hämtas från externa källor samtidigt som du kan strukturera, etikettera och förbättra inkommande data med [!DNL Platform] tjänster. Du kan importera data från en mängd olika källor, till exempel Adobe-program, molnbaserad lagring, databaser och många andra.
+Adobe Experience Platform tillåter att data hämtas från externa källor samtidigt som du får möjlighet att strukturera, etikettera och förbättra inkommande data med [!DNL Platform]-tjänster. Du kan importera data från en mängd olika källor, till exempel Adobe-program, molnbaserad lagring, databaser och många andra.
 
-[!DNL Experience Platform] har stöd för inmatning av data från en tredjepartsdatabas. [!DNL Platform] kan ansluta till olika typer av databaser, till exempel relationsdatabaser, NoSQL eller datalager. Stöd för databasleverantörer innefattar [!DNL Apache Spark] på [!DNL Azure HDInsights].
+[!DNL Experience Platform] har stöd för inhämtning av data från en tredjepartsdatabas. [!DNL Platform] kan ansluta till olika typer av databaser, till exempel relationsdatabaser, NoSQL eller datalager. Stöd för databasproviders inkluderar [!DNL Apache Spark] på [!DNL Azure HDInsights].
 
 ## IP-adress tillåtelselista
 
-En lista med IP-adresser måste läggas till tillåtelselista innan du kan arbeta med källanslutningar. Om du inte lägger till dina regionspecifika IP-adresser i tillåtelselista kan det leda till fel eller sämre prestanda när du använder källor. Se [IP-adress tillåtelselista](../../ip-address-allow-list.md) sida för mer information.
+En lista med IP-adresser måste läggas till tillåtelselista innan du kan arbeta med källanslutningar. Om du inte lägger till dina regionspecifika IP-adresser i tillåtelselista kan det leda till fel eller sämre prestanda när du använder källor. Mer information finns på sidan [IP-adress tillåtelselista](../../ip-address-allow-list.md).
 
 Dokumentationen nedan innehåller information om hur du ansluter [!DNL Apache Spark] på [!DNL Azure HDInsights] till [!DNL Platform] med API:er eller användargränssnittet:
 
-## Anslut [!DNL Apache Spark] på [!DNL Azure HDInsights] till [!DNL Platform] använda API:er
+## Anslut [!DNL Apache Spark] på [!DNL Azure HDInsights] till [!DNL Platform] med API:er
 
 - [Skapa en Apache Spark på Azure HDInsights-basanslutning med API:t för Flow Service](../../tutorials/api/create/databases/spark.md)
 - [Utforska datatabeller med API:t för Flow Service](../../tutorials/api/explore/tabular.md)

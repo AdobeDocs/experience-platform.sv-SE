@@ -7,7 +7,7 @@ badgeB2B: label="B2B Edition" type="Informative" url="https://helpx.adobe.com/le
 exl-id: d3afbabb-005d-4537-831a-857c88043759
 source-git-commit: db57fa753a3980dca671d476521f9849147880f1
 workflow-type: tm+mt
-source-wordcount: '866'
+source-wordcount: '856'
 ht-degree: 0%
 
 ---
@@ -26,7 +26,7 @@ Tjänsten för prediktiv lead- och kontobedömning löser ovanstående problem g
 
 >[!NOTE]
 >
->[!DNL Marketo] datakälla krävs för närvarande eftersom det är den enda datakälla som kan tillhandahålla konverteringshändelserna på personprofilnivå.
+>Datakällan [!DNL Marketo] krävs för närvarande eftersom det är den enda datakälla som kan tillhandahålla konverteringshändelserna på personprofilnivå.
 
 Predictive Lead and Account Scoring använder en trädbaserad (slumpmässig skog/övertoningsförbättring) maskininlärningsmetod för att bygga den förutsägbara modellen för poängsättning av leads.
 
@@ -52,7 +52,7 @@ Algoritmen tar hänsyn till följande attribut och indata:
 
 >[!NOTE]
 > 
->Algoritmen inspekterar bara `sourceAccountKey.sourceKey` i fältgruppen Person:personComponents.
+>Algoritmen inspekterar bara fältet `sourceAccountKey.sourceKey` i fältgruppen Person:personComponents.
 
 * Kontoprofil
 
@@ -86,11 +86,11 @@ Datakvalitetskraven är följande:
 
 Bedömningsjobb körs dagligen och resultaten sparas som profilattribut och kontoattribut, som sedan kan användas i segmentdefinitioner och personalisering. Det finns även användningsklara analysinsikter på kontrollpanelen för kontoöversikt.
 
-Mer information om hur du gör det finns i dokumentationen [hantera prediktiv lead- och kontobedömning](/help/rtcdp/b2b-ai-ml-services/manage-predictive-lead-and-account-scoring.md) service.
+Mer information om hur du [hanterar prediktiv lead- och kontopoäng](/help/rtcdp/b2b-ai-ml-services/manage-predictive-lead-and-account-scoring.md)-tjänsten finns i dokumentationen.
 
 ## Visa prediktiva lead- och kontopoängresultat {#how-to-view}
 
-Efter jobbkörningen sparas resultaten i en ny systemdatauppsättning för varje modell under namnet `LeadsAI.Scores` - ***bakgrundsmusiken***. Varje poängfältgrupp finns på `{CUSTOM_FIELD_GROUP}.LeadsAI.the_score_name`.
+Efter jobbkörningen sparas resultaten i en ny systemdatauppsättning för varje modell under namnet `LeadsAI.Scores` - ***poängnamnet***. Varje poängfältgrupp finns på `{CUSTOM_FIELD_GROUP}.LeadsAI.the_score_name`.
 
 | Attribut | Beskrivning |
 | --- | --- |
@@ -102,19 +102,19 @@ Efter jobbkörningen sparas resultaten i en ny systemdatauppsättning för varje
 
 ### Visa kundprofilpoäng
 
-Om du vill visa prediktiva poäng för en personprofil väljer du **[!UICONTROL Profiles]** under kundavsnittet i den vänstra panelen och ange sedan ID-namnutrymmet och identitetsvärdet. När du är klar väljer du **[!UICONTROL View]**.
+Om du vill visa prediktiva poäng för en personprofil väljer du **[!UICONTROL Profiles]** under kundavsnittet i den vänstra panelen och anger sedan ID-namnområdet och identitetsvärdet. När du är klar väljer du **[!UICONTROL View]**.
 
 Välj sedan profilen i listan.
 
 ![Kundprofil](/help/rtcdp/accounts/images/b2b-view-customer-profile.png)
 
-The **[!UICONTROL Detail]** sidan innehåller nu prediktiva poäng. Klicka på diagramsymbolen bredvid prediktiva poäng.
+Sidan **[!UICONTROL Detail]** innehåller nu prediktiva poäng. Klicka på diagramsymbolen bredvid prediktiva poäng.
 
-![Kundprofilprediktiv poäng](/help/rtcdp/accounts/images/b2b-view-customer-profile-predictive-score.png)
+![Förutsägande poäng för kundprofil](/help/rtcdp/accounts/images/b2b-view-customer-profile-predictive-score.png)
 
 En popup-dialogruta visar poängen, den övergripande poängfördelningen, de viktigaste inflytelserika faktorerna för poängen och poängmålsdefinitionen.
 
-![Information om prediktiva kundpoäng](/help/rtcdp/accounts/images/b2b-view-customer-profile-predictive-score-details.png)
+![Information om prediktiv kundprofil](/help/rtcdp/accounts/images/b2b-view-customer-profile-predictive-score-details.png)
 
 ## Övervaka prediktiva lead- och kontopoängjobb {#monitoring-jobs}
 
@@ -124,4 +124,4 @@ Du kan övervaka grundläggande mått och daglig jobbkörningsstatus via kontrol
 * Nästa bedömningsjobb (datum)
 * Nästa utbildningsjobb (datum)
 
-Mer information finns i dokumentationen om [övervaka jobb för prediktiv lead- och kontobedömning](/help/dataflows/ui/b2b/monitor-profile-enrichment.md).
+Mer information finns i dokumentationen om [övervakning av jobb för prediktiv lead- och kontobedömning](/help/dataflows/ui/b2b/monitor-profile-enrichment.md).

@@ -7,8 +7,8 @@ description: I den här självstudiekursen beskrivs stegen för hur du uppdatera
 exl-id: a93385fd-ed36-457f-8882-41e37f6f209d
 source-git-commit: 59dfa862388394a68630a7136dee8e8988d0368c
 workflow-type: tm+mt
-source-wordcount: '523'
-ht-degree: 1%
+source-wordcount: '519'
+ht-degree: 0%
 
 ---
 
@@ -16,24 +16,24 @@ ht-degree: 1%
 
 Under vissa omständigheter kan det vara nödvändigt att uppdatera informationen för en befintlig källanslutning. [!DNL Flow Service] ger dig möjlighet att lägga till, redigera och ta bort information om en befintlig batch- eller direktuppspelningsanslutning, inklusive namn, beskrivning och autentiseringsuppgifter.
 
-I den här självstudiekursen beskrivs stegen för hur du uppdaterar information och autentiseringsuppgifter för en anslutning med hjälp av [[!DNL Flow Service] API](https://www.adobe.io/experience-platform-apis/references/flow-service/).
+I den här självstudien beskrivs stegen för hur du uppdaterar information och autentiseringsuppgifter för en anslutning med [[!DNL Flow Service] API](https://www.adobe.io/experience-platform-apis/references/flow-service/).
 
 ## Komma igång
 
-Den här självstudien kräver att du har en befintlig anslutning och ett giltigt anslutnings-ID. Om du inte har någon befintlig anslutning väljer du källa på menyn [källöversikt](../../home.md) och följ instruktionerna innan du provar den här självstudiekursen.
+Den här självstudien kräver att du har en befintlig anslutning och ett giltigt anslutnings-ID. Om du inte har någon befintlig anslutning väljer du källa bland [källorna i översikt](../../home.md) och följer instruktionerna innan du provar den här självstudiekursen.
 
 Den här självstudiekursen kräver även att du har en fungerande förståelse för följande komponenter i Adobe Experience Platform:
 
-* [Källor](../../home.md): Experience Platform tillåter att data kan hämtas från olika källor samtidigt som du kan strukturera, märka och förbättra inkommande data med hjälp av plattformstjänster.
-* [Sandlådor](../../../sandboxes/home.md): Experience Platform tillhandahåller virtuella sandlådor som partitionerar en enda plattformsinstans i separata virtuella miljöer för att utveckla och utveckla program för digitala upplevelser.
+* [Källor](../../home.md): Experience Platform tillåter data att hämtas från olika källor samtidigt som du kan strukturera, etikettera och förbättra inkommande data med hjälp av plattformstjänster.
+* [Sandlådor](../../../sandboxes/home.md): Experience Platform tillhandahåller virtuella sandlådor som partitionerar en enda plattformsinstans till separata virtuella miljöer för att utveckla och utveckla program för digitala upplevelser.
 
 ### Använda plattforms-API:er
 
-Mer information om hur du kan anropa API:er för plattformar finns i handboken [komma igång med plattforms-API:er](../../../landing/api-guide.md).
+Mer information om hur du kan anropa plattforms-API:er finns i guiden [Komma igång med plattforms-API:er](../../../landing/api-guide.md).
 
 ## Sök anslutningsinformation
 
-Det första steget när du uppdaterar anslutningen är att hämta information om anslutningen med ditt anslutnings-ID. Om du vill hämta den aktuella informationen för din anslutning skickar du en GET-förfrågan till [!DNL Flow Service] API när du anger anslutnings-ID för anslutningen som du vill uppdatera.
+Det första steget när du uppdaterar anslutningen är att hämta information om anslutningen med ditt anslutnings-ID. Om du vill hämta din anslutnings aktuella information skickar du en GET-förfrågan till [!DNL Flow Service]-API:t samtidigt som du anger anslutnings-ID:t för anslutningen som du vill uppdatera.
 
 **API-format**
 
@@ -43,7 +43,7 @@ GET /connections/{CONNECTION_ID}
 
 | Parameter | Beskrivning |
 | --------- | ----------- |
-| `{CONNECTION_ID}` | Unika `id` värdet för anslutningen som du vill hämta. |
+| `{CONNECTION_ID}` | Det unika `id`-värdet för anslutningen som du vill hämta. |
 
 **Begäran**
 
@@ -60,7 +60,7 @@ curl -X GET \
 
 **Svar**
 
-Ett lyckat svar returnerar aktuell information om din anslutning inklusive autentiseringsuppgifter, unik identifierare (`id`) och version. Versionsvärdet krävs för att uppdatera anslutningen.
+Ett lyckat svar returnerar aktuell information om anslutningen, inklusive autentiseringsuppgifter, unik identifierare (`id`) och version. Versionsvärdet krävs för att uppdatera anslutningen.
 
 ```json
 {
@@ -98,11 +98,11 @@ Ett lyckat svar returnerar aktuell information om din anslutning inklusive auten
 
 ## Uppdatera anslutning
 
-Om du vill uppdatera anslutningsens namn, beskrivning och autentiseringsuppgifter utför du en PATCH-begäran till [!DNL Flow Service] API när du anger ditt anslutnings-ID, version och den nya information du vill använda.
+Om du vill uppdatera anslutningsens namn, beskrivning och autentiseringsuppgifter utför du en PATCH-begäran till [!DNL Flow Service]-API:t och anger ditt anslutnings-ID, version och den nya informationen som du vill använda.
 
 >[!IMPORTANT]
 >
->The `If-Match` måste anges när du gör en PATCH-begäran. Värdet för den här rubriken är den unika versionen av anslutningen som du vill uppdatera.
+>Rubriken `If-Match` krävs när du gör en PATCH-begäran. Värdet för den här rubriken är den unika versionen av anslutningen som du vill uppdatera.
 
 **API-format**
 
@@ -112,7 +112,7 @@ PATCH /connections/{CONNECTION_ID}
 
 | Parameter | Beskrivning |
 | --------- | ----------- |
-| `{CONNECTION_ID}` | Unika `id` värdet för anslutningen som du vill uppdatera. |
+| `{CONNECTION_ID}` | Det unika `id`-värdet för anslutningen som du vill uppdatera. |
 
 **Begäran**
 
@@ -151,13 +151,13 @@ curl -X PATCH \
 
 | Parameter | Beskrivning |
 | --------- | ----------- |
-| `op` | Åtgärdsanropet som används för att definiera den åtgärd som krävs för att uppdatera anslutningen. Åtgärderna omfattar: `add`, `replace`och `remove`. |
+| `op` | Åtgärdsanropet som används för att definiera den åtgärd som krävs för att uppdatera anslutningen. Åtgärderna omfattar: `add`, `replace` och `remove`. |
 | `path` | Sökvägen till den parameter som ska uppdateras. |
 | `value` | Det nya värdet som du vill uppdatera parametern med. |
 
 **Svar**
 
-Ett lyckat svar returnerar ditt anslutnings-ID och en uppdaterad tagg. Du kan verifiera uppdateringen genom att göra en GET-förfrågan till [!DNL Flow Service] API, samtidigt som du anger ditt anslutnings-ID.
+Ett lyckat svar returnerar ditt anslutnings-ID och en uppdaterad tagg. Du kan verifiera uppdateringen genom att göra en GET-förfrågan till [!DNL Flow Service]-API:t och samtidigt ange ditt anslutnings-ID.
 
 ```json
 {
@@ -168,4 +168,4 @@ Ett lyckat svar returnerar ditt anslutnings-ID och en uppdaterad tagg. Du kan ve
 
 ## Nästa steg
 
-Genom att följa den här självstudiekursen har du uppdaterat autentiseringsuppgifterna och informationen som är kopplad till din anslutning med [!DNL Flow Service] API. Mer information om hur du använder källkopplingar finns i [källöversikt](../../home.md).
+Genom att följa den här självstudiekursen har du uppdaterat de autentiseringsuppgifter och den information som är kopplad till din anslutning med API:t [!DNL Flow Service]. Mer information om hur du använder källanslutningar finns i [källans översikt](../../home.md).

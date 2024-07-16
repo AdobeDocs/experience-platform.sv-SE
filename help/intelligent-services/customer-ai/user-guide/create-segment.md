@@ -14,30 +14,30 @@ ht-degree: 0%
 
 # Skapa kundsegment med förutbestämda poäng
 
-När en förutsägelsekörning är klar används automatiskt förväntade benägenhetspoäng av profiler. Genom att förbättra profiler med kundens AI-poäng kan man skapa kundsegment för att hitta målgrupper baserat på deras benägenhetspoäng. I det här avsnittet beskrivs stegen för hur du skapar segment med hjälp av segmentverktyget. En mer robust självstudiekurs om hur du skapar segment finns i [Användarhandbok för Segment Builder](../../../segmentation/ui/segment-builder.md).
+När en förutsägelsekörning är klar används automatiskt förväntade benägenhetspoäng av profiler. Genom att förbättra profiler med kundens AI-poäng kan man skapa kundsegment för att hitta målgrupper baserat på deras benägenhetspoäng. I det här avsnittet beskrivs stegen för hur du skapar segment med hjälp av segmentverktyget. En mer robust självstudiekurs om hur du skapar segment finns i användarhandboken för [Segment Builder](../../../segmentation/ui/segment-builder.md).
 
 >[!IMPORTANT]
 >
 >Om du vill använda den här metoden måste kundprofilen i realtid aktiveras för datauppsättningen.
 
-I plattformsgränssnittet klickar du på **[!UICONTROL Segments]** i den vänstra navigeringen och klicka sedan på **[!UICONTROL Create segment]**.
+Klicka på **[!UICONTROL Segments]** i den vänstra navigeringen i plattformsgränssnittet och klicka sedan på **[!UICONTROL Create segment]**.
 
 ![](../images/user-guide/segments_new.png)
 
-The **Segment Builder** visas. Från vänster **[!UICONTROL Fields]** kolumn och under **[!UICONTROL Attributes]** klickar du på mappen med namnet **[!UICONTROL XDM Individual Profile]** och klicka sedan på mappen med organisationens namnområde. Mappen med namnet **[!UICONTROL Customer AI]** innehåller resultatet av prediktionskörningar och namnges efter den instans som poängen tillhör. Klicka på en instansmapp för att komma åt resultatet av den önskade instansen.
+**Segment Builder** visas. Klicka på mappen **[!UICONTROL XDM Individual Profile]** i den vänstra kolumnen **[!UICONTROL Fields]** och under fliken **[!UICONTROL Attributes]** och klicka sedan på mappen med organisationens namnområde. Mappen **[!UICONTROL Customer AI]** innehåller resultatet av förutsägelsekörningar och namnges efter instansen som poängen tillhör. Klicka på en instansmapp för att komma åt resultatet av den önskade instansen.
 
 ![](../images/user-guide/results_new.png)
 
-I mitten av Segment Builder drar och släpper du **[!UICONTROL Score]** på *arbetsyta för regelbyggaren* för att definiera en regel.
+Placerad i mitten av Segment Builder, dra och släpp attributet **[!UICONTROL Score]** på *regelbyggararbetsytan* för att definiera en regel.
 
-Under höger hand *Segmentegenskaper* anger du ett namn för segmentet.
+Ange ett namn för segmentet under den högra kolumnen *Segmentegenskaper*.
 
 ![](../images/user-guide/properties_new.png)
 
-Ovanför vänster hand *Fält* klickar du på **växel** -ikonen och välj en *Kopplingsprincip* i listrutan. Klicka **[!UICONTROL Save]** för att skapa segmentet.
+Ovanför den vänstra kolumnen *Fält* klickar du på ikonen **kugghjulet** och väljer en *sammanfogningsprincip* i listrutan. Klicka på **[!UICONTROL Save]** för att skapa segmentet.
 
 ![](../images/user-guide/merge_policy_new.png)
 
 ## Nästa steg
 
-Genom att följa den här självstudiekursen har du hittat målgrupper baserat på deras benägenhetspoäng med hjälp av segmentbyggaren. Nu kan ni inrikta er på era målgrupper genom att aktivera dem för destinationer. Se [destinationer, översikt](../../../destinations/home.md) för mer information.
+Genom att följa den här självstudiekursen har du hittat målgrupper baserat på deras benägenhetspoäng med hjälp av segmentbyggaren. Nu kan ni inrikta er på era målgrupper genom att aktivera dem för destinationer. Mer information finns i [målöversikten](../../../destinations/home.md).

@@ -13,4 +13,4 @@ ht-degree: 0%
 
 # SQL-referens för frågetjänst
 
-[!DNL Query Service] ger möjlighet att använda ANSI SQL som standard för `SELECT` -programsatser och andra begränsade kommandon. [!DNL Query Service] innehåller inte funktioner för datagruppsspråk eller datahanteringsspråk. De data som efterfrågas via tjänsten kommer från [!DNL Experience Data Lake], som i huvudsak innehåller oföränderliga datamängder.
+[!DNL Query Service] ger möjlighet att använda ANSI SQL av standardtyp för `SELECT` -satser och andra begränsade kommandon. [!DNL Query Service] innehåller inte funktioner för datadefinitionsspråk eller datahanteringsspråk. De data som efterfrågas via tjänsten kommer från [!DNL Experience Data Lake], som i huvudsak innehåller oföränderliga datauppsättningar.

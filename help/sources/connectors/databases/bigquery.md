@@ -10,41 +10,41 @@ ht-degree: 0%
 
 ---
 
-# [!DNL Google BigQuery] källa
+# [!DNL Google BigQuery]-källa
 
 >[!IMPORTANT]
 >
->The [!DNL Google BigQuery] Källan är tillgänglig i källkatalogen för användare som har köpt Real-time Customer Data Platform Ultimate.
+>Källan [!DNL Google BigQuery] är tillgänglig i källkatalogen för användare som har köpt Real-time Customer Data Platform Ultimate.
 
 Med Adobe Experience Platform kan data hämtas från externa källor samtidigt som du kan strukturera, märka och förbättra inkommande data med hjälp av plattformstjänster. Du kan importera data från en mängd olika källor, till exempel Adobe-program, molnbaserad lagring, databaser och många andra.
 
-[!DNL Experience Platform] har stöd för inmatning av data från en tredjepartsdatabas. Plattformen kan ansluta till olika typer av databaser, till exempel relationsdatabaser, NoSQL-databaser eller datalager. Stöd för databasleverantörer innefattar [!DNL Google BigQuery].
+[!DNL Experience Platform] har stöd för inhämtning av data från en tredjepartsdatabas. Plattformen kan ansluta till olika typer av databaser, till exempel relationsdatabaser, NoSQL-databaser eller datalager. Stöd för databasproviders är [!DNL Google BigQuery].
 
 ## IP-adress tillåtelselista
 
-En lista med IP-adresser måste läggas till tillåtelselista innan du kan arbeta med källanslutningar. Om du inte lägger till dina regionspecifika IP-adresser i tillåtelselista kan det leda till fel eller sämre prestanda när du använder källor. Se [IP-adress tillåtelselista](../../ip-address-allow-list.md) sida för mer information.
+En lista med IP-adresser måste läggas till tillåtelselista innan du kan arbeta med källanslutningar. Om du inte lägger till dina regionspecifika IP-adresser i tillåtelselista kan det leda till fel eller sämre prestanda när du använder källor. Mer information finns på sidan [IP-adress tillåtelselista](../../ip-address-allow-list.md).
 
-## Förutsättningar
+## Förhandskrav
 
-I följande avsnitt finns mer information om nödvändiga inställningar som krävs innan du kan skapa en [!DNL Google BigQuery] källanslutning.
+I följande avsnitt finns mer information om nödvändiga inställningar som krävs innan du kan skapa en [!DNL Google BigQuery]-källanslutning.
 
-### Generera [!DNL Google BigQuery] autentiseringsuppgifter
+### Generera dina [!DNL Google BigQuery]-autentiseringsuppgifter
 
-Ansluta [!DNL Google BigQuery] till Platform måste du generera värden för följande autentiseringsuppgifter:
+Om du vill ansluta [!DNL Google BigQuery] till plattformen måste du generera värden för följande autentiseringsuppgifter:
 
 | Autentiseringsuppgifter | Beskrivning |
 | ---------- | ----------- |
-| `project` | Projektet är en organiseringsenhet på grundnivå för din [!DNL Google Cloud] resurser, inklusive [!DNL Google BigQuery]. |
-| `clientID` | Klient-ID:t är hälften av ditt [!DNL Google BigQuery] OAuth 2.0-autentiseringsuppgifter. |
-| `clientSecret` | Klienthemligheten är den andra halvan av din [!DNL Google BigQuery] OAuth 2.0-autentiseringsuppgifter. |
+| `project` | Projektet är organisationsenhet på basnivå för dina [!DNL Google Cloud]-resurser, inklusive [!DNL Google BigQuery]. |
+| `clientID` | Klient-ID är hälften av dina [!DNL Google BigQuery] OAuth 2.0-autentiseringsuppgifter. |
+| `clientSecret` | Klienthemligheten är den andra halvan av dina [!DNL Google BigQuery] OAuth 2.0-autentiseringsuppgifter. |
 | `refreshToken` | Med uppdateringstoken kan du hämta nya åtkomsttoken för ditt API. Åtkomsttoken har begränsad livslängd och kan förfalla under projektets gång. Du kan använda uppdateringstoken för att autentisera och begära efterföljande åtkomsttoken för ditt projekt vid behov. |
-| `largeResultsDataSetId` | Det förskapade  [!DNL Google BigQuery] ID för datauppsättning som krävs för att aktivera stöd för stora resultatuppsättningar. |
+| `largeResultsDataSetId` | Det förskapade [!DNL Google BigQuery]-datauppsättnings-ID som krävs för att aktivera stöd för stora resultatuppsättningar. |
 
-Detaljerade instruktioner om hur du genererar OAuth 2.0-autentiseringsuppgifter för [!DNL Google] API:er, se följande [[!DNL Google] Autentiseringsguide för OAuth 2.0](https://developers.google.com/identity/protocols/oauth2).
+Detaljerade instruktioner om hur du genererar OAuth 2.0-autentiseringsuppgifter för [!DNL Google] API:er finns i följande [[!DNL Google] autentiseringsguide för OAuth 2.0](https://developers.google.com/identity/protocols/oauth2).
 
-## Anslut [!DNL Google BigQuery] till plattform
+## Anslut [!DNL Google BigQuery] till plattformen
 
-Dokumentationen nedan innehåller information om hur du ansluter [!DNL Google BigQuery] till Plattform med API:er eller användargränssnittet:
+Dokumentationen nedan innehåller information om hur du ansluter [!DNL Google BigQuery] till plattformen med API:er eller användargränssnittet:
 
 ### Använda API:er
 

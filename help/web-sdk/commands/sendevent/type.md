@@ -1,7 +1,8 @@
 ---
 title: eventType
 description: Ange händelsetypen för ett sendEvent-anrop.
-source-git-commit: f75dcfc945be2f45c1638bdd4d670288aef6e1e6
+exl-id: 9d0fae3b-827a-4084-b460-b755e478e06a
+source-git-commit: 8be502c9eea67119dc537a5d63a6c71e0bff1697
 workflow-type: tm+mt
 source-wordcount: '195'
 ht-degree: 1%
@@ -10,28 +11,28 @@ ht-degree: 1%
 
 # `eventType`
 
-The `eventType` kan du definiera vilken typ av händelse du skickar med Web SDK. Det här fältet fyller i `xdm.eventType` fält. Det är värdefullt när du vill differentiera de händelsetyper som du skickar till Adobe.
+Med egenskapen `eventType` kan du definiera den typ av händelse som du skickar med Web SDK. Det här fältet fyller slutligen i fältet `xdm.eventType`. Det är värdefullt när du vill differentiera de händelsetyper som du skickar till Adobe.
 
-Adobe innehåller vissa fördefinierade händelsetyper som du kan använda. Se [Tillgängliga värden för `eventType`](/help/xdm/classes/experienceevent.md#accepted-values-for-eventtype) i användarhandboken för XDM om du vill se en fullständig lista över fördefinierade värden. Du kan också använda dina egna värden om du vill.
+Adobe innehåller vissa fördefinierade händelsetyper som du kan använda. En fullständig lista över fördefinierade värden finns i [Tillgängliga värden för `eventType`](/help/xdm/classes/experienceevent.md#accepted-values-for-eventtype) i användarhandboken för XDM. Du kan också använda dina egna värden om du vill.
 
-Om du anger båda `type` här och `xdm.eventType` i [`xdm`](xdm.md) -objekt får värdet i det här fältet prioritet.
+Om du anger både `type` här och `xdm.eventType` i objektet [`xdm`](xdm.md) får värdet i det här fältet prioritet.
 
 ## Konfigurera händelsetyp med hjälp av taggtillägget Web SDK
 
-Ange **[!UICONTROL Type]** listrutefält inom åtgärderna för en taggregel.
+Ange listrutefältet **[!UICONTROL Type]** i åtgärderna för en taggregel.
 
-1. Logga in på [experience.adobe.com](https://experience.adobe.com) med dina Adobe ID-uppgifter.
+1. Logga in på [experience.adobe.com](https://experience.adobe.com) med dina Adobe ID-inloggningsuppgifter.
 1. Navigera till **[!UICONTROL Data Collection]** > **[!UICONTROL Tags]**.
 1. Välj önskad taggegenskap.
-1. Navigera till **[!UICONTROL Rules]** markerar du önskad regel.
-1. Under [!UICONTROL Actions]väljer du en befintlig åtgärd eller skapar en åtgärd.
-1. Ange [!UICONTROL Extension] listruta till **[!UICONTROL Adobe Experience Platform Web SDK]** och ange [!UICONTROL Action Type] till **[!UICONTROL Send event]**.
-1. Använd listrutan under **[!UICONTROL Type]** eller ange ett eget värde.
-1. Klicka **[!UICONTROL Keep Changes]** och sedan köra ditt publiceringsarbetsflöde.
+1. Navigera till **[!UICONTROL Rules]** och markera önskad regel.
+1. Välj en befintlig åtgärd under [!UICONTROL Actions] eller skapa en åtgärd.
+1. Ställ in listrutefältet [!UICONTROL Extension] på **[!UICONTROL Adobe Experience Platform Web SDK]** och ställ in [!UICONTROL Action Type] på **[!UICONTROL Send event]**.
+1. Använd listrutan under fältet **[!UICONTROL Type]** eller ange ett eget värde.
+1. Klicka på **[!UICONTROL Keep Changes]** och kör sedan ditt publiceringsarbetsflöde.
 
-## Konfigurera händelsetyp med JavaScript-biblioteket för Web SDK
+## Konfigurera händelsetyp med Web SDK JavaScript-biblioteket
 
-Ange `eventType` string-egenskap när den körs `sendEvent` -kommando.
+Ange strängegenskapen `eventType` när du kör kommandot `sendEvent`.
 
 ```js
 alloy("sendEvent", {

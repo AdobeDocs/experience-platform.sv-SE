@@ -16,7 +16,7 @@ ht-degree: 0%
 >[!IMPORTANT]
 >
 > * Adobe rekommenderar att du bokmärker den här sidan och går tillbaka till den var tredje månad för att kontrollera de senaste IP-adresserna. Adobe meddelar inte om nya IP-intervall.
-> * Listan över IP-adresser som beskrivs här *inte* gäller för alla mål som du skapar med [[!DNL Destination SDK]](/help/destinations/destination-sdk/overview.md).
+> * Listan över IP-adresser som beskrivs här *gäller inte* för alla mål som du skapar med [[!DNL Destination SDK]](/help/destinations/destination-sdk/overview.md).
 
 ## Översikt {#overview}
 
@@ -28,7 +28,7 @@ De IP-intervall som beskrivs här gäller följande destinationer:
 
 Utgående trafik från Experience Platform till dessa destinationer går alltid igenom de IP-adresser som anges på denna sida.
 
-Den här sidan innehåller IP-intervall som du kan lägga till i tillåtelselista för att på ett säkert sätt exportera data från Experience Platform till HTTP-slutpunkten, [!DNL Amazon Kinesis], eller [!DNL Azure Event Hubs] -instans. Den här funktionen är särskilt användbar om HTTP-slutpunkten finns bakom en brandvägg för företag eller om företagets säkerhets- och efterlevnadsstandarder kräver att en lista över IP-intervall tillåtslista.
+Den här sidan innehåller IP-intervall som du kan lägga till i tillåtelselista för att på ett säkert sätt exportera data från Experience Platform till HTTP-slutpunkten, [!DNL Amazon Kinesis] eller [!DNL Azure Event Hubs]-instansen. Den här funktionen är särskilt användbar om HTTP-slutpunkten finns bakom en brandvägg för företag eller om företagets säkerhets- och efterlevnadsstandarder kräver att en lista över IP-intervall tillåtslista.
 
 Du kan definiera nätverksåtkomstkontroller via nätverkets brandvägg. Genom att ange rätt IP-intervall kan du tillåta trafik för dataöverföringstjänsten.
 

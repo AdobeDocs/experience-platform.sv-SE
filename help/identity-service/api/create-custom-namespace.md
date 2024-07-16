@@ -8,15 +8,15 @@ exl-id: 6015a225-4508-49cc-9dda-fb9f73a8746c
 source-git-commit: c16ce1020670065ecc5415bc3e9ca428adbbd50c
 workflow-type: tm+mt
 source-wordcount: '120'
-ht-degree: 1%
+ht-degree: 0%
 
 ---
 
 # Skapa ett anpassat namnutrymme i Identity Service API
 
-Använda [!DNL Identity Namespace] API: du kan skapa ett anpassat ID-namnutrymme som bara är tillgängligt för din organisation.
+Med API:t [!DNL Identity Namespace] kan du skapa ett anpassat identitetsnamnutrymme som bara är tillgängligt för din organisation.
 
-Rekommendationer om hur du skapar anpassade namnutrymmen finns i [dokumentation om vanliga frågor om identitetstjänster](../troubleshooting-guide.md).
+Rekommendationer om hur du skapar anpassade namnutrymmen finns i [Vanliga frågor om identitetstjänsten](../troubleshooting-guide.md).
 
 >[!NOTE]
 >
@@ -64,4 +64,4 @@ curl -X POST \
 
 ## Nästa steg
 
-Gå till nästa självstudiekurs för att [lista ID:t för en identitet](./list-native-id.md)
+Gå till nästa självstudiekurs för att [visa en lista över en identitets interna ID](./list-native-id.md)

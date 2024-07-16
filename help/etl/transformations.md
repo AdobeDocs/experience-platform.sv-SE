@@ -6,7 +6,7 @@ description: I den här artikeln visas följande exempelomformningar som en utve
 exl-id: 8084f5fd-b621-4515-a329-5a06c137d11c
 source-git-commit: 1a7ba52b48460d77d0b7695aa0ab2d5be127d921
 workflow-type: tm+mt
-source-wordcount: '493'
+source-wordcount: '474'
 ht-degree: 0%
 
 ---
@@ -19,7 +19,7 @@ I den här artikeln visas följande exempelomformningar som en utvecklare av Ext
 
 ### Exempelfiler
 
-Exempelfiler för CSV och JSON finns tillgängliga från den offentliga ETL-referensen [!DNL GitHub] Adobe har en repo:
+CSV- och JSON-exempelfiler är tillgängliga från den offentliga ETL-referensen [!DNL GitHub] som hanteras av Adobe:
 
 - [CRM_profiles.csv](https://github.com/adobe/experience-platform-etl-reference/blob/master/example_files/CRM_profiles.csv)
 - [CRM_profiles.json](https://github.com/adobe/experience-platform-etl-reference/blob/master/example_files/CRM_profiles.json)
@@ -42,7 +42,7 @@ Dr  Cammi   Haslen  F   1973-12-17  chaslenqv@ehow.com  56059cd5-5006-ce5f-2f5f-
 ### Mappning
 
 Mappningskraven för CRM-data beskrivs i följande tabell och innehåller följande omformningar:
-- Identitetskolumner till `identityMap` egenskaper
+- Identitetskolumner till `identityMap`-egenskaper
 - Födelsedatum (DOB) till år och månad
 - Strängar till dubbletter eller korta heltal.
 
@@ -52,7 +52,7 @@ Mappningskraven för CRM-data beskrivs i följande tabell och innehåller följa
 | F_NAME | person.name.firstName | Kopiera som sträng |
 | L_NAME | person.name.lastName | Kopiera som sträng |
 | GENDER | person.gender | Transformera kön som motsvarande person.genusuppräkningsvärde |
-| DOB | person.bornDayAndMonth: &quot;MM-DD&quot;<br/>person.bornDate: &quot;YYY-MM-DD&quot;<br/>person.bornYear: YYYY | Omvandla BirdDayAndMonth som sträng<br/>Omvandla födelsedatum som sträng<br/>Omvandla födelseår som kort int |
+| DOB | person.BirdDayAndMonth: &quot;MM-DD&quot;<br/>person.bornDate: &quot;YYY-MM-DD&quot;<br/>person.bornYear: YYYY | Omvandla födelsedagenDayAndMonth som sträng<br/>Omforma födelsedatumet som sträng<br/>Omvandla födelseåret som kort int |
 | E-POST | personalEmail.address | Kopiera som sträng |
 | CRMID | identityMap.CRMID[{&quot;id&quot;:x, primär:false}] | Kopiera som sträng till CRMID-matris i identityMap och ange Primary som false |
 | ECID | identityMap.ECID[{&quot;id&quot;:x, primär: false}] | Kopiera som sträng till första posten i ECID-matrisen i identityMap och ange Primary som false |
@@ -176,7 +176,7 @@ Hierarkin för en databildruta (till exempel en Parquet-fil) måste matcha hiera
 
 ### Exempeldataram
 
-Strukturen för följande exempeldatabildruta har mappats till ett schema som implementerar [!DNL XDM Individual Profile] och innehåller de vanligaste fälten som är associerade med scheman av den typen.
+Strukturen för följande exempeldatabildruta har mappats till ett schema som implementerar klassen [!DNL XDM Individual Profile] och innehåller de vanligaste fälten som är associerade med scheman av den typen.
 
 ```python
 [
@@ -282,9 +282,9 @@ När du konstruerar en databildruta för användning i Adobe Experience Platform
 
 Mappningskraven för arrayen med identiteter beskrivs i följande tabell:
 
-| Identitetsfält | identityMap-fält | Datatyper |
+| Identitetsfält | identityMap-fält | Datatyp |
 | -------------- | ----------------- | --------- |
-| identiteter[0].id | identityMap[E-post][{"id"}] | kopiera som sträng |
+| identiteter[0].id | identityMap[Email][{"id"}] | kopiera som sträng |
 | identiteter[1].id | identityMap[CRMID][{"id"}] | kopiera som sträng |
 | identiteter[2].id | identityMap[LOYALTYID][{"id"}] | kopiera som sträng |
 

@@ -4,22 +4,22 @@ description: I det här dokumentet beskrivs hur du använder frågetjänsten fö
 exl-id: f64e61ef-0157-4f0a-88f8-bbe4f9aa83f0
 source-git-commit: cde7c99291ec34be811ecf3c85d12fad09bcc373
 workflow-type: tm+mt
-source-wordcount: '232'
+source-wordcount: '237'
 ht-degree: 0%
 
 ---
 
 # Analysinsikter för interaktion via webben och mobiler
 
-Med Adobe Experience Platform kan ni importera data från Adobe Analytics rapporteringsprogram med hjälp av XDM-fält (Experience Data Model) för att fylla i datauppsättningar. Dessa analysdata ändras för att anpassas till [!DNL XDM ExperienceEvent] klassen. Frågetjänsten kan sedan använda dessa data genom att köra SQL-frågor för att generera värdefulla insikter från användarens beteende över de digitala plattformarna.
+Med Adobe Experience Platform kan ni importera data från Adobe Analytics rapporteringsprogram med hjälp av XDM-fält (Experience Data Model) för att fylla i datauppsättningar. Dessa analysdata har ändrats så att de överensstämmer med klassen [!DNL XDM ExperienceEvent]. Frågetjänsten kan sedan använda dessa data genom att köra SQL-frågor för att generera värdefulla insikter från användarens beteende över de digitala plattformarna.
 
 Det här dokumentet innehåller ett antal exempel på SQL-frågor som visar vanliga användningsfall när du skapar insikter från webb- och mobilanalysdata.
 
-Se [Dokumentation för fältmappningar i analyser](../../sources/connectors/adobe-applications/mapping/analytics.md) för mer information om inhämtning och mappning av analysdata.
+Mer information om inhämtning och mappning av analysdata finns i [dokumentationen för mappning av analysfält](../../sources/connectors/adobe-applications/mapping/analytics.md).
 
 ## Komma igång
 
-För vart och ett av följande användningsfall anges ett parametriserat SQL-frågeexempel som en mall som du kan anpassa. Ange parametrar var du än ser `{ }` i SQL-exemplen för den datauppsättning, eVar, händelse eller tidsram som du är intresserad av att utvärdera.
+För vart och ett av följande användningsfall anges ett parametriserat SQL-frågeexempel som en mall som du kan anpassa. Ange parametrar där du ser `{ }` i SQL-exemplen för den datauppsättning, eVar, händelse eller tidsram som du är intresserad av att utvärdera.
 
 ## Mål
 

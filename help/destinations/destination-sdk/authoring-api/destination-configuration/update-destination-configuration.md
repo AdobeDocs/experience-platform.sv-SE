@@ -4,18 +4,18 @@ title: Uppdatera en målkonfiguration
 exl-id: d7f18689-9806-4f73-a63a-fa112569819c
 source-git-commit: 82ba4e62d5bb29ba4fef22c5add864a556e62c12
 workflow-type: tm+mt
-source-wordcount: '369'
+source-wordcount: '370'
 ht-degree: 0%
 
 ---
 
 # Uppdatera en målkonfiguration
 
-Den här sidan innehåller exempel på API-begäran och nyttolast som du kan använda för att uppdatera en befintlig målkonfiguration med hjälp av `/authoring/destinations` API-slutpunkt.
+Den här sidan innehåller exempel på API-begäran och nyttolast som du kan använda för att uppdatera en befintlig målkonfiguration med API-slutpunkten `/authoring/destinations`.
 
 >[!TIP]
 >
->Alla uppdateringsåtgärder för produkterade/publika destinationer visas bara när du har använt [publicerings-API](../../publishing-api/create-publishing-request.md) och skicka in uppdateringen till Adobe för granskning.
+>Alla uppdateringsåtgärder på producerade/publika mål visas först när du har använt [publicerings-API](../../publishing-api/create-publishing-request.md) och skickat uppdateringen för granskning i Adobe.
 
 En detaljerad beskrivning av funktionerna i en målkonfiguration finns i följande artiklar:
 
@@ -34,21 +34,21 @@ En detaljerad beskrivning av funktionerna i en målkonfiguration finns i följan
 
 >[!IMPORTANT]
 >
->Alla parameternamn och värden som stöds av Destinationen SDK är **skiftlägeskänslig**. Undvik skiftlägeskänslighetsfel genom att använda parameternamn och värden exakt som de visas i dokumentationen.
+>Alla parameternamn och värden som stöds av Destinationen SDK är **skiftlägeskänsliga**. Undvik skiftlägeskänslighetsfel genom att använda parameternamn och värden exakt som de visas i dokumentationen.
 
 ## Komma igång med API-åtgärder för målkonfiguration {#get-started}
 
-Innan du fortsätter bör du granska [komma igång-guide](../../getting-started.md) för viktig information som du behöver känna till för att kunna anropa API:t, inklusive hur du får nödvändig behörighet för målredigering och obligatoriska huvuden.
+Innan du fortsätter bör du läsa igenom [kom igång-guiden](../../getting-started.md) för att få viktig information som du behöver känna till för att kunna ringa anrop till API:t, inklusive hur du får nödvändig behörighet för målredigering och nödvändiga rubriker.
 
 ## Uppdatera en målkonfiguration {#update}
 
-Du kan uppdatera en [befintlig](create-destination-configuration.md) målkonfiguration genom att skapa en `PUT` begäran till `/authoring/destinations` slutpunkt med uppdaterad nyttolast.
+Du kan uppdatera en [befintlig](create-destination-configuration.md) målkonfiguration genom att göra en `PUT`-begäran till `/authoring/destinations`-slutpunkten med den uppdaterade nyttolasten.
 
 >[!TIP]
 >
 >API-slutpunkt: `platform.adobe.io/data/core/activation/authoring/destinations`
 
-Hämta en befintlig målkonfiguration och dess motsvarande `{INSTANCE_ID}`, se artikeln om [hämta en målkonfiguration](retrieve-destination-configuration.md).
+Om du vill hämta en befintlig målkonfiguration och dess motsvarande `{INSTANCE_ID}` läser du artikeln om [att hämta en målkonfiguration](retrieve-destination-configuration.md).
 
 **API-format**
 
@@ -58,11 +58,11 @@ PUT /authoring/destinations/{INSTANCE_ID}
 
 | Parameter | Beskrivning |
 | -------- | ----------- |
-| `{INSTANCE_ID}` | ID:t för målkonfigurationen som du vill uppdatera. Hämta en befintlig målkonfiguration och dess motsvarande `{INSTANCE_ID}`, se [Hämta en målkonfiguration](retrieve-destination-configuration.md). |
+| `{INSTANCE_ID}` | ID:t för målkonfigurationen som du vill uppdatera. Information om hur du hämtar en befintlig målkonfiguration och dess motsvarande `{INSTANCE_ID}` finns i [Hämta en målkonfiguration](retrieve-destination-configuration.md). |
 
 +++Begäran
 
-Följande begäran uppdaterar målet som vi skapade i [detta exempel](create-destination-configuration.md#create) med olika `filenameConfig` alternativ.
+Följande begäran uppdaterar målet som vi skapade i [det här exemplet](create-destination-configuration.md#create) med olika `filenameConfig` alternativ.
 
 ```shell {line-numbers="true" highlight="115-128"}
 curl -X POST https://platform.adobe.io/data/core/activation/authoring/destinations/{INSTANCE_ID} \
@@ -207,11 +207,11 @@ Ett lyckat svar returnerar HTTP-status 200 med information om den uppdaterade m�
 
 ## API-felhantering {#error-handling}
 
-Destination SDK-API-slutpunkter följer de allmänna felmeddelandeprinciperna för Experience Platform API. Se [API-statuskoder](../../../../landing/troubleshooting.md#api-status-codes) och [fel i begäranhuvudet](../../../../landing/troubleshooting.md#request-header-errors) i felsökningsguiden för plattformen.
+Destination SDK-API-slutpunkter följer de allmänna felmeddelandeprinciperna för Experience Platform API. Se [API-statuskoder](../../../../landing/troubleshooting.md#api-status-codes) och [begäranrubrikfel](../../../../landing/troubleshooting.md#request-header-errors) i felsökningsguiden för plattformen.
 
 ## Nästa steg
 
-När du har läst det här dokumentet kan du nu uppdatera en målkonfiguration via Destinationen SDK `/authoring/destinations` API-slutpunkt.
+När du har läst det här dokumentet vet du nu hur du uppdaterar en målkonfiguration via API-slutpunkten för Destinationen SDK `/authoring/destinations`.
 
 Mer information om vad du kan göra med den här slutpunkten finns i följande artiklar:
 

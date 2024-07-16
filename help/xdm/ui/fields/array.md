@@ -15,9 +15,9 @@ ht-degree: 0%
 
 När du definierar ett XDM-fält (Experience Data Model) i Adobe Experience Platform-användargränssnittet kan du ange det fältet som en array.
 
-Innehållet i arrayen beror på [!UICONTROL Type] markerat för det fältet. Om ett fält till exempel [!UICONTROL Type] är inställd på &quot;[!UICONTROL String]&quot;, om du anger det fältet som en array, kommer fältet att vara en array med strängar. Om fältet [!UICONTROL Type] är inställd på en datatyp med flera fält, till exempel &quot;[!UICONTROL Postal address]&quot;, blir det en array med postadressobjekt som överensstämmer med datatypen.
+Innehållet i arrayen beror på den [!UICONTROL Type] som har valts för det fältet. Om till exempel ett fälts [!UICONTROL Type] är inställt på [!UICONTROL String] kommer ett värde på fältet som en matris att beteckna fältet som en matris med strängar. Om fältets [!UICONTROL Type] är inställt på en datatyp med flera fält, till exempel [!UICONTROL Postal address], blir det en matris med postadressobjekt som överensstämmer med datatypen.
 
-Efter att du har [definierade ett nytt fält i användargränssnittet](./overview.md#define)kan du ange det som ett arrayfält genom att välja **[!UICONTROL Array]** i den högra listen.
+När du har [definierat ett nytt fält i användargränssnittet](./overview.md#define) kan du ange det som ett matrisfält genom att markera kryssrutan **[!UICONTROL Array]** i den högra listen.
 
 ![](../../images/ui/fields/special/array.png)
 
@@ -29,7 +29,7 @@ Ytterligare konfigurationskontroller för arrayer är följande:
 | --- | --- |
 | [!UICONTROL Minimum length] | Det minsta antalet objekt som matrisen måste innehålla för att importen ska lyckas. |
 | [!UICONTROL Maximum length] | Det maximala antalet objekt som matrisen måste innehålla för att importen ska lyckas. |
-| [!UICONTROL Unique items only] | Om inställt på &quot;[!UICONTROL True]&quot; måste varje objekt i arrayen vara unikt för att importen ska lyckas. |
+| [!UICONTROL Unique items only] | Om värdet är [!UICONTROL True] måste varje objekt i arrayen vara unikt för att importen ska lyckas. |
 
 {style="table-layout:auto"}
 
@@ -37,10 +37,10 @@ När du har konfigurerat fältet väljer du **[!UICONTROL Apply]** för att till
 
 ![](../../images/ui/fields/special/array-config.png)
 
-Arbetsytan uppdateras för att återspegla ändringar som gjorts i fältet. Observera att den datatyp som visas bredvid fältnamnet på arbetsytan har ett par hakparenteser (`[]`), vilket anger att fältet representerar en array med den datatypen.
+Arbetsytan uppdateras för att återspegla ändringar som gjorts i fältet. Observera att datatypen som visas bredvid fältnamnet på arbetsytan har ett par hakparenteser (`[]`), vilket anger att fältet representerar en matris av den datatypen.
 
 ![](../../images/ui/fields/special/array-applied.png)
 
 ## Nästa steg
 
-I den här guiden beskrivs hur du definierar ett matrisfält i användargränssnittet. Se översikten på [definiera fält i användargränssnittet](./overview.md#special) för att lära dig hur du definierar andra XDM-fälttyper i [!DNL Schema Editor].
+I den här guiden beskrivs hur du definierar ett matrisfält i användargränssnittet. Mer information om hur du definierar andra XDM-fälttyper i [!DNL Schema Editor] finns i översikten [Definiera fält i användargränssnittet](./overview.md#special).

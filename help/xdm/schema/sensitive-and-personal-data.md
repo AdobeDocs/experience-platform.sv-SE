@@ -48,10 +48,10 @@ Med Platform kan ni definiera egna fältgrupper och datatyper, vilket ger er ful
 
 >[!IMPORTANT]
 >
->SPI och PII ska endast sparas i [Individuell XDM-profil](../classes/individual-profile.md) och [XDM ExperienceEvent](../classes/experienceevent.md) -klasser. Som bästa praxis för borttagning av data samt sekretess- och styrningssyften ska du inte spara SPI och PII i några andra anpassade eller vanliga XDM-klasser.
+>SPI och PII ska bara sparas i klasserna [XDM Individual Profile](../classes/individual-profile.md) och [XDM ExperienceEvent](../classes/experienceevent.md). Som bästa praxis för borttagning av data samt sekretess- och styrningssyften ska du inte spara SPI och PII i några andra anpassade eller vanliga XDM-klasser.
 
 ## Nästa steg
 
-Det här dokumentet innehöll viktiga överväganden om känsliga och personuppgifter i XDM. Mer information om hur du utformar dina scheman så att de bäst passar ditt företag finns i guiden på [bästa praxis för datamodellering](./best-practices.md).
+Det här dokumentet innehöll viktiga överväganden om känsliga och personuppgifter i XDM. Mer information om hur du modellerar dina scheman så att de bäst passar dina affärssituationer finns i guiden [Bästa praxis för datamodellering](./best-practices.md).
 
-Mer information om datastyrning och sekretesskapacitet i Experience Platform finns i översikten på [styrning, integritet och säkerhet](../../landing/governance-privacy-security/overview.md).
+Mer information om datastyrning och sekretesskapacitet i Experience Platform finns i översikten över [styrning, sekretess och säkerhet](../../landing/governance-privacy-security/overview.md).

@@ -28,13 +28,13 @@ Sammanfattning: Om du bara vill leverera Adobe Real-Time CDP-målgrupper en gån
 
 
 Nedan finns mer information om Magnite: Streaming Batch-destinationen, hur du ansluter till den och hur du aktiverar Adobe Real-Time CDP-målgrupper.
-Mer information om målet i realtid finns i [det här dokumentet](magnite-streaming.md) i stället.
+Mer information om Real-Time-målet finns i [det här dokumentet](magnite-streaming.md) i stället.
 
 >[!IMPORTANT]
 >
 >Den här målanslutningen är i betaversion och endast tillgänglig för vissa kunder. Kontakta din Adobe-representant om du vill ha åtkomst.
 >
->Målanslutnings- och dokumentationssidan skapas och underhålls av [!DNL Magnite] team. Om du har frågor eller uppdateringsfrågor kontaktar du dem direkt på `adobe-tech@magnite.com`.
+>Målanslutningen och dokumentationssidan skapas och underhålls av [!DNL Magnite]-teamet. Om du har frågor eller uppdateringsfrågor kontaktar du dem direkt på `adobe-tech@magnite.com`.
 
 ## Användningsfall {#use-cases}
 
@@ -54,7 +54,7 @@ Alla målgrupper som aktiveras via Magnite Streaming: Batchdestinationen leverer
 
 ## Förhandskrav {#prerequisites}
 
-Om du vill använda Magnite-målen i Adobe Experience Platform måste du först ha ett Magnite Streaming-konto. Om du har en [!DNL Magnite Streaming] konto, kontakta [!DNL Magnite] kontohanterare som ska ges autentiseringsuppgifter för åtkomst [!DNL Magnite's] destinationer. Om du inte har en [!DNL Magnite Streaming] konto, kontakta adobe-tech@magnite.com
+Om du vill använda Magnite-målen i Adobe Experience Platform måste du först ha ett Magnite Streaming-konto. Om du har ett [!DNL Magnite Streaming]-konto kan du kontakta din [!DNL Magnite]-kontohanterare för att få inloggningsuppgifter för att få åtkomst till [!DNL Magnite's]-mål. Om du inte har något [!DNL Magnite Streaming]-konto kan du kontakta adobe-tech@magnite.com
 
 ## Identiteter som stöds {#supported-identities}
 
@@ -62,7 +62,7 @@ Magnite Streaming: Batch-målet kan ta emot *alla* identitetskällor från Adobe
 
 >[!NOTE]
 >
->*Alla* identitetskällor kan mappa till alla mål-ID:n för magnite_deviceId.
+>*Alla*-identitetskällor kan mappa till alla mål-ID:n för magnite_deviceId.
 
 | Målidentitet | Beskrivning | Överväganden |
 |:--------------------------- |:------------------------------------------------------------------------------------------------ |:------------------------------------------------------------------------------------- |
@@ -76,8 +76,8 @@ Magnite Streaming: Batch-målet kan ta emot *alla* identitetskällor från Adobe
 
 | Målgruppsursprung | Stöds | Beskrivning |
 |-----------------------------|----------|----------|
-| [!DNL Segmentation Service] | ✓ | Målgrupper som skapats genom Experience Platform [Segmenteringstjänst](../../../segmentation/home.md). |
-| Anpassade överföringar | ✓ | Målgrupper [importerad](../../../segmentation/ui/audience-portal.md#import-audience) till Experience Platform från CSV-filer. |
+| [!DNL Segmentation Service] | ✓ | Publiker som genererats via Experience Platform [segmenteringstjänsten](../../../segmentation/home.md). |
+| Anpassade överföringar | ✓ | Publikerna [importerade](../../../segmentation/ui/audience-portal.md#import-audience) till Experience Platform från CSV-filer. |
 
 {style="table-layout:auto"}
 
@@ -86,7 +86,7 @@ Magnite Streaming: Batch-målet kan ta emot *alla* identitetskällor från Adobe
 | Objekt | Typ | Anteckningar |
 |-----------------------------|----------|----------|
 | Exporttyp | Målgruppsexport | Du exporterar alla medlemmar i en målgrupp med de identifierare (namn, telefonnummer eller andra) som används i Magnite Streaming: Batch-mål. |
-| Exportfrekvens | Grupp | Batchdestinationer exporterar filer till efterföljande plattformar i steg om tre, sex, åtta, tolv eller tjugofyra timmar. Läs mer om batch [filbaserade mål](/help/destinations/destination-types.md). |
+| Exportfrekvens | Grupp | Batchdestinationer exporterar filer till efterföljande plattformar i steg om tre, sex, åtta, tolv eller tjugofyra timmar. Läs mer om gruppbaserade [filbaserade mål](/help/destinations/destination-types.md). |
 
 {style="table-layout:auto"}
 
@@ -100,7 +100,7 @@ Leta reda på Magnite Streaming: Batch-mål i Adobe Experience-katalogen. Klicka
 
 Om du redan har ett befintligt konto kan du hitta det genom att ändra kontotypsalternativet till &quot;Befintligt konto&quot;. Annars skapar du ett konto nedan:
 
-Om du vill skapa ett nytt konto och autentisera det på målet för första gången fyller du i de obligatoriska fälten &quot;S3 access key&quot; och &quot;S3 secrets key&quot; (som du får via din kontohanterare) och väljer **[!UICONTROL Connect to destination]**
+Om du vill skapa ett nytt konto och autentisera det på målet för första gången fyller du i de obligatoriska fälten för S3-åtkomstnyckel och S3-hemlig nyckel (som du får via din kontohanterare) och väljer **[!UICONTROL Connect to destination]**
 
 ![autentiseringsfält för målkonfiguration har inte fyllts i](../../assets/catalog/advertising/magnite/destination-batch-config-auth-unfilled.png)
 
@@ -112,9 +112,11 @@ Om du vill skapa ett nytt konto och autentisera det på målet för första gån
 
 Om du vill konfigurera information för målet fyller du i de obligatoriska och valfria fälten nedan. En asterisk bredvid ett fält i användargränssnittet anger att fältet är obligatoriskt.
 
-* **[!UICONTROL Name]**: Ett namn som du känner igen den här målanslutningen/instansen med i framtiden.
-* **[!UICONTROL Description]**: En beskrivning som hjälper dig att identifiera den här målanslutningen/instansen i framtiden.
-* **[!UICONTROL Name of your source partner]**: Det namn du vill använda som källa i Magnite Streaming
+* **[!UICONTROL Name]**: Ett namn som du känner igen den här målanslutningen/instansen med i
+framtiden.
+* **[!UICONTROL Description]**: En beskrivning som hjälper dig att identifiera detta
+i framtiden.
+* **[!UICONTROL Name of your source partner]**: Det namn du vill använda som källa i Magnite Streaming-plattformen
 
 ![autentiseringsfält för målkonfiguration har fyllts i](../../assets/catalog/advertising/magnite/destination-batch-config-auth-filled.png)
 
@@ -126,33 +128,33 @@ Du kan sedan fortsätta genom att välja **[!UICONTROL Next]**
 
 På nästa skärm,&quot;Styrningspolicy och verkställighetsåtgärder (valfritt)&quot;, kan du välja alla relevanta policyer för datastyrning. &quot;Dataexport&quot; är vanligtvis valt som mål för Magnite Streaming Batch.
 
-![Frivillig styrningspolicy och verkställighetsåtgärder](../../assets/catalog/advertising/magnite/destination-batch-config-grouping-policy.png)
+![Frivillig policy och tvångsåtgärder för styrning](../../assets/catalog/advertising/magnite/destination-batch-config-grouping-policy.png)
 
-När du har markerat eller om du vill hoppa över den här valfria skärmen väljer du **[!UICONTROL Create]**
+Välj **[!UICONTROL Create]** när du har markerat den, eller om du vill hoppa över den här valfria skärmen
 
 ### Aktivera aviseringar {#enable-alerts}
 
-Du kan aktivera varningar för att få meddelanden om dataflödets status till ditt mål. Välj en avisering i listan om du vill prenumerera och få meddelanden om statusen för ditt dataflöde. Mer information om varningar finns i guiden på [prenumerera på destinationsvarningar med användargränssnittet](../../ui/alerts.md).
+Du kan aktivera varningar för att få meddelanden om dataflödets status till ditt mål. Välj en avisering i listan om du vill prenumerera och få meddelanden om statusen för ditt dataflöde. Mer information om varningar finns i guiden [prenumerera på destinationsvarningar med användargränssnittet](../../ui/alerts.md).
 
-När du är klar med informationen för målanslutningen väljer du **[!UICONTROL Next]**.
+Välj **[!UICONTROL Next]** när du är klar med att ange information för målanslutningen.
 
 ### Aktivera segment till den här destinationen {#activate}
 
 >[!IMPORTANT]
 > 
->* För att aktivera data behöver du **[!UICONTROL View Destinations]**, **[!UICONTROL Activate Destinations]**, **[!UICONTROL View Profiles]** och **[!UICONTROL View Segments]** [behörigheter för åtkomstkontroll](/help/access-control/home.md#permissions). Läs [åtkomstkontroll - översikt](/help/access-control/ui/overview.md) eller kontakta produktadministratören för att få de behörigheter som krävs.
->* Exportera *identiteter* behöver du **[!UICONTROL View Identity Graph]** [behörighet för åtkomstkontroll](/help/access-control/home.md#permissions). <br> ![Markera det identitetsnamnutrymme som är markerat i arbetsflödet för att aktivera målgrupper till mål.](/help/destinations/assets/overview/export-identities-to-destination.png "Markera det identitetsnamnutrymme som är markerat i arbetsflödet för att aktivera målgrupper till mål."){width="100" zoomable="yes"}
+>* För att aktivera data behöver du behörigheterna **[!UICONTROL View Destinations]**, **[!UICONTROL Activate Destinations]**, **[!UICONTROL View Profiles]** och **[!UICONTROL View Segments]** [åtkomstkontroll](/help/access-control/home.md#permissions). Läs [åtkomstkontrollsöversikten](/help/access-control/ui/overview.md) eller kontakta produktadministratören för att få den behörighet som krävs.
+>* Om du vill exportera *identiteter* måste du ha **[!UICONTROL View Identity Graph]** [åtkomstkontrollbehörighet](/help/access-control/home.md#permissions). <br> ![Markera identitetsnamnområdet som är markerat i arbetsflödet för att aktivera målgrupper till mål.](/help/destinations/assets/overview/export-identities-to-destination.png "Markera identitetsnamnområdet som är markerat i arbetsflödet för att aktivera målgrupper till mål."){width="100" zoomable="yes"}
 
 Läs [Aktivera målgruppsdata för att batchprofilera exportmål](/help/destinations/ui/activate-batch-profile-destinations.md) om du vill ha instruktioner om hur du aktiverar målgruppssegment till det här målet.
 
 ### Mappa attribut och identiteter {#map}
 
-I **[!UICONTROL Source field]**kan du välja attribut eller identitet för dina enheter. I det här exemplet har vi valt en anpassad IdentityMap som kallas &quot;DeviceId&quot;
+I **[!UICONTROL Source field]** kan du välja attribut eller identitet för dina enheter. I det här exemplet har vi valt en anpassad IdentityMap som kallas &quot;DeviceId&quot;
 ![mappa önskade datafält till fältet device_id](../../assets/catalog/advertising/magnite/destination-batch-active-audience-field-mapping.png)
 
 I **[!UICONTROL Target field]**:
-![välj lämplig målidentitet för enhetstyp](../../assets/catalog/advertising/magnite/destination-batch-active-audience-select-device-type.png) Se [Identiteter som stöds](#supported-identities) för mer information.
-I det här exemplet har vi valt **[!UICONTROL Target field]**: magnite_deviceId_CUSTOM, eftersom vår **[!UICONTROL Source field]** definierades som en anpassad IdentityMap: DeviceID.
+![ Välj lämplig målidentitet för enhetstyp ](../../assets/catalog/advertising/magnite/destination-batch-active-audience-select-device-type.png) Mer information finns i [ Identiteter som stöds ](#supported-identities) .
+I det här exemplet har vi valt **[!UICONTROL Target field]**: magnite_deviceId_CUSTOM eftersom **[!UICONTROL Source field]** definierades som en anpassad IdentityMap: DeviceID.
 
 >[!NOTE]
 >
@@ -167,7 +169,7 @@ På skärmen&quot;Konfigurera ett filnamn och exportschema för varje målgrupp&
 >
 > Ett mappnings-ID ska anges när en målgrupp har ett befintligt segment-ID som tidigare var känt för Magnite Streaming. Annars ska&quot;NONE&quot; användas som mappnings-ID.
 >
-> När du konfigurerar filnamnet för varje målgrupp ska du inkludera mappnings-ID via fältet Anpassad text som ska läggas till. Mappnings-ID läggs till som: `{previous_filename}\_\[MAPPING_ID\].` Om den här målgruppen inte är en del av Magnite Streaming och du inte kommer att ange något mappnings-ID, ska&quot;NONE&quot; anges i fältet&quot;Custom Text&quot;. Det nya filnamnet bör i det här fallet vara: `{previous_filename}\_\[NONE\]`.
+> När du konfigurerar filnamnet för varje målgrupp ska du inkludera mappnings-ID via fältet Anpassad text som ska läggas till. Mappnings-ID:t läggs till som: `{previous_filename}\_\[MAPPING_ID\].` Om den här målgruppen är ny för Magnite Streaming och du inte kommer att ange något mappnings-ID, ska NONE anges i fältet Custom Text (Egen text). Det nya filnamnet bör i det här fallet vara: `{previous_filename}\_\[NONE\]`.
 
 ## Exporterade data/Validera dataexport {#exported-data}
 
@@ -177,12 +179,12 @@ När era målgrupper har överförts kan ni validera att era målgrupper har ska
 
 >[!NOTE]
 >
->Målgrupper som aktiveras/levereras till Magnite Streaming Batch-målet *ersätt* samma målgrupper som aktiverades/levererades via Magnite Streaming Real-Time-målet. Om du söker efter ett segment med segmentnamnet kanske du inte hittar segmentet i realtid förrän gruppen har importerats och bearbetats av plattformen Magnite Streaming.
+>Publiker som aktiveras/levereras till Magnite Streaming Batch-målet *ersätter* samma målgrupper som aktiverades/levererades via Magnite Streaming Real-Time-målet. Om du söker efter ett segment med segmentnamnet kanske du inte hittar segmentet i realtid förrän gruppen har importerats och bearbetats av plattformen Magnite Streaming.
 
 ## Dataanvändning och styrning {#data-usage-governance}
 
-Alla [!DNL Adobe Experience Platform] destinationerna är kompatibla med dataanvändningsprinciper när data hanteras. Detaljerad information om hur [!DNL Adobe Experience Platform] använder datastyrning, läs [Datastyrning - översikt](/help/data-governance/home.md).
+Alla [!DNL Adobe Experience Platform]-mål är kompatibla med dataanvändningsprinciper när data hanteras. Mer information om hur [!DNL Adobe Experience Platform] använder datastyrning finns i [Översikt över datastyrning](/help/data-governance/home.md).
 
 ## Ytterligare resurser {#additional-resources}
 
-Ytterligare hjälpdokumentation finns på [Magnite Help Center](https://help.magnite.com/help).
+Mer information finns på [Magnite Help Center](https://help.magnite.com/help).

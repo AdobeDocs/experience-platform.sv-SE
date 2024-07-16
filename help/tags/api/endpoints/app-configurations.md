@@ -4,7 +4,7 @@ description: Lär dig hur du anropar slutpunkten /app_configurations i Reactor A
 exl-id: 88a1ec36-b4d2-4fb6-92cb-1da04268492a
 source-git-commit: 36320addc790e844a1102314890e8692841dc5d0
 workflow-type: tm+mt
-source-wordcount: '565'
+source-wordcount: '550'
 ht-degree: 1%
 
 ---
@@ -13,13 +13,13 @@ ht-degree: 1%
 
 >[!WARNING]
 >
->Genomförandet av `/app_configurations` slutpunkten ändras när funktioner läggs till, tas bort och omarbetas.
+>Implementeringen av slutpunkten `/app_configurations` börjar fungera när funktioner läggs till, tas bort och omarbetas.
 
-Appkonfigurationer tillåter att autentiseringsuppgifter lagras och hämtas för senare bruk. The `/app_configurations` -slutpunkten i Reaktors API gör att du kan hantera appkonfigurationer inom ditt upplevelseprogram programmatiskt.
+Appkonfigurationer tillåter att autentiseringsuppgifter lagras och hämtas för senare bruk. Med slutpunkten `/app_configurations` i Reaktors API kan du programmässigt hantera appkonfigurationer i ditt upplevelseprogram.
 
 ## Komma igång
 
-Slutpunkten som används i den här guiden är en del av [Reaktors-API](https://www.adobe.io/experience-platform-apis/references/reactor/). Läs igenom [komma igång-guide](../getting-started.md) om du vill ha viktig information om hur du autentiserar till API:t.
+Slutpunkten som används i den här guiden ingår i [Reaktors-API](https://www.adobe.io/experience-platform-apis/references/reactor/). Innan du fortsätter bör du läsa [kom igång-guiden](../getting-started.md) för att få viktig information om hur du autentiserar dig för API:t.
 
 ## Hämta en lista med appkonfigurationer {#list}
 
@@ -31,13 +31,13 @@ GET /companies/{COMPANY_ID}/app_configurations
 
 | Parameter | Beskrivning |
 | --- | --- |
-| `COMPANY_ID` | The `id` i [företag](./companies.md) som äger appkonfigurationerna. |
+| `COMPANY_ID` | `id` för det [företag](./companies.md) som äger appkonfigurationerna. |
 
 {style="table-layout:auto"}
 
 >[!NOTE]
 >
->Med hjälp av frågeparametrar kan listade appkonfigurationer filtreras baserat på följande attribut:<ul><li>`app_id`</li><li>`created_at`</li><li>`key_type`</li><li>`messaging_service`</li><li>`name`</li><li>`platform`</li><li>`updated_at`</li></ul>Se guiden [filtrera svar](../guides/filtering.md) för mer information.
+>Med hjälp av frågeparametrar kan listade appkonfigurationer filtreras baserat på följande attribut:<ul><li>`app_id`</li><li>`created_at`</li><li>`key_type`</li><li>`messaging_service`</li><li>`name`</li><li>`platform`</li><li>`updated_at`</li></ul>Mer information finns i guiden om [filtrering av svar](../guides/filtering.md).
 
 **Begäran**
 
@@ -111,7 +111,7 @@ GET /app_configurations/{APP_CONFIGURATION_ID}
 
 | Parameter | Beskrivning |
 | --- | --- |
-| `APP_CONFIGURATION_ID` | The `id` för den programkonfiguration som du vill söka efter. |
+| `APP_CONFIGURATION_ID` | `id` för appkonfigurationen som du vill söka efter. |
 
 {style="table-layout:auto"}
 
@@ -176,7 +176,7 @@ POST /companies/{COMPANY_ID}/app_configurations
 
 | Parameter | Beskrivning |
 | --- | --- |
-| `COMPANY_ID` | The `id` i [företag](./companies.md) som du definierar appkonfigurationen under. |
+| `COMPANY_ID` | `id` för det [företag](./companies.md) som du definierar appkonfigurationen under. |
 
 {style="table-layout:auto"}
 
@@ -213,8 +213,8 @@ curl -X POST \
 | Egenskap | Beskrivning |
 | --- | --- |
 | `platform` | Plattformen som programmet körs på (webb eller mobil). Detta avgör vilka meddelandetjänster som är tillgängliga. |
-| `messaging_service` | Meddelandetjänsten som är kopplad till appen, till exempel [Apple Push Notification service (APN:er)](https://developer.apple.com/library/archive/documentation/NetworkingInternet/Conceptual/RemoteNotificationsPG/APNSOverview.html) och [Firebase Cloud Messaging (FCM)](https://firebase.google.com/docs/cloud-messaging). Detta avgör vilka nyckeltyper som kan användas. |
-| `key_type` | Representerar det protokoll som en push-tjänstleverantör stöder och fastställer formatet för `push_credential` -objekt. I takt med att protokollen utvecklas för meddelandetjänster finns det nya `key_type` -värden skapas som stöd för de uppdaterade protokollen. |
+| `messaging_service` | Meddelandetjänsten som är associerad med appen, till exempel [Apple Push Notification-tjänsten (APN:er)](https://developer.apple.com/library/archive/documentation/NetworkingInternet/Conceptual/RemoteNotificationsPG/APNSOverview.html) och [Firebase Cloud Messaging (FCM)](https://firebase.google.com/docs/cloud-messaging). Detta avgör vilka nyckeltyper som kan användas. |
+| `key_type` | Representerar det protokoll som en push-tjänstleverantör stöder och fastställer formatet för objektet `push_credential`. När protokoll utvecklas för meddelandetjänster skapas nya `key_type`-värden som stöder de uppdaterade protokollen. |
 | `push_credential` | Det faktiska autentiseringsvärdet, som är krypterat i vila. Det här fältet dekrypteras vanligtvis inte eller inkluderas i API-svar. Endast vissa Adobe-tjänster kan få ett svar som innehåller en dekrypterad push-autentiseringsuppgift. |
 
 {style="table-layout:auto"}
@@ -258,7 +258,7 @@ Ett lyckat svar returnerar information om den nya appkonfigurationen.
 
 ## Uppdatera en appkonfiguration
 
-Du kan uppdatera en programkonfiguration genom att inkludera dess ID i sökvägen för en PATCH-begäran.
+Du kan uppdatera en programkonfiguration genom att ta med dess ID i sökvägen för en PATCH-begäran.
 
 **API-format**
 
@@ -268,7 +268,7 @@ PATCH /app_configurations/{APP_CONFIGURATION_ID}
 
 | Parameter | Beskrivning |
 | --- | --- |
-| `APP_CONFIGURATION_ID` | The `id` för den programkonfiguration som du vill uppdatera. |
+| `APP_CONFIGURATION_ID` | `id` för appkonfigurationen som du vill uppdatera. |
 
 {style="table-layout:auto"}
 
@@ -298,7 +298,7 @@ curl -X PATCH \
 | Egenskap | Beskrivning |
 | --- | --- |
 | `attributes` | Ett objekt vars egenskaper representerar attributen som ska uppdateras för appkonfigurationen. Varje nyckel representerar det specifika programkonfigurationsattribut som ska uppdateras, tillsammans med motsvarande värde som det ska uppdateras till.<br><br>Följande attribut kan uppdateras för appkonfigurationer:<ul><li>`app_id`</li><li>`key_type`</li><li>`messaging_service`</li><li>`name`</li><li>`platform`</li><li>`push_credential`</li></ul> |
-| `id` | The `id` för den programkonfiguration som du vill uppdatera. Det här bör matcha `{APP_CONFIGURATION_ID}` värdet som anges i sökvägen för begäran. |
+| `id` | `id` för appkonfigurationen som du vill uppdatera. Det här bör matcha det `{APP_CONFIGURATION_ID}`-värde som anges i sökvägen till begäran. |
 | `type` | Den typ av resurs som uppdateras. För den här slutpunkten måste värdet vara `app_configurations`. |
 
 {style="table-layout:auto"}
@@ -352,7 +352,7 @@ DELETE /app_configurations/{APP_CONFIGURATION_ID}
 
 | Parameter | Beskrivning |
 | --- | --- |
-| `APP_CONFIGURATION_ID` | The `id` för den programkonfiguration som du vill ta bort. |
+| `APP_CONFIGURATION_ID` | `id` för appkonfigurationen som du vill ta bort. |
 
 {style="table-layout:auto"}
 

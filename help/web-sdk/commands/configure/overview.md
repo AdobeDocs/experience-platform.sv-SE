@@ -11,25 +11,25 @@ ht-degree: 1%
 
 # Konfigurera Adobe Experience Platform Web SDK
 
-Konfigurationen för Web SDK görs med `configure` -kommando. Att konfigurera Web SDK är ett viktigt och obligatoriskt steg som måste utföras när biblioteket eller taggtillägget används.
+Konfigurationen för Web SDK görs med kommandot `configure`. Att konfigurera Web SDK är ett viktigt och obligatoriskt steg som måste utföras när biblioteket eller taggtillägget används.
 
 ## Konfigurera Web SDK med hjälp av taggtillägget {#configure-tag-extension}
 
 Följ stegen nedan för att konfigurera Web SDK via taggtillägget.
 
-1. Logga in på [experience.adobe.com](https://experience.adobe.com) med dina Adobe ID-uppgifter.
+1. Logga in på [experience.adobe.com](https://experience.adobe.com) med dina Adobe ID-inloggningsuppgifter.
 1. Navigera till **[!UICONTROL Data Collection]** > **[!UICONTROL Tags]**.
 1. Välj önskad taggegenskap.
-1. Navigera till **[!UICONTROL Extensions]** och sedan klicka **[!UICONTROL Configure]** på [!UICONTROL Adobe Experience Platform Web SDK] kort.
-1. Gå till [Konfigurationssida för SDK-taggtillägg](/help/tags/extensions/client/web-sdk/web-sdk-extension-configuration.md) för detaljerad information om alla konfigurationsalternativ.
+1. Navigera till **[!UICONTROL Extensions]** och klicka sedan på **[!UICONTROL Configure]** på [!UICONTROL Adobe Experience Platform Web SDK]-kortet.
+1. Gå till konfigurationssidan för [Web SDK-taggtillägget](/help/tags/extensions/client/web-sdk/web-sdk-extension-configuration.md) om du vill ha mer information om alla konfigurationsalternativ.
 
 Dessa konfigurationsinställningar ställs in när du använder tillägget för att skicka data till Adobe.
 
 ## Konfigurera Web SDK med JavaScript-biblioteket {#configure-js}
 
-Kör `configure` -kommando. Det här kommandot krävs innan du kan anropa andra Web SDK-kommandon, som [`sendEvent`](../sendevent/overview.md).
+Kör kommandot `configure`. Det här kommandot krävs innan du kan anropa andra Web SDK-kommandon, till exempel [`sendEvent`](../sendevent/overview.md).
 
-The [`edgeConfigId`](edgeconfigid.md) och [`orgId`](orgid.md) egenskaper krävs. Alla andra egenskaper är valfria, beroende på organisationens implementeringskrav.
+Egenskaperna [`edgeConfigId`](edgeconfigid.md) och [`orgId`](orgid.md) krävs. Alla andra egenskaper är valfria, beroende på organisationens implementeringskrav.
 
 Innehållsförteckningen i den här användarhandboken innehåller detaljerad information om alla kommandon som stöds.
 

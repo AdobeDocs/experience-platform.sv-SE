@@ -16,7 +16,7 @@ ht-degree: 0%
 >
 >Varningar stöds inte i icke-produktionssandlådor. För att kunna prenumerera på varningar måste du se till att du använder en produktionssandlåda.
 
-Med Adobe Experience Platform kan du prenumerera på händelsebaserade aviseringar om Adobe Experience Platform-aktiviteter. Varningar minskar eller eliminerar behovet av att ringa [[!DNL Observability Insights] API](../../../observability/api/overview.md) för att kontrollera om ett jobb har slutförts, om en viss milstolpe i ett arbetsflöde har nåtts eller om några fel har uppstått.
+Med Adobe Experience Platform kan du prenumerera på händelsebaserade aviseringar om Adobe Experience Platform-aktiviteter. Varningar minskar eller eliminerar behovet av att avfråga [[!DNL Observability Insights] API](../../../observability/api/overview.md) för att kontrollera om ett jobb har slutförts, om en viss milstolpe i ett arbetsflöde har nåtts eller om fel har uppstått.
 
 Du kan prenumerera på varningar när du skapar ett dataflöde för att få varningsmeddelanden om status, om det lyckades eller om det inte gick att köra ditt flöde.
 
@@ -26,9 +26,9 @@ Det här dokumentet innehåller anvisningar om hur du prenumererar på varningsm
 
 Dokumentet kräver en fungerande förståelse av följande komponenter i Adobe Experience Platform:
 
-* [Källor](../../home.md): [!DNL Experience Platform] tillåter att data hämtas från olika källor samtidigt som du kan strukturera, etikettera och förbättra inkommande data med [!DNL Platform] tjänster.
-* [Observationer](../../../observability/home.md): [!DNL Observability Insights] gör att ni kan övervaka plattformsaktiviteter med hjälp av statistiska värden och händelsemeddelanden.
-   * [Varningar](../../../observability/alerts/overview.md): När en viss uppsättning villkor för plattformsåtgärder har nåtts (t.ex. ett potentiellt problem när systemet överskrider ett tröskelvärde) kan Platform leverera varningsmeddelanden till alla användare i organisationen som har prenumererat på dem.
+* [Källor](../../home.md): [!DNL Experience Platform] tillåter att data kan hämtas från olika källor samtidigt som du kan strukturera, etikettera och förbättra inkommande data med [!DNL Platform]-tjänster.
+* [Observabilitet](../../../observability/home.md): [!DNL Observability Insights] gör att du kan övervaka plattformsaktiviteter med hjälp av statistik och händelsemeddelanden.
+   * [Varningar](../../../observability/alerts/overview.md): När en viss uppsättning villkor har nåtts i plattformsåtgärderna (t.ex. ett potentiellt problem när systemet överskrider ett tröskelvärde) kan Plattform leverera varningsmeddelanden till alla användare i organisationen som har prenumererat på dem.
 
 ## Prenumerera på aviseringar i användargränssnittet {#subscribe-sources-alerts}
 
@@ -42,9 +42,9 @@ Dokumentet kräver en fungerande förståelse av följande komponenter i Adobe E
 >
 >Du måste aktivera snabbmeddelanden om e-post för ditt plattformskonto för att kunna ta emot e-postbaserade varningsmeddelanden för dina dataflöden.
 
-Du kan aktivera varningar för dina dataflöden under [!UICONTROL Dataflow detail] steg i källarbetsflödet på källarbetsytan.
+Du kan aktivera aviseringar för dina dataflöden under [!UICONTROL Dataflow detail]-steget i källarbetsflödet på källarbetsytan.
 
-![dataflöde-detail](../../images/tutorials/alerts/dataflow-detail.png)
+![dataflödesdetalj](../../images/tutorials/alerts/dataflow-detail.png)
 
 De tillgängliga aviseringarna för källdataflöden är:
 
@@ -58,9 +58,9 @@ De tillgängliga aviseringarna för källdataflöden är:
 | Källflöde har körts | Den här varningen skickar ett meddelande när data från källan har importerats till plattformen. |
 | Körningsfel för källflöde | Den här varningen skickar ett meddelande till dig om ett fel inträffar i dataflödet. |
 
-Välj de aviseringar du vill prenumerera på och välj sedan **[!UICONTROL Next]** för att granska och slutföra dataflödet.
+Välj de aviseringar som du vill prenumerera på och välj sedan **[!UICONTROL Next]** för att granska och slutföra dataflödet.
 
-![markera-varningar](../../images/tutorials/alerts/select-alerts.png)
+![select-warnings](../../images/tutorials/alerts/select-alerts.png)
 
 Mer information om hur du skapar ett källdataflöde i användargränssnittet finns i följande handböcker:
 
@@ -86,7 +86,7 @@ Varningar representeras i användargränssnittet av en meddelandeikon i det övr
 
 Meddelandepanelen visas med en lista över statusuppdateringar för det dataflöde som du skapade.
 
-![varningsfönster](../../images/tutorials/alerts/alert-window.png)
+![alert-window](../../images/tutorials/alerts/alert-window.png)
 
 Du kan hålla muspekaren över ett varningsmeddelande för att markera dem som lästa eller välja klockikonen för att ange framtida påminnelser om dataflödets status.
 
@@ -96,15 +96,15 @@ Markera varningsmeddelandet om du vill visa specifik information om dataflödet.
 
 ![select-alert-message](../../images/tutorials/alerts/select-alert-message.png)
 
-The [!UICONTROL Dataflow run overview] visas. I den övre halvan av skärmen visas en översikt över dataflödet, inklusive information om dess attribut, motsvarande körnings-ID för dataflöde och en sammanfattning av högnivåfel.
+Sidan [!UICONTROL Dataflow run overview] visas. I den övre halvan av skärmen visas en översikt över dataflödet, inklusive information om dess attribut, motsvarande körnings-ID för dataflöde och en sammanfattning av högnivåfel.
 
-![dataflow-overview](../../images/tutorials/alerts/dataflow-overview.png)
+![dataflödesöversikt](../../images/tutorials/alerts/dataflow-overview.png)
 
-Den nedre halvan av sidan visar alla [!UICONTROL Dataflow run errors] som uppstod under körningsfasen för dataflödet. Härifrån kan du förhandsgranska feldiagnostik eller använda [[!DNL Data Access] API](https://www.adobe.io/experience-platform-apis/references/data-access/) för att hämta feldiagnostik eller det filmanifest som motsvarar ditt dataflöde.
+Den nedre halvan av sidan visar alla [!UICONTROL Dataflow run errors] som inträffade under körningen av dataflödet. Härifrån kan du förhandsgranska feldiagnostik eller använda [[!DNL Data Access] API](https://www.adobe.io/experience-platform-apis/references/data-access/) för att hämta feldiagnostik eller det filmanifest som motsvarar ditt dataflöde.
 
-![dataflow-run-errors](../../images/tutorials/alerts/dataflow-run-error.png)
+![dataflödeskörningsfel](../../images/tutorials/alerts/dataflow-run-error.png)
 
-Mer information om hur du hanterar dataflödesfel finns i handboken om [övervaka källornas dataflöden i användargränssnittet](../../../dataflows/ui/monitor-sources.md).
+Mer information om hur du hanterar dataflödesfel finns i guiden [Övervaka källans dataflöden i användargränssnittet](../../../dataflows/ui/monitor-sources.md).
 
 ### Per e-post
 
@@ -112,13 +112,13 @@ Varningar för dataflödena levereras också till dig via e-post. Välj dataflö
 
 ![e-post](../../images/tutorials/alerts/email.png)
 
-Liknar gränssnittsvarningen visas [!UICONTROL Dataflow run overview] visas så att du får ett gränssnitt där du kan undersöka eventuella fel som är kopplade till dataflödet.
+På liknande sätt som med gränssnittsaviseringen visas sidan [!UICONTROL Dataflow run overview], där du får ett gränssnitt för att undersöka eventuella fel som är kopplade till dataflödet.
 
-![dataflow-overview](../../images/tutorials/alerts/dataflow-overview.png)
+![dataflödesöversikt](../../images/tutorials/alerts/dataflow-overview.png)
 
 ## Prenumerera och avsluta abonnemang på aviseringar
 
-Du kan prenumerera på fler aviseringar eller avbryta prenumerationen på etablerade aviseringar för ett befintligt dataflöde i [!UICONTROL Dataflows] sida. Leta reda på det dataflöde du skapar i listan och välj sedan ellipserna (`...`) för att se en listruta med alternativ. Nästa, välj **[!UICONTROL Subscribe alerts]** om du vill ändra aviseringsinställningarna för dataflödet.
+Du kan prenumerera på fler aviseringar eller avbryta prenumerationen på etablerade aviseringar för ett befintligt dataflöde på sidan [!UICONTROL Dataflows]. Leta reda på det dataflöde du skapar i listan och markera sedan ellipserna (`...`) för att se en listruta med alternativ. Välj sedan **[!UICONTROL Subscribe alerts]** om du vill ändra aviseringsinställningarna för dataflödet.
 
 ![alternativ](../../images/tutorials/alerts/options.png)
 
@@ -128,4 +128,4 @@ Ett popup-fönster visas med en lista över källvarningar. Markera de avisering
 
 ## Nästa steg
 
-Det här dokumentet innehåller en stegvis guide om hur du prenumererar på sammanhangsberoende aviseringar för källans dataflöden. Mer information finns i [guide för varningsgränssnitt](../../../observability/alerts/ui.md).
+Det här dokumentet innehåller en stegvis guide om hur du prenumererar på sammanhangsberoende aviseringar för källans dataflöden. Mer information finns i användargränssnittsguiden för [varningar](../../../observability/alerts/ui.md).

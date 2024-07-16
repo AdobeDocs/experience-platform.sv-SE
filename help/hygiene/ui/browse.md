@@ -23,17 +23,17 @@ Den här guiden beskriver hur du visar och hanterar befintliga arbetsorder i Ado
 
 ## Visa och filtrera befintliga arbetsorder
 
-När du först öppnar **[!UICONTROL Data Lifecycle]** i användargränssnittet visas en lista över befintliga arbetsorder tillsammans med deras grundläggande information.
+När du först kommer åt arbetsytan **[!UICONTROL Data Lifecycle]** i gränssnittet visas en lista med befintliga arbetsorder tillsammans med deras grundläggande information.
 
-![Bild som visar [!UICONTROL Data Lifecycle] arbetsytan i plattformsgränssnittet](../images/ui/browse/work-order-list.png)
+![Bild som visar arbetsytan [!UICONTROL Data Lifecycle] i plattformsgränssnittet](../images/ui/browse/work-order-list.png)
 
-I listan visas endast arbetsorder för en kategori i taget. Välj **[!UICONTROL Consumer]** om du vill visa en lista över postborttagningsuppgifter och **[!UICONTROL Dataset]** om du vill visa en lista över schemalagda förfallodatum för datauppsättningar.
+I listan visas endast arbetsorder för en kategori i taget. Välj **[!UICONTROL Consumer]** om du vill visa en lista över postborttagningsaktiviteter och **[!UICONTROL Dataset]** om du vill visa en lista över förfallotider för schemalagda datauppsättningar.
 
-![Bild som visar [!UICONTROL Dataset] tab](../images/ui/browse/dataset-tab.png)
+![Bild som visar fliken [!UICONTROL Dataset] ](../images/ui/browse/dataset-tab.png)
 
-Markera trattecknet (![Bild av trattsymbolen](../images/ui/browse/funnel-icon.png)) om du vill visa en lista med filter för de arbetsorder som visas.
+Välj trattikonen (![Bild av trattikonen](../images/ui/browse/funnel-icon.png)) om du vill visa en lista med filter för de arbetsorder som visas.
 
-![Bild på de arbetsorderfilter som visas](../images/ui/browse/filters.png)
+![Bild av arbetsorderfiltren som visas](../images/ui/browse/filters.png)
 
 Beroende på vilken typ av arbetsordning du visar finns det olika filteralternativ.
 
@@ -43,7 +43,7 @@ Följande filter gäller för postborttagningsbegäranden:
 
 | Filter | Beskrivning |
 | --- | --- |
-| [!UICONTROL Status] | Filtrera baserat på arbetsorderns aktuella status:<ul><li>**[!UICONTROL Completed]**: Jobbet har slutförts.</li><li>**[!UICONTROL Failed]**: Ett fel uppstod och jobbet kunde inte slutföras.</li><li>**[!UICONTROL Processing]**: Begäran har startats och bearbetas för närvarande.</li></ul> |
+| [!UICONTROL Status] | Filtrera baserat på arbetsorderns aktuella status:<ul><li>**[!UICONTROL Completed]**: Jobbet har slutförts.</li><li>**[!UICONTROL Failed]**: Ett fel påträffades och jobbet kunde inte slutföras.</li><li>**[!UICONTROL Processing]**: Begäran har startats och bearbetas för närvarande.</li></ul> |
 | [!UICONTROL Date created] | Filtrera baserat på när arbetsordern skapades. |
 | [!UICONTROL Date updated] | Filtrera baserat på när arbetsordern senast uppdaterades. Skapanden räknas som uppdateringar. |
 
@@ -53,7 +53,7 @@ Följande filter gäller för datauppsättningens förfallobegäranden:
 
 | Filter | Beskrivning |
 | --- | --- |
-| [!UICONTROL Status] | Filtrera baserat på arbetsorderns aktuella status:<ul><li>**[!UICONTROL Completed]**: Jobbet har slutförts.</li><li>**[!UICONTROL Pending]**: Jobbet har skapats men har inte körts än. A [förfallobegäran för datauppsättning](./dataset-expiration.md) antar denna status före det schemalagda raderingsdatumet. När borttagningsdatumet har passerats uppdateras statusen till [!UICONTROL Executing] om inte jobbet har avbrutits i förväg.</li><li>**[!UICONTROL Executing]**: Datauppsättningens förfallobegäran har startats och bearbetas för närvarande.</li><li>**[!UICONTROL Cancelled]**: Jobbet har avbrutits som en del av en manuell användarbegäran.</li></ul> |
+| [!UICONTROL Status] | Filtrera baserat på arbetsorderns aktuella status:<ul><li>**[!UICONTROL Completed]**: Jobbet har slutförts.</li><li>**[!UICONTROL Pending]**: Jobbet har skapats men har inte körts än. En [förfallobegäran för datauppsättning](./dataset-expiration.md) antar den här statusen före det schemalagda raderingsdatumet. När raderingsdatumet har kommit uppdateras statusen till [!UICONTROL Executing] om inte jobbet har avbrutits i förväg.</li><li>**[!UICONTROL Executing]**: Datauppsättningens förfallobegäran har startats och bearbetas för närvarande.</li><li>**[!UICONTROL Cancelled]**: Jobbet har avbrutits som en del av en manuell användarbegäran.</li></ul> |
 | [!UICONTROL Date created] | Filtrera baserat på när arbetsordern skapades. |
 | [!UICONTROL Expiration date] | Förfrågningar om förfallodatum för filterdatauppsättningen baserat på det schemalagda raderingsdatumet för den aktuella datauppsättningen. |
 | [!UICONTROL Date updated] | Filtrera baserat på när arbetsordern senast uppdaterades. Skapanden och förfallodatum räknas som uppdateringar. |
@@ -75,17 +75,17 @@ Följande filter gäller för datauppsättningens förfallobegäranden:
 >[!CONTEXTUALHELP]
 >id="platform_hygiene_responsemessages"
 >title="Spela in borttagningssvar"
->abstract="När en postborttagningsprocess får ett svar från systemet, visas dessa meddelanden under **[!UICONTROL Result]** -avsnitt. Om ett problem uppstår medan en arbetsorder bearbetas visas eventuella felmeddelanden i det här avsnittet som kan hjälpa dig att felsöka problemet. Mer information finns i användargränssnittshandboken för datalängd."
+>abstract="När en postborttagningsprocess får ett svar från systemet, visas dessa meddelanden under avsnittet **[!UICONTROL Result]**. Om ett problem uppstår medan en arbetsorder bearbetas visas eventuella felmeddelanden i det här avsnittet som kan hjälpa dig att felsöka problemet. Mer information finns i användargränssnittshandboken för datalängd."
 
 Markera ID:t för en listad arbetsorder om du vill visa information om den.
 
-![Bild som visar ett arbetsorders-ID som markeras](../images/ui/browse/select-work-order.png)
+![Bild som visar ett arbetsorder-ID som markeras](../images/ui/browse/select-work-order.png)
 
 Beroende på vilken typ av arbetsordning du har valt visas olika information och kontroller. Dessa beskrivs i avsnitten nedan.
 
 ### Information om radering av post {#record-delete}
 
-Information om en begäran om radering av post inkluderar dess aktuella status och den tid som gått sedan begäran gjordes. Varje begäran innehåller även **[!UICONTROL Status by service]** som ger information om status för varje tjänst längre fram i kedjan som ingår i borttagningen. På den högra listen kan du använda kontroller för att uppdatera arbetsorderns namn och beskrivning.
+Information om en begäran om radering av post inkluderar dess aktuella status och den tid som gått sedan begäran gjordes. Varje begäran innehåller också ett **[!UICONTROL Status by service]**-avsnitt som ger individuell statusinformation för varje tjänst i senare led som är involverad i borttagningen. På den högra listen kan du använda kontroller för att uppdatera arbetsorderns namn och beskrivning.
 
 ![Bild som visar informationssidan för en postborttagning av arbetsorder](../images/ui/browse/record-delete-details.png)
 

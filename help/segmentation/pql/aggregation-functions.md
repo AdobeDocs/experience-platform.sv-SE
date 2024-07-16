@@ -1,22 +1,22 @@
 ---
 solution: Experience Platform
-title: PQL-aggregeringsfunktioner
-description: Sammanställningsfunktioner används för att gruppera flera värden inom PQL-arrayer (Profile Query Language) för att skapa ett enda sammanfattningsvärde.
+title: PQL aggregeringsfunktioner
+description: Sammanställningsfunktioner används för att gruppera flera värden inom Profile Query Language (PQL)-arrayer för att skapa ett enda sammanfattningsvärde.
 exl-id: 6c0c0f6d-98c5-4b5d-b440-3e5e18c0f34b
 source-git-commit: dbb7e0987521c7a2f6512f05eaa19e0121aa34c6
 workflow-type: tm+mt
 source-wordcount: '227'
-ht-degree: 3%
+ht-degree: 0%
 
 ---
 
 # Sammanställningsfunktioner
 
-Sammanställningsfunktioner används för att gruppera flera värden inom [!DNL Profile Query Language] (PQL)-arrayer för att skapa ett enda sammanfattningsvärde. Mer information om andra PQL-funktioner finns i [[!DNL Profile Query Language] översikt](./overview.md).
+Sammanställningsfunktioner används för att gruppera flera värden inom [!DNL Profile Query Language] (PQL)-arrayer för att skapa ett enda sammanfattningsvärde. Mer information om andra PQL-funktioner finns i [[!DNL Profile Query Language] översikten](./overview.md).
 
 ## Antal
 
-The `count` returnerar antalet element i den angivna arrayen.
+Funktionen `count` returnerar antalet element i den angivna arrayen.
 
 **Format**
 
@@ -34,7 +34,7 @@ orders.count()
 
 ## Summa
 
-The `sum` returnerar summan av alla markerade värden i arrayen.
+Funktionen `sum` returnerar summan av alla markerade värden i arrayen.
 
 **Format**
 
@@ -52,7 +52,7 @@ orders.sum(order.price)
 
 ## Genomsnittlig
 
-The `average` returnerar det aritmetiska medelvärdet för alla markerade värden i arrayen.
+Funktionen `average` returnerar det aritmetiska medelvärdet för alla markerade värden i arrayen.
 
 **Format**
 
@@ -70,7 +70,7 @@ orders.average(order.price)
 
 ## Minimum
 
-The `min` returnerar det minsta av alla markerade värden i arrayen.
+Funktionen `min` returnerar det minsta av alla markerade värden i arrayen.
 
 **Format**
 
@@ -88,7 +88,7 @@ orders.min(order.price)
 
 ## Maximal
 
-The `max` returnerar den största av alla markerade värden i arrayen.
+Funktionen `max` returnerar det största av alla markerade värden i arrayen.
 
 **Format**
 
@@ -106,4 +106,4 @@ orders.max(order.price)
 
 ## Nästa steg
 
-Nu när du har lärt dig om sammanställningsfunktioner kan du använda dem i dina PQL-frågor. Mer information om andra PQL-funktioner finns i [Profilfrågespråk - översikt](./overview.md).
+Nu när du har lärt dig mer om sammanställningsfunktioner kan du använda dem i dina PQL-frågor. Mer information om andra PQL-funktioner finns i [Profile Query Language-översikten](./overview.md).

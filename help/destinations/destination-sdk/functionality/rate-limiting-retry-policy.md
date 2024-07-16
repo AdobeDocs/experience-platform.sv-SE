@@ -4,7 +4,7 @@ title: Hastighetsbegränsning och återförsöksprincip för direktuppspelningsm
 exl-id: aad10039-9957-4e9e-a0b7-7bf65eb3eaa9
 source-git-commit: b4334b4f73428f94f5a7e5088f98e2459afcaf3c
 workflow-type: tm+mt
-source-wordcount: '426'
+source-wordcount: '436'
 ht-degree: 0%
 
 ---
@@ -26,7 +26,7 @@ När det gäller destinationsplattformar som har konfigurerats med konfigurerbar
 * Fel där Experience Platform försöker skicka data till din plattform igen:
    * HTTP-svarskoder 420 och 429
    * HTTP-svarskoder större än 500
-* Fel där Experience Platform *inte* försök att skicka data igen till din plattform: alla andra som returneras av din plattform
+* Fel där Experience Platform *inte* försöker skicka data till din plattform igen: alla andra som returneras av din plattform
 
 ### Återförsöksmetod beskrivs {#retry-approach}
 

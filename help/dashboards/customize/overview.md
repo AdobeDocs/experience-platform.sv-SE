@@ -20,37 +20,37 @@ De profiler, segment och målpaneler som finns i Adobe Experience Platform kan a
 
 ## Ändra instrumentpanel
 
-Markera **[!UICONTROL Modify dashboard]** på kontrollpanelerna för profiler, segment och mål kan du justera storlek, ordning och plats för de widgetar som är synliga på din kontrollpanel. Mer information om hur du ändrar utseendet på widgetar i dina instrumentpaneler finns i [ändra kontrollpaneler](modify.md).
+Om du väljer **[!UICONTROL Modify dashboard]** bland profilerna, segmenten eller målkontrollpanelerna kan du justera storlek, ordning och plats för de widgetar som för närvarande visas på din instrumentpanel. Mer information om hur du ändrar utseendet på widgetar i dina instrumentpaneler finns i [handboken om att ändra instrumentpaneler](modify.md).
 
 ## Widgetbiblioteket
 
-Widgetbiblioteket i Experience Platform är där du kan visa alla [standard](#standard-widgets) och [anpassad](#custom-widgets) tillgängliga widgetar för din organisation. På dina kontrollpaneler (till exempel profilkontrollpanelen) kan du välja **[!UICONTROL Modify dashboard]** för att visa **[!UICONTROL Widget library]** -knappen.
+I widgetbiblioteket i Experience Platform kan du visa alla [standard](#standard-widgets)- och [anpassade](#custom-widgets)-widgetar som är tillgängliga för din organisation. Från dina instrumentpaneler (till exempel profilkontrollpanelen) kan du välja **[!UICONTROL Modify dashboard]** för att visa knappen **[!UICONTROL Widget library]**.
 
-![Kontrollpanelen Profiler med kontrollpanelen Ändra markerad.](../images/customization/modify-dashboard.png)
+![Kontrollpanelen för profiler med kontrollpanelen Ändra markerad.](../images/customization/modify-dashboard.png)
 
-Välj **[!UICONTROL Widget library]** för att öppna widgetbiblioteket och visa alla tillgängliga standardmått eller börja skapa anpassade widgetar.
+Välj **[!UICONTROL Widget library]** om du vill öppna widgetbiblioteket och visa alla tillgängliga standardmått eller börja skapa anpassade widgetar.
 
-![Kontrollpanelen Profiler med widgetbiblioteket markerat.](../images/customization/widget-library-button.png)
+![Kontrollpanelen för profiler med widgetbiblioteket markerat.](../images/customization/widget-library-button.png)
 
 ### Standardwidgetar {#standard-widgets}
 
 Standardwidgetar refererar till de widgetar som Adobe tillhandahåller för användning i dina instrumentpaneler. Dessa widgetar är skrivskyddade och kan inte redigeras av din organisation.
 
-I widgetbiblioteket **[!UICONTROL Standard]** -fliken innehåller alla tillgängliga standardwidgetar från Adobe. Du kan uppdatera dina instrumentpaneler med hjälp av någon av dessa standardmått. Om du vill veta mer om hur du lägger till standardwidgetar på din instrumentpanel kan du läsa guiden för [använda standardwidgetar i kontrollpaneler](standard-widgets.md).
+I widgetbiblioteket innehåller fliken **[!UICONTROL Standard]** alla tillgängliga standardwidgetar från Adobe. Du kan uppdatera dina instrumentpaneler med hjälp av någon av dessa standardmått. Mer information om hur du lägger till standardwidgetar på din instrumentpanel finns i guiden för [att använda standardwidgetar i instrumentpaneler](standard-widgets.md).
 
 ### Anpassade widgetar {#custom-widgets}
 
-Anpassade widgetar avser widgetar som har skapats och delats av medlemmar i organisationen. Dessa widgetar skapas med **[!UICONTROL Custom]** -fliken i widgetbiblioteket och kräva att organisationen anger tillgängliga värden med hjälp av en [schema](#edit-schema)
+Anpassade widgetar avser widgetar som har skapats och delats av medlemmar i organisationen. Dessa widgetar skapas via fliken **[!UICONTROL Custom]** i widgetbiblioteket och kräver att din organisation anger tillgängliga mått med hjälp av ett [schema](#edit-schema)
 
-Fullständiga steg för att skapa egna widgetar finns i [anpassade widgetar för kontrollpaneler](custom-widgets.md).
+Fullständiga steg för att skapa egna widgetar finns i guiden [anpassade widgetar för instrumentpaneler](custom-widgets.md).
 
-![Widgetbibliotekets arbetsyta med Standard och Egen markerat.](../images/customization/widget-library.png)
+![Widgetbibliotekets arbetsyta med Standard och Egen markerad.](../images/customization/widget-library.png)
 
 #### Redigera schema {#edit-schema}
 
-För att skapa en [anpassad widget](#custom-widgets) för dina instrumentpaneler måste du först identifiera attributet för kundprofil i realtid som widgeten ska baseras på.
+Om du vill skapa en [anpassad widget](#custom-widgets) för dina instrumentpaneler måste du först identifiera attributet för kundprofil i realtid som widgeten baseras på.
 
-Stegvisa instruktioner för hur du redigerar organisationens schema för att skapa anpassade widgetar för kontrollpaneler finns i guiden. [redigera ditt instrumentpanelsschema](edit-schema.md).
+Stegvisa instruktioner för hur du redigerar organisationens schema för att skapa anpassade instrumentpanelswidgetar finns i guiden för [redigering av ditt instrumentpanelsschema](edit-schema.md).
 
 ## Nästa steg
 

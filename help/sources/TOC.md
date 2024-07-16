@@ -1,14 +1,14 @@
 ---
 audience: user
-user-guide-title: Hjälp om Adobe Experience Platform Source Connectors
-breadcrumb-title: Source Connectors Guide
-user-guide-description: Hämta in data från olika källor. Lär dig strukturera, etikettera och förbättra inmatade data.
+user-guide-title: Hjälp med Adobe Experience Platform Source Connectors
+breadcrumb-title: Användarhandbok om Source Connectors
+user-guide-description: Mata in data från olika källor. Lär dig strukturera, etikettera och förbättra inmatad data.
 feature: Sources
 role: Developer
 source-git-commit: 485881d4cbba09ae89d26b3613907174c0f24cc3
 workflow-type: tm+mt
 source-wordcount: '1046'
-ht-degree: 0%
+ht-degree: 6%
 
 ---
 
@@ -25,7 +25,7 @@ ht-degree: 0%
       - [Adobe Commerce-källa](connectors/adobe-applications/commerce.md)
       - [Källa för kundattribut](connectors/adobe-applications/customer-attributes.md)
       - [Datainsamlingskälla](connectors/adobe-applications/data-collection.md)
-      - Fältkopplingar {#mapping}
+      - Fältmappningar {#mapping}
          - [Mappningar av analysfält](connectors/adobe-applications/mapping/analytics.md)
          - [Fältkopplingar i Audience Manager](connectors/adobe-applications/mapping/audience-manager.md)
          - [Målfältsmappningar](connectors/adobe-applications/mapping/target.md)
@@ -37,14 +37,14 @@ ht-degree: 0%
          - [Autentiseringsguide för Marketo Engage](connectors/adobe-applications/marketo/marketo-auth.md)
          - [B2B-namnutrymmen och scheman](connectors/adobe-applications/marketo/marketo-namespaces.md)
          - [Migreringsguide för ECID-mappning](connectors/adobe-applications/marketo/migration.md)
-   - Reklam {#advertising}
+   - Advertising {#advertising}
       - [Google Ads Connector](connectors/advertising/ads.md)
       - [Pinterest Ads](connectors/advertising/pinterest-ads.md)
    - Analyser {#analytics}
       - [Koppling mellan olika paneler](connectors/analytics/mixpanel.md)
       - [Pendo](connectors/analytics/pendo-webhook.md)
       - [Regnfokus](connectors/analytics/rainfocus.md)
-   - molnlagring {#cloud-storage}
+   - Molnlagring {#cloud-storage}
       - [Amazon Kinesis Connector](connectors/cloud-storage/kinesis.md)
       - [Amazon S3-anslutning](connectors/cloud-storage/s3.md)
       - [Apache HDFS-kontakt](connectors/cloud-storage/hdfs.md)
@@ -62,12 +62,12 @@ ht-degree: 0%
    - Samtycke och inställningar {#consent}
       - [OneTrust-integrering](connectors/consent-and-preferences/onetrust.md)
    - CRM {#crm}
-      - [Microsoft Dynamics-anslutning](connectors/crm/ms-dynamics.md)
+      - [Microsoft Dynamics-koppling](connectors/crm/ms-dynamics.md)
       - [Salesforce-koppling](connectors/crm/salesforce.md)
       - [SugarCRM-koppling](connectors/crm/sugarcrm.md)
       - [Veeva CRM-koppling](connectors/crm/veeva.md)
       - [Zoho CRM-koppling](connectors/crm/zoho.md)
-   - Nöjda kunder {#customer-success}
+   - Kundens framgång {#customer-success}
       - [Oracle Service Cloud](connectors/customer-success/oracle-service-cloud.md)
       - [Salesforce Service Cloud-anslutning](connectors/customer-success/salesforce-service-cloud.md)
       - [ServiceNow-koppling](connectors/customer-success/servicenow.md)
@@ -121,17 +121,17 @@ ht-degree: 0%
    - Protokoll {#protocols}
       - [Allmän OData-koppling](connectors/protocols/odata.md)
       - [Allmän REST API-koppling](connectors/protocols/generic-rest.md)
-   - Direktuppspelning {#streaming}
+   - Strömmar {#streaming}
       - [HTTP API-anslutning](connectors/streaming/http.md)
-- API-självstudier {#api-tutorials}
+- API-självstudiekurser {#api-tutorials}
    - Skapa en basanslutning {#create}
-      - Reklam {#advertising}
+      - Advertising {#advertising}
          - [Google Ads](tutorials/api/create/advertising/ads.md)
          - [Pinterest Ads](tutorials/api/create/advertising/pinterest-ads.md)
       - Analyser {#analytics}
          - [Blandpanel](tutorials/api/create/analytics/mixpanel.md)
          - [Pendo](tutorials/api/create/analytics/pendo-webhook.md)
-      - molnlagring {#cloud-storage}
+      - Molnlagring {#cloud-storage}
          - [Amazon Kinesis](tutorials/api/create/cloud-storage/kinesis.md)
          - [Amazon S3](tutorials/api/create/cloud-storage/s3.md)
          - [Apache HDFS](tutorials/api/create/cloud-storage/hdfs.md)
@@ -154,7 +154,7 @@ ht-degree: 0%
          - [SugarCRM-händelser](tutorials/api/create/crm/sugarcrm-events.md)
          - [Veeva CRM](tutorials/api/create/crm/veeva.md)
          - [Zoho CRM](tutorials/api/create/crm/zoho.md)
-      - Nöjda kunder {#customer-success}
+      - Kundens framgång {#customer-success}
          - [Oracle Service Cloud](tutorials/api/create/customer-success/oracle-service-cloud.md)
          - [Salesforce Service Cloud](tutorials/api/create/customer-success/salesforce-service-cloud.md)
          - [ServiceNow](tutorials/api/create/customer-success/servicenow.md)
@@ -203,7 +203,7 @@ ht-degree: 0%
       - Protokoll {#protocols}
          - [Allmän OData](tutorials/api/create/protocols/odata.md)
          - [Allmänt REST API](tutorials/api/create/protocols/generic-rest.md)
-      - Direktuppspelning {#streaming}
+      - Strömmar {#streaming}
          - [HTTP-API](tutorials/api/create/streaming/http.md)
    - Utforska data {#explore}
       - [Utforska annonsdata](tutorials/api/explore/advertising.md)
@@ -247,14 +247,14 @@ ht-degree: 0%
          - [Kundattribut](tutorials/ui/create/adobe-applications/customer-attributes.md)
          - [Marketo Engage](tutorials/ui/create/adobe-applications/marketo.md)
          - [Anpassade aktiviteter för Marketo](tutorials/ui/create/adobe-applications/marketo-custom-activities.md)
-      - Reklam {#advertising}
+      - Advertising {#advertising}
          - [Google Ads](tutorials/ui/create/advertising/ads.md)
          - [Pinterest Ads](tutorials/ui/create/advertising/pinterest-ads.md)
       - Analyser {#analytics}
          - [Blandpanel](tutorials/ui/create/analytics/mixpanel.md)
          - [Pendo](tutorials/ui/create/analytics/pendo-webhook.md)
          - [Regnfokus](tutorials/ui/create/analytics/rainfocus.md)
-      - molnlagring {#cloud-storage}
+      - Molnlagring {#cloud-storage}
          - [Amazon Kinesis](tutorials/ui/create/cloud-storage/kinesis.md)
          - [Amazon S3](tutorials/ui/create/cloud-storage/s3.md)
          - [Apache HDFS](tutorials/ui/create/cloud-storage/hdfs.md)
@@ -278,7 +278,7 @@ ht-degree: 0%
          - [SugarCRM-händelser](tutorials/ui/create/crm/sugarcrm-events.md)
          - [Veeva CRM](tutorials/ui/create/crm/veeva.md)
          - [Zoho CRM](tutorials/ui/create/crm/zoho.md)
-      - Nöjda kunder {#customer-success}
+      - Kundens framgång {#customer-success}
          - [Oracle Service Cloud](tutorials/ui/create/customer-success/oracle-service-cloud.md)
          - [Salesforce Service Cloud](tutorials/ui/create/customer-success/salesforce-service-cloud.md)
          - [ServiceNow](tutorials/ui/create/customer-success/servicenow.md)
@@ -333,10 +333,10 @@ ht-degree: 0%
          - [Stripe](tutorials/ui/create/payments/stripe.md)
       - Protokoll {#protocols}
          - [Allmän OData](tutorials/ui/create/protocols/odata.md)
-      - Direktuppspelning {#streaming}
+      - Strömmar {#streaming}
          - [HTTP-API](tutorials/ui/create/streaming/http.md)
    - Konfigurera ett dataflöde {#dataflow}
-      - [Annonserar dataflöde för anslutning](tutorials/ui/dataflow/advertising.md)
+      - [Advertising-anslutningsdataflöde](tutorials/ui/dataflow/advertising.md)
       - [Dataflöde för Analytics-anslutning](tutorials/ui/dataflow/analytics.md)
       - [Anslutningsdataflöde för batchmolnlagring](tutorials/ui/dataflow/batch/cloud-storage.md)
       - [Dataflöde för direktuppspelning av molnlagring](tutorials/ui/dataflow/streaming/cloud-storage-streaming.md)
@@ -380,7 +380,7 @@ ht-degree: 0%
       - [Använda en textredigerare i den lokala miljön för att skapa en källdokumentationssida](sources-sdk/documentation/text-editor.md)
       - [API-mall för självbetjäning av dokumentation](sources-sdk/documentation/template.md)
       - [Självbetjäningsmall för dokumentation](sources-sdk/documentation/ui-template.md)
-   - Strömmande SDK {#streaming-sdk}
+   - Strömmar SDK {#streaming-sdk}
       - [Kom igång med självbetjäningskällor (Streaming SDK)](sources-sdk/streaming/getting-started.md)
       - [Skapa en anslutningsspecifikation för en strömningskälla](sources-sdk/streaming/create.md)
       - [Uppdatera en anslutningsspecifikation för en strömningskälla](sources-sdk/streaming/update-connection-specs.md)
@@ -394,6 +394,6 @@ ht-degree: 0%
    - [Felmeddelanden i Flow Service](./errors/flow-service-errors.md)
 - [Flödeskörningsmeddelanden](notifications.md)
 - [IP-adress tillåtelselista](ip-address-allow-list.md)
-- [Frågor och svar](./troubleshooting.md)
+- [Vanliga frågor och svar](./troubleshooting.md)
 - [API-referens](https://www.adobe.io/experience-platform-apis/references/flow-service/)
 - [Versionsinformation för plattform](https://experienceleague.adobe.com/en/docs/experience-platform/release-notes/latest)

@@ -19,15 +19,15 @@ Det här dokumentet innehåller en serie instruktioner om hur du skapar ett desi
 
 ## Komma igång
 
-SQL-exemplen i det här dokumentet kräver att du har en förståelse för de anonyma funktionerna för block och ögonblicksbilder. Du bör läsa [exempel på anonyma blockfrågor](./anonymous-block.md) dokumentation och [snapshot-sats](../sql/syntax.md#snapshot-clause) dokumentation.
+SQL-exemplen i det här dokumentet kräver att du har en förståelse för de anonyma funktionerna för block och ögonblicksbilder. Vi rekommenderar att du läser dokumentationen för [exempel på anonyma blockfrågor](./anonymous-block.md) och även dokumentationen för [snapshot-satsen](../sql/syntax.md#snapshot-clause).
 
-Anvisningar om vilka termer som används i den här handboken finns i [SQL-syntaxguide](../sql/syntax.md).
+Om du vill ha vägledning om terminologi som används i den här handboken läser du i [SQL-syntaxguiden](../sql/syntax.md).
 
 ## Läs in data inkrementellt
 
 Stegen nedan visar hur du skapar och läser in data stegvis med hjälp av ögonblicksbilder och den anonyma blockfunktionen. Designmönstret kan användas som en mall för en egen frågesekvens.
 
-1. Skapa en `checkpoint_log` för att spåra den senaste ögonblicksbilden som använts för att bearbeta data. Spårningstabellen (`checkpoint_log` i det här exemplet) måste först initieras till `null` för att stegvis bearbeta en datauppsättning.
+1. Skapa en `checkpoint_log`-tabell för att spåra den senaste ögonblicksbilden som användes för att bearbeta data. Spårningstabellen (`checkpoint_log` i det här exemplet) måste först initieras till `null` för att en datauppsättning ska kunna bearbetas stegvis.
 
    ```SQL
    DROP TABLE IF EXISTS checkpoint_log;
@@ -40,7 +40,7 @@ Stegen nedan visar hur du skapar och läser in data stegvis med hjälp av ögonb
       WHERE false;
    ```
 
-1. Fyll i `checkpoint_log` tabell med en tom post för den datauppsättning som behöver inkrementell bearbetning. `DIM_TABLE_ABC` är den datauppsättning som ska bearbetas i exemplet nedan. Vid det första tillfället av bearbetning `DIM_TABLE_ABC`, `last_snapshot_id` initieras som `null`. Detta gör att du kan bearbeta hela datauppsättningen vid första tillfället och stegvis efter detta.
+1. Fyll i tabellen `checkpoint_log` med en tom post för den datauppsättning som behöver inkrementell bearbetning. `DIM_TABLE_ABC` är den datauppsättning som ska bearbetas i exemplet nedan. Första gången `DIM_TABLE_ABC` bearbetas initieras `last_snapshot_id` som `null`. Detta gör att du kan bearbeta hela datauppsättningen vid första tillfället och stegvis efter detta.
 
    ```SQL
    INSERT INTO
@@ -52,17 +52,17 @@ Stegen nedan visar hur du skapar och läser in data stegvis med hjälp av ögonb
          CURRENT_TIMESTAMP process_timestamp;
    ```
 
-1. Nästa, initiera `DIM_TABLE_ABC_Incremental` som innehåller bearbetade utdata från `DIM_TABLE_ABC`. Det anonyma blocket i **obligatoriskt** körningsavsnittet i SQL-exemplet nedan, som beskrivs i steg ett till fyra, körs sekventiellt för att bearbeta data stegvis.
+1. Initiera sedan `DIM_TABLE_ABC_Incremental` så att den innehåller bearbetade utdata från `DIM_TABLE_ABC`. Det anonyma blocket i körningsavsnittet **required** i SQL-exemplet nedan, som beskrivs i steg 1 till 4, körs sekventiellt för att bearbeta data stegvis.
 
-   1. Ange `from_snapshot_id` som anger var bearbetningen börjar. The `from_snapshot_id` i exemplet frågas från `checkpoint_log` tabell för användning med `DIM_TABLE_ABC`. Vid den första körningen kommer ID:t för ögonblicksbilden att `null` vilket innebär att hela datauppsättningen kommer att bearbetas.
-   1. Ange `to_snapshot_id` som det aktuella ögonblicksbild-ID:t för källtabellen (`DIM_TABLE_ABC`). I exemplet hämtas detta från källtabellens metadatatabell.
-   1. Använd `CREATE` nyckelord som ska skapas `DIM_TABLE_ABC_Incremenal` som måltabell. Måltabellen består av bearbetade data från källdatauppsättningen (`DIM_TABLE_ABC`). Detta tillåter att bearbetade data från källtabellen mellan `from_snapshot_id` och `to_snapshot_id`, som läggs till stegvis i måltabellen.
-   1. Uppdatera `checkpoint_log` tabellen med `to_snapshot_id` för källdata som `DIM_TABLE_ABC` har bearbetats.
-   1. Om någon av de sekventiellt utförda frågorna i det anonyma blocket misslyckas, **valfri** undantagsavsnitt körs. Detta returnerar ett fel och avslutar processen.
+   1. Ange `from_snapshot_id` som anger var bearbetningen börjar. `from_snapshot_id` i exemplet frågas från tabellen `checkpoint_log` för användning med `DIM_TABLE_ABC`. Vid den första körningen blir ögonblicksbilds-ID `null`, vilket innebär att hela datauppsättningen kommer att bearbetas.
+   1. Ange `to_snapshot_id` som aktuellt ID för ögonblicksbild för källtabellen (`DIM_TABLE_ABC`). I exemplet hämtas detta från källtabellens metadatatabell.
+   1. Använd nyckelordet `CREATE` för att skapa `DIM_TABLE_ABC_Incremenal` som måltabell. Måltabellen innehåller bearbetade data från källdatauppsättningen (`DIM_TABLE_ABC`). Detta gör att bearbetade data från källtabellen mellan `from_snapshot_id` och `to_snapshot_id` kan läggas till stegvis i måltabellen.
+   1. Uppdatera tabellen `checkpoint_log` med `to_snapshot_id` för de källdata som `DIM_TABLE_ABC` har bearbetat.
+   1. Om någon av de sekventiellt körda frågorna i det anonyma blocket misslyckas körs **valfria**-avsnittet. Detta returnerar ett fel och avslutar processen.
 
    >[!NOTE]
    >
-   >The `history_meta('source table name')` är en praktisk metod som används för att få åtkomst till tillgängliga ögonblicksbilder i en datauppsättning.
+   >`history_meta('source table name')` är en praktisk metod som används för att få åtkomst till tillgängliga ögonblicksbilder i en datauppsättning.
 
    ```SQL
    $$ BEGIN
@@ -90,11 +90,11 @@ Stegen nedan visar hur du skapar och läser in data stegvis med hjälp av ögonb
    $$;
    ```
 
-1. Använd logiken för inkrementell datainläsning i exemplet med anonyma block nedan för att tillåta att nya data från källdatauppsättningen (sedan den senaste tidsstämpeln) bearbetas och läggs till i måltabellen vid en vanlig gräns. I exemplet ändras data till `DIM_TABLE_ABC` bearbetas och läggs till `DIM_TABLE_ABC_incremental`.
+1. Använd logiken för inkrementell datainläsning i exemplet med anonyma block nedan för att tillåta att nya data från källdatauppsättningen (sedan den senaste tidsstämpeln) bearbetas och läggs till i måltabellen vid en vanlig gräns. I exemplet kommer dataändringar i `DIM_TABLE_ABC` att bearbetas och läggas till i `DIM_TABLE_ABC_incremental`.
 
    >[!NOTE]
    >
-   > `_ID` är primärnyckeln i båda `DIM_TABLE_ABC_Incremental` och `SELECT history_meta('DIM_TABLE_ABC')`.
+   > `_ID` är primärnyckeln i både `DIM_TABLE_ABC_Incremental` och `SELECT history_meta('DIM_TABLE_ABC')`.
 
    ```SQL
    $$ BEGIN
@@ -130,7 +130,7 @@ Denna logik kan tillämpas på alla tabeller för att utföra inkrementella inl�
 >
 >Metadata för ögonblicksbilder upphör att gälla efter **två** dagar. En ögonblicksbild som har gått ut gör logiken i skriptet ovan ogiltig.
 
-För att lösa problemet med att ett ögonblicksbild-ID har gått ut infogar du följande kommando i början av det anonyma blocket. Följande kodrad åsidosätter `@from_snapshot_id` med tidigast tillgängliga `snapshot_id` från metadata.
+För att lösa problemet med att ett ögonblicksbild-ID har gått ut infogar du följande kommando i början av det anonyma blocket. Följande kodrad åsidosätter `@from_snapshot_id` med den tidigaste tillgängliga `snapshot_id` från metadata.
 
 ```SQL
 SET resolve_fallback_snapshot_on_failure=true;
@@ -166,4 +166,4 @@ $$;
 
 ## Nästa steg
 
-Genom att läsa det här dokumentet bör du få en bättre förståelse för hur du använder anonyma funktioner för block och ögonblicksbilder för att utföra inkrementella inläsningar och kan använda den här logiken för dina egna specifika frågor. Allmänna riktlinjer för frågekörning finns i [guide för frågekörning i frågetjänsten](../best-practices/writing-queries.md).
+Genom att läsa det här dokumentet bör du få en bättre förståelse för hur du använder anonyma funktioner för block och ögonblicksbilder för att utföra inkrementella inläsningar och kan använda den här logiken för dina egna specifika frågor. Allmän vägledning om frågekörning finns i [guiden om frågekörning i frågetjänsten](../best-practices/writing-queries.md).

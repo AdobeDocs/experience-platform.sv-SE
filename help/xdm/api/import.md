@@ -4,29 +4,29 @@ description: Med slutpunkten /import i API:t för schemaregister kan du dela XDM
 exl-id: 30613535-4770-4f9c-9061-8e3efaf4de48
 source-git-commit: fcd44aef026c1049ccdfe5896e6199d32b4d1114
 workflow-type: tm+mt
-source-wordcount: '292'
+source-wordcount: '288'
 ht-degree: 0%
 
 ---
 
 # Importera slutpunkt
 
-The `/rpc/import` slutpunkt i [!DNL Schema Registry] Med API kan du skapa XDM-resurser (Experience Data Model) från genererade exportnyttolaster. Du kan skapa nyttolaster för export från två källor:
+Med slutpunkten `/rpc/import` i API:t [!DNL Schema Registry] kan du skapa XDM-resurser (Experience Data Model) från genererade exportnyttolaster. Du kan skapa nyttolaster för export från två källor:
 
-* The [`/rpc/export` slutpunkt](./export.md) skapar exportnyttolaster från befintliga XDM-resurser så att du kan dela resurser mellan sandlådor.
-* The [`/rpc/csv2schema` slutpunkt](./csv-to-schema.md) skapar exportnyttolaster från CSV-mallar.
+* [`/rpc/export`-slutpunkten ](./export.md) skapar exportnyttolaster från befintliga XDM-resurser, vilket gör att du kan dela resurser mellan sandlådor.
+* [`/rpc/csv2schema`-slutpunkten ](./csv-to-schema.md) skapar exportnyttolaster från CSV-mallar.
 
-När du har skapat en exportnyttolast kan du använda `/rpc/import` slutpunkt för att generera resursen (och alla beroende resurser) i valfri sandlåda.
+När du har skapat en exportnyttolast kan du använda slutpunkten `/rpc/import` för att generera resursen (och alla beroende resurser) i valfri sandlåda.
 
 ## Komma igång
 
-The `/rpc/import` slutpunkten är en del av [[!DNL Schema Registry] API](https://www.adobe.io/experience-platform-apis/references/schema-registry/). Läs igenom [komma igång-guide](./getting-started.md) för länkar till relaterad dokumentation, en guide till hur du läser exempelanrop till API:er i det här dokumentet och viktig information om vilka huvuden som behövs för att kunna anropa ett Experience Platform-API.
+Slutpunkten `/rpc/import` är en del av [[!DNL Schema Registry] API](https://www.adobe.io/experience-platform-apis/references/schema-registry/). Innan du fortsätter bör du läsa [kom igång-guiden](./getting-started.md) för att få länkar till relaterad dokumentation, en guide till hur du läser exempelanropen för API i det här dokumentet och viktig information om vilka huvuden som krävs för att kunna anropa ett Experience Platform-API.
 
-The `/rpc/import` slutpunkten är en del av RPC-anropen (Remote Procedure Call) som stöds av [!DNL Schema Registry]. Till skillnad från andra slutpunkter i [!DNL Schema Registry] API, RPC-slutpunkter kräver inga ytterligare rubriker som `Accept` eller `Content-Type`, och använd inte `CONTAINER_ID`. Istället måste de använda `/rpc` namespace, vilket visas i API-anropen nedan.
+Slutpunkten `/rpc/import` är en del av RPC-anropen (Remote Procedure Call) som stöds av [!DNL Schema Registry]. Till skillnad från andra slutpunkter i API:t [!DNL Schema Registry] kräver RPC-slutpunkter inga ytterligare rubriker som `Accept` eller `Content-Type`, och använder inte `CONTAINER_ID`. I stället måste de använda namnutrymmet `/rpc`, vilket visas i API-anropen nedan.
 
 ## Importera en resurs {#import}
 
-När du har genererat en exportnyttolast för en XDM-resurs kan du använda den nyttolasten i en POST-förfrågan till `/import` slutpunkt för import av resursen till en målorganisation och sandlåda.
+När du har genererat en exportnyttolast för en XDM-resurs kan du använda den nyttolasten i en POST-begäran till `/import`-slutpunkten för att importera resursen till en målorganisation och sandlåda.
 
 **API-format**
 
@@ -36,7 +36,7 @@ POST /rpc/import
 
 **Begäran**
 
-Följande begäran tar nyttolasten som returneras från ett anrop till [`/rpc/export` slutpunkt](./export.md) för att importera en fältgrupp (`Restaurant`) till en ny organisation och sandlåda, som bestäms av `x-gw-ims-org-id` och `x-sandbox-name` rubriker.
+Följande begäran tar nyttolasten som returneras från ett anrop till [`/rpc/export` endpoint ](./export.md) för att importera en fältgrupp (`Restaurant`) till en ny organisation och sandlåda, enligt rubrikerna `x-gw-ims-org-id` respektive `x-sandbox-name`.
 
 ```shell
 curl -X POST \

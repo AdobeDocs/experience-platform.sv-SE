@@ -4,14 +4,14 @@ description: Med exempeldatauppsättningar för frågetjänsten kan du utföra u
 exl-id: 9e676d7c-c24f-4234-878f-3e57bf57af44
 source-git-commit: 99cd69234006e6424be604556829b77236e92ad7
 workflow-type: tm+mt
-source-wordcount: '639'
+source-wordcount: '643'
 ht-degree: 0%
 
 ---
 
 # Datauppsättningsexempel
 
-Adobe Experience Platform Query Service innehåller exempeldatauppsättningar som en del av de ungefärliga frågebearbetningsfunktionerna. Exempeldatauppsättningar skapas med enhetliga slumpmässiga urval från befintliga [!DNL Azure Data Lake Storage] (ADLS) datauppsättningar där endast en procentandel av posterna från originalet används. Denna procentandel kallas samplingsfrekvensen. Genom att justera samplingsfrekvensen för att styra balansen mellan noggrannhet och bearbetningstid kan du utföra undersökande frågor på stora data med avsevärt reducerad bearbetningstid på bekostnad av frågans exakthet.
+Adobe Experience Platform Query Service innehåller exempeldatauppsättningar som en del av de ungefärliga frågebearbetningsfunktionerna. Exempeldatauppsättningar skapas med enhetliga slumpmässiga exempel från befintliga [!DNL Azure Data Lake Storage]-datauppsättningar (ADLS) som bara använder en procentandel av posterna från originalet. Denna procentandel kallas samplingsfrekvensen. Genom att justera samplingsfrekvensen för att styra balansen mellan noggrannhet och bearbetningstid kan du utföra undersökande frågor på stora data med avsevärt reducerad bearbetningstid på bekostnad av frågans exakthet.
 
 Eftersom många användare inte behöver ett exakt svar för en sammanställningsåtgärd över en datauppsättning, är det effektivare att skicka en ungefärlig fråga för att returnera ett ungefärligt svar för undersökande frågor på stora datauppsättningar. Eftersom exempeldatauppsättningar bara innehåller en procentandel av data från den ursprungliga datauppsättningen, kan du få en mer exakt svarstid genom att utbyta frågor. Vid läsning måste Query Service skanna färre rader, vilket ger snabbare resultat än om du skulle fråga hela datauppsättningen.
 
@@ -26,7 +26,7 @@ För att du ska kunna hantera dina exempel för ungefärlig frågebearbetning ha
 
 ## Komma igång {#get-started}
 
-Om du vill använda funktionerna för att skapa och ta bort ungefärliga frågebearbetningsfunktioner som finns i det här dokumentet, måste du ange sessionsflaggan till `true`. Från kommandoraden i antingen Frågeredigeraren eller din PSQL-klient anger du `SET aqp=true;` -kommando.
+Om du vill använda funktionerna för att skapa och ta bort ungefärliga frågebearbetningsfunktioner som beskrivs i det här dokumentet måste du ange sessionsflaggan till `true`. Ange kommandot `SET aqp=true;` från kommandoraden i antingen Frågeredigeraren eller din PSQL-klient.
 
 >[!NOTE]
 >
@@ -36,9 +36,9 @@ Om du vill använda funktionerna för att skapa och ta bort ungefärliga frågeb
 
 ## Skapa ett enhetligt exempel på en slumpmässig datauppsättning {#create-a-sample}
 
-Använd `ANALYZE TABLE <table_name> TABLESAMPLE SAMPLERATE x` kommandot med ett datauppsättningsnamn för att skapa ett enhetligt slumpmässigt urval från den datauppsättningen.
+Använd kommandot `ANALYZE TABLE <table_name> TABLESAMPLE SAMPLERATE x` med ett datauppsättningsnamn för att skapa ett enhetligt slumpmässigt urval från den datauppsättningen.
 
-Samplingsfrekvensen är procentandelen poster som tagits från den ursprungliga datauppsättningen. Du kan styra samplingsfrekvensen med `TABLESAMPLE SAMPLERATE` nyckelord. I det här exemplet motsvarar värdet 5,0 en samplingsfrekvens på 50 %. Värdet 2,5 motsvarar 25 % och så vidare.
+Samplingsfrekvensen är procentandelen poster som tagits från den ursprungliga datauppsättningen. Du kan kontrollera samplingsfrekvensen med nyckelorden `TABLESAMPLE SAMPLERATE`. I det här exemplet motsvarar värdet 5,0 en samplingsfrekvens på 50 %. Värdet 2,5 motsvarar 25 % och så vidare.
 
 >[!IMPORTANT]
 >
@@ -68,11 +68,11 @@ ANALYZE TABLE large_table TABLESAMPLE FILTERCONTEXT (month(to_timestamp(timestam
 ANALYZE TABLE large_table TABLESAMPLE FILTERCONTEXT (month(to_timestamp(timestamp)) in ('8', '9') AND (product.name = "product1" OR product.name = "product2")) SAMPLERATE 10;
 ```
 
-I exemplen är tabellnamnet `large_table`är filtervillkoret i den ursprungliga tabellen `month(to_timestamp(timestamp)) in ('8', '9')`och samplingsfrekvensen är (X % av filtrerade data), i detta fall `10`.
+I de angivna exemplen är tabellnamnet `large_table`, filtervillkoret i den ursprungliga tabellen är `month(to_timestamp(timestamp)) in ('8', '9')` och samplingsfrekvensen är (X% av filtrerade data), i det här fallet `10`.
 
 ## Visa listan med exempel {#view-list-of-samples}
 
-Använd `sample_meta()` för att visa en lista med exempel som är kopplade till en ADLS-tabell.
+Använd funktionen `sample_meta()` för att visa listan med exempel som är associerade med en ADLS-tabell.
 
 ```sql
 SELECT sample_meta('example_dataset_name')
@@ -89,7 +89,7 @@ Listan med datauppsättningsexempel visas i formatet för exemplet nedan.
 
 ## Fråga exempeldatauppsättningen {#query-sample-datasets}
 
-Använd `{EXAMPLE_DATASET_NAME}` om du vill fråga exempeltabeller direkt. Du kan också lägga till `WITHAPPROXIMATE` nyckelord till slutet av en fråga och frågetjänsten använder automatiskt det senast skapade exemplet.
+Använd `{EXAMPLE_DATASET_NAME}` för att fråga exempeltabeller direkt. Du kan också lägga till nyckelordet `WITHAPPROXIMATE` i slutet av en fråga så använder frågetjänsten automatiskt det exempel som skapades senast.
 
 ```sql
 SELECT * FROM example_dataset_name WITHAPPROXIMATE;

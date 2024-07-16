@@ -4,7 +4,7 @@ description: Versionsinformation från augusti 2023 för Adobe Experience Platfo
 exl-id: c67dca3a-eccb-427e-8ab3-b69c51b57938
 source-git-commit: b4334b4f73428f94f5a7e5088f98e2459afcaf3c
 workflow-type: tm+mt
-source-wordcount: '1724'
+source-wordcount: '1713'
 ht-degree: 3%
 
 ---
@@ -29,20 +29,20 @@ Uppdateringar av befintliga funktioner i Adobe Experience Platform:
 
 ## Real-Time Customer Data Platform {#rtcdp}
 
-Built on Experience Platform, Real-time Customer Data Platform ([!DNL Real-Time CDP]) hjälper företag att sammanföra kända och okända data för att aktivera kundprofiler med intelligent beslutsfattande under hela kundresan.
+Real-time Customer Data Platform ([!DNL Real-Time CDP]) bygger på Experience Platform och hjälper företag att sammanföra kända och okända data för att aktivera kundprofiler med intelligent beslutsfattande under hela kundresan.
 
-[!DNL Real-Time CDP] kombinerar flera datakällor för företag för att skapa kundprofiler i realtid. Segment som byggts utifrån dessa profiler kan sedan skickas till efterföljande destinationer för att tillhandahålla personliga kundupplevelser i alla kanaler och enheter.
+[!DNL Real-Time CDP] kombinerar flera företagsdatakällor för att skapa kundprofiler i realtid. Segment som byggts utifrån dessa profiler kan sedan skickas till efterföljande destinationer för att tillhandahålla personliga kundupplevelser i alla kanaler och enheter.
 
 **Nya eller uppdaterade funktioner**
 
 | Funktion | Beskrivning |
 | --- | --- |
-| Handbok för användning av intelligent återanvändning | The [Intelligent återanvändning](../../rtcdp/use-case-guides/intelligent-re-engagement/intelligent-re-engagement.md) ärendehandboken innehåller information om hur man återengagerar kunder som har avbrutit en konvertering innan de slutför den på ett intelligent och ansvarsfullt sätt. I den här guiden används följande exempel på resor för att återengagera kunder: <ul><li>Återengagemangsresa - Rikta in dig på kunder som inte längre surfar.</li><li>Övergiven kundvagnsresa - Rikta in dig på kunder som har lagt produkter i vagnen men ännu inte slutfört köpet.</li><li>Beställningsbekräftelseresa - Fokusera på produktinköp</li></ul> Klicka på länken för detaljerade feedback längst ned i [Handbok för användning av intelligent återanvändning](../../rtcdp/use-case-guides/intelligent-re-engagement/intelligent-re-engagement.md) för att ge feedback. |
-| Stöd för partnerdata | Utför marknadsföring i Real-Time CDP, med profiler för potentiella kunder och partner-ID:n från våra partners, för att nå nya kunder och berika era egna data: <ul><li>Kundvärvning och adresserbarhet: Dra nytta av cookiefria identifierare och hashas-PII från valfria datapartner för att nå nya nettokunder och minska beroendet av cookies från tredje part.</li><li>Fullständig trattmarknadsföring i ett enda system: Self-serve-segmentering, målgruppsurval och inbyggd aktivering för potentiella och kända kunder i ett enda system.</li><li>Grunden för förtroende: Styrd partnerdata och -profiler med patenterad dataanvändning, märkning, åtkomstkontroll och mycket mer på marknaden på ett ansvarsfullt sätt. Mer information finns i följande fallhandböcker: Handböckerna för prospektering finns nu tillgängliga. Läs fallhandböckerna om prospektering för att lära dig hur ni engagerar och förvärvar nya kunder genom prospekteringsexempel:<ul><li>[Prospektering](../../rtcdp/partner-data/prospecting.md)</li><li>[Personalisering på plats](../../rtcdp/partner-data/onsite-personalization.md)</li><li>[Komplettera förstahandsprofiler](../../rtcdp/partner-data/supplement-first-party-profiles.md)</li><li>[Aktivera potentiella målgrupper](../../destinations/ui/activate-prospect-audiences.md)</li></ul> |
+| Handbok för användning av intelligent återanvändning | I [Handboken om intelligent återanvändning](../../rtcdp/use-case-guides/intelligent-re-engagement/intelligent-re-engagement.md) finns information om hur du återengagerar kunder som har avbrutit en konvertering innan de slutför den på ett intelligent och ansvarsfullt sätt. I den här guiden används följande exempel på resor för att återengagera kunder: <ul><li>Återengagemangsresa - Rikta in dig på kunder som inte längre surfar.</li><li>Övergiven kundvagnsresa - Rikta in dig på kunder som har lagt produkter i vagnen men ännu inte slutfört köpet.</li><li>Beställningsbekräftelseresa - Fokusera på produktinköp</li></ul> Använd den detaljerade länken för feedbackalternativ längst ned i [fallguiden ](../../rtcdp/use-case-guides/intelligent-re-engagement/intelligent-re-engagement.md) för intelligent återanvändning för att ge feedback. |
+| Stöd för partnerdata | Utför marknadsföring i Real-Time CDP, med profiler för potentiella kunder och partner-ID:n från våra partners, för att nå nya kunder och berika era egna data: <ul><li>Kundvärvning och adresserbarhet: Dra nytta av cookiefria identifierare och hashas-PII från valfria datapartner för att nå nya nettokunder och minska beroendet av cookies från tredje part.</li><li>Fullständig trattmarknadsföring i ett enda system: Self-serve-segmentering, målgruppsurval och inbyggd aktivering för potentiella och kända kunder i ett enda system.</li><li>Grunden för förtroende: Styrd partnerdata och -profiler med patenterad dataanvändning, märkning, åtkomstkontroll och mycket mer på marknaden på ett ansvarsfullt sätt. Mer information finns i följande fallhandböcker: Handböckerna för prospektering finns nu tillgängliga. Läs fallhandböckerna om prospektering för att lära dig hur ni engagerar och förvärvar nya kunder genom prospekteringsexempel:<ul><li>[Prospektering](../../rtcdp/partner-data/prospecting.md)</li><li>[Personalisering på plats](../../rtcdp/partner-data/onsite-personalization.md)</li><li>[Komplettera förstapartsprofiler](../../rtcdp/partner-data/supplement-first-party-profiles.md)</li><li>[Aktivera potentiella målgrupper](../../destinations/ui/activate-prospect-audiences.md)</li></ul> |
 
 {style="table-layout:auto"}
 
-Mer information finns i [Real-Time CDP - översikt](../../rtcdp/overview.md).
+Mer information finns i [Real-Time CDP-översikten](../../rtcdp/overview.md).
 
 ## Attributbaserad åtkomstkontroll {#abac}
 
@@ -54,11 +54,11 @@ Tack vare attributbaserad åtkomstkontroll kan administratören styra användarn
 
 | Funktion | Beskrivning |
 | --- | --- |
-| Sandlådekonfiguration för behörighetsprincip | Den nya [behörighetsprincipsandlådekonfiguration](../../access-control/abac/ui/policies.md) Med kan du tillämpa en attributbaserad åtkomstkontrollprincip på alla eller ett visst antal sandlådor, beroende på dina behov och krav. |
+| Sandlådekonfiguration för behörighetsprincip | Med den nya funktionen [behörighetsprincipsandlådekonfiguration](../../access-control/abac/ui/policies.md) kan du tillämpa en attributbaserad åtkomstkontrollprincip på alla eller ett visst antal sandlådor, beroende på dina behov och krav. |
 
 {style="table-layout:auto"}
 
-Mer information om attributbaserad åtkomstkontroll finns i [attributbaserad åtkomstkontroll - översikt](../../access-control/abac/overview.md). En omfattande guide om det attributbaserade arbetsflödet för åtkomstkontroll finns i [attribueringsbaserad åtkomstkontroll från början till slut](../../access-control/abac/end-to-end-guide.md).
+Mer information om attributbaserad åtkomstkontroll finns i [Översikt över attributbaserad åtkomstkontroll](../../access-control/abac/overview.md). En utförlig guide om det attributbaserade arbetsflödet för åtkomstkontroll finns i [attributbaserad åtkomstkontroll från början till slut](../../access-control/abac/end-to-end-guide.md).
 
 ## Kontrollpaneler {#dashboards}
 
@@ -68,11 +68,11 @@ Adobe Experience Platform tillhandahåller flera instrumentpaneler där du kan s
 
 | Funktion | Beskrivning |
 | --- | --- |
-| Användningsfall för analys och uppföljning av samtycke | Lär dig hur du skapar en kontrollpanel för godkännande för olika användningsområden för marknadsföring för Real-Time CDP-data med [samtyckesanalys och spårningsdokument](../../dashboards/insights-use-cases/consent-analysis.md). Här beskrivs hur du skapar en målgrupp med rätt attribut för dina affärsbehov och sedan kan du få insikter genom att använda förkonfigurerade widgetar i Adobe Experience Platform användargränssnitt. Den innehåller även anvisningar om hur du skapar en egen anpassad widget med den användardefinierade funktionen för instrumentpaneler. Dokumentet omfattar användningsfall för samtyckestrender och samtycke överlappar varandra. |
+| Användningsfall för analys och uppföljning av samtycke | Lär dig hur du skapar en kontrollpanel för godkännande för olika användningsfall för marknadsföring för Real-Time CDP-data med [dokumentet för analys av samtycke och spårning](../../dashboards/insights-use-cases/consent-analysis.md). Här beskrivs hur du skapar en målgrupp med rätt attribut för dina affärsbehov och sedan kan du få insikter genom att använda förkonfigurerade widgetar i Adobe Experience Platform användargränssnitt. Den innehåller även anvisningar om hur du skapar en egen anpassad widget med den användardefinierade funktionen för instrumentpaneler. Dokumentet omfattar användningsfall för samtyckestrender och samtycke överlappar varandra. |
 
 {style="table-layout:auto"}
 
-Mer information om kontrollpaneler, inklusive hur du ger åtkomstbehörigheter och skapar anpassade widgetar, får du genom att läsa [översikt över instrumentpaneler](../../dashboards/home.md).
+Mer information om kontrollpaneler, inklusive hur du ger åtkomstbehörigheter och skapar anpassade widgetar, får du genom att läsa [översikten för kontrollpaneler](../../dashboards/home.md).
 
 ## Datainsamling {#data-collection}
 
@@ -86,7 +86,7 @@ Adobe Experience Platform erbjuder en serie teknologier som gör att ni kan saml
 
 {style="table-layout:auto"}
 
-Mer information finns i [datainsamling, översikt](../../tags/home.md).
+Mer information finns i [översikten över datainsamlingar](../../tags/home.md).
 
 ## Datainmatning {#data-ingestion}
 
@@ -98,7 +98,7 @@ Adobe Experience Platform har en omfattande uppsättning funktioner för att imp
 | --- | --- |
 | Ändringar i arbetsflöden för dataöverföring | Rader med data som innehåller värden som är större än den angivna datatypen (t.ex. långa data som skickas som heltalsdatatyp) kommer nu att refuseras och felmeddelanden rapporteras. Tidigare avvisades dessa rader utan varning. |
 
-Mer information finns i [dataöverföring - översikt](../../ingestion/home.md).
+Mer information finns i [översikten över dataöverföring](../../ingestion/home.md).
 
 ## Dataförberedelse {#data-prep}
 
@@ -112,18 +112,18 @@ Med Data Prep kan datatekniker mappa, omvandla och validera data till och från 
 
 {style="table-layout:auto"}
 
-Mer information finns i [Översikt över datapreflight](../../data-prep/home.md).
+Mer information finns i [översikten över dataförberedelser](../../data-prep/home.md).
 
 ## Mål  {#destinations}
 
 [!DNL Destinations] är färdiga integreringar med målplattformar som möjliggör smidig aktivering av data från Adobe Experience Platform. Ni kan använda destinationer för att aktivera kända och okända data för flerkanalskampanjer, e-postkampanjer, riktad reklam och många andra användningsfall.
 
-**Ny eller uppdaterad funktionalitet** {#destinations-new-updated-functionality}
+**Ny eller uppdaterad funktion** {#destinations-new-updated-functionality}
 
-- Nu kan du [aktivera potentiella målgrupper](../../destinations/ui/activate-prospect-audiences.md) till lagringsplatser i molnet.
-- Allmänt [aktiveringsgaranti](../../destinations/guardrails.md#general-activation-guardrails) av högst 100 destinationer per sandlåda har uppdaterats till _fast gräns_.
+- Du kan nu [aktivera potentiella målgrupper](../../destinations/ui/activate-prospect-audiences.md) till molnlagringsmål.
+- Det allmänna [aktiveringsskyddet](../../destinations/guardrails.md#general-activation-guardrails) för högst 100 mål per sandlåda har uppdaterats till att vara en _hård gräns_.
 
-Mer allmän information om destinationer finns i [destinationer, översikt](../../destinations/home.md).
+Mer allmän information om destinationer finns i [målöversikten](../../destinations/home.md).
 
 ## Experience Data Model (XDM) {#xdm}
 
@@ -133,7 +133,7 @@ XDM är en öppen källkodsspecifikation som innehåller gemensamma strukturer o
 
 | Komponenttyp | Namn | Beskrivning |
 | --- | --- | --- |
-| Klass | [[!UICONTROL XDM Individual Prospect Profile]](https://github.com/adobe/xdm/pull/1758/files) | Använd den här klassen för att ta in profiler för potentiella kunder som har hämtats från dataleverantörers toppmoderna kundvärvningsexempel. Se [[!UICONTROL XDM Individual Prospect Profile]](../../xdm/classes/prospect.md) dokumentation som visar exempel och lär dig mer. |
+| Klass | [[!UICONTROL XDM Individual Prospect Profile]](https://github.com/adobe/xdm/pull/1758/files) | Använd den här klassen för att ta in profiler för potentiella kunder som har hämtats från dataleverantörers toppmoderna kundvärvningsexempel. Se exempel och läs mer i [[!UICONTROL XDM Individual Prospect Profile]](../../xdm/classes/prospect.md)-dokumentationen. |
 
 {style="table-layout:auto"}
 
@@ -141,12 +141,12 @@ XDM är en öppen källkodsspecifikation som innehåller gemensamma strukturer o
 
 | Komponenttyp | Namn | Uppdatera beskrivning |
 | --- | --- | --- |
-| Tillägg ([!UICONTROL Adobe Analytics ExperienceEvent Full Extension]) | [[!UICONTROL Context Data]](https://github.com/adobe/xdm/pull/1761/files) | [!UICONTROL Context Data] mappningsobjekt har lagts till i [!UICONTROL Adobe Analytics ExperienceEvent Full Extension] för att tillhandahålla kontextdata för Adobe Analytics. |
+| Tillägg ([!UICONTROL Adobe Analytics ExperienceEvent Full Extension]) | [[!UICONTROL Context Data]](https://github.com/adobe/xdm/pull/1761/files) | [!UICONTROL Context Data]-mappningsobjekt har lagts till i [!UICONTROL Adobe Analytics ExperienceEvent Full Extension] för att tillhandahålla kontextdata för Adobe Analytics. |
 | Fältgrupp | Flera | Flera fält har lagts till i [[!UICONTROL Enriched Event Segment Details]](https://github.com/adobe/xdm/pull/1760/files). |
 
 {style="table-layout:auto"}
 
-Mer information finns i [XDM - systemöversikt](../../xdm/home.md).
+Mer information finns i [XDM-systemöversikt](../../xdm/home.md).
 
 ## Identitetstjänst {#identity-service}
 
@@ -156,23 +156,23 @@ Adobe Experience Platform identitetstjänst ger er en heltäckande bild av era k
 
 | Funktion | Beskrivning |
 | --- | --- |
-| Ändringar av begränsningar för identitetsdiagram | I slutet av september kommer identitetsdiagrammet att ändras till 50 identiteter per diagram och den senaste identiteten kommer att importeras. Den äldsta identiteten kommer därför att tas bort baserat på tidsstämpeln för inmatningen och identitetstypen, och cookie-identitetstyperna tas bort först. I dag har identitetsdiagram en gräns på 150 identiteter per diagram, och när gränsen har nåtts uppdateras inte längre diagram. Kontakta din kontorepresentant för att begära en ändring av identitetstypen om din produktionssandlåda innehåller: <ul><li>ett anpassat namnutrymme där personidentifierarna (t.ex. CRM-ID:n) är konfigurerade som cookie/enhetsidentitetstyp.</li><li>ett anpassat namnutrymme där cookie-/enhetsidentifierare har konfigurerats som identitetstyp för olika enheter.</li></ul> Dessa förfrågningar behandlas manuellt av Adobe. Mer information finns i [skyddsutkast för identitetstjänstens data](../../identity-service/guardrails.md). |
+| Ändringar av begränsningar för identitetsdiagram | I slutet av september kommer identitetsdiagrammet att ändras till 50 identiteter per diagram och den senaste identiteten kommer att importeras. Den äldsta identiteten kommer därför att tas bort baserat på tidsstämpeln för inmatningen och identitetstypen, och cookie-identitetstyperna tas bort först. I dag har identitetsdiagram en gräns på 150 identiteter per diagram, och när gränsen har nåtts uppdateras inte längre diagram. Kontakta din kontorepresentant för att begära en ändring av identitetstypen om din produktionssandlåda innehåller: <ul><li>ett anpassat namnutrymme där personidentifierarna (t.ex. CRM-ID:n) är konfigurerade som cookie/enhetsidentitetstyp.</li><li>ett anpassat namnutrymme där cookie-/enhetsidentifierare har konfigurerats som identitetstyp för olika enheter.</li></ul> Dessa förfrågningar behandlas manuellt av Adobe. Mer information finns i [skyddsjournalerna för identitetstjänstens data](../../identity-service/guardrails.md). |
 
 Mer information finns i [Översikt över identitetstjänsten](../../identity-service/home.md).
 
 ## Segmenteringstjänst {#segmentation}
 
-[!DNL Segmentation Service] gör att du kan segmentera data som lagras i [!DNL Experience Platform] som rör enskilda (t.ex. kunder, prospects, användare eller organisationer) till målgrupper. Du kan skapa målgrupper genom segmentdefinitioner eller andra källor från [!DNL Real-Time Customer Profile] data. Dessa målgrupper är centralt konfigurerade och underhållna på [!DNL Platform]och är lätt tillgängliga för alla Adobe-lösningar.
+Med [!DNL Segmentation Service] kan du segmentera data som lagras i [!DNL Experience Platform] och som relaterar till individer (t.ex. kunder, potentiella kunder, användare eller organisationer) till målgrupper. Du kan skapa målgrupper med hjälp av segmentdefinitioner eller andra källor från dina [!DNL Real-Time Customer Profile]-data. Dessa målgrupper är centralt konfigurerade och underhållna på [!DNL Platform] och är tillgängliga för alla Adobe-lösningar.
 
 **Nya eller uppdaterade funktioner**
 
 | Funktion | Beskrivning |
 | --- | --- |
-| Målgrupper som ser likadana ut (begränsad tillgänglighet) | Målgrupper som ser likadana ut ger intelligenta insikter om var och en av era målgrupper och utnyttjar maskininlärningsbaserade insikter för att identifiera och inrikta er på värdefulla kunder med era marknadsföringskampanjer. Med lookalike-målgrupper kan ni skapa expanderade målgrupper som riktar sig till kunder som liknar era högpresterande målgrupper eller målgrupper som liknar tidigare konverterade målgrupper. Mer information om lookalike-målgrupper finns i [Översikt över lookalike-målgrupper](../../segmentation/ui/lookalike-audiences.md). |
+| Målgrupper som ser likadana ut (begränsad tillgänglighet) | Målgrupper som ser likadana ut ger intelligenta insikter om var och en av era målgrupper och utnyttjar maskininlärningsbaserade insikter för att identifiera och inrikta er på värdefulla kunder med era marknadsföringskampanjer. Med lookalike-målgrupper kan ni skapa expanderade målgrupper som riktar sig till kunder som liknar era högpresterande målgrupper eller målgrupper som liknar tidigare konverterade målgrupper. Mer information om lookalike-målgrupper finns i översikten [Look-alike-målgrupper](../../segmentation/ui/lookalike-audiences.md). |
 
 {style="table-layout:auto"}
 
-Mer information finns i [Översikt över segment](../../segmentation/home.md).
+Mer information finns i [Segmenteringsöversikt](../../segmentation/home.md).
 
 ## Källor {#sources}
 
@@ -182,10 +182,10 @@ Experience Platform tillhandahåller ett RESTful-API och ett interaktivt använd
 
 | Funktion | Beskrivning |
 | --- | --- |
-| Allmän tillgänglighet för [!DNL SugarCRM] | [!DNL SugarCRM] Nu finns det källor. Använd [!DNL SugarCRM Accounts & Contacts] och [!DNL SugarCRM Events] källor som hämtar data från [!DNL SugarCRM] konto till Experience Platform. Mer information finns i [[!DNL SugarCRM] översikt](../../sources/connectors/crm/sugarcrm.md). |
-| Stöd för on-demand-inmatning för källdataflöden i användargränssnittet | Nu kan du skapa flödeskörningar på begäran för ett befintligt källdataflöde i användargränssnittet. Mer information finns i guiden [skapa ett on demand-flöde för källor med användargränssnittet](../../sources/tutorials/ui/on-demand-ingestion.md). |
-| Stöd för nya `correlationID` fält för Adobe Analytics | The `_experience.decisioning.propositions.scopeDetails.correlationID` -fältet är nu tillgängligt i Adobe Analytics källanslutningsschema. Det här fältet används som stöd för A4T-klassificeringar och kommer att fyllas i från och med september 2023. |
+| Allmän tillgänglighet för [!DNL SugarCRM] | [!DNL SugarCRM] källor är nu tillgängliga. Använd källorna [!DNL SugarCRM Accounts & Contacts] och [!DNL SugarCRM Events] för att hämta data från ditt [!DNL SugarCRM]-konto till Experience Platform. Mer information finns i [[!DNL SugarCRM] översikten](../../sources/connectors/crm/sugarcrm.md). |
+| Stöd för on-demand-inmatning för källdataflöden i användargränssnittet | Nu kan du skapa flödeskörningar på begäran för ett befintligt källdataflöde i användargränssnittet. Mer information finns i guiden om att [skapa ett on demand-flöde för källor med användargränssnittet](../../sources/tutorials/ui/on-demand-ingestion.md). |
+| Stöd för det nya fältet `correlationID` för Adobe Analytics | Fältet `_experience.decisioning.propositions.scopeDetails.correlationID` är nu tillgängligt i Adobe Analytics källanslutningsschema. Det här fältet används som stöd för A4T-klassificeringar och kommer att fyllas i från och med september 2023. |
 
 {style="table-layout:auto"}
 
-Mer information finns i [källöversikt](../../sources/home.md).
+Mer information finns i [källöversikten](../../sources/home.md).

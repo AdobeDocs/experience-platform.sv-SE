@@ -4,8 +4,8 @@ title: Serverspecifikationer för mål som skapats med Destination SDK
 exl-id: 62202edb-a954-42ff-9772-863cea37a889
 source-git-commit: b4334b4f73428f94f5a7e5088f98e2459afcaf3c
 workflow-type: tm+mt
-source-wordcount: '2750'
-ht-degree: 2%
+source-wordcount: '2739'
+ht-degree: 0%
 
 ---
 
@@ -13,16 +13,16 @@ ht-degree: 2%
 
 Målserverns specifikationer definierar vilken typ av målplattform som ska ta emot data från Adobe Experience Platform och kommunikationsparametrarna mellan plattformen och destinationen. Till exempel:
 
-* A [direktuppspelning](#streaming-example) målserverspecifikationen definierar HTTP-serverslutpunkten som tar emot HTTP-meddelanden från plattformen. Läs mer om hur du konfigurerar hur HTTP-anrop till slutpunkten formateras i [mallange specifikationer](templating-specs.md) sida.
-* An [Amazon S3](#s3-example) målserverns spec definierar [!DNL S3] namn och sökväg där Plattform exporterar filerna.
-* An [SFTP](#sftp-example) målserverspecifikationen definierar värdnamnet, rotkatalogen, kommunikationsporten och krypteringstypen för SFTP-servern där plattformen ska exportera filerna.
+* En [målserverspecifikation för direktuppspelning](#streaming-example) definierar HTTP-serverslutpunkten som tar emot HTTP-meddelanden från plattformen. Om du vill lära dig att konfigurera hur HTTP-anrop till slutpunkten formateras läser du sidan [Mallating specs](templating-specs.md) .
+* En [Amazon S3](#s3-example)-målserverspecifikation definierar [!DNL S3]-bucket-namnet och sökvägen dit Platform ska exportera filerna.
+* En [SFTP](#sftp-example)-målserverspecifikation definierar värdnamnet, rotkatalogen, kommunikationsporten och krypteringstypen för SFTP-servern där plattformen ska exportera filerna.
 
-Mer information om var den här komponenten passar in i en integrering som skapas med Destination SDK finns i diagrammet i [konfigurationsalternativ](../configuration-options.md) eller se följande sidor med översikt över målkonfigurationen:
+Om du vill veta var den här komponenten passar in i en integrering som skapats med Destination SDK kan du läsa diagrammet i dokumentationen för [konfigurationsalternativ](../configuration-options.md) eller följande sidor med en översikt över målkonfigurationen:
 
 * [Använd Destination SDK för att konfigurera ett direktuppspelningsmål](../../guides/configure-destination-instructions.md#create-server-template-configuratiom)
 * [Använd Destination SDK för att konfigurera ett filbaserat mål](../../guides/configure-file-based-destination-instructions.md#create-server-file-configuration)
 
-Du kan konfigurera målserverns specifikationer via `/authoring/destination-servers` slutpunkt. På följande API-referenssidor finns detaljerade API-anropsexempel där du kan konfigurera komponenterna som visas på den här sidan.
+Du kan konfigurera målserverspecifikationerna via slutpunkten `/authoring/destination-servers`. På följande API-referenssidor finns detaljerade API-anropsexempel där du kan konfigurera komponenterna som visas på den här sidan.
 
 * [Skapa en målserverkonfiguration](../../authoring-api/destination-server/create-destination-server.md)
 * [Uppdatera en målserverkonfiguration](../../authoring-api/destination-server/update-destination-server.md)
@@ -31,7 +31,7 @@ På den här sidan visas alla målservertyper som stöds av Destinationen SDK, m
 
 >[!IMPORTANT]
 >
->Alla parameternamn och värden som stöds av Destinationen SDK är **skiftlägeskänslig**. Undvik skiftlägeskänslighetsfel genom att använda parameternamn och värden exakt som de visas i dokumentationen.
+>Alla parameternamn och värden som stöds av Destinationen SDK är **skiftlägeskänsliga**. Undvik skiftlägeskänslighetsfel genom att använda parameternamn och värden exakt som de visas i dokumentationen.
 
 ## Integrationstyper som stöds {#supported-integration-types}
 
@@ -42,7 +42,7 @@ Se tabellen nedan för mer ingående information om vilka typer av integreringar
 | Integrering i realtid (direktuppspelning) | Ja |
 | Filbaserade (batch) integreringar | Ja |
 
-När [skapa](../../authoring-api/destination-server/create-destination-server.md) eller [uppdatera](../../authoring-api/destination-server/update-destination-server.md) en målserver använder du någon av de servertypskonfigurationer som beskrivs på den här sidan. Beroende på dina integrationskrav ska du se till att ersätta exempelparametervärdena från de här exemplen med dina egna.
+När du [skapar](../../authoring-api/destination-server/create-destination-server.md) eller [uppdaterar](../../authoring-api/destination-server/update-destination-server.md) en målserver ska du använda någon av de servertypskonfigurationer som beskrivs på den här sidan. Beroende på dina integrationskrav ska du se till att ersätta exempelparametervärdena från de här exemplen med dina egna.
 
 ## Hårdkodade jämfört med mallsidesfält {#templatized-fields}
 
@@ -52,8 +52,8 @@ Målserverparametrar har två konfigurerbara fält. Dessa alternativ avgör om d
 
 | Parameter | Typ | Beskrivning |
 |---|---|---|
-| `templatingStrategy` | Sträng | *Obligatoriskt.* Definierar om det finns ett hårdkodat värde via `value` eller ett användarkonfigurerbart värde i användargränssnittet. Värden som stöds: <ul><li>`NONE`: Använd det här värdet när du hårdkodar parametervärdet via `value` parameter (se nästa rad). Exempel:`"value": "my-storage-bucket"`.</li><li>`PEBBLE_V1`: Använd det här värdet när du vill att användarna ska ange ett parametervärde i användargränssnittet. Exempel: `"value": "{{customerData.bucket}}"`. </li></ul> |
-| `value` | Sträng | *Obligatoriskt*. Definierar parametervärdet. Värdetyper som stöds: <ul><li>**Hårdkodat värde**: Använd ett hårdkodat värde (till exempel `"value": "my-storage-bucket"`) när du inte behöver att användarna anger ett parametervärde i användargränssnittet. När du hårdkodar ett värde `templatingStrategy` ska alltid anges till `NONE`.</li><li>**Mallvärde**: Använd ett mallbaserat värde (till exempel `"value": "{{customerData.bucket}}"`) när du vill att användarna ska ange ett parametervärde i användargränssnittet. När du använder mallsidesvärden `templatingStrategy` ska alltid anges till `PEBBLE_V1`.</li></ul> |
+| `templatingStrategy` | Sträng | *Krävs.* Definierar om det finns ett hårdkodat värde som tillhandahålls via fältet `value` eller ett användarkonfigurerbart värde i användargränssnittet. Värden som stöds: <ul><li>`NONE`: Använd det här värdet när du hårdkodar parametervärdet via parametern `value` (se nästa rad). Exempel:`"value": "my-storage-bucket"`.</li><li>`PEBBLE_V1`: Använd det här värdet när du vill att användarna ska ange ett parametervärde i användargränssnittet. Exempel: `"value": "{{customerData.bucket}}"`. </li></ul> |
+| `value` | Sträng | *Krävs*. Definierar parametervärdet. Värdetyper som stöds: <ul><li>**Hårdkodat värde**: Använd ett hårdkodat värde (till exempel `"value": "my-storage-bucket"`) om du inte behöver att användarna anger ett parametervärde i gränssnittet. När du hårdkodar ett värde ska `templatingStrategy` alltid anges till `NONE`.</li><li>**Mallat värde**: Använd ett mallbaserat värde (till exempel `"value": "{{customerData.bucket}}"`) när du vill att användarna ska ange ett parametervärde i användargränssnittet. När du använder mallsidiga värden ska `templatingStrategy` alltid anges till `PEBBLE_V1`.</li></ul> |
 
 {style="table-layout:auto"}
 
@@ -61,13 +61,13 @@ Målserverparametrar har två konfigurerbara fält. Dessa alternativ avgör om d
 
 Både hårdkodade och mallbaserade fält har sina egna användningsområden i Destinationen SDK, beroende på vilken typ av integrering du skapar.
 
-**Ansluta till målet utan användarindata**
+**Ansluter till målet utan användarindata**
 
-När användare [ansluta till ditt mål](../../../ui/connect-destination.md) i plattformsgränssnittet kanske du vill hantera målanslutningsprocessen utan indata.
+När användare [ansluter till ditt mål](../../../ui/connect-destination.md) i plattformsgränssnittet kanske du vill hantera målanslutningsprocessen utan deras indata.
 
 Det gör du genom att hårdkoda anslutningsparametrarna för målplattformen i serverspecifikationen. När du använder hårdkodade parametervärden i målserverkonfigurationen hanteras anslutningen mellan Adobe Experience Platform och målplattformen utan indata från användaren.
 
-I exemplet nedan skapar en partner en Data Landing Zone-målserver med `path.value` fält som hårdkodas.
+I exemplet nedan skapar en partner en Data Landing Zone-målserver med fältet `path.value` som hårdkodas.
 
 ```json
 {
@@ -83,15 +83,15 @@ I exemplet nedan skapar en partner en Data Landing Zone-målserver med `path.val
 }
 ```
 
-Detta resulterar i att när användare går igenom [självstudiekurs om målanslutning](../../../ui/connect-destination.md), kommer de inte att se [autentiseringssteg](../../../ui/connect-destination.md#authenticate). Autentiseringen hanteras i stället av Platform, vilket visas i bilden nedan.
+Det innebär att användare som går igenom självstudiekursen [för målanslutning](../../../ui/connect-destination.md) inte kommer att se något [autentiseringssteg](../../../ui/connect-destination.md#authenticate). Autentiseringen hanteras i stället av Platform, vilket visas i bilden nedan.
 
-![Användarbild som visar autentiseringsskärmen mellan plattformen och ett DLZ-mål.](../../assets/functionality/destination-server/server-spec-hardcoded.png)
+![Användargränssnittsbild som visar autentiseringsskärmen mellan plattformen och ett DLZ-mål.](../../assets/functionality/destination-server/server-spec-hardcoded.png)
 
-**Ansluta till målet med användarindata**
+**Ansluter till målet med användarindata**
 
 När anslutningen mellan plattformen och målet ska upprättas efter en viss användarinmatning i plattformsgränssnittet, till exempel val av en API-slutpunkt eller tillhandahållande av ett fältvärde, kan du använda mallfält i serverspecifikationen för att läsa användarinmatningen och ansluta till målplattformen.
 
-I exemplet nedan skapar en partner en [realtid (direktuppspelning)](#streaming-example) integrering och `url.value` fältet använder den mallsidiga parametern `{{customerData.region}}` för att anpassa en del av API-slutpunkten baserat på användarindata.
+I exemplet nedan skapar en partner en [realtidsintegrering (direktuppspelning)](#streaming-example) och fältet `url.value` använder den mallatiserade parametern `{{customerData.region}}` för att anpassa en del av API-slutpunkten baserat på användarindata.
 
 ```json
 {
@@ -106,7 +106,7 @@ I exemplet nedan skapar en partner en [realtid (direktuppspelning)](#streaming-e
 }
 ```
 
-Om du vill att användarna ska kunna välja ett värde i användargränssnittet för plattformen väljer du `region` -parametern måste också definieras i [destinationskonfiguration](../../authoring-api/destination-configuration/create-destination-configuration.md) som ett kunddatafält, vilket visas nedan:
+Om du vill att användarna ska kunna välja ett värde från plattformsgränssnittet måste parametern `region` också definieras i [målkonfigurationen](../../authoring-api/destination-configuration/create-destination-configuration.md) som ett kunddatafält, vilket visas nedan:
 
 ```json
 "customerDataFields":[
@@ -124,9 +124,9 @@ Om du vill att användarna ska kunna välja ett värde i användargränssnittet 
    }
 ```
 
-Detta resulterar i att när användare går igenom [självstudiekurs om målanslutning](../../../ui/connect-destination.md)måste de välja en region innan de kan ansluta till målplattformen. När de ansluter till målet, det mallsidiga fältet `{{customerData.region}}` ersätts med det värde som användaren har valt i användargränssnittet, vilket visas i bilden nedan.
+Detta innebär att användare som går igenom självstudiekursen [för målanslutning](../../../ui/connect-destination.md) måste välja en region innan de kan ansluta till målplattformen. När de ansluter till målet ersätts det mallbaserade fältet `{{customerData.region}}` med det värde som användaren har valt i användargränssnittet, vilket visas i bilden nedan.
 
-![Användarbild som visar målanslutningsskärmen med en regionväljare.](../../assets/functionality/destination-server/server-spec-template-region.png)
+![Användargränssnittsbild som visar målanslutningsskärmen med en regionväljare.](../../assets/functionality/destination-server/server-spec-template-region.png)
 
 ## Målserver för realtid (direktuppspelning) {#streaming-example}
 
@@ -151,10 +151,10 @@ I exemplet nedan visas ett exempel på en målserverkonfiguration för ett mål 
 
 | Parameter | Typ | Beskrivning |
 |---|---|---|
-| `name` | Sträng | *Obligatoriskt.* Representerar ett eget namn på servern som bara visas för Adobe. Detta namn är inte synligt för partners eller kunder. Exempel: `Moviestar destination server`. |
-| `destinationServerType` | Sträng | *Obligatoriskt.* Ställ in den här till `URL_BASED` för direktuppspelningsmål. |
-| `templatingStrategy` | Sträng | *Obligatoriskt.* <ul><li>Använd `PEBBLE_V1` om du använder ett mallbaserat fält i stället för ett hårdkodat värde i `value` fält. Använd det här alternativet om du har en slutpunkt som: `https://api.moviestar.com/data/{{customerData.region}}/items`, där användarna måste välja slutpunktsområdet i plattformsgränssnittet. </li><li> Använd `NONE` om ingen mallad omformning behövs på Adobe-sidan, till exempel om du har en slutpunkt som: `https://api.moviestar.com/data/items` </li></ul> |
-| `value` | Sträng | *Obligatoriskt.* Fyll i adressen till API-slutpunkten som Experience Platform ska ansluta till. |
+| `name` | Sträng | *Krävs.* Representerar ett eget namn för servern, som bara visas för Adobe. Detta namn är inte synligt för partners eller kunder. Exempel: `Moviestar destination server`. |
+| `destinationServerType` | Sträng | *Krävs.* Ange detta till `URL_BASED` för direktuppspelningsmål. |
+| `templatingStrategy` | Sträng | *Krävs.* <ul><li>Använd `PEBBLE_V1` om du använder ett mallbaserat fält i stället för ett hårdkodat värde i fältet `value`. Använd det här alternativet om du har en slutpunkt som `https://api.moviestar.com/data/{{customerData.region}}/items`, där användarna måste välja slutpunktsområdet i plattformsgränssnittet. </li><li> Använd `NONE` om ingen mallad omvandling behövs på Adobe, till exempel om du har en slutpunkt som: `https://api.moviestar.com/data/items` </li></ul> |
+| `value` | Sträng | *Krävs.* Fyll i adressen till API-slutpunkten som Experience Platform ska ansluta till. |
 
 {style="table-layout:auto"}
 
@@ -184,17 +184,17 @@ Exemplet nedan visar ett exempel på en målserverkonfiguration för ett Amazon 
 | Parameter | Typ | Beskrivning |
 |---|---|---|
 | `name` | Sträng | Namnet på målservern. |
-| `destinationServerType` | Sträng | Ange det här värdet enligt målplattformen. Exportera filer till en [!DNL Amazon S3] bucket, ställ in det här på `FILE_BASED_S3`. |
-| `fileBasedS3Destination.bucket.templatingStrategy` | Sträng | *Obligatoriskt*. Ange det här värdet enligt den typ av värde som används i `bucket.value` fält.<ul><li>Om du vill att användarna ska ange sina egna bucketnamn i användargränssnittet för Experience Platform anger du det här värdet till `PEBBLE_V1`. I det här fallet måste du mallsialisera `value` fält för att läsa ett värde från [kunddatafält](../destination-configuration/customer-data-fields.md) ifylld av användaren. Det här användningsexemplet visas i exemplet ovan.</li><li>Om du använder ett hårdkodat kryckennamn för din integrering, till exempel `"bucket.value":"MyBucket"`och ange det här värdet till `NONE`.</li></ul> |
-| `fileBasedS3Destination.bucket.value` | Sträng | Namnet på [!DNL Amazon S3] bucket som ska användas för detta mål. Detta kan antingen vara ett mallbaserat fält som läser värdet från [kunddatafält](../destination-configuration/customer-data-fields.md) ifylld av användaren (som i exemplet ovan) eller ett hårdkodat värde, som `"value":"MyBucket"`. |
-| `fileBasedS3Destination.path.templatingStrategy` | Sträng | *Obligatoriskt*. Ange det här värdet enligt den typ av värde som används i `path.value` fält.<ul><li>Om du vill att dina användare ska ange en egen sökväg i användargränssnittet för Experience Platform anger du det här värdet till `PEBBLE_V1`. I det här fallet måste du mallsialisera `path.value` fält för att läsa ett värde från [kunddatafält](../destination-configuration/customer-data-fields.md) ifylld av användaren. Det här användningsexemplet visas i exemplet ovan.</li><li>Om du använder en hårdkodad sökväg för din integrering, till exempel `"bucket.value":"/path/to/MyBucket"`och ange det här värdet till `NONE`.</li></ul> |
-| `fileBasedS3Destination.path.value` | Sträng | Sökvägen till [!DNL Amazon S3] bucket som ska användas för detta mål. Detta kan antingen vara ett mallbaserat fält som läser värdet från [kunddatafält](../destination-configuration/customer-data-fields.md) ifylld av användaren (som i exemplet ovan) eller ett hårdkodat värde, som `"value":"/path/to/MyBucket"`. |
+| `destinationServerType` | Sträng | Ange det här värdet enligt målplattformen. Om du vill exportera filer till en [!DNL Amazon S3]-bucket anger du den här till `FILE_BASED_S3`. |
+| `fileBasedS3Destination.bucket.templatingStrategy` | Sträng | *Krävs*. Ange det här värdet enligt den typ av värde som används i fältet `bucket.value`.<ul><li>Om du vill att dina användare ska ange sina egna bucket-namn i användargränssnittet för Experience Platform, anger du det här värdet som `PEBBLE_V1`. I det här fallet måste du mallatisera fältet `value` för att läsa ett värde från [kunddatafälten](../destination-configuration/customer-data-fields.md) som fyllts i av användaren. Det här användningsexemplet visas i exemplet ovan.</li><li>Om du använder ett hårdkodat pytsnamn för integreringen, till exempel `"bucket.value":"MyBucket"`, ska du ange det här värdet som `NONE`.</li></ul> |
+| `fileBasedS3Destination.bucket.value` | Sträng | Namnet på den [!DNL Amazon S3]-bucket som ska användas av det här målet. Detta kan antingen vara ett mallbaserat fält som läser värdet från [kunddatafälten](../destination-configuration/customer-data-fields.md) som fyllts i av användaren (som visas i exemplet ovan) eller ett hårdkodat värde, som `"value":"MyBucket"`. |
+| `fileBasedS3Destination.path.templatingStrategy` | Sträng | *Krävs*. Ange det här värdet enligt den typ av värde som används i fältet `path.value`.<ul><li>Om du vill att dina användare ska ange sin egen sökväg i användargränssnittet för Experience Platform anger du värdet `PEBBLE_V1`. I det här fallet måste du mallatisera fältet `path.value` för att läsa ett värde från [kunddatafälten](../destination-configuration/customer-data-fields.md) som fyllts i av användaren. Det här användningsexemplet visas i exemplet ovan.</li><li>Om du använder en hårdkodad sökväg för din integrering, till exempel `"bucket.value":"/path/to/MyBucket"`, anger du det här värdet till `NONE`.</li></ul> |
+| `fileBasedS3Destination.path.value` | Sträng | Sökvägen till den [!DNL Amazon S3]-bucket som ska användas av det här målet. Detta kan antingen vara ett mallbaserat fält som läser värdet från [kunddatafälten](../destination-configuration/customer-data-fields.md) som fyllts i av användaren (som visas i exemplet ovan) eller ett hårdkodat värde, som `"value":"/path/to/MyBucket"`. |
 
 {style="table-layout:auto"}
 
 ## [!DNL SFTP] målserver {#sftp-example}
 
-Med den här målservern kan du exportera filer som innehåller Adobe Experience Platform-data till [!DNL SFTP] lagringsserver.
+Med den här målservern kan du exportera filer som innehåller Adobe Experience Platform-data till lagringsservern [!DNL SFTP].
 
 Exemplet nedan visar ett exempel på en målserverkonfiguration för ett SFTP-mål.
 
@@ -220,11 +220,11 @@ Exemplet nedan visar ett exempel på en målserverkonfiguration för ett SFTP-m�
 | Parameter | Typ | Beskrivning |
 |---|---|---|
 | `name` | Sträng | Namnet på målservern. |
-| `destinationServerType` | Sträng | Ange det här värdet enligt målplattformen. Exportera filer till en [!DNL SFTP] mål, ange detta till `FILE_BASED_SFTP`. |
-| `fileBasedSFTPDestination.rootDirectory.templatingStrategy` | Sträng | *Obligatoriskt*. Ange det här värdet enligt den typ av värde som används i `rootDirectory.value` fält.<ul><li>Om du vill att dina användare ska ange sin egen rotkatalogsökväg i användargränssnittet för Experience Platform anger du det här värdet till `PEBBLE_V1`. I det här fallet måste du mallsialisera `rootDirectory.value` fält för att läsa ett användardefinierat värde från [kunddatafält](../destination-configuration/customer-data-fields.md) ifylld av användaren. Det här användningsexemplet visas i exemplet ovan.</li><li>Om du använder en hårdkodad rotkatalogsökväg för din integrering, till exempel `"rootDirectory.value":"Storage/MyDirectory"`och ange det här värdet till `NONE`.</li></ul> |
-| `fileBasedSFTPDestination.rootDirectory.value` | Sträng | Sökvägen till den katalog som ska vara värd för de exporterade filerna. Detta kan antingen vara ett mallbaserat fält som läser värdet från [kunddatafält](../destination-configuration/customer-data-fields.md) ifylld av användaren (som i exemplet ovan) eller ett hårdkodat värde, som `"value":"Storage/MyDirectory"` |
-| `fileBasedSFTPDestination.hostName.templatingStrategy` | Sträng | *Obligatoriskt*. Ange det här värdet enligt den typ av värde som används i `hostName.value` fält.<ul><li>Om du vill att dina användare ska ange sitt eget värdnamn i användargränssnittet för Experience Platform anger du det här värdet till `PEBBLE_V1`. I det här fallet måste du mallsialisera `hostName.value` fält för att läsa ett användardefinierat värde från [kunddatafält](../destination-configuration/customer-data-fields.md) ifylld av användaren. Det här användningsexemplet visas i exemplet ovan.</li><li>Om du använder ett hårdkodat värdnamn för din integrering, till exempel `"hostName.value":"my.hostname.com"`och ange det här värdet till `NONE`.</li></ul> |
-| `fileBasedSFTPDestination.hostName.value` | Sträng | Värdnamnet för SFTP-servern. Detta kan antingen vara ett mallbaserat fält som läser värdet från [kunddatafält](../destination-configuration/customer-data-fields.md) ifylld av användaren (som i exemplet ovan) eller ett hårdkodat värde, som `"hostName.value":"my.hostname.com"`. |
+| `destinationServerType` | Sträng | Ange det här värdet enligt målplattformen. Om du vill exportera filer till ett [!DNL SFTP]-mål anger du `FILE_BASED_SFTP`. |
+| `fileBasedSFTPDestination.rootDirectory.templatingStrategy` | Sträng | *Krävs*. Ange det här värdet enligt den typ av värde som används i fältet `rootDirectory.value`.<ul><li>Om du vill att dina användare ska ange sin egen rotkatalogsökväg i användargränssnittet för Experience Platform anger du det här värdet till `PEBBLE_V1`. I det här fallet måste du mallatisera fältet `rootDirectory.value` för att läsa ett användartillhandahållet värde från [kunddatafälten](../destination-configuration/customer-data-fields.md) som fyllts i av användaren. Det här användningsexemplet visas i exemplet ovan.</li><li>Om du använder en hårdkodad rotkatalogsökväg för din integrering, till exempel `"rootDirectory.value":"Storage/MyDirectory"`, anger du det här värdet till `NONE`.</li></ul> |
+| `fileBasedSFTPDestination.rootDirectory.value` | Sträng | Sökvägen till den katalog som ska vara värd för de exporterade filerna. Detta kan antingen vara ett mallbaserat fält som läser värdet från [kunddatafälten](../destination-configuration/customer-data-fields.md) som fyllts i av användaren (som visas i exemplet ovan) eller ett hårdkodat värde, som `"value":"Storage/MyDirectory"` |
+| `fileBasedSFTPDestination.hostName.templatingStrategy` | Sträng | *Krävs*. Ange det här värdet enligt den typ av värde som används i fältet `hostName.value`.<ul><li>Om du vill att dina användare ska ange sitt eget värdnamn i användargränssnittet för Experience Platform anger du det här värdet till `PEBBLE_V1`. I det här fallet måste du mallatisera fältet `hostName.value` för att läsa ett användartillhandahållet värde från [kunddatafälten](../destination-configuration/customer-data-fields.md) som fyllts i av användaren. Det här användningsexemplet visas i exemplet ovan.</li><li>Om du använder ett hårdkodat värdnamn för din integrering, till exempel `"hostName.value":"my.hostname.com"`, anger du det här värdet till `NONE`.</li></ul> |
+| `fileBasedSFTPDestination.hostName.value` | Sträng | Värdnamnet för SFTP-servern. Detta kan antingen vara ett mallbaserat fält som läser värdet från [kunddatafälten](../destination-configuration/customer-data-fields.md) som fyllts i av användaren (som visas i exemplet ovan) eller ett hårdkodat värde, som `"hostName.value":"my.hostname.com"`. |
 | `port` | Heltal | SFTP-filserverporten. |
 | `encryptionMode` | Sträng | Anger om filkryptering ska användas. Värden som stöds: <ul><li>PGP</li><li>Ingen</li></ul> |
 
@@ -232,9 +232,9 @@ Exemplet nedan visar ett exempel på en målserverkonfiguration för ett SFTP-m�
 
 ## [!DNL Azure Data Lake Storage] ([!DNL ADLS]) målserver {#adls-example}
 
-Med den här målservern kan du exportera filer som innehåller Adobe Experience Platform-data till [!DNL Azure Data Lake Storage] konto.
+Med den här målservern kan du exportera filer som innehåller Adobe Experience Platform-data till ditt [!DNL Azure Data Lake Storage]-konto.
 
-Exemplet nedan visar ett exempel på en målserverkonfiguration för en [!DNL Azure Data Lake Storage] mål.
+Exemplet nedan visar ett exempel på en målserverkonfiguration för ett [!DNL Azure Data Lake Storage]-mål.
 
 ```json
 {
@@ -252,17 +252,17 @@ Exemplet nedan visar ett exempel på en målserverkonfiguration för en [!DNL Az
 | Parameter | Typ | Beskrivning |
 |---|---|---|
 | `name` | Sträng | Namnet på målanslutningen. |
-| `destinationServerType` | Sträng | Ange det här värdet enligt målplattformen. För [!DNL Azure Data Lake Storage] mål, ange detta till `FILE_BASED_ADLS_GEN2`. |
-| `fileBasedAdlsGen2Destination.path.templatingStrategy` | Sträng | *Obligatoriskt*. Ange det här värdet enligt den typ av värde som används i `path.value` fält.<ul><li>Om du vill att dina användare ska ange sina [!DNL ADLS] mappsökväg i användargränssnittet för Experience Platform, ange det här värdet som `PEBBLE_V1`. I det här fallet måste du mallsialisera `path.value` fält för att läsa ett värde från [kunddatafält](../destination-configuration/customer-data-fields.md) ifylld av användaren. Det här användningsexemplet visas i exemplet ovan.</li><li>Om du använder en hårdkodad sökväg för din integrering, till exempel `"abfs://<file_system>@<account_name>.dfs.core.windows.net/<path>/"`och ange det här värdet till `NONE`.</li></ul> |
-| `fileBasedAdlsGen2Destination.path.value` | Sträng | Vägen till [!DNL ADLS] lagringsmapp. Detta kan antingen vara ett mallbaserat fält som läser värdet från [kunddatafält](../destination-configuration/customer-data-fields.md) ifylld av användaren (som i exemplet ovan) eller ett hårdkodat värde, som `abfs://<file_system>@<account_name>.dfs.core.windows.net/<path>/`. |
+| `destinationServerType` | Sträng | Ange det här värdet enligt målplattformen. Ange detta till `FILE_BASED_ADLS_GEN2` för [!DNL Azure Data Lake Storage] mål. |
+| `fileBasedAdlsGen2Destination.path.templatingStrategy` | Sträng | *Krävs*. Ange det här värdet enligt den typ av värde som används i fältet `path.value`.<ul><li>Om du vill att dina användare ska ange sin [!DNL ADLS]-mappsökväg i användargränssnittet för Experience Platform anger du det här värdet till `PEBBLE_V1`. I det här fallet måste du mallatisera fältet `path.value` för att läsa ett värde från [kunddatafälten](../destination-configuration/customer-data-fields.md) som fyllts i av användaren. Det här användningsexemplet visas i exemplet ovan.</li><li>Om du använder en hårdkodad sökväg för din integrering, till exempel `"abfs://<file_system>@<account_name>.dfs.core.windows.net/<path>/"`, anger du det här värdet till `NONE`.</li></ul> |
+| `fileBasedAdlsGen2Destination.path.value` | Sträng | Sökvägen till lagringsmappen [!DNL ADLS]. Detta kan antingen vara ett mallbaserat fält som läser värdet från [kunddatafälten](../destination-configuration/customer-data-fields.md) som fyllts i av användaren (som visas i exemplet ovan) eller ett hårdkodat värde, som `abfs://<file_system>@<account_name>.dfs.core.windows.net/<path>/`. |
 
 {style="table-layout:auto"}
 
 ## [!DNL Azure Blob Storage] målserver {#blob-example}
 
-Med den här målservern kan du exportera filer som innehåller Adobe Experience Platform-data till [!DNL Azure Blob Storage] behållare.
+Med den här målservern kan du exportera filer som innehåller Adobe Experience Platform-data till [!DNL Azure Blob Storage]-behållaren.
 
-Exemplet nedan visar ett exempel på en målserverkonfiguration för en [!DNL Azure Blob Storage] mål.
+Exemplet nedan visar ett exempel på en målserverkonfiguration för ett [!DNL Azure Blob Storage]-mål.
 
 ```json
 {
@@ -284,19 +284,19 @@ Exemplet nedan visar ett exempel på en målserverkonfiguration för en [!DNL Az
 | Parameter | Typ | Beskrivning |
 |---|---|---|
 | `name` | Sträng | Namnet på målanslutningen. |
-| `destinationServerType` | Sträng | Ange det här värdet enligt målplattformen. För [!DNL Azure Blob Storage] mål, ange detta till `FILE_BASED_AZURE_BLOB`. |
-| `fileBasedAzureBlobDestination.path.templatingStrategy` | Sträng | *Obligatoriskt*. Ange det här värdet enligt den typ av värde som används i `path.value` fält.<ul><li>Om du vill att dina användare ska ange sina egna [!DNL Azure Blob] [URI för lagringskonto](https://learn.microsoft.com/en-us/azure/storage/blobs/storage-blobs-introduction) i användargränssnittet för Experience Platform anger du det här värdet till `PEBBLE_V1`. I det här fallet måste du mallsialisera `path.value` fält för att läsa värdet från [kunddatafält](../destination-configuration/customer-data-fields.md) ifylld av användaren. Det här användningsexemplet visas i exemplet ovan.</li><li>Om du använder en hårdkodad sökväg för din integrering, till exempel `"path.value": "https://myaccount.blob.core.windows.net/"`och ange det här värdet till `NONE`. |
-| `fileBasedAzureBlobDestination.path.value` | Sträng | Vägen till [!DNL Azure Blob] lagring. Detta kan antingen vara ett mallbaserat fält som läser värdet från [kunddatafält](../destination-configuration/customer-data-fields.md) ifylld av användaren (som i exemplet ovan) eller ett hårdkodat värde, som `https://myaccount.blob.core.windows.net/`. |
-| `fileBasedAzureBlobDestination.container.templatingStrategy` | Sträng | *Obligatoriskt*. Ange det här värdet enligt den typ av värde som används i `container.value` fält.<ul><li>Om du vill att dina användare ska ange sina egna [!DNL Azure Blob] [behållarnamn](https://learn.microsoft.com/en-us/azure/storage/blobs/storage-blobs-introduction) i användargränssnittet för Experience Platform anger du det här värdet till `PEBBLE_V1`. I det här fallet måste du mallsialisera `container.value` fält för att läsa värdet från [kunddatafält](../destination-configuration/customer-data-fields.md) ifylld av användaren. Det här användningsexemplet visas i exemplet ovan.</li><li>Om du använder ett hårdkodat behållarnamn för integreringen, till exempel `"path.value: myContainer"`och ange det här värdet till `NONE`. |
-| `fileBasedAzureBlobDestination.container.value` | Sträng | Namnet på Azure Blob Storage-behållaren som ska användas för det här målet. Detta kan antingen vara ett mallbaserat fält som läser värdet från [kunddatafält](../destination-configuration/customer-data-fields.md) ifylld av användaren (som i exemplet ovan) eller ett hårdkodat värde, som `myContainer`. |
+| `destinationServerType` | Sträng | Ange det här värdet enligt målplattformen. Ange detta till `FILE_BASED_AZURE_BLOB` för [!DNL Azure Blob Storage] mål. |
+| `fileBasedAzureBlobDestination.path.templatingStrategy` | Sträng | *Krävs*. Ange det här värdet enligt den typ av värde som används i fältet `path.value`.<ul><li>Om du vill att dina användare ska ange sina egna [!DNL Azure Blob] [lagringskontos-URI](https://learn.microsoft.com/en-us/azure/storage/blobs/storage-blobs-introduction) i användargränssnittet för Experience Platform anger du det här värdet till `PEBBLE_V1`. I det här fallet måste du mallatisera fältet `path.value` för att kunna läsa värdet från [kunddatafälten](../destination-configuration/customer-data-fields.md) som fyllts i av användaren. Det här användningsexemplet visas i exemplet ovan.</li><li>Om du använder en hårdkodad sökväg för din integrering, till exempel `"path.value": "https://myaccount.blob.core.windows.net/"`, anger du det här värdet till `NONE`. |
+| `fileBasedAzureBlobDestination.path.value` | Sträng | Sökvägen till ditt [!DNL Azure Blob]-lagringsutrymme. Detta kan antingen vara ett mallbaserat fält som läser värdet från [kunddatafälten](../destination-configuration/customer-data-fields.md) som fyllts i av användaren (som visas i exemplet ovan) eller ett hårdkodat värde, som `https://myaccount.blob.core.windows.net/`. |
+| `fileBasedAzureBlobDestination.container.templatingStrategy` | Sträng | *Krävs*. Ange det här värdet enligt den typ av värde som används i fältet `container.value`.<ul><li>Om du vill att dina användare ska ange sitt eget [!DNL Azure Blob] [behållarnamn](https://learn.microsoft.com/en-us/azure/storage/blobs/storage-blobs-introduction) i användargränssnittet för Experience Platform anger du det här värdet till `PEBBLE_V1`. I det här fallet måste du mallatisera fältet `container.value` för att kunna läsa värdet från [kunddatafälten](../destination-configuration/customer-data-fields.md) som fyllts i av användaren. Det här användningsexemplet visas i exemplet ovan.</li><li>Om du använder ett hårdkodat behållarnamn för integreringen, till exempel `"path.value: myContainer"`, anger du det här värdet till `NONE`. |
+| `fileBasedAzureBlobDestination.container.value` | Sträng | Namnet på Azure Blob Storage-behållaren som ska användas för det här målet. Detta kan antingen vara ett mallbaserat fält som läser värdet från [kunddatafälten](../destination-configuration/customer-data-fields.md) som fyllts i av användaren (som visas i exemplet ovan) eller ett hårdkodat värde, som `myContainer`. |
 
 {style="table-layout:auto"}
 
 ## [!DNL Data Landing Zone] ([!DNL DLZ]) målserver {#dlz-example}
 
-Med den här målservern kan du exportera filer som innehåller plattformsdata till en [[!DNL Data Landing Zone]](../../../catalog/cloud-storage/data-landing-zone.md) lagring.
+Med den här målservern kan du exportera filer som innehåller plattformsdata till ett [[!DNL Data Landing Zone]](../../../catalog/cloud-storage/data-landing-zone.md)-lagringsutrymme.
 
-Exemplet nedan visar ett exempel på en målserverkonfiguration för en [!DNL Data Landing Zone] ([!DNL DLZ]).
+Exemplet nedan visar ett exempel på en målserverkonfiguration för ett [!DNL Data Landing Zone] ([!DNL DLZ])-mål.
 
 ```json
 {
@@ -315,17 +315,17 @@ Exemplet nedan visar ett exempel på en målserverkonfiguration för en [!DNL Da
 | Parameter | Typ | Beskrivning |
 |---|---|---|
 | `name` | Sträng | Namnet på målanslutningen. |
-| `destinationServerType` | Sträng | Ange det här värdet enligt målplattformen. För [!DNL Data Landing Zone] mål, ange detta till `FILE_BASED_DLZ`. |
-| `fileBasedDlzDestination.path.templatingStrategy` | Sträng | *Obligatoriskt*. Ange det här värdet enligt den typ av värde som används i `path.value` fält.<ul><li>Om du vill att dina användare ska ange sina egna [!DNL Data Landing Zone] i användargränssnittet för Experience Platform anger du det här värdet till `PEBBLE_V1`. I det här fallet måste du mallsialisera `path.value` fält för att läsa ett värde från [kunddatafält](../destination-configuration/customer-data-fields.md) ifylld av användaren. Det här användningsexemplet visas i exemplet ovan.</li><li>Om du använder en hårdkodad sökväg för din integrering, till exempel `"path.value": "https://myaccount.blob.core.windows.net/"`och ange det här värdet till `NONE`. |
+| `destinationServerType` | Sträng | Ange det här värdet enligt målplattformen. Ange detta till `FILE_BASED_DLZ` för [!DNL Data Landing Zone] mål. |
+| `fileBasedDlzDestination.path.templatingStrategy` | Sträng | *Krävs*. Ange det här värdet enligt den typ av värde som används i fältet `path.value`.<ul><li>Om du vill att dina användare ska ange sitt eget [!DNL Data Landing Zone]-konto i användargränssnittet för Experience Platform anger du det här värdet till `PEBBLE_V1`. I det här fallet måste du mallatisera fältet `path.value` för att läsa ett värde från [kunddatafälten](../destination-configuration/customer-data-fields.md) som fyllts i av användaren. Det här användningsexemplet visas i exemplet ovan.</li><li>Om du använder en hårdkodad sökväg för din integrering, till exempel `"path.value": "https://myaccount.blob.core.windows.net/"`, anger du det här värdet till `NONE`. |
 | `fileBasedDlzDestination.path.value` | Sträng | Sökvägen till målmappen som ska vara värd för de exporterade filerna. |
 
 {style="table-layout:auto"}
 
 ## [!DNL Google Cloud Storage] målserver {#gcs-example}
 
-Med den här målservern kan du exportera filer som innehåller plattformsdata till [!DNL Google Cloud Storage] konto.
+Med den här målservern kan du exportera filer som innehåller plattformsdata till ditt [!DNL Google Cloud Storage]-konto.
 
-Exemplet nedan visar ett exempel på en målserverkonfiguration för en [!DNL Google Cloud Storage] mål.
+Exemplet nedan visar ett exempel på en målserverkonfiguration för ett [!DNL Google Cloud Storage]-mål.
 
 ```json
 {
@@ -347,11 +347,11 @@ Exemplet nedan visar ett exempel på en målserverkonfiguration för en [!DNL Go
 | Parameter | Typ | Beskrivning |
 |---|---|---|
 | `name` | Sträng | Namnet på målanslutningen. |
-| `destinationServerType` | Sträng | Ange det här värdet enligt målplattformen. För [!DNL Google Cloud Storage] mål, ange detta till `FILE_BASED_GOOGLE_CLOUD`. |
-| `fileBasedGoogleCloudStorageDestination.bucket.templatingStrategy` | Sträng | *Obligatoriskt*. Ange det här värdet enligt den typ av värde som används i `bucket.value` fält.<ul><li>Om du vill att dina användare ska ange sina egna [!DNL Google Cloud Storage] hakparentesnamnet i användargränssnittet för Experience Platform, ange det här värdet som `PEBBLE_V1`. I det här fallet måste du mallsialisera `bucket.value` fält för att läsa ett värde från [kunddatafält](../destination-configuration/customer-data-fields.md) ifylld av användaren. Det här användningsexemplet visas i exemplet ovan.</li><li>Om du använder ett hårdkodat kryckennamn för din integrering, till exempel `"bucket.value": "my-bucket"`och ange det här värdet till `NONE`. |
-| `fileBasedGoogleCloudStorageDestination.bucket.value` | Sträng | Namnet på [!DNL Google Cloud Storage] bucket som ska användas för detta mål. Detta kan antingen vara ett mallbaserat fält som läser värdet från [kunddatafält](../destination-configuration/customer-data-fields.md) ifylld av användaren (som i exemplet ovan) eller ett hårdkodat värde, som `"value": "my-bucket"`. |
-| `fileBasedGoogleCloudStorageDestination.path.templatingStrategy` | Sträng | *Obligatoriskt*. Ange det här värdet enligt den typ av värde som används i `path.value` fält.<ul><li>Om du vill att dina användare ska ange sina egna [!DNL Google Cloud Storage] bucket path in the Experience Platform UI, set this value to `PEBBLE_V1`. I det här fallet måste du mallsialisera `path.value` fält för att läsa ett värde från [kunddatafält](../destination-configuration/customer-data-fields.md) ifylld av användaren. Det här användningsexemplet visas i exemplet ovan.</li><li>Om du använder en hårdkodad sökväg för din integrering, till exempel `"path.value": "/path/to/my-bucket"`och ange det här värdet till `NONE`.</li></ul> |
-| `fileBasedGoogleCloudStorageDestination.path.value` | Sträng | Sökvägen till [!DNL Google Cloud Storage] mapp som ska användas av det här målet. Detta kan antingen vara ett mallbaserat fält som läser värdet från [kunddatafält](../destination-configuration/customer-data-fields.md) ifylld av användaren (som i exemplet ovan) eller ett hårdkodat värde, som `"value": "/path/to/my-bucket"`. |
+| `destinationServerType` | Sträng | Ange det här värdet enligt målplattformen. Ange detta till `FILE_BASED_GOOGLE_CLOUD` för [!DNL Google Cloud Storage] mål. |
+| `fileBasedGoogleCloudStorageDestination.bucket.templatingStrategy` | Sträng | *Krävs*. Ange det här värdet enligt den typ av värde som används i fältet `bucket.value`.<ul><li>Om du vill att dina användare ska ange sina egna [!DNL Google Cloud Storage]-bucket-namn i användargränssnittet för Experience Platform anger du det här värdet till `PEBBLE_V1`. I det här fallet måste du mallatisera fältet `bucket.value` för att läsa ett värde från [kunddatafälten](../destination-configuration/customer-data-fields.md) som fyllts i av användaren. Det här användningsexemplet visas i exemplet ovan.</li><li>Om du använder ett hårdkodat pytsnamn för integreringen, till exempel `"bucket.value": "my-bucket"`, ska du ange det här värdet som `NONE`. |
+| `fileBasedGoogleCloudStorageDestination.bucket.value` | Sträng | Namnet på den [!DNL Google Cloud Storage]-bucket som ska användas av det här målet. Detta kan antingen vara ett mallbaserat fält som läser värdet från [kunddatafälten](../destination-configuration/customer-data-fields.md) som fyllts i av användaren (som visas i exemplet ovan) eller ett hårdkodat värde, som `"value": "my-bucket"`. |
+| `fileBasedGoogleCloudStorageDestination.path.templatingStrategy` | Sträng | *Krävs*. Ange det här värdet enligt den typ av värde som används i fältet `path.value`.<ul><li>Om du vill att dina användare ska ange sin egen [!DNL Google Cloud Storage]-bucket-sökväg i användargränssnittet för Experience Platform anger du det här värdet till `PEBBLE_V1`. I det här fallet måste du mallatisera fältet `path.value` för att läsa ett värde från [kunddatafälten](../destination-configuration/customer-data-fields.md) som fyllts i av användaren. Det här användningsexemplet visas i exemplet ovan.</li><li>Om du använder en hårdkodad sökväg för din integrering, till exempel `"path.value": "/path/to/my-bucket"`, anger du det här värdet till `NONE`.</li></ul> |
+| `fileBasedGoogleCloudStorageDestination.path.value` | Sträng | Sökvägen till mappen [!DNL Google Cloud Storage] som ska användas av det här målet. Detta kan antingen vara ett mallbaserat fält som läser värdet från [kunddatafälten](../destination-configuration/customer-data-fields.md) som fyllts i av användaren (som visas i exemplet ovan) eller ett hårdkodat värde, som `"value": "/path/to/my-bucket"`. |
 
 {style="table-layout:auto"}
 

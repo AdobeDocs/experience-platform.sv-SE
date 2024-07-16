@@ -4,62 +4,62 @@ description: Lär dig hur du ansluter Adobe Experience Platform till Oracle Eloq
 exl-id: c4431d85-5948-4122-9a99-dbacdde5a09f
 source-git-commit: e8f54f06ad3431227e140219a9960e8e04f83ccc
 workflow-type: tm+mt
-source-wordcount: '502'
-ht-degree: 1%
+source-wordcount: '493'
+ht-degree: 0%
 
 ---
 
-# Skapa en [!DNL Oracle Eloqua] källanslutning med plattformsgränssnitt
+# Skapa en [!DNL Oracle Eloqua]-källanslutning med hjälp av plattformens användargränssnitt
 
-Den här självstudiekursen innehåller steg för att skapa en [!DNL Oracle Eloqua] källanslutning med Adobe Experience Platform användargränssnitt.
+I den här självstudien beskrivs hur du skapar en [!DNL Oracle Eloqua]-källanslutning med Adobe Experience Platform-användargränssnittet.
 
 ## Komma igång
 
 Handboken kräver en fungerande förståelse av följande plattformskomponenter:
 
-* [Källor](../../../../home.md): Plattformen gör att data kan hämtas från olika källor samtidigt som du kan strukturera, märka och förbättra inkommande data med hjälp av plattformstjänster.
+* [Källor](../../../../home.md): Med plattformen kan data hämtas från olika källor samtidigt som du kan strukturera, etikettera och förbättra inkommande data med hjälp av plattformstjänster.
 * [Sandlådor](../../../../../sandboxes/home.md): Plattformen innehåller virtuella sandlådor som partitionerar en enda plattformsinstans i separata virtuella miljöer för att utveckla och utveckla program för digitala upplevelser.
 
-Om du redan har en autentiserad [!DNL Oracle Eloqua] på Platform kan du hoppa över resten av det här dokumentet och gå vidare till självstudiekursen på [skapa ett dataflöde för att ta fram automatiserade marknadsföringsdata för plattformen](../../dataflow/marketing-automation.md).
+Om du redan har ett autentiserat [!DNL Oracle Eloqua]-konto på Platform kan du hoppa över resten av det här dokumentet och gå vidare till självstudiekursen om att [skapa ett dataflöde för att få ut data för automatiserad marknadsföring till Platform](../../dataflow/marketing-automation.md).
 
 ### Samla in nödvändiga inloggningsuppgifter
 
-För att kunna ansluta [!DNL Oracle Eloqua] På plattformen måste du ange värden för följande autentiseringsegenskaper:
+För att kunna ansluta [!DNL Oracle Eloqua] till plattformen måste du ange värden för följande autentiseringsegenskaper:
 
 | Autentiseringsuppgifter | Beskrivning |
 | --- | --- |
-| Slutpunkt | Slutpunkten för [!DNL Oracle Eloqua] server. [!DNL Oracle Eloqua] har stöd för flera datacenter. Logga in på [[!DNL Oracle Eloqua] gränssnitt](https://login.eloqua.com) med dina inloggningsuppgifter och sedan kopiera bas-URL-delen från omdirigerings-URL:en. Formatet för URL-mönstret är `xxx.xx.eloqua.com` och ska anges utan `http` eller `https`. |
-| Användarnamn | Användarnamnet för [!DNL Oracle Eloqua] server. Användarnamnet måste vara formaterat som `siteName + \\ + username`, där `siteName` är företagsnamnet som du använde för att logga in på [!DNL Oracle Eloqua] och `username` är ditt användarnamn. Användarnamnet för inloggning kan till exempel vara: `Eloqua\Andy`. **Anteckning**: Du måste använda ett enda omvänt snedstreck (`\`) när användargränssnittet används eftersom Experience Platform-gränssnittet automatiskt lägger till ytterligare ett omvänt snedstreck (`\`) när du anger ett användarnamn. |
-| Lösenord | Lösenordet som motsvarar [!DNL Oracle Eloqua] användarnamn. |
+| Slutpunkt | Slutpunkten för [!DNL Oracle Eloqua]-servern. [!DNL Oracle Eloqua] har stöd för flera datacenter. Logga in på [[!DNL Oracle Eloqua] gränssnittet](https://login.eloqua.com) med dina autentiseringsuppgifter och kopiera sedan bas-URL-delen från omdirigerings-URL:en för att hitta slutpunkten. Formatet för URL-mönstret är `xxx.xx.eloqua.com` och bör anges utan `http` eller `https`. |
+| Användarnamn | Användarnamnet för [!DNL Oracle Eloqua]-servern. Användarnamnet måste vara formaterat som `siteName + \\ + username`, där `siteName` är det företagsnamn som du använde för att logga in på [!DNL Oracle Eloqua] och `username` är ditt användarnamn. Ditt inloggningsnamn kan till exempel vara: `Eloqua\Andy`. **Obs!**: Du måste använda ett enkelt omvänt snedstreck (`\`) när du använder användargränssnittet eftersom användargränssnittet i Experience Platform automatiskt lägger till ytterligare ett omvänt snedstreck (`\`) när du anger ett användarnamn. |
+| Lösenord | Lösenordet som motsvarar ditt [!DNL Oracle Eloqua]-användarnamn. |
 
-Mer information om autentiseringsuppgifter för [!DNL Oracle Eloqua], se [[!DNL Oracle Eloqua] guide om autentisering](https://docs.oracle.com/en/cloud/saas/marketing/eloqua-rest-api/Authentication_Basic.html).
+Mer information om autentiseringsuppgifter för [!DNL Oracle Eloqua] finns i [[!DNL Oracle Eloqua] handboken om autentisering](https://docs.oracle.com/en/cloud/saas/marketing/eloqua-rest-api/Authentication_Basic.html).
 
-När du har samlat in dina inloggningsuppgifter kan du följa stegen nedan för att länka dina [!DNL Oracle Eloqua] konto till plattform.
+När du har samlat in de nödvändiga inloggningsuppgifterna kan du följa stegen nedan för att länka ditt [!DNL Oracle Eloqua]-konto till plattformen.
 
-## Koppla samman [!DNL Oracle Eloqua] konto
+## Anslut ditt [!DNL Oracle Eloqua]-konto
 
-Välj **[!UICONTROL Sources]** från vänster navigering för att komma åt [!UICONTROL Sources] arbetsyta. The [!UICONTROL Catalog] visas en mängd olika källor som du kan använda för att skapa ett konto.
+I plattformsgränssnittet väljer du **[!UICONTROL Sources]** i den vänstra navigeringen för att komma åt arbetsytan i [!UICONTROL Sources]. På skärmen [!UICONTROL Catalog] visas en mängd olika källor som du kan använda för att skapa ett konto.
 
 Du kan välja lämplig kategori i katalogen till vänster på skärmen. Du kan också hitta den källa du vill arbeta med med med sökalternativet.
 
-Under [!UICONTROL Marketing automation] kategori, välj **[!UICONTROL Oracle Eloqua]** och sedan markera **[!UICONTROL Add data]**.
+Under kategorin [!UICONTROL Marketing automation] väljer du **[!UICONTROL Oracle Eloqua]** och sedan **[!UICONTROL Add data]**.
 
 ![katalog](../../../../images/tutorials/create/oracle-eloqua/catalog.png)
 
-The **[!UICONTROL Connect Oracle Eloqua account]** visas. På den här sidan kan du antingen använda nya autentiseringsuppgifter eller befintliga.
+Sidan **[!UICONTROL Connect Oracle Eloqua account]** visas. På den här sidan kan du antingen använda nya autentiseringsuppgifter eller befintliga.
 
 ### Befintligt konto
 
-Om du vill använda ett befintligt konto väljer du [!DNL Oracle Eloqua] konto som du vill skapa ett nytt dataflöde med och sedan välja **[!UICONTROL Next]** för att fortsätta.
+Om du vill använda ett befintligt konto väljer du det [!DNL Oracle Eloqua]-konto som du vill skapa ett nytt dataflöde med och väljer sedan **[!UICONTROL Next]** för att fortsätta.
 
 ![befintlig](../../../../images/tutorials/create/oracle-eloqua/existing.png)
 
 ### Nytt konto
 
-Om du skapar ett nytt konto väljer du **[!UICONTROL New account]** och ange sedan ett namn, en valfri beskrivning och lämpliga värden för [!DNL Oracle Eloqua] autentiseringsuppgifter. När du är klar väljer du **[!UICONTROL Connect to source]** och tillåt sedan lite tid för att upprätta den nya anslutningen.
+Om du skapar ett nytt konto väljer du **[!UICONTROL New account]** och anger sedan ett namn, en valfri beskrivning och lämpliga värden för dina [!DNL Oracle Eloqua]-inloggningsuppgifter. När du är klar väljer du **[!UICONTROL Connect to source]** och tillåt sedan lite tid för att upprätta den nya anslutningen.
 
-![new](../../../../images/tutorials/create/oracle-eloqua/new.png)
+![ny](../../../../images/tutorials/create/oracle-eloqua/new.png)
 
 ## Nästa steg
 
-I den här självstudiekursen har du autentiserat och skapat en källanslutning mellan [!DNL Oracle Eloqua] konto och plattform. Du kan nu fortsätta med nästa självstudiekurs och [skapa ett dataflöde för att ta fram automatiserade marknadsföringsdata för plattformen](../../dataflow/marketing-automation.md).
+Genom att följa den här självstudiekursen har du autentiserat och skapat en källanslutning mellan ditt [!DNL Oracle Eloqua]-konto och din plattform. Du kan nu fortsätta med nästa självstudiekurs och [skapa ett dataflöde för att överföra data för automatiserad marknadsföring till plattformen](../../dataflow/marketing-automation.md).

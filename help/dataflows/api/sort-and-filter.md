@@ -4,33 +4,33 @@ description: Den här självstudiekursen beskriver syntaxen för sortering och f
 exl-id: 029c3199-946e-4f89-ba7a-dac50cc40c09
 source-git-commit: c7ff379b260edeef03f8b47f932ce9040eef3be2
 workflow-type: tm+mt
-source-wordcount: '860'
-ht-degree: 1%
+source-wordcount: '826'
+ht-degree: 0%
 
 ---
 
 # Sortera och filtrera svar i API:t för Flow Service
 
-Vid listning (GET) i dialogrutan [API för flödestjänst](https://www.adobe.io/experience-platform-apis/references/flow-service/)kan du använda frågeparametrar för att sortera och filtrera svaren. Den här handboken innehåller en referens för hur du använder de här parametrarna för olika användningsområden.
+När du utför listförfrågningar (GET) i [Flow Service API](https://www.adobe.io/experience-platform-apis/references/flow-service/) kan du använda frågeparametrar för att sortera och filtrera svar. Den här handboken innehåller en referens för hur du använder de här parametrarna för olika användningsområden.
 
 ## Sortering
 
-Du kan sortera svar med en `orderby` frågeparam. Följande resurser kan sorteras i API:
+Du kan sortera svar med hjälp av en `orderby`-frågeparam. Följande resurser kan sorteras i API:
 
 * [Anslutningar](https://www.adobe.io/experience-platform-apis/references/flow-service/#tag/Connections)
-* [Källanslutningar](https://www.adobe.io/experience-platform-apis/references/flow-service/#tag/Source-connections)
+* [Source-anslutningar](https://www.adobe.io/experience-platform-apis/references/flow-service/#tag/Source-connections)
 * [Målanslutningar](https://www.adobe.io/experience-platform-apis/references/flow-service/#tag/Target-connections)
 * [Flöden](https://www.adobe.io/experience-platform-apis/references/flow-service/#tag/Flows)
-* [Körningar](https://www.adobe.io/experience-platform-apis/references/flow-service/#tag/Runs)
+* [Kör](https://www.adobe.io/experience-platform-apis/references/flow-service/#tag/Runs)
 
-Om du vill använda parametern måste du ange dess värde till den specifika egenskap som du vill sortera efter (till exempel `?orderby=name`). Du kan lägga till ett plustecken (`+`) för stigande ordning eller minustecken (`-`) för fallande ordning. Om inget ordningsprefix anges sorteras listan som standard i stigande ordning.
+Om du vill använda parametern måste du ange dess värde för den specifika egenskap som du vill sortera efter (till exempel `?orderby=name`). Du kan lägga till ett plustecken (`+`) för stigande ordning eller minustecken (`-`) för fallande ordning. Om inget ordningsprefix anges sorteras listan som standard i stigande ordning.
 
 ```http
 GET /flows?orderby=name
 GET /flows?orderby=-name
 ```
 
-Du kan också kombinera en sorteringsparameter med en filterparameter genom att använda symbolen &quot;och&quot; (`&`).
+Du kan också kombinera en sorteringsparameter med en filterparameter genom att använda en&quot;och&quot;-symbol (`&`).
 
 ```http
 GET /flows?property=state==enabled&orderby=createdAt
@@ -38,13 +38,13 @@ GET /flows?property=state==enabled&orderby=createdAt
 
 ## Filtrering
 
-Du kan filtrera svar med en `property` parameter med ett nyckelvärdesuttryck. Till exempel: `?property=id==12345` returnerar bara resurser vars `id` egenskapen är exakt lika med `12345`.
+Du kan filtrera svar med en `property`-parameter med ett nyckelvärdesuttryck. `?property=id==12345` returnerar till exempel bara resurser vars `id`-egenskap är exakt `12345`.
 
 Filtrering kan tillämpas generellt på alla egenskaper i en entitet så länge som den giltiga sökvägen till den egenskapen är känd.
 
 >[!NOTE]
 >
->Om en egenskap är kapslad i ett arrayobjekt måste du lägga till hakparenteser (`[]`) till arrayen i sökvägen. Se avsnittet om [filtrera på arrayegenskaper](#arrays) till exempel.
+>Om en egenskap är kapslad i ett arrayobjekt måste du lägga till hakparenteser (`[]`) till arrayen i sökvägen. Se avsnittet [filtrera arrayegenskaper](#arrays) för exempel.
 
 **Returnera alla källanslutningar där källtabellens namn är `lead`:**
 
@@ -70,7 +70,7 @@ GET /flows?property=transformations[].params.segmentSelectors.selectors[].value.
 
 ### Filtrera på arrayegenskaper {#arrays}
 
-Du kan filtrera baserat på egenskaperna för objekt i arrayer genom att lägga till `[]` till arrayegenskapens namn.
+Du kan filtrera baserat på egenskaperna för objekt i arrayer genom att lägga till `[]` i arrayegenskapens namn.
 
 **Returflöden som är associerade med specifika källanslutningar:**
 
@@ -84,13 +84,13 @@ GET /flows?property=sourceConnectionIds[]==9874984,6980696
 GET /flows?property=transformations[].params.segmentSelectors.selectors[].value.id==5722a16f-5e1f-4732-91b6-3b03943f759a
 ```
 
-**Returnera källanslutningar som har en kolumn med en specifik `name` värde:**
+**Returnera källanslutningar som har en kolumn med ett specifikt `name`-värde:**
 
 ```http
 GET /sourceConnections?property=params.columns[].name==firstName
 ```
 
-**Söka efter flödeskörnings-ID för ett mål genom att filtrera på segment-ID:**
+**Slå upp flödeskörnings-ID för ett mål genom att filtrera på segment-ID:**
 
 ```http
 GET /runs?property=metrics.recordSummary.targetSummaries[].entitySummaries[].id==segment:068d6e2c-b546-4c73-bfb7-9a9d33375659
@@ -98,7 +98,7 @@ GET /runs?property=metrics.recordSummary.targetSummaries[].entitySummaries[].id=
 
 ### `count`
 
-Alla filtreringsfrågor kan läggas till med `count` frågeparameter med värdet `true` för att returnera antalet resultat. API-svaret innehåller en `count` egenskap vars värde representerar antalet totalt filtrerade objekt. De filtrerade objekten returneras inte i det här anropet.
+Alla filtreringsfrågor kan läggas till med frågeparametern `count` med värdet `true` för att returnera antalet resultat. API-svaret innehåller en `count`-egenskap vars värde representerar antalet filtrerade objekt. De filtrerade objekten returneras inte i det här anropet.
 
 **Returnera antalet aktiverade flöden i systemet:**
 
@@ -197,17 +197,17 @@ Beroende på vilken Flow Service-enhet du hämtar kan olika egenskaper användas
 
 ## Användningsfall {#use-cases}
 
-I det här avsnittet finns några specifika exempel på hur du kan använda filtrering och sortering för att returnera information om vissa anslutningar eller för att hjälpa dig med felsökningsfrågor. Om du vill att Adobe ska lägga till fler användningsområden använder du **[!UICONTROL Detailed feedback options]** på sidan för att skicka en begäran.
+I det här avsnittet finns några specifika exempel på hur du kan använda filtrering och sortering för att returnera information om vissa anslutningar eller för att hjälpa dig med felsökningsfrågor. Om det finns fler användningsfall som du vill att Adobe ska lägga till använder du **[!UICONTROL Detailed feedback options]** på sidan för att skicka en begäran.
 
-**Filtrera så att bara anslutningar till en viss destination returneras**
+**Filtrera bara för att returnera anslutningar till ett visst mål**
 
-Du kan bara använda filter för att returnera anslutningar till vissa mål. Fråga först `connectionSpecs` slutpunkt som nedan:
+Du kan bara använda filter för att returnera anslutningar till vissa mål. Fråga först `connectionSpecs`-slutpunkten enligt nedan:
 
 ```http
 GET /connectionSpecs
 ```
 
-Sök sedan efter det du vill `connectionSpec` genom att inspektera `name` parameter. Du kan till exempel söka efter Amazon Ads, Pega eller SFTP i dialogrutan `name` parameter. Motsvarande `id` är `connectionSpec` som du kan söka efter i nästa API-anrop.
+Sök sedan efter önskad `connectionSpec` genom att undersöka parametern `name`. Du kan till exempel söka efter Amazon Ads, Pega eller SFTP och så vidare i parametern `name`. Motsvarande `id` är den `connectionSpec` som du kan söka efter i nästa API-anrop.
 
 Du kan till exempel filtrera destinationerna så att endast befintliga anslutningar till Amazon S3-anslutningar returneras:
 
@@ -215,15 +215,15 @@ Du kan till exempel filtrera destinationerna så att endast befintliga anslutnin
 GET /connections?property=connectionSpec.id==4890fc95-5a1f-4983-94bb-e060c08e3f81
 ```
 
-**Filtrera för att returnera dataflöden till endast mål**
+**Filtrera så att dataflöden endast returneras till mål**
 
-När du frågar `/flows` slutpunkten kan du, i stället för att returnera alla käll- och måldataflöden, använda ett filter för att endast returnera dataflöden till mål. Om du vill göra det använder du `isDestinationFlow` som frågeparameter, enligt följande:
+När du skickar en fråga till slutpunkten `/flows` kan du, i stället för att returnera alla källor och destinationsdataflöden, använda ett filter för att endast returnera dataflöden till destinationer. Använd `isDestinationFlow` som frågeparameter så här:
 
 ```http
 GET /flows?property=inheritedAttributes.properties.isDestinationFlow==true
 ```
 
-**Filter som returnerar dataflöden till en viss källa eller mål**
+**Filtrera bara för att returnera dataflöden till en viss källa eller mål**
 
 Du kan filtrera dataflöden om du bara vill returnera dataflöden till ett visst mål eller från en viss källa. Du kan till exempel filtrera destinationerna så att endast befintliga anslutningar till Amazon S3-anslutningar returneras:
 
@@ -231,7 +231,7 @@ Du kan filtrera dataflöden om du bara vill returnera dataflöden till ett visst
 GET /flows?property=inheritedAttributes.targetConnections[].connectionSpec.id==4890fc95-5a1f-4983-94bb-e060c08e3f81
 ```
 
-**Filtrera för att hämta alla körningar av ett dataflöde under en viss tidsperiod**
+**Filtrera för att hämta alla körningar av ett dataflöde för en viss tidsperiod**
 
 Du kan filtrera dataflödeskörningar av ett dataflöde så att du bara tittar på körningar under ett visst tidsintervall, som nedan:
 
@@ -249,4 +249,4 @@ GET /runs?property=flowId==<flow-id>&property=metrics.statusSummary.status==Fail
 
 ## Nästa steg
 
-Den här guiden beskriver hur du använder `orderby` och `property` frågeparametrar för att sortera och filtrera svar i Flow Service API. Stegvisa guider om hur du använder API:t för vanliga arbetsflöden i Platform finns i API-självstudiekurserna i [källor](../../sources/home.md) och [mål](../../destinations/home.md) dokumentation.
+I den här guiden beskrivs hur du använder frågeparametrarna `orderby` och `property` för att sortera och filtrera svar i API:t för Flow Service. Stegvisa guider om hur du använder API:t för vanliga arbetsflöden i Platform finns i API-självstudiekurserna i dokumentationen för [sources](../../sources/home.md) och [destination](../../destinations/home.md) .

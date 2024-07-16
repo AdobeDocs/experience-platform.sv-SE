@@ -4,36 +4,36 @@ description: I den här guiden beskrivs hur du använder Adobe Experience Platfo
 exl-id: 872c83d1-82e8-40d8-9b66-3e51a91a955f
 source-git-commit: 05a7b73da610a30119b4719ae6b6d85f93cdc2ae
 workflow-type: tm+mt
-source-wordcount: '381'
+source-wordcount: '379'
 ht-degree: 0%
 
 ---
 
 # Använda Adobe Experience Platform Assurance
 
-I den här självstudiekursen beskrivs hur du använder Adobe Experience Platform Assurance. Instruktioner om hur du installerar och implementerar Adobe Experience Platform Assurance-tillägget finns i självstudiekursen om [implementera tillägget Assurance](./implement-assurance.md).
+I den här självstudiekursen beskrivs hur du använder Adobe Experience Platform Assurance. Instruktioner om hur du installerar och implementerar Adobe Experience Platform Assurance-tillägget finns i självstudiekursen [Implementera Assurance-tillägget](./implement-assurance.md).
 
 ## Skapa sessioner
 
-När du loggat in på [Försäkringsgränssnitt](https://experience.adobe.com/assurance)kan du välja **[!UICONTROL Create Session]** för att börja skapa en session.
+När du har loggat in på [försäkringsgränssnittet](https://experience.adobe.com/assurance) kan du välja **[!UICONTROL Create Session]** för att börja skapa en session.
 
-![Knappen Skapa session markeras och visar var du kan skapa en session.](./images/using-assurance/create-session.png)
+![Knappen för att skapa session är markerad och visar var du kan skapa en session.](./images/using-assurance/create-session.png)
 
-The **[!UICONTROL Create New Session]** visas. Läs instruktionerna och fortsätt genom att välja **[!UICONTROL Start]**.
+Dialogrutan **[!UICONTROL Create New Session]** visas. Granska de angivna instruktionerna och fortsätt genom att välja **[!UICONTROL Start]**.
 
 ![Dialogrutan Skapa ny session visas med instruktioner om hur du använder Assurance.](./images/using-assurance/create-new-session.png)
 
-Nu kan du ange ett namn som identifierar sessionen och sedan ange en **[!UICONTROL Base URL]** (djuplänknings-URL för din app). När du har angett dessa uppgifter väljer du **[!UICONTROL Next]**.
+Du kan nu ange ett namn som identifierar sessionen och sedan ange en **[!UICONTROL Base URL]** (djuplänknings-URL för din app). Välj **[!UICONTROL Next]** när du har angett dessa uppgifter.
 
 >[!INFO]
 >
->Bas-URL är rotdefinitionen som används för att starta programmet från en URL. En sessions-URL skapas som du kan använda för att initiera Assurance-sessionen. Ett exempelvärde kan se ut så här: `myapp://default` I **[!UICONTROL Base URL]** anger du programmets grundläggande definition av djuplänken.
+>Bas-URL är rotdefinitionen som används för att starta programmet från en URL. En sessions-URL skapas som du kan använda för att initiera Assurance-sessionen. Ett exempelvärde kan se ut så här: `myapp://default` I fältet **[!UICONTROL Base URL]** skriver du appens grundläggande djuplänksdefinition.
 
-![Det fullständiga arbetsflödet för att skapa en ny session visas.](./images/using-assurance/create-session.gif)
+![Hela arbetsflödet för att skapa en ny session visas.](./images/using-assurance/create-session.gif)
 
 ## Anslut till en session
 
-När du har skapat en session ser du till att du ser **[!UICONTROL Create New Session]** visas nu en länk, en QR-kod och en PIN-kod.
+När du har skapat en session ser du till att du ser en länk, en QR-kod och en PIN-kod i dialogrutan **[!UICONTROL Create New Session]**.
 
 ![En dialogruta med alternativ för att ansluta till din Assurance-session visas.](./images/using-assurance/create-new-session-pin.png)
 
@@ -45,8 +45,8 @@ Du kan verifiera att din app är ansluten till Assurance när Adobe Experience P
 
 ## Exportera en session
 
-Om du vill exportera en Assurance-session väljer du **[!UICONTROL Export to JSON]** i en session:
+Om du vill exportera en Assurance-session väljer du **[!UICONTROL Export to JSON]** i en session på informationssidan för din app:
 
-![Exportera en session](./images/using-assurance/export-session.png)
+![Exporterar en session](./images/using-assurance/export-session.png)
 
-Exportalternativet respekterar sökfilterresultat och exporterar endast händelser som visas i händelseläget. Om du t.ex. sökte efter &quot;spåra&quot;-händelser och sedan väljer **[!UICONTROL Export to JSON]**, exporteras bara&quot;track&quot;-händelseresultatet&quot;.
+Exportalternativet respekterar sökfilterresultat och exporterar endast händelser som visas i händelseläget. Om du till exempel sökte efter &quot;track&quot;-händelser och sedan väljer **[!UICONTROL Export to JSON]** exporteras bara &quot;track&quot;-händelseresultatet.

@@ -19,12 +19,12 @@ ht-degree: 0%
 
 # Direktuppspelningssegmentering i användargränssnittet i Experience Platform
 
-Följande video är avsedd att ge en bättre förståelse för direktuppspelningssegmentering. Det visar ett exempel på en kundupplevelse följt av en snabb genomgång av de viktigaste funktionerna i [!DNL Platform] gränssnitt. Läs mer om direktuppspelningssegmentering och hur du gör direktuppspelningssegmentering i användargränssnittet i [gränssnittsguide för direktuppspelningssegmentering](../ui/streaming-segmentation.md).
+Följande video är avsedd att ge en bättre förståelse för direktuppspelningssegmentering. Den visar ett exempel på en kundupplevelse följt av en snabb genomgång av nyckelfunktionerna i gränssnittet [!DNL Platform]. Om du vill veta mer om direktuppspelningssegmentering och hur du gör direktuppspelningssegmentering i användargränssnittet läser du [gränssnittsguiden för direktuppspelningssegmentering](../ui/streaming-segmentation.md).
 
-Om du är intresserad av att direktuppspela segmentering med segmenterings-API:t kan du läsa [API-guide för direktuppspelningssegmentering](../api/streaming-segmentation.md).
+Om du är intresserad av att direktuppspela segmentering med segmenterings-API:t kan du läsa [API-handboken för direktuppspelning](../api/streaming-segmentation.md).
 
 >[!NOTE]
 >
->Användargränssnittet i Experience Platform uppdateras ofta och kan ha ändrats sedan videon spelades in. Den senaste informationen finns i [gränssnittsguide för direktuppspelningssegmentering](../ui/streaming-segmentation.md).
+>Användargränssnittet i Experience Platform uppdateras ofta och kan ha ändrats sedan videon spelades in. Den senaste informationen finns i [gränssnittsguiden för direktuppspelning](../ui/streaming-segmentation.md).
 
 >[!VIDEO](https://video.tv.adobe.com/v/36184?quality=12&learn=on)

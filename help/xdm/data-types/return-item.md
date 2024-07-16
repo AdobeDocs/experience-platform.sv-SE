@@ -1,16 +1,17 @@
 ---
 title: Returnera artikeldatatyp
 description: Läs mer om datatypen XDM (Return Item Experience Data Model).
-source-git-commit: de8e944cfec3b52d25bb02bcfebe57d6a2a35e39
+exl-id: e703d65b-a133-484e-96d6-6b1f50fc1e48
+source-git-commit: 8be502c9eea67119dc537a5d63a6c71e0bff1697
 workflow-type: tm+mt
 source-wordcount: '163'
 ht-degree: 0%
 
 ---
 
-# [!UICONTROL Return Item] datatyp
+# Datatypen [!UICONTROL Return Item]
 
-[!UICONTROL Return Item] är en XDM-datatyp (Experience Data Model) som används som standard för att hämta viktig information om returprocessen för ett köpt objekt.
+[!UICONTROL Return Item] är en XDM-datatyp (Standard Experience Data Model) som samlar in viktiga detaljer som rör returprocessen för ett köpt objekt.
 
 ![Ett diagram över datatypen Return Item.](../images/data-types/return-item.png)
 

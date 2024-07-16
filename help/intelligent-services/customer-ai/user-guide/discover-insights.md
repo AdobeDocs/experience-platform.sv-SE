@@ -7,7 +7,7 @@ description: Det här dokumentet är en guide för interaktion med Service Insta
 exl-id: 8aaae963-4029-471e-be9b-814147a5f160
 source-git-commit: 07a110f6d293abff38804b939014e28f308e3b30
 workflow-type: tm+mt
-source-wordcount: '2016'
+source-wordcount: '2035'
 ht-degree: 1%
 
 ---
@@ -24,7 +24,7 @@ För att kunna utnyttja insikter om kundens AI måste du ha en tjänstinstans me
 
 ## Översikt över tjänstinstans
 
-I [!DNL Adobe Experience Platform] Gränssnitt, välj **[!UICONTROL Services]** i den vänstra navigeringen. The *Tjänster* webbläsaren visas och visar tillgängliga intelligenta tjänster. I behållaren för kundens AI väljer du **[!UICONTROL Open]**.
+I användargränssnittet för [!DNL Adobe Experience Platform] väljer du **[!UICONTROL Services]** i den vänstra navigeringen. Webbläsaren *Services* visas och visar tillgängliga intelligenta tjänster. Välj **[!UICONTROL Open]** i behållaren för kund-AI.
 
 ![Åtkomst till din instans](../images/insights/navigate-to-service.png)
 
@@ -40,11 +40,11 @@ Välj ett tjänstinstansnamn som ska börja.
 
 ![Skapa instans](../images/insights/click-the-name.png)
 
-Därefter visas informationssidan för den aktuella tjänstinstansen med alternativet att välja **[!UICONTROL Latest scores]** eller **[!UICONTROL Performance summary]**. Standardfliken **[!UICONTROL Latest scores]** innehåller visualiseringar av dina data. Visualiseringarna och vad du kan göra med data beskrivs mer ingående i den här handboken.
+Därefter visas informationssidan för den tjänstinstansen med alternativet att välja **[!UICONTROL Latest scores]** eller **[!UICONTROL Performance summary]**. Standardfliken **[!UICONTROL Latest scores]** innehåller visualiseringar av dina data. Visualiseringarna och vad du kan göra med data beskrivs mer ingående i den här handboken.
 
-The **[!UICONTROL Performance summary]** visas de faktiska bortfall- eller konverteringsfrekvenserna för varje prioritetsbucket. Mer information finns i avsnittet om [nyckeltal](#performance-metrics).
+Fliken **[!UICONTROL Performance summary]** visar de faktiska bortfall- eller konverteringsfrekvenserna för varje prioritetsbucket. Mer information finns i avsnittet [sammanfattningsmått för prestanda](#performance-metrics).
 
-![konfigurationssida](../images/insights/landing_page_insights.png)
+![installationssida](../images/insights/landing_page_insights.png)
 
 ## Information om tjänstinstans
 
@@ -54,11 +54,11 @@ Det finns två sätt att visa tjänstinstansinformation: från kontrollpanelen e
 
 Om du vill visa en översikt över tjänstinstansinformationen på kontrollpanelen väljer du en tjänstinstansbehållare och undviker hyperlänken som är kopplad till namnet. Då öppnas en högerrät som innehåller ytterligare information. Kontrollerna innehåller följande:
 
-- **[!UICONTROL Edit]**: Markering **[!UICONTROL Edit]** gör att du kan ändra en befintlig tjänstinstans. Du kan redigera instansens namn, beskrivning och bedömningsfrekvens.
-- **[!UICONTROL Clone]**: Markering **[!UICONTROL Clone]** kopierar den valda tjänstinstansen. Du kan sedan ändra arbetsflödet för att göra mindre ändringar och byta namn på det som en ny instans.
-- **[!UICONTROL Delete]**: Du kan ta bort en tjänstinstans, inklusive alla tidigare körningar.
-- **[!UICONTROL Data source]**: En länk till den datauppsättning som används av den här instansen.
-- **[!UICONTROL Run Frequency]**: Hur ofta en poängsättning görs och när.
+- **[!UICONTROL Edit]**: Om du väljer **[!UICONTROL Edit]** kan du ändra en befintlig tjänstinstans. Du kan redigera instansens namn, beskrivning och bedömningsfrekvens.
+- **[!UICONTROL Clone]**: Om du väljer **[!UICONTROL Clone]** kopieras den valda tjänstinstansen. Du kan sedan ändra arbetsflödet för att göra mindre ändringar och byta namn på det som en ny instans.
+- **[!UICONTROL Delete]**: Du kan ta bort en tjänstinstans, inklusive eventuella tidigare körningar.
+- **[!UICONTROL Data source]**: En länk till datauppsättningen som används av den här instansen.
+- **[!UICONTROL Run Frequency]**: Hur ofta en poängsättning utförs och när.
 - **[!UICONTROL Score definition]**: En snabb översikt över målet som du konfigurerade för den här instansen.
 
 ![](../images/user-guide/service-instance-panel.png)
@@ -67,42 +67,42 @@ Om du vill visa en översikt över tjänstinstansinformationen på kontrollpanel
 >
 >Om en poängkörning misslyckas visas ett felmeddelande. Felmeddelandet visas under **Information om senaste körning** i den högra listen, som bara är synlig för misslyckade körningar.
 
-![meddelande om misslyckad körning](../images/insights/failed-run.png)
+![kunde inte köra meddelandet](../images/insights/failed-run.png)
 
 ### Visa fler insikter i listrutan
 
-Det andra sättet att visa ytterligare information för en tjänstinstans finns på sidan med insikter. Välj **[!UICONTROL Show more]** i det övre högra hörnet för att fylla i en listruta. Detaljer visas, till exempel poängdefinitionen, när den skapades, typ av benägenhet och vilka datamängder som används. Mer information om egenskaperna finns på [Konfigurera en AI-instans för kund](./configure.md).
+Det andra sättet att visa ytterligare information för en tjänstinstans finns på sidan med insikter. Välj **[!UICONTROL Show more]** i det övre högra hörnet för att fylla i en listruta. Detaljer visas, till exempel poängdefinitionen, när den skapades, typ av benägenhet och vilka datamängder som används. Mer information om de angivna egenskaperna finns på [Konfigurera en AI-instans](./configure.md).
 
 ![visa mer](../images/insights/landing-show-more.png)
 
 ### Förhandsgranskning av AI-datauppsättning för kund
 
-Om mer än en datauppsättning används av kundens AI, är en hyperlänk märkt **[!UICONTROL Multiple]** följt av antalet datauppsättningar inom hakparentes `()` anges.
+Om mer än en datauppsättning används av kundens AI anges en hyperlänk med namnet **[!UICONTROL Multiple]** följt av antalet datauppsättningar inom hakparenteser `()`.
 
 ![flera datauppsättningar](../images/insights/insights-multi-datasets.png)
 
-Om du väljer länken för flera datauppsättningar öppnas förhandsvisningsprogrammet för kundens AI-datauppsättning. Varje färg i förhandsvisningen representerar en datauppsättning som visas av färgnyckeln till vänster om datauppsättningens kolumner. I det här exemplet kan du se att bara **Datauppsättning 1** innehåller `PROP1` kolumn.
+Om du väljer länken för flera datauppsättningar öppnas förhandsvisningsprogrammet för kundens AI-datauppsättning. Varje färg i förhandsvisningen representerar en datauppsättning som visas av färgnyckeln till vänster om datauppsättningens kolumner. I det här exemplet ser du att bara **datauppsättningen** innehåller kolumnen `PROP1`.
 
 ![visa mer](../images/insights/dataset-preview.png)
 
 ### Redigera en instans
 
-Om du vill redigera en instans markerar du **[!UICONTROL Edit]** i den övre högra navigeringen.
+Om du vill redigera en instans väljer du **[!UICONTROL Edit]** i den övre högra navigeringen.
 
-![klicka på knappen Redigera](../images/insights/edit-button.png)
+![klicka på redigeringsknappen](../images/insights/edit-button.png)
 
-Dialogrutan Redigera visas. Du kan redigera instansens namn, beskrivning, status och bedömningsfrekvens. Bekräfta ändringarna och stäng dialogrutan genom att välja **[!UICONTROL Save]** längst ned till höger.
+Dialogrutan Redigera visas. Du kan redigera instansens namn, beskrivning, status och bedömningsfrekvens. Om du vill bekräfta ändringarna och stänga dialogrutan väljer du **[!UICONTROL Save]** i det nedre högra hörnet.
 
-![redigera poesi](../images/insights/edit-instance.png)
+![redigera pover](../images/insights/edit-instance.png)
 
 ### Fler åtgärder
 
-The **[!UICONTROL More actions]** knappen finns i den övre högra navigeringen bredvid **[!UICONTROL Edit]**. Markera **[!UICONTROL More actions]** öppnar en listruta där du kan välja någon av följande åtgärder:
+Knappen **[!UICONTROL More actions]** finns i den övre högra navigeringen bredvid **[!UICONTROL Edit]**. Om du väljer **[!UICONTROL More actions]** öppnas en listruta där du kan välja någon av följande åtgärder:
 
-- **[!UICONTROL Clone]**: Markering **[!UICONTROL Clone]** kopierar tjänstinstansens konfiguration. Du kan sedan ändra arbetsflödet för att göra mindre ändringar och byta namn på det som en ny instans.
+- **[!UICONTROL Clone]**: Om du väljer **[!UICONTROL Clone]** kopieras tjänstinstansen som har konfigurerats. Du kan sedan ändra arbetsflödet för att göra mindre ändringar och byta namn på det som en ny instans.
 - **[!UICONTROL Delete]**: Tar bort instansen.
-- **[!UICONTROL Access scores]**: Markering **[!UICONTROL Access scores]** öppnar en dialogruta med en länk till [ladda ned poäng för kundens AI](./download-scores.md) I självstudiekursen visas även det datauppsättnings-ID som krävs för att göra API-anrop.
-- **[!UICONTROL View run history]**: En dialogruta med en lista över alla poäng som är associerade med tjänstinstansen visas.
+- **[!UICONTROL Access scores]**: Om du väljer **[!UICONTROL Access scores]** öppnas en dialogruta med en länk till självstudiekursen [Hämta bakgrundsmusik för kund-AI](./download-scores.md). Dialogrutan innehåller även det datauppsättnings-ID som krävs för att göra API-anrop.
+- **[!UICONTROL View run history]**: En dialogruta med en lista över alla poängkörningar som är associerade med tjänstinstansen visas.
 
 ![fler åtgärder](../images/insights/more-actions.png)
 
@@ -122,7 +122,7 @@ Du kan hovra över en färg i ringen om du vill visa ytterligare information, ti
 
 ## Distribution av bakgrundsmusik
 
-The **[!UICONTROL Distribution of Scores]** ger en synlig sammanfattning av populationen baserat på poängen. Färgerna som visas i [!UICONTROL Distribution of Scores] kort representerar den typ av benägenhetspoäng som genereras. Genom att hovra över någon av poängfördelningarna får du det exakta antal som hör till den fördelningen.
+Kortet **[!UICONTROL Distribution of Scores]** ger dig en visuell sammanfattning av populationen baserat på poängen. Färgerna som visas på kortet [!UICONTROL Distribution of Scores] representerar den typ av prioritetsskala som genereras. Genom att hovra över någon av poängfördelningarna får du det exakta antal som hör till den fördelningen.
 
 ![fördelning av poäng](../images/insights/distribution-of-scores.png)
 
@@ -146,49 +146,49 @@ Du ser att det är mindre troligt att profiler med låg benägenhet att konverte
 
 ### Skapa ett segment
 
-Markera **[!UICONTROL Create Segment]** i någon av bucketerna för låg, medelstor och hög benägenhet dirigerar om dig till segmentbyggaren.
+Om du väljer knappen **[!UICONTROL Create Segment]** i någon av bucketerna för låg, medelhög och hög benägenhet omdirigeras du till segmentbyggaren.
 
 >[!NOTE]
 >
->The **[!UICONTROL Create Segment]** är bara tillgängligt om kundprofilen i realtid är aktiverad för datauppsättningen. Mer information om hur du aktiverar kundprofilen i realtid finns på [Översikt över kundprofiler i realtid](../../../rtcdp/overview.md).
+>Knappen **[!UICONTROL Create Segment]** är bara tillgänglig om kundprofilen i realtid är aktiverad för datauppsättningen. Mer information om hur du aktiverar kundprofilen i realtid finns i [Översikt över kundprofilen i realtid](../../../rtcdp/overview.md).
 
-![Klicka för att skapa segment](../images/insights/influential-factors-create-segment.png)
+![Klicka på Skapa segment](../images/insights/influential-factors-create-segment.png)
 
 ![Skapa ett segment](../images/insights/create-segment.png)
 
-Segmentverktyget används för att definiera ett segment. Vid val **[!UICONTROL Create Segment]** från Insights-sidan lägger Kund-AI automatiskt till den valda bukettinformationen i segmentet. Fyll i **Namn** och **Beskrivning** behållare som finns i den högra listen i användargränssnittet för segmentbyggaren. När du har gett segmentet ett namn och en beskrivning väljer du **[!UICONTROL Save]** överst till höger.
+Segmentverktyget används för att definiera ett segment. När du väljer **[!UICONTROL Create Segment]** från Insights-sidan lägger Customer AI automatiskt till den valda bucketinformationen i segmentet. Fyll i behållarna **Namn** och **Beskrivning** som finns till höger i segmentbyggarens användargränssnitt för att slutföra segmentskapandet. När du har gett segmentet ett namn och en beskrivning väljer du **[!UICONTROL Save]** längst upp till höger.
 
 >[!NOTE]
 >
 >Eftersom benägenhetspoängen skrivs till den enskilda profilen är de tillgängliga i segmentbyggaren som andra profilattribut. När du navigerar till segmentbyggaren för att skapa nya segment kan du se alla olika benägenhetspoäng under din namnområdes-AI för kunder.
 
-![Segmentfyllning in](../images/insights/segment-saving.png)
+![Segmentfyllning i](../images/insights/segment-saving.png)
 
-Om du vill visa det nya segmentet i användargränssnittet för plattformen väljer du **[!UICONTROL Segments]** i den vänstra navigeringen. The **[!UICONTROL Browse]** visas och alla tillgängliga segment visas.
+Om du vill visa det nya segmentet i plattformsgränssnittet väljer du **[!UICONTROL Segments]** i den vänstra navigeringen. Sidan **[!UICONTROL Browse]** visas och visar alla tillgängliga segment.
 
-![Alla segment](../images/insights/Segments-dashboard.png)
+![Alla dina segment](../images/insights/Segments-dashboard.png)
 
 ## Historiska prestanda {#historical-performance}
 
-The **[!UICONTROL Performance summary]** På fliken visas de faktiska bortfall- eller konverteringsfrekvenserna, som är indelade i de olika benägenhetsintervall som kunden har angett som AI.
+Fliken **[!UICONTROL Performance summary]** visar de faktiska bortfall- eller konverteringsfrekvenserna, indelade i de olika benägenhetsintervall som anges av kundens AI.
 
-![Fliken Prestandasammanfattning](../images/insights/summary_tab.png)
+![Fliken Resultatsammanfattning](../images/insights/summary_tab.png)
 
 Inledningsvis visas bara förväntade frekvenser (prickade linjer). Förväntade hastigheter visas när en poängkörning inte har utförts och data ännu inte är tillgängliga. När ett resultatfönster har passerat ersätts den förväntade hastigheten med en faktisk hastighet (heldragen linje).
 
 När du hovrar över raderna visas datumet och den faktiska/förväntade frekvensen för den dagen i den hakparken.
 
-![Exempel på Bucket](../images/insights/churn_tab.png)
+![Exempel på pyts](../images/insights/churn_tab.png)
 
-Du kan filtrera tidsramen för de förväntade och faktiska frekvenserna som visas. Välj **kalenderikon** ![icon](../images/insights/calendar_icon.png)välj sedan ett nytt datumintervall. Resultaten i varje bucket uppdateras för att visas inom det nya datumintervallet.
+Du kan filtrera tidsramen för de förväntade och faktiska frekvenserna som visas. Välj **kalenderikonen** ![ikonen](../images/insights/calendar_icon.png)och välj sedan ett nytt datumintervall. Resultaten i varje bucket uppdateras för att visas inom det nya datumintervallet.
 
 ![Datumväljare](../images/insights/date_selector.png)
 
 ### Enskilda poängsättningsgrader
 
-Den undre halvan av **[!UICONTROL Performance summary]** visar resultaten för varje enskild poängkörning. Välj listdatumet i det övre högra hörnet om du vill visa resultat för en annan poängkörning.
+I den nedre halvan av fliken **[!UICONTROL Performance summary]** visas resultatet för varje enskild poängkörning. Välj listdatumet i det övre högra hörnet om du vill visa resultat för en annan poängkörning.
 
-Beroende på om du förutser bortfall eller konvertering kan [!UICONTROL Distribution of Scores] I diagrammet visas fördelningen av profiler som är kurvformade/konverterade och inte kurvformade/inte konverterade i varje steg.
+Beroende på om du förutser kurvor eller konverteringar visar diagrammet [!UICONTROL Distribution of Scores] fördelningen av profiler som kurvats/konverterats och inte kurvkonverterats/inte konverterats i varje steg.
 
 ![individuell poängsättning](../images/insights/scoring_tab.png)
 
@@ -221,11 +221,11 @@ Exempel på indikatorer för högkvalitetsmodeller är:
 
 ### AUC (yta under kurvan)
 
-AUC återspeglar styrkan i relationen mellan rangordningen efter poäng och förekomsten av det förväntade målet. An **AUC** av 0,5 betyder att modellen inte är bättre än en slumpmässig gissning. An **AUC** av 1 innebär att modellen kan förutsäga exakt vem som kommer att vidta den relevanta åtgärden.
+AUC återspeglar styrkan i relationen mellan rangordningen efter poäng och förekomsten av det förväntade målet. En **AUC** på 0,5 betyder att modellen inte är bättre än en slumpmässig gissning. En **AUC** på 1 innebär att modellen kan förutsäga exakt vem som ska utföra den relevanta åtgärden.
 
 ## Nästa steg
 
-I det här dokumentet beskrevs de insikter som en kundens AI-tjänstinstans har gett. Nu kan du fortsätta med självstudiekursen på [ladda ned poäng i kundens AI](./download-scores.md) eller bläddra bland andra [Adobe Intelligent Services](../../home.md) stödlinjer som erbjuds.
+I det här dokumentet beskrevs de insikter som en kundens AI-tjänstinstans har gett. Du kan nu fortsätta med självstudiekursen om att [hämta poäng i kundens AI](./download-scores.md) eller gå till de andra [Adobe Intelligent Services](../../home.md)-guiderna som erbjuds.
 
 ## Ytterligare resurser
 

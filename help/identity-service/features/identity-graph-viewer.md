@@ -32,23 +32,23 @@ Att arbeta med identitetsdiagramvisningsprogrammet kräver förståelse för de 
 
 ### Terminologi
 
-- **Identitet (nod):** En identitet eller en nod är data som är unika för en enhet, vanligtvis en person. En identitet består av ett id-namnutrymme och ett identitetsvärde. En fullständigt kvalificerad identitet kan till exempel bestå av ett identitetsnamnutrymme för **E-post**, kombinerat med identitetsvärdet **robin<span>@email.com**.
-- **Länk (kant):** En länk eller kant representerar kopplingen mellan identiteter. Identitetslänkarna innehåller egenskaper som första etablerade och senaste uppdaterade tidsstämplar. Den första etablerade tidsstämpeln definierar det datum och den tidpunkt då en ny identitet länkas till en befintlig identitet. Den senast uppdaterade tidsstämpeln definierar det datum och den tidpunkt då en befintlig identitetslänk senast uppdaterades.
-- **Diagram (kluster):** Ett diagram eller kluster är en grupp identiteter och länkar som representerar en person.
+- **Identitet (nod):** En identitet eller en nod är data som är unika för en entitet, vanligtvis en person. En identitet består av ett id-namnutrymme och ett identitetsvärde. En fullständigt kvalificerad identitet kan till exempel bestå av ett identitetsnamnutrymme för **Email** kombinerat med identitetsvärdet **robin<span>@email.com**.
+- **Länk (kant):** En länk eller kant representerar anslutningen mellan identiteter. Identitetslänkarna innehåller egenskaper som första etablerade och senaste uppdaterade tidsstämplar. Den första etablerade tidsstämpeln definierar det datum och den tidpunkt då en ny identitet länkas till en befintlig identitet. Den senast uppdaterade tidsstämpeln definierar det datum och den tidpunkt då en befintlig identitetslänk senast uppdaterades.
+- **Diagram (kluster):** Ett diagram eller ett kluster är en grupp identiteter och länkar som representerar en person.
 
 ## Åtkomst till identitetsdiagramvisningsprogrammet {#access-identity-graph-viewer}
 
-Välj **[!UICONTROL Identities]** i den vänstra navigeringen och sedan väljer **[!UICONTROL Identity Graph]** i listan med flikar i sidhuvudet.
+I plattformsgränssnittet väljer du **[!UICONTROL Identities]** i den vänstra navigeringen och sedan **[!UICONTROL Identity Graph]** i listan med flikar i sidhuvudet.
 
 ![Arbetsytan Identiteter i användargränssnittet i Experience Platform med fliken Identitetsdiagram markerad.](../images/graph-viewer/identity-graph.png)
 
-Om du vill visa ett identitetsdiagram anger du ett ID-namnutrymme och dess motsvarande värde och väljer sedan **[!UICONTROL View]**.
+Om du vill visa ett identitetsdiagram anger du ett identitetsnamnutrymme och dess motsvarande värde och väljer sedan **[!UICONTROL View]**.
 
 >[!TIP]
 >
->Markera tabellikonen ![tabellikon](../images/identity-graph-viewer/table-icon.png) om du vill visa en panel med en lista över alla identitetsnamnutrymmen som finns i organisationen. Du kan använda valfritt identitetsnamnutrymme om du har ett giltigt identitetsvärde kopplat till dem. Mer information finns i [guide för identitetsnamnutrymme](./namespaces.md).
+>Markera tabellikonen ![table icon](../images/identity-graph-viewer/table-icon.png) om du vill visa en panel med en lista över alla identitetsnamnutrymmen som är tillgängliga i organisationen. Du kan använda valfritt identitetsnamnutrymme om du har ett giltigt identitetsvärde kopplat till dem. Mer information finns i [identitetsnamnutrymmesguiden](./namespaces.md).
 
-![Ett identitetsnamnutrymme och dess motsvarande värde som finns på sökskärmen i identitetsdiagrammet.](../images/graph-viewer/namespace-and-value.png)
+![Ett ID-namnutrymme och dess motsvarande värde finns på skärmen Identity Graph Lookup.](../images/graph-viewer/namespace-and-value.png)
 
 ## Identitetsdiagramvisningsprogrammets gränssnitt
 
@@ -60,19 +60,19 @@ I identitetsdiagrammet visas alla identiteter som är länkade till identitetsna
 
 >[!IMPORTANT]
 >
->Ett identitetsdiagram kräver minst två länkade identiteter som ska genereras och en giltig kombination av identitetsnamn och värde. Det maximala antalet identiteter som diagramvisningsprogrammet kan visa är 50. Se [appendix](#appendix) för mer information.
+>Ett identitetsdiagram kräver minst två länkade identiteter som ska genereras och en giltig kombination av identitetsnamn och värde. Det maximala antalet identiteter som diagramvisningsprogrammet kan visa är 50. Mer information finns i avsnittet [Bilaga](#appendix) nedan.
 
 ![Identitetsdiagramvisningsprogrammet med fem länkade identiteter.](../images/graph-viewer/graph.png)
 
 Markera en länk i diagrammet om du vill visa den datauppsättning och det batch-ID som bidrar till länken. När du väljer en länk uppdateras även rätt spår för att ge mer information om datakälldetaljer samt egenskaper som första etablerade och senaste uppdaterade tidsstämplar.
 
-![Identitetslänken mellan de markerade e-post- och GAID-noderna.](../images/graph-viewer/identity-link.png)
+![Identitetslänken mellan e-post- och GAID-noderna har valts.](../images/graph-viewer/identity-link.png)
 
-The [!UICONTROL Identities] tabellen ger en annan vy över dina identitetsdata, och visar identitetsnamnutrymmet och kombinationen av identitetsvärde i ett tabellformat. Om du väljer en nod i diagrammet uppdateras det markerade linjeobjektet i [!UICONTROL Identities] tabell.
+Tabellen [!UICONTROL Identities] innehåller en annan vy av dina identitetsdata, som listar identitetsnamnutrymmet och kombinationen av identitetsvärde i ett tabellformat. Om du väljer en nod i diagrammet uppdateras det markerade linjeobjektet i tabellen [!UICONTROL Identities].
 
 ![Identitetstabellen med listan över identiteter som är länkade i diagrammet.](../images/graph-viewer/identities-table.png)
 
-Använd listrutemenyn för att sortera diagramdata och markera information i ett specifikt identitetsnamnutrymme. Välj till exempel **[!UICONTROL Email]** på menyn för att visa data som är specifika för e-postidentitetens namnutrymme.
+Använd listrutemenyn för att sortera diagramdata och markera information i ett specifikt identitetsnamnutrymme. Välj till exempel **[!UICONTROL Email]** på menyn om du vill visa data som är specifika för e-postidentitetens namnområde.
 
 ![Identitetstabellen är sorterad så att endast e-postdata visas.](../images/graph-viewer/sort-email.png)
 
@@ -87,21 +87,21 @@ Följande tabell innehåller ytterligare information om de egenskaper för datak
 | Namn på datauppsättning | Namnet på den datauppsättning som innehåller dina batchdata. |
 | Schemanamn | Schemats namn. Schemat innehåller en uppsättning regler som representerar och validerar datastrukturen och dataformatet. |
 
-![Högerspåret, som visar identitetsdata samt informationens datakälla.](../images/graph-viewer/right-rail.png)
+![Högerspåret, som visar identitetsdata samt informationskällan.](../images/graph-viewer/right-rail.png)
 
-Du kan också använda *[!UICONTROL Data source]* om du vill se en lista över datakällor som bidrar till dina identiteter. Välj [!UICONTROL Data source] för en tabellvy över datauppsättningar och batch-ID:n.
+Du kan också använda *[!UICONTROL Data source]* för att visa en lista över datakällor som bidrar till dina identiteter. Välj [!UICONTROL Data source] om du vill ha en tabellvy över dina datauppsättningar och batch-ID:n.
 
-![Fliken Datakälla är markerad.](../images/graph-viewer/data-source-table.png)
+![Fliken för datakällan har valts.](../images/graph-viewer/data-source-table.png)
 
-Använd skjutreglaget för att filtrera diagramdata efter den tidpunkt då identiteterna först etablerades. Som standard visar identitetsdiagramvisningsprogrammet alla identiteter som är länkade i diagrammet. Håll ned och dra i skjutreglaget för att justera tiden till den senaste tidsstämpeln där en ny identitet länkades till diagrammet. I exemplet nedan visar diagrammet att den senaste identitetslänken (GAID) skapades på **[!UICONTROL 08/19/2020, 4:29:29 PM]**.
+Använd skjutreglaget för att filtrera diagramdata efter den tidpunkt då identiteterna först etablerades. Som standard visar identitetsdiagramvisningsprogrammet alla identiteter som är länkade i diagrammet. Håll ned och dra i skjutreglaget för att justera tiden till den senaste tidsstämpeln där en ny identitet länkades till diagrammet. I exemplet nedan visar diagrammet att den senaste identitetslänken (GAID) upprättades på **[!UICONTROL 08/19/2020, 4:29:29 PM]**.
 
 ![Tidsstämpelreglaget för diagramvisningsprogrammet har valts.](../images/graph-viewer/slider-one.png)
 
-Justera skjutreglaget för att se att en annan identitetslänk (e-post) skapades på **[!UICONTROL 08/19/2020, 4:25:30 PM]**.
+Justera skjutreglaget för att se att en annan identitetslänk (e-post) upprättades på **[!UICONTROL 08/19/2020, 4:25:30 PM]**.
 
 ![Tidsstämpelreglaget för diagramvisningsprogrammet justerat till den senast etablerade nya länken.](../images/graph-viewer/slider-two.png)
 
-Du kan också justera skjutreglaget för att se den tidigaste upprepningen av diagrammet. I exemplet nedan visar identitetsdiagramvisningsprogrammet att diagrammet först skapades **[!UICONTROL 08/19/2020, 4:11:49 PM]**, med de första länkarna ECID, Email och Phone.
+Du kan också justera skjutreglaget för att se den tidigaste upprepningen av diagrammet. I exemplet nedan visar identitetsdiagramvisningsprogrammet att diagrammet först skapades på **[!UICONTROL 08/19/2020, 4:11:49 PM]**, med de första länkarna ECID, Email och Phone.
 
 ![Tidsstämpelreglaget för diagramvisningsprogrammet justerat till den första etablerade nya länken.](../images/graph-viewer/slider-three.png)
 
@@ -114,14 +114,14 @@ Följande avsnitt innehåller ytterligare information om hur du arbetar med iden
 Fel kan inträffa vid åtkomst till identitetsdiagramvisningsprogrammet. Nedan följer en lista över krav och begränsningar som ska beaktas när du arbetar med identitetsdiagramvisningsprogrammet.
 
 - Ett identitetsvärde måste finnas i det valda namnutrymmet.
-- Identitetsdiagramvisningsprogrammet kräver minst två länkade identiteter för att kunna generera. Det är möjligt att det bara finns ett identitetsvärde och inga länkade identiteter, och i det här fallet skulle värdet bara finnas i [!DNL Profile] visningsprogram.
+- Identitetsdiagramvisningsprogrammet kräver minst två länkade identiteter för att kunna generera. Det är möjligt att det bara finns ett identitetsvärde och inga länkade identiteter, och i det här fallet finns värdet bara i [!DNL Profile]-visningsprogrammet.
 - Identitetsdiagramvisningsprogrammet får inte överskrida det maximala antalet 50 identiteter.
 
 ![error-screen](../images/graph-viewer/error-screen.png)
 
 ### Få åtkomst till identitetsdiagramvisningsprogrammet från datauppsättningar
 
-Du kan även komma åt identitetsdiagramvisningsprogrammet med hjälp av datauppsättningsgränssnittet. Från datauppsättningarna [!UICONTROL Browse] väljer du en datauppsättning som du vill interagera med och väljer sedan **[!UICONTROL Preview dataset]**
+Du kan även komma åt identitetsdiagramvisningsprogrammet med hjälp av datauppsättningsgränssnittet. På sidan med datauppsättningar [!UICONTROL Browse] väljer du en datauppsättning som du vill interagera med och sedan **[!UICONTROL Preview dataset]**
 
 ![preview-dataset](../images/identity-graph-viewer/preview-dataset.png)
 
@@ -135,7 +135,7 @@ I förhandsgranskningsfönstret väljer du en fingeravtrycksikon för att se vil
 
 ## Nästa steg
 
-Genom att läsa det här dokumentet har du lärt dig att utforska kundernas identitetsdiagram i användargränssnittet för plattformen. Mer information om identiteter i Platform finns i [Översikt över identitetstjänsten](../home.md)
+Genom att läsa det här dokumentet har du lärt dig att utforska kundernas identitetsdiagram i användargränssnittet för plattformen. Mer information om identiteter i plattformen finns i [Översikt över identitetstjänsten](../home.md)
 
 ## Changelog
 

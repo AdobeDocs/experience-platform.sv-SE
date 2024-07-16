@@ -13,9 +13,9 @@ ht-degree: 1%
 
 >[!NOTE]
 >
->Adobe Experience Platform Launch har omklassificerats som en serie datainsamlingstekniker i Adobe Experience Platform. Som ett resultat av detta har flera terminologiska förändringar införts i produktdokumentationen. Se följande [dokument](../../../term-updates.md) för en konsoliderad hänvisning till terminologiska förändringar.
+>Adobe Experience Platform Launch har omklassificerats som en serie datainsamlingstekniker i Adobe Experience Platform. Som ett resultat av detta har flera terminologiska förändringar införts i produktdokumentationen. I följande [dokument](../../../term-updates.md) finns en konsoliderad referens till de ändrade terminologin.
 
-**Förutsättningar**
+**Förhandskrav**
 
 För varje taggegenskap i Adobe Experience Platform krävs att följande tillägg installeras och konfigureras från skärmen Tillägg:
 
@@ -23,13 +23,13 @@ För varje taggegenskap i Adobe Experience Platform krävs att följande tilläg
 * Experience Cloud Visitor ID-tjänst
 * Kärntillägg
 
-Använd [&quot;Bädda in en spelare med ett \&lt;iframe> tagg&quot;](https://developers.google.com/youtube/player_parameters#Manual_IFrame_Embeds) kodfragment från Google utvecklardokument HTML på varje webbsida där en videospelare ska återges.
+Använd [&quot;Bädda in en spelare med ett \&lt;iframe\>-kodfragment&quot;](https://developers.google.com/youtube/player_parameters#Manual_IFrame_Embeds) från Google utvecklardokument HTML på varje webbsida där en videospelare ska återges.
 
-Det här tillägget, version 2.0.1, stöder inbäddning av en eller flera YouTube-videofilmer på en enda webbsida genom att infoga en `id` attribut med ett unikt värde i skripttaggen iframe, och som läggs till `enablejsapi=1` och `rel=0` till slutet av `src` attributvärde, om det inte redan finns med. Exempel:
+Det här tillägget, version 2.0.1, stöder inbäddning av en eller flera YouTube-videofilmer på en enda webbsida genom att infoga ett `id`-attribut med ett unikt värde i skripttaggen iframe och lägga till `enablejsapi=1` och `rel=0` i slutet av attributvärdet `src`, om det inte redan finns. Exempel:
 
 `<iframe id="player1" width="560" height="315" src="https://www.youtube.com/embed/xpatB77BzYE?enablejsapi=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>`
 
-Tillägget är även utformat för att dynamiskt kontrollera om det finns ett unikt ID-attributvärde, som `player1`, oavsett om `enablejsapi` och `rel` frågesträngsparametrar finns och om deras förväntade värden är korrekta. Därför kan YouTube-skripttaggen läggas till på en webbsida med eller utan `id` och om `enablejsapi` och `rel` frågesträngsparametrar inkluderas eller inte.
+Tillägget är även utformat för att dynamiskt kontrollera om det finns ett unikt ID-attributvärde, som `player1`, oavsett om frågesträngsparametrarna `enablejsapi` och `rel` finns och om deras förväntade värden är korrekta. Därför kan YouTube-skripttaggen läggas till på en webbsida med eller utan attributet `id` och om frågesträngsparametrarna `enablejsapi` och `rel` inkluderas eller inte.
 
 >[!NOTE]
 >
@@ -48,25 +48,25 @@ Det innebär att det blir ett lätt flimmer när sidan har lästs in. Detta bete
 
 Det finns sex tillgängliga dataelement i tillägget, varav inget kräver konfiguration.
 
-* **Spelhuvudsposition:** Spelhuvudspositionen spelas in i sekunder på tidslinjen när den anropas inom en tagg.
+* **Spelhuvudsposition:** Spelar in platsen, i sekunder, för spelhuvudets position på tidslinjen när den anropas inom en taggregel.
 * **Video-ID:** Anger det YouTube-ID som är associerat med videon.
 * **Videonamn:** Anger videons beskrivande eller egna namn.
-* **Video-URL:** Returnerar YouTube.com URL för den inlästa/uppspelande videon.
-* **Videotid:** Spelar in den totala längden (i sekunder) för videoinnehållet.
+* **Video-URL:** Returnerar YouTube.com för den video som är inläst/spelas upp.
+* **Videovaraktighet:** Registrerar den totala längden, i sekunder, för videoinnehållet.
 * **Tilläggsversion:** Det här dataelementet registrerar YouTube Tracking Extension-versionen, till exempel &quot;Video Tracking_YouTube_2.0.0&quot;.
 
 ## Händelser
 
 Det finns åtta tillgängliga händelser i tillägget. Endast anpassad punktspårning kräver konfiguration.
 
-* **Video Ready:** Startar när videon är lagad och klar att spelas upp.
-* **Videostart:** Utlöses när videon startas första gången och när `player.getCurrentTime() === 0`
-* **Videouppspelning:** Utlöses när videon spelas upp efter den första starten. Den här utlösaren aktiveras vid varje uppspelning.
-* **Pausa video:** Utlöses när videon pausas.
+* **Videoklar:** Utlöses när videon är klar för uppspelning och när den är klar för uppspelning.
+* **Videostart:** Utlöses när videon startas för första gången och när `player.getCurrentTime() === 0`
+* **Videouppspelning:** utlöses när videon spelas upp och spelas upp efter den första starten. Den här utlösaren aktiveras vid varje uppspelning.
+* **Videopaus:** Utlöses när videon pausas.
 * **Återuppta video:** Utlöses när videon återupptas och när `player.getCurrentTime() !== 0`
-* **Custom Cue Tracking:** Utlöses när videon når det angivna tröskelvärdet för video i procent. Om en video till exempel är 60 sekunder och den angivna referenspunkten är 50 %, utlöses händelsen när spelhuvudets position är 30 sekunder. Referenspunktsspårning gäller både för inledande uppspelning och uppspelning. Observera att händelsen inte utlöses om användaren söker över en referenspunkt. Referenspunktshändelser utlöses bara när spelhuvudet korsar den beräknade referenspunktspositionen på tidslinjen och videospelaren spelas upp.
-* **Videobuffert:** Utlöses när spelaren hämtar en viss mängd data innan videon börjar spelas upp.
-* **Video avslutad:** Startar när en video är klar.
+* **Custom Cue Tracking:** utlöses när videon når det angivna tröskelvärdet i procent. Om en video till exempel är 60 sekunder och den angivna referenspunkten är 50 %, utlöses händelsen när spelhuvudets position är 30 sekunder. Referenspunktsspårning gäller både för inledande uppspelning och uppspelning. Observera att händelsen inte utlöses om användaren söker över en referenspunkt. Referenspunktshändelser utlöses bara när spelhuvudet korsar den beräknade referenspunktspositionen på tidslinjen och videospelaren spelas upp.
+* **Videobuffert:** utlöses när spelaren hämtar en viss mängd data innan videon börjar spelas upp.
+* **Video avslutad:** utlöses när en video är klar.
 
 ## Användning
 
@@ -76,7 +76,7 @@ Regler har tre åtgärder:
 
 * **Ange variabler:** Ange Adobe Analytics-variabler (mappa till alla eller vissa inkluderade dataelement).
 * **Skicka fyr:** Skicka Adobe Analytics-fyren som ett anpassat länkspårningsanrop och ange ett länknamnsvärde.
-* **Rensa variabler:** Rensa Adobe Analytics-variablerna.
+* **Rensa variabler:** Rensa Adobe Analytics-variabler.
 
 ## Exempelmärkordsregel för &quot;Videostart&quot;
 
@@ -84,9 +84,9 @@ Följande videotilläggsobjekt ska inkluderas.
 
 * **Händelser**: &quot;Videostart&quot; (Den här händelsen aktiverar regeln när besökaren börjar spela upp en YouTube-video.)
 
-* **Villkor**: Ingen
+* **Villkor**: Inget
 
-* **Åtgärder**: Använd **Analystillägg** till åtgärden &quot;Ange variabler&quot;, för att mappa:
+* **Åtgärder**: Använd **Analytics-tillägget** för att ange variabler för att mappa:
 
    * Händelsen för videostart,
    * Ett prop/eVar för videodataelementet Duration
@@ -94,11 +94,11 @@ Följande videotilläggsobjekt ska inkluderas.
    * Ett prop/eVar för videoelementet Namn
    * Ett prop/eVar för Video URL-dataelementet
 
-  Inkludera sedan åtgärden &quot;Skicka signal&quot; (`s.tl`) med länknamnet&quot;video start&quot;, följt av åtgärden&quot;Clear Variables&quot;.
+  Inkludera sedan åtgärden&quot;Skicka signal&quot; (`s.tl`) med länknamnet&quot;videostart&quot; följt av åtgärden&quot;Rensa variabler&quot;.
 
 >[!TIP]
 > 
->För implementeringar där flera eVars eller props för varje videoelement inte kan användas, kan dataelementvärden sammanfogas inom plattformen, parsas i klassificeringsrapporter med hjälp av verktyget Klassificeringsregelbyggaren, vilket förklaras i [https://experienceleague.adobe.com/docs/analytics/components/classifications/classifications-rulebuilder/classification-rule-builder.html](https://experienceleague.adobe.com/docs/analytics/components/classifications/classifications-rulebuilder/classification-rule-builder.html)och sedan tillämpas som ett segment i Analysis Workspace.
+>För implementeringar där flera eVars- eller props för varje videoelement inte kan användas, kan dataelementvärden sammanfogas inom Platform, parsas i klassificeringsrapporter med hjälp av verktyget Klassificeringsregelbyggaren, som förklaras i [https://experienceleague.adobe.com/docs/analytics/components/classifications/classifications-rulebuilder/classification-rule-builder.html](https://experienceleague.adobe.com/docs/analytics/components/classifications/classifications-rulebuilder/classification-rule-builder.html), och sedan tillämpas som ett segment i Analysis Workspace.
 
 Om du vill sammanfoga videoinformationsvärden skapar du ett nytt dataelement som kallas&quot;Videometadata&quot; och programmerar det så att det hämtas in alla videodataelement (som listas ovan) och sammanställer dem. Exempel:
 
@@ -114,4 +114,4 @@ r.push(_satellite.getVar('Extension Version'));
 return r.join('|');
 ```
 
-Mer information om hur du skapar och utnyttjar dataelement effektivt i plattformen finns i [dataelement](../../../ui/managing-resources/data-elements.md) dokumentation.
+Mer information om hur du skapar och återanvänder dataelement effektivt i plattformen finns i dokumentationen för [dataelement](../../../ui/managing-resources/data-elements.md).

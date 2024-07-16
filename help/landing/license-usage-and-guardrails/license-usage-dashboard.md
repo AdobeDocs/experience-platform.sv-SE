@@ -11,12 +11,12 @@ ht-degree: 0%
 
 ---
 
-# [!UICONTROL License usage] kontrollpanel {#license-usage-dashboard}
+# Kontrollpanel för [!UICONTROL License usage] {#license-usage-dashboard}
 
 Adobe Experience Platform användargränssnitt (UI) är en kontrollpanel där du kan visa viktig information om din organisations licensanvändning, som den fångats in under en daglig ögonblicksbild.
 
-Detaljerade instruktioner om hur du får åtkomst till och interagerar med kontrollpanelen för licensanvändning i användargränssnittet, samt hur du får mer information om tillgängliga mätvärden som visas på kontrollpanelen, finns på [kontrollpanel för licensanvändning](../../dashboards/guides/license-usage.md).
+Detaljerade anvisningar om hur du får åtkomst till och interagerar med kontrollpanelen för licensanvändning i användargränssnittet, samt om hur du får mer information om tillgängliga mätvärden som visas på kontrollpanelen, finns i handboken [för licensanvändning](../../dashboards/guides/license-usage.md).
 
-Om du vill ha en översikt över alla instrumentpanelsfunktioner i Experience Platform börjar du med att läsa [översikt över instrumentpaneler](../../dashboards/home.md).
+Om du vill ha en översikt över alla instrumentpanelsfunktioner i Experience Platform börjar du med att läsa översikten [dashboards](../../dashboards/home.md).
 
 ![](../../dashboards/images/license-usage/dashboard-overview.png)

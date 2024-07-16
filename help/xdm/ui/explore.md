@@ -20,19 +20,19 @@ Den här självstudiekursen beskriver stegen för att utforska befintliga schema
 
 ## Söka efter en schemaresurs {#lookup}
 
-Välj **[!UICONTROL Schemas]** i den vänstra navigeringen. The [!UICONTROL Schemas] arbetsytan innehåller en **[!UICONTROL Browse]** för att utforska alla scheman i organisationen, tillsammans med ytterligare dedikerade flikar för att utforska **[!UICONTROL Classes]**, **[!UICONTROL Field groups]** och **[!UICONTROL Data types]** respektive.
+Välj **[!UICONTROL Schemas]** i den vänstra navigeringen i plattformsgränssnittet. På arbetsytan [!UICONTROL Schemas] finns en **[!UICONTROL Browse]**-flik som du kan använda för att utforska alla scheman i organisationen, tillsammans med ytterligare dedikerade flikar för utforskande av **[!UICONTROL Classes]**, **[!UICONTROL Field groups]** och **[!UICONTROL Data types]**.
 
 ![](../images/ui/explore/tabs.png)
 
 Filterikonen (![Filterikonbild](../images/ui/explore/icon.png)) visar kontroller i den vänstra listen för att begränsa listade resultat. Vilka kontroller som visas varierar beroende på vilken typ av resurs som visas.
 
-Om du till exempel vill filtrera listan så att endast standarddatatyper som tillhandahålls av Adobe visas väljer du **[!UICONTROL Datatype]** och **[!UICONTROL Adobe]** under **[!UICONTROL Type]** och **[!UICONTROL Owner]** -avsnitt.
+Om du till exempel vill filtrera listan så att endast standarddatatyper som tillhandahålls av Adobe visas, väljer du **[!UICONTROL Datatype]** och **[!UICONTROL Adobe]** under avsnitten **[!UICONTROL Type]** respektive **[!UICONTROL Owner]**.
 
-The **[!UICONTROL Included in Profile]** kan du filtrera resultaten så att endast resurser som används i scheman som har aktiverats för användning i [Kundprofil i realtid](../../profile/home.md). The **[!UICONTROL Show adhoc schemas]** växlar till och filtrerar listan med scheman som har skapats med fält som namngivits för att endast användas av en enskild datauppsättning.
+Med växlingsknappen **[!UICONTROL Included in Profile]** kan du filtrera resultat så att endast resurser som används i scheman som har aktiverats för användning i [Kundprofil för realtid](../../profile/home.md) visas. Växlingsknappen **[!UICONTROL Show adhoc schemas]** filtrerar listan med scheman som har skapats med fält som endast har namngetts för användning av en enskild datauppsättning.
 
-![The [!UICONTROL Schemas] arbetsyta [!UICONTROL Browse] med filterpanelen markerad.](../images/ui/explore/filter.png)
+![Fliken [!UICONTROL Schemas] Arbetsyta [!UICONTROL Browse] med filterpanelen markerad.](../images/ui/explore/filter.png)
 
-När resurser listas på **[!UICONTROL Classes]**, **[!UICONTROL Field groups]**, eller **[!UICONTROL Data types]** -flikar kan du välja **[!UICONTROL Adobe]** för att endast visa standardresurser eller **[!UICONTROL Customer]** om du bara vill visa resurser som har skapats av din organisation.
+När du visar resurser på flikarna **[!UICONTROL Classes]**, **[!UICONTROL Field groups]** eller **[!UICONTROL Data types]** kan du välja **[!UICONTROL Adobe]** om du bara vill visa standardresurser eller **[!UICONTROL Customer]** om du bara vill visa resurser som har skapats av organisationen.
 
 ![](../images/ui/explore/filter-data-type.png)
 
@@ -60,13 +60,13 @@ I Schemaredigeraren visas standardklasser (som genererats av Adobe) och fältgru
 
 ![Schemaredigeraren med hänglåsikonen markerad](../images/ui/explore/schema-editor-padlock-icon.png)
 
-Se [Lägga till anpassade fält i standardfältgrupper](./resources/schemas.md) dokumentation för vägledning. Du kan inte redigera en standardklass.
+Mer information finns i [Lägg till anpassade fält i standardfältgrupper](./resources/schemas.md) -dokumentationen. Du kan inte redigera en standardklass.
 
 ### Systemgenererade fält {#system-fields}
 
-Vissa fältnamn har ett understreck, till exempel `_repo` och `_id`. Dessa representerar platshållare för fält som systemet automatiskt genererar och tilldelar när data hämtas.
+Vissa fältnamn har ett understreck som `_repo` och `_id`. Dessa representerar platshållare för fält som systemet automatiskt genererar och tilldelar när data hämtas.
 
-Därför bör de flesta av dessa fält uteslutas från datastrukturen när de hämtas till Platform. Det huvudsakliga undantaget för den här regeln är [`_{TENANT_ID}` fält](../api/getting-started.md#know-your-tenant_id), som alla XDM-fält som skapas under din organisation måste namnges under.
+Därför bör de flesta av dessa fält uteslutas från datastrukturen när de hämtas till Platform. Det huvudsakliga undantaget för den här regeln är fältet [`_{TENANT_ID}` ](../api/getting-started.md#know-your-tenant_id), som alla XDM-fält som skapats under din organisation måste namnges under.
 
 ### Datatyper {#data-types}
 
@@ -74,7 +74,7 @@ För varje fält som visas på arbetsytan visas dess motsvarande datatyp bredvid
 
 ![](../images/ui/explore/data-types.png)
 
-Alla datatyper som läggs till med hakparenteser (`[]`) representerar en array med den aktuella datatypen. Till exempel en datatyp som **[!UICONTROL String]\[]** anger att fältet förväntar sig en array med strängvärden. En datatyp för **[!UICONTROL Payment Item]\[]** anger en array med objekt som följer [!UICONTROL Payment Item] datatyp.
+Alla datatyper som läggs till med hakparenteser (`[]`) representerar en matris med den aktuella datatypen. En datatyp på **[!UICONTROL String]\[]** anger till exempel att en matris med strängvärden förväntas för fältet. Datatypen **[!UICONTROL Payment Item]\[]** anger en array med objekt som överensstämmer med datatypen [!UICONTROL Payment Item].
 
 Om ett matrisfält baseras på en objekttyp kan du markera dess ikon på arbetsytan för att visa de förväntade attributen för varje matrisobjekt.
 
@@ -82,7 +82,7 @@ Om ett matrisfält baseras på en objekttyp kan du markera dess ikon på arbetsy
 
 ### [!UICONTROL Field properties] {#field-properties}
 
-När du markerar namnet på ett fält på arbetsytan uppdateras den högra listen så att information om fältet visas under **[!UICONTROL Field properties]**. Detta kan bland annat innehålla en beskrivning av fältets avsedda användningsfall, standardvärden, mönster, format, oavsett om fältet är obligatoriskt eller inte.
+När du markerar namnet på ett fält på arbetsytan uppdateras den högra listen så att information om det fältet visas under **[!UICONTROL Field properties]**. Detta kan bland annat innehålla en beskrivning av fältets avsedda användningsfall, standardvärden, mönster, format, oavsett om fältet är obligatoriskt eller inte.
 
 ![](../images/ui/explore/field-properties.png)
 
@@ -94,13 +94,13 @@ Om fältet som du inspekterar är ett uppräkningsfält, visar den högra listen
 
 När du inspekterar scheman som innehåller identitetsfält visas dessa fält i den vänstra listen under den klass eller fältgrupp som tillhandahåller dem till schemat. Markera namnet på identitetsfältet i den vänstra listen för att visa fältet på arbetsytan, oavsett hur djupt det är kapslat.
 
-Identitetsfält markeras på arbetsytan med en fingeravtrycksikon (![Fingeravtrycksikonbild](../images/ui/explore/identity-symbol.png)). Om du väljer identitetsfältets namn kan du visa ytterligare information, till exempel [namnutrymme för identitet](../../identity-service/features/namespaces.md) och om fältet är den primära identiteten för schemat eller inte.
+Identitetsfält markeras på arbetsytan med en fingeravtrycksikon (![Fingeravtrycksikonbild](../images/ui/explore/identity-symbol.png)). Om du väljer identitetsfältets namn kan du visa ytterligare information som [identitetsnamnområdet](../../identity-service/features/namespaces.md) och om fältet är den primära identiteten för schemat eller inte.
 
 ![](../images/ui/explore/identity-field.png)
 
 >[!NOTE]
 >
->Se guiden på [definiera identitetsfält](./fields/identity.md) om du vill ha mer information om identitetsfält och deras relation med plattformstjänster längre fram i kedjan.
+>Mer information om identitetsfält och deras relation med underordnade plattformstjänster finns i guiden [Definiera identitetsfält](./fields/identity.md).
 
 ### Relationsfält {#relationship}
 
@@ -112,8 +112,8 @@ Relationsfält markeras också unikt på arbetsytan och visar namnet på referen
 
 >[!NOTE]
 >
->Se självstudiekursen om [skapa en relation i användargränssnittet](../tutorials/relationship-ui.md) för mer information om hur relationer används i XDM-scheman.
+>Mer information om hur du använder relationer i XDM-scheman finns i självstudiekursen [Skapa en relation i användargränssnittet](../tutorials/relationship-ui.md).
 
 ## Nästa steg
 
-I det här dokumentet beskrivs hur du utforskar befintliga XDM-resurser i användargränssnittet i Experience Platform. Mer information om de olika funktionerna i [!UICONTROL Schemas] arbetsyta och [!DNL Schema Editor], se [[!UICONTROL Schemas] arbetsyta - översikt](./overview.md).
+I det här dokumentet beskrivs hur du utforskar befintliga XDM-resurser i användargränssnittet i Experience Platform. Mer information om de olika funktionerna på arbetsytan [!UICONTROL Schemas] och [!DNL Schema Editor] finns i [[!UICONTROL Schemas]-arbetsytans översikt](./overview.md).

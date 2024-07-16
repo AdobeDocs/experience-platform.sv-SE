@@ -17,11 +17,11 @@ Med Adobe Experience Platform Query Service kan du prenumerera på aviseringar f
 
 ## Kom igång
 
-Slutpunkterna som används i den här guiden ingår i Adobe Experience Platform [API för frågetjänst](https://developer.adobe.com/experience-platform-apis/references/query-service/). Innan du fortsätter bör du granska [komma igång-guide](./getting-started.md) för viktig information som du behöver känna till för att kunna anropa API:t, inklusive obligatoriska rubriker och hur du läser exempel-API-anrop.
+Slutpunkterna som används i den här guiden ingår i Adobe Experience Platform [Query Service API](https://developer.adobe.com/experience-platform-apis/references/query-service/). Innan du fortsätter bör du läsa [kom igång-guiden](./getting-started.md) för att få viktig information som du behöver känna till för att kunna ringa anrop till API:t, inklusive nödvändiga rubriker och hur du läser exempel-API-anrop.
 
 >[!IMPORTANT]
 >
->Om du vill få e-postaviseringar måste du först aktivera den här inställningen i användargränssnittet. Läs dokumentationen för [instruktioner om hur du aktiverar e-postaviseringar](../../observability/alerts/ui.md#enable-email-alerts).
+>Om du vill få e-postaviseringar måste du först aktivera den här inställningen i användargränssnittet. I dokumentationen finns [instruktioner om hur du aktiverar e-postaviseringar](../../observability/alerts/ui.md#enable-email-alerts).
 
 ## Aviseringstyper {#alert-types}
 
@@ -29,14 +29,14 @@ Tabellen nedan förklarar vilka frågeartikeltyper som stöds:
 
 >[!IMPORTANT]
 >
->The `delay` eller [!UICONTROL Query Run Delay] Varningstypen stöds för närvarande inte av API:t för frågetjänsten. Den här varningen meddelar dig om resultatet av en schemalagd frågekörning är försenat över ett angivet tröskelvärde. Om du vill använda den här varningen måste du ange en anpassad tid som utlöser en varning när frågan körs för den tiden utan att slutföras eller misslyckas. Mer information om hur du anger den här varningen i användargränssnittet finns i [frågescheman](../ui/query-schedules.md#alerts-for-query-status) dokumentation eller [guide till infogade frågeåtgärder](../ui/monitor-queries.md#query-run-delay).
+>Varningstypen `delay` eller [!UICONTROL Query Run Delay] stöds för närvarande inte av API:t för frågetjänsten. Den här varningen meddelar dig om resultatet av en schemalagd frågekörning är försenat över ett angivet tröskelvärde. Om du vill använda den här varningen måste du ange en anpassad tid som utlöser en varning när frågan körs för den tiden utan att slutföras eller misslyckas. Mer information om hur du anger den här aviseringen i användargränssnittet finns i [dokumentationen för frågescheman](../ui/query-schedules.md#alerts-for-query-status) eller i [handboken om infogade frågeåtgärder](../ui/monitor-queries.md#query-run-delay).
 
 | Aviseringstyp | Beskrivning |
 |---|---|
 | `start` | Den här varningen meddelar dig när en schemalagd frågekörning initieras eller börjar bearbetas. |
 | `success` | Den här varningen informerar dig när en schemalagd frågekörning har slutförts, vilket anger att frågan har körts utan fel. |
 | `failed` | Den här varningen utlöses när en schemalagd frågekörning påträffar ett fel eller misslyckas med att köras. Det hjälper er att snabbt identifiera och åtgärda problem. |
-| `quarantine` | Den här varningen aktiveras när en schemalagd frågekörning sätts i karantän. När frågor registreras i karantänfunktionen, placeras automatiskt alla schemalagda frågor som misslyckas tio på varandra följande körningar i en [!UICONTROL Quarantined] tillstånd. De måste sedan ingripa innan fler avrättningar kan utföras. |
+| `quarantine` | Den här varningen aktiveras när en schemalagd frågekörning sätts i karantän. När frågor registreras i karantänfunktionen, placeras automatiskt en [!UICONTROL Quarantined]-status i en schemalagd fråga som misslyckas tio på varandra följande körningar. De måste sedan ingripa innan fler avrättningar kan utföras. |
 
 >[!NOTE]
 >
@@ -57,7 +57,7 @@ Följande avsnitt går igenom de olika API-anrop du kan göra med hjälp av API:
 
 ## Hämta en lista över alla aviseringar för en organisation och en sandlåda {#get-list-of-org-alert-subs}
 
-Hämta en lista över alla aviseringar för en organisationssandlåda genom att göra en GET-begäran till `/alert-subscriptions` slutpunkt.
+Hämta en lista över alla aviseringar för en organisationssandlåda genom att göra en GET-begäran till slutpunkten `/alert-subscriptions`.
 
 **API-format**
 
@@ -76,10 +76,10 @@ Här följer en lista med tillgängliga frågeparametrar för att lista frågor.
 
 | Parameter | Beskrivning |
 | --------- | ----------- |
-| `orderby` | Fältet som anger resultatordningen. De fält som stöds är `created` och `updated`. Lägg till egenskapsnamnet med `+` för stigande och `-` för fallande ordning. Standardvärdet är `-created`. Observera att plustecknet (`+`) måste rymmas med `%2B`. Till exempel `%2Bcreated` är värdet för en stigande skapad order. |
+| `orderby` | Fältet som anger resultatordningen. De fält som stöds är `created` och `updated`. Lägg till egenskapsnamnet med `+` för stigande och `-` för fallande ordning. Standardvärdet är `-created`. Observera att plustecknet (`+`) måste föregås av `%2B`. `%2Bcreated` är till exempel värdet för en stigande skapad order. |
 | `pagesize` | Använd den här parametern för att styra antalet poster som du vill hämta från API-anropet per sida. Standardgränsen är den maximala mängden på 50 poster per sida. |
 | `page` | Ange sidnumret för de returnerade resultat som du vill se posterna för. |
-| `property` | Filtrera resultaten baserat på valda fält. Filtren **måste** Bli HTML rymd. Kommandon används för att kombinera flera uppsättningar filter. Följande egenskaper tillåter filtrering: <ul><li>id</li><li>assetId</li><li>status</li><li>alertType</li></ul> Operatorer som stöds är `==` (lika med). Till exempel: `id==6ebd9c2d-494d-425a-aa91-24033f3abeec` kommer att returnera varningen med ett matchande ID. |
+| `property` | Filtrera resultaten baserat på valda fält. Filtren **måste** vara HTML escape. Kommandon används för att kombinera flera uppsättningar filter. Följande egenskaper tillåter filtrering: <ul><li>id</li><li>assetId</li><li>status</li><li>alertType</li></ul> Operatorer som stöds är `==` (lika med). `id==6ebd9c2d-494d-425a-aa91-24033f3abeec` returnerar till exempel aviseringen med ett matchande ID. |
 
 **Begäran**
 
@@ -95,11 +95,11 @@ curl -X GET 'https://platform.adobe.io/data/foundation/query/alert-subscriptions
 
 **Svar**
 
-Ett lyckat svar returnerar HTTP 200-status och `alerts` array med sidnumrering och versionsinformation. The `alerts` arrayen innehåller information om alla varningar för en organisation och en viss sandlåda. Det finns högst tre larm tillgängliga per svar, en varning per varningstyp finns i svarsorganet.
+Ett lyckat svar returnerar HTTP 200-status och `alerts`-arrayen med sidnumrering och versionsinformation. Arrayen `alerts` innehåller information om alla aviseringar för en organisation och en viss sandlåda. Det finns högst tre larm tillgängliga per svar, en varning per varningstyp finns i svarsorganet.
 
 >[!NOTE]
 >
->The `alerts._links` -objektet i `alerts` arrayen har trunkerats för att vara kortfattad. Ett fullständigt exempel på `alerts._links` -objektet finns i [svar på begäran om POST](#subscribe-users).
+>Objektet `alerts._links` i arrayen `alerts` har trunkerats av utrymmesskäl. Ett fullständigt exempel på `alerts._links`-objektet finns i [svaret på POSTEN](#subscribe-users).
 
 ```json
 {
@@ -165,16 +165,16 @@ Ett lyckat svar returnerar HTTP 200-status och `alerts` array med sidnumrering o
 | Egenskap | Beskrivning |
 | -------- | ----------- |
 | `alerts.assetId` | Det fråge-ID som associerade aviseringen med en viss fråga. |
-| `alerts.id` | Namnet på aviseringen. Det här namnet genereras av larmtjänsten och används på larmpanelen. Varningsnamnet består av den mapp som innehåller varningen, `alertType`och flödes-ID. Information om de tillgängliga varningarna finns i [Dokumentation för kontrollpanelen för plattformsaviseringar](../../observability/alerts/ui.md). |
-| `alerts.status` | Varningen har fyra statusvärden: `enabled`, `enabling`, `disabled`och `disabling`. En varning lyssnar antingen aktivt efter händelser, pausas för framtida bruk samtidigt som alla relevanta prenumeranter och inställningar behålls, eller så sker en övergång mellan dessa lägen. |
-| `alerts.alertType` | Typ av varning. Det finns fem varningslägen tillgängliga för schemalagda frågor, men det finns bara fyra varningslägen tillgängliga för ad hoc-frågor. The `quarantine` varning är bara tillgänglig för schemalagda frågor. Du kan bara ange `delay` varning från användargränssnittet för plattformen. Av den anledningen `delay` beskrivs inte här. Tillgängliga aviseringar är: <ul><li>`start`: Meddelar en användare när frågekörningen har börjat.</li><li>`success`: Meddelar användaren när frågan har slutförts.</li><li>`failure`: Meddelar användaren om frågan misslyckas.</li><li>`quarantine`: Aktiveras när en schemalagd frågekörning sätts i karantän.</li></ul> |
+| `alerts.id` | Namnet på aviseringen. Det här namnet genereras av larmtjänsten och används på larmpanelen. Varningsnamnet består av mappen som lagrar varningen, `alertType` och flödes-ID:t. Information om de tillgängliga aviseringarna finns i dokumentationen för kontrollpanelen [Plattformsvarningar](../../observability/alerts/ui.md). |
+| `alerts.status` | Varningen har fyra statusvärden: `enabled`, `enabling`, `disabled` och `disabling`. En varning lyssnar antingen aktivt efter händelser, pausas för framtida bruk samtidigt som alla relevanta prenumeranter och inställningar behålls, eller så sker en övergång mellan dessa lägen. |
+| `alerts.alertType` | Typ av varning. Det finns fem varningslägen tillgängliga för schemalagda frågor, men det finns bara fyra varningslägen tillgängliga för ad hoc-frågor. Aviseringen `quarantine` är bara tillgänglig för schemalagda frågor. Du kan bara ange aviseringen `delay` från plattformsgränssnittet. Därför beskrivs inte `delay` här. Tillgängliga aviseringar är: <ul><li>`start`: Meddelar en användare när frågekörningen har startat.</li><li>`success`: Meddelar användaren när frågan har slutförts.</li><li>`failure`: Meddelar användaren om frågan misslyckas.</li><li>`quarantine`: Aktiveras när en schemalagd frågekörning sätts i karantän.</li></ul> |
 | `alerts._links` | Tillhandahåller information om tillgängliga metoder och slutpunkter som kan användas för att hämta, uppdatera, redigera eller ta bort information om detta varnings-ID. |
 | `_page` | Objektet innehåller egenskaper som beskriver ordningen, storleken, det totala antalet sidor och den aktuella sidan. |
 | `_links` | Objektet innehåller URI-referenser som kan användas för att hämta nästa eller föregående sida med resurser. |
 
 ## Hämta aviseringsprenumerationsinformation för en viss fråga eller ett visst schema-ID {#retrieve-all-alert-subscriptions-by-id}
 
-Hämta aviseringsprenumerationsinformationen för ett visst fråge-ID eller schema-ID genom att göra en GET-förfrågan till `/alert-subscriptions/{QUERY_ID}` eller `/alert-subscriptions/{SCHEDULE_ID}` slutpunkt.
+Hämta aviseringsprenumerationsinformationen för ett visst fråge-ID eller schema-ID genom att göra en GET-förfrågan till `/alert-subscriptions/{QUERY_ID}` eller `/alert-subscriptions/{SCHEDULE_ID}`-slutpunkten.
 
 **API-format**
 
@@ -202,7 +202,7 @@ curl -X GET 'https://platform.adobe.io/data/foundation/query/alert-subscriptions
 
 **Svar**
 
-Ett lyckat svar returnerar HTTP-statusen 200 och `alerts` matris som innehåller prenumerationsinformation för tillhandahållet fråge- eller schema-ID.
+Ett lyckat svar returnerar HTTP-statusen 200 och arrayen `alerts` som innehåller prenumerationsinformation för den angivna frågan eller det angivna schema-ID:t.
 
 ```json
 {
@@ -294,15 +294,15 @@ Ett lyckat svar returnerar HTTP-statusen 200 och `alerts` matris som innehåller
 | Egenskap | Beskrivning |
 | -------- | ----------- |
 | `assetId` | Varningen är kopplad till detta ID. ID:t kan vara antingen ett fråge-ID eller ett schema-ID. |
-| `id` | Namnet på aviseringen. Det här namnet genereras av larmtjänsten och används på larmpanelen. Varningsnamnet består av den mapp som innehåller varningen, `alertType`och flödes-ID. Information om de tillgängliga varningarna finns i [Dokumentation för kontrollpanelen för plattformsaviseringar](../../observability/alerts/ui.md). |
-| `status` | Varningen har fyra statusvärden: `enabled`, `enabling`, `disabled`och `disabling`. En varning lyssnar antingen aktivt efter händelser, pausas för framtida bruk samtidigt som alla relevanta prenumeranter och inställningar behålls, eller så sker en övergång mellan dessa lägen. |
-| `alertType` | Varje varning kan ha tre olika varningstyper. De är: <ul><li>`start`: Meddelar en användare när frågekörningen har börjat.</li><li>`success`: Meddelar användaren när frågan har slutförts.</li><li>`failure`: Meddelar användaren om frågan misslyckas.</li></ul> |
+| `id` | Namnet på aviseringen. Det här namnet genereras av larmtjänsten och används på larmpanelen. Varningsnamnet består av mappen som lagrar varningen, `alertType` och flödes-ID:t. Information om de tillgängliga aviseringarna finns i dokumentationen för kontrollpanelen [Plattformsvarningar](../../observability/alerts/ui.md). |
+| `status` | Varningen har fyra statusvärden: `enabled`, `enabling`, `disabled` och `disabling`. En varning lyssnar antingen aktivt efter händelser, pausas för framtida bruk samtidigt som alla relevanta prenumeranter och inställningar behålls, eller så sker en övergång mellan dessa lägen. |
+| `alertType` | Varje varning kan ha tre olika varningstyper. De är: <ul><li>`start`: Meddelar en användare när frågekörningen har startat.</li><li>`success`: Meddelar användaren när frågan har slutförts.</li><li>`failure`: Meddelar användaren om frågan misslyckas.</li></ul> |
 | `subscriptions.emailNotifications` | En matris med Adobe-registrerade e-postadresser för användare som har prenumererat på att ta emot e-postmeddelanden för aviseringen. |
 | `subscriptions.inContextNotifications` | En array med Adobe-registrerade e-postadresser för användare som har prenumererat på gränssnittsmeddelanden för aviseringen. |
 
 ## Hämta aviseringsprenumerationsinformation för en viss fråga eller schema-ID och aviseringstyp {#get-alert-info-by-id-and-alert-type}
 
-Hämta aviseringsprenumerationsinformationen för ett visst ID och en viss aviseringstyp genom att göra en GET-förfrågan till `/alert-subscriptions/{QUERY_ID}/{ALERT_TYPE}` slutpunkt. Detta gäller för både fråge- och schemalagda fråge-ID.
+Hämta aviseringsprenumerationsinformationen för ett visst ID och en viss aviseringstyp genom att göra en GET-förfrågan till slutpunkten `/alert-subscriptions/{QUERY_ID}/{ALERT_TYPE}`. Detta gäller för både fråge- och schemalagda fråge-ID.
 
 **API-format**
 
@@ -313,7 +313,7 @@ GET /alert-subscriptions/{SCHEDULE_ID}/{ALERT_TYPE}
 
 | Parametrar | Beskrivning |
 | -------- | ----------- |
-| `ALERT_TYPE` | This property describes the state of query execution that trigger an alert. Svaret kommer endast att innehålla prenumerationsinformation för aviseringar av den här typen. Varje varning kan ha tre olika varningstyper. De är: <ul><li>`start`: Meddelar en användare när frågekörningen har börjat.</li><li>`success`: Meddelar användaren när frågan har slutförts.</li><li>`failure`: Meddelar användaren om frågan misslyckas.</li></ul> |
+| `ALERT_TYPE` | This property describes the state of query execution that trigger an alert. Svaret kommer endast att innehålla prenumerationsinformation för aviseringar av den här typen. Varje varning kan ha tre olika varningstyper. De är: <ul><li>`start`: Meddelar en användare när frågekörningen har startat.</li><li>`success`: Meddelar användaren när frågan har slutförts.</li><li>`failure`: Meddelar användaren om frågan misslyckas.</li></ul> |
 | `QUERY_ID` | Den unika identifieraren för frågan som ska uppdateras. |
 | `SCHEDULE_ID` | Den unika identifieraren för den schemalagda frågan som ska uppdateras. |
 
@@ -382,14 +382,14 @@ Ett lyckat svar returnerar HTTP-statusen 200 och alla aviseringar som prenumerer
 | Egenskap | Beskrivning |
 | -------- | ----------- |
 | `assetId` | Det fråge-ID som associerade aviseringen med en viss fråga. |
-| `alertType` | Typ av varning. Det finns fem varningslägen tillgängliga för schemalagda frågor, men det finns bara fyra varningslägen tillgängliga för ad hoc-frågor. The `quarantine` varning är bara tillgänglig för schemalagda frågor. Du kan bara ange `delay` varning från användargränssnittet för plattformen. Av den anledningen `delay` beskrivs inte här. Tillgängliga aviseringar är: <ul><li>`start`: Meddelar en användare när frågekörningen har börjat.</li><li>`success`: Meddelar användaren när frågan har slutförts.</li><li>`failure`: Meddelar användaren om frågan misslyckas.</li><li>`quarantine`: Aktiveras när en schemalagd frågekörning sätts i karantän.</li></ul> |
+| `alertType` | Typ av varning. Det finns fem varningslägen tillgängliga för schemalagda frågor, men det finns bara fyra varningslägen tillgängliga för ad hoc-frågor. Aviseringen `quarantine` är bara tillgänglig för schemalagda frågor. Du kan bara ange aviseringen `delay` från plattformsgränssnittet. Därför beskrivs inte `delay` här. Tillgängliga aviseringar är: <ul><li>`start`: Meddelar en användare när frågekörningen har startat.</li><li>`success`: Meddelar användaren när frågan har slutförts.</li><li>`failure`: Meddelar användaren om frågan misslyckas.</li><li>`quarantine`: Aktiveras när en schemalagd frågekörning sätts i karantän.</li></ul> |
 | `subscriptions` | Ett objekt som används för att skicka registrerade e-post-ID:n för Adobe som är kopplade till aviseringarna och de kanaler som användarna kommer att ta emot aviseringarna i. |
 | `subscriptions.inContextNotifications` | En array med Adobe-registrerade e-postadresser för användare som har prenumererat på gränssnittsmeddelanden för aviseringen. |
 | `subscriptions.emailNotifications` | En matris med Adobe-registrerade e-postadresser för användare som har prenumererat på att ta emot e-postmeddelanden för aviseringen. |
 
 ## Hämta en lista med alla aviseringar som en användare prenumererar på {#get-alert-subscription-list}
 
-Hämta en lista med alla aviseringar som en användare prenumererar på genom att göra en GET-förfrågan till `/alert-subscriptions/user-subscriptions/{EMAIL_ID}` slutpunkt. Svaret innehåller varningsnamn, ID:n, status, varningstyp och meddelandekanaler.
+Hämta en lista över alla aviseringar som en användare prenumererar på genom att göra en GET-förfrågan till slutpunkten `/alert-subscriptions/user-subscriptions/{EMAIL_ID}`. Svaret innehåller varningsnamn, ID:n, status, varningstyp och meddelandekanaler.
 
 **API-format**
 
@@ -400,10 +400,10 @@ GET /alert-subscriptions/user-subscriptions/{EMAIL_ID}
 | Parametrar | Beskrivning |
 | -------- | ----------- |
 | `{EMAIL_ID}` | En e-postadress som är registrerad för ett Adobe-konto används för att identifiera de användare som prenumererar på aviseringar. |
-| `orderby` | Fältet som anger resultatordningen. De fält som stöds är `created` och `updated`. Lägg till egenskapsnamnet med `+` för stigande och `-` för fallande ordning. Standardvärdet är `-created`. Observera att plustecknet (`+`) måste rymmas med `%2B`. Till exempel `%2Bcreated` är värdet för en stigande skapad order. |
+| `orderby` | Fältet som anger resultatordningen. De fält som stöds är `created` och `updated`. Lägg till egenskapsnamnet med `+` för stigande och `-` för fallande ordning. Standardvärdet är `-created`. Observera att plustecknet (`+`) måste föregås av `%2B`. `%2Bcreated` är till exempel värdet för en stigande skapad order. |
 | `pagesize` | Använd den här parametern för att styra antalet poster som du vill hämta från API-anropet per sida. Standardgränsen är den maximala mängden på 50 poster per sida. |
 | `page` | Ange sidnumret för de returnerade resultat som du vill se posterna för. |
-| `property` | Filtrera resultaten baserat på valda fält. Filtren **måste** Bli HTML rymd. Kommandon används för att kombinera flera uppsättningar filter. Följande egenskaper tillåter filtrering: <ul><li>id</li><li>assetId</li><li>status</li><li>alertType</li></ul> Operatorer som stöds är `==` (lika med). Till exempel: `id==6ebd9c2d-494d-425a-aa91-24033f3abeec` kommer att returnera varningen med ett matchande ID. |
+| `property` | Filtrera resultaten baserat på valda fält. Filtren **måste** vara HTML escape. Kommandon används för att kombinera flera uppsättningar filter. Följande egenskaper tillåter filtrering: <ul><li>id</li><li>assetId</li><li>status</li><li>alertType</li></ul> Operatorer som stöds är `==` (lika med). `id==6ebd9c2d-494d-425a-aa91-24033f3abeec` returnerar till exempel aviseringen med ett matchande ID. |
 
 **Begäran**
 
@@ -419,7 +419,7 @@ curl -X GET 'https://platform.adobe.io/data/foundation/query/alert-subscriptions
 
 **Svar**
 
-Ett lyckat svar returnerar HTTP-status 200 och `items` -matrisen med information om de aviseringar som prenumererar på `emailId` tillhandahålls.
+Ett lyckat svar returnerar HTTP-status 200 och `items`-arrayen med information om de aviseringar som prenumereras av `emailId` som anges.
 
 ```json
 {
@@ -512,17 +512,17 @@ Ett lyckat svar returnerar HTTP-status 200 och `items` -matrisen med information
 
 | Egenskap | Beskrivning |
 | -------- | ----------- |
-| `name` | Namnet på aviseringen. Det här namnet genereras av larmtjänsten och används på larmpanelen. Varningsnamnet består av den mapp som innehåller varningen, `alertType`och flödes-ID. Information om de tillgängliga varningarna finns i [Dokumentation för kontrollpanelen för plattformsaviseringar](../../observability/alerts/ui.md). |
+| `name` | Namnet på aviseringen. Det här namnet genereras av larmtjänsten och används på larmpanelen. Varningsnamnet består av mappen som lagrar varningen, `alertType` och flödes-ID:t. Information om de tillgängliga aviseringarna finns i dokumentationen för kontrollpanelen [Plattformsvarningar](../../observability/alerts/ui.md). |
 | `assetId` | Det fråge-ID som associerade aviseringen med en viss fråga. |
-| `status` | Varningen har fyra statusvärden: `enabled`, `enabling`, `disabled`och `disabling`. En varning lyssnar antingen aktivt efter händelser, pausas för framtida bruk samtidigt som alla relevanta prenumeranter och inställningar behålls, eller så sker en övergång mellan dessa lägen. |
-| `alertType` | Typ av varning. Det finns fem varningslägen tillgängliga för schemalagda frågor, men det finns bara fyra varningslägen tillgängliga för ad hoc-frågor. The `quarantine` varning är bara tillgänglig för schemalagda frågor. Du kan bara ange `delay` varning från användargränssnittet för plattformen. Av den anledningen `delay` beskrivs inte här. Tillgängliga aviseringar är: <ul><li>`start`: Meddelar en användare när frågekörningen har börjat.</li><li>`success`: Meddelar användaren när frågan har slutförts.</li><li>`failure`: Meddelar användaren om frågan misslyckas.</li><li>`quarantine`: Aktiveras när en schemalagd frågekörning sätts i karantän.</li></ul> |
+| `status` | Varningen har fyra statusvärden: `enabled`, `enabling`, `disabled` och `disabling`. En varning lyssnar antingen aktivt efter händelser, pausas för framtida bruk samtidigt som alla relevanta prenumeranter och inställningar behålls, eller så sker en övergång mellan dessa lägen. |
+| `alertType` | Typ av varning. Det finns fem varningslägen tillgängliga för schemalagda frågor, men det finns bara fyra varningslägen tillgängliga för ad hoc-frågor. Aviseringen `quarantine` är bara tillgänglig för schemalagda frågor. Du kan bara ange aviseringen `delay` från plattformsgränssnittet. Därför beskrivs inte `delay` här. Tillgängliga aviseringar är: <ul><li>`start`: Meddelar en användare när frågekörningen har startat.</li><li>`success`: Meddelar användaren när frågan har slutförts.</li><li>`failure`: Meddelar användaren om frågan misslyckas.</li><li>`quarantine`: Aktiveras när en schemalagd frågekörning sätts i karantän.</li></ul> |
 | `subscriptions` | Ett objekt som används för att skicka registrerade e-post-ID:n för Adobe som är kopplade till aviseringarna och de kanaler som användarna kommer att ta emot aviseringarna i. |
-| `subscriptions.inContextNotifications` | Ett booleskt värde som avgör hur användarna får varningsmeddelanden. A `true` Värdet bekräftar att varningar ska lämnas via användargränssnittet. A `false` värdet ser till att användarna inte meddelas via den kanalen. |
-| `subscriptions.emailNotifications` | Ett booleskt värde som avgör hur användarna får varningsmeddelanden. A `true` värdet bekräftar att aviseringar ska skickas via e-post. A `false` värdet ser till att användarna inte meddelas via den kanalen. |
+| `subscriptions.inContextNotifications` | Ett booleskt värde som avgör hur användarna får varningsmeddelanden. Ett `true`-värde bekräftar att aviseringar ska skickas via användargränssnittet. Ett `false`-värde säkerställer att användarna inte meddelas via den kanalen. |
+| `subscriptions.emailNotifications` | Ett booleskt värde som avgör hur användarna får varningsmeddelanden. Ett `true`-värde bekräftar att aviseringar ska skickas via e-post. Ett `false`-värde säkerställer att användarna inte meddelas via den kanalen. |
 
 ## Skapa en avisering och prenumerera {#subscribe-users}
 
-Om du vill skapa en avisering och prenumerera på en användare som ska ta emot den gör du en `POST` begäran till `/alert-subscriptions` slutpunkt. Denna begäran kopplar en fråga till en nyligen skapad avisering med en `assetId` och prenumererar användare på varningar för frågan med hjälp av `emailIds`.
+Om du vill skapa en avisering och prenumerera på en användare som ska ta emot den, gör du en `POST`-begäran till `/alert-subscriptions`-slutpunkten. Den här begäran kopplar en fråga till en nyligen skapad avisering med en `assetId`-egenskap och prenumererar användare på aviseringar för den frågan med hjälp av `emailIds`.
 
 >[!IMPORTANT]
 >
@@ -560,11 +560,11 @@ curl -X POST https://platform.adobe.io/data/foundation/query/alert-subscriptions
 | Egenskap | Beskrivning |
 | -------- | ----------- |
 | `assetId` | Varningen är kopplad till detta ID. ID:t kan vara antingen ett fråge-ID eller ett schema-ID. |
-| `alertType` | Typ av varning. Det finns fem varningslägen tillgängliga för schemalagda frågor, men det finns bara fyra varningslägen tillgängliga för ad hoc-frågor. The `quarantine` varning är bara tillgänglig för schemalagda frågor. Du kan bara ange `delay` varning från användargränssnittet för plattformen. Av den anledningen `delay` beskrivs inte här. Tillgängliga aviseringar är: <ul><li>`start`: Meddelar en användare när frågekörningen har börjat.</li><li>`success`: Meddelar användaren när frågan har slutförts.</li><li>`failure`: Meddelar användaren om frågan misslyckas.</li><li>`quarantine`: Aktiveras när en schemalagd frågekörning sätts i karantän.</li></ul> |
+| `alertType` | Typ av varning. Det finns fem varningslägen tillgängliga för schemalagda frågor, men det finns bara fyra varningslägen tillgängliga för ad hoc-frågor. Aviseringen `quarantine` är bara tillgänglig för schemalagda frågor. Du kan bara ange aviseringen `delay` från plattformsgränssnittet. Därför beskrivs inte `delay` här. Tillgängliga aviseringar är: <ul><li>`start`: Meddelar en användare när frågekörningen har startat.</li><li>`success`: Meddelar användaren när frågan har slutförts.</li><li>`failure`: Meddelar användaren om frågan misslyckas.</li><li>`quarantine`: Aktiveras när en schemalagd frågekörning sätts i karantän.</li></ul> |
 | `subscriptions` | Ett objekt som används för att skicka registrerade e-post-ID:n för Adobe som är kopplade till aviseringarna och de kanaler som användarna kommer att ta emot aviseringarna i. |
-| `subscriptions.emailIds` | En matris med e-postadresser som identifierar de användare som ska ta emot aviseringarna. E-postadresserna **måste** vara registrerad på ett Adobe-konto. |
-| `subscriptions.inContextNotifications` | Ett booleskt värde som avgör hur användarna får varningsmeddelanden. A `true` Värdet bekräftar att varningar ska lämnas via användargränssnittet. A `false` värdet ser till att användarna inte meddelas via den kanalen. |
-| `subscriptions.emailNotifications` | Ett booleskt värde som avgör hur användarna får varningsmeddelanden. A `true` värdet bekräftar att aviseringar ska skickas via e-post. A `false` värdet ser till att användarna inte meddelas via den kanalen. |
+| `subscriptions.emailIds` | En matris med e-postadresser som identifierar de användare som ska ta emot aviseringarna. E-postadresserna **måste** registreras på ett Adobe-konto. |
+| `subscriptions.inContextNotifications` | Ett booleskt värde som avgör hur användarna får varningsmeddelanden. Ett `true`-värde bekräftar att aviseringar ska skickas via användargränssnittet. Ett `false`-värde säkerställer att användarna inte meddelas via den kanalen. |
+| `subscriptions.emailNotifications` | Ett booleskt värde som avgör hur användarna får varningsmeddelanden. Ett `true`-värde bekräftar att aviseringar ska skickas via e-post. Ett `false`-värde säkerställer att användarna inte meddelas via den kanalen. |
 
 {style="table-layout:auto"}
 
@@ -613,12 +613,12 @@ Ett lyckat svar returnerar HTTP-status 202 (Accepterad) med information om din n
 
 | Egenskap | Beskrivning |
 | -------- | ----------- |
-| `id` | Namnet på aviseringen. Det här namnet genereras av larmtjänsten och används på larmpanelen. Varningsnamnet består av den mapp som innehåller varningen, `alertType`och flödes-ID. Information om de tillgängliga varningarna finns i [Dokumentation för kontrollpanelen för plattformsaviseringar](../../observability/alerts/ui.md). |
+| `id` | Namnet på aviseringen. Det här namnet genereras av larmtjänsten och används på larmpanelen. Varningsnamnet består av mappen som lagrar varningen, `alertType` och flödes-ID:t. Information om de tillgängliga aviseringarna finns i dokumentationen för kontrollpanelen [Plattformsvarningar](../../observability/alerts/ui.md). |
 | `_links` | Tillhandahåller information om tillgängliga metoder och slutpunkter som kan användas för att hämta, uppdatera, redigera eller ta bort information om detta varnings-ID. |
 
 ## Aktivera eller inaktivera en varning {#enable-or-disable-alert}
 
-Denna begäran refererar till en viss avisering med en fråga- eller schema-ID och en aviseringstyp och uppdaterar aviseringsstatusen till antingen `enable` eller `disable`. Du kan uppdatera status för en avisering genom att göra en `PATCH` begäran till `/alert-subscriptions/{queryId}/{alertType}` eller `/alert-subscriptions/{scheduleId}/{alertType}` slutpunkt.
+Den här begäran refererar till en viss avisering med en fråga eller ett schema-ID och en aviseringstyp och uppdaterar aviseringsstatusen till antingen `enable` eller `disable`. Du kan uppdatera status för en avisering genom att göra en `PATCH`-begäran till `/alert-subscriptions/{queryId}/{alertType}`- eller `/alert-subscriptions/{scheduleId}/{alertType}`-slutpunkten.
 
 **API-format**
 
@@ -629,7 +629,7 @@ PATCH /alert-subscriptions/{SCHEDULE_ID}/{ALERT_TYPE}
 
 | Parametrar | Beskrivning |
 | -------- | ----------- |
-| `ALERT_TYPE` | Typ av varning. Det finns fem varningslägen tillgängliga för schemalagda frågor, men det finns bara fyra varningslägen tillgängliga för ad hoc-frågor. The `quarantine` varning är bara tillgänglig för schemalagda frågor. Du kan bara ange `delay` varning från användargränssnittet för plattformen. Av den anledningen `delay` beskrivs inte här. Tillgängliga aviseringar är: <ul><li>`start`: Meddelar en användare när frågekörningen har börjat.</li><li>`success`: Meddelar användaren när frågan har slutförts.</li><li>`failure`: Meddelar användaren om frågan misslyckas.</li><li>`quarantine`: Aktiveras när en schemalagd frågekörning sätts i karantän.</li></ul>Du måste ange den aktuella varningstypen i slutpunktens namnutrymme för att kunna ändra den. |
+| `ALERT_TYPE` | Typ av varning. Det finns fem varningslägen tillgängliga för schemalagda frågor, men det finns bara fyra varningslägen tillgängliga för ad hoc-frågor. Aviseringen `quarantine` är bara tillgänglig för schemalagda frågor. Du kan bara ange aviseringen `delay` från plattformsgränssnittet. Därför beskrivs inte `delay` här. Tillgängliga aviseringar är: <ul><li>`start`: Meddelar en användare när frågekörningen har startat.</li><li>`success`: Meddelar användaren när frågan har slutförts.</li><li>`failure`: Meddelar användaren om frågan misslyckas.</li><li>`quarantine`: Aktiveras när en schemalagd frågekörning sätts i karantän.</li></ul>Du måste ange den aktuella varningstypen i slutpunktens namnutrymme för att kunna ändra den. |
 | `QUERY_ID` | Den unika identifieraren för frågan som ska uppdateras. |
 | `SCHEDULE_ID` | Den unika identifieraren för den schemalagda frågan som ska uppdateras. |
 
@@ -654,7 +654,7 @@ curl -X PATCH 'https://platform.adobe.io/data/foundation/query/alert-subscriptio
 | -------- | ----------- |
 | `op` | Den åtgärd som ska utföras. För närvarande är det enda godkända värdet `replace`. |
 | `path` | Det här värdet relaterar till namnutrymmet i slutpunkten. För närvarande är det enda godkända värdet `/status`. |
-| `value` | I en lyckad PATCH-begäran ändras `status` Varningens värde. Godkända värden är `enable` eller `disable`. |
+| `value` | I en slutförd PATCH-begäran ändras aviseringens `status`-värde. Godkända värden är `enable` eller `disable`. |
 
 {style="table-layout:auto"}
 
@@ -673,14 +673,14 @@ Ett lyckat svar returnerar HTTP-status 200 med information om aviseringsstatus, 
 
 | Egenskap | Beskrivning |
 | -------- | ----------- |
-| `id` | Namnet på aviseringen. Det här namnet genereras av larmtjänsten och används på larmpanelen. Varningsnamnet består av den mapp som innehåller varningen, `alertType`och flödes-ID. Information om de tillgängliga varningarna finns i [Dokumentation för kontrollpanelen för plattformsaviseringar](../../observability/alerts/ui.md). |
+| `id` | Namnet på aviseringen. Det här namnet genereras av larmtjänsten och används på larmpanelen. Varningsnamnet består av mappen som lagrar varningen, `alertType` och flödes-ID:t. Information om de tillgängliga aviseringarna finns i dokumentationen för kontrollpanelen [Plattformsvarningar](../../observability/alerts/ui.md). |
 | `assetId` | Varningen är kopplad till detta ID. ID:t kan vara antingen ett fråge-ID eller ett schema-ID. |
-| `alertType` | Varje varning kan ha tre olika varningstyper. De är: <ul><li>`start`: Meddelar en användare när frågekörningen har börjat.</li><li>`success`: Meddelar användaren när frågan har slutförts.</li><li>`failure`: Meddelar användaren om frågan misslyckas.</li></ul> |
-| `status` | Varningen har fyra statusvärden: `enabled`, `enabling`, `disabled`och `disabling`. En varning lyssnar antingen aktivt efter händelser, pausas för framtida bruk samtidigt som alla relevanta prenumeranter och inställningar behålls, eller så sker en övergång mellan dessa lägen. |
+| `alertType` | Varje varning kan ha tre olika varningstyper. De är: <ul><li>`start`: Meddelar en användare när frågekörningen har startat.</li><li>`success`: Meddelar användaren när frågan har slutförts.</li><li>`failure`: Meddelar användaren om frågan misslyckas.</li></ul> |
+| `status` | Varningen har fyra statusvärden: `enabled`, `enabling`, `disabled` och `disabling`. En varning lyssnar antingen aktivt efter händelser, pausas för framtida bruk samtidigt som alla relevanta prenumeranter och inställningar behålls, eller så sker en övergång mellan dessa lägen. |
 
 ## Ta bort aviseringen för en viss fråga och larmtyp {#delete-alert-info-by-id-and-alert-type}
 
-Ta bort en avisering för en viss fråga eller ett visst schema-ID och en viss aviseringstyp genom att göra en DELETE-begäran till `/alert-subscriptions/{QUERY_ID}/{ALERT_TYPE}` eller `/alert-subscriptions/{SCHEDULE_ID}/{ALERT_TYPE}` slutpunkt.
+Ta bort en avisering för en viss fråga eller ett visst schema-ID och en aviseringstyp genom att göra en DELETE-begäran till slutpunkten `/alert-subscriptions/{QUERY_ID}/{ALERT_TYPE}` eller `/alert-subscriptions/{SCHEDULE_ID}/{ALERT_TYPE}`.
 
 ```http
 DELETE /alert-subscriptions/{QUERY_ID}/{ALERT_TYPE}
@@ -689,7 +689,7 @@ DELETE /alert-subscriptions/{SCHEDULE_ID}/{ALERT_TYPE}
 
 | Parametrar | Beskrivning |
 | -------- | ----------- |
-| `ALERT_TYPE` | Typ av varning. Det finns fem varningslägen tillgängliga för schemalagda frågor, men det finns bara fyra varningslägen tillgängliga för ad hoc-frågor. The `quarantine` varning är bara tillgänglig för schemalagda frågor. Du kan bara ange `delay` varning från användargränssnittet för plattformen. Av den anledningen `delay` beskrivs inte här. Tillgängliga aviseringar är: <ul><li>`start`: Meddelar en användare när frågekörningen har börjat.</li><li>`success`: Meddelar användaren när frågan har slutförts.</li><li>`failure`: Meddelar användaren om frågan misslyckas.</li><li>`quarantine`: Aktiveras när en schemalagd frågekörning sätts i karantän.</li></ul> Begäran från DELETE gäller endast den särskilda larmtypen. |
+| `ALERT_TYPE` | Typ av varning. Det finns fem varningslägen tillgängliga för schemalagda frågor, men det finns bara fyra varningslägen tillgängliga för ad hoc-frågor. Aviseringen `quarantine` är bara tillgänglig för schemalagda frågor. Du kan bara ange aviseringen `delay` från plattformsgränssnittet. Därför beskrivs inte `delay` här. Tillgängliga aviseringar är: <ul><li>`start`: Meddelar en användare när frågekörningen har startat.</li><li>`success`: Meddelar användaren när frågan har slutförts.</li><li>`failure`: Meddelar användaren om frågan misslyckas.</li><li>`quarantine`: Aktiveras när en schemalagd frågekörning sätts i karantän.</li></ul> Begäran från DELETE gäller endast den särskilda larmtypen. |
 | `QUERY_ID` | Den unika identifieraren för frågan som ska uppdateras. |
 | `SCHEDULE_ID` | Den unika identifieraren för den schemalagda frågan som ska uppdateras. |
 
@@ -718,6 +718,6 @@ Ett lyckat svar returnerar HTTP 200-status och ett bekräftelsemeddelande som in
 
 ## Nästa steg
 
-Den här guiden beskriver användningen av `/alert-subscriptions` slutpunkt i API:t för frågetjänsten. När du har läst den här guiden får du nu en bättre förståelse för hur du skapar en avisering för en fråga, prenumererar på aviseringar, vilka typer av aviseringar som är tillgängliga och hur du kan hämta, uppdatera och ta bort aviseringsprenumerationsinformation.
+Den här guiden beskriver användningen av slutpunkten `/alert-subscriptions` i API:t för frågetjänsten. När du har läst den här guiden får du nu en bättre förståelse för hur du skapar en avisering för en fråga, prenumererar på aviseringar, vilka typer av aviseringar som är tillgängliga och hur du kan hämta, uppdatera och ta bort aviseringsprenumerationsinformation.
 
-Se [API-guide för frågetjänst](./getting-started.md) om du vill veta mer om andra tillgängliga funktioner och åtgärder.
+Se [API-handboken för frågetjänsten](./getting-started.md) om du vill veta mer om andra tillgängliga funktioner och åtgärder.

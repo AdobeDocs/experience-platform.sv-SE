@@ -7,7 +7,7 @@ author: crhoades, ens25212
 exl-id: 29179b56-e49a-44e8-8c64-a7c383c2eaaf
 source-git-commit: e300e57df998836a8c388511b446e90499185705
 workflow-type: tm+mt
-source-wordcount: '2156'
+source-wordcount: '2153'
 ht-degree: 2%
 
 ---
@@ -27,7 +27,7 @@ Uppdateringar av befintliga funktioner:
 
 - [[!DNL Data Prep]](#data-prep)
 - [[!DNL Data Science Workspace]](#dsw)
-- [[!DNL Destinations] Tjänst](#destinations)
+- [Tjänsten [!DNL Destinations]](#destinations)
 - [[!DNL Intelligent Services]](#intelligent-services)
 - [[!DNL Real-Time Customer Profile]](#profile)
 - [[!DNL Sources]](#sources)
@@ -36,81 +36,81 @@ Uppdateringar av befintliga funktioner:
 
 Medan Adobe migrerar datasjön från Gen1 till Gen2 kan användare läsa från datasjön, men alla funktioner som skriver till datasjön påverkas. Adobe kommer att kontakta systemadministratörer för att i detalj diskutera migreringens konsekvenser och bekräfta migreringsdatum och -tider för specifika organisationer.
 
-Mer information finns i [Migreringsguide för datasjöer](../../landing/adls2-gen2-migration.md).
+Mer information finns i [Datasjömigreringsguiden](../../landing/adls2-gen2-migration.md).
 
 ## [!DNL Access control] {#access-control}
 
-[!DNL Experience Platform] hävstångar [Adobe Admin Console](https://adminconsole.adobe.com) produktprofiler för att länka användare med behörigheter och sandlådor. Behörigheter styr åtkomsten till en mängd plattformsfunktioner, inklusive datamodellering, profilhantering och sandlådeadministration.
+[!DNL Experience Platform] använder [Adobe Admin Console](https://adminconsole.adobe.com)-produktprofiler för att länka användare med behörigheter och sandlådor. Behörigheter styr åtkomsten till en mängd plattformsfunktioner, inklusive datamodellering, profilhantering och sandlådeadministration.
 
 **Viktiga funktioner**
 
 | Funktion | Beskrivning |
 | ------- | ----------- |
-| Behörigheter | I [!DNL Admin Console], fliken i en [!DNL Platform] Med produktprofilen kan du anpassa vilken [!DNL Platform] funktioner är tillgängliga för de användare som är kopplade till den profilen. Tillgängliga behörighetskategorier är: **[!UICONTROL Data Modeling]**, **[!UICONTROL Data Management]**, **[!UICONTROL Profile Management]**, **[!UICONTROL Identity Management]**, **[!UICONTROL Data Monitoring]**, **[!UICONTROL Sandbox Administration]**, **[!UICONTROL Destinations]**, **[!UICONTROL Data Ingestion]**, **[!UICONTROL Data Science Workspace]**, **[!UICONTROL Query Service]** och **[!UICONTROL Data Governance]**. |
-| Åtkomst till sandlådor | The **[!UICONTROL Permissions]** en flik i en [!DNL Platform] produktprofilen kan ge användare åtkomst till specifika sandlådor. Se avsnittet om [sandlådor](#sandboxes) nedan för mer information. |
+| Behörigheter | På fliken [!DNL Admin Console] i en [!DNL Platform] -produktprofil kan du anpassa vilka [!DNL Platform]-funktioner som är tillgängliga för användarna som är kopplade till profilen. Tillgängliga behörighetskategorier är: **[!UICONTROL Data Modeling]**, **[!UICONTROL Data Management]**, **[!UICONTROL Profile Management]**, **[!UICONTROL Identity Management]**, **[!UICONTROL Data Monitoring]**, **[!UICONTROL Sandbox Administration]**, **[!UICONTROL Destinations]**, **[!UICONTROL Data Ingestion]**, **[!UICONTROL Data Science Workspace]**, **[!UICONTROL Query Service]** och **[!UICONTROL Data Governance]**. |
+| Åtkomst till sandlådor | Fliken **[!UICONTROL Permissions]** i en [!DNL Platform]-produktprofil kan ge användare åtkomst till specifika sandlådor. Mer information finns i avsnittet om [sandlådor](#sandboxes) nedan. |
 
-Mer information finns i [åtkomstkontroll - översikt](../../access-control/home.md).
+Mer information finns i [åtkomstkontrollsöversikten](../../access-control/home.md).
 
 ## [!DNL Offer Decisioning] {#offer-decisioning}
 
-[!DNL Offer Decisioning] är en programtjänst som är integrerad med [!DNL Experience Platform]. Det gör att ni kan utnyttja [!DNL Platform] för att leverera det bästa erbjudandet och upplevelsen till era kunder via alla kontaktytor vid rätt tidpunkt.
+[!DNL Offer Decisioning] är en programtjänst integrerad med [!DNL Experience Platform]. Det gör att du kan utnyttja [!DNL Platform] för att leverera det bästa erbjudandet och upplevelsen till dina kunder via alla kontaktytor vid rätt tidpunkt.
 
 **Viktiga funktioner**
 
 | Funktion | Beskrivning |
 | ------- | ----------- |
 | Centraliserat erbjudande | Gränssnittet där du skapar och hanterar de olika elementen som utgör erbjudandena och definierar deras regler och begränsningar. |
-| Beslutsmotor för erbjudande | Beslutsmotorn för erbjudandet utnyttjar [!DNL Platform] data och [!DNL Real-Time Customer Profiles], tillsammans med erbjudandebiblioteket, för att välja rätt tidpunkt, kunder och kanaler som erbjudandena ska levereras till. |
+| Beslutsmotor för erbjudande | Beslutsmotorn för erbjudandet utnyttjar [!DNL Platform] data och [!DNL Real-Time Customer Profiles], tillsammans med erbjudandebiblioteket, för att välja rätt tid, kunder och kanaler som erbjudandena ska levereras till. |
 
-Mer information finns i [[!DNL Offer Decisioning]](https://experienceleague.adobe.com/docs/offer-decisioning/using/offer-decisioning-home.html?lang=sv) dokumentation.
+Mer information finns i dokumentationen för [[!DNL Offer Decisioning]](https://experienceleague.adobe.com/docs/offer-decisioning/using/offer-decisioning-home.html?lang=sv).
 
 ## [!DNL Sandboxes] {#sandboxes}
 
-[!DNL Experience Platform] är byggt för att berika applikationer för digitala upplevelser på global nivå. Företagen kör ofta flera program för digitala upplevelser parallellt och måste ta hänsyn till utveckling, testning och driftsättning av dessa applikationer samtidigt som man ser till att de uppfyller gällande krav. För att tillgodose detta behov [!DNL Experience Platform] innehåller sandlådor som partitionerar en enda [!DNL Platform] till separata virtuella miljöer för att utveckla och utveckla applikationer för digitala upplevelser.
+[!DNL Experience Platform] har byggts för att berika program för digitala upplevelser på global nivå. Företagen kör ofta flera program för digitala upplevelser parallellt och måste ta hänsyn till utveckling, testning och driftsättning av dessa applikationer samtidigt som man ser till att de uppfyller gällande krav. För att tillgodose detta behov tillhandahåller [!DNL Experience Platform] sandlådor som partitionerar en enskild [!DNL Platform]-instans till separata virtuella miljöer för att hjälpa till att utveckla och utveckla program för digitala upplevelser.
 
 **Viktiga funktioner**
 
 | Funktion | Beskrivning |
 | ------- | ----------- |
 | Produktionssandlåda | [!DNL Experience Platform] innehåller en enda produktionssandlåda som inte kan tas bort eller återställas. Det totala antalet tillgängliga sandlådor, produktion och icke-produktion, bestäms av den licensierade licensen. |
-| Sandlådor utan produktion | Flera icke-produktionssandlådor kan skapas för en enda [!DNL Platform] kan du till exempel testa funktioner, köra experiment och göra anpassade konfigurationer utan att påverka din produktionssandlåda. |
-| Sandlådeväxlare | I [!DNL Experience Platform] i användargränssnittet gör sandlådeväxlaren i skärmens övre vänstra hörn att du kan växla mellan tillgängliga sandlådor via en listruta. Sandlådeväxlaren innehåller också en sökfunktion som gör att du kan filtrera igenom tillgängliga sandlådor. |
-| `x-sandbox-name` header | Alla samtal till [!DNL Experience Platform] API:erna måste nu innehålla de nya `x-sandbox-name` header, vars värde refererar till `name` i sandlådan där åtgärden ska utföras. |
+| Sandlådor utan produktion | Flera icke-produktionssandlådor kan skapas för en enskild [!DNL Platform]-instans, vilket gör att du kan testa funktioner, köra experiment och göra anpassade konfigurationer utan att påverka din produktionssandlåda. |
+| Sandlådeväxlare | I användargränssnittet [!DNL Experience Platform] kan du växla mellan tillgängliga sandlådor via en nedrullningsbar meny med sandlådeväxlaren i skärmens övre vänstra hörn. Sandlådeväxlaren innehåller också en sökfunktion som gör att du kan filtrera igenom tillgängliga sandlådor. |
+| `x-sandbox-name` huvud | Alla anrop till [!DNL Experience Platform] API:er måste nu inkludera den nya `x-sandbox-name`-rubriken, vars värde refererar till attributet `name` för sandlådan som åtgärden ska utföras i. |
 
-Mer information finns i [översikt över sandlådor](../../sandboxes/home.md).
+Mer information finns i översikten över [sandlådor](../../sandboxes/home.md).
 
 ## [!DNL Data Prep] {#data-prep}
 
-[!DNL Data Prep] gör att datatekniker kan mappa, omvandla och validera data till och från Experience Data Model (XDM).
+[!DNL Data Prep] tillåter datatekniker att mappa, omvandla och validera data till och från Experience Data Model (XDM).
 
 **Nya funktioner**
 
 | Funktion | Beskrivning |
 | ------- | ----------- |
 | Interaktiva åtgärder | [!DNL Data Prep] Mapper har nu stöd för iterativa åtgärder i en hierarki. |
-| Mappningsfunktion | [!DNL Data Prep] Mapper har nu möjlighet att **not** kopiera ett attribut från källan till mål-XDM. |
+| Mappningsfunktion | [!DNL Data Prep] Mapper kan nu **inte** kopiera ett attribut från källan till mål-XDM. |
 
-Mer information finns i [[!DNL Data Prep] översikt](../../data-prep/home.md).
+Mer information finns i [[!DNL Data Prep] översikten](../../data-prep/home.md).
 
 ## Arbetsyta för datavetenskap {#dsw}
 
-Data Science Workspace använder maskininlärning och artificiell intelligens för att skapa insikter utifrån era data. Data Science Workspace är integrerat i Adobe Experience Platform och hjälper er att göra prognoser med hjälp av ert innehåll och era dataresurser över alla Adobe-lösningar. Ett sätt som Data Science Workspace kan åstadkomma detta är genom att använda [!DNL JupyterLab]. [!DNL JupyterLab] är ett webbaserat användargränssnitt för [[!DNL Project Jupyter]](https://jupyter.org/) och är nära integrerat i Adobe Experience Platform. Den ger en interaktiv utvecklingsmiljö där datavetare kan arbeta med [!DNL Jupyter] bärbara datorer, kod och data.
+Data Science Workspace använder maskininlärning och artificiell intelligens för att skapa insikter utifrån era data. Data Science Workspace är integrerat i Adobe Experience Platform och hjälper er att göra prognoser med hjälp av ert innehåll och era datatillgångar i alla Adobe-lösningar. Ett sätt som datavetenskapen Workspace kan uppnå detta är genom att använda [!DNL JupyterLab]. [!DNL JupyterLab] är ett webbaserat användargränssnitt för [[!DNL Project Jupyter]](https://jupyter.org/) och är nära integrerat med Adobe Experience Platform. Den innehåller en interaktiv utvecklingsmiljö där datavetare kan arbeta med [!DNL Jupyter] bärbara datorer, kod och data.
 
 **Viktiga funktioner**
 
 | Funktion | Beskrivning |
 | ------- | ----------- |
-| [!DNL JupyterLab] Mallen Recipe Builder | Anteckningsbok för att hämta information om krav på användning och versioner har uppdaterats. [!DNL Python] XML-basbilden för körningsmiljön har uppdaterats för användning [!DNL Python] 3.6.7 och [!DNL Conda] enbart miljön. |
+| Mallen [!DNL JupyterLab] Recipe Builder | Anteckningsbok för att hämta information om krav på användning och versioner har uppdaterats. [!DNL Python] ML-runtime-basbilden har uppdaterats så att endast [!DNL Python] 3.6.7 och en [!DNL Conda] -miljö används. |
 
-Läs mer om [skapa ett recept med Jupyter Notebooks](../../data-science-workspace/jupyterlab/create-a-model.md).
+Mer information finns i dokumentet om att [skapa ett recept med Jupyter-anteckningsböcker](../../data-science-workspace/jupyterlab/create-a-model.md).
 
-## [!DNL Destinations] Tjänst {#destinations}
+## Tjänsten [!DNL Destinations] {#destinations}
 
-I [Real-time Customer Data Platform](../../rtcdp/overview.md)är destinationer färdiga integrationer med målplattformar som aktiverar data till dessa partners på ett smidigt sätt.
+I [Real-time Customer Data Platform](../../rtcdp/overview.md) är mål färdiga integreringar med målplattformar som aktiverar data till dessa partner på ett smidigt sätt.
 
-**Nya destinationer**
+**Nya mål**
 
-| Destination | Beskrivning |
+| Mål | Beskrivning |
 | ----------- | ----------- |
 | Braze | Braze är en heltäckande plattform för kundengagemang som driver relevanta och minnesvärda upplevelser mellan kunder och de varumärken de älskar. |
 | Microsoft Bing | Microsoft Bing-målet hjälper er att genomföra återannonsering och målgruppsanpassade digitala kampanjer i Microsoft Display Advertising. |
@@ -125,7 +125,7 @@ I [Real-time Customer Data Platform](../../rtcdp/overview.md)är destinationer f
 | Filplanering | För både e-postbaserade och molnbaserade lagringsplatser kan användare skapa en engångs export eller skapa dagliga ögonblicksbilder. |
 | Obligatoriska fält | Användarna kan markera fält som obligatoriska och se till att endast fält som innehåller det obligatoriska fältet exporteras. |
 
-Mer information finns i [Översikt över destinationer](../../destinations/home.md).
+Mer information finns i [Målöversikt](../../destinations/home.md).
 
 ## Intelligenta tjänster {#intelligent-services}
 
@@ -137,7 +137,7 @@ Intelligenta tjänster ger marknadsföringsanalytiker och yrkesverksamma möjlig
 | ------- | ----------- |
 | Consumer Experience Events (CEE) dataset | När du skapar en CEE-datauppsättning har du nu stöd för att lägga till identitetsfält i datauppsättningen med Schemaredigeraren. Attribution AI- och kunds-AI använder den primära identiteten för att kombinera händelser. |
 
-Mer information finns i [lägga till identitetsfält i en datauppsättning](../../intelligent-services/data-preparation.md#add-identity-fields-to-the-dataset) i handboken Intelligent Services för dataförberedelse.
+Mer information finns i avsnittet om att [lägga till identitetsfält i en datamängd](../../intelligent-services/data-preparation.md#add-identity-fields-to-the-dataset) i guiden för dataförberedelse för intelligenta tjänster.
 
 ### Attribution AI
 
@@ -159,7 +159,7 @@ Attribution AI, som en del av Intelligent Services är en flerkanalig algoritmis
 | De vanligaste konverteringsbanorna | Ett nytt insiderdiagram finns på fliken Sökvägsanalys. Diagrammet innehåller en lista över de fem populäraste konverteringssökvägarna som visar sekvensen av kontaktytor i marknadsföringskanalen som ledde till de flesta konverteringar. |
 | Pekpunktseffektivitet | Innehåller djupgående insikter om de tre viktigaste variablerna som din modell mäter kontaktytans effektivitet med. Variablerna är förhållandet mellan positiva och negativa banor, kontaktpunktseffektivitet och kontaktytpunktsvolym. |
 
-Mer information finns i [Översikt över Attribution AI](../../intelligent-services/attribution-ai/overview.md).
+Mer information finns i [Attribution AI overview](../../intelligent-services/attribution-ai/overview.md).
 
 ### Kund-AI
 
@@ -181,7 +181,7 @@ Mer information finns i [Översikt över AI för kunder](../../intelligent-servi
 
 ## Kundprofil i realtid {#profile}
 
-Med Adobe Experience Platform kan ni skapa samordnade, enhetliga och relevanta upplevelser för era kunder oavsett var och när de interagerar med ert varumärke. Med kundprofilen i realtid kan ni se en helhetsbild av varje enskild kund som kombinerar data från flera kanaler, inklusive online-, offline-, CRM- och tredjepartsdata. [!DNL Profile] kan ni sammanställa era olika kunddata i en enhetlig vy som ger ett användbart, tidsstämplat konto för varje kundinteraktion.
+Med Adobe Experience Platform kan ni skapa samordnade, enhetliga och relevanta upplevelser för era kunder oavsett var och när de interagerar med ert varumärke. Med kundprofilen i realtid kan ni se en helhetsbild av varje enskild kund som kombinerar data från flera kanaler, inklusive online-, offline-, CRM- och tredjepartsdata. Med [!DNL Profile] kan du konsolidera dina olika kunddata till en enhetlig vy som ger ett åtgärdbart, tidsstämplat konto för varje kundinteraktion.
 
 **Viktiga funktioner**
 
@@ -190,30 +190,30 @@ Med Adobe Experience Platform kan ni skapa samordnade, enhetliga och relevanta u
 | Uppdaterat arbetsflöde för sammanslagningsprinciper | Plattformen har uppgraderat konfigurationen av sammanfogningsprincipen till ett nytt stegvis arbetsflöde. Med det här arbetsflödet kan användarna sammanföra datafragment från flera profildatauppsättningar och ange prioritet för hur data sammanfogas över dessa datauppsättningar för att skapa en heltäckande bild av varje individ. Användare kan sammanfoga markerade XDM-datauppsättningar för enskilda profiler genom att välja lämplig sammanfogningsmetod (prioritetsordning för tidsstämpling eller datauppsättning) och lägga till ExperienceEvent-datauppsättningar i profildatauppsättningarna. |
 | Unionsschemavy | I användargränssnittet i Experience Platform är det enklare att hitta information om alla scheman och datauppsättningar som bidrar till unionsschemat samt attribut för ytnycklar som identitets- och relationsfält. Dessa uppdateringar förbättrar möjligheten att felsöka och verifiera att profiler är korrekt konfigurerade, identiteterna är korrekt sammanfogade och data har importerats. |
 
-Mer information om kundprofil i realtid, inklusive självstudiekurser och bästa metoder för att arbeta med [!DNL Profile] data, läs [Översikt över kundprofiler i realtid](../../profile/home.md).
+Mer information om kundprofil i realtid, inklusive självstudiekurser och bästa praxis för att arbeta med [!DNL Profile]-data, finns i [Kundprofilöversikt i realtid](../../profile/home.md).
 
 ## [!DNL Sources] {#sources}
 
-Adobe Experience Platform kan importera data från externa källor och samtidigt strukturera, etikettera och förbättra dessa data med [!DNL Platform] tjänster. Du kan importera data från en mängd olika källor som Adobe-program, molnbaserad lagring, tredjepartsprogram och ditt CRM-system.
+Adobe Experience Platform kan importera data från externa källor samtidigt som du kan strukturera, etikettera och förbättra data med hjälp av [!DNL Platform]-tjänster. Du kan importera data från en mängd olika källor som Adobe-program, molnbaserad lagring, tredjepartsprogram och ditt CRM-system.
 
-[!DNL Experience Platform] innehåller ett RESTful-API och ett interaktivt användargränssnitt som gör att du enkelt kan konfigurera källanslutningar för olika dataleverantörer. Dessa källanslutningar gör att du kan autentisera och ansluta till externa lagringssystem och CRM-tjänster, ange tider för matning och hantera dataöverföringshastigheter.
+[!DNL Experience Platform] innehåller ett RESTful API och ett interaktivt användargränssnitt som gör att du enkelt kan konfigurera källanslutningar för olika dataleverantörer. Dessa källanslutningar gör att du kan autentisera och ansluta till externa lagringssystem och CRM-tjänster, ange tider för matning och hantera dataöverföringshastigheter.
 
 **Nya källor**
 
 | Funktion | Beskrivning |
 | ------- | ----------- |
-| [!DNL Shopify] | Nu kan du ansluta [!DNL Shopify] till [!DNL Experience Platform] med [!DNL Flow Service] API eller gränssnittet. Se [Översikt över kopplingen](../../sources/connectors/ecommerce/shopify.md) för mer information. |
+| [!DNL Shopify] | Du kan nu ansluta [!DNL Shopify] till [!DNL Experience Platform] med API:t [!DNL Flow Service] eller gränssnittet. Mer information finns i översikten för [Förminska koppling](../../sources/connectors/ecommerce/shopify.md). |
 
 **Viktiga funktioner**
 
 | Funktion | Beskrivning |
 | ------- | ----------- |
-| Uppdatera anslutningsinformation | Nu kan du uppdatera namn, beskrivningar och autentiseringsuppgifter för befintliga batchanslutningar med [!DNL Flow Service] API och användargränssnittet. Mer information finns i självstudiekursen om [uppdatera anslutningar med API:t för Flow Service](../../sources/tutorials/api/update.md) och [redigera kontoinformation med användargränssnittet](../../sources/tutorials/ui/monitor.md). |
-| Ta bort anslutningar | Batchanslutningar som innehåller fel eller har blivit onödiga kan nu tas bort med [!DNL Flow Service] API och användargränssnittet. Mer information finns i självstudiekursen om [ta bort anslutningar med API:t för Flow Service](../../sources/tutorials/api/delete.md) och [ta bort konton med användargränssnittet](../../sources/tutorials/ui/delete-accounts.md). |
-| Hierarkisk mappning | Du kan förhandsgranska en hierarkisk källfil, till exempel JSON eller Parquet, under dataöverföringsprocessen. Se självstudiekursen om [konfigurera ett dataflöde för molnlagringsanslutningar i användargränssnittet](../../sources/tutorials/ui/dataflow/batch/cloud-storage.md) för mer information. |
+| Uppdatera anslutningsinformation | Du kan nu uppdatera namn, beskrivningar och autentiseringsuppgifter för befintliga batchanslutningar med API:t [!DNL Flow Service] och gränssnittet. Mer information finns i självstudiekursen om att [uppdatera anslutningar med API:t för Flow Service ](../../sources/tutorials/api/update.md) och [redigera kontoinformation med gränssnittet](../../sources/tutorials/ui/monitor.md). |
+| Ta bort anslutningar | Batchanslutningar som innehåller fel eller har blivit onödiga kan nu tas bort med API:t [!DNL Flow Service] och användargränssnittet. Mer information finns i självstudiekursen om att [ta bort anslutningar med API:t för flödestjänst](../../sources/tutorials/api/delete.md) och [ta bort konton med gränssnittet](../../sources/tutorials/ui/delete-accounts.md). |
+| Hierarkisk mappning | Du kan förhandsgranska en hierarkisk källfil, till exempel JSON eller Parquet, under dataöverföringsprocessen. Mer information finns i självstudiekursen [Konfigurera ett dataflöde för molnlagringsanslutningar i användargränssnittet](../../sources/tutorials/ui/dataflow/batch/cloud-storage.md). |
 | API-stöd för mappning i strömningskällor | Nu kan du använda API:er för att utföra mappningsfunktioner med strömningskällor. |
 | API-stöd för anpassade avgränsare för molnlagringskällor | Nu kan du samla in filer som inte är CSV-avgränsade med molnlagringskällor. Du kan använda valfri kolumnavgränsare, t.ex. tabb, komma, pipe, semikolon eller hash, för att samla platta filer i alla format. |
 | Stöd för sandlåda i Adobe Audience Manager Connector | Kopplingen Audience Manager är nu sandlådebaserad. Användare kan aktivera kopplingen för att dirigera datauppsättningar från Audience Manager till valfri sandlåda (inklusive icke-produktionssandlådor). Konfigurationen är begränsad till en sandlåda per organisation. |
 | Förbättringar av UX | Filbaserad inmatning är nu tillgängligt via källkatalogen. |
 
-Mer information om källor finns i [källöversikt](../../sources/home.md).
+Mer information om källor finns i [Källöversikt](../../sources/home.md).

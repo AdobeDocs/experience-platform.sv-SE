@@ -1,6 +1,6 @@
 ---
 title: Interagera med Adobe Analytics
-description: Lär dig hur du använder Edge Network Server API för att interagera med Adobe Analytics.
+description: Lär dig hur du använder Edge Network Server-API:t för att interagera med Adobe Analytics.
 exl-id: b5e7a4d0-9aea-4e70-a7d6-b9aad09aaddf
 source-git-commit: 5de1ec17b78c97be21c0d2afd6f0b119a6074b6f
 workflow-type: tm+mt
@@ -13,11 +13,11 @@ ht-degree: 0%
 
 ## Översikt {#overview}
 
-Adobe Analytics datainsamling fungerar genom att översätta XDM-data till ett format som Adobe Analytics kan förstå. Flera XDM-fält är [automatiskt mappad](https://experienceleague.adobe.com/docs/analytics/implementation/aep-edge/variable-mapping.html) till analysvariabler. Du kan även mappa XDM-värden manuellt till äldre analysvariabler.
+Adobe Analytics datainsamling fungerar genom att översätta XDM-data till ett format som Adobe Analytics kan förstå. Flera XDM-fält mappas [automatiskt](https://experienceleague.adobe.com/docs/analytics/implementation/aep-edge/variable-mapping.html) till analysvariabler. Du kan även mappa XDM-värden manuellt till äldre analysvariabler.
 
-Om du vill att Adobe Analytics ska kunna ta emot data från Server-API:t måste du [konfigurera ditt datastream](../datastreams/overview.md#adobe-analytics-settings) om du vill vidarebefordra händelser till Adobe Analytics genom att ange rapportsvitens ID på konfigurationssidan för datastream.
+Om du vill att Adobe Analytics ska kunna ta emot data från Server-API:t måste du [konfigurera datastream](../datastreams/overview.md#adobe-analytics-settings) så att händelser vidarebefordras till Adobe Analytics genom att ange rapportsvitens ID på konfigurationssidan för datastream.
 
-![Adobe Analytics DataStream-konfiguration](assets/analytics-datastream.png)
+![Adobe Analytics-dataströmskonfiguration](assets/analytics-datastream.png)
 
 ## Interagera med Adobe Analytics {#interacting-analytics}
 
@@ -29,7 +29,7 @@ POST /ee/v2/interact?dataStreamId={DATASTREAM_ID}
 
 ### Begäran {#request}
 
-Exemplet nedan innehåller flera automatiskt mappade värden från `_experience.analytics` fältgrupp. Den innehåller även JSON-baserade datalager. Dessa datalager kan inte mappas automatiskt, men det går att använda [Dataförberedelse för datainsamling](../datastreams/data-prep.md) för att mappa dessa värden till ett schema som innehåller fältgrupper som refereras ovan.
+Exemplet nedan innehåller flera automatiskt mappade värden från fältgruppen `_experience.analytics`. Den innehåller även JSON-baserade datalager. Dessa datalager kan inte mappas automatiskt, men det går att använda [Dataprep för datainsamling](../datastreams/data-prep.md) för att mappa dessa värden till ett schema som innehåller fältgrupper som refereras ovan.
 
 Alla värden som användarna mappar till dessa fält mappas automatiskt till rätt Analytics-värden, som om de ingick i API-begäran.
 

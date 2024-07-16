@@ -11,15 +11,15 @@ ht-degree: 0%
 
 ---
 
-# [!UICONTROL Device Trade-In Details] schemafältgrupp
+# Schemafältgruppen [!UICONTROL Device Trade-In Details]
 
 >[!NOTE]
 >
->Namnen på flera schemafältgrupper har ändrats. Visa dokumentet på [uppdaterar fältgruppnamn](../name-updates.md) för mer information.
+>Namnen på flera schemafältgrupper har ändrats. Mer information finns i dokumentet om [uppdatering av fältgruppnamn](../name-updates.md).
 
-[!UICONTROL Device Trade-In Details] är en standardgrupp för schemafält för [[!DNL XDM ExperienceEvent] class](../../classes/experienceevent.md). Det innehåller ett enda fält (`deviceTradeInDetails`) som beskriver en enhets inbytestransaktion, inklusive inbytesvärde, ursprungligt enhets-ID och nytt enhets-ID.
+[!UICONTROL Device Trade-In Details] är en standardschemafältgrupp för [[!DNL XDM ExperienceEvent] klassen](../../classes/experienceevent.md). Det innehåller ett enskilt fält (`deviceTradeInDetails`) som beskriver en enhets inbytestransaktion, inklusive inbytesvärde, ursprungligt enhets-ID och nytt enhets-ID.
 
-![Struktur för detaljer för enhetshandel](../../images/field-groups/device-trade-in-details.png)
+![Struktur för detaljer om inbyte av enheter](../../images/field-groups/device-trade-in-details.png)
 
 | Egenskap | Datatyp | Beskrivning |
 | --- | --- | --- |

@@ -18,4 +18,4 @@ Registrering av direktuppspelningsanslutning krävs för att starta direktuppspe
 
 När du har registrerat en direktuppspelningsanslutning får du som DataProducer en unik URL som kan användas för att strömma data till Platform.
 
-Läs mer om hur du skapar en autentiserad direktuppspelningsanslutning i [API-källguide för HTTP](../../sources/tutorials/api/create/streaming/http.md).
+Om du vill lära dig hur du skapar en autentiserad direktuppspelningsanslutning läser du [API-källhandboken för HTTP](../../sources/tutorials/api/create/streaming/http.md).

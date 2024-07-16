@@ -11,7 +11,7 @@ ht-degree: 0%
 
 ---
 
-# [!UICONTROL Geo] datatyp
+# Datatypen [!UICONTROL Geo]
 
 [!UICONTROL Geo] är en standard-XDM-datatyp som beskriver det geografiska område där en händelse observerades.
 
@@ -22,11 +22,11 @@ ht-degree: 0%
 | `_schema` | [[!UICONTROL Geo Coordinates]](./geo-coordinates.md) | Beskriver platsens geografiska koordinater. |
 | `_id` | Sträng | Ett unikt, systemgenererat ID för koordinaterna. |
 | `city` | Sträng | Namnet på staden. |
-| `countryCode` | Sträng | De två tecknen <a href="https://datahub.io/core/country-list">ISO 3166-1 alpha-2</a> landskoden. |
+| `countryCode` | Sträng | Landets tvåsiffriga <a href="https://datahub.io/core/country-list">ISO 3166-1 alfa-2</a> -kod. |
 | `dmaID` | Heltal | Nielsens medieforskning har utsett ett marknadsområde. |
 | `msaID` | Heltal | Det statistiska storstadsområdet i Förenta staterna där observationen gjordes. |
 | `postalCode` | Sträng | Postnumret för platsen. Postnummer är inte tillgängliga för alla länder. I vissa länder innehåller detta endast en del av postnumret. |
-| `stateProvince` | Sträng | Delstaten eller provinsdelen av observationen. Formatet följer [ISO 3166-2 (land och delområde)](https://www.unece.org/cefact/locode/subdivisions.html) standard. |
+| `stateProvince` | Sträng | Delstaten eller provinsdelen av observationen. Formatet följer standarden [ISO 3166-2 (land och delområde)](https://www.unece.org/cefact/locode/subdivisions.html). |
 
 {style="table-layout:auto"}
 

@@ -4,7 +4,7 @@ title: Hämta en konfiguration för autentiseringsuppgifter
 exl-id: cec55073-6e2f-4412-a9dd-1aeb445279c0
 source-git-commit: b4334b4f73428f94f5a7e5088f98e2459afcaf3c
 workflow-type: tm+mt
-source-wordcount: '475'
+source-wordcount: '477'
 ht-degree: 0%
 
 ---
@@ -15,31 +15,31 @@ ht-degree: 0%
 >
 >**API-slutpunkt**: `platform.adobe.io/data/core/activation/authoring/credentials`
 
-Den här sidan innehåller exempel på API-begäran och nyttolast som du kan använda för att hämta en autentiseringskonfiguration med `/authoring/credentials` API-slutpunkt.
+Den här sidan innehåller exempel på API-begäran och nyttolast som du kan använda för att hämta en autentiseringskonfiguration med API-slutpunkten `/authoring/credentials`.
 
-## När ska `/credentials` API-slutpunkt {#when-to-use}
+## När API-slutpunkten `/credentials` ska användas {#when-to-use}
 
 >[!IMPORTANT]
 >
->I de flesta fall ***inte*** måste du använda `/credentials` API-slutpunkt. I stället kan du konfigurera autentiseringsinformationen för ditt mål via `customerAuthenticationConfigurations` parametrarna för `/destinations` slutpunkt.
+>I de flesta fall behöver du ***inte*** använda API-slutpunkten `/credentials`. I stället kan du konfigurera autentiseringsinformationen för målet via `customerAuthenticationConfigurations`-parametrarna för slutpunkten `/destinations`.
 > 
->Läs [Konfiguration av kundautentisering](../functionality/destination-configuration/customer-authentication.md) för detaljerad information om vilka autentiseringstyper som stöds.
+>Läs [Konfiguration för kundautentisering](../functionality/destination-configuration/customer-authentication.md) om du vill ha mer information om vilka autentiseringstyper som stöds.
 
-Använd den här API-slutpunkten om du bara vill skapa en autentiseringskonfiguration om det finns ett globalt autentiseringssystem mellan Adobe och målplattformen och [!DNL Platform] Kunden behöver inte ange några autentiseringsuppgifter för att ansluta till ditt mål. I det här fallet måste du skapa en autentiseringskonfiguration med `/credentials` API-slutpunkt.
+Använd den här API-slutpunkten om du bara vill skapa en autentiseringskonfiguration om det finns ett globalt autentiseringssystem mellan Adobe och målplattformen, och [!DNL Platform]-kunden inte behöver ange några autentiseringsuppgifter för att ansluta till målet. I det här fallet måste du skapa en autentiseringskonfiguration med API-slutpunkten `/credentials`.
 
-När du använder ett globalt autentiseringssystem måste du ange `"authenticationRule":"PLATFORM_AUTHENTICATION"` i [destinationsleverans](../functionality/destination-configuration/destination-delivery.md) konfiguration, när [skapa en ny målkonfiguration](../authoring-api/destination-configuration/create-destination-configuration.md).
+När du använder ett globalt autentiseringssystem måste du ange `"authenticationRule":"PLATFORM_AUTHENTICATION"` i konfigurationen för [målleverans](../functionality/destination-configuration/destination-delivery.md) när du [skapar en ny målkonfiguration](../authoring-api/destination-configuration/create-destination-configuration.md).
 
 >[!IMPORTANT]
 >
->Alla parameternamn och värden som stöds av Destinationen SDK är **skiftlägeskänslig**. Undvik skiftlägeskänslighetsfel genom att använda parameternamn och värden exakt som de visas i dokumentationen.
+>Alla parameternamn och värden som stöds av Destinationen SDK är **skiftlägeskänsliga**. Undvik skiftlägeskänslighetsfel genom att använda parameternamn och värden exakt som de visas i dokumentationen.
 
 ## Komma igång med API-åtgärder för autentiseringsuppgifter {#get-started}
 
-Innan du fortsätter bör du granska [komma igång-guide](../getting-started.md) för viktig information som du behöver känna till för att kunna anropa API:t, inklusive hur du får nödvändig behörighet för målredigering och obligatoriska huvuden.
+Innan du fortsätter bör du läsa igenom [kom igång-guiden](../getting-started.md) för att få viktig information som du behöver känna till för att kunna ringa anrop till API:t, inklusive hur du får nödvändig behörighet för målredigering och nödvändiga rubriker.
 
 ## Hämta en konfiguration för autentiseringsuppgifter {#retrieve}
 
-Du kan hämta en [befintlig](create-credential-configuration.md) konfiguration av autentiseringsuppgifter genom att göra en `GET` begäran till `/authoring/credentials` slutpunkt.
+Du kan hämta en [befintlig](create-credential-configuration.md)-autentiseringskonfiguration genom att göra en `GET`-begäran till `/authoring/credentials`-slutpunkten.
 
 **API-format**
 
@@ -49,13 +49,13 @@ Använd följande API-format för att hämta alla autentiseringskonfigurationer 
 GET /authoring/credentials
 ```
 
-Använd följande API-format för att hämta en specifik autentiseringskonfiguration, som definieras av `{INSTANCE_ID}` parameter.
+Använd följande API-format för att hämta en specifik autentiseringskonfiguration som definieras av parametern `{INSTANCE_ID}`.
 
 ```http
 GET /authoring/credentials/{INSTANCE_ID}
 ```
 
-Följande två förfrågningar hämtar alla autentiseringskonfigurationer för din IMS-organisation, eller en specifik autentiseringskonfiguration, beroende på om du skickar `INSTANCE_ID` -parametern i begäran.
+Följande två begäranden hämtar alla autentiseringskonfigurationer för din IMS-organisation, eller en specifik autentiseringskonfiguration, beroende på om du skickar parametern `INSTANCE_ID` i begäran.
 
 Välj varje flik nedan för att visa motsvarande nyttolast.
 
@@ -77,7 +77,7 @@ curl -X GET https://platform.adobe.io/data/core/activation/authoring/credentials
 
 +++svar
 
-Ett lyckat svar returnerar HTTP-status 200 med en lista över de autentiseringskonfigurationer som du har åtkomst till, baserat på [!DNL IMS Org ID] och namnet på sandlådan som du använde. Ett `instanceId` motsvarar en autentiseringskonfiguration.
+Ett lyckat svar returnerar HTTP-status 200 med en lista över autentiseringskonfigurationer som du har åtkomst till, baserat på det [!DNL IMS Org ID]- och sandlådenamn som du använde. En `instanceId` motsvarar en autentiseringskonfiguration.
 
 ```json
 {
@@ -127,7 +127,7 @@ curl -X GET https://platform.adobe.io/data/core/activation/authoring/credentials
 
 +++svar
 
-Ett lyckat svar returnerar HTTP-status 200 med information om konfigurationen för autentiseringsuppgifter som motsvarar `instanceId` anges på begäran.
+Ett lyckat svar returnerar HTTP-status 200 med information om autentiseringskonfigurationen som motsvarar `instanceId` som anges i begäran.
 
 ```json
 {
@@ -149,8 +149,8 @@ Ett lyckat svar returnerar HTTP-status 200 med information om konfigurationen f�
 
 ## API-felhantering {#error-handling}
 
-Destination SDK-API-slutpunkter följer de allmänna felmeddelandeprinciperna för Experience Platform API. Se [API-statuskoder](../../../landing/troubleshooting.md#api-status-codes) och [fel i begäranhuvudet](../../../landing/troubleshooting.md#request-header-errors) i felsökningsguiden för plattformen.
+Destination SDK-API-slutpunkter följer de allmänna felmeddelandeprinciperna för Experience Platform API. Se [API-statuskoder](../../../landing/troubleshooting.md#api-status-codes) och [begäranrubrikfel](../../../landing/troubleshooting.md#request-header-errors) i felsökningsguiden för plattformen.
 
 ## Nästa steg {#next-steps}
 
-När du har läst det här dokumentet vet du nu hur du hämtar information om dina autentiseringskonfigurationer med `/authoring/credentials` API-slutpunkt. Läs [Så här använder du Destination SDK för att konfigurera ditt mål](../guides/configure-destination-instructions.md) för att förstå var det här steget passar in i processen att konfigurera målet.
+När du har läst det här dokumentet vet du nu hur du hämtar information om dina autentiseringskonfigurationer med API-slutpunkten `/authoring/credentials`. Läs [om hur du använder Destination SDK för att konfigurera ditt mål](../guides/configure-destination-instructions.md) och förstå var det här steget passar in i processen att konfigurera ditt mål.

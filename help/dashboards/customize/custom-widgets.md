@@ -5,7 +5,7 @@ description: Den här guiden innehåller stegvisa instruktioner för hur du skap
 exl-id: 0168ab1e-0b7d-4faf-852e-7208a2b09a04
 source-git-commit: 32dd90018c990e7013d826b29608a61022ba808b
 workflow-type: tm+mt
-source-wordcount: '950'
+source-wordcount: '951'
 ht-degree: 0%
 
 ---
@@ -14,41 +14,41 @@ ht-degree: 0%
 
 I Adobe Experience Platform kan du visa och interagera med organisationens data via flera kontrollpaneler. Du kan även uppdatera vissa instrumentpaneler genom att lägga till nya widgetar i instrumentpanelsvyn. Förutom standardwidgetarna från Adobe kan du även skapa anpassade widgetar och dela dem i hela organisationen.
 
-Den här guiden innehåller stegvisa instruktioner för att skapa och lägga till anpassade widgetar i [!UICONTROL Profiles], [!UICONTROL Segments]och [!UICONTROL Destinations] kontrollpaneler i plattformsgränssnittet.
+Den här handboken innehåller stegvisa instruktioner för hur du skapar och lägger till anpassade widgetar på kontrollpanelerna [!UICONTROL Profiles], [!UICONTROL Segments] och [!UICONTROL Destinations] i plattformsgränssnittet.
 
 >[!NOTE]
 >
 >Alla uppdateringar som görs på kontrollpanelerna görs per organisation och per sandlåda.
 
-Om du vill veta mer om standardwidgetar kan du läsa guiden för [lägga till standardwidgetar på dina instrumentpaneler](standard-widgets.md).
+Mer information om standardwidgetar finns i guiden för [att lägga till standardwidgetar i dina instrumentpaneler](standard-widgets.md).
 
 ## Widget-bibliotek {#widget-library}
 
-Den här guiden kräver åtkomst till [!UICONTROL Widget library] i Experience Platform. Om du vill veta mer om widgetbiblioteket och hur du kommer åt det i användargränssnittet börjar du med att läsa [widgetbibliotek - översikt](widget-library.md).
+Den här handboken kräver åtkomst till [!UICONTROL Widget library] i Experience Platform. Om du vill veta mer om widgetbiblioteket och hur du kommer åt det i användargränssnittet kan du börja med att läsa översikten för [widgetbiblioteket](widget-library.md).
 
 ## Komma igång med anpassade widgetar
 
-I widgetbiblioteket **[!UICONTROL Custom]** Med -fliken kan du skapa widgetar och dela dem med andra användare i organisationen för att anpassa utseendet på dina instrumentpaneler.
+I widgetbiblioteket kan du på fliken **[!UICONTROL Custom]** skapa widgetar och dela dem med andra användare i organisationen för att anpassa utseendet på dina instrumentpaneler.
 
 >[!IMPORTANT]
 >
 >Din organisation kan skapa maximalt 20 anpassade widgetar i widgetbiblioteket.
 
-Välj **[!UICONTROL Custom]** för att börja skapa anpassade widgetar eller för att visa anpassade widgetar som din organisation redan har skapat.
+Välj fliken **[!UICONTROL Custom]** för att börja skapa anpassade widgetar eller för att visa anpassade widgetar som din organisation redan har skapat.
 
-![Widgetbibliotekets arbetsyta med fliken Egen markerad.](../images/customization/custom-widgets.png)
+![Arbetsytan i widgetbiblioteket med fliken Egen markerad.](../images/customization/custom-widgets.png)
 
 ## Skapa en anpassad widget
 
-Om du vill skapa en anpassad widget väljer du **[!UICONTROL Create widget]** från det övre högra hörnet av widgetbiblioteket eller, om det är din organisations första anpassade widget, välj **[!UICONTROL Create]** från mitten av widgetbiblioteket.
+Om du vill skapa en anpassad widget väljer du **[!UICONTROL Create widget]** i det övre högra hörnet av widgetbiblioteket eller, om det är din organisations första anpassade widget, väljer **[!UICONTROL Create]** i mitten av widgetbiblioteket.
 
-![Fliken Egen på arbetsytan i widgetbiblioteket med Skapa markerat.](../images/customization/create-widget.png)
+![Fliken Egen på arbetsytan i widgetbiblioteket med Skapa markerad.](../images/customization/create-widget.png)
 
-I **[!UICONTROL Create widget]** anger du en rubrik och beskrivning för den nya widgeten och väljer det attribut som du vill att widgeten ska visa.
+I dialogrutan **[!UICONTROL Create widget]** anger du en rubrik och beskrivning för den nya widgeten och väljer det attribut som du vill att widgeten ska visa.
 
 >[!NOTE]
 >
->Listan med tillgängliga attribut beror på vilket schema som har konfigurerats för din organisation. Om du vill veta mer om attributval och schemakonfiguration kan du läsa guiden på [redigera schemat för att skapa anpassade widgetar](edit-schema.md).
+>Listan med tillgängliga attribut beror på vilket schema som har konfigurerats för din organisation. Om du vill veta mer om attributval och schemakonfiguration kan du läsa guiden [redigera schemat för att skapa anpassade widgetar](edit-schema.md).
 
 Om du vill välja ett attribut markerar du alternativknappen bredvid attributet som du vill lägga till.
 
@@ -78,33 +78,33 @@ Beroende på attributet rekommenderar AI olika visualiseringsalternativ. Den ful
 >
 >Data som visas i exempelwidgeten är endast avsedda som illustrationer. Förhandsgranskningen visar inte faktiska data från din organisation.
 
-Spara din nya widget och gå tillbaka till [!UICONTROL Custom] flik, välja **[!UICONTROL Create]**.
+Om du vill spara din nya widget och gå tillbaka till fliken [!UICONTROL Custom] väljer du **[!UICONTROL Create]**.
 
-![Dialogrutan Skapa widget med visualiseringsalternativen och Skapa markerat.](../images/customization/create-widget-select-attribute.png)
+![Dialogrutan Skapa widget med visualiseringsalternativen och Skapa markerad.](../images/customization/create-widget-select-attribute.png)
 
 Din nya widget är nu tillgänglig för att läggas till på en instrumentpanel genom att välja widgeten i biblioteket och välja **[!UICONTROL Add widget]**.
 
-![Fliken Egen på arbetsytan i widgetbiblioteket med den nya widgeten och Lägg till widget markerade.](../images/customization/custom-widgets-new.png)
+![Fliken Egen på arbetsytan i widgetbiblioteket med den nya widgeten och widgeten Lägg till markerad.](../images/customization/custom-widgets-new.png)
 
 ## Dölja en anpassad widget
 
-När en widget har lagts till i biblioteket kan du dölja den genom att markera ellipserna (`...`) på widgetkortet och sedan markera **[!UICONTROL Hide widget]**. Du kan också förhandsgranska och redigera widgeten från samma listruta.
+När en widget har lagts till i biblioteket kan du dölja den genom att markera ellipserna (`...`) på widgetkortet och sedan välja **[!UICONTROL Hide widget]**. Du kan också förhandsgranska och redigera widgeten från samma listruta.
 
-Om du vill visa dolda widgetar väljer du **[!UICONTROL Show hidden widgets]** från det övre högra hörnet i widgetbiblioteket.
+Om du vill visa dolda widgetar väljer du **[!UICONTROL Show hidden widgets]** i det övre högra hörnet i widgetbiblioteket.
 
 >[!WARNING]
 >
 >När du döljer en widget i biblioteket tas inte widgeten bort från enskilda användares instrumentpaneler. Om en widget inte längre ska användas i din organisation måste du informera alla plattformsanvändare om detta eftersom de måste ta bort widgeten från sina instrumentpaneler.
 
-![Fliken Egen på arbetsytan i widgetbiblioteket med menyalternativen för widgeten och Visa dolda widgetar markerade.](../images/customization/hide-widget.png)
+![Fliken Egen på arbetsytan i widgetbiblioteket med menyalternativen i widgeten och Visa dolda widgetar markerade.](../images/customization/hide-widget.png)
 
 ## Redigera en anpassad widget
 
-Du kan redigera anpassade widgetar i widgetbiblioteket genom att markera ellipserna (`...`) på widgetkortet och sedan markera **[!UICONTROL Edit]** i listrutan.
+Du kan redigera anpassade widgetar i widgetbiblioteket genom att markera ellipserna (`...`) på widgetkortet och sedan välja **[!UICONTROL Edit]** i listrutan.
 
 ![Widgetens menyalternativ med ellipserna och redigeringen markerade.](../images/customization/custom-widget-edit.png)
 
-På **[!UICONTROL Edit widget]** kan du redigera titeln och beskrivningen av widgeten samt förhandsgranska och välja olika visualiseringar. När redigeringarna är klara väljer du **[!UICONTROL Save]** för att spara ändringarna och återgå till fliken för anpassade widgetar.
+I dialogrutan **[!UICONTROL Edit widget]** kan du redigera titeln och beskrivningen för widgeten samt förhandsgranska och välja olika visualiseringar. När du har redigerat väljer du **[!UICONTROL Save]** för att spara ändringarna och återgå till fliken för anpassade widgetar.
 
 >[!WARNING]
 >
@@ -114,4 +114,4 @@ På **[!UICONTROL Edit widget]** kan du redigera titeln och beskrivningen av wid
 
 ## Nästa steg
 
-När du har läst det här dokumentet kan du komma åt widgetbiblioteket och använda det för att skapa och lägga till anpassade widgetar för organisationen. Om du vill ändra storlek och plats för widgetar som visas på kontrollpanelen kan du läsa [ändra guiden för instrumentpaneler](modify.md).
+När du har läst det här dokumentet kan du komma åt widgetbiblioteket och använda det för att skapa och lägga till anpassade widgetar för organisationen. Om du vill ändra storlek och plats för widgetar som visas på kontrollpanelen läser du [Ändra instrumentpanelsguiden](modify.md).

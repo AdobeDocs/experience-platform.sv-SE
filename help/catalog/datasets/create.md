@@ -6,7 +6,7 @@ description: Det här dokumentet innehåller allmänna steg för att skapa en da
 exl-id: 3a5f48cf-ad05-4b9e-be1d-ff213a26a477
 source-git-commit: e2f16f532b98e6948ffd7f331e630137b3972f0f
 workflow-type: tm+mt
-source-wordcount: '1303'
+source-wordcount: '1302'
 ht-degree: 0%
 
 ---
@@ -19,47 +19,47 @@ Det här dokumentet innehåller allmänna steg för att skapa en datauppsättnin
 
 Handboken kräver en fungerande förståelse av följande komponenter i Adobe Experience Platform:
 
-* [Batchförtäring](../../ingestion/batch-ingestion/overview.md): [!DNL Experience Platform] gör att du kan importera data som gruppfiler.
-* [[!DNL Experience Data Model (XDM) System]](../../xdm/home.md): Det standardiserade ramverk som [!DNL Experience Platform] organiserar kundupplevelsedata.
-* [[!DNL Sandboxes]](../../sandboxes/home.md): [!DNL Experience Platform] innehåller virtuella sandlådor som partitionerar en enda [!DNL Platform] till separata virtuella miljöer för att utveckla och utveckla applikationer för digitala upplevelser.
+* [Gruppinmatning](../../ingestion/batch-ingestion/overview.md): [!DNL Experience Platform] gör att du kan importera data som gruppfiler.
+* [[!DNL Experience Data Model (XDM) System]](../../xdm/home.md): Det standardiserade ramverket som [!DNL Experience Platform] organiserar kundupplevelsedata med.
+* [[!DNL Sandboxes]](../../sandboxes/home.md): [!DNL Experience Platform] innehåller virtuella sandlådor som partitionerar en enskild [!DNL Platform]-instans till separata virtuella miljöer för att hjälpa till att utveckla och utveckla program för digitala upplevelser.
 
-Följande avsnitt innehåller ytterligare information som du behöver känna till för att kunna ringa samtal till [!DNL Platform] API.
+I följande avsnitt finns ytterligare information som du behöver känna till för att kunna anropa API:erna för [!DNL Platform].
 
 ### Läser exempel-API-anrop
 
-I den här självstudiekursen finns exempel-API-anrop som visar hur du formaterar dina begäranden. Det kan vara sökvägar, obligatoriska rubriker och korrekt formaterade begärandenyttolaster. Ett exempel på JSON som returneras i API-svar finns också. Information om konventionerna som används i dokumentationen för exempel-API-anrop finns i avsnittet om [läsa exempel-API-anrop](../../landing/troubleshooting.md#how-do-i-format-an-api-request) i [!DNL Experience Platform] felsökningsguide.
+I den här självstudiekursen finns exempel-API-anrop som visar hur du formaterar dina begäranden. Det kan vara sökvägar, obligatoriska rubriker och korrekt formaterade begärandenyttolaster. Ett exempel på JSON som returneras i API-svar finns också. Information om de konventioner som används i dokumentationen för exempel-API-anrop finns i avsnittet [Så här läser du exempel-API-anrop](../../landing/troubleshooting.md#how-do-i-format-an-api-request) i felsökningsguiden för [!DNL Experience Platform].
 
 ### Samla in värden för obligatoriska rubriker
 
-För att ringa [!DNL Platform] API:er måste du först slutföra [självstudiekurs om autentisering](https://www.adobe.com/go/platform-api-authentication-en). När du är klar med självstudiekursen för autentisering visas värdena för var och en av de obligatoriska rubrikerna i alla [!DNL Experience Platform] API-anrop enligt nedan:
+För att kunna anropa [!DNL Platform] API:er måste du först slutföra [autentiseringssjälvstudiekursen](https://www.adobe.com/go/platform-api-authentication-en). När du slutför självstudiekursen för autentisering visas värdena för var och en av de obligatoriska rubrikerna i alla [!DNL Experience Platform] API-anrop, vilket visas nedan:
 
 * `Authorization: Bearer {ACCESS_TOKEN}`
 * `x-api-key: {API_KEY}`
 * `x-gw-ims-org-id: {ORG_ID}`
 
-Alla resurser i [!DNL Experience Platform] isoleras till specifika virtuella sandlådor. Alla förfrågningar till [!DNL Platform] API:er kräver en rubrik som anger namnet på sandlådan som åtgärden ska utföras i:
+Alla resurser i [!DNL Experience Platform] är isolerade till specifika virtuella sandlådor. Alla begäranden till [!DNL Platform] API:er kräver en rubrik som anger namnet på sandlådan som åtgärden ska utföras i:
 
 * x-sandbox-name: `{SANDBOX_NAME}`
 
 >[!NOTE]
 >
->Mer information om sandlådor i [!DNL Platform], se [översiktsdokumentation för sandlåda](../../sandboxes/home.md).
+>Mer information om sandlådor i [!DNL Platform] finns i [översiktsdokumentationen för sandlådan](../../sandboxes/home.md).
 
-Alla begäranden som innehåller en nyttolast (POST, PUT, PATCH) kräver ytterligare `Content-Type: application/json` header. För JSON+PATCH-begäranden visas `Content-Type` bör `application/json-patch+json`.
+Alla begäranden som innehåller en nyttolast (POST, PUT, PATCH) kräver ytterligare ett `Content-Type: application/json`-huvud. För JSON+PATCH-begäranden ska `Content-Type` vara `application/json-patch+json`.
 
 ## Självstudiekurs
 
 För att kunna skapa en datauppsättning måste ett schema först definieras. Ett schema är en uppsättning regler som hjälper till att representera data. Förutom att beskriva datastrukturen ger scheman även begränsningar och förväntningar som kan tillämpas och användas för att validera data när de flyttas mellan system.
 
-Med dessa standarddefinitioner kan data tolkas på ett enhetligt sätt, oavsett ursprung, och behovet av översättning mellan olika program försvinner. Mer information om dispositionsscheman finns i handboken på [grunderna för schemakomposition](../../xdm/schema/composition.md)
+Med dessa standarddefinitioner kan data tolkas på ett enhetligt sätt, oavsett ursprung, och behovet av översättning mellan olika program försvinner. Mer information om att komponera scheman finns i guiden om [grunderna i schemakomposition](../../xdm/schema/composition.md)
 
 ## Söka efter ett datauppsättningsschema
 
-Självstudiekursen börjar där [API-självstudiekurs för schematabell](../../xdm/tutorials/create-schema-api.md) slutar med att använda det bonusmedlemschema som skapades under den självstudiekursen.
+Den här självstudiekursen börjar där [API-självstudiekursen ](../../xdm/tutorials/create-schema-api.md) för schemat Schema Registry avslutas, och använder det schema för lojalitetsmedlemmar som skapades under den självstudiekursen.
 
-Om du inte har slutfört [!DNL Schema Registry] självstudiekurs, börja där och fortsätt bara med den här datauppsättningssjälvstudiekursen när du har skapat det nödvändiga schemat.
+Om du inte har slutfört självstudiekursen [!DNL Schema Registry] kan du börja där och fortsätta med den här självstudiekursen för datauppsättningar först när du har komponerat det nödvändiga schemat.
 
-Följande anrop kan användas för att visa det bonusmedlemsschema som du skapade under [!DNL Schema Registry] API-självstudiekurs:
+Följande anrop kan användas för att visa det bonusmedlemsschema som du skapade under [!DNL Schema Registry] API-självstudien:
 
 **API-format**
 
@@ -206,12 +206,12 @@ curl -X POST \
 
 | Egenskap | Beskrivning |
 | --- | --- |
-| `schemaRef.id` | URI `$id` värdet för XDM-schemat som datauppsättningen baseras på. |
-| `schemaRef.contentType` | Anger schemats format och version. Se avsnittet om [schemaversion](../../xdm/api/getting-started.md#versioning) i XDM API-guiden för mer information. |
+| `schemaRef.id` | URI `$id`-värdet för XDM-schemat som datamängden baseras på. |
+| `schemaRef.contentType` | Anger schemats format och version. Mer information finns i avsnittet [schemaversion](../../xdm/api/getting-started.md#versioning) i XDM API-guiden. |
 
 >[!NOTE]
 >
->I den här självstudiekursen används [Apache Parquet](https://parquet.apache.org/docs/) för alla dess exempel. Ett exempel som använder JSON-filformatet finns i [Utvecklarhandbok för batchintag](../../ingestion/batch-ingestion/api-overview.md)
+>I den här självstudien används filformatet [Apache Parquet](https://parquet.apache.org/docs/) för alla dess exempel. Ett exempel som använder JSON-filformatet finns i [Utvecklarhandboken för gruppfrågor](../../ingestion/batch-ingestion/api-overview.md)
 
 **Svar**
 
@@ -235,7 +235,7 @@ POST /batches
 
 **Begäran**
 
-Begärandetexten innehåller ett &quot;datasetId&quot;-fält vars värde är `{DATASET_ID}` som skapades i föregående steg.
+Begärandetexten innehåller ett&quot;datasetId&quot;-fält, vars värde är `{DATASET_ID}` som skapades i föregående steg.
 
 ```SHELL
 curl -X POST 'https://platform.adobe.io/data/foundation/import/batches' \
@@ -252,7 +252,7 @@ curl -X POST 'https://platform.adobe.io/data/foundation/import/batches' \
 
 **Svar**
 
-Ett lyckat svar returnerar HTTP-status 201 (Skapad) och ett svarsobjekt. Svarsobjektet består av en array som innehåller ID:t för den nyligen skapade batchen i formatet `"@/batches/{BATCH_ID}"`. Batch-ID är en skrivskyddad, systemgenererad sträng som används för att referera till batchen i API-anrop.
+Ett lyckat svar returnerar HTTP-status 201 (Skapad) och ett svarsobjekt. Svarsobjektet består av en array som innehåller ID:t för den nyligen skapade gruppen i formatet `"@/batches/{BATCH_ID}"`. Batch-ID är en skrivskyddad, systemgenererad sträng som används för att referera till batchen i API-anrop.
 
 ```JSON
 {
@@ -305,8 +305,8 @@ PUT /batches/{BATCH_ID}/datasets/{DATASET_ID}/files/{FILE_NAME}
 
 | Parameter | Beskrivning |
 | --- | --- |
-| `{BATCH_ID}` | The `id` för den grupp som du överför till. |
-| `{DATASET_ID}` | The `id` av datauppsättningen kommer batchen att sparas i. |
+| `{BATCH_ID}` | `id` för gruppen som du överför till. |
+| `{DATASET_ID}` | `id` för datauppsättningen som gruppen kommer att sparas i. |
 | `{FILE_NAME}` | Namnet på filen som du överför. |
 
 **Begäran**
@@ -326,7 +326,7 @@ En överförd fil returnerar en tom svarstext och HTTP-status 200 (OK).
 
 ## Slutförande av signalbatch
 
-När du har överfört alla datafiler till gruppen kan du signalera att gruppen är slutförd. Signeringsslutförandet gör att tjänsten skapar [!DNL Catalog] `DataSetFile` för de överförda filerna och koppla dem till den tidigare genererade gruppen. The [!DNL Catalog] batchen har markerats som lyckad, vilket utlöser eventuella efterföljande flöden som sedan kan användas för de data som nu är tillgängliga.
+När du har överfört alla datafiler till gruppen kan du signalera att gruppen är slutförd. Signaleringsslutförandet gör att tjänsten skapar [!DNL Catalog] `DataSetFile`-poster för de överförda filerna och associerar dem med den batch som genererats tidigare. Batchen [!DNL Catalog] har markerats som lyckad, vilket utlöser alla efterföljande flöden som sedan kan användas på de data som nu är tillgängliga.
 
 **API-format**
 
@@ -336,7 +336,7 @@ POST /batches/{BATCH_ID}?action=COMPLETE
 
 | Parameter | Beskrivning |
 | --- | --- |
-| `{BATCH_ID}` | The `id` av gruppen som du markerar som slutförd. |
+| `{BATCH_ID}` | `id` för den grupp som du har markerat som slutförd. |
 
 **Begäran**
 
@@ -353,7 +353,7 @@ En slutförd batch returnerar en tom svarstext och HTTP-status 200 (OK).
 
 ## Bildskärmsingång
 
-Beroende på storleken på data tar batcharna olika lång tid att importera. Du kan övervaka status för en batch genom att lägga till en batch-ID till en `GET /batches` begäran.
+Beroende på storleken på data tar batcharna olika lång tid att importera. Du kan övervaka status för en batch genom att lägga till en batch-ID till en `GET /batches`-begäran.
 
 **API-format**
 
@@ -363,7 +363,7 @@ GET /batches/{BATCH_ID}
 
 | Parameter | Beskrivning |
 | --- | --- |
-| `{BATCH_ID}` | The `id` för den grupp som du vill övervaka. |
+| `{BATCH_ID}` | `id` för gruppen som du vill övervaka. |
 
 **Begäran**
 
@@ -378,7 +378,7 @@ curl -X GET \
 
 **Svar**
 
-Ett positivt svar returnerar ett objekt med dess `status` attribut som innehåller värdet för `success`:
+Ett positivt svar returnerar ett objekt med attributet `status` som innehåller värdet `success`:
 
 ```JSON
 {
@@ -410,7 +410,7 @@ Ett positivt svar returnerar ett objekt med dess `status` attribut som innehåll
 }
 ```
 
-Ett negativt svar returnerar ett objekt med värdet `"failed"` i `"status"` och innehåller alla relevanta felmeddelanden:
+Ett negativt svar returnerar ett objekt med värdet `"failed"` i dess `"status"`-attribut, och inkluderar alla relevanta felmeddelanden:
 
 ```JSON
 {
@@ -462,14 +462,14 @@ Med batch-ID kan du använda API:t för dataåtkomst för att läsa tillbaka och
 
 Du kan också använda API:t för dataåtkomst för att returnera namn, storlek i byte och en länk för att hämta filen eller mappen.
 
-Detaljerade steg för hur du arbetar med API:t för dataåtkomst finns i [Utvecklarhandbok för dataåtkomst](../../data-access/home.md).
+Detaljerade steg för hur du arbetar med API:t för dataåtkomst finns i [Utvecklarhandboken för dataåtkomst](../../data-access/home.md).
 
 ## Uppdatera datauppsättningsschemat
 
 Du kan lägga till fält och lägga in ytterligare data i datauppsättningar som du har skapat. För att göra detta måste du först uppdatera schemat genom att lägga till ytterligare egenskaper som definierar nya data. Detta kan göras med åtgärderna PATCH och/eller PUT för att uppdatera det befintliga schemat.
 
-Mer information om att uppdatera scheman finns i [Utvecklarhandbok för API för schemaregister](../../xdm/api/getting-started.md).
+Mer information om hur du uppdaterar scheman finns i [API-utvecklarhandboken för schematabeller](../../xdm/api/getting-started.md).
 
 När du har uppdaterat schemat kan du följa stegen i den här självstudiekursen igen för att importera nya data som följer det reviderade schemat.
 
-Det är viktigt att komma ihåg att schemautvecklingen är enbart additiv, vilket innebär att du inte kan införa en brytningsändring i ett schema när det har sparats i registret och använts för datahämtning. Om du vill veta mer om de bästa sätten att komponera schema för användning med Adobe Experience Platform kan du läsa guiden på [grunderna för schemakomposition](../../xdm/schema/composition.md).
+Det är viktigt att komma ihåg att schemautvecklingen är enbart additiv, vilket innebär att du inte kan införa en brytningsändring i ett schema när det har sparats i registret och använts för datahämtning. Om du vill veta mer om de bästa sätten att komponera schema för användning med Adobe Experience Platform kan du läsa guiden om [grunderna i schemakomposition](../../xdm/schema/composition.md).

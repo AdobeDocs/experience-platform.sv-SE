@@ -14,7 +14,7 @@ ht-degree: 0%
 
 # Ange etikett för ett fält som en identitet i användargränssnittet
 
-Fält som innehåller personligt identifierbar information (PII) kan märkas som identitetsfält. Ett värde som anges i ett identitetsfält tolkas som en identitet av [!DNL Identity Service]. Identitetens namnutrymme anges som en del av etiketteringen av fältet.
+Fält som innehåller personligt identifierbar information (PII) kan märkas som identitetsfält. Ett värde i ett identitetsfält tolkas som en identitet av [!DNL Identity Service]. Identitetens namnutrymme anges som en del av etiketteringen av fältet.
 
 Följande villkor måste vara uppfyllda för att ett fält ska kunna märkas som identitet:
 
@@ -22,8 +22,8 @@ Följande villkor måste vara uppfyllda för att ett fält ska kunna märkas som
 * Identiteter känns bara igen i post- och tidsseriedata
 * Endast PII-fält ska markeras som identitet. Om du väljer ett fält som representerar mer generiska data blir relationen mindre exakt och det kan uppstå fel när relaterade identiteter från identitetsdiagrammet används
 
-Instruktioner om hur du etiketterar identitetsfält i användargränssnittet finns i handboken [definiera identitetsfält i användargränssnittet](../xdm/ui/fields/identity.md).
+Instruktioner om hur du etiketterar identitetsfält i användargränssnittet finns i handboken [Definiera identitetsfält i användargränssnittet](../xdm/ui/fields/identity.md).
 
 ## Nästa steg
 
-Mer information om [!DNL Identity Service], se [[!DNL Identity Service] översikt](./home.md).
+Mer information om [!DNL Identity Service] finns i [[!DNL Identity Service] översikten](./home.md).

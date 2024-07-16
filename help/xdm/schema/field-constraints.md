@@ -6,8 +6,8 @@ description: En referens för fälttypsbegränsningar i Experience Data Model (X
 exl-id: 63839a28-6d26-46f1-8bbf-b524e82ac4df
 source-git-commit: 88caea133bd2bf994587bda5b31cddd22f2c90cb
 workflow-type: tm+mt
-source-wordcount: '605'
-ht-degree: 2%
+source-wordcount: '617'
+ht-degree: 0%
 
 ---
 
@@ -17,9 +17,9 @@ I XDM-scheman (Experience Data Model) begränsar fälttypen vilken typ av data s
 
 ## Komma igång
 
-Innan du använder den här handboken bör du granska [grunderna för schemakomposition](./composition.md) för en introduktion till XDM-scheman, klasser och schemafältgrupper.
+Granska [grunderna för schemakomposition](./composition.md) innan du använder den här guiden för att få en introduktion till XDM-scheman, klasser och schemafältgrupper.
 
-Om du planerar att definiera egna fälttyper i API:t rekommenderar vi att du börjar med [Utvecklarhandbok för schemaregister](../api/getting-started.md) om du vill lära dig hur du skapar fältgrupper och datatyper som du vill inkludera dina anpassade fält i. Om du använder användargränssnittet för Experience Platform för att skapa dina scheman kan du läsa guiden på [definiera fält i användargränssnittet](../ui/fields/overview.md) om du vill lära dig hur du implementerar begränsningar för fält som du definierar i anpassade fältgrupper och datatyper.
+Om du planerar att definiera dina egna fälttyper i API rekommenderar vi att du börjar med [utvecklarhandboken för schemaregister](../api/getting-started.md) för att lära dig hur du skapar fältgrupper och datatyper som du vill inkludera dina anpassade fält i. Om du använder användargränssnittet för Experience Platform för att skapa dina scheman kan du läsa guiden om att [definiera fält i användargränssnittet](../ui/fields/overview.md) för att lära dig hur du implementerar begränsningar för fält som du definierar i anpassade fältgrupper och datatyper.
 
 ## Grundstruktur och exempel {#basic-types}
 
@@ -27,7 +27,7 @@ XDM byggs ovanpå JSON-schema och därför ärver XDM-fält en liknande syntax n
 
 >[!NOTE]
 >
->Se [Grundläggande API-guide](../../landing/api-fundamentals.md#json-schema) om du vill ha mer information om JSON-schema och andra underliggande tekniker i plattforms-API:er.
+>Mer information om JSON Schema och andra underliggande tekniker i Platform API:er finns i [API-handboken](../../landing/api-fundamentals.md#json-schema).
 
 I följande tabell visas hur varje XDM-typ representeras i JSON-schema, tillsammans med ett exempelvärde som överensstämmer med typen:
 
@@ -60,7 +60,11 @@ I följande tabell visas hur varje XDM-typ representeras i JSON-schema, tillsamm
       <td>[!UICONTROL Long]</td>
       <td>
         <pre class="JSON language-JSON hljs">
-{"type": "integer", "maximum": 9007199254740991, "minimum": -9007199254740991 }</pre>
+{
+  "type": "integer",
+  "maximum": 9007199254740991,
+  "minimum": -9007199254740991
+}</pre>
       </td>
       <td><code>1478108935</code></td>
     </tr>
@@ -68,7 +72,11 @@ I följande tabell visas hur varje XDM-typ representeras i JSON-schema, tillsamm
       <td>[!UICONTROL Integer]</td>
       <td>
         <pre class="JSON language-JSON hljs">
-{ "type": "integer", "maximum": 2147483648, "minimum": -2147483648 }</pre>
+{
+  "type": "integer",
+  "maximum": 2147483648,
+  "minimum": -2147483648
+}</pre>
       </td>
       <td><code>24906290</code></td>
     </tr>
@@ -76,7 +84,11 @@ I följande tabell visas hur varje XDM-typ representeras i JSON-schema, tillsamm
       <td>[!UICONTROL Short]</td>
       <td>
         <pre class="JSON language-JSON hljs">
-{ "type": "integer", "maximum": 32768, "minimum": -32768 }</pre>
+{
+  "type": "integer",
+  "maximum": 32768,
+  "minimum": -32768
+}</pre>
       </td>
       <td><code>15781</code></td>
     </tr>
@@ -84,7 +96,11 @@ I följande tabell visas hur varje XDM-typ representeras i JSON-schema, tillsamm
       <td>[!UICONTROL Byte]</td>
       <td>
         <pre class="JSON language-JSON hljs">
-{ "type": "integer", "maximum": 128, "minimum": -128 }</pre>
+{
+  "type": "integer",
+  "maximum": 128,
+  "minimum": -128
+}</pre>
       </td>
       <td><code>90</code></td>
     </tr>
@@ -92,7 +108,10 @@ I följande tabell visas hur varje XDM-typ representeras i JSON-schema, tillsamm
       <td>[!UICONTROL Date]*</td>
       <td>
         <pre class="JSON language-JSON hljs">
-{ "type": "string", "format": "date" }</pre>
+{
+  "type": "string",
+  "format": "date"
+}</pre>
       </td>
       <td><code>"2019-05-15"</code></td>
     </tr>
@@ -100,7 +119,10 @@ I följande tabell visas hur varje XDM-typ representeras i JSON-schema, tillsamm
       <td>[!UICONTROL DateTime]*</td>
       <td>
         <pre class="JSON language-JSON hljs">
-{ "type": "string", "format": "date-time" }</pre>
+{
+  "type": "string",
+  "format": "date-time"
+}</pre>
       </td>
       <td><code>"2019-05-15T20:20:39+00:00"</code></td>
     </tr>
@@ -115,7 +137,7 @@ I följande tabell visas hur varje XDM-typ representeras i JSON-schema, tillsamm
   </tbody>
 </table>
 
-**Alla datumformaterade strängar måste följa ISO 8601-standarden ([RFC 3339, avsnitt 5.6](https://tools.ietf.org/html/rfc3339#section-5.6)).*
+**Alla datumformaterade strängar måste uppfylla standarden ISO 8601 ([RFC 3339, avsnitt 5.6](https://tools.ietf.org/html/rfc3339#section-5.6)).*
 
 ## Mappa XDM-typer till andra format
 
@@ -127,9 +149,9 @@ Avsnitten nedan beskriver hur varje XDM-typ mappar till andra vanliga serialiser
 
 >[!NOTE]
 >
->Bland de standardtyper av XDM som anges i tabellerna nedan finns [!UICONTROL Map] typ ingår också. Kartor används i standardscheman när data representeras som nycklar som mappar till vissa värden, eller där nycklar inte rimligen kan inkluderas i ett statiskt schema och måste behandlas som datavärden.
+>Bland de XDM-standardtyper som anges i tabellerna nedan ingår även typen [!UICONTROL Map]. Kartor används i standardscheman när data representeras som nycklar som mappar till vissa värden, eller där nycklar inte rimligen kan inkluderas i ett statiskt schema och måste behandlas som datavärden.
 >
->Många standardkomponenter för XDM använder karttyper, och du kan också [definiera anpassade kartfält](../tutorials/custom-fields-api.md#custom-maps) vid behov. Karttypen tas med i tabellerna nedan för att hjälpa dig att bestämma hur befintliga data ska mappas till XDM om de för närvarande lagras i något av formaten som listas nedan.
+>Många standard-XDM-komponenter använder mappningstyper, och du kan även [definiera anpassade mappningsfält](../tutorials/custom-fields-api.md#custom-maps) om du vill. Karttypen tas med i tabellerna nedan för att hjälpa dig att bestämma hur befintliga data ska mappas till XDM om de för närvarande lagras i något av formaten som listas nedan.
 
 ### Parquet, Spark SQL och Java {#parquet}
 
@@ -144,7 +166,7 @@ Avsnitten nedan beskriver hur varje XDM-typ mappar till andra vanliga serialiser
 | [!UICONTROL Date] | Typ: `INT32`<br>Anteckning: `DATE` | `DateType` | `java.util.Date` |
 | [!UICONTROL DateTime] | Typ: `INT64`<br>Anteckning: `TIMESTAMP_MILLIS` | `TimestampType` | `java.util.Date` |
 | [!UICONTROL Boolean] | Typ: `BOOLEAN` | `BooleanType` | `java.lang.Boolean` |
-| [!UICONTROL Map] | `MAP`-annoterad grupp<br><br>(`<key-type>` måste vara `STRING`) | `MapType`<br><br>(`keyType` måste vara `StringType`) | `java.util.Map` |
+| [!UICONTROL Map] | `MAP`-kommenterad grupp <br><br>(`<key-type>` måste vara `STRING`) | `MapType`<br><br>(`keyType` måste vara `StringType`) | `java.util.Map` |
 
 {style="table-layout:auto"}
 
@@ -184,4 +206,4 @@ Avsnitten nedan beskriver hur varje XDM-typ mappar till andra vanliga serialiser
 
 ## Definiera XDM-fälttyper i API {#define-fields}
 
-Med API:t för schemaregister kan du definiera anpassade fält med hjälp av format och valfria begränsningar. Se guiden på [definiera anpassade fält i API:t för schemaregister](../tutorials/custom-fields-api.md) för mer information.
+Med API:t för schemaregister kan du definiera anpassade fält med hjälp av format och valfria begränsningar. Mer information finns i guiden [Definiera anpassade fält i API:t för schemaregister](../tutorials/custom-fields-api.md).

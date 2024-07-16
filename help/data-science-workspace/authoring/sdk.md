@@ -1,8 +1,8 @@
 ---
-keywords: Experience Platform;utvecklarguide;SDK;Modellframställning;Data Science Workspace;populära topics;testing
+keywords: Experience Platform;utvecklarguide;SDK;Modellframställning;Data Science Workspace;populära ämnen;testning
 solution: Experience Platform
 title: SDK för modellredigering
-description: Med hjälp av SDK för modellredigering kan du utveckla anpassade maskininlärningsrecept och funktionsprofiler som kan användas i Adobe Experience Platform Data Science Workspace, med implementerbara mallar i PySpark och Spark (Scala).
+description: Med SDK för modellredigering kan du utveckla anpassade maskininlärningsrecept och funktionsförbereds som kan användas i Adobe Experience Platform Data Science Workspace, som innehåller implementerbara mallar i PySpark och Spark (Scala).
 exl-id: c7577f93-a64f-49b7-a76d-71f21d619052
 source-git-commit: 86e6924078c115fb032ce39cd678f1d9c622e297
 workflow-type: tm+mt
@@ -13,7 +13,7 @@ ht-degree: 1%
 
 # SDK för modellredigering
 
-Med SDK för modellredigering kan du utveckla anpassade maskininlärningsrecept och funktionsförlopp som kan användas i [!DNL Adobe Experience Platform] Data Science Workspace, med genomförbara mallar i [!DNL PySpark] och [!DNL Spark (Scala)].
+Med SDK för modellredigering kan du utveckla anpassade maskininlärningsrecept och funktionsförlopp som kan användas i [!DNL Adobe Experience Platform] Data Science Workspace, som innehåller implementerbara mallar i [!DNL PySpark] och [!DNL Spark (Scala)].
 
 Det här dokumentet innehåller information om de olika klasser som finns i SDK för modellredigering.
 
@@ -41,7 +41,7 @@ I följande tabell beskrivs de abstrakta metoderna för en PySpark Data Loader-k
             <td>
                 <ul>
                     <li><code>self</code>: Självreferens</li>
-                    <li><code>configProperties</code>: Mappning av konfigurationsegenskaper</li>
+                    <li><code>configProperties</code>: Konfilegenskapsmappning</li>
                     <li><code>spark</code>: Spark-session</li>
                 </ul>
             </td>
@@ -51,7 +51,7 @@ I följande tabell beskrivs de abstrakta metoderna för en PySpark Data Loader-k
 
 **Spark**
 
-I följande tabell beskrivs de abstrakta metoderna för en [!DNL Spark] Klassen Data Loader:
+I följande tabell beskrivs de abstrakta metoderna för en [!DNL Spark] Data Loader-klass:
 
 <table>
     <thead>
@@ -68,7 +68,7 @@ I följande tabell beskrivs de abstrakta metoderna för en [!DNL Spark] Klassen 
             </td>
             <td>
                 <ul>
-                    <li><code>configProperties</code>: Mappning av konfigurationsegenskaper</li>
+                    <li><code>configProperties</code>: Konfilegenskapsmappning</li>
                     <li><code>sparkSession</code>: Spark-session</li>
                 </ul>
             </td>
@@ -76,9 +76,9 @@ I följande tabell beskrivs de abstrakta metoderna för en [!DNL Spark] Klassen 
     </tbody>
 </table>
 
-### Läsa in data från en [!DNL Platform] datauppsättning {#load-data-from-a-platform-dataset}
+### Läs in data från en [!DNL Platform]-datauppsättning {#load-data-from-a-platform-dataset}
 
-Följande exempel hämtar [!DNL Platform] data efter ID och returnerar en DataFrame, där datauppsättnings-ID (`datasetId`) är en definierad egenskap i konfigurationsfilen.
+Följande exempel hämtar [!DNL Platform]-data efter ID och returnerar en DataFrame, där datauppsättnings-ID (`datasetId`) är en definierad egenskap i konfigurationsfilen.
 
 **PySpark**
 
@@ -193,11 +193,11 @@ class MyDataLoader extends DataLoader {
 
 ## DataSaver {#datasaver}
 
-Klassen DataSaver kapslar in allt som rör lagring av utdata, inklusive data från poängsättning eller funktionsteknik. Datasparare utökar den abstrakta klassen `DataSaver` och måste åsidosätta den abstrakta metoden `save`.
+Klassen DataSaver kapslar in allt som rör lagring av utdata, inklusive data från poängsättning eller funktionskonstruktion. Datasparare utökar den abstrakta klassen `DataSaver` och måste åsidosätta den abstrakta metoden `save`.
 
 **PySpark**
 
-I följande tabell beskrivs de abstrakta metoderna för en [!DNL PySpark] Klassen Data Saver:
+I följande tabell beskrivs de abstrakta metoderna för en [!DNL PySpark] Data Saver-klass:
 
 <table>
     <thead>
@@ -215,7 +215,7 @@ I följande tabell beskrivs de abstrakta metoderna för en [!DNL PySpark] Klasse
             <td>
                 <ul>
                     <li><code>self</code>: Självreferens</li>
-                    <li><code>configProperties</code>: Mappning av konfigurationsegenskaper</li>
+                    <li><code>configProperties</code>: Konfilegenskapsmappning</li>
                     <li><code>dataframe</code>: Data som ska lagras i form av en DataFrame</li>
                 </ul>
             </td>
@@ -225,7 +225,7 @@ I följande tabell beskrivs de abstrakta metoderna för en [!DNL PySpark] Klasse
 
 **Spark (Scala)**
 
-I följande tabell beskrivs de abstrakta metoderna för en [!DNL Spark] Klassen Data Saver:
+I följande tabell beskrivs de abstrakta metoderna för en [!DNL Spark] Data Saver-klass:
 
 <table>
     <thead>
@@ -242,7 +242,7 @@ I följande tabell beskrivs de abstrakta metoderna för en [!DNL Spark] Klassen 
             </td>
             <td>
                 <ul>
-                    <li><code>configProperties</code>: Mappning av konfigurationsegenskaper</li>
+                    <li><code>configProperties</code>: Konfilegenskapsmappning</li>
                     <li><code>dataFrame</code>: Data som ska lagras i form av en DataFrame</li>
                 </ul>
             </td>
@@ -250,14 +250,14 @@ I följande tabell beskrivs de abstrakta metoderna för en [!DNL Spark] Klassen 
     </tbody>
 </table>
 
-### Spara data i en [!DNL Platform] datauppsättning {#save-data-to-a-platform-dataset}
+### Spara data i en [!DNL Platform]-datauppsättning {#save-data-to-a-platform-dataset}
 
-För att lagra data på en [!DNL Platform] datauppsättningen. Egenskaperna måste antingen anges eller definieras i konfigurationsfilen:
+För att kunna lagra data i en [!DNL Platform]-datauppsättning måste egenskaperna antingen anges eller definieras i konfigurationsfilen:
 
-- Ett giltigt [!DNL Platform] datauppsättnings-ID som data ska lagras på
+- Ett giltigt [!DNL Platform]-datauppsättnings-ID som data ska lagras på
 - Klient-ID som tillhör din organisation
 
-I följande exempel lagras data (`prediction`) på en [!DNL Platform] datauppsättning, där datauppsättnings-ID:t (`datasetId`) och innehavar-ID (`tenantId`) är definierade egenskaper i konfigurationsfilen.
+I följande exempel lagras data (`prediction`) i en [!DNL Platform]-datauppsättning, där datauppsättnings-ID (`datasetId`) och klient-ID (`tenantId`) definieras i konfigurationsfilen.
 
 
 **PySpark**
@@ -393,7 +393,7 @@ class ScoringDataSaver extends DataSaver {
 
 ## DatasetTransformer {#datasettransformer}
 
-Klassen DatasetTransformer ändrar och omformar strukturen i en datauppsättning. The [!DNL Sensei Machine Learning Runtime] kräver inte att den här komponenten definieras och implementeras baserat på dina krav.
+Klassen DatasetTransformer ändrar och omformar strukturen i en datauppsättning. [!DNL Sensei Machine Learning Runtime] kräver inte att den här komponenten definieras och implementeras baserat på dina krav.
 
 När det gäller en funktionspipeline kan datauppsättningsomvandlare användas tillsammans med en rörledningsfabrik för att förbereda data för funktionskonstruktion.
 
@@ -417,7 +417,7 @@ I följande tabell beskrivs klassmetoderna för en PySpark-datamängdstransforme
             <td>
                 <ul>
                     <li><code>self</code>: Självreferens</li>
-                    <li><code>configProperties</code>: Mappning av konfigurationsegenskaper</li>
+                    <li><code>configProperties</code>: Konfilegenskapsmappning</li>
                     <li><code>dataset</code>: Indatauppsättningen för omvandling</li>
                 </ul>
             </td>
@@ -427,7 +427,7 @@ I följande tabell beskrivs klassmetoderna för en PySpark-datamängdstransforme
 
 **Spark (Scala)**
 
-I följande tabell beskrivs de abstrakta metoderna för en [!DNL Spark] Transformatorklass för datauppsättning:
+I följande tabell beskrivs de abstrakta metoderna för en [!DNL Spark]-datamängdstransformatorklass:
 
 <table>
     <thead>
@@ -444,7 +444,7 @@ I följande tabell beskrivs de abstrakta metoderna för en [!DNL Spark] Transfor
             </td>
             <td>
                 <ul>
-                    <li><code>configProperties</code>: Mappning av konfigurationsegenskaper</li>
+                    <li><code>configProperties</code>: Konfilegenskapsmappning</li>
                     <li><code>dataset</code>: Indatauppsättningen för omvandling</li>
                 </ul>
             </td>
@@ -476,7 +476,7 @@ I följande tabell beskrivs klassmetoderna för en PySpark FeaturePipelineFactor
             <td>
                 <ul>
                     <li><code>self</code>: Självreferens</li>
-                    <li><code>configProperties</code>: Mappning av konfigurationsegenskaper</li>
+                    <li><code>configProperties</code>: Konfilegenskapsmappning</li>
                 </ul>
             </td>
         </tr>
@@ -515,7 +515,7 @@ I följande tabell beskrivs klassmetoderna för en [!DNL Spark] FeaturePipelineF
             </td>
             <td>
                 <ul>
-                    <li><code>configProperties</code>: Mappning av konfigurationsegenskaper</li>
+                    <li><code>configProperties</code>: Konfilegenskapsmappning</li>
                 </ul>
             </td>
         </tr>
@@ -536,7 +536,7 @@ I följande tabell beskrivs klassmetoderna för en [!DNL Spark] FeaturePipelineF
 
 ## PipelineFactory {#pipelinefactory}
 
-Klassen PipelineFactory kapslar metoder och definitioner för modellutbildning och poängsättning, där utbildningslogik och algoritmer definieras i form av en [!DNL Spark] Pipeline.
+Klassen PipelineFactory kapslar metoder och definitioner för modellutbildning och poängsättning, där utbildningslogik och algoritmer definieras i form av en [!DNL Spark]-pipeline.
 
 **PySpark**
 
@@ -585,7 +585,7 @@ I följande tabell beskrivs klassmetoderna för en PySpark PipelineFactory:
                     <li><code>self</code>: Självreferens</li>
                     <li><code>configProperties</code>: Konfigurationsegenskaper</li>
                     <li><code>dataframe</code>: Indatauppsättning för poängsättning</li>
-                    <li><code>model</code>: En tränad modell som används för bedömning</li>
+                    <li><code>model</code>: En tränad modell som används för poängsättning</li>
                 </ul>
             </td>
         </tr>

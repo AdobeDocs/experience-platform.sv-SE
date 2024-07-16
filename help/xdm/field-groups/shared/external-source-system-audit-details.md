@@ -8,15 +8,15 @@ ht-degree: 0%
 
 ---
 
-# [!UICONTROL External Source System Audit Details] fältgrupp
+# Fältgrupp [!UICONTROL External Source System Audit Details]
 
-[!UICONTROL External Source System Audit Details] är en standardfältgrupp för XDM (Experience Data Model) som utökar kärndatatypen External Source System Audit Attributes genom att referera till dess egenskaper och lägga till sammanhangsbaserade metadata. Detta möjliggör detaljerad spårning och flexibel dataintegrering från externa källor.
+[!UICONTROL External Source System Audit Details] är en XDM-fältgrupp (Standard Experience Data Model) som utökar kärndatatypen External Source System Audit Attributes genom att referera till dess egenskaper och lägga till sammanhangsbaserade metadata. Detta möjliggör detaljerad spårning och flexibel dataintegrering från externa källor.
 
 ![Ett schemadiagram över fältgruppen Extern Source-systemgranskningsinformation.](../../images/field-groups/shared/external-source-system-audit-details.png)
 
 | Visningsnamn | Egenskap | Datatyp | Beskrivning |
 | -------------------------------------------------| ---------------------------------------- | --------- | --- |
-| [!UICONTROL External Source System Audit Details] | `external-source-system-audit-details` | [[!UICONTROL External Source System Audit Attributes]](../../data-types/external-source-system-audit-attributes.md) | The[!UICONTROL External Source System Audit Details]fältgruppen utökar kärndatatypen External Source System Audit Attributes genom att referera till dess egenskaper och lägga till sammanhangsbaserade metadata. Detta underlättar detaljerad spårning av granskningar och flexibel dataintegrering för externa källor, vilket underlättar asynkron infogning av profiler. |
+| [!UICONTROL External Source System Audit Details] | `external-source-system-audit-details` | [[!UICONTROL External Source System Audit Attributes]](../../data-types/external-source-system-audit-attributes.md) | Fältgruppen [!UICONTROL External Source System Audit Details] utökar datatypen External Source System Audit Attributes genom att referera till dess egenskaper och lägga till sammanhangsbaserade metadata. Detta underlättar detaljerad spårning av granskningar och flexibel dataintegrering för externa källor, vilket underlättar asynkron infogning av profiler. |
 
 {style="table-layout:auto"}
 

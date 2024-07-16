@@ -15,7 +15,7 @@ Nedan följer en lista över versionsinformation för Adobe Analytics-taggtillä
 
 >[!NOTE]
 >
->Tillägget Analytics-taggen uppdateras ofta som svar på uppdateringar av [AppMeasurementets JavaScript-bibliotek](https://experienceleague.adobe.com/docs/analytics/implementation/js/overview.html). Se [Versionsinformation om AppMeasurement](https://experienceleague.adobe.com/docs/analytics/implementation/appmeasurement-updates.html) för närmare information om de specifika versioner som nämns nedan.
+>Analytics-taggtillägget uppdateras ofta som svar på uppdateringar av [AppMeasurement JavaScript-biblioteket](https://experienceleague.adobe.com/docs/analytics/implementation/js/overview.html). Mer information om de specifika versionerna som nämns nedan finns i [versionsinformationen för AppMeasurementet](https://experienceleague.adobe.com/docs/analytics/implementation/appmeasurement-updates.html).
 
 ## 4 mars 2024
 
@@ -41,12 +41,12 @@ Nedan följer en lista över versionsinformation för Adobe Analytics-taggtillä
 **Funktioner**:
 
 * Uppgraderat till [AppMeasurement v2.24.0](https://github.com/adobe/appmeasurement/releases/tag/v2.24.0).
-* En valfri konfiguration har lagts till (`decodeLinkParameters` standard `false`) som avkodar URL-adresser som innehåller dubbelbyte-kodade tecken.
+* En valfri konfiguration (`decodeLinkParameters` standard `false`) som avkodar URL-adresser som innehåller dubbelbyte-kodade tecken har lagts till.
 
 **Felkorrigeringar**:
 
-* Ytterligare felhantering har lagts till för webbläsare med felaktig hög entropi [Tips för användaragent-klient](https://experienceleague.adobe.com/docs/analytics/technotes/client-hints.html) API.
-* Ändrad [POST](https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods/POST) Content-Type header to use `x-www-form-urlencoded` som standard.
+* Ytterligare felhantering har lagts till för webbläsare med felaktigt höga entropi [klienttips för användaragent](https://experienceleague.adobe.com/docs/analytics/technotes/client-hints.html).
+* [POST](https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods/POST) Content-Type-huvud har ändrats till `x-www-form-urlencoded` som standard.
 
 ## 23 september 2022
 
@@ -55,7 +55,7 @@ Nedan följer en lista över versionsinformation för Adobe Analytics-taggtillä
 **Funktioner**:
 
 * Uppgraderat till AppMeasurement v2.23.0.
-* Tillägget kan nu samla in hög entropi [klienttips för användaragent](https://developer.mozilla.org/en-US/docs/Web/HTTP/Client_hints#user-agent_client_hints) som stöds av den senaste versionen av AppMeasurementet.
+* Tillägget kan nu samla in [klienttips för användaragent](https://developer.mozilla.org/en-US/docs/Web/HTTP/Client_hints#user-agent_client_hints) med hög entropi, vilket stöds av den senaste versionen av AppMeasurementet.
 
 ## 28 februari 2022
 
@@ -88,7 +88,7 @@ Nedan följer en lista över versionsinformation för Adobe Analytics-taggtillä
 
 **Felkorrigeringar**:
 
-* Uppgraderad [AppMeasurement till v2.2.1](https://experienceleague.adobe.com/docs/analytics/implementation/appmeasurement-updates.html).
+* Uppgraderade [AppMeasurementet till v2.2.1](https://experienceleague.adobe.com/docs/analytics/implementation/appmeasurement-updates.html).
 * Uppdaterade reservlinkName för att spegla logiken i Activity Map i stället för att använda innerHTML.
 
 ## 6 augusti 2020
@@ -101,7 +101,7 @@ Nedan följer en lista över versionsinformation för Adobe Analytics-taggtillä
 
 **Funktioner**:
 
-* Uppdaterat [AppMeasurement till 2.22.0](https://experienceleague.adobe.com/docs/analytics/implementation/appmeasurement-updates.html).
+* [AppMeasurementet har uppdaterats till 2.2.0](https://experienceleague.adobe.com/docs/analytics/implementation/appmeasurement-updates.html).
 * Det lilla användargränssnittet ändras så att de extra inställningarna nu visas komprimerade i ett dragspel i stället för i en kryssruta.
 
 ## 2 juni 2020
@@ -129,7 +129,7 @@ Nedan följer en lista över versionsinformation för Adobe Analytics-taggtillä
 
 **Funktioner**:
 
-* Uppdaterat [AppMeasurement till 2.20.0](https://experienceleague.adobe.com/docs/analytics/implementation/appmeasurement-updates.html)
+* [AppMeasurementet har uppdaterats till 2.20.0](https://experienceleague.adobe.com/docs/analytics/implementation/appmeasurement-updates.html)
 
 ## 2 mars 2020
 
@@ -141,7 +141,7 @@ Nedan följer en lista över versionsinformation för Adobe Analytics-taggtillä
 
 **Funktioner**:
 
-* Uppdaterat [AppMeasurement till 2.18.0](https://experienceleague.adobe.com/docs/analytics/implementation/appmeasurement-updates.html)
+* [AppMeasurementet har uppdaterats till 2.18.0](https://experienceleague.adobe.com/docs/analytics/implementation/appmeasurement-updates.html)
 * DIL-biblioteket i modulen Audience Manager har uppdaterats till 9.4
 * Ökade längden på indatafält i tillägget
 * eVars och Props i tilläggs- och åtgärdskonfigurationerna visar nu det egna namnet från Analytics
@@ -202,7 +202,7 @@ Nedan följer en lista över versionsinformation för Adobe Analytics-taggtillä
 
 * Uppdaterat Adobe Analytics-tillägget med stöd för DIL 9.2 för Audience Manager
 
-* Uppdaterat tillägg till support [AppMeasurement 2.15.0](https://experienceleague.adobe.com/docs/analytics/implementation/appmeasurement-updates.html#version-2.15.0)
+* Tillägget med stöd för [AppMeasurement 2.15.0](https://experienceleague.adobe.com/docs/analytics/implementation/appmeasurement-updates.html#version-2.15.0) har uppdaterats
 * Följande kryssruta har tagits bort eftersom den inte längre stöds: &quot;Koppla inte målpubliceringens IFRAME till DOM- eller branddestinationerna&quot;
 
 ## 4 juni 2019
@@ -211,7 +211,7 @@ Nedan följer en lista över versionsinformation för Adobe Analytics-taggtillä
 
 **Funktioner**:
 
-* Adobe Analytics-tillägget har uppdaterats till [AppMeasurement 2.14.0](https://experienceleague.adobe.com/docs/analytics/implementation/appmeasurement-updates.html#version-2.14.0) som innehåller en korrigering av ett känt clearVars-problem
+* Uppdaterade Adobe Analytics-tillägget till [AppMeasurement 2.14.0](https://experienceleague.adobe.com/docs/analytics/implementation/appmeasurement-updates.html#version-2.14.0) som innehåller en korrigering av ett känt clearVars-problem
 * En Exchange-länk har lagts till i tillägget. Du når Exchange-listan genom att markera listrutan och välja &quot;tilläggsinformation&quot;
 
 **Felkorrigeringar**:
@@ -308,7 +308,7 @@ Nedan följer en lista över versionsinformation för Adobe Analytics-taggtillä
 **Funktioner**:
 
 * Uppdaterat Adobe Analytics-tillägg som stöd för AppMeasurement 2.9.
-* Tillagd funktion för att göra spåraren globalt tillgänglig i Adobe Analytics-tillägget, som gör att spåraren kan användas globalt under `windows.s`.
+* Funktionen Gör spåraren globalt tillgänglig har lagts till i Adobe Analytics-tillägget, vilket gör att spåraren kan användas globalt under `windows.s`.
 
 **Felkorrigeringar**:
 

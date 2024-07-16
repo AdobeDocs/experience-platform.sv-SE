@@ -15,16 +15,16 @@ ht-degree: 0%
 
 >[!IMPORTANT]
 >
->I och med att [förbättrad Marketo V2-målanslutning](/help/release-notes/2022/july-2022.md#destinations)visas nu två Marketo-kort i målkatalogen.
->* Om du redan aktiverar data för **[!UICONTROL Marketo V1]** mål: Skapa nya dataflöden till **[!UICONTROL Marketo V2]** mål och ta bort befintliga dataflöden till **[!UICONTROL Marketo V1]** destination senast i februari 2023. Från och med den dagen **[!UICONTROL Marketo V1]** destinationskortet tas bort.
->* Om du ännu inte har skapat några dataflöden till **[!UICONTROL Marketo V1]** mål, använd den nya **[!UICONTROL Marketo V2]** för att ansluta till och exportera data till Marketo.
+>I och med att [den förbättrade Marketo V2-målanslutningen](/help/release-notes/2022/july-2022.md#destinations) har släppts visas nu två Marketo-kort i målkatalogen.
+>* Om du redan aktiverar data till målet **[!UICONTROL Marketo V1]**: Skapa nya dataflöden till målet **[!UICONTROL Marketo V2]** och ta bort befintliga dataflöden till målet **[!UICONTROL Marketo V1]** senast i februari 2023. Från och med det datumet tas **[!UICONTROL Marketo V1]**-målkortet bort.
+>* Om du ännu inte har skapat några dataflöden till målet **[!UICONTROL Marketo V1]** använder du det nya **[!UICONTROL Marketo V2]**-kortet för att ansluta till och exportera data till Marketo.
 
-![Bild av de två Marketo-målkorten sida vid sida.](../..//assets/catalog/adobe/marketo-side-by-side-view.png)
+![Bild av de två Marketo-målkorten i en sida vid sida-vy.](../..//assets/catalog/adobe/marketo-side-by-side-view.png)
 
 Förbättringar av Marketo V2-destinationen omfattar:
 
-* I **[!UICONTROL Schedule segment]** i Marketo V1 behövde du lägga till en **Mappnings-ID** för att exportera data till Marketo. Det här manuella steget behövs inte längre i Marketo V2.
-* I **[!UICONTROL Mapping]** i Marketo V1 kunde du mappa XDM-fält till endast tre målfält i Marketo: `firstName`, `lastName`och `companyName`. Med Marketo V2 kan du mappa XDM-fält till många fler fält i Marketo. Mer information finns i [attribut som stöds](#supported-attributes) vidare nedan.
+* I steget **[!UICONTROL Schedule segment]** i aktiveringsarbetsflödet behövde du i Marketo V1 lägga till ett **Mappnings-ID** manuellt för att kunna exportera data till Marketo. Det här manuella steget behövs inte längre i Marketo V2.
+* I steget **[!UICONTROL Mapping]** i aktiveringsarbetsflödet kunde du i Marketo V1 mappa XDM-fält till endast tre målfält i Marketo: `firstName`, `lastName` och `companyName`. Med Marketo V2 kan du mappa XDM-fält till många fler fält i Marketo. Mer information finns i avsnittet [Attribut som stöds](#supported-attributes) nedan.
 
 ## Översikt {#overview}
 
@@ -36,20 +36,20 @@ Målgruppen gör det möjligt för marknadsförare att skicka målgrupper som sk
 
 >[!NOTE]
 >
->I [mappningssteg](/help/destinations/ui/activate-segment-streaming-destinations.md#mapping) för arbetsflödet för aktivering av mål är *obligatoriskt* kartlägga identiteter och *valfri* för att mappa attribut. Att mappa e-post och/eller ECID från fliken Identity Namespace är det viktigaste att göra för att se till att personen matchas i Marketo. Mappning av e-post ger högsta matchningsfrekvens.
+>I [mappningssteget](/help/destinations/ui/activate-segment-streaming-destinations.md#mapping) i arbetsflödet för aktivering av mål är det *obligatoriskt* att mappa identiteter och *valfritt* att mappa attribut. Att mappa e-post och/eller ECID från fliken Identity Namespace är det viktigaste att göra för att se till att personen matchas i Marketo. Mappning av e-post ger högsta matchningsfrekvens.
 
 ### Identiteter som stöds {#supported-identities}
 
 | Målidentitet | Beskrivning |
 |---|---|
-| ECID | Ett namnutrymme som representerar ECID. Detta namnutrymme kan även refereras av följande alias:&quot;Adobe Marketing Cloud ID&quot;,&quot;Adobe Experience Cloud ID&quot;,&quot;Adobe Experience Platform ID&quot;. Se följande dokument på [ECID](/help/identity-service/features/ecid.md) för mer information. |
+| ECID | Ett namnutrymme som representerar ECID. Detta namnutrymme kan även refereras av följande alias:&quot;Adobe Marketing Cloud ID&quot;,&quot;Adobe Experience Cloud ID&quot;,&quot;Adobe Experience Platform ID&quot;. Mer information finns i följande dokument på [ECID](/help/identity-service/features/ecid.md). |
 | E-post | Ett namnutrymme som representerar en e-postadress. Den här typen av namnutrymme är ofta kopplad till en person och kan därför användas för att identifiera den personen i olika kanaler. |
 
 {style="table-layout:auto"}
 
 ### Attribut som stöds {#supported-attributes}
 
-Du kan mappa attribut från Experience Platform till alla attribut som din organisation har åtkomst till i Marketo. Du kan använda [Beskriv API-begäran](https://developers.marketo.com/rest-api/lead-database/leads/#describe) för att hämta de attributfält som din organisation har åtkomst till.
+Du kan mappa attribut från Experience Platform till alla attribut som din organisation har åtkomst till i Marketo. I Marketo kan du använda [Beskriv API-begäran](https://developers.marketo.com/rest-api/lead-database/leads/#describe) för att hämta de attributfält som din organisation har åtkomst till.
 
 ## Målgrupper {#supported-audiences}
 
@@ -57,8 +57,8 @@ I det här avsnittet beskrivs vilka typer av målgrupper du kan exportera till d
 
 | Målgruppsursprung | Stöds | Beskrivning |
 |---------|----------|----------|
-| [!DNL Segmentation Service] | ✓ | Målgrupper som skapats genom Experience Platform [Segmenteringstjänst](../../../segmentation/home.md). |
-| Anpassade överföringar | ✓ | Målgrupper [importerad](../../../segmentation/ui/audience-portal.md#import-audience) till Experience Platform från CSV-filer. |
+| [!DNL Segmentation Service] | ✓ | Publiker som genererats via Experience Platform [segmenteringstjänsten](../../../segmentation/home.md). |
+| Anpassade överföringar | ✓ | Publikerna [importerade](../../../segmentation/ui/audience-portal.md#import-audience) till Experience Platform från CSV-filer. |
 
 {style="table-layout:auto"}
 
@@ -68,8 +68,8 @@ Se tabellen nedan för information om exporttyp och frekvens för destinationen.
 
 | Objekt | Typ | Anteckningar |
 ---------|----------|---------|
-| Exporttyp | **[!UICONTROL Audience export]** | Du exporterar alla medlemmar i en målgrupp med de identifierare (e-post, ECID) som används i [!DNL Marketo Engage] mål. |
-| Exportfrekvens | **[!UICONTROL Streaming]** | Direktuppspelningsmål är alltid på API-baserade anslutningar. Så snart en profil uppdateras i Experience Platform baserat på målgruppsutvärdering skickar anslutningsprogrammet uppdateringen nedströms till målplattformen. Läs mer om [mål för direktuppspelning](/help/destinations/destination-types.md#streaming-destinations). |
+| Exporttyp | **[!UICONTROL Audience export]** | Du exporterar alla medlemmar i en målgrupp med de identifierare (e-post, ECID) som används i målet [!DNL Marketo Engage]. |
+| Exportfrekvens | **[!UICONTROL Streaming]** | Direktuppspelningsmål är alltid på API-baserade anslutningar. Så snart en profil uppdateras i Experience Platform baserat på målgruppsutvärdering skickar anslutningsprogrammet uppdateringen nedströms till målplattformen. Läs mer om [direktuppspelningsmål](/help/destinations/destination-types.md#streaming-destinations). |
 
 {style="table-layout:auto"}
 
@@ -77,10 +77,10 @@ Se tabellen nedan för information om exporttyp och frekvens för destinationen.
 
 >[!IMPORTANT]
 > 
->* Om du vill ansluta till målet behöver du **[!UICONTROL View Destinations]** och **[!UICONTROL Manage Destinations]** [behörigheter för åtkomstkontroll](/help/access-control/home.md#permissions).
->* För att aktivera data behöver du **[!UICONTROL View Destinations]**, **[!UICONTROL Activate Destinations]**, **[!UICONTROL View Profiles]** och **[!UICONTROL View Segments]** [behörigheter för åtkomstkontroll](/help/access-control/home.md#permissions). Läs [åtkomstkontroll - översikt](/help/access-control/ui/overview.md) eller kontakta produktadministratören för att få de behörigheter som krävs.
+>* Om du vill ansluta till målet behöver du behörigheterna **[!UICONTROL View Destinations]** och **[!UICONTROL Manage Destinations]** [åtkomstkontroll](/help/access-control/home.md#permissions).
+>* För att aktivera data behöver du behörigheterna **[!UICONTROL View Destinations]**, **[!UICONTROL Activate Destinations]**, **[!UICONTROL View Profiles]** och **[!UICONTROL View Segments]** [åtkomstkontroll](/help/access-control/home.md#permissions). Läs [åtkomstkontrollsöversikten](/help/access-control/ui/overview.md) eller kontakta produktadministratören för att få den behörighet som krävs.
 
-Detaljerade instruktioner om hur du ställer in målet och aktiverar målgrupper finns i [Push an Adobe Experience Platform Audience to a Marketo Static List](https://experienceleague.adobe.com/docs/marketo/using/product-docs/core-marketo-concepts/smart-lists-and-static-lists/static-lists/push-an-adobe-experience-cloud-segment-to-a-marketo-static-list.html) i Marketo-dokumentationen.
+Mer information om hur du konfigurerar målet och aktiverar målgrupper finns i [Push an Adobe Experience Platform Audience to a Marketo Static List](https://experienceleague.adobe.com/docs/marketo/using/product-docs/core-marketo-concepts/smart-lists-and-static-lists/static-lists/push-an-adobe-experience-cloud-segment-to-a-marketo-static-list.html) i dokumentationen för Marketo.
 
 I videon nedan visas också stegen för att konfigurera ett Marketo-mål och aktivera målgrupper.
 
@@ -88,10 +88,10 @@ I videon nedan visas också stegen för att konfigurera ett Marketo-mål och akt
 >
 >Videon återspeglar inte helt den aktuella funktionen. Den mest aktuella informationen finns i guiden ovan. Följande delar av videon är inaktuella:
 > 
->* Målkortet som du ska använda i användargränssnittet för Experience Platform är **[!UICONTROL Marketo V2]**.
->* Videon visar inte det nya **[!UICONTROL Person creation]** väljarfält i arbetsflödet för anslutning till mål.
+>* Målkortet som du bör använda i användargränssnittet för Experience Platform är **[!UICONTROL Marketo V2]**.
+>* I videon visas inte det nya **[!UICONTROL Person creation]**-väljarfältet i arbetsflödet för anslutning till mål.
 >* De två begränsningar som anges i videon gäller inte längre. Du kan nu mappa många andra profilattributfält utöver den information om målgruppsmedlemskap som stöddes när videon spelades in. Du kan också exportera målgruppsmedlemmar till Marketo som ännu inte finns i dina statiska Marketo-listor, och dessa läggs till i listorna.
->* I **[!UICONTROL Schedule audience step]** i aktiveringsarbetsflödet i Marketo V1 behövde du lägga till en **[!UICONTROL Mapping ID]** för att exportera data till Marketo. Det här manuella steget behövs inte längre i Marketo V2.
+>* I **[!UICONTROL Schedule audience step]** av aktiveringsarbetsflödet behövde du i Marketo V1 lägga till en **[!UICONTROL Mapping ID]** manuellt för att kunna exportera data till Marketo. Det här manuella steget behövs inte längre i Marketo V2.
 
 >[!VIDEO](https://video.tv.adobe.com/v/338248?quality=12)
 
@@ -105,7 +105,7 @@ To connect to this destination, follow the steps described in the [destination c
 
 ## Dataanvändning och styrning {#data-usage-governance}
 
-Alla [!DNL Adobe Experience Platform] destinationerna är kompatibla med dataanvändningsprinciper när data hanteras. Detaljerad information om hur [!DNL Adobe Experience Platform] använder datastyrning, se [datastyrningsöversikt](https://experienceleague.adobe.com/docs/experience-platform/data-governance/home.html).
+Alla [!DNL Adobe Experience Platform]-mål är kompatibla med dataanvändningsprinciper när data hanteras. Detaljerad information om hur [!DNL Adobe Experience Platform] använder datastyrning finns i [översikten över datastyrning](https://experienceleague.adobe.com/docs/experience-platform/data-governance/home.html).
 
 <!--
 

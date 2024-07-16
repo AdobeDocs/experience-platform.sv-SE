@@ -1,20 +1,21 @@
 ---
 title: Fältgrupp för partnerprospekt (exempel)
 description: Läs mer om schemafältgruppen XDM (Partner Prospect Details) (Exempel).
-source-git-commit: de8e944cfec3b52d25bb02bcfebe57d6a2a35e39
+exl-id: 2de1eb7a-2e44-4417-9bdd-7a8a4b2d3a7f
+source-git-commit: 8be502c9eea67119dc537a5d63a6c71e0bff1697
 workflow-type: tm+mt
 source-wordcount: '302'
 ht-degree: 0%
 
 ---
 
-# [!UICONTROL Partner Prospect Details (Sample)] fältgrupp
+# Fältgrupp [!UICONTROL Partner Prospect Details (Sample)]
 
-[!UICONTROL Partner Prospect Details (Sample)] är en standardgrupp för schemafält för [[!DNL XDM ExperienceEvent] class](../../classes/experienceevent.md). The [!UICONTROL Partner Prospect Details (Sample)] innehåller ett exempelramverk för olika detaljer relaterade till en potentiell kunders profil. Detta ramverk effektiviserar processen att organisera och hantera olika typer av information som rör potentiella kunder.
+[!UICONTROL Partner Prospect Details (Sample)] är en standardschemafältgrupp för [[!DNL XDM ExperienceEvent] klassen](../../classes/experienceevent.md). [!UICONTROL Partner Prospect Details (Sample)] innehåller ett exempelramverk för olika detaljer relaterade till en potentiell kunders profil. Detta ramverk effektiviserar processen att organisera och hantera olika typer av information som rör potentiella kunder.
 
-Den här fältgruppen utökar [Profilklass för enskild potentiell kund](https://experienceleague.adobe.com/docs/experience-platform/xdm/classes/prospect.html) inom ramen för en partner.
+Den här fältgruppen utökar klassen [Individual Prospect Profile](https://experienceleague.adobe.com/docs/experience-platform/xdm/classes/prospect.html) i kontexten för en partner.
 
-![Ett diagram över [!UICONTROL Partner Prospect Details (Sample)] fältgrupp.](../../images/field-groups/partner/partner-prospect-details-sample.png)
+![Ett diagram över fältgruppen [!UICONTROL Partner Prospect Details (Sample)].](../../images/field-groups/partner/partner-prospect-details-sample.png)
 
 | Visningsnamn | Egenskap | Datatyp | Beskrivning |
 |---------------------------------------|-----------------------------|-----------|--------------------------------------------------|
@@ -49,4 +50,4 @@ Den här fältgruppen utökar [Profilklass för enskild potentiell kund](https:/
 
 {style="table-layout:auto"}
 
-Mer information om fältgruppen finns i [fullständigt schema](https://github.com/adobe/xdm/blob/master/components/fieldgroups/profile/partner-prospect/merkle/prospect-details-partner-sample.schema.json) på den offentliga XDM-databasen.
+Mer information om fältgruppen finns i det [fullständiga schemat](https://github.com/adobe/xdm/blob/master/components/fieldgroups/profile/partner-prospect/merkle/prospect-details-partner-sample.schema.json) i den offentliga XDM-databasen.

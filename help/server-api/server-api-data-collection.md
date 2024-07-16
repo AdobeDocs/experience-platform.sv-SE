@@ -1,24 +1,24 @@
 ---
 title: Datainsamling
-description: Läs om hur API:t för Adobe Experience Platform Edge Network Server strukturerar insamlade data.
+description: Läs om hur Adobe Experience Platform Edge Network Server-API strukturerar insamlade data.
 source-git-commit: f52603f7e65ac553e00a2b632857561cd07ae441
 workflow-type: tm+mt
 source-wordcount: '131'
-ht-degree: 3%
+ht-degree: 2%
 
 ---
 
 
 # Datainsamling
 
-The [!DNL Server API] har två typer av datainsamlingsslutpunkter:
+[!DNL Server API] erbjuder två typer av datainsamlingsslutpunkter:
 
-* [Interaktiva slutpunkter för datainsamling](interactive-data-collection.md), som används när klienten förväntar sig att ett svar returneras av servern. Dessa slutpunkter kan också returnera innehåll från andra Edge Network-tjänster när datainsamling utförs.
-* [Icke-interaktiv insamling av händelsedata](non-interactive-data-collection.md)används när inget svar förväntas från servern. De här slutpunkterna används bara för datainsamling.
+* [Interaktiva datainsamlingsslutpunkter](interactive-data-collection.md) som används när klienten förväntar sig att ett svar returneras av servern. Dessa slutpunkter kan också returnera innehåll från andra Edge Network-tjänster när datainsamling utförs.
+* [Icke-interaktiv händelsedatainsamling](non-interactive-data-collection.md) som används när inget svar förväntas från servern. De här slutpunkterna används bara för datainsamling.
 
-## `Event` object {#event-object}
+## `Event` objekt {#event-object}
 
-Data som samlats in av [!DNL Server API] är strukturerad i `Event` -objekt. Objektets struktur beskrivs nedan.
+Data som samlas in av [!DNL Server API] är strukturerade i objektet `Event`. Objektets struktur beskrivs nedan.
 
 ```json
 {
@@ -56,6 +56,6 @@ Data som samlats in av [!DNL Server API] är strukturerad i `Event` -objekt. Obj
 
 | Attribut | Typ | Beskrivning |
 | --- | --- | --- |
-| `xdm` | Objekt | *Obligatoriskt*. JSON-objekt som innehåller data i XDM-format, som motsvarar dataset-schemat. |
+| `xdm` | Objekt | *Krävs*. JSON-objekt som innehåller data i XDM-format, som motsvarar dataset-schemat. |
 | `data` | Objekt | *Valfritt*. JSON-objekt som innehåller frihandsdata, som kan mappas till XDM av Edge Network. |
 

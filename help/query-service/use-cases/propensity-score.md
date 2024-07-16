@@ -4,12 +4,12 @@ description: Lär dig hur du använder frågetjänsten för att tillämpa den pr
 exl-id: 29587541-50dd-405c-bc18-17947b8a5942
 source-git-commit: 40c27a52fdae2c7d38c5e244a6d1d6ae3f80f496
 workflow-type: tm+mt
-source-wordcount: '1295'
+source-wordcount: '1304'
 ht-degree: 0%
 
 ---
 
-# Bestäm en benägenhetspoäng med hjälp av en maskininlärningsgenererad prediktiv modell
+# Bestäm en benägenhetspoäng med en maskininlärningsgenererad prediktiv modell
 
 Med hjälp av frågetjänsten kan du utnyttja prediktiva modeller, som benägenhetspoäng, som bygger på maskininlärningsplattformen för att analysera data från Experience Platform.
 
@@ -19,9 +19,9 @@ Den här guiden förklarar hur du använder frågetjänsten för att skicka data
 
 Som en del av den här processen kräver att du utbildar en maskininlärningsmodell, vilket krävs i det här dokumentet för att du ska kunna lära dig en eller flera maskininlärningsmiljöer.
 
-Det här exemplet använder [!DNL Jupyter Notebook] som en utvecklingsmiljö. Det finns många alternativ, men [!DNL Jupyter Notebook] rekommenderas eftersom det är ett webbprogram med öppen källkod som har låga datorkrav. Det kan vara [hämtat från den officiella webbplatsen](https://jupyter.org/).
+I det här exemplet används [!DNL Jupyter Notebook] som en utvecklingsmiljö. Det finns många alternativ, men [!DNL Jupyter Notebook] rekommenderas eftersom det är ett webbprogram med öppen källkod som har låga datorkrav. Den kan [hämtas från den officiella webbplatsen](https://jupyter.org/).
 
-Om du inte redan har gjort det följer du stegen för att [koppla [!DNL Jupyter Notebook] med Adobe Experience Platform Query Service](../clients/jupyter-notebook.md) innan du fortsätter med den här guiden.
+Om du inte redan har gjort det följer du stegen för att [ansluta [!DNL Jupyter Notebook] med Adobe Experience Platform Query Service](../clients/jupyter-notebook.md) innan du fortsätter med den här guiden.
 
 Biblioteken som används i det här exemplet omfattar:
 
@@ -35,21 +35,21 @@ numpy
 tqdm
 ```
 
-## Importera analystabeller från Platform till [!DNL Jupyter Notebook] {#import-analytics-tables}
+## Importera analystabeller från plattformen till [!DNL Jupyter Notebook] {#import-analytics-tables}
 
-För att generera en prognosmodell måste en projektion av analysdata som lagras i Platform importeras till [!DNL Jupyter Notebook]. Från en [!DNL Python] 3 [!DNL Jupyter Notebook] som är kopplade till frågetjänsten importerar följande kommandon en kundbeteendedatauppsättning från Luma, en fiktiv klädbutik. När plattformsdata lagras i XDM-format (Experience Data Model) måste ett exempel-JSON-objekt skapas som följer schemats struktur. I dokumentationen finns instruktioner om hur du [generera JSON-exempelobjektet](../../xdm/ui/sample.md).
+Om du vill generera en prognosmodell måste en projektion av analysdata som lagras i Platform importeras till [!DNL Jupyter Notebook]. Från en [!DNL Python] 3 [!DNL Jupyter Notebook] som är ansluten till frågetjänsten importerar följande kommandon en kundbeteendedatauppsättning från Luma, en fiktiv klädbutik. När plattformsdata lagras i XDM-format (Experience Data Model) måste ett exempel-JSON-objekt skapas som följer schemats struktur. I dokumentationen finns instruktioner om hur du [genererar JSON-exempelobjektet](../../xdm/ui/sample.md).
 
-![The [!DNL Jupyter Notebook] kontrollpanel med flera kommandon markerade.](../images/use-cases/jupyter-commands.png)
+![Kontrollpanelen [!DNL Jupyter Notebook] med flera kommandon markerade.](../images/use-cases/jupyter-commands.png)
 
-I utdata visas en tabell med alla kolumner från Lumas beteendedatauppsättning i [!DNL Jupyter Notebook] kontrollpanel.
+Utdata visar en tabellvy över alla kolumner från Lumas beteendedatauppsättning på kontrollpanelen [!DNL Jupyter Notebook].
 
 ![Det tabellinspelade resultatet av Lumas importerade kundbeteendedatauppsättning i [!DNL Jupyter Notebook].](../images/use-cases/behavioural-dataset-results.png)
 
 ## Förbered data för maskininlärning {#prepare-data-for-machine-learning}
 
-En målkolumn måste identifieras för att kunna utbilda en maskininlärningsmodell. Som köpbenägenhet är målet för det här användningsexemplet, `analytic_action` -kolumnen väljs som målkolumn från Luma-resultatet. Värdet `productPurchase` är indikatorn på ett kundköp. The `purchase_value` och `purchase_num` kolumner tas också bort eftersom de är direkt relaterade till produktinköpsåtgärden.
+En målkolumn måste identifieras för att kunna utbilda en maskininlärningsmodell. Som köpbenägenhet är målet för det här användningsfallet väljs kolumnen `analytic_action` som målkolumn från Luma-resultatet. Värdet `productPurchase` är indikatorn för ett kundköp. Kolumnerna `purchase_value` och `purchase_num` tas också bort eftersom de är direkt relaterade till produktinköpsåtgärden.
 
-Följande kommandon används för att utföra dessa åtgärder:
+Följande kommandon används:
 
 ```python
 #define the target label for prediction
@@ -69,7 +69,7 @@ num_cols = ['purchase_num', 'value_cart', 'value_lifetime']
 df[num_cols] = df[num_cols].apply(pd.to_numeric, errors='coerce')
 ```
 
-En teknik som kallas *en aktiverad kodning* används för att konvertera kategoriserade datavariabler som kan användas med maskinvaru- och djuplärande algoritmer. Detta förbättrar i sin tur både förutsägelser och en modells tillförlitlighet. Använd `Sklearn` bibliotek som representerar varje kategoriserat värde i en separat kolumn.
+En teknik som kallas *en aktiv kodning* används för att konvertera kategoriserade datavariabler för användning med maskinvaru- och djuplärande algoritmer. Detta förbättrar i sin tur både förutsägelser och en modells tillförlitlighet. Använd biblioteket `Sklearn` för att representera varje kategoriserat värde i en separat kolumn.
 
 ```python
 from sklearn.preprocessing import OneHotEncoder
@@ -98,14 +98,14 @@ X = pd.DataFrame( np.concatenate((enc.transform(df_cat).toarray(),df[num_cols]),
 y = df['target']
 ```
 
-Data definierade som `X` är i tabellform och visas enligt nedan:
+Data som definieras som `X` är tabellariserade och visas enligt nedan:
 
-![Det tabellariserade resultatet av X inom [!DNL Jupyter Notebook].](../images/use-cases/x-output-table.png)
+![Utdata i tabellformat för X inom [!DNL Jupyter Notebook].](../images/use-cases/x-output-table.png)
 
 
-Nu när nödvändiga data för maskininlärning är tillgängliga kan de passa de förkonfigurerade maskininlärningsmodellerna i [!DNL Python]&#39;s `sklearn` bibliotek. [!DNL Logistics Regression] används för att utbilda benägenhetsmodellen och gör det möjligt att se noggrannheten hos testdata. I så fall är den cirka 85%.
+Nu när nödvändiga data för maskininlärning är tillgängliga kan den passa de förkonfigurerade maskininlärningsmodellerna i `sklearn`-biblioteket för [!DNL Python]. [!DNL Logistics Regression] används för att utbilda benägenhetsmodellen och gör att du kan se noggrannheten för testdata. I så fall är den cirka 85%.
 
-The [!DNL Logistic Regression] Algoritmen och delningsmetoden för tågtest, som används för att uppskatta prestanda för maskininlärningsalgoritmer, importeras i kodblocket nedan:
+Algoritmen [!DNL Logistic Regression] och delningsmetoden för tågtest, som används för att uppskatta prestanda för maskininlärningsalgoritmer, importeras i kodblocket nedan:
 
 ```python
 from sklearn.linear_model import LogisticRegression
@@ -163,9 +163,9 @@ Flera mönster kan urskiljas från stapeldiagrammet. Kanalens Point of Sales (PO
 
 När den utbildade modellen har skapats måste den tillämpas på de data som finns i Experience Platform. För att göra detta måste logiken i maskininlärningsflödet konverteras till SQL. De två huvudkomponenterna i den här övergången är följande:
 
-- Först måste SQL ersätta [!DNL Logistics Regression] för att få sannolikhet för en förutsägelseetikett. Modellen som skapades av Logistics Regression producerade regressionsmodellen `y = wX + c`  där vikter `w` och spärra/knip `c` är modellens utdata. SQL-funktioner kan användas för att multiplicera vikter för att få en sannolikhet.
+- För det första måste SQL ersätta modulen [!DNL Logistics Regression] för att få fram sannolikheten för en förutsägelseetikett. Modellen som skapades av Logistics Regression genererade regressionsmodellen `y = wX + c` där vikter `w` och skärning `c` är modellens utdata. SQL-funktioner kan användas för att multiplicera vikter för att få en sannolikhet.
 
-- För det andra, den tekniska process som uppnåtts i [!DNL Python] med en aktiverad kodning måste också ingå i SQL. I den ursprungliga databasen har vi till exempel `geo_county` kolumn för att lagra regionen, men kolumnen konverteras till `geo_county=Bexar`, `geo_county=Dallas`, `geo_county=DeKalb`. Följande SQL-sats utför samma omformning, där `w1`, `w2`och `w3` kan ersättas med de vikter som hämtas från modellen i [!DNL Python]:
+- För det andra måste den tekniska processen i [!DNL Python] med en aktiverad kodning också införlivas i SQL. I den ursprungliga databasen har vi till exempel `geo_county`-kolumn som lagrar regionen, men kolumnen konverteras till `geo_county=Bexar`, `geo_county=Dallas`, `geo_county=DeKalb`. Följande SQL-sats utför samma omformning, där `w1`, `w2` och `w3` kan ersättas med de vikter som hämtas från modellen i [!DNL Python]:
 
 ```sql
 SELECT  CASE WHEN geo_state = 'Bexar' THEN FLOAT(w1) ELSE 0 END AS f1,
@@ -179,7 +179,7 @@ Om du vill använda numeriska funktioner kan du multiplicera kolumnerna direkt m
 SELECT FLOAT(purchase_num) * FLOAT(w4) AS f4,
 ```
 
-När siffrorna har hämtats kan de porteras till en sigmoid-funktion där algoritmen Logistics Regression (Logistikregressionsalgoritm) ger de slutliga prognoserna. I programsatsen nedan `intercept` är antalet skärningspunkter i regressionen.
+När siffrorna har hämtats kan de porteras till en sigmoid-funktion där algoritmen Logistics Regression (Logistikregressionsalgoritm) ger de slutliga prognoserna. I instruktionen nedan är `intercept` antalet spärrar i regressionen.
         
 
 ```sql
@@ -188,14 +188,14 @@ SELECT CASE WHEN 1 / (1 + EXP(- (f1 + f2 + f3 + f4 + FLOAT(intercept)))) > 0.5 T
  
 ### Ett exempel från början till slut
 
-I en situation där du har två kolumner (`c1` och `c2`), om `c1` har två kategorier, [!DNL Logistic Regression] algoritmen har tränats med följande funktion:
+I en situation där du har två kolumner (`c1` och `c2`), om `c1` har två kategorier, är [!DNL Logistic Regression]-algoritmen utbildad med följande funktion:
  
 
 ```python
 y = 0.1 * "c1=category 1"+ 0.2 * "c1=category 2" +0.3 * c2+0.4
 ```
  
-Motsvarigheten i SQL är följande:
+Motsvarande i SQL är följande:
 
 ```sql
 SELECT
@@ -210,7 +210,7 @@ FROM
   )
 ```
  
-The [!DNL Python] Koden för att automatisera översättningsprocessen är följande:
+Koden [!DNL Python] för att automatisera översättningsprocessen är följande:
 
 ```python
 def generate_lr_inference_sql(ohc_columns, num_cols, clf, db):
@@ -245,11 +245,11 @@ colnames = [desc[0] for desc in cur.description]
 pd.DataFrame(samples,columns=colnames)
 ```
 
-Resultatet i tabellform visar den benägenhet man kan köpa för varje kundsession med `0` vilket betyder ingen benägenhet att köpa och `1` vilket innebär en bekräftad köpbenägenhet.
+Resultaten i tabellform visar benägenheten att köpa för varje kundsession med `0`, vilket innebär ingen benägenhet att köpa och `1` innebär en bekräftad köpbenägenhet.
 
-![Tabellresultatet av databashärledningen som använder SQL.](../images/use-cases/inference-results.png)
+![De tabellariserade resultaten av databashärledningen med SQL.](../images/use-cases/inference-results.png)
 
-## Arbeta med provdata: Bootstrap {#working-on-sampled-data}
+## Arbeta med provdata: Startsvällning {#working-on-sampled-data}
 
 Om datastorleken är för stor för den lokala datorn för att lagra data för modellutbildning kan du ta exempel istället för fullständiga data från Query Service. Om du vill veta hur mycket data som behövs för att ta prov från frågetjänsten kan du använda en teknik som kallas för bootstrapping. I detta avseende innebär startsträckning att modellen har tränats flera gånger med olika provexemplar, och variationen av modellens noggrannhet mellan olika provexemplar kontrolleras. Om du vill justera exemplet på benägenhetsmodellen ovan måste du först kapsla in hela maskininlärningsarbetsflödet i en funktion. Koden är följande:
 
@@ -322,6 +322,6 @@ bootstrap_accuracy = np.sort(bootstrap_accuracy)
 
 Den startstrukturerade modellens noggrannhet sorteras sedan. Därefter blir den 10:e och 90:e kvantifieringen av modellens noggrannhet ett 95-procentigt konfidensintervall för modellens noggrannhet med den angivna samplingsstorleken.
 
-![Skriv ut-kommandot för att visa konfidensintervallet för benägenhetspoängen.](../images/use-cases/confidence-interval.png)
+![Utskriftskommandot som visar konfidensintervallet för benägenhetspoängen.](../images/use-cases/confidence-interval.png)
 
-I figuren ovan anges att om du bara tar 1 000 rader för att utbilda dina modeller kan du förvänta dig att noggrannheten ska ligga mellan cirka 84 % och 88 %. Du kan justera `LIMIT` -sats i frågor om frågetjänsten baserat på dina behov för att säkerställa modellernas prestanda.
+I figuren ovan anges att om du bara tar 1 000 rader för att utbilda dina modeller kan du förvänta dig att noggrannheten ska ligga mellan cirka 84 % och 88 %. Du kan justera `LIMIT`-satsen i frågor om frågetjänster baserat på dina behov för att säkerställa modellernas prestanda.

@@ -23,14 +23,14 @@ Med hjälp av inflytelserika faktorer kan kundens AI tala om för er vad en kund
 * Förbättra kundprofiler med inflytelserika faktorer för benägenhetspoäng.
 * Skapa kundmålgrupper baserat på inflytelserika faktorer och benägenhetspoäng.
 
-Kundens AI finns i **[!UICONTROL Services]** flik under **[!UICONTROL Adobe services]**.
+Kund-AI finns på fliken **[!UICONTROL Services]** under **[!UICONTROL Adobe services]**.
 
 ![Kundens AI-plats](../assets/overview/rtcdp-customer-ai.png)
 
 ## Komma igång med kundens AI
 
-För att komma igång med kundens AI måste du följa [självstudiekurs om datapreperation](../../intelligent-services/data-preparation.md) och konfigurera indataschemat baserat på ditt användningsfall. Nästa steg är att [konfigurera en AI-instans för kund](../../intelligent-services/customer-ai/user-guide/configure.md). När du har konfigurerat en instans genereras en modell där du kan [visa era insikter och resultat](../../intelligent-services/customer-ai/user-guide/discover-insights.md). Med hjälp av data som genererats från din modell kan du skapa målgrupper för datadriven aktivering.
+För att komma igång med kundens AI måste du följa självstudiekursen [för datapreperation](../../intelligent-services/data-preparation.md) och konfigurera indatarammet baserat på ditt användningsfall. Därefter måste du [konfigurera en AI-instans](../../intelligent-services/customer-ai/user-guide/configure.md) för kunder. När du har konfigurerat en instans genereras en modell där du kan [visa dina insikter och poäng](../../intelligent-services/customer-ai/user-guide/discover-insights.md). Med hjälp av data som genererats från din modell kan du skapa målgrupper för datadriven aktivering.
 
-Om du vill veta mer om kundens AI börjar du med att besöka [Översikt över AI för kunder](../../intelligent-services/customer-ai/overview.md). I följande video visas dessutom hur kundens AI förbättrar kundprofiler med AI-baserade egenskaper och stärker kundsegmenterings- och målinriktningsarbetet.
+Om du vill veta mer om kundens AI kan du börja med att gå till [Översikt över kundens AI](../../intelligent-services/customer-ai/overview.md). I följande video visas dessutom hur kundens AI förbättrar kundprofiler med AI-baserade egenskaper och stärker kundsegmenterings- och målinriktningsarbetet.
 
 >[!VIDEO](https://video.tv.adobe.com/v/40374/?quality=12&learn=on)

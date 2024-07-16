@@ -19,11 +19,11 @@ Följande video är avsedd att ge stöd för din förståelse av AI Assistant.
 
 ## Åtkomst till AI-assistenten i användargränssnittet i Experience Platform
 
-Välj alternativet **[!UICONTROL AI Assistant icon]** från Experience Platform översta huvud i användargränssnittet.
+Om du vill starta AI Assistant väljer du **[!UICONTROL AI Assistant icon]** i Experience Platform-gränssnittets övre sidhuvud.
 
-![Experience Platform hemsida med ikonen AI Assistant vald och gränssnittet AI Assistant öppet.](./images/ai-assistant-full-icon.png)
+![Hemsidan för Experience Platform, med ikonen AI-assistenten markerad och gränssnittet AI-assistenten öppet.](./images/ai-assistant-full-icon.png)
 
-Gränssnittet för AI Assistant visas och du får information om hur du kommer igång direkt. Du kan använda alternativen i [!UICONTROL Ideas to get started] svara på frågor och kommandon som:
+Gränssnittet för AI Assistant visas och du får information om hur du kommer igång direkt. Du kan använda alternativen under [!UICONTROL Ideas to get started] för att besvara frågor och kommandon som:
 
 * [!UICONTROL Which of my audiences are activated?]
 * [!UICONTROL What is a schema?]
@@ -35,15 +35,15 @@ Gränssnittet för AI Assistant visas och du får information om hur du kommer i
 >
 >Följande arbetsflöde är ett exempel som använder processen för att skapa händelseschema för att illustrera hur du kan använda AI Assistant när du använder användargränssnittet i Experience Platform.
 
-Tänk dig ett användningsexempel där du skapar en **Enhetshandel i händelseschema**. När upplevelsehändelsens schema skapades stöter du på `eventType` fält. &quot;Nu kan du välja att antingen avsluta arbetsflödet och se [grunderna i en schemakomposition](../xdm/schema/composition.md) eller så kan du använda AI Assistant för att få svar på dina frågor och hitta ytterligare resurser via de dokumentationslänkar som rekommenderas av AI Assistant.&quot;
+Tänk på ett användningsfall där du skapar en **enhetshandel i händelseschema**. När händelseschemat för upplevelse skapades, stötte du på fältet `eventType`. &quot;I det här skedet kan du antingen avsluta ditt arbetsflöde och hänvisa till [grunderna i en schemakomposition](../xdm/schema/composition.md) eller använda AI Assistant för att få svar på dina frågor och hitta ytterligare resurser via de dokumentationslänkar som rekommenderas av AI Assistant.&quot;
 
-Börja med att ange din fråga i textrutan. I exemplet nedan ställs frågan: &quot;**Vad är fältet eventType i ett ExperienceEvent-schema?**&quot;
+Börja med att ange din fråga i textrutan. I exemplet nedan anges frågan: **Vad är fältet eventType i ett ExperienceEvent-schema?**?
 
 ![AI-assistenten för Experience Platform med följande fråga förberedd för fråga:&quot;Vad är fältet eventType i ett ExperienceEvent-schema?](./images/question.png)
 
 AI Assistant frågar sedan efter sin kunskapsbas och beräknar ett svar. Efter en stund returnerar AI Assistant ett svar och relaterade förslag som du kan använda som uppföljningsuppmaningar.
 
-![AI Assistant för Experience Platform med svar på föregående fråga.](./images/answer.png)
+![AI-assistenten för Experience Platform med svar på föregående fråga.](./images/answer.png)
 
 När du har fått ett svar från AI Assistant kan du välja bland ett antal alternativ som avgör hur du vill fortsätta.
 
@@ -53,7 +53,7 @@ I det här avsnittet beskrivs de olika funktionerna i AI Assistant som du kan an
 
 ### Visa operativa dataobjekt {#view-operational-data-objects}
 
-Beroende på din fråga innehåller AI Assistant ytterligare information om data i din sandlåda. Om du vill visa hur svaret på frågan gäller för din specifika sandlåda väljer du **[!UICONTROL In your sandbox].**
+Beroende på din fråga innehåller AI Assistant ytterligare information om data i din sandlåda. Om du vill visa hur svaret på din fråga gäller för din specifika sandlåda väljer du **[!UICONTROL In your sandbox].**
 
 När du visar data som gäller din sandlåda kan AI Assistant tillhandahålla direktlänkar till specifika UI-sidor som visar dina efterfrågade data.
 
@@ -61,7 +61,7 @@ När du visar data som gäller din sandlåda kan AI Assistant tillhandahålla di
 
 I det här exemplet returnerar AI Assistant ytterligare information om befintliga XDM-scheman i sandlådan, inklusive totalt antal och de fem vanligaste fälten.
 
-![Listrutan&quot;i din sandlåda&quot; öppnas och ytterligare information om dina scheman visas.](./images/in-your-sandbox.png)
+![Listrutan &quot;i din sandlåda&quot; öppnas och ytterligare information om dina scheman visas.](./images/in-your-sandbox.png)
 
 +++
 
@@ -73,13 +73,13 @@ Du kan verifiera svar som AI Assistant skickat till dig genom att granska citat 
 
 Om du vill visa citat och validera AI Assistants svar väljer du **[!UICONTROL Show sources]**.
 
-![AI Assistant-svaret med Visa källor markerat.](./images/show-sources.png)
+![AI-assistentsvaret med &quot;Visa källor&quot; markerat.](./images/show-sources.png)
 
 AI Assistant uppdaterar gränssnittet och ger dig länkar till dokumentation som bekräftar det ursprungliga svaret. När citat är aktiverat uppdaterar AI Assistant svaret så att det innehåller fotnoter som anger vilka delar av svaret som refererar till den angivna dokumentationen.
 
 ![En listruta med de citat som AI Assistant tillhandahåller för konceptfrågor.](./images/citations.png)
 
-Du kan också använda de förslag som AI Assistant ger under **[!UICONTROL Related suggestions]** om du vill utforska ämnen som hör till den ursprungliga frågan.
+Du kan också använda de förslag som AI Assistant ger under **[!UICONTROL Related suggestions]** för att ytterligare utforska ämnen som hör till din ursprungliga fråga.
 
 ![En lista med förslag från AI Assistant.](./images/related-suggestions.png)
 
@@ -91,25 +91,25 @@ Du måste vara i en aktiv sandlåda för att AI Assistant ska kunna svara tillr�
 
 +++Välj för att visa ett exempel på en fråga om driftsinsikter
 
-I exemplet nedan tillfrågas följande om AI Assistant: **&quot;Visa dataflöden som har skapats med Amazon S3-källa&quot;**.
+I exemplet nedan tillfrågas följande om AI Assistant: **Visa dataflöden som har skapats med Amazon S3-källan**.
 
 ![En fråga om driftsinsikter.](./images/op-insights-question.png)
 
 AI Assistant svarar sedan med en tabell över dina dataflöden och deras motsvarande ID:n. Om du vill visa hela datatabellen väljer du ikonen Expandera högst upp till höger.
 
-![Svar på användbara insikter](./images/op-insights-answer.png)
+![Ett svar på användbara insikter](./images/op-insights-answer.png)
 
 En utökad vy av tabellen visas med en mer omfattande lista över dataflöden baserat på parametrarna för frågan.
 
 ![En vy av den utökade tabellen.](./images/table.png)
 
-När AI Assistant tillfrågas om driftsinsikter kan den förklara hur svaret har beräknats. I exemplet nedan beskriver AI Assistant de steg som har vidtagits för att identifiera de dataflöden som har skapats med [!DNL Amazon S3] källa.
+När AI Assistant tillfrågas om driftsinsikter kan den förklara hur svaret har beräknats. I exemplet nedan visar AI Assistant de steg som har vidtagits för att identifiera dataflödena som skapades med källan [!DNL Amazon S3].
 
-![AI Assistant som förklarar hur det beräknade sitt svar.](./images/answer-explained.png)
+![AI Assistant ger en förklaring av hur svaret beräknades.](./images/answer-explained.png)
 
 Du kan även lägga till filter och ändringar i dina frågor och du kan instruera AI Assistant att återge resultatet baserat på de filter som du inkluderar. Du kan till exempel be AI Assistant att visa en trend för antalet segmentdefinitioner i den ordning som de skapades, ta bort segmentdefinitioner med noll som summor och använda namn på månader i stället för heltal när data visas.
 
-**Obs!** Svar på frågor om driftsinsikter finns för närvarande i betaversion. Välj verktygstipsikonen i AI Assistant-användargränssnittet för att visa betameddelandet och för en länk till dokumentationen.
+**Obs!** Svaren om driftsinsikter finns för närvarande i betaversion. Klicka på verktygstipsikonen i AI Assistant-användargränssnittet för att visa Beta-meddelandet och för en länk till dokumentationen.
 
 ![AI Assistant-verktygstipsikonen har valts.](./images/op-insights-beta-note.png)
 
@@ -123,7 +123,7 @@ Du kan verifiera varje svar som rör frågor om driftsinsikter med hjälp av en 
 
 När du har fått ett svar på en fråga om driftsinsikter väljer du **[!UICONTROL Show sources]** och sedan **[!UICONTROL View source query]**.
 
-![fråga för vykälla](./images/view-source-query.png)
+![visa källfråga](./images/view-source-query.png)
 
 När AI Assistant får en fråga om driftsinsikter kan du använda den för att verifiera processen som tog att beräkna svaret. Den här källfrågan är endast avsedd för verifiering och stöds inte av frågetjänsten.
 
@@ -137,7 +137,7 @@ Du kan använda funktionen för automatisk komplettering för att ta emot en lis
 
 +++Markera för att visa ett exempel på automatisk komplettering
 
-Du kan använda Fyll i automatiskt genom att ta med plustecknet (**`+`**) i din fråga. Du kan också välja plustecknet (**`+`**) längst ned i textrutan. Ett fönster visas med en lista över rekommenderade dataobjekt från sandlådan.
+Du kan använda Fyll i automatiskt genom att ta med plustecknet (**`+`**) i frågan. Du kan också välja plustecknet (**`+`**) längst ned i textrutan. Ett fönster visas med en lista över rekommenderade dataobjekt från sandlådan.
 
 ![Exempel på automatisk komplettering](./images/autocomplete.png)
 
@@ -151,7 +151,7 @@ Du kan använda AI Assistants multibläddringsfunktioner för att få en mer nat
 
 I exemplet nedan ombeds AI Assistant först att ange det totala antalet dataflöden och sedan ombeds att ange en lista över de 10 senaste dataflödena.
 
-![Exempel på multisväng](./images/multiturn.png)
+![Exempel på multitur](./images/multiturn.png)
 
 +++
 
@@ -161,7 +161,7 @@ Du kan ändra ämnen med AI Assistant genom att återställa och starta en ny ko
 
 +++Välj för att visa ett exempel på hur du återställer konversationen
 
-Om du vill återställa väljer du ellipserna (**`...`**) i AI Assistant-gränssnittet och välj **[!UICONTROL Start new conversation]**. Detta informerar AI Assistant om att du avser att ändra ämnen och kan vara särskilt användbart vid felsökning av frågor som antingen är felaktiga eller refererar till felaktig information.
+Återställ genom att markera ellipserna (**`...`**) i AI Assistant-gränssnittet och sedan välja **[!UICONTROL Start new conversation]**. Detta informerar AI Assistant om att du avser att ändra ämnen och kan vara särskilt användbart vid felsökning av frågor som antingen är felaktiga eller refererar till felaktig information.
 
 ![De markerade ellipserna och alternativet för att starta ny konversation har valts.](./images/reset.png)
 
@@ -175,11 +175,11 @@ Du kan använda AI Assistants identifieringsfunktion för att visa en lista öve
 
 Om du vill visa upptäckbarhet väljer du glödlampsikonen i det övre huvudet i AI Assistant-gränssnittet.
 
-![AI Assistant-funktionen för upptäckt.](./images/lightbulb.png)
+![Identifieringsfunktionen för AI-assistenten.](./images/lightbulb.png)
 
-Välj sedan en kategori och välj en fråga i listan. Du kan använda den här funktionen för att få en bättre uppfattning om vilka typer av frågor som AI Assistant kan svara på. Du kan även uppdatera befintliga uppmaningar med specifik information som gäller din sandlåda med fritext eller [autocomplete](#use-auto-complete).
+Välj sedan en kategori och välj en fråga i listan. Du kan använda den här funktionen för att få en bättre uppfattning om vilka typer av frågor som AI Assistant kan svara på. Du kan även uppdatera befintliga uppmaningar med specifik information som gäller din sandlåda med fritext eller [autofyll](#use-auto-complete).
 
-![AI Assistant ber om upptäckt.](./images/prompt.png)
+![AI-assistenten uppmanar till identifiering.](./images/prompt.png)
 
 +++
 
@@ -189,19 +189,19 @@ Du kan ge återkoppling om din upplevelse med AI Assistant med hjälp av alterna
 
 Om du vill ge feedback väljer du antingen tummen uppåt, tummen nedåt eller en flagga när du har fått ett svar från AI-assistenten och anger sedan din feedback i textrutan.
 
-![Feedback-alternativet i AI Assistant.](./images/provide-feedback.png)
+![Återbetalningsalternativet i AI Assistant.](./images/provide-feedback.png)
 
 +++Markera för att visa fler exempel
 
 >[!BEGINTABS]
 
->[!TAB Tummen upp]
+>[!TAB Tummen uppåt]
 
 Välj ikonen med tummen uppåt för att ge feedback på vad som gick bra med din upplevelse av AI-assistenten.
 
 ![Fönstret för positiv feedback.](./images/thumbs-up.png)
 
->[!TAB Tummen ned]
+>[!TAB Tummen nere]
 
 Välj ikonen med reglaget nedåt för att ge feedback på vad som kan förbättras baserat på din erfarenhet av AI Assistant. Under det här steget kan du även ge specifika kommentarer om din upplevelse. Synpunkter i kommentarerna granskas dagligen.
 

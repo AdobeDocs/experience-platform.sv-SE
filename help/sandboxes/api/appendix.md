@@ -14,15 +14,15 @@ ht-degree: 0%
 
 # Sandbox API guide appendix
 
-Det här dokumentet innehåller ytterligare information om hur du arbetar med [!DNL Sandbox] API.
+Det här dokumentet innehåller ytterligare information om hur du arbetar med API:t [!DNL Sandbox].
 
 ## Använda frågeparametrar {#query}
 
-The [[!DNL Sandbox] API](https://www.adobe.io/experience-platform-apis/references/sandbox) har stöd för användning av frågeparametrar för att sidan och filtrera resultat när sandlådor listas.
+[[!DNL Sandbox] API](https://www.adobe.io/experience-platform-apis/references/sandbox) har stöd för användning av frågeparametrar för att filtrera resultat vid listning av sandlådor.
 
 >[!NOTE]
 >
->The `limit` och `offset` Frågeparametrar måste anges tillsammans. Om du bara anger ett fel returneras det. Om du anger ingen är standardgränsen 50 och förskjutningen 0.
+>Frågeparametrarna `limit` och `offset` måste anges tillsammans. Om du bara anger ett fel returneras det. Om du anger ingen är standardgränsen 50 och förskjutningen 0.
 
 | Parameter | Beskrivning |
 | --- | --- |

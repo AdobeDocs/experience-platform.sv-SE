@@ -2,7 +2,8 @@
 title: Stripe
 description: Lär dig hur du importerar betalningsdata från ditt Stripe-konto till Adobe Experience Platform
 badge: Beta
-source-git-commit: f8df3ddb96ad0810a7a46b0a55125336c427aebd
+exl-id: 191d217e-036d-491a-b7dd-abcad74625ba
+source-git-commit: 62bcaa532cdec68a2f4f62e5784c35b91b7d5743
 workflow-type: tm+mt
 source-wordcount: '805'
 ht-degree: 0%
@@ -13,69 +14,69 @@ ht-degree: 0%
 
 >[!NOTE]
 >
->The [!DNL Stripe] källan är i betaversion. Läs [källöversikt](../../home.md#terms-and-conditions) om du vill ha mer information om hur du använder betamärkta källor.
+>Källan [!DNL Stripe] är i betaversion. Läs [källöversikten](../../home.md#terms-and-conditions) om du vill ha mer information om hur du använder betatecknade källor.
 
-Tusentals företag av alla storlekar använder [!DNL Stripe] både online och personligen för att ta emot betalningar, generera nya inkomstkällor och utöka globalt med hjälp av Adobe Experience Platform, Adobe Commerce och [!DNL Magento Open Source].
+Tusentals företag av alla storlekar använder [!DNL Stripe] både online och personligen för att ta emot betalningar, generera nya inkomstkällor och expandera globalt med hjälp av Adobe Experience Platform, Adobe Commerce och [!DNL Magento Open Source].
 
-Använd [!DNL Stripe] i Experience Platform för att importera data som era kunder tagit in under inköpsflödet. Använd dessa data när de har importerats för att skapa personaliserade erbjudanden och få bättre affärsinsikter.
+Använd källan [!DNL Stripe] i Experience Platform för att importera data som dina kunder har tagit in under inköpsflödet. Använd dessa data när de har importerats för att skapa personaliserade erbjudanden och få bättre affärsinsikter.
 
 >[!TIP]
 >
->För frågor om [!DNL Stripe] källa på Experience Platform, kontakta [!DNL Stripe] på adobe-partnerskap<span>@stripe.com.
+>Om du har frågor om källan [!DNL Stripe] på Experience Platform kan du kontakta [!DNL Stripe] på adobe-partnership<span>@stripe.com.
 
 >[!BEGINSHADEBOX]
 
-**Exempel på användning för [!DNL Stripe] källa**
+**Exempel på användning för [!DNL Stripe] source**
 
-Med ditt företag kan kunderna köpa artiklar i din onlinebutik med möjlighet att **köp nu** och **betala senare** (med [!DNL Klarna], [!DNL Afterpay], [!DNL Affirm], eller [!DNL Zip]).
+Med ditt företag kan kunder köpa artiklar i din onlinebutik med möjlighet att **köpa nu** och **betala senare** (med [!DNL Klarna], [!DNL Afterpay], [!DNL Affirm] eller [!DNL Zip]).
 
-Använd [!DNL Stripe] datakälla för att analysera användningen av **köp nu** och **betala senare** alternativ och experimentera med personaliserade erbjudanden till dessa kunder. Överväg till exempel att rekommendera tilläggsobjekt för att utöka antalet artiklar i kundvagnen före utcheckning.
+Använd datakällan [!DNL Stripe] för att analysera användningen av alternativen **Köp nu** och **betala senare** och experimentera med personaliserade erbjudanden till dessa kunder. Överväg till exempel att rekommendera tilläggsobjekt för att utöka antalet artiklar i kundvagnen före utcheckning.
 
 >[!ENDSHADEBOX]
 
-Läs dokumentet nedan för information om hur du kan konfigurera [!DNL Stripe] källkonto, hämta nödvändiga inloggningsuppgifter och skapa dina scheman.
+Läs dokumentet nedan för information om hur du kan konfigurera [!DNL Stripe]-källkontot, hämta nödvändiga autentiseringsuppgifter och skapa dina scheman.
 
-## Förutsättningar {#prerequisites}
+## Förhandskrav {#prerequisites}
 
-I följande avsnitt finns information om den nödvändiga konfiguration som du måste slutföra innan du kan ansluta [!DNL Stripe] konto till Experience Platform.
+I följande avsnitt finns information om den nödvändiga konfigurationen som du måste slutföra innan du kan ansluta ditt [!DNL Stripe]-konto till Experience Platform.
 
 ### Hämta din åtkomsttoken
 
-* Logga in på [[!DNL Stripe] kontrollpanel](https://dashboard.stripe.com/login) med [!DNL Stripe] e-postadress och lösenord.
-* I [!DNL Developers] kontrollpanel, välja **[!DNL API keys for developers]**.
-* Under **API-nycklar** flik, välja **[!DNL Reveal test key]** för att visa din åtkomsttoken.
-* Du kan nu använda denna token som din åtkomsttoken när du ansluter din [!DNL Stripe] konto till Experience Platform, med [!DNL Flow Service] API för användargränssnittet i Experience Platform.
+* Logga in på [[!DNL Stripe] instrumentpanelen](https://dashboard.stripe.com/login) med din [!DNL Stripe] e-postadress och ditt lösenord.
+* Välj **[!DNL API keys for developers]** på kontrollpanelen [!DNL Developers].
+* Under fliken **API-nycklar** väljer du **[!DNL Reveal test key]** för att visa din åtkomsttoken.
+* Du kan nu använda den här token som din åtkomsttoken när du ansluter ditt [!DNL Stripe]-konto till Experience Platform, med API:t [!DNL Flow Service] eller användargränssnittet för Experience Platform.
 
 ### Samla in nödvändiga inloggningsuppgifter
 
-För att kunna ansluta [!DNL Stripe] konto till Experience Platform måste du ange värden för följande autentiseringsuppgifter:
+Om du vill ansluta ditt [!DNL Stripe]-konto till Experience Platform måste du ange värden för följande autentiseringsuppgifter:
 
 >[!BEGINTABS]
 
 >[!TAB API]
 
-Du måste ange följande autentiseringsuppgifter när du ansluter [!DNL Stripe] kontot med [!DNL Flow Service] API.
+Du måste ange följande autentiseringsuppgifter när du ansluter ditt [!DNL Stripe]-konto med API:t [!DNL Flow Service].
 
 | Autentiseringsuppgifter | Beskrivning |
 | --- | --- |
-| `accessToken` | Dina [!DNL Stripe] Autentiseringstoken för OAuth 2-uppdateringskod. |
-| `connectionSpec.id` | Anslutningens spec-ID [!DNL Stripe] källa. Detta ID är fast som: `cc2c31d6-7b8c-4581-b49f-5c8698aa3ab3`. |
+| `accessToken` | Autentiseringstoken för [!DNL Stripe] OAuth 2-uppdateringskod. |
+| `connectionSpec.id` | Anslutningens spec-ID för källan [!DNL Stripe]. Detta ID har korrigerats som: `cc2c31d6-7b8c-4581-b49f-5c8698aa3ab3`. |
 
->[!TAB UI]
+>[!TAB Gränssnitt]
 
-Du måste ange följande autentiseringsuppgifter när du ansluter [!DNL Stripe] med användargränssnittet i Experience Platform.
+Du måste ange följande autentiseringsuppgifter när du ansluter ditt [!DNL Stripe]-konto med användargränssnittet i Experience Platform.
 
 | Autentiseringsuppgifter | Beskrivning |
 | --- | --- |
-| Åtkomsttoken | Dina [!DNL Stripe] Autentiseringstoken för OAuth 2-uppdateringskod. |
+| Åtkomsttoken | Autentiseringstoken för [!DNL Stripe] OAuth 2-uppdateringskod. |
 
 >[!ENDTABS]
 
-Mer information om hur du använder [!DNL Stripe] API:er, läs [[!DNL Stripe] dokumentation om API-nycklar](https://docs.stripe.com/keys).
+Mer information om hur du använder [!DNL Stripe] API:er finns i [[!DNL Stripe] dokumentationen om API-nycklar](https://docs.stripe.com/keys).
 
 ### Skapa ett XDM-schema (Experience Data Model)
 
-The [!DNL Stripe] Källan stöder inmatning av data från följande resurssökvägar:
+Källan [!DNL Stripe] stöder inmatning av data från följande resurssökvägar:
 
 * Avgifter
 * Prenumerationer
@@ -90,7 +91,7 @@ Du måste skapa ett XDM-schema för att beskriva en datauppsättning, som kan la
 
 >[!TAB Avgifter]
 
-I [!DNL Stripe], **avgifter** representerar försök att flytta pengar till [!DNL Stripe]. Läs [[!DNL Stripe] API-guide för avgifter](https://docs.stripe.com/api/charges) för mer information om specifika avgiftsattribut.
+I [!DNL Stripe] representerar **avgifter** försök att flytta pengar till din [!DNL Stripe]. Läs [[!DNL Stripe] API-guiden för avgifter](https://docs.stripe.com/api/charges) om du vill ha mer information om specifika debiteringsattribut.
 
 +++Markera om du vill visa Stripe Charge-objektet
 
@@ -185,7 +186,7 @@ I [!DNL Stripe], **avgifter** representerar försök att flytta pengar till [!DN
 
 >[!TAB Prenumerationer]
 
-I [!DNL Stripe]kan du använda **prenumerationer** att regelbundet debitera en kund. Läs [[!DNL Stripe] API-guide för prenumerationer](https://docs.stripe.com/api/subscriptions) för mer information om specifika prenumerationsattribut.
+I [!DNL Stripe] kan du använda **prenumerationer** för att debitera en kund regelbundet. Läs [[!DNL Stripe] API-guiden för prenumerationer](https://docs.stripe.com/api/subscriptions) om du vill ha mer information om specifika prenumerationsattribut.
 
 +++Markera för att visa prenumerationsobjektet för Stripe
 
@@ -327,7 +328,7 @@ I [!DNL Stripe]kan du använda **prenumerationer** att regelbundet debitera en k
 
 >[!TAB Återbetalningar]
 
-I [!DNL Stripe]kan du använda **återbetalningar** för att återbetala en tidigare skapad avgift. Läs [[!DNL Stripe] API-guide för återbetalningar](https://docs.stripe.com/api/refunds) för mer information om specifika återbetalningsattribut.
+I [!DNL Stripe] kan du använda **återbetalningar** om du vill återbetala en avgift som skapats tidigare. Läs [[!DNL Stripe] API-guiden för återbetalningar](https://docs.stripe.com/api/refunds) om du vill ha mer information om specifika återbetalningsattribut.
 
 +++Markera för att visa Stripe-objektet för återanvändning
 
@@ -361,9 +362,9 @@ I [!DNL Stripe]kan du använda **återbetalningar** för att återbetala en tidi
 
 +++
 
->[!TAB Saldotransaktioner]
+>[!TAB Balansera transaktioner]
 
-I [!DNL Stripe], **saldotransaktioner** representerar rörelsen av medel mellan [!DNL Stripe] konton. Läs [[!DNL Stripe] API-guide för saldotransaktioner](https://docs.stripe.com/api/balance_transactions) för mer information om specifika attribut för saldotransaktioner.
+I [!DNL Stripe] representerar **saldotransaktioner** rörelsen av medel mellan dina [!DNL Stripe]-konton. Läs [[!DNL Stripe] API-guiden för saldotransaktioner](https://docs.stripe.com/api/balance_transactions) om du vill ha mer information om specifika saldotransaktionsattribut.
 
 +++Markera för att visa transaktionsobjektet för saldo i Stripe
 
@@ -391,7 +392,7 @@ I [!DNL Stripe], **saldotransaktioner** representerar rörelsen av medel mellan 
 
 >[!TAB Kunder]
 
-I [!DNL Stripe], **kunder** representerar en viss kund i ditt företag. Mer information om specifika kundattribut finns i [[!DNL Stripe] API-guide för kunder](https://docs.stripe.com/api/customers) för mer information om specifika kundattribut.
+I [!DNL Stripe] representerar **kunder** en viss kund i ditt företag. Mer information om specifika kundattribut finns i [[!DNL Stripe] API-handboken för kunder](https://docs.stripe.com/api/customers) för mer information om specifika kundattribut.
 
 +++Markera för att visa kundobjektet Stripe
 
@@ -431,7 +432,7 @@ I [!DNL Stripe], **kunder** representerar en viss kund i ditt företag. Mer info
 
 >[!TAB Priser]
 
-I [!DNL Stripe], **priser** representerar enhetskostnad, valuta och valfri faktureringscykel för både återkommande och engångsköp av produkter. Läs [[!DNL Stripe] API-guide om priser](https://docs.stripe.com/api/prices) för mer information om specifika prisattribut.
+I [!DNL Stripe] representerar **priser** enhetskostnaden, valutan och den valfria faktureringscykeln för både återkommande och engångsköp av produkter. Läs [[!DNL Stripe] API-guiden för priser](https://docs.stripe.com/api/prices) om du vill ha mer information om specifika prisattribut.
 
 +++Markera för att visa Stripe-prisobjektet
 
@@ -472,15 +473,15 @@ I [!DNL Stripe], **priser** representerar enhetskostnad, valuta och valfri faktu
 
 ### IP-adress tillåtelselista
 
-En lista med IP-adresser måste läggas till tillåtelselista innan du kan arbeta med källanslutningar. Om du inte lägger till dina regionspecifika IP-adresser i tillåtelselista kan det leda till fel eller sämre prestanda när du använder källor. Se [IP-adress tillåtelselista](../../ip-address-allow-list.md) sida för mer information.
+En lista med IP-adresser måste läggas till tillåtelselista innan du kan arbeta med källanslutningar. Om du inte lägger till dina regionspecifika IP-adresser i tillåtelselista kan det leda till fel eller sämre prestanda när du använder källor. Mer information finns på sidan [IP-adress tillåtelselista](../../ip-address-allow-list.md).
 
 ### Konfigurera behörigheter i Experience Platform
 
-Du måste ha båda **[!UICONTROL View Sources]** och **[!UICONTROL Manage Sources]** behörigheter för ditt konto för att ansluta [!DNL Stripe] konto till Experience Platform. Kontakta produktadministratören för att få den behörighet som krävs. Mer information finns i [gränssnittsguide för åtkomstkontroll](../../../access-control/ui/overview.md).
+Du måste ha både behörighet **[!UICONTROL View Sources]** och behörighet **[!UICONTROL Manage Sources]** aktiverat för ditt konto för att kunna ansluta ditt [!DNL Stripe]-konto till Experience Platform. Kontakta produktadministratören för att få den behörighet som krävs. Mer information finns i [användargränssnittsguiden för åtkomstkontroll](../../../access-control/ui/overview.md).
 
 ## Nästa steg
 
-När du är klar med konfigurationen av ditt krav kan du fortsätta ansluta och importera dina [!DNL Stripe] data till Experience Platform. Läs följande handböcker för att lära dig hur man importerar [!DNL Stripe] Betalar data till Experience Platform med API:er eller användargränssnittet:
+När du har slutfört konfigurationen av din förutsättning kan du fortsätta ansluta och importera dina [!DNL Stripe]-data till Experience Platform. Läs följande handböcker om du vill veta hur du importerar [!DNL Stripe] betalningsdata till Experience Platform med API:er eller användargränssnittet:
 
-* [Hämta in betalningsdata från ditt Stripe-konto till Experience Platform med API:t för flödestjänsten](../../tutorials/api/create/payments/stripe.md).
-* [Hämta in betalningsdata från ditt Stripe-konto till Experience Platform via användargränssnittet](../../tutorials/ui/create/payments/stripe.md).
+* [Infoga betalningsdata från ditt Stripe-konto till Experience Platform med API:t för Flow Service ](../../tutorials/api/create/payments/stripe.md).
+* [Infoga betalningsdata från ditt Stripe-konto till Experience Platform med användargränssnittet](../../tutorials/ui/create/payments/stripe.md).

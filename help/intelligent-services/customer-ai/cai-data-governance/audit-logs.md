@@ -22,4 +22,4 @@ I grundläggande bemärkelse anger en granskningslogg vem som utförde vilken å
 
 När funktionen är aktiverad för din organisation samlas granskningsloggarna automatiskt in när aktiviteten inträffar. Du behöver inte aktivera loggsamling manuellt.
 
-För att kunna visa och exportera granskningsloggar måste du ha beviljats åtkomstkontrollbehörighet för granskningsloggar i Adobe Console. Läs mer om hur du hanterar individuella behörigheter för AI-funktioner för kunder i [dokumentation om åtkomstkontroll](../cai-data-governance/access-controls.md).
+För att kunna visa och exportera granskningsloggar måste du ha beviljats åtkomstkontrollbehörighet för granskningsloggar i Adobe Console. Information om hur du hanterar individuella behörigheter för kundens AI-funktioner finns i [åtkomstkontrollsdokumentationen](../cai-data-governance/access-controls.md).

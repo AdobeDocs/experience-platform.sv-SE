@@ -11,7 +11,7 @@ ht-degree: 0%
 
 ---
 
-# [!UICONTROL Currency] datatyp
+# Datatypen [!UICONTROL Currency]
 
 [!UICONTROL Currency] är en standard-XDM-datatyp som beskriver ett valutabelopp, inklusive valutatyp och konverteringsdatum.
 

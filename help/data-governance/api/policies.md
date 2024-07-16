@@ -14,19 +14,19 @@ ht-degree: 0%
 
 # Slutpunkt för datastyrningspolicyer
 
-Datastyrningspolicyer är regler som beskriver den typ av marknadsföringsåtgärder som du tillåts eller begränsas från att utföra på data inom [!DNL Experience Platform]. The `/policies` slutpunkt i [!DNL Policy Service API] kan ni programmässigt hantera policyer för datastyrning för er organisation.
+Datastyrningsprinciper är regler som beskriver den typ av marknadsföringsåtgärder som du tillåts eller begränsas från att utföra på data i [!DNL Experience Platform]. Med slutpunkten `/policies` i [!DNL Policy Service API] kan du programmässigt hantera datastyrningsprinciper för din organisation.
 
 >[!IMPORTANT]
 >
->Styrningsprinciper ska inte blandas ihop med åtkomstkontrollprinciper, som bestämmer vilka specifika dataattribut som vissa plattformsanvändare i organisationen kan komma åt. Se `/policies` slutpunktsguide för [API för åtkomstkontroll](../../access-control/abac/api/policies.md) om du vill ha mer information om hur du programmässigt hanterar åtkomstkontrollprinciper.
+>Styrningsprinciper ska inte blandas ihop med åtkomstkontrollprinciper, som bestämmer vilka specifika dataattribut som vissa plattformsanvändare i organisationen kan komma åt. Mer information om hur du programmässigt hanterar åtkomstkontrollprinciper finns i `/policies`-slutpunktshandboken för [åtkomstkontrolls-API:t](../../access-control/abac/api/policies.md).
 
 ## Komma igång
 
-API-slutpunkten som används i den här guiden är en del av [[!DNL Policy Service] API](https://www.adobe.io/experience-platform-apis/references/policy-service/). Innan du fortsätter bör du granska [komma igång-guide](getting-started.md) för länkar till relaterad dokumentation, en guide till hur du läser exempel-API-anrop i det här dokumentet och viktig information om vilka huvuden som behövs för att kunna ringa anrop till [!DNL Experience Platform] API.
+API-slutpunkten som används i den här guiden ingår i [[!DNL Policy Service] API](https://www.adobe.io/experience-platform-apis/references/policy-service/). Innan du fortsätter bör du läsa [kom igång-guiden](getting-started.md) för att få länkar till relaterad dokumentation, en guide till hur du läser exempelanropen för API i det här dokumentet och viktig information om vilka huvuden som krävs för att kunna anropa ett [!DNL Experience Platform] -API.
 
 ## Hämta en lista med profiler {#list}
 
-Du kan visa alla `core` eller `custom` genom att göra en GET-förfrågan till `/policies/core` eller `/policies/custom`, respektive
+Du kan visa alla `core`- eller `custom`-principer genom att göra en GET-förfrågan till `/policies/core` respektive `/policies/custom`.
 
 **API-format**
 
@@ -50,7 +50,7 @@ curl -X GET \
 
 **Svar**
 
-Ett lyckat svar innehåller `children` array som visar information om varje hämtad princip, inklusive deras `id` värden. Du kan använda `id` fält för en viss policy att utföra [sökning](#lookup), [uppdatera](#update)och [delete](#delete) förfrågningar om den principen.
+Ett lyckat svar innehåller en `children`-matris som listar information om varje hämtad princip, inklusive deras `id`-värden. Du kan använda fältet `id` för en viss princip för att utföra [lookup](#lookup) -, [update](#update) - och [delete](#delete) -begäranden för den principen.
 
 ```JSON
 {
@@ -145,14 +145,14 @@ Ett lyckat svar innehåller `children` array som visar information om varje häm
 | --- | --- |
 | `_page.count` | Det totala antalet principer som har hämtats. |
 | `name` | Visningsnamnet för en princip. |
-| `status` | Aktuell status för en princip. Det finns tre möjliga statusar: `DRAFT`, `ENABLED`, eller `DISABLED`. Som standard är endast `ENABLED` policyer deltar i utvärderingen. Se översikten på [policyutvärdering](../enforcement/overview.md) för mer information. |
+| `status` | Aktuell status för en princip. Det finns tre möjliga statusvärden: `DRAFT`, `ENABLED` eller `DISABLED`. Som standard deltar bara `ENABLED` principer i utvärderingen. Mer information finns i översikten om [principutvärdering](../enforcement/overview.md). |
 | `marketingActionRefs` | En array som listar URI:erna för alla tillämpliga marknadsföringsåtgärder för en princip. |
 | `description` | En valfri beskrivning som ger ytterligare kontext till principens användningsfall. |
-| `deny` | Ett objekt som beskriver de specifika dataanvändningsetiketter som en princips associerade marknadsföringsåtgärd är begränsad från att utföras på. Se avsnittet om [skapa en profil](#create-policy) för mer information om den här egenskapen. |
+| `deny` | Ett objekt som beskriver de specifika dataanvändningsetiketter som en princips associerade marknadsföringsåtgärd är begränsad från att utföras på. Mer information om den här egenskapen finns i avsnittet [Skapa en princip](#create-policy). |
 
 ## Söka efter en princip {#look-up}
 
-Du kan söka efter en specifik profil genom att ta med den principens `id` i sökvägen för en GET-begäran.
+Du kan söka efter en specifik princip genom att ta med egenskapen `id` för den principen i sökvägen till en GET-begäran.
 
 **API-format**
 
@@ -163,7 +163,7 @@ GET /policies/custom/{POLICY_ID}
 
 | Parameter | Beskrivning |
 | --- | --- |
-| `{POLICY_ID}` | The `id` för den policy som du vill söka efter. |
+| `{POLICY_ID}` | `id` för profilen som du vill söka efter. |
 
 **Begäran**
 
@@ -226,21 +226,21 @@ Ett lyckat svar returnerar information om principen.
 | Egenskap | Beskrivning |
 | --- | --- |
 | `name` | Principens visningsnamn. |
-| `status` | Principens aktuella status. Det finns tre möjliga statusar: `DRAFT`, `ENABLED`, eller `DISABLED`. Som standard är endast `ENABLED` policyer deltar i utvärderingen. Se översikten på [policyutvärdering](../enforcement/overview.md) för mer information. |
+| `status` | Principens aktuella status. Det finns tre möjliga statusvärden: `DRAFT`, `ENABLED` eller `DISABLED`. Som standard deltar bara `ENABLED` principer i utvärderingen. Mer information finns i översikten om [principutvärdering](../enforcement/overview.md). |
 | `marketingActionRefs` | En array som listar URI:erna för alla tillämpliga marknadsföringsåtgärder för principen. |
 | `description` | En valfri beskrivning som ger ytterligare kontext till principens användningsfall. |
-| `deny` | Ett objekt som beskriver de specifika dataanvändningsetiketter som principens associerade marknadsföringsåtgärd är begränsad från att utföras på. Se avsnittet om [skapa en profil](#create-policy) för mer information om den här egenskapen. |
+| `deny` | Ett objekt som beskriver de specifika dataanvändningsetiketter som principens associerade marknadsföringsåtgärd är begränsad från att utföras på. Mer information om den här egenskapen finns i avsnittet [Skapa en princip](#create-policy). |
 
 ## Skapa en anpassad profil {#create-policy}
 
-I [!DNL Policy Service] API, en princip definieras av följande:
+I API:t [!DNL Policy Service] definieras en princip av följande:
 
 * En referens till en viss marknadsföringsåtgärd
 * Ett uttryck som beskriver dataanvändningsetiketterna som marknadsföringsåtgärden är begränsad från att utföras mot
 
 För att uppfylla det senare kravet måste principdefinitionerna innehålla ett booleskt uttryck om förekomsten av dataanvändningsetiketter. Det här uttrycket kallas för ett principuttryck.
 
-Policyuttryck tillhandahålls i form av en `deny` -egenskapen i varje principdefinition. Ett exempel på en enkel `deny` objekt som bara kontrollerar om det finns en enstaka etikett ser ut så här:
+Principuttryck anges i form av en `deny`-egenskap i varje principdefinition. Ett exempel på ett enkelt `deny`-objekt som bara kontrollerar om det finns en enda etikett ser ut så här:
 
 ```json
 "deny": {
@@ -250,7 +250,7 @@ Policyuttryck tillhandahålls i form av en `deny` -egenskapen i varje principdef
 
 Många principer anger dock mer komplexa villkor för förekomsten av dataanvändningsetiketter. Om du vill ha stöd för dessa användningsfall kan du även inkludera booleska åtgärder som beskriver dina policyuttryck. Principuttrycksobjektet måste innehålla antingen en etikett eller en operator och operander, men inte båda. I sin tur är varje operand också ett principuttrycksobjekt.
 
-För att definiera en policy som förhindrar att en marknadsföringsåtgärd utförs på data där `C1 OR (C3 AND C7)` etiketter finns, principens `deny` egenskapen skulle anges som:
+För att definiera en princip som förhindrar att en marknadsföringsåtgärd utförs på data där `C1 OR (C3 AND C7)` etiketter finns, skulle principens `deny`-egenskap anges som:
 
 ```JSON
 "deny": {
@@ -270,11 +270,11 @@ För att definiera en policy som förhindrar att en marknadsföringsåtgärd utf
 
 | Egenskap | Beskrivning |
 | --- | --- |
-| `operator` | Anger den villkorliga relationen mellan etiketterna som finns på jämställda `operands` array. Godkända värden är: <ul><li>`OR`: Uttrycket tolkas som true om någon av etiketterna i `operands` arrayen finns.</li><li>`AND`: Uttrycket tolkas bara till true om alla etiketter i `operands` arrayen finns.</li></ul> |
-| `operands` | En array med objekt där varje objekt representerar antingen en enda etikett eller ytterligare ett par `operator` och `operands` egenskaper. Etiketter och/eller åtgärder finns i `operands` -arrayen löses till true eller false baserat på värdet på dess jämställda `operator` -egenskap. |
+| `operator` | Anger den villkorliga relationen mellan etiketterna som anges i syskonarrayen `operands`. Godkända värden är: <ul><li>`OR`: Uttrycket tolkas som true om någon av etiketterna i arrayen `operands` finns.</li><li>`AND`: Uttrycket tolkas bara till true om alla etiketter i arrayen `operands` finns.</li></ul> |
+| `operands` | En array med objekt, där varje objekt representerar antingen en enda etikett eller ytterligare ett par av `operator`- och `operands`-egenskaper. Förekomsten av etiketter och/eller åtgärder i en `operands`-array tolkas som true eller false baserat på värdet för dess jämställda `operator` -egenskap. |
 | `label` | Namnet på en enskild dataanvändningsetikett som gäller för principen. |
 
-Du kan skapa en ny anpassad princip genom att göra en POST-förfrågan till `/policies/custom` slutpunkt.
+Du kan skapa en ny anpassad princip genom att göra en POST-förfrågan till slutpunkten `/policies/custom`.
 
 **API-format**
 
@@ -284,7 +284,7 @@ POST /policies/custom
 
 **Begäran**
 
-Följande begäran skapar en ny policy som begränsar marknadsföringsåtgärden `exportToThirdParty` från att utföras på data som innehåller etiketter `C1 OR (C3 AND C7)`.
+Följande begäran skapar en ny princip som begränsar marknadsföringsåtgärden `exportToThirdParty` från att utföras på data som innehåller etiketterna `C1 OR (C3 AND C7)`.
 
 ```shell
 curl -X POST \
@@ -320,14 +320,14 @@ curl -X POST \
 | Egenskap | Beskrivning |
 | --- | --- |
 | `name` | Principens visningsnamn. |
-| `status` | Principens aktuella status. Det finns tre möjliga statusar: `DRAFT`, `ENABLED`, eller `DISABLED`. Som standard är endast `ENABLED` policyer deltar i utvärderingen. Se översikten på [policyutvärdering](../enforcement/overview.md) för mer information. |
-| `marketingActionRefs` | En array som listar URI:erna för alla tillämpliga marknadsföringsåtgärder för principen. URI:n för en marknadsföringsåtgärd anges i `_links.self.href` i svaret på [söka efter en marknadsföringsåtgärd](./marketing-actions.md#look-up). |
+| `status` | Principens aktuella status. Det finns tre möjliga statusvärden: `DRAFT`, `ENABLED` eller `DISABLED`. Som standard deltar bara `ENABLED` principer i utvärderingen. Mer information finns i översikten om [principutvärdering](../enforcement/overview.md). |
+| `marketingActionRefs` | En array som listar URI:erna för alla tillämpliga marknadsföringsåtgärder för principen. URI:n för en marknadsföringsåtgärd anges under `_links.self.href` i svaret för [sökning efter en marknadsföringsåtgärd](./marketing-actions.md#look-up). |
 | `description` | En valfri beskrivning som ger ytterligare kontext till principens användningsfall. |
 | `deny` | Principuttrycket som beskriver de specifika dataanvändningsetiketter som principens associerade marknadsföringsåtgärd är begränsad från att utföras på. |
 
 **Svar**
 
-Ett lyckat svar returnerar information om den nya principen, inklusive dess `id`. Värdet är skrivskyddat och tilldelas automatiskt när profilen skapas.
+Ett lyckat svar returnerar information om den nyligen skapade principen, inklusive dess `id`. Värdet är skrivskyddat och tilldelas automatiskt när profilen skapas.
 
 ```JSON
 {
@@ -376,13 +376,13 @@ Ett lyckat svar returnerar information om den nya principen, inklusive dess `id`
 
 >[!IMPORTANT]
 >
->Du kan bara uppdatera anpassade profiler. Om du vill aktivera eller inaktivera principer läser du avsnittet om [uppdatera listan över aktiverade kärnprinciper](#update-enabled-core).
+>Du kan bara uppdatera anpassade profiler. Om du vill aktivera eller inaktivera kärnprinciper läser du avsnittet [Uppdatera listan över aktiverade kärnprinciper](#update-enabled-core).
 
 Du kan uppdatera en befintlig anpassad princip genom att ange dess ID i sökvägen till en PUT-begäran med en nyttolast som innehåller den uppdaterade formen av profilen i sin helhet. Med andra ord skriver PUT i själva verket om policyn.
 
 >[!NOTE]
 >
->Se avsnittet om [uppdatera en del av en anpassad princip](#patch) om du bara vill uppdatera ett eller flera fält för en profil, i stället för att skriva över den.
+>Se avsnittet [Uppdatera en del av en anpassad princip](#patch) om du bara vill uppdatera ett eller flera fält för en princip, i stället för att skriva över den.
 
 **API-format**
 
@@ -392,7 +392,7 @@ PUT /policies/custom/{POLICY_ID}
 
 | Parameter | Beskrivning |
 | --- | --- |
-| `{POLICY_ID}` | The `id` för profilen som du vill uppdatera. |
+| `{POLICY_ID}` | `id` för profilen som du vill uppdatera. |
 
 **Begäran**
 
@@ -428,10 +428,10 @@ curl -X PUT \
 | Egenskap | Beskrivning |
 | --- | --- |
 | `name` | Principens visningsnamn. |
-| `status` | Principens aktuella status. Det finns tre möjliga statusar: `DRAFT`, `ENABLED`, eller `DISABLED`. Som standard är endast `ENABLED` policyer deltar i utvärderingen. Se översikten på [policyutvärdering](../enforcement/overview.md) för mer information. |
-| `marketingActionRefs` | En array som listar URI:erna för alla tillämpliga marknadsföringsåtgärder för principen. URI:n för en marknadsföringsåtgärd anges i `_links.self.href` i svaret på [söka efter en marknadsföringsåtgärd](./marketing-actions.md#look-up). |
+| `status` | Principens aktuella status. Det finns tre möjliga statusvärden: `DRAFT`, `ENABLED` eller `DISABLED`. Som standard deltar bara `ENABLED` principer i utvärderingen. Mer information finns i översikten om [principutvärdering](../enforcement/overview.md). |
+| `marketingActionRefs` | En array som listar URI:erna för alla tillämpliga marknadsföringsåtgärder för principen. URI:n för en marknadsföringsåtgärd anges under `_links.self.href` i svaret för [sökning efter en marknadsföringsåtgärd](./marketing-actions.md#look-up). |
 | `description` | En valfri beskrivning som ger ytterligare kontext till principens användningsfall. |
-| `deny` | Principuttrycket som beskriver de specifika dataanvändningsetiketter som principens associerade marknadsföringsåtgärd är begränsad från att utföras på. Se avsnittet om [skapa en profil](#create-policy) för mer information om den här egenskapen. |
+| `deny` | Principuttrycket som beskriver de specifika dataanvändningsetiketter som principens associerade marknadsföringsåtgärd är begränsad från att utföras på. Mer information om den här egenskapen finns i avsnittet [Skapa en princip](#create-policy). |
 
 **Svar**
 
@@ -476,15 +476,15 @@ Ett godkänt svar returnerar information om den uppdaterade principen.
 
 >[!IMPORTANT]
 >
->Du kan bara uppdatera anpassade profiler. Om du vill aktivera eller inaktivera principer läser du avsnittet om [uppdatera listan över aktiverade kärnprinciper](#update-enabled-core).
+>Du kan bara uppdatera anpassade profiler. Om du vill aktivera eller inaktivera kärnprinciper läser du avsnittet [Uppdatera listan över aktiverade kärnprinciper](#update-enabled-core).
 
-En viss del av en policy kan uppdateras på PATCH-begäran. Till skillnad från PUT som skriver om principen begär PATCH endast att egenskaperna som anges i begärandetexten ska uppdateras. Detta är särskilt användbart när du vill aktivera eller inaktivera en profil, eftersom du bara behöver ange sökvägen till lämplig egenskap (`/status`) och dess värde (`ENABLED` eller `DISABLED`).
+En viss del av en policy kan uppdateras på PATCH-begäran. Till skillnad från PUT som skriver om principen begär PATCH endast att egenskaperna som anges i begärandetexten ska uppdateras. Detta är särskilt användbart när du vill aktivera eller inaktivera en princip, eftersom du bara behöver ange sökvägen till lämplig egenskap (`/status`) och dess värde (`ENABLED` eller `DISABLED`).
 
 >[!NOTE]
 >
->Nyttolaster för PATCH-begäranden följer JSON-korrigeringsformatering. Se [Grundläggande API-guide](../../landing/api-fundamentals.md) för mer information om den godkända syntaxen.
+>Nyttolaster för PATCH-begäranden följer JSON-korrigeringsformatering. Mer information om godkänd syntax finns i [API-handboken](../../landing/api-fundamentals.md).
 
-The [!DNL Policy Service] API har stöd för JSON Patch-åtgärder `add`, `remove`och `replace`och gör att du kan kombinera flera uppdateringar till ett enda samtal, vilket visas i exemplet nedan.
+API:t [!DNL Policy Service] stöder JSON-lagningsåtgärderna `add`, `remove` och `replace` och gör att du kan kombinera flera uppdateringar till ett enda anrop, vilket visas i exemplet nedan.
 
 **API-format**
 
@@ -494,11 +494,11 @@ PATCH /policies/custom/{POLICY_ID}
 
 | Parameter | Beskrivning |
 | --- | --- |
-| `{POLICY_ID}` | The `id` för principen vars egenskaper du vill uppdatera. |
+| `{POLICY_ID}` | `id` för principen vars egenskaper du vill uppdatera. |
 
 **Begäran**
 
-Följande begäran använder två `replace` åtgärder för att ändra principstatus från `DRAFT` till `ENABLED`och uppdatera `description` fält med en ny beskrivning.
+Följande begäran använder två `replace`-åtgärder för att ändra principstatusen från `DRAFT` till `ENABLED` och för att uppdatera fältet `description` med en ny beskrivning.
 
 >[!IMPORTANT]
 >
@@ -576,11 +576,11 @@ Ett godkänt svar returnerar information om den uppdaterade principen.
 
 ## Ta bort en anpassad princip {#delete}
 
-Du kan ta bort en anpassad profil genom att ta med dess `id` på sökvägen till en begäran från DELETE.
+Du kan ta bort en anpassad princip genom att ta med dess `id` i sökvägen för en DELETE-begäran.
 
 >[!WARNING]
 >
->Policyer kan inte återställas när de har tagits bort. Det är god praxis att [utföra en uppslagsbegäran (GET)](#lookup) först för att visa profilen och bekräfta att det är rätt princip som du vill ta bort.
+>Policyer kan inte återställas när de har tagits bort. Det är bäst att [utföra en sökningsförfrågan](#lookup) först för att visa principen och bekräfta att det är rätt princip som du vill ta bort.
 
 **API-format**
 
@@ -611,7 +611,7 @@ Du kan bekräfta borttagningen genom att försöka söka efter (GET) profilen ig
 
 ## Hämta en lista över aktiverade kärnprinciper {#list-enabled-core}
 
-Som standard deltar endast aktiverade datastyrningsprinciper i utvärderingen. Du kan hämta en lista över viktiga principer som för närvarande är aktiverade av din organisation genom att göra en GET-förfrågan till `/enabledCorePolicies` slutpunkt.
+Som standard deltar endast aktiverade datastyrningsprinciper i utvärderingen. Du kan hämta en lista över kärnprinciper som för närvarande är aktiverade av din organisation genom att göra en GET-förfrågan till slutpunkten `/enabledCorePolicies`.
 
 **API-format**
 
@@ -632,7 +632,7 @@ curl -X GET \
 
 **Svar**
 
-Ett lyckat svar returnerar listan över aktiverade kärnprinciper under en `policyIds` array.
+Ett lyckat svar returnerar listan med aktiverade kärnprinciper under en `policyIds`-matris.
 
 ```json
 {
@@ -663,11 +663,11 @@ Ett lyckat svar returnerar listan över aktiverade kärnprinciper under en `poli
 
 ## Uppdatera listan över aktiverade kärnprinciper {#update-enabled-core}
 
-Som standard deltar endast aktiverade datastyrningsprinciper i utvärderingen. Genom att göra en begäran från PUT till `/enabledCorePolicies` -slutpunkten kan du uppdatera listan med aktiverade kärnprinciper för din organisation med ett enda samtal.
+Som standard deltar endast aktiverade datastyrningsprinciper i utvärderingen. Genom att göra en PUT-begäran till `/enabledCorePolicies`-slutpunkten kan du uppdatera listan över aktiverade kärnprinciper för din organisation med ett enda anrop.
 
 >[!NOTE]
 >
->Endast kärnprinciper kan aktiveras eller inaktiveras av den här slutpunkten. Om du vill aktivera eller inaktivera anpassade profiler läser du avsnittet om [uppdatera en del av en princip](#patch).
+>Endast kärnprinciper kan aktiveras eller inaktiveras av den här slutpunkten. Om du vill aktivera eller inaktivera anpassade principer läser du avsnittet [Uppdatera en del av en princip](#patch).
 
 **API-format**
 
@@ -698,11 +698,11 @@ curl -X GET \
 
 | Egenskap | Beskrivning |
 | --- | --- |
-| `policyIds` | En lista över princip-ID:n som ska aktiveras. Alla principer som inte ingår anges till `DISABLED` status och kommer inte att delta i utvärderingen. |
+| `policyIds` | En lista över princip-ID:n som ska aktiveras. Alla kärnprinciper som inte ingår har statusen `DISABLED` och kommer inte att delta i utvärderingen. |
 
 **Svar**
 
-Ett lyckat svar returnerar den uppdaterade listan över aktiverade kärnprinciper under en `policyIds` array.
+Ett lyckat svar returnerar den uppdaterade listan med aktiverade kärnprinciper under en `policyIds`-matris.
 
 ```json
 {
@@ -729,4 +729,4 @@ Ett lyckat svar returnerar den uppdaterade listan över aktiverade kärnprincipe
 
 ## Nästa steg
 
-När du har definierat nya eller uppdaterade profiler kan du använda [!DNL Policy Service] API för att testa marknadsföringsåtgärder mot specifika etiketter eller datauppsättningar och för att se om era policyer ger upphov till överträdelser som förväntat. Se guiden på [slutpunkter för principutvärdering](./evaluation.md) för mer information.
+När du har definierat nya principer eller uppdaterat befintliga, kan du använda [!DNL Policy Service]-API:t för att testa marknadsföringsåtgärder mot specifika etiketter eller datauppsättningar och se om dina principer orsakar överträdelser som förväntat. Mer information finns i guiden för [principutvärderingsslutpunkterna](./evaluation.md).

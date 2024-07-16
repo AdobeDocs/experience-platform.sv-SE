@@ -11,13 +11,13 @@ ht-degree: 0%
 
 # Översikt över datastreams
 
-En datastream representerar konfigurationen på serversidan när Adobe Experience Platform Web och Mobile SDK implementeras. Med [`configure`](/help/web-sdk/commands/configure/overview.md) -kommandot i SDK styr saker som måste hanteras på klienten (till exempel `edgeDomain`) hanterar datastreams alla andra konfigurationer för SDK. När en begäran skickas till Adobe Experience Platform Edge Network `edgeConfigId` används för att referera till datastream. På så sätt kan du uppdatera konfigurationen på serversidan utan att behöva göra kodändringar på webbplatsen.
+En datastream representerar konfigurationen på serversidan när Adobe Experience Platform Web och Mobile SDK implementeras. Medan kommandot [`configure`](/help/web-sdk/commands/configure/overview.md) i SDK styr saker som måste hanteras på klienten (till exempel `edgeDomain`), hanterar datastreams alla andra konfigurationer för SDK. När en begäran skickas till Adobe Experience Platform Edge Network används `edgeConfigId` för att referera till datastream. På så sätt kan du uppdatera konfigurationen på serversidan utan att behöva göra kodändringar på webbplatsen.
 
-Du kan skapa och hantera datastreams genom att välja **[!UICONTROL Datastreams]** i den vänstra navigeringen i Adobe Experience Platform användargränssnitt eller användargränssnittet för datainsamling.
+Du kan skapa och hantera datastölar genom att välja **[!UICONTROL Datastreams]** i den vänstra navigeringen i användargränssnittet för Adobe Experience Platform eller datainsamling.
 
 ![Fliken Datastreams i användargränssnittet](assets/overview/datastreams-tab.png)
 
-Mer information om hur du konfigurerar ett datastream i användargränssnittet finns i [konfigurationsguide](./configure.md).
+Mer information om hur du konfigurerar ett datastam i användargränssnittet finns i [konfigurationsguiden](./configure.md).
 
 ## Hantera känsliga data i datastreams {#sensitive}
 
@@ -35,7 +35,7 @@ Datastreams erbjuder tre metoder som hjälper dig att hantera känsliga data på
 
 ### Förbättrad kryptering {#encryption}
 
-Alla data som överförs genom Edge Network utförs via säkra, krypterade anslutningar med [HTTPS TLS 1.2](https://datatracker.ietf.org/doc/html/rfc5246). Om datastream hämtar in data till Experience Platform krypteras data sedan i vila i Experience Platform datasjön. Visa dokumentet på [datakryptering i Experience Platform](../landing/governance-privacy-security/encryption.md) för mer information.
+Alla data som överförs genom Edge Network utförs via säkra, krypterade anslutningar med [HTTPS TLS 1.2](https://datatracker.ietf.org/doc/html/rfc5246). Om datastream hämtar in data till Experience Platform krypteras data sedan i vila i Experience Platform datasjön. Mer information finns i dokumentet om [datakryptering i Experience Platform](../landing/governance-privacy-security/encryption.md).
 
 ### Datastyrning {#governance}
 
@@ -45,11 +45,11 @@ I följande video visas en kort översikt över hur dataanvändningsbegränsning
 
 >[!VIDEO](https://video.tv.adobe.com/v/3409588/?quality=12&learn=on&speedcontrol=on)
 
-I Experience Platform kan du använda [etiketter för känslig dataanvändning](../data-governance/labels/reference.md#sensitive) till scheman och fält som innehåller data som din organisation anser vara känsliga. Till exempel `RHD` Etiketten används för att beteckna Skyddad hälsoinformation (PHI) och `S1` label representerar geopositioneringsdata.
+I Experience Platform kan du använda [känsliga dataanvändningsetiketter](../data-governance/labels/reference.md#sensitive) på scheman och fält som innehåller data som din organisation anser vara känsliga. Etiketten `RHD` används till exempel för att beteckna PHI (Protected Health Information) och etiketten `S1` representerar data för geopositionering.
 
 >[!NOTE]
 >
->Mer information om hur du använder dataetiketter i [!UICONTROL Schemas] -fliken i användargränssnittet eller användargränssnittet för datainsamling i Experience Platform finns i [självstudiekurs om schemamärkning](../xdm/tutorials/labels.md).
+>Mer information om hur du använder dataanvändningsetiketter på fliken [!UICONTROL Schemas] i användargränssnittet för Experience Platform och datainsamling finns i [schemaetikettsjälvstudiekursen](../xdm/tutorials/labels.md).
 
 När du skapar en datastream, och det markerade schemat innehåller etiketter för känslig dataanvändning, kan du bara konfigurera datastream så att data skickas till HIPAA-klara mål. För närvarande är Adobe Experience Platform den enda HIPAA-klara destinationen som stöds av datastreams. Andra destinationstjänster som Adobe Target, Adobe Analytics, Adobe Audience Manager, händelsevidarebefordran och edge-mål är inaktiverade för datastreams som innehåller etiketter för känslig dataanvändning.
 
@@ -57,12 +57,12 @@ Om ett schema används i en befintlig datastam med tjänster som inte är HIPAA-
 
 ### Granskningsloggar
 
-I Experience Platform kan datastream-aktiviteter övervakas i form av granskningsloggar. Granskningsloggar indikerar **som** utförd **vad** och **när**, tillsammans med andra kontextuella data som kan hjälpa er att felsöka problem som rör datastreams för att hjälpa ert företag att följa företagets policyer för datahantering och lagstadgade krav.
+I Experience Platform kan datastream-aktiviteter övervakas i form av granskningsloggar. Granskningsloggarna anger **vem** utförde **vad**-åtgärden och **när**, tillsammans med andra kontextuella data som kan hjälpa dig att felsöka problem som rör datastreams för att hjälpa ditt företag att följa företagets policyer för datahantering och lagstadgade krav.
 
-Varje gång en användare skapar, uppdaterar eller tar bort ett dataflöde skapas en granskningslogg för att spela in åtgärden. Samma sak händer när en användare skapar, uppdaterar eller tar bort en mappning via [Dataförberedelse för datainsamling](./data-prep.md). Oavsett om det var en datastream eller en mappning som uppdaterades, kategoriseras den resulterande granskningsloggen under [!UICONTROL Datastreams] resurstyp.
+Varje gång en användare skapar, uppdaterar eller tar bort ett dataflöde skapas en granskningslogg för att spela in åtgärden. Samma sak händer när en användare skapar, uppdaterar eller tar bort en mappning via [Dataprep för datainsamling](./data-prep.md). Oavsett om det var en datastream eller en mappning som uppdaterades, kategoriseras den resulterande granskningsloggen under resurstypen [!UICONTROL Datastreams].
 
-Läs dokumentationen om [granskningsloggar](../landing/governance-privacy-security/audit-logs/overview.md) för mer information om hur du tolkar loggar från datastreams och andra tjänster som stöds.
+Mer information om hur du tolkar loggar från dataströmmar och andra tjänster som stöds finns i dokumentationen om [granskningsloggar](../landing/governance-privacy-security/audit-logs/overview.md).
 
 ## Nästa steg
 
-Den här guiden ger en översikt på hög nivå över datastreams och deras användning i datainsamling och bearbetning av känsliga data. Anvisningar om hur du konfigurerar ett nytt datastream finns i [konfigurationsguide för datastream](./configure.md).
+Den här guiden ger en översikt på hög nivå över datastreams och deras användning i datainsamling och bearbetning av känsliga data. Anvisningar om hur du konfigurerar ett nytt datastream finns i [konfigurationsguiden för datastream](./configure.md).

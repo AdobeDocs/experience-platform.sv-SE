@@ -23,16 +23,16 @@ Följande handböcker är dessutom tillgängliga för att lära dig hur du integ
 
 För att kunna implementera Web SDK med IAB TCF 2.0 måste du ha en fungerande förståelse för Experience Data Model (XDM) och Experience Events. Läs följande dokument innan du börjar:
 
-- [Experience Data Model (XDM) - systemöversikt](../../../xdm/home.md): Standardisering och interoperabilitet är viktiga begrepp bakom Adobe Experience Platform. [!DNL Experience Data Model (XDM)]som drivs av Adobe, är ett försök att standardisera kundupplevelsedata och definiera scheman för kundupplevelsehantering.
+- [Systemöversikt för XDM (Experience Data Model)](../../../xdm/home.md): Standardisering och interoperabilitet är viktiga begrepp bakom Adobe Experience Platform. [!DNL Experience Data Model (XDM)], som drivs av Adobe, är ett försök att standardisera kundupplevelsedata och definiera scheman för kundupplevelsehantering.
 
 ## Integrering med Experience Platform
 
 Om du vill skicka data om samtycke till Adobe Experience Platform med hjälp av SDK krävs följande:
 
-- En datauppsättning vars schema är baserat på [!DNL XDM Individual Profile] och innehåller TCF 2.0-tillståndsfält, aktiverade för användning i [!DNL Real-Time Customer Profile].
+- En datauppsättning vars schema baseras på klassen [!DNL XDM Individual Profile] och innehåller TCF 2.0-tillståndsfält, som är aktiverade för användning i [!DNL Real-Time Customer Profile].
 - En datastream som har konfigurerats med Platform och den profilaktiverade datauppsättning som nämns ovan.
 
-Se guiden på [TCF 2.0-kompatibilitet](../../../landing/governance-privacy-security/consent/iab/overview.md) för instruktioner om hur du skapar de datauppsättningar och datastream som krävs.
+I guiden om [TCF 2.0-kompatibilitet](../../../landing/governance-privacy-security/consent/iab/overview.md) finns instruktioner om hur du skapar de nödvändiga datauppsättningarna och dataströmmen.
 
 ## Integrering med Audience Manager
 
@@ -48,8 +48,8 @@ Medan målgrupperna i Real-Time CDP och Audience Manager håller reda på kunder
 
 Följande krävs för att samla in information om samtycke vid händelser:
 
-- En datauppsättning baserad på [!DNL XDM Experience Event] klass, med [!DNL Experience Event] fältgrupp för sekretessschema.
-- En datastream som har konfigurerats med [!DNL XDM Experience Event] datauppsättning ovan.
+- En datamängd baserad på klassen [!DNL XDM Experience Event], med fältgruppen [!DNL Experience Event] för sekretesschema.
+- En datastream har konfigurerats med datauppsättningen [!DNL XDM Experience Event] ovan.
 
 Mer information om hur du konverterar en XDM Experience Event till en Analytics-träff finns i [Skicka data till Adobe Analytics med Web SDK](/help/web-sdk/use-cases/adobe-analytics.md).
 
@@ -65,25 +65,25 @@ Avsnitten nedan beskriver de viktigaste integrationspunkterna mellan IAB TCF 2.0
 
 Standardsamtycke används när det inte redan finns någon inställning för samtycke för en kund. Det innebär att standardalternativen för samtycke kan styra Adobe Experience Platform Web SDK:s beteende och ändra baserat på kundens region.
 
-Om du till exempel har en kund som inte omfattas av den allmänna dataskyddsförordningen (GDPR), kan standardsamtycke anges till `in`, men inom GDPR:s jurisdiktion kan standardmedgivandet anges till `pending`. Din plattform för hantering av samtycke (CMP) kan identifiera kundens region och tillhandahålla flaggan `gdprApplies` till IAB TCF 2.0. Den här flaggan kan användas för att ange standardsamtycke. Se [`defaultConsent`](/help/web-sdk/commands/configure/defaultconsent.md) för mer information.
+Om du till exempel har en kund som inte omfattas av den allmänna dataskyddsförordningen (GDPR) kan standardmedgivandet anges till `in`, men inom GDPR:s jurisdiktion kan standardmedgivandet anges till `pending`. Din CMP (Consent Management Platform) kan identifiera kundens region och tillhandahålla flaggan `gdprApplies` till IAB TCF 2.0. Den här flaggan kan användas för att ange standardsamtycke. Mer information finns i [`defaultConsent`](/help/web-sdk/commands/configure/defaultconsent.md).
 
 ### Ange samtycke när det ändras
 
-Adobe Experience Platform Web SDK har en `setConsent` som meddelar dina kunders samtycke till alla Adobes tjänster med IAB TCF 2.0. Om du integrerar med Real-Time CDP uppdateras kundens profil. Om du integrerar med Audience Manager uppdateras kundinformationen. Om du anropar detta anges även en cookie med en medgivandeinställning som helt eller inte alls som kontrollerar om framtida Experience Events får skickas. Den här åtgärden anropas när medgivandet ändras. När en framtida sida läses in läses cookien för Edge Network samtycke in för att avgöra om Experience Events kan skickas och om en identitetscookie kan anges.
+Adobe Experience Platform Web SDK har ett `setConsent`-kommando som meddelar dina kunders samtycke till alla Adobe-tjänster med IAB TCF 2.0. Om du integrerar med Real-Time CDP uppdateras kundens profil. Om du integrerar med Audience Manager uppdateras kundinformationen. Om du anropar detta anges även en cookie med en medgivandeinställning som helt eller inte alls som kontrollerar om framtida Experience Events får skickas. Den här åtgärden anropas när medgivandet ändras. När en framtida sida läses in läses cookien för Edge Network samtycke in för att avgöra om Experience Events kan skickas och om en identitetscookie kan anges.
 
 På samma sätt som integreringen av Audience Manager IAB TCF 2.0 ger Edge Network sitt samtycke när en kund uttryckligen har gett sitt samtycke till följande:
 
 - **Syfte 1:** Lagra och/eller få åtkomst till information på en enhet
 - **Syfte 10:** Utveckla och förbättra produkter
-- **Specialsyfte 1:** Säkerställ säkerhet, förhindra bedrägeri och felsökning. (Enligt reglerna för IAB TCF godkänner detta alltid)
-- **Tillstånd från Adobe:** Godkännande för Adobe (leverantör 565)
+- **Särskilt syfte 1:** Säkerställ säkerhet, förhindra bedrägeri och felsökning. (Enligt reglerna för IAB TCF godkänner detta alltid)
+- **Adobe leverantörsbehörighet:** Medgivande för Adobe (leverantör 565)
 
-Mer information om `setConsent` kan du läsa dedikerad Web SDK-dokumentation på [setConsent](../../../web-sdk/commands/setconsent.md).
+Mer information om kommandot `setConsent` finns i den dedikerade Web SDK-dokumentationen för [setConsent](../../../web-sdk/commands/setconsent.md).
 
 ### Lägga till samtycke till upplevelsehändelser
 
-Adobe Experience Platform Web SDK har en [`sendEvent`](/help/web-sdk/commands/sendevent/overview.md) som samlar in en Experience Event. Om ni integrerar med Experience Events eller Adobe Analytics och vill ha medgivandeinställningar för varje Experience Event, lägger ni till medgivandeinformation för varje `sendEvent` -kommando.
+Adobe Experience Platform Web SDK har ett [`sendEvent`](/help/web-sdk/commands/sendevent/overview.md)-kommando som samlar in en Experience Event. Om du integrerar med Experience Events eller Adobe Analytics och vill ha medgivandeinställningarna för varje Experience Event, lägger du till medgivandeinformation för varje `sendEvent`-kommando.
 
 ## Nästa steg
 
-Nu när du har en grundläggande förståelse för IAB Transparency &amp; Consent Framework 2.0 kan du läsa båda handböckerna om hur du använder IAB TCF 2.0 [med taggar](./with-tags.md) eller [utan taggar](./without-tags.md).
+Nu när du har en grundläggande förståelse för IAB Transparency &amp; Consent Framework 2.0 kan du läsa någon av guiderna för användning av IAB TCF 2.0 [med taggar](./with-tags.md) eller [utan taggar](./without-tags.md).

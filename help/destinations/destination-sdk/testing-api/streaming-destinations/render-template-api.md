@@ -4,7 +4,7 @@ title: Validera exporterad profilstruktur
 exl-id: e64ea89e-6064-4a05-9730-e0f7d7a3e1db
 source-git-commit: d6402f22ff50963b06c849cf31cc25267ba62bb1
 workflow-type: tm+mt
-source-wordcount: '789'
+source-wordcount: '793'
 ht-degree: 0%
 
 ---
@@ -16,21 +16,21 @@ ht-degree: 0%
 >
 >**API-slutpunkt**: `https://platform.adobe.io/data/core/activation/authoring/testing/template/render`
 
-På den här sidan visas och beskrivs alla API-åtgärder som du kan utföra med `/authoring/testing/template/render` API-slutpunkt, för att återge exporterade profiler som matchar målets förväntade format, baserat på din [omformningsmall för meddelanden](../../functionality/destination-server/message-format.md#using-templating). En beskrivning av de funktioner som stöds av den här slutpunkten finns i [skapa mall](create-template.md).
+På den här sidan visas och beskrivs alla API-åtgärder som du kan utföra med API-slutpunkten `/authoring/testing/template/render` för att återge exporterade profiler som matchar målets förväntade format, baserat på din [meddelandeomformningsmall](../../functionality/destination-server/message-format.md#using-templating). En beskrivning av de funktioner som stöds av den här slutpunkten finns i [Skapa mall](create-template.md).
 
 ## Komma igång med åtgärder för återgivningsmall-API {#get-started}
 
-Läs igenom [komma igång-guide](../../getting-started.md) för viktig information som du behöver känna till för att kunna anropa API:t, inklusive hur du får nödvändig behörighet för målredigering och obligatoriska huvuden.
+Innan du fortsätter bör du läsa igenom [kom igång-guiden](../../getting-started.md) för att få viktig information som du behöver känna till för att kunna ringa anrop till API:t, inklusive hur du får nödvändig behörighet för målredigering och nödvändiga rubriker.
 
 ## Återge exporterade profiler baserat på mallen för meddelandeomformning {#render-exported-data}
 
-Du kan återge exporterade profiler genom att göra en POST-förfrågan till `authoring/testing/template/render` slutpunkten och ange mål-ID:t för målkonfigurationen och mallen som du skapade med [API-slutpunkt för exempelmall](sample-template-api.md).
+Du kan återge exporterade profiler genom att göra en POST-förfrågan till `authoring/testing/template/render`-slutpunkten och ange mål-ID:t för målkonfigurationen och den mall som du skapade med [exempelmallens API-slutpunkt](sample-template-api.md).
 
 Du kan börja med en enkel mall som exporterar dina Raw-profiler utan att använda några omformningar och sedan gå vidare till en mer komplex mall som tillämpar omformningar på profiler. Syntaxen för den enkla mallen är: <br> `"template": "{% for profile in input.profiles %}{{profile|raw}}{% endfor %}}"`
 
 >[!TIP]
 >
->* Mål-ID som du ska använda här är `instanceId` som motsvarar en målkonfiguration, skapad med `/destinations` slutpunkt. Se [hämta en destinationskonfiguration](../../authoring-api/destination-configuration/retrieve-destination-configuration.md) för mer information.
+>* Mål-ID som du bör använda här är `instanceId` som motsvarar en målkonfiguration, som skapas med slutpunkten `/destinations`. Mer information finns i [Hämta en målkonfiguration](../../authoring-api/destination-configuration/retrieve-destination-configuration.md).
 
 **API-format**
 
@@ -43,15 +43,15 @@ POST authoring/testing/template/render
 | -------- | ----------- |
 | `destinationId` | ID:t för målkonfigurationen som du återger exporterade profiler för. |
 | `template` | Den teckenescape-version av mallen som du återger exporterade profiler utifrån. |
-| `profiles` | *Valfritt*. Du kan lägga till profiler i begärandetexten. Om du inte lägger till några profiler genereras och läggs profiler till i begäran automatiskt i Experience Platform. <br> Om du vill lägga till profiler i samtalets brödtext kan du generera några med hjälp av [API för generering av exempelprofiler](sample-profile-generation-api.md). |
+| `profiles` | *Valfritt*. Du kan lägga till profiler i begärandetexten. Om du inte lägger till några profiler genereras och läggs profiler till i begäran automatiskt i Experience Platform. <br> Om du vill lägga till profiler i anropets brödtext kan du generera några med hjälp av [API:t för generering av exempelprofiler](sample-profile-generation-api.md). |
 
 {style="table-layout:auto"}
 
-Observera att svaret som returneras av återgivningsmallens API-slutpunkt skiljer sig åt baserat på målaggregeringsprincipen. Om målet har en konfigurerbar aggregeringsprincip returneras också aggregeringsnyckeln som bestämmer hur profiler aggregeras i svaret. Läs om [aggregeringspolicyer](../../functionality/destination-configuration/aggregation-policy.md) för mer information.
+Observera att svaret som returneras av återgivningsmallens API-slutpunkt skiljer sig åt baserat på målaggregeringsprincipen. Om målet har en konfigurerbar aggregeringsprincip returneras också aggregeringsnyckeln som bestämmer hur profiler aggregeras i svaret. Läs mer om [aggregeringsprinciper](../../functionality/destination-configuration/aggregation-policy.md).
 
 | Svarsparameter | Beskrivning |
 | -------- | ----------- |
-| `aggregationKey` | Representerar den princip som används för att samla profiler i exporter till ditt mål. Den här parametern är valfri och finns bara om målaggregeringsprincipen är inställd på `CONFIGURABLE_AGGREGATION`. |
+| `aggregationKey` | Representerar den princip som används för att samla profiler i exporter till ditt mål. Den här parametern är valfri och kommer bara att finnas om målaggregeringsprincipen är inställd på `CONFIGURABLE_AGGREGATION`. |
 | `profiles` | Visar profilerna som anges i begäran eller de automatiskt genererade profilerna om inga profiler angavs i begäran. |
 | `output` | Återgiven profil eller profiler, som en escape-sträng, baserad på den angivna meddelandeomvandlingsmallen |
 
@@ -126,7 +126,7 @@ curl --location --request POST 'https://platform.adobe.io/data/core/activation/a
 **Svar**
 
 Svaret returnerar resultatet av återgivningen av mallen eller eventuella fel som påträffats.
-Ett lyckat svar returnerar HTTP-status 200 med information om exporterade data. Söka efter den exporterade profilen i dialogrutan `output` parameter, som en escape-sträng.
+Ett lyckat svar returnerar HTTP-status 200 med information om exporterade data. Hitta den exporterade profilen i parametern `output` som en escape-sträng.
 Ett misslyckat svar returnerar HTTP-status 400 tillsammans med beskrivningar av de fel som påträffats.
 
 ```json
@@ -186,7 +186,7 @@ Ett misslyckat svar returnerar HTTP-status 400 tillsammans med beskrivningar av 
 **Begäran**
 
 
-Följande begäran återger flera exporterade profiler som matchar det format som förväntas av ditt mål. I det här exemplet motsvarar mål-ID en målkonfiguration med konfigurerbar aggregering. Det finns två profiler i ansökan, var och en med tre målgruppskvalifikationer och fem identiteter. Du kan generera profiler att skicka på samtalet med [API för generering av exempelprofiler](sample-profile-generation-api.md).
+Följande begäran återger flera exporterade profiler som matchar det format som förväntas av ditt mål. I det här exemplet motsvarar mål-ID en målkonfiguration med konfigurerbar aggregering. Det finns två profiler i ansökan, var och en med tre målgruppskvalifikationer och fem identiteter. Du kan generera profiler som ska skickas vid samtalet med hjälp av [API:t för generering av exempelprofiler](sample-profile-generation-api.md).
 
 ```shell
 curl --location --request POST 'https://platform.adobe.io/data/core/activation/authoring/testing/template/render' \
@@ -307,7 +307,7 @@ curl --location --request POST 'https://platform.adobe.io/data/core/activation/a
 **Svar**
 
 Svaret returnerar resultatet av återgivningen av mallen eller eventuella fel som påträffats.
-Ett lyckat svar returnerar HTTP-status 200 med information om exporterade data. Lägg märke till hur profilerna sammanställs baserat på målgruppsmedlemskap och identiteter i svaret. Söka efter exporterade profiler i `output` parameter, som en escape-sträng.
+Ett lyckat svar returnerar HTTP-status 200 med information om exporterade data. Lägg märke till hur profilerna sammanställs baserat på målgruppsmedlemskap och identiteter i svaret. Sök efter de exporterade profilerna i parametern `output` som en escape-sträng.
 Ett misslyckat svar returnerar HTTP-status 400 tillsammans med beskrivningar av de fel som påträffats.
 
 ```json
@@ -1066,8 +1066,8 @@ Ett misslyckat svar returnerar HTTP-status 400 tillsammans med beskrivningar av 
 
 ## API-felhantering {#api-error-handling}
 
-Destination SDK-API-slutpunkter följer de allmänna felmeddelandeprinciperna för Experience Platform API. Se [API-statuskoder](../../../../landing/troubleshooting.md#api-status-codes) och [fel i begäranhuvudet](../../../../landing/troubleshooting.md#request-header-errors) i felsökningsguiden för plattformen.
+Destination SDK-API-slutpunkter följer de allmänna felmeddelandeprinciperna för Experience Platform API. Se [API-statuskoder](../../../../landing/troubleshooting.md#api-status-codes) och [begäranrubrikfel](../../../../landing/troubleshooting.md#request-header-errors) i felsökningsguiden för plattformen.
 
 ## Nästa steg {#next-steps}
 
-När du har läst det här dokumentet vet du nu hur du använder meddelandeomformningsmallen för att generera exporterade profiler som matchar målets förväntade dataformat. Läs [Så här använder du Destination SDK för att konfigurera ditt mål](../../guides/configure-destination-instructions.md) för att förstå var det här steget passar in i processen att konfigurera målet.
+När du har läst det här dokumentet vet du nu hur du använder meddelandeomformningsmallen för att generera exporterade profiler som matchar målets förväntade dataformat. Läs [om hur du använder Destination SDK för att konfigurera ditt mål](../../guides/configure-destination-instructions.md) och förstå var det här steget passar in i processen att konfigurera ditt mål.

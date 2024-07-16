@@ -13,7 +13,7 @@ ht-degree: 0%
 
 # Uppdatera ett katalogobjekt
 
-Du kan uppdatera en del av en [!DNL Catalog] genom att ta med dess ID i sökvägen för en PATCH-begäran. Det här dokumentet innehåller två metoder för att utföra PATCH-åtgärder på katalogobjekt:
+Du kan uppdatera en del av ett [!DNL Catalog]-objekt genom att ta med dess ID i sökvägen för en PATCH-begäran. Det här dokumentet innehåller två metoder för att utföra PATCH-åtgärder på katalogobjekt:
 
 * Använda fält
 * Använda JSON Patch-notation
@@ -34,12 +34,12 @@ PATCH /{OBJECT_TYPE}/{OBJECT_ID}
 
 | Parameter | Beskrivning |
 | --- | --- |
-| `{OBJECT_TYPE}` | Typ av [!DNL Catalog] objekt som ska uppdateras. Giltiga objekt är: <ul><li>`batches`</li><li>`dataSets`</li><li>`dataSetFiles`</li></ul> |
+| `{OBJECT_TYPE}` | Den typ av [!DNL Catalog]-objekt som ska uppdateras. Giltiga objekt är: <ul><li>`batches`</li><li>`dataSets`</li><li>`dataSetFiles`</li></ul> |
 | `{OBJECT_ID}` | Identifieraren för det specifika objekt som du vill uppdatera. |
 
 **Begäran**
 
-Följande begäran uppdaterar `name` och `description` fält i en datauppsättning till de värden som anges i nyttolasten. Objektfält som inte ska uppdateras kan uteslutas från nyttolasten.
+Följande begäran uppdaterar fälten `name` och `description` i en datamängd till värdena som anges i nyttolasten. Objektfält som inte ska uppdateras kan uteslutas från nyttolasten.
 
 ```shell
 curl -X PATCH \
@@ -67,9 +67,9 @@ Ett lyckat svar returnerar en array som innehåller ID:t för den uppdaterade da
 
 ## Uppdatera med JSON Patch-notation
 
-Följande exempelanrop visar hur du uppdaterar ett objekt med JSON Patch, enligt instruktionerna i [RFC-6902](https://tools.ietf.org/html/rfc6902).
+I följande exempelanrop visas hur du uppdaterar ett objekt med JSON Patch, enligt beskrivningen i [RFC-6902](https://tools.ietf.org/html/rfc6902).
 
-Mer information om JSON Patch-syntaxen finns i [Grundläggande API-guide](../../landing/api-fundamentals.md#json-patch).
+Mer information om JSON Patch-syntax finns i [API-handboken ](../../landing/api-fundamentals.md#json-patch).
 
 **API-format**
 
@@ -79,12 +79,12 @@ PATCH /{OBJECT_TYPE}/{OBJECT_ID}
 
 | Parameter | Beskrivning |
 | --- | --- |
-| `{OBJECT_TYPE}` | Typ av [!DNL Catalog] objekt som ska uppdateras. Giltiga objekt är: <ul><li>`batches`</li><li>`dataSets`</li><li>`dataSetFiles`</li></ul> |
+| `{OBJECT_TYPE}` | Den typ av [!DNL Catalog]-objekt som ska uppdateras. Giltiga objekt är: <ul><li>`batches`</li><li>`dataSets`</li><li>`dataSetFiles`</li></ul> |
 | `{OBJECT_ID}` | Identifieraren för det specifika objekt som du vill uppdatera. |
 
 **Begäran**
 
-Följande begäran uppdaterar `name` och `description` fält i en datauppsättning med de värden som anges i varje JSON-lagningsobjekt. När du använder JSON Patch måste du även ange Content-Type-rubriken till `application/json-patch+json`.
+Följande begäran uppdaterar fälten `name` och `description` i en datauppsättning till de värden som anges i varje JSON Patch-objekt. När du använder JSON Patch måste du även ange Content-Type-huvudet till `application/json-patch+json`.
 
 ```shell
 curl -X PATCH \
@@ -102,7 +102,7 @@ curl -X PATCH \
 
 **Svar**
 
-Ett lyckat svar returnerar en array som innehåller ID:t för det uppdaterade objektet. Detta ID ska matcha det som skickades i PATCH-begäran. En GET-förfrågan för det här objektet visar nu att endast `name` och `description` har uppdaterats medan alla andra värden förblir oförändrade.
+Ett lyckat svar returnerar en array som innehåller ID:t för det uppdaterade objektet. Detta ID ska matcha det som skickades i PATCH-begäran. När en GET-förfrågan utförs för det här objektet visas nu att endast `name` och `description` har uppdaterats medan alla andra värden förblir oförändrade.
 
 ```json
 [

@@ -13,4 +13,4 @@ ht-degree: 0%
 
 # Dataanvändningsetiketter i API:t för datauppsättningstjänsten
 
-Separat från katalogtjänstens API, [!DNL Dataset Service] API tillhandahåller slutpunkter för att hantera dataanvändningsetiketter för datauppsättningar. Anvisningar om hur du anropar dessa slutpunkter finns i handboken [hantera dataanvändningsetiketter med API](../../data-governance/labels/dataset-api.md) i Adobe Experience Platform Data Governance-dokumentationen.
+API:t [!DNL Dataset Service] är skilt från katalogtjänstens API och tillhandahåller slutpunkter för att hantera dataanvändningsetiketter för datauppsättningar. Anvisningar om hur du anropar dessa slutpunkter finns i guiden [Hantera dataanvändningsetiketter med API](../../data-governance/labels/dataset-api.md) i Adobe Experience Platform Data Governance-dokumentationen.

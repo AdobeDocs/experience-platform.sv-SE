@@ -13,35 +13,35 @@ ht-degree: 0%
 
 Om din organisation säljer produkter eller tjänster kan du använda den här sidan som vägledning för hur du spårar dessa produkter och tjänster.
 
-Den här sidan använder XDM [Commerce Schema](https://github.com/adobe/xdm/blob/master/docs/reference/datatypes/commerce.schema.md) fältgrupp.
+Den här sidan använder fältgruppen XDM [Commerce Schema](https://github.com/adobe/xdm/blob/master/docs/reference/datatypes/commerce.schema.md).
 
 Fältgruppen består av två huvuddelar:
 
-* The `commerce` -objekt. Med det här objektet kan du ange vilka åtgärder som ska utföras för `productListItems` array.
-* The `productListItems` array.
+* Objektet `commerce`. Med det här objektet kan du ange vilka åtgärder som ska utföras för `productListItems`-arrayen.
+* Arrayen `productListItems`.
 
 >[!TIP]
 >
->Om du känner till Adobe Analytics kan du `commerce` objektet innehåller data som liknar e-handelshändelser i `events` variabel. The `productListItems` objektarrayen innehåller data som liknar `products` variabel.
+>Om du är bekant med Adobe Analytics innehåller objektet `commerce` data som liknar handelshändelser i variabeln `events`. Objektmatrisen `productListItems` innehåller data som liknar variabeln `products`.
 
-## The `commerce` object {#commerce-object}
+## Objektet `commerce` {#commerce-object}
 
-I det här avsnittet beskrivs fälten som finns i `commerce` -objekt.
+I det här avsnittet beskrivs de fält som är tillgängliga i objektet `commerce`.
 
 >[!TIP]
 >
->Ett mått har två fält: `id` och `value`. Oftast använder du bara `value` fält (till exempel `'value':1`). The `id` kan du ange en unik identifierare för spårning när måttet skickades. Läs XDM-dokumentationen för [Mät](https://github.com/adobe/xdm/blob/master/docs/reference/datatypes/data/measure.schema.md) för mer information.
+>Ett mått har två fält: `id` och `value`. Oftast använder du bara fältet `value` (till exempel `'value':1`). I fältet `id` kan du ange en unik identifierare för spårning när måttet skickades. Mer information finns i XDM-dokumentationen för [Åtgärd](https://github.com/adobe/xdm/blob/master/docs/reference/datatypes/data/measure.schema.md).
 
 | Mät | Rekommendation | Beskrivning |
 |---|---|---|
 | [`cartAbandons`](https://github.com/adobe/xdm/blob/master/docs/reference/datatypes/commerce.schema.md#xdmcartabandons) | Valfritt | En kundvagn är inte längre tillgänglig eller kan köpas av användaren. |
 | [`checkouts`](https://github.com/adobe/xdm/blob/master/docs/reference/datatypes/commerce.schema.md#xdmcheckouts) | Rekommenderas varmt | En användare söker inte längre efter produkter utan håller på att köpa en produkt. |
-| [`productListAdds`](https://github.com/adobe/xdm/blob/master/docs/reference/datatypes/commerce.schema.md#xdmproductlistadds) | Rekommenderas varmt | En produkt läggs till i en lista. Var noga med att ange produkten i `productListItems` samtidigt. |
+| [`productListAdds`](https://github.com/adobe/xdm/blob/master/docs/reference/datatypes/commerce.schema.md#xdmproductlistadds) | Rekommenderas varmt | En produkt läggs till i en lista. Var noga med att ställa in produkten i `productListItems` samtidigt. |
 | [`productListOpens`](https://github.com/adobe/xdm/blob/master/docs/reference/datatypes/commerce.schema.md#xdmproductlistopens) | Valfritt | En ny produktlista skapas. Till exempel skapas en ny kundvagn. |
 | [`productListRemovals`](https://github.com/adobe/xdm/blob/master/docs/reference/datatypes/commerce.schema.md#xdmproductlistremovals) | Rekommenderas varmt | En produkt tas bort från en produktlista. |
 | [`productListReopens`](https://github.com/adobe/xdm/blob/master/docs/reference/datatypes/commerce.schema.md#xdmproductlistreopens) | Valfritt | En produktlista återaktiveras av användaren. Detta sker ofta i återmarknadsföringskampanjer. |
 | [`productListViews`](https://github.com/adobe/xdm/blob/master/docs/reference/datatypes/commerce.schema.md#xdmproductlistviews) | Rekommenderas varmt | En lista över produkter visas. |
-| [`productViews`](https://github.com/adobe/xdm/blob/master/docs/reference/datatypes/commerce.schema.md#xdmproductviews) | Rekommenderas varmt | En vy över en produkt har inträffat. Var noga med att ställa in produkten som den visas i `productListItems`. |
+| [`productViews`](https://github.com/adobe/xdm/blob/master/docs/reference/datatypes/commerce.schema.md#xdmproductviews) | Rekommenderas varmt | En vy över en produkt har inträffat. Var noga med att ställa in produkten som visas i `productListItems`. |
 | [`purchases`](https://github.com/adobe/xdm/blob/master/docs/reference/datatypes/commerce.schema.md#xdmpurchases) | Rekommenderas varmt | En beställning godkänns. Måste ha en produktlista. |
 | [`saveForLaters`](https://github.com/adobe/xdm/blob/master/docs/reference/datatypes/commerce.schema.md#xdmsaveforlaters) | Valfritt | En produkt sparas för framtida bruk. |
 
@@ -49,11 +49,11 @@ I det här avsnittet beskrivs fälten som finns i `commerce` -objekt.
 
 ### `Commerce` objektexempel
 
-Expandera avsnittet nedan för att se ett exempel på ett Web SDK-kommando med ett fält från `commerce` -objekt.
+Expandera avsnittet nedan om du vill se ett exempel på ett Web SDK-kommando med ett fält från objektet `commerce`.
 
 +++`productViews`
 
-En grundläggande SDK för webben `sendEvent` anrop `productViews` fält till `1`:
+Ett grundläggande webb-SDK `sendEvent`-anrop som ställer in fältet `productViews` på `1`:
 
 ```javascript
 alloy("sendEvent", {
@@ -69,19 +69,19 @@ alloy("sendEvent", {
 
 +++
 
-## The `order` object {#order-object}
+## Objektet `order` {#order-object}
 
-The `commerce` -objektet innehåller ett dedikerat objekt för att samla in orderinformation. Detta kallas för `order` -objekt.
+Objektet `commerce` innehåller ett dedikerat objekt för att samla in orderinformation. Detta kallas `order`-objektet.
 
-I det här avsnittet beskrivs alla fält som stöds av `order` -objekt.
+I det här avsnittet beskrivs alla fält som stöds av objektet `order`.
 
 | Fält | Alternativ | Rekommendation | Beskrivning |
 |---|---|---|---|
-| [`currencyCode`](https://github.com/adobe/xdm/blob/master/docs/reference/datatypes/data/order.schema.md#xdmcurrencycode) |  |  | The [ISO 4217](https://en.wikipedia.org/wiki/ISO_4217) valuta för ordersumman. |
-| [`payments[]`](https://github.com/adobe/xdm/blob/master/docs/reference/datatypes/data/order.schema.md#xdmpayments) |  |  | Listan över betalningar på en order. A [paymentItem](https://github.com/adobe/xdm/blob/master/docs/reference/datatypes/data/paymentitem.schema.md) innehåller följande: |
-|  | [`currencyCode`](https://github.com/adobe/xdm/blob/master/docs/reference/datatypes/data/paymentitem.schema.md#xdmcurrencycode) | Valfritt | The [ISO 4217](https://en.wikipedia.org/wiki/ISO_4217) valuta för betalningsmetoden. |
+| [`currencyCode`](https://github.com/adobe/xdm/blob/master/docs/reference/datatypes/data/order.schema.md#xdmcurrencycode) |  |  | [ISO 4217](https://en.wikipedia.org/wiki/ISO_4217)-valutan för ordersumman. |
+| [`payments[]`](https://github.com/adobe/xdm/blob/master/docs/reference/datatypes/data/order.schema.md#xdmpayments) |  |  | Listan över betalningar på en order. En [paymentItem](https://github.com/adobe/xdm/blob/master/docs/reference/datatypes/data/paymentitem.schema.md) innehåller följande. |
+|  | [`currencyCode`](https://github.com/adobe/xdm/blob/master/docs/reference/datatypes/data/paymentitem.schema.md#xdmcurrencycode) | Valfritt | [ISO 4217](https://en.wikipedia.org/wiki/ISO_4217)-valutan för den här betalningsmetoden. |
 |  | [`paymentAmount`](https://github.com/adobe/xdm/blob/master/docs/reference/datatypes/data/paymentitem.schema.md#xdmpaymentamount) | Rekommenderas varmt | Betalningens värde i den angivna valutakoden. |
-|  | [`paymentType`](https://github.com/adobe/xdm/blob/master/docs/reference/datatypes/data/paymentitem.schema.md#xdmpaymenttype) | Rekommenderas varmt | Betalningstyp (till exempel `credit_card`, `gift_card`, `paypal`). Se listan med [kända värden](https://github.com/adobe/xdm/blob/master/docs/reference/datatypes/data/paymentitem.schema.md#xdmpaymenttype-known-values) för mer information. |
+|  | [`paymentType`](https://github.com/adobe/xdm/blob/master/docs/reference/datatypes/data/paymentitem.schema.md#xdmpaymenttype) | Rekommenderas varmt | Betalningstypen (till exempel `credit_card`, `gift_card`, `paypal`). Se listan med [kända värden](https://github.com/adobe/xdm/blob/master/docs/reference/datatypes/data/paymentitem.schema.md#xdmpaymenttype-known-values) för mer information. |
 |  | [`transactionID`](https://github.com/adobe/xdm/blob/master/docs/reference/datatypes/data/paymentitem.schema.md#xdmtransactionid) | Valfritt | Ett unikt ID för den här betalningstransaktionen. |
 | [`priceTotal`](https://github.com/adobe/xdm/blob/master/docs/reference/datatypes/data/order.schema.md#xdmpricetotal) |  | Rekommenderas varmt | Summan för den här ordern efter att alla rabatter och skatter har tillämpats. |
 | [`purchaseID`](https://github.com/adobe/xdm/blob/master/docs/reference/datatypes/data/order.schema.md#xdmpurchaseid) |  | Rekommenderas varmt | Den unika identifierare som säljaren har tilldelat det här köpet. |
@@ -89,11 +89,11 @@ I det här avsnittet beskrivs alla fält som stöds av `order` -objekt.
 
 ### Exempel på orderobjekt
 
-Expandera avsnittet nedan för att se ett exempel på ett Web SDK-kommando med `commerce` -objekt.
+Expandera avsnittet nedan om du vill se ett exempel på ett Web SDK-kommando med objektet `commerce`.
 
 +++`Order` objektexempel
 
-En Web SDK `sendEvent` anrop `order` objekt som gäller för flera produkter i `productListItems` array:
+Ett Web SDK `sendEvent`-anrop som anger det `order` -objekt som gäller för flera produkter i `productListItems`-arrayen:
 
 ```javascript
 alloy("sendEvent",{
@@ -135,25 +135,25 @@ alloy("sendEvent",{
 
 ## Produktlisteobjektet {#product-list-object}
 
-Produktlistan anger vilka produkter som är relaterade till motsvarande åtgärd. Det är en lista på [productListItems](https://github.com/adobe/xdm/blob/master/docs/reference/datatypes/productlistitem.schema.md). Varje produkt har flera valfria fält.
+Produktlistan anger vilka produkter som är relaterade till motsvarande åtgärd. Det är en lista med [productListItems](https://github.com/adobe/xdm/blob/master/docs/reference/datatypes/productlistitem.schema.md). Varje produkt har flera valfria fält.
 
 | Fält | Rekommendation | Beskrivning |
 |---|---|---|
-| [`currencyCode`](https://github.com/adobe/xdm/blob/master/docs/reference/datatypes/productlistitem.schema.md#xdmcurrencycode) | Valfritt | The [ISO 4217](https://en.wikipedia.org/wiki/ISO_4217) produktvaluta. Det här fältet gäller vanligtvis bara när du har flera produkter i produktlistan med olika valutakoder. |
-| [`priceTotal`](https://github.com/adobe/xdm/blob/master/docs/reference/datatypes/productlistitem.schema.md#xdmpricetotal) | Rekommenderas varmt | Ange bara det här fältet när det är tillämpligt. Det är till exempel inte möjligt att ställa in `productView` -händelse eftersom olika variationer av produkten kan ha olika priser, men på en `productListAdds` -händelse. |
+| [`currencyCode`](https://github.com/adobe/xdm/blob/master/docs/reference/datatypes/productlistitem.schema.md#xdmcurrencycode) | Valfritt | Produktens [ISO 4217](https://en.wikipedia.org/wiki/ISO_4217)-valuta. Det här fältet gäller vanligtvis bara när du har flera produkter i produktlistan med olika valutakoder. |
+| [`priceTotal`](https://github.com/adobe/xdm/blob/master/docs/reference/datatypes/productlistitem.schema.md#xdmpricetotal) | Rekommenderas varmt | Ange bara det här fältet när det är tillämpligt. Det är till exempel inte möjligt att ange för `productView`-händelsen eftersom olika produktvarianter kan ha olika priser, men för en `productListAdds` -händelse. |
 | [`product`](https://github.com/adobe/xdm/blob/master/docs/reference/datatypes/productlistitem.schema.md#xdmproduct) | Rekommenderas varmt | Produktens XDM-ID. |
-| [`productAddMethod`](https://github.com/adobe/xdm/blob/master/docs/reference/datatypes/productlistitem.schema.md#xdmproductaddmethod) | Rekommenderas varmt | Den metod som användes för att lägga till en produktartikel i listan av besökaren. Använd med `productListAdds` och används endast när en produkt läggs till i listan. Exempel: `add to cart button`, `quick add`och `upsell`. |
+| [`productAddMethod`](https://github.com/adobe/xdm/blob/master/docs/reference/datatypes/productlistitem.schema.md#xdmproductaddmethod) | Rekommenderas varmt | Den metod som användes för att lägga till en produktartikel i listan av besökaren. Ange med `productListAdds` mått och används bara när en produkt läggs till i listan. Exempel är `add to cart button`, `quick add` och `upsell`. |
 | [`productName`](https://github.com/adobe/xdm/blob/master/docs/reference/datatypes/productlistitem.schema.md#xdmname) | Rekommenderas varmt | Visningsnamnet eller produktens läsbara namn. |
-| [`quantity`](https://github.com/adobe/xdm/blob/master/docs/reference/datatypes/productlistitem.schema.md#xdmquantity) | Rekommenderas varmt | Antalet enheter som kunden har angett att de behöver av produkten. Bör anges `productListAdds`, `productListRemoves`, `purchases`, `saveForLaters`och så vidare. |
+| [`quantity`](https://github.com/adobe/xdm/blob/master/docs/reference/datatypes/productlistitem.schema.md#xdmquantity) | Rekommenderas varmt | Antalet enheter som kunden har angett att de behöver av produkten. Ska anges på `productListAdds`, `productListRemoves`, `purchases`, `saveForLaters` och så vidare. |
 | [`SKU`](https://github.com/adobe/xdm/blob/master/docs/reference/datatypes/productlistitem.schema.md#xdmsku) | Rekommenderas varmt | Lagringsenhet. Det är den unika identifieraren för produkten. |
 
 ### Exempel på produktlistor
 
-Expandera avsnitten nedan om du vill se exempel på Web SDK-kommandon med `productListItems` -objekt.
+Expandera avsnitten nedan om du vill se exempel på Web SDK-kommandon som använder objektet `productListItems`.
 
-+++`productListItems` exempel
++++`productListItems`-exempel
 
-En Web SDK `sendEvent` anrop `productViews` för flera produkter i `productListItems` array:
+Ett Web SDK `sendEvent`-anrop som anger `productViews` för flera produkter i `productListItems`-arrayen:
 
 ```javascript
 alloy("sendEvent",{
@@ -179,9 +179,9 @@ alloy("sendEvent",{
 
 +++
 
-+++`productListAdds` exempel
++++`productListAdds`-exempel
 
-En Web SDK `sendEvent` anrop `productListAdds` händelse för flera produkter i `productListItems` array:
+Ett Web SDK `sendEvent`-anrop som anger `productListAdds`-händelsen för flera produkter i `productListItems`-arrayen:
 
 ```javascript
 alloy("sendEvent",{
@@ -213,9 +213,9 @@ alloy("sendEvent",{
 
 +++
 
-+++`checkouts` exempel
++++`checkouts`-exempel
 
-En Web SDK `sendEvent` anrop `checkouts` händelse för flera produkter i `productListItems` array:
+Ett Web SDK `sendEvent`-anrop som anger `checkouts`-händelsen för flera produkter i `productListItems`-arrayen:
 
 ```javascript
 alloy("sendEvent",{

@@ -15,7 +15,7 @@ ht-degree: 0%
 
 Du kan använda flera inbyggda Spark SQL-funktioner för att utöka SQL-funktioner med Adobe Experience Platform Query Service. I det här dokumentet visas Spark SQL-funktioner som stöds av Query Service.
 
-Mer detaljerad information om funktionerna, inklusive syntax, användning och exempel, finns i [Spark SQL-funktionsdokumentation](https://spark.apache.org/docs/latest/api/sql/index.html).
+Mer detaljerad information om funktionerna, inklusive syntax, användning och exempel, finns i [dokumentationen för Spark SQL-funktionen](https://spark.apache.org/docs/latest/api/sql/index.html).
 
 >[!NOTE]
 >
@@ -139,8 +139,8 @@ Mer detaljerad information om funktionerna, inklusive syntax, användning och ex
 | [`next_day`](https://spark.apache.org/docs/latest/api/sql/index.html#next_day) | Returnerar den första dagen senare än indata |
 | [`quarter`](https://spark.apache.org/docs/latest/api/sql/index.html#quarter) | Returnerar inmatningens fjärdedel |
 | [`second`](https://spark.apache.org/docs/latest/api/sql/index.html#second) | Returnerar den andra strängen |
-| [`to_date`](https://spark.apache.org/docs/latest/api/sql/index.html#to_date) | Konverterar strängen till ett datum. **Obs!** Strängen **måste** vara i formatet `yyyy-mm-ddTHH24:MM:SS`. |
-| [`to_timestamp`](https://spark.apache.org/docs/latest/api/sql/index.html#to_timestamp) | Konverterar strängen till en tidsstämpel. **Obs!** Strängen **måste** vara i formatet `yyyy-mm-ddTHH24:MM:SS`. |
+| [`to_date`](https://spark.apache.org/docs/latest/api/sql/index.html#to_date) | Konverterar strängen till ett datum. **Obs!** Strängen **måste** ha formatet `yyyy-mm-ddTHH24:MM:SS`. |
+| [`to_timestamp`](https://spark.apache.org/docs/latest/api/sql/index.html#to_timestamp) | Konverterar strängen till en tidsstämpel. **Obs!** Strängen **måste** ha formatet `yyyy-mm-ddTHH24:MM:SS`. |
 | [`to_unix_timestamp`](https://spark.apache.org/docs/latest/api/sql/index.html#to_unix_timestamp) | Konverterar strängen till en UNIX®-tidsstämpel |
 | [`to_utc_timestamp`](https://spark.apache.org/docs/latest/api/sql/index.html#to_utc_timestamp) | Konverterar strängen till en UTC-tidsstämpel |
 | [`trunc`](https://spark.apache.org/docs/latest/api/sql/index.html#trunc) | Trunkerar datumet |
@@ -250,7 +250,7 @@ Mer detaljerad information om funktionerna, inklusive syntax, användning och ex
 | [`concat_ws`](https://spark.apache.org/docs/latest/api/sql/index.html#concat_ws) | Sammanfogning med avgränsare |
 | [`count`](https://spark.apache.org/docs/latest/api/sql/index.html#count) | Returnerar det totala antalet rader |
 | [`decode`](https://spark.apache.org/docs/latest/api/sql/index.html#decode) | Avkoda med en teckenuppsättning |
-| [`elt`](https://spark.apache.org/docs/latest/api/sql/index.html#elt) | Returnera [`n`](https://spark.apache.org/docs/latest/api/sql/index.html#n)indata |
+| [`elt`](https://spark.apache.org/docs/latest/api/sql/index.html#elt) | Returnera [`n`](https://spark.apache.org/docs/latest/api/sql/index.html#n)th-indata |
 | [`encode`](https://spark.apache.org/docs/latest/api/sql/index.html#encode) | Koda med en teckenuppsättning |
 | [`first`](https://spark.apache.org/docs/latest/api/sql/index.html#first), [`first_value`](https://spark.apache.org/docs/latest/api/sql/index.html#first_value) | Returnerar det första värdet |
 | [`grouping`](https://spark.apache.org/docs/latest/api/sql/index.html#grouping) | Anger om en kolumn är grupperad |
@@ -259,7 +259,7 @@ Mer detaljerad information om funktionerna, inklusive syntax, användning och ex
 | [`json_tuple`](https://spark.apache.org/docs/latest/api/sql/index.html#json_tuple) | Returnerar en tuppel från en JSON-inmatning |
 | [`lag`](https://spark.apache.org/docs/latest/api/sql/index.html#lag), [`lead`](https://spark.apache.org/docs/latest/api/sql/index.html#lead) | Returnerar värdet före förskjutningen |
 | [`last`](https://spark.apache.org/docs/latest/api/sql/index.html#last), [`last_value`](https://spark.apache.org/docs/latest/api/sql/index.html#last_value) | Returnerar det sista värdet |
-| [`left`](https://spark.apache.org/docs/latest/api/sql/index.html#left) | Returnerar den första [`n`](https://spark.apache.org/docs/latest/api/sql/index.html#n) tecken |
+| [`left`](https://spark.apache.org/docs/latest/api/sql/index.html#left) | Returnerar de första [`n`](https://spark.apache.org/docs/latest/api/sql/index.html#n) tecknen |
 | [`length`](https://spark.apache.org/docs/latest/api/sql/index.html#length) | Returnerar strängens längd |
 | [`levenshtein`](https://spark.apache.org/docs/latest/api/sql/index.html#levenshtein) | Returnerar Levenshetin-avståndet mellan strängar |
 | [`locate`](https://spark.apache.org/docs/latest/api/sql/index.html#locate), [`position`](https://spark.apache.org/docs/latest/api/sql/index.html#position) | Returnerar positionen för den första förekomsten av en delsträng |
@@ -285,7 +285,7 @@ Mer detaljerad information om funktionerna, inklusive syntax, användning och ex
 | [`shiftright`](https://spark.apache.org/docs/latest/api/sql/index.html#shiftright) | Signerat bitvis skift åt höger |
 | [`shiftrightunsigned`](https://spark.apache.org/docs/latest/api/sql/index.html#shiftrightunsigned) | Bitflyttning utan tecken höger |
 | [`size`](https://spark.apache.org/docs/latest/api/sql/index.html#size) | Returnera arrayens storlek |
-| [`space`](https://spark.apache.org/docs/latest/api/sql/index.html#space) | Returnera en sträng med [`n`](https://spark.apache.org/docs/latest/api/sql/index.html#n) mellanslag |
+| [`space`](https://spark.apache.org/docs/latest/api/sql/index.html#space) | Returnera en sträng med [`n`](https://spark.apache.org/docs/latest/api/sql/index.html#n) blanksteg |
 | [`split`](https://spark.apache.org/docs/latest/api/sql/index.html#split) | Delad sträng |
 | [`substring_index`](https://spark.apache.org/docs/latest/api/sql/index.html#substring_index) | Returnera index för delsträng |
 | [`window`](https://spark.apache.org/docs/latest/api/sql/index.html#window) | Fönster |

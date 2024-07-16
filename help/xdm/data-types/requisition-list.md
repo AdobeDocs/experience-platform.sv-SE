@@ -1,18 +1,19 @@
 ---
 title: Datatyp för rekvisitionslista
 description: Läs mer om datatypen XDM (Requisition List Experience Data Model).
-source-git-commit: de8e944cfec3b52d25bb02bcfebe57d6a2a35e39
+exl-id: cbea6b08-9d4d-4cbe-b0c5-506bccc6df67
+source-git-commit: 8be502c9eea67119dc537a5d63a6c71e0bff1697
 workflow-type: tm+mt
 source-wordcount: '108'
 ht-degree: 0%
 
 ---
 
-# [!UICONTROL Requisition List] datatyp
+# Datatypen [!UICONTROL Requisition List]
 
-[!UICONTROL Requisition List] är en XDM-datatyp (Standard Experience Data Model) som beskriver en förvaltad samling av objekt för inköp eller upphandling. Använd [!UICONTROL Requisition List] datatyp för att identifiera och beskriva rekvisitionslistor.
+[!UICONTROL Requisition List] är en XDM-datatyp (Standard Experience Data Model) som beskriver en förvaltad samling med objekt för inköp eller upphandling. Använd datatypen [!UICONTROL Requisition List] för att identifiera och beskriva rekvisitionslistor.
 
-![Ett diagram över [!UICONTROL Requisition List] datatyp.](../images/data-types/requisition-list.png)
+![Ett diagram över datatypen [!UICONTROL Requisition List].](../images/data-types/requisition-list.png)
 
 | Visningsnamn | Egenskap | Datatyp | Beskrivning |
 |---------------------------|-------------------|-----------|--------------------------------------------------|

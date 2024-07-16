@@ -19,7 +19,7 @@ ht-degree: 0%
 >abstract="Det finns flera kategorier för dataanvändningsetiketter. De Adobe-definierade etiketterna innehåller kontraktsetiketter, identitetsetiketter och känsliga etiketter. Etiketter som definieras av din organisation kategoriseras som anpassade etiketter."
 >text="See the data usage labels glossary for more information on these label types."
 
-Med etiketter för dataanvändning kan du kategorisera datauppsättningar och fält enligt [styrningspolicy](../policies/overview.md) och [åtkomstkontrollprinciper](../../access-control/abac/overview.md) som är tillämpliga på dessa uppgifter. Adobe Experience Platform har flera färdiga etiketter för dataanvändning som du kan använda för att kategorisera dina data.
+Med dataanvändningsetiketter kan du kategorisera datauppsättningar och fält enligt [styrningsprinciper](../policies/overview.md) och [åtkomstkontrollprinciper](../../access-control/abac/overview.md) som gäller för dessa data. Adobe Experience Platform har flera färdiga etiketter för dataanvändning som du kan använda för att kategorisera dina data.
 
 I det här dokumentet beskrivs de etiketter för användning av kärndata som Experience Platform för närvarande tillhandahåller.
 
@@ -90,7 +90,7 @@ Vissa data kan bara exporteras från Adobe Experience Cloud i en aggregerad form
 
 #### C2 {#c2}
 
-Vissa dataleverantörer har villkor i sina kontrakt som förbjuder export av data som de ursprungligen samlades in från. Kontrakt för sociala nätverk begränsar till exempel ofta överföringen av data som du får från dem. C2-etiketten är mer restriktiv än [C1](#c1), som endast kräver sammanställning och anonyma uppgifter, men som är mindre begränsande än [C12](#c12), vilket förhindrar dataexport helt oavsett mål.
+Vissa dataleverantörer har villkor i sina kontrakt som förbjuder export av data som de ursprungligen samlades in från. Kontrakt för sociala nätverk begränsar till exempel ofta överföringen av data som du får från dem. C2-etiketten är mer restriktiv än [C1](#c1), som bara kräver aggregering och anonyma data, men mindre restriktiv än [C12](#c12) som förhindrar dataexport helt oavsett mål.
 
 #### C3 {#c3}
 
@@ -98,7 +98,7 @@ Vissa dataleverantörer har villkor i sina kontrakt som förbjuder kombinationen
 
 #### C4 {#c4}
 
-C4 omfattar etiketter [C5](#c5), [C6](#c6)och [C7](#c7). Det är en av de mest restriktiva etiketterna, och bara [C12](#c12).
+C4 omfattar etiketterna [C5](#c5), [C6](#c6) och [C7](#c7). Det är en av de mest restriktiva etiketterna, endast den andra är [C12](#c12).
 
 #### C5 {#c5}
 
@@ -112,7 +112,7 @@ Men målgruppsanpassning av innehåll eller annonser som bara använder webbplat
 
 I slutändan är det upp till er att tolka etiketten och hur användningen av data med den etiketten upprätthålls. Som referens ges ramverken IAB och DAA nedan:
 
-IAB: Personalisering. Samling och bearbetning av information om din användning av den här tjänsten för att därefter personalisera annonser och/eller innehåll för dig i andra sammanhang, till exempel på andra webbplatser eller appar, över tid. Vanligtvis används innehållet på webbplatsen eller appen för att dra slutsatser om dina intressen, som utgör grunden för det framtida urvalet av annonser och/eller innehåll.
+IAB: Personalization. Samling och bearbetning av information om din användning av den här tjänsten för att därefter personalisera annonser och/eller innehåll för dig i andra sammanhang, till exempel på andra webbplatser eller appar, över tid. Vanligtvis används innehållet på webbplatsen eller appen för att dra slutsatser om dina intressen, som utgör grunden för det framtida urvalet av annonser och/eller innehåll.
 
 DAA: Onlineannonsering. Samla in data från en viss dator eller enhet om webbvisningsbeteenden över tid och på icke-anslutna webbplatser i syfte att förutse användarnas preferenser eller intressen för att leverera annonser till den datorn eller enheten baserat på preferenser eller intressen som följer av sådana webbvisningsbeteenden.
 
@@ -122,7 +122,7 @@ Annonser är meddelanden eller meddelanden, inklusive text och bilder, som visas
 
 I slutändan är det upp till er att tolka etiketten och hur användningen av data med den etiketten upprätthålls. Som referens ges ramverken IAB och DAA nedan:
 
-IAB: 3. Val av annonser, leverans, rapportering: Insamling av information och kombination med tidigare insamlad information, för att välja ut och leverera annonser för dig och för att mäta hur effektiva dessa annonser är och hur de levereras. Detta inkluderar att använda tidigare insamlad information om era intressen för att välja ut annonser, bearbeta data om vilka annonser som visades, hur ofta de visades, när och var de visades och om ni vidtagit några åtgärder som rör annonsen, t.ex. välja en annons eller göra ett köp. Detta inkluderar inte personalisering, som är insamling och bearbetning av information om din användning av den här tjänsten för att senare personalisera annonser och/eller innehåll för dig i andra sammanhang, som webbplatser eller appar, över tid.
+IAB: 3. Val av annonser, leverans, rapportering: Insamling av information och kombination med tidigare insamlad information, för att välja ut och leverera annonser för dig och för att mäta hur effektiva dessa annonser är och hur de levereras. Detta inkluderar att använda tidigare insamlad information om era intressen för att välja ut annonser, bearbeta data om vilka annonser som visades, hur ofta de visades, när och var de visades och om ni vidtagit några åtgärder som rör annonsen, t.ex. välja en annons eller göra ett köp. Detta inkluderar inte Personalization, som är insamling och bearbetning av information om din användning av den här tjänsten för att senare personalisera annonser och/eller innehåll för dig i andra sammanhang, som webbplatser eller appar, över tid.
 
 DAA: Online Behavioral Adverting omfattar inte aktiviteter som utförs av First Party, Ad Delivery eller Ad Reporting, eller sammanhangsbaserad annonsering (dvs. annonsering som baseras på innehållet på den webbsida som besöks, en kunds aktuella besök på en webbsida eller en sökfråga).
 
@@ -132,7 +132,7 @@ Webbplatsinnehåll är text och bilder som är utformade för att informera, utb
 
 I slutändan är det upp till er att tolka etiketten och hur användningen av data med den etiketten upprätthålls. Som referens ges ramverken IAB och DAA nedan:
 
-IAB: 4. Val av innehåll, leverans, rapportering: Insamling av information och kombination med tidigare insamlad information, för att välja ut och leverera innehåll för dig och för att mäta leverans och effektivitet för sådant innehåll. Detta inkluderar att använda tidigare insamlad information om dina intressen för att välja innehåll, bearbeta data om vilket innehåll som visades, hur ofta eller hur länge det visades, när och var det visades, och om du vidtagit några åtgärder som rör innehållet, till exempel att välja innehåll. Detta inkluderar inte personalisering, som är insamling och bearbetning av information om din användning av den här tjänsten för att senare anpassa innehåll och/eller annonsering för dig i andra sammanhang, som webbplatser eller appar, över tid.
+IAB: 4. Val av innehåll, leverans, rapportering: Insamling av information och kombination med tidigare insamlad information, för att välja ut och leverera innehåll för dig och för att mäta leverans och effektivitet för sådant innehåll. Detta inkluderar att använda tidigare insamlad information om dina intressen för att välja innehåll, bearbeta data om vilket innehåll som visades, hur ofta eller hur länge det visades, när och var det visades, och om du vidtagit några åtgärder som rör innehållet, till exempel att välja innehåll. Detta inkluderar inte Personalization, som är insamling och bearbetning av information om din användning av den här tjänsten för att senare anpassa innehåll och/eller annonsering för dig i andra sammanhang, som webbplatser eller appar, över tid.
 
 DAA: Online Behavioral Adverting omfattar inte aktiviteter som utförs av First Party, Ad Delivery eller Ad Reporting, eller sammanhangsbaserad annonsering (dvs. annonsering som baseras på innehållet på den webbsida som ska besökas, en kunds aktuella besök på en webbsida eller en sökfråga).
 
@@ -150,7 +150,7 @@ Vissa datastyrningsprinciper begränsar användningen av sammanfogade identitets
 
 #### C11 {#c11}
 
-Med Adobe Experience Platform Segment Match kan ni matcha plattformsgenererade målgrupper med inställningar för sekretess och samtycke, vilket underlättar bättre profilering och insikter längre fram i kedjan. C11-etiketten anger data som inte ska användas i [!DNL Segment Match] -processer. När du har bestämt vilka datauppsättningar och/eller fält som du vill utesluta från segmentmatchning och lagt till C11-etiketten i enlighet med detta, används etiketten automatiskt av arbetsflödet för segmentmatchning.
+Med Adobe Experience Platform Segment Match kan ni matcha plattformsgenererade målgrupper med inställningar för sekretess och samtycke, vilket underlättar bättre profilering och insikter längre fram i kedjan. C11-etiketten anger data som inte ska användas i [!DNL Segment Match]-processer. När du har bestämt vilka datauppsättningar och/eller fält som du vill utesluta från segmentmatchning och lagt till C11-etiketten i enlighet med detta, används etiketten automatiskt av arbetsflödet för segmentmatchning.
 
 #### C12 {#c12}
 

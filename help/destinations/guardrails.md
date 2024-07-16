@@ -17,15 +17,15 @@ ht-degree: 1%
 
 >[!IMPORTANT]
 >
->Kontrollera dina licensrättigheter i din försäljningsorder och motsvarande [Produktbeskrivning](https://helpx.adobe.com/legal/product-descriptions.html) på faktiska användningsbegränsningar utöver denna garantisida.
+>Kontrollera dina licensrättigheter i din försäljningsorder och motsvarande [produktbeskrivning](https://helpx.adobe.com/legal/product-descriptions.html) om faktiska användningsbegränsningar, utöver den här sidan med skyddsförslag.
 
-Den här sidan innehåller standardvärden för användning och hastighetsbegränsningar för aktiveringsbeteende. När du granskar följande skyddsutkast antas du ha rätt [anslutna till destinationer](/help/destinations/ui/connect-destination.md).
+Den här sidan innehåller standardvärden för användning och hastighetsbegränsningar för aktiveringsbeteende. När du granskar följande skyddsutkast antas att du har [anslutit till mål](/help/destinations/ui/connect-destination.md) korrekt.
 
 >[!NOTE]
 >
 >* De flesta kunder överskrider inte dessa standardgränser. Om du vill veta mer om anpassade begränsningar kontaktar du kundtjänstrepresentanten.
 >* De gränser som beskrivs i det här dokumentet förbättras ständigt. Kontrollera regelbundet om det finns uppdateringar.
->* Beroende på vilka begränsningar som gäller i det enskilda senare ledet kan vissa destinationer ha tätare skyddsprofiler än de som finns på den här sidan. Se även till att kontrollera [katalog](/help/destinations/catalog/overview.md) målsidan som du ansluter och aktiverar data till.
+>* Beroende på vilka begränsningar som gäller i det enskilda senare ledet kan vissa destinationer ha tätare skyddsprofiler än de som finns på den här sidan. Kontrollera även sidan [katalog](/help/destinations/catalog/overview.md) för målet som du ansluter och aktiverar data till.
 
 ## Skyddstyper {#limit-types}
 
@@ -45,43 +45,43 @@ Följande skyddsprofiler ger rekommenderade gränser när kundprofildata aktiver
 
 ### Allmänna aktiveringsskydd {#general-activation-guardrails}
 
-Skyddskassorna nedan gäller vanligtvis aktivering via [alla måltyper](/help/destinations/destination-types.md#destination-types).
+Skyddsritningarna nedan gäller vanligtvis för aktivering via [alla måltyper](/help/destinations/destination-types.md#destination-types).
 
 | Guardrail | Gräns | Begränsa typ | Beskrivning |
 | --- | --- | --- | --- |
-| Maximalt antal målgrupper till ett enda mål | 250 | Prestandaskydd | Rekommendationen är att mappa högst 250 målgrupper till ett enda mål i ett dataflöde. <br><br> Om du behöver aktivera fler än 250 målgrupper till ett mål kan du antingen: <ul><li> Dela upp målgrupper som du inte längre vill aktivera, eller</li><li>Skapa ett nytt dataflöde till önskat mål och mappa målgrupper till det nya dataflödet.</li></ul> <br> Observera att för vissa destinationer kan du vara begränsad till färre än 250 målgrupper mappade till destinationen. Dessa destinationer beskrivs längre ned på sidan i respektive avsnitt. |
+| Maximalt antal målgrupper till ett enda mål | 250 | Prestandaskydd | Rekommendationen är att mappa högst 250 målgrupper till ett enda mål i ett dataflöde. <br><br> Om du behöver aktivera fler än 250 målgrupper till ett mål kan du antingen: <ul><li> Dela upp målgrupper som du inte längre vill aktivera, eller</li><li>Skapa ett nytt dataflöde till önskat mål och mappa målgrupper till det nya dataflödet.</li></ul> <br> Observera att för vissa destinationer kan du vara begränsad till färre än 250 målgrupper mappade till målet. Dessa destinationer beskrivs längre ned på sidan i respektive avsnitt. |
 | Maximalt antal attribut som har mappats till ett mål | 50 | Prestandaskydd | Om det finns flera mål- och måltyper kan du välja profilattribut och identiteter att mappa för export. För optimala prestanda bör maximalt 50 attribut mappas i ett dataflöde till ett mål. |
-| Högsta antal destinationer | 100 | Systemstyrt skyddsräcke | Du kan skapa högst 100 destinationer som du kan ansluta och aktivera data till, *per sandlåda*. [Destinationer för kantanpassning (anpassad personalisering)](#edge-destinations-activation) kan utgöra högst 10 av de 100 rekommenderade destinationerna. |
-| Typ av data som aktiveras för destinationer | Profildata, inklusive identiteter och identitetskarta | Systemstyrt skyddsräcke | För närvarande går det bara att exportera *profilpostattribut* till destinationer. XDM-attribut som beskriver händelsedata stöds för närvarande inte för export. |
-| Typ av data som aktiveras för mål - stöd för matris- och mappattribut | Inte tillgängligt | Systemstyrt skyddsräcke | För närvarande är det **not** kan exporteras *matris- eller mappattribut* till destinationer. Undantaget till den här regeln är [identitetskarta](/help/xdm/field-groups/profile/identitymap.md), som exporteras både i direktuppspelande och filbaserade aktiveringar. |
+| Högsta antal destinationer | 100 | Systemstyrt skyddsräcke | Du kan skapa högst 100 mål som du kan ansluta och aktivera data till, *per sandbox*. [Edge personaliseringsmål (Anpassad anpassning)](#edge-destinations-activation) kan utgöra högst 10 av de 100 rekommenderade målen. |
+| Typ av data som aktiveras för destinationer | Profildata, inklusive identiteter och identitetskarta | Systemstyrt skyddsräcke | För närvarande går det bara att exportera *profilpostattribut* till mål. XDM-attribut som beskriver händelsedata stöds för närvarande inte för export. |
+| Typ av data som aktiveras för mål - stöd för matris- och mappattribut | Inte tillgängligt | Systemstyrt skyddsräcke | För närvarande är det **inte** möjligt att exportera *matris- eller mappattribut* till mål. Undantaget till den här regeln är [identitetskartan](/help/xdm/field-groups/profile/identitymap.md) som exporteras både i direktuppspelande och filbaserade aktiveringar. |
 
 {style="table-layout:auto"}
 
 ### Aktivering av strömning {#streaming-activation}
 
-Skyddskassorna nedan gäller aktivering via [mål för direktuppspelning](/help/destinations/ui/activate-segment-streaming-destinations.md).
+Skyddsritningarna nedan gäller aktivering via [direktuppspelningsmål](/help/destinations/ui/activate-segment-streaming-destinations.md).
 
 | Guardrail | Gräns | Begränsa typ | Beskrivning |
 | --- | --- | --- | --- |
-| Antal aktiveringar (HTTP-meddelanden med profilexporter) per sekund | Ej tillämpligt | – | Det finns för närvarande ingen gräns för hur många meddelanden per sekund som skickas från Experience Platform till partnermålens API-slutpunkter. <br> Eventuella begränsningar eller latenser bestäms av slutpunkten där Experience Platform skickar data. Se även till att kontrollera [katalog](/help/destinations/catalog/overview.md) målsidan som du ansluter och aktiverar data till. |
+| Antal aktiveringar (HTTP-meddelanden med profilexporter) per sekund | N/A | – | Det finns för närvarande ingen gräns för hur många meddelanden per sekund som skickas från Experience Platform till partnermålens API-slutpunkter. <br> Alla begränsningar eller latenser anges av slutpunkten där Experience Platform skickar data. Kontrollera även sidan [katalog](/help/destinations/catalog/overview.md) för målet som du ansluter och aktiverar data till. |
 
 {style="table-layout:auto"}
 
 ### Batchaktivering (filbaserad) {#batch-file-based-activation}
 
-Skyddskassorna nedan gäller aktivering via [batchvis (filbaserat) mål](/help/destinations/ui/activate-batch-profile-destinations.md).
+Skyddskisserna nedan gäller aktivering via [gruppbaserade (filbaserade) mål](/help/destinations/ui/activate-batch-profile-destinations.md).
 
 | Guardrail | Gräns | Begränsa typ | Beskrivning |
 | --- | --- | --- | --- |
-| Aktiveringsfrekvens | En daglig hel export eller mer frekvent stegvis export var 3, 6, 8 eller 12: e timme. | Systemstyrt skyddsräcke | Läs [exportera fullständiga filer](/help/destinations/ui/activate-batch-profile-destinations.md#export-full-files) och [exportera inkrementella filer](/help/destinations/ui/activate-batch-profile-destinations.md#export-incremental-files) dokumentationsavsnitt för mer information om frekvensökningar för batchexport. |
+| Aktiveringsfrekvens | En daglig hel export eller mer frekvent stegvis export var 3, 6, 8 eller 12: e timme. | Systemstyrt skyddsräcke | Läs avsnitten om [export av fullständiga filer](/help/destinations/ui/activate-batch-profile-destinations.md#export-full-files) och [export av stegvisa filer](/help/destinations/ui/activate-batch-profile-destinations.md#export-incremental-files) om du vill ha mer information om frekvensökningarna för batchexport. |
 | Maximalt antal målgrupper som kan exporteras vid en given timme | 100 | Prestandaskydd | Rekommendationen är att lägga till högst 100 målgrupper i batchmåldataflöden. |
-| Maximalt antal rader (poster) per fil som ska aktiveras | 5 miljoner | Systemstyrt skyddsräcke | Adobe Experience Platform delar automatiskt upp de exporterade filerna i 5 miljoner poster (rader) per fil. Varje rad representerar en profil. Delade filnamn läggs till med en siffra som anger att filen är en del av en större export: `filename.csv`, `filename_2.csv`, `filename_3.csv`. Mer information finns i [schemaläggningsavsnitt](/help/destinations/ui/activate-batch-profile-destinations.md#scheduling) av självstudiekursen om aktivering av batchdestinationer. |
+| Maximalt antal rader (poster) per fil som ska aktiveras | 5 miljoner | Systemstyrt skyddsräcke | Adobe Experience Platform delar automatiskt upp de exporterade filerna i 5 miljoner poster (rader) per fil. Varje rad representerar en profil. Delade filnamn läggs till med ett nummer som anger att filen är en del av en större export, till exempel: `filename.csv`, `filename_2.csv`, `filename_3.csv`. Mer information finns i [schemaläggningsavsnittet](/help/destinations/ui/activate-batch-profile-destinations.md#scheduling) i självstudiekursen om aktivering av batchmål. |
 
 {style="table-layout:auto"}
 
 ### Ad hoc-aktivering {#ad-hoc-activation}
 
-Skyddsritningarna nedan gäller för [ad hoc-aktivering](/help/destinations/api/ad-hoc-activation-api.md) -metod.
+Skyddsritningarna nedan gäller metoden [ad hoc-aktivering](/help/destinations/api/ad-hoc-activation-api.md).
 
 | Guardrail | Gräns | Begränsa typ | Beskrivning |
 | --- | --- | --- | --- |
@@ -90,21 +90,21 @@ Skyddsritningarna nedan gäller för [ad hoc-aktivering](/help/destinations/api/
 
 {style="table-layout:auto"}
 
-### Aktivering av mål för kantanpassning {#edge-destinations-activation}
+### Aktivera Edge personaliseringsmål {#edge-destinations-activation}
 
-Skyddskassorna nedan gäller aktivering via [mål för kantanpassning](/help/destinations/destination-types.md#streaming-profile-export).
+Skyddsklippen nedan gäller aktivering via [kantanpassningsmål](/help/destinations/destination-types.md#streaming-profile-export).
 
 | Guardrail | Gräns | Begränsa typ | Beskrivning |
 | --- | --- | --- | --- |
-| Maximalt antal [Anpassad personalisering](/help/destinations/catalog/personalization/custom-personalization.md) mål | 10 | Prestandaskydd | Du kan konfigurera dataflöden till 10 anpassade mål för personalisering per sandlåda. |
+| Maximalt antal [anpassade personaliseringsmål](/help/destinations/catalog/personalization/custom-personalization.md) | 10 | Prestandaskydd | Du kan konfigurera dataflöden till 10 anpassade mål för personalisering per sandlåda. |
 | Maximalt antal attribut som mappats till ett personaliseringsmål per sandlåda | 30 | Systemstyrt skyddsräcke | Högst 30 attribut kan mappas i ett dataflöde till ett personaliseringsmål per sandlåda. |
-| Maximalt antal målgrupper mappade till en enda [Adobe Target](/help/destinations/catalog/personalization/adobe-target-connection.md) mål | 50 | Prestandaskydd | Du kan aktivera maximalt 50 målgrupper i ett aktiveringsflöde till ett enda Adobe Target-mål. |
+| Maximalt antal målgrupper som har mappats till ett enda [Adobe Target](/help/destinations/catalog/personalization/adobe-target-connection.md)-mål | 50 | Prestandaskydd | Du kan aktivera maximalt 50 målgrupper i ett aktiveringsflöde till ett enda Adobe Target-mål. |
 
 {style="table-layout:auto"}
 
 ### Datauppsättningsexporter {#dataset-exports}
 
-Datauppsättningsexporter stöds för närvarande i en **[!UICONTROL First Full and then Incremental]** [mönster](/help/destinations/ui/export-datasets.md#scheduling). Skyddskassorna som beskrivs i detta avsnitt *gäller för den första fullständiga exporten* som inträffar när ett arbetsflöde för datauppsättningsexport har ställts in.
+Datauppsättningsexporter stöds för närvarande i ett **[!UICONTROL First Full and then Incremental]** [mönster](/help/destinations/ui/export-datasets.md#scheduling). Skyddsutkast som beskrivs i det här avsnittet *gäller för den första fullständiga exporten* som sker efter att ett arbetsflöde för datauppsättningsexport har ställts in.
 
 <!--
 
@@ -121,16 +121,16 @@ Datauppsättningsexporter stöds för närvarande i en **[!UICONTROL First Full 
 Skyddsfilerna för datauppsättningsexport gäller för två typer av datauppsättningar som exporteras från Experience Platform, enligt beskrivningen nedan:
 
 **Datauppsättningar baserade på XDM Experience Events-schemat**
-När det gäller datauppsättningar baserade på XDM Experience Events-schemat innehåller datasetet en översta nivå *tidsstämpel* kolumn. Data importeras endast som tillägg.
+När det gäller datauppsättningar som baseras på XDM Experience Events-schemat innehåller datauppsättningsschemat en *timestamp* -kolumn på den översta nivån. Data importeras endast som tillägg.
 
-**Datauppsättningar baserade på XDM Individual Profile-schemat**
-När det gäller datauppsättningar som baseras på XDM-schemat för enskild profil innehåller datasetet inte någon översta nivå *tidsstämpel* kolumn. Data hämtas in på ett sätt som präglas av förändring.
+**Datauppsättningar baserade på schemat för enskild XDM-profil**
+När det gäller datauppsättningar som baseras på XDM-schemat för enskild profil, innehåller datasetet inte en *timestamp* -kolumn på den översta nivån. Data hämtas in på ett sätt som präglas av förändring.
 
 Skyddsknappen nedan gäller alla datauppsättningar som exporteras från Experience Platform. Granska även de hårda garantierna nedan, som gäller olika datamängder och komprimeringstyper.
 
 | Guardrail | Gräns | Begränsa typ | Beskrivning |
 | --- | --- | --- | --- |
-| Storlek på exporterade datamängder | 5 miljarder poster | Prestandaskydd | Gränsen som beskrivs här för datauppsättningsexport är en *mjukt skyddsräcke*. Även om användargränssnittet inte hindrar dig från att exportera datauppsättningar som är större än 5 miljarder poster, är beteendet oförutsägbart och exporten kan antingen misslyckas eller ha mycket lång exportfördröjning. |
+| Storlek på exporterade datamängder | 5 miljarder poster | Prestandaskydd | Gränsen som beskrivs här för datauppsättningsexport är en *mjuk garanti*. Även om användargränssnittet inte hindrar dig från att exportera datauppsättningar som är större än 5 miljarder poster, är beteendet oförutsägbart och exporten kan antingen misslyckas eller ha mycket lång exportfördröjning. |
 
 {style="table-layout:auto"}
 
@@ -144,8 +144,8 @@ För schemalagda eller återkommande datauppsättningsexporter är skyddsritning
 
 | Datauppsättningstyp | Guardrail | Typ av skyddsräcke | Beskrivning |
 ---------|----------|---------|-------|
-| Datauppsättningar baserade på **XDM Experience Events-schema** | De senaste 365 dagarna | Systemstyrt skyddsräcke | Data från det senaste kalenderåret exporteras. |
-| Datauppsättningar baserade på **Schema för enskild XDM-profil** | Tio miljarder poster i alla exporterade filer i ett dataflöde | Systemstyrt skyddsräcke | Antalet poster i datauppsättningen måste vara mindre än tio miljarder för komprimerade JSON- eller parquet-filer och en miljon för okomprimerade parquet-filer, annars misslyckas exporten. Minska storleken på datauppsättningen som du försöker exportera om den är större än det tillåtna tröskelvärdet. |
+| Datauppsättningar baserade på **XDM Experience Events-schemat** | De senaste 365 dagarna | Systemstyrt skyddsräcke | Data från det senaste kalenderåret exporteras. |
+| Datauppsättningar baserade på schemat **XDM för enskild profil** | Tio miljarder poster i alla exporterade filer i ett dataflöde | Systemstyrt skyddsräcke | Antalet poster i datauppsättningen måste vara mindre än tio miljarder för komprimerade JSON- eller parquet-filer och en miljon för okomprimerade parquet-filer, annars misslyckas exporten. Minska storleken på datauppsättningen som du försöker exportera om den är större än det tillåtna tröskelvärdet. |
 
 {style="table-layout:auto"}
 
@@ -168,17 +168,17 @@ The guardrails below are the same whether you are exporting parquet of JSON file
 
 -->
 
-Läs mer om [exportera datauppsättningar](/help/destinations/ui/export-datasets.md).
+Läs mer om [att exportera datauppsättningar](/help/destinations/ui/export-datasets.md).
 
 
 ### Destinationens SDK skyddsräcken {#destination-sdk-guardrails}
 
-[Destination SDK](/help/destinations/destination-sdk/overview.md) är en uppsättning konfigurations-API:er som gör att du kan konfigurera målintegreringsmönster för Experience Platform så att målgrupps- och profildata kan skickas till slutpunkten, baserat på valfritt data- och autentiseringsformat. Skyddsritningarna nedan gäller de mål som du konfigurerar med Destination SDK.
+[Destination SDK](/help/destinations/destination-sdk/overview.md) är en uppsättning konfigurations-API:er som gör att du kan konfigurera målintegreringsmönster så att Experience Platform kan leverera målgrupps- och profildata till slutpunkten, baserat på vilka data- och autentiseringsformat du väljer. Skyddsritningarna nedan gäller de mål som du konfigurerar med Destination SDK.
 
 | Guardrail | Gräns | Begränsa typ | Beskrivning |
 | --- | --- | --- | --- |
-| Maximalt antal [privata anpassade destinationer](/help/destinations/destination-sdk/overview.md#productized-custom-integrations) | 5 | Prestandaskydd | Du kan skapa högst 5 privata anpassade direktuppspelnings- eller gruppmål med hjälp av Destination SDK. Kontakta en kundtjänstrepresentant om du behöver skapa fler än fem sådana destinationer. |
-| Profilexportpolicy för Destination SDK | <ul><li>`maxBatchAgeInSecs` (minst 1 800 och högst 3 600)</li><li>`maxNumEventsInBatch` (minst 1 000, högst 10 000)</li></ul> | Systemstyrt skyddsräcke | När du använder [konfigurerbar aggregering](destination-sdk/functionality/destination-configuration/aggregation-policy.md#configurable-aggregation) för ditt mål bör du tänka på de lägsta och högsta värden som avgör hur ofta HTTP-meddelanden skickas till ditt API-baserade mål och hur många profiler meddelandena ska innehålla. |
+| Maximalt antal [privata anpassade mål](/help/destinations/destination-sdk/overview.md#productized-custom-integrations) | 5 | Prestandaskydd | Du kan skapa högst 5 privata anpassade direktuppspelnings- eller gruppmål med hjälp av Destination SDK. Kontakta en kundtjänstrepresentant om du behöver skapa fler än fem sådana destinationer. |
+| Profilexportpolicy för Destination SDK | <ul><li>`maxBatchAgeInSecs` (minst 1 800 och högst 3 600)</li><li>`maxNumEventsInBatch` (minimum 1.000, max 10.000)</li></ul> | Systemstyrt skyddsräcke | När du använder alternativet [konfigurerbar aggregering](destination-sdk/functionality/destination-configuration/aggregation-policy.md#configurable-aggregation) för ditt mål bör du tänka på minimi- och maximivärdena som avgör hur ofta HTTP-meddelanden skickas till ditt API-baserade mål och hur många profiler meddelandena ska innehålla. |
 
 {style="table-layout:auto"}
 
@@ -188,7 +188,7 @@ Uppgifter om begränsningströsklar eller begränsningar för angivna destinatio
 
 | Typ av mål | Beskrivning |
 | --- | --- |
-| Företagsmål (HTTP API, Amazon Kinesis, Azure EventHubs) | På 95 % av tiden försöker Experience Platform att erbjuda en genomströmningslatens på mindre än 10 minuter för meddelanden som skickats utan fel med en hastighet på mindre än 10 000 förfrågningar per sekund för varje dataflöde till en företagsdestination. <br> Om det uppstår fel på begäranden till ditt företags mål, lagrar Experience Platform de misslyckade förfrågningarna och försöker skicka dem till din slutpunkt två gånger. |
+| Företagsmål (HTTP API, Amazon Kinesis, Azure EventHubs) | På 95 % av tiden försöker Experience Platform att erbjuda en genomströmningslatens på mindre än 10 minuter för meddelanden som skickats utan fel med en hastighet på mindre än 10 000 förfrågningar per sekund för varje dataflöde till en företagsdestination. <br> Om det uppstår misslyckade begäranden till ditt företagsmål lagrar Experience Platform de misslyckade förfrågningarna och försöker skicka dem till din slutpunkt två gånger. |
 
 {style="table-layout:auto"}
 
@@ -198,6 +198,6 @@ Följande dokumentation innehåller mer information om andra Experience Platform
 
 * [Real-Time CDP skyddsräcken](/help/rtcdp/guardrails/overview.md)
 * [Latensdiagram från början till slut](https://experienceleague.adobe.com/docs/blueprints-learn/architecture/architecture-overview/deployment/guardrails.html?lang=en#end-to-end-latency-diagrams) för olika Experience Platform-tjänster.
-* [Real-time Customer Data Platform (B2C Edition - Prime- och Ultimate-paket)](https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform-b2c-edition-prime-and-ultimate-packages.html)
+* [Real-time Customer Data Platform (B2C-utgåva - Premiere- och Ultimate-paket)](https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform-b2c-edition-prime-and-ultimate-packages.html)
 * [Real-time Customer Data Platform (B2P - Prime- och Ultimate-paket)](https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform-b2p-edition-prime-and-ultimate-packages.html)
 * [Real-time Customer Data Platform (B2B - Prime- och Ultimate-paket)](https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform-b2b-edition-prime-and-ultimate-packages.html)

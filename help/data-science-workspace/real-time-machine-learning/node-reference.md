@@ -1,29 +1,29 @@
 ---
-keywords: Experience Platform;utvecklarguide;Data Science Workspace;populära topics;Real-time Machine Learning;node reference;
+keywords: Experience Platform;utvecklarguide;Data Science Workspace;populära ämnen;Machine Learning i realtid;nodreferens;
 solution: Experience Platform
 title: Referens för Machine Learning-nod i realtid
-description: En nod är den grundläggande enhet som diagrammen är uppbyggda i. Varje nod utför en viss uppgift och kan kopplas ihop med hjälp av länkar för att skapa ett diagram som representerar en XML-pipeline. Uppgiften som utförs av en nod representerar en åtgärd för indata, till exempel en omvandling av data eller schema, eller en maskininlärningskonsekvens. Noden matar ut det omformade eller härledda värdet till nästa nod(er).
+description: En nod är den grundläggande enhet som diagrammen är uppbyggda i. Varje nod utför en viss uppgift och kan kopplas ihop med hjälp av länkar för att skapa ett diagram som representerar en XML-pipeline. Uppgiften som utförs av en nod representerar en åtgärd för indata, t.ex. en omvandling av data eller schema, eller en maskininlärningskonsekvens. Noden skickar det omformade eller härledda värdet till nästa nod/noder.
 exl-id: 67fe26b5-ce03-4a9a-ad45-783b2acf8d92
 source-git-commit: 86e6924078c115fb032ce39cd678f1d9c622e297
 workflow-type: tm+mt
-source-wordcount: '678'
+source-wordcount: '652'
 ht-degree: 0%
 
 ---
 
-# Real-time Machine Learning-nodreferens (alfa)
+# Referens för Machine Learning-nod i realtid (Alpha)
 
 >[!IMPORTANT]
 >
 >Maskininlärning i realtid är inte tillgängligt för alla användare ännu. Den här funktionen är alfabet och testas fortfarande. Dokumentet kan komma att ändras.
 
-En nod är den grundläggande enhet som diagrammen är uppbyggda i. Varje nod utför en viss uppgift och kan kopplas ihop med hjälp av länkar för att skapa ett diagram som representerar en XML-pipeline. Uppgiften som utförs av en nod representerar en åtgärd för indata, till exempel en omvandling av data eller schema, eller en maskininlärningskonsekvens. Noden matar ut det omformade eller härledda värdet till nästa nod(er).
+En nod är den grundläggande enhet som diagrammen är uppbyggda i. Varje nod utför en viss uppgift och kan kopplas ihop med hjälp av länkar för att skapa ett diagram som representerar en XML-pipeline. Uppgiften som utförs av en nod representerar en åtgärd för indata, t.ex. en omvandling av data eller schema, eller en maskininlärningskonsekvens. Noden skickar det omformade eller härledda värdet till nästa nod/noder.
 
 Följande guide visar vilka nodbibliotek som stöds för maskininlärning i realtid.
 
 ## Identifiera noder som ska användas i din ML-pipeline
 
-Kopiera följande kod till en [!DNL Python] anteckningsbok för att visa alla noder som är tillgängliga för användning.
+Kopiera följande kod till en [!DNL Python]-anteckningsbok om du vill visa alla noder som är tillgängliga för användning.
 
 ```python
 from pprint import pprint
@@ -36,7 +36,7 @@ from rtml_nodelibs.core.nodefactory import NodeFactory as nf
 pprint(nf.discover_nodes())
 ```
 
-**Exempel på svar**
+**Exempelsvar**
 
 ```json
 {'FieldOps': 'rtml_nodelibs.nodes.standard.preprocessing.fieldops.FieldOps',
@@ -81,9 +81,9 @@ node_model_score = ONNXNode(params={"features": ['browser', 'device', 'login_pag
 
 ### Pandor {#pandas}
 
-Med följande Pandarod kan du importera alla `pd.DataFrame` metod eller allmänna pandor på den översta nivån. Läs mer om Pandametoder på [Dokumentation för pandarametoder](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.html). Mer information om funktioner på den översta nivån finns på [Referenshandbok för Pandos API för allmänna funktioner](https://pandas.pydata.org/pandas-docs/stable/reference/general_functions.html).
+Med följande Pandarod kan du importera alla `pd.DataFrame`-metoder eller allmänna pandor på den översta nivån. Mer information om Pandametoder finns i [dokumentationen för Pandos-metoder](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.html). Mer information om funktioner på den översta nivån finns i [Pandas API-referenshandboken för allmänna funktioner](https://pandas.pydata.org/pandas-docs/stable/reference/general_functions.html).
 
-Noden nedan använder `"import": "map"` om du vill importera metodnamnet som en sträng i parametrarna, följt av att parametrarna anges som en mappningsfunktion. Exemplet nedan gör detta genom att använda `{"arg": {"Desktop": 1, "Mobile": 0}, "na_action": 0}`. När kartan är på plats kan du ange att `inplace` as `True` eller `False`. Ange `inplace` as `True` eller `False` baserat på om du vill använda omformning eller inte. Som standard `"inplace": False` skapar en ny kolumn. Stöd för att ange ett nytt kolumnnamn ställs in för att läggas till i en senare version. Sista raden `cols` kan vara ett enda kolumnnamn eller en lista med kolumner. Ange kolumnerna som du vill använda omformningen på. I det här exemplet `device` har angetts.
+Noden nedan använder `"import": "map"` för att importera metodnamnet som en sträng i parametrarna, följt av att parametrarna anges som en mappningsfunktion. I exemplet nedan görs detta med `{"arg": {"Desktop": 1, "Mobile": 0}, "na_action": 0}`. När kartan är på plats kan du ange `inplace` som `True` eller `False`. Ange `inplace` som `True` eller `False` baserat på om du vill använda omformningen eller inte. Som standard skapar `"inplace": False` en ny kolumn. Stöd för att ange ett nytt kolumnnamn ställs in för att läggas till i en senare version. Den sista raden `cols` kan vara ett enda kolumnnamn eller en lista med kolumner. Ange kolumnerna som du vill använda omformningen på. I det här exemplet har `device` angetts.
 
 ```python
 #  df["device"] = df["device"].map({"Desktop":1, "Mobile":0}, na_action=0)
@@ -121,17 +121,17 @@ msg6 = model_train.process(msg5)
 
 | Värde | Beskrivning |
 | --- | --- |
-| funktioner | Indatafunktioner för modellen (lista med strängar). <br> Till exempel: `browser`, `device`, `login_page`, `product_page`, `search_page` |
+| funktioner | Inmatningsfunktioner för modellen (lista med strängar). <br> Till exempel: `browser`, `device`, `login_page`, `product_page`, `search_page` |
 | label | Målkolumnnamn (sträng). |
 | läge | Tåg/test (sträng). |
 | model_path | Sökväg till modellen Spara lokalt i ett format som inte är större än ett. |
 | params.model | Absolut importsökväg till modellen (sträng), t.ex.: `sklearn.linear_model.LogisticRegression`. |
-| params.model_params | Modellhyperparametrar finns i [sklearn-API (map/dict)](https://scikit-learn.org/stable/modules/generated/sklearn.linear_model.LogisticRegression.html) mer information. |
+| params.model_params | Modellhyperparametrar finns i dokumentationen för [sklearn API (map/dict)](https://scikit-learn.org/stable/modules/generated/sklearn.linear_model.LogisticRegression.html) för mer information. |
 | node_instance.process(data_message_from_previous_node) | Metoden `process()` tar DataMsg från föregående nod och tillämpar omformning. Detta beror på vilken nod som används. |
 
 ### Dela
 
-Använd följande nod för att dela upp din databildruta i tåg och testa genom att passera `train_size` eller `test_size`. Detta returnerar en databildruta med ett multiindex. Du kan komma åt tågs- och testdatabildrutor med hjälp av följande exempel: `msg5.data.xs("train")`.
+Använd följande nod för att dela upp din databildruta i tåg och testa genom att godkänna `train_size` eller `test_size`. Detta returnerar en databildruta med ett multiindex. Du kan få åtkomst till tågs- och testdataramar med följande exempel: `msg5.data.xs("train")`.
 
 ```python
 splitter = Split(params={"train_size": 0.7})
@@ -140,4 +140,4 @@ msg5 = splitter.process(msg4)
 
 ## Nästa steg
 
-Nästa steg är att skapa noder som kan användas för att betygsätta en Machine Learning-modell i realtid. Mer information finns på [Användarhandbok för Machine Learning-anteckningsbok i realtid](./rtml-authoring-notebook.md).
+Nästa steg är att skapa noder som kan användas för att betygsätta en Machine Learning-modell i realtid. Mer information finns i användarhandboken [Maskininlärning i realtid](./rtml-authoring-notebook.md).

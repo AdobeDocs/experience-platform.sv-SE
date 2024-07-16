@@ -7,7 +7,7 @@ feature: Sandboxes
 source-git-commit: e828485ad5b0904c9dc66b43d1cdb3c4707885b1
 workflow-type: tm+mt
 source-wordcount: '70'
-ht-degree: 51%
+ht-degree: 50%
 
 ---
 
@@ -15,7 +15,7 @@ ht-degree: 51%
 # Sandlådor {#sandbox}
 
 * [Översikt över sandlådor](home.md)
-* Sandbox UI {#ui}
+* Sandbox-gränssnitt {#ui}
    * [Översikt över användargränssnittet i Sandbox](ui/overview.md)
    * [Handbok för sandlådeanvändare](ui/user-guide.md)
    * [Verktyg i sandlådan](ui/sandbox-tooling.md)

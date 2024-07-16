@@ -15,9 +15,9 @@ De insikter som bygger på analysen av er datamodell gör era Adobe Real-time Cu
 
 Förstå era profilinsikter genom att få tillgång till den SQL som ligger till grund för dem och generera sedan egna insikter för att ytterligare utforska era kunder och deras kundupplevelser som tillsammans utgör era profiler. Omvandla era rådata till nya användbara insikter genom att använda Real-Time CDP datamodell SQL som inspiration för att skapa frågor som passar just era affärsbehov.
 
-Se [Visa SQL-dokumentation](../view-sql.md) om du vill ha mer information om hur du anpassar dina insikter i SQL direkt via plattformsgränssnittet.
+Se [Visa SQL-dokumentation](../view-sql.md) om du vill ha mer information om hur du anpassar dina insikter direkt via plattformsgränssnittet.
 
-Du kan använda följande insikter som en del av [Kontrollpanel för profiler](../guides/profiles.md) eller en egen [användardefinierad kontrollpanel](../user-defined-dashboards.md). Se [anpassningsöversikt](../customize/overview.md) för instruktioner om hur du anpassar kontrollpanelen eller [skapa och redigera nya widgetar](../customize/custom-widgets.md) i widgetbiblioteket och [användardefinierad kontrollpanel](../user-defined-dashboards.md#create-widget).
+Följande insikter är tillgängliga för dig att använda som en del av [profilkontrollpanelen](../guides/profiles.md) eller en anpassad [användardefinierad kontrollpanel](../user-defined-dashboards.md). Se [anpassningsöversikten](../customize/overview.md) för instruktioner om hur du anpassar din instrumentpanel eller [skapar och redigerar nya widgetar](../customize/custom-widgets.md) i widgetbiblioteket och [användardefinierad instrumentpanel](../user-defined-dashboards.md#create-widget).
 
 ## Målgruppsöverlappning efter sammanfogningspolicy {#audience-overlap-by-merge-policy}
 
@@ -64,7 +64,7 @@ SELECT Sum(overlap_col1) overlap_col1,
 
 +++
 
-Se [Målgrupper överlappar varandra genom dokumentation för widgeten för sammanfogningspolicy](../guides/profiles.md#audience-overlap-by-merge-policy) om du vill ha information om hur den här insikten ser ut och fungerar.
+Se [Målgruppen överlappar genom att dokumentera widgeten för sammanfogningsprincip](../guides/profiles.md#audience-overlap-by-merge-policy) för information om utseendet och funktionaliteten för den här insikten.
 
 ## Rapport om publiköverlappning {#audience-overlap-report}
 
@@ -131,7 +131,7 @@ SELECT source_segment_name,
 
 +++
 
-Se [Dokumentation för rapportwidgeten för överlappande målgrupper](../guides/profiles.md#audience-overlap-report) om du vill ha information om hur den här insikten ser ut och fungerar.
+I [Målgruppswidgetens dokumentation ](../guides/profiles.md#audience-overlap-report) finns information om utseendet och funktionaliteten för den här insikten.
 
 ## Målgrupper (antal) {#audiences}
 
@@ -159,7 +159,7 @@ SELECT count(DISTINCT a.segment_id) count_of_segments
 
 +++
 
-Se [Dokumentation för widgeten Målgrupper](../guides/profiles.md#audiences) om du vill ha information om hur den här insikten ser ut och fungerar.
+Mer information om utseendet och funktionaliteten för den här insikten finns i dokumentationen för [publikwidgeten](../guides/profiles.md#audiences).
 
 ## Målgrupper mappade till målstatus {#audiences-mapped-to-destination-status}
 
@@ -191,7 +191,7 @@ SELECT COUNT(DISTINCT (y.segment_id)) AS count_mapped_segments,
 
 +++
 
-Se [Målgrupper mappade till dokumentation för målstatuswidget](../guides/profiles.md#audiences-mapped-to-destination-status) om du vill ha information om hur den här insikten ser ut och fungerar.
+Mer information om utseende och funktioner för den här insikten finns i [Publiker mappade till målstatuswidgetens dokumentation](../guides/profiles.md#audiences-mapped-to-destination-status).
 
 ## Målgruppsstorlek {#audiences-size}
 
@@ -224,7 +224,7 @@ SELECT qsaccel.profile_agg.adwh_fact_profile_by_segment_trendlines.date_key,
 
 +++
 
-Se [Dokumentation för widgeten Målgrupper](../guides/profiles.md#audiences-size) om du vill ha information om hur den här insikten ser ut och fungerar.
+Mer information om utseendet och funktionaliteten för den här insikten finns i dokumentationen [Publikstorlekswidget](../guides/profiles.md#audiences-size).
 
 ## Kundens AI-fördelning av poäng {#customer-ai-distribution-of-scores}
 
@@ -361,7 +361,7 @@ SELECT b.model_name,
 
 +++
 
-Se [Kundens AI-distribution av poängwidget-dokumentation](../guides/profiles.md#customer-ai-distribution-of-scores) om du vill ha information om hur den här insikten ser ut och fungerar.
+Mer information om hur den här insikten ser ut och fungerar finns i [Customer AI Distribution of scores widget documentation](../guides/profiles.md#customer-ai-distribution-of-scores).
 
 ## Sammanfattning av AI-poäng för kunder {#customer-ai-scoring-summary}
 
@@ -402,7 +402,7 @@ SELECT model_name,
 
 +++
 
-Se [Sammanfattningswidgeten för kundens AI-poäng](../guides/profiles.md#customer-ai-scoring-summary) om du vill ha information om hur den här insikten ser ut och fungerar.
+Mer information om hur den här insikten ser ut och fungerar finns i [Sammanfattningswidgeten för AI-poäng för kunder](../guides/profiles.md#customer-ai-scoring-summary).
 
 ## Identitetsöverlappning {#identity-overlap}
 
@@ -459,7 +459,7 @@ SELECT Sum(overlap_col1) overlap_col1,
 
 +++
 
-Se [Dokumentation för widgeten Identitetsöverlappning](../guides/profiles.md#identity-overlap) om du vill ha information om hur den här insikten ser ut och fungerar.
+Mer information om utseendet och funktionaliteten för den här insikten finns i [dokumentationen om widgeten Identitetsöverlappning](../guides/profiles.md#identity-overlap).
 
 ## Profilantal {#profile-count}
 
@@ -481,9 +481,9 @@ SELECT qsaccel.profile_agg.adwh_dim_merge_policies.merge_policy_name,
   GROUP BY qsaccel.profile_agg.adwh_dim_merge_policies.merge_policy_name;
 ```
 
-Fullständig information om utseendet och funktionaliteten i denna information finns i [Widgeten Profilantal](https://experienceleague.adobe.com/docs/experience-platform/dashboards/guides/profiles.html#profile-count).
+Fullständig information om utseendet och funktionaliteten för den här insikten finns i [widgetguiden för profilantal](https://experienceleague.adobe.com/docs/experience-platform/dashboards/guides/profiles.html#profile-count).
 
-Se [Dokumentation för widgeten Profilantal](../guides/profiles.md#profile-count) om du vill ha information om hur den här insikten ser ut och fungerar.
+Mer information om utseendet och funktionaliteten för den här insikten finns i dokumentationen för [widgeten för profilantal](../guides/profiles.md#profile-count).
 
 ## Ändring av antal profiler {#profile-count-change}
 
@@ -528,7 +528,7 @@ SELECT (sum(count_of_profiles) - sum(count_of_profiles_days_ago)) profiles_added
 
 +++
 
-Se [Dokumentation för widgeten Ändra antal profiler](../guides/profiles.md#profile-count-change) om du vill ha information om hur den här insikten ser ut och fungerar.
+Mer information om utseende och funktioner för den här insikten finns i dokumentationen [om ändringswidgeten för profilantal](../guides/profiles.md#profile-count-change).
 
 ## Trend för ändring av antal profiler {#profile-count-change-trend}
 
@@ -562,7 +562,7 @@ SELECT date_key,
 
 +++
 
-Se [Trendwidgetdokumentation för ändring av profilantal](../guides/profiles.md#profile-count-change-trend) om du vill ha information om hur den här insikten ser ut och fungerar.
+Mer information om utseendet och funktionaliteten för den här insikten finns i [dokumentationen om trendförändringen för profilantal](../guides/profiles.md#profile-count-change-trend).
 
 ## Trend för profilantal {#profile-count-trend}
 
@@ -593,7 +593,7 @@ SELECT date_key,
 
 +++
 
-Se [Trendwidgetdokumentation för profilantal](../guides/profiles.md#profile-count-trend) om du vill ha information om hur den här insikten ser ut och fungerar.
+Mer information om utseendet och funktionaliteten för den här insikten finns i [dokumentationen om trendwidgeten för profilantal](../guides/profiles.md#profile-count-trend).
 
 ## Profiler efter identitet {#profiles-by-identity}
 
@@ -622,7 +622,7 @@ SELECT qsaccel.profile_agg.adwh_dim_namespaces.namespace_description,
 
 +++
 
-Se [Profiler efter identitetswidgetens dokumentation](../guides/profiles.md#profiles-by-identity) om du vill ha information om hur den här insikten ser ut och fungerar.
+Mer information om utseende och funktioner för den här insikten finns i [Profiler efter identitetswidget-dokumentationen](../guides/profiles.md#profiles-by-identity).
 
 ## trender för antal ändringar av profiler {#profiles-count-change-trend}
 
@@ -656,7 +656,7 @@ SELECT date_key,
 
 +++
 
-Se [Dokumentation för trendwidgeten Antal profiler](../guides/profiles.md#profiles-count-change-trend) om du vill ha information om hur den här insikten ser ut och fungerar.
+Mer information om utseendet och funktionaliteten för den här insikten finns i [dokumentationen om trendwidgeten för antal profiler](../guides/profiles.md#profiles-count-change-trend).
 
 ## Profiler räknar förändringstrend per identitet {#profiles-count-change-trend-by-identity}
 
@@ -697,7 +697,7 @@ SELECT date_key,
 
 +++
 
-Se [Antal profiler, ändringstrend per identitetswidgetdokumentation](../guides/profiles.md#profiles-count-change-trend-by-identity) om du vill ha information om hur den här insikten ser ut och fungerar.
+Se [trenden för antal profiler för att ändra trenden för identitetswidgetens dokumentation](../guides/profiles.md#profiles-count-change-trend-by-identity) för information om utseendet och funktionaliteten för den här insikten.
 
 ## Enstaka identitetsprofiler {#single-identity-profiles}
 
@@ -722,7 +722,7 @@ SELECT qsaccel.profile_agg.adwh_dim_merge_policies.merge_policy_name,
 
 +++
 
-Se [Dokumentation för widgeten Enstaka identitetsprofiler](../guides/profiles.md#single-identity-profiles) om du vill ha information om hur den här insikten ser ut och fungerar.
+Mer information om utseendet och funktionaliteten för den här insikten finns i [dokumentationen för widgeten för enstaka identitetsprofiler](../guides/profiles.md#single-identity-profiles) .
 
 ## Enstaka identitetsprofiler efter identitet {#single-identity-profiles-by-identity}
 
@@ -749,7 +749,7 @@ SELECT qsaccel.profile_agg.adwh_dim_namespaces.namespace_description,
 
 +++
 
-Se [Dokumentation för en identitetsprofil per identitetswidget](../guides/profiles.md#single-identity-profiles-by-identity) om du vill ha information om hur den här insikten ser ut och fungerar.
+Mer information om utseendet och funktionaliteten för den här insikten finns i [Dokumentation för enskilda identitetsprofiler per identitetswidget](../guides/profiles.md#single-identity-profiles-by-identity).
 
 ## Osegmenterade profiler {#unsegmented-profiles}
 
@@ -773,12 +773,12 @@ SELECT qsaccel.profile_agg.adwh_dim_merge_policies.merge_policy_name,
 
 +++
 
-Se [Dokumentation för widgeten Osegmenterade profiler](../guides/profiles.md#unsegmented-profiles) om du vill ha information om hur den här insikten ser ut och fungerar.
+Mer information om utseendet och funktionaliteten för den här insikten finns i [dokumentationen för widgeten Osegmenterade profiler](../guides/profiles.md#unsegmented-profiles).
 
 ## Nästa steg
 
 Genom att läsa det här dokumentet förstår du nu vilken SQL-kod som genererar instrumentpanelsinsikter och vilka vanliga frågor som analysen löser. Nu kan du redigera och iterera på SQL för att generera egna insikter.
 
-Se [Visa SQL-dokumentation](../view-sql.md) om du vill ha mer information om hur du anpassar dina insikter i SQL direkt via användargränssnittet i PLatform.
+Se [Visa SQL-dokumentation](../view-sql.md) om du vill ha mer information om hur du anpassar dina insikter direkt via användargränssnittet i PLatform.
 
-Du kan även läsa och förstå den SQL som genererar insikter för [Målgrupper](./audiences.md), [Kontoprofiler](./account-profiles.md)och [Destinationer](./destinations.md) instrumentpaneler.
+Du kan också läsa och förstå SQL-koden som genererar insikter för kontrollpanelerna [Publiker](./audiences.md), [Kontoprofiler](./account-profiles.md) och [Destinationer](./destinations.md).

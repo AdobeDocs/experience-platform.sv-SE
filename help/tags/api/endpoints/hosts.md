@@ -4,7 +4,7 @@ description: Lär dig hur du anropar slutpunkten /hosts i Reaktors API.
 exl-id: 9d0d2a65-49e9-429c-a665-754b59a11cf1
 source-git-commit: b66a50e40aaac8df312a2c9a977fb8d4f1fb0c80
 workflow-type: tm+mt
-source-wordcount: '796'
+source-wordcount: '793'
 ht-degree: 1%
 
 ---
@@ -13,19 +13,19 @@ ht-degree: 1%
 
 >[!NOTE]
 >
->I det här dokumentet beskrivs hur du hanterar värdar i Reaktors API. Mer allmän information om värdar för taggar finns i handboken om [Översikt över värdar](../../ui/publishing/hosts/hosts-overview.md) i publiceringsdokumentationen.
+>I det här dokumentet beskrivs hur du hanterar värdar i Reaktors API. Mer allmän information om värdar för taggar finns i guiden om [värdar - översikt](../../ui/publishing/hosts/hosts-overview.md) i publiceringsdokumentationen.
 
-I Reactor API definierar en värd ett mål där [bygg](./builds.md) kan levereras.
+I Reactor API definierar en värd ett mål där en [build](./builds.md) kan levereras.
 
 När ett bygge begärs av en tagganvändare i Adobe Experience Platform kontrollerar systemet biblioteket för att avgöra vilken [miljö](./environments.md) biblioteket ska byggas på. Varje miljö har en relation med en värd som visar var bygget ska levereras.
 
-En värd tillhör exakt en [property](./properties.md), medan en egenskap kan ha många värdar. En egenskap måste ha minst en värd innan du kan publicera.
+En värd tillhör exakt en [egenskap](./properties.md), medan en egenskap kan ha många värdar. En egenskap måste ha minst en värd innan du kan publicera.
 
 En värd kan användas av mer än en miljö i en egenskap. Det är vanligt att ha en enda värd på en egenskap, och att alla miljöer på den egenskapen använder samma värd.
 
 ## Komma igång
 
-Slutpunkten som används i den här guiden ingår i [Reaktors-API](https://www.adobe.io/experience-platform-apis/references/reactor/). Innan du fortsätter bör du granska [komma igång-guide](../getting-started.md) om du vill ha viktig information om hur du autentiserar till API:t.
+Slutpunkten som används i den här guiden ingår i [Reaktors-API](https://www.adobe.io/experience-platform-apis/references/reactor/). Innan du fortsätter bör du läsa [kom igång-guiden](../getting-started.md) för att få viktig information om hur du autentiserar dig för API:t.
 
 ## Hämta en lista med värdar {#list}
 
@@ -39,13 +39,13 @@ GET /properties/{PROPERTY_ID}/hosts
 
 | Parameter | Beskrivning |
 | --- | --- |
-| `PROPERTY_ID` | The `id` av den egendom som äger värdarna. |
+| `PROPERTY_ID` | `id` för egenskapen som äger värdarna. |
 
 {style="table-layout:auto"}
 
 >[!NOTE]
 >
->Med hjälp av frågeparametrar kan listade värdar filtreras baserat på följande attribut:<ul><li>`created_at`</li><li>`name`</li><li>`type_of`</li><li>`updated_at`</li></ul>Se guiden på [filtrera svar](../guides/filtering.md) för mer information.
+>Med hjälp av frågeparametrar kan listade värdar filtreras baserat på följande attribut:<ul><li>`created_at`</li><li>`name`</li><li>`type_of`</li><li>`updated_at`</li></ul>Mer information finns i guiden om [filtrering av svar](../guides/filtering.md).
 
 **Begäran**
 
@@ -121,7 +121,7 @@ GET /hosts/{HOST_ID}
 
 | Parameter | Beskrivning |
 | --- | --- |
-| `HOST_ID` | The `id` för värden som du vill söka efter. |
+| `HOST_ID` | `id` för värden som du vill söka efter. |
 
 {style="table-layout:auto"}
 
@@ -188,13 +188,13 @@ POST /properties/{PROPERTY_ID}/hosts
 
 | Parameter | Beskrivning |
 | --- | --- |
-| `PROPERTY_ID` | The `id` i [property](./properties.md) som du definierar värden under. |
+| `PROPERTY_ID` | `id` för [egenskapen](./properties.md) som du definierar värden under. |
 
 {style="table-layout:auto"}
 
 **Begäran**
 
-Följande begäran skapar en ny värd för den angivna egenskapen. Anropet associerar även värden med ett befintligt tillägg via `relationships` -egenskap. Se guiden på [relationer](../guides/relationships.md) för mer information.
+Följande begäran skapar en ny värd för den angivna egenskapen. Anropet associerar även värden med ett befintligt tillägg via egenskapen `relationships`. Mer information finns i guiden om [relationer](../guides/relationships.md).
 
 ```shell
 curl -X POST \
@@ -222,13 +222,13 @@ curl -X POST \
 
 | Egenskap | Beskrivning |
 | --- | --- |
-| `attributes.name` | **(Obligatoriskt)** Ett namn som kan läsas av människor för värden. |
-| `attributes.type_of` | **(Obligatoriskt)** Värdtyp. Kan vara ett av två alternativ: <ul><li>`akamai` for [Värdar som hanteras av Adobe](../../ui/publishing/hosts/managed-by-adobe-host.md)</li><li>`sftp` for [SFTP-värdar](../../ui/publishing/hosts/sftp-host.md)</li></ul> |
+| `attributes.name` | **(Obligatoriskt)** Ett läsbart namn för värden. |
+| `attributes.type_of` | **(Obligatoriskt)** Värdtypen. Kan vara ett av två alternativ: <ul><li>`akamai` för [Adobe-hanterade värdar](../../ui/publishing/hosts/managed-by-adobe-host.md)</li><li>`sftp` för [SFTP-värdar](../../ui/publishing/hosts/sftp-host.md)</li></ul> |
 | `attributes.encrypted_private_key` | En valfri privat nyckel som ska användas för värdautentisering. |
-| `attributes.path` | Den bana som ska läggas till i `server` URL. |
+| `attributes.path` | Sökvägen som ska läggas till i URL:en `server`. |
 | `attributes.port` | Ett heltal som anger vilken serverport som ska användas. |
 | `attributes.server` | Serverns värd-URL. |
-| `attributes.skip_symlinks`<br><br>(Endast för SFTP-värdar) | Som standard använder alla SFTP-värdar symboliska länkar (symboler) till referensbiblioteksbyggen som sparas på servern. Alla servrar har dock inte stöd för symboler. När det här attributet ingår och ställs in på `true`, använder värden en kopieringsåtgärd för att uppdatera byggmaterialet direkt i stället för att använda symboler. |
+| `attributes.skip_symlinks`<br><br>(Endast för SFTP-värdar) | Som standard använder alla SFTP-värdar symboliska länkar (symboler) till referensbiblioteksbyggen som sparas på servern. Alla servrar har dock inte stöd för symboler. När det här attributet är inkluderat och inställt på `true` använder värden en kopieringsåtgärd för att uppdatera byggmaterialet direkt i stället för att använda symboler. |
 | `attributes.username` | Ett valfritt användarnamn för autentisering. |
 | `type` | Den typ av resurs som uppdateras. För den här slutpunkten måste värdet vara `hosts`. |
 
@@ -290,7 +290,7 @@ PATCH /hosts/{HOST_ID}
 
 | Parameter | Beskrivning |
 | --- | --- |
-| `HOST_ID` | The `id` för värden som du vill uppdatera. |
+| `HOST_ID` | `id` för värden som du vill uppdatera. |
 
 {style="table-layout:auto"}
 
@@ -319,7 +319,7 @@ curl -X PATCH \
 | Egenskap | Beskrivning |
 | --- | --- |
 | `attributes` | Ett objekt vars egenskaper representerar attributen som ska uppdateras för värden. Följande attribut kan uppdateras för en värd: <ul><li>`encrypted_private_key`</li><li>`name`</li><li>`path`</li><li>`port`</li><li>`server`</li><li>`type_of`</li><li>`username`</li></ul> |
-| `id` | The `id` för den värddator som du vill uppdatera. Det här bör matcha `{HOST_ID}` värdet som anges i sökvägen för begäran. |
+| `id` | `id` för värden som du vill uppdatera. Det här bör matcha det `{HOST_ID}`-värde som anges i sökvägen till begäran. |
 | `type` | Den typ av resurs som uppdateras. För den här slutpunkten måste värdet vara `hosts`. |
 
 {style="table-layout:auto"}
@@ -376,7 +376,7 @@ DELETE /hosts/{HOST_ID}
 
 | Parameter | Beskrivning |
 | --- | --- |
-| `HOST_ID` | The `id` för värden som du vill ta bort. |
+| `HOST_ID` | `id` för värden som du vill ta bort. |
 
 {style="table-layout:auto"}
 
@@ -396,13 +396,13 @@ Ett lyckat svar returnerar HTTP-status 204 (inget innehåll) utan svarstext, vil
 
 ## Hämta relaterade resurser för en värd {#related}
 
-Följande anrop visar hur du hämtar relaterade resurser för en värd. När [söka efter en värd](#lookup), listas dessa relationer under `relationships` -egenskap.
+Följande anrop visar hur du hämtar relaterade resurser för en värd. När [söker upp en värd](#lookup) visas de här relationerna under egenskapen `relationships`.
 
-Se [relationshandbok](../guides/relationships.md) om du vill ha mer information om relationerna i Reactor API.
+Se [relationshandboken](../guides/relationships.md) för mer information om relationer i Reactor API.
 
 ### Söka efter den relaterade egenskapen för en värd {#property}
 
-Du kan söka efter egenskapen som äger en värd genom att lägga till `/property` till sökvägen för en sökningsbegäran.
+Du kan söka efter egenskapen som äger en värd genom att lägga till `/property` i sökvägen för en sökbegäran.
 
 **API-format**
 
@@ -412,7 +412,7 @@ GET /hosts/{HOST_ID}/property
 
 | Parameter | Beskrivning |
 | --- | --- |
-| `{HOST_ID}` | The `id` för den värd vars egenskap du vill söka efter. |
+| `{HOST_ID}` | `id` för värden vars egenskap du vill söka efter. |
 
 {style="table-layout:auto"}
 

@@ -24,43 +24,43 @@ En fältgrupp definierar vilka klasser den är kompatibel med, baserat på betee
 
 Adobe Experience Platform erbjuder många standardfältgrupper som täcker ett brett urval av användningsområden för marknadsföring. Men du kan också skapa och redigera egna fältgrupper för att definiera ytterligare koncept som är relaterade till din verksamhet i dina XDM-scheman. Den här guiden ger en översikt över hur du skapar, redigerar och hanterar anpassade fältgrupper för din organisation i plattformsgränssnittet.
 
-## Förutsättningar {#prerequisites}
+## Förhandskrav {#prerequisites}
 
-Handboken kräver en fungerande förståelse för XDM System. Se [XDM - översikt](../../home.md) en introduktion till XDM:s roll i Experience Platform-ekosystemet, och [grunderna för schemakomposition](../../schema/composition.md) för hur fältgrupper bidrar till XDM-scheman.
+Handboken kräver en fungerande förståelse för XDM System. Se [XDM-översikten](../../home.md) för en introduktion till XDM-rollen i ekosystemet Experience Platform och [grunderna i schemakomposition](../../schema/composition.md) för hur fältgrupper bidrar till XDM-scheman.
 
-Även om det inte krävs för den här guiden rekommenderar vi att du också följer självstudiekursen på [skapa ett schema i användargränssnittet](../../tutorials/create-schema-ui.md) för att bekanta dig med de olika funktionerna i [!DNL Schema Editor].
+Även om det inte krävs för den här guiden rekommenderar vi att du också följer självstudiekursen om att [komponera ett schema i användargränssnittet](../../tutorials/create-schema-ui.md) för att bekanta dig med de olika funktionerna i [!DNL Schema Editor].
 
 ## Skapa en ny fältgrupp {#create}
 
-Om du vill skapa en ny fältgrupp måste du först välja ett schema som fältgruppen ska läggas till i. Du kan [skapa ett nytt schema](./schemas.md#create) eller [välj ett befintligt schema att redigera](./schemas.md#edit).
+Om du vill skapa en ny fältgrupp måste du först välja ett schema som fältgruppen ska läggas till i. Du kan välja att [skapa ett nytt schema](./schemas.md#create) eller [välja ett befintligt schema att redigera](./schemas.md#edit).
 
-När du har öppnat schemat i [!DNL Schema Editor], markera **[!UICONTROL Add]** bredvid [!UICONTROL Field groups] till vänster.
+När du har öppnat schemat i [!DNL Schema Editor] väljer du **[!UICONTROL Add]** bredvid avsnittet [!UICONTROL Field groups] i den vänstra listen.
 
 ![](../../images/ui/resources/field-groups/add-field-group.png)
 
-I den dialogruta som visas väljer du **[!UICONTROL Create new field group]**. Här kan du ange en **[!UICONTROL Display name]** och **[!UICONTROL Description]** för fältgruppen. När du är klar väljer du **[!UICONTROL Add field groups]**.
+Välj **[!UICONTROL Create new field group]** i den dialogruta som visas. Här kan du ange **[!UICONTROL Display name]** och **[!UICONTROL Description]** för fältgruppen. När du är klar väljer du **[!UICONTROL Add field groups]**.
 
 ![](../../images/ui/resources/field-groups/create-field-group.png)
 
-The [!DNL Schema Editor] visas igen med den nya fältgruppen i den vänstra listen. Eftersom det här är en helt ny fältgrupp innehåller den för närvarande inga fält till schemat och arbetsytan ändras därför inte. Nu kan du börja [lägga till fält i fältgruppen](#add-fields).
+[!DNL Schema Editor] visas igen, med den nya fältgruppen i den vänstra listen. Eftersom det här är en helt ny fältgrupp innehåller den för närvarande inga fält till schemat och arbetsytan ändras därför inte. Nu kan du börja [lägga till fält i fältgruppen](#add-fields).
 
 ![](../../images/ui/resources/field-groups/field-group-added.png)
 
 ## Filtrera fältgrupper {#filter}
 
-Listan med tillgängliga fältgrupper filtreras i förväg baserat på hur de skapades. Standardinställningen visar de fältgrupper som definieras av Adobe. Du kan även filtrera listan så att den visar de som har skapats av din organisation. Välj alternativknappen för att välja mellan [!UICONTROL Standard] och [!UICONTROL Custom] alternativ. The [!UICONTROL Standard] alternativet visar enheter som skapats av Adobe och [!UICONTROL Custom] visas enheter som har skapats i din organisation.
+Listan med tillgängliga fältgrupper filtreras i förväg baserat på hur de skapades. Standardinställningen visar de fältgrupper som definieras av Adobe. Du kan även filtrera listan så att den visar de som har skapats av din organisation. Välj alternativknappen för att välja mellan alternativen [!UICONTROL Standard] och [!UICONTROL Custom]. Alternativet [!UICONTROL Standard] visar entiteter som skapats av Adobe och alternativet [!UICONTROL Custom] visar entiteter som skapats i din organisation.
 
-![The [!UICONTROL Field groups] -fliken i [!UICONTROL Schemas] arbetsyta med [!UICONTROL Standard] och [!UICONTROL Custom] markerad.](../../images/ui/resources/field-groups/standard-and-custom-field-groups.png)
+![Fliken [!UICONTROL Field groups] i arbetsytan [!UICONTROL Schemas] med [!UICONTROL Standard] och [!UICONTROL Custom] markerade.](../../images/ui/resources/field-groups/standard-and-custom-field-groups.png)
 
 ## Redigera en befintlig fältgrupp {#edit}
 
 >[!NOTE]
 >
->Endast anpassade fältgrupper som definierats av din organisation kan redigeras och anpassas helt. För huvudfältgrupper som definieras av Adobe kan bara visningsnamnen för deras fält redigeras inom ramen för enskilda scheman. De anges med en hänglåsikon i Schemaredigeraren (![En hänglåsikon.](../../images/ui/explore/padlock-icon.png)). Se avsnittet om [redigera visningsnamn för schemafält](./schemas.md#display-names) för mer information.
+>Endast anpassade fältgrupper som definierats av din organisation kan redigeras och anpassas helt. För huvudfältgrupper som definieras av Adobe kan bara visningsnamnen för deras fält redigeras inom ramen för enskilda scheman. De indikeras i Schemaredigeraren av en hänglåsikon (![En hänglåsikon.](../../images/ui/explore/padlock-icon.png)). Mer information finns i avsnittet [Redigera visningsnamn för schemafält](./schemas.md#display-names).
 >
->När en anpassad fältgrupp har sparats och använts i ett schema för datainmatning kan endast additiva ändringar göras i fältgruppen därefter. Se [regler för schemautveckling](../../schema/composition.md#evolution) för mer information.
+>När en anpassad fältgrupp har sparats och använts i ett schema för datainmatning kan endast additiva ändringar göras i fältgruppen därefter. Mer information finns i [reglerna för schemautveckling](../../schema/composition.md#evolution).
 
-Om du vill redigera en befintlig fältgrupp måste du först öppna ett schema som använder fältgruppen i [!DNL Schema Editor]. Du kan [välj ett befintligt schema att redigera](./schemas.md#edit)eller så kan du [skapa ett nytt schema](./schemas.md#create) och lägg till fältgruppen i fråga.
+Om du vill redigera en befintlig fältgrupp måste du först öppna ett schema som använder fältgruppen i [!DNL Schema Editor]. Du kan [välja ett befintligt schema att redigera](./schemas.md#edit) eller [skapa ett nytt schema](./schemas.md#create) och lägga till fältgruppen i fråga.
 
 När du har öppnat schemat i redigeraren kan du börja [lägga till fält i fältgruppen](#add-fields).
 
@@ -68,19 +68,19 @@ När du har öppnat schemat i redigeraren kan du börja [lägga till fält i fä
 
 >[!NOTE]
 >
->Det här avsnittet fokuserar på att lägga till fält i anpassade fältgrupper. Mer information om hur du lägger till anpassade fält i standardfältgrupper finns i [gränssnittshandbok för scheman](./schemas.md#custom-fields-for-standard-groups).
+>Det här avsnittet fokuserar på att lägga till fält i anpassade fältgrupper. Mer information om hur du lägger till anpassade fält i standardfältgrupper finns i [schemas användargränssnittsguide](./schemas.md#custom-fields-for-standard-groups).
 
-Om du vill lägga till fält i en anpassad fältgrupp börjar du med att välja **plus (+)** -ikonen bredvid schemats namn på arbetsytan.
+Om du vill lägga till fält i en anpassad fältgrupp börjar du med att markera ikonen **plus (+)** bredvid schemats namn på arbetsytan.
 
 ![](../../images/ui/resources/field-groups/add-field.png)
 
-An **[!UICONTROL Untitled Field]** platshållaren visas på arbetsytan och den högra listen uppdateras för att visa kontroller för att konfigurera fältets egenskaper. Se guiden på [definiera fält i användargränssnittet](../fields/overview.md#define) för specifika steg om hur du konfigurerar olika fälttyper.
+En **[!UICONTROL Untitled Field]**-platshållare visas på arbetsytan och den högra listen uppdateras för att visa kontroller för att konfigurera fältets egenskaper. I guiden om att [definiera fält i användargränssnittet](../fields/overview.md#define) finns mer information om hur du konfigurerar olika fälttyper.
 
-Under **[!UICONTROL Assign to]** väljer du **[!UICONTROL Field Group]** väljer du sedan den önskade fältgruppen i listan. Du kan börja skriva in namnet på fältgruppen för att begränsa resultatet.
+Välj alternativet **[!UICONTROL Field Group]** under **[!UICONTROL Assign to]** och använd sedan listrutan för att välja önskad fältgrupp från listan. Du kan börja skriva in namnet på fältgruppen för att begränsa resultatet.
 
 ![](../../images/ui/resources/field-groups/select-field-group.png)
 
-Under **[!UICONTROL Assign to]** väljer du **[!UICONTROL Field Group]** väljer du sedan den önskade fältgruppen i listan. Du kan börja skriva in namnet på fältgruppen för att begränsa resultatet.
+Välj alternativet **[!UICONTROL Field Group]** under **[!UICONTROL Assign to]** och använd sedan listrutan för att välja önskad fältgrupp från listan. Du kan börja skriva in namnet på fältgruppen för att begränsa resultatet.
 
 ![](../../images/ui/resources/field-groups/select-field-group.png)
 
@@ -92,6 +92,6 @@ Om samma fältgrupp redan används i andra scheman visas de nya fälten automati
 
 ## Nästa steg {#next-steps}
 
-I den här handboken beskrivs hur du skapar och redigerar fältgrupper med hjälp av användargränssnittet för plattformen. Mer information om funktionerna i [!UICONTROL Schemas] arbetsytan, se [[!UICONTROL Schemas] arbetsyta - översikt](../overview.md).
+I den här handboken beskrivs hur du skapar och redigerar fältgrupper med hjälp av användargränssnittet för plattformen. Mer information om funktionerna för arbetsytan [!UICONTROL Schemas] finns i översikten för arbetsytan [[!UICONTROL Schemas] ](../overview.md).
 
-Så här hanterar du fältgrupper med [!DNL Schema Registry] API, se [slutpunktsguide för fältgrupper](../../api/field-groups.md).
+Mer information om hur du hanterar fältgrupper med API:t [!DNL Schema Registry] finns i [handboken om fältgruppers slutpunkter](../../api/field-groups.md).

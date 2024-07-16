@@ -20,11 +20,11 @@ I Adobe Experience Platform skiljer vi mellan olika måltyper - anslutningar, da
 
 Slutligen kan anslutningar även särskiljas mellan offentliga destinationer som är tillgängliga för alla organisationer i destinationskatalogen och privata destinationer som Real-Time CDP Ultimate-kunder kan skapa för att tillgodose sina specifika exportanvändningsfall.
 
-![Typ av destinationsdiagram.](./assets/destination-types/types-of-destinations-no-highlight.png)
+![Typer av destinationsdiagram.](./assets/destination-types/types-of-destinations-no-highlight.png)
 
 ## Anslutningar {#connections}
 
-**[!UICONTROL Profile Export]**, **[!UICONTROL Streaming Audience Export]** och **[!DNL Edge Personalization]** mål i Adobe Experience Platform hämta händelsedata, kombinera dem med andra datakällor för att skapa [Kundprofil i realtid](../profile/home.md), tillämpa segmentering och exportera målgrupper och kvalificerade profiler till destinationer.
+**[!UICONTROL Profile Export]**, **[!UICONTROL Streaming Audience Export]** och **[!DNL Edge Personalization]** mål i Adobe Experience Platform samlar in händelsedata och kombinerar dem med andra datakällor för att skapa [kundprofilen i realtid](../profile/home.md), tillämpa segmentering och exportera målgrupper och kvalificerade profiler till destinationer.
 
 ## Profilexportdestinationer {#profile-export}
 
@@ -37,7 +37,7 @@ Profilexportdestinationer tar emot rådata, ofta med e-postadress som primärnyc
 
 >[!IMPORTANT]
 >
->Företagsmål, eller exportmål för direktuppspelningsprofiler, är tillgängliga för [Adobe Real-time Customer Data Platform Ultimate](https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform.html) endast kunder.
+>Företagsmål, eller exportmål för direktuppspelningsprofiler, är endast tillgängliga för [Adobe Real-time Customer Data Platform Ultimate](https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform.html) -kunder.
 
 Använd dataanslutningarna för företag för att leverera Adobe Real-time Customer Data Platform-profiler i nära realtid till interna system eller till andra tredjepartssystem för datasynkronisering, analys och fler användningsfall för profilberikning.
 
@@ -51,17 +51,17 @@ Företagets mål är:
 
 ### Batchmål (filbaserade) {#file-based}
 
-Filbaserade mål tar emot `.csv` filer som innehåller profiler och/eller attribut. [Amazon S3](catalog/cloud-storage/amazon-s3.md) är ett exempel på ett mål där du kan exportera filer som innehåller profilexporter.
+Filbaserade mål tar emot `.csv` filer som innehåller profiler och/eller attribut. [Amazon S3](catalog/cloud-storage/amazon-s3.md) är ett exempel på en destination där du kan exportera filer som innehåller profilexporter.
 
 ## Målgrupper för direktuppspelad export {#streaming-destinations}
 
-Målgrupper för målgruppsexport tar emot Experience Platform-målgruppsdata. Dessa mål använder målgrupps-ID eller användar-ID. Annonsering och sociala medier som [[!DNL Google Display & Video 360]](catalog/advertising/google-dv360.md), [[!DNL Google Ads]](catalog/advertising/google-ads-destination.md), eller [Facebook](catalog/social/facebook.md) är exempel på sådana destinationer.
+Målgrupper för målgruppsexport tar emot Experience Platform-målgruppsdata. Dessa mål använder målgrupps-ID eller användar-ID. Advertising och sociala mål som [[!DNL Google Display & Video 360]](catalog/advertising/google-dv360.md), [[!DNL Google Ads]](catalog/advertising/google-ads-destination.md) eller [Facebook](catalog/social/facebook.md) är exempel på sådana mål.
 
-## Destinationer för kantanpassning {#edge-personalization-destinations}
+## Edge personaliseringsmål {#edge-personalization-destinations}
 
-De främsta målsättningarna för personalisering i Experience Platform är bland annat [Adobe Target](/help/destinations/catalog/personalization/adobe-target-connection.md) och [Anpassat personaliseringsmål](/help/destinations/catalog/personalization/custom-personalization.md). Genom att använda dessa destinationer kan ni möjliggöra användning av samma sida och nästa sida för personalisering för era kunder.
+Edge personaliseringsmål i Experience Platform omfattar [Adobe Target](/help/destinations/catalog/personalization/adobe-target-connection.md) och [Anpassat personaliseringsmål](/help/destinations/catalog/personalization/custom-personalization.md). Genom att använda dessa destinationer kan ni möjliggöra användning av samma sida och nästa sida för personalisering för era kunder.
 
-Läs mer om hur [konfigurera anpassningsmål för personalisering på samma sida och nästa sida](/help/destinations/ui/activate-edge-personalization-destinations.md).
+Läs mer om hur du [konfigurerar anpassningsmål för samma sida och nästa sida-personalisering](/help/destinations/ui/activate-edge-personalization-destinations.md).
 
 ## Profilexport och målgruppsexportdestinationer - videoöversikt {#video}
 
@@ -77,7 +77,7 @@ Du kan exportera tre typer av målgrupper från Experience Platform till olika d
 * Målgrupper
 * Potentiella målgrupper
 
-Läs mer om [olika typer av målgrupper](/help/segmentation/ui/account-audiences.md#terminology).
+Läs mer om [olika målgruppstyper](/help/segmentation/ui/account-audiences.md#terminology).
 
 En symbol på målkortet visar vilka typer av målgrupper du kan exportera till varje mål.
 
@@ -88,7 +88,7 @@ En symbol på målkortet visar vilka typer av målgrupper du kan exportera till 
 
 Vissa molnlagringsmål i målkatalogen stöder datauppsättningsexporter. Använd dessa mål för att exportera rådatauppsättningar till molnlagringsplatser.
 
-Läs mer om hur [exportera datamängder](/help/destinations/ui/export-datasets.md).
+Läs mer om hur du [exporterar datauppsättningar](/help/destinations/ui/export-datasets.md).
 
 ## Tillägg {#extensions}
 
@@ -96,11 +96,11 @@ Plattformen utnyttjar tagghanteringens kraft och flexibilitet, vilket gör att d
 
 >[!TIP]
 >
->Detaljerad information om taggtillägg, inklusive användningsexempel och hur du hittar dem i gränssnittet finns i [taggtillägg - översikt](./catalog/launch-extensions/overview.md).
+>Detaljerad information om taggtillägg, inklusive användningsexempel och hur du hittar dem i gränssnittet, finns i [Översikt över taggtillägg](./catalog/launch-extensions/overview.md).
 
-Med taggtillägg vidarebefordras råa händelsedata till flera typer av mål. Tänk på tillägg som **Vidarebefordran av händelser** typ av mål. Detta är en enklare typ av integrering med målplattformar, som bara vidarebefordrar råhändelsedata. Exempel på sådana är [Tillägg för personalisering med Gainsight](./catalog/personalization/gainsight.md) eller [Bekräfta rösten för kundtillägget](./catalog/voice/confirmit-digital-feedback.md).
+Med taggtillägg vidarebefordras råa händelsedata till flera typer av mål. Tänk på tillägg som en **typ av mål för**-händelsevidarebefordran. Detta är en enklare typ av integrering med målplattformar, som bara vidarebefordrar råhändelsedata. Exempel på sådana är [Gainsight-tillägget för personalisering](./catalog/personalization/gainsight.md) eller [Bekräfta röst för kundtillägget](./catalog/voice/confirmit-digital-feedback.md).
 
-![Märkordstillägg jämfört med andra mål](./assets/common/launch-and-other-destinations.png)
+![Taggtillägg jämfört med andra mål](./assets/common/launch-and-other-destinations.png)
 
 ## När anslutningar och tillägg ska användas {#when-to-use}
 
@@ -112,6 +112,6 @@ Tillägg är användbara när händelsedata används för att utlösa en åtgär
 
 ## Målkategorier {#categories}
 
-Anslutningarna och tilläggen i [målkatalog](https://platform.adobe.com/destination/catalog) grupperas efter målkategori (**Reklam**, **molnlagring**, **Undersökningsplattformar**, **E-postmarknadsföring**, osv.), beroende på vilka marknadsföringsåtgärder de hjälper dig att uppnå. Mer information om var och en av kategorierna, samt vilka destinationer som ingår i varje kategori, finns i [Dokumentation för destinationskatalog](./catalog/overview.md).
+Anslutningarna och tilläggen i [målkatalogen](https://platform.adobe.com/destination/catalog) grupperas efter målkategori (**Advertising**, **Cloud-lagring**, **Undersökningsplattformar**, **E-postmarknadsföring** osv.), beroende på vilken marknadsföringsåtgärd de hjälper dig att uppnå. Mer information om var och en av kategorierna, samt vilka mål som ingår i varje kategori, finns i dokumentationen för [målkatalogen](./catalog/overview.md).
 
-![Målkategorier markerade på katalogsidan.](./assets/destination-types/destination-categories-menu.png)
+![Målkategorier är markerade på katalogsidan.](./assets/destination-types/destination-categories-menu.png)

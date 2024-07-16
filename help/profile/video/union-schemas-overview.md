@@ -19,10 +19,10 @@ ht-degree: 0%
 
 # Översikt över unionens scheman
 
-Den här videon ger en grundläggande förståelse för föreningsscheman i Adobe Experience Platform och visar hur du utforskar ett unionsschema med användargränssnittet för plattformen. Läs mer om fackliga scheman på [gränssnittshandbok för union av scheman](../ui/union-schema.md).
+Den här videon ger en grundläggande förståelse för föreningsscheman i Adobe Experience Platform och visar hur du utforskar ett unionsschema med hjälp av användargränssnittet för plattformen. Mer information om fackliga scheman finns i [användargränssnittshandboken för fackföreningar](../ui/union-schema.md).
 
 >[!NOTE]
 >
->Användargränssnittet i Experience Platform uppdateras ofta och kan ha ändrats sedan videon spelades in. Den senaste informationen finns i [gränssnittshandbok för union av scheman](../ui/union-schema.md).
+>Användargränssnittet i Experience Platform uppdateras ofta och kan ha ändrats sedan videon spelades in. Den senaste informationen finns i användargränssnittshandboken för [fackscheman](../ui/union-schema.md).
 
 >[!VIDEO](https://video.tv.adobe.com/v/329940?quality=12&learn=on&captions=eng)

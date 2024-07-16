@@ -17,28 +17,28 @@ Det här dokumentet innehåller en självstudiekurs för att utvärdera segmentd
 
 ## Komma igång
 
-Den här självstudiekursen kräver en fungerande förståelse för de olika [!DNL Adobe Experience Platform] tjänster som används för att skapa målgrupper. Innan du börjar med den här självstudiekursen bör du läsa dokumentationen för följande tjänster:
+Den här självstudiekursen kräver en fungerande förståelse av de olika [!DNL Adobe Experience Platform]-tjänster som används för att skapa målgrupper. Innan du börjar med den här självstudiekursen bör du läsa dokumentationen för följande tjänster:
 
 - [[!DNL Real-Time Customer Profile]](../../profile/home.md): Tillhandahåller en enhetlig kundprofil i realtid baserad på aggregerade data från flera källor.
-- [[!DNL Adobe Experience Platform Segmentation Service]](../home.md): Används för att bygga målgrupper utifrån [!DNL Real-Time Customer Profile] data.
-- [[!DNL Experience Data Model (XDM)]](../../xdm/home.md): Det standardiserade ramverk som Platform använder för att organisera kundupplevelsedata. För att utnyttja segmenteringen på bästa sätt bör du se till att dina data är inmatade som profiler och händelser enligt [bästa praxis för datamodellering](../../xdm/schema/best-practices.md).
-- [Sandlådor](../../sandboxes/home.md): [!DNL Experience Platform] innehåller virtuella sandlådor som partitionerar en enda [!DNL Platform] till separata virtuella miljöer för att utveckla och utveckla applikationer för digitala upplevelser.
+- [[!DNL Adobe Experience Platform Segmentation Service]](../home.md): Gör att du kan skapa målgrupper från [!DNL Real-Time Customer Profile]-data.
+- [[!DNL Experience Data Model (XDM)]](../../xdm/home.md): Det standardiserade ramverk som Platform använder för att organisera kundupplevelsedata. För att du ska kunna använda segmentering bör du se till att dina data är inmatade som profiler och händelser enligt [bästa praxis för datamodellering](../../xdm/schema/best-practices.md).
+- [Sandlådor](../../sandboxes/home.md): [!DNL Experience Platform] innehåller virtuella sandlådor som partitionerar en enskild [!DNL Platform]-instans till separata virtuella miljöer för att hjälpa till att utveckla och utveckla program för digitala upplevelser.
 
 ### Obligatoriska rubriker
 
-Den här självstudiekursen kräver även att du har slutfört [självstudiekurs om autentisering](https://www.adobe.com/go/platform-api-authentication-en) för att kunna ringa [!DNL Platform] API. När du är klar med självstudiekursen för autentisering visas värdena för var och en av de obligatoriska rubrikerna i alla [!DNL Experience Platform] API-anrop enligt nedan:
+Den här självstudien kräver också att du har slutfört [autentiseringssjälvstudiekursen](https://www.adobe.com/go/platform-api-authentication-en) för att kunna anropa [!DNL Platform] API:er. När du slutför självstudiekursen för autentisering visas värdena för var och en av de obligatoriska rubrikerna i alla [!DNL Experience Platform] API-anrop, vilket visas nedan:
 
-- Behörighet: Bearer `{ACCESS_TOKEN}`
+- Behörighet: Bärare `{ACCESS_TOKEN}`
 - x-api-key: `{API_KEY}`
 - x-gw-ims-org-id: `{ORG_ID}`
 
-Alla resurser i [!DNL Experience Platform] isoleras till specifika virtuella sandlådor. Begäranden till [!DNL Platform] API:er kräver en rubrik som anger namnet på sandlådan som åtgärden ska utföras i:
+Alla resurser i [!DNL Experience Platform] är isolerade till specifika virtuella sandlådor. Begäranden till [!DNL Platform] API:er kräver ett huvud som anger namnet på sandlådan som åtgärden ska utföras i:
 
 - x-sandbox-name: `{SANDBOX_NAME}`
 
 >[!NOTE]
 >
->Mer information om sandlådor i [!DNL Platform], se [översiktsdokumentation för sandlåda](../../sandboxes/home.md).
+>Mer information om sandlådor i [!DNL Platform] finns i [översiktsdokumentationen för sandlådan](../../sandboxes/home.md).
 
 Alla förfrågningar från POST, PUT och PATCH kräver ytterligare en rubrik:
 
@@ -48,9 +48,9 @@ Alla förfrågningar från POST, PUT och PATCH kräver ytterligare en rubrik:
 
 När du har utvecklat, testat och sparat din segmentdefinition kan du sedan utvärdera segmentdefinitionen genom en schemalagd utvärdering eller on-demand-utvärdering.
 
-[Schemalagd utvärdering](#scheduled-evaluation) (kallas även&quot;schemalagd segmentering&quot;) kan du skapa ett återkommande schema för att köra ett exportjobb vid en viss tidpunkt, medan [on-demand-utvärdering](#on-demand-evaluation) innebär att skapa ett segmentjobb för att omedelbart bygga upp målgruppen. Stegen för varje steg beskrivs nedan.
+[Schemalagd utvärdering](#scheduled-evaluation) (kallas även schemalagd segmentering) gör att du kan skapa ett återkommande schema för att köra ett exportjobb vid en viss tidpunkt, medan [on demand-utvärdering](#on-demand-evaluation) innebär att du skapar ett segmentjobb för att skapa målgruppen direkt. Stegen för varje steg beskrivs nedan.
 
-Om du ännu inte har slutfört [skapa en segmentdefinition med segmenterings-API](./create-a-segment.md) självstudiekurs eller skapa en segmentdefinition med [Segment Builder](../ui/segment-builder.md)gör du det innan du fortsätter med kursen.
+Om du ännu inte har slutfört [skapa en segmentdefinition med hjälp av självstudiekursen Segmentering-API](./create-a-segment.md) eller skapat en segmentdefinition med [Segmentbyggaren](../ui/segment-builder.md) gör du det innan du fortsätter med den här självstudiekursen.
 
 ## Schemalagd utvärdering {#scheduled-evaluation}
 
@@ -58,25 +58,25 @@ Med schemalagd utvärdering kan din organisation skapa ett återkommande schema 
 
 >[!NOTE]
 >
->Schemalagd utvärdering kan aktiveras för sandlådor med högst fem (5) sammanfogningsprinciper för [!DNL XDM Individual Profile]. Om din organisation har fler än fem samkörningspolicyer för [!DNL XDM Individual Profile] i en enda sandlådemiljö kommer du inte att kunna använda schemalagd utvärdering.
+>Schemalagd utvärdering kan aktiveras för sandlådor med högst fem (5) sammanslagningsprinciper för [!DNL XDM Individual Profile]. Om din organisation har fler än fem sammanfogningsprinciper för [!DNL XDM Individual Profile] i en enda sandlådemiljö kommer du inte att kunna använda schemalagd utvärdering.
 
 ### Skapa ett schema
 
-Genom att göra en POST-förfrågan till `/config/schedules` kan du skapa ett schema och inkludera den specifika tidpunkt då schemat ska utlösas.
+Genom att göra en schemaförfrågan till slutpunkten `/config/schedules` kan du skapa ett schema och inkludera den POST då schemat ska utlösas.
 
-Mer detaljerad information om hur du använder den här slutpunkten finns i [slutpunktshandbok för scheman](../api/schedules.md#create)
+Mer detaljerad information om hur du använder den här slutpunkten finns i [slutpunktshandboken för scheman](../api/schedules.md#create)
 
 ### Aktivera ett schema
 
-Som standard är ett schema inaktivt när det skapas såvida inte `state` egenskapen är inställd på `active` i texten för skapandebegäran (POST). Du kan aktivera ett schema (ange `state` till `active`) genom att göra en begäran från PATCH till `/config/schedules` slutpunkten och inklusive ID för schemat i sökvägen.
+Som standard är ett schema inaktivt när det skapas, såvida inte egenskapen `state` är inställd på `active` i texten för skapandebegäran (POST). Du kan aktivera ett schema (ange `state` till `active`) genom att göra en PATCH-begäran till `/config/schedules`-slutpunkten och inkludera ID:t för schemat i sökvägen.
 
-Mer detaljerad information om hur du använder den här slutpunkten finns i [slutpunktshandbok för scheman](../api/schedules.md#update-state)
+Mer detaljerad information om hur du använder den här slutpunkten finns i [slutpunktshandboken för scheman](../api/schedules.md#update-state)
 
 ### Uppdatera schematiden
 
-Tidsplaneringen kan uppdateras genom att PATCH begär `/config/schedules` slutpunkten och inklusive ID för schemat i sökvägen.
+Tidsplaneringen kan uppdateras genom att en PATCH-begäran görs till slutpunkten `/config/schedules` och med ID:t för schemat i sökvägen.
 
-Mer detaljerad information om hur du använder den här slutpunkten finns i [slutpunktshandbok för scheman](../api/schedules.md#update-schedule)
+Mer detaljerad information om hur du använder den här slutpunkten finns i [slutpunktshandboken för scheman](../api/schedules.md#update-schedule)
 
 ## On-demand-utvärdering
 
@@ -84,23 +84,23 @@ Med On-demand-utvärdering kan ni skapa ett segmentjobb för att generera en må
 
 ### Skapa ett segmentjobb
 
-Ett segmentjobb är en asynkron process som skapar ett målgruppssegment på begäran. Det refererar till en segmentdefinition samt eventuella sammanfogningsprinciper som styr hur [!DNL Real-Time Customer Profile] sammanfogar överlappande attribut i dina profilfragment. När ett segmentjobb har slutförts kan du samla in olika information om segmentdefinitionen, t.ex. eventuella fel som kan ha inträffat under bearbetningen och målgruppens slutliga storlek. Ett segmentjobb måste köras varje gång du vill uppdatera målgruppen som är kvalificerad för segmentdefinitionen.
+Ett segmentjobb är en asynkron process som skapar ett målgruppssegment på begäran. Den refererar till en segmentdefinition samt eventuella sammanfogningsprinciper som styr hur [!DNL Real-Time Customer Profile] sammanfogar överlappande attribut i dina profilfragment. När ett segmentjobb har slutförts kan du samla in olika information om segmentdefinitionen, t.ex. eventuella fel som kan ha inträffat under bearbetningen och målgruppens slutliga storlek. Ett segmentjobb måste köras varje gång du vill uppdatera målgruppen som är kvalificerad för segmentdefinitionen.
 
-Du kan skapa ett nytt segmentjobb genom att göra en POST-förfrågan till `/segment/jobs` slutpunkt i [!DNL Real-Time Customer Profile] API.
+Du kan skapa ett nytt segmentjobb genom att göra en POST-förfrågan till `/segment/jobs`-slutpunkten i [!DNL Real-Time Customer Profile] API:t.
 
-Mer detaljerad information om hur du använder den här slutpunkten finns i [slutpunktsguide för segmentjobb](../api/segment-jobs.md#create)
+Mer detaljerad information om hur du använder den här slutpunkten finns i [slutpunktshandboken för segmentjobb](../api/segment-jobs.md#create)
 
 ### Sök efter jobbstatus för segment
 
-Du kan använda `id` för ett specifikt segmentjobb att utföra en sökbegäran (GET) för att visa jobbets aktuella status.
+Du kan använda `id` för ett specifikt segmentjobb för att utföra en sökbegäran (GET) för att visa jobbets aktuella status.
 
-Mer detaljerad information om hur du använder den här slutpunkten finns i [slutpunktsguide för segmentjobb](../api/segment-jobs.md#get)
+Mer detaljerad information om hur du använder den här slutpunkten finns i [slutpunktshandboken för segmentjobb](../api/segment-jobs.md#get)
 
 ## Tolka segmentjobbresultat
 
-När segmentjobben har körts `segmentMembership` kartan uppdateras för varje profil som ingår i segmentdefinitionen. `segmentMembership` lagrar även alla förutvärderade målgrupper som hämtas in till [!DNL Platform], vilket möjliggör integrering med andra lösningar som [!DNL Adobe Audience Manager].
+När segmentjobben har körts uppdateras kartan `segmentMembership` för varje profil som ingår i segmentdefinitionen. `segmentMembership` lagrar även alla förutvärderade målgrupper som är inkapslade i [!DNL Platform], vilket möjliggör integrering med andra lösningar som [!DNL Adobe Audience Manager].
 
-I följande exempel visas vad `segmentMembership` för varje enskild profilpost ser attributet ut så här:
+I följande exempel visas hur attributet `segmentMembership` ser ut för varje enskild profilpost:
 
 ```json
 {
@@ -132,7 +132,7 @@ I följande exempel visas vad `segmentMembership` för varje enskild profilpost 
 
 >[!NOTE]
 >
->Alla segmentmedlemskap som finns i `exited` status i mer än 30 dagar, baserat på `lastQualificationTime`, kan tas bort.
+>Alla segmentmedlemskap som har statusen `exited` i mer än 30 dagar, baserat på `lastQualificationTime`, kan tas bort.
 
 ## Åtkomst till segmentjobbresultat
 
@@ -142,31 +142,31 @@ I följande avsnitt beskrivs dessa alternativ mer ingående.
 
 ## Söka efter en profil
 
-Om du vet vilken profil du vill använda kan du göra det med [!DNL Real-Time Customer Profile] API. De fullständiga stegen för att komma åt enskilda profiler finns i [Få åtkomst till kundprofildata i realtid med profils-API](../../profile/api/entities.md) självstudie.
+Om du vet vilken profil du vill använda kan du göra det med API:t [!DNL Real-Time Customer Profile]. De fullständiga stegen för att komma åt enskilda profiler finns i självstudiekursen [Åtkomst till kundprofildata i realtid med profils-API](../../profile/api/entities.md).
 
 ## Exportera ett segment {#export}
 
-När ett segmenteringsjobb har slutförts (värdet på `status` -attributet är &quot;SUCCEEDED&quot;) kan du exportera målgruppen till en datauppsättning där den kan nås och hanteras.
+När ett segmenteringsjobb har slutförts (värdet för attributet `status` är &quot;SUCCEEDED&quot;) kan du exportera målgruppen till en datauppsättning där den kan nås och hanteras.
 
 Följande steg krävs för att exportera målgruppen:
 
 - [Skapa en måldatauppsättning](#create-a-target-dataset) - Skapa datauppsättningen för målgruppsmedlemmar.
 - [Generera målgruppsprofiler i datauppsättningen](#generate-profiles) - Fyll i datauppsättningen med enskilda XDM-profiler baserat på resultatet av ett segmentjobb.
-- [Övervaka exportförlopp](#monitor-export-progress) - Kontrollera exportförloppet.
-- [Läs målgruppsdata](#next-steps) - Hämta de resulterande enskilda XDM-profilerna som representerar medlemmarna i din publik.
+- [Övervaka exportförloppet](#monitor-export-progress) - Kontrollera exportförloppet.
+- [Läs målgruppsdata](#next-steps) - Hämta de resulterande enskilda XDM-profilerna som representerar medlemmarna i din målgrupp.
 
 ### Skapa en måldatauppsättning {#create-dataset}
 
 När du exporterar en målgrupp måste du först skapa en måldatauppsättning. Det är viktigt att datauppsättningen är korrekt konfigurerad för att exporten ska lyckas.
 
-Ett av de viktigaste övervägandena är schemat som datauppsättningen baseras på (`schemaRef.id` i API-exempelbegäran nedan). För att kunna exportera en segmentdefinition måste datauppsättningen baseras på [!DNL XDM Individual Profile Union Schema] (`https://ns.adobe.com/xdm/context/profile__union`). Ett unionsschema är ett systemgenererat, skrivskyddat schema som samlar in fält i scheman som delar samma klass, i det här fallet klassen XDM Individual Profile. Mer information om unionens vyscheman finns i [Avsnittet Kundprofil i realtid i utvecklarhandboken för schemaregistret](../../xdm/api/getting-started.md).
+Ett av de viktigaste övervägandena är schemat som datauppsättningen baseras på (`schemaRef.id` i API-exempelbegäran nedan). Om du vill exportera en segmentdefinition måste datauppsättningen baseras på [!DNL XDM Individual Profile Union Schema] (`https://ns.adobe.com/xdm/context/profile__union`). Ett unionsschema är ett systemgenererat, skrivskyddat schema som samlar in fält i scheman som delar samma klass, i det här fallet klassen XDM Individual Profile. Mer information om unionsvyscheman finns i avsnittet [Kundprofil i realtid i utvecklarhandboken för schemaregister](../../xdm/api/getting-started.md).
 
 Det finns två sätt att skapa den nödvändiga datauppsättningen:
 
-- **Använda API:** Stegen som följer i den här självstudiekursen visar hur du skapar en datauppsättning som refererar till [!DNL XDM Individual Profile Union Schema] med [!DNL Catalog] API.
-- **Använda gränssnittet:** Använd [!DNL Adobe Experience Platform] om du vill skapa en datauppsättning som refererar till unionsschemat följer du stegen i [Självstudiekurs om användargränssnitt](../ui/overview.md) och sedan återgå till den här självstudiekursen för att fortsätta med stegen för [generera målgruppsprofiler](#generate-profiles).
+- **Använda API:er:** I den här självstudiekursen beskrivs hur du skapar en datauppsättning som refererar till [!DNL XDM Individual Profile Union Schema] med API:t [!DNL Catalog].
+- **Använd användargränssnittet:** Om du vill använda användargränssnittet [!DNL Adobe Experience Platform] för att skapa en datauppsättning som refererar till unionsschemat följer du stegen i [användargränssnittet](../ui/overview.md) och går sedan tillbaka till den här självstudiekursen för att fortsätta med stegen för att [generera målgruppsprofiler](#generate-profiles).
 
-Om du redan har en kompatibel datauppsättning och känner till dess ID kan du fortsätta direkt till steget för [generera målgruppsprofiler](#generate-profiles).
+Om du redan har en kompatibel datauppsättning och känner till dess ID kan du fortsätta direkt till steget för att [generera målgruppsprofiler](#generate-profiles).
 
 **API-format**
 
@@ -212,22 +212,22 @@ Ett lyckat svar returnerar en array som innehåller det skrivskyddade, systemgen
 
 ### Generera profiler för målgruppsmedlemmar {#generate-profiles}
 
-När du har en enhetlig datauppsättning kan du skapa ett exportjobb som behåller målgruppsmedlemmarna i datauppsättningen genom att göra en POST till `/export/jobs` slutpunkt i [!DNL Real-Time Customer Profile] API och ange datauppsättnings-ID och segmentdefinitionsinformation för de segmentdefinitioner som du vill exportera.
+När du har en unionskonstanterad datauppsättning kan du skapa ett exportjobb som behåller målgruppsmedlemmarna i datauppsättningen genom att göra en POST till `/export/jobs`-slutpunkten i [!DNL Real-Time Customer Profile] API:t och ange datauppsättnings-ID:t och segmentdefinitionsinformationen för de segmentdefinitioner som du vill exportera.
 
-Mer detaljerad information om hur du använder den här slutpunkten finns i [slutpunktsguide för exportjobb](../api/export-jobs.md#create)
+Mer detaljerad information om hur du använder den här slutpunkten finns i [slutpunktshandboken för exportjobb](../api/export-jobs.md#create)
 
 ### Övervaka exportförlopp
 
-Som en exportjobbsprocess kan du övervaka dess status genom att göra en GET-förfrågan till `/export/jobs` slutpunkt och inklusive `id` av exportjobbet i sökvägen. Exportjobbet är klart när `status` returnerar värdet &quot;SUCCEEDED&quot;.
+Som en exportjobbsprocess kan du övervaka dess status genom att göra en GET-förfrågan till slutpunkten `/export/jobs` och inkludera `id` för exportjobbet i sökvägen. Exportjobbet slutförs när fältet `status` returnerar värdet &quot;SUCCEEDED&quot;.
 
-Mer detaljerad information om hur du använder den här slutpunkten finns i [slutpunktsguide för exportjobb](../api/export-jobs.md#get)
+Mer detaljerad information om hur du använder den här slutpunkten finns i [slutpunktshandboken för exportjobb](../api/export-jobs.md#get)
 
 ## Nästa steg
 
-När exporten är klar är dina data tillgängliga i [!DNL Data Lake] in [!DNL Experience Platform]. Du kan sedan använda [[!DNL Data Access API]](https://www.adobe.io/experience-platform-apis/references/data-access/) för att få åtkomst till data med `batchId` som är associerad med exporten. Beroende på segmentdefinitionens storlek kan data vara i segment och gruppen kan bestå av flera filer.
+När exporten har slutförts är dina data tillgängliga i [!DNL Data Lake] i [!DNL Experience Platform]. Du kan sedan använda [[!DNL Data Access API]](https://www.adobe.io/experience-platform-apis/references/data-access/) för att komma åt data med hjälp av `batchId` som är associerad med exporten. Beroende på segmentdefinitionens storlek kan data vara i segment och gruppen kan bestå av flera filer.
 
-Stegvisa instruktioner om hur du använder [!DNL Data Access] API för att få tillgång till och ladda ned batchfiler, följ [Dataåtkomst, genomgång](../../data-access/tutorials/dataset-data.md).
+Följ [Dataåtkomstsjälvstudiekursen](../../data-access/tutorials/dataset-data.md) om du vill ha stegvisa anvisningar om hur du använder [!DNL Data Access]-API:t för att få åtkomst till och hämta gruppfiler.
 
-Du kan också komma åt exporterade segmentdefinitionsdata med [!DNL Adobe Experience Platform Query Service]. Använda gränssnittet eller RESTful API, [!DNL Query Service] kan du skriva, validera och köra frågor på data i [!DNL Data Lake].
+Du kan också komma åt exporterade segmentdefinitionsdata med [!DNL Adobe Experience Platform Query Service]. Med API:t UI eller RESTful kan du med [!DNL Query Service] skriva, validera och köra frågor på data i [!DNL Data Lake].
 
-Mer information om hur man hämtar information finns i dokumentationen om [[!DNL Query Service]](../../query-service/home.md).
+Mer information om hur du frågar efter målgruppsdata finns i dokumentationen om [[!DNL Query Service]](../../query-service/home.md).

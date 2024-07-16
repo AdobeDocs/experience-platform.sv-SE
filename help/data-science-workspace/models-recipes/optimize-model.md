@@ -7,14 +7,14 @@ description: Model Insights Framework förser datavetenskaparen med verktyg i Da
 exl-id: f989a3f1-6322-47c6-b7d6-6a828766053f
 source-git-commit: 86e6924078c115fb032ce39cd678f1d9c622e297
 workflow-type: tm+mt
-source-wordcount: '1265'
+source-wordcount: '1187'
 ht-degree: 0%
 
 ---
 
 # Optimera en modell med Model Insights-ramverket
 
-Model Insights Framework förser datavetenskaparen med verktyg i [!DNL Data Science Workspace] att göra snabba och välgrundade val för optimala maskininlärningsmodeller baserade på experiment. Ramverket kommer att förbättra snabbheten och effektiviteten i maskininlärningsarbetsflödet samt förbättra användarvänligheten för datavetare. Det gör du genom att ange en standardmall för varje maskininlärningsalgoritmtyp som ska vara till hjälp vid modelljustering. Slutresultatet gör att datavetare och datavetare kan fatta bättre modelloptimeringsbeslut för sina slutkunder.
+Model Insights Framework ger datavetenskaparen verktyg i [!DNL Data Science Workspace] för att göra snabba och välgrundade val för optimala maskininlärningsmodeller baserade på experiment. Ramverket kommer att förbättra snabbheten och effektiviteten i maskininlärningsarbetsflödet samt förbättra användarvänligheten för datavetare. Det gör du genom att ange en standardmall för varje maskininlärningsalgoritmtyp som ska vara till hjälp vid modelljustering. Slutresultatet gör att datavetare och datavetare kan fatta bättre modelloptimeringsbeslut för sina slutkunder.
 
 ## Vad är mätvärden?
 
@@ -31,7 +31,7 @@ Model Insights Framework har för närvarande stöd för följande körningsmilj
 - [Python/Tensorflow](#pythontensorflow)
 - [R](#r)
 
-Exempelkod för recept finns i [experience-platform-dsw-reference](https://github.com/adobe/experience-platform-dsw-reference) databas under `recipes`. Specifika filer från den här databasen kommer att refereras i den här självstudiekursen.
+Exempelkod för recept finns i databasen [experience-platform-dsw-reference](https://github.com/adobe/experience-platform-dsw-reference) under `recipes`. Specifika filer från den här databasen kommer att refereras i den här självstudiekursen.
 
 ### Scala {#scala}
 
@@ -47,7 +47,7 @@ Standardutvärderingar beräknas som en del av klassificeringsalgoritmerna. Här
 | DefaultMultiClassificationEvaluator | `com.adobe.platform.ml.impl.DefaultMultiClassificationEvaluator` |
 | RecommendationsEvaluator | `com.adobe.platform.ml.impl.RecommendationsEvaluator` |
 
-Utvärderaren kan definieras i receptet i [application.properties](https://github.com/adobe/experience-platform-dsw-reference/blob/master/recipes/scala/src/main/resources/application.properties) i `recipe` mapp. Exempelkod som aktiverar `DefaultBinaryClassificationEvaluator` visas nedan:
+Utvärderaren kan definieras i receptet i filen [application.properties](https://github.com/adobe/experience-platform-dsw-reference/blob/master/recipes/scala/src/main/resources/application.properties) i mappen `recipe`. Exempelkod som aktiverar `DefaultBinaryClassificationEvaluator` visas nedan:
 
 ```scala
 evaluation.class=com.adobe.platform.ml.impl.DefaultBinaryClassificationEvaluator
@@ -56,7 +56,7 @@ evaluation.predictionColumn=prediction
 training.evaluate=true
 ```
 
-När en utvärderingsklass har aktiverats beräknas ett antal mätvärden under utbildning som standard. Standardvärden kan deklareras explicit genom att lägga till följande rad i `application.properties`.
+När en utvärderingsklass har aktiverats beräknas ett antal mätvärden under utbildning som standard. Standardmått kan deklareras explicit genom att lägga till följande rad i din `application.properties`.
 
 ```scala
 evaluation.metrics.com=com.adobe.platform.ml.impl.Constants.DEFAULT
@@ -64,64 +64,64 @@ evaluation.metrics.com=com.adobe.platform.ml.impl.Constants.DEFAULT
 
 >[!NOTE]
 >
->Om måttet inte är definierat aktiveras standardmåtten.
+>Om måttet inte är definierat är standardmåtten aktiva.
 
-Du kan aktivera ett specifikt mått genom att ändra värdet för `evaluation.metrics.com`. I följande exempel är F-poängmåttet aktiverat.
+Ett specifikt mått kan aktiveras genom att värdet för `evaluation.metrics.com` ändras. I följande exempel är F-poängmåttet aktiverat.
 
 ```scala
 evaluation.metrics=com.adobe.platform.ml.impl.Constants.FSCORE
 ```
 
-I följande tabell anges standardmåtten för varje klass. En användare kan också använda värdena i `evaluation.metric` -kolumn för att aktivera ett specifikt mått.
+I följande tabell anges standardmåtten för varje klass. En användare kan också använda värdena i kolumnen `evaluation.metric` för att aktivera ett specifikt mått.
 
 | `evaluator.class` | Standardmått | `evaluation.metric` |
 | --- | --- | --- |
-| `DefaultBinaryClassificationEvaluator` | -Precision <br>-Återkalla <br>-Matrix för konfusion <br>-F-poäng <br>-Accuracy <br>-Mottagarens driftsegenskaper <br>-Område under mottagarens driftsegenskaper | -`PRECISION` <br>-`RECALL` <br>-`CONFUSION_MATRIX` <br>-`FSCORE` <br>-`ACCURACY` <br>-`ROC` <br>-`AUROC` |
-| `DefaultMultiClassificationEvaluator` | -Precision <br>-Återkalla <br>-Matrix för konfusion <br>-F-poäng <br>-Accuracy <br>-Mottagarens driftsegenskaper <br>-Område under mottagarens driftsegenskaper | -`PRECISION` <br>-`RECALL` <br>-`CONFUSION_MATRIX` <br>-`FSCORE` <br>-`ACCURACY` <br>-`ROC` <br>-`AUROC` |
-| `RecommendationsEvaluator` | - Genomsnittlig genomsnittlig precision (MAP) <br>-Normaliserat rabatterat kumulativt resultat <br>- Medelvärde för lutning <br>-Metrisk K | -`MEAN_AVERAGE_PRECISION` <br>-`NDCG` <br>-`MRR` <br>-`METRIC_K` |
+| `DefaultBinaryClassificationEvaluator` | -Precision <br>-Recall <br>-Confusion Matrix <br>-F-Score <br>-Accuracy <br> -Receiver-operatoregenskaper <br> under mottagarens driftsegenskaper | -`PRECISION` <br>-`RECALL` <br>-`CONFUSION_MATRIX` <br>-`FSCORE` <br>-`ACCURACY` <br>-`ROC` <br>-`AUROC` |
+| `DefaultMultiClassificationEvaluator` | -Precision <br>-Recall <br>-Confusion Matrix <br>-F-Score <br>-Accuracy <br> -Receiver-operatoregenskaper <br> under mottagarens driftsegenskaper | -`PRECISION` <br>-`RECALL` <br>-`CONFUSION_MATRIX` <br>-`FSCORE` <br>-`ACCURACY` <br>-`ROC` <br>-`AUROC` |
+| `RecommendationsEvaluator` | -Genomsnittlig genomsnittlig precision (MAP) <br> - normaliserad, rabatterad kumulativ förstärkning <br> - medelvärde för ömsesidigt rangordnade <br> - mått K | -`MEAN_AVERAGE_PRECISION` <br>-`NDCG` <br>-`MRR` <br>-`METRIC_K` |
 
 
 #### Anpassade utvärderingsmått för Scala
 
-Den anpassade utvärderaren kan fås genom att utöka gränssnittet för `MLEvaluator.scala` i `Evaluator.scala` -fil. I exemplet [Evaluator.scala](https://github.com/adobe/experience-platform-dsw-reference/blob/master/recipes/scala/src/main/scala/com/adobe/platform/ml/Evaluator.scala) fil, vi definierar anpassad `split()` och `evaluate()` funktioner. Våra `split()` delar data slumpmässigt med förhållandet 8:2 och `evaluate()` funktionen definierar och returnerar 3 mått: MAPPA, MAE och RMSE.
+Den anpassade utvärderaren kan tillhandahållas genom att utöka gränssnittet för `MLEvaluator.scala` i `Evaluator.scala`-filen. I exemplet [Evaluator.scala](https://github.com/adobe/experience-platform-dsw-reference/blob/master/recipes/scala/src/main/scala/com/adobe/platform/ml/Evaluator.scala) definierar vi anpassade funktioner för `split()` och `evaluate()`. Vår `split()`-funktion delar våra data slumpmässigt med förhållandet 8:2 och vår `evaluate()`-funktion definierar och returnerar 3 mått: MAPE, MAE och RMSE.
 
 >[!IMPORTANT]
 >
->För `MLMetric` klass, använd inte `"measures"` for `valueType` när du skapar en ny `MLMetric` i annat fall fylls inte måttet i i tabellen för anpassade utvärderingsmått.
+>Använd inte `"measures"` för `valueType` för klassen `MLMetric` när du skapar en ny `MLMetric`, annars fylls inte måttet i i den anpassade utvärderingstabellen.
 >  
-> Gör så här: `metrics.add(new MLMetric("MAPE", mape, "double"))`\
+> Gör detta: `metrics.add(new MLMetric("MAPE", mape, "double"))`\
 > Inte detta: `metrics.add(new MLMetric("MAPE", mape, "measures"))`
 
 
-När det är definierat i receptet är nästa steg att aktivera det i recepten. Detta görs i [application.properties](https://github.com/adobe/experience-platform-dsw-reference/blob/master/recipes/scala/src/main/resources/application.properties) fil i projektets `resources` mapp. Här är `evaluation.class` är inställt på `Evaluator` klass definierad i `Evaluator.scala`
+När det är definierat i receptet är nästa steg att aktivera det i recepten. Detta görs i filen [application.properties](https://github.com/adobe/experience-platform-dsw-reference/blob/master/recipes/scala/src/main/resources/application.properties) i projektets `resources`-mapp. Här är `evaluation.class` inställd på klassen `Evaluator` som definieras i `Evaluator.scala`
 
 ```scala
 evaluation.class=com.adobe.platform.ml.Evaluator
 ```
 
-I [!DNL Data Science Workspace], skulle användaren kunna se insikterna på fliken &quot;Evaluation Metrics&quot; på sidan med experiment.
+I [!DNL Data Science Workspace] kan användaren se insikterna på fliken &quot;Evaluation Metrics&quot; på experimentsidan.
 
 ### [!DNL Python/Tensorflow] {#pythontensorflow}
 
-För närvarande finns det inga standardmått för utvärdering för [!DNL Python] eller [!DNL Tensorflow]. Så här hämtar du utvärderingsstatistik för [!DNL Python] eller [!DNL Tensorflow]måste du skapa ett anpassat utvärderingsmått. Detta kan du göra genom att implementera `Evaluator` klassen.
+För närvarande finns det inga standardmått för utvärdering för [!DNL Python] eller [!DNL Tensorflow]. Om du vill hämta utvärderingsmåtten för [!DNL Python] eller [!DNL Tensorflow] måste du skapa ett anpassat utvärderingsmått. Detta kan du göra genom att implementera klassen `Evaluator`.
 
-#### Anpassade utvärderingsvärden för [!DNL Python]
+#### Anpassade utvärderingsmått för [!DNL Python]
 
-För anpassade utvärderingsvärden finns det två huvudmetoder som måste implementeras för utvärderaren: `split()` och `evaluate()`.
+För anpassade utvärderingsmått finns det två huvudmetoder som måste implementeras för utvärderaren: `split()` och `evaluate()`.
 
-För [!DNL Python]skulle dessa metoder definieras i [utvärderare.py](https://github.com/adobe/experience-platform-dsw-reference/blob/master/recipes/python/retail/retail/evaluator.py) för `Evaluator` klassen. Följ [utvärderare.py](https://github.com/adobe/experience-platform-dsw-reference/blob/master/recipes/python/retail/retail/evaluator.py) länk för ett exempel på `Evaluator`.
+För [!DNL Python] skulle dessa metoder definieras i [utvärderator.py](https://github.com/adobe/experience-platform-dsw-reference/blob/master/recipes/python/retail/retail/evaluator.py) för klassen `Evaluator`. Följ länken [utvärderator.py](https://github.com/adobe/experience-platform-dsw-reference/blob/master/recipes/python/retail/retail/evaluator.py) för ett exempel på `Evaluator`.
 
-Skapa utvärderingsmått i [!DNL Python] kräver att användaren implementerar `evaluate()` och `split()` metoder.
+Om du skapar utvärderingsmått i [!DNL Python] måste användaren implementera metoderna `evaluate()` och `split()`.
 
-The `evaluate()` metoden returnerar metric-objektet som innehåller en array med metriska objekt med egenskaperna för `name`, `value`och `valueType`.
+Metoden `evaluate()` returnerar det metriska objektet som innehåller en array med metriska objekt med egenskaperna `name`, `value` och `valueType`.
 
-Syftet med `split()` metoden är att mata in data och att ta fram en utbildning och en testdatamängd. I vårt exempel `split()` metodindata med `DataSetReader` SDK och rensar sedan data genom att ta bort orelaterade kolumner. Därifrån skapas ytterligare funktioner från befintliga Raw-funktioner i data.
+Syftet med metoden `split()` är att mata in data och att mata ut en utbildning och en testdatamängd. I vårt exempel matar metoden `split()` in data med SDK:t `DataSetReader` och rensar sedan data genom att ta bort icke-relaterade kolumner. Därifrån skapas ytterligare funktioner från befintliga Raw-funktioner i data.
 
-The `split()` ska returnera en utbildnings- och testdatabildruta som sedan används av `pipeline()` metoder för att träna och testa ML-modellen.
+Metoden `split()` bör returnera en utbildnings- och testdatabildruta som sedan används av metoderna `pipeline()` för att träna och testa ML-modellen.
 
 #### Anpassade utvärderingsmått för tensorflow
 
-För [!DNL Tensorflow], liknar [!DNL Python], metoderna `evaluate()` och `split()` i `Evaluator` måste implementeras. För `evaluate()`, ska mätvärdena returneras medan `split()` returnerar tåget och provningsdata.
+Metoderna `evaluate()` och `split()` i klassen `Evaluator` måste implementeras för [!DNL Tensorflow], ungefär som [!DNL Python]. För `evaluate()` ska mätvärdena returneras medan `split()` returnerar tåget och testdatauppsättningarna.
 
 ```PYTHON
 from ml.runtime.python.Interfaces.AbstractEvaluator import AbstractEvaluator
@@ -141,30 +141,30 @@ class Evaluator(AbstractEvaluator):
 
 ### R {#r}
 
-Från och med nu finns det inga standardmått för utvärdering för R. För att få fram mätvärdena för R måste du definiera `applicationEvaluator` som en del av receptet.
+Från och med nu finns det inga standardvärden för R. Om du vill hämta utvärderingsmåtten för R måste du definiera klassen `applicationEvaluator` som en del av receptet.
 
 #### Anpassade bedömningsvärden för R
 
 Huvudsyftet med `applicationEvaluator` är att returnera ett JSON-objekt som innehåller nyckelvärdepar med mätvärden.
 
-Detta [applicationEvaluator.R](https://github.com/adobe/experience-platform-dsw-reference/blob/master/recipes/R/Retail%20-%20GradientBoosting/R/applicationEvaluator.R) kan användas som exempel. I det här exemplet `applicationEvaluator` är uppdelad i tre välkända avsnitt:
+Denna [applicationEvaluator.R](https://github.com/adobe/experience-platform-dsw-reference/blob/master/recipes/R/Retail%20-%20GradientBoosting/R/applicationEvaluator.R) kan användas som exempel. I det här exemplet delas `applicationEvaluator` upp i tre välkända avsnitt:
 - Läs in data
 - Datakivering/funktionsutveckling
 - Hämta sparad modell och utvärdera
 
-Data läses först in till en datauppsättning från en källa enligt definitionen i [retail.config.json](https://github.com/adobe/experience-platform-dsw-reference/blob/master/recipes/R/Retail%20-%20GradientBoosting/retail.config.json). Därifrån rensas och konstrueras data för att passa maskininlärningsmodellen. Slutligen används modellen för att göra en förutsägelse med hjälp av vår datamängd, och med utgångspunkt i de förväntade värdena och de faktiska värdena beräknas mätvärdena. I det här fallet definieras MAPE, MAE och RMSE och returneras i `metrics` -objekt.
+Data läses först in till en datauppsättning från en källa enligt definitionen i [retail.config.json](https://github.com/adobe/experience-platform-dsw-reference/blob/master/recipes/R/Retail%20-%20GradientBoosting/retail.config.json). Därifrån rensas och konstrueras data för att passa maskininlärningsmodellen. Slutligen används modellen för att göra en förutsägelse med hjälp av vår datamängd, och med utgångspunkt i de förväntade värdena och de faktiska värdena beräknas mätvärdena. I det här fallet definieras MAPE, MAE och RMSE och returneras i objektet `metrics`.
 
 ## Använda fördefinierade mätvärden och visualiseringsdiagram
 
-The [!DNL Sensei Model Insights Framework] har stöd för en standardmall för varje typ av maskininlärningsalgoritm. Tabellen nedan visar vanliga maskininlärningsalgoritmklasser på hög nivå och motsvarande utvärderingsmått och visualiseringar.
+[!DNL Sensei Model Insights Framework] stöder en standardmall för varje typ av maskininlärningsalgoritm. Tabellen nedan visar vanliga maskininlärningsalgoritmklasser på hög nivå och motsvarande utvärderingsmått och visualiseringar.
 
 | ML-algoritmtyp | Mätvärden för utvärdering | Visualiseringar |
 | --- | --- | --- |
-| Regression | - RMSE<br>- BILD<br>- MASE<br>- MAE | Förutsedd kontra faktisk värdesövertäckningskurva |
-| Binär klassificering | - Konfusionsmatris<br>- Precision-återkallning<br>- Exakthet<br>- F-poäng (specifikt F1, F2)<br>- AUC<br>- ROC | ROC-kurva och förvirringsmatris |
-| Klassificering i flera klasser | -Confusion matrix <br>- För varje klass: <br>- exakthet vid precisionsåterkallning <br>- F-poäng (specifikt F1, F2) | ROC-kurva och förvirringsmatris |
-| Klustring (med jordsanning) | - NMI (normaliserat poängvärde för ömsesidig information), AMI (justerat poängvärde för<br>- RI (Rand-index), ARI (justerat Rand-index)<br>- homogenitetspoäng, fullständighetspoäng och V-mått<br>- FMI (Fowlkes-Mallows index)<br>- Renhet<br>- Jaccard-index | Kluster med kluster och centroider med relativa klusterstorlekar som återspeglar de datapunkter som ingår i klustret |
-| Klustring (ej jordsanning) | - Tröghet<br>- Silhuettkoefficient<br>- CHI (index Calinski-Harabaz)<br>- DBI (Davies-Bouldin-index)<br>- Dunn-index | Kluster med kluster och centroider med relativa klusterstorlekar som återspeglar de datapunkter som ingår i klustret |
-| Rekommendation | - Genomsnittlig genomsnittlig precision (MAP) <br>-Normaliserat rabatterat kumulativt resultat <br>- Medelvärde för lutning <br>-Metrisk K | TBD |
+| Regression | - RMSE<br>- MAPE<br>- MASE<br>- MAE | Övertäckningskurva för förväntade kontra faktiska värden |
+| Binär klassificering | - Konfusionsmatris<br>- Precision-revy<br>- Accuracy<br>- F-score (specifikt F1,F2)<br>- AUC<br>- ROC | ROC-kurva och förvirringsmatris |
+| Klassificering i flera klasser | -Konfusionsmatris <br>- För varje klass: <br>- precision-/återkallelseprecision <br>- F-poäng (speciellt F1, F2) | ROC-kurva och förvirringsmatris |
+| Klustring (med sanning på marken) | - NMI (normaliserat ömsesidigt informationsresultat), AMI (justerat ömsesidigt informationsresultat)<br>- RI (Rand index), ARI (justerat Rand-index)<br> - homogenitetspoäng, fullständighetsresultat och V- measure<br> - FMI (Fowlkes-Mallows index)<br> - Renhet<br> - Jaccard-index | Kluster med kluster och centroider med relativa klusterstorlekar som återspeglar de datapunkter som ingår i klustret |
+| Klustring (ej jordsanning) | - Inertia<br>- Silhouette-koefficient<br>- CHI (Calinski-Harabaz index)<br>- DBI (Davies-Bouldin index)<br>- Dunn-index | Kluster med kluster och centroider med relativa klusterstorlekar som återspeglar de datapunkter som ingår i klustret |
+| Rekommendation | -Genomsnittlig genomsnittlig precision (MAP) <br> - normaliserad, rabatterad kumulativ förstärkning <br> - medelvärde för ömsesidigt rangordnade <br> - mått K | TBD |
 | Användningsexempel för TensorFlow | TensorFlow Model Analysis (TFMA) | Deepcompare neural network model comparison/visualization |
 | Andra/felsökningsfunktioner | Anpassad metrisk logik (och motsvarande utvärderingskartor) som definieras av modellförfattaren. Fantastisk felhantering om mallen inte matchar | Tabell med nyckelvärdepar för mätvärden |

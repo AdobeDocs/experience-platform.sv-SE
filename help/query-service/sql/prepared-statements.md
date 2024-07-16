@@ -6,14 +6,14 @@ description: I SQL används förberedda satser för att malla liknande frågor e
 exl-id: 7ee4a10e-2bfe-487f-a8c5-f03b5b1d77e3
 source-git-commit: 58eadaaf461ecd9598f3f508fab0c192cf058916
 workflow-type: tm+mt
-source-wordcount: '374'
-ht-degree: 6%
+source-wordcount: '364'
+ht-degree: 3%
 
 ---
 
 # Förberedda programsatser
 
-I SQL används förberedda satser för att mallatisera liknande frågor eller uppdateringar. Adobe Experience Platform [!DNL Query Service] stöder förberedda satser genom att använda en parametriserad fråga. Detta kan optimera prestanda eftersom du inte längre behöver tolka en fråga upprepade gånger.
+I SQL används förberedda satser för att mallatisera liknande frågor eller uppdateringar. Adobe Experience Platform [!DNL Query Service] stöder förberedda satser med hjälp av en parametriserad fråga. Detta kan optimera prestanda eftersom du inte längre behöver tolka en fråga upprepade gånger.
 
 ## Använda förberedda satser
 
@@ -25,7 +25,7 @@ Följande syntaxer stöds när förberedda satser används:
 
 ### Förbered en programsats {#prepare}
 
-Den här SQL-frågan sparar den skrivna SELECT-frågan med namnet som `PLAN_NAME`. Du kan använda variabler, till exempel `$1` i stället för faktiska värden. Den här förberedda satsen sparas under den aktuella sessionen. Observera att namn på planer är **not** skiftlägeskänslig.
+Den här SQL-frågan sparar den skrivna SELECT-frågan med namnet `PLAN_NAME`. Du kan använda variabler, till exempel `$1`, i stället för faktiska värden. Den här förberedda satsen sparas under den aktuella sessionen. Observera att plannamn är **inte** skiftlägeskänsliga.
 
 #### SQL-format
 

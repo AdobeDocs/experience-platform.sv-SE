@@ -13,11 +13,11 @@ ht-degree: 0%
 
 >[!NOTE]
 >
->Adobe Experience Platform Launch har omklassificerats som en serie datainsamlingstekniker i Adobe Experience Platform. Som ett resultat av detta har flera terminologiska förändringar införts i produktdokumentationen. Se följande [dokument](../../../term-updates.md) för en konsoliderad hänvisning till terminologiska förändringar.
+>Adobe Experience Platform Launch har omklassificerats som en serie datainsamlingstekniker i Adobe Experience Platform. Som ett resultat av detta har flera terminologiska förändringar införts i produktdokumentationen. I följande [dokument](../../../term-updates.md) finns en konsoliderad referens till de ändrade terminologin.
 
 Använd den här dokumentationen om du vill ha information om hur du installerar, konfigurerar och implementerar tillägget Adobe Media Analytics för ljud och video (tillägget Media Analytics). Här finns alternativ som är tillgängliga när du använder det här tillägget för att skapa en regel, tillsammans med exempel och länkar till exempel.
 
-Tillägget Media Analytics (MA) lägger till JavaScript Media SDK (Media 2.x SDK). Det här tillägget innehåller funktioner för att lägga till `MediaHeartbeat` spårningsinstans till en taggplats eller ett projekt. MA-tillägget kräver ytterligare två tillägg:
+Tillägget Media Analytics (MA) lägger till JavaScript Media SDK (Media 2.x SDK). Det här tillägget innehåller funktioner för att lägga till spårningsinstansen `MediaHeartbeat` till en taggplats eller ett -projekt. MA-tillägget kräver ytterligare två tillägg:
 
 * [Analystillägg](../analytics/overview.md)
 * [Experience Cloud ID-tillägg](../id-service/overview.md)
@@ -29,13 +29,13 @@ Tillägget Media Analytics (MA) lägger till JavaScript Media SDK (Media 2.x SDK
 När du har inkluderat alla tre av tilläggen som nämns ovan i taggprojektet kan du fortsätta på ett av två sätt:
 
 * Använd `MediaHeartbeat` API:er från ditt webbprogram
-* Inkludera, eller bygg, ett spelarspecifikt tillägg som mappar specifika mediespelarhändelser till API:erna på `MediaHeartbeat` spårarinstans. Den här instansen visas genom MA-tillägget.
+* Inkludera, eller bygg, ett spelarspecifikt tillägg som mappar specifika mediespelarhändelser till API:erna på spårningsinstansen `MediaHeartbeat`. Den här instansen visas genom MA-tillägget.
 
 ## Installera och konfigurera MA-tillägget
 
-* **Installera -** Om du vill installera MA-tillägget öppnar du tilläggsegenskapen och väljer **[!UICONTROL Extensions > Catalog]**, hovra över **[!UICONTROL Adobe Media Analytics for Audio and Video]** och markera **[!UICONTROL Install]**.
+* **Installera -** Om du vill installera MA-tillägget öppnar du tilläggsegenskapen, väljer **[!UICONTROL Extensions > Catalog]**, håller pekaren över **[!UICONTROL Adobe Media Analytics for Audio and Video]**-tillägget och väljer **[!UICONTROL Install]**.
 
-* **Konfigurera -** Konfigurera MA-tillägget genom att öppna [!UICONTROL Extensions] hovra över tillägget och välj **[!UICONTROL Configure]**:
+* **Konfigurera -** Om du vill konfigurera MA-tillägget öppnar du fliken [!UICONTROL Extensions], hovrar över tillägget och väljer **[!UICONTROL Configure]**:
 
 ![Konfiguration av MA-tillägg](../../../images/ext-va-config.jpg)
 
@@ -51,36 +51,36 @@ När du har inkluderat alla tre av tilläggen som nämns ovan i taggprojektet ka
 | Felsökningsloggning | Aktivera eller inaktivera loggning |
 | Aktivera SSL | Aktivera eller inaktivera sändning av ping via HTTPS |
 | Exportera API:er till Window-objekt | Aktivera eller inaktivera export av Media Analytics-API:er till globalt omfång |
-| Variabelnamn | En variabel som du använder för att exportera Media Analytics-API:er under `window` object |
+| Variabelnamn | En variabel som du använder för att exportera Media Analytics-API:er under objektet `window` |
 
-**Påminnelse:** MA-tillägget kräver [Analyser](../analytics/overview.md) och [EXPERIENCE CLOUD ID](../id-service/overview.md) tillägg. Du måste också lägga till dessa tillägg i tilläggsegenskapen och konfigurera dem.
+**Påminnelse:** För MA-tillägget krävs tilläggen [Analytics](../analytics/overview.md) och [Experience Cloud ID](../id-service/overview.md). Du måste också lägga till dessa tillägg i tilläggsegenskapen och konfigurera dem.
 
 ## Använda MA-tillägget
 
 ### Använda från en webbsida/JS-app
 
-MA-tillägget exporterar MediaHeartbeat-API:er i det globala fönsterobjektet genom att aktivera inställningen Exportera API:er till Window-objekt i dialogrutan [!UICONTROL Configuration] sida. Den exporterar API:erna under det konfigurerade variabelnamnet. Om till exempel variabelnamnet är konfigurerat att `ADB` kan MediaHeartbeat användas av `window.ADB.MediaHeartbeat`.
+MA-tillägget exporterar MediaHeartbeat-API:er i det globala fönsterobjektet genom att aktivera inställningen Exportera API:er till Window-objekt på sidan [!UICONTROL Configuration]. Den exporterar API:erna under det konfigurerade variabelnamnet. Om till exempel variabelnamnet är konfigurerat till `ADB` kan MediaHeartbeat användas av `window.ADB.MediaHeartbeat`.
 
 >[!IMPORTANT]
 >
->MA-tillägget exporterar bara API:erna när `window["CONFIGURED_VARIABLE_NAME"]` är odefinierad och åsidosätter inte befintliga variabler.
+>MA-tillägget exporterar bara API:erna när `window["CONFIGURED_VARIABLE_NAME"]` är odefinierad och inte åsidosätter befintliga variabler.
 
-1. **Skapa MediaHeartbeat-instans:** `window["CONFIGURED_VARIABLE_NAME"].MediaHeartbeat.getInstance`
+1. **Skapa MediaHeartbeat-instans:** `window["CONFIGURED_VARIABLE_NAME"].MediaHeartbeat.getInstance`
 
    **Parametrar:** Ett giltigt delegatobjekt som visar dessa funktioner.
 
    | Metod |  Beskrivning   |
    | :--- | :--- |
-   | `getQoSObject()` | Returnerar `theMediaObject` -instans som innehåller aktuell QoS-information. Den här metoden anropas flera gånger under en uppspelningssession. Spelarimplementeringen måste alltid returnera de senast tillgängliga QoS-data. |
+   | `getQoSObject()` | Returnerar `theMediaObject`-instans som innehåller aktuell QoS-information. Den här metoden anropas flera gånger under en uppspelningssession. Spelarimplementeringen måste alltid returnera de senast tillgängliga QoS-data. |
    | `getCurrentPlaybackTime()` | Returnerar spelhuvudets aktuella position. För VOD-spårning anges värdet i sekunder från mediaobjektets början. För LIVE/LIVE-spårning anges värdet i sekunder från programmets början. |
 
-   **Returvärde:** Ett löfte som antingen löses med en `MediaHeartbeat` eller avvisar med ett felmeddelande.
+   **Returvärde:** Ett löfte som antingen löses med en `MediaHeartbeat`-instans eller avvisas med ett felmeddelande.
 
-1. **Åtkomst till MediaHeartbeat-konstanter:** `window["CONFIGURED_VARIABLE_NAME"].MediaHeartbeat`
+1. **Åtkomst till MediaHeartbeat-konstanter:** `window["CONFIGURED_VARIABLE_NAME"].MediaHeartbeat`
 
-   Då visas alla konstanter och statiska metoder från [`MediaHeartbeat`](https://adobe-marketing-cloud.github.io/media-sdks/reference/javascript/MediaHeartbeat.html) klassen.
+   Då visas alla konstanter och statiska metoder från klassen [`MediaHeartbeat`](https://adobe-marketing-cloud.github.io/media-sdks/reference/javascript/MediaHeartbeat.html).
 
-   Du kan hämta exempelspelaren här: [MA Sample Player](https://github.com/Adobe-Marketing-Cloud/media-sdks/tree/master/samples/launch/js/2.x). Exempelspelaren fungerar som en referens för att visa hur man använder MA-tillägget för att stödja Media Analytics direkt från en webbapp.
+   Du kan hämta exempelspelaren här: [MA-exempelspelaren](https://github.com/Adobe-Marketing-Cloud/media-sdks/tree/master/samples/launch/js/2.x). Exempelspelaren fungerar som en referens för att visa hur man använder MA-tillägget för att stödja Media Analytics direkt från en webbapp.
 
 1. Skapa spårningsinstansen för MediaHeartbeat enligt följande:
 
@@ -109,13 +109,13 @@ MA-tillägget exporterar MediaHeartbeat-API:er i det globala fönsterobjektet ge
 
 ### Använda från andra tillägg
 
-MA-tillägget visar `get-instance` och `media-heartbeat` delade moduler till andra tillägg. (Mer information om delade moduler finns i [Dokumentation för delade moduler](../../../extension-dev/web/shared.md).)
+MA-tillägget visar de delade modulerna `get-instance` och `media-heartbeat` för andra tillägg. (Mer information om delade moduler finns i [Dokumentation om delade moduler](../../../extension-dev/web/shared.md).)
 
 >[!IMPORTANT]
 >
 >Delade moduler kan bara nås från andra tillägg. Det innebär att en webbsida/JS-app inte kan komma åt de delade modulerna eller använda `turbine` (se kodexempel nedan) utanför ett tillägg.
 
-1. **Skapa MediaHeartbeat-instans:** `get-instance` Delad modul
+1. **Skapa MediaHeartbeat-instans:** `get-instance` Delad modul
 
    **Parametrar:**
 
@@ -123,7 +123,7 @@ MA-tillägget visar `get-instance` och `media-heartbeat` delade moduler till and
 
      | Metod |  Beskrivning   |
      | :--- | :--- |
-     | `getQoSObject()` | Returnerar `MediaObject` -instans som innehåller aktuell QoS-information. Den här metoden anropas flera gånger under en uppspelningssession. Spelarimplementeringen måste alltid returnera de senast tillgängliga QoS-data. |
+     | `getQoSObject()` | Returnerar instansen `MediaObject` som innehåller aktuell QoS-information. Den här metoden anropas flera gånger under en uppspelningssession. Spelarimplementeringen måste alltid returnera de senast tillgängliga QoS-data. |
      | `getCurrentPlaybackTime()` | Returnerar spelhuvudets aktuella position. För VOD-spårning anges värdet i sekunder från mediaobjektets början. För LIVE/LIVE-spårning anges värdet i sekunder från programmets början. |
 
    * Ett valfritt config-objekt som visar dessa egenskaper:
@@ -134,9 +134,9 @@ MA-tillägget visar `get-instance` och `media-heartbeat` delade moduler till and
      | Spelarnamn | Namnet på den mediespelare som används (t.ex. &quot;AVPlayer&quot;, &quot;HTML5 Player&quot;, &quot;My Custom VideoPlayer&quot;) | Nej. Om det finns åsidosätter det värde som definierats under tilläggskonfigurationen. |
      | Kanal | Egenskapen Kanalnamn | Nej. Om det finns åsidosätter det värde som definierats under tilläggskonfigurationen. |
 
-   **Returvärde:** Ett löfte som antingen löses med en `MediaHeartbeat` eller avvisar med ett felmeddelande.
+   **Returvärde:** Ett löfte som antingen löses med en `MediaHeartbeat`-instans eller avvisas med ett felmeddelande.
 
-1. **Åtkomst till MediaHeartbeat-konstanter:** `media-heartbeat` Delad modul
+1. **Åtkomst till MediaHeartbeat-konstanter:** `media-heartbeat` Delad modul
 
    Den här modulen visar alla konstanter och statiska metoder från den här klassen: [https://adobe-marketing-cloud.github.io/media-sdks/reference/javascript/MediaHeartbeat.html](https://adobe-marketing-cloud.github.io/media-sdks/reference/javascript/MediaHeartbeat.html).
 
@@ -174,11 +174,11 @@ MA-tillägget visar `get-instance` och `media-heartbeat` delade moduler till and
    ...
    ```
 
-1. Använd instansen Media Heartbeat för att följa [Media SDK JS-dokumentation](https://experienceleague.adobe.com/docs/media-analytics/using/legacy-implementations/legacy-media-sdks/setup-javascript/set-up-js-2.html) och [JS API-dokumentation](https://adobe-marketing-cloud.github.io/media-sdks/reference/javascript/index.html) för att implementera mediespårning.
+1. Använd Media Heartbeat-instansen och följ [dokumentationen för Media SDK JS ](https://experienceleague.adobe.com/docs/media-analytics/using/legacy-implementations/legacy-media-sdks/setup-javascript/set-up-js-2.html) och [JS API ](https://adobe-marketing-cloud.github.io/media-sdks/reference/javascript/index.html) för att implementera mediespårning.
 
 >[!NOTE]
 >
->**Testning:** För att testa tillägget i den här versionen måste du överföra det till [Plattform](../../../extension-dev/submit/upload-and-test.md), där du har tillgång till alla beroende tillägg.
+>**Testar:** Om du vill testa tillägget i den här versionen måste du överföra det till [plattformen](../../../extension-dev/submit/upload-and-test.md), där du har tillgång till alla beroende tillägg.
 
 
 <!--

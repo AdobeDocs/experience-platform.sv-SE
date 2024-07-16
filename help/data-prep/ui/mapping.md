@@ -5,7 +5,7 @@ description: Det här dokumentet innehåller anvisningar om hur du använder fö
 exl-id: fafa4aca-fb64-47ff-a97d-c18e58ae4dae
 source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
 workflow-type: tm+mt
-source-wordcount: '1737'
+source-wordcount: '1739'
 ht-degree: 0%
 
 ---
@@ -16,46 +16,46 @@ Det här dokumentet innehåller anvisningar om hur du använder förinställning
 
 ## Komma igång
 
-Den här självstudiekursen kräver en fungerande förståelse av följande plattformskomponenter:
+Den här självstudien kräver en fungerande förståelse av följande plattformskomponenter:
 
 * [[!DNL Experience Data Model (XDM)] System](../../xdm/home.md): Det standardiserade ramverk som Platform använder för att organisera kundupplevelsedata.
-   * [Grunderna för schemakomposition](../../xdm/schema/composition.md): Lär dig mer om de grundläggande byggstenarna i XDM-scheman, inklusive viktiga principer och bästa praxis när det gäller schemakomposition.
-   * [Schemaredigeraren, genomgång](../../xdm/tutorials/create-schema-ui.md): Lär dig hur du skapar anpassade scheman med hjälp av gränssnittet för Schemaredigeraren.
+   * [Grundläggande om schemakomposition](../../xdm/schema/composition.md): Lär dig mer om grundstenarna i XDM-scheman, inklusive nyckelprinciper och bästa metoder för schemakomposition.
+   * [Schemaredigeraren, självstudiekurs](../../xdm/tutorials/create-schema-ui.md): Lär dig hur du skapar anpassade scheman med hjälp av gränssnittet för Schemaredigeraren.
 * [Identitetstjänst](../../identity-service/home.md): Få en bättre bild av enskilda kunder och deras beteende genom att skapa en bro mellan identiteter på olika enheter och system.
-* [[!DNL Real-Time Customer Profile]](../../profile/home.md): Ger en enhetlig konsumentprofil i realtid baserad på aggregerade data från flera källor.
-* [Källor](../../sources/home.md): Experience Platform tillåter att data kan hämtas från olika källor samtidigt som du kan strukturera, märka och förbättra inkommande data med hjälp av plattformstjänster.
+* [[!DNL Real-Time Customer Profile]](../../profile/home.md): Tillhandahåller en enhetlig konsumentprofil i realtid baserad på aggregerade data från flera källor.
+* [Källor](../../sources/home.md): Experience Platform tillåter data att hämtas från olika källor samtidigt som du kan strukturera, etikettera och förbättra inkommande data med hjälp av plattformstjänster.
 
 ## Dataflödesdetaljer
 
 >[!TIP]
 >
->Du kan komma åt dataflödesdetaljer genom att välja valfri källa från källkatalogen. Mer information finns i [källöversikt](../../sources/home.md).
+>Du kan få åtkomst till dataflödesdetaljer genom att välja valfri källa från källkatalogen. Mer information finns i [Källöversikt](../../sources/home.md).
 
 Innan du kan mappa dina CSV-data till ett XDM-schema måste du först upprätta information om dataflödet.
 
-The [!UICONTROL Dataflow detail] kan du välja om du vill importera dina CSV-data till en befintlig måldatauppsättning eller till en ny måldatauppsättning. En befintlig datauppsättning levereras med ett fördefinierat målschema som du kan mappa dina data till, medan en ny datauppsättning kräver att du väljer ett befintligt schema, eller skapar ett nytt schema, för att mappa dina data till.
+På sidan [!UICONTROL Dataflow detail] kan du välja om du vill importera dina CSV-data till en befintlig måldatauppsättning eller en ny måldatauppsättning. En befintlig datauppsättning levereras med ett fördefinierat målschema som du kan mappa dina data till, medan en ny datauppsättning kräver att du väljer ett befintligt schema, eller skapar ett nytt schema, för att mappa dina data till.
 
 ### Använd en befintlig måldatamängd
 
-Om du vill importera dina CSV-data till en befintlig datauppsättning väljer du **[!UICONTROL Existing dataset]**. Du kan antingen hämta en befintlig datauppsättning med [!UICONTROL Advanced search] eller genom att bläddra igenom listan med befintliga datauppsättningar i listrutan.
+Om du vill importera dina CSV-data till en befintlig datauppsättning väljer du **[!UICONTROL Existing dataset]**. Du kan antingen hämta en befintlig datauppsättning med alternativet [!UICONTROL Advanced search] eller genom att bläddra igenom listan med befintliga datauppsättningar i listrutan.
 
 Ange ett namn för dataflödet och en valfri beskrivning när du har valt en datauppsättning.
 
-Under den här processen kan du även aktivera [!UICONTROL Error diagnostics] och [!UICONTROL Partial ingestion]. [!UICONTROL Error diagnostics] möjliggör detaljerad generering av felmeddelanden för alla felaktiga poster som inträffar i dataflödet, medan [!UICONTROL Partial ingestion] gör att du kan importera data som innehåller fel, upp till ett visst tröskelvärde som du manuellt anger. Se [partiell batchingång - översikt](../../ingestion/batch-ingestion/partial.md) för mer information.
+Under den här processen kan du även aktivera [!UICONTROL Error diagnostics] och [!UICONTROL Partial ingestion]. [!UICONTROL Error diagnostics] aktiverar detaljerad generering av felmeddelanden för alla felaktiga poster som inträffar i dataflödet, medan [!UICONTROL Partial ingestion] gör att du kan importera data som innehåller fel, upp till ett visst tröskelvärde som du manuellt anger. Mer information finns i [översikten över partiell gruppöverföring](../../ingestion/batch-ingestion/partial.md).
 
-![befintlig datamängd](../images/ui/mapping/existing-dataset.png)
+![befintlig-datamängd](../images/ui/mapping/existing-dataset.png)
 
 ### Använd en ny måldatamängd
 
-Om du vill importera dina CSV-data till en ny datauppsättning väljer du **[!UICONTROL New dataset]** och ange sedan ett namn och en valfri beskrivning för utdatauppsättningen. Välj sedan ett schema att mappa till med [!UICONTROL Advanced search] eller genom att bläddra igenom listan med befintliga scheman i listrutan.
+Om du vill importera dina CSV-data till en ny datauppsättning väljer du **[!UICONTROL New dataset]** och anger sedan ett namn på utdatauppsättningen och en valfri beskrivning. Välj sedan ett schema att mappa till med alternativet [!UICONTROL Advanced search] eller genom att bläddra igenom listan med befintliga scheman i listrutan.
 
-När du har valt ett schema anger du ett namn för dataflödet och en valfri beskrivning och använder sedan [!UICONTROL Error diagnostics] och [!UICONTROL Partial ingestion] inställningar som du vill använda för dataflödet. När du är klar väljer du **[!UICONTROL Next]**.
+När du har valt ett schema anger du ett namn för dataflödet och en valfri beskrivning och tillämpar sedan de [!UICONTROL Error diagnostics]- och [!UICONTROL Partial ingestion]-inställningar du vill använda för dataflödet. När du är klar väljer du **[!UICONTROL Next]**.
 
-![new-dataset](../images/ui/mapping/new-dataset.png)
+![ny-datamängd](../images/ui/mapping/new-dataset.png)
 
 ## Välj data
 
-The [!UICONTROL Select data] visas med ett gränssnitt där du kan överföra dina lokala filer och förhandsgranska deras struktur och innehåll. Välj **[!UICONTROL Choose files]** för att överföra en CSV-fil från ditt lokala system. Du kan också dra och släppa CSV-filen som du vill överföra till [!UICONTROL Drag and drop files] -panelen.
+[!UICONTROL Select data]-steget visas med ett gränssnitt för att överföra dina lokala filer och förhandsgranska deras struktur och innehåll. Välj **[!UICONTROL Choose files]** om du vill överföra en CSV-fil från det lokala systemet. Du kan också dra och släppa den CSV-fil som du vill överföra till panelen [!UICONTROL Drag and drop files].
 
 >[!TIP]
 >
@@ -67,7 +67,7 @@ När filen har överförts uppdateras förhandsvisningsgränssnittet för att vi
 
 ![preview-sample-data](../images/ui/mapping/preview-sample-data.png)
 
-Beroende på vilken fil du har kan du välja en kolumnavgränsare, t.ex. tabbar, kommatecken, rör eller en anpassad kolumnavgränsare för källdata. Välj **[!UICONTROL Delimiter]** och välj sedan lämplig avgränsare på menyn.
+Beroende på vilken fil du har kan du välja en kolumnavgränsare, t.ex. tabbar, kommatecken, rör eller en anpassad kolumnavgränsare för källdata. Välj listrutepilen **[!UICONTROL Delimiter]** och välj sedan lämplig avgränsare på menyn.
 
 När du är klar väljer du **[!UICONTROL Next]**.
 
@@ -75,7 +75,7 @@ När du är klar väljer du **[!UICONTROL Next]**.
 
 ## Mappning
 
-The **[!UICONTROL mapping]** I finns ett omfattande verktyg för att mappa källfält från källschemat till rätt mål-XDM-fält i målschemat.
+Gränssnittet **[!UICONTROL mapping]** ger dig ett omfattande verktyg för att mappa källfält från källschemat till rätt mål-XDM-fält i målschemat.
 
 ![map-csv-to-xdm](../images/ui/mapping/map-csv-to-xdm.png)
 
@@ -90,21 +90,21 @@ Mappningsgränssnittet innehåller en kontrollpanel som ger information om häls
 | [!UICONTROL Identity fields] | Visar det totala antalet mappningsfält som definierats som identitet. Mappningsfälten representeras av en fingeravtrycksikon. |
 | [!UICONTROL Errors] | Visar antalet felaktiga mappningsfält. |
 
-![översta panelen](../images/ui/mapping/top-panel.png)
+![övre panelen](../images/ui/mapping/top-panel.png)
 
 Mappningsgränssnittet innehåller också en panel med alternativ som du kan välja mellan för att bättre interagera eller filtrera genom mappningsfälten.
 
 ![andra panelen](../images/ui/mapping/second-panel.png)
 
-Om du vill söka efter en viss mappningsuppsättning väljer du **[!UICONTROL Search source fields]** och ange namnet på de källdata som du vill isolera.
+Om du vill söka efter en viss mappningsuppsättning väljer du **[!UICONTROL Search source fields]** och anger namnet på källdata som du vill isolera.
 
 ![sök](../images/ui/mapping/search.png)
 
-Välj **[!UICONTROL All source fields]** om du vill se en listruta med filteralternativ för att begränsa visningen av mappningsgränssnittet bättre.
+Välj **[!UICONTROL All source fields]** om du vill se en listruta med filtreringsalternativ för att begränsa visningen av mappningsgränssnittet bättre.
 
 Filtreringsalternativen är:
 
-| Källfält | Beskrivning |
+| Source | Beskrivning |
 | --- | --- |
 | [!UICONTROL All source fields] | Det här alternativet visar alla källfält i källschemat. Det här alternativet visas som standard. |
 | [!UICONTROL Required fields] | Med det här alternativet filtreras källschemat så att endast de fält som krävs för att slutföra mappningen visas. |
@@ -127,15 +127,15 @@ Du kan lägga till ett nytt mappningsfält eller ett beräknat fält genom att v
 
 #### Nytt mappningsfält
 
-Om du vill lägga till ett nytt mappningsfält väljer du **[!UICONTROL New field type]** och sedan markera **[!UICONTROL Add new field]** i listrutan som visas.
+Om du vill lägga till ett nytt mappningsfält väljer du **[!UICONTROL New field type]** och sedan **[!UICONTROL Add new field]** i listrutan som visas.
 
 ![add-new-field](../images/ui/mapping/add-new-field.png)
 
-Välj sedan det källfält som du vill lägga till i källschematrädet som visas och välj sedan **[!UICONTROL Select]**.
+Välj sedan det källfält som du vill lägga till i källschematrädet som visas och välj **[!UICONTROL Select]**.
 
 ![select-new-field](../images/ui/mapping/select-new-field.png)
 
-Mappningsgränssnittet uppdateras med det valda källfältet och ett tomt målfält. Välj **[!UICONTROL Map target field]** för att börja mappa det nya källfältet till rätt mål-XDM-fält.
+Mappningsgränssnittet uppdateras med det valda källfältet och ett tomt målfält. Välj **[!UICONTROL Map target field]** om du vill börja mappa det nya källfältet till rätt mål-XDM-fält.
 
 ![map-target-field](../images/ui/mapping/map-target-field.png)
 
@@ -151,15 +151,15 @@ När du är klar väljer du schemaikonen för att stänga målschemagränssnitte
 
 Beräknade fält tillåter att värden skapas baserat på attributen i indatabladet. Dessa värden kan sedan tilldelas attribut i målschemat och ges ett namn och en beskrivning som gör det enklare att referera till. Beräknade fält får innehålla högst 4 096 tecken.
 
-Om du vill skapa ett beräkningsfält väljer du **[!UICONTROL New field type]** och sedan markera **[!UICONTROL Add calculated field]**
+Om du vill skapa ett beräknat fält väljer du **[!UICONTROL New field type]** och sedan **[!UICONTROL Add calculated field]**
 
 ![add-calculate-field](../images/ui/mapping/add-calculated-field.png)
 
-The **[!UICONTROL Create calculated field]** visas. Den vänstra dialogrutan innehåller de fält, funktioner och operatorer som stöds i beräkningsfält. Välj en av flikarna för att börja lägga till funktioner, fält eller operatorer i uttrycksredigeraren.
+Panelen **[!UICONTROL Create calculated field]** visas. Den vänstra dialogrutan innehåller de fält, funktioner och operatorer som stöds i beräkningsfält. Välj en av flikarna för att börja lägga till funktioner, fält eller operatorer i uttrycksredigeraren.
 
 | Tabb | Beskrivning |
 | --- | ----------- |
-| [!UICONTROL Function] | På fliken Funktioner visas de funktioner som är tillgängliga för att omforma data. Om du vill veta mer om funktionerna som du kan använda i beräkningsfält kan du läsa guiden på [använda funktioner för dataförberedelse (Mapper)](../functions.md). |
+| [!UICONTROL Function] | På fliken Funktioner visas de funktioner som är tillgängliga för att omforma data. Om du vill veta mer om de funktioner du kan använda i beräknade fält kan du läsa guiden för [med hjälp av datapersonfunktioner (Mapper)](../functions.md). |
 | [!UICONTROL Field] | Fliken Fält visar de fält och attribut som är tillgängliga i källschemat. |
 | [!UICONTROL Operator] | På fliken Operatorer visas de operatorer som är tillgängliga för att omforma data. |
 
@@ -171,17 +171,17 @@ Du kan lägga till fält, funktioner och operatorer manuellt med uttrycksrediger
 
 ### Importera mappning {#import}
 
-Du kan återanvända mappningen av ett befintligt dataflöde för att minska den manuella konfigurationstiden för dataimporten och begränsa antalet misstag. Välj **[!UICONTROL Import mapping]** för att återanvända en befintlig mappning.
+Du kan återanvända mappningen av ett befintligt dataflöde för att minska den manuella konfigurationstiden för dataimporten och begränsa antalet misstag. Välj **[!UICONTROL Import mapping]** om du vill återanvända en befintlig mappning.
 
-![import-mappning](../images/ui/mapping/import-mapping.png)
+![import-mapping](../images/ui/mapping/import-mapping.png)
 
-The [!UICONTROL Import mapping] visas så att du får en lista över de dataflöden du kan välja mellan.
+Fönstret [!UICONTROL Import mapping] visas och innehåller en lista med dataflöden att välja mellan.
 
 Välj förhandsgranskningsikonen om du vill förhandsgranska mappningen av det dataflöde du valde.
 
 ![list-mapping](../images/ui/mapping/list-mapping.png)
 
-I förhandsgranskningsfönstret kan du granska befintlig mappning innan du importerar till dataflödet. När du har verifierat mappningen kan du välja **[!UICONTROL Back]** om du vill återgå till listan med dataflöden och inspektera en annan uppsättning mappningar, eller så kan du välja **[!UICONTROL Select]** för att fortsätta.
+I förhandsgranskningsfönstret kan du granska befintlig mappning innan du importerar till dataflödet. När du har verifierat mappningen kan du välja **[!UICONTROL Back]** om du vill återgå till listan med dataflöden och inspektera en annan uppsättning mappningar. Du kan också välja **[!UICONTROL Select]** om du vill fortsätta.
 
 ![preview-mapping](../images/ui/mapping/preview-mapping.png)
 
@@ -197,7 +197,7 @@ Gränssnittet uppdateras med den mappning som du importerade.
 
 ![mappning-importerad](../images/ui/mapping/mapping-imported.png)
 
-Välj **[!UICONTROL Preview data]** för att se mappningsresultat på upp till 100 rader med exempeldata från den valda datauppsättningen.
+Välj **[!UICONTROL Preview data]** om du vill visa mappningsresultat på upp till 100 rader med exempeldata från den valda datauppsättningen.
 
 ![preview-data](../images/ui/mapping/preview-data.png)
 
@@ -209,17 +209,17 @@ Om du vill ta bort alla mappningsfält väljer du **[!UICONTROL Clear all mappin
 
 ![clear-all](../images/ui/mapping/clear-all.png)
 
-### Använda mappningsgränssnittet
+### Mappningsgränssnittet används
 
 Plattformen ger automatiskt intelligenta rekommendationer för automatiskt mappade fält baserat på det målschema eller den datamängd du valt. Du kan justera mappningsreglerna manuellt så att de passar dina användningsfall eller åtgärda eventuella dubblerade mappningsfält för att ta bort eventuella fel.
 
-![mappningsgränssnitt](../images/ui/mapping/mapping-interface.png)
+![mapping-interface](../images/ui/mapping/mapping-interface.png)
 
 Välj den glödlampikon i målfältet som du vill justera.
 
 ![mapping-recc](../images/ui/mapping/mapping-recc.png)
 
-The [!UICONTROL Mapping recommendations] popup-panelen visas med en lista över rekommenderade målfält som kan mappas till ett visst källfält. Som standard tillämpas den första rekommendationen automatiskt.
+Popup-panelen [!UICONTROL Mapping recommendations] visas med en lista över rekommenderade målfält som kan mappas till ett visst källfält. Som standard tillämpas den första rekommendationen automatiskt.
 
 Ibland finns det mer än en rekommendation för källschemat. När detta inträffar visas den mest framträdande rekommendationen på mappningskortet, följt av en ikon som innehåller antalet ytterligare rekommendationer som är tillgängliga. Om du väljer glödlampsikonen visas en lista med ytterligare rekommendationer. Du kan välja en av de alternativa rekommendationerna genom att markera kryssrutan bredvid den rekommendation du vill mappa till i stället.
 
@@ -235,7 +235,7 @@ Gränssnittet för målschemamappning visas i samma vy som mappningsfälten, vil
 
 När du är klar väljer du **[!UICONTROL Finish]** för att fortsätta.
 
-![avsluta](../images/ui/mapping/finish.png)
+![slut](../images/ui/mapping/finish.png)
 
 ## Nästa steg
 

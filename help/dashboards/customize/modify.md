@@ -18,23 +18,23 @@ I Adobe Experience Platform användargränssnitt kan du visa och interagera med 
 >
 >Alla uppdateringar som görs på kontrollpanelerna görs per organisation och per sandlåda.
 
-Den här handboken innehåller stegvisa instruktioner för hur du anpassar hur instrumentpanelsdata visas i [!UICONTROL Profiles], [!UICONTROL Segments]och [!UICONTROL Destinations] kontrollpaneler i plattformsgränssnittet.
+Den här handboken innehåller stegvisa instruktioner för hur du anpassar hur instrumentpanelsdata visas på kontrollpanelerna [!UICONTROL Profiles], [!UICONTROL Segments] och [!UICONTROL Destinations] i plattformsgränssnittet.
 
 ## Komma igång
 
-Från en kontrollpanel (till exempel [!UICONTROL Profiles] kontrollpanel) kan du välja **[!UICONTROL Modify dashboard]** för att ändra storlek på och ordna om befintliga widgetar.
+Från en kontrollpanel (till exempel kontrollpanelen [!UICONTROL Profiles]) kan du välja **[!UICONTROL Modify dashboard]** för att ändra storlek på och ordna om befintliga widgetar.
 
-![Kontrollpanelen Profiler med kontrollpanelen Ändra markerad.](../images/customization/modify-dashboard.png)
+![Kontrollpanelen för profiler med kontrollpanelen Ändra markerad.](../images/customization/modify-dashboard.png)
 
 ## Ordna om widgetar
 
-När du har valt att ändra kontrollpanelen kan du ändra ordningen på widgetarna genom att markera widgetens rubrik och dra och släppa widgetarna i önskad ordning. I det här exemplet **[!UICONTROL Profiles count trend]** widgeten flyttas till den översta raden och **[!UICONTROL Profile count]** visas nu på den andra raden.
+När du har valt att ändra kontrollpanelen kan du ändra ordningen på widgetarna genom att markera widgetens rubrik och dra och släppa widgetarna i önskad ordning. I det här exemplet flyttas widgeten **[!UICONTROL Profiles count trend]** till den översta raden och widgeten **[!UICONTROL Profile count]** visas nu på den andra raden.
 
 ![Kontrollpanelen Profiler med två omsorterade widgetar markerade.](../images/customization/move-widget.png)
 
 ## Ändra storlek på widgetar
 
-Du kan också ändra storlek på en widget genom att markera vinkelsymbolen i det nedre högra hörnet av widgeten (`⌟`) och dra widgeten till önskad storlek. I det här exemplet **[!UICONTROL Profiles by identity]** widgetens storlek ändras så att den fyller hela den översta raden och de andra widgetarna flyttas automatiskt till den andra raden. Observera hur den vågräta axeln justeras för att ge mer detaljerade steg när widgeten blir större.
+Du kan också ändra storlek på en widget genom att markera vinkelsymbolen i det nedre högra hörnet av widgeten (`⌟`) och dra widgeten till önskad storlek. I det här exemplet ändras storleken på widgeten **[!UICONTROL Profiles by identity]** så att den fyller hela den översta raden och de andra widgetarna flyttas automatiskt till den andra raden. Observera hur den vågräta axeln justeras för att ge mer detaljerade steg när widgeten blir större.
 
 >[!NOTE]
 >
@@ -44,18 +44,18 @@ Du kan också ändra storlek på en widget genom att markera vinkelsymbolen i de
 
 ## Spara uppdateringar av instrumentpanelen
 
-När du har flyttat och ändrat storlek på widgetar väljer du **[!UICONTROL Save & exit]** om du vill spara ändringarna och återgå till huvudvyn på kontrollpanelen. Om du inte vill behålla ändringarna väljer du **[!UICONTROL Cancel]** om du vill återställa kontrollpanelen och återgå till den huvudsakliga instrumentpanelsvyn.
+När du har flyttat och ändrat storlek på widgetar väljer du **[!UICONTROL Save & exit]** för att spara ändringarna och återgå till huvudinstrumentpanelsvyn. Om du inte vill behålla ändringarna väljer du **[!UICONTROL Cancel]** för att återställa instrumentpanelen och återgå till huvudinstrumentpanelsvyn.
 
-![Kontrollpanelen Profiler med både Avbryt och Spara och Avsluta markerat.](../images/customization/save-changes.png)
+![Kontrollpanelen för profiler med både Avbryt och Spara och Avsluta markerat.](../images/customization/save-changes.png)
 
 ## Widget-bibliotek
 
-Förutom att ändra storlek på och ordna om widgetar, välja **[!UICONTROL Modify dashboard]** i [!UICONTROL Profiles], [!UICONTROL Segments]och [!UICONTROL Destinations] på panelerna får du tillgång till **[!UICONTROL Widget library]** där du kan hitta fler widgetar att visa eller skapa anpassade widgetar för din organisation.
+Förutom att ändra storlek på och ordna om widgetar kan du välja **[!UICONTROL Modify dashboard]** i [!UICONTROL Profiles]-, [!UICONTROL Segments]- och [!UICONTROL Destinations]-kontrollpanelerna för att komma åt **[!UICONTROL Widget library]**, där du kan hitta fler widgetar att visa eller skapa anpassade widgetar för din organisation.
 
-Stegvisa instruktioner om hur du får tillgång till och arbetar med [!UICONTROL Widget library], se [widgetbibliotekshandbok](widget-library.md).
+Stegvisa instruktioner om hur du kommer åt och arbetar med [!UICONTROL Widget library] finns i [widgetens bibliotekshandbok](widget-library.md).
 
-![Widgetbibliotekets arbetsyta med Standard och Egen markerat.](../images/customization/widget-library.png)
+![Widgetbibliotekets arbetsyta med Standard och Egen markerad.](../images/customization/widget-library.png)
 
 ## Nästa steg
 
-När du har läst det här dokumentet har du lärt dig hur du använder funktionen för att ändra ordning på och ändra storlek på widgetar för att anpassa instrumentpanelsvyn. Om du vill lära dig hur du skapar och lägger till widgetar på dina instrumentpaneler kan du läsa [widgetbibliotekshandbok](widget-library.md).
+När du har läst det här dokumentet har du lärt dig hur du använder funktionen för att ändra ordning på och ändra storlek på widgetar för att anpassa instrumentpanelsvyn. Om du vill lära dig hur du skapar och lägger till widgetar på dina instrumentpaneler kan du läsa [widgetens bibliotekshandbok](widget-library.md).

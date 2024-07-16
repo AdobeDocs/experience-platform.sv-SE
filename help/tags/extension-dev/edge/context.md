@@ -1,11 +1,11 @@
 ---
-title: Kontext i Edge Extension Modules
+title: Sammanhang i Edge Extension Modules
 description: Lär dig mer om kontextobjektet och den roll det spelar när det gäller att interagera med biblioteksmoduler i taggtillägg för kantegenskaper.
 exl-id: 04e4e369-687e-4b46-9d24-18a97a218555
 source-git-commit: a8b0282004dd57096dfc63a9adb82ad70d37495d
 workflow-type: tm+mt
-source-wordcount: '744'
-ht-degree: 1%
+source-wordcount: '726'
+ht-degree: 0%
 
 ---
 
@@ -13,17 +13,17 @@ ht-degree: 1%
 
 >[!NOTE]
 >
-> Adobe Experience Platform Launch har omklassificerats som en serie datainsamlingstekniker i Adobe Experience Platform. Som ett resultat av detta har flera terminologiska förändringar införts i produktdokumentationen. Se följande [dokument](../../term-updates.md) för en konsoliderad hänvisning till terminologiska förändringar.
+> Adobe Experience Platform Launch har omklassificerats som en serie datainsamlingstekniker i Adobe Experience Platform. Som ett resultat av detta har flera terminologiska förändringar införts i produktdokumentationen. I följande [dokument](../../term-updates.md) finns en konsoliderad referens till de ändrade terminologin.
 
-Alla biblioteksmoduler i edge-tillägg har en `context` när de körs. Det här dokumentet innehåller de egenskaper som finns i `context` objekt och den roll de spelar i biblioteksmoduler.
+Alla biblioteksmoduler i edge-tillägg får ett `context`-objekt när de körs. Det här dokumentet innehåller egenskaperna som tillhandahålls av objektet `context` och rollen som de spelar i biblioteksmoduler.
 
 ## Adobe Request Context (arc)
 
-The `arc` -egenskapen är ett objekt som innehåller information om den händelse som utlöser regeln. Avsnitten nedan beskriver de olika underegenskaperna i objektet.
+Egenskapen `arc` är ett objekt som ger information om händelsen som utlöser regeln. Avsnitten nedan beskriver de olika underegenskaperna som finns i objektet.
 
 ### [!DNL event]
 
-The `event` -objektet representerar händelsen som utlöste regeln och innehåller följande värden:
+Objektet `event` representerar händelsen som utlöste regeln och innehåller följande värden:
 
 ```js
 logger.log(context.arc.event);
@@ -36,13 +36,13 @@ logger.log(context.arc.event);
 
 ### [!DNL request]
 
-inte blandas ihop med en begäran från klientenheten, `request` är ett något modifierat objekt som kommer från Adobe Experience Platform Edge Network.
+För att inte blandas ihop med en begäran från klientenheten är `request` ett något ändrat objekt som kommer från Adobe Experience Platform Edge Network.
 
 ```js
 logger.log(context.arc.request)
 ```
 
-The `request` objektet har två egenskaper på den översta nivån: `body` och `head`. The `body` egenskapen innehåller XDM-information (Experience Data Model) och kan inspekteras i Adobe Experience Platform Debugger när du navigerar till **[!UICONTROL Launch]** och väljer **[!UICONTROL Edge Trace]** -fliken.
+Objektet `request` har två toppnivåegenskaper: `body` och `head`. Egenskapen `body` innehåller XDM-information (Experience Data Model) och kan inspekteras i Adobe Experience Platform Debugger när du navigerar till **[!UICONTROL Launch]** och väljer fliken **[!UICONTROL Edge Trace]**.
 
 ### [!DNL ruleStash] {#rulestash}
 
@@ -52,13 +52,13 @@ The `request` objektet har två egenskaper på den översta nivån: `body` och `
 logger.log(context.arc.ruleStash);
 ```
 
-Varje tillägg har ett eget namnutrymme. Om tillägget till exempel har namnet `send-beacon`, alla resultat från `send-beacon` åtgärder kommer att lagras på `ruleStash['send-beacon']` namnutrymme.
+Varje tillägg har ett eget namnutrymme. Om tillägget till exempel har namnet `send-beacon` kommer alla resultat från `send-beacon`-åtgärder att lagras i namnutrymmet `ruleStash['send-beacon']`.
 
 Namnutrymmet är unikt för varje tillägg och har värdet `undefined` i början.
 
-Namnutrymmet åsidosätts av det returnerade resultatet från varje åtgärd. Ta till exempel en `transform` tillägg som innehåller två åtgärder: `generate-fullname` och `generate-fulladdress`. Dessa två åtgärder läggs sedan till i en regel.
+Namnutrymmet åsidosätts av det returnerade resultatet från varje åtgärd. Ta till exempel ett `transform`-tillägg som innehåller två åtgärder: `generate-fullname` och `generate-fulladdress`. Dessa två åtgärder läggs sedan till i en regel.
 
-Om resultatet av `generate-fullname` åtgärden är `Firstname Lastname`visas regelstrecket på följande sätt när åtgärden har slutförts:
+Om resultatet av åtgärden `generate-fullname` är `Firstname Lastname` visas regelstrecket så här när åtgärden har slutförts:
 
 ```js
 {
@@ -66,7 +66,7 @@ Om resultatet av `generate-fullname` åtgärden är `Firstname Lastname`visas re
 }
 ```
 
-Om resultatet av `generate-address` åtgärden är `3900 Adobe Way`visas regelstrecket på följande sätt när åtgärden har slutförts:
+Om resultatet av åtgärden `generate-address` är `3900 Adobe Way` visas regelstrecket så här när åtgärden har slutförts:
 
 ```js
 {
@@ -74,9 +74,9 @@ Om resultatet av `generate-address` åtgärden är `3900 Adobe Way`visas regelst
 }
 ```
 
-Observera att&quot;FirstName LastName&quot; inte längre finns i regelstrecket, eftersom `generate-address` funktionsmakrot åsidosätter det med ett nytt värde.
+Observera att&quot;Förnamn efternamn&quot; inte längre finns i regelstrecket eftersom åtgärden `generate-address` åsidosätter det med ett nytt värde.
 
-Om du vill `ruleStash` för att lagra resultaten från båda åtgärderna i `transform` namnutrymme kan du skriva din åtgärdsmodul som i följande exempel:
+Om du vill att `ruleStash` ska lagra resultaten från båda åtgärderna i namnutrymmet `transform` kan du skriva en åtgärdsmodul som liknar följande exempel:
 
 ```js
 module.exports = (context) => {
@@ -92,7 +92,7 @@ module.exports = (context) => {
 }
 ```
 
-Första gången den här åtgärden utförs, `ruleStash` börjar som `undefined` och initieras därför som ett tomt objekt. Nästa gång som åtgärden körs får den `ruleStash` som returnerades när åtgärden anropades tidigare. Använda ett objekt som `ruleStash` gör att du kan lägga till nya data utan att förlora data som tidigare angetts av andra åtgärder från vårt tillägg.
+Första gången den här åtgärden utförs startar `ruleStash` som `undefined` och initieras därför som ett tomt objekt. Nästa gång åtgärden körs får den `ruleStash` som returnerades när åtgärden anropades tidigare. Om du använder ett objekt som `ruleStash` kan du lägga till nya data utan att förlora data som tidigare angetts av andra åtgärder från tillägget.
 
 >[!NOTE]
 >
@@ -100,11 +100,11 @@ Första gången den här åtgärden utförs, `ruleStash` börjar som `undefined`
 
 ## Verktyg
 
-The `utils` egenskapen representerar ett objekt som innehåller funktioner som är specifika för tagghanteringen.
+Egenskapen `utils` representerar ett objekt som innehåller verktyg som är specifika för tagghanteringen.
 
 ### [!DNL logger]
 
-The `logger` kan du logga meddelanden som ska visas under felsökningssessioner när du använder [Adobe Experience Platform Debugger](https://chrome.google.com/webstore/detail/adobe-experience-platform/bfnnokhpnncpkdmbokanobigaccjkpob).
+Med verktyget `logger` kan du logga meddelanden som ska visas under felsökningssessioner när du använder [Adobe Experience Platform Debugger](https://chrome.google.com/webstore/detail/adobe-experience-platform/bfnnokhpnncpkdmbokanobigaccjkpob).
 
 ```js
 context.utils.logger.error('Error!');
@@ -118,11 +118,11 @@ Loggaren har följande metoder, där `message` är meddelandet som du vill logga
 | `info(message)` | Loggar ett informationsmeddelande till konsolen. |
 | `warn(message)` | Loggar ett varningsmeddelande till konsolen. |
 | `error(message)` | Loggar ett felmeddelande till konsolen. |
-| `debug(message)` | Loggar ett felsökningsmeddelande till konsolen. Detta visas bara när `verbose` loggning är aktiverat i webbläsarkonsolen. |
+| `debug(message)` | Loggar ett felsökningsmeddelande till konsolen. Detta visas bara när `verbose`-loggning har aktiverats i webbläsarkonsolen. |
 
 ### [!DNL fetch]
 
-Det här verktyget implementerar [Hämta API](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API). Du kan använda funktionen för att göra förfrågningar till slutpunkter från tredje part.
+Det här verktyget implementerar [API:t för hämtning](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API). Du kan använda funktionen för att göra förfrågningar till slutpunkter från tredje part.
 
 ```js
 context.utils.fetch('http://example.com/movies.json')
@@ -141,12 +141,12 @@ Objektet innehåller följande värden:
 
 | Egenskap | Beskrivning |
 | --- | --- |
-| `turbineVersion` | The [Turbin](https://www.npmjs.com/package/@adobe/reactor-turbine-edge) version som används i det aktuella biblioteket. |
-| `turbineBuildDate` | ISO 8601-datumet när versionen av [Turbin](https://www.npmjs.com/package/@adobe/reactor-turbine-edge) som användes inuti behållaren skapades. |
+| `turbineVersion` | Den [turbinversion](https://www.npmjs.com/package/@adobe/reactor-turbine-edge) som används i det aktuella biblioteket. |
+| `turbineBuildDate` | ISO 8601-datumet när versionen av [turbin](https://www.npmjs.com/package/@adobe/reactor-turbine-edge) som används i behållaren skapades. |
 | `buildDate` | ISO 8601-datumet när det aktuella biblioteket skapades. |
-| `environment` | Den miljö som det här biblioteket skapades för. Möjliga värden är `development`, `staging`och `production.` |
+| `environment` | Den miljö som det här biblioteket skapades för. Möjliga värden är `development`, `staging` och `production.` |
 
-Följande är ett exempel `getBuildInfo` objekt för att visa de värden som returneras:
+Följande är ett exempelobjekt, `getBuildInfo`, som demonstrerar de värden som returneras:
 
 ```js
 {
@@ -159,7 +159,7 @@ Följande är ett exempel `getBuildInfo` objekt för att visa de värden som ret
 
 ### [!DNL getExtensionSettings]
 
-Verktyget returnerar `settings` objekt som senast sparades från [tilläggskonfiguration](../configuration.md) vy.
+Det här verktyget returnerar det `settings`-objekt som senast sparades från vyn [tilläggskonfiguration](../configuration.md).
 
 ```js
 logger.log(context.utils.getExtensionSettings());
@@ -167,7 +167,7 @@ logger.log(context.utils.getExtensionSettings());
 
 ### [!DNL getSettings]
 
-Verktyget returnerar `settings` objekt som senast sparades från motsvarande biblioteksmodulvy.
+Det här verktyget returnerar det `settings`-objekt som senast sparades från motsvarande biblioteksmodulvy.
 
 ```js
 logger.log(context.utils.getSettings());

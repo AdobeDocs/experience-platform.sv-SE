@@ -7,43 +7,43 @@ description: I den här självstudiekursen beskrivs steg för hur du hämtar inf
 exl-id: 5fb9f28d-091e-4124-8d8e-b8a675938d3a
 source-git-commit: 81f48de908b274d836f551bec5693de13c5edaf1
 workflow-type: tm+mt
-source-wordcount: '645'
+source-wordcount: '643'
 ht-degree: 0%
 
 ---
 
 # Hämtning av misslyckade batchar med API:t för dataåtkomst
 
-Adobe Experience Platform har två metoder för att överföra och importera data. Du kan antingen använda gruppinmatning, vilket gör att du kan infoga data med olika filtyper (t.ex. CSV-filer), eller direktuppspelning, vilket gör att du kan infoga data i [!DNL Platform] med direktuppspelade slutpunkter i realtid.
+Adobe Experience Platform har två metoder för att överföra och importera data. Du kan antingen använda gruppinmatning, vilket gör att du kan infoga deras data med olika filtyper (till exempel CSV-filer), eller direktuppspelning, vilket gör att du kan infoga deras data i [!DNL Platform] med direktuppspelningsslutpunkter i realtid.
 
-I den här självstudiekursen beskrivs steg för att hämta information om en misslyckad batch med [!DNL Data Ingestion] API:er.
+I den här självstudiekursen beskrivs steg för att hämta information om en misslyckad batch med hjälp av [!DNL Data Ingestion] API:er.
 
 ## Komma igång
 
 Handboken kräver en fungerande förståelse av följande komponenter i Adobe Experience Platform:
 
-- [[!DNL Experience Data Model (XDM) System]](../../xdm/home.md): Det standardiserade ramverk som [!DNL Experience Platform] organiserar kundupplevelsedata.
+- [[!DNL Experience Data Model (XDM) System]](../../xdm/home.md): Det standardiserade ramverket som [!DNL Experience Platform] organiserar kundupplevelsedata med.
 - [[!DNL Data Ingestion]](../home.md): Metoderna som data kan skickas till [!DNL Experience Platform].
 
 ### Läser exempel-API-anrop
 
-I den här självstudiekursen finns exempel-API-anrop som visar hur du formaterar dina begäranden. Det kan vara sökvägar, obligatoriska rubriker och korrekt formaterade begärandenyttolaster. Ett exempel på JSON som returneras i API-svar finns också. Information om konventionerna som används i dokumentationen för exempel-API-anrop finns i avsnittet om [läsa exempel-API-anrop](../../landing/troubleshooting.md#how-do-i-format-an-api-request) i [!DNL Experience Platform] felsökningsguide.
+I den här självstudiekursen finns exempel-API-anrop som visar hur du formaterar dina begäranden. Det kan vara sökvägar, obligatoriska rubriker och korrekt formaterade begärandenyttolaster. Ett exempel på JSON som returneras i API-svar finns också. Information om de konventioner som används i dokumentationen för exempel-API-anrop finns i avsnittet [Så här läser du exempel-API-anrop](../../landing/troubleshooting.md#how-do-i-format-an-api-request) i felsökningsguiden för [!DNL Experience Platform].
 
 ### Samla in värden för obligatoriska rubriker
 
-För att ringa [!DNL Platform] API:er måste du först slutföra [självstudiekurs om autentisering](https://www.adobe.com/go/platform-api-authentication-en). När du är klar med självstudiekursen för autentisering visas värdena för var och en av de obligatoriska rubrikerna i alla [!DNL Experience Platform] API-anrop enligt nedan:
+För att kunna anropa [!DNL Platform] API:er måste du först slutföra [autentiseringssjälvstudiekursen](https://www.adobe.com/go/platform-api-authentication-en). När du slutför självstudiekursen för autentisering visas värdena för var och en av de obligatoriska rubrikerna i alla [!DNL Experience Platform] API-anrop, vilket visas nedan:
 
 - `Authorization: Bearer {ACCESS_TOKEN}`
 - `x-api-key: {API_KEY}`
 - `x-gw-ims-org-id: {ORG_ID}`
 
-Alla resurser i [!DNL Experience Platform], inklusive de som tillhör [!DNL Schema Registry], isoleras till specifika virtuella sandlådor. Alla förfrågningar till [!DNL Platform] API:er kräver en rubrik som anger namnet på sandlådan som åtgärden ska utföras i:
+Alla resurser i [!DNL Experience Platform], inklusive de som tillhör [!DNL Schema Registry], isoleras till specifika virtuella sandlådor. Alla begäranden till [!DNL Platform] API:er kräver en rubrik som anger namnet på sandlådan som åtgärden ska utföras i:
 
 - `x-sandbox-name: {SANDBOX_NAME}`
 
 >[!NOTE]
 >
->Mer information om sandlådor i [!DNL Platform], se [översiktsdokumentation för sandlåda](../../sandboxes/home.md).
+>Mer information om sandlådor i [!DNL Platform] finns i [översiktsdokumentationen för sandlådan](../../sandboxes/home.md).
 
 Alla begäranden som innehåller en nyttolast (POST, PUT, PATCH) kräver ytterligare en rubrik:
 
@@ -51,7 +51,7 @@ Alla begäranden som innehåller en nyttolast (POST, PUT, PATCH) kräver ytterli
 
 ### Samplingen misslyckades
 
-I den här självstudien används exempeldata med en felaktigt formaterad tidsstämpel som anger månadens värde till att **00**, se nedan:
+I den här självstudien används exempeldata med en felaktigt formaterad tidsstämpel som anger att månadens värde ska vara **00**, vilket visas nedan:
 
 ```json
 {
@@ -133,7 +133,7 @@ curl -X GET 'https://platform.adobe.io/data/foundation/export/batches/{BATCH_ID}
 }
 ```
 
-Med svaret ovan ser du vilka delar av gruppen som har slutförts och misslyckats. Från det här svaret ser du att filen `part-00000-44c7b669-5e38-43fb-b56c-a0686dabb982-c000.json` innehåller den misslyckade batchen.
+Med svaret ovan kan du se vilka delar av gruppen som har slutförts och misslyckats. Från det här svaret kan du se att filen `part-00000-44c7b669-5e38-43fb-b56c-a0686dabb982-c000.json` innehåller den misslyckade batchen.
 
 ## Hämta den misslyckade batchen
 
@@ -184,7 +184,7 @@ Eftersom den tidigare importerade batchen hade ett ogiltigt datum/tid visas föl
 
 ## Nästa steg
 
-Efter att ha läst den här självstudiekursen har du lärt dig hur du hämtar fel från misslyckade batchar. Mer information om batchkonsumtion finns i [Utvecklarhandbok för batchintag](../batch-ingestion/overview.md). Mer information om direktuppspelning finns i [skapa en självstudiekurs för direktuppspelningsanslutning](../tutorials/create-streaming-connection.md).
+Efter att ha läst den här självstudiekursen har du lärt dig hur du hämtar fel från misslyckade batchar. Mer information om batchkonsumtion finns i [Utvecklarhandboken för batchimport](../batch-ingestion/overview.md). Mer information om direktuppspelad inmatning finns i självstudiekursen [Skapa en direktuppspelad anslutning](../tutorials/create-streaming-connection.md).
 
 ## Bilaga
 
@@ -196,7 +196,7 @@ Precis som tidsstämpelfelet i det föregående exempelflödet beror dessa fel p
 
 ### Organisations-ID saknas eller är ogiltigt
 
-Detta fel visas om organisations-ID:t saknas i nyttolasten och är ogiltigt.
+Det här felet visas om organisations-ID:t saknas i nyttolasten och är ogiltigt.
 
 ```json
 {
@@ -211,7 +211,7 @@ Detta fel visas om organisations-ID:t saknas i nyttolasten och är ogiltigt.
 
 ### XDM-schema saknas
 
-Detta fel visas om `schemaRef` för `xdmMeta` saknas.
+Det här felet visas om `schemaRef` för `xdmMeta` saknas.
 
 ```json
 {
@@ -226,7 +226,7 @@ Detta fel visas om `schemaRef` för `xdmMeta` saknas.
 
 ### Källnamn saknas
 
-Detta fel visas om `source` i huvudet saknas dess `name`.
+Det här felet visas om `source` i huvudet saknar sin `name`.
 
 ```json
 {
@@ -242,7 +242,7 @@ Detta fel visas om `source` i huvudet saknas dess `name`.
 
 ### XDM-entitet saknas
 
-Detta fel visas om det inte finns någon `xdmEntity` presenter.
+Det här felet visas om det inte finns någon `xdmEntity`.
 
 ```json
 {

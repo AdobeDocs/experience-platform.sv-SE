@@ -12,13 +12,13 @@ ht-degree: 0%
 ---
 
 
-# [!UICONTROL Environment Details] schemafältgrupp
+# Schemafältgruppen [!UICONTROL Environment Details]
 
 >[!NOTE]
 >
->Namnen på flera schemafältgrupper har ändrats. Visa dokumentet på [uppdaterar fältgruppnamn](../name-updates.md) för mer information.
+>Namnen på flera schemafältgrupper har ändrats. Mer information finns i dokumentet om [uppdatering av fältgruppnamn](../name-updates.md).
 
-[!UICONTROL Environment Details] är en standardgrupp för schemafält för [[!DNL XDM ExperienceEvent] class](../../classes/experienceevent.md) används för att samla in information om miljödetaljer som rör en upplevelsehändelse, t.ex. enhetsinformation, webbläsarinformation, lokal tid och annan geografisk information.
+[!UICONTROL Environment Details] är en standardschemafältgrupp för [[!DNL XDM ExperienceEvent] klassen](../../classes/experienceevent.md) som används för att samla in information om miljödetaljer som rör en upplevelsehändelse, till exempel enhetsinformation, webbläsarinformation, lokal tid och annan geografisk information.
 
 <img src="../../images/field-groups/environment-details.png" width="500" /><br />
 

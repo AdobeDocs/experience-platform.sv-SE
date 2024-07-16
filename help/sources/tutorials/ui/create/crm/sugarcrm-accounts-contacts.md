@@ -4,29 +4,29 @@ description: Lär dig hur du skapar en källanslutning till SugarCRM-konton och 
 exl-id: 45840d7e-4c19-4720-8629-be446347862d
 source-git-commit: 0de4b32ac2ddc90dabefd469b6658388a4532e0d
 workflow-type: tm+mt
-source-wordcount: '739'
-ht-degree: 1%
+source-wordcount: '741'
+ht-degree: 0%
 
 ---
 
-# Skapa en [!DNL SugarCRM Accounts & Contacts] källanslutning i användargränssnittet
+# Skapa en [!DNL SugarCRM Accounts & Contacts]-källanslutning i användargränssnittet
 
-Den här självstudiekursen innehåller steg för att skapa en [!DNL SugarCRM Accounts & Contacts] källanslutning med Adobe Experience Platform användargränssnitt.
+I den här självstudien beskrivs hur du skapar en [!DNL SugarCRM Accounts & Contacts]-källanslutning med Adobe Experience Platform-användargränssnittet.
 
 ## Komma igång
 
 Den här självstudiekursen kräver en fungerande förståelse av följande komponenter i Experience Platform:
 
-* [[!DNL Experience Data Model (XDM)] System](../../../../../xdm/home.md): Det standardiserade ramverk som [!DNL Experience Platform] organiserar kundupplevelsedata.
-   * [Grunderna för schemakomposition](../../../../../xdm/schema/composition.md): Lär dig mer om de grundläggande byggstenarna i XDM-scheman, inklusive viktiga principer och bästa praxis när det gäller schemakomposition.
-   * [Schemaredigeraren, genomgång](../../../../../xdm/tutorials/create-schema-ui.md): Lär dig hur du skapar anpassade scheman med hjälp av gränssnittet i Schemaredigeraren.
-* [[!DNL Real-Time Customer Profile]](../../../../../profile/home.md): Ger en enhetlig konsumentprofil i realtid baserad på aggregerade data från flera källor.
+* [[!DNL Experience Data Model (XDM)] System](../../../../../xdm/home.md): Det standardiserade ramverk som [!DNL Experience Platform] organiserar kundupplevelsedata med.
+   * [Grundläggande om schemakomposition](../../../../../xdm/schema/composition.md): Lär dig mer om grundstenarna i XDM-scheman, inklusive nyckelprinciper och bästa metoder för schemakomposition.
+   * [Schemaredigeraren, självstudiekurs](../../../../../xdm/tutorials/create-schema-ui.md): Lär dig hur du skapar anpassade scheman med hjälp av gränssnittet för Schemaredigeraren.
+* [[!DNL Real-Time Customer Profile]](../../../../../profile/home.md): Tillhandahåller en enhetlig konsumentprofil i realtid baserad på aggregerade data från flera källor.
 
-Om du redan har en giltig [!DNL SugarCRM] kan du hoppa över resten av dokumentet och gå vidare till självstudiekursen om [konfigurera ett dataflöde](../../dataflow/crm.md).
+Om du redan har ett giltigt [!DNL SugarCRM]-konto kan du hoppa över resten av det här dokumentet och gå vidare till självstudiekursen [Konfigurera ett dataflöde](../../dataflow/crm.md).
 
 ### Samla in nödvändiga inloggningsuppgifter
 
-För att kunna ansluta [!DNL SugarCRM Accounts & Contacts] till Platform måste du ange värden för följande anslutningsegenskaper:
+För att kunna ansluta [!DNL SugarCRM Accounts & Contacts] till plattformen måste du ange värden för följande anslutningsegenskaper:
 
 | Autentiseringsuppgifter | Beskrivning | Exempel |
 | --- | --- | --- |
@@ -36,15 +36,15 @@ För att kunna ansluta [!DNL SugarCRM Accounts & Contacts] till Platform måste 
 
 ### Skapa ett plattformsschema
 
-Innan du skapar [!DNL SugarCRM] källanslutning måste du också se till att du först skapar ett plattformsschema som kan användas för källan. Se självstudiekursen om [skapa ett plattformsschema](../../../../../xdm/schema/composition.md) om du vill ha omfattande anvisningar om hur du skapar ett schema.
+Innan du skapar en [!DNL SugarCRM]-källanslutning måste du också se till att du först skapar ett plattformsschema som kan användas för källan. I självstudiekursen [Skapa ett plattformsschema](../../../../../xdm/schema/composition.md) finns mer information om hur du skapar ett schema.
 
-The [!DNL SugarCRM Accounts & Contacts] har stöd för flera API:er. Det innebär att du måste skapa ett separat schema, beroende på vilken objekttyp du använder. Se exemplen nedan för både konton och kontaktkartor:
+[!DNL SugarCRM Accounts & Contacts] har stöd för flera API:er. Det innebär att du måste skapa ett separat schema, beroende på vilken objekttyp du använder. Se exemplen nedan för både konton och kontaktkartor:
 
 >[!BEGINTABS]
 
 >[!TAB Konton]
 
-![Skärmbild av användargränssnittet för plattformen med ett exempelschema för konton](../../../../images/tutorials/create/sugarcrm-accounts-contacts/sugarcrm-schema-accounts.png)
+![Skärmbild för plattformsgränssnitt som visar ett exempelschema för konton](../../../../images/tutorials/create/sugarcrm-accounts-contacts/sugarcrm-schema-accounts.png)
 
 >[!TAB Kontakter]
 
@@ -52,27 +52,27 @@ The [!DNL SugarCRM Accounts & Contacts] har stöd för flera API:er. Det innebä
 
 >[!ENDTABS]
 
-## Koppla samman [!DNL SugarCRM Accounts & Contacts] konto
+## Anslut ditt [!DNL SugarCRM Accounts & Contacts]-konto
 
-Välj **[!UICONTROL Sources]** från det vänstra navigeringsfältet för att komma åt [!UICONTROL Sources] arbetsyta. The [!UICONTROL Catalog] visas en mängd olika källor som du kan använda för att skapa ett konto.
+I plattformsgränssnittet väljer du **[!UICONTROL Sources]** i det vänstra navigeringsfältet för att komma åt arbetsytan i [!UICONTROL Sources]. På skärmen [!UICONTROL Catalog] visas en mängd olika källor som du kan använda för att skapa ett konto.
 
 Du kan välja lämplig kategori i katalogen till vänster på skärmen. Du kan också hitta den källa du vill arbeta med med med sökalternativet.
 
-Under *CRM* kategori, välj **[!UICONTROL SugarCRM Accounts & Contacts]** och sedan markera **[!UICONTROL Add data]**.
+Under kategorin *CRM* väljer du **[!UICONTROL SugarCRM Accounts & Contacts]** och sedan **[!UICONTROL Add data]**.
 
-![Skärmbild för användargränssnitt för plattform för katalog med SugarCRM-kort för konton och kontakter](../../../../images/tutorials/create/sugarcrm-accounts-contacts/catalog-sugarcrm-accounts-contacts.png)
+![Skärmbild för plattformsgränssnitt för katalog med SugarCRM-kort för konton och kontakter](../../../../images/tutorials/create/sugarcrm-accounts-contacts/catalog-sugarcrm-accounts-contacts.png)
 
-The **[!UICONTROL Connect SugarCRM Accounts & Contacts account]** visas. På den här sidan kan du antingen använda nya autentiseringsuppgifter eller befintliga.
+Sidan **[!UICONTROL Connect SugarCRM Accounts & Contacts account]** visas. På den här sidan kan du antingen använda nya autentiseringsuppgifter eller befintliga.
 
 ### Befintligt konto
 
-Välj [!DNL SugarCRM Accounts & Contacts] konto som du vill skapa ett nytt dataflöde med och sedan välja **[!UICONTROL Next]** för att fortsätta.
+Om du vill använda ett befintligt konto väljer du det [!DNL SugarCRM Accounts & Contacts]-konto som du vill skapa ett nytt dataflöde med och väljer sedan **[!UICONTROL Next]** för att fortsätta.
 
-![Skärmbild för användargränssnittet för Connect SugarCRM-konton och kontaktkonton med ett befintligt konto](../../../../images/tutorials/create/sugarcrm-accounts-contacts/existing.png)
+![Skärmbild för användargränssnitt för Connect SugarCRM-konton och kontaktkonton med ett befintligt konto](../../../../images/tutorials/create/sugarcrm-accounts-contacts/existing.png)
 
 ### Nytt konto
 
-Om du skapar ett nytt konto väljer du **[!UICONTROL New account]** och ange sedan ett namn, en valfri beskrivning och dina uppgifter. När du är klar väljer du **[!UICONTROL Connect to source]** och tillåt sedan lite tid för att upprätta den nya anslutningen.
+Om du skapar ett nytt konto väljer du **[!UICONTROL New account]** och anger sedan ett namn, en valfri beskrivning och dina autentiseringsuppgifter. När du är klar väljer du **[!UICONTROL Connect to source]** och tillåt sedan lite tid för att upprätta den nya anslutningen.
 
 ![Skärmbild för användargränssnittet för Connect SugarCRM-konton och kontaktkonton med ett nytt konto](../../../../images/tutorials/create/sugarcrm-accounts-contacts/new.png)
 
@@ -89,39 +89,39 @@ Slutligen måste du välja den objekttyp som du vill importera till plattformen.
 
 >[!TAB Konton]
 
-![Skärmbild för användargränssnittet för SugarCRM-konton och kontakter som visar konfigurationen med alternativet Konto valt](../../../../images/tutorials/create/sugarcrm-accounts-contacts/configuration-accounts.png)
+![Skärmbild för användargränssnitt för plattform för konton och kontakter för SugarCRM som visar konfigurationen med alternativet Konto valt](../../../../images/tutorials/create/sugarcrm-accounts-contacts/configuration-accounts.png)
 
 >[!TAB Kontakter]
 
-![Skärmbild för användargränssnitt för plattform för SugarCRM-konton och kontakter som visar konfigurationen med alternativet Kontakter valt](../../../../images/tutorials/create/sugarcrm-accounts-contacts/configuration-contacts.png)
+![Skärmbild för användargränssnitt för plattformen för konton och kontakter för SugarCRM som visar konfigurationen med alternativet Kontakter markerat](../../../../images/tutorials/create/sugarcrm-accounts-contacts/configuration-contacts.png)
 
 >[!ENDTABS]
 
 ## Nästa steg
 
-Genom att följa den här självstudien har du upprättat en anslutning till [!DNL SugarCRM Accounts & Contacts] konto. Du kan nu fortsätta med nästa självstudiekurs och [konfigurera ett dataflöde för att hämta data till plattformen](../../dataflow/crm.md).
+Genom att följa den här självstudiekursen har du upprättat en anslutning till ditt [!DNL SugarCRM Accounts & Contacts]-konto. Du kan nu fortsätta till nästa självstudiekurs och [konfigurera ett dataflöde för att hämta data till plattformen](../../dataflow/crm.md).
 
 ## Ytterligare resurser
 
-I avsnitten nedan finns ytterligare resurser som du kan använda när du använder [!DNL SugarCRM] källa.
+Avsnitten nedan innehåller ytterligare resurser som du kan referera till när du använder källan [!DNL SugarCRM].
 
 ### Guardrails {#guardrails}
 
-The [!DNL SugarCRM] API-begränsningsfrekvensen är 90 anrop per minut eller 2 000 anrop per dag, beroende på vilket som inträffar först. Begränsningen har dock kringgåtts genom att en parameter läggs till i anslutningsspecifikationen som fördröjer begärandetiden så att hastighetsgränsen aldrig uppnås.
+Begränsningsfrekvensen för [!DNL SugarCRM] API är 90 anrop per minut eller 2 000 anrop per dag, beroende på vilket som inträffar först. Begränsningen har dock kringgåtts genom att en parameter läggs till i anslutningsspecifikationen som fördröjer begärandetiden så att hastighetsgränsen aldrig uppnås.
 
 ### Validering {#validation}
 
-För att verifiera att du har konfigurerat källan och [!DNL SugarCRM Accounts & Contacts] data importeras, följ stegen nedan:
+Följ stegen nedan för att verifiera att du har konfigurerat källan och att [!DNL SugarCRM Accounts & Contacts] data importeras korrekt:
 
-* Välj **[!UICONTROL View Dataflows]** bredvid [!DNL SugarCRM Accounts & Contacts] kortmenyn i källkatalogen. Nästa, välj **[!UICONTROL Preview dataset]** för att verifiera de data som har importerats.
+* I plattformsgränssnittet väljer du **[!UICONTROL View Dataflows]** bredvid kortmenyn [!DNL SugarCRM Accounts & Contacts] i källkatalogen. Välj sedan **[!UICONTROL Preview dataset]** för att verifiera de data som har importerats.
 
-* Beroende på vilken objekttyp du arbetar med kan du verifiera aggregerade data mot antalet som visas på [!DNL SugarMarket] Konton eller Kontakter nedan:
+* Beroende på vilken objekttyp du arbetar med kan du verifiera aggregerade data mot antalet som visas på sidorna [!DNL SugarMarket] Konton eller Kontakter nedan:
 
 >[!BEGINTABS]
 
 >[!TAB Konton]
 
-![Skärmbild från sidan SugarMarket-konton med en lista över konton](../../../../images/tutorials/create/sugarcrm-accounts-contacts/sugarmarket-accounts.png)
+![Skärmbild från sidan SugarMarket-konton som visar en lista över konton](../../../../images/tutorials/create/sugarcrm-accounts-contacts/sugarmarket-accounts.png)
 
 >[!TAB Kontakter]
 
@@ -131,4 +131,4 @@ För att verifiera att du har konfigurerat källan och [!DNL SugarCRM Accounts &
 
 >[!NOTE]
 >
->The [!DNL SugarMarket] Sidorna innehåller inte antalet borttagna objekt. Data som hämtas via den här källan kommer dock även att innehålla det borttagna antalet, som markeras med en borttagen flagga.
+>Sidorna [!DNL SugarMarket] innehåller inte antalet borttagna objekt. Data som hämtas via den här källan kommer dock även att innehålla det borttagna antalet, som markeras med en borttagen flagga.

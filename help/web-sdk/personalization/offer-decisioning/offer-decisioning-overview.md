@@ -6,7 +6,7 @@ exl-id: 4ab51f9d-3c44-4855-b900-aa2cde673a9a
 source-git-commit: 22477c11a977059849d9b47871a5c2aef1da4b24
 workflow-type: tm+mt
 source-wordcount: '818'
-ht-degree: 1%
+ht-degree: 0%
 
 ---
 
@@ -18,7 +18,7 @@ ht-degree: 1%
 
 Adobe Experience Platform [!DNL Web SDK] kan leverera och återge personaliserade erbjudanden som hanteras i Offer decisioning. Du kan skapa erbjudanden och andra relaterade objekt med hjälp av användargränssnittet (UI) eller API:erna för Offera decisioningen.
 
-## Förutsättningar
+## Förhandskrav
 
 * Organisationen är aktiverad för kantbeslut
 * Erbjudanden, skapade aktiviteter
@@ -26,11 +26,11 @@ Adobe Experience Platform [!DNL Web SDK] kan leverera och återge personaliserad
 
 ## Terminologi
 
-Det är viktigt att förstå följande terminologi när du arbetar med Offer decisioning. Mer information och ytterligare villkor finns på [Offera decisioningens ordlista](https://experienceleague.adobe.com/docs/offer-decisioning/using/get-started/glossary.html).
+Det är viktigt att förstå följande terminologi när du arbetar med Offer decisioning. Om du vill ha mer information och visa ytterligare villkor går du till [Offera decisioningens ordlista](https://experienceleague.adobe.com/docs/offer-decisioning/using/get-started/glossary.html).
 
-* **Beslutsomfattningar:** För Offer decisioning är beslutsomfattningar de Base64-kodade strängarna i JSON som innehåller de aktivitets- och placerings-ID som du vill att offera decisioningen ska använda för att föreslå erbjudanden.
+* **Beslutsomfattningar:** För Offer decisioning är beslutsomfattningar de Base64-kodade strängarna för JSON som innehåller de aktivitets- och placerings-ID som du vill att offera decisioningen ska använda för att föreslå erbjudanden.
 
-  *Beslutsomfattelse JSON:*
+  *Beslutsomfattnings-JSON:*
 
   ```json
   {
@@ -39,7 +39,7 @@ Det är viktigt att förstå följande terminologi när du arbetar med Offer dec
   }
   ```
 
-  *Beslutsomfattare Base64-kodad sträng:*
+  *Beslutsomfattarens Base64-kodade sträng:*
 
   ```json
   "eyJhY3Rpdml0eUlkIjoieGNvcmU6b2ZmZXItYWN0aXZpdHk6MTFjZmIxZmE5MzM4MWFjYSIsInBsYWNlbWVudElkIjoieGNvcmU6b2ZmZXItcGxhY2VtZW50OjExNzUwMDk2MTJiMDEwMGMifQ=="
@@ -47,23 +47,23 @@ Det är viktigt att förstå följande terminologi när du arbetar med Offer dec
 
   >[!TIP]
   >
-  >Du kan kopiera värdet för beslutsomfånget från **Översikt över aktivitet** i användargränssnittet.
+  >Du kan kopiera värdet för beslutsomfånget från sidan **Aktivitetsöversikt** i användargränssnittet.
 
   ![Inställningar för beslutskopiering.](assets/decision-scope-copy.png)
 
-* **Datastreams:** Mer information finns i [datastreams](/help/datastreams/overview.md) dokumentation.
+* **Datastreams:** Mer information finns i dokumentationen för [datastreams](/help/datastreams/overview.md).
 
-* **Identitet**: Mer information finns i den här dokumentationen. [Platform Web SDK använder identitetstjänst](../../identity/overview.md).
+* **Identitet**: Mer information finns i den här dokumentationen som beskriver hur [Platform Web SDK använder identitetstjänsten](../../identity/overview.md).
 
 ## Aktivera Offer decisioning
 
 Så här aktiverar du Offer decisioning:
 
-1. Aktivera Adobe Experience Platform i dina [datastream](/help/datastreams/overview.md) och markera rutan Offer decisioning
+1. Aktiverade Adobe Experience Platform i din [datastream](/help/datastreams/overview.md) och markera kryssrutan Offer decisioning
 
    ![offer-decisioning-edge-config](./assets/offer-decisioning-edge-config.png)
 
-1. Följ instruktionerna för att [installera SDK](/help/web-sdk/install/overview.md) (SDK kan installeras fristående eller via användargränssnittet. Se [snabbstartsguide för taggar](/help/tags/quick-start/quick-start.md)) om du vill ha mer information.
+1. Följ instruktionerna för att [installera SDK](/help/web-sdk/install/overview.md) (SDK kan installeras fristående eller via användargränssnittet. Mer information finns i [snabbstartsguiden för taggar](/help/tags/quick-start/quick-start.md)).
 1. Konfigurera SDK för Offer decisioning med `personalization.decisionScopes`. Ytterligare Offer decisioning-specifika steg finns nedan.
 
    * Installera fristående SDK
@@ -86,21 +86,21 @@ Så här aktiverar du Offer decisioning:
 
       1. [Skapa en taggegenskap](/help/tags/ui/administration/companies-and-properties.md)
       1. [Lägg till inbäddningskoden](https://experienceleague.adobe.com/docs/core-services-learn/implementing-in-websites-with-launch/configure-launch/launch-add-embed.html)
-      1. Installera och konfigurera Platform Web SDK-tillägget med den dataström du skapade genom att välja konfigurationen i listrutan Datastream. Läs dokumentationen om [tillägg](/help/tags/ui/managing-resources/extensions/overview.md).
+      1. Installera och konfigurera Platform Web SDK-tillägget med den dataström du skapade genom att välja konfigurationen i listrutan Datastream. Mer information finns i dokumentationen om [tillägg](/help/tags/ui/managing-resources/extensions/overview.md).
 
          ![install-aep-web-sdk-extension](./assets/install-aep-web-sdk-extension.png)
 
          ![configure-aep-web-sdk-extension](./assets/configure-aep-web-sdk-extension.png)
 
-      1. Skapa de nödvändiga [Dataelement](/help/tags/ui/managing-resources/data-elements.md). Minimikravet är att du måste skapa en plattformsbaserad SDK-identitetskarta och ett XDM-objektdataelement för plattformswebben.
+      1. Skapa nödvändiga [dataelement](/help/tags/ui/managing-resources/data-elements.md). Minimikravet är att du måste skapa en plattformsbaserad SDK-identitetskarta och ett XDM-objektdataelement för plattformswebben.
 
          ![identity-map-data-element](./assets/identity-map-data-element.png)
 
          ![xdm-object-data-element](./assets/xdm-object-data-element.png)
 
-      1. Skapa [Regler](/help/tags/ui/managing-resources/rules.md).
+      1. Skapa dina [regler](/help/tags/ui/managing-resources/rules.md).
 
-         * Lägg till en SDK-sändningshändelse för en plattform och lägg till relevant `decisionScopes` till åtgärdens konfiguration
+         * Lägg till en SDK-sändningsåtgärd för en plattform och lägg till relevant `decisionScopes` i åtgärdens konfiguration
 
          ![send-event-action-DecisionScopes](./assets/send-event-action-decisionScopes.png)
 
@@ -108,7 +108,7 @@ Så här aktiverar du Offer decisioning:
 
 ## Exempelbegäranden och svar
 
-### Ett `decisionScopes` value
+### Ett `decisionScopes`-värde
 
 **Begäran**
 
@@ -139,7 +139,7 @@ Så här aktiverar du Offer decisioning:
 
 | Egenskap | Obligatoriskt | Beskrivning | Gränser | Exempel |
 |---|---|---|---|---|
-| `identityMap` | Ja | Se detta [Identitetstjänstens dokumentation](../../identity/overview.md). | En identitet per begäran. | `{ "identityMap": { "ECID": [ { "id": "91133425615229052182584359620783097099" } ] } }`. <br><br> Obs! Användare behöver inte inkludera `ECID` i API-anropet. Den här parametern läggs automatiskt till i samtalet om det behövs. |
+| `identityMap` | Ja | Se [Identitetstjänstens dokumentation](../../identity/overview.md). | En identitet per begäran. | `{ "identityMap": { "ECID": [ { "id": "91133425615229052182584359620783097099" } ] } }`. <br><br> Obs! Användare behöver inte ta med parametern `ECID` i API-anropet. Den här parametern läggs automatiskt till i samtalet om det behövs. |
 | `decisionScopes` | Ja | En array med Base64-kodade strängar av JSON som innehåller aktivitets- och placerings-ID:n. | Högst 30 `decisionScopes` per begäran. | `"decisionScopes": ["eyJhY3Rpdml0eUlkIjoieGNvcmU6b2ZmZXItYWN0aXZpdHk6MTFjZmIxZmE5MzM4MWFjYSIsInBsYWNlbWVudElkIjoieGNvcmU6b2ZmZXItcGxhY2VtZW50OjExNzUwMDk2MTJiMDEwMGMifQ=="]` |
 
 **Svar**
@@ -203,7 +203,7 @@ Så här aktiverar du Offer decisioning:
 | `deliveryUrl` | Bildinnehåll som är associerat med det föreslagna erbjudandet i formatet för en URL. | `"deliveryURL": "https://image.jpeg"` |
 | `characteristics` | Egenskaper som är kopplade till det föreslagna erbjudandet i formatet JSON-objekt. | `"characteristics": { "foo": "bar", "foo1": "bar1" }` |
 
-### Flera `decisionScopes` values
+### Flera `decisionScopes`-värden
 
 **Begäran**
 
@@ -236,7 +236,7 @@ Så här aktiverar du Offer decisioning:
 
 | Egenskap | Obligatoriskt | Beskrivning | Gränser | Exempel |
 |---|---|---|---|---|
-| `identityMap` | Ja | Se detta [Identitetstjänstens dokumentation](../../identity/overview.md). | En identitet per begäran. | `{ "identityMap": { "ECID": [ { "id": "91133425615229052182584359620783097099" } ] } }`. <br><br> Obs! Användare behöver inte inkludera `ECID` i API-anropet. Den här parametern läggs automatiskt till i samtalet om det behövs. |
+| `identityMap` | Ja | Se [Identitetstjänstens dokumentation](../../identity/overview.md). | En identitet per begäran. | `{ "identityMap": { "ECID": [ { "id": "91133425615229052182584359620783097099" } ] } }`. <br><br> Obs! Användare behöver inte ta med parametern `ECID` i API-anropet. Den här parametern läggs automatiskt till i samtalet om det behövs. |
 | `decisionScopes` | Ja | En array med Base64-kodade strängar av JSON som innehåller aktivitets- och placerings-ID:n. | Högst 30 `decisionScopes` per begäran. | `"decisionScopes":["eyJhY3Rpdml0eUlkIjoieGNvcmU6b2ZmZXItYWN0aXZpdHk6MTFjZmIxZmE5MzM4MWFjYSIsInBsYWNlbWVudElkIjoieGNvcmU6b2ZmZXItcGxhY2VtZW50OjExNzUwMDk2MTJiMDEwMGMifQ==", "eyJhY3Rpdml0eUlkIjoieGNvcmU6b2ZmZXItYWN0aXZpdHk6MTIyMjA4YjNhODc0MDU1OCIsInBsYWNlbWVudElkIjoieGNvcmU6b2ZmZXItcGxhY2VtZW50OjEyMjIwNDUyOTUxNGEyYzAifQ=="` |
 
 **Svar**
@@ -332,4 +332,4 @@ Så här aktiverar du Offer decisioning:
 
 ## Begränsningar
 
-Vissa begränsningar för erbjudanden stöds för närvarande inte i arbetsflödena för mobila Edge-nätverk, till exempel Capping. Fältvärdet för begränsning anger hur många gånger ett erbjudande kan visas för alla användare. Mer information finns i [Dokumentation om regler och begränsningar för erbjudanden](https://experienceleague.adobe.com/docs/offer-decisioning/using/managing-offers-in-the-offer-library/creating-personalized-offers.html#eligibility).
+Vissa begränsningar för erbjudanden stöds för närvarande inte i arbetsflödena för mobila Edge Network, till exempel Capping. Fältvärdet för begränsning anger hur många gånger ett erbjudande kan visas för alla användare. Mer information finns i [Erbjud berättiganderegler och begränsningsdokumentation](https://experienceleague.adobe.com/docs/offer-decisioning/using/managing-offers-in-the-offer-library/creating-personalized-offers.html#eligibility).

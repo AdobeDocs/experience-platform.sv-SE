@@ -11,7 +11,7 @@ ht-degree: 0%
 
 ---
 
-# [!UICONTROL Experience channel] datatyp
+# Datatypen [!UICONTROL Experience channel]
 
 [!UICONTROL Experience channel] är en XDM-datatyp (Standard Experience Data Model) som beskriver en upplevelsekanal. En upplevelsekanal representerar en metod eller väg för hur digitala upplevelser konsumeras.
 

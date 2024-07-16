@@ -6,27 +6,27 @@ exl-id: 179b0618-3bd3-435c-9d17-63681177ca47
 source-git-commit: 05a7b73da610a30119b4719ae6b6d85f93cdc2ae
 workflow-type: tm+mt
 source-wordcount: '1042'
-ht-degree: 1%
+ht-degree: 0%
 
 ---
 
-# Hantera taggar
+# Hantera taggar, guide
 
-Med taggar kan du hantera metadatataxonomier för att klassificera affärsobjekt så att de blir enklare att identifiera och kategorisera. Taggar kan hjälpa er att identifiera viktiga taxonomiska attribut för de målgrupper era team arbetar med, så att de kan hitta dem snabbare och även gruppera gemensamma målgrupper i en beskrivning. Du bör identifiera vanliga taggkategorier som geografiska regioner, affärsenheter, produktlinjer, projekt, team, tidsintervall (kvartal, månader, år) eller något annat som kan bidra till att ge ditt team en meningsfull upplevelse. 
+Med taggar kan du hantera metadatataxonomier för att klassificera affärsobjekt så att de blir enklare att identifiera och kategorisera. Taggar kan hjälpa er att identifiera viktiga taxonomiska attribut för de målgrupper era team arbetar med, så att de kan hitta dem snabbare och även gruppera gemensamma målgrupper i en beskrivning. Du bör identifiera vanliga taggkategorier som geografiska regioner, affärsenheter, produktlinjer, projekt, team, tidsintervall (kvartal, månader, år) eller något annat som kan bidra till att ge ditt team en meningsfull och enkel målgruppsidentifiering. 
 
 ## Skapa en tagg {#create-tag}
 
-Om du vill skapa en ny tagg väljer du **[!UICONTROL tags]** i den vänstra navigeringen väljer du önskad taggkategori.
+Om du vill skapa en ny tagg väljer du **[!UICONTROL tags]** i den vänstra navigeringen och väljer sedan önskad taggkategori.
 
 ![Välj en taggkategori](./images/tag-selection.png)
 
-Välj **[!UICONTROL Create tag]** för att skapa en ny tagg.
+Välj **[!UICONTROL Create tag]** om du vill skapa en ny tagg.
 
 ![Skapa en ny tagg](./images/new-tag.png)
 
-The **[!UICONTROL Create tag]** visas och du uppmanas att ange ett unikt taggnamn. När du är klar väljer du **[!UICONTROL Save]**.
+Dialogrutan **[!UICONTROL Create tag]** visas och du uppmanas att ange ett unikt taggnamn. När du är klar väljer du **[!UICONTROL Save]**.
 
-![Skapa taggdialogruta med nytt taggnamn](./images/create-tag-dialog.png)
+![Dialogrutan Skapa tagg med det nya taggnamnet](./images/create-tag-dialog.png)
 
 Den nya taggen har skapats och du omdirigeras till taggskärmen där du ser den nyligen skapade taggen i listan.
 
@@ -34,15 +34,15 @@ Den nya taggen har skapats och du omdirigeras till taggskärmen där du ser den 
 
 ## Redigera en tagg {#edit-tag}
 
-Om du redigerar en tagg blir det lättare att felstava, uppdatera namnkonventioner eller terminologi. Om du redigerar en tagg behålls taggens koppling till de objekt där de används.
+Om du redigerar en tagg blir det lättare att hitta felstavningar, uppdatera namnkonventioner eller uppdatera terminologi. Om du redigerar en tagg behålls taggens koppling till de objekt där de används.
 
-Om du vill redigera en befintlig tagg väljer du ellipsen i listan med taggkategorier (`...`) bredvid taggens namn som du vill redigera. I en listruta visas kontroller för att redigera, flytta eller arkivera taggen. Välj **[!UICONTROL Edit]** i listrutan.
+Om du vill redigera en befintlig tagg markerar du ellipsen (`...`) bredvid taggens namn som du vill redigera i listan med taggkategorier. I en listruta visas kontroller för att redigera, flytta eller arkivera taggen. Välj **[!UICONTROL Edit]** i listrutan.
 
 ![Redigeringsåtgärden som visas i listrutan](./images/edit-action.png)
 
-The **[!UICONTROL Edit tag]** visas och du uppmanas att redigera taggnamnet. När du är klar väljer du **[!UICONTROL Save]**.
+Dialogrutan **[!UICONTROL Edit tag]** visas och du uppmanas att redigera taggnamnet. När du är klar väljer du **[!UICONTROL Save]**.
 
-![Redigera taggdialogruta med uppdaterat taggnamn](./images/edit-dialog.png)
+![Dialogrutan Redigera tagg med det uppdaterade taggnamnet](./images/edit-dialog.png)
 
 Taggnamnet har uppdaterats och du omdirigeras till taggskärmen där den uppdaterade taggen visas i listan.
 
@@ -52,15 +52,15 @@ Taggnamnet har uppdaterats och du omdirigeras till taggskärmen där den uppdate
 
 Taggar kan flyttas till andra taggkategorier. Om du flyttar en tagg behålls taggens koppling till de objekt där de används.
 
-Om du vill flytta en befintlig tagg väljer du ellipsen i listan med taggkategorier (`...`) bredvid taggens namn som du vill flytta. I en listruta visas kontroller för att redigera, flytta eller arkivera taggen. Välj **[!UICONTROL Edit]** i listrutan.
+Om du vill flytta en befintlig tagg markerar du ellipsen (`...`) bredvid taggens namn som du vill flytta i listan med taggkategorier. I en listruta visas kontroller för att redigera, flytta eller arkivera taggen. Välj **[!UICONTROL Edit]** i listrutan.
 
-![Flyttåtgärd som visas i listrutan](./images/move-action.png)
+![Flyttåtgärden visas i listrutan](./images/move-action.png)
 
-The **[!UICONTROL Move tag]** öppnas en dialogruta där du uppmanas att välja den taggkategori som den markerade taggen ska flyttas till.
+Dialogrutan **[!UICONTROL Move tag]** visas och du uppmanas att välja den taggkategori som den markerade taggen ska flyttas till.
 
 Du kan bläddra och välja i listan, eller också kan du använda sökfunktionen för att ange kategorinamnet. När du är klar väljer du **[!UICONTROL Move]**.
 
-![Flytta en dialogruta med sökvillkor för att hitta taggkategorin](./images/move-dialog.png)
+![Dialogrutan Flytta tagg med sökvillkor för att hitta taggkategorin](./images/move-dialog.png)
 
 Taggen har flyttats och du omdirigeras till taggskärmen där du ser den uppdaterade tagglistan, där taggen inte längre visas.
 
@@ -68,35 +68,35 @@ Taggen har flyttats och du omdirigeras till taggskärmen där du ser den uppdate
 
 Taggen visas nu i den tidigare markerade taggkategorin.
 
-![Tagglista för den markerade taggkategorin som ska flyttas](./images/moved-to-tag-category.png)
+![Tagglista för den markerade taggkategorin som ska flytta taggen](./images/moved-to-tag-category.png)
 
 ## Arkivera en tagg {#archive-tag}
 
 Status för en tagg kan växlas mellan aktiv och arkiverad. Arkiverade taggar tas inte bort från objekt där de redan har tillämpats, men de kan inte längre tillämpas på nya objekt. För varje tagg återspeglas samma status i alla objekt. Detta är särskilt användbart när du vill behålla aktuella taggobjektsassociationer men inte vill att taggen ska användas i framtiden.
 
-Om du vill arkivera en befintlig tagg markerar du ellipsen i listan med taggkategorier (`...`) bredvid taggens namn som du vill arkivera. I en listruta visas kontroller för att redigera, flytta eller arkivera taggen. Välj **[!UICONTROL Archive]** i listrutan.
+Om du vill arkivera en befintlig tagg markerar du ellipsen (`...`) bredvid taggens namn som du vill arkivera i listan över taggkategorier. I en listruta visas kontroller för att redigera, flytta eller arkivera taggen. Välj **[!UICONTROL Archive]** i listrutan.
 
-![Arkivåtgärd som visas i listrutan](./images/archive-action.png)
+![Arkiveringsåtgärden visas i listrutan](./images/archive-action.png)
 
-The **[!UICONTROL Archive tag]** visas och du uppmanas att bekräfta taggarkivet. Välj **[!UICONTROL Archive]**.
+Dialogrutan **[!UICONTROL Archive tag]** visas och du uppmanas att bekräfta taggarkivet. Välj **[!UICONTROL Archive]**.
 
-![Dialogrutan Arkivera tagg med en bekräftelse](./images/archive-dialog.png)
+![Dialogrutan Arkivera tagg begär bekräftelse](./images/archive-dialog.png)
 
 Taggen har arkiverats och du omdirigeras till taggskärmen. Den uppdaterade tagglistan visar nu taggens status som `Archived`.
 
-![Uppdaterad tagglista för den aktuella taggkategorin som visar taggen som arkiverad](./images/archive-status.png)
+![Uppdaterad tagglista för den aktuella taggkategorin med taggen arkiverad](./images/archive-status.png)
 
 ## Återställa en arkiverad tagg {#restore-archived-tag}
 
-Om du vill använda en `Archived` tagga till nya objekt, taggen måste finnas i `Active` tillstånd. Om du återställer en arkiverad tagg återgår taggen till den `Active` tillstånd.
+Om du vill använda en `Archived`-tagg på nya objekt måste taggen vara i läget `Active`. Om du återställer en arkiverad tagg återgår taggen till läget `Active`.
 
-Om du vill återställa en arkiverad tagg markerar du ellipsen i listan med taggkategorier (`...`) bredvid taggens namn som du vill återställa. I en listruta visas kontroller för att återställa eller ta bort taggen. Välj **[!UICONTROL Restore]** i listrutan.
+Om du vill återställa en arkiverad tagg markerar du ellipsen (`...`) bredvid taggens namn i listan med taggkategorier. I en listruta visas kontroller för att återställa eller ta bort taggen. Välj **[!UICONTROL Restore]** i listrutan.
 
 ![Återställningsåtgärd som visas i listrutan](./images/restore-action.png)
 
-The **[!UICONTROL Restore tag]** visas en uppmaning om att bekräfta taggåterställningen. Välj **[!UICONTROL Restore]**.
+Dialogrutan **[!UICONTROL Restore tag]** visas och du uppmanas att bekräfta återställningen av taggen. Välj **[!UICONTROL Restore]**.
 
-![Dialogrutan Återställ tagg där en bekräftelse begärs](./images/restore-dialog.png)
+![Dialogrutan Återställ tagg begär bekräftelse](./images/restore-dialog.png)
 
 Taggen har återställts och du omdirigeras till taggskärmen. Den uppdaterade tagglistan visar nu taggens status som `Active`.
 
@@ -106,17 +106,17 @@ Taggen har återställts och du omdirigeras till taggskärmen. Den uppdaterade t
 
 >[!NOTE]
 >
->Endast taggar som finns i en `Archived` och inte är kopplade till några objekt kan tas bort.
+>Det går bara att ta bort taggar som är i ett `Archived`-läge och som inte är associerade med några objekt.
 
 Om du tar bort en tagg tas den bort helt från systemet.
 
-Om du vill ta bort en arkiverad tagg markerar du ellipsen i listan med taggkategorier (`...`) bredvid taggens namn som du vill ta bort. I en listruta visas kontroller för att återställa eller ta bort taggen. Välj **[!UICONTROL Delete]** i listrutan.
+Om du vill ta bort en arkiverad tagg markerar du ellipsen (`...`) bredvid taggens namn som du vill ta bort i listan över taggkategorier. I en listruta visas kontroller för att återställa eller ta bort taggen. Välj **[!UICONTROL Delete]** i listrutan.
 
 ![Ta bort åtgärd som visas i listrutan](./images/delete-action.png)
 
-The **[!UICONTROL Delete tag]** visas och du uppmanas att bekräfta borttagningen av taggen. Välj **[!UICONTROL Delete]**.
+Dialogrutan **[!UICONTROL Delete tag]** visas och du uppmanas att bekräfta borttagningen av taggen. Välj **[!UICONTROL Delete]**.
 
-![Ta bort taggdialogrutan och begär bekräftelse](./images/delete-dialog.png)
+![Dialogrutan Ta bort tagg begär bekräftelse](./images/delete-dialog.png)
 
 Taggen har tagits bort och du omdirigeras till taggskärmen. Taggen visas inte längre i listan och har tagits bort helt.
 
@@ -128,12 +128,12 @@ Varje tagg har en detaljsida som kan nås från tagglagret. På den här sidan v
 
 Om du vill visa listan med taggade objekt söker du efter taggen i en taggkategori och markerar taggen.
 
-![Tagga markeringen i taggkategorin](./images/view-tag-selection.png)
+![Taggmarkering i taggkategorin](./images/view-tag-selection.png)
 
-The [!UICONTROL Tagged objects] visas en lista med taggade objekt.
+Sidan [!UICONTROL Tagged objects] visas med en inventering av taggade objekt.
 
-![Lager med taggade objekt](./images/tagged-objects.png)
+![Inventering av taggade objekt](./images/tagged-objects.png)
 
 ## Nästa steg
 
-Du har nu lärt dig hur du hanterar taggar. En översikt över taggarna i Experience Platform finns på [taggöversikt dokumentation](../overview.md).
+Du har nu lärt dig hur du hanterar taggar. En översikt över taggar i Experience Platform på hög nivå finns i [översiktsdokumentationen för taggar](../overview.md).

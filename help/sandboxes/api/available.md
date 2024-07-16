@@ -28,7 +28,7 @@ GET /{QUERY_PARAMS}
 
 | Parameter | Beskrivning |
 | --------- | ----------- |
-| `{QUERY_PARAMS}` | Valfria frågeparametrar för att filtrera resultat efter. Se [appendix-dokument](./appendix.md#query) för en lista över tillgängliga parametrar. |
+| `{QUERY_PARAMS}` | Valfria frågeparametrar för att filtrera resultat efter. En lista över tillgängliga parametrar finns i [bilagan-dokumentet](./appendix.md#query). |
 
 **Begäran**
 
@@ -42,7 +42,7 @@ curl -X GET \
 
 **Svar**
 
-Ett lyckat svar returnerar en lista över sandlådor som är tillgängliga för den aktuella användaren, inklusive information som `name`, `title`, `state`och `type`.
+Ett lyckat svar returnerar en lista med sandlådor som är tillgängliga för den aktuella användaren, inklusive information som `name`, `title`, `state` och `type`.
 
 ```json
 {
@@ -104,7 +104,7 @@ Ett lyckat svar returnerar en lista över sandlådor som är tillgängliga för 
 | --- | --- |
 | `name` | Namnet på sandlådan. Används för uppslagssyften i API-anrop. |
 | `title` | Visningsnamnet för sandlådan. |
-| `state` | Sandlådans aktuella bearbetningstillstånd. En sandlådestatus kan vara något av följande: <ul><li>`creating`: Sandlådan har skapats, men etableras fortfarande av systemet.</li><li>`active`: Sandlådan skapas och är aktiv.</li><li>`failed`: På grund av ett fel kunde sandlådan inte etableras av systemet och är inaktiverad.</li><li>`deleted`: Sandlådan har inaktiverats manuellt.</li></ul> |
+| `state` | Sandlådans aktuella bearbetningstillstånd. En sandlådestatus kan vara något av följande: <ul><li>`creating`: Sandlådan har skapats, men etableras fortfarande av systemet.</li><li>`active`: Sandlådan har skapats och är aktiv.</li><li>`failed`: På grund av ett fel kunde sandlådan inte etableras av systemet och är inaktiverad.</li><li>`deleted`: Sandlådan har inaktiverats manuellt.</li></ul> |
 | `type` | Sandlådetypen, antingen &quot;development&quot; eller &quot;production&quot;. |
 | `isDefault` | En boolesk egenskap som anger om den här sandlådan är standardproduktionssandlådan för organisationen. |
 | `eTag` | En identifierare för en specifik version av sandlådan. Detta värde används för versionskontroll och cachelagring av effektivitet och uppdateras varje gång en ändring görs i sandlådan. |

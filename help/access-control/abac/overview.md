@@ -23,7 +23,7 @@ Använd den här funktionen för att etikettera XDM-schemafält (Experience Data
 
 >[!IMPORTANT]
 >
->Attributbaserad åtkomstkontroll ska inte blandas ihop med Experience Platform datastyrningsfunktioner, som gör att du kan använda etiketter och policyer för att styra hur data används i plattformar i stället för vilka användare i organisationen har tillgång till dem. Se [datastyrningsöversikt](../../data-governance/home.md) för mer information.
+>Attributbaserad åtkomstkontroll ska inte blandas ihop med Experience Platform datastyrningsfunktioner, som gör att du kan använda etiketter och policyer för att styra hur data används i plattformar i stället för vilka användare i organisationen har tillgång till dem. Mer information finns i [översikten över datastyrning](../../data-governance/home.md).
 
 Med attributbaserad åtkomstkontroll kan administratören styra användarnas tillgång till känsliga personuppgifter (SPD), personligt identifierbar information (PII) och anpassad typ av data i alla plattformsarbetsflöden och resurser. Administratörer kan definiera användarroller som bara har åtkomst till specifika fält och data som motsvarar dessa fält.
 
@@ -55,11 +55,11 @@ Attributbaserad åtkomstkontroll omfattar följande komponenter:
 
 Behörigheter är det område i Experience Cloud där administratörer kan definiera användarroller och åtkomstprinciper för att hantera åtkomstbehörigheter för funktioner och objekt i ett produktprogram.
 
-Genom Behörigheter kan du skapa och hantera roller samt tilldela önskade resursbehörigheter för dessa roller. Med behörigheter kan du också hantera etiketter, sandlådor och användare som är kopplade till en viss roll. Mer information finns i [Behörighetsguide](ui/browse.md).
+Genom Behörigheter kan du skapa och hantera roller samt tilldela önskade resursbehörigheter för dessa roller. Med behörigheter kan du också hantera etiketter, sandlådor och användare som är kopplade till en viss roll. Mer information finns i [Behörighetsguiden](ui/browse.md).
 
 ## Attributbaserad API för åtkomstkontroll
 
-Med det attributbaserade API:t för åtkomstkontroll kan du programmässigt hantera roller, principer och produkter inom plattformen med API:er. Mer information finns i handboken på [använda API:t för att hantera attributbaserade åtkomstkontrollskonfigurationer](api/overview.md).
+Med det attributbaserade API:t för åtkomstkontroll kan du programmässigt hantera roller, principer och produkter inom plattformen med API:er. Mer information finns i guiden om [att använda API:t för att hantera attributbaserade åtkomstkontrollskonfigurationer](api/overview.md).
 
 ## Attributbaserad åtkomstkontroll i Adobe Experience Platform
 
@@ -67,25 +67,25 @@ I följande avsnitt finns information om hur attributbaserad åtkomstkontroll ä
 
 ### Åtkomstkontroll
 
-Plattformsanvändning [Adobe Admin Console](https://adminconsole.adobe.com) roller för att länka användare med behörigheter och sandlådor. Behörigheter styr åtkomsten till en mängd plattformsfunktioner, inklusive datamodellering, profilhantering och sandlådeadministration. När din organisation har aktiverats för attributbaserad åtkomstkontroll kan du börja använda behörigheter på Adobe Experience Cloud i stället för roller i Adobe Admin Console för att hantera behörigheter för användare, funktioner, etiketter och andra resurser i din organisation.
+Plattformen använder [Adobe Admin Console](https://adminconsole.adobe.com)-roller för att länka användare med behörigheter och sandlådor. Behörigheter styr åtkomsten till en mängd plattformsfunktioner, inklusive datamodellering, profilhantering och sandlådeadministration. När din organisation har aktiverats för attributbaserad åtkomstkontroll kan du börja använda behörigheter på Adobe Experience Cloud i stället för roller i Adobe Admin Console för att hantera behörigheter för användare, funktioner, etiketter och andra resurser i din organisation.
 
 Det finns begränsad tillgång till attributbaserad åtkomstkontroll för kunder som köper hälso- och sjukvård och/eller sekretessrutiner. Funktionerna är följande:
 
 * Behörighetsgränssnitt: Tillhandahåller ett gränssnitt där du kan definiera användarroller, behörigheter och profiler för attributbaserad åtkomstkontroll.
 
-* Etikett: Lägg till, redigera, ta bort etiketter till användarroller, schemafält, segment och andra objekt som stöds för att utnyttja åtkomstkontrollprinciper. **Obs!** Alla segment som använder ett etiketterat attribut måste också märkas om du vill att samma åtkomstbegränsningar ska gälla för det.
+* Etikett: Lägg till, redigera, ta bort etiketter till användarroller, schemafält, segment och andra objekt som stöds för att utnyttja åtkomstkontrollprinciper. **Obs!** Alla segment som använder ett attribut med etikett måste också ha en etikett om du vill att samma åtkomstbegränsningar ska gälla för det.
 
 Administrationsarbetsflödena för alla Experience Platform-baserade program från Admin Console till det nya behörighetsgränssnittet håller på att ändras.
 
 >[!IMPORTANT]
 >
->Dina roller migreras automatiskt till behörighetsgränssnittet när din organisation är aktiverad. Rollerna i Admin Console kommer att vara som de är tills vidare. Please **inte** ändra dina roller när organisationen har aktiverats.
+>Dina roller migreras automatiskt till behörighetsgränssnittet när din organisation är aktiverad. Rollerna i Admin Console kommer att vara som de är tills vidare. **Ändra inte** dina roller när din organisation har aktiverats.
 
-Mer information om åtkomstkontroll finns i [åtkomstkontroll - översikt](../home.md).
+Mer information om åtkomstkontroll finns i [åtkomstkontrollsöversikten](../home.md).
 
 ### Mål  {#destinations}
 
-[!DNL Destinations] är färdiga integreringar med målplattformar som möjliggör smidig aktivering av data från Platform. Ni kan använda destinationer för att aktivera kända och okända data för flerkanalskampanjer, e-postkampanjer, riktad reklam och många andra användningsfall.
+[!DNL Destinations] är färdiga integreringar med målplattformar som möjliggör smidig aktivering av data från plattformen. Ni kan använda destinationer för att aktivera kända och okända data för flerkanalskampanjer, e-postkampanjer, riktad reklam och många andra användningsfall.
 
 Som administratör kan du använda attributbaserade åtkomstkontrollsfunktioner för att:
 
@@ -98,19 +98,19 @@ Som administratör kan du använda attributbaserade åtkomstkontrollsfunktioner 
 >
 >Sammanfattningsvis bör du tänka på följande när du arbetar med mål och attributbaserad åtkomstkontroll:
 >
->* Du kan bara aktivera målgrupper som du har behörighet att komma åt och visa i [Målgruppsportal](/help/segmentation/ui/audience-portal.md#browse) och [välj segmentsteg](/help/destinations/ui/activate-batch-profile-destinations.md#select-segments) av aktiveringsarbetsflödet.
->* I [mappningssteg för aktiveringsarbetsflödet](/help/destinations/ui/activate-segment-streaming-destinations.md#mapping)kan du bara visa och välja de fält som du har behörighet till för aktivering.
+>* Du kan bara aktivera målgrupper som du har behörighet att komma åt och visa i [målportalen](/help/segmentation/ui/audience-portal.md#browse) och [välj segmentsteg](/help/destinations/ui/activate-batch-profile-destinations.md#select-segments) i aktiveringsarbetsflödet.
+>* I [mappningssteget i aktiveringsarbetsflödet](/help/destinations/ui/activate-segment-streaming-destinations.md#mapping) kan du bara visa och välja de fält som du har behörighet till för aktivering.
 >* När du vill aktivera ytterligare segment till ett befintligt mål där du inte har tillgång till alla fält som är mappade för export, blockeras aktiveringsarbetsflödet.
 
-Mer information om [!DNL Destinations], se [[!DNL Destinations] översikt](../../destinations/home.md).
+Mer information om [!DNL Destinations] finns i [[!DNL Destinations] översikten](../../destinations/home.md).
 
 ### Identitetstjänst
 
-Adobe Experience Platform [!DNL Identity Service] hjälper er att få en bättre bild av era kunder och deras beteende genom att skapa en bro mellan identiteter på olika enheter och system, så att ni kan leverera slagkraftiga, personliga digitala upplevelser i realtid.
+Adobe Experience Platform [!DNL Identity Service] hjälper dig att få en bättre bild av kunden och deras beteende genom att överbrygga identiteter mellan olika enheter och system, så att du kan leverera slagkraftiga, personliga digitala upplevelser i realtid.
 
-Som en del av den attributbaserade åtkomstkontrollen har `view-identity-graph` Med -behörighet kan du avgöra vilka användare i organisationen som har tillgång till identitetsdiagrammet via användargränssnittet eller API:erna. Mer information finns i handboken [med identitetsdiagramvisningsprogrammet](../../identity-service/features/identity-graph-viewer.md).
+Som en del av den attributbaserade åtkomstkontrollen kan du med behörigheten `view-identity-graph` avgöra vilka användare i organisationen som har åtkomst till identitetsdiagrammet via användargränssnittet eller API:erna. Mer information finns i guiden om [att använda identitetsdiagramvisningsprogrammet](../../identity-service/features/identity-graph-viewer.md).
 
-Mer information om [!DNL Identity Service], se [[!DNL Identity Service] översikt](../../identity-service/home.md).
+Mer information om [!DNL Identity Service] finns i [[!DNL Identity Service] översikten](../../identity-service/home.md).
 
 ### Kundprofil i realtid
 
@@ -127,14 +127,14 @@ Mer information om profil finns i [Profilöversikt](../../profile/home.md).
 
 ### Segmenteringstjänst
 
-[!DNL Segmentation Service] definierar en viss deluppsättning av profiler genom att beskriva kriterierna som särskiljer en säljbar grupp av personer inom kundbasen. Segment kan baseras på registerdata (t.ex. demografisk information) eller tidsseriehändelser som representerar kundinteraktioner med ert varumärke.
+[!DNL Segmentation Service] definierar en viss delmängd av profiler genom att beskriva kriterierna som särskiljer en marknadsföringsbar grupp av personer inom din kundbas. Segment kan baseras på registerdata (t.ex. demografisk information) eller tidsseriehändelser som representerar kundinteraktioner med ert varumärke.
 
 Som administratör kan du använda attributbaserade åtkomstkontrollsfunktioner för att:
 
 * Konfigurera användaråtkomst för att visa och hantera specifika segment utifrån roll, behörigheter och etiketter.
    * Som administratör kan du tilldela användare i organisationen att endast se segment som är märkta med etiketter som användare har tillgång till, och segment som inte innehåller några etiketter, när segmentgränssnittet används.
 
-Mer information om [!DNL Segmentation Service], se [[!DNL Segmentation Service] översikt](../../segmentation/home.md).
+Mer information om [!DNL Segmentation Service] finns i [[!DNL Segmentation Service] översikten](../../segmentation/home.md).
 
 ### XML
 
@@ -142,7 +142,7 @@ Experience Data Model (XDM) är en öppen källkodsspecifikation som är utforma
 
 Med attributbaserad åtkomstkontroll kan du:
 
-* [Tillämpa dataanvändningsetiketter på fältgrupper och klasser](../../xdm/tutorials/labels.md). Detta gör att flera scheman med samma fältgrupper eller klasser kan ha fält taggade med samma attribut, beroende på konfigurationen på fältgrupps- eller klassnivå.
+* [Använd dataanvändningsetiketter på fältgrupper och klasser](../../xdm/tutorials/labels.md). Detta gör att flera scheman med samma fältgrupper eller klasser kan ha fält taggade med samma attribut, beroende på konfigurationen på fältgrupps- eller klassnivå.
 * Konfigurera användaråtkomst till specifika XDM-schemafält beroende på vilka behörighetsgrupper som används för roller som tilldelats användare.
 
-Mer information om XDM finns i [XDM - översikt](../../xdm/home.md).
+Mer information om XDM finns i [XDM-översikten](../../xdm/home.md).

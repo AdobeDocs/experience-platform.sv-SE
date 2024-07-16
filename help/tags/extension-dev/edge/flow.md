@@ -9,11 +9,11 @@ ht-degree: 0%
 
 ---
 
-# Kanttilläggsflöde
+# Edge-tilläggsflöde
 
 >[!NOTE]
 >
->Adobe Experience Platform Launch har omklassificerats som en serie datainsamlingstekniker i Adobe Experience Platform. Som ett resultat av detta har flera terminologiska förändringar införts i produktdokumentationen. Se följande [dokument](../../term-updates.md) för en konsoliderad hänvisning till terminologiska förändringar.
+>Adobe Experience Platform Launch har omklassificerats som en serie datainsamlingstekniker i Adobe Experience Platform. Som ett resultat av detta har flera terminologiska förändringar införts i produktdokumentationen. I följande [dokument](../../term-updates.md) finns en konsoliderad referens till de ändrade terminologin.
 
 I edge-tillägg har varje villkor, åtgärd och dataelementtyp både en vy som gör att användare kan ändra inställningar och en biblioteksmodul kan agera utifrån de användardefinierade inställningarna.
 
@@ -23,12 +23,12 @@ Som framgår av följande högnivådiagram visas tilläggets åtgärdstypvy inut
 
 I följande diagram ser du länken mellan händelser, villkor och åtgärder i regelbearbetningsflödet.
 
-![flödesdiagram för regelbearbetning](../images/flow/edge/rule-processing-flow.png)
+![regelbearbetningsflödesdiagram](../images/flow/edge/rule-processing-flow.png)
 
 Regelbearbetningsflödet innehåller följande faser:
 
-1. The `settings` och `trigger` -metoden anges till händelsbiblioteksmodulen vid start.
-1. När händelsebiblioteksmodulen avgör om händelsen har inträffat, anropar händelsbiblioteket modulen `trigger`.
-1. Plattformspass `settings` till regelns biblioteksmoduler av typen condition där villkoren sedan utvärderas.
+1. Metoden `settings` och `trigger` tillhandahålls till händelsebiblioteksmodulen vid start.
+1. När händelsebiblioteksmodulen fastställer att händelsen har inträffat anropar händelsbiblioteket `trigger`.
+1. Plattformen skickar `settings` till regelns biblioteksmoduler av typen condition där villkoren sedan utvärderas.
 1. Varje villkorstyp returnerar om ett villkor utvärderas till true.
 1. Om alla villkor godkänns körs regelns åtgärder.

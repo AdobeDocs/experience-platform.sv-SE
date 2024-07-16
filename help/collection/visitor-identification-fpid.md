@@ -13,13 +13,13 @@ ht-degree: 0%
 
 # Besökaridentifiering via FPID
 
-[!DNL First-party IDs] (`FPIDs`) är enhets-ID:n som genereras, hanteras och lagras av kunder. Detta ger kunderna kontroll över att identifiera användarenheter. Genom att skicka `FPIDs`, genererar Edge Network inte något helt nytt `ECID` för en begäran som inte innehåller någon.
+[!DNL First-party IDs] (`FPIDs`) är enhets-ID:n som genereras, hanteras och lagras av kunder. Detta ger kunderna kontroll över att identifiera användarenheter. Genom att skicka `FPIDs` genererar Edge Network inte en helt ny `ECID` för en begäran som inte innehåller någon.
 
-The `FPID` kan inkluderas i API-begärandetexten som en del av `identityMap` eller skickas som en cookie.
+`FPID` kan inkluderas i API-begärandetexten som en del av `identityMap` eller skickas som en cookie.
 
-An `FPID` kan vara deterministiskt översatt till en `ECID` av Edge Network, så `FPID` identiteter är helt kompatibla med lösningar från Experience Cloud. Få en `ECID` från en specifik `FPID` ger alltid samma resultat, så användarna får en enhetlig upplevelse.
+En `FPID` kan översättas till en `ECID` av Edge Network, vilket innebär att `FPID`-identiteter är helt kompatibla med Experience Cloud-lösningar. Att hämta `ECID` från en specifik `FPID` ger alltid samma resultat, så användarna får en konsekvent upplevelse.
 
-The `ECID` som hämtas på det här sättet kan hämtas via en `identity.fetch` fråga:
+`ECID` som hämtas på det här sättet kan hämtas via en `identity.fetch`-fråga:
 
 ```json
 {
@@ -33,15 +33,15 @@ The `ECID` som hämtas på det här sättet kan hämtas via en `identity.fetch` 
 }
 ```
 
-För förfrågningar som innehåller både `FPID` och `ECID`, `ECID` som redan finns i begäran har högre prioritet än den som kan genereras från `FPID`. Edge Network använder med andra ord `ECID` som redan tillhandahålls och `FPID` ignoreras. En ny `ECID` genereras endast när en `FPID` tillhandahålls på egen hand.
+För förfrågningar som innehåller både en `FPID` och en `ECID` har `ECID` som redan finns i begäran företräde framför den som kan genereras från `FPID`. Edge Network använder med andra ord `ECID` som redan angetts och `FPID` ignoreras. En ny `ECID` genereras bara när en `FPID` tillhandahålls separat.
 
-När det gäller enhets-ID:n `server` datastreams ska använda `FPID` som enhets-ID. Andra identiteter (dvs. `EMAIL`) kan också anges i begärandetexten, men Edge Network kräver att en primär identitet anges explicit. Primär identitet är den grundläggande identitet som profildata ska lagras i.
+När det gäller enhets-ID:n bör `server`-datastreams använda `FPID` som enhets-ID. Andra identiteter (t.ex. `EMAIL`) kan också anges i begärandetexten, men Edge Network kräver att en primär identitet anges explicit. Primär identitet är den grundläggande identitet som profildata ska lagras i.
 
 >[!NOTE]
 >
 >Begäranden som inte har någon identitet, respektive ingen primär identitet som uttryckligen angetts i begärandetexten, kommer att misslyckas.
 
-Följande `identityMap` fältgruppen har formaterats korrekt för en `server` datastream-begäran:
+Följande `identityMap`-fältgrupp är korrekt formaterad för en `server`-datastream-begäran:
 
 ```json
 {
@@ -63,7 +63,7 @@ Följande `identityMap` fältgruppen har formaterats korrekt för en `server` da
 }
 ```
 
-Följande `identityMap` fältgruppen kommer att resultera i ett felsvar när den anges på en `server` datastream-begäran:
+Följande `identityMap`-fältgrupp kommer att resultera i ett felsvar när den anges för en `server` datastream-begäran:
 
 ```json
 {
@@ -84,7 +84,7 @@ Följande `identityMap` fältgruppen kommer att resultera i ett felsvar när den
 }
 ```
 
-Det felsvar som returneras av Edge Network i det här fallet liknar följande:
+Felsvaret som returnerades av Edge Network i det här fallet liknar följande:
 
 ```json
 {
@@ -102,7 +102,7 @@ Det felsvar som returneras av Edge Network i det här fallet liknar följande:
 
 ## Besökaridentifiering med `FPID`
 
-Identifiera användare via `FPID`, se till att `FPID` cookie har skickats innan någon begäran skickas till Edge Network. The `FPID` kan skickas i en cookie eller som en del av `identityMap` i själva förfrågningen.
+Om du vill identifiera användare via `FPID` måste du se till att `FPID`-cookien har skickats innan du skickar några begäranden till Edge Network. `FPID` kan skickas i en cookie eller som en del av `identityMap` i förfrågningens brödtext.
 
 <!--
 
@@ -167,9 +167,9 @@ curl -X POST 'https://edge.adobedc.net/v2/interact?dataStreamId={Data Stream ID}
 ```
 -->
 
-## Begär med `FPID` skickas som `identityMap` fält
+## Begäran med `FPID` skickad som `identityMap`-fält
 
-Exemplet nedan skickar [!DNL FPID] som `identityMap` parameter.
+I exemplet nedan skickas [!DNL FPID] som en `identityMap`-parameter.
 
 ```shell
 curl -X POST "https://server.adobedc.net/v2/interact?dataStreamId={DATASTREAM_ID}"

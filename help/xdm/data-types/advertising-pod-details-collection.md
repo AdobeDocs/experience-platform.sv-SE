@@ -1,16 +1,17 @@
 ---
-title: Advertising Pod Details Collection datatyp
+title: Datatypen Advertising Pod Details Collection
 description: Läs mer om datatypen Advertising Pod Details Collection Experience Data Model (XDM).
-source-git-commit: a604dc8b541784ace8aedef42030e5bd8b646c28
+exl-id: 401c393f-aeda-4ecd-89f4-458833190ced
+source-git-commit: 799a384556b43bc844782d8b67416c7eea77fbf0
 workflow-type: tm+mt
 source-wordcount: '142'
-ht-degree: 2%
+ht-degree: 0%
 
 ---
 
 # [!UICONTROL Advertising Pod Details] Samlingsdatatyp
 
-[!UICONTROL Advertising Pod Details] Samlingen är en XDM-datatyp (Standard Experience Data Model). Den definierar en sekvens eller en grupp annonser som vanligtvis spelas upp i följd under innehållsbrytningar. Använd [!UICONTROL Advertising Pod Details] Samlingsdatatyp för att samla in information som annonsbrytnings-ID, ett eget namn för annonsbrytningen, indexet för annonserna inom brytningen och förskjutningen för annonsbrytningen inom innehållets tidslinje på några sekunder.
+[!UICONTROL Advertising Pod Details]-samlingen är en XDM-datatyp (Standard Experience Data Model). Den definierar en sekvens eller en grupp annonser som vanligtvis spelas upp i följd under innehållsbrytningar. Använd datatypen [!UICONTROL Advertising Pod Details] Collection för att hämta information som annonsbrytnings-ID, ett eget namn för annonsbrytningen, indexet för annonserna inom brytningen och förskjutningen för annonsbrytningen inom innehållets tidslinje på några sekunder.
 
 ![Ett diagram över datatypen Advertising Pod Details Collection.](../images/data-types/advertising-pod-details-collection.png)
 

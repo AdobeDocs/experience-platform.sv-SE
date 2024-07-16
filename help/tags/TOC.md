@@ -32,14 +32,14 @@ ht-degree: 15%
    * [Jämför resursrevisioner](./ui/managing-resources/compare-resource-revisions.md)
    * [Ta bort resurser](./ui/managing-resources/delete-resources.md)
    * [Ta bort resurser från ett bibliotek](./ui/managing-resources/remove-resources-from-library.md)
-* Publicering {#publish}
+* Publicerar {#publish}
    * [Översikt](./ui/publishing/overview.md)
    * [Publiceringsflöde](./ui/publishing/publishing-flow.md)
    * Värdar {#hosts}
       * [Översikt](./ui/publishing/hosts/hosts-overview.md)
       * [Värdar som hanteras av Adobe](./ui/publishing/hosts/managed-by-adobe-host.md)
       * [SFTP-värdar](./ui/publishing/hosts/sftp-host.md)
-   * Miljö {#environments}
+   * Miljöer {#environments}
       * [Översikt](./ui/publishing/environments.md)
       * [Testa inbäddningskoder med Adobe Experience Platform Debugger](./ui/publishing/embed-code-testing.md)
    * [Bygger](./ui/publishing/builds.md)
@@ -51,11 +51,11 @@ ht-degree: 15%
    * [Översikt](./ui/client-side/overview.md)
    * [Asynkron distribution](./ui/client-side/asynchronous-deployment.md)
    * [Satellitobjektreferens](./ui/client-side/satellite-object.md)
-   * [Distribuera JavaScript-taggar för att hantera kundernas samtycke](./ui/client-side/consent.md)
+   * [Distribuera JavaScript-taggar för att hantera kundgodkännande](./ui/client-side/consent.md)
    * [Stöd för CSP (Content Security Policy)](./ui/client-side/content-security-policy.md)
    * [Stöd för SRI (Subresource Integrity)](./ui/client-side/sri.md)
    * [Säkerhet för transportlager](./ui/client-side/transport-layer-security.md)
-* Vidarebefordran av händelser {#event-forwarding}
+* Vidarebefordrar händelse {#event-forwarding}
    * [Översikt](./ui/event-forwarding/overview.md)
    * [Komma igång](./ui/event-forwarding/getting-started.md)
    * [Konfigurera hemligheter](./ui/event-forwarding/secrets.md)
@@ -68,7 +68,7 @@ ht-degree: 15%
    * [Översikt](./extensions/overview.md)
    * Taggtillägg (klientsidan) {#client}
       * [Översikt](./extensions/client/overview.md)
-      * [Tillgängliga värden för webbplatshastighet](https://exchange.adobe.com/apps/ec/103053)
+      * [Tillgängliga hastighetsmått för webbplats](https://exchange.adobe.com/apps/ec/103053)
       * [Activity Map Customizer](https://exchange.adobe.com/apps/ec/101531)
       * [Uppdatera åtgärdssida](https://exchange.adobe.com/apps/ec/102848)
       * [Anpassa webbplatsspårning](https://exchange.adobe.com/apps/ec/103195)
@@ -77,7 +77,7 @@ ht-degree: 15%
          * [Översikt](./extensions/client/analytics/overview.md)
          * [Delade moduler](./extensions/client/analytics/shared-modules.md)
          * [Versionsinformation](./extensions/client/analytics/release-notes.md)
-      * [ADOBE ANALYTICS &amp; ADOBE TARGET](https://exchange.adobe.com/apps/ec/105363/6sense-for-analytics-and-target)
+      * [Adobe Analytics &amp; Adobe Target](https://exchange.adobe.com/apps/ec/105363/6sense-for-analytics-and-target)
       * [Adobe Analytics &amp; Microsoft Dynamics](https://exchange.adobe.com/apps/ec/102966)
       * [Adobe Analytics &amp; Salesforce](https://exchange.adobe.com/apps/ec/101530)
       * Adobe Analytics produktsträng {#product-string}
@@ -87,7 +87,7 @@ ht-degree: 15%
       * [Adobe Analytics via Adobe Experience Platform Web SDK](https://exchange.adobe.com/apps/ec/108985/search-discovery-for-adobe-analytics-via-aep-web-sdk)
       * Adobe Audience Manager {#audience-manager}
          * [Översikt](./extensions/client/audience-manager/overview.md)
-      * Adobe-klientdatalager {#client-data-layer}
+      * Adobe-klientdatalagret {#client-data-layer}
          * [Översikt](./extensions/client/client-data-layer/overview.md)
          * [Versionsinformation](./extensions/client/client-data-layer/release-notes.md)
       * Adobe ContextHub {#contexthub}
@@ -108,7 +108,7 @@ ht-degree: 15%
          * [Web SDK-plugin](./extensions/client/web-sdk/web-sdk-plugins.md)
          * [Versionsinformation för Web SDK-tillägg](./extensions/client/web-sdk/web-sdk-ext-release-notes.md)
          * [Versionsinformation om plugin-program för Web SDK](./extensions/client/web-sdk/web-sdk-plugins-release-notes.md)
-      * Adobe Experience Manager resursinsikter {#asset-insights}
+      * Adobe Experience Manager tillgångsinsikter {#asset-insights}
          * [Översikt](./extensions/client/asset-insights/overview.md)
          * [Versionsinformation](./extensions/client/asset-insights/release-notes.md)
       * [Adobe Fonts](https://exchange.adobe.com/apps/ec/101538)
@@ -118,7 +118,7 @@ ht-degree: 15%
       * Adobe Media Analytics (3.x SDK) {#media-analytics-3x}
          * [Översikt](./extensions/client/media-analytics-3x/overview.md)
          * [Versionsinformation](./extensions/client/media-analytics-3x/release-notes.md)
-      * Adobe sekretess {#privacy}
+      * Sekretess för Adobe {#privacy}
          * [Översikt](./extensions/client/privacy/overview.md)
       * [Adobe Report Suite-väljare](https://exchange.adobe.com/apps/ec/100640)
       * Adobe Target {#target}
@@ -130,43 +130,43 @@ ht-degree: 15%
       * [Adobe Target Toolkit](https://exchange.adobe.com/apps/ec/100640)
       * [Advertising Cloud](https://exchange.adobe.com/apps/ec/100640)
       * [AEM tillgångsinsikter](https://exchange.adobe.com/apps/ec/103406)
-      * [Airbroms JS Notifier](https://exchange.adobe.com/apps/ec/103342)
+      * [Airbroms-JS-aviserare](https://exchange.adobe.com/apps/ec/103342)
       * [Amplitud](https://exchange.adobe.com/apps/ec/108010)
       * [Apollo QAX](https://exchange.adobe.com/apps/ec/105068)
       * [Awin Advertiser MasterTag](https://exchange.adobe.com/apps/ec/103176)
       * [Awin-konverteringstagg](https://exchange.adobe.com/apps/ec/103240)
       * [Beemray Human Context](https://exchange.adobe.com/apps/ec/101063)
-      * [Bing Ads Universal Event Tracking](https://exchange.adobe.com/apps/ec/100154)
-      * [Gren](https://exchange.adobe.com/apps/ec/101382)
+      * [Bing lägger till universell händelsespårning](https://exchange.adobe.com/apps/ec/100154)
+      * [Förgrening](https://exchange.adobe.com/apps/ec/101382)
       * [!DNL BrightCove] videospårning {#brightcove}
          * [Översikt](./extensions/client/brightcove/overview.md)
          * [Versionsinformation](./extensions/client/brightcove/release-notes.md)
       * [CallTrackingMetrics](https://exchange.adobe.com/apps/ec/107695)
-      * [Channel Source Identifier](https://exchange.adobe.com/apps/ec/101412)
+      * [Kanal-Source-identifierare](https://exchange.adobe.com/apps/ec/101412)
       * [Cheetah Experiences](https://exchange.adobe.com/apps/ec/102759)
-      * [Clicktale](https://exchange.adobe.com/apps/ec/100082)
+      * [Klickbar](https://exchange.adobe.com/apps/ec/100082)
       * Plugin-program för vanlig analys {#plugins}
          * [Översikt](./extensions/client/plugins/overview.md)
          * [Versionsinformation](./extensions/client/plugins/release-notes.md)
-      * [Concat](https://exchange.adobe.com/apps/ec/104690)
+      * [Koncat](https://exchange.adobe.com/apps/ec/104690)
       * [ContentSquare](https://exchange.adobe.com/apps/ec/100364)
-      * [Cookie-innehållshantering av användarcentrics CMP v2](https://exchange.adobe.com/apps/ec/107037)
-      * Core {#core}
+      * [Hantering av cookie-samtycke av Usercentrics CMP v2](https://exchange.adobe.com/apps/ec/107037)
+      * Kärna {#core}
          * [Översikt](./extensions/client/core/overview.md)
          * [Versionsinformation](./extensions/client/core/release-notes.md)
-      * [Anpassad felsökningslogg](https://exchange.adobe.com/apps/ec/104698)
-      * [Kundidentifiering](https://exchange.adobe.com/apps/ec/100688)
-      * [DEA (Data Element Assistant)](https://exchange.adobe.com/apps/ec/101413)
+      * [Anpassad felsökningsloggare](https://exchange.adobe.com/apps/ec/104698)
+      * [Kundigenkänning](https://exchange.adobe.com/apps/ec/100688)
+      * [Dataelementassistenten (DEA)](https://exchange.adobe.com/apps/ec/101413)
       * [Datalagerhanteraren](https://exchange.adobe.com/apps/ec/101462)
       * [Decibel](https://exchange.adobe.com/apps/ec/100913)
       * [Demandbase](https://exchange.adobe.com/apps/ec/101605)
       * [Differentiell sekretess](https://exchange.adobe.com/apps/ec/104535)
-      * [Dynamic Media Viewers](https://exchange.adobe.com/apps/ec/103048)
+      * [Dynamic Media-visningsprogram](https://exchange.adobe.com/apps/ec/103048)
       * [EDDL-hjälp](https://exchange.adobe.com/apps/ec/107691)
       * [Flashtalk OneTag](https://exchange.adobe.com/apps/ec/101392)
       * [ForeSee](https://exchange.adobe.com/apps/ec/100164)
       * [Gainsight PX](https://exchange.adobe.com/apps/ec/103343)
-      * [Genesys Predictive Engagement](https://exchange.adobe.com/apps/ec/106148)
+      * [Förutsägande av genesys](https://exchange.adobe.com/apps/ec/106148)
       * Google datalager {#google-data-layer}
          * [Översikt](./extensions/client/google-data-layer/overview.md)
          * [Versionsinformation](./extensions/client/google-data-layer/release-notes.md)
@@ -189,25 +189,25 @@ ht-degree: 15%
       * [Pepperjam](https://exchange.adobe.com/apps/ec/103587)
       * [Persado Connect](https://exchange.adobe.com/apps/ec/103745)
       * [Pinterest Conversion Tracking](https://exchange.adobe.com/apps/ec/100523)
-      * [Pixel Loader](https://exchange.adobe.com/apps/ec/100152)
-      * [Qualtrics Website Feedback](https://exchange.adobe.com/apps/ec/101569)
-      * [Quantum Metric](https://exchange.adobe.com/apps/ec/101535)
-      * [Lös momentum](https://exchange.adobe.com/apps/ec/108352)
+      * [Pixelinläsare](https://exchange.adobe.com/apps/ec/100152)
+      * [Frågor och svar om webbplatsen](https://exchange.adobe.com/apps/ec/101569)
+      * [Kvantmått](https://exchange.adobe.com/apps/ec/101535)
+      * [Lös kortskrift](https://exchange.adobe.com/apps/ec/108352)
       * [Rokt](https://exchange.adobe.com/apps/ec/107591)
-      * [SDI Survey](https://exchange.adobe.com/apps/ec/102991)
+      * [SDI-undersökning](https://exchange.adobe.com/apps/ec/102991)
       * [SDI Toolkit](https://exchange.adobe.com/apps/ec/101460)
       * [SessionCam](https://exchange.adobe.com/apps/ec/100517)
       * [Lagringsspanner](https://exchange.adobe.com/apps/ec/102990)
-      * [TAGGAR efter loophorisont](https://exchange.adobe.com/apps/ec/106092)
-      * [Tealium Collect](https://exchange.adobe.com/apps/ec/104217)
+      * [TAGGAR efter loop-Horisont](https://exchange.adobe.com/apps/ec/106092)
+      * [Tealium-samling](https://exchange.adobe.com/apps/ec/104217)
       * [Tealium Data Enrichment](https://exchange.adobe.com/apps/ec/104217)
-      * [TMMData Foundation Platform](https://exchange.adobe.com/apps/ec/100148)
+      * [TMMData Foundation-plattform](https://exchange.adobe.com/apps/ec/100148)
       * [TrustArc Cookie Consent Manager](https://exchange.adobe.com/apps/ec/107037)
       * [Vimeo Playback](https://exchange.adobe.com/apps/ec/108937)
-      * [Webbinarier](https://exchange.adobe.com/apps/ec/106769)
+      * [Webbsäkra](https://exchange.adobe.com/apps/ec/106769)
       * [XDM-disposition](https://exchange.adobe.com/apps/ec/106062)
-      * [Yahoo Dot](https://exchange.adobe.com/apps/ec/106062)
-      * [Konverteringsspårning för text](https://exchange.adobe.com/apps/ec/103174)
+      * [Yahoo-punkt](https://exchange.adobe.com/apps/ec/106062)
+      * [ÅttaKonverteringsspårning](https://exchange.adobe.com/apps/ec/103174)
       * [[!DNL Youtube] Uppspelning](https://exchange.adobe.com/apps/ec/103174)
       * [!DNL YouTube] videospårning {#youtube}
          * [Översikt](./extensions/client/youtube/overview.md)
@@ -222,12 +222,12 @@ ht-degree: 15%
       * [!DNL Braze] {#braze}
          * [Översikt](./extensions/server/braze/overview.md)
       * [Cloud Connector för Google Analytics](https://exchange.adobe.com/apps/ec/106542)
-      * Core {#core}
+      * Kärna {#core}
          * [Översikt](./extensions/server/core/overview.md)
-      * [Epsilon Event API](https://exchange.adobe.com/apps/ec/109127)
-      * Google Ads Enhanced Conversions {#google-ads-enhanced-conversions}
+      * [Epsilon-händelse-API](https://exchange.adobe.com/apps/ec/109127)
+      * Förbättrade konverteringar för Google Ads {#google-ads-enhanced-conversions}
          * [Översikt](./extensions/server/google-ads-enhanced-conversions/overview.md)
-      * Google Cloud Platform {#google-cloud-platform}
+      * Google Cloud-plattform {#google-cloud-platform}
          * [Översikt](./extensions/server/google-cloud-platform/overview.md)
       * [!DNL LinkedIn Conversions API] {#linkedin}
          * [Översikt](./extensions/server/linkedin/overview.md)
@@ -259,7 +259,7 @@ ht-degree: 15%
    * [Översikt](./extension-dev/overview.md)
    * [Komma igång](./extension-dev/getting-started.md)
    * [Webbläsare som stöds](./extension-dev/browsers.md)
-   * Inlämningsprocess {#submit}
+   * Överföringsprocess {#submit}
       * [Översikt](./extension-dev/submit/overview.md)
       * [Företagsinställningar](./extension-dev/submit/setup.md)
       * [Bevilja användaråtkomst](./extension-dev/submit/access.md)

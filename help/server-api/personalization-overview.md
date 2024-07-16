@@ -1,6 +1,6 @@
 ---
-title: Personalisering - översikt
-description: Lär dig hur du använder API:t för Adobe Experience Platform Edge Network Server för att hämta personaliserat innehåll från personaliseringslösningar från Adobe.
+title: Personalization - översikt
+description: Lär dig hur du använder Adobe Experience Platform Edge Network Server-API:t för att hämta personaliserat innehåll från personaliseringslösningar från Adobe.
 exl-id: 11be9178-54fe-49d0-b578-69e6a8e6ab90
 source-git-commit: ae6c6d21b1eea900d01be3287827296071429d30
 workflow-type: tm+mt
@@ -9,26 +9,26 @@ ht-degree: 4%
 
 ---
 
-# Personalisering - översikt
+# Personalization - översikt
 
-Med [!DNL Server API]kan ni hämta personaliserat innehåll från personaliseringslösningar i Adobe, inklusive [Adobe Target](https://business.adobe.com/products/target/adobe-target.html), [Adobe Journey Optimizer](https://experienceleague.adobe.com/en/docs/journey-optimizer/using/ajo-home)och [Offer decisioning](https://experienceleague.adobe.com/docs/offer-decisioning/using/get-started/starting-offer-decisioning.html?lang=sv).
+Med [!DNL Server API] kan du hämta anpassat innehåll från personaliseringslösningar från Adobe, inklusive [Adobe Target](https://business.adobe.com/products/target/adobe-target.html), [Adobe Journey Optimizer](https://experienceleague.adobe.com/en/docs/journey-optimizer/using/ajo-home) och [Offer decisioning](https://experienceleague.adobe.com/docs/offer-decisioning/using/get-started/starting-offer-decisioning.html?lang=sv).
 
-Dessutom kan du [!DNL Server API] möjliggör personalisering på samma sida och nästa sida genom Adobe Experience Platform personaliseringsmål, som [Adobe Target](../destinations/catalog/personalization/adobe-target-connection.md) och [anslutning för anpassad personalisering](../destinations/catalog/personalization/custom-personalization.md). Mer information om hur du konfigurerar Experience Platform för anpassning av samma sida och nästa sida finns i [dedikerad guide](../destinations/ui/activate-edge-personalization-destinations.md).
+Dessutom utnyttjar [!DNL Server API] personaliseringsfunktioner på samma sida och nästa sida via Adobe Experience Platform-personaliseringsmål, till exempel [Adobe Target](../destinations/catalog/personalization/adobe-target-connection.md) och [anpassade personaliseringsanslutningen](../destinations/catalog/personalization/custom-personalization.md). Mer information om hur du konfigurerar Experience Platform för anpassning av samma sida och nästa sida finns i den [dedikerade guiden](../destinations/ui/activate-edge-personalization-destinations.md).
 
-När du använder Server-API:t måste du integrera det svar som personaliseringsmotorn ger med den logik som används för att återge innehåll på webbplatsen. Till skillnad från [Web SDK](../web-sdk/home.md), [!DNL Server API] har ingen mekanism för att automatiskt tillämpa innehåll som returneras av personaliseringslösningar från Adobe.
+När du använder Server-API:t måste du integrera det svar som personaliseringsmotorn ger med den logik som används för att återge innehåll på webbplatsen. Till skillnad från [Web SDK](../web-sdk/home.md) har [!DNL Server API] inte någon funktion för att automatiskt tillämpa innehåll som returneras av personaliseringslösningar från Adobe.
 
 ## Terminologi {#terminology}
 
 Innan du arbetar med personaliseringslösningar från Adobe måste du förstå följande koncept:
 
 * **Erbjudande**: ett erbjudande är ett marknadsföringsmeddelande som kan ha kopplade regler som fastställer vem som kan se erbjudandet.
-* **Beslut**: Ett beslut (tidigare kallat erbjudandeaktivitet) informerar om valet av erbjudande.
+* **Beslut**: Ett beslut (tidigare kallat erbjudandeaktivitet) informerar om valet av ett erbjudande.
 * **Schema**: Schemat för ett beslut informerar den typ av erbjudande som returneras.
-* **Omfång**: Beslutets omfattning.
-   * I Adobe Target är detta [!DNL mbox]. The [!DNL global mbox] är `__view__` omfång
-   * För [!DNL Offer Decisioning]är de Base64-kodade strängarna för JSON som innehåller de aktivitets- och placerings-ID som du vill att offera decisioningen ska använda för att föreslå erbjudanden.
+* **Scope**: Beslutets omfattning.
+   * I Adobe Target är det här [!DNL mbox]. [!DNL global mbox] är omfattningen `__view__`
+   * För [!DNL Offer Decisioning] är detta de Base64-kodade strängarna i JSON som innehåller de aktivitets- och placerings-ID som du vill att offera decisioningen ska använda för att föreslå erbjudanden.
 
-## The `query` object {#query-object}
+## Objektet `query` {#query-object}
 
 För att kunna hämta anpassat innehåll krävs ett explicit frågeobjekt för en begäran. Frågeobjektet har följande format:
 
@@ -66,7 +66,7 @@ För att kunna hämta anpassat innehåll krävs ett explicit frågeobjekt för e
 
 ## Handtagsobjektet {#handle}
 
-Personaliserat innehåll som hämtats från personaliseringslösningar presenteras i en `personalization:decisions` handle, som har följande format för sin nyttolast:
+Det personliga innehåll som hämtas från personaliseringslösningar presenteras i en `personalization:decisions`-referens, som har följande format för dess nyttolast:
 
 ```json
 {
@@ -192,11 +192,11 @@ curl -X POST "https://server.adobedc.net/ee/v2/interact?dataStreamId={DATASTREAM
 | Parameter | Typ | Obligatoriskt | Beskrivning |
 | --- | --- | --- | --- |
 | `configId` | Sträng | Ja | DataStream ID. |
-| `requestId` | Sträng | Nej | Ange ett ID för extern spårning av begäran. Om inget anges genereras ett Edge-nätverk åt dig och returneras i svarstexten/sidhuvudena. |
+| `requestId` | Sträng | Nej | Ange ett ID för extern spårning av begäran. Om ingen anges genererar Edge Network en åt dig och returnerar den i svarstexten/sidhuvudena. |
 
 ### Svar {#response}
 
-Returnerar ett `200 OK` status och en eller flera `Handle` objekt, beroende på vilka edge-tjänster som är aktiverade i datastream-konfigurationen.
+Returnerar en `200 OK`-status och ett eller flera `Handle`-objekt, beroende på vilka edge-tjänster som är aktiverade i datastream-konfigurationen.
 
 ```json
 {
@@ -254,9 +254,9 @@ Returnerar ett `200 OK` status och en eller flera `Handle` objekt, beroende på 
 
 ## Meddelanden {#notifications}
 
-Meddelanden ska utlösas när ett förhämtat innehåll eller en förhämtad vy har besöktes eller renderats för slutanvändaren. För att meddelanden ska kunna stängas av för rätt omfång måste du hålla reda på motsvarande `id` för varje omfattning.
+Meddelanden ska utlösas när ett förhämtat innehåll eller en förhämtad vy har besöktes eller renderats för slutanvändaren. För att meddelanden ska kunna utlösas för rätt omfång måste du hålla reda på motsvarande `id` för varje omfång.
 
-Meddelanden till höger `id` För att rapporteringen ska kunna speglas på rätt sätt krävs att motsvarande omfång aktiveras.
+Meddelanden med höger `id` för motsvarande omfattningar måste utlösas för att rapporteringen ska kunna återspeglas korrekt.
 
 **API-format**
 
@@ -316,16 +316,16 @@ curl -X POST "https://server.adobedc.net/ee/v2/collect?dataStreamId={DATASTREAM_
 | Parameter | Typ | Obligatoriskt | Beskrivning |
 | --- | --- | --- | --- |
 | `dataStreamId` | `String` | Ja | ID för datastream som används av datainsamlingsslutpunkten. |
-| `requestId` | `String` | Nej | Spårnings-ID för extern begäran. Om inget anges genereras ett Edge-nätverk åt dig och returneras i svarstexten/sidhuvudena. |
-| `silent` | `Boolean` | Nej | Valfri boolesk parameter som anger om Edge Network ska returnera en `204 No Content` svar med en tom nyttolast. Kritiska fel rapporteras med motsvarande HTTP-statuskod och nyttolast. |
+| `requestId` | `String` | Nej | Spårnings-ID för extern begäran. Om ingen anges genererar Edge Network en åt dig och returnerar den i svarstexten/sidhuvudena. |
+| `silent` | `Boolean` | Nej | Valfri boolesk parameter som anger om Edge Network ska returnera ett `204 No Content`-svar med en tom nyttolast. Kritiska fel rapporteras med motsvarande HTTP-statuskod och nyttolast. |
 
 ### Svar {#notifications-response}
 
-Ett godkänt svar returnerar en av följande statusvärden och en `requestID` om ingen har angetts i begäran.
+Ett lyckat svar returnerar en av följande statusvärden och en `requestID` om ingen har angetts i begäran.
 
-* `202 Accepted` när begäran har behandlats utan fel,
-* `204 No Content` när begäran bearbetades och `silent` parametern är inställd på `true`;
-* `400 Bad Request` när begäran inte var korrekt formulerad (t.ex. den obligatoriska primära identiteten inte hittades).
+* `202 Accepted` när begäran bearbetades,
+* `204 No Content` när begäran bearbetades och parametern `silent` ställdes in på `true`;
+* `400 Bad Request` när begäran inte var korrekt formaterad (t.ex. den obligatoriska primära identiteten hittades inte).
 
 ```json
 {

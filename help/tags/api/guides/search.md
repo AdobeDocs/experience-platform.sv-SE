@@ -11,11 +11,11 @@ ht-degree: 0%
 
 # Söka efter resurser i Reactor API
 
-The `/search` -slutpunkten i Reaktors API gör att du kan skapa strukturerade frågor om lagrade resurser. Det här dokumentet innehåller exempel på olika sökfrågor för olika vanliga användningsområden.
+Med slutpunkten `/search` i Reaktors API kan du skapa strukturerade frågor om lagrade resurser. Det här dokumentet innehåller exempel på olika sökfrågor för olika vanliga användningsområden.
 
 >[!NOTE]
 >
->Innan du läser den här handboken bör du läsa [sökslutpunktsguide](../endpoints/search.md) för information om accepterad frågesyntax och andra riktlinjer för användning.
+>Innan du läser den här guiden bör du läsa [guiden för sökslutpunkter](../endpoints/search.md) för att få information om godkänd frågesyntax och andra riktlinjer för användning.
 
 ## Grundläggande frågestrategier
 
@@ -39,11 +39,11 @@ Du kan söka i flera fält med jokertecken i fältnamnet. Om du till exempel vil
 
 >[!IMPORTANT]
 >
->Vanligtvis måste sökvärdena matcha den typ av data som söks igenom. Ett frågevärde på till exempel `evar7` mot ett heltalsfält. När du söker i flera fält blir frågetypskravet mindre krävande för att undvika fel, men kan ge oönskade resultat.
+>Vanligtvis måste sökvärdena matcha den typ av data som söks igenom. Ett frågevärde på `evar7` mot ett heltalsfält skulle till exempel misslyckas. När du söker i flera fält blir frågetypskravet mindre krävande för att undvika fel, men kan ge oönskade resultat.
 
 ### Omfattningsfrågor till specifika resurstyper
 
-Du kan göra en sökning till en viss resurstyp genom att ange `resource_types` i begäran. Om du till exempel vill söka igenom `data_elements`och `rule_components`:
+Du kan göra en sökning till en viss resurstyp genom att ange `resource_types` i begäran. Om du till exempel vill söka över `data_elements` och `rule_components`:
 
 ```json
 {
@@ -65,7 +65,7 @@ Du kan göra en sökning till en viss resurstyp genom att ange `resource_types` 
 
 ### Sortera svar
 
-The `sort` -egenskapen kan användas för att sortera svar. Till exempel sortera efter `created_at` med nyaste först:
+Egenskapen `sort` kan användas för att sortera svar. Om du till exempel vill sortera efter `created_at` med den senaste först:
 
 ```json
 {
@@ -115,7 +115,7 @@ curl -X POST \
       }'
 ```
 
-### Alla resurser som refererar till &quot;evar7&quot;
+### Alla resurser som refererar till evar7
 
 ```shell
 curl -X POST \
@@ -223,7 +223,7 @@ curl -X POST \
       }'
 ```
 
-### Gör en sökning med termisk&quot;OR&quot;
+### Utför en sökning med termisk&quot;OR&quot;
 
 ```shell
 curl -X POST \

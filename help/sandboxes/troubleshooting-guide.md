@@ -13,7 +13,7 @@ ht-degree: 2%
 
 # Felsökningsguide för sandlådor
 
-Det här dokumentet innehåller svar på vanliga frågor om sandlådor i Adobe Experience Platform. Om du har frågor och felsökning som rör andra plattformstjänster kan du läsa [Felsökningsguide för Experience Platform](../landing/troubleshooting.md).
+Det här dokumentet innehåller svar på vanliga frågor om sandlådor i Adobe Experience Platform. För frågor och felsökning som rör andra plattformstjänster, se [felsökningsguiden för Experience Platform](../landing/troubleshooting.md).
 
 Sandlådor delar en enda plattformsinstans i separata virtuella miljöer för att utveckla och utveckla program för digitala upplevelser. Se [översikten över sandlådor](home.md) för mer information.
 
@@ -31,11 +31,11 @@ Sandlådor är virtuella partitioner i en enda instans av Experience Platform. V
 
 Det finns två typer av sandlådor i Experience Platform:
 
-* **Produktionssandlåda**: En produktionssandlåda är avsedd att användas med profiler i din produktionsmiljö. Plattformen gör att du kan skapa flera produktionssandlådor för att tillhandahålla rätt funktionalitet för data samtidigt som driftisoleringen bibehålls. Med den här funktionen kan du dedikera specifika produktionssandlådor till olika affärsområden, varumärken, projekt eller regioner. Produktionssandlådor har stöd för en mängd produktionsprofiler upp till din licens [!DNL Profile] -engagemang (mäts kumulativt i alla dina godkända produktionssandlådor). Du har rätt att använda en licensierad genomsnittsprofil per auktoriserad [!DNL Profile] (uppmätt kumulativt i alla dina godkända produktionssandlådor).
-* **Utvecklingssandlåda**: En utvecklingssandlåda är en sandlåda som endast kan användas för utveckling och testning med icke-produktionsprofiler. Utvecklingssandlådor har stöd för en mängd icke-produktionsprofiler på upp till 10 % av de licensierade [!DNL Profile] -engagemang (mäts kumulativt i alla dina godkända utvecklingssandlådor). Du har rätt till upp till
+* **Produktionssandlåda**: En produktionssandlåda är avsedd att användas med profiler i din produktionsmiljö. Plattformen gör att du kan skapa flera produktionssandlådor för att tillhandahålla rätt funktionalitet för data samtidigt som driftisoleringen bibehålls. Med den här funktionen kan du dedikera specifika produktionssandlådor till olika affärsområden, varumärken, projekt eller regioner. Produktionssandlådor har stöd för en mängd produktionsprofiler upp till ditt licensierade [!DNL Profile]-åtagande (uppmätt kumulativt i alla dina auktoriserade produktionssandlådor). Du är berättigad att använda en licensierad genomsnittlig profil per auktoriserad [!DNL Profile] (uppmätt kumulativt i alla dina auktoriserade produktionssandlådor).
+* **Utvecklingssandlåda**: En utvecklingssandlåda är en sandlåda som endast kan användas för utveckling och testning med icke-produktionsprofiler. Utvecklingssandlådor har stöd för en mängd icke-produktionsprofiler på upp till 10 % av ditt licensierade [!DNL Profile]-åtagande (uppmätt kumulativt i alla dina auktoriserade utvecklingssandlådor). Du har rätt till upp till
    * En genomsnittlig icke-produktionsprofil på 75 kB per godkänd icke-produktionsprofil (uppmätt kumulativt i alla dina godkända utvecklingssandlådor).
    * Ett batchsegmenteringsjobb per dag, per utvecklingssandlåda.
-   * Ett genomsnitt på 120 [!DNL Profile] API-anrop, per [!DNL Profile], per år (mäts kumulativt i alla dina godkända utvecklingssandlådor.
+   * Ett genomsnitt på 120 [!DNL Profile] API-anrop, per [!DNL Profile], per år (mäts kumulativt i alla dina auktoriserade utvecklingssandlådor.
 
 Se [översikten över sandlådor](./home.md) för mer information.
 
@@ -53,7 +53,7 @@ En Experience Platform-instans har stöd för flera produktions- och utvecklings
 
 En standardlicens för Experience Platform ger dig totalt fem sandlådor, som du kan klassificera som  eller utveckling. Du kan licensiera ytterligare paket om 10 sandlådor, upp till totalt högst 75 sandlådor.
 
-Produktionssandlådor kan återställas eller tas bort, förutom för produktionssandlådor som också används av Adobe Analytics för [CDA (Cross Device Analytics)](https://experienceleague.adobe.com/docs/analytics/components/cda/overview.html?lang=sv) eller om identitetsdiagrammet som finns i det också används av Adobe Audience Manager för [Personbaserade mål (PBD)](https://experienceleague.adobe.com/docs/audience-manager/user-guide/features/destinations/people-based/people-based-destinations-overview.html?lang=sv) -funktion.
+Produktionssandlådor kan återställas eller tas bort, förutom för produktionssandlådor som också används av Adobe Analytics för funktionen [Cross Device Analytics (CDA)](https://experienceleague.adobe.com/docs/analytics/components/cda/overview.html?lang=sv) eller om identitetsdiagrammet som finns i det också används av Adobe Audience Manager för funktionen [People Based Destinations (PBD)](https://experienceleague.adobe.com/docs/audience-manager/user-guide/features/destinations/people-based/people-based-destinations-overview.html?lang=sv) .
 
 Du kan uppdatera titeln för en produktionssandlåda. En produktionssandlåda kan dock inte byta namn.
 
@@ -69,8 +69,8 @@ Utvecklingssandlådor har stöd för både återställnings- och borttagningsfun
 
 ## Jag har just skapat en sandlåda. Hur anger jag behörigheter för de användare som ska arbeta med den här sandlådan?
 
-Adobe Admin Console länkar användare till sandlådor och behörigheter genom att använda produktprofiler. När du har skapat en ny sandlåda går du till **Behörigheter** fliken för den produktprofil som du vill ge åtkomst till och klicka sedan på **Sandlådor**. Härifrån kan du lägga till eller ta bort åtkomst till den nya sandlådan på samma sätt som andra behörigheter.
+Adobe Admin Console länkar användare till sandlådor och behörigheter genom att använda produktprofiler. När du har skapat en ny sandlåda går du till fliken **Behörigheter** i produktprofilen som du vill ge åtkomst till och klickar sedan på **Sandlådor**. Härifrån kan du lägga till eller ta bort åtkomst till den nya sandlådan på samma sätt som andra behörigheter.
 
 Om du vill lägga till unika behörigheter för användare av en viss sandlåda kan du behöva skapa en ny produktprofil med rätt sandlådor och behörigheter tillämpade, och tilldela dessa användare till den profilen.
 
-Se [användarhandbok för åtkomstkontroll](../access-control/ui/overview.md) för mer information om hur du hanterar sandlådor och behörigheter i Admin Console.
+Mer information om hur du hanterar sandlådor och behörigheter i Admin Console finns i användarhandboken för [åtkomstkontrollen](../access-control/ui/overview.md) .

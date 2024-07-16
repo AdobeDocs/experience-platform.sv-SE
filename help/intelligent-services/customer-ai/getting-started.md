@@ -16,22 +16,22 @@ ht-degree: 0%
 
 Handböckerna för kundens AI kräver en fungerande förståelse för de olika plattformstjänster som används för att använda kundens AI. Läs följande dokument innan du börjar:
 
-- [Experience Data Model (XDM) - systemöversikt](../../xdm/home.md): XDM är det grundläggande ramverk som [!DNL Adobe Experience Cloud]som drivs av Experience Platform för att leverera rätt budskap till rätt person, i rätt kanal, vid exakt rätt tidpunkt. Metoden som Experience Platform bygger på, XDM System, används för att driva Experience Data Model-scheman för användning av plattformstjänster.
-- [Grunderna för schemakomposition](../../xdm/schema/composition.md): Det här dokumentet innehåller en introduktion till XDM-scheman (Experience Data Model) och de byggstenar, principer och bästa metoderna för att sammanställa scheman som ska användas i [!DNL Adobe Experience Platform].
-- [Byggscheman](../../xdm/tutorials/create-schema-ui.md): Den här självstudiekursen beskriver stegen för att skapa ett schema med Schemaredigeraren i Experience Platform.
-- [Översikt över kundprofiler i realtid](../../rtcdp/overview.md): Inbyggd [!DNL Adobe Experience Platform]Adobe Real-time Customer Data Platform (Real-Time CDP) hjälper företag att sammanföra kända och okända data för att aktivera kundprofiler med intelligent beslutsfattande under hela kundresan. Real-Time CDP kombinerar flera olika datakällor för företag för att skapa enhetliga profiler i realtid som kan användas för att leverera personliga personaliserade kundupplevelser i alla kanaler och enheter.
-- [Översikt över segmenteringstjänsten](../../segmentation/home.md): Segmentering är processen att definiera specifika attribut eller beteenden som delas av en deluppsättning profiler från din profilbutik för att skilja en marknadsföringsbar grupp av människor från din kundbas. I en e-postkampanj som heter&quot;Har du glömt att köpa dina smygtittare?&quot; kanske du vill ha en målgrupp med alla användare som sökte efter skor de senaste 30 dagarna, men som inte slutförde ett köp. Med olika segment kan ni fokusera på olika målgrupper och leverera en mer anpassad marknadsföringsupplevelse.
-- [Användarhandbok för Segment Builder](../../segmentation/tutorials/create-a-segment.md): Med Platform kan ni enkelt skapa och komma åt segment, samt använda olika byggstenar för att ytterligare karakterisera era era era segment.
+- [Systemöversikt för Experience Data Model (XDM)](../../xdm/home.md): XDM är det grundläggande ramverk som gör att [!DNL Adobe Experience Cloud], som drivs av Experience Platform, kan leverera rätt meddelande till rätt person i rätt kanal vid exakt rätt tidpunkt. Metoden som Experience Platform bygger på, XDM System, används för att driva Experience Data Model-scheman för användning av plattformstjänster.
+- [Grundläggande om schemakomposition](../../xdm/schema/composition.md): Det här dokumentet innehåller en introduktion till XDM-scheman (Experience Data Model) och de byggstenar, principer och bästa metoderna för att komponera scheman som ska användas i [!DNL Adobe Experience Platform].
+- [Skapar scheman](../../xdm/tutorials/create-schema-ui.md): Den här självstudiekursen beskriver stegen för att skapa ett schema med schemaredigeraren i Experience Platform.
+- [Översikt över kundprofiler i realtid](../../rtcdp/overview.md): Adobe Real-time Customer Data Platform (Real-Time CDP) är byggt på [!DNL Adobe Experience Platform] och hjälper företag att sammanföra kända och okända data för att aktivera kundprofiler med intelligent beslutsfattande under hela kundresan. Real-Time CDP kombinerar flera olika datakällor för företag för att skapa enhetliga profiler i realtid som kan användas för att leverera personliga personaliserade kundupplevelser i alla kanaler och enheter.
+- [Översikt över segmenteringstjänsten](../../segmentation/home.md): Segmentering är processen att definiera specifika attribut eller beteenden som delas av en deluppsättning profiler från din profilbutik för att skilja en säljbar grupp av personer från din kundbas. I en e-postkampanj som heter&quot;Har du glömt att köpa dina smygtittare?&quot; kanske du vill ha en målgrupp med alla användare som sökte efter skor de senaste 30 dagarna, men som inte slutförde ett köp. Med olika segment kan ni fokusera på olika målgrupper och leverera en mer anpassad marknadsföringsupplevelse.
+- [Användarhandbok för Segment Builder](../../segmentation/tutorials/create-a-segment.md): Med plattformen kan du enkelt skapa och komma åt segment, samt använda olika byggstenar för att ytterligare karakterisera dina segment.
 
 ## Hämtar AI-poäng för kunder
 
 >[!NOTE]
 >
->Om du inte behöver ladda ned bakgrundsmusik kan du hoppa över det här steget och gå vidare till [konfigurationsguide](./user-guide/configure.md).
+>Om du inte behöver hämta råresultat kan du hoppa över det här steget och gå vidare till [konfigurationsguiden](./user-guide/configure.md).
 
-Hämtning av kundens AI-poäng görs via en kombination av API-anrop. För att kunna ringa anrop till plattforms-API:er måste du först slutföra [självstudiekurs om autentisering](https://www.adobe.com/go/platform-api-authentication-en). När du slutför självstudiekursen för autentisering visas värdena för var och en av de obligatoriska rubrikerna i alla API-anrop för Experience Platform, vilket visas nedan:
+Hämtning av kundens AI-poäng görs via en kombination av API-anrop. För att kunna ringa anrop till plattforms-API:er måste du först slutföra [autentiseringssjälvstudiekursen](https://www.adobe.com/go/platform-api-authentication-en). När du slutför självstudiekursen för autentisering visas värdena för var och en av de obligatoriska rubrikerna i alla API-anrop för Experience Platform, vilket visas nedan:
 
-- Behörighet: Bearer `{ACCESS_TOKEN}`
+- Behörighet: Bärare `{ACCESS_TOKEN}`
 - x-api-key: `{API_KEY}`
 - x-gw-ims-org-id: `{ORG_ID}`
 
@@ -41,12 +41,12 @@ Alla resurser i Experience Platform är isolerade till specifika virtuella sandl
 
 >[!NOTE]
 >
->Mer information om sandlådor i plattformen finns i [översiktsdokumentation för sandlåda](../../sandboxes/home.md).
+>Mer information om sandlådor i plattformen finns i översiktsdokumentationen för [sandlådan](../../sandboxes/home.md).
 
 ### Läser exempel-API-anrop
 
-Den här guiden innehåller exempel på API-anrop som visar hur du formaterar dina begäranden. Det kan vara sökvägar, obligatoriska rubriker och korrekt formaterade begärandenyttolaster. Ett exempel på JSON som returneras i API-svar finns också. Information om konventionerna som används i dokumentationen för exempel-API-anrop finns i avsnittet om [läsa exempel-API-anrop](../../landing/troubleshooting.md) i felsökningsguiden för Experience Platform.
+Den här guiden innehåller exempel på API-anrop som visar hur du formaterar dina begäranden. Det kan vara sökvägar, obligatoriska rubriker och korrekt formaterade begärandenyttolaster. Ett exempel på JSON som returneras i API-svar finns också. Information om de konventioner som används i dokumentationen för exempel-API-anrop finns i avsnittet [Så här läser du exempel-API-anrop](../../landing/troubleshooting.md) i felsökningsguiden för Experience Platform.
 
 ## Nästa steg
 
-När du är klar med stegen som beskrivs i dokumentet ovan kan du gå till [Indata och utdata](./data-requirements.md) dokumentation. I det här dokumentet ges en kort översikt över vilka typer av data som används och produceras i kundens AI.
+När du har slutfört stegen som beskrivs i dokumentet ovan kan du gå till dokumentationen för [Indata och utdata](./data-requirements.md). I det här dokumentet ges en kort översikt över vilka typer av data som används och produceras i kundens AI.

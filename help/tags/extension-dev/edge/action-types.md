@@ -4,7 +4,7 @@ description: Lär dig hur du definierar en biblioteksmodul av åtgärdstyp för 
 exl-id: c0b058aa-f0fe-4fd8-a873-018482c3e4db
 source-git-commit: 8ded2aed32dffa4f0923fedac7baf798e68a9ec9
 workflow-type: tm+mt
-source-wordcount: '386'
+source-wordcount: '377'
 ht-degree: 0%
 
 ---
@@ -13,7 +13,7 @@ ht-degree: 0%
 
 >[!NOTE]
 >
->Adobe Experience Platform Launch har omklassificerats som en serie datainsamlingstekniker i Adobe Experience Platform. Som ett resultat av detta har flera terminologiska förändringar införts i produktdokumentationen. Se följande [dokument](../../term-updates.md) för en konsoliderad hänvisning till terminologiska förändringar.
+>Adobe Experience Platform Launch har omklassificerats som en serie datainsamlingstekniker i Adobe Experience Platform. Som ett resultat av detta har flera terminologiska förändringar införts i produktdokumentationen. I följande [dokument](../../term-updates.md) finns en konsoliderad referens till de ändrade terminologin.
 
 I en taggregel är en åtgärd en åtgärd som utförs efter att regelvillkoren har utvärderats. Åtgärdstyper tillhandahålls av tillägg, och deras effekter definieras helt av tilläggsförfattaren.
 
@@ -23,9 +23,9 @@ Det här dokumentet beskriver hur du definierar åtgärdstyper för ett kanttill
 
 >[!IMPORTANT]
 >
->Om du utvecklar ett webbtillägg läser du i handboken [åtgärdstyper för webbtillägg](../web/action-types.md) i stället.
+>Om du utvecklar ett webbtillägg läser du i handboken om [åtgärdstyper för webbtillägg](../web/action-types.md) i stället.
 >
->I det här dokumentet förutsätts även att du känner till biblioteksmoduler och hur de är integrerade i kanttillägg. Om du behöver en introduktion kan du se översikten på [formatering av biblioteksmodul](./format.md) innan du återgår till den här guiden.
+>I det här dokumentet förutsätts även att du känner till biblioteksmoduler och hur de är integrerade i kanttillägg. Om du behöver en introduktion läser du översikten om [biblioteksmodulens formatering](./format.md) innan du går tillbaka till den här guiden.
 
 Åtgärdstyper består vanligtvis av följande:
 
@@ -77,6 +77,6 @@ module.exports = (context) {
 
 ## Åtgärdsresultat
 
-Resultatet som returneras av en åtgärdsmodul kan vara vad som helst. Om åtgärden behöver köra en asynkron åtgärd kan du returnera en [löfte](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise) som returnerar det resultat du vill ha när det har lösts.
+Resultatet som returneras av en åtgärdsmodul kan vara vad som helst. Om åtgärden behöver köra en asynkron aktivitet kan du returnera ett [löfte](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise) som returnerar det resultat du vill ha när åtgärden har lösts.
 
-Åtgärdsresultatet sparas i en `ruleStash` som är tillgänglig för alla moduler via `context` parameter (`context.arc.ruleStash`). Du kan lära dig mer om `ruleStash` [här](./context.md#rulestash).
+Åtgärdsresultatet lagras i en `ruleStash`-nyckel som är tillgänglig för alla moduler via parametern `context` (`context.arc.ruleStash`). Du kan läsa mer om `ruleStash` [här](./context.md#rulestash).

@@ -13,11 +13,11 @@ ht-degree: 1%
 
 Med sandlådeverktygen kan du markera olika artefakter (kallas även objekt) och exportera dem till ett paket. Ett paket kan bestå av en enda artefakt eller flera artefakter (till exempel datauppsättningar eller scheman). Artefakter som ingår i ett paket måste komma från samma sandlåda.
 
-The `/packages` slutpunkten i sandlådans verktyg-API gör att du kan hantera paket i organisationen programmatiskt, inklusive publicera ett paket och importera ett paket till en sandlåda.
+Med slutpunkten `/packages` i sandlådeverktygets API kan du programmässigt hantera paket i organisationen, inklusive publicera ett paket och importera ett paket till en sandlåda.
 
 ## Skapa ett paket {#create}
 
-Du kan skapa ett paket med flera artefakter genom att göra en POST-förfrågan till `/packages` slutpunkt när du anger värden för paketets namn och pakettyp.
+Du kan skapa ett paket med flera artefakter genom att göra en POST-förfrågan till slutpunkten `/packages` och samtidigt ange värden för paketets namn och pakettyp.
 
 **API-format**
 
@@ -57,10 +57,10 @@ curl -X POST \
 | --- | --- | --- | --- |
 | `name` | Paketets namn. | Sträng | Ja |
 | `description` | En beskrivning som ger mer information om ditt paket. | Sträng | Nej |
-| `packageType` | Pakettypen är **DELVIS** för att ange att du inkluderar specifika artefakter i ett paket. | Sträng | JA |
+| `packageType` | Pakettypen är **PARTIAL** för att ange att du inkluderar specifika artefakter i ett paket. | Sträng | JA |
 | `sourceSandbox` | Paketets källsandlåda. | Sträng | Nej |
 | `expiry` | Tidsstämpeln som definierar paketets förfallodatum. Standardvärdet är 90 dagar från skapandedatumet. Svarets förfallofält är epoch UTC-tid. | Sträng (UTC-tidsstämpelformat) | Nej |
-| `artifacts` | En lista med artefakter som ska exporteras till paketet. The `artifacts` värdet ska vara **null** eller **tom**, när `packageType` är `FULL`. | Array | Nej |
+| `artifacts` | En lista med artefakter som ska exporteras till paketet. Värdet `artifacts` ska vara **null** eller **empty** när `packageType` är `FULL`. | Array | Nej |
 
 **Svar**
 
@@ -100,11 +100,11 @@ Ett lyckat svar returnerar det nya paketet. Svaret innehåller motsvarande paket
 
 ## Uppdatera ett paket {#update}
 
-Du kan uppdatera ett paket genom att göra en PUT-begäran till `/packages` slutpunkt.
+Du kan uppdatera ett paket genom att göra en PUT-begäran till slutpunkten `/packages`.
 
 ### Lägga till artefakter i ett paket {#add-artifacts}
 
-Om du vill lägga till artefakter i ett paket måste du ange `id` och inkludera **LÄGG TILL** för `action`.
+Om du vill lägga till artefakter i ett paket måste du ange `id` och inkludera **ADD** för `action`.
 
 **API-format**
 
@@ -137,7 +137,7 @@ curl -X PUT \
 | Egenskap | Beskrivning | Typ | Obligatoriskt |
 | --- | --- | --- | --- |
 | `id` | ID:t för paketet som ska uppdateras. | Sträng | Ja |
-| `action` | Om du vill lägga till artefakter i paketet bör åtgärdsvärdet vara **LÄGG TILL**. Den här åtgärden stöds endast för **DELVIS** pakettyper. | Sträng | Ja |
+| `action` | Om du vill lägga till artefakter i paketet måste åtgärdsvärdet vara **ADD**. Den här åtgärden stöds bara för pakettyperna **PARTIAL**. | Sträng | Ja |
 | `artifacts` | En lista med artefakter som ska läggas till i paketet. Paketet ändras inte om listan är **null** eller **tom**. Artefakter tas bort innan de läggs till i paketet. | Array | Nej |
 | `expiry` | Tidsstämpeln som definierar paketets förfallodatum. Standardvärdet är 90 dagar från den tidpunkt då PUT API anropas om inget förfallodatum anges i nyttolasten. Svarets förfallofält är epoch UTC-tid. | Sträng (UTC-tidsstämpelformat) | Nej |
 
@@ -183,7 +183,7 @@ Ett lyckat svar returnerar det uppdaterade paketet. Svaret innehåller motsvaran
 
 ### Ta bort felaktigheter från ett paket {#delete-artifacts}
 
-Om du vill ta bort felaktigheter från ett paket måste du ange en `id` och inkludera **DELETE** för `action`.
+Om du vill ta bort artefakter från ett paket måste du ange `id` och inkludera **DELETE** för `action`.
 
 
 **API-format**
@@ -216,7 +216,7 @@ curl -X PUT \
 | Egenskap | Beskrivning | Typ | Obligatoriskt |
 | --- | --- | --- | --- |
 | `id` | ID:t för paketet som ska uppdateras. | Sträng | Ja |
-| `action` | Om du vill ta bort artefakter från ett paket bör åtgärdsvärdet vara **DELETE**. Den här åtgärden stöds endast för **DELVIS** pakettyper. | Sträng | Ja |
+| `action` | Om du vill ta bort artefakter från ett paket bör åtgärdsvärdet vara **DELETE**. Den här åtgärden stöds bara för pakettyperna **PARTIAL**. | Sträng | Ja |
 | `artifacts` | En lista med artefakter som ska tas bort från paketet. Paketet ändras inte om listan är **null** eller **tom**. | Array | Nej |
 
 **Svar**
@@ -257,9 +257,9 @@ Ett lyckat svar returnerar det uppdaterade paketet. Svaret innehåller motsvaran
 
 >[!NOTE]
 >
->The **UPPDATERA** -åtgärden används för att uppdatera paketets metadatafält och **inte** används för att lägga till/ta bort artefakter i ett paket.
+>Åtgärden **UPDATE** används för att uppdatera paketets metadatafält och **kan inte** användas för att lägga till/ta bort artefakter i ett paket.
 
-Om du vill uppdatera metadatafälten i ett paket måste du ange `id` och inkludera **UPPDATERA** för `action`.
+Om du vill uppdatera metadatafälten i ett paket måste du ange `id` och inkludera **UPDATE** för `action`.
 
 **API-format**
 
@@ -291,9 +291,9 @@ curl -X PUT \
 | Egenskap | Beskrivning | Typ | Obligatoriskt |
 | --- | --- | --- | --- |
 | `id` | ID:t för paketet som ska uppdateras. | Sträng | Ja |
-| `action` | Om du vill uppdatera metadatafälten i ett paket bör åtgärdsvärdet vara **UPPDATERA**. Den här åtgärden stöds endast för **DELVIS** pakettyper. | Sträng | Ja |
+| `action` | Om du vill uppdatera metadatafälten i ett paket ska åtgärdsvärdet vara **UPDATE**. Den här åtgärden stöds bara för pakettyperna **PARTIAL**. | Sträng | Ja |
 | `name` | Paketets uppdaterade namn. Dubblettpaketnamn tillåts inte. | Array | Ja |
-| `sourceSandbox` | Källsandlådan ska tillhöra samma organisation som anges i begärans huvud. | Sträng | Ja |
+| `sourceSandbox` | Source sandlåda ska tillhöra samma organisation som anges i begärans huvud. | Sträng | Ja |
 
 **Svar**
 
@@ -331,7 +331,7 @@ Ett lyckat svar returnerar det uppdaterade paketet. Svaret innehåller motsvaran
 
 ## Ta bort ett paket {#delete}
 
-Om du vill ta bort ett paket skickar du en DELETE-begäran till `/packages` slutpunkten och ange ID:t för det paket som du vill ta bort.
+Om du vill ta bort ett paket skickar du en DELETE-begäran till slutpunkten `/packages` och anger ID:t för det paket som du vill ta bort.
 
 **API-format**
 
@@ -345,7 +345,7 @@ DELETE /packages/{PACKAGE_ID}
 
 **Begäran**
 
-Följande begäran tar bort paketet med ID:t för {PACKAGE_ID}.
+Följande begäran tar bort paketet med ID:t {PACKAGE_ID}.
 
 ```shell
 curl -X DELETE \
@@ -365,9 +365,9 @@ Ett lyckat svar returnerar en orsak som visar det paket-ID som tagits bort.
 }
 ```
 
-## Publicera ett paket {#publish}
+## Publish ett paket {#publish}
 
-Om du vill kunna importera ett paket till en sandlåda måste du publicera det. Gör en GET-förfrågan till `/packages` slutpunkten när du anger ID:t för det paket som du vill publicera.
+Om du vill kunna importera ett paket till en sandlåda måste du publicera det. Gör en GET-förfrågan till `/packages`-slutpunkten och ange ID:t för det paket som du vill publicera.
 
 **API-format**
 
@@ -381,7 +381,7 @@ GET /packages/{PACKAGE_ID}/export
 
 **Begäran**
 
-Följande begäran publicerar paketet med ID:t för {PACKAGE_ID}.
+Följande begäran publicerar paketet med ID:t {PACKAGE_ID}.
 
 ```shell
 curl -X GET \
@@ -416,7 +416,7 @@ Ett lyckat svar returnerar det publicerade paketet.
 
 ## Söka efter ett paket {#look-up-package}
 
-Du kan söka efter ett enskilt paket genom att göra en GET-förfrågan till `/packages` slutpunkt som innehåller motsvarande ID för paketet i sökvägen för begäran.
+Du kan söka efter ett enskilt paket genom att göra en GET-begäran till slutpunkten `/packages` som innehåller motsvarande ID för paketet i sökvägen för begäran.
 
 **API-format**
 
@@ -430,7 +430,7 @@ GET /packages/{PACKAGE_ID}
 
 **Begäran**
 
-Följande begäran hämtar information om {PACKAGE_ID}.
+Följande begäran hämtar information för {PACKAGE_ID}.
 
 ```shell
 curl -X GET \
@@ -483,7 +483,7 @@ Ett slutfört svar returnerar information för det efterfrågade paket-ID:t. Sva
 
 ## Listpaket {#list-packages}
 
-Du kan visa alla paket i din organisation genom att göra en GET-förfrågan till `/packages` slutpunkt.
+Du kan visa alla paket i din organisation genom att göra en GET-förfrågan till slutpunkten `/packages`.
 
 **API-format**
 
@@ -493,7 +493,7 @@ GET /packages/?{QUERY_PARAMS}
 
 | Parameter | Beskrivning |
 | --- | --- |
-| {QUERY_PARAMS} | Valfria frågeparametrar för att filtrera resultat efter. Se avsnittet om [frågeparametrar](./appendix.md) för mer information. |
+| {QUERY_PARAMS} | Valfria frågeparametrar för att filtrera resultat efter. Mer information finns i avsnittet om [frågeparametrar](./appendix.md). |
 
 **Begäran**
 
@@ -615,7 +615,7 @@ curl -X GET \
 
 **Svar**
 
-Konflikter returneras i svaret. Svaret visar det ursprungliga paketet plus `alternatives` fragment som en array sorterad efter rangordning.
+Konflikter returneras i svaret. Svaret visar det ursprungliga paketet plus `alternatives`-fragmentet som en array som sorterats efter rangordning.
 
 Visa svar+++
 
@@ -735,7 +735,7 @@ Visa svar+++
 >
 >Med konfliktlösning är det naturligt att den alternativa artefakten redan finns i målsandlådan.
 
-Du kan skicka in en import för ett paket när du har granskat konflikter och tillhandahållit ersättningar genom att göra en förfrågan om POST till `/packages` slutpunkt. Resultatet anges som en nyttolast, som startar importjobbet för målsandlådan enligt vad som anges i nyttolasten.
+Du kan skicka en import för ett paket när du har granskat konflikter och tillhandahållit ersättningar genom att göra en POST-förfrågan till slutpunkten `/packages`. Resultatet anges som en nyttolast, som startar importjobbet för målsandlådan enligt vad som anges i nyttolasten.
 
 Nyttolasten accepterar även användarspecificerat jobbnamn och beskrivning för importjobb. Om användarspecificerat namn och beskrivning inte är tillgängliga används paketnamn och beskrivning för jobbnamn och beskrivning.
 
@@ -747,7 +747,7 @@ POST /packages/import
 
 **Begäran**
 
-Följande begäran hämtar paket som ska importeras. Nyttolasten är en karta över ersättningar där, om det finns en post, nyckeln är `artifactId` anges av paketet, och alternativet är värdet. Om kartan eller nyttolasten är **tom**, inga substitutioner utförs.
+Följande begäran hämtar paket som ska importeras. Nyttolasten är en karta över ersättningar där, om det finns en post, nyckeln är den `artifactId` som anges av paketet, och alternativet är värdet. Om kartan eller nyttolasten är **tom** utförs inga ersättningar.
 
 ```shell
 curl -X POST \
@@ -801,7 +801,7 @@ curl -X POST \
 
 ## Lista alla beroende objekt {#dependent-objects}
 
-Visa alla beroende objekt för de exporterade objekten i ett paket genom att göra en POST-förfrågan till `/packages` slutpunkt när paketets ID anges.
+Visa alla beroende objekt för de exporterade objekten i ett paket genom att göra en POST-förfrågan till slutpunkten `/packages` samtidigt som du anger paketets ID.
 
 **API-format**
 
@@ -880,7 +880,7 @@ Ett godkänt svar returnerar en lista med underordnade objekt för objekten.
 
 ## Kontrollera rollbaserade behörigheter för att importera alla paketartefakter {#role-based-permissions}
 
-Du kan kontrollera om du har behörighet att importera paketartefakter genom att göra en GET-förfrågan till `/packages` slutpunkten när ID för paketet och namnet på målsandlådan anges.
+Du kan kontrollera om du har behörighet att importera paketartefakter genom att göra en GET-begäran till slutpunkten `/packages` och samtidigt ange ID:t för paketet och målsandlådans namn.
 
 **API-format**
 
@@ -894,7 +894,7 @@ GET /packages/preflight/{packageId}?targetSandbox=<sandbox_name
 
 **Begäran**
 
-Följande begäran kontrollerar din behörighet för {PACKAGE_ID} och sandlåda.
+Följande begäran kontrollerar dina behörigheter för {PACKAGE_ID} och sandlådan.
 
 ```shell
 curl -X GET \
@@ -1028,7 +1028,7 @@ Visa svar+++
 
 ## Visa export-/importjobb {#list-jobs}
 
-Du kan visa aktuella export-/importjobb genom att göra en GET-förfrågan till `/packages` slutpunkt.
+Du kan visa aktuella export-/importjobb genom att göra en GET-förfrågan till slutpunkten `/packages`.
 
 **API-format**
 
@@ -1038,7 +1038,7 @@ GET /packages/jobs?{QUERY_PARAMS}
 
 | Parameter | Beskrivning |
 | --- | --- |
-| {QUERY_PARAMS} | Valfria frågeparametrar för att filtrera resultat efter. Se avsnittet om [frågeparametrar](./appendix.md) för mer information. |
+| {QUERY_PARAMS} | Valfria frågeparametrar för att filtrera resultat efter. Mer information finns i avsnittet om [frågeparametrar](./appendix.md). |
 
 **Begäran**
 

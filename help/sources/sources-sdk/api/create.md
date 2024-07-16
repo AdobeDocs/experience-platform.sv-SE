@@ -6,20 +6,20 @@ description: I följande dokument beskrivs hur du skapar en anslutningsspecifika
 exl-id: 0b0278f5-c64d-4802-a6b4-37557f714a97
 source-git-commit: f47b7f725475fc7f7fac6dd406975b46f257e390
 workflow-type: tm+mt
-source-wordcount: '797'
-ht-degree: 1%
+source-wordcount: '785'
+ht-degree: 0%
 
 ---
 
-# Skapa en ny anslutningsspecifikation med [!DNL Flow Service] API
+# Skapa en ny anslutningsspecifikation med API:t [!DNL Flow Service]
 
-En anslutningsspecifikation representerar strukturen för en källa. Den innehåller information om en källas autentiseringskrav, definierar hur källdata kan utforskas och inspekteras samt ger information om attributen för en viss källa. The `/connectionSpecs` slutpunkt i [!DNL Flow Service] Med API kan du programmässigt hantera anslutningsspecifikationerna inom organisationen.
+En anslutningsspecifikation representerar strukturen för en källa. Den innehåller information om en källas autentiseringskrav, definierar hur källdata kan utforskas och inspekteras samt ger information om attributen för en viss källa. Med slutpunkten `/connectionSpecs` i API:t [!DNL Flow Service] kan du programmässigt hantera anslutningsspecifikationerna inom organisationen.
 
-I följande dokument beskrivs hur du skapar en anslutningsspecifikation med [!DNL Flow Service] API och integrera en ny källa via självbetjäningskällor (Batch SDK).
+I följande dokument beskrivs hur du skapar en anslutningsspecifikation med hjälp av API:t [!DNL Flow Service] och integrerar en ny källa med självbetjäningskällor (Batch SDK).
 
 ## Komma igång
 
-Innan du fortsätter bör du granska [komma igång-guide](./getting-started.md) för länkar till relaterad dokumentation, en guide till hur du läser exempelanrop till API:er i det här dokumentet och viktig information om vilka huvuden som behövs för att kunna anropa ett Experience Platform-API.
+Innan du fortsätter bör du läsa [kom igång-guiden](./getting-started.md) för att få länkar till relaterad dokumentation, en guide till hur du läser exempelanropen för API i det här dokumentet och viktig information om vilka huvuden som krävs för att kunna anropa ett Experience Platform-API.
 
 ## Samla in artefakter
 
@@ -39,8 +39,8 @@ När du har angett den måste du strukturera din privata Git-databas så här:
 | Artefakter (filnamn) | Beskrivning | Exempel |
 | --- | --- | --- |
 | {your_source} | Namnet på källan. Den här mappen bör innehålla alla artefakter som hör till källan i din privata Git-databas. | `mailchimp-members` |
-| {your_source}-category.txt | Kategorin som källan tillhör, formaterad som en textfil. En lista över tillgängliga källkategorier som stöds av självbetjäningskällor (Batch SDK) är: <ul><li>Advertising</li><li>Analytics </li><li>Samtycke och inställningar</li><li>CRM</li><li>Nöjda kunder</li><li>Databas</li><li>e-handel</li><li>Marknadsföringsautomatisering</li><li>Betalningar</li><li>Protokoll</li></ul> **Anteckning**: Om du tror att din källa inte passar in i någon av ovanstående kategorier kan du kontakta din Adobe-representant för att diskutera detta. | `mailchimp-members-category.txt` Ange källans kategori i filen, som: `marketingAutomation`. |
-| {your_source}-description.txt | En kort beskrivning av källan. | [!DNL Mailchimp Members] är en källa för automatiserad marknadsföring som ni kan använda för att ta med [!DNL Mailchimp Members] data till Experience Platform. |
+| {your_source}-category.txt | Kategorin som källan tillhör, formaterad som en textfil. En lista över tillgängliga källkategorier som stöds av självbetjäningskällor (Batch SDK) är: <ul><li>Advertising</li><li>Analytics </li><li>Samtycke och inställningar</li><li>CRM</li><li>Nöjda kunder</li><li>Databas</li><li>e-Commerce</li><li>Marknadsföringsautomatisering</li><li>Betalningar</li><li>Protokoll</li></ul> **Obs!** Om du tror att din källa inte passar in i någon av ovanstående kategorier kan du kontakta din Adobe-representant för att diskutera saken. | `mailchimp-members-category.txt` Ange källkategorin i filen, till exempel: `marketingAutomation`. |
+| {your_source}-description.txt | En kort beskrivning av källan. | [!DNL Mailchimp Members] är en källa för automatiserad marknadsföring som du kan använda för att hämta [!DNL Mailchimp Members]-data till Experience Platform. |
 | {your_source}-icon.svg | Bilden som ska användas för att representera källan i katalogen för Experience Platform-källor. Den här ikonen måste vara en SVG-fil. |
 | {your_source}-label.txt | Källans namn så som det ska visas i katalogen Experience Platform sources. | Mailchimp-medlemmar |
 | {your_source}-connectionSpec.json | En JSON-fil som innehåller anslutningsspecifikationen för källan. Den här filen behövs inte från början eftersom du fyller i anslutningsspecifikationen när du slutför den här guiden. | `mailchimp-members-connectionSpec.json` |
@@ -53,11 +53,11 @@ När du har angett den måste du strukturera din privata Git-databas så här:
 
 När du har lagt till de nödvändiga filerna i din privata Git-databas måste du skapa en pull-begäran (PR) som Adobe kan granska. När din PR har godkänts och sammanfogats får du ett ID som kan användas för din anslutningsspecifikation för att hänvisa till källans etikett, beskrivning och ikon.
 
-Följ sedan stegen som beskrivs nedan för att konfigurera anslutningsspecifikationen. Mer information om olika funktioner som du kan lägga till i källan, till exempel avancerad schemaläggning, anpassat schema eller olika sidnumreringstyper, finns i handboken [konfigurera källspecifikationer](../config/sourcespec.md).
+Följ sedan stegen som beskrivs nedan för att konfigurera anslutningsspecifikationen. Mer information om olika funktioner som du kan lägga till i källan, till exempel avancerad schemaläggning, anpassat schema eller olika sidnumreringstyper, finns i guiden [Konfigurera källspecifikationer](../config/sourcespec.md).
 
 ## Kopiera mall för anslutningsspecifikation
 
-När du har samlat in de nödvändiga artefakterna kopierar och klistrar du in mallen för anslutningsspecifikationen nedan i valfri textredigerare och uppdaterar sedan attributen inom hakparentes `{}` med information som är relevant för just er källa.
+När du har samlat in de nödvändiga artefakterna kopierar och klistrar du in mallen för anslutningsspecifikation nedan i valfri textredigerare och uppdaterar sedan attributen inom hakparenteser `{}` med information som är relevant för just din källa.
 
 ```json
 {
@@ -452,7 +452,7 @@ I följande dokument finns instruktioner om hur du fyller i värdena för varje 
 * [Konfigurera din källspecifikation](../config/sourcespec.md)
 * [Konfigurera din specifikation för utforskande](../config/explorespec.md)
 
-Med informationen om din specifikation uppdaterad kan du skicka den nya anslutningsspecifikationen genom att göra en POST-förfrågan till `/connectionSpecs` slutpunkt för [!DNL Flow Service] API.
+Med din specifikationsinformation uppdaterad kan du skicka den nya anslutningsspecifikationen genom att göra en POST-förfrågan till `/connectionSpecs`-slutpunkten för [!DNL Flow Service] API.
 
 **API-format**
 
@@ -462,7 +462,7 @@ POST /connectionSpecs
 
 **Begäran**
 
-Följande begäran är ett exempel på en fullständigt skriven anslutningsspecifikation för en [!DNL MailChimp] källa:
+Följande begäran är ett exempel på en fullständigt skriven anslutningsspecifikation för en [!DNL MailChimp]-källa:
 
 ```shell
 curl -X POST \
@@ -835,6 +835,6 @@ Ett lyckat svar returnerar den nyligen skapade anslutningsspecifikationen, inklu
 
 ## Nästa steg
 
-Nu när du har skapat en ny anslutningsspecifikation måste du lägga till dess motsvarande anslutningsspecifikation-ID till en befintlig flödesspecifikation. Se självstudiekursen om [uppdatera flödesspecifikationer](./update-flow-specs.md) för mer information.
+Nu när du har skapat en ny anslutningsspecifikation måste du lägga till dess motsvarande anslutningsspecifikation-ID till en befintlig flödesspecifikation. Mer information finns i självstudiekursen [Uppdatera flödesspecifikationer](./update-flow-specs.md).
 
-Om du vill ändra anslutningsspecifikationen som du har skapat kan du se självstudiekursen om [uppdatera anslutningsspecifikationer](./update-connection-specs.md).
+Om du vill ändra anslutningsspecifikationen som du har skapat kan du läsa självstudiekursen om [att uppdatera anslutningsspecifikationerna](./update-connection-specs.md).

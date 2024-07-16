@@ -13,7 +13,7 @@ ht-degree: 0%
 
 >[!NOTE]
 >
->Adobe Experience Platform Launch har omklassificerats som en serie datainsamlingstekniker i Adobe Experience Platform. Som ett resultat av detta har flera terminologiska förändringar införts i produktdokumentationen. Se följande [dokument](../../term-updates.md) för en konsoliderad hänvisning till terminologiska förändringar.
+>Adobe Experience Platform Launch har omklassificerats som en serie datainsamlingstekniker i Adobe Experience Platform. Som ett resultat av detta har flera terminologiska förändringar införts i produktdokumentationen. I följande [dokument](../../term-updates.md) finns en konsoliderad referens till de ändrade terminologin.
 
 De fem senaste biblioteken som har publicerats i produktionsmiljön på en webbegenskap är tillgängliga för senare hämtning. Den här funktionen är användbar när du hittar ett fel i ditt produktionsbibliotek och behöver återställa till ett känt bra läge omedelbart.
 
@@ -21,11 +21,11 @@ Hämtningsprocessen beror på dina miljöinställningar när biblioteket ursprun
 
 Följande alternativ är tillgängliga:
 
-* **Värd: Hanteras av Adobe, Archive: Av:** Om du använder Hanteras av Adobe och inte arkiverar ditt bibliotek kan du publicera om dessa äldre bibliotek.
+* **Värd: Hanteras av Adobe, Arkiv: Av:** Om du använder Hanteras av Adobe-värd och inte arkiverar ditt bibliotek kan du publicera om de här äldre biblioteken.
 
-* **Värd: Hanteras av Adobe, Archive: På:** Om du använder Hanteras av Adobe och arkiverar ditt bibliotek kan du hämta dessa äldre bibliotek.
+* **Värd: Hanteras av Adobe, arkiveras: På:** Om du använder Hanteras av Adobe och du arkiverar ditt bibliotek kan du hämta dessa äldre bibliotek.
 
-* **Värd: SFTP, arkiv: På eller av:** Om du använder SFTP-värden antas du ha egna arkiveringsstrategier och inga hämtningsalternativ är tillgängliga.
+* **Värd: SFTP, Arkiv: På eller Av:** Om du använder SFTP-värden antas du ha egna arkiveringsstrategier och inga hämtningsalternativ är tillgängliga.
 
 Det finns ännu inga hämtningsalternativ för mobila egenskaper.
 
@@ -43,7 +43,7 @@ Det innebär att när du publicerar om ett äldre bibliotek:
 
 * Inga ändringar görs i någon av resurserna (eller tidigare revideringar) i taggegenskapen
 
-* Det sätt på vilket utvecklings- och mellanlagringsmiljöer beräknar vad som är uppströms förändras inte
+* Det sätt på vilket utvecklings- och staging-miljöer beräknar vad som är uppströms förändras inte
 
 Tänk på scenariot när du återställer på grund av ett problem med en viss regel. Regelrevisionen som nu är i produktion kan till exempel vara tre versioner gammal.  När du visar den regeln i användargränssnittet för att åtgärda den, återspeglas den fortfarande de senaste ändringarna som har sparats i stället för de som är under produktion.
 
@@ -59,11 +59,11 @@ Från publiceringsskärmen:
 1. Markera ellipsen (`...`) i det övre högra hörnet av bibliotekskortet.
 1. Välj **[!UICONTROL Republish]**.
 
-## Hämta
+## Ladda ned
 
 Det är enklare att hämta ett arkiverat bibliotek. Du refererar inte direkt till de här ZIP-filerna någonstans, så du kan bara hämta det äldre biblioteket till datorn och köra din vanliga process.
 
-### Hämta ett äldre bibliotek
+### Så här hämtar du ett äldre bibliotek
 
 ![Hämta ett bibliotek](images/retrieve_download.png)
 

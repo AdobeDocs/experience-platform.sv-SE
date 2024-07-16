@@ -4,24 +4,24 @@ description: Lär dig hur du anropar slutpunkten /profiles i Reaktors API.
 exl-id: d0434098-f49a-45f3-9772-488bd3c134aa
 source-git-commit: fcd44aef026c1049ccdfe5896e6199d32b4d1114
 workflow-type: tm+mt
-source-wordcount: '169'
+source-wordcount: '161'
 ht-degree: 1%
 
 ---
 
 # Profilslutpunkt
 
-I Reactor API representerar en profil en Adobe Experience Platform-användare. Reaktors-API:t underhåller inte sin egen databas med användare och behörigheter, utan bygger i stället på Adobe-ID:n som hanteras av [Adobe system för identitetshantering (IMS)](https://helpx.adobe.com/enterprise/using/identity.html).
+I Reactor API representerar en profil en Adobe Experience Platform-användare. Reaktors-API:t underhåller inte sin egen databas med användare och behörigheter, utan förlitar sig i stället på Adobe-ID:n som hanteras av [Adobe:s identitetshanteringssystem (IMS)](https://helpx.adobe.com/enterprise/using/identity.html).
 
 En profil innehåller all information om den inloggade användaren, inklusive alla organisationer som användaren tillhör, produktprofiler som han/hon tillhör i varje organisation samt rättigheter som han/hon har från varje produktprofil.
 
 ## Komma igång
 
-Slutpunkten som används i den här guiden är en del av [Reaktors-API](https://www.adobe.io/experience-platform-apis/references/reactor/). Läs igenom [komma igång-guide](../getting-started.md) om du vill ha viktig information om hur du autentiserar till API:t.
+Slutpunkten som används i den här guiden ingår i [Reaktors-API](https://www.adobe.io/experience-platform-apis/references/reactor/). Innan du fortsätter bör du läsa [kom igång-guiden](../getting-started.md) för att få viktig information om hur du autentiserar dig för API:t.
 
 ## Hämta den aktuella profilen {#lookup}
 
-Du kan hämta information om den inloggade profilen genom att göra en GET-förfrågan till `/profile` slutpunkt.
+Du kan hämta information om den inloggade profilen genom att göra en GET-förfrågan till slutpunkten `/profile`.
 
 **API-format**
 

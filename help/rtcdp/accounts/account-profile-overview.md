@@ -16,15 +16,15 @@ ht-degree: 6%
 
 >[!NOTE]
 >
->Kontoprofiler är bara tillgängliga för Adobe Real-time Customer Data Platform B2B Edition-kunder. Om du vill veta mer om Real-Time CDP, B2B Edition och de funktioner som finns kan du börja med att läsa [Real-Time CDP, B2B Edition - översikt](../b2b-overview.md).
+>Kontoprofiler är bara tillgängliga för Adobe Real-time Customer Data Platform B2B Edition-kunder. Om du vill veta mer om Real-Time CDP, B2B Edition och de funktioner som finns tillgängliga börjar du med att läsa översikten över [Real-Time CDP, B2B Edition](../b2b-overview.md).
 
-Med kontoprofiler kan du samla kontoinformation från flera olika källor. Denna enhetliga vy av ett konto sammanför data från alla era marknadsföringskanaler och de olika system som organisationen för närvarande använder för att lagra kundkontodata. Mer information om hur kontoprofiler skapas som en del av B2B-arbetsflödet finns i [självstudiekurs från början till slut](../b2b-tutorial.md).
+Med kontoprofiler kan du samla kontoinformation från flera olika källor. Denna enhetliga vy av ett konto sammanför data från alla era marknadsföringskanaler och de olika system som organisationen för närvarande använder för att lagra kundkontodata. Om du vill veta mer om hur kontoprofiler skapas som en del av B2B-arbetsflödet kan du läsa självstudiekursen [från början till slut](../b2b-tutorial.md).
 
-Genom att sammanfoga kontouppgifter från olika källor kan ni börja se en komplett bild av varje kundkonto och dess relaterade möjligheter och kontakter. På så sätt kan er organisation ta era B2B-marknadsföringskampanjer till en ny nivå. Läs mer om Real-Time CDP, B2B Edition i [Exempel från Real-Time CDP, B2B Edition](../b2b-use-case.md).
+Genom att sammanfoga kontouppgifter från olika källor kan ni börja se en komplett bild av varje kundkonto och dess relaterade möjligheter och kontakter. På så sätt kan er organisation ta era B2B-marknadsföringskampanjer till en ny nivå. Läs [användningsexemplet för Real-Time CDP, B2B Edition](../b2b-use-case.md) om du vill veta mer om Real-Time CDP, B2B Edition.
 
 ## Visningsprogram för kontoprofil
 
-Med Real-Time CDP, B2B Edition kan du använda användargränssnittet i Experience Platform för att visa kontoprofiler och söka efter specifika konton med ett konto-ID från en ansluten företagskälla eller genom att ange källinformation direkt. Mer information om hur du visar kontoprofiler i plattformsgränssnittet finns i [gränssnittshandbok för kontoprofil](account-profile-ui-guide.md).
+Med Real-Time CDP, B2B Edition kan du använda användargränssnittet i Experience Platform för att visa kontoprofiler och söka efter specifika konton med ett konto-ID från en ansluten företagskälla eller genom att ange källinformation direkt. Mer information om hur du visar kontoprofiler i plattformsgränssnittet finns i [gränssnittshandboken för kontoprofiler](account-profile-ui-guide.md).
 
 ## Skapa och aktivera kontomålgrupper
 

@@ -14,7 +14,7 @@ ht-degree: 0%
 
 # Konfigurera en CSP
 
-A [Skyddsprincip för innehåll](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Security-Policy) (CSP) används för att begränsa vilka resurser en webbläsare får använda. CSP kan även begränsa funktionerna för skript och formatresurser. Adobe Experience Platform Web SDK kräver ingen CSP, men om du lägger till en kan det minska attackytan för att förhindra skadliga attacker.
+En [CSP ](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Security-Policy) (Content Security Policy) används för att begränsa vilka resurser en webbläsare får använda. CSP kan även begränsa funktionerna för skript och formatresurser. Adobe Experience Platform Web SDK kräver ingen CSP, men om du lägger till en kan det minska attackytan för att förhindra skadliga attacker.
 
 CSP måste återspegla hur [!DNL Platform Web SDK] distribueras och konfigureras. Följande CSP visar vilka ändringar som kan behövas för att SDK ska fungera korrekt. Ytterligare CSP-inställningar krävs troligen, beroende på din specifika miljö.
 
@@ -29,17 +29,17 @@ default-src 'self';
 connect-src 'self' EDGE-DOMAIN
 ```
 
-I exemplet ovan `EDGE-DOMAIN` ska ersättas med förstahandsdomänen. Första part-domänen är konfigurerad för [edgeDomain](../commands/configure/edgedomain.md) inställning. Om ingen förstahandsdomän har konfigurerats, `EDGE-DOMAIN` bör ersättas med `*.adobedc.net`. Om migrering av besökare är aktiverat med [idMigrationEnabled](../commands/configure/idmigrationenabled.md), `connect-src` direktivet måste även innehålla `*.demdex.net`.
+I exemplet ovan bör `EDGE-DOMAIN` ersättas med förstahandsdomänen. Den första partsdomänen har konfigurerats för inställningen [edgeDomain](../commands/configure/edgedomain.md). Om ingen förstapartsdomän har konfigurerats bör `EDGE-DOMAIN` ersättas med `*.adobedc.net`. Om migrering av besökare aktiveras med [idMigrationEnabled](../commands/configure/idmigrationenabled.md) måste direktivet `connect-src` även innehålla `*.demdex.net`.
 
 ### Använd NONCE för att tillåta infogade skript och formatelement
 
-[!DNL Platform Web SDK] kan ändra sidinnehåll och måste godkännas för att kunna skapa infogade skript och formattaggar. För att uppnå detta rekommenderar Adobe att du använder ett nonce för [default-src](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Security-Policy/default-src) CSP-direktiv. Ett nonce är en servergenererad kryptografiskt stark slumpvariabel som genereras en gång per varje unik sidvy.
+[!DNL Platform Web SDK] kan ändra sidinnehåll och måste godkännas för att kunna skapa infogade skript och formatkoder. För att uppnå detta rekommenderar Adobe att du använder en nonce för CSP-direktivet [default-src](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Security-Policy/default-src) . Ett nonce är en servergenererad kryptografiskt stark slumpvariabel som genereras en gång per varje unik sidvy.
 
 ```
 default-src 'nonce-SERVER-GENERATED-NONCE'
 ```
 
-Dessutom måste CSP nonce läggas till som ett attribut i [!DNL Platform Web SDK] [baskod](../install/library.md) script-tagg. [!DNL Platform Web SDK] kommer sedan att använda den funktionen en gång när du lägger till infogade skript eller formatkoder på sidan:
+Dessutom måste CSP nonce läggas till som ett attribut i skripttaggen [!DNL Platform Web SDK] [base code](../install/library.md) . [!DNL Platform Web SDK] kommer sedan att använda den funktionen en gång när du lägger till infogade skript eller formatkoder på sidan:
 
 ```
 <script nonce="SERVER-GENERATED-NONCE">
@@ -50,7 +50,7 @@ Dessutom måste CSP nonce läggas till som ett attribut i [!DNL Platform Web SDK
 </script>
 ```
 
-Om ett nonce inte används är det andra alternativet att lägga till `unsafe-inline` till `script-src` och `style-src` CSP-direktiv:
+Om inget nonce används är det andra alternativet att lägga till `unsafe-inline` i CSP-direktiven `script-src` och `style-src`:
 
 ```
 script-src 'unsafe-inline'
@@ -59,11 +59,11 @@ style-src 'unsafe-inline'
 
 >[!NOTE]
 >
->Adobe gör **not** rekommendera `unsafe-inline` eftersom det tillåter att skript körs på sidan, vilket begränsar fördelarna med CSP.
+>Adobe rekommenderar **inte** att du anger `unsafe-inline` eftersom det tillåter att skript körs på sidan, vilket begränsar fördelarna med CSP.
 
 ## Konfigurera en CSP för meddelanden i appen {#in-app-messaging}
 
-När du konfigurerar [Webb-meddelanden i appen](../personalization/web-in-app-messaging.md)måste du ta med följande direktiv i din CSP:
+När du konfigurerar [Web In-App Messaging](../personalization/web-in-app-messaging.md) måste du ta med följande direktiv i din CSP:
 
 ```
 default-src  blob:;

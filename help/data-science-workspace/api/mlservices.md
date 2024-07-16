@@ -16,7 +16,7 @@ ht-degree: 0%
 
 En MLService är en publicerad tränad modell som ger din organisation möjlighet att komma åt och återanvända tidigare utvecklade modeller. En viktig egenskap hos MLServices är möjligheten att automatisera kurser och poängsättning på schemalagd basis. Schemalagda kurser kan bidra till att bibehålla en modells effektivitet och exakthet, medan schemalagda kurser kan säkerställa att nya insikter genereras på ett konsekvent sätt.
 
-Automatiserade utbildnings- och poängscheman definieras med en starttidsstämpel, en sluttidsstämpel och en frekvens som representeras av en [cron-uttryck](https://en.wikipedia.org/wiki/Cron). Scheman kan definieras när [skapa en MLService](#create-an-mlservice) eller använt av [uppdatera en befintlig MLService](#update-an-mlservice).
+Automatiska utbildnings- och poängsättningsscheman definieras med en starttidsstämpel, sluttidsstämpel och en frekvens som representeras som ett [cron-uttryck](https://en.wikipedia.org/wiki/Cron). Scheman kan definieras när [en MLService](#create-an-mlservice) skapas eller används av [en befintlig MLService](#update-an-mlservice) uppdateras.
 
 ## Skapa en MLService {#create-an-mlservice}
 
@@ -77,7 +77,7 @@ curl -X POST \
 
 **Svar**
 
-Ett godkänt svar returnerar en nyttolast som innehåller information om den nyligen skapade MLService, inklusive dess unika identifierare (`id`), Experiment-ID för utbildning (`trainingExperimentId`), Experiment-ID för poängsättning (`scoringExperimentId`) och datauppsättnings-ID för inmatningsutbildning (`trainingDataSetId`).
+Ett lyckat svar returnerar en nyttolast som innehåller information om den nyligen skapade MLService, inklusive dess unika identifierare (`id`), test-ID för utbildning (`trainingExperimentId`), test-ID för poängsättning (`scoringExperimentId`) och datauppsättnings-ID för inmatningsutbildning (`trainingDataSetId`).
 
 ```json
 {
@@ -108,7 +108,7 @@ Ett godkänt svar returnerar en nyttolast som innehåller information om den nyl
 
 ## Hämta en lista med MLServices {#retrieve-a-list-of-mlservices}
 
-Du kan hämta en lista över MLServices genom att utföra en enda begäran om GET. Du kan filtrera resultaten genom att ange frågeparametrar i sökvägen för begäran. En lista över tillgängliga frågor finns i avsnittet om tillägg i [frågeparametrar för hämtning av resurser](./appendix.md#query).
+Du kan hämta en lista över MLServices genom att utföra en enda begäran om GET. Du kan filtrera resultaten genom att ange frågeparametrar i sökvägen för begäran. En lista med tillgängliga frågor finns i avsnittet om tillägg för [frågeparametrar för hämtning av resurser](./appendix.md#query).
 
 **API-format**
 
@@ -120,7 +120,7 @@ GET /mlServices?{QUERY_PARAMETER_1}={VALUE_1}&{QUERY_PARAMETER_2}={VALUE_2}
 
 | Parameter | Beskrivning |
 | --- | --- |
-| `{QUERY_PARAMETER}` | En av [tillgängliga frågeparametrar](./appendix.md#query) används för att filtrera resultat. |
+| `{QUERY_PARAMETER}` | En av de [tillgängliga frågeparametrarna](./appendix.md#query) som används för att filtrera resultat. |
 | `{VALUE}` | Värdet för föregående frågeparameter. |
 
 **Begäran**
@@ -138,7 +138,7 @@ curl -X GET \
 
 **Svar**
 
-Ett godkänt svar returnerar en lista över MLServices och dess detaljer inklusive deras MLService-ID (`{MLSERVICE_ID}`), Experiment-ID för utbildning (`{TRAINING_ID}`), Experiment-ID för poängsättning (`{SCORING_ID}`) och datauppsättnings-ID för inmatningsutbildning (`{DATASET_ID}`).
+Ett lyckat svar returnerar en lista över MLServices och deras information, inklusive deras MLService-ID (`{MLSERVICE_ID}`), test-ID för utbildning (`{TRAINING_ID}`), test-ID för poängsättning (`{SCORING_ID}`) och indatauppsättnings-ID för utbildning (`{DATASET_ID}`).
 
 ```json
 {
@@ -215,7 +215,7 @@ Du kan uppdatera en befintlig MLService genom att skriva över dess egenskaper v
 
 >[!TIP]
 >
->För att PUT ska lyckas rekommenderar vi att du först skickar en GET-förfrågan till [hämta MLService efter ID](#retrieve-a-specific-mlservice). Ändra och uppdatera sedan det returnerade JSON-objektet och använd hela det ändrade JSON-objektet som nyttolast för PUT-begäran.
+>För att denna PUT-begäran ska lyckas föreslår vi att du först utför en GET-förfrågan om att [hämta MLService med ID](#retrieve-a-specific-mlservice). Ändra och uppdatera sedan det returnerade JSON-objektet och använd hela det ändrade JSON-objektet som nyttolast för PUT-begäran.
 
 **API-format**
 

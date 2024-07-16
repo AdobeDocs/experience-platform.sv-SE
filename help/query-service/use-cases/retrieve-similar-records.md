@@ -11,22 +11,22 @@ ht-degree: 2%
 
 # Hämta liknande poster med funktioner i högre ordning
 
-Använd högordningsfunktionerna i Data Distiller för att lösa många vanliga användningsområden. Om du vill identifiera och hämta liknande eller relaterade poster från en eller flera datauppsättningar använder du filtret, omformningen och reducerar funktioner enligt den här handboken. Om du vill veta hur funktioner för högre ordning kan användas för att bearbeta komplexa datatyper kan du läsa dokumentationen om hur du [hantera matrisdatatyper och mappa datatyper](../sql/higher-order-functions.md).
+Använd högordningsfunktionerna i Data Distiller för att lösa många vanliga användningsområden. Om du vill identifiera och hämta liknande eller relaterade poster från en eller flera datauppsättningar använder du filtret, omformningen och reducerar funktioner enligt den här handboken. Mer information om hur funktioner i högre ordning kan användas för att bearbeta komplexa datatyper finns i dokumentationen om hur du [hanterar datatyper för arrayer och kartor](../sql/higher-order-functions.md).
 
 Använd den här vägledningen när du vill identifiera produkter från olika datauppsättningar som har en betydande likhet i deras egenskaper eller attribut. Den här metoden ger lösningar för bland annat: borttagning av datadubbletter, postkoppling, rekommendationssystem, informationshämtning och textanalys.
 
-Dokumentet beskriver processen att implementera en likhetskoppling, som sedan använder högre ordningsfunktioner i Data Distiller för att beräkna likheterna mellan datauppsättningar och filtrera dem baserat på valda attribut. SQL-kodfragment och förklaringar tillhandahålls för varje steg i processen. Arbetsflödet implementerar likhetskopplingar med Jaccards likhetsmått och tokenisering med Data Distiller funktioner i högre ordning. Dessa metoder används sedan för att identifiera och hämta liknande eller relaterade poster från en eller flera datauppsättningar baserade på ett likhetsmått. Processens huvudavsnitt är: [tokenisering med funktioner i högre ordning](#data-transformation), [sammanfogning av unika element](#cross-join-unique-elements), [Beräkning av likhet med jaccard](#compute-the-jaccard-similarity-measure)och [tröskelbaserad filtrering](#similarity-threshold-filter).
+Dokumentet beskriver processen att implementera en likhetskoppling, som sedan använder högre ordningsfunktioner i Data Distiller för att beräkna likheterna mellan datauppsättningar och filtrera dem baserat på valda attribut. SQL-kodfragment och förklaringar tillhandahålls för varje steg i processen. Arbetsflödet implementerar likhetskopplingar med Jaccards likhetsmått och tokenisering med Data Distiller funktioner i högre ordning. Dessa metoder används sedan för att identifiera och hämta liknande eller relaterade poster från en eller flera datauppsättningar baserade på ett likhetsmått. Nyckelavsnitten i processen är: [tokenisering med funktioner i högre ordning](#data-transformation), [korskopplingen för unika element](#cross-join-unique-elements), [likhetsberäkningen för kort](#compute-the-jaccard-similarity-measure) och [tröskelbaserad filtrering](#similarity-threshold-filter).
 
-## Förutsättningar
+## Förhandskrav
 
 Innan du fortsätter med det här dokumentet bör du känna till följande koncept:
 
-- A **likhetskoppling** är en åtgärd som identifierar och hämtar postpar från en eller flera tabeller baserat på ett mått på likhet mellan posterna. De viktigaste kraven för likhetsförening är följande:
-   - **Likhetsmått**: Ett likhetskoppling är beroende av ett fördefinierat likhetsmått eller mått. Exempel på sådana mått är Jaccard-likheter, cosinus-likheter, redigeringsavstånd och så vidare. Mätvärdet beror på datatypen och användningsfallet. Detta mått anger hur likartade eller avvikande två poster är.
-   - **Tröskelvärde**: Ett likhetströskelvärde används för att avgöra när de två posterna anses vara tillräckligt lika för att inkluderas i kopplingsresultatet. Poster med en likhetspoäng över tröskelvärdet räknas som träffar.
-- The **Jaccard-likhet** index, eller Jaccard-likhetsmätning, är en statistik som används för att mäta likheter och mångfald hos samplingsuppsättningar. Den definieras som skärningspunktens storlek dividerad med storleken på den förening som provuppsättningarna har. Jaccards likhetsmätning varierar från noll till ett. En Jaccard-likhet på noll innebär att det inte finns någon likhet mellan uppsättningarna, och en Jaccard-likhet på ett innebär att uppsättningarna är identiska.
-  ![Ett venn-diagram som illustrerar likhetsmätningen i jacard.](../images/use-cases/jaccard-similarity.png)
-- **Funktioner för högre ordning** i Data Distiller är dynamiska textbundna verktyg som bearbetar och omformar data direkt i SQL-satser. Dessa mångsidiga funktioner eliminerar behovet av flera steg vid datahantering, särskilt när [hantera komplexa typer som arrayer och kartor](../sql/higher-order-functions.md). Högre ordningsfunktioner bidrar till smidigare analys och bättre beslutsfattande i olika affärsscenarier genom att effektivisera frågeprocessen och förenkla omvandlingar.
+- En **likhetskoppling** är en åtgärd som identifierar och hämtar postpar från en eller flera tabeller baserat på ett mått på likhetsgraden mellan posterna. De viktigaste kraven för likhetsförening är följande:
+   - **Likhetsmått**: Ett likhetstecken som sammanfogning är beroende av ett fördefinierat likhetsmått eller mått. Exempel på sådana mått är Jaccard-likheter, cosinus-likheter, redigeringsavstånd och så vidare. Mätvärdet beror på datatypen och användningsfallet. Detta mått anger hur likartade eller avvikande två poster är.
+   - **Tröskelvärde**: Ett tröskelvärde för likhet används för att avgöra när de två posterna anses vara tillräckligt lika för att inkluderas i kopplingsresultatet. Poster med en likhetspoäng över tröskelvärdet räknas som träffar.
+- Indexet **Jaccard-likhet**, eller Jaccard-likhetsmätningen, är en statistik som används för att mäta likheter och mångfald i samplingsuppsättningar. Den definieras som skärningspunktens storlek dividerad med storleken på den förening som provuppsättningarna har. Jaccards likhetsmätning varierar från noll till ett. En Jaccard-likhet på noll innebär att det inte finns någon likhet mellan uppsättningarna, och en Jaccard-likhet på ett innebär att uppsättningarna är identiska.
+  ![Ett venndiagram som illustrerar likhetsmätningen i jaktet.](../images/use-cases/jaccard-similarity.png)
+- **Funktioner med högre ordning** i Data Distiller är dynamiska textbundna verktyg som bearbetar och omformar data direkt i SQL-satser. De här mångsidiga funktionerna eliminerar behovet av flera steg vid databearbetning, särskilt när [hanterar komplexa typer som arrayer och kartor](../sql/higher-order-functions.md). Högre ordningsfunktioner bidrar till smidigare analys och bättre beslutsfattande i olika affärsscenarier genom att effektivisera frågeprocessen och förenkla omvandlingar.
 
 ## Komma igång
 
@@ -40,14 +40,16 @@ Jaccards likhetsmått kan användas på ett stort antal datatyper, inklusive tex
 
 Produktgrupp A och B innehåller testdata för det här arbetsflödet.
 
-- Produktgrupp A: `{iPhone, iPad, iWatch, iPad Mini}`
-- Produktgrupp B: `{iPhone, iPad, Macbook Pro}`
+- Produktuppsättning A: `{iPhone, iPad, iWatch, iPad Mini}`
+- Produktuppsättning B: `{iPhone, iPad, Macbook Pro}`
 
-För att beräkna Jaccards likheter mellan produktuppsättningarna A och B, ska du först hitta **skärningspunkt** (gemensamma element) i produktuppsättningarna. I detta fall `{iPhone, iPad}`. Gå till **union** (alla unika element) i båda produktuppsättningarna. I detta exempel `{iPhone, iPad, iWatch, iPad Mini, Macbook Pro}`.
+Om du vill beräkna Jaccard-likhet mellan produktuppsättningarna A och B ska du först hitta **skärningspunkten** (gemensamma element) för produktuppsättningarna. I det här fallet `{iPhone, iPad}`. Leta sedan reda på **union** (alla unika element) för båda produktuppsättningarna. I det här exemplet `{iPhone, iPad, iWatch, iPad Mini, Macbook Pro}`.
 
-Slutligen använder du likhetsformeln för Jaccard: `J(A,B) = A∪B / A∩B` för att beräkna likheterna.
+Slutligen använder du Jaccard-likhetsformeln: `J(A,B) = A∪B / A∩B` för att beräkna likheten.
 
-J = Jackavstånd A = set 1 B = set 2
+J = Kontantavstånd
+A = uppsättning 1
+B = uppsättning 2
 
 Jaccards likhet mellan produktuppsättningarna A och B är 0,4. Detta visar på en viss grad av likhet mellan de ord som används i de två dokumenten. Denna likhet mellan de två uppsättningarna definierar kolumnerna i likhetskopplingen. Dessa kolumner representerar information, eller egenskaper som är kopplade till data, som lagras i en tabell och används för att utföra likhetsberäkningar.
 
@@ -104,10 +106,10 @@ SELECT * FROM featurevector1;
 I följande beskrivningar finns en beskrivning av SQL-kodblocket ovan:
 
 - Rad 1: `CREATE TEMP TABLE featurevector1 AS`: Den här programsatsen skapar en temporär tabell med namnet `featurevector1`. Tillfälliga tabeller är vanligtvis bara tillgängliga i den aktuella sessionen och tas automatiskt bort i slutet av sessionen.
-- Rad 1 och 2: `SELECT * FROM (...)`: Den här delen av koden är en underfråga som används för att generera data som infogas i `featurevector1` tabell.
-I underfrågan, flera `SELECT` programsatser kombineras med `UNION ALL` -kommando. Varje `SELECT` -programsatsen genererar en rad med data med de angivna värdena för `ProductName` kolumn.
-- Rad 3: `SELECT 'iPad' AS ProductName`: Detta genererar en rad med värdet `iPad` i `ProductName` kolumn.
-- Rad 5: `SELECT 'iPhone'`: Detta genererar en rad med värdet `iPhone` i `ProductName` kolumn.
+- Rad 1 och 2: `SELECT * FROM (...)`: Den här delen av koden är en underfråga som används för att generera data som infogas i tabellen `featurevector1`.
+I underfrågan kombineras flera `SELECT`-satser med kommandot `UNION ALL`. Varje `SELECT`-sats genererar en rad med data med de angivna värdena för kolumnen `ProductName`.
+- Rad 3: `SELECT 'iPad' AS ProductName`: Detta genererar en rad med värdet `iPad` i kolumnen `ProductName`.
+- Rad 5: `SELECT 'iPhone'`: Detta genererar en rad med värdet `iPhone` i kolumnen `ProductName`.
 
 SQL-satsen skapar en tabell enligt nedan:
 
@@ -146,7 +148,7 @@ Följande avsnitt visar de nödvändiga dataomvandlingarna som borttagning av du
 
 ### Deduplicering {#deduplication}
 
-Använd sedan `DISTINCT` -sats för att ta bort dubbletter. Det finns inga dubbletter i det här exemplet, men det är ett viktigt steg att förbättra exaktheten i alla jämförelser. Nödvändig SQL visas nedan:
+Använd sedan satsen `DISTINCT` för att ta bort dubbletter. Det finns inga dubbletter i det här exemplet, men det är ett viktigt steg att förbättra exaktheten i alla jämförelser. Nödvändig SQL visas nedan:
 
 ```SQL
 SELECT DISTINCT(ProductName) AS featurevector1_distinct FROM featurevector1
@@ -155,7 +157,7 @@ SELECT DISTINCT(ProductName) AS featurevector2_distinct FROM featurevector2
 
 ### Borttagning av tomt utrymme {#whitespace-removal}
 
-I följande SQL-sats tas blanktecken bort från funktionsvektorerna. The `replace(ProductName, ' ', '') AS featurevector1_nospaces` en del av frågan `ProductName` kolumn från `featurevector1` tabellen och använder `replace()` funktion. The `REPLACE` ersätts alla förekomster av ett blanksteg (&#39; &#39;) med en tom sträng (&#39;&#39;&#39;). Detta tar bort alla blanksteg från `ProductName` värden. Resultatet kantutjämnas som `featurevector1_nospaces`.
+I följande SQL-sats tas blanktecken bort från funktionsvektorerna. `replace(ProductName, ' ', '') AS featurevector1_nospaces`-delen av frågan tar `ProductName`-kolumnen från tabellen `featurevector1` och använder funktionen `replace()`. Funktionen `REPLACE` ersätter alla förekomster av ett blanksteg (&#39; &#39;) med en tom sträng (&#39;&#39;). Detta tar effektivt bort alla blanksteg från värdena `ProductName`. Resultatet har alias som `featurevector1_nospaces`.
 
 ```SQL
 SELECT DISTINCT(ProductName) AS featurevector1_distinct, replace(ProductName, ' ', '') AS featurevector1_nospaces FROM featurevector1
@@ -194,7 +196,7 @@ Resultatet visas enligt nedan:
 
 ### Konvertera till gemener {#lowercase-conversion}
 
-Därefter har SQL förbättrats så att produktnamnen konverteras till gemener och blanksteg tas bort. Funktionen lower (`lower(...)`) används på resultatet av `replace()` funktion. Funktionen lower konverterar alla tecken i den ändrade `ProductName` värden till gemener. Detta garanterar att värdena är i gemener oavsett ursprungligt skiftläge.
+Därefter har SQL förbättrats så att produktnamnen konverteras till gemener och blanksteg tas bort. Den nedre funktionen (`lower(...)`) används på resultatet av funktionen `replace()`. Den nedre funktionen konverterar alla tecken i de ändrade `ProductName`-värdena till gemener. Detta garanterar att värdena är i gemener oavsett ursprungligt skiftläge.
 
 ```SQL
 SELECT DISTINCT(ProductName) AS featurevector1_distinct, lower(replace(ProductName, ' ', '')) AS featurevector1_transform FROM featurevector1;
@@ -235,7 +237,7 @@ Resultatet visas enligt nedan:
 
 Nästa steg är tokenisering eller textdelning. Tokenisering är processen att ta text och bryta ned den till individuella termer. Vanligtvis innebär detta att meningar delas upp i ord. I det här exemplet delas strängar upp i bigram (och i högre ordning n-gram) genom att tokens extraheras med SQL-funktioner som `regexp_extract_all`. Överlappande bigram måste genereras för effektiv tokenisering.
 
-SQL har förbättrats ytterligare så att du kan använda `regexp_extract_all`. `regexp_extract_all(lower(replace(ProductName, ' ', '')), '.{2}', 0) AS tokens:` Den här delen av frågan bearbetar den ändrade `ProductName` värden som skapades i föregående steg. Den använder `regexp_extract_all()` funktion för att extrahera alla icke-överlappande delsträngar med ett till två tecken från det ändrade och gemena `ProductName` värden. The `.{2}` mönstret för reguljära uttryck matchar delsträngarna med två tecken. The `regexp_extract_all(..., '.{2}', 0)` delar av funktionen extraherar sedan alla matchande delsträngar från indatatexten.
+SQL har förbättrats ytterligare för att använda `regexp_extract_all`. `regexp_extract_all(lower(replace(ProductName, ' ', '')), '.{2}', 0) AS tokens:` Den här delen av frågan bearbetar de ändrade `ProductName`-värdena som skapades i föregående steg. Funktionen `regexp_extract_all()` används för att extrahera alla icke-överlappande delsträngar från ett till två tecken från de ändrade och gemena `ProductName` -värdena. Det reguljära uttrycket `.{2}` matchar delsträngar med två tecken. `regexp_extract_all(..., '.{2}', 0)`-delen av funktionen extraherar sedan alla matchande delsträngar från indatatexten.
 
 ```SQL
 SELECT DISTINCT(ProductName) AS featurevector1_distinct, lower(replace(ProductName, ' ', '')) AS featurevector1_transform, 
@@ -258,9 +260,9 @@ Resultaten visas i tabellen nedan:
 
 +++
 
-Om du vill förbättra precisionen ytterligare måste du använda SQL för att skapa överlappande tokens. Strängen &quot;iPad&quot; ovan saknar till exempel variabeln &quot;pa&quot;. Du åtgärdar detta genom att skifta lookahead-operatorn (med `substring`) i ett steg och generera bigram.
+Om du vill förbättra precisionen ytterligare måste du använda SQL för att skapa överlappande tokens. Strängen &quot;iPad&quot; ovan saknar till exempel variabeln &quot;pa&quot;. Åtgärda detta genom att ändra framåtblickande operator (med `substring`) i ett steg och generera bigram.
 
-Liknar föregående steg, `regexp_extract_all(lower(replace(substring(ProductName, 2), ' ', '')), '.{2}', 0):` extraherar sekvenser med två tecken från det ändrade produktnamnet, men börjar med det andra tecknet med `substring` metod för att skapa överlappande token. Nästa, på rad 3-7 (`array_union(...) AS tokens`), `array_union()` funktionen kombinerar arrayerna för sekvenser med två tecken som hämtas av de två reguljära uttrycksextraktionerna. Detta garanterar att resultatet innehåller unika variabler från både icke-överlappande och överlappande sekvenser.
+På liknande sätt som i föregående steg extraherar `regexp_extract_all(lower(replace(substring(ProductName, 2), ' ', '')), '.{2}', 0):` sekvenser med två tecken från det ändrade produktnamnet, men börjar från det andra tecknet med metoden `substring` för att skapa överlappande tokens. I rad 3-7 (`array_union(...) AS tokens`) kombinerar funktionen `array_union()` arrayerna för sekvenser med två tecken som hämtas av de två reguljära uttrycksextraktionerna. Detta garanterar att resultatet innehåller unika variabler från både icke-överlappande och överlappande sekvenser.
 
 ```SQL {line-numbers="true"}
 SELECT DISTINCT(ProductName) AS featurevector1_distinct, 
@@ -287,11 +289,11 @@ Resultaten visas i tabellen nedan:
 
 +++
 
-Användning av `substring` som en lösning på problemet har begränsningar. Om du gör tokens från texten baserat på tre gram (tre tecken) måste du använda två `substrings` att titta framåt två gånger för att få de ändringar som krävs. Om du ska göra 10 gram behöver du nio `substring` uttryck. Detta skulle göra att koden blottar och blir ohållbar. Användning av reguljära uttryck är inte lämpligt. Det krävs en ny strategi.
+Användningen av `substring` som lösning på problemet har dock begränsningar. Om du skapar tokens från texten baserat på tre gram (tre tecken) måste du använda två `substrings` för att se framåt två gånger för att få de ändringar som krävs. Om du vill göra 10 gram behöver du nio `substring`-uttryck. Detta skulle göra att koden blottar och blir ohållbar. Användning av reguljära uttryck är inte lämpligt. Det krävs en ny strategi.
 
 ### Justera för längden på produktnamnet {#length-adjustment}
 
-SQl kan förbättras med sekvens- och längdfunktionerna. I följande exempel `sequence(1, length(lower(replace(ProductName, ' ', ''))) - 3)` genererar en nummersekvens från ett till längden på det ändrade produktnamnet minus tre. Om det ändrade produktnamnet till exempel är&quot;ipadmini&quot; med teckenlängden åtta, genereras nummer från ett till fem (åtta-tre).
+SQl kan förbättras med sekvens- och längdfunktionerna. I följande exempel genererar `sequence(1, length(lower(replace(ProductName, ' ', ''))) - 3)` en nummersekvens från ett till längden på det ändrade produktnamnet minus tre. Om det ändrade produktnamnet till exempel är&quot;ipadmini&quot; med teckenlängden åtta, genereras nummer från ett till fem (åtta-tre).
 
 Programsatsen nedan extraherar unika produktnamn och delar sedan upp varje namn i teckensekvenser (tokens) med fyra teckenlängder, exklusive blanksteg, och visar dem som två kolumner. En kolumn visar de unika produktnamnen och den andra kolumnen visar deras genererade tokens.
 
@@ -323,7 +325,7 @@ Resultaten visas i tabellen nedan:
 
 ### Ange tokenlängd {#ensure-set-token-length}
 
-Ytterligare villkor kan läggas till i programsatsen för att säkerställa att de genererade sekvenserna har en viss längd. Följande SQL-sats utökas på tokengenereringslogiken genom att göra `transform` funktionen är mer komplex. Programsatsen använder `filter` funktion inom `transform` för att säkerställa att de genererade sekvenserna är sex tecken långa. Den hanterar fall där det inte är möjligt genom att tilldela NULL-värden till dessa positioner.
+Ytterligare villkor kan läggas till i programsatsen för att säkerställa att de genererade sekvenserna har en viss längd. Följande SQL-sats utökas på tokengenereringslogiken genom att göra funktionen `transform` mer komplex. Programsatsen använder funktionen `filter` i `transform` för att säkerställa att de genererade sekvenserna har en längd på sex tecken. Den hanterar fall där det inte är möjligt genom att tilldela NULL-värden till dessa positioner.
 
 ```SQL
 SELECT
@@ -363,9 +365,9 @@ Funktioner i högre ordning är kraftfulla konstruktioner som gör att du kan im
 
 I Data Distiller är funktioner med högre ordning idealiska för att skapa n-gram och iterera över teckensekvenser.
 
-The `reduce` funktion, särskilt när den används i sekvenser som genereras av `transform`, ger ett sätt att härleda kumulativa värden eller aggregat, som kan vara avgörande i olika analys- och planeringsprocesser.
+Funktionen `reduce`, särskilt när den används i sekvenser som genereras av `transform`, erbjuder ett sätt att härleda kumulativa värden eller aggregat, som kan vara avgörande i olika analys- och planeringsprocesser.
 
-I SQl-programsatsen nedan är `reduce()` function aggregerar element i en array med hjälp av en anpassad aggregator. Den simulerar en for-slinga till **skapa kumulativa summor för alla heltal** från en till fem. `1, 1+2, 1+2+3, 1+2+3+4, 1+2+3+4`.
+I SQl-satsen nedan aggregerar funktionen `reduce()` element i en array med hjälp av en anpassad aggregator. Den simulerar en for-slinga för att **skapa de kumulativa summorna för alla heltal** från ett till fem. `1, 1+2, 1+2+3, 1+2+3+4, 1+2+3+4`.
 
 ```SQL {line-numbers="true"}
 SELECT transform(
@@ -381,21 +383,21 @@ SELECT transform(
 Här följer en analys av SQL-satsen:
 
 - Rad 1: `transform` använder funktionen `x -> reduce` för varje element som genereras i sekvensen.
-- Rad 2: `sequence(1, 5)` genererar en nummersekvens från ett till fem.
+- Rad 2: `sequence(1, 5)` genererar en nummersekvens från en till fem.
 - Rad 3: `x -> reduce(sequence(1, x), 0, (acc, y) -> acc + y)` utför en reduceringsåtgärd för varje element x i sekvensen (från 1 till 5).
-   - The `reduce` funktionen har ett inledande ackumulatorvärde på 0, en sekvens från ett till det aktuella värdet för `x`och en funktion i högre ordning `(acc, y) -> acc + y` om du vill lägga till siffrorna.
-   - Funktionen för högre ordning `acc + y` ackumulerar summan genom att lägga till det aktuella värdet `y` till ackumulatorn `acc`.
+   - Funktionen `reduce` tar det inledande ackumulatorvärdet 0, en sekvens från ett till det aktuella värdet för `x` och en funktion `(acc, y) -> acc + y` med högre ordning för att lägga till talen.
+   - Funktionen `acc + y` med högre ordning ackumulerar summan genom att lägga till det aktuella värdet `y` till ackumulatorn `acc`.
 - Rad 8: `AS sum_result` byter namn på den resulterande kolumnen till sum_result.
 
-Sammanfattningsvis tar den här funktionen med högre ordning två parametrar (`acc` och `y`) och definierar åtgärden som ska utföras, som i det här fallet lägger till `y` till ackumulatorn `acc`. Den här funktionen för högre ordning körs för varje element i sekvensen under reduceringsprocessen.
+Sammanfattningsvis tar den här funktionen för högre ordning två parametrar (`acc` och `y`) och definierar åtgärden som ska utföras, vilket i det här fallet lägger till `y` till ackumulatorn `acc`. Den här funktionen för högre ordning körs för varje element i sekvensen under reduceringsprocessen.
 
-Utdata för den här programsatsen är en enda kolumn (`sum_result`) som innehåller de ackumulerade summorna av tal från ett till fem.
+Utdata för den här programsatsen är en enda kolumn (`sum_result`) som innehåller den kumulativa summan av tal från ett till fem.
 
 ### Värdet för funktioner i högre ordning {#value-of-higher-order-functions}
 
 I det här avsnittet analyseras en nedbantad version av en SQL-sats på tre gram för att bättre förstå värdet på funktioner i högre ordning i Data Distiller och skapa n-gram mer effektivt.
 
-Programsatsen nedan fungerar på `ProductName` -kolumnen i `featurevector1` tabell. Den skapar en uppsättning treteckendelsträngar som härleds från de ändrade produktnamnen i tabellen, med hjälp av positioner som hämtas från den sekvens som genereras.
+Programsatsen nedan fungerar på kolumnen `ProductName` i tabellen `featurevector1`. Den skapar en uppsättning treteckendelsträngar som härleds från de ändrade produktnamnen i tabellen, med hjälp av positioner som hämtas från den sekvens som genereras.
 
 ```SQL {line-numbers="true"}
 SELECT
@@ -409,21 +411,21 @@ FROM
 
 Här följer en analys av SQL-satsen:
 
-- Rad 2: `transform` använder en funktion i högre ordning för varje heltal i sekvensen.
-- Rad 3: `sequence(1, length(lower(replace(ProductName, ' ', ''))) - 2)` genererar en serie heltal från `1` till längden på det ändrade produktnamnet minus två.
-   - `length(lower(replace(ProductName, ' ', '')))` beräknar längden på `ProductName` när du har skapat den med gemener och tagit bort blanksteg.
+- Rad 2: `transform` använder en funktion med högre ordning för varje heltal i sekvensen.
+- Rad 3: `sequence(1, length(lower(replace(ProductName, ' ', ''))) - 2)` genererar en sekvens med heltal från `1` till längden på det ändrade produktnamnet minus två.
+   - `length(lower(replace(ProductName, ' ', '')))` beräknar längden på `ProductName` efter att ha gjort den med gemener och tagit bort blanksteg.
    - `- 2` subtraherar två från längden för att säkerställa att sekvensen genererar giltiga startpositioner för delsträngar med tre tecken. Genom att subtrahera 2 ser du till att du har tillräckligt många tecken efter varje startposition för att kunna extrahera en delsträng med 3 tecken. Delsträngsfunktionen här fungerar som en lookahead-operator.
-- Rad 4: `i -> substring(lower(replace(ProductName, ' ', '')), i, 3)` är en funktion i högre ordning som fungerar för varje heltal `i` i den genererade sekvensen.
-   - The `substring(...)` funktionen extraherar en delsträng med 3 tecken från `ProductName` kolumn.
-   - Innan du extraherar delsträngen `lower(replace(ProductName, ' ', ''))` konverterar `ProductName` till gemener och tar bort blanksteg för att säkerställa konsekvens.
+- Rad 4: `i -> substring(lower(replace(ProductName, ' ', '')), i, 3)` är en funktion i högre ordning som fungerar på varje heltal `i` i den genererade sekvensen.
+   - Funktionen `substring(...)` extraherar en delsträng med 3 tecken från kolumnen `ProductName`.
+   - Innan du extraherar delsträngen konverterar `lower(replace(ProductName, ' ', ''))` `ProductName` till gemener och tar bort blanksteg för att säkerställa konsekvens.
 
 Resultatet är en lista med delsträngar med tre tecken i längd, som extraheras från de ändrade produktnamnen, baserat på de positioner som anges i sekvensen.
 
 ## Filtrera resultaten {#filter-results}
 
-The `filter` funktion, med efterföljande [dataomvandlingar](#data-transformation), ger en mer detaljerad extrahering av relevant information från textdata. På så sätt kan ni få insikter, förbättra datakvaliteten och underlätta bättre beslutsprocesser.
+Funktionen `filter`, med efterföljande [dataomformningar](#data-transformation), ger en mer detaljerad extrahering av relevant information från textdata. På så sätt kan ni få insikter, förbättra datakvaliteten och underlätta bättre beslutsprocesser.
 
-The `filter` funktionen i följande SQL-sats används för att förfina och begränsa positionssekvensen i strängen från vilken delsträngar extraheras med den efterföljande omformningsfunktionen.
+Funktionen `filter` i följande SQL-sats används för att förfina och begränsa positionssekvensen i strängen som delsträngar extraheras från med den efterföljande omformningsfunktionen.
 
 ```SQL
 SELECT
@@ -441,21 +443,21 @@ FROM
   featurevector1;
 ```
 
-The `filter` funktionen genererar en sekvens med giltiga startpositioner inom den ändrade `ProductName` och extraherar delsträngar med en viss längd. Endast startpositioner som tillåter extrahering av en delsträng med sju tecken tillåts.
+Funktionen `filter` genererar en sekvens med giltiga startpositioner inom den ändrade `ProductName` och extraherar delsträngar med en viss längd. Endast startpositioner som tillåter extrahering av en delsträng med sju tecken tillåts.
 
-Villkoret `i -> i + 6 <= length(lower(replace(ProductName, ' ', '')))` ser till att startpositionen `i` plus `6` (längden på den önskade delsträngen med sju tecken minus ett) överstiger inte längden på den ändrade `ProductName`.
+Villkoret `i -> i + 6 <= length(lower(replace(ProductName, ' ', '')))` säkerställer att startpositionen `i` plus `6` (längden på den önskade delsträngen med sju tecken minus ett) inte överskrider längden på den ändrade `ProductName`.
 
-The `CASE` -programsatsen används för att villkorligt inkludera eller exkludera delsträngar baserat på deras längd. Endast delsträngar med sju tecken ingår, andra ersätts med NULL. Dessa delsträngar används sedan av `transform` funktionen för att skapa en sekvens med delsträngar från `ProductName` kolumn i `featurevector1` tabell.
+Programsatsen `CASE` används för att villkorligt inkludera eller exkludera delsträngar baserat på deras längd. Endast delsträngar med sju tecken ingår, andra ersätts med NULL. Dessa delsträngar används sedan av funktionen `transform` för att skapa en sekvens av delsträngar från kolumnen `ProductName` i tabellen `featurevector1`.
 
 >[!TIP]
 >
->Du kan använda [parametriserade mallar](../ui/parameterized-queries.md) för att återanvända och abstrakt logik i dina frågor. När du till exempel skapar allmänna verktygsfunktioner (till exempel den som visas ovan för tokeniseringssträngar) kan du använda parameteriserade mallar för Data Distiller där antalet tecken är en parameter.
+>Du kan använda funktionen [parametriserade mallar](../ui/parameterized-queries.md) för att återanvända och abstrahera logiken i dina frågor. När du till exempel skapar allmänna verktygsfunktioner (till exempel den som visas ovan för tokeniseringssträngar) kan du använda parameteriserade mallar för Data Distiller där antalet tecken är en parameter.
 
 ## Beräkna korskopplingen mellan unika element i två funktionsvektorer {#cross-join-unique-elements}
 
 Att identifiera skillnader eller avvikelser mellan de två datauppsättningarna baserat på en specifik omvandling av data är en vanlig process för att bibehålla datakvaliteten, förbättra datakvaliteten och säkerställa konsekvens mellan datauppsättningarna.
 
-Den här SQL-satsen nedan extraherar de unika produktnamnen som finns i `featurevector2` men inte i `featurevector1` efter att du har använt omformningarna.
+Den här SQL-satsen nedan extraherar de unika produktnamn som finns i `featurevector2` men inte i `featurevector1` efter att omformningarna har tillämpats.
 
 ```SQL
 SELECT lower(replace(ProductName, ' ', '')) FROM featurevector2
@@ -465,7 +467,7 @@ SELECT lower(replace(ProductName, ' ', '')) FROM featurevector1;
 
 >[!TIP]
 >
->Förutom `EXCEPT`kan du också använda `UNION` och `INTERSECT` beroende på ditt användningssätt. Du kan också experimentera med `ALL` eller `DISTINCT` -satser för att se skillnaden mellan att inkludera alla värden och bara returnera de unika värdena för de angivna kolumnerna.
+>Förutom `EXCEPT` kan du även använda `UNION` och `INTERSECT` beroende på ditt användningsfall. Du kan också experimentera med `ALL`- eller `DISTINCT`-satser för att se skillnaden mellan att ta med alla värden och bara returnera de unika värdena för de angivna kolumnerna.
 
 Resultaten visas i tabellen nedan:
 
@@ -505,7 +507,7 @@ SELECT * FROM featurevector1tokenized;
 
 >[!NOTE]
 >
->Om du använder [!DNL DbVisualizer]När du har skapat eller tagit bort en tabell uppdaterar du databasanslutningen så att tabellens metadatacache uppdateras. Data Distiller skickar inte ut metadatauppdateringar.
+>Om du använder [!DNL DbVisualizer] ska du uppdatera databasanslutningen när du har skapat eller tagit bort en tabell så att tabellens metadatacache uppdateras. Data Distiller skickar inte ut metadatauppdateringar.
 
 Resultaten visas i tabellen nedan:
 
@@ -574,9 +576,9 @@ CROSS JOIN
 
 Här följer en sammanfattning av SQl som används för att skapa krysset:
 
-- Rad 2: `A.featurevector1_distinct AS SetA_ProductNames` markerar `featurevector1_distinct` kolumn från tabellen `A` och tilldelar det ett alias `SetA_ProductNames`. Det här avsnittet av SQL resulterar i en lista med olika produktnamn från den första datauppsättningen.
-- Rad 4: `A.tokens AS SetA_tokens1` markerar `tokens` kolumn från tabellen eller underfrågan `A` och tilldelar det ett alias `SetA_tokens1`. Det här avsnittet av SQL resulterar i en lista med tokeniserade värden som är associerade med produktnamnen från den första datauppsättningen.
-- Rad 8: `CROSS JOIN` -åtgärden kombinerar alla möjliga kombinationer av rader från de två datauppsättningarna. Med andra ord paras varje produktnamn och tillhörande tokens från den första tabellen (`A`) med varje produktnamn och tillhörande tokens från den andra tabellen (`B`). Detta resulterar i en kartesisk produkt av de två datauppsättningarna, där varje rad i utdata representerar en kombination av ett produktnamn och tillhörande tokens från båda datauppsättningarna.
+- Rad 2: `A.featurevector1_distinct AS SetA_ProductNames` markerar kolumnen `featurevector1_distinct` i tabellen `A` och tilldelar den ett alias `SetA_ProductNames`. Det här avsnittet av SQL resulterar i en lista med olika produktnamn från den första datauppsättningen.
+- Rad 4: `A.tokens AS SetA_tokens1` markerar kolumnen `tokens` från tabellen eller underfrågan `A` och tilldelar den ett alias `SetA_tokens1`. Det här avsnittet av SQL resulterar i en lista med tokeniserade värden som är associerade med produktnamnen från den första datauppsättningen.
+- Rad 8: Åtgärden `CROSS JOIN` kombinerar alla möjliga kombinationer av rader från de två datauppsättningarna. Med andra ord paras varje produktnamn och tillhörande tokens från den första tabellen (`A`) med varje produktnamn och tillhörande tokens från den andra tabellen (`B`). Detta resulterar i en kartesisk produkt av de två datauppsättningarna, där varje rad i utdata representerar en kombination av ett produktnamn och tillhörande tokens från båda datauppsättningarna.
 
 Resultaten visas i tabellen nedan:
 
@@ -631,8 +633,8 @@ FROM
 
 Nedan följer en sammanfattning av den SQL som används för att beräkna likhetskoefficienten för Jaccard:
 
-- Rad 6: `size(array_intersect(SetA_tokens1, SetB_tokens2)) AS token_intersect_count` beräknar antalet variabler som är gemensamma för båda `SetA_tokens1` och `SetB_tokens2`. Beräkningen görs genom att storleken på skärningspunkten för de två tokenarrayerna beräknas.
-- Rad 7: `size(array_union(SetA_tokens1, SetB_tokens2)) AS token_union_count` beräknar det totala antalet unika token i båda `SetA_tokens1` och `SetB_tokens2`. Den här raden beräknar storleken på unionen av de två tokenarrayerna.
+- Rad 6: `size(array_intersect(SetA_tokens1, SetB_tokens2)) AS token_intersect_count` beräknar antalet token som är gemensamma för både `SetA_tokens1` och `SetB_tokens2`. Beräkningen görs genom att storleken på skärningspunkten för de två tokenarrayerna beräknas.
+- Rad 7: `size(array_union(SetA_tokens1, SetB_tokens2)) AS token_union_count` beräknar det totala antalet unika token för både `SetA_tokens1` och `SetB_tokens2`. Den här raden beräknar storleken på unionen av de två tokenarrayerna.
 - Rad 8-10: `ROUND(CAST(size(array_intersect(SetA_tokens1, SetB_tokens2)) AS DOUBLE) / size(array_union(SetA_tokens1, SetB_tokens2)), 2) AS jaccard_similarity` beräknar Jaccard-likheterna mellan tokenuppsättningarna. Dessa rader dividerar storleken på tokenöverlappningen med storleken på tokenunionen och avrundar resultatet till två decimaler. Resultatet är ett värde mellan noll och ett, där ett värde anger fullständig likhet.
 
 Resultaten visas i tabellen nedan:
@@ -715,4 +717,4 @@ Genom att läsa det här dokumentet kan du nu använda den här logiken för att
 - Datarensning: för att förbättra datakvaliteten.
 - Korganalys: för att ge insikter om kundbeteende, preferenser och potentiella möjligheter till korsförsäljning.
 
-Om du inte redan har gjort det bör du läsa [Översikt över AI/ML-funktioner](../data-distiller/ml-feature-pipelines/overview.md). Använd den översikten för att lära dig hur Data Distiller och den maskininlärning du föredrar kan skapa anpassade datamodeller som stöder era marknadsföringsfall med data från Experience Platform.
+Om du inte redan har gjort det rekommenderar vi att du läser översikten över funktionen [AI/ML](../data-distiller/ml-feature-pipelines/overview.md). Använd den översikten för att lära dig hur Data Distiller och den maskininlärning du föredrar kan skapa anpassade datamodeller som stöder era marknadsföringsfall med data från Experience Platform.

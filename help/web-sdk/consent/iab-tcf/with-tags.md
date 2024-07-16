@@ -13,21 +13,21 @@ ht-degree: 0%
 
 Adobe Experience Platform Web SDK stöder Interactive Advertising Bureau Transparency &amp; Consent Framework, version 2.0 (IAB TCF 2.0). I den här handboken visas hur du ställer in en taggegenskap för att skicka IAB TCF 2.0-medgivandeinformation till Adobe med hjälp av taggtillägget Adobe Experience Platform Web SDK.
 
-Om du inte vill använda taggar, se guiden på [med IAB TCF 2.0 utan taggar](./without-tags.md).
+Om du inte vill använda taggar läser du i guiden för [att använda IAB TCF 2.0 utan taggar](./without-tags.md).
 
 ## Komma igång
 
 Om du vill använda IAB TCF 2.0 med taggar och Platform Web SDK-tillägget måste du ha ett XDM-schema och en XDM-datauppsättning tillgänglig.
 
-Den här guiden kräver dessutom att du har en fungerande förståelse för Adobe Experience Platform Web SDK. Om du vill ha en snabb uppdatering kan du läsa [Adobe Experience Platform Web SDK - översikt](../../home.md) och [Frågor och svar](../../faq.md) dokumentation.
+Den här guiden kräver dessutom att du har en fungerande förståelse för Adobe Experience Platform Web SDK. Läs [Adobe Experience Platform Web SDK-översikten](../../home.md) och [Vanliga frågor](../../faq.md) om du vill få en snabb uppdatering.
 
 ## Ange standardsamtycke
 
-I tilläggskonfigurationen finns en inställning för standardsamtycke. Detta styr beteendet för kunder som inte har någon cookie för samtycke. Om du vill placera Experience Events i kö för kunder som inte har någon cookie för samtycke ska du ange det här till `pending`. Om du vill ignorera Experience Events för kunder som inte har någon cookie för samtycke anger du det här till `out`. Du kan också använda ett dataelement för att dynamiskt ange standardvärdet för samtycke. Se [`defaultConsent`](/help/web-sdk/commands/configure/defaultconsent.md) för mer information.
+I tilläggskonfigurationen finns en inställning för standardsamtycke. Detta styr beteendet för kunder som inte har någon cookie för samtycke. Om du vill placera Experience Events i kö för kunder som inte har någon cookie för samtycke anger du det här till `pending`. Om du vill ignorera Experience Events för kunder som inte har någon medgivandecookie anger du värdet `out`. Du kan också använda ett dataelement för att dynamiskt ange standardvärdet för samtycke. Mer information finns i [`defaultConsent`](/help/web-sdk/commands/configure/defaultconsent.md).
 
 ## Uppdatera profil med medgivandeinformation {#consent-code-1}
 
-Om du vill ringa [`setConsent`](/help/web-sdk/commands/setconsent.md) skapa en taggregel när dina kunders medgivandeinställningar har ändrats. Börja med att lägga till en ny händelse och välj händelsetypen för Core-tillägget&quot;Custom Code&quot;.
+Om du vill anropa åtgärden [`setConsent`](/help/web-sdk/commands/setconsent.md) när dina kunders medgivandeinställningar har ändrats skapar du en taggregel. Börja med att lägga till en ny händelse och välj händelsetypen för Core-tillägget&quot;Custom Code&quot;.
 
 Använd följande kodexempel för den nya händelsen:
 
@@ -53,7 +53,7 @@ addEventListener();
 
 Den här anpassade koden gör två saker:
 
-* Anger två dataelement, ett med strängen för samtycke och ett med `gdprApplies` flagga. Detta är användbart senare när du fyller i åtgärden Ange samtycke.
+* Ställer in två dataelement, ett med medgivandesträngen och ett med flaggan `gdprApplies`. Detta är användbart senare när du fyller i åtgärden Ange samtycke.
 
 * Startar regeln när medgivandeinställningarna har ändrats. Åtgärden Ange samtycke ska användas när medgivandeinställningarna har ändrats. Lägg till åtgärden &quot;Ange samtycke&quot; i tillägget och fyll i formuläret enligt följande:
 
@@ -70,18 +70,18 @@ Den här anpassade koden gör två saker:
 
 ## Skapa ett XDM-dataelement för Experience Events
 
-Medgivandesträngen ska inkluderas i XDM Experience Event. Använd XDM-objektets dataelement för att göra detta. Börja med att skapa ett nytt XDM-objektdataelement, eller använd ett som du redan har skapat för att skicka händelser. Om du har lagt till fältgruppen Experience Event Privacy i ditt schema bör du ha en `consentStrings` i XDM-objektet.
+Medgivandesträngen ska inkluderas i XDM Experience Event. Använd XDM-objektets dataelement för att göra detta. Börja med att skapa ett nytt XDM-objektdataelement, eller använd ett som du redan har skapat för att skicka händelser. Om du har lagt till fältgruppen Experience Event Privacy i ditt schema bör du ha en `consentStrings`-nyckel i XDM-objektet.
 
 1. Välj **[!UICONTROL consentStrings]**.
 
-1. Välj **[!UICONTROL Provide individual items]** och markera **[!UICONTROL Add Item]**.
+1. Välj **[!UICONTROL Provide individual items]** och välj **[!UICONTROL Add Item]**.
 
-1. Expandera **[!UICONTROL consentString]** rubrik och expandera det första objektet och fyll sedan i följande värden:
+1. Expandera rubriken **[!UICONTROL consentString]**, expandera det första objektet och fyll sedan i följande värden:
 
 * `consentStandard`: IAB TCF
 * `consentStandardVersion`: 2.0
 * `consentStringValue`: %IAB TCF Consent String%
-* `gdprApplies`: %IAB TCF-medgivande GDPR%
+* `gdprApplies`: %IAB TCF Consent GDPR%
 
 >[!IMPORTANT]
 >
@@ -111,7 +111,7 @@ function addEventListener() {
 addEventListener();
 ```
 
-Den här koden är identisk med den tidigare anpassade koden, förutom att både `useractioncomplete` och `tcloaded` -händelser hanteras. The [föregående egen kod](#consent-code-1) aktiveras bara när kunden väljer sina inställningar för första gången. Den här koden utlöses också när kunden redan har valt sina inställningar. På den andra sidan läses till exempel in.
+Den här koden är identisk med den tidigare anpassade koden, förutom att både `useractioncomplete`- och `tcloaded`-händelser hanteras. Den [föregående anpassade koden](#consent-code-1) utlöses bara när kunden väljer sina inställningar för första gången. Den här koden utlöses också när kunden redan har valt sina inställningar. På den andra sidan läses till exempel in.
 
 Lägg till en&quot;Skicka händelse&quot;-åtgärd från plattformens SDK-tillägg. I XDM-fältet väljer du XDM-dataelementet som du skapade i föregående avsnitt.
 
@@ -121,4 +121,4 @@ När händelser utlöses efter den första Experience Event-händelsen definiera
 
 ## Nästa steg
 
-Nu när du har lärt dig att använda IAB TCF 2.0 med Platform Web SDK-tillägget kan du även integrera med andra Adobe-lösningar som Adobe Analytics eller Adobe Real-time Customer Data Platform. Se [Översikt över IAB Transparency &amp; Consent Framework 2.0](./overview.md) för mer information.
+Nu när du har lärt dig att använda IAB TCF 2.0 med Platform Web SDK-tillägget kan du även integrera med andra Adobe-lösningar som Adobe Analytics eller Adobe Real-time Customer Data Platform. Mer information finns i [Översikt över IAB Transparency &amp; Consent Framework 2.0](./overview.md).

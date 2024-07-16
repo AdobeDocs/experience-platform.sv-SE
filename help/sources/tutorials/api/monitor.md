@@ -7,33 +7,33 @@ description: Den här självstudiekursen beskriver stegen för övervakning av k
 exl-id: 5b7d1aa4-5e6d-48f4-82bd-5348dc0e890d
 source-git-commit: 59dfa862388394a68630a7136dee8e8988d0368c
 workflow-type: tm+mt
-source-wordcount: '412'
-ht-degree: 1%
+source-wordcount: '408'
+ht-degree: 0%
 
 ---
 
 # Övervaka källornas dataflöden med API:t för Flow Service
 
-I den här självstudiekursen beskrivs stegen för övervakning av körningsdata för flöde för fullständighet, fel och mätvärden med hjälp av [[!DNL Flow Service] API](https://www.adobe.io/experience-platform-apis/references/flow-service/).
+I den här självstudiekursen beskrivs stegen för övervakning av körningsdata för flöde för fullständighet, fel och mätvärden med [[!DNL Flow Service] API](https://www.adobe.io/experience-platform-apis/references/flow-service/).
 
 >[!NOTE]
 >
->I den här självstudiekursen måste du ha ID-värdet för ett giltigt dataflöde. Om du inte har ett giltigt dataflödes-ID väljer du den önskade anslutningen på menyn [källöversikt](../../home.md) och följ instruktionerna för att skapa ett dataflöde innan du provar den här självstudiekursen.
+>I den här självstudiekursen måste du ha ID-värdet för ett giltigt dataflöde. Om du inte har ett giltigt dataflöde-ID väljer du en valfri koppling i [källöversikten](../../home.md) och följer instruktionerna som beskrivs för att skapa ett dataflöde innan du försöker med den här självstudien.
 
 ## Komma igång
 
 Den här självstudiekursen kräver även att du har en fungerande förståelse för följande komponenter i Adobe Experience Platform:
 
-* [Källor](../../home.md): [!DNL Experience Platform] tillåter att data hämtas från olika källor samtidigt som du kan strukturera, etikettera och förbättra inkommande data med [!DNL Platform] tjänster.
-* [Sandlådor](../../../sandboxes/home.md): [!DNL Experience Platform] innehåller virtuella sandlådor som partitionerar en enda [!DNL Platform] till separata virtuella miljöer för att utveckla och utveckla applikationer för digitala upplevelser.
+* [Källor](../../home.md): [!DNL Experience Platform] tillåter att data kan hämtas från olika källor samtidigt som du kan strukturera, etikettera och förbättra inkommande data med [!DNL Platform]-tjänster.
+* [Sandlådor](../../../sandboxes/home.md): [!DNL Experience Platform] innehåller virtuella sandlådor som partitionerar en enskild [!DNL Platform]-instans till separata virtuella miljöer för att hjälpa till att utveckla och utveckla program för digitala upplevelser.
 
 ### Använda plattforms-API:er
 
-Mer information om hur du kan anropa API:er för plattformar finns i handboken [komma igång med plattforms-API:er](../../../landing/api-guide.md).
+Mer information om hur du kan anropa plattforms-API:er finns i guiden [Komma igång med plattforms-API:er](../../../landing/api-guide.md).
 
 ## Övervaka dataflöden
 
-Om du vill se dataflödets status skickar du en GET-förfrågan till [!DNL Flow Service] API, samtidigt som du anger ditt dataflödes-ID.
+Om du vill se dataflödets status skickar du en GET-förfrågan till [!DNL Flow Service]-API:t och anger dataflödets motsvarande flödes-ID.
 
 **API-format**
 
@@ -43,7 +43,7 @@ GET /runs?property=flowId=={FLOW_ID}
 
 | Parameter | Beskrivning |
 | --------- | ----------- |
-| `{FLOW_ID}` | Unika `id` värdet för det dataflöde som du vill övervaka. |
+| `{FLOW_ID}` | Det unika `id`-värdet för dataflödet som du vill övervaka. |
 
 **Begäran**
 
@@ -60,7 +60,7 @@ curl -X GET \
 
 **Svar**
 
-Ett lyckat svar returnerar information om flödets körning, inklusive information om dess skapandedatum, käll- och målanslutningar samt flödets unika identifierare (`id`).
+Ett lyckat svar returnerar information om flödeskörningen, inklusive information om dess skapandedatum, käll- och målanslutningar samt flödets unika identifierare (`id`).
 
 ```json
 {
@@ -235,4 +235,4 @@ Ett lyckat svar returnerar information om flödets körning, inklusive informati
 
 ## Nästa steg
 
-Genom att följa den här självstudiekursen har du hämtat statistik och felinformation om ditt dataflöde med hjälp av [!DNL Flow Service] API. Du kan nu fortsätta att övervaka ditt dataflöde, beroende på ditt intag, för att spåra dess status och intag. Information om hur du utför samma uppgifter med användargränssnittet finns i självstudiekursen om [övervaka dataflöden med användargränssnittet](../ui/monitor.md)
+Genom att följa den här självstudiekursen har du hämtat mått och felinformation för ditt dataflöde med API:t [!DNL Flow Service]. Du kan nu fortsätta att övervaka ditt dataflöde, beroende på ditt intag, för att spåra dess status och intag. Information om hur du utför samma uppgifter med användargränssnittet finns i självstudiekursen [Övervaka dataflöden med användargränssnittet](../ui/monitor.md).

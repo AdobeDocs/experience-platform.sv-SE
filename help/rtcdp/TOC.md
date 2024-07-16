@@ -8,7 +8,7 @@ role: Admin
 source-git-commit: 9327cf8545caa306acd8077d089041d50a30e556
 workflow-type: tm+mt
 source-wordcount: '301'
-ht-degree: 13%
+ht-degree: 12%
 
 ---
 
@@ -46,23 +46,23 @@ ht-degree: 13%
    * [Destinationer i Real-Time CDP B2B Edition](destinations/b2b.md)
 * Guardrails {#guardrails}
    * [Översikt över Real-Time CDP skyddsutkast](guardrails/overview.md)
-   * [Skyddsritningar för dataöverföring](https://experienceleague.adobe.com/docs/experience-platform/ingestion/guardrails.html){target="_blank"}
-   * [Guardrails for the [!DNL Edge Network Server API]](https://experienceleague.adobe.com/docs/experience-platform/edge-network-server-api/guardrails.html){target="_blank"}
-   * [Guardrails för [!DNL Real-Time Customer Profile] data och segmentering](https://experienceleague.adobe.com/docs/experience-platform/profile/guardrails.html){target="_blank"}
-   * [Guardrails för [!DNL Identity Service] data](https://experienceleague.adobe.com/docs/experience-platform/identity/guardrails.html){target="_blank"}
+   * [Skyddsutkast för dataöverföring](https://experienceleague.adobe.com/docs/experience-platform/ingestion/guardrails.html){target="_blank"}
+   * [Guardrutor för  [!DNL Edge Network Server API]](https://experienceleague.adobe.com/docs/experience-platform/edge-network-server-api/guardrails.html){target="_blank"}
+   * [Garantier för [!DNL Real-Time Customer Profile] data och segmentering](https://experienceleague.adobe.com/docs/experience-platform/profile/guardrails.html){target="_blank"}
+   * [Skyddsritningar för [!DNL Identity Service] data](https://experienceleague.adobe.com/docs/experience-platform/identity/guardrails.html){target="_blank"}
    * [Guardrails för [!DNL Query Service]](https://experienceleague.adobe.com/docs/experience-platform/query/guardrails.html){target="_blank"}
-   * [Garantier för dataaktivering via destinationer](https://experienceleague.adobe.com/docs/experience-platform/destinations/guardrails.html){target="_blank"}
+   * [Garantier för dataaktivering via mål](https://experienceleague.adobe.com/docs/experience-platform/destinations/guardrails.html){target="_blank"}
 * Identiteter {#identity}
    * [Identiteter och identitetsnamnutrymmen](profile/identities-overview.md)
 * Sammanfoga profiler {#merge-policies}
    * [Översikt över kopplingsprofiler](profile/merge-policies.md)
-* Integritet och datahantering {#privacy}
+* Sekretess och datahantering {#privacy}
    * [Sekretessöversikt](privacy/privacy-overview.md)
    * [Datastyrning - översikt](privacy/data-governance-overview.md)
 * Profiler {#profile}
    * [Profilöversikt](profile/profile-overview.md)
    * [Bläddra i profil](profile/profile-browse.md)
-* Real-Time CDP B2B Edition AI-/ML-tjänster {#b2b-cdp-ai-ml}
+* Real-Time CDP B2B Edition AI/ML-tjänster {#b2b-cdp-ai-ml}
    * [Relaterade konton](b2b-ai-ml-services/related-accounts.md)
    * [Lead till kontomatchning](b2b-ai-ml-services/lead-to-account-matching.md)
    * Prediktiv lead- och kontobedömning {#predictive-lead-and-account-scoring-intro}
@@ -77,7 +77,7 @@ ht-degree: 13%
 * Användningsfall {#use-cases}
    * [Översikt över exempel på användningsområden](/help/rtcdp/use-case-guides/overview.md)
    * Kundförvärv {#customer-acquisition}
-      * [Engagera och skaffa nya kunder utan att vara beroende av cookies från tredje part](/help/rtcdp/partner-data/prospecting.md)
+      * [Engagera och få nya kunder utan att vara beroende av cookies från tredje part](/help/rtcdp/partner-data/prospecting.md)
       * [Personalisera upplevelser på plats för okända besökare med partnerstödd besökarigenkänning](/help/rtcdp/partner-data/onsite-personalization.md)
       * [Återmarknadsföring på plats av oautentiserade användare](./partner-data/offsite-retargeting.md)
    * Profilberikning {#profile-enrichment}
@@ -86,5 +86,5 @@ ht-degree: 13%
       * [Utveckla kundvärdet en gång till livstidsvärdet](/help/rtcdp/use-case-guides/evolve-one-time-value-lifetime-value/evolve-one-time-value-to-lifetime-value.md)
       * [Engagera era kunder på ett smart sätt](/help/rtcdp/use-case-guides/intelligent-re-engagement/intelligent-re-engagement.md)
       * [Engagera era kunder på ett smart sätt: Luma-exempel](/help/rtcdp/use-case-guides/intelligent-re-engagement/use-cases-luma.md)
-* [Versionsinformation om Experience Platform](https://experienceleague.adobe.com/en/docs/experience-platform/release-notes/latest)
-* [Experience Platform - ordlista](https://www.adobe.com/go/platform-glossary-en)
+* [Versionsinformation för Experience Platform](https://experienceleague.adobe.com/en/docs/experience-platform/release-notes/latest)
+* [Experience Platform-ordlista](https://www.adobe.com/go/platform-glossary-en)

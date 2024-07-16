@@ -4,20 +4,20 @@ description: Lär dig hur du anropar slutpunkten /secrets i Reaktors API.
 exl-id: 76875a28-5d13-402d-8543-24db7e2bee8e
 source-git-commit: b66a50e40aaac8df312a2c9a977fb8d4f1fb0c80
 workflow-type: tm+mt
-source-wordcount: '1246'
+source-wordcount: '1239'
 ht-degree: 1%
 
 ---
 
 # Slutpunkt för hemlighet
 
-En hemlighet är en resurs som bara finns i egenskaper för vidarebefordran av händelser (egenskaper med en `platform` attribut inställt på `edge`). De tillåter att händelsevidarebefordran autentiseras till ett annat system för säkert datautbyte.
+En hemlighet är en resurs som bara finns i egenskaper för vidarebefordran av händelser (egenskaper med ett `platform`-attribut inställt på `edge`). De tillåter att händelsevidarebefordran autentiseras till ett annat system för säkert datautbyte.
 
-Den här guiden visar hur du ringer `/secrets` slutpunkt i Reactor API. En detaljerad förklaring av de olika hemliga typerna och hur du använder dem finns i översikten på hög nivå på [hemligheter](../guides/secrets.md) innan du återgår till den här guiden.
+Den här guiden visar hur du anropar `/secrets`-slutpunkten i Reaktors API. En detaljerad förklaring av de olika hemliga typerna och hur du använder dem finns i översikten på hög nivå om [hemligheter](../guides/secrets.md) innan du återgår till den här handboken.
 
 ## Komma igång
 
-Slutpunkten som används i den här guiden ingår i [Reaktors-API](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/reactor.yaml). Innan du fortsätter bör du granska [komma igång-guide](../getting-started.md) om du vill ha viktig information om hur du autentiserar till API:t.
+Slutpunkten som används i den här guiden ingår i [Reaktors-API](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/reactor.yaml). Innan du fortsätter bör du läsa [kom igång-guiden](../getting-started.md) för att få viktig information om hur du autentiserar dig för API:t.
 
 ## Hämta en lista med hemligheter för en egenskap {#list-property}
 
@@ -352,16 +352,16 @@ curl -X POST \
 | Egenskap | Beskrivning |
 | --- | --- |
 | `name` | Ett unikt, beskrivande namn för hemligheten. |
-| `type_of` | Den typ av autentiseringsuppgifter som hemligheten representerar. Har tre godkända värden:<ul><li>`token`: En tokensträng.</li><li>`simple-http`: Ett användarnamn och lösenord.</li><li>`oauth2`: Autentiseringsuppgifter som överensstämmer med OAuth-standarden.</li></ul> |
-| `credentials` | Ett objekt som innehåller sekretessens autentiseringsvärden. Beroende på `type_of` måste olika egenskaper anges. Se avsnittet om [autentiseringsuppgifter](../guides/secrets.md#credentials) i hemlighetsguiden för att få information om kraven för varje typ. |
-| `relationships.environment` | Varje hemlighet måste kopplas till en miljö när den skapas. The `data` objektet i den här egenskapen måste innehålla `id` av den miljö som hemligheten tilldelas, tillsammans med en `type` värde för `environments`. |
-| `type` | Den typ av resurs som skapas. Värdet måste vara `secrets`. |
+| `type_of` | Den typ av autentiseringsuppgifter som hemligheten representerar. Har tre godkända värden:<ul><li>`token`: En tokensträng.</li><li>`simple-http`: Ett användarnamn och lösenord.</li><li>`oauth2`: Autentiseringsuppgifter som uppfyller OAuth-standarden.</li></ul> |
+| `credentials` | Ett objekt som innehåller sekretessens autentiseringsvärden. Beroende på attributet `type_of` måste olika egenskaper anges. I avsnittet om [inloggningsuppgifter](../guides/secrets.md#credentials) i guiden för hemligheter finns mer information om kraven för varje typ. |
+| `relationships.environment` | Varje hemlighet måste kopplas till en miljö när den skapas. `data`-objektet i den här egenskapen måste innehålla `id` för miljön som hemligheten tilldelas, tillsammans med `type`-värdet `environments`. |
+| `type` | Den typ av resurs som skapas. Värdet måste vara `secrets` för det här anropet. |
 
 {style="table-layout:auto"}
 
 **Svar**
 
-Ett lyckat svar returnerar informationen om hemligheten. Observera att beroende på vilken typ av hemlighet det är, finns det vissa egenskaper under `credentials` kan vara dold.
+Ett lyckat svar returnerar informationen om hemligheten. Observera att beroende på vilken typ av hemlighet det är, kan vissa egenskaper under `credentials` vara dolda.
 
 ```json
 {
@@ -417,13 +417,13 @@ Ett lyckat svar returnerar informationen om hemligheten. Observera att beroende 
 }
 ```
 
-## Testa en `oauth2` hemlig {#test}
+## Testa en `oauth2`-hemlighet {#test}
 
 >[!NOTE]
 >
->Den här åtgärden kan bara utföras på hemligheter med en `type_of` värde för `oauth2`.
+>Den här åtgärden kan bara utföras på hemligheter med värdet `type_of` för `oauth2`.
 
-Du kan testa en `oauth2` hemligt genom att ange dess ID i sökvägen till en PATCH-begäran. Teståtgärden utför ett utbyte och inkluderar svaret från tillståndstjänsten i `test_exchange` attribut i hemligheten `meta` -objekt. Den här åtgärden uppdaterar inte hemligheten.
+Du kan testa en `oauth2`-hemlighet genom att ta med dess ID i sökvägen för en PATCH-begäran. Teståtgärden utför ett utbyte och inkluderar auktoriseringstjänstens svar i attributet `test_exchange` i hemlighetens `meta`-objekt. Den här åtgärden uppdaterar inte hemligheten.
 
 **API-format**
 
@@ -433,7 +433,7 @@ PATCH /secrets/{SECRET_ID}
 
 | Parameter | Beskrivning |
 | --- | --- |
-| `{SECRET_ID}` | ID:t för `oauth2` hemlighet som du vill testa. |
+| `{SECRET_ID}` | ID:t för den `oauth2`-hemlighet som du vill testa. |
 
 {style="table-layout:auto"}
 
@@ -463,8 +463,8 @@ curl -X PATCH \
 
 | Egenskap | Beskrivning |
 | --- | --- |
-| `attributes` | Måste innehålla `type_of` egenskap med värdet `oauth2`. |
-| `meta` | Måste innehålla `action` egenskap med värdet `test`. |
+| `attributes` | Måste innehålla egenskapen `type_of` med värdet `oauth2`. |
+| `meta` | Måste innehålla egenskapen `action` med värdet `test`. |
 | `id` | ID för hemligheten som du testar. Detta måste matcha det ID som anges i sökvägen till begäran. |
 | `type` | Den typ av resurs som används. Måste anges till `secrets`. |
 
@@ -472,7 +472,7 @@ curl -X PATCH \
 
 **Svar**
 
-Ett lyckat svar returnerar informationen om hemligheten, där behörighetstjänstens svar finns under `meta.test_exchange`.
+Ett lyckat svar returnerar informationen om hemligheten, med behörighetstjänstens svar under `meta.test_exchange`.
 
 ```json
 { 
@@ -580,8 +580,8 @@ curl -X PATCH \
 
 | Egenskap | Beskrivning |
 | --- | --- |
-| `attributes` | Måste innehålla `type_of` egenskap som matchar den hemlighet som uppdateras (`token`, `simple-http`, eller `oauth2`). |
-| `meta` | Måste innehålla `action` egenskap med värdet `retry`. |
+| `attributes` | Måste innehålla en `type_of`-egenskap som matchar den hemlighet som uppdateras (`token`, `simple-http` eller `oauth2`). |
+| `meta` | Måste innehålla egenskapen `action` med värdet `retry`. |
 | `id` | ID:t för hemligheten som du försöker igen. Detta måste matcha det ID som anges i sökvägen till begäran. |
 | `type` | Den typ av resurs som används. Måste anges till `secrets`. |
 
@@ -589,7 +589,7 @@ curl -X PATCH \
 
 **Svar**
 
-Ett godkänt svar returnerar informationen om hemligheten, med statusen återställd till `pending`. När utbytet är klart uppdateras hemmens status till `succeeded` eller `failed` beroende på resultatet.
+Ett lyckat svar returnerar informationen om hemligheten, med statusen återställd till `pending`. När utbytet har slutförts uppdateras hemlighetens status till `succeeded` eller `failed` beroende på resultatet.
 
 ```json
 {
@@ -644,11 +644,11 @@ Ett godkänt svar returnerar informationen om hemligheten, med statusen återst�
 }
 ```
 
-## Återauktorisera en `oauth2-google` hemlig {#reauthorize}
+## Auktorisera om en `oauth2-google`-hemlighet {#reauthorize}
 
-Varje `oauth2-google` hemligheten innehåller en `meta.authorization_url_expires_at` som anger när auktoriserings-URL:en upphör att gälla. Därefter måste hemligheten auktoriseras på nytt för att den ska kunna förnya autentiseringsprocessen.
+Varje `oauth2-google`-hemlighet innehåller en `meta.authorization_url_expires_at`-egenskap som anger när auktoriserings-URL:en upphör att gälla. Därefter måste hemligheten auktoriseras på nytt för att den ska kunna förnya autentiseringsprocessen.
 
-Återauktorisera en `oauth2-google` hemlighet, begär en hemlighet från PATCH.
+Om du vill återauktorisera en `oauth2-google`-hemlighet gör du en PATCH-begäran för hemligheten i fråga.
 
 **API-format**
 
@@ -658,11 +658,11 @@ PATCH /secrets/{SECRET_ID}
 
 | Parameter | Beskrivning |
 | --- | --- |
-| `{SECRET_ID}` | The `id` av hemligheten som du vill återauktorisera. |
+| `{SECRET_ID}` | `id` för hemligheten som du vill återauktorisera. |
 
 **Begäran**
 
-The `data` objektet i nyttolasten för begäran måste innehålla ett `meta.action` egenskap inställd på `reauthorize`.
+Objektet `data` i nyttolasten för begäran måste innehålla en `meta.action`-egenskap med värdet `reauthorize`.
 
 ```shell
 curl -X PATCH \
@@ -688,7 +688,7 @@ curl -X PATCH \
 
 **Svar**
 
-Ett godkänt svar returnerar informationen om den uppdaterade hemligheten. härifrån måste du kopiera och klistra in `meta.authorization_url` till en webbläsare för att slutföra auktoriseringsprocessen.
+Ett godkänt svar returnerar informationen om den uppdaterade hemligheten. Härifrån måste du kopiera och klistra in `meta.authorization_url` i en webbläsare för att slutföra auktoriseringsprocessen.
 
 ```json
 {
@@ -795,7 +795,7 @@ Med Reaktors-API kan du lägga till anteckningar till vissa resurser, inklusive 
 
 >[!NOTE]
 >
->Se [slutpunktshandbok för anteckningar](./notes.md) om du vill ha mer information om hur du skapar och redigerar anteckningar för Reactor API-resurser.
+>Mer information om hur du skapar och redigerar anteckningar för Reactor API-resurser finns i [Notes-slutpunktshandboken](./notes.md).
 
 Du kan hämta alla anteckningar som hör till en hemlighet genom att göra en GET-förfrågan.
 
@@ -870,13 +870,13 @@ Ett godkänt svar returnerar en lista med anteckningar som tillhör hemligheten.
 
 ## Hämta relaterade resurser för en hemlighet {#related}
 
-Följande anrop visar hur du hämtar relaterade resurser för en hemlighet. När [hitta en hemlighet](#lookup), listas dessa relationer under `relationships` -egenskap.
+Följande anrop visar hur du hämtar relaterade resurser för en hemlighet. När [söker upp en hemlighet](#lookup) visas de här relationerna under egenskapen `relationships`.
 
-Se [relationshandbok](../guides/relationships.md) om du vill ha mer information om relationerna i Reactor API.
+Se [relationshandboken](../guides/relationships.md) för mer information om relationer i Reactor API.
 
 ### Söka efter en hemlighet i den relaterade miljön {#environment}
 
-Du kan slå upp miljön som använder en hemlighet genom att lägga till `/environment` till sökvägen för en GET-begäran.
+Du kan slå upp miljön som använder en hemlighet genom att lägga till `/environment` i sökvägen för en GET-begäran.
 
 **API-format**
 
@@ -985,7 +985,7 @@ Ett lyckat svar returnerar informationen om miljön.
 
 ### Söka efter en hemlig relaterad egenskap {#property}
 
-Du kan slå upp egenskapen som äger en hemlighet genom att lägga till `/property` till sökvägen för en GET-begäran.
+Du kan slå upp den egenskap som äger en hemlighet genom att lägga till `/property` i sökvägen för en GET-begäran.
 
 **API-format**
 

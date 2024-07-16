@@ -5,23 +5,23 @@ title: Exempel på API-slutpunkt för data
 description: Du kan använda ändpunkten "/samples" i Adobe Experience Platform API för att hämta, skapa, uppdatera och validera mappningsexempeldata.
 source-git-commit: 81f48de908b274d836f551bec5693de13c5edaf1
 workflow-type: tm+mt
-source-wordcount: '399'
-ht-degree: 1%
+source-wordcount: '405'
+ht-degree: 0%
 
 ---
 
 
-# Exempeldataslut
+# Exempeldataslutpunkt
 
-Exempeldata kan användas när du skapar ett schema för mappningsuppsättningen. Du kan använda `/samples` -slutpunkten i Data Prep API för att hämta, skapa och uppdatera exempeldata programmatiskt.
+Exempeldata kan användas när du skapar ett schema för mappningsuppsättningen. Du kan använda `/samples`-slutpunkten i API:t för dataförberedelser för att hämta, skapa och uppdatera exempeldata programmatiskt.
 
 ## Visa exempeldata
 
-Du kan hämta en lista över alla mappningsexempeldata för din organisation genom att göra en GET-förfrågan till `/samples` slutpunkt.
+Du kan hämta en lista över alla mappningsexempeldata för din organisation genom att göra en GET-förfrågan till slutpunkten `/samples`.
 
 **API-format**
 
-The `/samples` slutpunkten har stöd för flera frågeparametrar som hjälper dig att filtrera dina resultat. För närvarande måste du inkludera båda `start` och `limit` parametrar som en del av din begäran.
+Slutpunkten `/samples` har stöd för flera frågeparametrar som kan hjälpa dig att filtrera dina resultat. För närvarande måste du ta med både parametern `start` och parametern `limit` som en del av din begäran.
 
 ```http
 GET /samples?limit={LIMIT}&start={START}
@@ -29,8 +29,8 @@ GET /samples?limit={LIMIT}&start={START}
 
 | Parameter | Beskrivning |
 | --------- | ----------- |
-| `{LIMIT}` | **Obligatoriskt**. Anger antalet mappningssamplingsdata som returneras. |
-| `{START}` | **Obligatoriskt**. Anger förskjutningen för resultatsidorna. Om du vill hämta den första resultatsidan anger du värdet till `start=0`. |
+| `{LIMIT}` | **Krävs**. Anger antalet mappningssamplingsdata som returneras. |
+| `{START}` | **Krävs**. Anger förskjutningen för resultatsidorna. Om du vill hämta den första resultatsidan anger du värdet till `start=0`. |
 
 **Begäran**
 
@@ -81,12 +81,12 @@ Ett lyckat svar returnerar HTTP-status 200 med information om de två sista obje
 
 | Egenskap | Beskrivning |
 | -------- | ----------- |
-| `sampleData` |  |
-| `sampleType` |  |
+| `sampleData` | |
+| `sampleType` | |
 
 ## Skapa exempeldata
 
-Du kan skapa exempeldata genom att göra en POST-förfrågan till `/samples` slutpunkt.
+Du kan skapa exempeldata genom att göra en POST-förfrågan till slutpunkten `/samples`.
 
 ```http
 POST /samples
@@ -127,7 +127,7 @@ Ett lyckat svar returnerar HTTP-status 200 med information om dina nya exempelda
 
 ## Skapa exempeldata genom att överföra en fil
 
-Du kan skapa exempeldata med hjälp av en fil genom att göra en POST-förfrågan till `/samples/upload` slutpunkt.
+Du kan skapa exempeldata med hjälp av en fil genom att göra en POST-förfrågan till slutpunkten `/samples/upload`.
 
 **API-format**
 
@@ -166,7 +166,7 @@ Ett lyckat svar returnerar HTTP-status 200 med information om dina nya exempelda
 
 ## Söka efter ett specifikt exempeldataobjekt
 
-Du kan söka efter ett specifikt objekt med exempeldata genom att ange dess ID i sökvägen till en GET-begäran till `/samples` slutpunkt.
+Du kan söka efter ett specifikt objekt med exempeldata genom att ange dess ID i sökvägen för en GET-begäran till slutpunkten `/samples`.
 
 **API-format**
 
@@ -176,7 +176,7 @@ GET /samples/{SAMPLE_ID}
 
 | Parameter | Beskrivning |
 | --------- | ----------- |
-| `{SAMPLE_ID}` | ID:t för det exempeldataobjekt som du vill hämta. |
+| `{SAMPLE_ID}` | ID för det exempeldataobjekt som du vill hämta. |
 
 **Begäran**
 
@@ -207,7 +207,7 @@ Ett lyckat svar returnerar HTTP-status 200 med information om det exempeldataobj
 
 ## Uppdatera exempeldata
 
-Du kan uppdatera ett specifikt exempeldataobjekt genom att ange dess ID i sökvägen till en PUT-begäran till `/samples` slutpunkt.
+Du kan uppdatera ett specifikt exempeldataobjekt genom att ange dess ID i sökvägen för en PUT-begäran till slutpunkten `/samples`.
 
 **API-format**
 

@@ -50,4 +50,4 @@ Du kan också beräkna affärsvärden som ett härlett attribut och använda dem
 
 ## Nästa steg och användningsexempel
 
-Genom att läsa det här dokumentet får du en bättre förståelse för hur frågetjänstens härledda datauppsättningar underlättar komplexa användningsfall för att maximera dataanvändningen. I nästa exempel ska du läsa [decimalbaserat användningsfall för härlett attribut](../../use-cases/deciles-use-case.md) om du vill se hur den här funktionen används i ett verkligt scenario.
+Genom att läsa det här dokumentet får du en bättre förståelse för hur frågetjänstens härledda datauppsättningar underlättar komplexa användningsfall för att maximera dataanvändningen. Därefter bör du läsa [decimalbaserat härlett attributanvändningsfall](../../use-cases/deciles-use-case.md) för att se hur den här funktionen används i ett verkligt scenario.

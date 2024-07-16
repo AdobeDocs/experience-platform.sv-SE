@@ -13,13 +13,13 @@ ht-degree: 0%
 
 >[!NOTE]
 >
->Adobe Experience Platform Launch har omklassificerats som en serie datainsamlingstekniker i Adobe Experience Platform. Som ett resultat av detta har flera terminologiska förändringar införts i produktdokumentationen. Se följande [dokument](../../../term-updates.md) för en konsoliderad hänvisning till terminologiska förändringar.
+>Adobe Experience Platform Launch har omklassificerats som en serie datainsamlingstekniker i Adobe Experience Platform. Som ett resultat av detta har flera terminologiska förändringar införts i produktdokumentationen. I följande [dokument](../../../term-updates.md) finns en konsoliderad referens till de ändrade terminologin.
 
-The `products` variabeln spårar hur användare interagerar med produkter på din webbplats. Till exempel `products` kan spåra hur många gånger en produkt visas, läggs till i kundvagnen, checkas ut och köpas. Det kan också spåra hur effektiva marknadsföringskategorierna är på er webbplats.
+Variabeln `products` spårar hur användare interagerar med produkter på din webbplats. Variabeln `products` kan till exempel spåra hur många gånger en produkt visas, läggs till i kundvagnen, checkas ut och köpts. Det kan också spåra hur effektiva marknadsföringskategorierna är på er webbplats.
 
-The `products` variabeln ska alltid anges tillsammans med en success-händelse.
+Variabeln `products` ska alltid anges tillsammans med en success-händelse.
 
-The [!DNL Adobe Analytics Product String Builder] tillägget ställer automatiskt in `products` genom att slinga igenom datalagret, hämta alla nödvändiga produktrelaterade data och formatera dem med rätt syntax som visas nedan. Du behöver inte längre skriva och underhålla anpassad JavaScript för att utföra dessa komplexa åtgärder.
+Tillägget [!DNL Adobe Analytics Product String Builder] ställer automatiskt in variabeln `products` åt dig genom att göra en slinga genom datalagret, hämta alla produktrelaterade data som behövs och formatera dem med rätt syntax enligt nedan. Du behöver inte längre skriva och underhålla anpassade JavaScript för att utföra dessa komplexa åtgärder.
 
 ## Syntax för produktvariabeln
 
@@ -59,7 +59,7 @@ digitalData = {
 };
 ```
 
-Du anger följande sökväg i fältet Variabel för produkt-ID/namn för att hämta `productName` variabel:
+Du skulle ange följande sökväg i fältet Variabel för produkt-ID/namn för att hämta variabeln `productName`:
 
 ```json
 digitalData.transaction.item.productInfo.productName
@@ -71,17 +71,17 @@ digitalData.transaction.item.productInfo.productName
 
 ### Pristyp
 
-The `price` -parametern i [!DNL Adobe Analytics] produktsträngen måste återspegla det totala priset för det antal enheter som köpts, inte enhetspriset, för den produkten. När du aktiverar fältet Pris i tilläggsåtgärden måste du ange om datalagret visar totalpriset eller enhetspriset. När enhetspriset används [!DNL Adobe Analytics Product String] tillägg multiplicerar automatiskt enhetspriset med kvantiteten för att få det totala priset och ange produktsträngen korrekt.
+Parametern `price` i produktsträngen [!DNL Adobe Analytics] måste återspegla det totala priset för antalet köpta enheter, inte enhetspriset, för den produkten. När du aktiverar fältet Pris i tilläggsåtgärden måste du ange om datalagret visar totalpriset eller enhetspriset. När du använder enhetspriset multiplicerar tillägget [!DNL Adobe Analytics Product String] automatiskt enhetspriset med kvantiteten för att få det totala priset och ange produktsträngen korrekt.
 
 ![Pristyp](./images/screenshot-price-type.png)
 
 ### Custom Events &amp; Merchandising eVars
 
-![Event och eVars](./images/screenshot-events-evars.png)
+![Händelser och eVars](./images/screenshot-events-evars.png)
 
 Om implementeringen använder anpassade händelser eller eVars-produkter för marknadsföring gör du så här:
 
-1. Välj associerad **[!UICONTROL Add]** -knappen.
+1. Markera den associerade **[!UICONTROL Add]**-knappen.
 1. Välj den händelse eller eVar som du vill ställa in i listrutan.
 1. Ange sökvägen till rätt datalagervariabel med samma syntax som beskrivs ovan.
 
@@ -93,5 +93,5 @@ Den här åtgärden måste åtföljas av en&quot;Adobe Analytics - Ange variable
 
 ### Krav
 
-* Ett objektbaserat [datalager](https://theblog.adobe.com/data-layers-buzzword-best-practice/) med variabler för alla produktrelaterade data (som produkt-ID, kvantitet, pris). Det här tillägget fungerar inte med arraybaserade datalager.
-* The [Adobe Analytics](../analytics/overview.md) tillägg måste installeras.
+* Ett objektbaserat [datalager](https://theblog.adobe.com/data-layers-buzzword-best-practice/) med variabler för alla produktrelaterade data (till exempel produkt-ID, kvantitet, pris). Det här tillägget fungerar inte med arraybaserade datalager.
+* Tillägget [Adobe Analytics](../analytics/overview.md) måste vara installerat.

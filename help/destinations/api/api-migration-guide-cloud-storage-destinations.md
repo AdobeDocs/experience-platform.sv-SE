@@ -6,7 +6,7 @@ type: Tutorial
 exl-id: 4acaf718-794e-43a3-b8f0-9b19177a2bc0
 source-git-commit: 4b9e7c22282a5531f2f25f3d225249e4eb0e178e
 workflow-type: tm+mt
-source-wordcount: '1418'
+source-wordcount: '1334'
 ht-degree: 0%
 
 ---
@@ -19,12 +19,12 @@ ht-degree: 0%
 
 ## Migreringskontext {#migration-context}
 
-Startar [Oktober 2022](/help/release-notes/2022/october-2022.md#new-or-updated-destinations)kan du använda de nya funktionerna för filexport för att få tillgång till förbättrade anpassningsfunktioner när du exporterar filer från Experience Platform:
+Från och med [oktober 2022](/help/release-notes/2022/october-2022.md#new-or-updated-destinations) kan du använda de nya filexportfunktionerna för att få tillgång till förbättrade anpassningsfunktioner när du exporterar filer från Experience Platform:
 
-* Ytterligare [filnamnsalternativ](/help/destinations/ui/activate-batch-profile-destinations.md#file-names).
-* Möjlighet att ange anpassade filhuvuden i de exporterade filerna via [nytt mappningssteg](/help/destinations/ui/activate-batch-profile-destinations.md#mapping).
-* Möjlighet att välja [filtyp](/help/destinations/ui/connect-destination.md#file-formatting-and-compression-options) av den exporterade filen.
-* Möjlighet att [anpassa formateringen i exporterade CSV-datafiler](/help/destinations/ui/batch-destinations-file-formatting-options.md).
+* Ytterligare [namngivningsalternativ](/help/destinations/ui/activate-batch-profile-destinations.md#file-names).
+* Möjlighet att ange anpassade filhuvuden i de exporterade filerna via det [nya mappningssteget](/help/destinations/ui/activate-batch-profile-destinations.md#mapping).
+* Möjlighet att välja [filtypen](/help/destinations/ui/connect-destination.md#file-formatting-and-compression-options) för den exporterade filen.
+* Möjlighet att [anpassa formateringen för exporterade CSV-datafiler](/help/destinations/ui/batch-destinations-file-formatting-options.md).
 
 Den här funktionaliteten stöds av de betolmolnlagringskort som anges nedan:
 
@@ -42,19 +42,19 @@ Commenting out the three net new cloud storage destinations
 
 -->
 
-Observera att du för närvarande kan se två målkort sida vid sida för de tre Experience Platform. Nedan visas [!DNL Amazon S3] gamla och nya destinationer. I samtliga fall är korten markerade med **Beta** är de nya målkorten.
+Observera att du för närvarande kan se två målkort sida vid sida för de tre Experience Platform. Nedan visas de [!DNL Amazon S3] gamla och nya destinationerna. I samtliga fall är de kort som har markerats med **Beta** de nya målkorten.
 
-![Bild av de två Amazon S3-målkorten sida vid sida.](../assets/catalog/cloud-storage/amazon-s3/two-amazons3-destination-cards.png)
+![Bild av de två Amazon S3-målkorten i en sida vid sida-vy.](../assets/catalog/cloud-storage/amazon-s3/two-amazons3-destination-cards.png)
 
-Dessa destinationer med utökad funktionalitet erbjöds ursprungligen som betaversion, men *Adobe flyttar nu alla Real-Time CDP-kunder till de nya molnlagringsmålen*. För kunder som redan använder [!DNL Amazon S3], [!DNL Azure Blob], eller SFTP, innebär det att befintliga dataflöden migreras till de nya korten. Läs vidare om du vill ha mer information om de specifika ändringarna som ingår i migreringen.
+Dessa mål med utökad funktionalitet erbjöds ursprungligen som en betaversion, men *Adobe flyttar nu alla Real-Time CDP-kunder till de nya molnlagringsmålen*. För kunder som redan använder [!DNL Amazon S3], [!DNL Azure Blob] eller SFTP innebär detta att befintliga dataflöden migreras till de nya korten. Läs vidare om du vill ha mer information om de specifika ändringarna som ingår i migreringen.
 
 ## Vem den här sidan gäller för {#who-this-applies-to}
 
-Om du redan använder [API för flödestjänst](https://developer.adobe.com/experience-platform-apis/references/destinations/) om du vill exportera profiler till molnlagringsplatserna Amazon S3, Azure Blob eller SFTP gäller den här API-migreringsguiden dig.
+Om du redan använder [Flow Service API](https://developer.adobe.com/experience-platform-apis/references/destinations/) för att exportera profiler till molnlagringsmålen Amazon S3, Azure Blob eller SFTP gäller den här API-migreringsguiden dig.
 
-Om du har skript som körs i [!DNL Amazon S3], [!DNL Azure Blob], eller lagringsplatserna i SFTP-molnet ovanpå de exporterade filerna från Experience Platform, ska du vara medveten om att vissa parametrar ändras när det gäller anslutnings- och flödesspecifikationerna för de nya korten, liksom mappningssteget.
+Om du har skript som körs i molnlagringsplatserna [!DNL Amazon S3], [!DNL Azure Blob] eller SFTP ovanpå de exporterade filerna från Experience Platform, bör du tänka på att vissa parametrar ändras när det gäller anslutnings- och flödesspecifikationerna för de nya korten, samt mappningssteget.
 
-Om du t.ex. använde ett skript för att filtrera måldata flödar till [!DNL Amazon S3] mål, baserat på anslutningsspecifikationen för [!DNL Amazon S3] ska du vara medveten om att anslutningsspecifikationen ändras så att du måste uppdatera filtren.
+Om du t.ex. använder ett skript för att filtrera måldata till målet [!DNL Amazon S3], baserat på anslutningsspecifikationen för målet [!DNL Amazon S3], måste du vara medveten om att anslutningsspecifikationen ändras så att du måste uppdatera filtren.
 
 ## Relevanta dokumentationslänkar {#relevant-documentation-links}
 
@@ -68,24 +68,24 @@ TBD if we keep this link but will likely remove it
 
 -->
 * [API-självstudiekurs för att exportera målgrupper till molnlagringsmål](/help/destinations/api/activate-segments-file-based-destinations.md)
-* [Referenshandbok för API:t för destinationsflödestjänst](https://developer.adobe.com/experience-platform-apis/references/destinations/)
+* [Referensdokumentation för API:t för destinationsflödestjänsten](https://developer.adobe.com/experience-platform-apis/references/destinations/)
 
 ## Sammanfattning av bakåtkompatibla ändringar {#summary-backwards-incompatible-changes}
 
-Med migreringen till de nya destinationerna flödar alla era befintliga data till [!DNL Amazon S3], [!DNL Azure Blob]och SFTP-mål tilldelas nu nya målanslutningar och basanslutningar. Steget för profilmappning ändras också. De bakåtkompatibla ändringarna sammanfattas i avsnitten nedan för varje mål. Se även [målordlista](https://developer.adobe.com/experience-platform-apis/references/destinations/#tag/Glossary) om du vill ha mer information om villkoren i diagrammet nedan.
+Med migreringen till de nya målen tilldelas alla befintliga dataflöden till [!DNL Amazon S3], [!DNL Azure Blob] och SFTP-mål nu nya målanslutningar och basanslutningar. Steget för profilmappning ändras också. De bakåtkompatibla ändringarna sammanfattas i avsnitten nedan för varje mål. Visa även [målordlistan](https://developer.adobe.com/experience-platform-apis/references/destinations/#tag/Glossary) om du vill ha mer information om villkoren i diagrammet nedan.
 
 ![Översikt över migreringsguiden](/help/destinations/assets/api/api-migration-guide/migration-guide-diagram.png)
 
-### Bakåtkompatibla ändringar av [!DNL Amazon S3] mål {#changes-amazon-s3-destination}
+### Bakåtkompatibla ändringar av målet [!DNL Amazon S3] {#changes-amazon-s3-destination}
 
-De bakåtinkompatibla ändringarna för API-användarna är uppdaterade `connection spec ID` och `flow spec ID` enligt tabellen nedan:
+De bakåtkompatibla ändringarna för API-användarna är uppdaterade `connection spec ID` och `flow spec ID` enligt tabellen nedan:
 
 | [!DNL Amazon S3] | Äldre | Nytt |
 |---------|----------|---------|
 | Flödesspecifikation | 71471eba-b620-49e4-90fd-23f1fa0174d8 | 1a0514a6-33d4-4c7f-aff8-594799c47549 |
 | Anslutningsspecifikation | 4890fc95-5a1f-4983-94bb-e060c08e3f81 | 4fce964d-3f37-408f-9778-e597338a21ee |
 
-Se alla exempel på tidigare och nya basanslutningar och målanslutningar för [!DNL Amazon S3] på flikarna nedan. De parametrar som krävs för att skapa basanslutningar för [!DNL Amazon S3] destinationerna ändras inte.
+Visa de fullständiga, gamla och nya basanslutningsexemplen och målanslutningsexemplen för [!DNL Amazon S3] på flikarna nedan. Parametrarna som krävs för att skapa basanslutningar för [!DNL Amazon S3] mål ändras inte.
 
 På samma sätt finns det inga bakåtkompatibla ändringar i parametrarna som krävs för att skapa målanslutningar.
 
@@ -93,7 +93,7 @@ På samma sätt finns det inga bakåtkompatibla ändringar i parametrarna som kr
 
 >[!TAB Äldre basanslutning och målanslutning]
 
-+++Visa äldre [!DNL base connection] for [!DNL Amazon S3]
++++Visa äldre [!DNL base connection] för [!DNL Amazon S3]
 
 ```json {line-numbers="true" start-line="1" highlight="5"}
 {
@@ -126,7 +126,7 @@ På samma sätt finns det inga bakåtkompatibla ändringar i parametrarna som kr
 
 +++
 
-+++Visa äldre [!DNL target connection] for [!DNL Amazon S3]
++++Visa äldre [!DNL target connection] för [!DNL Amazon S3]
 
 ```json {line-numbers="true" start-line="1" highlight="12"}
 {
@@ -166,7 +166,7 @@ På samma sätt finns det inga bakåtkompatibla ändringar i parametrarna som kr
 
 >[!TAB Ny basanslutning och målanslutning]
 
-+++Visa nytt [!DNL base connection] for [!DNL Amazon S3]
++++Visa nya [!DNL base connection] för [!DNL Amazon S3]
 
 ```json {line-numbers="true" start-line="1" highlight="5"}
 {
@@ -199,7 +199,7 @@ På samma sätt finns det inga bakåtkompatibla ändringar i parametrarna som kr
 
 +++
 
-+++Visa nytt [!DNL target connection] for [!DNL Amazon S3]
++++Visa nya [!DNL target connection] för [!DNL Amazon S3]
 
 ```json {line-numbers="true" start-line="1" highlight="12, 16-27"}
 {
@@ -248,16 +248,16 @@ På samma sätt finns det inga bakåtkompatibla ändringar i parametrarna som kr
 
 >[!ENDTABS]
 
-### Bakåtkompatibla ändringar av [!DNL Azure Blob] mål {#changes-azure-blob-destination}
+### Bakåtkompatibla ändringar av [!DNL Azure Blob]-målet {#changes-azure-blob-destination}
 
-De bakåtinkompatibla ändringarna för API-användarna är uppdaterade `connection spec ID` och `flow spec ID` enligt tabellen nedan:
+De bakåtkompatibla ändringarna för API-användarna är uppdaterade `connection spec ID` och `flow spec ID` enligt tabellen nedan:
 
 | [!DNL Azure Blob] | Äldre | Nytt |
 |---------|----------|---------|
 | Flödesspecifikation | 71471eba-b620-49e4-90fd-23f1fa0174d8 | 752d422f-b16f-4f0d-b1c6-26e44e3b388 |
 | Anslutningsspecifikation | e258278b-a4cf-43ac-b158-4fa0ca0d948b | 6d6b59bf-fb58-4107-9064-4d246c0e5bb2 |
 
-Se alla exempel på tidigare och nya basanslutningar och målanslutningar för [!DNL Azure Blob] på flikarna nedan. Parametrarna som krävs för att skapa basanslutningar för Azure Blob-mål ändras inte.
+Visa de fullständiga, gamla och nya basanslutningsexemplen och målanslutningsexemplen för [!DNL Azure Blob] på flikarna nedan. Parametrarna som krävs för att skapa basanslutningar för Azure Blob-mål ändras inte.
 
 På samma sätt finns det inga bakåtkompatibla ändringar i parametrarna som krävs för att skapa målanslutningar.
 
@@ -265,7 +265,7 @@ På samma sätt finns det inga bakåtkompatibla ändringar i parametrarna som kr
 
 >[!TAB Äldre basanslutning och målanslutning]
 
-+++Visa äldre [!DNL base connection] for [!DNL Azure Blob]
++++Visa äldre [!DNL base connection] för [!DNL Azure Blob]
 
 ```json {line-numbers="true" start-line="1" highlight="5"}
 {
@@ -297,7 +297,7 @@ På samma sätt finns det inga bakåtkompatibla ändringar i parametrarna som kr
 
 +++
 
-+++Visa äldre [!DNL target connection] for [!DNL Azure Blob]
++++Visa äldre [!DNL target connection] för [!DNL Azure Blob]
 
 ```json {line-numbers="true" start-line="1" highlight="13"}
 {
@@ -338,7 +338,7 @@ På samma sätt finns det inga bakåtkompatibla ändringar i parametrarna som kr
 
 >[!TAB Ny basanslutning och målanslutning]
 
-+++Visa nytt [!DNL base connection] for [!DNL Azure Blob]
++++Visa nya [!DNL base connection] för [!DNL Azure Blob]
 
 ```json {line-numbers="true" start-line="1" highlight="5"}
 {
@@ -370,7 +370,7 @@ På samma sätt finns det inga bakåtkompatibla ändringar i parametrarna som kr
 
 +++
 
-+++Visa nytt [!DNL target connection] for [!DNL Azure Blob]
++++Visa nya [!DNL target connection] för [!DNL Azure Blob]
 
 ```json {line-numbers="true" start-line="1" highlight="13, 17-25"}
 {
@@ -422,7 +422,7 @@ På samma sätt finns det inga bakåtkompatibla ändringar i parametrarna som kr
 
 ### Bakåtkompatibla ändringar av SFTP-målet {#changes-sftp-destination}
 
-De bakåtinkompatibla ändringarna för API-användarna är uppdaterade `connection spec ID` och `flow spec ID` enligt tabellen nedan:
+De bakåtkompatibla ändringarna för API-användarna är uppdaterade `connection spec ID` och `flow spec ID` enligt tabellen nedan:
 
 | SFTP | Äldre | Nytt |
 |---------|----------|---------|
@@ -431,7 +431,7 @@ De bakåtinkompatibla ändringarna för API-användarna är uppdaterade `connect
 
 Förutom den uppdaterade flödes- och anslutningsspecifikationen ovan, finns det ändringar i parametrarna som krävs när du skapar SFTP-basanslutningar.
 
-* Tidigare krävde basanslutningen för SFTP-mål en `host` parameter. Den här parametern har nu bytt namn till `domain`.
+* Tidigare krävdes en `host`-parameter för basanslutningen för SFTP-mål. Den här parametern har nu bytt namn till `domain`.
 
 Se alla exempel på tidigare och nya basanslutningar och målanslutningar för SFTP på flikarna nedan, med de rader som ändras markerade. Parametrarna som krävs för att skapa målanslutningar för SFTP-mål ändras inte.
 
@@ -473,7 +473,7 @@ Se alla exempel på tidigare och nya basanslutningar och målanslutningar för S
 
 +++
 
-+++Visa äldre [!DNL base connection] for [!DNL SFTP - SSH key] autentisering
++++Visa äldre [!DNL base connection] för [!DNL SFTP - SSH key]-autentisering
 
 ```json {line-numbers="true" start-line="1" highlight="5,15"}
 {
@@ -548,7 +548,7 @@ Se alla exempel på tidigare och nya basanslutningar och målanslutningar för S
 
 >[!TAB Ny basanslutning och målanslutning]
 
-+++Visa nytt [!DNL base connection] for [!DNL SFTP - password authentication]
++++Visa nya [!DNL base connection] för [!DNL SFTP - password authentication]
 
 ```json {line-numbers="true" start-line="1" highlight="5"}
 {
@@ -583,7 +583,7 @@ Se alla exempel på tidigare och nya basanslutningar och målanslutningar för S
 
 +++
 
-+++Visa nytt [!DNL base connection] for [!DNL SFTP - SSH key] autentisering
++++Visa nya [!DNL base connection] för [!DNL SFTP - SSH key]-autentisering
 
 ```json {line-numbers="true" start-line="1" highlight="5,12"}
 {
@@ -617,7 +617,7 @@ Se alla exempel på tidigare och nya basanslutningar och målanslutningar för S
 
 +++
 
-+++Visa nytt [!DNL target connection] för SFTP
++++Visa nya [!DNL target connection] för SFTP
 
 ```json {line-numbers="true" start-line="1" highlight="13, 17-25"}
 {
@@ -666,15 +666,15 @@ Se alla exempel på tidigare och nya basanslutningar och målanslutningar för S
 
 >[!ENDTABS]
 
-### Bakåtkompatibla ändringar vanliga för [!DNL Amazon S3], [!DNL Azure Blob]och SFTP-mål {#changes-all-destinations}
+### Bakåtkompatibla ändringar som är gemensamma för [!DNL Amazon S3]-, [!DNL Azure Blob]- och SFTP-mål {#changes-all-destinations}
 
 Stegen för profilväljare på alla tre destinationerna ersätts av ett mappningssteg som gör att du kan byta namn på kolumnrubrikerna i de exporterade filerna om du vill. Se bilden sida vid sida nedan med det gamla attributväljarsteget till vänster och det nya mappningssteget till höger.
 
 ![Översikt över migreringsguiden](/help/destinations/assets/api/api-migration-guide/old-and-new-mapping-step.png)
 
-Se hur `profileSelectors` -objektet i de äldre exemplen ersätts med det nya `profileMapping` -objekt.
+Observera hur objektet `profileSelectors` i de äldre exemplen ersätts av det nya `profileMapping`-objektet.
 
-Hitta fullständig information om hur du konfigurerar `profileMapping` -objektet i [API-självstudiekurs för att exportera data till molnlagringsmål](/help/destinations/api/activate-segments-file-based-destinations.md#attribute-and-identity-mapping).
+Fullständig information om hur du konfigurerar objektet `profileMapping` i [API-självstudiekursen för att exportera data till molnlagringsmål](/help/destinations/api/activate-segments-file-based-destinations.md#attribute-and-identity-mapping) finns.
 
 >[!BEGINTABS]
 
@@ -748,7 +748,7 @@ Hitta fullständig information om hur du konfigurerar `profileMapping` -objektet
 
 +++Visa ett exempel på omformningsparametrar efter migreringen
 
-Meddelande i konfigurationsexemplet nedan om hur `profileSelectors` fält har ersatts med `profileMapping` -objekt.
+Observera i konfigurationsexemplet nedan hur `profileSelectors` fält har ersatts av ett `profileMapping`-objekt.
 
 ```json {line-numbers="true" start-line="1" highlight="4-12, 18-20"}
 {
@@ -782,17 +782,17 @@ Meddelande i konfigurationsexemplet nedan om hur `profileSelectors` fält har er
 
 ## Tidslinje för migrering och åtgärdsobjekt {#timeline-and-action-items}
 
-Migreringen av tidigare dataflöden till nya målkort för [!DNL Amazon S3], [!DNL Azure Blob]och SFTP-destinationer inträffar så snart din organisation är redo att migrera och senast **26 juli 2023**.
+Migreringen av tidigare dataflöden till de nya målkorten för [!DNL Amazon S3], [!DNL Azure Blob] och SFTP-destinationer sker så snart din organisation är redo att migrera och inte senare än **26 juli 2023**.
 
 Du får påminnelser från Adobe när migreringsdatumet närmar sig. Läs avsnittet Åtgärdsobjekt nedan som förberedelse för migreringen.
 
 ### Åtgärdsobjekt {#action-items}
 
-Som förberedelse för migreringen av [!DNL Amazon S3], [!DNL Azure Blob], och SFTP-molnlagringsmål till de nya korten, förbered dig för att uppdatera dina skript och automatiska API-anrop enligt nedan.
+Innan du migrerar molnlagringsdestinationerna [!DNL Amazon S3], [!DNL Azure Blob] och SFTP till de nya korten förbereder du dig för att uppdatera dina skript och automatiska API-anrop enligt nedan.
 
-1. Uppdatera eventuella befintliga skript eller automatiska API-anrop [!DNL Amazon S3], [!DNL Azure Blob], eller SFTP-molnlagringsmål senast 26 juli 2023. Alla automatiserade API-anrop eller skript som utnyttjar de gamla anslutningsspecifikationerna eller flödesspecifikationerna måste uppdateras till de nya anslutningsspecifikationerna eller flödesspecifikationerna.
+1. Uppdatera eventuella skript eller automatiska API-anrop för befintliga [!DNL Amazon S3]-, [!DNL Azure Blob]- eller SFTP-molnlagringsmål senast 26 juli 2023. Alla automatiserade API-anrop eller skript som utnyttjar de gamla anslutningsspecifikationerna eller flödesspecifikationerna måste uppdateras till de nya anslutningsspecifikationerna eller flödesspecifikationerna.
 2. Kontakta din kontorepresentant på Adobe när dina skript har uppdaterats före den 26 juli.
-3. Till exempel `targetConnectionSpecId` kan användas som en flagga för att avgöra om dataflödet har migrerats till det nya målkortet. Du kan uppdatera dina skript med en `if` villkor för att titta på de gamla och uppdaterade målanslutningsspecifikationerna i `flow.inheritedAttributes.targetConnections[0].connectionSpec.id` och avgöra om ditt dataflöde har migrerats. Du kan se de gamla och nya anslutningsspecifikations-ID:n i de specifika avsnitten på den här sidan för varje mål.
+3. `targetConnectionSpecId` kan till exempel användas som flagga för att avgöra om dataflödet har migrerats till det nya målkortet. Du kan uppdatera dina skript med ett `if`-villkor för att undersöka de gamla och uppdaterade målanslutningsspecifikationerna i `flow.inheritedAttributes.targetConnections[0].connectionSpec.id` och avgöra om dataflödet har migrerats. Du kan se de gamla och nya anslutningsspecifikations-ID:n i de specifika avsnitten på den här sidan för varje mål.
 4. Ditt Adobe-kontoteam kommer att få mer information om när dataflödena kommer att migreras.
 5. Efter den 26 juli migreras alla dataflöden. Alla dina befintliga dataflöden har nu nya flödesentiteter (anslutningsspecifikationer, flödesspecifikationer, basanslutningar och målanslutningar). Alla skript eller API-anrop på din sida som använder de äldre flödesentiteterna slutar att fungera.
 

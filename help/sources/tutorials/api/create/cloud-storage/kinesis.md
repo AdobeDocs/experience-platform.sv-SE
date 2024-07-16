@@ -1,54 +1,54 @@
 ---
-title: Skapa en Amazon Kinesis-källanslutning med API:t för flödestjänsten
+title: Skapa en Amazon Kinesis Source-anslutning med API:t för flödestjänsten
 description: Lär dig hur du ansluter Adobe Experience Platform till en Amazon Kinesis-källa med API:t för Flow Service.
 badgeUltimate: label="Ultimate" type="Positive"
 exl-id: 64da8894-12ac-45a0-b03e-fe9b6aa435d3
 source-git-commit: 9a8139c26b5bb5ff937a51986967b57db58aab6c
 workflow-type: tm+mt
-source-wordcount: '737'
+source-wordcount: '726'
 ht-degree: 0%
 
 ---
 
-# Skapa en [!DNL Amazon Kinesis] källanslutning med API:t för Flow Service
+# Skapa en [!DNL Amazon Kinesis]-källanslutning med API:t för Flow Service
 
 >[!IMPORTANT]
 >
->The [!DNL Amazon Kinesis] Källan är tillgänglig i källkatalogen för användare som har köpt Real-time Customer Data Platform Ultimate.
+>Källan [!DNL Amazon Kinesis] är tillgänglig i källkatalogen för användare som har köpt Real-time Customer Data Platform Ultimate.
 
-I den här självstudiekursen får du hjälp med att koppla samman [!DNL Amazon Kinesis] (nedan kallad[!DNL Kinesis]&quot;) till Experience Platform med [[!DNL Flow Service] API](https://www.adobe.io/experience-platform-apis/references/flow-service/).
+I den här självstudiekursen får du hjälp med att ansluta [!DNL Amazon Kinesis] (kallas nedan [!DNL Kinesis]) till Experience Platform med hjälp av [[!DNL Flow Service] API](https://www.adobe.io/experience-platform-apis/references/flow-service/).
 
 ## Komma igång
 
 Handboken kräver en fungerande förståelse av följande komponenter i Adobe Experience Platform:
 
-* [Källor](../../../../home.md): Experience Platform tillåter att data hämtas från olika källor samtidigt som du kan strukturera, etikettera och förbättra inkommande data med [!DNL Platform] tjänster.
-* [Sandlådor](../../../../../sandboxes/home.md): Experience Platform tillhandahåller virtuella sandlådor som partitionerar en enda [!DNL Platform] till separata virtuella miljöer för att utveckla och utveckla applikationer för digitala upplevelser.
+* [Källor](../../../../home.md): Med Experience Platform kan data hämtas från olika källor samtidigt som du kan strukturera, etikettera och förbättra inkommande data med [!DNL Platform]-tjänster.
+* [Sandlådor](../../../../../sandboxes/home.md): Experience Platform tillhandahåller virtuella sandlådor som partitionerar en enskild [!DNL Platform]-instans till separata virtuella miljöer för att utveckla och utveckla program för digitala upplevelser.
 
-I följande avsnitt finns ytterligare information som du behöver känna till för att kunna ansluta [!DNL Kinesis] till plattform med [!DNL Flow Service] API.
+I följande avsnitt finns ytterligare information som du behöver känna till för att kunna ansluta [!DNL Kinesis] till plattformen med API:t [!DNL Flow Service].
 
 ### Samla in nödvändiga inloggningsuppgifter
 
-För att [!DNL Flow Service] för att få kontakt med [!DNL Amazon Kinesis] måste du ange värden för följande anslutningsegenskaper:
+För att [!DNL Flow Service] ska kunna ansluta till ditt [!DNL Amazon Kinesis]-konto måste du ange värden för följande anslutningsegenskaper:
 
 | Autentiseringsuppgifter | Beskrivning |
 | ---------- | ----------- |
-| `accessKeyId` | Åtkomstnyckel-ID:t är hälften av det åtkomstnyckelpar som används för att autentisera din [!DNL Kinesis] konto till plattform. |
-| `secretKey` | Den hemliga åtkomstnyckeln är den andra halvan av det åtkomstnyckelpar som används för att autentisera din [!DNL Kinesis] konto till plattform. |
-| `region` | Regionen för din [!DNL Kinesis] konto. Se guiden på [lägga till IP-adresser i tillåtelselista](../../../../ip-address-allow-list.md) för mer information om regioner. |
-| `connectionSpec.id` | Anslutningsspecifikationen returnerar en källas kopplingsegenskaper, inklusive autentiseringsspecifikationer för att skapa bas- och källanslutningarna. The [!DNL Kinesis] anslutningsspecifikation-ID: `86043421-563b-46ec-8e6c-e23184711bf6`. |
+| `accessKeyId` | Åtkomstnyckel-ID:t är hälften av åtkomstnyckelparet som används för att autentisera ditt [!DNL Kinesis]-konto för plattformen. |
+| `secretKey` | Den hemliga åtkomstnyckeln är den andra halvan av det åtkomstnyckelpar som används för att autentisera ditt [!DNL Kinesis]-konto för plattformen. |
+| `region` | Regionen för ditt [!DNL Kinesis]-konto. Mer information om regioner finns i guiden om att [lägga till IP-adresser i tillåtelselista](../../../../ip-address-allow-list.md). |
+| `connectionSpec.id` | Anslutningsspecifikationen returnerar en källas kopplingsegenskaper, inklusive autentiseringsspecifikationer för att skapa bas- och källanslutningarna. Anslutningsspecifikations-ID [!DNL Kinesis] är: `86043421-563b-46ec-8e6c-e23184711bf6`. |
 
-Mer information om [!DNL Kinesis] åtkomstnycklar och hur du genererar dem finns i [[!DNL AWS] guide för hantering av åtkomstnycklar för IAM-användare](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_access-keys.html).
+Mer information om [!DNL Kinesis]-åtkomstnycklar och hur du genererar dem finns i den här [[!DNL AWS] handboken om hur du hanterar åtkomstnycklar för IAM-användare](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_access-keys.html).
 
 ### Använda plattforms-API:er
 
-Mer information om hur du kan anropa API:er för plattformar finns i handboken [komma igång med plattforms-API:er](../../../../../landing/api-guide.md).
+Mer information om hur du kan anropa plattforms-API:er finns i guiden [Komma igång med plattforms-API:er](../../../../../landing/api-guide.md).
 
 ## Skapa en basanslutning
 
-Det första steget i att skapa en källanslutning är att autentisera [!DNL Kinesis] och generera ett anslutnings-ID. Med ett grundläggande anslutnings-ID kan du utforska och navigera bland filer inifrån källan och identifiera specifika objekt som du vill importera, inklusive information om deras datatyper och format.
+Det första steget i att skapa en källanslutning är att autentisera [!DNL Kinesis]-källan och generera ett grundläggande anslutnings-ID. Med ett grundläggande anslutnings-ID kan du utforska och navigera bland filer inifrån källan och identifiera specifika objekt som du vill importera, inklusive information om deras datatyper och format.
 
-Om du vill skapa ett basanslutnings-ID skickar du en POST till `/connections` slutpunkt när du ger [!DNL Kinesis] autentiseringsuppgifter som en del av parametrarna för begäran.
+Om du vill skapa ett grundläggande anslutnings-ID skickar du en POST till slutpunkten `/connections` och anger dina autentiseringsuppgifter för [!DNL Kinesis] som en del av parametrarna för begäran.
 
 **API-format**
 
@@ -87,10 +87,10 @@ curl -X POST \
 
 | Egenskap | Beskrivning |
 | -------- | ----------- |
-| `auth.params.accessKeyId` | Åtkomstnyckel-ID för din [!DNL Kinesis] konto. |
-| `auth.params.secretKey` | Den hemliga åtkomstnyckeln för [!DNL Kinesis] konto. |
-| `auth.params.region` | Regionen för din [!DNL Kinesis] konto. |
-| `connectionSpec.id` | The [!DNL Kinesis] anslutningsspecifikation-ID: `86043421-563b-46ec-8e6c-e23184711bf6` |
+| `auth.params.accessKeyId` | Åtkomstnyckel-ID för ditt [!DNL Kinesis]-konto. |
+| `auth.params.secretKey` | Den hemliga åtkomstnyckeln för ditt [!DNL Kinesis]-konto. |
+| `auth.params.region` | Regionen för ditt [!DNL Kinesis]-konto. |
+| `connectionSpec.id` | Anslutningsspecifikations-ID [!DNL Kinesis]: `86043421-563b-46ec-8e6c-e23184711bf6` |
 
 **Svar**
 
@@ -107,7 +107,7 @@ Ett godkänt svar returnerar information om den nya basanslutningen, inklusive d
 
 En källanslutning skapar och hanterar anslutningen till den externa källan som data importeras från. En källanslutning består av information som datakälla, dataformat och det källanslutnings-ID som behövs för att skapa ett dataflöde. En källanslutningsinstans är specifik för en klientorganisation och organisation.
 
-Om du vill skapa en källanslutning skickar du en POST till `/sourceConnections` slutpunkt för [!DNL Flow Service] API.
+Om du vill skapa en källanslutning skickar du en POST till `/sourceConnections`-slutpunkten för [!DNL Flow Service] API:t.
 
 **API-format**
 
@@ -148,16 +148,16 @@ curl -X POST \
 | --- | --- |
 | `name` | Namnet på källanslutningen. Kontrollera att namnet på källanslutningen är beskrivande, eftersom du kan använda det här för att söka efter information om källanslutningen. |
 | `description` | Ett valfritt värde som du kan ange för att inkludera mer information om din källanslutning. |
-| `baseConnectionId` | Basanslutnings-ID för din [!DNL Kinesis] källa som genererades i föregående steg. |
-| `connectionSpec.id` | ID för fast anslutningsspecifikation för [!DNL Kinesis]. Detta ID är: `86043421-563b-46ec-8e6c-e23184711bf6` |
-| `data.format` | Formatet på [!DNL Kinesis] data som du vill importera. För närvarande är det enda dataformatet som stöds `json`. |
+| `baseConnectionId` | Basanslutnings-ID för källan [!DNL Kinesis] som skapades i föregående steg. |
+| `connectionSpec.id` | Det fasta anslutningsspecifikations-ID:t för [!DNL Kinesis]. Detta ID är: `86043421-563b-46ec-8e6c-e23184711bf6` |
+| `data.format` | Formatet på de [!DNL Kinesis]-data som du vill importera. För närvarande är det enda dataformat som stöds `json`. |
 | `params.stream` | Namnet på dataströmmen som posterna ska hämtas från. |
 | `params.dataType` | Den här parametern definierar vilken typ av data som importeras. Datatyper som stöds är: `raw` och `xdm`. |
-| `params.reset` | Den här parametern definierar hur data läses. Använd `latest` för att börja läsa från de senaste data och använda `earliest` för att börja läsa från de första tillgängliga data i strömmen. |
+| `params.reset` | Den här parametern definierar hur data läses. Använd `latest` för att börja läsa från de senaste data och använd `earliest` för att börja läsa från de första tillgängliga data i strömmen. |
 
 **Svar**
 
-Ett godkänt svar returnerar den unika identifieraren (`id`) för den nyligen skapade källanslutningen. Detta ID krävs i nästa självstudie för att skapa ett dataflöde.
+Ett lyckat svar returnerar den unika identifieraren (`id`) för den nyligen skapade källanslutningen. Detta ID krävs i nästa självstudie för att skapa ett dataflöde.
 
 ```json
 {
@@ -168,4 +168,4 @@ Ett godkänt svar returnerar den unika identifieraren (`id`) för den nyligen sk
 
 ## Nästa steg
 
-Genom att följa den här självstudiekursen har du skapat en [!DNL Kinesis] källanslutning med [!DNL Flow Service] API. Du kan använda det här källanslutnings-ID:t i nästa självstudie för att [skapa ett direktuppspelat dataflöde med [!DNL Flow Service] API](../../collect/streaming.md).
+Genom att följa den här självstudiekursen har du skapat en [!DNL Kinesis]-källanslutning med API:t [!DNL Flow Service]. Du kan använda det här källanslutnings-ID:t i nästa självstudie för att [skapa ett direktuppspelat dataflöde med  [!DNL Flow Service] API](../../collect/streaming.md).

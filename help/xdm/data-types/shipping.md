@@ -1,19 +1,20 @@
 ---
 title: Leveransdatatyp
 description: Läs mer om datatypen XDM (Shipping Experience Data Model).
-source-git-commit: de8e944cfec3b52d25bb02bcfebe57d6a2a35e39
+exl-id: c3a58e46-c80e-4896-b21c-47dc5a6c869b
+source-git-commit: 8be502c9eea67119dc537a5d63a6c71e0bff1697
 workflow-type: tm+mt
 source-wordcount: '164'
 ht-degree: 0%
 
 ---
 
-# [!UICONTROL Shipping] datatyp
+# Datatypen [!UICONTROL Shipping]
 
 [!UICONTROL Shipping] är en XDM-datatyp (Standard Experience Data Model) som ger information om leveransen av en eller flera produkter. Den innehåller information om logistik och information om leverans av beställda artiklar.
 
 
-![Ett diagram över [!UICONTROL Shipping] datatyp.](../images/data-types/shipping.png)
+![Ett diagram över datatypen [!UICONTROL Shipping].](../images/data-types/shipping.png)
 
 | Visningsnamn | Egenskap | Datatyp | Beskrivning |
 |----------------------|-----------------------|-----------|------------------------------------------------------|

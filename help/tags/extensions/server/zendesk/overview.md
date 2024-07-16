@@ -5,38 +5,38 @@ exl-id: 22e94699-5b84-4a73-b007-557221d3e223
 source-git-commit: d81c4c8630598597ec4e253ef5be9f26c8987203
 workflow-type: tm+mt
 source-wordcount: '1162'
-ht-degree: 2%
+ht-degree: 1%
 
 ---
 
-# [!DNL Zendesk] Översikt över API-tillägg för händelser
+# Översikt över tillägget [!DNL Zendesk] för API:t för händelser
 
-[Zendesk](https://www.zendesk.com) är en kundtjänstlösning och ett säljverktyg. Zendesk [händelsevidarebefordran](../../../ui/event-forwarding/overview.md) tillägget utnyttjar [[!DNL Zendesk Events API]](https://developer.zendesk.com/documentation/ticketing/events/about-the-events-api/) för att skicka händelser från Adobe Experience Platform Edge Network till Zendesk för vidare bearbetning. Du kan använda tillägget för att samla in interaktioner med kundprofiler för användning i analyser och åtgärder längre fram i kedjan.
+[Zendesk](https://www.zendesk.com) är en kundtjänst och ett säljverktyg. Tillägget [[!DNL Zendesk Events API]](https://developer.zendesk.com/documentation/ticketing/events/about-the-events-api/) används för att skicka händelser från Adobe Experience Platform Edge Network till Zendesk för vidare bearbetning, vilket innebär att händelsen [vidarebefordras](../../../ui/event-forwarding/overview.md). Du kan använda tillägget för att samla in interaktioner med kundprofiler för användning i analyser och åtgärder längre fram i kedjan.
 
 Det här dokumentet beskriver hur du installerar och konfigurerar tillägget i användargränssnittet.
 
-## Förutsättningar
+## Förhandskrav
 
-Du måste ha ett Zendesk-konto för att kunna använda det här tillägget. Du kan registrera dig för ett Zendesk-konto på [Zendesk webbplats](https://www.zendesk.com/register/).
+Du måste ha ett Zendesk-konto för att kunna använda det här tillägget. Du kan registrera dig för ett Zendesk-konto på [Zendesk-webbplatsen](https://www.zendesk.com/register/).
 
 Du måste även samla in följande information för din Zendesk-konfiguration:
 
 | Nyckeltyp | Beskrivning | Exempel |
 | --- | --- | --- |
-| Underdomän | Under registreringsprocessen finns en unik **underdomän** har skapats specifikt för kontot. Se [Zendesk-dokumentation](https://developer.zendesk.com/documentation/ticketing/working-with-oauth/creating-and-using-oauth-tokens-with-the-api/) för mer information. | `xxxxx.zendesk.com` (där `xxxxx` är värdet som angavs när kontot skapades) |
-| API-token | Zendesk använder bearer-tokens som en autentiseringsmekanism för att kommunicera med Zendesk API. Generera en API-token när du har loggat in på Zendesk-portalen. Se [Zendesk-dokumentation](https://support.zendesk.com/hc/en-us/articles/4408889192858-Generating-a-new-API-token) för mer information. | `cwWyOtHAv12w4dhpiulfe9BdZFTz3OKaTSzn2QvV` |
+| Underdomän | Under registreringsprocessen skapas en unik **underdomän** som är specifik för kontot. Mer information finns i [Zendesk-dokumentationen](https://developer.zendesk.com/documentation/ticketing/working-with-oauth/creating-and-using-oauth-tokens-with-the-api/). | `xxxxx.zendesk.com` (där `xxxxx` är värdet som angavs när kontot skapades) |
+| API-token | Zendesk använder bearer-tokens som en autentiseringsmekanism för att kommunicera med Zendesk API. Generera en API-token när du har loggat in på Zendesk-portalen. Mer information finns i [Zendesk-dokumentationen](https://support.zendesk.com/hc/en-us/articles/4408889192858-Generating-a-new-API-token). | `cwWyOtHAv12w4dhpiulfe9BdZFTz3OKaTSzn2QvV` |
 
 {style="table-layout:auto"}
 
-Slutligen måste du skapa en händelsevidarebefordringshemlighet för API-token. Ange hemlig typ till **[!UICONTROL Token]** och ange värdet till den API-token som du hämtade från din Zendesk-konfiguration. Mer information finns i dokumentationen om [hemligheter vid vidarebefordran av händelser](../../../ui/event-forwarding/secrets.md) för mer information om hur du konfigurerar hemligheter.
+Slutligen måste du skapa en händelsevidarebefordringshemlighet för API-token. Ange den hemliga typen till **[!UICONTROL Token]** och ange värdet till den API-token som du samlade in från din Zendesk-konfiguration. Mer information om hur du konfigurerar hemligheter finns i dokumentationen om [hemligheter i händelsevidarebefordran](../../../ui/event-forwarding/secrets.md).
 
 ## Installera tillägget {#install}
 
-Om du vill installera Zendesk-tillägget i gränssnittet går du till **Vidarebefordran av händelser** och välj en egenskap som tillägget ska läggas till i eller skapa en ny egenskap i stället.
+Om du vill installera Zendesk-tillägget i användargränssnittet går du till **Vidarebefordra händelser** och väljer en egenskap som tillägget ska läggas till i. Du kan också skapa en ny egenskap i stället.
 
-När du har valt eller skapat den önskade egenskapen går du till **Tillägg** > **Katalog**. Sök efter &quot;[!DNL Zendesk]&quot; och sedan markera **[!DNL Install]** på Zendesk Extension.
+När du har markerat eller skapat den önskade egenskapen går du till **Tillägg** > **Katalog**. Sök efter [!DNL Zendesk] och välj sedan **[!DNL Install]** i Zendesk-tillägget.
 
-![Installera-knappen för Zendesk-tillägget som väljs i användargränssnittet](../../../images/extensions/server/zendesk/install.png)
+![Installationsknappen för Zendesk-tillägget som väljs i användargränssnittet](../../../images/extensions/server/zendesk/install.png)
 
 ## Konfigurera tillägget {#configure}
 
@@ -44,17 +44,17 @@ När du har valt eller skapat den önskade egenskapen går du till **Tillägg** 
 >
 >Beroende på ditt implementeringsbehov kan du behöva skapa ett schema, dataelement och en datauppsättning innan du konfigurerar tillägget. Granska alla konfigurationssteg innan du startar för att avgöra vilka enheter du måste konfigurera för ditt användningsfall.
 
-Välj **Tillägg** i den vänstra navigeringen. Under **Installerad**, markera **Konfigurera** i Zendesk-tillägget.
+Välj **Tillägg** i den vänstra navigeringen. Under **Installerad** väljer du **Konfigurera** i Zendesk-tillägget.
 
-![Knappen Konfigurera för Zendesk-tillägget som väljs i användargränssnittet](../../../images/extensions/server/zendesk/configure.png)
+![Konfigurera-knappen för Zendesk-tillägget som väljs i användargränssnittet](../../../images/extensions/server/zendesk/configure.png)
 
-Under **[!UICONTROL Zendesk Domain]**, anger du värdet för din Zendesk-underdomän. Under **[!UICONTROL Zendesk Token]** markerar du den hemlighet som du skapade tidigare och som innehåller API-token.
+Under **[!UICONTROL Zendesk Domain]** anger du värdet för din Zendesk-underdomän. Under **[!UICONTROL Zendesk Token]** väljer du den hemlighet som du skapade tidigare och som innehåller API-token.
 
-![Konfigurationsalternativ som fylls i i användargränssnittet](../../../images/extensions/server/zendesk/input.png)
+![Konfigurationsalternativen är ifyllda i användargränssnittet](../../../images/extensions/server/zendesk/input.png)
 
 ## Konfigurera en regel för vidarebefordran av händelser
 
-Börja skapa en ny regel för vidarebefordran av händelse [regel](../../../ui/managing-resources/rules.md) och konfigurera villkoren efter behov. När du väljer åtgärder för regeln väljer du [!UICONTROL Zendesk] och välj sedan [!UICONTROL Create Event] åtgärdstyp.
+Börja skapa en ny regel för vidarebefordran av händelse [regel](../../../ui/managing-resources/rules.md) och konfigurera villkoren efter behov. När du väljer åtgärder för regeln väljer du tillägget [!UICONTROL Zendesk] och sedan åtgärdstypen [!UICONTROL Create Event].
 
 ![Definiera regel](../../../images/extensions/server/zendesk/rule.png)
 
@@ -66,11 +66,11 @@ Dessa dataelement ska mappas enligt nedan.
 
 ### `event` tangenter
 
-`event` är ett JSON-objekt som representerar den händelse som utlöses av användaren. Se Zendesk-dokumentet på [anatomi för en händelse](https://developer.zendesk.com/documentation/ticketing/events/anatomy-of-an-event/) om du vill ha information om de egenskaper som hämtats av `event` -objekt.
+`event` är ett JSON-objekt som representerar den händelse som utlöses av användaren. Se Zendesk-dokumentet på [anatomin för en händelse](https://developer.zendesk.com/documentation/ticketing/events/anatomy-of-an-event/) om du vill ha mer information om egenskaperna som har hämtats av `event`-objektet.
 
-Följande nycklar kan refereras i `event` objekt vid mappning till dataelement:
+Följande nycklar kan refereras inom objektet `event` vid mappning till dataelement:
 
-| `event` key | Typ | Plattformssökväg | Beskrivning | Obligatoriskt | Gränser |
+| `event`-tangenten | Typ | Plattformssökväg | Beskrivning | Obligatoriskt | Gränser |
 | --- | --- | --- | --- | --- | --- |
 | `source` | Sträng | `arc.event.xdm._extconndev.event_source` | Programmet som skickade händelsen. | Ja | Använd inte `Zendesk` som ett värde eftersom det är ett skyddat källnamn för Zendesk-standardhändelser. Försök att använda den kommer att resultera i ett fel.<br>Värdet får inte vara längre än 40 tecken. |
 | `type` | Sträng | `arc.event.xdm._extconndev.event_type` | Ett namn för händelsetypen. Du kan använda det här fältet för att ange olika typer av händelser för en viss källa. Du kan till exempel skapa en uppsättning händelser för användarinloggningar och en annan för kundvagnar. | Ja | Värdet får inte vara längre än 40 tecken. |
@@ -82,22 +82,22 @@ Följande nycklar kan refereras i `event` objekt vid mappning till dataelement:
 
 >[!NOTE]
 >
->Se [[!DNL Zendesk Events API] dokumentation](https://developer.zendesk.com/documentation/ticketing/events/about-the-events-api/) om du vill ha ytterligare vägledning om händelseegenskaper.
+>Mer information om händelseegenskaper finns i [[!DNL Zendesk Events API] dokumentationen](https://developer.zendesk.com/documentation/ticketing/events/about-the-events-api/).
 
 ### `profile` tangenter
 
-`profile` är ett JSON-objekt som representerar användaren som utlöste händelsen. Se Zendesk-dokumentet på [en profils anatomi](https://developer.zendesk.com/documentation/ticketing/profiles/anatomy-of-a-profile/) om du vill ha information om de egenskaper som hämtats av `profile` -objekt.
+`profile` är ett JSON-objekt som representerar användaren som utlöste händelsen. Mer information om egenskaperna som har hämtats av objektet `profile` finns i Zendesk-dokumentet på [anatomin för en profil](https://developer.zendesk.com/documentation/ticketing/profiles/anatomy-of-a-profile/).
 
-Följande nycklar kan refereras i `profile` objekt vid mappning till dataelement:
+Följande nycklar kan refereras inom objektet `profile` vid mappning till dataelement:
 
-| `profile` key | Typ | Plattformssökväg | Beskrivning | Obligatoriskt | Gränser |
+| `profile`-tangenten | Typ | Plattformssökväg | Beskrivning | Obligatoriskt | Gränser |
 | --- | --- | --- | --- | --- | --- |
-| `source` | Sträng | `arc.event.xdm._extconndev.profile_source` | Den produkt eller tjänst som är associerad med profilen, till exempel `Support`, `CompanyName`, eller `Chat`. | Ja | (Ej tillämpligt) |
+| `source` | Sträng | `arc.event.xdm._extconndev.profile_source` | Produkten eller tjänsten som är associerad med profilen, till exempel `Support`, `CompanyName` eller `Chat`. | Ja | (Ej tillämpligt) |
 | `type` | Sträng | `arc.event.xdm._extconndev.profile_type` | Ett namn för profiltypen. Du kan använda det här fältet för att skapa olika typer av profiler för en viss källa. Du kan till exempel skapa en uppsättning företagsprofiler för kunder och en annan för anställda. | Ja | Profiltypens längd får inte överstiga 40 tecken. |
 | `name` | Sträng | `arc.event.xdm._extconndev.name` | Namnet på personen från profilen | Nej | (Ej tillämpligt) |
 | `user_id` | Sträng | `arc.event.xdm._extconndev.user_id` | Personens användar-ID i Zendesk. | Nej | (Ej tillämpligt) |
-| `identifiers` | Array | `arc.event.xdm._extconndev.identifiers` | En array som innehåller minst en identifierare. Varje identifierare består av en typ och ett värde. | Ja | Se [Zendesk-dokumentation](https://developer.zendesk.com/api-reference/ticketing/users/profiles_api/profiles_api/#identifiers-array) för mer information om `identifiers` array. Alla fält och värden måste vara unika. |
-| `attributes` | Objekt | `arc.event.xdm._extconndev.attrbutes` | Ett objekt som innehåller användardefinierade egenskaper för personen. | Nej | Se [Zendesk-dokumentation](https://developer.zendesk.com/documentation/ticketing/profiles/anatomy-of-a-profile/#attributes) för mer information om profilattribut. |
+| `identifiers` | Array | `arc.event.xdm._extconndev.identifiers` | En array som innehåller minst en identifierare. Varje identifierare består av en typ och ett värde. | Ja | Mer information om `identifiers`-arrayen finns i [Zendesk-dokumentationen](https://developer.zendesk.com/api-reference/ticketing/users/profiles_api/profiles_api/#identifiers-array). Alla fält och värden måste vara unika. |
+| `attributes` | Objekt | `arc.event.xdm._extconndev.attrbutes` | Ett objekt som innehåller användardefinierade egenskaper för personen. | Nej | Mer information om profilattribut finns i [Zendesk-dokumentationen](https://developer.zendesk.com/documentation/ticketing/profiles/anatomy-of-a-profile/#attributes). |
 
 {style="table-layout:auto"}
 
@@ -107,7 +107,7 @@ Om händelseinsamlingen och Adobe Experience Platform-integreringen lyckas visas
 
 Profiler:
 
-![Zendesk Profiles page](../../../images/extensions/server/zendesk/zendesk-profiles.png)
+![Sidan Zendesk-profiler](../../../images/extensions/server/zendesk/zendesk-profiles.png)
 
 Händelser:
 
@@ -115,7 +115,7 @@ Händelser:
 
 ## Begärandebegränsningar {#limits}
 
-Baserat på kontotypen kan Zendesk [!DNL Events API] kan hantera följande antal begäranden per minut:
+Baserat på kontotypen kan Zendesk [!DNL Events API] hantera följande antal begäranden per minut:
 
 | [!DNL Account Type] | Begäranden per minut |
 | --- | --- |
@@ -127,7 +127,7 @@ Baserat på kontotypen kan Zendesk [!DNL Events API] kan hantera följande antal
 
 {style="table-layout:auto"}
 
-Se [Zendesk-dokumentation](https://developer.zendesk.com/api-reference/ticketing/account-configuration/usage_limits/#:~:text=API%20requests%20made%20by%20Zendesk%20apps%20are%20subject,sources%20for%20the%20account%2C%20including%20internal%20product%20requests.) för mer information om dessa gränser.
+Mer information om dessa begränsningar finns i [Zendesk-dokumentationen](https://developer.zendesk.com/api-reference/ticketing/account-configuration/usage_limits/#:~:text=API%20requests%20made%20by%20Zendesk%20apps%20are%20subject,sources%20for%20the%20account%2C%20including%20internal%20product%20requests.).
 
 ## Fel och felsökning {#errors-and-troubleshooting}
 
@@ -135,11 +135,11 @@ När tillägget används eller konfigureras kan felen nedan returneras av Zendes
 
 | Felkod | Beskrivning | Upplösning | Exempel |
 |---|---|---|---|
-| 400 | **Ogiltig profillängd:** Det här felet inträffar när längden på ett profilattribut innehåller fler än 40 tecken. | Begränsa längden på profilattributsdata till högst 40 tecken. | `{"error": [{"code":"InvalidProfileTypeLength","title": "Profile type length > 40 chars"}]}` |
-| 401 | **Flödet hittades inte:** Det här felet inträffar när en ogiltig domän har angetts. | Kontrollera att en giltig domän har angetts i följande format: `{subdomain}.zendesk.com` | `{"error": [{"description": "No route found for host {subdomain}.zendesk.com","title": "RouteNotFound"}]}` |
-| 401 | **Ogiltig eller saknad autentisering:** Det här felet inträffar när åtkomsten till token är ogiltig, saknas eller har upphört att gälla. | Kontrollera att åtkomsttoken är giltig och inte har gått ut. | `{"error": [{"code":"MissingOrInvalidAuthentication","title": "Invalid or Missing Authentication"}]}` |
+| 400 | **Ogiltig profillängd:** Det här felet inträffar när längden på ett profilattribut innehåller mer än 40 tecken. | Begränsa längden på profilattributsdata till högst 40 tecken. | `{"error": [{"code":"InvalidProfileTypeLength","title": "Profile type length > 40 chars"}]}` |
+| 401 | **Det gick inte att hitta vägen:** Det här felet inträffar när en ogiltig domän har angetts. | Kontrollera att en giltig domän har angetts i följande format: `{subdomain}.zendesk.com` | `{"error": [{"description": "No route found for host {subdomain}.zendesk.com","title": "RouteNotFound"}]}` |
+| 401 | **Ogiltig eller saknad autentisering:** Det här felet inträffar när åtkomst till token är ogiltig, saknas eller har upphört att gälla. | Kontrollera att åtkomsttoken är giltig och inte har gått ut. | `{"error": [{"code":"MissingOrInvalidAuthentication","title": "Invalid or Missing Authentication"}]}` |
 | 403 | **Otillräckliga behörigheter:** Det här felet inträffar när det inte finns tillräcklig behörighet för att komma åt resursen. | Verifiera att de nödvändiga behörigheterna har angetts. | `{"error": [{"code":"PermissionDenied","title": "Insufficient permisssions to perform operation"}]}` |
-| 429 | **För många förfrågningar:** Det här felet inträffar när postgränsen för slutpunktsobjektet har överskridits. | Se avsnittet ovan på [begärandebegränsningar](#limits) för uppgifter om tröskelvärden per gräns. | `{"error": [{"code":"TooManyRequests","title": "Too Many Requests"}]}` |
+| 429 | **För många begäranden:** Det här felet inträffar när postgränsen för slutpunktsobjekt har överskridits. | Mer information om tröskelvärden per gräns finns i avsnittet ovan om [begärandegränser](#limits). | `{"error": [{"code":"TooManyRequests","title": "Too Many Requests"}]}` |
 
 {style="table-layout:auto"}
 
@@ -148,9 +148,9 @@ När tillägget används eller konfigureras kan felen nedan returneras av Zendes
 I det här dokumentet beskrivs hur du installerar och konfigurerar tillägget för vidarebefordran av Zendesk-händelser i användargränssnittet. Mer information om hur du samlar in händelsedata i Zendesk finns i den officiella dokumentationen:
 
 * [Komma igång med händelser](https://developer.zendesk.com/documentation/ticketing/events/getting-started-with-events/)
-* [Zendesk Events API](https://developer.zendesk.com/api-reference/ticketing/users/events-api/events-api/)
+* [Zendesk Events-API](https://developer.zendesk.com/api-reference/ticketing/users/events-api/events-api/)
 * [Om API:t för händelser](https://developer.zendesk.com/documentation/ticketing/events/about-the-events-api/)
 * [Anatomi för en händelse](https://developer.zendesk.com/documentation/ticketing/events/anatomy-of-an-event/)
-* [Zendesk Profiles API](https://developer.zendesk.com/api-reference/ticketing/users/events-api/events-api/#profile-object)
-* [Om Profiles API](https://developer.zendesk.com/documentation/ticketing/profiles/about-the-profiles-api/)
-* [Anatomi i en profil](https://developer.zendesk.com/documentation/ticketing/profiles/anatomy-of-a-profile/)
+* [Zendesk-profils-API](https://developer.zendesk.com/api-reference/ticketing/users/events-api/events-api/#profile-object)
+* [Om Profiles-API:t](https://developer.zendesk.com/documentation/ticketing/profiles/about-the-profiles-api/)
+* [Anatomi för en profil](https://developer.zendesk.com/documentation/ticketing/profiles/anatomy-of-a-profile/)

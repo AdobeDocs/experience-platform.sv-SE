@@ -6,8 +6,8 @@ description: Adobe Experience Platform tillhandahåller flera tjänster och verk
 exl-id: 1ab5a436-c5dd-4e7a-aba1-549f0613f224
 source-git-commit: 5a14eb5938236fa7186d1a27f28cee15fe6558f6
 workflow-type: tm+mt
-source-wordcount: '855'
-ht-degree: 2%
+source-wordcount: '857'
+ht-degree: 1%
 
 ---
 
@@ -31,7 +31,7 @@ Datastyrning är ett viktigt koncept som är sammankopplat med alla funktioner i
 
 Adobe Experience Platform datastyrning är en plattformstjänst som gör att ni kan hantera kunddata och säkerställa efterlevnad av regler, begränsningar och policyer som gäller för dataanvändning. Det spelar en viktig roll inom Experience Platform på olika nivåer, bland annat i fråga om dataanvändningsetiketter, dataanvändningspolicyer, policystyrning och datalänkning.
 
-Se [Datastyrning - översikt](../../data-governance/home.md) för mer information.
+Mer information finns i [Översikt över datastyrning](../../data-governance/home.md).
 
 ### Katalog och datauppsättningar {#catalog}
 
@@ -39,7 +39,7 @@ Katalogtjänsten är systemet för registrering av dataplatser och datalänkning
 
 Katalogen organiserar inkapslade data i datauppsättningar, där varje datauppsättning innehåller metadata som kan användas för att etikettera och kategorisera data som den innehåller.
 
-Se [Katalogtjänst - översikt](../../catalog/home.md) för mer information om tjänsten. Mer information om hur du hanterar datauppsättningar i Experience Platform finns i [datauppsättningar, översikt](../../catalog/datasets/overview.md).
+Mer information om tjänsten finns i [Katalogtjänstöversikt](../../catalog/home.md). Mer information om hur du hanterar datauppsättningar i Experience Platform finns i [översikten över datauppsättningar](../../catalog/datasets/overview.md).
 
 ## Sekretess {#privacy}
 
@@ -51,15 +51,15 @@ Juridiska sekretessbestämmelser som EU:s allmänna dataskyddsförordning (GDPR)
 
 Adobe Experience Platform Privacy Service tillhandahåller ett RESTful-API och användargränssnitt för att hantera dessa förfrågningar. Med Privacy Service kan ni skicka in förfrågningar om åtkomst till eller radering av privata eller personliga kunddata från Adobe Experience Cloud-program, vilket underlättar automatiserad efterlevnad av juridiska och organisatoriska sekretessbestämmelser.
 
-Se [Översikt över Privacy Servicen](../../privacy-service/home.md) för mer information.
+Mer information finns i [Privacy Servicen overview](../../privacy-service/home.md).
 
 ### Samtyckesbearbetning {#consent}
 
 Många juridiska sekretessbestämmelser har infört krav på aktivt och specifikt samtycke när det gäller datainsamling, personalisering och andra användningsfall inom marknadsföring. För att uppfylla dessa krav kan Experience Platform samla in information om samtycke i enskilda kundprofiler och använda dessa inställningar som en avgörande faktor i hur varje kunds data används i arbetsflöden för plattformen längre fram i kedjan.
 
-Mer information om hur du bearbetar kundens samtycke och inställningsdata med hjälp av Adobe-standarden finns i översikten på [behandling av samtycke i Experience Platform](./consent/adobe/overview.md).
+Mer information om hur du bearbetar kundens samtycke och inställningsdata med hjälp av Adobe-standarden finns i översikten över [godkännandebearbetning i Experience Platform](./consent/adobe/overview.md).
 
-Mer information om hur man behandlar data om kundsamtycke i enlighet med IAB Transparency and Consent Framework (TCF) 2.0 finns i översikten på [Stöd för IAB TCF 2.0 i Platform](./consent/iab/overview.md).
+Mer information om hur du bearbetar kundmedgivandedata i enlighet med IAB Transparency and Consent Framework (TCF) 2.0 finns i översikten om [IAB TCF 2.0-stöd i Platform](./consent/iab/overview.md).
 
 ## Säkerhet {#security}
 
@@ -67,13 +67,13 @@ Integriteten och säkerheten hos era data är oundgänglig för ert företag, oc
 
 ### Datakryptering
 
-Alla plattformsdata krypteras under överföring och i vila. Visa dokumentet på [datakryptering på plattform](./encryption.md) för mer information.
+Alla plattformsdata krypteras under överföring och i vila. Mer information finns i dokumentet om [datakryptering i plattformen](./encryption.md).
 
 ### Åtkomstkontroll {#access-control}
 
 Experience Platform använder Adobe Admin Console för att tillhandahålla rollbaserad åtkomstkontroll för olika plattformsfunktioner. Den här funktionen utnyttjar produktprofiler i Admin Console, som länkar användare med behörigheter och sandlådor.
 
-Se [åtkomstkontroll - översikt](../../access-control/home.md) för mer information.
+Mer information finns i [åtkomstkontrollsöversikten](../../access-control/home.md).
 
 ### Sandlådor {#sandboxes}
 

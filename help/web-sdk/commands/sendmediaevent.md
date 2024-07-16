@@ -1,23 +1,23 @@
 ---
 title: sendMediaEvent
 description: Lär dig hur du använder kommandot sendMediaEvent för att spåra mediesessioner i Web SDK.
-source-git-commit: 83d3de67e7680369dc890f58b16d9668058e221c
+exl-id: a38626fd-4810-40a0-8893-e98136634fac
+source-git-commit: 57d42d88ec9a93744450a2a352590ab57d9e5bb7
 workflow-type: tm+mt
 source-wordcount: '762'
 ht-degree: 0%
 
 ---
 
-
 # `sendMediaEvent`
 
-The `sendMediaEvent` kommandot ingår i Web SDK `streamingMedia` -komponenten. Du kan använda den här komponenten för att samla in data relaterade till mediesessioner på din webbplats. Se `streamingMedia` [dokumentation](configure/streamingmedia.md) om du vill lära dig hur du konfigurerar den här komponenten.
+Kommandot `sendMediaEvent` är en del av Web SDK `streamingMedia` -komponenten. Du kan använda den här komponenten för att samla in data relaterade till mediesessioner på din webbplats. Mer information om hur du konfigurerar den här komponenten finns i `streamingMedia` [documentation](configure/streamingmedia.md).
 
-Använd `sendMediaEvent` för att spåra mediespelningar, pauser, complete, player state updates, och andra relaterade händelser.
+Använd kommandot `sendMediaEvent` om du vill spåra medieuppspelningar, pauser, slutföranden, uppdateringar av spelartillstånd och andra relaterade händelser.
 
 Web SDK kan hantera mediahändelser baserat på typen av mediessionsspårning:
 
-* **Händelsehantering för automatiskt spårade sessioner**. I det här läget behöver du inte skicka `sessionID` till mediahändelsen eller spelhuvudet. Web SDK hanterar detta åt dig, baserat på det spelare-ID som anges och `getPlayerDetails` callback-funktionen som tillhandahålls när mediesessionen startas.
+* **Händelsehantering för automatiskt spårade sessioner**. I det här läget behöver du inte skicka `sessionID` till mediahändelsen eller till spelhuvudsvärdet. Web SDK hanterar detta åt dig, baserat på det spelar-ID som anges och återanropsfunktionen `getPlayerDetails` som tillhandahölls när mediesessionen startades.
 * **Händelsehantering för manuellt spårade sessioner**. I det här läget måste du skicka `sessionID` till mediahändelsen tillsammans med spelhuvudet (heltalsvärde). Du kan även skicka informationen om Experience-data om det behövs.
 
 ## Hantera mediahändelser efter typ {#handle-by-type}
@@ -27,7 +27,7 @@ Markera flikarna nedan om du vill se exempel på händelsetypshantering för var
 
 ### Spela upp {#play}
 
-The `media.play` händelsetypen används för att spåra när medieuppspelningen startar. Den här händelsen ska skickas när spelaren ändrar läge till &quot;spela upp&quot; från ett annat läge. Andra lägen från vilka spelaren övergår till&quot;uppspelning&quot; är&quot;buffring&quot;, användaren återgår från&quot;pausad&quot;, spelaren återställs från ett fel eller automatisk uppspelning.
+Händelsetypen `media.play` används för att spåra när medieuppspelningen startar. Den här händelsen ska skickas när spelaren ändrar läge till &quot;spela upp&quot; från ett annat läge. Andra lägen från vilka spelaren övergår till&quot;uppspelning&quot; är&quot;buffring&quot;, användaren återgår från&quot;pausad&quot;, spelaren återställs från ett fel eller automatisk uppspelning.
 
 >[!BEGINTABS]
 
@@ -63,7 +63,7 @@ sessionPromise.then(sessionID => {
 
 ### Pausa {#pause}
 
-The `media.pauseStart` händelsetyp används för att spåra när en mediouppspelning pausas. Den här händelsen ska skickas när användaren trycker på **[!UICONTROL Pause]**. Det finns ingen CV-händelsetyp. En meritförteckning visas när du skickar en `media.play` händelse efter `media.pauseStart`.
+Händelsetypen `media.pauseStart` används för att spåra när en medieuppspelning pausas. Den här händelsen ska skickas när användaren trycker på **[!UICONTROL Pause]**. Det finns ingen CV-händelsetyp. En CV-händelse härleds när du skickar en `media.play`-händelse efter en `media.pauseStart`.
 
 >[!BEGINTABS]
 
@@ -99,7 +99,7 @@ sessionPromise.then(sessionID => {
 
 ### Fel {#error}
 
-The `media.error` händelsetyp används för att spåra när ett fel inträffar under medieuppspelning. Den här händelsen ska skickas när ett fel inträffar.
+Händelsetypen `media.error` används för att spåra när ett fel inträffar under medieuppspelningen. Den här händelsen ska skickas när ett fel inträffar.
 
 >[!BEGINTABS]
 
@@ -145,7 +145,7 @@ sessionPromise.then(sessionID => {
 
 ### Annonsradbrytning - start {#ad-break-start}
 
-The `media.adBreakStart` händelsetyp används för att spåra när en annonsbrytning startar. Den här händelsen ska skickas när en annonsbrytning börjar.
+Händelsetypen `media.adBreakStart` används för att spåra när en annonsbrytning startar. Den här händelsen ska skickas när en annonsbrytning börjar.
 
 >[!BEGINTABS]
 
@@ -193,7 +193,7 @@ sessionPromise.then(sessionID => {
 
 ### Annonsbrytning slutförd {#ad-break-complete}
 
-The `media.adBreakComplete` händelsetypen används för att spåra när en annonsbrytning har slutförts. Denna händelse ska skickas när en annonsbrytning har slutförts.
+Händelsetypen `media.adBreakComplete` används för att spåra när en annonsbrytning har slutförts. Denna händelse ska skickas när en annonsbrytning har slutförts.
 
 >[!BEGINTABS]
 
@@ -229,7 +229,7 @@ sessionPromise.then(sessionID => {
 
 ### Annonsstart {#ad-start}
 
-The `media.adStart` händelsetypen används för att spåra när en annons börjar. Den här händelsen ska skickas när en annons börjar.
+Händelsetypen `media.adStart` används för att spåra när en annons startar. Den här händelsen ska skickas när en annons börjar.
 
 >[!BEGINTABS]
 
@@ -319,7 +319,7 @@ sessionPromise.then(sessionID => {
 
 ### Annonsen är klar {#ad-complete}
 
-The `media.adComplete` händelsetypen används för att spåra när en annons har slutförts. Denna händelse ska skickas när en annons är klar.
+Händelsetypen `media.adComplete` används för att spåra när en annons har slutförts. Denna händelse ska skickas när en annons är klar.
 
 >[!BEGINTABS]
 
@@ -355,7 +355,7 @@ sessionPromise.then(sessionID => {
 
 ### Annonshoppa {#ad-skip}
 
-The `media.adSkip` händelsetypen används för att spåra när en annons hoppas över. Den här händelsen ska skickas när en annons hoppas över.
+Händelsetypen `media.adSkip` används för att spåra när en annons hoppas över. Den här händelsen ska skickas när en annons hoppas över.
 
 >[!BEGINTABS]
 
@@ -391,7 +391,7 @@ sessionPromise.then(sessionID => {
 
 ### Kapitelstart {#chapter-start}
 
-The `media.chapterStart` händelsetyp används för att spåra när ett kapitel börjar. Den här händelsen ska skickas när ett kapitel börjar.
+Händelsetypen `media.chapterStart` används för att spåra när ett kapitel börjar. Den här händelsen ska skickas när ett kapitel börjar.
 
 >[!BEGINTABS]
 
@@ -469,7 +469,7 @@ sessionPromise.then(sessionID => {
 
 ### Kapitel fullständigt {#chapter-complete}
 
-The `media.chapterComplete` händelsetypen används för att spåra när ett kapitel har slutförts. Den här händelsen ska skickas när ett kapitel har slutförts.
+Händelsetypen `media.chapterComplete` används för att spåra när ett kapitel har slutförts. Den här händelsen ska skickas när ett kapitel har slutförts.
 
 >[!BEGINTABS]
 
@@ -505,7 +505,7 @@ sessionPromise.then(sessionID => {
 
 ### Kapitelhopp {#chapter-skip}
 
-The `media.chapterSkip` händelsetyp används för att spåra när ett kapitel hoppas över. Den här händelsen ska skickas när ett kapitel hoppas över.
+Händelsetypen `media.chapterSkip` används för att spåra när ett kapitel hoppas över. Den här händelsen ska skickas när ett kapitel hoppas över.
 
 >[!BEGINTABS]
 
@@ -541,7 +541,7 @@ sessionPromise.then(sessionID => {
 
 ### Buffertstart {#buffer-start}
 
-The `media.bufferStart` händelsetypen används för att spåra när buffring startas. Den här händelsen ska skickas när buffringen startar. Det finns inga `bufferResume` händelsetyp. A `bufferResume` visas när du skickar en uppspelningshändelse efter `bufferStart`.
+Händelsetypen `media.bufferStart` används för att spåra när buffring startas. Den här händelsen ska skickas när buffringen startar. Det finns ingen `bufferResume`-händelsetyp. En `bufferResume` härleds när du skickar en play-händelse efter `bufferStart`.
 
 >[!BEGINTABS]
 
@@ -577,7 +577,7 @@ sessionPromise.then(sessionID => {
 
 ### Bithastighetsändring {#bitrate-change}
 
-The `media.bitrateChange` händelsetypen används för att spåra när bithastigheten ändras. Den här händelsen ska skickas när bithastigheten ändras.
+Händelsetypen `media.bitrateChange` används för att spåra när bithastigheten ändras. Den här händelsen ska skickas när bithastigheten ändras.
 
 >[!BEGINTABS]
 
@@ -626,7 +626,7 @@ sessionPromise.then(sessionID => {
 
 ### Tillståndsuppdateringar {#state-updates}
 
-The `media.stateUpdate` händelsetypen används för att spåra när spelarläget ändras. Den här händelsen ska skickas när spelarläget ändras.
+Händelsetypen `media.stateUpdate` används för att spåra när spelarläget ändras. Den här händelsen ska skickas när spelarläget ändras.
 
 >[!BEGINTABS]
 
@@ -684,9 +684,9 @@ sessionPromise.then(sessionID => {
 
 ### Sessionsslut {#session-end}
 
-The `media.sessionEnd` händelsetypen används för att meddela Media Analytics-backend att sessionen omedelbart ska stängas när användaren har avbrutit sin visning av innehållet och de troligtvis inte kommer att returneras.
+Händelsetypen `media.sessionEnd` används för att meddela Media Analytics-backend-objektet att omedelbart stänga sessionen när användaren har avbrutit sin visning av innehållet och det är osannolikt att de kommer att returnera.
 
-Om du inte skickar `sessionEnd` -händelsen kommer en övergiven session att gå över efter att inga händelser har tagits emot under 10 minuter, eller när ingen spelhuvudrörelse inträffar under 30 minuter. Sessionen tas automatiskt bort.
+Om du inte skickar en `sessionEnd`-händelse kommer en övergiven session att gå över efter att inga händelser har tagits emot under 10 minuter, eller när ingen spelhuvudrörelse sker under 30 minuter. Sessionen tas automatiskt bort.
 
 >[!BEGINTABS]
 
@@ -722,7 +722,7 @@ sessionPromise.then(sessionID => {
 
 ### Sessionen slutförd {#session-complete}
 
-The `media.sessionComplete` händelsetypen används för att spåra när en mediesession har slutförts. Den här händelsen ska skickas när slutet av huvudinnehållet nås.
+Händelsetypen `media.sessionComplete` används för att spåra när en mediesession har slutförts. Den här händelsen ska skickas när slutet av huvudinnehållet nås.
 
 >[!BEGINTABS]
 
@@ -754,6 +754,3 @@ sessionPromise.then(sessionID => {
 ```
 
 >[!ENDTABS]
-
-
-

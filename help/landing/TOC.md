@@ -1,12 +1,12 @@
 ---
 audience: user
-user-guide-title: Adobe Experience Platform - översikt
-breadcrumb-title: Experience Platform - översikt
-user-guide-description: Lär dig hur Experience Platform kan leverera personaliserade upplevelser till era kunder i realtid med guider, dokumentation och självstudiekurser.
+user-guide-title: Översikt över Adobe Experience Platform
+breadcrumb-title: Översikt över Experience Platform
+user-guide-description: Läs mer om hur Experience Platform kan leverera personaliserade upplevelser till era kunder i realtid med användarhandböcker, dokumentation och självstudiekurser.
 source-git-commit: a926560f3c5f765090046313ec7a7431b5ce69c6
 workflow-type: tm+mt
 source-wordcount: '279'
-ht-degree: 6%
+ht-degree: 18%
 
 ---
 
@@ -15,7 +15,7 @@ ht-degree: 6%
 
 * [Plattformsöversikt](home.md)
 * [Plattformsöversikt (video)](video/platform-overview.md)
-* [Självstudiekurser för plattformar](https://experienceleague.adobe.com/docs/platform-learn/tutorials/overview.html)
+* [Plattformssjälvstudiekurser](https://experienceleague.adobe.com/docs/platform-learn/tutorials/overview.html)
 * [En kundupplevelse som bygger på Platform (Video)](video/customer-experience.md)
 * [Bakom scenen med en kundupplevelse som bygger på Platform (Video)](video/customer-experience-bts.md)
 * Komma igång {#getting-started}
@@ -24,7 +24,7 @@ ht-degree: 6%
    * [Viktiga användningsfall (video)](video/platform-use-cases.md)
    * [Plattformsarkitektur (video)](video/platform-architecture.md)
    * [Roller och projektfaser (video)](video/roles-project-phases.md)
-* Experience Platform UI {#platform-ui}
+* Experience Platform-gränssnitt {#platform-ui}
    * [Användargränssnittshandbok för plattformen](ui-guide.md)
    * [Demo av användargränssnittet för plattformen (video)](video/platform-ui.md)
    * [Användargränssnittshandbok för arbetsflöden](workflows.md)
@@ -39,7 +39,7 @@ ht-degree: 6%
 * Plattformsdokumentation {#documentation}
    * [Översikt](documentation/overview.md)
    * [Språkstöd](documentation/language-support.md)
-* Applikationer som bygger på plattform {#ecosystem}
+* Program byggda på plattformen {#ecosystem}
    * [Översikt](application-services.md)
    * [Adobe Real-time Customer Data Platform (alla utgåvor)](https://experienceleague.adobe.com/docs/real-time-customer-data-platform.html)
    * [Program och intelligenta tjänster (video)](video/application-intelligent-services.md)
@@ -48,10 +48,10 @@ ht-degree: 6%
    * [Journey Orchestration](https://experienceleague.adobe.com/docs/journey-orchestration.html)
    * [[!DNL Adobe Mix Modeler]](https://experienceleague.adobe.com/docs/mix-modeler.html)
    * [Plattformsintegrering med Experience Cloud (video)](video/experience-cloud-integrations.md)
-* Styrning, integritet och säkerhet {#governance-privacy-security}
+* Styrning, sekretess och säkerhet {#governance-privacy-security}
    * [Översikt](./governance-privacy-security/overview.md)
-   * Hantering av samtycke {#consent}
-      * Adobe standard {#adobe}
+   * Medgivandehantering {#consent}
+      * Adobe-standard {#adobe}
          * [Översikt](./governance-privacy-security/consent/adobe/overview.md)
          * [Konfigurera en datauppsättning för inhämtning av samtycke och inställningsdata](./governance-privacy-security/consent/adobe/dataset.md)
       * IAB TCF 2.0 {#iab}
@@ -72,7 +72,7 @@ ht-degree: 6%
       * [Använd API:t för att konfigurera CMK](./governance-privacy-security/customer-managed-keys/api-set-up.md)
       * [Använd användargränssnittet för att konfigurera CMK](./governance-privacy-security/customer-managed-keys/ui-set-up.md)
 * Licensanvändning och skyddsräcken {#license}
-   * [Bästa praxis för tillstånd till datahantering](./license-usage-and-guardrails/data-management-best-practices.md)
+   * [Bästa praxis för berättigande av datahanteringslicens](./license-usage-and-guardrails/data-management-best-practices.md)
    * [Kontrollpanel för licensanvändning](./license-usage-and-guardrails/license-usage-dashboard.md)
    * [Adobe Journey Optimizer skyddsräcken](https://experienceleague.adobe.com/docs/journey-optimizer/using/get-started/guardrails.html)
    * [Customer Journey Analytics skyddsräcken](https://experienceleague.adobe.com/docs/analytics-platform/using/cja-admin/guardrails.html)

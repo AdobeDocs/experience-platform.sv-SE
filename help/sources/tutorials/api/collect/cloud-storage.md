@@ -7,37 +7,37 @@ description: I den här självstudiekursen beskrivs stegen för att hämta data 
 exl-id: 95373c25-24f6-4905-ae6c-5000bf493e6f
 source-git-commit: 92f39f970402ab907f711d23a8f5f599668f0fe0
 workflow-type: tm+mt
-source-wordcount: '1765'
+source-wordcount: '1741'
 ht-degree: 0%
 
 ---
 
-# Skapa ett dataflöde för molnlagringskällor med [!DNL Flow Service] API
+# Skapa ett dataflöde för molnlagringskällor med API:t [!DNL Flow Service]
 
-I den här självstudiekursen beskrivs stegen för att hämta data från en molnlagringskälla och föra dem till plattformen med [[!DNL Flow Service] API](https://www.adobe.io/experience-platform-apis/references/flow-service/).
+I den här självstudien beskrivs stegen för hur du hämtar data från en molnlagringskälla och överför dem till plattformen med [[!DNL Flow Service] API](https://www.adobe.io/experience-platform-apis/references/flow-service/).
 
 >[!NOTE]
 >
->Om du vill skapa ett dataflöde måste du redan ha ett giltigt ID för basanslutningen med en molnlagringskälla. Om du inte har detta ID kan du se [källöversikt](../../../home.md#cloud-storage) för en lista över molnlagringskällor som du kan skapa en basanslutning med.
+>Om du vill skapa ett dataflöde måste du redan ha ett giltigt ID för basanslutningen med en molnlagringskälla. Om du inte har det här ID:t kan du se [Källöversikt](../../../home.md#cloud-storage) för en lista över molnlagringskällor som du kan skapa en basanslutning med.
 
 ## Komma igång
 
 Den här självstudiekursen kräver att du har en fungerande förståelse för följande komponenter i Adobe Experience Platform:
 
 - [[!DNL Experience Data Model (XDM) System]](../../../../xdm/home.md): Det standardiserade ramverk som Experience Platform använder för att ordna kundupplevelsedata.
-   - [Grunderna för schemakomposition](../../../../xdm/schema/composition.md): Lär dig mer om de grundläggande byggstenarna i XDM-scheman, inklusive viktiga principer och bästa praxis när det gäller schemakomposition.
-   - [Utvecklarhandbok för schemaregister](../../../../xdm/api/getting-started.md): Innehåller viktig information som du behöver känna till för att kunna utföra anrop till API:t för schemaregister. Detta inkluderar `{TENANT_ID}`, begreppet&quot;behållare&quot; och de rubriker som krävs för att göra en begäran (med särskild uppmärksamhet på rubriken Godkänn och dess möjliga värden).
-- [[!DNL Catalog Service]](../../../../catalog/home.md): Katalog är ett arkivsystem för dataplatser och -länkar inom Experience Platform.
+   - [Grundläggande om schemakomposition](../../../../xdm/schema/composition.md): Lär dig mer om grundstenarna i XDM-scheman, inklusive nyckelprinciper och bästa metoder för schemakomposition.
+   - [Utvecklarhandbok för schemaregister](../../../../xdm/api/getting-started.md): Innehåller viktig information som du behöver känna till för att kunna utföra anrop till API:t för schemaregister. Detta inkluderar din `{TENANT_ID}`, konceptet med behållare och de huvuden som krävs för att göra förfrågningar (med särskild uppmärksamhet på huvudet Godkänn och dess möjliga värden).
+- [[!DNL Catalog Service]](../../../../catalog/home.md): Katalog är ett postsystem för dataplatser och -länkar inom Experience Platform.
 - [[!DNL Batch ingestion]](../../../../ingestion/batch-ingestion/overview.md): Med API:t för gruppinmatning kan du importera data till Experience Platform som gruppfiler.
-- [Sandlådor](../../../../sandboxes/home.md): Experience Platform tillhandahåller virtuella sandlådor som partitionerar en enda plattformsinstans i separata virtuella miljöer för att utveckla och utveckla program för digitala upplevelser.
+- [Sandlådor](../../../../sandboxes/home.md): Experience Platform tillhandahåller virtuella sandlådor som partitionerar en enda plattformsinstans till separata virtuella miljöer för att utveckla och utveckla program för digitala upplevelser.
 
 ### Använda plattforms-API:er
 
-Mer information om hur du kan anropa API:er för plattformar finns i handboken [komma igång med plattforms-API:er](../../../../landing/api-guide.md).
+Mer information om hur du kan anropa plattforms-API:er finns i guiden [Komma igång med plattforms-API:er](../../../../landing/api-guide.md).
 
 ## Skapa en källanslutning {#source}
 
-Du kan skapa en källanslutning genom att göra en POST-förfrågan till `sourceConnections` slutpunkt för [!DNL Flow Service] API när du anger ditt grundläggande anslutnings-ID, sökvägen till källfilen som du vill importera och källans motsvarande anslutningsspecifikations-ID.
+Du kan skapa en källanslutning genom att göra en POST-förfrågan till `sourceConnections`-slutpunkten för [!DNL Flow Service]-API:t och samtidigt ange ditt basanslutnings-ID, sökvägen till källfilen som du vill importera samt källans motsvarande anslutningsspecifikations-ID.
 
 När du skapar en källanslutning måste du också definiera ett uppräkningsvärde för dataformatattributet.
 
@@ -49,7 +49,7 @@ Använd följande uppräkningsvärden för filbaserade källor:
 | JSON | `json` |
 | Parquet | `parquet` |
 
-För alla tabellbaserade källor anger du värdet till `tabular`.
+Ange värdet `tabular` för alla tabellbaserade källor.
 
 **API-format**
 
@@ -93,18 +93,18 @@ curl -X POST \
 | Egenskap | Beskrivning |
 | --- | --- |
 | `baseConnectionId` | Basanslutnings-ID för molnlagringskällan. |
-| `data.format` | Formatet på de data som du vill hämta till plattformen. Värden som stöds är: `delimited`, `JSON`och `parquet`. |
+| `data.format` | Formatet på de data som du vill hämta till plattformen. Värden som stöds är: `delimited`, `JSON` och `parquet`. |
 | `data.properties` | (Valfritt) En uppsättning egenskaper som du kan använda på dina data när du skapar en källanslutning. |
-| `data.properties.columnDelimiter` | (Valfritt) En kolumnavgränsare för ett tecken som du kan ange när du samlar in platta filer. Ett enda teckenvärde är en tillåten kolumnavgränsare. Om inget anges, ett komma (`,`) används som standardvärde. **Anteckning**: `columnDelimiter` -egenskapen kan bara användas vid inhämtning av avgränsade filer. |
-| `data.properties.encoding` | (Valfritt) En egenskap som definierar den kodningstyp som ska användas när data hämtas till plattformen. Följande kodningstyper stöds: `UTF-8` och `ISO-8859-1`. **Anteckning**: `encoding` -parametern är bara tillgänglig vid inhämtning av avgränsade CSV-filer. Andra filtyper kommer att importeras med standardkodningen, `UTF-8`. |
-| `data.properties.compressionType` | (Valfritt) En egenskap som definierar den komprimerade filtypen för förtäring. Komprimerade filtyper som stöds är: `bzip2`, `gzip`, `deflate`, `zipDeflate`, `tarGzip`och `tar`. **Anteckning**: `compressionType` -egenskapen kan bara användas vid inhämtning av avgränsade filer eller JSON-filer. |
-| `params.path` | Sökvägen till källfilen som du försöker komma åt. Den här parametern pekar på en enskild fil eller en hel mapp.  **Anteckning**: Du kan använda en asterisk i stället för filnamnet för att ange att en hel mapp ska tas emot. Till exempel: `/acme/summerCampaign/*.csv` kommer att importera hela `/acme/summerCampaign/` mapp. |
-| `params.type` | Filtypen för den källdatafil som du vill importera. Använd typ `file` för att importera en enskild fil och använda typ `folder` om du vill importera en hel mapp. |
-| `connectionSpec.id` | Det ID för anslutningsspecifikation som är kopplat till din specifika molnlagringskälla. Se [appendix](#appendix) för en lista över anslutningsspecifikations-ID:n. |
+| `data.properties.columnDelimiter` | (Valfritt) En kolumnavgränsare för ett tecken som du kan ange när du samlar in platta filer. Ett enda teckenvärde är en tillåten kolumnavgränsare. Om inget anges används ett komma (`,`) som standardvärde. **Obs!**: Egenskapen `columnDelimiter` kan bara användas vid import av avgränsade filer. |
+| `data.properties.encoding` | (Valfritt) En egenskap som definierar den kodningstyp som ska användas när data hämtas till plattformen. Följande kodningstyper stöds: `UTF-8` och `ISO-8859-1`. **Obs!**: Parametern `encoding` är bara tillgänglig när du importerar avgränsade CSV-filer. Andra filtyper importeras med standardkodningen, `UTF-8`. |
+| `data.properties.compressionType` | (Valfritt) En egenskap som definierar den komprimerade filtypen för förtäring. De komprimerade filtyper som stöds är: `bzip2`, `gzip`, `deflate`, `zipDeflate`, `tarGzip` och `tar`. **Obs!**: Egenskapen `compressionType` kan bara användas vid import av avgränsade filer eller JSON-filer. |
+| `params.path` | Sökvägen till källfilen som du försöker komma åt. Den här parametern pekar på en enskild fil eller en hel mapp.  **Obs!**: Du kan använda en asterisk i stället för filnamnet för att ange att en hel mapp ska tas emot. Till exempel: `/acme/summerCampaign/*.csv` kommer att importera hela mappen `/acme/summerCampaign/`. |
+| `params.type` | Filtypen för den källdatafil som du vill importera. Använd typen `file` för att importera en enskild fil och använd typen `folder` för att importera en hel mapp. |
+| `connectionSpec.id` | Det ID för anslutningsspecifikation som är kopplat till din specifika molnlagringskälla. I [bilagan](#appendix) finns en lista över anslutningsspecifikations-ID:n. |
 
 **Svar**
 
-Ett godkänt svar returnerar den unika identifieraren (`id`) för den nyligen skapade källanslutningen. Detta ID krävs i ett senare steg för att skapa ett dataflöde.
+Ett lyckat svar returnerar den unika identifieraren (`id`) för den nyligen skapade källanslutningen. Detta ID krävs i ett senare steg för att skapa ett dataflöde.
 
 ```json
 {
@@ -125,7 +125,7 @@ POST /sourceConnections
 
 **Begäran**
 
-I exemplet nedan används reguljära uttryck i filsökvägen för att ange att alla CSV-filer som har `premium` i deras namn.
+I exemplet nedan används reguljära uttryck i filsökvägen för att ange att alla CSV-filer som har `premium` i namnet ska tas emot.
 
 ```shell
 curl -X POST \
@@ -155,7 +155,7 @@ curl -X POST \
 
 ### Konfigurera en källanslutning för rekursiv import av data
 
-Du kan använda kommandot `recursive` parameter för att importera data från djupt inkapslade mappar.
+När du skapar en källanslutning kan du använda parametern `recursive` för att importera data från djupt inkapslade mappar.
 
 **API-format**
 
@@ -165,7 +165,7 @@ POST /sourceConnections
 
 **Begäran**
 
-I exemplet nedan är `recursive: true` parameterinformation [!DNL Flow Service] om du vill läsa alla undermappar rekursivt under importen.
+I exemplet nedan informerar parametern `recursive: true` [!DNL Flow Service] om att läsa alla undermappar rekursivt under importen.
 
 ```shell
 curl -X POST \
@@ -198,21 +198,21 @@ curl -X POST \
 
 För att källdata ska kunna användas i Platform måste ett målschema skapas för att strukturera källdata efter dina behov. Målschemat används sedan för att skapa en plattformsdatauppsättning där källdata finns.
 
-Ett mål-XDM-schema kan skapas genom att utföra en POST-begäran till [API för schemaregister](https://www.adobe.io/experience-platform-apis/references/schema-registry/).
+Ett mål-XDM-schema kan skapas genom att utföra en POST-begäran till [schemats register-API ](https://www.adobe.io/experience-platform-apis/references/schema-registry/).
 
-Detaljerade anvisningar om hur du skapar ett XDM-målschema finns i självstudiekursen om [skapa ett schema med API](../../../../xdm/api/schemas.md).
+Detaljerade steg om hur du skapar ett mål-XDM-schema finns i självstudiekursen [Skapa ett schema med API:t](../../../../xdm/api/schemas.md).
 
 ## Skapa en måldatauppsättning {#target-dataset}
 
-En måldatauppsättning kan skapas genom att en POST till [Katalogtjänstens API](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/catalog.yaml), som tillhandahåller målschemats ID i nyttolasten.
+En måldatamängd kan skapas genom att utföra en POST-begäran till [katalogtjänstens API](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/catalog.yaml), som anger målschemats ID i nyttolasten.
 
-Detaljerade anvisningar om hur du skapar en måldatauppsättning finns i självstudiekursen om [skapa en datauppsättning med API](../../../../catalog/api/create-dataset.md).
+Detaljerade steg om hur du skapar en måldatauppsättning finns i självstudiekursen [Skapa en datauppsättning med API:t](../../../../catalog/api/create-dataset.md).
 
 ## Skapa en målanslutning {#target-connection}
 
-En målanslutning representerar anslutningen till målet där inkapslade data kommer in. Om du vill skapa en målanslutning måste du ange det fasta anslutnings-spec-ID som är associerat med datasjön. Detta anslutningsspec-ID är: `c604ff05-7f1a-43c0-8e18-33bf874cb11c`.
+En målanslutning representerar anslutningen till målet där inkapslade data kommer in. Om du vill skapa en målanslutning måste du ange det fasta anslutnings-spec-ID som är associerat med datasjön. Anslutningens spec-ID är: `c604ff05-7f1a-43c0-8e18-33bf874cb11c`.
 
-Nu har du de unika identifierarna ett målschema, en måldatamängd och ett anslutningsspec-ID till Data Lake. Med dessa identifierare kan du skapa en målanslutning med [!DNL Flow Service] API för att ange den datauppsättning som ska innehålla inkommande källdata.
+Nu har du de unika identifierarna ett målschema, en måldatamängd och ett anslutningsspec-ID till Data Lake. Med hjälp av dessa identifierare kan du skapa en målanslutning med API:t [!DNL Flow Service] för att ange den datauppsättning som ska innehålla inkommande källdata.
 
 **API-format**
 
@@ -251,14 +251,14 @@ curl -X POST \
 
 | Egenskap | Beskrivning |
 | -------- | ----------- |
-| `data.schema.id` | The `$id` av mål-XDM-schemat. |
-| `data.schema.version` | Schemats version. Det här värdet måste anges `application/vnd.adobe.xed-full+json;version=1`, som returnerar den senaste delversionen av schemat. |
-| `params.dataSetId` | ID:t för måldatauppsättningen som skapades i föregående steg. **Anteckning**: Du måste ange ett giltigt datauppsättnings-ID när du skapar en målanslutning. Ett ogiltigt datauppsättnings-ID resulterar i ett fel. |
+| `data.schema.id` | `$id` för mål-XDM-schemat. |
+| `data.schema.version` | Schemats version. Värdet måste anges `application/vnd.adobe.xed-full+json;version=1`, vilket returnerar den senaste delversionen av schemat. |
+| `params.dataSetId` | ID:t för måldatauppsättningen som skapades i föregående steg. **Obs!**: Du måste ange ett giltigt datauppsättnings-ID när du skapar en målanslutning. Ett ogiltigt datauppsättnings-ID resulterar i ett fel. |
 | `connectionSpec.id` | Det anslutnings-spec-ID som används för att ansluta till datasjön. Detta ID är: `c604ff05-7f1a-43c0-8e18-33bf874cb11c`. |
 
 **Svar**
 
-Ett godkänt svar returnerar den nya målanslutningens unika identifierare (`id`). Detta ID krävs i senare steg.
+Ett svar returnerar den nya målanslutningens unika identifierare (`id`). Detta ID krävs i senare steg.
 
 ```json
 {
@@ -271,7 +271,7 @@ Ett godkänt svar returnerar den nya målanslutningens unika identifierare (`id`
 
 För att källdata ska kunna hämtas till en måldatamängd måste den först mappas till målschemat som måldatamängden följer.
 
-Skapa en mappningsuppsättning genom att göra en POST-förfrågan till `mappingSets` slutpunkt för [[!DNL Data Prep] API](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/data-prep.yaml) när du tillhandahöll ditt mål-XDM-schema `$id` och information om de mappningsuppsättningar som du vill skapa.
+Om du vill skapa en mappningsuppsättning skickar du en POST till `mappingSets`-slutpunkten för [[!DNL Data Prep]  API](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/data-prep.yaml) samtidigt som du anger ditt mål-XDM-schema `$id` och information om de mappningsuppsättningar du vill skapa.
 
 >[!TIP]
 >
@@ -333,7 +333,7 @@ curl -X POST \
 
 **Svar**
 
-Ett godkänt svar returnerar information om den nyligen skapade mappningen inklusive dess unika identifierare (`id`). Detta värde krävs i ett senare steg för att skapa ett dataflöde.
+Ett lyckat svar returnerar information om den nyligen skapade mappningen inklusive dess unika identifierare (`id`). Detta värde krävs i ett senare steg för att skapa ett dataflöde.
 
 ```json
 {
@@ -374,7 +374,7 @@ curl -X GET \
 
 **Svar**
 
-Ett lyckat svar returnerar information om dataflödesspecifikationen som ansvarar för att hämta data från källan till plattformen. Svaret innehåller den unika flödesspecifikationen `id` krävs för att skapa ett nytt dataflöde.
+Ett lyckat svar returnerar information om dataflödesspecifikationen som ansvarar för att hämta data från källan till plattformen. Svaret innehåller den unika flödesspecifikation `id` som krävs för att skapa ett nytt dataflöde.
 
 ```json
 {
@@ -591,7 +591,7 @@ Ett lyckat svar returnerar information om dataflödesspecifikationen som ansvara
 
 Det sista steget mot att samla in molnlagringsdata är att skapa ett dataflöde. Nu har du förberett följande obligatoriska värden:
 
-- [Källanslutnings-ID](#source)
+- [Source-anslutnings-ID](#source)
 - [Målanslutnings-ID](#target)
 - [Mappnings-ID](#mapping)
 - [ID för dataflödesspecifikation](#specs)
@@ -600,13 +600,13 @@ Ett dataflöde ansvarar för att schemalägga och samla in data från en källa.
 
 >[!NOTE]
 >
->För batchimport väljer varje efterföljande dataflöde filer som ska importeras från källan baserat på deras **senast ändrad** tidsstämpel. Detta innebär att gruppdataflöden väljer filer från källan som antingen är nya eller har ändrats sedan den senaste dataflödeskörningen.
+>För gruppinmatning väljer varje efterföljande dataflöde filer som ska importeras från källan baserat på deras **senaste ändrade**-tidsstämpel. Detta innebär att gruppdataflöden väljer filer från källan som antingen är nya eller har ändrats sedan den senaste dataflödeskörningen.
 
-Om du vill schemalägga ett intag måste du först ange starttidsvärdet till epok time i sekunder. Sedan måste du ange frekvensvärdet till ett av de fem alternativen: `once`, `minute`, `hour`, `day`, eller `week`. Intervallvärdet anger perioden mellan två på varandra följande inmatningar och att skapa en engångsinmatning kräver inget intervall. För alla andra frekvenser måste intervallvärdet anges till lika med eller större än `15`.
+Om du vill schemalägga ett intag måste du först ange starttidsvärdet till epok time i sekunder. Sedan måste du ange frekvensvärdet till ett av de fem alternativen: `once`, `minute`, `hour`, `day` eller `week`. Intervallvärdet anger perioden mellan två på varandra följande inmatningar och att skapa en engångsinmatning kräver inget intervall. Intervallvärdet måste vara lika med eller större än `15` för alla andra frekvenser.
 
 >[!IMPORTANT]
 >
->Vi rekommenderar att du schemalägger dataflödet för engångsbruk när du använder [FTP-anslutning](../../../connectors/cloud-storage/ftp.md).
+>Vi rekommenderar att du schemalägger dataflödet för engångsbruk när du använder [FTP-anslutningen](../../../connectors/cloud-storage/ftp.md).
 
 **API-format**
 
@@ -655,17 +655,17 @@ curl -X POST \
 
 | Egenskap | Beskrivning |
 | --- | --- |
-| `flowSpec.id` | The [flödesspec-ID](#specs) hämtat i föregående steg. |
-| `sourceConnectionIds` | The [källanslutnings-ID](#source) hämtat i ett tidigare steg. |
-| `targetConnectionIds` | The [målanslutnings-ID](#target-connection) hämtat i ett tidigare steg. |
-| `transformations.params.mappingId` | The [mappnings-ID](#mapping) hämtat i ett tidigare steg. |
+| `flowSpec.id` | [Flödesspec-ID:t ](#specs) som hämtades i föregående steg. |
+| `sourceConnectionIds` | [källanslutnings-ID](#source) har hämtats i ett tidigare steg. |
+| `targetConnectionIds` | [målanslutnings-ID](#target-connection) har hämtats i ett tidigare steg. |
+| `transformations.params.mappingId` | [Mappnings-ID](#mapping) hämtades i ett tidigare steg. |
 | `scheduleParams.startTime` | Starttiden för dataflödet i epok-tid. |
-| `scheduleParams.frequency` | Frekvensen med vilken dataflödet samlar in data. Godtagbara värden är: `once`, `minute`, `hour`, `day`, eller `week`. |
+| `scheduleParams.frequency` | Frekvensen med vilken dataflödet samlar in data. Godtagbara värden är: `once`, `minute`, `hour`, `day` eller `week`. |
 | `scheduleParams.interval` | Intervallet anger perioden mellan två på varandra följande flödeskörningar. Intervallets värde ska vara ett heltal som inte är noll. Intervall krävs inte när frekvens har angetts som `once` och ska vara större än eller lika med `15` för andra frekvensvärden. |
 
 **Svar**
 
-Ett godkänt svar returnerar ID:t (`id`) av det nya dataflödet.
+Ett lyckat svar returnerar ID:t (`id`) för det nyskapade dataflödet.
 
 ```json
 {
@@ -676,14 +676,14 @@ Ett godkänt svar returnerar ID:t (`id`) av det nya dataflödet.
 
 ## Övervaka dataflödet
 
-När dataflödet har skapats kan du övervaka de data som importeras genom det för att se information om flödeskörningar, slutförandestatus och fel. Mer information om hur du övervakar dataflöden finns i självstudiekursen om [övervaka dataflöden i API:t](../monitor.md)
+När dataflödet har skapats kan du övervaka de data som importeras genom det för att se information om flödeskörningar, slutförandestatus och fel. Mer information om hur du övervakar dataflöden finns i självstudiekursen [Övervaka dataflöden i API](../monitor.md).
 
 ## Nästa steg
 
 Genom att följa den här självstudiekursen har du skapat en källanslutning för att samla in data från din molnlagring på schemalagd basis. Inkommande data kan nu användas av plattformstjänster längre fram i kedjan som [!DNL Real-Time Customer Profile] och [!DNL Data Science Workspace]. Mer information finns i följande dokument:
 
 - [Översikt över kundprofiler i realtid](../../../../profile/home.md)
-- [Översikt över arbetsytan Data Science](../../../../data-science-workspace/home.md)
+- [Data Science Workspace - översikt](../../../../data-science-workspace/home.md)
 
 ## Bilaga {#appendix}
 
@@ -695,9 +695,9 @@ I följande avsnitt visas de olika anslutningarna till molnlagringskällan och d
 | -------------- | --------------- |
 | [!DNL Amazon S3] (S3) | `ecadc60c-7455-4d87-84dc-2a0e293d997b` |
 | [!DNL Amazon Kinesis] (Kinesis) | `86043421-563b-46ec-8e6c-e23184711bf6` |
-| [!DNL Azure Blob] (Blob) | `4c10e202-c428-4796-9208-5f1f5732b1cf` |
+| [!DNL Azure Blob] (Blobb) | `4c10e202-c428-4796-9208-5f1f5732b1cf` |
 | [!DNL Azure Data Lake Storage Gen2] (ADLS Gen2) | `b3ba5556-48be-44b7-8b85-ff2b69b46dc4` |
-| [!DNL Azure Event Hubs] (Händelsehubbar) | `bf9f5905-92b7-48bf-bf20-455bc6b60a4e` |
+| [!DNL Azure Event Hubs] (händelsehubbar) | `bf9f5905-92b7-48bf-bf20-455bc6b60a4e` |
 | [!DNL Azure File Storage] | `be5ec48c-5b78-49d5-b8fa-7c89ec4569b8` |
 | [!DNL Google Cloud Storage] | `32e8f412-cdf7-464c-9885-78184cb113fd` |
 | [!DNL HDFS] | `54e221aa-d342-4707-bcff-7a4bceef0001` |

@@ -14,17 +14,17 @@ ht-degree: 0%
 
 # Slutpunkt för marknadsföringsåtgärder
 
-En marknadsföringsåtgärd inom ramen för Adobe Experience Platform Data Governance är en åtgärd som [!DNL Experience Platform] dataförbrukare tar, för vilka det finns ett behov av att kontrollera om dataanvändningsprinciper har överträtts.
+En marknadsföringsåtgärd, inom ramen för Adobe Experience Platform Data Governance, är en åtgärd som en [!DNL Experience Platform]-datakonsument utför, och där det finns ett behov av att kontrollera om dataanvändningsprinciper har överträtts.
 
-Du kan hantera marknadsföringsåtgärder för din organisation med `/marketingActions` slutpunkt i principtjänstens API.
+Du kan hantera marknadsföringsåtgärder för din organisation med slutpunkten `/marketingActions` i principtjänstens API.
 
 ## Komma igång
 
-API-slutpunkterna som används i den här handboken är en del av [[!DNL Policy Service] API](https://www.adobe.io/experience-platform-apis/references/policy-service/). Innan du fortsätter bör du granska [komma igång-guide](./getting-started.md) för länkar till relaterad dokumentation, en guide till hur du läser exempel-API-anrop i det här dokumentet och viktig information om vilka huvuden som behövs för att kunna ringa anrop till [!DNL Experience Platform] API.
+API-slutpunkterna som används i den här guiden ingår i [[!DNL Policy Service] API](https://www.adobe.io/experience-platform-apis/references/policy-service/). Innan du fortsätter bör du läsa [kom igång-guiden](./getting-started.md) för att få länkar till relaterad dokumentation, en guide till hur du läser exempelanropen för API i det här dokumentet och viktig information om vilka huvuden som krävs för att kunna anropa ett [!DNL Experience Platform] -API.
 
 ## Hämta en lista med marknadsföringsåtgärder {#list}
 
-Du kan hämta en lista över viktiga eller anpassade marknadsföringsåtgärder genom att göra en GET-förfrågan till `/marketingActions/core` eller `/marketingActions/custom`, respektive
+Du kan hämta en lista över viktiga eller anpassade marknadsföringsåtgärder genom att göra en GET-förfrågan till `/marketingActions/core` respektive `/marketingActions/custom`.
 
 **API-format**
 
@@ -48,7 +48,7 @@ curl -X GET \
 
 **Svar**
 
-Ett lyckat svar returnerar information för varje hämtad marknadsföringsåtgärd, inklusive dess `name` och `href`. The `href` värdet används för att identifiera marknadsföringsåtgärden när [skapa en dataanvändningsprincip](policies.md#create-policy).
+Ett lyckat svar returnerar information för varje hämtad marknadsföringsåtgärd, inklusive dess `name` och `href`. Värdet `href` används för att identifiera marknadsföringsåtgärden när [en dataanvändningsprincip skapas](policies.md#create-policy).
 
 ```json
 {
@@ -102,12 +102,12 @@ Ett lyckat svar returnerar information för varje hämtad marknadsföringsåtgä
 | --- | --- |
 | `_page.count` | Det totala antalet returnerade marknadsföringsåtgärder. |
 | `children` | En array med objekt som innehåller information om hämtade marknadsföringsåtgärder. |
-| `name` | Namnet på marknadsföringsåtgärden, som fungerar som sin unika identifierare när [söka efter en specifik marknadsföringsåtgärd](#lookup). |
-| `_links.self.href` | En URI-referens för marknadsföringsåtgärden, som kan användas för att slutföra `marketingActionsRefs` array när [skapa en dataanvändningsprincip](policies.md#create-policy). |
+| `name` | Namnet på marknadsföringsåtgärden, som fungerar som sin unika identifierare när [en letar upp en viss marknadsföringsåtgärd](#lookup). |
+| `_links.self.href` | En URI-referens för marknadsföringsåtgärden, som kan användas för att slutföra `marketingActionsRefs`-arrayen när [en dataanvändningsprincip ](policies.md#create-policy) skapas. |
 
 ## Slå upp en specifik marknadsföringsåtgärd {#lookup}
 
-Du letar upp detaljerna om en viss marknadsföringsåtgärd genom att ta med marknadsföringsåtgärdens `name` i sökvägen för en GET-begäran.
+Du kan söka efter information om en viss marknadsföringsåtgärd genom att ta med marknadsföringsåtgärdens `name`-egenskap i sökvägen till en GET-begäran.
 
 **API-format**
 
@@ -118,7 +118,7 @@ GET /marketingActions/custom/{MARKETING_ACTION_NAME}
 
 | Parameter | Beskrivning |
 | --- | --- |
-| `{MARKETING_ACTION_NAME}` | The `name` egenskapen för den marknadsföringsåtgärd som du vill söka efter. |
+| `{MARKETING_ACTION_NAME}` | Egenskapen `name` för den marknadsföringsåtgärd som du vill söka efter. |
 
 **Begäran**
 
@@ -135,7 +135,7 @@ curl -X GET \
 
 **Svar**
 
-Svarsobjektet innehåller information om marknadsföringsåtgärden, inklusive sökvägen (`_links.self.href`) som behövs för att hänvisa till marknadsföringsåtgärder när [definiera en dataanvändningsprincip](policies.md#create-policy) (`marketingActionsRefs`).
+Svarsobjektet innehåller information om marknadsföringsåtgärden, inklusive sökvägen (`_links.self.href`) som behövs för att referera till marknadsföringsåtgärden när [en dataanvändningsprincip definieras](policies.md#create-policy) (`marketingActionsRefs`).
 
 ```JSON
 {
@@ -172,7 +172,7 @@ PUT /marketingActions/custom/{MARKETING_ACTION_NAME}
 
 **Begäran**
 
-Följande begäran skapar en ny marknadsföringsåtgärd med namnet `crossSiteTargeting`, förutsatt att det inte finns någon marknadsföringsåtgärd med samma namn i systemet än. Om en `crossSiteTargeting` marknadsföringsåtgärd finns, uppdaterar det här anropet i stället marknadsföringsåtgärden baserat på de egenskaper som anges i nyttolasten.
+Följande begäran skapar en ny marknadsföringsåtgärd med namnet `crossSiteTargeting`, förutsatt att det inte finns någon marknadsföringsåtgärd med samma namn i systemet än. Om det finns en `crossSiteTargeting`-marknadsföringsåtgärd uppdaterar det här anropet i stället marknadsföringsåtgärden baserat på de egenskaper som anges i nyttolasten.
 
 ```shell
 curl -X PUT \
@@ -190,7 +190,7 @@ curl -X PUT \
 
 | Egenskap | Beskrivning |
 | --- | --- |
-| `name` | Namnet på den marknadsföringsåtgärd som ska skapas eller uppdateras. <br><br>**VIKTIGT**: Den här egenskapen måste matcha `{MARKETING_ACTION_NAME}` i sökvägen, annars inträffar ett HTTP 400-fel (Ogiltig begäran). Med andra ord, när en marknadsföringsåtgärd har skapats, `name` -egenskapen kan inte ändras. |
+| `name` | Namnet på den marknadsföringsåtgärd som ska skapas eller uppdateras. <br><br>**VIKTIGT**: Den här egenskapen måste matcha `{MARKETING_ACTION_NAME}` i sökvägen, annars inträffar ett HTTP 400-fel (Ogiltig begäran). När en marknadsföringsåtgärd har skapats kan egenskapen `name` alltså inte ändras. |
 | `description` | En valfri beskrivning som ger ytterligare sammanhang för marknadsföringsåtgärden. |
 
 **Svar**
@@ -249,4 +249,4 @@ curl -X DELETE \
 
 Ett lyckat svar returnerar HTTP-status 200 (OK) med en tom svarstext.
 
-Du kan bekräfta borttagningen genom att försöka [söka efter marknadsföringsåtgärder](#look-up). Du bör få ett HTTP 404-fel (Hittades inte) om marknadsföringsåtgärden har tagits bort från systemet.
+Du kan bekräfta borttagningen genom att försöka [slå upp marknadsföringsåtgärden](#look-up). Du bör få ett HTTP 404-fel (Hittades inte) om marknadsföringsåtgärden har tagits bort från systemet.

@@ -24,9 +24,9 @@ Använd Data Distiller för att berika era maskininlärningslinjer med värdeful
 
 Det här dokumentet innehåller en serie molnbaserade anteckningsböcker för maskininlärningsmiljö som demonstrerar ett komplett arbetsflöde. Arbetsflödet använder de maskininlärningsverktyg du föredrar för att skapa anpassade datamodeller som stöder dina marknadsföringsfall med data från Experience Platform.
 
-Det här arbetsflödet kräver att [!DNL Python] bärbara datorer i maskininlärningsmiljöer. Instruktioner för att komma igång med dessa [!DNL Python] bärbara datorer ingår i deras respektive Viktigt-filer.
+Det här arbetsflödet kräver att [!DNL Python] anteckningsböcker används i maskininlärningsmiljöer. Instruktioner för hur du kommer igång med de här [!DNL Python] anteckningsböckerna finns i deras respektive Viktigt-filer.
 
-Innan du fortsätter med den här guiden följer du de steg som beskrivs i [Översikt över AI/ML-funktionspipelines](./overview.md) för att göra det möjligt att använda Python-anteckningsböcker som används i det här AI/ML-användningsförloppet.
+Innan du fortsätter med den här guiden följer du de steg som beskrivs i översikten över [AI/ML-funktionens pipelines](./overview.md) för att aktivera användningen av exempelfilen för Python-anteckningsböcker som används i det här användningsexemplet för AI/ML-funktionen.
 
 ## Bärbara anteckningsböcker för maskininlärningsmiljö i molnet {#cmle-notebooks}
 

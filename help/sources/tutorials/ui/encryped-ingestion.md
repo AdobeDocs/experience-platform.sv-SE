@@ -1,9 +1,10 @@
 ---
-title: Infoga krypterade data på arbetsytan i källgränssnittet
+title: Infoga krypterade data i källanvändargränssnittet i Workspace
 description: Lär dig hur du importerar krypterade data i källans arbetsyta.
 hide: true
 hidefromtoc: true
-source-git-commit: f2a0a9b84dfd3c1d32c8049148d38ef4d2ec822e
+exl-id: 34aaf9b6-5c39-404b-a70a-5553a4db9cdb
+source-git-commit: a11f469cb54421e0ca30c7c5878128e216470f7f
 workflow-type: tm+mt
 source-wordcount: '111'
 ht-degree: 0%
@@ -14,7 +15,7 @@ ht-degree: 0%
 
 Läs den här guiden och lär dig hur du kan importera krypterade data till Adobe Experience Platform med molnlagringskällor för batchdata.
 
-## Förutsättningar
+## Förhandskrav
 
 * Kryptera data
 

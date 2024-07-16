@@ -16,9 +16,9 @@ ht-degree: 0%
 >
 >Det här återanropet är föråldrat. Använd [`filterClickDetails`](clickcollection.md) i stället.
 
-The `onBeforeLinkClickSend` Med callback kan du registrera en JavaScript-funktion som kan ändra länkspårningsdata som du skickar precis innan dessa data skickas till Adobe. Med det här återanropet kan du ändra `xdm` eller `data` -objekt, inklusive möjligheten att lägga till, redigera eller ta bort element. Du kan också villkorligt avbryta sändningen av data helt och hållet, t.ex. med identifierad robottrafik på klientsidan. Den stöds i Web SDK 2.15.0 eller senare.
+Med motringningen `onBeforeLinkClickSend` kan du registrera en JavaScript-funktion som kan ändra länkspårningsdata som du skickar precis innan dessa data skickas till Adobe. Med det här återanropet kan du ändra objektet `xdm` eller `data`, inklusive möjligheten att lägga till, redigera eller ta bort element. Du kan också villkorligt avbryta sändningen av data helt och hållet, t.ex. med identifierad robottrafik på klientsidan. Den stöds i Web SDK 2.15.0 eller senare.
 
-Det här återanropet körs bara när [`clickCollectionEnabled`](clickcollectionenabled.md) är aktiverat och [`filterClickDetails`](clickcollection.md) innehåller ingen registrerad funktion. If `clickCollectionEnabled` är inaktiverat, eller om `filterClickDetails` innehåller en registrerad funktion, kommer denna återanrop inte att köras. If `onBeforeEventSend` och `onBeforeLinkClickSend` båda innehåller registrerade funktioner, `onBeforeLinkClickSend` körs först.
+Det här återanropet körs bara när [`clickCollectionEnabled`](clickcollectionenabled.md) är aktiverat och [`filterClickDetails`](clickcollection.md) inte innehåller någon registrerad funktion. Om `clickCollectionEnabled` är inaktiverat, eller om `filterClickDetails` innehåller en registrerad funktion, körs inte det här återanropet. Om `onBeforeEventSend` och `onBeforeLinkClickSend` båda innehåller registrerade funktioner körs `onBeforeLinkClickSend` först.
 
 >[!WARNING]
 >
@@ -26,26 +26,26 @@ Det här återanropet körs bara när [`clickCollectionEnabled`](clickcollection
 
 ## Konfigurera före länk genom att klicka på Skicka återanrop med tillägget Web SDK-tagg {#tag-extension}
 
-Välj **[!UICONTROL Provide on before link click event send callback code]** knapp när [konfigurera taggtillägget](/help/tags/extensions/client/web-sdk/web-sdk-extension-configuration.md). Med den här kommandoknappen öppnas ett modalt fönster där du kan infoga den önskade koden.
+Klicka på knappen **[!UICONTROL Provide on before link click event send callback code]** när du [konfigurerar taggtillägget](/help/tags/extensions/client/web-sdk/web-sdk-extension-configuration.md). Med den här kommandoknappen öppnas ett modalt fönster där du kan infoga den önskade koden.
 
-1. Logga in på [experience.adobe.com](https://experience.adobe.com) med dina Adobe ID-uppgifter.
+1. Logga in på [experience.adobe.com](https://experience.adobe.com) med dina Adobe ID-inloggningsuppgifter.
 1. Navigera till **[!UICONTROL Data Collection]** > **[!UICONTROL Tags]**.
 1. Välj önskad taggegenskap.
-1. Navigera till **[!UICONTROL Extensions]** och sedan klicka **[!UICONTROL Configure]** på [!UICONTROL Adobe Experience Platform Web SDK] kort.
-1. Bläddra nedåt till [!UICONTROL Data Collection] markerar du kryssrutan **[!UICONTROL Enable click data collection]**.
-1. Markera knappen med etiketten **[!UICONTROL Provide on before link click event send callback code]**.
+1. Navigera till **[!UICONTROL Extensions]** och klicka sedan på **[!UICONTROL Configure]** på [!UICONTROL Adobe Experience Platform Web SDK]-kortet.
+1. Bläddra ned till avsnittet [!UICONTROL Data Collection] och markera kryssrutan **[!UICONTROL Enable click data collection]**.
+1. Markera knappen **[!UICONTROL Provide on before link click event send callback code]**.
 1. Den här knappen öppnar ett modalt fönster med en kodredigerare. Infoga den önskade koden och klicka sedan på **[!UICONTROL Save]** för att stänga det modala fönstret.
-1. Klicka **[!UICONTROL Save]** publicera ändringarna under tilläggsinställningarna.
+1. Klicka på **[!UICONTROL Save]** under tilläggsinställningarna och publicera sedan ändringarna.
 
 I kodredigeraren har du tillgång till följande variabler:
 
-* **`content.clickedElement`**: Det DOM-element som du klickade på.
+* **`content.clickedElement`**: DOM-elementet som klickades på.
 * **`content.xdm`**: XDM-nyttolasten för händelsen.
 * **`content.data`**: Dataobjektets nyttolast för händelsen.
-* **`return true`**: Avsluta återanropet omedelbart med de aktuella variabelvärdena. The `onBeforeEventSend` callback-funktionen körs om den innehåller en registrerad funktion.
-* **`return false`**: Avsluta omedelbart återanropet och avbryt överföringen av data till Adobe. The `onBeforeEventSend` återanrop körs inte.
+* **`return true`**: Avsluta återanropet omedelbart med de aktuella variabelvärdena. Återanropet `onBeforeEventSend` körs om det innehåller en registrerad funktion.
+* **`return false`**: Avsluta återanropet omedelbart och avbryt överföringen av data till Adobe. Återanropet `onBeforeEventSend` har inte körts.
 
-Alla variabler som definierats utanför `content` kan användas, men ingår inte i nyttolasten som skickas till Adobe.
+Alla variabler som definierats utanför `content` kan användas, men inkluderas inte i nyttolasten som skickas till Adobe.
 
 ```js
 // Set an already existing value to something else
@@ -65,11 +65,11 @@ content.xdm._experience.analytics.customDimensions.eVars.eVar1 = content.clicked
 if(content.xdm.web?.webInteraction?.type === "other") content.xdm.web.webInteraction.type = "download";
 ```
 
-Lika med [`onBeforeEventSend`](onbeforeeventsend.md)kan du `return true` för att slutföra funktionen omedelbart, eller `return false` för att avbryta sändning av data till Adobe. Om du avbryter sändningen av data i `onBeforeLinkClickSend` när båda `onBeforeEventSend` och `onBeforeLinkClickSend` innehåller registrerade funktioner, `onBeforeEventSend` funktionen körs inte.
+På samma sätt som [`onBeforeEventSend`](onbeforeeventsend.md) kan du `return true` slutföra funktionen direkt, eller `return false` om du vill avbryta överföringen av data till Adobe. Om du avbryter sändning av data i `onBeforeLinkClickSend` när både `onBeforeEventSend` och `onBeforeLinkClickSend` innehåller registrerade funktioner, körs inte funktionen `onBeforeEventSend`.
 
 ## Konfigurera före länk genom att klicka på Skicka återanrop med Web SDK JavaScript-biblioteket {#library}
 
-Registrera `onBeforeLinkClickSend` återanrop när programmet körs `configure` -kommando. Du kan ändra `content` variabelnamn till ett värde som du vill ha genom att ändra parametervariabeln inuti den infogade funktionen.
+Registrera `onBeforeLinkClickSend`-återanropet när du kör kommandot `configure`. Du kan ändra variabelnamnet `content` till vilket värde som helst genom att ändra parametervariabeln inuti den infogade funktionen.
 
 ```js
 alloy("configure", {

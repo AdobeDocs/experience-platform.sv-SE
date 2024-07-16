@@ -12,7 +12,7 @@ ht-degree: 0%
 
 # Slutpunkt för förfallodatum för datauppsättning
 
-The `/ttl` kan du schemalägga förfallodatum för datauppsättningar i Adobe Experience Platform.
+Med slutpunkten `/ttl` i Data Hygiene API kan du schemalägga förfallodatum för datauppsättningar i Adobe Experience Platform.
 
 En datamängds förfallotid är endast en tidsfördröjd borttagningsåtgärd. Datauppsättningen är inte skyddad under tiden, så den kan tas bort på annat sätt innan den upphör att gälla.
 
@@ -22,13 +22,13 @@ En datamängds förfallotid är endast en tidsfördröjd borttagningsåtgärd. D
 
 Du kan när som helst innan datauppsättningsborttagningen initieras avbryta förfallotiden eller ändra dess utlösningstid. När du har avbrutit en förfallotid för en datauppsättning kan du öppna den igen genom att ange en ny förfallotid.
 
-När borttagningen av datauppsättningen initieras markeras dess förfallojobb som `executing`och får inte ändras ytterligare. Själva datauppsättningen kan återvinnas i upp till sju dagar, men endast genom en manuell process som initierats via en begäran från Adobe. När begäran verkställs startar datasjön, identitetstjänsten och kundprofilen i realtid separata processer för att ta bort datauppsättningens innehåll från sina respektive tjänster. När data har tagits bort från alla tre tjänsterna är förfallodatumet markerat som `completed`.
+När borttagningen av datauppsättningen initieras markeras dess förfallojobb som `executing`, och det kanske inte ändras ytterligare. Själva datauppsättningen kan återvinnas i upp till sju dagar, men endast genom en manuell process som initierats via en begäran från Adobe. När begäran verkställs startar datasjön, identitetstjänsten och kundprofilen i realtid separata processer för att ta bort datauppsättningens innehåll från sina respektive tjänster. När data har tagits bort från alla tre tjänsterna markeras förfallotiden som `completed`.
 
 >[!WARNING]
 >
 >Om en datauppsättning är inställd på att förfalla måste du manuellt ändra alla dataflöden som kan inhämta data till datauppsättningen så att dina efterföljande arbetsflöden inte påverkas negativt.
 
-Advanced Data Lifecycle Management stöder borttagning av datauppsättningar via datamängdens utgångsslutpunkt och ID-borttagningar (data på radnivå) med hjälp av primära identiteter via [arbetsorderslutpunkt](./workorder.md). Du kan också hantera [förfallodatum för datauppsättning](../ui/dataset-expiration.md) och [postborttagningar](../ui/record-delete.md) via plattformsgränssnittet. Mer information finns i den länkade dokumentationen.
+Avancerad livscykelhantering för data stöder borttagning av datauppsättningar via datauppsättningens slutpunkt och ID-borttagningar (data på radnivå) med hjälp av primära identiteter via [arbetsorderslutpunkten](./workorder.md). Du kan också hantera [förfallodatum för datauppsättningar](../ui/dataset-expiration.md) och [borttagningar av poster](../ui/record-delete.md) via plattformsgränssnittet. Mer information finns i den länkade dokumentationen.
 
 >[!NOTE]
 >
@@ -36,11 +36,11 @@ Advanced Data Lifecycle Management stöder borttagning av datauppsättningar via
 
 ## Komma igång
 
-Slutpunkten som används i den här guiden är en del av API:t för datahygien. Innan du fortsätter bör du granska [API-guide](./overview.md) för information om obligatoriska rubriker för CRUD-åtgärder, felmeddelanden, Postman-samlingar och hur du läser exempel-API-anrop.
+Slutpunkten som används i den här guiden är en del av API:t för datahygien. Innan du fortsätter bör du läsa [API-handboken](./overview.md) för att få information om vilka huvuden som krävs för CRUD-åtgärder, felmeddelanden, Postman-samlingar och hur du läser exempel-API-anrop.
 
 >[!IMPORTANT]
 >
->När du anropar data Hygiene API måste du använda -H `x-sandbox-name: {SANDBOX_NAME}` header.
+>När du anropar data Hygiene API måste du använda huvudet -H `x-sandbox-name: {SANDBOX_NAME}`.
 
 ## Visa förfallodatum för datamängd {#list}
 
@@ -54,7 +54,7 @@ GET /ttl?{QUERY_PARAMETERS}
 
 | Parameter | Beskrivning |
 | --- | --- |
-| `{QUERY_PARAMETERS}` | En lista med valfria frågeparametrar, med flera parametrar avgränsade med `&` tecken. Vanliga parametrar inkluderar `limit` och `page` för sidnumrering. En fullständig lista över frågeparametrar som stöds finns i [appendix-avsnitt](#query-params). |
+| `{QUERY_PARAMETERS}` | En lista med valfria frågeparametrar, med flera parametrar avgränsade med `&` tecken. Vanliga parametrar är `limit` och `page` för sidnumreringsändamål. En fullständig lista över frågeparametrar som stöds finns i avsnittet [appendix](#query-params). |
 
 {style="table-layout:auto"}
 
@@ -75,7 +75,7 @@ Ett lyckat svar listar de resulterande datauppsättningens förfallotider. Följ
 
 >[!IMPORTANT]
 >
->The `ttlId` i svaret även kallas `{DATASET_EXPIRATION_ID}`. Båda hänvisar till den unika identifieraren för datauppsättningens förfallodatum.
+>`ttlId` i svaret kallas också `{DATASET_EXPIRATION_ID}`. Båda hänvisar till den unika identifieraren för datauppsättningens förfallodatum.
 
 ```json
 {
@@ -101,7 +101,7 @@ Ett lyckat svar listar de resulterande datauppsättningens förfallotider. Följ
 | Egenskap | Beskrivning |
 | --- | --- |
 | `total_count` | Antalet datauppsättningsförfallodatum som matchade listanropets parametrar. |
-| `results` | Innehåller information om förfallodatum för returnerad datauppsättning. Mer information om egenskaperna för en datamängds förfallodatum finns i svarsavsnittet för att skapa en [uppslagsanrop](#lookup). |
+| `results` | Innehåller information om förfallodatum för returnerad datauppsättning. Mer information om egenskaperna för en datamängds förfallotid finns i svarsavsnittet för att ringa ett [uppslagsanrop](#lookup). |
 
 {style="table-layout:auto"}
 
@@ -111,7 +111,7 @@ Om du vill söka efter en förfallotid för en datauppsättning gör du en GET-f
 
 >[!IMPORTANT]
 >
->The `{DATASET_EXPIRATION_ID}` kallas `ttlId` i svaret. Båda hänvisar till den unika identifieraren för datauppsättningens förfallodatum.
+>`{DATASET_EXPIRATION_ID}` kallas `ttlId` i svaret. Båda hänvisar till den unika identifieraren för datauppsättningens förfallodatum.
 
 **API-format**
 
@@ -178,9 +178,9 @@ Ett lyckat svar returnerar information om datauppsättningens förfallodatum.
 
 ### Förfallotaggar för katalog
 
-När du använder [Katalog-API](../../catalog/api/getting-started.md) om du vill söka efter datauppsättningsinformation, om datauppsättningen har en aktiv förfallotid, visas den under `tags.adobe/hygiene/ttl`.
+När du använder [katalog-API:t](../../catalog/api/getting-started.md) för att söka efter datauppsättningsinformation, kommer den att listas under `tags.adobe/hygiene/ttl` om datauppsättningen har en aktiv förfallotid.
 
-Följande JSON representerar ett trunkerat svar för datauppsättningens information från Catalog, som har ett förfallovärde på `32503680000000`. Taggens värde kodar förfallodatumet som ett heltal i millisekunder sedan början av Unix-epoken.
+Följande JSON representerar ett trunkerat svar för datauppsättningens information från katalogen, som har ett förfallovärde på `32503680000000`. Taggens värde kodar förfallodatumet som ett heltal i millisekunder sedan början av Unix-epoken.
 
 ```json
 {
@@ -233,8 +233,8 @@ curl -X POST \
 
 | Egenskap | Beskrivning |
 | --- | --- |
-| `datasetId` | **Obligatoriskt** ID:t för måldatauppsättningen som du vill schemalägga en förfallotid för. |
-| `expiry` | **Obligatoriskt** Ett datum och en tid i ISO 8601-format. Om strängen inte har någon explicit tidszonsförskjutning antas tidszonen vara UTC. Livslängden för data i systemet anges enligt angivet utgångsvärde.<br>Obs!<ul><li>Begäran misslyckas om det redan finns en förfallotid för datauppsättningen.</li><li>Det här datumet och den här tiden måste vara minst **24 timmar i framtiden**.</li></ul> |
+| `datasetId` | **Obligatorisk** ID:t för måldatauppsättningen som du vill schemalägga en förfallotid för. |
+| `expiry` | **Obligatoriskt** Ett datum och en tid i ISO 8601-format. Om strängen inte har någon explicit tidszonsförskjutning antas tidszonen vara UTC. Livslängden för data i systemet anges enligt angivet utgångsvärde.<br>Obs!<ul><li>Begäran misslyckas om det redan finns en förfallotid för datauppsättningen.</li><li>Detta datum och denna tid måste vara minst **24 timmar i framtiden**.</li></ul> |
 | `displayName` | Ett valfritt visningsnamn för datauppsättningens förfallobegäran. |
 | `description` | En valfri beskrivning av förfallobegäran. |
 
@@ -276,7 +276,7 @@ HTTP-statusen 400 (Ogiltig begäran) inträffar om det redan finns en förfallot
 
 ## Uppdatera utgångsdatum för en datauppsättning {#update}
 
-Om du vill uppdatera ett förfallodatum för en datauppsättning använder du en PUT-begäran och `ttlId`. Du kan uppdatera `displayName`, `description`och/eller `expiry` information.
+Om du vill uppdatera ett förfallodatum för en datauppsättning använder du en PUT-förfrågan och `ttlId`. Du kan uppdatera informationen för `displayName`, `description` och/eller `expiry`.
 
 >[!NOTE]
 >
@@ -294,7 +294,7 @@ PUT /ttl/{DATASET_EXPIRATION_ID}
 
 **Begäran**
 
-Följande begäran ändrar förfallodatum för en datauppsättning `SD-c8c75921-2416-4be7-9cfd-9ab01de66c5f` i slutet av 2024 (GMT). Om den befintliga datauppsättningens förfallodatum hittas uppdateras den med den nya `expiry` värde.
+I följande begäran omdisponeras en datamängds förfallodatum `SD-c8c75921-2416-4be7-9cfd-9ab01de66c5f` till i slutet av 2024 (Greenwich Mean Time). Om den befintliga datauppsättningens förfallodatum hittas uppdateras den med det nya `expiry`-värdet.
 
 ```shell
 curl -X PUT \
@@ -313,7 +313,7 @@ curl -X PUT \
 
 | Egenskap | Beskrivning |
 | --- | --- |
-| `expiry` | **Obligatoriskt** Ett datum och en tid i ISO 8601-format. Om strängen inte har någon explicit tidszonsförskjutning antas tidszonen vara UTC. Livslängden för data i systemet anges enligt angivet utgångsvärde. Alla tidigare tidsstämplar för förfallodatum för samma datauppsättning ska ersättas med det nya utgångsvärdet som du har angett. Det här datumet och den här tiden måste vara minst **24 timmar i framtiden**. |
+| `expiry` | **Obligatoriskt** Ett datum och en tid i ISO 8601-format. Om strängen inte har någon explicit tidszonsförskjutning antas tidszonen vara UTC. Livslängden för data i systemet anges enligt angivet utgångsvärde. Alla tidigare tidsstämplar för förfallodatum för samma datauppsättning ska ersättas med det nya utgångsvärdet som du har angett. Detta datum och denna tid måste vara minst **24 timmar i framtiden**. |
 | `displayName` | Ett visningsnamn för förfallobegäran. |
 | `description` | En valfri beskrivning av förfallobegäran. |
 
@@ -357,7 +357,7 @@ Du kan avbryta en förfallotid för en datauppsättning genom att göra en DELET
 
 >[!NOTE]
 >
->Endast förfallodatum för datauppsättning som har statusen `pending` kan avbrytas. Om du försöker avbryta ett förfallodatum som har körts eller som redan har avbrutits returneras ett HTTP 404-fel.
+>Det går bara att avbryta datauppsättningsförfallodatum som har statusen `pending`. Om du försöker avbryta ett förfallodatum som har körts eller som redan har avbrutits returneras ett HTTP 404-fel.
 
 **API-format**
 
@@ -367,7 +367,7 @@ DELETE /ttl/{EXPIRATION_ID}
 
 | Parameter | Beskrivning |
 | --- | --- |
-| `{EXPIRATION_ID}` | The `ttlId` av datauppsättningens förfallodatum som du vill avbryta. |
+| `{EXPIRATION_ID}` | `ttlId` av datauppsättningens förfallodatum som du vill avbryta. |
 
 {style="table-layout:auto"}
 
@@ -386,11 +386,11 @@ curl -X DELETE \
 
 **Svar**
 
-Ett godkänt svar returnerar HTTP-status 204 (inget innehåll) och förfallodatumet `status` attribute is set to `cancelled`.
+Ett lyckat svar returnerar HTTP-status 204 (inget innehåll) och förfallofilens `status`-attribut är inställt på `cancelled`.
 
 ## Hämta förfallostatushistoriken för en datauppsättning {#retrieve-expiration-history}
 
-Använd `{DATASET_ID}` och `include=history` frågeparameter i en sökningsbegäran. Resultatet innehåller information om hur datauppsättningens förfallodatum skapas, vilka uppdateringar som har gjorts och hur den avbryts eller körs (om tillämpligt). Du kan också använda `{DATASET_EXPIRATION_ID}` för att hämta datauppsättningens förfallostatushistorik.
+Om du vill söka efter förfallostatushistoriken för en viss datauppsättning använder du frågeparametern `{DATASET_ID}` och `include=history` i en sökbegäran. Resultatet innehåller information om hur datauppsättningens förfallodatum skapas, vilka uppdateringar som har gjorts och hur den avbryts eller körs (om tillämpligt). Du kan också använda `{DATASET_EXPIRATION_ID}` för att hämta datauppsättningens förfallostatushistorik.
 
 **API-format**
 
@@ -419,7 +419,7 @@ curl -X GET \
 
 **Svar**
 
-Ett svar returnerar information om datauppsättningens förfallodatum, med en `history` arrayen med information om dess `status`, `expiry`, `updatedAt`och `updatedBy` attribut för var och en av de registrerade uppdateringarna.
+Ett lyckat svar returnerar information om datauppsättningens förfallodatum, med en `history`-matris med information om dess `status`, `expiry`, `updatedAt` och `updatedBy`-attribut för var och en av de registrerade uppdateringarna.
 
 ```json
 {
@@ -466,7 +466,7 @@ Ett svar returnerar information om datauppsättningens förfallodatum, med en `h
 | `displayName` | Visningsnamnet för förfallobegäran. |
 | `description` | En beskrivning av förfallobegäran. |
 | `imsOrg` | Organisationens ID. |
-| `history` | Visar historiken för uppdateringar för förfallodatumet som en array med objekt, där varje objekt innehåller `status`, `expiry`, `updatedAt`och `updatedBy` attribut för förfallodatum vid tidpunkten för uppdateringen. |
+| `history` | Visar uppdateringshistoriken för förfallodatumet som en array med objekt, där varje objekt innehåller attributen `status`, `expiry`, `updatedAt` och `updatedBy` för förfallodatumet vid tidpunkten för uppdateringen. |
 
 {style="table-layout:auto"}
 
@@ -474,18 +474,18 @@ Ett svar returnerar information om datauppsättningens förfallodatum, med en `h
 
 ### Godkända frågeparametrar {#query-params}
 
-Följande tabell visar de tillgängliga frågeparametrarna när [ange förfallodatum för datauppsättning](#list):
+I följande tabell visas de tillgängliga frågeparametrarna när [en lista över datauppsättningens förfallotider](#list) visas:
 
 >[!NOTE]
 >
->The `description`, `displayName`och `datasetName` alla parametrar kan användas för att söka efter LIKE-värden. Det innebär att du kan hitta schemalagda datauppsättningsförfallotider med namnet&quot;Name123&quot;,&quot;Name183&quot;,&quot;DisplayName1234&quot; genom att söka efter strängen&quot;Name1&quot;.
+>Parametrarna `description`, `displayName` och `datasetName` innehåller alla möjlighet att söka efter LIKE-värden. Det innebär att du kan hitta schemalagda datauppsättningsförfallotider med namnet&quot;Name123&quot;,&quot;Name183&quot;,&quot;DisplayName1234&quot; genom att söka efter strängen&quot;Name1&quot;.
 
 | Parameter | Beskrivning | Exempel |
 | --- | --- | --- |
-| `author` | Matchar förfallodatum vars `created_by` är en matchning för söksträngen. Om söksträngen börjar med `LIKE` eller `NOT LIKE`behandlas resten som ett SQL-sökmönster. Annars behandlas hela söksträngen som en litteral sträng som exakt måste matcha hela innehållet i en `created_by` fält. | `author=LIKE %john%`, `author=John Q. Public` |
+| `author` | Matchar förfallodatum vars `created_by` är en matchning för söksträngen. Om söksträngen börjar med `LIKE` eller `NOT LIKE` behandlas resten som ett SQL-sökmönster. Annars behandlas hela söksträngen som en literal sträng som exakt måste matcha hela innehållet i ett `created_by`-fält. | `author=LIKE %john%`, `author=John Q. Public` |
 | `cancelledDate` / `cancelledToDate` / `cancelledFromDate` | Matchar förfallodatum som annullerades när som helst i det angivna intervallet. Detta gäller även om utgångsdatumet öppnades igen senare (genom att ange ett nytt förfallodatum för samma datauppsättning). | `updatedDate=2022-01-01` |
 | `completedDate` / `completedToDate` / `completedFromDate` | Matchar förfallotider som har slutförts under det angivna intervallet. | `completedToDate=2021-11-11-06:00` |
-| `createdDate` | Matchar utgångsdatum som skapades i 24-timmarsfönstret med början vid angiven tidpunkt.<br><br>Observera att datum utan tid (som `2021-12-07`) representerar datetime i början av den dagen. Således `createdDate=2021-12-07` avser alla förfallodatum som skapades den 7 december 2021, från `00:00:00` via `23:59:59.999999999` (UTC). | `createdDate=2021-12-07` |
+| `createdDate` | Matchar utgångsdatum som skapades i 24-timmarsfönstret med början vid angiven tidpunkt.<br><br>Observera att datum utan tid (som `2021-12-07`) representerar datum/tid i början av den dagen. Därför hänvisar `createdDate=2021-12-07` till alla förfallodatum som skapades den 7 december 2021, från `00:00:00` till `23:59:59.999999999` (UTC). | `createdDate=2021-12-07` |
 | `createdFromDate` | Matchar utgångsdatum som skapades vid eller efter den angivna tiden. | `createdFromDate=2021-12-07T00:00:00Z` |
 | `createdToDate` | Matchar utgångsdatum som skapades vid eller före angiven tid. | `createdToDate=2021-12-07T23:59:59.999999999Z` |
 | `datasetId` | Matchar förfallodatum som gäller för en viss datauppsättning. | `datasetId=62b3925ff20f8e1b990a7434` |
@@ -495,14 +495,14 @@ Följande tabell visar de tillgängliga frågeparametrarna när [ange förfallod
 | `executedDate` / `executedFromDate` / `executedToDate` | Filtrerar resultat baserat på ett exakt körningsdatum, ett körningsdatum eller ett startdatum för körning. De används för att hämta data eller poster som är kopplade till körningen av en åtgärd på ett visst datum, före ett visst datum eller efter ett visst datum. | `executedDate=2023-02-05T19:34:40.383615Z` |
 | `expiryDate` / `expiryToDate` / `expiryFromDate` | Matchar förfallodatum som ska verkställas, eller som redan har körts, under det angivna intervallet. | `expiryFromDate=2099-01-01&expiryToDate=2100-01-01` |
 | `limit` | Ett heltal mellan 1 och 100 som anger det maximala antalet förfallodatum som ska returneras. Standardvärdet är 25. | `limit=50` |
-| `orderBy` | The `orderBy` frågeparametern anger sorteringsordningen för de resultat som returneras av API:t. Använd den för att ordna data baserat på ett eller flera fält, antingen i stigande (ASC) eller fallande (DESC) ordning. Använd prefixet + eller - för att beteckna ASC respektive DESC. Följande värden accepteras: `displayName`, `description`, `datasetName`, `id`, `updatedBy`, `updatedAt`, `expiry`, `status`. | `-datasetName` |
-| `orgId` | Matchar datamängdernas förfallodatum vars organisations-ID matchar parameterns. Standardvärdet är `x-gw-ims-org-id` huvuden och ignoreras såvida inte begäran tillhandahåller en tjänsttoken. | `orgId=885737B25DC460C50A49411B@AdobeOrg` |
+| `orderBy` | Frågeparametern `orderBy` anger sorteringsordningen för resultaten som returneras av API:t. Använd den för att ordna data baserat på ett eller flera fält, antingen i stigande (ASC) eller fallande (DESC) ordning. Använd prefixet + eller - för att beteckna ASC respektive DESC. Följande värden accepteras: `displayName`, `description`, `datasetName`, `id`, `updatedBy`, `updatedAt`, `expiry`, `status`. | `-datasetName` |
+| `orgId` | Matchar datamängdernas förfallodatum vars organisations-ID matchar parameterns. Det här värdet är som standard det för `x-gw-ims-org-id`-huvudena och ignoreras om inte begäran tillhandahåller en tjänsttoken. | `orgId=885737B25DC460C50A49411B@AdobeOrg` |
 | `page` | Ett heltal som anger vilken sida med förfallodatum som ska returneras. | `page=3` |
-| `sandboxName` | Matchar datauppsättningens förfallodatum vars sandlådenamn exakt matchar argumentet. Standardvärdet är sandlådenamnet i begäran `x-sandbox-name` header. Använd `sandboxName=*` om du vill inkludera förfallodatum för datauppsättningar från alla sandlådor. | `sandboxName=dev1` |
-| `search` | Matchar utgångsdatum där den angivna strängen är en exakt matchning för förfallodatum-ID:t, eller är **innesluten** i något av dessa fält:<br><ul><li>författare</li><li>visningsnamn</li><li>description</li><li>visningsnamn</li><li>datauppsättningsnamn</li></ul> | `search=TESTING` |
+| `sandboxName` | Matchar datauppsättningens förfallodatum vars sandlådenamn exakt matchar argumentet. Standardvärdet är sandlådenamnet i begärans `x-sandbox-name`-huvud. Använd `sandboxName=*` om du vill inkludera förfallodatum för datauppsättning från alla sandlådor. | `sandboxName=dev1` |
+| `search` | Matchar utgångsdatum där den angivna strängen är en exakt matchning för förfallodatum-ID, eller är **innesluten** i något av dessa fält:<br><ul><li>författare</li><li>visningsnamn</li><li>description</li><li>visningsnamn</li><li>datauppsättningsnamn</li></ul> | `search=TESTING` |
 | `status` | En kommaavgränsad lista med statusvärden. När svaret inkluderas matchar det utgångsdatum för datauppsättningen vars aktuella status är bland de som visas. | `status=pending,cancelled` |
 | `ttlId` | Matchar förfallobegäran med angivet ID. | `ttlID=SD-c8c75921-2416-4be7-9cfd-9ab01de66c5f` |
-| `updatedDate` / `updatedToDate` / `updatedFromDate` | Gilla `createdDate` / `createdFromDate` / `createdToDate`, men matchar en datamängds uppdateringstid i stället för skapandetid.<br><br>En förfallotid anses vara uppdaterad för varje redigering, inklusive när den skapas, avbryts eller körs. | `updatedDate=2022-01-01` |
+| `updatedDate` / `updatedToDate` / `updatedFromDate` | Som `createdDate` / `createdFromDate` / `createdToDate`, men matchar en datamängds uppdateringstid i stället för skapandetid.<br><br>En förfallotid anses vara uppdaterad vid varje redigering, inklusive när den skapas, avbryts eller körs. | `updatedDate=2022-01-01` |
 
 {style="table-layout:auto"}
 

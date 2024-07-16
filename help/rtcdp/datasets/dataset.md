@@ -13,6 +13,6 @@ ht-degree: 0%
 
 # Datauppsättningar i Real-time Customer Data Platform
 
-I Real-time Customer Data Platform användargränssnitt kan du visa och hantera alla datauppsättningar som din organisation har skapat, samt skapa nya. Om du vill bläddra bland datauppsättningar i gränssnittet väljer du **[!UICONTROL Datasets]** i den vänstra navigeringen. The **[!UICONTROL Browse]** -fliken innehåller en lista med datauppsättningar, inklusive kolumner med namn, skapade (datum och tid), källa, schema och senaste batchstatus, samt datum och tid då datauppsättningen senast uppdaterades.
+I Real-time Customer Data Platform användargränssnitt kan du visa och hantera alla datauppsättningar som din organisation har skapat, samt skapa nya. Om du vill bläddra bland datauppsättningar i användargränssnittet väljer du **[!UICONTROL Datasets]** i den vänstra navigeringen. Fliken **[!UICONTROL Browse]** innehåller en lista med datauppsättningar, inklusive kolumner med namn, skapad (datum och tid), källa, schema och senaste batchstatus, samt datum och tid då datauppsättningen senast uppdaterades.
 
-Mer information om datauppsättningar finns i [!DNL Experience Platform], börja med att läsa [Datauppsättningar - översikt](../../catalog/datasets/overview.md).
+Om du vill ha information om datauppsättningar i [!DNL Experience Platform] börjar du med att läsa [översikten över datauppsättningar](../../catalog/datasets/overview.md).

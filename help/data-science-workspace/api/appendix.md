@@ -1,5 +1,5 @@
 ---
-keywords: Experience Platform;utvecklarguide;endpoint;Data Science Workspace;populära topics;
+keywords: Experience Platform;utvecklarguide;endpoint;Data Science Workspace;populära ämnen;
 solution: Experience Platform
 title: Sensei Machine Learning API Guide
 description: I följande avsnitt finns referensinformation för olika funktioner i Sensei Machine Learning API.
@@ -8,32 +8,32 @@ exl-id: 2c8d3ae8-7ad7-4ff6-8d6b-3a42d3eccdff
 source-git-commit: c16ce1020670065ecc5415bc3e9ca428adbbd50c
 workflow-type: tm+mt
 source-wordcount: '330'
-ht-degree: 0%
+ht-degree: 1%
 
 ---
 
-# [!DNL Sensei Machine Learning] API-guide, tillägg
+# API-guide för [!DNL Sensei Machine Learning]
 
-I följande avsnitt finns referensinformation för olika funktioner i [!DNL Sensei Machine Learning] API.
+I följande avsnitt finns referensinformation för olika funktioner i API:t [!DNL Sensei Machine Learning].
 
 ## Frågeparametrar för hämtning av resurser {#query}
 
-The [!DNL Sensei Machine Learning] API har stöd för frågeparametrar med hämtning av resurser. Tillgängliga frågeparametrar och deras användning beskrivs i följande tabell:
+API:t [!DNL Sensei Machine Learning] har stöd för frågeparametrar när resurser hämtas. Tillgängliga frågeparametrar och deras användning beskrivs i följande tabell:
 
 | Frågeparameter | Beskrivning | Standardvärde |
 | --------------- | ----------- | ------- |
 | `start` | Anger startindex för sidnumrering. | `start=0` |
 | `limit` | Anger det maximala antalet resultat som ska returneras. | `limit=25` |
-| `orderby` | Anger de egenskaper som ska användas för sortering i prioritetsordning. Inkludera ett streck (**-**) före ett egenskapsnamn som ska sorteras i fallande ordning, annars sorteras resultaten i stigande ordning. | `orderby=created` |
+| `orderby` | Anger de egenskaper som ska användas för sortering i prioritetsordning. Inkludera ett bindestreck (**-**) före ett egenskapsnamn som ska sorteras i fallande ordning, annars sorteras resultaten i stigande ordning. | `orderby=created` |
 | `property` | Anger det jämförelseuttryck som ett objekt måste uppfylla för att kunna returneras. | `property=deleted==false` |
 
 >[!NOTE]
 >
->När du kombinerar flera frågeparametrar måste de avgränsas med et-tecken (**&amp;**).
+>När flera frågeparametrar kombineras måste de avgränsas med et-tecken (**&amp;**).
 
 ## Python CPU- och GPU-konfigurationer {#cpu-gpu-config}
 
-Python Engines har möjlighet att välja mellan antingen en CPU eller en GPU för sin utbildning eller i poängsyfte, och definieras på en [MLInstance](./mlinstances.md) som en uppgiftsspecifikation (`tasks.specification`).
+Python Engines kan välja mellan en CPU eller en GPU för sin utbildning eller poängsättning och definieras på en [MLInstance](./mlinstances.md) som en aktivitetsspecifikation (`tasks.specification`).
 
 Följande är ett exempel på konfiguration som anger hur du använder en CPU för utbildning och en GPU för bedömning:
 
@@ -70,7 +70,7 @@ Följande är ett exempel på konfiguration som anger hur du använder en CPU f�
 
 >[!NOTE]
 >
->Värdena för `cpus` och `gpus` anger inte antalet processorer eller grafikprocessorer, utan antalet fysiska datorer. Dessa värden är tillåtna `"1"` och i annat fall genereras ett undantag.
+>Värdena för `cpus` och `gpus` anger inte antalet CPU:er eller GPU:er, utan antalet fysiska datorer. Dessa värden är tillåtna `"1"` och kommer i annat fall att generera ett undantag.
 
 ## Resurskonfigurationer för PySpark och Spark {#resource-config}
 
@@ -84,7 +84,7 @@ Spark Engines har möjlighet att modifiera beräkningsresurser för utbildning o
 | exutorCores | Antal kärnor som används av köraren | int |
 | numExecutors | Antal körare | int |
 
-Resurser kan anges på en [MLInstance](./mlinstances.md) som antingen (A) individuella utbildnings- eller poängparametrar, eller (B) inom ett ytterligare specifikationsobjekt (`specification`). Följande resurskonfigurationer är till exempel desamma för både utbildning och poängsättning:
+Resurser kan anges på en [MLInstance](./mlinstances.md) som antingen (A) enskilda utbildnings- eller poängparametrar, eller (B) inom ett ytterligare specifikationsobjekt (`specification`). Följande resurskonfigurationer är till exempel desamma för både utbildning och poängsättning:
 
 ```json
 [

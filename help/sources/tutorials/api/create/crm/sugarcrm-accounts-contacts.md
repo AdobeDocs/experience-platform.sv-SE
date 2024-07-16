@@ -11,20 +11,20 @@ ht-degree: 0%
 
 # Skapa en källanslutning och ett dataflöde för [!DNL SugarCRM Accounts & Contacts] med API:t för Flow Service
 
-I följande självstudiekurs får du hjälp med att skapa en [!DNL SugarCRM Accounts & Contacts] källanslutning och skapa ett dataflöde som ger [[!DNL SugarCRM]](https://www.sugarcrm.com/) konton och kontaktar data till Adobe Experience Platform med [[!DNL Flow Service] API](https://www.adobe.io/experience-platform-apis/references/flow-service/).
+I följande självstudiekurs får du hjälp med att skapa en [!DNL SugarCRM Accounts & Contacts]-källanslutning och skapa ett dataflöde för att överföra [[!DNL SugarCRM]](https://www.sugarcrm.com/)-konton och kontaktdata till Adobe Experience Platform med hjälp av [[!DNL Flow Service] API](https://www.adobe.io/experience-platform-apis/references/flow-service/).
 
 ## Komma igång
 
 Handboken kräver en fungerande förståelse av följande komponenter i Experience Platform:
 
-* [Källor](../../../../home.md): Experience Platform tillåter att data kan hämtas från olika källor samtidigt som du kan strukturera, märka och förbättra inkommande data med hjälp av plattformstjänster.
-* [Sandlådor](../../../../../sandboxes/home.md): Experience Platform tillhandahåller virtuella sandlådor som partitionerar en enda plattformsinstans i separata virtuella miljöer för att utveckla och utveckla program för digitala upplevelser.
+* [Källor](../../../../home.md): Experience Platform tillåter data att hämtas från olika källor samtidigt som du kan strukturera, etikettera och förbättra inkommande data med hjälp av plattformstjänster.
+* [Sandlådor](../../../../../sandboxes/home.md): Experience Platform tillhandahåller virtuella sandlådor som partitionerar en enda plattformsinstans till separata virtuella miljöer för att utveckla och utveckla program för digitala upplevelser.
 
-I följande avsnitt finns ytterligare information som du behöver känna till för att kunna ansluta till [!DNL SugarCRM] med [!DNL Flow Service] API.
+I följande avsnitt finns ytterligare information som du behöver känna till för att kunna ansluta till [!DNL SugarCRM] med API:t [!DNL Flow Service].
 
 ### Samla in nödvändiga inloggningsuppgifter
 
-För att kunna ansluta [!DNL SugarCRM Accounts & Contacts] till Platform måste du ange värden för följande anslutningsegenskaper:
+För att kunna ansluta [!DNL SugarCRM Accounts & Contacts] till plattformen måste du ange värden för följande anslutningsegenskaper:
 
 | Autentiseringsuppgifter | Beskrivning | Exempel |
 | --- | --- | --- |
@@ -32,15 +32,15 @@ För att kunna ansluta [!DNL SugarCRM Accounts & Contacts] till Platform måste 
 | `username` | Användarnamn för ditt SugarCRM-utvecklarkonto. | `abc.def@example.com@sugarmarketdemo000.com` |
 | `password` | Lösenordet för ditt SugarCRM-utvecklarkonto. | `123456789` |
 
-## Anslut [!DNL SugarCRM Accounts & Contacts] till plattform med [!DNL Flow Service] API
+## Anslut [!DNL SugarCRM Accounts & Contacts] till plattformen med API:t [!DNL Flow Service]
 
-Följande beskriver de steg du måste utföra för att autentisera dina [!DNL SugarCRM] källa, skapa en källanslutning och skapa ett dataflöde för att överföra dina konton och kontaktdata till Experience Platform.
+Följande beskriver de steg som du måste utföra för att autentisera din [!DNL SugarCRM]-källa, skapa en källanslutning och skapa ett dataflöde för att överföra dina konton och kontaktdata till Experience Platform.
 
 ### Skapa en basanslutning {#base-connection}
 
 En basanslutning bevarar information mellan källan och plattformen, inklusive källans autentiseringsuppgifter, anslutningsstatus och ditt unika basanslutnings-ID. Med det grundläggande anslutnings-ID:t kan du utforska och navigera bland filer inifrån källan och identifiera de specifika objekt som du vill importera, inklusive information om deras datatyper och format.
 
-Om du vill skapa ett basanslutnings-ID skickar du en POST till `/connections` slutpunkt när du ger [!DNL SugarCRM Accounts & Contacts] autentiseringsuppgifter som en del av begärandetexten.
+Om du vill skapa ett grundläggande anslutnings-ID skickar du en POST till `/connections`-slutpunkten och anger dina [!DNL SugarCRM Accounts & Contacts] autentiseringsuppgifter som en del av begärandetexten.
 
 **API-format**
 
@@ -82,7 +82,7 @@ curl -X POST \
 | --- | --- |
 | `name` | Namnet på din basanslutning. Kontrollera att namnet på din basanslutning är beskrivande, eftersom du kan använda detta för att söka efter information om din basanslutning. |
 | `description` | Ett valfritt värde som du kan ta med för att ange mer information om din basanslutning. |
-| `connectionSpec.id` | Anslutningsspecifikations-ID för källan. Detta ID kan hämtas när källan har registrerats och godkänts via [!DNL Flow Service] API. |
+| `connectionSpec.id` | Anslutningsspecifikations-ID för källan. Detta ID kan hämtas när källan har registrerats och godkänts via API:t [!DNL Flow Service]. |
 | `auth.specName` | Autentiseringstypen som du använder för att autentisera källan till plattformen. |
 | `auth.params.host` | SugarCRM-API-värden: *developer.salesfusion.com* |
 | `auth.params.username` | Användarnamn för ditt SugarCRM-utvecklarkonto. |
@@ -90,7 +90,7 @@ curl -X POST \
 
 **Svar**
 
-Ett lyckat svar returnerar den nyskapade basanslutningen, inklusive dess unika anslutnings-ID (`id`). Detta ID krävs för att undersöka källans filstruktur och innehåll i nästa steg.
+Ett svar returnerar den nyskapade basanslutningen, inklusive dess unika anslutnings-ID (`id`). Detta ID krävs för att undersöka källans filstruktur och innehåll i nästa steg.
 
 ```json
 {
@@ -117,12 +117,12 @@ När du gör en GET-förfrågan om att utforska källans filstruktur och innehå
 | --------- | ----------- |
 | `{BASE_CONNECTION_ID}` | Det grundläggande anslutnings-ID som genererades i föregående steg. |
 | `objectType=rest` | Den typ av objekt som du vill utforska. För närvarande är det här värdet alltid inställt på `rest`. |
-| `{OBJECT}` | Den här parametern krävs bara när du visar en viss katalog. Dess värde representerar sökvägen till den katalog du vill utforska. För den här källan skulle värdet vara `json`. |
-| `fileType=json` | Filtypen för filen som du vill hämta till plattformen. För närvarande `json` är den enda filtypen som stöds. |
+| `{OBJECT}` | Den här parametern krävs bara när du visar en viss katalog. Dess värde representerar sökvägen till den katalog du vill utforska. För den här källan är värdet `json`. |
+| `fileType=json` | Filtypen för filen som du vill hämta till plattformen. För närvarande är `json` den enda filtypen som stöds. |
 | `{PREVIEW}` | Ett booleskt värde som definierar om innehållet i anslutningen stöder förhandsvisning. |
-| `{SOURCE_PARAMS}` | Definierar parametrar för källfilen som du vill hämta till plattformen. Hämta den godkända formattypen för `{SOURCE_PARAMS}`måste du koda hela strängen i base64. <br> [!DNL SugarCRM Accounts & Contacts] har stöd för flera API:er. Beroende på vilken objekttyp du använder kan du skicka något av följande: <ul><li>`accounts` : Företag som din organisation har en relation till.</li><li>`contacts` : Individuella personer som din organisation har en etablerad relation med.</li></ul> |
+| `{SOURCE_PARAMS}` | Definierar parametrar för källfilen som du vill hämta till plattformen. Om du vill hämta den godkända formattypen för `{SOURCE_PARAMS}` måste du koda hela strängen i base64. <br> [!DNL SugarCRM Accounts & Contacts] har stöd för flera API:er. Beroende på vilken objekttyp du använder kan du skicka något av följande: <ul><li>`accounts` : Företag som din organisation har en relation med.</li><li>`contacts` : Individuella personer som din organisation har en etablerad relation med.</li></ul> |
 
-The [!DNL SugarCRM Accounts & Contacts] har stöd för flera API:er. Beroende på vilken objekttyp du utnyttjar den begäran som ska skickas anges nedan:
+[!DNL SugarCRM Accounts & Contacts] har stöd för flera API:er. Beroende på vilken objekttyp du utnyttjar den begäran som ska skickas anges nedan:
 
 **Begäran**
 
@@ -130,7 +130,7 @@ The [!DNL SugarCRM Accounts & Contacts] har stöd för flera API:er. Beroende p�
 
 >[!TAB Konton]
 
-För [!DNL SugarCRM] Konton-API:t har värdet för `{SOURCE_PARAMS}` skickas som `{"object_type":"accounts"}`. När den kodas i base64 är den lika med `eyJvYmplY3RfdHlwZSI6ImFjY291bnRzIn0=` enligt nedan.
+För [!DNL SugarCRM]-konto-API:t skickas värdet för `{SOURCE_PARAMS}` som `{"object_type":"accounts"}`. När den kodas i base64 är den lika med `eyJvYmplY3RfdHlwZSI6ImFjY291bnRzIn0=` enligt nedan.
 
 ```shell
 curl -X GET \
@@ -143,7 +143,7 @@ curl -X GET \
 
 >[!TAB Kontakter]
 
-För [!DNL SugarCRM] Kontakter-API:t har värdet för `{SOURCE_PARAMS}` skickas som `{"object_type":"contacts"}`. När den kodas i base64 är den lika med `eyJvYmplY3RfdHlwZSI6ImNvbnRhY3RzIn0=` enligt nedan.
+För [!DNL SugarCRM] kontakter-API:t skickas värdet för `{SOURCE_PARAMS}` som `{"object_type":"contacts"}`. När den kodas i base64 är den lika med `eyJvYmplY3RfdHlwZSI6ImNvbnRhY3RzIn0=`, vilket visas nedan.
 
 ```shell
 curl -X GET \
@@ -568,7 +568,7 @@ Ett lyckat svar returnerar en struktur enligt nedan.
 
 ### Skapa en källanslutning {#source-connection}
 
-Du kan skapa en källanslutning genom att göra en POST-förfrågan till [!DNL Flow Service] API. En källanslutning består av ett anslutnings-ID, en sökväg till källdatafilen och ett anslutnings-spec-ID.
+Du kan skapa en källanslutning genom att göra en POST-förfrågan till API:t [!DNL Flow Service]. En källanslutning består av ett anslutnings-ID, en sökväg till källdatafilen och ett anslutnings-spec-ID.
 
 **API-format**
 
@@ -586,7 +586,7 @@ Beroende på vilken objekttyp du använder väljer du bland flikarna nedan:
 
 >[!TAB Konton]
 
-För [!DNL SugarCRM] Konton-API:t `object_type` egenskapsvärdet ska vara `accounts`.
+Egenskapsvärdet `object_type` bör vara `accounts` för [!DNL SugarCRM]-konto-API:t.
 
 ```shell
 curl -X POST \
@@ -616,7 +616,7 @@ curl -X POST \
 
 >[!TAB Kontakter]
 
-För [!DNL SugarCRM] Kontakter-API för `object_type` egenskapsvärdet ska vara `contacts`.
+Egenskapsvärdet `object_type` bör vara `contacts` för [!DNL SugarCRM]-kontakt-API:t.
 
 ```shell
 curl -X POST \
@@ -652,13 +652,13 @@ curl -X POST \
 | `description` | Ett valfritt värde som du kan ta med för att ange mer information om din källanslutning. |
 | `baseConnectionId` | Basanslutnings-ID för [!DNL SugarCRM Accounts & Contacts]. Detta ID genererades i ett tidigare steg. |
 | `connectionSpec.id` | Anslutningsspecifikations-ID som motsvarar källan. |
-| `data.format` | Formatet på [!DNL SugarCRM Accounts & Contacts] data som du vill importera. För närvarande är det enda dataformatet som stöds `json`. |
-| `object_type` | [!DNL SugarCRM Accounts & Contacts] har stöd för flera API:er. Beroende på vilken objekttyp du använder kan du skicka något av följande: <ul><li>`accounts` : Företag som din organisation har en relation till.</li><li>`contacts` : Individuella personer som din organisation har en etablerad relation med.</li></ul> |
-| `path` | Detta får samma värde som du väljer för *`object_type`*. |
+| `data.format` | Formatet på de [!DNL SugarCRM Accounts & Contacts]-data som du vill importera. För närvarande är det enda dataformat som stöds `json`. |
+| `object_type` | [!DNL SugarCRM Accounts & Contacts] har stöd för flera API:er. Beroende på vilken objekttyp du använder kan du skicka något av följande: <ul><li>`accounts` : Företag som din organisation har en relation med.</li><li>`contacts` : Individuella personer som din organisation har en etablerad relation med.</li></ul> |
+| `path` | Detta har samma värde som du väljer för *`object_type`*. |
 
 **Svar**
 
-Ett godkänt svar returnerar den unika identifieraren (`id`) för den nyligen skapade källanslutningen. Detta ID krävs i ett senare steg för att skapa ett dataflöde.
+Ett lyckat svar returnerar den unika identifieraren (`id`) för den nyligen skapade källanslutningen. Detta ID krävs i ett senare steg för att skapa ett dataflöde.
 
 ```json
 {
@@ -671,21 +671,21 @@ Ett godkänt svar returnerar den unika identifieraren (`id`) för den nyligen sk
 
 För att källdata ska kunna användas i Platform måste ett målschema skapas för att strukturera källdata efter dina behov. Målschemat används sedan för att skapa en plattformsdatauppsättning där källdata finns.
 
-Ett mål-XDM-schema kan skapas genom att utföra en POST-begäran till [API för schemaregister](https://developer.adobe.com/experience-platform-apis/references/schema-registry/).
+Ett mål-XDM-schema kan skapas genom att utföra en POST-begäran till [schemats register-API ](https://developer.adobe.com/experience-platform-apis/references/schema-registry/).
 
-Detaljerade anvisningar om hur du skapar ett XDM-målschema finns i självstudiekursen om [skapa ett schema med API](https://experienceleague.adobe.com/docs/experience-platform/xdm/api/schemas.html#create).
+Detaljerade steg om hur du skapar ett mål-XDM-schema finns i självstudiekursen [Skapa ett schema med API:t](https://experienceleague.adobe.com/docs/experience-platform/xdm/api/schemas.html#create).
 
 ### Skapa en måldatauppsättning {#target-dataset}
 
-En måldatauppsättning kan skapas genom att en POST till [Katalogtjänstens API](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/catalog.yaml), som tillhandahåller målschemats ID i nyttolasten.
+En måldatamängd kan skapas genom att utföra en POST-begäran till [katalogtjänstens API](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/catalog.yaml), som anger målschemats ID i nyttolasten.
 
-Detaljerade anvisningar om hur du skapar en måldatauppsättning finns i självstudiekursen om [skapa en datauppsättning med API](https://experienceleague.adobe.com/docs/experience-platform/catalog/api/create-dataset.html).
+Detaljerade steg om hur du skapar en måldatauppsättning finns i självstudiekursen [Skapa en datauppsättning med API:t](https://experienceleague.adobe.com/docs/experience-platform/catalog/api/create-dataset.html).
 
 ### Skapa en målanslutning {#target-connection}
 
 En målanslutning representerar anslutningen till målet där inmatade data ska lagras. Om du vill skapa en målanslutning måste du ange det fasta anslutningsspecifikations-ID som motsvarar datasjön. Detta ID är: `c604ff05-7f1a-43c0-8e18-33bf874cb11c`.
 
-Nu har du de unika identifierarna ett målschema, en måldatamängd och ett anslutningsspec-ID till datasjön. Med dessa identifierare kan du skapa en målanslutning med [!DNL Flow Service] API för att ange den datauppsättning som ska innehålla inkommande källdata.
+Nu har du de unika identifierarna ett målschema, en måldatamängd och ett anslutningsspec-ID till datasjön. Med hjälp av dessa identifierare kan du skapa en målanslutning med API:t [!DNL Flow Service] för att ange den datauppsättning som ska innehålla inkommande källdata.
 
 **API-format**
 
@@ -730,12 +730,12 @@ curl -X POST \
 | `name` | Namnet på målanslutningen. Kontrollera att namnet på målanslutningen är beskrivande, eftersom du kan använda det här för att söka efter information om målanslutningen. |
 | `description` | Ett valfritt värde som du kan inkludera för att ange mer information om målanslutningen. |
 | `connectionSpec.id` | Anslutningsspecifikations-ID som motsvarar datasjön. Detta fasta ID är: `6b137bf6-d2a0-48c8-914b-d50f4942eb85`. |
-| `data.format` | Formatet på [!DNL SugarCRM Accounts & Contacts] data som du vill importera. |
+| `data.format` | Formatet på de [!DNL SugarCRM Accounts & Contacts]-data som du vill importera. |
 | `params.dataSetId` | Måldatauppsättnings-ID som hämtades i ett tidigare steg. |
 
 **Svar**
 
-Ett godkänt svar returnerar den nya målanslutningens unika identifierare (`id`). Detta ID krävs i senare steg.
+Ett svar returnerar den nya målanslutningens unika identifierare (`id`). Detta ID krävs i senare steg.
 
 ```json
 {
@@ -746,7 +746,7 @@ Ett godkänt svar returnerar den nya målanslutningens unika identifierare (`id`
 
 ### Skapa en mappning {#mapping}
 
-För att källdata ska kunna hämtas till en måldatamängd måste den först mappas till målschemat som måldatamängden följer. Detta uppnås genom att en POST begär att [[!DNL Data Prep] API](https://www.adobe.io/experience-platform-apis/references/data-prep/) med datamappningar definierade i nyttolasten för begäran.
+För att källdata ska kunna hämtas till en måldatamängd måste den först mappas till målschemat som måldatamängden följer. Detta uppnås genom att utföra en begäran om POST till [[!DNL Data Prep] API](https://www.adobe.io/experience-platform-apis/references/data-prep/) med datamappningar definierade i nyttolasten för begäran.
 
 **API-format**
 
@@ -863,14 +863,14 @@ curl -X POST \
 
 | Egenskap | Beskrivning |
 | --- | --- |
-| `outputSchema.schemaRef.id` | ID:t för [mål-XDM-schema](#target-schema) som har genererats i ett tidigare steg. |
+| `outputSchema.schemaRef.id` | ID:t för [mål-XDM-schemat](#target-schema) genererades i ett tidigare steg. |
 | `mappings.sourceType` | Källattributtypen som mappas. |
 | `mappings.source` | Källattributet som måste mappas till en mål-XDM-sökväg. |
 | `mappings.destination` | Mål-XDM-sökvägen dit källattributet mappas. |
 
 **Svar**
 
-Ett godkänt svar returnerar information om den nyligen skapade mappningen inklusive dess unika identifierare (`id`). Detta värde krävs i ett senare steg för att skapa ett dataflöde.
+Ett lyckat svar returnerar information om den nyligen skapade mappningen inklusive dess unika identifierare (`id`). Detta värde krävs i ett senare steg för att skapa ett dataflöde.
 
 ```json
 {
@@ -885,15 +885,15 @@ Ett godkänt svar returnerar information om den nyligen skapade mappningen inklu
 
 ### Skapa ett flöde {#flow}
 
-Det sista steget mot att hämta in data från [!DNL SugarCRM Accounts & Contacts] till Platform är att skapa ett dataflöde. Nu har du förberett följande obligatoriska värden:
+Det sista steget mot att överföra data från [!DNL SugarCRM Accounts & Contacts] till plattformen är att skapa ett dataflöde. Nu har du förberett följande obligatoriska värden:
 
-* [Källanslutnings-ID](#source-connection)
+* [Source-anslutnings-ID](#source-connection)
 * [Målanslutnings-ID](#target-connection)
 * [Mappnings-ID](#mapping)
 
 Ett dataflöde ansvarar för att schemalägga och samla in data från en källa. Du kan skapa ett dataflöde genom att utföra en begäran om POST samtidigt som du anger de tidigare angivna värdena i nyttolasten.
 
-Om du vill schemalägga ett intag måste du först ange starttidsvärdet till epok time i sekunder. Sedan måste du ange frekvensvärdet till något av `hour` eller `day`. Intervallvärdet anger perioden mellan två på varandra följande inmatningar. Intervallvärdet ska anges som `1` eller `24` beroende på `scheduleParams.frequency` markering av antingen `hour` eller `day`.
+Om du vill schemalägga ett intag måste du först ange starttidsvärdet till epok time i sekunder. Sedan måste du ange frekvensvärdet till `hour` eller `day`. Intervallvärdet anger perioden mellan två på varandra följande inmatningar. Intervallvärdet ska anges som `1` eller `24` beroende på `scheduleParams.frequency` val av antingen `hour` eller `day`.
 
 **API-format**
 
@@ -946,19 +946,19 @@ curl -X POST \
 | `description` | Ett valfritt värde som du kan inkludera för att få mer information om dataflödet. |
 | `flowSpec.id` | Det ID för flödesspecifikation som krävs för att skapa ett dataflöde. Detta fasta ID är: `6499120c-0b15-42dc-936e-847ea3c24d72`. |
 | `flowSpec.version` | Motsvarande version av flödesspecifikations-ID. Standardvärdet är `1.0`. |
-| `sourceConnectionIds` | The [källanslutnings-ID](#source-connection) som har genererats i ett tidigare steg. |
-| `targetConnectionIds` | The [målanslutnings-ID](#target-connection) som har genererats i ett tidigare steg. |
+| `sourceConnectionIds` | [källanslutnings-ID](#source-connection) genererades i ett tidigare steg. |
+| `targetConnectionIds` | [målanslutnings-ID](#target-connection) genererades i ett tidigare steg. |
 | `transformations` | Den här egenskapen innehåller de olika omformningar som behövs för att dina data ska kunna användas. Den här egenskapen krävs när data som inte är XDM-kompatibla skickas till plattformen. |
 | `transformations.name` | Det namn som tilldelats omformningen. |
-| `transformations.params.mappingId` | The [mappnings-ID](#mapping) som har genererats i ett tidigare steg. |
+| `transformations.params.mappingId` | [Mappnings-ID](#mapping) genererades i ett tidigare steg. |
 | `transformations.params.mappingVersion` | Motsvarande version av mappnings-ID. Standardvärdet är `0`. |
 | `scheduleParams.startTime` | Den här egenskapen innehåller information om dataflödets ingsplanering. |
 | `scheduleParams.frequency` | Frekvensen med vilken dataflödet samlar in data. Godtagbara värden är: `hour` eller `day`. |
-| `scheduleParams.interval` | Intervallet anger perioden mellan två på varandra följande flödeskörningar. Intervallets värde ska vara ett heltal som inte är noll. Intervallvärdet ska anges som `1` eller `24` beroende på `scheduleParams.frequency` markering av antingen `hour` eller `day`. |
+| `scheduleParams.interval` | Intervallet anger perioden mellan två på varandra följande flödeskörningar. Intervallets värde ska vara ett heltal som inte är noll. Intervallvärdet ska anges som `1` eller `24` beroende på `scheduleParams.frequency` val av antingen `hour` eller `day`. |
 
 **Svar**
 
-Ett godkänt svar returnerar ID:t (`id`) av det nya dataflödet. Du kan använda det här ID:t för att övervaka, uppdatera eller ta bort dataflödet.
+Ett lyckat svar returnerar ID:t (`id`) för det nyskapade dataflödet. Du kan använda det här ID:t för att övervaka, uppdatera eller ta bort dataflödet.
 
 ```json
 {
@@ -973,20 +973,20 @@ Följande avsnitt innehåller information om hur du övervakar, uppdaterar och t
 
 ### Övervaka dataflödet
 
-När dataflödet har skapats kan du övervaka de data som importeras genom det för att se information om flödeskörningar, slutförandestatus och fel. Fullständiga API-exempel finns i guiden [övervaka källans dataflöden med API](https://experienceleague.adobe.com/docs/experience-platform/sources/api-tutorials/monitor.html).
+När dataflödet har skapats kan du övervaka de data som importeras genom det för att se information om flödeskörningar, slutförandestatus och fel. Fullständiga API-exempel finns i handboken om [att övervaka källans dataflöden med API:t](https://experienceleague.adobe.com/docs/experience-platform/sources/api-tutorials/monitor.html).
 
 ### Uppdatera ditt dataflöde
 
-Uppdatera information om dataflödet, t.ex. namn och beskrivning, samt körningsschema och tillhörande mappningsuppsättningar genom att göra en PATCH-begäran till `/flows` slutpunkt för [!DNL Flow Service] API, samtidigt som du anger ID:t för dataflödet. När du gör en begäran från PATCH måste du ange dataflödets unika `etag` i `If-Match` header. Fullständiga API-exempel finns i guiden [uppdatera källans dataflöde med API](https://experienceleague.adobe.com/docs/experience-platform/sources/api-tutorials/update-dataflows.html)
+Uppdatera informationen om dataflödet, till exempel namn och beskrivning, samt körningsschema och associerade mappningsuppsättningar genom att göra en PATCH-begäran till `/flows`-slutpunkten i [!DNL Flow Service]-API:t, samtidigt som du anger ID:t för dataflödet. När du gör en PATCH-begäran måste du ange dataflödets unika `etag` i rubriken `If-Match`. Fullständiga API-exempel finns i handboken om att [uppdatera källkodsdataflöden med API](https://experienceleague.adobe.com/docs/experience-platform/sources/api-tutorials/update-dataflows.html)
 
 ### Uppdatera ditt konto
 
-Uppdatera namn, beskrivning och autentiseringsuppgifter för ditt källkonto genom att utföra en PATCH-begäran till [!DNL Flow Service] API när du anger ditt grundläggande anslutnings-ID som en frågeparameter. När du gör en PATCH-begäran måste du ange källkontots unika `etag` i `If-Match` header. Fullständiga API-exempel finns i guiden [uppdatera ditt källkonto med API](https://experienceleague.adobe.com/docs/experience-platform/sources/api-tutorials/update.html).
+Uppdatera namn, beskrivning och autentiseringsuppgifter för källkontot genom att utföra en PATCH-begäran till [!DNL Flow Service]-API:t och ange ditt grundläggande anslutnings-ID som en frågeparameter. När du gör en PATCH-begäran måste du ange källkontots unika `etag` i rubriken `If-Match`. Fullständiga API-exempel finns i handboken [Uppdatera ditt källkonto med API](https://experienceleague.adobe.com/docs/experience-platform/sources/api-tutorials/update.html).
 
 ### Ta bort ditt dataflöde
 
-Ta bort dataflödet genom att göra en DELETE-förfrågan till [!DNL Flow Service] API när du anger ID:t för det dataflöde som du vill ta bort som en del av frågeparametern. Fullständiga API-exempel finns i guiden [ta bort dataflöden med API](https://experienceleague.adobe.com/docs/experience-platform/sources/api-tutorials/delete-dataflows.html).
+Ta bort dataflödet genom att utföra en DELETE-begäran till [!DNL Flow Service]-API:t och ange ID:t för det dataflöde som du vill ta bort som en del av frågeparametern. Fullständiga API-exempel finns i guiden om att [ta bort dataflöden med API:t](https://experienceleague.adobe.com/docs/experience-platform/sources/api-tutorials/delete-dataflows.html).
 
 ### Ta bort ditt konto
 
-Ta bort ditt konto genom att göra en DELETE-förfrågan till [!DNL Flow Service] API när du anger det grundläggande anslutnings-ID:t för kontot som du vill ta bort. Fullständiga API-exempel finns i guiden [ta bort ditt källkonto med API](https://experienceleague.adobe.com/docs/experience-platform/sources/api-tutorials/delete.html).
+Ta bort ditt konto genom att utföra en DELETE-begäran till [!DNL Flow Service]-API:t och ange det grundläggande anslutnings-ID:t för kontot som du vill ta bort. Fullständiga API-exempel finns i guiden om att [ta bort ditt källkonto med API](https://experienceleague.adobe.com/docs/experience-platform/sources/api-tutorials/delete.html).

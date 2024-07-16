@@ -4,28 +4,28 @@ description: Lär dig hur du anropar slutpunkten /builds i Reactor API.
 exl-id: 476abea0-efff-478a-b87f-ef6b91bfcca5
 source-git-commit: 47a94b00e141b24203b01dc93834aee13aa6113c
 workflow-type: tm+mt
-source-wordcount: '803'
+source-wordcount: '799'
 ht-degree: 1%
 
 ---
 
 # Skapar slutpunkt
 
-Tillägg, regler och dataelement är byggstenarna för taggar i Adobe Experience Platform. När du vill att programmet ska göra något läggs dessa byggblock till i en [bibliotek](./libraries.md). För att kunna distribuera ett bibliotek i ditt upplevelseprogram kompileras biblioteket till ett bygge. The `/builds` -slutpunkten i Reaktors API gör att du kan hantera byggen i ditt upplevelseprogram programmatiskt.
+Tillägg, regler och dataelement är byggstenarna för taggar i Adobe Experience Platform. När du vill att programmet ska göra något läggs dessa byggblock till i ett [bibliotek](./libraries.md). För att kunna distribuera ett bibliotek i ditt upplevelseprogram kompileras biblioteket till ett bygge. Med slutpunkten `/builds` i Reaktors API kan du programmässigt hantera byggen i ditt upplevelseprogram.
 
 Ett bygge är den eller de filer som är inlästa i ditt webb- och mobilprogram. Innehållet i varje bygge varierar beroende på följande faktorer:
 
 * Resurserna som ingår i biblioteket
-* Konfigurationen av [miljö](./environments.md) där biblioteket är byggt
-* Plattformen för [property](./properties.md) som bygget tillhör
+* Konfigurationen för den [miljö](./environments.md) som biblioteket byggs i
+* Plattformen för den [egenskap](./properties.md) som bygget tillhör
 
 Ett bygge tillhör exakt ett bibliotek. Ett bibliotek kan ha många byggen.
 
-Mer allmän information om byggen och hur de passar in i publiceringsflödet för taggar finns i [publicera översikt](../../ui/publishing/overview.md).
+Mer allmän information om byggen och hur de passar in i publiceringsarbetsflödet för taggar finns i [publiceringsöversikten](../../ui/publishing/overview.md).
 
 ## Komma igång
 
-Slutpunkten som används i den här guiden är en del av [Reaktors-API](https://www.adobe.io/experience-platform-apis/references/reactor/). Läs igenom [komma igång-guide](../getting-started.md) om du vill ha viktig information om hur du autentiserar till API:t.
+Slutpunkten som används i den här guiden ingår i [Reaktors-API](https://www.adobe.io/experience-platform-apis/references/reactor/). Innan du fortsätter bör du läsa [kom igång-guiden](../getting-started.md) för att få viktig information om hur du autentiserar dig för API:t.
 
 ## Hämta en lista med byggen {#list}
 
@@ -39,13 +39,13 @@ GET /libraries/{LIBRARY_ID}/builds
 
 | Parameter | Beskrivning |
 | --- | --- |
-| `LIBRARY_ID` | The `id` för det bibliotek vars byggen du vill visa. |
+| `LIBRARY_ID` | `id` för biblioteket vars byggen du vill visa. |
 
 {style="table-layout:auto"}
 
 >[!NOTE]
 >
->Med hjälp av frågeparametrar kan listade byggen filtreras baserat på följande attribut:<ul><li>`created_at`</li><li>`status`</li><li>`token`</li><li>`updated_at`</li></ul>Se guiden [filtrera svar](../guides/filtering.md) för mer information.
+>Med hjälp av frågeparametrar kan listade byggen filtreras baserat på följande attribut:<ul><li>`created_at`</li><li>`status`</li><li>`token`</li><li>`updated_at`</li></ul>Mer information finns i guiden om [filtrering av svar](../guides/filtering.md).
 
 **Begäran**
 
@@ -156,7 +156,7 @@ GET /builds/{BUILD_ID}
 
 | Parameter | Beskrivning |
 | --- | --- |
-| `BUILD_ID` | The `id` av det bygge som du vill leta upp. |
+| `BUILD_ID` | `id` för det bygge som du vill söka efter. |
 
 {style="table-layout:auto"}
 
@@ -258,7 +258,7 @@ POST /libraries/{LIBRARY_ID}/builds
 
 | Parameter | Beskrivning |
 | --- | --- |
-| `LIBRARY_ID` | The `id` i biblioteket som du definierar bygget under. |
+| `LIBRARY_ID` | `id` för biblioteket som du definierar bygget under. |
 
 {style="table-layout:auto"}
 
@@ -350,7 +350,7 @@ Ett lyckat svar returnerar information om den nyskapade versionen.
 
 ## Publicera en version igen {#republish}
 
-Du kan publicera om ett bygge från en [publicerat bibliotek](./libraries.md#publish) genom att inkludera dess ID i sökvägen för en PATCH-begäran.
+Du kan publicera om en version från ett [publicerat bibliotek](./libraries.md#publish) genom att ta med dess ID i sökvägen till en PATCH-begäran.
 
 **API-format**
 
@@ -360,7 +360,7 @@ PATCH /builds/{BUILD_ID}
 
 | Parameter | Beskrivning |
 | --- | --- |
-| `BUILD_ID` | The `id` av det bygge som du vill publicera på nytt. |
+| `BUILD_ID` | `id` för det bygge som du vill publicera igen. |
 
 {style="table-layout:auto"}
 
@@ -388,7 +388,7 @@ curl -X PATCH \
 
 | Egenskap | Beskrivning |
 | --- | --- |
-| `id` | The `id` av det bygge som du vill uppdatera. Det här bör matcha `{BUILD_ID}` värdet som anges i sökvägen för begäran. |
+| `id` | `id` för det bygge som du vill uppdatera. Det här bör matcha det `{BUILD_ID}`-värde som anges i sökvägen till begäran. |
 | `type` | Den typ av resurs som uppdateras. För den här slutpunkten måste värdet vara `builds`. |
 | `meta.action` | Den typ av åtgärd från PATCH som ska utföras. Måste anges till `republish`. |
 
@@ -471,13 +471,13 @@ Ett godkänt svar returnerar information om den publicerade versionen.
 
 ## Hämta relaterade resurser för ett bygge {#related}
 
-Följande anrop visar hur du hämtar relaterade resurser för en bygge. När [hitta ett bygge](#lookup), listas dessa relationer under `relationships` -egenskap.
+Följande anrop visar hur du hämtar relaterade resurser för en bygge. När [söker upp ett bygge](#lookup) visas de här relationerna under egenskapen `relationships`.
 
-Se [relationshandbok](../guides/relationships.md) för mer information om relationerna i Reactor API.
+Se [relationshandboken](../guides/relationships.md) för mer information om relationer i Reactor API.
 
 ### Visa en lista över relaterade dataelement för ett bygge {#data-elements}
 
-Du kan lista relaterade dataelement för en bygge genom att lägga till `/data_elements` till sökvägen för en sökningsbegäran.
+Du kan lista relaterade dataelement för en bygge genom att lägga till `/data_elements` i sökvägen för en sökbegäran.
 
 **API-format**
 
@@ -487,7 +487,7 @@ GET  /builds/{BUILD_ID}/data_elements
 
 | Parameter | Beskrivning |
 | --- | --- |
-| `{BUILD_ID}` | The `id` för det bygge vars dataelement du vill lista. |
+| `{BUILD_ID}` | `id` för bygget vars dataelement du vill visa. |
 
 {style="table-layout:auto"}
 
@@ -618,7 +618,7 @@ Ett lyckat svar returnerar en lista med dataelement som är relaterade till bygg
 
 ### Visa en lista över relaterade tillägg för ett bygge {#extensions}
 
-Du kan visa relaterade tillägg för en version genom att lägga till `/extensions` till sökvägen för en sökningsbegäran.
+Du kan lista relaterade tillägg för en bygge genom att lägga till `/extensions` i sökvägen för en sökningsbegäran.
 
 **API-format**
 
@@ -628,7 +628,7 @@ GET  /builds/{BUILD_ID}/extensions
 
 | Parameter | Beskrivning |
 | --- | --- |
-| `{BUILD_ID}` | The `id` för det bygge vars tillägg du vill visa. |
+| `{BUILD_ID}` | `id` för bygget vars tillägg du vill visa. |
 
 {style="table-layout:auto"}
 
@@ -749,7 +749,7 @@ Ett godkänt svar returnerar en lista med tillägg som är relaterade till bygge
 
 ### Visa en lista över relaterade regler för ett bygge {#rules}
 
-Du kan lista relaterade regler för en version genom att lägga till `/rules` till sökvägen för en sökningsbegäran.
+Du kan lista de relaterade reglerna för en bygge genom att lägga till `/rules` i sökvägen för en sökbegäran.
 
 **API-format**
 
@@ -759,7 +759,7 @@ GET  /builds/{BUILD_ID}/rules
 
 | Parameter | Beskrivning |
 | --- | --- |
-| `{BUILD_ID}` | The `id` för det bygge vars regler du vill visa. |
+| `{BUILD_ID}` | `id` för bygget vars regler du vill visa. |
 
 {style="table-layout:auto"}
 
@@ -862,7 +862,7 @@ Ett godkänt svar returnerar en lista med regler som är relaterade till bygget.
 
 ### Söka efter ett bygge i det relaterade biblioteket {#library}
 
-Du kan hämta det relaterade biblioteket för ett bygge genom att lägga till `/library` till sökvägen för en sökningsbegäran.
+Du kan hämta det relaterade biblioteket för en bygge genom att lägga till `/library` i sökvägen för en sökbegäran.
 
 **API-format**
 
@@ -872,7 +872,7 @@ GET  /builds/{BUILD_ID}/library
 
 | Parameter | Beskrivning |
 | --- | --- |
-| `{BUILD_ID}` | The `id` av bygget vars bibliotek du vill söka efter. |
+| `{BUILD_ID}` | `id` för bygget vars bibliotek du vill söka efter. |
 
 {style="table-layout:auto"}
 
@@ -973,9 +973,9 @@ curl -X GET \
 }
 ```
 
-### Söka efter en byggmiljö {#environment}
+### Söka efter en byggmiljö i den relaterade miljön {#environment}
 
-Du kan hämta den relaterade miljön för ett bygge genom att lägga till `/environment` till sökvägen för en sökningsbegäran.
+Du kan hämta den relaterade miljön för en bygge genom att lägga till `/environment` i sökvägen för en sökbegäran.
 
 **API-format**
 
@@ -985,7 +985,7 @@ GET  /builds/{BUILD_ID}/environment
 
 | Parameter | Beskrivning |
 | --- | --- |
-| `{BUILD_ID}` | The `id` för den byggnad vars miljö du vill söka efter. |
+| `{BUILD_ID}` | `id` för bygget vars miljö du vill söka efter. |
 
 {style="table-layout:auto"}
 

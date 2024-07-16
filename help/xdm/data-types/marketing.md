@@ -11,7 +11,7 @@ ht-degree: 0%
 
 ---
 
-# [!UICONTROL Marketing] datatyp
+# Datatypen [!UICONTROL Marketing]
 
 [!UICONTROL Marketing] är en standard-XDM-datatyp som beskriver marknadsföringsaktiviteter som är aktiva med en viss kontaktyta.
 
@@ -19,7 +19,7 @@ ht-degree: 0%
 
 | Egenskap | Datatyp | Beskrivning |
 | --- | --- | --- |
-| `campaignGroup` | Sträng | Namnet på kampanjgruppen (om flera kampanjer grupperas tillsammans, som `50%_DISCOUNT`). |
+| `campaignGroup` | Sträng | Namnet på kampanjgruppen (i fall där flera kampanjer grupperas tillsammans, till exempel `50%_DISCOUNT`). |
 | `campaignName` | Sträng | Namnet på marknadsföringskampanjen, till exempel `50%_DISCOUNT_USA` eller `50%_DISCOUNT_ASIA`. |
 | `trackingCode` | Sträng | Den spårningskod som kan användas för att identifiera marknadsföringskampanjen som händelsen är kopplad till. |
 

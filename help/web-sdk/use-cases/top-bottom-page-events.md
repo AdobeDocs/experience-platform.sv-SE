@@ -33,11 +33,11 @@ Genom att använda sidans övre och nedre del i Web SDK kan marknadsföringsteam
 
 ## Exempel på händelsen överst på sidan {#top-of-page}
 
-Kodexemplet nedan visar ett exempel på en sidhändelsekonfiguration som begär personalisering men inte gör det [skicka visningshändelser](../personalization/display-events.md#send-sendEvent-calls) för automatiskt renderade utskick. The [visningshändelser](../personalization/display-events.md#send-sendEvent-calls) kommer att skickas som en del av den nedre delen av sidan.
+Kodexemplet nedan visar ett exempel på en sidhändelsekonfiguration som begär anpassning, men inte [skickar visningshändelser](../personalization/display-events.md#send-sendEvent-calls) för automatiskt återgivna förslag. [visningshändelserna](../personalization/display-events.md#send-sendEvent-calls) skickas som en del av den nedre delen av sidan.
 
 >[!BEGINTABS]
 
->[!TAB Händelse överst på sidan]
+>[!TAB Händelsen överst på sidan]
 
 ```js
 alloy("sendEvent", {
@@ -61,13 +61,13 @@ alloy("sendEvent", {
 
 >[!BEGINTABS]
 
->[!TAB Automatiskt återgivna förslag]
+>[!TAB Automatiskt återgivna utdrag]
 
-Kodexemplet nedan visar ett exempel på en nedre sidhändelsekonfiguration som skickar visningshändelser för förslag som automatiskt återges på sidan men för vilka visningshändelser ignorerades i [överst på sidan](#top-of-page) -händelse.
+Kodexemplet nedan innehåller ett exempel på en nedre sidhändelsekonfiguration som skickar visningshändelser för förslag som återges automatiskt på sidan men för vilka visningshändelser ignorerades i [övre delen av sid](#top-of-page) -händelsen.
 
 >[!NOTE]
 >
->I det här scenariot måste du anropa händelsen längst ned på sidan _efter_ överst på sida ett. Men händelsen längst ned på sidan behöver inte vänta tills den översta sidan på sidan är slutförd.
+>I det här scenariot måste du anropa den nedersta sidhändelsen _efter_ den översta sidan på den första. Men händelsen längst ned på sidan behöver inte vänta tills den översta sidan på sidan är slutförd.
 
 ```js
 alloy("sendEvent", {
@@ -117,7 +117,7 @@ alloy("sendEvent", {
 
 | Parameter | Obligatoriskt/valfritt | Beskrivning |
 |---|---|---|
-| `xdm._experience.decisioning.propositions` | Obligatoriskt | I det här avsnittet definieras de manuellt återgivna utdragen. Du måste inkludera förslaget `ID`, `scope`och `scopeDetails`. Läs dokumentationen om hur du [återge personalisering manuellt](../personalization/rendering-personalization-content.md#manually) om du vill ha mer information om hur du spelar in visningshändelser för manuellt återgivet innehåll. Manuellt återgivet personaliseringsinnehåll måste inkluderas i slutet av sidträffen. |
+| `xdm._experience.decisioning.propositions` | Obligatoriskt | I det här avsnittet definieras de manuellt återgivna utdragen. Du måste inkludera förslaget `ID`, `scope` och `scopeDetails`. Mer information om hur du spelar in visningshändelser för manuellt återgivet innehåll finns i dokumentationen om hur du [återger personalisering manuellt](../personalization/rendering-personalization-content.md#manually). Manuellt återgivet personaliseringsinnehåll måste inkluderas i slutet av sidträffen. |
 | `xdm._experience.decisioning.propositionEventType` | Obligatoriskt | Ställ in den här parametern på `display: 1`. |
 | `xdm` | Valfritt | Använd det här avsnittet om du vill inkludera alla data som behövs för sidhändelseslutet längst ned. |
 
@@ -129,9 +129,9 @@ alloy("sendEvent", {
 
 >[!BEGINTABS]
 
->[!TAB Vy för första sidan]
+>[!TAB Vyn Första sidan]
 
-Exemplet nedan innehåller tillägget `xdm.web.webPageDetails.viewName` parameter. Det är det som gör det till ett ensidigt program. The `viewName` i det här exemplet är den vy som läses in på sidan.
+Exemplet nedan innehåller tillägget av den obligatoriska `xdm.web.webPageDetails.viewName`-parametern. Det är det som gör det till ett ensidigt program. `viewName` i det här exemplet är den vy som läses in på sidan.
 
 ```js
 // Top of page, render decisions for the "home" view.
@@ -189,9 +189,9 @@ alloy("sendEvent", {
 ```
 
 
->[!TAB Andra sidvyn (alternativ 2)]
+>[!TAB Vy för andra sidan (alternativ 2)]
 
-Om du fortfarande behöver fördröja sidträffens nederkant kan du använda `applyPropositions` för sidträffens överkant. Eftersom ingen personalisering behöver hämtas och inga analysdata behöver registreras, behöver du inte göra någon begäran till Edge Network.
+Om du fortfarande behöver fördröja sidträffens nederkant kan du använda `applyPropositions` för sidträffens överkant. Eftersom ingen personalisering behöver hämtas och inga analysdata behöver registreras, behöver du inte göra någon förfrågan till Edge Network.
 
 ```js
 // top of page, render the decisions already fetched for the "cart" view.
@@ -222,4 +222,4 @@ alloy("sendEvent", {
 
 ## GitHub-exempel {#github-sample}
 
-Exemplet finns på [den här adressen](https://github.com/adobe/alloy-samples/tree/main/target/top-and-bottom) visar hur du kan använda Experience Platform och Web SDK för att begära personalisering överst på sidan och skicka analysdata längst ned. Du kan hämta exemplet och köra det lokalt för att förstå hur sidans övre och nedre del fungerar.
+Exemplet på [den här adressen](https://github.com/adobe/alloy-samples/tree/main/target/top-and-bottom) visar hur du kan använda Experience Platform och Web SDK för att begära personalisering överst på sidan och skicka analysdata längst ned. Du kan hämta exemplet och köra det lokalt för att förstå hur sidans övre och nedre del fungerar.

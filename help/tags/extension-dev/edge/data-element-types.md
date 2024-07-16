@@ -13,7 +13,7 @@ ht-degree: 0%
 
 >[!NOTE]
 >
->Adobe Experience Platform Launch har omklassificerats som en serie datainsamlingstekniker i Adobe Experience Platform. Som ett resultat av detta har flera terminologiska förändringar införts i produktdokumentationen. Se följande [dokument](../../term-updates.md) för en konsoliderad hänvisning till terminologiska förändringar.
+>Adobe Experience Platform Launch har omklassificerats som en serie datainsamlingstekniker i Adobe Experience Platform. Som ett resultat av detta har flera terminologiska förändringar införts i produktdokumentationen. I följande [dokument](../../term-updates.md) finns en konsoliderad referens till de ändrade terminologin.
 
 I taggar är dataelement alias för datadelar på en webb- eller mobilsida, oavsett var dessa data finns i händelsen som servern tar emot. Ett dataelement kan refereras av regler och fungerar som en abstraktion för att komma åt dessa datadelar. När platsen för data ändras i framtiden (till exempel när händelsenyckeln som innehåller värdet ändras) kan ett enskilt dataelement konfigureras om medan alla regler som refererar till det dataelementet kan förbli oförändrade.
 
@@ -23,9 +23,9 @@ Det här dokumentet beskriver hur du definierar dataelementtyper för ett kantti
 
 >[!IMPORTANT]
 >
->Om du utvecklar ett webbtillägg läser du i handboken [dataelementtyper för webbtillägg](../web/data-element-types.md) i stället.
+>Om du utvecklar ett webbtillägg läser du i handboken om [dataelementtyper för webbtillägg](../web/data-element-types.md) i stället.
 >
->I det här dokumentet förutsätts även att du känner till biblioteksmoduler och hur de är integrerade i kanttillägg. Om du behöver en introduktion kan du se översikten på [formatering av biblioteksmodul](./format.md) innan du återgår till den här guiden.
+>I det här dokumentet förutsätts även att du känner till biblioteksmoduler och hur de är integrerade i kanttillägg. Om du behöver en introduktion läser du översikten om [biblioteksmodulens formatering](./format.md) innan du går tillbaka till den här guiden.
 
 Dataelementtyper består vanligtvis av följande:
 
@@ -41,7 +41,7 @@ module.exports = (context) => {
 };
 ```
 
-Om du vill att de data som returneras för datalagret ska kunna konfigureras av Adobe Experience Platform-användaren, kan du tillåta att användaren anger ett nyckelnamn och sedan spara namnet på `settings` -objekt. Objektet kan se ut ungefär så här.
+Om du vill att de data som returneras för datalagret ska kunna konfigureras av Adobe Experience Platform-användaren, kan du tillåta att användaren anger ett nyckelnamn och sedan spara namnet till `settings`-objektet. Objektet kan se ut ungefär så här.
 
 ```js
 {
@@ -60,4 +60,4 @@ module.exports = (context) => {
 
 ## Kontext för modulen Bibliotek
 
-Alla dataelementmoduler har åtkomst till en `context` variabel som anges när modulen anropas. Du kan lära dig mer [här](./context.md).
+Alla dataelementmoduler har åtkomst till en `context`-variabel som anges när modulen anropas. Du kan läsa mer [här](./context.md).

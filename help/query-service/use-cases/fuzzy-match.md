@@ -9,7 +9,7 @@ ht-degree: 0%
 
 ---
 
-# Fuzzy match i Query Service
+# Fuzzy match i frågetjänsten
 
 Använd en &#39;luddig&#39; matchning på dina Adobe Experience Platform-data för att returnera de mest troliga, ungefärliga matchningarna utan att behöva söka efter strängar med identiska tecken. Detta gör att du kan söka efter data på ett mycket flexiblare sätt och gör dina data mer tillgängliga genom att spara tid och arbete.
 
@@ -21,9 +21,9 @@ Exemplet i det här fallet fokuserar på matchning av liknande attribut från en
 
 Som en del av den här processen kräver att du utbildar en maskininlärningsmodell, vilket krävs i det här dokumentet för att du ska kunna lära dig en eller flera maskininlärningsmiljöer.
 
-Det här exemplet använder [!DNL Python] och [!DNL Jupyter Notebook] utvecklingsmiljö. Det finns många alternativ, men [!DNL Jupyter Notebook] rekommenderas eftersom det är ett webbprogram med öppen källkod som har låga datorkrav. Den kan hämtas från [den officiella Jupyter-webbplatsen](https://jupyter.org/).
+I det här exemplet används [!DNL Python] och [!DNL Jupyter Notebook]-utvecklingsmiljön. Det finns många alternativ, men [!DNL Jupyter Notebook] rekommenderas eftersom det är ett webbprogram med öppen källkod som har låga datorkrav. Den kan hämtas från [den officiella Jupyter-webbplatsen](https://jupyter.org/).
 
-Innan du börjar måste du importera de nödvändiga biblioteken. [!DNL FuzzyWuzzy] är en öppen källkod [!DNL Python] bibliotek som är byggt ovanpå [!DNL difflib] bibliotek och används för att matcha strängar. Den använder [!DNL Levenshtein Distance] för att beräkna skillnaderna mellan sekvenser och mönster. [!DNL FuzzyWuzzy] har följande krav:
+Innan du börjar måste du importera de nödvändiga biblioteken. [!DNL FuzzyWuzzy] är ett [!DNL Python]-bibliotek med öppen källkod som är byggt ovanpå biblioteket [!DNL difflib] och som används för att matcha strängar. [!DNL Levenshtein Distance] används för att beräkna skillnaderna mellan sekvenser och mönster. [!DNL FuzzyWuzzy] har följande krav:
 
 - [!DNL Python] 2.4 (eller senare)
 - [!DNL Python-Levenshtein]
@@ -34,25 +34,25 @@ Använd följande kommando från kommandoraden för att installera [!DNL FuzzyWu
 pip install fuzzywuzzy
 ```
 
-Eller använd följande kommando för att installera [!DNL Python-Levenshtein] samt
+Eller använd följande kommando för att installera [!DNL Python-Levenshtein] också:
 
 ```console
 pip install fuzzywuzzy[speedup]
 ```
 
-Mer teknisk information om [!DNL Fuzzywuzzy] finns i deras [officiell dokumentation](https://pypi.org/project/fuzzywuzzy/).
+Mer teknisk information om [!DNL Fuzzywuzzy] finns i deras [officiella dokumentation](https://pypi.org/project/fuzzywuzzy/).
 
 ### Anslut till frågetjänst
 
-Du måste ansluta din maskininlärningsmodell till frågetjänsten genom att ange dina anslutningsreferenser. Du kan ange både utgångsdatum och icke-utgångsdatum. Se [inloggningsguide](../ui/credentials.md) om du vill ha mer information om hur du hämtar nödvändiga inloggningsuppgifter. Om du använder [!DNL Jupyter Notebook], läs hela guiden på [hur du ansluter till frågetjänsten](../clients/jupyter-notebook.md).
+Du måste ansluta din maskininlärningsmodell till frågetjänsten genom att ange dina anslutningsreferenser. Du kan ange både utgångsdatum och icke-utgångsdatum. Mer information om hur du hämtar de nödvändiga inloggningsuppgifterna finns i handboken för [inloggningsuppgifter](../ui/credentials.md). Om du använder [!DNL Jupyter Notebook] kan du läsa den fullständiga guiden om [hur du ansluter till frågetjänsten](../clients/jupyter-notebook.md).
 
-Se även till att importera [!DNL numpy] i [!DNL Python] miljö för linjär algebra.
+Glöm inte att importera paketet [!DNL numpy] till din [!DNL Python]-miljö för att aktivera linjär algebra.
 
 ```python
 import numpy as np
 ```
 
-Nedanstående kommandon krävs för att ansluta till frågetjänsten från [!DNL Jupyter Notebook]:
+Kommandona nedan krävs för att ansluta till frågetjänsten från [!DNL Jupyter Notebook]:
 
 ```python
 import psycopg2
@@ -67,9 +67,9 @@ password=<YOUR_QUERY_SERVICE_PASSWORD>
 cur = conn.cursor()
 ```
 
-Dina [!DNL Jupyter Notebook] -instansen är nu ansluten till frågetjänsten. Om anslutningen lyckas visas inget meddelande. Om anslutningen misslyckas visas ett fel.
+[!DNL Jupyter Notebook]-instansen är nu ansluten till frågetjänsten. Om anslutningen lyckas visas inget meddelande. Om anslutningen misslyckas visas ett fel.
 
-### Rita data från Luma-datauppsättningen {#luma-dataset}
+### Draw-data från Luma-datauppsättningen {#luma-dataset}
 
 Analysdata hämtas från den första datauppsättningen med följande kommandon. I korthet har exemplen begränsats till de första 10 resultaten i kolumnen.
 
@@ -81,7 +81,7 @@ luma = np.array([r[0] for r in cur])
 luma[:10]
 ```
 
-Välj **Utdata** för att visa den returnerade arrayen.
+Välj **Utdata** om du vill visa den returnerade arrayen.
 
 +++Utdata
 
@@ -96,7 +96,7 @@ array(['Deluxe King Or Queen Room', 'Kona Tower City / Mountain View',
 
 +++
 
-### Rita data från Acme-datauppsättningen {#acme-dataset}
+### Draw data från Acme-datauppsättningen {#acme-dataset}
 
 Analysdata hämtas nu från den andra datauppsättningen med följande kommandon. Som en fortsättning har exemplen begränsats till de första 10 resultaten i kolumnen.
 
@@ -108,7 +108,7 @@ acme = np.array([r[0] for r in cur])
 acme[:10]
 ```
 
-Välj **Utdata** för att visa den returnerade arrayen.
+Välj **Utdata** om du vill visa den returnerade arrayen.
 
 +++Utdata
 
@@ -125,7 +125,7 @@ array(['Deluxe King Or Queen Room', 'Kona Tower City / Mountain View',
 
 ### Skapa en otydlig poängfunktion {#fuzzy-scoring}
 
-Sedan måste du importera `fuzz` från FuzzyWuzzy-biblioteket och utför en partiell jämförelse av strängarna. Med funktionen för partiell proportion kan du utföra delsträngsmatchning. Detta tar den kortaste strängen och matchar den med alla delsträngar som har samma längd. Funktionen returnerar ett procentvärde för likhet på upp till 100 %. Funktionen för partiella proportioner skulle till exempel jämföra följande strängar &#39;Deluxe Room&#39;, &#39;1 King Bed&#39; och &#39;Deluxe King Room&#39; och returnera en likhetspoäng på 69 %.
+Därefter måste du importera `fuzz` från FuzzyWuzzy-biblioteket och utföra en partiell jämförelse av strängarna. Med funktionen för partiell proportion kan du utföra delsträngsmatchning. Detta tar den kortaste strängen och matchar den med alla delsträngar som har samma längd. Funktionen returnerar ett procentvärde för likhet på upp till 100 %. Funktionen för partiella proportioner skulle till exempel jämföra följande strängar &#39;Deluxe Room&#39;, &#39;1 King Bed&#39; och &#39;Deluxe King Room&#39; och returnera en likhetspoäng på 69 %.
 
 I hotell-rummet används följande kommandon:
 
@@ -135,7 +135,7 @@ def compute_match_score(x,y):
     return fuzz.partial_ratio(x,y)
 ```
 
-Nästa, importera `cdist` från [!DNL SciPy] bibliotek för att beräkna avståndet mellan varje par i de två indatamängderna. Detta beräknar poängen för alla par hotellrum som tillhandahålls av var och en av resebyråerna.
+Importera sedan `cdist` från biblioteket [!DNL SciPy] för att beräkna avståndet mellan varje par i de två indatamängderna. Detta beräknar poängen för alla par hotellrum som tillhandahålls av varje resebyrå.
 
 ```python
 from scipy.spatial.distance import cdist
@@ -160,7 +160,7 @@ Resultatet kan visas med följande kommando. Resultatet är begränsat till tio 
 matched_pairs[:10]
 ```
 
-Välj **Utdata** för att se resultaten.
+Välj **Utdata** om du vill se resultatet.
 
 +++Utdata
 
@@ -202,7 +202,7 @@ WHERE
 [r for r in cur]
 ```
 
-Välj **Utdata** om du vill se resultatet av det här sammanfogningen.
+Välj **Utdata** om du vill se resultatet av den här kopplingen.
 
 +++Utdata
 

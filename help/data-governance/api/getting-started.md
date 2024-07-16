@@ -12,38 +12,38 @@ ht-degree: 0%
 
 ---
 
-# Komma igång med [!DNL Policy Service] API
+# Komma igång med [!DNL Policy Service]-API:t
 
-The [!DNL Policy Service] Med API kan du skapa och hantera olika resurser för Adobe Experience Platform datastyrning. Det här dokumentet innehåller en introduktion till de centrala koncept du behöver känna innan du försöker ringa till [!DNL Policy Service] API.
+Med API:t [!DNL Policy Service] kan du skapa och hantera olika resurser för Adobe Experience Platform datastyrning. Det här dokumentet innehåller en introduktion till de centrala koncept som du behöver känna till innan du försöker anropa API:t [!DNL Policy Service].
 
-## Förutsättningar
+## Förhandskrav
 
-Att använda utvecklarhandboken kräver en fungerande förståelse av de olika [!DNL Experience Platform] tjänster som används i arbetet med datastyrningsfunktioner. Innan du börjar arbeta med [!DNL Policy Service API], läs dokumentationen för följande tjänster:
+Om du vill använda utvecklarhandboken måste du ha en fungerande förståelse för de olika [!DNL Experience Platform]-tjänsterna som används i arbetet med datastyrningsfunktioner. Innan du börjar arbeta med [!DNL Policy Service API] bör du läsa dokumentationen för följande tjänster:
 
-* [Datastyrning](../home.md): Det ramverk som [!DNL Experience Platform] regelefterlevnad för dataanvändning.
-* [[!DNL Experience Data Model (XDM) System]](../../xdm/home.md): Det standardiserade ramverk som [!DNL Experience Platform] organiserar kundupplevelsedata.
-* [[!DNL Real-Time Customer Profile]](../../profile/home.md): Ger en enhetlig konsumentprofil i realtid baserad på aggregerade data från flera källor.
-* [Sandlådor](../../sandboxes/home.md): [!DNL Experience Platform] innehåller virtuella sandlådor som partitionerar en enda [!DNL Platform] till separata virtuella miljöer för att utveckla och utveckla applikationer för digitala upplevelser.
+* [Datastyrning](../home.md): Ramverket som [!DNL Experience Platform] använder för att framtvinga efterlevnad av dataanvändning.
+* [[!DNL Experience Data Model (XDM) System]](../../xdm/home.md): Det standardiserade ramverket som [!DNL Experience Platform] organiserar kundupplevelsedata med.
+* [[!DNL Real-Time Customer Profile]](../../profile/home.md): Tillhandahåller en enhetlig konsumentprofil i realtid baserad på aggregerade data från flera källor.
+* [Sandlådor](../../sandboxes/home.md): [!DNL Experience Platform] innehåller virtuella sandlådor som partitionerar en enskild [!DNL Platform]-instans till separata virtuella miljöer för att hjälpa till att utveckla och utveckla program för digitala upplevelser.
 
 ## Läser exempel-API-anrop
 
-The [!DNL Policy Service] API-dokumentationen innehåller exempel på API-anrop som visar hur du formaterar dina begäranden. Det kan vara sökvägar, obligatoriska rubriker och korrekt formaterade begärandenyttolaster. Ett exempel på JSON som returneras i API-svar finns också. Information om konventionerna som används i dokumentationen för exempel-API-anrop finns i avsnittet om [läsa exempel-API-anrop](../../landing/troubleshooting.md#how-do-i-format-an-api-request) i [!DNL Experience Platform] felsökningsguide.
+API-dokumentationen för [!DNL Policy Service] innehåller exempel på API-anrop som visar hur du formaterar dina begäranden. Det kan vara sökvägar, obligatoriska rubriker och korrekt formaterade begärandenyttolaster. Ett exempel på JSON som returneras i API-svar finns också. Information om de konventioner som används i dokumentationen för exempel-API-anrop finns i avsnittet [Så här läser du exempel-API-anrop](../../landing/troubleshooting.md#how-do-i-format-an-api-request) i felsökningsguiden för [!DNL Experience Platform].
 
 ## Obligatoriska rubriker
 
-API-dokumentationen kräver också att du har slutfört [självstudiekurs om autentisering](https://www.adobe.com/go/platform-api-authentication-en) för att kunna ringa [!DNL Platform] slutpunkter. När du är klar med självstudiekursen för autentisering visas värdena för var och en av de rubriker som krävs i [!DNL Experience Platform] API-anrop enligt nedan:
+API-dokumentationen kräver också att du har slutfört [autentiseringssjälvstudiekursen](https://www.adobe.com/go/platform-api-authentication-en) för att kunna anropa [!DNL Platform]-slutpunkter. När du slutför självstudiekursen för autentisering visas värdena för var och en av de obligatoriska rubrikerna i [!DNL Experience Platform] API-anrop, vilket visas nedan:
 
 * `Authorization: Bearer {ACCESS_TOKEN}`
 * `x-api-key: {API_KEY}`
 * `x-gw-ims-org-id: {ORG_ID}`
 
-Alla resurser i [!DNL Experience Platform], inklusive sådana som tillhör datastyrning, isoleras till specifika virtuella sandlådor. Alla förfrågningar till [!DNL Platform] API:er kräver en rubrik som anger namnet på sandlådan som åtgärden ska utföras i:
+Alla resurser i [!DNL Experience Platform], inklusive de som tillhör Datastyrning, är isolerade till specifika virtuella sandlådor. Alla begäranden till [!DNL Platform] API:er kräver en rubrik som anger namnet på sandlådan som åtgärden ska utföras i:
 
 * `x-sandbox-name: {SANDBOX_NAME}`
 
 >[!NOTE]
 >
->Mer information om sandlådor i [!DNL Platform], se [översiktsdokumentation för sandlåda](../../sandboxes/home.md).
+>Mer information om sandlådor i [!DNL Platform] finns i [översiktsdokumentationen för sandlådan](../../sandboxes/home.md).
 
 Alla begäranden som innehåller en nyttolast (POST, PUT, PATCH) kräver ytterligare en rubrik:
 
@@ -51,9 +51,9 @@ Alla begäranden som innehåller en nyttolast (POST, PUT, PATCH) kräver ytterli
 
 ## Kärna eller anpassade resurser
 
-I [!DNL Policy Service] API, alla policyer och marknadsföringsåtgärder kallas antingen `core` eller `custom` resurser.
+I API:t [!DNL Policy Service] kallas alla principer och marknadsföringsåtgärder antingen `core` eller `custom` resurser.
 
-`core` är de som definieras och bibehålls av Adobe, medan `custom` är resurser som skapats och underhålls av organisationen och därför är unika och synliga enbart för organisationen. Listans- och uppslagsåtgärder (`GET`) är de enda åtgärder som tillåts på `core` resurser, medan åtgärder för listning, sökning och uppdatering (`POST`, `PUT`, `PATCH`och `DELETE`) finns för `custom` resurser.
+`core`-resurser är de som definieras och underhålls av Adobe, medan `custom`-resurser är de som skapas och underhålls av din organisation och därför är unika och synliga enbart för din organisation. Därför är listnings- och uppslagsåtgärder (`GET`) de enda åtgärder som tillåts för `core`-resurser, medan listnings-, uppslags- och uppdateringsåtgärder (`POST`, `PUT`, `PATCH` och `DELETE`) är tillgängliga för `custom`-resurser.
 
 ## Nästa steg
 

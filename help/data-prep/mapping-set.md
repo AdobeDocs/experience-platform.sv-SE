@@ -19,10 +19,10 @@ En mappningsuppsättning är en uppsättning mappningar som transformerar data f
 
 Den här översikten kräver en fungerande förståelse av följande komponenter i Adobe Experience Platform:
 
-- [Dataprep](./home.md): Med Data Prep kan datatekniker mappa, omvandla och validera data till och från Experience Data Model (XDM).
-- [Dataflöden](../dataflows/home.md): Dataflöden är en representation av datajobb som flyttar data mellan plattformar. Dataflöden konfigureras över olika tjänster, vilket hjälper dig att flytta data från källanslutningar till måldatauppsättningar till [!DNL Identity] och [!DNL Profile]och till [!DNL Destinations].
+- [Data Prep](./home.md): Med Data Prep kan datatekniker mappa, omvandla och validera data till och från Experience Data Model (XDM).
+- [Dataflöden](../dataflows/home.md): Dataflöden är en representation av datajobb som flyttar data mellan plattformar. Dataflöden är konfigurerade för olika tjänster, vilket hjälper dig att flytta data från källanslutningar till måldatauppsättningar, till [!DNL Identity] och [!DNL Profile] samt till [!DNL Destinations].
 - [[!DNL Adobe Experience Platform Data Ingestion]](../ingestion/home.md): Metoderna som data kan skickas till [!DNL Experience Platform].
-- [[!DNL Experience Data Model (XDM) System]](../xdm/home.md): Det standardiserade ramverk som [!DNL Experience Platform] organiserar kundupplevelsedata.
+- [[!DNL Experience Data Model (XDM) System]](../xdm/home.md): Det standardiserade ramverket som [!DNL Experience Platform] organiserar kundupplevelsedata med.
 
 ## Syntax för mappningsuppsättning
 
@@ -73,19 +73,19 @@ Följande JSON är ett exempel på en typisk mappningsuppsättning:
 | `inputSchema` | XDM-schemat för inkommande data. |
 | `outputSchema` | Det XDM-schema som indata har transformeras för att anpassas till. |
 | `mappings` | En array med fält-till-fält-mappningar från källschemat till målschemat. |
-| `sourceType` | För varje mappning i listan används `sourceType` -attribut anger vilken typ av källa som ska mappas. Kan vara en av `ATTRIBUTE`, `STATIC`, eller `EXPRESSION`: <ul><li> `ATTRIBUTE` används för alla värden som hittas i källsökvägen. </li><li>`STATIC` används för värden som injiceras i målsökvägen. Detta värde förblir konstant och påverkas inte av källschemat.</li><li> `EXPRESSION` används för ett uttryck som kommer att tolkas under körning. En lista med tillgängliga uttryck finns i [guide för mappningsfunktioner](./functions.md).</li> </ul> |
-| `source` | För varje mappning i listan visas `source` -attribut anger det fält som du vill mappa. Mer information om hur du konfigurerar källan finns i [källöversikt](../sources/home.md). |
-| `destination` | För varje mappning i listan visas `destination` -attributet anger fältet eller sökvägen till fältet, där värdet som extraheras från `source` fältet placeras. Mer information om hur du konfigurerar dina mål finns i [målöversikt](../destinations/home.md). |
+| `sourceType` | För varje mappning i listan anger dess `sourceType`-attribut vilken typ av källa som ska mappas. Kan vara en av `ATTRIBUTE`, `STATIC` eller `EXPRESSION`: <ul><li> `ATTRIBUTE` används för alla värden som hittas i källsökvägen. </li><li>`STATIC` används för värden som matats in i målsökvägen. Detta värde förblir konstant och påverkas inte av källschemat.</li><li> `EXPRESSION` används för ett uttryck som kommer att matchas under körning. En lista med tillgängliga uttryck finns i [guiden för mappningsfunktioner](./functions.md).</li> </ul> |
+| `source` | För varje mappning i listan anger attributet `source` vilket fält du vill mappa. Mer information om hur du konfigurerar källan finns i [Källöversikten](../sources/home.md). |
+| `destination` | För varje mappning i listan anger attributet `destination` fältet, eller sökvägen till fältet, där värdet som extraherats från fältet `source` placeras. Mer information om hur du konfigurerar dina mål finns i [målöversikten](../destinations/home.md). |
 | `mappings.name` | (*Valfritt*) Ett namn för mappningen. |
 | `mappings.description` | (*Valfritt*) En beskrivning av mappningen. |
 
 ## Konfigurera mappningskällor
 
-I en mappning visas `source` kan vara ett fält, uttryck eller ett statiskt värde. Baserat på den angivna källtypen kan värdet extraheras på olika sätt.
+I en mappning kan `source` vara ett fält, uttryck eller ett statiskt värde. Baserat på den angivna källtypen kan värdet extraheras på olika sätt.
 
 ### Fält i kolumndata
 
-När du mappar ett fält i kolumndata, t.ex. en CSV-fil, använder du `ATTRIBUTE` källtyp. Om fältet innehåller `.` inom sitt namn, använd `\` för att undvika värdet. Ett exempel på den här mappningen finns nedan:
+Använd källtypen `ATTRIBUTE` när du mappar ett fält i kolumndata, t.ex. en CSV-fil. Om fältet innehåller `.` i namnet använder du `\` för att undvika värdet. Ett exempel på den här mappningen finns nedan:
 
 **CSV-exempelfil:**
 
@@ -116,7 +116,7 @@ John Smith, js@example.com
 
 ### Fält i kapslade data
 
-När du mappar ett fält i kapslade data, till exempel en JSON-fil, ska du använda `ATTRIBUTE` källtyp. Om fältet innehåller `.` inom sitt namn, använd `\` för att undvika värdet. Ett exempel på den här mappningen finns nedan:
+Använd källtypen `ATTRIBUTE` när du mappar ett fält i kapslade data, t.ex. en JSON-fil. Om fältet innehåller `.` i namnet använder du `\` för att undvika värdet. Ett exempel på den här mappningen finns nedan:
 
 **JSON-exempelfil**
 
@@ -151,7 +151,7 @@ När du mappar ett fält i kapslade data, till exempel en JSON-fil, ska du anvä
 
 ### Fält i en array
 
-När du mappar ett fält inom en array kan du hämta ett specifikt värde med hjälp av ett index. Använd `ATTRIBUTE` källtyp och index för det värde som du vill mappa. Ett exempel på den här mappningen finns nedan:
+När du mappar ett fält inom en array kan du hämta ett specifikt värde med hjälp av ett index. Det gör du genom att använda källtypen `ATTRIBUTE` och indexvärdet för det värde som du vill mappa. Ett exempel på den här mappningen finns nedan:
 
 **JSON-exempelfil**
 
@@ -194,7 +194,7 @@ När du mappar ett fält inom en array kan du hämta ett specifikt värde med hj
 
 ### Array till array eller objekt till objekt
 
-Använda `ATTRIBUTE` källtyp kan du också mappa en array direkt till en array eller ett objekt till ett objekt. Ett exempel på den här mappningen finns nedan:
+Med källtypen `ATTRIBUTE` kan du även mappa en array direkt till en array eller ett objekt till ett objekt. Ett exempel på den här mappningen finns nedan:
 
 **JSON-exempelfil**
 
@@ -246,7 +246,7 @@ Använda `ATTRIBUTE` källtyp kan du också mappa en array direkt till en array 
 
 ### Iterativa åtgärder för arrayer
 
-Använda `ATTRIBUTE` källtyp kan du iterativt slinga igenom arrayer och mappa dem till ett målschema med hjälp av ett jokertecken (`[*]`). Ett exempel på den här mappningen finns nedan:
+Med hjälp av källtypen `ATTRIBUTE` kan du iterativt slinga igenom arrayer och mappa dem till ett målschema med hjälp av ett jokertecken (`[*]`). Ett exempel på den här mappningen finns nedan:
 
 **JSON-exempelfil**
 
@@ -298,7 +298,7 @@ Använda `ATTRIBUTE` källtyp kan du iterativt slinga igenom arrayer och mappa d
 
 ### Konstantvärde
 
-Om du vill mappa en konstant eller ett statiskt värde använder du `STATIC` källtyp.  När du använder `STATIC` källtyp, `source` representerar det hårdkodade värdet som du vill tilldela `destination`. Ett exempel på den här mappningen finns nedan:
+Om du vill mappa en konstant, eller ett statiskt värde, använder du källtypen `STATIC`.  När du använder källtypen `STATIC` representerar `source` det hårdkodade värdet som du vill tilldela `destination`. Ett exempel på den här mappningen finns nedan:
 
 **JSON-exempelfil**
 
@@ -329,7 +329,7 @@ Om du vill mappa en konstant eller ett statiskt värde använder du `STATIC` kä
 
 ### Uttryck
 
-Om du vill mappa ett uttryck använder du `EXPRESSION` källtyp. En lista över godkända funktioner finns i [guide för mappningsfunktioner](./functions.md). När du använder `EXPRESSION` källtyp, `source` representerar den funktion som du vill matcha. Ett exempel på den här mappningen finns nedan:
+Om du vill mappa ett uttryck använder du källtypen `EXPRESSION`. En lista över godkända funktioner finns i [guiden för mappningsfunktioner](./functions.md). När du använder källtypen `EXPRESSION` representerar `source` funktionen som du vill matcha. Ett exempel på den här mappningen finns nedan:
 
 **JSON-exempelfil**
 
@@ -363,11 +363,11 @@ Om du vill mappa ett uttryck använder du `EXPRESSION` källtyp. En lista över 
 
 ## Konfigurerar mappningsmål
 
-I en mappning visas `destination` är den plats där värdet extraheras från `source` infogas.
+I en mappning är `destination` platsen där värdet som extraherats från `source` infogas.
 
 ### Fält på rotnivå
 
-När du vill mappa `source` till rotnivån för dina omformade data, följ exemplet nedan:
+När du vill mappa värdet `source` till rotnivån för dina omformade data följer du exemplet nedan:
 
 **JSON-exempelfil**
 
@@ -400,7 +400,7 @@ När du vill mappa `source` till rotnivån för dina omformade data, följ exemp
 
 ### Kapslat fält
 
-När du vill mappa `source` till ett kapslat fält i dina omformade data, följ exemplet nedan:
+När du vill mappa värdet `source` till ett kapslat fält i dina omformade data följer du exemplet nedan:
 
 **JSON-exempelfil**
 
@@ -433,7 +433,7 @@ När du vill mappa `source` till ett kapslat fält i dina omformade data, följ 
 
 ### Fält vid ett specifikt arrayindex
 
-När du vill mappa `source` värde till ett specifikt index i en array i dina omformade data, följ exemplet nedan:
+När du vill mappa värdet `source` till ett specifikt index i en array i dina omformade data följer du exemplet nedan:
 
 **JSON-exempelfil**
 
@@ -516,4 +516,4 @@ När du iterativt vill göra en slinga genom arrayer och mappa värdena till må
 
 ## Nästa steg
 
-Genom att läsa det här dokumentet bör du nu förstå hur mappningsuppsättningar är uppbyggda, inklusive hur du konfigurerar enskilda mappningar i en mappningsuppsättning. Mer information om andra dataförberedelsefunktioner finns i [Översikt över datapreflight](./home.md). Läs mer om hur du använder mappningsuppsättningar i API:t för dataförberedelser i [Utvecklarhandbok för dataprep](./api/overview.md).
+Genom att läsa det här dokumentet bör du nu förstå hur mappningsuppsättningar är uppbyggda, inklusive hur du konfigurerar enskilda mappningar i en mappningsuppsättning. Mer information om andra dataförberedelsefunktioner finns i [översikten för dataförberedelser](./home.md). Läs [Utvecklarhandboken för dataprep](./api/overview.md) om du vill lära dig hur du använder mappningsuppsättningar i API:t för dataprep.

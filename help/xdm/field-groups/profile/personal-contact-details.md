@@ -12,13 +12,13 @@ ht-degree: 0%
 ---
 
 
-# [!UICONTROL Personal Contact Details] schemafältgrupp
+# Schemafältgruppen [!UICONTROL Personal Contact Details]
 
 >[!NOTE]
 >
->Namnen på flera schemafältgrupper har ändrats. Visa dokumentet på [uppdaterar fältgruppnamn](../name-updates.md) för mer information.
+>Namnen på flera schemafältgrupper har ändrats. Mer information finns i dokumentet om [uppdatering av fältgruppnamn](../name-updates.md).
 
-[!UICONTROL Personal Contact Details] är en standardgrupp för schemafält för [[!DNL XDM Individual Profile] class](../../classes/individual-profile.md) som beskriver kontaktinformationen för en enskild person.
+[!UICONTROL Personal Contact Details] är en standardschemafältgrupp för [[!DNL XDM Individual Profile] klassen](../../classes/individual-profile.md) som beskriver kontaktinformationen för en enskild person.
 
 ![](../../images/field-groups/personal-contact-details.png)
 

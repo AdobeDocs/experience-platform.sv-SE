@@ -6,7 +6,7 @@ description: Lär dig hur du mappar Adobe Audience Manager-data (realtids-, onbo
 exl-id: b800ba43-c308-4334-adce-3d554d50cefb
 source-git-commit: 59dfa862388394a68630a7136dee8e8988d0368c
 workflow-type: tm+mt
-source-wordcount: '169'
+source-wordcount: '156'
 ht-degree: 0%
 
 ---
@@ -15,18 +15,18 @@ ht-degree: 0%
 
 Tabellerna nedan innehåller mappningarna mellan fälten i Adobe Audience Manager-data (Realtime-, On-board- och Profile-data) och deras motsvarande XDM-fält.
 
-Se [XDM-fältordlista](../../../../xdm/schema/field-dictionary.md) för mer information om varje XDM-fält.
+Mer information om varje XDM-fält finns i [XDM-fältordlistan](../../../../xdm/schema/field-dictionary.md).
 
 ## Realtidsdata
 
-Typ: Realtidsdata
+Typ: Realtime-data
 
 | Datafält för realtid | XDM-fält |
 | --- | --- |
 | `requestIds[]` | `ExperienceEvent.identityMap["ECID"]` |
-| `requestIds[]` | `ExperienceEvent.endUserIds` - *Endast för namnutrymmen i endUserIds och endast det första värdet.* |
+| `requestIds[]` | `ExperienceEvent.endUserIds` - *Endast för namnutrymmen i endUserIds och endast första värdet.* |
 | `primaryDeviceId` | `ExperienceEvent.identityMap["CORE"]` |
-| `primaryDeviceId` | ExperienceEvent.endUserIds - *Endast för namnutrymmen i endUserIds och endast det första värdet.* |
+| `primaryDeviceId` | ExperienceEvent.endUserIds - *Endast för namnutrymmen som finns i endUserIds och endast det första värdet.* |
 | `trait[] ` | `ExperienceEvent.segmentMemberships["AAMTraits"]` |
 | `segments[]` | `ExperienceEvent.segmentMemberships["AAMSegments"]` |
 | `mergeRules[]` | `ExperienceEvent.profileStitch[]` |

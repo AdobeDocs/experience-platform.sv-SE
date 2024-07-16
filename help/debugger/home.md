@@ -15,12 +15,12 @@ ht-degree: 2%
 
 # Adobe Experience Platform Debugger - översikt
 
-Adobe Experience Platform Debugger-tillägget för [Krom](https://chrome.google.com/webstore/detail/adobe-experience-platform/bfnnokhpnncpkdmbokanobigaccjkpob) undersöker dina webbsidor och hjälper dig att hitta problem med hur dina Adobe Experience Cloud-lösningar implementeras.
+Tillägget Adobe Experience Platform Debugger för [Chrome](https://chrome.google.com/webstore/detail/adobe-experience-platform/bfnnokhpnncpkdmbokanobigaccjkpob) undersöker dina webbsidor och hjälper dig att hitta problem med hur dina Adobe Experience Cloud-lösningar implementeras.
 
 Du kan använda Platform Debugger tillsammans med andra Adobe-aktiveringslösningar för att utföra följande:
 
-1. Använd [taggar](../tags/home.md) för att infoga kod som aktiveras [Adobe Experience Cloud](https://experienceleague.adobe.com/docs/core-services/interface/experience-cloud.html) produkter på sidorna.
-1. Använd [**[!UICONTROL Auditor]**tab](./auditor/overview.md) i Platform Debugger för att testa implementeringarna.
+1. Använd [taggar](../tags/home.md) för att infoga kod som aktiverar [Adobe Experience Cloud](https://experienceleague.adobe.com/docs/core-services/interface/experience-cloud.html)-produkter på dina sidor.
+1. Använd fliken [**[!UICONTROL Auditor]**](./auditor/overview.md) i plattformsfelsökaren för att testa implementeringarna.
 1. Använd händelsebaserade och lösningsspecifika verktyg i Platform Debugger för att felsöka problem som hittats av Auditor eller för att undersöka annan information om era implementeringar.
 
 >[!NOTE]
@@ -33,8 +33,8 @@ Du kan köra Platform Debugger på alla webbsidor och tillägget har tillgång t
 
 Du kan använda den information som samlas in av plattformsfelsökaren för att bättre förstå hur dina Experience Cloud-lösningar implementeras. Exempel:
 
-* **Taggar**: Se vilken egenskap, miljö, bygge som distribueras på en sida.
-* **Adobe Target**: Se vilka aktiviteter du är berättigad till eller inte är berättigad till och varför.
+* **Taggar**: Se vilken egenskap, miljö, bygge som är distribuerad på en sida.
+* **Adobe Target**: Se vilka aktiviteter du kvalificerar dig för eller inte kvalificerar dig för och varför.
 * **Adobe Analytics**: Se vilka rapportsviter som är aktiva på den aktuella sidan.
 
 ## Videosjälvstudiekurs

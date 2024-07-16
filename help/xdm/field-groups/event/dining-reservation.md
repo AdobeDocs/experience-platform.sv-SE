@@ -10,25 +10,25 @@ ht-degree: 0%
 
 ---
 
-# [!UICONTROL Dining Reservation] schemafältgrupp
+# Schemafältgruppen [!UICONTROL Dining Reservation]
 
-[!UICONTROL Dining Reservation] är en standardgrupp för schemafält för [[!DNL XDM ExperienceEvent] class](../../classes/experienceevent.md) används för att samla in information om en matreservation.
+[!UICONTROL Dining Reservation] är en standardschemafältgrupp för [[!DNL XDM ExperienceEvent] klassen](../../classes/experienceevent.md) som används för att hämta information om en matningsreservation.
 
-Fältgruppen är ett tillägg till [!UICONTROL Reservation Details] fältgrupp och innehåller alla samma fält under ett enda fält av objekttyp, `reservations`. Förutom dessa generiska fält [!UICONTROL Dining Reservation] innehåller `diningReservations` array. Den här arrayen med objekt används för att beskriva en eller flera reservationer med restaurangspecifika egenskaper.
+Fältgruppen är ett tillägg till fältgruppen [!UICONTROL Reservation Details] och innehåller alla samma fält under ett enskilt fält av objekttyp, `reservations`. Förutom dessa generiska fält innehåller [!UICONTROL Dining Reservation] även `diningReservations`-matris. Den här arrayen med objekt används för att beskriva en eller flera reservationer med restaurangspecifika egenskaper.
 
 >[!NOTE]
 >
->Det här dokumentet innehåller information om `diningReservations` array. För information om andra fält som anges i `reservations` -objekt, se [[!UICONTROL Reservation Details] fältgruppsreferens](./reservation-details.md).
+>Det här dokumentet innehåller information om arrayen `diningReservations`. Mer information om de andra fälten under objektet `reservations` finns i [[!UICONTROL Reservation Details] fältgruppsreferensen ](./reservation-details.md).
 
-![Reservationsstruktur för matning](../../images/field-groups/dining-reservation/structure.png)
+![Reservationsstruktur vid matning](../../images/field-groups/dining-reservation/structure.png)
 
 ## `diningReservations`
 
-`diningReservations` är en array med objekt som representerar en lista med matsalternativ. Om en bokningshändelse innehåller reservationer på flera olika restauranger vid olika tidpunkter på dagen, kan exempelvis dessa reservationer listas som enskilda objekt under `diningReservations` för en enda händelse.
+`diningReservations` är en array med objekt som representerar en lista med matsalternativ. Om en reservationshändelse innehåller reservationer på flera olika restauranger vid olika tidpunkter på dagen, kan till exempel dessa reservationer listas som enskilda objekt under `diningReservations` för en enda händelse.
 
 Strukturen för varje objekt som anges under `diningReservations` anges nedan.
 
-![diningReservations-struktur](../../images/field-groups/dining-reservation/diningReservations.png)
+![struktur för diningReservations](../../images/field-groups/dining-reservation/diningReservations.png)
 
 | Egenskap | Datatyp | Beskrivning |
 | --- | --- | --- |

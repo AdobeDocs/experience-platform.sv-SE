@@ -1,22 +1,22 @@
 ---
 solution: Experience Platform
-title: Datum- och tidsfunktioner för PQL
-description: Datum- och tidsfunktioner används för att utföra datum- och tidsåtgärder på värden inom PQL (Profile Query Language).
+title: Datum- och tidsfunktioner i PQL
+description: Datum- och tidsfunktioner används för att utföra datum- och tidsåtgärder på värden inom Profile Query Language (PQL).
 exl-id: 8cbffcb6-1c25-454f-8f02-eca602318e5e
 source-git-commit: dbb7e0987521c7a2f6512f05eaa19e0121aa34c6
 workflow-type: tm+mt
-source-wordcount: '485'
-ht-degree: 2%
+source-wordcount: '493'
+ht-degree: 0%
 
 ---
 
 # Datum- och tidsfunktioner
 
-Datum- och tidsfunktioner används för att utföra datum- och tidsåtgärder på värden inom [!DNL Profile Query Language] (PQL). Mer information om andra PQL-funktioner finns i [[!DNL Profile Query Language] översikt](./overview.md).
+Datum- och tidsfunktioner används för att utföra datum- och tidsåtgärder på värden inom [!DNL Profile Query Language] (PQL). Mer information om andra PQL-funktioner finns i [[!DNL Profile Query Language] översikten](./overview.md).
 
 ## Aktuell månad
 
-The `currentMonth` funktionen returnerar den aktuella månaden som ett heltal.
+Funktionen `currentMonth` returnerar den aktuella månaden som ett heltal.
 
 **Format**
 
@@ -34,7 +34,7 @@ person.birthMonth = currentMonth()
 
 ## Få månad
 
-The `getMonth` returnerar månaden som ett heltal baserat på en viss tidsstämpel.
+Funktionen `getMonth` returnerar månaden, som ett heltal, baserat på en given tidsstämpel.
 
 **Format**
 
@@ -52,7 +52,7 @@ person.birthdate.getMonth() = 6
 
 ## Aktuellt år
 
-The `currentYear` funktionen returnerar det aktuella året som ett heltal.
+Funktionen `currentYear` returnerar det aktuella året som ett heltal.
 
 **Format**
 
@@ -70,7 +70,7 @@ product.saleYear = currentYear()
 
 ## Skaffa år
 
-The `getYear` funktionen returnerar året som ett heltal baserat på en viss tidsstämpel.
+Funktionen `getYear` returnerar året, som ett heltal, baserat på en given tidsstämpel.
 
 **Format**
 
@@ -88,7 +88,7 @@ person.birthday.getYear() in [1991, 1992, 1993, 1994, 1995]
 
 ## Aktuell dag i månaden
 
-The `currentDayOfMonth` funktionen returnerar den aktuella dagen i månaden som ett heltal.
+Funktionen `currentDayOfMonth` returnerar den aktuella dagen i månaden som ett heltal.
 
 **Format**
 
@@ -106,7 +106,7 @@ person.birthDay = currentDayOfMonth()
 
 ## Hämta dag i månaden
 
-The `getDayOfMonth` funktionen returnerar dagen som ett heltal baserat på en given tidsstämpel.
+Funktionen `getDayOfMonth` returnerar dagen, som ett heltal, baserat på en given tidsstämpel.
 
 **Format**
 
@@ -124,11 +124,11 @@ product.sale.getDayOfMonth() <= 15
 
 ## Inträffar
 
-The `occurs` funktionen jämför den angivna tidsstämpelfunktionen med en fast tidsperiod.
+Funktionen `occurs` jämför den angivna tidsstämpelfunktionen med en fast tidsperiod.
 
 **Format**
 
-The `occurs` kan skrivas med något av följande format:
+Funktionen `occurs` kan skrivas med något av följande format:
 
 ```sql
 {TIMESTAMP} occurs {COMPARISON} {INTEGER} {TIME_UNIT} {DIRECTION} {TIME}
@@ -139,11 +139,11 @@ The `occurs` kan skrivas med något av följande format:
 
 | Argument | Beskrivning |
 | --------- | ----------- |
-| `{COMPARISON}` | En jämförelseoperator. Kan vara någon av följande operatorer: `>`, `>=`, `<`, `<=`, `=`, `!=`. Mer information om jämförelsefunktionerna finns i [jämförelsefunktionsdokument](./comparison-functions.md). |
+| `{COMPARISON}` | En jämförelseoperator. Kan vara någon av följande operatorer: `>`, `>=`, `<`, `<=`, `=`, `!=`. Mer information om jämförelsefunktionerna finns i dokumentet [för jämförelsefunktioner](./comparison-functions.md). |
 | `{INTEGER}` | Ett positivt heltal. |
 | `{TIME_UNIT}` | En tidsenhet. Kan vara något av följande ord: `millisecond(s)`, `second(s)`, `minute(s)`, `hour(s)`, `day(s)`, `week(s)`, `month(s)`, `year(s)`, `decade(s)`, `century`, `centuries`, `millennium`, `millennia`. |
 | `{DIRECTION}` | En preposition som beskriver när datumet ska jämföras med. Kan vara något av följande ord: `before`, `after`, `from`. |
-| `{TIME}` | Kan vara en tidsstämpellitteral (`today`, `now`, `yesterday`, `tomorrow`), en relativ tidsenhet (en av `this`, `last`, eller `next` följt av en tidsenhet) eller ett tidsstämpelattribut. |
+| `{TIME}` | Kan vara en tidsstämpellitteral (`today`, `now`, `yesterday`, `tomorrow`), en relativ tidsenhet (en av `this`, `last` eller `next` följt av en tidsenhet) eller ett tidsstämpelattribut. |
 
 >[!NOTE]
 >
@@ -169,7 +169,7 @@ product.saleDate occurs between date(2015, 1, 8) and date(2017, 7, 1)
 
 **Exempel**
 
-Följande PQL-fråga kontrollerar om en artikel har sålts exakt tre timmar tidigare.
+Följande PQL-fråga kontrollerar om ett objekt har sålts exakt tre timmar tidigare.
 
 ```sql
 product.saleDate occurs = 3 hours before now
@@ -177,11 +177,11 @@ product.saleDate occurs = 3 hours before now
 
 ## Idag
 
-`today` är ett reserverat ord som representerar tidsstämpeln för början av dagen för PQL-körningen.
+`today` är ett reserverat ord som representerar tidsstämpeln för startdagen för PQL-körningen.
 
 **Exempel**
 
-Följande PQL-fråga kontrollerar om en persons födelsedag var för tre dagar sedan.
+Följande PQL-fråga kontrollerar om en person fyller år för tre dagar sedan.
 
 ```sql
 person.birthday occurs = 3 days before today
@@ -189,4 +189,4 @@ person.birthday occurs = 3 days before today
 
 ## Nästa steg
 
-Nu när du har lärt dig om datum- och tidsfunktioner kan du använda dem i dina PQL-frågor. Mer information om andra PQL-funktioner finns i [Profilfrågespråk - översikt](./overview.md).
+Nu när du har lärt dig om datum- och tidsfunktioner kan du använda dem i dina PQL-frågor. Mer information om andra PQL-funktioner finns i [Profile Query Language-översikten](./overview.md).

@@ -18,7 +18,7 @@ ht-degree: 0%
 >
 >Om en användartoken skickas måste användaren av token ha rollen&quot;org admin&quot; för den begärda organisationen.
 
-Om du vill visa effektiva åtkomstkontrollprinciper för den aktuella användaren skickar du en POST till `/acl/effective-policies` slutpunkt i [!DNL Access Control] API. Behörigheterna och resurstyperna som du vill hämta måste anges i nyttolasten för begäran i form av en array. Detta visas i exemplet på API-anrop nedan.
+Om du vill visa effektiva åtkomstkontrollprinciper för den aktuella användaren gör du en POST-förfrågan till `/acl/effective-policies`-slutpunkten i [!DNL Access Control] API. Behörigheterna och resurstyperna som du vill hämta måste anges i nyttolasten för begäran i form av en array. Detta visas i exemplet på API-anrop nedan.
 
 **API-format**
 
@@ -28,7 +28,7 @@ POST /acl/effective-policies
 
 **Begäran**
 
-Följande förfrågningar hämtar information om[!UICONTROL Manage Datasets]&quot; behörighet och åtkomst till[!UICONTROL schemas]&quot; resurstyp för den aktuella användaren.
+Följande förfrågningar hämtar information om [!UICONTROL Manage Datasets]-behörighet och åtkomst till resurstypen [!UICONTROL schemas] för den aktuella användaren.
 
 ```shell
 curl -X POST \
@@ -46,7 +46,7 @@ curl -X POST \
 
 >[!NOTE]
 >
->En fullständig lista över behörigheter och resurstyper som kan anges i nyttolastarrayen finns i avsnittet om tillägg i [godkända behörigheter och resurstyper](#accepted-permissions-and-resource-types).
+>En fullständig lista över behörigheter och resurstyper som kan anges i nyttolastarrayen finns i avsnittet i bilagan om [godkända behörigheter och resurstyper](#accepted-permissions-and-resource-types).
 
 **Svar**
 
@@ -69,15 +69,15 @@ Ett godkänt svar returnerar information om behörigheter och resurstyper som an
 
 ## Nästa steg
 
-Det här dokumentet beskriver hur du ringer till [!DNL Access Control] API som returnerar information om aktiva behörigheter och relaterade åtkomstprinciper för resurstyper. Mer information om åtkomstkontroll för [!DNL Experience Platform], se [åtkomstkontroll - översikt](../home.md).
+Det här dokumentet beskriver hur du anropar [!DNL Access Control]-API:t för att returnera information om aktiva behörigheter och relaterade åtkomstprinciper för resurstyper. Mer information om åtkomstkontroll för [!DNL Experience Platform] finns i [åtkomstkontrollsöversikten](../home.md).
 
 ## Bilaga
 
-I det här avsnittet finns ytterligare information om hur du använder [!DNL Access Control] API.
+Det här avsnittet innehåller ytterligare information om hur du använder API:t [!DNL Access Control].
 
 ### Godkända behörigheter och resurstyper
 
-Nedan följer en lista över behörigheter och resurstyper som du kan inkludera i nyttolasten för en POST som begär till `/acl/active-permissions` slutpunkt.
+Nedan följer en lista över behörigheter och resurstyper som du kan inkludera i nyttolasten för en POST-förfrågan till slutpunkten `/acl/active-permissions`.
 
 **Behörigheter**
 

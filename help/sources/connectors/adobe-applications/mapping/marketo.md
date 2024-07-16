@@ -1,7 +1,7 @@
 ---
 keywords: Experience Platform;hem;populära ämnen;Marketo Engage;markering för att engagera;Marketo;mappning
 solution: Experience Platform
-title: Mappningsfält för Marketo Engage-källan
+title: Mappningsfält för Marketo Engage Source
 description: Tabellerna nedan innehåller mappningarna mellan fälten i Marketo datamängder och deras motsvarande XDM-fält.
 exl-id: 2b217bba-2748-4d6f-85ac-5f64d5e99d49
 source-git-commit: 9399ac0e2e0a284799874af15188bbf4a4a380a7
@@ -13,23 +13,23 @@ ht-degree: 0%
 
 # [!DNL Marketo Engage] fältkopplingar {#marketo-engage-field-mappings}
 
-Tabellerna nedan innehåller mappningarna mellan fälten i de nio [!DNL Marketo] datauppsättningar och deras motsvarande XDM-fält (Experience Data Model).
+Tabellerna nedan innehåller mappningarna mellan fälten i de nio [!DNL Marketo]-datamängderna och deras motsvarande XDM-fält (Experience Data Model).
 
 >[!TIP]
 >
->Alla [!DNL Marketo] datauppsättningar förutom `Activities` nu support `isDeleted`. Befintliga dataflöden inkluderar automatiskt `isDeleted`, men kommer bara att importera flaggan för nya importerade data. Om du vill använda flaggan för alla dina historiska data måste du stoppa dina befintliga dataflöden och återskapa dem med den nya mappningen. Observera att om du tar bort `isDeleted`så har du inte längre tillgång till funktionerna. Det är viktigt att mappningen behålls efter att den har fyllts i automatiskt.
+>Alla [!DNL Marketo]-datauppsättningar förutom `Activities` har nu stöd för `isDeleted`. Befintliga dataflöden inkluderar automatiskt `isDeleted`, men kommer bara att importera flaggan för nya inkapslade data. Om du vill använda flaggan för alla dina historiska data måste du stoppa dina befintliga dataflöden och återskapa dem med den nya mappningen. Observera att om du tar bort `isDeleted` har du inte längre åtkomst till funktionen. Det är viktigt att mappningen behålls efter att den har fyllts i automatiskt.
 
 ## Aktiviteter {#activities}
 
-The [!DNL Marketo] finns nu stöd för ytterligare standardaktiviteter. Om du vill använda standardaktiviteter måste du uppdatera schemat med [program för automatisk generering av schema](../marketo/marketo-namespaces.md) därför att om du skapar nya `activities` utan att uppdatera schemat, kommer mappningsmallarna att misslyckas eftersom de nya målfälten inte kommer att finnas i schemat. Om du väljer att inte uppdatera schemat kan du fortfarande skapa ett nytt dataflöde och ignorera eventuella fel. Nya eller uppdaterade fält kommer dock inte att kapslas in i Platform.
+[!DNL Marketo]-källan har nu stöd för ytterligare standardaktiviteter. Om du vill använda standardaktiviteter måste du uppdatera schemat med det [automatiska schemagenereringsverktyget](../marketo/marketo-namespaces.md) eftersom mappningsmallarna misslyckas om du skapar ett nytt `activities`-dataflöde utan att uppdatera schemat eftersom de nya målfälten inte finns i schemat. Om du väljer att inte uppdatera schemat kan du fortfarande skapa ett nytt dataflöde och ignorera eventuella fel. Nya eller uppdaterade fält kommer dock inte att kapslas in i Platform.
 
-Läs dokumentationen på [Klassen XDM Experience Event](../../../../xdm/classes/experienceevent.md) för mer information om XDM-klassen och XDM-fältgrupper.
+Läs dokumentationen om [XDM Experience Event-klassen](../../../../xdm/classes/experienceevent.md) om du vill ha mer information om XDM-klassen och XDM-fältgrupper.
 
 >[!NOTE]
 >
->The `iif(${web\.ecid} != null, to_object('ECID', arrays_to_objects('id', explode(last(split(${web\.ecid}, ":")), " "))), null)` källfält är ett beräkningsfält som måste läggas till med **[!UICONTROL Add calculated field]** i användargränssnittet i Experience Platform. Läs självstudiekursen om [lägga till beräknade fält](../../../../data-prep/ui/mapping.md#calculated-fields) för mer information.
+>Källfältet `iif(${web\.ecid} != null, to_object('ECID', arrays_to_objects('id', explode(last(split(${web\.ecid}, ":")), " "))), null)` är ett beräkningsfält som måste läggas till med alternativet **[!UICONTROL Add calculated field]** i användargränssnittet för Experience Platform. Läs självstudiekursen om att [lägga till beräknade fält](../../../../data-prep/ui/mapping.md#calculated-fields) om du vill ha mer information.
 
-| Källdatauppsättning | XDM-målfält | Anteckningar |
+| Source dataset | XDM-målfält | Anteckningar |
 | -------------- | ---------------- | ----- |
 | `_id` | `_id` |
 | `"Marketo"` | `personKey.sourceType` |
@@ -137,15 +137,15 @@ Läs dokumentationen på [Klassen XDM Experience Event](../../../../xdm/classes/
 
 ## Program {#programs}
 
-Läs [XDM Business Campaign - översikt](../../../../xdm/classes/b2b/business-campaign.md) för mer information om klassen XDM. Mer information om XDM-fältgrupper finns i [Schemafältgrupp för information om företagskampanj](../../../../xdm/field-groups/b2b-campaign/details.md) guide.
+Läs översikten [XDM Business Campaign](../../../../xdm/classes/b2b/business-campaign.md) för mer information om klassen XDM. Mer information om XDM-fältgrupper finns i guiden [Schemafältgrupp för information om företagskampanjer](../../../../xdm/field-groups/b2b-campaign/details.md).
 
-| Källdatauppsättning | XDM-målfält | Anteckningar |
+| Source dataset | XDM-målfält | Anteckningar |
 | -------------- | ---------------- | ----- |
 | `"Marketo"` | `campaignKey.sourceType` |
 | `"${MUNCHKIN_ID}"` | `campaignKey.sourceInstanceID` | Värdet för `"${MUNCHKIN_ID}"` ersätts automatiskt. |
 | `id` | `campaignKey.sourceID` |
 | `concat(id,"@${MUNCHKIN_ID}.Marketo")` | `campaignKey.sourceKey` | Primär identitet. Värdet för `"${MUNCHKIN_ID}"` ersätts automatiskt. |
-| `iif(sfdcId != null && sfdcId != "", to_object("sourceType", "${CRM_TYPE}", "sourceInstanceID", "${CRM_ORG_ID}","sourceID", sfdcId, "sourceKey", concat(sfdcId,"@${CRM_ORG_ID}.${CRM_TYPE}")), null)` | `extSourceSystemAudit.externalKey` | The  `extSourceSystemAudit.externalKey` är sekundär identitet. Värdena för `{CRM_ORG_ID}` och `{CRM_TYPE}` ersätts automatiskt. |
+| `iif(sfdcId != null && sfdcId != "", to_object("sourceType", "${CRM_TYPE}", "sourceInstanceID", "${CRM_ORG_ID}","sourceID", sfdcId, "sourceKey", concat(sfdcId,"@${CRM_ORG_ID}.${CRM_TYPE}")), null)` | `extSourceSystemAudit.externalKey` | `extSourceSystemAudit.externalKey` är den sekundära identiteten. Värdena för `{CRM_ORG_ID}` och `{CRM_TYPE}` ersätts automatiskt. |
 | `name` | `campaignName` |
 | `description` | `campaignDescription` |
 | `type` | `campaignType` |
@@ -168,9 +168,9 @@ Läs [XDM Business Campaign - översikt](../../../../xdm/classes/b2b/business-ca
 
 ## Programmedlemskap {#program-memberships}
 
-Läs [Översikt över medlemmar i XDM Business Campaign](../../../../xdm/classes/b2b/business-campaign-members.md) för mer information om klassen XDM. Mer information om XDM-fältgrupper finns i [Schemafältgrupp för XDM Business Campaign-medlemsinformation](../../../../xdm/field-groups/b2b-campaign-members/details.md) guide.
+Läs översikten [XDM Business Campaign Members](../../../../xdm/classes/b2b/business-campaign-members.md) för mer information om klassen XDM. Mer information om XDM-fältgrupper finns i guiden [XDM Business Campaign Member Details ](../../../../xdm/field-groups/b2b-campaign-members/details.md).
 
-| Källdatauppsättning | XDM-målfält | Anteckningar |
+| Source dataset | XDM-målfält | Anteckningar |
 | -------------- | ---------------- | ----- |
 | `"Marketo"` | `campaignMemberKey.sourceType` |
 | `"${MUNCHKIN_ID}"` | `campaignMemberKey.sourceInstanceID` | Värdet för `"${MUNCHKIN_ID}"` ersätts automatiskt. |
@@ -189,7 +189,7 @@ Läs [Översikt över medlemmar i XDM Business Campaign](../../../../xdm/classes
 | `webinarUrl` | `webinarConfirmationUrl` |
 | `registrationCode` | `webinarRegistrationID` |
 | `reachedSuccessDate` | `reachedSuccessDate` |
-| `iif(sfdc.crmId != null && sfdc.crmId != "", to_object("sourceType", "${CRM_TYPE}", "sourceInstanceID", "${CRM_ORG_ID}","sourceID", sfdc.crmId, "sourceKey", concat(sfdc.crmId,"@${CRM_ORG_ID}.${CRM_TYPE}")), null)` | `extSourceSystemAudit.externalKey` | The `extSourceSystemAudit.externalKey` är sekundär identitet. Värdena för `{CRM_ORG_ID}` och `{CRM_TYPE}` ersätts automatiskt. |
+| `iif(sfdc.crmId != null && sfdc.crmId != "", to_object("sourceType", "${CRM_TYPE}", "sourceInstanceID", "${CRM_ORG_ID}","sourceID", sfdc.crmId, "sourceKey", concat(sfdc.crmId,"@${CRM_ORG_ID}.${CRM_TYPE}")), null)` | `extSourceSystemAudit.externalKey` | `extSourceSystemAudit.externalKey` är den sekundära identiteten. Värdena för `{CRM_ORG_ID}` och `{CRM_TYPE}` ersätts automatiskt. |
 | `sfdc.lastStatus` | `lastStatus` |
 | `sfdc.hasResponded` | `hasResponded` |
 | `sfdc.firstRespondedDate` | `firstRespondedDate` |
@@ -201,15 +201,15 @@ Läs [Översikt över medlemmar i XDM Business Campaign](../../../../xdm/classes
 
 ## Företag {#companies}
 
-Läs [Översikt över XDM-företagskonto](../../../../xdm/classes/b2b/business-account.md) för mer information om klassen XDM.
+Mer information om klassen XDM finns i [XDM Business Account Overview](../../../../xdm/classes/b2b/business-account.md).
 
-| Källdatauppsättning | XDM-målfält | Anteckningar |
+| Source dataset | XDM-målfält | Anteckningar |
 | -------------- | ---------------- | ----- |
 | `"Marketo"` | `accountKey.sourceType` |
 | `"${MUNCHKIN_ID}"` | `accountKey.sourceInstanceID` | Värdet för `"${MUNCHKIN_ID}"` ersätts automatiskt. |
 | `concat(id, ".mkto_org")` | `accountKey.sourceID` |
 | `concat(id, ".mkto_org@${MUNCHKIN_ID}.Marketo")` | `accountKey.sourceKey` | Primär identitet. Värdet för `"${MUNCHKIN_ID}"` ersätts automatiskt. |
-| <ul><li>`iif(mktoCdpExternalId != null && mktoCdpExternalId != "", to_object("sourceType", "${CRM_TYPE}", "sourceInstanceID", "${CRM_ORG_ID}", "sourceID", mktoCdpExternalId, "sourceKey", concat(mktoCdpExternalId,"@${CRM_ORG_ID}.${CRM_TYPE}")), null)`</li><li>`iif(msftCdpExternalId != null && msftCdpExternalId != "", to_object("sourceType", "${CRM_TYPE}", "sourceInstanceID", "${CRM_ORG_ID}","sourceID", msftCdpExternalId, "sourceKey", concat(msftCdpExternalId,"@${CRM_ORG_ID}.${CRM_TYPE}")), null)`</li></ul> | `extSourceSystemAudit.externalKey` | The `extSourceSystemAudit.externalKey` är sekundär identitet. Värdena för `{CRM_ORG_ID}` och `{CRM_TYPE}` ersätts automatiskt. |
+| <ul><li>`iif(mktoCdpExternalId != null && mktoCdpExternalId != "", to_object("sourceType", "${CRM_TYPE}", "sourceInstanceID", "${CRM_ORG_ID}", "sourceID", mktoCdpExternalId, "sourceKey", concat(mktoCdpExternalId,"@${CRM_ORG_ID}.${CRM_TYPE}")), null)`</li><li>`iif(msftCdpExternalId != null && msftCdpExternalId != "", to_object("sourceType", "${CRM_TYPE}", "sourceInstanceID", "${CRM_ORG_ID}","sourceID", msftCdpExternalId, "sourceKey", concat(msftCdpExternalId,"@${CRM_ORG_ID}.${CRM_TYPE}")), null)`</li></ul> | `extSourceSystemAudit.externalKey` | `extSourceSystemAudit.externalKey` är den sekundära identiteten. Värdena för `{CRM_ORG_ID}` och `{CRM_TYPE}` ersätts automatiskt. |
 | `createdAt` | `extSourceSystemAudit.createdDate` |
 | `updatedAt` | `extSourceSystemAudit.lastUpdatedDate` |
 | `billingCity` | `accountBillingAddress.city` |
@@ -233,12 +233,12 @@ Läs [Översikt över XDM-företagskonto](../../../../xdm/classes/b2b/business-a
 
 ## Statiska listor {#static-lists}
 
-Läs [Översikt över XDM Business Marketing List](../../../../xdm/classes/b2b/business-marketing-list.md) för mer information om klassen XDM.
+Läs översikten [XDM Business Marketing List](../../../../xdm/classes/b2b/business-marketing-list.md) för mer information om klassen XDM.
 
-| Källdatauppsättning | XDM-målfält | Anteckningar |
+| Source dataset | XDM-målfält | Anteckningar |
 | -------------- | ---------------- | ----- |
 | `"Marketo"` | `marketingListKey.sourceType` |
-| `"${MUNCHKIN_ID}"` | `marketingListKey.sourceInstanceID` | `"${MUNCHKIN_ID}"` ersätts som en del av Utforska API. |
+| `"${MUNCHKIN_ID}"` | `marketingListKey.sourceInstanceID` | `"${MUNCHKIN_ID}"` kommer att ersättas som en del av Utforska API. |
 | `id` | `marketingListKey.sourceID` |
 | `concat(id,"@${MUNCHKIN_ID}.Marketo")` | `marketingListKey.sourceKey` | Primär identitet. Värdet för `"${MUNCHKIN_ID}"` ersätts automatiskt. |
 | `name` | `marketingListName` |
@@ -251,9 +251,9 @@ Läs [Översikt över XDM Business Marketing List](../../../../xdm/classes/b2b/b
 
 ## Statiska listmedlemskap {#static-list-memberships}
 
-Läs [Översikt över medlemmar i XDM Business Marketing List](../../../../xdm/classes/b2b/business-marketing-list-members.md) för mer information om klassen XDM.
+Läs [XDM Business Marketing List Members overview](../../../../xdm/classes/b2b/business-marketing-list-members.md) om du vill ha mer information om klassen XDM.
 
-| Källdatauppsättning | XDM-målfält | Anteckningar |
+| Source dataset | XDM-målfält | Anteckningar |
 | -------------- | ---------------- | ----- |
 | `"Marketo"` | `marketingListMemberKey.sourceType` |
 | `"${MUNCHKIN_ID}"` | `marketingListMemberKey.sourceInstanceID` | Värdet för `"${MUNCHKIN_ID}"` ersätts automatiskt. |
@@ -272,15 +272,15 @@ Läs [Översikt över medlemmar i XDM Business Marketing List](../../../../xdm/c
 >
 >Datauppsättningen med namngivna konton är bara nödvändig med funktionen Marketo kontobaserad marknadsföring (ABM). Om du inte använder ABM behöver du inte konfigurera mappningar för namngivna konton.
 
-Läs [Översikt över XDM-företagskonto](../../../../xdm/classes/b2b/business-account.md) för mer information om klassen XDM.
+Mer information om klassen XDM finns i [XDM Business Account Overview](../../../../xdm/classes/b2b/business-account.md).
 
-| Källdatauppsättning | XDM-målfält | Anteckningar |
+| Source dataset | XDM-målfält | Anteckningar |
 | -------------- | ---------------- | ----- |
 | `"Marketo"` | `accountKey.sourceType` |
 | `"${MUNCHKIN_ID}"` | `accountKey.sourceInstanceID` | Värdet för `"${MUNCHKIN_ID}"` ersätts automatiskt. |
 | `concat(id, ".mkto_acct")` | `accountKey.sourceID` |
 | `concat(id, ".mkto_acct@${MUNCHKIN_ID}.Marketo")` | `accountKey.sourceKey` | Primär identitet. Värdet för `"${MUNCHKIN_ID}"` ersätts automatiskt. |
-| `iif(crmGuid != null && crmGuid != "", to_object("sourceType", "${CRM_TYPE}", "sourceInstanceID", "${CRM_ORG_ID}","sourceID", crmGuid, "sourceKey", concat(crmGuid,"@${CRM_ORG_ID}.${CRM_TYPE}")), null)` | `extSourceSystemAudit.externalKey` | The `extSourceSystemAudit.externalKey` är sekundär identitet. Värdena för `{CRM_ORG_ID}` och `{CRM_TYPE}` ersätts automatiskt. |
+| `iif(crmGuid != null && crmGuid != "", to_object("sourceType", "${CRM_TYPE}", "sourceInstanceID", "${CRM_ORG_ID}","sourceID", crmGuid, "sourceKey", concat(crmGuid,"@${CRM_ORG_ID}.${CRM_TYPE}")), null)` | `extSourceSystemAudit.externalKey` | `extSourceSystemAudit.externalKey` är den sekundära identiteten. Värdena för `{CRM_ORG_ID}` och `{CRM_TYPE}` ersätts automatiskt. |
 | `createdAt` | `extSourceSystemAudit.createdDate` |
 | `updatedAt` | `extSourceSystemAudit.lastUpdatedDate` |
 | `city` | `accountBillingAddress.city` |
@@ -300,9 +300,9 @@ Läs [Översikt över XDM-företagskonto](../../../../xdm/classes/b2b/business-a
 
 ## Möjligheter {#opportunities}
 
-Läs [Översikt över affärsmöjligheter i XDM](../../../../xdm/classes/b2b/business-opportunity.md) för mer information om klassen XDM.
+Mer information om klassen XDM finns i [XDM Business Opportunity overview](../../../../xdm/classes/b2b/business-opportunity.md) .
 
-| Källdatauppsättning | XDM-målfält | Anteckningar |
+| Source dataset | XDM-målfält | Anteckningar |
 | -------------- | ---------------- | ----- |
 | `"Marketo"` | `opportunityKey.sourceType` |
 | `"${MUNCHKIN_ID}"` | `opportunityKey.sourceInstanceID` | Värdet för `"${MUNCHKIN_ID}"` ersätts automatiskt. |
@@ -327,7 +327,7 @@ Läs [Översikt över affärsmöjligheter i XDM](../../../../xdm/classes/b2b/bus
 | `isWon` | `isWon` |
 | `quantity` | `opportunityQuantity` |
 | `probability` | `probabilityPercentage` |
-| `iif(mktoCdpAccountOrgId != null && mktoCdpAccountOrgId != "", to_object("sourceType", "Marketo", "sourceInstanceID", "${MUNCHKIN_ID}","sourceID", concat(mktoCdpAccountOrgId, ".mkto_org"), "sourceKey", concat(mktoCdpAccountOrgId, ".mkto_org@${MUNCHKIN_ID}.Marketo")), null)` | `accountKey` | Den här källdatauppsättningen är bara tillgänglig för användare med [!DNL Salesforce] integrering. |
+| `iif(mktoCdpAccountOrgId != null && mktoCdpAccountOrgId != "", to_object("sourceType", "Marketo", "sourceInstanceID", "${MUNCHKIN_ID}","sourceID", concat(mktoCdpAccountOrgId, ".mkto_org"), "sourceKey", concat(mktoCdpAccountOrgId, ".mkto_org@${MUNCHKIN_ID}.Marketo")), null)` | `accountKey` | Den här källdatauppsättningen är bara tillgänglig för användare med integreringen [!DNL Salesforce]. |
 | `lastActivityDate` | `lastActivityDate` |
 | `leadSource` | `leadSource` |
 | `nextStep` | `nextStep` |
@@ -337,15 +337,15 @@ Läs [Översikt över affärsmöjligheter i XDM](../../../../xdm/classes/b2b/bus
 
 ## Kontaktroller för affärsmöjlighet {#opportunity-contact-roles}
 
-Läs [Översikt över XDM Business Opportunity Person Relation](../../../../xdm/classes/b2b/business-account-person-relation.md) för mer information om klassen XDM.
+Läs översikten [XDM Business Opportunity Person Relation](../../../../xdm/classes/b2b/business-account-person-relation.md) för mer information om klassen XDM.
 
-| Källdatauppsättning | XDM-målfält | Anteckningar |
+| Source dataset | XDM-målfält | Anteckningar |
 | -------------- | ---------------- | ----- |
 | `"Marketo"` | `opportunityPersonKey.sourceType` |
 | `"${MUNCHKIN_ID}"` | `opportunityPersonKey.sourceInstanceID` | Värdet för `"${MUNCHKIN_ID}"` ersätts automatiskt. |
 | `id` | `opportunityPersonKey.sourceID` |
-| `concat(id,"@${MUNCHKIN_ID}.Marketo")` | `opportunityPersonKey.sourceKey` | Primär identitet. Värdet för `"${MUNCHKIN_ID}"` ersätts som en del av Utforska API. |
-| `iif(mktoCdpSfdcId != null && mktoCdpSfdcId != "", to_object("sourceType", "${CRM_TYPE}", "sourceInstanceID", "${CRM_ORG_ID}","sourceID", mktoCdpSfdcId, "sourceKey", concat(mktoCdpSfdcId,"@${CRM_ORG_ID}.${CRM_TYPE}")), null)` | `extSourceSystemAudit.externalKey` | The `extSourceSystemAudit.externalKey` är sekundär identitet. Värdena för `{CRM_ORG_ID}` och `{CRM_TYPE}` ersätts automatiskt. |
+| `concat(id,"@${MUNCHKIN_ID}.Marketo")` | `opportunityPersonKey.sourceKey` | Primär identitet. Värdet för `"${MUNCHKIN_ID}"` kommer att ersättas som en del av Utforska API. |
+| `iif(mktoCdpSfdcId != null && mktoCdpSfdcId != "", to_object("sourceType", "${CRM_TYPE}", "sourceInstanceID", "${CRM_ORG_ID}","sourceID", mktoCdpSfdcId, "sourceKey", concat(mktoCdpSfdcId,"@${CRM_ORG_ID}.${CRM_TYPE}")), null)` | `extSourceSystemAudit.externalKey` | `extSourceSystemAudit.externalKey` är den sekundära identiteten. Värdena för `{CRM_ORG_ID}` och `{CRM_TYPE}` ersätts automatiskt. |
 | `iif(mktoCdpOpptyId != null && mktoCdpOpptyId != "", to_object("sourceType", "Marketo", "sourceInstanceID", "${MUNCHKIN_ID}","sourceID", mktoCdpOpptyId, "sourceKey", concat(mktoCdpOpptyId,"@${MUNCHKIN_ID}.Marketo")), null)` | `opportunityKey` | Relation |
 | `iif(leadId != null && leadId != "", to_object("sourceType", "Marketo", "sourceInstanceID", "${MUNCHKIN_ID}","sourceID", leadId, "sourceKey", concat(leadId,"@${MUNCHKIN_ID}.Marketo")), null)` | `personKey` | Relation |
 | `role` | `personRole` |
@@ -358,15 +358,15 @@ Läs [Översikt över XDM Business Opportunity Person Relation](../../../../xdm/
 
 ## Personer {#persons}
 
-Läs [Översikt över enskilda XDM-profiler](../../../../xdm/classes/individual-profile.md) för mer information om klassen XDM. Mer information om XDM-fältgrupper finns i [Schemafältgrupp för XDM Business Person Details](../../../../xdm/field-groups/profile/business-person-details.md) stödlinje och [Schemafältgrupp för XDM Business Person Components](../../../../xdm/field-groups/profile/business-person-components.md) guide.
+Läs översikten [XDM Individual Profile](../../../../xdm/classes/individual-profile.md) för mer information om klassen XDM. Mer information om XDM-fältgrupper finns i guiden [XDM Business Person Details för schemafältgrupp](../../../../xdm/field-groups/profile/business-person-details.md) och i guiden [XDM Business Person Components för schemafältgrupp](../../../../xdm/field-groups/profile/business-person-components.md).
 
-| Källdatauppsättning | XDM-målfält | Anteckningar |
+| Source dataset | XDM-målfält | Anteckningar |
 | -------------- | ---------------- | ----- |
 | `"Marketo"` | `b2b.personKey.sourceType` |
 | `"${MUNCHKIN_ID}"` | `b2b.personKey.sourceInstanceID` | Värdet för `"${MUNCHKIN_ID}"` ersätts automatiskt. |
 | `id` | `b2b.personKey.sourceID` |
 | `concat(id,"@${MUNCHKIN_ID}.Marketo")` | `b2b.personKey.sourceKey` | Primär identitet. Värdet för `"${MUNCHKIN_ID}"` ersätts automatiskt. |
-| `iif(unsubscribed == 'true', 'n', 'y' ))` | `consents.marketing.email.val` | Om du avbryter prenumerationen `true` (till exempel value = `1`), sedan ange `consents.marketing.email.val` as (`n`). Om du avbryter prenumerationen `false` (till exempel value = `0`), sedan ange `consents.marketing.email.val` as `null`. |
+| `iif(unsubscribed == 'true', 'n', 'y' ))` | `consents.marketing.email.val` | Om det är `true` (till exempel value = `1`) som ska avbrytas anger du `consents.marketing.email.val` som (`n`). Om det är `false` (till exempel value = `0`) som ska avbrytas anger du `consents.marketing.email.val` som `null`. |
 | `iif(unsubscribedReason != null && unsubscribedReason != "", substr(unsubscribedReason, 0, 100), null)` | `consents.marketing.email.reason` |
 | `iif(contactCompany != null && contactCompany != "", to_object("sourceType", "Marketo", "sourceInstanceID", "${MUNCHKIN_ID}","sourceID", concat(contactCompany, ".mkto_org"), "sourceKey", concat(contactCompany, ".mkto_org@${MUNCHKIN_ID}.Marketo")), null)` | `b2b.accountKey` |
 | `marketingSuspended` | `b2b.isMarketingSuspended` |
@@ -378,7 +378,7 @@ Läs [Översikt över enskilda XDM-profiler](../../../../xdm/classes/individual-
 | `leadPartitionId` | `b2b.personGroupID` |
 | `mktoCdpIsConverted` | `b2b.isConverted` |
 | `mktoCdpConvertedDate` | `b2b.convertedDate` |
-| <ul><li>`iif(decode(sfdcType, "Contact", sfdcContactId, "Lead", sfdcLeadId , null) != null, to_object("sourceType", "${CRM_TYPE}", "sourceInstanceID", "${CRM_ORG_ID}","sourceID", decode(sfdcType, "Contact", sfdcContactId, "Lead", sfdcLeadId , null), "sourceKey", concat(decode(sfdcType, "Contact", sfdcContactId, "Lead", sfdcLeadId , null),"@${CRM_ORG_ID}.${CRM_TYPE}")), null)`</li><li>`iif(decode(msftType, "Contact", msftContactId, "Lead", msftLeadId , null) != null, to_object("sourceType", "${CRM_TYPE}", "sourceInstanceID", "${CRM_ORG_ID}","sourceID", decode(msftType, "Contact", msftContactId, "Lead", msftLeadId , null), "sourceKey", concat(decode(msftType, "Contact", msftContactId, "Lead", msftLeadId , null),"@${CRM_ORG_ID}.${CRM_TYPE}")), null)`</li></ul> | `extSourceSystemAudit.externalKey` | The `extSourceSystemAudit.externalKey` är sekundär identitet. |
+| <ul><li>`iif(decode(sfdcType, "Contact", sfdcContactId, "Lead", sfdcLeadId , null) != null, to_object("sourceType", "${CRM_TYPE}", "sourceInstanceID", "${CRM_ORG_ID}","sourceID", decode(sfdcType, "Contact", sfdcContactId, "Lead", sfdcLeadId , null), "sourceKey", concat(decode(sfdcType, "Contact", sfdcContactId, "Lead", sfdcLeadId , null),"@${CRM_ORG_ID}.${CRM_TYPE}")), null)`</li><li>`iif(decode(msftType, "Contact", msftContactId, "Lead", msftLeadId , null) != null, to_object("sourceType", "${CRM_TYPE}", "sourceInstanceID", "${CRM_ORG_ID}","sourceID", decode(msftType, "Contact", msftContactId, "Lead", msftLeadId , null), "sourceKey", concat(decode(msftType, "Contact", msftContactId, "Lead", msftLeadId , null),"@${CRM_ORG_ID}.${CRM_TYPE}")), null)`</li></ul> | `extSourceSystemAudit.externalKey` | `extSourceSystemAudit.externalKey` är den sekundära identiteten. |
 | `createdAt` | `extSourceSystemAudit.createdDate` |
 | `updatedAt` | `extSourceSystemAudit.lastUpdatedDate` |
 | `title` | `extendedWorkDetails.jobTitle` |
@@ -415,4 +415,4 @@ Läs [Översikt över enskilda XDM-profiler](../../../../xdm/classes/individual-
 
 ## Nästa steg
 
-Genom att läsa det här dokumentet har du fått insikt i mappningsförhållandet mellan [!DNL Marketo] datauppsättningar och deras motsvarande XDM-fält. Se självstudiekursen om [skapa [!DNL Marketo] källanslutning](../../../tutorials/ui/create/adobe-applications/marketo.md) för att slutföra [!DNL Marketo] dataflöde.
+Genom att läsa det här dokumentet har du fått information om mappningsförhållandet mellan dina [!DNL Marketo]-datauppsättningar och deras motsvarande XDM-fält. Se självstudiekursen [Skapa en [!DNL Marketo] källanslutning](../../../tutorials/ui/create/adobe-applications/marketo.md) för att slutföra ditt [!DNL Marketo]-dataflöde.

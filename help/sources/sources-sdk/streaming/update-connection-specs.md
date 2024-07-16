@@ -6,7 +6,7 @@ badge: Beta
 source-git-commit: 256857103b4037b2cd7b5b52d6c5385121af5a9f
 workflow-type: tm+mt
 source-wordcount: '163'
-ht-degree: 1%
+ht-degree: 0%
 
 ---
 
@@ -14,7 +14,7 @@ ht-degree: 1%
 
 >[!NOTE]
 >
->SDK för självbetjäningsströmning för källor är i betaversion. Läs [källöversikt](../../home.md#terms-and-conditions) om du vill ha mer information om hur du använder betamärkta källor.
+>SDK för självbetjäningsströmning för källor är i betaversion. Läs [källöversikten](../../home.md#terms-and-conditions) om du vill ha mer information om hur du använder betatecknade källor.
 
 Du kan uppdatera egenskaperna för en anslutningsspecifikation genom en PUT-åtgärd. När du uppdaterar en anslutningsspecifikation via en PUT-begäran, måste texten innehålla alla fält som krävs för att skapa en ny anslutningsspecifikation i en POST-begäran.
 
@@ -196,4 +196,4 @@ Ett lyckat anrop returnerar den uppdaterade informationen om anslutningsspecifik
 
 ## Nästa steg
 
-När du är klar med uppdateringarna av anslutningsspecifikationen kan du nu gå vidare till [testa och skicka in källan för integrering](./submit.md).
+När du har slutfört uppdateringarna av anslutningsspecifikationen kan du nu fortsätta med [test och skicka källan för integrering](./submit.md).

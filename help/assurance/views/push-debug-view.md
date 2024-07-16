@@ -4,7 +4,7 @@ description: Den här vägledningen innehåller information om vyn Push Debug (P
 exl-id: a9558ee2-2e80-4b0d-ab45-2020be85e634
 source-git-commit: 05a7b73da610a30119b4719ae6b6d85f93cdc2ae
 workflow-type: tm+mt
-source-wordcount: '912'
+source-wordcount: '913'
 ht-degree: 0%
 
 ---
@@ -25,11 +25,11 @@ Den här vyn är bara aktiverad för en enskild klient, så om du väljer en ann
 
 ## Validera inställningar
 
-The **[!UICONTROL Validate Setup]** validerar och ger mer information om programmets push-konfiguration. Det finns tre paneler som utför valideringar. De visar en grön bockmarkering om valideringarna lyckas. Om det finns tre gröna bockmarkeringar har appen konfigurerats korrekt för push-meddelanden, skriver push-tokens till användarprofilen och har en associerad appyta konfigurerad.
+Fliken **[!UICONTROL Validate Setup]** validerar och ger ytterligare information om programmets push-konfiguration. Det finns tre paneler som utför valideringar. De visar en grön bockmarkering om valideringarna lyckas. Om det finns tre gröna bockmarkeringar har appen konfigurerats korrekt för push-meddelanden, skriver push-tokens till användarprofilen och har en associerad appyta konfigurerad.
 
 Om något inte fungerar som väntat visas ett varningsmeddelande med information om hur du åtgärdar problemet:
 
-![Ogiltigt tillstånd](./images/push-debug-view/invalid-state.png)
+![Ogiltigt läge](./images/push-debug-view/invalid-state.png)
 
 ### Klientinformation
 
@@ -41,7 +41,7 @@ Om det är giltigt visas enhetens ECID, push-token, Edge Sandbox-namn och -typ p
 
 När klienten är korrekt konfigurerad kontrollerar den här panelen om enheten skriver till en profil. Den validerar också att push-token i profilen matchar den på enheten.
 
-Om det är giltigt visas enhetens ECID, push-token, programmets program-ID, meddelandeplattformen och om push-token har nekats. Token kan nekas av olika anledningar som att användaren har avinstallerat appen eller att användaren har inaktiverat push-meddelanden för appen.
+Om det är giltigt visas enhetens ECID, push-token, programmets program-ID, meddelandeplattformen och om push-token har nekats. Token kan nekas av olika anledningar som att användaren har avinstallerat programmet eller att användaren har inaktiverat push-meddelanden för programmet.
 
 ![Blockerad](./images/push-debug-view/deny-list-blocked.png)
 
@@ -57,29 +57,29 @@ Längst ned på panelen finns en länk som öppnar den här specifika appytan p�
 
 ## Skicka testpush
 
-The **[!UICONTROL Send Test Push]** kan användas för att skicka ett testmeddelande till din enhet.
+Fliken **[!UICONTROL Send Test Push]** kan användas för att skicka ett testmeddelande till enheten.
 
-Det finns flera rutor som kan konfigureras för att testa olika push-funktioner för iOS och Android. När konfigurationen är klar väljer du **[!UICONTROL Send Test Push Notification]** för att skicka ditt meddelande.
+Det finns flera rutor som kan konfigureras för att testa olika push-funktioner i iOS och Android. När du har konfigurerat dig väljer du **[!UICONTROL Send Test Push Notification]** för att skicka meddelandet.
 
 ![Skicka push](./images/push-debug-view/send.png)
 
 ### Meddelande
 
-I **[!UICONTROL Message]** kan du ange en rubrik och brödtext för meddelandet. Funktionen för tyst meddelande kan även aktiveras här.
+I rutan **[!UICONTROL Message]** kan du ange en rubrik och brödtext för meddelandet. Funktionen för tyst meddelande kan även aktiveras här.
 
 ![Meddelanderuta](./images/push-debug-view/message-pane.png)
 
-### Push-mål
+### Skjut mål
 
-The **[!UICONTROL Push Target]** kan du anpassa vilken push-token och appyta som ska användas när push-meddelandet skickas.
+I rutan **[!UICONTROL Push Target]** kan du anpassa vilken push-token och appyta som ska användas när push-meddelandet skickas.
 
-Den här informationen tillhandahålls som standard om **[!UICONTROL Validate Setup]** har tre gröna bockmarkeringar. Du kan dock ange en egen push-token och appyta, även om appen inte är helt konfigurerad.
+Den här informationen anges som standard om fliken **[!UICONTROL Validate Setup]** visar tre gröna bockmarkeringar. Du kan dock ange en egen push-token och appyta, även om appen inte är helt konfigurerad.
 
 ![Målfönster](./images/push-debug-view/target-pane.png)
 
 ### Klickbeteende
 
-Från **[!UICONTROL Click Behavior]** kan du välja vilket beteende som ska vara när användaren klickar på ett push-meddelande på enheten. Som standard öppnas programmet, men du kan öppna en länk eller en webbsida.
+I rutan **[!UICONTROL Click Behavior]** kan du välja vilket beteende som ska vara när användaren klickar på push-meddelandet på enheten. Som standard öppnas programmet, men du kan öppna en länk eller en webbsida.
 
 Om du väljer att använda en depålänk måste apputvecklaren skapa en åt dig.
 
@@ -87,38 +87,38 @@ Om du väljer att använda en depålänk måste apputvecklaren skapa en åt dig.
 
 ### Multimedia
 
-The **[!UICONTROL Rich Media]** I kan du lägga till extra media i ett meddelande, till exempel en bild, en video eller GIF. Apputvecklaren måste lägga till kod i appen för att den här funktionen ska kunna aktiveras.
+I rutan **[!UICONTROL Rich Media]** kan du lägga till extra media i meddelandet, till exempel en bild, en video eller GIF. Apputvecklaren måste lägga till kod i appen för att den här funktionen ska kunna aktiveras.
 
-![Rich Pane](./images/push-debug-view/rich-pane.png)
+![Multiruta](./images/push-debug-view/rich-pane.png)
 
-### Knapparna
+### Knappar
 
-The **[!UICONTROL Buttons]** kan du lägga till extra knappar i push-meddelandet. Varje knapp kan öppna programmet, öppna en länk till programmet eller öppna en webbsida.
+I rutan **[!UICONTROL Buttons]** kan du lägga till extra knappar i push-meddelandet. Varje knapp kan öppna programmet, öppna en länk till programmet eller öppna en webbsida.
 
 Apputvecklaren måste lägga till kod i appen för att den här funktionen ska kunna aktiveras.
 
-![Knappfönster](./images/push-debug-view/buttons-pane.png)
+![Knappruta](./images/push-debug-view/buttons-pane.png)
 
 ### Anpassade data
 
-The **[!UICONTROL Custom Data]** kan du lägga till anpassade data i push-meddelandet. Varje nyckel/värde-par skickas som metadata tillsammans med meddelandet och kan användas av utvecklare för att skapa kraftfulla upplevelser och lägga till ytterligare spårning.
+I rutan **[!UICONTROL Custom Data]** kan du lägga till anpassade data i push-meddelandet. Varje nyckel/värde-par skickas som metadata tillsammans med meddelandet och kan användas av utvecklare för att skapa kraftfulla upplevelser och lägga till ytterligare spårning.
 
 ![Anpassat fönster](./images/push-debug-view/custom-pane.png)
 
 ## Testresultat
 
-När du har skickat ett meddelande visas **[!UICONTROL Test Results]** -avsnittet tar emot data från push-tjänsterna för meddelandet. Här ser du om meddelandet har skickats till Google/iOS meddelandetjänster:
+När du har skickat ett meddelande tar **[!UICONTROL Test Results]**-avsnittet emot data från push-tjänsterna för meddelandet. Här ser du om meddelandet har skickats till Google/iOS meddelandetjänster:
 
 ![Testresultat](./images/push-debug-view/test-results.png)
 
 Om några problem uppstår visas de här:
 
-![Testresultatfel](./images/push-debug-view/test-error.png)
+![Fel i testresultat](./images/push-debug-view/test-error.png)
 
 ## Avancerat
 
 ### Visa meddelandenyttolast
 
-Intill **[!UICONTROL Send Test Push Notification]** är en uppsättning ellipser med en snabbmeny. Härifrån kan du visa meddelandets nyttolast. På så sätt kan du se exakt vilket meddelande som kommer att skickas till fjärrmeddelandetjänsten. Du kan granska den här nyttolasten eller kopiera och klistra in den i ett push-testverktyg.
+Bredvid knappen **[!UICONTROL Send Test Push Notification]** finns en uppsättning ellipser med en snabbmeny. Härifrån kan du visa meddelandets nyttolast. På så sätt kan du se exakt vilket meddelande som kommer att skickas till fjärrmeddelandetjänsten. Du kan granska den här nyttolasten eller kopiera och klistra in den i ett push-testverktyg.
 
 ![Anpassat fönster](./images/push-debug-view/message-payload.png)

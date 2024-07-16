@@ -13,15 +13,15 @@ ht-degree: 1%
 
 # Utvecklarhandbok för batchintag
 
-Det här dokumentet innehåller en omfattande guide till hur du använder [API-slutpunkter för gruppinmatning](https://developer.adobe.com/experience-platform-apis/references/batch-ingestion/) i Adobe Experience Platform. En översikt över API:er för gruppinmatning, inklusive förutsättningar och bästa praxis, får du genom att läsa [API-översikt över batchimport](overview.md).
+Det här dokumentet innehåller en omfattande guide till hur du använder [API-slutpunkter för gruppinläsning](https://developer.adobe.com/experience-platform-apis/references/batch-ingestion/) i Adobe Experience Platform. En översikt över API:er för gruppinmatning, inklusive förutsättningar och bästa praxis, får du genom att läsa översikten för [API:t för gruppinmatning](overview.md).
 
-I bilagan till det här dokumentet finns information om [formatera data som ska användas för förtäring](#data-transformation-for-batch-ingestion), inklusive exempel på CSV- och JSON-datafiler.
+I bilagan till det här dokumentet finns information om [formateringsdata som ska användas för importen](#data-transformation-for-batch-ingestion), inklusive exempel på CSV- och JSON-datafiler.
 
 ## Komma igång
 
-API-slutpunkterna som används i den här handboken är en del av [API för gruppinmatning](https://developer.adobe.com/experience-platform-apis/references/batch-ingestion/). Gruppinmatning tillhandahålls via en RESTful API där du kan utföra grundläggande CRUD-åtgärder mot de objekttyper som stöds.
+API-slutpunkterna som används i den här guiden ingår i [API:t för gruppinmatning](https://developer.adobe.com/experience-platform-apis/references/batch-ingestion/). Gruppinmatning tillhandahålls via en RESTful API där du kan utföra grundläggande CRUD-åtgärder mot de objekttyper som stöds.
 
-Innan du fortsätter bör du granska [API-översikt över batchimport](overview.md) och [komma igång-guide](getting-started.md).
+Granska översikten för [API för gruppinläsning](overview.md) och [kom igång](getting-started.md) innan du fortsätter.
 
 ## Importera JSON-filer
 
@@ -35,7 +35,7 @@ För det första måste du skapa en batch med JSON som indataformat. När du ska
 
 >[!NOTE]
 >
->Exemplen nedan är för enradig JSON. Om du vill importera flerradig JSON, `isMultiLineJson` flagga måste anges. Mer information finns i [felsökningsguide för batchmatning](./troubleshooting.md).
+>Exemplen nedan är för enradig JSON. Om du vill importera flerradig JSON måste flaggan `isMultiLineJson` anges. Mer information finns i [felsökningsguiden för batchimport](./troubleshooting.md).
 
 **API-format**
 
@@ -97,7 +97,7 @@ Nu när du har skapat en batch kan du använda batch-ID:t från svaret när grup
 
 >[!NOTE]
 >
->I avsnittet Bilaga finns en [exempel på en korrekt formaterad JSON-datafil](#data-transformation-for-batch-ingestion).
+>I bilagan finns ett [exempel på en korrekt formaterad JSON-datafil](#data-transformation-for-batch-ingestion).
 
 **API-format**
 
@@ -232,7 +232,7 @@ curl -X POST "https://platform.adobe.io/data/foundation/import/batches" \
 
 ### Överför filer
 
-Nu när du har skapat en grupp kan du använda `batchId` från innan för att överföra filer till gruppen. Du kan överföra flera filer till gruppen.
+Nu när du har skapat en grupp kan du använda `batchId` från tidigare för att överföra filer till gruppen. Du kan överföra flera filer till gruppen.
 
 **API-format**
 
@@ -450,7 +450,7 @@ curl -X PATCH https://platform.adobe.io/data/foundation/import/batches/{BATCH_ID
 
 ### Fullständig stor fil
 
-Nu när du har skapat en grupp kan du använda `batchId` från innan för att överföra filer till gruppen. Du kan överföra flera filer till gruppen.
+Nu när du har skapat en grupp kan du använda `batchId` från tidigare för att överföra filer till gruppen. Du kan överföra flera filer till gruppen.
 
 **API-format**
 
@@ -513,7 +513,7 @@ curl -X POST https://platform.adobe.io/data/foundation/import/batches/{BATCH_ID}
 
 ## Importera CSV-filer
 
-För att kunna importera CSV-filer måste du skapa en klass, ett schema och en datauppsättning som stöder CSV. Detaljerad information om hur du skapar den klass och det schema som krävs finns i [självstudiekurs om att skapa ad hoc-schema](../../xdm/api/ad-hoc.md).
+För att kunna importera CSV-filer måste du skapa en klass, ett schema och en datauppsättning som stöder CSV. Detaljerad information om hur du skapar den klass och det schema som behövs finns i instruktionerna i [självstudiekursen ](../../xdm/api/ad-hoc.md) där du kan skapa ad hoc-scheman.
 
 >[!NOTE]
 >
@@ -617,11 +617,11 @@ curl -X POST https://platform.adobe.io/data/foundation/import/batches \
 
 ### Överför filer
 
-Nu när du har skapat en grupp kan du använda `batchId` från innan för att överföra filer till gruppen. Du kan överföra flera filer till gruppen.
+Nu när du har skapat en grupp kan du använda `batchId` från tidigare för att överföra filer till gruppen. Du kan överföra flera filer till gruppen.
 
 >[!NOTE]
 >
->I avsnittet Bilaga finns en [exempel på en korrekt formaterad CSV-datafil](#data-transformation-for-batch-ingestion).
+>I bilagan finns ett [exempel på en korrekt formaterad CSV-datafil](#data-transformation-for-batch-ingestion).
 
 **API-format**
 
@@ -720,7 +720,7 @@ curl -X POST https://platform.adobe.io/data/foundation/import/batches/{BATCH_ID}
 
 ## Ta bort en grupp {#delete-a-batch}
 
-En batch kan tas bort genom att utföra följande POST-begäran med `action=REVERT` frågeparameter till ID:t för den batch som du vill ta bort. Satsen är markerad som&quot;inaktiv&quot;, vilket gör att den kan användas för skräpinsamling. Batchen samlas in asynkront, och då markeras den som&quot;borttagen&quot;.
+En batch kan tas bort genom att utföra följande frågebegäran med frågeparametern `action=REVERT` till ID:t för den POST som du vill ta bort. Satsen är markerad som&quot;inaktiv&quot;, vilket gör att den kan användas för skräpinsamling. Batchen samlas in asynkront, och då markeras den som&quot;borttagen&quot;.
 
 **API-format**
 
@@ -758,10 +758,10 @@ Ibland kan det vara nödvändigt att uppdatera data i din organisations profilar
 
 Följande krävs för att korrigera en sats:
 
-- **En datauppsättning aktiverad för profiluppdateringar och attributuppdateringar.** Detta görs via datauppsättningstaggar och kräver en specifik `isUpsert:true` -taggen läggs till i `unifiedProfile` array. Följ självstudiekursen för mer information om hur du skapar en datauppsättning eller konfigurerar en befintlig datauppsättning för upsert [aktivera en datauppsättning för profiluppdateringar](../../catalog/datasets/enable-upsert.md).
-- **En Parquet-fil som innehåller de fält som ska korrigeras och identitetsfält för profilen.** Dataformatet för att patchera en batch liknar den vanliga batchöverföringsprocessen. De indata som krävs är en Parquet-fil, och utöver de fält som ska uppdateras måste de överförda data innehålla identitetsfälten för att matcha data i profilarkivet.
+- **En datauppsättning har aktiverats för profiluppdateringar och attributuppdateringar.** Detta görs via datauppsättningstaggar och kräver att en specifik `isUpsert:true` -tagg läggs till i `unifiedProfile`-arrayen. Följ självstudiekursen för [Aktivera en datauppsättning för profiluppdateringar](../../catalog/datasets/enable-upsert.md) om du vill ha mer information om hur du skapar en datauppsättning eller konfigurerar en befintlig datauppsättning för uppdatering.
+- **En Parquet-fil som innehåller fälten som ska korrigeras och identitetsfält för profilen.** Dataformatet för korrigering av en batch liknar den vanliga batchimporten. De indata som krävs är en Parquet-fil, och utöver de fält som ska uppdateras måste de överförda data innehålla identitetsfälten för att matcha data i profilarkivet.
 
-När du har en datauppsättning aktiverad för Profil och upsert, och en Parquet-fil som innehåller de fält du vill korrigera samt de nödvändiga identitetsfälten, kan du följa stegen för [inhämtning av Parquet-filer](#ingest-parquet-files) för att färdigställa plåstret via batchintag.
+När du har aktiverat en datauppsättning för profil och upsert samt en Parquet-fil som innehåller de fält som du vill korrigera samt de nödvändiga identitetsfälten, kan du följa stegen för [att importera Parquet-filer](#ingest-parquet-files) för att slutföra korrigeringen via batchförtäring.
 
 ## Spela upp en batch
 
@@ -843,7 +843,7 @@ curl -X POST https://platform.adobe.io/data/foundation/import/batches \
 
 ### Överför filer
 
-Nu när du har skapat en grupp kan du använda `batchId` från innan för att överföra filer till gruppen. Du kan överföra flera filer till gruppen.
+Nu när du har skapat en grupp kan du använda `batchId` från tidigare för att överföra filer till gruppen. Du kan överföra flera filer till gruppen.
 
 **API-format**
 
@@ -919,9 +919,9 @@ Följande avsnitt innehåller ytterligare information om hur man får in data i 
 
 ### Datatransformering för batchinmatning
 
-För att kunna importera en datafil till [!DNL Experience Platform]måste filens hierarkiska struktur överensstämma med [Experience Data Model (XDM)](../../xdm/home.md) schema som är associerat med den datauppsättning som överförs till.
+För att kunna importera en datafil till [!DNL Experience Platform] måste filens hierarkiska struktur överensstämma med det [Experience Data Model (XDM)](../../xdm/home.md) -schema som är associerat med den datauppsättning som överförs till.
 
-Information om hur du mappar en CSV-fil så att den överensstämmer med ett XDM-schema finns i [exempelomformningar](../../etl/transformations.md) -dokument tillsammans med ett exempel på en korrekt formaterad JSON-datafil. Exempelfiler som finns i dokumentet finns här:
+Information om hur du mappar en CSV-fil så att den överensstämmer med ett XDM-schema finns i dokumentet [sample transformations](../../etl/transformations.md) tillsammans med ett exempel på en korrekt formaterad JSON-datafil. Exempelfiler som finns i dokumentet finns här:
 
 - [CRM_profiles.csv](https://github.com/adobe/experience-platform-etl-reference/blob/master/example_files/CRM_profiles.csv)
 - [CRM_profiles.json](https://github.com/adobe/experience-platform-etl-reference/blob/master/example_files/CRM_profiles.json)

@@ -15,9 +15,9 @@ De insikter som bygger på analysen av er datamodell gör era Adobe Real-time Cu
 
 Förstå era målinsikter genom att använda den SQL som ligger till grund för dem och generera sedan egna insikter för att ytterligare utforska aktiveringen av data från Adobe Experience Platform till målplattformarna. Omvandla era rådata till nya användbara insikter genom att använda Real-Time CDP datamodell SQL som inspiration för att skapa frågor som passar just era affärsbehov.
 
-Se [Visa SQL-dokumentation](../view-sql.md) om du vill ha mer information om hur du anpassar dina insikter i SQL direkt via användargränssnittet i PLatform.
+Se [Visa SQL-dokumentation](../view-sql.md) om du vill ha mer information om hur du anpassar dina insikter direkt via användargränssnittet i PLatform.
 
-Du kan använda följande insikter som en del av [Kontrollpanel för destinationer](../guides/destinations.md) eller en egen [användardefinierad kontrollpanel](../user-defined-dashboards.md). Se [anpassningsöversikt](../customize/overview.md) för instruktioner om hur du anpassar kontrollpanelen eller [skapa och redigera nya widgetar](../customize/custom-widgets.md) i widgetbiblioteket och [användardefinierad kontrollpanel](../user-defined-dashboards.md#create-widget).
+Följande insikter är tillgängliga för dig att använda som en del av [Destinationspanelen](../guides/destinations.md) eller en anpassad [användardefinierad kontrollpanel](../user-defined-dashboards.md). Se [anpassningsöversikten](../customize/overview.md) för instruktioner om hur du anpassar din instrumentpanel eller [skapar och redigerar nya widgetar](../customize/custom-widgets.md) i widgetbiblioteket och [användardefinierad instrumentpanel](../user-defined-dashboards.md#create-widget).
 
 ## Aktiverade målgrupper {#activated-audiences}
 
@@ -48,7 +48,7 @@ WHERE
 
 +++
 
-Se [Dokumentation för widgeten Aktiverade målgrupper](../guides/destinations.md#activated-audiences) om du vill ha information om hur den här insikten ser ut och fungerar.
+Mer information om utseende och funktioner för den här insikten finns i dokumentationen för [widgeten Aktiverade målgrupper](../guides/destinations.md#activated-audiences).
 
 ## Aktiverade målgrupper över alla destinationer {#activated-audiences-across-all-destinations}
 
@@ -71,7 +71,7 @@ WHERE
 
 +++
 
-Se [Dokumentation för aktiverad målgrupp över alla målwidgetar](../guides/destinations.md#activated-audiences-across-all-destinations) om du vill ha information om hur den här insikten ser ut och fungerar.
+Se [Aktivera målgrupper för alla målgruppswidgetar ](../guides/destinations.md#activated-audiences-across-all-destinations) för information om utseendet och funktionaliteten för den här insikten.
 
 ## Aktiva destinationer per målplattform {#active-destinations-by-destination-platform}
 
@@ -96,7 +96,7 @@ SELECT destination_platform_name AS Destination_Platform_Name,
 
 +++
 
-Se [Dokumentation för aktiva destinationer efter målplattformswidget](../guides/destinations.md#active-destinations-by-destination-platform) om du vill ha information om hur den här insikten ser ut och fungerar.
+Mer information om utseendet och funktionaliteten för den här insikten finns i [dokumentationen för aktiva destinationer efter målplattformswidget](../guides/destinations.md#active-destinations-by-destination-platform).
 
 ## Trend för målgruppsstorlek {#audience-size-trend}
 
@@ -142,7 +142,7 @@ SELECT d.destination_name,
 
 +++
 
-Se [Widget för målgruppsstorlekstrend, dokumentation](../guides/destinations.md#audience-size-trend) om du vill ha information om hur den här insikten ser ut och fungerar.
+Mer information om utseende och funktioner för den här insikten finns i dokumentationen [Trendwidget för målgruppsstorlek](../guides/destinations.md#audience-size-trend).
 
 ## Gemensamma målgrupper {#common-audiences}
 
@@ -214,7 +214,7 @@ SELECT k.destination_name1,
 
 +++
 
-Se [Dokumentation för widgeten Vanliga målgrupper](../guides/destinations.md#common-audiences) om du vill ha information om hur den här insikten ser ut och fungerar.
+Mer information om utseendet och funktionaliteten för den här insikten finns i [dokumentationen för widgeten ](../guides/destinations.md#common-audiences) Vanliga målgrupper.
 
 ## Målstatus {#destination-status}
 
@@ -238,7 +238,7 @@ FROM qsaccel.profile_agg.adwh_dim_destination;
 
 +++
 
-Se [Dokumentation för widgeten Målstatus](../guides/destinations.md#destination-status) om du vill ha information om hur den här insikten ser ut och fungerar.
+Mer information om utseende och funktioner för den här insikten finns i [dokumentationen för målstatuswidgeten](../guides/destinations.md#destination-status).
 
 ## Antal destinationer {#destinations-count}
 
@@ -256,7 +256,7 @@ SELECT count(destination_id) AS total_number_of_destinations
 
 +++
 
-Se [Dokumentation för widgeten Antal destinationer](../guides/destinations.md#destinations-count) om du vill ha information om hur den här insikten ser ut och fungerar.
+Mer information om utseendet och funktionaliteten för den här insikten finns i dokumentationen [Widget för antal destinationer](../guides/destinations.md#destinations-count).
 
 ## Hälsa för mappade målgrupper {#mapped-audience-health}
 
@@ -325,7 +325,7 @@ SELECT destination_name,
 
 +++
 
-Se [Mappad dokumentation för målgruppens hälsowidget](../guides/destinations.md#mapped-audience-health) om du vill ha information om hur den här insikten ser ut och fungerar.
+Information om utseende och funktioner för den här insikten finns i [dokumentationen för den mappade målgruppens hälsowidget](../guides/destinations.md#mapped-audience-health).
 
 ## Mappade målgrupper {#mapped-audiences}
 
@@ -345,7 +345,7 @@ WHERE destination_id = 1458738325;
 
 +++
 
-Se [Mappad målgruppswidget - dokumentation](../guides/destinations.md#mapped-audiences) om du vill ha information om hur den här insikten ser ut och fungerar.
+Mer information om utseendet och funktionaliteten för den här insikten finns i dokumentationen för [Mappad målgruppswidget](../guides/destinations.md#mapped-audiences).
 
 <!-- Commented out until the Jan release as the SQL IS MISSING:
 ## Mapped audiences by identity {#mapped-audiences-by-identity}
@@ -393,7 +393,7 @@ SELECT qsaccel.profile_agg.adwh_dim_destination.destination_name,
 
 +++
 
-Se [Dokumentation för den mest använda målwidgeten](../guides/destinations.md#most-used-destinations) om du vill ha information om hur den här insikten ser ut och fungerar.
+Mer information om utseendet och funktionaliteten för den här insikten finns i [dokumentationen för den mest använda målwidgeten](../guides/destinations.md#most-used-destinations).
 
 ## Nyligen aktiverade målgrupper {#recently-activated-audiences}
 
@@ -424,7 +424,7 @@ LIMIT
 
 +++
 
-Se [Dokumentation för widgeten Nyligen aktiverade målgrupper](../guides/destinations.md#recently-activated-audiences) om du vill ha information om hur den här insikten ser ut och fungerar.
+I dokumentationen för [widgeten Senast aktiverade målgrupper](../guides/destinations.md#recently-activated-audiences) finns mer information om utseendet och funktionaliteten för den här insikten.
 
 ## Nyligen aktiverade målgrupper efter mål {#recently-activated-audiences-by-destination}
 
@@ -455,7 +455,7 @@ SELECT c.destination_name,
 
 +++
 
-Se [Dokumentation om den senast aktiverade målgruppen efter målwidget](../guides/destinations.md#recently-activated-audiences-by-destination) om du vill ha information om hur den här insikten ser ut och fungerar.
+Se [Dokumentation för målwidgeten som nyligen har aktiverats](../guides/destinations.md#recently-activated-audiences-by-destination) för information om utseendet och funktionaliteten för den här insikten.
 
 ## Nyligen skapade mål {#recently-created-destinations}
 
@@ -484,7 +484,7 @@ LIMIT
 
 +++
 
-Se [Dokumentation för den senast skapade målwidgeten](../guides/destinations.md#recently-created-destinations) om du vill ha information om hur den här insikten ser ut och fungerar.
+Mer information om utseendet och funktionaliteten för den här insikten finns i [dokumentationen för den nyligen skapade målwidgeten](../guides/destinations.md#recently-created-destinations) .
 
 <!-- Commented out until the Jan release as SQL MISSING FROM WIKI:
 
@@ -511,6 +511,6 @@ See the [Unmapped audiences by identity widget documentation](../guides/destinat
 
 Genom att läsa det här dokumentet förstår du nu vilken SQL-kod som genererar instrumentpanelsinsikter och vilka vanliga frågor som analysen löser. Nu kan du redigera och iterera igenom dessa SQL-frågor för att generera egna insikter.
 
-Se [Visa SQL-dokumentation](../view-sql.md) om du vill ha mer information om hur du anpassar dina insikter i SQL direkt via användargränssnittet i PLatform.
+Se [Visa SQL-dokumentation](../view-sql.md) om du vill ha mer information om hur du anpassar dina insikter direkt via användargränssnittet i PLatform.
 
-Du kan även läsa och förstå den SQL som genererar insikter för [Profiler](./profiles.md), [Kontoprofiler](./account-profiles.md) och [Målgrupper](./audiences.md) instrumentpaneler.
+Du kan också läsa och förstå SQL-koden som genererar insikter för kontrollpanelerna [Profiler](./profiles.md), [Kontoprofiler](./account-profiles.md) och [Publiker](./audiences.md).

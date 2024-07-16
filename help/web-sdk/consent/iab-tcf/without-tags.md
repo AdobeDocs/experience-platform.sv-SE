@@ -12,19 +12,19 @@ ht-degree: 0%
 
 # Integrera stödet för IAB TCF 2.0 med Platform Web SDK
 
-Den här guiden visar hur du integrerar Interactive Advertising Bureau Transparency &amp; Consent Framework, version 2.0 (IAB TCF 2.0) med Adobe Experience Platform Web SDK utan att använda taggar. En översikt över integrationen med IAB TCF 2.0 finns i [översikt](./overview.md). En guide om hur du integrerar med taggar finns i [Guiden IAB TCF 2.0 för taggar](./with-tags.md).
+Den här guiden visar hur du integrerar den interaktiva Advertising Bureau Transparency &amp; Consent Framework, version 2.0 (IAB TCF 2.0) med Adobe Experience Platform Web SDK utan att använda taggar. En översikt över integrationen med IAB TCF 2.0 finns i [översikten](./overview.md). En guide om hur du integrerar med taggar finns i guiden [IAB TCF 2.0 för taggar](./with-tags.md).
 
 ## Komma igång
 
-Den här guiden använder `__tcfapi` gränssnittet för att få tillgång till information om samtycke. Det kan vara enklare för er att integrera direkt med ert molnhanteringsföretag (CMP). Informationen i den här handboken kan dock fortfarande vara användbar eftersom CMP i allmänhet har funktioner som liknar TCF API.
+Den här guiden använder gränssnittet `__tcfapi` för att komma åt medgivandeinformationen. Det kan vara enklare för er att integrera direkt med ert molnhanteringsföretag (CMP). Informationen i den här handboken kan dock fortfarande vara användbar eftersom CMP i allmänhet har funktioner som liknar TCF API.
 
 >[!NOTE]
 >
->Exemplen förutsätter att koden körs innan `window.__tcfapi` är definierad på sidan. CMP kan tillhandahålla en krok där du kan köra dessa funktioner när `__tcfapi` objektet är klart.
+>Exemplen förutsätter att `window.__tcfapi` har definierats på sidan när koden körs. CMP:er kan tillhandahålla en krok där du kan köra dessa funktioner när `__tcfapi`-objektet är klart.
 
 Om du vill använda IAB TCF 2.0 med taggar och Adobe Experience Platform Web SDK-tillägget måste du ha ett XDM-schema tillgängligt. Om du inte har konfigurerat något av dessa kan du börja med att visa den här sidan innan du fortsätter.
 
-Den här guiden kräver dessutom att du har en fungerande förståelse för Adobe Experience Platform Web SDK. Om du vill ha en snabb uppdatering kan du läsa [Adobe Experience Platform Web SDK - översikt](../../home.md) och [Frågor och svar](../../faq.md) dokumentation.
+Den här guiden kräver dessutom att du har en fungerande förståelse för Adobe Experience Platform Web SDK. Läs [Adobe Experience Platform Web SDK-översikten](../../home.md) och [Vanliga frågor](../../faq.md) om du vill få en snabb uppdatering.
 
 ## Aktivera standardmedgivande
 
@@ -32,7 +32,7 @@ Om du vill behandla alla okända användare på samma sätt kan du ange [`defaul
 
 ### Ange standardsamtycke baserat på `gdprApplies`
 
-Vissa datahanteringsplattformar gör det möjligt att avgöra om den allmänna dataskyddsförordningen (GDPR) gäller för kunden. Om du vill anta samtycke för kunder där GDPR inte gäller kan du använda `gdprApplies` -flaggan i TCF API-anropet.
+Vissa datahanteringsplattformar gör det möjligt att avgöra om den allmänna dataskyddsförordningen (GDPR) gäller för kunden. Om du vill anta samtycke för kunder där GDPR inte gäller kan du använda flaggan `gdprApplies` i TCF API-anropet.
 
 I följande exempel visas ett sätt att göra detta:
 
@@ -46,11 +46,11 @@ window.__tcfapi('getTCData', 2, function (tcData, success) {
 });
 ```
 
-I det här exemplet `configure` anropas efter `tcData` hämtas från TCF API. If `gdprApplies` är true, standardsamtycke är inställt på `pending`. If `gdprApplies` är falskt, standardsamtycke är inställt på `in`. Var noga med att fylla i `alloyConfiguration` med din konfiguration.
+I det här exemplet anropas kommandot `configure` efter att `tcData` har hämtats från TCF API. Om `gdprApplies` är true anges standardmedgivande till `pending`. Om `gdprApplies` är falskt anges standardsamtycke till `in`. Se till att du fyller i variabeln `alloyConfiguration` med din konfiguration.
 
 >[!NOTE]
 >
->När standardsamtycke är inställt på `in`, `setConsent` kan fortfarande användas för att registrera dina kunders medgivandeinställningar.
+>När standardmedgivandet är inställt på `in` kan kommandot `setConsent` fortfarande användas för att registrera dina kunders medgivandeinställningar.
 
 ## Använda händelsen setConsent
 
@@ -77,13 +77,13 @@ window.__tcfapi('addEventListener', 2, function (tcData, success) {
 });
 ```
 
-Det här kodblocket lyssnar efter `useractioncomplete` -händelsen och anger sedan medgivandet, skickar medgivandesträngen och `gdprApplies` flagga. Om ni har anpassade identiteter för era kunder måste ni fylla i `identityMap` variabel. Se guiden på [setConsent](../../../web-sdk/commands/setconsent.md) för mer information.
+Det här kodblocket lyssnar efter `useractioncomplete`-händelsen och anger sedan medgivandet och skickar medgivandesträngen och `gdprApplies`-flaggan. Om du har anpassade identiteter för dina kunder måste du fylla i variabeln `identityMap`. Mer information finns i guiden för [setConsent](../../../web-sdk/commands/setconsent.md).
 
 ## Inkludera medgivandeinformation i sendEvent
 
 Inom XDM-scheman kan du lagra information om medgivandeinställningar från Experience Events. Det finns två sätt att lägga till den här informationen i varje händelse.
 
-Först kan du ange relevant XDM-schema för varje `sendEvent` ring. I följande exempel visas ett sätt att göra detta:
+Först kan du tillhandahålla relevant XDM-schema för varje `sendEvent`-anrop. I följande exempel visas ett sätt att göra detta:
 
 ```javascript
 var sendEventOptions = { ... };
@@ -102,8 +102,8 @@ window.__tcfapi('getTCData', 2, function (tcData, success) {
 
 Det här exemplet hämtar medgivandeinformationen för TCF API och skickar sedan en händelse med medgivandeinformationen som lagts till i XDM-schemat.
 
-Det andra sättet att lägga till medgivandeinformationen i varje begäran är med [`onBeforeEventSend`](/help/web-sdk/commands/configure/onbeforeeventsend.md) återanrop.
+Det andra sättet att lägga till medgivandeinformationen i varje begäran är med återanropet [`onBeforeEventSend`](/help/web-sdk/commands/configure/onbeforeeventsend.md).
 
 ## Nästa steg
 
-Nu när du har lärt dig att använda IAB TCF 2.0 med Platform Web SDK-tillägget kan du även integrera med andra Adobe-lösningar som Adobe Analytics eller Adobe Real-time Customer Data Platform. Se [Översikt över IAB Transparency &amp; Consent Framework 2.0](./overview.md) för mer information.
+Nu när du har lärt dig att använda IAB TCF 2.0 med Platform Web SDK-tillägget kan du även integrera med andra Adobe-lösningar som Adobe Analytics eller Adobe Real-time Customer Data Platform. Mer information finns i [Översikt över IAB Transparency &amp; Consent Framework 2.0](./overview.md).

@@ -2,7 +2,7 @@
 keywords: Experience Platform;hem;populära ämnen;ip-adress;ip address;ip address tillåtelselista; tillåtelselista;
 description: IP-adresser måste läggas till tillåtelselista innan du kan arbeta med källanslutningar.
 solution: Experience Platform
-title: IP-adress Tillåtelselista för källanslutningar
+title: IP-adress Tillåtelselista för Source-anslutningar
 exl-id: 40093c80-dbdb-4dc1-97bb-81a8200b731f
 source-git-commit: bcd74083169c40966d7de8ba7b79082931a6744d
 workflow-type: tm+mt
@@ -69,7 +69,7 @@ Du kan definiera nätverksåtkomstkontroller via nätverkets brandvägg. Genom a
 
 ## IP-adress tillåtelselista för strömningskällor {#streaming}
 
-Du måste lägga till följande IP-adresser i tillåtelselista för att tillåta trafik för dataöverföringstjänsten för strömningskällor som [[!DNL Amazon Kinesis]](./connectors/cloud-storage/kinesis.md), [[!DNL Azure Event Hub]](./connectors/cloud-storage/eventhub.md), [[!DNL Google PubSub]](./connectors/cloud-storage/google-pubsub.md)och [[!DNL Snowflake Streaming]](./connectors/databases/snowflake-streaming.md).
+Du måste lägga till följande IP-adresser i tillåtelselista för att tillåta trafik för dataöverföringstjänsten för strömningskällor som [[!DNL Amazon Kinesis]](./connectors/cloud-storage/kinesis.md), [[!DNL Azure Event Hub]](./connectors/cloud-storage/eventhub.md), [[!DNL Google PubSub]](./connectors/cloud-storage/google-pubsub.md) och [[!DNL Snowflake Streaming]](./connectors/databases/snowflake-streaming.md).
 
 >[!BEGINTABS]
 

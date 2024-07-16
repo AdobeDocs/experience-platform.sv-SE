@@ -22,9 +22,9 @@ To view dashboards in Adobe Experience Platform you must have the appropriate pe
 
 ## Skapa en anpassad kontrollpanel
 
-Om du vill skapa en anpassad kontrollpanel navigerar du först till instrumentpanelens lager. Välj **[!UICONTROL Dashboards]** från vänster navigering i plattformsgränssnittet följt av **[!UICONTROL Create dashboard]**.
+Om du vill skapa en anpassad kontrollpanel navigerar du först till instrumentpanelens lager. Välj **[!UICONTROL Dashboards]** i den vänstra navigeringen i plattformsgränssnittet följt av **[!UICONTROL Create dashboard]**.
 
-![Kontrollpanelens lager med kontrollpaneler i den vänstra navigeringen och&quot;Skapa kontrollpanel&quot; markerat.](./images/user-defined-dashboards/create-dashboard.png)
+![Kontrollpanelens lager med instrumentpaneler i den vänstra navigeringen och&quot;Skapa instrumentpanel&quot; markerat.](./images/user-defined-dashboards/create-dashboard.png)
 
 Innan du lägger till en anpassad kontrollpanel är kontrollpanelernas lager tomt och en&quot;Inga kontrollpaneler hittades&quot; visas. meddelande. När du har skapat en kontrollpanel visas alla kontrollpaneler i kontrollpanelens lager.
 
@@ -33,7 +33,7 @@ Innan du lägger till en anpassad kontrollpanel är kontrollpanelernas lager tom
 >To edit an existing dashboard, select the dashboard name from the inventory list followed by the pencil icon (![A pencil icon.](./images/user-defined-dashboards/edit-icon.png))
 >![A custom inventory listed in the dashboard inventory.](./images/user-defined-dashboards/dashbaord-inventory.png "A custom inventory listed in the dashboard inventory."){width="100" zoomable="yes"} -->
 
-The [!UICONTROL Create dashboard] visas. Ange ett användarvänligt, beskrivande namn för den samling widgetar som du vill skapa och välj **[!UICONTROL Save]**.
+Dialogrutan [!UICONTROL Create dashboard] visas. Ange ett användarvänligt, beskrivande namn för den samling widgetar som du vill skapa och välj **[!UICONTROL Save]**.
 
 ![Dialogrutan Skapa kontrollpanel.](./images/user-defined-dashboards/create-dashboard-dialog.png)
 
@@ -46,29 +46,29 @@ Den nya tomma kontrollpanelen visas med ditt valda namn i vyns övre vänstra h�
 >[!CONTEXTUALHELP]
 >id="platform_dashboards_udd_maxwidgets"
 >title="Maximalt antal widgetar"
->abstract="Instrumentpanelstjänsten stöder upp till tio widgetar. När du har lagt till tio widgetar på din instrumentpanel visas [!UICONTROL Add new widget] är inaktiverat och visas som grått."
+>abstract="Instrumentpanelstjänsten stöder upp till tio widgetar. När du har lagt till tio widgetar på din instrumentpanel är alternativet [!UICONTROL Add new widget] inaktiverat och visas i grått."
 
-Välj **[!UICONTROL Add new widget]** för att börja skapa widgeten.
+I den nya instrumentpanelsvyn väljer du **[!UICONTROL Add new widget]** för att börja skapa widgeten.
 
 >[!IMPORTANT]
 >
->Varje kontrollpanel stöder upp till tio widgetar. När du har lagt till tio widgetar på din instrumentpanel visas [!UICONTROL Add new widget] är inaktiverat och visas som grått.
+>Varje kontrollpanel stöder upp till tio widgetar. När du har lagt till tio widgetar på din instrumentpanel är alternativet [!UICONTROL Add new widget] inaktiverat och visas i grått.
 
 ![Den nya tomma instrumentpanelen med Lägg till ny widget markerad.](./images/user-defined-dashboards/add-new-widget.png)
 
 ### Widget Composer
 
-Arbetsytan för widgetens disposition visas. Nästa, välj **[!UICONTROL Select data]** för att välja den datamodell från vilken du vill lägga till attribut till dina widgetar.
+Arbetsytan för widgetens disposition visas. Välj sedan **[!UICONTROL Select data]** för att välja den datamodell från vilken du vill lägga till attribut till dina widgetar.
 
-![Arbetsytan i widgetens disposition.](./images/user-defined-dashboards/widget-composer.png)
+![Arbetsytan för widgetdisposition.](./images/user-defined-dashboards/widget-composer.png)
 
 #### Välj datamodell {#select-data-model}
 
-The [!UICONTROL Select data model] visas. Välj en datamodell i den vänstra kolumnen om du vill visa en förhandsvisningslista över alla tillgängliga tabeller. Den förkonfigurerade datamodellen för Real-time Customer Data Platform har ett namn [!UICONTROL CDPInsights].
+Dialogrutan [!UICONTROL Select data model] visas. Välj en datamodell i den vänstra kolumnen om du vill visa en förhandsvisningslista över alla tillgängliga tabeller. Den förkonfigurerade datamodellen för Real-time Customer Data Platform har namnet [!UICONTROL CDPInsights].
 
 >[!TIP]
 >
->Välj informationsikonen (![En informationsikon.](./images/user-defined-dashboards/info-icon.png)) för att se det fullständiga datamodellnamnet om det är för långt att visa i dataraden.
+>Välj informationsikonen (![En informationsikon.](./images/user-defined-dashboards/info-icon.png)) om du vill visa det fullständiga datamodellnamnet om det är för långt att visa i dataraden.
 
 ![Dialogrutan Välj data.](./images/user-defined-dashboards/select-data-model-dialog.png)
 
@@ -77,7 +77,7 @@ Förhandsvisningslistan innehåller information om tabellerna i datamodellen. Ta
 | Kolumnfält | Beskrivning |
 |---|---|
 | [!UICONTROL Title] | Tabellens namn. |
-| [!UICONTROL Table type] | Tabelltyp. Möjliga typer är: `fact`, `dimension`och `none`. |
+| [!UICONTROL Table type] | Tabelltyp. Möjliga typer är: `fact`, `dimension` och `none`. |
 | [!UICONTROL Records] | Antalet poster som är associerade med den valda tabellen. |
 | [!UICONTROL Lookups] | Antalet tabeller som är kopplade till den valda tabellen. |
 | [!UICONTROL Attributes] | Antalet attribut för den valda tabellen. |
@@ -86,69 +86,69 @@ Välj **[!UICONTROL Next]** för att bekräfta ditt val av datamodell. I nästa 
 
 ### Fyll i widget {#populate-widget}
 
-The [!UICONTROL Preview] panelen innehåller flikar för [!UICONTROL Sample records] och [!UICONTROL Attributes]. The [!UICONTROL Sample records] -fliken innehåller en delmängd av posterna från den markerade tabellen i en tabellvy. The [!UICONTROL Attributes] -fliken innehåller attributnamnet, datatypen och källtabellen för alla attribut som är associerade med den valda tabellen.
+Panelen [!UICONTROL Preview] innehåller flikar för [!UICONTROL Sample records] och [!UICONTROL Attributes]. Fliken [!UICONTROL Sample records] innehåller en delmängd av posterna från den markerade tabellen i en tabellvy. Fliken [!UICONTROL Attributes] innehåller attributnamnet, datatypen och källtabellen för alla attribut som är associerade med den valda tabellen.
 
-Välj en tabell från listan som är tillgänglig i den vänstra listen för att ange data för din widget och välj **[!UICONTROL Select]** för att gå tillbaka till widgetens disposition.
+Välj en tabell i listan som är tillgänglig i den vänstra listen för att tillhandahålla data för din widget och välj **[!UICONTROL Select]** för att återgå till widgetens disposition.
 
-![Dialogrutan Välj data med det valda alternativet markerat.](./images/user-defined-dashboards/select-a-table.png)
+![Dialogrutan Välj data med markerad markering.](./images/user-defined-dashboards/select-a-table.png)
 
 Widgetdispositionen är nu ifylld med data från den tabell du valt.
 
-Datamodellen och den markerade tabellen visas längst upp i den vänstra listen, och de attribut som är tillgängliga för att skapa widgeten visas i [!UICONTROL Attributes] kolumn. Du kan använda sökfältet för att söka efter attribut i stället för att bläddra i listan, eller ändra den valda datamodellen genom att välja pennikonen (![Pennikon.](./images/user-defined-dashboards/edit-icon.png)) i den vänstra listen.
+Datamodellen och den markerade tabellen visas högst upp i den vänstra listen, och de attribut som är tillgängliga för att skapa widgeten visas i kolumnen [!UICONTROL Attributes]. Du kan använda sökfältet för att söka efter attribut i stället för att bläddra i listan, eller ändra den valda datamodellen genom att välja pennikonen (![pennikonen).](./images/user-defined-dashboards/edit-icon.png)) i den vänstra listen.
 
-![En widget ifylld med data i widgetens disposition.](./images/user-defined-dashboards/populated-widget-composer.png)
+![En widget med data i widgetdispositionen.](./images/user-defined-dashboards/populated-widget-composer.png)
 
 #### Lägg till och filtrera attribut {#add-and-filter-attributes}
 
-Välj ikonen Lägg till (![En ikon för att lägga till.](./images/user-defined-dashboards/add-icon.png)) bredvid ett attributnamn för att lägga till ett attribut i widgeten. I listrutan som visas kan du lägga till ett attribut som X-axel, Y-axel, färg eller filter för widgeten. The [!UICONTROL Color] Med -attribut kan du differentiera resultatet för X- och Y-axelmarkeringarna baserat på färg. Det gör du genom att dela upp resultaten i olika färger baserat på deras komposition i ett tredje attribut.
+Välj ikonen Lägg till (![En ikon för att lägga till.](./images/user-defined-dashboards/add-icon.png)) bredvid ett attributnamn för att lägga till ett attribut i din widget. I listrutan som visas kan du lägga till ett attribut som X-axel, Y-axel, färg eller filter för widgeten. Med attributet [!UICONTROL Color] kan du differentiera resultatet av X- och Y-axelmarkeringarna baserat på färg. Det gör du genom att dela upp resultaten i olika färger baserat på deras komposition i ett tredje attribut.
 
 >[!TIP]
 >
->Om du vill vända X- och Y-axelns placering, markerar du upp- och nedpilen (![Ikonen med upp- och nedpilarna.](./images/user-defined-dashboards/switch-axis-icon.png)) för att ändra deras arrangemang.
+>Om du vill vända placeringen av X- och Y-axeln markerar du upp- och nedpilen (![Ikonen med upp- och nedpilen.](./images/user-defined-dashboards/switch-axis-icon.png)) om du vill ändra deras disposition.
 
 ![Widgetdispositionen med listrutan för att lägga till ikon markerad.](./images/user-defined-dashboards/attributes-dropdown.png)
 
-Om du vill ändra diagramtyp eller diagram för din widget väljer du [!UICONTROL Marks] och välj bland de tillgängliga alternativen. Du kan välja mellan staplar, punkter, fästpunkter, linjer och ytor. När du har valt det här alternativet genereras en förhandsvisningsbild av widgetens aktuella inställningar.
+Om du vill ändra diagramtyp eller diagram för din widget markerar du listrutan [!UICONTROL Marks] och väljer bland de tillgängliga alternativen. Du kan välja mellan staplar, punkter, fästpunkter, linjer och ytor. När du har valt det här alternativet genereras en förhandsvisningsbild av widgetens aktuella inställningar.
 
 ![Widgetdispositionen med listrutan Märken markerad.](./images/user-defined-dashboards/marks-dropdown.png)
 
-Genom att lägga till ett attribut som ett filter kan du välja vilka värden som ska inkluderas eller exkluderas från widgeten. När du har lagt till ett filter från attributlistan visas [!UICONTROL Filter] visas där du kan markera eller avmarkera värden med hjälp av deras kryssruta.
+Genom att lägga till ett attribut som ett filter kan du välja vilka värden som ska inkluderas eller exkluderas från widgeten. När du har lagt till ett filter från attributlistan visas dialogrutan [!UICONTROL Filter] där du kan markera eller avmarkera värden med hjälp av deras kryssruta.
 
-![Filterdialogrutan för att filtrera värden från widgeten.](./images/user-defined-dashboards/filter-dialog.png)
+![Filterdialogrutan för att filtrera värden från din widget.](./images/user-defined-dashboards/filter-dialog.png)
 
 #### Filtrera bort historiska data {#filter-historical-data}
 
-Om du vill filtrera bort historiska data från de insikter som din widget genererar lägger du till `date_key` attribut som ett filter och markera **[!UICONTROL Recent date]** följt av **[!UICONTROL Apply]**. Det här filtret ser till att de data som används för att härleda insikter hämtas från den senaste ögonblicksbilden av systemet.
+Om du vill filtrera bort historiska data från insikter som genererats av din widget lägger du till attributet `date_key` som ett filter och väljer **[!UICONTROL Recent date]** följt av **[!UICONTROL Apply]**. Det här filtret ser till att de data som används för att härleda insikter hämtas från den senaste ögonblicksbilden av systemet.
 
-![The [!UICONTROL Filter: date_key] dialogruta med [!UICONTROL Recent date] och [!UICONTROL Apply] markerad.](./images/user-defined-dashboards/recent-date.png)
+![Dialogrutan [!UICONTROL Filter: date_key] med [!UICONTROL Recent date] och [!UICONTROL Apply] markerade.](./images/user-defined-dashboards/recent-date.png)
 
-Du kan också skapa en egen punkt för att filtrera data efter. Välj **[!UICONTROL Select dates]** för att utöka dialogrutan med en lista över tillgängliga datum. Använd **[!UICONTROL Select all]** om du vill aktivera eller inaktivera alla tillgängliga alternativ, eller markera kryssrutan för varje dag för sig. Äntligen väljer du **[!UICONTROL Apply]** för att bekräfta dina val.
+Du kan också skapa en egen punkt för att filtrera data efter. Välj **[!UICONTROL Select dates]** om du vill utöka dialogrutan med en lista över tillgängliga datum. Använd kryssrutan **[!UICONTROL Select all]** om du vill aktivera eller inaktivera alla tillgängliga alternativ, eller markera kryssrutan för varje dag individuellt. Slutligen väljer du **[!UICONTROL Apply]** för att bekräfta dina val.
 
 >[!NOTE]
 >
->Om `date_key` -attributet har redan lagts till som ett filter, markera ellipsen följt av **[!UICONTROL Edit]** i listrutan för att ändra filterperioden.
+>Om attributet `date_key` redan har lagts till som ett filter väljer du ellipsen följt av **[!UICONTROL Edit]** i listrutan för att ändra filterperioden.
 
-![The [!UICONTROL Filter: date_key] med individuella dagkryssrutor både markerade och avmarkerade.](./images/user-defined-dashboards/select-dates.png)
+![Dialogrutan [!UICONTROL Filter: date_key] med kryssrutor för enskilda dagar är både markerad och avmarkerad.](./images/user-defined-dashboards/select-dates.png)
 
 ### Widget-egenskaper
 
-Välj egenskapsikonen (![Egenskapsikonen.](./images/user-defined-dashboards/properties-icon.png)) till höger för att öppna egenskapspanelen. I [!UICONTROL Properties] anger du ett namn för widgeten på panelen [!UICONTROL Widget title] textfält.
+Välj egenskapsikonen (![Egenskapsikonen.](./images/user-defined-dashboards/properties-icon.png)) till höger för att öppna egenskapspanelen. Ange ett namn för widgeten i textfältet [!UICONTROL Widget title] på panelen [!UICONTROL Properties].
 
 ![Egenskapspanelen med egenskapsikonen och widgetens titelfält markerat.](./images/user-defined-dashboards/properties-panel.png)
 
-På panelen för widgegenskaper kan du redigera flera aspekter av widgeten. Du har fullständig kontroll för att redigera platsen för widgetens förklaring. Om du vill flytta teckenförklaringen väljer du [!UICONTROL Legend placement] och välj en plats i listan med tillgängliga alternativ. Du kan också byta namn på etiketten som är kopplad till teckenförklaringen och X- eller Y-axeln genom att ange ett nytt namn i [!UICONTROL Legend title] textfält, eller [!UICONTROL Axis label] textfält.
+På panelen för widgegenskaper kan du redigera flera aspekter av widgeten. Du har fullständig kontroll för att redigera platsen för widgetens förklaring. Om du vill flytta teckenförklaringen markerar du listrutan [!UICONTROL Legend placement] och väljer önskad plats i listan med tillgängliga alternativ. Du kan också byta namn på etiketten som är kopplad till teckenförklaringen och X- eller Y-axeln genom att ange ett nytt namn i textfältet [!UICONTROL Legend title] respektive textfältet [!UICONTROL Axis label].
 
 #### Spara din widget {#save-widget}
 
-När du sparar i widgetens disposition sparas widgeten lokalt på din instrumentpanel. Om du vill spara ditt arbete och återuppta det vid ett senare tillfälle väljer du **[!UICONTROL Save]**. En bockikon under widgetens namn anger att widgeten har sparats. När du är nöjd med widgeten kan du också välja **[!UICONTROL Save and close]** för att göra widgeten tillgänglig för alla andra användare med tillgång till din instrumentpanel. Välj **[!UICONTROL Cancel]** om du vill avbryta ditt arbete och gå tillbaka till din anpassade kontrollpanel.
+När du sparar i widgetens disposition sparas widgeten lokalt på din instrumentpanel. Om du vill spara ditt arbete och återuppta det senare väljer du **[!UICONTROL Save]**. En bockikon under widgetens namn anger att widgeten har sparats. När du är nöjd med din widget kan du också välja **[!UICONTROL Save and close]** för att göra widgeten tillgänglig för alla andra användare med åtkomst till din instrumentpanel. Välj **[!UICONTROL Cancel]** om du vill avbryta ditt arbete och återgå till din anpassade instrumentpanel.
 
 ![Bekräftelse på sparande av ny widget.](./images/user-defined-dashboards/save-confirmation.png)
 
 >[!TIP]
 >
->Välj egenskapsikonen (![Egenskapsikonen.](./images/user-defined-dashboards/properties-icon.png)) bredvid instrumentpanelens namn för att se information om hur den har skapats. Du kan ändra namnet på kontrollpanelen i den dialogruta som visas.
+>Välj egenskapsikonen (![Egenskapsikonen.](./images/user-defined-dashboards/properties-icon.png)) bredvid instrumentpanelens namn för att se information om hur den skapades. Du kan ändra namnet på kontrollpanelen i den dialogruta som visas.
 
-Du kan ordna om widgetar och ändra storlek på dem i den här arbetsytan. Välj **[!UICONTROL Save]** för att bevara instrumentpanelens namn och konfigurerade layout.
+Du kan ordna om widgetar och ändra storlek på dem i den här arbetsytan. Välj **[!UICONTROL Save]** om du vill bevara instrumentpanelens namn och konfigurerade layout.
 
 ![Den användardefinierade kontrollpanelen med en anpassad widget och knappen Spara markerad.](./images/user-defined-dashboards/user-defined-dashboard.png)
 
@@ -162,23 +162,23 @@ När du har skapat en widget kan du redigera, duplicera eller ta bort hela widge
 >
 >Om du vill växla mellan dina befintliga anpassade kontrollpaneler väljer du Kontrollpaneler i det vänstra navigeringsfältet och sedan instrumentpanelens namn i lagerlistan.
 
-Välj pennikonen (![En pennikon.](./images/user-defined-dashboards/edit-icon.png)) längst upp till höger på din anpassade kontrollpanel för att gå till redigeringsläget.
+Välj pennikonen (![En pennikon.](./images/user-defined-dashboards/edit-icon.png)) längst upp till höger på din anpassade instrumentpanel för att gå till redigeringsläget.
 
 ![En anpassad kontrollpanel med pennikonen markerad.](./images/user-defined-dashboards/edit-mode.png)
 
 Markera sedan ellipserna i det övre högra hörnet av widgeten som du vill redigera, kopiera eller ta bort. Välj lämplig åtgärd i listrutan.
 
-![En widget i en anpassad kontrollpanel där ellipserna och dubblettwidgeten är markerade.](./images/user-defined-dashboards/duplicate.png)
+![En widget i en anpassad instrumentpanel med ellipserna och dubblettwidgeten markerade.](./images/user-defined-dashboards/duplicate.png)
 
 >[!NOTE]
 >
->Med duplicering kan du anpassa attributen för en insikt för att skapa en unik widget utan att behöva börja från början. Om du duplicerar en widget visas den på din anpassade kontrollpanel. Du kan sedan markera ellipserna för din nya widget, följt av **[!UICONTROL Edit]**, för att anpassa dina insikter.
+>Med duplicering kan du anpassa attributen för en insikt för att skapa en unik widget utan att behöva börja från början. Om du duplicerar en widget visas den på din anpassade kontrollpanel. Du kan sedan välja ellipserna för din nya widget, följt av **[!UICONTROL Edit]**, för att anpassa dina insikter.
 
 ## Nästa steg och ytterligare resurser
 
 Genom att läsa det här dokumentet får du en bättre förståelse för hur du skapar en anpassad kontrollpanel och hur du skapar, redigerar och uppdaterar anpassade widgetar för den instrumentpanelen.
 
-Identifiera tillgängliga förkonfigurerade mått och visualiseringar för [profiler](./guides/profiles.md#standard-widgets), [segment](./guides/audiences.md#standard-widgets)och [mål](./guides/destinations.md#standard-widgets) på kontrollpaneler, se listan över standardwidgetar i deras respektive dokumentation.
+Om du vill identifiera tillgängliga förkonfigurerade mått och visualiseringar för kontrollpanelerna [profiler](./guides/profiles.md#standard-widgets), [segment](./guides/audiences.md#standard-widgets) och [mål](./guides/destinations.md#standard-widgets) kan du läsa listan med standardwidgetar i deras respektive dokumentation.
 
 Titta på följande video för att få en bättre förståelse för instrumentpaneler i Experience Platform:
 

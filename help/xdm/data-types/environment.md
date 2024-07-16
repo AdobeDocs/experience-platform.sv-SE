@@ -11,20 +11,20 @@ ht-degree: 0%
 
 ---
 
-# [!UICONTROL Environment] datatyp
+# Datatypen [!UICONTROL Environment]
 
-[!UICONTROL Environment] är en standard-XDM-datatyp som beskriver den omgivande miljön för en observerad händelse, som särskilt beskriver tillfällig information som nätverks- och programversioner.
+[!UICONTROL Environment] är en standard-XDM-datatyp som beskriver den omgivande miljön för en observerad händelse, särskilt detaljerad information om övergångar, till exempel nätverks- och programversioner.
 
 >[!IMPORTANT]
 >
->Alla värden ska justeras mot [DeviceAtlas](https://deviceatlas.com) databas, licensierad av Adobe.
+>Alla värden ska justeras mot databasen [DeviceAtlas](https://deviceatlas.com), som licensieras av Adobe.
 
 <img src="../images/data-types/environment.png" width="400" /><br />
 
 | Egenskap | Datatyp | Beskrivning |
 | --- | --- | --- |
-| `_dc` | Objekt | Ett objekt som innehåller ett enda fält, `language`, som anger vilket språk som används i miljön för att representera användarens språkliga, geografiska eller kulturella preferenser för datapresentation. Språk anges i språkkoden enligt definitionen i [IETF RFC 3066](https://www.ietf.org/rfc/rfc3066.txt). |
-| `browserDetails` | [Webbläsarinformation](./browser-details.md) | Beskriver den webbläsarspecifika informationen om miljön, till exempel webbläsarnamn, version, JavaScript-version, användaragentsträng och språk. |
+| `_dc` | Objekt | Ett objekt som innehåller ett enskilt fält, `language`, som anger vilket språk i miljön som ska representera användarens språkliga, geografiska eller kulturella inställningar för datapresentation. Språk anges i språkkoden enligt definitionen i [IETF RFC 3066](https://www.ietf.org/rfc/rfc3066.txt). |
+| `browserDetails` | [Webbläsarinformation](./browser-details.md) | Beskriver webbläsarspecifik information om miljön, t.ex. webbläsarnamn, version, JavaScript-version, användaragentsträng och språk. |
 | `ISP` | Sträng | Namnet på användarens internetleverantör. |
 | `carrier` | Sträng | Namnet på mobilnätets operatör eller MNO (även kallat trådlös tjänsteleverantör, trådlös operatör, mobilföretag eller mobilnätsoperatör) som säljer och levererar kommunikationstjänster till användaren. |
 | `colorDepth` | Heltal | Antalet bitar som används för varje färgkomponent i en enda pixel. |
@@ -32,10 +32,10 @@ ht-degree: 0%
 | `domain` | Sträng | Domänen för användarens Internet-leverantör. |
 | `ipV4` | Sträng | Den numeriska etikett som tilldelats en enhet som deltar i ett datornätverk som använder Internet Protocol för kommunikation (32-bitars). |
 | `ipV6` | Sträng | Den numeriska etikett som tilldelats en enhet som deltar i ett datornätverk som använder Internet Protocol för kommunikation (128-bitars). |
-| `operatingSystem` | Sträng | Namnet på det operativsystem som användes när observationen gjordes. Attributet får inte innehålla versionsinformation som `10.5.3`, men innehåller i stället&quot;edition&quot;, som `Ultimate` eller `Professional`. |
+| `operatingSystem` | Sträng | Namnet på det operativsystem som användes när observationen gjordes. Attributet ska inte innehålla versionsinformation som `10.5.3`, utan i stället innehålla versionsbeteckningar som `Ultimate` eller `Professional`. |
 | `operatingSystemVendor` | Sträng | Namnet på operativsystemets leverantör som användes när observationen gjordes. |
 | `operatingSystemVersion` | Sträng | Den fullständiga versionsidentifieraren för det operativsystem som användes när observationen gjordes. Versioner är vanligtvis numeriskt sammansatta men kan vara i ett leverantörsdefinierat format. |
-| `type` | Sträng | Typ av programmiljö. Se [appendix](#type) för godkända värden. |
+| `type` | Sträng | Typ av programmiljö. Godkända värden finns i [bilagan](#type). |
 | `viewportHeight` | Heltal | Den lodräta storleken i pixlar på fönstret som upplevelsen visades inuti. För en webbvyhändelse är detta höjden på webbläsarens visningsruta. |
 | `viewPortWidth` | Heltal | Den vågräta storleken i pixlar på fönstret som upplevelsen visades inuti. För en webbvyhändelse är detta bredden på webbläsarens visningsruta. |
 
@@ -48,11 +48,11 @@ Mer information om datatypen finns i den offentliga XDM-databasen:
 
 ## Bilaga
 
-Följande avsnitt innehåller ytterligare information om [!UICONTROL Device] datatyp.
+Följande avsnitt innehåller ytterligare information om datatypen [!UICONTROL Device].
 
 ## Godkända värden för typ {#type}
 
-I följande tabell visas godkända värden för `type` och deras innebörd:
+I följande tabell visas godkända värden för `type` och deras associerade betydelse:
 
 | Värde | Beskrivning |
 | --- | --- |

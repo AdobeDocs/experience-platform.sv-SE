@@ -13,11 +13,11 @@ ht-degree: 0%
 
 # Hantera användare för en produktprofil
 
-Om du vill tilldela eller ta bort användare från en produktprofil öppnar du profilens informationssida och går till **[!UICONTROL Users]** -fliken. Välj **[!UICONTROL Add User]**.
+Om du vill tilldela eller ta bort användare från en produktprofil öppnar du profilens informationssida och går till fliken **[!UICONTROL Users]**. Välj **[!UICONTROL Add User]** härifrån.
 
-![Sidan med information om produktprofiler visar de användare som visas i [!UICONTROL Users] -fliken.](../images/add-user.png)
+![Sidan med information om produktprofiler visar de användare som visas på fliken [!UICONTROL Users].](../images/add-user.png)
 
-The **[!UICONTROL Add User]** visas. Med hjälp av sökfältet kan du söka efter användare för att lägga till antingen efter namn eller via e-post. När du skriver visas matchande användare i ett fönster under textrutan som fylls i automatiskt.
+Dialogrutan **[!UICONTROL Add User]** visas. Med hjälp av sökfältet kan du söka efter användare för att lägga till antingen efter namn eller via e-post. När du skriver visas matchande användare i ett fönster under textrutan som fylls i automatiskt.
 
 >[!NOTE]
 >
@@ -25,7 +25,7 @@ The **[!UICONTROL Add User]** visas. Med hjälp av sökfältet kan du söka efte
 
 När du har valt en användare väljer du **[!UICONTROL Save]** för att lägga till dem i produktprofilen.
 
-![Lägg till användare på sidan med produktprofiler och markera användarinformation.](../images/save-user.png)
+![Lägg till användare på produktprofilsidan och markera användarinformation.](../images/save-user.png)
 
 Följande video är tänkt att ge stöd för din förståelse för att hantera administratörer för en produktprofil.
 
@@ -33,4 +33,4 @@ Följande video är tänkt att ge stöd för din förståelse för att hantera a
 
 ## Nästa steg
 
-Nu när du har lärt dig hur du styr åtkomsten till plattformsfunktioner via [!DNL Admin Console], se avsnittet Bilaga i dialogrutan [åtkomstkontroll - översikt](../home.md) för att lära sig mer om de enskilda behörigheterna och de plattformsfunktioner de ger åtkomst till.
+Nu när du har lärt dig hur du styr åtkomsten till plattformsfunktioner via [!DNL Admin Console] kan du läsa avsnittet i bilagan i [åtkomstkontrollsöversikten](../home.md) för att lära dig mer om de enskilda behörigheterna och de plattformsfunktioner som de ger åtkomst till.

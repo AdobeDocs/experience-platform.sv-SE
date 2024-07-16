@@ -5,8 +5,8 @@ feature: Event Forwarding
 exl-id: f82bfac9-dc2d-44de-a308-651300f107df
 source-git-commit: 05170986263b6eed2d19a65e34f70dc28eb8ba2f
 workflow-type: tm+mt
-source-wordcount: '832'
-ht-degree: 2%
+source-wordcount: '826'
+ht-degree: 1%
 
 ---
 
@@ -14,7 +14,7 @@ ht-degree: 2%
 
 >[!NOTE]
 >
->Adobe Experience Platform Launch har omklassificerats som en serie datainsamlingstekniker i Adobe Experience Platform. Som ett resultat av detta har flera terminologiska förändringar införts i produktdokumentationen. Se följande [dokument](../../term-updates.md) för en konsoliderad hänvisning till terminologiska förändringar.
+>Adobe Experience Platform Launch har omklassificerats som en serie datainsamlingstekniker i Adobe Experience Platform. Som ett resultat av detta har flera terminologiska förändringar införts i produktdokumentationen. I följande [dokument](../../term-updates.md) finns en konsoliderad referens till de ändrade terminologin.
 
 Om du vill använda händelsevidarebefordran i Adobe Experience Platform måste data skickas till Adobe Experience Platform Edge Network med ett eller flera av följande tre alternativ:
 
@@ -25,9 +25,9 @@ Om du vill använda händelsevidarebefordran i Adobe Experience Platform måste 
 >[!NOTE]
 >Platform Web SDK och Platform Mobile SDK kräver inte distribution via taggar i Adobe Experience Platform. Vi rekommenderar dock att du använder taggar för att distribuera dessa SDK:er.
 
-När du har skickat data till Edge-nätverket kan du aktivera Adobe-lösningar för att skicka data dit. Om du vill skicka data till en icke-Adobe-lösning anger du den i händelsevidarebefordran.
+När du har skickat data till Edge nätverk kan du aktivera Adobe-lösningar för att skicka data dit. Om du vill skicka data till en icke-Adobe-lösning anger du den i händelsevidarebefordran.
 
-## Förutsättningar
+## Förhandskrav
 
 * Adobe Real-Time CDP Connections, Prime, or Ultimate (kontakta ditt Adobe-kontoteam för att få priser)
 * Vidarebefordran av händelser i Adobe Experience Platform
@@ -38,11 +38,11 @@ När du har skickat data till Edge-nätverket kan du aktivera Adobe-lösningar f
 
 Skapa ditt schema i Adobe Experience Platform.
 
-1. Skapa ett schema genom att välja **[!UICONTROL Schemas]**>**[!UICONTROL Create Schema]** och välja **[!UICONTROL XDM ExperienceEvent]** alternativ.
+1. Skapa ett schema genom att välja **[!UICONTROL Schemas]**>**[!UICONTROL Create Schema]** och välja alternativet **[!UICONTROL XDM ExperienceEvent]**.
 
 1. Ge schemat ett namn och en kort beskrivning.
 
-1. Du kan lägga till fältgruppen&quot;ExperienceEvent-webbinformation&quot; genom att välja **[!UICONTROL Add]** nästa **[!UICONTROL Field Groups]**.
+1. Du kan lägga till fältgruppen ExperienceEvent-webbinformation genom att välja **[!UICONTROL Add]** bredvid **[!UICONTROL Field Groups]**.
 
    >[!NOTE]
    >
@@ -50,11 +50,11 @@ Skapa ditt schema i Adobe Experience Platform.
 
 1. Spara schemat och notera namnet som du gav det.
 
-Mer information om scheman finns i [Experience Data Model (XDM) - systemhjälp](https://experienceleague.adobe.com/docs/experience-platform/xdm/home.html?lang=sv).
+Mer information om scheman finns i [Systemhjälpen för Experience Data Model (XDM)](https://experienceleague.adobe.com/docs/experience-platform/xdm/home.html?lang=sv).
 
 ## Skapa en egenskap för vidarebefordring av händelser
 
-I **[!UICONTROL Tags]** arbetsyta, skapa en egenskap av typen **[!UICONTROL Edge]**.
+Skapa en egenskap av typen **[!UICONTROL Edge]** på arbetsytan **[!UICONTROL Tags]**.
 
 1. Välj **[!UICONTROL New Property]**.
 
@@ -64,7 +64,8 @@ I **[!UICONTROL Tags]** arbetsyta, skapa en egenskap av typen **[!UICONTROL Edge
 
 1. Välj **[!UICONTROL Save]**.
 
-När du har skapat egenskapen går du till **[!UICONTROL Environments]** för den nya egenskapen och notera miljö-ID:n. Om den Adobe-organisation som används i datastream skiljer sig från den Adobe-organisation som används vid vidarebefordran av händelser, kan du kopiera miljö-ID:t från **[!UICONTROL Environments]** och klistra in den när du skapar ett datastream. I annat fall kan du välja miljö i en listruta.
+När du har skapat egenskapen går du till fliken **[!UICONTROL Environments]** för den nya egenskapen och gör
+information om miljö-ID:n. Om den Adobe-organisation som används i datastream skiljer sig från den Adobe-organisation som används vid vidarebefordran av händelser, kan du kopiera miljö-ID:t från fliken **[!UICONTROL Environments]** och klistra in det när du skapar ett datastream. I annat fall kan du välja miljö i en listruta.
 
 ## Skapa ett datastream
 
@@ -79,13 +80,13 @@ Beskrivningen hjälper till att identifiera konfigurationer i en lista med flera
 
 ## Aktivera vidarebefordran av händelser
 
-Konfigurera sedan Edge Network för att skicka data till händelsevidarebefordran och till andra Adobe-produkter.
+Konfigurera sedan Edge Network att skicka data till händelsevidarebefordran och till andra Adobe-produkter.
 
-1. I **[!UICONTROL Datastreams]** markerar du den egenskap du skapade.
+1. Markera den egenskap du skapade på arbetsytan **[!UICONTROL Datastreams]**.
 
 1. Välj utvecklingsmiljö, produktionsmiljö eller mellanlagringsmiljö.
 
-   Om du vill skicka data till en händelsevidarebefordringsmiljö utanför Adobe-organisationen väljer du **[!UICONTROL Switch to Advanced Mode]** och klistra in ett ID. ID:t anges när du skapar en egenskap för vidarebefordring av händelser.
+   Om du vill skicka data till en händelsevidarebefordringsmiljö utanför Adobe-organisationen markerar du **[!UICONTROL Switch to Advanced Mode]** och klistrar in ett ID. ID:t anges när du skapar en egenskap för vidarebefordring av händelser.
 
 1. Växla mellan nödvändiga verktyg och konfigurera efter behov.
 
@@ -97,9 +98,9 @@ Observera miljö-ID:n för den nya egenskapen när du har konfigurerat den.
 
 ## Konfigurera Platform Web SDK-tillägget för att skicka data till dataströmmen som skapats tidigare
 
-Skapa din egenskap i dialogrutan **[!UICONTROL Tags]** arbetsyta och sedan navigera till **[!UICONTROL Extensions]** och välj tillägget Experience Platform Web SDK i katalogen för att konfigurera och installera det.
+Skapa din egenskap på arbetsytan **[!UICONTROL Tags]**, navigera sedan till **[!UICONTROL Extensions]** och välj Experience Platform Web SDK-tillägget från katalogen för att konfigurera och installera det.
 
-Se [Dokumentation för Web SDK-tillägg](../../extensions/client/web-sdk/overview.md) för mer information om konfigurationsalternativ.
+Mer information om konfigurationsalternativ finns i [dokumentationen för Web SDK-tillägget](../../extensions/client/web-sdk/overview.md).
 
 ## Skapa en taggregel för att skicka data till Platform Web SDK
 
@@ -107,7 +108,7 @@ När ovanstående är på plats kan du skapa datadefinitioner, regler och så vi
 
 Skapa en sidinläsningsregel med hjälp av plattformens SDK-tillägg och åtgärdstypen &quot;Skicka händelse&quot;:
 
-1. Öppna **[!UICONTROL Rules]** tabbtangenten och sedan välja **[!UICONTROL Create New Rule]**.
+1. Öppna fliken **[!UICONTROL Rules]** och välj sedan **[!UICONTROL Create New Rule]**.
 
 1. Namnge regeln.
 
@@ -115,11 +116,11 @@ Skapa en sidinläsningsregel med hjälp av plattformens SDK-tillägg och åtgär
 
 1. Lägg till en händelse genom att välja ett tillägg och en av de händelsetyper som är tillgängliga för tillägget och konfigurera sedan inställningarna för händelsen. Välj till exempel **[!UICONTROL Core - Window Loaded]**.
 
-1. Lägg till en åtgärd med plattformens SDK-tillägg. Välj **[!UICONTROL Send Event]** från **[!UICONTROL Action Type]** markerar du önskad instans (Alloy-instans konfigurerad tidigare) och väljer sedan ett dataelement som ska läggas till i XDM-datablocket i Alloy-träffen.
+1. Lägg till en åtgärd med plattformens SDK-tillägg. Välj **[!UICONTROL Send Event]** i listan **[!UICONTROL Action Type]**, markera önskad instans (Alloy-instans konfigurerad tidigare) och markera sedan ett dataelement som ska läggas till i XDM-datablocket i Alloy-träffen.
 
 1. Lämna resten av inställningarna som standard för det här exemplet och välj **[!UICONTROL Save]**.
 
-Du kan till exempel skapa en regel som skickar datalagret till Edge om användaren hovrar över en angiven knapp.
+Du kan till exempel skapa en regel som skickar datalagret till Edge om användaren hovrar över en viss knapp.
 
 ## Sammanfattning
 

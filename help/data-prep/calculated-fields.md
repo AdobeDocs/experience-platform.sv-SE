@@ -15,17 +15,17 @@ ht-degree: 1%
 
 Beräknade fält tillåter att värden skapas baserat på attributen i indatabladet. Dessa värden kan sedan tilldelas attribut i målschemat och ges ett namn och en beskrivning som gör det enklare att referera till.
 
-Om du vill skapa ett beräkningsfält väljer du **[!UICONTROL Add calculated field]**.
+Välj **[!UICONTROL Add calculated field]** om du vill skapa ett beräknat fält.
 
 ![](./images/calculated-fields/add-calculated-field.png)
 
-The **[!UICONTROL Create calculated field]** visas. Den vänstra dialogrutan innehåller de fält, funktioner och operatorer som stöds i beräkningsfält. Välj en av flikarna för att börja lägga till funktioner, fält eller operatorer i uttrycksredigeraren.
+Panelen **[!UICONTROL Create calculated field]** visas. Den vänstra dialogrutan innehåller de fält, funktioner och operatorer som stöds i beräkningsfält. Välj en av flikarna för att börja lägga till funktioner, fält eller operatorer i uttrycksredigeraren.
 
 ![](./images/calculated-fields/create-calculated-field.png)
 
 | Tabb | Beskrivning |
 | --- | ----------- |
-|  -funktion | På fliken Funktioner visas de funktioner som är tillgängliga för att omforma data. Om du vill veta mer om funktionerna som du kan använda i beräkningsfält kan du läsa guiden på [använda funktioner för dataförberedelse (Mapper)](./functions.md). |
+| Funktion | På fliken Funktioner visas de funktioner som är tillgängliga för att omforma data. Om du vill veta mer om de funktioner du kan använda i beräknade fält kan du läsa guiden för [med hjälp av datapersonfunktioner (Mapper)](./functions.md). |
 | Fält | Fliken Fält visar de fält och attribut som är tillgängliga i källschemat. |
 | Operatör | På fliken Operatorer visas de operatorer som är tillgängliga för att omforma data. |
 
@@ -33,7 +33,7 @@ Du kan lägga till fält, funktioner och operatorer manuellt med uttrycksrediger
 
 ![](./images/calculated-fields/write-calculated-field.png)
 
-Välj **[!UICONTROL Save]** för att fortsätta.
+Välj **[!UICONTROL Save]** om du vill fortsätta.
 
 Mappningsskärmen visas igen med det nya källfältet. Tillämpa motsvarande målfält och välj **[!UICONTROL Finish]** för att slutföra mappningen.
 

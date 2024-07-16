@@ -1,5 +1,5 @@
 ---
-title: 'Bakom scenerna: En kundupplevelse som drivs av Adobe Experience Platform'
+title: Bakom scenerna&#58; En kundupplevelse som drivs av Adobe Experience Platform
 description: I den föregående videon såg vi hur ett exempelvarumärke, Luma, kunde skapa en rik, givande och relevant kundupplevelse. Den här videon visar hur Adobe Experience Platform används för att klara den här resan.
 kt: 4340
 audience: all
@@ -16,6 +16,6 @@ ht-degree: 0%
 
 # Bakom kulisserna bakom en kundupplevelse som drivs av Experience Platform
 
-När du har tittat på videon [en kundupplevelse som bygger på Platform](customer-experience.md), går du bakom kulisserna och ser hur Adobe Experience Platform har använts för att skapa den här upplevelsen.
+När du har tittat på videon som visar [en kundupplevelse som bygger på Platform](customer-experience.md) går du bakom kulisserna och ser hur Adobe Experience Platform har använts för att driva den här upplevelsen.
 
 >[!VIDEO](https://video.tv.adobe.com/v/28144?quality=12&learn=on)

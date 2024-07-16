@@ -12,19 +12,19 @@ ht-degree: 0%
 
 # Hantera användare
 
-Välj den **[!UICONTROL Users]** -fliken.
+Om du vill visa användarinformation och roller som de är tilldelade till väljer du fliken **[!UICONTROL Users]**.
 
-![Sidan Användare visas med [!UICONTROL Users] är markerad.](../../images/flac-ui/flac-users-tab.png)
+![Sidan Användare visas med fliken [!UICONTROL Users] markerad.](../../images/flac-ui/flac-users-tab.png)
 
 En lista över användare visas. Välj den användare du vill visa i listan. Du kan också använda sökfältet för att söka efter användaren genom att ange användarens namn eller e-postadress.
 
 Fliken Detaljer innehåller en översikt över användaren. I översikten visas användarnamn, kontotyp, e-post, autentiserings-ID, kontaktinformation och platsinformation.
 
-![Användarinformationssida med [!UICONTROL Details] och användarprofilen är markerad.](../../images/flac-ui/flac-users-details.png)
+![Sidan med användarinformation med fliken [!UICONTROL Details] och användarprofilen markerad.](../../images/flac-ui/flac-users-details.png)
 
-Välj **[!UICONTROL Roles]** för att visa de roller som användaren är tilldelad.
+Välj fliken **[!UICONTROL Roles]** för att visa de roller som användaren är tilldelad till.
 
-![Sidan Roller visas med [!UICONTROL Roles] och rollen är markerade.](../../images/flac-ui/flac-users-roles.png)
+![Rollsidan visas med fliken [!UICONTROL Roles] och rollen markerad.](../../images/flac-ui/flac-users-roles.png)
 
 ## Åtkomstkontroll för utvecklare och API med Experience Platform behörigheter
 
@@ -32,7 +32,7 @@ Välj **[!UICONTROL Roles]** för att visa de roller som användaren är tilldel
 >
 >Det är bara systemadministratörer som kan visa och hantera API-autentiseringsuppgifter i behörigheter.
 
-Övergången till Adobe Experience Platform-behörigheter innehåller ytterligare steg som måste slutföras för det utvecklar-API-arbetsflöde som tidigare var baserat på roller. Se guiden på [API-autentisering](../../../landing/api-authentication.md) för mer information.
+Övergången till Adobe Experience Platform-behörigheter innehåller ytterligare steg som måste slutföras för det utvecklar-API-arbetsflöde som tidigare var baserat på roller. Mer information finns i handboken om [API-autentisering](../../../landing/api-authentication.md).
 
 Följande video är avsedd att ge stöd för din förståelse av utvecklares och API:s autentiseringsuppgifter.
 
@@ -40,4 +40,4 @@ Följande video är avsedd att ge stöd för din förståelse av utvecklares och
 
 ## Nästa steg
 
-Du har nu lärt dig hur du visar användarinformation och vilka roller de för närvarande läggs till i. Mer information om attributbaserad åtkomstkontroll finns i [attributbaserad åtkomstkontroll - översikt](../overview.md).
+Du har nu lärt dig hur du visar användarinformation och vilka roller de för närvarande läggs till i. Mer information om attributbaserad åtkomstkontroll finns i [attributbaserad åtkomstkontroll](../overview.md).

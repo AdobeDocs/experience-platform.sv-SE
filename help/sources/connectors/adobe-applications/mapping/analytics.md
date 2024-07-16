@@ -120,7 +120,7 @@ Markerade fält mappas direkt från Adobe Analytics till Experience Data Model (
 
 ## Fält för delad mappning
 
-Dessa fält har en enda källa, men mappa till **flera** XDM-platser.
+Dessa fält har en enda källa, men mappas till **flera** XDM-platser.
 
 | Analysfält | XDM-fält | XDM-typ | Beskrivning |
 | --------------- | --------- | -------- | ---------- |
@@ -155,7 +155,7 @@ Markera fält som kommer från ADC måste omformas, vilket kräver logik utöver
 | `m_pagename_no_url` | `web.webPageDetails.name` | tal | Namnet på sidan (om den har angetts). Om ingen sida anges lämnas värdet tom. |
 | `m_paid_search` | `search.isPaid` | boolesk | En flagga som anges om träffen matchar betalsökningsidentifiering. |
 | `m_product_list` | `productListItems[].items` | array | Produktlistan, som den skickas via variabeln products. | {SKU (sträng), quantity (heltal), priceTotal (tal)} |
-| `m_ref_type` | `web.webReferrer.type` | string | Ett numeriskt ID som representerar typen av referens för träffen.<br/>`1`: Inuti din webbplats<br/>`2`: Andra webbplatser<br/>`3`: Sökmotorer<br/>`4`: Hård<br/>`5`: USENET<br/>`6`: Typed/Bookmarked (ingen referent)<br/>`7`: e-post<br/>`8`: Inget JavaScript<br/>`9`: Sociala nätverk |
+| `m_ref_type` | `web.webReferrer.type` | string | Ett numeriskt ID som representerar typen av referens för träffen.<br/>`1`: Inuti din webbplats<br/>`2`: Andra webbplatser<br/>`3`: Sökmotorer<br/>`4`: Hårddisk<br/>`5`: USENET<br/>`6`: Typed/Bookmarked (ingen referent)<br/>`7`: e-post<br/>`8`: Ingen JavaScript<br/>`9`: Sociala nätverk |
 | `m_search_engine` | `search.searchEngine` | string | Det numeriska ID som representerar sökmotorn som refererade besökaren till din webbplats. |
 | `post_currency` | `commerce.order.currencyCode` | string | Valutakoden som användes under transaktionen. |
 | `post_cust_hit_time_gmt` | `timestamp` | string | Detta används endast i tidsstämpelaktiverade datauppsättningar. Det här är den tidsstämpel som skickas med träffen, baserat på UNIX®-tid. |
@@ -171,7 +171,7 @@ Markera fält som kommer från ADC måste omformas, vilket kräver logik utöver
 | `hitid_high` + `hitid_low` | `_id` | string | En unik identifierare som identifierar en träff. |
 | `hitid_low` | `_id` | string | Används med hitid_high för att unikt identifiera en träff. |
 | `ip` | `environment.ipV4` | string | IP-adressen, baserad på HTTP-huvudet i bildbegäran. |
-| `j_jscript` | `environment.browserDetails.javaScriptEnabled` | boolesk | Den version av JavaScript som används. |
+| `j_jscript` | `environment.browserDetails.javaScriptEnabled` | boolesk | Den version av JavaScript som användes. |
 | `mcvisid_high` + `mcvisid_low` | identityMap | object | Experience Cloud Visitor-ID. |
 | `mcvisid_high` + `mcvisid_low` | endUserID:n._experience.mcid.id | string | Experience Cloud ID (ECID) kallas också MCID och används ibland i namnutrymmen. |
 | `mcvisid_high` | `endUserIDs._experience.mcid.primary` | boolesk | Experience Cloud ID (ECID) kallas också MCID och används ibland i namnutrymmen. |
@@ -188,7 +188,7 @@ Markera fält som kommer från ADC måste omformas, vilket kräver logik utöver
 
 Markera fält (så kallade&quot;postvärden&quot;) innehåller data efter att Adobe har justerat deras värden med bearbetningsregler, VISTA-regler och uppslagstabeller. De flesta postvärden har en förbearbetad motsvarighet. Din organisation kan bestämma om du vill använda det förbearbetade fältet, det efterbearbetade fältet eller båda.
 
-Mer information om hur du utför dessa omformningar med hjälp av frågetjänsten finns i [Funktioner som definieras av Adobe](/help/query-service/sql/adobe-defined-functions.md) i användarhandboken för frågetjänsten.
+Mer information om hur du utför dessa omformningar med hjälp av frågetjänsten finns i [Adobe-definierade funktioner](/help/query-service/sql/adobe-defined-functions.md) i användarhandboken för frågetjänsten.
 
 | Analysfält | XDM-fält | XDM-typ | Beskrivning |
 | --------------- | --------- | -------- | ---------- |

@@ -16,20 +16,20 @@ Sandlådor är virtuella partitioner i en enda instans av Experience Platform, v
 
 ## Konfigurera sandlådor
 
-Om du vill visa information och roller som en sandlåda har tilldelats/med väljer du **[!UICONTROL Sandboxes]** -fliken.
+Om du vill visa information och roller som en sandlåda har tilldelats/med väljer du fliken **[!UICONTROL Sandboxes]**.
 
-![flash-sandboxes-tab](../../images/flac-ui/flac-sandboxes-tab.png)
+![flac-sandboxes-tab](../../images/flac-ui/flac-sandboxes-tab.png)
 
 En lista över sandlådor visas. Välj den sandlåda som du vill visa i listan. Du kan också använda sökfältet för att söka efter sandlådan genom att ange namnet på sandlådan.
 
 Fliken Detaljer innehåller en översikt över sandlådan. I översikten visas namnet på sandlådan, typen, regionen, ändringsdatumet, som ändrade sandlådan och sandlådans status.
 
-![flash-sandbox-details](../../images/flac-ui/flac-sandboxes-details.png)
+![flac-sandbox-details](../../images/flac-ui/flac-sandboxes-details.png)
 
-Välj **[!UICONTROL Roles]** för att visa de roller som sandlådan är tilldelad till.
+Välj fliken **[!UICONTROL Roles]** för att visa de roller som sandlådan är tilldelad till.
 
-![flash-sandbox-roles](../../images/flac-ui/flac-sandboxes-roles.png)
+![flac-sandbox-roles](../../images/flac-ui/flac-sandboxes-roles.png)
 
 ## Nästa steg
 
-Du har nu lärt dig hur du visar sandlådedetaljer och de roller som den för närvarande är tilldelad. En översikt över sandlådor i Experience Platform på hög nivå finns i [översiktsdokumentation för sandlåda](../../sanboxes/../ui/overview.md).
+Du har nu lärt dig hur du visar sandlådedetaljer och de roller som den för närvarande är tilldelad. En översikt över sandlådor i Experience Platform på hög nivå finns i översiktsdokumentationen för [sandlådan](../../sanboxes/../ui/overview.md).

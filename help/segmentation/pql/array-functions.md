@@ -1,22 +1,22 @@
 ---
 solution: Experience Platform
 title: Array-, List- och Set PQL-funktioner
-description: PQL (Profile Query Language) har funktioner som underlättar interaktion med arrayer, listor och strängar.
+description: Profile Query Language (PQL) har funktioner som gör det enklare att interagera med arrayer, listor och strängar.
 exl-id: 5ff2b066-8857-4cde-9932-c8bf09e273d3
 source-git-commit: dbb7e0987521c7a2f6512f05eaa19e0121aa34c6
 workflow-type: tm+mt
-source-wordcount: '750'
-ht-degree: 3%
+source-wordcount: '753'
+ht-degree: 0%
 
 ---
 
 # Array-, list- och set-funktioner
 
-[!DNL Profile Query Language] (PQL) har funktioner som gör det enklare att interagera med arrayer, listor och strängar. Mer information om andra PQL-funktioner finns i [[!DNL Profile Query Language] översikt](./overview.md).
+[!DNL Profile Query Language] (PQL) erbjuder funktioner som gör det enklare att interagera med arrayer, listor och strängar. Mer information om andra PQL-funktioner finns i [[!DNL Profile Query Language] översikten](./overview.md).
 
 ## I
 
-The `in` används för att avgöra om ett objekt är medlem i en array eller lista.
+Funktionen `in` används för att avgöra om ett objekt är medlem i en array eller lista.
 
 **Format**
 
@@ -34,11 +34,11 @@ person.birthMonth in [3, 6, 9]
 
 ## Inte i
 
-The `notIn` används för att avgöra om ett objekt inte är medlem i en array eller lista.
+Funktionen `notIn` används för att avgöra om ett objekt inte är medlem i en array eller lista.
 
 >[!NOTE]
 >
->The `notIn` function *även* säkerställer att inget av värdena är lika med null. Resultatet är därför inte en exakt negation av `in` funktion.
+>`notIn`-funktionen *ser också* till att inget av värdena är lika med null. Resultatet är därför inte en exakt negation av funktionen `in`.
 
 **Format**
 
@@ -48,7 +48,7 @@ The `notIn` används för att avgöra om ett objekt inte är medlem i en array e
 
 **Exempel**
 
-Följande PQL-fråga definierar personer med födelsedagar som inte är i mars, juni eller september.
+Följande PQL-fråga definierar personer med födelsedagar som inte infaller i mars, juni eller september.
 
 ```sql
 person.birthMonth notIn [3, 6, 9]
@@ -56,7 +56,7 @@ person.birthMonth notIn [3, 6, 9]
 
 ## Överlappningar
 
-The `intersects` används för att avgöra om två arrayer eller listor har minst en gemensam medlem.
+Funktionen `intersects` används för att avgöra om två arrayer eller listor har minst en gemensam medlem.
 
 **Format**
 
@@ -74,7 +74,7 @@ person.favoriteColors.intersects(["red", "blue", "green"])
 
 ## Skärningspunkt
 
-The `intersection` används för att bestämma de gemensamma medlemmarna i två arrayer eller listor.
+Funktionen `intersection` används för att bestämma de gemensamma medlemmarna i två arrayer eller listor.
 
 **Format**
 
@@ -92,7 +92,7 @@ person1.favoriteColors.intersection(person2.favoriteColors) = ["red", "blue", "g
 
 ## Delmängd av
 
-The `subsetOf` används för att avgöra om en viss array (array A) är en delmängd av en annan array (array B). Det vill säga att alla element i array A är element i array B.
+Funktionen `subsetOf` används för att avgöra om en viss array (array A) är en delmängd av en annan array (array B). Det vill säga att alla element i array A är element i array B.
 
 **Format**
 
@@ -110,7 +110,7 @@ person.favoriteCities.subsetOf(person.visitedCities)
 
 ## Supermängd till
 
-The `supersetOf` används för att avgöra om en viss array (array A) är en överordnad mängd till en annan array (array B). Arrayen A innehåller alltså alla element i array B.
+Funktionen `supersetOf` används för att avgöra om en viss array (array A) är en överordnad mängd till en annan array (array B). Arrayen A innehåller alltså alla element i array B.
 
 **Format**
 
@@ -128,7 +128,7 @@ person.eatenFoods.supersetOf(["sushi", "pizza"])
 
 ## Inkluderar
 
-The `includes` används för att avgöra om en array eller lista innehåller ett visst objekt.
+Funktionen `includes` används för att avgöra om en array eller lista innehåller ett visst objekt.
 
 **Format**
 
@@ -146,7 +146,7 @@ person.favoriteColors.includes("red")
 
 ## Distinkt
 
-The `distinct` används för att ta bort dubblettvärden från en array eller lista.
+Funktionen `distinct` används för att ta bort dubblettvärden från en array eller lista.
 
 **Format**
 
@@ -164,7 +164,7 @@ person.orders.storeId.distinct().count() > 1
 
 ## Gruppera efter
 
-The `groupBy` används för att partitionera värden för en array eller lista i en grupp baserat på värdet för uttrycket.
+Funktionen `groupBy` används för att partitionera värden för en matris eller lista i en grupp baserat på uttryckets värde.
 
 **Format**
 
@@ -187,7 +187,7 @@ orders.groupBy(storeId)
 
 ## Filter
 
-The `filter` används för att filtrera en array eller lista baserat på ett uttryck.
+Funktionen `filter` används för att filtrera en array eller lista baserat på ett uttryck.
 
 **Format**
 
@@ -208,9 +208,9 @@ Följande PQL-fråga definierar alla personer som är 21 eller äldre.
 person.filter(age >= 21)
 ```
 
-## Mappa
+## Karta
 
-The `map` används för att skapa en ny array genom att tillämpa ett uttryck på varje objekt i en given array.
+Funktionen `map` används för att skapa en ny array genom att tillämpa ett uttryck på varje objekt i en given array.
 
 **Format**
 
@@ -220,15 +220,15 @@ array.map(expression)
 
 **Exempel**
 
-I följande PQL-fråga skapas en ny array med siffror och värdet för de ursprungliga talen fyrkantigt.
+Följande PQL-fråga skapar en ny array med siffror och fyrkantiger värdet för de ursprungliga talen.
 
 ```sql
 numbers.map(square)
 ```
 
-## Första `n` i array {#first-n}
+## Första `n` i matris {#first-n}
 
-The `topN` -funktionen används för att returnera den första `N` objekt i en array, när de sorteras i stigande ordning baserat på det givna numeriska uttrycket.
+Funktionen `topN` används för att returnera de första `N` objekten i en array, sorterade i stigande ordning baserat på det angivna numeriska uttrycket.
 
 **Format**
 
@@ -244,15 +244,15 @@ The `topN` -funktionen används för att returnera den första `N` objekt i en a
 
 **Exempel**
 
-Följande PQL-fråga returnerar de fem översta beställningarna med det högsta priset.
+Följande PQL-fråga returnerar de fem främsta beställningarna med det högsta priset.
 
 ```sql
 orders.topN(price, 5)
 ```
 
-## Senaste `n` i array
+## Senaste `n` i matris
 
-The `bottomN` -funktionen används för att returnera den sista `N` objekt i en array, när de sorteras i stigande ordning baserat på det givna numeriska uttrycket.
+Funktionen `bottomN` används för att returnera de sista `N` objekten i en array, sorterade i stigande ordning baserat på det angivna numeriska uttrycket.
 
 **Format**
 
@@ -268,7 +268,7 @@ The `bottomN` -funktionen används för att returnera den sista `N` objekt i en 
 
 **Exempel**
 
-Följande PQL-fråga returnerar de fem översta beställningarna med det lägsta priset.
+Följande PQL-fråga returnerar de fem främsta beställningarna med det lägsta priset.
 
 ```sql
 orders.bottomN(price, 5)
@@ -276,7 +276,7 @@ orders.bottomN(price, 5)
 
 ## Första objektet
 
-The `head` -funktionen används för att returnera det första objektet i arrayen eller listan.
+Funktionen `head` används för att returnera det första objektet i arrayen eller listan.
 
 **Format**
 
@@ -286,7 +286,7 @@ The `head` -funktionen används för att returnera det första objektet i arraye
 
 **Exempel**
 
-Följande PQL-fråga returnerar den första av de fem främsta beställningarna med det högsta priset. Mer information om `topN` -funktionen finns i [först `n` i array](#first-n) -avsnitt.
+Följande PQL-fråga returnerar den första av de fem främsta beställningarna med det högsta priset. Mer information om funktionen `topN` finns i avsnittet [first `n` i array](#first-n).
 
 ```sql
 orders.topN(price, 5).head()
@@ -294,4 +294,4 @@ orders.topN(price, 5).head()
 
 ## Nästa steg
 
-Nu när du har lärt dig mer om arrayer, listor och inställningsfunktioner kan du använda dem i dina PQL-frågor. Mer information om andra PQL-funktioner finns i [Profilfrågespråk - översikt](./overview.md).
+Nu när du har lärt dig mer om arrayer, listor och inställningsfunktioner kan du använda dem i dina PQL-frågor. Mer information om andra PQL-funktioner finns i [Profile Query Language-översikten](./overview.md).

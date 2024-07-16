@@ -8,34 +8,34 @@ exl-id: 8483f8a1-efe8-4ebb-b074-e0577e5a81a4
 source-git-commit: 81f48de908b274d836f551bec5693de13c5edaf1
 workflow-type: tm+mt
 source-wordcount: '1199'
-ht-degree: 1%
+ht-degree: 0%
 
 ---
 
 # Skapa en datastyrningsprincip i API:t
 
-The [API för principtjänst](https://www.adobe.io/experience-platform-apis/references/policy-service/) Med kan ni skapa och hantera datastyrningsprinciper för att avgöra vilka marknadsföringsåtgärder som kan vidtas mot data som innehåller vissa dataanvändningsetiketter.
+Med API:t för [principtjänsten](https://www.adobe.io/experience-platform-apis/references/policy-service/) kan du skapa och hantera datastyrningsprinciper för att avgöra vilka marknadsföringsåtgärder som kan vidtas mot data som innehåller vissa dataanvändningsetiketter.
 
-I det här dokumentet finns en stegvis självstudiekurs för att skapa en styrningspolicy med [!DNL Policy Service] API.
+Det här dokumentet innehåller en stegvis självstudiekurs för att skapa en styrningsprincip med hjälp av [!DNL Policy Service]-API:t.
 
 >[!NOTE]
 >
->Anvisningar om hur du skapar en åtkomstkontrollprincip finns i `/policies` slutpunktsguide för [API för åtkomstkontroll](../../access-control/abac/api/policies.md). Mer information om hur du skapar en policy för samtycke finns i [guide för användargränssnittet](./user-guide.md#consent-policy).
+>Anvisningar om hur du skapar en åtkomstkontrollprincip finns i `/policies`-slutpunktshandboken för [åtkomstkontrolls-API:t](../../access-control/abac/api/policies.md). Mer information om hur du skapar en policy för samtycke finns i [användargränssnittshandboken för profiler](./user-guide.md#consent-policy).
 
 ## Komma igång
 
 Den här självstudiekursen kräver en fungerande förståelse av följande viktiga begrepp när du skapar och utvärderar policyer:
 
-* [Adobe Experience Platform datastyrning](../home.md): Den ram som [!DNL Platform] regelefterlevnad för dataanvändning.
+* [Adobe Experience Platform datastyrning](../home.md): Ramverket som [!DNL Platform] använder för att framtvinga efterlevnad av dataanvändning.
    * [Dataanvändningsetiketter](../labels/overview.md): Dataanvändningsetiketter används i XDM-datafält, vilket anger begränsningar för hur data kan nås.
-* [[!DNL Experience Data Model (XDM)]](../../xdm/home.md): Det standardiserade ramverk som [!DNL Platform] organiserar kundupplevelsedata.
-* [Sandlådor](../../sandboxes/home.md): [!DNL Experience Platform] innehåller virtuella sandlådor som partitionerar en enda [!DNL Platform] till separata virtuella miljöer för att utveckla och utveckla applikationer för digitala upplevelser.
+* [[!DNL Experience Data Model (XDM)]](../../xdm/home.md): Det standardiserade ramverket som [!DNL Platform] organiserar kundupplevelsedata med.
+* [Sandlådor](../../sandboxes/home.md): [!DNL Experience Platform] innehåller virtuella sandlådor som partitionerar en enskild [!DNL Platform]-instans till separata virtuella miljöer för att hjälpa till att utveckla och utveckla program för digitala upplevelser.
 
-Innan du startar den här självstudiekursen bör du gå igenom [utvecklarhandbok](../api/getting-started.md) för viktig information som du behöver känna till för att kunna ringa [!DNL Policy Service] API, inklusive obligatoriska rubriker och hur du läser exempel-API-anrop.
+Innan du startar den här självstudiekursen bör du läsa igenom [utvecklarhandboken](../api/getting-started.md) för att få viktig information som du behöver känna till för att kunna ringa anrop till [!DNL Policy Service]-API:t, inklusive obligatoriska rubriker och hur du läser exempel-API-anrop.
 
 ## Definiera en marknadsföringsåtgärd {#define-action}
 
-I datastyrningsramverket är en marknadsföringsåtgärd en åtgärd som [!DNL Experience Platform] dataförbrukare tar, för vilka det finns ett behov av att kontrollera om dataanvändningsprinciper har överträtts.
+I ramverket för datastyrning är en marknadsföringsåtgärd en [!DNL Experience Platform]-datakonsument vidtar, och där måste man kontrollera om dataanvändningsprinciper har överträtts.
 
 Det första steget i att skapa en dataanvändningspolicy är att avgöra vilken marknadsföringsåtgärd som principen ska utvärdera. Detta kan du göra med något av följande alternativ:
 
@@ -44,11 +44,11 @@ Det första steget i att skapa en dataanvändningspolicy är att avgöra vilken 
 
 ### Slå upp en befintlig marknadsföringsåtgärd {#look-up}
 
-Du kan slå upp befintliga marknadsföringsåtgärder som ska utvärderas av din policy genom att göra en GET-förfrågan till en av `/marketingActions` slutpunkter.
+Du kan söka efter befintliga marknadsföringsåtgärder som ska utvärderas av din policy genom att göra en GET-förfrågan till någon av `/marketingActions`-slutpunkterna.
 
 **API-format**
 
-Beroende på om du letar efter en marknadsföringsåtgärd från [!DNL Experience Platform] eller en anpassad marknadsföringsåtgärd som har skapats av organisationen, använder `marketingActions/core` eller `marketingActions/custom` slutpunkter.
+Beroende på om du letar upp en marknadsföringsåtgärd från [!DNL Experience Platform] eller en anpassad marknadsföringsåtgärd som har skapats av din organisation använder du slutpunkterna `marketingActions/core` respektive `marketingActions/custom`.
 
 ```http
 GET /marketingActions/core
@@ -57,7 +57,7 @@ GET /marketingActions/custom
 
 **Begäran**
 
-Följande begäran använder `marketingActions/custom` slutpunkt, som hämtar en lista över alla marknadsföringsåtgärder som definierats av din organisation.
+Följande begäran använder slutpunkten `marketingActions/custom`, som hämtar en lista över alla marknadsföringsåtgärder som definierats av din organisation.
 
 ```shell
 curl -X GET \
@@ -70,7 +70,7 @@ curl -X GET \
 
 **Svar**
 
-Ett lyckat svar returnerar det totala antalet marknadsföringsåtgärder som hittats (`count`) och visar detaljerna om marknadsföringsåtgärderna i sig inom `children` array.
+Ett lyckat svar returnerar det totala antalet marknadsföringsåtgärder som hittats (`count`) och visar information om själva marknadsföringsåtgärderna i `children` -arrayen.
 
 ```json
 {
@@ -123,13 +123,13 @@ Ett lyckat svar returnerar det totala antalet marknadsföringsåtgärder som hit
 
 | Egenskap | Beskrivning |
 | --- | --- |
-| `_links.self.href` | Varje objekt i `children` arrayen innehåller ett URI-ID för den listade marknadsföringsåtgärden. |
+| `_links.self.href` | Varje objekt i `children`-arrayen innehåller ett URI-ID för den listade marknadsföringsåtgärden. |
 
-När du hittar den marknadsföringsåtgärd du vill använda ska du registrera värdet på dess `href` -egenskap. Det här värdet används under nästa steg i [skapa en profil](#create-policy).
+När du hittar den marknadsföringsåtgärd som du vill använda ska du registrera värdet för dess `href`-egenskap. Det här värdet används under nästa steg i [skapa en princip](#create-policy).
 
 ### Skapa en ny marknadsföringsåtgärd {#create-new}
 
-Du kan skapa en ny marknadsföringsåtgärd genom att göra en PUT-förfrågan till `/marketingActions/custom/` slutpunkt och ange ett namn för marknadsföringsåtgärden i slutet av sökvägen.
+Du kan skapa en ny marknadsföringsåtgärd genom att göra en PUT-begäran till slutpunkten `/marketingActions/custom/` och ange ett namn för marknadsföringsåtgärden i slutet av begärandesökvägen.
 
 **API-format**
 
@@ -143,7 +143,7 @@ PUT /marketingActions/custom/{MARKETING_ACTION_NAME}
 
 **Begäran**
 
-Följande begäran skapar en ny anpassad marknadsföringsåtgärd som kallas&quot;exportToThirdParty&quot;. Observera att `name` i nyttolasten för begäran är samma som namnet i sökvägen för begäran.
+Följande begäran skapar en ny anpassad marknadsföringsåtgärd som kallas&quot;exportToThirdParty&quot;. Observera att `name` i nyttolasten för begäran är samma som namnet som anges i sökvägen för begäran.
 
 ```shell
 curl -X PUT \  
@@ -162,7 +162,7 @@ curl -X PUT \
 | Egenskap | Beskrivning |
 | --- | --- |
 | `name` | Namnet på den marknadsföringsåtgärd som du vill skapa. Det här namnet måste matcha det namn som anges i sökvägen till begäran, annars inträffar ett 400-fel (Ogiltig begäran). |
-| `description` | En läsbar beskrivning av marknadsföringsåtgärden. |
+| `description` | En beskrivning av marknadsföringsåtgärden som kan läsas av människor. |
 
 **Svar**
 
@@ -197,7 +197,7 @@ Registrera URI-ID:t för den nyligen skapade marknadsföringsåtgärden, så som
 
 Om du skapar en ny princip måste du tillhandahålla URI-ID:t för en marknadsföringsåtgärd med ett uttryck för användningsetiketterna som förbjuder den marknadsföringsåtgärden.
 
-Det här uttrycket kallas ett principuttryck och är ett objekt som innehåller antingen (A) en etikett eller (B) en operator och operander, men inte båda. I sin tur är varje operand också ett principuttrycksobjekt. En policy för export av data till en tredje part kan till exempel vara förbjuden om `C1 OR (C3 AND C7)` etiketter finns. Detta uttryck skulle anges som:
+Det här uttrycket kallas ett principuttryck och är ett objekt som innehåller antingen (A) en etikett eller (B) en operator och operander, men inte båda. I sin tur är varje operand också ett principuttrycksobjekt. En princip för export av data till en tredje part kan till exempel vara förbjuden om det finns `C1 OR (C3 AND C7)`-etiketter. Detta uttryck skulle anges som:
 
 ```json
 "deny": {
@@ -225,7 +225,7 @@ Det här uttrycket kallas ett principuttryck och är ett objekt som innehåller 
 >
 >Endast operatorerna OR och AND stöds.
 
-När du har konfigurerat ditt principuttryck kan du skapa en ny princip genom att göra en begäran om POST till `/policies/custom` slutpunkt.
+När du har konfigurerat ditt principuttryck kan du skapa en ny princip genom att göra en POST-förfrågan till slutpunkten `/policies/custom`.
 
 **API-format**
 
@@ -270,8 +270,8 @@ curl -X POST \
 
 | Egenskap | Beskrivning |
 | --- | --- |
-| `marketingActionRefs` | En array som innehåller `href` värdet av en marknadsföringsåtgärd som erhållits i [föregående steg](#define-action). I exemplet ovan anges endast en marknadsföringsåtgärd, men flera åtgärder kan också anges. |
-| `deny` | Principuttrycksobjektet. Definierar de användningsetiketter och villkor som skulle få principen att avvisa den marknadsföringsåtgärd som refereras i `marketingActionRefs`. |
+| `marketingActionRefs` | En array som innehåller värdet `href` för en marknadsföringsåtgärd, som hämtats i [föregående steg](#define-action). I exemplet ovan anges endast en marknadsföringsåtgärd, men flera åtgärder kan också anges. |
+| `deny` | Principuttrycksobjektet. Definierar de användningsetiketter och villkor som skulle få principen att avvisa marknadsföringsåtgärden som refereras i `marketingActionRefs`. |
 
 **Svar**
 
@@ -330,9 +330,9 @@ Registrera URI-ID:t för den nyligen skapade principen så som den används i n�
 
 >[!NOTE]
 >
->Det här steget är valfritt om du vill lämna din policy i `DRAFT` status, observera att en policy som standard måste ha sin status inställd på `ENABLED` för att delta i utvärderingen. Se guiden [policytillämpning](../enforcement/api-enforcement.md) om du vill ha information om hur du gör undantag för policyer i `DRAFT` status.
+>Det här steget är valfritt om du vill lämna din princip med statusen `DRAFT`, men tänk på att en princip som standard måste ha statusen `ENABLED` för att kunna delta i utvärderingen. Mer information om hur du gör undantag för principer med statusen `DRAFT` finns i guiden om [policytillämpning](../enforcement/api-enforcement.md).
 
-Som standard har profiler sina `status` egenskap inställd på `DRAFT` inte deltar i utvärderingen. Du kan aktivera din policy för utvärdering genom att göra en PATCH-förfrågan till `/policies/custom/` slutpunkt och ange den unika identifieraren för principen i slutet av sökvägen för begäran.
+Som standard deltar inte principer som har egenskapen `status` inställd på `DRAFT` i utvärderingen. Du kan aktivera din princip för utvärdering genom att göra en PATCH-begäran till slutpunkten `/policies/custom/` och ange den unika identifieraren för principen i slutet av begärandesökvägen.
 
 **API-format**
 
@@ -342,11 +342,11 @@ PATCH /policies/custom/{POLICY_ID}
 
 | Parameter | Beskrivning |
 | --- | --- |
-| `{POLICY_ID}` | The `id` värdet för profilen som du vill aktivera. |
+| `{POLICY_ID}` | Värdet `id` för principen som du vill aktivera. |
 
 **Begäran**
 
-Följande begäran utför en PATCH-åtgärd på `status` egenskap för principen, ändra dess värde från `DRAFT` till `ENABLED`.
+Följande begäran utför en PATCH-åtgärd på egenskapen `status` för principen och ändrar dess värde från `DRAFT` till `ENABLED`.
 
 ```shell
 curl -X PATCH \
@@ -369,11 +369,11 @@ curl -X PATCH \
 | --- | --- |
 | `op` | Den typ av PATCH-åtgärd som ska utföras. Denna begäran utför en ersättningsåtgärd. |
 | `path` | Sökvägen till det fält som ska uppdateras. När du aktiverar en princip måste värdet anges till /status. |
-| `value` | Det nya värdet som ska tilldelas till egenskapen som anges i `path`. Denna begäran anger principens `status` till ENABLED. |
+| `value` | Det nya värdet som ska tilldelas till egenskapen som anges i `path`. Den här begäran ställer in principens `status`-egenskap till ENABLED. |
 
 **Svar**
 
-Ett lyckat svar returnerar HTTP-status 200 (OK) och information om den uppdaterade principen, med dess `status` nu inställt på `ENABLED`.
+Ett lyckat svar returnerar HTTP-status 200 (OK) och information om den uppdaterade principen, med `status` inställt på `ENABLED`.
 
 ```json
 {
@@ -420,8 +420,8 @@ Ett lyckat svar returnerar HTTP-status 200 (OK) och information om den uppdatera
 
 ## Nästa steg
 
-Genom att följa den här självstudiekursen har du skapat en dataanvändningspolicy för en marknadsföringsåtgärd. Nu kan du fortsätta med självstudiekursen på [tillämpa dataanvändningsprinciper](../enforcement/api-enforcement.md) om du vill lära dig hur du söker efter policyöverträdelser och hur du hanterar dem i ditt upplevelseprogram.
+Genom att följa den här självstudiekursen har du skapat en dataanvändningspolicy för en marknadsföringsåtgärd. Du kan nu fortsätta med självstudiekursen [framtvinga dataanvändningspolicyer](../enforcement/api-enforcement.md) för att lära dig hur du söker efter policyöverträdelser och hanterar dem i ditt upplevelseprogram.
 
-Mer information om olika tillgängliga åtgärder finns i [!DNL Policy Service] API, se [Utvecklarhandbok för principtjänst](../api/getting-started.md). Mer information om hur du tillämpar regler för [!DNL Real-Time Customer Profile] data, se självstudiekursen om [se till att dataanvändningen efterlevs för målgruppssegment](../../segmentation/tutorials/governance.md).
+Mer information om de olika tillgängliga åtgärderna i API:t [!DNL Policy Service] finns i [Utvecklarhandbok för principtjänst](../api/getting-started.md). Mer information om hur du tillämpar principer för [!DNL Real-Time Customer Profile]-data finns i självstudiekursen [framtvingar efterlevnad av dataanvändning för målgruppssegment](../../segmentation/tutorials/governance.md).
 
-Så här hanterar du användarprofiler i [!DNL Experience Platform] -användargränssnittet finns i [principanvändarhandbok](user-guide.md).
+Mer information om hur du hanterar användarprofiler i användargränssnittet för [!DNL Experience Platform] finns i [användarhandboken för principen](user-guide.md).

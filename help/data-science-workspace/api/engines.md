@@ -2,7 +2,7 @@
 keywords: Experience Platform;utvecklarguide;endpoint;Data Science Workspace;populära topics;engines;sensei machine learning api
 solution: Experience Platform
 title: API-slutpunkt för motorer
-description: Motorer är grunden för maskininlärningsmodeller i arbetsytan för datavetenskap. De innehåller algoritmer för maskininlärning som löser specifika problem, rörledningar för att utföra funktionsteknik eller bådadera.
+description: Motorer är grunden för maskininlärningsmodeller i Data Science Workspace. De innehåller algoritmer för maskininlärning som löser specifika problem, rörledningar för att utföra funktionsteknik eller bådadera.
 role: Developer
 exl-id: 7c670abd-636c-47d8-bd8c-5ce0965ce82f
 source-git-commit: c16ce1020670065ecc5415bc3e9ca428adbbd50c
@@ -14,13 +14,13 @@ ht-degree: 0%
 
 # Slutpunkt för motorer
 
-Motorer är grunden för maskininlärningsmodeller i arbetsytan för datavetenskap. De innehåller algoritmer för maskininlärning som löser specifika problem, rörledningar för att utföra funktionsteknik eller bådadera.
+Motorer är grunden för maskininlärningsmodeller i Data Science Workspace. De innehåller algoritmer för maskininlärning som löser specifika problem, rörledningar för att utföra funktionsteknik eller bådadera.
 
 ## Slå upp Docker-registret
 
 >[!TIP]
 >
->Om du inte har någon Docker URL går du till [Paketera källfiler i ett recept](../models-recipes/package-source-files-recipe.md) självstudiekurs för steg-för-steg-genomgång av hur du skapar en Docker-värd-URL.
+>Om du inte har någon Docker-URL kan du gå till [Paketkällfiler i ett recept](../models-recipes/package-source-files-recipe.md) och få en stegvis genomgång av hur du skapar en Docker-värd-URL.
 
 Docker-registerautentiseringsuppgifterna krävs för att överföra en paketerad mottagarfil, inklusive Docker-värdens URL, användarnamn och lösenord. Du kan söka efter den här informationen genom att utföra följande GET-förfrågan:
 
@@ -42,11 +42,11 @@ curl -X GET https://platform.adobe.io/data/sensei/engines/dockerRegistry \
 
 **Svar**
 
-Ett godkänt svar returnerar en nyttolast som innehåller information om Docker-registret inklusive Docker-URL:en (`host`), användarnamn (`username`), och lösenord (`password`).
+Ett godkänt svar returnerar en nyttolast som innehåller information om Docker-registret inklusive Docker-URL:en (`host`), användarnamn (`username`) och lösenord (`password`).
 
 >[!NOTE]
 >
->Dockningslösenordet ändras när `{ACCESS_TOKEN}` uppdateras.
+>Dockerlösenordet ändras när `{ACCESS_TOKEN}` uppdateras.
 
 ```json
 {
@@ -104,7 +104,7 @@ curl -X POST \
 
 **Begär PySpark/Scala**
 
-När du begär PySpark-recept `executionType` och `type` är &quot;PySpark&quot;. När du begär Scala recept `executionType` och `type` är &quot;Spark&quot;. I följande exempel på Scala-recept används Spark:
+När du begär PySpark-recept är `executionType` och `type`&quot;PySpark&quot;. När en begäran om Scala recept görs är `executionType` och `type`&quot;Spark&quot;. I följande exempel på Scala-recept används Spark:
 
 ```shell
 curl -X POST \
@@ -214,14 +214,14 @@ curl -X POST \
 | Egenskap | Beskrivning |
 | --- | --- |
 | `type` | Motorns körningstyp. Detta värde motsvarar det språk som Docker-bilden bygger på. Värdet kan anges till Spark eller PySpark. |
-| `algorithm` | Den algoritm som används, ange det här värdet till `fp` (rörligt material). |
+| `algorithm` | Algoritmen som används. Ange det här värdet till `fp` (funktionspipeline). |
 | `name` | Namnet på funktionspipeline-motorn. Mottagaren som motsvarar den här motorn ärver det här värdet som ska visas i gränssnittet som mottagarens namn. |
 | `description` | En valfri beskrivning av motorn. Mottagaren som motsvarar den här motorn ärver det här värdet som ska visas i användargränssnittet som mottagarens beskrivning. Den här egenskapen är obligatorisk. Om du inte vill ange en beskrivning anger du värdet som en tom sträng. |
 | `mlLibrary` | Ett fält som krävs när du skapar motorer för PySpark- och Scala-recept. Det här fältet måste anges till `databricks-spark`. |
 | `artifacts.default.image.location` | Docker-bildens plats. Endast Azure ACR eller Public (unauthenticated) Dockerhub stöds. |
 | `artifacts.default.image.executionType` | Motorns körningstyp. Detta värde motsvarar det språk som Docker-bilden bygger på. Detta kan vara antingen &quot;Spark&quot; eller &quot;PySpark&quot;. |
-| `artifacts.default.image.packagingType` | Motorns paketeringstyp. Värdet ska anges till `docker`. |
-| `artifacts.default.defaultMLInstanceConfigs` | Dina `pipeline.json` konfigurationsfilsparametrar. |
+| `artifacts.default.image.packagingType` | Motorns paketeringstyp. Det här värdet ska anges till `docker`. |
+| `artifacts.default.defaultMLInstanceConfigs` | Parametrarna för konfigurationsfilen `pipeline.json`. |
 
 **Svar**
 
@@ -254,7 +254,7 @@ Ett godkänt svar returnerar en nyttolast som innehåller information om den nya
 
 ## Hämta en lista med motorer
 
-Du kan hämta en lista över motorer genom att utföra en enda begäran om GET. Du kan filtrera resultaten genom att ange frågeparametrar i sökvägen för begäran. En lista över tillgängliga frågor finns i avsnittet om tillägg i [frågeparametrar för hämtning av resurser](./appendix.md#query).
+Du kan hämta en lista över motorer genom att utföra en enda begäran om GET. Du kan filtrera resultaten genom att ange frågeparametrar i sökvägen för begäran. En lista med tillgängliga frågor finns i avsnittet om tillägg för [frågeparametrar för hämtning av resurser](./appendix.md#query).
 
 **API-format**
 
@@ -387,7 +387,7 @@ Du kan ändra och uppdatera en befintlig motor genom att skriva över dess egens
 
 >[!NOTE]
 >
->För att PUT ska lyckas rekommenderar vi att du först skickar en GET-förfrågan till [hämta motorn efter ID](#retrieve-specific). Ändra och uppdatera sedan det returnerade JSON-objektet och använd hela det ändrade JSON-objektet som nyttolast för PUT-begäran.
+>För att denna PUT-förfrågan ska lyckas föreslår vi att du först utför en GET-förfrågan om att [hämta motorn med ID](#retrieve-specific). Ändra och uppdatera sedan det returnerade JSON-objektet och använd hela det ändrade JSON-objektet som nyttolast för PUT-begäran.
 
 Följande exempel på API-anrop uppdaterar en motors namn och beskrivning samtidigt som dessa egenskaper initialt används:
 

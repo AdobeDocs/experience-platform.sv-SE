@@ -6,14 +6,14 @@ description: Du kan skapa en grupp genom att göra en POST-förfrågan till slut
 exl-id: 1d2cbca9-1cd6-4b89-9b77-3687268bd849
 source-git-commit: 74867f56ee13430cbfd9083a916b7167a9a24c01
 workflow-type: tm+mt
-source-wordcount: '117'
+source-wordcount: '118'
 ht-degree: 0%
 
 ---
 
 # Skapa en batch
 
-För att en datauppsättning ska kunna importera data måste den ha en associerad batch. Använda `id` värdet för en befintlig datauppsättning kan du skapa en batch genom att göra en begäran om POST till `/batches` slutpunkt i [!DNL Catalog] API.
+För att en datauppsättning ska kunna importera data måste den ha en associerad batch. Med hjälp av `id`-värdet för en befintlig datauppsättning kan du skapa en batch genom att göra en POST-förfrågan till `/batches`-slutpunkten i [!DNL Catalog] API:t.
 
 **API-format**
 
@@ -38,7 +38,7 @@ curl -X POST 'https://platform.adobe.io/data/foundation/import/batches' \
 
 | Egenskap | Beskrivning |
 | --- | --- |
-| `datasetId` | The `id` av den datauppsättning som gruppen ska kopplas till. |
+| `datasetId` | `id` för datauppsättningen som gruppen kommer att associeras med. |
 
 **Svar**
 

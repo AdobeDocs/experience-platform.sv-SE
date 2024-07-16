@@ -6,8 +6,8 @@ description: Med butiksförsäljningsreceptet kan du förutsäga försäljningsp
 exl-id: ff01fcd1-fca6-4957-8470-a974fd1520aa
 source-git-commit: 86e6924078c115fb032ce39cd678f1d9c622e297
 workflow-type: tm+mt
-source-wordcount: '585'
-ht-degree: 1%
+source-wordcount: '580'
+ht-degree: 0%
 
 ---
 
@@ -30,34 +30,34 @@ I recept på försäljningsprognos används maskininlärning för att förutse f
 
 ## Hur kommer jag igång?
 
-Du kan komma igång genom att följa detta [självstudiekurs](../jupyterlab/create-a-model.md).
+Du kan komma igång genom att följa den här [självstudiekursen](../jupyterlab/create-a-model.md).
 
 I den här självstudiekursen går vi vidare med att skapa säljrecept i en Jupyter-anteckningsbok och använda anteckningsboken för att hämta arbetsflöden för att skapa recept i Adobe Experience Platform.
 
 ## Datamodell
 
-Det här receptet använder [XDM-scheman](../../xdm/schema/field-dictionary.md) för att modellera data. Schemat som används för det här receptet visas nedan:
+I det här receptet används [XDM-scheman](../../xdm/schema/field-dictionary.md) för att modellera data. Schemat som används för det här receptet visas nedan:
 
 | Fältnamn | Typ |
 | --- | --- |
 | datum | Sträng |
 | store | Heltal |
 | storeType | Sträng |
-| weekSales | Siffra |
+| weekSales | Nummer |
 | storeSize | Heltal |
-| temperatur | Siffra |
-| regionalFuelPrice | Siffra |
-| markering | Siffra |
-| cpi | Siffra |
-| arbetslöshet | Siffra |
+| temperatur | Nummer |
+| regionalFuelPrice | Nummer |
+| markering | Nummer |
+| cpi | Nummer |
+| arbetslöshet | Nummer |
 | isHoliday | Boolean |
 
 
 ## Algoritm
 
-Först utbildningsinformationen i *DSWRetailSales* schemat har lästs in. Härifrån utbildas modellen med en [övertoningsalgoritm för att öka regressorns](https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.GradientBoostingRegressor.html). För övertoningsförbättringar används idén att svaga studerande (en som är minst något bättre än en slumpmässig chans) kan bilda en rad olika studerande som fokuserar på att förbättra den tidigare elevens svagheter. Tillsammans kan de användas för att skapa en kraftfull prediktiv modell.
+Först läses utbildningsdatauppsättningen i schemat *DSWRetailSales* in. Härifrån tränas modellen med en [övertoningsförstärkningsalgoritm](https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.GradientBoostingRegressor.html). För övertoningsförbättringar används idén att svaga studerande (en som är minst något bättre än en slumpmässig chans) kan bilda en rad olika studerande som fokuserar på att förbättra den tidigare elevens svagheter. Tillsammans kan de användas för att skapa en kraftfull prediktiv modell.
 
-Processen består av tre delar: en förlustfunktion, en svag kursledare och en additiv modell.
+Processen består av tre element: en förlustfunktion, en svag elev och en additiv modell.
 
 Förlustfunktionen avser ett mått på hur bra en förutsägelsemodell gör när det gäller att kunna förutsäga det förväntade resultatet - regression på minst fyrkanter används i detta recept.
 

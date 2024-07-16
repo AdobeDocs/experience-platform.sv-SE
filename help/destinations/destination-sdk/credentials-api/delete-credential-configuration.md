@@ -4,7 +4,7 @@ title: Ta bort en autentiseringskonfiguration
 exl-id: a540e349-043c-4f04-8ca8-f650b9943492
 source-git-commit: b4334b4f73428f94f5a7e5088f98e2459afcaf3c
 workflow-type: tm+mt
-source-wordcount: '395'
+source-wordcount: '396'
 ht-degree: 0%
 
 ---
@@ -15,33 +15,33 @@ ht-degree: 0%
 >
 >**API-slutpunkt**: `platform.adobe.io/data/core/activation/authoring/credentials`
 
-Den här sidan innehåller exempel på API-begäran och nyttolast som du kan använda för att ta bort en autentiseringskonfiguration med hjälp av `/authoring/credentials` API-slutpunkt.
+Den här sidan innehåller exempel på API-begäran och nyttolast som du kan använda för att ta bort en autentiseringskonfiguration med API-slutpunkten `/authoring/credentials`.
 
-## När ska `/credentials` API-slutpunkt {#when-to-use}
+## När API-slutpunkten `/credentials` ska användas {#when-to-use}
 
 >[!IMPORTANT]
 >
->I de flesta fall ***inte*** måste du använda `/credentials` API-slutpunkt. I stället kan du konfigurera autentiseringsinformationen för ditt mål via `customerAuthenticationConfigurations` parametrarna för `/destinations` slutpunkt.
+>I de flesta fall behöver du ***inte*** använda API-slutpunkten `/credentials`. I stället kan du konfigurera autentiseringsinformationen för målet via `customerAuthenticationConfigurations`-parametrarna för slutpunkten `/destinations`.
 > 
->Läs [Konfiguration av kundautentisering](../functionality/destination-configuration/customer-authentication.md) för detaljerad information om vilka autentiseringstyper som stöds.
+>Läs [Konfiguration för kundautentisering](../functionality/destination-configuration/customer-authentication.md) om du vill ha mer information om vilka autentiseringstyper som stöds.
 
-Använd den här API-slutpunkten om du bara vill skapa en autentiseringskonfiguration om det finns ett globalt autentiseringssystem mellan Adobe och målplattformen och [!DNL Platform] Kunden behöver inte ange några autentiseringsuppgifter för att ansluta till ditt mål. I det här fallet måste du skapa en autentiseringskonfiguration med `/credentials` API-slutpunkt.
+Använd den här API-slutpunkten om du bara vill skapa en autentiseringskonfiguration om det finns ett globalt autentiseringssystem mellan Adobe och målplattformen, och [!DNL Platform]-kunden inte behöver ange några autentiseringsuppgifter för att ansluta till målet. I det här fallet måste du skapa en autentiseringskonfiguration med API-slutpunkten `/credentials`.
 
-När du använder ett globalt autentiseringssystem måste du ange `"authenticationRule":"PLATFORM_AUTHENTICATION"` i [destinationsleverans](../functionality/destination-configuration/destination-delivery.md) konfiguration, när [skapa en ny målkonfiguration](../authoring-api/destination-configuration/create-destination-configuration.md).
+När du använder ett globalt autentiseringssystem måste du ange `"authenticationRule":"PLATFORM_AUTHENTICATION"` i konfigurationen för [målleverans](../functionality/destination-configuration/destination-delivery.md) när du [skapar en ny målkonfiguration](../authoring-api/destination-configuration/create-destination-configuration.md).
 
 >[!IMPORTANT]
 >
->Alla parameternamn och värden som stöds av Destinationen SDK är **skiftlägeskänslig**. Undvik skiftlägeskänslighetsfel genom att använda parameternamn och värden exakt som de visas i dokumentationen.
+>Alla parameternamn och värden som stöds av Destinationen SDK är **skiftlägeskänsliga**. Undvik skiftlägeskänslighetsfel genom att använda parameternamn och värden exakt som de visas i dokumentationen.
 
 ## Komma igång med API-åtgärder för autentiseringsuppgifter {#get-started}
 
-Innan du fortsätter bör du granska [komma igång-guide](../getting-started.md) för viktig information som du behöver känna till för att kunna anropa API:t, inklusive hur du får nödvändig behörighet för målredigering och obligatoriska huvuden.
+Innan du fortsätter bör du läsa igenom [kom igång-guiden](../getting-started.md) för att få viktig information som du behöver känna till för att kunna ringa anrop till API:t, inklusive hur du får nödvändig behörighet för målredigering och nödvändiga rubriker.
 
 ## Ta bort en autentiseringskonfiguration {#delete}
 
-Du kan ta bort en [befintlig](create-credential-configuration.md) konfiguration av autentiseringsuppgifter genom att göra en `DELETE` begäran till `/authoring/credentials` slutpunkt med `{INSTANCE_ID}`av den autentiseringskonfiguration som du vill ta bort.
+Du kan ta bort en [befintlig](create-credential-configuration.md)-autentiseringskonfiguration genom att göra en `DELETE`-begäran till `/authoring/credentials`-slutpunkten med `{INSTANCE_ID}` för den autentiseringskonfiguration som du vill ta bort.
 
-Hämta en befintlig målkonfiguration och dess motsvarande `{INSTANCE_ID}`, se artikeln om [hämta en autentiseringskonfiguration](retrieve-credential-configuration.md).
+Om du vill hämta en befintlig destinationskonfiguration och dess motsvarande `{INSTANCE_ID}` kan du läsa artikeln om att [hämta en autentiseringskonfiguration](retrieve-credential-configuration.md).
 
 **API-format**
 
@@ -51,9 +51,9 @@ DELETE /authoring/credentials/{INSTANCE_ID}
 
 | Parameter | Beskrivning |
 | --------- | ----------- |
-| `{INSTANCE_ID}` | The `ID` för den autentiseringskonfiguration du vill ta bort. |
+| `{INSTANCE_ID}` | `ID` för den autentiseringskonfiguration som du vill ta bort. |
 
-Följande begäran tar bort en autentiseringskonfiguration som definierats av `{INSTANCE_ID}` parameter.
+Följande begäran tar bort en autentiseringskonfiguration som definieras av parametern `{INSTANCE_ID}`.
 
 +++Begäran
 
@@ -75,8 +75,8 @@ Ett lyckat svar returnerar HTTP-status 200 tillsammans med ett tomt HTTP-svar.
 
 ## API-felhantering {#error-handling}
 
-Destination SDK-API-slutpunkter följer de allmänna felmeddelandeprinciperna för Experience Platform API. Se [API-statuskoder](../../../landing/troubleshooting.md#api-status-codes) och [fel i begäranhuvudet](../../../landing/troubleshooting.md#request-header-errors) i felsökningsguiden för plattformen.
+Destination SDK-API-slutpunkter följer de allmänna felmeddelandeprinciperna för Experience Platform API. Se [API-statuskoder](../../../landing/troubleshooting.md#api-status-codes) och [begäranrubrikfel](../../../landing/troubleshooting.md#request-header-errors) i felsökningsguiden för plattformen.
 
 ## Nästa steg {#next-steps}
 
-När du har läst det här dokumentet vet du nu hur du tar bort en autentiseringskonfiguration med `/authoring/credentials` API-slutpunkt. Läs [Så här använder du Destination SDK för att konfigurera ditt mål](../guides/configure-destination-instructions.md) för att förstå var det här steget passar in i processen att konfigurera målet.
+När du har läst det här dokumentet kan du nu ta bort en autentiseringskonfiguration med API-slutpunkten `/authoring/credentials`. Läs [om hur du använder Destination SDK för att konfigurera ditt mål](../guides/configure-destination-instructions.md) och förstå var det här steget passar in i processen att konfigurera ditt mål.

@@ -13,7 +13,7 @@ ht-degree: 0%
 
 >[!NOTE]
 >
->Adobe Experience Platform Launch har omklassificerats som en serie datainsamlingstekniker i Adobe Experience Platform. Som ett resultat av detta har flera terminologiska förändringar införts i produktdokumentationen. Se följande [dokument](../../term-updates.md) för en konsoliderad hänvisning till terminologiska förändringar.
+>Adobe Experience Platform Launch har omklassificerats som en serie datainsamlingstekniker i Adobe Experience Platform. Som ett resultat av detta har flera terminologiska förändringar införts i produktdokumentationen. I följande [dokument](../../term-updates.md) finns en konsoliderad referens till de ändrade terminologin.
 
 <div id="recs-overview-body-1"></div>
 <div id="recs-overview-body-2"></div>
@@ -34,12 +34,12 @@ Här följer en lista med dokumentation för tillägg för vidarebefordran av h�
 * [Cloud Connector för Google Analytics](https://exchange.adobe.com/apps/ec/106542)*
 <!-- * [Cloud Connector for Google Analytics 4](https://partners.adobe.com/exchangeprogram/experiencecloud/exchange.details.109820.html)* -->
 * [Core](./core/overview.md)
-* [Epsilon Event API](https://exchange.adobe.com/apps/ec/109127)*
+* [Epsilon-händelse-API](https://exchange.adobe.com/apps/ec/109127)*
 * [Google Ads Enhanced Conversions](./google-ads-enhanced-conversions/overview.md)
 * [Google Cloud Platform](./google-cloud-platform/overview.md)
-* [[!DNL LinkedIn] Konverterings-API](./linkedin/overview.md)
-* [[!DNL Mailchimp] Kant](./mailchimp/overview.md)
-* [[!DNL Meta] Konverterings-API](./meta/overview.md)
+* [Konverterings-API för [!DNL LinkedIn]](./linkedin/overview.md)
+* [[!DNL Mailchimp] Edge](./mailchimp/overview.md)
+* [API för konvertering av [!DNL Meta]](./meta/overview.md)
 * [[!UICONTROL Microsoft Azure]](./azure/overview.md)
 * [[!DNL Mixpanel]](./mixpanel/overview.md)
 * [Pega Customer Decision Hub](https://exchange.adobe.com/apps/ec/107597)*
@@ -48,5 +48,5 @@ Här följer en lista med dokumentation för tillägg för vidarebefordran av h�
 * [Snowflake](./snowflake/overview.md)
 * [[!DNL Splunk]](./splunk/overview.md)
 * [[!DNL Twitter]](./twitter/overview.md)
-* [[!DNL Tiktok] API för webbhändelser](./tiktok/overview.md)
-* [[!DNL Zendesk] Händelse-API](./zendesk/overview.md)
+* [Webbhändelse-API för [!DNL Tiktok]](./tiktok/overview.md)
+* [[!DNL Zendesk]-händelse-API](./zendesk/overview.md)

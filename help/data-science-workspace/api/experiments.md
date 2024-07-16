@@ -1,5 +1,5 @@
 ---
-keywords: Experience Platform;utvecklarguide;endpoint;Data Science Workspace;populära topics;experiment;sensei machine learning api
+keywords: Experience Platform;utvecklarguide;endpoint;Data Science Workspace;populära ämnen;experiment;sensei machine learning api
 solution: Experience Platform
 title: API-slutpunkt för experiment
 description: Modellutveckling och utbildning sker på expertnivå, där en expert består av en MLInstance, utbildningar och poängprov.
@@ -100,11 +100,11 @@ curl -X POST \
 
 | Egenskap | Beskrivning |
 | --- | --- |
-| `{TASK}` | Anger körningens aktivitet. Ange det här värdet som antingen `train` för utbildning, `score` för poängsättning, eller `featurePipeline` för funktionsflöde. |
+| `{TASK}` | Anger körningens aktivitet. Ange det här värdet som antingen `train` för utbildning, `score` för poängsättning eller `featurePipeline` för funktionspipeline. |
 
 **Svar**
 
-Ett lyckat svar returnerar en nyttolast som innehåller information om den nyligen skapade körningen inklusive de ärvda standardutbildnings- eller poängparametrarna samt körningens unika ID (`{RUN_ID}`).
+Ett godkänt svar returnerar en nyttolast som innehåller information om den nyligen skapade körningen, inklusive de ärvda standardutbildnings- eller poängparametrarna, och körningens unika ID (`{RUN_ID}`).
 
 ```json
 {
@@ -133,7 +133,7 @@ Ett lyckat svar returnerar en nyttolast som innehåller information om den nylig
 
 ## Hämta en lista med experter
 
-Du kan hämta en lista över experter som tillhör en viss MLInstance genom att utföra en enda GET-begäran och ange ett giltigt MLInstance-ID som en frågeparameter. En lista över tillgängliga frågor finns i avsnittet om tillägg i [frågeparametrar för hämtning av resurser](./appendix.md#query).
+Du kan hämta en lista över experter som tillhör en viss MLInstance genom att utföra en enda GET-begäran och ange ett giltigt MLInstance-ID som en frågeparameter. En lista med tillgängliga frågor finns i avsnittet om tillägg för [frågeparametrar för hämtning av resurser](./appendix.md#query).
 
 
 **API-format**
@@ -160,7 +160,7 @@ curl -X GET \
 
 **Svar**
 
-Ett godkänt svar returnerar en lista över Experiment som delar samma MLInstance-ID (`{MLINSTANCE_ID}`).
+Ett godkänt svar returnerar en lista med experimentella instanser som delar samma MLInstance-ID (`{MLINSTANCE_ID}`).
 
 ```json
 {
@@ -242,7 +242,7 @@ Ett godkänt svar returnerar en nyttolast som innehåller information om den beg
 
 ## Hämta en lista med Experimentkörningar
 
-Du kan hämta en lista över utbildnings- eller poängsättningskörningar som tillhör en viss Experiment genom att utföra en enda GET-förfrågan och ange ett giltigt test-ID. Du kan filtrera resultaten genom att ange frågeparametrar i sökvägen för begäran. En fullständig lista över tillgängliga frågeparametrar finns i bilagan [frågeparametrar för hämtning av resurser](./appendix.md#query).
+Du kan hämta en lista över utbildnings- eller poängsättningskörningar som tillhör en viss Experiment genom att utföra en enda GET-förfrågan och ange ett giltigt test-ID. Du kan filtrera resultaten genom att ange frågeparametrar i sökvägen för begäran. En fullständig lista över tillgängliga frågeparametrar finns i avsnittet om tillägg för [frågeparametrar för hämtning av resurser](./appendix.md#query).
 
 >[!NOTE]
 >
@@ -259,7 +259,7 @@ GET /experiments/{EXPERIMENT_ID}/runs?{QUERY_PARAMETER_1}={VALUE_1}&{QUERY_PARAM
 | Parameter | Beskrivning |
 | --- | --- |
 | `{EXPERIMENT_ID}` | Ett giltigt test-ID. |
-| `{QUERY_PARAMETER}` | En av [tillgängliga frågeparametrar](./appendix.md#query) används för att filtrera resultat. |
+| `{QUERY_PARAMETER}` | En av de [tillgängliga frågeparametrarna](./appendix.md#query) som används för att filtrera resultat. |
 | `{VALUE}` | Värdet för föregående frågeparameter. |
 
 **Begäran**
@@ -277,7 +277,7 @@ curl -X GET \
 
 **Svar**
 
-Ett godkänt svar returnerar en nyttolast som innehåller en lista över körningar och alla detaljer för dem, inklusive ID för Experimentkörning (`{RUN_ID}`).
+Ett godkänt svar returnerar en nyttolast som innehåller en lista över körningar och alla detaljer för dem, inklusive deras ID för Experiment Run (`{RUN_ID}`).
 
 ```json
 {
@@ -307,7 +307,7 @@ Du kan uppdatera en befintlig Experiment genom att skriva över dess egenskaper 
 
 >[!TIP]
 >
->För att PUT ska lyckas rekommenderar vi att du först skickar en GET-förfrågan till [hämta Experimentera med ID](#retrieve-specific). Ändra och uppdatera sedan det returnerade JSON-objektet och använd hela det ändrade JSON-objektet som nyttolast för PUT-begäran.
+>För att den här PUT-begäran ska lyckas föreslår vi att du först utför en GET-förfrågan om att [hämta Experimentet med ID](#retrieve-specific). Ändra och uppdatera sedan det returnerade JSON-objektet och använd hela det ändrade JSON-objektet som nyttolast för PUT-begäran.
 
 I följande exempel på API-anrop uppdateras en Experiments namn samtidigt som dessa egenskaper används från början:
 

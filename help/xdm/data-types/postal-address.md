@@ -11,7 +11,7 @@ ht-degree: 0%
 
 ---
 
-# [!UICONTROL Postal address] datatyp
+# Datatypen [!UICONTROL Postal address]
 
 [!UICONTROL Postal address] är en standard-XDM-datatyp som beskriver informationen för en postadress.
 
@@ -21,7 +21,7 @@ ht-degree: 0%
 | --- | --- |
 | `city` | Namnet på staden. |
 | `country` | Namnet på det statligt administrerade territoriet. Det här är ett friformsfält som kan ha landsnamnet på vilket språk som helst. |
-| `countryCode` | De två tecknen <a href="https://datahub.io/core/country-list">ISO 3166-1 alpha-2</a> landskoden. |
+| `countryCode` | Landets tvåsiffriga <a href="https://datahub.io/core/country-list">ISO 3166-1 alfa-2</a> -kod. |
 | `createdByBatchID` | ID för den inkapslade batchfilen som skapade adressposten. |
 | `dmaID` | Nielsens medieforskning har utsett ett marknadsområde. |
 | `label` | Ett friformsnamn för adressen. |
@@ -30,13 +30,13 @@ ht-degree: 0%
 | `msaID` | Det statistiska storstadsområdet i Förenta staterna där observationen gjordes. |
 | `postOfficeBox` | Adressens box. |
 | `postalCode` | Postnumret för platsen. Postnummer är inte tillgängliga för alla länder. I vissa länder innehåller detta endast en del av postnumret. |
-| `primary` | Ett booleskt värde som anger om det här är personens primära adress. En profil kan bara ha en `primary` adress vid en viss tidpunkt. |
+| `primary` | Ett booleskt värde som anger om det här är personens primära adress. En profil kan bara ha en `primary`-adress vid en given tidpunkt. |
 | `region` | Region, region eller distrikt. |
 | `repositoryCreatedBy` | ID för den användare som skapade posten. |
 | `repositoryLastModifiedBy` | ID för den användare som senast ändrade posten. |
-| `stateProvince` | Delstaten eller provinsdelen av observationen. Formatet följer [ISO 3166-2 (land och delområde)](https://www.unece.org/cefact/locode/subdivisions.html) standard. |
+| `stateProvince` | Delstaten eller provinsdelen av observationen. Formatet följer standarden [ISO 3166-2 (land och delområde)](https://www.unece.org/cefact/locode/subdivisions.html). |
 | `status` | Anger om adressen kan användas just nu. |
-| `statusReason` | En beskrivning av den aktuella `status`. |
+| `statusReason` | En beskrivning av aktuell `status`. |
 | `street1` - `street4` | Dessa fyra fält är avsedda att innehålla information om gatuminivå, lägenhetsnummer, gatunummer och gatunamn. `street2` till `street4` är valfria. |
 
 {style="table-layout:auto"}

@@ -7,15 +7,15 @@ exl-id: ffd1dc2d-eff8-4ef7-a26b-f78988f050ef
 source-git-commit: 583eb70235174825dd542b95463784638bdef235
 workflow-type: tm+mt
 source-wordcount: '1388'
-ht-degree: 0%
+ht-degree: 1%
 
 ---
 
 # API-översikt för gruppinmatning
 
-Med API:t för Adobe Experience Platform Batch Ingclosure kan du importera data till Platform som gruppfiler. Data som importeras kan vara profildata från en platt fil (t.ex. en Parquet-fil) eller data som följer ett känt schema i [!DNL Experience Data Model] (XDM)-registret.
+Med API:t för Adobe Experience Platform Batch Ingclosure kan du importera data till Platform som gruppfiler. Data som ska importeras kan vara profildata från en platt fil (till exempel en Parquet-fil) eller data som följer ett känt schema i [!DNL Experience Data Model] (XDM)-registret.
 
-The [API-referens för gruppinmatning](https://developer.adobe.com/experience-platform-apis/references/batch-ingestion/) innehåller ytterligare information om dessa API-anrop.
+API-referensen [för gruppinmatning](https://developer.adobe.com/experience-platform-apis/references/batch-ingestion/) innehåller ytterligare information om dessa API-anrop.
 
 I följande diagram visas batchintagsprocessen:
 
@@ -23,12 +23,12 @@ I följande diagram visas batchintagsprocessen:
 
 ## Komma igång
 
-API-slutpunkterna som används i den här handboken är en del av [API för gruppinmatning](https://developer.adobe.com/experience-platform-apis/references/batch-ingestion/). Innan du fortsätter bör du granska [komma igång-guide](getting-started.md) för länkar till relaterad dokumentation, en guide till hur du läser exempelanrop till API:er i det här dokumentet och viktig information om vilka huvuden som behövs för att kunna anropa ett Experience Platform-API.
+API-slutpunkterna som används i den här guiden ingår i [API:t för gruppinmatning](https://developer.adobe.com/experience-platform-apis/references/batch-ingestion/). Innan du fortsätter bör du läsa [kom igång-guiden](getting-started.md) för att få länkar till relaterad dokumentation, en guide till hur du läser exempelanropen för API i det här dokumentet och viktig information om vilka huvuden som krävs för att kunna anropa ett Experience Platform-API.
 
-### [!DNL Data Ingestion] krav
+### Krav för [!DNL Data Ingestion]
 
 - Data som ska överföras måste vara antingen i Parquet- eller JSON-format.
-- En datauppsättning som skapats i [[!DNL Catalog services]](../../catalog/home.md).
+- En datauppsättning skapades i [[!DNL Catalog services]](../../catalog/home.md).
 - Innehållet i Parquet-filen måste matcha en delmängd av schemat i datauppsättningen som överförs till.
 - Ha din unika åtkomsttoken efter autentisering.
 
@@ -48,15 +48,15 @@ Batchdatainmatning har vissa begränsningar:
 
 >[!NOTE]
 >
->Om du vill överföra en fil som är större än 512 MB måste filen delas upp i mindre segment. Instruktioner för att överföra en stor fil finns i [stort filöverföringsavsnitt i det här dokumentet](#large-file-upload---create-file).
+>Om du vill överföra en fil som är större än 512 MB måste filen delas upp i mindre segment. Instruktioner för att överföra en stor fil finns i avsnittet [stor filöverföring i det här dokumentet](#large-file-upload---create-file).
 
 ### Typer
 
-När data hämtas är det viktigt att förstå hur [!DNL Experience Data Model] (XDM) scheman fungerar. Mer information om hur XDM-fälttyper mappas till olika format finns i [Utvecklarhandbok för schemaregister](../../xdm/api/getting-started.md).
+När du importerar data är det viktigt att du förstår hur [!DNL Experience Data Model] (XDM)-scheman fungerar. Mer information om hur XDM-fälttyper mappas till olika format finns i [Utvecklarhandbok för schemaregister](../../xdm/api/getting-started.md).
 
-Det finns viss flexibilitet vid inmatning av data - om en typ inte matchar vad som finns i målschemat konverteras data till den angivna måltypen. Om så inte är fallet misslyckas batchen med `TypeCompatibilityException`.
+Det finns viss flexibilitet vid inmatning av data - om en typ inte matchar vad som finns i målschemat konverteras data till den angivna måltypen. Om den inte kan det misslyckas gruppen med en `TypeCompatibilityException`.
 
-Till exempel har varken JSON eller CSV en `date` eller `date-time` typ. Därför uttrycks dessa värden med [Formaterade strängar enligt ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) (&quot;2018-07-10T15:05:59.000-08:00&quot;) eller Unix-tid i millisekunder (1531263959000) och konverteras vid importen till mål-XDM-typen.
+Till exempel har varken JSON eller CSV typen `date` eller `date-time`. Därför uttrycks dessa värden med [ISO 8601-formaterade strängar](https://www.iso.org/iso-8601-date-and-time-format.html) (&quot;2018-07-10T15:05:59.000-08:00&quot;) eller Unix Time i millisekunder (153126395) 9000) och konverteras vid intag till mål-XDM-typen.
 
 Tabellen nedan visar de konverteringar som stöds vid inmatning av data.
 
@@ -77,9 +77,9 @@ Tabellen nedan visar de konverteringar som stöds vid inmatning av data.
 >
 >Booleaner och arrayer kan inte konverteras till andra typer.
 
-## Använda API
+## Använda API:et
 
-The [!DNL Data Ingestion] Med API kan du importera data som grupper (en dataenhet som består av en eller flera filer som ska importeras som en enda enhet) till [!DNL Experience Platform] tre grundläggande steg:
+Med API:t [!DNL Data Ingestion] kan du importera data som grupper (en dataenhet som består av en eller flera filer som ska importeras som en enda enhet) till [!DNL Experience Platform] i tre grundläggande steg:
 
 1. Skapa en ny batch.
 2. Överför filer till en angiven datauppsättning som matchar datans XDM-schema.
@@ -146,11 +146,11 @@ Du kan överföra filer med hjälp av API:t för liten filöverföring. Om filer
 
 >[!NOTE]
 >
->Batchinmatning kan användas för att stegvis uppdatera data i profilarkivet. Mer information finns i avsnittet om [uppdatera en batch](#patch-a-batch) i [Utvecklarhandbok för batchintag](api-overview.md).
+>Batchinmatning kan användas för att stegvis uppdatera data i profilarkivet. Mer information finns i avsnittet [Uppdatera en batch](#patch-a-batch) i [Utvecklarhandbok för batchimport](api-overview.md).
 
 >[!INFO]
 >
->Exemplen nedan använder [Apache Parquet](https://parquet.apache.org/docs/) filformat. Ett exempel som använder JSON-filformatet finns i [Utvecklarhandbok för batchintag](api-overview.md).
+>I exemplen nedan används filformatet [Apache Parquet](https://parquet.apache.org/docs/). Ett exempel som använder JSON-filformatet finns i [Utvecklarhandboken för gruppfrågor](api-overview.md).
 
 ### Liten filöverföring
 
@@ -257,7 +257,7 @@ curl -X PATCH "https://platform.adobe.io/data/foundation/import/batches/{BATCH_I
 
 ## Slutförande av signalbatch
 
-När alla filer har överförts till gruppen kan gruppen signaleras för slutförande. Genom att göra det här [!DNL Catalog] DataSetFile-poster skapas för de slutförda filerna och kopplas till den grupp som genereras ovan. The [!DNL Catalog] batchen markeras sedan som lyckad, vilket aktiverar efterföljande flöden för att importera tillgängliga data.
+När alla filer har överförts till gruppen kan gruppen signaleras för slutförande. På så sätt skapas [!DNL Catalog] DataSetFile-posterna för de slutförda filerna och kopplas till den grupp som genereras ovan. Batchen [!DNL Catalog] markeras sedan som lyckad, vilket utlöser flödesomformningar för att importera tillgängliga data.
 
 **Begäran**
 
@@ -401,20 +401,20 @@ curl GET "https://platform.adobe.io/data/foundation/catalog/batch/{BATCH_ID}" \
 | -------- | ----------- |
 | `{USER_ID}` | ID för den användare som skapade eller uppdaterade gruppen. |
 
-The `"status"` fält är det som visar aktuell status för den begärda batchen. Batcherna kan ha något av följande lägen:
+Fältet `"status"` visar den aktuella statusen för den begärda batchen. Batcherna kan ha något av följande lägen:
 
 ## Status för batchförtäring
 
 | Status | Beskrivning |
 | ------ | ----------- |
 | Övergiven | Batchen har inte slutförts inom den förväntade tidsramen. |
-| Avbruten | En avbrottsåtgärd har **explicit** har anropats (via API:t för gruppinmatning) för den angivna batchen. När batchen är i inläst läge kan den inte avbrytas. |
+| Avbruten | En avbrottsåtgärd har anropat **explicit** (via API:t för gruppinmatning) för den angivna gruppen. När batchen är i inläst läge kan den inte avbrytas. |
 | Aktiv | Batchen har befordrats och är tillgänglig för nedladdning. Den här statusen kan användas omväxlande med &quot;Lyckades&quot;. |
 | Borttagen | Data för batchen har tagits bort helt. |
-| Misslyckades | Ett terminaltillstånd som antingen beror på felaktig konfiguration och/eller felaktiga data. Data för en misslyckad batch kommer att **not** visa upp. Den här statusen kan användas som ersättning med &quot;Misslyckades&quot;. |
+| Misslyckades | Ett terminaltillstånd som antingen beror på felaktig konfiguration och/eller felaktiga data. Data för en misslyckad batch **visas inte**. Den här statusen kan användas som ersättning med &quot;Misslyckades&quot;. |
 | Inaktiv | Batchen befordrades men har återförts eller gått ut. Batchen är inte längre tillgänglig för nedströmsförbrukning. |
 | Inläst | Data för batchen har slutförts och batchen är klar för befordran. |
-| Läser in | Data för den här batchen överförs och batchen är för närvarande **not** redo att befordras. |
+| Läser in | Data för den här batchen överförs och batchen är för närvarande **inte** klar att befordras. |
 | Försöker igen | Data för den här batchen bearbetas. På grund av ett system- eller övergående fel misslyckades dock batchen. Detta innebär att batchen provas igen. |
 | Mellanlagrad | Mellanlagringsfasen av befordringsprocessen för en batch är slutförd och åtkomsten har körts. |
 | Mellanlagring | Data för batchen bearbetas. |

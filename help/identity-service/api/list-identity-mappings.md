@@ -28,7 +28,7 @@ GET https://platform-{REGION}.adobe.io/data/core/identity/mapping
 
 **Begäran**
 
-Alternativ 1: Ange identiteten som namnutrymme (`nsId`, efter ID) och ID-värde (`id`).
+Alternativ 1: Ange identiteten som namnområde (`nsId`, efter ID) och ID-värde (`id`).
 
 ```shell
 curl -X GET \
@@ -50,7 +50,7 @@ curl -X GET \
   -H 'x-sandbox-name: {SANDBOX_NAME}'
 ```
 
-Alternativ 3: Ange identiteten som XID (`xid`). Mer information om hur du hämtar en identitets XID finns i avsnittet om det här dokumentet [hämta XID för en identitet](./list-native-id.md).
+Alternativ 3: Ange identiteten som XID (`xid`). Mer information om hur du hämtar en identitets XID finns i det här dokumentets avsnitt som handlar om [hämtning av ett XID för en identitet](./list-native-id.md).
 
 ```shell
 curl -X GET \
@@ -63,7 +63,7 @@ curl -X GET \
 
 ### Hämta identitetsmappningar för flera identiteter
 
-Använd `POST` metod som en batchmotsvarighet till `GET` den metod som beskrivs ovan för att hämta mappningar för flera identiteter.
+Använd metoden `POST` som en gruppmotsvarighet till metoden `GET` som beskrivs ovan för att hämta mappningar för flera identiteter.
 
 >[!NOTE]
 >
@@ -75,7 +75,7 @@ Använd `POST` metod som en batchmotsvarighet till `GET` den metod som beskrivs 
 POST https://platform.adobe.io/data/core/identity/mappings
 ```
 
-**Begärandetext**
+**Begär brödtext**
 
 Alternativ 1: Ange en lista med XID:n som mappningar ska hämtas för.
 
@@ -86,7 +86,7 @@ Alternativ 1: Ange en lista med XID:n som mappningar ska hämtas för.
 }
 ```
 
-Alternativ 2: Ange en lista över identiteter som sammansatta ID:n, där varje namn anger ID-värdet och namnutrymmet efter namnområdes-ID. I det här exemplet visas hur du använder den här metoden när du skriver över standardmetoden `graph-type` av &quot;Private Graph&quot;.
+Alternativ 2: Ange en lista över identiteter som sammansatta ID:n, där varje namn anger ID-värdet och namnutrymmet efter namnområdes-ID. I det här exemplet visas hur du använder den här metoden när du skriver över standardvärdet `graph-type` för Privat diagram.
 
 ```shell
 {
@@ -121,7 +121,7 @@ curl -X POST \
       }' | json_pp
 ```
 
-**Använda UID**
+**Använder UID**
 
 ```shell
 curl -X POST \
@@ -145,7 +145,7 @@ curl -X POST \
       }' | json_pp
 ```
 
-Om inga relaterade identiteter hittades med angivna indata kan du `HTTP 204` svarskoden returneras utan innehåll.
+Om inga relaterade identiteter hittades med angivna indata returneras en `HTTP 204`-svarskod utan innehåll.
 
 **Svar**
 
@@ -184,8 +184,8 @@ Om inga relaterade identiteter hittades med angivna indata kan du `HTTP 204` sva
 ```
 
 - `lastAssociationTime`: Tidsstämpeln när indataidentiteten senast associerades med den här identiteten.
-- `regions`: Tillhandahåller `regionId` och `lastAssociationTime` för var identiteten sågs.
+- `regions`: Anger `regionId` och `lastAssociationTime` för var identiteten sågs.
 
 ## Nästa steg
 
-Gå till nästa självstudiekurs för att [lista över tillgängliga namnutrymmen](./list-namespaces.md).
+Gå till nästa självstudiekurs för att [visa tillgängliga namnutrymmen](./list-namespaces.md).

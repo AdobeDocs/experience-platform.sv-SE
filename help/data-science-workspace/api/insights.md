@@ -1,5 +1,5 @@
 ---
-keywords: Experience Platform;utvecklarguide;endpoint;Data Science Workspace;populära topics;insights;sensei machine learning api
+keywords: Experience Platform;utvecklarguide;endpoint;Data Science Workspace;populära ämnen;insights;sensei machine learning api
 solution: Experience Platform
 title: API-slutpunkt för insikter
 description: Insikter innehåller mätvärden som används för att ge datavetare möjlighet att utvärdera och välja optimala ML-modeller genom att visa relevanta utvärderingsvärden.
@@ -18,7 +18,7 @@ Insikter innehåller mätvärden som används för att ge datavetare möjlighet 
 
 ## Hämta en lista med insikter
 
-Du kan hämta en lista med insikter genom att utföra en enda GET-förfrågan till insikter-slutpunkten.  Du kan filtrera resultaten genom att ange frågeparametrar i sökvägen för begäran. En lista över tillgängliga frågor finns i avsnittet om tillägg i [frågeparametrar för hämtning av resurser](./appendix.md#query).
+Du kan hämta en lista med insikter genom att utföra en enda GET-förfrågan till insikter-slutpunkten.  Du kan filtrera resultaten genom att ange frågeparametrar i sökvägen för begäran. En lista med tillgängliga frågor finns i avsnittet om tillägg för [frågeparametrar för hämtning av resurser](./appendix.md#query).
 
 **API-format**
 
@@ -39,7 +39,7 @@ curl -X GET \
 
 **Svar**
 
-Ett lyckat svar returnerar en nyttolast som innehåller en lista med insikter och varje insikt har en unik identifierare ( `id` ). Dessutom får du `context` som innehåller de unika identifierare som är associerade med den specifika insikten som följer med Insights-händelser och mätdata.
+Ett godkänt svar returnerar en nyttolast som innehåller en lista med insikter och varje insikter har en unik identifierare ( `id` ). Dessutom får du `context` som innehåller de unika identifierare som är associerade med den specifika insikten som följer med Insights-händelser och mätdata.
 
 ```json
 {
@@ -108,7 +108,7 @@ Ett lyckat svar returnerar en nyttolast som innehåller en lista med insikter oc
 
 ## Hämta en specifik insight
 
-Gör en förfrågan om GET och ange en giltig `{INSIGHT_ID}` i sökvägen till begäran. Du kan filtrera resultaten genom att ange frågeparametrar i sökvägen för begäran. En lista över tillgängliga frågor finns i avsnittet om tillägg i [frågeparametrar för hämtning av resurser](./appendix.md#query).
+Om du vill söka efter en viss insikt kan du göra en GET-förfrågan och ange en giltig `{INSIGHT_ID}` i sökvägen för begäran. Du kan filtrera resultaten genom att ange frågeparametrar i sökvägen för begäran. En lista med tillgängliga frågor finns i avsnittet om tillägg för [frågeparametrar för hämtning av resurser](./appendix.md#query).
 
 **API-format**
 
@@ -133,7 +133,7 @@ curl -X GET \
 
 **Svar**
 
-Ett godkänt svar returnerar en nyttolast som innehåller en unik identifierare för insikter (`id`). Dessutom får du `context` som innehåller de unika identifierare som är associerade med den särskilda insikten som följer med Insights-händelser och mätdata.
+Ett godkänt svar returnerar en nyttolast som innehåller den unika identifieraren (`id`) för insikter. Dessutom kommer du att få `context` som innehåller de unika identifierare som är associerade med den särskilda insikten som följer med Insights-händelser och mätdata.
 
 ```json
 {
@@ -229,7 +229,7 @@ curl -X POST \
 
 **Svar**
 
-Ett godkänt svar returnerar en nyttolast som har en `{INSIGHT_ID}` och eventuella parametrar som du angav i den ursprungliga begäran.
+Ett lyckat svar returnerar en nyttolast som har `{INSIGHT_ID}` och alla parametrar som du har angett i den ursprungliga begäran.
 
 ```json
 {
@@ -264,7 +264,7 @@ Ett godkänt svar returnerar en nyttolast som har en `{INSIGHT_ID}` och eventuel
 
 ## Hämta en lista med standardvärden för algoritmer
 
-Du kan hämta en lista över alla algoritmernas och standardmåtten genom att utföra en enda GET-begäran till metrisk slutpunkt. Gör en GET-förfrågan och ange en giltig `{ALGORITHM}` i sökvägen till begäran.
+Du kan hämta en lista över alla algoritmernas och standardmåtten genom att utföra en enda GET-begäran till metrisk slutpunkt. Om du vill fråga efter ett visst mått gör du en GET-förfrågan och anger en giltig `{ALGORITHM}` i sökvägen för begäran.
 
 **API-format**
 
@@ -292,7 +292,7 @@ curl -X GET \
 
 **Svar**
 
-Ett godkänt svar returnerar en nyttolast som innehåller `algorithm` unik identifierare och en array med standardvärden.
+Ett godkänt svar returnerar en nyttolast som innehåller den unika identifieraren `algorithm` och en matris med standardmått.
 
 ```json
 {

@@ -6,12 +6,12 @@ description: Den här dokumentationen hjälper dig att besvara vanliga frågor o
 exl-id: 0a750d7e-a4ee-4a79-a697-b4b732478b2b
 source-git-commit: e802932dea38ebbca8de012a4d285eab691231be
 workflow-type: tm+mt
-source-wordcount: '1416'
+source-wordcount: '1418'
 ht-degree: 0%
 
 ---
 
-# Felsökningsguide för batchimport
+# Felsökningsguide för batchmatning
 
 Den här dokumentationen hjälper dig att svara på vanliga frågor om Adobe Experience Platform [!DNL Batch Data Ingestion] API:er.
 
@@ -19,7 +19,7 @@ Den här dokumentationen hjälper dig att svara på vanliga frågor om Adobe Exp
 
 ### Är batchar omedelbart aktiva efter att HTTP 200 OK har tagits emot från CompleteBatch-API:t?
 
-The `200 OK` svar från API:t innebär att batchen har godkänts för bearbetning - den är inte aktiv förrän den övergår till det slutliga tillståndet, till exempel Aktiv eller Fel.
+`200 OK`-svaret från API:t betyder att batchen har godkänts för bearbetning. Den är inte aktiv förrän den övergår till det slutliga tillståndet, till exempel Aktiv eller Fel.
 
 ### Är det säkert att försöka köra API-anropet CompleteBatch igen när det inte fungerar?
 
@@ -37,7 +37,7 @@ Om segment av en stor fil hittas som överlappar eller saknas svarar servern med
 
 ### Vilka importformat stöds?
 
-För närvarande stöds både Parquet och JSON. CSV stöds i äldre versioner - data kommer att befordras till överordnad och preliminära kontroller, men inga moderna funktioner som konvertering, partitionering eller radvalidering kommer att stödjas.
+För närvarande stöds både Parquet och JSON. CSV stöds på äldre basis - data kommer att befordras till master-kontroll och preliminära kontroller kommer att utföras, men inga moderna funktioner som konvertering, partitionering eller radvalidering kommer att stödjas.
 
 ### Var ska batchindataformatet anges?
 
@@ -71,7 +71,7 @@ curl -X POST "https://platform.adobe.io/data/foundation/import/batches/{BATCH_ID
 
 ### Hur importeras flerradig JSON?
 
-Om du vill importera flerradig JSON, `isMultiLineJson` Flagga måste anges när gruppen skapas. Ett exempel på detta visas nedan:
+Om du vill importera flerradig JSON måste flaggan `isMultiLineJson` anges när gruppen skapas. Ett exempel på detta visas nedan:
 
 ```shell
 curl -X POST "https://platform.adobe.io/data/foundation/import/batches" \
@@ -120,7 +120,7 @@ För JSON med flera rader kan ett objekt uppta flera rader, medan alla objekt ka
 ]
 ```
 
-Som standard [!DNL Batch Data Ingestion] använder enkelradig JSON.
+Som standard använder [!DNL Batch Data Ingestion] enradig JSON.
 
 ### Stöds CSV-förtäring?
 
@@ -138,7 +138,7 @@ Det finns tre valideringsnivåer för data:
 
 ### Hur kan en redan skickad batch ersättas?
 
-En inkapslad batch kan ersättas med funktionen Uppspelning i grupp. Mer information om batchrepriser finns [här](./api-overview.md#replay-a-batch).
+En inkapslad batch kan ersättas med funktionen Uppspelning i grupp. Mer information om Batch Replay finns [här](./api-overview.md#replay-a-batch).
 
 ### Hur övervakas batchintaget?
 
@@ -173,26 +173,26 @@ Med den här förfrågan får du ett svar som liknar detta:
 }
 ```
 
-## Batchlägen
+## Gruppstatus
 
 ### Vilka är de möjliga batchtillstånden?
 
 En batch kan i sin livscykel gå igenom följande lägen:
 
-| Status | Data skrivna till Överordnad | Beskrivning |
+| Status | Data skrivna till mallen | Beskrivning |
 | ------ | ---------------------- | ----------- |
-| Övergiven |  | Klienten kunde inte slutföra batchen inom den förväntade tidsramen. |
-| Avbruten |  | Klienten har explicit anropat via [!DNL Batch Data Ingestion] API:er, en avbrottsåtgärd för den angivna gruppen. När en batch är i inläst tillstånd kan gruppen inte avbrytas. |
-| Aktiv/Slutförd | x | Batchen har befordrats från fas till överordnad och är nu tillgänglig för nedladdning. **Obs!** Aktiv och Slutfört används omväxlande. |
-| Arkiverad |  | Batchen har arkiverats i kylförvaring. |
-| Misslyckades/misslyckades |  | Ett terminaltillstånd som antingen beror på felaktig konfiguration och/eller felaktiga data. Ett åtgärdbart fel registreras, tillsammans med gruppen, så att klienter kan korrigera och skicka data igen. **Obs!** Misslyckades och Misslyckades används omväxlande. |
-| Inaktiv | x | Batchen befordrades, men har antingen återställts eller gått ut. Batchen kommer inte längre att vara tillgänglig för nedströmsförbrukning, men underliggande data kommer att vara Överordnad tills de har sparats, arkiverats eller på annat sätt tagits bort. |
-| Läser in |  | Klienten skriver för närvarande data för gruppen. Batchen är **not** redo för befordran, nu. |
-| Inläst |  | Klienten har slutfört skrivningen av data för batchen. Batchen är klar för befordran. |
-| Bevarad |  | Data har tagits bort från Överordnad och i ett särskilt arkiv i Adobe Data Lake. |
-| Mellanlagring |  | Klienten har signalerat batchen för befordran och data mellanlagras för förbrukning nedströms. |
-| Försöker igen |  | Klienten har signalerat batchen för befordran, men på grund av ett fel görs ett nytt försök att bearbeta batchen av en tjänst för batchövervakning. Det här läget kan användas för att tala om för kunderna att det kan dröja med inhämtningen av data. |
-| Stängd |  | Klienten har signalerat batchen för befordran, men efter `n` försök av en batchövervakningstjänst har batchkampanjen avstannat. |
+| Övergiven | | Klienten kunde inte slutföra batchen inom den förväntade tidsramen. |
+| Avbruten | | Klienten har via API:erna för [!DNL Batch Data Ingestion] explicit anropat en avbrottsåtgärd för den angivna gruppen. När en batch är i inläst tillstånd kan gruppen inte avbrytas. |
+| Aktiv/Slutförd | x | Batchen har befordrats från fas till huvudgrupp och är nu tillgänglig för nedladdning. **Obs!** Aktiv och Slutförd används omväxlande. |
+| Arkiverad | | Batchen har arkiverats i kylförvaring. |
+| Misslyckades/misslyckades | | Ett terminaltillstånd som antingen beror på felaktig konfiguration och/eller felaktiga data. Ett åtgärdbart fel registreras, tillsammans med gruppen, så att klienter kan korrigera och skicka data igen. **Obs!** Misslyckades och Misslyckades kan bytas ut. |
+| Inaktiv | x | Batchen befordrades, men har antingen återställts eller gått ut. Batchen kommer inte längre att vara tillgänglig för nedströmsförbrukning, men underliggande data kommer att finnas kvar i Master tills den har sparats, arkiverats eller på annat sätt tagits bort. |
+| Läser in | | Klienten skriver för närvarande data för gruppen. Batchen är **inte** redo för befordran, just nu. |
+| Inläst | | Klienten har slutfört skrivningen av data för batchen. Batchen är klar för befordran. |
+| Bevarad | | Data har tagits ut från Master och i ett särskilt arkiv i Adobe Data Lake. |
+| Mellanlagring | | Klienten har signalerat batchen för befordran och data mellanlagras för förbrukning nedströms. |
+| Försöker igen | | Klienten har signalerat batchen för befordran, men på grund av ett fel görs ett nytt försök att bearbeta batchen av en tjänst för batchövervakning. Det här läget kan användas för att tala om för kunderna att det kan dröja med inhämtningen av data. |
+| Stängd | | Klienten har signalerat batchen för befordran, men efter `n` försök av en batchövervakningstjänst har batchkampanjen avstannat. |
 
 ### Vad betyder &quot;Förproduktion&quot; för batchar?
 
@@ -200,11 +200,11 @@ När en batch är i&quot;Förproduktion&quot; innebär det att batchen har signa
 
 ### Vad innebär det när en batch är&quot;Försöker igen&quot;?
 
-När en batch är i &quot;Försöker igen&quot; betyder det att batchens dataintag tillfälligt har stoppats på grund av tillfälliga problem. När detta händer behöver kunden inte göra något.
+När en batch är i &quot;Försöker igen&quot; betyder det att batchens dataintag tillfälligt har stoppats på grund av intermittenta problem. När detta händer behöver kunden inte göra något.
 
 ### Vad innebär det när en batch är&quot;förlamad&quot;?
 
-När en batch är i &quot;Staplad&quot; betyder det att [!DNL Data Ingestion Services] har problem med att importera batchen och alla återförsök har uttömts.
+När en batch är i &quot;Stängd&quot; innebär det att [!DNL Data Ingestion Services] har svårt att importera gruppen och alla försök har uttömts.
 
 ### Vad innebär det om en batch fortfarande är&quot;Läser in&quot;?
 
@@ -212,11 +212,11 @@ När en batch är i&quot;Loading&quot; betyder det att API:t CompleteBatch inte 
 
 ### Finns det något sätt att veta om en batch har importerats utan problem?
 
-När batchstatusen är Aktiv har batchen importerats. Följ de detaljerade stegen för att ta reda på batchstatus [tidigare](#how-is-batch-ingestion-monitored).
+När batchstatusen är Aktiv har batchen importerats. Följ stegen som beskrivs [tidigare](#how-is-batch-ingestion-monitored) för att ta reda på status för gruppen.
 
-### Vad händer efter att en batch har misslyckats?
+### Vad händer efter att en batch misslyckas?
 
-När en batch misslyckas kan orsaken till att den misslyckas identifieras i `errors` nyttolastens sektion. Exempel på fel finns nedan:
+När en batch misslyckas kan orsaken till att den misslyckas identifieras i avsnittet `errors` i nyttolasten. Exempel på fel finns nedan:
 
 ```json
     "errors":[
@@ -239,7 +239,7 @@ När felen har korrigerats kan batchen överföras igen.
 
 ### Hur ska grupper tas bort?
 
-Istället för att ta bort direkt från [!DNL Catalog]bör satser tas bort med någon av metoderna nedan:
+I stället för att ta bort direkt från [!DNL Catalog] bör batchar tas bort med någon av metoderna nedan:
 
 1. Om batchen pågår bör batchen avbrytas.
 2. Om batchen kan mastras bör batchen återställas.
@@ -253,8 +253,8 @@ Följande batchnivåmått är tillgängliga för batchar i tillståndet Aktiv/Sl
 | inputByteSize | Det totala antalet byte som mellanlagrats för [!DNL Data Ingestion Services] att bearbeta. |
 | inputRecordSize | Det totala antalet rader som mellanlagrats för [!DNL Data Ingestion Services] att bearbeta. |
 | outputByteSize | Det totala antalet byte som skickats ut av [!DNL Data Ingestion Services] till [!DNL Data Lake]. |
-| outputRecordSize | Det totala antalet rader som matats ut av [!DNL Data Ingestion Services] till [!DNL Data Lake]. |
-| partitionCount | Det totala antalet partitioner som skrivs till [!DNL Data Lake]. |
+| outputRecordSize | Det totala antalet rader som skickats ut av [!DNL Data Ingestion Services] till [!DNL Data Lake]. |
+| partitionCount | Det totala antalet partitioner som skrivits till [!DNL Data Lake]. |
 
 ### Varför är mätvärden inte tillgängliga för vissa batchar?
 
@@ -269,7 +269,7 @@ Det finns två anledningar till att mätvärden kanske inte är tillgängliga i 
 | ----------- | ----------- |
 | 106 | Datauppsättningsfilen är tom. |
 | 118 | CSV-filen innehåller en tom rubrikrad. |
-| 200 | Batchen har godkänts för bearbetning och kommer att övergå till ett slutligt tillstånd, till exempel Aktiv eller Misslyckad. När batchen har skickats kan den övervakas med `GetBatch` slutpunkt. |
+| 200 | Batchen har godkänts för bearbetning och kommer att övergå till ett slutligt tillstånd, till exempel Aktiv eller Misslyckad. När batchen har skickats kan den övervakas med slutpunkten `GetBatch`. |
 | 400 | Felaktig begäran. Returneras om det finns några segment som saknas eller överlappar varandra i en grupp. |
 
 [large-file-upload]: batch_data_ingestion_developer_guide.md#how-to-ingest-large-parquet-files

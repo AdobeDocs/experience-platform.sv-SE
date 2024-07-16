@@ -1,5 +1,5 @@
 ---
-title: Översikt över Azure Event Hubs Source Connector
+title: Azure Event Hubs Source Connector - översikt
 description: Lär dig hur du ansluter Azure Event Hubs till Adobe Experience Platform med hjälp av API:er eller användargränssnittet.
 badgeUltimate: label="Ultimate" type="Positive"
 exl-id: b4d4bc7f-2241-482d-a5c2-4422c31705bf
@@ -10,38 +10,38 @@ ht-degree: 0%
 
 ---
 
-# [!DNL Azure Event Hubs] källa
+# [!DNL Azure Event Hubs]-källa
 
 >[!IMPORTANT]
 >
->The [!DNL Azure Event Hubs] Källan är tillgänglig i källkatalogen för användare som har köpt Real-time Customer Data Platform Ultimate.
+>Källan [!DNL Azure Event Hubs] är tillgänglig i källkatalogen för användare som har köpt Real-time Customer Data Platform Ultimate.
 
-Adobe Experience Platform erbjuder anslutningsmöjligheter för molnleverantörer som AWS, [!DNL Google Cloud Platform]och [!DNL Azure]. Ni kan överföra data från dessa system till plattformen.
+Adobe Experience Platform erbjuder inbyggd anslutning för molnleverantörer som AWS, [!DNL Google Cloud Platform] och [!DNL Azure]. Ni kan överföra data från dessa system till plattformen.
 
-Lagringskällor i molnet kan hämta dina egna data till plattformen utan att du behöver hämta, formatera eller överföra dem. Inkapslade data kan formateras som XDM JSON, XDM Parquet eller avgränsade. Varje steg i processen är integrerat i arbetsflödet för källor. Plattformen gör att du kan hämta in data från [!DNL Event Hubs] i realtid.
+Lagringskällor i molnet kan hämta dina egna data till plattformen utan att du behöver hämta, formatera eller överföra dem. Inkapslade data kan formateras som XDM JSON, XDM Parquet eller avgränsade. Varje steg i processen är integrerat i arbetsflödet för källor. Med plattformen kan du hämta data från [!DNL Event Hubs] i realtid.
 
-## Skala med [!DNL Event Hubs]
+## Skalar med [!DNL Event Hubs]
 
-Skalfaktorn för [!DNL Event Hubs] -instansen måste ökas om du behöver lägga in stora datavolymer, öka parallellismen eller öka hastigheten på intag-plattformen.
+Skalningsfaktorn för [!DNL Event Hubs]-instansen måste ökas om du behöver få in stora datavolymer, öka parallelismen eller öka hastigheten för intag-plattformen.
 
 ### Högre volymdata
 
-För närvarande, den maximala datavolym du kan hämta från din [!DNL Event Hubs] kontot till Platform är 2 000 poster per sekund. Om du vill skala upp och importera data i större volymer kontaktar du Adobe.
+För närvarande är den maximala datavolymen som du kan hämta från ditt [!DNL Event Hubs]-konto till plattformen 2 000 poster per sekund. Om du vill skala upp och importera data i större volymer kontaktar du Adobe.
 
-### Öka parallellismen på [!DNL Event Hubs] och plattform
+### Öka parallellismen på [!DNL Event Hubs] och plattformen
 
-Parallellitet avser samtidig körning av samma uppgifter på flera bearbetningsenheter för att öka hastighet och prestanda. Du kan öka parallellismen på [!DNL Event Hubs] genom att öka partitionen eller genom att köpa fler bearbetningsenheter för [!DNL Event Hubs] konto. Se det här [[!DNL Event Hubs] dokument vid skalförändring](https://docs.microsoft.com/en-us/azure/event-hubs/event-hubs-scalability) för mer information.
+Parallellitet avser samtidig körning av samma uppgifter på flera bearbetningsenheter för att öka hastighet och prestanda. Du kan öka parallelliteten på [!DNL Event Hubs]-sidan genom att öka partitionen eller genom att köpa fler bearbetningsenheter för ditt [!DNL Event Hubs]-konto. Mer information finns i det här [[!DNL Event Hubs] dokumentet om skalning](https://docs.microsoft.com/en-us/azure/event-hubs/event-hubs-scalability).
 
-För att öka hastigheten för intag på plattformssidan måste Platform öka antalet uppgifter i källkopplingen som ska läsas från din [!DNL Event Hubs] partitioner. När du har ökat parallellismen på [!DNL Event Hubs] Kontakta din Adobe-representant för att skala plattformsuppgifter baserat på din nya partition. Den här processen är för närvarande inte automatiserad.
+Om du vill öka hastigheten för inmatning på plattformssidan måste Platform öka antalet aktiviteter i källkopplingen som ska läsas från dina [!DNL Event Hubs]-partitioner. När du har ökat parallellismen på [!DNL Event Hubs]-sidan kontaktar du Adobe-representanten för att skala plattformsuppgifter baserat på den nya partitionen. Den här processen är för närvarande inte automatiserad.
 
-## Använd ett virtuellt nätverk att ansluta till [!DNL Event Hubs] till plattform
+## Använd ett virtuellt nätverk för att ansluta till [!DNL Event Hubs] till plattformen
 
-Du kan konfigurera ett virtuellt nätverk att ansluta till [!DNL Event Hubs] till Platform samtidigt som brandväggsåtgärderna är aktiverade. Om du vill konfigurera ett virtuellt nätverk går du till [[!DNL Event Hubs] uppsättningsdokument för nätverksregel](https://learn.microsoft.com/en-us/azure/event-hubs/network-security) och följ stegen nedan:
+Du kan konfigurera ett virtuellt nätverk för att ansluta [!DNL Event Hubs] till plattformen samtidigt som brandväggsåtgärderna är aktiverade. Om du vill konfigurera ett virtuellt nätverk går du till det här [[!DNL Event Hubs] uppsättningsdokumentet för nätverksregler](https://learn.microsoft.com/en-us/azure/event-hubs/network-security) och följer stegen nedan:
 
-* Välj **Prova** från REST API-panelen,
-* Autentisera [!DNL Azure] kontot med hjälp av dina inloggningsuppgifter i samma webbläsare,
-* Välj [!DNL Event Hubs] namnutrymme, resursgrupp och prenumeration som du vill hämta till plattformen och sedan välja **KÖR**;
-* I JSON-brödtexten som visas lägger du till följande Platform-undernät under `virtualNetworkRules` inuti `properties`:
+* Välj **Prova** på REST API-panelen;
+* Autentisera ditt [!DNL Azure]-konto med dina autentiseringsuppgifter i samma webbläsare;
+* Markera namnområdet [!DNL Event Hubs], resursgruppen och prenumerationen som du vill hämta till plattformen och välj sedan **KÖR**;
+* I JSON-brödtexten som visas lägger du till följande Platform-undernät under `virtualNetworkRules` i `properties`:
 
 
 >[!IMPORTANT]
@@ -117,11 +117,11 @@ Se listan nedan för olika regioner av plattformsundernät:
 }
 ```
 
-Se följande [[!DNL Event Hubs] dokument](https://learn.microsoft.com/en-us/azure/event-hubs/network-security) om du vill ha mer information om uppsättningar av nätverksregler.
+Mer information om uppsättningar nätverksregler finns i följande [[!DNL Event Hubs] dokument](https://learn.microsoft.com/en-us/azure/event-hubs/network-security).
 
-## Anslut [!DNL Event Hubs] till plattform
+## Anslut [!DNL Event Hubs] till plattformen
 
-Dokumentationen nedan innehåller information om hur du ansluter [!DNL Event Hubs] till Plattform med API:er eller användargränssnittet:
+Dokumentationen nedan innehåller information om hur du ansluter [!DNL Event Hubs] till plattformen med API:er eller användargränssnittet:
 
 ### Använda API:er
 

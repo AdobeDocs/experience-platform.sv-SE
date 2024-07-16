@@ -10,21 +10,21 @@ ht-degree: 0%
 
 ---
 
-# Uppdatera flödesspecifikationer med [!DNL Flow Service] API
+# Uppdatera flödesspecifikationer med API:t [!DNL Flow Service]
 
 När du har genererat ett nytt anslutningsspecifikations-ID måste du lägga till det här ID:t i en flödesspecifikation för att kunna skapa ett dataflöde.
 
-Flödesspecifikationer innehåller information som definierar ett flöde, inklusive käll- och målanslutnings-ID:n som stöds, transformeringsspecifikationer som behövs för att kunna tillämpas på data samt schemaläggningsparametrar som krävs för att generera ett flöde. Du kan redigera flödesspecifikationer med `/flowSpecs` slutpunkt.
+Flödesspecifikationer innehåller information som definierar ett flöde, inklusive käll- och målanslutnings-ID:n som stöds, transformeringsspecifikationer som behövs för att kunna tillämpas på data samt schemaläggningsparametrar som krävs för att generera ett flöde. Du kan redigera flödesspecifikationer med slutpunkten `/flowSpecs`.
 
-I följande dokument beskrivs hur du hämtar och uppdaterar flödesspecifikationer med [!DNL Flow Service] API för självbetjäningskällor (Batch SDK).
+Följande dokument innehåller steg om hur du hämtar och uppdaterar flödesspecifikationer med hjälp av [!DNL Flow Service]-API:t för självbetjäningskällor (Batch SDK).
 
 ## Komma igång
 
-Innan du fortsätter bör du granska [komma igång-guide](./getting-started.md) för länkar till relaterad dokumentation, en guide till hur du läser exempelanrop till API:er i det här dokumentet och viktig information om vilka huvuden som behövs för att kunna anropa ett Experience Platform-API.
+Innan du fortsätter bör du läsa [kom igång-guiden](./getting-started.md) för att få länkar till relaterad dokumentation, en guide till hur du läser exempelanropen för API i det här dokumentet och viktig information om vilka huvuden som krävs för att kunna anropa ett Experience Platform-API.
 
 ## Söka efter en flödesspecifikation {#lookup}
 
-Källor skapade med `generic-rest-extension` -mallen använder alla `RestStorageToAEP` flödesspecifikation. Den här flödesspecifikationen kan hämtas genom att en GET-begäran görs till `/flowSpecs/` slutpunkt och tillhandahåller `flowSpec.id` av `6499120c-0b15-42dc-936e-847ea3c24d72`.
+Källor som skapats med mallen `generic-rest-extension` använder alla flödesspecifikationen `RestStorageToAEP`. Den här flödesspecifikationen kan hämtas genom att en GET-förfrågan görs till `/flowSpecs/`-slutpunkten och `flowSpec.id` av `6499120c-0b15-42dc-936e-847ea3c24d72` tillhandahålls.
 
 **API-format**
 
@@ -34,7 +34,7 @@ GET /flowSpecs/6499120c-0b15-42dc-936e-847ea3c24d72
 
 **Begäran**
 
-Följande begäran hämtar `6499120c-0b15-42dc-936e-847ea3c24d72` anslutningsspecifikation.
+Följande begäran hämtar anslutningsspecifikationen `6499120c-0b15-42dc-936e-847ea3c24d72`.
 
 ```shell
 curl -X GET \
@@ -237,7 +237,7 @@ Du kan uppdatera fälten i en anslutningsspecifikation genom en PUT-åtgärd. N�
 
 >[!IMPORTANT]
 >
->Du måste uppdatera listan med `sourceConnectionSpecIds` av den flödesspecifikation som motsvarar en ny källa varje gång en ny källa skapas. Detta garanterar att den nya källan stöds av en befintlig flödesspecifikation, vilket gör att du kan slutföra dataflödesskapandet med den nya källan.
+>Du måste uppdatera listan `sourceConnectionSpecIds` i flödesspecifikationen som motsvarar en ny källa varje gång en ny källa skapas. Detta garanterar att den nya källan stöds av en befintlig flödesspecifikation, vilket gör att du kan slutföra dataflödesskapandet med den nya källan.
 
 **API-format**
 
@@ -247,7 +247,7 @@ PUT /flowSpecs/6499120c-0b15-42dc-936e-847ea3c24d72
 
 **Begäran**
 
-Följande begäran uppdaterar flödesspecifikationen för `6499120c-0b15-42dc-936e-847ea3c24d72` att inkludera anslutningsspecifikations-ID `f6c0de0c-0a42-4cd9-9139-8768bf2f1b55`.
+Följande begäran uppdaterar flödesspecifikationen för `6499120c-0b15-42dc-936e-847ea3c24d72` så att den inkluderar anslutningsspecifikation-ID:t `f6c0de0c-0a42-4cd9-9139-8768bf2f1b55`.
 
 ```shell
 PUT -X GET \
@@ -429,7 +429,7 @@ PUT -X GET \
 
 **Svar**
 
-Ett godkänt svar returnerar information om den efterfrågade flödesspecifikationen, inklusive dess uppdaterade lista över `sourceConnectionSpecIds`.
+Ett lyckat svar returnerar information om den efterfrågade flödesspecifikationen, inklusive dess uppdaterade lista över `sourceConnectionSpecIds`.
 
 ```json
 {
@@ -610,4 +610,4 @@ Ett godkänt svar returnerar information om den efterfrågade flödesspecifikati
 
 ## Nästa steg
 
-När den nya anslutningsspecifikationen har lagts till i rätt flödesspecifikation kan du nu testa och skicka den nya källan. Se guiden på [testa och skicka en ny källa](./submit.md) för mer information.
+När den nya anslutningsspecifikationen har lagts till i rätt flödesspecifikation kan du nu testa och skicka den nya källan. Mer information finns i guiden [Testa och skicka en ny källa](./submit.md).

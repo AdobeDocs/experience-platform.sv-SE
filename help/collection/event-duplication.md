@@ -13,7 +13,7 @@ ht-degree: 0%
 
 Adobe Experience Platform är ett distribuerat system som utformats för att maximera tillförlitligheten och samtidigt skalas till allt större datavolymer.
 
-För datainsamling i realtid [Experience Events](../xdm/classes/experienceevent.md) samlas in via [Edge Network](../web-sdk/home.md#edge-network)från källor på klientsidan, som [Web SDK](../web-sdk/home.md) eller [Mobile SDK](https://developer.adobe.com/client-sdks/home/)och levereras till Experience Platform och lager för bearbetning och lagring. Dessa lager utgör lösningar som Experience Platform, [Real-Time CDP](../rtcdp/home.md), [Customer Journey Analytics](https://experienceleague.adobe.com/docs/analytics-platform/using/cja-overview/cja-overview.html)och [Adobe Journey Optimizer](https://experienceleague.adobe.com/docs/journey-optimizer/using/ajo-home.html).
+För datainsamling i realtid samlas [Experience Events](../xdm/classes/experienceevent.md) in via [Edge Network](../web-sdk/home.md#edge-network) från källor på klientsidan, till exempel [Web SDK](../web-sdk/home.md) eller [Mobile SDK](https://developer.adobe.com/client-sdks/home/), och levereras till Experience Platform-bearbetnings- och lagringslager. Dessa lager utgör lösningar som Experience Platform, [Real-Time CDP](../rtcdp/home.md), [Customer Journey Analytics](https://experienceleague.adobe.com/docs/analytics-platform/using/cja-overview/cja-overview.html) och [Adobe Journey Optimizer](https://experienceleague.adobe.com/docs/journey-optimizer/using/ajo-home.html).
 
 För att minimera Experience Event-förluster förväntar sig SDK:er på klientsidan och den interna Experience Platform-leveranstjänsten en bekräftelse på att en händelse har samlats in.
 
@@ -32,15 +32,15 @@ Händelseduplicering kan inträffa i olika scenarier, till exempel, men inte beg
 
 Adobe Experience Platform datainsamlingslager har utformats för att stödja &quot;minst en gång&quot;-bearbetning. Följaktligen kan duplicering av händelser inträffa i begränsade, sällsynta situationer.
 
-Mer information om &quot;minst en gång&quot;-bearbetning finns i den här artikeln om [leveransgarantier](https://docs.confluent.io/kafka/design/delivery-semantics.html).
+Mer information om minst en gång-bearbetning finns i den här artikeln om [leveransgarantier](https://docs.confluent.io/kafka/design/delivery-semantics.html).
 
 ## Alternativ för deduplicering av händelser {#deduplication}
 
 För affärsscenarier som är känsliga för duplicerade händelser använder Experience Platform flera metoder för borttagning av dubbletter i sina lagringssystem längre fram i kedjan, till exempel de som beskrivs nedan.
 
-* Real-Time CDP Profile Store släpper händelser om en händelse med samma `_id` finns redan i [!DNL Profile store]. Läs dokumentationen om [Klassen XDM ExperienceEvent](../xdm/classes/experienceevent.md) för mer information.
-* Customer Journey Analytics tillåter användare att konfigurera ett mätvärde så att endast värden räknas icke-repetitivt. Om du vill veta hur du gör det läser du i dokumentationen om [komponentinställningar för metrisk deduplicering](https://experienceleague.adobe.com/docs/analytics-platform/using/cja-dataviews/component-settings/metric-deduplication.html?lang=en).
-* Experience Platform Query Service stöder datadeduplicering när det krävs att en hel rad tas bort från en beräkning eller att en viss uppsättning fält ignoreras eftersom endast en del av data i raden är dubblettinformation. Läs dokumentationen om [datadeduplicering i frågetjänsten](../query-service/key-concepts/deduplication.md) för mer information.
+* Real-Time CDP Profile Store släpper händelser om det redan finns en händelse med samma `_id` i [!DNL Profile store]. Mer information finns i dokumentationen om [XDM ExperienceEvent-klassen](../xdm/classes/experienceevent.md).
+* Customer Journey Analytics tillåter användare att konfigurera ett mätvärde så att endast värden räknas icke-repetitivt. Mer information om hur du gör detta finns i dokumentationen om komponentinställningarna för [metrisk deduplicering](https://experienceleague.adobe.com/docs/analytics-platform/using/cja-dataviews/component-settings/metric-deduplication.html?lang=en).
+* Experience Platform Query Service stöder datadeduplicering när det krävs att en hel rad tas bort från en beräkning eller att en viss uppsättning fält ignoreras eftersom endast en del av data i raden är dubblettinformation. Mer information finns i dokumentationen om [datadeduplicering i frågetjänsten](../query-service/key-concepts/deduplication.md).
 
 >[!NOTE]
 >

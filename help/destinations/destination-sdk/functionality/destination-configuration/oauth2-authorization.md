@@ -12,13 +12,13 @@ ht-degree: 0%
 
 # OAuth 2-auktorisering
 
-Destinationen SDK har stöd för flera åtkomstmetoder till ditt mål. Du kan bland annat autentisera till ditt mål med hjälp av [OAuth 2-auktoriseringsramverk](https://tools.ietf.org/html/rfc6749).
+Destinationen SDK har stöd för flera åtkomstmetoder till ditt mål. Detta är bland annat alternativet att autentisera till ditt mål med hjälp av [OAuth 2-auktoriseringsramverket](https://tools.ietf.org/html/rfc6749).
 
 Den här sidan beskriver de olika OAuth 2-auktoriseringsflöden som stöds av Destinationen SDK och innehåller anvisningar om hur du ställer in OAuth 2-auktorisering för ditt mål.
 
 >[!IMPORTANT]
 >
->Alla parameternamn och värden som stöds av Destinationen SDK är **skiftlägeskänslig**. Undvik skiftlägeskänslighetsfel genom att använda parameternamn och värden exakt som de visas i dokumentationen.
+>Alla parameternamn och värden som stöds av Destinationen SDK är **skiftlägeskänsliga**. Undvik skiftlägeskänslighetsfel genom att använda parameternamn och värden exakt som de visas i dokumentationen.
 
 ## Integrationstyper som stöds {#supported-integration-types}
 
@@ -46,7 +46,7 @@ Som en del av den här konfigurationen i ditt system behöver du omdirigerings-/
 
 >[!IMPORTANT]
 >
->Stegen för att registrera en omdirigerings-/återanrops-URL för Adobe Experience Platform i ditt system krävs bara för [OAuth 2 med auktoriseringskod](#authorization-code) anslagstyp. För de andra två anslagstyper som stöds (lösenord och klientuppgifter) kan du hoppa över det här steget.
+>Stegen för att registrera en omdirigerings-/återanrops-URL för Adobe Experience Platform i ditt system krävs bara för [OAuth 2 med behörighetstypen Auktoriseringskod](#authorization-code). För de andra två anslagstyper som stöds (lösenord och klientuppgifter) kan du hoppa över det här steget.
 
 I slutet av det här steget bör du ha:
 * Ett klient-ID.
@@ -55,7 +55,7 @@ I slutet av det här steget bör du ha:
 
 ### Vad du behöver göra i Destinationen SDK {#to-do-in-destination-sdk}
 
-Om du vill konfigurera OAuth 2-auktorisering för ditt mål i Experience Platform måste du lägga till din OAuth 2-information i dialogrutan [destinationskonfiguration](../../authoring-api/destination-configuration/create-destination-configuration.md), under `customerAuthenticationConfigurations` parameter. Se [kundautentisering](../../functionality/destination-configuration/customer-authentication.md) för detaljerade exempel. Specifika anvisningar om vilka fält du måste lägga till i konfigurationsmallen, beroende på din OAuth 2-auktoriseringstyp, finns längre ned på den här sidan.
+Om du vill konfigurera OAuth 2-auktorisering för ditt mål i Experience Platform måste du lägga till din OAuth 2-information i [målkonfigurationen](../../authoring-api/destination-configuration/create-destination-configuration.md), under parametern `customerAuthenticationConfigurations`. Se [kundautentisering](../../functionality/destination-configuration/customer-authentication.md) för detaljerade exempel. Specifika anvisningar om vilka fält du måste lägga till i konfigurationsmallen, beroende på din OAuth 2-auktoriseringstyp, finns längre ned på den här sidan.
 
 ## OAuth 2-anslagstyper som stöds {#oauth2-grant-types}
 
@@ -85,7 +85,7 @@ Det system som Adobe har utformat för OAuth 2-auktorisering:
 
 ## OAuth 2 med auktoriseringskod {#authorization-code}
 
-Om målet har stöd för ett standard OAuth 2.0 Authorization Code-flöde (läs [RFC-standardspecifikationer](https://tools.ietf.org/html/rfc6749#section-4.1)) eller en variant av det, se de obligatoriska och valfria fälten nedan:
+Om målet har stöd för ett vanligt OAuth 2.0 Authorization Code-flöde (läs [RFC-standardsspecifikationer](https://tools.ietf.org/html/rfc6749#section-4.1)) eller en variant av det, kan du läsa de obligatoriska och valfria fälten nedan:
 
 | OAuth 2-bidrag | Indata | Utdata |
 |---------|----------|---------|
@@ -93,7 +93,7 @@ Om målet har stöd för ett standard OAuth 2.0 Authorization Code-flöde (läs 
 
 {style="table-layout:auto"}
 
-Om du vill konfigurera den här auktoriseringsmetoden för målet lägger du till följande rader i konfigurationen när du [skapa en målkonfiguration](../../authoring-api/destination-configuration/create-destination-configuration.md):
+Om du vill konfigurera den här auktoriseringsmetoden för målet lägger du till följande rader i konfigurationen när du [skapar en målkonfiguration](../../authoring-api/destination-configuration/create-destination-configuration.md):
 
 ```json
 {
@@ -120,7 +120,7 @@ Om du vill konfigurera den här auktoriseringsmetoden för målet lägger du til
 | `grant` | Sträng | Använd&quot;OAUTH2_AUTHZATION_CODE&quot;. |
 | `accessTokenUrl` | Sträng | URL:en på din sida, som utfärdar åtkomsttoken och, om du vill, uppdaterar token. |
 | `authorizationUrl` | Sträng | URL:en till din auktoriseringsserver, där du omdirigerar användaren till ditt program. |
-| `refreshTokenUrl` | Sträng | *Valfritt.* URL:en på din sida, som utfärdar uppdateringstoken. Ofta är `refreshTokenUrl` är samma som `accessTokenUrl`. |
+| `refreshTokenUrl` | Sträng | *Valfritt.* URL:en på din sida, som utfärdar uppdateringstoken. Ofta är `refreshTokenUrl` samma som `accessTokenUrl`. |
 | `clientId` | Sträng | Det klient-ID som systemet tilldelar till Adobe Experience Platform. |
 | `clientSecret` | Sträng | Klienthemligheten som ditt system tilldelar Adobe Experience Platform. |
 | `scope` | Lista över strängar | *Valfritt*. Ange omfattningen för vad åtkomsttoken tillåter Experience Platform att utföra på dina resurser. Exempel: &quot;read, write&quot;. |
@@ -129,7 +129,7 @@ Om du vill konfigurera den här auktoriseringsmetoden för målet lägger du til
 
 ## OAuth 2 med lösenordsbeviljande
 
-För OAuth 2 Password grant (läs [RFC-standardspecifikationer](https://tools.ietf.org/html/rfc6749#section-4.3)), Experience Platform kräver användarens användarnamn och lösenord. I auktoriseringsflödet utbyter Experience Platform dessa autentiseringsuppgifter för en åtkomsttoken och, om så önskas, en uppdateringstoken.
+För OAuth 2-lösenordsbeviljande (läs [RFC-standardspecifikationerna](https://tools.ietf.org/html/rfc6749#section-4.3)) kräver Experience Platform användarens användarnamn och lösenord. I auktoriseringsflödet utbyter Experience Platform dessa autentiseringsuppgifter för en åtkomsttoken och, om så önskas, en uppdateringstoken.
 Adobe använder standardindata nedan för att förenkla destinationskonfigurationen, med möjlighet att åsidosätta värden:
 
 | OAuth 2-bidrag | Indata | Utdata |
@@ -140,9 +140,9 @@ Adobe använder standardindata nedan för att förenkla destinationskonfiguratio
 
 >[!NOTE]
 >
-> Du behöver inte lägga till några parametrar för `username` och `password` i konfigurationen nedan. När du lägger till `"grant": "OAUTH2_PASSWORD"` i målkonfigurationen begär systemet att användaren anger ett användarnamn och lösenord i användargränssnittet i Experience Platform när de autentiseras till ditt mål.
+> Du behöver inte lägga till några parametrar för `username` och `password` i konfigurationen nedan. När du lägger till `"grant": "OAUTH2_PASSWORD"` i målkonfigurationen kommer systemet att begära att användaren anger ett användarnamn och lösenord i användargränssnittet för Experience Platform när de autentiseras mot målet.
 
-Om du vill konfigurera den här auktoriseringsmetoden för målet lägger du till följande rader i konfigurationen när du [skapa en målkonfiguration](../../authoring-api/destination-configuration/create-destination-configuration.md):
+Om du vill konfigurera den här auktoriseringsmetoden för målet lägger du till följande rader i konfigurationen när du [skapar en målkonfiguration](../../authoring-api/destination-configuration/create-destination-configuration.md):
 
 ```json
 {
@@ -172,7 +172,7 @@ Om du vill konfigurera den här auktoriseringsmetoden för målet lägger du til
 
 ## OAuth 2 med klientautentiseringsuppgifter
 
-Du kan konfigurera autentiseringsuppgifter för OAuth 2-klient (läs [RFC-standardspecifikationer](https://tools.ietf.org/html/rfc6749#section-4.4)), som har stöd för de standardinställningar för in- och utdata som anges nedan. Du kan anpassa värdena. Se [Anpassa din OAuth 2-konfiguration](#customize-configuration) för mer information.
+Du kan konfigurera en OAuth 2-klientautentiseringsuppgifter (läs [RFC-standardsspecifikationer](https://tools.ietf.org/html/rfc6749#section-4.4)) som stöder standardindata och standardutdata som listas nedan. Du kan anpassa värdena. Mer information finns i [Anpassa OAuth 2-konfigurationen](#customize-configuration).
 
 | OAuth 2-bidrag | Indata | Utdata |
 |---------|----------|---------|
@@ -180,7 +180,7 @@ Du kan konfigurera autentiseringsuppgifter för OAuth 2-klient (läs [RFC-standa
 
 {style="table-layout:auto"}
 
-Om du vill konfigurera den här auktoriseringsmetoden för målet lägger du till följande rader i konfigurationen när du [skapa en målkonfiguration](../../authoring-api/destination-configuration/create-destination-configuration.md):
+Om du vill konfigurera den här auktoriseringsmetoden för målet lägger du till följande rader i konfigurationen när du [skapar en målkonfiguration](../../authoring-api/destination-configuration/create-destination-configuration.md):
 
 ```json
 {
@@ -205,7 +205,7 @@ Om du vill konfigurera den här auktoriseringsmetoden för målet lägger du til
 | `authType` | Sträng | Använd &quot;OAUTH2&quot;. |
 | `grant` | Sträng | Använd&quot;OAUTH2_CLIENT_CREDENTIALS&quot;. |
 | `accessTokenUrl` | Sträng | URL:en till din auktoriseringsserver, som utfärdar en åtkomsttoken och en valfri uppdateringstoken. |
-| `refreshTokenUrl` | Sträng | *Valfritt.* URL:en på din sida, som utfärdar uppdateringstoken. Ofta är `refreshTokenUrl` är samma som `accessTokenUrl`. |
+| `refreshTokenUrl` | Sträng | *Valfritt.* URL:en på din sida, som utfärdar uppdateringstoken. Ofta är `refreshTokenUrl` samma som `accessTokenUrl`. |
 | `clientId` | Sträng | Det klient-ID som systemet tilldelar till Adobe Experience Platform. |
 | `clientSecret` | Sträng | Klienthemligheten som ditt system tilldelar Adobe Experience Platform. |
 | `scope` | Lista över strängar | *Valfritt*. Ange omfattningen för vad åtkomsttoken tillåter Experience Platform att utföra på dina resurser. Exempel: &quot;read, write&quot;. |
@@ -214,11 +214,11 @@ Om du vill konfigurera den här auktoriseringsmetoden för målet lägger du til
 
 ## Anpassa din OAuth 2-konfiguration {#customize-configuration}
 
-De konfigurationer som beskrivs i avsnitten ovan beskriver OAuth 2-standardstipendier. Det system som Adobe har utformat ger dock flexibilitet så att du kan använda anpassade parametrar för alla variationer i OAuth 2-anslaget. Använd knappen `authenticationDataFields` parametrar, vilket visas i exemplen nedan.
+De konfigurationer som beskrivs i avsnitten ovan beskriver OAuth 2-standardstipendier. Det system som Adobe har utformat ger dock flexibilitet så att du kan använda anpassade parametrar för alla variationer i OAuth 2-anslaget. Om du vill anpassa OAuth 2-standardinställningarna använder du parametrarna `authenticationDataFields`, som visas i exemplen nedan.
 
-### Exempel 1: använda `authenticationDataFields` för att samla in information från auktoriseringssvaret {#example-1}
+### Exempel 1: `authenticationDataFields` används för att hämta information från auktoriseringssvaret {#example-1}
 
-I det här exemplet har en målplattform uppdateringstoken som upphör att gälla efter en viss tid. I det här fallet skapar partnern `refreshTokenExpiration` anpassat fält för att få giltigheten för uppdateringstoken från `refresh_token_expires_in` i API-svaret.
+I det här exemplet har en målplattform uppdateringstoken som upphör att gälla efter en viss tid. I det här fallet konfigurerar partnern det anpassade fältet `refreshTokenExpiration` så att uppdateringstoken upphör att gälla från fältet `refresh_token_expires_in` i API-svaret.
 
 ```json
 {
@@ -254,7 +254,7 @@ I det här exemplet har en målplattform uppdateringstoken som upphör att gäll
 }  
 ```
 
-### Exempel 2: använda `authenticationDataFields` för att tillhandahålla en särskild uppdateringstoken {#example-2}
+### Exempel 2: `authenticationDataFields` används för att tillhandahålla en särskild uppdateringstoken {#example-2}
 
 I det här exemplet ställer en partner in sitt mål för att tillhandahålla en särskild uppdateringstoken. Dessutom returneras inte förfallodatumet för åtkomsttoken i API-svaret, vilket innebär att de kan hårdkoda ett standardvärde, i det här fallet 3 600 sekunder.
 
@@ -273,7 +273,7 @@ I det här exemplet ställer en partner in sitt mål för att tillhandahålla en
 
 ### Exempel 3: Användaren anger klient-ID och klienthemlighet när han/hon konfigurerar målet {#example-3}
 
-I det här exemplet ska du i stället för att skapa ett globalt klient-ID och en klienthemlighet som i avsnittet [Förutsättningar i systemet](#prerequisites)måste kunden ange klient-ID, klienthemlighet och konto-ID (det ID som kunden använder för att logga in på målet)
+I det här exemplet måste kunden, i stället för att skapa ett globalt klient-ID och en klienthemlighet, som visas i avsnittet [Krav i systemet](#prerequisites), ange klient-ID, klienthemlighet och konto-ID (det ID som kunden använder för att logga in på målet)
 
 ```json
 {
@@ -356,7 +356,7 @@ I det här exemplet ska du i stället för att skapa ett globalt klient-ID och e
 
 
 
-Du kan använda följande parametrar i `authenticationDataFields` för att anpassa din OAuth 2-konfiguration:
+Du kan använda följande parametrar i `authenticationDataFields` för att anpassa OAuth 2-konfigurationen:
 
 | Parameter | Typ | Beskrivning |
 |---------|----------|------|
@@ -365,7 +365,7 @@ Du kan använda följande parametrar i `authenticationDataFields` för att anpas
 | `authenticationDataFields.description` | Sträng | En beskrivning av det anpassade datafältet som du ställer in. |
 | `authenticationDataFields.type` | Sträng | Definierar typen för det anpassade datafältet. <br> Godkända värden: `string`, `boolean`, `integer` |
 | `authenticationDataFields.isRequired` | Boolean | Anger om det anpassade datafältet krävs i auktoriseringsflödet. |
-| `authenticationDataFields.format` | Sträng | När du väljer `"format":"password"`, Adobe krypterar värdet i auktoriseringsdatafältet. Vid användning med `"fieldType": "CUSTOMER"`döljer detta även indata i användargränssnittet när användaren skriver i fältet. |
+| `authenticationDataFields.format` | Sträng | När du väljer `"format":"password"` krypterar Adobe värdet för auktoriseringsdatafältet. När det används med `"fieldType": "CUSTOMER"` döljs även indata i användargränssnittet när användaren skriver i fältet. |
 | `authenticationDataFields.fieldType` | Sträng | Anger om indata kommer från partnern (du) eller från användaren när de ställer in målet i Experience Platform. |
 | `authenticationDataFields.value` | Sträng. Boolean. Heltal | Värdet för det anpassade datafältet. Värdet matchar den valda typen från `authenticationDataFields.type`. |
 | `authenticationDataFields.authenticationResponsePath` | Sträng | Anger vilket fält från API-svarssökvägen som du refererar till. |
@@ -376,7 +376,7 @@ Du kan använda följande parametrar i `authenticationDataFields` för att anpas
 
 Adobe har utformat ett system som uppdaterar utgångna åtkomsttoken utan att användaren behöver logga in på din plattform igen. Systemet kan generera en ny token så att aktiveringen till destinationen kan fortsätta utan problem för kunden.
 
-Om du vill konfigurera uppdatering av åtkomsttoken kan du behöva konfigurera en mallad HTTP-begäran som tillåter att Adobe får en ny åtkomsttoken med hjälp av en uppdateringstoken. Om åtkomsttoken har upphört att gälla, tar Adobe den mallbaserade begäran som du har angett och lägger till de parametrar som du har angett. Använd `accessTokenRequest` -parameter för att konfigurera en uppdateringsmekanism för åtkomsttoken.
+Om du vill konfigurera uppdatering av åtkomsttoken kan du behöva konfigurera en mallad HTTP-begäran som tillåter att Adobe får en ny åtkomsttoken med hjälp av en uppdateringstoken. Om åtkomsttoken har upphört att gälla, tar Adobe den mallbaserade begäran som du har angett och lägger till de parametrar som du har angett. Använd parametern `accessTokenRequest` för att konfigurera en uppdateringsmekanism för åtkomsttoken.
 
 
 ```json
@@ -454,23 +454,23 @@ Du kan använda följande parametrar i `accessTokenRequest` för att anpassa din
 | `accessTokenRequest.urlBasedDestination.url.templatingStrategy` | Sträng | <ul><li>Använd `PEBBLE_V1` om du använder mallar för värdet i `accessTokenRequest.urlBasedDestination.url.value`.</li><li> Använd `NONE` om värdet i fältet `accessTokenRequest.urlBasedDestination.url.value` är en konstant. </li></li> |
 | `accessTokenRequest.urlBasedDestination.url.value` | Sträng | Den URL som Experience Platform begär åtkomsttoken. |
 | `accessTokenRequest.httpTemplate.requestBody.templatingStrategy` | Sträng | <ul><li>Använd `PEBBLE_V1` om du använder mallar för värdena i `accessTokenRequest.httpTemplate.requestBody.value`.</li><li> Använd `NONE` om värdet i fältet `accessTokenRequest.httpTemplate.requestBody.value` är en konstant. </li></li> |
-| `accessTokenRequest.httpTemplate.requestBody.value` | Sträng | Använd mallspråk för att anpassa fält i HTTP-begäran till åtkomsttokenslutpunkten. Mer information om hur du använder mallar för att anpassa fält finns i [mallkonventioner](#templating-conventions) -avsnitt. |
+| `accessTokenRequest.httpTemplate.requestBody.value` | Sträng | Använd mallspråk för att anpassa fält i HTTP-begäran till åtkomsttokenslutpunkten. Mer information om hur du använder mallar för att anpassa fält finns i avsnittet [Mallar](#templating-conventions). |
 | `accessTokenRequest.httpTemplate.httpMethod` | Sträng | Anger den HTTP-metod som används för att anropa åtkomsttoken-slutpunkten. I de flesta fall är värdet `POST`. |
 | `accessTokenRequest.httpTemplate.contentType` | Sträng | Anger innehållstypen för HTTP-anropet till åtkomsttoken-slutpunkten. <br> Till exempel: `application/x-www-form-urlencoded` eller `application/json`. |
 | `accessTokenRequest.httpTemplate.headers` | Sträng | Anger om några huvuden ska läggas till i HTTP-anropet till din åtkomsttokenslutpunkt. |
 | `accessTokenRequest.responseFields.templatingStrategy` | Sträng | <ul><li>Använd `PEBBLE_V1` om du använder mallar för värdena i `accessTokenRequest.responseFields.value`.</li><li> Använd `NONE` om värdet i fältet `accessTokenRequest.responseFields.value` är en konstant. </li></li> |
-| `accessTokenRequest.responseFields.value` | Sträng | Använd mallspråk för att komma åt fält i HTTP-svaret från åtkomsttokenslutpunkten. Mer information om hur du använder mallar för att anpassa fält finns i [mallkonventioner](#templating-conventions) -avsnitt. |
+| `accessTokenRequest.responseFields.value` | Sträng | Använd mallspråk för att komma åt fält i HTTP-svaret från åtkomsttokenslutpunkten. Mer information om hur du använder mallar för att anpassa fält finns i avsnittet [Mallar](#templating-conventions). |
 | `accessTokenRequest.validations.name` | Sträng | Anger namnet som du angav för den här valideringen. |
 | `accessTokenRequest.validations.actualValue.templatingStrategy` | Sträng | <ul><li>Använd `PEBBLE_V1` om du använder mallar för värdena i `accessTokenRequest.validations.actualValue.value`.</li><li> Använd `NONE` om värdet i fältet `accessTokenRequest.validations.actualValue.value` är en konstant. </li></li> |
-| `accessTokenRequest.validations.actualValue.value` | Sträng | Använd mallspråk för att komma åt fält i HTTP-svaret. Mer information om hur du använder mallar för att anpassa fält finns i [mallkonventioner](#templating-conventions) -avsnitt. |
+| `accessTokenRequest.validations.actualValue.value` | Sträng | Använd mallspråk för att komma åt fält i HTTP-svaret. Mer information om hur du använder mallar för att anpassa fält finns i avsnittet [Mallar](#templating-conventions). |
 | `accessTokenRequest.validations.expectedValue.templatingStrategy` | Sträng | <ul><li>Använd `PEBBLE_V1` om du använder mallar för värdena i `accessTokenRequest.validations.expectedValue.value`.</li><li> Använd `NONE` om värdet i fältet `accessTokenRequest.validations.expectedValue.value` är en konstant. </li></li> |
-| `accessTokenRequest.validations.expectedValue.value` | Sträng | Använd mallspråk för att komma åt fält i HTTP-svaret. Mer information om hur du använder mallar för att anpassa fält finns i [mallkonventioner](#templating-conventions) -avsnitt. |
+| `accessTokenRequest.validations.expectedValue.value` | Sträng | Använd mallspråk för att komma åt fält i HTTP-svaret. Mer information om hur du använder mallar för att anpassa fält finns i avsnittet [Mallar](#templating-conventions). |
 
 {style="table-layout:auto"}
 
 ## Mallkonventioner {#templating-conventions}
 
-Beroende på hur du anpassar din behörighet kan du behöva komma åt datafält i auktoriseringssvaret, vilket visas i föregående avsnitt. För att göra det, var vänlig och bekanta dig med [Mallspråk](https://pebbletemplates.io/) som används av Adobe och som hänvisar till mallkonventionerna nedan för att anpassa OAuth 2-implementeringen.
+Beroende på hur du anpassar din behörighet kan du behöva komma åt datafält i auktoriseringssvaret, vilket visas i föregående avsnitt. Det gör du genom att bekanta dig med det [Pebble-mallspråk](https://pebbletemplates.io/) som används av Adobe och se mallkonventionerna nedan för att anpassa OAuth 2-implementeringen.
 
 
 | Prefix | Beskrivning | Exempel |
