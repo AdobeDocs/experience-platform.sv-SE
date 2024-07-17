@@ -4,9 +4,9 @@ description: Lär dig hur du skapar ett dataflöde för ditt Braze-konto med hj�
 last-substantial-update: 2024-01-30T00:00:00Z
 badge: Beta
 exl-id: 6e94414a-176c-4810-80ff-02cf9e797756
-source-git-commit: 8be502c9eea67119dc537a5d63a6c71e0bff1697
+source-git-commit: 59600165328181e41750b9b2a1f4fbf162dd1df5
 workflow-type: tm+mt
-source-wordcount: '683'
+source-wordcount: '969'
 ht-degree: 0%
 
 ---
@@ -41,7 +41,21 @@ Den här självstudiekursen kräver också en fungerande förståelse för [[!DN
 
 Om du redan har en [!DNL Braze]-anslutning kan du hoppa över resten av det här dokumentet och gå vidare till självstudiekursen [Konfigurera ett dataflöde](../../dataflow/marketing-automation.md).
 
-## Anslut ditt [!DNL Braze]-konto till Experience Platform
+## Skapa ett XDM-schema
+
+>[!TIP]
+>
+>Du måste skapa ett XDM-schema (Experience Data Model) om det är första gången du skapar en [!DNL Braze Currents]-anslutning. Om du redan har skapat ett schema för [!DNL Braze Currents] kan du hoppa över det här steget och fortsätta med att [ansluta ditt konto till Experience Platform](#connect).
+
+Använd den vänstra navigeringen i plattformsgränssnittet och välj sedan **[!UICONTROL Schemas]** för att komma åt arbetsytan i [!UICONTROL Schemas]. Välj sedan **[!UICONTROL Create schema]** och sedan **[!UICONTROL Experience Event]**. Välj **[!UICONTROL Next]** om du vill fortsätta.
+
+![Ett slutfört schema.](../../../../images/tutorials/create/braze/schema.png)
+
+Ange ett namn och en beskrivning för ditt schema. Använd sedan panelen [!UICONTROL Composition] för att konfigurera dina schemaattribut. Under [!UICONTROL Field groups] väljer du **[!UICONTROL Add]** och lägger till fältgruppen [!UICONTROL Braze Currents User Event]. När du är klar väljer du **[!UICONTROL Save]**.
+
+Mer information om scheman finns i guiden för att [skapa scheman i användargränssnittet](../../../../../xdm/tutorials/create-schema-ui.md).
+
+## Anslut ditt [!DNL Braze]-konto till Experience Platform {#connect}
 
 I plattformsgränssnittet väljer du **[!UICONTROL Sources]** i den vänstra navigeringen för att komma åt arbetsytan i [!UICONTROL Sources]. Du kan välja lämplig kategori i katalogen till vänster på skärmen. Du kan också hitta den källa du vill arbeta med med med sökalternativet.
 
@@ -53,18 +67,30 @@ Ladda sedan upp den tillhandahållna exempelfilen [Braze Currents](https://githu
 
 ![Skärmen Lägg till data.](../../../../images/tutorials/create/braze/select-data.png)
 
-När filen har överförts måste du ange dataflödesinformation, inklusive information om datauppsättningen och det schema som du mappar till.
+När filen har överförts måste du ange dataflödesinformation, inklusive information om datauppsättningen och det schema som du mappar till.  Om det här är första gången du ansluter en Braze Currents-källa skapar du en ny datauppsättning.  I annat fall kan du använda alla befintliga datauppsättningar som refererar till Braze-schemat.  Om du skapar en ny datauppsättning använder du det schema som vi skapade i föregående avsnitt.
 ![Skärmen &quot;Dataflödesdetaljer&quot; markerar &quot;Datauppsättningsdetaljer&quot;.](../../../../images/tutorials/create/braze/dataflow-detail.png)
 
 Konfigurera sedan mappningen för dina data med mappningsgränssnittet.
 
-![Skärmen Mappning.](../../../../images/tutorials/create/braze/mapping.png)
+![Skärmen Mappning.](../../../../images/tutorials/create/braze/mapping_errors.png)
+
+Mappningen kommer att innehålla följande problem som behöver åtgärdas.
+
+I källdata mappas *id* felaktigt till *_braze.appID*. Du måste ändra målmappningsfältet till *_id* på schemats rotnivå. Kontrollera sedan att *properties.is_amp* mappas till *_braze.messaging.email.isAMP*.
+
+Ta sedan bort mappningen *time* till *timestamp*, markera ikonen Lägg till (`+`) och välj **[!UICONTROL Add calculated field]**. Ange *time \* 1000* i den angivna rutan och välj **[!UICONTROL Save]**.
+
+När det nya beräknade fältet har lagts till väljer du **[!UICONTROL Map target field]** bredvid det nya källfältet och mappar det till *timestamp* på schemats rotnivå. Välj sedan **[!UICONTROL Validate]** för att se till att du inte har fler fel.
 
 >[!IMPORTANT]
 >
 >Hjärntidsstämplar anges inte i millisekunder utan i sekunder. För att tidsstämplarna i Experience Platform ska visas korrekt måste du skapa beräkningsfält i millisekunder. En beräkning av &quot;time * 1000&quot; konverteras korrekt till millisekunder, vilket är lämpligt för mappning till ett tidsstämpelfält i Experience Platform.
 >
 >![Skapar ett beräknat fält för tidsstämpel ](../../../../images/tutorials/create/braze/create-calculated-field.png)
+
+![Mappningen utan fel.](../../../../images/tutorials/create/braze/completed_mapping.png)
+
+När du är klar väljer du **[!UICONTROL Next]**. Använd granskningssidan för att bekräfta informationen om dataflödet och välj sedan **[!UICONTROL Finish]**.
 
 ### Samla in nödvändiga inloggningsuppgifter
 
