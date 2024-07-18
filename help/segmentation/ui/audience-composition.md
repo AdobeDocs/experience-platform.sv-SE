@@ -3,9 +3,9 @@ solution: Experience Platform
 title: Användargränssnittshandbok för målgrupper
 description: Audience Composition i Adobe Experience Platform UI har en omfattande arbetsyta där du kan interagera med profildataelement. Arbetsytan innehåller intuitiva kontroller för att skapa och redigera målgrupper för din organisation.
 exl-id: 0dda0cb1-49e0-478b-8004-84572b6cf625
-source-git-commit: 3852fc4eca8ea4b6b3fdcfb6aaa54315d83038b4
+source-git-commit: ca8f0c3df9581af7be37e242c9e300ef1b6ea814
 workflow-type: tm+mt
-source-wordcount: '1801'
+source-wordcount: '1839'
 ht-degree: 0%
 
 ---
@@ -268,14 +268,18 @@ Dessutom kan du aktivera växlingsknappen **[!UICONTROL Other profiles]** för a
 
 ## Publicera era målgrupper
 
-När du har komponerat målgruppen kan du spara och publicera den genom att välja **[!UICONTROL Publish]**.
+>[!IMPORTANT]
+>
+>Observera att det kan ta upp till 48 timmar innan publikationen publiceras att utvärderas och aktiveras för användning i tjänster som Real-Time CDP eller Adobe Journey Optimizer.
 
-![Knappen Publish är markerad och visar hur du sparar och publicerar din målgrupp.](../images/ui/audience-composition/publish.png)
+När du har skapat kompositionen kan du spara och publicera den genom att välja **[!UICONTROL Publish]**.
+
+![Knappen Publish är markerad och visar hur du sparar och publicerar kompositionen.](../images/ui/audience-composition/publish.png)
 
 Om det uppstår fel när målgruppen skapas visas ett varningsmeddelande som talar om hur du löser problemet.
 
-![Knappen Publish är markerad och visar hur du sparar och publicerar din målgrupp.](../images/ui/audience-composition/audience-alert.png)
+![Knappen Publish är markerad och visar hur du sparar och publicerar kompositionen.](../images/ui/audience-composition/audience-alert.png)
 
 ## Nästa steg
 
-Audience Composition har ett omfattande arbetsflöde som gör att du kan skapa målgrupper från olika blocktyper. Om du vill veta mer om andra delar av segmenteringstjänstens gränssnitt kan du läsa användarhandboken för [segmenteringstjänsten](./overview.md).
+Audience Composition har ett omfattande arbetsflöde där du kan skapa kompositioner från olika blocktyper. Om du vill veta mer om andra delar av segmenteringstjänstens gränssnitt kan du läsa användarhandboken för [segmenteringstjänsten](./overview.md).

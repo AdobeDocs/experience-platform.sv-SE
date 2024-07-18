@@ -1,9 +1,9 @@
 ---
 title: Översikt över målportalen
 description: Lär dig hur du använder Audience Portal för att visa, hantera och skapa målgrupper i Adobe Experience Platform.
-source-git-commit: c724baba6972e1a033c18b63ab824149567d20fb
+source-git-commit: ca8f0c3df9581af7be37e242c9e300ef1b6ea814
 workflow-type: tm+mt
-source-wordcount: '3478'
+source-wordcount: '3498'
 ht-degree: 0%
 
 ---
@@ -258,6 +258,10 @@ Om du väljer **[!UICONTROL Edit properties]** kan du redigera grundläggande in
 ### Målgruppssumma {#audience-total}
 
 Avsnittet **[!UICONTROL Audience total]** visar det totala antalet profiler som är kvalificerade för målgruppen.
+
+>[!NOTE]
+>
+>Det kan ta upp till 30 minuter för det totala antalet målgrupper att uppdatera när exportjobbet är klart.
 
 Uppskattningar genereras med en provstorlek för den aktuella dagens exempeldata. Om det finns mindre än 1 miljon enheter i din profilbutik används hela datauppsättningen, för mellan 1 och 20 miljoner enheter används 1 miljon enheter och för över 20 miljoner enheter används 5 % av det totala antalet enheter. Mer information om hur du genererar uppskattningar finns i [uppskattningsgenereringsavsnittet](../tutorials/create-a-segment.md#estimate-and-preview-an-audience) i självstudiekursen för att skapa målgrupper.
 

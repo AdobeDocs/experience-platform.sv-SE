@@ -2,9 +2,9 @@
 title: Frågor och svar
 description: Få svar på vanliga frågor om målgrupper och andra segmenteringsrelaterade koncept.
 exl-id: 79d54105-a37d-43f7-adcb-97f2b8e4249c
-source-git-commit: c35b43654d31f0f112258e577a1bb95e72f0a971
+source-git-commit: ca8f0c3df9581af7be37e242c9e300ef1b6ea814
 workflow-type: tm+mt
-source-wordcount: '4076'
+source-wordcount: '4072'
 ht-degree: 0%
 
 ---
@@ -317,7 +317,7 @@ Mer information om hur du använder Audience Composition finns i handboken [Audi
 
 Publiken sparas automatiskt när de skapas i Audience Composition. Publiken skapas första gången som detta sparas automatiskt.
 
-När målgruppen har skapats kan det ta upp till 24 timmar att utvärdera den.
+När publikens komposition har skapats kan det ta upp till 48 timmar innan den kan utvärderas och aktiveras för användning i underordnade tjänster som en Real-Time CDP-destination eller en Adobe Journey Optimizer-kanal.
 
 ### När kan jag använda den målgrupp jag skapat?
 
@@ -337,11 +337,7 @@ Genom att dela målgrupper kan ni ytterligare dela upp er målgrupp i mindre gru
 
 När grupper delas upp efter attribut sker ömsesidig exklusivitet mellan grupperna. Det innebär att om en post uppfyller villkoren för flera delade sökvägar tilldelas den **första**-sökvägen från vänster och **inte** till någon av de andra sökvägarna.
 
-Vid uppdelning efter procent är delningarna **slumpmässigt** klara. Detta innebär att profilerna tilldelas slumpmässigt till varje bana. Delningen **är** beständig, vilket innebär att profilen kommer att finnas i samma undermålgrupp vid varje utvärdering.
-
->[!NOTE]
->
->Tidigare var uppdelningar i Audience Composition **inte** beständiga.
+Vid uppdelning efter procent är delningarna **slumpmässigt** klara. Detta innebär att profilerna tilldelas slumpmässigt till varje bana.
 
 Mer information om det delade blocket finns i handboken [Målgruppsdisposition](./ui/audience-composition.md#split).
 
