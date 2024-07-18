@@ -1,7 +1,7 @@
 ---
 title: Merkury Enterprise Identity Destination
 description: Lär dig hur du skapar en Merkury Enterprise Identity-målanslutning med Adobe Experience Platform-gränssnittet.
-source-git-commit: 01ce38d26cf61706de84ec143e3dd8af720d0591
+source-git-commit: 0a1d024b5642c08cd9349220a9686d8d4cbfd55a
 workflow-type: tm+mt
 source-wordcount: '1465'
 ht-degree: 0%
@@ -75,10 +75,11 @@ I det här avsnittet beskrivs vilken typ av målgrupper du kan exportera till de
 ## Exportera typ och frekvens
 
 Se tabellen nedan för information om exporttyp och frekvens för destinationen.
-|**Målgrupp**|**Stöds**|**Beskrivning ursprung**|\
-|—|—|—|\
-|Segmenteringstjänst|✓|Målgrupper som genererats via Experience Platform [[segmenteringstjänsten]](https://experienceleague.adobe.com/en/docs/experience-platform/segmentation/home).|
-Anpassade överföringar|X|Publiker [[importerad]](https://experienceleague.adobe.com/en/docs/experience-platform/segmentation/ui/overview#import-audience) till Experience Platform från CSV-filer.
+
+| **Målgrupp** | **Stöds** | **Beskrivningens ursprung** |
+|---|---|---|      
+| Segmenteringstjänst | ✓ | Publiker som genererats via Experience Platform [[segmenteringstjänsten]](https://experienceleague.adobe.com/en/docs/experience-platform/segmentation/home). |
+| Anpassade överföringar | X | Publiken [[importerad]](https://experienceleague.adobe.com/en/docs/experience-platform/segmentation/ui/overview#import-audience) till Experience Platform från CSV-filer. |
 
 {style="table-layout:auto"}
 

@@ -3,7 +3,7 @@ keywords: crm;CRM;crm destination;salesforce crm;salesforce crm destination
 title: Salesforce CRM-anslutning
 description: Med Salesforce CRM-destinationen kan du exportera dina kontodata och aktivera dem i Salesforce CRM för dina affärsbehov.
 exl-id: bd9cb656-d742-4a18-97a2-546d4056d093
-source-git-commit: ba39f62cd77acedb7bfc0081dbb5f59906c9b287
+source-git-commit: d9ff92138a5de774f011dd9b2e5f1cdc3371bacf
 workflow-type: tm+mt
 source-wordcount: '2712'
 ht-degree: 0%
@@ -134,7 +134,7 @@ Om din [!DNL Salesforce]-kontoadministratör har infört IP-begränsningar måst
 Se tabellen nedan för information om exporttyp och frekvens för destinationen.
 
 | Objekt | Typ | Anteckningar |
----------|----------|---------|
+|---------|----------|---------|
 | Exporttyp | **[!UICONTROL Profile-based]** | <ul><li>Du exporterar alla medlemmar i ett segment, tillsammans med de önskade schemafälten *(till exempel e-postadress, telefonnummer, efternamn)*, enligt fältmappningen.</li><li> Varje målgruppsstatus i [!DNL Salesforce CRM] uppdateras med motsvarande målgruppsstatus från Platform, baserat på värdet **[!UICONTROL Mapping ID]** som tillhandahölls under steget [målgruppsplanering](#schedule-segment-export-example).</li></ul> |
 | Exportfrekvens | **[!UICONTROL Streaming]** | <ul><li>Direktuppspelningsmål är alltid på API-baserade anslutningar. Så snart en profil uppdateras i Experience Platform baserat på målgruppsutvärdering skickar anslutningsprogrammet uppdateringen nedströms till målplattformen. Läs mer om [direktuppspelningsmål](/help/destinations/destination-types.md#streaming-destinations).</li></ul> |
 
@@ -153,13 +153,14 @@ I **[!UICONTROL Destinations]** > **[!UICONTROL Catalog]** söker du efter [!DNL
 ### Autentisera till mål {#authenticate}
 
 Om du vill autentisera mot målet fyller du i de obligatoriska fälten nedan och väljer **[!UICONTROL Connect to destination]**. Mer information finns i avsnittet [Samla [!DNL Salesforce CRM] inloggningsuppgifter](#gather-credentials).
+
 | Autentiseringsuppgifter | Beskrivning |
-| — | — |
-| **[!UICONTROL Username]** | Användarnamn för ditt [!DNL Salesforce] -konto. |
-| **[!UICONTROL Password]** | En sammanfogad sträng som består av ditt [!DNL Salesforce]-kontolösenord som har lagts till med din [!DNL Salesforce] säkerhetstoken.<br>Det sammanfogade värdet har formen `{PASSWORD}{TOKEN}`.<br> Obs! Använd inga klammerparenteser eller mellanslag.<br>Om ditt [!DNL Salesforce] lösenord till exempel är `MyPa$$w0rd123` och [!DNL Salesforce] säkerhetstoken är `TOKEN12345....0000` är det sammanfogade värde som du kommer att använda i fältet **[!UICONTROL Password]** `MyPa$$w0rd123TOKEN12345....0000`. |
-| **[!UICONTROL Custom Domain]** | Ditt [!DNL Salesforce] -domänprefix. <br>Om din domän till exempel är *`d5i000000isb4eak-dev-ed`.my.salesforce.com* måste du ange `d5i000000isb4eak-dev-ed` som värde. |
-| **[!UICONTROL Client ID]** | Ditt [!DNL Salesforce] anslutna program `Consumer Key` . |
-| **[!UICONTROL Client Secret]** | Ditt [!DNL Salesforce] anslutna program `Consumer Secret` . |
+| --- | --- |
+| **[!UICONTROL Username]** | Användarnamn för ditt [!DNL Salesforce]-konto. |
+| **[!UICONTROL Password]** | En sammanfogad sträng bestående av ditt [!DNL Salesforce]-kontolösenord har lagts till med din [!DNL Salesforce]-säkerhetstoken.<br>Det sammanfogade värdet har formen `{PASSWORD}{TOKEN}`.<br> Obs! Använd inga klammerparenteser eller mellanslag.<br>Om ditt [!DNL Salesforce] lösenord till exempel är `MyPa$$w0rd123` och [!DNL Salesforce] säkerhetstoken är `TOKEN12345....0000` är det sammanfogade värde som du kommer att använda i fältet **[!UICONTROL Password]** `MyPa$$w0rd123TOKEN12345....0000`. |
+| **[!UICONTROL Custom Domain]** | Domänprefixet [!DNL Salesforce]. <br>Om din domän till exempel är *`d5i000000isb4eak-dev-ed`.my.salesforce.com* måste du ange `d5i000000isb4eak-dev-ed` som värde. |
+| **[!UICONTROL Client ID]** | Ditt [!DNL Salesforce] anslutna program `Consumer Key`. |
+| **[!UICONTROL Client Secret]** | Ditt [!DNL Salesforce] anslutna program `Consumer Secret`. |
 
 ![Skärmbild av användargränssnittet för plattformen som visar hur du autentiserar.](../../assets/catalog/crm/salesforce/authenticate-destination.png)
 
@@ -212,12 +213,13 @@ Följ de här stegen för att mappa dina XDM-fält korrekt till målfälten för
    * Om du arbetar med *Kontakter* i ditt segment kan du definiera mappningar för de fält som ska uppdateras genom att läsa objektreferensen i Salesforce för [kontakt](https://developer.salesforce.com/docs/atlas.en-us.object_reference.meta/object_reference/sforce_api_objects_contact.htm).
    * Du kan identifiera obligatoriska fält genom att söka efter ordet *Obligatorisk*, som anges i fältbeskrivningar i länken ovan.
    * Beroende på vilka fält du vill exportera eller uppdatera lägger du till mappningar mellan XDM-profilschemat och [!DNL (API) Salesforce CRM]:
-|Source-fält|Målfält| Anteckningar |
-| — | — | — |
-|`IdentityMap: crmID`|`Identity: SalesforceId`|`Mandatory`|
-|`xdm: person.name.lastName`|`Attribute: LastName`| `Mandatory`. Kontaktens efternamn är högst 80 tecken. |\
-     |`xdm: person.name.firstName`|`Attribute: FirstName`| Kontaktens förnamn är högst 40 tecken långt. |
-|`xdm: personalEmail.address`|`Attribute: Email`| Kontaktens e-postadress. |
+
+     | Source Field | Målfält | Anteckningar |
+     | --- | --- | --- |
+     | `IdentityMap: crmID` | `Identity: SalesforceId` | `Mandatory` |
+     | `xdm: person.name.lastName` | `Attribute: LastName` | `Mandatory`. Kontaktens efternamn är högst 80 tecken. |
+     | `xdm: person.name.firstName` | `Attribute: FirstName` | Kontaktens förnamn är högst 40 tecken långt. |
+     | `xdm: personalEmail.address` | `Attribute: Email` | Kontaktens e-postadress. |
 
    * Ett exempel på hur du använder dessa mappningar visas nedan:
      ![Exempel på skärmbild för plattformsgränssnitt som visar målmappningar.](../../assets/catalog/crm/salesforce/mappings-contacts.png)
@@ -227,12 +229,13 @@ Följ de här stegen för att mappa dina XDM-fält korrekt till målfälten för
    * Om du arbetar med *Leads* i ditt segment kan du definiera mappningar för fälten som ska uppdateras genom att läsa objektreferensen i Salesforce för [Lead](https://developer.salesforce.com/docs/atlas.en-us.object_reference.meta/object_reference/sforce_api_objects_lead.htm) .
    * Du kan identifiera obligatoriska fält genom att söka efter ordet *Obligatorisk*, som anges i fältbeskrivningar i länken ovan.
    * Beroende på vilka fält du vill exportera eller uppdatera lägger du till mappningar mellan XDM-profilschemat och [!DNL (API) Salesforce CRM]:
-|Source-fält|Målfält| Anteckningar |
-| — | — | — |
-|`IdentityMap: crmID`|`Identity: SalesforceId`|`Mandatory`|
-|`xdm: person.name.lastName`|`Attribute: LastName`| `Mandatory`. Ledningens efternamn är högst 80 tecken. |\
-     |`xdm: b2b.companyName`|`Attribute: Company`| `Mandatory`. Ledarens företag. |
-|`xdm: personalEmail.address`|`Attribute: Email`| Leadens e-postadress. |
+
+     | Source Field | Målfält | Anteckningar |
+     | --- | --- | --- |
+     | `IdentityMap: crmID` | `Identity: SalesforceId` | `Mandatory` |
+     | `xdm: person.name.lastName` | `Attribute: LastName` | `Mandatory`. Ledningens efternamn är högst 80 tecken. |
+     | `xdm: b2b.companyName` | `Attribute: Company` | `Mandatory`. Ledarens företag. |
+     | `xdm: personalEmail.address` | `Attribute: Email` | Leadens e-postadress. |
 
    * Ett exempel på hur du använder dessa mappningar visas nedan:
      ![Exempel på skärmbild för plattformsgränssnitt som visar målmappningar.](../../assets/catalog/crm/salesforce/mappings-leads.png)
@@ -256,8 +259,9 @@ Ett exempel som anger platsen för [!DNL Salesforce CRM] **[!UICONTROL Mapping I
 Som visas ovan matchar [!DNL Salesforce] **[!UICONTROL Field Name]** exakt det värde som anges i [!DNL Salesforce CRM] **[!UICONTROL Mapping ID]**.
 
 Beroende på ditt användningssätt kan alla aktiverade målgrupper mappas till samma anpassade [!DNL Salesforce]-fält eller till olika **[!UICONTROL Field Name]** i [!DNL Salesforce CRM]. Ett typiskt exempel baserat på bilden ovan kan vara.
+
 | [!DNL Salesforce CRM] segmentnamn | [!DNL Salesforce] **[!UICONTROL Field Name]** | [!DNL Salesforce CRM] **[!UICONTROL Mapping ID]** |
-| — | — | — |
+| --- | --- | --- |
 | crm_1_seg | `crm_1_seg` | `crm_1_seg` |
 | crm_2_seg | `crm_2_seg` | `crm_2_seg` |
 
