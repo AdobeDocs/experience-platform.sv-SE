@@ -2,9 +2,9 @@
 title: Frågor och svar
 description: Få svar på vanliga frågor om målgrupper och andra segmenteringsrelaterade koncept.
 exl-id: 79d54105-a37d-43f7-adcb-97f2b8e4249c
-source-git-commit: ca8f0c3df9581af7be37e242c9e300ef1b6ea814
+source-git-commit: 5e677e53677cd28787004043e9fcc9b94e631fc8
 workflow-type: tm+mt
-source-wordcount: '4072'
+source-wordcount: '4167'
 ht-degree: 0%
 
 ---
@@ -46,7 +46,7 @@ När du överför en externt genererad publik skapas följande objekt:
 
 Under arbetsflödet för att importera externa målgrupper måste du ange vilken kolumn i CSV-filen som motsvarar **Primär identitet**. Ett exempel på en primär identitet är e-postadress, ECID eller ett organisationsspecifikt namnområde för en anpassad identitet.
 
-De data som är associerade med den här primära identitetskolumnen är de **endast** data som är kopplade till profilen. Om det inte finns några befintliga profiler som matchar data i den primära identitetskolumnen skapas en ny profil. Den här profilen är emellertid i princip en överbliven profil eftersom **inga**-attribut eller upplevelsehändelser är associerade med den här profilen.
+Data som är associerade med den här primära identitetskolumnen är de **enda** data som är kopplade till profilen. Om det inte finns några befintliga profiler som matchar data i den primära identitetskolumnen skapas en ny profil. Den här profilen är emellertid i princip en överbliven profil eftersom **inga**-attribut eller upplevelsehändelser är associerade med den här profilen.
 
 Alla andra data inom den externt genererade målgruppen betraktas som **nyttolastattribut**. Dessa attribut kan **endast** användas för personalisering och berikning under aktivering, och är **inte** kopplade till en profil. Dessa attribut lagras dock i datasjön.
 
@@ -59,6 +59,10 @@ Ja, den externt genererade målgruppen sammanfogas med den befintliga profilen i
 ### Kan jag använda en externt genererad publik för att bygga andra målgrupper?
 
 Ja, alla externt genererade målgrupper visas i målgruppslagret och kan användas när målgrupper skapas i [Segment Builder](./ui/segment-builder.md).
+
+### Hur ofta utvärderas externt genererade målgrupper?
+
+Externt genererade målgrupper utvärderas **endast** under importen. Eftersom de associerade attributen för de här importerande målgrupperna är icke-varaktiga och **inte** är en del av profilarkivet, är den enda gången en externt genererad målgrupp uppdateras om den befintliga målgruppen uppdateras manuellt.
 
 ### Kan jag använda externt överförda attribut som en del av segmenteringen?
 
@@ -97,6 +101,10 @@ Om du av misstag har överfört en externt genererad publik och vill ta bort dat
 Aktuell datagräns för externt genererade målgrupper är **30 dagar**. Utgångsdatumet har valts för att minska mängden överflödiga data som lagras i organisationen.
 
 När dataförfalloperioden har passerat är den associerade datauppsättningen fortfarande synlig i datamängdslagret, men du **inte** kan aktivera målgruppen och profilantalet visas som noll.
+
+### Finns det ett maximalt antal externt genererade målgrupper jag kan importera?
+
+Det finns ingen gräns för hur många externt genererade målgrupper du kan importera. Observera dock att de importerade målgrupperna **do** räknas av mot den totala målgruppsgränsen.
 
 ### Hur interagerar Audience Portal och Audience Composition med Real-Time CDP Partner Data?
 
