@@ -3,9 +3,9 @@ title: API-slutpunkt för förfallodatum för datauppsättning
 description: Med slutpunkten /ttl i Data Hygiene API kan du schemalägga datauppsättningens förfallodatum i Adobe Experience Platform.
 role: Developer
 exl-id: fbabc2df-a79e-488c-b06b-cd72d6b9743b
-source-git-commit: 4fb8313f8209b68acef1484fc873b9bd014492be
+source-git-commit: 911089ec641d9fbb436807b04dd38e00fd47eecf
 workflow-type: tm+mt
-source-wordcount: '2217'
+source-wordcount: '1964'
 ht-degree: 0%
 
 ---
@@ -388,88 +388,6 @@ curl -X DELETE \
 
 Ett lyckat svar returnerar HTTP-status 204 (inget innehåll) och förfallofilens `status`-attribut är inställt på `cancelled`.
 
-## Hämta förfallostatushistoriken för en datauppsättning {#retrieve-expiration-history}
-
-Om du vill söka efter förfallostatushistoriken för en viss datauppsättning använder du frågeparametern `{DATASET_ID}` och `include=history` i en sökbegäran. Resultatet innehåller information om hur datauppsättningens förfallodatum skapas, vilka uppdateringar som har gjorts och hur den avbryts eller körs (om tillämpligt). Du kan också använda `{DATASET_EXPIRATION_ID}` för att hämta datauppsättningens förfallostatushistorik.
-
-**API-format**
-
-```http
-GET /ttl/{DATASET_ID}?include=history
-GET /ttl/{DATASET_EXPIRATION_ID}?include=history
-```
-
-| Parameter | Beskrivning |
-| --- | --- |
-| `{DATASET_ID}` | ID:t för den datauppsättning vars förfallohistorik du vill söka efter. |
-| `{DATASET_EXPIRATION_ID}` | ID:t för datauppsättningens förfallodatum. Obs! Detta kallas `ttlId` i svaret. |
-
-{style="table-layout:auto"}
-
-**Begäran**
-
-```shell
-curl -X GET \
-  https://platform.adobe.io/data/core/hygiene/ttl/62759f2ede9e601b63a2ee14?include=history \
-  -H 'Authorization: Bearer {ACCESS_TOKEN}' \
-  -H 'x-api-key: {API_KEY}' \
-  -H 'x-gw-ims-org-id: {ORG_ID}' \
-  -H 'x-sandbox-name: {SANDBOX_NAME}'
-```
-
-**Svar**
-
-Ett lyckat svar returnerar information om datauppsättningens förfallodatum, med en `history`-matris med information om dess `status`, `expiry`, `updatedAt` och `updatedBy`-attribut för var och en av de registrerade uppdateringarna.
-
-```json
-{
-  "ttlId": "SD-b16c8b48-a15a-45c8-9215-587ea89369bf",
-  "datasetId": "62759f2ede9e601b63a2ee14",
-  "datasetName": "Example Dataset",
-  "sandboxName": "prod",
-  "displayName": "Expiration Request 123",
-  "description": "Expiration Request 123 Description",
-  "imsOrg": "0FCC747E56F59C747F000101@AdobeOrg",
-  "status": "cancelled",
-  "expiry": "2022-05-09T23:47:30.071186Z",
-  "updatedAt": "2022-05-09T23:47:30.071186Z",
-  "updatedBy": "Jane Doe <jdoe@adobe.com> 77A51F696282E48C0A494 012@64d18d6361fae88d49412d.e",
-  "history": [
-    {
-      "status": "created",
-      "expiry": "2032-12-31T23:59:59Z",
-      "updatedAt": "2022-05-09T22:38:40.393115Z",
-      "updatedBy": "Jane Doe <jdoe@adobe.com> 77A51F696282E48C0A494 012@64d18d6361fae88d49412d.e"
-    },
-    {
-      "status": "updated",
-      "expiry": "2032-12-31T23:59:59Z",
-      "updatedAt": "2022-05-09T22:41:46.731002Z",
-      "updatedBy": "Jane Doe <jdoe@adobe.com> 77A51F696282E48C0A494 012@64d18d6361fae88d49412d.e"
-    },
-    {
-      "status": "cancelled",
-      "expiry": "2022-05-09T23:47:30.071186Z",
-      "updatedAt": "2022-05-09T23:47:30.071186Z",
-      "updatedBy": "Jane Doe <jdoe@adobe.com> 77A51F696282E48C0A494 012@64d18d6361fae88d49412d.e"
-    }
-  ]
-}
-```
-
-| Egenskap | Beskrivning |
-| --- | --- |
-| `ttlId` | ID:t för datauppsättningens förfallodatum. |
-| `datasetId` | ID:t för datauppsättningen som utgångsdatumet gäller för. |
-| `datasetName` | Visningsnamnet för den datauppsättning som förfallodatumet gäller för. |
-| `sandboxName` | Namnet på sandlådan som måldatauppsättningen finns under. |
-| `displayName` | Visningsnamnet för förfallobegäran. |
-| `description` | En beskrivning av förfallobegäran. |
-| `imsOrg` | Organisationens ID. |
-| `history` | Visar uppdateringshistoriken för förfallodatumet som en array med objekt, där varje objekt innehåller attributen `status`, `expiry`, `updatedAt` och `updatedBy` för förfallodatumet vid tidpunkten för uppdateringen. |
-
-{style="table-layout:auto"}
-
 ## Bilaga
 
 ### Godkända frågeparametrar {#query-params}
@@ -482,18 +400,14 @@ I följande tabell visas de tillgängliga frågeparametrarna när [en lista öve
 
 | Parameter | Beskrivning | Exempel |
 | --- | --- | --- |
-| `author` | Matchar förfallodatum vars `created_by` är en matchning för söksträngen. Om söksträngen börjar med `LIKE` eller `NOT LIKE` behandlas resten som ett SQL-sökmönster. Annars behandlas hela söksträngen som en literal sträng som exakt måste matcha hela innehållet i ett `created_by`-fält. | `author=LIKE %john%`, `author=John Q. Public` |
-| `cancelledDate` / `cancelledToDate` / `cancelledFromDate` | Matchar förfallodatum som annullerades när som helst i det angivna intervallet. Detta gäller även om utgångsdatumet öppnades igen senare (genom att ange ett nytt förfallodatum för samma datauppsättning). | `updatedDate=2022-01-01` |
-| `completedDate` / `completedToDate` / `completedFromDate` | Matchar förfallotider som har slutförts under det angivna intervallet. | `completedToDate=2021-11-11-06:00` |
-| `createdDate` | Matchar utgångsdatum som skapades i 24-timmarsfönstret med början vid angiven tidpunkt.<br><br>Observera att datum utan tid (som `2021-12-07`) representerar datum/tid i början av den dagen. Därför hänvisar `createdDate=2021-12-07` till alla förfallodatum som skapades den 7 december 2021, från `00:00:00` till `23:59:59.999999999` (UTC). | `createdDate=2021-12-07` |
-| `createdFromDate` | Matchar utgångsdatum som skapades vid eller efter den angivna tiden. | `createdFromDate=2021-12-07T00:00:00Z` |
-| `createdToDate` | Matchar utgångsdatum som skapades vid eller före angiven tid. | `createdToDate=2021-12-07T23:59:59.999999999Z` |
+| `author` | Använd frågeparametern `author` för att hitta den person som senast uppdaterade utgångsdatumet för datauppsättningen. Om inga uppdateringar har gjorts sedan den skapades matchar detta den ursprungliga skaparen av förfallodatumet. Den här parametern matchar förfallodatum där fältet `created_by` motsvarar söksträngen.<br>Om söksträngen börjar med `LIKE` eller `NOT LIKE` behandlas resten som ett SQL-sökmönster. Annars behandlas hela söksträngen som en literal sträng som exakt måste matcha hela innehållet i ett `created_by`-fält. | `author=LIKE %john%`, `author=John Q. Public` |
 | `datasetId` | Matchar förfallodatum som gäller för en viss datauppsättning. | `datasetId=62b3925ff20f8e1b990a7434` |
 | `datasetName` | Matchar förfallodatum vars datauppsättningsnamn innehåller den angivna söksträngen. Matchen är inte skiftlägeskänslig. | `datasetName=Acme` |
 | `description` |   | `description=Handle expiration of Acme information through the end of 2024.` |
 | `displayName` | Matchar förfallodatum vars visningsnamn innehåller den angivna söksträngen. Matchen är inte skiftlägeskänslig. | `displayName=License Expiry` |
 | `executedDate` / `executedFromDate` / `executedToDate` | Filtrerar resultat baserat på ett exakt körningsdatum, ett körningsdatum eller ett startdatum för körning. De används för att hämta data eller poster som är kopplade till körningen av en åtgärd på ett visst datum, före ett visst datum eller efter ett visst datum. | `executedDate=2023-02-05T19:34:40.383615Z` |
-| `expiryDate` / `expiryToDate` / `expiryFromDate` | Matchar förfallodatum som ska verkställas, eller som redan har körts, under det angivna intervallet. | `expiryFromDate=2099-01-01&expiryToDate=2100-01-01` |
+| `expiryDate` | Matchar utgångsdatum som inträffade i det 24-timmarsfönstret för det angivna datumet. | `2024-01-01` |
+| `expiryToDate` / `expiryFromDate` | Matchar förfallodatum som ska verkställas, eller som redan har körts, under det angivna intervallet. | `expiryFromDate=2099-01-01&expiryToDate=2100-01-01` |
 | `limit` | Ett heltal mellan 1 och 100 som anger det maximala antalet förfallodatum som ska returneras. Standardvärdet är 25. | `limit=50` |
 | `orderBy` | Frågeparametern `orderBy` anger sorteringsordningen för resultaten som returneras av API:t. Använd den för att ordna data baserat på ett eller flera fält, antingen i stigande (ASC) eller fallande (DESC) ordning. Använd prefixet + eller - för att beteckna ASC respektive DESC. Följande värden accepteras: `displayName`, `description`, `datasetName`, `id`, `updatedBy`, `updatedAt`, `expiry`, `status`. | `-datasetName` |
 | `orgId` | Matchar datamängdernas förfallodatum vars organisations-ID matchar parameterns. Det här värdet är som standard det för `x-gw-ims-org-id`-huvudena och ignoreras om inte begäran tillhandahåller en tjänsttoken. | `orgId=885737B25DC460C50A49411B@AdobeOrg` |
@@ -502,7 +416,8 @@ I följande tabell visas de tillgängliga frågeparametrarna när [en lista öve
 | `search` | Matchar utgångsdatum där den angivna strängen är en exakt matchning för förfallodatum-ID, eller är **innesluten** i något av dessa fält:<br><ul><li>författare</li><li>visningsnamn</li><li>description</li><li>visningsnamn</li><li>datauppsättningsnamn</li></ul> | `search=TESTING` |
 | `status` | En kommaavgränsad lista med statusvärden. När svaret inkluderas matchar det utgångsdatum för datauppsättningen vars aktuella status är bland de som visas. | `status=pending,cancelled` |
 | `ttlId` | Matchar förfallobegäran med angivet ID. | `ttlID=SD-c8c75921-2416-4be7-9cfd-9ab01de66c5f` |
-| `updatedDate` / `updatedToDate` / `updatedFromDate` | Som `createdDate` / `createdFromDate` / `createdToDate`, men matchar en datamängds uppdateringstid i stället för skapandetid.<br><br>En förfallotid anses vara uppdaterad vid varje redigering, inklusive när den skapas, avbryts eller körs. | `updatedDate=2022-01-01` |
+| `updatedDate` | Matchar utgångsdatum som uppdaterades i det 24-timmarsfönstret för det angivna datumet. | `2024-01-01` |
+| `updatedToDate` / `updatedFromDate` | Matchar utgångsdatum som uppdaterades i 24-timmarsfönstret med början vid angiven tidpunkt.<br><br>En förfallotid anses vara uppdaterad vid varje redigering, inklusive när den skapas, avbryts eller körs. | `updatedDate=2022-01-01` |
 
 {style="table-layout:auto"}
 
