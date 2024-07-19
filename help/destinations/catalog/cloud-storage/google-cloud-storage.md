@@ -3,9 +3,9 @@ title: Google Cloud-lagringsanslutning
 description: Lär dig hur du ansluter till Google Cloud Storage och aktiverar målgrupper eller exporterar datauppsättningar.
 last-substantial-update: 2023-07-26T00:00:00Z
 exl-id: ab274270-ae8c-4264-ba64-700b118e6435
-source-git-commit: c35b43654d31f0f112258e577a1bb95e72f0a971
+source-git-commit: 679c1723965271b6a9c1b5b873cf8ac8de67458d
 workflow-type: tm+mt
-source-wordcount: '1141'
+source-wordcount: '1170'
 ht-degree: 0%
 
 ---
@@ -114,6 +114,22 @@ Om du vill konfigurera information för målet fyller du i de obligatoriska och 
 Du kan aktivera varningar för att få meddelanden om dataflödets status till ditt mål. Välj en avisering i listan om du vill prenumerera och få meddelanden om statusen för ditt dataflöde. Mer information om varningar finns i guiden [prenumerera på destinationsvarningar med användargränssnittet](../../ui/alerts.md).
 
 Välj **[!UICONTROL Next]** när du är klar med att ange information för målanslutningen.
+
+### [!DNL Google Cloud Storage] behörigheter som krävs {#required-google-cloud-storage-permission}
+
+Om du vill ansluta och exportera data till din [!DNL Google Cloud Storage]-lagringsplats behöver du följande [!DNL Google Cloud Storage]-behörigheter för dina bucket:
+
+*`orgpolicy.policy.get`
+*`resourcemanager.projects.get`
+*`resourcemanager.projects.list`
+*`storage.managedFolders.create`
+*`storage.multipartUploads.abort`
+*`storage.multipartUploads.create`
+*`storage.multipartUploads.listParts`
+*`storage.objects.create`
+*`storage.objects.list`
+
+Läs mer om [åtkomstkontroll och behörigheter](https://cloud.google.com/storage/docs/access-control/iam-permissions) i [!DNL Google Cloud Storage].
 
 ## Aktivera målgrupper till det här målet {#activate}
 
