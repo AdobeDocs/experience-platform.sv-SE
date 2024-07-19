@@ -4,7 +4,7 @@ solution: Experience Platform
 title: Mappningsfält för Marketo Engage Source
 description: Tabellerna nedan innehåller mappningarna mellan fälten i Marketo datamängder och deras motsvarande XDM-fält.
 exl-id: 2b217bba-2748-4d6f-85ac-5f64d5e99d49
-source-git-commit: 9399ac0e2e0a284799874af15188bbf4a4a380a7
+source-git-commit: 3084ed50f3665c7b33863f3a1aab4236c182c503
 workflow-type: tm+mt
 source-wordcount: '887'
 ht-degree: 0%
@@ -280,7 +280,7 @@ Mer information om klassen XDM finns i [XDM Business Account Overview](../../../
 | `"${MUNCHKIN_ID}"` | `accountKey.sourceInstanceID` | Värdet för `"${MUNCHKIN_ID}"` ersätts automatiskt. |
 | `concat(id, ".mkto_acct")` | `accountKey.sourceID` |
 | `concat(id, ".mkto_acct@${MUNCHKIN_ID}.Marketo")` | `accountKey.sourceKey` | Primär identitet. Värdet för `"${MUNCHKIN_ID}"` ersätts automatiskt. |
-| `iif(crmGuid != null && crmGuid != "", to_object("sourceType", "${CRM_TYPE}", "sourceInstanceID", "${CRM_ORG_ID}","sourceID", crmGuid, "sourceKey", concat(crmGuid,"@${CRM_ORG_ID}.${CRM_TYPE}")), null)` | `extSourceSystemAudit.externalKey` | `extSourceSystemAudit.externalKey` är den sekundära identiteten. Värdena för `{CRM_ORG_ID}` och `{CRM_TYPE}` ersätts automatiskt. |
+| `iif(externalSourceId != null && externalSourceId != "", to_object("sourceType", externalSourceType, "sourceInstanceID", externalSourceInstanceId, "sourceID", externalSourceId, "sourceKey", externalSourceKey), iif(crmGuid != null && crmGuid != "", to_object("sourceType", "${CRM_TYPE}", "sourceInstanceID", "${CRM_ORG_ID}", "sourceID", crmGuid, "sourceKey", concat(crmGuid,"@${CRM_ORG_ID}.${CRM_TYPE}")), null))` | `extSourceSystemAudit.externalKey` | `extSourceSystemAudit.externalKey` är den sekundära identiteten. Värdena för `{CRM_ORG_ID}` och `{CRM_TYPE}` ersätts automatiskt. |
 | `createdAt` | `extSourceSystemAudit.createdDate` |
 | `updatedAt` | `extSourceSystemAudit.lastUpdatedDate` |
 | `city` | `accountBillingAddress.city` |
