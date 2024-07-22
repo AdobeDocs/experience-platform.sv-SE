@@ -3,9 +3,9 @@ title: Versionsinformation för Adobe Experience Platform Web SDK
 description: Den senaste versionsinformationen om webb-SDK för Adobe Experience Platform.
 keywords: Adobe Experience Platform Web SDK;Platform Web SDK;Web SDK;versionsinformation;
 exl-id: efd4e866-6a27-4bd5-af83-4a97ca8adebd
-source-git-commit: 060f6bb0ff6f57a84698a27bd9f640c0178e5b51
+source-git-commit: 47cf9cdb7c59ce8459ecb8823787b5145d5f5621
 workflow-type: tm+mt
-source-wordcount: '1811'
+source-wordcount: '1857'
 ht-degree: 0%
 
 ---
@@ -21,6 +21,20 @@ Den senaste versionsinformationen om Web SDK-taggtillägget finns i [Versionsinf
 >Google [har meddelat](https://developers.google.com/privacy-sandbox/3pcd/prepare/prepare-for-phaseout) att Chrome-stöd för cookies från tredje part kommer att upphöra under andra halvåret 2024. Detta innebär att cookies från tredje part inte längre stöds i någon av de större webbläsarna.
 >
 >När den här ändringen implementeras upphör Adobe stödet för den `demdex`-cookie som för närvarande stöds i Web SDK.
+
+## Version 2.21.1 - 18 juli 2024
+
+**Korrigeringar och förbättringar**
+
+* Ett byggfel har korrigerats vid användning av NPM-bibliotek.
+
+## Version 2.21.0 - 16 juli 2024
+
+**Nya funktioner**
+
+* Stöd för automatisk spårning av offertinteraktion har lagts till.
+* Ett anpassat byggskript med en alloy.js-fil har lagts till.
+* Förbättrad klicksamling med stöd för ActivityMap och händelsegruppering.
 
 ## Version 2.20.0 - 21 maj 2024
 
