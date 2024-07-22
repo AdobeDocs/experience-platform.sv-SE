@@ -1,34 +1,34 @@
 ---
-title: Batchmål för direktuppspelning av Magnite
+title: Magnite Batch Destination
 description: Använd den här destinationen för att leverera Adobe CDP-målgrupper till Magnite Streaming-plattformen i grupp.
 badgeBeta: label="Beta" type="Informative"
 hide: true
 hidefromtoc: true
-source-git-commit: c35b43654d31f0f112258e577a1bb95e72f0a971
+source-git-commit: b8921e887b827fcc7b9115045a1954c41a37bce8
 workflow-type: tm+mt
-source-wordcount: '1653'
+source-wordcount: '1631'
 ht-degree: 0%
 
 ---
 
 
-# Magnite Streaming: Batchanslutning {#magnite-streaming-batch}
+# Magnite: Batchanslutning {#magnite-streaming-batch}
 
 ## Översikt {#overview}
 
-I det här dokumentet beskrivs Magnite Streaming: Batch-mål och exempelfall som hjälper dig att bättre förstå hur du aktiverar och exporterar målgrupper till det.
+Det här dokumentet beskriver Magnite: Batch-målet och innehåller exempel på användningsområden som hjälper dig att bättre förstå hur du aktiverar och exporterar målgrupper till det.
 
-Adobe Real-Time CDP-målgrupper kan levereras till Magnite: Streaming Platform på två sätt - de kan levereras en gång om dagen, eller så kan de levereras i realtid:
+Adobe Real-Time CDP-målgrupper kan levereras till plattformen Magnite Streaming på två sätt - de kan levereras en gång per dag eller kan levereras i realtid:
 
-1. Om du bara vill och/eller behöver leverera målgrupper en gång per dag kan du använda Magnite: Streaming Batch-målet, som levererar målgrupper till Magnite: Direktuppspelning via en daglig batchleverans av S3-filer. Dessa gruppmålgrupper lagras oändligt på vår plattform, till skillnad från målgrupper i realtid, som bara lagras i några dagar.
+1. Om du bara vill och/eller behöver leverera målgrupper en gång per dag kan du använda Magnite: Batch-målet, som levererar målgrupper till Magnite Streaming via en daglig batchfilleverans av S3. Dessa gruppmålgrupper lagras oändligt i Magnite-plattformen, till skillnad från målgrupper i realtid, som bara lagras i ett par dagar.
 
-2. Men om ni vill och/eller behöver leverera målgrupper i realtid måste ni använda Magnite: Streaming Real-Time Target. När du använder Real-Time-målet kommer Magnite: Streaming att ta emot målgrupper i realtid, men vi kan bara lagra målgrupper i realtid tillfälligt på vår plattform, och de kommer att tas bort från vårt system inom några dagar. Om du vill använda Magnite: Streaming Real-Time-målet måste du därför också använda Magnite: Streaming Batch-målet - varje målgrupp som du aktiverar till Real-Time-målet måste du också aktivera till Batch-målet.
+2. Om du vill eller behöver leverera målgrupper oftare måste du använda målet [Magnite Real-Time](/help/destinations/catalog/advertising/magnite-streaming.md). När du använder Real-Time Target tar Magnite Streaming emot målgrupper i realtid, men Magnite kan bara lagra målgrupper i realtid tillfälligt på sin plattform, och de tas bort från systemet inom några dagar. Om du vill använda Magnite-målet i realtid *måste du* därför använda Magnite: Batch-målet - varje målgrupp som du aktiverar till Real-Time-målet måste du även aktivera till Batch-målet.
 
-Sammanfattning: Om du bara vill leverera Adobe Real-Time CDP-målgrupper en gång om dagen använder du Magnite: endast direktuppspelningsbatchdestinationen, och målgrupperna levereras en gång om dagen. Om du vill leverera Adobe Real-Time CDP-målgrupper i realtid använder du både Magnite: Streaming Batch-målet och Magnite: Streaming Real-Time-målet. Mer information får du om du kontaktar Magnite: Streaming.
+Sammanfattning: Om du bara vill leverera Adobe Real-Time CDP-målgrupper en gång om dagen använder du Magnite: Endast gruppdestinationen, och målgrupperna levereras en gång om dagen. Om du vill leverera Adobe Real-Time CDP-målgrupper i realtid använder du *båda* Magnite: Batch-målet och Magnite Real-Time-målet. Mer information får du om du kontaktar Magnite: Streaming.
 
 
-Nedan finns mer information om Magnite: Streaming Batch-destinationen, hur du ansluter till den och hur du aktiverar Adobe Real-Time CDP-målgrupper.
-Mer information om Real-Time-målet finns i [det här dokumentet](magnite-streaming.md) i stället.
+Nedan finns mer information om Magnite: Batch-mål, hur du ansluter till den och hur du aktiverar Adobe Real-Time CDP-målgrupper.
+Mer information om Real-Time-målet finns på [den här dokumentationssidan](magnite-streaming.md) i stället.
 
 >[!IMPORTANT]
 >
@@ -38,31 +38,31 @@ Mer information om Real-Time-målet finns i [det här dokumentet](magnite-stream
 
 ## Användningsfall {#use-cases}
 
-För att du bättre ska kunna förstå hur och när du ska använda Magnite Streaming: Batch-mål finns exempel på användningsområden som Adobe Experience Platform-kunder kan lösa med den här destinationen.
+För att du bättre ska kunna förstå hur och när du ska använda Magnite: Batch-målet finns det exempel på användningsområden som Adobe Experience Platform-kunder kan lösa genom att använda den här destinationen.
 
 ### Använd skiftläge 1 {#use-case-1}
 
-Du har aktiverat en målgrupp på Magnite Streaming: Real-Time Destination.
+Du har aktiverat en målgrupp på Magnites mål för realtid.
 
-Alla målgrupper som aktiveras via Magnite Streaming: Målplatsen i realtid måste också använda Magnite Streaming: Batch-destinationen eftersom data från batchleveransen är avsedda att ersätta/behålla data från Real-Time-leveransen i Magnite Streaming-plattformen.
+Alla målgrupper som aktiveras via Magnite Real-Time-målet måste också använda Magnite: Batch-målet, eftersom data från batchleveransen är avsedda att ersätta/behålla data från Real-Time-leveransen i Magnite Streaming-plattformen.
 
 ### Använd skiftläge 2 {#use-case-2}
 
 Du vill bara aktivera en målgrupp i en batch/dag på plattformen Magnite Streaming.
 
-Alla målgrupper som aktiveras via Magnite Streaming: Batchdestinationen levereras i en batch/dag och kan sedan målgruppsanpassas i Magnite Streaming-plattformen.
+Alla målgrupper som aktiveras via Magnite: Batch-destinationen levereras i batch/dag och kan sedan användas i Magnite Streaming-plattformen.
 
 ## Förhandskrav {#prerequisites}
 
-Om du vill använda Magnite-målen i Adobe Experience Platform måste du först ha ett Magnite Streaming-konto. Om du har ett [!DNL Magnite Streaming]-konto kan du kontakta din [!DNL Magnite]-kontohanterare för att få inloggningsuppgifter för att få åtkomst till [!DNL Magnite's]-mål. Om du inte har något [!DNL Magnite Streaming]-konto kan du kontakta adobe-tech@magnite.com
+Om du vill använda [!DNL Magnite]-destinationerna i Adobe Experience Platform måste du först ha ett Magnite Streaming-konto. Om du har ett [!DNL Magnite Streaming]-konto kan du kontakta din [!DNL Magnite]-kontohanterare för att få inloggningsuppgifter för att få åtkomst till [!DNL Magnite's]-mål. Om du inte har något [!DNL Magnite Streaming]-konto kan du kontakta adobe-tech@magnite.com
 
 ## Identiteter som stöds {#supported-identities}
 
-Magnite Streaming: Batch-målet kan ta emot *alla* identitetskällor från Adobe CDP. För närvarande har det här målet tre målidentitetsfält som du kan mappa till.
+Magnite: Målet för gruppen kan ta emot *alla* identitetskällor från Adobe CDP. För närvarande har det här målet tre målidentitetsfält som du kan mappa till.
 
 >[!NOTE]
 >
->*Alla*-identitetskällor kan mappa till alla mål-ID:n för magnite_deviceId.
+>*Alla*-identitetskällor kan mappa till någon av `magnite_deviceId`-målidentiteterna.
 
 | Målidentitet | Beskrivning | Överväganden |
 |:--------------------------- |:------------------------------------------------------------------------------------------------ |:------------------------------------------------------------------------------------- |
@@ -85,7 +85,7 @@ Magnite Streaming: Batch-målet kan ta emot *alla* identitetskällor från Adobe
 
 | Objekt | Typ | Anteckningar |
 |-----------------------------|----------|----------|
-| Exporttyp | Målgruppsexport | Du exporterar alla medlemmar i en målgrupp med de identifierare (namn, telefonnummer eller andra) som används i Magnite Streaming: Batch-mål. |
+| Exporttyp | Målgruppsexport | Du exporterar alla medlemmar i en målgrupp med de identifierare (namn, telefonnummer eller andra) som används i Magnite: Batch-mål. |
 | Exportfrekvens | Grupp | Batchdestinationer exporterar filer till efterföljande plattformar i steg om tre, sex, åtta, tolv eller tjugofyra timmar. Läs mer om gruppbaserade [filbaserade mål](/help/destinations/destination-types.md). |
 
 {style="table-layout:auto"}
@@ -96,7 +96,7 @@ När målanvändningen har godkänts och Magnite Streaming har delat dina autent
 
 ### Autentisera till mål {#authenticate}
 
-Leta reda på Magnite Streaming: Batch-mål i Adobe Experience-katalogen. Klicka på knappen med ytterligare alternativ (\..) och konfigurera sedan målanslutningen/målinstansen.
+Leta reda på Magnite: Batch-målet i Adobe Experience-katalogen. Klicka på knappen med ytterligare alternativ (\..) och konfigurera sedan målanslutningen/målinstansen.
 
 Om du redan har ett befintligt konto kan du hitta det genom att ändra kontotypsalternativet till &quot;Befintligt konto&quot;. Annars skapar du ett konto nedan:
 
@@ -126,7 +126,7 @@ i framtiden.
 
 Du kan sedan fortsätta genom att välja **[!UICONTROL Next]**
 
-På nästa skärm,&quot;Styrningspolicy och verkställighetsåtgärder (valfritt)&quot;, kan du välja alla relevanta policyer för datastyrning. &quot;Dataexport&quot; är vanligtvis valt som mål för Magnite Streaming Batch.
+På nästa skärm,&quot;Styrningspolicy och verkställighetsåtgärder (valfritt)&quot;, kan du välja alla relevanta policyer för datastyrning. &quot;Dataexport&quot; är vanligtvis valt som mål för Magnite: Batch.
 
 ![Frivillig policy och tvångsåtgärder för styrning](../../assets/catalog/advertising/magnite/destination-batch-config-grouping-policy.png)
 
@@ -175,11 +175,11 @@ På skärmen&quot;Konfigurera ett filnamn och exportschema för varje målgrupp&
 
 När era målgrupper har överförts kan ni validera att era målgrupper har skapats och överförts korrekt.
 
-* Målet för Magnite Streaming Batch levererar S3-filer till Magnite Streaming varje dag. Efter leverans och förtäring förväntas målgrupper/segment visas i Magnite Streaming och kan tillämpas på ett avtal. Du kan bekräfta detta genom att söka efter det segment-ID eller segmentnamn som delades under aktiveringsstegen i Adobe Experience Platform.
+* Magnite: Batch-målet levererar S3-filer till Magnite Streaming varje dag. Efter leverans och förtäring förväntas målgrupper/segment visas i Magnite Streaming och kan tillämpas på ett avtal. Du kan bekräfta detta genom att söka efter det segment-ID eller segmentnamn som delades under aktiveringsstegen i Adobe Experience Platform.
 
 >[!NOTE]
 >
->Publiker som aktiveras/levereras till Magnite Streaming Batch-målet *ersätter* samma målgrupper som aktiverades/levererades via Magnite Streaming Real-Time-målet. Om du söker efter ett segment med segmentnamnet kanske du inte hittar segmentet i realtid förrän gruppen har importerats och bearbetats av plattformen Magnite Streaming.
+>Publiker som aktiveras/levereras till Magnite: Batchmålet *ersätter* samma målgrupper som aktiverades/levererades via Magnite Real-Time-målet. Om du söker efter ett segment med segmentnamnet kanske du inte hittar segmentet i realtid förrän gruppen har importerats och bearbetats av plattformen Magnite Streaming.
 
 ## Dataanvändning och styrning {#data-usage-governance}
 

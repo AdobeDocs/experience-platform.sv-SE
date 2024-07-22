@@ -1,31 +1,31 @@
 ---
-title: Målanslutning för direktuppspelning i realtid av Magnite
+title: Målanslutning för Magnite Real-Time
 description: Använd den här destinationen för att leverera Adobe CDP-målgrupper till Magnite Streaming-plattformen i realtid.
 badgeBeta: label="Beta" type="Informative"
 hide: true
 hidefromtoc: true
-source-git-commit: c35b43654d31f0f112258e577a1bb95e72f0a971
+source-git-commit: 8314aca706b47c4cbcb993418c287629f5563189
 workflow-type: tm+mt
-source-wordcount: '1265'
+source-wordcount: '1256'
 ht-degree: 0%
 
 ---
 
 
-# (Beta) Magnite Streaming: Målanslutning i realtid
+# (Beta) Magnite: Målanslutning i realtid
 
 ## Översikt {#overview}
 
-Med [!DNL Magnite Streaming: Real-Time] och Magnite Streaming: Batch-mål i Adobe Experience Platform kan du mappa och exportera målgrupper för målinriktning och aktivering på plattformen Magnite Streaming.
+Destinationerna [!DNL Magnite: Real-Time] och [Magnite: Batch](/help/destinations/catalog/advertising/magnite-batch.md) i Adobe Experience Platform hjälper dig att mappa och exportera målgrupper för målinriktning och aktivering på plattformen Magnite Streaming.
 
-Att aktivera målgrupper för plattformen [!DNL Magnite Streaming] är en tvåstegsprocess som kräver att du använder både Magnite Streaming: Real-Time och Magnite Streaming: Batch-mål.
+Att aktivera målgrupper för plattformen [!DNL Magnite Streaming] är en tvåstegsprocess som kräver att du använder både Magnite: Real-Time och Magnite: Batch-mål.
 
 Om du vill aktivera dina målgrupper till [!DNL Magnite Streaming] måste du:
 
-* Aktivera målgrupperna på målet [!DNL Magnite Streaming: Real-Time], vilket visas på den här sidan.
-* Aktivera samma målgrupp på Magnite Streaming: Batch-mål. Målet [!DNL Magnite Streaming: Batch] är en obligatorisk komponent. Om målgruppen inte aktiveras på gruppmålet [!DNL Magnite Streaming] kommer det att leda till en misslyckad integrering och dina målgrupper kommer inte att aktiveras.
+* Aktivera målgrupperna på målet [!DNL Magnite: Real-Time], vilket visas på den här sidan.
+* Aktivera samma målgrupp på Magnite: Batch-målet. Målet [!DNL Magnite: Batch] är en obligatorisk komponent. Om målgruppen inte aktiveras på gruppmålet [!DNL Magnite Streaming] kommer det att leda till en misslyckad integrering och dina målgrupper kommer inte att aktiveras.
 
-Obs! När du använder Real-Time-målet får [!DNL Magnite: Streaming] målgrupper i realtid, men vi kan bara lagra målgrupper i realtid tillfälligt på vår plattform, och de tas bort från vårt system inom några dagar. Därför måste du, om du vill använda Magnite: Streaming Real-Time-målet, *även* använda Magnite Streaming: Batch-målet - varje målgrupp som du aktiverar till Real-Time-målet måste du också aktivera till Batch-målet.
+Obs! När du använder Real-Time-målet kommer [!DNL Magnite Streaming] att ta emot målgrupper i realtid, men Magnite kan bara lagra målgrupper i realtid tillfälligt på sin plattform, och de kommer att tas bort från systemet inom några dagar. Därför måste du, om du vill använda Magniten: Real-Time-målet, *även* använda Magniten: Batch-målet - varje målgrupp som du aktiverar till Real-Time-målet måste du även aktivera till Batch-målet.
 
 >[!IMPORTANT]
 >
@@ -35,7 +35,7 @@ Obs! När du använder Real-Time-målet får [!DNL Magnite: Streaming] målgrupp
 
 ## Användningsfall {#use-cases}
 
-För att du bättre ska kunna förstå hur och när du ska använda målet [!DNL Magnite Streaming: Real-Time] finns det ett exempel på användning som Adobe Experience Platform-kunder kan lösa genom att använda det här målet.
+För att du bättre ska kunna förstå hur och när du ska använda målet [!DNL Magnite: Real-Time] finns det ett exempel på användning som Adobe Experience Platform-kunder kan lösa genom att använda det här målet.
 
 ### Aktivering och målinriktning {#activation-and-targeting}
 
@@ -48,11 +48,11 @@ Om du inte har något [!DNL Magnite Streaming]-konto kan du kontakta adobe-tech@
 
 ## Identiteter som stöds {#supported-identities}
 
-Målet [!DNL Magnite Streaming: Real-Time] stöder aktivering av identiteter som beskrivs i tabellen nedan. Läs mer om [identiteter](/help/identity-service/features/namespaces.md).
+Målet [!DNL Magnite: Real-Time] stöder aktivering av identiteter som beskrivs i tabellen nedan. Läs mer om [identiteter](/help/identity-service/features/namespaces.md).
 
 | Målidentitet | Beskrivning | Överväganden |
 |-------------------|--------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------|
-| device_id | En unik identifierare för en enhet eller identitet. Vi godkänner alla enhets-ID och förstaparts-ID oavsett typ. | Identitetstyper som stöds är bland annat PPUID, GAID, IDFA och TV-enhets-ID. |
+| device_id | En unik identifierare för en enhet eller identitet. Vi godkänner alla enhets-ID och förstaparts-ID oavsett typ. | Identitetstyper som stöds av Magnite är bland annat PPUID, GAID, IDFA och TV-enhets-ID. |
 
 {style="table-layout:auto"}
 
@@ -73,7 +73,7 @@ Se tabellen nedan för information om exporttyp och frekvens för destinationen.
 
 | Objekt | Typ | Anteckningar |
 |------------------|---------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Exporttyp | **[!UICONTROL Segment export]** | Du exporterar alla medlemmar i ett segment (publik) med identifierarna (namn, telefonnummer eller andra) som används i målet [!DNL Magnite Streaming: Real-Time]. |
+| Exporttyp | **[!UICONTROL Segment export]** | Du exporterar alla medlemmar i ett segment (publik) med identifierarna (namn, telefonnummer eller andra) som används i målet [!DNL Magnite: Real-Time]. |
 | Exportfrekvens | **[!UICONTROL Streaming]** | Direktuppspelningsmål är alltid på API-baserade anslutningar. Så snart en profil uppdateras i Experience Platform baserat på segmentutvärdering skickar kopplingen uppdateringen nedåt till målplattformen. Läs mer om [direktuppspelningsmål](/help/destinations/destination-types.md#streaming-destinations). |
 
 {style="table-layout:auto"}
@@ -162,13 +162,13 @@ När era målgrupper har överförts kan ni validera att era målgrupper har ska
 
 -->
 
-* Post-import, målgrupper förväntas visas om [!DNL Magnite Streaming] inom några minuter och kan tillämpas på ett avtal. Du kan bekräfta detta genom att leta upp det segment-ID som delades under aktiveringsstegen i Adobe Experience Platform.
+* Målgrupper efter importen förväntas visas om [!DNL Magnite Streaming] inom några minuter och kan tillämpas på ett avtal. Du kan bekräfta detta genom att leta upp det segment-ID som delades under aktiveringsstegen i Adobe Experience Platform.
 
-## Aktivera samma målgrupper via målet [!DNL Magnite Streaming: Batch]
+## Aktivera samma målgrupper via målet [!DNL Magnite: Batch]
 
-Publiker som delas med [!DNL Magnite Streaming] med Real-Time-målet måste också delas med Magnite Streaming: Batch-mål. När segmentnamnen i användargränssnittet för [!DNL Magnite Streaming] är korrekt konfigurerade uppdateras de som används i Adobe Experience Platform-uppdateringen efter den dagliga uppdateringen.
+Publiker som delas med [!DNL Magnite Streaming] med Real-Time-målet måste också delas med Magnite: Batch-målet. När segmentnamnen i användargränssnittet för [!DNL Magnite Streaming] är korrekt konfigurerade uppdateras de som används i Adobe Experience Platform-uppdateringen efter den dagliga uppdateringen.
 
-Slutligen, om ett batchmål inte har konfigurerats för din integrering, ställer du in det nu via Magnite Streaming: Batch-måldokument.
+Slutligen, om ett batchmål inte har konfigurerats för din integrering, ställer du in det nu via Magnite: Batch-måldokumentet.
 
 ## Dataanvändning och styrning {#data-usage-governance}
 

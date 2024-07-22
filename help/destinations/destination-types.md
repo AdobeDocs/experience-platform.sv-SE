@@ -3,9 +3,9 @@ keywords: mål;mål;måltyper
 title: Måltyper och -kategorier
 description: Läs mer om de olika typerna och kategorierna av destinationer i Adobe Experience Platform.
 exl-id: 7826d1e2-bd6b-4f65-9da9-0a3b3e8bb93b
-source-git-commit: c6019737e93756f3f524d5a85ea57383baa1a31d
+source-git-commit: 8314aca706b47c4cbcb993418c287629f5563189
 workflow-type: tm+mt
-source-wordcount: '771'
+source-wordcount: '799'
 ht-degree: 0%
 
 ---
@@ -20,7 +20,7 @@ I Adobe Experience Platform skiljer vi mellan olika måltyper - anslutningar, da
 
 Slutligen kan anslutningar även särskiljas mellan offentliga destinationer som är tillgängliga för alla organisationer i destinationskatalogen och privata destinationer som Real-Time CDP Ultimate-kunder kan skapa för att tillgodose sina specifika exportanvändningsfall.
 
-![Typer av destinationsdiagram.](./assets/destination-types/types-of-destinations-no-highlight.png)
+![Typer av måldiagram.](./assets/destination-types/types-of-destinations-no-highlight.png "Typer av destinationsdiagram."){zoomable="yes"}
 
 ## Anslutningar {#connections}
 
@@ -33,17 +33,17 @@ Profilexportdestinationer tar emot rådata, ofta med e-postadress som primärnyc
 * [Exportmål för direktuppspelningsprofil (företagsmål)](#streaming-profile-export)
 * [Batchmål (filbaserade)](#file-based)
 
-### Exportmål för direktuppspelningsprofil (företagsmål) {#streaming-profile-export}
+### Avancerade företagsmål (exportmål för direktuppspelningsprofil) {#streaming-profile-export}
 
 >[!IMPORTANT]
 >
->Företagsmål, eller exportmål för direktuppspelningsprofiler, är endast tillgängliga för [Adobe Real-time Customer Data Platform Ultimate](https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform.html) -kunder.
+>Avancerade företagsmål, eller exportmål för direktuppspelningsprofiler, är endast tillgängliga för [Adobe Real-time Customer Data Platform Ultimate](https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform.html) -kunder.
 
-Använd dataanslutningarna för företag för att leverera Adobe Real-time Customer Data Platform-profiler i nära realtid till interna system eller till andra tredjepartssystem för datasynkronisering, analys och fler användningsfall för profilberikning.
+Använd de avancerade dataanslutningarna för företag för att leverera Adobe Real-time Customer Data Platform-profiler i nära realtid till interna system eller till andra tredjepartssystem för datasynkronisering, analys och fler användningsfall för profilberikning.
 
 Dessa mål tar emot målgrupps- och profildata som dataströmmar från Experience Platform.
 
-Företagets mål är:
+Avancerade företagsmål:
 
 * [HTTP API-mål](catalog/streaming/http-destination.md)
 * [Amazon Kinesis](catalog/cloud-storage/amazon-kinesis.md)
@@ -81,7 +81,7 @@ Läs mer om [olika målgruppstyper](/help/segmentation/ui/account-audiences.md#t
 
 En symbol på målkortet visar vilka typer av målgrupper du kan exportera till varje mål.
 
-![Exempel på målkort med symboler som visar vilka målgruppstyper som kan exporteras.](/help/destinations/assets/destination-types/types-of-audiences.png)
+![Exempel på målkort med symboler som visar vilka målgruppstyper som kan exporteras.](/help/destinations/assets/destination-types/types-of-audiences.png "Exempel på målkort med symboler som visar vilka målgruppstyper som kan exporteras."){zoomable="yes"}
 
 
 ## Exportmål för datauppsättning {#dataset-export-destinations}
@@ -114,4 +114,4 @@ Tillägg är användbara när händelsedata används för att utlösa en åtgär
 
 Anslutningarna och tilläggen i [målkatalogen](https://platform.adobe.com/destination/catalog) grupperas efter målkategori (**Advertising**, **Cloud-lagring**, **Undersökningsplattformar**, **E-postmarknadsföring** osv.), beroende på vilken marknadsföringsåtgärd de hjälper dig att uppnå. Mer information om var och en av kategorierna, samt vilka mål som ingår i varje kategori, finns i dokumentationen för [målkatalogen](./catalog/overview.md).
 
-![Målkategorier är markerade på katalogsidan.](./assets/destination-types/destination-categories-menu.png)
+![Målkategorier är markerade på katalogsidan.](./assets/destination-types/destination-categories-menu.png "Målkategorier är markerade på katalogsidan."){zoomable="yes"}
