@@ -2,9 +2,9 @@
 title: Frågescheman
 description: Lär dig hur du automatiserar schemalagda frågekörningar, tar bort eller inaktiverar ett frågeschema och använder tillgängliga schemaläggningsalternativ via Adobe Experience Platform-gränssnittet.
 exl-id: 984d5ddd-16e8-4a86-80e4-40f51f37a975
-source-git-commit: 41c069ef1c0a19f34631e77afd7a80b8967c5060
+source-git-commit: 0b056da8457010ce36efc48e3dd91f280a9b15c5
 workflow-type: tm+mt
-source-wordcount: '1741'
+source-wordcount: '1767'
 ht-degree: 0%
 
 ---
@@ -46,6 +46,10 @@ Arbetsytan för scheman visas. Gränssnittet visar en lista över schemalagda k�
 ### Lägg till schemainformation {#schedule-details}
 
 Sidan med schemainformation visas. På den här sidan kan du redigera olika detaljer för den schemalagda frågan. Detaljerna innehåller [frekvens och veckodag för körningen av den schemalagda frågan](#scheduled-query-frequency), start- och slutdatum, datamängden som resultaten ska exporteras till och [frågans statusaviseringar](#alerts-for-query-status).
+
+>[!IMPORTANT]
+>
+>Användargränssnittet för frågeschemaläggaren stöder inte obestämd eller permanent schemaläggning. Ett slutdatum måste anges. Det finns ingen övre gräns för slutdatumet.
 
 ![Panelen Schemainformation är markerad.](../images/ui/query-schedules/schedule-details.png)
 

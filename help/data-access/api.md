@@ -4,14 +4,18 @@ solution: Experience Platform
 title: API-guide för dataåtkomst
 description: API:t för dataåtkomst stöder Adobe Experience Platform genom att ge utvecklarna ett RESTful-gränssnitt som fokuserar på att upptäcka och tillgängliggöra inkapslade datauppsättningar i Experience Platform.
 exl-id: 278ec322-dafa-4e3f-ae45-2d20459c5653
-source-git-commit: d8694c094ae4a7284e4a3ed0ae5bc3dc198e501a
+source-git-commit: dbb96744c873d2bf656be03ebf1b8ea2fb08acf3
 workflow-type: tm+mt
-source-wordcount: '524'
+source-wordcount: '554'
 ht-degree: 1%
 
 ---
 
 # API-guide för dataåtkomst
+
+>[!IMPORTANT]
+>
+>API:t för dataåtkomst är nu **föråldrat**. Du bör använda Destinationer när du exporterar data från Adobe Experience Platform. Mer information finns i [dokumentationen för datauppsättningsexportmål](../destinations/destination-types.md#dataset-export-destinations).
 
 API:t för dataåtkomst stöder Adobe Experience Platform genom att förse användarna med ett RESTful-gränssnitt som fokuserar på identifierbarhet och tillgänglighet för kapslade datauppsättningar i [!DNL Experience Platform].
 
@@ -19,7 +23,7 @@ API:t för dataåtkomst stöder Adobe Experience Platform genom att förse anvä
 
 ## API-specifikationsreferens
 
-Referenshandboken för Swagger API finns [här](https://developer.adobe.com/experience-platform-apis/references/data-access/).
+OpenAPI-referensdokumentationen finns [här](https://developer.adobe.com/experience-platform-apis/references/data-access/).
 
 ## Terminologi {#terminology}
 
