@@ -5,10 +5,10 @@ breadcrumb-title: Användarhandbok om Query Service
 user-guide-description: Använd standard-SQL för att fråga efter data i datasjön i Experience Platform.
 feature: Queries
 role: User,Developer
-source-git-commit: bb95e0aa8ee92aee5a2f126d85e78308e652a061
+source-git-commit: 3e4fe58deb48622129c919b8c4a93ba4e57c4338
 workflow-type: tm+mt
-source-wordcount: '321'
-ht-degree: 13%
+source-wordcount: '323'
+ht-degree: 12%
 
 ---
 
@@ -39,7 +39,7 @@ ht-degree: 13%
       - [Teknikfunktioner för XML](data-distiller/ml-feature-pipelines/feature-engineering.md)
       - [Exportera data till ML-miljöer](data-distiller/ml-feature-pipelines/export-data.md)
       - [AI/ML-arbetsflöde för berikning av data från början till slut](data-distiller/ml-feature-pipelines/end-to-end-notebook-workflow.md)
-- Användningsfall {#use-cases}
+- Praktiska exempel {#use-cases}
    - [Översikt](use-cases/overview.md)
    - [Bläddra överges](use-cases/abandoned-browse.md)
    - [Attributanalys](use-cases/attribution-analysis.md)
@@ -47,6 +47,7 @@ ht-degree: 13%
    - [Skapa en trendrapport över händelser](use-cases/trended-report-of-events.md)
    - [Samtyckesanalys](use-cases/consent-analysis.md)
    - [Kundens livstidsvärde](use-cases/customer-lifetime-value.md)
+   - [Utforska data](./use-cases/data-exploration.md)
    - [Decile-baserade härledda datauppsättningar](use-cases/deciles-use-case.md)
    - [Fuzzy-matchning](use-cases/fuzzy-match.md)
    - [Visa en användares sidvyer](use-cases/list-visitor-sessions.md)

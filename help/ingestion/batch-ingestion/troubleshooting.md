@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Felsökningsguide för batchinmatning
 description: Den här dokumentationen hjälper dig att besvara vanliga frågor om Adobe Experience Platform API:er för inmatning av batchdata.
 exl-id: 0a750d7e-a4ee-4a79-a697-b4b732478b2b
-source-git-commit: e802932dea38ebbca8de012a4d285eab691231be
+source-git-commit: 37b241f15f297263cc7aa20f382c115a2d131c7e
 workflow-type: tm+mt
-source-wordcount: '1418'
+source-wordcount: '1426'
 ht-degree: 0%
 
 ---
@@ -212,11 +212,11 @@ När en batch är i&quot;Loading&quot; betyder det att API:t CompleteBatch inte 
 
 ### Finns det något sätt att veta om en batch har importerats utan problem?
 
-När batchstatusen är Aktiv har batchen importerats. Följ stegen som beskrivs [tidigare](#how-is-batch-ingestion-monitored) för att ta reda på status för gruppen.
+Ja, när batchstatusen är Aktiv har batchen importerats. Följ stegen som beskrivs [tidigare](#how-is-batch-ingestion-monitored) för att ta reda på status för gruppen.
 
-### Vad händer efter att en batch misslyckas?
+### Vad händer efter att en batch misslyckas? {#what-if-a-batch-fails}
 
-När en batch misslyckas kan orsaken till att den misslyckas identifieras i avsnittet `errors` i nyttolasten. Exempel på fel finns nedan:
+När en batch misslyckas stoppas processen och returnerar statusen `Failure`. Orsaken till att det inte fungerar kan identifieras i avsnittet `errors` i nyttolasten. Exempel på fel finns nedan:
 
 ```json
     "errors":[
