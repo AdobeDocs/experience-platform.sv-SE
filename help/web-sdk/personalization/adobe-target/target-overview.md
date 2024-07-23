@@ -2,9 +2,9 @@
 title: Använd Adobe Target med Web SDK för personalisering
 description: Lär dig hur du återger anpassat innehåll med Experience Platform Web SDK med Adobe Target
 exl-id: 021171ab-0490-4b27-b350-c37d2a569245
-source-git-commit: 69406293dce5fdfc832adff801f1991626dafae0
+source-git-commit: b50ea35bf0e394298c0c8f0ffb13032aaa1ffafb
 workflow-type: tm+mt
-source-wordcount: '1338'
+source-wordcount: '1357'
 ht-degree: 1%
 
 ---
@@ -192,77 +192,31 @@ Om du vill fördröja inspelningsattribut i profilen tills innehållet visas ang
 
 Till exempel innehåller din webbplats tre beslutsomfattningar som motsvarar tre kategorilänkar på webbplatsen (Män, Kvinnor och barn) och du vill spåra den kategori som användaren slutligen besökte. Skicka dessa förfrågningar med flaggan `__save` inställd på `false` för att undvika att kategorin bevaras när innehållet begärs. När innehållet har visualiserats skickar du rätt nyttolast (inklusive `eventToken` och `stateToken`) för motsvarande attribut som ska registreras.
 
-<!--Save profile or entity attributes by default with:
-
-```js
-alloy ( "sendEvent" , {
-  renderDecisions : true,
-  data : {
-    __adobe : {
-      target : {
-        "__save" : true // Optional. __save=true is the default 
-        "profile.gender" : "female",
-        "profile.age" : 30,
-        "entity.name" : "T-shirt",
-        "entity.id" : "1234",
-      }
-    }
-  }
-} ) ; 
-```
--->
-
 Exemplet nedan skickar ett trackEvent-liknande meddelande, kör profilskript, sparar attribut och registrerar omedelbart händelsen.
 
 ```js
-alloy ( "sendEvent" , {
-  renderDecisions : true,
-  data : {
-    __adobe : {
-      target : {
-        "profile.gender" : "female",
-        "profile.age" : 30,
-        "entity.name" : "T-shirt" ,
-        "entity.id" : "1234" ,
-        "track": {
-          "scopes": [ "mbox1", "mbox2"],
-          "type": "display|click|..."
+alloy("sendEvent", {
+    "renderDecisions": true,
+    "data": {
+        "xdm": { // Experience Event XDM data },
+            "__adobe": {
+                "target": {
+                    " __save": true|false,
+                    //defaults to true if omitted 
+                    "profile.gender": "female",
+                    "profile.age": 30,
+                    "entity.name": "T-shirt",
+                    "entity.id": "1234"
+                }
+            }
         }
-      }
     }
-  }
-} ) ;
+})
 ```
 
 >[!NOTE]
 >
->Om direktivet `__save` utelämnas sparas profilen och entitetsattributen omedelbart, som om begäran har körts, även om resten av begäran är en förhämtning av personalisering. Direktivet `__save` är bara relevant för profil- och entitetsattribut. Om spårobjektet finns ignoreras direktivet `__save`. Data sparas omedelbart och meddelandet registreras.
-
-**`sendEvent`med profildata**
-
-```js
-alloy("sendEvent", {
-   renderDecisions: true|false,
-   xdm: { // Experience Event XDM data },
-   data: { // Freeform data }
-});
-```
-
-**Så här skickar du profilattribut till Adobe Target:**
-
-```js
-alloy("sendEvent", {
-  "renderDecisions": true,
-  "data": {
-    "__adobe": {
-      "target": {
-        "profile.gender": "female",
-        "profile.age": 30
-      }
-    }
-  }
-});
-```
+>Om direktivet `__save` utelämnas sparas profilen och entitetsattributen omedelbart. Direktivet `__save` är bara relevant för profilattribut och entitetsinformation.
 
 ## Begär rekommendationer
 
@@ -302,6 +256,34 @@ alloy("sendEvent", {
   }
 });
 ```
+
+## Visa konverteringsmått för mbox {#display-mbox-conversion-metrics}
+
+Exemplet nedan visar hur du kan spåra konverteringar av visningsrutor och skicka profilparametrar till Adobe Target, utan att behöva kvalificera dig för något innehåll eller någon aktivitet.
+
+```js
+alloy("sendEvent", {
+    "xdm": {
+        "_experience": {
+            "decisioning": {
+                "propositions": [{
+                    "scope": "conversion-step-1" //example scope name
+                }],
+                "propositionEventType": {
+                    "display": 1
+                }
+            }
+        },
+        "eventType": "decisioning.propositionDisplay"
+    }
+});
+```
+
+
+| Egenskap | Beskrivning |
+|---------|----------|
+| `xdm._experience.decisioning.propositions[x].scope` | Det omfång som framgångsmätningen ska kopplas till (vilket ska kopplas till en specifik aktivitet på Target-sidan). |
+| `xdm._experience.decisioning.propositions[x].eventType` | En sträng som beskriver den avsedda händelsetypen. Ange det här till `"decisioning.propositionDisplay"` för det här användningsfallet. |
 
 ## Felsökning
 

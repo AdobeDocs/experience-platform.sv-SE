@@ -3,9 +3,9 @@ title: Jämföra at.js med Experience Platform Web SDK
 description: Jämför at.js-funktionerna med Experience Platform Web SDK
 keywords: mål;adobe target;activity.id;experience.id;renderDecision;DecisionScopes;prehide snippet;vec;Form Based Experience Composer;xdm;audiences;Decision;scope;schema;system chart;chart
 exl-id: b63fe47d-856a-4cae-9057-51917b3e58dd
-source-git-commit: 8fc0fd96f13f0642f7671d0e0f4ecfae8ab6761f
+source-git-commit: b50ea35bf0e394298c0c8f0ffb13032aaa1ffafb
 workflow-type: tm+mt
-source-wordcount: '2175'
+source-wordcount: '2182'
 ht-degree: 2%
 
 ---
@@ -614,20 +614,42 @@ alloy("sendEvent", {
 I det här exemplet spåras en händelse som utlöstes när en viss åtgärd utfördes, till exempel när en knapp klickades.
 Du kan lägga till ytterligare anpassade parametrar via dataobjektet `__adobe.target`.
 
+Du kan också lägga till XDM-objektet `commerce`.
+
 ```js
-//replicates an at.js trackEvent call
 alloy("sendEvent", {
-    "type": "decisioning.propositionDisplay",
     "xdm": {
         "_experience": {
             "decisioning": {
-                "propositions": [{
-                    "scope": "sumbitButtonClick" // Or any mbox/location name you want to use in Adobe Target
-                }]
+                "propositions": [
+                    {
+                        "scope": "orderConfirm" //example scope name
+                    }
+                ],
+                "propositionEventType": {
+                    "display": 1
+                }
+            }
+        },
+        "eventType": "decisioning.propositionDisplay"
+    },
+    "commerce": {
+        "order": {
+            "purchaseID": "a8g784hjq1mnp3",
+            "purchaseOrderNumber": "VAU3123",
+            "currencyCode": "USD",
+            "priceTotal": 999.98
+        }
+    },
+    "data": {
+        "__adobe": {
+            "target": {
+                "pageType": "Order Confirmation",
+                "user.categoryId": "Insurance"
             }
         }
     }
-});
+})
 ```
 
 ## Så här utlöser du en vyändring i ett enkelsidigt program
