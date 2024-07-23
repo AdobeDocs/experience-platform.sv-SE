@@ -3,7 +3,7 @@ title: Jämföra at.js med Experience Platform Web SDK
 description: Jämför at.js-funktionerna med Experience Platform Web SDK
 keywords: mål;adobe target;activity.id;experience.id;renderDecision;DecisionScopes;prehide snippet;vec;Form Based Experience Composer;xdm;audiences;Decision;scope;schema;system chart;chart
 exl-id: b63fe47d-856a-4cae-9057-51917b3e58dd
-source-git-commit: ca1574f3f95840fce246fb4ed8845583fa0ff093
+source-git-commit: 8fc0fd96f13f0642f7671d0e0f4ecfae8ab6761f
 workflow-type: tm+mt
 source-wordcount: '2175'
 ht-degree: 2%
@@ -746,7 +746,7 @@ Med hjälp av Web SDK kan kunden ställa in sin tidigare dolda stil i kommandot 
 
 ```javascript
 alloy("configure", {
-  edgeConfigId: "configurationId",
+  datastreamId: "configurationId",
   orgId: "orgId@AdobeOrg",
   debugEnabled: true,
   prehidingStyle: "body { opacity: 0 !important }"

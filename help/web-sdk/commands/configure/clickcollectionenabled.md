@@ -1,13 +1,13 @@
 ---
 title: clickCollectionEnabled
 description: Lär dig hur du konfigurerar Web SDK för att kontrollera om länkklicksdata samlas in automatiskt.
-source-git-commit: 660d4e72bd93ca65001092520539a249eae23bfc
+exl-id: e91b5bc6-8880-4884-87f9-60ec8787027e
+source-git-commit: d3be2a9e75514023a7732a1c3460f8695ef02e68
 workflow-type: tm+mt
-source-wordcount: '350'
+source-wordcount: '344'
 ht-degree: 0%
 
 ---
-
 
 # `clickCollectionEnabled`
 
@@ -33,14 +33,13 @@ I samtliga fall är `xdm.web.webInteraction.name` inställd på länktextetikett
 
 ## Aktivera automatisk länkspårning med taggtillägget Web SDK {#tag-extension}
 
-Markera kryssrutan **[!UICONTROL Enable click data collection]** när du [konfigurerar taggtillägget](/help/tags/extensions/client/web-sdk/web-sdk-extension-configuration.md).
+Den här variabeln hanteras automatiskt av taggtillägget. Du behöver inte ange den explicit. Om något av följande väljs när [taggtillägget](/help/tags/extensions/client/web-sdk/web-sdk-extension-configuration.md) konfigureras, samlas relevanta länkspårningsdata in:
 
-1. Logga in på [experience.adobe.com](https://experience.adobe.com) med dina Adobe ID-inloggningsuppgifter.
-1. Navigera till **[!UICONTROL Data Collection]** > **[!UICONTROL Tags]**.
-1. Välj önskad taggegenskap.
-1. Navigera till **[!UICONTROL Extensions]** och klicka sedan på **[!UICONTROL Configure]** på [!UICONTROL Adobe Experience Platform Web SDK]-kortet.
-1. Bläddra ned till avsnittet [!UICONTROL Data Collection] och markera kryssrutan **[!UICONTROL Enable click data collection]**.
-1. Klicka på **[!UICONTROL Save]** och publicera sedan ändringarna.
+* [!UICONTROL Collect internal link clicks]
+* [!UICONTROL Collect external link clicks]
+* [!UICONTROL Collect download link clicks]
+
+Mer information finns i [`clickCollection`](clickcollection.md).
 
 ## Aktivera automatisk länkspårning med Web SDK JavaScript-biblioteket {#library}
 
@@ -48,7 +47,7 @@ Ange det booleska värdet `clickCollectionEnabled` när du kör kommandot `confi
 
 ```js
 alloy(configure, {
-  edgeConfigId: "ebebf826-a01f-4458-8cec-ef61de241c93",
+  datastreamId: "ebebf826-a01f-4458-8cec-ef61de241c93",
   orgId: "ADB3LETTERSANDNUMBERS@AdobeOrg",
   clickCollectionEnabled: false
 });

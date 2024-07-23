@@ -2,7 +2,7 @@
 title: targetMigrationEnabled
 description: Tillåt att Web SDK läser och skriver Adobe Target-cookies.
 exl-id: 4b9203c6-31b7-45af-a6a6-a206d7edac3f
-source-git-commit: 8be502c9eea67119dc537a5d63a6c71e0bff1697
+source-git-commit: 8fc0fd96f13f0642f7671d0e0f4ecfae8ab6761f
 workflow-type: tm+mt
 source-wordcount: '169'
 ht-degree: 1%
@@ -30,8 +30,8 @@ Ange det booleska värdet `targetMigrationEnabled` när du kör kommandot `confi
 
 ```js
 alloy("configure", {
-  "edgeConfigId": "ebebf826-a01f-4458-8cec-ef61de241c93",
-  "orgId": "ADB3LETTERSANDNUMBERS@AdobeOrg",
-  "targetMigrationEnabled": true
+  datastreamId: "ebebf826-a01f-4458-8cec-ef61de241c93",
+  orgId: "ADB3LETTERSANDNUMBERS@AdobeOrg",
+  targetMigrationEnabled: true
 });
 ```

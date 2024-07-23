@@ -2,7 +2,7 @@
 title: debugEnabled
 description: Använd kod för att aktivera felsökningsfunktioner i Web SDK.
 exl-id: 89392d16-9a0d-427b-86b6-70005f63f440
-source-git-commit: 8be502c9eea67119dc537a5d63a6c71e0bff1697
+source-git-commit: 8fc0fd96f13f0642f7671d0e0f4ecfae8ab6761f
 workflow-type: tm+mt
 source-wordcount: '140'
 ht-degree: 0%
@@ -25,8 +25,8 @@ Ställ in det booleska värdet `debugEnabled` till `true` när du kör kommandot
 
 ```js
 alloy("configure", {
-  "edgeConfigId": "ebebf826-a01f-4458-8cec-ef61de241c93",
-  "orgId": "ADB3LETTERSANDNUMBERS@AdobeOrg",
-  "debugEnabled": true
+  datastreamId: "ebebf826-a01f-4458-8cec-ef61de241c93",
+  orgId: "ADB3LETTERSANDNUMBERS@AdobeOrg",
+  debugEnabled: true
 });
 ```

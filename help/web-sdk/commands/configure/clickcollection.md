@@ -1,13 +1,13 @@
 ---
 title: clickCollection
 description: Finjustera inställningarna för klicksamlingen.
-source-git-commit: 660d4e72bd93ca65001092520539a249eae23bfc
+exl-id: 5a128b4a-4727-4415-87b4-4ae87a7e1750
+source-git-commit: d3be2a9e75514023a7732a1c3460f8695ef02e68
 workflow-type: tm+mt
-source-wordcount: '527'
+source-wordcount: '523'
 ht-degree: 0%
 
 ---
-
 
 # `clickCollection`
 
@@ -25,26 +25,27 @@ Följande variabler är tillgängliga i objektet `clickCollection`:
 * **`clickCollection.eventGroupingEnabled`**: Ett booleskt värde som avgör om biblioteket väntar till nästa sida för att skicka länkspårningsdata. När nästa sida läses in kombinerar du länkspårningsdata med sidans load-händelse. Om du aktiverar det här alternativet minskas antalet händelser som du skickar till Adobe. Om `internalLinkEnabled` är inaktiverat händer ingenting.
 * **`clickCollection.sessionStorageEnabled`**: Ett booleskt värde som avgör om länkspårningsdata lagras i sessionslagring i stället för lokala variabler. Om `internalLinkEnabled` eller `eventGroupingEnabled` är inaktiverade händer ingenting.
 
-  Adobe rekommenderar starkt att du aktiverar den här variabeln när du använder `eventGroupingEnabled`. Om `eventGroupingEnabled` är aktiverat när `sessionStorageEnabled` är inaktiverat och du klickar på en ny sida, försvinner länkspårningsdata eftersom de inte bevaras i sessionslagringen. Det går att inaktivera `sessionStorageEnabled` i enkelsidiga program, men det är inte lämpligt för icke-SPA sidor.
+  Adobe rekommenderar starkt att du aktiverar den här variabeln när du använder `eventGroupingEnabled` utanför enkelsidiga program. Om `eventGroupingEnabled` är aktiverat när `sessionStorageEnabled` är inaktiverat och du klickar på en ny sida, försvinner länkspårningsdata eftersom de inte bevaras i sessionslagringen. Eftersom enkelsidiga program vanligtvis inte navigerar till en ny sida krävs inte sessionslagring för SPA sidor.
 * **`filterClickDetails`**: En återanropsfunktion som ger fullständig kontroll över länkspårningsdata som du samlar in. Du kan använda den här återanropsfunktionen för att ändra, dölja eller avbryta sändning av länkspårningsdata. Det här återanropet är användbart när du vill utesluta viss information, t.ex. personligt identifierbar information i länkar.
 
 ## Klicka på samlingsinställningarna med tillägget Web SDK-tagg
 
-Markera kryssrutan **[!UICONTROL Enable click data collection]** när du [konfigurerar taggtillägget](/help/tags/extensions/client/web-sdk/web-sdk-extension-configuration.md). Om du aktiverar den här kryssrutan visas följande alternativ för klicksamling:
+Välj något av följande alternativ när [du konfigurerar taggtillägget](/help/tags/extensions/client/web-sdk/web-sdk-extension-configuration.md):
 
-* [!UICONTROL Internal links]
-   * [!UICONTROL Enable event grouping]
-   * [!UICONTROL Enable session storage]
-* [!UICONTROL External links]
-* [!UICONTROL Download links]
+* [!UICONTROL Collect internal links]
+   * [!UICONTROL Event grouping options]:
+      * [!UICONTROL No event grouping]
+      * [!UICONTROL Event grouping using session storage]
+      * [!UICONTROL Event grouping using local object]
+* [!UICONTROL Collect external links]
+* [!UICONTROL Collect download links]
 * [!UICONTROL Filter click properties]
 
 1. Logga in på [experience.adobe.com](https://experience.adobe.com) med dina Adobe ID-inloggningsuppgifter.
 1. Navigera till **[!UICONTROL Data Collection]** > **[!UICONTROL Tags]**.
 1. Välj önskad taggegenskap.
 1. Navigera till **[!UICONTROL Extensions]** och klicka sedan på **[!UICONTROL Configure]** på [!UICONTROL Adobe Experience Platform Web SDK]-kortet.
-1. Bläddra ned till avsnittet [!UICONTROL Data Collection] och markera kryssrutan **[!UICONTROL Enable click data collection]**.
-1. Välj önskade inställningar för klicksamlingen.
+1. Bläddra ned till avsnittet [!UICONTROL Data Collection] och välj önskade inställningar för klicksamlingen.
 1. Klicka på **[!UICONTROL Save]** och publicera sedan ändringarna.
 
 Callback-funktionen [!UICONTROL Filter click properties] öppnar en anpassad kodredigerare där du kan infoga önskad kod. I kodredigeraren har du tillgång till följande variabler:
@@ -72,11 +73,11 @@ Ange önskade variabler i objektet `clickCollection` när du kör kommandot [`co
 * `filterClickDetails`: Innehåller ingen funktion; måste registreras explicit
 
 >[!TIP]
->Adobe rekommenderar att du aktiverar `eventGroupingEnabled`, eftersom det minskar antalet händelser som räknas in i den avtalsenliga användningen.
+>Adobe rekommenderar att du aktiverar `eventGroupingEnabled` när `internalLinkEnabled` är aktiverat, eftersom det minskar antalet händelser som räknas in i den avtalsenliga användningen.
 
 ```js
 alloy("configure", {
-  edgeConfigId: "ebebf826-a01f-4458-8cec-ef61de241c93",
+  datastreamId: "ebebf826-a01f-4458-8cec-ef61de241c93",
   orgId: "ADB3LETTERSANDNUMBERS@AdobeOrg",
   clickCollectionEnabled: true,
   clickCollection: {

@@ -2,7 +2,7 @@
 title: edgeBasePath
 description: Bassökvägen för slutpunkten som används för att interagera med Adobes tjänster.
 exl-id: 3542575d-ad02-415c-8e47-97c877dfdd9d
-source-git-commit: 8be502c9eea67119dc537a5d63a6c71e0bff1697
+source-git-commit: 8fc0fd96f13f0642f7671d0e0f4ecfae8ab6761f
 workflow-type: tm+mt
 source-wordcount: '137'
 ht-degree: 1%
@@ -30,8 +30,8 @@ Ange textfältet `edgeBasePath` när du kör kommandot `configure`. Om du utelä
 
 ```js
 alloy("configure", {
-  "edgeConfigId": "ebebf826-a01f-4458-8cec-ef61de241c93",
-  "orgId": "ADB3LETTERSANDNUMBERS@AdobeOrg",
-  "edgeBasePath": "ee"
+  datastreamId: "ebebf826-a01f-4458-8cec-ef61de241c93",
+  orgId: "ADB3LETTERSANDNUMBERS@AdobeOrg",
+  edgeBasePath: "ee"
 });
 ```

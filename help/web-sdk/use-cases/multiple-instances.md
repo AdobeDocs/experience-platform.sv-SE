@@ -1,11 +1,11 @@
 ---
 title: Använda flera Web SDK-instanser
 description: Lär dig hur du interagerar med flera Experience Platform Web SDK-egenskaper.
-keywords: flera egenskaper;konfigurera;sendEvent;edgeConfigId;orgId;
+keywords: flera egenskaper
 exl-id: e07afb0d-3490-414f-bc9c-f71bc04fe664
-source-git-commit: f75dcfc945be2f45c1638bdd4d670288aef6e1e6
+source-git-commit: 8fc0fd96f13f0642f7671d0e0f4ecfae8ab6761f
 workflow-type: tm+mt
-source-wordcount: '219'
+source-wordcount: '215'
 ht-degree: 0%
 
 ---
@@ -38,24 +38,24 @@ I följande exempel kan du köra kommandon med varje instans:
 
 ```javascript
 titanium("configure", {
-  "edgeConfigId": "ebebf826-a01f-4458-8cec-ef61de241c93",
-  "orgId": "ADB3LETTERSANDNUMBERS@AdobeOrg"
+  datastreamId: "ebebf826-a01f-4458-8cec-ef61de241c93",
+  orgId: "ADB3LETTERSANDNUMBERS@AdobeOrg"
 });
 
 titanium("sendEvent", {
-  "data": {
-    "key": "value"
+  data: {
+    key: "value"
   }
 });
 
 copper("configure", {
-  "edgeConfigId": "f46e981f-fd03-4bdd-a9d9-73ce4447f870",
-  "orgId": "ADB3NUMBERSANDLETTERS2@AdobeOrg"
+  datastreamId: "f46e981f-fd03-4bdd-a9d9-73ce4447f870",
+  orgId: "ADB3NUMBERSANDLETTERS2@AdobeOrg"
 });
 
 copper("sendEvent", {
-  "data": {
-    "key": "value"
+  data: {
+    key: "value"
   }
 });
 ```
@@ -64,4 +64,4 @@ Var noga med att köra `configure`-kommandot för varje instans innan du kör an
 
 >[!IMPORTANT]
 >
->För att undvika konflikter med cookies måste varje Web SDK-instans ha sin egen unika `edgeConfigId` och sin egen unika `orgId`.
+>För att undvika konflikter med cookies måste varje Web SDK-instans ha sin egen unika `datastreamId` och sin egen unika `orgId`.
