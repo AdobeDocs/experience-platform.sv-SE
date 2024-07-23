@@ -3,9 +3,9 @@ keywords: mål;mål;måltyper
 title: Måltyper och -kategorier
 description: Läs mer om de olika typerna och kategorierna av destinationer i Adobe Experience Platform.
 exl-id: 7826d1e2-bd6b-4f65-9da9-0a3b3e8bb93b
-source-git-commit: 8314aca706b47c4cbcb993418c287629f5563189
+source-git-commit: 13ceaa53b53f17457c8d2c914b3fd05f6af2441b
 workflow-type: tm+mt
-source-wordcount: '799'
+source-wordcount: '800'
 ht-degree: 0%
 
 ---
@@ -20,7 +20,11 @@ I Adobe Experience Platform skiljer vi mellan olika måltyper - anslutningar, da
 
 Slutligen kan anslutningar även särskiljas mellan offentliga destinationer som är tillgängliga för alla organisationer i destinationskatalogen och privata destinationer som Real-Time CDP Ultimate-kunder kan skapa för att tillgodose sina specifika exportanvändningsfall.
 
+>[!BEGINSHADEBOX]
+
 ![Typer av måldiagram.](./assets/destination-types/types-of-destinations-no-highlight.png "Typer av destinationsdiagram."){zoomable="yes"}
+
+>[!ENDSHADEBOX]
 
 ## Anslutningar {#connections}
 
@@ -30,8 +34,8 @@ Slutligen kan anslutningar även särskiljas mellan offentliga destinationer som
 
 Profilexportdestinationer tar emot rådata, ofta med e-postadress som primärnyckel. Experience Platform har för närvarande stöd för två typer av profilexportdestinationer:
 
-* [Exportmål för direktuppspelningsprofil (företagsmål)](#streaming-profile-export)
 * [Batchmål (filbaserade)](#file-based)
+* [Avancerade företagsmål (exportmål för direktuppspelningsprofil)](#streaming-profile-export)
 
 ### Avancerade företagsmål (exportmål för direktuppspelningsprofil) {#streaming-profile-export}
 
