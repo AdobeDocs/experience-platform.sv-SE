@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Sekretessregler - terminologi
 description: Det här dokumentet innehåller definitioner för nyckeltermer relaterade till sekretessregler som stöds av Adobe Experience Cloud.
 exl-id: 9c0a7d26-0571-41d4-8cf5-6356025d51ef
-source-git-commit: b16eae9698de6c20022fdf1a3ff659df35e440f6
+source-git-commit: be219530f33209cb4f3fe70425bb293edff4b309
 workflow-type: tm+mt
-source-wordcount: '1842'
+source-wordcount: '2020'
 ht-degree: 0%
 
 ---
@@ -71,6 +71,8 @@ Det här dokumentet innehåller definitioner för nyckeltermer relaterade till s
 
 **Registreringssystem**: Alla specifika uppsättningar personuppgifter som är tillgängliga enligt specifika kriterier eller som kan läsas.
 
+**FDBR**: [!DNL Florida Digital Bill of Rights] (FDBR) är lagstiftning som ger personer i Florida behörighet att få åtkomst till, korrigera, ta bort och kopiera sina personuppgifter. Det möjliggör transparens i datametoder, tillåter avanmälan för försäljning av data eller riktad annonsering samt förbjuder obehörig övervakning. Florida Department of Legal Affairs tillämpar dessa rättigheter och kräver att registeransvariga svarar på förfrågningar inom 45 dagar.
+
 ## G
 
 **GDPR**: [!DNL General Data Protection Regulation] (GDPR) är en rättslig ram som fastställer riktlinjer för insamling och behandling av personuppgifter inom Europeiska ekonomiska samarbetsområdet (EES). I den allmänna dataskyddsförordningen fastställs principerna för datahantering och individens rättigheter, samtidigt som böter som kan vara inkomstbaserade åläggs. GDPR omfattar alla företag som hanterar uppgifter om EES-medborgare, så det är en kritisk regel för tjänstemän som ansvarar för företagstillsyn hos banker, försäkringsbolag och andra finansiella företag.
@@ -107,13 +109,11 @@ Det här dokumentet innehåller definitioner för nyckeltermer relaterade till s
 
 ## O
 
+**OCPA**: I Oregon Consumer Privacy Act (OCPA) ges Oregon-boende nyckelrättigheter för sina personuppgifter, inklusive rätten att få tillgång till, korrigera, ta bort och få en kopia av deras data. Det ålägger företagen strikta skyldigheter, kräver att de tillhandahåller detaljerade sekretessmeddelanden, får samtycke för viss dataanvändning och tillämpar ett förbättrat skydd för känslig information. Lagstiftningen syftar till att balansera konsumentens integritet med affärsintressen.
+
 ## P
 
 **PDPA**: [!DNL Personal Data Protection Act] i Thailand (PDPA) introducerades för att skydda thailändska datapartner från olaglig insamling, användning eller utlämnande av deras personuppgifter. Förordningen inspireras av EU:s allmänna dataskyddsförordningen och ger de thailändska medborgarna rätt att begära tillgång till eller radering av lagrade personuppgifter.
-
-<!-- Not yet released:
-**PDPD**: The [!DNL Personal Data Protection Decree] of Vietnam (PDPD) ...  
--->
 
 **Personuppgifter**: All information som rör en fysisk person eller en registrerad person och som kan användas för att direkt eller indirekt identifiera personen.
 
@@ -152,6 +152,8 @@ Det här dokumentet innehåller definitioner för nyckeltermer relaterade till s
 **Tillsynsmyndighet**: En offentlig myndighet som har inrättats av en medlemsstat i enlighet med artikel 46.
 
 ## T
+
+**TDPSA**: Texas Data Privacy and Security Act (TDPSA) är en omfattande lagstiftning som skyddar de Texas-studenters personuppgifter. Det ger individer rätt att få tillgång till, korrigera, radera och få kopior av sina data och att avanmäla sig från försäljning av data och riktad reklam. Företag som bryter mot denna lagstiftning kan drabbas av ekonomiska påföljder.
 
 **Trepartsmöten**: Trepartsmöten är informella förhandlingar mellan Europeiska kommissionen, Europaparlamentet och Europeiska unionens råd. Dessa förhandlingar hålls vanligen efter den första behandlingen av förslaget till lagstiftning för att snabbare komma överens om en kompromisstext som skall antas.
 komma överens om antagandet av en kompromisstext snabbare.
