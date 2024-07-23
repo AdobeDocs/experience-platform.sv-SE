@@ -1,13 +1,13 @@
 ---
 title: Slutpunkt för användningsauktorisering för tilläggspaket
 description: Lär dig hur du anropar slutpunkten för /extension_package_usage-auktoriseringar i Reactor API.
-source-git-commit: fdf01451527e2fab8eb6e6f9d7b4901a85381450
+exl-id: ad3fb704-7d2f-45ec-b80b-ea4d327f2205
+source-git-commit: 9cdd349e0eccb4498d88f24a84b0f1c116b0adfe
 workflow-type: tm+mt
 source-wordcount: '653'
 ht-degree: 1%
 
 ---
-
 
 # Slutpunkt för användningsauktorisering för tilläggspaket
 
@@ -185,7 +185,7 @@ Ett godkänt svar returnerar information om användningsauktoriseringen för det
 >
 >I exempelsvaret ovan är auktoriseringen för närvarande i `pending_approval`-steget. Organisationen måste godkänna behörigheten innan tilläggspaketet används. Organisationens användare kan bläddra i det privata tilläggspaketet medan auktoriseringen väntar på godkännande, men de kan inte installera det och kan inte hitta det i sin tilläggskatalog.
 
-## Hämta en lista över användningstillstånd för tilläggspaket {#list_authorizations}
+## Hämta en lista över användningstillstånd för tilläggspaket {#list-authorizations}
 
 Du kan hämta en lista över användningsauktoriseringar för tilläggspaket genom att göra en GET-begäran.
 
@@ -386,7 +386,7 @@ Ett godkänt svar returnerar information om den ändrade behörigheten för anv�
 >
 >När auktoriseringen har godkänts kan din organisation installera tilläggspaketet på dina egenskaper.
 
-## Hämta data för tilläggspaketet för en användningsbehörighet för tilläggspaket {#retrieve_data}
+## Hämta data för tilläggspaketet för en användningsbehörighet för tilläggspaket {#retrieve-data}
 
 Du kan hämta data för tilläggspaketet för en åtkomstpaketets användningsbehörighet genom att göra en GET-begäran.
 

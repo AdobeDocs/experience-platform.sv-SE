@@ -6,9 +6,9 @@ user-guide-description: Lär dig att driftsätta och hantera analyser, marknadsf
 feature: Tags
 solution: Data Collection
 role: Developer
-source-git-commit: aca7597d524633e86d88cc3b40f292c8d1673839
+source-git-commit: 5cbc2f6809156bc1a554154527ff2c5e35d3a922
 workflow-type: tm+mt
-source-wordcount: '769'
+source-wordcount: '773'
 ht-degree: 15%
 
 ---
@@ -316,6 +316,7 @@ ht-degree: 15%
       * [Delegera beskrivnings-ID:n](./api/guides/delegate-descriptor-ids.md)
       * [Krypteringsvärden](./api/guides/encrypting-values.md)
       * [Felhantering](./api/guides/error-handling.md)
+      * [Dela privata tilläggspaket](./api/guides/extension-packages.md)
       * [Filtrera svar](./api/guides/filtering.md)
       * [Sidinisera svar](./api/guides/pagination.md)
       * [Sortera svar](./api/guides/sorting.md)
