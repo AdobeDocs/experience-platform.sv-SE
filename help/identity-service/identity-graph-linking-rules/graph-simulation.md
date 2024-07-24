@@ -3,9 +3,9 @@ title: Användargränssnittshandbok för diagramsimulering
 description: Lär dig hur du använder Graph Simulation i gränssnittet för identitetstjänsten.
 badge: Beta
 exl-id: 89f0cf6e-c43f-40ec-859a-f3b73a6da8c8
-source-git-commit: 4c49bec7974dafe18d18deded6ddc936ece47dc3
+source-git-commit: 7daa9191f2e095f01c7c09f02f87aa8724e2e325
 workflow-type: tm+mt
-source-wordcount: '1401'
+source-wordcount: '1399'
 ht-degree: 0%
 
 ---
@@ -14,7 +14,7 @@ ht-degree: 0%
 
 >[!AVAILABILITY]
 >
->Den här funktionen är inte tillgänglig ännu. Betaprogrammet för länkningsregler för identitetsdiagram förväntas starta i juli för utvecklingssandlådor. Kontakta ditt Adobe-kontoteam för att få information om deltagandekriterierna.
+>Länkningsregler för identitetsdiagram finns för närvarande i betaversionen. Kontakta ditt Adobe-kontoteam för att få information om deltagandekriterierna. Funktionen och dokumentationen kan komma att ändras.
 
 [!DNL Graph Simulation] är ett verktyg i identitetstjänstens gränssnitt som du kan använda för att simulera hur ett identitetsdiagram beter sig när en viss kombination av identiteter anges och hur du konfigurerar [identitetsoptimeringsalgoritmen](./identity-optimization-algorithm.md).
 
@@ -172,6 +172,8 @@ I exempeldiagrammet nedan finns det en prickad linje mellan `{Email: tom@acme.co
 
 Genom att läsa det här dokumentet vet du nu hur du använder verktyget [!DNL Graph Simulation] för att bättre förstå hur dina identitetsdata behandlas utifrån en viss uppsättning regler och konfigurationer. Mer information finns i följande dokument:
 
-* [Länkningsregler för identitetsdiagram](overview.md)
-* [Identitetsoptimeringsalgoritm](identity-optimization-algorithm.md)
-* [Namnområdesprioritet](namespace-priority.md)
+* [Länkningsregler för identitetsdiagram](./overview.md)
+* [Konfigurationsguide](./configuration.md)
+* [Identitetsoptimeringsalgoritm](./identity-optimization-algorithm.md)
+* [Namnområdesprioritet](./namespace-priority.md)
+* [Exempel på diagramkonfigurationer](./example-configurations.md)

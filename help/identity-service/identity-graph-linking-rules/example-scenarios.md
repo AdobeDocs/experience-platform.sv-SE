@@ -1,16 +1,16 @@
 ---
-title: Exempelscenarier för konfiguration av identitetsinställningar
-description: Lär dig mer om exempelscenarier för konfigurering av identitetsinställningar.
+title: Exempel på kundscenarier som lösts av länkningsregler för identitetsdiagram
+description: Lär dig mer om exempel på kundscenarier som löses av länkningsregler för identitetsdiagram.
 badge: Beta
 exl-id: bccd5b7a-3836-47d8-b976-51747b9c1803
-source-git-commit: f1779ee75c877649a69f9fa99f3872aea861beca
+source-git-commit: be6fdb7e23ed4769ab4ee7ef72532296f020f4a4
 workflow-type: tm+mt
 source-wordcount: '455'
 ht-degree: 0%
 
 ---
 
-# Exempelscenarier för konfiguration av länkningsregler för identitetsdiagram
+# Exempel på kundscenarier som lösts av länkningsregler för identitetsdiagram
 
 >[!AVAILABILITY]
 >
@@ -30,22 +30,22 @@ Det finns instanser där flera inloggningar kan förekomma på en enda enhet:
 
 ![shared-devices](../images/identity-settings/shared-devices.png)
 
-I dessa fall kommer ett enda ECID att länkas till flera CRM-ID:n från en diagramsynvinkel utan att några begränsningar är aktiverade.
+I dessa fall kommer ett enda ECID att länkas till flera CRMID från en diagramsynvinkel utan att några gränser är aktiverade.
 
 Med länkningsregler för identitetsdiagram kan du:
 
-* Konfigurera det ID som används för inloggning som unik identifierare. Du kan t.ex. begränsa ett diagram så att endast en identitet lagras med ett CRM ID-namnutrymme och därmed definiera CRM-ID:t som den unika identifieraren för en delad enhet.
-   * På så sätt kan du se till att CRM-ID:n inte sammanfogas med ECID:t.
+* Konfigurera det ID som används för inloggning som unik identifierare. Du kan t.ex. begränsa ett diagram så att bara en identitet lagras med ett CRMID-namnutrymme och därmed definiera det CRMID:t som den unika identifieraren för en delad enhet.
+   * På så sätt kan du se till att CRMID inte sammanfogas med ECID.
 
 ## Ogiltiga e-post-/telefonscenarier
 
-Det finns även instanser av användare som anger falska värden som telefonnummer och/eller e-postadresser när de registrerar sig. I dessa fall, om begränsningar inte är aktiverade, kommer telefon-/e-postrelaterade identiteter att länkas till flera olika CRM-ID:n.
+Det finns även instanser av användare som anger falska värden som telefonnummer och/eller e-postadresser när de registrerar sig. I dessa fall, om begränsningar inte är aktiverade, kommer telefon-/e-postrelaterade identiteter att länkas till flera olika CRMID:n.
 
 ![invalid-email-phone](../images/identity-settings/invalid-email-phone.png)
 
 Med länkningsregler för identitetsdiagram kan du:
 
-* Konfigurera antingen CRM-ID, telefonnummer eller e-postadress som den unika identifieraren och begränsa därmed en person till endast ett CRM-ID, telefonnummer och/eller e-postadress som är kopplad till deras konto.
+* Konfigurera antingen CRMID, telefonnummer eller e-postadress som unik identifierare och begränsa därmed en person till endast ett CRMID, telefonnummer och/eller e-postadress som är kopplad till deras konto.
 
 ## Felaktiga eller felaktiga identitetsvärden
 
@@ -56,11 +56,11 @@ Det finns fall där icke-unika, felaktiga identitetsvärden är inkapslade i sys
 * Namnområde för telefonnummer med identitetsvärdet &quot;ej angivet&quot;.
    * Telefonnummer får inte innehålla några alfabet.
 
-Dessa identiteter kan resultera i följande diagram, där flera CRM-ID:n sammanfogas med den felaktiga identiteten:
+Dessa identiteter kan resultera i följande diagram, där flera CRMID sammanfogas med den felaktiga identiteten:
 
 ![felaktiga data](../images/identity-settings/bad-data.png)
 
-Med länkningsregler för identitetsdiagram kan du konfigurera CRM-ID:t som den unika identifieraren för att förhindra att oönskade profiler komprimeras på grund av den här typen av data.
+Med länkningsregler för identitetsdiagram kan du konfigurera CRMID som den unika identifieraren för att förhindra att oönskade profiler komprimeras på grund av den här typen av data.
 
 ## Nästa steg
 

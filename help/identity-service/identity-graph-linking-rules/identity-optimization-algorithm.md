@@ -3,9 +3,9 @@ title: Identitetsoptimeringsalgoritm
 description: Lär dig mer om algoritm för identitetsoptimering i identitetstjänsten.
 badge: Beta
 exl-id: 5545bf35-3f23-4206-9658-e1c33e668c98
-source-git-commit: 5d19a22dc8d1b7f0151008d14b2f5bf89c85c638
+source-git-commit: 7daa9191f2e095f01c7c09f02f87aa8724e2e325
 workflow-type: tm+mt
-source-wordcount: '1570'
+source-wordcount: '1565'
 ht-degree: 0%
 
 ---
@@ -14,7 +14,7 @@ ht-degree: 0%
 
 >[!AVAILABILITY]
 >
->Den här funktionen är inte tillgänglig ännu. Betaprogrammet för länkningsregler för identitetsdiagram förväntas starta i juli för utvecklingssandlådor. Kontakta ditt Adobe-kontoteam för att få information om deltagandekriterierna.
+>Länkningsregler för identitetsdiagram finns för närvarande i betaversionen. Kontakta ditt Adobe-kontoteam för att få information om deltagandekriterierna. Funktionen och dokumentationen kan komma att ändras.
 
 Identitetsoptimeringsalgoritmen är en diagramalgoritm i identitetstjänsten som hjälper till att säkerställa att ett identitetsdiagram är representativt för en enskild person och därför förhindrar oönskad sammanslagning av identiteter i kundprofilen i realtid.
 
@@ -162,6 +162,7 @@ Se bilden nedan för att få en bättre förståelse för hur anonym händelseas
 Mer information om regler för länkning av identitetsdiagram finns i följande dokumentation:
 
 * [Översikt över regler för länkning av identitetsdiagram](./overview.md)
+* [Namnområdesprioritet](./namespace-priority.md)
 * [Exempelscenarier för konfiguration av länkningsregler för identitetsdiagram](./example-scenarios.md)
 * [Identitetslänkningslogik](../features/identity-linking-logic.md)
 * [Identitetstjänst och kundprofil i realtid](../identity-and-profile.md)

@@ -2,9 +2,10 @@
 title: Användargränssnitt för identitetsinställningar
 description: Lär dig hur du använder användargränssnittet för identitetsinställningar.
 badge: Beta
-source-git-commit: 72773f9ba5de4387c631bd1aa0c4e76b74e5f1dc
+exl-id: 738b7617-706d-46e1-8e61-a34855ab976e
+source-git-commit: 536770d0c3e7e93921fe40887dafa5c76e851f5e
 workflow-type: tm+mt
-source-wordcount: '511'
+source-wordcount: '504'
 ht-degree: 0%
 
 ---
@@ -13,7 +14,7 @@ ht-degree: 0%
 
 >[!AVAILABILITY]
 >
->Den här funktionen är inte tillgänglig ännu. Betaprogrammet för länkningsregler för identitetsdiagram förväntas starta i juli för utvecklingssandlådor. Kontakta ditt Adobe-kontoteam för att få information om deltagandekriterierna.
+>Länkningsregler för identitetsdiagram finns för närvarande i betaversionen. Kontakta ditt Adobe-kontoteam för att få information om deltagandekriterierna. Funktionen och dokumentationen kan komma att ändras.
 
 Identitetsinställningar är en funktion i användargränssnittet för Adobe Experience Platform Identity Service som du kan använda för att ange unika namnutrymmen och konfigurera namnområdesprioritet.
 

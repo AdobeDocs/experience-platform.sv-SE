@@ -3,9 +3,9 @@ title: Översikt över regler för länkning av identitetsdiagram
 description: Lär dig mer om länkningsregler för identitetsdiagram i identitetstjänsten.
 badge: Beta
 exl-id: 317df52a-d3ae-4c21-bcac-802dceed4e53
-source-git-commit: 72773f9ba5de4387c631bd1aa0c4e76b74e5f1dc
+source-git-commit: 7daa9191f2e095f01c7c09f02f87aa8724e2e325
 workflow-type: tm+mt
-source-wordcount: '1173'
+source-wordcount: '1177'
 ht-degree: 0%
 
 ---
@@ -14,12 +14,16 @@ ht-degree: 0%
 
 >[!AVAILABILITY]
 >
->Den här funktionen är inte tillgänglig ännu. Betaprogrammet för länkningsregler för identitetsdiagram förväntas starta i juli för utvecklingssandlådor. Kontakta ditt Adobe-kontoteam för att få information om deltagandekriterierna.
+>Länkningsregler för identitetsdiagram finns för närvarande i betaversionen. Kontakta ditt Adobe-kontoteam för att få information om deltagandekriterierna. Funktionen och dokumentationen kan komma att ändras.
 
 ## Innehållsförteckning
 
 * [Översikt](./overview.md)
 * [Identitetsoptimeringsalgoritm](./identity-optimization-algorithm.md)
+* [Namnområdesprioritet](./namespace-priority.md)
+* [Gränssnitt för diagramsimulering](./graph-simulation.md)
+* [Användargränssnitt för identitetsinställningar](./identity-settings-ui.md)
+* [Exempel på diagramkonfigurationer](./configuration.md)
 * [Exempel på scenarier](./example-scenarios.md)
 
 Med Adobe Experience Platform Identity Service och Real-Time Customer Profile är det enkelt att anta att dina data är perfekt insamlade och att alla sammanfogade profiler representerar en enskild person via en personidentifierare, till exempel ett CRM-ID. Det finns emellertid möjliga scenarier där vissa data kan försöka sammanfoga flera olika profiler till en enda profil (&quot;komprimera diagram&quot;). För att förhindra dessa oönskade sammanfogningar kan du använda konfigurationer som tillhandahålls via länkningsregler för identitetsdiagram och tillåta korrekt personalisering för dina användare.

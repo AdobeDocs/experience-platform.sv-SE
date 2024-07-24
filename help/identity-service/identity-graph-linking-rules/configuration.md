@@ -2,14 +2,19 @@
 title: Konfigurationsguide för länkning av identitetsdiagram
 description: Lär dig de rekommenderade stegen som ska följas när du implementerar data med länkningsregler för identitetsdiagram.
 badge: Beta
-source-git-commit: 72773f9ba5de4387c631bd1aa0c4e76b74e5f1dc
+exl-id: 368f4d4e-9757-4739-aaea-3f200973ef5a
+source-git-commit: 536770d0c3e7e93921fe40887dafa5c76e851f5e
 workflow-type: tm+mt
-source-wordcount: '799'
+source-wordcount: '1304'
 ht-degree: 0%
 
 ---
 
 # Konfigurationsguide för länkning av identitetsdiagram
+
+>[!AVAILABILITY]
+>
+>Länkningsregler för identitetsdiagram finns för närvarande i betaversionen. Kontakta ditt Adobe-kontoteam för att få information om deltagandekriterierna. Funktionen och dokumentationen kan komma att ändras.
 
 Läs det här dokumentet för att få en stegvis handledning som du kan följa när du implementerar dina data med Adobe Experience Platform Identity Service.
 
@@ -67,6 +72,11 @@ Instruktioner om hur du skapar en datauppsättning finns i [användargränssnitt
 
 ## Infoga era data {#ingest}
 
+>[!WARNING]
+>
+>* Under förimplementeringsprocessen måste du se till att de autentiserade händelser som skickas till Experience Platform alltid innehåller en personidentifierare, till exempel CRMID.
+>* Under implementeringen måste du se till att det unika namnutrymmet med den högsta prioriteten alltid finns i alla profiler. I [bilagan](#appendix) finns exempel på diagramscenarier som löses genom att säkerställa att alla profiler innehåller det unika namnutrymmet med högsta prioritet.
+
 Nu bör du ha följande:
 
 * Nödvändiga behörigheter för att komma åt identitetstjänstens funktioner.
@@ -86,3 +96,55 @@ När du har alla objekt som listas ovan kan du börja importera dina data till E
 >När data har importerats ändras inte nyttolasten för XDM-rådata. Du kan fortfarande se dina primära identitetskonfigurationer i användargränssnittet. Dessa konfigurationer åsidosätts dock av identitetsinställningarna.
 
 Använd alternativet **[!UICONTROL Beta feedback]** på identitetstjänstens arbetsyta för att få feedback.
+
+## Bilaga {#appendix}
+
+I det här avsnittet finns mer information som du kan referera till när du implementerar dina identitetsinställningar och unika namnutrymmen.
+
+### Scenario för delad enhet {#shared-device-scenario}
+
+Du måste se till att ett enda namnutrymme används i alla profiler som representerar en person. Om du gör det kan identitetstjänsten identifiera rätt personidentifierare i ett visst diagram.
+
+>[!BEGINTABS]
+
+>[!TAB Utan ett namnutrymme för en identifierare]
+
+Utan ett unikt namnutrymme som representerar dina personidentifierare kan det uppstå ett diagram som länkar till olika personidentifierare till samma ECID. I det här exemplet är både B2BCRM och B2CCRM kopplade till samma ECID samtidigt. I det här diagrammet visas att Tom med sitt B2C-inloggningskonto delade en enhet med sommaren med hjälp av sitt B2B-inloggningskonto. Systemet kommer dock att känna igen att detta är en profil (komprimering av diagram).
+
+![Ett diagramscenario där två personidentifierare är länkade till samma ECID.](../images/graph-examples/multi_namespaces.png)
+
+>[!TAB Med en identifierare för en person ]
+
+Med ett unikt namnutrymme (i det här fallet ett CRMID i stället för två olika namnutrymmen) kan identitetstjänsten identifiera den personidentifierare som senast var associerad med ECID. I det här exemplet, eftersom det finns ett unikt CRMID, kan identitetstjänsten identifiera ett scenario med delade enheter, där två enheter delar samma enhet.
+
+![Ett delat enhetsgrafscenario där två personidentifierare är länkade till samma ECID, men den äldre länken tas bort.](../images/graph-examples/crmid_only_multi.png)
+
+>[!ENDTABS]
+
+### Inloggnings-ID-scenariot kraschar {#dangling-loginid-scenario}
+
+I följande diagram simuleras ett &quot;farligt&quot; loginID-scenario. I det här exemplet är två olika loginID bundna till samma ECID. `{loginID: ID_C}` är dock inte länkad till CRMID. Det finns därför inget sätt för identitetstjänsten att upptäcka att dessa två loginID representerar två olika enheter.
+
+>[!BEGINTABS]
+
+>[!TAB Tvetydigt användar-ID]
+
+I det här exemplet lämnas `{loginID: ID_C}` farligt och inte länkat till ett CRMID. Personentiteten som detta användar-ID ska kopplas till är därför tvetydig.
+
+![Ett exempel på ett diagram med ett &quot;farligt&quot; loginID-scenario.](../images/graph-examples/dangling_example.png)
+
+>[!TAB loginID är länkat till ett CRMID]
+
+I det här exemplet är `{loginID: ID_C}` länkad till `{CRMID: Tom}`. Därför kan systemet identifiera att detta användar-ID är kopplat till Tom.
+
+![Inloggnings-ID är länkat till ett CRMID.](../images/graph-examples/id_c_tom.png)
+
+>[!TAB loginID är länkat till ett annat CRMID]
+
+I det här exemplet är `{loginID: ID_C}` länkad till `{CRMID: Summer}`. Därför kan systemet identifiera att detta loginID är kopplat till en annan person, i det här fallet Sommar.
+
+I det här exemplet visas även att Tom och Sommar ska skilja på personer som delar en enhet, vilket representeras av `{ECID: 111}`.
+
+![Inloggnings-ID är länkat till ett annat CRMID.](../images/graph-examples/id_c_summer.png)
+
+>[!ENDTABS]
