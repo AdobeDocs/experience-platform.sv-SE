@@ -2,7 +2,7 @@
 description: Destinationstjänsten i Adobe Experience Platform använder konfigurationsslutpunkter för flera komponenter som bygger upp målfunktionaliteten. Se hur dessa komponenter tillsammans gör det möjligt för Experience Platform att ansluta till målpartners, skicka anpassade meddelanden och aktivera profildata i hela det digitala ekosystemet.
 title: Konfigurationsalternativ i Destinationen SDK
 exl-id: 8890c70a-cdb9-4b9d-aa81-affe72b1fdc5
-source-git-commit: 82ba4e62d5bb29ba4fef22c5add864a556e62c12
+source-git-commit: f652faac7d771b590b30f591616b53d0cd2ff1eb
 workflow-type: tm+mt
 source-wordcount: '828'
 ht-degree: 0%
@@ -17,7 +17,11 @@ Tillsammans gör dessa komponenter det möjligt för Experience Platform att ans
 
 Bilden nedan visar en översikt på hög nivå över de komponenter som du kan konfigurera via Destinationen SDK för att skapa ett eget mål. Dessa komponenter beskrivs närmare nedan.
 
-![Diagram som visar vilka Destinationer SDK, konfigurationsslutpunkter och åtgärder som stöds av dem.](../assets/functionality/destination-sdk-components-diagram.png)
+>[!BEGINSHADEBOX]
+
+![Diagram som visar vilka Destinationer SDK, konfigurationsslutpunkter och åtgärder som stöds av dem.](../assets/functionality/destination-sdk-components-diagram.png){zoomable="yes"}
+
+>[!ENDSHADEBOX]
 
 ## Serverkonfiguration {#server-configuration}
 

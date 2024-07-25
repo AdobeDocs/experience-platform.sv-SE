@@ -2,9 +2,9 @@
 description: På den här sidan beskrivs hur du autentiserar och börjar använda Adobe Experience Platform Destination SDK. Det innehåller instruktioner om hur du får inloggningsuppgifter för Adobe I/O, ett sandlådenamn och åtkomstkontrollbehörighet för målredigering.
 title: Komma igång med Destination SDK
 exl-id: f22c37a8-202d-49ac-9af0-545dfa9af8fd
-source-git-commit: 7c1d956e3b6a1314baa13fef823d73d42404516a
+source-git-commit: f652faac7d771b590b30f591616b53d0cd2ff1eb
 workflow-type: tm+mt
-source-wordcount: '581'
+source-wordcount: '591'
 ht-degree: 0%
 
 ---
@@ -17,7 +17,7 @@ På den här sidan beskrivs hur du autentiserar och börjar använda Adobe Exper
 
 ## Terminologi {#terminology}
 
-I den här handboken används plattformsspecifika begrepp, som organisation och sandlådor. I [Experience Platform-ordlistan](https://experienceleague.adobe.com/docs/experience-platform/landing/glossary.html) finns definitioner av dessa och andra termer.
+I den här handboken används plattformsspecifika begrepp, som organisation och sandlådor. I [Experience Platform-ordlistan](https://experienceleague.adobe.com/docs/experience-platform/landing/glossary.html) finns definitioner av dessa termer. I [Destinationens SDK ordlista](/help/destinations/destination-sdk/glossary.md) finns termer som är direkt relaterade till den här funktionen.
 
 ## Hämta nödvändiga autentiseringsuppgifter {#obtain-authentication-credentials}
 
