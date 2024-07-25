@@ -5,9 +5,9 @@ title: Berika kundprofilen i realtid med insikt i maskininlärning
 type: Tutorial
 description: Det här dokumentet innehåller en guide om hur du kan förbättra kundprofilen i realtid med maskininlärningsinsikter.
 exl-id: 397023c9-383d-4a21-b58a-0f920631ac56
-source-git-commit: 86e6924078c115fb032ce39cd678f1d9c622e297
+source-git-commit: afa27069c7490848398c92973dd77810564b5993
 workflow-type: tm+mt
-source-wordcount: '577'
+source-wordcount: '630'
 ht-degree: 0%
 
 ---
@@ -16,11 +16,13 @@ ht-degree: 0%
 
 Adobe Experience Platform [!DNL Data Science Workspace] innehåller verktyg och resurser för att skapa, utvärdera och använda maskininlärningsmodeller för att generera dataprognoser och insikter. När maskininlärningsinsikter hämtas in till en [!DNL Profile]-aktiverad datauppsättning, hämtas samma data även som [!DNL Profile]-poster som sedan kan segmenteras med [!DNL Adobe Experience Platform Segmentation Service].
 
+Segmenteringsprocessen beror på vilken metod publiken använder. Om en målgrupp har konfigurerats som **direktuppspelning** bearbetas alla nya uppdateringar som skrivits av modellen till profilen i realtid. Om en målgrupp har konfigurerats för **batch**-utvärdering utvärderas dock de nya värdena i nästa grupp.
+
 Det här dokumentet innehåller länkar till självstudiekurser som gör att du kan förbättra [!DNL Real-Time Customer Profile] med dina maskininlärningsinsikter.
 
 ## Komma igång
 
-För att kunna slutföra självstudiekurserna nedan måste du ha en fungerande förståelse för att importera [!DNL Profile]-data och skapa segment. Innan du börjar med den här självstudiekursen bör du läsa dokumentationen för följande tjänster:
+För att kunna slutföra självstudiekurserna nedan måste du ha en fungerande förståelse för att importera [!DNL Profile]-data och skapa målgrupper. Innan du börjar med den här självstudiekursen bör du läsa dokumentationen för följande tjänster:
 
 - [[!DNL Real-Time Customer Profile]](../../profile/home.md): Tillhandahåller en fullständig, enhetlig representation av varje enskild kund baserat på aggregerade data från flera källor.
 - [[!DNL Identity Service]](../../identity-service/home.md): Aktiverar [!DNL Real-Time Customer Profile] genom att brygga identiteter från olika datakällor som hämtas till plattformen.
@@ -41,20 +43,20 @@ Om du hellre vill skapa ett schema med [!DNL Schema Registry] API:t börjar du m
 
 När ditt schema och din datauppsättning har förberetts kan du generera och importera betygsdata till datauppsättningen genom att utföra betygskörningar med en lämplig modell.
 
-## Skapa segment med [!DNL Segment Builder] {#create-segments-using-the-segment-builder}
+## Skapa målgrupper med [!DNL Segment Builder] {#create-audiences-using-the-segment-builder}
 
-När du har genererat och inhämtat dina resultatdatainsikter till din [!DNL Profile]-aktiverade datauppsättning kan du skapa dynamiska segment med [!DNL Segment Builder].
+När du har genererat och inhämtat dina poäng till din [!DNL Profile]-aktiverade datauppsättning kan du skapa dynamiska målgrupper med [!DNL Segment Builder].
 
 [!DNL Segment Builder] innehåller en omfattande arbetsyta som du kan använda för att interagera med [!DNL Profile]-dataelement. Arbetsytan innehåller intuitiva kontroller för att skapa och redigera regler, till exempel dra-och-släpp-paneler som används för att representera dataegenskaper. Följ [[!DNL Segment Builder] användarhandboken](../../segmentation/ui/segment-builder.md) om du vill veta mer om:
 
 - Skapa segmentdefinitioner med en kombination av attribut, händelser och befintliga målgrupper som byggstenar.
-- Använda regelbyggarens arbetsyta och behållare för att styra i vilken ordning segmentreglerna körs.
+- Använda regelbyggarens arbetsyta och behållare för att styra i vilken ordning målgruppsregler körs.
 - Visa uppskattningar av den potentiella målgruppen, så att ni kan justera segmentdefinitionerna efter behov.
 - Aktivera alla segmentdefinitioner för schemalagd segmentering.
 - Aktivera angivna segmentdefinitioner för direktuppspelningssegmentering.
 
 ## Nästa steg {#next-steps}
 
-Mer information om segment och [!DNL Segment Builder] finns i [Översikt över segmenteringstjänsten](../../segmentation/home.md).
+Läs [Översikt över segmenteringstjänsten](../../segmentation/home.md) om du vill veta mer om målgrupper och [!DNL Segment Builder].
 
 Mer information om [!DNL Real-Time Customer Profile] finns i [Översikt över kundprofiler i realtid](../../profile/home.md)
