@@ -2,7 +2,7 @@
 title: Skapa ett globalt filter
 description: Lär dig filtrera dina datainsikter med ett anpassat globalt filter.
 exl-id: a0084039-8809-4883-9f68-c666dcac5881
-source-git-commit: 5bb954da7c1e05922a4e0f8d0bc7d3ab5c8e0e58
+source-git-commit: c2832821ea6f9f630e480c6412ca07af788efd66
 workflow-type: tm+mt
 source-wordcount: '456'
 ht-degree: 0%
@@ -21,7 +21,7 @@ Om du vill skapa ett globalt filter väljer du först **[!UICONTROL Add filter]*
 
 Du kan snabbt ändra de insikter som din SQL ger med anpassade globala filter.
 
-Dialogrutan [!UICONTROL Create a global filter] öppnas. När du skapar ett globalt filter följer du samma process som när du skapar en insikt med SQL. Välj först en databas (datamodell med insikter) att fråga efter, ange sedan din anpassade SQL i Frågeredigeraren och slutligen kör-ikonen (![En körningsikon.](../../../images/customizable-insights/run-icon.png)).
+Dialogrutan [!UICONTROL Create a global filter] öppnas. När du skapar ett globalt filter följer du samma process som när du skapar en insikt med SQL. Välj först en databas (datamodell med insikter) att fråga efter, ange sedan din anpassade SQL i Frågeredigeraren och slutligen kör-ikonen (![En körningsikon.](/help/images/icons/play.png)).
 
 >[!IMPORTANT]
 >
@@ -57,6 +57,6 @@ När du har skapat det globala filtret för instrumentpanelen blir växlingsknap
 
 ## Markera ett globalt filter {#select-global-filter}
 
-Om du vill öppna dialogrutan [!UICONTROL Filters] med alla dina anpassade filter väljer du filterikonen (![En filterikon.](../../../images/customizable-insights/filter.png)) till vänster om instrumentpanelen. Om du sedan vill använda effekterna på dina instrumentpanelsinsikter väljer du ett alternativ i listrutan för det globala filtret och väljer **[!UICONTROL Apply]**.
+Om du vill öppna dialogrutan [!UICONTROL Filters] med alla dina anpassade filter väljer du filterikonen (![En filterikon.](/help/images/icons/filter.png)) till vänster om instrumentpanelen. Om du sedan vill använda effekterna på dina instrumentpanelsinsikter väljer du ett alternativ i listrutan för det globala filtret och väljer **[!UICONTROL Apply]**.
 
 ![En anpassad kontrollpanel med filterdialogrutan markerad.](../../../images/customizable-insights/custom-filters.png)

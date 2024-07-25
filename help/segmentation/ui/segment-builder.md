@@ -3,7 +3,7 @@ solution: Experience Platform
 title: Användargränssnittshandbok för Segment Builder
 description: Segmentbyggaren i Adobe Experience Platform-användargränssnittet har en omfattande arbetsyta som du kan använda för att interagera med profildataelement. Arbetsytan innehåller intuitiva kontroller för att skapa och redigera regler, till exempel dra-och-släpp-paneler som används för att representera dataegenskaper.
 exl-id: b27516ea-8749-4b44-99d0-98d3dc2f4c65
-source-git-commit: 305aa7f44cd64d9a0ae704fe9aa01d2d1c536ade
+source-git-commit: c2832821ea6f9f630e480c6412ca07af788efd66
 workflow-type: tm+mt
 source-wordcount: '3664'
 ht-degree: 0%
@@ -141,7 +141,7 @@ Om du väljer ett värde i den här listan med enum, visas värdet med en heldra
 
 ![En varning som visas om du infogar ett värde som inte ingår i uppräkningslistan.](../images/ui/segment-builder/enum-warning.png)
 
-Om du skapar flera värden kan du lägga till alla samtidigt genom att använda massöverföringen. Markera plusikonen ![plus ](../images/ui/segment-builder/plus-icon.png) för att visa povern **[!UICONTROL Add values in bulk]**.
+Om du skapar flera värden kan du lägga till alla samtidigt genom att använda massöverföringen. Markera plusikonen ![plus ](/help/images/icons/add-circle.png) för att visa povern **[!UICONTROL Add values in bulk]**.
 
 ![Plustecknet är markerat och visar den knapp som du kan välja för att komma åt bulköverföringen.](../images/ui/segment-builder/add-bulk-values.png)
 
@@ -287,7 +287,7 @@ När du fortsätter att skapa segmentdefinitionen kan du visa en sidnumrerad fö
 >
 >Mer information om hur du genererar uppskattningar för segmentdefinitioner finns i [uppskattningsavsnittet ](../tutorials/create-a-segment.md#estimate-and-preview-an-audience) i självstudiekursen för att skapa segmentdefinitioner.
 
-Du kan också välja en utvärderingsmetod. Om du vet vilken utvärderingsmetod du vill använda kan du välja önskad utvärderingsmetod med hjälp av listrutan. Om du vill veta vilka utvärderingstyper som den här segmentdefinitionen kvalificerar för kan du välja bläddringsikonen ![mappikon med ett förstoringsglas ](../images/ui/segment-builder/segment-evaluation-select-icon.png) för att visa en lista över tillgängliga metoder för utvärdering av segmentdefinition.
+Du kan också välja en utvärderingsmetod. Om du vet vilken utvärderingsmetod du vill använda kan du välja önskad utvärderingsmetod med hjälp av listrutan. Om du vill veta vilka utvärderingstyper som den här segmentdefinitionen kvalificerar för kan du välja bläddringsikonen ![mappikon med ett förstoringsglas ](/help/images/icons/folder-search.png) för att visa en lista över tillgängliga metoder för utvärdering av segmentdefinition.
 
 [!UICONTROL Evaluation method eligibility]-pekaren visas. Den här drivrutinen visar tillgängliga utvärderingsmetoder, som batchvis, direktuppspelning och kant. Förvisaren visar vilka utvärderingsmetoder som är kvalificerade och inte berättigade. Beroende på vilka parametrar du har använt i segmentdefinitionen kanske den inte uppfyller kraven för vissa utvärderingsmetoder. Mer information om kraven för respektive bedömningsmetod finns i översikterna för [direktuppspelningssegmentering](./streaming-segmentation.md#query-types) eller [kantsegmentering](./edge-segmentation.md#query-types).
 

@@ -4,7 +4,7 @@ solution: Experience Platform
 title: Övervaka profilanrikningsjobb
 type: Tutorial
 exl-id: 096a2212-ed7f-4419-8ead-fa1ca01c2804
-source-git-commit: 14e3eff3ea2469023823a35ee1112568f5b5f4f7
+source-git-commit: c2832821ea6f9f630e480c6412ca07af788efd66
 workflow-type: tm+mt
 source-wordcount: '692'
 ht-degree: 0%
@@ -77,7 +77,7 @@ Följande mätvärden är tillgängliga för prediktiva lead- och kontopoängspr
 
 I det här avsnittet beskrivs olika gränssnittsalternativ (UI) i övervakningsgränssnittet, som gör att du kan filtrera mätvärdena som visas på sidan.
 
-Använd pilikonen (![pilikon](/help/dataflows/assets/ui/monitor-destinations/chevron-up.png)) för att expandera eller stänga kortet högst upp på skärmen, som visar översiktsinformation om profilberikningsjobb.
+Använd pilikonen (![pilikon](/help/images/icons/chevron-up.png)) för att expandera eller stänga kortet högst upp på skärmen, som visar översiktsinformation om profilberikningsjobb.
 
 ![Skärminspelning som visar gränssnittskontrollen för pilikonen.](/help/dataflows/assets/ui/b2b/use-arrow-control.gif)
 

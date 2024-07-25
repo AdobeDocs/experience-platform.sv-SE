@@ -2,7 +2,7 @@
 description: Lär dig hur du använder kontrollpanelen för övervakning för att övervaka data som hämtas från källor.
 title: Övervaka dataflöden för källor i användargränssnittet
 exl-id: 53fa4338-c5f8-4e1a-8576-3fe13d930846
-source-git-commit: 51f8a8c77518a0b2e9e4b914c891f97433db1ef2
+source-git-commit: c2832821ea6f9f630e480c6412ca07af788efd66
 workflow-type: tm+mt
 source-wordcount: '1229'
 ht-degree: 0%
@@ -83,13 +83,13 @@ Du kan filtrera dina data ytterligare med hjälp av alternativen ovan i mättabe
 
 {style="table-layout:auto"}
 
-Om du vill övervaka data som importeras i ett specifikt dataflöde väljer du filterikonen ![filter](../assets/ui/monitor-sources/filter.png) bredvid en källa.
+Om du vill övervaka data som importeras i ett specifikt dataflöde väljer du filterikonen ![filter](/help/images/icons/filter-add.png) bredvid en källa.
 
 ![Övervaka ett specifikt dataflöde genom att välja filterikonen bredvid en viss källa.](../assets/ui/monitor-sources/monitor-dataflow.png)
 
 Måtttabellen uppdateras till en tabell med aktiva dataflöden som motsvarar den källa du valde. Under det här steget kan du visa ytterligare information om dataflödena, inklusive deras motsvarande datauppsättning och datatyp, samt en tidsstämpel som anger när de senast var aktiva.
 
-Om du vill inspektera ett dataflöde ytterligare väljer du filterikonen ![filter](../assets/ui/monitor-sources/filter.png) bredvid ett dataflöde.
+Om du vill inspektera ett dataflöde ytterligare väljer du filterikonen ![filter](/help/images/icons/filter-add.png) bredvid ett dataflöde.
 
 ![Dataflödestabellen i kontrollpanelen.](../assets/ui/monitor-sources/select-dataflow.png)
 
@@ -97,7 +97,7 @@ Därefter kommer du till ett gränssnitt som visar alla dataflödeskörningsiter
 
 Körningar av dataflöde representerar en instans av körning av dataflöde. Om ett dataflöde till exempel är schemalagt att köras varje timme kl. 9.00, 10.00 och 11.00 har du tre instanser av en flödeskörning. Flödeskörningar är specifika för just din organisation.
 
-Om du vill inspektera mätvärden för en viss dataflödeskörning väljer du filterikonen ![filter](../assets/ui/monitor-sources/filter.png) bredvid dataflödet.
+Om du vill inspektera mätvärden för en viss dataflödeskörning väljer du filterikonen ![filter](/help/images/icons/filter-add.png) bredvid dataflödet.
 
 ![Dataflödets körningsmåttsida.](../assets/ui/monitor-sources/dataflow-page.png)
 

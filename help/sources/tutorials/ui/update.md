@@ -5,7 +5,7 @@ solution: Experience Platform
 title: Uppdatera kontoinformation för Source Connection i användargränssnittet
 type: Tutorial
 exl-id: de264bd4-fe3d-4622-9f24-f1612d8334c9
-source-git-commit: ed92bdcd965dc13ab83649aad87eddf53f7afd60
+source-git-commit: c2832821ea6f9f630e480c6412ca07af788efd66
 workflow-type: tm+mt
 source-wordcount: '434'
 ht-degree: 0%
@@ -33,7 +33,7 @@ Logga in på [Experience Platform-gränssnittet](https://platform.adobe.com) och
 
 Sidan **[!UICONTROL Accounts]** visas. På den här sidan finns en lista med visningsbara konton, inklusive information om källa, användarnamn, antal dataflöden och datum när de skapades.
 
-Välj filterikonen ![filter](../../images/tutorials/update/filter.png) längst upp till vänster för att öppna sorteringspanelen.
+Välj filterikonen ![filter](/help/images/icons/filter.png) längst upp till vänster för att öppna sorteringspanelen.
 
 ![accounts-list](../../images/tutorials/update/accounts-list.png)
 

@@ -4,7 +4,7 @@ solution: Experience Platform
 title: Definiera uppräkningsfält och föreslagna värden i användargränssnittet
 description: Lär dig hur du definierar enum och föreslagna värden för strängfält i användargränssnittet för Experience Platform.
 exl-id: 67ec5382-31de-4f8d-9618-e8919bb5a472
-source-git-commit: b66a50e40aaac8df312a2c9a977fb8d4f1fb0c80
+source-git-commit: c2832821ea6f9f630e480c6412ca07af788efd66
 workflow-type: tm+mt
 source-wordcount: '1221'
 ht-degree: 0%
@@ -40,7 +40,7 @@ Välj **[!UICONTROL Enums and Suggested Values]** och sedan **[!UICONTROL Enums]
 
 Under kolumnen **[!UICONTROL Value]** måste du ange det exakta värde som du vill begränsa fältet till. Du kan även ange en användarvänlig **[!UICONTROL Display Name]** för begränsningen, vilket påverkar hur värdet kommer att representeras i segmenteringen.
 
-Fortsätt att använda **[!UICONTROL Add row]** för att lägga till önskade begränsningar och valfria etiketter i uppräkningen, eller markera ikonen Ta bort (![Bild av ikonen Ta bort ](../../images/ui/fields/enum/remove-icon.png)) bredvid en rad som du tidigare lagt till för att ta bort den. När du är klar väljer du **[!UICONTROL Apply]** för att tillämpa ändringarna på schemat.
+Fortsätt att använda **[!UICONTROL Add row]** för att lägga till önskade begränsningar och valfria etiketter i uppräkningen, eller markera ikonen Ta bort (![Bild av ikonen Ta bort ](/help/images/icons/remove-circle.png)) bredvid en rad som du tidigare lagt till för att ta bort den. När du är klar väljer du **[!UICONTROL Apply]** för att tillämpa ändringarna på schemat.
 
 ![Bild som visar uppräkningsvärden och visningsnamn som fyllts i för strängfältet i användargränssnittet](../../images/ui/fields/enum/enum-confirm.png)
 
@@ -52,7 +52,7 @@ Välj **[!UICONTROL Enums and Suggested Values]** och välj sedan **[!UICONTROL 
 
 ![Bild som visar alternativet Föreslagna värden som är markerat i användargränssnittet](../../images/ui/fields/enum/suggested-add-row.png)
 
-Under kolumnen **[!UICONTROL Display Name]** anger du ett användarvänligt namn för värdet så som du vill att det ska visas i segmenteringsgränssnittet. Om du vill lägga till fler föreslagna värden väljer du **[!UICONTROL Add row]** igen och upprepar processen efter behov. Om du vill ta bort en rad som lagts till tidigare väljer du ![borttagningsikonen](../../images/ui/fields/enum/remove-icon.png) bredvid raden i fråga.
+Under kolumnen **[!UICONTROL Display Name]** anger du ett användarvänligt namn för värdet så som du vill att det ska visas i segmenteringsgränssnittet. Om du vill lägga till fler föreslagna värden väljer du **[!UICONTROL Add row]** igen och upprepar processen efter behov. Om du vill ta bort en rad som lagts till tidigare väljer du ![borttagningsikonen](/help/images/icons/remove-circle.png) bredvid raden i fråga.
 
 När du är klar väljer du **[!UICONTROL Apply]** för att tillämpa ändringarna på schemat.
 
@@ -68,7 +68,7 @@ Vissa fält från standard-XDM-komponenter innehåller egna föreslagna värden,
 
 ![Bild som visar uppräkningsvärden och visningsnamn som fyllts i för strängfältet i användargränssnittet](../../images/ui/fields/enum/suggested-standard.png)
 
-Om du vill lägga till nya föreslagna värden för ett standardfält väljer du **[!UICONTROL Add row]**. Om du vill ta bort ett föreslaget värde som tidigare lagts till av din organisation väljer du ![borttagningsikonen](../../images/ui/fields/enum/remove-icon.png) bredvid raden i fråga.
+Om du vill lägga till nya föreslagna värden för ett standardfält väljer du **[!UICONTROL Add row]**. Om du vill ta bort ett föreslaget värde som tidigare lagts till av din organisation väljer du ![borttagningsikonen](/help/images/icons/remove-circle.png) bredvid raden i fråga.
 
 ![Bild som visar uppräkningsvärden och visningsnamn som fyllts i för strängfältet i användargränssnittet](../../images/ui/fields/enum/suggested-standard-add.png)
 

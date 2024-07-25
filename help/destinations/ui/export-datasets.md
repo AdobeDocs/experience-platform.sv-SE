@@ -3,7 +3,7 @@ title: Exportera datauppsättningar till molnlagringsmål
 type: Tutorial
 description: Lär dig hur du exporterar datauppsättningar från Adobe Experience Platform till den molnlagringsplats du föredrar.
 exl-id: e89652d2-a003-49fc-b2a5-5004d149b2f4
-source-git-commit: 9d3b6409013edc38ef41dd2a184ccbdcf7ab9edd
+source-git-commit: c2832821ea6f9f630e480c6412ca07af788efd66
 workflow-type: tm+mt
 source-wordcount: '1839'
 ht-degree: 0%
@@ -205,20 +205,21 @@ Följ stegen nedan för att ta bort datauppsättningar från ett befintligt data
 
    >[!TIP]
    > 
-   >Välj filterikonen ![Filterikon](../assets/ui/edit-activation/filter.png) längst upp till vänster för att öppna sorteringspanelen. På sorteringspanelen finns en lista med alla mål. Du kan markera mer än ett mål i listan om du vill visa ett filtrerat urval av dataflöden som är kopplade till det valda målet.
+   >Välj filterikonen ![Filterikon](/help/images/icons/filter.png) längst upp till vänster för att öppna sorteringspanelen. På sorteringspanelen finns en lista med alla mål. Du kan markera mer än ett mål i listan om du vill visa ett filtrerat urval av dataflöden som är kopplade till det valda målet.
 
-1. I kolumnen **[!UICONTROL Activation data]** väljer du datauppsättningskontrollen för att visa alla datauppsättningar som är mappade till det här exportdataflödet.
+2. I kolumnen **[!UICONTROL Activation data]** väljer du datauppsättningskontrollen för att visa alla datauppsättningar som är mappade till det här exportdataflödet.
 
    ![Navigeringsalternativet för tillgängliga datamängder är markerat i kolumnen för aktiveringsdata.](../assets/ui/export-datasets/go-to-datasets-data.png)
 
-1. [!BADGE Beta] Målsidan **[!UICONTROL Activation data]** visas. Använd kryssrutorna till vänster i datauppsättningslistan för att markera de datauppsättningar som du vill ta bort och markera sedan **[!UICONTROL Remove datasets]** i den högra listen för att utlösa en bekräftelsedialogruta för att ta bort datauppsättningen.
+3. [!BADGE Beta] Målsidan **[!UICONTROL Activation data]** visas. Använd kryssrutorna till vänster i datauppsättningslistan för att markera de datauppsättningar som du vill ta bort och markera sedan **[!UICONTROL Remove datasets]** i den högra listen för att utlösa en bekräftelsedialogruta för att ta bort datauppsättningen.
 
    >[!NOTE]
-   >Den här funktionen är i betaversion och endast tillgänglig för vissa kunder. Kontakta din Adobe-representant om du vill få tillgång till den här funktionen.
+   >
+Den här funktionen är i betaversion och endast tillgänglig för vissa kunder. Kontakta din Adobe-representant om du vill få tillgång till den här funktionen.
 
    ![Dialogrutan Ta bort datauppsättning visar kontrollen Ta bort datauppsättning i den högra listen.](../assets/ui/export-datasets/bulk-remove-datasets.png)
 
-1. I bekräftelsedialogrutan väljer du **[!UICONTROL Remove]** för att omedelbart ta bort datauppsättningen från exporter till målet.
+4. I bekräftelsedialogrutan väljer du **[!UICONTROL Remove]** för att omedelbart ta bort datauppsättningen från exporter till målet.
 
    ![Dialogruta som visar alternativet Bekräfta borttagning av datauppsättning från dataflödet.](../assets/ui/export-datasets/remove-dataset-confirm.png)
 

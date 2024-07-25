@@ -5,7 +5,7 @@ feature: Customer AI
 title: Konfigurera en AI-instans för kund
 description: AI/ML-tjänster ger kunden AI som en lättanvänd Adobe Sensei-tjänst som kan konfigureras för olika användningsområden. I följande avsnitt beskrivs hur du konfigurerar en instans av Kundens AI.
 exl-id: 78353dab-ccb5-4692-81f6-3fb3f6eca886
-source-git-commit: ba39f62cd77acedb7bfc0081dbb5f59906c9b287
+source-git-commit: c2832821ea6f9f630e480c6412ca07af788efd66
 workflow-type: tm+mt
 source-wordcount: '2740'
 ht-degree: 0%
@@ -72,7 +72,7 @@ När du har valt de datauppsättningar du vill använda väljer du knappen **[!U
 
 ![Välj datauppsättningar](../images/user-guide/select-datasets.png)
 
-Om du väljer informationsikonen ![informationsikonen](../images/user-guide/info-icon.png) bredvid datauppsättningen öppnas förhandsvisningspoveringen för datauppsättningen.
+Om du väljer informationsikonen ![informationsikonen](/help/images/icons/info.png) bredvid datauppsättningen öppnas förhandsvisningspoveringen för datauppsättningen.
 
 ![Välj och sök efter datauppsättning](../images/user-guide/dataset-info.png)
 

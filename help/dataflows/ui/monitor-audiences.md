@@ -3,7 +3,7 @@ description: Lär dig hur du kan övervaka dataflöden under segmentering med an
 title: Övervaka dataflöden för målgrupper i användargränssnittet
 type: Tutorial
 exl-id: 32fd2ba1-0ff0-4ea7-8d55-80d53eebc02f
-source-git-commit: 716c14f29be24d084111864053e3e4ae884003f0
+source-git-commit: c2832821ea6f9f630e480c6412ca07af788efd66
 workflow-type: tm+mt
 source-wordcount: '1708'
 ht-degree: 0%
@@ -64,7 +64,7 @@ Följande mått är tillgängliga för den här instrumentpanelsvyn:
 | **[!UICONTROL Last activation identities]** | Antalet identiteter som aktiverades i målgruppens senaste aktiveringsjobb. |
 | **[!UICONTROL Last activation destination]** | Namnet på målet som målgruppens senaste aktiveringsjobb aktiverades för. |
 
-Du kan filtrera resultaten till en viss målgrupp och visa dess segmenteringsjobb genom att välja filterikonen (![Filterikonen.](../assets/ui/monitor-audiences/filter-icon.png)). Segmenteringsjobben sorteras i kronologisk ordning och de senaste segmenteringsjobben visas först.
+Du kan filtrera resultaten till en viss målgrupp och visa dess segmenteringsjobb genom att välja filterikonen (![Filterikonen.](/help/images/icons/filter-add.png)). Segmenteringsjobben sorteras i kronologisk ordning och de senaste segmenteringsjobben visas först.
 
 ![Filterikonen är markerad. Om du väljer detta kan du visa segmenteringsjobben för den angivna målgruppen.](../assets/ui/monitor-audiences/filter-audience.png)
 
@@ -89,7 +89,7 @@ Följande mått är tillgängliga för den här instrumentpanelsvyn:
 | **[!UICONTROL Identity activated]** | Antalet identiteter som segmenteringsjobbet aktiveras för. Varje profil kan ha flera identiteter. En profil kan till exempel ha ett e-postmeddelande, ett telefonnummer och ett förmånsnummer som identiteter. |
 | **[!UICONTROL Destination name]** | Namnet på målet som segmenteringsjobbet aktiveras till. |
 
-Du kan filtrera ytterligare till ett specifikt segmenteringsjobb och visa information om det genom att välja filterikonen (![Filterikonen.](../assets/ui/monitor-audiences/filter-icon.png)). Det finns två olika sorters segmenteringsjobb som kan filtreras: aktiveringsjobb och utvärderingsjobb.
+Du kan filtrera ytterligare till ett specifikt segmenteringsjobb och visa information om det genom att välja filterikonen (![Filterikonen.](/help/images/icons/filter.png)). Det finns två olika sorters segmenteringsjobb som kan filtreras: aktiveringsjobb och utvärderingsjobb.
 
 ### Aktiveringsjobbinformation {#activation-job-details}
 

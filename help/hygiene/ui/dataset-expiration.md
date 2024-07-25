@@ -2,7 +2,7 @@
 title: Förfallodatum för automatiserade datauppsättningar
 description: Lär dig hur du schemalägger en förfallotid för en datauppsättning i Adobe Experience Platform-gränssnittet.
 exl-id: 97db55e3-b5d6-40fd-94f0-2463fe041671
-source-git-commit: 2aba88ac657e73a12be14d2c3a67dd5714513c97
+source-git-commit: c2832821ea6f9f630e480c6412ca07af788efd66
 workflow-type: tm+mt
 source-wordcount: '835'
 ht-degree: 0%
@@ -55,11 +55,11 @@ Arbetsflödet för att skapa en begäran visas. Under avsnittet [!UICONTROL Requ
 
 ### Välj ett datum och en datauppsättning {#select-date-and-dataset}
 
-Under avsnittet **[!UICONTROL Requested Action]** väljer du ett datum som du vill att datauppsättningen ska tas bort av. Du kan ange datumet manuellt (i formatet `mm/dd/yyyy`) eller markera kalenderikonen (![En kalenderikon.](../images/ui/ttl/calendar-icon.png)) för att välja datumet i en dialogruta.
+Under avsnittet **[!UICONTROL Requested Action]** väljer du ett datum som du vill att datauppsättningen ska tas bort av. Du kan ange datumet manuellt (i formatet `mm/dd/yyyy`) eller markera kalenderikonen (![En kalenderikon.](/help/images/icons/calendar.png)) för att välja datumet i en dialogruta.
 
 ![En kalenderdialogruta med ett förfallodatum markerat och markerat för datauppsättningen.](../images/ui/ttl/select-date.png)
 
-Under **[!UICONTROL Dataset Details]** väljer du sedan databasikonen (![Databasikonen.](../images/ui/ttl/database-icon.png)) för att öppna en dialogruta för val av datauppsättning. Välj en datauppsättning i listan som du vill tillämpa förfallotiden på och välj sedan **[!UICONTROL Done]**.
+Under **[!UICONTROL Dataset Details]** väljer du sedan databasikonen (![Databasikonen.](/help/images/icons/database.png)) för att öppna en dialogruta för val av datauppsättning. Välj en datauppsättning i listan som du vill tillämpa förfallotiden på och välj sedan **[!UICONTROL Done]**.
 
 ![Dialogrutan [!UICONTROL Select dataset] med en datamängd markerad och [!UICONTROL Done] markerad.](../images/ui/ttl/select-dataset.png)
 

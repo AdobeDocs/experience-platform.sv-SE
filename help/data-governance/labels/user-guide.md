@@ -4,7 +4,7 @@ solution: Experience Platform
 title: Hantera dataanvändningsetiketter i användargränssnittet
 description: Den här guiden innehåller steg för hur du arbetar med dataanvändningsetiketter i Adobe Experience Platform användargränssnitt.
 exl-id: aa44d5cc-416a-4ef2-be14-b4f32aec162c
-source-git-commit: ea58ece75d2208ae96bd71c2f51e14279769640f
+source-git-commit: c2832821ea6f9f630e480c6412ca07af788efd66
 workflow-type: tm+mt
 source-wordcount: '1481'
 ht-degree: 0%
@@ -71,7 +71,7 @@ Etiketter kan användas på hela datauppsättningen från fliken **[!UICONTROL D
 
 ![Fliken [!UICONTROL Data Governance] i arbetsytan [!UICONTROL Datasets] med datastyrning markerad.](../images/labels/dataset-governance.png)
 
-Om du vill redigera dataanvändningsetiketter på datauppsättningsnivå börjar du med att välja pennikonen (![En pennikon.](../images/labels/edit-icon.png)) i raden med datauppsättningsnamnet.
+Om du vill redigera dataanvändningsetiketter på datauppsättningsnivå börjar du med att välja pennikonen (![En pennikon.](/help/images/icons/edit.png)) i raden med datauppsättningsnamnet.
 
 ![Fliken [!UICONTROL Data Governance] på arbetsytan [!UICONTROL Datasets] med ikonen för redigeringspenna markerad.](../images/labels/dataset-level-edit.png)
 

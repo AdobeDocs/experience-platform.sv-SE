@@ -2,7 +2,7 @@
 title: Attributbaserad åtkomstkontroll har stöd för ad hoc-scheman
 description: En guide som begränsar åtkomsten till datafält i ad hoc-scheman som genererats via Adobe Experience Platform Query Service.
 exl-id: d675e3de-ab62-4beb-9360-1f6090397a17
-source-git-commit: 7cde32f841497edca7de0c995cc4c14501206b1a
+source-git-commit: c2832821ea6f9f630e480c6412ca07af788efd66
 workflow-type: tm+mt
 source-wordcount: '1001'
 ht-degree: 0%
@@ -42,7 +42,7 @@ Om du vill lägga till en dataetikett går du till [!UICONTROL Schemas]-fliken f
 
 ## Upptäck ad hoc-scheman i schemalagret för plattformsgränssnittet {#discover-ad-hoc-schemas}
 
-Om du vill aktivera visning av ad hoc-scheman i plattformsgränssnittet väljer du filterikonen (![En filterikon.](../images/data-governance/filter.png)) till vänster om sökfältet och välj sedan **[!UICONTROL Show adhoc schemas] i den vänstra listen som visas.
+Om du vill aktivera visning av ad hoc-scheman i plattformsgränssnittet väljer du filterikonen (![En filterikon.](/help/images/icons/filter.png)) till vänster om sökfältet och välj sedan **[!UICONTROL Show adhoc schemas] i den vänstra listen som visas.
 
 ![Filteralternativen för kontrollpanelen Schema har en vänsterkant med växeln Visa ad hoc-schema aktiverad.](../images/data-governance/adhoc-schema-toggle.png)
 
@@ -56,7 +56,7 @@ Om du vill redigera dataetiketter för ditt ad hoc-schema väljer du fliken [!UI
 
 ## Redigera etiketter för schemat eller fältet
 
-Om du vill redigera etiketterna för hela schemat väljer du pennikonen (![En pennikon.](../images/data-governance/edit-icon.png)) till sidan av schemats namn på fliken [!UICONTROL Labels].
+Om du vill redigera etiketterna för hela schemat väljer du pennikonen (![En pennikon.](/help/images/icons/edit.png)) till sidan av schemats namn på fliken [!UICONTROL Labels].
 
 ![Vyn Etiketter på arbetsytan för scheman med pennikonen markerad.](../images/data-governance/edit-entire-schema-labels.png)
 

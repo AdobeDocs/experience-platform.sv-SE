@@ -2,7 +2,7 @@
 title: Översikt över datainsamling från början till slut
 description: En översikt på hög nivå över hur du skickar händelsedata till Adobe Experience Cloud-lösningar med Adobe Experience Platform datainsamlingsfunktioner.
 exl-id: 01ddbb19-40bb-4cb5-bfca-b272b88008b3
-source-git-commit: b6e084d2beed58339191b53d0f97b93943154f7c
+source-git-commit: c2832821ea6f9f630e480c6412ca07af788efd66
 workflow-type: tm+mt
 source-wordcount: '2534'
 ht-degree: 0%
@@ -228,7 +228,7 @@ Sidan för åtgärdskonfiguration visas. Om du vill hämta regeln för att skick
 
 ![Åtgärdstyp](./images/e2e/action-type.png)
 
-Skärmen uppdateras och visar ytterligare alternativ för att konfigurera åtgärden skicka händelse. Under **[!UICONTROL Type]** kan du ange ett anpassat typvärde för att fylla i `eventType` XDM-fältet. Under **[!UICONTROL XDM data]** anger du namnet på XDM-datatypen som du skapade tidigare (omges av procenttecken), eller väljer databasikonen (![Databasikonen](./images/e2e/database-symbol.png)) för att välja den från en lista. Detta är de data som slutligen kommer att skickas till Edge Network.
+Skärmen uppdateras och visar ytterligare alternativ för att konfigurera åtgärden skicka händelse. Under **[!UICONTROL Type]** kan du ange ett anpassat typvärde för att fylla i `eventType` XDM-fältet. Under **[!UICONTROL XDM data]** anger du namnet på XDM-datatypen som du skapade tidigare (omges av procenttecken), eller väljer databasikonen (![Databasikonen](/help/images/icons/database.png)) för att välja den från en lista. Detta är de data som slutligen kommer att skickas till Edge Network.
 
 Välj **[!UICONTROL Keep Changes]** när du är klar.
 

@@ -4,7 +4,7 @@ title: Kontrollpanel för licensanvändning
 description: Adobe Experience Platform tillhandahåller en kontrollpanel där du kan visa viktig information om din organisations licensanvändning.
 type: Documentation
 exl-id: 143d16bb-7dc3-47ab-9b93-9c16683b9f3f
-source-git-commit: b6811d447f76a671adc98bddef6e760c8be8cd9b
+source-git-commit: c2832821ea6f9f630e480c6412ca07af788efd66
 workflow-type: tm+mt
 source-wordcount: '2009'
 ht-degree: 0%
@@ -101,7 +101,7 @@ Om du vill visa **ett visst användningsmått från en viss sandlåda** går du 
 
 ![Fliken Information på kontrollpanelen för licensanvändning.](../images/license-usage/details-tab.png)
 
-I den här vyn kan du välja ![Ikonen Inspektera.](../images/license-usage/inspect-icon.png) bredvid ett sandlådenamn för att visa visualiseringen för det måttet. En dialogruta öppnas med en visualisering för det måttet.
+I den här vyn kan du välja ![Ikonen Inspektera.](/help/images/icons/inspect.png) bredvid ett sandlådenamn för att visa visualiseringen för det måttet. En dialogruta öppnas med en visualisering för det måttet.
 
 ### Visualiseringar {#visualizations}
 

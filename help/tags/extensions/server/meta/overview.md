@@ -2,7 +2,7 @@
 title: Översikt över API-tillägg för metakonvertering
 description: Läs mer om Meta Conversions API-tillägget för händelsevidarebefordran i Adobe Experience Platform.
 exl-id: 6b5836d6-6674-4978-9165-0adc1d7087b7
-source-git-commit: 3cd937f49f27006e3cab60df1692d33138944ce2
+source-git-commit: c2832821ea6f9f630e480c6412ca07af788efd66
 workflow-type: tm+mt
 source-wordcount: '2437'
 ht-degree: 0%
@@ -160,7 +160,7 @@ Det tar några minuter innan den första installationsprocessen har slutförts o
 
 ![Bekräftelseskärmen för den första konfigurationen slutfördes](../../../images/extensions/server/meta/setup-complete.png)
 
-I dialogrutan **[!UICONTROL Add Code on Your Site]** kopierar du koden som har tillhandahållits med funktionen ![ Kopiera](../../../images/extensions/server/meta/copy-icon.png) och klistrar in den i `<head>` på källwebbplatsen. Välj **[!UICONTROL Start Validation]** när den är implementerad
+I dialogrutan **[!UICONTROL Add Code on Your Site]** kopierar du koden som har tillhandahållits med funktionen ![ Kopiera](/help/images/icons/copy.png) och klistrar in den i `<head>` på källwebbplatsen. Välj **[!UICONTROL Start Validation]** när den är implementerad
 
 ![Lägg till kod i webbplatsdialogrutan](../../../images/extensions/server/meta/add-code-on-your-site.png)
 

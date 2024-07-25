@@ -4,7 +4,7 @@ solution: Experience Platform
 title: Användargränssnittshandbok för datauppsättningar
 description: Lär dig hur du utför vanliga åtgärder när du arbetar med datauppsättningar i Adobe Experience Platform användargränssnitt.
 exl-id: f0d59d4f-4ebd-42cb-bbc3-84f38c1bf973
-source-git-commit: e52eb90b64ae9142e714a46017cfd14156c78f8b
+source-git-commit: c2832821ea6f9f630e480c6412ca07af788efd66
 workflow-type: tm+mt
 source-wordcount: '2896'
 ht-degree: 0%
@@ -161,11 +161,11 @@ Dialogrutan [!UICONTROL Move]-datauppsättning till mapp visas. Markera mappen s
 
 >[!TIP]
 >
->Du kan också skapa mappar direkt från dialogrutan Flytta datauppsättning. Om du vill skapa en mapp väljer du ikonen Skapa mapp (![Ikonen Skapa mapp.](../images/datasets/user-guide/create-folder-icon.png)) längst upp till höger i dialogrutan.
+>Du kan också skapa mappar direkt från dialogrutan Flytta datauppsättning. Om du vill skapa en mapp väljer du ikonen Skapa mapp (![Ikonen Skapa mapp.](/help/images/icons/folder-add.png)) längst upp till höger i dialogrutan.
 >
 >![Dialogrutan [!UICONTROL Move] med ikonen för att skapa mapp markerad.](/help/catalog/images/datasets/user-guide/create-folder.png)
 
-När datauppsättningen finns i en mapp kan du välja att bara visa datauppsättningar som tillhör en viss mapp. Om du vill öppna mappstrukturen väljer du ikonen för att visa mappar (![ikonen för att visa mappar](../images/datasets/user-guide/show-folders-icon.png)). Välj sedan den valda mappen för att se alla associerade datauppsättningar.
+När datauppsättningen finns i en mapp kan du välja att bara visa datauppsättningar som tillhör en viss mapp. Om du vill öppna mappstrukturen väljer du ikonen för att visa mappar (![ikonen för att visa mappar](/help/images/icons/rail-left.png)). Välj sedan den valda mappen för att se alla associerade datauppsättningar.
 
 ![Kontrollpanelerna [!UICONTROL Datasets] med mappstrukturen för datauppsättningar visas, ikonen för att visa mappar och en markerad mapp visas.](../images/datasets/user-guide/folder-structure.png)
 
@@ -197,7 +197,7 @@ Du kan ta bort profildata som är kopplade till en datauppsättning från [!DNL 
 
 ## Söka efter och filtrera datamängder {#search-and-filter}
 
-Om du vill söka efter eller filtrera listan med tillgängliga datauppsättningar väljer du filterikonen (![Filterikonen.](../images/datasets/user-guide/icon.png)) längst upp till vänster på arbetsytan. En uppsättning filteralternativ i den vänstra listen visas. Det finns flera metoder för att filtrera tillgängliga datauppsättningar. Dessa omfattar: [[!UICONTROL Show System Datasets]](#show-system-datasets), [[!UICONTROL Included in profile]](#filter-profile-enabled-datasets), [[!UICONTROL Tags]](#filter-by-tag), [[!UICONTROL Creation date]](#filter-by-creation-date), [[!UICONTROL Modified date], [!UICONTROL Created by]](#filter-by-creation-date) och [[!UICONTROL Schema]](#filter-by-schema).
+Om du vill söka efter eller filtrera listan med tillgängliga datauppsättningar väljer du filterikonen (![Filterikonen.](/help/images/icons/filter.png)) längst upp till vänster på arbetsytan. En uppsättning filteralternativ i den vänstra listen visas. Det finns flera metoder för att filtrera tillgängliga datauppsättningar. Dessa omfattar: [[!UICONTROL Show System Datasets]](#show-system-datasets), [[!UICONTROL Included in profile]](#filter-profile-enabled-datasets), [[!UICONTROL Tags]](#filter-by-tag), [[!UICONTROL Creation date]](#filter-by-creation-date), [[!UICONTROL Modified date], [!UICONTROL Created by]](#filter-by-creation-date) och [[!UICONTROL Schema]](#filter-by-schema).
 
 Listan med använda filter visas ovanför de filtrerade resultaten.
 

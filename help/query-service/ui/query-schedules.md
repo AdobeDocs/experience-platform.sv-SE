@@ -2,7 +2,7 @@
 title: Frågescheman
 description: Lär dig hur du automatiserar schemalagda frågekörningar, tar bort eller inaktiverar ett frågeschema och använder tillgängliga schemaläggningsalternativ via Adobe Experience Platform-gränssnittet.
 exl-id: 984d5ddd-16e8-4a86-80e4-40f51f37a975
-source-git-commit: 0b056da8457010ce36efc48e3dd91f280a9b15c5
+source-git-commit: 19f1f64434d655d3b19260460519018fc9c8e174
 workflow-type: tm+mt
 source-wordcount: '1767'
 ht-degree: 0%
@@ -75,7 +75,7 @@ Välj **[!UICONTROL Create and append into new dataset]** om du vill skapa en da
 
 ![Panelen Schemainformation med datauppsättningsinformation och [!UICONTROL Create and append into new dataset] alternativ markerade.](../images/ui/query-schedules/dataset-details-create-and-append.png)
 
-Du kan också välja **[!UICONTROL Append into existing dataset]** följt av datamängdikonen (![Datamängdikonen.](../images/ui/query-schedules/dataset-icon.png)).
+Du kan också välja **[!UICONTROL Append into existing dataset]** följt av datamängdikonen (![Datamängdikonen.](/help/images/icons/database.png)).
 
 ![Panelen Schemainformation med datauppsättningsinformation och Lägg till i befintlig datauppsättning markerad.](../images/ui/query-schedules/dataset-details-existing.png)
 

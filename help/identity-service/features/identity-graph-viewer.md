@@ -2,7 +2,7 @@
 title: Identity Graph Viewer
 description: Ett identitetsdiagram är en karta över relationer mellan olika identiteter för en viss kund, vilket ger dig en visuell representation av hur kunden interagerar med varumärket i olika kanaler.
 exl-id: ccd5f8d8-595b-4636-9191-553214e426bd
-source-git-commit: 3fe94be9f50d64fc893b16555ab9373604b62e59
+source-git-commit: c2832821ea6f9f630e480c6412ca07af788efd66
 workflow-type: tm+mt
 source-wordcount: '1374'
 ht-degree: 0%
@@ -46,7 +46,7 @@ Om du vill visa ett identitetsdiagram anger du ett identitetsnamnutrymme och des
 
 >[!TIP]
 >
->Markera tabellikonen ![table icon](../images/identity-graph-viewer/table-icon.png) om du vill visa en panel med en lista över alla identitetsnamnutrymmen som är tillgängliga i organisationen. Du kan använda valfritt identitetsnamnutrymme om du har ett giltigt identitetsvärde kopplat till dem. Mer information finns i [identitetsnamnutrymmesguiden](./namespaces.md).
+>Markera tabellikonen ![table icon](/help/images/icons/table.png) om du vill visa en panel med en lista över alla identitetsnamnutrymmen som är tillgängliga i organisationen. Du kan använda valfritt identitetsnamnutrymme om du har ett giltigt identitetsvärde kopplat till dem. Mer information finns i [identitetsnamnutrymmesguiden](./namespaces.md).
 
 ![Ett ID-namnutrymme och dess motsvarande värde finns på skärmen Identity Graph Lookup.](../images/graph-viewer/namespace-and-value.png)
 

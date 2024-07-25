@@ -4,7 +4,7 @@ title: Varningar - översikt
 description: Lär dig om varningar i Adobe Experience Platform, även hur strukturen för varningsregler definieras.
 feature: Alerts
 exl-id: c38a93c6-1618-4ef9-8f94-41c7ab4af43c
-source-git-commit: cb889a169aa42b761b0eeff5aa7fb771ad6ed4be
+source-git-commit: c2832821ea6f9f630e480c6412ca07af788efd66
 workflow-type: tm+mt
 source-wordcount: '792'
 ht-degree: 2%
@@ -31,7 +31,7 @@ Plattformsaviseringar kan skickas en gång eller upprepas under ett fördefinier
 | --- | --- |
 | Betyder inte nödvändigtvis något problem. | Anger ett potentiellt oönskat tillstånd. |
 | Upprepa inte. | Kan upprepas om det avvikande tillståndet kvarstår. |
-| Exempel:<ul><li>Inmatningen av data har slutförts.</li><li>En frågekörning har slutförts.</li><li>Data har tagits bort.</li></ul> | Exempel:<ul><li>Inmatningstiden överskrider serviceavtalet (SLA).</li><li>Dagligt intag har inte skett under de senaste 24 timmarna.</li><li>Strömprocessorns felfrekvens är över det konfigurerade tröskelvärdet.</li><li>Det totala antalet profiler överskrider berättigandet.</li></ul> |
+| Exempel:<ul><li>Inmatningen av data har slutförts.</li><li>En frågekörning har slutförts.</li><li>Data har tagits bort.</li></ul> | Exempel:<ul><li>Inmatningstiden är längre än serviceavtalet (SLA).</li><li>Dagligt intag har inte skett under de senaste 24 timmarna.</li><li>Strömprocessorns felfrekvens är över det konfigurerade tröskelvärdet.</li><li>Det totala antalet profiler överskrider berättigandet.</li></ul> |
 
 {style="table-layout:auto"}
 
@@ -83,7 +83,7 @@ Om du vill arbeta med aviseringar i plattformsgränssnittet måste du ha följan
 >
 >Mer information om hur du hanterar behörigheter i plattformen finns i [åtkomstkontrollsdokumentationen](../../access-control/ui/overview.md).
 
-Med behörigheten Visa aviseringar kan du visa mottagna aviseringar genom att välja klockikonen (![Bellikon](../images/alerts/overview/icon.png)) i det övre högra hörnet.
+Med behörigheten Visa aviseringar kan du visa mottagna aviseringar genom att välja klockikonen (![Bellikon](/help/images/icons/bell.png)) i det övre högra hörnet.
 
 ![](../images/alerts/overview/ui.png)
 

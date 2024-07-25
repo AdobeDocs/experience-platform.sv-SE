@@ -5,7 +5,7 @@ title: Utforska schemaresurser i användargränssnittet
 description: Lär dig utforska befintliga scheman, klasser, schemafältgrupper och datatyper i användargränssnittet i Experience Platform.
 type: Tutorial
 exl-id: b527b2a0-e688-4cfe-a176-282182f252f2
-source-git-commit: 0e1fb15cfa56fb4c2a4a645578327f0a4bd22e68
+source-git-commit: c2832821ea6f9f630e480c6412ca07af788efd66
 workflow-type: tm+mt
 source-wordcount: '1039'
 ht-degree: 0%
@@ -24,7 +24,7 @@ Välj **[!UICONTROL Schemas]** i den vänstra navigeringen i plattformsgränssni
 
 ![](../images/ui/explore/tabs.png)
 
-Filterikonen (![Filterikonbild](../images/ui/explore/icon.png)) visar kontroller i den vänstra listen för att begränsa listade resultat. Vilka kontroller som visas varierar beroende på vilken typ av resurs som visas.
+Filterikonen (![Filterikonbild](/help/images/icons/filter.png)) visar kontroller i den vänstra listen för att begränsa listade resultat. Vilka kontroller som visas varierar beroende på vilken typ av resurs som visas.
 
 Om du till exempel vill filtrera listan så att endast standarddatatyper som tillhandahålls av Adobe visas, väljer du **[!UICONTROL Datatype]** och **[!UICONTROL Adobe]** under avsnitten **[!UICONTROL Type]** respektive **[!UICONTROL Owner]**.
 
@@ -56,7 +56,7 @@ Alla objekttypsfält som innehåller underegenskaper komprimeras som standard n�
 
 ### Standardklass och fältgruppsindikator {#standard-class-and-field-group-indicator}
 
-I Schemaredigeraren visas standardklasser (som genererats av Adobe) och fältgrupper med hänglåsikonen (![En hänglåsikon.](../images/ui/explore/padlock-icon.png). hänglåset visas i den vänstra listen bredvid namnet på klassen eller fältgruppen, samt intill ett fält i schemagrafiken som är en del av en systemgenererad resurs.
+I Schemaredigeraren visas standardklasser (som genererats av Adobe) och fältgrupper med hänglåsikonen (![En hänglåsikon.](/help/images/icons/lock-closed.png). hänglåset visas i den vänstra listen bredvid namnet på klassen eller fältgruppen, samt intill ett fält i schemagrafiken som är en del av en systemgenererad resurs.
 
 ![Schemaredigeraren med hänglåsikonen markerad](../images/ui/explore/schema-editor-padlock-icon.png)
 
@@ -94,7 +94,7 @@ Om fältet som du inspekterar är ett uppräkningsfält, visar den högra listen
 
 När du inspekterar scheman som innehåller identitetsfält visas dessa fält i den vänstra listen under den klass eller fältgrupp som tillhandahåller dem till schemat. Markera namnet på identitetsfältet i den vänstra listen för att visa fältet på arbetsytan, oavsett hur djupt det är kapslat.
 
-Identitetsfält markeras på arbetsytan med en fingeravtrycksikon (![Fingeravtrycksikonbild](../images/ui/explore/identity-symbol.png)). Om du väljer identitetsfältets namn kan du visa ytterligare information som [identitetsnamnområdet](../../identity-service/features/namespaces.md) och om fältet är den primära identiteten för schemat eller inte.
+Identitetsfält markeras på arbetsytan med en fingeravtrycksikon (![Fingeravtrycksikonbild](/help/images/icons/identity-service.png)). Om du väljer identitetsfältets namn kan du visa ytterligare information som [identitetsnamnområdet](../../identity-service/features/namespaces.md) och om fältet är den primära identiteten för schemat eller inte.
 
 ![](../images/ui/explore/identity-field.png)
 

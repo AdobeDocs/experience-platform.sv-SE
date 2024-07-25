@@ -5,7 +5,7 @@ solution: Experience Platform
 title: Uppdatera ett dataflöde för Source Connection i användargränssnittet
 type: Tutorial
 exl-id: 0499a2a3-5a22-47b1-ac0e-76a432bd26c0
-source-git-commit: cef5c203acf3318445399669336166e6627ebe66
+source-git-commit: c2832821ea6f9f630e480c6412ca07af788efd66
 workflow-type: tm+mt
 source-wordcount: '760'
 ht-degree: 0%
@@ -36,7 +36,7 @@ I plattformsgränssnittet väljer du **[!UICONTROL Sources]** i den vänstra nav
 
 Sidan [!UICONTROL Dataflows] innehåller en lista med alla befintliga dataflöden, inklusive information om deras motsvarande måldatauppsättning, källa och kontonamn.
 
-Om du vill sortera igenom listan väljer du filterikonen ![filter](../../images/tutorials/update/filter.png) längst upp till vänster för att använda sorteringspanelen.
+Om du vill sortera igenom listan väljer du filterikonen ![filter](/help/images/icons/filter.png) längst upp till vänster för att använda sorteringspanelen.
 
 ![filter-dataflows](../../images/tutorials/update-dataflows/filter-dataflows.png)
 

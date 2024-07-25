@@ -6,7 +6,7 @@ hide: true
 hidefromtoc: true
 role: Developer, Admin, User
 exl-id: 85944720-8551-491c-8991-dd9668beb0ca
-source-git-commit: 62bcaa532cdec68a2f4f62e5784c35b91b7d5743
+source-git-commit: 68781d27e374261108955b24dfb7b46141f5108b
 workflow-type: tm+mt
 source-wordcount: '937'
 ht-degree: 0%
@@ -59,7 +59,7 @@ Med åtkomstkontroll på objektnivå för destinationer kan du begränsa specifi
 Så här använder du åtkomstetiketter för ett specifikt dataflöde:
 
 1. Navigera till **[!UICONTROL Destinations]** > **[!UICONTROL Browse]** och leta reda på måldataflödet som du vill begränsa användarnas åtkomst till.
-1. Markera ellipsen (`...`) i kolumnen [!UICONTROL Name] och använd kontrollen ![Redigera detaljer](/help/access-control/images/olac/key-icon.svg) **[!UICONTROL Apply access labels]** för att lägga till nya etiketter och hantera befintliga etiketter för dataflödet.
+1. Markera ellipsen (`...`) i kolumnen [!UICONTROL Name] och använd kontrollen ![Redigera detaljer](/help/images/icons/key.png) **[!UICONTROL Apply access labels]** för att lägga till nya etiketter och hantera befintliga etiketter för dataflödet.
    ![Välj Använd åtkomstetiketter i sökvyn på arbetsytan för mål.](/help/access-control/images/olac/apply-access-labels.png)
 1. Markera etiketterna som du vill lägga till i måldataflödet och välj **[!UICONTROL Save]**.
    ![Välj de åtkomstetiketter i som ska gälla för måldataflödet.](/help/access-control/images/olac/view-access-labels.png)

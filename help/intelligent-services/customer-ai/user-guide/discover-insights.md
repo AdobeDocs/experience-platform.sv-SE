@@ -5,7 +5,7 @@ feature: Customer AI
 title: Identifiera insikter med kundens AI
 description: Det här dokumentet är en guide för interaktion med Service Instance Insights i användargränssnittet för AI för Intelligent Services.
 exl-id: 8aaae963-4029-471e-be9b-814147a5f160
-source-git-commit: 07a110f6d293abff38804b939014e28f308e3b30
+source-git-commit: c2832821ea6f9f630e480c6412ca07af788efd66
 workflow-type: tm+mt
 source-wordcount: '2035'
 ht-degree: 1%
@@ -180,7 +180,7 @@ När du hovrar över raderna visas datumet och den faktiska/förväntade frekven
 
 ![Exempel på pyts](../images/insights/churn_tab.png)
 
-Du kan filtrera tidsramen för de förväntade och faktiska frekvenserna som visas. Välj **kalenderikonen** ![ikonen](../images/insights/calendar_icon.png)och välj sedan ett nytt datumintervall. Resultaten i varje bucket uppdateras för att visas inom det nya datumintervallet.
+Du kan filtrera tidsramen för de förväntade och faktiska frekvenserna som visas. Välj **kalenderikonen** ![ikonen](/help/images/icons/calendar.png)och välj sedan ett nytt datumintervall. Resultaten i varje bucket uppdateras för att visas inom det nya datumintervallet.
 
 ![Datumväljare](../images/insights/date_selector.png)
 

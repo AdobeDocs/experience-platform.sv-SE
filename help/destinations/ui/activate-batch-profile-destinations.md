@@ -3,7 +3,7 @@ title: Aktivera målgrupper för att batchprofilera exportmål
 type: Tutorial
 description: Lär dig hur du aktiverar de målgrupper du har i Adobe Experience Platform genom att skicka dem till batchprofilbaserade destinationer.
 exl-id: 82ca9971-2685-453a-9e45-2001f0337cda
-source-git-commit: c35b43654d31f0f112258e577a1bb95e72f0a971
+source-git-commit: 68781d27e374261108955b24dfb7b46141f5108b
 workflow-type: tm+mt
 source-wordcount: '3807'
 ht-degree: 0%
@@ -529,14 +529,14 @@ Anrikningsattribut motsvarar anpassade överförda målgrupper som kapslats i Ex
 
 Följ stegen nedan för att välja anrikningsattribut för varje extern målgrupp:
 
-1. I kolumnen **[!UICONTROL Enrichment attributes]** väljer du knappen ![Redigera](../assets/ui/activate-batch-profile-destinations/edit-button.svg) (Redigera).
-2. Välj **[!UICONTROL Add enrichment attribute]**.  Ett nytt tomt schemafält visas.
+1. I kolumnen **[!UICONTROL Enrichment attributes]** väljer du knappen ![Redigera](/help/images/icons/edit.png) (Redigera).
+1. Välj **[!UICONTROL Add enrichment attribute]**.  Ett nytt tomt schemafält visas.
    ![Gränssnittsbild som visar modal skärm för anrikningsattribut.](../assets/ui/activate-batch-profile-destinations/add-enrichment-attribute.png)
-3. Klicka på knappen till höger om det tomma fältet för att öppna fältvalsskärmen.
-4. Välj de attribut du vill exportera för målgruppen.
+1. Klicka på knappen till höger om det tomma fältet för att öppna fältvalsskärmen.
+1. Välj de attribut du vill exportera för målgruppen.
    ![Gränssnittsbild som visar listan med anrikningsattribut.](../assets/ui/activate-batch-profile-destinations/select-enrichment-attributes.png)
-5. När du har lagt till alla attribut som du vill exportera väljer du **[!UICONTROL Save and close]**.
-6. Upprepa dessa steg för varje extern publik.
+1. När du har lagt till alla attribut som du vill exportera väljer du **[!UICONTROL Save and close]**.
+1. Upprepa dessa steg för varje extern publik.
 
 Om du vill aktivera externa målgrupper till dina mål utan att exportera något attribut aktiverar du växlingsknappen **[!UICONTROL Exclude enrichment attributes]**. Med det här alternativet exporteras profilerna från de externa målgrupperna, men inga av deras motsvarande attribut skickas till ditt mål.
 

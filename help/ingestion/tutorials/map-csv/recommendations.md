@@ -2,7 +2,7 @@
 title: Mappa en CSV-fil till ett XDM-schema med hjälp av AI-genererade Recommendations
 description: I den här självstudien beskrivs hur du mappar en CSV-fil till ett XDM-schema med hjälp av AI-genererade rekommendationer.
 exl-id: 1daedf0b-5a25-4ca5-ae5d-e9ee1eae9e4d
-source-git-commit: 6632086641004c2b788a28cbc47ac6d8bd4eace3
+source-git-commit: c2832821ea6f9f630e480c6412ca07af788efd66
 workflow-type: tm+mt
 source-wordcount: '1034'
 ht-degree: 0%
@@ -74,7 +74,7 @@ ML-modellerna körs för att generera ett nytt schema baserat på dataflödeskon
 
 >[!NOTE]
 >
->Du kan filtrera alla fält i schemat baserat på en rad olika villkor under arbetsflödet för att mappa fält från källa till mål. Standardbeteendet är att alla mappade fält visas. Om du vill ändra de fält som visas markerar du filterikonen bredvid sökinmatningsfältet och väljer ett alternativ i listrutan.<br> ![Mappningssteget för arbetsflödet för CSV-till-XDM-schemat med filterikonen och listrutan markerad.](../../images/tutorials/map-csv-recommendations/source-field-to-target-mapping-filter.png "Mappningssteget för arbetsflödet för CSV-till-XDM-schemat med filterikonen och listrutan markerad."){width="100" zoomable="yes"}
+>Du kan filtrera alla fält i schemat baserat på en rad olika villkor under arbetsflödet för att mappa fält från källa till mål. Standardbeteendet är att alla mappade fält visas. Om du vill ändra de fält som visas markerar du filterikonen bredvid sökinmatningsfältet och väljer ett alternativ i listrutan.<br> ![Mappningssteget för arbetsflödet för att skapa CSV-schema till XDM-schema med filterikonen och listrutemenyn markerade.](../../images/tutorials/map-csv-recommendations/source-field-to-target-mapping-filter.png "Mappningssteget för arbetsflödet för CSV-till-XDM-schemat med filterikonen och listrutan markerad."){width="100" zoomable="yes"}
 
 Härifrån kan du [redigera fältmappningarna](#edit-mappings) eller [ändra de fältgrupper som de är kopplade till](#edit-schema) efter dina behov. När du är nöjd väljer du **[!UICONTROL Finish]** för att slutföra mappningen och initiera dataflödet som du konfigurerade tidigare. CSV-data hämtas in till systemet och fyller i en datauppsättning som baseras på den genererade schemastrukturen, klar att användas av plattformstjänster längre fram i kedjan.
 
@@ -90,7 +90,7 @@ CSV-fälten mappas automatiskt till befintliga XDM-fältgrupper med hjälp av ML
 
 ![Knappen [!UICONTROL Edit] markeras bredvid schematrädet.](../../images/tutorials/map-csv-recommendations/edit-schema-structure.png)
 
-En dialogruta visas där du kan redigera visningsnamn, datatyp och fältgrupp för alla fält i mappningen. Markera redigeringsikonen (![redigeringsikonen](../../images/tutorials/map-csv-recommendations/edit-icon.png)) bredvid ett källfält om du vill redigera informationen i den högra kolumnen innan du väljer **[!UICONTROL Apply]**.
+En dialogruta visas där du kan redigera visningsnamn, datatyp och fältgrupp för alla fält i mappningen. Markera redigeringsikonen (![redigeringsikonen](/help/images/icons/edit.png)) bredvid ett källfält om du vill redigera informationen i den högra kolumnen innan du väljer **[!UICONTROL Apply]**.
 
 ![Den rekommenderade fältgruppen för ett källfält ändras.](../../images/tutorials/map-csv-recommendations/select-schema-field.png)
 

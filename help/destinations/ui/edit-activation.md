@@ -4,7 +4,7 @@ title: Redigera aktiveringsdataflöden
 type: Tutorial
 description: Följ stegen i den här artikeln när du vill redigera ett befintligt aktiveringsdataflöde i Adobe Experience Platform.
 exl-id: 0d79fbff-bfde-4109-8353-c7530e9719fb
-source-git-commit: 165793619437f403045b9301ca6fa5389d55db31
+source-git-commit: c2832821ea6f9f630e480c6412ca07af788efd66
 workflow-type: tm+mt
 source-wordcount: '318'
 ht-degree: 0%
@@ -23,7 +23,7 @@ Följ stegen nedan för att redigera befintliga aktiveringsdataflöden:
 
    ![Bläddra bland mål](../assets/ui/edit-activation/browse-destinations.png)
 
-2. Välj filterikonen ![Filterikon](../assets/ui/edit-activation/filter.png) längst upp till vänster för att öppna sorteringspanelen. På sorteringspanelen finns en lista med alla mål. Du kan markera mer än ett mål i listan om du vill visa ett filtrerat urval av dataflöden som är kopplade till det valda målet.
+2. Välj filterikonen ![Filterikon](/help/images/icons/filter.png) längst upp till vänster för att öppna sorteringspanelen. På sorteringspanelen finns en lista med alla mål. Du kan markera mer än ett mål i listan om du vill visa ett filtrerat urval av dataflöden som är kopplade till det valda målet.
 
    ![Filtrera mål](../assets/ui/edit-activation/filter-destinations.png)
 

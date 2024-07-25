@@ -4,7 +4,7 @@ solution: Experience Platform
 title: Experience Platform - översikt
 description: Adobe Experience Platform
 exl-id: 47f9a3fb-731d-4ade-8069-faaa18f224dc
-source-git-commit: c35b43654d31f0f112258e577a1bb95e72f0a971
+source-git-commit: c2832821ea6f9f630e480c6412ca07af788efd66
 workflow-type: tm+mt
 source-wordcount: '1735'
 ht-degree: 0%
@@ -75,17 +75,17 @@ När du väljer väljaren öppnas en listruta med organisationer som du har till
 
 ### Byt program
 
-Nästa objekt till höger om den översta navigeringen är **programväljaren**, som representeras av ikonen ![för programväljaren](./images/user-guide/app-switcher-icon.png) . När du väljer den här ikonen kan du växla mellan olika Adobe-program som din organisation har tillgång till, till exempel Experience Platform, Analytics, Assets och andra.
+Nästa objekt till höger om den översta navigeringen är **programväljaren**, som representeras av ikonen ![för programväljaren](/help/images/icons/apps.png) . När du väljer den här ikonen kan du växla mellan olika Adobe-program som din organisation har tillgång till, till exempel Experience Platform, Analytics, Assets och andra.
 
 ### Hjälp
 
-Till höger om programväljaren finns **hjälp- och supportmenyn** som representeras av ikonen ![frågetecken/hjälp](./images/user-guide/help-icon.png) . När du väljer den här ikonen visas en snabbmeny med flera hjälp- och supportresurser. Fliken **[!UICONTROL Help]** visar en lista med relevant dokumentation för sidan som du för närvarande är på. På fliken **[!UICONTROL Support]** kan du skapa en supportanmälan med Adobe supportteam. På fliken **[!UICONTROL Feedback]** kan du skicka feedback om Platform till Adobe.
+Till höger om programväljaren finns **hjälp- och supportmenyn** som representeras av ikonen ![frågetecken/hjälp](/help/images/icons/help.png) . När du väljer den här ikonen visas en snabbmeny med flera hjälp- och supportresurser. Fliken **[!UICONTROL Help]** visar en lista med relevant dokumentation för sidan som du för närvarande är på. På fliken **[!UICONTROL Support]** kan du skapa en supportanmälan med Adobe supportteam. På fliken **[!UICONTROL Feedback]** kan du skicka feedback om Platform till Adobe.
 
 ![](images/user-guide/homepage-help-clicked.png)
 
 ### Meddelanden och meddelanden
 
-I **meddelandeavsnittet**, som representeras av ikonen ![bell/Notifications and Announcements](images/user-guide/notification-icon.png) . Fliken **[!UICONTROL Notifications]** visar viktig information om produkten och andra relevanta uppdateringar, medan fliken **[!UICONTROL Announcements]** visar information om serviceunderhåll.
+I **meddelandeavsnittet**, som representeras av ikonen ![bell/Notifications and Announcements](/help/images/icons/bell.png) . Fliken **[!UICONTROL Notifications]** visar viktig information om produkten och andra relevanta uppdateringar, medan fliken **[!UICONTROL Announcements]** visar information om serviceunderhåll.
 
 ### Användarprofil
 

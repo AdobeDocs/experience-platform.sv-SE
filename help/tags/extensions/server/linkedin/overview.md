@@ -3,7 +3,7 @@ title: API-händelsevidarebefordringstillägg för LinkedIn Conversions
 description: Med det här tillägget för vidarebefordran av Adobe Experience Platform-händelser kan du mäta resultatet av din LinkedIn-marknadsföringskampanj.
 last-substantial-update: 2023-10-25T00:00:00Z
 exl-id: 411e7b77-081e-4139-ba34-04468e519ea5
-source-git-commit: 0d6ade1a0b6c00a4f87395d476dd7e7915489ea5
+source-git-commit: c2832821ea6f9f630e480c6412ca07af788efd66
 workflow-type: tm+mt
 source-wordcount: '740'
 ht-degree: 0%
@@ -52,7 +52,7 @@ Efter markeringen visas ytterligare kontroller för att ytterligare konfigurera 
 | --- | --- |
 | [!UICONTROL Email] | E-postadress till den kontakt som är associerad med konverteringshändelsen. E-postvärdet kodas av tilläggskoden i SHA256 om inte det angivna värdet redan är en SHA256-sträng. |
 | [!UICONTROL LinkedIn First Party Ads Tracking UUID] | Detta är ett cookie-ID från första part. Annonsörer måste aktivera förbättrad konverteringsspårning från [[!DNL LinkedIn Campaign Manager]](https://www.linkedin.com/help/lms/answer/a423304/enable-first-party-cookies-on-a-linkedin-insight-tag) för att aktivera cookies från första part som lägger till en click ID-parameter `li_fat_id` till klicknings-URL:erna. |
-| [!UICONTROL Customer Information Data] | Det här fältet innehåller ett JSON-objekt med extra attribut som skickas tillsammans med meddelandet.<br><br>Under alternativet **[!UICONTROL Raw]** kan du klistra in JSON-objektet direkt i det angivna textfältet. Du kan också markera dataelementsikonen (![Datauppsättningsikonen](../../../images/extensions/server/aws/data-element-icon.png)) och välja från en lista över befintliga dataelement som ska representera data.<br><br>Du kan också använda alternativet **[!UICONTROL JSON Key-Value Pairs Editor]** för att manuellt lägga till nyckelvärdepar via en gränssnittsredigerare. Varje värde kan representeras av en rådatainmatning, eller ett dataelement kan markeras i stället. Godkända nyckelvärden är: `firstName`, `lastName`, `companyName`, `title` och `country`. |
+| [!UICONTROL Customer Information Data] | Det här fältet innehåller ett JSON-objekt med extra attribut som skickas tillsammans med meddelandet.<br><br>Under alternativet **[!UICONTROL Raw]** kan du klistra in JSON-objektet direkt i det angivna textfältet. Du kan också markera dataelementsikonen (![Datauppsättningsikonen](/help/images/icons/database.png)) och välja från en lista över befintliga dataelement som ska representera data.<br><br>Du kan också använda alternativet **[!UICONTROL JSON Key-Value Pairs Editor]** för att manuellt lägga till nyckelvärdepar via en gränssnittsredigerare. Varje värde kan representeras av en rådatainmatning, eller ett dataelement kan markeras i stället. Godkända nyckelvärden är: `firstName`, `lastName`, `companyName`, `title` och `country`. |
 
 {style="table-layout:auto"}
 

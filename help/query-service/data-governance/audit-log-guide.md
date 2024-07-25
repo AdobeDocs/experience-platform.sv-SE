@@ -2,7 +2,7 @@
 title: Granska loggintegrering för frågetjänsten
 description: Granskningsloggar för frågetjänsten bevarar poster för olika användaråtgärder för att skapa en åtkomsthistorik för felsökningsproblem eller följa företagets policyer för datahantering och lagstadgade krav. Den här självstudiekursen ger en översikt över granskningsloggsfunktioner som är specifika för frågetjänsten.
 exl-id: 5fdc649f-3aa1-4337-965f-3f733beafe9d
-source-git-commit: cde7c99291ec34be811ecf3c85d12fad09bcc373
+source-git-commit: c2832821ea6f9f630e480c6412ca07af788efd66
 workflow-type: tm+mt
 source-wordcount: '870'
 ht-degree: 0%
@@ -31,7 +31,7 @@ Granskningsloggkategorierna som tillhandahålls av [!DNL Query Service] är föl
 
 ## Utför en [!DNL Query Service]-granskningslogg {#perform-an-audit-log}
 
-Om du vill utföra en granskning för [!DNL Query Service] aktiviteter väljer du **[!UICONTROL Audits]** i den vänstra navigeringen, följt av panelikonen (![En filterikon.](../images/audit-log/filter.png)) om du vill visa en lista med filterkontroller för att begränsa resultatet.
+Om du vill utföra en granskning för [!DNL Query Service] aktiviteter väljer du **[!UICONTROL Audits]** i den vänstra navigeringen, följt av panelikonen (![En filterikon.](/help/images/icons/filter.png)) om du vill visa en lista med filterkontroller för att begränsa resultatet.
 
 ![Kontrollpanelen för Plattformsgränssnittets granskningslogg med Granskningar i den vänstra navigeringen och filterkontrollerna markerade.](../images/audit-log/filter-controls.png)
 

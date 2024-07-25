@@ -3,7 +3,7 @@ title: Ta bort poster
 description: Lär dig hur du tar bort poster i användargränssnittet i Adobe Experience Platform.
 badgeBeta: label="Beta" type="Informative"
 exl-id: 5303905a-9005-483e-9980-f23b3b11b1d9
-source-git-commit: 9981f35732b041a92c5a371e727a8facb6636cf5
+source-git-commit: c2832821ea6f9f630e480c6412ca07af788efd66
 workflow-type: tm+mt
 source-wordcount: '1500'
 ht-degree: 0%
@@ -51,7 +51,7 @@ Arbetsflödet för att skapa en begäran visas. Som standard är alternativet **
 
 Nästa steg är att avgöra om du vill ta bort poster från en enskild datauppsättning eller alla datauppsättningar. Om det här alternativet inte är tillgängligt för dig fortsätter du till avsnittet [Ange identiteter](#provide-identities) i handboken.
 
-Under avsnittet **[!UICONTROL Record Details]** använder du alternativknappen för att välja mellan en viss datauppsättning och alla datauppsättningar. Om du väljer **[!UICONTROL Select dataset]** fortsätter du med att välja databasikonen (![Databasikonen](../images/ui/record-delete/database-icon.png)) för att öppna en dialogruta med en lista över tillgängliga datauppsättningar. Välj önskad datauppsättning i listan följt av **[!UICONTROL Done]**.
+Under avsnittet **[!UICONTROL Record Details]** använder du alternativknappen för att välja mellan en viss datauppsättning och alla datauppsättningar. Om du väljer **[!UICONTROL Select dataset]** fortsätter du med att välja databasikonen (![Databasikonen](/help/images/icons/database.png)) för att öppna en dialogruta med en lista över tillgängliga datauppsättningar. Välj önskad datauppsättning i listan följt av **[!UICONTROL Done]**.
 
 ![Dialogrutan [!UICONTROL Select dataset] med en datamängd markerad och [!UICONTROL Done] markerad.](../images/ui/record-delete/select-dataset.png)
 
@@ -130,7 +130,7 @@ Det visas kontroller som gör att du kan ange identiteter en åt gången. Under 
 
 ![Arbetsflödet för att skapa en begäran med ett identitetsfält har lagts till manuellt.](../images/ui/record-delete/identity-added.png)
 
-Om du vill lägga till fler identiteter väljer du plusikonen (![En plusikon).](../images/ui/record-delete/plus-icon.png)) bredvid en av raderna eller välj **[!UICONTROL Add identity]**.
+Om du vill lägga till fler identiteter väljer du plusikonen (![En plusikon).](/help/images/icons/tree-expand-all.png)) bredvid en av raderna eller välj **[!UICONTROL Add identity]**.
 
 ![Arbetsflödet för att skapa en begäran med plusikonen och ikonen för att lägga till identitet markerad.](../images/ui/record-delete/more-identities.png)
 

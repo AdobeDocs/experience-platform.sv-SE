@@ -2,7 +2,7 @@
 title: Frågeloggar
 description: Frågeloggar genereras automatiskt varje gång en fråga körs och är tillgängliga via användargränssnittet som hjälp vid felsökning. I det här dokumentet beskrivs hur du använder och navigerar i avsnittet Loggar för frågetjänst i användargränssnittet.
 exl-id: 929e9fba-a9ba-4bf9-a363-ca8657a84f75
-source-git-commit: 41c069ef1c0a19f34631e77afd7a80b8967c5060
+source-git-commit: c2832821ea6f9f630e480c6412ca07af788efd66
 workflow-type: tm+mt
 source-wordcount: '962'
 ht-degree: 0%
@@ -31,7 +31,7 @@ Om du vill kontrollera frågeloggarna väljer du [!UICONTROL Queries] för att n
 
 ## Anpassa och söka {#customize-and-search}
 
-Frågetjänstloggar presenteras i ett anpassbart tabellformat. Om du vill anpassa tabellkolumnerna väljer du inställningsikonen (![En inställningsikon.](../images/ui/query-log/settings-icon.png)) till höger om skärmen. En [!UICONTROL Customize Table]-dialogruta visas där varje kolumn kan avmarkeras.
+Frågetjänstloggar presenteras i ett anpassbart tabellformat. Om du vill anpassa tabellkolumnerna väljer du inställningsikonen (![En inställningsikon.](/help/images/icons/column-settings.png)) till höger om skärmen. En [!UICONTROL Customize Table]-dialogruta visas där varje kolumn kan avmarkeras.
 
 Du kan också söka efter loggar som relaterar till särskilda frågemallar genom att skriva mallnamnet i sökfältet.
 
@@ -67,13 +67,13 @@ Du kan också välja ett frågemallnamn i kolumnen [!UICONTROL Name] för att na
 
 ## Redigera loggar {#edit-logs}
 
-Bredvid varje rads mallnamn eller SQL-kodfragment finns en pennikon (![En pennikon.](../images/ui/query-log/edit-icon.png)) som du kan använda för att navigera till frågeredigeraren. Frågan fylls sedan i automatiskt i redigeraren för redigering.
+Bredvid varje rads mallnamn eller SQL-kodfragment finns en pennikon (![En pennikon.](/help/images/icons/edit.png)) som du kan använda för att navigera till frågeredigeraren. Frågan fylls sedan i automatiskt i redigeraren för redigering.
 
 ![Arbetsytan i frågeloggen med en pennikon markerad.](../images/ui/query-log/edit-query.png)
 
 ## Filterloggar {#filter-logs}
 
-Du kan filtrera listan med frågeloggar baserat på olika inställningar. Välj filterikonen (![Filterikonen.](../images/ui/query-log/filter-icon.png)) längst upp till vänster på arbetsytan för att öppna en uppsättning filteralternativ i den vänstra listen.
+Du kan filtrera listan med frågeloggar baserat på olika inställningar. Välj filterikonen (![Filterikonen.](/help/images/icons/filter.png)) längst upp till vänster på arbetsytan för att öppna en uppsättning filteralternativ i den vänstra listen.
 
 ![Arbetsytan i frågeloggen med filterikonen markerad.](../images/ui/query-log/log-filter.png)
 

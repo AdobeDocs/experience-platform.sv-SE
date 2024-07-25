@@ -3,7 +3,7 @@ title: AWS Extension - översikt
 description: Läs mer om AWS-tillägget för vidarebefordran av händelser i Adobe Experience Platform.
 exl-id: 826a96aa-2d64-4a8b-88cf-34a0b6c26df5
 last-substantial-update: 2022-11-23T00:00:00Z
-source-git-commit: 1c417744518a7ac7cfb9c65d6af8219dcbc70d46
+source-git-commit: c2832821ea6f9f630e480c6412ca07af788efd66
 workflow-type: tm+mt
 source-wordcount: '760'
 ht-degree: 0%
@@ -66,7 +66,7 @@ Den högra panelen uppdateras och visar konfigurationsalternativ för hur data s
 
 | Indata | Beskrivning |
 | --- | --- |
-| [!UICONTROL Payload] | Det här fältet innehåller de data som kommer att vidarebefordras till dataströmmen [!DNL Kinesis] i JSON-format.<br><br>Under alternativet **[!UICONTROL Raw]** kan du klistra in JSON-objektet direkt i det angivna textfältet, eller så kan du välja dataelementsikonen (![Datauppsättningsikonen](../../../images/extensions/server/aws/data-element-icon.png)) och välja från en lista över befintliga dataelement som ska representera nyttolasten.<br><br>Du kan också använda alternativet **[!UICONTROL JSON Key-Value Pairs Editor]** för att manuellt lägga till nyckelvärdepar via en gränssnittsredigerare. Varje värde kan representeras av en rådatainmatning, eller ett dataelement kan markeras i stället. |
+| [!UICONTROL Payload] | Det här fältet innehåller de data som kommer att vidarebefordras till dataströmmen [!DNL Kinesis] i JSON-format.<br><br>Under alternativet **[!UICONTROL Raw]** kan du klistra in JSON-objektet direkt i det angivna textfältet, eller så kan du välja dataelementsikonen (![Datauppsättningsikonen](/help/images/icons/database.png)) och välja från en lista över befintliga dataelement som ska representera nyttolasten.<br><br>Du kan också använda alternativet **[!UICONTROL JSON Key-Value Pairs Editor]** för att manuellt lägga till nyckelvärdepar via en gränssnittsredigerare. Varje värde kan representeras av en rådatainmatning, eller ett dataelement kan markeras i stället. |
 
 {style="table-layout:auto"}
 

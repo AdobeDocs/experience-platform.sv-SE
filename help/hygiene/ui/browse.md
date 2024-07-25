@@ -2,7 +2,7 @@
 title: Bläddra i arbetsorder för datasamling
 description: Lär dig hur du visar och hanterar befintliga arbetsbeställningar för livscykelarbete i Adobe Experience Platform användargränssnitt.
 exl-id: 76d4a809-cc2c-434d-90b1-23d88f29c022
-source-git-commit: 566f1b6478cd0de0691cfb2301d5b86fbbfece52
+source-git-commit: c2832821ea6f9f630e480c6412ca07af788efd66
 workflow-type: tm+mt
 source-wordcount: '810'
 ht-degree: 0%
@@ -31,7 +31,7 @@ I listan visas endast arbetsorder för en kategori i taget. Välj **[!UICONTROL 
 
 ![Bild som visar fliken [!UICONTROL Dataset] ](../images/ui/browse/dataset-tab.png)
 
-Välj trattikonen (![Bild av trattikonen](../images/ui/browse/funnel-icon.png)) om du vill visa en lista med filter för de arbetsorder som visas.
+Välj trattikonen (![Bild av trattikonen](/help/images/icons/filter.png)) om du vill visa en lista med filter för de arbetsorder som visas.
 
 ![Bild av arbetsorderfiltren som visas](../images/ui/browse/filters.png)
 

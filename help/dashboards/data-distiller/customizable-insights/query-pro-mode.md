@@ -2,7 +2,7 @@
 title: Query Pro-läge
 description: Lär dig hur du använder SQL-frågor i Adobe Experience Platform-gränssnittet för att generera diagram för dina anpassade instrumentpaneler.
 exl-id: 15c664c4-8546-4e04-b81d-c78bf83500d3
-source-git-commit: 5bb954da7c1e05922a4e0f8d0bc7d3ab5c8e0e58
+source-git-commit: c2832821ea6f9f630e480c6412ca07af788efd66
 workflow-type: tm+mt
 source-wordcount: '1025'
 ht-degree: 0%
@@ -35,7 +35,7 @@ Om du vill inkludera [globala](./filters/global-filter.md) eller [datumfilter](.
 >
 >Om du vill använda ett globalt filter måste du placera en frågeparameter i SQL och sedan länka den frågeparametern till det globala filtret i widgetens disposition. I skärmbilden nedan används `CONSENT_VALUE_FILTER` i SQL som en frågeparameter för ett globalt filter. Mer information om hur du gör detta finns i [dokumentationen för det globala filtret](./filters/global-filter.md#enable-global-filter).
 
-Om du vill köra frågan väljer du körningsikonen (![Körningsikonen.](../../images/customizable-insights/run-icon.png)). Frågeredigeraren visar resultatfliken. För att bekräfta konfigurationen och öppna widgetdispositionen väljer du **[!UICONTROL Select]**.
+Om du vill köra frågan väljer du körningsikonen (![Körningsikonen.](/help/images/icons/play.png)). Frågeredigeraren visar resultatfliken. För att bekräfta konfigurationen och öppna widgetdispositionen väljer du **[!UICONTROL Select]**.
 
 >[!TIP]
 >
@@ -45,7 +45,7 @@ Om du vill köra frågan väljer du körningsikonen (![Körningsikonen.](../../i
 
 ## Fyll i widget {#populate-widget}
 
-Widgetdispositionen är nu ifylld med kolumnerna från den SQL som körs. Instrumentpanelstypen anges i det övre vänstra hörnet, i det här fallet [!UICONTROL Manual SQL Entry]. Välj pennikonen (![En pennikon.](../../images/customizable-insights/edit-icon.png)) om du vill redigera SQL-koden.
+Widgetdispositionen är nu ifylld med kolumnerna från den SQL som körs. Instrumentpanelstypen anges i det övre vänstra hörnet, i det här fallet [!UICONTROL Manual SQL Entry]. Välj pennikonen (![En pennikon.](/help/images/icons/edit.png)) om du vill redigera SQL-koden.
 
 >[!TIP]
 >
@@ -57,13 +57,13 @@ Om du vill skapa din widget använder du de attribut som listas i kolumnen [!UIC
 
 ### Lägg till attribut {#add-attributes}
 
-Om du vill lägga till ett attribut i widgeten väljer du plusikonen (![Ett plustecken-ikon.](../../images/customizable-insights/add-icon.png)) bredvid ett attributnamn. Med listrutan som visas kan du lägga till ett attribut i diagrammet bland alternativen som bestäms av SQL-satsen. Olika diagramtyper har olika alternativ, till exempel en listruta för X- och Y-axlar.
+Om du vill lägga till ett attribut i widgeten väljer du plusikonen (![Ett plustecken-ikon.](/help/images/icons/add-circle.png)) bredvid ett attributnamn. Med listrutan som visas kan du lägga till ett attribut i diagrammet bland alternativen som bestäms av SQL-satsen. Olika diagramtyper har olika alternativ, till exempel en listruta för X- och Y-axlar.
 
 I det här exemplet på ritstiftet är alternativen storlek och färg. Färgen bryter ned resultaten från donatchdiagrammet och storleken är det faktiska måttet som används. Lägg till ett attribut i fältet [!UICONTROL Color] om du vill dela upp resultaten i olika färger baserat på deras komposition i attributet.
 
 >[!TIP]
 >
->Välj upp- och nedpilen (![Ikonen med upp- och nedpilarna.](../../images/customizable-insights/switch-axis-icon.png)) om du vill ändra X- och Y-axelns placering på stapel- eller linjediagram.
+>Välj upp- och nedpilen (![Ikonen med upp- och nedpilarna.](/help/images/icons/switch.png)) om du vill ändra X- och Y-axelns placering på stapel- eller linjediagram.
 
 ![Widgetdispositionen med listrutan Lägg till ikon och växlingspilarna markerade.](../../images/customizable-insights/add-icon-and-switch-arrows.png)
 
@@ -73,7 +73,7 @@ Om du vill ändra diagramtyp eller diagram för din widget väljer du bland de t
 
 ## Widget-egenskaper {#properties}
 
-Välj egenskapsikonen (![Egenskapsikonen.](../../images/customizable-insights/properties-icon.png)) till höger för att öppna egenskapspanelen. Ange ett namn för widgeten i textfältet **[!UICONTROL Widget title]** på panelen [!UICONTROL Properties]. Du kan också byta namn på olika aspekter av diagrammet.
+Välj egenskapsikonen (![Egenskapsikonen.](/help/images/icons/properties.png)) till höger för att öppna egenskapspanelen. Ange ett namn för widgeten i textfältet **[!UICONTROL Widget title]** på panelen [!UICONTROL Properties]. Du kan också byta namn på olika aspekter av diagrammet.
 
 >[!NOTE]
 >
@@ -93,7 +93,7 @@ Välj **[!UICONTROL Edit]** om du vill redigera hela instrumentpanelen eller nå
 
 ![En anpassad instrumentpanel med Redigera markerat.](../../images/customizable-insights/edit-dashboard.png)
 
-Välj **[!UICONTROL Add filter]** om du vill skapa en [[!UICONTROL Date filter]](#create-date-filter) eller en [[!UICONTROL Global filter]](#create-global-filter). När filtren har skapats är alla globala filter och datumfilter tillgängliga från [filterikonen](#select-global-filter) (![En filterikon.](../../images/customizable-insights/filter.png)) på din instrumentpanel.
+Välj **[!UICONTROL Add filter]** om du vill skapa en [[!UICONTROL Date filter]](#create-date-filter) eller en [[!UICONTROL Global filter]](#create-global-filter). När filtren har skapats är alla globala filter och datumfilter tillgängliga från [filterikonen](#select-global-filter) (![En filterikon.](/help/images/icons/filter.png)) på din instrumentpanel.
 
 ![En anpassad kontrollpanel med listrutan Lägg till filter markerad.](../../images/customizable-insights/add-filter.png)
 

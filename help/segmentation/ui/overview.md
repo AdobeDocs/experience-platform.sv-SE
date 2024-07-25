@@ -3,7 +3,7 @@ solution: Experience Platform
 title: Användargränssnittshandbok för segmenteringstjänst
 description: Lär dig hur du skapar och hanterar målgrupper och segmentdefinitioner i Adobe Experience Platform användargränssnitt.
 exl-id: 0a2e8d82-281a-4c67-b25b-08b7a1466300
-source-git-commit: acfe91144175e136955ffd9f0cdae2c351217c16
+source-git-commit: c2832821ea6f9f630e480c6412ca07af788efd66
 workflow-type: tm+mt
 source-wordcount: '941'
 ht-degree: 0%
@@ -69,7 +69,7 @@ Bredvid varje publik finns en ellips-ikon. Om du väljer det här alternativet v
 | Hantera åtkomst | Hanterar de åtkomstetiketter som tillhör målgruppen. Mer information om åtkomstetiketter finns i dokumentationen om [hantering av etiketter](../../access-control/abac/ui/labels.md). |
 | Ta bort | Tar bort den valda målgruppen. Publiker som används i underordnade mål eller är beroende av andra målgrupper **kan inte** tas bort. Mer information om borttagning av målgrupper finns i [Frågor och svar om segmentering](../faq.md#lifecycle-states). |
 
-Du kan välja ikonen ![Anpassa tabell](../images/ui/overview/customize-table.png) om du vill ändra vilka fält som visas.
+Du kan välja ikonen ![Anpassa tabell](/help/images/icons/column-settings.png) om du vill ändra vilka fält som visas.
 
 ![Knappen för att anpassa tabell är markerad. Om du väljer den här knappen kan du anpassa fälten som visas på sidan för publikkompositioner.](../images/ui/overview/compositions-select-customize-table.png)
 

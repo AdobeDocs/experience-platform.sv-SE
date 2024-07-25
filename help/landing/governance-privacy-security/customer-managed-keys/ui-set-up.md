@@ -2,7 +2,7 @@
 title: Konfigurera och konfigurera kundhanterade nycklar med hjälp av plattformsgränssnittet
 description: Lär dig hur du konfigurerar din CMK-app med din Azure-klient och skickar ditt krypteringsnyckel-ID till Adobe Experience Platform.
 exl-id: 5f38997a-66f3-4f9d-9c2f-fb70266ec0a6
-source-git-commit: 4f08e8fcc8d53b981af60226f1397a1d1ac4d8dc
+source-git-commit: c2832821ea6f9f630e480c6412ca07af788efd66
 workflow-type: tm+mt
 source-wordcount: '1003'
 ht-degree: 0%
@@ -42,7 +42,7 @@ Välj **[!UICONTROL Configure]** för att öppna vyn [!UICONTROL Customer Manage
 
 Om du vill starta registreringsprocessen kopierar du URL:en för programautentisering för din organisation från vyn [!UICONTROL Customer Managed Keys configuration] och klistrar in den i din [!DNL Azure] miljö **[!DNL Key Vault Crypto Service Encryption User]**. Information om hur du [tilldelar en roll](#assign-to-role) finns i nästa avsnitt.
 
-Välj kopieringsikonen (![Kopieringsikonen.](../../images/governance-privacy-security/customer-managed-keys/copy-icon.png)) av [!UICONTROL Application authentication url].
+Välj kopieringsikonen (![Kopieringsikonen.](/help/images/icons/copy.png)) av [!UICONTROL Application authentication url].
 
 ![Vyn [!UICONTROL Customer Managed Keys configuration] med URL:en för programautentisering är markerad.](../../images/governance-privacy-security/customer-managed-keys/application-authentication-url.png)
 

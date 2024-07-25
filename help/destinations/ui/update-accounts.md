@@ -4,7 +4,7 @@ title: Uppdatera destinationskonton
 type: Tutorial
 description: I den här självstudiekursen visas stegen för att uppdatera målkonton i användargränssnittet i Adobe Experience Platform
 exl-id: afb41878-4205-4c64-af4d-e2740f852785
-source-git-commit: d6402f22ff50963b06c849cf31cc25267ba62bb1
+source-git-commit: c2832821ea6f9f630e480c6412ca07af788efd66
 workflow-type: tm+mt
 source-wordcount: '490'
 ht-degree: 0%
@@ -33,11 +33,11 @@ Följ stegen nedan för att uppdatera anslutningsinformationen till befintliga m
 
    ![Fliken Konton](../assets/ui/update-accounts/accounts-tab.png)
 
-2. Välj filterikonen ![Filterikon](../assets/ui/update-accounts/filter.png) längst upp till vänster för att öppna sorteringspanelen. På sorteringspanelen finns en lista med alla mål. Du kan markera mer än ett mål i listan om du vill se ett filtrerat urval konton som är associerade med de valda målen.
+2. Välj filterikonen ![Filterikon](/help/images/icons/filter.png) längst upp till vänster för att öppna sorteringspanelen. På sorteringspanelen finns en lista med alla mål. Du kan markera mer än ett mål i listan om du vill se ett filtrerat urval konton som är associerade med de valda målen.
 
    ![Filtrera målkonton](../assets/ui/update-accounts/filter-accounts.png)
 
-3. Markera ellipserna (`...`) bredvid namnet på kontot som du vill uppdatera. En popup-panel visas med alternativ för **[!UICONTROL Activate audiences]**, **[!UICONTROL Edit details]** och **[!UICONTROL Delete]** kontot. Klicka på knappen ![Redigera information](../assets/ui/workspace/pencil-icon.png) **[!UICONTROL Edit details]** om du vill redigera kontoinformationen.
+3. Markera ellipserna (`...`) bredvid namnet på kontot som du vill uppdatera. En popup-panel visas med alternativ för **[!UICONTROL Activate audiences]**, **[!UICONTROL Edit details]** och **[!UICONTROL Delete]** kontot. Klicka på knappen ![Redigera information](/help/images/icons/edit.png) **[!UICONTROL Edit details]** om du vill redigera kontoinformationen.
 
    ![Redigera konto](../assets/ui/update-accounts/accounts-edit.png)
 

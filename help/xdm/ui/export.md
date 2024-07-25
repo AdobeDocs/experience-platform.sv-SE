@@ -4,7 +4,7 @@ title: Exportera XDM-scheman i användargränssnittet
 description: Lär dig hur du exporterar ett befintligt schema till en annan sandlåda eller organisation i Adobe Experience Platform användargränssnitt.
 type: Tutorial
 exl-id: c467666d-55bc-4134-b8f4-7758d49c4786
-source-git-commit: 0f0842c1d14ce42453b09bf97e1f3690448f6e9a
+source-git-commit: c2832821ea6f9f630e480c6412ca07af788efd66
 workflow-type: tm+mt
 source-wordcount: '634'
 ht-degree: 0%
@@ -40,7 +40,7 @@ Om du vill generera en exportnyttolast väljer du **[!UICONTROL Schemas]** i den
 >
 >Mer information om hur du söker efter XDM-resursen finns i guiden [Utforska XDM-resurser](./explore.md).
 
-Välj sedan ikonen **[!UICONTROL Copy JSON]** (![Kopiera ikon](../images/ui/export/icon.png)) bland de tillgängliga alternativen.
+Välj sedan ikonen **[!UICONTROL Copy JSON]** (![Kopiera ikon](/help/images/icons/copy.png)) bland de tillgängliga alternativen.
 
 ![Arbetsytan Scheman med en schemarad och [!UICONTROL Copy to JSON] markerad.](../images/ui/export/copy-json.png)
 

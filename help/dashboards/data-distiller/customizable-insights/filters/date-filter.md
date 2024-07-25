@@ -2,7 +2,7 @@
 title: Skapa ett datumfilter
 description: Lär dig hur du filtrerar dina anpassade insikter efter datum.
 exl-id: fa05d651-ea43-41f0-9b7d-f19c4a9ac256
-source-git-commit: 5bb954da7c1e05922a4e0f8d0bc7d3ab5c8e0e58
+source-git-commit: c2832821ea6f9f630e480c6412ca07af788efd66
 workflow-type: tm+mt
 source-wordcount: '653'
 ht-degree: 0%
@@ -94,6 +94,6 @@ När du har valt ett datumintervall på instrumentpanelen, kommer insikter med d
 
 ## Ta bort ett datumfilter {#delete-date-filter}
 
-Om du vill ta bort datumfiltret väljer du ikonen Ta bort filter (![Ikonen Ta bort filter.](../../../images/customizable-insights/delete-filter-icon.png)).
+Om du vill ta bort datumfiltret väljer du ikonen Ta bort filter (![Ikonen Ta bort filter.](/help/images/icons/filter-delete.png)).
 
 ![En anpassad kontrollpanel med filterborttagningsikonen markerad.](../../../images/customizable-insights/delete-date-filter.png)

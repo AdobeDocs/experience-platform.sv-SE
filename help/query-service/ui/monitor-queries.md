@@ -2,7 +2,7 @@
 title: Övervaka schemalagda frågor
 description: Lär dig hur du övervakar frågor med hjälp av gränssnittet för frågetjänsten.
 exl-id: 4640afdd-b012-4768-8586-32f1b8232879
-source-git-commit: 41c069ef1c0a19f34631e77afd7a80b8967c5060
+source-git-commit: c2832821ea6f9f630e480c6412ca07af788efd66
 workflow-type: tm+mt
 source-wordcount: '2333'
 ht-degree: 0%
@@ -25,7 +25,7 @@ Tabellen nedan beskriver varje tillgänglig kolumn.
 
 >[!NOTE]
 >
->Ikonen för aviseringsprenumerationer (![En aviseringsprenumerationsikon.](../images/ui/monitor-queries/alert-subscription-icon.png)) finns i varje rad i en namnlös kolumn. Mer information finns i avsnittet [Varningsprenumerationer](#alert-subscription).
+>Ikonen för aviseringsprenumerationer (![En aviseringsprenumerationsikon.](/help/images/icons/alert-add.png)) finns i varje rad i en namnlös kolumn. Mer information finns i avsnittet [Varningsprenumerationer](#alert-subscription).
 
 | Kolumn | Beskrivning |
 |---|---|
@@ -45,7 +45,7 @@ Tabellen nedan beskriver varje tillgänglig kolumn.
 
 ## Anpassa tabellinställningar för schemalagda frågor {#customize-table}
 
-Du kan justera kolumnerna på fliken [!UICONTROL Scheduled Queries] efter dina behov. Om du vill öppna dialogrutan [!UICONTROL Customize table]-inställningar och redigera tillgängliga kolumner väljer du inställningsikonen (![En inställningsikon.](../images/ui/monitor-queries/settings-icon.png)) i skärmens övre högra hörn.
+Du kan justera kolumnerna på fliken [!UICONTROL Scheduled Queries] efter dina behov. Om du vill öppna dialogrutan [!UICONTROL Customize table]-inställningar och redigera tillgängliga kolumner väljer du inställningsikonen (![En inställningsikon.](/help/images/icons/column-settings.png)) i skärmens övre högra hörn.
 
 >[!NOTE]
 >
@@ -89,7 +89,7 @@ Om du vill schemalägga körningar för den frågemallen väljer du mallnamnet p
 
 ### Prenumerera på aviseringar {#alert-subscription}
 
-Om du vill prenumerera på aviseringar för schemalagda frågekörningar väljer du ikonen `...` (ellips) eller aviseringsprenumeration (![En aviseringsprenumerationsikon.](../images/ui/monitor-queries/alert-subscription-icon.png)) för den schemalagda frågan som du vill hantera. Listrutan för textbundna åtgärder visas. Välj sedan **[!UICONTROL Subscribe]** bland de tillgängliga alternativen.
+Om du vill prenumerera på aviseringar för schemalagda frågekörningar väljer du ikonen `...` (ellips) eller aviseringsprenumeration (![En aviseringsprenumerationsikon.](/help/images/icons/alert-add.png)) för den schemalagda frågan som du vill hantera. Listrutan för textbundna åtgärder visas. Välj sedan **[!UICONTROL Subscribe]** bland de tillgängliga alternativen.
 
 ![Arbetsytan för schemalagda frågor med en ellips, en aviseringsprenumerationsikon och listrutan för infogade åtgärder är markerad.](../images/ui/monitor-queries/subscribe.png)
 
@@ -115,7 +115,7 @@ Mer information finns i [API-dokumentationen för aviseringsprenumerationer](../
 
 ### Visa frågedetaljer {#query-details}
 
-Välj informationsikonen (![En informationsikon.](../images/ui/monitor-queries/information-icon.png)) om du vill visa informationspanelen för frågan. Panelen Detaljer innehåller all relevant information om frågan utöver de fakta som finns i tabellen med schemalagda frågor. Ytterligare information omfattar fråge-ID, senaste ändringsdatum, frågans SQL, schema-ID och aktuellt uppsättningsschema.
+Välj informationsikonen (![En informationsikon.](/help/images/icons/info.png)) om du vill visa informationspanelen för frågan. Panelen Detaljer innehåller all relevant information om frågan utöver de fakta som finns i tabellen med schemalagda frågor. Ytterligare information omfattar fråge-ID, senaste ändringsdatum, frågans SQL, schema-ID och aktuellt uppsättningsschema.
 
 ![Fliken Schemalagda frågor med informationsikonen och informationspanelen markerad.](../images/ui/monitor-queries/details-panel.png)
 
@@ -151,7 +151,7 @@ Se avsnittet om prenumerationer på aviseringar om du vill veta mer om hur du [p
 
 ## Filtrera frågor {#filter}
 
-Du kan filtrera frågor baserat på körningsfrekvens. På fliken [!UICONTROL Scheduled Queries] väljer du filterikonen (![en filterikon](../images/ui/monitor-queries/filter-icon.png)) för att öppna filtersidofältet.
+Du kan filtrera frågor baserat på körningsfrekvens. På fliken [!UICONTROL Scheduled Queries] väljer du filterikonen (![en filterikon](/help/images/icons/filter.png)) för att öppna filtersidofältet.
 
 ![Fliken för schemalagda frågor med filterikonen markerad.](../images/ui/monitor-queries/filter-queries.png)
 

@@ -4,7 +4,7 @@ description: Med kundprofilen i realtid kan ni se en helhetsbild av varje enskil
 title: Övervaka dataflöden för profiler i användargränssnittet
 type: Tutorial
 exl-id: 00b624b2-f6d1-4ef2-abf2-52cede89b684
-source-git-commit: 1a7ba52b48460d77d0b7695aa0ab2d5be127d921
+source-git-commit: c2832821ea6f9f630e480c6412ca07af788efd66
 workflow-type: tm+mt
 source-wordcount: '999'
 ht-degree: 0%
@@ -63,7 +63,7 @@ Följande mått är tillgängliga för den här instrumentpanelsvyn:
 | **[!UICONTROL Total Profile fragments]** | Det totala antalet poster som skrivits till [!DNL Profile], inklusive alla befintliga [!DNL Profile] fragment som uppdaterats och nya [!DNL Profile] fragment som skapats. |
 | **[!UICONTROL Total failed dataflows]** | Antalet misslyckade dataflödeskörningar. |
 
-Du kan välja filterikonen ![Filterikon](../assets/ui/monitor-profiles/filter.png) bredvid källnamnet om du vill visa information om profilbearbetning för den valda källans dataflöden.
+Du kan välja filterikonen ![Filterikon](/help/images/icons/filter.png) bredvid källnamnet om du vill visa information om profilbearbetning för den valda källans dataflöden.
 
 ![Filterikonen är markerad. Om du väljer den här ikonen kan du visa den valda källans dataflöden.](../assets/ui/monitor-profiles/sources-filter.png)
 
@@ -86,7 +86,7 @@ Följande mått är tillgängliga för den här instrumentpanelsvyn:
 | **[!UICONTROL Total failed flow runs]** | Antalet misslyckade dataflödeskörningar. |
 | **[!UICONTROL Last active]** | Tidsstämpeln som dataflödet senast kördes för. |
 
-Välj filterikonen ![filter](../assets/ui/monitor-profiles/filter.png) bredvid starttiden för dataflödeskörningen för att visa mer information om [!DNL Profile]-dataflödeskörningen.
+Välj filterikonen ![filter](/help/images/icons/filter.png) bredvid starttiden för dataflödeskörningen för att visa mer information om [!DNL Profile]-dataflödeskörningen.
 
 ![Filterikonen är markerad. Om du väljer den här ikonen kan du visa information om det valda dataflödet.](../assets/ui/monitor-profiles/dataflows-filter.png)
 

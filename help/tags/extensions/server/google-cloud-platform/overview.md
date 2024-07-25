@@ -3,7 +3,7 @@ title: Händelsevidarebefordringstillägg för Google Cloud-plattform
 description: Det här tillägget för vidarebefordran av Adobe Experience Platform-händelser skickar Edge Network-händelser till Google Cloud Platform.
 last-substantial-update: 2023-06-21T00:00:00Z
 exl-id: c5da1889-f917-42aa-b3a4-9557c31d6ee8
-source-git-commit: b4334b4f73428f94f5a7e5088f98e2459afcaf3c
+source-git-commit: c2832821ea6f9f630e480c6412ca07af788efd66
 workflow-type: tm+mt
 source-wordcount: '523'
 ht-degree: 0%
@@ -47,8 +47,8 @@ När tillägget har installerats skapar du en ny händelsevidarebefordrande [reg
 | Indata | Beskrivning |
 | --- | --- |
 | [!UICONTROL Topic] | Det ämne som ska ta emot händelser från händelsevidarebefordran. Värdet måste ha formatet `projects/{projectName}/topics/{topicName}`. |
-| [!UICONTROL Data] | Det här fältet innehåller de data som ska vidarebefordras till avsnittet [!DNL Cloud Pub/Sub] i JSON-format.<br><br>Under alternativet **[!UICONTROL Raw]** kan du klistra in JSON-objektet direkt i det angivna textfältet. Du kan också markera dataelementsikonen (![Datauppsättningsikonen](../../../images/extensions/server/aws/data-element-icon.png)) och välja från en lista över befintliga dataelement som ska representera data.<br><br>Du kan också använda alternativet **[!UICONTROL JSON Key-Value Pairs Editor]** för att manuellt lägga till nyckelvärdepar via en gränssnittsredigerare. Varje värde kan representeras av en rådatainmatning, eller ett dataelement kan markeras i stället. |
-| [!UICONTROL Attributes] | Det här fältet innehåller JSON-objektet med extra attribut som ska skickas tillsammans med meddelandet.<br><br>Under alternativet **[!UICONTROL Raw]** kan du klistra in JSON-objektet direkt i det angivna textfältet. Du kan också markera dataelementsikonen (![Datauppsättningsikonen](../../../images/extensions/server/aws/data-element-icon.png)) och välja från en lista över befintliga dataelement som ska representera data.<br><br>Du kan också använda alternativet **[!UICONTROL JSON Key-Value Pairs Editor]** för att manuellt lägga till nyckelvärdepar via en gränssnittsredigerare. Varje värde kan representeras av en rådatainmatning, eller ett dataelement kan markeras i stället. |
+| [!UICONTROL Data] | Det här fältet innehåller de data som ska vidarebefordras till avsnittet [!DNL Cloud Pub/Sub] i JSON-format.<br><br>Under alternativet **[!UICONTROL Raw]** kan du klistra in JSON-objektet direkt i det angivna textfältet. Du kan också markera dataelementsikonen (![Datauppsättningsikonen](/help/images/icons/database.png)) och välja från en lista över befintliga dataelement som ska representera data.<br><br>Du kan också använda alternativet **[!UICONTROL JSON Key-Value Pairs Editor]** för att manuellt lägga till nyckelvärdepar via en gränssnittsredigerare. Varje värde kan representeras av en rådatainmatning, eller ett dataelement kan markeras i stället. |
+| [!UICONTROL Attributes] | Det här fältet innehåller JSON-objektet med extra attribut som ska skickas tillsammans med meddelandet.<br><br>Under alternativet **[!UICONTROL Raw]** kan du klistra in JSON-objektet direkt i det angivna textfältet. Du kan också markera dataelementsikonen (![Datauppsättningsikonen](/help/images/icons/database.png)) och välja från en lista över befintliga dataelement som ska representera data.<br><br>Du kan också använda alternativet **[!UICONTROL JSON Key-Value Pairs Editor]** för att manuellt lägga till nyckelvärdepar via en gränssnittsredigerare. Varje värde kan representeras av en rådatainmatning, eller ett dataelement kan markeras i stället. |
 
 {style="table-layout:auto"}
 

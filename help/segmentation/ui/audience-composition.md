@@ -3,7 +3,7 @@ solution: Experience Platform
 title: Användargränssnittshandbok för målgrupper
 description: Audience Composition i Adobe Experience Platform UI har en omfattande arbetsyta där du kan interagera med profildataelement. Arbetsytan innehåller intuitiva kontroller för att skapa och redigera målgrupper för din organisation.
 exl-id: 0dda0cb1-49e0-478b-8004-84572b6cf625
-source-git-commit: ca8f0c3df9581af7be37e242c9e300ef1b6ea814
+source-git-commit: 8bc03889ff108630bd20fe47f2c2920ceba5069b
 workflow-type: tm+mt
 source-wordcount: '1839'
 ht-degree: 0%
@@ -20,7 +20,7 @@ Audience Composition har en arbetsyta för att bygga och redigera målgrupper me
 
 ![Gränssnittet för målkomposition.](../images/ui/audience-composition/audience-composition.png)
 
-Om du vill ändra detaljer för kompositionen, inklusive rubrik och beskrivning, väljer du knappen ![reglage](../images/ui/audience-composition/sliders.png) .
+Om du vill ändra detaljer för kompositionen, inklusive rubrik och beskrivning, väljer du knappen ![reglage](/help/images/icons/properties.png) .
 
 **[!UICONTROL Composition properties]**-pekaren visas. Du kan infoga information om din komposition, inklusive rubriken och beskrivningen här.
 
@@ -114,7 +114,7 @@ En lista över målgrupper visas. Välj **[!UICONTROL Add]** om du vill lägga t
 
 ### Exkludera efter attribut {#exclude-attribute}
 
-Om du utelämnar efter attribut kan du välja vilka attribut du vill utesluta genom att markera ikonen ![filter](../images/ui/audience-composition/filter-attribute.png) i avsnittet **[!UICONTROL Exclusion rule]**.
+Om du utelämnar efter attribut kan du välja vilka attribut du vill utesluta genom att markera ikonen ![filter](/help/images/icons/project-edit.png) i avsnittet **[!UICONTROL Exclusion rule]**.
 
 ![Attributavsnittet är markerat och visar var du ska välja vilket attribut som ska uteslutas.](../images/ui/audience-composition/exclude-attribute.png)
 
@@ -140,7 +140,7 @@ Om du vill lägga till ett **[!UICONTROL Enrich]**-block väljer du ikonen **+**
 
 Blocket **[!UICONTROL Enrich]** har lagts till. När det här blocket är markerat visas information om anrikningen i den högra listen. Detta inkluderar blockets etikett och datauppsättningen för anrikning.
 
-Om du vill välja den datauppsättning som ska berika målgruppen med väljer du ikonen ![filter](../images/ui/audience-composition/filter-attribute.png) .
+Om du vill välja den datauppsättning som ska berika målgruppen med väljer du ikonen ![filter](/help/images/icons/project-edit.png) .
 
 ![Filterknappen är markerad. Om du väljer det här leder det dig till [!UICONTROL Select dataset]-porten.](../images/ui/audience-composition/enrich-select-dataset.png)
 
@@ -160,7 +160,7 @@ Avsnittet **[!UICONTROL Enrichment criteria]** visas nu till höger. I det här 
 
 ![Området [!UICONTROL Enrichment criteria] är markerat.](../images/ui/audience-composition/enrichment-criteria.png)
 
-Om du vill markera **[!UICONTROL Source join key]** väljer du ikonen ![filter](../images/ui/audience-composition/filter-attribute.png) .
+Om du vill markera **[!UICONTROL Source join key]** väljer du ikonen ![filter](/help/images/icons/project-edit.png) .
 
 ![Filterikonen för [!UICONTROL Source join key] är markerad.](../images/ui/audience-composition/enrich-select-source-join-key.png)
 
@@ -168,7 +168,7 @@ Om du vill markera **[!UICONTROL Source join key]** väljer du ikonen ![filter](
 
 ![Attributet som du vill använda som källanslutningsnyckel är markerat.](../images/ui/audience-composition/enrich-select-profile-attribute.png)
 
-Om du vill markera **[!UICONTROL Enrichment dataset join key]** väljer du ikonen ![filter](../images/ui/audience-composition/filter-attribute.png) .
+Om du vill markera **[!UICONTROL Enrichment dataset join key]** väljer du ikonen ![filter](/help/images/icons/project-edit.png) .
 
 ![Filterikonen för [!UICONTROL Enrichment dataset join key] är markerad.](../images/ui/audience-composition/enrich-select-enrichment-dataset-join-key.png)
 
@@ -216,7 +216,7 @@ När du markerar blocket visas information om rangordningen i den högra listen,
 
 ![Rankningsblocket är markerat, liksom informationen om rankningsblocket.](../images/ui/audience-composition/rank.png)
 
-Välj ikonen ![filter](../images/ui/audience-composition/filter-attribute.png) om du vill välja vilket attribut som målgrupperna ska rangordnas efter.
+Välj ikonen ![filter](/help/images/icons/project-edit.png) om du vill välja vilket attribut som målgrupperna ska rangordnas efter.
 
 ![Filterikonen är markerad och visar vad du ska välja för att få åtkomst till skärmen för val av profilattribut.](../images/ui/audience-composition/select-rank-attribute.png)
 
@@ -250,7 +250,7 @@ Du kan t.ex. ha tre banor med olika profiler.
 
 ### Dela efter attribut {#split-attribute}
 
-Vid uppdelning efter attribut delas målgrupperna upp utifrån de angivna attributen. Om du vill markera attributet som ska delas med markerar du **[!UICONTROL Split]**-blocket följt av ikonen ![filter](../images/ui/audience-composition/filter-attribute.png) .
+Vid uppdelning efter attribut delas målgrupperna upp utifrån de angivna attributen. Om du vill markera attributet som ska delas med markerar du **[!UICONTROL Split]**-blocket följt av ikonen ![filter](/help/images/icons/project-edit.png) .
 
 ![Filterknappen är markerad och visar hur du filtrerar efter attribut.](../images/ui/audience-composition/select-split-attribute.png)
 

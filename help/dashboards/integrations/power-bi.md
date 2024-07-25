@@ -2,9 +2,9 @@
 title: Power BI-rapportmallar för plattformsinstrumentpaneler
 description: Använd rapportmallar för att utforska Experience Platform data med Power BI.
 exl-id: fb98a79f-3d82-4e11-b08a-b7cb06414462
-source-git-commit: 729d218f72a8caecc90a98810b973d0754f7757b
+source-git-commit: c2832821ea6f9f630e480c6412ca07af788efd66
 workflow-type: tm+mt
-source-wordcount: '1436'
+source-wordcount: '1438'
 ht-degree: 0%
 
 ---
@@ -144,7 +144,7 @@ När kontrollpanelen har rätt mått och attribut i anpassade widgetar kan du ä
 
 ## Ta bort integrering med Power BI-program
 
-Om du vill ta bort instrumentpanelen går du till instrumentpanelens inventering och väljer borttagningsikonen (![](../images/power-bi/delete-icon.png)) bredvid instrumentpanelens namn.
+Om du vill ta bort instrumentpanelen går du till instrumentpanelens inventering och väljer borttagningsikonen (![borttagningsikonen](/help/images/icons/delete.png)) bredvid instrumentpanelens namn.
 
 >[!NOTE]
 >

@@ -4,7 +4,7 @@ description: Läs mer om API-tillägget Trade Desk Real-Time Conversions för h�
 hide: true
 hidefromtoc: true
 exl-id: 1ff32e2b-9ff8-4395-ae44-cba75a2da515
-source-git-commit: 161cb8a587026012bb07acce9da67037feb5391c
+source-git-commit: c2832821ea6f9f630e480c6412ca07af788efd66
 workflow-type: tm+mt
 source-wordcount: '888'
 ht-degree: 0%
@@ -77,7 +77,7 @@ Konfigurationsalternativen är uppdelade i tre huvudavsnitt enligt nedan:
 | Valuta | Valutakod i ISO-format. |
 | Klient-IP | Klientens IPv4- eller IPv6-IP-adress. |
 | Annons-ID | Det unika reklam-ID:t för händelsen. |
-| Typ av annons-ID | Typ av reklam-ID, som anges i AD ID-egenskapen: TDID, IDFA, AAID, DAID, NAID, IDL, EUID eller UID2. |
+| Typ av annons-ID | Typ av reklam-ID som anges i AD ID-egenskapen: TDID, IDFA, AAID, DAID, NAID, IDL, EUID eller UID2. |
 | Impression | En 36-teckensträng (inklusive bindestreck) som fungerar som det unika ID:t för det intryck som händelsen är kopplad till. |
 | Order-ID | Händelsens associerade orderidentifierare. |
 | td1-td10 | Tio sekventiellt numrerade anpassade dynamiska egenskaper som kan användas för att tillhandahålla ytterligare konverteringsmetadata. |
@@ -90,7 +90,7 @@ Mer information om [request properties](https://partner.thetradedesk.com/v3/port
 
 **[!UICONTROL Object Request Parameters]**
 
-Ett JSON-objekt som innehåller mer information. Du kan välja att använda en reducerad uppsättning indata för nyckelvärden eller att ange JSON i Raw-format. Dessutom kan du hämta dynamiska data från ett dataelement genom att markera diskarna (![Diskikon](../../../images/extensions/server/tradedesk/disk-icon.png)) till höger.
+Ett JSON-objekt som innehåller mer information. Du kan välja att använda en reducerad uppsättning indata för nyckelvärden eller att ange JSON i Raw-format. Dessutom kan du hämta dynamiska data från ett dataelement genom att markera diskarna (![Diskikon](/help/images/icons/database.png)) till höger.
 
 
 ![Avsnittet [!DNL Object Request Parameters] som visar tillgängliga fält.](../../../images/extensions/server/tradedesk/configure-object-request-params.png)

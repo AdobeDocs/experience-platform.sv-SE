@@ -4,7 +4,7 @@ solution: Experience Platform
 title: Handbok för autentiseringsuppgifter för frågetjänst
 description: Adobe Experience Platform Query Service har ett användargränssnitt som kan användas för att skriva och köra frågor, visa frågor som har körts tidigare samt få åtkomst till frågor som har sparats av användare i organisationen.
 exl-id: ea25fa32-809c-429c-b855-fcee5ee31b3e
-source-git-commit: ba4ff2715d4e3eb71377542ab2361b967cd3ac11
+source-git-commit: c2832821ea6f9f630e480c6412ca07af788efd66
 workflow-type: tm+mt
 source-wordcount: '1759'
 ht-degree: 0%
@@ -36,7 +36,7 @@ Avsnittet **[!UICONTROL Expiring credentials]** innehåller följande informatio
 - **[!UICONTROL Port]**: Portnumret för den värd som ska anslutas.
 - **[!UICONTROL Database]**: Namnet på databasen som en klient ska anslutas till.
 - **[!UICONTROL Username]**: Användarnamnet som används för att ansluta till frågetjänsten.
-- **[!UICONTROL Password]**: Lösenordet som används för att ansluta till frågetjänsten. Lösenord i användargränssnittet har hashats av säkerhetsskäl. Välj kopieringsikonen (![Kopieringsikonen.](../images/ui/credentials/copy-icon.png)) om du vill kopiera dina fullständiga, ohashade autentiseringsuppgifter till Urklipp.
+- **[!UICONTROL Password]**: Lösenordet som används för att ansluta till frågetjänsten. Lösenord i användargränssnittet har hashats av säkerhetsskäl. Välj kopieringsikonen (![Kopieringsikonen.](/help/images/icons/copy.png)) om du vill kopiera dina fullständiga, ohashade autentiseringsuppgifter till Urklipp.
 - **[!UICONTROL PSQL command]**: Ett kommando som automatiskt har infogat all relevant information så att du kan ansluta till frågetjänsten med PSQL på kommandoraden.
 - **[!UICONTROL Expires]**: Utgångsdatum och förfallotid för autentiseringsuppgifterna. Standardlängden för token är 24 timmar, men den kan ändras i de avancerade inställningarna för Admin Console.
 
@@ -126,7 +126,7 @@ När du har sparat dina genererade autentiseringsuppgifter väljer du **[!UICONT
 
 ![Fliken Autentiseringsuppgifter för kontrollpanelen Frågor med avsnittet Ej förfallande autentiseringsuppgifter markerat.](../images/ui/credentials/list-credentials.png)
 
-Du kan antingen redigera eller ta bort dina uppgifter som inte förfaller. Om du vill redigera en referens som inte upphör att gälla väljer du pennikonen (![En pennikon.](../images/ui/credentials/edit-icon.png)). Om du vill ta bort en autentiseringsuppgift som inte upphör att gälla väljer du borttagningsikonen (![En papperskorgsikon.](../images/ui/credentials/delete-icon.png)).
+Du kan antingen redigera eller ta bort dina uppgifter som inte förfaller. Om du vill redigera en referens som inte upphör att gälla väljer du pennikonen (![En pennikon.](/help/images/icons/edit.png)). Om du vill ta bort en autentiseringsuppgift som inte upphör att gälla väljer du borttagningsikonen (![En papperskorgsikon.](/help/images/icons/delete.png)).
 
 När du redigerar en referens som inte upphör att gälla visas ett modalt värde. Du kan uppdatera följande information:
 

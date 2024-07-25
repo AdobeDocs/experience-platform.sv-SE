@@ -4,7 +4,7 @@ solution: Experience Platform
 title: Användargränssnittshandbok för frågeredigeraren
 description: Frågeredigeraren är ett interaktivt verktyg som tillhandahålls av Adobe Experience Platform Query Service, som gör att du kan skriva, validera och köra frågor för kundupplevelsedata i användargränssnittet i Experience Platform. Frågeredigeraren har stöd för att utveckla frågor för analys och datautforskande, och gör att du kan köra interaktiva frågor i utvecklingssyfte samt icke-interaktiva frågor för att fylla i datauppsättningar i Experience Platform.
 exl-id: d7732244-0372-467d-84e2-5308f42c5d51
-source-git-commit: 45eab8f894819eea36465ea0b8f3f3dd8f91fbe0
+source-git-commit: c2832821ea6f9f630e480c6412ca07af788efd66
 workflow-type: tm+mt
 source-wordcount: '2351'
 ht-degree: 0%
@@ -57,7 +57,7 @@ En inställningsikon ovanför inmatningsfältet i Frågeredigeraren innehåller 
 >
 >Du kan [!UICONTROL Disable syntax auto complete] när du redigerar en fråga utan att förlora förloppet.
 
-Om du vill aktivera mörka eller ljusa teman väljer du inställningsikonen (![En inställningsikon.](../images/ui/query-editor/settings-icon.png)) följt av alternativet i listrutan som visas.
+Om du vill aktivera mörka eller ljusa teman väljer du inställningsikonen (![En inställningsikon.](/help/images/icons/settings.png)) följt av alternativet i listrutan som visas.
 
 ![Frågeredigeraren med inställningsikonen och alternativet Aktivera listruta med mörkt tema markerat.](../images/ui/query-editor/query-editor-settings.png)
 

@@ -2,7 +2,7 @@
 title: Översikt över granskningsloggar
 description: Lär dig hur granskningsloggar gör det möjligt för dig att se vilka åtgärder som har utförts och av vem, i Adobe Experience Platform.
 exl-id: 00baf615-5b71-4e0a-b82a-ca0ce8566e7f
-source-git-commit: f9917d6a6de81f98b472cff9b41f1526ea51cdae
+source-git-commit: c2832821ea6f9f630e480c6412ca07af788efd66
 workflow-type: tm+mt
 source-wordcount: '1261'
 ht-degree: 1%
@@ -94,7 +94,7 @@ Välj en händelse i listan om du vill visa information om händelsen i den hög
 >Eftersom det här är en ny funktion går de data som visas endast tillbaka till mars 2022. Beroende på vilken resurs som valts kan tidigare data vara tillgängliga från januari 2022.
 
 
-Markera trattikonen (![Filterikon](../../images/audit-logs/icon.png)) om du vill visa en lista med filterkontroller för att begränsa resultatet. Endast de 1000 sista posterna visas oavsett vilket filter du har valt.
+Markera trattikonen (![Filterikon](/help/images/icons/filter.png)) om du vill visa en lista med filterkontroller för att begränsa resultatet. Endast de 1000 sista posterna visas oavsett vilket filter du har valt.
 
 ![Kontrollpanelen Granskningar med den filtrerade aktivitetsloggen markerad.](../../images/audit-logs/filters.png)
 

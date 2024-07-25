@@ -3,7 +3,7 @@ title: Potentiella målgrupper
 description: Lär dig hur du skapar och använder potentiella målgrupper för att nå okända kunder med hjälp av tredjepartsinformation.
 type: Documentation
 exl-id: b48cc0cf-f1c4-46fe-bb1d-cad53a9439dc
-source-git-commit: c2f9bcd9aeb0073b8b26413ec29e2dff1ee5c80d
+source-git-commit: c2832821ea6f9f630e480c6412ca07af788efd66
 workflow-type: tm+mt
 source-wordcount: '385'
 ht-degree: 0%
@@ -26,7 +26,7 @@ Sidan Bläddra visas. En lista över alla potentiella målgrupper för organisat
 
 I den här vyn visas information om målgruppen, inklusive namn, antal profiler, ursprung, livscykelstatus, skapat datum, senaste uppdateringsdatum och uppdelning.
 
-Du kan lägga till fler fält till den här visningen genom att välja ![filterattributsikonen](../images/ui/prospect-audience/filter-attribute.png). Dessa extrafält innehåller uppdateringsfrekvens och den senaste uppdateringsfrekvensen från.
+Du kan lägga till fler fält till den här visningen genom att välja ![filterattributsikonen](/help/images/icons/column-settings.png). Dessa extrafält innehåller uppdateringsfrekvens och den senaste uppdateringsfrekvensen från.
 
 Mer information om bläddringssidan, inklusive detaljerad information om fälten i listan, finns i [Översikt över målportalen](./audience-portal.md#list).
 

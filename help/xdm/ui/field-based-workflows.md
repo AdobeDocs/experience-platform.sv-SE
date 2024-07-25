@@ -2,7 +2,7 @@
 title: Fältbaserade arbetsflöden i Schemaredigeraren
 description: Lär dig hur du lägger till fält från befintliga fältgrupper individuellt i XDM-scheman (Experience Data Model).
 exl-id: 0499ff30-a602-419b-b9d3-2defdd4354a7
-source-git-commit: 19e0a26958ec57ccbc614be53b5aaacce7ce9450
+source-git-commit: c2832821ea6f9f630e480c6412ca07af788efd66
 workflow-type: tm+mt
 source-wordcount: '1269'
 ht-degree: 0%
@@ -57,7 +57,7 @@ Under **[!UICONTROL Field name]** börjar du skriva namnet på fältet som du vi
 
 Vissa standardfält har samma namn, men strukturen kan variera beroende på vilken fältgrupp de kommer ifrån. Om ett standardfält är kapslat i ett överordnat objekt i fältgruppsstrukturen, kommer det överordnade fältet också att inkluderas i schemat om det underordnade fältet läggs till.
 
-Välj förhandsvisningsikonen (![Förhandsgranskningsikonen](../images/ui/field-based-workflows/preview-icon.png)) bredvid ett standardfält om du vill visa strukturen för fältgruppen och förstå hur den kan kapslas. Om du vill lägga till standardfältet i schemat väljer du plusikonen (![plusikonen](../images/ui/field-based-workflows/add-icon.png)).
+Välj förhandsvisningsikonen (![Förhandsgranskningsikonen](/help/images/icons/preview.png)) bredvid ett standardfält om du vill visa strukturen för fältgruppen och förstå hur den kan kapslas. Om du vill lägga till standardfältet i schemat väljer du plusikonen (![plusikonen](/help/images/icons/add-circle.png)).
 
 ![Ikonen Lägg till är markerad för ett objekt i de föreslagna standardfälten.](../images/ui/field-based-workflows/add-standard-field.png)
 

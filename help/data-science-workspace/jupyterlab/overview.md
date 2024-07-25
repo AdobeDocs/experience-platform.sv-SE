@@ -4,7 +4,7 @@ solution: Experience Platform
 title: Översikt över användargränssnittet i JupyterLab
 description: JupyterLab är ett webbaserat användargränssnitt för Project Jupyter och är nära integrerat med Adobe Experience Platform. Den utgör en interaktiv utvecklingsmiljö där datavetare kan arbeta med Jupyter-anteckningsböcker, kod och data. Det här dokumentet innehåller en översikt över JupyterLab och dess funktioner samt instruktioner om hur du utför vanliga åtgärder.
 exl-id: 13786fbd-ef16-49cd-8bcf-46320c33e902
-source-git-commit: 86e6924078c115fb032ce39cd678f1d9c622e297
+source-git-commit: c2832821ea6f9f630e480c6412ca07af788efd66
 workflow-type: tm+mt
 source-wordcount: '1806'
 ht-degree: 0%
@@ -116,9 +116,9 @@ I [!DNL JupyterLab] väljer du kugghjulsikonen i det övre högra hörnet för a
 
 ### Avsluta och starta om [!DNL JupyterLab]
 
-Om du använder [!DNL JupyterLab] kan du avsluta din session för att förhindra att fler resurser används. Börja med att välja **strömikonen** ![strömikonen](../images/jupyterlab/user-guide/power_button.png) och välj sedan **[!UICONTROL Shut Down]** i den port som visas för att avsluta sessionen. Anteckningsbokssessioner avslutas automatiskt efter 12 timmars ingen aktivitet.
+Om du använder [!DNL JupyterLab] kan du avsluta din session för att förhindra att fler resurser används. Börja med att välja **strömikonen** ![strömikonen](/help/images/icons/power.png) och välj sedan **[!UICONTROL Shut Down]** i den port som visas för att avsluta sessionen. Anteckningsbokssessioner avslutas automatiskt efter 12 timmars ingen aktivitet.
 
-Om du vill starta om [!DNL JupyterLab] väljer du ikonen **starta om** ![starta om ](../images/jupyterlab/user-guide/restart_button.png) som finns direkt till vänster om strömikonen och väljer sedan **[!UICONTROL Restart]** i den port som visas.
+Om du vill starta om [!DNL JupyterLab] väljer du ikonen **starta om** ![starta om ](/help/images/icons/restart.png) som finns direkt till vänster om strömikonen och väljer sedan **[!UICONTROL Restart]** i den port som visas.
 
 ![avsluta jupyterlab](../images/jupyterlab/user-guide/shutdown-jupyterlab.gif)
 

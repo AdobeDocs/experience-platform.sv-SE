@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Skapa och redigera scheman i användargränssnittet
 description: Lär dig grunderna i hur du skapar och redigerar scheman i användargränssnittet i Experience Platform.
 exl-id: be83ce96-65b5-4a4a-8834-16f7ef9ec7d1
-source-git-commit: 0f0842c1d14ce42453b09bf97e1f3690448f6e9a
+source-git-commit: 19f1f64434d655d3b19260460519018fc9c8e174
 workflow-type: tm+mt
-source-wordcount: '3584'
+source-wordcount: '3588'
 ht-degree: 0%
 
 ---
@@ -117,7 +117,7 @@ Markera kryssrutan bredvid namnet på den fältgrupp som du vill lägga till i s
 
 >[!TIP]
 >
->För alla fältgrupper i listan kan du hovra eller fokusera på informationsikonen (![](../../images/ui/resources/schemas/info-icon.png)) om du vill visa en kort beskrivning av den typ av data som fältgruppen hämtar. Du kan också markera förhandsvisningsikonen (![](../../images/ui/resources/schemas/preview-icon.png)) om du vill visa strukturen för de fält som fältgruppen tillhandahåller innan du bestämmer dig för att lägga till den i schemat.
+>För alla fältgrupper i listan kan du hovra eller fokusera på informationsikonen (![informationsikonen](/help/images/icons/info.png)) om du vill visa en kort beskrivning av den typ av data som fältgruppen hämtar. Du kan också markera förhandsvisningsikonen (![förhandsgranskningsikonen](/help/images/icons/preview.png)) för att visa strukturen för fälten som fältgruppen tillhandahåller innan du bestämmer dig för att lägga till den i schemat.
 
 När du har valt fältgrupper väljer du **[!UICONTROL Add field groups]** för att lägga till dem i schemat.
 
@@ -129,7 +129,7 @@ När du har valt fältgrupper väljer du **[!UICONTROL Add field groups]** för 
 
 >[!NOTE]
 >
->I Schemaredigeraren visas standardklasser (som genererats av Adobe) och fältgrupper med hänglåsikonen (![En hänglåsikon.](../../images/ui/explore/padlock-icon.png). hänglåset visas i den vänstra listen bredvid namnet på klassen eller fältgruppen, samt intill ett fält i schemagrafiken som är en del av en systemgenererad resurs.
+>I Schemaredigeraren visas standardklasser (som genererats av Adobe) och fältgrupper med hänglåsikonen (![En hänglåsikon.](/help/images/icons/lock-closed.png). hänglåset visas i den vänstra listen bredvid namnet på klassen eller fältgruppen, samt intill ett fält i schemagrafiken som är en del av en systemgenererad resurs.
 >
 >![Schemaredigeraren med hänglåsikonen markerad](../../images/ui/explore/schema-editor-padlock-icon.png)
 
@@ -189,7 +189,7 @@ Under **[!UICONTROL Field name]** börjar du skriva namnet på fältet som du vi
 
 Vissa standardfält har samma namn, men strukturen kan variera beroende på vilken fältgrupp de kommer ifrån. Om ett standardfält är kapslat i ett överordnat objekt i fältgruppsstrukturen, kommer det överordnade fältet också att inkluderas i schemat om det underordnade fältet läggs till.
 
-Välj förhandsvisningsikonen (![Förhandsgranskningsikonen](../../images/ui/resources/schemas/preview-icon.png)) bredvid ett standardfält om du vill visa strukturen för fältgruppen och förstå hur den kan kapslas. Om du vill lägga till standardfältet i schemat väljer du plusikonen (![plusikonen](../../images/ui/resources/schemas/add-icon.png)).
+Välj förhandsvisningsikonen (![Förhandsgranskningsikonen](/help/images/icons/preview.png)) bredvid ett standardfält om du vill visa strukturen för fältgruppen och förstå hur den kan kapslas. Om du vill lägga till standardfältet i schemat väljer du plusikonen (![plusikonen](/help/images/icons/add-circle.png)).
 
 ![Lägg till standardfält](../../images/ui/resources/schemas/add-standard-field.png)
 

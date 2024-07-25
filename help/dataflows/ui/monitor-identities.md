@@ -4,7 +4,7 @@ description: Adobe Experience Platform identitetstjänst ger er en heltäckande 
 title: Övervaka dataflöden för identiteter i användargränssnittet
 type: Tutorial
 exl-id: 735b0e52-74f6-47fe-98c6-e12a633b6f57
-source-git-commit: 1a7ba52b48460d77d0b7695aa0ab2d5be127d921
+source-git-commit: c2832821ea6f9f630e480c6412ca07af788efd66
 workflow-type: tm+mt
 source-wordcount: '1071'
 ht-degree: 0%
@@ -62,7 +62,7 @@ Följande mått är tillgängliga för den här instrumentpanelsvyn:
 | **[!UICONTROL Graphs updated]** | Antalet befintliga identitetsdiagram som uppdaterats med nya kanter. |
 | **[!UICONTROL Total failed dataflows]** | Antalet misslyckade dataflödeskörningar. |
 
-Du kan välja filterikonen ![Filterikon](../assets/ui/monitor-identities/filter.png) bredvid källnamnet för att visa information om identitetsbearbetning för den valda källans dataflöden.
+Du kan välja filterikonen ![Filterikon](/help/images/icons/filter.png) bredvid källnamnet för att visa information om identitetsbearbetning för den valda källans dataflöden.
 
 ![Filterikonen är markerad. Om du väljer den här ikonen kan du visa den valda källans dataflöden.](../assets/ui/monitor-identities/sources-filter.png)
 
@@ -87,7 +87,7 @@ Följande mått är tillgängliga för den här instrumentpanelsvyn:
 | **[!UICONTROL Graphs updated]** | Antalet befintliga identitetsdiagram som uppdaterats med nya kanter. |
 | **[!UICONTROL Total failed dataflows]** | Antalet misslyckade dataflödeskörningar. |
 
-Välj filterikonen ![filter](../assets/ui/monitor-identities/filter.png) bredvid starttiden för dataflödeskörningen för att visa mer information om [!DNL Identity]-dataflödeskörningen.
+Välj filterikonen ![filter](/help/images/icons/filter.png) bredvid starttiden för dataflödeskörningen för att visa mer information om [!DNL Identity]-dataflödeskörningen.
 
 ![Filterikonen är markerad. Om du väljer den här ikonen kan du visa information om det valda dataflödet.](../assets/ui/monitor-identities/dataflows-filter.png)
 

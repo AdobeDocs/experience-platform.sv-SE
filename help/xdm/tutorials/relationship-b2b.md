@@ -2,7 +2,7 @@
 title: Definiera en relation mellan två scheman i Real-time Customer Data Platform B2B Edition
 description: Lär dig hur du definierar en många-till-ett-relation mellan två scheman i Adobe Real-time Customer Data Platform B2B Edition.
 exl-id: 14032754-c7f5-46b6-90e6-c6e99af1efba
-source-git-commit: ba39f62cd77acedb7bfc0081dbb5f59906c9b287
+source-git-commit: c2832821ea6f9f630e480c6412ca07af788efd66
 workflow-type: tm+mt
 source-wordcount: '1332'
 ht-degree: 0%
@@ -97,7 +97,7 @@ För att kunna definiera en relation mellan två scheman måste källschemat ha 
 >
 >För närvarande kan endast många-till-ett- och en-till-en-relationer definieras från ett källschema till ett referensschema. För en-till-många-relationer måste du definiera relationsfältet i schemat som representerar&quot;många&quot;.
 
-Om du vill ställa in ett relationsfält väljer du pilikonen (![Pilikon](../images/tutorials/relationship-b2b/arrow.png)) bredvid fältet i fråga på arbetsytan. För schemat [!DNL Opportunities] är det här fältet `accountKey.sourceKey` eftersom målet är att upprätta en många-till-ett-relation med ett konto.
+Om du vill ställa in ett relationsfält väljer du pilikonen (![Pilikon](/help/images/icons/alias.png)) bredvid fältet i fråga på arbetsytan. För schemat [!DNL Opportunities] är det här fältet `accountKey.sourceKey` eftersom målet är att upprätta en många-till-ett-relation med ett konto.
 
 ![Relationsknapp](../images/tutorials/relationship-b2b/relationship-button.png)
 

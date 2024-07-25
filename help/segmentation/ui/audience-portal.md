@@ -1,13 +1,13 @@
 ---
 title: Översikt över målportalen
 description: Lär dig hur du använder Audience Portal för att visa, hantera och skapa målgrupper i Adobe Experience Platform.
-source-git-commit: ca8f0c3df9581af7be37e242c9e300ef1b6ea814
+exl-id: 505ac22e-05f3-423a-a9a0-7f3470af8945
+source-git-commit: d1fbfe5dd887059a6aab96566311cbd63c5b091f
 workflow-type: tm+mt
 source-wordcount: '3498'
 ht-degree: 0%
 
 ---
-
 
 # Översikt över målgruppsportalen
 
@@ -90,7 +90,7 @@ Cirkeldiagrammet visas med en uppdelning av målgrupperna efter målgruppsutvär
 
 ### Anpassa {#customize}
 
-Du kan lägga till fler fält i målportalen genom att välja ![filterattributsikonen](../images/ui/audience-portal/filter-attribute.png). Dessa ytterligare fält innehåller livscykelstatus, uppdateringsfrekvens, senast uppdaterad av, beskrivning, skapad av och åtkomstetiketter.
+Du kan lägga till fler fält i målportalen genom att välja ![filterattributsikonen](/help/images/icons/column-settings.png). Dessa ytterligare fält innehåller livscykelstatus, uppdateringsfrekvens, senast uppdaterad av, beskrivning, skapad av och åtkomstetiketter.
 
 | Fält | Beskrivning |
 | ----- | ----------- |
@@ -116,7 +116,7 @@ Om nedbrytning är markerat visas ett stolpdiagram med procentandelen profiler s
 | [!UICONTROL Existing] | Antalet profiler som **förblev** i segmentet under de senaste 24 timmarna sedan det senaste batchsegmentjobbet kördes. |
 | [!UICONTROL Exiting] | Antalet profiler som **slutade** segmentet under de senaste 24 timmarna sedan det senaste batchsegmentjobbet kördes. |
 
-När du har markerat de fält som du vill visa kan du även ändra storlek på de visade kolumnernas bredd. Du kan antingen göra detta genom att dra området mellan kolumnerna eller genom att markera ![pilikonen](../images/ui/audience-portal/arrow-icon.png) för kolumnen som du vill ändra storlek på, följt av **[!UICONTROL Resize column]**.
+När du har markerat de fält som du vill visa kan du även ändra storlek på de visade kolumnernas bredd. Du kan antingen göra detta genom att dra området mellan kolumnerna eller genom att markera ![pilikonen](/help/images/icons/chevron-down.png) för kolumnen som du vill ändra storlek på, följt av **[!UICONTROL Resize column]**.
 
 ![Kolumnknappen Ändra storlek är markerad.](../images/ui/audience-portal/browse-audience-resize-column.png)
 
@@ -177,7 +177,7 @@ När målgruppen finns i en mapp kan du välja att bara visa målgrupper som til
 
 Du kan även filtrera dina målgrupper baserat på en mängd olika inställningar.
 
-Om du vill filtrera de tillgängliga målgrupperna väljer du ![filterikonen](../images/ui/audience-portal/filter-icon.png).
+Om du vill filtrera de tillgängliga målgrupperna väljer du ![filterikonen](/help/images/icons/filter.png).
 
 ![Sidan Bläddra bland målgrupper visas med filterikonen markerad.](../images/ui/audience-portal/browse-select-filter.png)
 

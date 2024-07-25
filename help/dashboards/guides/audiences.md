@@ -4,7 +4,7 @@ title: Auditions Dashboard
 description: Adobe Experience Platform tillhandahåller en kontrollpanel där du kan visa viktig information om målgrupper som din organisation har skapat.
 type: Documentation
 exl-id: de5e07bc-2c44-416e-99db-7607059117cb
-source-git-commit: a8b5ed09e8e28075a3a4f37ad30f01c1cc389b9c
+source-git-commit: c2832821ea6f9f630e480c6412ca07af788efd66
 workflow-type: tm+mt
 source-wordcount: '2951'
 ht-degree: 0%
@@ -235,7 +235,7 @@ Välj **[!UICONTROL View more]** om du vill öppna en dialogruta i helskärmslä
 
 ![Målgruppen överlappar rapportwidgeten med Visa mer markerat.](../images/audiences/audience-overlap-report.png)
 
-Dialogrutan [!UICONTROL Audience overlap report] visas. Den här dialogrutan kan innehålla upp till 50 rader med målgrupper som överlappar analyser uppdelade i sex kolumner. Välj inställningsikonen (![Inställningsikonen.](../images/audiences/settings-icon.png)) om du vill ta bort eller lägga till kolumner från tabellen.
+Dialogrutan [!UICONTROL Audience overlap report] visas. Den här dialogrutan kan innehålla upp till 50 rader med målgrupper som överlappar analyser uppdelade i sex kolumner. Välj inställningsikonen (![Inställningsikonen.](/help/images/icons/settings.png)) om du vill ta bort eller lägga till kolumner från tabellen.
 
 ![Dialogrutan för publiköverlappning.](../images/audiences/audience-overlap-report-dialog.png)
 

@@ -4,7 +4,7 @@ solution: Experience Platform
 title: Skapa och redigera schemafältgrupper i användargränssnittet
 description: Lär dig hur du skapar och redigerar schemafältgrupper i användargränssnittet i Experience Platform.
 exl-id: 928d70a6-0468-4fb7-a53a-6686ac77f2a3
-source-git-commit: 0e1fb15cfa56fb4c2a4a645578327f0a4bd22e68
+source-git-commit: c2832821ea6f9f630e480c6412ca07af788efd66
 workflow-type: tm+mt
 source-wordcount: '964'
 ht-degree: 0%
@@ -56,7 +56,7 @@ Listan med tillgängliga fältgrupper filtreras i förväg baserat på hur de sk
 
 >[!NOTE]
 >
->Endast anpassade fältgrupper som definierats av din organisation kan redigeras och anpassas helt. För huvudfältgrupper som definieras av Adobe kan bara visningsnamnen för deras fält redigeras inom ramen för enskilda scheman. De indikeras i Schemaredigeraren av en hänglåsikon (![En hänglåsikon.](../../images/ui/explore/padlock-icon.png)). Mer information finns i avsnittet [Redigera visningsnamn för schemafält](./schemas.md#display-names).
+>Endast anpassade fältgrupper som definierats av din organisation kan redigeras och anpassas helt. För huvudfältgrupper som definieras av Adobe kan bara visningsnamnen för deras fält redigeras inom ramen för enskilda scheman. De indikeras i Schemaredigeraren av en hänglåsikon (![En hänglåsikon.](/help/images/icons/lock-closed.png)). Mer information finns i avsnittet [Redigera visningsnamn för schemafält](./schemas.md#display-names).
 >
 >När en anpassad fältgrupp har sparats och använts i ett schema för datainmatning kan endast additiva ändringar göras i fältgruppen därefter. Mer information finns i [reglerna för schemautveckling](../../schema/composition.md#evolution).
 

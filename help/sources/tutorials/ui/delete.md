@@ -5,7 +5,7 @@ solution: Experience Platform
 title: Ta bort dataflöden i användargränssnittet
 type: Tutorial
 exl-id: aa224467-7733-40de-aab7-0ff1c557abf2
-source-git-commit: 90eb6256179109ef7c445e2a5a8c159fb6cbfe28
+source-git-commit: c2832821ea6f9f630e480c6412ca07af788efd66
 workflow-type: tm+mt
 source-wordcount: '358'
 ht-degree: 0%
@@ -33,7 +33,7 @@ I [Experience Platform-gränssnittet](https://platform.adobe.com) väljer du **[
 
 Sidan **[!UICONTROL Dataflows]** visas. På den här sidan finns en lista med visningsbara dataflöden, inklusive information om måldatauppsättning, källa, kontonamn och datum när de skapades.
 
-Välj filterikonen (![filter-icon](../../images/tutorials/delete/filter.png)) längst upp till vänster för att öppna sorteringspanelen.
+Välj filterikonen (![filter-icon](/help/images/icons/filter.png)) längst upp till vänster för att öppna sorteringspanelen.
 
 ![dataflöden](../../images/tutorials/delete/dataflows.png)
 

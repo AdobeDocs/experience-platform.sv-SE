@@ -2,7 +2,7 @@
 title: Visa Insight SQL
 description: Visa SQL bakom din profil, målgrupp, destination och anpassade insikter och kör frågan på begäran via Frågeredigeraren.
 exl-id: fd728926-c113-4593-92b1-916a02d09d41
-source-git-commit: e0af1f0110ceb514a5b249c42a05bf780ea834c6
+source-git-commit: c2832821ea6f9f630e480c6412ca07af788efd66
 workflow-type: tm+mt
 source-wordcount: '384'
 ht-degree: 0%
@@ -43,7 +43,7 @@ En dialogruta visas som innehåller titeln på insikten och SQL-koden som genere
 
 >[!TIP]
 >
->Du kan kopiera hela SQL-satsen till Urklipp genom att välja kopieringsikonen (![Kopieringsikonen.](./images/view-sql/copy-icon.png)) längst upp till höger i dialogrutan.
+>Du kan kopiera hela SQL-satsen till Urklipp genom att välja kopieringsikonen (![Kopieringsikonen.](/help/images/icons/copy.png)) längst upp till höger i dialogrutan.
 
 ![En insiktsdialogruta med SQL-satsen markerad.](./images/view-sql/sql-dialog.png)
 

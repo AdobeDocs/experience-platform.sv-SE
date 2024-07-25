@@ -4,7 +4,7 @@ title: Kontrollpanel för profiler
 description: Adobe Experience Platform tillhandahåller en kontrollpanel där du kan visa viktig information om kundprofildata i realtid för din organisation.
 type: Documentation
 exl-id: 7b9752b2-460e-440b-a6f7-a1f1b9d22eeb
-source-git-commit: c35b43654d31f0f112258e577a1bb95e72f0a971
+source-git-commit: c2832821ea6f9f630e480c6412ca07af788efd66
 workflow-type: tm+mt
 source-wordcount: '4669'
 ht-degree: 0%
@@ -470,7 +470,7 @@ Välj **[!UICONTROL View more]** om du vill öppna en dialogruta i helskärmslä
 
 ![Målgruppen överlappar rapportwidgeten med Visa mer markerat.](../images/profiles/profiles-audience-overlap-report.png)
 
-Dialogrutan [!UICONTROL Audience overlap report] visas. Den här dialogrutan kan innehålla upp till 50 rader med målgrupper som överlappar analyser uppdelade i sex kolumner. Om du vill ta bort eller lägga till kolumner från tabellen väljer du inställningsikonen (![Inställningsikonen.](../images/profiles/settings-icon.png)).
+Dialogrutan [!UICONTROL Audience overlap report] visas. Den här dialogrutan kan innehålla upp till 50 rader med målgrupper som överlappar analyser uppdelade i sex kolumner. Om du vill ta bort eller lägga till kolumner från tabellen väljer du inställningsikonen (![Inställningsikonen.](/help/images/icons/settings.png)).
 
 ![Dialogrutan för publiköverlappning.](../images/profiles/profiles-audience-overlap-report-dialog.png)
 

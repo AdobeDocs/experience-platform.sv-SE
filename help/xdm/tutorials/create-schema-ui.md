@@ -5,7 +5,7 @@ title: Skapa ett schema med Schemaredigeraren
 type: Tutorial
 description: I den här självstudiekursen beskrivs stegen för hur du skapar ett schema med Schemaredigeraren i Experience Platform.
 exl-id: 3edeb879-3ce4-4adb-a0bd-8d7ad2ec6102
-source-git-commit: df0912bcb7122152da127c4e6b625cff73f7fa72
+source-git-commit: c2832821ea6f9f630e480c6412ca07af788efd66
 workflow-type: tm+mt
 source-wordcount: '4567'
 ht-degree: 0%
@@ -115,7 +115,7 @@ Arbetsytan för schemat visas igen. Avsnittet **[!UICONTROL Field groups]** inne
 
 >[!NOTE]
 >
->I Schemaredigeraren visas standardklasser (som genererats av Adobe) och fältgrupper med hänglåsikonen (![En hänglåsikon.](../images/ui/explore/padlock-icon.png). hänglåset visas i den vänstra listen bredvid namnet på klassen eller fältgruppen, samt intill ett fält i schemagrafiken som är en del av en systemgenererad resurs.
+>I Schemaredigeraren visas standardklasser (som genererats av Adobe) och fältgrupper med hänglåsikonen (![En hänglåsikon.](/help/images/icons/lock-closed.png). hänglåset visas i den vänstra listen bredvid namnet på klassen eller fältgruppen, samt intill ett fält i schemagrafiken som är en del av en systemgenererad resurs.
 >
 >![Schemaredigeraren med hänglåsikonen markerad](../images/ui/explore/padlock-icon-highlight.png)
 

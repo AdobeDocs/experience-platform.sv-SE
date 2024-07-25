@@ -2,7 +2,7 @@
 title: Skapa en Marketo Engage Source-anslutning och ett dataflöde för anpassade aktivitetsdata i användargränssnittet
 description: I den här självstudiekursen beskrivs hur du skapar en Marketo Engage-källanslutning och ett dataflöde i användargränssnittet för att överföra anpassade aktivitetsdata till Adobe Experience Platform.
 exl-id: 05a7b500-11d2-4d58-be43-a2c4c0ceeb87
-source-git-commit: ba39f62cd77acedb7bfc0081dbb5f59906c9b287
+source-git-commit: c2832821ea6f9f630e480c6412ca07af788efd66
 workflow-type: tm+mt
 source-wordcount: '1417'
 ht-degree: 0%
@@ -127,7 +127,7 @@ Navigera genom källdatastrukturen och hitta det anpassade aktivitetsfältet som
 
 ![Källdatastrukturen.](../../../../images/tutorials/create/marketo-custom-activities/select-new-mapping-field.png)
 
-Om du vill lägga till ett målfält väljer du schemaikonen ![schemaikon](../../../../images/tutorials/create/marketo-custom-activities/schema-icon.png) och väljer sedan anpassade aktivitetsfält från målschemat.
+Om du vill lägga till ett målfält väljer du schemaikonen ![schemaikon](/help/images/icons/schema.png) och väljer sedan anpassade aktivitetsfält från målschemat.
 
 ![Målschemastrukturen.](../../../../images/tutorials/create/marketo-custom-activities/add-target-mapping-field.png)
 

@@ -4,7 +4,7 @@ title: Användargränssnittshandbok för aviseringar
 description: Lär dig hur du hanterar aviseringar i användargränssnittet i Experience Platform.
 feature: Alerts
 exl-id: 4ba3ef2b-7394-405e-979d-0e5e1fe676f3
-source-git-commit: 8d63e9fa4c7eb09ffb90edca612a6e6d44dd18fa
+source-git-commit: c2832821ea6f9f630e480c6412ca07af788efd66
 workflow-type: tm+mt
 source-wordcount: '603'
 ht-degree: 0%
@@ -71,7 +71,7 @@ Du har lagt till användare i aviseringslistan. De skickade användarna får nu 
 
 Varningsmeddelanden kan skickas direkt till ditt e-postmeddelande.
 
-Välj klockikonen (![klockikon](../images/alerts/ui/bell-icon.png)) i det övre menyfliksområdet till höger för att visa meddelanden och meddelanden. I listrutan som visas väljer du kodikonen (![kodikonen](../images/alerts/ui/cog-icon.png)) för att öppna inställningssidan för Experience Cloud.
+Välj klockikonen (![klockikon](/help/images/icons/bell.png)) i det övre menyfliksområdet till höger för att visa meddelanden och meddelanden. I listrutan som visas väljer du kodikonen (![kodikonen](/help/images/icons/settings.png)) för att öppna inställningssidan för Experience Cloud.
 
 ![En lista över aviseringar som visar klockikonen och kodikonen.](../images/alerts/ui/edit-preferences.png)
 

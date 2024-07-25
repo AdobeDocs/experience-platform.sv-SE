@@ -4,7 +4,7 @@ title: Ta bort mål
 type: Tutorial
 description: I den här självstudiekursen visas stegen för att ta bort ett befintligt mål i Adobe Experience Platform-gränssnittet
 exl-id: 7b672859-e61a-4b3c-9db9-62048258f0aa
-source-git-commit: d6402f22ff50963b06c849cf31cc25267ba62bb1
+source-git-commit: c2832821ea6f9f630e480c6412ca07af788efd66
 workflow-type: tm+mt
 source-wordcount: '399'
 ht-degree: 0%
@@ -32,11 +32,11 @@ Följ stegen nedan för att ta bort ett mål från fliken [!UICONTROL Browse].
 
    ![Bläddra bland mål](../assets/ui/delete-destinations/browse-destinations.png)
 
-2. Välj filterikonen ![Filterikon](../assets/ui/delete-destinations/filter.png) längst upp till vänster för att öppna sorteringspanelen. På sorteringspanelen finns en lista med alla mål. Du kan markera mer än ett mål i listan om du vill visa ett filtrerat urval av dataflöden som är kopplade till det valda målet.
+2. Välj filterikonen ![Filterikon](/help/images/icons/filter.png) längst upp till vänster för att öppna sorteringspanelen. På sorteringspanelen finns en lista med alla mål. Du kan markera mer än ett mål i listan om du vill visa ett filtrerat urval av dataflöden som är kopplade till det valda målet.
 
    ![Filtrera mål](../assets/ui/delete-destinations/filter-destinations.png)
 
-3. Markera knappen ![Mer](../assets/ui/delete-destinations/more-icon.png) i kolumnen Namn och markera sedan knappen ![Ta bort](../assets/ui/delete-destinations/delete-icon.png) **[!UICONTROL Delete]** för att ta bort en befintlig målanslutning.
+3. Markera knappen ![Mer](/help/images/icons/more.png) i kolumnen Namn och markera sedan knappen ![Ta bort](/help/images/icons/delete.png) **[!UICONTROL Delete]** för att ta bort en befintlig målanslutning.
    ![Ta bort mål](../assets/ui/delete-destinations/delete-destinations.png)
 
 4. Välj **[!UICONTROL Delete]** för att bekräfta borttagningen av målanslutningen.
@@ -51,7 +51,7 @@ Följ stegen nedan för att ta bort ett mål från sidan med målinformation.
 
    ![Bläddra bland mål](../assets/ui/delete-destinations/browse-destinations.png)
 
-2. Välj filterikonen ![Filterikon](../assets/ui/delete-destinations/filter.png) längst upp till vänster för att öppna sorteringspanelen. På sorteringspanelen finns en lista med alla mål. Du kan markera mer än ett mål i listan om du vill visa ett filtrerat urval av dataflöden som är kopplade till det valda målet.
+2. Välj filterikonen ![Filterikon](/help/images/icons/filter.png) längst upp till vänster för att öppna sorteringspanelen. På sorteringspanelen finns en lista med alla mål. Du kan markera mer än ett mål i listan om du vill visa ett filtrerat urval av dataflöden som är kopplade till det valda målet.
 
    ![Filtrera mål](../assets/ui/delete-destinations/filter-destinations.png)
 

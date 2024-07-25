@@ -2,7 +2,7 @@
 title: Användargränssnittshandbok för beräknade attribut
 description: Lär dig hur du skapar, visar och uppdaterar beräknade attribut med Adobe Experience Platform-gränssnittet.
 exl-id: bc621167-6dba-473e-90e4-aac7ceb6579a
-source-git-commit: 762a7fc7dd00657e4e710eb763c5bb63b210593a
+source-git-commit: c2832821ea6f9f630e480c6412ca07af788efd66
 workflow-type: tm+mt
 source-wordcount: '1497'
 ht-degree: 0%
@@ -32,7 +32,7 @@ I användargränssnittet för Experience Platform väljer du **[!UICONTROL Profi
 
 ![Avsnittet [!UICONTROL Profile] och flikarna [!UICONTROL Computed attributes] är markerade och visar hur användarna kommer åt bläddringssidan för beräknade attribut.](./images/ui/browse.png)
 
-Om du vill välja vilka fält som ska visas kan du välja ![ikonen för att konfigurera kolumner](./images/ui/configure-icon.png) och lägga till eller ta bort vilka fält som ska visas.
+Om du vill välja vilka fält som ska visas kan du välja ![ikonen för att konfigurera kolumner](/help/images/icons/column-settings.png) och lägga till eller ta bort vilka fält som ska visas.
 
 | Fält | Beskrivning |
 | ----- | ----------- |
@@ -47,7 +47,7 @@ Om du vill välja vilka fält som ska visas kan du välja ![ikonen för att konf
 | [!UICONTROL Created] | En tidsstämpel som visar det datum och den tidpunkt då det beräknade attributet skapades. |
 | [!UICONTROL Last modified] | En tidsstämpel som visar det datum och den tidpunkt då det beräknade attributet senast ändrades. |
 
-Du kan även filtrera de beräknade attribut som visas baserat på livscykelstatusen. Välj ikonen ![tratt](./images/ui/filter-icon.png) .
+Du kan även filtrera de beräknade attribut som visas baserat på livscykelstatusen. Välj ikonen ![tratt](/help/images/icons/filter.png) .
 
 ![Filterikonen är markerad.](./images/ui/select-filter.png)
 

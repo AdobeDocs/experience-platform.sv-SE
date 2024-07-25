@@ -3,7 +3,7 @@ keywords: Experience Platform;hem;populära ämnen;åtkomstkontroll;attributbase
 title: Attributbaserad åtkomstkontroll Hantera rollbehörigheter
 description: Det här dokumentet innehåller information om hur du konfigurerar behörigheter för en roll via gränssnittet Behörigheter i Adobe Experience Cloud
 exl-id: 8acd2bb6-eef8-4b23-8fd8-3566c7508fe7
-source-git-commit: c1c7a851315214e2362085d3283d144066d4dd8a
+source-git-commit: c2832821ea6f9f630e480c6412ca07af788efd66
 workflow-type: tm+mt
 source-wordcount: '919'
 ht-degree: 0%
@@ -24,7 +24,7 @@ Omedelbart efter [att du har skapat en ny roll](#create-a-new-role) återgår du
 
 ## Filtrera roller
 
-Markera trattikonen (![Filterikon](../../images/icon.png)) om du vill visa en lista med filterkontroller för att begränsa resultatet.
+Markera trattikonen (![Filterikon](/help/images/icons/filter.png)) om du vill visa en lista med filterkontroller för att begränsa resultatet.
 
 ![flac-filters](../../images/flac-ui/flac-filters.png)
 

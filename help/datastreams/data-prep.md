@@ -2,7 +2,7 @@
 title: Dataförberedelse för datainsamling
 description: Lär dig hur du mappar data till ett XDM-händelseschema (Experience Data Model) när du konfigurerar ett datastam för Adobe Experience Platform Web och Mobile SDK.
 exl-id: 87a70d56-1093-445c-97a5-b8fa72a28ad0
-source-git-commit: b6e084d2beed58339191b53d0f97b93943154f7c
+source-git-commit: c2832821ea6f9f630e480c6412ca07af788efd66
 workflow-type: tm+mt
 source-wordcount: '1155'
 ht-degree: 0%
@@ -173,11 +173,11 @@ Om du vill skapa en mappningsregel väljer du **[!UICONTROL Add new mapping]**.
 
 ![Lägger till en ny mappning.](assets/data-prep/add-new-mapping.png)
 
-Markera källikonen (![Source-ikon](assets/data-prep/source-icon.png)) och markera det källfält som du vill mappa på den angivna arbetsytan i dialogrutan som visas. När du har valt ett fält använder du knappen **[!UICONTROL Select]** för att fortsätta.
+Markera källikonen (![Source-ikon](/help/images/icons/source.png)) och markera det källfält som du vill mappa på den angivna arbetsytan i dialogrutan som visas. När du har valt ett fält använder du knappen **[!UICONTROL Select]** för att fortsätta.
 
 ![Markerar fältet som ska mappas i källschemat.](assets/data-prep/source-mapping.png)
 
-Välj sedan schemaikonen (![Schemaikon](assets/data-prep/schema-icon.png)) för att öppna en liknande dialogruta för målhändelseschemat. Välj det fält som du vill mappa data till innan du bekräftar med **[!UICONTROL Select]**.
+Välj sedan schemaikonen (![Schemaikon](/help/images/icons/schema.png)) för att öppna en liknande dialogruta för målhändelseschemat. Välj det fält som du vill mappa data till innan du bekräftar med **[!UICONTROL Select]**.
 
 ![Markerar fältet som ska mappas i målschemat.](assets/data-prep/target-mapping.png)
 

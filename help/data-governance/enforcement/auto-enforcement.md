@@ -4,7 +4,7 @@ solution: Experience Platform
 title: Automatisk policytillämpning
 description: Det här dokumentet beskriver hur dataanvändningspolicyer tillämpas automatiskt när målgrupper aktiveras till destinationer i Experience Platform.
 exl-id: c6695285-77df-48c3-9b4c-ccd226bc3f16
-source-git-commit: ea58ece75d2208ae96bd71c2f51e14279769640f
+source-git-commit: c2832821ea6f9f630e480c6412ca07af788efd66
 workflow-type: tm+mt
 source-wordcount: '2089'
 ht-degree: 0%
@@ -104,7 +104,7 @@ Ett datalinjediagram visas nedanför sammanfattningen av överträdelser, vilket
 
 ![En dialogruta om policyöverträdelse med datalinjediagrammet markerat.](../images/enforcement/data-lineage.png)
 
-Du kan också använda ikonen **[!UICONTROL Filter]** (![En filterikon.](../images/enforcement/filter.png)) om du vill filtrera de visade enheterna efter kategori. Minst två kategorier måste väljas för att data ska kunna visas.
+Du kan också använda ikonen **[!UICONTROL Filter]** (![En filterikon.](/help/images/icons/filter.png)) om du vill filtrera de visade enheterna efter kategori. Minst två kategorier måste väljas för att data ska kunna visas.
 
 ![En dialogruta för principöverträdelse med datalinjefiltret och den nedrullningsbara menyn markerade.](../images/enforcement/lineage-filter.png)
 

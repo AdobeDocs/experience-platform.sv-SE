@@ -3,7 +3,7 @@ title: Google Ads Enhanced Conversions Extension
 description: Läs mer om tillägget Google Ads Enhanced Conversions för vidarebefordran av händelser i Adobe Experience Platform.
 exl-id: 65cdff40-276f-4481-9621-6c6861dbd412
 last-substantial-update: 2022-11-23T00:00:00Z
-source-git-commit: 1c417744518a7ac7cfb9c65d6af8219dcbc70d46
+source-git-commit: c2832821ea6f9f630e480c6412ca07af788efd66
 workflow-type: tm+mt
 source-wordcount: '1188'
 ht-degree: 0%
@@ -103,7 +103,7 @@ Leta reda på tillägget [!UICONTROL Google Ads Enhanced Conversions] i kataloge
 Om du vill konfigurera tillägget måste du fylla i de två obligatoriska fälten:
 
 1. **[!UICONTROL Customer ID]**: Det ID som unikt identifierar ditt [!DNL Google Ads]-konto. Logga in på [!DNL Google Ads] och navigera till **[!DNL Help]** > **[!DNL Customer ID]** om du vill hitta det här värdet.
-1. **[!UICONTROL Access Token Data Element]**: Välj dataelementikonen (![Dataelementsikon](../../../images/extensions/server/google-ads-enhanced-conversions/data-element-icon.png)) och välj det hemliga dataelement för Google OAuth 2 som du [konfigurerade i föregående steg](#create-secret-data-element) på menyn.
+2. **[!UICONTROL Access Token Data Element]**: Välj dataelementikonen (![Dataelementsikon](/help/images/icons/database.png)) och välj det hemliga dataelement för Google OAuth 2 som du [konfigurerade i föregående steg](#create-secret-data-element) på menyn.
 
 När du är klar väljer du **[!UICONTROL Save]** för att installera tillägget.
 

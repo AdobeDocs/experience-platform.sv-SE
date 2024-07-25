@@ -4,7 +4,7 @@ feature: Attribution AI
 title: Användargränssnittshandbok för Attribution AI
 description: Det här dokumentet är en guide för interaktion med Attribution AI i användargränssnittet för intelligenta tjänster.
 exl-id: 32e1dd07-31a8-41c4-88df-8893ff773f79
-source-git-commit: ba39f62cd77acedb7bfc0081dbb5f59906c9b287
+source-git-commit: c2832821ea6f9f630e480c6412ca07af788efd66
 workflow-type: tm+mt
 source-wordcount: '2392'
 ht-degree: 0%
@@ -63,7 +63,7 @@ När du har valt de datauppsättningar du vill använda väljer du knappen **[!U
 
 ![Välj datauppsättningar](./images/user-guide/select-datasets.png)
 
-Om du väljer informationsikonen ![informationsikonen](./images/user-guide/info-icon.png) bredvid en datauppsättning öppnas förhandsvisningspovern för datauppsättningen.
+Om du väljer informationsikonen ![informationsikonen](/help/images/icons/info.png) bredvid en datauppsättning öppnas förhandsvisningspovern för datauppsättningen.
 
 ![Välj och sök efter datauppsättning](./images/user-guide/dataset-preview.png)
 

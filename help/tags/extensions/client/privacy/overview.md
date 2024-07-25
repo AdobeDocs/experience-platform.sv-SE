@@ -2,7 +2,7 @@
 title: Översikt över sekretesstillägg för Adobe
 description: Läs mer om taggtillägget Adobe Privacy i Adobe Experience Platform.
 exl-id: 8401861e-93ad-48eb-8796-b26ed8963c32
-source-git-commit: b66a50e40aaac8df312a2c9a977fb8d4f1fb0c80
+source-git-commit: c2832821ea6f9f630e480c6412ca07af788efd66
 workflow-type: tm+mt
 source-wordcount: '868'
 ht-degree: 0%
@@ -95,7 +95,7 @@ När du konfigurerar åtgärden för regeln väljer du **[!UICONTROL Adobe Priva
 
 ![Välj åtgärdstyp](../../../images/extensions/client/privacy/action-type.png)
 
-Den högra panelen uppmanar dig att välja ett dataelement som ska fungera som funktionsmakrots återanrop. Välj databasikonen (![Databasikon](../../../images/extensions/client/privacy/database.png)) och välj det dataelement som du skapade tidigare i listan. Välj **[!UICONTROL Keep Changes]** om du vill fortsätta.
+Den högra panelen uppmanar dig att välja ett dataelement som ska fungera som funktionsmakrots återanrop. Välj databasikonen (![Databasikon](/help/images/icons/database.png)) och välj det dataelement som du skapade tidigare i listan. Välj **[!UICONTROL Keep Changes]** om du vill fortsätta.
 
 ![Markera dataelement](../../../images/extensions/client/privacy/add-data-element.png)
 

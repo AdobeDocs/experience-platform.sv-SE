@@ -5,7 +5,7 @@ title: Frågetjänst i Jupyter-anteckningsbok
 type: Tutorial
 description: Med Adobe Experience Platform kan du använda SQL (Structured Query Language) i Data Science Workspace genom att integrera Query Service i JupyterLab som standardfunktion. I den här självstudiekursen visas exempel på SQL-frågor för vanliga användningsområden för att utforska, omvandla och analysera Adobe Analytics-data.
 exl-id: c5ac7d11-a3bd-4ef8-a650-9f496a8bbaa7
-source-git-commit: 81f48de908b274d836f551bec5693de13c5edaf1
+source-git-commit: d1b571fe72208cf2f2ae339273f05cc38dda9845
 workflow-type: tm+mt
 source-wordcount: '810'
 ht-degree: 0%
@@ -98,7 +98,7 @@ Innan du startar den här självstudiekursen måste du ha följande krav:
 
 Ange följande SQL-frågor i enskilda anteckningsboksceller. Kör en fråga genom att markera den i cellen och sedan markera knappen **[!UICONTROL play]**. Slutförda frågeresultat eller felloggar visas under den körda cellen.
 
-När en anteckningsbok är inaktiv under en längre period kan anslutningen mellan anteckningsboken och [!DNL Query Service] brytas. I så fall startar du om [!DNL JupyterLab] genom att välja knappen **Starta om** ![starta om](../images/jupyterlab/user-guide/restart_button.png) i det övre högra hörnet bredvid strömknappen.
+När en anteckningsbok är inaktiv under en längre period kan anslutningen mellan anteckningsboken och [!DNL Query Service] brytas. I så fall startar du om [!DNL JupyterLab] genom att välja knappen **Starta om** ![starta om](/help/images/icons/restart.png) i det övre högra hörnet bredvid strömknappen.
 
 Anteckningsbokens kärna återställs men cellerna finns kvar. Kör om alla celler för att fortsätta där du slutade.
 

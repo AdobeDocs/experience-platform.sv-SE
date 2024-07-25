@@ -4,7 +4,7 @@ solution: Experience Platform
 title: Skapa och redigera klasser i användargränssnittet
 description: Lär dig hur du skapar och redigerar klasser i användargränssnittet i Experience Platform.
 exl-id: 1b4c3996-2319-45dd-9edd-a5bcad46578b
-source-git-commit: c04e5a49f2a4e90345ca20ecd0547d02b5004fcf
+source-git-commit: c2832821ea6f9f630e480c6412ca07af788efd66
 workflow-type: tm+mt
 source-wordcount: '1369'
 ht-degree: 0%
@@ -74,7 +74,7 @@ Markera en alternativknapp om du vill filtrera klasserna baserat på om de är a
 
 ![Arbetsflödet [!UICONTROL Create schema] med sökfältet, [!UICONTROL Custom] och [!UICONTROL Industries] markerat.](../../images/ui/resources/classes/filter-and-search.png)
 
-Det finns info (![En infoikon som kan hjälpa dig att bestämma vilken klass som ska användas.](../../images/ui/resources/classes/info.png)) och förhandsgranska (![En förhandsvisningsikon.](../../images/ui/resources/classes/preview.png)) för varje klass. Informationsikonen öppnar en dialogruta med en beskrivning av klassen och den bransch som den är kopplad till. Förhandsgranskningsikonen öppnar en förhandsvisningsdialogruta för den klass som innehåller ett schemadiagram och dess egenskaper.
+Det finns info (![En infoikon som kan hjälpa dig att bestämma vilken klass som ska användas.](/help/images/icons/info.png)) och förhandsgranska (![En förhandsvisningsikon.](/help/images/icons/preview.png)) för varje klass. Informationsikonen öppnar en dialogruta med en beskrivning av klassen och den bransch som den är kopplad till. Förhandsgranskningsikonen öppnar en förhandsvisningsdialogruta för den klass som innehåller ett schemadiagram och dess egenskaper.
 
 ![En förhandsgranskning av den valda klassen med schemaritecknet och klassegenskaperna markerade.](../../images/ui/resources/classes/class-preview.png)
 

@@ -2,7 +2,7 @@
 title: Anpassade instrumentpaneler
 description: Lär dig hur du skapar och hanterar anpassade instrumentpaneler där du kan skapa, lägga till och redigera anpassade widgetar för att visualisera nyckelvärden.
 exl-id: a9ab83f7-b68d-4dbf-9dc6-ef253df5c82c
-source-git-commit: 17ad52864bbca09844c0241b6451e6811bd8f413
+source-git-commit: c2832821ea6f9f630e480c6412ca07af788efd66
 workflow-type: tm+mt
 source-wordcount: '1552'
 ht-degree: 0%
@@ -30,7 +30,7 @@ Innan du lägger till en anpassad kontrollpanel är kontrollpanelernas lager tom
 
 <!-- >[!NOTE]
 >
->To edit an existing dashboard, select the dashboard name from the inventory list followed by the pencil icon (![A pencil icon.](./images/user-defined-dashboards/edit-icon.png))
+>To edit an existing dashboard, select the dashboard name from the inventory list followed by the pencil icon (![A pencil icon.](/help/images/icons/edit.png))
 >![A custom inventory listed in the dashboard inventory.](./images/user-defined-dashboards/dashbaord-inventory.png "A custom inventory listed in the dashboard inventory."){width="100" zoomable="yes"} -->
 
 Dialogrutan [!UICONTROL Create dashboard] visas. Ange ett användarvänligt, beskrivande namn för den samling widgetar som du vill skapa och välj **[!UICONTROL Save]**.
@@ -68,7 +68,7 @@ Dialogrutan [!UICONTROL Select data model] visas. Välj en datamodell i den vän
 
 >[!TIP]
 >
->Välj informationsikonen (![En informationsikon.](./images/user-defined-dashboards/info-icon.png)) om du vill visa det fullständiga datamodellnamnet om det är för långt att visa i dataraden.
+>Välj informationsikonen (![En informationsikon.](/help/images/icons/info.png)) om du vill visa det fullständiga datamodellnamnet om det är för långt att visa i dataraden.
 
 ![Dialogrutan Välj data.](./images/user-defined-dashboards/select-data-model-dialog.png)
 
@@ -94,17 +94,17 @@ Välj en tabell i listan som är tillgänglig i den vänstra listen för att til
 
 Widgetdispositionen är nu ifylld med data från den tabell du valt.
 
-Datamodellen och den markerade tabellen visas högst upp i den vänstra listen, och de attribut som är tillgängliga för att skapa widgeten visas i kolumnen [!UICONTROL Attributes]. Du kan använda sökfältet för att söka efter attribut i stället för att bläddra i listan, eller ändra den valda datamodellen genom att välja pennikonen (![pennikonen).](./images/user-defined-dashboards/edit-icon.png)) i den vänstra listen.
+Datamodellen och den markerade tabellen visas högst upp i den vänstra listen, och de attribut som är tillgängliga för att skapa widgeten visas i kolumnen [!UICONTROL Attributes]. Du kan använda sökfältet för att söka efter attribut i stället för att bläddra i listan, eller ändra den valda datamodellen genom att välja pennikonen (![pennikonen).](/help/images/icons/edit.png)) i den vänstra listen.
 
 ![En widget med data i widgetdispositionen.](./images/user-defined-dashboards/populated-widget-composer.png)
 
 #### Lägg till och filtrera attribut {#add-and-filter-attributes}
 
-Välj ikonen Lägg till (![En ikon för att lägga till.](./images/user-defined-dashboards/add-icon.png)) bredvid ett attributnamn för att lägga till ett attribut i din widget. I listrutan som visas kan du lägga till ett attribut som X-axel, Y-axel, färg eller filter för widgeten. Med attributet [!UICONTROL Color] kan du differentiera resultatet av X- och Y-axelmarkeringarna baserat på färg. Det gör du genom att dela upp resultaten i olika färger baserat på deras komposition i ett tredje attribut.
+Välj ikonen Lägg till (![En ikon för att lägga till.](/help/images/icons/add-circle.png)) bredvid ett attributnamn för att lägga till ett attribut i din widget. I listrutan som visas kan du lägga till ett attribut som X-axel, Y-axel, färg eller filter för widgeten. Med attributet [!UICONTROL Color] kan du differentiera resultatet av X- och Y-axelmarkeringarna baserat på färg. Det gör du genom att dela upp resultaten i olika färger baserat på deras komposition i ett tredje attribut.
 
 >[!TIP]
 >
->Om du vill vända placeringen av X- och Y-axeln markerar du upp- och nedpilen (![Ikonen med upp- och nedpilen.](./images/user-defined-dashboards/switch-axis-icon.png)) om du vill ändra deras disposition.
+>Om du vill vända placeringen av X- och Y-axeln markerar du upp- och nedpilen (![Ikonen med upp- och nedpilen.](/help/images/icons/switch.png)) om du vill ändra deras disposition.
 
 ![Widgetdispositionen med listrutan för att lägga till ikon markerad.](./images/user-defined-dashboards/attributes-dropdown.png)
 
@@ -132,7 +132,7 @@ Du kan också skapa en egen punkt för att filtrera data efter. Välj **[!UICONT
 
 ### Widget-egenskaper
 
-Välj egenskapsikonen (![Egenskapsikonen.](./images/user-defined-dashboards/properties-icon.png)) till höger för att öppna egenskapspanelen. Ange ett namn för widgeten i textfältet [!UICONTROL Widget title] på panelen [!UICONTROL Properties].
+Välj egenskapsikonen (![Egenskapsikonen.](/help/images/icons/properties.png)) till höger för att öppna egenskapspanelen. Ange ett namn för widgeten i textfältet [!UICONTROL Widget title] på panelen [!UICONTROL Properties].
 
 ![Egenskapspanelen med egenskapsikonen och widgetens titelfält markerat.](./images/user-defined-dashboards/properties-panel.png)
 
@@ -146,7 +146,7 @@ När du sparar i widgetens disposition sparas widgeten lokalt på din instrument
 
 >[!TIP]
 >
->Välj egenskapsikonen (![Egenskapsikonen.](./images/user-defined-dashboards/properties-icon.png)) bredvid instrumentpanelens namn för att se information om hur den skapades. Du kan ändra namnet på kontrollpanelen i den dialogruta som visas.
+>Välj egenskapsikonen (![Egenskapsikonen.](/help/images/icons/properties.png)) bredvid instrumentpanelens namn för att se information om hur den skapades. Du kan ändra namnet på kontrollpanelen i den dialogruta som visas.
 
 Du kan ordna om widgetar och ändra storlek på dem i den här arbetsytan. Välj **[!UICONTROL Save]** om du vill bevara instrumentpanelens namn och konfigurerade layout.
 
@@ -162,7 +162,7 @@ När du har skapat en widget kan du redigera, duplicera eller ta bort hela widge
 >
 >Om du vill växla mellan dina befintliga anpassade kontrollpaneler väljer du Kontrollpaneler i det vänstra navigeringsfältet och sedan instrumentpanelens namn i lagerlistan.
 
-Välj pennikonen (![En pennikon.](./images/user-defined-dashboards/edit-icon.png)) längst upp till höger på din anpassade instrumentpanel för att gå till redigeringsläget.
+Välj pennikonen (![En pennikon.](/help/images/icons/edit.png)) längst upp till höger på din anpassade instrumentpanel för att gå till redigeringsläget.
 
 ![En anpassad kontrollpanel med pennikonen markerad.](./images/user-defined-dashboards/edit-mode.png)
 

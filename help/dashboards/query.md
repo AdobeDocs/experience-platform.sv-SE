@@ -4,7 +4,7 @@ title: Utforska, verifiera och bearbeta Dashboard-datauppsättningar med hjälp 
 type: Documentation
 description: Lär dig hur du använder frågetjänsten för att utforska och bearbeta rådatauppsättningar som ger möjlighet att skapa profiler, målgrupper och målpaneler i Experience Platform.
 exl-id: 0087dcab-d5fe-4a24-85f6-587e9ae74fb8
-source-git-commit: e0af1f0110ceb514a5b249c42a05bf780ea834c6
+source-git-commit: c2832821ea6f9f630e480c6412ca07af788efd66
 workflow-type: tm+mt
 source-wordcount: '934'
 ht-degree: 0%
@@ -33,7 +33,7 @@ Du kan använda [!DNL Query Service] för att fråga efter rådatauppsättningar
 >
 >Systemgenererade datauppsättningar är dolda som standard. Som standard visar fliken [!UICONTROL Browse] bara datauppsättningar som du har inkapslat data i.
 
-Om du vill visa systemgenererade datauppsättningar väljer du filterikonen (![En filterikon.](./images/query/filter.png)) till vänster om sökfältet.
+Om du vill visa systemgenererade datauppsättningar väljer du filterikonen (![En filterikon.](/help/images/icons/filter.png)) till vänster om sökfältet.
 
 ![Fliken Bläddra bland datauppsättningar med filterikonen markerad.](./images/query/filter-datasets.png)
 

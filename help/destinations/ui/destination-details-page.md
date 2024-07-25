@@ -3,7 +3,7 @@ keywords: mål;mål;destinationsdetaljsida;målinformationssida
 title: Visa målinformation
 description: På informationssidan för ett enskilt mål finns en översikt över målinformationen. Målinformationen innehåller målnamn, ID, målgrupper mappade till målet och kontroller för att redigera aktiveringen och aktivera och inaktivera dataflödet.
 exl-id: e44e2b2d-f477-4516-8a47-3e95c2d85223
-source-git-commit: de867c1747fcdb14d8eb72bd3432c177e680c4fa
+source-git-commit: c2832821ea6f9f630e480c6412ca07af788efd66
 workflow-type: tm+mt
 source-wordcount: '1136'
 ht-degree: 0%
@@ -28,19 +28,19 @@ Följ stegen nedan för att visa mer information om ett befintligt mål. Du kan 
 
    ![Bläddra bland mål](../assets/ui/details-page/browse-destinations.png)
 
-1. Välj filterikonen ![Filterikon](../assets/ui/details-page/filter.png) längst upp till vänster för att öppna sorteringspanelen. På sorteringspanelen finns en lista med alla mål. Du kan markera mer än ett mål i listan om du vill visa ett filtrerat urval av dataflöden som är kopplade till det valda målet.
+2. Välj filterikonen ![Filterikon](/help/images/icons/filter.png) längst upp till vänster för att öppna sorteringspanelen. På sorteringspanelen finns en lista med alla mål. Du kan markera mer än ett mål i listan om du vill visa ett filtrerat urval av dataflöden som är kopplade till det valda målet.
 
    ![Filtrera mål](../assets/ui/details-page/filter-destinations.png)
 
-1. Markera den rad i målet som du vill visa mer information om. Då visas en högerkant med information om målet, inklusive mål-ID, användaren som skapade målanslutningen och annan information.
+3. Markera den rad i målet som du vill visa mer information om. Då visas en högerkant med information om målet, inklusive mål-ID, användaren som skapade målanslutningen och annan information.
 
    ![Mål-ID i den högra listen](../assets/ui/details-page/right-rail-info-including-destination-id.png)
 
-1. Du kan också visa annan information om målet genom att välja *namnet på målet* som du vill visa.
+4. Du kan också visa annan information om målet genom att välja *namnet på målet* som du vill visa.
 
    ![Välj mål](../assets/ui/details-page/destination-select.png)
 
-1. Målets informationssida visas i den högra listen med de tillgängliga kontrollerna.
+5. Målets informationssida visas i den högra listen med de tillgängliga kontrollerna.
 
    ![Målinformation](../assets/ui/details-page/destination-details.png)
 

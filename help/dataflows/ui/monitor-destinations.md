@@ -4,7 +4,7 @@ solution: Experience Platform
 title: Övervaka dataflöden för mål i användargränssnittet
 type: Tutorial
 exl-id: 8eb7bb3c-f2dc-4dbc-9cf5-3d5d3224f5f1
-source-git-commit: 93430a9ba5911bf8dc901ec3f82f06a6b25b8dc4
+source-git-commit: 19f1f64434d655d3b19260460519018fc9c8e174
 workflow-type: tm+mt
 source-wordcount: '3183'
 ht-degree: 0%
@@ -178,7 +178,7 @@ På informationssidan visas också en lista över misslyckade identiteter och id
 >title="Aktivering"
 >abstract="Målaktiveringsvyn innehåller information om aktiveringsstatus för en målgrupp och mått från kundprofilen i realtid för att generera unika identiteter."
 
-Om du vill komma åt kontrollpanelen [!UICONTROL Monitoring] väljer du **[!UICONTROL Monitoring]** (![övervakningsikon](../assets/ui/monitor-destinations/monitoring-icon.png)) i den vänstra navigeringen. Välj [!UICONTROL Destinations] på sidan [!UICONTROL Monitoring]. Kontrollpanelen [!UICONTROL Monitoring] innehåller mått och information om målkörningsjobb.
+Om du vill komma åt kontrollpanelen [!UICONTROL Monitoring] väljer du **[!UICONTROL Monitoring]** (![övervakningsikon](/help/images/icons/monitoring.png)) i den vänstra navigeringen. Välj [!UICONTROL Destinations] på sidan [!UICONTROL Monitoring]. Kontrollpanelen [!UICONTROL Monitoring] innehåller mått och information om målkörningsjobb.
 
 Använd kontrollpanelen [!UICONTROL Destinations] för att få en övergripande uppfattning om hälsotillståndet för dina aktiveringsflöden. Börja med att få samlade insikter om alla grupper och direktuppspelningsmål och fördjupa er sedan i detaljerade vyer för dataflöden, dataflöden och aktiverade målgrupper för en djupgående genomgång av era aktiveringsdata. Skärmarna på kontrollpanelen [!UICONTROL Monitoring] innehåller åtgärdbara insikter via mått och felbeskrivningar som hjälper dig att felsöka eventuella problem som kan uppstå i dina aktiveringsscenarier.
 
@@ -199,7 +199,7 @@ Som standard innehåller de data som visas aktiveringsinformationen från de sen
 
 ![Ändra datumintervallkontroll för sökning markerat för aktiverade mål](../assets/ui/monitor-destinations/dashboard-graph-change-date-range.png)
 
-Använd pilikonen (![pilikon](/help/dataflows/assets/ui/monitor-destinations/chevron-up.png)) för att expandera eller stänga av korten högst upp på skärmen. Korten visar snabböversiktsinformation om aktiveringsdetaljer baserat på måltyp - direktuppspelning eller batch:
+Använd pilikonen (![pilikon](/help/images/icons/chevron-up.png)) för att expandera eller stänga av korten högst upp på skärmen. Korten visar snabböversiktsinformation om aktiveringsdetaljer baserat på måltyp - direktuppspelning eller batch:
 
 - **[!UICONTROL Streaming activation rate]**: Representerar procentandelen mottagna identiteter som antingen har aktiverats eller hoppats över. Formeln som används för att beräkna den här procentandelen beskrivs vidare ovan på den här sidan i avsnittet [Dataflöd för direktuppspelningsmål](#dataflow-runs-for-streaming-destinations).
 - **[!UICONTROL Batch failed dataflow runs]**: Representerar antalet misslyckade dataflödeskörningar i det valda tidsintervallet.
@@ -226,13 +226,13 @@ Du kan även filtrera listan över destinationer så att endast den valda destin
 
 ![Filtrera mål med listruteväljare](../assets/ui/monitor-destinations/dashboard-destinations-filter-dropdown.png)
 
-Dessutom kan du ange ett mål i sökfältet för att isolera till ett enda mål. Om du vill visa målets dataflöden kan du markera filtret ![filter](../assets/ui/monitor-destinations/filter-add.png) bredvid det och visa en lista över de aktiva dataflödena.
+Dessutom kan du ange ett mål i sökfältet för att isolera till ett enda mål. Om du vill visa målets dataflöden kan du markera filtret ![filter](/help/images/icons/filter-add.png) bredvid det och visa en lista över de aktiva dataflödena.
 
 ![Filtrera mål med hjälp av sökfältet som är markerat i övervakningsvyn.](../assets/ui/monitor-destinations/filtered-destinations.png)
 
 Om du vill visa alla befintliga dataflöden för alla mål väljer du **[!UICONTROL Dataflows]**.
 
-En lista över dataflöden visas, sorterad efter den senaste dataflödeskörningen. Du kan se ytterligare information om ett specifikt dataflöde genom att leta upp det mål som du vill övervaka, markera filtret ![filter](../assets/ui/monitor-destinations/filter-add.png) bredvid det och sedan välja filtret ![filter](../assets/ui/monitor-destinations/filter-add.png) bredvid det dataflöde som du vill ha mer information om.
+En lista över dataflöden visas, sorterad efter den senaste dataflödeskörningen. Du kan se ytterligare information om ett specifikt dataflöde genom att leta upp det mål som du vill övervaka, markera filtret ![filter](/help/images/icons/filter-add.png) bredvid det och sedan välja filtret ![filter](/help/images/icons/filter-add.png) bredvid det dataflöde som du vill ha mer information om.
 
 ![Alla dataflöden är markerade på kontrollpanelen.](../assets/ui/monitor-destinations/dashboard-dataflows.png)
 
@@ -269,7 +269,7 @@ Du aktiverar till exempel en publik som heter&quot;Lojalitetsmedlemmar i Kalifor
 ![Publiker som är markerade på dataflödespanelen.](../assets/ui/monitor-destinations/dashboard-segments-view.png)
 
 I målgruppsnivåvyn sammanställs mätvärdena över flera dataflöden inom det valda tidsintervallet. Om det finns flera dataflödeskörningar kan du gå nedåt från målgruppsnivån för att se detaljerna för varje dataflödeskörning, filtrerade efter den valda målgruppen.
-Använd filterknappen ![filter](../assets/ui/monitor-destinations/filter-add.png) för att gå ned i dataflödesvyn för varje målgrupp i dataflödet.
+Använd filterknappen ![filter](/help/images/icons/filter-add.png) för att gå ned i dataflödesvyn för varje målgrupp i dataflödet.
 
 ### Körningssida för dataflöde {#dataflow-runs-page}
 
@@ -283,7 +283,7 @@ När du går ned på dataflödets körningssida från vyn [på målgruppsnivå](
 
 ![Alternativknappar som visar hur du filtrerar dataflöden för målgrupper.](/help/dataflows/assets/ui/monitor-destinations/dataflow-runs-segment-filter.png)
 
-Om du vill visa mer information om en viss dataflödeskörning väljer du filtret ![filter](../assets/ui/monitor-destinations/filter-add.png) bredvid starttiden för dataflödeskörningen för att visa informationssidan för dataflödeskörningen.
+Om du vill visa mer information om en viss dataflödeskörning väljer du filtret ![filter](/help/images/icons/filter-add.png) bredvid starttiden för dataflödeskörningen för att visa informationssidan för dataflödeskörningen.
 
 ![Dataflödet kör filter i kontrollpanelen för att utforska mer information för en viss dataflödeskörning.](../assets/ui/monitor-destinations/dataflow-runs-filter.png)
 

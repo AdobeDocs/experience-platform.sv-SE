@@ -2,7 +2,7 @@
 title: Parametriserade frågor
 description: Lär dig hur du använder parametriserade frågor i Adobe Experience Platform-gränssnittet.
 exl-id: 5c5ac691-5e29-4262-ba53-84dcc56e744f
-source-git-commit: 9cf8dabfdf3f20f4032a79ba191bd2dc8123a369
+source-git-commit: c2832821ea6f9f630e480c6412ca07af788efd66
 workflow-type: tm+mt
 source-wordcount: '680'
 ht-degree: 0%
@@ -47,7 +47,7 @@ SELECT
 
 Om du vill skapa en parametriserad fråga i användargränssnittet går du till Frågeredigeraren. Mer information finns i avsnittet [Åtkomst till frågeredigeraren](./user-guide.md#accessing-query-editor).
 
-Använd preface `'$'` för att ange en frågeparameter i frågan i textredigeraren. Välj sedan fliken **[!UICONTROL Query parameters]** bredvid [!UICONTROL Console] och lägg till det värde som saknas för nyckeln. Frågan kan inte utföras om du inte lägger till ett värde till någon av nycklarna. En varningsikon (![En varningsikon.](../images/ui/parameterized-queries/alert-icon.png)) visas i avsnittet Frågeparametrar bredvid tomma [!UICONTROL Value] indatafält.
+Använd preface `'$'` för att ange en frågeparameter i frågan i textredigeraren. Välj sedan fliken **[!UICONTROL Query parameters]** bredvid [!UICONTROL Console] och lägg till det värde som saknas för nyckeln. Frågan kan inte utföras om du inte lägger till ett värde till någon av nycklarna. En varningsikon (![En varningsikon.](/help/images/icons/alert.png)) visas i avsnittet Frågeparametrar bredvid tomma [!UICONTROL Value] indatafält.
 
 >[!NOTE]
 >

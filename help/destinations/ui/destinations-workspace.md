@@ -3,7 +3,7 @@ keywords: plattform;mål;målarbetsyta;arbetsyta;ui;destinationer ui;katalog;des
 title: Arbetsytan Destinationer
 description: 'Arbetsytan Destinationer består av fem avsnitt: Översikt, Katalog, Bläddra, Konton och Systemvy. De beskrivs i avsnitten nedan.'
 exl-id: 0f46f08d-0fe3-441d-933a-86bc146c0f19
-source-git-commit: dad07add8c5f9cc98a187c2e2222a51611dbd1a2
+source-git-commit: c2832821ea6f9f630e480c6412ca07af788efd66
 workflow-type: tm+mt
 source-wordcount: '1116'
 ht-degree: 0%
@@ -69,9 +69,9 @@ Fliken **[!UICONTROL Accounts]** visar information om anslutningar som du har up
 
 >[!TIP]
 >
-> * Markera ellipsen (`...`) i kolumnen [!UICONTROL Platform] och använd kontrollen ![Aktivera kontroll ](../assets/ui/workspace/add-data-symbol.png)**[!UICONTROL Activate]**/**[!UICONTROL Activate audiences]**/**[!UICONTROL Export datasets]**för att exportera målgrupper eller datauppsättningar till det målet.
-> * Markera ellipsen (`...`) i kolumnen [!UICONTROL Platform] och använd kontrollen ![Redigera information ](../assets/ui/workspace/pencil-icon.png)**[!UICONTROL Edit details]**för att [uppdatera](update-accounts.md) informationen för ett befintligt målkonto.
-> * Markera ellipsen (`...`) i kolumnen [!UICONTROL Platform] och använd kontrollen ![Ta bort ](../assets/ui/workspace/delete-destination-symbol.png)**[!UICONTROL Delete]**för att [ta bort](delete-destination-account.md) ett befintligt målkonto.
+> * Markera ellipsen (`...`) i kolumnen [!UICONTROL Platform] och använd kontrollen ![Aktivera kontroll ](/help/images/icons/data-add.png)**[!UICONTROL Activate]**/**[!UICONTROL Activate audiences]**/**[!UICONTROL Export datasets]**för att exportera målgrupper eller datauppsättningar till det målet.
+> * Markera ellipsen (`...`) i kolumnen [!UICONTROL Platform] och använd kontrollen ![Redigera information ](/help/images/icons/edit.png)**[!UICONTROL Edit details]**för att [uppdatera](update-accounts.md) informationen för ett befintligt målkonto.
+> * Markera ellipsen (`...`) i kolumnen [!UICONTROL Platform] och använd kontrollen ![Ta bort ](/help/images/icons/delete.png)**[!UICONTROL Delete]**för att [ta bort](delete-destination-account.md) ett befintligt målkonto.
 
 ![Fliken Konton](../assets/ui/workspace/destination-account-options.png)
 
@@ -91,10 +91,10 @@ Fliken **[!UICONTROL Browse]** visar de mål som du har upprättat en anslutning
 
 >[!TIP]
 >
-> * Markera ellipsen (`...`) i kolumnen [!UICONTROL Name] och använd kontrollen ![Aktivera målgrupper ](../assets/ui/workspace/add-data-symbol.png)**[!UICONTROL Activate]**för att exportera målgrupper eller datauppsättningar till det målet.
-> * Markera ellipsen (`...`) i kolumnen [!UICONTROL Name] och använd kontrollen ![Ta bort ](../assets/ui/workspace/delete-destination-symbol.png)**[!UICONTROL Delete]**för att [ta bort](delete-destinations.md) en befintlig anslutning till ett mål.
-> * Markera ellipsen (`...`) i kolumnen [!UICONTROL Name] och använd kontrollen ![Visa i övervakningskontroll ](../assets/ui/workspace/monitoring-icon.png)**[!UICONTROL View in monitoring]**för att visa aktiveringsinformation för det här målet på kontrollpanelen [Övervakning](/help/dataflows/ui/monitor-destinations.md#monitoring-destinations-dashboard).
-> * Markera ellipsen (`...`) i kolumnen [!UICONTROL Name] och använd kontrollen ![Prenumerera på aviseringar ](../assets/ui/workspace/alerts-icon.png)**[!UICONTROL Subscribe to alerts]**för att prenumerera på aviseringar om måldataflöde. Du kan prenumerera på aviseringar för att få meddelanden om status, lyckade eller misslyckade flödeskörningar. Se [Prenumerera på destinationsvarningar i sitt sammanhang](alerts.md) om du vill ha mer information om måldataflödesvarningar.
+> * Markera ellipsen (`...`) i kolumnen [!UICONTROL Name] och använd kontrollen ![Aktivera målgrupper ](/help/images/icons/data-add.png)**[!UICONTROL Activate]**för att exportera målgrupper eller datauppsättningar till det målet.
+> * Markera ellipsen (`...`) i kolumnen [!UICONTROL Name] och använd kontrollen ![Ta bort ](/help/images/icons/delete.png)**[!UICONTROL Delete]**för att [ta bort](delete-destinations.md) en befintlig anslutning till ett mål.
+> * Markera ellipsen (`...`) i kolumnen [!UICONTROL Name] och använd kontrollen ![Visa i övervakningskontroll ](/help/images/icons/monitoring.png)**[!UICONTROL View in monitoring]**för att visa aktiveringsinformation för det här målet på kontrollpanelen [Övervakning](/help/dataflows/ui/monitor-destinations.md#monitoring-destinations-dashboard).
+> * Markera ellipsen (`...`) i kolumnen [!UICONTROL Name] och använd kontrollen ![Prenumerera på aviseringar ](/help/images/icons/alert-add.png)**[!UICONTROL Subscribe to alerts]**för att prenumerera på aviseringar om måldataflöde. Du kan prenumerera på aviseringar för att få meddelanden om status, lyckade eller misslyckade flödeskörningar. Se [Prenumerera på destinationsvarningar i sitt sammanhang](alerts.md) om du vill ha mer information om måldataflödesvarningar.
 
 ![Fliken Bläddra](../assets/ui/workspace/browse-tab.png)
 
