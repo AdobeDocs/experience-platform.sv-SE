@@ -1,9 +1,10 @@
 ---
 title: Utforska, felsöka och verifiera batchmatning med SQL
-description: Lär dig förstå och hantera dataöverföringsprocessen i Adobe Experience Platform. Det här dokumentet innehåller information om hur du verifierar batchar, hanterar fel och frågar inlästa data.
-source-git-commit: 37b241f15f297263cc7aa20f382c115a2d131c7e
+description: Lär dig förstå och hantera dataöverföringsprocessen i Adobe Experience Platform. I det här dokumentet finns information om hur du verifierar batchar och frågar efter inlästa data.
+exl-id: 8f49680c-42ec-488e-8586-50182d50e900
+source-git-commit: 692a061e3b2facbfafc65f966832230187f5244d
 workflow-type: tm+mt
-source-wordcount: '1201'
+source-wordcount: '1146'
 ht-degree: 0%
 
 ---
@@ -12,7 +13,6 @@ ht-degree: 0%
 
 I det här dokumentet förklaras hur du verifierar och validerar poster i kapslade batchar med SQL. I det här dokumentet får du lära dig att:
 
-- Hantera fel som kan uppstå under importen
 - Få tillgång till data och batchmetadata
 - Felsöka och säkerställ dataintegriteten genom att fråga grupper
 
@@ -26,7 +26,6 @@ För att du ska få en bättre förståelse för de begrepp som beskrivs i det h
 
 - **Inläsning av data**: Se [översikten över datafrågor](../../ingestion/home.md) om du vill veta grunderna för hur data importeras till plattformen, inklusive de olika metoder och processer som används.
 - **Gruppinmatning**: Se [API-översikt för gruppinmatning](../../ingestion/batch-ingestion/overview.md) om du vill veta mer om grundläggande begrepp för gruppinmatning. Närmare bestämt vad en&quot;batch&quot; är och hur den fungerar i plattformens dataöverföringsprocess.
-- **Felhantering vid datainmatning**: Lär dig mer om de [olika typer av fel som kan inträffa](../../ingestion/quality/error-diagnostics.md#retrieve-errors) vid datainmatning och [hur du hanterar dem](../../ingestion/batch-ingestion/troubleshooting.md#what-if-a-batch-fails).
 - **Systemmetadata i datauppsättningar**: Se [Katalogtjänstöversikt](../../catalog/home.md) om du vill veta hur systemmetadatafält används för att spåra och fråga efter inlästa data.
 - **Experience Data Model (XDM)**: Läs [schemas användargränssnittsöversikt](../../xdm/ui/overview.md) och [&#39;basics of schema composition&#39;](../../xdm/schema/composition.md) om du vill veta mer om XDM-scheman och hur de representerar och validerar strukturen och formatet för data som hämtas till plattformen.
 
@@ -57,11 +56,7 @@ Resultatet av den här frågan visas i bilden nedan.
 
 Dessa resultat visar att antalet indatabatchar inte nödvändigtvis matchar antalet utdatabatchar eftersom systemet avgör det mest effektiva sättet att gruppera och lagra data i datasjön.
 
-I följande exempel används en annan datauppsättning för att illustrera den här punkten.
-
->[!NOTE]
->
->Om du vill testa det här exemplet kan du importera den angivna exempelfilen ([`drug_checkout_data`](../images/use-cases/drug_checkout_data.zip)) till plattformen och konfigurera schemamappningen.
+I det här exemplet antas du ha kapslat en CSV-fil till Platform och skapat en datauppsättning med namnet `drug_checkout_data`.
 
 Filen `drug_checkout_data` är en djupt kapslad uppsättning med 35 000 poster. Använd SQL-satsen `SELECT * FROM drug_orders;` för att förhandsgranska den första uppsättningen poster i den JSON-baserade `drug_orders`-datauppsättningen.
 
@@ -97,7 +92,7 @@ Validera och verifiera sedan de poster som har importerats till datauppsättning
 
 >[!TIP]
 >
->Om du vill hämta batch-ID:t och frågeposterna som är kopplade till det batch-ID:t måste du först skapa en batch inom plattformen. Om du vill testa processen själv kan du importera CSV-data till Platform. Läs guiden om hur du [mappar en CSV-fil till ett befintligt XDM-schema med hjälp av AI-genererade rekommendationer](../../ingestion/tutorials/map-csv/recommendations.md). Det finns en [exempelprofil-CSV-fil](../images/use-cases/sample-profiles.csv) här.
+>Om du vill hämta batch-ID:t och frågeposterna som är kopplade till det batch-ID:t måste du först skapa en batch inom plattformen. Om du vill testa processen själv kan du importera CSV-data till Platform. Läs guiden om hur du [mappar en CSV-fil till ett befintligt XDM-schema med hjälp av AI-genererade rekommendationer](../../ingestion/tutorials/map-csv/recommendations.md).
 
 När du har infogat en grupp måste du navigera till [!UICONTROL Datasets activity tab] för den datauppsättning som du har infogat data i.
 
