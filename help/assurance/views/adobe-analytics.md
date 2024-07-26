@@ -2,14 +2,18 @@
 title: Adobe Analytics View in Assurance
 description: Den här guiden förklarar hur du använder Adobe Analytics med Adobe Experience Platform Assurance.
 exl-id: e5cc72b0-d6d6-430b-9321-4835c1f77581
-source-git-commit: 05a7b73da610a30119b4719ae6b6d85f93cdc2ae
+source-git-commit: 515f58175a8ccba03581ce4d7faf23fdfed3571e
 workflow-type: tm+mt
-source-wordcount: '352'
+source-wordcount: '394'
 ht-degree: 1%
 
 ---
 
 # Adobe Analytics-vy i Assurance
+
+>[!IMPORTANT]
+>
+>Vyn Analyshändelser samlas i **Analytics Events 2.0 (Beta)-plugin**.  Den kommer att tas bort från försäkringen i framtiden. Vi rekommenderar att du använder **Analytics Events 2.0 (Beta)-plugin** för din Analytics-felsökning för Assurance-sessionerna.
 
 Integreringen av Adobe Experience Platform Assurance med Adobe Analytics ger en mer detaljerad bild av SDK-händelser som användare kan felsöka och validera sin Adobe Analytics-implementering. I vyn visas nu livscykel och händelse-/tillståndshändelser som skickats till Adobe Analytics från [Adobe Experience Platform SDK](https://developer.adobe.com/client-sdks/documentation/adobe-analytics/). Vyn innehåller även information om svar som ger information om hur händelserna bearbetades efter att de olika rapportsvitens bearbetningsregler har tillämpats.
 
@@ -24,7 +28,7 @@ Kontrollera att du har följande tjänster innan du fortsätter:
 
 Läs [implementeringsguiden](../tutorials/implement-assurance.md) om du vill lära dig hur du installerar Assurance i ditt program.
 
-## Post-bearbetad status
+## Efterbearbetad status
 
 När SDK har gjort en nätverksbegäran med Adobe Analytics får du veta om Assurance kunde hämta efterbearbetningsinformationen för Adobe Analytics-begäran.
 
@@ -47,4 +51,4 @@ För en Analytics-spårningshändelse innehåller den detaljerade vyn följande 
 
 - En SDK Analytics-begärandehändelse som har sitt ursprung.
 - OOTB-metadata och kontextdata från begäran, till exempel rapportsviter-ID, SDK-tilläggsversioner, OOTB-kontextdata osv.
-- Post bearbetade information om Analytics-händelsen som innehåller mappningen av varv, varv, props och så vidare.
+- Efterbearbetad information om Analytics-händelsen som innehåller mappningen av varv, varv, props osv.
