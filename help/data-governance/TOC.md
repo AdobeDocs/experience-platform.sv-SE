@@ -5,9 +5,9 @@ breadcrumb-title: Användarhandbok om datastyrning
 user-guide-description: Tvinga dataanvändningsbegränsningar genom användning av etiketter, marknadsföringsåtgärder och styrningspolicyer.
 feature: Data Governance
 role: User,Developer,Admin
-source-git-commit: e828485ad5b0904c9dc66b43d1cdb3c4707885b1
+source-git-commit: 8837d719fbdf2864995c0d73a87a41c4b119cfb7
 workflow-type: tm+mt
-source-wordcount: '90'
+source-wordcount: '99'
 ht-degree: 34%
 
 ---
@@ -30,6 +30,10 @@ ht-degree: 34%
    * [Översikt](enforcement/overview.md)
    * [Automatisk kontroll](enforcement/auto-enforcement.md)
    * [API-baserad tillämpning](enforcement/api-enforcement.md)
+* MTLS-tjänst-API {#mtls-api}
+   * [Översikt](mtls-api/overview.md)
+   * [Komma igång](mtls-api/getting-started.md)
+   * [Slutpunkt för offentligt certifikat](mtls-api/public-certificate-endpoint.md)
 * API för principtjänst {#api}
    * [Översikt](api/overview.md)
    * [Komma igång](api/getting-started.md)

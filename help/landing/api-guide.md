@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Komma igång med Adobe Experience Platform API:er
 description: Adobe Experience Platform tillhandahåller API-tjänster som är nära kopplade till varandra. Den här handboken innehåller information om tillgängliga tjänster, nödvändiga huvuden för CRUD-åtgärder, felmeddelanden, Postman-samlingar och exempel på API-anrop.
 exl-id: a362bcb4-a908-43a8-abd3-0e1d21cb9117
-source-git-commit: c728d63c22593ca56999dd0bb6679dea7de0e00a
+source-git-commit: f0b9d414d7b08015478c132de6910629d86c9cf9
 workflow-type: tm+mt
-source-wordcount: '1405'
+source-wordcount: '1446'
 ht-degree: 0%
 
 ---
@@ -124,8 +124,10 @@ Mer information om specifika slutpunkter i plattforms-API:er, inklusive obligato
 | [[!DNL Catalog Service] API-guide](.././catalog/api/getting-started.md) | Med API:t [!DNL Catalog Service] kan utvecklare hantera datauppsättningsmetadata i Adobe Experience Platform. Detta omfattar dataplatser, bearbetningsfaser, fel som inträffade under bearbetningen samt datarapporter. |
 | [[!DNL Data Access] API-guide](.././data-access/api.md) | Med API:t [!DNL Data Access] kan utvecklare hämta information om inkapslade datauppsättningar i Experience Platform. Detta inkluderar åtkomst och hämtning av datauppsättningsfiler, hämtning av rubrikinformation, listning av misslyckade och slutförda grupper samt hämtning av CSV-/Parquet-filer för förhandsgranskning. |
 | [[!DNL Dataset Service] API-guide](.././data-governance/labels/dataset-api.md) | Med API:t för datauppsättningstjänsten kan du tillämpa och redigera användningsetiketter för datauppsättningar. Den ingår i Adobe Experience Platform datakatalogfunktioner, men är skild från katalogtjänstens API, som hanterar datauppsättningsmetadata. |
+| [[!DNL Data Hygiene API guide]](../hygiene/api/overview.md) | Med API:t [!DNL Data Hygiene] kan du programmässigt korrigera eller ta bort dina kunders lagrade personuppgifter i Adobe Experience Platform, samt schemalägga förfallodatum för datauppsättningar. |
 | [[!DNL Edge Network Server] API-guide](../server-api/overview.md) | [!DNL Edge Network Server API] kan användas för en mängd olika användningsfall för datainsamling, personalisering, annonsering och marknadsföring. [!DNL Server API] kan användas på servrar, [!DNL IoT]-enheter, digitalboxar och en mängd andra enheter. |
 | [[!DNL Identity Service] API-guide](.././identity-service/api/getting-started.md) | Med API:t [!DNL Identity Service] kan utvecklare hantera identifieringen av dina kunder i realtid av olika enheter, kanaler och nära nog alla kanaler med hjälp av identitetsdiagram i Adobe Experience Platform. |
+| [[!DNL MTLS Service API guide]](../data-governance/mtls-api/overview.md) | Med API:t [!DNL MTLS Service] kan du på ett säkert sätt hämta offentliga certifikat som utfärdats av Adobe för din organisation. |
 | [[!DNL Observability Insights] API-guide](.././observability/api/overview.md) | [!DNL Observability Insights] är ett RESTful-API som gör att utvecklare kan visa viktiga observationsvärden i Adobe Experience Platform. Dessa mätvärden ger insikter i statistik om plattformsanvändning, hälsokontroller för plattformstjänster, historiska trender och resultatindikatorer för olika plattformsfunktioner. |
 | [[!DNL Policy Service] API-guide](.././data-governance/api/overview.md) <br> (datastyrning) | Med API:t [!DNL Policy Service] kan du skapa och hantera dataanvändningsetiketter och principer för att avgöra vilka marknadsföringsåtgärder som kan vidtas mot data som innehåller vissa dataanvändningsetiketter. Information om hur du använder etiketter på datauppsättningar och fält finns i [[!DNL Dataset Service] API](.././data-governance/labels/dataset-api.md)-handboken |
 | [[!DNL Privacy Service] API-guide](.././privacy-service/api/getting-started.md) | Med API:t [!DNL Privacy Service] kan utvecklare skapa och hantera kundförfrågningar för att få tillgång till eller ta bort sina personuppgifter mellan Experience Cloud-program, i enlighet med gällande sekretessbestämmelser. |

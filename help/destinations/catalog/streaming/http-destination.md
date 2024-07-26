@@ -4,9 +4,9 @@ title: HTTP API-anslutning
 description: Använd HTTP API-målet i Adobe Experience Platform för att skicka profildata till HTTP-slutpunkter från tredje part för att köra egna analyser eller utföra andra åtgärder som du kan behöva för profildata som exporteras utanför Experience Platform.
 badgeUltimate: label="Ultimate" type="Positive"
 exl-id: 165a8085-c8e6-4c9f-8033-f203522bb288
-source-git-commit: c35b43654d31f0f112258e577a1bb95e72f0a971
+source-git-commit: fffeb2221c4e25bae8386419de1646c89aa93a06
 workflow-type: tm+mt
-source-wordcount: '2555'
+source-wordcount: '2580'
 ht-degree: 0%
 
 ---
@@ -76,6 +76,8 @@ Om du vill använda [!DNL mTLS] med [!DNL HTTP API] mål måste [!DNL TLS]-proto
 Om du vill kontrollera att [!DNL Common Name] (CN) och [!DNL Subject Alternative Names] (SAN) utför ytterligare tredjepartsvalidering kan du hämta certifikatet nedan:
 
 * [Allmänt certifikat för HTTP API mTLS](../../../landing/images/governance-privacy-security/encryption/destinations-public-certificate.zip)
+
+Du kan även hämta offentliga certifikat på ett säkert sätt genom att göra en GET-förfrågan till MTLS-slutpunkten. Mer information finns i [dokumentationen för slutpunkten för det offentliga certifikatet](../../../data-governance/mtls-api/public-certificate-endpoint.md).
 
 ## IP-adress tillåtelselista {#ip-address-allowlist}
 

@@ -2,9 +2,9 @@
 title: Datakryptering i Adobe Experience Platform
 description: Läs om hur data krypteras under överföring och i vila i Adobe Experience Platform.
 exl-id: 184b2b2d-8cd7-4299-83f8-f992f585c336
-source-git-commit: 4f67df5d3667218c79504535534de57f871b0650
+source-git-commit: f0b9d414d7b08015478c132de6910629d86c9cf9
 workflow-type: tm+mt
-source-wordcount: '712'
+source-wordcount: '737'
 ht-degree: 0%
 
 ---
@@ -54,6 +54,8 @@ Om du vill kontrollera KN eller SAN för att göra ytterligare validering från 
 
 - [Adobe Journey Optimizer offentliga certifikat](../images/governance-privacy-security/encryption/AJO-public-certificate.pem)
 - [Det offentliga certifikatet för destinationstjänsten](../images/governance-privacy-security/encryption/destinations-public-cert.pem).
+
+Du kan även hämta offentliga certifikat på ett säkert sätt genom att göra en GET-förfrågan till MTLS-slutpunkten. Mer information finns i [dokumentationen för slutpunkten för det offentliga certifikatet](../../data-governance/mtls-api/public-certificate-endpoint.md).
 
 ## Vilande uppgifter {#at-rest}
 
