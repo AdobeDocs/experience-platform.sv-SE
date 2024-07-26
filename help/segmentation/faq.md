@@ -2,9 +2,9 @@
 title: Frågor och svar
 description: Få svar på vanliga frågor om målgrupper och andra segmenteringsrelaterade koncept.
 exl-id: 79d54105-a37d-43f7-adcb-97f2b8e4249c
-source-git-commit: 5e677e53677cd28787004043e9fcc9b94e631fc8
+source-git-commit: 2d15ba41ff326034a6f9a32301f67f5d3b2a1c14
 workflow-type: tm+mt
-source-wordcount: '4167'
+source-wordcount: '4342'
 ht-degree: 0%
 
 ---
@@ -56,6 +56,16 @@ Alla andra data inom den externt genererade målgruppen betraktas som **nyttolas
 
 Ja, den externt genererade målgruppen sammanfogas med den befintliga profilen i plattformen om de primära identifierarna matchar. Det kan ta upp till 24 timmar att stämma av dessa data. Om det inte redan finns profildata skapas en ny profil när data hämtas.
 
+### Hur respekteras inställningarna för kundsamtycke för externt genererade målgrupper som importeras till Audience Portal?{#consent}
+
+När kunddata hämtas från flera kanaler kan identitetssammanfogning och sammanfogningsprinciper göra att dessa data kan samlas i en enda kundprofil i realtid. Information om kundernas samtycke lagras och utvärderas på profilnivå.
+
+Destinationer i senare led kontrollerar varje profil för att se om de godkänner informationen innan de aktiveras. Varje profils godkännandeinformation jämförs med medgivandekraven för en viss destination. Om profilen inte uppfyller kraven skickas den profilen inte till något mål.
+
+När en extern målgrupp hämtas till Audience Portal förenas de med befintliga profiler med hjälp av ett primärt ID som e-post eller ECID. Till följd av detta kommer de befintliga reglerna för samtycke att gälla under hela aktiveringen.
+
+Observera att du **inte** ska inkludera medgivandeinformation med en externt genererad publik, eftersom nyttolastvariablerna **inte** lagras i profilarkivet utan i datasjön. I stället **måste** använda en Adobe Experience Platform-inmatningskanal där profildata importeras.
+
 ### Kan jag använda en externt genererad publik för att bygga andra målgrupper?
 
 Ja, alla externt genererade målgrupper visas i målgruppslagret och kan användas när målgrupper skapas i [Segment Builder](./ui/segment-builder.md).
@@ -80,7 +90,7 @@ Den organisationsspecifika standardprincipen för sammanfogning tillämpas autom
 
 ### Var kan jag aktivera externt genererade målgrupper?
 
-En externt genererad publik kan mappas till alla RTCDP-mål och kan användas i Adobe Journey Optimizer-kampanjer.
+En externt genererad målgrupp kan mappas till alla målgrupper och kan användas i Adobe Journey Optimizer-kampanjer.
 
 ### Hur snart är externt genererade målgrupper klara för aktivering?
 

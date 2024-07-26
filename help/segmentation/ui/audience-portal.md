@@ -2,9 +2,9 @@
 title: Översikt över målportalen
 description: Lär dig hur du använder Audience Portal för att visa, hantera och skapa målgrupper i Adobe Experience Platform.
 exl-id: 505ac22e-05f3-423a-a9a0-7f3470af8945
-source-git-commit: d1fbfe5dd887059a6aab96566311cbd63c5b091f
+source-git-commit: 2d15ba41ff326034a6f9a32301f67f5d3b2a1c14
 workflow-type: tm+mt
-source-wordcount: '3498'
+source-wordcount: '3530'
 ht-degree: 0%
 
 ---
@@ -391,7 +391,9 @@ När du har bekräftat att informationen är korrekt väljer du **[!UICONTROL Fi
 >
 >Som standard har externt genererade målgrupper en dataförfallotid på 30 dagar. Förfallodatumet för data återställs om målgruppen uppdateras eller ändras på något sätt.
 >
->Om din externt genererade publik dessutom innehåller känslig och/eller vårdrelaterad information måste du **använda** nödvändiga dataanvändningsetiketter innan du aktiverar den på något mål. Eftersom variabler från externt genererade målgrupper lagras i datasjön i stället för i kundprofilen i realtid, bör du **inte** ta med medgivandedata i CSV-filen. Mer information om hur du använder dataanvändningsetiketter finns i dokumentationen om [hantering av etiketter](../../access-control/abac/ui/labels.md).
+>Om din externt genererade publik dessutom innehåller känslig och/eller vårdrelaterad information måste du **använda** nödvändiga dataanvändningsetiketter innan du aktiverar den på något mål. Eftersom variabler från externt genererade målgrupper lagras i datasjön i stället för i kundprofilen i realtid, bör du **inte** ta med medgivandedata i CSV-filen.
+>
+>Mer information om hur du använder dataanvändningsetiketter finns i dokumentationen om [hantering av etiketter](../../access-control/abac/ui/labels.md). Mer information om etiketter för dataanvändning på plattformen i allmänhet finns i översikten över [etiketter för dataanvändning](../../data-governance/labels/overview.md). Läs [Frågor och svar](../faq.md#consent) om du vill veta hur samtycke fungerar i externt genererade målgrupper.
 
 ## Nästa steg
 
