@@ -4,14 +4,20 @@ description: Den senaste versionsinformationen om Adobe Experience Platform Debu
 keywords: felsökning;Experience Platform Debugger extension;chrome;extension;release notes
 uuid: 47a5d6f3-c074-4ad5-ad4b-e6030496689b
 exl-id: 3eed44da-5f85-413e-a783-3a0df03a2baf
-source-git-commit: c99234cf3f5af9abe590c90fbdefc7d50c1539da
+source-git-commit: 877e38154f6959d50bd0620290c2dce9decfc2b5
 workflow-type: tm+mt
-source-wordcount: '758'
+source-wordcount: '781'
 ht-degree: 1%
 
 ---
 
 # Versionsinformation för Adobe Experience Platform Debugger
+
+## Version 1.6.1 - 25 juli 2024
+
+### Korrigeringar och förbättringar
+
+* Ett problem har korrigerats som gjorde att användare inte kunde lägga till nya inbäddningskoder för taggar på sidor utan dem.
 
 ## Version 1.6.0 - 11 juli 2024
 
@@ -31,7 +37,7 @@ ht-degree: 1%
 ### Korrigeringar och förbättringar
 
 * Ett problem där inställningarna inte sparades har korrigerats.
-* Korrigerade ett problem som gjorde att felsökaren kraschade när Analytics Post-Procsed-träffar visades.
+* Korrigerade ett problem som gjorde att felsökaren kraschade när man visade efterbearbetade träffar i Analytics.
 
 ## Version 1.5.3 - 6 december 2023
 
