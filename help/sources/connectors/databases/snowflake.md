@@ -3,9 +3,9 @@ title: Snowflake Source Connector - översikt
 description: Lär dig hur du ansluter Snowflake till Adobe Experience Platform med API:er eller användargränssnittet.
 badgeUltimate: label="Ultimate" type="Positive"
 exl-id: df066463-1ae6-4ecd-ae0e-fb291cec4bd5
-source-git-commit: 8b0f6eca87deedd8090830e3375d5099bfb0dfc0
+source-git-commit: 8d6baef1549498e137d336ac2c8a42428496dedf
 workflow-type: tm+mt
-source-wordcount: '303'
+source-wordcount: '689'
 ht-degree: 0%
 
 ---
@@ -21,6 +21,82 @@ ht-degree: 0%
 Med Adobe Experience Platform kan data hämtas från externa källor samtidigt som du kan strukturera, märka och förbättra inkommande data med hjälp av plattformstjänster. Du kan importera data från en mängd olika källor, till exempel Adobe-program, molnbaserad lagring, databaser och många andra.
 
 Experience Platform har stöd för att importera data från en tredjepartsdatabas. Plattformen kan ansluta till olika typer av databaser, till exempel relationsdatabaser, NoSQL-databaser eller datalager. Stöd för databasproviders är [!DNL Snowflake].
+
+## Förhandskrav {#prerequisites}
+
+I det här avsnittet beskrivs de konfigurationsåtgärder som du måste slutföra innan du kan ansluta [!DNL Snowflake]-källan till Experience Platform.
+
+### Hämta din kontoidentifierare {#retrieve-your-account-identifier}
+
+Du måste hämta din kontoidentifierare från [!DNL Snowflake]-gränssnittspanelen eftersom du kommer att använda kontoidentifieraren för att autentisera din [!DNL Snowflake]-instans på Experience Platform.
+
+Så här hämtar du din kontoidentifierare:
+
+* Navigera till ditt konto på [[!DNL Snowflake] programmets gränssnittspanel](https://app.snowflake.com/).
+* I den vänstra navigeringen väljer du **[!DNL Accounts]** följt av **[!DNL Active Accounts]** i sidhuvudet.
+* Välj sedan informationsikonen och markera och kopiera domännamnet för den aktuella URL:en.
+
+![Användargränssnittspanelen Snowflake med domännamnet markerat.](../../images/tutorials/create/snowflake/snowflake-dashboard.png)
+
+### Hämta din privata nyckel {#retrieve-your-private-key}
+
+Om du använder nyckelparautentisering för din [!DNL Snowflake]-anslutning måste du också generera din privata nyckel innan du ansluter till Experience Platform.
+
+>[!BEGINTABS]
+
+>[!TAB Skapa en krypterad privat nyckel]
+
+Kör följande kommando på terminalen för att generera din krypterade privata nyckel [!DNL Snowflake]:
+
+```shell
+openssl genrsa 2048 | openssl pkcs8 -topk8 -v2 des3 -inform PEM -out rsa_key.p8
+```
+
+Om det lyckas bör du få din privata nyckel i PEM-format.
+
+```shell
+-----BEGIN ENCRYPTED PRIVATE KEY-----
+MIIE6T...
+-----END ENCRYPTED PRIVATE KEY-----
+```
+
+>[!TAB Skapa en okrypterad privat nyckel]
+
+Om du vill generera din okrypterade privata [!DNL Snowflake]-nyckel kör du följande kommando på terminalen:
+
+```shell
+openssl genrsa 2048 | openssl pkcs8 -topk8 -inform PEM -out rsa_key.p8 -nocrypt
+```
+
+Om det lyckas bör du få din privata nyckel i PEM-format.
+
+```shell
+-----BEGIN PRIVATE KEY-----
+MIIE6T...
+-----END PRIVATE KEY-----
+```
+
+>[!ENDTABS]
+
+Ta sedan din privata nyckel och koda den i [!DNL Base64]. Se till att du inte gör några omformningar eller formatkonverteringar på din privata nyckel för [!DNL Snowflake]. Dessutom måste du se till att det inte finns några efterföljande radmatningstecken i slutet av den privata nyckeln innan du kodar den i [!DNL Base64].
+
+### Verifiera konfigurationer
+
+Innan du kan skapa en källanslutning för dina [!DNL Snowflake]-data måste du också se till att följande konfigurationer uppfylls:
+
+* Det standardlagerställe som tilldelats en viss användare måste vara samma som det lagerställe som du angav vid autentisering till Experience Platform.
+* Den standardroll som tilldelats en viss användare måste ha tillgång till samma databas som du anger när du autentiserar dig för Experience Platform.
+
+Så här verifierar du din roll och ditt lager:
+
+* Välj **[!DNL Admin]** till vänster och välj sedan **[!DNL Users & Roles]**.
+* Välj lämplig användare och markera sedan ellipserna (`...`) i det övre högra hörnet.
+* Navigera till [!DNL Default Role] i fönstret [!DNL Edit user] som visas för att visa rollen som är associerad med den angivna användaren.
+* I samma fönster går du till [!DNL Default Warehouse] för att visa det lagerställe som är associerat med den angivna användaren.
+
+![Användargränssnittet i Snowflake där du kan verifiera din roll och ditt lagerställe.](../../images/tutorials/create/snowflake/snowflake-configs.png)
+
+När kodningen är klar kan du sedan använda den [!DNL Base64]-kodade privata nyckeln på Experience Platform för att autentisera ditt [!DNL Snowflake]-konto.
 
 ## IP-adress tillåtelselista
 
