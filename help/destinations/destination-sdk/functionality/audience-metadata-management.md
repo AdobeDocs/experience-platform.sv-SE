@@ -2,9 +2,9 @@
 description: Använd metadatamallar för att programmässigt skapa, uppdatera eller ta bort målgrupper i er målgrupp. Adobe tillhandahåller en utbyggbar metadatamall för målgrupper, som du kan konfigurera baserat på specifikationerna för ditt marknadsförings-API. När du har definierat, testat och skickat in mallen används den av Adobe för att strukturera API-anropen till ditt mål.
 title: Hantering av målgruppsmetadata
 exl-id: 795e8adb-c595-4ac5-8d1a-7940608d01cd
-source-git-commit: 3660c3a342af07268d2ca2c907145df8237872a1
+source-git-commit: 6c4a2f9f6b338ec03b99ee1d7e91f7d9c0347b08
 workflow-type: tm+mt
-source-wordcount: '1047'
+source-wordcount: '1308'
 ht-degree: 0%
 
 ---
@@ -53,11 +53,10 @@ Du kan använda den generiska mallen för att [skapa en ny målgruppsmall](../me
 
 Teknikteamet på Adobe kan samarbeta med dig för att utöka den generiska mallen med anpassade fält om det behövs för dina användningsfall.
 
-## Konfigurationsexempel {#configuration-examples}
 
-Det här avsnittet innehåller tre exempel på allmänna konfigurationer av målgruppsmetadata, tillsammans med beskrivningar av huvudavsnitten i konfigurationen. Lägg märke till hur brödtexten för URL, rubriker, begäran och svar skiljer sig mellan de tre exempelkonfigurationerna. Detta beror på de olika specifikationerna för de tre exempelplattformarnas marknadsförings-API.
+## Mallhändelser som stöds {#supported-events}
 
-Observera att i vissa exempel används makrofält som `{{authData.accessToken}}` eller `{{segment.name}}` i URL:en, och i andra exempel används de i rubrikerna eller i begärandetexten. Det beror på era specifikationer för marknadsförings-API.
+Tabellen nedan beskriver de händelser som stöds av metadatamallar för målgrupper.
 
 | Mallavsnitt | Beskrivning |
 |--- |--- |
@@ -66,10 +65,21 @@ Observera att i vissa exempel används makrofält som `{{authData.accessToken}}`
 | `delete` | Innehåller alla nödvändiga komponenter (URL, HTTP-metod, rubriker, begärande och svarstext) för att göra ett HTTP-anrop till ditt API, för att programmässigt ta bort segment/målgrupper på din plattform. |
 | `validate` | Kör valideringar för fält i mallkonfigurationen innan du anropar partner-API:t. Du kan till exempel validera att användarens konto-ID är korrekt angivet. |
 | `notify` | Gäller endast för filbaserade mål. Inkluderar alla nödvändiga komponenter (URL, HTTP-metod, rubriker, begärande och svarstext) för att göra ett HTTP-anrop till ditt API, för att meddela dig om filexporter lyckades. |
+| `createDestination` | Innehåller alla nödvändiga komponenter (URL, HTTP-metod, headers, request och response body) för att göra ett HTTP-anrop till ditt API, för att skapa ett programmatiskt dataflöde på din plattform och synkronisera informationen tillbaka till Adobe Experience Platform. |
+| `updateDestination` | Innehåller alla nödvändiga komponenter (URL, HTTP-metod, headers, request och response body) för att göra ett HTTP-anrop till ditt API, för att uppdatera ett dataflöde i din plattform och synkronisera informationen tillbaka till Adobe Experience Platform. |
+| `deleteDestination` | Innehåller alla nödvändiga komponenter (URL, HTTP-metod, rubriker, begärande och svarstext) för att göra ett HTTP-anrop till ditt API, för att programmässigt ta bort ett dataflöde från din plattform. |
 
 {style="table-layout:auto"}
 
-### Exempel på direktuppspelning 1 {#example-1}
+## Konfigurationsexempel {#configuration-examples}
+
+I det här avsnittet finns exempel på allmänna konfigurationer av målgruppsmetadata, som du kan använda som referens.
+
+Lägg märke till hur URL:en, rubrikerna och förfrågantexterna skiljer sig åt mellan de tre exempelkonfigurationerna. Detta beror på de olika specifikationerna för de tre exempelplattformarnas marknadsförings-API.
+
+Observera att i vissa exempel används makrofält som `{{authData.accessToken}}` eller `{{segment.name}}` i URL:en, och i andra exempel används de i rubrikerna eller i begärandetexten. Hur de används beror på era API-specifikationer för marknadsföring.
+
++++Exempel på strömning 1
 
 ```json
 {
@@ -178,7 +188,9 @@ Observera att i vissa exempel används makrofält som `{{authData.accessToken}}`
 }
 ```
 
-### Exempel på strömning 2 {#example-2}
++++
+
++++Exempel på strömning 2
 
 ```json
 {
@@ -272,7 +284,9 @@ Observera att i vissa exempel används makrofält som `{{authData.accessToken}}`
 }
 ```
 
-### Exempel på direktuppspelning 3 {#example-3}
++++
+
++++Exempel på direktuppspelning 3
 
 ```json
 {
@@ -374,8 +388,9 @@ Observera att i vissa exempel används makrofält som `{{authData.accessToken}}`
 }
 ```
 
++++
 
-### Filbaserat exempel {#example-file-based}
++++Filbaserat exempel
 
 ```json
 {
@@ -521,6 +536,8 @@ Observera att i vissa exempel används makrofält som `{{authData.accessToken}}`
 }
 ```
 
++++
+
 Hitta beskrivningar av alla parametrar i mallen i API-referensen för [Skapa en målgruppsmall](../metadata-api/create-audience-template.md).
 
 ## Makron som används i mallar för målgruppsmetadata {#macros}
@@ -537,5 +554,12 @@ För att skicka information som målgrupps-ID:n, åtkomsttoken, felmeddelanden m
 | `{{authData.accessToken}}` | Gör att du kan skicka åtkomsttoken till API-slutpunkten. Använd `{{authData.accessToken}}` om Experience Platform ska använda token som inte upphör att gälla för att ansluta till ditt mål, annars använder du `{{oauth2ServiceAccessToken}}` för att generera en åtkomsttoken. |
 | `{{body.segments[0].segment.id}}` | Returnerar den unika identifieraren för den skapade målgruppen som värdet för nyckeln `externalAudienceId`. |
 | `{{error.message}}` | Returnerar ett felmeddelande som kommer att visas för användare i användargränssnittet i Experience Platform. |
+| `{{{segmentEnrichmentAttributes}}}` | Gör att du kan komma åt alla anrikningsattribut för en viss målgrupp.  Det här makrot stöds av händelserna `create`, `update` och `delete`. Anrikningsattribut är bara tillgängliga för [anpassade överförda målgrupper](destination-configuration/schema-configuration.md#external-audiences). Se [aktiveringsguiden för gruppmålare](../../ui/activate-batch-profile-destinations.md#select-enrichment-attributes) för att se hur markering av anrikningsattribut fungerar. |
+| `{{destination.name}}` | Returnerar namnet på målet. |
+| `{{destination.sandboxName}}` | Returnerar namnet på den Experience Platform-sandlåda där målet är konfigurerat. |
+| `{{destination.id}}` | Returnerar ID:t för målkonfigurationen. |
+| `{{destination.imsOrgId}}` | Returnerar det IMS-Org-ID där målet är konfigurerat. |
+| `{{destination.enrichmentAttributes}}` | Gör att du kan komma åt alla anrikningsattribut för alla målgrupper som mappas till ett mål. Det här makrot stöds av händelserna `createDestination`, `updateDestination` och `deleteDestination`. Anrikningsattribut är bara tillgängliga för [anpassade överförda målgrupper](destination-configuration/schema-configuration.md#external-audiences). Se [aktiveringsguiden för gruppmålare](../../ui/activate-batch-profile-destinations.md#select-enrichment-attributes) för att se hur markering av anrikningsattribut fungerar. |
+| `{{destination.enrichmentAttributes.<namespace>.<segmentId>}}` | Gör att du kan komma åt anrikningsattribut för specifika externa målgrupper mappade till ett mål. Anrikningsattribut är bara tillgängliga för [anpassade överförda målgrupper](destination-configuration/schema-configuration.md#external-audiences). Se [aktiveringsguiden för gruppmålare](../../ui/activate-batch-profile-destinations.md#select-enrichment-attributes) för att se hur markering av anrikningsattribut fungerar. |
 
 {style="table-layout:auto"}
