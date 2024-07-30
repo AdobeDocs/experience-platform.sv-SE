@@ -2,9 +2,9 @@
 title: Översikt över målportalen
 description: Lär dig hur du använder Audience Portal för att visa, hantera och skapa målgrupper i Adobe Experience Platform.
 exl-id: 505ac22e-05f3-423a-a9a0-7f3470af8945
-source-git-commit: 2d15ba41ff326034a6f9a32301f67f5d3b2a1c14
+source-git-commit: 527c9bf7ff60ceb1e621ccac5a88b8e9eb32ebfb
 workflow-type: tm+mt
-source-wordcount: '3530'
+source-wordcount: '3631'
 ht-degree: 0%
 
 ---
@@ -25,6 +25,7 @@ I Audience Portal kan du utföra följande uppgifter:
 - [Skapa en målgrupp](#create-audience)
    - [Använd Segment Builder för att skapa en målgrupp](#segment-builder)
    - [Använd Audience Composition för att skapa en målgrupp](#audience-composition)
+   - [Använd Federated Audience Composition för att skapa en målgrupp med data från ditt befintliga datalager](#fac) (begränsad tillgänglighet)
 - [Importera externt genererade målgrupper](#import-audience)
 
 Om du vill öppna målportalen väljer du fliken **[!UICONTROL Browse]** i segmenteringsavsnittet.
@@ -339,6 +340,12 @@ Om du väljer **[!UICONTROL Compose audiences]** dirigeras du till Målgruppskom
 Om du väljer **[!UICONTROL Build rule]** kommer du till segmentbyggaren. Den här arbetsytan innehåller intuitiva kontroller för att skapa och redigera segmentdefinitioner, till exempel dra-och-släpp-paneler som används för att representera dataegenskaper. Mer information om hur du skapar segmentdefinitioner finns i guiden [Segment Builder](./segment-builder.md)
 
 ![Arbetsytan i Segment Builder visas.](../images/ui/audience-portal/segment-builder.png)
+
+### Sammansatt målgrupp {#fac}
+
+Förutom målgruppskompositioner och segmentdefinitioner kan du använda Adobe Federated Audience Composition för att skapa nya målgrupper från företagsdatauppsättningar utan att kopiera underliggande data och lagra dessa målgrupper i Adobe Experience Platform Audience Portal. Ni kan också berika befintliga målgrupper i Adobe Experience Platform genom att använda sammansatta målgruppsdata som har federerats från företagets datalager. Läs guiden om [Federated Audience Composition](https://experienceleague.adobe.com/en/docs/federated-audience-composition/using/home).
+
+![En lista över målgrupper som skapats i Federated Audience Composition för din organisation.](../images/ui/overview/federated-audience-composition.png)
 
 ## Importera en målgrupp {#import-audience}
 

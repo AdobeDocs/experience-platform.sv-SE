@@ -5,9 +5,9 @@ user-guide-description: Aktivera kända och okända data för marknadsföringska
 description: I det här dokumentet visas innehållsförteckningen för Adobe Experience Platform-destinationer
 feature: Destinations
 role: Admin,User
-source-git-commit: 82e9263293462a223b635e828b95cb2b098886c7
+source-git-commit: 515a7cc3ba12afe14aab3e882b7fd55d5cc09069
 workflow-type: tm+mt
-source-wordcount: '1241'
+source-wordcount: '1248'
 ht-degree: 1%
 
 ---
@@ -65,6 +65,7 @@ ht-degree: 1%
       * [Marketo Engage-anslutning](./catalog/adobe/marketo-engage.md)
       * [Marketo Measure Ultimate-anslutning](./catalog/adobe/marketo-measure-ultimate.md)
       * [Experience Platform-målgruppsdelning](https://experienceleague.adobe.com/docs/audience-manager/user-guide/implementation-integration-guides/integration-experience-platform/aam-aep-audience-sharing.html)
+      * [Anslutning av Audience Composition (begränsad tillgänglighet) med federerad publik ](https://www.adobe.com/go/destinations-federated-audience-composition)
    * Advertising-mål{#advertising}
       * [Översikt över Advertising destinationer](./catalog/advertising/overview.md)
       * [Adobe Advertising Cloud](./catalog/advertising/adobe-advertising-cloud-connection.md)

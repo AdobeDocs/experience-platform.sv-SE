@@ -3,9 +3,9 @@ solution: Experience Platform
 title: Användargränssnittshandbok för segmenteringstjänst
 description: Lär dig hur du skapar och hanterar målgrupper och segmentdefinitioner i Adobe Experience Platform användargränssnitt.
 exl-id: 0a2e8d82-281a-4c67-b25b-08b7a1466300
-source-git-commit: c2832821ea6f9f630e480c6412ca07af788efd66
+source-git-commit: 9844a7bf5e7198e7d5112ec924220aba71cdc14b
 workflow-type: tm+mt
-source-wordcount: '941'
+source-wordcount: '1025'
 ht-degree: 0%
 
 ---
@@ -89,6 +89,12 @@ En pover visas med en lista över alla fält som kan visas i tabellen.
 Om du vill se hur målgruppen är sammansatt väljer du en målgrupps namn på fliken [!UICONTROL Audiences].
 
 Sidan Audience Composition visas med de byggstenar som utgör målgruppen. Mer information om hur du använder Audience Composition finns i handboken [Audience Composition UI](./audience-composition.md).
+
+## Sammansatt målgrupp {#fac}
+
+Förutom målgruppskompositioner och segmentdefinitioner kan du använda Adobe Federated Audience Composition för att skapa nya målgrupper från företagsdatauppsättningar utan att kopiera underliggande data och lagra dessa målgrupper i Adobe Experience Platform Audience Portal. Ni kan också berika befintliga målgrupper i Adobe Experience Platform genom att använda sammansatta målgruppsdata som har federerats från företagets datalager. Läs guiden om [Federated Audience Composition](https://experienceleague.adobe.com/en/docs/federated-audience-composition/using/home).
+
+![En lista över målgrupper som skapats i Federated Audience Composition för din organisation.](../images/ui/overview/federated-audience-composition.png)
 
 ## Direktuppspelningssegmentering {#streaming-segmentation}
 

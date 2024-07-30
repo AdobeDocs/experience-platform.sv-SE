@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Experience Platform - översikt
 description: Adobe Experience Platform
 exl-id: 47f9a3fb-731d-4ade-8069-faaa18f224dc
-source-git-commit: c2832821ea6f9f630e480c6412ca07af788efd66
+source-git-commit: 9844a7bf5e7198e7d5112ec924220aba71cdc14b
 workflow-type: tm+mt
-source-wordcount: '1735'
+source-wordcount: '1880'
 ht-degree: 0%
 
 ---
@@ -43,13 +43,13 @@ Den senaste datapanelen innehåller information om nyligen skapade datauppsättn
 
 ![](images/user-guide/homepage-recent.png)
 
-I avsnittet **[!UICONTROL Recent datasets]** visas de fem senast skapade datauppsättningarna i din organisation. Den här listan uppdateras varje gång en ny datauppsättning skapas. Du kan välja en datauppsättning i listan om du vill visa mer information om den angivna datauppsättningen eller välja **[!UICONTROL View all]** om du vill visa en lista över alla skapade datauppsättningar. Mer information om datauppsättningar finns i [översikten över datauppsättningar](../catalog/datasets/overview.md).
+I avsnittet **[!UICONTROL Recent datasets]** visas de fem senast skapade datauppsättningarna i din organisation. Den här listan uppdateras varje gång en ny datauppsättning skapas. Du kan välja en datauppsättning från listan för att visa Du kan hitta mer information om den angivna datauppsättningen eller välja **[!UICONTROL View all]** för att visa en lista över alla skapade datauppsättningar. Mer information om datauppsättningar finns i [översikten över datauppsättningar](../catalog/datasets/overview.md).
 
-I avsnittet **[!UICONTROL Recent sources]** visas de fem senast skapade källanslutningarna i din organisation. Listan uppdateras varje gång en ny källkoppling skapas. Du kan välja en källanslutning i listan om du vill visa mer information om den angivna kopplingen eller välja **[!UICONTROL View all]** om du vill visa en lista över alla skapade källanslutningar. Mer information om källor finns i [Källöversikten](../sources/home.md).
+I avsnittet **[!UICONTROL Recent sources]** visas de fem senast skapade källanslutningarna i din organisation. Listan uppdateras varje gång en ny källkoppling skapas. Du kan välja en källanslutning i listan för att visa Du kan hitta mer information om den angivna kopplingen eller välja **[!UICONTROL View all]** för att visa en lista över alla skapade källanslutningar. Du hittar mer information om källor i [Källöversikten](../sources/home.md).
 
-I avsnittet **[!UICONTROL Recent segments]** visas de fem senast skapade segmentdefinitionerna i din organisation. Listan uppdateras varje gång en ny segmentdefinition skapas. Du kan välja en segmentdefinition i listan om du vill visa mer information om den angivna segmentdefinitionen eller välja **[!UICONTROL View all]** om du vill visa en lista över alla skapade segmentdefinitioner. Mer information om segment finns i [Översikt över segmenteringstjänsten](../segmentation/home.md).
+I avsnittet **[!UICONTROL Recent segments]** visas de fem senast skapade segmentdefinitionerna i din organisation. Listan uppdateras varje gång en ny segmentdefinition skapas. Du kan välja en segmentdefinition i listan för att visa Du kan hitta mer information om den angivna segmentdefinitionen eller välja **[!UICONTROL View all]** för att visa en lista över alla skapade segmentdefinitioner. Mer information om segment finns i [Översikt över segmenteringstjänsten](../segmentation/home.md).
 
-I avsnittet **[!UICONTROL Recent destinations]** visas de fem senast skapade destinationerna i din organisation. Listan uppdateras varje gång ett nytt mål skapas. Du kan välja ett mål i listan om du vill visa mer information om det angivna målet eller välja **[!UICONTROL View all]** om du vill visa en lista över alla skapade mål. Mer information om mål finns i [målöversikten](../destinations/home.md).
+I avsnittet **[!UICONTROL Recent destinations]** visas de fem senast skapade destinationerna i din organisation. Listan uppdateras varje gång ett nytt mål skapas. Du kan välja ett mål i listan för att visa Du kan hitta mer information om det angivna målet eller välja **[!UICONTROL View all]** för att visa en lista över alla skapade mål. Mer information om mål finns i [målöversikten](../destinations/home.md).
 
 ### Rekommenderad utbildning
 
@@ -121,7 +121,7 @@ I avsnittet **[!UICONTROL Workflows]** visas en lista med arbetsflöden i flera 
 
 ### [!UICONTROL Connections]
 
-I avsnittet **[!UICONTROL Sources]** kan du skapa, uppdatera och ta bort källanslutningar så att du kan importera data från externa källor till plattformen. Mer information om källor finns i [Källöversikten](../sources/home.md).
+I avsnittet **[!UICONTROL Sources]** kan du skapa, uppdatera och ta bort källanslutningar så att du kan importera data från externa källor till plattformen. Du hittar mer information om källor i [Källöversikten](../sources/home.md).
 
 I avsnittet **[!UICONTROL Destinations]** kan du skapa, uppdatera och ta bort mål, så att du kan exportera data från plattformen till många externa mål. Mer information om mål finns i [målöversikten](../destinations/home.md).
 
@@ -141,11 +141,11 @@ I avsnittet **[!UICONTROL Requests]** kan du skapa och hantera sekretessförfrå
 
 ### [!UICONTROL Data Science]
 
-Avsnittet **[!UICONTROL Notebooks]** ger åtkomst till JupyterLab, en interaktiv utvecklingsmiljö där du kan utforska, analysera och modellera data. Läs användarhandboken för [JupyterLab](../data-science-workspace/jupyterlab/overview.md) om du vill veta mer om hur du använder avsnittet Anteckningsböcker. Mer information om datavetenskap Workspace finns i [översikten över datavetenskapen i Workspace](../data-science-workspace/home.md)
+Avsnittet **[!UICONTROL Notebooks]** ger åtkomst till JupyterLab, en interaktiv utvecklingsmiljö där du kan utforska, analysera och modellera data. Läs användarhandboken för [JupyterLab](../data-science-workspace/jupyterlab/overview.md) om du vill veta mer om hur du använder avsnittet Anteckningsböcker. Mer information om Data Science Workspace finns i [Översikt över Data Science Workspace](../data-science-workspace/home.md)
 
-I avsnittet **[!UICONTROL Models]** kan du använda maskininlärning och artificiell intelligens för att skapa, utveckla, utbilda och trimma modeller för att göra prognoser. Mer information om modellavsnittet finns i självstudiekursen om [utbildning och utvärdering av en modell](../data-science-workspace/models-recipes/train-evaluate-model-ui.md).
+I avsnittet **[!UICONTROL Models]** kan du använda maskininlärning och artificiell intelligens för att skapa, utveckla, utbilda och trimma modeller för att göra prognoser. Du hittar mer information om modellavsnittet i självstudiekursen om [utbildning och utvärderar modellen](../data-science-workspace/models-recipes/train-evaluate-model-ui.md).
 
-I avsnittet **[!UICONTROL Services]** kan du hantera dina publicerade modeller för schemalagd utbildning och poängsättning, eller använda Adobe Intelligent Services, en uppsättning AI-tjänster som levererar personaliserade kundupplevelser i realtid. Mer information om tjänstavsnittet finns i [Publicera en modell som en självstudiekurs](../data-science-workspace/models-recipes/publish-model-service-ui.md).
+I avsnittet **[!UICONTROL Services]** kan du hantera dina publicerade modeller för schemalagd utbildning och poängsättning, eller använda Adobe Intelligent Services, en uppsättning AI-tjänster som levererar personaliserade kundupplevelser i realtid. Du hittar mer information om tjänstavsnittet i [Publicera en modell som en självstudiekurs](../data-science-workspace/models-recipes/publish-model-service-ui.md).
 
 ### [!UICONTROL Data management]
 
@@ -156,6 +156,19 @@ I avsnittet **[!UICONTROL Datasets]** kan du skapa och hantera datauppsättninga
 I avsnittet **[!UICONTROL Queries]** kan du skapa och hantera frågor, logga SQL-frågor som skapats av Adobe Experience Platform Query Service och visa dina [!DNL PostgreSQL]-autentiseringsuppgifter. Mer information om frågor finns i användarhandboken för [frågetjänsten](../query-service/ui/overview.md).
 
 I avsnittet **[!UICONTROL Monitoring]** kan du övervaka inmatning av grupper och strömning. Mer information om övervakning finns i användarhandboken för [övervakning av datainhämtning](../ingestion/quality/monitor-data-ingestion.md).
+
+### [!UICONTROL Federated data] (begränsad tillgänglighet)
+
+I avsnittet **[!UICONTROL Models]** kan du utforma och skapa datamodeller och scheman som definierar datastrukturen, relationerna och begränsningarna. Mer information om datamodeller och scheman finns i användarhandboken [Federated Audience Composition](https://experienceleague.adobe.com/en/docs/federated-audience-composition/using/config/datamodel/schemas).
+
+Avsnittet **[!UICONTROL Audit trail]** innehåller en detaljerad och kronologisk post för alla åtgärder och händelser som har utförts i din miljö i realtid. Du hittar mer information om granskningsspåret i användarhandboken för [Federated Audience Composition](https://experienceleague.adobe.com/en/docs/federated-audience-composition/using/audit-trail/audit-trail).
+
+
+I avsnittet **[!UICONTROL Federated databases]** kan du ansluta Adobe Experience Platform till ditt företagsdatalager. Mer information om anslutning till federerade databaser finns i användarhandboken [Federated Audience Composition](https://experienceleague.adobe.com/en/docs/federated-audience-composition/using/config/federated-db).
+
+>[!AVAILABILITY]
+>
+>Federated Audience Composition är för närvarande bara tillgängligt för en uppsättning organisationer (begränsad tillgänglighet). Kontakta din Adobe-representant om du vill veta mer.
 
 ### [!UICONTROL Decisioning]
 

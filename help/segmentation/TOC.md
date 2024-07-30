@@ -5,10 +5,10 @@ breadcrumb-title: Användarhandbok om segmenteringstjänst
 user-guide-description: Bygg målgrupper utifrån dina kundprofildata i realtid med segmentdefinitioner som har genererats av Adobe Experience Platform eller externa källor.
 feature: Segments
 role: User
-source-git-commit: 62a174e6f3b1bd1b0bc518ff7e5f236893e9e5d3
+source-git-commit: 515a7cc3ba12afe14aab3e882b7fd55d5cc09069
 workflow-type: tm+mt
-source-wordcount: '185'
-ht-degree: 22%
+source-wordcount: '191'
+ht-degree: 21%
 
 ---
 
@@ -36,6 +36,7 @@ ht-degree: 22%
    - [Målgruppsportal](ui/audience-portal.md)
    - [Målgruppssammansättning](ui/audience-composition.md)
    - [Segment Builder](ui/segment-builder.md)
+   - [Sammansatt målgruppskomposition (begränsad tillgänglighet)](https://experienceleague.adobe.com/en/docs/federated-audience-composition/using/home)
    - [Målgrupper](ui/account-audiences.md)
    - [Målgrupper som ser likadana ut](ui/lookalike-audiences.md)
    - [Potentiella målgrupper](ui/prospect-audience.md)

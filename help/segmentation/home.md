@@ -3,9 +3,9 @@ solution: Experience Platform
 title: Översikt över segmenteringstjänsten
 description: Läs om Adobe Experience Platform segmenteringstjänst och vilken roll den spelar i plattformens ekosystem.
 exl-id: 2c18a806-88ed-4659-bdfd-2377f5a09a1a
-source-git-commit: c35b43654d31f0f112258e577a1bb95e72f0a971
+source-git-commit: 515a7cc3ba12afe14aab3e882b7fd55d5cc09069
 workflow-type: tm+mt
-source-wordcount: '1607'
+source-wordcount: '1700'
 ht-degree: 0%
 
 ---
@@ -51,6 +51,14 @@ Mer information om hur du skapar segmentdefinitioner med API:t finns i självstu
 >Om ett schema utökas måste alla framtida överföringar uppdatera nya fält i enlighet med detta. Mer information om hur du anpassar [!DNL Experience Data Model] (XDM) finns i [Schemaredigerarens självstudiekurs](../xdm/tutorials/create-schema-ui.md).
 >
 >Om dessutom ett förfallovärde för Experience Event är aktiverat för datauppsättningen kan detta påverka medlemskapet för den segmentdefinition som skapas. Mer information om hur den här funktionen kan påverka segmenteringen finns i guiden [Händelseförfallodatum](../profile/event-expirations.md).
+
+### Sammansatt målgrupp {#fac}
+
+Förutom målgruppskompositioner och segmentdefinitioner kan du använda Adobe Federated Audience Composition för att skapa nya målgrupper från företagsdatauppsättningar utan att kopiera underliggande data och lagra dessa målgrupper i Adobe Experience Platform Audience Portal. Ni kan också berika befintliga målgrupper i Adobe Experience Platform genom att använda sammansatta målgruppsdata som har federerats från företagets datalager. Läs guiden om [Federated Audience Composition](https://experienceleague.adobe.com/en/docs/federated-audience-composition/using/home).
+
+>[!AVAILABILITY]
+>
+>Federated Audience Composition är för närvarande bara tillgängligt för en uppsättning organisationer (begränsad tillgänglighet). Kontakta din Adobe-representant om du vill veta mer.
 
 ## Utvärdera målgrupper {#evaluate-segments}
 
