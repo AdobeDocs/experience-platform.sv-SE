@@ -2,7 +2,7 @@
 title: Datauppsättningsexempel
 description: Med exempeldatauppsättningar för frågetjänsten kan du utföra utforskande frågor på stora data med avsevärt reducerad bearbetningstid, vilket gör att frågan blir korrekt. Den här guiden innehåller information om hur du hanterar dina exempel för ungefärlig frågebearbetning
 exl-id: 9e676d7c-c24f-4234-878f-3e57bf57af44
-source-git-commit: 99cd69234006e6424be604556829b77236e92ad7
+source-git-commit: 28fe8ec5a589b8d181ba2f888d50fa9d2d7d4996
 workflow-type: tm+mt
 source-wordcount: '643'
 ht-degree: 0%
@@ -100,7 +100,7 @@ SELECT * FROM example_dataset_name WITHAPPROXIMATE;
 Med borttagningsåtgärden kan du skapa nya exempel när den maximala gränsen på fem datauppsättningsexempel har nåtts.
 
 ```sql
-DROP TABLE SAMPLE x5e5cd8ea0a83c418a8ef0928_uniform_2_0_percent_bnhmc;
+DROP TABLESAMPLE x5e5cd8ea0a83c418a8ef0928_uniform_2_0_percent_bnhmc;
 ```
 
 >[!NOTE]

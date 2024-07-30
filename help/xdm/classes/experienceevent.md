@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Klassen XDM ExperienceEvent
 description: Lär dig mer om klassen XDM ExperienceEvent och de bästa metoderna för händelsedatamodellering.
 exl-id: a8e59413-b52f-4ea5-867b-8d81088a3321
-source-git-commit: e52eb90b64ae9142e714a46017cfd14156c78f8b
+source-git-commit: 5537485206c1625ca661d6b33f7bba08538a0fa3
 workflow-type: tm+mt
-source-wordcount: '2623'
+source-wordcount: '2712'
 ht-degree: 0%
 
 ---
@@ -105,6 +105,7 @@ I följande tabell visas de godkända värdena för `eventType` tillsammans med 
 | `advertising.timePlayed` | Den här händelsen håller reda på hur mycket tid en användare tillbringar med en viss medieresurs. |
 | `application.close` | Den här händelsen spårar när ett program stängdes eller skickades till bakgrunden. |
 | `application.launch` | Den här händelsen spårar när ett program startas eller hämtas till förgrunden. |
+| `click` | **Föråldrat** Använd `decisioning.propositionInteract` i stället. |
 | `commerce.backofficeCreditMemoIssued` | Den här händelsen spårar när ett kreditmeddelande har utfärdats till en kund. |
 | `commerce.backofficeOrderCancelled` | Den här händelsen spårar när en tidigare initierad inköpsprocess har avslutats innan den slutförs. |
 | `commerce.backofficeOrderItemsShipped` | Den här händelsen spårar när de inköpta artiklarna har skickats till kunden fysiskt. |
@@ -119,11 +120,12 @@ I följande tabell visas de godkända värdena för `eventType` tillsammans med 
 | `commerce.productViews` | Den här händelsen spårar när en produkt har fått en eller flera vyer. |
 | `commerce.purchases` | Den här händelsen spårar när en beställning har godkänts. Detta är den enda nödvändiga åtgärden i en handelskonvertering. En köphändelse måste ha en produktlista som refereras. |
 | `commerce.saveForLaters` | Den här händelsen spårar när en produktlista har sparats för framtida bruk, till exempel en produktönskelista. |
-| `decisioning.propositionDisplay` | Den här händelsen spårar när en beslutsalternativ visades för en person. |
-| `decisioning.propositionDismiss` | Den här händelsen spårar när ett beslut har fattats om att inte engagera sig i det erbjudande som presenteras. |
-| `decisioning.propositionInteract` | Den här händelsen spårar när en person interagerat med ett beslutsförslag. |
+| `decisioning.propositionDisplay` | Den här händelsen används när Web SDK automatiskt skickar information om vad som visas på en sida. Du behöver dock inte den här händelsetypen om du redan inkluderar visningsinformation på andra sätt, som med sidträffar uppifrån och ned. Du kan välja vilken händelsetyp du vill längst ned i sidträffar. |
+| `decisioning.propositionDismiss` | Den här händelsetypen används när ett Adobe Journey Optimizer-meddelande eller innehållskort stängs. |
+| `decisioning.propositionFetch` | Används för att indikera att en händelse främst är att hämta beslut. Adobe Analytics släpper det här evenemanget automatiskt. |
+| `decisioning.propositionInteract` | Den här händelsetypen används för att spåra interaktioner, som klickningar, i personaliserat innehåll. |
 | `decisioning.propositionSend` | Den här händelsen spårar när man har beslutat att skicka en rekommendation eller ett erbjudande till en presumtiv kund för övervägande. |
-| `decisioning.propositionTrigger` | Den här händelsen spårar aktiveringen av en förslagsprocess. Ett visst villkor eller en viss åtgärd har inträffat för att uppmana till att ett erbjudande presenteras. |
+| `decisioning.propositionTrigger` | Händelser av den här typen lagras i lokalt lager av [Web SDK](../../web-sdk/home.md), men skickas inte till Experience Edge. Varje gång en regeluppsättning är uppfylld genereras en händelse som lagras i ett lokalt lager (om den inställningen är aktiverad). |
 | `delivery.feedback` | Den här händelsen spårar feedbackhändelser för en leverans, t.ex. en e-postleverans. |
 | `directMarketing.emailBounced` | Den här händelsen spåras när ett e-postmeddelande skickas till en person. |
 | `directMarketing.emailBouncedSoft` | Den här händelsen spårar när ett e-postmeddelande till en person studsar på skärmen. |
@@ -132,6 +134,7 @@ I följande tabell visas de godkända värdena för `eventType` tillsammans med 
 | `directMarketing.emailOpened` | Den här händelsen spårar när en person öppnar ett marknadsföringsmeddelande. |
 | `directMarketing.emailSent` | Den här händelsen spårar när ett marknadsföringsmeddelande har skickats till en person. |
 | `directMarketing.emailUnsubscribed` | Den här händelsen spårar när en person säger upp prenumerationen på ett marknadsföringsmejl. |
+| `display` | **Föråldrat** Använd `decisioning.propositionDisplay` i stället. |
 | `inappmessageTracking.dismiss` | Den här händelsen spårar när ett meddelande i appen stängdes. |
 | `inappmessageTracking.display` | Den här händelsen spårar när ett meddelande visas i appen. |
 | `inappmessageTracking.interact` | Den här händelsen spårar när ett meddelande i appen interagerades med. |
@@ -146,33 +149,34 @@ I följande tabell visas de godkända värdena för `eventType` tillsammans med 
 | `leadOperation.statusInCampaignProgressionChanged` | Den här händelsen spårar när status för ett lead i en kampanj har ändrats. |
 | `listOperation.addToList` | Den här händelsen spårar när en person lades till i en marknadsföringslista. |
 | `listOperation.removeFromList` | Den här händelsen spårar när en person har tagits bort från en marknadsföringslista. |
-| `media.adBreakComplete` | Den här händelsen spårar när en `adBreakComplete`-händelse har inträffat. Den här händelsen utlöses i början av en annonsbrytning. |
-| `media.adBreakStart` | Den här händelsen spårar när en `adBreakStart`-händelse har inträffat. Den här händelsen utlöses i slutet av en annonsbrytning. |
-| `media.adComplete` | Den här händelsen spårar när en `adComplete`-händelse har inträffat. Den här händelsen utlöses när en annons har slutförts. |
-| `media.adSkip` | Den här händelsen spårar när en `adSkip`-händelse har inträffat. Den här händelsen utlöses när en annons har hoppats över. |
-| `media.adStart` | Den här händelsen spårar när en `adStart`-händelse har inträffat. Den här händelsen utlöses när en annons har startats. |
-| `media.bitrateChange` | Den här händelsen spårar när en `bitrateChange`-händelse har inträffat. Den här händelsen utlöses när bithastigheten ändras. |
-| `media.bufferStart` | Den här händelsen spårar när en `bufferStart`-händelse har inträffat. Den här händelsen utlöses när media har börjat buffras. |
-| `media.chapterComplete` | Den här händelsen spårar när en `chapterComplete`-händelse har inträffat. Den här händelsen utlöses när ett kapitel i mediet har slutförts. |
-| `media.chapterSkip` | Den här händelsen spårar när en `chapterSkip`-händelse har inträffat. Den här händelsen utlöses när en användare går framåt eller bakåt till ett annat avsnitt eller kapitel i medieinnehållet. |
-| `media.chapterStart` | Den här händelsen spårar när en `chapterStart`-händelse har inträffat. Den här händelsen utlöses i början av ett visst avsnitt eller kapitel i medieinnehållet. |
+| `media.adBreakComplete` | Den här händelsen signalerar att en annonsbrytning har slutförts. |
+| `media.adBreakStart` | Den här händelsen signalerar början på ett annonsavbrott. |
+| `media.adComplete` | Den här händelsen signalerar att en annons har slutförts. |
+| `media.adSkip` | Den här händelsen signalerar när en annons har hoppats över. |
+| `media.adStart` | Den här händelsen signalerar början på en annons. |
+| `media.bitrateChange` | Den här händelsen signalerar när bithastigheten ändras. |
+| `media.bufferStart` | Händelsetypen `media.bufferStart` skickas när bufferten börjar. Det finns ingen specifik `bufferResume`-händelsetyp. Buffertfunktionen anses ha återupptagits när en `play` -händelse skickas efter en `bufferStart` -händelse. |
+| `media.chapterComplete` | Den här händelsen signalerar att ett kapitel har slutförts. |
+| `media.chapterSkip` | Den här händelsen utlöses när en användare hoppar framåt eller bakåt till ett annat avsnitt eller kapitel. |
+| `media.chapterStart` | Den här händelsen signalerar början på ett kapitel. |
 | `media.downloaded` | Den här händelsen spårar när media har laddat ned innehåll. |
-| `media.error` | Den här händelsen spårar när en `error`-händelse har inträffat. Den här händelsen utlöses när ett fel eller problem inträffar under medieuppspelningen. |
-| `media.pauseStart` | Den här händelsen spårar när en `pauseStart`-händelse har inträffat. Den här händelsen utlöses när en användare initierar en paus i medieuppspelningen. |
-| `media.ping` | Den här händelsen spårar när en `ping`-händelse har inträffat. Detta verifierar tillgängligheten för en medieresurs. |
-| `media.play` | Den här händelsen spårar när en `play`-händelse har inträffat. Den här händelsen utlöses när medieinnehållet spelas upp, vilket indikerar användarens aktiva förbrukning. |
-| `media.sessionComplete` | Den här händelsen spårar när en `sessionComplete`-händelse har inträffat. Den här händelsen markerar slutet på en mediauppspelningssession. |
-| `media.sessionEnd` | Den här händelsen spårar när en `sessionEnd`-händelse har inträffat. Den här händelsen anger att en mediesession har avslutats. Den här slutsatsen kan innebära att mediespelaren stängs eller att uppspelningen stoppas. |
-| `media.sessionStart` | Den här händelsen spårar när en `sessionStart`-händelse har inträffat. Den här händelsen markerar början på en mediouppspelningssession. Den aktiveras när en användare börjar spela upp en mediefil. |
-| `media.statesUpdate` | Den här händelsen spårar när en `statesUpdate`-händelse har inträffat. Spårningsfunktionerna för spelartillstånd kan kopplas till ett ljud- eller videoflöde. Standardlägena är: helskärm, stängd, bildtext, bildInPicture och inFocus. |
+| `media.error` | Den här händelsen signalerar när ett fel har inträffat under medieuppspelning. |
+| `media.pauseStart` | Den här händelsen spårar när en `pauseStart`-händelse har inträffat. Den här händelsen utlöses när en användare initierar en paus i medieuppspelningen. Det finns ingen CV-händelsetyp. Ett cv-värde erhålls när du skickar en uppspelningshändelse efter en `pauseStart`. |
+| `media.ping` | Händelsetypen `media.ping` används för att ange pågående uppspelningsstatus. För huvudinnehåll måste den här händelsen skickas var 10:e sekund under uppspelningen, med början 10 sekunder efter uppspelningen. För annonsinnehåll måste det skickas varje sekund under annonsspårning. Ping-händelser ska inte innehålla parameterkartan i begärandetexten. |
+| `media.play` | Händelsetypen `media.play` skickas när spelaren övergår till läget `playing` från ett annat läge, till exempel `buffering,` `paused` (när den återupptas av användaren) eller `error` (när den återställs), inklusive scenarier som automatisk uppspelning. Den här händelsen utlöses av spelarens `on('Playing')`-återanrop. |
+| `media.sessionComplete` | Den här händelsen skickas när slutet av huvudinnehållet nås. |
+| `media.sessionEnd` | Händelsetypen `media.sessionEnd` meddelar Media Analytics-backend om att omedelbart stänga en session när en användare avbryter sin visning och sannolikt inte kommer att returnera. Om den här händelsen inte skickas kommer sessionen att gå ut efter 10 minuters inaktivitet eller 30 minuter utan att spelhuvudet flyttas. Eventuella efterföljande medieanrop med detta sessions-ID ignoreras. |
+| `media.sessionStart` | Händelsetypen `media.sessionStart` skickas med sessionsinitieringsanropet. När du får ett svar extraheras sessions-ID från platshuvudet och används för alla efterföljande händelseanrop till samlingsservern. |
+| `media.statesUpdate` | Den här händelsen spårar när en `statesUpdate`-händelse har inträffat. Spårningsfunktionerna för spelartillstånd kan kopplas till ett ljud- eller videoflöde. Standardlägena är: `fullscreen`, `mute`, `closedCaptioning`, `pictureInPicture` och `inFocus`. |
 | `opportunityEvent.addToOpportunity` | Den här händelsen spårar när en person lades till i en affärsmöjlighet. |
 | `opportunityEvent.opportunityUpdated` | Händelsen spårar när en affärsmöjlighet uppdaterades. |
 | `opportunityEvent.removeFromOpportunity` | Den här händelsen spårar när en person har tagits bort från en affärsmöjlighet. |
+| `personalization.request` | **Föråldrat** Använd `decisioning.propositionFetch` i stället. |
 | `pushTracking.applicationOpened` | Den här händelsen spårar när en person öppnar ett program från ett push-meddelande. |
 | `pushTracking.customAction` | Den här händelsen spårar när en person har valt en anpassad åtgärd i ett push-meddelande. |
 | `web.formFilledOut` | Den här händelsen spårar när en person fyller i ett formulär på en webbsida. |
-| `web.webinteraction.linkClicks` | Den här händelsen spårar när en länk har markerats en eller flera gånger. |
-| `web.webpagedetails.pageViews` | Den här händelsen spårar när en webbsida har tagit emot en eller flera vyer. |
+| `web.webinteraction.linkClicks` | Händelsen signalerar att ett länkklick har spelats in automatiskt av Web SDK. |
+| `web.webpagedetails.pageViews` | Den här händelsetypen är standardmetoden för att markera träffen som en sidvy. |
 | `location.entry` | Den här händelsen spårar en persons eller enhets inträde på en viss plats. |
 | `location.exit` | Den här händelsen spårar en persons eller enhets utträde från en viss plats. |
 
