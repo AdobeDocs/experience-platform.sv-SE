@@ -4,7 +4,7 @@ title: Användargränssnittshandbok för aviseringar
 description: Lär dig hur du hanterar aviseringar i användargränssnittet i Experience Platform.
 feature: Alerts
 exl-id: 4ba3ef2b-7394-405e-979d-0e5e1fe676f3
-source-git-commit: c2832821ea6f9f630e480c6412ca07af788efd66
+source-git-commit: 9004a2203996f0fd64833a03f211232ebf14e3e4
 workflow-type: tm+mt
 source-wordcount: '603'
 ht-degree: 0%
