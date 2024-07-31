@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Övervaka dataflöden för mål i användargränssnittet
 type: Tutorial
 exl-id: 8eb7bb3c-f2dc-4dbc-9cf5-3d5d3224f5f1
-source-git-commit: ee63f5ee6cca98e0b5838dc2de656d1d615a0b3a
+source-git-commit: 27802292a7a06f2edaea9efc39d4a63507e0e7e1
 workflow-type: tm+mt
-source-wordcount: '3385'
+source-wordcount: '3377'
 ht-degree: 0%
 
 ---
@@ -86,7 +86,7 @@ En lista över enskilda körningar och deras specifika mått visas tillsammans m
 
 Varje enskild dataflödeskörning visar följande information:
 
-- **[!UICONTROL Dataflow run start]**: Den tid som dataflödet körs från. För direktuppspelande dataflöden hämtar Experience Platform mätvärden som baseras på början av dataflödet, i form av timstatistik. Det innebär att för direktuppspelande dataflöde körs, och om ett dataflöde startas t.ex. 10:30 PM, visas starttiden som 10:00 PM i gränssnittet.
+- **[!UICONTROL Dataflow run start]**: Den tid då dataflödet startades. För direktuppspelande dataflöden hämtar Experience Platform mätvärden som baseras på början av dataflödet, i form av timstatistik. Det innebär att för direktuppspelande dataflöde körs, och om ett dataflöde startas t.ex. 10:30 PM, visas starttiden som 10:00 PM i gränssnittet.
 - **[!UICONTROL Processing time]**: Den tid det tog för dataflödet att bearbeta.
    - För **[!UICONTROL completed]**-körningar visas alltid en timme i bearbetningstidens mått.
    - För dataflöden som fortfarande är i **[!UICONTROL processing]**-läge är fönstret för att hämta alla mått öppet i mer än en timme för att bearbeta alla mått som motsvarar dataflödeskörningen. Ett dataflöde som startades kl. 9.30 kan till exempel vara i ett bearbetningstillstånd i en timme och trettio minuter för att hämta och bearbeta alla mätvärden. När bearbetningsfönstret sedan stängs och dataflödets status uppdateras till **slutförd** ändras den visade bearbetningstiden till en timme.
@@ -110,13 +110,13 @@ På informationssidan visas också en lista över misslyckade identiteter och id
 
 #### (Beta) Körningsövervakning av dataflöde på målnivå för direktuppspelningsmål {#audience-level-dataflow-runs-for-streaming-destinations}
 
-Du kan visa information om aktiverade, uteslutna eller misslyckade identiteter som är uppdelade på en målgruppsnivå för varje målgrupp som är en del av dataflödet. Detta kan hjälpa dig att förstå att övervakning på målgruppsnivå för direktuppspelningsmål för närvarande bara är tillgängligt för [[!DNL Google Customer Match + Display & Video 360] målet](/help/destinations/catalog/advertising/google-customer-match-dv360.md).
+Du kan visa information om aktiverade, uteslutna eller misslyckade identiteter som är uppdelade på en målgruppsnivå för varje målgrupp som är en del av dataflödet. Övervakning på målgruppsnivå för direktuppspelningsmål är för närvarande endast tillgängligt för [[!DNL Google Customer Match + Display & Video 360] målet](/help/destinations/catalog/advertising/google-customer-match-dv360.md).
 
 ![Övervakning på målgruppsnivå för direktuppspelningsmål.](/help/dataflows/assets/ui/monitor-destinations/audience-level-monitoring-streaming.png)
 
 >[!NOTE]
 >
->Numret **[!UICONTROL Profiles received]** på målgruppsfliken kanske inte alltid matchar antalet profiler som tagits emot för dataflödeskörningen. Detta beror på att en viss profil kan vara en del av mer än en målgrupp som aktiveras i dataflödeskörningen.
+>Numret **[!UICONTROL Profiles received]** på fliken **[!UICONTROL Audiences]** kanske inte alltid matchar antalet profiler som tagits emot för dataflödeskörningen. Detta beror på att en viss profil kan vara en del av mer än en målgrupp som aktiveras i dataflödeskörningen.
 
 ### Dataflödeskörningar för batchdestinationer {#dataflow-runs-for-batch-destinations}
 
@@ -150,7 +150,7 @@ För gruppmål innehåller fliken [!UICONTROL Dataflow runs] måttdata för data
 
 Varje enskild dataflödeskörning visar följande information:
 
-- **[!UICONTROL Dataflow run start]**: Den tid som dataflödet körs från.
+- **[!UICONTROL Dataflow run start]**: Den tid då dataflödet startades.
 - **[!UICONTROL Audience]**: Namnet på målgruppen som är associerad med varje dataflödeskörning.
 - **[!UICONTROL Processing time]**: Den tid det tog att bearbeta dataflödet.
 - **[!UICONTROL Profiles received]**: Det totala antalet profiler som tagits emot i dataflödet. Det här värdet uppdateras var 60:e minut.

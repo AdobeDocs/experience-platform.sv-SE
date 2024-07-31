@@ -3,7 +3,7 @@ title: Google Customer Match + Display & Video 360 connection
 description: Med Google kundmatchning + Display & Video 360-destinationskoppling kan du använda online- och offlinedata från Experience Platform för att nå och återengagera dina kunder i Google egna och driftsatta egendomar, som Search, Shopping, Gmail och YouTube.
 badgeBeta: label="Beta" type="Informative"
 exl-id: f6da3eae-bf3f-401a-99a1-2cca9a9058d2
-source-git-commit: c3de72a0f90578803b969f32cc484047089099bd
+source-git-commit: 27802292a7a06f2edaea9efc39d4a63507e0e7e1
 workflow-type: tm+mt
 source-wordcount: '1960'
 ht-degree: 0%
@@ -223,11 +223,11 @@ Attributkälldata hashas inte automatiskt. Om källfältet innehåller ohashade 
 
 ![Använd omvandlingskontroll markerat i mappningssteget i aktiveringsarbetsflödet.](../../assets/catalog/advertising/google-customer-match-dv360/transformation.png)
 
-## Bildskärmsmål
+## Bildskärmsmål {#monitor-destination}
 
 När du har anslutit till målet och etablerat ett måldataflöde kan du använda [övervakningsfunktionen](/help/dataflows/ui/monitor-destinations.md) i Real-Time CDP för att få omfattande information om de profilposter som är aktiverade för målet i varje dataflödeskörning.
 
-Övervakningsinformationen för anslutningen [!DNL Google Customer Match + Display & Video 360] innehåller information på målgruppsnivå om aktiverade, uteslutna och misslyckade identiteter i varje dataflöde och dataflöde. Läs mer om funktionerna.
+Övervakningsinformationen för anslutningen [!DNL Google Customer Match + Display & Video 360] innehåller information på målgruppsnivå om aktiverade, uteslutna och misslyckade identiteter i varje dataflöde och dataflöde. [Läs mer](/help/dataflows/ui/monitor-destinations.md#segment-level-view) om funktionerna.
 
 ## Verifiera att målgruppsaktiveringen lyckades {#verify-activation}
 
