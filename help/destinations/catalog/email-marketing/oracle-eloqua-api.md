@@ -3,7 +3,7 @@ title: (API) Oraclena Eloqua-anslutning
 description: Med API-Oraclet Eloqua kan du exportera dina kontouppgifter och aktivera dem i Oracle Eloqua efter dina affärsbehov.
 last-substantial-update: 2023-03-14T00:00:00Z
 exl-id: 97ff41a2-2edd-4608-9557-6b28e74c4480
-source-git-commit: cf7ad18fa3d8f074371a0f03e09e218d37be5e01
+source-git-commit: 5aefa362d7a7d93c12f9997d56311127e548497e
 workflow-type: tm+mt
 source-wordcount: '1956'
 ht-degree: 0%
@@ -148,19 +148,21 @@ Följ de här stegen för att mappa dina XDM-fält till [!DNL Oracle Eloqua]-må
 1. Välj **[!UICONTROL Add new mapping]** i steget **[!UICONTROL Mapping]**. En ny mappningsrad visas på skärmen.
 1. Välj kategorin **[!UICONTROL Select attributes]** i fönstret **[!UICONTROL Select source field]** och markera XDM-attributet eller välj **[!UICONTROL Select identity namespace]** och välj en identitet.
 1. I fönstret **[!UICONTROL Select target field]** väljer du **[!UICONTROL Select identity namespace]** och väljer en identitet, eller väljer **[!UICONTROL Select custom attributes]** och skriver det önskade attributnamnet i fältet **[!UICONTROL Attribute name]**. Attributnamnet som du anger ska matcha ett befintligt kontaktattribut i [!DNL Oracle Eloqua]. I [[!DNL create a contact]](https://docs.oracle.com/en/cloud/saas/marketing/eloqua-rest-api/op-api-rest-1.0-data-contact-post.html) finns de exakta attributnamnen som du kan använda i [!DNL Oracle Eloqua].
+
    * Upprepa dessa steg för att lägga till både nödvändiga och önskade attributmappningar mellan XDM-profilschemat och [!DNL Oracle Eloqua]:
-| Source Field | Målfält | Obligatoriskt |
-|—|—|—|
-|`IdentityMap: Eid`|`Identity: EloquaId`| Ja |
-|`xdm: personalEmail.address`|`Attribute: emailAddress`| Ja |
-|`xdm: personName.firstName`|`Attribute: firstName`| |
-|`xdm: personName.lastName`|`Attribute: lastName`| |
-|`xdm: workAddress.street1`|`Attribute: address1`| |
-|`xdm: workAddress.street2`|`Attribute: address2`| |
-|`xdm: workAddress.street3`|`Attribute: address3`| |
-|`xdm: workAddress.postalCode`|`Attribute: postalCode`| |
-|`xdm: workAddress.country`|`Attribute: country`| |
-|`xdm: workAddress.city`|`Attribute: city`| |
+
+     | Source Field | Målfält | Obligatoriskt |
+     |---|---|---|
+     | `IdentityMap: Eid` | `Identity: EloquaId` | Ja |
+     | `xdm: personalEmail.address` | `Attribute: emailAddress` | Ja |
+     | `xdm: personName.firstName` | `Attribute: firstName` | |
+     | `xdm: personName.lastName` | `Attribute: lastName` | |
+     | `xdm: workAddress.street1` | `Attribute: address1` | |
+     | `xdm: workAddress.street2` | `Attribute: address2` | |
+     | `xdm: workAddress.street3` | `Attribute: address3` | |
+     | `xdm: workAddress.postalCode` | `Attribute: postalCode` | |
+     | `xdm: workAddress.country` | `Attribute: country` | |
+     | `xdm: workAddress.city` | `Attribute: city` | |
 
    * Ett exempel med mappningarna ovan visas nedan:
      ![Exempel på skärmbild för plattformsgränssnitt med attributmappningar.](../../assets/catalog/email-marketing/oracle-eloqua-api/mappings.png)

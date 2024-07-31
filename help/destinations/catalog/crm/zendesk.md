@@ -3,7 +3,7 @@ title: Zendesk-anslutning
 description: Med Zendesk-destinationen kan du exportera dina kontouppgifter och aktivera dem i Zendesk efter behov.
 last-substantial-update: 2023-03-14T00:00:00Z
 exl-id: e7fcbbf4-5d6c-4abb-96cb-ea5b67a88711
-source-git-commit: ba39f62cd77acedb7bfc0081dbb5f59906c9b287
+source-git-commit: 5aefa362d7a7d93c12f9997d56311127e548497e
 workflow-type: tm+mt
 source-wordcount: '1398'
 ht-degree: 0%
@@ -121,12 +121,14 @@ Följ de här stegen för att mappa dina XDM-fält korrekt till målfälten för
 1. Välj **[!UICONTROL Add new mapping]** i steget **[!UICONTROL Mapping]**. En ny mappningsrad visas på skärmen.
 1. Välj kategorin **[!UICONTROL Select attributes]** i fönstret **[!UICONTROL Select source field]** och markera XDM-attributet eller välj **[!UICONTROL Select identity namespace]** och välj en identitet.
 1. I fönstret **[!UICONTROL Select target field]** väljer du kategorin **[!UICONTROL Select identity namespace]** och väljer en målidentitet, eller väljer kategorin **[!UICONTROL Select attributes]** och väljer ett av de schemaattribut som stöds.
+
    * Upprepa dessa steg om du vill lägga till följande obligatoriska mappningar, du kan även lägga till andra attribut som du vill uppdatera mellan XDM-profilschemat och din [!DNL Zendesk]-instans:
-|Source-fält|Målfält| Obligatoriskt|
-|—|—|—|
-|`xdm: person.name.lastName`|`xdm: last_name`| Ja |
-|`IdentityMap: Email`|`Identity: email`| Ja |
-|`xdm: person.name.firstName`|`xdm: first_name`| |
+
+     | Source Field | Målfält | Obligatoriskt |
+     |---|---|---|
+     | `xdm: person.name.lastName` | `xdm: last_name` | Ja |
+     | `IdentityMap: Email` | `Identity: email` | Ja |
+     | `xdm: person.name.firstName` | `xdm: first_name` | |
 
    * Ett exempel på hur du använder dessa mappningar visas nedan:
      ![Exempel på skärmbild för plattformsgränssnitt med attributmappningar.](../../assets/catalog/crm/zendesk/mappings.png)

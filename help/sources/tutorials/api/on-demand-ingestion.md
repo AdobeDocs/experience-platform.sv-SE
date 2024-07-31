@@ -3,7 +3,7 @@ keywords: Experience Platform;hem;populära ämnen;flödestjänst;
 title: Skapa en flödeskörning för behovsstyrd matning med API:t för flödestjänsten
 description: Lär dig hur du skapar en flödeskörning för on-demand-inmatning med API:t för Flow Service
 exl-id: a7b20cd1-bb52-4b0a-aad0-796929555e4a
-source-git-commit: cea12160656ba0724789db03e62213022bacd645
+source-git-commit: 5aefa362d7a7d93c12f9997d56311127e548497e
 workflow-type: tm+mt
 source-wordcount: '797'
 ht-degree: 0%
@@ -104,6 +104,7 @@ Ett lyckat svar returnerar information om den nyligen skapade flödeskörningen,
 | --- | --- |
 | `id` | ID för den nyligen skapade flödeskörningen. Mer information om tabellbaserade körningsspecifikationer finns i guiden [Hämta flödesspecifikationer](../api/collect/database-nosql.md#specs). |
 | `etag` | Resursversionen av flödeskörningen. |
+
 <!-- 
 | `createdAt` | The unix timestamp that designates when the flow run was created. |
 | `updatedAt` | The unix timestamp that designates when the flow run was last updated. |

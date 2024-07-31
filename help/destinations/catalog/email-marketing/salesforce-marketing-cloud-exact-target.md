@@ -2,7 +2,7 @@
 title: (API) Salesforce Marketing Cloud-anslutning
 description: Med Salesforce Marketing Cloud (tidigare ExactTarget) kan du exportera dina kontodata och aktivera dem i Salesforce Marketing Cloud för dina affärsbehov.
 exl-id: 0cf068e6-8a0a-4292-a7ec-c40508846e27
-source-git-commit: c35b43654d31f0f112258e577a1bb95e72f0a971
+source-git-commit: 5aefa362d7a7d93c12f9997d56311127e548497e
 workflow-type: tm+mt
 source-wordcount: '2803'
 ht-degree: 0%
@@ -242,15 +242,17 @@ Ett exempelattribut från [!DNL Salesforce Marketing Cloud] visas nedan:
 ![ Skärmbild för användargränssnittet i Salesforce Marketing Cloud med ett attribut.](../../assets/catalog/email-marketing/salesforce-marketing-cloud-exact-target/salesforce-custom-field.png)
 
 Ett exempel som anger platsen för [!DNL (API) Salesforce Marketing Cloud] **[!UICONTROL Mapping ID]** visas nedan:
-![Exempel på skärmbild i användargränssnittet för plattformen som visar export av schemalagda målgrupper.](../../assets/catalog/email-marketing/salesforce-marketing-cloud-exact-target/schedule-segment-export.png)
+
+![Exempel på skärmbild för plattformsgränssnitt som visar export av schemalagda målgrupper.](../../assets/catalog/email-marketing/salesforce-marketing-cloud-exact-target/schedule-segment-export.png)
 
 Så som visas ska [!DNL (API) Salesforce Marketing Cloud] **[!UICONTROL Mapping ID]** exakt matcha värdet som anges i [!DNL Salesforce Marketing Cloud] **[!UICONTROL FIELD NAME]**.
 
 Upprepa det här avsnittet för varje aktiverat plattformssegment.
 
 Ett typiskt exempel baserat på bilden ovan kan vara.
+
 | [!DNL (API) Salesforce Marketing Cloud] segmentnamn | [!DNL Salesforce Marketing Cloud] **[!UICONTROL FIELD NAME]** | [!DNL (API) Salesforce Marketing Cloud] **[!UICONTROL Mapping ID]** |
-| — | — | — |
+| --- | --- | --- |
 | salesforce mc målgrupp 1 | `salesforce_mc_segment_1` | `salesforce_mc_segment_1` |
 | salesforce mc målgrupp 2 | `salesforce_mc_segment_2` | `salesforce_mc_segment_2` |
 

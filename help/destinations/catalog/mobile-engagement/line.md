@@ -4,7 +4,7 @@ title: LINJEanslutning
 description: Med LINE-destinationen kan ni lägga till profiler till era plattformar och leverera personaliserade upplevelser till anslutna användare.
 last-substantial-update: 2022-11-08T00:00:00Z
 exl-id: 9981798a-61f2-4a09-9a33-57e63eb36d43
-source-git-commit: ba39f62cd77acedb7bfc0081dbb5f59906c9b287
+source-git-commit: 5aefa362d7a7d93c12f9997d56311127e548497e
 workflow-type: tm+mt
 source-wordcount: '1139'
 ht-degree: 0%
@@ -121,8 +121,9 @@ Läs [Aktivera profiler och målgrupper för att direktuppspela målgruppsexport
 Om du vill skicka målgruppsdata från Adobe Experience Platform till målet [!DNL LINE] måste du gå igenom fältmappningssteget. Mappningen består av att skapa en länk mellan XDM-schemafälten (Experience Data Model) i ditt plattformskonto och motsvarande motsvarigheter från målmålet. Följ de här stegen för att mappa dina XDM-fält korrekt till målfälten för [!DNL LINE]:
 
 Beroende på din källidentitet måste följande namnrymder för målidentitet mappas:
+
 | Målidentitet | Source Field | Målfält |
-| — | — | — |
+| --- | --- | --- |
 | ID för annonsörer (IFA) | `IDFA` eller `GAID` | `LineId` |
 | Användar-ID för RAD | `UserID` | `LineId` |
 

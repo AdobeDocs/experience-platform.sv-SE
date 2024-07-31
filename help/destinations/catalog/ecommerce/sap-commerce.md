@@ -3,7 +3,7 @@ title: SAP Commerce-anslutning
 description: Använd SAP Commerce-målkopplingen för att uppdatera kundposter i SAP-kontot.
 last-substantial-update: 2024-02-20T00:00:00Z
 exl-id: 3bd1a2a7-fb56-472d-b9bd-603b94a8937e
-source-git-commit: c35b43654d31f0f112258e577a1bb95e72f0a971
+source-git-commit: 5aefa362d7a7d93c12f9997d56311127e548497e
 workflow-type: tm+mt
 source-wordcount: '2155'
 ht-degree: 0%
@@ -194,6 +194,7 @@ Om du vill skicka målgruppsdata från Adobe Experience Platform till målet [!D
 #### Mappa `customerNumberSAP`-identiteten
 
 Identiteten `customerNumberSAP` är en obligatorisk mappning för det här målet. Följ stegen nedan för att mappa den:
+
 1. Välj **[!UICONTROL Add new mapping]** i steget **[!UICONTROL Mapping]**. Nu kan du se en ny mappningsrad på skärmen.
    ![Skärmbild för plattformsgränssnitt med knappen för att lägga till ny mappning markerad.](../../assets/catalog/ecommerce/sap-commerce/mapping-add-new-mapping.png)
 1. I fönstret **[!UICONTROL Select source field]** väljer du **[!UICONTROL Select identity namespace]** och sedan `customerNumberSAP`.
@@ -211,6 +212,7 @@ Ett exempel med identitetsmappning visas nedan:
 #### Mappningsattribut
 
 Om du vill lägga till andra attribut som du vill uppdatera mellan XDM-profilschemat och ditt [!DNL SAP Subscription Billing]-konto upprepar du stegen nedan:
+
 1. Välj **[!UICONTROL Add new mapping]** i steget **[!UICONTROL Mapping]**. Nu kan du se en ny mappningsrad på skärmen.
    ![Skärmbild för plattformsgränssnitt med knappen för att lägga till ny mappning markerad.](../../assets/catalog/ecommerce/sap-commerce/mapping-add-new-mapping.png)
 1. I fönstret **[!UICONTROL Select source field]** väljer du kategorin **[!UICONTROL Select attributes]** och väljer XDM-attributet.
@@ -302,8 +304,9 @@ Som du kan se ska värdet i fältet **[!UICONTROL Mapping ID]** exakt matcha vä
 Upprepa det här avsnittet för varje aktiverad publik på plattformen.
 
 Baserat på bilden ovan där du har valt två målgrupper är mappningen följande:
-| [!DNL SAP Commerce] målgruppsnamn | [!DNL SAP Subscription Billing] **[!UICONTROL Reference Type]** | [!DNL SAP Commerce] **[!UICONTROL Mapping ID]** värde |
-| — | — | — |
+
+| [!DNL SAP Commerce] målgruppsnamn | [!DNL SAP Subscription Billing] **[!UICONTROL Reference Type]** | [!DNL SAP Commerce] **[!UICONTROL Mapping ID]**-värde |
+| --- | --- | --- |
 | sap_publik1 | `SAP_1` | `SAP_1` |
 | SAP Audience2 | `SAP_2` | `SAP_2` |
 

@@ -3,7 +3,7 @@ title: Mailchimp-taggar
 description: Med Mailchimp Tags-målet kan du exportera dina kontodata och aktivera dem i Mailchimp för att interagera med kontakterna.
 last-substantial-update: 2024-02-20T00:00:00Z
 exl-id: 0f278ca8-4fcf-4c47-b538-9cffa45a3d90
-source-git-commit: c35b43654d31f0f112258e577a1bb95e72f0a971
+source-git-commit: 5aefa362d7a7d93c12f9997d56311127e548497e
 workflow-type: tm+mt
 source-wordcount: '1590'
 ht-degree: 0%
@@ -175,9 +175,10 @@ Följ stegen nedan för att mappa dina XDM-fält korrekt till målfälten för [
    ![Skärmbild för plattformsgränssnitt med målfält som e-post från identitetsnamnområdet.](../../assets/catalog/email-marketing/mailchimp-tags/target-field.png)
 
    Mappningarna mellan ditt XDM-profilschema och [!DNL Mailchimp Tags] visas nedan:
-| Source Field | Målfält | Obligatoriskt |
-| — | — | — |
-|`IdentityMap: Email`|`Identity: Email`| Ja |
+
+   | Source Field | Målfält | Obligatoriskt |
+   | --- | --- | --- |
+   | `IdentityMap: Email` | `Identity: Email` | Ja |
 
    Ett exempel med de slutförda mappningarna visas nedan:
    ![Exempel på skärmbild för plattformsgränssnitt som visar fältmappningar.](../../assets/catalog/email-marketing/mailchimp-tags/mappings.png)

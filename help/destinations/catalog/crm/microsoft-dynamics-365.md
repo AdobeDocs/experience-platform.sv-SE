@@ -4,7 +4,7 @@ title: Microsoft Dynamics 365-anslutning
 description: Med Microsoft Dynamics 365-destinationen kan du exportera dina kontodata och aktivera dem i Microsoft Dynamics 365 efter dina affärsbehov.
 last-substantial-update: 2022-11-08T00:00:00Z
 exl-id: 49bb5c95-f4b7-42e1-9aae-45143bbb1d73
-source-git-commit: ba39f62cd77acedb7bfc0081dbb5f59906c9b287
+source-git-commit: 5aefa362d7a7d93c12f9997d56311127e548497e
 workflow-type: tm+mt
 source-wordcount: '1940'
 ht-degree: 0%
@@ -170,9 +170,10 @@ Om du vill skicka målgruppsdata från Adobe Experience Platform till målet [!D
      ![Skärmbild för plattformsgränssnitt som visar målmappning för kontaktperson.](../../assets/catalog/crm/microsoft-dynamics-365/target-mapping-contactid.png)
 
    * Lägg till följande mappning mellan ditt XDM-profilschema och din [!DNL Dynamics 365]-instans:
-|XDM-profilschema|[!DNL Dynamics 365] Instans| Obligatoriskt|
-|—|—|—|
-|`contactid`|`contactid`| Ja |
+
+     | XDM-profilschema | [!DNL Dynamics 365]-instans | Obligatoriskt |
+     |---|---|---|
+     | `contactid` | `contactid` | Ja |
 
    * **[!UICONTROL Select custom attributes]**: välj det här alternativet om du vill mappa källfältet till ett anpassat attribut som du definierar i fältet **[!UICONTROL Attribute name]**. I [[!DNL Dynamics 365] dokumentationen](https://docs.microsoft.com/en-us/dynamics365/customerengagement/on-premises/developer/entities/contact?view=op-9-1#entity-properties) finns en omfattande lista över attribut som stöds.
      ![Skärmbild för plattformsgränssnitt med målmappning för e-post.](../../assets/catalog/crm/microsoft-dynamics-365/target-mapping-email.png)
@@ -183,14 +184,16 @@ Om du vill skicka målgruppsdata från Adobe Experience Platform till målet [!D
      > * Om du har ett källfält för datum eller tidsstämpling som är mappat till ett [!DNL Dynamics 365] [date- eller timestamp](https://docs.microsoft.com/en-us/power-apps/developer/data-platform/webapi/reference/timestampdatemapping?view=dataverse-latest) -målfält kontrollerar du att det mappade värdet inte är tomt. Om det exporterade fältvärdet är tomt visas ett *`Bad request reported while pushing events to the destination. Please contact the administrator and try again.`*-felmeddelande och data uppdateras inte. Det här är en [!DNL Dynamics 365]-begränsning.
 
    * Beroende på vilka värden du vill uppdatera lägger du till följande mappning mellan XDM-profilschemat och [!DNL Dynamics 365]-instansen:
-|XDM-profilschema|[!DNL Dynamics 365] Instans|
-|—|—|
-|`person.name.firstName`|`firstname`|
-|`person.name.lastName`|`lastname`|
-|`personalEmail.address`|`emailaddress1`|
+
+     | XDM-profilschema | [!DNL Dynamics 365]-instans |
+     |---|---|
+     | `person.name.firstName` | `firstname` |
+     | `person.name.lastName` | `lastname` |
+     | `personalEmail.address` | `emailaddress1` |
 
    * Ett exempel på hur du använder dessa mappningar visas nedan:
-     ![Exempel på skärmbild för plattformsgränssnitt som visar målmappningar.](../../assets/catalog/crm/microsoft-dynamics-365/mappings.png)
+
+   ![Exempel på skärmbild för plattformsgränssnitt som visar målmappningar.](../../assets/catalog/crm/microsoft-dynamics-365/mappings.png)
 
 ### Schemalägg målgruppsexport och exempel {#schedule-audience-export-example}
 

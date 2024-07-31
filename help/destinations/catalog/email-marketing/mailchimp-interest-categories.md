@@ -3,7 +3,7 @@ title: Intressekategorier för e-postmeddelanden
 description: Mailchimp (även kallat Intuit Mailchimp) är en populär automatiserad marknadsföringsplattform och en e-postmarknadsföringstjänst som används av företag för att hantera och kommunicera med kontakter (kunder, kunder eller andra berörda parter) med hjälp av e-postlistor och e-postmarknadsföringskampanjer. Använd den här kopplingen för att sortera dina kontakter baserat på deras intressen och önskemål.
 last-substantial-update: 2023-05-24T00:00:00Z
 exl-id: bdce8295-7305-4d54-81c1-7fa3e580ce70
-source-git-commit: ba39f62cd77acedb7bfc0081dbb5f59906c9b287
+source-git-commit: 5aefa362d7a7d93c12f9997d56311127e548497e
 workflow-type: tm+mt
 source-wordcount: '2205'
 ht-degree: 0%
@@ -168,12 +168,13 @@ Följ stegen nedan för att mappa dina XDM-fält korrekt till målfälten för [
 1. I fönstret **[!UICONTROL Select target field]** väljer du **[!UICONTROL Select identity namespace]** och en identitet eller väljer **[!UICONTROL Select attributes]**-kategori och väljer i listan över attribut i API:t för [!DNL Mailchimp] . *Alla anpassade attribut som du har lagt till i den valda målgruppen för [!DNL Mailchimp] är också tillgängliga för markering som målfält.*
 
    De tillgängliga mappningarna mellan ditt XDM-profilschema och [!DNL Mailchimp Interest Categories] är som följer:
-| Source Field | Målfält | Anteckningar |
-| — | — | — |
-|`IdentityMap: Email`|`Identity: email`| Obligatoriskt: Ja |
-|`xdm: person.name.firstName`|`Attribute: FNAME`| |
-|`xdm: person.name.lastName`|`Attribute: LNAME`| |
-|`xdm: person.birthDayAndMonth`|`Attribute: BIRTHDAY`| |
+
+   | Source Field | Målfält | Anteckningar |
+   | --- | --- | --- |
+   | `IdentityMap: Email` | `Identity: email` | Obligatoriskt: Ja |
+   | `xdm: person.name.firstName` | `Attribute: FNAME` | |
+   | `xdm: person.name.lastName` | `Attribute: LNAME` | |
+   | `xdm: person.birthDayAndMonth` | `Attribute: BIRTHDAY` | |
 
    Dessutom är `ADDRESS` ett särskilt målfält som kallas `merge field` inom din [!DNL Mailchimp]-målgrupp. I [[!DNL Mailchimp] dokumentationen](https://mailchimp.com/developer/marketing/docs/merge-fields/) definieras de nödvändiga nycklarna som `addr1`, `city`, `state` och `zip` samt de valfria nycklarna `addr2` och `country`. Värdena för dessa fält måste vara strängar. Om någon av `ADDRESS`-fältmappningarna finns skickar målet `ADDRESS`-objektet till [!DNL Mailchimp]-API:t för uppdatering. Alla `ADDRESS`-fält som inte är mappade har standardvärdet `NULL` förutom för det land som har standardvärdet `US`.
 

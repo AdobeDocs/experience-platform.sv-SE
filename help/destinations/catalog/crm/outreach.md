@@ -3,7 +3,7 @@ keywords: crm;CRM;crm destination;Utanför;Utanför crm-mål
 title: Utdataanslutning
 description: Med Outreach-destinationen kan du exportera dina kontodata och aktivera dem inom ramarna för ditt företags behov.
 exl-id: 7433933d-7a4e-441d-8629-a09cb77d5220
-source-git-commit: ba39f62cd77acedb7bfc0081dbb5f59906c9b287
+source-git-commit: 5aefa362d7a7d93c12f9997d56311127e548497e
 workflow-type: tm+mt
 source-wordcount: '1619'
 ht-degree: 0%
@@ -155,18 +155,20 @@ Om du vill skicka målgruppsdata från Adobe Experience Platform till målet [!D
      ![Skärmbild för plattformsanvändargränssnitt som visar målmappning med OutreachId.](../../assets/catalog/crm/outreach/target-mapping.png)
 
    * Lägg till följande mappning mellan ditt XDM-profilschema och din [!DNL Outreach]-instans:
-|XDM-profilschema|[!DNL Outreach] Instans| Obligatoriskt|
-|—|—|—|
-|`Oid`|`OutreachId`| Ja |
+
+     | XDM-profilschema | [!DNL Outreach]-instans | Obligatoriskt |
+     |---|---|---|
+     | `Oid` | `OutreachId` | Ja |
 
    * **[!UICONTROL Select custom attributes]**: välj det här alternativet om du vill mappa källfältet till ett anpassat attribut som du definierar i fältet [!UICONTROL Attribute name]. Se [[!DNL Outreach] dokumentationen för den potentiella kunden](https://api.outreach.io/api/v2/docs#prospect) för en utförlig lista över attribut som stöds.
      ![Skärmbild för plattformsgränssnitt som visar målmappning med hjälp av LastName.](../../assets/catalog/crm/outreach/target-mapping-lastname.png)
 
    * Beroende på vilka värden du vill uppdatera lägger du till följande mappning mellan XDM-profilschemat och [!DNL Outreach]-instansen:
-|XDM-profilschema|[!DNL Outreach] Instans|
-|—|—|
-|`person.name.firstName`|`firstName`|
-|`person.name.lastName`|`lastName`|
+
+     | XDM-profilschema | [!DNL Outreach]-instans |
+     |---|---|
+     | `person.name.firstName` | `firstName` |
+     | `person.name.lastName` | `lastName` |
 
    * Ett exempel på hur du använder dessa mappningar visas nedan:
      ![Exempel på skärmbild för plattformsgränssnitt som visar målmappningar.](../../assets/catalog/crm/outreach/mappings.png)
