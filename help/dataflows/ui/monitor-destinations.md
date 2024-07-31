@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Övervaka dataflöden för mål i användargränssnittet
 type: Tutorial
 exl-id: 8eb7bb3c-f2dc-4dbc-9cf5-3d5d3224f5f1
-source-git-commit: 19f1f64434d655d3b19260460519018fc9c8e174
+source-git-commit: ee63f5ee6cca98e0b5838dc2de656d1d615a0b3a
 workflow-type: tm+mt
-source-wordcount: '3183'
+source-wordcount: '3385'
 ht-degree: 0%
 
 ---
@@ -86,7 +86,7 @@ En lista över enskilda körningar och deras specifika mått visas tillsammans m
 
 Varje enskild dataflödeskörning visar följande information:
 
-- **[!UICONTROL Dataflow run start]**: Den tid som dataflödet körs från. För direktuppspelande dataflöden hämtar Experience Platform mätvärden som baseras på början av dataflödet, i form av timstatistik. För direktuppspelande dataflöde körs, och om ett dataflöde startas t.ex. 10:30 PM, visar måttet starttiden som 10:00 PM i gränssnittet.
+- **[!UICONTROL Dataflow run start]**: Den tid som dataflödet körs från. För direktuppspelande dataflöden hämtar Experience Platform mätvärden som baseras på början av dataflödet, i form av timstatistik. Det innebär att för direktuppspelande dataflöde körs, och om ett dataflöde startas t.ex. 10:30 PM, visas starttiden som 10:00 PM i gränssnittet.
 - **[!UICONTROL Processing time]**: Den tid det tog för dataflödet att bearbeta.
    - För **[!UICONTROL completed]**-körningar visas alltid en timme i bearbetningstidens mått.
    - För dataflöden som fortfarande är i **[!UICONTROL processing]**-läge är fönstret för att hämta alla mått öppet i mer än en timme för att bearbeta alla mått som motsvarar dataflödeskörningen. Ett dataflöde som startades kl. 9.30 kan till exempel vara i ett bearbetningstillstånd i en timme och trettio minuter för att hämta och bearbeta alla mätvärden. När bearbetningsfönstret sedan stängs och dataflödets status uppdateras till **slutförd** ändras den visade bearbetningstiden till en timme.
@@ -107,6 +107,16 @@ Informationssidan för ett dataflöde innehåller ytterligare information, t.ex.
 På informationssidan visas också en lista över misslyckade identiteter och identiteter som har utelämnats. Information om både misslyckade och utelämnade identiteter visas, inklusive felkod, antal identiteter och beskrivning. Som standard visas de misslyckade identiteterna i listan. Om du vill visa överhoppade identiteter väljer du alternativet **[!UICONTROL Identities excluded]**.
 
 ![Dataflödesposter för direktuppspelningsmål med ett felmeddelande markerat.](../assets/ui/monitor-destinations/dataflow-records-stream.png)
+
+#### (Beta) Körningsövervakning av dataflöde på målnivå för direktuppspelningsmål {#audience-level-dataflow-runs-for-streaming-destinations}
+
+Du kan visa information om aktiverade, uteslutna eller misslyckade identiteter som är uppdelade på en målgruppsnivå för varje målgrupp som är en del av dataflödet. Detta kan hjälpa dig att förstå att övervakning på målgruppsnivå för direktuppspelningsmål för närvarande bara är tillgängligt för [[!DNL Google Customer Match + Display & Video 360] målet](/help/destinations/catalog/advertising/google-customer-match-dv360.md).
+
+![Övervakning på målgruppsnivå för direktuppspelningsmål.](/help/dataflows/assets/ui/monitor-destinations/audience-level-monitoring-streaming.png)
+
+>[!NOTE]
+>
+>Numret **[!UICONTROL Profiles received]** på målgruppsfliken kanske inte alltid matchar antalet profiler som tagits emot för dataflödeskörningen. Detta beror på att en viss profil kan vara en del av mer än en målgrupp som aktiveras i dataflödeskörningen.
 
 ### Dataflödeskörningar för batchdestinationer {#dataflow-runs-for-batch-destinations}
 
@@ -166,12 +176,25 @@ På informationssidan visas också en lista över misslyckade identiteter och id
 
 ![Dataflödesposter för batchmål med ett felmeddelande markerat.](../assets/ui/monitor-destinations/dataflow-records-batch.png)
 
+### Visa i övervakning {#view-in-monitoring}
+
+Du kan också välja att visa omfattande information om ett visst dataflöde och dess dataflöde körs på kontrollpanelen. Så här visar du information om ett dataflöde på kontrollpanelen:
+
+1. Navigera till fliken **[!UICONTROL Connections]** > **[!UICONTROL Destinations]** > **[!UICONTROL Browse]**
+2. Navigera till det dataflöde som du vill inspektera.
+3. Välj ellipssymbolen och ![övervakningsikonen](/help/images/icons/monitoring.png) **[!UICONTROL View in monitoring]**.
+
+![Välj Visa i övervakning i målarbetsflödet för att få mer information om ett dataflöde.](/help/dataflows/assets/ui/monitor-destinations/view-in-monitoring.png)
+
+>[!SUCCESS]
+>
+>Nu kan du visa information om dataflödet och dess associerade dataflöde i kontrollpanelen. Läs avsnittet nedan för mer information.
+
 ## Kontrollpanel för målplatser {#monitoring-destinations-dashboard}
 
 >[!NOTE]
 >
->- Funktionen för målövervakning stöds för närvarande för alla mål i Experience Platform *förutom* för [Adobe Target](/help/destinations/catalog/personalization/adobe-target-connection.md) och [Anpassad ](/help/destinations/catalog/personalization/custom-personalization.md) -destinationer.
->- För [Amazon Kinesis](/help/destinations/catalog/cloud-storage/amazon-kinesis.md), [ Azure Event Hubs](/help/destinations/catalog/cloud-storage/azure-event-hubs.md) och [HTTP API](/help/destinations/catalog/streaming/http-destination.md) uppskattas mätvärdena för utelämnade, misslyckade och aktiverade identiteter. Högre volymer av aktiveringsdata leder till större noggrannhet i mätvärdena.
+>Funktionen för målövervakning stöds för närvarande för alla mål i Experience Platform *förutom* för [Adobe Target](/help/destinations/catalog/personalization/adobe-target-connection.md) och [Anpassad ](/help/destinations/catalog/personalization/custom-personalization.md) -destinationer.
 
 >[!CONTEXTUALHELP]
 >id="platform_monitoring_activation"
@@ -208,17 +231,20 @@ Använd pilikonen (![pilikon](/help/images/icons/chevron-up.png)) för att expan
 
 Diagrammet **[!UICONTROL Activation]** visas som standard och du kan inaktivera det om du vill utöka listan med mål nedan. Markera växlingsknappen **[!UICONTROL Metrics and graphs]** om du vill inaktivera diagrammen.
 
-På panelen **[!UICONTROL Activation]** visas en lista med mål som innehåller minst ett befintligt konto. Listan innehåller även information om mottagna profiler, aktiverade identiteter, misslyckade identiteter, utelämnade identiteter, aktiveringsfrekvens, totalt antal misslyckade dataflöden samt det senaste uppdateringsdatumet för dessa destinationer. Alla mått är inte tillgängliga för alla måltyper. Tabellen nedan visar de värden och den information som är tillgänglig per måltyp, direktuppspelning eller batch.
+På panelen **[!UICONTROL Activation]** visas en lista med mål som innehåller minst ett befintligt konto. Listan innehåller även information om mottagna profiler, aktiverade identiteter, misslyckade identiteter, utelämnade identiteter, aktiveringsfrekvens, totalt antal misslyckade dataflöden samt det senaste uppdateringsdatumet för dessa destinationer. Alla mått är inte tillgängliga för alla måltyper. Tabellen nedan visar vilka mätvärden och vilken information som är tillgängliga per måltyp.
 
 | Mått | Måltyp |
----------|----------|
-| **[!UICONTROL Profiles received]** | Direktuppspelning och batch |
-| **[!UICONTROL Identities activated]** | Direktuppspelning och batch |
-| **[!UICONTROL Identities failed]** | Direktuppspelning |
-| **[!UICONTROL Identities excluded]** | Direktuppspelning och batch |
+|--------------------------------------|-----------------------|
+| **[!UICONTROL Records received]** | Direktuppspelning och batch |
+| **[!UICONTROL Records activated]** | Direktuppspelning och batch |
+| **[!UICONTROL Records failed]** | Direktuppspelning |
+| **[!UICONTROL Records skipped]** | Direktuppspelning och batch |
+| **[!UICONTROL Data type]** | Direktuppspelning och batch |
 | **[!UICONTROL Activation rate]** | Direktuppspelning |
 | **[!UICONTROL Total failed dataflows]** | Grupp |
 | **[!UICONTROL Last updated]** | Direktuppspelning och batch |
+
+{style="table-layout:auto"}
 
 ![Övervaka instrumentpanel med alla aktiverade mål markerade.](../assets/ui/monitor-destinations/dashboard-destinations.png)
 
@@ -256,15 +282,15 @@ Använd växlingsknappen **[!UICONTROL Show failures only]** om du bara vill vis
 
 ### Målgruppsvy {#segment-level-view}
 
-När **[!UICONTROL Audiences]** är markerat visas en lista över de målgrupper som aktiverats för det valda dataflödet, inom det valda tidsintervallet. Den här skärmen innehåller information på målgruppsnivå om aktiverade identiteter, utelämnade identiteter samt status och tid för senaste dataflöde. Genom att granska mätvärdena för identiteter som har uteslutits och aktiverats kan ni verifiera om en målgrupp har aktiverats eller inte.
+När **[!UICONTROL Audiences]** är markerat visas en lista över de målgrupper som aktiverats för det valda dataflödet, inom det valda tidsintervallet. Den här skärmen innehåller information på målgruppsnivå om aktiverade poster, uteslutna poster samt status och tid för det senaste dataflödet. Genom att granska mätvärdena för poster som har uteslutits och aktiverats kan ni verifiera om en målgrupp har aktiverats eller inte.
 
-Du aktiverar till exempel en publik som heter&quot;Lojalitetsmedlemmar i Kalifornien&quot; till Amazon S3-destinationen&quot;Lojalitetsmedlemmar i Kalifornien&quot;. Låt oss anta att det finns 100 profiler i den valda målgruppen, men endast 80 av 100 profiler innehåller attribut för lojalitet-ID och du har definierat reglerna för exportmappning som `loyalty.id` krävs. I det här fallet, på en målgruppsnivå, ser du 80 identiteter aktiverade och 20 identiteter uteslutna.
+Du aktiverar till exempel en publik som heter&quot;Lojalitetsmedlemmar i Kalifornien&quot; till Amazon S3-destinationen&quot;Lojalitetsmedlemmar i Kalifornien&quot;. Låt oss anta att det finns 100 profiler i den valda målgruppen, men endast 80 av 100 poster innehåller attribut för lojalitet-ID och du har definierat reglerna för exportmappning som `loyalty.id` krävs. I det här fallet, på målgruppsnivå, ser du 80 poster aktiverade och 20 poster uteslutna.
 
 >[!IMPORTANT]
 >
 >Observera de nuvarande begränsningarna för målgruppsstatistik:
->- Vyn på målgruppsnivå är för närvarande bara tillgänglig för batchmål.
->- Mått på målgruppsnivå registreras för att dataflödet ska kunna köras endast. De spelas inte in för misslyckade dataflödeskörningar och uteslutna poster.
+>- Vyn på målgruppsnivå är för närvarande endast tillgänglig för gruppbaserade (filbaserade) mål och målet [Google Customer Match DV 360](/help/destinations/catalog/advertising/google-customer-match-dv360.md) för direktuppspelning. Lansering planeras för ytterligare direktuppspelningsmål.
+>- För batchdestinationer registreras målgruppsvärden endast för lyckade dataflöden. De spelas inte in för misslyckade dataflödeskörningar och uteslutna poster. För dataflöden som går till direktuppspelningsmål hämtas mätvärden och visas för aktiverade och uteslutna poster.
 
 ![Publiker som är markerade på dataflödespanelen.](../assets/ui/monitor-destinations/dashboard-segments-view.png)
 
@@ -273,13 +299,13 @@ Använd filterknappen ![filter](/help/images/icons/filter-add.png) för att gå 
 
 ### Körningssida för dataflöde {#dataflow-runs-page}
 
-På sidan för dataflöden visas information om dataflödets körningar, inklusive starttid för dataflöde, bearbetningstid, mottagna profiler, aktiverade identiteter, utelämnade identiteter, misslyckade identiteter, aktiveringsfrekvens och status.
+På sidan för dataflöden visas information om dataflödets körningar, inklusive starttid för dataflöde, bearbetningstid, mottagna poster, aktiverade poster, uteslutna poster, misslyckade poster, aktiveringsfrekvens och status.
 
 När du går ned på dataflödets körningssida från vyn [på målgruppsnivå](#segment-level-view) kan du filtrera dataflödet med följande alternativ:
 
-- **[!UICONTROL Dataflow runs with failed identities]**: För den valda målgruppen listas alla dataflödeskörningar som misslyckades för aktivering med det här alternativet. Information om varför identiteter i ett visst dataflöde misslyckades finns på [informationssidan för dataflödeskörning](#dataflow-run-details-page) för det dataflödet.
-- **[!UICONTROL Dataflow runs with skipped identities]**: För den valda målgruppen listas alla dataflöden där vissa av identiteterna inte var helt aktiverade och vissa profiler hoppades över. Information om varför identiteter i en viss dataflödeskörning hoppades över finns på [informationssidan ](#dataflow-run-details-page) för dataflödeskörningen.
-- **[!UICONTROL Dataflow runs with activated identities]**: För den valda målgruppen listas alla dataflödeskörningar som har identiteter som har aktiverats.
+- **[!UICONTROL Dataflow runs with failed records]**: För den valda målgruppen listas alla dataflödeskörningar som misslyckades för aktivering med det här alternativet. Information om varför poster i ett visst dataflöde misslyckades finns på [informationssidan för dataflödeskörning](#dataflow-run-details-page) för det dataflödet.
+- **[!UICONTROL Dataflow runs with excluded records]**: För den valda målgruppen listas alla dataflöden där vissa av posterna inte var helt aktiverade och vissa profiler hoppades över. Information om varför poster i en viss dataflödeskörning hoppades över finns på [informationssidan ](#dataflow-run-details-page) för dataflödeskörningen.
+- **[!UICONTROL Dataflow runs with activated records]**: För den valda målgruppen listas alla dataflödeskörningar som har poster som har aktiverats.
 
 ![Alternativknappar som visar hur du filtrerar dataflöden för målgrupper.](/help/dataflows/assets/ui/monitor-destinations/dataflow-runs-segment-filter.png)
 
@@ -295,13 +321,13 @@ På sidan med information om dataflödeskörning visas mer specifik information 
 - **[!UICONTROL IMS org ID]**: Organisationen som dataflödet tillhör.
 - **[!UICONTROL Last updated]**: Den tidpunkt då dataflödeskörningen senast uppdaterades.
 
-På informationssidan finns också en växlingsknapp för att växla mellan körningsfel och målgrupper i dataflöden. Det här alternativet är bara tillgängligt för dataflöden som körs i batchmål.
+På informationssidan finns också en växlingsknapp för att växla mellan körningsfel och målgrupper i dataflöden. Det här alternativet är endast tillgängligt för dataflöden som körs på batchdestinationer och för [Google kundmatchningsmålet DV 360](/help/destinations/catalog/advertising/google-customer-match-dv360.md).
 
-Vyn för körningsfel i dataflödet visar en lista över misslyckade identiteter och identiteter som har utelämnats. Information om både misslyckade och utelämnade identiteter visas, inklusive felkod, antal identiteter och beskrivning. Som standard visas de misslyckade identiteterna i listan. Om du vill visa överhoppade identiteter väljer du alternativet **[!UICONTROL Identities excluded]**.
+I dataflödets felvy visas en lista med poster som misslyckades och poster som hoppades över. Information om både misslyckade och överhoppade poster visas, inklusive felkod, antal identiteter och beskrivning. Som standard visas de poster som misslyckades i listan. Om du vill visa överhoppade poster väljer du alternativet **[!UICONTROL Records skipped]**.
 
 ![Ingen växling av undantagna identiteter har markerats i övervakningsvyn](../assets/ui/monitor-destinations/identities-excluded.png)
 
-När **[!UICONTROL Audiences]** är markerat visas en lista över de målgrupper som aktiverats i den valda dataflödeskörningen. Den här skärmen innehåller information på målgruppsnivå om aktiverade identiteter, utelämnade identiteter samt status och tid för senaste dataflöde.
+När **[!UICONTROL Audiences]** är markerat visas en lista över de målgrupper som aktiverats i den valda dataflödeskörningen. Den här skärmen innehåller information på målgruppsnivå om aktiverade poster, uteslutna poster samt status och tid för det senaste dataflödet.
 
 ![Vyn Publiker i informationsfönstret för dataflödeskörning.](../assets/ui/monitor-destinations/dataflow-run-segments-view.png)
 
