@@ -2,9 +2,9 @@
 title: Vanliga frågor om Adobe Experience Platform Web SDK
 description: Få svar på vanliga frågor om Adobe Experience Platform Web SDK.
 exl-id: 6ddb4b4d-c9b8-471a-bd2e-135dc4202876
-source-git-commit: 002a57d1d5cfb2e7bdbd9b587e77ca4487a28f65
+source-git-commit: cd2ac132c77d5d2e90c0f881d7b89a3c339fed6f
 workflow-type: tm+mt
-source-wordcount: '2268'
+source-wordcount: '2184'
 ht-degree: 1%
 
 ---
@@ -198,16 +198,6 @@ Om du har fastställt att du måste polyfill `window.Promise` ska du inkludera f
 ```
 
 Den här taggen läser in ett skript som ser till att `window.Promise` är en giltig Promise-implementering.
-
->[!NOTE]
->
->Om du väljer att läsa in en annan Promise-implementering måste den ha stöd för `Promise.prototype.finally`.
-
-### Stöd för Internet Explorer
-
-Adobe Experience Platform SDK använder löften, som är ett sätt att kommunicera slutförandet av asynkrona uppgifter. Implementeringen [Promise](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise) som används av SDK stöds internt av alla målwebbläsare utom [!DNL Internet Explorer]. Om du vill använda SDK på [!DNL Internet Explorer] måste du ha `window.Promise` [polyfylld](https://remysharp.com/2010/10/08/what-is-a-polyfill).
-
-Ett bibliotek som man kan använda för att polyfill-löftet är en utfästelse-polyfill. Mer information om hur du installerar med NPM finns i [dokumentationen om utfästelse-polyfill](https://www.npmjs.com/package/promise-polyfill).
 
 >[!NOTE]
 >
