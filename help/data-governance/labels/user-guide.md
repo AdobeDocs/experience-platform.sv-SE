@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Hantera dataanvändningsetiketter i användargränssnittet
 description: Den här guiden innehåller steg för hur du arbetar med dataanvändningsetiketter i Adobe Experience Platform användargränssnitt.
 exl-id: aa44d5cc-416a-4ef2-be14-b4f32aec162c
-source-git-commit: c2832821ea6f9f630e480c6412ca07af788efd66
+source-git-commit: 7a4de0491057747c7ce4d7bc4378da453f3b3a1c
 workflow-type: tm+mt
-source-wordcount: '1481'
+source-wordcount: '1493'
 ht-degree: 0%
 
 ---
@@ -22,7 +22,7 @@ Den här användarhandboken innehåller steg för att arbeta med dataanvändning
 
 ## Hantera etiketter {#manage-labels}
 
-Om du vill använda etiketter på dina data behöver du behörigheten **[!UICONTROL Manage Usage Labels]** för användning i standardproduktionssandlådan prod. Om du vill skapa en anpassad etikett måste du även ha administratörsbehörighet för produktprofilen. Varje organisation har bara en lista över tillämpliga etiketter, och för närvarande stöds inte borttagning av etiketter.
+Om du vill använda etiketter på dina data behöver du behörigheten **[!UICONTROL Manage Usage Labels]** för användning i standardproduktionssandlådan prod. Om du vill skapa en anpassad etikett måste du även ha administratörsbehörighet för produktprofilen. Varje organisation har bara en lista över tillämpliga etiketter. Du **kan inte** ta bort etiketter. I stället kan du ta bort dem från de datauppsättningar eller fält som de tillämpas på.
 
 Mer information om hur du tilldelar en behörighet finns i guiden [Konfigurera behörigheter](https://experienceleague.adobe.com/docs/platform-learn/getting-started-for-data-architects-and-data-engineers/configure-permissions.html) eller i [åtkomstkontrollsöversikten](../../access-control/home.md) . Kontakta din organisations administratör om du inte har tillgång till Admin Console för din organisation.
 

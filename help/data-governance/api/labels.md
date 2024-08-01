@@ -5,9 +5,9 @@ title: API-slutpunkt för etiketter
 description: Lär dig hur du hanterar dataanvändningsetiketter i Experience Platform med hjälp av API:t för principtjänsten.
 role: Developer
 exl-id: 9a01f65c-01f1-4298-bdcf-b7e00ccfe9f2
-source-git-commit: c16ce1020670065ecc5415bc3e9ca428adbbd50c
+source-git-commit: 77d68a42b16c78cdc2b55f7776ba1c8ec98d8acd
 workflow-type: tm+mt
-source-wordcount: '504'
+source-wordcount: '536'
 ht-degree: 0%
 
 ---
@@ -18,7 +18,7 @@ Med etiketter för dataanvändning kan du kategorisera data enligt de användarp
 
 >[!NOTE]
 >
->Slutpunkten `/labels` används bara för att hämta, skapa och uppdatera dataanvändningsetiketter. Anvisningar om hur du lägger till etiketter i datauppsättningar och fält med API-anrop finns i guiden [Hantera datauppsättningsrubriker](../labels/dataset-api.md).
+>Slutpunkten `/labels` används bara för att hämta, skapa och uppdatera dataanvändningsetiketter. Du kan inte ta bort etiketter. Du kan dock lägga till eller ta bort etiketter i datauppsättningar och fält med API-anrop. Instruktioner finns i guiden [Hantera datauppsättningsrubriker](../labels/dataset-api.md) för dokumentet.
 
 ## Komma igång
 
@@ -163,6 +163,10 @@ Ett godkänt svar returnerar informationen om den anpassade etiketten.
 ## Skapa eller uppdatera en anpassad etikett {#create-update}
 
 Om du vill skapa eller uppdatera en anpassad etikett måste du göra en PUT-förfrågan till API:t [!DNL Policy Service].
+
+>[!NOTE]
+>
+>Om du vill ta bort etiketter från en datauppsättning kan du utföra en [PUT-begäran på API:t för datauppsättningstjänsten](../labels/dataset-api.md#remove) eller använda [datauppsättningsgränssnittet](../labels/user-guide.md#remove-labels-from-a-dataset).
 
 **API-format**
 

@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Hantera dataanvändningsetiketter för datauppsättningar med API:er
 description: Med API:t för datauppsättningstjänsten kan du tillämpa och redigera användningsetiketter för datauppsättningar. Den ingår i Adobe Experience Platform datakatalogfunktioner, men är skild från katalogtjänstens API, som hanterar datauppsättningsmetadata.
 exl-id: 24a8d870-eb81-4255-8e47-09ae7ad7a721
-source-git-commit: 8db484e4a65516058d701ca972fcbcb6b73abb31
+source-git-commit: 9eda7068eb2a3fd5e59fbeff69c85abfad5ccf39
 workflow-type: tm+mt
-source-wordcount: '1314'
+source-wordcount: '1340'
 ht-degree: 0%
 
 ---
@@ -166,6 +166,10 @@ Ett lyckat svar returnerar den uppdaterade uppsättningen etiketter för dataupp
 ## Ta bort etiketter från en datauppsättning {#remove}
 
 Du kan ta bort tidigare använda fältetiketter genom att antingen uppdatera de befintliga `optionalLabels` värdena med en delmängd av de befintliga fältetiketterna eller genom att ta bort en tom lista helt. Gör en PUT-begäran till [!DNL Dataset Service]-API:t om att uppdatera eller ta bort etiketter som redan används.
+
+>[!NOTE]
+>
+>Du kan helt ta bort en datamängds etiketter genom att ange en tom lista för parametern `labels`. Det är inte obligatoriskt för en datauppsättning att behålla etiketter.
 
 **API-format**
 
