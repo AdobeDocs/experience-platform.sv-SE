@@ -6,9 +6,9 @@ title: Datakrav för kund-AI
 topic-legacy: Getting started
 description: Läs mer om de händelser, inmatningar och utmatningar som Kundens AI använder.
 exl-id: 9b21a89c-bf48-4c45-9eb3-ace38368481d
-source-git-commit: 07a110f6d293abff38804b939014e28f308e3b30
+source-git-commit: 63bdb48936070d23d1801d8e6143db3aefad5f6e
 workflow-type: tm+mt
-source-wordcount: '2492'
+source-wordcount: '2532'
 ht-degree: 0%
 
 ---
@@ -158,6 +158,8 @@ Kunds-AI kräver historiska data för modellutbildning. Den varaktighet som krä
 Som standard söker AI efter en användare att ha haft aktivitet de senaste 45 dagarna om ingen tillämplig populationsdefinition anges under programkonfigurationen. Dessutom kräver kundens AI minst 500 kvalificerande och 500 icke-kvalificerande händelser (totalt 1 000) från historiska data baserat på en förutsedd måldefinition.
 
 I följande exempel visas hur du använder en enkel formel som hjälper dig att fastställa den minsta mängden data som krävs. Om du har fler data än minimikraven är det troligt att modellen ger mer korrekta resultat. Om du har mindre än minimiantalet som krävs kommer modellen att misslyckas eftersom det inte finns tillräckligt med data för modellutbildning.
+
+Kundens AI använder en överlevnadsmodell för att uppskatta sannolikheten för en händelse som inträffar vid en viss tidpunkt och identifiera påverkande faktorer, tillsammans med övervakad inlärning som definierar positiva och negativa populationer, och beslutsbaserade träd som `lightgbm` för att generera ett sannolikhetsresultat.
 
 **Formel**:
 
