@@ -2,10 +2,10 @@
 title: Versionsinformation om Adobe Experience Platform, juli 2024
 description: Versionsinformation juli 2024 för Adobe Experience Platform.
 exl-id: f854f9e5-71be-4d56-a598-cfeb036716cb
-source-git-commit: 8d25e396fc816546348268b8b4f2bb16175b4513
+source-git-commit: c38f6845a4819b648abacea2c36a576dac61f38f
 workflow-type: tm+mt
-source-wordcount: '1048'
-ht-degree: 1%
+source-wordcount: '1225'
+ht-degree: 2%
 
 ---
 
@@ -23,7 +23,9 @@ Uppdateringar av befintliga funktioner och dokumentation i Experience Platform:
 - [Datainsamling](#data-collection)
 - [Datastyrning](#data-governance)
 - [Mål ](#destinations)
+- [Segmenteringstjänst](#segmentation)
 - [Källor](#sources)
+- [Enhetliga taggar](#unified-tags)
 
 ## Sammansatt målgrupp {#federated-audience-composition}
 
@@ -105,6 +107,18 @@ Mer information finns i [översikten över datastyrning](../../data-governance/h
 
 Mer information finns i [målöversikten](../../destinations/home.md).
 
+## Segmenteringstjänst {#segmentation}
+
+Med [!DNL Segmentation Service] kan du segmentera data som lagras i [!DNL Experience Platform] och som relaterar till individer (t.ex. kunder, potentiella kunder, användare eller organisationer) till målgrupper. Du kan skapa målgrupper med hjälp av segmentdefinitioner eller andra källor från dina [!DNL Real-Time Customer Profile]-data. Dessa målgrupper är centralt konfigurerade och underhållna på [!DNL Platform] och är tillgängliga för alla Adobe-lösningar.
+
+**Ny dokumentation**
+
+| Ny dokumentation | Beskrivning |
+| ----------------- | ----------- | 
+| [Målportal](../../segmentation/ui/audience-portal.md) | Lär dig använda Audience Portal, där du kan visa, hantera och skapa målgrupper i Adobe Experience Platform i ett centralt nav. |
+
+{style="table-layout:auto"}
+
 ## Källor
 
 Experience Platform tillhandahåller ett RESTful-API och ett interaktivt användargränssnitt som gör att du enkelt kan konfigurera källanslutningar för olika dataleverantörer. Dessa källanslutningar gör att du kan autentisera och ansluta till externa lagringssystem och CRM-tjänster, ange tider för matning och hantera dataöverföringshastigheter.
@@ -113,10 +127,25 @@ Använd källor i Experience Platform för att importera data från ett Adobe-pr
 
 **Uppdaterad dokumentation**
 
-| Uppdaterad dokumentation | description |
+| Uppdaterad dokumentation | Beskrivning |
 | --- | --- |
 | Utökad autentiseringsguide för [[!DNL Snowflake]](../../sources/connectors/databases/snowflake.md) | Läs den utökade autentiseringsguiden för [!DNL Snowflake] om du vill lära dig hur du hämtar din [kontoidentifierare](../../sources/connectors/databases/snowflake.md#retrieve-your-account-identifier) och [privata nyckel](../../sources/connectors/databases/snowflake.md#retrieve-your-private-key) för autentisering. Använd den utökade autentiseringsguiden för att få instruktioner om hur du [verifierar dina lagerställekonfigurationer och rollkonfigurationer](../../sources/connectors/databases/snowflake.md#verify-configurations). |
 
 {style="table-layout:auto"}
 
 Mer information finns i [Källöversikt](../../sources/home.md).
+
+## Enhetliga taggar
+
+Med enhetliga taggar kan du kategorisera och hantera dina affärsobjekt i Adobe Experience Platform. Med API:t för enhetliga taggar kan du skapa både mappar och taggar för att bättre organisera plattformsobjekt som målgrupper och datauppsättningar.
+
+**Ny dokumentation**
+
+| Ny dokumentation | Beskrivning |
+| ----------------- | ----------- |
+| [API-guide för enhetliga taggar](../../administrative-tags/api/overview.md) | Läs API-guiden för enhetliga taggar om du vill veta hur du skapar mappar och taggar för att sortera dina affärsobjekt. |
+| [API-referens för enhetliga taggar](https://developer.adobe.com/experience-platform-apis/references/unified-tags/) | Använd API-referensen för enhetliga taggar för att interaktivt testa slutpunkterna för enhetliga taggar. |
+
+{style="table-layout:auto"}
+
+Mer information finns i [Översikt över enhetliga taggar](../../administrative-tags/overview.md).
