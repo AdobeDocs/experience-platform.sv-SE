@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Hantera dataanvändningsetiketter i användargränssnittet
 description: Den här guiden innehåller steg för hur du arbetar med dataanvändningsetiketter i Adobe Experience Platform användargränssnitt.
 exl-id: aa44d5cc-416a-4ef2-be14-b4f32aec162c
-source-git-commit: c1722c59c437215ce578a1a44cf0cad3b03ceca9
+source-git-commit: a5efc45f0043cd6eb4a209737b9e430c85ea2f14
 workflow-type: tm+mt
-source-wordcount: '1492'
+source-wordcount: '1491'
 ht-degree: 0%
 
 ---
@@ -36,7 +36,7 @@ Du kan lägga till etiketter direkt i ett eller flera scheman inom det schemat. 
 >
 >![Dialogrutan med en sammanfattning av överträdelser och datalänksdiagram har markerats för överträdelsen av principen för datastyrning.](../images/labels/policy-violation-dialog.png)
 >
->Mer information om partiella principöverträdelser finns i [dokumentationen om brott mot dataanvändningsprincipen](../enforcement/auto-enforcement.md#data-usage-violation).
+>Mer information om policyöverträdelser finns i [dokumentationen om brott mot dataanvändningsprincipen](../enforcement/auto-enforcement.md#data-usage-violation).
 
 För att kunna hantera dataanvändningsetiketter på schemanivå måste du välja ett befintligt schema eller skapa ett nytt. När du har loggat in på Adobe Experience Platform väljer du **[!UICONTROL Schemas]** i den vänstra navigeringen för att öppna arbetsytan i **[!UICONTROL Schemas]**. På den här sidan visas alla scheman som du har skapat och användbar information om varje schema.
 
