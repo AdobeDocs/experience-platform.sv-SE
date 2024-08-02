@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Automatisk policytillämpning
 description: Det här dokumentet beskriver hur dataanvändningspolicyer tillämpas automatiskt när målgrupper aktiveras till destinationer i Experience Platform.
 exl-id: c6695285-77df-48c3-9b4c-ccd226bc3f16
-source-git-commit: c2832821ea6f9f630e480c6412ca07af788efd66
+source-git-commit: b0c4a26c2e8bb90a3494fcd6eb76c4d0d7421219
 workflow-type: tm+mt
-source-wordcount: '2089'
+source-wordcount: '2096'
 ht-degree: 0%
 
 ---
@@ -19,7 +19,7 @@ För att skydda organisationen från potentiella risker och förpliktelser till�
 
 >[!IMPORTANT]
 >
->Policy för samtycke och automatisk tillämpning av samtyckespolicy är bara tillgängligt för organisationer som har köpt **Adobe Healthcare Shield** eller **Adobe Privacy &amp; Security Shield**.
+>Policy för samtycke och automatisk tillämpning av samtyckespolicy är endast tillgängliga för organisationer som har köpt **Adobe Healthcare Shield** eller **Adobe Privacy &amp; Security Shield**.
 
 I det här dokumentet fokuseras på att genomföra regler för datastyrning och samtycke. Mer information om åtkomstkontrollprinciper finns i dokumentationen om [attributbaserad åtkomstkontroll](../../access-control/abac/overview.md).
 
@@ -70,8 +70,8 @@ Varje steg i ovanstående tidslinje representerar en enhet som kan bidra till po
 | --- | --- |
 | Datauppsättning | Datauppsättningar innehåller dataanvändningsetiketter (som används på schemafältnivå eller på hela datauppsättningsnivå) som definierar vilka användningsfall som hela datauppsättningen eller specifika fält kan användas för. Policyöverträdelser inträffar om en datauppsättning eller ett fält som innehåller vissa etiketter används i ett syfte som en princip begränsar.<br><br>Alla medgivandeattribut som samlas in från dina kunder lagras också i datauppsättningar. Om du har tillgång till policyer för samtycke, kommer profiler som inte uppfyller kraven för attributet för samtycke i dina policyer att uteslutas från målgrupper som är aktiverade till en destination. |
 | Kopplingsprincip | Sammanslagningsprinciper är de regler som används i Platform för att avgöra hur data ska prioriteras när fragment från flera datauppsättningar sammanfogas. Principöverträdelser inträffar om sammanfogningsprinciperna har konfigurerats så att datauppsättningar med begränsade etiketter aktiveras till ett mål. Mer information finns i översikten [Sammanslagningsprinciper](../../profile/merge-policies/overview.md). |
-| Målgrupp | Segmenteringsregler definierar vilka attribut som ska inkluderas från kundprofiler. Beroende på vilka fält en segmentdefinition innehåller ärver målgruppen användningsetiketter som används för dessa fält. Policyöverträdelser inträffar om du aktiverar en målgrupp vars ärvda etiketter begränsas av målmålets tillämpliga policyer, baserat på dess användningsfall för marknadsföring. |
-| Mål | När man skapar en destination kan man definiera en marknadsföringsåtgärd (kallas ibland för ett marknadsföringsfall). Det här användningsexemplet korrelerar till en marknadsföringsåtgärd enligt definitionen i en policy. Det innebär att den marknadsföringsåtgärd som du definierar för ett mål avgör vilka dataanvändningsprinciper och profiler för samtycke som gäller för det målet.<br><br>Policyöverträdelser för dataanvändning inträffar om du aktiverar en målgrupp vars användningsetiketter är begränsade för målmålets marknadsföringsåtgärd.<br><br>(Beta) När en målgrupp aktiveras exkluderas alla profiler som inte innehåller de obligatoriska medgivandeattributen för marknadsföringsåtgärden (enligt din medgivandepolicy) från den aktiverade målgruppen. |
+| Målgrupp | Segmenteringsregler definierar vilka attribut som ska inkluderas från kundprofiler. Beroende på vilka fält en segmentdefinition innehåller ärver målgruppen användningsetiketter som används för dessa fält. Policyöverträdelser inträffar om du försöker aktivera en målgrupp vars ärvda etiketter begränsas av målmålets tillämpliga policyer, baserat på dess användningsfall för marknadsföring. |
+| Mål | När man skapar en destination kan man definiera en marknadsföringsåtgärd (kallas ibland för ett marknadsföringsfall). Det här användningsexemplet korrelerar till en marknadsföringsåtgärd enligt definitionen i en policy. Det innebär att den marknadsföringsåtgärd som du definierar för ett mål avgör vilka dataanvändningsprinciper och profiler för samtycke som gäller för det målet.<br><br>Policyöverträdelser för dataanvändning inträffar om du försöker aktivera en målgrupp vars användningsetiketter är begränsade för målmålets marknadsföringsåtgärd.<br><br>(Beta) När en målgrupp aktiveras exkluderas alla profiler som inte innehåller de obligatoriska medgivandeattributen för marknadsföringsåtgärden (enligt din medgivandepolicy) från den aktiverade målgruppen. |
 
 >[!IMPORTANT]
 >
@@ -122,7 +122,7 @@ Använd datalänksdiagrammet för att förstå vilka andra konfigurationsändrin
 
 ### Principutvärdering av samtycke {#consent-policy-evaluation}
 
-När du aktiverar en målgrupp till ett mål kan du se hur dina [medgivandeprinciper](../policies/user-guide.md#consent-policy) påverkar olika procentandelar av profiler som ingår i aktiveringen.
+När du aktiverar en målgrupp till ett mål kan du se hur dina [medgivandeprinciper](../policies/user-guide.md) påverkar målgruppens räckvidd under [granskningssteget i [!UICONTROL Activate Destinations] arbetsflödet](#pre-activation-evaluation).
 
 >[!NOTE]
 >
@@ -138,13 +138,13 @@ Dessa förbättringar ger större förtroende för er marknadsföringsstrategi e
 >
 >Den här förbättringen resulterar inte i några gränssnittsändringar.
 
-#### Utvärdering före aktivering
+#### Utvärdering före aktivering {#pre-activation-evaluation}
 
-När du har nått steget **[!UICONTROL Review]** när du [aktiverar ett mål](../../destinations/ui/activation-overview.md) väljer du **[!UICONTROL View applied policies]**.
+Välj **[!UICONTROL View applied policies]** när du kommer till steget **[!UICONTROL Review]** när du [aktiverar ett mål](../../destinations/ui/activation-overview.md).
 
 ![Visa tillämpade principer i arbetsflödet för aktivering av mål](../images/enforcement/view-applied-policies.png)
 
-En dialogruta för policykontroll visas som visar en förhandsgranskning av hur dina medgivandeprinciper påverkar den godkända målgruppen för de aktiverade målgrupperna.
+En dialogruta för policykontroll visas som visar en förhandsgranskning av hur dina medgivandeprinciper påverkar den godkända målgruppen för de målgrupper som ska aktiveras.
 
 ![Dialogrutan för kontroll av godkännandeprincip i plattformsgränssnittet](../images/enforcement/consent-policy-check.png)
 
