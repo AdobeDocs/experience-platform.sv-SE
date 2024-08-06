@@ -4,14 +4,20 @@ solution: Experience Platform
 title: Dataåtkomst i Jupyterlab-anteckningsböcker
 description: Den här guiden fokuserar på hur du använder Jupyter Notebooks, byggda i Data Science Workspace, för att få tillgång till dina data.
 exl-id: 2035a627-5afc-4b72-9119-158b95a35d32
-source-git-commit: 81f48de908b274d836f551bec5693de13c5edaf1
+source-git-commit: 5d98dc0cbfaf3d17c909464311a33a03ea77f237
 workflow-type: tm+mt
-source-wordcount: '3250'
+source-wordcount: '3273'
 ht-degree: 2%
 
 ---
 
 # Dataåtkomst i [!DNL Jupyterlab] anteckningsböcker
+
+>[!NOTE]
+>
+>Data Science Workspace finns inte längre att köpa.
+>
+>Denna dokumentation är avsedd för befintliga kunder med tidigare tillstånd till Data Science Workspace.
 
 Varje kärna som stöds har inbyggda funktioner som gör att du kan läsa plattformsdata från en datamängd i en anteckningsbok. JupyterLab i Adobe Experience Platform Data Science Workspace stöder för närvarande bärbara datorer för [!DNL Python], R, PySpark och Scala. Stöd för sidnumrering av data är dock begränsat till bärbara datorer från [!DNL Python] och R. Den här guiden fokuserar på hur du använder JupyterLab-anteckningsböcker för att få tillgång till dina data.
 

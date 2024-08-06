@@ -1,18 +1,24 @@
 ---
-keywords: Experience Platform;hem;populära ämnen;dataåtkomst;spark sdk;data access api;spark recipe;read spark;write spark
+keywords: Experience Platform;hem;populära ämnen;dataåtkomst;spark sdk;dataåtkomst api;spark recept;läs spark;skriv spark
 solution: Experience Platform
-title: Använda data med Spark in Data Science Workspace
+title: Komma åt data med Spark i Data Science Workspace
 type: Tutorial
-description: Följande dokument innehåller exempel på hur man får åtkomst till data med Spark för användning i Data Science Workspace.
+description: Följande dokument innehåller exempel på hur du kommer åt data med Spark för användning i Data Science Workspace.
 exl-id: 9bffb52d-1c16-4899-b455-ce570d76d3b4
-source-git-commit: 86e6924078c115fb032ce39cd678f1d9c622e297
+source-git-commit: 5d98dc0cbfaf3d17c909464311a33a03ea77f237
 workflow-type: tm+mt
-source-wordcount: '444'
+source-wordcount: '467'
 ht-degree: 0%
 
 ---
 
-# Åtkomst av data med Spark in Data Science Workspace
+# Komma åt data med Spark i Data Science Workspace
+
+>[!NOTE]
+>
+>Data Science Workspace finns inte längre att köpa.
+>
+>Denna dokumentation är avsedd för befintliga kunder med tidigare tillstånd till Data Science Workspace.
 
 Följande dokument innehåller exempel på hur man får åtkomst till data med Spark för användning i Data Science Workspace. Information om hur du får åtkomst till data med JupyterLab-anteckningsböcker finns i [dokumentationen för JupyterLab-anteckningsböcker för dataåtkomst](../jupyterlab/access-notebook-data.md).
 
@@ -49,7 +55,7 @@ Class Helper {
 
 När du använder Spark har du tillgång till två läslägen: interaktiv och batch.
 
-I det interaktiva läget skapas en Java Database Connectivity-anslutning (JDBC) till [!DNL Query Service] och resultat hämtas via en vanlig JDBC `ResultSet` som automatiskt översätts till en `DataFrame`. Det här läget fungerar ungefär som den inbyggda [!DNL Spark]-metoden `spark.read.jdbc()`. Det här läget är endast avsett för små datauppsättningar. Om datauppsättningen överstiger 5 miljoner rader föreslår vi att du byter till gruppläge.
+Interaktivt läge skapar en Java Database Connectivity-anslutning (JDBC) till [!DNL Query Service] och får resultat via en vanlig JDBC `ResultSet` som automatiskt översätts till en `DataFrame`. Det här läget fungerar på samma sätt som den inbyggda [!DNL Spark]-metoden `spark.read.jdbc()`. Det här läget är endast avsett för små datauppsättningar. Om din datauppsättning överskrider 5 miljoner rader föreslår vi att du byter till batchläge.
 
 I gruppläget används [!DNL Query Service]s COPY-kommando för att generera Parquet-resultatuppsättningar på en delad plats. Dessa Parquet-filer kan sedan bearbetas ytterligare.
 
@@ -111,9 +117,9 @@ df = df.select("column-a", "column-b").distinct().show()
 
 ### WHERE-sats
 
-[!DNL Spark] SDK tillåter två filtreringsmetoder: Använda ett SQL-uttryck eller filtrera genom villkor.
+I SDK:et [!DNL Spark] finns två filtreringsmetoder: Använd ett SQL-uttryck eller filtrera genom villkor.
 
-Ett exempel på hur du använder dessa filtreringsfunktioner finns nedan:
+Ett exempel på hur du använder dessa filtreringsfunktioner visas nedan:
 
 #### SQL-uttryck
 
@@ -149,7 +155,7 @@ df = df.limit(100)
 
 ## Skriva till en datauppsättning
 
-Med hjälp av din `configProperties`-mappning kan du skriva till en datauppsättning i Experience Platform med `QSOption`.
+Med mappningen `configProperties` kan du skriva till en datauppsättning i Experience Platform med `QSOption`.
 
 ```scala
 val userToken: String = sparkSession.sparkContext.getConf.get("ML_FRAMEWORK_IMS_TOKEN", "").toString

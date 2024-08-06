@@ -4,14 +4,20 @@ solution: Experience Platform
 title: Data Science Workspace Troubleshooting Guide
 description: Här hittar du svar på vanliga frågor om Adobe Experience Platform Data Science Workspace.
 exl-id: fbc5efdc-f166-4000-bde2-4aa4b0318b38
-source-git-commit: 86e6924078c115fb032ce39cd678f1d9c622e297
+source-git-commit: 5d98dc0cbfaf3d17c909464311a33a03ea77f237
 workflow-type: tm+mt
-source-wordcount: '1472'
+source-wordcount: '1495'
 ht-degree: 0%
 
 ---
 
 # [!DNL Data Science Workspace] felsökningsguide
+
+>[!NOTE]
+>
+>Data Science Workspace finns inte längre att köpa.
+>
+>Denna dokumentation är avsedd för befintliga kunder med tidigare tillstånd till Data Science Workspace.
 
 Det här dokumentet innehåller svar på vanliga frågor om Adobe Experience Platform [!DNL Data Science Workspace]. Mer information och felsökning om [!DNL Platform] API:er i allmänhet finns i [felsökningsguiden för Adobe Experience Platform API](../landing/troubleshooting.md).
 

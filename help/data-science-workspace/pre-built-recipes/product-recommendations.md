@@ -4,14 +4,20 @@ solution: Experience Platform
 title: Produktrekommendationsmottagare
 description: Med Product Recommendations recept kan ni tillhandahålla personaliserade produktrekommendationer som är skräddarsydda efter kundens behov och intressen. Med en korrekt prognosmodell kan en kunds inköpshistorik ge er insikt i vilka produkter de kan vara intresserade av.
 exl-id: 508d55af-c33b-4f1d-b1b6-f00ed5d12bf9
-source-git-commit: 86e6924078c115fb032ce39cd678f1d9c622e297
+source-git-commit: 923c6f2deb4d1199cfc5dc9dc4ca7b4da154aaaa
 workflow-type: tm+mt
-source-wordcount: '466'
+source-wordcount: '489'
 ht-degree: 0%
 
 ---
 
 # Produktrekommendationsrecept
+
+>[!NOTE]
+>
+>Data Science Workspace finns inte längre att köpa.
+>
+>Denna dokumentation är avsedd för befintliga kunder med tidigare tillstånd till Data Science Workspace.
 
 Med Product Recommendations recept kan ni tillhandahålla personaliserade produktrekommendationer som är skräddarsydda efter kundens behov och intressen. Med en korrekt prognosmodell kan en kunds inköpshistorik ge er insikt i vilka produkter de kan vara intresserade av.
 

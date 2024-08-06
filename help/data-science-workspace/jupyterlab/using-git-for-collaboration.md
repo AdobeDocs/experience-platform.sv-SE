@@ -5,14 +5,20 @@ title: Samarbeta i JupyterLab med Git
 type: Tutorial
 description: Git är ett distribuerat versionshanteringssystem för att spåra ändringar i källkoden under programvaruutvecklingen. Git är förinstallerat i Data Science Workspace JupyterLab-miljön.
 exl-id: d7b766f7-b97d-4007-bc53-b83742425047
-source-git-commit: 86e6924078c115fb032ce39cd678f1d9c622e297
+source-git-commit: 5d98dc0cbfaf3d17c909464311a33a03ea77f237
 workflow-type: tm+mt
-source-wordcount: '277'
+source-wordcount: '300'
 ht-degree: 0%
 
 ---
 
 # Samarbeta i [!DNL JupyterLab] med [!DNL Git]
+
+>[!NOTE]
+>
+>Data Science Workspace finns inte längre att köpa.
+>
+>Denna dokumentation är avsedd för befintliga kunder med tidigare tillstånd till Data Science Workspace.
 
 [!DNL Git] är ett distribuerat versionskontrollsystem för att spåra ändringar i källkoden under programvaruutveckling. Git är förinstallerat i miljön [!DNL Data Science Workspace JupyterLab].
 

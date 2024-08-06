@@ -5,14 +5,20 @@ title: Sensei Machine Learning API Guide
 description: I följande avsnitt finns referensinformation för olika funktioner i Sensei Machine Learning API.
 role: Developer
 exl-id: 2c8d3ae8-7ad7-4ff6-8d6b-3a42d3eccdff
-source-git-commit: c16ce1020670065ecc5415bc3e9ca428adbbd50c
+source-git-commit: 5d98dc0cbfaf3d17c909464311a33a03ea77f237
 workflow-type: tm+mt
-source-wordcount: '330'
+source-wordcount: '353'
 ht-degree: 1%
 
 ---
 
 # API-guide för [!DNL Sensei Machine Learning]
+
+>[!NOTE]
+>
+>Data Science Workspace finns inte längre att köpa.
+>
+>Denna dokumentation är avsedd för befintliga kunder med tidigare tillstånd till Data Science Workspace.
 
 I följande avsnitt finns referensinformation för olika funktioner i API:t [!DNL Sensei Machine Learning].
 

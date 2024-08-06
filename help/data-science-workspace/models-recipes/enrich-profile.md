@@ -5,14 +5,20 @@ title: Berika kundprofilen i realtid med insikt i maskininlärning
 type: Tutorial
 description: Det här dokumentet innehåller en guide om hur du kan förbättra kundprofilen i realtid med maskininlärningsinsikter.
 exl-id: 397023c9-383d-4a21-b58a-0f920631ac56
-source-git-commit: afa27069c7490848398c92973dd77810564b5993
+source-git-commit: 923c6f2deb4d1199cfc5dc9dc4ca7b4da154aaaa
 workflow-type: tm+mt
-source-wordcount: '630'
+source-wordcount: '653'
 ht-degree: 0%
 
 ---
 
 # Berika [!DNL Real-Time Customer Profile] med maskininlärningsinsikter
+
+>[!NOTE]
+>
+>Data Science Workspace finns inte längre att köpa.
+>
+>Denna dokumentation är avsedd för befintliga kunder med tidigare tillstånd till Data Science Workspace.
 
 Adobe Experience Platform [!DNL Data Science Workspace] innehåller verktyg och resurser för att skapa, utvärdera och använda maskininlärningsmodeller för att generera dataprognoser och insikter. När maskininlärningsinsikter hämtas in till en [!DNL Profile]-aktiverad datauppsättning, hämtas samma data även som [!DNL Profile]-poster som sedan kan segmenteras med [!DNL Adobe Experience Platform Segmentation Service].
 

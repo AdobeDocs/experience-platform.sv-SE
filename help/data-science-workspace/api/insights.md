@@ -5,14 +5,20 @@ title: API-slutpunkt för insikter
 description: Insikter innehåller mätvärden som används för att ge datavetare möjlighet att utvärdera och välja optimala ML-modeller genom att visa relevanta utvärderingsvärden.
 role: Developer
 exl-id: 603546d6-5686-4b59-99a7-90ecc0db8de3
-source-git-commit: c16ce1020670065ecc5415bc3e9ca428adbbd50c
+source-git-commit: 5d98dc0cbfaf3d17c909464311a33a03ea77f237
 workflow-type: tm+mt
-source-wordcount: '514'
+source-wordcount: '537'
 ht-degree: 0%
 
 ---
 
 # Insikter, slutpunkt
+
+>[!NOTE]
+>
+>Data Science Workspace finns inte längre att köpa.
+>
+>Denna dokumentation är avsedd för befintliga kunder med tidigare tillstånd till Data Science Workspace.
 
 Insikter innehåller mätvärden som används för att ge datavetare möjlighet att utvärdera och välja optimala ML-modeller genom att visa relevanta utvärderingsvärden.
 

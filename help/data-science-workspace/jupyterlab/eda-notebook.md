@@ -5,14 +5,20 @@ title: EDA-anteckningsbok (Exploratory Data Analysis)
 type: Tutorial
 description: Den här guiden fokuserar på hur man använder EDA-anteckningsboken (Exploratory data analysis) för att upptäcka mönster i webbdata, samla in händelser med ett förutsägelsemål, rensa aggregerade data och förstå relationen mellan prediktorer och ett mål.
 exl-id: 48209326-0a07-4b5c-8b49-a2082a78fa47
-source-git-commit: 86e6924078c115fb032ce39cd678f1d9c622e297
+source-git-commit: 5d98dc0cbfaf3d17c909464311a33a03ea77f237
 workflow-type: tm+mt
-source-wordcount: '2766'
+source-wordcount: '2789'
 ht-degree: 0%
 
 ---
 
 # Utforska webbaserade data för prediktiva modeller med EDA-anteckningsboken (exploratory data analysis)
+
+>[!NOTE]
+>
+>Data Science Workspace finns inte längre att köpa.
+>
+>Denna dokumentation är avsedd för befintliga kunder med tidigare tillstånd till Data Science Workspace.
 
 EDA-anteckningsboken (exploratory data analysis) är utformad för att hjälpa dig att upptäcka mönster i data, kontrollera datasäkerheten och sammanfatta relevanta data för prediktiva modeller.
 

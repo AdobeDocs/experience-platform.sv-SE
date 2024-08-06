@@ -5,14 +5,20 @@ title: Schemalägg en modell i användargränssnittet för datavetenskapen i Wor
 type: Tutorial
 description: Med Adobe Experience Platform Data Science Workspace kan ni sätta upp schemalagda poängsättnings- och utbildningar i maskininlärningstjänster. Genom att automatisera utbildnings- och poängprocessen kan du behålla och förbättra en tjänsts effektivitet genom att hålla jämna steg med era datamönster.
 exl-id: 51f6f328-7c63-4de1-9184-2ba526bb82e2
-source-git-commit: 81f48de908b274d836f551bec5693de13c5edaf1
+source-git-commit: 5d98dc0cbfaf3d17c909464311a33a03ea77f237
 workflow-type: tm+mt
-source-wordcount: '536'
+source-wordcount: '559'
 ht-degree: 0%
 
 ---
 
 # Schemalägg en modell i användargränssnittet för datavetenskapen i Workspace
+
+>[!NOTE]
+>
+>Data Science Workspace finns inte längre att köpa.
+>
+>Denna dokumentation är avsedd för befintliga kunder med tidigare tillstånd till Data Science Workspace.
 
 Med Adobe Experience Platform [!DNL Data Science Workspace] kan du konfigurera schemalagda poängsättnings- och utbildningar för en maskininlärningstjänst. Genom att automatisera utbildnings- och poängprocessen kan du behålla och förbättra en tjänsts effektivitet genom att hålla jämna steg med era datamönster.
 

@@ -5,15 +5,20 @@ title: Utbildning och utvärdering av en modell med Sensei Machine Learning API
 type: Tutorial
 description: I den här självstudiekursen visas hur du skapar, utbilda och utvärderar en modell med API-anrop för Sensei Machine Learning.
 exl-id: 8107221f-184c-426c-a33e-0ef55ed7796e
-source-git-commit: fcd44aef026c1049ccdfe5896e6199d32b4d1114
+source-git-commit: 5d98dc0cbfaf3d17c909464311a33a03ea77f237
 workflow-type: tm+mt
-source-wordcount: '1217'
+source-wordcount: '1240'
 ht-degree: 0%
 
 ---
 
 # Utbilda och utvärdera en modell med API:t [!DNL Sensei Machine Learning]
 
+>[!NOTE]
+>
+>Data Science Workspace finns inte längre att köpa.
+>
+>Denna dokumentation är avsedd för befintliga kunder med tidigare tillstånd till Data Science Workspace.
 
 I den här självstudiekursen visas hur du skapar, utbilda och utvärderar en modell med API-anrop. Se [det här dokumentet](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/sensei-ml-api.yaml) för en detaljerad lista över API-dokumentation.
 

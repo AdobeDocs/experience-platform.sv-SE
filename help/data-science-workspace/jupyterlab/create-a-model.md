@@ -5,14 +5,20 @@ title: Skapa en modell med JupyterLab Notebooks
 type: Tutorial
 description: I den här självstudiekursen får du hjälp med att skapa ett recept med mallen för receptbyggaren för JupyterLab-anteckningsböcker.
 exl-id: d3f300ce-c9e8-4500-81d2-ea338454bfde
-source-git-commit: 86e6924078c115fb032ce39cd678f1d9c622e297
+source-git-commit: 5d98dc0cbfaf3d17c909464311a33a03ea77f237
 workflow-type: tm+mt
-source-wordcount: '2054'
+source-wordcount: '2077'
 ht-degree: 0%
 
 ---
 
 # Skapa en modell med JupyterLab Notebooks
+
+>[!NOTE]
+>
+>Data Science Workspace finns inte längre att köpa.
+>
+>Denna dokumentation är avsedd för befintliga kunder med tidigare tillstånd till Data Science Workspace.
 
 I den här självstudiekursen får du hjälp med att skapa en modell med hjälp av mallen för receptbyggaren för JupyterLab-anteckningsböcker.
 

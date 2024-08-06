@@ -4,14 +4,20 @@ solution: Experience Platform
 title: Referens för Machine Learning-nod i realtid
 description: En nod är den grundläggande enhet som diagrammen är uppbyggda i. Varje nod utför en viss uppgift och kan kopplas ihop med hjälp av länkar för att skapa ett diagram som representerar en XML-pipeline. Uppgiften som utförs av en nod representerar en åtgärd för indata, t.ex. en omvandling av data eller schema, eller en maskininlärningskonsekvens. Noden skickar det omformade eller härledda värdet till nästa nod/noder.
 exl-id: 67fe26b5-ce03-4a9a-ad45-783b2acf8d92
-source-git-commit: 86e6924078c115fb032ce39cd678f1d9c622e297
+source-git-commit: 9030a5482d4ea2b54426680cef92b89e68ef5b33
 workflow-type: tm+mt
-source-wordcount: '652'
+source-wordcount: '675'
 ht-degree: 0%
 
 ---
 
 # Referens för Machine Learning-nod i realtid (Alpha)
+
+>[!NOTE]
+>
+>Data Science Workspace finns inte längre att köpa.
+>
+>Denna dokumentation är avsedd för befintliga kunder med tidigare tillstånd till Data Science Workspace.
 
 >[!IMPORTANT]
 >

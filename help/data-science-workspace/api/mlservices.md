@@ -5,14 +5,20 @@ title: API-slutpunkt för MLServices
 description: En MLService är en publicerad tränad modell som ger din organisation möjlighet att komma åt och återanvända tidigare utvecklade modeller. En viktig egenskap hos MLServices är möjligheten att automatisera kurser och poängsättning på schemalagd basis. Schemalagda kurser kan bidra till att bibehålla en modells effektivitet och exakthet, medan schemalagda kurser kan säkerställa att nya insikter genereras på ett konsekvent sätt.
 role: Developer
 exl-id: cd236e0b-3bfc-4d37-83eb-432f6ad5c5b6
-source-git-commit: c16ce1020670065ecc5415bc3e9ca428adbbd50c
+source-git-commit: 5d98dc0cbfaf3d17c909464311a33a03ea77f237
 workflow-type: tm+mt
-source-wordcount: '887'
+source-wordcount: '910'
 ht-degree: 0%
 
 ---
 
 # MLServices-slutpunkt
+
+>[!NOTE]
+>
+>Data Science Workspace finns inte längre att köpa.
+>
+>Denna dokumentation är avsedd för befintliga kunder med tidigare tillstånd till Data Science Workspace.
 
 En MLService är en publicerad tränad modell som ger din organisation möjlighet att komma åt och återanvända tidigare utvecklade modeller. En viktig egenskap hos MLServices är möjligheten att automatisera kurser och poängsättning på schemalagd basis. Schemalagda kurser kan bidra till att bibehålla en modells effektivitet och exakthet, medan schemalagda kurser kan säkerställa att nya insikter genereras på ett konsekvent sätt.
 

@@ -4,14 +4,20 @@ solution: Experience Platform
 title: Machine Learning-översikt i realtid
 description: Maskininlärning i realtid kan dramatiskt öka relevansen i ert innehåll för digitala upplevelser för era slutanvändare. Detta blir möjligt genom att man utnyttjar realtidskonferenser och kontinuerlig inlärning på Experience Platform Edge Network.
 exl-id: 23eb1877-1bdf-4982-b58c-cfb58467035a
-source-git-commit: 3272db15283d427eb4741708dffeb8141f61d5ff
+source-git-commit: 5d98dc0cbfaf3d17c909464311a33a03ea77f237
 workflow-type: tm+mt
-source-wordcount: '551'
+source-wordcount: '574'
 ht-degree: 0%
 
 ---
 
 # Machine Learning i realtid - översikt (Alpha)
+
+>[!NOTE]
+>
+>Data Science Workspace finns inte längre att köpa.
+>
+>Denna dokumentation är avsedd för befintliga kunder med tidigare tillstånd till Data Science Workspace.
 
 >[!IMPORTANT]
 >

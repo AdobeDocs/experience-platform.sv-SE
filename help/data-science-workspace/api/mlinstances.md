@@ -5,14 +5,20 @@ title: API-slutpunkt för MLInstances
 description: En MLInstance är en kombination av en befintlig motor med en lämplig uppsättning konfigurationer som definierar alla utbildningsparametrar, poängsättningsparametrar eller maskinvaruresurskonfigurationer.
 role: Developer
 exl-id: e78cda69-1ff9-47ce-b25d-915de4633e11
-source-git-commit: c16ce1020670065ecc5415bc3e9ca428adbbd50c
+source-git-commit: 5d98dc0cbfaf3d17c909464311a33a03ea77f237
 workflow-type: tm+mt
-source-wordcount: '619'
+source-wordcount: '642'
 ht-degree: 0%
 
 ---
 
 # MLInstances-slutpunkt
+
+>[!NOTE]
+>
+>Data Science Workspace finns inte längre att köpa.
+>
+>Denna dokumentation är avsedd för befintliga kunder med tidigare tillstånd till Data Science Workspace.
 
 En MLInstance är en kombination av en befintlig [motor](./engines.md) med en lämplig uppsättning konfigurationer som definierar utbildningsparametrar, poängsättningsparametrar eller maskinvaruresurskonfigurationer.
 

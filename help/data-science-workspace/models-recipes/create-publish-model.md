@@ -5,15 +5,21 @@ title: Skapa och Publish en Machine Learning-modell
 type: Tutorial
 description: I följande guide beskrivs de steg som krävs för att skapa och publicera en maskininlärningsmodell.
 exl-id: f71e5a17-9952-411e-8e6a-aab46bc4c006
-source-git-commit: 81f48de908b274d836f551bec5693de13c5edaf1
+source-git-commit: 5d98dc0cbfaf3d17c909464311a33a03ea77f237
 workflow-type: tm+mt
-source-wordcount: '1068'
+source-wordcount: '1091'
 ht-degree: 0%
 
 ---
 
 
 # Skapa och publicera en maskininlärningsmodell
+
+>[!NOTE]
+>
+>Data Science Workspace finns inte längre att köpa.
+>
+>Denna dokumentation är avsedd för befintliga kunder med tidigare tillstånd till Data Science Workspace.
 
 I följande guide beskrivs de steg som krävs för att skapa och publicera en maskininlärningsmodell. Varje avsnitt innehåller en beskrivning av vad du ska göra och en länk till användargränssnittet och API-dokumentationen för att utföra det beskrivna steget.
 

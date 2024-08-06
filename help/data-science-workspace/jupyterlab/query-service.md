@@ -5,14 +5,20 @@ title: Frågetjänst i Jupyter-anteckningsbok
 type: Tutorial
 description: Med Adobe Experience Platform kan du använda SQL (Structured Query Language) i Data Science Workspace genom att integrera Query Service i JupyterLab som standardfunktion. I den här självstudiekursen visas exempel på SQL-frågor för vanliga användningsområden för att utforska, omvandla och analysera Adobe Analytics-data.
 exl-id: c5ac7d11-a3bd-4ef8-a650-9f496a8bbaa7
-source-git-commit: d1b571fe72208cf2f2ae339273f05cc38dda9845
+source-git-commit: 5d98dc0cbfaf3d17c909464311a33a03ea77f237
 workflow-type: tm+mt
-source-wordcount: '810'
+source-wordcount: '833'
 ht-degree: 0%
 
 ---
 
 # Frågetjänst i Jupyter-anteckningsbok
+
+>[!NOTE]
+>
+>Data Science Workspace finns inte längre att köpa.
+>
+>Denna dokumentation är avsedd för befintliga kunder med tidigare tillstånd till Data Science Workspace.
 
 I [!DNL Adobe Experience Platform] kan du använda SQL (Structured Query Language) i [!DNL Data Science Workspace] genom att integrera [!DNL Query Service] i [!DNL JupyterLab] som standardfunktion.
 

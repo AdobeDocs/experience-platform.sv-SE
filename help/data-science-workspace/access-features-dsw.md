@@ -4,14 +4,20 @@ solution: Experience Platform
 title: Data Science Workspace Access and Features
 description: I följande dokument beskrivs behörigheter och åtkomst till funktioner i Data Science Workspace.
 exl-id: 6759fea4-adb9-4e4e-9f3d-e0e8c885b1dd
-source-git-commit: 86e6924078c115fb032ce39cd678f1d9c622e297
+source-git-commit: 923c6f2deb4d1199cfc5dc9dc4ca7b4da154aaaa
 workflow-type: tm+mt
-source-wordcount: '692'
+source-wordcount: '715'
 ht-degree: 0%
 
 ---
 
 # Data Science Workspace-åtkomst och -funktioner
+
+>[!NOTE]
+>
+>Data Science Workspace finns inte längre att köpa.
+>
+>Denna dokumentation är avsedd för befintliga kunder med tidigare tillstånd till Data Science Workspace.
 
 I följande dokument beskrivs behörigheter och åtkomst till funktioner i Data Science Workspace.
 

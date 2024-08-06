@@ -5,14 +5,20 @@ title: API-slutpunkt för motorer
 description: Motorer är grunden för maskininlärningsmodeller i Data Science Workspace. De innehåller algoritmer för maskininlärning som löser specifika problem, rörledningar för att utföra funktionsteknik eller bådadera.
 role: Developer
 exl-id: 7c670abd-636c-47d8-bd8c-5ce0965ce82f
-source-git-commit: c16ce1020670065ecc5415bc3e9ca428adbbd50c
+source-git-commit: 5d98dc0cbfaf3d17c909464311a33a03ea77f237
 workflow-type: tm+mt
-source-wordcount: '1165'
+source-wordcount: '1188'
 ht-degree: 0%
 
 ---
 
 # Slutpunkt för motorer
+
+>[!NOTE]
+>
+>Data Science Workspace finns inte längre att köpa.
+>
+>Denna dokumentation är avsedd för befintliga kunder med tidigare tillstånd till Data Science Workspace.
 
 Motorer är grunden för maskininlärningsmodeller i Data Science Workspace. De innehåller algoritmer för maskininlärning som löser specifika problem, rörledningar för att utföra funktionsteknik eller bådadera.
 
@@ -95,11 +101,11 @@ curl -X POST \
 
 | Egenskap | Beskrivning |
 | --- | --- |
-| `name` | Namnet på motorn som du vill använda. Mottagaren som motsvarar den här motorn ärver det här värdet som ska visas i gränssnittet som mottagarens namn. |
+| `name` | Det önskade namnet på motorn. Receptet som motsvarar den här motorn ärver det här värdet och visas i användargränssnittet som receptets namn. |
 | `description` | En valfri beskrivning av motorn. Mottagaren som motsvarar den här motorn ärver det här värdet som ska visas i användargränssnittet som mottagarens beskrivning. Den här egenskapen är obligatorisk. Om du inte vill ange en beskrivning anger du värdet som en tom sträng. |
 | `type` | Motorns körningstyp. Detta värde motsvarar det språk som Docker-bilden bygger på och kan vara antingen &quot;Python&quot;, &quot;R&quot; eller &quot;Tensorflow&quot;. |
-| `algorithm` | En sträng som anger typen av maskininlärningsalgoritm. Algoritmtyper som stöds är Klassificering, Regression eller Custom. |
-| `artifacts.default.image.location` | Platsen för dockningsbilden som är länkad till av en Docker-URL. |
+| `algorithm` | En sträng som anger typen av maskininlärningsalgoritm. Algoritmtyper som stöds inkluderar &quot;Classification&quot;, &quot;Regression&quot; och &quot;Custom&quot; (Anpassad). |
+| `artifacts.default.image.location` | Platsen för den dockningsbild som en dockningswebbadress är länkad till. |
 | `artifacts.default.image.executionType` | Motorns körningstyp. Detta värde motsvarar det språk som Docker-bilden bygger på och kan vara antingen &quot;Python&quot;, &quot;R&quot; eller &quot;Tensorflow&quot;. |
 
 **Begär PySpark/Scala**
@@ -329,7 +335,7 @@ Ett lyckat svar returnerar en lista över motorer och deras information.
 
 ### Hämta en specifik motor {#retrieve-specific}
 
-Du kan hämta information om en viss motor genom att utföra en GET-begäran som innehåller ID:t för den önskade motorn i sökvägen för begäran.
+Du kan hämta information om en specifik motor genom att utföra en begäran om GET som innehåller ID:t för den önskade motorn i sökvägen till begäran.
 
 **API-format**
 
@@ -354,7 +360,7 @@ curl -X GET \
 
 **Svar**
 
-Ett godkänt svar returnerar en nyttolast som innehåller information om den önskade motorn.
+Ett lyckat svar returnerar en nyttolast som innehåller information om den önskade motorn.
 
 ```json
 {
@@ -383,11 +389,11 @@ Ett godkänt svar returnerar en nyttolast som innehåller information om den ön
 
 ## Uppdatera en motor
 
-Du kan ändra och uppdatera en befintlig motor genom att skriva över dess egenskaper via en PUT-begäran som inkluderar målmotorns ID i sökvägen för begäran och som tillhandahåller en JSON-nyttolast som innehåller uppdaterade egenskaper.
+Du kan ändra och uppdatera en befintlig motor genom att skriva över dess egenskaper via en PUT-begäran som innehåller målmotorns ID i sökvägen för begäran och tillhandahålla en JSON-nyttolast med uppdaterade egenskaper.
 
 >[!NOTE]
 >
->För att denna PUT-förfrågan ska lyckas föreslår vi att du först utför en GET-förfrågan om att [hämta motorn med ID](#retrieve-specific). Ändra och uppdatera sedan det returnerade JSON-objektet och använd hela det ändrade JSON-objektet som nyttolast för PUT-begäran.
+>För att denna PUT-begäran ska lyckas rekommenderas att du först utför en begäran om GET för att [hämta motorn via ID](#retrieve-specific). Ändra och uppdatera sedan det returnerade JSON-objektet och använd hela det ändrade JSON-objektet som nyttolast för PUT-begäran.
 
 Följande exempel på API-anrop uppdaterar en motors namn och beskrivning samtidigt som dessa egenskaper initialt används:
 
@@ -446,7 +452,7 @@ curl -X PUT \
 
 **Svar**
 
-Ett godkänt svar returnerar en nyttolast som innehåller den uppdaterade informationen för motorn.
+Ett lyckat svar returnerar en nyttolast som innehåller motorns uppdaterade information.
 
 ```json
 {
@@ -474,7 +480,7 @@ Ett godkänt svar returnerar en nyttolast som innehåller den uppdaterade inform
 
 ## Ta bort en motor
 
-Du kan ta bort en motor genom att utföra en DELETE-begäran och ange målmotorns ID i sökvägen för begäran. Om du tar bort en motor tas alla MLInstances som refererar till den motorn bort, inklusive alla Experiments och Experiment körningar som tillhör dessa MLInstances.
+Du kan ta bort en motor genom att utföra en DELETE-begäran medan du anger målmotorns ID i sökvägen för begäran. Om du tar bort en motor tas alla MLInstances som refererar till den motorn bort, inklusive alla Experiments och Experiment körningar som tillhör dessa MLInstances.
 
 **API-format**
 

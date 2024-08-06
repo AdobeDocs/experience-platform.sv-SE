@@ -5,14 +5,20 @@ title: Importera en paketerad mottagare med Sensei Machine Learning API
 type: Tutorial
 description: I den här självstudien används API:t för inlärning i Sensei Machine för att skapa en motor, som också kallas Recept i användargränssnittet.
 exl-id: c8dde30b-5234-448d-a597-f1c8d32f23d4
-source-git-commit: fcd44aef026c1049ccdfe5896e6199d32b4d1114
+source-git-commit: 5d98dc0cbfaf3d17c909464311a33a03ea77f237
 workflow-type: tm+mt
-source-wordcount: '995'
+source-wordcount: '1018'
 ht-degree: 0%
 
 ---
 
 # Importera ett paketerat recept med Sensei Machine Learning API
+
+>[!NOTE]
+>
+>Data Science Workspace finns inte längre att köpa.
+>
+>Denna dokumentation är avsedd för befintliga kunder med tidigare tillstånd till Data Science Workspace.
 
 I den här självstudien används [[!DNL Sensei Machine Learning API]](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/sensei-ml-api.yaml) för att skapa en [motor](../api/engines.md) som också kallas recept i användargränssnittet.
 

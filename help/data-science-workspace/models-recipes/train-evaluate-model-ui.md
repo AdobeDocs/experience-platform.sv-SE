@@ -5,14 +5,20 @@ title: utbilda och utvärdera en modell i användargränssnittet för datavetens
 type: Tutorial
 description: I Adobe Experience Platform Data Science Workspace skapas en maskininlärningsmodell genom att en befintlig Recipe som är lämplig för modellens avsikt läggs till. Modellen är sedan utbildad och utvärderad för att optimera dess driftseffektivitet och effektivitet genom att finjustera de tillhörande hyperparametrarna. Recept kan återanvändas, vilket innebär att flera modeller kan skapas och skräddarsys för specifika syften med en enda Recept.
 exl-id: 6f674cfa-c123-46a3-80e2-9342fe687976
-source-git-commit: 81f48de908b274d836f551bec5693de13c5edaf1
+source-git-commit: 5d98dc0cbfaf3d17c909464311a33a03ea77f237
 workflow-type: tm+mt
-source-wordcount: '1070'
+source-wordcount: '1093'
 ht-degree: 0%
 
 ---
 
 # Utbilda och utvärdera en modell i användargränssnittet för datavetenskap i Workspace
+
+>[!NOTE]
+>
+>Data Science Workspace kan inte längre köpas.
+>
+>Denna dokumentation är avsedd för befintliga kunder med tidigare tillstånd till Data Science Workspace.
 
 I Adobe Experience Platform Data Science Workspace skapas en maskininlärningsmodell genom att en befintlig Recipe som är lämplig för modellens avsikt läggs till. Modellen är sedan utbildad och utvärderad för att optimera dess driftseffektivitet och effektivitet genom att finjustera de tillhörande hyperparametrarna. Recept kan återanvändas, vilket innebär att flera modeller kan skapas och skräddarsys för specifika syften med en enda Recept.
 
@@ -73,19 +79,19 @@ Standardkonfigurationer som tillhandahålls när modellen skapas visas, ändra o
 
 ## Utvärdera modellen
 
-I Experience Platform väljer du fliken **[!UICONTROL Models]** i den vänstra navigeringen och sedan klickar du på fliken Bläddra för att visa dina befintliga modeller. Sök efter och markera hyperlänken som är kopplad till namnet på den modell som du vill utvärdera.
+I Experience Platform väljer du fliken **[!UICONTROL Models]** i den vänstra navigeringspanelen och sedan bläddringsfliken för att visa de modeller du redan har. Leta reda på och välj hyperlänken som är kopplad till namnet på modellen som du vill utvärdera.
 
 ![välj modell](../images/models-recipes/train-evaluate-ui/model-hyperlink.png)
 
-Alla befintliga kurser med deras aktuella utbildningsstatus listas. Med flera färdiga kurser kan man jämföra utvärderingsvärden för olika utbildningar i modellutvärderingsschemat. Välj ett utvärderingsmått i listrutan ovanför diagrammet.
+Alla befintliga utbildningar med aktuell utbildningsstatus listas. Med flera genomförda utbildningar kan utvärderingsmätningarna jämföras över olika utbildningar i modellutvärderingstabellen. Välj ett utvärderingsmått i listrutan ovanför diagrammet.
 
-MAPE-mätvärdet (Meean Absolute Percent Error) anger noggrannheten som en procentandel av felet. Detta används för att identifiera de mest högpresterande experterna. Ju lägre värde, desto bättre.
+MAPE-mätvärdet (Meean Absolute Percent Error) anger noggrannheten som en procentandel av felet. Detta används för att identifiera det experiment som har högst prestanda. Ju lägre mape, desto bättre.
 
-![översikt över utbildningar](../images/models-recipes/train-evaluate-ui/complete_training_run.png)
+![Översikt över utbildningskörningar](../images/models-recipes/train-evaluate-ui/complete_training_run.png)
 
-Precisionsmåttet beskriver procentandelen relevanta instanser jämfört med det totala antalet *hämtade*-instanser. Precision kan ses som sannolikheten att ett slumpmässigt valt resultat blir korrekt.
+Precisionsmåttet beskriver procentandelen relevanta instanser jämfört med det totala antalet *hämtade* instanser. Precisionen kan ses som sannolikheten att ett slumpmässigt valt utfall är korrekt.
 
-![kör flera körningar](../images/models-recipes/train-evaluate-ui/multiple_training_runs.png)
+![köra flera körningar](../images/models-recipes/train-evaluate-ui/multiple_training_runs.png)
 
 Om du väljer en specifik utbildningskörning visas information om den som körs genom att du öppnar utvärderingssidan. Detta kan göras även innan körningen har slutförts. På utvärderingssidan kan du se andra utvärderingsmått, konfigurationsparametrar och visualiseringar som är specifika för kursen.
 
@@ -95,17 +101,17 @@ Du kan även hämta aktivitetsloggar för att se information om körningen. Logg
 
 ![aktivitetsloggar](../images/models-recipes/train-evaluate-ui/activity_logs.png)
 
-Hyperparametrar kan inte tränas och en modell måste optimeras genom att olika kombinationer av hyperparametrar testas. Upprepa denna modellutbildning och utvärderingsprocess tills du har nått en optimerad modell.
+Hyperparametrar kan inte tränas och en modell måste optimeras genom att testa olika kombinationer av hyperparametrar. Upprepa denna modellutbildning och utvärderingsprocess tills du har kommit fram till en optimerad modell.
 
 ## Nästa steg
 
-I den här självstudiekursen steg du igenom när du skapade, utbildade och utvärderade en modell i [!DNL Data Science Workspace]. När du har nått fram till en optimerad modell kan du använda den utbildade modellen för att generera insikter genom att följa självstudiekursen [Skapa en modell i användargränssnittet](./score-model-ui.md).
+I den här självstudiekursen fick du vägledning genom att skapa, träna och utvärdera en modell i [!DNL Data Science Workspace]. När du har kommit fram till en optimerad modell kan du använda den utbildade modellen för att generera insikter genom att följa självstudiekursen [poängsätta en modell i användargränssnittet](./score-model-ui.md).
 
 ## Referens {#reference}
 
 ### Detaljhandelsförsäljningens mottagarkonfigurationer
 
-Hyperparametrar bestämmer modellens utbildningsbeteende, och om du ändrar hyperparametrar påverkas modellens precision och precision:
+Hyperparametrar bestämmer modellens utbildningsbeteende, och om du ändrar Hyperparametrar kommer det att påverka modellens noggrannhet och precision:
 
 | Hyperparameter | Beskrivning | Rekommenderat intervall |
 | --- | --- | --- |

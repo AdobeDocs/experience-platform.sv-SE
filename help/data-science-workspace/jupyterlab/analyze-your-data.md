@@ -5,26 +5,32 @@ title: Analysera dina data med bärbara datorer
 type: Tutorial
 description: Den här självstudiekursen fokuserar på hur du använder Jupyter Notebooks, byggda i Data Science Workspace, för att få tillgång till, utforska och visualisera dina data.
 exl-id: 3b0148d1-9c08-458b-9601-979cb6c7a0fb
-source-git-commit: 86e6924078c115fb032ce39cd678f1d9c622e297
+source-git-commit: 5d98dc0cbfaf3d17c909464311a33a03ea77f237
 workflow-type: tm+mt
-source-wordcount: '1703'
+source-wordcount: '1726'
 ht-degree: 0%
 
 ---
 
 # Analysera dina data med bärbara datorer
 
+>[!NOTE]
+>
+>Data Science Workspace finns inte längre att köpa.
+>
+>Denna dokumentation är avsedd för befintliga kunder med tidigare tillstånd till Data Science Workspace.
+
 Den här självstudiekursen fokuserar på hur du använder Jupyter Notebooks, byggda i Data Science Workspace, för att få tillgång till, utforska och visualisera dina data. I slutet av den här självstudiekursen bör du känna till några av de funktioner som Jupyter Notebooks erbjuder för att bättre förstå dina data.
 
 Följande koncept har introducerats:
 
 - **[!DNL JupyterLab]:** [[!DNL JupyterLab]](https://blog.jupyter.org/jupyterlab-is-ready-for-users-5a6f039b8906) är nästa generations webbaserade gränssnitt för Project Jupyter och är nära integrerat med [!DNL Adobe Experience Platform].
-- **Batchar:** Datauppsättningar består av batchar. En batch är en uppsättning data som samlats in under en tidsperiod och som bearbetas tillsammans som en enda enhet. Nya grupper skapas när data läggs till i en datauppsättning.
-- **SDK för dataåtkomst (inaktuellt):** SDK för dataåtkomst är nu inaktuellt. Använd guiden [[!DNL Platform SDK]](../authoring/platform-sdk.md).
+- **Batchar:** Datauppsättningar består av batchar. En grupp är en uppsättning data som samlas in under en tidsperiod och behandlas tillsammans som en enda enhet. Nya grupper skapas när data läggs till i en datauppsättning.
+- **Data Access SDK (inaktuell):** Data Access SDK är nu inaktuell. Använd [[!DNL Platform SDK]](../authoring/platform-sdk.md)-guiden.
 
 ## Utforska bärbara datorer i Data Science Workspace
 
-I det här avsnittet utforskas data som tidigare har importerats till försäljningsschemat.
+I det här avsnittet utforskas data som tidigare har hämtats till försäljningsschemat för butik.
 
 Med Data Science Workspace kan användare skapa [!DNL Jupyter Notebooks] via plattformen [!DNL JupyterLab] där de kan skapa och redigera maskininlärningsarbetsflöden. [!DNL JupyterLab] är ett verktyg för samarbete mellan server och klient som gör att användare kan redigera anteckningsboksdokument via en webbläsare. De här anteckningsböckerna kan innehålla både körbar kod och RTF-element. För våra syften använder vi Markdown för analysbeskrivning och körbar [!DNL Python]-kod för att utföra datautforskande och -analys.
 
@@ -38,11 +44,11 @@ Som standard fungerar Tensorflow-receptet i ett GPU-kluster och Python körs i e
 
 ### Skapa en ny anteckningsbok
 
-I användargränssnittet för [!DNL Adobe Experience Platform] väljer du [!UICONTROL Data Science] på den översta menyn för att ta dig till Data Science Workspace. På den här sidan väljer du [!DNL JupyterLab] för att öppna [!DNL JupyterLab]-startprogrammet. Du bör se en liknande sida.
+I användargränssnittet för [!DNL Adobe Experience Platform] väljer du [!UICONTROL Data Science] på den översta menyn för att ta dig till Data Science Workspace. På den här sidan väljer du [!DNL JupyterLab] för att öppna [!DNL JupyterLab]-startprogrammet. Du bör se en sida som liknar denna.
 
 ![](../images/jupyterlab/analyze-data/jupyterlab-launcher-new.png)
 
-I vår självstudiekurs kommer vi att använda [!DNL Python] 3 i Jupyter Notebook för att visa hur du får åtkomst till och utforskar data. På startsidan finns exempelanteckningsböcker. Vi kommer att använda recept för butiksförsäljning för [!DNL Python] 3.
+I vår självstudiekurs kommer vi att använda [!DNL Python] 3 i den bärbara Jupyter-datorn för att visa hur du får åtkomst till och utforskar data. På startsidan finns exempelanteckningsböcker. Vi kommer att använda recept för butiksförsäljning för [!DNL Python] 3.
 
 ![](../images/jupyterlab/analyze-data/retail_sales.png)
 
@@ -72,7 +78,7 @@ Slutligen kan vi ta en titt på hur våra data ser ut. Vi kan använda `df.head(
 
 #### [!DNL Experience Platform] data
 
-Nu går vi igenom åtkomsten till [!DNL Experience Platform]-data.
+Nu kommer vi att gå igenom åtkomsten till [!DNL Experience Platform] data.
 
 ##### Efter datauppsättnings-ID
 
@@ -154,7 +160,7 @@ Det innebär att 22 butiker är av `storeType` `A`, 17 är `storeType` `B` och 6
 
 #### Datavisualisering
 
-Nu när vi känner till våra värden för dataramar vill vi komplettera detta med visualiseringar för att göra saker klarare och enklare att identifiera mönster. Diagram är också användbara när du vill förmedla resultat till en viss målgrupp. Vissa [!DNL Python]-bibliotek som är användbara för visualisering är bland annat:
+Nu när vi känner till våra dataramvärden vill vi komplettera detta med visualiseringar för att göra det tydligare och lättare att identifiera mönster. Diagram är också användbara när du förmedlar resultat till en målgrupp. Några av [!DNL Python]-biblioteken som är användbara för visualisering är:
 - [Matplotlib](https://matplotlib.org/)
 - [pandor](https://pandas.pydata.org/)
 - [avbruten](https://seaborn.pydata.org/)
@@ -168,18 +174,18 @@ I det här avsnittet går vi snabbt igenom några fördelar med att använda var
 
 [seaborn](https://seaborn.pydata.org/) är ett paket som byggs ovanpå matplotlib. Det främsta målet är att göra standarddiagram mer visuellt tilltalande och att förenkla skapandet av komplicerade diagram.
 
-[ggplot](https://ggplot2.tidyverse.org/) är ett paket som också är byggt ovanpå matplotlib. Den största skillnaden är dock att verktyget är en port för GPLOT2 för R. På samma sätt som för sjön är målet att förbättra vid matplotlib. Användare som är bekanta med ggplot2 for R bör överväga det här biblioteket.
+[ggplot](https://ggplot2.tidyverse.org/) är ett paket som också är byggt ovanpå matplotlib. Men den största skillnaden är att verktyget är en port av gplott2 för R. Precis som sjöborn är målet att förbättra på matplotlib. Användare som känner till gplott2 för R bör överväga detta bibliotek.
 
 
 ##### Univariata diagram
 
-Univariata diagram är diagram av en enskild variabel. Ett vanligt univariat-diagram används för att visualisera dina data är lådan och morrplotten.
+Univariata diagram är diagram av en enskild variabel. En vanlig univariat diagram används för att visualisera dina data är rutan och morrhårsritt.
 
-Med hjälp av våra butiksdata från tidigare kan vi generera låda och morrfack för var och en av de 45 butikerna och deras försäljning varje vecka. Ritytan genereras med funktionen `seaborn.boxplot`.
+Med hjälp av vår detaljhandelsdatamängd från tidigare kan vi generera lådan och morrhårstecknet för var och en av de 45 butikerna och deras veckoförsäljning. Ritytan genereras med funktionen `seaborn.boxplot`.
 
 ![](../images/jupyterlab/analyze-data/box_whisker.png)
 
-En låda och en löpyta används för att visa datafördelningen. De yttre raderna i ritytan visar de övre och nedre kvartilarna, medan rutan sträcker sig över interkvartilsintervallet. Linjen i rutan anger medianen. Alla datapunkter som är mer än 1,5 gånger den övre eller nedre kanten markeras som en cirkel. Dessa punkter betraktas som avvikelser.
+En låda och morrhårsteckning används för att visa fördelningen av data. De yttre raderna i ritytan visar de övre och nedre kvartilarna, medan rutan sträcker sig över interkvartilsintervallet. Linjen i rutan anger medianen. Alla datapunkter som är mer än 1,5 gånger den övre eller nedre kanten markeras som en cirkel. Dessa punkter betraktas som avvikelser.
 
 ##### Multivariata diagram
 
@@ -194,7 +200,7 @@ Observera diagonalen för 1 är nedåt i mitten. Detta visar att en variabel har
 
 ## Nästa steg
 
-Den här självstudiekursen gick igenom hur du skapar en ny Jupyter-anteckningsbok i Data Science Workspace och hur du får åtkomst till data externt såväl som från [!DNL Adobe Experience Platform]. Vi gick igenom följande steg:
+Den här självstudiekursen gick igenom hur du skapar en ny Jupyter-anteckningsbok i Data Science Workspace och hur du får åtkomst till data externt samt från [!DNL Adobe Experience Platform]. Mer specifikt gick vi igenom följande steg:
 - Skapa en ny Jupyter-anteckningsbok
 - Få tillgång till datauppsättningar och scheman
 - Utforska datauppsättningar

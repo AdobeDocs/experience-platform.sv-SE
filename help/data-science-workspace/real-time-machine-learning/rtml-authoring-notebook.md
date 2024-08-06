@@ -4,14 +4,20 @@ solution: Experience Platform
 title: Hantera anteckningsböcker för maskininlärning i realtid
 description: I följande guide beskrivs de steg som krävs för att skapa ett Machine Learning-program i realtid i Adobe Experience Platform JupyterLab.
 exl-id: 604c4739-5a07-4b5a-b3b4-a46fd69e3aeb
-source-git-commit: 86e6924078c115fb032ce39cd678f1d9c622e297
+source-git-commit: 923c6f2deb4d1199cfc5dc9dc4ca7b4da154aaaa
 workflow-type: tm+mt
-source-wordcount: '1644'
+source-wordcount: '1667'
 ht-degree: 0%
 
 ---
 
 # Hantera anteckningsböcker för maskininlärning i realtid (Alpha)
+
+>[!NOTE]
+>
+>Data Science Workspace finns inte längre att köpa.
+>
+>Denna dokumentation är avsedd för befintliga kunder med tidigare tillstånd till Data Science Workspace.
 
 >[!IMPORTANT]
 >

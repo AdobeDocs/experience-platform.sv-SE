@@ -4,15 +4,21 @@ solution: Experience Platform
 title: Data Science Workspace-kurs
 description: Detta dokument innehåller en länk och beskrivning till Adobe Experience Platform Data Science Workspace-kursen.
 exl-id: d814846e-52a9-46c6-831a-3399241959f2
-source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
+source-git-commit: 5d98dc0cbfaf3d17c909464311a33a03ea77f237
 workflow-type: tm+mt
-source-wordcount: '445'
+source-wordcount: '468'
 ht-degree: 0%
 
 ---
 
 
 # [!DNL Data Science Workspace] kurs
+
+>[!NOTE]
+>
+>Data Science Workspace finns inte längre att köpa.
+>
+>Denna dokumentation är avsedd för befintliga kunder med tidigare tillstånd till Data Science Workspace.
 
 Detta dokument innehåller en beskrivning av förväntade läranderesultat i Workspace-kursen för Adobe Experience Platform Data Science. För att kunna se kursen måste du logga in på Experience League med din Adobe ID.
 

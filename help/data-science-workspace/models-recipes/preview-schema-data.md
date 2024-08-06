@@ -5,14 +5,20 @@ title: Förhandsgranska schema och datauppsättning för butiksförsäljning
 type: Tutorial
 description: I följande dokument visas förhandsvisningar av scheman och datauppsättningar på Adobe Experience Platform.
 exl-id: dca9835b-4f76-42cc-b262-b20323bf4356
-source-git-commit: 86e6924078c115fb032ce39cd678f1d9c622e297
+source-git-commit: 5d98dc0cbfaf3d17c909464311a33a03ea77f237
 workflow-type: tm+mt
-source-wordcount: '232'
+source-wordcount: '255'
 ht-degree: 0%
 
 ---
 
 # Förhandsgranska försäljningsschema och datauppsättning för återförsäljning
+
+>[!NOTE]
+>
+>Data Science Workspace finns inte längre att köpa.
+>
+>Denna dokumentation är avsedd för befintliga kunder med tidigare tillstånd till Data Science Workspace.
 
 När bootstrap-skriptet från självstudiekursen [Retail Sales schema and dataset](./create-retails-sales-dataset.md) har slutförts. Utdatamodeller och datauppsättningar kan visas på [!DNL Experience Platform]. Följ stegen nedan för att visa scheman och datauppsättningar:
 

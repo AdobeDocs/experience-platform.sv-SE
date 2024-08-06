@@ -4,14 +4,20 @@ solution: Experience Platform
 title: Komma igång med maskininlärning i realtid
 description: I följande dokument beskrivs de steg som krävs för att skapa en Machine Learning-modell i realtid i Adobe Experience Platform.
 exl-id: 90a1c580-f6e7-4517-aa1e-da5092fbc4a2
-source-git-commit: 3272db15283d427eb4741708dffeb8141f61d5ff
+source-git-commit: 5d98dc0cbfaf3d17c909464311a33a03ea77f237
 workflow-type: tm+mt
-source-wordcount: '438'
+source-wordcount: '461'
 ht-degree: 0%
 
 ---
 
 # Komma igång med maskininlärning i realtid (Alpha)
+
+>[!NOTE]
+>
+>Data Science Workspace finns inte längre att köpa.
+>
+>Denna dokumentation är avsedd för befintliga kunder med tidigare tillstånd till Data Science Workspace.
 
 >[!IMPORTANT]
 >

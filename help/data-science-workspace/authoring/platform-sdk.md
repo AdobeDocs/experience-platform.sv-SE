@@ -4,14 +4,20 @@ solution: Experience Platform
 title: Modellredigering med Adobe Experience Platform Platform SDK
 description: I den här självstudien får du information om hur du konverterar data_access_sdk_python till den nya Python-plattformen_sdk i både Python och R.
 exl-id: 20909cae-5cd2-422b-8dbb-35bc63e69b2a
-source-git-commit: 81f48de908b274d836f551bec5693de13c5edaf1
+source-git-commit: 5d98dc0cbfaf3d17c909464311a33a03ea77f237
 workflow-type: tm+mt
-source-wordcount: '486'
+source-wordcount: '509'
 ht-degree: 0%
 
 ---
 
 # Skapa modeller med Adobe Experience Platform [!DNL Platform] SDK
+
+>[!NOTE]
+>
+>Data Science Workspace finns inte längre att köpa.
+>
+>Denna dokumentation är avsedd för befintliga kunder med tidigare tillstånd till Data Science Workspace.
 
 I den här självstudien får du information om hur du konverterar `data_access_sdk_python` till den nya Python `platform_sdk` i både Python och R. I den här självstudien finns information om följande åtgärder:
 

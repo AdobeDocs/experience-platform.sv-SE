@@ -4,29 +4,35 @@ solution: Experience Platform
 title: Butiksförs.mottagare
 description: Med butiksförsäljningsreceptet kan du förutsäga försäljningsprognos för alla butiker som behövs under en viss tidsperiod. Med en korrekt prognosmodell skulle handlaren kunna hitta förhållandet mellan efterfrågan och prispolitiken och fatta optimerade prissättningsbeslut för att maximera försäljningen och intäkterna.
 exl-id: ff01fcd1-fca6-4957-8470-a974fd1520aa
-source-git-commit: 86e6924078c115fb032ce39cd678f1d9c622e297
+source-git-commit: 5d98dc0cbfaf3d17c909464311a33a03ea77f237
 workflow-type: tm+mt
-source-wordcount: '580'
+source-wordcount: '603'
 ht-degree: 0%
 
 ---
 
 # Butiksförsäljningsrecept
 
+>[!NOTE]
+>
+>Data Science Workspace finns inte längre att köpa.
+>
+>Denna dokumentation är avsedd för befintliga kunder med tidigare tillstånd till Data Science Workspace.
+
 Med butiksförsäljningsreceptet kan du förutsäga försäljningsprognos för alla butiker som behövs under en viss tidsperiod. Med en korrekt prognosmodell skulle handlaren kunna hitta förhållandet mellan efterfrågan och prispolitiken och fatta optimerade prissättningsbeslut för att maximera försäljningen och intäkterna.
 
 Följande dokument kommer att svara på frågor som:
-* Vem är receptet avsett för?
+* Vem är det här receptet byggt för?
 * Vad gör det här receptet?
 * Hur kommer jag igång?
 
 ## Vem är receptet avsett för?
 
-En återförsäljare står inför många utmaningar när det gäller att vara konkurrenskraftiga på den nuvarande marknaden. Varumärket vill öka den årliga försäljningen för ert varumärke, men det finns många beslut att fatta för att minimera era driftskostnader. För mycket leverans ökar lagerkostnaderna samtidigt som för lite tillgång ökar risken för att förlora kunder till andra varumärken. Behöver ni beställa mer för de kommande månaderna? Hur bestämmer ni er för optimala priser för era produkter för att uppnå era försäljningsmål varje vecka?
+En återförsäljare står inför många utmaningar när det gäller att vara konkurrenskraftiga på den nuvarande marknaden. Varumärket vill öka den årliga försäljningen för ert varumärke, men det finns många beslut att fatta för att minimera era driftskostnader. För mycket leverans ökar lagerkostnaderna samtidigt som för lite tillgång ökar risken för att förlora kunder till andra varumärken. Behöver du beställa mer leverans för de kommande månaderna? Hur bestämmer du dig för optimala priser för dina produkter för att bibehålla försäljningsmål varje vecka?
 
 ## Vad gör det här receptet?
 
-I recept på försäljningsprognos används maskininlärning för att förutse försäljningstrender. receptet gör detta genom att utnyttja det stora utbudet av historiska detaljhandelsdata och en anpassad algoritm för att öka övertoningen, vilket gör att maskininlärningsalgoritmen kan förutse försäljningen en vecka i förväg. Modellen utnyttjar tidigare inköpshistorik och använder som standard förbestämda konfigurationsparametrar som fastställts av våra datavetare för att förbättra förutsägbarheten.
+Receptet Retail Sales Forecasting använder maskininlärning för att förutsäga försäljningstrender. Receptet gör detta genom att utnyttja rikedomen av historiska detaljhandelsdata och anpassad övertoning öka regressor maskininlärningsalgoritm för att förutsäga försäljning en vecka i förväg. Modellen använder tidigare inköpshistorik och standardinställningar till förbestämda konfigurationsparametrar som bestäms av våra datalog för att förbättra den förutsägbara noggrannheten.
 
 ## Hur kommer jag igång?
 
@@ -47,7 +53,7 @@ I det här receptet används [XDM-scheman](../../xdm/schema/field-dictionary.md)
 | storeSize | Heltal |
 | temperatur | Nummer |
 | regionalFuelPrice | Nummer |
-| markering | Nummer |
+| prick | Nummer |
 | cpi | Nummer |
 | arbetslöshet | Nummer |
 | isHoliday | Boolean |
@@ -59,8 +65,8 @@ Först läses utbildningsdatauppsättningen i schemat *DSWRetailSales* in. Häri
 
 Processen består av tre element: en förlustfunktion, en svag elev och en additiv modell.
 
-Förlustfunktionen avser ett mått på hur bra en förutsägelsemodell gör när det gäller att kunna förutsäga det förväntade resultatet - regression på minst fyrkanter används i detta recept.
+Förlustfunktionen avser ett mått på hur bra en prognosmodell gör när det gäller att kunna förutsäga det förväntade resultatet - minsta kvadratregression används i detta recept.
 
-Vid övertoningsförbättring används ett beslutsträd som den svaga läraren. Vanligtvis används träd med ett begränsat antal lager, noder och delningar för att säkerställa att eleven förblir svag.
+Vid övertoningshöjning används ett beslutsträd som den svaga eleven. Vanligtvis används träd med ett begränsat antal lager, noder och delningar för att säkerställa att eleven förblir svag.
 
-Slutligen används en additiv modell. Efter beräkning av förlusten med förlustfunktionen väljs det träd som minskar förlusten och viktas för att förbättra modelleringen av de svåraste observationerna. Resultatet av det viktade trädet läggs sedan till i den befintliga trädsekvensen för att förbättra slutresultatet av modellen - kvantitet för framtida försäljning.
+Slutligen används en additiv modell. Efter beräkning av förlusten med förlustfunktionen väljs trädet som minskar förlusten och viktas för att förbättra modelleringen av de svårare observationerna. Resultatet av det viktade trädet läggs sedan till den befintliga sekvensen av träd för att förbättra modellens slutliga produktion - kvantitet av framtida försäljning .

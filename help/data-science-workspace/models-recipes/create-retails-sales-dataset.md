@@ -5,15 +5,21 @@ title: Skapa schema och datauppsättning för butiksförsäljning
 type: Tutorial
 description: I den här självstudiekursen får du de förutsättningar och resurser som krävs för alla andra självstudiekurser i Adobe Experience Platform Data Science Workspace. När du är klar kommer schema och datauppsättningar för detaljhandel att vara tillgängliga för dig och medlemmar i din organisation på Experience Platform.
 exl-id: 1b868c8c-7c92-4f99-8486-54fd7aa1af48
-source-git-commit: 81f48de908b274d836f551bec5693de13c5edaf1
+source-git-commit: 5d98dc0cbfaf3d17c909464311a33a03ea77f237
 workflow-type: tm+mt
-source-wordcount: '534'
+source-wordcount: '557'
 ht-degree: 0%
 
 ---
 
 
 # Skapa försäljningsschema och datauppsättning för återförsäljning
+
+>[!NOTE]
+>
+>Data Science Workspace finns inte längre att köpa.
+>
+>Denna dokumentation är avsedd för befintliga kunder med tidigare tillstånd till Data Science Workspace.
 
 I den här självstudiekursen får du de krav och resurser som krävs för alla andra [!DNL Adobe Experience Platform] [!DNL Data Science Workspace] självstudiekurser. När du är klar är schema och datauppsättningar för detaljhandelsförsäljning tillgängliga för dig och medlemmar i din organisation den [!DNL Experience Platform].
 

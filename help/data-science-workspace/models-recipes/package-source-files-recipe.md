@@ -5,21 +5,27 @@ title: Paketera Source-filer i en mottagare
 type: Tutorial
 description: I den här självstudiekursen finns anvisningar om hur du kan paketera de angivna källfilerna för butiksförsäljning i en arkivfil, som kan användas för att skapa ett recept i Adobe Experience Platform Data Science Workspace genom att följa arbetsflödet för receptimport antingen i användargränssnittet eller med API:t.
 exl-id: 199b8127-4f1b-43a4-82e6-58cb70fcdc08
-source-git-commit: 86e6924078c115fb032ce39cd678f1d9c622e297
+source-git-commit: 5d98dc0cbfaf3d17c909464311a33a03ea77f237
 workflow-type: tm+mt
-source-wordcount: '1130'
+source-wordcount: '1153'
 ht-degree: 0%
 
 ---
 
 # Paketera källfiler i ett recept
 
+>[!NOTE]
+>
+>Data Science Workspace finns inte längre att köpa.
+>
+>Denna dokumentation är avsedd för befintliga kunder med tidigare tillstånd till Data Science Workspace.
+
 I den här självstudiekursen finns anvisningar om hur du kan paketera de angivna källfilerna för butiksförsäljning i en arkivfil, som kan användas för att skapa ett recept i Adobe Experience Platform [!DNL Data Science Workspace] genom att följa arbetsflödet för receptimport antingen i användargränssnittet eller med API:t.
 
-Koncept att förstå:
+Begrepp att förstå:
 
-- **Recept**: Ett recept är en AdobeTerm för en modellspecifikation och är en behållare på den översta nivån som representerar en specifik maskininlärning, artificiell intelligensalgoritm eller ensemble för algoritmer, bearbetningslogik och konfiguration som krävs för att skapa och köra en tränad modell och därmed hjälpa till att lösa specifika affärsproblem.
-- **Source-filer**: Enskilda filer i ditt projekt som innehåller logiken för ett recept.
+- **Recept**: Ett recept är Adobe term för en modellspecifikation och är en behållare på toppnivå som representerar en specifik maskininlärning, artificiell intelligens-algoritm eller en samling algoritmer, bearbetningslogik och konfiguration som krävs för att bygga och utföra en utbildad modell och därmed hjälpa till att lösa specifika affärsproblem.
+- **Källfiler**: Enskilda filer i projektet som innehåller logiken för ett recept.
 
 ## Förhandskrav
 
@@ -61,11 +67,11 @@ Välj lämplig *körningsmiljö* och välj sedan **[!UICONTROL Classification]**
 
 ![](../images/models-recipes/package-source-files/docker-creds.png)
 
-Observera värdena för Docker-värd, användarnamn och lösenord. Dessa används för att skapa och överföra din [!DNL Docker]-image i de arbetsflöden som beskrivs nedan.
+Notera värdena för Docker-värd, användarnamn och lösenord. De används för att bygga och skicka din [!DNL Docker]-image i arbetsflödena som beskrivs nedan.
 
 >[!NOTE]
 >
->Source-URL:en anges när du har utfört stegen som beskrivs nedan. Konfigurationsfilen förklaras i efterföljande självstudiekurser i [nästa steg](#next-steps).
+>Käll-URL:en anges efter att stegen som beskrivs nedan har slutförts. Konfigurationsfilen förklaras i efterföljande självstudiekurser i [kommande steg](#next-steps).
 
 ### Paketera källfilerna
 
@@ -96,18 +102,18 @@ Navigera till katalogen `experience-platform-dsw-reference/recipes/python/retail
 
 Observera att när du kör inloggningsskriptet måste du ange Docker-värden, användarnamn och lösenord. När du bygger måste du ange Docker-värden och en versionstagg för bygget.
 
-När byggskriptet är klart får du en URL för Docker-källfilen i konsolutdata. I det här exemplet ser det ut ungefär så här:
+När byggskriptet är klart får du en URL för Docker-källfilen i konsolutdata. I det här specifika exemplet ser det ut ungefär så här:
 
 ```BASH
 # URL format: 
 {DOCKER_HOST}/ml-retailsales-python:{VERSION_TAG}
 ```
 
-Kopiera den här URL:en och gå vidare till [nästa steg](#next-steps).
+Kopiera URL:en och gå vidare till [nästa steg](#next-steps).
 
-### Bygg R [!DNL Docker]-bild {#r-docker}
+### Version R [!DNL Docker]-bild {#r-docker}
 
-Om du inte har gjort det klonar du [!DNL GitHub]-databasen på din lokala dator med följande kommando:
+Om du inte har gjort det klonar du [!DNL GitHub]-databasen till ditt lokala system med följande kommando:
 
 ```BASH
 git clone https://github.com/adobe/experience-platform-dsw-reference.git
@@ -171,7 +177,7 @@ Börja med att klona [!DNL GitHub]-databasen på din lokala dator med följande 
 git clone https://github.com/adobe/experience-platform-dsw-reference.git
 ```
 
-Gå sedan till katalogen `experience-platform-dsw-reference/recipes/scala` där du kan hitta skripten `login.sh` och `build.sh`. Dessa skript används för att logga in på Docker och skapa Docker-bilden. Om du har dina [Docker-inloggningsuppgifter](#docker-based-model-authoring) klara anger du följande kommandon som du vill avsluta i ordning:
+Gå sedan till katalogen `experience-platform-dsw-reference/recipes/scala` där du kan hitta skripten `login.sh` och `build.sh`. Dessa skript används för att logga in på Docker och skapa Docker-bilden. Om du har dina [Docker-autentiseringsuppgifter](#docker-based-model-authoring) klara anger du följande kommandon till Terminal i ordning:
 
 ```BASH
 # for logging in to Docker
@@ -183,11 +189,11 @@ Gå sedan till katalogen `experience-platform-dsw-reference/recipes/scala` där 
 
 >[!TIP]
 >
->Om du får ett behörighetsfel när du försöker logga in på Docker med skriptet `login.sh` kan du försöka med kommandot `bash login.sh`.
+>Om du får ett behörighetsfel när du försöker logga in på Docker med skriptet `login.sh` kan du prova att använda kommandot `bash login.sh`.
 
-När du kör inloggningsskriptet måste du ange Docker-värden, användarnamn och lösenord. När du bygger måste du ange Docker-värden och en versionstagg för bygget.
+När du kör inloggningsskriptet måste du ange Docker-värden, användarnamn och lösenord. När du skapar måste du ange Docker-värden och en versionstagg för bygget.
 
-När byggskriptet är klart får du en URL för Docker-källfilen i konsolutdata. I det här exemplet ser det ut ungefär så här:
+När versionsskriptet är klart får du en URL till en Docker-källfil i konsolens utdata. I det här specifika exemplet ser det ut ungefär så här:
 
 ```BASH
 # URL format: 

@@ -4,14 +4,20 @@ solution: Experience Platform
 title: SDK för modellredigering
 description: Med SDK för modellredigering kan du utveckla anpassade maskininlärningsrecept och funktionsförbereds som kan användas i Adobe Experience Platform Data Science Workspace, som innehåller implementerbara mallar i PySpark och Spark (Scala).
 exl-id: c7577f93-a64f-49b7-a76d-71f21d619052
-source-git-commit: 86e6924078c115fb032ce39cd678f1d9c622e297
+source-git-commit: 5d98dc0cbfaf3d17c909464311a33a03ea77f237
 workflow-type: tm+mt
-source-wordcount: '977'
+source-wordcount: '1000'
 ht-degree: 1%
 
 ---
 
 # SDK för modellredigering
+
+>[!NOTE]
+>
+>Data Science Workspace finns inte längre att köpa.
+>
+>Denna dokumentation är avsedd för befintliga kunder med tidigare tillstånd till Data Science Workspace.
 
 Med SDK för modellredigering kan du utveckla anpassade maskininlärningsrecept och funktionsförlopp som kan användas i [!DNL Adobe Experience Platform] Data Science Workspace, som innehåller implementerbara mallar i [!DNL PySpark] och [!DNL Spark (Scala)].
 
@@ -36,7 +42,7 @@ I följande tabell beskrivs de abstrakta metoderna för en PySpark Data Loader-k
         <tr>
             <td>
                 <p><code>load(self, configProperties, spark)</code></p>
-                <p>Läsa in och returnera plattformsdata som en Pandas DataFrame</p>
+                <p>Ladda och returnera plattformsdata som en Pandas DataFrame</p>
             </td>
             <td>
                 <ul>
@@ -454,7 +460,7 @@ I följande tabell beskrivs de abstrakta metoderna för en [!DNL Spark]-datamän
 
 ## FeaturePipelineFactory {#featurepipelinefactory}
 
-Klassen FeaturePipelineFactory innehåller funktionsextraheringsalgoritmer och definierar faserna i en funktionspipeline från början till slut.
+Klassen FeaturePipelineFactory innehåller extraheringsalgoritmer för funktioner och definierar stadierna för en funktionsförloppsindikator från början till slut.
 
 **PySpark**
 
@@ -680,8 +686,8 @@ I följande tabell beskrivs klassmetoderna för en PySpark MLEvaluator:
             <td>
                 <ul>
                     <li><code>self</code>: Självreferens</li>
-                    <li><code>dataframe</code>: En DataFrame som består av utbildnings- och testdata</li>
-                    <li><code>model</code>: En tränad modell</li>
+                    <li><code>dataframe</code>: En DataFrame bestående av utbildnings- och testdata</li>
+                    <li><code>model</code>: En utbildad modell</li>
                     <li><code>configProperties</code>: Konfigurationsegenskaper</li>
                 </ul>
             </td>

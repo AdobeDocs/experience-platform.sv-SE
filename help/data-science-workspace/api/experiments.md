@@ -5,14 +5,20 @@ title: API-slutpunkt för experiment
 description: Modellutveckling och utbildning sker på expertnivå, där en expert består av en MLInstance, utbildningar och poängprov.
 role: Developer
 exl-id: 6ca5106e-896d-4c03-aecc-344632d5307d
-source-git-commit: c16ce1020670065ecc5415bc3e9ca428adbbd50c
+source-git-commit: 5d98dc0cbfaf3d17c909464311a33a03ea77f237
 workflow-type: tm+mt
-source-wordcount: '783'
+source-wordcount: '806'
 ht-degree: 1%
 
 ---
 
 # Experimenterar slutpunkt
+
+>[!NOTE]
+>
+>Data Science Workspace finns inte längre att köpa.
+>
+>Denna dokumentation är avsedd för befintliga kunder med tidigare tillstånd till Data Science Workspace.
 
 Modellutveckling och utbildning sker på expertnivå, där en expert består av en MLInstance, utbildningar och poängprov.
 
