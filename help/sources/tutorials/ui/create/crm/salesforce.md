@@ -2,9 +2,9 @@
 title: Anslut ditt Salesforce-konto med användargränssnittet i Experience Platform
 description: Lär dig hur du ansluter ditt Salesforce-konto och överför dina CRM-data till Experience Platform med användargränssnittet.
 exl-id: b67fa4c4-d8ff-4d2d-aa76-5d9d32aa22d6
-source-git-commit: 7930a869627130a5db34780e64b809cda0c1e5f4
+source-git-commit: 5951b0f549c2fd2723945f8f4089d12f73b92e6c
 workflow-type: tm+mt
-source-wordcount: '801'
+source-wordcount: '813'
 ht-degree: 0%
 
 ---
@@ -36,7 +36,7 @@ Du måste ange värden för följande autentiseringsuppgifter för att kunna ans
 
 | Autentiseringsuppgifter | Beskrivning |
 | --- | --- |
-| Miljö-URL | URL:en för [!DNL Salesforce]-källinstansen. |
+| Miljö-URL | URL:en för [!DNL Salesforce]-källinstansen. Formatet för miljö-URL är `https://[domain].my.salesforce.com`. |
 | Användarnamn | Användarnamnet för användarkontot [!DNL Salesforce]. |
 | Lösenord | Lösenordet för användarkontot [!DNL Salesforce]. |
 | Säkerhetstoken | Säkerhetstoken för användarkontot [!DNL Salesforce]. |
@@ -50,7 +50,7 @@ Du måste ange värden för följande autentiseringsuppgifter för att kunna ans
 
 | Autentiseringsuppgifter | Beskrivning |
 | --- | --- |
-| Miljö-URL | URL:en för [!DNL Salesforce]-källinstansen. |
+| Miljö-URL | URL:en för [!DNL Salesforce]-källinstansen. Formatet för miljö-URL är `https://[domain].my.salesforce.com`. |
 | Klient-ID | Klient-ID används tillsammans med klienthemligheten som en del av OAuth2-autentisering. Tillsammans gör klient-ID och klienthemlighet att ditt program kan fungera för ditt kontos räkning genom att identifiera ditt program för [!DNL Salesforce]. |
 | Klienthemlighet | Klienthemligheten används tillsammans med klient-ID som en del av OAuth2-autentiseringen. Tillsammans gör klient-ID och klienthemlighet att ditt program kan fungera för ditt kontos räkning genom att identifiera ditt program för [!DNL Salesforce]. |
 | API-version | REST API-versionen för den [!DNL Salesforce]-instans som du använder. Värdet för API-versionen måste formateras med ett decimaltecken. Om du till exempel använder API-version `52` måste du ange värdet som `52.0`. Om det här fältet lämnas tomt kommer Experience Platform automatiskt att använda den senaste tillgängliga versionen. |

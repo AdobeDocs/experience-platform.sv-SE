@@ -2,9 +2,9 @@
 title: Skapa en Salesforce-basanslutning med API:t för flödestjänsten
 description: Lär dig hur du ansluter Adobe Experience Platform till ett Salesforce-konto med API:t för Flow Service.
 exl-id: 43dd9ee5-4b87-4c8a-ac76-01b83c1226f6
-source-git-commit: 7d450ba3357389a2934f187e4838e534d698dd4a
+source-git-commit: 5951b0f549c2fd2723945f8f4089d12f73b92e6c
 workflow-type: tm+mt
-source-wordcount: '774'
+source-wordcount: '782'
 ht-degree: 0%
 
 ---
@@ -36,7 +36,7 @@ Om du vill ansluta ditt [!DNL Salesforce]-konto till [!DNL Flow Service] med gru
 
 | Autentiseringsuppgifter | Beskrivning |
 | --- | --- |
-| `environmentUrl` | URL:en för [!DNL Salesforce]-källinstansen. |
+| `environmentUrl` | URL:en för [!DNL Salesforce]-källinstansen. Formatet för `environmentUrl` är `https://[domain].my.salesforce.com`. |
 | `username` | Användarnamnet för användarkontot [!DNL Salesforce]. |
 | `password` | Lösenordet för användarkontot [!DNL Salesforce]. |
 | `securityToken` | Säkerhetstoken för användarkontot [!DNL Salesforce]. |
@@ -51,7 +51,7 @@ Om du vill ansluta ditt [!DNL Salesforce]-konto till [!DNL Flow Service] med OAu
 
 | Autentiseringsuppgifter | Beskrivning |
 | --- | --- |
-| `environmentUrl` | URL:en för [!DNL Salesforce]-källinstansen. |
+| `environmentUrl` | URL:en för [!DNL Salesforce]-källinstansen. Formatet för `environmentUrl` är `https://[domain].my.salesforce.com` |
 | `clientId` | Klient-ID används tillsammans med klienthemligheten som en del av OAuth2-autentisering. Tillsammans gör klient-ID och klienthemlighet att ditt program kan fungera för ditt kontos räkning genom att identifiera ditt program för [!DNL Salesforce]. |
 | `clientSecret` | Klienthemligheten används tillsammans med klient-ID som en del av OAuth2-autentiseringen. Tillsammans gör klient-ID och klienthemlighet att ditt program kan fungera för ditt kontos räkning genom att identifiera ditt program för [!DNL Salesforce]. |
 | `apiVersion` | REST API-versionen för den [!DNL Salesforce]-instans som du använder. Värdet för API-versionen måste formateras med ett decimaltecken. Om du till exempel använder API-version `52` måste du ange värdet som `52.0`. Om det här fältet lämnas tomt kommer Experience Platform automatiskt att använda den senaste tillgängliga versionen. Det här värdet är obligatoriskt för autentisering av OAuth2-klientautentiseringsuppgifter. |
