@@ -6,7 +6,7 @@ product: experience platform
 type: Documentation
 description: Läs mer om standardanvändning och hastighetsbegränsningar för dataaktivering.
 exl-id: a755f224-3329-42d6-b8a9-fadcf2b3ca7b
-source-git-commit: 5d6b70e397a252e037589c3200053ebcb7eb8291
+source-git-commit: 322510055bd8b8803292a2b4af9df9e1dbee7ffb
 workflow-type: tm+mt
 source-wordcount: '1680'
 ht-degree: 1%
@@ -92,7 +92,7 @@ Skyddsritningarna nedan gäller metoden [ad hoc-aktivering](/help/destinations/a
 
 ### Aktivera Edge personaliseringsmål {#edge-destinations-activation}
 
-Skyddsklippen nedan gäller aktivering via [kantanpassningsmål](/help/destinations/destination-types.md#streaming-profile-export).
+Skyddsklippen nedan gäller aktivering via [kantanpassningsmål](/help/destinations/destination-types.md#advanced-enterprise-destinations).
 
 | Guardrail | Gräns | Begränsa typ | Beskrivning |
 | --- | --- | --- | --- |

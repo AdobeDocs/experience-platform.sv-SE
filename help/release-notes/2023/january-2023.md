@@ -2,7 +2,7 @@
 title: Adobe Experience Platform Release Notes januari 2023
 description: Versionsinformationen för Adobe Experience Platform i januari 2023.
 exl-id: 461898ce-5683-4ab1-9167-ac25843a1ff8
-source-git-commit: d23f1cc9dd0155aceae78bf938d35463e9c38181
+source-git-commit: 322510055bd8b8803292a2b4af9df9e1dbee7ffb
 workflow-type: tm+mt
 source-wordcount: '2150'
 ht-degree: 3%
@@ -173,9 +173,9 @@ Med Adobe Experience Platform kan ni skapa samordnade, enhetliga och relevanta u
 
 För att ta bort redundans i segmentmedlemskapets livscykel kommer statusen `Existing` att bli inaktuell i [segmentmedlemskartan](../../xdm/field-groups/profile/segmentation.md) i slutet av mars 2023. Ett uppföljningsmeddelande kommer att innehålla det exakta datumet för borttagningen.
 
-Med Post som föråldrad representeras profiler som är kvalificerade i ett segment som `Realized`, och de diskvalificerade profilerna kommer även fortsättningsvis att representeras som `Exited`. Detta skapar paritet med filbaserade mål med `Active`- och `Expired`-segmentstatus.
+Efterborttagning av profiler som är kvalificerade i ett segment representeras som `Realized` och diskvalificerade profiler visas som `Exited`. Detta skapar paritet med filbaserade mål med `Active`- och `Expired`-segmentstatus.
 
-Den här ändringen kan påverka dig om du använder [företagsmål](../../destinations/destination-types.md#streaming-profile-export) (Amazon Kinesis, Azure Event Hubs, HTTP API) och har automatiserade processer längre fram i kedjan baserat på statusen `Existing`. Granska dina integreringar längre fram i kedjan om så är fallet för dig. Om du är intresserad av att identifiera nyligen kvalificerade profiler mer än en viss tid kan du använda en kombination av `Realized`-status och `lastQualificationTime` i din segmentmedlemskarta. Mer information får du av Adobe.
+Den här ändringen kan påverka dig om du använder [företagsmål](../../destinations/destination-types.md#advanced-enterprise-destinations) (Amazon Kinesis, Azure Event Hubs, HTTP API) och har automatiserade processer längre fram i kedjan baserat på statusen `Existing`. Granska dina integreringar längre fram i kedjan om så är fallet för dig. Om du är intresserad av att identifiera nyligen kvalificerade profiler mer än en viss tid kan du använda en kombination av `Realized`-status och `lastQualificationTime` i din segmentmedlemskarta. Mer information får du av Adobe.
 
 Om du vill veta mer om kundprofilen i realtid, inklusive självstudiekurser och bästa praxis för arbete med profildata, börjar du med att läsa [Översikt över kundprofilen i realtid](../../profile/home.md).
 

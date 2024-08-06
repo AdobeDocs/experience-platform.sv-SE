@@ -2,7 +2,7 @@
 title: Identitetshantering i arbetsflödet för målaktivering
 description: Läs om hur identitetsexport hanteras i aktiveringsarbetsflödet, beroende på måltyp
 exl-id: f4894a08-c7a9-4d57-a6d3-660c49206d6a
-source-git-commit: f9917d6a6de81f98b472cff9b41f1526ea51cdae
+source-git-commit: 322510055bd8b8803292a2b4af9df9e1dbee7ffb
 workflow-type: tm+mt
 source-wordcount: '1134'
 ht-degree: 0%
@@ -92,7 +92,7 @@ När du konfigurerar ett datastream enligt beskrivningen i den länkade dokument
 
 ## Företagsmål {#enterprise-destinations}
 
-[Företagsmål](/help/destinations/destination-types.md#streaming-profile-export) ([!DNL Amazon Kinesis], [!DNL Azure Event Hubs], HTTP API) kräver inga specifika ID:n i dataexporten eftersom dessa är utformade för företagsintegrering. Du kan dock exportera identiteter som XDM-attribut eller från identitetskartan om du vill. Visa ett [exempel på exporterade data till HTTP-målet ](/help/destinations/catalog/streaming/http-destination.md#exported-data), som innehåller både `personalEmail.address` XDM-attributet och identiteterna `ECID` och `email_lc_sha256` (hash-e-postadress) från identitetskartan.
+[Företagsmål](/help/destinations/destination-types.md#advanced-enterprise-destinations) ([!DNL Amazon Kinesis], [!DNL Azure Event Hubs], HTTP API) kräver inga specifika ID:n i dataexporten eftersom dessa är utformade för företagsintegrering. Du kan dock exportera identiteter som XDM-attribut eller från identitetskartan om du vill. Visa ett [exempel på exporterade data till HTTP-målet ](/help/destinations/catalog/streaming/http-destination.md#exported-data), som innehåller både `personalEmail.address` XDM-attributet och identiteterna `ECID` och `email_lc_sha256` (hash-e-postadress) från identitetskartan.
 
 ## Personalization destinationer {#personalization-destinations}
 

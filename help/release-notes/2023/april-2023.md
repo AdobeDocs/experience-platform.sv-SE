@@ -2,7 +2,7 @@
 title: Versionsinformation om Adobe Experience Platform april 2023
 description: Versionsinformationen för Adobe Experience Platform från april 2023.
 exl-id: 7b501467-99a7-4aee-ae86-66c851250ecf
-source-git-commit: 5de1ec17b78c97be21c0d2afd6f0b119a6074b6f
+source-git-commit: 322510055bd8b8803292a2b4af9df9e1dbee7ffb
 workflow-type: tm+mt
 source-wordcount: '2011'
 ht-degree: 3%
@@ -174,7 +174,7 @@ Med Adobe Experience Platform kan ni skapa samordnade, enhetliga och relevanta u
 
 | Funktion | Beskrivning |
 | ------- | ----------- |
-| Segmentmedlemskapskarta | Som en uppföljning till det föregående meddelandet i februari, 15 maj 2023, kommer statusen `Existing` att tas bort från segmentmedlemskartan för att ta bort redundans i segmentmedlemskapets livscykel. Efter den här ändringen representeras profiler som är kvalificerade i ett segment som `Realized` och de profiler som är diskvalificerade fortsätter att representeras som `Exited`.<br/><br/> Den här ändringen kan påverka dig om du använder [företagsmål](../../destinations/destination-types.md#streaming-profile-export) (Amazon Kinesis, Azure Event Hubs, HTTP API) och kan ha automatiserade processer längre fram i kedjan baserat på statusen `Existing`. Om så är fallet för dig, se över integreringarna i senare led. Om du är intresserad av att identifiera nyligen kvalificerade profiler mer än en viss tid kan du använda en kombination av `Realized`-status och `lastQualificationTime` i din segmentmedlemskarta. Mer information får du av Adobe. |
+| Segmentmedlemskapskarta | Som en uppföljning till det föregående meddelandet i februari, 15 maj 2023, kommer statusen `Existing` att tas bort från segmentmedlemskartan för att ta bort redundans i segmentmedlemskapets livscykel. Efter den här ändringen representeras profiler som är kvalificerade i ett segment som `Realized` och de profiler som är diskvalificerade fortsätter att representeras som `Exited`.<br/><br/> Den här ändringen kan påverka dig om du använder [företagsmål](../../destinations/destination-types.md#advanced-enterprise-destinations) (Amazon Kinesis, Azure Event Hubs, HTTP API) och kan ha automatiserade processer längre fram i kedjan baserat på statusen `Existing`. Om så är fallet för dig, se över integreringarna i senare led. Om du är intresserad av att identifiera nyligen kvalificerade profiler mer än en viss tid kan du använda en kombination av `Realized`-status och `lastQualificationTime` i din segmentmedlemskarta. Mer information får du av Adobe. |
 
 {style="table-layout:auto"}
 

@@ -2,7 +2,7 @@
 title: Beteende vid export av profiler
 description: Lär dig hur beteendet vid export av profiler varierar mellan de olika integreringsmönster som stöds i Experience Platform-mål.
 exl-id: 2be62843-0644-41fa-a860-ccd65472562e
-source-git-commit: f9917d6a6de81f98b472cff9b41f1526ea51cdae
+source-git-commit: 322510055bd8b8803292a2b4af9df9e1dbee7ffb
 workflow-type: tm+mt
 source-wordcount: '2931'
 ht-degree: 0%
@@ -44,7 +44,7 @@ Aggingsprincipen kan konfigureras och målutvecklare kan bestämma hur aggregeri
 >
 > Företagsmål är bara tillgängliga för [Adobe Real-time Customer Data Platform Ultimate](https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform.html)-kunder.
 
-[Företagsmålen](/help/destinations/destination-types.md#streaming-profile-export) i Experience Platform är Amazon Kinesis, Azure Event Hubs och HTTP API.
+[Företagsmålen](/help/destinations/destination-types.md#advanced-enterprise-destinations) i Experience Platform är Amazon Kinesis, Azure Event Hubs och HTTP API.
 
 Experience Platform optimerar beteendet för profilexport till företagets mål, så att endast data exporteras till API-slutpunkten när relevanta uppdateringar av en profil har gjorts efter målgruppskvalifikation eller andra viktiga händelser. Profiler exporteras till ditt mål i följande situationer:
 
