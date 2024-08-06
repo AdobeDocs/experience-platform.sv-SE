@@ -4,7 +4,7 @@ solution: Experience Platform
 title: Mappningsfunktioner för dataförinställningar
 description: I det här dokumentet introduceras de mappningsfunktioner som används med Data Prep.
 exl-id: e95d9329-9dac-4b54-b804-ab5744ea6289
-source-git-commit: 6509447ff2e67eac7b6b41754981cd18eb52562e
+source-git-commit: 5a4e0b3c97d315262ded35ca5bfada3612ed6db4
 workflow-type: tm+mt
 source-wordcount: '5805'
 ht-degree: 1%
@@ -130,7 +130,7 @@ I följande tabeller visas alla mappningsfunktioner som stöds, inklusive exempe
 | set_date_part | Ersätter en komponent vid ett visst datum. Följande komponenter accepteras: <br><br>&quot;year&quot;<br>&quot;yyy&quot;<br>&quot;yy&quot;<br><br>&quot;month&quot;<br>&quot;mm&quot;<br>&quot;m&quot;<br><br>&quot;day&quot;<br>&quot;dd&quot;<br>&quot;d&quot;<br><br>&quot;hour&quot;<br>&quot;hh&quot;<br><br>&quot;minute&quot;<br>&quot;mi&quot;<br> &quot;n&quot;<br><br>&quot;second&quot;<br>&quot;ss&quot;<br>&quot;s&quot; | <ul><li>KOMPONENT: **Obligatorisk** En sträng som representerar datumdelen. </li><li>VÄRDE: **Obligatoriskt** Värdet som ska anges för komponenten för ett visst datum.</li><li>DATUM: **Obligatoriskt** Datumet i standardformat.</li></ul> | set_date_part &#x200B;(COMPONENT, VALUE, DATE) | set_date_part(&quot;m&quot;, 4, date(&quot;2016-11-09T11:44:44.797&quot;) | &quot;2016-04-09T11:44:44Z&quot; |
 | make_date_time | Skapar ett datum från delar. Den här funktionen kan också induceras med make_timestamp. | <ul><li>ÅR: **Obligatoriskt** Året, skrivet med fyra siffror.</li><li>MÅNAD: **Krävs** Månad. Tillåtna värden är 1 till 12.</li><li>DAG: **Krävs** Dagen. Tillåtna värden är 1 till 31.</li><li>TIMME: **Krävs** Timmen. De tillåtna värdena är 0 till 23.</li><li>MINUT: **Krävs** minuten. De tillåtna värdena är 0 till 59.</li><li>NANOSECOND: **Required** The nanosecond values. De tillåtna värdena är 0 till 999999999.</li><li>TIMEZONE: **Required** Tidszonen för datumet och tiden.</li></ul> | make_date_time &#x200B;(YEAR, MONTH, DAY, HOUR, MINUTE, SECOND, NANOSECOND, TIMEZONE) | make_date_time &#x200B;(2019, 10, 17, 11, 55, 12, 999, &quot;America/Los_Angeles&quot;) | `2019-10-17T11:55:12Z` |
 | zone_date_to_utc | Konverterar ett datum i en tidszon till ett datum i UTC. | <ul><li>DATUM: **Obligatoriskt** Det datum som du försöker konvertera.</li></ul> | zone_date_to_utc &#x200B;(DATE) | `zone_date_to_utc&#x200B;(2019-10-17T11:55:&#x200B;12 PST` | `2019-10-17T19:55:12Z` |
-| zone_date_to_zone | Konverterar ett datum från en tidszon till en annan tidszon. | <ul><li>DATUM: **Obligatoriskt** Det datum som du försöker konvertera.</li><li>ZON: **Obligatoriskt** Tidszonen som du försöker konvertera datumet till.</li></ul> | zone_date_to_zone &#x200B;(DATE, ZONE) | `zone_date_to_utc&#x200B;(now(), "Europe/Paris")` | `2021-10-26T15:43:59Z` |
+| zone_date_to_zone | Konverterar ett datum från en tidszon till en annan tidszon. | <ul><li>DATUM: **Obligatoriskt** Det datum som du försöker konvertera.</li><li>ZON: **Obligatoriskt** Tidszonen som du försöker konvertera datumet till.</li></ul> | zone_date_to_zone &#x200B;(DATE, ZONE) | `zone_date_to_zone(now(), "Europe/Paris")` | `2021-10-26T15:43:59Z` |
 
 {style="table-layout:auto"}
 
