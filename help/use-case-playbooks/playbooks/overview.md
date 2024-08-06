@@ -4,10 +4,10 @@ title: Använd översikt över fallspelningsböcker
 description: Lär dig använda funktionen Spelböcker med användningsexempel i Experience Platform för att komma igång med olika användningsområden för marknadsföring
 role: Developer, User, Admin, Leader
 exl-id: 9c5c4f61-ea99-4f54-9b77-d486be29813c
-source-git-commit: 54b3d2ef22f7afb47fa8c9430c5c1645c94c837d
+source-git-commit: 152d7d29494d586016260ed6ed3d3f60e6bf766b
 workflow-type: tm+mt
-source-wordcount: '527'
-ht-degree: 3%
+source-wordcount: '523'
+ht-degree: 4%
 
 ---
 
@@ -29,10 +29,12 @@ Vad du hittar i den här handboken:
 
 ## Översikt {#overview}
 
-[!UICONTROL Use Case Playbooks] kan hjälpa dig att lösa problemet när du börjar med Real-Time CDP eller Adobe Journey Optimizer när du kanske inte vet exakt vad du ska börja med eller hur du skapar rätt resurser för att uppnå dina önskade användningsfall. Använd fallspelsböcker kan hjälpa dig genom att:
+[!UICONTROL Use Case Playbooks] kan hjälpa dig att lösa problemet när du börjar med Real-Time CDP eller Adobe Journey Optimizer när du kanske inte vet exakt vad du ska börja med eller hur du skapar rätt resurser för att uppnå dina önskade användningsfall.
 
-* Visa exempel för inspiration
-* Skapa olika resurser som du kan använda, testa och marknadsföra till produktion när det passar.
+Använd fallspelsböcker kan hjälpa dig genom att:
+
+* [Vi presenterar en katalog med tillgängliga Playbooks för att komma igång snabbare med användningsexempel](../playbooks/playbooks-list.md)
+* [Skapa olika resurser](../playbooks/create-share-reuse.md)
 
 ![Visa alla spelböcker](/help/use-case-playbooks/assets/playbooks/overview/playbooks-landing-page.png)
 

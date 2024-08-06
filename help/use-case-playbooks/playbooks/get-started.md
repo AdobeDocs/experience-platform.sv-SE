@@ -4,9 +4,9 @@ title: Kom igång med Use Case Playbooks
 description: Lär dig hur du kommer igång med funktionen Använd fallspelningsböcker.
 role: Admin
 exl-id: 1c39792e-49fe-4c5f-9796-fa29f60b7461
-source-git-commit: 54b3d2ef22f7afb47fa8c9430c5c1645c94c837d
+source-git-commit: 152d7d29494d586016260ed6ed3d3f60e6bf766b
 workflow-type: tm+mt
-source-wordcount: '893'
+source-wordcount: '929'
 ht-degree: 0%
 
 ---
@@ -19,6 +19,8 @@ Lär dig hur du konfigurerar ditt konto för Use Case Playbooks, som är utforma
 * Skapa en sandlåda
 * Konfigurera användarbehörigheter
 * Konfigurera Journey Optimizer-kanalytor för e-post-, push- och SMS-meddelanden (om du tänker använda Journey Optimizer spelböcker)
+
+Om du vill få tillgång till ett omfattande galleri med fallspelningsböcker i användargränssnittet i Experience Platform väljer du **[!UICONTROL Playbooks]** i den vänstra navigeringen. Läs dokumentationen om hur du [navigerar i Use Case Playbooks](../playbooks/navigate.md)och kommer igång med en [inspirerande sandlåda](../playbooks/navigate.md).
 
 ## Konfigurera användningsfallsspelböcker - videogenomgång {#video}
 
