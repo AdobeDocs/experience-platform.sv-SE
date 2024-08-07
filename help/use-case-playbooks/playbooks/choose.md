@@ -4,16 +4,16 @@ title: Välj bland ett urval av spelböcker
 description: Lär dig hur du väljer rätt spelbok för dina användningsfall för att aktivera spelböcker.
 role: User
 exl-id: 3dae6ad6-adb3-4606-ad63-c0d4ef6beeba
-source-git-commit: ea735c486ca88de05f2ee2a8e40c68e3ef29c4fd
+source-git-commit: 1781aa552107b6ca1fed357c053a4f892960dc55
 workflow-type: tm+mt
-source-wordcount: '735'
+source-wordcount: '738'
 ht-degree: 0%
 
 ---
 
 # Välj bland ett urval av spelböcker
 
-Om du vill använda en spelbok går du till **[!UICONTROL Use Case Playbooks]>[!UICONTROL Playbooks]**. Bläddra och använd de olika sök- och filtreringsalternativen på sidan för att välja och komma igång med en viss spelbok.
+Om du vill använda en spelningsbok väljer du **[!UICONTROL Playbooks]** i den vänstra navigeringen. Bläddra och använd de olika sök- och filtreringsalternativen på sidan för att välja och komma igång med en viss spelbok.
 
 ## Söka och filtrera {#search-and-filter}
 
