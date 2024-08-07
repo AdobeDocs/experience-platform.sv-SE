@@ -3,9 +3,9 @@ title: Åtgärdstyper i Adobe Experience Platform Web SDK-tillägget
 description: Lär dig mer om de olika åtgärdstyperna i taggtillägget Adobe Experience Platform Web SDK.
 solution: Experience Platform
 exl-id: a4bf0bb9-59b4-4c43-97e6-387768176517
-source-git-commit: c3b05dfd57b3335230e9abb40de6f2e1ee5ee6fa
+source-git-commit: 760484bb7f95df97701f81f78783f0214aecaf5b
 workflow-type: tm+mt
-source-wordcount: '1971'
+source-wordcount: '1969'
 ht-degree: 0%
 
 ---
@@ -93,10 +93,6 @@ Använd väljaren **[!UICONTROL Instance]** för att välja den Web SDK-instans 
 
 * **[!UICONTROL Instance]**: Välj den Web SDK-instans som du vill konfigurera. Om du bara har en instans är den förmarkerad.
 * **[!UICONTROL Use guided events]**: Aktivera det här alternativet för att automatiskt fylla i eller dölja vissa fält för att aktivera ett visst användningsfall. Om du aktiverar det här alternativet visas följande inställningar.
-
-  >[!NOTE]
-  >
-  >De guidade händelser som visas nedan är relaterade till [övre och nedre delen av sidhändelser](../../../../web-sdk/use-cases/top-bottom-page-events.md).
    * **[!UICONTROL Request personalization]**: Den här händelsen ska anropas överst på sidan. När den här händelsen är markerad anges följande fält:
       * **[!UICONTROL Type]**: **[!UICONTROL Decisioning Proposition Fetch]**
       * **[!UICONTROL Automatically send a display event]**: **[!UICONTROL false]**
@@ -104,6 +100,10 @@ Använd väljaren **[!UICONTROL Instance]** för att välja den Web SDK-instans 
    * **[!UICONTROL Collect analytics]**: Den här händelsen ska anropas längst ned på sidan. När den här händelsen är markerad anges följande fält:
       * **[!UICONTROL Include rendered propositions]**: **[!UICONTROL true]**
       * Inställningarna för **[!UICONTROL Personalization]** är dolda
+
+  >[!NOTE]
+  >
+  >De guidade händelserna är relaterade till [övre och nedre delen av sidhändelser](../../../../web-sdk/use-cases/top-bottom-page-events.md).
 
 
 ### Data {#data}
