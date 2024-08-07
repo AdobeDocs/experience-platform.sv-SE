@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Användargränssnittshandbok för frågeredigeraren
 description: Frågeredigeraren är ett interaktivt verktyg som tillhandahålls av Adobe Experience Platform Query Service, som gör att du kan skriva, validera och köra frågor för kundupplevelsedata i användargränssnittet i Experience Platform. Frågeredigeraren har stöd för att utveckla frågor för analys och datautforskande, och gör att du kan köra interaktiva frågor i utvecklingssyfte samt icke-interaktiva frågor för att fylla i datauppsättningar i Experience Platform.
 exl-id: d7732244-0372-467d-84e2-5308f42c5d51
-source-git-commit: c2832821ea6f9f630e480c6412ca07af788efd66
+source-git-commit: d2bc580ba1cacdfab45bdc6356c630a63e7d0f6e
 workflow-type: tm+mt
-source-wordcount: '2351'
+source-wordcount: '2349'
 ht-degree: 0%
 
 ---
@@ -223,9 +223,9 @@ När en fråga har slutförts visas resultaten på fliken **[!UICONTROL Results]
 
 ![Fliken Resultat i frågeredigeringskonsolen som visar resultatet av en frågekörning.](../images/ui/query-editor/query-results.png)
 
-## Användningsfall {#use-cases}
+## Exempel {#examples}
 
-Frågetjänsten ger lösningar på en mängd olika användningsområden i olika branscher och affärsscenarier. Dessa praktiska exempel visar tjänstens flexibilitet och effekt när det gäller att ta itu med olika behov. Om du vill [ta reda på hur frågetjänsten kan tillföra värde till dina specifika affärsbehov](../use-cases/overview.md) kan du utforska den omfattande samlingen av falldokument. Lär dig använda frågetjänsten för att få insikter och lösningar för ökad effektivitet och affärsframgångar.
+Frågetjänsten ger lösningar på en mängd olika användningsområden i olika branscher och affärsscenarier. Exemplen visar på tjänstens flexibilitet och effekt när det gäller att tillgodose olika behov. Om du vill [ta reda på hur frågetjänsten kan tillföra värde till dina specifika affärsbehov](../use-cases/overview.md) kan du utforska den omfattande samlingen av falldokument. Lär dig använda frågetjänsten för att få insikter och lösningar för ökad effektivitet och affärsframgångar.
 
 <!-- This video is from 2019. The logic is sounds but the workflow is too outdated. -->
 

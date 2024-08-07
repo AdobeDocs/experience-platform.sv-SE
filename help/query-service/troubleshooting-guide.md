@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Vanliga frågor
 description: Det här dokumentet innehåller vanliga frågor och svar relaterade till frågetjänsten. Här finns ämnen som export av data, verktyg från tredje part och PSQL-fel.
 exl-id: 14cdff7a-40dd-4103-9a92-3f29fa4c0809
-source-git-commit: 8b6cd84a31f9cdccef9f342df7f7b8450c2405dc
+source-git-commit: 84f30a47102a51b40d6811cd4815c36f6ffd34b5
 workflow-type: tm+mt
-source-wordcount: '4407'
+source-wordcount: '4546'
 ht-degree: 0%
 
 ---
@@ -18,7 +18,11 @@ Det här dokumentet innehåller svar på vanliga frågor om frågetjänsten och 
 Följande lista med svar på vanliga frågor är indelad i följande kategorier:
 
 - [Allmänt](#general)
+- [Frågor, användargränssnitt](#queries-ui) 
+- [Datauppsättningsexempel](#dataset-samples)
 - [Exportera data](#exporting-data)
+- [SQL-syntax](#sql-syntax) 
+- [ITAS-frågor](#itas-queries)
 - [Tredjepartsverktyg](#third-party-tools)
 - [PostgreSQL API-fel](#postgresql-api-errors)
 - [REST API-fel](#rest-api-errors)
@@ -603,6 +607,22 @@ Ja, du kan använda kommandot `CREATE VIEW` utan åtkomst till Data Distiller. D
 Ja. Vissa tredjepartsklienter, som DbVisualizer, kan kräva en separat identifierare före och efter ett SQL-block för att ange att en del av ett skript ska hanteras som en enda sats. Mer information finns i [anonym blockdokumentation](./key-concepts/anonymous-block.md) eller i [den officiella DbVisualizer-dokumentationen](https://confluence.dbvis.com/display/UG120/Executing+Complex+Statements#ExecutingComplexStatements-UsinganSQLDialect).
 +++
 
+## Användargränssnitt för frågor
+
+### &quot;Skapa fråga&quot; fastnar &quot;Anslutningen initieras..&quot; när du försöker ansluta till frågetjänsten. Hur åtgärdar jag problemet?
+
++++Svar
+Om frågan &quot;Skapa fråga&quot; har fastnat på &quot;Initialiserar anslutning..&quot; är detta troligen ett anslutnings- eller sessionsproblem. Uppdatera webbläsaren om du använder användargränssnittet för plattformen och försök igen.
++++
+
+## Datauppsättningsexempel
+
+### Kan jag skapa exempel på en systemdatauppsättning?
+
++++Svar
+Nej. Skrivbehörigheter är begränsade för systemdatauppsättningar så du kan inte skapa exempel.
++++
+
 ## Exportera data {#exporting-data}
 
 I det här avsnittet finns information om hur du exporterar data och begränsningar.
@@ -647,6 +667,22 @@ timestamp >= to_timestamp('2022-07-22')
 and timestamp < to_timestamp('2022-07-23');
 ```
 
++++
+
+## SQL-syntax
+
+### Stöds MERGE INTO av Data Distiller eller Query Service?
+
++++Svar
+SQL-konstruktionen MERGE INTO stöds inte av Data Distiller eller Query Service.
++++
+
+## ITAS-frågor
+
+### Vad är ITAS-frågor?
+
++++Svar
+INSERT INTO-frågor kallas ITAS-frågor. Observera att CREATE TABLE-frågor kallas för CTAS-frågor.
 +++
 
 ## Tredjepartsverktyg {#third-party-tools}
