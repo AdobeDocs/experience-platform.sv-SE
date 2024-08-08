@@ -3,9 +3,9 @@ title: Infoga betalningsdata från ditt [!DNL Stripe] konto till Experience Plat
 description: Lär dig hur du importerar betalningsdata från ditt Stripe-konto till Experience Platform med API:t för Flow Service
 badge: Beta
 exl-id: a9cb3ef6-aab0-4a5b-894e-ce90b82f35a8
-source-git-commit: 62bcaa532cdec68a2f4f62e5784c35b91b7d5743
+source-git-commit: 48aef63cffbdc52a6a96ef69e5db4f54274144b6
 workflow-type: tm+mt
-source-wordcount: '1998'
+source-wordcount: '2020'
 ht-degree: 0%
 
 ---
@@ -881,7 +881,7 @@ curl -X POST \
 | `transformations.params.mappingVersion` | Motsvarande version av mappnings-ID. Standardvärdet är `0`. |
 | `scheduleParams.startTime` | Den tid då dataflödet börjar. Du måste ange starttidsvärdet i formatet Unix-tidsstämpel. |
 | `scheduleParams.frequency` | Frekvensen med vilken dataflödet samlar in data. Du kan konfigurera intagsfrekvensen till:  <ul><li>**En gång**: Ställ in din frekvens på `once` för att skapa en engångsinmatning. Konfigurationer för intervall och bakåtfyllnad är inte tillgängliga när ett dataflöde för engångsinmatning skapas. Som standard är schemaläggningsfrekvensen inställd på en gång.</li><li>**Minut**: Ställ in din frekvens på `minute` för att schemalägga ditt dataflöde att importera data per minut.</li><li>**Timme**:Ställ in din frekvens på `hour` för att schemalägga ditt dataflöde att importera data per timme.</li><li>**Dag**: Ställ in din frekvens på `day` för att schemalägga ditt dataflöde att importera data per dag.</li><li>**Vecka**: Ställ in din frekvens på `week` för att schemalägga ditt dataflöde att importera data per vecka.</li></ul> |
-| `scheduleParams.interval` | Intervallet anger perioden mellan två på varandra följande flödeskörningar. Om du t.ex. anger din frekvens som dag och konfigurerar intervallet till 15, kommer dataflödet att köras var 15:e dag. Intervallvärdet ska vara ett heltal som inte är noll. |
+| `scheduleParams.interval` | Intervallet anger perioden mellan två på varandra följande flödeskörningar. Om du t.ex. anger din frekvens som dag och konfigurerar intervallet till 15, kommer dataflödet att köras var 15:e dag. Intervallvärdet ska vara ett heltal som inte är noll. Det minsta tillåtna intervallvärdet för varje frekvens är följande:<ul><li>**En gång**: ingen/a</li><li>**Minut**: 15</li><li>**Timme**: 1</li><li>**Dag**: 1</li><li>**Vecka**: 1</li></ul> |
 
 **Svar**
 

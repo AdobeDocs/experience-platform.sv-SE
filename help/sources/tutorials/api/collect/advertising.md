@@ -5,9 +5,9 @@ title: Skapa ett dataflöde för Advertising-källor med API:t för flödestjän
 type: Tutorial
 description: Den här självstudiekursen beskriver stegen för att hämta data från en annonsapplikation från tredje part och hämta dem till plattformen med hjälp av källanslutningar och API:t för Flow Service.
 exl-id: 2a0eb13b-d09e-4bc1-aae3-84c8741eead1
-source-git-commit: f5ac10980e08843f6ed9e892f7e1d4aefc8f0de7
+source-git-commit: 48aef63cffbdc52a6a96ef69e5db4f54274144b6
 workflow-type: tm+mt
-source-wordcount: '1340'
+source-wordcount: '1341'
 ht-degree: 0%
 
 ---
@@ -671,7 +671,7 @@ curl -X POST \
 | `transformations.params.mappingId` | Det mappnings-ID som är kopplat till databasen. |
 | `scheduleParams.startTime` | Starttiden för dataflödet i epok-tid. |
 | `scheduleParams.frequency` | Frekvensen med vilken dataflödet samlar in data. Godtagbara värden är: `once`, `minute`, `hour`, `day` eller `week`. |
-| `scheduleParams.interval` | Intervallet anger perioden mellan två på varandra följande flödeskörningar. Intervallets värde ska vara ett heltal som inte är noll. Intervall krävs inte när frekvens har angetts som `once` och ska vara större än eller lika med `15` för andra frekvensvärden. |
+| `scheduleParams.interval` | Intervallet anger perioden mellan två på varandra följande flödeskörningar. Intervallets värde ska vara ett heltal som inte är noll. Det minsta tillåtna intervallvärdet för varje frekvens är följande:<ul><li>**En gång**: ingen/a</li><li>**Minut**: 15</li><li>**Timme**: 1</li><li>**Dag**: 1</li><li>**Vecka**: 1</li></ul> |
 
 **Svar**
 

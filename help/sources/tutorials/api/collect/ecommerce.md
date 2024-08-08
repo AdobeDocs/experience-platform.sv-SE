@@ -5,9 +5,9 @@ title: Skapa ett dataflöde för e-handelskällor med API:t för Flow Service
 type: Tutorial
 description: Den här självstudiekursen beskriver stegen för att hämta data från ett e-handelssystem från en annan leverantör och hämta dem till plattformen med hjälp av källkopplingar och API:er.
 exl-id: 0952f037-5e20-4d84-a2e6-2c9470f168f5
-source-git-commit: f5ac10980e08843f6ed9e892f7e1d4aefc8f0de7
+source-git-commit: 48aef63cffbdc52a6a96ef69e5db4f54274144b6
 workflow-type: tm+mt
-source-wordcount: '1304'
+source-wordcount: '1306'
 ht-degree: 0%
 
 ---
@@ -628,7 +628,7 @@ curl -X POST \
 | `transformations.params.mappingId` | Det mappnings-ID som är kopplat till e-handelskällan. |
 | `scheduleParams.startTime` | Starttiden för dataflödet i epok-tid. |
 | `scheduleParams.frequency` | `frequency` som dataflödet samlar in data vid. Godtagbara värden är: `once`, `minute`, `hour`, `day` eller `week`. |
-| `scheduleParams.interval` | Intervallet anger perioden mellan två på varandra följande flödeskörningar. Intervallets värde ska vara ett heltal som inte är noll. Ett intervall krävs inte när `frequency` har angetts som `once` och ska vara större än eller lika med `15` för andra `frequency`-värden. |
+| `scheduleParams.interval` | Intervallet anger perioden mellan två på varandra följande flödeskörningar. Intervallets värde ska vara ett heltal som inte är noll. Det minsta tillåtna intervallvärdet för varje frekvens är följande:<ul><li>**En gång**: ingen/a</li><li>**Minut**: 15</li><li>**Timme**: 1</li><li>**Dag**: 1</li><li>**Vecka**: 1</li></ul> |
 
 **Svar**
 

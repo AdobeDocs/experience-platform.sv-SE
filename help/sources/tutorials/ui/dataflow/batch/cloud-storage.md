@@ -3,9 +3,9 @@ keywords: Experience Platform;hem;populära ämnen;dataflöde;Dataflöd
 title: Konfigurera ett dataflöde för inmatning av batchdata från ett Source-lagringssystem i molnet i användargränssnittet
 description: I den här självstudien beskrivs hur du konfigurerar ett nytt dataflöde för att importera batchdata från en molnlagringskälla i användargränssnittet
 exl-id: b327bbea-039d-4c04-afd3-f1d6a5f902a6
-source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
+source-git-commit: 48aef63cffbdc52a6a96ef69e5db4f54274144b6
 workflow-type: tm+mt
-source-wordcount: '1746'
+source-wordcount: '1874'
 ht-degree: 0%
 
 ---
@@ -153,12 +153,12 @@ Under det här steget kan du även aktivera **bakgrundsfyllning** och definiera 
 
 Se tabellen nedan för mer information om schemaläggningskonfigurationer.
 
-| Fält | Beskrivning |
+| Schemaläggningskonfiguration | Beskrivning |
 | --- | --- |
-| Frekvens | Frekvensen med vilken ett intag sker. Valbara frekvenser är `Once`, `Minute`, `Hour`, `Day` och `Week`. |
-| Intervall | Ett heltal som anger intervallet för den valda frekvensen. Intervallets värde måste vara ett heltal som inte är noll och måste vara större än eller lika med 15. |
-| Starttid | En UTC-tidsstämpel som anger när det allra första intaget är inställt att ske. Starttiden måste vara större än eller lika med den aktuella UTC-tiden. |
-| Backfill | Ett booleskt värde som avgör vilka data som hämtas från början. Om bakåtfyllning är aktiverad, kommer alla aktuella filer i den angivna sökvägen att importeras under det första schemalagda intaget. Om underfyllning är inaktiverad importeras endast de filer som läses in mellan den första importkörningen och starttiden. Filer som lästs in före starttiden importeras inte. |
+| Frekvens | Konfigurera frekvens för att ange hur ofta dataflödet ska köras. Du kan ange frekvensen till: <ul><li>**En gång**: Ställ in din frekvens på `once` för att skapa en engångsinmatning. Konfigurationer för intervall och bakåtfyllnad är inte tillgängliga när ett dataflöde för engångsinmatning skapas. Som standard är schemaläggningsfrekvensen inställd på en gång.</li><li>**Minut**: Ställ in din frekvens på `minute` för att schemalägga ditt dataflöde att importera data per minut.</li><li>**Timme**: Ställ in din frekvens på `hour` för att schemalägga ditt dataflöde att importera data per timme.</li><li>**Dag**: Ställ in din frekvens på `day` för att schemalägga ditt dataflöde att importera data per dag.</li><li>**Vecka**: Ställ in din frekvens på `week` för att schemalägga ditt dataflöde att importera data per vecka.</li></ul> |
+| Intervall | När du har valt en frekvens kan du konfigurera intervallinställningen för att upprätta en tidsram mellan varje intag. Om du t.ex. anger din frekvens som dag och konfigurerar intervallet till 15, kommer dataflödet att köras var 15:e dag. Du kan inte ange intervallet till noll. Det minsta tillåtna intervallvärdet för varje frekvens är följande:<ul><li>**En gång**: ingen/a</li><li>**Minut**: 15</li><li>**Timme**: 1</li><li>**Dag**: 1</li><li>**Vecka**: 1</li></ul> |
+| Starttid | Tidsstämpeln för den projicerade körningen visas i UTC-tidszonen. |
+| Backfill | Backfill avgör vilka data som hämtas från början. Om bakåtfyllning är aktiverad, kommer alla aktuella filer i den angivna sökvägen att importeras under det första schemalagda intaget. Om underfyllning är inaktiverad importeras endast de filer som läses in mellan den första importkörningen och starttiden. Filer som lästs in före starttiden importeras inte. |
 
 >[!NOTE]
 >

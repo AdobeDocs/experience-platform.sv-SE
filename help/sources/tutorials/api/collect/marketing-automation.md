@@ -5,9 +5,9 @@ title: Skapa ett dataflöde för marknadsföringsautomatiseringskällor med API:
 type: Tutorial
 description: Den här självstudiekursen beskriver stegen för att hämta data från ett automatiserat marknadsföringssystem och föra in dem i Adobe Experience Platform med hjälp av källkopplingar och API:er.
 exl-id: f3754bd0-ed31-4bf2-8f97-975bf6a9b076
-source-git-commit: f5ac10980e08843f6ed9e892f7e1d4aefc8f0de7
+source-git-commit: 48aef63cffbdc52a6a96ef69e5db4f54274144b6
 workflow-type: tm+mt
-source-wordcount: '1349'
+source-wordcount: '1350'
 ht-degree: 0%
 
 ---
@@ -637,7 +637,7 @@ curl -X POST \
 | `transformations.params.mappingId` | Det mappnings-ID som är kopplat till databasen. |
 | `scheduleParams.startTime` | Starttiden för dataflödet i epok-tid. |
 | `scheduleParams.frequency` | Frekvensen med vilken dataflödet samlar in data. Godtagbara värden är: `once`, `minute`, `hour`, `day` eller `week`. |
-| `scheduleParams.interval` | Intervallet anger perioden mellan två på varandra följande flödeskörningar. Intervallets värde ska vara ett heltal som inte är noll. Intervall krävs inte när frekvens har angetts som `once` och ska vara större än eller lika med `15` för andra frekvensvärden. |
+| `scheduleParams.interval` | Intervallet anger perioden mellan två på varandra följande flödeskörningar. Intervallets värde ska vara ett heltal som inte är noll. Det minsta tillåtna intervallvärdet för varje frekvens är följande:<ul><li>**En gång**: ingen/a</li><li>**Minut**: 15</li><li>**Timme**: 1</li><li>**Dag**: 1</li><li>**Vecka**: 1</li></ul> |
 
 **Svar**
 

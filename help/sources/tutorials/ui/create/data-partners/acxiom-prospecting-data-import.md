@@ -4,9 +4,9 @@ description: Lär dig hur du ansluter Acxiom Prospecting Data till Adobe Experie
 last-substantial-update: 2024-02-21T00:00:00Z
 badge: Beta
 exl-id: cde0bfe9-0604-41d3-8422-114f58a74d04
-source-git-commit: 8be502c9eea67119dc537a5d63a6c71e0bff1697
+source-git-commit: d048109141168b33795753c4706dac64cdf29ca5
 workflow-type: tm+mt
-source-wordcount: '1709'
+source-wordcount: '1818'
 ht-degree: 0%
 
 ---
@@ -153,10 +153,12 @@ Använd mappningsgränssnittet för att mappa källdata till rätt schemafält i
 
 Använd schemaläggningsgränssnittet för att definiera dataflödets ingstidsplan.
 
-* **Frekvens**: Konfigurera frekvens för att ange hur ofta dataflödet ska köras. Du kan ange frekvensen till: en gång, minut, timme, dag eller vecka.
-* **Intervall**: När du har valt en frekvens kan du konfigurera intervallinställningen för att upprätta tidsramen mellan varje intag. Om du t.ex. anger din frekvens som dag och konfigurerar intervallet till 15, kommer dataflödet att köras var 15:e dag. Intervall kan inte anges till noll och måste anges till minst 15.
-* **Starttid** - Tidsstämpeln för den projicerade körningen visas i UTC-tidszonen.
-* **Backfill** - Backfill avgör vilka data som hämtas från början. Om bakåtfyllning är aktiverad, kommer alla aktuella filer i den angivna sökvägen att importeras under det första schemalagda intaget. Om underfyllning är inaktiverad importeras endast de filer som läses in mellan den första importkörningen och starttiden. Filer som lästs in före starttiden importeras inte.
+| Schemaläggningskonfiguration | Beskrivning |
+| --- | --- |
+| Frekvens | Konfigurera frekvens för att ange hur ofta dataflödet ska köras. Du kan ange frekvensen till: <ul><li>**En gång**: Ställ in din frekvens på `once` för att skapa en engångsinmatning. Konfigurationer för intervall och bakåtfyllnad är inte tillgängliga när ett dataflöde för engångsinmatning skapas. Som standard är schemaläggningsfrekvensen inställd på en gång.</li><li>**Minut**: Ställ in din frekvens på `minute` för att schemalägga ditt dataflöde att importera data per minut.</li><li>**Timme**: Ställ in din frekvens på `hour` för att schemalägga ditt dataflöde att importera data per timme.</li><li>**Dag**: Ställ in din frekvens på `day` för att schemalägga ditt dataflöde att importera data per dag.</li><li>**Vecka**: Ställ in din frekvens på `week` för att schemalägga ditt dataflöde att importera data per vecka.</li></ul> |
+| Intervall | När du har valt en frekvens kan du konfigurera intervallinställningen för att upprätta en tidsram mellan varje intag. Om du t.ex. anger din frekvens som dag och konfigurerar intervallet till 15, kommer dataflödet att köras var 15:e dag. Du kan inte ange intervallet till noll. Det minsta tillåtna intervallvärdet för varje frekvens är följande:<ul><li>**En gång**: ingen/a</li><li>**Minut**: 15</li><li>**Timme**: 1</li><li>**Dag**: 1</li><li>**Vecka**: 1</li></ul> |
+| Starttid | Tidsstämpeln för den projicerade körningen visas i UTC-tidszonen. |
+| Backfill | Backfill avgör vilka data som hämtas från början. Om bakåtfyllning är aktiverad, kommer alla aktuella filer i den angivna sökvägen att importeras under det första schemalagda intaget. Om underfyllning är inaktiverad importeras endast de filer som läses in mellan den första importkörningen och starttiden. Filer som lästs in före starttiden importeras inte. |
 
 ![Konfigurationsgränssnittet för schemaläggning.](../../../../images/tutorials/create/acxiom-prospect-suppression-data-sourcing/image-source-scheduling.png)
 
