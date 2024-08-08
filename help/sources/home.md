@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Source Connectors Overview
 description: Med Adobe Experience Platform kan data hämtas från externa källor samtidigt som du kan strukturera, märka och förbättra inkommande data med hjälp av plattformstjänster. Du kan importera data från en mängd olika källor, till exempel Adobe-program, molnbaserad lagring, databaser och många andra.
 exl-id: efdbed4d-5697-43ef-a47a-a8bcf0f13237
-source-git-commit: 22f3b76c02e641d2f4c0dd7c0e5cc93038782836
+source-git-commit: 8541af0e2c0a2f5709f1621877ca204b0d3d64bd
 workflow-type: tm+mt
-source-wordcount: '1501'
+source-wordcount: '1518'
 ht-degree: 0%
 
 ---
@@ -26,13 +26,26 @@ Med Experience Platform kan ni centralisera data som ni samlar in från olika k�
 <div id="recs-overview-body-5"></div>
 <div id="recs-overview-body-6"></div>
 
+## Avancerade företagskällor {#advanced-enterprise-sources}
+
+Följande källor är endast tillgängliga för [Adobe Real-time Customer Data Platform Ultimate](https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform-b2c-edition-prime-and-ultimate-packages.html)-kunder.
+
+- [[!DNL Amazon Kinesis]](connectors/cloud-storage/kinesis.md) [!BADGE Direktuppspelning]{type=Positive}
+- [[!DNL Amazon Redshift]](connectors/databases/redshift.md) [!BADGE Gruppera]{type=Informative}
+- [[!DNL Azure Event Hubs]](connectors/cloud-storage/eventhub.md) [!BADGE Direktuppspelning]{type=Positive}
+- [[!DNL Azure Synapse Analytics]](connectors/databases/synapse-analytics.md) [!BADGE Gruppera]{type=Informative}
+- [[!DNL Google BigQuery]](connectors/databases/bigquery.md) [!BADGE Gruppera]{type=Informative}
+- [[!DNL Google PubSub]](connectors/cloud-storage/google-pubsub.md) [!BADGE Direktuppspelning]{type=Positive}
+- [[!DNL Snowflake]](connectors/databases/snowflake-streaming.md) [!BADGE Direktuppspelning]{type=Positive}
+- [[!DNL Snowflake]](connectors/databases/snowflake.md) [!BADGE Gruppera]{type=Informative}
+
 ## Källor som byggts av Adobe och av partners {#adobe-and-partner-built-sources}
 
 Vissa av anslutningarna i Experience Platform-källkatalogen byggs och underhålls av Adobe, medan andra byggs och underhålls av partnerföretag med hjälp av [Sources SDK](/help/sources/sources-sdk/overview.md). En anteckning högst upp på dokumentationssidan för varje partnerbyggd koppling anropar om en källa skapas och underhålls av partnern. Till exempel skapas [Amazon S3-anslutningen](/help/sources/connectors/cloud-storage/s3.md) av Adobe, medan [RainFocus-kopplingen](/help/sources/connectors/analytics/rainfocus.md) skapas och underhålls av RainFocus-teamet.
 
 För partnerskapade och underhållna anslutningar innebär detta att problem med kopplingen kan behöva lösas av partnerteamet (kontaktmetoden finns i anteckningen på dokumentationssidan). Om du har problem med kontakter som utvecklats och underhålls av Adobe kontaktar du Adobe eller kundtjänst.
 
-## Typer av källor
+## Källkategorier
 
 Källor i Experience Platform är grupperade i följande kategorier:
 
@@ -75,15 +88,12 @@ Lagringskällor i molnet kan hämta dina egna data till plattformen utan att du 
 
 - [[!DNL Azure Data Lake Storage Gen2]](connectors/cloud-storage/adls-gen2.md) [!BADGE Gruppera]{type=Informative}
 - [[!DNL Azure Blob]](connectors/cloud-storage/blob.md) [!BADGE Gruppera]{type=Informative}
-- [[!DNL Amazon Kinesis]](connectors/cloud-storage/kinesis.md) [!BADGE Direktuppspelning]{type=Positive}
 - [[!DNL Amazon S3]](connectors/cloud-storage/s3.md) [!BADGE Gruppera]{type=Informative}
 - [[!DNL Apache HDFS]](connectors/cloud-storage/hdfs.md) [!BADGE Gruppera]{type=Informative}
-- [[!DNL Azure Event Hubs]](connectors/cloud-storage/eventhub.md) [!BADGE Direktuppspelning]{type=Positive}
 - [[!DNL Azure File Storage]](connectors/cloud-storage/azure-file-storage.md) [!BADGE Gruppera]{type=Informative}
 - [[!DNL Data Landing Zone]](connectors/cloud-storage/data-landing-zone.md) [!BADGE Gruppera]{type=Informative}
 - [[!DNL FTP]](connectors/cloud-storage/ftp.md) [!BADGE Gruppera]{type=Informative}
 - [[!DNL Google Cloud Storage]](connectors/cloud-storage/google-cloud-storage.md) [!BADGE Gruppera]{type=Informative}
-- [[!DNL Google PubSub]](connectors/cloud-storage/google-pubsub.md) [!BADGE Direktuppspelning]{type=Positive}
 - [[!DNL Oracle Object Storage]](connectors/cloud-storage/oracle-object-storage.md) [!BADGE Gruppera]{type=Informative}
 - [[!DNL SFTP]](connectors/cloud-storage/sftp.md) [!BADGE Gruppera]{type=Informative}
 
@@ -116,14 +126,11 @@ Experience Platform har stöd för inhämtning av data från tredjepartsprogram.
 
 Experience Platform har stöd för att importera data från en tredjepartsdatabas. Mer information om specifika källanslutningar finns i följande relaterade dokument:
 
-- [[!DNL Amazon Redshift]](connectors/databases/redshift.md) [!BADGE Gruppera]{type=Informative}
 - [[!DNL Apache Hive on Azure HDInsights]](connectors/databases/hive.md) [!BADGE Gruppera]{type=Informative}
 - [[!DNL Apache Spark on Azure HDInsights]](connectors/databases/spark.md) [!BADGE Gruppera]{type=Informative}
 - [[!DNL Azure Data Explorer]](connectors/databases/data-explorer.md) [!BADGE Gruppera]{type=Informative}
-- [[!DNL Azure Synapse Analytics]](connectors/databases/synapse-analytics.md) [!BADGE Gruppera]{type=Informative}
 - [[!DNL Azure Table Storage]](connectors/databases/ats.md) [!BADGE Gruppera]{type=Informative}
 - [[!DNL Couchbase]](connectors/databases/couchbase.md) [!BADGE Gruppera]{type=Informative}
-- [[!DNL Google BigQuery]](connectors/databases/bigquery.md) [!BADGE Gruppera]{type=Informative}
 - [[!DNL GreenPlum]](connectors/databases/greenplum.md) [!BADGE Gruppera]{type=Informative}
 - [[!DNL HP Vertica]](connectors/databases/hp-vertica.md) [!BADGE Gruppera]{type=Informative}
 - [[!DNL IBM DB2]](connectors/databases/ibm-db2.md) [!BADGE Gruppera]{type=Informative}
@@ -133,8 +140,6 @@ Experience Platform har stöd för att importera data från en tredjepartsdataba
 - [[!DNL Oracle]](connectors/databases/oracle.md) [!BADGE Gruppera]{type=Informative}
 - [[!DNL Phoenix]](connectors/databases/phoenix.md) [!BADGE Gruppera]{type=Informative}
 - [[!DNL PostgreSQL]](connectors/databases/postgres.md) [!BADGE Gruppera]{type=Informative}
-- [[!DNL Snowflake]](connectors/databases/snowflake-streaming.md) [!BADGE Direktuppspelning]{type=Positive}
-- [[!DNL Snowflake]](connectors/databases/snowflake.md) [!BADGE Gruppera]{type=Informative}
 - [[!DNL Teradata Vantage]](connectors/databases/teradata-vantage.md) [!BADGE Gruppera]{type=Informative}
 
 ### Data- och identitetspartners {#data-partner}
