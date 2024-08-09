@@ -3,9 +3,9 @@ keywords: Experience Platform;identitet;identitetstjänst;felsökning;skyddsräc
 title: Gardrutor för identitetstjänsten
 description: Det här dokumentet innehåller information om användning och hastighetsgränser för identitetstjänstens data som hjälper dig att optimera din användning av identitetsdiagrammet.
 exl-id: bd86d8bf-53fd-4d76-ad01-da473a1999ab
-source-git-commit: 5d6b70e397a252e037589c3200053ebcb7eb8291
+source-git-commit: 6d36a6ff1243b15dcafc2f37d8bad982730f7a39
 workflow-type: tm+mt
-source-wordcount: '1549'
+source-wordcount: '1591'
 ht-degree: 0%
 
 ---
@@ -57,6 +57,10 @@ Följande tabell visar befintliga regler som du måste följa för att identitet
 ### Inläsning av namnområde för identitet
 
 Från och med 31 mars 2023 blockerar identitetstjänsten intag av Adobe Analytics ID (AAID) för nya kunder. Den här identiteten importeras vanligtvis via [Adobe Analytics-källan](../sources/connectors/adobe-applications/analytics.md) och [Adobe Audience Manager-källan](../sources//connectors/adobe-applications/audience-manager.md) och är överflödig eftersom ECID representerar samma webbläsare. Om du vill ändra den här standardkonfigurationen kontaktar du ditt Adobe-kontoteam.
+
+## Prestandaskydd {#performance-guardrails}
+
+Identitetstjänsten övervakar kontinuerligt inkommande data för att säkerställa höga prestanda och tillförlitlighet i stor skala. Men ett inflöde av upplevelsehändelsedata under en kort period kan leda till prestandaförsämring och fördröjning. Adobe ansvarar inte för sådana prestandaförsämringar.
 
 ## Förstå borttagningslogiken när ett identitetsdiagram med kapacitet uppdateras {#deletion-logic}
 
