@@ -4,9 +4,9 @@ description: Kom igång med Adobe Real-Time CDP, förstå de avancerade funktion
 solution: Real-Time Customer Data Platform
 product: Real Time CDP
 exl-id: 92179d9a-be79-4a39-b2ab-9a85a542f53c
-source-git-commit: c9a954d2a78abcea67e68e5ae9563e6db1ae706c
+source-git-commit: 7a909c362b9e367fa4b86a8525fe98f203e3c2d5
 workflow-type: tm+mt
-source-wordcount: '1108'
+source-wordcount: '1169'
 ht-degree: 2%
 
 ---
@@ -20,6 +20,12 @@ Använd Adobe Real-time Customer Data Platform (Real-Time CDP) för att samla in
 Få en glimt av de senaste förbättringarna i Real-Time CDP-produkter och -dokumentation. En omfattande lista över funktioner, förbättringar och korrigeringar finns i [versionsinformationen](/help/release-notes/latest/latest.md). Håll dig uppdaterad om de senaste ändringarna i vår dokumentation genom att gå till [dokumentationsuppdateringsavsnittet i månadsversionsinformationen](/help/release-notes/latest/latest.md#documentation-updates).
 
 >[!BEGINTABS]
+
+>[!TAB Sammansatt målgruppskomposition]
+
+Med Federated Audience Composition kan företag sammanställa data för bättre användning i olika situationer. Med detta nya tillvägagångssätt, som Adobe Real-time Customer Data Platform- och/eller Adobe Journey Optimizer-användare, kan ni federera datauppsättningar direkt från ert befintliga datalager för att skapa och berika Adobe Experience Platform målgrupper och attribut i ett och samma system.
+
+[![bild](assets/do-not-localize/learn-more-button.svg)](https://experienceleague.adobe.com/en/docs/federated-audience-composition/using/home)
 
 >[!TAB Använd fallspelningsböcker]
 
