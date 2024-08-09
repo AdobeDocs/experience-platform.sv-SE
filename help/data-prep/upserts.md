@@ -3,22 +3,28 @@ keywords: Experience Platform;hem;populära ämnen;dataförberedelse;Dataprep;st
 title: Skicka uppdateringar av delar av rader till kundprofil i realtid med hjälp av Data Prep
 description: Lär dig hur du skickar uppdateringar av delar av rader till kundprofilen i realtid med Data Prep.
 exl-id: f9f9e855-0f72-4555-a4c5-598818fc01c2
-source-git-commit: e52eb90b64ae9142e714a46017cfd14156c78f8b
+source-git-commit: d62a61f44b27c0be882b5f29bfad5e423af7a1ca
 workflow-type: tm+mt
-source-wordcount: '1241'
+source-wordcount: '1360'
 ht-degree: 0%
 
 ---
 
 # Skicka uppdateringar av delar av rader till [!DNL Real-Time Customer Profile] med [!DNL Data Prep]
 
->[!WARNING]
+>[!IMPORTANT]
 >
->Inmatning i XDM-meddelanden (Experience Data Model) för entitetsuppdatering (med JSON PATCH-åtgärder) för profiluppdateringar via DCS-inloppet har tagits bort. Som ett alternativ kan du [importera rådata till DCS-ingången](../sources/tutorials/api/create/streaming/http.md#sending-messages-to-an-authenticated-streaming-connection) och ange nödvändiga datamappningar för att omvandla dina data till XDM-kompatibla meddelanden för profiluppdateringar.
+>* Inmatning av XDM-meddelanden (Experience Data Model) för entitetsuppdatering (med JSON PATCH-åtgärder) för profiluppdateringar via DCS-inloppet har tagits bort. Följ stegen som beskrivs i den här handboken som ett alternativ.
+>
+>* Du kan också använda HTTP API-källan för att [importera rådata till DCS-inloppet](../sources/tutorials/api/create/streaming/http.md#sending-messages-to-an-authenticated-streaming-connection) och ange nödvändiga datamappningar för att omvandla dina data till XDM-kompatibla meddelanden för profiluppdateringar.
+>
+>* När du använder arrayer i direktuppspelande upserts måste du uttryckligen använda `upsert_array_append` eller `upsert_array_replace` för att definiera en rensad metod för åtgärden. Du kan få felmeddelanden om dessa funktioner saknas.
 
-Med direktuppspelande uppdateringar i [!DNL Data Prep] kan du skicka partiella raduppdateringar till [!DNL Real-Time Customer Profile]-data samtidigt som du skapar och upprättar nya identitetslänkar med en enda API-begäran.
+Använd direktuppspelande upserts i [!DNL Data Prep] för att skicka uppdateringar (del av rad) till [!DNL Real-Time Customer Profile]-data samtidigt som nya identitetslänkar skapas och etableras med en enda API-begäran.
 
 Genom att direktuppspela uppspelningar kan du behålla dataformatet samtidigt som data översätts till [!DNL Real-Time Customer Profile] PATCH-begäranden under importen. Baserat på de indata du anger kan du i [!DNL Data Prep] skicka en enda API-nyttolast och översätta data till både [!DNL Real-Time Customer Profile] PATCH och [!DNL Identity Service] CREATE-begäranden.
+
+[!DNL Data Prep] använder rubrikparametrar för att skilja mellan infogningar och infogningar. Alla rader som använder upserts måste ha en rubrik. Du kan använda upserts med eller utan identitetsbeskrivare. Om du använder överföringar med identiteter måste du följa de konfigurationssteg som beskrivs i avsnittet [Konfigurera identitetsdatauppsättningen](#configure-the-identity-dataset). Om du använder överföringar utan identiteter behöver du inte ange några identitetskonfigurationer i din begäran. Läs avsnittet om [direktuppspelande överföringar utan identiteter](#payload-without-identity-configuration) om du vill ha mer information.
 
 >[!NOTE]
 >
@@ -52,7 +58,7 @@ Direktuppspelande uppdateringar i [!DNL Data Prep] fungerar så här:
    * Den dataåtgärd som krävs för att utföras med [!DNL Profile]: `create`, `merge` och `delete`.
    * Den valfria identitetsåtgärden som ska utföras med [!DNL Identity Service]: `create`.
 
-### Konfigurera identitetsdatauppsättningen
+### Konfigurera identitetsdatauppsättningen {#configure-the-identity-dataset}
 
 Om nya identiteter måste länkas måste du skapa och skicka ytterligare en datauppsättning i den inkommande nyttolasten. När du skapar en identitetsdatauppsättning måste du se till att följande krav uppfylls:
 
@@ -138,7 +144,7 @@ Följande åtgärder stöds av [!DNL Identity Service]:
 | --- | --- |
 | `create` | Den enda tillåtna åtgärden för den här parametern. Om `create` skickas som ett värde för `operations.identity` genererar [!DNL Data Prep] en XDM-entitetsskapandebegäran för [!DNL Identity Service]. Om identiteten redan finns ignoreras identiteten. **Obs!** Om `operations.identity` är `create` måste även `identityDatasetId` anges. Det XDM-entitetsmeddelande som skapas internt av komponenten [!DNL Data Prep] kommer att genereras för det här datauppsättnings-ID:t. |
 
-### Nyttolast utan identitetskonfiguration
+### Nyttolast utan identitetskonfiguration {#payload-without-identity-configuration}
 
 Om nya identiteter inte behöver länkas kan du utelämna parametrarna `identity` och `identityDatasetId` i åtgärderna. Om du gör det skickas endast data till [!DNL Real-Time Customer Profile] och [!DNL Identity Service] hoppas över. Se nyttolasten nedan för exempel:
 
