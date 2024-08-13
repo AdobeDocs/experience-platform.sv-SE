@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Handbok för autentiseringsuppgifter för frågetjänst
 description: Adobe Experience Platform Query Service har ett användargränssnitt som kan användas för att skriva och köra frågor, visa frågor som har körts tidigare samt få åtkomst till frågor som har sparats av användare i organisationen.
 exl-id: ea25fa32-809c-429c-b855-fcee5ee31b3e
-source-git-commit: c2832821ea6f9f630e480c6412ca07af788efd66
+source-git-commit: 569f8f96a1039e52ac374e2eb07fd96ad8138edd
 workflow-type: tm+mt
-source-wordcount: '1759'
+source-wordcount: '1780'
 ht-degree: 0%
 
 ---
@@ -76,7 +76,11 @@ Du kan använda autentiseringsuppgifter som inte upphör att gälla för att kon
 
 >[!NOTE]
 >
->Autentiseringsuppgifter som inte förfaller har följande begränsningar:<br><ul><li>Användare måste logga in med sitt användarnamn och lösenord som består av `{technicalAccountId}:{credential}`. Mer information finns i avsnittet [Generera autentiseringsuppgifter](#generate-credentials).</li><li>När inloggningsuppgifterna skapas skapas en ny roll med en uppsättning grundläggande behörigheter som gör att användare kan visa scheman och datauppsättningar. Behörigheten för att hantera frågor har även tilldelats den här rollen för användning med frågetjänsten.</li><li>Tredjepartsklienter kan fungera annorlunda än väntat när frågeobjekt listas. Vissa tredjepartsklienter, till exempel [!DNL DB Visualizer], visar inte vynamnet på den vänstra panelen. Visningsnamnet är dock tillgängligt om det anropas i en SELECT-fråga. På samma sätt kanske [!DNL PowerUI] inte listar de tillfälliga vyer som har skapats via SQL som ska väljas för att skapa instrumentpaneler.</li></ul>
+>Giltiga autentiseringsuppgifter har följande begränsningar:
+>
+>- Användare måste logga in med sitt användarnamn och lösenord i formatet `{technicalAccountId}:{credential}`. Mer information finns i avsnittet [Generera autentiseringsuppgifter](#generate-credentials).
+>- Som standard ges autentiseringsuppgifter som inte förfaller behörighet att endast köra `SELECT`-frågor. Om du vill köra `CTAS`- eller `ITAS`-frågor lägger du manuellt till behörigheterna Hantera datauppsättning och Hantera scheman i rollen som är kopplad till de autentiseringsuppgifter som inte förfaller. Behörigheten Hantera scheman finns under avsnittet Datamodellering och behörigheten Hantera datauppsättningar finns under avsnittet Datahantering i [Adobe Developer Console](<https://developer.adobe.com/console/>).
+>- Tredjepartsklienter kan fungera annorlunda än väntat när frågeobjekt listas. Vissa tredjepartsklienter, till exempel [!DNL DB Visualizer], visar inte vynamnet på den vänstra panelen. Visningsnamnet är dock tillgängligt om det anropas i en `SELECT`-fråga. På samma sätt kanske [!DNL PowerUI] inte listar de tillfälliga vyer som har skapats via SQL för val när kontrollpaneler skapas.
 
 ### Förhandskrav
 
