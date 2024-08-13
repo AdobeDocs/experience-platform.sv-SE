@@ -2,9 +2,9 @@
 title: API-slutpunkt för sandlådeverktygspaket
 description: Med slutpunkten /packages i sandlådeverktygets API kan du programmässigt hantera paket i Adobe Experience Platform.
 exl-id: 46efee26-d897-4941-baf4-d5ca0b8311f0
-source-git-commit: 8ff9c50b4999a49413f8c45274815225ba58361c
+source-git-commit: f81e15ccfd89e2d0cb450f596743341264187f52
 workflow-type: tm+mt
-source-wordcount: '1531'
+source-wordcount: '1621'
 ht-degree: 1%
 
 ---
@@ -138,8 +138,23 @@ curl -X PUT \
 | --- | --- | --- | --- |
 | `id` | ID:t för paketet som ska uppdateras. | Sträng | Ja |
 | `action` | Om du vill lägga till artefakter i paketet måste åtgärdsvärdet vara **ADD**. Den här åtgärden stöds bara för pakettyperna **PARTIAL**. | Sträng | Ja |
-| `artifacts` | En lista med artefakter som ska läggas till i paketet. Paketet ändras inte om listan är **null** eller **tom**. Artefakter tas bort innan de läggs till i paketet. | Array | Nej |
+| `artifacts` | En lista med artefakter som ska läggas till i paketet. Paketet ändras inte om listan är **null** eller **tom**. Artefakter tas bort innan de läggs till i paketet. Se tabellen nedan för en fullständig lista över de artefakter som stöds. | Array | Nej |
 | `expiry` | Tidsstämpeln som definierar paketets förfallodatum. Standardvärdet är 90 dagar från den tidpunkt då PUT API anropas om inget förfallodatum anges i nyttolasten. Svarets förfallofält är epoch UTC-tid. | Sträng (UTC-tidsstämpelformat) | Nej |
+
+Följande artefakttyper stöds för närvarande.
+
+| Artefakt | Plattform | Objekt | Delflöde | Fullständig sandlåda |
+| --- | --- | --- | --- | --- |
+| `JOURNEY` | Adobe Journey Optimizer | Resor | Ja | Nej |
+| `ID_NAMESPACE` | Kunddataplattform | Identiteter | Ja | Ja |
+| `REGISTRY_DATATYPE` | Kunddataplattform | Datatyp | Ja | Ja |
+| `REGISTRY_CLASS` | Kunddataplattform | Klass | Ja | Ja |
+| `REGISTRY_MIXIN` | Kunddataplattform | Fältgrupp | Ja | Ja |
+| `REGISTRY_SCHEMA` | Kunddataplattform | Scheman | Ja | Ja |
+| `CATALOG_DATASET` | Kunddataplattform | Datauppsättningar | Ja | Ja |
+| `DULE_CONSENT_POLICY` | Kunddataplattform | Samtycke- och styrningsprinciper | Ja | Ja |
+| `PROFILE_SEGMENT` | Kunddataplattform | Målgrupper | Ja | Ja |
+| `FLOW` | Kunddataplattform | Källdataflöde | Ja | Ja |
 
 **Svar**
 
