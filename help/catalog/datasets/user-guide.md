@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Användargränssnittshandbok för datauppsättningar
 description: Lär dig hur du utför vanliga åtgärder när du arbetar med datauppsättningar i Adobe Experience Platform användargränssnitt.
 exl-id: f0d59d4f-4ebd-42cb-bbc3-84f38c1bf973
-source-git-commit: c2832821ea6f9f630e480c6412ca07af788efd66
+source-git-commit: 10140efe33b42f9099b28564c9824839d83521a3
 workflow-type: tm+mt
-source-wordcount: '2896'
+source-wordcount: '2927'
 ht-degree: 0%
 
 ---
@@ -92,6 +92,10 @@ Du kan förhandsgranska datauppsättningsexempeldata både från de infogade alt
 ![Fliken Bläddra på arbetsytan Datauppsättningar med alternativet ellips och Förhandsgranska datauppsättning markerat för den valda datauppsättningen.](../images/datasets/user-guide/preview-dataset-option.png)
 
 Då öppnas förhandsgranskningsfönstret, där den hierarkiska vyn av datasetet visas till höger.
+
+>[!NOTE]
+>
+>I schemarollen till vänster i vyn visas endast fält som innehåller data. Fält utan data döljs automatiskt för att effektivisera användargränssnittet och fokusera på relevant information.
 
 ![Dialogrutan för förhandsgranskning av datauppsättning med information om strukturen, samt exempelvärden, för datauppsättningen visas.](../images/datasets/user-guide/preview-dataset.png)
 
