@@ -5,9 +5,9 @@ breadcrumb-title: Användarhandbok om segmenteringstjänst
 user-guide-description: Bygg målgrupper utifrån dina kundprofildata i realtid med segmentdefinitioner som har genererats av Adobe Experience Platform eller externa källor.
 feature: Segments
 role: User
-source-git-commit: 515a7cc3ba12afe14aab3e882b7fd55d5cc09069
+source-git-commit: 0bbee2100ed6fdc0f40457965e195d07de6eb2a1
 workflow-type: tm+mt
-source-wordcount: '191'
+source-wordcount: '194'
 ht-degree: 21%
 
 ---
@@ -73,6 +73,7 @@ ht-degree: 21%
    - [Importera och använda externa målgrupper](tutorials/using-external-audiences.md)
    - [Skapa en datauppsättning för att exportera data](tutorials/create-dataset-export-segment.md)
    - [Stärk regelefterlevnaden för datasegment](tutorials/governance.md)
+- [Uppdatering av kvalificeringskriterier](./eligibility-criteria-update.md)
 - [Vanliga frågor och svar](./faq.md)
 - [API-referens](https://www.adobe.io/experience-platform-apis/references/segmentation/)
 - [Versionsinformation för plattform](https://experienceleague.adobe.com/en/docs/experience-platform/release-notes/latest)
