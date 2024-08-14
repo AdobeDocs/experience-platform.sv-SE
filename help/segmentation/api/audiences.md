@@ -3,9 +3,9 @@ title: Målgrupps-API-slutpunkt
 description: Använd målgruppsslutpunkten i Adobe Experience Platform Segmentation Service API för att skapa, hantera och uppdatera målgrupper för er organisation programmatiskt.
 role: Developer
 exl-id: cb1a46e5-3294-4db2-ad46-c5e45f48df15
-source-git-commit: 914174de797d7d5f6c47769d75380c0ce5685ee2
+source-git-commit: 5d5c1f903e6a54ea983b718c4c371ada2a937297
 workflow-type: tm+mt
-source-wordcount: '1869'
+source-wordcount: '1406'
 ht-degree: 0%
 
 ---
@@ -207,10 +207,6 @@ POST /audiences
 
 **Begäran**
 
->[!BEGINTABS]
-
->[!TAB Plattformsgenererad publik]
-
 +++ Ett exempel på en förfrågan om att skapa en plattformsgenererad publik
 
 ```shell
@@ -222,7 +218,7 @@ curl -X POST https://platform.adobe.io/data/core/ups/audiences
  -H 'x-sandbox-name: {SANDBOX_NAME}'
  -d '{
         "name": "People who ordered in the last 30 days",
-        "profileInstanceId": "ups",
+        "profileInstanceId": "AEPSegments",
         "description": "Last 30 days",
         "type": "SegmentDefinition",
         "expression": {
@@ -250,60 +246,9 @@ curl -X POST https://platform.adobe.io/data/core/ups/audiences
 
 +++
 
->[!TAB Externt genererad publik]
-
-+++ En exempelbegäran för att skapa en externt genererad publik
-
-```shell
-curl -X POST https://platform.adobe.io/data/core/ups/audiences
- -H 'Authorization: Bearer {ACCESS_TOKEN}' \
- -H 'Content-Type: application/json' \
- -H 'x-gw-ims-org-id: {IMS_ORG}' \
- -H 'x-api-key: {API_KEY}' \
- -H 'x-sandbox-name: {SANDBOX_NAME}'
- -d '{
-        "audienceId":"test-external-audience-id",
-        "name":"externalAudience",
-        "namespace":"aam",
-        "description":"Last 30 days",
-        "type":"ExternalSegment",
-        "originName":"CUSTOM_UPLOAD",
-        "lifecycleState":"published",
-        "datasetId":"6254cf3c97f8e31b639fb14d",
-        "labels":[
-            "core/C1"
-        ],
-        "linkedAudienceRef":{
-            "flowId": "4685ea90-d2b6-11ec-9d64-0242ac120002"
-        }
-    }'
-```
-
-| Egenskap | Beskrivning |
-| -------- | ----------- | 
-| `audienceId` | Ett användarangivet ID för målgruppen. |
-| `name` | Namnet på publiken. |
-| `namespace` | Namnutrymmet för målgruppen. |
-| `description` | En beskrivning av publiken. |
-| `type` | Ett fält som visar om målgruppen är plattformsgenererad eller är en externt genererad målgrupp. Möjliga värden är `SegmentDefinition` och `ExternalSegment`. En `SegmentDefinition` refererar till en målgrupp som har skapats i Platform, medan en `ExternalSegment` refererar till en målgrupp som inte har genererats i Platform. |
-| `originName` | Namnet på målgruppens ursprung. För externt genererade målgrupper är standardvärdet `CUSTOM_UPLOAD`. Andra värden som stöds är `REAL_TIME_CUSTOMER_PROFILE`, `CUSTOM_UPLOAD`, `AUDIENCE_ORCHESTRATION` och `AUDIENCE_MATCH`. |
-| `lifecycleState` | Ett valfritt fält som bestämmer det inledande tillståndet för den målgrupp du försöker skapa. Värden som stöds är `draft`, `published` och `inactive`. |
-| `datasetId` | ID:t för datauppsättningen där data som omfattar målgruppen kan hittas. |
-| `labels` | Dataanvändning på objektnivå och attributbaserade etiketter för åtkomstkontroll som är relevanta för publiken. |
-| `audienceMeta` | Metadata som tillhör den externt genererade målgruppen. |
-| `linkedAudienceRef` | Ett objekt som innehåller identifierare för andra målgruppsrelaterade system. Detta kan omfatta följande: <ul><li>`flowId`: Detta ID används för att ansluta målgruppen till det dataflöde som användes för att hämta målgruppsdata. Mer information om vilka ID:n som krävs finns i [Skapa en dataflödesguide](../../sources/tutorials/api/collect/cloud-storage.md).</li><li>`aoWorkflowId`: Detta ID används för att ansluta målgruppen till en relaterad publikorchestration-komposition.&lt;/li/> <li>`payloadFieldGroupRef`: Detta ID används för att referera till XDM-fältgruppsschemat som beskriver målgruppens struktur. Mer information om värdet för det här fältet finns i [stödlinjen för XDM-fältgruppsslutpunkten](../../xdm/api/field-groups.md).</li><li>`audienceFolderId`: Detta ID används för att referera till mapp-ID:t i Adobe Audience Manager för målgruppen. Mer information om detta API finns i [Adobe Audience Manager API-handboken](https://bank.demdex.com/portal/swagger/index.html#/Segment%20Folder%20API).</ul> |
-
-+++
-
->[!ENDTABS]
-
 **Svar**
 
 Ett lyckat svar returnerar HTTP-status 200 med information om den nya målgruppen.
-
->[!BEGINTABS]
-
->[!TAB Plattformsgenererad publik]
 
 +++Ett exempelsvar när du skapar en plattformsgenererad publik.
 
@@ -373,46 +318,6 @@ Ett lyckat svar returnerar HTTP-status 200 med information om den nya målgruppe
 
 +++
 
->[!TAB Externt genererad publik]
-
-+++Ett exempelsvar när du skapar en externt genererad publik.
-
-```json
-{
-   "id": "322f9f62-cd27-11ec-9d64-0242ac120002",
-   "audienceId": "test-external-audience-id",
-   "name": "externalAudience",
-   "namespace": "aam",
-   "imsOrgId": "{ORG_ID}",
-   "sandbox":{
-      "sandboxId": "6ed34f6f-fe21-4a30-934f-6ffe21fa3075",
-      "sandboxName": "prod",
-      "type": "production",
-      "default": true
-   },
-   "isSystem": false,
-   "description": "Last 30 days",
-   "type": "ExternalSegment",
-   "originName": "CUSTOM_UPLOAD",
-   "lifecycleState": "published",
-   "createdBy": "{CREATED_BY_ID}",
-   "datasetId": "6254cf3c97f8e31b639fb14d",
-   "labels": [
-      "core/C1"
-   ],
-   "linkedAudienceRef": {
-      "flowId": "4685ea90-d2b6-11ec-9d64-0242ac120002"
-   },
-   "_etag": "\"f4102699-0000-0200-0000-625cd61a0000\"",
-   "creationTime": 1650251290000,
-   "updateEpoch": 1650251290,
-   "updateTime": 1650251290000,
-   "createEpoch": 1650251290
-}
-```
-
-+++
-
 ## Söka efter en viss målgrupp {#get}
 
 Du kan söka efter detaljerad information om en viss målgrupp genom att göra en GET-förfrågan till slutpunkten `/audiences` och ange ID:t för den målgrupp som du vill hämta i sökvägen för begäran.
@@ -443,11 +348,7 @@ curl -X GET https://platform.adobe.io/data/core/ups/audiences/60ccea95-1435-4180
 
 **Svar**
 
-Ett lyckat svar returnerar HTTP-status 200 med information om den angivna målgruppen. Svaret varierar beroende på om målgruppen genereras med Adobe Experience Platform eller externa källor.
-
->[!BEGINTABS]
-
->[!TAB Plattformsgenererad publik]
+Ett lyckat svar returnerar HTTP-status 200 med information om den angivna målgruppen.
 
 +++Ett exempelsvar när en plattformsgenererad publik hämtas.
 
@@ -516,161 +417,6 @@ Ett lyckat svar returnerar HTTP-status 200 med information om den angivna målgr
 
 +++
 
->[!TAB Externt genererad publik]
-
-+++Ett samplingssvar när en externt genererad publik hämtas.
-
-```json
-{
-    "id": "60ccea95-1435-4180-97a5-58af4aa285ab",
-    "audienceId": "test-external-audience-id",
-    "name": "externalAudience",
-    "namespace": "aam",
-    "imsOrgId": "{ORG_ID}",
-    "sandbox": {
-        "sandboxId": "6ed34f6f-fe21-4a30-934f-6ffe21fa3075",
-        "sandboxName": "prod",
-        "type": "production",
-        "default": true
-    },
-    "isSystem": false,
-    "description": "Last 30 days",
-    "type": "ExternalSegment",
-    "lifecycleState": "active",
-    "createdBy": "{CREATED_BY_ID}",
-    "datasetId": "6254cf3c97f8e31b639fb14d",
-    "labels": [
-        "core/C1"
-    ],
-    "_etag": "\"f4102699-0000-0200-0000-625cd61a0000\"",
-    "creationTime": 1650251290000,
-    "updateEpoch": 1650251290,
-    "updateTime": 1650251290000,
-    "createEpoch": 1650251290
-}
-```
-
-+++
-
->[!ENDTABS]
-
-## Uppdatera ett fält i en målgrupp {#update-field}
-
-Du kan uppdatera fälten för en viss målgrupp genom att göra en PATCH-begäran till slutpunkten `/audiences` och ange ID:t för den målgrupp som du vill uppdatera i sökvägen till begäran.
-
-**API-format**
-
-```http
-PATCH /audiences/{AUDIENCE_ID}
-```
-
-| Parameter | Beskrivning |
-| --------- | ----------- |
-| `{AUDIENCE_ID}` | ID:t för den målgrupp som du vill uppdatera. Observera att det här är fältet `id` och att det **inte** är fältet `audienceId`. |
-
-**Begäran**
-
-+++Ett exempel på en begäran om att uppdatera ett fält i en målgrupp.
-
-```shell
-curl -X PATCH https://platform.adobe.io/data/core/ups/audiences/4afe34ae-8c98-4513-8a1d-67ccaa54bc05 \
- -H 'Authorization: Bearer {ACCESS_TOKEN}' \
- -H 'Content-Type: application/json' \
- -H 'x-gw-ims-org-id: {IMS_ORG}' \
- -H 'x-api-key: {API_KEY}' \
- -H 'x-sandbox-name: {SANDBOX_NAME}' \
- -d '
-     [
-        {
-            "op": "add",
-            "path": "/expression",
-            "value": {
-                "type": "PQL",
-                "format": "pql/text",
-                "value": "workAddress.country = \"CA\""
-            }
-        }
-      ]'
-```
-
-| Egenskap | Beskrivning |
-| -------- | ----------- |
-| `op` | För uppdatering av målgrupper är det här värdet alltid `add`. |
-| `path` | Sökvägen till det fält som du vill uppdatera. |
-| `value` | Värdet som du vill uppdatera fältet till. |
-
-+++
-
-**Svar**
-
-Ett lyckat svar returnerar HTTP-status 200 med information om den nyligen uppdaterade målgruppen.
-
-+++Ett exempelsvar när ett fält uppdateras i en målgrupp.
-
-```json
-{
-    "id": "60ccea95-1435-4180-97a5-58af4aa285ab",
-    "audienceId": "60ccea95-1435-4180-97a5-58af4aa285ab",
-    "schema": {
-        "name": "_xdm.context.profile"
-    },
-    "profileInstanceId": "ups",
-    "imsOrgId": "{ORG_ID}",
-    "sandbox": {
-        "sandboxId": "6ed34f6f-fe21-4a30-934f-6ffe21fa3075",
-        "sandboxName": "prod",
-        "type": "production",
-        "default": true
-    },
-    "name": "People who ordered in the last 30 days",
-    "description": "Last 30 days",
-    "expression": {
-        "type": "PQL",
-        "format": "pql/text",
-        "value": "workAddress.country = \"CA\""
-    },
-    "mergePolicyId": "ef006bbe-750e-4e81-85f0-0c6902192dcc",
-    "evaluationInfo": {
-        "batch": {
-          "enabled": false
-        },
-        "continuous": {
-          "enabled": true
-        },
-        "synchronous": {
-          "enabled": false
-        }
-    },
-    "dataGovernancePolicy": {
-      "excludeOptOut": true
-    },
-    "creationTime": 1650374572000,
-    "updateEpoch": 1650374573,
-    "updateTime": 1650374573000,
-    "createEpoch": 1650374572,
-    "_etag": "\"33120d7c-0000-0200-0000-625eb7ad0000\"",
-    "dependents": [],
-    "definedOn": [
-        {
-          "meta:resourceType": "unions",
-          "meta:containerId": "tenant",
-          "$ref": "https://ns.adobe.com/xdm/context/profile__union"
-        }
-    ],
-    "dependencies": [],
-    "type": "SegmentDefinition",
-    "overridePerformanceWarnings": false,
-    "createdBy": "{CREATED_BY_ID}",
-    "lifecycleState": "active",
-    "labels": [
-      "core/C1"
-    ],
-    "namespace": "AEPSegments"
-}
-```
-
-+++
-
 ## Uppdatera en målgrupp {#put}
 
 Du kan uppdatera (skriva över) en viss målgrupp genom att göra en PUT-begäran till slutpunkten `/audiences` och ange ID:t för den målgrupp som du vill uppdatera i sökvägen till begäran.
@@ -697,11 +443,11 @@ curl -X PUT https://platform.adobe.io/data/core/ups/audiences/4afe34ae-8c98-4513
  -H 'x-api-key: {API_KEY}' \
  -H 'x-sandbox-name: {SANDBOX_NAME}' \
  -d '{
-    "audienceId": "test-external-audience-id",
-    "name": "New external audience",
-    "namespace": "aam",
+    "audienceId": "test-platform-audience-id",
+    "name": "New Platform audience",
+    "namespace": "AEPSegments",
     "description": "Last 30 days",
-    "type": "ExternalSegment",
+    "type": "SegmentDefinition",
     "lifecycleState": "published",
     "datasetId": "6254cf3c97f8e31b639fb14d",
     "labels": [
@@ -732,9 +478,9 @@ Ett lyckat svar returnerar HTTP-status 200 med information om din nya uppdaterad
 ```json
 {
     "id": "4afe34ae-8c98-4513-8a1d-67ccaa54bc05",
-    "audienceId": "test-external-audience-id",
-    "name": "New external audience",
-    "namespace": "aam",
+    "audienceId": "test-platform-audience-id",
+    "name": "New Platform audience",
+    "namespace": "AEPSegments",
     "imsOrgId": "{ORG_ID}",
     "sandbox": {
         "sandboxId": "6ed34f6f-fe21-4a30-934f-6ffe21fa3075",
@@ -743,7 +489,7 @@ Ett lyckat svar returnerar HTTP-status 200 med information om din nya uppdaterad
         "default": true
     },
     "description": "Last 30 days",
-    "type": "ExternalSegment",
+    "type": "SegmentDefinition",
     "lifecycleState": "published",
     "createdBy": "{CREATED_BY_ID}",
     "datasetId": "6254cf3c97f8e31b639fb14d",
