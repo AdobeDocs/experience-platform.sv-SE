@@ -4,9 +4,9 @@ title: Kontrollpanel för licensanvändning
 description: Adobe Experience Platform tillhandahåller en kontrollpanel där du kan visa viktig information om din organisations licensanvändning.
 type: Documentation
 exl-id: 143d16bb-7dc3-47ab-9b93-9c16683b9f3f
-source-git-commit: 3e465803b6c8fe11cef1633c0f0624465086c2a3
+source-git-commit: 090b870dcfb16e59831f1e03eb46b22da4f24f0f
 workflow-type: tm+mt
-source-wordcount: '2209'
+source-wordcount: '2310'
 ht-degree: 0%
 
 ---
@@ -91,6 +91,16 @@ Om du vill se en sammanfattning av användningen av ett produktberättigande vä
 Fliken Sammanfattning visas. Du kan använda de detaljerade förutsägelser som finns på flikarna [!UICONTROL Summary] och [!UICONTROL Details] för att säkerställa välgrundade beslut för effektiv licensanvändning.
 
 ![Sammanfattningsvyn för en plattformsprodukt med den förväntade användningskolumnen markerad.](../images/license-usage/summary-predicted-usage.png)
+
+Procentandelen av förväntad användning bestäms enligt följande:
+
+- Om de nedre och övre gränserna är avsevärt olika visas de som ett intervall (till exempel 32-35 %).
+- Om de nedre och övre gränserna är nästan identiska och inte noll visas de som ett approximativt värde (till exempel ~34 %).
+- Om de nedre och övre gränserna är nästan identiska och noll visas de som exakt 0 %.
+
+>[!NOTE]
+>
+&quot;Nästan identiska&quot; betyder i detta sammanhang att värdena är statistiskt signifikanta för två decimaler (till exempel är den nedre gränsen 0,342 och den övre gränsen 0,344 avrundas båda till 34 %).
 
 Funktionen för förväntad användning har stöd för följande mått:
 
