@@ -3,7 +3,7 @@ title: Aktivera målgrupper för att kanalisera personaliseringsmål
 description: Lär dig hur du kan aktivera målgrupper från Adobe Experience Platform för att kanalisera personaliseringsmål för samma sida och nästa sida.
 type: Tutorial
 exl-id: cd7132eb-4047-4faa-a224-47366846cb56
-source-git-commit: c35b43654d31f0f112258e577a1bb95e72f0a971
+source-git-commit: 14dccb993b38ca352c6de3ed851bafe7c44ca631
 workflow-type: tm+mt
 source-wordcount: '1878'
 ht-degree: 0%
@@ -47,7 +47,7 @@ Titta på videon nedan om du vill få en kort översikt över hur du delar målg
 
 ## Användningsfall {#use-cases}
 
-Använd personaliseringslösningar från Adobe, till exempel Adobe Target, eller egna partnerplattformar för personalisering (till exempel [!DNL Optimizely], [!DNL Pega]), liksom egna system (till exempel intern CMS) för att skapa en djupare personaliseringsupplevelse via [anpassade Personalization](../catalog/personalization/custom-personalization.md) -destinationer. Allt detta och utnyttja även datainsamling och segmentering från Experience Platform Edge Network.
+Använd personaliseringslösningar från Adobe, till exempel Adobe Target, eller egna partnerplattformar för personalisering (till exempel [!DNL Optimizely], [!DNL Pega]), samt egna system (till exempel intern CMS) för att skapa en djupare personaliseringsupplevelse via [anpassade Personalization](../catalog/personalization/custom-personalization.md) -destinationer. Allt detta och utnyttja även datainsamling och segmentering från Experience Platform Edge Network.
 
 De användningsexempel som beskrivs nedan omfattar både webbplatspersonalisering och riktad webbannonsering.
 
@@ -112,7 +112,7 @@ Följ självstudiekursen [för att skapa en målanslutning](../ui/connect-destin
 Beroende på vilket mål du konfigurerar kan du läsa följande artiklar för att få information om målspecifika krav och relaterad information:
 
 * [Adobe Target](../catalog/personalization/adobe-target-connection.md#parameters)
-* [Anpassad personaliseringsanslutning](../catalog/personalization/custom-personalization.md##parameters)
+* [Anpassad personaliseringsanslutning](../catalog/personalization/custom-personalization.md#parameters)
 
 ## Välj mål {#select-destination}
 

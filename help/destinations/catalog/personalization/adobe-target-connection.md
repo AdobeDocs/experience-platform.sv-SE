@@ -3,9 +3,9 @@ keywords: målanpassning; mål; mål för upplevelseplattform; mål för uppleve
 title: Adobe Target
 description: Adobe Target är en applikation som innehåller AI-baserade personaliserings- och experimenteringsfunktioner i realtid för alla inkommande kundinteraktioner på webbplatser, i mobilappar med mera.
 exl-id: 3e3c405b-8add-4efb-9389-5ad695bc9799
-source-git-commit: c35b43654d31f0f112258e577a1bb95e72f0a971
+source-git-commit: 14dccb993b38ca352c6de3ed851bafe7c44ca631
 workflow-type: tm+mt
-source-wordcount: '1526'
+source-wordcount: '1726'
 ht-degree: 0%
 
 ---
@@ -35,6 +35,15 @@ Se videon nedan för en kort översikt över hur du konfigurerar Adobe Target-an
 
 >[!VIDEO](https://video.tv.adobe.com/v/3418799/?quality=12&learn=on)
 
+## Användningsexempel som stöds baserat på implementeringstyp {#supported-use-cases}
+
+Tabellen nedan visar de användningsfall som stöds för Adobe Target-destinationen, baserat på din implementeringstyp, med eller utan [Web SDK](/help/web-sdk/home.md) och med eller utan [kantsegmentering](/help/segmentation/home.md#edge) aktiverat.
+
+| Adobe Target-implementering *utan* Web SDK | Adobe Target-implementering *med* Web SDK | Adobe Target-implementering *med* Web SDK *och* kantsegmentering inaktiverat |
+|---|---|---|
+| <ul><li>Datastream krävs inte. Adobe Target kan distribueras med implementeringsmetoderna [ at.js](https://experienceleague.adobe.com/docs/target-dev/developer/client-side/at-js-implementation/overview.html), [server-side](https://experienceleague.adobe.com/docs/target-dev/developer/overview.html#server-side-implementation) eller [hybrid](https://experienceleague.adobe.com/docs/target-dev/developer/overview.html#hybrid-implementation).</li><li>[Edge-segmentering](../../../segmentation/ui/edge-segmentation.md) stöds inte.</li><li>[Anpassning av samma sida och nästa sida](../../ui/activate-edge-personalization-destinations.md) stöds inte.</li><li>Du kan dela målgrupper och profilattribut till Adobe Target-anslutningen för *standardproduktionssandlådan* och icke-standardsandlådor.</li><li>Använd [at.js](https://experienceleague.adobe.com/docs/target/using/implement-target/client-side/at-js-implementation/at-js/how-atjs-works.html) om du vill konfigurera nästa sessionspersonalisering utan att använda ett datastream-ID.</li></ul> | <ul><li>Ett datastream med Adobe Target och Experience Platform konfigurerat som tjänster krävs.</li><li>Edge segmentering fungerar som förväntat.</li><li>[Anpassning för samma sida och nästa sida](../../ui/activate-edge-personalization-destinations.md#use-cases) stöds.</li><li>Det finns stöd för att dela målgrupper och profilattribut från andra sandlådor.</li></ul> | <ul><li>Ett datastream med Adobe Target och Experience Platform konfigurerat som tjänster krävs.</li><li>Markera inte kryssrutan **Edge-segmentering** när [dataströmmen](/help/destinations/ui/activate-edge-personalization-destinations.md#configure-datastream) konfigureras.</li><li>[Nästa sessionspersonalisering](../../ui/activate-edge-personalization-destinations.md#next-session) stöds.</li><li>Det finns stöd för att dela målgrupper och profilattribut från andra sandlådor.</li></ul> |
+
+
 ## Förhandskrav {#prerequisites}
 
 ### Dataström-ID {#datastream-id}
@@ -62,7 +71,7 @@ I det här avsnittet beskrivs vilka typer av målgrupper du kan exportera till d
 
 >[!IMPORTANT]
 >
->När *kantmålgrupper aktiveras för användning av samma sida och nästa sida* måste *målgrupperna* använda en [aktiv-on-edge-sammanfogningsprincip](../../../segmentation/ui/segment-builder.md#merge-policies). Sammanslagningsprincipen [!DNL active-on-edge] säkerställer att målgrupperna hela tiden utvärderas [ vid sidan ](../../../segmentation/ui/edge-segmentation.md) och är tillgängliga för personalisering i realtid och på nästa sida.  Läs om [alla tillgängliga användningsfall](#parameter), baserat på implementeringstyp.
+>När *kantmålgrupper aktiveras för användning av samma sida och nästa sida* måste *målgrupperna* använda en [aktiv-on-edge-sammanfogningsprincip](../../../segmentation/ui/segment-builder.md#merge-policies). Sammanslagningsprincipen [!DNL active-on-edge] säkerställer att målgrupperna hela tiden utvärderas [ vid sidan ](../../../segmentation/ui/edge-segmentation.md) och är tillgängliga för personalisering i realtid och på nästa sida.  Läs om [alla tillgängliga användningsfall](#parameters), baserat på implementeringstyp.
 >Om du kopplar ut målgrupper som använder en annan sammanfogningspolicy till Adobe Target-destinationer, kommer dessa målgrupper inte att utvärderas för användning i realtid och på nästa sida.
 >Följ instruktionerna på [skapa en sammanfogningsprincip](../../../profile/merge-policies/ui-guide.md#create-a-merge-policy) och se till att aktivera alternativet **[!UICONTROL Active-On-Edge Merge Policy]**.
 
@@ -119,7 +128,7 @@ När [konfigurerar](../../ui/connect-destination.md) för det här målet måste
   >
   >DataStream-ID:t är unikt för varje Adobe Target-målanslutning. Om du behöver mappa samma målgrupper till flera datastreams måste du [skapa en ny målanslutning](../../ui/connect-destination.md) för varje datastream-ID och gå igenom [målgruppsaktiveringsflödet](#activate).
 
-   * **[!UICONTROL None]**: Välj det här alternativet om du behöver konfigurera Adobe Target-personalisering men inte kan implementera [Experience Platform Web SDK](/help/web-sdk/home.md). När du använder det här alternativet har målgrupper som exporterats från Experience Platform till Target endast stöd för nästa sessionspersonalisering, och kantsegmentering är inaktiverat. Se tabellen nedan för en jämförelse av tillgängliga användningsfall per implementeringstyp.
+   * **[!UICONTROL None]**: Välj det här alternativet om du behöver konfigurera Adobe Target-personalisering men inte kan implementera [Experience Platform Web SDK](/help/web-sdk/home.md). När du använder det här alternativet har målgrupper som exporterats från Experience Platform till Target endast stöd för nästa sessionspersonalisering, och kantsegmentering är inaktiverat. Referera tabellen i avsnittet [Användningsfall som stöds](#supported-use-cases) för en jämförelse av tillgängliga användningsfall per implementeringstyp.
 
   | Adobe Target-implementering *utan* Web SDK | Adobe Target-implementering *med* Web SDK | Adobe Target-implementering *med* Web SDK *och* kantsegmentering inaktiverat |
   |---|---|---|

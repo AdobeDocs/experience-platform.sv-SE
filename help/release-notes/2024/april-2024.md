@@ -2,7 +2,7 @@
 title: Versionsinformation om Adobe Experience Platform
 description: Versionsinformationen för Adobe Experience Platform från april 2024.
 exl-id: 86d72fd8-a464-4715-abc9-4177236e423c
-source-git-commit: 57d42d88ec9a93744450a2a352590ab57d9e5bb7
+source-git-commit: 14dccb993b38ca352c6de3ed851bafe7c44ca631
 workflow-type: tm+mt
 source-wordcount: '1895'
 ht-degree: 3%
@@ -74,7 +74,7 @@ Läs [datainsamlingsöversikten](../../collection/home.md) om du vill veta mer o
 | Funktionalitet | Beskrivning |
 | ----------- | ----------- |
 | Parametern `isRequired` är nu tillgänglig för kapslade kunddatafält i Destinationen SDK | När du konfigurerar ett mål i Destinationen SDK kan du nu [ställa in kapslade kunddatafält efter behov](/help/destinations/destination-sdk/functionality/destination-configuration/customer-data-fields.md#nested-fields). På så sätt kan användare som ställer in målet inte fortsätta med sitt aktiveringsflöde förrän de väljer ett värde för det fältet. |
-| Edge-segmentering är inte längre något obligatoriskt krav när du ställer in ett Adobe Target-mål med Web SDK | Tidigare var dataströmmen aktiverad för personalisering och kantsegmentering när ett [Adobe Target-mål](/help/destinations/catalog/personalization/adobe-target-connection.md) konfigurerades med Web SDK. Kravet på att datastream ska aktiveras för kantsegmentering [ har nu tagits bort](/help/destinations/ui/activate-edge-personalization-destinations.md#configure-datastream). Observera att det här integreringsmönstret bara gör att du kan dra nytta av en delmängd av användningsexempel för personalisering när du använder Adobe Target med Real-Time CDP. Läs mer om [användningsfall som aktiveras av integreringstypen](/help/destinations/catalog/personalization/adobe-target-connection.md#parameters). |
+| Edge-segmentering är inte längre något obligatoriskt krav när du ställer in ett Adobe Target-mål med Web SDK | Tidigare var dataströmmen aktiverad för personalisering och kantsegmentering när ett [Adobe Target-mål](/help/destinations/catalog/personalization/adobe-target-connection.md) konfigurerades med Web SDK. Kravet på att datastream ska aktiveras för kantsegmentering [ har nu tagits bort](/help/destinations/ui/activate-edge-personalization-destinations.md#configure-datastream). Observera att det här integreringsmönstret bara gör att du kan dra nytta av en delmängd av användningsexempel för personalisering när du använder Adobe Target med Real-Time CDP. Läs mer om [användningsfall som aktiveras av integreringstypen](/help/destinations/catalog/personalization/adobe-target-connection.md#supported-use-cases). |
 | [!BADGE Beta]{type=Informative} Ta bort flera målgrupper och datauppsättningar från aktiveringsflöden | Nu kan du markera och ta bort flera målgrupper och datauppsättningar från målaktiveringsflöden. Mer information finns i dokumentationen för [målinformation](../../destinations/ui/destination-details-page.md#bulk-remove) och [datauppsättningsexport](../../destinations/ui/export-datasets.md). |
 
 {style="table-layout:auto"}
