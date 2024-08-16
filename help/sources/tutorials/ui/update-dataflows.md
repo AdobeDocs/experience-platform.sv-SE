@@ -1,24 +1,21 @@
 ---
-keywords: Experience Platform;hem;populära ämnen;uppdatera dataflöden;redigera schema
-description: I den här självstudiekursen beskrivs stegen för att uppdatera ett dataflödesschema, inklusive dess ingångsfrekvens och intervall, med hjälp av arbetsytan Källor.
-solution: Experience Platform
+description: Lär dig hur du uppdaterar ett befintligt källkodsdataflöde i användargränssnittet för Experience Platform.
 title: Uppdatera ett dataflöde för Source Connection i användargränssnittet
-type: Tutorial
 exl-id: 0499a2a3-5a22-47b1-ac0e-76a432bd26c0
-source-git-commit: c2832821ea6f9f630e480c6412ca07af788efd66
+source-git-commit: c3082a8769f317407197b3fd05b36cfe00b36470
 workflow-type: tm+mt
-source-wordcount: '760'
+source-wordcount: '749'
 ht-degree: 0%
 
 ---
 
 # Uppdatera dataflöden i användargränssnittet
 
-I den här självstudien får du lära dig hur du uppdaterar ett befintligt dataflöde, inklusive dess schema och mappning, med hjälp av källarbetsytan.
+I den här självstudiekursen beskrivs hur du uppdaterar ett befintligt dataflöde, inklusive dess schema och mappningskonfigurationer, med hjälp av källarbetsytan i Adobe Experience Platform användargränssnitt.
 
-## Komma igång
+## Kom igång
 
-Den här självstudiekursen kräver en fungerande förståelse av följande komponenter i Adobe Experience Platform:
+Den här självstudiekursen kräver en fungerande förståelse av följande komponenter i Experience Platform:
 
 * [Källor](../../home.md): Experience Platform tillåter data att hämtas från olika källor samtidigt som du kan strukturera, etikettera och förbättra inkommande data med hjälp av plattformstjänster.
 * [Sandlådor](../../../sandboxes/home.md): Experience Platform tillhandahåller virtuella sandlådor som partitionerar en enda plattformsinstans till separata virtuella miljöer för att utveckla och utveckla program för digitala upplevelser.
@@ -30,83 +27,59 @@ Den här självstudiekursen kräver en fungerande förståelse av följande komp
 >title="Utgångsdatum för datauppsättning"
 >abstract="Den här kolumnen anger antalet dagar som måldatauppsättningen har kvar innan den automatiskt upphör att gälla.<br>Ett dataflöde misslyckas om måldatauppsättningen har gått ut. För att förhindra att ett dataflöde misslyckas kontrollerar du att måldatauppsättningen är inställd på att förfalla på rätt datum. Mer information om hur du uppdaterar förfallodatum finns i dokumentationen."
 
-I plattformsgränssnittet väljer du **[!UICONTROL Sources]** i den vänstra navigeringen för att komma åt arbetsytan i [!UICONTROL Sources]. Välj **[!UICONTROL Dataflows]** i den övre rubriken om du vill visa en lista över befintliga dataflöden.
+I användargränssnittet för Experience Platform väljer du **[!UICONTROL Sources]** i den vänstra navigeringen och sedan **[!UICONTROL Dataflows]** i den övre rubriken.
 
-![katalog](../../images/tutorials/update-dataflows/catalog.png)
+![Källkatalogen med huvudfliken för dataflöden markerad.](../../images/tutorials/update-dataflows/catalog.png)
 
-Sidan [!UICONTROL Dataflows] innehåller en lista med alla befintliga dataflöden, inklusive information om deras motsvarande måldatauppsättning, källa och kontonamn.
+>[!TIP]
+>
+>Du kan sortera och filtrera dataflödena med hjälp av filterfunktioner. Mer information finns i guiden [Filtrera källobjekt i användargränssnittet](./filter.md).
 
-Om du vill sortera igenom listan väljer du filterikonen ![filter](/help/images/icons/filter.png) längst upp till vänster för att använda sorteringspanelen.
+På sidan [!UICONTROL Dataflows] visas en lista med alla befintliga dataflöden i organisationen. Leta reda på det dataflöde som du vill uppdatera och markera sedan ellipserna (`...`) bredvid det. En listruta visas med en lista över alternativ som du kan välja mellan för att göra ytterligare konfigurationer av ditt befintliga dataflöde.
 
-![filter-dataflows](../../images/tutorials/update-dataflows/filter-dataflows.png)
+Välj **[!UICONTROL Update dataflow]** om du vill uppdatera dataflödet.
 
-Sorteringspanelen innehåller en lista med alla tillgängliga källor. Du kan välja mer än en källa i listan för att få tillgång till ett filtrerat urval av dataflöden som tillhör olika källor.
+![Listrutan där alternativ för att uppdatera dataflöden visas.](../../images/tutorials/update-dataflows/dropdown_update.png)
 
-Välj den källa som du vill arbeta med för att visa en lista över de befintliga dataflödena. När du har identifierat det dataflöde som du vill uppdatera markerar du ellipserna (`...`) bredvid dataflödets namn.
+Du dirigeras till arbetsflödet för källor där du kan fortsätta att uppdatera aspekter av dataflödet, inklusive information i steget [!UICONTROL Provide dataflow details].
 
-![edit-source](../../images/tutorials/update-dataflows/edit-source.png)
-
-En listruta visas med alternativ för att uppdatera det dataflöde du valde. Härifrån kan du välja att uppdatera ett dataflöds mappningsuppsättningar och schema för inmatning. Du kan också välja alternativ för att inspektera dataflödet på kontrollpanelen, prenumerera på aviseringar samt inaktivera eller ta bort dataflödet.
-
-Välj **[!UICONTROL Update dataflow]** om du vill uppdatera information om dataflödet.
-
-![update-dataflow](../../images/tutorials/update-dataflows/update-dataflow.png)
-
-### Lägg till data
-
-[!UICONTROL Add data]-steget visas. Välj lämpligt dataformat för att granska innehållet i dina markerade data och välj sedan **[!UICONTROL Next]** för att fortsätta.
-
-![add-data](../../images/tutorials/update-dataflows/add-data.png)
-
-### Dataflödesdetaljer
-
-På sidan [!UICONTROL Dataflow detail] kan du ange ett uppdaterat namn och en beskrivning för dataflödet samt konfigurera om feltröskeln för dataflödet. Under det här steget kan du även konfigurera eller ändra inställningar för din aviseringsprenumeration.
-
-När du har angett dina uppdaterade värden väljer du **[!UICONTROL Next]**.
-
-![dataflödesdetalj](../../images/tutorials/update-dataflows/dataflow-detail.png)
-
-### Mappning
+### Uppdatera mappning {#update-mapping}
 
 >[!NOTE]
 >
 >Redigeringsmappningsfunktionen stöds för närvarande inte för följande källor: Adobe Analytics, Adobe Audience Manager, HTTP API och [!DNL Marketo Engage].
 
-Sidan [!UICONTROL Mapping] innehåller ett gränssnitt där du kan lägga till och ta bort mappningsuppsättningar som är kopplade till ditt dataflöde.
+Under den här processen kan du även uppdatera mappningsuppsättningarna som är kopplade till dataflödet.  Mappningsgränssnittet visar det befintliga mappningsflödet för ditt dataflöde och inte en ny rekommenderad mappningsuppsättning. Mappningsuppdateringar tillämpas bara på framtida schemalagda dataflöden. Ett dataflöde som har schemalagts för engångsinmatning kan inte ha sina mappningsuppsättningar uppdaterade.
 
-Mappningsgränssnittet visar det befintliga mappningsuppsättningen för dataflödet och inte en ny rekommenderad mappningsuppsättning. Mappningsuppdateringar tillämpas bara på framtida schemalagda dataflöden. Ett dataflöde som har schemalagts för engångsinmatning kan inte ha sina mappningsuppsättningar uppdaterade.
+Använd mappningsgränssnittet för att ändra mappningsuppsättningarna som används i dataflödet. Mer information om hur du använder mappningsgränssnittet finns i [användargränssnittshandboken för dataförinställningar](../../../data-prep/ui/mapping.md).
 
-Härifrån kan du använda mappningsgränssnittet för att ändra mappningsuppsättningarna som används i dataflödet. Mer information om hur du använder mappningsgränssnittet finns i [användargränssnittshandboken för dataförinställningar](../../../data-prep/ui/mapping.md).
+![Mappningssteget för källarbetsflödet. Använd det här steget för att uppdatera mappningarna som är kopplade till ditt dataflöde.](../../images/tutorials/update-dataflows/mapping.png)
 
-![mappning](../../images/tutorials/update-dataflows/mapping.png)
+### Uppdatera schema
 
-### Schemaläggning
-
-Steg [!UICONTROL Scheduling] visas, så att du kan uppdatera dataflödets schema för inmatning och automatiskt importera valda källdata med de uppdaterade mappningarna.
-
->[!NOTE]
->
->Det går inte att schemalägga om ett dataflöde som schemalagts för engångsintag.
-
-![new-schedule](../../images/tutorials/update-dataflows/new-schedule.png)
+När du har uppdaterat mappningarna för dataflödet kan du sedan fortsätta att uppdatera ditt intag-schema för att importera dataflödet med dess nya mappningsdata. Du kan bara uppdatera matningsschemat för dataflöden som har konfigurerats att mata in enligt ett återkommande schema. Det går inte att schemalägga om ett dataflöde som har konfigurerats för engångsinmatning.
 
 Du kan även uppdatera matningsschemat för ditt dataflöde med hjälp av det infogade uppdateringsalternativet på dataflödessidan.
 
 På dataflödessidan markerar du ellipserna (`...`) bredvid dataflödets namn och väljer sedan **[!UICONTROL Edit schedule]** i listrutan som visas.
 
-![edit-schedule](../../images/tutorials/update-dataflows/edit-schedule.png)
+![Schemaläggningssteget för källarbetsflödet. Använd det här steget för att uppdatera ditt dataflödes schema.](../../images/tutorials/update-dataflows/dropdown_edit.png)
 
 Dialogrutan **[!UICONTROL Edit schedule]** innehåller alternativ för att uppdatera dataflödets matningsfrekvens och intervallhastighet. När du har angett de uppdaterade värdena för frekvens och intervall väljer du **[!UICONTROL Save]**.
 
-![schedule-pop-up](../../images/tutorials/update-dataflows/schedule-pop-up.png)
+![Ett popup-fönster som du kan använda för att redigera dataflödets schema för förtäring.](../../images/tutorials/update-dataflows/edit_schedule.png)
 
-### Granska
+### Inaktivera dataflöde
 
-Steget **[!UICONTROL Review]** visas så att du kan granska dataflödet innan det uppdateras.
+Du kan inaktivera dataflödet med samma listruta. Om du vill inaktivera dataflödet väljer du **[!UICONTROL Disable dataflow]**.
 
-När du har granskat ditt dataflöde väljer du **[!UICONTROL Finish]** och anger en tid för dataflödet med de nya mappningsuppsättningarna som ska skapas.
+![Listrutan med alternativet att inaktivera dataflöde.](../../images/tutorials/update-dataflows/dropdown_disable.png)
 
-![granskning](../../images/tutorials/update-dataflows/review.png)
+Välj sedan [!UICONTROL Disable] i popup-fönstret som visas.
+
+![Popup-fönstret där du måste bekräfta att du vill inaktivera dataflödet.](../../images/tutorials/update-dataflows/disable_dataflow.png)
+
+Om och när du senare återaktiverar det här dataflödet schemaläggs återfyllningen automatiskt så att den täcker den period då dataflödet inaktiverades. Om dataflödet till exempel har konfigurerats för att köras varje timme och inaktiverats i 48 timmar, kommer Experience Platform att skapa 48 backfill-körningar för att bearbeta de missade intervallen när dataflödet återaktiveras.
 
 ## Nästa steg
 
