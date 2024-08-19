@@ -2,7 +2,7 @@
 title: Första parts enhets-ID i Web SDK
 description: Lär dig hur du konfigurerar FPID (First-party device ID) för Adobe Experience Platform Web SDK.
 exl-id: c3b17175-8a57-43c9-b8a0-b874fecca952
-source-git-commit: 9f10d48357b7fb28dc54375a4d077d0a1961a746
+source-git-commit: b35a4316ca4ef82e545a7718f1b986f978003a0e
 workflow-type: tm+mt
 source-wordcount: '1986'
 ht-degree: 0%
@@ -77,7 +77,7 @@ När du ställer in en cookie med en server som du äger kan olika metoder anvä
 
 * Generera cookies med serverskriptspråk
 * Ange cookies som svar på en API-begäran som görs till en underdomän eller annan slutpunkt på webbplatsen
-* Generera cookies med CMS
+* Generera cookies med en CMS
 * Generera cookies med ett CDN
 
 >[!IMPORTANT]
@@ -153,7 +153,7 @@ Precis som med andra identitetstyper kan du inkludera FPID med andra identiteter
       {
         "id": "123e4567-e89b-42d3-9456-426614174000",
         "authenticatedState": "ambiguous",
-        "primary": true
+        "primary": false
       }
     ],
     "EMAIL": [
