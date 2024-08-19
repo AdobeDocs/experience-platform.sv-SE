@@ -2,9 +2,9 @@
 title: Åtkomst till ECID
 description: Lär dig hur du får åtkomst till Experience Cloud-ID från Data Prep eller Taggar
 exl-id: 8e63a873-d7b5-4c6c-b14d-3c3fbc82b62f
-source-git-commit: e01dfcf3cccea589083a23171f4b8d9ecad58233
+source-git-commit: e53ae6053a4b00e7e75242b95496c6795953005a
 workflow-type: tm+mt
-source-wordcount: '249'
+source-wordcount: '279'
 ht-degree: 0%
 
 ---
@@ -17,6 +17,10 @@ ht-degree: 0%
 Du kan komma åt ECID antingen via [Dataprep för datainsamling](../../../../datastreams/data-prep.md) (rekommenderas) eller via taggar.
 
 ## Åtkomst till ECID via Data Prep (föredragen metod) {#accessing-ecid-data-prep}
+
+Den här metoden använder [Data Prep för datainsamling](../../../../datastreams/data-prep.md) för att konfigurera en anpassad mappning för `ECID`.
+
+Mer information om hur du använder den här funktionen finns i dokumentationen för [Dataförberedelser för datainsamling](../../../../datastreams/data-prep.md).
 
 Om du vill ställa in ECID i ett anpassat XDM-fält kan du göra detta genom att ställa in `source` på följande sökväg, utöver att ha det i identitetskartan:
 
