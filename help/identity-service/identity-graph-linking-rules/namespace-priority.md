@@ -3,10 +3,10 @@ title: Namnområdesprioritet
 description: Läs om namnområdesprioritet i identitetstjänsten.
 badge: Beta
 exl-id: bb04f02e-3826-45af-b935-752ea7e6ed7c
-source-git-commit: 536770d0c3e7e93921fe40887dafa5c76e851f5e
+source-git-commit: c9610f935a074adf82d96c1eb824c159b18f2837
 workflow-type: tm+mt
-source-wordcount: '1563'
-ht-degree: 1%
+source-wordcount: '1635'
+ht-degree: 0%
 
 ---
 
@@ -78,13 +78,13 @@ För relativt komplexa diagramstrukturer spelar namnområdesprioriteten en vikti
 * För upplevelsehändelser bestäms den primära identiteten av den högsta namnområdesprioriteten när du har konfigurerat identitetsinställningar för en viss sandlåda.
    * Det beror på att upplevelsehändelser är dynamiska till sin natur. En identitetskarta kan innehålla tre eller fler identiteter, och namnområdesprioriteten ser till att det viktigaste namnutrymmet är kopplat till upplevelsehändelsen.
 * Därför kommer följande konfigurationer **inte längre att användas av kundprofilen i realtid**:
-   * Kryssrutan &quot;Primär&quot; för dataelementtyp i WebSDK.
+   * Kryssrutan Primär för dataelementtypen i WebSDK (som översätts till `primary=true` i identityMap). **Obs!**: Identitetsnamnrymd och identitetsvärde kommer att fortsätta användas i profilen. Dessutom måste du fortfarande konfigurera inställningarna för den primära kryssrutan eftersom tjänster utanför kundprofilen i realtid fortsätter att referera till den här konfigurationen.
    * Alla fält som markerats som primär identitet i ett XDM Experience Event Class-schema.
    * Standardinställningar för primär identitet i Adobe Analytics-källkopplingen (ECID eller AAID).
 * Å andra sidan bestämmer inte namnområdesprioriteten **den primära identiteten för profilposter**.
    * För profilposter kan du använda arbetsytan för scheman i användargränssnittet för Experience Platform för att definiera dina identitetsfält, inklusive den primära identiteten. Mer information finns i guiden [Definiera identitetsfält i användargränssnittet](../../xdm/ui/fields/identity.md).
 
->[!NOTE]
+>[!TIP]
 >
 >* Namnområdesprioriteten är **en egenskap för ett namnområde**. Det är ett numeriskt värde som tilldelas ett namnutrymme för att ange dess relativa betydelse.
 >
@@ -183,3 +183,7 @@ Mer information finns i dokumenten på [Attribution AI](../../intelligent-servic
 * Datasjön: Tar bort alla poster med den angivna identiteten som primär eller sekundär identitet.
 
 Mer information finns i [Översikt över sekretesstjänsten](../../privacy-service/home.md).
+
+### Adobe Target och Edge personalization
+
+[Edge-personalisering](../../server-api/personalization-target.md) fortsätter att referera till hur du konfigurerade kryssrutan&quot;Primär&quot; för dataelementtypen i WebSDK (som motsvarar `primary=true` i identityMap).
