@@ -2,9 +2,9 @@
 description: Lär dig hur du använder kontrollpanelen för övervakning för att övervaka data som hämtas från källor.
 title: Övervaka dataflöden för källor i användargränssnittet
 exl-id: 53fa4338-c5f8-4e1a-8576-3fe13d930846
-source-git-commit: c2832821ea6f9f630e480c6412ca07af788efd66
+source-git-commit: 9d9ae58997ec1c23af2a9124321fdfd9f03b7c4e
 workflow-type: tm+mt
-source-wordcount: '1229'
+source-wordcount: '1293'
 ht-degree: 0%
 
 ---
@@ -62,9 +62,9 @@ I den nedre delen av kontrollpanelen visas en tabell som visar den aktuella mät
 
 | Mätvärden | Beskrivning |
 | --- | --- |
-| Mottagna poster | Det totala antalet poster som tagits emot från källan. |
+| Mottagna poster | Det totala antalet poster som tagits emot från en angiven källa. |
 | Insamlade poster | Det totala antalet poster som har importerats till datasjön. |
-| Överhoppade poster | Det totala antalet poster som hoppats över. |
+| Överhoppade poster | Det totala antalet poster som hoppats över. En överhoppad post refererar till fält som har hoppats över eftersom de inte behövdes för inmatning. Om du till exempel skapar ett källdataflöde med partiellt intag aktiverat, kan du konfigurera ett acceptabelt tröskelvärde för felfrekvens. Under importen kommer man att hoppa över poster i fält som inte är obligatoriska, t.ex. identitetsfält, så länge de ligger inom feltröskeln. |
 | Misslyckade poster | Det totala antalet poster som inte kunde importeras på grund av fel. |
 | Fakturerad frekvens | Procentandelen poster som har importerats baserat på det totala antalet mottagna poster. |
 | Totalt antal misslyckade dataflöden | Totalt antal misslyckade dataflöden. |
