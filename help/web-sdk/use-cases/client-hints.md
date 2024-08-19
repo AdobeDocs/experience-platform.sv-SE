@@ -3,10 +3,10 @@ title: Tips för användaragentklient
 description: Lär dig hur klienttips för användaragenter fungerar i Web SDK. Klienttips gör att webbplatsägare kan komma åt mycket av den information som finns i användaragentsträngen, men på ett mer sekretessbeständigt sätt.
 keywords: användaragent;klienttips; sträng; användaragentsträng; låg entropi; hög entropi
 exl-id: a909b1d1-be9d-43ba-bb4b-d28b0c609f65
-source-git-commit: b6e084d2beed58339191b53d0f97b93943154f7c
+source-git-commit: 89dfe037e28bae51e335dc67185afa42b2c418e3
 workflow-type: tm+mt
-source-wordcount: '1152'
-ht-degree: 0%
+source-wordcount: '1245'
+ht-degree: 1%
 
 ---
 
@@ -98,13 +98,16 @@ Klienttips med låg entropi är aktiverade som standard i Web SDK och skickas f�
 
 High-entropy-klienttips är mer detaljerad information om klientenheten, som plattformsversion, arkitektur, modell, bitness (64- eller 32-bitars plattformar) eller fullständig operativsystemsversion. Den här informationen kan eventuellt användas vid fingeravtryck.
 
-| HTTP-huvud | JavaScript | Ingår i användaragent som standard | Ingår i klienttips som standard |
-|---|---|---|---|
-| `Sec-CH-UA-Platform-Version` | `platformVersion` | Ja | Nej |
-| `Sec-CH-UA-Arc` | `architecture` | Ja | Nej |
-| `Sec-CH-UA-Model` | `model` | Ja | Nej |
-| `Sec-CH-UA-Bitness` | `Bitness` | Ja | Nej |
-| `Sec-CH-UA-Full-Version-List` | `fullVersionList` | Ja | Nej |
+| Egenskap | Beskrivning | HTTP-huvud | XDM-sökväg | Exempel | Ingår i användaragent som standard | Ingår i klienttips som standard |
+| --- | --- | --- | --- | --- |---|---|
+| Operativsystemversion | Operativsystemets version. | `Sec-CH-UA-Platform-Version` | `xdm.environment.browserDetails.`<br>`userAgentClientHints.platformVersion` | `10.15.7` | Ja | Nej |
+| Arkitektur | Den underliggande processorarkitekturen. | `Sec-CH-UA-Arch` | `xdm.environment.browserDetails.`<br>`userAgentClientHints.architecture` | `x86` | Ja | Nej |
+| Enhetsmodell | Namnet på den enhet som används. | `Sec-CH-UA-Model` | `xdm.environment.browserDetails.`<br>`userAgentClientHints.model` | `Intel Mac OS X 10_15_7` | Ja | Nej |
+| Bitness | Antalet bitar som den underliggande processorarkitekturen stöder. | `Sec-CH-UA-Bitness` | `xdm.environment.browserDetails.`<br>`userAgentClientHints.bitness` | `64` | Ja | Nej |
+| Webbläsarleverantör | Företaget som skapade webbläsaren. Det låga entropytipset `Sec-CH-UA` samlar också in det här elementet. | `Sec-CH-UA-Full-Version-List` | `xdm.environment.browserDetails.`<br>`userAgentClientHints.vendor` | `Google` | Ja | Nej |
+| Webbläsarnamn | Webbläsaren används. Det låga entropytipset `Sec-CH-UA` samlar också in det här elementet. | `Sec-UA-Full-Version-List` | `xdm.environment.browserDetails.`<br>`userAgentClientHints.brand` | `Chrome` | Ja | Nej |
+| Webbläsarversion | Den viktiga versionen av webbläsaren. Det låga entropytipset `Sec-CH-UA` samlar också in det här elementet. Exakt webbläsarversion samlas inte in automatiskt. | `Sec-UA-Full-Version-List` | `xdm.environment.browserDetails.`<br>`userAgentClientHints.version` | `105` | Ja | Nej |
+
 
 Klienttips för hög entropi är inaktiverade som standard i Web SDK. Om du vill aktivera dem måste du konfigurera Web SDK manuellt för att begära tips för hög entropi-klient.
 

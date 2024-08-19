@@ -2,9 +2,9 @@
 title: kontext
 description: Samla automatiskt in data om enheter, miljö eller plats.
 exl-id: 911cabec-2afb-4216-b413-80533f826b0e
-source-git-commit: 8fc0fd96f13f0642f7671d0e0f4ecfae8ab6761f
+source-git-commit: 89dfe037e28bae51e335dc67185afa42b2c418e3
 workflow-type: tm+mt
-source-wordcount: '877'
+source-wordcount: '892'
 ht-degree: 1%
 
 ---
@@ -89,21 +89,25 @@ Nyckelordet `implementationDetails` samlar in information om den SDK-version som
 | Miljö | Den miljö där data samlades in. Den här inställningen är alltid `browser`. | `xdm.implementationDetails.environment` | `browser` |
 
 
-### Tips för hög entropi-klient
+### Tips för hög entropi-klient {#high-entropy-client-hints}
+
+>[!TIP]
+>
+>Mer information om hur du konfigurerar klienttips för [användaragent](../../use-cases/client-hints.md) finns i dokumentationen om klienttips för användaragent.
 
 Nyckelordet `"highEntropyUserAgentHints"` samlar in detaljerad information om användarens enhet. Dessa data inkluderas i HTTP-huvudet för den begäran som skickas till Adobe. När data har kommit in i Edge-nätverket fyller XDM-objektet i sin respektive XDM-sökväg. Om du anger respektive XDM-sökväg i ditt `sendEvent`-anrop har den företräde framför HTTP-rubrikvärdet.
 
 Om du använder enhetssökningar när [du konfigurerar ditt datastream](/help/datastreams/configure.md) kan data rensas till förmån för enhetssökningsvärden. Vissa klienttipsfält och enhetssökningsfält kan inte finnas i samma träff.
 
-| Dimension | Beskrivning | HTTP-huvud | XDM-sökväg | Exempelvärde |
+| Egenskap | Beskrivning | HTTP-huvud | XDM-sökväg | Exempel |
 | --- | --- | --- | --- | --- |
-| Operativsystemversion | Operativsystemets version. | `Sec-CH-UA-Platform-Version` | `xdm.environment.browserDetails.`<br>`userAgentClientHints.platformVersion` | |
-| Arkitektur | Den underliggande processorarkitekturen. | `Sec-CH-UA-Arch` | `xdm.environment.browserDetails.`<br>`userAgentClientHints.architecture` | |
-| Enhetsmodell | Namnet på den enhet som används. | `Sec-CH-UA-Model` | `xdm.environment.browserDetails.`<br>`userAgentClientHints.model` | |
-| Bitness | Antalet bitar som den underliggande processorarkitekturen stöder. | `Sec-CH-UA-Bitness` | `xdm.environment.browserDetails.`<br>`userAgentClientHints.bitness` | |
-| Webbläsarleverantör | Företaget som skapade webbläsaren. Det låga entropytipset `Sec-CH-UA` samlar också in det här elementet. | `Sec-CH-UA-Full-Version-List` | | |
-| Webbläsarnamn | Webbläsaren används. Det låga entropytipset `Sec-CH-UA` samlar också in det här elementet. | `Sec-UA-Full-Version-List` | `xdm.environment.browserDetails.`<br>`userAgentClientHints.brand` | |
-| Webbläsarversion | Den viktiga versionen av webbläsaren. Det låga entropytipset `Sec-CH-UA` samlar också in det här elementet. Exakt webbläsarversion samlas inte in automatiskt. | `Sec-UA-Full-Version-List` | `xdm.environment.browserDetails.`<br>`userAgentClientHints.version` | |
+| Operativsystemversion | Operativsystemets version. | `Sec-CH-UA-Platform-Version` | `xdm.environment.browserDetails.`<br>`userAgentClientHints.platformVersion` | `10.15.7` |
+| Arkitektur | Den underliggande processorarkitekturen. | `Sec-CH-UA-Arch` | `xdm.environment.browserDetails.`<br>`userAgentClientHints.architecture` | `x86` |
+| Enhetsmodell | Namnet på den enhet som används. | `Sec-CH-UA-Model` | `xdm.environment.browserDetails.`<br>`userAgentClientHints.model` | `Intel Mac OS X 10_15_7` |
+| Bitness | Antalet bitar som den underliggande processorarkitekturen stöder. | `Sec-CH-UA-Bitness` | `xdm.environment.browserDetails.`<br>`userAgentClientHints.bitness` | `64` |
+| Webbläsarleverantör | Företaget som skapade webbläsaren. Det låga entropytipset `Sec-CH-UA` samlar också in det här elementet. | `Sec-CH-UA-Full-Version-List` | `xdm.environment.browserDetails.`<br>`userAgentClientHints.vendor` | `Google` |
+| Webbläsarnamn | Webbläsaren används. Det låga entropytipset `Sec-CH-UA` samlar också in det här elementet. | `Sec-UA-Full-Version-List` | `xdm.environment.browserDetails.`<br>`userAgentClientHints.brand` | `Chrome` |
+| Webbläsarversion | Den viktiga versionen av webbläsaren. Det låga entropytipset `Sec-CH-UA` samlar också in det här elementet. Exakt webbläsarversion samlas inte in automatiskt. | `Sec-UA-Full-Version-List` | `xdm.environment.browserDetails.`<br>`userAgentClientHints.version` | `105` |
 
 {style="table-layout:auto"}
 
