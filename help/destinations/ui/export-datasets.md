@@ -3,9 +3,9 @@ title: Exportera datauppsättningar till molnlagringsmål
 type: Tutorial
 description: Lär dig hur du exporterar datauppsättningar från Adobe Experience Platform till den molnlagringsplats du föredrar.
 exl-id: e89652d2-a003-49fc-b2a5-5004d149b2f4
-source-git-commit: c2832821ea6f9f630e480c6412ca07af788efd66
+source-git-commit: 938e4875318f07b296fc884487ca1c664be659ef
 workflow-type: tm+mt
-source-wordcount: '1839'
+source-wordcount: '1784'
 ht-degree: 0%
 
 ---
@@ -56,7 +56,7 @@ Förstå vilka datamängdstyper du kan exportera beroende på program, produktni
   <tr>
     <td>Customer Journey Analytics</td>
     <td>Alla</td>
-    <td> Data för profil- och upplevelsehändelser som har skapats i användargränssnittet i Experience Platform efter att ha inhämtat eller samlat in data via Sources, Web SDK, Mobile SDK, Analytics Data Connector och Audience Manager.  <br> <p> <b>Obs! </b> Möjligheten att exportera datauppsättningar till molnet är i den begränsade testfasen av utgåvan och är kanske inte tillgänglig än i din miljö. Den här anteckningen tas bort när funktionen är allmänt tillgänglig. Mer information om Customer Journey Analytics finns i <a href="https://experienceleague.adobe.com/docs/analytics-platform/using/releases/releases.html"> funktionsreleaser för Customer Journey Analytics </a>. </p> </td>
+    <td> Data för profil- och upplevelsehändelser som har skapats i användargränssnittet i Experience Platform efter att ha inhämtat eller samlat in data via Sources, Web SDK, Mobile SDK, Analytics Data Connector och Audience Manager.</td>
   </tr>
   <tr>
     <td>Data Distiller</td>
@@ -215,7 +215,7 @@ Följ stegen nedan för att ta bort datauppsättningar från ett befintligt data
 
    >[!NOTE]
    >
-   >Den här funktionen är i betaversion och endast tillgänglig för vissa kunder. Kontakta din Adobe-representant om du vill få tillgång till den här funktionen.
+Den här funktionen är i betaversion och endast tillgänglig för vissa kunder. Kontakta din Adobe-representant om du vill få tillgång till den här funktionen.
 
    ![Dialogrutan Ta bort datauppsättning visar kontrollen Ta bort datauppsättning i den högra listen.](../assets/ui/export-datasets/bulk-remove-datasets.png)
 
