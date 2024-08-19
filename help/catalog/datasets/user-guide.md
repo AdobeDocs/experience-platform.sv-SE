@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Användargränssnittshandbok för datauppsättningar
 description: Lär dig hur du utför vanliga åtgärder när du arbetar med datauppsättningar i Adobe Experience Platform användargränssnitt.
 exl-id: f0d59d4f-4ebd-42cb-bbc3-84f38c1bf973
-source-git-commit: 10140efe33b42f9099b28564c9824839d83521a3
+source-git-commit: a168f61fabddd06d586f7909fd92c0409fd2f51e
 workflow-type: tm+mt
-source-wordcount: '2927'
+source-wordcount: '3019'
 ht-degree: 0%
 
 ---
@@ -38,6 +38,22 @@ Användarhandboken kräver en fungerande förståelse av följande komponenter i
 >id="platform_datasets_browse_daysRemaining"
 >title="Utgångsdatum för datauppsättning"
 >abstract="Den här kolumnen anger antalet dagar som måldatauppsättningen har kvar innan den automatiskt upphör att gälla."
+
+>[!CONTEXTUALHELP]
+>id="platform_datasets_browse_datalakeretention"
+>title="Lagring av data"
+>abstract="Visar den aktuella lagringsprincipen för varje datauppsättning. Det här värdet kan ändras i varje datamängds kvarhållningsinställningar. Du kan bara ange kvarhållningstid för ExperienceEvent-datauppsättningen."
+
+>[!CONTEXTUALHELP]
+>id="platform_datasets_browse_profileretention"
+>title="Behåll profiler"
+>abstract="Visar den aktuella lagringsprincipen för varje datauppsättning. Det här värdet kan ändras i varje datamängds kvarhållningsinställningar. Du kan bara ange kvarhållningstid för en ExperienceEvent-datauppsättning."
+
+>[!CONTEXTUALHELP]
+>id="platform_datasets_datalakesettings_datasetretention"
+>title="Kvarhållande av datauppsättning"
+>abstract="Datalagring anger regler för hur länge data ska lagras och när de ska tas bort i olika tjänster. Detta säkerställer att lagarna följs, att lagringskostnaderna hanteras och att datakvaliteten upprätthålls."
+
 
 I användargränssnittet för [!DNL Experience Platform] väljer du **[!UICONTROL Datasets]** i den vänstra navigeringen för att öppna kontrollpanelen för **[!UICONTROL Datasets]**. Kontrollpanelen visar alla tillgängliga datauppsättningar för din organisation. Information visas för varje datamängd som anges, inklusive namn, schema som datauppsättningen följer och status för den senaste importen.
 
