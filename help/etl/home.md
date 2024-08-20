@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Utveckla ETL-integreringar för Adobe Experience Platform
 description: Integreringsguiden för ETL beskriver allmänna steg för att skapa säkra anslutningar med höga prestanda för Experience Platform och inmatning av data på plattformen.
 exl-id: 7d29b61c-a061-46f8-a31f-f20e4d725655
-source-git-commit: b80d8349fc54a955ebb3362d67a482d752871420
+source-git-commit: 2a2e3fcc4c118925795951a459a2ed93dfd7f7d7
 workflow-type: tm+mt
-source-wordcount: '3978'
+source-wordcount: '3977'
 ht-degree: 0%
 
 ---
@@ -789,5 +789,5 @@ Adobe Experience Platform identifierar för närvarande inte fördröjda data, s
 | ---- | ------ | ----------- |
 | 2019-01-19 | Borttagen fältegenskap från datauppsättningar | Datauppsättningar innehöll tidigare en fältegenskap som innehöll en kopia av schemat. Den här funktionen bör inte längre användas. Om egenskapen &quot;fields&quot; hittas bör den ignoreras och &quot;observeradSchema&quot; eller &quot;schemaRef&quot; används i stället. |
 | 2019-03-15 | Egenskapen &quot;schemaRef&quot; har lagts till i datamängder | Egenskapen schemaRef för en datauppsättning innehåller en URI som refererar till det XDM-schema som datauppsättningen baseras på och representerar alla möjliga fält som kan användas av datauppsättningen. |
-| 2019-03-15 | Alla slutanvändaridentifierare mappas till egenskapen identityMap | &quot;identityMap&quot; är en inkapsling av alla unika identifierare för ett ämne, till exempel CRM-ID, ECID eller program-ID för lojalitet. Den här kartan används av [[!DNL Identity Service]](../identity-service/home.md) för att matcha alla kända och anonyma identiteter för ett motiv och bilda ett enda identitetsdiagram för varje slutanvändare. |
+| 2019-03-15 | Alla slutanvändaridentifierare mappas till egenskapen identityMap | &quot;identityMap&quot; är en inkapsling av alla unika identifierare för ett ämne, som CRMID, ECID eller lojalitetsprogram-ID. Den här kartan används av [[!DNL Identity Service]](../identity-service/home.md) för att matcha alla kända och anonyma identiteter för ett motiv och bilda ett enda identitetsdiagram för varje slutanvändare. |
 | 2019-05-30 | EOL och Ta bort schemaegenskap från datauppsättningar | Schemaegenskapen för datauppsättningen tillhandahöll en referenslänk till schemat med den borttagna `/xdms`-slutpunkten i [!DNL Catalog] API. Detta har ersatts av en &quot;schemaRef&quot; som innehåller &quot;id&quot;, &quot;version&quot; och &quot;contentType&quot; för schemat enligt den nya [!DNL Schema Registry]-API:n. |

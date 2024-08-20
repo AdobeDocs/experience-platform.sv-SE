@@ -2,9 +2,9 @@
 title: Borttagningar i identitetstjänsten
 description: I det här dokumentet finns en översikt över de olika mekanismer som du kan använda för att ta bort dina identitetsdata i Experience Platform och för att skapa klarhet om hur identitetsdiagram kan påverkas.
 exl-id: 0619d845-71c1-4699-82aa-c6436815d5b3
-source-git-commit: 576b17842ee1c5722332ba49e26b037537ec96ed
+source-git-commit: 2a2e3fcc4c118925795951a459a2ed93dfd7f7d7
 workflow-type: tm+mt
-source-wordcount: '1195'
+source-wordcount: '1194'
 ht-degree: 0%
 
 ---
@@ -23,7 +23,7 @@ Dokumentet nedan refererar till följande funktioner i Experience Platform:
 
 * [Identitetstjänst](../home.md): Få en bättre bild av enskilda kunder och deras beteende genom att skapa en bro mellan identiteter på olika enheter och system.
    * [Identitetsdiagram](./identity-graph-viewer.md): Ett identitetsdiagram är en karta över relationer mellan olika identiteter för en viss kund, som ger dig en visuell representation av hur kunden interagerar med varumärket i olika kanaler.
-   * [Identitetsnamnutrymmen](./namespaces.md): Identitetsnamnutrymmen är en komponent i identitetstjänsten som fungerar som indikatorer för det sammanhang som en identitet relateras till. De skiljer till exempel på värdet&quot;name<span>@email.com&quot; som e-postadress eller&quot;443522&quot; som ett numeriskt CRM-ID.
+   * [Identitetsnamnutrymmen](./namespaces.md): Identitetsnamnutrymmen är en komponent i identitetstjänsten som fungerar som indikatorer för det sammanhang som en identitet relateras till. De skiljer till exempel på värdet&quot;name<span>@email.com&quot; som e-postadress eller&quot;443522&quot; som ett numeriskt CRMID.
 * [Katalogtjänst](../../catalog/home.md): Utforska datalinje, metadata, filbeskrivningar, kataloger och datauppsättningar i datasjön.
 * [Datahygien](../../hygiene/home.md): Hantera dina lagrade konsumentdata genom att schemalägga utgångsdatum för automatiska datauppsättningar eller ta bort enskilda poster från en datauppsättning eller alla datauppsättningar.
 * [Adobe Experience Platform Privacy Service](../../privacy-service/home.md): Hantera kundförfrågningar om åtkomst, avanmälan från försäljning eller borttagning av personuppgifter mellan Adobe Experience Cloud-program.

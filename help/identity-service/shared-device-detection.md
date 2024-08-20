@@ -5,9 +5,9 @@ description: Delad enhetsidentifiering identifierar olika autentiserade använda
 hide: true
 hidefromtoc: true
 exl-id: 36318163-ba07-4209-b1be-dc193ab7ba41
-source-git-commit: d7c7bed74d746aba2330ecba62f9f810fbaf0d63
+source-git-commit: 2a2e3fcc4c118925795951a459a2ed93dfd7f7d7
 workflow-type: tm+mt
-source-wordcount: '1328'
+source-wordcount: '1321'
 ht-degree: 0%
 
 ---
@@ -60,7 +60,7 @@ Det är viktigt att förstå följande terminologi när du arbetar med
 [!DNL Shared Device Detection] fungerar genom att etablera två namnutrymmen: namnutrymmet **Shared Identity** och namnområdet **User Identity**.
 
 * Namnutrymmet för delad identitet representerar den enhet som kan användas av flera användare. Adobe rekommenderar att kunderna använder ECID som delad enhetsidentifierare.
-* Namnområdet för användaridentitet mappas till det identitetsnamnområde som motsvarar användarens inloggnings-ID, det kan vara användarens CRM-ID, e-postadress, hashad e-post eller telefonnummer.
+* Namnområdet för användaridentitet mappas till det identitetsnamnområde som motsvarar användarens inloggnings-ID, det kan vara användarens CRMID, e-postadress, hashad e-post eller telefonnummer.
 
 En delad enhet, som en surfplatta, har ett **namnområde för delad identitet**. Å andra sidan har varje användare av en delad enhet ett eget angivet **Namnområde för användaridentitet** som motsvarar deras respektive inloggnings-ID. En surfplatta som Kevin och Nora delar för e-handel har till exempel ett eget ECID `1234`, medan Kevin har ett eget namnområde för användaridentitet som mappas till hans `kevin@email.com`-konto och Nora har ett eget namnområde för användaridentitet mappat till sitt `nora@email.com`-konto.
 
@@ -72,17 +72,17 @@ Titta på följande exempel för att få en bättre förståelse för hur [!DNL 
 
 >[!NOTE]
 >
->I det här diagrammet är namnområdet för delad identitet konfigurerat till ECID och namnområdet för användaridentitet är konfigurerat till CRM-ID.
+>I det här diagrammet är namnområdet för delad identitet konfigurerat till ECID och namnområdet för användaridentitet är konfigurerat till CRMID.
 
 ![diagram](./images/shared-device/diagram.png)
 
 * Kevin och Nora delar en surfplatta för att besöka en e-handelswebbplats. De har dock båda sina egna oberoende konton som de använder för att surfa och handla online.
    * Som en delad enhet har surfplattan ett motsvarande ECID, som representerar webbläsarens cookie-ID.
-* Anta att Kevin använder surfplattan och **loggar in** på sitt e-handelskonto för att söka efter hörlurar, vilket innebär att Kevin&#39;s CRM ID (**Namnområde för användaridentitet**) nu är länkat till surfplatsens ECID (**Namnområde för delad identitet**). Surfplattans surfdata är nu inbyggt i Kevins identitetsdiagram.
-   * Om Kevin **loggar ut** och Nora använder surfplattan och **loggar in** på sitt eget konto och köper en kamera, är hennes CRM-ID nu länkat till surfplattans ECID. Därför är surfplattets surfdata nu inbyggt i Noras identitetsdiagram.
-   * Om Nora **inte loggar ut** och Kevin använder surfplattan, men **inte loggar in**, är surfplattans surfdata fortfarande inbyggda i Nora, eftersom hon fortfarande är den autentiserade användaren och hennes CRM-ID fortfarande är länkat till surfplattans ECID.
-   * Om Nora **inte loggar ut** och Kevin använder surfplattan, men **inte loggar in**, så är surfplattets surfdata fortfarande inbyggda i Noras identitetsdiagram, eftersom hennes CRM-ID fortfarande är länkat till surfplattans ECID som den **senaste autentiserade användaren**.
-   * Om Kevin **loggar in** igen länkas hans CRM-ID till surfplatsens ECID, eftersom han nu är den sista autentiserade användaren och surfplattets surfdata nu ingår i identitetsdiagrammet.
+* Anta att Kevin använder surfplattan och **loggar in** på sitt e-handelskonto för att söka efter hörlurar, vilket innebär att Kevin&#39;s CRMID (**Namespace för användaridentitet**) nu är länkat till surfplattets ECID (**Namnområde för delad identitet**). Surfplattans surfdata är nu inbyggt i Kevins identitetsdiagram.
+   * Om Kevin **loggar ut** och Nora använder surfplattan och **loggar in** på sitt eget konto och köper en kamera, är hennes CRMID nu länkat till surfplattans ECID. Därför är surfplattets surfdata nu inbyggt i Noras identitetsdiagram.
+   * Om Nora **inte loggar ut** och Kevin använder surfplattan, men **inte loggar in**, är surfplattans surfdata fortfarande inbyggda i Nora, eftersom hon fortfarande är den autentiserade användaren och hennes CRMID fortfarande är länkat till surfplattans ECID.
+   * Om Nora **loggar ut** och Kevin använder surfplattan, men **inte loggar in**, så är surfplattets surfdata fortfarande inbyggda i Noras identitetsdiagram, eftersom hennes CRMID-värde fortfarande är länkat till surfplattets ECID som den **senaste autentiserade användaren**.
+   * Om Kevin **loggar in** igen länkas hans CRMID till surfplatsens ECID, eftersom han nu är den sista autentiserade användaren och surfplattets surfdata nu införlivas med identitetsdiagrammet.
 
 ### Så här sammanfogar [!DNL Profile Service] profilfragment med [!DNL Shared Device Detection] aktiverat
 

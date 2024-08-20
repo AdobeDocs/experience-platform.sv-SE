@@ -2,9 +2,9 @@
 title: Översikt över namnområde för identitet
 description: Lär dig mer om identitetsnamnutrymmen i identitetstjänsten.
 exl-id: 86cfc7ae-943d-4474-90c8-e368afa48b7c
-source-git-commit: 59ac3d8b7fee0327396c990ef309ca3a4f292a77
+source-git-commit: 2a2e3fcc4c118925795951a459a2ed93dfd7f7d7
 workflow-type: tm+mt
-source-wordcount: '1850'
+source-wordcount: '1846'
 ht-degree: 0%
 
 ---
@@ -35,7 +35,7 @@ Identitetsnamnutrymmen kräver förståelse för olika Adobe Experience Platform
 >abstract="Ett identitetsvärde är en identifierare som representerar en unik individ, organisation eller resurs. Kontexten eller typen av identitet som värdet representerar definieras av ett motsvarande identitetsnamnutrymme. När postdata matchas mellan profilfragment måste namnutrymmet och identitetsvärdet matcha. När postdata matchas mellan profilfragment måste namnutrymmet och identitetsvärdet matcha."
 >text="Learn more in documentation"
 
-En fullständigt kvalificerad identitet innehåller två komponenter: ett **identitetsvärde** och ett **identitetsnamnområde**. Om värdet för en identitet till exempel är `scott@acme.com`, ger ett namnutrymme kontext till det här värdet genom att det särskiljs som en e-postadress. På samma sätt kan ett namnområde skilja `555-123-456` från ett telefonnummer och `3126ABC` från ett CRM-ID. I princip ger **ett namnutrymme kontext till en given identitet**. När postdata matchas mellan profilfragment, som när [!DNL Real-Time Customer Profile] sammanfogar profildata, måste både identitetsvärdet och namnutrymmet matcha.
+En fullständigt kvalificerad identitet innehåller två komponenter: ett **identitetsvärde** och ett **identitetsnamnområde**. Om värdet för en identitet till exempel är `scott@acme.com`, ger ett namnutrymme kontext till det här värdet genom att det särskiljs som en e-postadress. På samma sätt kan ett namnutrymme skilja `555-123-456` från ett telefonnummer och `3126ABC` som ett CRMID. I princip ger **ett namnutrymme kontext till en given identitet**. När postdata matchas mellan profilfragment, som när [!DNL Real-Time Customer Profile] sammanfogar profildata, måste både identitetsvärdet och namnutrymmet matcha.
 
 Två profilfragment kan t.ex. innehålla olika primära ID:n, men de delar samma värde för namnutrymmet&quot;E-post&quot;. Därför kan Experience Platform se att dessa fragment faktiskt är samma individ och sammanför data i identitetsdiagrammet för individen.
 
@@ -47,8 +47,8 @@ Ett annat sätt att bättre förstå begreppet namnutrymme är att överväga ve
 
 Använd samma logik för identitetstjänsten:
 
-* Ett ögonblick kan identitetsvärdet för `1-234-567-8900` se ut som ett telefonnummer. Ur ett systemperspektiv kan dock det här värdet ha konfigurerats som ett CRM-ID. Identitetstjänsten skulle inte kunna använda den nödvändiga kontexten för det här identitetsvärdet utan ett motsvarande namnutrymme.
-* Ett annat exempel är identitetsvärdet för: `john@gmail.com`. Även om det här identitetsvärdet enkelt kan antas vara ett e-postmeddelande är det helt möjligt att det har konfigurerats som ett anpassat CRM-ID för namnområde. Med namnutrymme kan du skilja `Email:john@gmail.com` från `CRM ID:john@gmail.com`.
+* Ett ögonblick kan identitetsvärdet för `1-234-567-8900` se ut som ett telefonnummer. Ur ett systemperspektiv kunde det här värdet dock ha konfigurerats som ett CRMID. Identitetstjänsten skulle inte kunna använda den nödvändiga kontexten för det här identitetsvärdet utan ett motsvarande namnutrymme.
+* Ett annat exempel är identitetsvärdet för: `john@gmail.com`. Även om det här identitetsvärdet enkelt kan antas vara ett e-postmeddelande är det helt möjligt att det har konfigurerats som ett anpassat namnområdes-CRMID. Med namnutrymme kan du skilja `Email:john@gmail.com` från `CRMID:john@gmail.com`.
 
 >[!ENDSHADEBOX]
 
@@ -81,7 +81,7 @@ Följande identitetstyper är tillgängliga i Experience Platform:
 | Identitetstyp | Beskrivning |
 | --- | --- |
 | Cookie-ID | Cookie-ID:n identifierar webbläsare. Dessa identiteter är viktiga för expansion och utgör huvuddelen av identitetsdiagrammet. Av naturen sjunker de dock snabbt och förlorar sitt värde över tiden. |
-| Enhets-ID | Enhetsoberoende ID:n identifierar en individ och knyter vanligtvis samman andra ID:n. Exempel är inloggnings-ID, CRM-ID och lojalitets-ID. Detta är en indikation till [!DNL Identity Service] att hantera värdet känsligt. |
+| Enhets-ID | Enhetsoberoende ID:n identifierar en individ och knyter vanligtvis samman andra ID:n. Exempel är inloggnings-ID, CRMID och lojalitets-ID. Detta är en indikation till [!DNL Identity Service] att hantera värdet känsligt. |
 | Enhets-ID | Enhets-ID:n identifierar maskinvaruenheter som IDFA (iPhone och iPad), GAID (Android) och RIDA (Roku) och kan delas av flera personer i hushåll. |
 | E-postadress | E-postadresser är ofta kopplade till en person och kan därför användas för att identifiera den personen i olika kanaler. Identiteter av den här typen omfattar personligt identifierbar information (PII). Detta är en indikation till [!DNL Identity Service] att hantera värdet känsligt. |
 | Identifierare för icke-personer | ID:n som inte är personer används för att lagra identifierare som kräver namnutrymmen men som inte är anslutna till ett personkluster. Till exempel en produkt-SKU, data relaterade till produkter, organisationer eller butiker. |

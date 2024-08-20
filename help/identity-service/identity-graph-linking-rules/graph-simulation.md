@@ -3,9 +3,9 @@ title: Användargränssnittshandbok för diagramsimulering
 description: Lär dig hur du använder Graph Simulation i gränssnittet för identitetstjänsten.
 badge: Beta
 exl-id: 89f0cf6e-c43f-40ec-859a-f3b73a6da8c8
-source-git-commit: 7daa9191f2e095f01c7c09f02f87aa8724e2e325
+source-git-commit: 2a2e3fcc4c118925795951a459a2ed93dfd7f7d7
 workflow-type: tm+mt
-source-wordcount: '1399'
+source-wordcount: '1398'
 ht-degree: 0%
 
 ---
@@ -142,7 +142,7 @@ En tom konfigurationsrad visas. Börja med att ange samma namnutrymme som du anv
 
 Upprepa sedan samma steg och lägg till ditt andra namnutrymme, som i det här fallet är ECID. När alla namnutrymmen har angetts kan du börja konfigurera deras prioriteringar och unika utseende.
 
-* **Namnområdesprioritet**: Namnutrymmets prioritet avgör dess relativa betydelse jämfört med andra namnutrymmen i ett givet identitetsdiagram. Om identitetsdiagrammet till exempel har fyra olika namnutrymmen: CRM ID, ECID, Email och Apple IDFA, kan du konfigurera prioriteter för att fastställa prioritetsordningen för det fyra namnutrymmet.
+* **Namnområdesprioritet**: Namnutrymmets prioritet avgör dess relativa betydelse jämfört med andra namnutrymmen i ett givet identitetsdiagram. Om identitetsdiagrammet till exempel har fyra olika namnutrymmen: CRMID, ECID, Email och Apple IDFA, kan du konfigurera prioriteter för att fastställa prioritetsordningen för de fyra namnutrymmena.
 * **Unikt namnområde**: Om ett namnområde har angetts som unikt, genererar identitetstjänsten diagram med kopian att det bara kan finnas en identitet med ett givet unikt namnområde. Om namnutrymmet E-post till exempel har angetts som ett unikt namnutrymme kan ett diagram bara ha en identitet med E-post. Om det finns mer än en identitet med e-postnamnutrymmet tas den äldsta länken bort.
 
 Om du vill konfigurera namnutrymmesprioritet markerar du och drar namnutrymmesraderna till önskad prioritetsordning, där den översta raden representerar högre prioritet och den nedersta raden motsvarar lägre prioritet. Om du vill ange ett namnutrymme som unikt markerar du kryssrutan **[!UICONTROL Unique Per Graph]**.

@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Översikt över identitetstjänsten
 description: Adobe Experience Platform identitetstjänst hjälper er att få en bättre bild av era kunder och deras beteende genom att skapa en bro mellan identiteter på olika enheter och system, så att ni kan leverera slagkraftiga, personliga digitala upplevelser i realtid.
 exl-id: a22dc3f0-3b7d-4060-af3f-fe4963b45f18
-source-git-commit: 16e49628df73d5ce97ef890dbc0a6f2c8e7de346
+source-git-commit: 2a2e3fcc4c118925795951a459a2ed93dfd7f7d7
 workflow-type: tm+mt
-source-wordcount: '1560'
+source-wordcount: '1555'
 ht-degree: 0%
 
 ---
@@ -15,7 +15,7 @@ ht-degree: 0%
 
 För att kunna leverera relevanta digitala upplevelser behöver ni en heltäckande och korrekt representation av de verkliga enheter som utgör er kundbas.
 
-Organisationer och företag har idag en stor mängd olika datauppsättningar: dina enskilda kunder representeras av en mängd olika identifierare. Kunden kan länkas till olika webbläsare (Safari, Google Chrome), maskinvaruenheter (telefoner, bärbara datorer) och andra personidentifierare (CRM-ID:n, e-postkonton). Detta skapar en osammanhängande bild av kunden.
+Organisationer och företag har idag en stor mängd olika datauppsättningar: dina enskilda kunder representeras av en mängd olika identifierare. Kunden kan länkas till olika webbläsare (Safari, Google Chrome), maskinvaruenheter (telefoner, bärbara datorer) och andra person-ID:n (CRMID:n, e-postkonton). Detta skapar en osammanhängande bild av kunden.
 
 Du kan lösa dessa problem med Adobe Experience Platform Identity Service och dess funktioner:
 
@@ -78,20 +78,20 @@ En länk mellan två identiteter skapas när identitetsnamnutrymmet och identite
 
 En vanlig inloggningshändelse **skickar två identiteter** till Experience Platform:
 
-* Identifieraren (till exempel ett CRM-ID) som representerar en autentiserad användare.
+* Personidentifieraren (till exempel ett CRMID) som representerar en autentiserad användare.
 * Webbläsaridentifieraren (t.ex. ett ECID) som representerar webbläsaren.
 
 Titta på följande exempel:
 
-* Du loggar in med kombinationen användarnamn och lösenord till en e-handelswebbplats med din bärbara dator. Den här händelsen kvalificerar dig som en autentiserad användare, så identitetstjänsten känner igen ditt CRM-ID.
+* Du loggar in med kombinationen användarnamn och lösenord till en e-handelswebbplats med din bärbara dator. Den här händelsen kvalificerar dig som en autentiserad användare, så identitetstjänsten känner igen ditt CRMID.
 * Din användning av en webbläsare för att komma åt e-handelsplatsen känns också igen som en händelse av Identity Service. Den här händelsen representeras i identitetstjänsten via ett ECID.
 * Bakom scenerna bearbetar identitetstjänsten de två händelserna som: `CRM_ID:ABC, ECID:123`.
-   * CRM-ID: ABC är det namnutrymme och värde som representerar dig som autentiserad användare.
+   * CRMID: ABC är det namnutrymme och värde som representerar dig som autentiserad användare.
    * ECID: 123 är namnutrymmet och värdet som representerar webbläsaranvändningen på din bärbara dator.
 * Om du sedan loggar in med samma inloggningsuppgifter på samma e-handelswebbplats, men använder webbläsaren på telefonen i stället för webbläsaren på din bärbara dator, registreras ett nytt ECID i identitetstjänsten.
 * Bakom kulisserna bearbetar identitetstjänsten den nya händelsen som `{CRM_ID:ABC, ECID:456}`, där CRM_ID: ABC representerar ditt autentiserade kund-ID och ECID:456 representerar webbläsaren på din mobila enhet.
 
-Med tanke på scenarierna ovan upprättar identitetstjänsten en länk mellan `{CRM_ID:ABC, ECID:123}` och `{CRM_ID:ABC, ECID:456}`. Detta resulterar i ett identitetsdiagram där du&quot;äger&quot; tre identiteter: en för personidentifierare (CRM ID) och två för cookie-identifierare (ECID).
+Med tanke på scenarierna ovan upprättar identitetstjänsten en länk mellan `{CRM_ID:ABC, ECID:123}` och `{CRM_ID:ABC, ECID:456}`. Detta resulterar i ett identitetsdiagram där du&quot;äger&quot; tre identiteter: en för personidentifierare (CRMID) och två för cookie-identifierare (ECID).
 
 Mer information finns i handboken om [hur identitetstjänsten länkar identiteter](./features/identity-linking-logic.md).
 

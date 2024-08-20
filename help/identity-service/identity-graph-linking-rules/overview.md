@@ -3,9 +3,9 @@ title: Översikt över regler för länkning av identitetsdiagram
 description: Lär dig mer om länkningsregler för identitetsdiagram i identitetstjänsten.
 badge: Beta
 exl-id: 317df52a-d3ae-4c21-bcac-802dceed4e53
-source-git-commit: 7daa9191f2e095f01c7c09f02f87aa8724e2e325
+source-git-commit: 2a2e3fcc4c118925795951a459a2ed93dfd7f7d7
 workflow-type: tm+mt
-source-wordcount: '1177'
+source-wordcount: '1170'
 ht-degree: 0%
 
 ---
@@ -26,13 +26,13 @@ ht-degree: 0%
 * [Exempel på diagramkonfigurationer](./configuration.md)
 * [Exempel på scenarier](./example-scenarios.md)
 
-Med Adobe Experience Platform Identity Service och Real-Time Customer Profile är det enkelt att anta att dina data är perfekt insamlade och att alla sammanfogade profiler representerar en enskild person via en personidentifierare, till exempel ett CRM-ID. Det finns emellertid möjliga scenarier där vissa data kan försöka sammanfoga flera olika profiler till en enda profil (&quot;komprimera diagram&quot;). För att förhindra dessa oönskade sammanfogningar kan du använda konfigurationer som tillhandahålls via länkningsregler för identitetsdiagram och tillåta korrekt personalisering för dina användare.
+Med Adobe Experience Platform Identity Service och Real-Time Customer Profile är det enkelt att anta att dina data är perfekt insamlade och att alla sammanfogade profiler representerar en enskild person via en personidentifierare, till exempel ett CRMID. Det finns emellertid möjliga scenarier där vissa data kan försöka sammanfoga flera olika profiler till en enda profil (&quot;komprimera diagram&quot;). För att förhindra dessa oönskade sammanfogningar kan du använda konfigurationer som tillhandahålls via länkningsregler för identitetsdiagram och tillåta korrekt personalisering för dina användare.
 
 ## Exempel på scenarier där komprimering av diagram kan inträffa
 
 * **Delad enhet**: Delad enhet avser enheter som används av mer än en person. Exempel på delade enheter är surfplattor, biblioteksdatorer och kioskdatorer.
 * **Felaktiga e-post- och telefonnummer**: Felaktiga e-post- och telefonnummer hänvisar till att slutanvändare registrerar ogiltig kontaktinformation, till exempel&quot;test<span>@test.com&quot; för e-post och&quot;+1-111-1111&quot; för telefonnummer.
-* **Felaktiga eller felaktiga identitetsvärden**: Felaktiga eller felaktiga identitetsvärden refererar till icke-unika identitetsvärden som kan sammanfoga CRM-ID:n. IDFA:er måste till exempel ha 36 tecken (32 alfanumeriska tecken och fyra bindestreck), men det finns scenarier där en IDFA med identitetsvärdet &quot;user_null&quot; kan importeras. Telefonnummer har på liknande sätt bara stöd för numeriska tecken, men ett telefonnamnutrymme med identitetsvärdet &quot;inte specificerat&quot; kan kapslas.
+* **Felaktiga eller felaktiga identitetsvärden**: Felaktiga eller felaktiga identitetsvärden refererar till icke-unika identitetsvärden som kan sammanfoga CRMID:n. IDFA:er måste till exempel ha 36 tecken (32 alfanumeriska tecken och fyra bindestreck), men det finns scenarier där en IDFA med identitetsvärdet &quot;user_null&quot; kan importeras. Telefonnummer har på liknande sätt bara stöd för numeriska tecken, men ett telefonnamnutrymme med identitetsvärdet &quot;inte specificerat&quot; kan kapslas.
 
 Mer information om användningsscenarier för länkningsregler för identitetsdiagram finns i dokumentet om [exempelscenarier](./example-scenarios.md).
 
@@ -60,15 +60,15 @@ Tänk på följande scenario:
 * Scott använder en surfplatta och öppnar sin webbläsare Google Chrome för att gå till nike<span>.com, där han loggar in och bläddrar efter nya basketskor.
    * Bakom scenerna loggar det här scenariot följande identiteter:
       * Ett ECID-namnutrymme och -värde som representerar webbläsarens användning
-      * Ett CRM ID-namnutrymme och värde som representerar den autentiserade användaren (Scott loggade in med kombinationen användarnamn och lösenord).
+      * Ett CRMID-namnutrymme och -värde som representerar den autentiserade användaren (Scott loggade in med sin kombination av användarnamn och lösenord).
 * Hans son Peter använder sedan samma surfplatta och även Google Chrome för att gå till nike<span>.com, där han loggar in med sitt eget konto för att söka efter fotbollsutrustning.
    * Bakom scenerna loggar det här scenariot följande identiteter:
       * Samma ECID-namnutrymme och värde som representerar webbläsaren.
-      * Ett nytt CRM ID-namnutrymme och värde som representerar den autentiserade användaren.
+      * Ett nytt CRMID-namnutrymme och värde som representerar den autentiserade användaren.
 
-Om CRM-ID har konfigurerats som ett unikt namnområde delas CRM-ID:n upp i två separata identitetsdiagram i identitetoptimeringsalgoritmen, i stället för att sammanfoga dem.
+Om CRMID har konfigurerats som ett unikt namnutrymme delas CRMID:n upp i två separata identitetsdiagram i identitetsoptimeringsalgoritmen, i stället för att sammanfoga dem.
 
-Om du inte konfigurerar ett unikt namnutrymme kan du få oönskade diagramsammanfogningar, till exempel två identiteter med samma CRM ID-namnutrymme, men olika identitetsvärden (scenarier som dessa representerar ofta två olika personenheter i samma diagram).
+Om du inte konfigurerar ett unikt namnutrymme kan du få oönskade diagramsammanfogningar, till exempel två identiteter med samma CRMID-namnutrymme, men olika identitetsvärden (scenarier som dessa representerar ofta två olika personenheter i samma diagram).
 
 Du måste konfigurera ett unikt namnutrymme för att informera algoritmen för identitetsoptimering om du vill tillämpa begränsningar för identitetsdata som hämtas till ett givet identitetsdiagram.
 

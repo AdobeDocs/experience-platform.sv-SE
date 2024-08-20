@@ -3,9 +3,9 @@ title: Namnområdesprioritet
 description: Läs om namnområdesprioritet i identitetstjänsten.
 badge: Beta
 exl-id: bb04f02e-3826-45af-b935-752ea7e6ed7c
-source-git-commit: c9610f935a074adf82d96c1eb824c159b18f2837
+source-git-commit: 2a2e3fcc4c118925795951a459a2ed93dfd7f7d7
 workflow-type: tm+mt
-source-wordcount: '1635'
+source-wordcount: '1622'
 ht-degree: 0%
 
 ---
@@ -18,8 +18,8 @@ ht-degree: 0%
 
 Varje kundimplementering är unik och skräddarsydd för att uppfylla en viss organisations mål, och som sådan varierar vikten av en viss namnrymd från kund till kund. Exempel från verkligheten:
 
-* Å ena sidan kan du anse att namnutrymmet E-post representerar en personenhet och därmed är unikt per person. En annan kund kan å andra sidan betrakta e-postnamnutrymmet som en otillförlitlig identifierare och kan därför tillåta att ett enskilt CRM-ID kopplas till flera identiteter med e-postnamnområdet.
-* Du kan samla in onlinebeteende med hjälp av namnutrymmet Inloggnings-ID. Detta inloggnings-ID kan ha en 1:1-relation med CRM-ID, som sedan lagrar attribut från ett CRM-system och kan betraktas som det viktigaste namnutrymmet. I det här fallet avgör du att CRM ID-namnutrymmet är en mer korrekt representation av en person, medan namnutrymmet för inloggnings-ID är det näst viktigaste.
+* Å ena sidan kan du anse att namnutrymmet E-post representerar en personenhet och därmed är unikt per person. En annan kund kan å andra sidan betrakta e-postnamnutrymmet som en otillförlitlig identifierare och kan därför tillåta att ett enskilt CRMID kopplas till flera identiteter med e-postnamnutrymmet.
+* Du kan samla in onlinebeteende med hjälp av namnutrymmet Inloggnings-ID. Detta inloggnings-ID kan ha en 1:1-relation med CRMID, som sedan lagrar attribut från ett CRM-system och kan betraktas som det viktigaste namnutrymmet. I det här fallet avgör du att CRMID-namnutrymmet är en mer korrekt representation av en person, medan namnutrymmet för inloggnings-ID är det näst viktigaste.
 
 Du måste skapa konfigurationer i identitetstjänsten som återspeglar hur viktiga dina namnutrymmen är, eftersom detta påverkar hur profiler formas och segmenteras.
 
@@ -49,7 +49,7 @@ En identitet representerar ett objekt i verkligheten. Det finns tre objekt som v
 
 Personnamnutrymmen är relativt oföränderliga jämfört med maskinvaruenheter (som IDFA, GAID), som är relativt oföränderliga jämfört med webbläsare. I princip är du (människa) alltid en enda enhet som kan ha flera maskinvaruenheter (telefon, bärbar dator, surfplatta osv.) och använda flera webbläsare (Google Chrome, Safari, FireFox osv.)
 
-Ett annat sätt att se på det här ämnet är genom kardinalitet. Hur många identiteter kommer att skapas för en viss person? I de flesta fall har en person ett CRM-ID, en handfull identifierare för hårdvaruenheter (IDFA/GAID-återställningar bör inte ske så ofta) och ännu fler cookies (en person kan navigera på flera enheter, använda inkogenläge eller återställa cookies när som helst). I allmänhet anger **lägre kardinalitet ett namnutrymme med ett högre värde**.
+Ett annat sätt att se på det här ämnet är genom kardinalitet. Hur många identiteter kommer att skapas för en viss person? I de flesta fall har en person ett CRMID, en handfull identifierare för hårdvaruenheter (IDFA/GAID-återställning bör inte ske så ofta) och ännu fler cookies (en person kan navigera på flera enheter, använda inkognitoläge eller återställa cookies när som helst). I allmänhet anger **lägre kardinalitet ett namnutrymme med ett högre värde**.
 
 ## Validera inställningarna för namnområdesprioritet
 
@@ -112,9 +112,9 @@ Med tanke på de konfigurationer som beskrivs ovan kommer användaråtgärder oc
 | --- | --- | --- | --- | --- |
 | Visa erbjudandesida för kreditkort | Oautentiserad (anonym) | Webb-SDK | {ECID} | ECID |
 | Visa hjälpsidan | Oautentiserad | Mobil-SDK | {ECID, IDFA} | IDFA |
-| Visa saldo för checkkonto | Autentiserad | Webb-SDK | {CRM-ID, ECID} | CRM-ID |
-| Registrera dig för bostadslån | Autentiserad | Källanslutning för analyser | {CRM ID, ECID, AAID} | CRM-ID |
-| Överför 1 000 dollar från kontroll till besparingar | Autentiserad | Mobil-SDK | {CRM ID, GAID, ECID} | CRM-ID |
+| Visa saldo för checkkonto | Autentiserad | Webb-SDK | {CRMID, ECID} | CRMID |
+| Registrera dig för bostadslån | Autentiserad | Källanslutning för analyser | {CRMID, ECID, AAID} | CRMID |
+| Överför 1 000 dollar från kontroll till besparingar | Autentiserad | Mobil-SDK | {CRMID, GAID, ECID} | CRMID |
 
 {style="table-layout:auto"}
 
@@ -148,7 +148,7 @@ Mer information finns i [Översikt över avancerad livscykelhantering](../../hyg
 
 ### Beräknade attribut
 
-Beräknade attribut använder inte namnområdesprioritet för att beräkna värden. Om du använder beräknade attribut måste du se till att CRM-ID är angivet som din primära identitet för WebSDK. Denna begränsning förväntas bli löst i augusti 2024.
+Beräknade attribut använder inte namnområdesprioritet för att beräkna värden. Om du använder beräknade attribut måste du se till att CRMID har angetts som din primära identitet för WebSDK. Denna begränsning förväntas bli löst i augusti 2024.
 
 Mer information finns i användargränssnittshandboken för [beräknade attribut](../../profile/computed-attributes/ui.md).
 
@@ -168,8 +168,8 @@ Mer information om XDM-scheman finns i översikten [scheman](../../xdm/home.md).
 
 När du väljer data måste du ange ett namnutrymme, som används för att avgöra vilka händelser som beräknar poäng och vilka händelser som lagrar de beräknade poängen. Du rekommenderas att välja det namnutrymme som representerar en person.
 
-* Om du samlar in webbbeteendedata med WebSDk rekommenderar vi att du väljer CRM ID-namnområdet i identitetskartan.
-* Om du samlar in webbbeteendedata med Analytics-källkopplingen bör du välja identitetsbeskrivningen (CRM-ID).
+* Om du samlar in webbbeteendedata med WebSDk rekommenderar vi att du väljer CRMID-namnområdet i identitetskartan.
+* Om du samlar in webbbeteendedata med Analytics-källkopplingen bör du välja identitetsbeskrivningen (CRMID).
 
 Den här konfigurationen resulterar endast i beräkning av bakgrundsmusik med hjälp av autentiserade händelser.
 

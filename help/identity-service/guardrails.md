@@ -3,9 +3,9 @@ keywords: Experience Platform;identitet;identitetstjänst;felsökning;skyddsräc
 title: Gardrutor för identitetstjänsten
 description: Det här dokumentet innehåller information om användning och hastighetsgränser för identitetstjänstens data som hjälper dig att optimera din användning av identitetsdiagrammet.
 exl-id: bd86d8bf-53fd-4d76-ad01-da473a1999ab
-source-git-commit: 6d36a6ff1243b15dcafc2f37d8bad982730f7a39
+source-git-commit: 2a2e3fcc4c118925795951a459a2ed93dfd7f7d7
 workflow-type: tm+mt
-source-wordcount: '1591'
+source-wordcount: '1585'
 ht-degree: 0%
 
 ---
@@ -92,7 +92,7 @@ I följande avsnitt beskrivs hur borttagningslogiken påverkar identitetstjänst
 
 Kontakta ditt Adobe-kontoteam för att begära en ändring av identitetstypen om din produktionssandlåda innehåller:
 
-* Ett anpassat namnutrymme där personidentifierarna (t.ex. CRM-ID:n) är konfigurerade som cookie/enhetsidentitetstyp.
+* Ett anpassat namnutrymme där personidentifierare (till exempel CRMID) är konfigurerade som cookie/enhetsidentitetstyp.
 * Ett anpassat namnutrymme där cookie-/enhetsidentifierare har konfigurerats som identitetstyp för olika enheter.
 
 När den här funktionen är tillgänglig kommer diagram som överskrider gränsen på 50 identiteter att minskas ned till 50 identiteter. För Real-Time CDP B2C Edition kan detta resultera i en minimal ökning av antalet profiler som kvalificerar för en viss målgrupp, eftersom dessa profiler tidigare ignorerades från segmentering och aktivering.
@@ -106,7 +106,7 @@ Borttagning sker endast med data i identitetstjänsten och inte med kundprofilen
 
 #### Kundprofil och WebSDK i realtid: borttagning av primär identitet
 
-Om du vill bevara dina autentiserade händelser mot CRM-ID:t rekommenderar vi att du ändrar dina primära ID:n från ECID till CRM ID. Läs följande dokument för steg om hur du implementerar den här ändringen:
+Om du vill bevara dina autentiserade händelser mot CRMID rekommenderar vi att du ändrar dina primära ID:n från ECID till CRMID. Läs följande dokument för steg om hur du implementerar den här ändringen:
 
 * [Konfigurera identitetskarta för Experience Platform-taggar](../tags/extensions/client/web-sdk/data-element-types.md#identity-map).
 * [Identitetsdata i Experience Platform Web SDK](../web-sdk/identity/overview.md#using-identitymap)
@@ -149,7 +149,7 @@ Därför tar identitetstjänsten bort den äldsta identiteten baserat på tidsst
 
 >[!TAB Diagramutdata]
 
-Som ett resultat av att ECID:35577 togs bort kommer även kanterna som kopplade CRM ID:60013 och CRM ID:25212 med det nu borttagna ECID:35577 att tas bort. Borttagningsprocessen gör att diagrammet delas upp i två mindre diagram.
+Som ett resultat av att ECID:35577 togs bort kommer även kanterna som länkade CRMID:60013 och CRMID:25212 med det nu borttagna ECID:35577 att tas bort. Borttagningsprocessen gör att diagrammet delas upp i två mindre diagram.
 
 ![](./images/guardrails/after-split.png)
 
@@ -176,7 +176,7 @@ I exemplet nedan importeras ECID:21011 och länkas till diagrammet vid `timestam
 
 Därför tar identitetstjänsten endast bort den äldsta identiteten från identitetsdiagrammet, som i det här fallet är ECID:35577. Borttagningen av ECID:35577 leder också till att följande tas bort:
 
-* Länken mellan CRM-ID: 60013 och det nu borttagna ECID:35577, vilket resulterar i ett delat diagram.
+* Länken mellan CRMID: 60013 och det nu borttagna ECID:35577, vilket resulterar i ett delat diagram.
 * IDFA: 32110, IDFA: 02383 och de återstående identiteterna representerade av `(...)`. Dessa identiteter tas bort eftersom de inte är länkade till några andra identiteter separat och därför inte kan representeras i ett diagram.
 
 ![](./images/guardrails/hub-and-spoke-process.png)

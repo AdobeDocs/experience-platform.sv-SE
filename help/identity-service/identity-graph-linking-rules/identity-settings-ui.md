@@ -3,9 +3,9 @@ title: Användargränssnitt för identitetsinställningar
 description: Lär dig hur du använder användargränssnittet för identitetsinställningar.
 badge: Beta
 exl-id: 738b7617-706d-46e1-8e61-a34855ab976e
-source-git-commit: 536770d0c3e7e93921fe40887dafa5c76e851f5e
+source-git-commit: 2a2e3fcc4c118925795951a459a2ed93dfd7f7d7
 workflow-type: tm+mt
-source-wordcount: '504'
+source-wordcount: '502'
 ht-degree: 0%
 
 ---
@@ -49,7 +49,7 @@ Om du vill ange ett unikt namnutrymme markerar du kryssrutan [!UICONTROL Unique 
 
 ![Två namnutrymmen har markerats och definierats som unika.](../images/rules/unique-namespace.png)
 
-När de unika namnutrymmena har skapats kan diagram inte längre ha flera identiteter som innehåller ett unikt namnutrymme. Om du till exempel har angett CRM-ID som ett unikt namnutrymme, kan ett diagram bara ha en identitet med CRM-ID-namnutrymmet. Mer information finns i översikten [för algoritmen för identitetsoptimering](./identity-optimization-algorithm.md#unique-namespace).
+När de unika namnutrymmena har skapats kan diagram inte längre ha flera identiteter som innehåller ett unikt namnutrymme. Om du till exempel har angett CRMID som ett unikt namnutrymme, kan ett diagram bara ha en identitet med CRMID-namnutrymmet. Mer information finns i översikten [för algoritmen för identitetsoptimering](./identity-optimization-algorithm.md#unique-namespace).
 
 När du är klar med dina konfigurationer väljer du **[!UICONTROL Next]**. Ett bekräftelsemeddelande visas. Använd det här tillfället för att verifiera att dina konfigurationer är korrekta och välj sedan **[!UICONTROL Finish]**.
 

@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Felsökningsguide för identitetstjänst
 description: Det här dokumentet innehåller svar på vanliga frågor om Adobe Experience Platform Identity Service samt en felsökningsguide för vanliga fel.
 exl-id: dac31bc3-7003-46d6-9d41-9f6fd3645c2c
-source-git-commit: 3fe94be9f50d64fc893b16555ab9373604b62e59
+source-git-commit: 2a2e3fcc4c118925795951a459a2ed93dfd7f7d7
 workflow-type: tm+mt
-source-wordcount: '2166'
+source-wordcount: '2165'
 ht-degree: 0%
 
 ---
@@ -31,7 +31,7 @@ Genom att sätta etiketter på vissa datafält som identiteter i data för post-
 
 ## Vad är kända och anonyma identiteter?
 
-En känd identitet avser ett identitetsvärde som kan användas fristående eller tillsammans med annan information för att identifiera, kontakta eller hitta en enskild person. Exempel på kända identiteter kan vara e-postadresser, telefonnummer och CRM-ID.
+En känd identitet avser ett identitetsvärde som kan användas fristående eller tillsammans med annan information för att identifiera, kontakta eller hitta en enskild person. Exempel på kända identiteter kan vara e-postadresser, telefonnummer och CRMID.
 
 En anonym identitet refererar till ett identitetsvärde som inte kan användas fristående eller tillsammans med annan information för att identifiera, kontakta eller hitta en enskild person (till exempel ett cookie-ID).
 
