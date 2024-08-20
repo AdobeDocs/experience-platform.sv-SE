@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Översikt över dataöverföring
 description: I det här dokumentet introduceras de tre viktigaste sätten att överföra data till plattformen, med länkar till deras respektive översiktsdokumentation för mer detaljerad information.
 exl-id: c189dd4a-5c59-4189-a18c-a3e45a9ff01d
-source-git-commit: cde8db1f75cf83451e240f32a877b9d6d26a0e18
+source-git-commit: 15de9351203f6b43653042ab73ede17781486160
 workflow-type: tm+mt
-source-wordcount: '521'
+source-wordcount: '578'
 ht-degree: 0%
 
 ---
@@ -42,6 +42,12 @@ Med [!DNL Experience Platform] kan du konfigurera källanslutningar till olika d
 Source-anslutningar kan konfigureras för att samla in data från andra Adobe-program (till exempel Adobe Analytics och Adobe Audience Manager), molnlagringskällor från tredje part (till exempel [!DNL Azure Blob], [!DNL Amazon] S3, FTP-servrar och SFTP-servrar) och CRM-system från tredje part (till exempel [!DNL Microsoft Dynamics] och [!DNL Salesforce]).
 
 Mer information finns i [Källöversikt](../sources/home.md).
+
+### Skapa ML-stödda scheman {#ml-assisted-schema-creation}
+
+För att snabbt integrera nya datakällor kan du nu använda maskininlärningsalgoritmer för att generera ett schema från exempeldata. Den här automatiseringen förenklar framtagningen av korrekta scheman, minskar antalet fel och snabbar upp processen från datainsamling till analys och insikter.
+
+Mer information om det här arbetsflödet finns i guiden [Skapa XML-stödda scheman](../xdm/ui/ml-assisted-schema-creation.md).
 
 ## Nästa steg och ytterligare resurser
 

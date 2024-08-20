@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Skapa och redigera klasser i användargränssnittet
 description: Lär dig hur du skapar och redigerar klasser i användargränssnittet i Experience Platform.
 exl-id: 1b4c3996-2319-45dd-9edd-a5bcad46578b
-source-git-commit: c2832821ea6f9f630e480c6412ca07af788efd66
+source-git-commit: 15de9351203f6b43653042ab73ede17781486160
 workflow-type: tm+mt
-source-wordcount: '1369'
+source-wordcount: '1469'
 ht-degree: 0%
 
 ---
@@ -60,7 +60,15 @@ Klassen som du har skapat är tillgänglig och visas i vyn [!UICONTROL Classes].
 
 ### Skapa eller redigera en klass {#create-or-edit}
 
-Om du väljer **[!UICONTROL Create schema]** visas arbetsflödet [!UICONTROL Create schema]. Välj **[!UICONTROL Other]** i avsnittet [!UICONTROL Schema details]. En lista över tillgängliga klasser visas. Härifrån kan du bläddra bland och filtrera befintliga klasser som den nya klassen ska baseras på.
+Om du väljer att skapa ett schema manuellt kan du skapa eller redigera en befintlig klass som en del av arbetsflödet. Välj **[!UICONTROL Create schema]** följt av **[!UICONTROL Manual]** i dialogrutan [!UICONTROL Create a schema] som visas.
+
+>[!NOTE]
+>
+>Om du använder arbetsflödet för att skapa XML-stödda scheman kan du överföra en fil och använda ML-algoritmer för att generera ett rekommenderat schema. I arbetsflödet där du skapar scheman behöver du inte ange basklassen för ditt schema. Mer information om hur ML kan rekommendera en schemastruktur baserad på en csv-fil finns i guiden [Maskinininlärningsassisterade schemaskapare](../ml-assisted-schema-creation.md).
+
+![Dialogrutan Skapa ett schema med arbetsflödesalternativen och välj markerad.](../../images/ui/resources/classes/manually-create-a-schema.png)
+
+Arbetsflödet för att skapa scheman visas. Välj **[!UICONTROL Other]** i avsnittet [!UICONTROL Schema details]. En lista över tillgängliga klasser visas. Härifrån kan du bläddra bland och filtrera befintliga klasser som den nya klassen ska baseras på.
 
 >[!NOTE]
 >

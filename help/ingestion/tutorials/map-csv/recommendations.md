@@ -2,9 +2,9 @@
 title: Mappa en CSV-fil till ett XDM-schema med hjälp av AI-genererade Recommendations
 description: I den här självstudien beskrivs hur du mappar en CSV-fil till ett XDM-schema med hjälp av AI-genererade rekommendationer.
 exl-id: 1daedf0b-5a25-4ca5-ae5d-e9ee1eae9e4d
-source-git-commit: c2832821ea6f9f630e480c6412ca07af788efd66
+source-git-commit: cbebee894d68f60f82e1154f41dcecc76c706a3b
 workflow-type: tm+mt
-source-wordcount: '1034'
+source-wordcount: '1106'
 ht-degree: 0%
 
 ---
@@ -101,3 +101,5 @@ När du är klar med justeringen av schemarekommendationerna för dina källfäl
 I den här guiden beskrivs hur du mappar en CSV-fil till ett XDM-schema med hjälp av AI-genererade rekommendationer, så att du kan överföra data till plattformen genom batchingång.
 
 Anvisningar om hur du mappar en CSV-fil till ett befintligt schema finns i det [befintliga arbetsflödet för schemamappning](./existing-schema.md). Mer information om direktuppspelning av data till plattformen i realtid via färdiga källanslutningar finns i [källans översikt](../../../sources/home.md).
+
+Du kan också använda HTML-algoritmer (Machine Learning) för att **generera ett schema från CSV-exempeldata**. Det här arbetsflödet skapar automatiskt ett nytt schema baserat på CSV-filens struktur och innehåll. Det nya schemat matchar dataformatet så att du sparar tid och får större exakthet när du definierar struktur, fält och datatyper för stora komplexa datauppsättningar. Mer information om det här arbetsflödet finns i guiden [Skapa ML-stödda scheman](../../../xdm/ui/ml-assisted-schema-creation.md).

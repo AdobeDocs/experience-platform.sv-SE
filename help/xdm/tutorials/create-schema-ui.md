@@ -5,9 +5,9 @@ title: Skapa ett schema med Schemaredigeraren
 type: Tutorial
 description: I den här självstudiekursen beskrivs stegen för hur du skapar ett schema med Schemaredigeraren i Experience Platform.
 exl-id: 3edeb879-3ce4-4adb-a0bd-8d7ad2ec6102
-source-git-commit: c2832821ea6f9f630e480c6412ca07af788efd66
+source-git-commit: 15de9351203f6b43653042ab73ede17781486160
 workflow-type: tm+mt
-source-wordcount: '4567'
+source-wordcount: '4668'
 ht-degree: 0%
 
 ---
@@ -46,14 +46,23 @@ Om du vill börja komponera ett schema väljer du **[!UICONTROL Create schema]**
 
 ![Fliken [!UICONTROL Schemas] arbetsyta [!UICONTROL Browse] med [!UICONTROL Create schema] markerad.](../images/tutorials/create-schema/create-schema-button.png)
 
+Dialogrutan [!UICONTROL Create a schema] visas. I den här dialogrutan kan du välja att antingen skapa ett schema manuellt genom att lägga till fält och fältgrupper, eller så kan du överföra en CSV-fil och använda ML-algoritmer för att generera ett schema. Välj ett arbetsflöde för att skapa schema i dialogrutan.
+
+![Dialogrutan Skapa ett schema med arbetsflödesalternativen och välj markerad.](../images/tutorials/create-schema/create-a-schema-dialog.png)
+
+### Manuell eller ML-assisterad schemagenerering {#manual-or-assisted}
+
+Om du vill lära dig hur du kan använda en ML-algoritm för att rekommendera en schemastruktur baserad på en överförd fil kan du läsa [guiden ](../ui/ml-assisted-schema-creation.md) för att skapa schema med maskininlärningsstöd. Den här användargränssnittshandboken fokuserar på det manuella arbetsflödet.
+
+### Välja en basklass {#choose-a-class}
+
 Arbetsflödet [!UICONTROL Create schema] visas. Välj sedan en basklass för schemat. Du kan välja mellan huvudklasserna för [!UICONTROL XDM Individual Profile] och [!UICONTROL XDM ExperienceEvent], eller [!UICONTROL Other] om dessa klasser inte passar dina syften. Med klassalternativet [!UICONTROL Other] kan du antingen [skapa en ny klass](#create-new-class) eller välja bland andra befintliga klasser.
 
-Mer information om de här klasserna finns i [dokumentationen för den enskilda XDM-profilen](../classes/individual-profile.md) och [XDM ExperienceEvent](../classes/experienceevent.md) . I den här självstudien väljer du **[!UICONTROL XDM Individual Profile]** följt av **[!UICONTROL Next]**.
-
-<!-- You can  by selecting either **[!UICONTROL Individual Profile]**, **[!UICONTROL Experience Event]**, or **[!UICONTROL Other]**, followed by **[!UICONTROL Next]** to confirm your choice.  -->
-
+Mer information om de här klasserna finns i dokumentationen för [[!UICONTROL XDM individual profile]](../classes/individual-profile.md) och [[!UICONTROL XDM ExperienceEvent]](../classes/experienceevent.md). I den här självstudien väljer du **[!UICONTROL XDM Individual Profile]** följt av **[!UICONTROL Next]**.
 
 ![Arbetsflödet [!UICONTROL Create schema] med alternativen [!UICONTROL XDM individual profile] och [!UICONTROL Next] markerade.](../images/tutorials/create-schema/individual-profile-base-class.png)
+
+### Namn och granskning {#name-and-review}
 
 När du har valt en klass visas avsnittet [!UICONTROL Name and review]. I det här avsnittet anger du ett namn och en beskrivning som identifierar ditt schema. Det finns flera viktiga saker att tänka på när du ska bestämma ett namn för schemat:
 
@@ -68,6 +77,8 @@ I den här självstudiekursen skapas ett schema för att importera data som är 
 Ange en [!UICONTROL Schema display name] som är användarvänlig i textfältet. Ange sedan en lämplig beskrivning för att identifiera schemat. När du har granskat din schemastruktur och är nöjd med dina inställningar väljer du **[!UICONTROL Finish]** för att skapa ditt schema.
 
 ![Avsnittet [!UICONTROL Name and review] i arbetsflödet [!UICONTROL Create schema] med [!UICONTROL Schema display name], [!UICONTROL Description] och [!UICONTROL Finish] markerade.](../images/ui/resources/schemas/name-and-review.png)
+
+### Skapa ditt schema {#compose-your-schema}
 
 [!DNL Schema Editor] visas. Det här är arbetsytan som du kommer att komponera ditt schema på. Det självskrivna schemat skapas automatiskt i **[!UICONTROL Structure]**-delen av arbetsytan när du kommer till redigeraren, tillsammans med standardfälten som ingår i den basklass som du valde. Den tilldelade klassen för schemat listas också under **[!UICONTROL Class]** i avsnittet **[!UICONTROL Composition]**.
 
