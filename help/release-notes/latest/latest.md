@@ -1,123 +1,93 @@
 ---
-title: Versionsinformation om Adobe Experience Platform, juli 2024
-description: Versionsinformation juli 2024 för Adobe Experience Platform.
+title: Versionsinformation om Adobe Experience Platform, augusti 2024
+description: Versionsinformation från augusti 2024 för Adobe Experience Platform.
 exl-id: f854f9e5-71be-4d56-a598-cfeb036716cb
-source-git-commit: c38f6845a4819b648abacea2c36a576dac61f38f
+source-git-commit: 6d8c785a1e876ed6a729efbe01ad8fb4507bda0d
 workflow-type: tm+mt
-source-wordcount: '1225'
+source-wordcount: '1022'
 ht-degree: 2%
 
 ---
 
 # Versionsinformation för Adobe Experience Platform
 
-**Releasedatum: 30 juli 2024**
+**Releasedatum: 20 augusti 2024**
 
-Nya funktioner i Adobe Experience Platform:
-
-- [!BADGE Begränsad tillgänglighet]{type=Informative}[Sammansatt målgruppskomposition](#federated-audience-composition)
+>[!TIP]
+>
+>Visa en [översikt över exempeldokumentationen ](https://experienceleague.adobe.com/en/docs/experience-platform/rtcdp/use-cases/overview) om användningsfall för att lära dig mer om olika användningsfall, som prospektering, förvärv och mer som din organisation kan uppnå med Real-Time CDP.
 
 Uppdateringar av befintliga funktioner och dokumentation i Experience Platform:
 
-- [Avancerad livscykelhantering av data](#advanced-data-lifecycle-management)
-- [Datainsamling](#data-collection)
-- [Datastyrning](#data-governance)
 - [Mål ](#destinations)
+- [Experience Data Model (XDM)](#xdm)
+- [Identitetstjänst](#identity-service)
 - [Segmenteringstjänst](#segmentation)
 - [Källor](#sources)
-- [Enhetliga taggar](#unified-tags)
-
-## Sammansatt målgrupp {#federated-audience-composition}
-
-Med Federated Audience Composition kan företag sammanställa data för bättre användning i olika situationer. Med detta nya tillvägagångssätt, som Adobe Real-time Customer Data Platform- och/eller Adobe Journey Optimizer-användare, kan ni federera datauppsättningar direkt från ert befintliga datalager för att skapa och berika Adobe Experience Platform målgrupper och attribut i ett och samma system.
-
-Mer information finns i dokumentationen för [sammansatt publiksammansättning (Federated Audience Composition)](https://experienceleague.adobe.com/en/docs/federated-audience-composition/using/home).
-
-## Avancerad livscykelhantering av data {#advanced-data-lifecycle-management}
-
-Experience Platform har en rad funktioner för datahygien som gör att du kan hantera lagrade data genom att ta bort konsumentposter och datauppsättningar programmatiskt. Du kan hantera dina datalager på ett effektivt sätt med arbetsytan Datalängd i användargränssnittet eller genom anrop till API:t för datahygien. Använd dessa funktioner för att säkerställa att informationen används som förväntat, uppdateras när felaktiga data behöver korrigeras och tas bort när organisationsprofiler anser det nödvändigt.
-
-**Ny dokumentation**
-
-| Ny dokumentation | Beskrivning |
-| --- | --- |
-| Referens för [!DNL Data Hygiene API] | Använd API:t för datahygien för att effektivt hantera era datalager i Experience Platform. Med de här funktionerna kan du se till att informationen används som förväntat, uppdateras när den är felaktig och tas bort när organisationsprofiler anser det nödvändigt.<br><br>Läs [API-referensdokumentet för datahygien](https://developer.adobe.com/experience-platform-apis/references/data-hygiene/) om du vill ha mer information om hur du använder API:t. Du kan använda API:t för datahygien för att schemalägga förfallodatum för datauppsättningar, programmässigt korrigera eller ta bort lagrade kundpersonuppgifter och kontrollera dina datahygien. API-referensdokumentet innehåller tillgängliga slutpunkter, frågeparametrar och svarsformat som hjälper dig att hantera dina lagrade kunddata på ett effektivt sätt.</br></br> |
-
-Mer information finns i [Översikt över livscykelhantering för avancerade data](../../hygiene/home.md).
-
-## Datainsamling {#data-collection}
-
-Adobe Experience Platform erbjuder en serie teknologier som gör att ni kan samla in kundupplevelsedata på klientsidan och skicka dem till Experience Platform Edge Network där de kan berikas, omformas och distribueras till Adobe eller andra destinationer än Adobe.
-
-**Nya eller uppdaterade funktioner**
-
-| Typ | Funktion | Beskrivning |
-| --- | --- | --- |
-| Webb-SDK | Spåra automatiskt interaktion med förslag | Du kan nu använda egenskapen `autoTrackPropositionInteractionsEnabled` i Web SDK för att avgöra om Web SDK ska samla in offertinteraktioner automatiskt. Mer information finns i dokumentationen för [`autoTrackPropositionInteractionsEnabled`](../../web-sdk/commands/configure/autotrackpropositioninteractionsenabled.md). |
-
-{style="table-layout:auto"}
-
-**Ny eller uppdaterad dokumentation**
-
-| Ny eller uppdaterad dokumentation | Beskrivning |
-| --- | --- |
-| Nya API-slutpunkter dokumenteras för Reactor API | Slutpunkter för användningsauktorisering för tilläggspaket finns nu i [API-referensdokumentationen för reaktorn](https://developer.adobe.com/experience-platform-apis/references/reactor/). Tilläggsägare kan lägga till, ta bort och hämta paketauktoriseringar för ett tilläggspaket med dessa slutpunkter. |
-| Nytt dokument om användningstillstånd för tilläggspaket - slutpunkter | En översikt över hur ägare av tilläggspaket kan auktorisera andra företag att använda sina privata versioner av paketen i Reactor API finns i dokumentationen för [användningsauktoriseringar för tilläggspaketet](/help/tags/api/endpoints/extension-package-usage-authorizations.md). |
-| Ny guide för delning av privata tillägg | Reaktors-API:ts procedurer för att skapa, godkänna och ta bort tilläggspaket beskrivs i [Dela privata tillägg](/help/tags/api/guides/extension-packages.md) -dokumentationen. |
-
-{style="table-layout:auto"}
-
-Mer information finns i [datainsamlingsöversikten](../../collection/home.md).
-
-## Datastyrning {#data-governance}
-
-Adobe Experience Platform Data Governance är en serie strategier och tekniker som används för att hantera kunddata och säkerställa att regler, begränsningar och policyer som gäller för dataanvändning följs. Det spelar en nyckelroll på olika nivåer inom Experience Platform, bland annat för katalogisering, datalinje, märkning av dataanvändning, dataåtkomstregler och åtkomstkontroll av data för marknadsföringsåtgärder.
-
-**Ny funktion**
-
-| Funktion | Beskrivning |
-| --- | --- |
-| mTLS Service API | API:t för [mTLS-tjänsten](https://experienceleague.adobe.com/en/docs/experience-platform/data-governance/mtls-api/overview) har utformats för att förbättra säkerheten för datautbyte. Använd detta API för att på ett säkert sätt hämta offentliga certifikat som utfärdats av Adobe för organisationens program. Dessa certifikat säkerställer att all kommunikation är autentiserad och krypterad och kan användas för att externt verifiera certifikatens äkthet. Läs [guiden ](https://experienceleague.adobe.com/en/docs/experience-platform/data-governance/mtls-api/public-certificate-endpoint) för slutpunkten för det offentliga certifikatet om du vill veta hur du hämtar offentliga certifikat för din organisations Adobe-program på ett säkert sätt. |
-
-{style="table-layout:auto"}
-
-Mer information finns i [översikten över datastyrning](../../data-governance/home.md).
 
 ## Mål  {#destinations}
 
 [!DNL Destinations] är färdiga integreringar med målplattformar som möjliggör smidig aktivering av data från Adobe Experience Platform. Ni kan använda destinationer för att aktivera kända och okända data för flerkanalskampanjer, e-postkampanjer, riktad reklam och många andra användningsfall.
 
-**Nya mål** {#new-destinations}
-
-| Mål | Beskrivning |
-| ----------- | ----------- |
-| [(Beta) Merkury Enterprise Connections](/help/destinations/catalog/data-partners/merkury-enterprise-connections.md) | Använd målet [!DNL Merkury Enterprise Connections] för att leverera målgrupper säkert till [!DNL Merkury]. [!DNL Merkury] förser marknadsförarna med enkel matchning och leverans av personbaserade målgrupper till [!DNL Merkury]s mer än 80 premiumadresserbara TV-/CTV-anslutningar, utgivare och reklamtekniska anslutningar. [!DNL Merkury] drivs av ett omfattande amerikanskt foto med 268+ miljoner människor. |
-| [(Beta) Merkury Enterprise Identity](/help/destinations/catalog/data-partners/merkury-enterprise-identity.md) | Använd målet [!DNL Merkury Enterprise Identity] för att skapa mer korrekta, heltäckande och insiktsfulla konsumentprofiler. Med förbättrade profildata kan marknadsförarna ge bättre insikter, segment och modeller, vilket ger mer korrekt målinriktning och prediktiv modellering. |
-
-{style="table-layout:auto"}
-
 **Ny eller uppdaterad funktion** {#destinations-new-updated-functionality}
 
-| Funktionalitet | Beskrivning |
+| Funktion | Beskrivning |
 | ----------- | ----------- |
-| Dataflödesövervakning på målgruppsnivå | Övervakning av dataflödena, grupperade efter målgrupper, var tidigare endast tillgängligt för gruppbaserade (filbaserade) mål. Från och med den här versionen är övervakning på målgruppsnivå tillgänglig även för [(Beta) Google kundmatchning + DV360-mål för direktuppspelning](/help/destinations/catalog/advertising/google-customer-match-dv360.md). Läs mer om [övervakning på målgruppsnivå](/help/dataflows/ui/monitor-destinations.md#segment-level-view) och kontakta din Adobe-representant om du vill gå med i betaprogrammet och använda Google kundmatchning + DV360-destinationen. |
-| Stöd för berikande attribut i målgruppsmetadata-makron för Destination SDK | Nu kan du komma åt berikningsattribut i [Destinationens SDK metadatamallar för målgrupper](../../destinations/destination-sdk/functionality/audience-metadata-management.md) via dedikerade makron. Anrikningsattribut är bara tillgängliga för [anpassade överförda målgrupper](../../destinations/destination-sdk/functionality/destination-configuration/schema-configuration.md#external-audiences). Se [aktiveringsguiden för gruppmålare](../../destinations/ui/activate-batch-profile-destinations.md#select-enrichment-attributes) för att se hur markering av anrikningsattribut fungerar. Mer information finns i målgruppsmallen [makrolistan](../../destinations/destination-sdk/functionality/audience-metadata-management.md#macros). |
+| Export av filer on-demand till batchdestinationer är nu allmänt tillgängligt. | Alternativet att exportera filer on demand till batchdestinationer är nu tillgängligt för alla kunder. Mer information finns i den [dedikerade dokumentationen](../../destinations/ui/export-file-now.md). |
+| Redigera exportscheman för flera exporterade målgrupper i [schemaläggningssteget](../../destinations/ui/activate-batch-profile-destinations.md#scheduling). | Möjligheten att redigera exportscheman för flera exporterade målgrupper direkt från schemaläggningssteget i arbetsflödet för målgruppsaktivering är nu tillgängligt för alla kunder. ![Bild av användargränssnittet i Experience Platform som markerar alternativet Redigera schema i schemaläggningssteget.](../2024/assets/august/edit-schedule.png) {width="250" align="center" zoomable="yes"} |
+| Redigera filnamn för flera exporterade målgrupper i [schemaläggningssteget](../../destinations/ui/activate-batch-profile-destinations.md#scheduling). | Nu kan alla kunder redigera namnen på flera exporterade filer direkt från schemaläggningssteget i målgruppsaktiveringsarbetsflödet. ![Bild av användargränssnittet i Experience Platform som markerar alternativet Redigera filnamn i schemaläggningssteget.](../2024/assets/august/edit-file-name.png) {width="250" align="center" zoomable="yes"} |
+| Ta bort flera målgrupper från ett dataflöde från sidan [Målinformation](../../destinations/ui/destination-details-page.md#bulk-remove). | Alternativet att ta bort flera målgrupper från befintliga dataflöden från sidan **[!UICONTROL Destination Details]** är nu tillgängligt för alla kunder. ![Bild av användargränssnittet i Experience Platform som markerar alternativet Ta bort målgrupper på sidan Målinformation.](../2024/assets/august/bulk-remove-audiences.png) {width="250" align="center" zoomable="yes"} |
+| Exportera flera filer på begäran till gruppmål från sidan [Målinformation](../../destinations/ui/destination-details-page.md#bulk-export). | Alternativet att exportera flera filer on-demand till gruppmål från sidan **[!UICONTROL Destination Details]** är nu tillgängligt för alla kunder. ![Bild av användargränssnittet i Experience Platform som markerar alternativet Exportera fil nu på sidan Målinformation.](../2024/assets/august/bulk-export-file-now.png) {width="250" align="center" zoomable="yes"} |
+| Redigera filnamn för flera exporterade målgrupper på sidan [Målinformation](../../destinations/ui/destination-details-page.md#bulk-edit-file-names). | Nu kan du redigera namnen på flera exporterade filer direkt från sidan **[!UICONTROL Destination Details]**. ![Bild av användargränssnittet i Experience Platform som markerar alternativet för redigering av filnamn på sidan med målinformation.](../2024/assets/august/edit-file-name-destination-details.png) {width="250" align="center" zoomable="yes"} |
+| Ta bort flera datauppsättningar från ett dataflöde från sidan [Målinformation](../../destinations/ui/export-datasets.md#remove-dataset). | Alternativet att ta bort flera datauppsättningar från ett dataflöde är nu tillgängligt för alla kunder. ![Bild av användargränssnittet i Experience Platform som markerar alternativet Ta bort datauppsättningar på sidan med målinformation.](../2024/assets/august/bulk-remove-datasets.png) {width="250" align="center" zoomable="yes"} |
 
 {style="table-layout:auto"}
 
 Mer information finns i [målöversikten](../../destinations/home.md).
 
+## Experience Data Model (XDM) {#xdm}
+
+XDM är en öppen källkodsspecifikation som innehåller gemensamma strukturer och definitioner (scheman) för data som hämtas till Adobe Experience Platform. Genom att följa XDM-standarder kan alla kundupplevelsedata införlivas i en gemensam representation för att ge insikter på ett snabbare och mer integrerat sätt. Ni kan få värdefulla insikter från kundåtgärder, definiera kundmålgrupper genom segment och använda kundattribut i personaliseringssyfte.
+
+**Nya funktioner**
+
+| Funktion | Beskrivning |
+| --- | --- |
+| Arbetsflöde för att skapa XML-stödda scheman | Använd avancerade maskininlärningsalgoritmer för att analysera dina CSV-exempeldatafiler och automatiskt skapa optimerade scheman med hjälp av standardfält och anpassade fält.<br>Nyckelfunktioner:<br><ul><li>Skapa schema snabbare: Generera scheman direkt från exempeldatafiler med XML-rekommenderade och genererade XDM-fält.</li><li>Flexibel schemautveckling: Lägg enkelt till eller uppdatera fält i det genererade schemat.</li><li>Smidig integrering: Helt integrerat med det centrala schemaflödet i Schema UL, vilket ger en smidig och sammanhängande användarupplevelse.</li><li>Effektiv granskning och redigering: Visa och uppdatera snabbt schemat med hjälp av Flat View-redigeraren, vilket gör arbetet mer effektivt och användarvänligt.</li></ul> |
+
+{style="table-layout:auto"}
+
+<!-- To learn more, read the [ML-assisted schema creation overview](../../xdm/ui/ml-assisted-schema-creation.md)  -->
+
+Mer information om XDM i Platform finns i [XDM-systemöversikt](../../xdm/home.md).
+
+## Identitetstjänst {#identity-service}
+
+Använd Adobe Experience Platform identitetstjänst för att skapa en heltäckande bild av era kunder och deras beteenden genom att skapa en bro mellan identiteter på olika enheter och system, så att ni kan leverera slagkraftiga, personliga digitala upplevelser i realtid.
+
+**Uppdaterad dokumentation**
+
+| Funktion | Beskrivning |
+| --- | --- |
+| Guide för diagramkonfigurationer | Läs [diagramkonfigurationsguiden](../../identity-service/identity-graph-linking-rules/example-configurations.md) om du vill ha information om vanliga diagramscenarier som du kan stöta på när du arbetar med länkningsregler för identitetsdiagram och identitetsdata. Guiden för diagramkonfigurationer innehåller exempel från enkla enpersonsdiagram till komplexa och hierarkiska flerpersonsdiagram. Du kan också använda guiden för exempel på händelser och algoritmkonfigurationer som du kan ange i [diagramsimuleringens användargränssnitt](../../identity-service/identity-graph-linking-rules/graph-simulation.md), samt för att dela upp hur primära identiteter väljs utifrån vissa diagramscenarier. |
+
+{style="table-layout:auto"}
+
+Mer information om identitetstjänsten finns i [Översikt över identitetstjänsten](../../identity-service/home.md).
+
 ## Segmenteringstjänst {#segmentation}
 
 Med [!DNL Segmentation Service] kan du segmentera data som lagras i [!DNL Experience Platform] och som relaterar till individer (t.ex. kunder, potentiella kunder, användare eller organisationer) till målgrupper. Du kan skapa målgrupper med hjälp av segmentdefinitioner eller andra källor från dina [!DNL Real-Time Customer Profile]-data. Dessa målgrupper är centralt konfigurerade och underhållna på [!DNL Platform] och är tillgängliga för alla Adobe-lösningar.
 
-**Ny dokumentation**
+**Uppdaterade funktioner**
 
-| Ny dokumentation | Beskrivning |
-| ----------------- | ----------- | 
-| [Målportal](../../segmentation/ui/audience-portal.md) | Lär dig använda Audience Portal, där du kan visa, hantera och skapa målgrupper i Adobe Experience Platform i ett centralt nav. |
+| Funktion | Beskrivning |
+| ------- | ----------- |
+| Inmatningsinformation | För målgrupper med ursprung i Custom Upload kan du mer ingående visa information om målgruppens förtäring på sidan med målgruppsinformation. Dessutom kan du lägga till etiketter i nyttolastattributen genom att markera schemat och välja önskade attribut för etiketteringen. Mer information om avsnittet med information om inmatning finns i [guiden för målportalen](../../segmentation/ui/audience-portal.md#ingestion-details). |
 
 {style="table-layout:auto"}
+
+Mer information om [!DNL Segmentation Service] finns i [Segmenteringsöversikt](../../segmentation/home.md).
 
 ## Källor
 
@@ -129,23 +99,8 @@ Använd källor i Experience Platform för att importera data från ett Adobe-pr
 
 | Uppdaterad dokumentation | Beskrivning |
 | --- | --- |
-| Utökad autentiseringsguide för [[!DNL Snowflake]](../../sources/connectors/databases/snowflake.md) | Läs den utökade autentiseringsguiden för [!DNL Snowflake] om du vill lära dig hur du hämtar din [kontoidentifierare](../../sources/connectors/databases/snowflake.md#retrieve-your-account-identifier) och [privata nyckel](../../sources/connectors/databases/snowflake.md#retrieve-your-private-key) för autentisering. Använd den utökade autentiseringsguiden för att få instruktioner om hur du [verifierar dina lagerställekonfigurationer och rollkonfigurationer](../../sources/connectors/databases/snowflake.md#verify-configurations). |
+| Utökad dokumentation om uppdatering av dataflöden | Guiden [Uppdatera befintliga källfilsdataflöden i användargränssnittet ](../../sources/tutorials/ui/update-dataflows.md) har uppdaterats för att ge mer information om olika konfigurationer som du kan göra i ett befintligt dataflöde. Handboken har också uppdaterats för att förtydliga det förväntade beteendet när ett inaktiverat dataflöde återaktiveras. |
 
 {style="table-layout:auto"}
 
 Mer information finns i [Källöversikt](../../sources/home.md).
-
-## Enhetliga taggar
-
-Med enhetliga taggar kan du kategorisera och hantera dina affärsobjekt i Adobe Experience Platform. Med API:t för enhetliga taggar kan du skapa både mappar och taggar för att bättre organisera plattformsobjekt som målgrupper och datauppsättningar.
-
-**Ny dokumentation**
-
-| Ny dokumentation | Beskrivning |
-| ----------------- | ----------- |
-| [API-guide för enhetliga taggar](../../administrative-tags/api/overview.md) | Läs API-guiden för enhetliga taggar om du vill veta hur du skapar mappar och taggar för att sortera dina affärsobjekt. |
-| [API-referens för enhetliga taggar](https://developer.adobe.com/experience-platform-apis/references/unified-tags/) | Använd API-referensen för enhetliga taggar för att interaktivt testa slutpunkterna för enhetliga taggar. |
-
-{style="table-layout:auto"}
-
-Mer information finns i [Översikt över enhetliga taggar](../../administrative-tags/overview.md).
