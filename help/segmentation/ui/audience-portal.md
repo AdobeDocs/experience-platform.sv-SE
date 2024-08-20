@@ -2,9 +2,9 @@
 title: Översikt över målportalen
 description: Lär dig hur du använder Audience Portal för att visa, hantera och skapa målgrupper i Adobe Experience Platform.
 exl-id: 505ac22e-05f3-423a-a9a0-7f3470af8945
-source-git-commit: 56939b18d532f3c12ed8fdd76513d953ae74b613
+source-git-commit: 34964bc5af0676872fb472a7309aa99c21efdbc5
 workflow-type: tm+mt
-source-wordcount: '3926'
+source-wordcount: '3963'
 ht-degree: 0%
 
 ---
@@ -386,6 +386,10 @@ Arbetsflödet **[!UICONTROL Import audience CSV]** visas. Du kan välja en CSV-f
 >[!NOTE]
 >
 >Den externa målgruppen **måste** vara i CSV-format, ha **maximalt** på 25 kolumner och vara mindre än 1 GB.
+>
+>Dessutom kan du **inte** använda blanksteg eller streck i den första raden eller i de associerade kolumnerna i CSV-filen.
+>
+>Den första radens värde kan till exempel vara &quot;FirstName&quot; eller &quot;First_Name&quot;, men det kan inte vara &quot;First Name&quot; eller &quot;First-Name&quot;.
 
 När du har valt den CSV-fil som ska importeras visas en lista med exempeldata för den externt genererade målgruppen. När du har bekräftat att exempeldata är korrekta väljer du **[!UICONTROL Next]**.
 

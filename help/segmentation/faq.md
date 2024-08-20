@@ -2,9 +2,9 @@
 title: Frågor och svar
 description: Få svar på vanliga frågor om målgrupper och andra segmenteringsrelaterade koncept.
 exl-id: 79d54105-a37d-43f7-adcb-97f2b8e4249c
-source-git-commit: 2d15ba41ff326034a6f9a32301f67f5d3b2a1c14
+source-git-commit: 29d9445e6e71c60f4b596a5e645a56d2b70e133c
 workflow-type: tm+mt
-source-wordcount: '4342'
+source-wordcount: '4215'
 ht-degree: 0%
 
 ---
@@ -33,14 +33,7 @@ För att kunna överföra externt genererade målgrupper måste du ha behörighe
 
 ### Vad händer när jag överför en externt genererad publik?
 
-När du överför en externt genererad publik skapas följande objekt:
-
-- Datauppsättning
-   - Datauppsättningen visas i datamängdslagret, och datauppsättningens namn blir **samma** som namnet på den externt genererade målgrupp som du överförde.
-- Batchjobb
-   - Ett batchjobb **körs automatiskt** när du överför en externt genererad målgrupp. Det innebär att du **inte** behöver vänta på att det dagliga segmenteringsjobbet ska köras för att aktivera den externt genererade målgruppen.
-- Ad hoc-schema
-   - Ett **nytt** XDM-schema skapas för användning med den externt genererade målgruppen. Fälten i det här XDM-schemat namnges för användning med den datauppsättning som också skapades.
+När du överför en externt genererad publik skapas en datauppsättning som är synlig i datamängdslagret. Namnet på datauppsättningen blir **detsamma** som namnet på den externt genererade målgruppen som du överförde.
 
 ### Vad består en externt genererad publik av och vad händer med dessa data när de importeras till Platform?
 
@@ -91,12 +84,6 @@ Den organisationsspecifika standardprincipen för sammanfogning tillämpas autom
 ### Var kan jag aktivera externt genererade målgrupper?
 
 En externt genererad målgrupp kan mappas till alla målgrupper och kan användas i Adobe Journey Optimizer-kampanjer.
-
-### Hur snart är externt genererade målgrupper klara för aktivering?
-
-Om data från den externt genererade publiken aktiveras till ett direktuppspelningsmål är de tillgängliga inom två timmar.
-
-Om data från den externt genererade publiken aktiveras för en batchdestination synkroniseras de med nästa 24-timmarssegmenteringsjobb.
 
 ### Kan jag ta bort en externt genererad publik?
 
