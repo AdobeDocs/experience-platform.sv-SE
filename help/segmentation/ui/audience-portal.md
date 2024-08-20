@@ -2,9 +2,9 @@
 title: Översikt över målportalen
 description: Lär dig hur du använder Audience Portal för att visa, hantera och skapa målgrupper i Adobe Experience Platform.
 exl-id: 505ac22e-05f3-423a-a9a0-7f3470af8945
-source-git-commit: 527c9bf7ff60ceb1e621ccac5a88b8e9eb32ebfb
+source-git-commit: 56939b18d532f3c12ed8fdd76513d953ae74b613
 workflow-type: tm+mt
-source-wordcount: '3631'
+source-wordcount: '3926'
 ht-degree: 0%
 
 ---
@@ -254,17 +254,39 @@ Om du väljer **[!UICONTROL Edit audience]** kan du redigera målgruppen i segme
 
 Om du väljer **[!UICONTROL Edit properties]** kan du redigera grundläggande information om målgruppen, till exempel namn, beskrivning och taggar.
 
-![](../images/ui/audience-portal/audience-details-edit-properties.png)
+![Knappen Redigera egenskaper är markerad på sidan med målgruppsinformation.](../images/ui/audience-portal/audience-details-edit-properties.png)
 
 ### Målgruppssumma {#audience-total}
 
-Avsnittet **[!UICONTROL Audience total]** visar det totala antalet profiler som är kvalificerade för målgruppen.
+För plattformsgenererade målgrupper och kompositioner visar avsnittet **[!UICONTROL Audience total]** det totala antalet profiler som kvalificerar sig för målgruppen.
 
 >[!NOTE]
 >
 >Det kan ta upp till 30 minuter för det totala antalet målgrupper att uppdatera när exportjobbet är klart.
 
 Uppskattningar genereras med en provstorlek för den aktuella dagens exempeldata. Om det finns mindre än 1 miljon enheter i din profilbutik används hela datauppsättningen, för mellan 1 och 20 miljoner enheter används 1 miljon enheter och för över 20 miljoner enheter används 5 % av det totala antalet enheter. Mer information om hur du genererar uppskattningar finns i [uppskattningsgenereringsavsnittet](../tutorials/create-a-segment.md#estimate-and-preview-an-audience) i självstudiekursen för att skapa målgrupper.
+
+### Inmatningsinformation {#ingestion-details}
+
+För målgrupper med ursprung **[!UICONTROL Custom upload]** visar avsnittet **[!UICONTROL Ingestion details]** både profilsumman och information om datauppsättningen som den externt genererade målgruppen har importerats till.
+
+![Avsnittet med information om målgruppsinformation visas.](../images/ui/audience-portal/audience-details-ingestion-details.png)
+
+| Egenskap | Beskrivning |
+| -------- | ----------- |
+| Profilantal | Det totala antalet profiler som är kvalificerade för målgruppen. |
+| Namn på datauppsättning | Namnet på datauppsättningen som målgruppen har importerats till. Du kan markera datauppsättningsnamnet om du vill ha mer information om datauppsättningen. Mer information om datauppsättningar finns i [gränssnittsguiden för datauppsättningar](../../catalog/datasets/user-guide.md). |
+| Datauppsättningsbatch | ID:t för datauppsättningen som målgruppen är inkapslad i. Du kan välja batchens ID för mer information om batchen. Läs [övervakningsguiden](../../ingestion/quality/monitor-data-ingestion.md#viewing-batches) om du vill veta mer om batchar. |
+| Profilbatch | ID för den batch som skapade profilerna på plattformen. Du kan välja batchens ID för mer information om batchen. Läs [övervakningsguiden](../../ingestion/quality/monitor-data-ingestion.md#viewing-batches) om du vill veta mer om batchar. |
+| Schema | Namnet på schemat som målgruppen tillhör. Du kan markera schemats namn om du vill visa information om schemats struktur och använda dataanvändningsetiketter. Mer information finns i [Hantera dataanvändningsetiketter för en schemaguide](../../xdm/tutorials/labels.md). |
+| Insamlade poster | Antalet poster som har importerats till datauppsättningen. |
+| Misslyckade poster | Antalet poster som inte kunde hämtas till datauppsättningen. |
+| Nya profilfragment | Antalet nya profiler som skapades. |
+| Befintliga profilfragment | Antalet befintliga profiler som har uppdaterats. |
+
+>[!NOTE]
+>
+>Det bästa sättet att använda dataanvändningsetiketter på schemat är att använda dem. Du **kan inte** använda en dataanvändningsetikett direkt på målgruppen.
 
 ### Aktiverade mål {#activated-destinations}
 
