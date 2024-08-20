@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Felsökningsguide för XDM-system
 description: Hitta svar på vanliga frågor om Experience Data Model (XDM), inklusive steg för att lösa vanliga API-fel.
 exl-id: a0c7c661-bee8-4f66-ad5c-f669c52c9de3
-source-git-commit: 83d3d31b2d24fd01876ff7b0f1c03a5670ed3845
+source-git-commit: ae98a185fdfad5b6ba787e78ad17296928216d08
 workflow-type: tm+mt
-source-wordcount: '2436'
+source-wordcount: '2380'
 ht-degree: 0%
 
 ---
@@ -49,7 +49,7 @@ En lång fälttyp är ett heltal med en maximal storlek på 53 (+1) bitar, vilke
 
 Mer information om fälttyper finns i dokumentet om [XDM-fälttypsbegränsningar](./schema/field-constraints.md).
 
-### Vad är meta:AltId och hur kan jag hämta det?
+### Vad är meta:AltId?
 
 `meta:altId` är en unik identifierare för ett schema. `meta:altId` tillhandahåller ett enkelt referens-ID som kan användas i API-anrop. Detta ID undviker behovet av att koda/avkoda varje gång det används som med JSON URI-formatet.
 <!-- (Needs clarification - How do I retrieve it INCOMPLETE) ... -->
@@ -58,13 +58,6 @@ Mer information om fälttyper finns i dokumentet om [XDM-fälttypsbegränsningar
 
 <!-- No Answer available.  -->
 <!-- INCOMPLETE ... -->
-
-### Kan jag få ett exempel på en JSON-representation för att skapa en datatyp?
-
-Du kan använda både API:t för schemaregister och användargränssnittet för plattformen för att skapa en datatyp. I dokumentationen finns instruktioner om hur du:
-
-- [Skapa en datatyp med API](./api/data-types.md#create)
-- [Skapa en datatyp med användargränssnittet](./ui/resources/data-types.md#create)
 
 ### Vilka är användningsbegränsningarna för en kartdatatyp?
 
