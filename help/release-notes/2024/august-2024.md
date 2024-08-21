@@ -1,9 +1,9 @@
 ---
 title: Versionsinformation om Adobe Experience Platform, augusti 2024
 description: Versionsinformation från augusti 2024 för Adobe Experience Platform.
-source-git-commit: 6d8c785a1e876ed6a729efbe01ad8fb4507bda0d
+source-git-commit: d6eb2050cdc3d51cf8ff4189c6b9f78469f14fa9
 workflow-type: tm+mt
-source-wordcount: '1022'
+source-wordcount: '1031'
 ht-degree: 2%
 
 ---
@@ -56,7 +56,7 @@ XDM är en öppen källkodsspecifikation som innehåller gemensamma strukturer o
 
 {style="table-layout:auto"}
 
-<!-- To learn more, read the [ML-assisted schema creation overview](../../xdm/ui/ml-assisted-schema-creation.md)  -->
+Mer information finns i översikten över att skapa [ML-stödda scheman](../../xdm/ui/ml-assisted-schema-creation.md)
 
 Mer information om XDM i Platform finns i [XDM-systemöversikt](../../xdm/home.md).
 
