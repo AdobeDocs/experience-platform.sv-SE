@@ -3,9 +3,9 @@ keywords: mål;mål;destinationsdetaljsida;målinformationssida
 title: Visa målinformation
 description: På informationssidan för ett enskilt mål finns en översikt över målinformationen. Målinformationen innehåller målnamn, ID, målgrupper mappade till målet och kontroller för att redigera aktiveringen och aktivera och inaktivera dataflödet.
 exl-id: e44e2b2d-f477-4516-8a47-3e95c2d85223
-source-git-commit: 9ebdf6e675ddfe03f43b56ed10f625a7d000a662
+source-git-commit: 47d0e2a7fae973edfda035d046f66c88d34bf8b2
 workflow-type: tm+mt
-source-wordcount: '1250'
+source-wordcount: '1226'
 ht-degree: 0%
 
 ---
@@ -144,11 +144,7 @@ Om du vill ta bort flera målgrupper från befintliga aktiveringsflöden markera
 
 ![Aktiveringsdataskärm som markerar alternativet Ta bort målgrupper.](../assets/ui/details-page/bulk-remove-audiences.png)
 
-### [!BADGE Beta]{type=Informative} Exportera flera filer on-demand till gruppmål {#bulk-export}
-
->[!NOTE]
->
-Den här funktionen är i betaversion och endast tillgänglig för vissa kunder. Kontakta din Adobe-representant om du vill få tillgång till den här funktionen.
+### Exportera flera filer on demand till batchmål {#bulk-export}
 
 Du kan [exportera flera filer på begäran](../ui/export-file-now.md) från sidan **[!UICONTROL Activation data]**. För att göra detta väljer du de målgrupper som du vill exportera filer för on-demand och väljer kontrollen **[!UICONTROL Export file now]** för att utlösa en engångs export som levererar en fil för varje vald målgrupp till din gruppdestination.
 
@@ -162,7 +158,7 @@ Om du vill redigera det befintliga aktiveringsschemat för flera målgrupper sam
 
 >[!NOTE]
 >
-Mer information om hur du utforskar informationssidan för en målgrupp finns i [Översikt över målportalen](../../segmentation/ui/audience-portal.md#segment-details).
+>Mer information om hur du utforskar informationssidan för en målgrupp finns i [Översikt över målportalen](../../segmentation/ui/audience-portal.md#segment-details).
 
 ### Redigera filnamn för flera målgrupper som exporterats till gruppmål {#bulk-edit-file-names}
 
