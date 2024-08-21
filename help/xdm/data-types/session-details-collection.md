@@ -2,9 +2,9 @@
 title: Samlingsdatatyp för sessionsinformation
 description: Läs mer om datatypen XDM (Session Details Collection Experience Data Model).
 exl-id: ffe6bcf7-61e1-4f7a-ba95-7fcb78683cc9
-source-git-commit: 799a384556b43bc844782d8b67416c7eea77fbf0
+source-git-commit: 9350cfc299c20bd63a2a559c177b3af02739e5b9
 workflow-type: tm+mt
-source-wordcount: '827'
+source-wordcount: '764'
 ht-degree: 0%
 
 ---
@@ -31,9 +31,8 @@ ht-degree: 0%
 | [[!UICONTROL Broadcast Content Type]](https://experienceleague.adobe.com/docs/media-analytics/using/implementation/variables/audio-video-parameters.html#content-type) | `contentType` | Sträng | Ja | [!UICONTROL Broadcast Content Type] för strömleveransen. Tillgängliga värden per [!UICONTROL Stream Type] är:<br>Ljud: &quot;låt&quot;, &quot;poddsändning&quot;, &quot;ljudbok&quot; och &quot;radio&quot;;<br>Video: &quot;VoD&quot;, &quot;Live&quot;, &quot;Linjär&quot;, &quot;UGC&quot; och &quot;DVoD&quot;.<br>Kunder kan ange anpassade värden för den här parametern. |
 | [[!UICONTROL Broadcast Network]](https://experienceleague.adobe.com/docs/media-analytics/using/implementation/variables/audio-video-parameters.html#network) | `network` | Sträng | Nej | Namnet på nätverket/kanalen. |
 | [[!UICONTROL Content Channel]](https://experienceleague.adobe.com/docs/media-analytics/using/implementation/variables/audio-video-parameters.html#content-channel) | `channel` | Sträng | Ja | [!UICONTROL Content Channel] är distributionskanalen som innehållet spelades upp från. |
-| [[!UICONTROL Content Completes]](https://experienceleague.adobe.com/docs/media-analytics/using/implementation/variables/audio-video-parameters.html#content-complete) | `isCompleted` | Boolean | Nej | [!UICONTROL Content Completes] indikerar om en medieresurs med en tidsgräns bevakades tills den har slutförts. Den här händelsen behöver inte nödvändigtvis innebära att användaren tittade på hela videon. Visningsprogrammet kunde ha hoppat över i förväg. |
 | [!UICONTROL Content Delivery Network] | `cdn` | Sträng | Nej | [!UICONTROL Content Delivery Network] av det uppspelade innehållet. |
-| [[!UICONTROL Content ID]](https://experienceleague.adobe.com/docs/media-analytics/using/implementation/variables/audio-video-parameters.html#content-id) | `name` | string | Ja | [!UICONTROL Content ID] är en unik identifierare av innehållet. Den kan användas för att länka tillbaka till andra branschs- eller CMS-ID:n. |
+| [[!UICONTROL Content ID]](https://experienceleague.adobe.com/docs/media-analytics/using/implementation/variables/audio-video-parameters.html#content-id) | `name` | string | Ja | [!UICONTROL Content ID] är en unik identifierare av innehållet. Den kan användas för att länka tillbaka till andra branschid eller CMS ID. |
 | [[!UICONTROL Content Name]](https://experienceleague.adobe.com/docs/media-analytics/using/implementation/variables/audio-video-parameters.html#content-name-(variable)) | `friendlyName` | Sträng | Nej | [!UICONTROL Content Name] är ett användarvänligt (läsbart) namn på innehållet. |
 | [[!UICONTROL Content Player Name]](https://experienceleague.adobe.com/docs/media-analytics/using/implementation/variables/audio-video-parameters.html#content-player-name) | `playerName` | Sträng | Ja | Namnet på innehållsspelaren. |
 | [[!UICONTROL Creator Name]](https://experienceleague.adobe.com/docs/media-analytics/using/implementation/variables/audio-video-parameters.html#originator) | `originator` | Sträng | Nej | Namnet på innehållsskaparen. |
@@ -45,7 +44,6 @@ ht-degree: 0%
 | [[!UICONTROL Genre]](https://experienceleague.adobe.com/docs/media-analytics/using/implementation/variables/audio-video-parameters.html#genre) | `genre` | Sträng | Nej | Typ eller gruppering av innehåll enligt innehållsproducentens definition. Värdena ska vara kommaavgränsade vid variabel implementering. |
 | [[!UICONTROL Media Authorized]](https://experienceleague.adobe.com/docs/media-analytics/using/implementation/variables/audio-video-parameters.html#authorized) | `authorized` | Sträng | Nej | Bekräftar om användaren har autentiserats via Adobe. |
 | [[!UICONTROL Media Content Length]](https://experienceleague.adobe.com/docs/media-analytics/using/implementation/variables/audio-video-parameters.html#content-length-(variable)) | `length` | Heltal | Ja | [!UICONTROL Media Content Length] innehåller klippets längd/körtid - Detta är den maximala längden (eller längden) för innehållet som används (i sekunder). |
-| [[!UICONTROL Media Starts]](https://experienceleague.adobe.com/docs/media-analytics/using/implementation/variables/audio-video-parameters.html#media-starts) | `isViewed` | Boolean | Nej | Mediets load-händelse. Detta inträffar när användaren väljer uppspelningsknappen. Detta gäller även om det finns annonser före rullning, buffring, fel och så vidare. |
 | [[!UICONTROL MVPD Identifier]](https://experienceleague.adobe.com/docs/media-analytics/using/implementation/variables/audio-video-parameters.html#mvpd) | `mvpd` | Sträng | Nej | Multichannel Video Programming Distributor (MVPD)-identifierare som tillhandahölls via autentisering via Adobe. |
 | [[!UICONTROL Publisher]](https://experienceleague.adobe.com/docs/media-analytics/using/implementation/variables/audio-video-parameters.html#publisher) | `publisher` | Sträng | Nej | Namnet på ljudinnehållsutgivaren. |
 | [[!UICONTROL Radio Station]](https://experienceleague.adobe.com/docs/media-analytics/using/implementation/variables/audio-video-parameters.html#station) | `station` | Sträng | Nej | Namnet på radiostationen som ljudet spelas upp på. |
@@ -60,10 +58,3 @@ ht-degree: 0%
 | [[!UICONTROL Version]](https://experienceleague.adobe.com/docs/media-analytics/using/implementation/variables/audio-video-parameters.html#sdk-version) | `appVersion` | Sträng | Nej | SDK-versionen som används av spelaren. Detta kan ha vilket värde som helst som passar din spelare. |
 
 {style="table-layout:auto"}
-
-<!-- This is required for sessionStart. 
-Q) How do I indicate that?
-Q) Do you know where to link for:
-Ad Load Type
-Content Delivery Network
- -->

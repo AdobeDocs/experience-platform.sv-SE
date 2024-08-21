@@ -2,7 +2,7 @@
 title: Datatypen Advertising Pod Details Collection
 description: Läs mer om datatypen Advertising Pod Details Collection Experience Data Model (XDM).
 exl-id: 401c393f-aeda-4ecd-89f4-458833190ced
-source-git-commit: 799a384556b43bc844782d8b67416c7eea77fbf0
+source-git-commit: 9350cfc299c20bd63a2a559c177b3af02739e5b9
 workflow-type: tm+mt
 source-wordcount: '142'
 ht-degree: 0%
@@ -16,7 +16,9 @@ ht-degree: 0%
 ![Ett diagram över datatypen Advertising Pod Details Collection.](../images/data-types/advertising-pod-details-collection.png)
 
 | Visningsnamn | Egenskap | Datatyp | Obligatoriskt | Beskrivning |
-|-----------------------------------------|-----------------|-----------|--------------------------------------------------------------------|
+|-----------------------------------------|-----------------|-----------|----------|---------------------------------------------------------|
 | [!UICONTROL Ad In Pod Position] | `index` | heltal | Ja | Indexvärdet för annonsen inuti den överordnade annonsradbrytningen. |
 | [!UICONTROL Pod Friendly Name] | `friendlyName` | string | Nej | Det lättbegripliga namnet på annonsbrytningen. |
 | [!UICONTROL Pod Offset] | `offset` | heltal | Ja | Annonsens förskjutning i innehållet, i sekunder. |
+
+{style="table-layout:auto"}

@@ -1,7 +1,7 @@
 ---
 title: Versionsinformation om Adobe Experience Platform, augusti 2024
 description: Versionsinformation från augusti 2024 för Adobe Experience Platform.
-source-git-commit: 67152524c9448ad1c6cd1f25437e5ed69900ef84
+source-git-commit: d01e16938485f6648cc02ce1674e0e9e84d78147
 workflow-type: tm+mt
 source-wordcount: '1294'
 ht-degree: 1%
@@ -69,11 +69,9 @@ XDM är en öppen källkodsspecifikation som innehåller gemensamma strukturer o
 
 | Funktion | Beskrivning |
 | --- | --- |
-| Arbetsflöde för att skapa XML-stödda scheman | Använd avancerade maskininlärningsalgoritmer för att analysera dina CSV-exempeldatafiler och automatiskt skapa optimerade scheman med hjälp av standardfält och anpassade fält.<br>Nyckelfunktioner:<br><ul><li>Skapa schema snabbare: Generera scheman direkt från exempeldatafiler med XML-rekommenderade och genererade XDM-fält.</li><li>Flexibel schemautveckling: Lägg enkelt till eller uppdatera fält i det genererade schemat.</li><li>Smidig integrering: Helt integrerat med det centrala schemaflödet i Schema UL, vilket ger en smidig och sammanhängande användarupplevelse.</li><li>Effektiv granskning och redigering: Visa och uppdatera snabbt schemat med hjälp av Flat View-redigeraren, vilket gör arbetet mer effektivt och användarvänligt.</li></ul> |
+| Arbetsflöde för att skapa XML-stödda scheman | Använd avancerade maskininlärningsalgoritmer för att analysera dina exempeldatafiler och automatiskt skapa optimerade scheman med hjälp av standardfält och anpassade fält.<br>Nyckelfunktioner:<br><ul><li>Skapa schema snabbare: Generera scheman direkt från exempeldatafiler med XML-rekommenderade och genererade XDM-fält.</li><li>Flexibel schemautveckling: Lägg enkelt till eller uppdatera fält i det genererade schemat.</li><li>Smidig integrering: Helt integrerat med det centrala schemaflödet i Schema UL, vilket ger en smidig och sammanhängande användarupplevelse.</li><li>Effektiv granskning och redigering: Visa och uppdatera snabbt schemat med hjälp av Flat View-redigeraren, vilket gör arbetet mer effektivt och användarvänligt.</li></ul><br>Mer information finns i [Arbetsflödesguiden ](../../xdm/ui/ml-assisted-schema-creation.md) för att skapa XML-stödda scheman. |
 
 {style="table-layout:auto"}
-
-Mer information finns i översikten över att skapa [ML-stödda scheman](../../xdm/ui/ml-assisted-schema-creation.md)
 
 Mer information om XDM i Platform finns i [XDM-systemöversikt](../../xdm/home.md).
 

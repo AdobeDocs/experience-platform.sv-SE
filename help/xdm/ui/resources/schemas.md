@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Skapa och redigera scheman i användargränssnittet
 description: Lär dig grunderna i hur du skapar och redigerar scheman i användargränssnittet i Experience Platform.
 exl-id: be83ce96-65b5-4a4a-8834-16f7ef9ec7d1
-source-git-commit: 15de9351203f6b43653042ab73ede17781486160
+source-git-commit: f530e4ff755ac89141ee67bef80700b46acf0868
 workflow-type: tm+mt
-source-wordcount: '3705'
+source-wordcount: '3703'
 ht-degree: 0%
 
 ---
@@ -39,7 +39,7 @@ Dialogrutan [!UICONTROL Create a schema] visas. I den här dialogrutan kan du v�
 
 ![Dialogrutan Skapa ett schema med arbetsflödesalternativen och välj markerad.](../../images/tutorials/create-schema/create-a-schema-dialog.png)
 
-### Manuell eller ML-assisterad schemagenerering {#manual-or-assisted}
+### [!BADGE Beta]{type=Informative} Manuell eller ML-assisterad schemagenerering {#manual-or-assisted}
 
 Mer information om hur du kan använda en ML-algoritm för att rekommendera en schemastruktur baserad på en csv-fil finns i [handboken ](../ml-assisted-schema-creation.md) som hjälper dig att skapa scheman. Den här användargränssnittshandboken fokuserar på det manuella arbetsflödet.
 
@@ -63,7 +63,7 @@ Fliken [!UICONTROL Schema] [!UICONTROL Browse] visas. Ditt nyligen skapade schem
 
 >[!NOTE]
 >
->När ett schema har sparats och använts vid datainmatning kan endast additiva ändringar göras. Mer information finns i [reglerna för schemautveckling](../../schema/composition.md#evolution).
+När ett schema har sparats och använts vid datainmatning kan endast additiva ändringar göras. Mer information finns i [reglerna för schemautveckling](../../schema/composition.md#evolution).
 
 Om du vill redigera ett befintligt schema väljer du fliken **[!UICONTROL Browse]** och markerar sedan namnet på schemat som du vill redigera. Du kan även använda sökfältet för att begränsa listan med tillgängliga alternativ.
 
@@ -71,7 +71,7 @@ Om du vill redigera ett befintligt schema väljer du fliken **[!UICONTROL Browse
 
 >[!TIP]
 >
->Du kan använda arbetsytans sök- och filtreringsfunktioner för att enklare hitta schemat. Mer information finns i guiden [Utforska XDM-resurser](../explore.md).
+Du kan använda arbetsytans sök- och filtreringsfunktioner för att enklare hitta schemat. Mer information finns i guiden [Utforska XDM-resurser](../explore.md).
 
 När du har valt ett schema visas [!DNL Schema Editor] med schemats struktur på arbetsytan. Du kan nu [lägga till fältgrupper](#add-field-groups) i schemat (eller [lägga till enskilda fält](#add-individual-fields) från dessa grupper), [redigera fältvisningsnamn](#display-names) eller [redigera befintliga anpassade fältgrupper](./field-groups.md#edit) om schemat använder några.
 
@@ -89,7 +89,7 @@ För enkelhetens skull kan du växla mellan de ursprungliga fältnamnen och de m
 
 >[!NOTE]
 >
->Ändringen från fältnamn till visningsnamn är helt kosmetisk och påverkar inte längre några resurser längre fram i kedjan.
+Ändringen från fältnamn till visningsnamn är helt kosmetisk och påverkar inte längre några resurser längre fram i kedjan.
 
 ![Schemaredigeraren med [!UICONTROL Show display names for fields] markerat.](../../images/ui/resources/schemas/display-name-toggle.png)
 
@@ -99,7 +99,7 @@ Visningsnamnen för standardfältgrupper genereras av systemet men kan anpassas 
 
 >[!NOTE]
 >
->I det här avsnittet beskrivs hur du lägger till befintliga fältgrupper i ett schema. Om du vill skapa en ny anpassad fältgrupp läser du i handboken [Skapa och redigera fältgrupper](./field-groups.md#create) i stället.
+I det här avsnittet beskrivs hur du lägger till befintliga fältgrupper i ett schema. Om du vill skapa en ny anpassad fältgrupp läser du i handboken [Skapa och redigera fältgrupper](./field-groups.md#create) i stället.
 
 När du har öppnat ett schema i [!DNL Schema Editor] kan du lägga till fält i schemat med hjälp av fältgrupper. Börja genom att välja **[!UICONTROL Add]** bredvid **[!UICONTROL Field groups]** i den vänstra listen.
 
@@ -115,7 +115,7 @@ Om du känner till den allmänna aktiviteten eller affärsområdet för de fält
 
 >[!NOTE]
 >
->Mer information om de effektivaste strategierna för branschspecifik datamodellering i XDM finns i dokumentationen om [branschdatamodeller](../../schema/industries/overview.md).
+Mer information om de effektivaste strategierna för branschspecifik datamodellering i XDM finns i dokumentationen om [branschdatamodeller](../../schema/industries/overview.md).
 
 Du kan också använda sökfältet för att hitta den fältgrupp du vill använda. Fältgrupper vars namn matchar frågan visas högst upp i listan. Under **[!UICONTROL Standard Fields]** visas fältgrupper som innehåller fält som beskriver önskade dataattribut.
 
@@ -127,7 +127,7 @@ Markera kryssrutan bredvid namnet på den fältgrupp som du vill lägga till i s
 
 >[!TIP]
 >
->För alla fältgrupper i listan kan du hovra eller fokusera på informationsikonen (![informationsikonen](/help/images/icons/info.png)) om du vill visa en kort beskrivning av den typ av data som fältgruppen hämtar. Du kan också markera förhandsvisningsikonen (![förhandsgranskningsikonen](/help/images/icons/preview.png)) för att visa strukturen för fälten som fältgruppen tillhandahåller innan du bestämmer dig för att lägga till den i schemat.
+För alla fältgrupper i listan kan du hovra eller fokusera på informationsikonen (![informationsikonen](/help/images/icons/info.png)) om du vill visa en kort beskrivning av den typ av data som fältgruppen hämtar. Du kan också markera förhandsvisningsikonen (![förhandsgranskningsikonen](/help/images/icons/preview.png)) för att visa strukturen för fälten som fältgruppen tillhandahåller innan du bestämmer dig för att lägga till den i schemat.
 
 När du har valt fältgrupper väljer du **[!UICONTROL Add field groups]** för att lägga till dem i schemat.
 
@@ -139,9 +139,9 @@ När du har valt fältgrupper väljer du **[!UICONTROL Add field groups]** för 
 
 >[!NOTE]
 >
->I Schemaredigeraren visas standardklasser (som genererats av Adobe) och fältgrupper med hänglåsikonen (![En hänglåsikon.](/help/images/icons/lock-closed.png). hänglåset visas i den vänstra listen bredvid namnet på klassen eller fältgruppen, samt intill ett fält i schemagrafiken som är en del av en systemgenererad resurs.
+I Schemaredigeraren visas standardklasser (som genererats av Adobe) och fältgrupper med hänglåsikonen (![En hänglåsikon.](/help/images/icons/lock-closed.png). hänglåset visas i den vänstra listen bredvid namnet på klassen eller fältgruppen, samt intill ett fält i schemagrafiken som är en del av en systemgenererad resurs.
 >
->![Schemaredigeraren med hänglåsikonen markerad](../../images/ui/explore/schema-editor-padlock-icon.png)
+![Schemaredigeraren med hänglåsikonen markerad](../../images/ui/explore/schema-editor-padlock-icon.png)
 
 När du har lagt till en fältgrupp i ett schema kan du [ta bort befintliga fält](#remove-fields) eller [lägga till nya anpassade fält](#add-fields) i dessa grupper, beroende på dina behov.
 
@@ -151,7 +151,7 @@ När du har lagt till en fältgrupp i ett schema kan du ta bort fält som du int
 
 >[!NOTE]
 >
->Om du tar bort fält från en fältgrupp påverkas bara schemat som du arbetar med och påverkar inte själva fältgruppen. Om du tar bort fält i ett schema är dessa fält fortfarande tillgängliga i alla andra scheman som använder samma fältgrupp.
+Om du tar bort fält från en fältgrupp påverkas bara schemat som du arbetar med och påverkar inte själva fältgruppen. Om du tar bort fält i ett schema är dessa fält fortfarande tillgängliga i alla andra scheman som använder samma fältgrupp.
 
 I följande exempel har standardfältgruppen **[!UICONTROL Demographic Details]** lagts till i ett schema. Om du vill ta bort ett enskilt fält, till exempel `taxId`, markerar du fältet på arbetsytan och väljer sedan **[!UICONTROL Remove]** i den högra listen.
 
@@ -185,7 +185,7 @@ Med Schemaredigeraren kan du lägga till enskilda fält direkt i ett schema om d
 
 >[!IMPORTANT]
 >
->Även om schemaredigeraren tillåter att du lägger till enskilda fält direkt i ett schema, ändrar detta inte det faktum att alla fält i ett XDM-schema måste anges av dess klass eller en fältgrupp som är kompatibel med den klassen. Som framgår av avsnitten nedan är alla enskilda fält fortfarande kopplade till en klass eller fältgrupp som ett nyckelsteg när de läggs till i ett schema.
+Även om schemaredigeraren tillåter att du lägger till enskilda fält direkt i ett schema, ändrar detta inte det faktum att alla fält i ett XDM-schema måste anges av dess klass eller en fältgrupp som är kompatibel med den klassen. Som framgår av avsnitten nedan är alla enskilda fält fortfarande kopplade till en klass eller fältgrupp som ett nyckelsteg när de läggs till i ett schema.
 
 ### Lägg till standardfält {#add-standard-fields}
 
@@ -219,23 +219,23 @@ Börja skriva in namnet på det fält som du vill lägga till så börjar system
 
 ![Nytt fält](../../images/ui/resources/schemas/custom-field-search.png)
 
-När du har angett ett visningsnamn och en datatyp för fältet är nästa steg att tilldela fältet till en överordnad XDM-resurs. Om schemat använder en anpassad klass kan du välja att [lägga till fältet i den tilldelade klassen](#add-to-class) eller en [fältgrupp](#add-to-field-group) i stället. Om schemat använder en standardklass kan du bara tilldela ett anpassat fält till en fältgrupp.
+Efter att ha angett ett visningsnamn och en datatyp for I fältet är nästa steg att tilldela fältet till en överordnad XDM-resurs. Om schemat använder en anpassad klass kan du välja att [lägga till fältet i den tilldelade klassen](#add-to-class) eller en [fältgrupp](#add-to-field-group) i stället. Om schemat använder en standardklass kan du bara tilldela ett anpassat fält till en fältgrupp.
 
 #### Tilldela fältet till en anpassad fältgrupp {#add-to-field-group}
 
 >[!NOTE]
 >
->I det här avsnittet beskrivs bara hur du tilldelar fältet till en anpassad fältgrupp. Om du vill utöka en standardfältgrupp med det nya anpassade fältet i stället läser du avsnittet [Lägga till anpassade fält i standardfältgrupper](#custom-fields-for-standard-groups).
+I det här avsnittet beskrivs bara hur du tilldelar fältet till en anpassad fältgrupp. Om du vill utöka en standardfältgrupp med det nya anpassade fältet i stället läser du avsnittet [Lägga till anpassade fält i standardfältgrupper](#custom-fields-for-standard-groups).
 
 Under **[!UICONTROL Assign to]** väljer du **[!UICONTROL Field Group]**. Om schemat använder en standardklass är detta det enda tillgängliga alternativet och markeras som standard.
 
-Sedan måste du välja en fältgrupp för det nya fältet som ska kopplas. Börja skriva in namnet på fältgruppen i den angivna textinmatningen. Om du har befintliga anpassade fältgrupper som matchar indata visas de i listrutan. Du kan också skriva ett unikt namn för att skapa en ny fältgrupp i stället.
+Sedan måste du välja en fältgrupp för det nya fältet som ska kopplas. Börja skriva in namnet på fältgruppen i den angivna textinmatningen. Om du har befintliga anpassade fältgrupper som matchar indata visas de i listrutan. Du kan också skriva a unikt namn för att skapa en ny fältgrupp i stället.
 
 ![Välj fältgrupp](../../images/ui/resources/schemas/select-field-group.png)
 
 >[!WARNING]
 >
->Om du väljer en befintlig anpassad fältgrupp kommer alla andra scheman som använder den fältgruppen också att ärva det nya fältet när du har sparat ändringarna. Därför bör du bara markera en befintlig fältgrupp om du vill använda den här typen av spridning. Annars bör du välja att skapa en ny anpassad fältgrupp i stället.
+Om du väljer en befintlig anpassad fältgrupp kommer alla andra scheman som använder den fältgruppen också att ärva det nya fältet när du har sparat ändringarna. Därför bör du bara välja en befintlig fältgrupp om du vill använda den här typen of spridning. Annars bör du välja att skapa en ny anpassad fältgrupp i stället.
 
 När du har valt fältgruppen i listan väljer du **[!UICONTROL Apply]**.
 
@@ -247,7 +247,7 @@ Det nya fältet läggs till på arbetsytan och namnges under ditt [klientorganis
 
 >[!NOTE]
 >
->Resten av fälten i den valda anpassade fältgruppen tas som standard bort från schemat. Om du vill lägga till några av dessa fält i schemat markerar du ett fält som tillhör gruppen och väljer sedan **[!UICONTROL Manage related fields]** i den högra listen.
+Resten av fälten i den valda anpassade fältgruppen tas som standard bort från schemat. Om du vill lägga till några av dessa fält i schemat markerar du ett fält som tillhör gruppen och väljer sedan **[!UICONTROL Manage related fields]** i den högra listen.
 
 #### Tilldela fältet till en anpassad klass {#add-to-class}
 
@@ -265,15 +265,15 @@ Det nya fältet läggs till på arbetsytan och namnges under ditt [klientorganis
 
 ### Lägga till anpassade fält i strukturen för standardfältgrupper {#custom-fields-for-standard-groups}
 
-Om schemat du arbetar med har ett objekttypsfält från en standardfältgrupp, kan du lägga till egna anpassade fält till det standardobjektet.
+Om schemat du arbetar med har en objekttyp field från en standardfältgrupp kan du lägga till egna anpassade fält i det standardobjektet.
 
 >[!WARNING]
 >
->Alla fält som läggs till i en fältgrupp i ett schema visas också i alla andra scheman som använder samma fältgrupp. Om ett anpassat fält dessutom läggs till i en standardfältgrupp, kommer den fältgruppen att konverteras till en anpassad fältgrupp och den ursprungliga standardfältgruppen kommer inte längre att vara tillgänglig.
+Alla fält som läggs till i en fältgrupp i ett schema visas också i alla andra scheman som använder samma fältgrupp. Om ett anpassat fält dessutom läggs till i en standardfältgrupp, kommer den fältgruppen att konverteras till en anpassad fältgrupp och den ursprungliga standardfältgruppen kommer inte längre att vara tillgänglig.
 >
->Om du deltar i betaversionen av den här funktionen får du en dialogruta som informerar dig om vilka standardfältgrupper du tidigare har anpassat. När du har valt **[!UICONTROL Acknowledge]** konverteras resurserna i listan till anpassade fältgrupper.
+Om du deltar i betaversionen av den här funktionen får du en dialogruta som informerar dig om vilka standardfältgrupper du tidigare har anpassat. När du har valt **[!UICONTROL Acknowledge]** konverteras resurserna i listan till anpassade fältgrupper.
 >
->![Bekräftelsedialogruta för konvertering av standardfältgrupper](../../images/ui/resources/schemas/beta-extension-confirmation.png)
+![Bekräftelsedialogruta för konvertering av standardfältgrupper](../../images/ui/resources/schemas/beta-extension-confirmation.png)
 
 Börja med att markera plusikonen (**+**) bredvid roten för objektet som tillhandahålls av standardfältgruppen.
 
@@ -293,16 +293,16 @@ När du har gjort ändringarna visas det nya fältet under ditt innehavar-ID-nam
 
 ## Aktivera ett schema för kundprofil i realtid {#profile}
 
->[!CONTEXTUALHELP]
->id="platform_schemas_enableforprofile"
->title="Aktivera ett schema för profil"
->abstract="När ett schema har aktiverats för profilen, deltar alla datauppsättningar som skapats från det här schemat i kundprofilen i realtid, som sammanfogar data från olika källor för att skapa en fullständig bild av varje kund. När ett schema används för att importera data till profilen kan det inte inaktiveras. Mer information finns i dokumentationen."
+[!CONTEXTUALHELP]
+id="platform_schemas_enableforprofile"
+title="Aktivera ett schema för profil"
+abstract="När ett schema har aktiverats för profilen, deltar alla datauppsättningar som skapats från det här schemat i kundprofilen i realtid, som sammanfogar data från olika källor för att skapa en fullständig bild av varje kund. När ett schema används för att importera data till profilen kan det inte inaktiveras. Mer information finns i dokumentationen."
 
 [Kundprofil i realtid](../../../profile/home.md) sammanfogar data från olika källor för att skapa en fullständig bild av varje enskild kund. Om du vill att data som har hämtats av ett schema ska kunna delta i den här processen måste du aktivera schemat för användning i [!DNL Profile].
 
 >[!IMPORTANT]
 >
->Om du vill aktivera ett schema för [!DNL Profile] måste ett primärt identitetsfält ha definierats. Mer information finns i handboken [Definiera identitetsfält](../fields/identity.md).
+Om du vill aktivera ett schema för [!DNL Profile] måste ett primärt identitetsfält ha definierats. Mer information finns i handboken [Definiera identitetsfält](../fields/identity.md).
 
 Om du vill aktivera schemat börjar du med att markera schemats namn i den vänstra listen och väljer sedan alternativet **[!UICONTROL Profile]** i den högra listen.
 
@@ -316,7 +316,7 @@ Arbetsytan visas igen när växlingen [!UICONTROL Profile] är aktiverad.
 
 >[!IMPORTANT]
 >
->Eftersom schemat inte har sparats ännu är detta inget returtecken om du ändrar dig angående att låta schemat delta i kundprofilen i realtid: när du har sparat ett aktiverat schema kan det inte längre inaktiveras. Välj **[!UICONTROL Profile]**-växeln igen för att inaktivera schemat.
+Eftersom schemat inte har sparats ännu är detta inget returtecken om du ändrar dig angående att låta schemat delta i kundprofilen i realtid: när du har sparat ett aktiverat schema kan det inte längre inaktiveras. Välj **[!UICONTROL Profile]**-växeln igen för att inaktivera schemat.
 
 Om du vill slutföra processen väljer du **[!UICONTROL Save]** för att spara schemat.
 
@@ -330,9 +330,9 @@ När du har tilldelat en klass och lagt till fältgrupper till ett schema kan du
 
 >[!NOTE]
 >
->Tänk på att visningsnamnen för fält som tillhör standardklasser eller fältgrupper bara kan redigeras i ett specifikt schema. Om du ändrar visningsnamnet för ett standardfält i ett schema påverkas alltså inte andra scheman som använder samma associerade klass eller fältgrupp.
+Tänk på att visningsnamnen för fält som tillhör standardklasser eller fältgrupper bara kan redigeras i ett specifikt schema. Om du ändrar visningsnamnet för ett standardfält i ett schema påverkas alltså inte andra scheman som använder samma associerade klass eller fältgrupp.
 >
->När du ändrar visningsnamnen för ett schemas fält återspeglas dessa ändringar omedelbart i befintliga datauppsättningar som baseras på det schemat.
+När du ändrar visningsnamnen för ett schemas fält återspeglas dessa ändringar omedelbart i befintliga datauppsättningar som baseras på det schemat.
 
 Om du vill redigera visningsnamnet för ett schemafält markerar du fältet på arbetsytan. Ange det nya namnet under **[!UICONTROL Display name]** i den högra listen.
 
@@ -348,7 +348,7 @@ Du kan ändra schemaklassen när som helst under den inledande dispositionsproce
 
 >[!WARNING]
 >
->Omtilldelning av klassen för ett schema bör göras med extrem försiktighet. Fältgrupper är bara kompatibla med vissa klasser. Om du ändrar klassen återställs arbetsytan och alla fält du har lagt till.
+Omtilldelning av klassen för ett schema bör göras med extrem försiktighet. Fältgrupper är bara kompatibla med vissa klasser. Om du ändrar klassen återställs arbetsytan och alla fält du har lagt till.
 
 Om du vill tilldela om en klass väljer du **[!UICONTROL Assign]** till vänster på arbetsytan.
 
@@ -368,7 +368,7 @@ När du har bekräftat klassändringen återställs arbetsytan och alla disposit
 
 ## Nästa steg {#next-steps}
 
-Det här dokumentet innehåller grunderna för att skapa och redigera scheman i plattformsgränssnittet. Vi rekommenderar starkt att du går igenom självstudiekursen [för att skapa scheman](../../tutorials/create-schema-ui.md) för ett omfattande arbetsflöde för att skapa ett fullständigt schema i användargränssnittet, inklusive att skapa anpassade fältgrupper och datatyper för unika användningsfall.
+Det här dokumentet innehåller grunderna för att skapa och redigera scheman i plattformsgränssnittet. Vi rekommenderar att du går igenom självstudiekursen [för att skapa schema](../../tutorials/create-schema-ui.md) för att få ett omfattande arbetsflöde för att skapa ett fullständigt schema i användargränssnittet, inklusive att skapa anpassade fältgrupper och datatyper for unika användningsfall.
 
 Mer information om funktionerna för arbetsytan [!UICONTROL Schemas] finns i översikten för arbetsytan [[!UICONTROL Schemas] ](../overview.md).
 

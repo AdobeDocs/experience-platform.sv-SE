@@ -1,14 +1,19 @@
 ---
 title: Skapa inlärningsassisterat schema
 description: Lär dig hur du skapar scheman i användargränssnittet i Experience Platform.
-source-git-commit: 15de9351203f6b43653042ab73ede17781486160
+badgeBeta: label="Beta" type="Informative"
+source-git-commit: f1db409a2af34ac66c81d7e5a11ee1bc8e5f4c9c
 workflow-type: tm+mt
-source-wordcount: '906'
+source-wordcount: '924'
 ht-degree: 0%
 
 ---
 
 # Skapa scheman med hjälp av maskininlärning
+
+>[!AVAILABILITY]
+>
+>* Maskinininlärningsassisterade scheman är för närvarande i betaversion. Dokumentationen och funktionaliteten kan komma att ändras.
 
 Använd ML-algoritmer för att generera ett schema från exempeldata. Den här processen sparar tid och ökar noggrannheten när struktur, fält och datatyper definieras för stora komplexa datauppsättningar.
 

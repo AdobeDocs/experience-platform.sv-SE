@@ -2,7 +2,7 @@
 title: Datatypen Advertising Details Collection
 description: Läs mer om datatypen XDM (Advertising Details Collection Experience Data Model).
 exl-id: 3f6bf1f9-c728-46af-804a-cb41eb29951b
-source-git-commit: 799a384556b43bc844782d8b67416c7eea77fbf0
+source-git-commit: 9350cfc299c20bd63a2a559c177b3af02739e5b9
 workflow-type: tm+mt
 source-wordcount: '303'
 ht-degree: 0%
@@ -22,7 +22,7 @@ ht-degree: 0%
 >Varje visningsnamn innehåller en länk med mer information om dess ljud- och videoparametrar. De länkade sidorna innehåller information om videoannonser som samlats in av Adobe, implementeringsvärden, nätverksparametrar, rapporter och viktiga överväganden.
 
 | Visningsnamn | Egenskap | Datatyp | Obligatoriskt | Beskrivning |
-|-----------------------------------------------------------------------------------------------------------------------------------------------------------------|-----------------|-----------|----------------------------------------------------------------------------------------------------------------------------------|
+|-----------------------------------------------------------------------------------------------------------------------------------------------------------------|-----------------|-----------|----------|-----------------------------------------------------------------------------------------------------------------------|
 | [[!UICONTROL Ad Advertiser]](https://experienceleague.adobe.com/docs/media-analytics/using/implementation/variables/ad-parameters.html#advertiser) | `advertiser` | string | Nej | Det företag eller varumärke vars produkt visas i annonsen. |
 | [[!UICONTROL Ad Campaign]](https://experienceleague.adobe.com/docs/media-analytics/using/implementation/variables/ad-parameters.html#campaign-id) | `campaignID` | string | Nej | ID för annonskampanjen. |
 | [[!UICONTROL Ad Creative ID]](https://experienceleague.adobe.com/docs/media-analytics/using/implementation/variables/ad-parameters.html#creative-id) | `creativeID` | string | Nej | Annonspersonalens ID. |
@@ -33,3 +33,5 @@ ht-degree: 0%
 | [[!UICONTROL Ad Placement ID]](https://experienceleague.adobe.com/docs/media-analytics/using/implementation/variables/ad-parameters.html#placement-id) | `placementID` | string | Nej | Annonsens placerings-ID. |
 | [[!UICONTROL Ad Player Name]](https://experienceleague.adobe.com/docs/media-analytics/using/implementation/variables/ad-parameters.html#ad-player-name) | `playerName` | string | Ja | Namnet på spelaren som ansvarar för att återge annonsen. |
 | [[!UICONTROL Ad Site ID]](https://experienceleague.adobe.com/docs/media-analytics/using/implementation/variables/ad-parameters.html#site-id) | `siteID` | string | Nej | ID för annonsplatsen. |
+
+{style="table-layout:auto"}
