@@ -3,9 +3,9 @@ title: Exportera datauppsättningar till molnlagringsmål
 type: Tutorial
 description: Lär dig hur du exporterar datauppsättningar från Adobe Experience Platform till den molnlagringsplats du föredrar.
 exl-id: e89652d2-a003-49fc-b2a5-5004d149b2f4
-source-git-commit: 938e4875318f07b296fc884487ca1c664be659ef
+source-git-commit: 85b69af6fd21cfa9712e9c57593cbf00a62837c8
 workflow-type: tm+mt
-source-wordcount: '1784'
+source-wordcount: '1762'
 ht-degree: 0%
 
 ---
@@ -211,10 +211,7 @@ Följ stegen nedan för att ta bort datauppsättningar från ett befintligt data
 
    ![Navigeringsalternativet för tillgängliga datamängder är markerat i kolumnen för aktiveringsdata.](../assets/ui/export-datasets/go-to-datasets-data.png)
 
-3. [!BADGE Beta] Målsidan **[!UICONTROL Activation data]** visas. Använd kryssrutorna till vänster i datauppsättningslistan för att markera de datauppsättningar som du vill ta bort och markera sedan **[!UICONTROL Remove datasets]** i den högra listen för att utlösa en bekräftelsedialogruta för att ta bort datauppsättningen.
-
-   >[!NOTE]
-   >Den här funktionen är i betaversion och endast tillgänglig för vissa kunder. Kontakta din Adobe-representant om du vill få tillgång till den här funktionen.
+3. Målsidan **[!UICONTROL Activation data]** visas. Använd kryssrutorna till vänster i datauppsättningslistan för att markera de datauppsättningar som du vill ta bort och markera sedan **[!UICONTROL Remove datasets]** i den högra listen för att utlösa en bekräftelsedialogruta för att ta bort datauppsättningen.
 
    ![Dialogrutan Ta bort datauppsättning visar kontrollen Ta bort datauppsättning i den högra listen.](../assets/ui/export-datasets/bulk-remove-datasets.png)
 

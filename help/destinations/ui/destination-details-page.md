@@ -3,9 +3,9 @@ keywords: mål;mål;destinationsdetaljsida;målinformationssida
 title: Visa målinformation
 description: På informationssidan för ett enskilt mål finns en översikt över målinformationen. Målinformationen innehåller målnamn, ID, målgrupper mappade till målet och kontroller för att redigera aktiveringen och aktivera och inaktivera dataflödet.
 exl-id: e44e2b2d-f477-4516-8a47-3e95c2d85223
-source-git-commit: c2832821ea6f9f630e480c6412ca07af788efd66
+source-git-commit: 9ebdf6e675ddfe03f43b56ed10f625a7d000a662
 workflow-type: tm+mt
-source-wordcount: '1136'
+source-wordcount: '1250'
 ht-degree: 0%
 
 ---
@@ -28,7 +28,7 @@ Följ stegen nedan för att visa mer information om ett befintligt mål. Du kan 
 
    ![Bläddra bland mål](../assets/ui/details-page/browse-destinations.png)
 
-2. Välj filterikonen ![Filterikon](/help/images/icons/filter.png) längst upp till vänster för att öppna sorteringspanelen. På sorteringspanelen finns en lista med alla mål. Du kan markera mer än ett mål i listan om du vill visa ett filtrerat urval av dataflöden som är kopplade till det valda målet.
+2. Välj filterikonen ![Filterikon](../../images/icons/filter.png) längst upp till vänster för att öppna sorteringspanelen. På sorteringspanelen finns en lista med alla mål. Du kan markera mer än ett mål i listan om du vill visa ett filtrerat urval av dataflöden som är kopplade till det valda målet.
 
    ![Filtrera mål](../assets/ui/details-page/filter-destinations.png)
 
@@ -103,33 +103,52 @@ Mer information finns i avsnittet om [dataflöde som körs på direktuppspelning
 
 För dataflöde som körs till filbaserade mål beror **[!UICONTROL Processing duration]** på storleken på de data som exporteras och systeminläsningen. Observera också att dataflödet går till filbaserade mål uppdelas per målgrupp.
 
-![Bild av dataflödet kör sida med kolumnen Bearbetningstid markerad för ett filbaserat mål.](/help/destinations/assets/ui/details-page/processing-time-dataflow-run-file-based.png)
+![Bild av dataflödet kör sida med kolumnen Bearbetningstid markerad för ett filbaserat mål.](../assets/ui/details-page/processing-time-dataflow-run-file-based.png)
 
 Mer information finns i avsnittet om [dataflöde som körs till batchbaserade (filbaserade) mål ](/help/dataflows/ui/monitor-destinations.md#dataflow-runs-for-batch-destinations) i övervakningsdokumentationen.
 
 ## [!UICONTROL Activation data] {#activation-data}
 
-Fliken [!UICONTROL Activation data] visar en lista över målgrupper som har mappats till målet, inklusive startdatum och slutdatum (om tillämpligt) samt annan relevant information för dataexporten, till exempel exporttyp, schema och frekvens. Om du vill visa information om en viss målgrupp väljer du namnet i listan.
+Fliken **[!UICONTROL Activation data]** visar en lista över målgrupper som har mappats till målet, inklusive startdatum och slutdatum (om tillämpligt) samt annan relevant information för dataexporten, till exempel exporttyp, schema och frekvens. Om du vill visa information om en viss målgrupp väljer du namnet i listan.
 
 >[!TIP]
 >
 >Om du vill visa och redigera information om de attribut och identiteter som är mappade till ett mål väljer du **[!UICONTROL Activate audiences]** i den [högra listen](#right-rail).
 
+>[!BEGINSHADEBOX]
+
+Fliken **[!UICONTROL Activation data]** för ett filbaserat mål.
+
 ![Aktiveringsdatavyns batchmål](../assets/ui/details-page/activation-data-batch.png)
+
+>[!ENDSHADEBOX]
+
+
+>[!BEGINSHADEBOX]
+
+Fliken **[!UICONTROL Activation data]** för ett mål för direktuppspelning.
 
 ![Vyn Aktiveringsdata - strömmande mål](../assets/ui/details-page/activation-data-streaming.png)
 
-### [!BADGE Beta]{type=Informative} Ta bort flera målgrupper från aktiveringsflöden {#bulk-remove}
+>[!ENDSHADEBOX]
 
->[!NOTE]
->
-Den här funktionen är i betaversion och endast tillgänglig för vissa kunder. Kontakta din Adobe-representant om du vill få tillgång till den här funktionen.
+### Filtrera aktiverade målgrupper {#filter-audiences}
+
+Om du vill filtrera igenom listan med målgrupper som har aktiverats för ett mål anger du ett målgruppsnamn i sökrutan. Listan över målgrupper uppdateras automatiskt med sökresultaten.
+
+![Sökruta för att filtrera målgrupper.](../assets/ui/details-page/filter-audiences.png)
+
+### Ta bort flera målgrupper från aktiveringsflöden {#bulk-remove}
 
 Om du vill ta bort flera målgrupper från befintliga aktiveringsflöden markerar du målgrupperna och väljer sedan **[!UICONTROL Remove audiences]**.
 
 ![Aktiveringsdataskärm som markerar alternativet Ta bort målgrupper.](../assets/ui/details-page/bulk-remove-audiences.png)
 
-### Exportera flera filer on demand till batchmål {#bulk-export}
+### [!BADGE Beta]{type=Informative} Exportera flera filer on-demand till gruppmål {#bulk-export}
+
+>[!NOTE]
+>
+Den här funktionen är i betaversion och endast tillgänglig för vissa kunder. Kontakta din Adobe-representant om du vill få tillgång till den här funktionen.
 
 Du kan [exportera flera filer på begäran](../ui/export-file-now.md) från sidan **[!UICONTROL Activation data]**. För att göra detta väljer du de målgrupper som du vill exportera filer för on-demand och väljer kontrollen **[!UICONTROL Export file now]** för att utlösa en engångs export som levererar en fil för varje vald målgrupp till din gruppdestination.
 
@@ -144,3 +163,9 @@ Om du vill redigera det befintliga aktiveringsschemat för flera målgrupper sam
 >[!NOTE]
 >
 Mer information om hur du utforskar informationssidan för en målgrupp finns i [Översikt över målportalen](../../segmentation/ui/audience-portal.md#segment-details).
+
+### Redigera filnamn för flera målgrupper som exporterats till gruppmål {#bulk-edit-file-names}
+
+Om du vill redigera de exporterade filnamnen för flera målgrupper samtidigt markerar du önskade målgrupper och väljer sedan **[!UICONTROL Edit file name]**. Mer information om hur du definierar eller redigerar ett filnamn finns i avsnittet om hur du [konfigurerar filnamn](../ui/activate-batch-profile-destinations.md#configure-file-names).
+
+![Aktiveringsdataskärm visar alternativet att redigera filnamn för flera målgrupper.](../assets/ui/details-page/bulk-edit-file-name.png)

@@ -3,9 +3,9 @@ title: Aktivera målgrupper för att batchprofilera exportmål
 type: Tutorial
 description: Lär dig hur du aktiverar de målgrupper du har i Adobe Experience Platform genom att skicka dem till batchprofilbaserade destinationer.
 exl-id: 82ca9971-2685-453a-9e45-2001f0337cda
-source-git-commit: d7a530c5ec2cad37b93273f5843609110d61cbfc
+source-git-commit: 85b69af6fd21cfa9712e9c57593cbf00a62837c8
 workflow-type: tm+mt
-source-wordcount: '3909'
+source-wordcount: '4029'
 ht-degree: 0%
 
 ---
@@ -110,6 +110,10 @@ Experience Platform anger automatiskt ett standardschema för varje filexport. D
 
 ![Redigera schemakontroll markerad i schemaläggningssteget.](../assets/ui/activate-batch-profile-destinations/edit-default-schedule.png)
 
+Om du vill redigera flera scheman samtidigt markerar du målgrupperna med kryssrutorna till vänster på skärmen och väljer sedan **[!UICONTROL Edit schedule]**. Schemat som du konfigurerar tillämpas sedan på alla exporterade filer för de valda målgrupperna.
+
+![Bild av användargränssnittet i Experience Platform som visar alternativet för redigeringsschema för flera valda målgrupper.](../assets/ui/activate-batch-profile-destinations/edit-schedule.png)
+
 >[!TIP]
 >
 >Du kan redigera målgruppsaktiveringsplaner för befintliga aktiveringsflöden från sidan **[!UICONTROL Activation data]**. Mer information finns i dokumentationen om [massredigeringsscheman](../ui/destination-details-page.md#bulk-edit-schedule).
@@ -200,7 +204,7 @@ Välj **[!UICONTROL Export incremental files]** om du vill utlösa en export dä
 
 4. Välj **[!UICONTROL Create]** om du vill spara schemat.
 
-### Konfigurera filnamn
+### Konfigurera filnamn {#configure-file-names}
 
 >[!CONTEXTUALHELP]
 >id="platform_destinations_activate_filename"
@@ -234,6 +238,10 @@ Målnamnet och målgrupps-ID:t kan inte tas bort från filnamn. Förutom dessa a
 | **[!UICONTROL Sandbox name]** | ID:t för sandlådan som du använder för att exportera målgruppen. |
 
 {style="table-layout:auto"}
+
+Om du vill redigera flera filnamn samtidigt markerar du målgrupperna med kryssrutorna till vänster på skärmen och väljer sedan **[!UICONTROL Edit file name]**. Alternativen för filnamn som du konfigurerar tillämpas sedan på alla exporterade filer för de valda målgrupperna.
+
+![Bild av användargränssnittet i Experience Platform som visar alternativet för redigering av filnamn för flera valda målgrupper.](../assets/ui/activate-batch-profile-destinations/edit-file-name.png)
 
 Välj **[!UICONTROL Apply changes]** för att bekräfta ditt val.
 

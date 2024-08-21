@@ -1,16 +1,17 @@
 ---
-title: (Beta) Exportera filer on demand till gruppmål med hjälp av användargränssnittet i Experience Platform
+title: Exportera filer on demand till gruppmål med hjälp av användargränssnittet i Experience Platform
 type: Tutorial
 description: Lär dig hur du exporterar filer på begäran till gruppmål med hjälp av användargränssnittet i Experience Platform.
 exl-id: 0cbe5089-b73d-4584-8451-2fc34d47c357
-source-git-commit: 64833e29d062225bc774a14ae60b102b293bb5c4
+source-git-commit: 97ae720fa4d081fcf8d6b84c81a2131e55b9b1b5
 workflow-type: tm+mt
-source-wordcount: '678'
+source-wordcount: '676'
 ht-degree: 0%
 
 ---
 
-# (Beta) Exportera filer on demand till gruppmål med hjälp av användargränssnittet i Experience Platform
+
+# Exportera filer on demand till gruppmål med hjälp av användargränssnittet i Experience Platform
 
 >[!IMPORTANT]
 >
