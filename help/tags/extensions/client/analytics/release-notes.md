@@ -2,9 +2,9 @@
 title: Versionsinformation om Adobe Analytics Extension
 description: Den senaste versionsinformationen om taggtillägget Adobe Analytics i Adobe Experience Platform.
 exl-id: 3c7b4ec0-4b81-4ef4-b15f-6ad102525840
-source-git-commit: fbb8e2e7944fc6ef5be6fb0c6dc0ef256ca65b77
+source-git-commit: c783906b20db2b86d58aea7b3a94bde007c0a465
 workflow-type: tm+mt
-source-wordcount: '1438'
+source-wordcount: '1451'
 ht-degree: 0%
 
 ---
@@ -16,6 +16,14 @@ Nedan följer en lista över versionsinformation för Adobe Analytics-taggtillä
 >[!NOTE]
 >
 >Analytics-taggtillägget uppdateras ofta som svar på uppdateringar av [AppMeasurement JavaScript-biblioteket](https://experienceleague.adobe.com/docs/analytics/implementation/js/overview.html). Mer information om de specifika versionerna som nämns nedan finns i [versionsinformationen för AppMeasurementet](https://experienceleague.adobe.com/docs/analytics/implementation/appmeasurement-updates.html).
+
+## 12 augusti 2024
+
+**Adobe Analytics Extension 1.9.5**
+
+**Funktioner**:
+
+* Uppgraderat till [AppMeasurement till v2.27.0](https://github.com/adobe/appmeasurement/releases/tag/v2.27.0).
 
 ## 4 mars 2024
 
