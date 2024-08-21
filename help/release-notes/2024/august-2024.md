@@ -1,9 +1,9 @@
 ---
 title: Versionsinformation om Adobe Experience Platform, augusti 2024
 description: Versionsinformation från augusti 2024 för Adobe Experience Platform.
-source-git-commit: a44b7d5351168094041438c357dc47328975f70d
+source-git-commit: ab26566cb7f2586d709147686180625db4e920ec
 workflow-type: tm+mt
-source-wordcount: '1080'
+source-wordcount: '1294'
 ht-degree: 1%
 
 ---
@@ -18,11 +18,28 @@ ht-degree: 1%
 
 Uppdateringar av befintliga funktioner och dokumentation i Experience Platform:
 
+- [Attributbaserad åtkomstkontroll](#abac)
 - [Mål ](#destinations)
 - [Experience Data Model (XDM)](#xdm)
 - [Identitetstjänst](#identity-service)
 - [Segmenteringstjänst](#segmentation)
 - [Källor](#sources)
+
+## Attributbaserad åtkomstkontroll {#abac}
+
+Attributbaserad åtkomstkontroll är en funktion hos Adobe Experience Platform som ger sekretessmedvetna varumärken större flexibilitet att hantera användaråtkomst. Enskilda objekt som schemafält och segment kan tilldelas användarroller. Med den här funktionen kan du bevilja eller återkalla åtkomst till enskilda objekt för specifika plattformsanvändare i organisationen.
+
+Med attributbaserad åtkomstkontroll kan administratören styra användarnas tillgång till känsliga personuppgifter (SPD), personligt identifierbar information (PII) och andra anpassade typer av data i alla plattformsarbetsflöden och resurser. Administratörer kan definiera användarroller som bara har åtkomst till specifika fält och data som motsvarar dessa fält.
+
+**Ny funktion**
+
+| Funktionsuppdatering | Beskrivning |
+| --- | --- |
+| Ny behörighetshanterarfunktion | Du kan nu använda [behörighetshanteraren](../../access-control/abac/permission-manager/overview.md) för att generera rapporter med enkla frågor, vilket hjälper dig att förstå åtkomsthantering och spara tid när du verifierar åtkomstbehörigheter i flera arbetsflöden och granularitetsnivåer. Mer information om hur du skapar rapporter för användare och roller finns i användarhandboken för [Permission Manager](../../access-control/abac/permission-manager/permissions.md). ![Användargränssnittet i Image Experience Platform markerar behörighetshanteraren i det vänstra navigeringsfönstret.](assets/august/permission-manager-rn.png "Behörighetshanteraren i användargränssnittet."){width="250" align="center" zoomable="yes"} |
+
+{style="table-layout:auto"}
+
+Mer information om attributbaserad åtkomstkontroll finns i [Översikt över attributbaserad åtkomstkontroll](../../access-control/abac/overview.md). En utförlig guide om det attributbaserade arbetsflödet för åtkomstkontroll finns i [attributbaserad åtkomstkontroll från början till slut](../../access-control/abac/end-to-end-guide.md).
 
 ## Mål  {#destinations}
 
