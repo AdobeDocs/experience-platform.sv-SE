@@ -2,9 +2,9 @@
 title: Översikt över målportalen
 description: Lär dig hur du använder Audience Portal för att visa, hantera och skapa målgrupper i Adobe Experience Platform.
 exl-id: 505ac22e-05f3-423a-a9a0-7f3470af8945
-source-git-commit: 34964bc5af0676872fb472a7309aa99c21efdbc5
+source-git-commit: b59f5ffeb8af6f3bab7ed79189219f39533d2f1b
 workflow-type: tm+mt
-source-wordcount: '3963'
+source-wordcount: '4046'
 ht-degree: 0%
 
 ---
@@ -161,6 +161,18 @@ Mer information om hur du skapar och hanterar taggar finns i handboken [Hantera 
 #### Mappar {#folders}
 
 Ni kan placera målgrupper i mappar för bättre målgruppshantering.
+
+Välj **[!UICONTROL Create folder]** om du vill skapa en mapp för dina målgrupper.
+
+![Knappen Skapa mapp är markerad.](../images/ui/audience-portal/create-folder.png)
+
+>[!NOTE]
+>
+>Du kan bara skapa en mapp om du befinner dig i en annan mapp. Det innebär att du **inte kan** skapa en mapp om du har **[!UICONTROL All Audiences]** markerat i det vänstra navigeringsfältet.
+
+En pover visas där du kan namnge den nya mappen. Välj **[!UICONTROL Save]** efter att du har namngett mappen för att slutföra skapandet av mappen. Observera att namnen **måste** vara unika för den överordnade mappen.
+
+![Knappen Spara i dialogrutan Skapa mapp är markerad.](../images/ui/audience-portal/create-folder-dialog.png)
 
 Om du vill flytta en målgrupp till en mapp väljer du **[!UICONTROL Move to folder]** på den målgrupp du vill flytta.
 
