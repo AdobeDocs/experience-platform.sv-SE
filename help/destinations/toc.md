@@ -5,9 +5,9 @@ user-guide-description: Aktivera kända och okända data för marknadsföringska
 description: I det här dokumentet visas innehållsförteckningen för Adobe Experience Platform-destinationer
 feature: Destinations
 role: Admin,User
-source-git-commit: 515a7cc3ba12afe14aab3e882b7fd55d5cc09069
+source-git-commit: 029cd5bdf58a143f765b37190428b817825317b0
 workflow-type: tm+mt
-source-wordcount: '1248'
+source-wordcount: '1247'
 ht-degree: 1%
 
 ---
@@ -45,7 +45,7 @@ ht-degree: 1%
       * [Aktivera målgrupper för kuraterade destinationer baserat på LiveRamp-identifierare](./ui/activate-curated-destinations.md)
       * [Aktivera potentiella målgrupper till destinationer](./ui/activate-prospect-audiences.md)
       * [Aktivera målgrupper på konton för destinationer](./ui/activate-account-audiences.md)
-      * [(Beta) Exportera filer on demand till gruppmål med hjälp av användargränssnittet i Experience Platform](./ui/export-file-now.md)
+      * [Exportera filer on demand till gruppmål med hjälp av användargränssnittet i Experience Platform](./ui/export-file-now.md)
       * [Exportera datauppsättningar med användargränssnittet i Experience Platform](./ui/export-datasets.md)
       * [(Beta) Använd den senaste kvalificeringstiden för XDM-attributet i det nya betmolnlagringsmålet](./ui/activate-last-qualification-time.md)
       * [(Beta) Använd beräkningsfält för att exportera arrayer i platta schemafiler](/help/destinations/ui/export-arrays-calculated-fields.md)
