@@ -3,9 +3,9 @@ title: (Beta) Trade Desk - CRM-anslutning
 description: Aktivera profiler på ert Trade Desk-konto för målgruppsanpassning och undertryckning baserat på CRM-data.
 last-substantial-update: 2023-01-25T00:00:00Z
 exl-id: e09eaede-5525-4a51-a0e6-00ed5fdc662b
-source-git-commit: ba39f62cd77acedb7bfc0081dbb5f59906c9b287
+source-git-commit: 3c645ccf5b9dd17e4c3cc1267b60a9c4f1131668
 workflow-type: tm+mt
-source-wordcount: '1088'
+source-wordcount: '1114'
 ht-degree: 0%
 
 ---
@@ -25,6 +25,8 @@ ht-degree: 0%
 ## Översikt {#overview}
 
 Det här dokumentet är utformat för att hjälpa dig att aktivera profiler för ditt [!DNL Trade Desk]-konto för målgruppsanpassning och inaktivering baserat på CRM-data.
+
+Den här kopplingen skickar data till den [!DNL The Trade Desk] första partens slutpunkt. Integrationen mellan Adobe Experience Platform och [!DNL The Trade Desk] stöder inte export av data till slutpunkten för [!DNL The Trade Desk] från tredje part.
 
 [!DNL The Trade Desk(TTD)] hanterar inte direkt den överförda filen med e-postadresser och [!DNL The Trade Desk] lagrar inte heller dina ohashade e-postmeddelanden.
 
@@ -140,7 +142,7 @@ Markera målfält:
 
 Om du vill verifiera att data exporteras korrekt från Experience Platform och till [!DNL The Trade Desk] kan du hitta målgrupperna under datapanelen för Adobe 1PD i [!DNL The Trade Desk] Data Management Platform (DMP). Så här söker du efter motsvarande ID i användargränssnittet för [!DNL Trade Desk]:
 
-1. Klicka först på fliken **[!UICONTROL Data]** och granska **[!UICONTROL First-Party]**.
+1. Välj först fliken **[!UICONTROL Data]** och granska avsnittet **[!UICONTROL First-Party]**.
 2. Bläddra nedåt på sidan, under **[!UICONTROL Imported Data]**, hittar du **[!UICONTROL Adobe 1PD Tile]**.
 3. Klicka på rutan**[!UICONTROL Adobe 1PD]** så listas alla målgrupper som är aktiverade för din annonsörs [!DNL Trade Desk] -mål. Du kan också använda sökfunktionen.
 4. Segment-ID # från Experience Platform visas som segmentnamn i användargränssnittet för [!DNL Trade Desk].

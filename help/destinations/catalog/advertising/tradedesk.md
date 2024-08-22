@@ -3,9 +3,9 @@ keywords: annonsering, reklamavdelning, reklamavdelning
 title: The Trade Desk connection
 description: Trade Desk är en självbetjäningsplattform för annonsköpare som kan genomföra återannonsering och målgruppsanpassade digitala kampanjer för olika annonser, videoklipp och mobila inventeringskällor.
 exl-id: b8f638e8-dc45-4aeb-8b4b-b3fa2906816d
-source-git-commit: c35b43654d31f0f112258e577a1bb95e72f0a971
+source-git-commit: 916c56cf8fa25c40c061b3bddc57ba2fa59cbbb1
 workflow-type: tm+mt
-source-wordcount: '704'
+source-wordcount: '740'
 ht-degree: 0%
 
 ---
@@ -14,15 +14,15 @@ ht-degree: 0%
 
 ## Översikt {#overview}
 
-[!DNL The Trade Desk]-målet hjälper dig att skicka profildata till [!DNL The Trade Desk].
+Använd den här målkopplingen för att skicka profildata till [!DNL The Trade Desk]. Den här kopplingen skickar data till den [!DNL The Trade Desk] första partens slutpunkt. Integrationen mellan Adobe Experience Platform och [!DNL The Trade Desk] stöder inte export av data till slutpunkten för [!DNL The Trade Desk] från tredje part.
 
-[!DNL The Trade Desk] är en självbetjäningsplattform som annonsköpare kan använda för återannonsering och målgruppsanpassade digitala kampanjer i olika källor för webbannonsering, video och mobilannonslager.
+[!DNL The Trade Desk] är en självbetjäningsplattform för annonsköpare som kan genomföra återannonsering och målgruppsanpassade digitala kampanjer i olika källor för webbannonsering, video och mobilannonslager.
 
-Om du vill skicka profildata till [!DNL Trade Desk] måste du först ansluta till målet.
+Om du vill skicka profildata till [!DNL Trade Desk] måste du först ansluta till målet, vilket beskrivs i följande avsnitt på den här sidan.
 
 ## Användningsfall {#use-cases}
 
-Som marknadsförare vill jag kunna använda målgrupper som är inbyggda i [!DNL Trade Desk IDs] eller enhets-ID:n för att skapa återmarknadsföring eller målgruppsanpassade digitala kampanjer.
+Som marknadsförare vill jag kunna använda målgrupper som är inbyggda i [!DNL Trade Desk IDs] eller enhets-ID för att skapa återmarknadsföring eller målgruppsanpassade digitala kampanjer.
 
 ## Identiteter som stöds {#supported-identities}
 
@@ -62,7 +62,7 @@ Se tabellen nedan för information om exporttyp och frekvens för destinationen.
 
 >[!IMPORTANT]
 >
->Om du vill skapa ditt första mål med [!DNL The Trade Desk] och inte har aktiverat [ID-synkroniseringsfunktionen](https://experienceleague.adobe.com/docs/id-service/using/id-service-api/methods/idsync.html) i Experience Cloud ID-tjänsten tidigare (med Adobe Audience Manager eller andra program) ber vi dig kontakta Adobe Consulting eller Kundtjänst för att aktivera ID-synkronisering. Om du tidigare har konfigurerat [!DNL The Trade Desk]-integreringar i Audience Manager överförs de ID-synkroniseringar du har konfigurerat till Platform.
+>Om du vill skapa ditt första mål med [!DNL The Trade Desk] och inte har aktiverat [ID-synkroniseringsfunktionen](https://experienceleague.adobe.com/en/docs/id-service/using/id-service-api/methods/idsync) i Experience Cloud ID-tjänsten tidigare (med Adobe Audience Manager eller andra program) ber vi dig kontakta Adobe Consulting eller Kundtjänst för att aktivera ID-synkronisering. Om du tidigare har konfigurerat [!DNL The Trade Desk]-integreringar i Audience Manager överförs de ID-synkroniseringar du har konfigurerat till Platform.
 
 ## Anslut till målet {#connect}
 
@@ -79,7 +79,7 @@ När [konfigurerar](../../ui/connect-destination.md) för det här målet måste
 * **[!UICONTROL Name]**: Ett namn som du känner igen det här målet med i framtiden.
 * **[!UICONTROL Description]**: En beskrivning som hjälper dig att identifiera det här målet i framtiden.
 * **[!UICONTROL Account ID]**: Din [!DNL Trade Desk] [!UICONTROL Account ID].
-* **[!UICONTROL Server Location]**: Fråga din [!DNL Trade Desk]-representant vilken regional server du ska använda. Det här är de tillgängliga regionala servrarna du kan välja mellan:
+* **[!UICONTROL Server Location]**: Fråga din [!DNL Trade Desk]-representant vilken regional server du ska använda. Nedan visas de tillgängliga regionala servrarna som du kan välja mellan:
    * **[!UICONTROL Europe]**
    * **[!UICONTROL Singapore]**
    * **[!UICONTROL Tokyo]**
@@ -104,7 +104,7 @@ Se [Aktivera målgruppsdata för att direktuppspela målgruppsexportmål](../../
 
 I steget [Målgruppsschema](../../ui/activate-segment-streaming-destinations.md#scheduling) måste du manuellt mappa dina målgrupper till deras motsvarande ID eller egna namn på målplattformen.
 
-När du mappar segment rekommenderar vi att du använder namnet på plattformens målgrupp eller en kortare form av det, för att underlätta användningen. Målets målgrupps-ID eller namn behöver dock inte matcha det i ditt plattformskonto. Alla värden som du infogar i mappningsfältet återspeglas av målet.
+När du kartlägger målgrupper rekommenderar Adobe att du för enkelhets skull använder namnet på plattformens målgrupp eller en kortare form av det. Målets målgrupps-ID eller namn behöver dock inte matcha det i ditt plattformskonto. Alla värden som du infogar i mappningsfältet återspeglas av målet.
 
 Om du använder flera enhetsmappningar (cookie-ID:n, [!DNL IDFA], [!DNL GAID]) måste du använda samma mappningsvärde för alla tre mappningarna. [!DNL The Trade Desk] samlar alla i ett enda segment, med en uppdelning på enhetsnivå.
 
@@ -112,4 +112,4 @@ Om du använder flera enhetsmappningar (cookie-ID:n, [!DNL IDFA], [!DNL GAID]) m
 
 ## Exporterade data {#exported-data}
 
-Kontrollera ditt [!DNL Trade Desk]-konto om du vill verifiera om data har exporterats till [!DNL The Trade Desk]-målet. Om aktiveringen lyckades fylls målgrupperna i ditt konto.
+Kontrollera ditt [!DNL Trade Desk]-konto om du vill verifiera om data har exporterats till målet [!DNL The Trade Desk]. Om aktiveringen lyckades fylls målgrupperna i ditt konto.
