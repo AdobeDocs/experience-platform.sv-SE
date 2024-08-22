@@ -3,9 +3,9 @@ title: Händelsetyper i Adobe Experience Platform Web SDK-tillägget
 description: Lär dig hur du använder händelsetyper från Adobe Experience Platform Web SDK-tillägget i Adobe Experience Platform Launch.
 solution: Experience Platform
 exl-id: b3162406-c5ce-42ec-ab01-af8ac8c63560
-source-git-commit: b6e084d2beed58339191b53d0f97b93943154f7c
+source-git-commit: 666e8c6fcccf08d0841c5796677890409b22d794
 workflow-type: tm+mt
-source-wordcount: '954'
+source-wordcount: '1067'
 ht-degree: 0%
 
 ---
@@ -260,3 +260,14 @@ if (propositions) {
   // them in some other way.
 }
 ```
+
+## [!UICONTROL Subscribe ruleset items] {#subscribe-ruleset-items}
+
+Med händelsetypen **[!UICONTROL Subscribe ruleset items]** kan du prenumerera på Adobe Journey Optimizer-innehållskort för en yta. När reglerna utvärderas får det återanrop som ges till det här kommandot ett resultatobjekt med förslag som innehåller innehållskortets data.
+
+![Bild av användargränssnittet för Experience Platform-taggar som visar händelsetypen för objekt i prenumerationsregeluppsättningen.](assets/subscribe-ruleset-items.png)
+
+Den här händelsetypen stöder följande konfigurerbara egenskaper:
+
+* **[!UICONTROL Schemas]**: En matris med scheman som du vill prenumerera på innehållskort för. Du kan ange scheman manuellt eller genom att ange ett dataelement.
+* **[!UICONTROL Surfaces]**: En array med ytor som du vill prenumerera på innehållskort för. Du kan ange ytorna manuellt eller genom att ange ett dataelement.
