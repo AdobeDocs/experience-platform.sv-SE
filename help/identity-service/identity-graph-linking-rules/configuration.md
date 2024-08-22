@@ -3,9 +3,9 @@ title: Konfigurationsguide för länkning av identitetsdiagram
 description: Lär dig de rekommenderade stegen som ska följas när du implementerar data med länkningsregler för identitetsdiagram.
 badge: Beta
 exl-id: 368f4d4e-9757-4739-aaea-3f200973ef5a
-source-git-commit: e3568aa925661f4f519daf6572fd2df40b163cb5
+source-git-commit: 3d96e057123a4dd0b4f6f34a64a93c756b583c9b
 workflow-type: tm+mt
-source-wordcount: '1349'
+source-wordcount: '1350'
 ht-degree: 0%
 
 ---
@@ -76,7 +76,7 @@ Instruktioner om hur du skapar en datauppsättning finns i [användargränssnitt
 >
 >* Under förimplementeringsprocessen måste du se till att de autentiserade händelser som skickas till Experience Platform alltid innehåller en personidentifierare, till exempel CRMID.
 >* Under implementeringen måste du se till att det unika namnutrymmet med den högsta prioriteten alltid finns i alla profiler. I [bilagan](#appendix) finns exempel på diagramscenarier som löses genom att säkerställa att alla profiler innehåller det unika namnutrymmet med högsta prioritet.
->* Om du använder [Adobe Analytics-källkopplingen](../../sources/tutorials/ui/create/adobe-applications/analytics.md) för att importera data, måste du ge dina ECID högre prioritet än AID eftersom identitetstjänsten blockerar AAID. Genom att prioritera ECID kan du instruera identitetstjänsten att lagra oautentiserade händelser i ECID i stället för i AID.
+>* Om du använder [Adobe Analytics-källkopplingen](../../sources/tutorials/ui/create/adobe-applications/analytics.md) för att importera data, måste du ge dina ECID högre prioritet än AID eftersom identitetstjänsten blockerar AAID. Genom att prioritera ECID kan du instruera kundprofilen i realtid att lagra oautentiserade händelser i ECID i stället för i AID.
 
 Nu bör du ha följande:
 
