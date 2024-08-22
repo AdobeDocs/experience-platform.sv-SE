@@ -1,9 +1,9 @@
 ---
 title: Versionsinformation om Adobe Experience Platform, augusti 2024
 description: Versionsinformation från augusti 2024 för Adobe Experience Platform.
-source-git-commit: d01e16938485f6648cc02ce1674e0e9e84d78147
+source-git-commit: bc09b03cf34c9da9a93e27b7d1a07b7a3bc7f0aa
 workflow-type: tm+mt
-source-wordcount: '1294'
+source-wordcount: '1343'
 ht-degree: 1%
 
 ---
@@ -45,7 +45,16 @@ Mer information om attributbaserad åtkomstkontroll finns i [Översikt över att
 
 [!DNL Destinations] är färdiga integreringar med målplattformar som möjliggör smidig aktivering av data från Adobe Experience Platform. Ni kan använda destinationer för att aktivera kända och okända data för flerkanalskampanjer, e-postkampanjer, riktad reklam och många andra användningsfall.
 
-**Ny eller uppdaterad funktionalitet**
+**Nya eller uppdaterade mål** {#new-updated-destinations}
+
+| Mål | Beskrivning |
+| ----------- | ----------- |
+| [Braze](/help/destinations/catalog/mobile-engagement/braze.md) | [!UICONTROL Braze] hanterar ett antal olika instanser för sin kontrollpanel och REST-slutpunkter. [!UICONTROL Braze]-kunder bör använda rätt REST-slutpunkt baserat på vilken instans du har tilldelats. Den här versionen lägger till en ny US-07-slutpunkt som du kan välja när du ansluter till [!UICONTROL Braze]. |
+
+{style="table-layout:auto"}
+
+**Ny eller uppdaterad funktion** {#destinations-new-updated-functionality}
+
 
 | Funktion | Beskrivning |
 | ----------- | ----------- |
