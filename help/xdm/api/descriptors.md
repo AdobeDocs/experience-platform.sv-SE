@@ -4,9 +4,9 @@ solution: Experience Platform
 title: API-slutpunkt för beskrivare
 description: Med slutpunkten /descriptors i API:t för schemaregister kan du programmässigt hantera XDM-beskrivningar i ditt upplevelseprogram.
 exl-id: bda1aabd-5e6c-454f-a039-ec22c5d878d2
-source-git-commit: 44355aa2ddf03b20aca64c6675414b73682bc2b5
+source-git-commit: 866e00459c66ea4678cd98d119a7451fd8e78253
 workflow-type: tm+mt
-source-wordcount: '1917'
+source-wordcount: '1918'
 ht-degree: 0%
 
 ---
@@ -291,7 +291,7 @@ Följande avsnitt innehåller ytterligare information om hur du arbetar med besk
 
 >[!NOTE]
 >
->Det maximala antalet beskrivningar som kan tillämpas på ett schema är 4 000.
+>Det maximala antalet beskrivningar som kan tillämpas på en organisations sandlåda är 4000.
 
 I följande avsnitt ges en översikt över tillgängliga beskrivningstyper, inklusive de fält som krävs för att definiera en beskrivning av varje typ.
 
