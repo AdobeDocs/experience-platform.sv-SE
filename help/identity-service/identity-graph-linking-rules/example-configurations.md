@@ -2,9 +2,9 @@
 title: Guide för diagramkonfigurationer
 description: Lär dig mer om vanliga diagramscenarier som du kan stöta på när du arbetar med länkningsregler för identitetsdiagram och identitetsdata.
 badge: Beta
-source-git-commit: a1f12f266b74bd88fbb1c1a095bb6f6eb565612b
+source-git-commit: 90faa4079d8a58898774c1fbbae2adae01f7e0a2
 workflow-type: tm+mt
-source-wordcount: '2757'
+source-wordcount: '2749'
 ht-degree: 1%
 
 ---
@@ -478,7 +478,7 @@ I det här scenariot finns det ett enda CRMID som representerar en personenhet. 
 
 | Använda namnutrymmen | Samlingsmetod för webbeteenden |
 | --- | --- |
-| CRMID, Email_LC_SHA256, Phone_SHA256, loginID, ECID | Adobe Analytics källanslutning **Obs!** Som standard blockeras AAID i identitetstjänsten, och du måste därför ange en högre prioritet för dina ECID:n än AAID när du använder Analytics-källan. Mer information finns i [implementeringsguiden](configuration.md#ingest-your-data). |
+| CRMID, Email_LC_SHA256, Phone_SHA256, loginID, ECID | Adobe Analytics källanslutning. <br> **Obs!** Som standard blockeras AAID i identitetstjänsten, och du måste därför ange en högre prioritet för dina ECID:n än AAID:n när du använder Analytics-källan. Läs [implementeringsguiden](configuration.md#ingest-your-data) om du vill ha mer information.</br> |
 
 **Händelser:**
 
@@ -488,11 +488,11 @@ Du kan skapa det här scenariot i diagramsimulering genom att kopiera följande 
 CRMID: Tom, Email_LC_SHA256: aabbcc, Phone_SHA256: 123-4567
 CRMID: Tom, loginID: ID_A
 CRMID: Tom, loginID: ID_B
-loginID: ID_A, ECID: 111, AAID: AAA
+loginID: ID_A, ECID: 111
 CRMID: Summer, Email_LC_SHA256: ddeeff, Phone_SHA256: 765-4321
 CRMID: Summer, loginID: ID_C
 CRMID: Summer, loginID: ID_D
-loginID: ID_C, ECID: 222, AAID: BBB
+loginID: ID_C, ECID: 222
 ```
 
 **Algoritmkonfiguration:**
@@ -532,7 +532,7 @@ Följande är ett exempel på två enpersonsdiagram som har ett CRMID och flera 
 
 >[!TAB Flerpersonsdiagram: delad enhet 1]
 
-Följande är ett flerpersonsscenario för delade enheter där `{ECID:111, AAID:AAA}` är länkat till `{loginID:ID_A}` och `{loginID:ID_C}`. I det här fallet tas de äldre etablerade länkarna bort till förmån för de senast etablerade länkarna.
+Följande är ett flerpersonsscenario för delade enheter där `{ECID:111}` är länkat till både `{loginID:ID_A}` och `{loginID:ID_C}`. I det här fallet tas de äldre etablerade länkarna bort till förmån för de senast etablerade länkarna.
 
 ![Ett diagram över delade enheter med flera personer.](../images/graph-examples/complex_shared_device_one.png)
 
@@ -634,9 +634,9 @@ CRMID: Summer, Phone_SHA256: 111-1111
 
 >[!ENDTABS]
 
-## Användning i andra Adobe-program
+## Användning i andra Adobe Commerce
 
-I diagramkonfigurationsexemplen i det här avsnittet beskrivs användningsexempel för Real-time Customer Data Platform, Adobe Journey Optimizer och Adobe Commerce. Exemplen nedan fokuserar på detaljhandelskunder med två användartyper:
+I diagramkonfigurationsexemplen i det här avsnittet beskrivs användningsexempel för Adobe Commerce. Exemplen nedan fokuserar på detaljhandelskunder med två användartyper:
 
 * Registrerad användare (användare som skapade ett konto)
 * Gästanvändare (användare som bara har en e-postadress)
