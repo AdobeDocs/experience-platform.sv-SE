@@ -1,10 +1,9 @@
 ---
 title: Vanliga frågor om Adobe Experience Platform Web SDK
 description: Få svar på vanliga frågor om Adobe Experience Platform Web SDK.
-exl-id: 6ddb4b4d-c9b8-471a-bd2e-135dc4202876
-source-git-commit: cd2ac132c77d5d2e90c0f881d7b89a3c339fed6f
+source-git-commit: ed22c76b2805f1baab2ae3c82e1133e1fd8c9f72
 workflow-type: tm+mt
-source-wordcount: '2184'
+source-wordcount: '2033'
 ht-degree: 1%
 
 ---
@@ -172,33 +171,9 @@ Om du för närvarande har både säkra och osäkra avsnitt på webbplatsen kan 
 
 ## Vilka webbläsare stöder Adobe Experience Platform Web SDK?
 
-Adobe Experience Platform Web SDK är utformat för att fungera optimalt i de senaste versionerna av Google Chrome, Safari, Firefox, Internet Explorer 11 och Microsoft Edge Chromium. Du kan ha problem med att använda vissa funktioner i äldre versioner av webbläsare.
+Adobe Experience Platform Web SDK är utformat för att fungera optimalt i de senaste versionerna av Google Chrome, Safari, Firefox och Microsoft Edge Chromium. Du kan ha problem med att använda vissa funktioner i äldre versioner av webbläsare eller inaktuella webbläsare, som Internet Explorer.
 
 ## Var kan jag få mer information om Adobe Experience Platform Web SDK?
 
 * [Dokumentation](/help/web-sdk/home.md)
 * [Source Code](https://github.com/adobe/alloy)
-
-### Stöd för Internet Explorer {#support-internet-explore}
-
-Denna SDK använder löften, som är ett sätt att kommunicera slutförandet av asynkrona uppgifter. Implementeringen [Promise](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise) som används av SDK stöds internt av alla målwebbläsare utom [!DNL Internet Explorer]. Om du vill använda SDK på [!DNL Internet Explorer] måste du ha `window.Promise` [polyfylld](https://remysharp.com/2010/10/08/what-is-a-polyfill).
-
-Så här kontrollerar du om du redan har `window.Promise` polyfyllda:
-
-1. Öppna din webbplats i [!DNL Internet Explorer].
-1. Öppna webbläsarens felsökningskonsol.
-1. Skriv `window.Promise` i konsolen och tryck sedan på Retur.
-
-Om något annat än `undefined` visas har du antagligen redan polyfyllt `window.Promise`. Ett annat sätt att avgöra om `window.Promise` är polyfylld är att läsa in webbplatsen efter att ha slutfört installationsinstruktionerna ovan. Om SDK genererar ett fel som anger något om ett löfte har du troligen inte polyfyllt `window.Promise`.
-
-Om du har fastställt att du måste polyfill `window.Promise` ska du inkludera följande skripttagg ovanför den tidigare angivna baskoden:
-
-```html
-<script src="https://cdn.jsdelivr.net/npm/promise-polyfill@8/dist/polyfill.min.js"></script>
-```
-
-Den här taggen läser in ett skript som ser till att `window.Promise` är en giltig Promise-implementering.
-
->[!NOTE]
->
->Om du väljer att läsa in en annan Promise-implementering måste den ha stöd för `Promise.prototype.finally`.
