@@ -3,9 +3,9 @@ title: Versionsinformation för Adobe Experience Platform Web SDK
 description: Den senaste versionsinformationen om webb-SDK för Adobe Experience Platform.
 keywords: Adobe Experience Platform Web SDK;Platform Web SDK;Web SDK;versionsinformation;
 exl-id: efd4e866-6a27-4bd5-af83-4a97ca8adebd
-source-git-commit: 47cf9cdb7c59ce8459ecb8823787b5145d5f5621
+source-git-commit: 73a82825dd6c9ae97db76018df5462ab20c7d15e
 workflow-type: tm+mt
-source-wordcount: '1857'
+source-wordcount: '1882'
 ht-degree: 0%
 
 ---
@@ -16,241 +16,249 @@ ht-degree: 0%
 Det här dokumentet innehåller versionsinformation för Adobe Experience Platform Web SDK.
 Den senaste versionsinformationen om Web SDK-taggtillägget finns i [Versionsinformationen för Web SDK-taggtillägg](../tags/extensions/client/web-sdk/web-sdk-ext-release-notes.md).
 
->[!IMPORTANT]
->
->Google [har meddelat](https://developers.google.com/privacy-sandbox/3pcd/prepare/prepare-for-phaseout) att Chrome-stöd för cookies från tredje part kommer att upphöra under andra halvåret 2024. Detta innebär att cookies från tredje part inte längre stöds i någon av de större webbläsarna.
->
->När den här ändringen implementeras upphör Adobe stödet för den `demdex`-cookie som för närvarande stöds i Web SDK.
+## Version 2.2.0 - 22 augusti 2024
+
+**Nya funktioner**
+
+- Tillagda personaliseringsövervakare.
+
+**Korrigeringar och förbättringar**
+
+- Stöd för Internet Explorer har tagits bort, vilket minskar bibliotekets GZIP-storlek med 9 %.
+- Ett problem har korrigerats där aktivitetskartans länkinformation inte initierades när övervakarkroken `onInstanceConfigured` anropades.
+- Ett problem har korrigerats där cookies-mål inte hade angetts till rätt sökväg.
+- Ett kundproblem med att ringa har korrigerats.
+- Korrigerade ett problem där en ogiltig URL-kodning i parametern `adobe_mc` orsakade att [ sendEvent](commands/sendevent/overview.md) anrop misslyckades.
 
 ## Version 2.21.1 - 18 juli 2024
 
 **Korrigeringar och förbättringar**
 
-* Ett byggfel har korrigerats vid användning av NPM-bibliotek.
+- Ett byggfel har korrigerats vid användning av NPM-bibliotek.
 
 ## Version 2.21.0 - 16 juli 2024
 
 **Nya funktioner**
 
-* Stöd för automatisk spårning av offertinteraktion har lagts till.
-* Ett anpassat byggskript med en alloy.js-fil har lagts till.
-* Förbättrad klicksamling med stöd för ActivityMap och händelsegruppering.
+- Stöd för automatisk spårning av offertinteraktion har lagts till.
+- Ett anpassat byggskript med en alloy.js-fil har lagts till.
+- Förbättrad klicksamling med stöd för ActivityMap och händelsegruppering.
 
 ## Version 2.20.0 - 21 maj 2024
 
 **Nya funktioner**
 
-* Stöd har lagts till för [direktuppspelad mediesamling](../web-sdk/commands/configure/streamingmedia.md).
+- Stöd har lagts till för [direktuppspelad mediesamling](../web-sdk/commands/configure/streamingmedia.md).
 
 **Korrigeringar och förbättringar**
 
-* Korrigerade ett fel som gjorde att standardinnehållet doldes av det föregående fragmentet när samtycke valdes ut.
+- Korrigerade ett fel som gjorde att standardinnehållet doldes av det föregående fragmentet när samtycke valdes ut.
 
 ## Version 2.19.2 - 10 januari 2024
 
 **Korrigeringar och förbättringar**
 
-* Ett problem där identitetsfel maskerade andra fel har korrigerats och identitetsfel har ändrats till varningar har åtgärdats.
-* Ett problem har korrigerats där längst ned på sidanrop aldrig skulle skickas när det fanns ett överst på sidanropet med `renderDecisions` inställt på `false`.
-* Korrigerade ett problem där Web SDK inte kunde läsa korsdomänsidentiteter när det fanns flera `adobe_mc` frågesträngsparametrar.
+- Ett problem där identitetsfel maskerade andra fel har korrigerats och identitetsfel har ändrats till varningar har åtgärdats.
+- Ett problem har korrigerats där längst ned på sidanrop aldrig skulle skickas när det fanns ett överst på sidanropet med `renderDecisions` inställt på `false`.
+- Korrigerade ett problem där Web SDK inte kunde läsa korsdomänsidentiteter när det fanns flera `adobe_mc` frågesträngsparametrar.
 
 ## Version 2.19.1 - 10 november 2023
 
 **Korrigeringar och förbättringar**
 
-* Ett problem har korrigerats där förslagsmatrisen som returnerades från `sendEvent` anrop alltid var tom.
+- Ett problem har korrigerats där förslagsmatrisen som returnerades från `sendEvent` anrop alltid var tom.
 
 ## Version 2.19.0 - 1 november 2023
 
 **Nya funktioner**
 
-* Stöd för återgivning av meddelanden i appen från Adobe Journey Optimizer har lagts till.
-* Stöd för [övre och nedre delen av sidhändelser](use-cases/top-bottom-page-events.md) har lagts till.
-* Alternativet [`defaultPersonalizationEnabled`](commands/sendevent/personalization.md) har lagts till i kommandot `sendEvent` för att styra begäran om sidomfånget och standardytan.
+- Stöd för återgivning av meddelanden i appen från Adobe Journey Optimizer har lagts till.
+- Stöd för [övre och nedre delen av sidhändelser](use-cases/top-bottom-page-events.md) har lagts till.
+- Alternativet [`defaultPersonalizationEnabled`](commands/sendevent/personalization.md) har lagts till i kommandot `sendEvent` för att styra begäran om sidomfånget och standardytan.
 
 **Korrigeringar och förbättringar**
 
-* Kombinerad personalisering visar händelser tillsammans vid återgivning av flera typer av personalisering.
-* Ett problem där namn på en programvy på en sida var skiftlägeskänsliga har korrigerats.
-* Ett problem med skugg-DOM-anpassade erbjudandeväljare har korrigerats.
+- Kombinerad personalisering visar händelser tillsammans vid återgivning av flera typer av personalisering.
+- Ett problem där namn på en programvy på en sida var skiftlägeskänsliga har korrigerats.
+- Ett problem med skugg-DOM-anpassade erbjudandeväljare har korrigerats.
 
 ## Version 2.18.0 - 31 juli 2023
 
 **Nya funktioner**
 
-* Stöd har lagts till för [åsidosättningar av datastream-ID:t ](../datastreams/overrides.md) per kommando.
+- Stöd har lagts till för [åsidosättningar av datastream-ID:t ](../datastreams/overrides.md) per kommando.
 
 **Korrigeringar och förbättringar**
 
-* Ett problem har korrigerats där avslutningslänkar inte kunde kvalificeras på grund av att domänen är en del av frågan.
-* `edgeConfigId` har tagits bort till förmån för `datastreamId` i Web SDK-konfigurationen.
+- Ett problem har korrigerats där avslutningslänkar inte kunde kvalificeras på grund av att domänen är en del av frågan.
+- `edgeConfigId` har tagits bort till förmån för `datastreamId` i Web SDK-konfigurationen.
 
 ## Version 2.17.0 - 17 maj 2023
 
 **Korrigeringar och förbättringar**
 
-* Web SDK kodar nu målvärden för cookie i Audience Manager, som liknar [Data Integration Library (DIL)](https://experienceleague.adobe.com/docs/audience-manager/user-guide/dil-api/dil-overview.html).
+- Web SDK kodar nu målvärden för cookie i Audience Manager, som liknar [Data Integration Library (DIL)](https://experienceleague.adobe.com/docs/audience-manager/user-guide/dil-api/dil-overview.html).
 
 ## Version 2.16.0 - 25 april 2023
 
 **Nya funktioner**
 
-* Stöd har lagts till för åsidosättande av [datastream-konfigurationen](../datastreams/overrides.md).
+- Stöd har lagts till för åsidosättande av [datastream-konfigurationen](../datastreams/overrides.md).
 
 ## Version 2.15.0 - 30 mars 2023
 
 **Nya funktioner**
 
-* Stöd för länkklickning på [`onBeforeLinkClickSend`](/help/web-sdk/commands/configure/onbeforelinkclicksend.md) har lagts till.
-* Stöd för Adobe Journey Optimizer klickspårning har lagts till.
+- Stöd för länkklickning på [`onBeforeLinkClickSend`](/help/web-sdk/commands/configure/onbeforelinkclicksend.md) har lagts till.
+- Stöd för Adobe Journey Optimizer klickspårning har lagts till.
 
 **Korrigeringar och förbättringar**
 
-* Länksamlingen innehåller nu länknamn och besöksregion.
-* Konsolfel för misslyckade URL-mål har tagits bort.
+- Länksamlingen innehåller nu länknamn och besöksregion.
+- Konsolfel för misslyckade URL-mål har tagits bort.
 
 ## Version 2.14.0 - 25 januari 2023
 
-* (Beta) Stöd för Adobe Journey Optimizer ytor och erbjudanden har lagts till.
+- (Beta) Stöd för Adobe Journey Optimizer ytor och erbjudanden har lagts till.
 
 **Korrigeringar och förbättringar**
 
-* Ett problem med anpassade kodåtgärder för Adobe Target VEC där koden matades in på en alternativ plats än med [!DNL at.js] har korrigerats.
-* Ett problem har korrigerats där refererhuvudet i vissa kantfall inte var korrekt inställt på begäranden till Edge Network.
-* Ett problem har korrigerats där egenskaperna för [användaragentens klienttips](/help/web-sdk/use-cases/client-hints.md) kunde anges till en felaktig typ.
-* Ett problem har korrigerats där `placeContext.localTime` inte matchade schemat.
+- Ett problem med anpassade kodåtgärder för Adobe Target VEC där koden matades in på en alternativ plats än med [!DNL at.js] har korrigerats.
+- Ett problem har korrigerats där refererhuvudet i vissa kantfall inte var korrekt inställt på begäranden till Edge Network.
+- Ett problem har korrigerats där egenskaperna för [användaragentens klienttips](/help/web-sdk/use-cases/client-hints.md) kunde anges till en felaktig typ.
+- Ett problem har korrigerats där `placeContext.localTime` inte matchade schemat.
 
 ## Version 2.13.1 - 13 oktober 2022
 
-* Korrigerade ett problem där besökarmigrering inte fungerar om window.Visitor definieras efter konfiguration. Det här är ett särskilt problem när du använder Adobe-taggar.
-* Korrigerade ett problem där `device.screenWidth` och `device.screenHeight` fylldes i som strängar i vissa miljöer.
+- Korrigerade ett problem där besökarmigrering inte fungerar om window.Visitor definieras efter konfiguration. Det här är ett särskilt problem när du använder Adobe-taggar.
+- Korrigerade ett problem där `device.screenWidth` och `device.screenHeight` fylldes i som strängar i vissa miljöer.
 
 ## Version 2.13.0 - 28 september 2022
 
 **Nya funktioner**
 
-* Stöd har lagts till för [Fullständig sidmigrering](home.md#migrating-to-web-sdk). Adobe Target-profilen bevaras nu när en besökare förflyttar sig mellan at.js- och Web SDK-sidor.
-* Konfigurerbart stöd för [hög entropi-klienttips för användaragent ](/help/web-sdk/use-cases/client-hints.md) har lagts till.
-* Stöd för kommandot [`applyResponse`](/help/web-sdk/commands/applyresponse.md) har lagts till. Detta aktiverar hybridanpassning via [Edge Network Server-API](../server-api/overview.md).
-* QA-lägeslänkar fungerar nu på flera sidor.
+- Stöd har lagts till för [Fullständig sidmigrering](home.md#migrating-to-web-sdk). Adobe Target-profilen bevaras nu när en besökare förflyttar sig mellan at.js- och Web SDK-sidor.
+- Konfigurerbart stöd för [hög entropi-klienttips för användaragent ](/help/web-sdk/use-cases/client-hints.md) har lagts till.
+- Stöd för kommandot [`applyResponse`](/help/web-sdk/commands/applyresponse.md) har lagts till. Detta aktiverar hybridanpassning via [Edge Network Server-API](../server-api/overview.md).
+- QA-lägeslänkar fungerar nu på flera sidor.
 
 **Korrigeringar och förbättringar**
 
-* Ett problem har korrigerats där personalisering av klickspårningsstatistik inte uppdaterades när länkspårning inaktiverades.
-* Uppdaterade kommandon som genererar ett valideringsfel när okända alternativ anges.
-* Egenskapen `_experience.decisioning.propositionEventType` fylls nu i när visnings- och interaktionspersonaliseringshändelser skickas automatiskt.
-* Dubblerad namnområdesvalidering har lagts till för kommandot `getIdentity`.
-* Dubblettvalideringen av beslutsomfånget för kommandot `sendEvent` har lagts till.
+- Ett problem har korrigerats där personalisering av klickspårningsstatistik inte uppdaterades när länkspårning inaktiverades.
+- Uppdaterade kommandon som genererar ett valideringsfel när okända alternativ anges.
+- Egenskapen `_experience.decisioning.propositionEventType` fylls nu i när visnings- och interaktionspersonaliseringshändelser skickas automatiskt.
+- Dubblerad namnområdesvalidering har lagts till för kommandot `getIdentity`.
+- Dubblettvalideringen av beslutsomfånget för kommandot `sendEvent` har lagts till.
 
 ## Version 2.12.0 - 29 juni 2022
 
-* Ändra förfrågningarna till Edge Network om att använda `cluster`-cookie-platstipset som en del av URL:en. Detta garanterar att användare som byter plats (t.ex. genom ett VPN eller kör med mobila enheter, etc.) når samma kant och har samma personaliseringsprofil.
-* Sträng konfigurerade funktioner i kommandosvaret getLibraryInfo.
+- Ändra förfrågningarna till Edge Network om att använda `cluster`-cookie-platstipset som en del av URL:en. Detta garanterar att användare som byter plats (t.ex. genom ett VPN eller kör med mobila enheter, etc.) når samma kant och har samma personaliseringsprofil.
+- Sträng konfigurerade funktioner i kommandosvaret getLibraryInfo.
 
 ## Version 2.11.0 - 13 juni 2022
 
 **Nya funktioner**
 
-* Ni kan nu leverera personaliserade upplevelser mer korrekt genom att dela besökar-ID:n mellan mobilappar och mobilwebbinnehåll samt mellan domäner. Mer information finns i den [dedikerade dokumentationen](identity/id-sharing.md).
-* Nu kan du återge eller köra en array med förslag från [!DNL Adobe Target] till ensidiga program, utan att öka analysvärdena. Detta minskar antalet rapporteringsfel och ökar noggrannheten i analysen. Mer information finns i den [dedikerade dokumentationen](personalization/rendering-personalization-content.md#applypropositions).
-* Ytterligare information har lagts till för kommandot `getLibraryInfo`, inklusive tillgängliga kommandon och den slutliga konfigurationen för instansen.
+- Ni kan nu leverera personaliserade upplevelser mer korrekt genom att dela besökar-ID:n mellan mobilappar och mobilwebbinnehåll samt mellan domäner. Mer information finns i den [dedikerade dokumentationen](identity/id-sharing.md).
+- Nu kan du återge eller köra en array med förslag från [!DNL Adobe Target] till ensidiga program, utan att öka analysvärdena. Detta minskar antalet rapporteringsfel och ökar noggrannheten i analysen. Mer information finns i den [dedikerade dokumentationen](personalization/rendering-personalization-content.md#applypropositions).
+- Ytterligare information har lagts till för kommandot `getLibraryInfo`, inklusive tillgängliga kommandon och den slutliga konfigurationen för instansen.
 
 **Korrigeringar och förbättringar**
 
-* Uppdaterade cookie-inställningar för att använda `sameSite="none"` och `secure`-flaggan på [!DNL HTTPS] sidor.
-* Ett problem har korrigerats där anpassat innehåll inte tillämpades korrekt när pseudoväljaren `eq` användes.
-* Korrigerade ett problem där `localTimezoneOffset` kunde misslyckas vid validering i Experience Platform.
+- Uppdaterade cookie-inställningar för att använda `sameSite="none"` och `secure`-flaggan på [!DNL HTTPS] sidor.
+- Ett problem har korrigerats där anpassat innehåll inte tillämpades korrekt när pseudoväljaren `eq` användes.
+- Korrigerade ett problem där `localTimezoneOffset` kunde misslyckas vid validering i Experience Platform.
 
 ## Version 2.10.1 - 3 maj 2022
 
-* Korrigerade ett problem där flera beständiga iframes skapades för ID-synkronisering och segmentmål.
+- Korrigerade ett problem där flera beständiga iframes skapades för ID-synkronisering och segmentmål.
 
 ## Version 2.10.0 - 22 april 2022
 
-* Använd en beständig iframe för alla ID-synkroniseringar och segmentmål.
-* Korrigerade ett problem där sammanslagna mätvärden duplicerades i resultatet `sendEvent`.
+- Använd en beständig iframe för alla ID-synkroniseringar och segmentmål.
+- Korrigerade ett problem där sammanslagna mätvärden duplicerades i resultatet `sendEvent`.
 
 ## Version 2.9.0 - 10 mars 2022
 
-* Stöd för att spåra [!DNL control (default)] Adobe Target-upplevelser har lagts till.
-* Optimerade vyändringshändelser för ensidesprogram. Visningsmeddelandet ingår nu i händelsen view-change när personaliserade upplevelser återges.
-* Konsolvarning har tagits bort när `eventType` inte finns.
-* Ett problem har korrigerats där egenskapen `propositions` bara returnerades från ett `sendEvent`-kommando när upplevelser begärdes eller hämtades från cachen. Egenskapen `propositions` kommer nu alltid att definieras som en matris.
-* Korrigerade ett problem där dolda behållare inte visades när ett fel returnerades från Edge Network.
-* Ett problem där interaktionshändelserna inte räknades i Adobe Target har korrigerats. Detta korrigerades genom att vynamnet lades till i XDM på web.webPageDetails.viewName.
-* Åtgärda brutna dokumentationslänkar i konsolmeddelanden.
+- Stöd för att spåra [!DNL control (default)] Adobe Target-upplevelser har lagts till.
+- Optimerade vyändringshändelser för ensidesprogram. Visningsmeddelandet ingår nu i händelsen view-change när personaliserade upplevelser återges.
+- Konsolvarning har tagits bort när `eventType` inte finns.
+- Ett problem har korrigerats där egenskapen `propositions` bara returnerades från ett `sendEvent`-kommando när upplevelser begärdes eller hämtades från cachen. Egenskapen `propositions` kommer nu alltid att definieras som en matris.
+- Korrigerade ett problem där dolda behållare inte visades när ett fel returnerades från Edge Network.
+- Ett problem där interaktionshändelserna inte räknades i Adobe Target har korrigerats. Detta korrigerades genom att vynamnet lades till i XDM på web.webPageDetails.viewName.
+- Åtgärda brutna dokumentationslänkar i konsolmeddelanden.
 
 ## Version 2.8.0 - 19 januari 2022
 
-* Stöd för skugg-DOM-väljare för personalisering.
-* Ändrade namn på händelsetyper för personalisering. (`display` och `click` blir `decisioning.propositionDisplay` och `decisioning.propositionInteract`)
-* Ett problem har korrigerats där HTML erbjuder med infogade script-taggar lade till script-taggarna två gånger på sidan trots att skriptet bara kördes en gång.
+- Stöd för skugg-DOM-väljare för personalisering.
+- Ändrade namn på händelsetyper för personalisering. (`display` och `click` blir `decisioning.propositionDisplay` och `decisioning.propositionInteract`)
+- Ett problem har korrigerats där HTML erbjuder med infogade script-taggar lade till script-taggarna två gånger på sidan trots att skriptet bara kördes en gång.
 
 ## Version 2.7.0 - 26 oktober 2021
 
-* Visa ytterligare information från Edge Network i returvärdet från `sendEvent`, inklusive `inferences` och `destinations`. Formatet på dessa egenskaper kan ändras eftersom dessa funktioner för närvarande lanseras som en del av en Beta.
+- Visa ytterligare information från Edge Network i returvärdet från `sendEvent`, inklusive `inferences` och `destinations`. Formatet på dessa egenskaper kan ändras eftersom dessa funktioner för närvarande lanseras som en del av en Beta.
 
 ## Version 2.6.4 - 7 september 2021
 
-* Ett problem har korrigerats där angivna HTML Adobe Target-åtgärder för elementet `head` ersatte hela `head`-innehållet. Ange HTML-åtgärder som används för elementet `head` ändras till Lägg till HTML.
+- Ett problem har korrigerats där angivna HTML Adobe Target-åtgärder för elementet `head` ersatte hela `head`-innehållet. Ange HTML-åtgärder som används för elementet `head` ändras till Lägg till HTML.
 
 ## Version 2.6.3 - 16 augusti 2021
 
-* Korrigerade ett problem där objekt som inte är avsedda för allmän användning exponerades via det lösta löftet från kommandot `configure`.
+- Korrigerade ett problem där objekt som inte är avsedda för allmän användning exponerades via det lösta löftet från kommandot `configure`.
 
 ## Version 2.6.2 - 4 augusti 2021
 
-* Ett problem har korrigerats där en varning om borttagning av `result.decisions` (som tillhandahålls av kommandot `sendEvent`) skulle loggas på konsolen även när egenskapen `result.decisions` inte användes. Ingen varning loggas vid åtkomst till egenskapen `result.decisions`, men egenskapen är fortfarande föråldrad.
+- Ett problem har korrigerats där en varning om borttagning av `result.decisions` (som tillhandahålls av kommandot `sendEvent`) skulle loggas på konsolen även när egenskapen `result.decisions` inte användes. Ingen varning loggas vid åtkomst till egenskapen `result.decisions`, men egenskapen är fortfarande föråldrad.
 
 ## Version 2.6.1 - 29 juli 2021
 
-* Ett problem har korrigerats där återgivningspersonalisering för en enkelsidig appvy som inte har något personaliseringsinnehåll skulle orsaka ett fel och få löftet som returnerades från `sendEvent`-kommandot att avvisas.
+- Ett problem har korrigerats där återgivningspersonalisering för en enkelsidig appvy som inte har något personaliseringsinnehåll skulle orsaka ett fel och få löftet som returnerades från `sendEvent`-kommandot att avvisas.
 
 ## Version 2.6.0 - 27 juli 2021
 
-* Tillhandahåller mer personaliseringsinnehåll i det `sendEvent` lösta löftet, inklusive Adobe Target svarstoken. När kommandot `sendEvent` körs returneras ett löfte, som till slut löses med ett `result`-objekt som innehåller information som tagits emot från servern. Tidigare innehöll det här resultatobjektet egenskapen `decisions`. Den här `decisions`-egenskapen har tagits bort. En ny egenskap, `propositions`, har lagts till. Den här nya egenskapen ger kunderna åtkomst till mer personaliserat innehåll, inklusive [svarstoken](/help/web-sdk/personalization/adobe-target/accessing-response-tokens.md).
+- Tillhandahåller mer personaliseringsinnehåll i det `sendEvent` lösta löftet, inklusive Adobe Target svarstoken. När kommandot `sendEvent` körs returneras ett löfte, som till slut löses med ett `result`-objekt som innehåller information som tagits emot från servern. Tidigare innehöll det här resultatobjektet egenskapen `decisions`. Den här `decisions`-egenskapen har tagits bort. En ny egenskap, `propositions`, har lagts till. Den här nya egenskapen ger kunderna åtkomst till mer personaliserat innehåll, inklusive [svarstoken](/help/web-sdk/personalization/adobe-target/accessing-response-tokens.md).
 
 ## Version 2.5.0 - juni 2021
 
-* Stöd för omdirigeringserbjudanden om personalisering har lagts till.
-* Automatiskt insamlade visningsrutebredder och -höjder som är negativa värden skickas inte längre till servern.
-* När en händelse avbryts genom att `false` returneras från ett `onBeforeEventSend`-återanrop loggas nu ett meddelande.
-* Korrigerade ett problem där specifika XDM-data avsedda för en enda händelse inkluderades för flera händelser.
+- Stöd för omdirigeringserbjudanden om personalisering har lagts till.
+- Automatiskt insamlade visningsrutebredder och -höjder som är negativa värden skickas inte längre till servern.
+- När en händelse avbryts genom att `false` returneras från ett `onBeforeEventSend`-återanrop loggas nu ett meddelande.
+- Korrigerade ett problem där specifika XDM-data avsedda för en enda händelse inkluderades för flera händelser.
 
 ## Version 2.4.0 - mars 2021
 
-* SDK kan nu installeras som ett [NPM-paket](/help/web-sdk/install/npm.md).
-* Stöd för ett `out`-alternativ har lagts till när [standardmedgivande](/help/web-sdk/commands/configure/defaultconsent.md) konfigureras, vilket innebär att alla händelser utesluts tills medgivande tas (det befintliga `pending`-alternativet placerar händelser i kö och skickar dem när medgivande tas emot).
-* Återanropet [`onBeforeEventSend`](/help/web-sdk/commands/configure/onbeforeeventsend.md) kan nu användas för att förhindra att en händelse skickas.
-* Använder nu en XDM-schemafältgrupp i stället för `meta.personalization` när händelser skickas om anpassat innehåll som återges eller klickas.
-* Kommandot [`getIdentity`](/help/web-sdk/commands/getidentity.md) returnerar nu kantområdes-ID:t bredvid identiteten.
-* Varningar och fel som tagits emot från servern har förbättrats och hanteras på ett mer lämpligt sätt.
-* Stöd för Adobe Consent 2.0-standarden för kommandot [`setConsent`](/help/web-sdk/commands/setconsent.md) har lagts till.
-* Inställningarna för samtycke, när de tas emot, hashas och lagras i lokala lager för en optimerad integrering mellan CMP, Platform Web SDK och Platform Edge Network. Om du samlar in medgivandeinställningar får du nu gärna ringa `setConsent` vid varje sidinläsning.
-* Två [övervakningskopplingar ](https://github.com/adobe/alloy/wiki/Monitoring-Hooks), `onCommandResolved` och `onCommandRejected` har lagts till.
-* Felkorrigering: Meddelandehändelser för interaktion i Personalization innehåller dubblettinformation om samma aktivitet när en användare navigerade till en ny enkelsidig programvy, tillbaka till den ursprungliga vyn och klickade på ett element som är kvalificerat för konvertering.
-* Felkorrigering: Om den första händelsen som skickades av SDK hade `documentUnloading` inställt på `true`, skulle [`sendBeacon`](https://developer.mozilla.org/en-US/docs/Web/API/Navigator/sendBeacon) användas för att skicka händelsen, vilket resulterar i ett fel om att en identitet inte har etablerats.
+- SDK kan nu installeras som ett [NPM-paket](/help/web-sdk/install/npm.md).
+- Stöd för ett `out`-alternativ har lagts till när [standardmedgivande](/help/web-sdk/commands/configure/defaultconsent.md) konfigureras, vilket innebär att alla händelser utesluts tills medgivande tas (det befintliga `pending`-alternativet placerar händelser i kö och skickar dem när medgivande tas emot).
+- Återanropet [`onBeforeEventSend`](/help/web-sdk/commands/configure/onbeforeeventsend.md) kan nu användas för att förhindra att en händelse skickas.
+- Använder nu en XDM-schemafältgrupp i stället för `meta.personalization` när händelser skickas om anpassat innehåll som återges eller klickas.
+- Kommandot [`getIdentity`](/help/web-sdk/commands/getidentity.md) returnerar nu kantområdes-ID:t bredvid identiteten.
+- Varningar och fel som tagits emot från servern har förbättrats och hanteras på ett mer lämpligt sätt.
+- Stöd för Adobe Consent 2.0-standarden för kommandot [`setConsent`](/help/web-sdk/commands/setconsent.md) har lagts till.
+- Inställningarna för samtycke, när de tas emot, hashas och lagras i lokala lager för en optimerad integrering mellan CMP, Platform Web SDK och Platform Edge Network. Om du samlar in medgivandeinställningar får du nu gärna ringa `setConsent` vid varje sidinläsning.
+- Två [övervakningskopplingar ](https://github.com/adobe/alloy/wiki/Monitoring-Hooks), `onCommandResolved` och `onCommandRejected` har lagts till.
+- Felkorrigering: Meddelandehändelser för interaktion i Personalization innehåller dubblettinformation om samma aktivitet när en användare navigerade till en ny enkelsidig programvy, tillbaka till den ursprungliga vyn och klickade på ett element som är kvalificerat för konvertering.
+- Felkorrigering: Om den första händelsen som skickades av SDK hade `documentUnloading` inställt på `true`, skulle [`sendBeacon`](https://developer.mozilla.org/en-US/docs/Web/API/Navigator/sendBeacon) användas för att skicka händelsen, vilket resulterar i ett fel om att en identitet inte har etablerats.
 
 ## Version 2.3.0 - november 2020
 
-* Stöd för nonce har lagts till för att möjliggöra striktare skyddsprofiler för innehåll.
-* Ytterligare stöd för personalisering för ensidiga applikationer.
-* Förbättrad kompatibilitet med annan JavaScript-kod som kan skriva över `window.console` API:er.
-* Felkorrigering: `sendBeacon` användes inte när `documentUnloading` var inställt på `true` eller när länkklick spårades automatiskt.
-* Felkorrigering: En länk spåras inte automatiskt om ankarelementet innehåller HTML-innehåll.
-* Felkorrigering: Vissa webbläsarfel som innehåller en skrivskyddad `message`-egenskap hanterades inte korrekt, vilket resulterade i att ett annat fel exponerades för kunden.
-* Felkorrigering: Om SDK körs i en iframe uppstår ett fel om iframe-fönstrets HTML-sida kommer från en annan underdomän än det överordnade fönstrets HTML-sida.
+- Stöd för nonce har lagts till för att möjliggöra striktare skyddsprofiler för innehåll.
+- Ytterligare stöd för personalisering för ensidiga applikationer.
+- Förbättrad kompatibilitet med annan JavaScript-kod som kan skriva över `window.console` API:er.
+- Felkorrigering: `sendBeacon` användes inte när `documentUnloading` var inställt på `true` eller när länkklick spårades automatiskt.
+- Felkorrigering: En länk spåras inte automatiskt om ankarelementet innehåller HTML-innehåll.
+- Felkorrigering: Vissa webbläsarfel som innehåller en skrivskyddad `message`-egenskap hanterades inte korrekt, vilket resulterade i att ett annat fel exponerades för kunden.
+- Felkorrigering: Om SDK körs i en iframe uppstår ett fel om iframe-fönstrets HTML-sida kommer från en annan underdomän än det överordnade fönstrets HTML-sida.
 
 ## Version 2.2.0 - oktober 2020
 
-* Felkorrigering: Opt-in-objektet blockerade Web SDK från att ringa anrop när `idMigrationEnabled` är `true`.
-* Felkorrigering: Gör Web SDK uppmärksam på förfrågningar som bör returnera personaliseringserbjudanden för att förhindra flimmer.
+- Felkorrigering: Opt-in-objektet blockerade Web SDK från att ringa anrop när `idMigrationEnabled` är `true`.
+- Felkorrigering: Gör Web SDK uppmärksam på förfrågningar som bör returnera personaliseringserbjudanden för att förhindra flimmer.
 
 ## Version 2.1.0 - augusti 2020
 
-* Ta bort kommandot `syncIdentity` och stöd för att skicka dessa ID:n i kommandot `sendEvent`.
-* Stöd för IAB 2.0 Consent Standard.
-* Stöd för att skicka ytterligare ID i kommandot `setConsent`.
-* Stöd för att åsidosätta `datasetId` i kommandot `sendEvent`.
-* Supportövervakningshooks ([Läs mer](https://github.com/adobe/alloy/wiki/Monitoring-Hooks))
-* Skicka `environment: browser` i kontextdata för implementeringsinformation.
+- Ta bort kommandot `syncIdentity` och stöd för att skicka dessa ID:n i kommandot `sendEvent`.
+- Stöd för IAB 2.0 Consent Standard.
+- Stöd för att skicka ytterligare ID i kommandot `setConsent`.
+- Stöd för att åsidosätta `datasetId` i kommandot `sendEvent`.
+- Supportövervakningshooks ([Läs mer](https://github.com/adobe/alloy/wiki/Monitoring-Hooks))
+- Skicka `environment: browser` i kontextdata för implementeringsinformation.
