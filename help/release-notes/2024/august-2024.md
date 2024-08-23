@@ -1,9 +1,9 @@
 ---
 title: Versionsinformation om Adobe Experience Platform, augusti 2024
 description: Versionsinformation från augusti 2024 för Adobe Experience Platform.
-source-git-commit: bc09b03cf34c9da9a93e27b7d1a07b7a3bc7f0aa
+source-git-commit: 6d91112654d08dd31e5334982e534ec42d9fc226
 workflow-type: tm+mt
-source-wordcount: '1343'
+source-wordcount: '1493'
 ht-degree: 1%
 
 ---
@@ -19,6 +19,7 @@ ht-degree: 1%
 Uppdateringar av befintliga funktioner och dokumentation i Experience Platform:
 
 - [Attributbaserad åtkomstkontroll](#abac)
+- [Datainmatning](#data-ingestion)
 - [Mål ](#destinations)
 - [Experience Data Model (XDM)](#xdm)
 - [Identitetstjänst](#identity-service)
@@ -40,6 +41,19 @@ Med attributbaserad åtkomstkontroll kan administratören styra användarnas til
 {style="table-layout:auto"}
 
 Mer information om attributbaserad åtkomstkontroll finns i [Översikt över attributbaserad åtkomstkontroll](../../access-control/abac/overview.md). En utförlig guide om det attributbaserade arbetsflödet för åtkomstkontroll finns i [attributbaserad åtkomstkontroll från början till slut](../../access-control/abac/end-to-end-guide.md).
+
+## Dataintag (uppdaterad 23 augusti) {#data-ingestion}
+
+Adobe Experience Platform har en omfattande uppsättning funktioner för att importera alla typer av data och all fördröjning. Du kan importera med hjälp av API:er för gruppbearbetning eller direktuppspelning, med hjälp av Adobe-byggda källor, dataintegrationspartners eller Adobe Experience Platform användargränssnitt.
+
+**Uppdatera till datumformatshantering vid batchdatainmatning**
+
+Den här versionen åtgärdar ett problem med *datumformatshantering* vid batchdatainmatning. Tidigare transformerades datumfält som infogats av klienter som `Date` till `DateTime`-format. Detta innebar att tidszonen automatiskt lades till i fält och det orsakade problem för användare som föredrog eller krävde formatet `Date`. Om du fortsätter kommer tidszonen inte automatiskt att läggas till i fält av typen `Date`. Uppdateringen ser till att det exporterade dataformatet matchar det format som finns representerat i profilen för det fältet enligt kundens önskemål.
+
+`Date` fält före releasen: `"birthDate": "2018-01-12T00:00:00Z"`
+`Date` fält efter releasen: `"birthDate": "2018-01-12"`
+
+Läs mer om [gruppinmatning](/help/ingestion/batch-ingestion/overview.md).
 
 ## Mål  {#destinations}
 
