@@ -3,9 +3,9 @@ title: Användargränssnitt för identitetsinställningar
 description: Lär dig hur du använder användargränssnittet för identitetsinställningar.
 badge: Beta
 exl-id: 738b7617-706d-46e1-8e61-a34855ab976e
-source-git-commit: 2a2e3fcc4c118925795951a459a2ed93dfd7f7d7
+source-git-commit: 04b04807196bb5902e398403612429eae0de3988
 workflow-type: tm+mt
-source-wordcount: '502'
+source-wordcount: '516'
 ht-degree: 0%
 
 ---
@@ -55,7 +55,7 @@ När du är klar med dina konfigurationer väljer du **[!UICONTROL Next]**. Ett 
 
 ![Valideringssidan med Finish markerat.](../images/rules/finish.png)
 
-Det visas en varning om att dina nya inställningar inte kommer att påverka befintliga länkar i ett identitetsdiagram och påverka händelseprofilfragment som redan har importerats. Dessutom får du ett meddelande om att det tar upp till sex timmar innan de nya inställningarna återspeglas i systemet. Bekräfta att du angett namnet på sandlådan och välj sedan **[!UICONTROL Confirm]**.
+Ett varningsmeddelande visas som anger att befintliga diagram bara påverkas av diagramalgoritmen om diagrammen uppdateras **efter att inställningarna har sparats**, och att den primära identiteten för händelsefragment i kundprofilen i realtid inte uppdateras även efter att namnområdesprioriteten har ändrats. Dessutom får du ett meddelande om att det tar upp till **sex timmar** innan de nya inställningarna börjar gälla. Bekräfta att du angett namnet på sandlådan och välj sedan **[!UICONTROL Confirm]**.
 
 ![Bekräftelsefönstret som visar en varning om en fördröjning på sex timmar innan konfigurationer bearbetas.](../images/rules/confirm-settings.png)
 

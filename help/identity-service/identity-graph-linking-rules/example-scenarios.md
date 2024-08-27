@@ -3,9 +3,9 @@ title: Exempel på kundscenarier som lösts av länkningsregler för identitetsd
 description: Lär dig mer om exempel på kundscenarier som löses av länkningsregler för identitetsdiagram.
 badge: Beta
 exl-id: bccd5b7a-3836-47d8-b976-51747b9c1803
-source-git-commit: be6fdb7e23ed4769ab4ee7ef72532296f020f4a4
+source-git-commit: 04b04807196bb5902e398403612429eae0de3988
 workflow-type: tm+mt
-source-wordcount: '455'
+source-wordcount: '448'
 ht-degree: 0%
 
 ---
@@ -14,7 +14,7 @@ ht-degree: 0%
 
 >[!AVAILABILITY]
 >
->Den här funktionen är inte tillgänglig ännu. Betaprogrammet för länkningsregler för identitetsdiagram förväntas starta i juli för utvecklingssandlådor. Kontakta ditt Adobe-kontoteam för att få information om deltagandekriterierna.
+>Länkningsregler för identitetsdiagram finns för närvarande i betaversionen. Kontakta ditt Adobe-kontoteam för att få information om deltagandekriterierna. Funktionen och dokumentationen kan komma att ändras.
 
 Det här dokumentet innehåller exempel på scenarier som du kan överväga när du konfigurerar länkningsregler för identitetsdiagram.
 
