@@ -2,9 +2,9 @@
 title: Beteende vid export av profiler
 description: Lär dig hur beteendet vid export av profiler varierar mellan de olika integreringsmönster som stöds i Experience Platform-mål.
 exl-id: 2be62843-0644-41fa-a860-ccd65472562e
-source-git-commit: 322510055bd8b8803292a2b4af9df9e1dbee7ffb
+source-git-commit: 223734e2998568f3b9b78933fa5adf740b521f5f
 workflow-type: tm+mt
-source-wordcount: '2931'
+source-wordcount: '2930'
 ht-degree: 0%
 
 ---
@@ -145,9 +145,11 @@ I någon av exportsituationerna ovan innehåller de exporterade filerna de profi
 
 ### Inkrementell filexport {#incremental-file-exports}
 
-Alla uppdateringar av en profil berättigar inte till att en profil inkluderas i stegvis filexport. Om till exempel ett attribut har lagts till i eller tagits bort från en profil, inkluderas inte profilen i exporten. Endast profiler för vilka attributet `segmentMembership` har ändrats inkluderas i exporterade filer. Det är alltså bara om profilen blir en del av publiken eller tas bort från publiken som den inkluderas i den stegvisa filexporten.
+Alla uppdateringar av en profil berättigar inte till att en profil inkluderas i stegvis filexport. Om till exempel ett attribut har lagts till i eller tagits bort från en profil, inkluderas inte profilen i exporten.
 
-Om en ny identitet (ny e-postadress, telefonnummer, ECID o.s.v.) läggs till i en profil i [identitetsdiagrammet](/help/identity-service/features/identity-graph-viewer.md) representerar detta inte någon anledning att inkludera profilen i en ny stegvis filexport.
+När attributet `segmentMembership` för en profil ändras inkluderas profilen i exporterade filer. Det innebär att om profilen blir en del av publiken eller tas bort från publiken, inkluderas den i den stegvisa filexporten.
+
+Om en ny identitet (ny e-postadress, telefonnummer, ECID o.s.v.) läggs till i en profil i [identitetsdiagrammet](/help/identity-service/features/identity-graph-viewer.md) utlöses den profil som ska inkluderas i en ny stegvis filexport.
 
 Om en ny målgrupp läggs till i en målmappning påverkar detta inte kvalifikationer och export för ett annat segment. Exportscheman konfigureras individuellt per målgrupp och filer exporteras separat för varje segment, även om målgrupperna har lagts till i samma måldataflöde.
 
@@ -157,10 +159,10 @@ I exportinställningen som visas nedan, där en användare exporterar stegvisa f
 
 ![Exportinställning med flera valda attribut.](/help/destinations/assets/how-destinations-work/export-selection-batch-destination.png)
 
-* En profil inkluderas i en stegvis filexport när den kvalificerar eller diskvalificerar för segmentet.
-* En profil ingår *inte* i en stegvis filexport när ett nytt telefonnummer läggs till i identitetsdiagrammet.
-* En profil ingår *inte* i en inkrementell filexport när värdet för något av de mappade XDM-fälten som `xdm: loyalty.points`, `xdm: loyalty.tier`, `xdm: personalEmail.address` uppdateras i en profil.
-* När XDM-fältet `segmentMembership.status` mappas i arbetsflödet för målaktivering inkluderas profiler som avslutar målgruppen även i exporterade inkrementella filer med statusen `exited`.
+* En profil ** ingår i en inkrementell filexport när den kvalificerar eller dekvalificerar för segmentet.
+* En profil ** ingår i en stegvis filexport när ett nytt telefonnummer läggs till i identitetsdiagrammet.
+* En profil *ingår inte* i en stegvis filexport när värdet för något av de mappade XDM-fälten som `xdm: loyalty.points`, `xdm: loyalty.tier`, `xdm: personalEmail.address` uppdateras för en profil.
+* När XDM-fältet `segmentMembership.status` mappas i arbetsflödet för målaktivering inkluderas profiler som avslutar målgruppen *också* i exporterade inkrementella filer med statusen `exited`.
 
 >[!ENDSHADEBOX]
 
@@ -184,7 +186,7 @@ När du har konfigurerat aktiveringsarbetsflödet exporteras hela målgruppspopu
 
 | Vad avgör en målexport | Vad som ingår i den exporterade filen |
 |---------|----------|
-| <ul><li>Det exportschema som anges i gränssnittet eller API avgör början på en målexport.</li><li>Om en profils målgruppsmedlemskap ändras, oavsett om det kvalificerar eller inte kvalificerar sig för segmentet, kvalificerar du en profil som ska inkluderas i den stegvisa exporten. Ändringar i attribut eller i identitetskartor för profilen *ger inte* behörighet att inkludera en profil i stegvis export.</li></ul> | <p>De profiler för vilka målgruppsmedlemskapet har ändrats, tillsammans med den senaste informationen för varje XDM-attribut som har valts för export.</p><p>Profiler med avslutad status inkluderas i målexporter om XDM-fältet `segmentMembership.status` har valts i mappningssteget.</p> |
+| <ul><li>Det exportschema som anges i gränssnittet eller API avgör början på en målexport.</li><li>Alla ändringar av ett målgruppsmedlemskap i en profil, oavsett om det kvalificerar eller diskvalificerar sig från segmentet eller om identitetskartorna ändras, kvalificerar en profil som ska inkluderas i stegvis export. Ändringar i attribut för profilen *ger inte* behörighet att inkludera en profil i stegvis export.</li></ul> | <p>De profiler för vilka målgruppsmedlemskapet har ändrats, tillsammans med den senaste informationen för varje XDM-attribut som har valts för export.</p><p>Profiler med avslutad status inkluderas i målexporter om XDM-fältet `segmentMembership.status` har valts i mappningssteget.</p> |
 
 {style="table-layout:fixed"}
 
