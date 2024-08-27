@@ -3,7 +3,7 @@ title: Identitetsoptimeringsalgoritm
 description: Lär dig mer om algoritm för identitetsoptimering i identitetstjänsten.
 badge: Beta
 exl-id: 5545bf35-3f23-4206-9658-e1c33e668c98
-source-git-commit: 8762ea655399fbc82c63c87310337b8e875bd5bc
+source-git-commit: 84ad4a5f522b04430ee304f1a812da25e26f6954
 workflow-type: tm+mt
 source-wordcount: '1533'
 ht-degree: 0%
@@ -68,7 +68,7 @@ När den unika namnutrymmesbegränsningen bryts kommer identitetsoptimeringsalgo
 * Diagrammet återskapas baserat på ovanstående ordning. Om länken bryter mot begränsningsbegränsningen (diagrammet innehåller två eller flera identiteter med ett unikt namnutrymme) tas länkarna bort.
 * Det resulterande diagrammet kommer sedan att vara kompatibelt med den unika namnutrymmesbegränsningen som du konfigurerade.
 
-![Ett diagram som visualiserar algoritmen för identitetsoptimering.](../images/ido.png)
+![Ett diagram som visualiserar algoritmen för identitetsoptimering.](../images/ido_algorithm.png)
 
 ## Exempelscenarier för algoritm för identitetsoptimering
 
