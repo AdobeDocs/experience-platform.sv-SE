@@ -5,7 +5,7 @@ breadcrumb-title: Användarhandbok om Query Service
 user-guide-description: Använd standard-SQL för att fråga efter data i datasjön i Experience Platform.
 feature: Queries
 role: User,Developer
-source-git-commit: d2bc580ba1cacdfab45bdc6356c630a63e7d0f6e
+source-git-commit: 0970fd8fbea86115d92dc78cdba753da69cc2ee6
 workflow-type: tm+mt
 source-wordcount: '322'
 ht-degree: 12%
@@ -27,11 +27,11 @@ ht-degree: 12%
       - [Översikt](data-distiller/derived-datasets/overview.md)
       - [Skapa härledda datauppsättningar med SQL](data-distiller/derived-datasets/create-derived-datasets-with-sql.md)
       - [Skapa decimalbaserade härledda datauppsättningar](data-distiller/derived-datasets/decile-based-derived-attributes.md)
-   - Anpassningsbara insikter för utökad apprapportering {#customizable-insights}
-      - [Översikt](data-distiller/customizable-insights/overview.md)
-      - [Frågepro-läge](data-distiller/customizable-insights/query-pro-mode.md)
-      - [Skicka accelererade frågor](data-distiller/customizable-insights/send-accelerated-queries.md)
-      - [Datamodellguide för rapportinsikter](data-distiller/customizable-insights/reporting-insights-data-model.md)
+   - SQL-insikter för utökad apprapportering {#sql-insights}
+      - [Översikt](data-distiller/sql-insights/overview.md)
+      - [Frågepro-läge](data-distiller/sql-insights/query-pro-mode.md)
+      - [Skicka accelererade frågor](data-distiller/sql-insights/send-accelerated-queries.md)
+      - [Datamodellguide för rapportinsikter](data-distiller/sql-insights/reporting-insights-data-model.md)
    - AI/ML-funktionspipelinjer {#ml-feature-pipelines}
       - [Översikt](data-distiller/ml-feature-pipelines/overview.md)
       - [Anslut till Jupyter-anteckningsböcker](data-distiller/ml-feature-pipelines/establish-connection.md)

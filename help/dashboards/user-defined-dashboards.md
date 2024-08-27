@@ -2,7 +2,7 @@
 title: Anpassade instrumentpaneler
 description: Lär dig hur du skapar och hanterar anpassade instrumentpaneler där du kan skapa, lägga till och redigera anpassade widgetar för att visualisera nyckelvärden.
 exl-id: a9ab83f7-b68d-4dbf-9dc6-ef253df5c82c
-source-git-commit: c2832821ea6f9f630e480c6412ca07af788efd66
+source-git-commit: 2ddfa221ecdebad81343516935e81691021e1fbc
 workflow-type: tm+mt
 source-wordcount: '1552'
 ht-degree: 0%
@@ -37,7 +37,7 @@ Dialogrutan [!UICONTROL Create dashboard] visas. Ange ett användarvänligt, bes
 
 ![Dialogrutan Skapa kontrollpanel.](./images/user-defined-dashboards/create-dashboard-dialog.png)
 
-Användare som har köpt Data Distiller SKU kan använda anpassade SQL-frågor för att skapa sina insikter. Se [Customizable Insight creation guide](./data-distiller/customizable-insights/overview.md) för instruktioner om det här arbetsflödet.
+Användare som har köpt Data Distiller SKU kan använda anpassade SQL-frågor för att skapa sina insikter. Mer information om det här arbetsflödet finns i [guiden ](./data-distiller/sql-insights/overview.md) för att skapa SQL Insight.
 
 Den nya tomma kontrollpanelen visas med ditt valda namn i vyns övre vänstra hörn.
 

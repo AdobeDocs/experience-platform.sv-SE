@@ -5,10 +5,10 @@ breadcrumb-title: Användarhandbok om instrumentpaneler
 user-guide-description: Lär dig visualisera data i Experience Platform via anpassningsbara instrumentpaneler.
 feature: Dashboards
 role: Developer,User
-source-git-commit: 3ebd17eced73424135fc93a90f05d758912eb7d0
+source-git-commit: 0970fd8fbea86115d92dc78cdba753da69cc2ee6
 workflow-type: tm+mt
-source-wordcount: '132'
-ht-degree: 21%
+source-wordcount: '133'
+ht-degree: 22%
 
 ---
 
@@ -22,15 +22,17 @@ ht-degree: 21%
 * [Hämta instrumentpaneler till PDF](download.md)
 * Data Distiller {#data-distiller}
    * [Översikt](data-distiller/overview.md)
-   * Anpassningsbara insikter för utökad apprapportering {#customizable-insights}
-      * [Översikt](data-distiller/customizable-insights/overview.md)
-      * [Frågepro-läge (skapa SQL-diagram)](data-distiller/customizable-insights/query-pro-mode.md)
+   * SQl Insights för utökad apprapportering {#sql-insights}
+      * [Översikt](data-distiller/sql-insights/overview.md)
+   * Frågepro-läge {#query-pro-mode}
+      * [Översikt](data-distiller/query-pro-mode/overview.md)
       * Filter {#filters}
-         * [Datumfilter](data-distiller/customizable-insights/filters/date-filter.md)
-         * [Global filter](data-distiller/customizable-insights/filters/global-filter.md)
-      * [Visa mer](data-distiller/customizable-insights/view-more.md)
-      * [Visa SQL](data-distiller/customizable-insights/view-sql.md)
-      * [Hämta som CSV](data-distiller/customizable-insights/download-csv.md)
+         * [Datumfilter](data-distiller/query-pro-mode/filters/date-filter.md)
+         * [Global filter](data-distiller/query-pro-mode/filters/global-filter.md)
+      * [Visa mer](data-distiller/query-pro-mode/view-more.md)
+      * [Visa SQL](data-distiller/query-pro-mode/view-sql.md)
+      * [Hämta som CSV](data-distiller/query-pro-mode/download-csv.md)
+      * [Exportera som PDF](data-distiller/query-pro-mode/export-pdf.md)
 * Tillgängliga instrumentpaneler {#guides}
    * [Profiler](guides/profiles.md)
    * [Kontoprofiler](guides/account-profiles.md)

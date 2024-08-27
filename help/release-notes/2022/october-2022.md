@@ -2,7 +2,7 @@
 title: Versionsinformation om Adobe Experience Platform oktober 2022
 description: Versionsinformationen för Adobe Experience Platform i oktober 2022.
 exl-id: 61ef2472-5e79-433f-9f60-b1245f619b42
-source-git-commit: 18c1d32bbc2732c38a9c37ee8fb9d36a23d4e515
+source-git-commit: 0970fd8fbea86115d92dc78cdba753da69cc2ee6
 workflow-type: tm+mt
 source-wordcount: '1122'
 ht-degree: 2%
@@ -101,7 +101,7 @@ Med frågetjänsten kan du använda standard-SQL för att fråga efter data i Ad
 | Funktion | Beskrivning |
 | --- | --- |
 | Övervaka frågor via plattformsgränssnittet | Fliken Frågetjänst [!UICONTROL Scheduled Queries] ger förbättrad synlighet för statusen för alla frågefunktioner via gränssnittet. Du kan nu hitta viktig information om status för dina frågekörningar, inklusive felmeddelanden och koder om de misslyckas, på fliken [!UICONTROL Scheduled Queries]. Du kan även prenumerera på aviseringar via användargränssnittet för dessa frågor baserat på deras status. Läs dokumentet [Övervaka frågor](../../query-service/ui/monitor-queries.md) om du vill veta mer om den här funktionen. |
-| Frågeaccelererad datamodell för rapportinsikter | Som en del av Data Distiller SKU kan du med hjälp av det frågeaccelererade arkivet minska den tid och processorkraft som krävs för att få viktiga insikter från dina data. Med det förbättrade arkivet kan ni skapa en anpassad datamodell och/eller utöka den med befintliga Adobe Real-time Customer Data Platform datamodeller för att förbättra era rapportinsikter och deras visualiseringar. Läs dokumentet [med förbättrade rapportinsikter för arkiv](../../query-service/data-distiller/customizable-insights/reporting-insights-data-model.md) om du vill veta mer om den här funktionen. |
+| Frågeaccelererad datamodell för rapportinsikter | Som en del av Data Distiller SKU kan du med hjälp av det frågeaccelererade arkivet minska den tid och processorkraft som krävs för att få viktiga insikter från dina data. Med det förbättrade arkivet kan ni skapa en anpassad datamodell och/eller utöka den med befintliga Adobe Real-time Customer Data Platform datamodeller för att förbättra era rapportinsikter och deras visualiseringar. Läs dokumentet [med förbättrade rapportinsikter för arkiv](../../query-service/data-distiller/sql-insights/reporting-insights-data-model.md) om du vill veta mer om den här funktionen. |
 
 {style="table-layout:auto"}
 

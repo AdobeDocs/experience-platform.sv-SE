@@ -2,7 +2,7 @@
 title: Paketering av frågetjänst
 description: I följande dokument beskrivs paketeringen av funktioner och produkter som är tillgängliga för Query Service och skillnaderna mellan ad hoc- och batchfrågor beskrivs.
 exl-id: ba472d9e-afe6-423d-9abd-13ecea43f04f
-source-git-commit: 1e18a60478e2755f49d37d4d3bf4bd3ca6dbf23b
+source-git-commit: 0970fd8fbea86115d92dc78cdba753da69cc2ee6
 workflow-type: tm+mt
 source-wordcount: '980'
 ht-degree: 0%
@@ -67,9 +67,9 @@ Följande tabell visar effekterna av behörigheten [!DNL Manage Queries]:
 
 {style="table-layout:auto"}
 
-### Relevanta behörigheter för anpassningsbara insikter {#customizable-insights-permissions}
+### Behörigheter för relevanta SQL-insikter {#sql-insights-permissions}
 
-Om du vill skapa Distiller [Anpassningsbara insikter](./data-distiller/customizable-insights/overview.md) för data i kontrollpaneler måste **följande behörigheter** vara aktiverade i Admin Console.
+Om du vill skapa [SQL-insikter](./data-distiller/sql-insights/overview.md) för Data Distiller i kontrollpaneler måste **följande behörigheter** aktiveras i Admin Console.
 
 | Behörighet | Funktion |
 |---|---|
