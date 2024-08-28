@@ -2,9 +2,9 @@
 description: Lär dig hur du konfigurerar filformateringsalternativ när du aktiverar data till filbaserade mål
 title: Konfigurera filformateringsalternativ för filbaserade mål
 exl-id: f59b1952-e317-40ba-81d1-35535e132a72
-source-git-commit: 0eb17d4d7ad9db3737a14f383bdafe40d59eb12c
+source-git-commit: 4dd6e8685ff5cc61342b20e971216416918b95da
 workflow-type: tm+mt
-source-wordcount: '1156'
+source-wordcount: '1191'
 ht-degree: 0%
 
 ---
@@ -68,17 +68,21 @@ Visa exemplen nedan för innehållet i de exporterade CSV-filerna med var och en
 >title="Citattecken"
 >abstract="Använd det här alternativet om du vill ta bort dubbla citattecken från exporterade strängar. I dokumentationen finns exempel för varje markering."
 
-Använd det här alternativet om du vill ta bort dubbla citattecken från exporterade strängar. Tillgängliga alternativ är:
+Använd det här alternativet om du vill ange om dubbla citattecken ska tas bort eller behållas i exporterade strängar.
+
+De tillgängliga alternativen är:
 
 * **[!UICONTROL Null Character (\0000)]**. Använd det här alternativet om du vill ta bort dubbla citattecken från exporterade CSV-filer.
-* **[!UICONTROL Double Quotes (")]**. Använd det här alternativet om du vill behålla dubbla citattecken i dina exporterade CSV-filer.
+* **[!UICONTROL Double Quotes (")]**. Använd det här alternativet när strängvärdena innehåller avgränsare eller dubbla citattecken. Med det här alternativet kan du behålla avgränsare eller dubbla citattecken i dina exporterade CSV-filer, så att du kan identifiera vilket värde som motsvarar vilket fält.
 
 #### Exempel
 
+Överväg indatavärdet `Anna,"Doe,John"`.
+
 Visa exemplen nedan för innehållet från de exporterade CSV-filerna tillsammans med varje val i användargränssnittet.
 
-* Exempelutdata med **[!UICONTROL Null Character (\0000)]** markerat: `Test,John,LastName`
-* Exempelutdata med **[!UICONTROL Double Quotes (")]** markerat: `"Test","John","LastName"`
+* Exempelutdata med **[!UICONTROL Null Character (\0000)]** markerat: `Anna,Doe,John`
+* Exempelutdata med **[!UICONTROL Double Quotes (")]** markerat: `Anna,"Doe,John"`
 
 ### Escape-tecken {#escape-character}
 
