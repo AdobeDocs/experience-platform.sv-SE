@@ -3,7 +3,7 @@ title: Aktivera målgrupper för att batchprofilera exportmål
 type: Tutorial
 description: Lär dig hur du aktiverar de målgrupper du har i Adobe Experience Platform genom att skicka dem till batchprofilbaserade destinationer.
 exl-id: 82ca9971-2685-453a-9e45-2001f0337cda
-source-git-commit: 85b69af6fd21cfa9712e9c57593cbf00a62837c8
+source-git-commit: 21fd5957da8914be8b4abfad5c78d1929f76d6f6
 workflow-type: tm+mt
 source-wordcount: '4029'
 ht-degree: 0%
@@ -39,7 +39,7 @@ Om du vill aktivera målgrupper till mål måste du ha [anslutit till ett mål](
 >[!CONTEXTUALHELP]
 >id="dataset_dataflow_needs_schedule_end_date_body"
 >title="Uppdatera slutdatumet för det här dataflödet"
->abstract="På grund av de senaste uppdateringarna av det här målet krävs ett slutdatum för dataflödet. Adobe har angett ett standardslutdatum till 1 mars 2025. Uppdatera till önskat slutdatum, annars avbryts dataexporten på standarddatumet."
+>abstract="På grund av de senaste uppdateringarna av det här målet krävs ett slutdatum för dataflödet. Adobe har angett standardslutdatumet till 1 maj 2025. Uppdatera till önskat slutdatum, annars avbryts dataexporten på standarddatumet."
 
 >[!CONTEXTUALHELP]
 >id="destinations_folder_name_template"
