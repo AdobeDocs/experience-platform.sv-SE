@@ -3,9 +3,9 @@ keywords: anpassad personalisering; mål; upplevelseplattform anpassad destinati
 title: Anpassad personaliseringsanslutning
 description: Det här målet innehåller extern personalisering, innehållshanteringssystem, annonsservrar och andra applikationer som körs på din webbplats för att hämta målgruppsinformation från Adobe Experience Platform. Det här målet ger personalisering i realtid baserat på målgruppsmedlemskap i användarprofiler.
 exl-id: 2382cc6d-095f-4389-8076-b890b0b900e3
-source-git-commit: 182176aa2e588aa356d5fea23b49f17bc8a50314
+source-git-commit: 0f70e072402bca055b96195ded91816810759fc2
 workflow-type: tm+mt
-source-wordcount: '874'
+source-wordcount: '924'
 ht-degree: 0%
 
 ---
@@ -35,7 +35,11 @@ Konfigurera den här destinationen så att externa personaliseringsplattformar, 
 
 ## Förhandskrav {#prerequisites}
 
-Den här integreringen drivs av [Adobe Experience Platform Web SDK](/help/web-sdk/home.md) eller [Adobe Experience Platform Mobile SDK](https://developer.adobe.com/client-sdks/documentation/). Du måste använda någon av dessa SDK:er för att kunna använda det här målet.
+Det här målet kräver någon av följande datainsamlingsmetoder, beroende på implementeringen:
+
+* Använd [Adobe Experience Platform Web SDK](/help/web-sdk/home.md) om du vill samla in data från din webbplats.
+* Använd [Adobe Experience Platform Mobile SDK](https://developer.adobe.com/client-sdks/documentation/) om du vill samla in data från ditt mobilprogram.
+* Använd [Edge Network Server-API:t](../../../server-api/overview.md) om du inte använder [Web SDK](/help/web-sdk/home.md) eller [Mobile SDK](https://developer.adobe.com/client-sdks/documentation/) eller om du vill anpassa användarupplevelsen baserat på profilattribut.
 
 >[!IMPORTANT]
 >
