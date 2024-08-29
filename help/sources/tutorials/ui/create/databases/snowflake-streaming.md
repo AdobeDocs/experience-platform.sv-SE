@@ -4,9 +4,9 @@ type: Tutorial
 description: Lär dig hur du direktuppspelar data från en Snwoflake-databas till Experience Platform
 badgeUltimate: label="Ultimate" type="Positive"
 exl-id: 49d488f1-90d8-452a-9f3e-02afdcc79b09
-source-git-commit: 62bcaa532cdec68a2f4f62e5784c35b91b7d5743
+source-git-commit: f39ee3af176e3d9b8ad04bfad81793db0ebe71a7
 workflow-type: tm+mt
-source-wordcount: '1553'
+source-wordcount: '1597'
 ht-degree: 0%
 
 ---
@@ -54,7 +54,7 @@ När du är klar väljer du **[!UICONTROL Connect to source]** och tillåt sedan
 
 | Autentiseringsuppgifter | Beskrivning |
 | --- | --- |
-| Konto | Namnet på ditt [!DNL Snowflake]-konto. |
+| Konto | Namnet på ditt [!DNL Snowflake]-konto. Mer information om konventioner för kontonamn finns i [[!DNL Snowflake Streaming] autentiseringsguiden](../../../../connectors/databases/snowflake-streaming.md#gather-required-credentials). |
 | Lagerställe | Namnet på ditt [!DNL Snowflake]-lagerställe. Lagerställen hanterar körningen av frågor i [!DNL Snowflake]. Varje [!DNL Snowflake]-lagerställe är oberoende av varandra och måste nås individuellt för att data ska kunna hämtas till Experience Platform. |
 | Databas | Namnet på din [!DNL Snowflake]-databas. Databasen innehåller de data som du vill ta med till Experience Platform. |
 | Schema | (Valfritt) Databasschemat som är associerat med ditt [!DNL Snowflake]-konto. |
@@ -78,7 +78,9 @@ Välj **[!UICONTROL Next]** om du vill fortsätta.
 
 >[!IMPORTANT]
 >
->Det måste finnas en tidsstämpelkolumn i källtabellen för att ett direktuppspelat dataflöde ska kunna skapas. Tidsstämpeln krävs för att Experience Platform ska kunna veta när data kommer att importeras och när inkrementella data kommer att direktuppspelas. Du kan lägga till en tidsstämpelkolumn retroaktivt för en befintlig anslutning och skapa ett nytt dataflöde.
+>* Det måste finnas en tidsstämpelkolumn i källtabellen för att ett direktuppspelat dataflöde ska kunna skapas. Tidsstämpeln krävs för att Experience Platform ska kunna veta när data kommer att importeras och när inkrementella data kommer att direktuppspelas. Du kan lägga till en tidsstämpelkolumn retroaktivt för en befintlig anslutning och skapa ett nytt dataflöde.
+>
+>* Se till att datafälten i exempelkälldatafilen är i enlighet med [!DNL Snowflake]s riktlinjer för fallupplösning för identifierare. Mer information finns i [[!DNL Snowflake] dokumentet om ID-casing](https://docs.snowflake.com/en/sql-reference/identifiers-syntax#label-identifier-casing).
 
 [!UICONTROL Select data]-steget visas. I det här steget måste du markera de data som du vill importera till Experience Platform, konfigurera tidsstämplar och tidszoner samt tillhandahålla en exempelkälldatafil för inmatning av rådata.
 

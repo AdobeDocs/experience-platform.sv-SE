@@ -5,9 +5,9 @@ badgeBeta: label="Beta" type="Informative"
 badgeUltimate: label="Ultimate" type="Positive"
 last-substantial-update: 2023-05-25T00:00:00Z
 exl-id: ed937689-e844-487e-85fb-e3536c851fe5
-source-git-commit: c80535cbb5dda55f1cf145f9f40bbcd40c78e63e
+source-git-commit: e8ab39ce085a95eac898f65667706b71bdadd350
 workflow-type: tm+mt
-source-wordcount: '710'
+source-wordcount: '791'
 ht-degree: 0%
 
 ---
@@ -33,13 +33,19 @@ Genom att använda [!DNL Kafka Connect] spårar den [!DNL Snowflake]-direktuppsp
 
 I följande avsnitt beskrivs de nödvändiga stegen som måste utföras innan du kan strömma data från din [!DNL Snowflake]-databas till Experience Platform:
 
+### Uppdatera din IP-adress tillåtelselista
+
+En lista med IP-adresser måste läggas till tillåtelselista innan du kan arbeta med källanslutningar. Om du inte lägger till dina regionspecifika IP-adresser i tillåtelselista kan det leda till fel eller sämre prestanda när du använder källor. Mer information finns på sidan [IP-adress tillåtelselista](../../ip-address-allow-list.md#ip-address-allow-list-for-streaming-sources).
+
+Dokumentationen nedan innehåller information om hur du ansluter [!DNL Amazon Redshift] till plattformen med API:er eller användargränssnittet:
+
 ### Samla in nödvändiga inloggningsuppgifter
 
 För att [!DNL Flow Service] ska kunna ansluta till [!DNL Snowflake] måste du ange följande anslutningsegenskaper:
 
 | Autentiseringsuppgifter | Beskrivning |
 | --- | --- |
-| `account` | Det fullständiga kontonamnet som är kopplat till ditt [!DNL Snowflake]-konto. Ett fullständigt kvalificerat [!DNL Snowflake]-kontonamn innehåller ditt kontonamn, din region och din molnplattform. Exempel: `cj12345.east-us-2.azure`. Mer information om kontonamn finns i [[!DNL Snowflake document on account identifiers]](<https://docs.snowflake.com/en/user-guide/admin-account-identifier.html>). |
+| `account` | Fullständig kontoidentifierare (kontonamn eller kontopositionerare) för ditt [!DNL Snowflake]-konto har lagts till med suffixet `snowflakecomputing.com`. Kontots identifierare kan ha olika format: <ul><li>{ORG_NAME}-{ACCOUNT_NAME}.snowflakecomputing.com (t.ex. `acme-abc12345.snowflakecomputing.com`)</li><li>{ACCOUNT_LOCATOR}.{CLOUD_REGION_ID}.snowflakecomputing.com (t.ex. `acme12345.ap-southeast-1.snowflakecomputing.com`)</li><li>{ACCOUNT_LOCATOR}.{CLOUD_REGION_ID}.{CLOUD}.snowflakecomputing.com (t.ex. `acme12345.east-us-2.azure.snowflakecomputing.com`)</li></ul> Mer information finns i [[!DNL Snowflake document on account identifiers]](<https://docs.snowflake.com/en/user-guide/admin-account-identifier.html>). |
 | `warehouse` | Lagerstället [!DNL Snowflake] hanterar frågekörningsprocessen för programmet. Varje [!DNL Snowflake]-lagerställe är oberoende av varandra och måste nås individuellt när data överförs till plattformen. |
 | `database` | Databasen [!DNL Snowflake] innehåller de data som du vill ta med plattformen. |
 | `username` | Användarnamnet för kontot [!DNL Snowflake]. |
@@ -47,6 +53,7 @@ För att [!DNL Flow Service] ska kunna ansluta till [!DNL Snowflake] måste du a
 | `role` | (Valfritt) En anpassad definierad roll som kan anges för en användare för en viss anslutning. Om det inte anges används standardvärdet `public`. |
 | `connectionSpec.id` | Anslutningsspecifikationen returnerar en källas kopplingsegenskaper, inklusive autentiseringsspecifikationer för att skapa bas- och källanslutningarna. Anslutningsspecifikations-ID för [!DNL Snowflake] är `51ae16c2-bdad-42fd-9fce-8d5dfddaf140`. |
 
+{style="table-layout:auto"}
 
 ### Konfigurera rollinställningar {#configure-role-settings}
 
