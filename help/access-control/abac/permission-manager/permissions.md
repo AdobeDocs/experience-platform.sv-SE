@@ -1,9 +1,10 @@
 ---
 title: Attributbaserad behörighetshanterare för åtkomstkontroll
 description: Lär dig hur du använder behörighetshanteraren i Adobe Experience Platform för att skapa rapporter och validera åtkomstbehörigheter.
-source-git-commit: 3f2a899705d2c05b12300b6d5b0b860ad2c05bfd
+exl-id: 4c2b8b8e-ac4f-4c6e-a23f-66f658bb6e24
+source-git-commit: 7e65e88bc49ea28d567e8204db877d22ddb8d9a6
 workflow-type: tm+mt
-source-wordcount: '580'
+source-wordcount: '572'
 ht-degree: 0%
 
 ---
@@ -40,7 +41,7 @@ För en mer detaljerad rapport kan du ange resursen med åtgärder i en viss san
 
 >[!INFO]
 >
->[!UICONTROL Resource], [!UICONTROL Actions] och [!UICONTROL Sandboxes] är inte obligatoriska fält. Endast en [!UICONTROL Resource] kan väljas för varje rapport. En åtgärd eller sandlåda kan tas bort när den har lagts till genom att markera **&#39;x&#39;** bredvid den markering du vill ta bort.
+>[!UICONTROL Resource], [!UICONTROL Actions] och [!UICONTROL Sandboxes] är inte obligatoriska fält. En åtgärd eller sandlåda kan tas bort när den har lagts till genom att markera **&#39;x&#39;** bredvid den markering du vill ta bort.
 
 ![Listrutorna Resurs, Åtgärder, Sandlådor och Visa resultat är markerade](../../images/permission-manager/users-additional-attributes-select.png)
 
