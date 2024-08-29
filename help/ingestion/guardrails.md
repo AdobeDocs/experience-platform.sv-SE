@@ -3,9 +3,9 @@ keywords: Experience Platform;felsökning;skyddsförslag;riktlinjer;
 title: Guardsedningar för datainmatning
 description: Läs om hur du skyddar dig mot dataintrång i Adobe Experience Platform.
 exl-id: f07751cb-f9d3-49ab-bda6-8e6fec59c337
-source-git-commit: a574e30a12f56618e8bfaff988aa095025b36a28
+source-git-commit: 9c3f7f522ce6451e1d312a0221cc34287d3e8ae3
 workflow-type: tm+mt
-source-wordcount: '721'
+source-wordcount: '737'
 ht-degree: 0%
 
 ---
@@ -34,7 +34,7 @@ I följande tabell visas skyddsutkast som ska beaktas när [API:t för batchimpo
 | Intag av data i sjön med hjälp av batchkällor | <ul><li>Du kan inhämta upp till 200 GB data per timme till datavjön med hjälp av batchmatningskällor som [!DNL Azure Blob], [!DNL Amazon S3] och [!DNL SFTP].</li><li>Batchstorleken bör vara mellan 256 MB och 100 GB. Detta gäller både okomprimerade och komprimerade data. När komprimerade data är okomprimerade i datasjön gäller dessa begränsningar.</li><li>Det högsta antalet filer per grupp är 1500.</li><li>Den minsta storleken för en fil eller mapp är 1 byte. Du kan inte importera filer eller mappar med storleken 0 byte.</li></ul> | Läs [källÖversikt](../sources/home.md) om du vill se en katalog med källor som du kan använda för datainmatning. |
 | Gruppinmatning till profil | <ul><li>Den största tillåtna storleken för en postklass är 100 kB (hård).</li><li>Den största tillåtna storleken för en ExperienceEvent-klass är 10 kB (hårddisk).</li></ul> | |
 | Antal profiler eller ExperienceEvent-batchar som har importerats per dag | **Det maximala antalet profiler eller ExperienceEvent-batchar som har skickats in per dag är 90.** Det innebär att den sammanlagda summan av de profiler och ExperienceEvent-batchar som hämtas varje dag inte får överstiga 90. Om ytterligare batchar registreras påverkas systemets prestanda. | Det här är en mjuk gräns. Det går att gå längre än en mjuk gräns, men mjuka gränser ger en rekommenderad vägledning för systemprestanda. |
-| Krypterad dataöverföring | Den största tillåtna storleken för en krypterad fil är 1 GB. Du kan till exempel importera 2 eller fler GB-data i en enda dataflödeskörning, men ingen enskild fil i dataflödeskörningen kan överstiga 1 GB. | Mer information finns i [API-handboken för krypterad datainhämtning](../sources/tutorials/api/encrypt-data.md). |
+| Krypterad dataöverföring | Den största tillåtna storleken för en krypterad fil är 1 GB. Du kan till exempel importera 2 eller fler GB-data i en enda dataflödeskörning, men ingen enskild fil i dataflödeskörningen kan överstiga 1 GB. | Processen med att importera krypterade data kan ta längre tid än den som sker vid vanlig datainmatning. Mer information finns i [API-handboken för krypterad datainhämtning](../sources/tutorials/api/encrypt-data.md). |
 
 {style="table-layout:auto"}
 
