@@ -2,7 +2,7 @@
 title: Frågeguide för AI Assistant
 description: Läs det här dokumentet om du vill veta mer om exempelfrågor som du kan använda när du frågar i AI Assistant.
 exl-id: d16d1262-cc2d-45c9-94c4-b86132183442
-source-git-commit: 196a39edd493dcc8296f4b6d2904393dd6f6cdd4
+source-git-commit: fc87c28d7019e123d974e4d2ad307928a3d3fe89
 workflow-type: tm+mt
 source-wordcount: '1524'
 ht-degree: 0%
@@ -33,6 +33,8 @@ Följande exempelfrågor grupperas efter mål som du kan uppnå med AI Assistant
 ## Driftsinsikter per enhet och frågor om produktkunskap{#objects-questions}
 
 Följande frågor grupperas efter dataobjekt och klassificeras antingen som [operativa insikter](./home.md#operational-insights) eller [produktkunskaper](./home.md#product-knowledge).
+
+![](./images/prompt.png)
 
 * **Målgrupper - driftsinsikter**
    * Vilka målgrupper använder andra målgrupper?
