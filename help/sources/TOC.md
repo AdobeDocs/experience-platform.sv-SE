@@ -5,9 +5,9 @@ breadcrumb-title: Användarhandbok om Source Connectors
 user-guide-description: Mata in data från olika källor. Lär dig strukturera, etikettera och förbättra inmatad data.
 feature: Sources
 role: Developer
-source-git-commit: 485881d4cbba09ae89d26b3613907174c0f24cc3
+source-git-commit: b18f93078d3cdbd0498b5b282236ac9b7bad153c
 workflow-type: tm+mt
-source-wordcount: '1046'
+source-wordcount: '1043'
 ht-degree: 6%
 
 ---
@@ -28,7 +28,6 @@ ht-degree: 6%
       - Fältmappningar {#mapping}
          - [Mappningar av analysfält](connectors/adobe-applications/mapping/analytics.md)
          - [Fältkopplingar i Audience Manager](connectors/adobe-applications/mapping/audience-manager.md)
-         - [Målfältsmappningar](connectors/adobe-applications/mapping/target.md)
          - [Fältkopplingar i Marketo Engage](connectors/adobe-applications/mapping/marketo.md)
          - [Fältkopplingar för Microsoft Dynamics](connectors/adobe-applications/mapping/dynamics.md)
          - [Salesforce-fältmappningar](connectors/adobe-applications/mapping/salesforce.md)
