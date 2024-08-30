@@ -2,9 +2,9 @@
 title: Kundhanterade nycklar i Adobe Experience Platform
 description: Lär dig hur du konfigurerar egna krypteringsnycklar för data som lagras i Adobe Experience Platform.
 exl-id: cd33e6c2-8189-4b68-a99b-ec7fccdc9b91
-source-git-commit: e52eb90b64ae9142e714a46017cfd14156c78f8b
+source-git-commit: 5a5d35dad5f1b89c0161f4b29722b76c3caf3609
 workflow-type: tm+mt
-source-wordcount: '707'
+source-wordcount: '743'
 ht-degree: 0%
 
 ---
@@ -15,7 +15,7 @@ Data som lagras på Adobe Experience Platform krypteras i vila med hjälp av sys
 
 >[!NOTE]
 >
->Data i Adobe Experience Platform datasjön och Profile Store krypteras med CMK. Dessa betraktas som era primära datalager.
+>Kundprofildata som lagras i plattformens [!DNL Azure Data Lake] och profilarkivet [!DNL Azure Cosmos DB] krypteras exklusivt med CMK, när de har aktiverats. Nyckelåterkallande i dina primära datalager kan ta mellan **några minuter och 24 timmar** och kan ta längre **upp till 7 dagar** för tillfälliga eller sekundära datalager. Mer information finns i [konsekvenserna av att återkalla nyckelåtkomstavsnittet](#revoke-access).
 
 Det här dokumentet ger en översikt på hög nivå över processen för att aktivera funktionen för kundhanterade nycklar (CMK) i Platform, och den information som krävs för att slutföra dessa steg.
 
@@ -54,15 +54,22 @@ Processen är följande:
 
 När installationsprocessen är klar krypteras alla data som är inskrivna i Platform i alla sandlådor med hjälp av nyckelkonfigurationen för [!DNL Azure]. Om du vill använda CMK använder du [!DNL Microsoft Azure]-funktioner som kan ingå i deras [allmänna förhandsvisningsprogram](https://azure.microsoft.com/en-ca/support/legal/preview-supplemental-terms/).
 
-## Återkalla åtkomst {#revoke-access}
+## Konsekvenser av återkallande av nyckelåtkomst {#revoke-access}
 
-Om du vill återkalla plattformsåtkomst till dina data kan du ta bort den användarroll som är associerad med programmet från nyckelvalvet i [!DNL Azure].
+Om du återkallar eller inaktiverar åtkomsten till Key Vault-, key- eller CMK-appen kan det leda till allvarliga störningar, bland annat att plattformens åtgärder inte fungerar som de ska. När dessa tangenter har inaktiverats kan data i Platform bli oåtkomliga, och alla åtgärder längre fram i kedjan som är beroende av dessa data kommer inte att fungera. Det är viktigt att förstå effekterna i efterföljande led till fullo innan du gör några ändringar i dina nyckelkonfigurationer.
 
->[!WARNING]
->
->Om du inaktiverar nyckelvalvet, tangenten eller CMK-appen kan det leda till en förändring. När nyckelvalvet, nyckeln eller CMK-appen är inaktiverad och data inte längre är tillgängliga i Platform, kommer eventuella åtgärder som rör dessa data inte längre att vara möjliga. Se till att du förstår vilka konsekvenser det kan få om plattformsåtkomst återkallas längre fram i kedjan innan du gör några ändringar i konfigurationen.
+Om du återkallar plattformsåtkomst till dina data kan du göra det genom att ta bort användarrollen som är kopplad till programmet från nyckelvalvet i [!DNL Azure].
 
-När du har tagit bort nyckelåtkomst eller inaktiverat/tagit bort nyckeln från nyckelvalvet [!DNL Azure] kan det ta från några minuter till 24 timmar innan den här konfigurationen kan spridas till primära datalager. Plattformsarbetsflödena omfattar även cachelagrade och tillfälliga datalager som krävs för prestanda och centrala programfunktioner. Spridningen av CMK-spärrning via sådana cachelagrade och tillfälliga butiker kan ta upp till sju dagar enligt deras arbetsflöden för databehandling. Detta innebär till exempel att kontrollpanelen Profil behåller och visar data från sitt cache-datalager och tar sju dagar att förfalla data som lagras i cache-datalager som en del av uppdateringscykeln. Samma tidsfördröjning gäller för data som ska bli tillgängliga igen när åtkomsten till programmet återaktiveras.
+### Spridningstidslinjer {#propagation-timelines}
+
+När nyckelåtkomsten har återkallats från nyckelvalvet [!DNL Azure] kommer ändringarna att spridas enligt följande:
+
+| **Lagringstyp** | **Beskrivning** | **Tidslinje** |
+|---|---|---|
+| Primära datalager | Dessa butiker innehåller Azure Data Lake och Azure Cosmos DB Profile stores. När nyckelåtkomsten har återkallats blir data oåtkomliga. | **några minuter till 24 timmar**. |
+| Cachelagrade/tillfälliga datalager | Innehåller datalager som används för prestanda och centrala programfunktioner. Effekten av nyckelspärrning fördröjs. | **Upp till 7 dagar**. |
+
+Profilkontrollpanelen fortsätter till exempel att visa data från sin cache i upp till sju dagar innan data förfaller och uppdateras. På samma sätt tar det lika lång tid att återaktivera åtkomst till programmet för att återställa datatillgängligheten i alla dessa butiker.
 
 >[!NOTE]
 >
