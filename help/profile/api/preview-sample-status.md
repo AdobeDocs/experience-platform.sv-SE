@@ -4,7 +4,7 @@ title: API-slutpunkt för exempelstatus för förhandsgranskning (förhandsgrans
 description: Med slutpunkten för förhandsgranskning av exempelstatus i API:t för kundprofiler i realtid kan du förhandsgranska det senaste framgångsrika exemplet av dina profildata, lista profildistribution per datauppsättning och identitet och generera rapporter som visar dataset överlappning, identitetsöverlappning och icke sammansatta profiler.
 role: Developer
 exl-id: a90a601e-629e-417b-ac27-3d69379bb274
-source-git-commit: e52eb90b64ae9142e714a46017cfd14156c78f8b
+source-git-commit: 49196473f304585193e87393f8dc5dc37be7e4d9
 workflow-type: tm+mt
 source-wordcount: '2901'
 ht-degree: 0%
@@ -84,7 +84,7 @@ Svaret innehåller information om det senaste slutförda exempeljobbet som körd
     "status": true,
     "submissionTimestamp": "2020-08-01 17:57:57.0"
   },
-  "cosmosDocCount": "\"300803\"",
+  "docCount": "\"300803\"",
   "totalFragmentCount": 47429,
   "lastSuccessfulBatchTimestamp": "\"null\"",
   "streamingDriven": "\"false\"",
@@ -101,7 +101,7 @@ Svaret innehåller information om det senaste slutförda exempeljobbet som körd
 |---|---|
 | `numRowsToRead` | Det totala antalet sammanfogade profiler i exemplet. |
 | `sampleJobRunning` | Ett booleskt värde som returnerar `true` när ett provjobb pågår. Ger transparens i den fördröjning som uppstår när en gruppfil överförs till när den läggs till i profilarkivet. |
-| `cosmosDocCount` | Totalt antal dokument i Cosmos. |
+| `docCount` | Totalt antal dokument i databasen. |
 | `totalFragmentCount` | Totalt antal profilfragment i profilarkivet. |
 | `lastSuccessfulBatchTimestamp` | Senaste lyckade tidsstämpel för batchimport. |
 | `streamingDriven` | *Det här fältet har tagits bort och innehåller ingen betydelse för svaret.* |
