@@ -3,9 +3,9 @@ keywords: molnlagringsmål;molnlagring
 title: Översikt över destinationer för molnlagring
 description: Adobe Experience Platform kan leverera dina målgrupper som datafiler till dina lagringsplatser i Amazon S3, AWS Kinesis, Azure Event Hubs eller SFTP.
 exl-id: d29f0a6e-b323-4f78-bbd0-dee2f1e0fedb
-source-git-commit: 8b8abea65ee0448594113ca77f75b84293646146
+source-git-commit: 9c1699471d5b3c3c725e46581e256a0c07f08a49
 workflow-type: tm+mt
-source-wordcount: '387'
+source-wordcount: '453'
 ht-degree: 0%
 
 ---
@@ -62,6 +62,13 @@ Mappsökväg på lagringsplatsen: `acme/campaigns/2021/25768be6-ebd5-45cc-8913-1
 
 Indata: `acme/campaigns/2021/%SEGMENT_NAME%/%SEGMENT_ID%`
 Mappsökväg på lagringsplatsen: `acme/campaigns/2021/Luxury Audience/25768be6-ebd5-45cc-8913-12fb3f348615`
+
+**Fler makron**
+
+På samma sätt som i exemplen ovan kan du använda ytterligare makron för att skapa en anpassad mappstruktur på mapplatsen:
+
+* `%DATETIME%` eller `%TIMESTAMP%` om du vill lägga till ett anpassat mappnamn baserat på filernas exporttid. Formatet för det första makrot är `MMDDYYYY_HHMMSS` och ett UNIX 10-siffrigt format för det andra makrot.
+* `%DESTINATION_NAME%` om du vill lägga till en anpassad mapp baserat på namnet på måldataflödet.
 
 ## Dataexporttyp {#export-type}
 
