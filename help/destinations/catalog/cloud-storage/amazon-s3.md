@@ -2,9 +2,9 @@
 title: Amazon S3-anslutning
 description: Skapa en utgående liveanslutning till din Amazon Web Services (AWS) S3-lagringsplats för att regelbundet exportera CSV-datafiler från Adobe Experience Platform till dina egna S3-butiker.
 exl-id: 6a2a2756-4bbf-4f82-88e4-62d211cbbb38
-source-git-commit: c35b43654d31f0f112258e577a1bb95e72f0a971
+source-git-commit: 8dbdfb1e8e574647bf621a320ee07ecc7a653a6c
 workflow-type: tm+mt
-source-wordcount: '1398'
+source-wordcount: '1457'
 ht-degree: 0%
 
 ---
@@ -109,7 +109,7 @@ Använd den här autentiseringsmetoden när du vill ange din Amazon S3-åtkomstn
 
 Använd den här autentiseringstypen om du inte vill dela kontonycklar och hemliga nycklar med Adobe. I stället ansluter Experience Platform till din Amazon S3-plats med rollbaserad åtkomst.
 
-För att göra detta måste du skapa en användare som antas ha Adobe i AWS-konsolen med de [behörigheter som krävs](#required-s3-permission) för att skriva till dina Amazon S3-bucket. Skapa en **[!UICONTROL Trusted entity]** i AWS med Adobe-kontot **[!UICONTROL 670664943635]**. Mer information finns i [AWS-dokumentationen om hur du skapar roller](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_create_for-user.html).
+För att göra detta måste du skapa en användare som antas ha Adobe i AWS-konsolen med de [behörigheter som krävs](#minimum-permissions-iam-user) för att skriva till dina Amazon S3-bucket. Skapa en **[!UICONTROL Trusted entity]** i AWS med Adobe-kontot **[!UICONTROL 670664943635]**. Mer information finns i [AWS-dokumentationen om hur du skapar roller](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_create_for-user.html).
 
 * **[!DNL Role]**: Klistra in ARN för rollen som du skapade i AWS för Adobe-användaren. Mönstret liknar `arn:aws:iam::800873819705:role/destinations-role-customer`.
 * **[!UICONTROL Encryption key]**: Om du vill kan du bifoga den RSA-formaterade offentliga nyckeln för att lägga till kryptering i de exporterade filerna. Visa ett exempel på en korrekt formaterad krypteringsnyckel i bilden nedan.
@@ -162,6 +162,38 @@ Om du vill ansluta och exportera data till din [!DNL Amazon S3]-lagringsplats sk
 * `s3:ListBucket`
 * `s3:PutObject`
 * `s3:ListMultipartUploadParts`
+
+#### Minsta nödvändiga behörigheter för IAM-implementerad rollautentisering {#minimum-permissions-iam-user}
+
+När du konfigurerar IAM-rollen som kund ska du kontrollera att behörighetsprincipen som är associerad med rollen innehåller de nödvändiga åtgärderna för målmappen i bucket och åtgärden `s3:ListBucket` för bucket-roten. Visa ett exempel på lägsta behörighetsprincip för den här autentiseringstypen nedan:
+
+```json
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Sid": "VisualEditor0",
+            "Effect": "Allow",
+            "Action": [
+                "s3:PutObject",
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "s3:GetBucketLocation",
+                "s3:ListMultipartUploadParts"
+            ],
+            "Resource": "arn:aws:s3:::bucket/folder/*"
+        },
+        {
+            "Sid": "VisualEditor1",
+            "Effect": "Allow",
+            "Action": [
+                "s3:ListBucket"
+            ],
+            "Resource": "arn:aws:s3:::bucket"
+        }
+    ]
+}  
+```
 
 <!--
 
