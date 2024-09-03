@@ -4,9 +4,9 @@ title: Kontrollpanel för licensanvändning
 description: Adobe Experience Platform tillhandahåller en kontrollpanel där du kan visa viktig information om din organisations licensanvändning.
 type: Documentation
 exl-id: 143d16bb-7dc3-47ab-9b93-9c16683b9f3f
-source-git-commit: 41c2d8e28536a140136c7eb20c2a4c3dc343f5fa
+source-git-commit: 3ea67d5bcdaeefd26cd95b89c60d21bef34ecd53
 workflow-type: tm+mt
-source-wordcount: '2347'
+source-wordcount: '2527'
 ht-degree: 0%
 
 ---
@@ -17,13 +17,15 @@ ht-degree: 0%
 >id="platform_dashboards_licenseUsage"
 >title="Kontrollpanel för licensanvändning"
 >abstract="Kontrollpanelen för licensanvändning ger dig insikt i vilka Adobe Experience Platform-produkter du har köpt. I översikten på kontrollpanelen visas de primära mätvärdena för dina produkter, inklusive din användning för var och en av de primära mätvärdena och ditt avtalade licensbelopp. På arbetsytan Detaljer visas en beskrivning av dina mätvärden för varje produkt i specifika sandlådor."
+>additional-url="https://experienceleague.adobe.com/en/docs/experience-platform/data-lifecycle/ui/dataset-expiration" text="Automatiska förfallodatum för datauppsättningar"
+>additional-url="https://experienceleague.adobe.com/en/docs/experience-platform/profile/pseudonymous-profiles" text="Förfallodatum för pseudonyma profiler"
 
 >[!CONTEXTUALHELP]
->id="platform_dashboards_licenseUsage_prediction"
+>id="platform_licenseusage"
 >title="Kontrollpanel för licensanvändning"
 >abstract="Kontrollpanelen för licensanvändning ger dig insikt i vilka Adobe Experience Platform-produkter du har köpt. I översikten på kontrollpanelen visas de primära mätvärdena för dina produkter, inklusive din användning för var och en av de primära mätvärdena och ditt avtalade licensbelopp. På arbetsytan Detaljer visas en beskrivning av dina mätvärden för varje produkt i specifika sandlådor."
->additional-url="https://experienceleague.adobe.com/docs/experience-platform/data-lifecycle/ui/dataset-expiration.html" text="Utgångsdatum för datauppsättning"
->additional-url="https://experienceleague.adobe.com/docs/experience-platform/profile/pseudonymous-profiles.html" text="Förfallodatum för pseudonyma profiler"
+>additional-url="https://experienceleague.adobe.com/en/docs/experience-platform/data-lifecycle/ui/dataset-expiration" text="Automatiska förfallodatum för datauppsättningar"
+>additional-url="https://experienceleague.adobe.com/en/docs/experience-platform/profile/pseudonymous-profiles" text="Förfallodatum för pseudonyma profiler"
 
 Du kan visa viktig information om din organisations licensanvändning via Adobe Experience Platform [!UICONTROL License usage]-kontrollpanelen. Den information som visas här fångas in under en daglig ögonblicksbild av din Platform-instans.
 
@@ -73,6 +75,20 @@ På den här kontrollpanelen visas alla licensierade Adobe Experience Platform-p
 Tabellen visar det primära måttet för varje produkt, eftersom varje produkt kan spåra flera mätvärden.
 
 ### [!BADGE Beta]{type=Informative} Förväntad användning {#predicted-usage}
+
+>[!CONTEXTUALHELP]
+>id="platform_dashboards_licenseUsage_prediction"
+>title="Förutsedd användning"
+abstract="Förutsättningarna baseras på användningen under de senaste 6-7 månaderna och genereras den 15:e varje månad. Observera att prognoserna för licensanvändning är approximationer baserade på tidigare användning. Du ansvarar för att förstå hur din organisation faktiskt används och se till att användningen inte går utanför räckvidden för din organisations licens med Adobe. För att minska användningen kan du konfigurera datauppsättningar eller pseudonyma utgångsdatum för profildata för sandlådor och datauppsättningar."
+additional-url="https://experienceleague.adobe.com/en/docs/experience-platform/data-lifecycle/ui/dataset-expiration" text="Automatiska förfallodatum för datauppsättningar"
+additional-url="https://experienceleague.adobe.com/en/docs/experience-platform/profile/pseudonymous-profiles" text="Förfallodatum för pseudonyma profiler"
+
+[!CONTEXTUALHELP]
+id="platform_licenseusage_prediction"
+title="Förutsedd användning"
+abstract="Förutsättningarna baseras på användningen under de senaste 6-7 månaderna och genereras den 15:e varje månad. Observera att prognoserna för licensanvändning är approximationer baserade på tidigare användning. Du ansvarar för att förstå hur din organisation faktiskt används och se till att användningen inte går utanför räckvidden för din organisations licens med Adobe. För att minska användningen kan du konfigurera datauppsättningar eller pseudonyma utgångsdatum för profildata för sandlådor och datauppsättningar."
+additional-url="https://experienceleague.adobe.com/en/docs/experience-platform/data-lifecycle/ui/dataset-expiration" text="Automatiska förfallodatum för datauppsättningar"
+additional-url="https://experienceleague.adobe.com/en/docs/experience-platform/profile/pseudonymous-profiles" text="Förfallodatum för pseudonyma profiler"
 
 >[!AVAILABILITY]
 >
