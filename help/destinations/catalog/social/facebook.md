@@ -3,9 +3,9 @@ keywords: facebook-anslutning;facebook-anslutning;facebook-mål;facebook;instagr
 title: Facebook
 description: Aktivera profiler för era Facebook-kampanjer för målgruppsanpassning, personalisering och nedtryckning baserat på hashad-e-post.
 exl-id: 51e8c8f0-5e79-45b9-afbc-110bae127f76
-source-git-commit: c35b43654d31f0f112258e577a1bb95e72f0a971
+source-git-commit: 742801c31a0371feb42df2c98b3a4ddb63ae2f48
 workflow-type: tm+mt
-source-wordcount: '1909'
+source-wordcount: '1942'
 ht-degree: 0%
 
 ---
@@ -80,7 +80,7 @@ Innan du kan skicka dina målgrupper till [!DNL Facebook] måste du kontrollera 
   >[!IMPORTANT]
   >
   > När du konfigurerar behörigheter för Adobe Experience Cloud måste du aktivera behörigheten **Hantera kampanjer**. Behörighet krävs för integreringen av [!DNL Adobe Experience Platform].
-* Läs och signera [!DNL Facebook Custom Audiences] användarvillkoren. Om du vill göra det går du till `https://business.facebook.com/ads/manage/customaudiences/tos/?act=[accountID]`, där `accountID` är din [!DNL Facebook Ad Account ID].
+* Läs och signera [!DNL Facebook Custom Audiences] användarvillkoren. Om du vill göra det går du till `https://business.facebook.com/ads/manage/customaudiences/tos/?act=[accountID]&business_id=206617933627973`, där `accountID` är din [!DNL Facebook Ad Account ID]. Kontrollera att avsnittet `business_id=206617933627973` finns i URL:en när du signerar användarvillkoren.
   >[!IMPORTANT]
   >
   >När du signerar [!DNL Facebook Custom Audiences]-användarvillkoren måste du använda samma användarkonto som du använde för att autentisera i Facebook API.
@@ -251,4 +251,10 @@ När du konfigurerar det här målet kan du få följande fel:
 
 Det här felet inträffar när kunder använder nyligen skapade konton och behörigheterna [!DNL Facebook] ännu inte är aktiva.
 
+>[!IMPORTANT]
+>
+>Kontrollera att du godkänner [!DNL Facebook Custom Audience Terms of Service] under `business ID 206617933627973`, vilket visas i URL-mallen i avsnittet [Kontokrav](#facebook-account-prerequisites).
+
 Om du får felmeddelandet `400 Bad Request` efter att du har följt stegen i [Facebook-kontokraven](#facebook-account-prerequisites) kan det ta några dagar innan [!DNL Facebook]-behörigheterna börjar gälla.
+
+
