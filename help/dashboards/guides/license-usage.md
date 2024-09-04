@@ -4,9 +4,9 @@ title: Kontrollpanel för licensanvändning
 description: Adobe Experience Platform tillhandahåller en kontrollpanel där du kan visa viktig information om din organisations licensanvändning.
 type: Documentation
 exl-id: 143d16bb-7dc3-47ab-9b93-9c16683b9f3f
-source-git-commit: 3ea67d5bcdaeefd26cd95b89c60d21bef34ecd53
+source-git-commit: f9b7275a9cf066db8192be6a5b5528e19d18c313
 workflow-type: tm+mt
-source-wordcount: '2527'
+source-wordcount: '2545'
 ht-degree: 0%
 
 ---
@@ -66,7 +66,7 @@ På den här kontrollpanelen visas alla licensierade Adobe Experience Platform-p
 | **[!UICONTROL License Amount]** | Det avtalade värdet för det maximala beloppet för primärt mått enligt villkoren i produktlicensavtalet. |
 | **[!UICONTROL Usage]** | Mängden av ditt primära mått som används. Det här värdet anger den totala användningen av det måttet i alla sandlådor, antingen produktion eller utveckling. |
 | **[!UICONTROL Usage %]** | Procentandelen av det primära mätvärdet som används i enlighet med licensbeloppet. |
-| **[!UICONTROL Prediction Usage]** | (**Beta**) Prognostiserad användningsprocent av det primära mätvärdet enligt licensbeloppet. |
+| **[!UICONTROL Prediction Usage]** | Prognostiserad användningsprocent av det primära mätvärdet enligt licensbeloppet. |
 
 >[!NOTE]
 >
@@ -74,31 +74,27 @@ På den här kontrollpanelen visas alla licensierade Adobe Experience Platform-p
 
 Tabellen visar det primära måttet för varje produkt, eftersom varje produkt kan spåra flera mätvärden.
 
-### [!BADGE Beta]{type=Informative} Förväntad användning {#predicted-usage}
+### Förutsedd användning {#predicted-usage}
 
 >[!CONTEXTUALHELP]
 >id="platform_dashboards_licenseUsage_prediction"
 >title="Förutsedd användning"
-abstract="Förutsättningarna baseras på användningen under de senaste 6-7 månaderna och genereras den 15:e varje månad. Observera att prognoserna för licensanvändning är approximationer baserade på tidigare användning. Du ansvarar för att förstå hur din organisation faktiskt används och se till att användningen inte går utanför räckvidden för din organisations licens med Adobe. För att minska användningen kan du konfigurera datauppsättningar eller pseudonyma utgångsdatum för profildata för sandlådor och datauppsättningar."
-additional-url="https://experienceleague.adobe.com/en/docs/experience-platform/data-lifecycle/ui/dataset-expiration" text="Automatiska förfallodatum för datauppsättningar"
-additional-url="https://experienceleague.adobe.com/en/docs/experience-platform/profile/pseudonymous-profiles" text="Förfallodatum för pseudonyma profiler"
+>abstract="Förutsättningarna baseras på användningen under de senaste 6-7 månaderna och genereras den 15:e varje månad. Användning förväntas nå de förväntade värdena mellan {startDate} och {endDate}. Data samlades senast in {collectionDate}. Observera att prognoserna för licensanvändning är approximationer baserade på tidigare användning. Du ansvarar för att förstå hur din organisation faktiskt används och se till att användningen inte går utanför räckvidden för din organisations licens med Adobe. För att minska användningen kan du konfigurera datauppsättningar eller pseudonyma utgångsdatum för profildata för sandlådor och datauppsättningar."
+>additional-url="https://experienceleague.adobe.com/en/docs/experience-platform/data-lifecycle/ui/dataset-expiration" text="Automatiska förfallodatum för datauppsättningar"
+>additional-url="https://experienceleague.adobe.com/en/docs/experience-platform/profile/pseudonymous-profiles" text="Förfallodatum för pseudonyma profiler"
 
-[!CONTEXTUALHELP]
-id="platform_licenseusage_prediction"
-title="Förutsedd användning"
-abstract="Förutsättningarna baseras på användningen under de senaste 6-7 månaderna och genereras den 15:e varje månad. Observera att prognoserna för licensanvändning är approximationer baserade på tidigare användning. Du ansvarar för att förstå hur din organisation faktiskt används och se till att användningen inte går utanför räckvidden för din organisations licens med Adobe. För att minska användningen kan du konfigurera datauppsättningar eller pseudonyma utgångsdatum för profildata för sandlådor och datauppsättningar."
-additional-url="https://experienceleague.adobe.com/en/docs/experience-platform/data-lifecycle/ui/dataset-expiration" text="Automatiska förfallodatum för datauppsättningar"
-additional-url="https://experienceleague.adobe.com/en/docs/experience-platform/profile/pseudonymous-profiles" text="Förfallodatum för pseudonyma profiler"
-
->[!AVAILABILITY]
->
-Funktionen för att förutsäga framtida licensanvändning är för närvarande en betaversion. Dokumentationen och funktionaliteten kan komma att ändras.
+>[!CONTEXTUALHELP]
+>id="platform_licenseusage_prediction"
+>title="Förutsedd användning"
+>abstract="Förutsättningarna baseras på användningen under de senaste 6-7 månaderna och genereras den 15:e varje månad. Användning förväntas nå de förväntade värdena mellan {startDate} och {endDate}. Data samlades senast in {collectionDate}. Observera att prognoserna för licensanvändning är approximationer baserade på tidigare användning. Du ansvarar för att förstå hur din organisation faktiskt används och se till att användningen inte går utanför räckvidden för din organisations licens med Adobe. För att minska användningen kan du konfigurera datauppsättningar eller pseudonyma utgångsdatum för profildata för sandlådor och datauppsättningar."
+>additional-url="https://experienceleague.adobe.com/en/docs/experience-platform/data-lifecycle/ui/dataset-expiration" text="Automatiska förfallodatum för datauppsättningar"
+>additional-url="https://experienceleague.adobe.com/en/docs/experience-platform/profile/pseudonymous-profiles" text="Förfallodatum för pseudonyma profiler"
 
 Hantera och optimera era licensieringsresurser proaktivt baserat på insiktsfulla användningsprognoser. Kolumnen [!UICONTROL Predicted Usage] förutsäger exakt framtida licensanvändning på sandlådenivå, för alla produktions- och utvecklingssandlådor, för alla köpta produkter. Denna varningsfunktion ger en prognos över licensanvändningen för sex veckor i framtiden, baserat på din användning fram till den 15 i den här kalendermånaden. Förutsägelser har en nedre och en övre gräns.
 
 >[!IMPORTANT]
 >
-Förutsättningarna uppdateras varje månad. Uppdateringsdatumet ingår i en informationsikon (![Den här informationsikonen.](../images/license-usage/info-icon.png)) ovanför kolumnrubriken.
+>Förutsättningarna uppdateras varje månad. Uppdateringsdatumet ingår i en informationsikon (![Den här informationsikonen.](../images/license-usage/info-icon.png)) ovanför kolumnrubriken.
 
 Om du vill se en sammanfattning av användningen av ett produktberättigande väljer du en produkt i listan [!UICONTROL Overview].
 
@@ -108,7 +104,7 @@ Fliken Sammanfattning visas. Du kan använda de detaljerade förutsägelser som 
 
 >[!NOTE]
 >
-Observera att prognoserna för licensanvändning är approximationer baserade på tidigare användning. Du ansvarar för att förstå hur din organisation faktiskt används och se till att användningen inte går utanför räckvidden för din organisations licens med Adobe.
+>Observera att prognoserna för licensanvändning är approximationer baserade på tidigare användning. Du ansvarar för att förstå hur din organisation faktiskt används och se till att användningen inte går utanför räckvidden för din organisations licens med Adobe.
 
 ![Sammanfattningsvyn för en plattformsprodukt med den förväntade användningskolumnen markerad.](../images/license-usage/summary-predicted-usage.png)
 
@@ -120,7 +116,7 @@ Procentandelen av förväntad användning bestäms enligt följande:
 
 >[!NOTE]
 >
-&quot;Nästan identiska&quot; betyder i detta sammanhang att värdena är statistiskt signifikanta för två decimaler (till exempel är den nedre gränsen 0,342 och den övre gränsen 0,344 avrundas båda till 34 %).
+>&quot;Nästan identiska&quot; betyder i detta sammanhang att värdena är statistiskt signifikanta för två decimaler (till exempel är den nedre gränsen 0,342 och den övre gränsen 0,344 avrundas båda till 34 %).
 
 Funktionen för förväntad användning har stöd för följande mått:
 
@@ -136,23 +132,23 @@ Välj ett produktnamn i listan om du vill se fler mätvärden och detaljerade in
 
 ![Sammanfattningsvyn för en plattformsprodukt som visar alla tillgängliga mätvärden för den produkten.](../images/license-usage/summary-tab.png)
 
-På sammanfattningsfliken innehåller tabellen kolumnen [!UICONTROL Metric]. Dessa läsbara beskrivningar anger alla mätvärden som används för den typen of sandlåda.
+På sammanfattningsfliken innehåller tabellen kolumnen [!UICONTROL Metric]. Dessa beskrivningar som kan läsas av människor visar alla mätvärden som används för den typen av sandlåda.
 
 ### Markera en sandlåda {#select-sandbox}
 
-Om du vill ändra vyn mellan sandlådetyperna produktion och utveckling select antingen [!UICONTROL Production sandboxes] eller [!UICONTROL Development sandboxes]. Den valda sandlådetypen is anges av alternativknappen bredvid namnet på sandlådan.
+Om du vill ändra vyn mellan sandlådetyperna för produktion och utveckling väljer du antingen [!UICONTROL Production sandboxes] eller [!UICONTROL Development sandboxes]. Den valda sandlådetypen indikeras av alternativknappen bredvid namnet på sandlådan.
 
-Konsumtionsrapportering för sandlådor är kumulativ för alla sandlådor av samma typ. In med andra ord, om du väljer [!UICONTROL Production] eller [!UICONTROL Development] visas förbrukningsrapporter för alla produktions- respektive utvecklingssandlådor.
+Konsumtionsrapportering för sandlådor är kumulativ för alla sandlådor av samma typ. Det innebär att om du väljer [!UICONTROL Production] eller [!UICONTROL Development] visas förbrukningsrapporter för alla produktions- respektive utvecklingssandlådor.
 
 ![Sammanfattningsvyn för en plattformsprodukt med produktionssandlådor och utvecklingssandlådor markerade.](../images/license-usage/summary-tab-sandboxes.png)
 
 >[!WARNING]
 >
-Behörighet att visa kontrollpanelen för licensanvändning måste anges på sandlådenivå. Lägg till behörigheter i varje enskild sandlåda för att visa dem på kontrollpanelen. Denna begränsning kommer att åtgärdas i en framtida version. Under tiden finns följande lösning:
+>Behörighet att visa kontrollpanelen för licensanvändning måste anges på sandlådenivå. Lägg till behörigheter i varje enskild sandlåda för att visa dem på kontrollpanelen. Denna begränsning kommer att åtgärdas i en framtida version. Under tiden finns följande lösning:
 >
-1. Skapa en produktprofil i Adobe Admin Console.
-2. Under Behörighet i kategorin Sandbox lägger du till alla sandlådor som du vill visa på kontrollpanelen för licensanvändning.
-3. Lägg till behörigheten Visa kontrollpanel för licensanvändning under Behörighetskategorin för användarinstrumentpanelen.
+>1. Skapa en produktprofil i Adobe Admin Console.
+>2. Under Behörighet i kategorin Sandbox lägger du till alla sandlådor som du vill visa på kontrollpanelen för licensanvändning.
+>3. Lägg till behörigheten Visa kontrollpanel för licensanvändning under Behörighetskategorin för användarinstrumentpanelen.
 
 ## Fliken [!UICONTROL Details] {#details-tab}
 
@@ -213,7 +209,7 @@ Kontrollpanelen för licensanvändning rapporterar om flera unika mätvärden so
 
 >[!TIP]
 >
-Du kan kontrollera dina licensrättigheter i din försäljningsorder för att beräkna mått som din &#39;Lagringsersättning&#39;.<br>Exempel:<ul><li>Lagringsutrymme = Antalet &quot;auktoriserade profiler&quot; i ditt kontrakt X Genomsnittlig profilnoggrannhet</li></ul>
+>Du kan kontrollera dina licensrättigheter i din försäljningsorder för att beräkna mått som din &#39;Lagringsersättning&#39;.<br>Exempel:<ul><li>Lagringsutrymme = Antalet &quot;auktoriserade profiler&quot; i ditt kontrakt X Genomsnittlig profilnoggrannhet</li></ul>
 
 Vilka mätvärden som är tillgängliga och vilken definition som finns för varje mätvärde varierar beroende på vilken licensiering din organisation har köpt. Detaljerade definitioner av mätvärdena finns i produktbeskrivningsdokumentationen:
 
@@ -228,7 +224,7 @@ Vilka mätvärden som är tillgängliga och vilken definition som finns för var
 
 >[!WARNING]
 >
-Kontrollpanelen för licensanvändning rapporterar bara den senaste licensen som har etablerats för din organisation. Om den senaste licensen för din organisation inte visas i tabellen ovan kanske kontrollpanelen för licensanvändning inte visas korrekt. Stöd för ytterligare licenser och flera licenser i en och samma organisation planeras för en framtida release.
+>Kontrollpanelen för licensanvändning rapporterar bara den senaste licensen som har etablerats för din organisation. Om den senaste licensen för din organisation inte visas i tabellen ovan kanske kontrollpanelen för licensanvändning inte visas korrekt. Stöd för ytterligare licenser och flera licenser i en och samma organisation planeras för en framtida release.
 
 ## Nästa steg
 
