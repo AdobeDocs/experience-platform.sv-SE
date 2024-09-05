@@ -2,9 +2,9 @@
 title: Skapa en Adobe Analytics Source-anslutning i användargränssnittet
 description: Lär dig hur du skapar en Adobe Analytics-källanslutning i användargränssnittet för att överföra konsumentdata till Adobe Experience Platform.
 exl-id: 5ddbaf63-feaa-44f5-b2f2-2d5ae507f423
-source-git-commit: f177a8058f6533151978bfd7b8bba4845792f5ed
+source-git-commit: 40ad3101f643e6ce1b24d2a02c1817cfe04bd5d5
 workflow-type: tm+mt
-source-wordcount: '2631'
+source-wordcount: '2457'
 ht-degree: 0%
 
 ---
@@ -301,7 +301,7 @@ En lista över befintliga Analytics-dataflöden i organisationen visas. Här vä
 
 ![En lista över befintliga Adobe Analytics-dataflöden i din organisation.](../../../../images/tutorials/create/analytics/select-target-dataset.png)
 
-Sidan [!UICONTROL Dataset activity] innehåller information om förloppet för data som skickas från Analytics till Experience Platform. Gränssnittet visar mätvärden som antal importerade poster, antal inkapslade batchar och antal misslyckade batchar.
+Sidan [!UICONTROL Dataset activity] innehåller information om förloppet för data som skickas från Analytics till Experience Platform. Gränssnittet visar mätvärden, t.ex. summan av poster under föregående månad, summan av importerade poster under de senaste sju dagarna och storleken på data under föregående månad.
 
 Källan instansierar två datauppsättningsflöden. Det ena flödet representerar data för bakåtfyllnad och det andra för livedata. Bakgrundsfyllningsdata är inte konfigurerade för konsumtion i realtid men skickas till datasjön för analytiska och datavetenskapliga användningsfall.
 
@@ -309,35 +309,9 @@ Mer information om bakåtfyllnad, livedata och deras respektive latenser finns i
 
 ![Datauppsättningsaktivitetssidan för en angiven måldatauppsättning för Adobe Analytics-data.](../../../../images/tutorials/create/analytics/dataset-activity.png)
 
-+++Visa enskilda batchar med det äldre övervakningsgränssnittet
-
-Aktivitetssidan för datauppsättningen visar ingen lista över enskilda grupper. Om du vill visa en lista med enskilda grupper väljer du ett diagram i aktivitetsgränssnittet för datauppsättningen.
-
-![Sidan för datauppsättningsaktivitet med ett diagram markerat.](../../../../images/tutorials/create/analytics/select-chart.png)
-
-Du dirigeras till kontrollpanelen Övervakning. Välj sedan **[!UICONTROL ONLY INGEST FAILURES: YES]** för att rensa filtret och visa en lista över enskilda batchar.
-
-![Kontrollpanelen med felfiltret valt.](../../../../images/tutorials/create/analytics/clear-filter.png)
-
-Gränssnittet uppdateras till en lista över enskilda grupper, inklusive information om deras respektive mätvärden.
-
-![Den äldre övervakningssidan för batchdata.](../../../../images/tutorials/create/analytics/batch-end-to-end.png)
-
-| Mätvärden | Beskrivning |
-| --- | --- |
-| Batch-ID | ID:t för en angiven batch. Det här värdet genereras internt. |
-| Namn på datauppsättning | Namnet på en given datauppsättning som används för Analytics-data. |
-| Source | Källan till inkapslade data. |
-| Uppdaterat | Datumet för den senaste flödeskörningen. |
-| Poster i datauppsättning | Det totala antalet poster i datauppsättningen. **Obs!**: Den här parametern visar ibland statusen `in-progress`. Den här statusen anger att processen för postinmatning inte har slutförts än. |
-| Nya profilfragment | Det totala antalet nya profilfragment som har importerats. |
-| Befintliga profilfragment | Det totala antalet befintliga profilfragment. |
-| Sammanfogade identitetsposter | Det totala antalet identitetsposter som sammanfogats efter intag. |
-| Poster i profil | Det totala antalet poster som har importerats till kundprofilen i realtid. |
-
-{style="table-layout:auto"}
-
-+++
+>[!NOTE]
+>
+>Aktivitetssidan för datauppsättningen visar ingen information om batchar eftersom källkopplingen för Analytics hanteras helt av Adobe. Ni kan övervaka att data flödar genom att titta på mätvärdena runt inkapslade poster.
 
 ## Nästa steg och ytterligare resurser
 

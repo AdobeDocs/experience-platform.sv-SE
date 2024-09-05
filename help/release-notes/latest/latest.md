@@ -1,9 +1,10 @@
 ---
 title: Versionsinformation om Adobe Experience Platform, augusti 2024
 description: Versionsinformation från augusti 2024 för Adobe Experience Platform.
-source-git-commit: 6d91112654d08dd31e5334982e534ec42d9fc226
+exl-id: f854f9e5-71be-4d56-a598-cfeb036716cb
+source-git-commit: 4fecb47084a522b4eb9808dc317e0d70e7ef42c6
 workflow-type: tm+mt
-source-wordcount: '1493'
+source-wordcount: '1553'
 ht-degree: 1%
 
 ---
@@ -131,6 +132,12 @@ Mer information om [!DNL Segmentation Service] finns i [Segmenteringsöversikt](
 Experience Platform tillhandahåller ett RESTful-API och ett interaktivt användargränssnitt som gör att du enkelt kan konfigurera källanslutningar för olika dataleverantörer. Dessa källanslutningar gör att du kan autentisera och ansluta till externa lagringssystem och CRM-tjänster, ange tider för matning och hantera dataöverföringshastigheter.
 
 Använd källor i Experience Platform för att importera data från ett Adobe-program eller en datakälla från tredje part.
+
+**Uppdaterad funktion**
+
+| Funktion | Beskrivning |
+| --- | --- |
+| Uppdateringar av Adobe Analytics källanslutning | Datamängdens aktivitetssida visar ingen information om grupper eftersom Analytics Source Connector hanteras helt av Adobe. Ni kan övervaka att data flödar genom att titta på mätvärdena runt inkapslade poster. Läs guiden om hur du skapar en [källanslutning för Analytics-data](../../sources/tutorials/ui/create/adobe-applications/analytics.md) om du vill ha mer information. |
 
 **Uppdaterad dokumentation**
 
