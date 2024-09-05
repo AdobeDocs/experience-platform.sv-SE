@@ -4,9 +4,9 @@ title: Prenumerera på händelsemeddelanden från Adobe I/O
 description: Det här dokumentet innehåller anvisningar om hur du prenumererar på händelsemeddelanden i Adobe I/O för Adobe Experience Platform-tjänster. Referensinformation om tillgängliga händelsetyper finns också, tillsammans med länkar till ytterligare dokumentation om hur du tolkar returnerade händelsedata för varje tillämplig [!DNL Platform] tjänst.
 feature: Alerts
 exl-id: c0ad7217-ce84-47b0-abf6-76bcf280f026
-source-git-commit: 06ea57d41269e98ddd984c898f41c478ddefc618
+source-git-commit: 1070c34bcd4577fcc5f0ac160196450db3aab9b0
 workflow-type: tm+mt
-source-wordcount: '738'
+source-wordcount: '737'
 ht-degree: 0%
 
 ---
@@ -98,7 +98,6 @@ Informationssidan för den nyligen skapade händelseregistreringen visas, där d
 Genom att följa den här självstudiekursen har du registrerat en webkrok för att ta emot [!DNL I/O Event] meddelanden för [!DNL Experience Platform] och/eller [!DNL Privacy Service]. Mer information om tillgängliga händelser och hur du tolkar meddelandenyttolaster för varje tjänst finns i följande dokumentation:
 
 * [[!DNL Privacy Service] meddelanden](../../privacy-service/privacy-events.md)
-* [[!DNL Data Ingestion] meddelanden](../../ingestion/quality/subscribe-events.md)
 * [[!DNL Flow Service] (källor) meddelanden](../../sources/notifications.md)
 
 Mer information om hur du kan övervaka dina aktiviteter på [!DNL Experience Platform] och [!DNL Privacy Service] finns i [[!DNL Observability Insights] översikten](../home.md).

@@ -4,7 +4,7 @@ solution: Experience Platform
 title: API-guide för dataåtkomst
 description: API:t för dataåtkomst stöder Adobe Experience Platform genom att ge utvecklarna ett RESTful-gränssnitt som fokuserar på att upptäcka och tillgängliggöra inkapslade datauppsättningar i Experience Platform.
 exl-id: 278ec322-dafa-4e3f-ae45-2d20459c5653
-source-git-commit: dbb96744c873d2bf656be03ebf1b8ea2fb08acf3
+source-git-commit: 1070c34bcd4577fcc5f0ac160196450db3aab9b0
 workflow-type: tm+mt
 source-wordcount: '554'
 ht-degree: 1%
@@ -243,4 +243,4 @@ Fler exempel finns i [dataåtkomstsjälvstudiekursen](tutorials/dataset-data.md)
 
 ## Prenumerera på dataöverföringshändelser {#subscribe-to-data-ingestion-events}
 
-Du kan prenumerera på specifika värdefulla händelser via [Adobe Developer Console](https://developer.adobe.com/console/). Du kan t.ex. prenumerera på dataöverföringshändelser för att få meddelanden om eventuella förseningar och fel. Mer information finns i självstudiekursen om att [prenumerera på meddelanden om dataöverföring](../ingestion/quality/subscribe-events.md).
+Du kan prenumerera på specifika värdefulla händelser via [Adobe Developer Console](https://developer.adobe.com/console/). Du kan t.ex. prenumerera på dataöverföringshändelser för att få meddelanden om eventuella förseningar och fel. Mer information finns i självstudiekursen om att [prenumerera på händelsemeddelanden från Adobe](../observability/alerts/subscribe.md).

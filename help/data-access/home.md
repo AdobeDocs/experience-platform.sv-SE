@@ -4,7 +4,7 @@ solution: Experience Platform
 title: Översikt över dataåtkomst
 description: Data Access stöder Adobe Experience Platform genom att tillhandahålla användarverktyg som fokuserar på att upptäcka och tillgängliggöra inkapslade plattformsdatauppsättningar.
 exl-id: 76e3585b-44df-412e-9ac3-aeca5f85d403
-source-git-commit: 74867f56ee13430cbfd9083a916b7167a9a24c01
+source-git-commit: 1070c34bcd4577fcc5f0ac160196450db3aab9b0
 workflow-type: tm+mt
 source-wordcount: '180'
 ht-degree: 1%
@@ -29,4 +29,4 @@ Mer information om [!DNL Data Science Workspace] får du om du börjar med att l
 
 ## Prenumerera på dataöverföringshändelser
 
-[!DNL Platform] gör specifika värdefulla händelser tillgängliga för prenumeration via [Adobe Developer Console](https://www.adobe.com/go/devs_console_ui). Du kan t.ex. prenumerera på dataöverföringshändelser för att få meddelanden om eventuella förseningar och fel. Mer information finns i självstudiekursen om att [prenumerera på meddelanden om dataöverföring](../ingestion/quality/subscribe-events.md).
+[!DNL Platform] gör specifika värdefulla händelser tillgängliga för prenumeration via [Adobe Developer Console](https://www.adobe.com/go/devs_console_ui). Du kan t.ex. prenumerera på dataöverföringshändelser för att få meddelanden om eventuella förseningar och fel. Mer information finns i självstudiekursen om att [prenumerera på händelsemeddelanden från Adobe](../observability/alerts/subscribe.md).
