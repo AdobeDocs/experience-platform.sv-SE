@@ -2,57 +2,61 @@
 title: Identitetsdata i Web SDK
 description: Lär dig hur du hämtar och hanterar Adobe Experience Cloud ID:n (ECID) med Adobe Experience Platform Web SDK.
 exl-id: 03060cdb-becc-430a-b527-60c055c2a906
-source-git-commit: b8c38108e7481a5c4e94e4122e0093fa6f00b96c
+source-git-commit: 1cb38e3eaa83f2ad0e7dffef185d5edaf5e6c38c
 workflow-type: tm+mt
-source-wordcount: '1480'
+source-wordcount: '1471'
 ht-degree: 0%
 
 ---
 
+
 # Identitetsdata i Web SDK
 
-Adobe Experience Platform Web SDK använder [Adobe Experience Cloud ID:n (ECID:n)](../../identity-service/features/ecid.md) för att spåra besökares beteende. Med hjälp av ECID:n kan du se till att varje enhet har en unik identifierare som kan finnas kvar i flera sessioner och koppla alla träffar som inträffar under och mellan webbsessioner till en viss enhet.
+Adobe Experience Platform Web SDK använder [Adobe Experience Cloud ID:n (ECID:n)](../../identity-service/features/ecid.md) för att spåra besökares beteende. Om du använder [!DNL ECIDs] kan du se till att varje enhet har en unik identifierare som kan finnas kvar i flera sessioner och koppla alla träffar som inträffar under och mellan webbsessioner till en viss enhet.
 
-I det här dokumentet finns en översikt över hur du hanterar ECID:n med Platform Web SDK.
+Det här dokumentet innehåller en översikt över hur du hanterar [!DNL ECIDs] med Web SDK.
 
-## Spåra ECID:n med SDK
+## Spåra ECID:n med Web SDK {#tracking-ecids-we-sdk}
 
-Platform Web SDK tilldelar och spårar ECID:n med hjälp av cookies, med flera tillgängliga metoder för att konfigurera hur dessa cookies genereras.
+Web SDK tilldelar och spårar [!DNL ECIDs] med hjälp av cookies, med flera tillgängliga metoder för att konfigurera hur dessa cookies genereras.
 
-När en ny användare kommer till din webbplats försöker Adobe Experience Cloud Identity Service att ange en cookie för enhetsidentifiering för den användaren. För förstagångsbesökare genereras ett ECID som returneras i det första svaret från Adobe Experience Platform Edge Network. För återkommande besökare hämtas ECID från cookien `kndctr_{YOUR-ORG-ID}_AdobeOrg_identity` och läggs till i nyttolasten av Edge Network.
+När en ny användare kommer till din webbplats försöker [Adobe Experience Cloud Identity Service](../../identity-service/home.md) att ange en cookie för enhetsidentifiering för den användaren.
 
-När cookie-filen som innehåller ECID har angetts, innehåller varje efterföljande begäran som genererats av Web SDK ett kodat ECID i cookien `kndctr_{YOUR-ORG-ID}_AdobeOrg_identity`.
+* För förstagångsbesökare genereras en [!DNL ECID] och returneras i det första svaret från Experience Platform Edge Network.
+* För återkommande besökare hämtas [!DNL ECID] från cookien `kndctr_{YOUR-ORG-ID}_AdobeOrg_identity` och läggs till i nyttolasten för begäran av Edge Network.
 
-När du använder cookies för enhetsidentifiering har du två alternativ för att interagera med Edge Network:
+När cookie-filen som innehåller [!DNL ECID] har ställts in, kommer varje efterföljande begäran som genereras av Web SDK att innehålla en kodad [!DNL ECID] i `kndctr_{YOUR-ORG-ID}_AdobeOrg_identity`-cookien.
 
-1. Skicka data direkt till Edge Network-domänen `adobedc.net`. Den här metoden kallas [tredjepartsdatainsamling](#third-party).
+När du använder cookies för enhetsidentifiering har du två sätt att interagera med Edge Network:
+
 1. Skapa en CNAME på din egen domän som pekar på `adobedc.net`. Den här metoden kallas för [första parts datainsamling](#first-party).
+1. Skicka data direkt till Edge Network-domänen `adobedc.net`. Den här metoden kallas [tredjepartsdatainsamling](#third-party).
 
 Som förklaras i avsnitten nedan har den datainsamlingsmetod som du väljer att använda en direkt inverkan på cookie-livstiden i olika webbläsare.
+
+### Insamling av data från första part {#first-party}
+
+Första parts datainsamling innebär att ange cookies via en `CNAME` på din egen domän som pekar på `adobedc.net`.
+
+Webbläsare har långa behandlade cookies som anges av `CNAME` slutpunkter på ungefär samma sätt som de som anges av webbplatsägda slutpunkter, men de senaste ändringar som implementeras av webbläsare har gjort skillnad i hur `CNAME` cookies hanteras. Det finns inga webbläsare som blockerar cookies från första part som standard, men vissa webbläsare begränsar livstiden för cookies som anges med `CNAME` till endast sju dagar.`CNAME`
 
 ### Datainsamling från tredje part {#third-party}
 
 Insamling av data från tredje part innebär att data skickas direkt till Edge Network-domänen `adobedc.net`.
 
-Under de senaste åren har webbläsare blivit allt mer restriktiva när det gäller hantering av cookies som fastställs av tredje part. Vissa webbläsare blockerar cookies från tredje part som standard. Om du använder cookies från tredje part för att identifiera webbplatsbesökare är livslängden för dessa cookies nästan alltid kortare än vad som annars skulle vara tillgängligt med cookies från första part i stället. Ibland upphör en cookie från tredje part om så lite som sju dagar.
+Under de senaste åren har webbläsare blivit allt mer restriktiva när det gäller hantering av cookies som fastställs av tredje parter. Vissa webbläsare blockerar cookies från tredje part som standard. Om du använder cookies från tredje part för att identifiera webbplatsbesökare är livslängden för dessa cookies nästan alltid kortare än vad som annars skulle vara tillgängligt med cookies från första part i stället. Ibland upphör en cookie från tredje part om så lite som sju dagar.
 
-När datainsamling från tredje part används begränsar vissa annonsblockerare dessutom trafiken till slutpunkterna för datainsamling i Adobe helt och hållet.
-
-### Insamling av data från första part {#first-party}
-
-Första parts datainsamling innebär att cookies ställs in via en CNAME på din egen domän som pekar på `adobedc.net`.
-
-Webbläsare har långa behandlade cookies som anges av CNAME-slutpunkter på ungefär samma sätt som de som anges av webbplatsägda slutpunkter, men de senaste ändringarna som implementeras av webbläsare har gjort en skillnad i hur CNAME-cookies hanteras. Det finns inga webbläsare som blockerar CNAME-cookies från första part som standard, men vissa webbläsare begränsar livstiden för cookies som anges med CNAME till endast sju dagar.
+När du använder datainsamling från tredje part begränsar vissa annonsblockerare dessutom trafiken till slutpunkterna för datainsamling i Adobe helt och hållet.
 
 ### Effekter av livscykeln för cookies i Adobe Experience Cloud-program {#lifespans}
 
-Oavsett om du väljer datainsamling från första part eller från tredje part har den tid en cookie kan finnas kvar en direkt inverkan på antalet besökare i Adobe Analytics och Customer Journey Analytics. Slutanvändare kan dessutom uppleva inkonsekventa personaliseringsupplevelser när Adobe Target eller Offer decisioning används på webbplatsen.
+Oavsett om du väljer datainsamling från första part eller från tredje part har den tid en cookie kan finnas kvar en direkt inverkan på besökarantal i [Adobe Analytics](https://experienceleague.adobe.com/en/docs/analytics) och [Customer Journey Analytics](https://experienceleague.adobe.com/en/docs/customer-journey-analytics). Slutanvändare kan även uppleva inkonsekventa personaliseringsupplevelser när [Adobe Target](https://experienceleague.adobe.com/en/docs/target) eller [Offer decisioning](https://experienceleague.adobe.com/en/docs/target/using/integrate/ajo/offer-decision) används på webbplatsen.
 
 Tänk dig till exempel en situation där du har skapat en personaliseringsupplevelse som befordrar ett objekt till hemsidan om en användare har visat det tre gånger under de senaste sju dagarna.
 
-Om en slutanvändare besöker webbplatsen tre gånger i veckan och sedan inte återvänder till webbplatsen på sju dagar, kan den användaren betraktas som en ny användare när han eller hon kommer tillbaka till webbplatsen, eftersom deras cookies kan ha tagits bort av en webbläsarprincip (beroende på vilken webbläsare användaren använde när han eller hon besökte webbplatsen). Om detta inträffar behandlar analysverktyget besökaren som en ny användare även om de besökte webbplatsen för bara drygt sju dagar sedan. Alla försök att personalisera upplevelsen för användaren börjar också om.
+Om en slutanvändare besöker webbplatsen tre gånger i veckan och sedan inte återvänder till webbplatsen på sju dagar, kan den användaren betraktas som en ny användare när han eller hon kommer tillbaka till webbplatsen, eftersom deras cookies kan ha tagits bort av en webbläsarprincip (beroende på vilken webbläsare användaren använde när han eller hon besökte webbplatsen). Om detta händer behandlar analysverktyget besökaren som en ny användare trots att de besökte webbplatsen för bara lite över sju dagar sedan. Alla försök att personalisera upplevelsen för användaren börjar också om.
 
-### Enhets-ID:n från första part
+### Enhets-ID:n för första part (FPID:n) {#fpid}
 
 Om du vill ta hänsyn till effekterna av cookie-livscykler enligt ovan kan du välja att ställa in och hantera dina egna enhetsidentifierare i stället. Mer information finns i handboken om [enhets-ID:n från första part](./first-party-device-ids.md).
 
@@ -147,7 +151,7 @@ Varje identitetsobjekt i identitetsarrayen innehåller följande egenskaper:
 
 Om du använder fältet `identityMap` för att identifiera enheter eller användare får du samma resultat som om du använder metoden [`setCustomerIDs`](https://experienceleague.adobe.com/docs/id-service/using/id-service-api/methods/setcustomerids.html) från metoden [!DNL ID Service API]. Mer information finns i [API-dokumentationen för ID-tjänsten](https://experienceleague.adobe.com/docs/id-service/using/id-service-api/methods/get-set.html).
 
-## Migrera från Visitor API till ECID
+## Migrera från Visitor API till ECID {#migrating-visitor-api-ecid}
 
 När du migrerar från med Visitor API kan du även migrera befintliga AMCV-cookies. Om du vill aktivera ECID-migrering anger du parametern `idMigrationEnabled` i konfigurationen. ID-migrering aktiverar följande användningsfall:
 
