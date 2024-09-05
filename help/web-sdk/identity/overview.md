@@ -2,7 +2,7 @@
 title: Identitetsdata i Web SDK
 description: Lär dig hur du hämtar och hanterar Adobe Experience Cloud ID:n (ECID) med Adobe Experience Platform Web SDK.
 exl-id: 03060cdb-becc-430a-b527-60c055c2a906
-source-git-commit: 1cb38e3eaa83f2ad0e7dffef185d5edaf5e6c38c
+source-git-commit: 3b0fa672c4befd8e17632e62b0eeb13b6b17bfb4
 workflow-type: tm+mt
 source-wordcount: '1471'
 ht-degree: 0%
@@ -146,7 +146,7 @@ Varje identitetsobjekt i identitetsarrayen innehåller följande egenskaper:
 | Egenskap | Datatyp | Beskrivning |
 | --- | --- | --- |
 | `id` | Sträng | **(Obligatoriskt)** Det ID som du vill ange för det angivna namnområdet. |
-| `authenticationState` | Sträng | **(Obligatoriskt)** Autentiseringstillståndet för ID:t. Möjliga värden är `ambiguous`, `authenticated` och `loggedOut`. |
+| `authenticatedState` | Sträng | **(Obligatoriskt)** Autentiseringstillståndet för ID:t. Möjliga värden är `ambiguous`, `authenticated` och `loggedOut`. |
 | `primary` | Boolean | Avgör om den här identiteten ska användas som ett primärt fragment i profilen. Som standard anges ECID som användarens primära identifierare. Om det utelämnas blir det här värdet som standard `false`. |
 
 Om du använder fältet `identityMap` för att identifiera enheter eller användare får du samma resultat som om du använder metoden [`setCustomerIDs`](https://experienceleague.adobe.com/docs/id-service/using/id-service-api/methods/setcustomerids.html) från metoden [!DNL ID Service API]. Mer information finns i [API-dokumentationen för ID-tjänsten](https://experienceleague.adobe.com/docs/id-service/using/id-service-api/methods/get-set.html).
