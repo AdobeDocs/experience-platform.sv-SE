@@ -4,14 +4,19 @@ title: Kontrollpanel för licensanvändning
 description: Adobe Experience Platform tillhandahåller en kontrollpanel där du kan visa viktig information om din organisations licensanvändning.
 type: Documentation
 exl-id: 143d16bb-7dc3-47ab-9b93-9c16683b9f3f
-source-git-commit: c512cce90eaee407a3b101cbf819685f21760a91
+source-git-commit: dedffe90e9107b70d4ddf65a7bf8079396ff8e8b
 workflow-type: tm+mt
-source-wordcount: '2507'
+source-wordcount: '2522'
 ht-degree: 0%
 
 ---
 
 # Kontrollpanel för licensanvändning {#license-usage-dashboard}
+
+>[!CONTEXTUALHELP]
+>id="testy-mctestface"
+>title="Testdialogruta som inte ska visas"
+>abstract="Objektet {name} visas på {date}."
 
 >[!CONTEXTUALHELP]
 >id="platform_dashboards_licenseUsage"
