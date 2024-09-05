@@ -3,9 +3,9 @@ title: Exportera datauppsättningar till molnlagringsmål
 type: Tutorial
 description: Lär dig hur du exporterar datauppsättningar från Adobe Experience Platform till den molnlagringsplats du föredrar.
 exl-id: e89652d2-a003-49fc-b2a5-5004d149b2f4
-source-git-commit: 85b69af6fd21cfa9712e9c57593cbf00a62837c8
+source-git-commit: e95c0e509931f141ff72c1defacebe5a29756157
 workflow-type: tm+mt
-source-wordcount: '1762'
+source-wordcount: '1793'
 ht-degree: 0%
 
 ---
@@ -234,7 +234,8 @@ Du kan visa och spåra din profilexport mot avtalsgränserna på kontrollpanelen
 Tänk på följande begränsningar för den allmänna tillgänglighetsreleasen för datauppsättningsexporter:
 
 * För närvarande kan du bara exportera inkrementella filer och ett slutdatum kan inte väljas för datauppsättningsexporter.
-* De exporterade filnamnen kan för närvarande inte anpassas.
+* Experience Platform kan exportera flera filer även för små datauppsättningar. Datauppsättningsexport är utformad för system-till-system-integration och optimerad för prestanda. Därför går det inte att anpassa antalet exporterade filer.
+* Det går för närvarande inte att anpassa exporterade filnamn.
 * Datauppsättningar som skapas via API är för närvarande inte tillgängliga för export.
 * Gränssnittet blockerar för närvarande inte dig från att ta bort en datauppsättning som exporteras till ett mål. Ta inte bort datauppsättningar som exporteras till destinationer. [Ta bort datauppsättningen](#remove-dataset) från ett måldataflöde innan du tar bort den.
 * Övervakningsmåtten för datauppsättningsexport är för närvarande blandade med siffrorna för profilexporter, så de återspeglar inte de verkliga exportnumren.
