@@ -2,9 +2,9 @@
 title: Skapa och konfigurera datastreams
 description: Lär dig hur du ansluter Web SDK-integreringen på klientsidan till andra Adobe-produkter och tredjepartsmål.
 exl-id: 4924cd0f-5ec6-49ab-9b00-ec7c592397c8
-source-git-commit: f99370a9bff156b5cf9ecf286a1f8bc09eccc06a
+source-git-commit: b87cb25ac791bebbf865f8513f2b4b482a1531bc
 workflow-type: tm+mt
-source-wordcount: '2629'
+source-wordcount: '2633'
 ht-degree: 0%
 
 ---
@@ -49,7 +49,7 @@ Expandera avsnittet **[!UICONTROL Geolocation and network lookup]** för att kon
 | Inställning | Beskrivning |
 | --- | --- |
 | [!UICONTROL Geo Lookup] | Aktiverar sökningar efter geopositionering för de valda alternativen baserat på besökarens IP-adress. Tillgängliga alternativ är: <ul><li>**Land**: Fyller i `xdm.placeContext.geo.countryCode`</li><li>**Postnummer**: Fyller i `xdm.placeContext.geo.postalCode`</li><li>**Region**: Fyller i `xdm.placeContext.geo.stateProvince`</li><li>**DMA**: Fyller i `xdm.placeContext.geo.dmaID`</li><li>**Ort**: Fyller i `xdm.placeContext.geo.city`</li><li>**Latitude**: Fyller `xdm.placeContext.geo._schema.latitude`</li><li>**Longitud**: Fyller i `xdm.placeContext.geo._schema.longitude`</li></ul>Om du väljer **[!UICONTROL City]**, **[!UICONTROL Latitude]** eller **[!UICONTROL Longitude]** får du koordinater upp till två decimalpunkter, oavsett vilka andra alternativ som är markerade. Detta betraktas som granularitet på stadsnivå.<br> <br>Om du inte väljer något alternativ inaktiveras sökningar efter geopositionering. Geolocation inträffar före [!UICONTROL IP Obfuscation], vilket betyder att den inte påverkas av inställningen [!UICONTROL IP Obfuscation]. |
-| [!UICONTROL Network Lookup] | Aktiverar nätverkssökningar för de valda alternativen baserat på besökarens IP-adress. Tillgängliga alternativ är: <ul><li>**Bärare**: Fyller i `xdm.environment.carrier`</li><li>**Domän**: Fyller i `xdm.environment.domain`</li><li>**ISP**: Fyller i `xdm.environment.ISP`</li></ul> |
+| [!UICONTROL Network Lookup] | Aktiverar nätverkssökningar för de valda alternativen baserat på besökarens IP-adress. Tillgängliga alternativ är: <ul><li>**Mobiloperatör**: Fyller i `xdm.environment.carrier`</li><li>**Domän**: Fyller i `xdm.environment.domain`</li><li>**ISP**: Fyller i `xdm.environment.ISP`</li><li>**Anslutningstyp**: Fyller i `xdm.environment.connectionType`</li></ul> |
 
 Om du aktiverar något av fälten ovan för datainsamling bör du kontrollera att du har angett arrayegenskapen [`context`](/help/web-sdk/commands/configure/context.md) korrekt när du konfigurerar Web SDK.
 
