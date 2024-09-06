@@ -5,10 +5,10 @@ breadcrumb-title: Användarhandbok om Platform Identity Service
 user-guide-description: Kombinera kundidentiteter över olika enheter och system för att leverera personanpassade digitala upplevelser.
 feature: Identities
 role: Admin,Developer
-source-git-commit: 536770d0c3e7e93921fe40887dafa5c76e851f5e
+source-git-commit: 16d29811715805e2f297836bf266c854db45d4c6
 workflow-type: tm+mt
-source-wordcount: '137'
-ht-degree: 20%
+source-wordcount: '143'
+ht-degree: 19%
 
 ---
 
@@ -31,6 +31,7 @@ ht-degree: 20%
       - [Identitetsinställningar](./identity-graph-linking-rules/identity-settings-ui.md)
       - [Exempel på kundscenarier](./identity-graph-linking-rules/example-scenarios.md)
       - [Exempel på diagramkonfigurationer](./identity-graph-linking-rules/example-configurations.md)
+      - [Felsökning av länkningsregler för identitetsdiagram](./identity-graph-linking-rules/troubleshooting.md)
    - [ECID - översikt](./features/ecid.md)
 - [Implementeringsguide](implementation.md)
 - [Gardrutor för identitetsdata](guardrails.md)
