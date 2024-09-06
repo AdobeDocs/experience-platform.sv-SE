@@ -4,9 +4,9 @@ title: API-slutpunkt för segmentdefinitioner
 description: Med segmentdefinitionsslutpunkten i Adobe Experience Platform Segmentation Service API kan du programmässigt hantera segmentdefinitioner för din organisation.
 role: Developer
 exl-id: e7811b96-32bf-4b28-9abb-74c17a71ffab
-source-git-commit: 914174de797d7d5f6c47769d75380c0ce5685ee2
+source-git-commit: bf90e478b38463ec8219276efe71fcc1aab6b2aa
 workflow-type: tm+mt
-source-wordcount: '1228'
+source-wordcount: '1328'
 ht-degree: 0%
 
 ---
@@ -36,17 +36,23 @@ GET /segment/definitions?{QUERY_PARAMETERS}
 
 **Frågeparametrar**
 
++++ En lista med tillgängliga frågeparametrar.
+
 | Parameter | Beskrivning | Exempel |
 | --------- | ----------- | ------- |
 | `start` | Anger startförskjutningen för de returnerade segmentdefinitionerna. | `start=4` |
 | `limit` | Anger antalet segmentdefinitioner som returneras per sida. | `limit=20` |
 | `page` | Anger vilken sida som resultatet av segmentdefinitioner ska börja från. | `page=5` |
-| `sort` | Anger vilket fält som resultaten ska sorteras efter. Har skrivits i följande format: `[attributeName]:[desc|asc]`. | `sort=updateTime:desc` |
+| `sort` | Anger vilket fält som resultaten ska sorteras efter. Har skrivits i följande format: `[attributeName]:[desc/asc]`. | `sort=updateTime:desc` |
 | `evaluationInfo.continuous.enabled` | Anger om segmentdefinitionen är direktuppspelningsaktiverad. | `evaluationInfo.continuous.enabled=true` |
+
++++
 
 **Begäran**
 
 Följande begäran hämtar de två sista segmentdefinitionerna som publicerats i organisationen.
+
++++ En exempelbegäran om att hämta en lista med segmentdefinitioner.
 
 ```shell
 curl -X GET https://platform.adobe.io/data/core/ups/segment/definitions?limit=2 \
@@ -56,9 +62,13 @@ curl -X GET https://platform.adobe.io/data/core/ups/segment/definitions?limit=2 
  -H 'x-sandbox-name: {SANDBOX_NAME}'
 ```
 
++++
+
 **Svar**
 
 Ett lyckat svar returnerar HTTP-status 200 med en lista över segmentdefinitioner för den angivna organisationen som JSON.
+
++++ Ett exempelsvar när en lista med segmentdefinitioner hämtas.
 
 ```json
 {
@@ -148,6 +158,8 @@ Ett lyckat svar returnerar HTTP-status 200 med en lista över segmentdefinitione
 }
 ```
 
++++
+
 ## Skapa en ny segmentdefinition {#create}
 
 Du kan skapa en ny segmentdefinition genom att göra en POST-förfrågan till slutpunkten `/segment/definitions`.
@@ -163,6 +175,8 @@ POST /segment/definitions
 ```
 
 **Begäran**
+
++++ En exempelbegäran om att skapa en segmentdefinition.
 
 ```shell
 curl -X POST https://platform.adobe.io/data/core/ups/segment/definitions
@@ -209,15 +223,13 @@ curl -X POST https://platform.adobe.io/data/core/ups/segment/definitions
 | `expression.format` | Anger strukturen för uttrycket i värdet. Följande format stöds för närvarande: <ul><li>`pql/text`: En textbeteckning för en segmentdefinition enligt den publicerade PQL-grammatiken.  Exempel: `workAddress.stateProvince = homeAddress.stateProvince`.</li></ul> |
 | `expression.value` | Ett uttryck som överensstämmer med typen som anges i `expression.format`. |
 
-<!-- >[!NOTE]
->
->A segment definition expression may also reference a computed attribute. To learn more, please refer to the [computed attribute API endpoint guide](../../profile/computed-attributes/ca-api.md)
->
->Computed attribute functionality is in alpha and is not available to all users. Documentation and functionality are subject to change. -->
++++
 
 **Svar**
 
 Ett lyckat svar returnerar HTTP-status 200 med information om den segmentdefinition du nyss skapade.
+
++++ Ett exempelsvar när du skapar en segmentdefinition.
 
 ```json
 {
@@ -265,6 +277,8 @@ Ett lyckat svar returnerar HTTP-status 200 med information om den segmentdefinit
 | `id` | Ett systemgenererat ID för den segmentdefinition du nyss skapade. |
 | `evaluationInfo` | Ett objekt som anger vilken typ av utvärdering som segmentdefinitionen ska genomgå. Det kan vara gruppsegmentering, direktuppspelning (kallas även kontinuerlig) eller kantsegmentering (kallas även synkron). |
 
++++
+
 ## Hämta en specifik segmentdefinition {#get}
 
 Du kan hämta detaljerad information om en specifik segmentdefinition genom att göra en GET-förfrågan till slutpunkten `/segment/definitions` och ange ID:t för segmentdefinitionen som du vill hämta i sökvägen till begäran.
@@ -281,6 +295,8 @@ GET /segment/definitions/{SEGMENT_ID}
 
 **Begäran**
 
++++ En exempelbegäran om att hämta en segmentdefinition.
+
 ```shell
 curl -X GET https://platform.adobe.io/data/core/ups/segment/definitions/4afe34ae-8c98-4513-8a1d-67ccaa54bc05 \
  -H 'Authorization: Bearer {ACCESS_TOKEN}' \
@@ -289,9 +305,13 @@ curl -X GET https://platform.adobe.io/data/core/ups/segment/definitions/4afe34ae
  -H 'x-sandbox-name: {SANDBOX_NAME}'
 ```
 
++++
+
 **Svar**
 
 Ett lyckat svar returnerar HTTP-status 200 med detaljerad information om den angivna segmentdefinitionen.
+
++++ Ett exempelsvar när en segmentdefinition hämtas.
 
 ```json
 {
@@ -346,6 +366,8 @@ Ett lyckat svar returnerar HTTP-status 200 med detaljerad information om den ang
 | `description` | En läsbar beskrivning av definitionen. |
 | `evaluationInfo` | Ett objekt som anger vilken typ av utvärdering, batch, direktuppspelning (kallas även kontinuerlig) eller kant (kallas även synkron), kommer segmentdefinitionen att genomgå. |
 
++++
+
 ## Hämta segmentdefinitioner gruppvis {#bulk-get}
 
 Du kan hämta detaljerad information om flera angivna segmentdefinitioner genom att göra en POST-förfrågan till `/segment/definitions/bulk-get`-slutpunkten och ange `id`-värdena för segmentdefinitionerna i begärandetexten.
@@ -357,6 +379,8 @@ POST /segment/definitions/bulk-get
 ```
 
 **Begäran**
+
++++ En exempelbegäran när du använder bulkens get-slutpunkt.
 
 ```shell
 curl -X POST https://platform.adobe.io/data/core/ups/segment/definitions/bulk-get \
@@ -377,9 +401,13 @@ curl -X POST https://platform.adobe.io/data/core/ups/segment/definitions/bulk-ge
     }'
 ```
 
++++
+
 **Svar**
 
 Ett lyckat svar returnerar HTTP-status 207 med de begärda segmentdefinitionerna.
+
++++ Ett samplingssvar när du använder bulkens get-slutpunkt.
 
 ```json
 {
@@ -477,6 +505,8 @@ Ett lyckat svar returnerar HTTP-status 207 med de begärda segmentdefinitionerna
 | `description` | En läsbar beskrivning av definitionen. |
 | `evaluationInfo` | Ett objekt som anger vilken typ av utvärdering, batch, direktuppspelning (kallas även kontinuerlig) eller kant (kallas även synkron), kommer segmentdefinitionen att genomgå. |
 
++++
+
 ## Ta bort en specifik segmentdefinition {#delete}
 
 Du kan begära att få ta bort en viss segmentdefinition genom att göra en DELETE-begäran till `/segment/definitions`-slutpunkten och ange ID:t för segmentdefinitionen som du vill ta bort i sökvägen till begäran.
@@ -497,6 +527,8 @@ DELETE /segment/definitions/{SEGMENT_ID}
 
 **Begäran**
 
++++ En exempelbegäran om att ta bort en segmentdefinition.
+
 ```shell
 curl -X DELETE https://platform.adobe.io/data/core/ups/segment/definitions/4afe34ae-8c98-4513-8a1d-67ccaa54bc05 \
  -H 'Authorization: Bearer {ACCESS_TOKEN}' \
@@ -504,6 +536,8 @@ curl -X DELETE https://platform.adobe.io/data/core/ups/segment/definitions/4afe3
  -H 'x-api-key: {API_KEY}' \
  -H 'x-sandbox-name: {SANDBOX_NAME}'
 ```
+
++++
 
 **Svar**
 
@@ -526,6 +560,8 @@ PATCH /segment/definitions/{SEGMENT_ID}
 **Begäran**
 
 Följande begäran kommer att uppdatera arbetsadresslandet från USA till Kanada.
+
++++ Ett exempel på en begäran om att uppdatera en segmentdefinition.
 
 ```shell
 curl -X PATCH https://platform.adobe.io/data/core/ups/segment/definitions/4afe34ae-8c98-4513-8a1d-67ccaa54bc05 \
@@ -555,9 +591,13 @@ curl -X PATCH https://platform.adobe.io/data/core/ups/segment/definitions/4afe34
 }'
 ```
 
++++
+
 **Svar**
 
-Ett lyckat svar returnerar HTTP-status 200 med information om den nyligen uppdaterade segmentdefinitionen. Lägg märke till hur arbetsadresslandet har uppdaterats från USA (USA) till Kanada (CA).
+Ett lyckat svar returnerar HTTP-status 200 med information om den nyligen uppdaterade segmentdefinitionen.
+
++++ Ett exempelsvar när en segmentdefinition uppdateras.
 
 ```json
 {
@@ -600,6 +640,8 @@ Ett lyckat svar returnerar HTTP-status 200 med information om den nyligen uppdat
 }
 ```
 
++++
+
 ## Konvertera segmentdefinition
 
 Du kan konvertera en segmentdefinition mellan `pql/text` och `pql/json` eller `pql/json` till `pql/text` genom att göra en POST-förfrågan till `/segment/conversion`-slutpunkten.
@@ -613,6 +655,8 @@ POST /segment/conversion
 **Begäran**
 
 Följande begäran ändrar segmentdefinitionens format från `pql/text` till `pql/json`.
+
++++ En exempelbegäran om att konvertera segmentdefinitionen.
 
 ```shell
 curl -X POST https://platform.adobe.io/data/core/ups/segment/conversion \
@@ -637,9 +681,13 @@ curl -X POST https://platform.adobe.io/data/core/ups/segment/conversion \
     }'
 ```
 
++++
+
 **Svar**
 
 Ett lyckat svar returnerar HTTP-status 200 med information om din nyligen konverterade segmentdefinition.
+
++++ Ett samplingssvar när segmentdefinitionen konverteras.
 
 ```json
 {
@@ -658,6 +706,8 @@ Ett lyckat svar returnerar HTTP-status 200 med information om din nyligen konver
     }
 }
 ```
+
++++
 
 ## Nästa steg
 

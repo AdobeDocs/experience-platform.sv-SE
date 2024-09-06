@@ -4,9 +4,9 @@ title: API-slutpunkt för segmentexportjobb
 description: Exportjobb är asynkrona processer som används för att behålla målgruppsmedlemmar i datauppsättningar. Du kan använda slutpunkten /export/job i Adobe Experience Platform Segmentation Service API, som gör att du kan hämta, skapa och avbryta exportjobb med programkod.
 role: Developer
 exl-id: 5b504a4d-291a-4969-93df-c23ff5994553
-source-git-commit: e52eb90b64ae9142e714a46017cfd14156c78f8b
+source-git-commit: bf90e478b38463ec8219276efe71fcc1aab6b2aa
 workflow-type: tm+mt
-source-wordcount: '1615'
+source-wordcount: '1678'
 ht-degree: 0%
 
 ---
@@ -33,20 +33,26 @@ Slutpunkten `/export/jobs` har stöd för flera frågeparametrar som kan hjälpa
 
 ```http
 GET /export/jobs
-GET /export/jobs?limit={LIMIT}
-GET /export/jobs?offset={OFFSET}
-GET /export/jobs?status={STATUS}
+GET /export/jobs?{QUERY_PARAMETERS}
 ```
 
-| Parameter | Beskrivning |
-| --------- | ----------- |
-| `{LIMIT}` | Anger antalet returnerade exportjobb. |
-| `{OFFSET}` | Anger förskjutningen för resultatsidorna. |
-| `{STATUS}` | Filtrerar resultaten baserat på status. Värdena som stöds är&quot;NEW&quot;,&quot;SUCCEEDED&quot; och&quot;FAILED&quot;. |
+**Frågeparametrar**
+
++++ En lista med tillgängliga frågeparametrar.
+
+| Parameter | Beskrivning | Exempel |
+| --------- | ----------- | ------- |
+| `limit` | Anger antalet returnerade exportjobb. | `limit=10` |
+| `offset` | Anger förskjutningen för resultatsidorna. | `offset=1540974701302_96` |
+| `status` | Filtrerar resultaten baserat på status. Värdena som stöds är&quot;NEW&quot;,&quot;SUCCEEDED&quot; och&quot;FAILED&quot;. | `status=NEW` |
+
++++
 
 **Begäran**
 
 Följande begäran hämtar de två sista exportjobben i din organisation.
+
++++ En exempelbegäran om att hämta exportjobb.
 
 ```shell
 curl -X GET https://platform.adobe.io/data/core/ups/export/jobs?limit=2 \
@@ -56,9 +62,13 @@ curl -X GET https://platform.adobe.io/data/core/ups/export/jobs?limit=2 \
  -H 'x-sandbox-name: {SANDBOX_NAME}'
 ```
 
++++
+
 **Svar**
 
 Följande svar returnerar HTTP-status 200 med en lista över slutförda exportjobb, baserat på frågeparametern i sökvägen för begäran.
+
++++ Ett exempelsvar vid hämtning av exportjobb.
 
 ```json
 {
@@ -207,6 +217,8 @@ Följande svar returnerar HTTP-status 200 med en lista över slutförda exportjo
 | `page` | Information om sidindelningen av begärda exportjobb. |
 | `link.next` | En länk till nästa sida med exportjobb. |
 
++++
+
 ## Skapa ett nytt exportjobb {#create}
 
 Du kan skapa ett nytt exportjobb genom att göra en POST-förfrågan till slutpunkten `/export/jobs`.
@@ -220,6 +232,8 @@ POST /export/jobs
 **Begäran**
 
 I följande begäran skapas ett nytt exportjobb som konfigurerats med parametrarna i nyttolasten.
+
++++ Ett exempel på en begäran om att skapa ett exportjobb.
 
 ```shell
 curl -X POST https://platform.adobe.io/data/core/ups/export/jobs \
@@ -290,9 +304,13 @@ curl -X POST https://platform.adobe.io/data/core/ups/export/jobs \
 | `schema.name` | **(Obligatoriskt)** Namnet på schemat som är associerat med datauppsättningen där data ska exporteras. |
 | `evaluationInfo.segmentation` | *(Valfritt)* Ett booleskt värde som, om det inte anges, är som standard `false`. Värdet `true` anger att segmentering måste göras i exportjobbet. |
 
++++
+
 **Svar**
 
 Ett lyckat svar returnerar HTTP-status 200 med information om ditt nyligen skapade exportjobb.
+
++++ Ett exempelsvar när du skapar ett exportjobb.
 
 ```json
 {
@@ -380,6 +398,8 @@ Om `destination.segmentPerBatch` hade angetts till `true` skulle `destination`-o
     }
 ```
 
++++
+
 ## Hämta ett specifikt exportjobb {#get}
 
 Du kan hämta detaljerad information om ett specifikt exportjobb genom att göra en GET-förfrågan till slutpunkten `/export/jobs` och ange ID:t för det exportjobb som du vill hämta i sökvägen för begäran.
@@ -396,6 +416,8 @@ GET /export/jobs/{EXPORT_JOB_ID}
 
 **Begäran**
 
++++ Ett exempel på en begäran om att hämta ett exportjobb.
+
 ```shell
 curl -X GET https://platform.adobe.io/data/core/ups/export/jobs/11037 \
  -H 'Authorization: Bearer {ACCESS_TOKEN}' \
@@ -404,9 +426,13 @@ curl -X GET https://platform.adobe.io/data/core/ups/export/jobs/11037 \
  -H 'x-sandbox-name: {SANDBOX_NAME}'
 ```
 
++++
+
 **Svar**
 
 Ett lyckat svar returnerar HTTP-status 200 med detaljerad information om det angivna exportjobbet.
+
++++ Ett exempelsvar när ett exportjobb hämtas.
 
 ```json
 {
@@ -476,6 +502,8 @@ Ett lyckat svar returnerar HTTP-status 200 med detaljerad information om det ang
 | `metrics.profileExportTime` | Ett fält som anger den tid det tog för profilerna att exportera. |
 | `totalExportedProfileCounter` | Det totala antalet profiler som exporterats över alla grupper. |
 
++++
+
 ## Avbryt eller ta bort ett specifikt exportjobb {#delete}
 
 Du kan begära att få ta bort det angivna exportjobbet genom att göra en DELETE-begäran till `/export/jobs`-slutpunkten och ange ID:t för det exportjobb som du vill ta bort i begärandesökvägen.
@@ -492,6 +520,8 @@ DELETE /export/jobs/{EXPORT_JOB_ID}
 
 **Begäran**
 
++++ En exempelbegäran om att ta bort ett exportjobb.
+
 ```shell
 curl -X DELETE https://platform.adobe.io/data/core/ups/export/jobs/{EXPORT_JOB_ID} \
  -H 'Authorization: Bearer {ACCESS_TOKEN}' \
@@ -499,6 +529,8 @@ curl -X DELETE https://platform.adobe.io/data/core/ups/export/jobs/{EXPORT_JOB_I
  -H 'x-api-key: {API_KEY}' \
  -H 'x-sandbox-name: {SANDBOX_NAME}'
 ```
+
++++
 
 **Svar**
 

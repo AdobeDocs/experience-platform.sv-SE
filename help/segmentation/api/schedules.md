@@ -4,9 +4,9 @@ title: API-slutpunkt för scheman
 description: Scheman är ett verktyg som kan användas för att automatiskt köra batchsegmenteringsjobb en gång om dagen.
 role: Developer
 exl-id: 92477add-2e7d-4d7b-bd81-47d340998ff1
-source-git-commit: c16ce1020670065ecc5415bc3e9ca428adbbd50c
+source-git-commit: bf90e478b38463ec8219276efe71fcc1aab6b2aa
 workflow-type: tm+mt
-source-wordcount: '2040'
+source-wordcount: '2104'
 ht-degree: 0%
 
 ---
@@ -29,18 +29,25 @@ Slutpunkten `/config/schedules` har stöd för flera frågeparametrar som kan hj
 
 ```http
 GET /config/schedules
-GET /config/schedules?start={START}
-GET /config/schedules?limit={LIMIT}
+GET /config/schedules?{QUERY_PARAMETERS}
 ```
 
-| Parameter | Beskrivning |
-| --------- | ----------- |
-| `{START}` | Anger vilken sida förskjutningen ska börja från. Som standard är det här värdet 0. |
-| `{LIMIT}` | Anger antalet returnerade scheman. Som standard är värdet 100. |
+**Frågeparametrar**
+
++++ En lista med tillgängliga frågeparametrar.
+
+| Parameter | Beskrivning | Exempel |
+| --------- | ----------- | ------- |
+| `start` | Anger vilken sida förskjutningen ska börja från. Som standard är det här värdet 0. | `start=5` |
+| `limit` | Anger antalet returnerade scheman. Som standard är värdet 100. | `limit=20` |
+
++++
 
 **Begäran**
 
 Följande förfrågan hämtar de tio senaste scheman som publicerats inom din organisation.
+
++++ En exempelbegäran om att hämta en lista med scheman.
 
 ```shell
 curl -X GET https://platform.adobe.io/data/core/ups/config/schedules?limit=10 \
@@ -50,6 +57,8 @@ curl -X GET https://platform.adobe.io/data/core/ups/config/schedules?limit=10 \
  -H 'x-sandbox-name: {SANDBOX_NAME}'
 ```
 
++++
+
 **Svar**
 
 Ett lyckat svar returnerar HTTP-status 200 med en lista över scheman för den angivna organisationen som JSON.
@@ -57,6 +66,8 @@ Ett lyckat svar returnerar HTTP-status 200 med en lista över scheman för den a
 >[!NOTE]
 >
 >Följande svar har trunkerats för utrymme och visar endast det första schemat som returnerats.
+
++++ Ett exempelsvar när en lista med scheman hämtas.
 
 ```json
 {
@@ -102,6 +113,8 @@ Ett lyckat svar returnerar HTTP-status 200 med en lista över scheman för den a
 | `children.schedule` | En sträng som innehåller jobbschemat. Jobb kan bara schemaläggas att köras en gång om dagen, vilket innebär att du inte kan schemalägga ett jobb att köras mer än en gång under en 24-timmarsperiod. Mer information om cron-scheman finns i bilagan i formatet [cron expression](#appendix). I det här exemplet betyder &quot;0 0 1 * *&quot; att schemat kommer att köras kl. 1.00 varje dag. |
 | `children.state` | En sträng som innehåller schematillståndet. De två lägen som stöds är &quot;active&quot; och &quot;inactive&quot;. Som standard är läget inställt på &quot;inaktiv&quot;. |
 
++++
+
 ## Skapa ett nytt schema {#create}
 
 Du kan skapa ett nytt schema genom att göra en POST-förfrågan till slutpunkten `/config/schedules`.
@@ -113,6 +126,8 @@ POST /config/schedules
 ```
 
 **Begäran**
+
++++ En exempelbegäran om att skapa ett schema.
 
 ```shell
 curl -X POST https://platform.adobe.io/data/core/ups/config/schedules \
@@ -144,9 +159,13 @@ curl -X POST https://platform.adobe.io/data/core/ups/config/schedules \
 | `schedule` | *Valfritt.* En sträng som innehåller jobbschemat. Jobb kan bara schemaläggas att köras en gång om dagen, vilket innebär att du inte kan schemalägga ett jobb att köras mer än en gång under en 24-timmarsperiod. Mer information om cron-scheman finns i bilagan i formatet [cron expression](#appendix). I det här exemplet betyder &quot;0 0 1 * *&quot; att schemat kommer att köras kl. 1.00 varje dag. <br><br>Om strängen inte anges genereras ett systemgenererat schema automatiskt. |
 | `state` | *Valfritt.* En sträng som innehåller schematillståndet. De två lägen som stöds är &quot;active&quot; och &quot;inactive&quot;. Som standard är läget inställt på &quot;inaktiv&quot;. |
 
++++
+
 **Svar**
 
 Ett lyckat svar returnerar HTTP-status 200 med information om ditt nyligen skapade schema.
+
++++ Ett exempelsvar när du skapar ett schema.
 
 ```json
 {
@@ -172,6 +191,8 @@ Ett lyckat svar returnerar HTTP-status 200 med information om ditt nyligen skapa
 }
 ```
 
++++
+
 ## Hämta ett specifikt schema {#get}
 
 Du kan hämta detaljerad information om ett specifikt schema genom att göra en GET-förfrågan till slutpunkten `/config/schedules` och ange ID:t för det schema som du vill hämta i sökvägen till begäran.
@@ -188,6 +209,8 @@ GET /config/schedules/{SCHEDULE_ID}
 
 **Begäran**
 
++++ En exempelbegäran om att hämta ett schema.
+
 ```shell
 curl -X GET https://platform.adobe.io/data/core/ups/config/schedules/4e538382-dbd8-449e-988a-4ac639ebe72b
  -H 'Authorization: Bearer {ACCESS_TOKEN}' \
@@ -196,9 +219,13 @@ curl -X GET https://platform.adobe.io/data/core/ups/config/schedules/4e538382-db
  -H 'x-sandbox-name: {SANDBOX_NAME}'
 ```
 
++++
+
 **Svar**
 
 Ett lyckat svar returnerar HTTP-status 200 med detaljerad information om det angivna schemat.
+
++++ Ett exempelsvar när ett schema hämtas.
 
 ```json
 {
@@ -233,15 +260,13 @@ Ett lyckat svar returnerar HTTP-status 200 med detaljerad information om det ang
 | `schedule` | En sträng som innehåller jobbschemat. Jobb kan bara schemaläggas att köras en gång om dagen, vilket innebär att du inte kan schemalägga ett jobb att köras mer än en gång under en 24-timmarsperiod. Mer information om cron-scheman finns i bilagan i formatet [cron expression](#appendix). I det här exemplet betyder &quot;0 0 1 * *&quot; att schemat kommer att köras kl. 1.00 varje dag. |
 | `state` | En sträng som innehåller schematillståndet. De två lägen som stöds är `active` och `inactive`. Som standard är läget inställt på `inactive`. |
 
++++
+
 ## Uppdatera information för ett specifikt schema {#update}
 
 Du kan uppdatera ett specifikt schema genom att göra en PATCH-begäran till slutpunkten `/config/schedules` och ange ID:t för det schema som du försöker uppdatera i sökvägen till begäran.
 
 Med PATCH-begäran kan du uppdatera antingen [state](#update-state) eller [cron schedule](#update-schedule) för ett enskilt schema.
-
-### Uppdatera schematillstånd {#update-state}
-
-Du kan använda en JSON-lagningsåtgärd för att uppdatera schemats status. Om du vill uppdatera läget deklarerar du egenskapen `path` som `/state` och anger `value` som antingen `active` eller `inactive`. Mer information om JSON Patch finns i [JSON Patch](https://datatracker.ietf.org/doc/html/rfc6902) -dokumentationen.
 
 **API-format**
 
@@ -253,7 +278,15 @@ PATCH /config/schedules/{SCHEDULE_ID}
 | --------- | ----------- |
 | `{SCHEDULE_ID}` | Värdet `id` för schemat som du vill uppdatera. |
 
+>[!BEGINTABS]
+
+>[!TAB Uppdatera schematillstånd]
+
+Du kan använda en JSON-lagningsåtgärd för att uppdatera schemats status. Om du vill uppdatera läget deklarerar du egenskapen `path` som `/state` och anger `value` som antingen `active` eller `inactive`. Mer information om JSON Patch finns i [JSON Patch](https://datatracker.ietf.org/doc/html/rfc6902) -dokumentationen.
+
 **Begäran**
+
++++ Ett exempel på en begäran om att uppdatera schemats tillstånd.
 
 ```shell
 curl -X PATCH https://platform.adobe.io/data/core/ups/config/schedules/4e538382-dbd8-449e-988a-4ac639ebe72b \
@@ -271,6 +304,8 @@ curl -X PATCH https://platform.adobe.io/data/core/ups/config/schedules/4e538382-
 ]'
 ```
 
++++
+
 | Egenskap | Beskrivning |
 | -------- | ----------- |
 | `path` | Sökvägen för det värde som du vill laga. I det här fallet måste du ange värdet `path` till /state eftersom du uppdaterar schemats tillstånd. |
@@ -280,21 +315,15 @@ curl -X PATCH https://platform.adobe.io/data/core/ups/config/schedules/4e538382-
 
 Ett lyckat svar returnerar HTTP-status 204 (inget innehåll).
 
-### Uppdatera kundschema {#update-schedule}
+>[!TAB Uppdatera kundschema]
 
 Du kan använda en JSON-korrigeringsåtgärd för att uppdatera kronschemat. Om du vill uppdatera schemat deklarerar du egenskapen `path` som `/schedule` och ställer in `value` på ett giltigt cron-schema. Mer information om JSON Patch finns i [JSON Patch](https://datatracker.ietf.org/doc/html/rfc6902) -dokumentationen. Mer information om cron-scheman finns i bilagan i formatet [cron expression](#appendix).
 
-**API-format**
-
-```http
-PATCH /config/schedules/{SCHEDULE_ID}
-```
-
-| Parameter | Beskrivning |
-| --------- | ----------- |
-| `{SCHEDULE_ID}` | Värdet `id` för schemat som du vill uppdatera. |
+>[!ENDTABS]
 
 **Begäran**
+
++++ Ett exempel på en begäran om att uppdatera schemat.
 
 ```shell
 curl -X PATCH https://platform.adobe.io/data/core/ups/config/schedules/4e538382-dbd8-449e-988a-4ac639ebe72b \
@@ -317,6 +346,8 @@ curl -X PATCH https://platform.adobe.io/data/core/ups/config/schedules/4e538382-
 | `path` | Sökvägen för det värde som du vill uppdatera. I det här fallet måste du ange värdet `path` till `/schedule` eftersom du uppdaterar cron-schemat. |
 | `value` | Det uppdaterade värdet för cron-schemat. Värdet måste anges i form av ett kronschema. I det här exemplet körs schemat den andra varje månad. |
 
++++
+
 **Svar**
 
 Ett lyckat svar returnerar HTTP-status 204 (inget innehåll).
@@ -337,6 +368,8 @@ DELETE /config/schedules/{SCHEDULE_ID}
 
 **Begäran**
 
++++ En exempelbegäran om att ta bort ett schema.
+
 ```shell
 curl -X DELETE https://platform.adobe.io/data/core/ups/config/schedules/4e538382-dbd8-449e-988a-4ac639ebe72b \
  -H 'Authorization: Bearer {ACCESS_TOKEN}' \
@@ -344,6 +377,8 @@ curl -X DELETE https://platform.adobe.io/data/core/ups/config/schedules/4e538382
  -H 'x-api-key: {API_KEY}' \
  -H 'x-sandbox-name: {SANDBOX_NAME}'
 ```
+
++++
 
 **Svar**
 

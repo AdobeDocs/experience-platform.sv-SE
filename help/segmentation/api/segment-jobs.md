@@ -4,9 +4,9 @@ title: API-slutpunkt för segmentjobb
 description: Segmentjobbens slutpunkt i Adobe Experience Platform Segmentation Service API gör att du kan hantera segmentjobb för din organisation programmatiskt.
 role: Developer
 exl-id: 105481c2-1c25-4f0e-8fb0-c6577a4616b3
-source-git-commit: c16ce1020670065ecc5415bc3e9ca428adbbd50c
+source-git-commit: f22246dec74c20459e5ac53bedc16cb6e4fba56e
 workflow-type: tm+mt
-source-wordcount: '1524'
+source-wordcount: '1655'
 ht-degree: 0%
 
 ---
@@ -36,6 +36,8 @@ GET /segment/jobs?{QUERY_PARAMETERS}
 
 **Frågeparametrar**
 
++++ En lista med tillgängliga frågeparametrar.
+
 | Parameter | Beskrivning | Exempel |
 | --------- | ----------- | ------- |
 | `start` | Anger startförskjutningen för de returnerade segmentjobben. | `start=1` |
@@ -44,7 +46,11 @@ GET /segment/jobs?{QUERY_PARAMETERS}
 | `sort` | Beställer returnerade segmentjobb. Har skrivits i formatet `[attributeName]:[desc|asc]`. | `sort=creationTime:desc` |
 | `property` | Filtrerar segmentjobb och hämtar exakta matchningar för angivet filter. Den kan skrivas i något av följande format: <ul><li>`[jsonObjectPath]==[value]` - filtrering på objektnyckeln</li><li>`[arrayTypeAttributeName]~[objectKey]==[value]` - filtrering i arrayen</li></ul> | `property=segments~segmentId==workInUS` |
 
++++
+
 **Begäran**
+
++++ Ett exempel på en begäran om att visa en lista med segmentjobb.
 
 ```shell
 curl -X GET https://platform.adobe.io/data/core/ups/segment/jobs?status=SUCCEEDED \
@@ -54,17 +60,23 @@ curl -X GET https://platform.adobe.io/data/core/ups/segment/jobs?status=SUCCEEDE
  -H 'x-sandbox-name: {SANDBOX_NAME}'
 ```
 
++++
+
 **Svar**
 
 Ett lyckat svar returnerar HTTP-status 200 med en lista över segmentjobb för den angivna organisationen som JSON. Svaret varierar dock beroende på antalet segmentdefinitioner i segmentjobbet.
 
-**Mindre än eller lika med 1500 segmentdefinitioner i segmentjobbet**
+>[!BEGINTABS]
+
+>[!TAB Mindre än eller lika med 1500 segmentdefinitioner i segmentjobbet]
 
 Om du har färre än 1 500 segmentdefinitioner som körs i segmentjobbet visas en fullständig lista över alla segmentdefinitioner i attributet `children.segments`.
 
 >[!NOTE]
 >
 >Följande svar har trunkerats för utrymme och visar bara det första returnerade jobbet.
+
++++ Ett exempelsvar när en lista över segmentjobb hämtas.
 
 ```json
 {
@@ -166,13 +178,17 @@ Om du har färre än 1 500 segmentdefinitioner som körs i segmentjobbet visas e
 }
 ```
 
-**Mer än 1500 segmentdefinitioner**
++++
+
+>[!TAB Mer än 1500 segmentdefinitioner]
 
 Om du har fler än 1500 segmentdefinitioner som körs i segmentjobbet visas `*` i attributet `children.segments`, vilket anger att alla segmentdefinitioner utvärderas.
 
 >[!NOTE]
 >
 >Följande svar har trunkerats för utrymme och visar bara det första returnerade jobbet.
+
++++ Ett exempelsvar när du visar en lista med segmentjobb.
 
 ```json
 {
@@ -276,6 +292,10 @@ Om du har fler än 1500 segmentdefinitioner som körs i segmentjobbet visas `*` 
 | `metrics.segmentProfileByStatusCounter` | Antalet profiler för varje status. Följande tre statusvärden stöds: <ul><li>&quot;real&quot; - antalet profiler som kvalificerar sig för segmentdefinitionen.</li><li>&quot;exited&quot; - Antalet profiler som inte längre finns i segmentdefinitionen.</li></ul> |
 | `metrics.totalProfilesByMergePolicy` | Det totala antalet sammanfogade profiler per sammanfogningspolicy. |
 
++++
+
+>[!ENDTABS]
+
 ## Skapa ett nytt segmentjobb {#create}
 
 Du kan skapa ett nytt segmentjobb genom att göra en POST-förfrågan till slutpunkten `/segment/jobs` och i brödtexten inkludera ID:t för segmentdefinitionen som du vill skapa en ny målgrupp från.
@@ -288,9 +308,13 @@ POST /segment/jobs
 
 När du skapar ett nytt segmentjobb skiljer sig förfrågan och svaret åt beroende på antalet segmentdefinitioner i segmentjobbet.
 
-**Mindre än eller lika med 1500 segmentdefinitioner i segmentjobbet**
+>[!BEGINTABS]
+
+>[!TAB Mindre än eller lika med 1500 segment i segmentjobbet]
 
 **Begäran**
+
++++En exempelbegäran för att skapa ett nytt segmentjobb
 
 ```shell
 curl -X POST https://platform.adobe.io/data/core/ups/segment/jobs \
@@ -302,6 +326,9 @@ curl -X POST https://platform.adobe.io/data/core/ups/segment/jobs \
  -d '[
     {
         "segmentId": "7863c010-e092-41c8-ae5e-9e533186752e"
+    },
+    {
+        "segmentId": "07d39471-05d1-4083-a310-d96978fd7c85"
     }
  ]'
 ```
@@ -310,9 +337,13 @@ curl -X POST https://platform.adobe.io/data/core/ups/segment/jobs \
 | -------- | ----------- |
 | `segmentId` | ID:t för segmentdefinitionen som du vill skapa ett segmentjobb för. Dessa segmentdefinitioner kan tillhöra olika sammanfogningsprinciper. Mer information om segmentdefinitioner finns i [stödlinjen för segmentdefinitioner](./segment-definitions.md). |
 
++++
+
 **Svar**
 
 Ett lyckat svar returnerar HTTP-status 200 med information om ditt nyligen skapade segmentjobb.
+
++++ Ett exempelsvar när du skapar ett nytt segmentjobb.
 
 ```json
 {
@@ -335,6 +366,22 @@ Ett lyckat svar returnerar HTTP-status 200 med information om ditt nyligen skapa
             "segmentId": "7863c010-e092-41c8-ae5e-9e533186752e",
             "segment": {
                 "id": "7863c010-e092-41c8-ae5e-9e533186752e",
+                "expression": {
+                    "type": "PQL",
+                    "format": "pql/json",
+                    "value": "workAddress.country = \"US\""
+                },
+                "mergePolicyId": "25c548a0-ca7f-4dcd-81d5-997642f178b9",
+                "mergePolicy": {
+                    "id": "25c548a0-ca7f-4dcd-81d5-997642f178b9",
+                    "version": 1
+                }
+            }
+        },
+        {
+            "segmentId": "07d39471-05d1-4083-a310-d96978fd7c85",
+            "segment": {
+                "id": "07d39471-05d1-4083-a310-d96978fd7c85",
                 "expression": {
                     "type": "PQL",
                     "format": "pql/json",
@@ -411,13 +458,17 @@ Ett lyckat svar returnerar HTTP-status 200 med information om ditt nyligen skapa
 | `segments.segment.id` | ID:t för segmentdefinitionen som du angav. |
 | `segments.segment.expression` | Ett objekt som innehåller information om segmentdefinitionens uttryck, skrivet i PQL. |
 
-**Mer än 1500 segmentdefinitioner**
++++
+
+>[!TAB Mer än 1500 segmentdefinitioner i segmentjobbet]
 
 **Begäran**
 
 >[!NOTE]
 >
 >Du kan skapa ett segmentjobb med fler än 1 500 segmentdefinitioner, men det är **inte** som rekommenderas.
+
++++ En exempelbegäran för att skapa ett segmentjobb.
 
 ```shell
 curl -X POST https://platform.adobe.io/data/core/ups/segment/jobs \
@@ -443,9 +494,13 @@ curl -X POST https://platform.adobe.io/data/core/ups/segment/jobs \
 | `schema.name` | Namnet på schemat för segmentdefinitionerna. |
 | `segments.segmentId` | När du kör ett segmentjobb med fler än 1 500 segment måste du skicka `*` som segment-ID för att ange att du vill köra ett segmenteringsjobb med alla segment. |
 
++++
+
 **Svar**
 
 Ett lyckat svar returnerar HTTP-status 200 med information om ditt nyligen skapade segmentjobb.
+
++++ Ett exempelsvar när du skapar ett segmentjobb.
 
 ```json
 {
@@ -530,6 +585,11 @@ Ett lyckat svar returnerar HTTP-status 200 med information om ditt nyligen skapa
 | `segments` | Ett objekt som innehåller information om segmentdefinitionerna som segmentjobbet körs för. |
 | `segments.segment.id` | `*` betyder att det här segmentjobbet körs för alla segmentdefinitioner i organisationen. |
 
++++
+
+>[!ENDTABS]
+
+
 ## Hämta ett specifikt segmentjobb {#get}
 
 Du kan hämta detaljerad information om ett specifikt segmentjobb genom att göra en GET-förfrågan till slutpunkten `/segment/jobs` och ange ID:t för segmentjobbet som du vill hämta i sökvägen för begäran.
@@ -546,6 +606,8 @@ GET /segment/jobs/{SEGMENT_JOB_ID}
 
 **Begäran**
 
++++ En exempelbegäran för hämtning av ett segmentjobb.
+
 ```shell
 curl -X GET https://platform.adobe.io/data/core/ups/segment/jobs/d3b4a50d-dfea-43eb-9fca-557ea53771fd \
  -H 'Authorization: Bearer {ACCESS_TOKEN}' \
@@ -554,13 +616,19 @@ curl -X GET https://platform.adobe.io/data/core/ups/segment/jobs/d3b4a50d-dfea-4
  -H 'x-sandbox-name: {SANDBOX_NAME}'
 ```
 
++++
+
 **Svar**
 
 Ett lyckat svar returnerar HTTP-status 200 med detaljerad information om det angivna segmentjobbet.  Svaret varierar dock beroende på antalet segmentdefinitioner i segmentjobbet.
 
-**Mindre än eller lika med 1500 segmentdefinitioner i segmentjobbet**
+>[!BEGINTABS]
+
+>[!TAB Mindre än eller lika med 1500 segmentdefinitioner i segmentjobbet]
 
 Om du har färre än 1 500 segmentdefinitioner som körs i segmentjobbet visas en fullständig lista över alla segmentdefinitioner i attributet `children.segments`.
+
++++ Ett exempelsvar för hämtning av ett segmentjobb.
 
 ```json
 {
@@ -622,9 +690,13 @@ Om du har färre än 1 500 segmentdefinitioner som körs i segmentjobbet visas e
 }
 ```
 
-**Mer än 1500 segmentdefinitioner**
++++
+
+>[!TAB Mer än 1500 segmentdefinitioner]
 
 Om du har fler än 1500 segmentdefinitioner som körs i segmentjobbet visas `*` i attributet `children.segments`, vilket anger att alla segmentdefinitioner utvärderas.
+
++++ Ett exempelsvar för hämtning av ett segmentjobb.
 
 ```json
 {
@@ -711,6 +783,10 @@ Om du har fler än 1500 segmentdefinitioner som körs i segmentjobbet visas `*` 
 | `segments.segment.expression` | Ett objekt som innehåller information om segmentdefinitionens uttryck, skrivet i PQL. |
 | `metrics` | Ett objekt som innehåller diagnostikinformation om segmentjobbet. |
 
++++
+
+>[!ENDTABS]
+
 ## Masshämta segmentjobb {#bulk-get}
 
 Du kan hämta detaljerad information om flera segmentjobb genom att göra en POST-förfrågan till slutpunkten `/segment/jobs/bulk-get` och ange `id`-värdena för segmentjobben i begärandetexten.
@@ -722,6 +798,8 @@ POST /segment/jobs/bulk-get
 ```
 
 **Begäran**
+
++++ En exempelbegäran för användning av bulkhämtningsslutpunkten.
 
 ```shell
 curl -X POST https://platform.adobe.io/data/core/ups/segment/jobs/bulk-get \
@@ -742,6 +820,8 @@ curl -X POST https://platform.adobe.io/data/core/ups/segment/jobs/bulk-get \
     }'
 ```
 
++++
+
 **Svar**
 
 Ett lyckat svar returnerar HTTP-status 207 med de begärda segmentjobben. Värdet för attributet `children.segments` varierar dock beroende på om segmentjobbet körs för mer än 1 500 segmentdefinitioner.
@@ -749,6 +829,8 @@ Ett lyckat svar returnerar HTTP-status 207 med de begärda segmentjobben. Värde
 >[!NOTE]
 >
 >Följande svar har trunkerats för blanksteg och visar bara en del av informationen för varje segmentjobb. Det fullständiga svaret innehåller fullständig information om de begärda segmentjobben.
+
++++ Ett samplingssvar när gruppsvaret används.
 
 ```json
 {
@@ -804,6 +886,8 @@ Ett lyckat svar returnerar HTTP-status 207 med de begärda segmentjobben. Värde
 | `segments.segment.id` | ID för segmentdefinitionen. |
 | `segments.segment.expression` | Ett objekt som innehåller information om segmentdefinitionens uttryck, skrivet i PQL. |
 
++++
+
 ## Avbryt eller ta bort ett specifikt segmentjobb {#delete}
 
 Du kan ta bort ett specifikt segmentjobb genom att göra en DELETE-begäran till slutpunkten `/segment/jobs` och ange ID:t för segmentjobbet som du vill ta bort i begärandesökvägen.
@@ -824,6 +908,8 @@ DELETE /segment/jobs/{SEGMENT_JOB_ID}
 
 **Begäran**
 
++++ En exempelbegäran om att ta bort ett segmentjobb.
+
 ```shell
 curl -X DELETE https://platform.adobe.io/data/core/ups/segment/jobs/d3b4a50d-dfea-43eb-9fca-557ea53771fd \
  -H 'Authorization: Bearer {ACCESS_TOKEN}' \
@@ -832,9 +918,13 @@ curl -X DELETE https://platform.adobe.io/data/core/ups/segment/jobs/d3b4a50d-dfe
  -H 'x-sandbox-name: {SANDBOX_NAME}'
 ```
 
++++
+
 **Svar**
 
 Ett lyckat svar returnerar HTTP-status 204 med följande information.
+
++++ Ett exempelsvar när du tar bort ett segmentjobb.
 
 ```json
 {
@@ -842,6 +932,8 @@ Ett lyckat svar returnerar HTTP-status 204 med följande information.
     "message": "Segment job with id 'd3b4a50d-dfea-43eb-9fca-557ea53771fd' has been marked for cancelling"
 }
 ```
+
++++
 
 ## Nästa steg
 

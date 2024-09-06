@@ -4,9 +4,9 @@ title: Förhandsgranskningar och uppskattningar av API-slutpunkter
 description: I takt med att segmentdefinitionen utvecklas kan du använda verktygen för uppskattning och förhandsgranskning i Adobe Experience Platform för att se information på sammanfattningsnivå för att säkerställa att du isolerar den förväntade målgruppen.
 role: Developer
 exl-id: 2c204f29-825f-4a5e-a7f6-40fc69263614
-source-git-commit: e52eb90b64ae9142e714a46017cfd14156c78f8b
+source-git-commit: bf90e478b38463ec8219276efe71fcc1aab6b2aa
 workflow-type: tm+mt
-source-wordcount: '971'
+source-wordcount: '1016'
 ht-degree: 0%
 
 ---
@@ -62,6 +62,8 @@ POST /preview
 
 **Begäran**
 
++++ Ett exempel på en förfrågan om att skapa en förhandsgranskning.
+
 ```shell
 curl -X POST https://platform.adobe.io/data/core/ups/preview \
  -H 'Authorization: Bearer {ACCESS_TOKEN}' \
@@ -85,9 +87,13 @@ curl -X POST https://platform.adobe.io/data/core/ups/preview \
 | `predicateModel` | Namnet på schemaklassen [!DNL Experience Data Model] (XDM) som profildata baseras på. |
 | `graphType` | Den diagramtyp som du vill hämta klustret från. Värdena som stöds är `none` (utför ingen identitetssammanfogning) och `pdg` (utför identitetssammanfogning baserat på ditt privata identitetsdiagram). |
 
++++
+
 **Svar**
 
 Ett lyckat svar returnerar HTTP-status 201 (Skapad) med information om den nya förhandsgranskningen.
+
++++ Ett exempelsvar när du skapar en förhandsvisning.
 
 ```json
 {
@@ -103,6 +109,8 @@ Ett lyckat svar returnerar HTTP-status 201 (Skapad) med information om den nya f
 | -------- | ----------- |
 | `state` | Det aktuella läget för förhandsgranskningsjobbet. När den skapas är den i läget&quot;NYTT&quot;. Därefter kommer det att vara i tillståndet &quot;RUNNING&quot; tills bearbetningen är klar, och då blir det &quot;RESULT_READY&quot; eller &quot;FAILED&quot;. |
 | `previewId` | ID:t för förhandsgranskningsjobbet, som ska användas i sökningssyfte vid visning av en uppskattning eller förhandsvisning, enligt beskrivningen i nästa avsnitt. |
+
++++
 
 ## Hämta resultatet från en viss förhandsgranskning {#get-preview}
 
@@ -120,6 +128,8 @@ GET /preview/{PREVIEW_ID}
 
 **Begäran**
 
++++ Ett exempel på en begäran om att hämta en förhandsgranskning.
+
 ```shell
 curl -X GET https://platform.adobe.io/data/core/ups/preview/MDphcHAtMzJiZTAzMjgtM2YzMS00YjY0LThkODQtYWNkMGM0ZmJkYWQzOmU4OTAwNjhiLWY1Y2EtNGE4Zi1hNmI1LWFmODdmZjBjYWFjMzow \
  -H 'Authorization: Bearer {ACCESS_TOKEN}' \
@@ -128,7 +138,11 @@ curl -X GET https://platform.adobe.io/data/core/ups/preview/MDphcHAtMzJiZTAzMjgt
  -H 'x-sandbox-name: {SANDBOX_NAME}'
 ```
 
++++
+
 **Svar**
+
++++ Ett exempelsvar när du hämtar en förhandsgranskning.
 
 Ett lyckat svar returnerar HTTP-status 200 med detaljerad information om den angivna förhandsgranskningen.
 
@@ -181,6 +195,8 @@ Ett lyckat svar returnerar HTTP-status 200 med detaljerad information om den ang
 | -------- | ----------- |
 | `results` | En lista över enhets-ID:n, tillsammans med deras relaterade identiteter. De angivna länkarna kan användas för att leta upp de angivna entiteterna med hjälp av API-slutpunkten [för profilåtkomst](../../profile/api/entities.md). |
 
++++
+
 ## Hämta resultaten från ett specifikt uppskattningsjobb {#get-estimate}
 
 När du har skapat ett förhandsgranskningsjobb kan du använda dess `previewId` i sökvägen för en GET-begäran till `/estimate`-slutpunkten för att visa statistisk information om segmentdefinitionen, inklusive förväntad målgruppsstorlek, konfidensintervall och felstandardavvikelse.
@@ -199,6 +215,8 @@ GET /estimate/{PREVIEW_ID}
 
 Följande begäran hämtar resultatet av ett specifikt uppskattningsjobb.
 
++++ En exempelbegäran om att hämta ett uppskattningsjobb.
+
 ```shell
 curl -X GET https://platform.adobe.io/data/core/ups/estimate/MDoyOjRhNDVlODUzLWFjOTEtNGJiNy1hNDI2LTE1MDkzN2I2YWY1Yzo0Mg \
  -H 'Authorization: Bearer {ACCESS_TOKEN}' \
@@ -207,9 +225,13 @@ curl -X GET https://platform.adobe.io/data/core/ups/estimate/MDoyOjRhNDVlODUzLWF
  -H 'x-sandbox-name: {SANDBOX_NAME}'
 ```
 
++++
+
 **Svar**
 
 Ett lyckat svar returnerar HTTP-status 200 med information om uppskattningsjobbet.
+
++++ Ett samplingssvar när ett uppskattningsjobb hämtas.
 
 ```json
 {
@@ -243,9 +265,11 @@ Ett lyckat svar returnerar HTTP-status 200 med information om uppskattningsjobbe
 
 | Egenskap | Beskrivning |
 | -------- | ----------- |
-| `estimatedNamespaceDistribution` | En array med objekt som visar antalet profiler i segmentet uppdelade efter identitetsnamnutrymme. Det totala antalet profiler per namnutrymme (genom att lägga ihop värdena som visas för varje namnutrymme) kan vara högre än antalet profiler eftersom en profil kan kopplas till flera namnutrymmen. Om en kund till exempel interagerar med varumärket i mer än en kanal kommer flera namnutrymmen att kopplas till den enskilda kunden. |
+| `estimatedNamespaceDistribution` | En array med objekt som visar antalet profiler i segmentdefinitionen uppdelade efter identitetsnamnutrymme. Det totala antalet profiler per namnutrymme (genom att lägga ihop värdena som visas för varje namnutrymme) kan vara högre än antalet profiler eftersom en profil kan kopplas till flera namnutrymmen. Om en kund till exempel interagerar med varumärket i mer än en kanal kommer flera namnutrymmen att kopplas till den enskilda kunden. |
 | `state` | Det aktuella läget för förhandsgranskningsjobbet. Läget kommer att vara &quot;RUNNING&quot; tills bearbetningen är slutförd, och då blir det &quot;RESULT_READY&quot; eller &quot;FAILED&quot;. |
 | `_links.preview` | När `state` är &quot;RESULT_READY&quot; tillhandahåller det här fältet en URL för att visa uppskattningen. |
+
++++
 
 ## Nästa steg
 
