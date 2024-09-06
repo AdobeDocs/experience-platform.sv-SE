@@ -4,9 +4,9 @@ title: API-slutpunkt för segmentjobb
 description: Segmentjobbens slutpunkt i Adobe Experience Platform Segmentation Service API gör att du kan hantera segmentjobb för din organisation programmatiskt.
 role: Developer
 exl-id: 105481c2-1c25-4f0e-8fb0-c6577a4616b3
-source-git-commit: f22246dec74c20459e5ac53bedc16cb6e4fba56e
+source-git-commit: f35fb6aae6aceb75391b1b615ca067a72918f4cf
 workflow-type: tm+mt
-source-wordcount: '1655'
+source-wordcount: '1648'
 ht-degree: 0%
 
 ---
@@ -922,18 +922,7 @@ curl -X DELETE https://platform.adobe.io/data/core/ups/segment/jobs/d3b4a50d-dfe
 
 **Svar**
 
-Ett lyckat svar returnerar HTTP-status 204 med följande information.
-
-+++ Ett exempelsvar när du tar bort ett segmentjobb.
-
-```json
-{
-    "status": true,
-    "message": "Segment job with id 'd3b4a50d-dfea-43eb-9fca-557ea53771fd' has been marked for cancelling"
-}
-```
-
-+++
+Ett lyckat svar returnerar HTTP-status 204 med en tom svarstext.
 
 ## Nästa steg
 

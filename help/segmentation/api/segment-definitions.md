@@ -4,9 +4,9 @@ title: API-slutpunkt för segmentdefinitioner
 description: Med segmentdefinitionsslutpunkten i Adobe Experience Platform Segmentation Service API kan du programmässigt hantera segmentdefinitioner för din organisation.
 role: Developer
 exl-id: e7811b96-32bf-4b28-9abb-74c17a71ffab
-source-git-commit: bf90e478b38463ec8219276efe71fcc1aab6b2aa
+source-git-commit: f35fb6aae6aceb75391b1b615ca067a72918f4cf
 workflow-type: tm+mt
-source-wordcount: '1328'
+source-wordcount: '1472'
 ht-degree: 0%
 
 ---
@@ -176,6 +176,61 @@ POST /segment/definitions
 
 **Begäran**
 
+När du skapar en ny segmentdefinition kan du skapa den i formatet `pql/text` eller `pql/json`.
+
+>[!BEGINTABS]
+
+>[!TAB Använda pql/text]
+
++++ En exempelbegäran om att skapa en segmentdefinition.
+
+```shell
+curl -X POST https://platform.adobe.io/data/core/ups/segment/definitions
+ -H 'Authorization: Bearer {ACCESS_TOKEN}' \
+ -H 'Content-Type: application/json' \
+ -H 'x-gw-ims-org-id: {ORG_ID}' \
+ -H 'x-api-key: {API_KEY}' \
+ -H 'x-sandbox-name: {SANDBOX_NAME}'
+ -d '{
+        "name": "People who ordered in the last 30 days",
+        "description": "Last 30 days",
+        "expression": {
+            "type": "PQL",
+            "format": "pql/text",
+            "value": "workAddress.country = \"US\""
+        },
+        "evaluationInfo": {
+            "batch": {
+                "enabled": true
+            },
+            "continuous": {
+                "enabled": false
+            },
+            "synchronous": {
+                "enabled": false
+            }
+        },
+        "schema": {
+            "name": "_xdm.context.profile"
+        }
+    }'
+```
+
+| Egenskap | Beskrivning |
+| -------- | ----------- |
+| `name` | Ett unikt namn som ska referera till segmentdefinitionen. |
+| `description` | (Valfritt) En beskrivning av segmentdefinitionen som du skapar. |
+| `expression` | En entitet som innehåller fältinformation om segmentdefinitionen. |
+| `expression.type` | Anger uttryckstypen. För närvarande stöds bara &quot;PQL&quot;. |
+| `expression.format` | Anger strukturen för uttrycket i värdet. Värden som stöds är `pql/text` och `pql/json`. |
+| `expression.value` | Ett uttryck som överensstämmer med typen som anges i `expression.format`. |
+| `evaluationInfo` | (Valfritt) Den typ av segmentdefinition som du skapar. Om du vill skapa ett gruppsegment anger du `evaluationInfo.batch.enabled` som true. Om du vill skapa ett direktuppspelningssegment anger du `evaluationInfo.continuous.enabled` som true. Om du vill skapa ett kantsegment anger du `evaluationInfo.synchronous.enabled` som true. Om segmentdefinitionen lämnas tom skapas den som ett **batch**-segment. |
+| `schema` | Det schema som är associerat med entiteterna i segmentet. Består av antingen ett `id`- eller `name`-fält. |
+
++++
+
+>[!TAB Använder pql/json]
+
 +++ En exempelbegäran om att skapa en segmentdefinition.
 
 ```shell
@@ -191,8 +246,8 @@ curl -X POST https://platform.adobe.io/data/core/ups/segment/definitions
         "description": "Last 30 days",
         "expression": {
             "type": "PQL",
-            "format": "pql/text",
-            "value": "workAddress.country = \"US\""
+            "format": "pql/json",
+            "value": "{\"nodeType\":\"fnApply\",\"fnName\":\"=\",\"params\":[{\"nodeType\":\"fieldLookup\",\"fieldName\":\"a\",\"object\":{\"nodeType\":\"parameterReference\",\"position\":1}},{\"nodeType\":\"fieldLookup\",\"fieldName\":\"b\",\"object\":{\"nodeType\":\"parameterReference\",\"position\":1}}]}"
         },
         "evaluationInfo": {
             "batch": {
@@ -215,15 +270,17 @@ curl -X POST https://platform.adobe.io/data/core/ups/segment/definitions
 | Egenskap | Beskrivning |
 | -------- | ----------- |
 | `name` | Ett unikt namn som ska referera till segmentdefinitionen. |
-| `description` | (Valfritt.) En beskrivning av segmentdefinitionen som du skapar. |
-| `evaluationInfo` | (Valfritt.) Den typ av segmentdefinition som du skapar. Om du vill skapa ett gruppsegment anger du `evaluationInfo.batch.enabled` som true. Om du vill skapa ett direktuppspelningssegment anger du `evaluationInfo.continuous.enabled` som true. Om du vill skapa ett kantsegment anger du `evaluationInfo.synchronous.enabled` som true. Om segmentdefinitionen lämnas tom skapas den som ett **batch**-segment. |
+| `description` | (Valfritt) En beskrivning av segmentdefinitionen som du skapar. |
+| `evaluationInfo` | (Valfritt) Den typ av segmentdefinition som du skapar. Om du vill skapa ett gruppsegment anger du `evaluationInfo.batch.enabled` som true. Om du vill skapa ett direktuppspelningssegment anger du `evaluationInfo.continuous.enabled` som true. Om du vill skapa ett kantsegment anger du `evaluationInfo.synchronous.enabled` som true. Om segmentdefinitionen lämnas tom skapas den som ett **batch**-segment. |
 | `schema` | Det schema som är associerat med entiteterna i segmentet. Består av antingen ett `id`- eller `name`-fält. |
 | `expression` | En entitet som innehåller fältinformation om segmentdefinitionen. |
 | `expression.type` | Anger uttryckstypen. För närvarande stöds bara &quot;PQL&quot;. |
-| `expression.format` | Anger strukturen för uttrycket i värdet. Följande format stöds för närvarande: <ul><li>`pql/text`: En textbeteckning för en segmentdefinition enligt den publicerade PQL-grammatiken.  Exempel: `workAddress.stateProvince = homeAddress.stateProvince`.</li></ul> |
+| `expression.format` | Anger strukturen för uttrycket i värdet. |
 | `expression.value` | Ett uttryck som överensstämmer med typen som anges i `expression.format`. |
 
 +++
+
+>[!ENDTABS]
 
 **Svar**
 
