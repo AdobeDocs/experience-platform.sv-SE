@@ -2,9 +2,9 @@
 title: Skapa och konfigurera datastreams
 description: Lär dig hur du ansluter Web SDK-integreringen på klientsidan till andra Adobe-produkter och tredjepartsmål.
 exl-id: 4924cd0f-5ec6-49ab-9b00-ec7c592397c8
-source-git-commit: 43d97ea4d850a36d350894d70a082464a21e449d
+source-git-commit: f99370a9bff156b5cf9ecf286a1f8bc09eccc06a
 workflow-type: tm+mt
-source-wordcount: '2569'
+source-wordcount: '2629'
 ht-degree: 0%
 
 ---
@@ -189,7 +189,7 @@ Den här tjänsten kontrollerar om och hur data skickas till Adobe Target.
 | --- | --- |
 | [!UICONTROL Property Token] | Med [!DNL Target] kan kunderna styra behörigheter med hjälp av egenskaper. Mer information om egenskaper finns i handboken om [konfigurering av företagsbehörigheter](https://experienceleague.adobe.com/docs/target/using/administer/manage-users/enterprise/properties-overview.html) i [!DNL Target] -dokumentationen.<br><br>Egenskapstoken finns i Adobe Target-gränssnittet under [!UICONTROL Setup] > [!UICONTROL Properties]. |
 | [!UICONTROL Target Environment ID] | [Med miljöer i Adobe Target](https://experienceleague.adobe.com/docs/target/using/administer/hosts.html) kan du hantera implementeringen i alla utvecklingsfaser. Den här inställningen anger vilken miljö du tänker använda med den här datastream.<br><br>Det bästa sättet är att ange detta på olika sätt för var och en av `dev` -, `stage` - och `prod` -datastream-miljöerna för att hålla saker och ting enkla. Om du redan har definierat Adobe Target-miljöer kan du dock använda dessa. |
-| [!UICONTROL Target Third Party ID namespace] | Identitetsnamnrymden för `mbox3rdPartyId` som du vill använda för det här datastream. Mer information finns i guiden om [implementering `mbox3rdPartyId` med Web SDK](../web-sdk/personalization/adobe-target/using-mbox-3rdpartyid.md). |
+| [!UICONTROL Target Third Party ID namespace] | Identitetsnamnrymden för `mbox3rdPartyId` som du vill använda för det här datastream. Om du använder en [!DNL Customer Attributes]-integrering med Adobe Target eller använder `thirdPartyId` för att uppdatera eller skapa profiler via [Adobe Target Profiles API](https://experienceleague.adobe.com/en/docs/target-dev/developer/api/profile-apis/profiles-api) måste du ange ett namnutrymmesvärde. Du måste använda det här namnutrymmet i avsnittet `IdentityMap` i XDM-schemat för att skicka `customerID` eller `thirdPartyId` som används i dina överföringar av kundattributfiler eller i dina API-anrop för profiluppdatering.  Mer information finns i guiden om [implementering `mbox3rdPartyId` med Web SDK](../web-sdk/personalization/adobe-target/using-mbox-3rdpartyid.md). |
 | [!UICONTROL Property Token Overrides] | I det här avsnittet kan du definiera ytterligare egenskapstoken som du kan använda för att åsidosätta standardegenskapstoken. |
 
 ### Inställningar för [!UICONTROL Event Forwarding]
