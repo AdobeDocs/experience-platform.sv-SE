@@ -4,9 +4,9 @@ title: API-slutpunkt för segmentdefinitioner
 description: Med segmentdefinitionsslutpunkten i Adobe Experience Platform Segmentation Service API kan du programmässigt hantera segmentdefinitioner för din organisation.
 role: Developer
 exl-id: e7811b96-32bf-4b28-9abb-74c17a71ffab
-source-git-commit: f35fb6aae6aceb75391b1b615ca067a72918f4cf
+source-git-commit: b3c7b97e257f76337bd02d1db9390ab314f7d1cd
 workflow-type: tm+mt
-source-wordcount: '1472'
+source-wordcount: '1519'
 ht-degree: 0%
 
 ---
@@ -458,6 +458,10 @@ curl -X POST https://platform.adobe.io/data/core/ups/segment/definitions/bulk-ge
     }'
 ```
 
+| Egenskap | Beskrivning |
+| -------- | ----------- |
+| `ids` | En array som innehåller objekt som anger ID:n för de segmentdefinitioner som du vill hämta. |
+
 +++
 
 **Svar**
@@ -617,6 +621,10 @@ PATCH /segment/definitions/{SEGMENT_ID}
 **Begäran**
 
 Följande begäran kommer att uppdatera arbetsadresslandet från USA till Kanada.
+
+>[!NOTE]
+>
+>Eftersom det här API-anropet **ersätter** innehållet i segmentdefinitionen måste du se till att **alla** fält som du vill behålla ingår i begärandetexten.
 
 +++ Ett exempel på en begäran om att uppdatera en segmentdefinition.
 
