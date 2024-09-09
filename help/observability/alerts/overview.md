@@ -4,9 +4,9 @@ title: Varningar - översikt
 description: Lär dig om varningar i Adobe Experience Platform, även hur strukturen för varningsregler definieras.
 feature: Alerts
 exl-id: c38a93c6-1618-4ef9-8f94-41c7ab4af43c
-source-git-commit: c2832821ea6f9f630e480c6412ca07af788efd66
+source-git-commit: 829d7da1dc53486eba1cdceddb7888b578e1c137
 workflow-type: tm+mt
-source-wordcount: '792'
+source-wordcount: '788'
 ht-degree: 2%
 
 ---
@@ -15,7 +15,7 @@ ht-degree: 2%
 
 >[!NOTE]
 >
->Varningar stöds inte i icke-produktionssandlådor. För att kunna prenumerera på varningar måste du se till att du använder en produktionssandlåda. Alla prenumerationsaviseringar återställs när sandlådan återställs. Alla prenumerationsaviseringar raderas också när en sandlåda tas bort.
+>Eftersom varningar stöds i både produktions- och utvecklingssandlådor kan du prenumerera på dem i alla sandlådor. När en sandlåda återställs återställs även alla prenumerationsaviseringar, och när en sandlåda tas bort tas alla prenumerationsaviseringar bort.
 
 Med Adobe Experience Platform kan du prenumerera på händelsebaserade aviseringar om Adobe Experience Platform-aktiviteter. Varningar minskar eller eliminerar behovet av att avfråga [[!DNL Observability Insights] API](../api/overview.md) för att kontrollera om ett jobb har slutförts, om en viss milstolpe i ett arbetsflöde har nåtts eller om fel har uppstått.
 
