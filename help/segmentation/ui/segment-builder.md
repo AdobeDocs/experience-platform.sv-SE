@@ -3,9 +3,9 @@ solution: Experience Platform
 title: Användargränssnittshandbok för Segment Builder
 description: Segmentbyggaren i Adobe Experience Platform-användargränssnittet har en omfattande arbetsyta som du kan använda för att interagera med profildataelement. Arbetsytan innehåller intuitiva kontroller för att skapa och redigera regler, till exempel dra-och-släpp-paneler som används för att representera dataegenskaper.
 exl-id: b27516ea-8749-4b44-99d0-98d3dc2f4c65
-source-git-commit: c2832821ea6f9f630e480c6412ca07af788efd66
+source-git-commit: 7d2fe8d5e5abea768b3514d97ea7edfbb9334511
 workflow-type: tm+mt
-source-wordcount: '3664'
+source-wordcount: '4679'
 ht-degree: 0%
 
 ---
@@ -212,6 +212,90 @@ När du har placerat händelsen i händelsebehållaren markerar du knappen [!UIC
 Funktionen count har nu lagts till. Nu kan du välja funktionen count och värdet för funktionen. Exemplet nedan är att inkludera alla händelser som har minst ett klick.
 
 ![En lista över räkningsfunktionerna visas och markeras.](../images/ui/segment-builder/select-count.png)
+
+### Tidsbegränsningar {#time-constraints}
+
+Tidsbegränsningar gör att du kan tillämpa tidsbegränsningar för tidsbaserade attribut, händelser och sekvensen mellan händelserna.
+
+>[!IMPORTANT]
+>
+>Om du har skapat en segmentdefinition med tidsbegränsningen &quot;Den här månaden&quot; eller &quot;Det här året&quot; före juni 2024 måste du spara om segmentdefinitionerna. Före juni 2024 baserades&quot;Denna månad&quot; på 30 dagar och&quot;Detta år&quot; på 365 dagar.
+
+Listan över tillgängliga tidsbegränsningar är följande:
+
++++ Tillgängliga tidsbegränsningar
+
+>[!NOTE]
+>
+>Alla tidsbegränsningar baseras på UTC.
+>
+>Om kryssrutan [!UICONTROL Ignore year] är aktiverad jämförs dessutom året **inte** som en del av utvärderingen av segmentdefinitionen.
+
+| Tidsbegränsning | Beskrivning | Kan aktivera ignorering av år | Exempel |
+| --------------- | ----------- | ------------------- | ------- |
+| Idag | Attributet eller händelsen som jämförs **måste** inträffa idag. | Ja | ![Ett exempel på tidsbegränsningen &quot;Idag&quot; används.](../images/ui/segment-builder/time-constraints/today.png){width="100" zoomable="yes"} |
+| Igår | Attributet eller händelsen som jämförs **måste** inträffa i går. | Ja | ![Ett exempel på Gårdagens tidsbegränsning som används.](../images/ui/segment-builder/time-constraints/yesterday.png){width="100" zoomable="yes"} |
+| Den här månaden | Attributet eller händelsen som jämförs **måste** inträffa den här kalendermånaden. | Ja | ![Ett exempel på tidsbegränsningen &quot;Den här månaden&quot; används.](../images/ui/segment-builder/time-constraints/this-month.png){width="100" zoomable="yes"} |
+| I år | Attributet eller händelsen som jämförs **måste** inträffa det här kalenderåret. | Nej | ![Ett exempel på tidsbegränsningen &quot;Det här året&quot; används.](../images/ui/segment-builder/time-constraints/this-year.png){width="100" zoomable="yes"} |
+| Anpassat datum | Attributet eller händelsen som jämförs **måste** inträffa på det angivna datumet. | Ja | ![Ett exempel på tidsbegränsningen &quot;Anpassat datum&quot; används.](../images/ui/segment-builder/time-constraints/custom-date.png){width="100" zoomable="yes"} |
+| I sista | Attributet eller händelsen som jämförs **måste** inträffa inom den senast valda perioden. Den här tidsperioden är **inkluderande** tills utvärderingstiden är slut. | Nej | ![Ett exempel på tidsbegränsningen &quot;In last&quot; används.](../images/ui/segment-builder/time-constraints/in-last.png){width="100" zoomable="yes"} |
+| Från (till) | Attributet eller händelsen som jämförs **måste** inträffa inom de två valda kalenderdatumen. Den här tidsperioden är **inkluderande** av båda datumen. | Ja, om anpassat datum | ![Ett exempel på &quot;Från till&quot; som används.](../images/ui/segment-builder/time-constraints/from-to.png){width="100" zoomable="yes"} |
+| Under | Attributet eller händelsen som jämförs **måste** inträffa inom den valda månaden eller det valda året. Om du väljer en månad måste du välja både den månad och det år som attributet eller händelsen ägde rum i.  Om du väljer ett år behöver du bara välja vilket år attributet eller händelsen ägde rum i. Om du väljer en månad kan du även aktivera kryssrutan [!UICONTROL Ignore year]. | Ja | ![Ett exempel på tidsbegränsningen &quot;Under&quot; används.](../images/ui/segment-builder/time-constraints/during.png){width="100" zoomable="yes"} |
+| Inom (+/-) | Attributet eller händelsen som jämförs **måste** inträffa inom dagar, veckor, månader eller år från det valda datumet. Den här tidsperioden är **inkluderande** av båda datumen. Det valda datumet kan vara i dag, i går eller ett annat anpassat datum som du väljer. | Ja | ![Ett exempel på tidsbegränsningen &quot;Inom&quot; används.](../images/ui/segment-builder/time-constraints/within.png){width="100" zoomable="yes"} |
+| Före | Attributet eller händelsen som jämförs **måste** inträffa före det valda datumet. Det valda datumet kan vara ett anpassat datum som du väljer, eller ett val mellan dagar, veckor, månader eller år sedan. | Ja | ![Ett exempel på tidsbegränsningen &quot;Före&quot; används.](../images/ui/segment-builder/time-constraints/before.png){width="100" zoomable="yes"} |
+| Efter | Attributet eller händelsen som jämförs **måste** inträffa efter det valda datumet. Det valda datumet kan vara ett anpassat datum som du väljer, eller ett val mellan dagar, veckor, månader eller år sedan. | Ja | ![Ett exempel på tidsbegränsningen &quot;Efter&quot; används.](../images/ui/segment-builder/time-constraints/after.png){width="100" zoomable="yes"} |
+| Rullningsområde | Attributet eller händelsen som jämförs måste inträffa mellan de två relativa datumen. Datumen kan anges i sekunder, minuter, timmar, dagar, veckor, månader eller år. | Nej | ![Ett exempel på tidsbegränsningen &quot;Rullande område&quot; används.](../images/ui/segment-builder/time-constraints/rolling-range.png){width="100" zoomable="yes"} |
+| I nästa | Attributet eller händelsen som jämförs måste inträffa inom nästa valda tidsperiod. De valda tidsperioderna är minuter, timmar, dagar, veckor, månader och år. | Nej | ![Ett exempel på tidsbegränsningen &quot;I nästa&quot; används.](../images/ui/segment-builder/time-constraints/in-next.png){width="100" zoomable="yes"} |
+| Finns | Attributet finns. | Nej | ![Ett exempel på hur tidsbegränsningen &quot;Exists&quot; används.](../images/ui/segment-builder/time-constraints/exists.png){width="100" zoomable="yes"} |
+| Finns inte | Attributet finns inte. | Nej | ![Ett exempel på tidsbegränsningen &quot;Finns inte&quot; används.](../images/ui/segment-builder/time-constraints/does-not-exist.png){width="100" zoomable="yes"} |
+
++++
+
+När du tillämpar en tidsbegränsning för en händelse kan du antingen använda den på arbetsytans nivå, på kortnivån eller mellan händelser.
+
+#### Begränsning på arbetsytenivå
+
+Om du vill använda en tidsbegränsning på arbetsytenivå väljer du klockikonen som visas ovanför tidslinjen för händelser.
+
+![Tidsbegränsningsväljaren på arbetsytenivå är markerad.](../images/ui/segment-builder/time-constraints/canvas-level.png)
+
+När du tillämpar en tidsbegränsning på arbetsytans nivå tillämpas tidsbegränsningen på **alla** -händelser i målgruppen.
+
+#### Kortnivåbegränsning
+
+Om du vill använda en begränsning på kortnivå markerar du det kort som du vill använda tidsbegränsningen på, följt av ellipsikonen och **[!UICONTROL Apply time rule]**. Detta gör att du kan välja en tidsbegränsning i behållaren **[!UICONTROL Event Rules]**.
+
+![Tidsbegränsningsväljaren på kortnivå är markerad.](../images/ui/segment-builder/time-constraints/card-level.png)
+
+När du tillämpar en tidsbegränsning på kortnivån tillämpas tidsbegränsningen på den **angivna** -händelsen i målgruppen.
+
+#### Mellan händelsebegränsning
+
+Om du vill använda en tidsbegränsning mellan händelser väljer du klockikonen mellan de två händelser som du vill tillämpa tidsbegränsningen på.
+
+![Tidsbegränsningsväljaren mellan händelser är markerad.](../images/ui/segment-builder/time-constraints/between-event.png)
+
+När du tillämpar en tidsbegränsning mellan händelsen tillämpas tidsbegränsningen på tiden **mellan** händelserna.
+
+Listan över tillgängliga tidsbegränsningar för den här åtgärden skiljer sig från huvudlistan över tidsbegränsningar och är följande:
+
++++ Tillgängliga tidsbegränsningar
+
+| Tidsbegränsning | Beskrivning |
+| --------------- | ----------- |
+| Efter | Den senare händelsen **måste minst** äga rum efter den föregående händelsen. |
+| Inom | De två händelserna **måste** äga rum under den tidsperiod som anges i tidsbegränsningen. |
+
+>[!NOTE]
+>
+>När du använder After-tidsbegränsningen kan den senare händelsen inträffa mer än den tid som anges i tidsbegränsningen. >
+>Om du till exempel har en sidvyhändelse och en utcheckningshändelse, och du placerar tidsbegränsningen &quot;Efter 1 timme&quot; mellan dessa två händelser, skulle en segmentdefinition med en utcheckningshändelse 2 timmar efter sidvyhändelsen vara giltig.
+>
+>Dessutom kan dessa två tidsbegränsningar användas tillsammans.
+>
+>Om du till exempel har en sidvyhändelse och en utcheckningshändelse, och du placerar både tidsbegränsningen &quot;Efter 1 timme&quot; och &quot;Inom 24 timmar&quot;, skulle en segmentdefinition med en utcheckningshändelse 12 timmar efter sidvyhändelsen vara giltig, men en segmentdefinition med en utcheckningshändelse 36 timmar efter sidvyhändelsen skulle inte vara giltig.
+
++++
 
 ## Behållare
 
