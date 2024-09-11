@@ -2,7 +2,8 @@
 title: Slutpunkt för offentligt certifikat
 description: Lär dig hur du hämtar offentliga certifikat med slutpunkten /public-certificate i MTLS Service API.
 role: Developer
-source-git-commit: ce02c1a15d4e87c130de5e6133edda6b66cc2196
+exl-id: 8369c783-e595-476f-9546-801cf4f10f71
+source-git-commit: 754044621cdaf1445f809bceaa3e865261eb16f0
 workflow-type: tm+mt
 source-wordcount: '358'
 ht-degree: 1%
@@ -51,7 +52,7 @@ Ett exempel på en begäran om att returnera offentliga certifikat som är koppl
 +++Exempelbegäran
 
 ```shell
-curl -X GET https://experience.adobe.io/data/core/mtls/v1/certificate/public-certificate
+curl -X GET https://platform.adobe.io/data/core/mtls/v1/certificate/public-certificate
  -H 'Authorization: Bearer {ACCESS_TOKEN}' \
  -H 'Content-Type: application/json' \
  -H 'x-gw-ims-org-id: {ORG_ID}' \
@@ -111,4 +112,3 @@ När du har läst den här guiden får du nu veta hur du hämtar dina offentliga
 <!-- To test this API call, navigate to the [MTLS API reference page]() to interact with the Experience Platform API endpoints. -->
 
 <!-- Add link after developer page is live -->
-
