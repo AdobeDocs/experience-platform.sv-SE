@@ -3,9 +3,9 @@ title: Målgrupps-API-slutpunkt
 description: Använd målgruppsslutpunkten i Adobe Experience Platform Segmentation Service API för att skapa, hantera och uppdatera målgrupper för er organisation programmatiskt.
 role: Developer
 exl-id: cb1a46e5-3294-4db2-ad46-c5e45f48df15
-source-git-commit: 5d5c1f903e6a54ea983b718c4c371ada2a937297
+source-git-commit: 9c50ca0db55ce4b21978273d7b4d1de9b5f9338d
 workflow-type: tm+mt
-source-wordcount: '1406'
+source-wordcount: '1438'
 ht-degree: 0%
 
 ---
@@ -30,6 +30,10 @@ Slutpunkten `/audiences` har stöd för flera frågeparametrar som kan hjälpa d
 GET /audiences
 GET /audiences?{QUERY_PARAMETERS}
 ```
+
+>[!NOTE]
+>
+>Om du använder den här slutpunkten utan frågeparametrar returneras **inte** för inaktiva målgrupper. Om du däremot använder den här slutpunkten tillsammans med frågeparametern `property=audienceId`, returneras inaktiva målgrupper ****.
 
 Följande frågeparametrar kan användas när en lista över målgrupper hämtas:
 
