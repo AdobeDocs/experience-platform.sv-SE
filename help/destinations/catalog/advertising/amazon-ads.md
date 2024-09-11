@@ -3,9 +3,9 @@ title: Amazon Ads
 description: Amazon Ads erbjuder en rad alternativ som hjälper er att nå era annonsmål för registrerade säljare, leverantörer, bokleverantörer, KDP-författare (Kindle Direct Publishing), apputvecklare och/eller byråer. Integreringen av Amazon Ads med Adobe Experience Platform ger körklar integrering med Amazon Ads-produkter, inklusive Amazon DSP (ADSP). Med Amazon Ads-destinationen i Adobe Experience Platform kan man definiera målgrupper för annonsörer för målinriktning och aktivering i Amazon DSP.
 last-substantial-update: 2024-02-20T00:00:00Z
 exl-id: 724f3d32-65e0-4612-a882-33333e07c5af
-source-git-commit: 8e34e5488ab80cd1f3c8086bf7c16d3f22527540
+source-git-commit: 56971631eb7ab2ef3dd2dcf077ee3b52f131ffe7
 workflow-type: tm+mt
-source-wordcount: '1603'
+source-wordcount: '1718'
 ht-degree: 0%
 
 ---
@@ -97,7 +97,7 @@ Om du vill konfigurera information för målet fyller du i de obligatoriska och 
 
 >[!NOTE]
 >
->När du har sparat målkonfigurationen kan du inte ändra [!DNL Amazon Ads]-annons-ID, även om du autentiserar igen via ditt Amazon-konto. Om du vill använda ett annat [!DNL Amazon Ads] Advertiser-ID måste du skapa en ny målanslutning.
+>När du har sparat målkonfigurationen kan du inte ändra [!DNL Amazon Ads]-annons-ID, även om du autentiserar igen via ditt Amazon-konto. Om du vill använda ett annat [!DNL Amazon Ads] Advertiser-ID måste du skapa en ny målanslutning. Annonsörer som redan har konfigurerats för en integrering med ADSP måste skapa ett nytt målflöde om de vill att deras målgrupper ska levereras till AMC eller till ett annat ADSP-konto.
 
 * **[!UICONTROL Advertiser Region]**: Välj lämplig region där annonsören finns. Mer information om vilka marknadsplatser som stöds av respektive region finns i [Amazon Ads-dokumentationen](https://advertising.amazon.com/API/docs/en-us/info/api-overview#api-endpoints).
 
@@ -129,6 +129,7 @@ Mappning av ![Adobe till Amazon Ads](../../assets/catalog/advertising/amazon_ads
 * Om du vill mappa hash-kodade e-postadresser väljer du identitetsnamnområdet `Email_LC_SHA256` som ett källfält.
 * Om du vill mappa hash-kodade telefonnummer markerar du identitetsnamnområdet `Phone_SHA256` som ett källfält.
 * Om du vill mappa ohashade e-postadresser eller telefonnummer markerar du motsvarande identitetsnamnutrymmen som källfält och markerar alternativet `Apply Transformation` om du vill att plattformen ska hash-koda identiteterna vid aktiveringen.
+* *NYTT från och med versionen från september 2024*: Amazon Ads kräver att du mappar ett fält som innehåller ett `countryCode`-värde i ISO-format med två tecken för att underlätta identitetsmatchningsprocessen (t.ex. USA, GB, MX, CA och så vidare). Anslutningar utan `countryCode` mappningar kommer att få negativ effekt på identitetsmatchningsfrekvenserna.
 
 Du väljer bara ett angivet målfält en gång i en destinationskonfiguration för [!DNL Amazon Ads]-kopplingen.  Om du till exempel skickar e-post för företag kan du inte heller mappa personlig e-post i samma målkonfiguration.
 
@@ -148,7 +149,7 @@ Navigera till din **[!UICONTROL Advertiser ID]** > **[!UICONTROL Audiences]** > 
 
 I den vänstra schemaläsaren hittar du målgruppen under **[!UICONTROL Advertiser Uploaded]** > **[!UICONTROL aep_audiences]**. Du kan sedan fråga din målgrupp i AMC SQL-redigeraren med följande sats:
 
-`select count(user_id) from aep_audiences where audienceId = '1234567'`
+`select count(user_id) from adobeexperienceplatf_audience_view_000xyz where external_audience_segment_name = '1234567'`
 
 ![Verifiering av målgruppsgenerering i Amazon Marketing Cloud](../../assets/catalog/advertising/amazon_ads_image_5.png)
 
@@ -171,6 +172,7 @@ I det här avsnittet beskrivs funktionaliteten och viktiga dokumentationsuppdate
 
 | Releasamånad | Uppdateringstyp | Beskrivning |
 |---|---|---|
+| Maj 2024 | Funktioner och dokumentation | Mappningsalternativet har lagts till för att exportera parametern `countryCode` till Amazon Ads. Använd `countryCode` i [mappningssteget](#map) om du vill förbättra identitetsmatchningsfrekvensen med Amazon. |
 | Mars 2024 | Funktioner och dokumentation | Lagt till alternativet att exportera målgrupper som ska användas i [!DNL Amazon Marketing Cloud] (AMC). |
 | Maj 2023 | Funktioner och dokumentation | <ul><li>Stöd har lagts till för markering av reklamregion i [målanslutningsarbetsflödet](#destination-details).</li><li>Uppdaterad dokumentation som återspeglar tillägget av Advertiser Region. Mer information om hur du väljer rätt annonsregion finns i [Amazon-dokumentationen](https://advertising.amazon.com/API/docs/en-us/info/api-overview#api-endpoints).</li></ul> |
 | Mars 2023 | Inledande version | Ursprunglig målrelease och dokumentation publicerad. |
