@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Översikt över åtkomstkontroll
 description: Åtkomstkontroll för Adobe Experience Platform tillhandahålls via Adobe Admin Console. Den här funktionen utnyttjar produktprofiler i Admin Console, som länkar användare med behörigheter och sandlådor.
 exl-id: 591d59ad-2784-4ae4-a509-23649ce712c9
-source-git-commit: 734a34e9acf80300c28ca14587198fb7eaf83c17
+source-git-commit: 5d5c57dfb9e4abda6b1bca96147a95d063bc17c6
 workflow-type: tm+mt
-source-wordcount: '1553'
+source-wordcount: '1597'
 ht-degree: 0%
 
 ---
@@ -116,7 +116,11 @@ I följande tabell visas de behörigheter som är tillgängliga för Experience 
 | [!DNL Identity Management] | [!UICONTROL Manage Identity Namespaces] | Åtkomst för att läsa, skapa, redigera och ta bort identitetsnamnutrymmen. |
 | [!DNL Identity Management] | [!UICONTROL View Identity Namespaces] | Skrivskyddad åtkomst för identitetsnamnutrymmen. |
 | [!DNL Identity Management] | [!UICONTROL View Identity Graph] | Skrivskyddad åtkomst för identitetsdiagram. |
-| [!DNL Profile Management] | [!UICONTROL Manage Profiles] | Åtkomst för att läsa, skapa, redigera och ta bort datauppsättningar som används för kundprofiler. Skrivskyddad åtkomst till tillgängliga profiler. |
+| [!DNL Intelligent Services] | [!UICONTROL View Attribution AI] | Skrivskyddad åtkomst för Attribution AI och insikter. |
+| [!DNL Intelligent Services] | [!UICONTROL Manage Attribution AI] | Tillgång till att läsa, skapa, redigera och ta bort Attribution AI. |
+| [!DNL Intelligent Services] | [!UICONTROL View Customer AI] | Tillgång till att läsa eller visa kundens AI-modeller. |
+| [!DNL Intelligent Services] | [!UICONTROL Manage Customer AI] | Tillgång till att skapa, uppdatera, ta bort, aktivera eller inaktivera kundens AI-modeller. |
+| [!DNL Profile Management] | [!UICONTROL Manage Profiles] | Hämta in data från olika källor, bygg robusta profiler för enskilda kunder och lagra profilaktiverade data i datasjön och realtidsarkivet för kundprofiler. |
 | [!DNL Profile Management] | [!UICONTROL View Profiles] | Skrivskyddad åtkomst till tillgängliga profiler. |
 | [!DNL Profile Management] | [!UICONTROL Manage Segments] | Åtkomst för att läsa, skapa, redigera och ta bort segment. |
 | [!DNL Profile Management] | [!UICONTROL View Segments] | Skrivskyddad åtkomst till tillgängliga segment. |
