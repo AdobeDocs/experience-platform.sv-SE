@@ -3,9 +3,9 @@ title: Felsökningsguide för länkningsregler för identitetsdiagram
 description: Lär dig hur du felsöker vanliga problem i länkningsregler för identitetsdiagram.
 badge: Beta
 exl-id: 98377387-93a8-4460-aaa6-1085d511cacc
-source-git-commit: edda302a1f24c9991074c16fd9e770f2bf262b7c
+source-git-commit: 7104781435c0cf3891f7216797af4e873b9b37f9
 workflow-type: tm+mt
-source-wordcount: '3174'
+source-wordcount: '3219'
 ht-degree: 0%
 
 ---
@@ -333,6 +333,8 @@ I det här avsnittet finns en lista med svar på vanliga frågor om länkningsre
 
 ### Identitetsoptimeringsalgoritm {#identity-optimization-algorithm}
 
+I det här avsnittet finns svar på vanliga frågor om [algoritmen för identitetsoptimering](./identity-optimization-algorithm.md).
+
 #### Jag har ett CRMID för varje affärsenhet (B2C CRMID, B2B CRMID), men jag har inget unikt namnutrymme för alla mina profiler. Vad händer om jag markerar B2C CRMID och B2B CRMID som unika och aktiverar mina identitetsinställningar?
 
 Scenariot stöds inte. Därför kan du se att diagram komprimeras om en användare använder sitt B2C CRMID för att logga in och en annan användare använder sitt B2B CRMID för att logga in. Mer information finns i avsnittet [Krav på namnutrymme för en person](./configuration.md#single-person-namespace-requirement) på implementeringssidan.
@@ -367,6 +369,8 @@ De viktigaste punkterna som ska markeras är följande:
 
 ### Namnområdesprioritet
 
+I det här avsnittet finns svar på vanliga frågor om [namnområdesprioritet](./namespace-priority.md).
+
 #### Jag har aktiverat mina identitetsinställningar. Vad händer med mina inställningar om jag vill lägga till ett anpassat namnutrymme efter att inställningarna har aktiverats?
 
 Det finns två &#39;bucket&#39; med namnutrymmen: namnutrymmen för personer och namnutrymmen för enheter/cookies. Det nya anpassade namnutrymmet har den lägsta prioriteten i varje &#39;bucket&#39; så att det nya anpassade namnutrymmet inte påverkar befintlig datainmatning.
@@ -384,6 +388,8 @@ Nej. Namnområdesprioriteten gäller bara Experience Event-datauppsättningar so
 Identitetsoptimeringsalgoritmen används först för att säkerställa personentitetsrepresentationen. Om diagrammet därefter försöker överskrida [identitetdiagrammet ](../guardrails.md) (50 identiteter per diagram) används den här logiken. Namnområdesprioriteten påverkar inte borttagningslogiken för det 50 identitets-/diagramskyddsutkastet.
 
 ### Testning
+
+I det här avsnittet finns svar på vanliga frågor om testnings- och felsökningsfunktioner i länkningsregler för identitetsdiagram.
 
 #### Vilka scenarier bör jag testa i en utvecklingssandlådemiljö?
 
