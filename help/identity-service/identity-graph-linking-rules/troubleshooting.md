@@ -3,9 +3,9 @@ title: Felsökningsguide för länkningsregler för identitetsdiagram
 description: Lär dig hur du felsöker vanliga problem i länkningsregler för identitetsdiagram.
 badge: Beta
 exl-id: 98377387-93a8-4460-aaa6-1085d511cacc
-source-git-commit: 56e2e359812fcbfd011505ad917403d6f5317b4a
+source-git-commit: edda302a1f24c9991074c16fd9e770f2bf262b7c
 workflow-type: tm+mt
-source-wordcount: '2017'
+source-wordcount: '3174'
 ht-degree: 0%
 
 ---
@@ -132,12 +132,42 @@ Det finns olika orsaker till varför dina händelsefragment inte kommer in i pro
 * [Ett verifieringsfel kan ha inträffat i profilen ](../../xdm/classes/experienceevent.md).
    * En upplevelsehändelse måste till exempel innehålla både `_id` och `timestamp`.
    * Dessutom måste `_id` vara unik för varje händelse (post).
+* Namnutrymmet med högst prioritet är en tom sträng.
 
-När det gäller namnområdesprioritet, kommer profilen att ignorera alla händelser som innehåller två eller flera identiteter med den högsta namnområdesprioriteten. Om exempelvis GAID inte är markerat som ett unikt namnutrymme och två identiteter båda med ett GAID-namnutrymme och olika identitetsvärden kommer in, kommer profilen inte att lagra någon av händelserna.
+När det gäller namnområdesprioritet avvisar profilen:
+
+* Alla händelser som innehåller två eller flera identiteter med den högsta namnområdesprioriteten. Om exempelvis GAID inte är markerat som ett unikt namnutrymme och två identiteter båda med ett GAID-namnutrymme och olika identitetsvärden kommer in, kommer profilen inte att lagra någon av händelserna.
+* Alla händelser där namnutrymmet med högst prioritet är en tom sträng.
 
 **Felsökningssteg**
 
-Du kan åtgärda det här felet genom att läsa felsökningsstegen som beskrivs i guiden ovan för [felsökning av data som inte har importerats till identitetstjänsten](#my-identities-are-not-getting-ingested-into-identity-service).
+Om dina data skickas till en datalinje, men inte till en profil, och du tror att det beror på att två eller flera identiteter med den högsta namnområdesprioriteten i en enda händelse skickas, kan du köra följande fråga för att verifiera att två olika identitetsvärden har skickats mot samma namnutrymme:
+
+>[!TIP]
+>
+>I följande frågor:
+>
+>* Ersätt `_testimsorg.identification.core.email` med sökvägen som skickar identiteten.
+>* Ersätt `Email` med namnutrymmet med högsta prioritet. Det här är samma namnutrymme som inte importeras.
+>* Ersätt `dataset_name` med den datauppsättning som du vill fråga.
+
+```sql
+  SELECT identityMap, key, col.id as identityValue, _testimsorg.identification.core.email, _id, timestamp 
+  FROM (SELECT key, explode(value), * 
+  FROM (SELECT explode(identityMap), * 
+  FROM dataset_name)) WHERE col.id != _testimsorg.identification.core.email and key = 'Email' 
+```
+
+Du kan också köra följande fråga för att kontrollera om det inte sker någon inmatning till profilen på grund av att det högsta namnutrymmet har en tom sträng:
+
+```sql
+  SELECT identityMap, key, col.id as identityValue, _testimsorg.identification.core.email, _id, timestamp 
+  FROM (SELECT key, explode(value), * 
+  FROM (SELECT explode(identityMap), * 
+  FROM dataset_name)) WHERE (col.id = '' or _testimsorg.identification.core.email = '') and key = 'Email' 
+```
+
+Dessa två frågor förutsätter att en identitet skickas från identityMap och att en annan identitet skickas från en identitetsbeskrivare. **OBS!**: I XDM-scheman (Experience Data Model) är identitetsbeskrivningen det fält som markerats som en identitet.
 
 ### Mina upplevelsehändelsefragment är inkapslade, men har fel primära identitet i profilen
 
@@ -296,3 +326,79 @@ Du kan använda följande fråga i datauppsättningen för export av ögonblicks
 >[!TIP]
 >
 >De två frågor som anges ovan ger förväntade resultat om sandlådan inte är aktiverad för den delade enhetens övergångsmetod och beter sig annorlunda än länkningsreglerna för identitetsdiagram.
+
+## Vanliga frågor och svar {#faq}
+
+I det här avsnittet finns en lista med svar på vanliga frågor om länkningsregler för identitetsdiagram.
+
+### Identitetsoptimeringsalgoritm {#identity-optimization-algorithm}
+
+#### Jag har ett CRMID för varje affärsenhet (B2C CRMID, B2B CRMID), men jag har inget unikt namnutrymme för alla mina profiler. Vad händer om jag markerar B2C CRMID och B2B CRMID som unika och aktiverar mina identitetsinställningar?
+
+Scenariot stöds inte. Därför kan du se att diagram komprimeras om en användare använder sitt B2C CRMID för att logga in och en annan användare använder sitt B2B CRMID för att logga in. Mer information finns i avsnittet [Krav på namnutrymme för en person](./configuration.md#single-person-namespace-requirement) på implementeringssidan.
+
+#### Åtgärdar identitetsoptimeringsalgoritmen befintliga komprimerade diagram?
+
+Befintliga komprimerade diagram påverkas (&quot;fast&quot;) endast av diagramalgoritmen om dessa diagram uppdateras när du har sparat de nya inställningarna.
+
+#### Vad händer med händelserna om två personer loggar in och ut med samma enhet? Överför alla händelser till den senast autentiserade användaren?
+
+* Anonyma händelser (händelser med ECID som primär identitet i kundprofilen i realtid) överförs till den senast autentiserade användaren. Detta beror på att ECID kommer att länkas till CRMID för den senaste autentiserade användaren (i identitetstjänsten).
+* Alla autentiserade händelser (händelser med CRMID definierat som primär identitet) kommer att finnas kvar hos personen.
+
+Mer information finns i guiden [fastställa den primära identiteten för upplevelsehändelser](../identity-graph-linking-rules/namespace-priority.md#real-time-customer-profile-primary-identity-determination-for-experience-events).
+
+#### Hur kommer resor i Adobe Journey Optimizer att påverkas när ECID överförs från en person till en annan?
+
+CRMID för den senaste autentiserade användaren kommer att länkas till ECID (delad enhet). ECID kan omtilldelas från en person till en annan baserat på användarbeteende. Effekten beror på hur resan är uppbyggd, så det är viktigt att kunderna testar resan i en sandlådemiljö för att validera beteendet.
+
+De viktigaste punkterna som ska markeras är följande:
+
+* När en profil inträder på en resa leder omtilldelning av ECID inte till att profilen avslutas mitt på en resa.
+   * Reseutgångar aktiveras inte av diagramändringar.
+* Om en profil inte längre är kopplad till ett ECID kan det leda till att kundens resa ändras om det finns ett villkor som använder målgruppskvalifikation.
+   * ECID-borttagning kan ändra händelser som är kopplade till en profil, vilket kan leda till förändringar i målgruppens kvalifikationer.
+* Återinträde av en resa beror på resans egenskaper.
+   * Om du inaktiverar återinträde för en resa kommer samma profil inte att användas förrän om 91 dagar (baserat på den globala tidsgränsen) när en profil avslutas från den resan.
+* Om en resa börjar med ett ECID-namnområde, den profil som anges och den profil som tar emot åtgärden (t.ex. e-post, erbjudande) kan vara annorlunda beroende på hur resan är utformad.
+   * Om det till exempel finns ett väntevillkor mellan åtgärderna och ECID-överföringar under vänteperioden kan en annan profil användas.
+   * Med den här funktionen är ECID inte längre kopplat till en profil.
+   * Rekommendationen är att påbörja resor med personliga namnutrymmen.
+
+### Namnområdesprioritet
+
+#### Jag har aktiverat mina identitetsinställningar. Vad händer med mina inställningar om jag vill lägga till ett anpassat namnutrymme efter att inställningarna har aktiverats?
+
+Det finns två &#39;bucket&#39; med namnutrymmen: namnutrymmen för personer och namnutrymmen för enheter/cookies. Det nya anpassade namnutrymmet har den lägsta prioriteten i varje &#39;bucket&#39; så att det nya anpassade namnutrymmet inte påverkar befintlig datainmatning.
+
+#### Om kundprofilen i realtid inte längre använder flaggan&quot;primär&quot; på identityMap, måste det här värdet ändå skickas?
+
+Ja, den primära flaggan för identityMap används av andra tjänster. Mer information finns i guiden [om konsekvenserna av namnområdesprioritet för andra Experience Platform-tjänster](../identity-graph-linking-rules/namespace-priority.md#implications-on-other-experience-platform-services).
+
+#### Gäller namnområdesprioriteten profilpostdatauppsättningar i kundprofilen i realtid?
+
+Nej. Namnområdesprioriteten gäller bara Experience Event-datauppsättningar som använder klassen XDM ExperienceEvent.
+
+#### Hur fungerar den här funktionen tillsammans med identitetsgrafens skyddsytor med 50 identiteter per diagram? Påverkar namnområdesprioriteten den systemdefinierade skyddsprofilen?
+
+Identitetsoptimeringsalgoritmen används först för att säkerställa personentitetsrepresentationen. Om diagrammet därefter försöker överskrida [identitetdiagrammet ](../guardrails.md) (50 identiteter per diagram) används den här logiken. Namnområdesprioriteten påverkar inte borttagningslogiken för det 50 identitets-/diagramskyddsutkastet.
+
+### Testning
+
+#### Vilka scenarier bör jag testa i en utvecklingssandlådemiljö?
+
+Generellt sett bör testning i en utvecklingssandlåda efterlikna de användningsfall som du tänker köra i din produktionssandlåda. I följande tabell finns några viktiga områden att validera vid utförlig testning:
+
+| Testfall | Teststeg | Förväntat resultat |
+| --- | --- | --- |
+| Korrekt personentitetsrepresentation | <ul><li>Mimisk anonym surfning</li><li>Mimitera två personer (John, Jane) som loggar in med samma enhet</li></ul> | <ul><li>Både John och Jane ska associeras med sina attribut och autentiserade händelser.</li><li>Den senast autentiserade användaren bör kopplas till de anonyma surfhändelserna.</li></ul> |
+| Segmentering | Skapa fyra segmentdefinitioner (**Obs!**: Varje segmentdefinitionspar ska ha en utvärderad med hjälp av batch och en annan direktuppspelning.) <ul><li>Segmentdefinition A: Segmentkvalificering baserad på Johns autentiserade händelser.</li><li>Segmentdefinition B: Segmentkvalificering baserad på Jane autentiserade händelser.</li></ul> | Oberoende av scenarier med delade enheter bör John och Jane alltid vara kvalificerade för sina respektive segment. |
+| Målgruppskvalifikationer/enhetsresor på Adobe Journey Optimizer | <ul><li>Skapa en resa som börjar med en målgruppskvalifikationsaktivitet (t.ex. den direktuppspelningssegmentering som skapas ovan).</li><li>Skapa en resa som börjar med ett enastående evenemang. Den här enhetshändelsen ska vara en autentiserad händelse.</li><li>Du måste inaktivera återinträde när du skapar dessa resor.</li></ul> | <ul><li>Oberoende av scenarier med delade enheter bör John och Jane utlösa resorna som de ska delta i.</li><li>John och Jane bör inte återkomma till resan när ECID överförs till dem.</li></ul> |
+
+{style="table-layout:auto"}
+
+#### Hur verifierar jag att den här funktionen fungerar som väntat?
+
+Använd [diagramsimuleringsverktyget](./graph-simulation.md) för att verifiera att funktionen fungerar på en enskild diagramnivå.
+
+Om du vill validera funktionen på sandlådenivå ska du läsa avsnittet [!UICONTROL Graph count with multiple namespaces] på identitetspanelen.

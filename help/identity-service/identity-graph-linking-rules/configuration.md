@@ -1,16 +1,16 @@
 ---
-title: Konfigurationsguide för länkning av identitetsdiagram
+title: Implementeringsguide för regler för länkning av identitetsdiagram
 description: Lär dig de rekommenderade stegen som ska följas när du implementerar data med länkningsregler för identitetsdiagram.
 badge: Beta
 exl-id: 368f4d4e-9757-4739-aaea-3f200973ef5a
-source-git-commit: 3d96e057123a4dd0b4f6f34a64a93c756b583c9b
+source-git-commit: cfa2cd91f523d80fd42cb6fd2ba17e6eb3eca609
 workflow-type: tm+mt
-source-wordcount: '1350'
+source-wordcount: '1353'
 ht-degree: 0%
 
 ---
 
-# Konfigurationsguide för länkning av identitetsdiagram
+# Implementeringsguide för regler för länkning av identitetsdiagram
 
 >[!AVAILABILITY]
 >
@@ -102,7 +102,7 @@ Använd alternativet **[!UICONTROL Beta feedback]** på identitetstjänstens arb
 
 I det här avsnittet finns mer information som du kan referera till när du implementerar dina identitetsinställningar och unika namnutrymmen.
 
-### Scenario för delad enhet {#shared-device-scenario}
+### Krav på namnutrymme för en person {#single-person-namespace-requirement}
 
 Du måste se till att ett enda namnutrymme används i alla profiler som representerar en person. Om du gör det kan identitetstjänsten identifiera rätt personidentifierare i ett visst diagram.
 
