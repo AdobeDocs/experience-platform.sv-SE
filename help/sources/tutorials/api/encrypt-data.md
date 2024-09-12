@@ -2,9 +2,9 @@
 title: Krypterad datainmatning
 description: Lär dig hur du importerar krypterade filer via molnlagringsbatchkällor med API:t.
 exl-id: 83a7a154-4f55-4bf0-bfef-594d5d50f460
-source-git-commit: adb48b898c85561efb2d96b714ed98a0e3e4ea9b
+source-git-commit: 9a5599473f874d86e2b3c8449d1f4d0cf54b672c
 workflow-type: tm+mt
-source-wordcount: '1736'
+source-wordcount: '1806'
 ht-degree: 0%
 
 ---
@@ -15,7 +15,7 @@ Du kan importera krypterade datafiler till Adobe Experience Platform med hjälp 
 
 Processen för krypterad datainmatning är följande:
 
-1. [Skapa ett krypteringsnyckelpar med Experience Platform API:er](#create-encryption-key-pair). Krypteringsnyckelparet består av en privat nyckel och en offentlig nyckel. När du har skapat den kan du kopiera eller hämta den offentliga nyckeln, tillsammans med motsvarande offentliga nyckel-ID och förfallotid. Under den här processen kommer den privata nyckeln att lagras av Experience Platform i ett säkert valv. **Obs!** Den offentliga nyckeln i svaret är Base64-kodad och måste dekrypteras innan den kan användas.
+1. [Skapa ett krypteringsnyckelpar med Experience Platform API:er](#create-encryption-key-pair). Krypteringsnyckelparet består av en privat nyckel och en offentlig nyckel. När du har skapat den kan du kopiera eller hämta den offentliga nyckeln, tillsammans med motsvarande offentliga nyckel-ID och förfallotid. Under den här processen kommer den privata nyckeln att lagras av Experience Platform i ett säkert valv. **Obs!** Den offentliga nyckeln i svaret är Base64-kodad och måste avkodas innan den används.
 2. Använd den offentliga nyckeln för att kryptera den datafil som du vill importera.
 3. Placera den krypterade filen i molnlagringen.
 4. När den krypterade filen är klar skapar [en källanslutning och ett dataflöde för molnlagringskällan](#create-a-dataflow-for-encrypted-data). När du skapar flödet måste du ange en `encryption`-parameter och inkludera ditt offentliga nyckel-ID.
@@ -64,6 +64,10 @@ Listan över filtillägg som stöds för krypterade filer är:
 
 ## Skapa krypteringsnyckelpar {#create-encryption-key-pair}
 
+>[!IMPORTANT]
+>
+>Krypteringsnycklar är specifika för en viss sandlåda. Därför måste du skapa nya krypteringsnycklar om du vill importera krypterade data i en annan sandlåda inom organisationen.
+
 Det första steget när du ska hämta krypterade data till Experience Platform är att skapa ditt krypteringsnyckelpar genom att göra en POST-förfrågan till `/encryption/keys`-slutpunkten för [!DNL Connectors] API.
 
 **API-format**
@@ -87,6 +91,7 @@ curl -X POST \
   -H 'x-sandbox-name: {{SANDBOX_NAME}}' \
   -H 'Content-Type: application/json' 
   -d '{
+      "name": "acme-encryption",
       "encryptionAlgorithm": "PGP",
       "params": {
           "passPhrase": "{{PASSPHRASE}}"
@@ -96,6 +101,7 @@ curl -X POST \
 
 | Parameter | Beskrivning |
 | --- | --- |
+| `name` | Namnet på ditt krypteringsnyckelpar. |
 | `encryptionAlgorithm` | Den typ av krypteringsalgoritm som du använder. Krypteringstyperna som stöds är `PGP` och `GPG`. |
 | `params.passPhrase` | Lösenfrasen ger ytterligare ett lager av skydd för dina krypteringsnycklar. När lösenordet skapas lagrar Experience Platform den i ett annat säkert valv än den offentliga nyckeln. Du måste ange en sträng som inte är tom som lösenfras. |
 
@@ -153,13 +159,15 @@ curl -X GET \
 
 +++Visa exempelsvar
 
-Ett lyckat svar returnerar krypteringsalgoritmen, den offentliga nyckeln, ID:t för den offentliga nyckeln och motsvarande förfallotid för nycklarna.
+Ett lyckat svar returnerar din krypteringsalgoritm, namn, offentlig nyckel, ID för offentlig nyckel, nyckeltyp och motsvarande förfallotid för nycklarna.
 
 ```json
 {
     "encryptionAlgorithm": "{ENCRYPTION_ALGORITHM}",
+    "name": "{NAME}",
     "publicKeyId": "{PUBLIC_KEY_ID}",
     "publicKey": "{PUBLIC_KEY}",
+    "keyType": "{KEY_TYPE}",
     "expiryTime": "{EXPIRY_TIME}"
 }
 ```
@@ -194,13 +202,15 @@ curl -X GET \
 
 +++Visa exempelsvar
 
-Ett lyckat svar returnerar krypteringsalgoritmen, den offentliga nyckeln, ID:t för den offentliga nyckeln och motsvarande förfallotid för nycklarna.
+Ett lyckat svar returnerar din krypteringsalgoritm, namn, offentlig nyckel, ID för offentlig nyckel, nyckeltyp och motsvarande förfallotid för nycklarna.
 
 ```json
 {
     "encryptionAlgorithm": "{ENCRYPTION_ALGORITHM}",
+    "name": "{NAME}",
     "publicKeyId": "{PUBLIC_KEY_ID}",
     "publicKey": "{PUBLIC_KEY}",
+    "keyType": "{KEY_TYPE}",
     "expiryTime": "{EXPIRY_TIME}"
 }
 ```
@@ -236,8 +246,12 @@ curl -X POST \
   -H 'x-sandbox-name: {{SANDBOX_NAME}}' \
   -H 'Content-Type: application/json' 
   -d '{
+      "name": "acme-sign-verification-keys"
       "encryptionAlgorithm": {{ENCRYPTION_ALGORITHM}},       
-      "publicKey": {{BASE_64_ENCODED_PUBLIC_KEY}}
+      "publicKey": {{BASE_64_ENCODED_PUBLIC_KEY}},
+      "params": {
+          "passPhrase": {{PASS_PHRASE}}
+      }
     }'
 ```
 
@@ -261,6 +275,48 @@ curl -X POST \
 | Egenskap | Beskrivning |
 | --- | --- |
 | `publicKeyId` | Detta offentliga nyckel-ID returneras som svar på att din kundhanterade nyckel delats med Experience Platform. Du kan ange detta ID för den offentliga nyckeln som ID för signeringsverifieringsnyckel när du skapar ett dataflöde för signerade och krypterade data. |
+
++++
+
+### Hämta kundhanterade nyckelpar
+
+Om du vill hämta kundhanterade nycklar skickar du en GET-förfrågan till slutpunkten `/customer-keys`.
+
+**API-format**
+
+```http
+GET /data/foundation/connectors/encryption/customer-keys
+```
+
+**Begäran**
+
++++Visa exempelbegäran
+
+```shell
+curl -X GET \
+  'https://platform.adobe.io/data/foundation/connectors/encryption/customer-keys' \
+  -H 'Authorization: Bearer {{ACCESS_TOKEN}}' \
+  -H 'x-api-key: {{API_KEY}}' \
+  -H 'x-gw-ims-org-id: {{ORG_ID}}' \
+```
+
++++
+
+**Svar**
+
++++Visa exempelsvar
+
+```json
+[
+    {
+        "encryptionAlgorithm": "{ENCRYPTION_ALGORITHM}",
+        "name": "{NAME}",
+        "publicKeyId": "{PUBLIC_KEY_ID}",
+        "publicKey": "{PUBLIC_KEY}",
+        "keyType": "{KEY_TYPE}",
+    }
+]
+```
 
 +++
 
