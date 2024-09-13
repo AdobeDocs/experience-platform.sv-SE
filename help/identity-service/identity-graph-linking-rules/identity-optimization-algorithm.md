@@ -3,9 +3,9 @@ title: Identitetsoptimeringsalgoritm
 description: Lär dig mer om algoritm för identitetsoptimering i identitetstjänsten.
 badge: Beta
 exl-id: 5545bf35-3f23-4206-9658-e1c33e668c98
-source-git-commit: d3b43c5fa90b67bcba6015d521b78998d50cc3d7
+source-git-commit: 1ea840e2c6c44d5d5080e0a034fcdab4cbdc87f1
 workflow-type: tm+mt
-source-wordcount: '1533'
+source-wordcount: '1531'
 ht-degree: 0%
 
 ---
@@ -162,7 +162,9 @@ Se bilden nedan för att få en bättre förståelse för hur anonym händelseas
 Mer information om regler för länkning av identitetsdiagram finns i följande dokumentation:
 
 * [Översikt över regler för länkning av identitetsdiagram](./overview.md)
+* [Implementeringsguide](./implementation-guide.md)
+* [Exempel på diagramkonfigurationer](./example-configurations.md)
+* [Felsökning och vanliga frågor](./troubleshooting.md)
 * [Namnområdesprioritet](./namespace-priority.md)
-* [Exempelscenarier för konfiguration av länkningsregler för identitetsdiagram](./example-scenarios.md)
-* [Identitetslänkningslogik](../features/identity-linking-logic.md)
-* [Identitetstjänst och kundprofil i realtid](../identity-and-profile.md)
+* [Gränssnitt för diagramsimulering](./graph-simulation.md)
+* [Användargränssnitt för identitetsinställningar](./identity-settings-ui.md)

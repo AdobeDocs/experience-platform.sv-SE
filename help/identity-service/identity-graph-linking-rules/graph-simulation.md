@@ -3,9 +3,9 @@ title: Användargränssnittshandbok för diagramsimulering
 description: Lär dig hur du använder Graph Simulation i gränssnittet för identitetstjänsten.
 badge: Beta
 exl-id: 89f0cf6e-c43f-40ec-859a-f3b73a6da8c8
-source-git-commit: 2a2e3fcc4c118925795951a459a2ed93dfd7f7d7
+source-git-commit: 6cdb622e76e953c42b58363c98268a7c46c98c99
 workflow-type: tm+mt
-source-wordcount: '1398'
+source-wordcount: '1406'
 ht-degree: 0%
 
 ---
@@ -172,8 +172,10 @@ I exempeldiagrammet nedan finns det en prickad linje mellan `{Email: tom@acme.co
 
 Genom att läsa det här dokumentet vet du nu hur du använder verktyget [!DNL Graph Simulation] för att bättre förstå hur dina identitetsdata behandlas utifrån en viss uppsättning regler och konfigurationer. Mer information finns i följande dokument:
 
-* [Länkningsregler för identitetsdiagram](./overview.md)
-* [Konfigurationsguide](./configuration.md)
+* [Översikt över regler för länkning av identitetsdiagram](./overview.md)
 * [Identitetsoptimeringsalgoritm](./identity-optimization-algorithm.md)
-* [Namnområdesprioritet](./namespace-priority.md)
+* [Implementeringsguide](./implementation-guide.md)
+* [Felsökning och vanliga frågor](./troubleshooting.md)
 * [Exempel på diagramkonfigurationer](./example-configurations.md)
+* [Namnområdesprioritet](./namespace-priority.md)
+* [Användargränssnitt för identitetsinställningar](./identity-settings-ui.md)

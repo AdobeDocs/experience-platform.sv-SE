@@ -5,10 +5,10 @@ breadcrumb-title: Användarhandbok om Platform Identity Service
 user-guide-description: Kombinera kundidentiteter över olika enheter och system för att leverera personanpassade digitala upplevelser.
 feature: Identities
 role: Admin,Developer
-source-git-commit: cfa2cd91f523d80fd42cb6fd2ba17e6eb3eca609
+source-git-commit: 6cdb622e76e953c42b58363c98268a7c46c98c99
 workflow-type: tm+mt
-source-wordcount: '149'
-ht-degree: 18%
+source-wordcount: '146'
+ht-degree: 19%
 
 ---
 
@@ -25,13 +25,12 @@ ht-degree: 18%
    - Länkningsregler för identitetsdiagram {#identity-graph-linking-rules}
       - [Översikt över funktioner](./identity-graph-linking-rules/overview.md)
       - [Identitetsoptimeringsalgoritm](./identity-graph-linking-rules/identity-optimization-algorithm.md)
-      - [Implementeringsguide för regler för länkning av identitetsdiagram](./identity-graph-linking-rules/configuration.md)
+      - [Implementeringsguide för regler för länkning av identitetsdiagram](./identity-graph-linking-rules/implementation-guide.md)
       - [Exempel på diagramkonfigurationer](./identity-graph-linking-rules/example-configurations.md)
       - [Felsökning av länkningsregler för identitetsdiagram](./identity-graph-linking-rules/troubleshooting.md)
       - [Namnområdesprioritet](./identity-graph-linking-rules/namespace-priority.md)
       - [Gränssnitt för diagramsimulering](./identity-graph-linking-rules/graph-simulation.md)
       - [Användargränssnitt för identitetsinställningar](./identity-graph-linking-rules/identity-settings-ui.md)
-      - [Exempel på kundscenarier](./identity-graph-linking-rules/example-scenarios.md)
    - [ECID - översikt](./features/ecid.md)
 - [Implementeringsguide](implementation.md)
 - [Gardrutor för identitetsdata](guardrails.md)

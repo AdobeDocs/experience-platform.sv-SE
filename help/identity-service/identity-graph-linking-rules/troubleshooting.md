@@ -3,7 +3,7 @@ title: Felsökningsguide för länkningsregler för identitetsdiagram
 description: Lär dig hur du felsöker vanliga problem i länkningsregler för identitetsdiagram.
 badge: Beta
 exl-id: 98377387-93a8-4460-aaa6-1085d511cacc
-source-git-commit: 7104781435c0cf3891f7216797af4e873b9b37f9
+source-git-commit: 6cdb622e76e953c42b58363c98268a7c46c98c99
 workflow-type: tm+mt
 source-wordcount: '3219'
 ht-degree: 0%
@@ -176,7 +176,7 @@ Namnområdesprioriteten spelar en viktig roll i hur händelsefragment bestämmer
 * När du har konfigurerat och sparat dina [identitetsinställningar](./identity-settings-ui.md) för en viss sandlåda använder profilen [namnområdesprioritet](namespace-priority.md#real-time-customer-profile-primary-identity-determination-for-experience-events) för att fastställa den primära identiteten. När det gäller identityMap kommer Profile inte längre att använda flaggan `primary=true`.
 * Profilen refererar inte längre till den här flaggan, men andra tjänster på Experience Platform kan fortsätta använda flaggan `primary=true`.
 
-För att [autentiserade användarhändelser](configuration.md#ingest-your-data) ska kunna kopplas till personnamnområdet måste alla autentiserade händelser innehålla personnamnområdet (CRMID). Detta innebär att även efter att en användare har loggat in måste personens namnutrymme fortfarande finnas på varje autentiserad händelse.
+För att [autentiserade användarhändelser](implementation-guide.md#ingest-your-data) ska kunna kopplas till personnamnområdet måste alla autentiserade händelser innehålla personnamnområdet (CRMID). Detta innebär att även efter att en användare har loggat in måste personens namnutrymme fortfarande finnas på varje autentiserad händelse.
 
 Du kan fortsätta att se flaggan `primary=true` events när du söker efter en profil i profilvisningsprogrammet. Detta ignoreras dock och används inte av profilen.
 
@@ -272,9 +272,9 @@ ORDER BY timestamp desc
 Mer information finns i dokumentationen om [identitetsoptimeringsalgoritmen](./identity-optimization-algorithm.md), samt i de typer av diagramstrukturer som stöds.
 
 * I [diagramkonfigurationsguiden](./example-configurations.md) finns exempel på diagramstrukturer som stöds.
-* Du kan även läsa [implementeringshandboken](./configuration.md#appendix) för exempel på diagramstrukturer som inte stöds. Det finns två scenarier:
+* Du kan även läsa [implementeringshandboken](./implementation-guide.md#appendix) för exempel på diagramstrukturer som inte stöds. Det finns två scenarier:
    * Inget enskilt namnutrymme i alla profiler.
-   * Ett [&quot;farligt ID&quot;](./configuration.md#dangling-loginid-scenario)-scenario inträffar. I det här scenariot går det inte att avgöra om det farliga ID:t är kopplat till någon av personenheterna i diagrammen.
+   * Ett [&quot;farligt ID&quot;](./implementation-guide.md#dangling-loginid-scenario)-scenario inträffar. I det här scenariot går det inte att avgöra om det farliga ID:t är kopplat till någon av personenheterna i diagrammen.
 
 Du kan också använda [diagramsimuleringsverktyget i gränssnittet](./graph-simulation.md) för att simulera händelser och konfigurera egna inställningar för namnutrymmes- och namnområdesprioritet. Om du gör det kan du få en grundläggande förståelse för hur identitetsoptimeringsalgoritmen ska fungera.
 
@@ -331,26 +331,26 @@ Du kan använda följande fråga i datauppsättningen för export av ögonblicks
 
 I det här avsnittet finns en lista med svar på vanliga frågor om länkningsregler för identitetsdiagram.
 
-### Identitetsoptimeringsalgoritm {#identity-optimization-algorithm}
+## Identitetsoptimeringsalgoritm {#identity-optimization-algorithm}
 
 I det här avsnittet finns svar på vanliga frågor om [algoritmen för identitetsoptimering](./identity-optimization-algorithm.md).
 
-#### Jag har ett CRMID för varje affärsenhet (B2C CRMID, B2B CRMID), men jag har inget unikt namnutrymme för alla mina profiler. Vad händer om jag markerar B2C CRMID och B2B CRMID som unika och aktiverar mina identitetsinställningar?
+### Jag har ett CRMID för varje affärsenhet (B2C CRMID, B2B CRMID), men jag har inget unikt namnutrymme för alla mina profiler. Vad händer om jag markerar B2C CRMID och B2B CRMID som unika och aktiverar mina identitetsinställningar?
 
-Scenariot stöds inte. Därför kan du se att diagram komprimeras om en användare använder sitt B2C CRMID för att logga in och en annan användare använder sitt B2B CRMID för att logga in. Mer information finns i avsnittet [Krav på namnutrymme för en person](./configuration.md#single-person-namespace-requirement) på implementeringssidan.
+Scenariot stöds inte. Därför kan du se att diagram komprimeras om en användare använder sitt B2C CRMID för att logga in och en annan användare använder sitt B2B CRMID för att logga in. Mer information finns i avsnittet [Krav på namnutrymme för en person](./implementation-guide.md#single-person-namespace-requirement) på implementeringssidan.
 
-#### Åtgärdar identitetsoptimeringsalgoritmen befintliga komprimerade diagram?
+### Åtgärdar identitetsoptimeringsalgoritmen befintliga komprimerade diagram?
 
 Befintliga komprimerade diagram påverkas (&quot;fast&quot;) endast av diagramalgoritmen om dessa diagram uppdateras när du har sparat de nya inställningarna.
 
-#### Vad händer med händelserna om två personer loggar in och ut med samma enhet? Överför alla händelser till den senast autentiserade användaren?
+### Vad händer med händelserna om två personer loggar in och ut med samma enhet? Överför alla händelser till den senast autentiserade användaren?
 
 * Anonyma händelser (händelser med ECID som primär identitet i kundprofilen i realtid) överförs till den senast autentiserade användaren. Detta beror på att ECID kommer att länkas till CRMID för den senaste autentiserade användaren (i identitetstjänsten).
 * Alla autentiserade händelser (händelser med CRMID definierat som primär identitet) kommer att finnas kvar hos personen.
 
 Mer information finns i guiden [fastställa den primära identiteten för upplevelsehändelser](../identity-graph-linking-rules/namespace-priority.md#real-time-customer-profile-primary-identity-determination-for-experience-events).
 
-#### Hur kommer resor i Adobe Journey Optimizer att påverkas när ECID överförs från en person till en annan?
+### Hur kommer resor i Adobe Journey Optimizer att påverkas när ECID överförs från en person till en annan?
 
 CRMID för den senaste autentiserade användaren kommer att länkas till ECID (delad enhet). ECID kan omtilldelas från en person till en annan baserat på användarbeteende. Effekten beror på hur resan är uppbyggd, så det är viktigt att kunderna testar resan i en sandlådemiljö för att validera beteendet.
 
@@ -367,31 +367,31 @@ De viktigaste punkterna som ska markeras är följande:
    * Med den här funktionen är ECID inte längre kopplat till en profil.
    * Rekommendationen är att påbörja resor med personliga namnutrymmen.
 
-### Namnområdesprioritet
+## Namnområdesprioritet
 
 I det här avsnittet finns svar på vanliga frågor om [namnområdesprioritet](./namespace-priority.md).
 
-#### Jag har aktiverat mina identitetsinställningar. Vad händer med mina inställningar om jag vill lägga till ett anpassat namnutrymme efter att inställningarna har aktiverats?
+### Jag har aktiverat mina identitetsinställningar. Vad händer med mina inställningar om jag vill lägga till ett anpassat namnutrymme efter att inställningarna har aktiverats?
 
 Det finns två &#39;bucket&#39; med namnutrymmen: namnutrymmen för personer och namnutrymmen för enheter/cookies. Det nya anpassade namnutrymmet har den lägsta prioriteten i varje &#39;bucket&#39; så att det nya anpassade namnutrymmet inte påverkar befintlig datainmatning.
 
-#### Om kundprofilen i realtid inte längre använder flaggan&quot;primär&quot; på identityMap, måste det här värdet ändå skickas?
+### Om kundprofilen i realtid inte längre använder flaggan&quot;primär&quot; på identityMap, måste det här värdet ändå skickas?
 
 Ja, den primära flaggan för identityMap används av andra tjänster. Mer information finns i guiden [om konsekvenserna av namnområdesprioritet för andra Experience Platform-tjänster](../identity-graph-linking-rules/namespace-priority.md#implications-on-other-experience-platform-services).
 
-#### Gäller namnområdesprioriteten profilpostdatauppsättningar i kundprofilen i realtid?
+### Gäller namnområdesprioriteten profilpostdatauppsättningar i kundprofilen i realtid?
 
 Nej. Namnområdesprioriteten gäller bara Experience Event-datauppsättningar som använder klassen XDM ExperienceEvent.
 
-#### Hur fungerar den här funktionen tillsammans med identitetsgrafens skyddsytor med 50 identiteter per diagram? Påverkar namnområdesprioriteten den systemdefinierade skyddsprofilen?
+### Hur fungerar den här funktionen tillsammans med identitetsgrafens skyddsytor med 50 identiteter per diagram? Påverkar namnområdesprioriteten den systemdefinierade skyddsprofilen?
 
 Identitetsoptimeringsalgoritmen används först för att säkerställa personentitetsrepresentationen. Om diagrammet därefter försöker överskrida [identitetdiagrammet ](../guardrails.md) (50 identiteter per diagram) används den här logiken. Namnområdesprioriteten påverkar inte borttagningslogiken för det 50 identitets-/diagramskyddsutkastet.
 
-### Testning
+## Testning
 
 I det här avsnittet finns svar på vanliga frågor om testnings- och felsökningsfunktioner i länkningsregler för identitetsdiagram.
 
-#### Vilka scenarier bör jag testa i en utvecklingssandlådemiljö?
+### Vilka scenarier bör jag testa i en utvecklingssandlådemiljö?
 
 Generellt sett bör testning i en utvecklingssandlåda efterlikna de användningsfall som du tänker köra i din produktionssandlåda. I följande tabell finns några viktiga områden att validera vid utförlig testning:
 
@@ -403,7 +403,7 @@ Generellt sett bör testning i en utvecklingssandlåda efterlikna de användning
 
 {style="table-layout:auto"}
 
-#### Hur verifierar jag att den här funktionen fungerar som väntat?
+### Hur verifierar jag att den här funktionen fungerar som väntat?
 
 Använd [diagramsimuleringsverktyget](./graph-simulation.md) för att verifiera att funktionen fungerar på en enskild diagramnivå.
 

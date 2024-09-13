@@ -3,9 +3,9 @@ title: Användargränssnitt för identitetsinställningar
 description: Lär dig hur du använder användargränssnittet för identitetsinställningar.
 badge: Beta
 exl-id: 738b7617-706d-46e1-8e61-a34855ab976e
-source-git-commit: 04b04807196bb5902e398403612429eae0de3988
+source-git-commit: 6cdb622e76e953c42b58363c98268a7c46c98c99
 workflow-type: tm+mt
-source-wordcount: '516'
+source-wordcount: '526'
 ht-degree: 0%
 
 ---
@@ -24,8 +24,10 @@ Läs den här vägledningen när du vill lära dig hur du konfigurerar dina iden
 
 Läs följande dokument innan du börjar arbeta med identitetsinställningar:
 
-* [Konfigurationsguide för länkning av identitetsdiagram](./configuration.md)
+* [Länkningsregler för identitetsdiagram](./overview.md)
 * [Identitetsoptimeringsalgoritm](./identity-optimization-algorithm.md)
+* [Implementeringsguide](./implementation-guide.md)
+* [Exempel på diagramkonfigurationer](./example-configurations.md)
 * [Namnområdesprioritet](./namespace-priority.md)
 * [Diagramsimulering](./graph-simulation.md)
 
@@ -61,4 +63,12 @@ Ett varningsmeddelande visas som anger att befintliga diagram bara påverkas av 
 
 ## Nästa steg
 
-Du har nu konfigurerat dina namnområdesprioriteter och definierat dina unika namnutrymmen med hjälp av gränssnittssidan för identitetsinställningar. Mer information finns i [översikten över länkningsregler för identitetsdiagram](./overview.md).
+Mer information om regler för länkning av identitetsdiagram finns i följande dokumentation:
+
+* [Översikt över regler för länkning av identitetsdiagram](./overview.md)
+* [Identitetsoptimeringsalgoritm](./identity-optimization-algorithm.md)
+* [Implementeringsguide](./implementation-guide.md)
+* [Exempel på diagramkonfigurationer](./example-configurations.md)
+* [Felsökning och vanliga frågor](./troubleshooting.md)
+* [Namnområdesprioritet](./namespace-priority.md)
+* [Gränssnitt för diagramsimulering](./graph-simulation.md)

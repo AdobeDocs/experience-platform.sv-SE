@@ -1,15 +1,16 @@
 ---
-title: Guide för diagramkonfigurationer
+title: Exempel på diagramkonfigurationer
 description: Lär dig mer om vanliga diagramscenarier som du kan stöta på när du arbetar med länkningsregler för identitetsdiagram och identitetsdata.
 badge: Beta
-source-git-commit: 90faa4079d8a58898774c1fbbae2adae01f7e0a2
+exl-id: fd0afb0b-a368-45b9-bcdc-f2f3b7508cee
+source-git-commit: 1ea840e2c6c44d5d5080e0a034fcdab4cbdc87f1
 workflow-type: tm+mt
-source-wordcount: '2749'
+source-wordcount: '2786'
 ht-degree: 1%
 
 ---
 
-# Guide för diagramkonfigurationer
+# Exempel på diagramkonfigurationer
 
 >[!AVAILABILITY]
 >
@@ -19,6 +20,7 @@ ht-degree: 1%
 >
 >* &quot;CRMID&quot; och &quot;loginID&quot; är egna namnutrymmen. I det här dokumentet är &quot;CRMID&quot; en personidentifierare och &quot;loginID&quot; är en inloggningsidentifierare som är associerad med en viss person.
 >* Om du vill simulera de exempeldiagramscenarier som beskrivs i det här dokumentet måste du först skapa två anpassade namnutrymmen, ett med identitetssymbolen &quot;CRMID&quot; och ett annat med identitetssymbolen &quot;loginID&quot;. Identitetssymboler är skiftlägeskänsliga.
+
 
 Det här dokumentet innehåller exempel på diagramkonfigurationer av vanliga scenarier som du kan stöta på när du arbetar med länkningsregler för identitetsdiagram och identitetsdata.
 
@@ -478,7 +480,7 @@ I det här scenariot finns det ett enda CRMID som representerar en personenhet. 
 
 | Använda namnutrymmen | Samlingsmetod för webbeteenden |
 | --- | --- |
-| CRMID, Email_LC_SHA256, Phone_SHA256, loginID, ECID | Adobe Analytics källanslutning. <br> **Obs!** Som standard blockeras AAID i identitetstjänsten, och du måste därför ange en högre prioritet för dina ECID:n än AAID:n när du använder Analytics-källan. Läs [implementeringsguiden](configuration.md#ingest-your-data) om du vill ha mer information.</br> |
+| CRMID, Email_LC_SHA256, Phone_SHA256, loginID, ECID | Adobe Analytics källanslutning. <br> **Obs!** Som standard blockeras AAID i identitetstjänsten, och du måste därför ange en högre prioritet för dina ECID:n än AAID:n när du använder Analytics-källan. Läs [implementeringsguiden](./implementation-guide.md#ingest-your-data) om du vill ha mer information.</br> |
 
 **Händelser:**
 
@@ -756,3 +758,15 @@ CRMID: Tom, ECID: 111
 ```
 
 >[!ENDTABS]
+
+## Nästa steg
+
+Mer information om regler för länkning av identitetsdiagram finns i följande dokumentation:
+
+* [Översikt över regler för länkning av identitetsdiagram](./overview.md)
+* [Identitetsoptimeringsalgoritm](./identity-optimization-algorithm.md)
+* [Implementeringsguide](./implementation-guide.md)
+* [Felsökning och vanliga frågor](./troubleshooting.md)
+* [Namnområdesprioritet](./namespace-priority.md)
+* [Gränssnitt för diagramsimulering](./graph-simulation.md)
+* [Användargränssnitt för identitetsinställningar](./identity-settings-ui.md)
