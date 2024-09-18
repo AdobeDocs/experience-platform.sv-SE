@@ -4,9 +4,9 @@ title: Kontrollpanel för licensanvändning
 description: Adobe Experience Platform tillhandahåller en kontrollpanel där du kan visa viktig information om din organisations licensanvändning.
 type: Documentation
 exl-id: 143d16bb-7dc3-47ab-9b93-9c16683b9f3f
-source-git-commit: dedffe90e9107b70d4ddf65a7bf8079396ff8e8b
+source-git-commit: b1de61b2e7d0dedf2da8ef8ffb02fe5c15e82fb2
 workflow-type: tm+mt
-source-wordcount: '2522'
+source-wordcount: '2601'
 ht-degree: 0%
 
 ---
@@ -17,6 +17,16 @@ ht-degree: 0%
 >id="testy-mctestface"
 >title="Testdialogruta som inte ska visas"
 >abstract="Objektet {name} visas på {date}."
+
+>[!CONTEXTUALHELP]
+>id="platform_dashboards_licenseusage_core"
+>title="Tabell över kärnprodukter"
+>abstract="De kärnprodukter som listas i tabellen har egna mätvärden, användningsspårning och detaljerade vyer på sandlådenivå. Dessa kärnprodukter ger nyckelmätvärden för spårning, och eventuella tillägg ingår i dessa mätvärden."
+
+>[!CONTEXTUALHELP]
+>id="platform_dashboards_licenseusage_addons"
+>title="Register för tillägg"
+>abstract="I tilläggstabellen listas produkter vars licensbelopp kombineras med de värden som stöds av kärnprodukterna. Tilläggen har inte olika mätvärden, men förbättrar användningsspårningen för de kärnprodukter de är kopplade till."
 
 >[!CONTEXTUALHELP]
 >id="platform_dashboards_licenseUsage"
