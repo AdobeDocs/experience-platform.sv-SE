@@ -2,9 +2,9 @@
 title: Identitetsdata i Web SDK
 description: Lär dig hur du hämtar och hanterar Adobe Experience Cloud ID:n (ECID) med Adobe Experience Platform Web SDK.
 exl-id: 03060cdb-becc-430a-b527-60c055c2a906
-source-git-commit: 3b0fa672c4befd8e17632e62b0eeb13b6b17bfb4
+source-git-commit: c99831cf2bb1b862d65851701b38c6d3dfe99000
 workflow-type: tm+mt
-source-wordcount: '1471'
+source-wordcount: '1553'
 ht-degree: 0%
 
 ---
@@ -14,9 +14,9 @@ ht-degree: 0%
 
 Adobe Experience Platform Web SDK använder [Adobe Experience Cloud ID:n (ECID:n)](../../identity-service/features/ecid.md) för att spåra besökares beteende. Om du använder [!DNL ECIDs] kan du se till att varje enhet har en unik identifierare som kan finnas kvar i flera sessioner och koppla alla träffar som inträffar under och mellan webbsessioner till en viss enhet.
 
-Det här dokumentet innehåller en översikt över hur du hanterar [!DNL ECIDs] med Web SDK.
+Det här dokumentet innehåller en översikt över hur du hanterar [!DNL ECIDs] och [!DNL CORE IDs] med Web SDK.
 
-## Spåra ECID:n med Web SDK {#tracking-ecids-we-sdk}
+## Spåra ECID:n med Web SDK {#tracking-ecids-web-sdk}
 
 Web SDK tilldelar och spårar [!DNL ECIDs] med hjälp av cookies, med flera tillgängliga metoder för att konfigurera hur dessa cookies genereras.
 
@@ -33,6 +33,12 @@ När du använder cookies för enhetsidentifiering har du två sätt att interag
 1. Skicka data direkt till Edge Network-domänen `adobedc.net`. Den här metoden kallas [tredjepartsdatainsamling](#third-party).
 
 Som förklaras i avsnitten nedan har den datainsamlingsmetod som du väljer att använda en direkt inverkan på cookie-livstiden i olika webbläsare.
+
+## Spåra CORE ID:n med Web SDK {#tracking-coreid-web-sdk}
+
+När du använder Google Chrome med cookies från tredje part aktiverade och det inte finns någon cookie för `kndctr_{YOUR-ORG-ID}_AdobeOrg_identity` går den första Edge Network-begäran igenom en `demdex.net`-domän, som ställer in en demonstrationscookie. Den här cookien innehåller en [!DNL CORE ID]. Detta är ett unikt användar-ID, som skiljer sig från [!DNL ECID].
+
+Beroende på implementeringen kan du vilja [komma åt  [!DNL CORE ID]](#retrieve-coreid).
 
 ### Insamling av data från första part {#first-party}
 
@@ -84,7 +90,6 @@ Ange sedan målfältet till en XDM-sökväg där fältet är av typen `string`.
 
 ### Hämta [!DNL ECID] via kommandot `getIdentity()` {#retrieve-ecid-getidentity}
 
-
 >[!IMPORTANT]
 >
 >Du bör bara hämta ECID via kommandot `getIdentity()` om du kräver [!DNL ECID] på klientsidan. Om du bara vill mappa ECID till ett XDM-fält använder du [Dataprep för datainsamling](#retrieve-ecid-data-prep) i stället.
@@ -107,6 +112,17 @@ alloy("getIdentity")
     // "error" will be an error object with additional information.
   });
 ```
+
+## Hämta CORE ID för den aktuella användaren {#retrieve-coreid}
+
+Om du vill hämta CORE-ID:t för en användare kan du använda kommandot [`getIdentity()`](../commands/getidentity.md) enligt nedan.
+
+```js
+alloy("getIdentity",{
+  "namespaces": ["CORE"]
+});
+```
+
 
 ## Använder `identityMap` {#using-identitymap}
 
