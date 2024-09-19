@@ -3,9 +3,9 @@ title: Versionsinformation för Adobe Experience Platform Web SDK
 description: Den senaste versionsinformationen om webb-SDK för Adobe Experience Platform.
 keywords: Adobe Experience Platform Web SDK;Platform Web SDK;Web SDK;versionsinformation;
 exl-id: efd4e866-6a27-4bd5-af83-4a97ca8adebd
-source-git-commit: 73a82825dd6c9ae97db76018df5462ab20c7d15e
+source-git-commit: c1fb9fe7d4863e316b824d6c8dd2ff0d3405d7ea
 workflow-type: tm+mt
-source-wordcount: '1882'
+source-wordcount: '1920'
 ht-degree: 0%
 
 ---
@@ -16,11 +16,21 @@ ht-degree: 0%
 Det här dokumentet innehåller versionsinformation för Adobe Experience Platform Web SDK.
 Den senaste versionsinformationen om Web SDK-taggtillägget finns i [Versionsinformationen för Web SDK-taggtillägg](../tags/extensions/client/web-sdk/web-sdk-ext-release-notes.md).
 
+## Version 2.23.0 - 19 september 2024
+
+**Nya funktioner**
+
+- Stöd har lagts till för att begära [CORE ID](identity/overview.md#tracking-coreid-web-sdk) i kommandot [getIdentity](commands/getidentity.md#get-identity-using-the-web-sdk-javascript-library).
+
+**Korrigeringar och förbättringar**
+
+- Korrigerade ett problem där cookies inte skrevs korrekt när Web SDK kördes lokalt.
+
 ## Version 2.2.0 - 22 augusti 2024
 
 **Nya funktioner**
 
-- Tillagda personaliseringsövervakare.
+- Stöd för personaliseringsövervakningshooks har lagts till.
 
 **Korrigeringar och förbättringar**
 
