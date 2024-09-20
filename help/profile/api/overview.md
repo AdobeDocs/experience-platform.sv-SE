@@ -4,9 +4,9 @@ title: API-guide för kundprofil i realtid
 description: Med Real-Time Customer Profile API kan utvecklare utforska och arbeta med profildata, inklusive visa profiler, skapa och uppdatera sammanfogningsprinciper, exportera eller sampla profildata och ta bort profildata som inte längre behövs eller som har lagts till av misstag. Följ den här användarhandboken om du vill lära dig hur du utför viktiga åtgärder med API:t.
 role: Developer
 exl-id: ce39b95b-cff7-46cf-a14c-8203017c8826
-source-git-commit: e52eb90b64ae9142e714a46017cfd14156c78f8b
+source-git-commit: cb276c55c010aa7ccc936947ad87bf74239d6e99
 workflow-type: tm+mt
-source-wordcount: '883'
+source-wordcount: '860'
 ht-degree: 1%
 
 ---
@@ -21,11 +21,7 @@ Om du vill visa alla tillgängliga slutpunkter och CRUD-åtgärder går du till 
 
 En guide till hur du arbetar med [!DNL Real-Time Customer Profile]-data i [!DNL Experience Platform]-gränssnittet finns i [användarhandboken för profilen](../ui/user-guide.md).
 
-## [!BADGE Beta]{type=Informative} beräknade attribut {#computed-attributes}
-
->[!IMPORTANT]
->
-Den beräknade attributfunktionen är i betaversion och är inte tillgänglig för alla användare. Dokumentationen och funktionaliteten kan komma att ändras.
+## Beräknade attribut {#computed-attributes}
 
 Beräknade attribut är funktioner som används för att samla data på händelsenivå i attribut på profilnivå. Funktionerna beräknas automatiskt så att de kan användas för segmentering, aktivering och personalisering.
 
