@@ -3,22 +3,22 @@ title: Skapa en Google Big Query Source Connection i användargränssnittet
 description: Lär dig hur du skapar en Google Big Query-källanslutning med Adobe Experience Platform-gränssnittet.
 badgeUltimate: label="Ultimate" type="Positive"
 exl-id: 3c0902de-48b9-42d8-a4bd-0213ca85fc7f
-source-git-commit: 9a8139c26b5bb5ff937a51986967b57db58aab6c
+source-git-commit: 55aaaa39659566de81bb161d704b6f8212e29a8b
 workflow-type: tm+mt
-source-wordcount: '430'
+source-wordcount: '496'
 ht-degree: 0%
 
 ---
 
-# Skapa en [!DNL Google Big Query]-källanslutning i användargränssnittet
+# Skapa en [!DNL Google BigQuery]-källanslutning i användargränssnittet
 
 >[!IMPORTANT]
 >
 >Källan [!DNL Google BigQuery] är tillgänglig i källkatalogen för användare som har köpt Real-time Customer Data Platform Ultimate.
 
-Source-anslutningar i Adobe Experience Platform gör det möjligt att importera externa data på schemalagd basis. I den här självstudiekursen beskrivs hur du skapar en [!DNL Google Big Query]-källanslutning med hjälp av användargränssnittet för plattformen.
+I den här självstudiekursen får du lära dig hur du ansluter ditt [!DNL Google BigQuery]-konto till Adobe Experience Platform med användargränssnittet.
 
-## Komma igång
+## Kom igång
 
 Den här självstudiekursen kräver en fungerande förståelse av följande komponenter i Experience Platform:
 
@@ -31,26 +31,19 @@ Om du redan har en giltig [!DNL Google BigQuery]-anslutning kan du hoppa över r
 
 ### Samla in nödvändiga inloggningsuppgifter
 
-För att få åtkomst till ditt [!DNL Google BigQuery]-konto på plattformen måste du ange följande OAuth 2.0-autentiseringsvärden:
-
-| Autentiseringsuppgifter | Beskrivning |
-| ---------- | ----------- |
-| `project` | Projekt-ID:t för standardprojektet [!DNL Google BigQuery] att fråga mot. |
-| `clientID` | ID-värdet som används för att generera uppdateringstoken. |
-| `clientSecret` | Det hemliga värde som används för att generera uppdateringstoken. |
-| `refreshToken` | Uppdateringstoken från [!DNL Google] som används för att auktorisera åtkomst till [!DNL Google BigQuery]. |
-
-Mer information om dessa värden finns i [det här [!DNL Google BigQuery] dokumentet](https://cloud.google.com/storage/docs/json_api/v1/how-tos/authorizing).
+Läs [[!DNL Google BigQuery] autentiseringsguiden](../../../../connectors/databases/bigquery.md#generate-your-google-bigquery-credentials) om du vill ha mer information om hur du samlar in dina nödvändiga inloggningsuppgifter.
 
 ## Anslut ditt Google BigQuery-konto
 
-I plattformsgränssnittet väljer du **[!UICONTROL Sources]** i den vänstra navigeringen för att komma åt arbetsytan i [!UICONTROL Sources]. På skärmen [!UICONTROL Catalog] visas en mängd olika källor som du kan skapa ett konto med.
-
-Du kan välja lämplig kategori i katalogen till vänster på skärmen. Du kan också använda sökfältet till att hitta den källa du vill arbeta med.
+I plattformsgränssnittet väljer du **[!UICONTROL Sources]** i den vänstra navigeringen för att komma åt arbetsytan i [!UICONTROL Sources]. På skärmen [!UICONTROL Catalog] visas en mängd olika källor som du kan skapa ett konto med. Du kan välja lämplig kategori i katalogen till vänster på skärmen. Du kan också använda sökfältet till att hitta den källa du vill arbeta med.
 
 Under kategorin [!UICONTROL Databases] väljer du **[!UICONTROL Google BigQuery]** och sedan **[!UICONTROL Add data]**.
 
-![](../../../../images/tutorials/create/google-big-query/catalog.png)
+>[!TIP]
+>
+>Källor i källkatalogen visar alternativet **[!UICONTROL Set up]** när en angiven källa ännu inte har något autentiserat konto. När det finns ett autentiserat konto ändras det här alternativet till **[!UICONTROL Add data]**.
+
+![Källkatalogen med Google BigQuery har valts.](../../../../images/tutorials/create/google-big-query/catalog.png)
 
 Sidan **[!UICONTROL Connect to Google Big Query]** visas. På den här sidan kan du antingen använda nya autentiseringsuppgifter eller befintliga.
 
@@ -58,13 +51,29 @@ Sidan **[!UICONTROL Connect to Google Big Query]** visas. På den här sidan kan
 
 Om du vill ansluta ett befintligt konto markerar du det [!DNL Google BigQuery]-konto du vill ansluta till och väljer sedan **[!UICONTROL Next]** för att fortsätta.
 
-![](../../../../images/tutorials/create/google-big-query/existing.png)
+![Den befintliga kontosidan där en lista över befintliga konton visas.](../../../../images/tutorials/create/google-big-query/existing.png)
 
 ### Nytt konto
 
-Om du använder nya autentiseringsuppgifter väljer du **[!UICONTROL New account]**. Ange ett namn, en valfri beskrivning och dina [!DNL Google BigQuery]-inloggningsuppgifter på det indataformulär som visas. När du är klar väljer du **[!UICONTROL Connect to source]** och tillåt sedan lite tid för att upprätta den nya anslutningen.
+Om du skapar ett nytt konto väljer du **[!UICONTROL New account]** och anger sedan ett namn och en valfri beskrivning för det nya [!DNL Google BigQuery]-kontot.
 
-![](../../../../images/tutorials/create/google-big-query/new.png)
+![Det nya kontogränssnittet i källarbetsflödet.](../../../../images/tutorials/create/google-big-query/new.png)
+
+>[!BEGINTABS]
+
+>[!TAB Använd grundläggande autentisering]
+
+Om du vill använda grundläggande autentisering markerar du **[!UICONTROL Basic Authentication]** och anger värden för ditt [projekt, klient-ID, klienthemlighet, uppdateringstoken och (valfritt) datamängd-ID för stora resultat ](../../../../connectors/databases/bigquery.md#generate-your-google-bigquery-credentials). När du är klar väljer du **[!UICONTROL Connect to source]** och tillåt en stund så att anslutningen kan upprättas.
+
+![Det nya kontogränssnittet där grundläggande autentisering väljs.](../../../../images/tutorials/create/google-big-query/basic_auth.png)
+
+>[!TAB Använd tjänstautentisering]
+
+Om du vill använda tjänstautentisering markerar du **[!UICONTROL Service Authentication]** och anger värden för ditt [projekt-ID, nyckelfilsinnehåll och (valfritt) stort resultatdatauppsättnings-ID](../../../../connectors/databases/bigquery.md#generate-your-google-bigquery-credentials). När du är klar väljer du **[!UICONTROL Connect to source]** och tillåt en stund så att anslutningen kan upprättas.
+
+![Det nya kontogränssnittet där tjänstautentisering väljs.](../../../../images/tutorials/create/google-big-query/service_auth.png)
+
+>[!ENDTABS]
 
 ## Nästa steg
 

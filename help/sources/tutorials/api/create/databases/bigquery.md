@@ -3,9 +3,9 @@ title: Skapa en Google BigQuery Base-anslutning med API:t för Flow Service
 description: Lär dig hur du ansluter Adobe Experience Platform till Google BigQuery med API:t för Flow Service.
 badgeUltimate: label="Ultimate" type="Positive"
 exl-id: 51f90366-7a0e-49f1-bd57-b540fa1d15af
-source-git-commit: 9a8139c26b5bb5ff937a51986967b57db58aab6c
+source-git-commit: 1fa79b31b5a257ebb3cbd60246b757d8a4a63d7c
 workflow-type: tm+mt
-source-wordcount: '524'
+source-wordcount: '523'
 ht-degree: 0%
 
 ---
@@ -18,9 +18,9 @@ ht-degree: 0%
 
 En basanslutning representerar den autentiserade anslutningen mellan en källa och Adobe Experience Platform.
 
-I den här självstudien får du hjälp med att skapa en basanslutning för [!DNL Google BigQuery] med [[!DNL Flow Service] API](https://www.adobe.io/experience-platform-apis/references/flow-service/).
+Läs den här vägledningen när du vill lära dig hur du skapar en basanslutning för [!DNL Google BigQuery] med [[!DNL Flow Service] API](https://www.adobe.io/experience-platform-apis/references/flow-service/).
 
-## Komma igång
+## Kom igång
 
 Handboken kräver en fungerande förståelse av följande komponenter i Experience Platform:
 
@@ -31,18 +31,7 @@ I följande avsnitt finns ytterligare information som du behöver känna till f�
 
 ### Samla in nödvändiga inloggningsuppgifter
 
-För att [!DNL Flow Service] ska kunna ansluta [!DNL Google BigQuery] till plattformen måste du ange följande OAuth 2.0-autentiseringsvärden:
-
-| Autentiseringsuppgifter | Beskrivning |
-| ---------- | ----------- |
-| `project` | Projekt-ID:t för standardprojektet [!DNL Google BigQuery] att fråga mot. |
-| `clientID` | ID-värdet som används för att generera uppdateringstoken. |
-| `clientSecret` | Det hemliga värde som används för att generera uppdateringstoken. |
-| `refreshToken` | Uppdateringstoken från [!DNL Google] som används för att auktorisera åtkomst till [!DNL Google BigQuery]. |
-| `largeResultsDataSetId` | Det förskapade [!DNL Google BigQuery]-datauppsättnings-ID som krävs för att aktivera stöd för stora resultatuppsättningar. |
-| `connectionSpec.id` | Anslutningsspecifikationen returnerar en källas kopplingsegenskaper, inklusive autentiseringsspecifikationer för att skapa bas- och källanslutningarna. Anslutningsspecifikations-ID för [!DNL Google BigQuery] är: `3c9b37f8-13a6-43d8-bad3-b863b941fedd`. |
-
-Mer information om dessa värden finns i det här [[!DNL Google BigQuery] dokumentet](https://cloud.google.com/storage/docs/json_api/v1/how-tos/authorizing).
+Läs [[!DNL Google BigQuery] autentiseringsguiden](../../../../connectors/databases/bigquery.md#generate-your-google-bigquery-credentials) om du vill ha mer information om hur du samlar in dina nödvändiga inloggningsuppgifter.
 
 ### Använda plattforms-API:er
 
@@ -60,9 +49,13 @@ Om du vill skapa ett grundläggande anslutnings-ID skickar du en POST till slutp
 POST /connections
 ```
 
+>[!BEGINTABS]
+
+>[!TAB Använd grundläggande autentisering]
+
 **Begäran**
 
-Följande begäran skapar en basanslutning för [!DNL Google BigQuery]:
+Följande begäran skapar en basanslutning för [!DNL Google BigQuery] med grundläggande autentisering:
 
 ```shell
 curl -X POST \
@@ -73,8 +66,8 @@ curl -X POST \
     -H 'x-sandbox-name: {SANDBOX_NAME}' \
     -H 'Content-Type: application/json' \
     -d '{
-        "name": "Google BigQuery connection",
-        "description": "Google BigQuery connection",
+        "name": "Google BigQuery connection with basic authentication",
+        "description": "Google BigQuery connection with basic authentication",
         "auth": {
             "specName": "Basic Authentication",
             "type": "OAuth2.0",
@@ -110,6 +103,59 @@ Ett lyckat svar returnerar information om den nyligen skapade anslutningen, inkl
     "etag": "\"ca00acbf-0000-0200-0000-60149e1e0000\""
 }
 ```
+
+>[!TAB Använd tjänstautentisering]
+
+
+**Begäran**
+
+Följande begäran skapar en basanslutning för [!DNL Google BigQuery] med tjänstautentisering:
+
+```shell
+curl -X POST \
+    'https://platform.adobe.io/data/foundation/flowservice/connections' \
+    -H 'Authorization: Bearer {ACCESS_TOKEN}' \
+    -H 'x-api-key: {API_KEY}' \
+    -H 'x-gw-ims-org-id: {ORG_ID}' \
+    -H 'x-sandbox-name: {SANDBOX_NAME}' \
+    -H 'Content-Type: application/json' \
+    -d '{
+        "name": "Google BigQuery base connection with service account",
+        "description": "Google BigQuery connection with service account",
+        "auth": {
+            "specName": "Service Authentication",
+            "params": {
+                    "projectId": "{PROJECT_ID}",
+                    "keyFileContent": "{KEY_FILE_CONTENT},
+                    "largeResultsDataSetId": "{LARGE_RESULTS_DATASET_ID}"
+                }
+        },
+        "connectionSpec": {
+            "id": "3c9b37f8-13a6-43d8-bad3-b863b941fedd",
+            "version": "1.0"
+        }
+    }'
+```
+
+| Egenskap | Beskrivning |
+| --------- | ----------- |
+| `auth.params.projectId` | Projekt-ID för standardprojektet [!DNL Google BigQuery] som ska frågas. mot. |
+| `auth.params.keyFileContent` | Nyckelfilen som används för att autentisera tjänstkontot. Du måste koda nyckelfilens innehåll i [!DNL Base64]. |
+| `auth.params.largeResultsDataSetId` | (Valfritt) Det förskapade [!DNL Google BigQuery]-datauppsättnings-ID som krävs för att aktivera stöd för stora resultatuppsättningar. |
+
+**Svar**
+
+Ett lyckat svar returnerar information om den nyligen skapade anslutningen, inklusive dess unika identifierare (`id`). Detta ID krävs för att utforska dina data i nästa självstudiekurs.
+
+```json
+{
+    "id": "6990abad-977d-41b9-a85d-17ea8cf1c0e4",
+    "etag": "\"ca00acbf-0000-0200-0000-60149e1e0000\""
+}
+```
+
+>[!ENDTABS]
+
 
 ## Nästa steg
 
