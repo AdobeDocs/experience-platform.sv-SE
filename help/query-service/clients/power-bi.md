@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Anslut Power BI till frågetjänst
 description: Det här dokumentet går igenom stegen för att ansluta Power BI med Adobe Experience Platform Query Service.
 exl-id: 8fcd3056-aac7-4226-a354-ed7fb8fe9ad7
-source-git-commit: 26f0725f0f239707bd719ed46929648f8d557155
+source-git-commit: 2b76b99d1e22d75faf8d758edd6cf08acdec7c21
 workflow-type: tm+mt
-source-wordcount: '1070'
+source-wordcount: '1008'
 ht-degree: 0%
 
 ---
@@ -24,16 +24,6 @@ Den här guiden kräver att du redan har tillgång till skrivbordsappen [!DNL Po
 > Skrivbordsprogrammet [!DNL Power BI] är **endast** tillgängligt på Windows-enheter.
 
 Om du vill få de nödvändiga autentiseringsuppgifterna för att ansluta [!DNL Power BI] till Experience Platform måste du ha tillgång till arbetsytan Frågor i plattformsgränssnittet. Kontakta din organisationsadministratör om du inte har åtkomst till arbetsytan för frågor just nu.
-
-När du har installerat [!DNL Power BI] måste du installera `Npgsql`, ett .NET-drivrutinspaket för PostgreSQL. Mer information om Npgsql finns i [Npgsql-dokumentationen](https://www.npgsql.org/doc/index.html).
-
->[!IMPORTANT]
->
->Du måste hämta v4.0.10 eller tidigare, eftersom nyare versioner orsakar fel.
-
-Välj **[!DNL Will be installed on local hard drive]** under [!DNL Npgsql GAC Installation] på skärmen för anpassade inställningar.
-
-För att säkerställa att Npgsql har installerats korrekt måste du starta om datorn innan du fortsätter till nästa steg.
 
 ## Anslut [!DNL Power BI] till frågetjänsten {#connect-power-bi}
 
