@@ -1,40 +1,40 @@
 ---
-title: Versionsinformation om Adobe Analytics produktsträngstillägg
-description: Den senaste versionsinformationen om Adobe Analytics produktsträngstillägg i Adobe Experience Platform.
+title: Versionsinformation för tillägget Adobe Analytics Product String
+description: Den senaste versionsinformationen för taggtillägget Adobe Analytics Product String på Adobe Experience-plattformen.
 exl-id: 3ddc3e6f-412c-42d5-8cbf-25273c1794d5
 source-git-commit: 88939d674c0002590939004e0235d3da8b072118
-workflow-type: tm+mt
+workflow-type: ht
 source-wordcount: '135'
-ht-degree: 0%
+ht-degree: 100%
 
 ---
 
-# Versionsinformation om Adobe Analytics produktsträngstillägg
+# Versionsinformation för tillägget Adobe Analytics Product String
 
 >[!NOTE]
 >
->Adobe Experience Platform Launch har omklassificerats som en serie datainsamlingstekniker i Adobe Experience Platform. Som ett resultat av detta har flera terminologiska förändringar införts i produktdokumentationen. I följande [dokument](../../../term-updates.md) finns en konsoliderad referens till de ändrade terminologin.
+>Adobe Experience Platform Launch har omprofilerats till en serie tekniker för datainsamling i Adobe Experience Platform. Som ett resultat av detta har flera terminologiska förändringar genomförts i produktdokumentationen. Se följande [dokument](../../../term-updates.md) för en konsoliderad referens av terminologiändringarna.
 
 ## 31 januari 2020
 
-[!DNL Adobe Analytics Product String]-tillägg 2.0.1
+[!DNL Adobe Analytics Product String] Tillägg 2.0.1
 
 **Funktioner**
 
-* Uppdatera författarens e-postadress
+* Uppdatera författarens e-post
 
 ## 31 januari 2020
 
-[!DNL Adobe Analytics Product String]-tillägg 2.0.0
+[!DNL Adobe Analytics Product String] Tillägg 2.0.0
 
 **Funktioner**
 
-* Stöd för anpassade event och e-handelsmarknadsföring
-* Lagt till möjlighet att använda enhetspris kontra totalpris
-* Uppdaterat Coral UI till v3
-* Förbättrad felhantering vid validering
+* Nytt stöd för anpassade händelser och försäljning av eVars
+* Möjligheten att använda enhetspris kontra totalpris har lagts till
+* Uppdaterade Coral UI till v3
+* Förbättrad hantering av valideringsfel
 * Förbättrad dokumentation
 
 **Felkorrigeringar**
 
-* Ett fel har korrigerats där produktsträngen inte ingick i vissa versioner av tillägget [!DNL Adobe Analytics].
+* Ett fel har åtgärdats där produktsträngen inte inkluderades i vissa versioner av tillägget [!DNL Adobe Analytics].
