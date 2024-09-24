@@ -4,10 +4,10 @@ solution: Experience Platform
 title: Mappningsfunktioner för dataförinställningar
 description: I det här dokumentet introduceras de mappningsfunktioner som används med Data Prep.
 exl-id: e95d9329-9dac-4b54-b804-ab5744ea6289
-source-git-commit: 5a4e0b3c97d315262ded35ca5bfada3612ed6db4
+source-git-commit: 1e06fa2f8a5685cf5debcc3b5279d7efab9af0c8
 workflow-type: tm+mt
-source-wordcount: '5805'
-ht-degree: 1%
+source-wordcount: '6024'
+ht-degree: 0%
 
 ---
 
@@ -178,6 +178,10 @@ Mer information om objektkopieringsfunktionen finns i avsnittet [nedan](#object-
 | size_of | Returnerar storleken på indata. | <ul><li>INPUT: **Obligatoriskt** Det objekt som du försöker hitta storleken på.</li></ul> | size_of(INPUT) | `size_of([1, 2, 3, 4])` | 4 |
 | upsert_array_append | Den här funktionen används för att lägga till alla element i hela inmatningsarrayen i slutet av arrayen i profilen. Den här funktionen är **endast** tillämplig under uppdateringar. Om den används i infogningskontexten returneras indata i befintligt skick. | <ul><li>ARRAY: **Required** Arrayen som ska läggas till i arrayen i profilen.</li></ul> | upsert_array_append(ARRAY) | `upsert_array_append([123, 456])` | [123, 456] |
 | upsert_array_replace | Den här funktionen används för att ersätta element i en array. Den här funktionen är **endast** tillämplig under uppdateringar. Om den används i infogningskontexten returneras indata i befintligt skick. | <ul><li>ARRAY: **Required** Arrayen som ska ersätta arrayen i profilen.</li></li> | upsert_array_replace(ARRAY) | `upsert_array_replace([123, 456], 1)` | [123, 456] |
+| [!BADGE Beta]{type=Informative} array_to_string | Sammanfogar strängrepresentationerna för elementen i en array med den angivna avgränsaren. Om arrayen är flerdimensionell förenklas den innan den förenas. **Obs!** Den här funktionen används i mål. Mer information finns i [dokumentationen](../destinations/ui/export-arrays-calculated-fields.md). | <ul><li>SEPARATOR: **Required** Avgränsaren som används för att förena elementen i arrayen.</li><li>ARRAY: **Required** Arrayen som ska förenas (efter förenkling).</li></ul> | array_to_string(SEPARATOR, ARRAY) | `array_to_string(";", ["Hello", "world"])` | &quot;Hello;world&quot; |
+| [!BADGE Beta]{type=Informative} filterArray* | Filtrerar den angivna arrayen baserat på ett predikat. **Obs!** Den här funktionen används i mål. Mer information finns i [dokumentationen](../destinations/ui/export-arrays-calculated-fields.md). | <ul><li>ARRAY: **Obligatorisk** Matrisen som ska filtreras</li><li>PREDICATE: **Required** Predikatet som ska användas för varje element i den angivna arrayen. | filterArray(ARRAY, PREDICATE) | `filterArray([5, -6, 0, 7], x -> x > 0)` | [5, 7] |
+| [!BADGE Beta]{type=Informative} transformArray* | Omformar den angivna arrayen baserat på ett predikat. **Obs!** Den här funktionen används i mål. Mer information finns i [dokumentationen](../destinations/ui/export-arrays-calculated-fields.md). | <ul><li>ARRAY: **Required** Arrayen som ska omformas.</li><li>PREDICATE: **Required** Predikatet som ska användas för varje element i den angivna arrayen. | transformArray(ARRAY, PREDICATE) | ` transformArray([5, 6, 7], x -> x + 1)` | [6, 7, 8] |
+| [!BADGE Beta]{type=Informative} flattenArray* | Förenklar den angivna (flerdimensionella) arrayen till en endimensionell array. **Obs!** Den här funktionen används i mål. Mer information finns i [dokumentationen](../destinations/ui/export-arrays-calculated-fields.md). | <ul><li>ARRAY: **Obligatorisk** Matrisen som ska förenklas.</li></ul> | flattenArray(ARRAY) | flattenArray([[&#39;a&#39;, &#39;b&#39;], [&#39;c&#39;, &#39;d&#39;]], [[&#39;e&#39;], [&#39;f&#39;]])) | [&#39;a&#39;, &#39;b&#39;, &#39;c&#39;, &#39;d&#39;, &#39;e&#39;, &#39;f&#39;] |
 
 {style="table-layout:auto"}
 
