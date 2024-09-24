@@ -84,7 +84,7 @@ Läs mer om [gruppinmatning](/help/ingestion/batch-ingestion/overview.md).
 
 Mer information finns i [målöversikten](../../destinations/home.md).
 
-##  Experience Data Model (XDM) {#xdm}
+## Experience Data Model (XDM) {#xdm}
 
 XDM är en öppen källkodsspecifikation som innehåller gemensamma strukturer och definitioner (scheman) för data som hämtas till Adobe Experience Platform. Genom att följa XDM-standarder kan alla kundupplevelsedata införlivas i en gemensam representation för att ge insikter på ett snabbare och mer integrerat sätt. Ni kan få värdefulla insikter från kundåtgärder, definiera kundmålgrupper genom segment och använda kundattribut med syftet att personliggöra.
 
