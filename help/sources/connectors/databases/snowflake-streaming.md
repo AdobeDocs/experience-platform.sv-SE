@@ -1,13 +1,12 @@
 ---
 title: Snowflake Streaming Source Connector - översikt
 description: Lär dig hur du skapar en källanslutning och ett dataflöde för att importera strömmande data från din Snowflake-instans till Adobe Experience Platform
-badgeBeta: label="Beta" type="Informative"
 badgeUltimate: label="Ultimate" type="Positive"
-last-substantial-update: 2023-05-25T00:00:00Z
+last-substantial-update: 2023-09-24T00:00:00Z
 exl-id: ed937689-e844-487e-85fb-e3536c851fe5
-source-git-commit: e8ab39ce085a95eac898f65667706b71bdadd350
+source-git-commit: 34b1676ebb5405d73cf37cd786d1e6c26cb8fdaa
 workflow-type: tm+mt
-source-wordcount: '791'
+source-wordcount: '772'
 ht-degree: 0%
 
 ---
@@ -16,8 +15,7 @@ ht-degree: 0%
 
 >[!IMPORTANT]
 >
->* Strömningskällan [!DNL Snowflake] är i betaversion. Läs [Källöversikt](../../home.md#terms-and-conditions) om du vill ha mer information om hur du använder betatecknade källor.
->* Direktuppspelningskällan [!DNL Snowflake] är tillgänglig i API:t för användare som har köpt Real-time Customer Data Platform Ultimate.
+> Direktuppspelningskällan [!DNL Snowflake] är tillgänglig i API:t för användare som har köpt Real-time Customer Data Platform Ultimate.
 
 Med Adobe Experience Platform kan data hämtas från externa källor samtidigt som du kan strukturera, märka och förbättra inkommande data med hjälp av plattformstjänster. Du kan importera data från en mängd olika källor, till exempel Adobe-program, molnbaserad lagring, databaser och många andra.
 
