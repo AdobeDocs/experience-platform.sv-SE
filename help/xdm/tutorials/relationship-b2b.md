@@ -2,9 +2,9 @@
 title: Definiera en relation mellan två scheman i Real-time Customer Data Platform B2B Edition
 description: Lär dig hur du definierar en många-till-ett-relation mellan två scheman i Adobe Real-time Customer Data Platform B2B Edition.
 exl-id: 14032754-c7f5-46b6-90e6-c6e99af1efba
-source-git-commit: c2832821ea6f9f630e480c6412ca07af788efd66
+source-git-commit: 85d6cf10599d153a15c1bd56067f57439ddd0133
 workflow-type: tm+mt
-source-wordcount: '1332'
+source-wordcount: '1724'
 ht-degree: 0%
 
 ---
@@ -65,19 +65,19 @@ För att ta hänsyn till detta innehåller alla standardklasser B2B nyckelfält 
 
 I följande avsnitt beskrivs strukturen för varje schema som används i den här självstudiekursen innan en relation har definierats. Observera var de primära identiteterna har definierats i schemastrukturen och vilka anpassade namnutrymmen de använder.
 
-### [!DNL Opportunities]-schema
+### Schema för affärsmöjligheter
 
 Källschemat [!DNL Opportunities] baseras på klassen [!UICONTROL XDM Business Opportunity]. Ett av fälten som tillhandahålls av klassen, `opportunityKey`, fungerar som identifierare för schemat. Fältet `sourceKey` under objektet `opportunityKey` anges som schemats primära identitet under ett anpassat namnområde med namnet [!DNL B2B Opportunity].
 
-Som framgår av **[!UICONTROL Schema Properties]** har det här schemat aktiverats för användning i [!DNL Real-Time Customer Profile].
+Som framgår av **[!UICONTROL Field Properties]** har det här schemat aktiverats för användning i [!DNL Real-Time Customer Profile].
 
-![Schema för affärsmöjligheter](../images/tutorials/relationship-b2b/opportunities.png)
+![Schemat för affärsmöjligheter i Schemaredigeraren med objektet OpportunityKey och växlingsknappen Enable for profile markerad.](../images/tutorials/relationship-b2b/opportunities.png)
 
 ### [!DNL Accounts]-schema
 
 Referensschemat [!DNL Accounts] baseras på klassen [!UICONTROL XDM Account]. Fältet `accountKey` på rotnivå innehåller det `sourceKey` som fungerar som dess primära identitet under ett anpassat namnområde med namnet [!DNL B2B Account]. Det här schemat har också aktiverats för användning i profilen.
 
-![Kontoschema](../images/tutorials/relationship-b2b/accounts.png)
+![Kontoschemat i Schemaredigeraren med objektet accountKey och växlingsknappen Enable for profile markerad.](../images/tutorials/relationship-b2b/accounts.png)
 
 ## Definiera ett relationsfält för källschemat {#relationship-field}
 
@@ -97,29 +97,64 @@ För att kunna definiera en relation mellan två scheman måste källschemat ha 
 >
 >För närvarande kan endast många-till-ett- och en-till-en-relationer definieras från ett källschema till ett referensschema. För en-till-många-relationer måste du definiera relationsfältet i schemat som representerar&quot;många&quot;.
 
-Om du vill ställa in ett relationsfält väljer du pilikonen (![Pilikon](/help/images/icons/alias.png)) bredvid fältet i fråga på arbetsytan. För schemat [!DNL Opportunities] är det här fältet `accountKey.sourceKey` eftersom målet är att upprätta en många-till-ett-relation med ett konto.
+Om du vill ange ett relationsfält markerar du fältet i fråga på arbetsytan, följt av **[!UICONTROL Add relationship]** i sidofältet [!UICONTROL Schema properties]. För schemat [!DNL Opportunities] är det här fältet `accountKey.sourceKey` eftersom målet är att upprätta en många-till-ett-relation med ett konto.
 
-![Relationsknapp](../images/tutorials/relationship-b2b/relationship-button.png)
+![Schemaredigeraren med fältet sourceKey och Lägg till relation markerat.](../images/tutorials/relationship-b2b/add-relationship.png)
 
-En dialogruta visas där du kan ange information om relationen. Relationstypen ställs automatiskt in på **[!UICONTROL Many-to-one]**.
+Dialogrutan [!UICONTROL Add relationship] visas. Använd den här dialogrutan för att ange relationsinformation. Relationstypen är inställd på **[!UICONTROL Many-to-one]** som standard.
 
-![Dialogrutan Relation](../images/tutorials/relationship-b2b/relationship-dialog.png)
+![Dialogrutan Lägg till relation med många-till-ett-schemarelation är markerad.](../images/tutorials/relationship-b2b/relationship-dialog.png)
 
-Under **[!UICONTROL Reference Schema]** använder du sökfältet för att hitta namnet på referensschemat. När du markerar referensschemats namn uppdateras fältet **[!UICONTROL Reference Identity Namespace]** automatiskt till namnområdet för schemats primära identitet.
+Under **[!UICONTROL Reference Schema]** använder du sökfältet eller listrutemenyn för att hitta namnet på referensschemat. När du markerar referensschemats namn uppdateras fältet **[!UICONTROL Reference Identity Namespace]** automatiskt till namnområdet för referensschemats primära identitet.
 
-![Referensschema](../images/tutorials/relationship-b2b/reference-schema.png)
+>[!NOTE]
+>
+>Listan med tillgängliga referensscheman filtreras så att den endast innehåller lämpliga scheman. Scheman **måste** ha en tilldelad primär identitet och vara antingen en B2B-klass eller en individuell profilklass. Scheman för klassen Prospect kan inte ha relationer.
 
-Under **[!UICONTROL Relationship Name From Current Schema]** och **[!UICONTROL Relationship Name From Reference Schema]** anger du egna namn för relationen i sammanhanget för käll- respektive referensscheman. När du är klar väljer du **[!UICONTROL Save]** för att tillämpa ändringarna och spara schemat.
+![Dialogrutan Lägg till relation med namnområdesfälten för referensschema och referensidentitet är markerad.](../images/tutorials/relationship-b2b/reference-schema.png)
 
-![Relationsnamn](../images/tutorials/relationship-b2b/relationship-name.png)
+Under **[!UICONTROL Relationship Name From Current Schema]** och **[!UICONTROL Relationship Name From Reference Schema]** anger du egna namn för relationen i sammanhanget för käll- respektive referensscheman. När du är klar väljer du **[!UICONTROL Apply]** för att bekräfta ändringarna och spara relationen.
 
-Arbetsytan visas igen med relationsfältet markerat med det egna namn du angav tidigare. Relationsnamnet visas även under den vänstra listen för enkel referens.
+>[!NOTE]
+>
+>Relationsnamn får innehålla högst 35 tecken.
 
-![Relation används](../images/tutorials/relationship-b2b/relationship-applied.png)
+![Dialogrutan Lägg till relation med fältet Relationsnamn markerat.](../images/tutorials/relationship-b2b/relationship-name.png)
+
+Arbetsytan visas igen med relationsfältet markerat med det egna namn du angav tidigare. Relationsnamnet visas även i den vänstra listen för enkel referens.
+
+![Schemaredigeraren med det nya relationsnamnet tillämpat.](../images/tutorials/relationship-b2b/relationship-applied.png)
 
 Om du visar referensschemats struktur visas relationsmarkören bredvid schemats primära identitetsfält och i den vänstra listen.
 
-![Relationsmarkör för målschema](../images/tutorials/relationship-b2b/destination-relationship.png)
+![Målschemat i Schemaredigeraren med den nya relationsmarkören markerad.](../images/tutorials/relationship-b2b/destination-relationship.png)
+
+## Redigera en B2B-schemarelation {#edit-schema-relationship}
+
+När en schemarelation har etablerats väljer du relationsfältet i källschemat följt av **[!UICONTROL Edit relationship]**.
+
+>[!NOTE]
+>
+>Om du vill visa alla associerade relationer väljer du det primära identitetsfältet i referensschemat följt av [!UICONTROL View relationships].
+>![Schemaredigeraren med ett relationsfält markerat och Visa relation markerat.](../images/tutorials/relationship-b2b/view-relationships.png "Schemaredigeraren med ett relationsfält valt och Visa relation markerat."){width="100" zoomable="yes"}
+
+![Schemaredigeraren med ett relationsfält och redigeringsrelationen markerad.](../images/tutorials/relationship-b2b/edit-b2b-relationship.png)
+
+Dialogrutan [!UICONTROL Edit relationship] visas. I den här dialogrutan kan du ändra referensschemat och relationsnamnen eller ta bort relationen. Det går inte att ändra relationstypen många-till-en.
+
+![Dialogrutan Redigera relation.](../images/tutorials/relationship-b2b/edit-b2b-relationship-dialog.png)
+
+För att upprätthålla dataintegriteten och undvika avbrott i segmenteringen och andra processer bör du tänka på följande när du hanterar schemarelationer med länkade datauppsättningar:
+
+* Undvik att ta bort relationer direkt om ett schema är associerat med en datauppsättning, eftersom detta kan påverka segmenteringen negativt. Ta i stället bort den associerade datauppsättningen innan du tar bort relationen.
+* Du kan inte ändra referensschemat utan att först ta bort den befintliga relationen. Detta bör dock göras med försiktighet, eftersom borttagning av en relation med en associerad datauppsättning kan få oönskade konsekvenser.
+* Om du lägger till nya relationer till ett schema med befintliga länkade datauppsättningar kanske det inte fungerar som det ska och kan leda till potentiella konflikter.
+
+## Filtrera och söka efter relationer {#filter-and-search}
+
+Du kan filtrera och söka efter specifika relationer inom dina scheman från fliken [!UICONTROL Relationships] på arbetsytan i [!UICONTROL Schemas]. Du kan använda den här vyn för att snabbt hitta och hantera dina relationer. Läs dokumentet om [att utforska schemaresurser](../ui/explore.md#lookup) för detaljerade instruktioner om filtreringsalternativen.
+
+![Fliken Relationer på arbetsytan Scheman.](../images/tutorials/relationship-b2b/relationship-tab.png)
 
 ## Nästa steg
 

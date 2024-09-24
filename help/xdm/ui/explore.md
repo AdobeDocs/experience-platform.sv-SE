@@ -5,9 +5,9 @@ title: Utforska schemaresurser i användargränssnittet
 description: Lär dig utforska befintliga scheman, klasser, schemafältgrupper och datatyper i användargränssnittet i Experience Platform.
 type: Tutorial
 exl-id: b527b2a0-e688-4cfe-a176-282182f252f2
-source-git-commit: c2832821ea6f9f630e480c6412ca07af788efd66
+source-git-commit: 5f9fdc9eff4d8bba049c03058d24e80e9b89e953
 workflow-type: tm+mt
-source-wordcount: '1039'
+source-wordcount: '1292'
 ht-degree: 0%
 
 ---
@@ -20,25 +20,32 @@ Den här självstudiekursen beskriver stegen för att utforska befintliga schema
 
 ## Söka efter en schemaresurs {#lookup}
 
-Välj **[!UICONTROL Schemas]** i den vänstra navigeringen i plattformsgränssnittet. På arbetsytan [!UICONTROL Schemas] finns en **[!UICONTROL Browse]**-flik som du kan använda för att utforska alla scheman i organisationen, tillsammans med ytterligare dedikerade flikar för utforskande av **[!UICONTROL Classes]**, **[!UICONTROL Field groups]** och **[!UICONTROL Data types]**.
+Välj **[!UICONTROL Schemas]** i den vänstra navigeringen i plattformsgränssnittet. På arbetsytan [!UICONTROL Schemas] finns en **[!UICONTROL Browse]**-flik som du kan använda för att utforska alla scheman i organisationen, tillsammans med ytterligare dedikerade flikar för utforska **[!UICONTROL Classes]**, **[!UICONTROL Field groups]**, **[!UICONTROL Data types]** och **[!UICONTROL Relationships]**.
 
-![](../images/ui/explore/tabs.png)
+![Arbetsytan Scheman med flera flikar markerade.](../images/ui/explore/tabs.png)
 
-Filterikonen (![Filterikonbild](/help/images/icons/filter.png)) visar kontroller i den vänstra listen för att begränsa listade resultat. Vilka kontroller som visas varierar beroende på vilken typ av resurs som visas.
+Filterikonen (![Filterikonbild](/help/images/icons/filter.png)) visar kontroller i den vänstra listen för att begränsa listade resultat. Resursfilter är tillgängliga för scheman och relationer på flikarna **[!UICONTROL Browse]** och **[!UICONTROL Relationships]**.
 
-Om du till exempel vill filtrera listan så att endast standarddatatyper som tillhandahålls av Adobe visas, väljer du **[!UICONTROL Datatype]** och **[!UICONTROL Adobe]** under avsnitten **[!UICONTROL Type]** respektive **[!UICONTROL Owner]**.
+På fliken [!UICONTROL Browse] i arbetsytan [!UICONTROL Schemas] kan du filtrera schemalagret. Använd växlingsknappen **[!UICONTROL Included in Profile]** om du bara vill visa scheman som har aktiverats för användning i [Kundprofil för realtid](../../profile/home.md). Använd växlingsknappen **[!UICONTROL Show adhoc schemas]** för att filtrera listan med scheman som skapats med fält som namngetts för att endast användas av en enskild datauppsättning.
 
-Med växlingsknappen **[!UICONTROL Included in Profile]** kan du filtrera resultat så att endast resurser som används i scheman som har aktiverats för användning i [Kundprofil för realtid](../../profile/home.md) visas. Växlingsknappen **[!UICONTROL Show adhoc schemas]** filtrerar listan med scheman som har skapats med fält som endast har namngetts för användning av en enskild datauppsättning.
+![Fliken [!UICONTROL Schemas] Arbetsyta [!UICONTROL Browse] med filterpanelen markerad.](../images/ui/explore/filters.png)
 
-![Fliken [!UICONTROL Schemas] Arbetsyta [!UICONTROL Browse] med filterpanelen markerad.](../images/ui/explore/filter.png)
+På fliken [!UICONTROL Relationship] i arbetsytan [!UICONTROL Schemas] kan du filtrera listan över relationer baserat på fyra kriterier. Filtren innehåller [!UICONTROL Source schema], [!UICONTROL Destination schema], [!UICONTROL Source class] och [!UICONTROL Destination class]. Tabellen nedan innehåller en beskrivning av filtren.
 
-När du visar resurser på flikarna **[!UICONTROL Classes]**, **[!UICONTROL Field groups]** eller **[!UICONTROL Data types]** kan du välja **[!UICONTROL Adobe]** om du bara vill visa standardresurser eller **[!UICONTROL Customer]** om du bara vill visa resurser som har skapats av organisationen.
+| Filter | Beskrivning |
+|-----------------------------------|------------|
+| [!UICONTROL Source schema] | Om du vill visa alla relationer där det valda schemat är startpunkt eller källa, väljer du ett schema i listrutan [!UICONTROL Source schema]. |
+| [!UICONTROL Destination schema] | Om du vill visa alla relationer där det valda schemat är målet eller målet, väljer du ett schema i listrutan [!UICONTROL Destination schema]. |
+| [!UICONTROL Source class] | Om du vill filtrera relationer baserat på den inledande schemats klass väljer du en klass i listrutan [!UICONTROL Source class]. |
+| [!UICONTROL Destination class] | Om du vill visa relationer som slutar med scheman för en viss klass väljer du en klass i listrutan [!UICONTROL Destination class]. |
 
-![](../images/ui/explore/filter-data-type.png)
+{style="table-layout:auto"}
+
+![Fliken Relationer med filteravsnittet markerat.](../images/ui/explore/relationships-filter.png)
 
 Du kan även använda sökfältet för att begränsa resultaten ytterligare.
 
-![](../images/ui/explore/search.png)
+![Fliken Bläddra i arbetsytan Scheman med sökfältet markerat.](../images/ui/explore/search.png)
 
 Resurserna som visas i sökresultaten ordnas först efter matchningar av titel och sedan efter matchningar av beskrivning. Ju fler ord som matchar i någon av dessa kategorier, desto högre visas resursen i listan.
 
@@ -48,11 +55,11 @@ När du har hittat resursen som du vill utforska väljer du resursens namn i lis
 
 När du har valt en resurs öppnas dess struktur på arbetsytan.
 
-![](../images/ui/explore/canvas.png)
+![Arbetsytan Datatyp med datatypen Commerce.](../images/ui/explore/canvas.png)
 
 Alla objekttypsfält som innehåller underegenskaper komprimeras som standard när de först visas på arbetsytan. Om du vill visa underegenskaperna för ett fält markerar du ikonen bredvid namnet.
 
-![](../images/ui/explore/field-expand.png)
+![Arbetsytan Datatyp med utökade fält och underegenskaper markerade.](../images/ui/explore/field-expand.png)
 
 ### Standardklass och fältgruppsindikator {#standard-class-and-field-group-indicator}
 
@@ -72,23 +79,23 @@ Därför bör de flesta av dessa fält uteslutas från datastrukturen när de h�
 
 För varje fält som visas på arbetsytan visas dess motsvarande datatyp bredvid namnet, vilket i en snabbtitt anger vilken typ av data som fältet förväntar sig för inmatning.
 
-![](../images/ui/explore/data-types.png)
+![Datatypen Postal Address visas på arbetsytan med associerade datatyper markerade.](../images/ui/explore/data-types.png)
 
 Alla datatyper som läggs till med hakparenteser (`[]`) representerar en matris med den aktuella datatypen. En datatyp på **[!UICONTROL String]\[]** anger till exempel att en matris med strängvärden förväntas för fältet. Datatypen **[!UICONTROL Payment Item]\[]** anger en array med objekt som överensstämmer med datatypen [!UICONTROL Payment Item].
 
 Om ett matrisfält baseras på en objekttyp kan du markera dess ikon på arbetsytan för att visa de förväntade attributen för varje matrisobjekt.
 
-![](../images/ui/explore/array-type.png)
+![Ett objekt på arbetsytan med ett matrisfält markerat och de förväntade attributen för varje matrisobjekt visas.](../images/ui/explore/array-type.png)
 
 ### [!UICONTROL Field properties] {#field-properties}
 
 När du markerar namnet på ett fält på arbetsytan uppdateras den högra listen så att information om det fältet visas under **[!UICONTROL Field properties]**. Detta kan bland annat innehålla en beskrivning av fältets avsedda användningsfall, standardvärden, mönster, format, oavsett om fältet är obligatoriskt eller inte.
 
-![](../images/ui/explore/field-properties.png)
+![Ett fält har valts från Commerce-datatypen med fältegenskaperna markerade.](../images/ui/explore/field-properties.png)
 
 Om fältet som du inspekterar är ett uppräkningsfält, visar den högra listen även de värden som fältet förväntar sig att ta emot.
 
-![](../images/ui/explore/enum-field.png)
+![Schemaredigeraren med ett markerat fält och uppräkningsvärden och visningsnamn markerade i fältet för fältegenskaper.](../images/ui/explore/enum-field.png)
 
 ### Identitetsfält {#identity}
 
@@ -96,7 +103,7 @@ När du inspekterar scheman som innehåller identitetsfält visas dessa fält i 
 
 Identitetsfält markeras på arbetsytan med en fingeravtrycksikon (![Fingeravtrycksikonbild](/help/images/icons/identity-service.png)). Om du väljer identitetsfältets namn kan du visa ytterligare information som [identitetsnamnområdet](../../identity-service/features/namespaces.md) och om fältet är den primära identiteten för schemat eller inte.
 
-![](../images/ui/explore/identity-field.png)
+![Schemaredigeraren med schemats identitet markerad i den vänstra listen, fältet markerat i schemardiagrammet och identitetsnamnområdet markerat i fältegenskaperna.](../images/ui/explore/identity-field.png)
 
 >[!NOTE]
 >
@@ -104,15 +111,15 @@ Identitetsfält markeras på arbetsytan med en fingeravtrycksikon (![Fingeravtry
 
 ### Relationsfält {#relationship}
 
-Om du inspekterar ett schema som innehåller ett relationsfält visas fältet i den vänstra listen under **[!UICONTROL Relationships]**. Markera relationsfältets namn i den vänstra listen för att visa fältet på arbetsytan, oavsett hur djupt det är kapslat.
+Om du inspekterar ett schema som innehåller ett relationsfält visas fältet i den vänstra listen under **[!UICONTROL Relationships]**. Markera relationsfältets namn i den vänstra listen för att visa fältet på arbetsytan, oavsett hur djupt det är kapslat. Relationsfält markeras också unikt på arbetsytan och visar namnet på referensschemat som fältet länkar till. För organisationer med B2B-funktioner kan anpassade relationsnamn skrivas och visas på arbetsytan i dessa fall.
 
-Relationsfält markeras också unikt på arbetsytan och visar namnet på referensschemat som fältet länkar till. Om du väljer relationsfältets namn kan du visa identitetsnamnområdet för referensschemats primära identitet i den högra listen.
+![Schemaredigeraren med relationsfältet och redigeringsrelationen markerad.](../images/ui/explore/relationship-field.png)
 
-![](../images/ui/explore/relationship-field.png)
+Om du vill visa identitetsnamnområdet för referensschemats primära identitet markerar du relationsfältet och sedan **[!UICONTROL Edit relationship]** i sidofältet [!UICONTROL Field properties]. Parametrarna för relationen visas i dialogrutan [!UICONTROL Edit relationship] som visas.
 
->[!NOTE]
->
->Mer information om hur du använder relationer i XDM-scheman finns i självstudiekursen [Skapa en relation i användargränssnittet](../tutorials/relationship-ui.md).
+![Dialogrutan Redigera relation med relationsparametrarna visas.](../images/ui/explore/edit-relationship-dialog.png)
+
+Mer information om hur du använder relationer i XDM-scheman finns i självstudiekursen [Skapa en relation i användargränssnittet](../tutorials/relationship-ui.md).
 
 ## Nästa steg
 

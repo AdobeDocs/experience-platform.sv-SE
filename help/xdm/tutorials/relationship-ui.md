@@ -5,9 +5,9 @@ title: Definiera en relation mellan två scheman med Schemaredigeraren
 description: I det här dokumentet finns en självstudiekurs för att definiera en relation mellan två scheman med hjälp av Schemaredigeraren i användargränssnittet i Experience Platform.
 type: Tutorial
 exl-id: feed776b-bc8d-459b-9700-e5c9520788c0
-source-git-commit: ba39f62cd77acedb7bfc0081dbb5f59906c9b287
+source-git-commit: 5f9fdc9eff4d8bba049c03058d24e80e9b89e953
 workflow-type: tm+mt
-source-wordcount: '1137'
+source-wordcount: '1342'
 ht-degree: 0%
 
 ---
@@ -109,19 +109,49 @@ När ett dedikerat referensfält har definierats i källschemat kan du ange det 
 
 >[!NOTE]
 >
->Stegen nedan beskriver hur du definierar ett relationsfält med kontrollerna för höger skena på arbetsytan. Om du har tillgång till Real-Time CDP B2B Edition kan du även definiera en 1:1-relation med hjälp av dialogrutan [samma](./relationship-b2b.md#relationship-field) som när du skapar många-till-1-relationer.
+>Relationer stöds bara i strängfält och strängmatrisfält.
 
-Markera fältet `preferredHotel` på arbetsytan och rulla sedan nedåt under **[!UICONTROL Field properties]** tills kryssrutan **[!UICONTROL Relationship]** visas. Markera kryssrutan för att visa de parametrar som krävs för att konfigurera ett relationsfält.
+Markera fältet `preferredHotel` på arbetsytan och välj sedan **[!UICONTROL Add relationship]** i sidofältet **[!UICONTROL Field properties]**.
 
-![](../images/tutorials/relationship/relationship-checkbox.png)
+![Schemaredigeraren med Lägg till relation är markerad i sidofältet för fältegenskaper.](../images/tutorials/relationship/add-relationship.png)
 
-Välj listrutan för **[!UICONTROL Reference schema]** och välj referensschema för relationen (&quot;[!DNL Hotels]&quot; i det här exemplet). Under **[!UICONTROL Reference identity namespace]** markerar du namnområdet för referensschemats identitetsfält (i det här fallet [!DNL Hotel ID]). Välj **[!UICONTROL Apply]** när du är klar.
+Dialogrutan [!UICONTROL Add relationship] visas. I den här dialogrutan kan du ange obligatoriska parametrar för konfigurering av ett relationsfält. För Real-Time CDP B2C-användare kan du **endast** ange en 1:1-relation mellan käll- och referensschemat.
 
-![](../images/tutorials/relationship/reference-schema-id-namespace.png)
+>[!NOTE]
+>
+>Om du har tillgång till Real-Time CDP B2B Edition kan du använda arbetsytans högerkontroller för att definiera ett relationsfält och skapa en många-till-en-relation med dialogrutan [samma](./relationship-b2b.md#relationship-field).
+
+![Dialogrutan Lägg till relation.](../images/tutorials/relationship/add-relationship-dialog.png)
+
+Använd listrutan för **[!UICONTROL Reference schema]** och välj referensschema för relationen (&quot;[!DNL Hotels]&quot; i det här exemplet).
+
+>[!NOTE]
+>
+>Endast scheman som innehåller en primär identitet inkluderas i listrutan för referensschema. Skyddet förhindrar att du av misstag skapar en relation med ett schema som inte är korrekt konfigurerat än.
+
+Referensschemats identitetsnamnområde (i det här fallet [!DNL Hotel ID]) fylls i automatiskt under **[!UICONTROL Reference identity namespace]**. Välj **[!UICONTROL Apply]** när du är klar.
+
+![Dialogrutan Lägg till relation med relationsparametrarna konfigurerade och Använd är markerad.](../images/tutorials/relationship/apply-relationship.png)
 
 Fältet `preferredHotel` är nu markerat som en relation på arbetsytan, med namnet på referensschemat. Välj **[!UICONTROL Save]** om du vill spara ändringarna och slutföra arbetsflödet.
 
-![](../images/tutorials/relationship/relationship-save.png)
+![Schemaredigeraren med relationsreferenserna och Spara är markerade.](../images/tutorials/relationship/relationship-save.png)
+
+### Redigera ett befintligt relationsfält {#edit-relationship}
+
+Om du vill ändra referensschemat markerar du ett fält med en befintlig relation och väljer sedan **[!UICONTROL Edit relationship]** i sidofältet **[!UICONTROL Field properties]**.
+
+![Schemaredigeraren med redigeringsrelationen markerad.](../images/tutorials/relationship/edit-relationship.png)
+
+Dialogrutan [!UICONTROL Edit relationship] visas. Härifrån kan du följa processen som beskrivs i [definiera ett relationsfält](#relationship-field) eller ta bort relationen. Välj **[!UICONTROL Delete relationship]** om du vill ta bort relationen till referensschemat.
+
+![Dialogrutan Redigera relation.](../images/tutorials/relationship/edit-relationship-dialog.png)
+
+## Filtrera och söka efter relationer {#filter-and-search}
+
+Du kan filtrera och söka efter specifika relationer inom dina scheman från fliken [!UICONTROL Relationships] på arbetsytan i [!UICONTROL Schemas]. Du kan använda den här vyn för att snabbt hitta och hantera dina relationer. Läs dokumentet om [att utforska schemaresurser](../ui/explore.md#lookup) för detaljerade instruktioner om filtreringsalternativen.
+
+![Fliken Relationer på arbetsytan Scheman.](../images/tutorials/relationship-b2b/relationship-tab.png)
 
 ## Nästa steg
 
