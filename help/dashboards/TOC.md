@@ -5,9 +5,9 @@ breadcrumb-title: Användarhandbok om instrumentpaneler
 user-guide-description: Lär dig visualisera data i Experience Platform via anpassningsbara instrumentpaneler.
 feature: Dashboards
 role: Developer,User
-source-git-commit: 0970fd8fbea86115d92dc78cdba753da69cc2ee6
+source-git-commit: 18d768f296d1f7087d05208fdff317b2fd9770af
 workflow-type: tm+mt
-source-wordcount: '133'
+source-wordcount: '135'
 ht-degree: 22%
 
 ---
@@ -29,6 +29,7 @@ ht-degree: 22%
       * Filter {#filters}
          * [Datumfilter](data-distiller/query-pro-mode/filters/date-filter.md)
          * [Global filter](data-distiller/query-pro-mode/filters/global-filter.md)
+      * [Detaljgranska](data-distiller/query-pro-mode/drill-through.md)
       * [Visa mer](data-distiller/query-pro-mode/view-more.md)
       * [Visa SQL](data-distiller/query-pro-mode/view-sql.md)
       * [Hämta som CSV](data-distiller/query-pro-mode/download-csv.md)
