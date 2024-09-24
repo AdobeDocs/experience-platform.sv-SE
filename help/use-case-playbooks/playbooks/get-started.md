@@ -4,9 +4,9 @@ title: Kom igång med Use Case Playbooks
 description: Lär dig hur du kommer igång med funktionen Använd fallspelningsböcker.
 role: Admin
 exl-id: 1c39792e-49fe-4c5f-9796-fa29f60b7461
-source-git-commit: 1781aa552107b6ca1fed357c053a4f892960dc55
+source-git-commit: 703c84e61af105bc3933e4750a3cb27df8ac19fe
 workflow-type: tm+mt
-source-wordcount: '929'
+source-wordcount: '928'
 ht-degree: 0%
 
 ---
@@ -105,11 +105,11 @@ Konfigurera även kanaler för spelböcker som innehåller transaktionsmeddeland
 
 ### Tryck kanalyta
 
-Bekräfta att appytorna är konfigurerade från Experience Platform eller datainsamlingsgränssnittet. Så här ser appytorna ut i datainsamlingsmiljön.
+Bekräfta att kanalkonfigurationerna har konfigurerats från Experience Platform eller datainsamlingsgränssnittet. Så här ser kanalkonfigurationer ut i datainsamlingsmiljön.
 
-<!-- ![App surfaces in Data collections](/help/use-case-playbooks/assets/playbooks/get-started/.png) -->
+<!-- ![Channel configurations in Data collections](/help/use-case-playbooks/assets/playbooks/get-started/.png) -->
 
-Välj sedan kanal, plattformar och program som du tittade på i appytskonfigurationerna. Välj **Skicka** för att skapa den push-kanalens yta.
+Välj sedan kanal, plattform och program som du tittade på i kanalkonfigurationerna. Välj **Skicka** för att skapa den push-kanalens yta.
 
 Läs dokumentationen om [hur du ställer in push-kanalsytor](https://experienceleague.adobe.com/docs/journey-optimizer/using/push/push-config/push-configuration.html).
 

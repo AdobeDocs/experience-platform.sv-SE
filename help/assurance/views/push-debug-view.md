@@ -2,9 +2,9 @@
 title: Push-felsökningsvy
 description: Den här vägledningen innehåller information om vyn Push Debug (Push Debug) i Adobe Experience Platform Assurance.
 exl-id: a9558ee2-2e80-4b0d-ab45-2020be85e634
-source-git-commit: 05a7b73da610a30119b4719ae6b6d85f93cdc2ae
+source-git-commit: f9cc088cdda4323c80e35978fcde373cbba9204d
 workflow-type: tm+mt
-source-wordcount: '913'
+source-wordcount: '892'
 ht-degree: 0%
 
 ---
@@ -25,7 +25,7 @@ Den här vyn är bara aktiverad för en enskild klient, så om du väljer en ann
 
 ## Validera inställningar
 
-Fliken **[!UICONTROL Validate Setup]** validerar och ger ytterligare information om programmets push-konfiguration. Det finns tre paneler som utför valideringar. De visar en grön bockmarkering om valideringarna lyckas. Om det finns tre gröna bockmarkeringar har appen konfigurerats korrekt för push-meddelanden, skriver push-tokens till användarprofilen och har en associerad appyta konfigurerad.
+Fliken **[!UICONTROL Validate Setup]** validerar och ger ytterligare information om programmets push-konfiguration. Det finns tre paneler som utför valideringar. De visar en grön bockmarkering om valideringarna lyckas. Om det finns tre gröna bockmarkeringar har appen konfigurerats korrekt för push-meddelanden, skriver push-tokens till användarprofilen och har en associerad kanalkonfiguration konfigurerad.
 
 Om något inte fungerar som väntat visas ett varningsmeddelande med information om hur du åtgärdar problemet:
 
@@ -49,11 +49,9 @@ Längst ned på panelen finns en länk som öppnar den här profilen på en ny f
 
 ### Autentiseringsuppgifter och konfiguration för AppStore
 
-Den här panelen kontrollerar att program-ID:t och meddelandeplattformen som sparades i profilen har en matchande appyta. En appyta är den plats där push-autentiseringsuppgifter för programmet överförs.
+Den här panelen kontrollerar att program-ID:t och meddelandeplattformen som sparades i profilen har en matchande kanalkonfiguration skapad. En kanalkonfiguration är där push-autentiseringsuppgifter för programmet överförs.
 
-Om profilen är giltig visas namnet på appytan, program-ID:t och namnet på meddelandetjänsten.
-
-Längst ned på panelen finns en länk som öppnar den här specifika appytan på en ny flik.
+Om profilen är giltig visas kanalkonfigurationens namn, program-ID:t och meddelandetjänstens namn.
 
 ## Skicka testpush
 
@@ -71,9 +69,9 @@ I rutan **[!UICONTROL Message]** kan du ange en rubrik och brödtext för meddel
 
 ### Skjut mål
 
-I rutan **[!UICONTROL Push Target]** kan du anpassa vilken push-token och appyta som ska användas när push-meddelandet skickas.
+I rutan **[!UICONTROL Push Target]** kan du anpassa vilken push-token och kanalkonfiguration som ska användas när push-meddelandet skickas.
 
-Den här informationen anges som standard om fliken **[!UICONTROL Validate Setup]** visar tre gröna bockmarkeringar. Du kan dock ange en egen push-token och appyta, även om appen inte är helt konfigurerad.
+Den här informationen anges som standard om fliken **[!UICONTROL Validate Setup]** visar tre gröna bockmarkeringar. Du kan dock ange en egen push-token och kanalkonfiguration, även om appen inte är helt konfigurerad.
 
 ![Målfönster](./images/push-debug-view/target-pane.png)
 

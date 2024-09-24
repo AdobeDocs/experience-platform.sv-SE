@@ -4,7 +4,7 @@ title: Navigera till Använd fallspelningsböcker
 description: Lär dig navigera i ett galleri med spelböcker och komma igång med en inspirerande sandlåda.
 role: User
 exl-id: 1f5dae75-1136-4be3-9132-01d36a4066ca
-source-git-commit: 54b3d2ef22f7afb47fa8c9430c5c1645c94c837d
+source-git-commit: 703c84e61af105bc3933e4750a3cb27df8ac19fe
 workflow-type: tm+mt
 source-wordcount: '705'
 ht-degree: 0%
@@ -67,7 +67,7 @@ Konfigurera även kanaler för spelböcker som innehåller transaktionsmeddeland
 
 ### Tryck kanalyta
 
-Bekräfta att appytorna är konfigurerade från Experience Platform eller datainsamlingsgränssnittet. Så här ser appytorna ut i datainsamlingsmiljön.
+Bekräfta att kanalkonfigurationerna har konfigurerats från Experience Platform eller datainsamlingsgränssnittet. Så här ser kanalkonfigurationer ut i datainsamlingsmiljön.
 
 ## Nästa steg {#next-steps}
 
