@@ -4,41 +4,49 @@ solution: Experience Platform
 title: SFTP Source Connector - översikt
 description: Lär dig hur du ansluter en SFTP-server till Adobe Experience Platform med hjälp av API:er eller användargränssnittet.
 exl-id: d5bced3d-cd33-40ea-bce0-32c76ecd2790
-source-git-commit: 6c22f8243269bb304b12a4e4978ed141ed092c67
+source-git-commit: 52c1c8e6bc332bd6ee579cad52a7343007615efd
 workflow-type: tm+mt
-source-wordcount: '750'
+source-wordcount: '1228'
 ht-degree: 0%
 
 ---
 
 # SFTP-anslutning
 
->[!IMPORTANT]
+Med Adobe Experience Platform kan data hämtas från externa källor samtidigt som du kan strukturera, märka och förbättra inkommande data med hjälp av plattformstjänster. Du kan importera data från en mängd olika källor, till exempel Adobe-program, molnbaserad lagring, databaser och många andra.
+
+Läs det här dokumentet om du behöver utföra nödvändiga steg för att kunna ansluta ditt [!DNL SFTP]-konto till Experience Platform.
+
+>[!TIP]
 >
->Servern [!DNL SFTP] som Adobe Experience Platform ansluter till måste ha stöd för chunkning, vilket innebär flera anslutningar till en enda fil. Om din [!DNL SFTP]-server inte stöder chunkning kan du få ett fel som förhindrar att filen hämtas.
+>Du måste inaktivera interaktiv tangentbordsautentisering i SFTP-serverkonfigurationen innan du ansluter. Om du inaktiverar inställningen kan du ange lösenord manuellt, i stället för att skriva in dem via en tjänst eller ett program.
 
-Adobe Experience Platform erbjuder inbyggd anslutning för molnleverantörer som AWS, [!DNL Google Cloud Platform] och [!DNL Azure], vilket gör att du kan hämta data från dessa system.
+## Förhandskrav {#prerequisites}
 
-Molnlagringskällor kan hämta dina egna data till [!DNL Platform] utan att du behöver hämta, formatera eller överföra dem. Inkapslade data kan formateras som XDM JSON, XDM Parquet eller avgränsade. Varje steg i processen är integrerat i arbetsflödet för källor. Med [!DNL Platform] kan du hämta data från en FTP- eller SFTP-server via grupper.
+I det här avsnittet finns information om nödvändiga steg som du måste slutföra för att kunna ansluta [!DNL SFTP]-källan till Experience Platform.
 
-## IP-adress tillåtelselista
+### IP-adress tillåtelselista
 
 En lista med IP-adresser måste läggas till tillåtelselista innan du kan arbeta med källanslutningar. Om du inte lägger till dina regionspecifika IP-adresser i tillåtelselista kan det leda till fel eller sämre prestanda när du använder källor. Mer information finns på sidan [IP-adress tillåtelselista](../../ip-address-allow-list.md).
 
-## Namnbegränsningar för filer och kataloger
+### Namnbegränsningar för filer och kataloger
 
 Nedan följer en lista över begränsningar som du måste ta hänsyn till när du namnger molnlagringsfilen eller -katalogen.
 
-- Katalog- och filkomponentnamn får inte innehålla fler än 255 tecken.
-- Katalog- och filnamn får inte sluta med ett snedstreck (`/`). Den tas bort automatiskt om den anges.
-- Följande reserverade URL-tecken måste ha escape-konverterats: `! ' ( ) ; @ & = + $ , % # [ ]`
-- Följande tecken tillåts inte: `" \ / : | < > * ?`.
-- Ogiltiga URL-sökvägstecken tillåts inte. Kodpunkter som `\uE000` är inte giltiga Unicode-tecken, men de är giltiga i NTFS-filnamn. Dessutom tillåts inte vissa ASCII- eller Unicode-tecken, som kontrolltecken (0x00 till 0x1F, \u0081 osv.). Information om regler som styr Unicode-strängar i HTTP/1.1 finns i [RFC 2616, Section 2.2: Basic Rules](https://www.ietf.org/rfc/rfc2616.txt) och [RFC 3987](https://www.ietf.org/rfc/rfc3987.txt).
-- Följande filnamn tillåts inte: LPT1, LPT2, LPT3, LPT4, LPT5, LPT6, LPT7, LPT8, LPT9, COM1, COM2, COM3, COM4, COM5, COM6, COM7, COM8, COM9, PRN, AUX, NUL, CON, CLOCK$, punkttecken (.) och två punkttecken (. .).
+* Katalog- och filkomponentnamn får inte innehålla fler än 255 tecken.
+* Katalog- och filnamn får inte sluta med ett snedstreck (`/`). Den tas bort automatiskt om den anges.
+* Följande reserverade URL-tecken måste ha escape-konverterats: `! ' ( ) ; @ & = + $ , % # [ ]`
+* Följande tecken tillåts inte: `" \ / : | < > * ?`.
+* Ogiltiga URL-sökvägstecken tillåts inte. Kodpunkter som `\uE000` är inte giltiga Unicode-tecken, men de är giltiga i NTFS-filnamn. Dessutom tillåts inte vissa ASCII- eller Unicode-tecken, som kontrolltecken (0x00 till 0x1F, \u0081 osv.). Information om regler som styr Unicode-strängar i HTTP/1.1 finns i [RFC 2616, Section 2.2: Basic Rules](https://www.ietf.org/rfc/rfc2616.txt) och [RFC 3987](https://www.ietf.org/rfc/rfc3987.txt).
+* Följande filnamn tillåts inte: LPT1, LPT2, LPT3, LPT4, LPT5, LPT6, LPT7, LPT8, LPT9, COM1, COM2, COM3, COM4, COM5, COM6, COM7, COM8, COM9, PRN, AUX, NUL, CON, CLOCK$, punkttecken (.) och två punkttecken (. .).
 
-## Konfigurera en Base64-kodad privat OpenSSH-nyckel för [!DNL SFTP]
+### Konfigurera en Base64-kodad privat OpenSSH-nyckel för [!DNL SFTP]
 
 Källan [!DNL SFTP] stöder autentisering med [!DNL Base64]-kodad privat nyckel för OpenSSH. Se stegen nedan för mer information om hur du skapar den Base64-kodade privata OpenSSH-nyckeln och ansluter [!DNL SFTP] till plattformen.
+
+>[!BEGINTABS]
+
+>[!TAB Windows]
 
 ### [!DNL Windows] användare
 
@@ -92,6 +100,8 @@ C:\Users\lucy> [convert]::ToBase64String((Get-Content -path "C:\Users\lucy\.ssh\
 
 Ovanstående kommando sparar den [!DNL Base64]-kodade privata nyckeln i den sökväg du angav. Du kan sedan använda den privata nyckeln för att autentisera till [!DNL SFTP] och ansluta till plattformen.
 
+>[!TAB Mac]
+
 ### [!DNL Mac] användare
 
 Om du använder en [!DNL Mac] öppnar du **Terminal** och kör följande kommando för att generera den privata nyckeln (i det här fallet sparas den privata nyckeln i `/Documents/id_rsa`):
@@ -142,21 +152,59 @@ Du kan kontrollera om den offentliga nyckeln har lagts till korrekt genom att k�
 more ~/.ssh/authorized_keys
 ```
 
-## Anslut SFTP till [!DNL Platform]
+>[!ENDTABS]
 
->[!IMPORTANT]
->
->Användarna måste inaktivera interaktiv tangentbordsautentisering i SFTP-serverkonfigurationen innan de ansluter. Om du inaktiverar inställningen kan du ange lösenord manuellt, i stället för att skriva in dem via en tjänst eller ett program. Mer information om interaktiv autentisering för tangentbord finns i [Component Pro-dokumentet](https://doc.componentpro.com/ComponentPro-Sftp/authenticating-with-a-keyboard-interactive-authentication).
+### Samla in nödvändiga inloggningsuppgifter {#credentials}
 
-Dokumentationen nedan innehåller information om hur du ansluter en SFTP-server till [!DNL Platform] med API:er eller användargränssnittet:
+Du måste ange värden för följande autentiseringsuppgifter för att kunna ansluta [!DNL SFTP]-servern till Experience Platform.
+
+>[!BEGINTABS]
+
+>[!TAB Grundläggande autentisering]
+
+Ange lämpliga värden för följande autentiseringsuppgifter för att autentisera [!DNL SFTP]-servern med grundläggande autentisering.
+
+| Autentiseringsuppgifter | Beskrivning |
+| ---------- | ----------- |
+| `host` | Namnet eller IP-adressen som är associerad med [!DNL SFTP]-servern. |
+| `port` | Serverporten [!DNL SFTP] som du ansluter till. Om det inte anges används standardvärdet `22`. |
+| `username` | Användarnamnet med åtkomst till din [!DNL SFTP]-server. |
+| `password` | Lösenordet för din [!DNL SFTP]-server. |
+| `maxConcurrentConnections` | Med den här parametern kan du ange en maxgräns för hur många samtidiga anslutningar som plattformen skapar vid anslutning till SFTP-servern. Du måste ange att det här värdet ska vara mindre än gränsen som anges av SFTP. **Obs!** När den här inställningen är aktiverad för ett befintligt SFTP-konto påverkas bara framtida dataflöden och inte befintliga dataflöden. |
+| `folderPath` | Sökvägen till mappen som du vill ge åtkomst till. [!DNL SFTP]-källan kan du ange mappsökvägen för att ange användaråtkomst till den undermapp som du väljer. |
+| `disableChunking` | Under datainmatningen kan källan [!DNL SFTP] hämta fillängden först, dela upp filen i flera delar och sedan läsa dem parallellt. Du kan aktivera eller inaktivera det här värdet för att ange om [!DNL SFTP]-servern kan hämta fillängder eller läsa data från en viss förskjutning. |
+| `connectionSpec.id` | (Endast API) Anslutningsspecifikationen returnerar en källas kopplingsegenskaper, inklusive autentiseringsspecifikationer som relaterar till att skapa bas- och källanslutningarna. Anslutningsspecifikations-ID för [!DNL SFTP] är: `b7bf2577-4520-42c9-bae9-cad01560f7bc`. |
+
+>[!TAB SSH-autentisering med offentlig nyckel]
+
+Ange lämpliga värden för följande autentiseringsuppgifter för att autentisera [!DNL SFTP]-servern med autentisering med offentlig nyckel för SSH.
+
+| Autentiseringsuppgifter | Beskrivning |
+| ---------- | ----------- |
+| `host` | Namnet eller IP-adressen som är associerad med [!DNL SFTP]-servern. |
+| `port` | Serverporten [!DNL SFTP] som du ansluter till. Om det inte anges används standardvärdet `22`. |
+| `username` | Användarnamnet med åtkomst till din [!DNL SFTP]-server. |
+| `password` | Lösenordet för din [!DNL SFTP]-server. |
+| `privateKeyContent` | Base64-kodat innehåll för privat SSH-nyckel. Typen av OpenSSH-nyckel måste klassificeras som antingen RSA eller DSA. |
+| `passPhrase` | Lösenordsfrasen eller lösenordet för att dekryptera den privata nyckeln om nyckelfilen eller nyckelinnehållet skyddas av en lösenordsfras. Om PrivateKeyContent är lösenordsskyddat måste den här parametern användas med PrivateKeyContent-innehållets lösenfras som värde. |
+| `maxConcurrentConnections` | Med den här parametern kan du ange en maxgräns för hur många samtidiga anslutningar som plattformen skapar vid anslutning till SFTP-servern. Du måste ange att det här värdet ska vara mindre än gränsen som anges av SFTP. **Obs!** När den här inställningen är aktiverad för ett befintligt SFTP-konto påverkas bara framtida dataflöden och inte befintliga dataflöden. |
+| `folderPath` | Sökvägen till mappen som du vill ge åtkomst till. [!DNL SFTP]-källan kan du ange mappsökvägen för att ange användaråtkomst till den undermapp som du väljer. |
+| `disableChunking` | Under datainmatningen kan källan [!DNL SFTP] hämta fillängden först, dela upp filen i flera delar och sedan läsa dem parallellt. Du kan aktivera eller inaktivera det här värdet för att ange om [!DNL SFTP]-servern kan hämta fillängder eller läsa data från en viss förskjutning. |
+| `connectionSpec.id` | (Endast API) Anslutningsspecifikationen returnerar en källas kopplingsegenskaper, inklusive autentiseringsspecifikationer som relaterar till att skapa bas- och källanslutningarna. Anslutningsspecifikations-ID för [!DNL SFTP] är: `b7bf2577-4520-42c9-bae9-cad01560f7bc`. |
+
+>[!ENDTABS]
+
+## Anslut SFTP till Experience Platform
+
+Dokumentationen nedan innehåller information om hur du ansluter en SFTP-server till Experience Platform med hjälp av API:er eller användargränssnittet:
 
 ### Använda API:er
 
-- [Skapa en SFTP-basanslutning med API:t för Flow Service](../../tutorials/api/create/cloud-storage/sftp.md)
-- [Utforska datastrukturen och innehållet i en molnlagringskälla med API:t för Flow Service](../../tutorials/api/explore/cloud-storage.md)
-- [Skapa ett dataflöde för en molnlagringskälla med API:t för Flow Service](../../tutorials/api/collect/cloud-storage.md)
+* [Skapa en SFTP-basanslutning med API:t för Flow Service](../../tutorials/api/create/cloud-storage/sftp.md)
+* [Utforska datastrukturen och innehållet i en molnlagringskälla med API:t för Flow Service](../../tutorials/api/explore/cloud-storage.md)
+* [Skapa ett dataflöde för en molnlagringskälla med API:t för Flow Service](../../tutorials/api/collect/cloud-storage.md)
 
 ### Använda gränssnittet
 
-- [Skapa en SFTP-källanslutning i användargränssnittet](../../tutorials/ui/create/cloud-storage/sftp.md)
-- [Skapa ett dataflöde för en molnlagringsanslutning i användargränssnittet](../../tutorials/ui/dataflow/batch/cloud-storage.md)
+* [Skapa en SFTP-källanslutning i användargränssnittet](../../tutorials/ui/create/cloud-storage/sftp.md)
+* [Skapa ett dataflöde för en molnlagringsanslutning i användargränssnittet](../../tutorials/ui/dataflow/batch/cloud-storage.md)
