@@ -3,9 +3,9 @@ title: Länkningsregler för identitetsdiagram
 description: Lär dig mer om länkningsregler för identitetsdiagram i identitetstjänsten.
 badge: Beta
 exl-id: 317df52a-d3ae-4c21-bcac-802dceed4e53
-source-git-commit: 1ea840e2c6c44d5d5080e0a034fcdab4cbdc87f1
+source-git-commit: a4e5ab14904fe17aa8bab2f8555ae6d535c856e8
 workflow-type: tm+mt
-source-wordcount: '1581'
+source-wordcount: '1427'
 ht-degree: 0%
 
 ---
@@ -30,13 +30,53 @@ Följande dokument är viktiga när det gäller att förstå regler för länkni
 * [Gränssnitt för diagramsimulering](./graph-simulation.md)
 * [Användargränssnitt för identitetsinställningar](./identity-settings-ui.md)
 
-## Exempel på scenarier där komprimering av diagram kan inträffa
+## Exempel på scenarier där komprimering av diagram kan inträffa {#example-scenarios-where-graph-collapse-could-happen}
 
-* **Delad enhet**: Delad enhet avser enheter som används av mer än en person. Exempel på delade enheter är surfplattor, biblioteksdatorer och kioskdatorer.
-* **Felaktiga e-post- och telefonnummer**: Felaktiga e-post- och telefonnummer hänvisar till att slutanvändare registrerar ogiltig kontaktinformation, till exempel&quot;test<span>@test.com&quot; för e-post och&quot;+1-111-1111&quot; för telefonnummer.
-* **Felaktiga eller felaktiga identitetsvärden**: Felaktiga eller felaktiga identitetsvärden refererar till icke-unika identitetsvärden som kan sammanfoga CRMID:n. IDFA:er måste till exempel ha 36 tecken (32 alfanumeriska tecken och fyra bindestreck), men det finns scenarier där en IDFA med identitetsvärdet &quot;user_null&quot; kan importeras. Telefonnummer har på liknande sätt bara stöd för numeriska tecken, men ett telefonnamnutrymme med identitetsvärdet &quot;inte specificerat&quot; kan kapslas.
+I det här avsnittet beskrivs exempelscenarier som du kan överväga när du konfigurerar länkningsregler för identitetsdiagram.
 
-Mer information om användningsscenarier för länkningsregler för identitetsdiagram finns i avsnittet om [exempelscenarier](#example-scenarios).
+### Delad enhet
+
+Det finns instanser där flera inloggningar kan förekomma på en enda enhet:
+
+| Delad enhet | Beskrivning |
+| --- | --- |
+| Familjedatorer och surfplattor | Man och hustru loggar båda in på sina respektive bankkonton. |
+| Publik kiosk | Resenärer på en flygplats som loggar in med sitt lojalitets-ID för att checka in väskor och skriva ut boardingkort. |
+| Callcenter | Anställda på kundtjänst loggar in på en enda enhet för kunder som ringer kundsupport för att lösa problem. |
+
+![Ett diagram över vissa delade enheter.](../images/identity-settings/shared-devices.png)
+
+I dessa fall kommer ett enda ECID att länkas till flera CRMID från en diagramsynvinkel utan att några gränser är aktiverade.
+
+Med länkningsregler för identitetsdiagram kan du:
+
+* Konfigurera det ID som används för inloggning som unik identifierare. Du kan t.ex. begränsa ett diagram så att bara en identitet lagras med ett CRMID-namnutrymme och därmed definiera det CRMID:t som den unika identifieraren för en delad enhet.
+   * På så sätt kan du se till att CRMID inte sammanfogas med ECID.
+
+### Ogiltiga e-post-/telefonscenarier
+
+Det finns även instanser av användare som anger falska värden som telefonnummer och/eller e-postadresser när de registrerar sig. I dessa fall, om begränsningar inte är aktiverade, kommer telefon-/e-postrelaterade identiteter att länkas till flera olika CRMID:n.
+
+![Ett diagram som representerar ogiltiga e-post- eller telefonscenarier.](../images/identity-settings/invalid-email-phone.png)
+
+Med länkningsregler för identitetsdiagram kan du:
+
+* Konfigurera antingen CRMID, telefonnummer eller e-postadress som unik identifierare och begränsa därmed en person till endast ett CRMID, telefonnummer och/eller e-postadress som är kopplad till deras konto.
+
+### Felaktiga eller felaktiga identitetsvärden
+
+Det finns fall där icke-unika, felaktiga identitetsvärden är inkapslade i systemet, oavsett namnutrymme. Exempel:
+
+* IDFA-namnutrymme med identitetsvärdet &quot;user_null&quot;.
+   * IDFA-identitetsvärden ska innehålla 36 tecken: 32 alfanumeriska tecken och fyra bindestreck.
+* Namnområde för telefonnummer med identitetsvärdet &quot;ej angivet&quot;.
+   * Telefonnummer får inte innehålla några alfabet.
+
+Dessa identiteter kan resultera i följande diagram, där flera CRMID sammanfogas med den felaktiga identiteten:
+
+![Ett diagramexempel på identitetsdata med felaktiga eller felaktiga identitetsvärden.](../images/identity-settings/bad-data.png)
+
+Med länkningsregler för identitetsdiagram kan du konfigurera CRMID som den unika identifieraren för att förhindra att oönskade profiler komprimeras på grund av den här typen av data.
 
 ## Länkningsregler för identitetsdiagram {#identity-graph-linking-rules}
 
@@ -95,55 +135,6 @@ Både unika namnutrymmen och namnområdesprioriteter kan konfigureras på arbets
 * Om en upplevelsehändelse har två eller flera identiteter med den högsta namnområdesprioriteten i identityMap, kommer den att nekas att matas in eftersom den betraktas som &quot;felaktiga data&quot;. Om identityMap till exempel innehåller `{ECID: 111, CRMID: John, CRMID: Jane}` kommer hela händelsen att avvisas som felaktiga data eftersom det betyder att händelsen är kopplad till både `CRMID: John` och `CRMID: Jane` samtidigt.
 
 Mer information finns i handboken om [namnområdesprioritet](./namespace-priority.md).
-
-## Exempel på kundscenarier som lösts av länkningsregler för identitetsdiagram {#example-scenarios}
-
-I det här avsnittet beskrivs exempelscenarier som du kan överväga när du konfigurerar länkningsregler för identitetsdiagram.
-
-### Delad enhet
-
-Det finns instanser där flera inloggningar kan förekomma på en enda enhet:
-
-| Delad enhet | Beskrivning |
-| --- | --- |
-| Familjedatorer och surfplattor | Man och hustru loggar båda in på sina respektive bankkonton. |
-| Publik kiosk | Resenärer på en flygplats som loggar in med sitt lojalitets-ID för att checka in väskor och skriva ut boardingkort. |
-| Callcenter | Anställda på kundtjänst loggar in på en enda enhet för kunder som ringer kundsupport för att lösa problem. |
-
-![Ett diagram över vissa delade enheter.](../images/identity-settings/shared-devices.png)
-
-I dessa fall kommer ett enda ECID att länkas till flera CRMID från en diagramsynvinkel utan att några gränser är aktiverade.
-
-Med länkningsregler för identitetsdiagram kan du:
-
-* Konfigurera det ID som används för inloggning som unik identifierare. Du kan t.ex. begränsa ett diagram så att bara en identitet lagras med ett CRMID-namnutrymme och därmed definiera det CRMID:t som den unika identifieraren för en delad enhet.
-   * På så sätt kan du se till att CRMID inte sammanfogas med ECID.
-
-### Ogiltiga e-post-/telefonscenarier
-
-Det finns även instanser av användare som anger falska värden som telefonnummer och/eller e-postadresser när de registrerar sig. I dessa fall, om begränsningar inte är aktiverade, kommer telefon-/e-postrelaterade identiteter att länkas till flera olika CRMID:n.
-
-![Ett diagram som representerar ogiltiga e-post- eller telefonscenarier.](../images/identity-settings/invalid-email-phone.png)
-
-Med länkningsregler för identitetsdiagram kan du:
-
-* Konfigurera antingen CRMID, telefonnummer eller e-postadress som unik identifierare och begränsa därmed en person till endast ett CRMID, telefonnummer och/eller e-postadress som är kopplad till deras konto.
-
-### Felaktiga eller felaktiga identitetsvärden
-
-Det finns fall där icke-unika, felaktiga identitetsvärden är inkapslade i systemet, oavsett namnutrymme. Exempel:
-
-* IDFA-namnutrymme med identitetsvärdet &quot;user_null&quot;.
-   * IDFA-identitetsvärden ska innehålla 36 tecken: 32 alfanumeriska tecken och fyra bindestreck.
-* Namnområde för telefonnummer med identitetsvärdet &quot;ej angivet&quot;.
-   * Telefonnummer får inte innehålla några alfabet.
-
-Dessa identiteter kan resultera i följande diagram, där flera CRMID sammanfogas med den felaktiga identiteten:
-
-![Ett diagramexempel på identitetsdata med felaktiga eller felaktiga identitetsvärden.](../images/identity-settings/bad-data.png)
-
-Med länkningsregler för identitetsdiagram kan du konfigurera CRMID som den unika identifieraren för att förhindra att oönskade profiler komprimeras på grund av den här typen av data.
-
 
 ## Nästa steg
 

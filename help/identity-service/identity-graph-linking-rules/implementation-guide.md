@@ -3,9 +3,9 @@ title: Implementeringsguide för regler för länkning av identitetsdiagram
 description: Lär dig de rekommenderade stegen som ska följas när du implementerar data med länkningsregler för identitetsdiagram.
 badge: Beta
 exl-id: 368f4d4e-9757-4739-aaea-3f200973ef5a
-source-git-commit: 1ea840e2c6c44d5d5080e0a034fcdab4cbdc87f1
+source-git-commit: 0dadff9e2719c9cd24dcc17b759ff7e732282888
 workflow-type: tm+mt
-source-wordcount: '1390'
+source-wordcount: '1462'
 ht-degree: 0%
 
 ---
@@ -20,16 +20,89 @@ Läs det här dokumentet för att få en stegvis handledning som du kan följa n
 
 Stegvisa dispositioner:
 
-1. [Skapa nödvändiga identitetsnamnutrymmen](#namespace)
-2. [Använd verktyget för diagramsimulering för att bekanta dig med algoritmen för identitetsoptimering](#graph-simulation)
-3. [Använd identitetsinställningsverktyget för att ange unika namnutrymmen och konfigurera prioritetsklassificeringar för dina namnutrymmen](#identity-settings)
-4. [Skapa ett XDM-schema (Experience Data Model)](#schema)
-5. [Skapa en datauppsättning](#dataset)
-6. [Importera data till Experience Platform](#ingest)
 
-## Förutsättningar för implementering
+1. [Kompletta krav för implementering](#prerequisites-for-implementation)
+2. [Skapa nödvändiga identitetsnamnutrymmen](#namespace)
+3. [Använd verktyget för diagramsimulering för att bekanta dig med algoritmen för identitetsoptimering](#graph-simulation)
+4. [Använd identitetsinställningsverktyget för att ange unika namnutrymmen och konfigurera prioritetsklassificeringar för dina namnutrymmen](#identity-settings)
+5. [Skapa ett XDM-schema (Experience Data Model)](#schema)
+6. [Skapa en datauppsättning](#dataset)
+7. [Importera data till Experience Platform](#ingest)
 
-Innan du kan komma igång måste du se till att autentiserade händelser i systemet alltid innehåller en personidentifierare.
+## Krav för implementering {#prerequisites-for-implementation}
+
+I det här avsnittet beskrivs nödvändiga steg som du måste slutföra innan du implementerar länkningsregler för identitetsdiagram till dina data.
+
+### Unikt namnutrymme
+
+#### Krav på namnutrymme för en person {#single-person-namespace-requirement}
+
+Du måste se till att det unika namnutrymmet med den högsta prioriteten alltid finns i alla profiler. Om du gör det kan identitetstjänsten identifiera rätt personidentifierare i ett visst diagram.
+
++++Markera om du vill visa ett exempel på ett diagram utan ett namnutrymme för en identifierare
+
+Utan ett unikt namnutrymme som representerar dina personidentifierare kan det uppstå ett diagram som länkar till olika personidentifierare till samma ECID. I det här exemplet är både B2BCRM och B2CCRM kopplade till samma ECID samtidigt. I det här diagrammet visas att Tom med sitt B2C-inloggningskonto delade en enhet med sommaren med hjälp av sitt B2B-inloggningskonto. Systemet kommer dock att känna igen att detta är en profil (komprimering av diagram).
+
+![Ett diagramscenario där två personidentifierare är länkade till samma ECID.](../images/graph-examples/multi_namespaces.png)
+
++++
+
++++Markera om du vill visa ett exempel på ett diagram med ett namnutrymme för en person-ID
+
+Med ett unikt namnutrymme (i det här fallet ett CRMID i stället för två olika namnutrymmen) kan identitetstjänsten identifiera den personidentifierare som senast var associerad med ECID. I det här exemplet, eftersom det finns ett unikt CRMID, kan identitetstjänsten identifiera ett scenario med delade enheter, där två enheter delar samma enhet.
+
+![Ett delat enhetsgrafscenario där två personidentifierare är länkade till samma ECID, men den äldre länken tas bort.](../images/graph-examples/crmid_only_multi.png)
+
++++
+
+### Konfiguration av namnområdesprioritet
+
+Om du använder [Adobe Analytics-källkopplingen](../../sources/tutorials/ui/create/adobe-applications/analytics.md) för att importera data måste du ge dina ECID högre prioritet än Adobe Analytics ID (AAID) eftersom identitetstjänsten blockerar AAID. Genom att prioritera ECID kan du instruera kundprofilen i realtid att lagra oautentiserade händelser i ECID i stället för i AID.
+
+### XDM-upplevelsehändelser
+
+* Under förimplementeringsprocessen måste du se till att de autentiserade händelser som skickas till Experience Platform alltid innehåller en personidentifierare, till exempel CRMID.
+* Skicka inte en tom sträng som identitetsvärde när händelser skickas med XDM-upplevelsehändelser. Om du gör det kommer det att leda till systemfel.
+
++++Välj för att visa ett exempel på en nyttolast med en tom sträng
+
+I följande exempel returneras ett fel eftersom identitetsvärdet för `Phone` skickas som en tom sträng.
+
+```json
+    "identityMap": {
+        "ECID": [
+            {
+                "id": "24165048599243194405404369473457348936",
+                "primary": false
+            }
+        ],
+        "Phone": [
+            {
+                "id": "",
+                "primary": true
+            }
+        ]
+    }
+```
+
++++
+
+Du måste se till att du har en fullständigt kvalificerad identitet när du skickar händelser med XDM-upplevelsehändelser.
+
++++Välj för att visa ett exempel på en händelse med en fullständigt kvalificerad identitet
+
+```json
+    "identityMap": {
+        "ECID": [
+            {
+                "id": "24165048599243194405404369473457348936",
+                "primary": false
+            }
+        ]
+    }
+```
+
++++
 
 ## Ange behörigheter {#set-permissions}
 
@@ -72,12 +145,6 @@ Instruktioner om hur du skapar en datauppsättning finns i [användargränssnitt
 
 ## Infoga era data {#ingest}
 
->[!WARNING]
->
->* Under förimplementeringsprocessen måste du se till att de autentiserade händelser som skickas till Experience Platform alltid innehåller en personidentifierare, till exempel CRMID.
->* Under implementeringen måste du se till att det unika namnutrymmet med den högsta prioriteten alltid finns i alla profiler. I [bilagan](#appendix) finns exempel på diagramscenarier som löses genom att säkerställa att alla profiler innehåller det unika namnutrymmet med högsta prioritet.
->* Om du använder [Adobe Analytics-källkopplingen](../../sources/tutorials/ui/create/adobe-applications/analytics.md) för att importera data, måste du ge dina ECID högre prioritet än AID eftersom identitetstjänsten blockerar AAID. Genom att prioritera ECID kan du instruera kundprofilen i realtid att lagra oautentiserade händelser i ECID i stället för i AID.
-
 Nu bör du ha följande:
 
 * Nödvändiga behörigheter för att komma åt identitetstjänstens funktioner.
@@ -101,26 +168,6 @@ Använd alternativet **[!UICONTROL Beta feedback]** på identitetstjänstens arb
 ## Bilaga {#appendix}
 
 I det här avsnittet finns mer information som du kan referera till när du implementerar dina identitetsinställningar och unika namnutrymmen.
-
-### Krav på namnutrymme för en person {#single-person-namespace-requirement}
-
-Du måste se till att ett enda namnutrymme används i alla profiler som representerar en person. Om du gör det kan identitetstjänsten identifiera rätt personidentifierare i ett visst diagram.
-
->[!BEGINTABS]
-
->[!TAB Utan ett namnutrymme för en identifierare]
-
-Utan ett unikt namnutrymme som representerar dina personidentifierare kan det uppstå ett diagram som länkar till olika personidentifierare till samma ECID. I det här exemplet är både B2BCRM och B2CCRM kopplade till samma ECID samtidigt. I det här diagrammet visas att Tom med sitt B2C-inloggningskonto delade en enhet med sommaren med hjälp av sitt B2B-inloggningskonto. Systemet kommer dock att känna igen att detta är en profil (komprimering av diagram).
-
-![Ett diagramscenario där två personidentifierare är länkade till samma ECID.](../images/graph-examples/multi_namespaces.png)
-
->[!TAB Med en identifierare för en person ]
-
-Med ett unikt namnutrymme (i det här fallet ett CRMID i stället för två olika namnutrymmen) kan identitetstjänsten identifiera den personidentifierare som senast var associerad med ECID. I det här exemplet, eftersom det finns ett unikt CRMID, kan identitetstjänsten identifiera ett scenario med delade enheter, där två enheter delar samma enhet.
-
-![Ett delat enhetsgrafscenario där två personidentifierare är länkade till samma ECID, men den äldre länken tas bort.](../images/graph-examples/crmid_only_multi.png)
-
->[!ENDTABS]
 
 ### Inloggnings-ID-scenariot kraschar {#dangling-loginid-scenario}
 
