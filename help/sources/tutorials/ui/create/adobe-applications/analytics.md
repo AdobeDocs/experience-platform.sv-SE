@@ -2,9 +2,9 @@
 title: Skapa en Adobe Analytics Source-anslutning i användargränssnittet
 description: Lär dig hur du skapar en Adobe Analytics-källanslutning i användargränssnittet för att överföra konsumentdata till Adobe Experience Platform.
 exl-id: 5ddbaf63-feaa-44f5-b2f2-2d5ae507f423
-source-git-commit: 40ad3101f643e6ce1b24d2a02c1817cfe04bd5d5
+source-git-commit: 71932d6f743d8cf767ce4e088231e61e9c2160e0
 workflow-type: tm+mt
-source-wordcount: '2457'
+source-wordcount: '2550'
 ht-degree: 0%
 
 ---
@@ -312,6 +312,13 @@ Mer information om bakåtfyllnad, livedata och deras respektive latenser finns i
 >[!NOTE]
 >
 >Aktivitetssidan för datauppsättningen visar ingen information om batchar eftersom källkopplingen för Analytics hanteras helt av Adobe. Ni kan övervaka att data flödar genom att titta på mätvärdena runt inkapslade poster.
+
+## Ta bort ditt dataflöde {#delete-dataflow}
+
+Om du vill ta bort Analytics-dataflödet väljer du **[!UICONTROL Dataflows]** i det övre huvudet på källarbetsytan. Använd dataflödessidan för att hitta Analytics-dataflödet som du vill ta bort och markera sedan ellipserna (`...`) bredvid det. Använd sedan listrutan och välj **[!UICONTROL Delete]**.
+
+* Om du tar bort liveanalysdataflödet tas även dess underliggande datauppsättning bort.
+* Om du tar bort dataflödet för bakåtfyllnad i Analytics tas den underliggande datauppsättningen inte bort, men processen för bakåtfyllnad stoppas för motsvarande rapportserie. Om du tar bort dataflödet för bakåtfyllnad kan inkapslade data fortfarande visas via datauppsättningen.
 
 ## Nästa steg och ytterligare resurser
 
