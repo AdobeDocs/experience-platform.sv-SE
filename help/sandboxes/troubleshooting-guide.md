@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Felsökningsguide för sandlådor
 description: Det här dokumentet innehåller svar på vanliga frågor om sandlådor i Adobe Experience Platform.
 exl-id: 6a496509-a4e9-4e76-829b-32d67ccfcce6
-source-git-commit: fcd44aef026c1049ccdfe5896e6199d32b4d1114
+source-git-commit: 7ee472294e8f255d9de3c15982a6f5d2d3654755
 workflow-type: tm+mt
-source-wordcount: '840'
+source-wordcount: '820'
 ht-degree: 2%
 
 ---
@@ -31,9 +31,9 @@ Sandlådor är virtuella partitioner i en enda instans av Experience Platform. V
 
 Det finns två typer av sandlådor i Experience Platform:
 
-* **Produktionssandlåda**: En produktionssandlåda är avsedd att användas med profiler i din produktionsmiljö. Plattformen gör att du kan skapa flera produktionssandlådor för att tillhandahålla rätt funktionalitet för data samtidigt som driftisoleringen bibehålls. Med den här funktionen kan du dedikera specifika produktionssandlådor till olika affärsområden, varumärken, projekt eller regioner. Produktionssandlådor har stöd för en mängd produktionsprofiler upp till ditt licensierade [!DNL Profile]-åtagande (uppmätt kumulativt i alla dina auktoriserade produktionssandlådor). Du är berättigad att använda en licensierad genomsnittlig profil per auktoriserad [!DNL Profile] (uppmätt kumulativt i alla dina auktoriserade produktionssandlådor).
+* **Produktionssandlåda**: En produktionssandlåda är avsedd att användas med profiler i din produktionsmiljö. Plattformen gör att du kan skapa flera produktionssandlådor för att tillhandahålla rätt funktionalitet för data samtidigt som driftisoleringen bibehålls. Med den här funktionen kan du dedikera specifika produktionssandlådor till olika affärsområden, varumärken, projekt eller regioner. Produktionssandlådor har stöd för en mängd produktionsprofiler upp till ditt licensierade [!DNL Profile]-åtagande (uppmätt kumulativt i alla dina auktoriserade produktionssandlådor). Du har rätt att använda hela den licensierade totala datavolymen (uppmätt kumulativt i alla dina godkända produktionssandlådor).
+
 * **Utvecklingssandlåda**: En utvecklingssandlåda är en sandlåda som endast kan användas för utveckling och testning med icke-produktionsprofiler. Utvecklingssandlådor har stöd för en mängd icke-produktionsprofiler på upp till 10 % av ditt licensierade [!DNL Profile]-åtagande (uppmätt kumulativt i alla dina auktoriserade utvecklingssandlådor). Du har rätt till upp till
-   * En genomsnittlig icke-produktionsprofil på 75 kB per godkänd icke-produktionsprofil (uppmätt kumulativt i alla dina godkända utvecklingssandlådor).
    * Ett batchsegmenteringsjobb per dag, per utvecklingssandlåda.
    * Ett genomsnitt på 120 [!DNL Profile] API-anrop, per [!DNL Profile], per år (mäts kumulativt i alla dina auktoriserade utvecklingssandlådor.
 

@@ -2,9 +2,9 @@
 title: Metodtips för tillstånd för datahantering
 description: Lär dig mer om de bästa metoderna och verktygen du kan använda för att bättre hantera dina licensrättigheter med Adobe Experience Platform.
 exl-id: f23bea28-ebd2-4ed4-aeb1-f896d30d07c2
-source-git-commit: e52eb90b64ae9142e714a46017cfd14156c78f8b
+source-git-commit: 1b8fd7671146519fa66768aab3fe081adb0bd6c6
 workflow-type: tm+mt
-source-wordcount: '2237'
+source-wordcount: '2145'
 ht-degree: 1%
 
 ---
@@ -42,12 +42,7 @@ När du licensierar Experience Platform får du licensanvändningsrättigheter s
 
 **[!DNL Addressable Audience]** - det totala antalet kundprofiler som enligt avtal tillåts i Experience Platform, inklusive både kända och pseudonyma profiler.
 
-**[!DNL Profile Richness]** - den genomsnittliga storleken på dina profildata i Experience Platform. Du kan öka ditt [!DNL Profile Richness]-berättigande genom att köpa ett fyllnadspaket.
-
-Måttet [!DNL Profile Richness] varierar beroende på vilken licensiering du har köpt. Det finns två beräkningar för [!DNL Profile Richness] tillgängliga:
-
-* Summan av alla produktionsdata som lagras inom Adobe Real-time Customer Data Platform (dvs. kundprofil och identitetstjänst i realtid) vid någon tidpunkt, dividerat med [!DNL Addressable Audience].
-* Summan av alla data som lagras inom plattformen (inklusive, men inte begränsat till, [!DNL data lake], kundprofil i realtid och identitetstjänst) vid någon tidpunkt och alla data som du direktuppspelar via (i stället för att lagra inom) plattformen under de senaste 12 månaderna, dividerat med [!DNL Addressable Audience].
+**[!DNL Total Data Volume]** - den totala mängden data som är tillgängliga för Adobe Experience Platform Profile Service att använda i engagemangsarbetsflöden.
 
 Vilka mätvärden som är tillgängliga och vilken definition som finns för varje mätvärde varierar beroende på vilken licensiering din organisation har köpt.
 
@@ -108,7 +103,7 @@ Injektionsfilter gör att du bara kan hämta in de data som behövs för dina an
 | --- | --- |
 | Adobe Audience Manager källfiltrering | När du skapar en Adobe Audience Manager-källanslutning kan du välja vilka segment och egenskaper som ska hämtas till kundprofilen [!DNL data lake] och Real-Time, i stället för att bara hämta in Audience Manager-data i sin helhet. Mer information finns i guiden om att [skapa en Audience Manager-källanslutning](../../sources/tutorials/ui/create/adobe-applications/audience-manager.md). |
 | Adobe Analytics Data Prep | Du kan använda [!DNL Data Prep]-funktioner när du skapar en Analytics-källanslutning för att filtrera bort data som inte behövs för dina användningsfall. Genom [!DNL Data Prep] kan du definiera vilka attribut/kolumner som måste publiceras till Profil. Du kan också tillhandahålla villkorssatser för att informera plattformen om data förväntas publiceras till Profil eller bara till [!DNL data lake]. Mer information finns i guiden om att [skapa en Analytics-källanslutning](../../sources/tutorials/ui/create/adobe-applications/analytics.md). |
-| Stöd för att aktivera/inaktivera datauppsättningar för profil | Om du vill importera data till kundprofilen i realtid måste du aktivera en datauppsättning för användning i profilarkivet. Om du gör det läggs dina [!DNL Addressable Audience]- och [!DNL Profile Richness]-berättiganden till. När en datauppsättning inte längre behövs för att använda kundprofiler kan du inaktivera datauppsättningens integrering till Profil för att säkerställa att dina data fortfarande är licenskompatibla. Mer information finns i guiden [Aktivera och inaktivera datauppsättningar för profilen](../../catalog/datasets/enable-for-profile.md). |
+| Stöd för att aktivera/inaktivera datauppsättningar för profil | Om du vill importera data till kundprofilen i realtid måste du aktivera en datauppsättning för användning i profilarkivet. Om du gör det läggs dina [!DNL Addressable Audience]- och [!DNL Total Data Volume]-berättiganden till. När en datauppsättning inte längre behövs för att använda kundprofiler kan du inaktivera datauppsättningens integrering till Profil för att säkerställa att dina data fortfarande är licenskompatibla. Mer information finns i guiden [Aktivera och inaktivera datauppsättningar för profilen](../../catalog/datasets/enable-for-profile.md). |
 | SDK för webb och SDK för mobiler | Det finns två typer av data som samlas in via webb och Mobile SDK: data som samlas in automatiskt och data som uttryckligen samlas in av din utvecklare. Om du vill hantera licenskompatibiliteten bättre kan du inaktivera automatisk datainsamling i SDK-konfigurationen via kontextinställningen. Anpassade data kan också tas bort eller inte ställas in av utvecklaren. |
 | Undantag för vidarebefordrande data på serversidan | Om du skickar data till plattformen med hjälp av vidarebefordran på serversidan kan du utesluta vilka data som skickas genom att antingen ta bort mappningen i en regelåtgärd för att exkludera den i alla händelser, eller genom att lägga till villkor i regeln så att endast data aktiveras för vissa händelser. Mer information finns i dokumentationen om [händelser och villkor](/help/tags/ui/managing-resources/rules.md#events-and-conditions-if). |
 | Filtrera data på källnivå | Du kan använda logiska operatorer och jämförelseoperatorer för att filtrera radnivådata från dina källor innan du skapar en anslutning och hämtar data till Experience Platform. Mer information finns i handboken om [filtrering av radnivådata för en källa med  [!DNL Flow Service] API](../../sources/tutorials/api/filter.md). |

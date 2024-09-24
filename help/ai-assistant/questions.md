@@ -2,9 +2,9 @@
 title: Frågeguide för AI Assistant
 description: Läs det här dokumentet om du vill veta mer om exempelfrågor som du kan använda när du frågar i AI Assistant.
 exl-id: d16d1262-cc2d-45c9-94c4-b86132183442
-source-git-commit: fc87c28d7019e123d974e4d2ad307928a3d3fe89
+source-git-commit: 0926a0e8c7ae560bf5f4f9ff6853b191af047738
 workflow-type: tm+mt
-source-wordcount: '1524'
+source-wordcount: '1519'
 ht-degree: 0%
 
 ---
@@ -80,7 +80,6 @@ Följande frågor grupperas efter dataobjekt och klassificeras antingen som [ope
    * Hur är användargrupper relaterade till roller?
    * När ska jag använda en datatyp jämfört med en fältgrupp?
    * Vad är skillnaden mellan en identitet och en primär eller extern nyckel?
-   * Hur beräknas profilrikedomen?
 * **Felsökning - produktkunskap (Real-Time CDP och Journey Optimizer)**
    * Vad kan AI Assistant hjälpa till med?
    * Kan jag ta bort ett profilaktiverat schema efter att data har importerats?
