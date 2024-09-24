@@ -4,9 +4,9 @@ title: Användargränssnittshandbok för aviseringar
 description: Lär dig hur du hanterar aviseringar i användargränssnittet i Experience Platform.
 feature: Alerts
 exl-id: 4ba3ef2b-7394-405e-979d-0e5e1fe676f3
-source-git-commit: 9004a2203996f0fd64833a03f211232ebf14e3e4
+source-git-commit: 2e0fc17fee9b1586b4c2b44c326e2c305c127fad
 workflow-type: tm+mt
-source-wordcount: '603'
+source-wordcount: '765'
 ht-degree: 0%
 
 ---
@@ -23,7 +23,7 @@ Om du vill komma igång väljer du **[!UICONTROL Alerts]** i den vänstra navige
 
 ![Varnar sidmarkering [!UICONTROL Alerts] i den vänstra navigeringen.](../images/alerts/ui/workspace.png)
 
-## Hantera varningsregler
+## Hantera varningsregler {#manage-rules}
 
 Fliken **[!UICONTROL Browse]** visar de tillgängliga reglerna som kan utlösa en varning.
 
@@ -37,7 +37,7 @@ Markera ellipsen (**..**) bredvid en regel och i en listruta visas kontroller f�
 
 ![De markerade ellipserna visar den nedrullningsbara menyn.](../images/alerts/ui/disable-subscribe.png)
 
-## Hantera aviseringsprenumeranter
+## Hantera aviseringsprenumeranter {#manage-subscribers}
 
 >[!NOTE]
 >
@@ -67,7 +67,7 @@ Du har lagt till användare i aviseringslistan. De skickade användarna får nu 
 
 ![Ett e-postexempel på det varningsmeddelande som tas emot.](../images/alerts/ui/manage-alert-subscribers-email.png)
 
-## Aktivera e-postaviseringar
+## Aktivera e-postaviseringar {#enable-email}
 
 Varningsmeddelanden kan skickas direkt till ditt e-postmeddelande.
 
@@ -85,7 +85,35 @@ Bläddra till avsnittet **E-post** längst ned på sidan och välj **[!UICONTROL
 
 Alla aviseringar du prenumererar på levereras nu till den e-postadress som är ansluten till ditt Adobe ID-konto.
 
-## Visa aviseringshistorik
+## Anpassa tröskelvärde för avisering {#alert-threshold}
+
+Varningströskelvärden kan anpassas för följande varningstyper:
+
+| Aviseringstyp | Anpassad parameter |
+|---|---|
+| Fördröjning för segmentjobb | Fördröjningströskel |
+| Fördröjning för segmentexport | Fördröjningströskel |
+| Körningsfördröjning för destinationsflöde | Fördröjningströskel |
+| Körningsfördröjning för identitetstjänstens flöde | Fördröjningströskel |
+| Körningsfördröjning för profilflöde | Fördröjningströskel |
+| Körningsfördröjning för källflöde | Fördröjningströskel |
+| Frågekörningsfördröjning | Fördröjningströskel |
+| Ingen aktiveringshastighet har överskridits | Feltröskel |
+| Felfrekvens för källinmatning har överskridits | Feltröskel |
+
+Markera ellipsen (**...**) bredvid en regels namn, så visas kontroller i en listruta. Välj **[!UICONTROL Edit]**.
+
+![Alternativet [!UICONTROL Edit] är markerat för den valda regeln.](../images/alerts/ui/threshold-edit.png)
+
+Sidan **[!UICONTROL Customize alert]** visas. Uppdatera tröskelvärdet till önskade minuter och välj sedan **[!UICONTROL Confirm]**.
+
+![Alternativen Anpassa markering av varningssida [!UICONTROL Threshold] och [!UICONTROL Confirm] .](../images/alerts/ui/threshold-update.png)
+
+Du återgår till sidan **[!UICONTROL Alerts]**. Om du vill visa tröskelvärden för varningen väljer du regeln i listan. Du kan se tröskelinställningarna för varningen i den högra listen, inklusive detaljer som status och allvarlighetsgrad.
+
+![En varning markerad med detaljer i den högra listen och markering [!UICONTROL Threshold].](../images/alerts/ui/threshold-view.png)
+
+## Visa aviseringshistorik {#alert-history}
 
 Fliken **[!UICONTROL History]** visar historiken för mottagna aviseringar för din organisation, inklusive regeln som utlöste aviseringen, utlösande datum och löst datum (om tillämpligt).
 
