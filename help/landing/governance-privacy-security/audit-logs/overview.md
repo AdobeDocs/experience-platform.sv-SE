@@ -2,9 +2,9 @@
 title: Översikt över granskningsloggar
 description: Lär dig hur granskningsloggar gör det möjligt för dig att se vilka åtgärder som har utförts och av vem, i Adobe Experience Platform.
 exl-id: 00baf615-5b71-4e0a-b82a-ca0ce8566e7f
-source-git-commit: c2832821ea6f9f630e480c6412ca07af788efd66
+source-git-commit: 7ae5e9dc79b4e1f08d2bf98876b02db1967ccbe1
 workflow-type: tm+mt
-source-wordcount: '1261'
+source-wordcount: '1320'
 ht-degree: 1%
 
 ---
@@ -133,6 +133,22 @@ Om du vill exportera den aktuella listan med granskningsloggar väljer du **[!UI
 Välj önskat format (antingen **[!UICONTROL CSV]** eller **[!UICONTROL JSON]**) i dialogrutan som visas och välj sedan **[!UICONTROL Download]**. Webbläsaren hämtar den genererade filen och sparar den på datorn.
 
 ![Dialogrutan för val av filformat med [!UICONTROL Download] markerat.](../../images/audit-logs/select-download-format.png)
+
+## Aktivera aviseringar {#enable-alerts}
+
+Du kan aktivera granskningsmeddelanden om du vill få meddelanden om följande regler:
+
+* Skapa målgrupper
+* Målgruppsuppdatering
+* Målgruppsborttagning
+* Skapa datauppsättning
+* Uppdatering av datauppsättning
+* Ta bort datauppsättning
+* Skapa schema
+* Schemauppdatering
+* Ta bort schema
+
+Välj önskad avisering i listan för att prenumerera och få meddelanden. Mer information om varningar finns i guiden om att [prenumerera på varningar med användargränssnittet](../../../observability/alerts/ui.md).
 
 ## Hantera granskningsloggar i API
 
