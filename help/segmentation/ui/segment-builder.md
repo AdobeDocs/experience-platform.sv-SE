@@ -3,9 +3,9 @@ solution: Experience Platform
 title: Användargränssnittshandbok för Segment Builder
 description: Segmentbyggaren i Adobe Experience Platform-användargränssnittet har en omfattande arbetsyta som du kan använda för att interagera med profildataelement. Arbetsytan innehåller intuitiva kontroller för att skapa och redigera regler, till exempel dra-och-släpp-paneler som används för att representera dataegenskaper.
 exl-id: b27516ea-8749-4b44-99d0-98d3dc2f4c65
-source-git-commit: 7d2fe8d5e5abea768b3514d97ea7edfbb9334511
+source-git-commit: 6e1fecf2f986cbb39a2a92c28b05131e22d14b6e
 workflow-type: tm+mt
-source-wordcount: '4679'
+source-wordcount: '4630'
 ht-degree: 0%
 
 ---
@@ -111,8 +111,6 @@ Du kan hovra över ⓘ bredvid en målgrupp för att visa information om målgru
 
 ![En bild som visar hur mapphierarkin fungerar för målgrupper.](../images/ui/segment-builder/audience-folder-structure.png)
 
-Du kan också söka efter målgrupper med hjälp av sökfältet, som använder [Lucenes söksyntax](https://docs.microsoft.com/en-us/azure/search/query-lucene-syntax). Om du väljer en mapp på den översta nivån på fliken **[!UICONTROL Audiences]** visas sökfältet så att du kan söka i den mappen. Sökresultaten fylls bara i när hela ord anges. Om du till exempel vill hitta en målgrupp med namnet `Online Shoppers` börjar du skriva &quot;Online&quot; i sökfältet. När ordet &quot;Online&quot; har skrivits in fullständigt visas sökresultat som innehåller ordet &quot;Online&quot;.
-
 ## Regelbyggarens arbetsyta {#rule-builder-canvas}
 
 >[!IMPORTANT]
@@ -158,6 +156,11 @@ Observera att högst 250 värden tillåts. Om du överskrider detta värde måst
 ![En varning som visar att du har nått det maximala antalet värden visas.](../images/ui/segment-builder/maximum-values.png)
 
 ### Lägga till målgrupper
+
+>[!CONTEXTUALHELP]
+>id="platform_segmentation_segmentbuilder_addaudiences"
+>title="Sök efter uppdateringar"
+>abstract="Det befintliga söksystemet har uppdaterats för att använda enhetlig sökning. Med enhetlig sökning kan ni enklare och tillförlitligare söka efter medlemskap i segment hos era målgrupper."
 
 Du kan dra och släppa en målgrupp från fliken **[!UICONTROL Audience]** till regelbyggararbetsytan för att referera till målgruppsmedlemskap i den nya segmentdefinitionen. På så sätt kan du inkludera eller exkludera målgruppsmedlemskap som ett attribut i de nya segmentdefinitionsreglerna.
 
