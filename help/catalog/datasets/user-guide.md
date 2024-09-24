@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Användargränssnittshandbok för datauppsättningar
 description: Lär dig hur du utför vanliga åtgärder när du arbetar med datauppsättningar i Adobe Experience Platform användargränssnitt.
 exl-id: f0d59d4f-4ebd-42cb-bbc3-84f38c1bf973
-source-git-commit: a168f61fabddd06d586f7909fd92c0409fd2f51e
+source-git-commit: 0bb10754e2f5bc289567368c803d4397cec77bf6
 workflow-type: tm+mt
-source-wordcount: '3019'
+source-wordcount: '3581'
 ht-degree: 0%
 
 ---
@@ -96,6 +96,7 @@ Användargränssnittet för datauppsättningar erbjuder nu en samling infogade �
 * [[!UICONTROL Manage data and access labels]](#manage-and-enforce-data-governance)
 * [[!UICONTROL Enable unified profile]](#enable-profile)
 * [[!UICONTROL Manage tags]](#manage-tags)
+* [(Beta) [!UICONTROL Set data retention policy]](#data-retention-policy)
 * [[!UICONTROL Move to folders]](#move-to-folders)
 * [[!UICONTROL Delete]](#delete).
 
@@ -168,6 +169,53 @@ Dialogrutan [!UICONTROL Manage tags] kan även ta bort befintliga taggar från e
 När en tagg har lagts till i en datauppsättning kan datauppsättningarna filtreras baserat på motsvarande tagg. Mer information finns i avsnittet om att [filtrera datauppsättningar efter taggar](#enable-profile).
 
 Mer information om hur du klassificerar affärsobjekt för enklare identifiering och kategorisering finns i handboken [Hantera metadatataxonomier](../../administrative-tags/ui/managing-tags.md). I den här guiden beskrivs hur en användare med lämplig behörighet kan skapa fördefinierade taggar, tilldela kategorier till taggar och utföra alla relaterade CRUD-åtgärder för taggar och taggkategorier i plattformens användargränssnitt.
+
+### (Beta) Ange datalagringspolicy {#data-retention-policy}
+
+>[!AVAILABILITY]
+> 
+>Datalagringsinställningarna finns för närvarande i betaversion och är bara tillgängliga i en **begränsad version** för vissa organisationer. Gränssnittet kanske inte motsvarar funktionen som beskrivs nedan.
+
+Hantera datauppsättningens förfallodatum- och bevarandeprinciper på datauppsättningsnivå från fliken [!UICONTROL Browse] på arbetsytan i [!UICONTROL Datasets]. Du kan använda den här funktionen för att konfigurera lagringspolicyer för data som redan har importerats till datavagn- och profiltjänster. Utgångsdatumet baseras på när data har importerats till Platform och dina lagringsregler.
+
+Om du vill öppna dialogrutan [!UICONTROL Set data retention] väljer du ellipsen bredvid datamängden följt av **[!UICONTROL Set data retention policy]** i listrutan.
+
+![Fliken Bläddra på arbetsytan Datauppsättningar med alternativet ellips och Ange datalagringsprincip markerat.](../images/datasets/user-guide/set-data-retention-policy-dropdown.png)
+
+Dialogrutan [!UICONTROL Set data retention] visas. Dialogrutan visar användningsstatistik för licenser på sandlådenivå, information på datamängdsnivå och inställningar för datasjöer. Dessa mätvärden visar din användning jämfört med dina berättiganden. Datauppsättningsinformationen innehåller datauppsättningsnamn, typ, status för aktivering av profiler och aktuell användning av dataljöns lagring.
+
+>[!NOTE]
+>
+>Data Lake Storage-statistik på sandlådenivå håller fortfarande på att utvecklas och är inte tillgänglig.
+
+![Dialogrutan Ange datalagring.](../images/datasets/user-guide/set-data-retention-dialog.png)
+
+Innan du konfigurerar lagringsprincipen för datauppsättningar visas de rekommenderade inställningarna för kvarhållande. En månad är den rekommenderade standardkvarhållningsperioden. Om du vill justera standardprincipen för kvarhållande markerar och uppdaterar du numret och väljer sedan önskad tidsperiod (dagar, månader, år). Du kan konfigurera dina kvarhållningsinställningar för datasjön och profiltjänst oberoende av varandra.
+
+>[!NOTE]
+> 
+>Den minsta datalagringstiden för datalagring är 30 dagar. Den minsta datalagringstiden för profiltjänsten är en dag.
+
+![Dialogrutan Ange datalagring med listrutan Varaktighet och Spara markerad.](../images/datasets/user-guide/time-unit-dropdown.png)
+
+Se sidan [Vanliga frågor](../catalog-faq.md) om du vill ha mer information om reglerna som definierar datumintervall för datauppsättningens förfallodatum och de bästa sätten att konfigurera din datalagringspolicy.
+
+#### (Beta) Ökad synlighet för kvarhållningsperioder och lagringsmått {#retention-and-storage-metrics}
+
+Det finns fyra nya kolumner tillgängliga för betaanvändare som ger bättre synlighet i datahanteringen: **[!UICONTROL Data Lake Storage]**, **[!UICONTROL Data Lake Retention]**, **[!UICONTROL Profile Storage]** och **[!UICONTROL Profile Retention]**. Dessa mätvärden visar hur mycket lagring dina data förbrukar och hur länge de bevaras i både datarö- och profiltjänster. Dessa uppgifter hjälper er att optimera lagringspolicyer, spåra användningen mot berättiganden och säkerställa att ni följer organisatoriska och lagstadgade standarder. Denna ökade synlighet ger er möjlighet att fatta välgrundade beslut, hantera kostnader, effektivisera styrningen och tydligt förstå ert datalandskap.
+
+![Fliken Bläddra på arbetsytan Datauppsättningar med de fyra nya kolumnerna för lagring och kvarhållning markerade.](../images/datasets/user-guide/storage-and-retention-columns.png)
+
+I följande tabell visas en översikt över de nya mätvärdena för kvarhållning och lagring som finns i betaversionen. Den beskriver varje kolumns syfte och hur den underlättar hanteringen av datalagring och lagring inom plattformens användargränssnitt.
+
+| Kolumnrubrik | Beskrivning |
+|---|---|
+| [!UICONTROL Data lake retention] | Visar den aktuella kvarhållningstiden för varje datauppsättning. Det här värdet kan ändras i varje datamängds kvarhållningsinställningar. I dataskyddsreglerna fastställs regler för hur länge data ska lagras och när de ska tas bort i olika tjänster. |
+| [!UICONTROL Data Lake Storage] | Visar aktuell lagringsanvändning för varje datauppsättning i datasjön. Detta mått hjälper till att spåra hur mycket utrymme varje datauppsättning upptar, vilket underlättar hanteringen av lagringsgränser och optimering av användningen. |
+| [!UICONTROL Profile Storage] | Visar aktuell lagringsanvändning för varje datauppsättning inom profiltjänster. Använd den här informationen för att övervaka lagringsförbrukningen och se till att den passar era datahanteringsmål. |
+| [!UICONTROL Profile Retention] | Anger kvarhållningstiden för varje profildatauppsättning. Det här värdet kan justeras i datauppsättningens lagringsinställningar, vilket hjälper dig att styra hur länge profildata lagras innan de tas bort. |
+
+{style="table-layout:auto"}
 
 ### Flytta till mappar {#move-to-folders}
 
@@ -344,3 +392,4 @@ Den här användarhandboken innehåller anvisningar om hur du utför vanliga åt
 * [Skapa en datauppsättning med API:er](create.md)
 * [Fråga datauppsättningsdata med API:t för dataåtkomst](../../data-access/home.md)
 * [Konfigurera en datauppsättning för kundprofil och identitetstjänst i realtid med API:er](../../profile/tutorials/dataset-configuration.md)
+
