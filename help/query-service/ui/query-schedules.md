@@ -2,9 +2,9 @@
 title: Frågescheman
 description: Lär dig hur du automatiserar schemalagda frågekörningar, tar bort eller inaktiverar ett frågeschema och använder tillgängliga schemaläggningsalternativ via Adobe Experience Platform-gränssnittet.
 exl-id: 984d5ddd-16e8-4a86-80e4-40f51f37a975
-source-git-commit: 19f1f64434d655d3b19260460519018fc9c8e174
+source-git-commit: c69311b3188a8d066a24235466afad1e725d489c
 workflow-type: tm+mt
-source-wordcount: '1767'
+source-wordcount: '1957'
 ht-degree: 0%
 
 ---
@@ -141,7 +141,28 @@ Om du vill visa en lista över schemalagda körningar för en frågemall går du
 
 Listan över frågekörningar för den schemalagda frågan visas.
 
+### Beräkna timmar på jobbnivå {#compute-hours}
+
+Spåra beräknade timmar som förbrukats på frågekörningsnivån för dina CTAS/ITAS-batchfrågor. Den här funktionen ger insikter i hur datorn används, vilket hjälper dig att optimera resursallokeringen och förbättra frågeprestanda.
+
+>[!AVAILABILITY]
+>
+>Funktionen Beräkna timmar är exklusiv för användare som har köpt [Data Distiller SKU](../data-distiller/overview.md). Kontakta din Adobe-representant om du vill ha mer information.
+
 ![Informationsavsnittet på arbetsytan Schemalagda frågor med en lista över frågor som körs markerade för en schemalagd fråga.](../images/ui/query-schedules/list-of-scheduled-runs.png)
+
+Följande tabell innehåller beskrivningar av de kolumner som är tillgängliga i informationsavsnittet som listar schemalagda frågekörningar.
+
+| Kolumnrubrik | Beskrivning |
+|---------------------|----------------------------------|
+| [!UICONTROL Query Run ID] | Visar en unik identifierare för varje frågekörning så att du kan spåra och referera till enskilda körningar av dina schemalagda frågor. |
+| [!UICONTROL Query Run Start] | Anger startdatum och starttid för frågekörningen, så att du lättare kan övervaka när varje körning påbörjades. |
+| [!UICONTROL Query Run Complete] | Visar slutdatumet och sluttiden för frågekörningen för att ge insikt i körningens varaktighet och status. |
+| [!UICONTROL Status] | Visar aktuell status för frågekörningen, till exempel `Completed,` `Running,` eller `Failed,`, för att snabbt utvärdera resultatet. |
+| [!UICONTROL Datasets] | Visar de datauppsättningar som används i frågekörningen, för att visa vilka datakällor som ingick i körningen. |
+| [!UICONTROL Compute Hours] | Visar beräkningstiden som används för varje frågekörning, mätt i timmar. Detta hjälper till att spåra resursanvändning och optimera frågeprestanda. |
+
+{style="table-layout:auto"}
 
 I guiden [Övervaka schemalagd fråga](./monitor-queries.md#inline-actions) finns fullständig information om hur du övervakar statusen för alla frågefunktioner via användargränssnittet.
 
