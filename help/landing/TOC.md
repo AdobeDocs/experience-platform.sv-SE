@@ -3,9 +3,9 @@ audience: user
 user-guide-title: Översikt över Adobe Experience Platform
 breadcrumb-title: Översikt över Experience Platform
 user-guide-description: Läs mer om hur Experience Platform kan leverera personaliserade upplevelser till era kunder i realtid med användarhandböcker, dokumentation och självstudiekurser.
-source-git-commit: a926560f3c5f765090046313ec7a7431b5ce69c6
+source-git-commit: dde5c1367706d015308ebea687d7f2a41947fb20
 workflow-type: tm+mt
-source-wordcount: '279'
+source-wordcount: '282'
 ht-degree: 18%
 
 ---
@@ -74,6 +74,7 @@ ht-degree: 18%
 * Licensanvändning och skyddsräcken {#license}
    * [Bästa praxis för berättigande av datahanteringslicens](./license-usage-and-guardrails/data-management-best-practices.md)
    * [Kontrollpanel för licensanvändning](./license-usage-and-guardrails/license-usage-dashboard.md)
+   * [Total datavolym](./license-usage-and-guardrails/total-data-volume.md)
    * [Adobe Journey Optimizer skyddsräcken](https://experienceleague.adobe.com/docs/journey-optimizer/using/get-started/guardrails.html)
    * [Customer Journey Analytics skyddsräcken](https://experienceleague.adobe.com/docs/analytics-platform/using/cja-admin/guardrails.html)
    * [Real-Time CDP skyddsräcken](https://experienceleague.adobe.com/docs/experience-platform/rtcdp/guardrails/overview.html)
