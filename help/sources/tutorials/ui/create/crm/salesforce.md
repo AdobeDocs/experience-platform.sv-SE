@@ -2,9 +2,9 @@
 title: Anslut ditt Salesforce-konto med användargränssnittet i Experience Platform
 description: Lär dig hur du ansluter ditt Salesforce-konto och överför dina CRM-data till Experience Platform med användargränssnittet.
 exl-id: b67fa4c4-d8ff-4d2d-aa76-5d9d32aa22d6
-source-git-commit: 5951b0f549c2fd2723945f8f4089d12f73b92e6c
+source-git-commit: ae322ee421edd73cd5a3fb8499267cd417491318
 workflow-type: tm+mt
-source-wordcount: '813'
+source-wordcount: '903'
 ht-degree: 0%
 
 ---
@@ -118,6 +118,12 @@ När du är klar väljer du **[!UICONTROL Connect to source]**.
 ![OAuth-gränssnittet för att skapa Salesforce-konton.](../../../../images/tutorials/create/salesforce/oauth2.png)
 
 >[!ENDTABS]
+
+### Hoppa över förhandsgranskning av exempeldata {#skip-preview-of-sample-data}
+
+Under dataurvalssteget kan du få en timeout när du importerar stora tabeller eller datafiler. Du kan hoppa över förhandsgranskning av data för att kringgå tidsgränsen och ändå visa ditt schema, om än utan exempeldata. Aktivera alternativet **[!UICONTROL Skip previewing sample data]** om du vill hoppa över förhandsgranskning av data.
+
+Resten av arbetsflödet förblir detsamma. Den enda skillnaden är att om du hoppar över förhandsgranskning av data kan det förhindra att beräknade och obligatoriska fält valideras automatiskt under mappningssteget, och du måste då validera dessa fält manuellt under mappningen.
 
 ## Nästa steg
 

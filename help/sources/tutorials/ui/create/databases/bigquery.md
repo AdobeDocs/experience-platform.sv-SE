@@ -3,9 +3,9 @@ title: Skapa en Google Big Query Source Connection i användargränssnittet
 description: Lär dig hur du skapar en Google Big Query-källanslutning med Adobe Experience Platform-gränssnittet.
 badgeUltimate: label="Ultimate" type="Positive"
 exl-id: 3c0902de-48b9-42d8-a4bd-0213ca85fc7f
-source-git-commit: 55aaaa39659566de81bb161d704b6f8212e29a8b
+source-git-commit: ae322ee421edd73cd5a3fb8499267cd417491318
 workflow-type: tm+mt
-source-wordcount: '496'
+source-wordcount: '586'
 ht-degree: 0%
 
 ---
@@ -74,6 +74,12 @@ Om du vill använda tjänstautentisering markerar du **[!UICONTROL Service Authe
 ![Det nya kontogränssnittet där tjänstautentisering väljs.](../../../../images/tutorials/create/google-big-query/service_auth.png)
 
 >[!ENDTABS]
+
+### Hoppa över förhandsgranskning av exempeldata {#skip-preview-of-sample-data}
+
+Under dataurvalssteget kan du få en timeout när du importerar stora tabeller eller datafiler. Du kan hoppa över förhandsgranskning av data för att kringgå tidsgränsen och ändå visa ditt schema, om än utan exempeldata. Aktivera alternativet **[!UICONTROL Skip previewing sample data]** om du vill hoppa över förhandsgranskning av data.
+
+Resten av arbetsflödet förblir detsamma. Den enda skillnaden är att om du hoppar över förhandsgranskning av data kan det förhindra att beräknade och obligatoriska fält valideras automatiskt under mappningssteget, och du måste då validera dessa fält manuellt under mappningen.
 
 ## Nästa steg
 

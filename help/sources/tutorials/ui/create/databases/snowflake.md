@@ -4,9 +4,9 @@ type: Tutorial
 description: Lär dig hur du skapar en Snowflake-källanslutning med Adobe Experience Platform användargränssnitt.
 badgeUltimate: label="Ultimate" type="Positive"
 exl-id: fb2038b9-7f27-4818-b5de-cc8072122127
-source-git-commit: d89e0c81bd250e41a863b8b28d358cc6ddea1c37
+source-git-commit: ae322ee421edd73cd5a3fb8499267cd417491318
 workflow-type: tm+mt
-source-wordcount: '774'
+source-wordcount: '864'
 ht-degree: 2%
 
 ---
@@ -104,6 +104,12 @@ Om du vill använda nyckelpars-autentisering anger du värden för ditt konto, d
 ![Autentiseringsgränssnittet för kontonyckelpar.](../../../../images/tutorials/create/snowflake/key-pair.png)
 
 >[!ENDTABS]
+
+### Hoppa över förhandsgranskning av exempeldata {#skip-preview-of-sample-data}
+
+Under dataurvalssteget kan du få en timeout när du importerar stora tabeller eller datafiler. Du kan hoppa över förhandsgranskning av data för att kringgå tidsgränsen och ändå visa ditt schema, om än utan exempeldata. Aktivera alternativet **[!UICONTROL Skip previewing sample data]** om du vill hoppa över förhandsgranskning av data.
+
+Resten av arbetsflödet förblir detsamma. Den enda skillnaden är att om du hoppar över förhandsgranskning av data kan det förhindra att beräknade och obligatoriska fält valideras automatiskt under mappningssteget, och du måste då validera dessa fält manuellt under mappningen.
 
 ## Nästa steg
 
