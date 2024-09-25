@@ -3,9 +3,9 @@ title: Implementeringsguide för regler för länkning av identitetsdiagram
 description: Lär dig de rekommenderade stegen som ska följas när du implementerar data med länkningsregler för identitetsdiagram.
 badge: Beta
 exl-id: 368f4d4e-9757-4739-aaea-3f200973ef5a
-source-git-commit: 0dadff9e2719c9cd24dcc17b759ff7e732282888
+source-git-commit: 1e9d16c53100c1ee930cf4bf5e9a9a5b6bd9c347
 workflow-type: tm+mt
-source-wordcount: '1462'
+source-wordcount: '1518'
 ht-degree: 0%
 
 ---
@@ -164,6 +164,10 @@ När du har alla objekt som listas ovan kan du börja importera dina data till E
 >När data har importerats ändras inte nyttolasten för XDM-rådata. Du kan fortfarande se dina primära identitetskonfigurationer i användargränssnittet. Dessa konfigurationer åsidosätts dock av identitetsinställningarna.
 
 Använd alternativet **[!UICONTROL Beta feedback]** på identitetstjänstens arbetsyta för att få feedback.
+
+## Validera dina diagram {#validate}
+
+Använd identitetspanelen för att få insikter om identitetsgrafernas tillstånd, som det övergripande antalet identiteter och trender för antal diagram, antalet identiteter per namnområde och antalet diagram per diagramstorlek. Du kan också använda identitetspanelen för att visa trender för diagram med två eller flera identiteter, ordnade efter namnområde.
 
 ## Bilaga {#appendix}
 

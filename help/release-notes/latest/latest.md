@@ -2,10 +2,10 @@
 title: Adobe Experience Platform Release Notes september 2024
 description: Versionsinformation för september 2024 för Adobe Experience Platform.
 exl-id: f854f9e5-71be-4d56-a598-cfeb036716cb
-source-git-commit: 50b0387dacb3e995d9c88206ef968ddc53edb14c
+source-git-commit: 0cb134fe6b0a87571e01ada7946c4bbb7d4c346b
 workflow-type: tm+mt
-source-wordcount: '1822'
-ht-degree: 27%
+source-wordcount: '1974'
+ht-degree: 25%
 
 ---
 
@@ -112,6 +112,12 @@ Mer information om XDM finns i [XDM-systemöversikt](../../xdm/home.md).
 
 Använd identitetstjänsten för Adobe Experience Platform för att skapa en heltäckande bild av dina kunder och deras beteenden genom att skapa en bro mellan identiteter på olika enheter och system, så att du kan leverera slagkraftiga, personliga digitala upplevelser i realtid.
 
+**Uppdaterad funktion**
+
+| Funktion | Beskrivning |
+| --- | --- |
+| Begränsad tillgänglighet för länkningsregler för identitetsdiagram | Regler för länkning av identitetsdiagram är en uppsättning verktyg i identitetstjänsten som du kan använda för att säkerställa korrekt personalisering för dina användare. <ul><li>Du kan nu använda [identitetoptimeringsalgoritmen](../../identity-service/identity-graph-linking-rules/identity-optimization-algorithm.md) för att se till att ett identitetsdiagram representerar en enskild person och förhindrar därför oönskad sammanslagning av identiteter i kundprofilen i realtid.</li><li>Konfigurera [namnområdesprioriteter](../../identity-service/identity-graph-linking-rules/namespace-priority.md) för att definiera vikten av dina respektive namnutrymmen och påverka hur profilerna formateras och segmenteras.</li><li>Använd [diagramsimuleringsverktyget i gränssnittet](../../identity-service/identity-graph-linking-rules/graph-simulation.md) för att simulera identitetsdiagram med olika konfigurationer.</li><li>Använd gränssnittet för [identitetsinställningar](../../identity-service/identity-graph-linking-rules/identity-settings-ui.md) för att ange ditt unika namnutrymme och ange prioriteter för alla namnutrymmen i organisationen.</li><li>Gå till [identitetspanelen](../../identity-service/identity-graph-linking-rules/implementation-guide.md#validate-your-graphs) om du vill ha statistik och trender om dina diagramdata.</li></ul> Om du vill testa länkningsregler för identitetsdiagram kontaktar du ditt Adobe-kontoteam för att få tillgång till utvecklingssandlådor. |
+
 **Uppdaterad dokumentation**
 
 | Funktion | Beskrivning |
@@ -131,7 +137,7 @@ Med frågetjänsten kan du använda standard SQL för att söka efter data i Ado
 
 | Funktion | Beskrivning |
 | --- | --- |
-| Data Distiller-målgrupper | Skapa, hantera och aktivera enkelt målgrupper med SQL-målgruppstillägget i Experience Platform Data Distiller. Definiera målgruppssegment med SQL-kommandon direkt från datasjön, utan att behöva använda rådata i profiler. Förfina målinriktningsstrategierna och synkronisera automatiskt målgrupperna till filbaserade destinationer med denna flexibla, datadrivna strategi. Effektivisera arbetsflödena, optimera målgruppshanteringen och utnyttja datas fulla potential. Läs [guiden om hur du använder SQL-målgruppstillägget](../../query-service/home.md) för att få fler strategier för målgruppen. |
+| Data Distiller-målgrupper | Skapa, hantera och aktivera enkelt målgrupper med SQL-målgruppstillägget i Experience Platform Data Distiller. Definiera målgruppssegment med SQL-kommandon direkt från datasjön, utan att behöva använda rådata i profiler. Förfina målinriktningsstrategierna och synkronisera automatiskt målgrupperna till filbaserade destinationer med denna flexibla, datadrivna strategi. Effektivisera arbetsflödena, optimera målgruppshanteringen och utnyttja datas fulla potential. Läs [guiden om hur du använder SQL-målgruppstillägget](../../query-service/data-distiller-audiences/overview.md) för att få fler strategier för målgruppen. |
 | Data Distiller Statistics - Hyperkuber | Optimera big data-analyser med hyperkuber. Hantera komplexa beräkningar - som distinkta antal och flerdimensionell analys - utan att behöva bearbeta historiska data på nytt. Uppdatera data stegvis, effektivisera arbetsflödena och minska behandlingstiden samtidigt som ni bibehåller exaktheten och effektiviteten. Få snabbare, skalbara och kostnadseffektiva insikter som förändrar beslutsfattandet. Utforska [guiden om hur du använder hyperkuber](../../query-service/hypercubes.md) för att låsa upp avancerad analys. |
 | Frågeredigeringsobjektets webbläsare | Öka frågans effektivitet med den nya objektbläddraren i Frågeredigeraren. Sök, filtrera och kom snabbt åt datauppsättningar för att skriva och förfina frågor snabbare. Med schemauppdateringar i realtid och direkt tabellmetadata kan du effektivisera arbetsflöden, minska navigeringstiden och förbättra frågeupplevelsen. Frigör potentialen i era data och optimera analysen. Läs [handboken om hur du använder objektbläddraren](../../query-service/ui/user-guide.md#object-browser) om du vill ha mer information. |
 | Beräkna timmar | Få kontroll över resursanvändningen med det nya synliga måttet Beräkningstider för schemalagda frågor. Visa Comput Hours på frågekörningsnivå för att övervaka och optimera resursanvändningen för CTAS/ITAS-batchfrågor. Spåra starttider, slutförandestatus och beräkningstid för varje frågekörning. Finjustera prestanda och minska kostnaderna utan problem. Läs [guiden om beräkningstimmar](../../query-service/ui/query-schedules.md#compute-hours-at-job-level) om du vill ha mer information om hur du maximerar frågans effektivitet. |

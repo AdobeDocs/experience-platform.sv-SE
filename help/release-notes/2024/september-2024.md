@@ -1,10 +1,10 @@
 ---
 title: Adobe Experience Platform Release Notes september 2024
 description: Versionsinformation för september 2024 för Adobe Experience Platform.
-source-git-commit: 50b0387dacb3e995d9c88206ef968ddc53edb14c
+source-git-commit: 1e9d16c53100c1ee930cf4bf5e9a9a5b6bd9c347
 workflow-type: tm+mt
-source-wordcount: '1822'
-ht-degree: 16%
+source-wordcount: '1974'
+ht-degree: 25%
 
 ---
 
@@ -14,7 +14,7 @@ ht-degree: 16%
 
 Uppdateringar av befintliga funktioner och dokumentation i Adobe Experience Platform:
 
-- [Larm](#alerts)
+- [Aviseringar](#alerts)
 - [Kontrollpaneler](#dashboards)
 - [Dataförberedelse](#data-prep)
 - [Mål ](#destinations)
@@ -24,9 +24,9 @@ Uppdateringar av befintliga funktioner och dokumentation i Adobe Experience Plat
 - [Segmenteringstjänst](#segmentation-service)
 - [Källor](#sources)
 
-## Larm {#alerts}
+## Aviseringar {#alerts}
 
-Med Experience Platform kan du prenumerera på händelsebaserade aviseringar för olika plattformsaktiviteter. Du kan prenumerera på olika varningsregler via fliken [!UICONTROL Alerts] i användargränssnittet för plattformen och du kan välja att ta emot varningsmeddelanden i själva användargränssnittet eller via e-postmeddelanden.
+Med Experience Platform kan du prenumerera på händelsebaserade aviseringar för olika Platform-aktiviteter. Du kan prenumerera på olika aviseringsregler på fliken [!UICONTROL Alerts] i Platform-användargränssnittet och du kan välja att ta emot aviseringssmeddelanden i själva användargränssnittet eller via e-postmeddelanden.
 
 **Nya eller uppdaterade funktioner**
 
@@ -55,25 +55,25 @@ Experience Platform tillhandahåller flera instrumentpaneler där du kan visa vi
 
 {style="table-layout:auto"}
 
-Mer information om kontrollpaneler, inklusive hur du ger åtkomstbehörigheter och skapar anpassade widgetar, får du genom att läsa [översikten för kontrollpaneler](../../dashboards/home.md).
+Läs [översikt över kontrollpaneler](../../dashboards/home.md) för mer information om kontrollpaneler, bland annat hur du beviljar åtkomstbehörigheter och skapar anpassade widgetar.
 
 ## Dataförberedelse {#data-prep}
 
-Använd dataprep för att mappa, omvandla och validera data till och från Experience Data Model (XDM).
+Använd dataförberedelse för att mappa, omvandla och validera data till och från Experience Data Model (XDM).
 
 **Nya eller uppdaterade funktioner**
 
 | Funktion | Beskrivning |
 | --- | --- |
-| [!BADGE Beta]{type=Informative} Nya funktioner för dataförberedelser som kan användas i mål | Nu kan du använda följande arrayfunktioner för destinationer:<ul><li>`array_to_string`</li><li>`filterArray`</li><li>`transformArray`</li><li>`flattenArray`</li></ul> Mer information finns i handboken [data prep functions](../../data-prep/functions.md#arrays). |
+| [!BADGE Beta]{type=Informative} Nya funktioner för dataförberedelser som kan användas i mål | Nu kan du använda följande arrayfunktioner för destinationer:<ul><li>`array_to_string`</li><li>`filterArray`</li><li>`transformArray`</li><li>`flattenArray`</li></ul> Mer information finns i [funktionsguiden för dataförberedelse](../../data-prep/functions.md#arrays). |
 
 {style="table-layout:auto"}
 
-Mer information om Prep av data finns i [Översikt över Prep av data](../../data-prep/home.md).
+Mer information om dataförberedelse finns i [översikten över dataförberedelse](../../data-prep/home.md).
 
 ## Mål  {#destinations}
 
-[!DNL Destinations] är färdiga integreringar med destinationsplattformar som möjliggör smidig aktivering av data från Adobe Experience Platform. Ni kan använda mål för att aktivera kända och okända data för kampanjer i flera kanaler, e-postkampanjer, riktad reklam och många andra användningsfall.
+[!DNL Destinations] är förbyggda integrationer med målplattformar som möjliggör sömlös aktivering av data från Adobe Experience Platform. Du kan använda mål för att aktivera dina kända och okända data för marknadsföringskampanjer över flera kanaler, e-postkampanjer, riktad reklam och många andra användningsområden.
 
 **Nya eller uppdaterade mål** {#new-updated-destinations}
 
@@ -83,7 +83,7 @@ Mer information om Prep av data finns i [Översikt över Prep av data](../../dat
 
 {style="table-layout:auto"}
 
-**Ny eller uppdaterad funktion** {#destinations-new-updated-functionality}
+**Ny eller uppdaterad funktionalitet** {#destinations-new-updated-functionality}
 
 | Funktion | Beskrivning |
 | --- | --- |
@@ -95,7 +95,7 @@ Mer information finns i [målöversikten](../../destinations/home.md).
 
 ## Experience Data Model (XDM) {#xdm}
 
-XDM är en öppen källkodsspecifikation som innehåller gemensamma strukturer och definitioner (scheman) för data som hämtas till Adobe Experience Platform. Genom att följa XDM-standarder kan alla kundupplevelsedata införlivas i en gemensam representation för att ge insikter på ett snabbare och mer integrerat sätt. Ni kan få värdefulla insikter från kundåtgärder, definiera kundmålgrupper genom segment och använda kundattribut med syftet att personliggöra.
+XDM är en specifikation med öppen källkod som tillhandahåller gemensamma strukturer och definitioner (scheman) för data som förs in i Adobe Experience Platform. Genom att följa XDM-standarder kan all data om kundupplevelsen införlivas i en gemensam representation för att leverera insikter på ett snabbare och mer integrerat sätt. Du kan få värdefulla insikter från kundåtgärder, definiera kundmålgrupper genom segment och använda kundattribut för personalisering.
 
 **Uppdaterade funktioner**
 
@@ -109,7 +109,13 @@ Mer information om XDM finns i [XDM-systemöversikt](../../xdm/home.md).
 
 ## Identitetstjänst {#identity-service}
 
-Använd identitetstjänsten för Adobe Experience Platform för att skapa en heltäckande bild av era kunder och deras beteenden genom att skapa en bro mellan identiteter på olika enheter och system, så att ni kan leverera slagkraftiga, personliga digitala upplevelser i realtid.
+Använd identitetstjänsten för Adobe Experience Platform för att skapa en heltäckande bild av dina kunder och deras beteenden genom att skapa en bro mellan identiteter på olika enheter och system, så att du kan leverera slagkraftiga, personliga digitala upplevelser i realtid.
+
+**Uppdaterad funktion**
+
+| Funktion | Beskrivning |
+| --- | --- |
+| Begränsad tillgänglighet för länkningsregler för identitetsdiagram | Regler för länkning av identitetsdiagram är en uppsättning verktyg i identitetstjänsten som du kan använda för att säkerställa korrekt personalisering för dina användare. <ul><li>Du kan nu använda [identitetoptimeringsalgoritmen](../../identity-service/identity-graph-linking-rules/identity-optimization-algorithm.md) för att se till att ett identitetsdiagram representerar en enskild person och förhindrar därför oönskad sammanslagning av identiteter i kundprofilen i realtid.</li><li>Konfigurera [namnområdesprioriteter](../../identity-service/identity-graph-linking-rules/namespace-priority.md) för att definiera vikten av dina respektive namnutrymmen och påverka hur profilerna formateras och segmenteras.</li><li>Använd [diagramsimuleringsverktyget i gränssnittet](../../identity-service/identity-graph-linking-rules/graph-simulation.md) för att simulera identitetsdiagram med olika konfigurationer.</li><li>Använd gränssnittet för [identitetsinställningar](../../identity-service/identity-graph-linking-rules/identity-settings-ui.md) för att ange ditt unika namnutrymme och ange prioriteter för alla namnutrymmen i organisationen.</li><li>Gå till [identitetspanelen](../../identity-service/identity-graph-linking-rules/implementation-guide.md#validate-your-graphs) om du vill ha statistik och trender om dina diagramdata.</li></ul> Om du vill testa länkningsregler för identitetsdiagram kontaktar du ditt Adobe-kontoteam för att få tillgång till utvecklingssandlådor. |
 
 **Uppdaterad dokumentation**
 
@@ -120,17 +126,17 @@ Använd identitetstjänsten för Adobe Experience Platform för att skapa en hel
 
 {style="table-layout:auto"}
 
-Mer information om identitetstjänsten finns i [Översikt över identitetstjänsten](../../identity-service/home.md).
+Mer information om identitetstjänsten finns i [översikten över identitetstjänsten](../../identity-service/home.md).
 
 ## Frågetjänst {#query-service}
 
-Med frågetjänsten kan du använda standard-SQL för att fråga efter data i Adobe Experience Platform [!DNL data lake]. Du kan koppla till alla datauppsättningar från datasjön och samla in frågeresultaten som en ny datamängd som kan användas för rapportering, Data Science Workspace eller för förtäring i kundprofilen i realtid.
+Med frågetjänsten kan du använda standard SQL för att söka efter data i Adobe Experience Platform [!DNL data lake]. Du kan koppla till alla datauppsättningar från datasjön och samla in frågeresultaten som en ny datamängd som kan användas för rapportering, Data Science Workspace eller för förtäring i kundprofilen i realtid.
 
 **Uppdaterade funktioner**
 
 | Funktion | Beskrivning |
 | --- | --- |
-| Data Distiller-målgrupper | Skapa, hantera och aktivera enkelt målgrupper med SQL-målgruppstillägget i Experience Platform Data Distiller. Definiera målgruppssegment med SQL-kommandon direkt från datasjön, utan att behöva använda rådata i profiler. Förfina målinriktningsstrategierna och synkronisera automatiskt målgrupperna till filbaserade destinationer med denna flexibla, datadrivna strategi. Effektivisera arbetsflödena, optimera målgruppshanteringen och utnyttja datas fulla potential. Läs [guiden om hur du använder SQL-målgruppstillägget](../../query-service/home.md) för att få fler strategier för målgruppen. |
+| Data Distiller-målgrupper | Skapa, hantera och aktivera enkelt målgrupper med SQL-målgruppstillägget i Experience Platform Data Distiller. Definiera målgruppssegment med SQL-kommandon direkt från datasjön, utan att behöva använda rådata i profiler. Förfina målinriktningsstrategierna och synkronisera automatiskt målgrupperna till filbaserade destinationer med denna flexibla, datadrivna strategi. Effektivisera arbetsflödena, optimera målgruppshanteringen och utnyttja datas fulla potential. Läs [guiden om hur du använder SQL-målgruppstillägget](../../query-service/data-distiller-audiences/overview.md) för att få fler strategier för målgruppen. |
 | Data Distiller Statistics - Hyperkuber | Optimera big data-analyser med hyperkuber. Hantera komplexa beräkningar - som distinkta antal och flerdimensionell analys - utan att behöva bearbeta historiska data på nytt. Uppdatera data stegvis, effektivisera arbetsflödena och minska behandlingstiden samtidigt som ni bibehåller exaktheten och effektiviteten. Få snabbare, skalbara och kostnadseffektiva insikter som förändrar beslutsfattandet. Utforska [guiden om hur du använder hyperkuber](../../query-service/hypercubes.md) för att låsa upp avancerad analys. |
 | Frågeredigeringsobjektets webbläsare | Öka frågans effektivitet med den nya objektbläddraren i Frågeredigeraren. Sök, filtrera och kom snabbt åt datauppsättningar för att skriva och förfina frågor snabbare. Med schemauppdateringar i realtid och direkt tabellmetadata kan du effektivisera arbetsflöden, minska navigeringstiden och förbättra frågeupplevelsen. Frigör potentialen i era data och optimera analysen. Läs [handboken om hur du använder objektbläddraren](../../query-service/ui/user-guide.md#object-browser) om du vill ha mer information. |
 | Beräkna timmar | Få kontroll över resursanvändningen med det nya synliga måttet Beräkningstider för schemalagda frågor. Visa Comput Hours på frågekörningsnivå för att övervaka och optimera resursanvändningen för CTAS/ITAS-batchfrågor. Spåra starttider, slutförandestatus och beräkningstid för varje frågekörning. Finjustera prestanda och minska kostnaderna utan problem. Läs [guiden om beräkningstimmar](../../query-service/ui/query-schedules.md#compute-hours-at-job-level) om du vill ha mer information om hur du maximerar frågans effektivitet. |
@@ -141,13 +147,13 @@ Läs [Översikt över frågetjänsten](../../query-service/home.md) om du vill v
 
 ## Segmenteringstjänst {#segmentation-service}
 
-[!DNL Segmentation Service] definierar en viss delmängd av profiler genom att beskriva kriterierna som särskiljer en marknadsföringsbar grupp av personer inom din kundbas. Segment kan baseras på registerdata (t.ex. demografisk information) eller tidsseriehändelser som representerar kundinteraktioner med ert varumärke.
+[!DNL Segmentation Service] definierar en viss deluppsättning av profiler genom att beskriva de kriterier som skiljer en säljbar grupp människor inom din kundbas. Segmenten kan baseras på registerdata (t.ex. demografisk information) eller tidsseriehändelser som representerar kundinteraktioner med ditt varumärke.
 
 **Nya eller uppdaterade funktioner**
 
 | Funktion | Beskrivning |
 | --- | --- |
-| Implementering av enhetlig sökning | Sökbeteendet i Segment Builder kommer nu att använda Unified Search. Detta ger en mer robust upplevelse när man hanterar och söker efter målgrupper som kan återanvända ett segmentmedlemskap. Mer information om den här ändringen finns i [guiden för segmentbyggaren](../../segmentation/ui/segment-builder.md#rule-builder-canvas). |
+| Implementering av enhetlig sökning | Sökbeteendet i Segment Builder kommer nu att använda Unified Search. Detta ger en mer robust upplevelse när man hanterar och söker efter målgrupper som kan återanvända ett segmentmedlemskap. Mer information om den här ändringen finns i [guiden för Segment Builder](../../segmentation/ui/segment-builder.md#rule-builder-canvas). |
 
 {style="table-layout:auto"}
 
@@ -155,7 +161,7 @@ Mer information om [!DNL Segmentation Service] finns i [Segmenteringsöversikt](
 
 ## Källor {#sources}
 
-Experience Platform tillhandahåller ett RESTful-API och ett interaktivt användargränssnitt som gör att du enkelt kan konfigurera källanslutningar för olika dataleverantörer. Dessa källanslutningar gör att du kan autentisera och ansluta till externa lagringssystem och CRM-tjänster, ange tider för inmatning och hantera dataöverföringshastigheter och hantera genomströmning vid datainmatning.
+Experience Platform tillhandahåller ett RESTful API och ett interaktivt användargränssnitt som gör att du enkelt kan konfigurera källanslutningar för olika dataleverantörer. Med dessa källanslutningar kan du autentisera och ansluta till externa lagringssystem och CRM-tjänster, ställa in tider för inmatningskörningar och hantera datainmatningens genomströmning.
 
 Använd källor i Experience Platform för inmatning av data från ett Adobe-program eller en datakälla från tredje part.
 
@@ -167,8 +173,8 @@ Använd källor i Experience Platform för inmatning av data från ett Adobe-pro
 | Allmän tillgänglighet för källan [!DNL Snowflake Streaming] | [!DNL Snowflake Streaming]-källan finns nu i GA. Använd den här källan för att strömma data från ditt [!DNL Snowflake]-konto till Experience Platform. Läs [[!DNL Snowflake Streaming] översikten](../../sources/connectors/databases/snowflake-streaming.md)om du vill ha mer information. |
 | Stöd för autentisering av tjänstkonto i [!DNL Google BigQuery] | Du kan nu ansluta ditt [!DNL Google BigQuery]-konto till Experience Platform med autentisering av tjänstkonto. Läs [[!DNL Google BigQuery] översikten](../../sources/connectors/databases/bigquery.md#generate-your-google-bigquery-credentials) om du vill ha mer information. <br> ![Bild av användargränssnittet i Experience Platform som markerar alternativet Redigera schema och mappar i schemaläggningssteget.](../2024/assets/september/service_auth.png "Tjänstautentisering för Google BigQuery."){width="250" align="center" zoomable="yes"} |
 | Stöd för att hoppa över förhandsgranskning av exempeldata | Du kan nu välja att hoppa över förhandsgranskning av data när du skapar en källanslutning med följande källor: <ul><li>[[!DNL Google BigQuery]](../../sources/tutorials/ui/create/databases/bigquery.md#skip-preview-of-sample-data)</li><li>[[!DNL Salesforce]](../../sources/tutorials/ui/create/crm/salesforce.md#skip-preview-of-sample-data)</li><li>[[!DNL Snowflake]](../../sources/tutorials/ui/create/databases/snowflake.md#skip-preview-of-sample-data)</li></ul> Du kan hoppa över förhandsgranskning av data för att kringgå en timeout som kan uppstå när stora gruppdata importeras. Om du gör det kan det förhindra automatisk validering av beräknade och obligatoriska fält. Om du väljer att hoppa över förhandsgranskning av data kan du behöva validera beräknade och obligatoriska fält manuellt under mappningen. |
-| Stöd för att inaktivera chunkning i [!DNL SFTP] | Du kan nu konfigurera en inställning som gör att du kan inaktivera chunkning i källan [!DNL SFTP]. Läs [[!DNL SFTP] översikten](../../sources/connectors/cloud-storage/sftp.md) om du vill ha mer information. |
+| Stöd för att inaktivera chunkning i [!DNL SFTP] | Du kan nu konfigurera en inställning som gör att du kan inaktivera chunkning i källan [!DNL SFTP]. Läs [[!DNL SFTP] översikten](../../sources/connectors/cloud-storage/sftp.md) för mer information. |
 
 {style="table-layout:auto"}
 
-Mer information finns i [källöversikten](../../sources/home.md).
+Mer information finns i [översikten över källor](../../sources/home.md).

@@ -3,9 +3,9 @@ title: Infoga krypterade data i källanvändargränssnittet i Workspace
 description: Lär dig hur du importerar krypterade data i källans arbetsyta.
 badge: Beta
 exl-id: 34aaf9b6-5c39-404b-a70a-5553a4db9cdb
-source-git-commit: 3eba8690dcf9c808495a00b7fd4558478606f628
+source-git-commit: 990be6351f1ea8b1a9288c55067bb81f075d1c4f
 workflow-type: tm+mt
-source-wordcount: '1436'
+source-wordcount: '1442'
 ht-degree: 0%
 
 ---
@@ -33,7 +33,7 @@ Innan du fortsätter med den här självstudiekursen bör du läsa följande dok
 * Skapa ett krypteringsnyckelpar med hjälp av källarbetsytan i användargränssnittet i Experience Platform.
    * Du kan också skapa ett eget nyckelpar för signaturverifiering för att ge ytterligare ett säkerhetslager till dina krypterade data.
 * Använd den offentliga nyckeln från ditt krypteringsnyckelpar för att kryptera dina data.
-* Placera dina krypterade data i din molnlagringsleverantör. Under det här steget måste du också se till att du har en exempelfil som kan användas som referens för att mappa dina källdata till ett XDM-schema (Experience Data Model).
+* Placera dina krypterade data i molnlagringen. Under det här steget måste du också se till att du har en exempelfil med dina data i molnlagringen som kan användas som referens för att mappa dina källdata till ett XDM-schema (Experience Data Model).
 * Använd din batchkälla för molnlagring och påbörja dataöverföringsprocessen i källarbetsytan i användargränssnittet i Experience Platform.
 * Ange det nyckel-ID som motsvarar den offentliga nyckel som du använde för att kryptera dina data när du skapade källanslutningen.
    * Om du även använde teckenverifieringsnyckelparet måste du även ange det ID för signaturverifieringsnyckel som motsvarar dina krypterade data.
