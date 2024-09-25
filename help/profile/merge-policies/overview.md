@@ -4,9 +4,9 @@ title: Översikt över kopplingsprofiler
 type: Documentation
 description: Med Adobe Experience Platform kan ni sammanföra datafragment från flera olika källor och kombinera dem för att få en helhetsbild av era enskilda kunder. När du sammanför dessa data är sammanslagningsprinciper de regler som används av Platform för att avgöra hur data ska prioriteras och vilka data som ska kombineras för att skapa en enhetlig vy.
 exl-id: a8ef527a-cfee-4129-9973-e8a212a3ad1e
-source-git-commit: 8ae18565937adca3596d8663f9c9e6d84b0ce95a
+source-git-commit: 5e8bbdf5b7b07c31a36730c86b177fce6041e319
 workflow-type: tm+mt
-source-wordcount: '1250'
+source-wordcount: '1270'
 ht-degree: 0%
 
 ---
@@ -71,11 +71,11 @@ En organisation kan skapa en standardsammanfogningsprincip som används i organi
 
 Varje organisation kan skapa flera sammanfogningsprinciper som är relaterade till en enda XDM-schemaklass, men de kan bara ha en standardsammanfogningsprincip deklarerad för varje klass. Din organisation kan till exempel ha en standardprincip för sammanslagning som är relaterad till klassen [!DNL XDM Individual Profile] och en annan standardprincip för sammanslagning för en anpassad produktinventeringsklass.
 
-Om du skapar en ny sammanfogningsprincip och anger den som standard, uppdateras den tidigare standardprincipen automatiskt av systemet till att inte längre vara standard.
+Om du skapar en ny sammanfogningsprincip och anger den som standard, uppdateras den tidigare standardprincipen automatiskt av systemet till att inte längre vara standard. Alla målgrupper som skapas efter den här tidpunkten kommer att använda den nya standardprincipen för sammanfogning.
 
 >[!WARNING]
 >
->Profilantal och målgrupper med en befintlig associerad standardsammanfogningsprincip kan påverkas. Alla målgrupper som har en standardprincip för sammanslagning kommer att uppdateras till den nya standardprincipen för sammanslagning.
+>Profilantal och målgrupper med en befintlig associerad standardsammanfogningsprincip kan påverkas. Dessutom kommer målgrupper **inte** automatiskt att uppdateras till att använda den nya standardprincipen för sammanslagning, och fortsätter att använda den tidigare principen för sammanslagning.
 
 ## Nästa steg
 
