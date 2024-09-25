@@ -2,9 +2,9 @@
 title: Översikt över läget Query Pro
 description: Lär dig hur du använder SQL-frågor i Adobe Experience Platform-gränssnittet för att generera diagram för dina anpassade instrumentpaneler.
 exl-id: 15c664c4-8546-4e04-b81d-c78bf83500d3
-source-git-commit: 0970fd8fbea86115d92dc78cdba753da69cc2ee6
+source-git-commit: ed1565fad1c539d69b85fb644d4bc16d4a262673
 workflow-type: tm+mt
-source-wordcount: '1027'
+source-wordcount: '1165'
 ht-degree: 0%
 
 ---
@@ -68,6 +68,26 @@ I det här exemplet på ritstiftet är alternativen storlek och färg. Färgen b
 Om du vill ändra diagramtyp eller diagram för din widget väljer du bland de tillgängliga alternativen i listrutan [!UICONTROL Marks]. Alternativen är [!UICONTROL Line], [!UICONTROL Donut], [!UICONTROL Big number] och [!UICONTROL Bar]. När du har valt det här alternativet genereras en förhandsvisningsbild av widgetens aktuella inställningar.
 
 ![Widgetdispositionen med widgetens förhandsvisning markerad.](../../images/sql-insights/widget-preview.png)
+
+## Avancerade tabellattribut {#advanced-attributes}
+
+Om du vill använda automatiska sorteringsfunktioner för någon eller alla kolumner i dina tabeller väljer du **[!UICONTROL Edit]** för att redigera hela instrumentpanelen.
+
+![En anpassad instrumentpanel med Redigera markerat.](../../images/query-pro-mode/advanced-edit-dashboard.png)
+
+Markera ellipsen (`...`) i tabelldiagrammet där du vill lägga till kolumnsortering och välj sedan **[!UICONTROL Edit]**.
+
+![En tabell som visar ellipsmenyn med Redigera markerat.](../../images/query-pro-mode/advanced-table-edit.png)
+
+Om du vill aktivera sortering för valfri kolumn markerar du kryssrutorna **[!UICONTROL Sortable]**.
+
+![Tabellredigeringssida med sorterbara kryssrutor markerade.](../../images/query-pro-mode/advanced-table-sortable.png)
+
+Välj egenskapsikonen (![Egenskapsikonen.](/help/images/icons/properties.png)) i den högra listen för att öppna panelen [!UICONTROL Properties]. Använd listrutan på panelen **[!UICONTROL Properties]** för att markera kolumnen **[!UICONTROL Default sort]** och använd sedan listrutan för att markera **[!UICONTROL Sort direction]**. Välj slutligen **[!UICONTROL Save and close]**.
+
+![Widgetdispositionen med egenskapsikonen, standardsortering, sorteringsriktning och spara och stäng markerad.](../../images/query-pro-mode/advanced-table-properties.png)
+
+Mer information om sortering, storleksändring av kolumner och sidnumreringsfunktioner finns i [Visa mer](./view-more.md).
 
 ## Widget-egenskaper {#properties}
 
