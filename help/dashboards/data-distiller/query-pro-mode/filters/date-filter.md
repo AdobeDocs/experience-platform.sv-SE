@@ -2,9 +2,9 @@
 title: Skapa ett datumfilter
 description: Lär dig hur du filtrerar dina anpassade insikter efter datum.
 exl-id: fa05d651-ea43-41f0-9b7d-f19c4a9ac256
-source-git-commit: 0970fd8fbea86115d92dc78cdba753da69cc2ee6
+source-git-commit: 77cedd351b5628d15c279fceabde735f4f93f392
 workflow-type: tm+mt
-source-wordcount: '653'
+source-wordcount: '900'
 ht-degree: 0%
 
 ---
@@ -22,6 +22,60 @@ Om du inte känner till frågeparametrar kan du läsa dokumentationen för [väg
 Om du vill använda ett datumfilter väljer du **[!UICONTROL Add filter]** och sedan **[!UICONTROL Date Filter]** på den nedrullningsbara menyn i instrumentpanelsvyn.
 
 ![En anpassad kontrollpanel med filtret Lägg till och den nedrullningsbara menyn markerad.](../../../images/query-pro-mode/add-filter.png)
+
+Följande datumfiltreringsalternativ visas.
+
+| Filter | Beskrivning |
+| --- | --- |
+| Inget anpassat datum | Välj ett eller flera anpassade datum från flera förinställda värden. |
+| Anpassat datumintervall | Välj ett eller flera anpassade datum från flera förinställda värden eller ange ett anpassat datumintervall. |
+| Anpassat datum | Välj bland de förinställda värdena eller ange startdatumet för instrumentpanelen. |
+
+![Dialogrutan för att skapa datumfilter med de tre anpassade datumväljaralternativen markerade.](../../../images/query-pro-mode/create-date-filter.png)
+
+### Skapa ett eget datumfilter
+
+Om du vill använda ett fördefinierat datumfilter väljer du **[!UICONTROL No custom date]** och väljer sedan de fördefinierade datumalternativ som du vill inkludera. Använd sedan listrutan för att välja standarddatumintervall och välj **[!UICONTROL Save]**.
+
+![Dialogrutan Skapa datumfilter utan anpassat datumfilter och spara är markerad.](../../../images/query-pro-mode/no-custom-date-filter.png)
+
+Du återgår till kontrollpanelen, som visar det standarddatumintervall som du valde tidigare. Använd listrutan för att välja ett annat förinställt datumintervall.
+
+![En anpassad instrumentpanel med standarddatumintervallet med listrutan markerad.](../../../images/query-pro-mode/no-custom-date-filter-results.png)
+
+### Skapa ett anpassat datumintervallfilter
+
+Om du vill använda ett anpassat datumintervallfilter väljer du **[!UICONTROL Custom date range]** och väljer sedan de fördefinierade datumalternativ som du vill inkludera. Välj slutligen **[!UICONTROL Custom]** för att ange standarddatumintervall. Ange ett datumintervall i kalendern och välj sedan **[!UICONTROL Save]**.
+
+>[!NOTE]
+>
+>Du behöver inte välja fördefinierade datumalternativ.
+
+![Dialogrutan för att skapa datumfilter med det anpassade datumintervallfiltret, anpassade och sparade markerat.](../../../images/query-pro-mode/custom-date-range-filter.png)
+
+Du återgår till kontrollpanelen som visar det anpassade dataområde som du tidigare angav. Använd listrutan för att välja ett annat förinställt datumintervall.
+
+![En anpassad instrumentpanel med standarddatumintervallet med det anpassade datumet markerat.](../../../images/query-pro-mode/custom-date-range-filter-results.png)
+
+### Skapa ett anpassat datumfilter
+
+Om du vill använda ett anpassat datumfilter väljer du **[!UICONTROL Custom date]** och markerar de fördefinierade datumalternativ som du vill inkludera. Välj slutligen **[!UICONTROL Custom]** och använd sedan kalendern för att välja ett startdatum. Välj slutligen **[!UICONTROL Save]**.
+
+>[!NOTE]
+>
+>Du behöver inte välja fördefinierade datumalternativ.
+
+![Dialogrutan för att skapa datumfilter med det anpassade datumfiltret, anpassade och sparade markerat.](../../../images/query-pro-mode/custom-date-filter.png)
+
+Du kommer nu tillbaka till kontrollpanelen där de anpassade data som du har angett tidigare visas. Använd listrutan för att välja ett annat datum.
+
+![En anpassad instrumentpanel med standarddatumintervallet med det anpassade datumet markerat.](../../../images/query-pro-mode/custom-date-filter-results.png)
+
+## Ta bort ett datumfilter {#delete-date-filter}
+
+Om du vill ta bort datumfiltret väljer du ikonen Ta bort filter (![Ikonen Ta bort filter.](/help/images/icons/filter-delete.png)).
+
+![En anpassad kontrollpanel med filterborttagningsikonen markerad.](../../../images/query-pro-mode/delete-date-filter.png)
 
 ## Redigera din SQL för att inkludera datumfrågeparametrar {#include-date-parameters}
 
@@ -75,25 +129,3 @@ Välj sedan lämpliga frågeparametrar i listrutorna.
 ![Widgetdispositionen med listrutan Start_date markerad.](../../../images/sql-insights/widget-composer-date-filter-dropdown.png)
 
 Välj slutligen **[!UICONTROL Save and close]** om du vill gå tillbaka till instrumentpanelen. Datumfilter är nu aktiverade för alla insikter som har start- och slutdatumparametrar.
-
-## Använda datumfiltret
-
-Om du vill använda ett anpassat datumfilter markerar du kalenderikonen och väljer ett start- och slutdatum i kalendervyn.
-
->[!IMPORTANT]
->
->Bara att lägga till ett datumfilter ändras inte diagrammen. Du måste redigera alla insikter för att inkludera det start- och slutdatum du valt.
-
-![En anpassad kontrollpanel med datumfilterskalendern markerad.](../../../images/query-pro-mode/date-filter.png)
-
-När du har valt ett datumintervall på instrumentpanelen, kommer insikter med datumparametrar i deras SQL att visa datumfilteralternativen i widgetens disposition.
-
->[!NOTE]
->
->När du väljer ett datumintervall på instrumentpanelen visas växlingarna för datumfilter som en del av arbetsflödet för att skapa insikter.
-
-## Ta bort ett datumfilter {#delete-date-filter}
-
-Om du vill ta bort datumfiltret väljer du ikonen Ta bort filter (![Ikonen Ta bort filter.](/help/images/icons/filter-delete.png)).
-
-![En anpassad kontrollpanel med filterborttagningsikonen markerad.](../../../images/query-pro-mode/delete-date-filter.png)

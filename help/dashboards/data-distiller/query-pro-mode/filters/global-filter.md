@@ -2,7 +2,7 @@
 title: Skapa ett globalt filter
 description: Lär dig filtrera dina datainsikter med ett anpassat globalt filter.
 exl-id: a0084039-8809-4883-9f68-c666dcac5881
-source-git-commit: 5dd821383e1b1a7bd4998a6cf14a941bfdf3f26c
+source-git-commit: 581eb2a33f9bdfddc89c9d8dbf9fca8eb3725b1d
 workflow-type: tm+mt
 source-wordcount: '478'
 ht-degree: 0%
@@ -66,4 +66,3 @@ Om du vill öppna dialogrutan [!UICONTROL Filters] med alla dina anpassade filte
 Om du vill ta bort alla egna globala filter väljer du **[!UICONTROL Clear all]** i dialogrutan [!UICONTROL Filters].
 
 ![Dialogrutan Filter med Rensa alla markerat.](../../../images/query-pro-mode/clear-all.png)
-
