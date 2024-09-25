@@ -3,18 +3,19 @@ audience: user
 user-guide-title: Versionsinformation om Adobe Experience Platform
 breadcrumb-title: Versionsinformation om Platform
 user-guide-description: Hitta månatlig versionsinformation om Adobe Experience Platform.
-source-git-commit: f8aacabaef3cd715d63271a7d753d64aa03c6822
+source-git-commit: ee04a65013b7ae667ced9b7ea5dde8262c10935e
 workflow-type: tm+mt
-source-wordcount: '147'
-ht-degree: 91%
+source-wordcount: '149'
+ht-degree: 94%
 
 ---
 
 
-# Versionsinformation för Adobe Experience Platform {#release-notes}
+# Versionsinformation om Adobe Experience Platform {#release-notes}
 
 * [Versionsinformation för aktuell plattform](latest/latest.md)
 * 2024 {#2024}
+   * [September 2024](2024/september-2024.md)
    * [Augusti 2024](2024/august-2024.md)
    * [Juli 2024](2024/july-2024.md)
    * [Juni 2024](2024/june-2024.md)
