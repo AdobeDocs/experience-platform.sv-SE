@@ -3,9 +3,9 @@ solution: Experience Platform
 title: Användargränssnittshandbok för direktuppspelningssegmentering
 description: Med direktuppspelad segmentering på Adobe Experience Platform kan ni segmentera i nära realtid samtidigt som ni fokuserar på datamöjligheter. Med direktuppspelningssegmentering sker nu segmentkvalificering allt eftersom data når plattformen, vilket minskar behovet av att schemalägga och köra segmenteringsjobb. Med den här funktionen kan de flesta segmentregler utvärderas när data överförs till plattformen, vilket innebär att segmentmedlemskapet hålls uppdaterat utan att schemalagda segmenteringsjobb körs.
 exl-id: cb9b32ce-7c0f-4477-8c49-7de0fa310b97
-source-git-commit: c2f9bcd9aeb0073b8b26413ec29e2dff1ee5c80d
+source-git-commit: a1c9003a1b219325daf8fa38cda8bb1a019a55c6
 workflow-type: tm+mt
-source-wordcount: '1530'
+source-wordcount: '1436'
 ht-degree: 0%
 
 ---
@@ -32,15 +32,13 @@ Med direktuppspelningssegmentering på [!DNL Adobe Experience Platform] kan kund
 
 En fråga utvärderas automatiskt med direktuppspelningssegmentering om den uppfyller något av följande kriterier:
 
-| Frågetyp | Information | Exempel |
-| ---------- | ------- | ------- |
-| En händelse | En segmentdefinition som refererar till en enda inkommande händelse utan tidsbegränsning. | ![Ett exempel på en enskild händelse visas.](../images/ui/streaming-segmentation/incoming-hit.png) |
-| En händelse i ett relativt tidsfönster | En segmentdefinition som refererar till en enda inkommande händelse. | ![Ett exempel på en enskild händelse i ett relativt tidsfönster visas.](../images/ui/streaming-segmentation/relative-hit-success.png) |
-| En händelse med ett tidsfönster | En segmentdefinition som refererar till en enda inkommande händelse med ett tidsfönster. | ![Ett exempel på en enstaka händelse med ett tidsfönster visas.](../images/ui/streaming-segmentation/historic-time-window.png) |
-| Endast profil | En segmentdefinition som bara refererar till ett profilattribut. | |
-| En händelse med ett profilattribut inom ett relativt tidsfönster på mindre än 24 timmar | En segmentdefinition som refererar till en enda inkommande händelse, med ett eller flera profilattribut, och som inträffar inom ett relativt tidsfönster på mindre än 24 timmar. | ![Ett exempel på en enskild händelse med ett profilattribut i ett relativt tidsfönster visas.](../images/ui/streaming-segmentation/profile-relative-success.png) |
-| Segmentering | En segmentdefinition som innehåller en eller flera grupper eller direktuppspelningssegment. **Obs!** Om ett segment används, inaktiveras profiler **var 24:e timme**. | ![Ett exempel på ett segment av segment visas.](../images/ui/streaming-segmentation/two-batches.png) |
-| Flera händelser med ett profilattribut | Alla segmentdefinitioner som refererar till flera händelser **under de senaste 24 timmarna** och (valfritt) har ett eller flera profilattribut. | ![Ett exempel på flera händelser med ett profilattribut visas.](../images/ui/streaming-segmentation/event-history-success.png) |
+| Frågetyp | Information |
+| ---------- | ------- |
+| En händelse inom ett tidsfönster på mindre än 24 timmar | En segmentdefinition som refererar till en enda inkommande händelse inom ett tidsfönster på mindre än 24 timmar. |
+| Endast profil | En segmentdefinition som bara refererar till ett profilattribut. |
+| En händelse med ett profilattribut inom ett relativt tidsfönster på mindre än 24 timmar | En segmentdefinition som refererar till en enda inkommande händelse, med ett eller flera profilattribut, och som inträffar inom ett relativt tidsfönster på mindre än 24 timmar. |
+| Segmentering | En segmentdefinition som innehåller en eller flera grupper eller direktuppspelningssegment. **Obs!** Om ett segment används, inaktiveras profiler **var 24:e timme**. |
+| Flera händelser med ett profilattribut | Alla segmentdefinitioner som refererar till flera händelser **under de senaste 24 timmarna** och (valfritt) har ett eller flera profilattribut. |
 
 En segmentdefinition kommer **inte** att aktiveras för direktuppspelningssegmentering i följande scenarier:
 

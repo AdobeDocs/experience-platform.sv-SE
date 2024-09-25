@@ -4,9 +4,9 @@ title: Edge Segmentering med API
 description: Det här dokumentet innehåller exempel på hur du använder kantsegmentering med Adobe Experience Platform Segmentation Service API.
 role: Developer
 exl-id: effce253-3d9b-43ab-b330-943fb196180f
-source-git-commit: 057db1432493a8443eb91b0fc371d0bdffb3de86
+source-git-commit: a1c9003a1b219325daf8fa38cda8bb1a019a55c6
 workflow-type: tm+mt
-source-wordcount: '806'
+source-wordcount: '783'
 ht-degree: 0%
 
 ---
@@ -43,9 +43,7 @@ För att ett segment ska kunna utvärderas med hjälp av kantsegmentering måste
 
 | Frågetyp | Information |
 | ---------- | ------- |
-| En händelse | En segmentdefinition som refererar till en enda inkommande händelse utan tidsbegränsning. |
-| En händelse i ett relativt tidsfönster | En segmentdefinition som refererar till en enda inkommande händelse. |
-| En händelse med ett tidsfönster | En segmentdefinition som refererar till en enda inkommande händelse med ett tidsfönster. |
+| En händelse inom ett tidsfönster på mindre än 24 timmar | En segmentdefinition som refererar till en enda inkommande händelse inom ett tidsfönster på mindre än 24 timmar. |
 | Endast profil | En segmentdefinition som bara refererar till ett profilattribut. |
 | En händelse med ett profilattribut inom ett relativt tidsfönster på mindre än 24 timmar | En segmentdefinition som refererar till en enda inkommande händelse, med ett eller flera profilattribut, och som inträffar inom ett relativt tidsfönster på mindre än 24 timmar. |
 | Segmentering | En segmentdefinition som innehåller en eller flera grupper eller direktuppspelningssegment. **Obs!** Om ett segment används, inaktiveras profiler **var 24:e timme**. |

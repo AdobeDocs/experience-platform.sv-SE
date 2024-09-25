@@ -2,10 +2,10 @@
 title: Adobe Experience Platform Release Notes september 2024
 description: Versionsinformation för september 2024 för Adobe Experience Platform.
 exl-id: f854f9e5-71be-4d56-a598-cfeb036716cb
-source-git-commit: 0cb134fe6b0a87571e01ada7946c4bbb7d4c346b
+source-git-commit: e93d27ef67802c5fbdffdacb3a0649d373a41a2d
 workflow-type: tm+mt
-source-wordcount: '1974'
-ht-degree: 25%
+source-wordcount: '2141'
+ht-degree: 23%
 
 ---
 
@@ -50,9 +50,11 @@ Experience Platform tillhandahåller flera instrumentpaneler där du kan visa vi
 
 | Funktion | Beskrivning |
 | --- | --- |
+| Register för licensanvändningstillägg | Få detaljerad insyn i licensanvändningen och hantera era plattformsresurser med dedikerade tabeller för kärnprodukter och tillägg. Spåra och analysera nyckelvärden för varje kärnprodukt med detaljerade vyer på sandlådenivå. Tilläggsstatistik kan integreras smidigt med kärnproduktstatistik, vilket ger en heltäckande bild av användningen. Ökad synlighet hjälper er att optimera licenshanteringen och anpassa resurserna efter organisationens behov. Mer information finns i [[!UICONTROL License Usage]-handboken för kontrollpanelen ](../../dashboards/guides/license-usage.md#overview-tab). |
 | Query Pro-läge - globala filteruppgraderingar | Förbättra analysen med det nya datumfiltret i Query Pro-läget. Förfina insikterna med dynamiska datumparametrar i dina SQL-frågor och filtrera data efter specifika tidsramar. Välj förinställda eller anpassade datumintervall med ett intuitivt användargränssnitt så att instrumentpanelerna är relevanta för alla användare. Förenkla arbetsflödena, bibehåll precisionen och fatta vältajmade beslut. Läs [guiden om att skapa datumfilter](../../dashboards/data-distiller/query-pro-mode/filters/global-filter.md) om du vill ha mer information. |
 | Query Pro-lägen - detaljnivå | Lås upp djupare insikter med funktionen Granska genom i Query Pro-läget och navigera smidigt mellan diagram på hög nivå och detaljerade paneler. Använd den här funktionen för att enkelt gå från sammanfattningar till djupgående analyser och utforska trender, kundbeteenden och nyckeltal. Automatiska genomströmningar av filter och genomborrning på flera nivåer håller data konsekventa, vilket ger en smidig utforskning. Förenkla arbetsflödena, håll rätt sammanhang och snabba upp beslutsfattandet. Läs [steg-för-steg-guiden om hur du skapar fördjupningar](../../dashboards/data-distiller/query-pro-mode/drill-through.md) om du vill ha mer information. |
 | Query Pro-läge - avancerade tabellattribut | Använd Query Pro Mode för avancerade tabellattribut för att effektivisera datavisualisering, förbättra arbetsflödets effektivitet och förbättra dataskärpan. Lägg till automatisk sortering, storleksändring och sidnumrering i tabellerna direkt från anpassade kontrollpaneler. Sortera kolumner för att prioritera nyckeldata, ändra storlek för optimal läsbarhet och navigera smidigt i stora datauppsättningar utan att ändra SQL-frågorna. Läs guiden [Visa mer](../../dashboards/data-distiller/query-pro-mode/view-more.md) om du vill veta hur du integrerar dessa funktioner och höjer dina datainsikter. |
+| Total datavolym | Mätvärdet för genomsnittlig profilnoggrannhet har ersatts med måttet Total datavolym. Total datavolym avser den totala mängden tillgängliga data som kan användas med kundprofilen i realtid för engagemangs- och personaliseringsarbetsflöden. Mer information om den här ändringen finns i guiden [Total datavolym](../../landing/license-usage-and-guardrails/total-data-volume.md). |
 
 {style="table-layout:auto"}
 
@@ -153,7 +155,8 @@ Läs [Översikt över frågetjänsten](../../query-service/home.md) om du vill v
 **Nya eller uppdaterade funktioner**
 
 | Funktion | Beskrivning |
-| --- | --- |
+| ------- | ----------- |
+| Uppdatering av kriterier för direktuppspelningssegmentering | Från och med versionen från september 2024 har kriterierna för att era målgrupper ska vara berättigade till direktuppspelningssegmentering uppdaterats. Mer information om de här ändringarna finns i [uppgraderingen av kvalificeringsvillkor för direktuppspelningssegmentering](../../segmentation/eligibility-criteria-update.md). |
 | Implementering av enhetlig sökning | Sökbeteendet i Segment Builder kommer nu att använda Unified Search. Detta ger en mer robust upplevelse när man hanterar och söker efter målgrupper som kan återanvända ett segmentmedlemskap. Mer information om den här ändringen finns i [guiden för Segment Builder](../../segmentation/ui/segment-builder.md#rule-builder-canvas). |
 
 {style="table-layout:auto"}
