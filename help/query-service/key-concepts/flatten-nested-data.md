@@ -3,7 +3,7 @@ keywords: Experience Platform;frågetjänst;frågetjänst;kapslade datastrukture
 title: Förenkla kapslade datastrukturer för användning med BI-verktyg
 description: Det här dokumentet förklarar hur du förenklar XDM-scheman för alla tabeller och vyer under en session när du använder BI-verktyg från tredje part med Query Service.
 exl-id: 7e534c0a-db6c-463e-85da-88d7b2534ece
-source-git-commit: 99cd69234006e6424be604556829b77236e92ad7
+source-git-commit: 5f2b44c364183b7becf69f491b41e9d5558accc2
 workflow-type: tm+mt
 source-wordcount: '853'
 ht-degree: 0%
@@ -56,7 +56,7 @@ prod:all?FLATTEN
 
 Det exempelschema som används i den här handboken använder standardfältgruppen [!UICONTROL Commerce Details], som använder objektstrukturen `commerce` och arrayen `productListItems`. I XDM-dokumentationen finns [mer information om [!UICONTROL Commerce Details]-fältgruppen](../../xdm/field-groups/event/commerce-details.md). En representation av schemastrukturen visas i bilden nedan.
 
-![Ett schemadiagram över fältgruppen Commerce Details som innehåller strukturerna `commerce` och `productListItems`.](../images/essential-concepts/commerce-details.png)
+![Ett schemadiagram över fältgruppen Commerce Details som innehåller strukturerna `commerce` och `productListItems`.](../images/key-concepts/commerce-details.png)
 
 Om ditt BI-verktyg inte stöder kapslade datastrukturer kan det vara svårt att referera till kapslade fält om de innehåller serialiserade värden (till exempel `commerce` och `productListItems` i exempelschemat). Dessa värden kan förekomma som delar i ett enskilt kodat `commerce`-strängfält och är inte realistiskt oanvändbara.
 

@@ -2,9 +2,9 @@
 title: Datauppsättningsexempel
 description: Med exempeldatauppsättningar för frågetjänsten kan du utföra utforskande frågor på stora data med avsevärt reducerad bearbetningstid, vilket gör att frågan blir korrekt. Den här guiden innehåller information om hur du hanterar dina exempel för ungefärlig frågebearbetning
 exl-id: 9e676d7c-c24f-4234-878f-3e57bf57af44
-source-git-commit: 28fe8ec5a589b8d181ba2f888d50fa9d2d7d4996
+source-git-commit: 5f2b44c364183b7becf69f491b41e9d5558accc2
 workflow-type: tm+mt
-source-wordcount: '643'
+source-wordcount: '632'
 ht-degree: 0%
 
 ---
@@ -17,12 +17,13 @@ Eftersom många användare inte behöver ett exakt svar för en sammanställning
 
 För att du ska kunna hantera dina exempel för ungefärlig frågebearbetning har frågetjänsten stöd för följande åtgärder för datauppsättningsexempel:
 
-- [Skapa ett enhetligt slumpmässigt datauppsättningsexempel.](#create-a-sample)
-- [Du kan också ange filtervillkor](##optional-filter-criteria)
-- [Visa listan med exempel för en ADLS-tabell.](#view-list-of-samples)
-- [Fråga exempeldatamängderna direkt.](#query-sample-datasets)
-- [Ta bort ett exempel.](#delete-a-sample)
-- Ta bort associerade exempel när den ursprungliga ADLS-tabellen tas bort.
+- [Datauppsättningsexempel](#dataset-samples)
+   - [Komma igång {#get-started}](#getting-started-get-started)
+   - [Skapa ett enhetligt slumpmässigt datauppsättningsexempel {#create-a-sample}](#create-a-uniform-random-dataset-sample-create-a-sample)
+   - [Du kan också ange filtervillkor {#optional-filter-criteria}](#optionally-specify-a-filter-criteria-optional-filter-criteria)
+   - [Visa listan med exempel {#view-list-of-samples}](#view-the-list-of-samples-view-list-of-samples)
+   - [Fråga exempeldatamängden {#query-sample-datasets}](#query-the-sample-dataset-query-sample-datasets)
+   - [Ta bort datauppsättningsexempel {#delete-a-sample}](#delete-dataset-samples-delete-a-sample)
 
 ## Komma igång {#get-started}
 
@@ -32,7 +33,7 @@ Om du vill använda funktionerna för att skapa och ta bort ungefärliga frågeb
 >
 >Du måste aktivera sessionsflaggan varje gång du loggar in på plattformen.
 
-![Frågeredigeraren med kommandot SET aqp=true; markerat.](../images/essential-concepts/set-session-flag.png)
+![Frågeredigeraren med kommandot SET aqp=true; markerat.](../images/key-concepts/set-session-flag.png)
 
 ## Skapa ett enhetligt exempel på en slumpmässig datauppsättning {#create-a-sample}
 
