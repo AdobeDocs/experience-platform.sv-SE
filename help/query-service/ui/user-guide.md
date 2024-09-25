@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Användargränssnittshandbok för frågeredigeraren
 description: Frågeredigeraren är ett interaktivt verktyg som tillhandahålls av Adobe Experience Platform Query Service, som gör att du kan skriva, validera och köra frågor för kundupplevelsedata i användargränssnittet i Experience Platform. Frågeredigeraren har stöd för att utveckla frågor för analys och datautforskande, och gör att du kan köra interaktiva frågor i utvecklingssyfte samt icke-interaktiva frågor för att fylla i datauppsättningar i Experience Platform.
 exl-id: d7732244-0372-467d-84e2-5308f42c5d51
-source-git-commit: d2bc580ba1cacdfab45bdc6356c630a63e7d0f6e
+source-git-commit: 7ba9eb6891657e7f3d7ebbd41314b7973e31ea61
 workflow-type: tm+mt
-source-wordcount: '2349'
+source-wordcount: '2720'
 ht-degree: 0%
 
 ---
@@ -49,6 +49,12 @@ Frågor som körs i Frågeredigeraren körs interaktivt, vilket innebär att fr�
 
 Med Frågeredigeraren kan du skriva, köra och spara frågor om kundupplevelsedata. Alla frågor som körs eller sparas i Frågeredigeraren är tillgängliga för alla användare i organisationen som har tillgång till Frågetjänsten.
 
+### Databasväljare {#database-selector}
+
+Välj en databas som ska frågas i listrutan i det övre högra hörnet i Frågeredigeraren. Den valda databasen visas i listrutan.
+
+![Frågeredigeraren med listrutemenyn för databasen markerad.](../images/ui/query-editor/database-dropdown.png)
+
 ### Inställningar {#settings}
 
 En inställningsikon ovanför inmatningsfältet i Frågeredigeraren innehåller alternativ för att aktivera/inaktivera mörkt tema eller inaktivera/aktivera automatisk komplettering.
@@ -66,9 +72,6 @@ Om du vill aktivera mörka eller ljusa teman väljer du inställningsikonen (![E
 Frågeredigeraren föreslår automatiskt potentiella SQL-nyckelord tillsammans med tabell- eller kolumninformation för frågan när du skriver den. Funktionen för automatisk komplettering är aktiverad som standard och kan inaktiveras eller aktiveras när som helst från inställningarna för Frågeredigeraren.
 
 Konfigurationsinställningen som slutförs automatiskt är per användare och sparas för den användarens efterföljande inloggningar. Om du inaktiverar den här funktionen hindras flera metadatakommandon från att bearbetas och ger rekommendationer som vanligtvis underlättar för författaren när han/hon redigerar frågor.
-
-<!-- Currently editing the auto complete setting info. -->
-
 
 
 ### Kör flera sekventiella frågor {#execute-multiple-sequential-queries}
@@ -112,17 +115,7 @@ För att minimera utvecklingstiden rekommenderar vi att du utvecklar frågor med
 
 ## Skrivverktyg i Frågeredigeraren {#writing-tools}
 
-- **Automatisk syntaxmarkering:** Gör det enklare att läsa och ordna SQL.
-
-![En SQL-sats i Frågeredigeraren som visar färgmarkering för syntax.](../images/ui/query-editor/syntax-highlight.png)
-
-- **SQL-nyckelord slutförs automatiskt:** Börja skriva din fråga och använd sedan piltangenterna för att navigera till önskad term och tryck på **Retur**.
-
-![Några tecken i SQL med listrutan för automatisk slutförande som innehåller alternativ från Frågeredigeraren.](../images/ui/query-editor/syntax-auto.png)
-
-- **Tabell och fält har fyllts i automatiskt:** Börja skriva det tabellnamn du vill `SELECT` från, använd sedan piltangenterna för att navigera till tabellen du söker efter och tryck på **Retur**. När en tabell har markerats identifieras fält i den tabellen automatiskt.
-
-![Indata från Frågeredigeraren med förslag på nedrullningsbara tabellnamn.](../images/ui/query-editor/tables-auto.png)
+Använd Frågeredigerarens skrivverktyg för att förbättra frågeredigeringsprocessen. Det finns alternativ för att formatera text, kopiera SQL, hantera frågeinformation och spara eller schemalägga ditt arbete medan du arbetar.
 
 ### Formatera text {#format-text}
 
@@ -202,6 +195,43 @@ Om en fråga har schemalagts ger fliken [!UICONTROL Scheduled Queries] förbätt
 >[!NOTE]
 >
 >Frågor som inte körs sparas inte av loggen. För att frågan ska vara tillgänglig i frågetjänsten måste den köras eller sparas i frågeredigeraren.
+
+### Objektläsare {#object-browser}
+
+>[!AVAILABILITY]
+>
+>Datauppsättningsnavigeringsfältet är bara tillgängligt för Data Distiller-kunder. Plattformsgränssnittet kanske inte innehåller den vänstra datamängdsnavigeringslisten.  Andra bilder i det här dokumentet kanske inte motsvarar navigeringslisten för datauppsättningar. Kontakta din Adobe-representant om du vill ha mer information.
+
+Använd objektwebbläsaren för att enkelt söka efter och filtrera datauppsättningar. Objektwebbläsaren minskar tiden som går åt till att söka efter tabeller och datauppsättningar i stora miljöer med många datauppsättningar. Med smidig åtkomst till relevanta data och metadata kan du fokusera mer på att skapa frågor och inte på navigering.
+
+Om du vill navigera i databasen med objektwebbläsaren anger du ett tabellnamn i sökfältet eller väljer **[!UICONTROL Tables]** för att expandera listan med tillgängliga datauppsättningar och tabeller. När du använder sökfältet filtreras listan med tillgängliga tabeller dynamiskt baserat på dina indata.
+
+>[!NOTE]
+>
+>Alla datauppsättningar som finns i [den valda databasen](#database-dropdown) visas i en navigeringsruta till vänster om Frågeredigeraren.
+
+![Datauppsättningsnavigeringsfältet i frågeredigeraren med sökindata markerat.](../images/ui/query-editor/search-tables.png)
+
+Schemat som visas i objektwebbläsaren är ett observerbart schema. Det innebär att du kan använda det för att övervaka ändringar och uppdateringar i realtid när ändringarna syns direkt. De observerbara schemana hjälper till att säkerställa datasynkronisering och hjälper till med felsökning och analysåtgärder.
+
+#### Aktuella begränsningar {#current-limitations}
+
+Här följer en lista över aktuella begränsningar:
+
+- Sekventiell frågekörning: Det går endast att köra en fråga åt gången. När en fråga bearbetas kan inga ytterligare tabeller öppnas i den vänstra navigeringen eftersom frågor bearbetas sekventiellt.
+- Extra rader i frågeloggar: Du kan stöta på ovidkommande frågor som är märkta som &quot;VISA TABELLER&quot; i loggarna. Dessa kommer att tas bort i framtida versioner.
+
+#### Åtkomst till tabellmetadata {#table-metadata}
+
+Förutom snabba sökningar kan du nu enkelt komma åt metadata för alla tabeller genom att markera ikonen i bredvid tabellnamnet. Detta ger dig detaljerad information om den markerade tabellen, som hjälper dig att fatta välgrundade beslut när du skriver frågor.
+
+![Datauppsättningsnavigeringsfältet i frågeredigeraren med sökindata markerat.](../images/ui/query-editor/table-metadata.png)
+
+#### Utforska underordnade tabeller
+
+Om du vill utforska underordnade eller länkade tabeller väljer du listrutepilen bredvid ett tabellnamn i listan. Detta utökar tabellen så att den visar alla associerade underordnade tabeller och ger en tydlig vy av datastrukturen och möjliggör mer komplexa frågekonstruktioner. Ikonen bredvid fältnamnet anger kolumnens datatyp så att du lättare kan identifiera den vid komplexa frågor.
+
+![Frågeredigeraren med den filtrerade tabelllistan visas.](../images/ui/query-editor/child-table-list.png)
 
 ## Köra frågor med Frågeredigeraren {#executing-queries}
 
