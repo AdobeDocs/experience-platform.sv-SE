@@ -3,9 +3,9 @@ title: Exportera datauppsättningar till molnlagringsmål
 type: Tutorial
 description: Lär dig hur du exporterar datauppsättningar från Adobe Experience Platform till den molnlagringsplats du föredrar.
 exl-id: e89652d2-a003-49fc-b2a5-5004d149b2f4
-source-git-commit: e95c0e509931f141ff72c1defacebe5a29756157
+source-git-commit: ad33eaa48928b25502ef279f000b92f31e1667ca
 workflow-type: tm+mt
-source-wordcount: '1793'
+source-wordcount: '2508'
 ht-degree: 0%
 
 ---
@@ -24,7 +24,7 @@ Du kan också använda API:erna för Experience Platform för att exportera data
 
 De datauppsättningar som du kan exportera varierar beroende på Experience Platform (Real-Time CDP, Adobe Journey Optimizer), nivån (Prime eller Ultimate) och eventuella tillägg som du har köpt (till exempel Data Distiller).
 
-Förstå vilka datamängdstyper du kan exportera beroende på program, produktnivå och eventuella köpta tillägg i tabellen nedan:
+Använd tabellen nedan för att förstå vilka datamängdstyper du kan exportera beroende på ditt program, produktnivå och eventuella köpta tillägg:
 
 <table>
 <thead>
@@ -137,11 +137,29 @@ Använd kryssrutorna till vänster om datauppsättningsnamnen för att markera d
 >[!CONTEXTUALHELP]
 >id="platform_destinations_activate_datasets_exportoptions"
 >title="Filexportalternativ för datauppsättningar"
->abstract="Välj **Exportera inkrementella filer** om du bara vill exportera data som har lagts till i datauppsättningen sedan den senaste exporten. <br> Den första stegvisa filexporten innehåller alla data i datauppsättningen, vilket fungerar som en bakgrundsfyllning. Framtida inkrementella filer innehåller endast de data som har lagts till i datauppsättningen sedan den första exporten."
+>abstract="Välj **Exportera inkrementella filer** om du bara vill exportera data som har lagts till i datauppsättningen sedan den senaste exporten. <br> Den första stegvisa filexporten innehåller alla data i datauppsättningen, vilket fungerar som en bakgrundsfyllning. Framtida inkrementella filer innehåller endast de data som har lagts till i datauppsättningen sedan den första exporten. <br> Välj **Exportera hela filer** om du vill exportera det fullständiga medlemskapet för varje datauppsättning vid varje export. "
 
-I steget **[!UICONTROL Scheduling]** kan du ange ett startdatum och en exportgräns för datauppsättningsexporter.
+>[!CONTEXTUALHELP]
+>id="dataset_dataflow_needs_schedule_end_date_header"
+>title="Uppdatera slutdatumet för det här dataflödet"
+>abstract="Uppdatera slutdatumet för det här dataflödet"
 
-Alternativet **[!UICONTROL Export incremental files]** markeras automatiskt. Detta utlöser en export av en eller flera filer som representerar en fullständig ögonblicksbild av datauppsättningen. Efterföljande filer är inkrementella tillägg till datauppsättningen sedan föregående export.
+>[!CONTEXTUALHELP]
+>id="dataset_dataflow_needs_schedule_end_date_body"
+>title="Uppdatera slutdatumet för det här dataflödet"
+>abstract="På grund av de senaste uppdateringarna av det här målet krävs ett slutdatum för dataflödet. Adobe har angett standardslutdatumet till 1 maj 2025. Uppdatera till önskat slutdatum, annars avbryts dataexporten på standarddatumet."
+
+Använd steget **[!UICONTROL Scheduling]** för att:
+
+* Ange ett startdatum och ett slutdatum samt en exportgräns för datauppsättningsexporter.
+* Konfigurera om de exporterade datauppsättningsfilerna ska exportera hela datamängdens medlemskap eller bara stegvisa ändringar av medlemskapet för varje exportförekomst.
+* Anpassa mappsökvägen på lagringsplatsen där datauppsättningar ska exporteras. Läs mer om hur du [redigerar sökvägen till exportmappen](#edit-folder-path).
+
+Använd kontrollen **[!UICONTROL Edit schedule]** på sidan om du vill redigera exportavslut och välja om du vill exportera fullständiga eller stegvisa filer.
+
+![Redigera schemakontroll markerad i schemaläggningssteget.](/help/destinations/assets/ui/export-datasets/edit-schedule-control-highlight.png)
+
+Alternativet **[!UICONTROL Export incremental files]** är markerat som standard. Detta utlöser en export av en eller flera filer som representerar en fullständig ögonblicksbild av datauppsättningen. Efterföljande filer är inkrementella tillägg till datauppsättningen sedan föregående export. Du kan också välja **[!UICONTROL Export full files]**. I det här fallet väljer du frekvensen **[!UICONTROL Once]** för en engångs fullständig export av datauppsättningen.
 
 >[!IMPORTANT]
 >
@@ -156,13 +174,37 @@ Alternativet **[!UICONTROL Export incremental files]** markeras automatiskt. Det
 
 2. Använd väljaren **[!UICONTROL Time]** för att välja tidpunkten på dagen, i formatet [!DNL UTC], när exporten ska ske.
 
-3. Använd **[!UICONTROL Date]**-väljaren för att välja intervallet när exporten ska äga rum. Observera att du för närvarande inte kan ange ett slutdatum för exporten. Mer information finns i avsnittet [Kända begränsningar](#known-limitations).
+3. Använd **[!UICONTROL Date]**-väljaren för att välja intervallet när exporten ska äga rum.
 
-4. Välj **[!UICONTROL Next]** om du vill spara schemat och fortsätta till steget **[!UICONTROL Review]**.
+4. Välj **[!UICONTROL Save]** om du vill spara schemat och fortsätta till steget **[!UICONTROL Review]**.
 
 >[!NOTE]
 > 
 >För datauppsättningsexporter har filnamnen en förinställning, standardformat, som inte kan ändras. Mer information och exempel på exporterade filer finns i avsnittet [Verifiera datauppsättningsexport](#verify).
+
+## Redigera mappsökväg {#edit-folder-path}
+
+>[!CONTEXTUALHELP]
+>id="destinations_folder_name_template"
+>title="Redigera mappsökväg"
+>abstract="Använd flera angivna makron för att anpassa mappsökvägen där datauppsättningen exporteras."
+
+>[!CONTEXTUALHELP]
+>id="destinations_folder_name_template_preview"
+>title="Förhandsgranskning av sökväg för datauppsättningsmapp"
+>abstract="Få en förhandsgranskning av mappstrukturen som skapas på lagringsplatsen baserat på de makron som du har lagt till i det här fönstret."
+
+Välj **[!UICONTROL Edit folder path]** om du vill anpassa mappstrukturen på lagringsplatsen där exporterade datauppsättningar placeras.
+
+![Redigera mappsökvägskontroll är markerat i schemaläggningssteget.](/help/destinations/assets/ui/export-datasets/edit-folder-path.png)
+
+Du kan använda flera tillgängliga makron för att anpassa ett mappnamn. Dubbelklicka på ett makro för att lägga till det i mappsökvägen och använd `/` mellan makrona för att separera mapparna.
+
+![Makromarkering markerat i modalt fönster för anpassad mapp.](/help/destinations/assets/ui/export-datasets/custom-folder-path-macros.png)
+
+När du har valt makron kan du se en förhandsvisning av mappstrukturen som kommer att skapas på lagringsplatsen. Den första nivån i mappstrukturen representerar **[!UICONTROL Folder path]** som du angav när du [anslöt till målet](/help/destinations/ui/connect-destination.md##set-up-connection-parameters) för att exportera datamängder.
+
+![Förhandsgranskning av mappsökväg markerad i ett modalt fönster för en anpassad mapp.](/help/destinations/assets/ui/export-datasets/custom-folder-path-preview.png)
 
 ## Granska {#review}
 
@@ -174,7 +216,11 @@ På sidan **[!UICONTROL Review]** kan du se en sammanfattning av ditt val. Välj
 
 När du exporterar datauppsättningar skapar Experience Platform en eller flera `.json`- eller `.parquet`-filer på den lagringsplats som du angav. Förvänta dig att nya filer ska placeras på din lagringsplats enligt det exportschema som du angav.
 
-Experience Platform skapar en mappstruktur på den lagringsplats du angav, där den sparar de exporterade datauppsättningsfilerna. En ny mapp skapas för varje exporttid enligt mönstret nedan:
+Experience Platform skapar en mappstruktur på den lagringsplats du angav, där den sparar de exporterade datauppsättningsfilerna. Standardmönstret för mappexport visas nedan, men du kan [anpassa mappstrukturen med dina favoritmakron](#edit-folder-path).
+
+>[!TIP]
+> 
+>Den första nivån i den här mappstrukturen - `folder-name-you-provided` - representerar **[!UICONTROL Folder path]** som du angav när du [anslöt till målet](/help/destinations/ui/connect-destination.md##set-up-connection-parameters) för att exportera datauppsättningar.
 
 `folder-name-you-provided/datasetID/exportTime=YYYYMMDDHHMM`
 
@@ -194,6 +240,8 @@ Observera skillnaden i filformat mellan de två filtyperna när de komprimeras:
 
 * Vid export av komprimerade JSON-filer är det exporterade filformatet `json.gz`
 * Vid export av komprimerade parquet-filer är det exporterade filformatet `gz.parquet`
+
+Exportera till JSON-filer stöds *endast i komprimerat läge*. Export till Parquet-filer stöds i komprimerat och okomprimerat läge.
 
 ## Ta bort datauppsättningar från mål {#remove-dataset}
 
@@ -227,7 +275,7 @@ Observera att dataexporträttigheterna för olika program inte är additiva. Det
 
 Om du å andra sidan har köpt tillägg som Data Distiller, representerar dataexportgränsen som du är berättigad till summan av produktnivån och tillägget.
 
-Du kan visa och spåra din profilexport mot avtalsgränserna på kontrollpanelen för licensiering.
+Du kan visa och spåra din profilexport mot avtalsgränserna på kontrollpanelen för [licensanvändning](/help/landing/license-usage-and-guardrails/license-usage-dashboard.md).
 
 ## Kända begränsningar {#known-limitations}
 
@@ -240,3 +288,59 @@ Tänk på följande begränsningar för den allmänna tillgänglighetsreleasen f
 * Gränssnittet blockerar för närvarande inte dig från att ta bort en datauppsättning som exporteras till ett mål. Ta inte bort datauppsättningar som exporteras till destinationer. [Ta bort datauppsättningen](#remove-dataset) från ett måldataflöde innan du tar bort den.
 * Övervakningsmåtten för datauppsättningsexport är för närvarande blandade med siffrorna för profilexporter, så de återspeglar inte de verkliga exportnumren.
 * Data med en tidsstämpel som är äldre än 365 dagar exkluderas från datauppsättningsexporter. Mer information finns i [skyddsutkast för schemalagda datauppsättningsexporter](/help/destinations/guardrails.md#guardrails-for-scheduled-dataset-exports)
+
+## Vanliga frågor {#faq}
+
+**Kan vi generera en fil utan en mapp om vi bara sparar på `/` som mappsökväg? Om vi inte behöver någon mappsökväg, hur genereras filer med duplicerade namn i en mapp eller på en plats?**
+
++++
+Från och med versionen från september 2024 är det möjligt att anpassa mappnamnet och till och med använda `/` för att exportera filer för alla datauppsättningar i samma mapp. Adobe rekommenderar inte detta för mål som exporterar flera datauppsättningar eftersom systemgenererade filnamn som tillhör olika datauppsättningar kommer att blandas i samma mapp.
++++
+
+**Kan du dirigera manifestfilen till en mapp och datafiler till en annan mapp?**
+
++++
+Nej, det går inte att kopiera manifestfilen till en annan plats.
++++
+
+**Kan vi styra sekvensering och timing för filleverans?**
+
++++
+Det finns alternativ för att schemalägga exporten. Det finns inga alternativ för att fördröja eller sekvensera kopian av filerna. De kopieras till din lagringsplats så snart de har skapats.
++++
+
+**Vilka format är tillgängliga för manifestfilen?**
+
++++
+Manifestfilen har formatet .json.
++++
+
+**Finns det API-tillgänglighet för manifestfilen?**
+
++++
+Det finns inget API tillgängligt för manifestfilen, men det innehåller en lista över filer som innehåller exporten.
++++
+
+**Kan vi lägga till ytterligare information i manifestfilen (dvs. antal poster)? Om så är fallet, hur?**
+
++++
+Det finns ingen möjlighet att lägga till ytterligare information i manifestfilen. Antalet poster är tillgängligt via entiteten `flowRun` (kan frågas via API). Läs mer om övervakning av destinationer.
++++
+
+**Hur delas datafiler? Hur många poster per fil?**
+
++++
+Datafiler delas upp enligt standardpartitionen i datavjön i Experience Platform. Större datauppsättningar har ett större antal partitioner. Standardpartitioneringen kan inte konfigureras av användaren eftersom den är optimerad för läsning.
++++
+
+**Kan vi ange ett tröskelvärde (antal poster per fil)?**
+
++++
+Nej, det är inte möjligt.
++++
+
+**Hur skickar vi om en datauppsättning om den första sändningen inte fungerar?**
+
++++
+Försök utförs automatiskt för de flesta typer av systemfel.
++++

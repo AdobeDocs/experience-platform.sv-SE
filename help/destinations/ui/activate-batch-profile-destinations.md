@@ -3,9 +3,9 @@ title: Aktivera målgrupper för att batchprofilera exportmål
 type: Tutorial
 description: Lär dig hur du aktiverar de målgrupper du har i Adobe Experience Platform genom att skicka dem till batchprofilbaserade destinationer.
 exl-id: 82ca9971-2685-453a-9e45-2001f0337cda
-source-git-commit: 21fd5957da8914be8b4abfad5c78d1929f76d6f6
+source-git-commit: ad33eaa48928b25502ef279f000b92f31e1667ca
 workflow-type: tm+mt
-source-wordcount: '4029'
+source-wordcount: '3922'
 ht-degree: 0%
 
 ---
@@ -30,26 +30,6 @@ I den här artikeln förklaras det arbetsflöde som krävs för att aktivera må
 Om du vill aktivera målgrupper till mål måste du ha [anslutit till ett mål](./connect-destination.md). Om du inte redan har gjort det går du till [målkatalogen](../catalog/overview.md), bläddrar bland de mål som stöds och konfigurerar det mål som du vill använda.
 
 ## Filformat som stöds för export {#supported-file-formats-export}
-
->[!CONTEXTUALHELP]
->id="dataset_dataflow_needs_schedule_end_date_header"
->title="Uppdatera slutdatumet för det här dataflödet"
->abstract="Uppdatera slutdatumet för det här dataflödet"
-
->[!CONTEXTUALHELP]
->id="dataset_dataflow_needs_schedule_end_date_body"
->title="Uppdatera slutdatumet för det här dataflödet"
->abstract="På grund av de senaste uppdateringarna av det här målet krävs ett slutdatum för dataflödet. Adobe har angett standardslutdatumet till 1 maj 2025. Uppdatera till önskat slutdatum, annars avbryts dataexporten på standarddatumet."
-
->[!CONTEXTUALHELP]
->id="destinations_folder_name_template"
->title="Redigera mappsökväg"
->abstract="Använd flera angivna makron för att anpassa mappsökvägen där datauppsättningen exporteras."
-
->[!CONTEXTUALHELP]
->id="destinations_folder_name_template_preview"
->title="Förhandsgranskning av sökväg för datauppsättningsmapp"
->abstract="Få en förhandsgranskning av mappstrukturen som skapas på lagringsplatsen baserat på de makron som du har lagt till i det här fönstret."
 
 Följande filformat stöds vid export av målgrupper:
 

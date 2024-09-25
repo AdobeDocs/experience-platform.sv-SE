@@ -4,9 +4,9 @@ title: Exportera datauppsättningar med API:t för Flow Service
 description: Lär dig hur du använder API:t för Flow Service för att exportera datauppsättningar till utvalda mål.
 type: Tutorial
 exl-id: f23a4b22-da04-4b3c-9b0c-790890077eaa
-source-git-commit: af705b8a77b2ea15b44b97ed3f1f2c5aa7433eb1
+source-git-commit: 22a752e28fe3cc4cb3337b456e80ef1b273f6a71
 workflow-type: tm+mt
-source-wordcount: '3512'
+source-wordcount: '5095'
 ht-degree: 0%
 
 ---
@@ -16,6 +16,19 @@ ht-degree: 0%
 >[!AVAILABILITY]
 >
 >* Den här funktionaliteten är tillgänglig för kunder som har köpt Real-Time CDP Prime och Ultimate, Adobe Journey Optimizer eller Customer Journey Analytics. Kontakta din Adobe-representant om du vill ha mer information.
+
+>[!IMPORTANT]
+>
+>**Åtgärdsobjekt**: I [ september 2024-versionen av Experience Platform ](/help/release-notes/latest/latest.md#destinations) introduceras alternativet att ange ett `endTime`-datum för dataflöden för exportdatamängd. Adobe introducerar också ett standardslutdatum som är 1 maj 2025 för alla datauppsättningsexportdataflöden som skapats *före september-versionen*. För dessa dataflöden måste du uppdatera slutdatumet i dataflödet manuellt före slutdatumet, annars kan exporten stoppas på det datumet. Använd användargränssnittet i Experience Platform för att se vilka dataflöden som ska stoppas den 1 maj.
+>
+>Detsamma gäller för alla dataflöden som du skapar utan att ange ett `endTime`-datum. Dessa kommer att ha en sluttid på sex månader från den tidpunkt då de skapades.
+
+<!--
+
+>You can retrieve a list of such dataflows by performing the following API call: `https://platform.adobe.io/data/foundation/flowservice/flows?property=scheduleParams.endTime==UNIXTIMESTAMPTHATWEWILLUSE`
+>
+
+-->
 
 I den här artikeln förklaras det arbetsflöde som krävs för att använda [!DNL Flow Service API] för att exportera [datauppsättningar](/help/catalog/datasets/overview.md) från Adobe Experience Platform till den önskade molnlagringsplatsen, till exempel [!DNL Amazon S3], SFTP-platser eller [!DNL Google Cloud Storage].
 
@@ -49,7 +62,7 @@ För närvarande kan du exportera datauppsättningar till molnlagringsmål som m
 Handboken kräver en fungerande förståelse av följande komponenter i Adobe Experience Platform:
 
 * [[!DNL Experience Platform datasets]](/help/catalog/datasets/overview.md): Alla data som har importerats till Adobe Experience Platform lagras i [!DNL Data Lake] som datauppsättningar. En datauppsättning är en lagrings- och hanteringskonstruktion för en datamängd, vanligtvis en tabell, som innehåller ett schema (kolumner) och fält (rader). Datauppsättningar innehåller också metadata som beskriver olika aspekter av de data som lagras.
-* [[!DNL Sandboxes]](../../sandboxes/home.md): [!DNL Experience Platform] innehåller virtuella sandlådor som partitionerar en enskild [!DNL Platform]-instans till separata virtuella miljöer för att hjälpa till att utveckla och utveckla program för digitala upplevelser.
+   * [[!DNL Sandboxes]](../../sandboxes/home.md): [!DNL Experience Platform] innehåller virtuella sandlådor som partitionerar en enskild [!DNL Platform]-instans till separata virtuella miljöer för att hjälpa till att utveckla och utveckla program för digitala upplevelser.
 
 I följande avsnitt finns ytterligare information som du måste känna till för att kunna exportera datauppsättningar till molnlagringsmål i Platform.
 
@@ -1955,13 +1968,29 @@ curl --location --request POST 'https://platform.adobe.io/data/foundation/flowse
     ],
     "transformations": [],
     "scheduleParams": { // specify the scheduling info
+        "exportMode": DAILY_FULL_EXPORT or FIRST_FULL_THEN_INCREMENTAL
         "interval": 3, // also supports 6, 9, 12 hour increments
-        "timeUnit": "hour", // also supports "day" for daily increments. Use "interval": 1 when you select "timeUnit": "day"
-        "startTime": 1675901210 // UNIX timestamp start time (in seconds)
+        "timeUnit": "hour", // also supports "day" for daily increments. 
+        "interval": 1, // when you select "timeUnit": "day"
+        "startTime": 1675901210, // UNIX timestamp start time (in seconds)
+        "endTime": 1975901210, // UNIX timestamp end time (in seconds)
+        "foldernameTemplate": "%DESTINATION%_%DATASET_ID%_%DATETIME(YYYYMMdd_HHmmss)%"
     }
 }'
 ```
 
+Tabellen nedan innehåller beskrivningar av alla parametrar i avsnittet `scheduleParams` som gör att du kan anpassa exporttider, frekvens, plats och annat för datauppsättningsexporter.
+
+| Parameter | Beskrivning |
+|---------|----------|
+| `exportMode` | Välj `"DAILY_FULL_EXPORT"` eller `"FIRST_FULL_THEN_INCREMENTAL"`. Mer information om de två alternativen finns i [exportera fullständiga filer](/help/destinations/ui/activate-batch-profile-destinations.md#export-full-files) och [exportera inkrementella filer](/help/destinations/ui/activate-batch-profile-destinations.md#export-incremental-files) i självstudiekursen om aktivering av gruppmål. De tre tillgängliga exportalternativen är: <br> **Fullständig fil - En gång**: `"DAILY_FULL_EXPORT"` kan bara användas i kombination med `timeUnit`:`day` och `interval`:`0` för en engångs fullständig export av datauppsättningen. Daglig fullständig export av datauppsättningar stöds inte. Om du behöver exportera varje dag använder du alternativet för stegvis export. <br> **Inkrementell daglig export**: Välj `"FIRST_FULL_THEN_INCREMENTAL"`, `timeUnit`:`day` och `interval` :`1` för daglig inkrementell export. <br> **Inkrementell timexport**: Välj `"FIRST_FULL_THEN_INCREMENTAL"`, `timeUnit`:`hour` och `interval` :`3`,`6`,`9` eller `12` för timvis inkrementell export. |
+| `timeUnit` | Välj `day` eller `hour` beroende på hur ofta du vill exportera datauppsättningsfiler. |
+| `interval` | Välj `1` när `timeUnit` är dag och `3`,`6`,`9`,`12` när tidsenheten är `hour`. |
+| `startTime` | Datum och tid i UNIX-sekunder då datauppsättningsexporten ska starta. |
+| `endTime` | Datum och tid i UNIX-sekunder då datauppsättningsexporten ska avslutas. |
+| `foldernameTemplate` | Ange den förväntade mappnamnsstrukturen på lagringsplatsen där de exporterade filerna ska placeras. <ul><li><code>DATASET_ID</code> = <span>En unik identifierare för datauppsättningen.</span></li><li><code>MÅL</code> = <span>Målets namn.</span></li><li><code>DATETIME</code> = <span>Datum och tid formaterat som yyyyMMdd_HHmmss.</span></li><li><code>EXPORT_TIME</code> = <span>Den schemalagda tiden för dataexport formaterad som `exportTime=YYYYMMDDHHMM`.</span></li><li><code>DESTINATION_INSTANCE_NAME</code> = <span>Namnet på målinstansen.</span></li><li><code>DESTINATION_INSTANCE_ID</code> = <span>En unik identifierare för målinstansen.</span></li><li><code>SANDBOX_NAME</code> = <span>Namnet på sandlådemiljön.</span></li><li><code>ORGANIZATION_NAME</code> = <span>Organisationens namn.</span></li></ul> |
+
+{style="table-layout:auto"}
 +++
 
 **Svar**
@@ -2008,12 +2037,29 @@ curl --location --request POST 'https://platform.adobe.io/data/foundation/flowse
     ],
     "transformations": [],
     "scheduleParams": { // specify the scheduling info
-        "interval": 3, // also supports 6, 9, 12, 24 hour increments
-        "timeUnit": "hour",
-        "startTime": 1675901210 // UNIX timestamp start time(in seconds)
+        "exportMode": DAILY_FULL_EXPORT or FIRST_FULL_THEN_INCREMENTAL
+        "interval": 3, // also supports 6, 9, 12 hour increments
+        "timeUnit": "hour", // also supports "day" for daily increments. 
+        "interval": 1, // when you select "timeUnit": "day"
+        "startTime": 1675901210, // UNIX timestamp start time (in seconds)
+        "endTime": 1975901210, // UNIX timestamp end time (in seconds)
+        "foldernameTemplate": "%DESTINATION%_%DATASET_ID%_%DATETIME(YYYYMMdd_HHmmss)%"
     }
 }'
 ```
+
+Tabellen nedan innehåller beskrivningar av alla parametrar i avsnittet `scheduleParams` som gör att du kan anpassa exporttider, frekvens, plats och annat för datauppsättningsexporter.
+
+| Parameter | Beskrivning |
+|---------|----------|
+| `exportMode` | Välj `"DAILY_FULL_EXPORT"` eller `"FIRST_FULL_THEN_INCREMENTAL"`. Mer information om de två alternativen finns i [exportera fullständiga filer](/help/destinations/ui/activate-batch-profile-destinations.md#export-full-files) och [exportera inkrementella filer](/help/destinations/ui/activate-batch-profile-destinations.md#export-incremental-files) i självstudiekursen om aktivering av gruppmål. De tre tillgängliga exportalternativen är: <br> **Fullständig fil - En gång**: `"DAILY_FULL_EXPORT"` kan bara användas i kombination med `timeUnit`:`day` och `interval`:`0` för en engångs fullständig export av datauppsättningen. Daglig fullständig export av datauppsättningar stöds inte. Om du behöver exportera varje dag använder du alternativet för stegvis export. <br> **Inkrementell daglig export**: Välj `"FIRST_FULL_THEN_INCREMENTAL"`, `timeUnit`:`day` och `interval` :`1` för daglig inkrementell export. <br> **Inkrementell timexport**: Välj `"FIRST_FULL_THEN_INCREMENTAL"`, `timeUnit`:`hour` och `interval` :`3`,`6`,`9` eller `12` för timvis inkrementell export. |
+| `timeUnit` | Välj `day` eller `hour` beroende på hur ofta du vill exportera datauppsättningsfiler. |
+| `interval` | Välj `1` när `timeUnit` är dag och `3`,`6`,`9`,`12` när tidsenheten är `hour`. |
+| `startTime` | Datum och tid i UNIX-sekunder då datauppsättningsexporten ska starta. |
+| `endTime` | Datum och tid i UNIX-sekunder då datauppsättningsexporten ska avslutas. |
+| `foldernameTemplate` | Ange den förväntade mappnamnsstrukturen på lagringsplatsen där de exporterade filerna ska placeras. <ul><li><code>DATASET_ID</code> = <span>En unik identifierare för datauppsättningen.</span></li><li><code>MÅL</code> = <span>Målets namn.</span></li><li><code>DATETIME</code> = <span>Datum och tid formaterat som yyyyMMdd_HHmmss.</span></li><li><code>EXPORT_TIME</code> = <span>Den schemalagda tiden för dataexport formaterad som `exportTime=YYYYMMDDHHMM`.</span></li><li><code>DESTINATION_INSTANCE_NAME</code> = <span>Namnet på målinstansen.</span></li><li><code>DESTINATION_INSTANCE_ID</code> = <span>En unik identifierare för målinstansen.</span></li><li><code>SANDBOX_NAME</code> = <span>Namnet på sandlådemiljön.</span></li><li><code>ORGANIZATION_NAME</code> = <span>Organisationens namn.</span></li></ul> |
+
+{style="table-layout:auto"}
 
 +++
 
@@ -2061,12 +2107,29 @@ curl --location --request POST 'https://platform.adobe.io/data/foundation/flowse
     ],
     "transformations": [],
     "scheduleParams": { // specify the scheduling info
-        "interval": 3, // also supports 6, 9, 12, 24 hour increments
-        "timeUnit": "hour",
-        "startTime": 1675901210 // UNIX timestamp start time(in seconds)
+        "exportMode": DAILY_FULL_EXPORT or FIRST_FULL_THEN_INCREMENTAL
+        "interval": 3, // also supports 6, 9, 12 hour increments
+        "timeUnit": "hour", // also supports "day" for daily increments. 
+        "interval": 1, // when you select "timeUnit": "day"
+        "startTime": 1675901210, // UNIX timestamp start time (in seconds)
+        "endTime": 1975901210, // UNIX timestamp end time (in seconds)
+        "foldernameTemplate": "%DESTINATION%_%DATASET_ID%_%DATETIME(YYYYMMdd_HHmmss)%"
     }
 }'
 ```
+
+Tabellen nedan innehåller beskrivningar av alla parametrar i avsnittet `scheduleParams` som gör att du kan anpassa exporttider, frekvens, plats och annat för datauppsättningsexporter.
+
+| Parameter | Beskrivning |
+|---------|----------|
+| `exportMode` | Välj `"DAILY_FULL_EXPORT"` eller `"FIRST_FULL_THEN_INCREMENTAL"`. Mer information om de två alternativen finns i [exportera fullständiga filer](/help/destinations/ui/activate-batch-profile-destinations.md#export-full-files) och [exportera inkrementella filer](/help/destinations/ui/activate-batch-profile-destinations.md#export-incremental-files) i självstudiekursen om aktivering av gruppmål. De tre tillgängliga exportalternativen är: <br> **Fullständig fil - En gång**: `"DAILY_FULL_EXPORT"` kan bara användas i kombination med `timeUnit`:`day` och `interval`:`0` för en engångs fullständig export av datauppsättningen. Daglig fullständig export av datauppsättningar stöds inte. Om du behöver exportera varje dag använder du alternativet för stegvis export. <br> **Inkrementell daglig export**: Välj `"FIRST_FULL_THEN_INCREMENTAL"`, `timeUnit`:`day` och `interval` :`1` för daglig inkrementell export. <br> **Inkrementell timexport**: Välj `"FIRST_FULL_THEN_INCREMENTAL"`, `timeUnit`:`hour` och `interval` :`3`,`6`,`9` eller `12` för timvis inkrementell export. |
+| `timeUnit` | Välj `day` eller `hour` beroende på hur ofta du vill exportera datauppsättningsfiler. |
+| `interval` | Välj `1` när `timeUnit` är dag och `3`,`6`,`9`,`12` när tidsenheten är `hour`. |
+| `startTime` | Datum och tid i UNIX-sekunder då datauppsättningsexporten ska starta. |
+| `endTime` | Datum och tid i UNIX-sekunder då datauppsättningsexporten ska avslutas. |
+| `foldernameTemplate` | Ange den förväntade mappnamnsstrukturen på lagringsplatsen där de exporterade filerna ska placeras. <ul><li><code>DATASET_ID</code> = <span>En unik identifierare för datauppsättningen.</span></li><li><code>MÅL</code> = <span>Målets namn.</span></li><li><code>DATETIME</code> = <span>Datum och tid formaterat som yyyyMMdd_HHmmss.</span></li><li><code>EXPORT_TIME</code> = <span>Den schemalagda tiden för dataexport formaterad som `exportTime=YYYYMMDDHHMM`.</span></li><li><code>DESTINATION_INSTANCE_NAME</code> = <span>Namnet på målinstansen.</span></li><li><code>DESTINATION_INSTANCE_ID</code> = <span>En unik identifierare för målinstansen.</span></li><li><code>SANDBOX_NAME</code> = <span>Namnet på sandlådemiljön.</span></li><li><code>ORGANIZATION_NAME</code> = <span>Organisationens namn.</span></li></ul> |
+
+{style="table-layout:auto"}
 
 +++
 
@@ -2114,13 +2177,29 @@ curl --location --request POST 'https://platform.adobe.io/data/foundation/flowse
     ],
     "transformations": [],
     "scheduleParams": { // specify the scheduling info
-        "interval": 3, // also supports 6, 9, 12, 24 hour increments
-        "timeUnit": "hour",
-        "startTime": 1675901210 // UNIX timestamp start time(in seconds)
+        "exportMode": DAILY_FULL_EXPORT or FIRST_FULL_THEN_INCREMENTAL
+        "interval": 3, // also supports 6, 9, 12 hour increments
+        "timeUnit": "hour", // also supports "day" for daily increments. 
+        "interval": 1, // when you select "timeUnit": "day"
+        "startTime": 1675901210, // UNIX timestamp start time (in seconds)
+        "endTime": 1975901210, // UNIX timestamp end time (in seconds)
+        "foldernameTemplate": "%DESTINATION%_%DATASET_ID%_%DATETIME(YYYYMMdd_HHmmss)%"
     }
 }'
 ```
 
+Tabellen nedan innehåller beskrivningar av alla parametrar i avsnittet `scheduleParams` som gör att du kan anpassa exporttider, frekvens, plats och annat för datauppsättningsexporter.
+
+| Parameter | Beskrivning |
+|---------|----------|
+| `exportMode` | Välj `"DAILY_FULL_EXPORT"` eller `"FIRST_FULL_THEN_INCREMENTAL"`. Mer information om de två alternativen finns i [exportera fullständiga filer](/help/destinations/ui/activate-batch-profile-destinations.md#export-full-files) och [exportera inkrementella filer](/help/destinations/ui/activate-batch-profile-destinations.md#export-incremental-files) i självstudiekursen om aktivering av gruppmål. De tre tillgängliga exportalternativen är: <br> **Fullständig fil - En gång**: `"DAILY_FULL_EXPORT"` kan bara användas i kombination med `timeUnit`:`day` och `interval`:`0` för en engångs fullständig export av datauppsättningen. Daglig fullständig export av datauppsättningar stöds inte. Om du behöver exportera varje dag använder du alternativet för stegvis export. <br> **Inkrementell daglig export**: Välj `"FIRST_FULL_THEN_INCREMENTAL"`, `timeUnit`:`day` och `interval` :`1` för daglig inkrementell export. <br> **Inkrementell timexport**: Välj `"FIRST_FULL_THEN_INCREMENTAL"`, `timeUnit`:`hour` och `interval` :`3`,`6`,`9` eller `12` för timvis inkrementell export. |
+| `timeUnit` | Välj `day` eller `hour` beroende på hur ofta du vill exportera datauppsättningsfiler. |
+| `interval` | Välj `1` när `timeUnit` är dag och `3`,`6`,`9`,`12` när tidsenheten är `hour`. |
+| `startTime` | Datum och tid i UNIX-sekunder då datauppsättningsexporten ska starta. |
+| `endTime` | Datum och tid i UNIX-sekunder då datauppsättningsexporten ska avslutas. |
+| `foldernameTemplate` | Ange den förväntade mappnamnsstrukturen på lagringsplatsen där de exporterade filerna ska placeras. <ul><li><code>DATASET_ID</code> = <span>En unik identifierare för datauppsättningen.</span></li><li><code>MÅL</code> = <span>Målets namn.</span></li><li><code>DATETIME</code> = <span>Datum och tid formaterat som yyyyMMdd_HHmmss.</span></li><li><code>EXPORT_TIME</code> = <span>Den schemalagda tiden för dataexport formaterad som `exportTime=YYYYMMDDHHMM`.</span></li><li><code>DESTINATION_INSTANCE_NAME</code> = <span>Namnet på målinstansen.</span></li><li><code>DESTINATION_INSTANCE_ID</code> = <span>En unik identifierare för målinstansen.</span></li><li><code>SANDBOX_NAME</code> = <span>Namnet på sandlådemiljön.</span></li><li><code>ORGANIZATION_NAME</code> = <span>Organisationens namn.</span></li></ul> |
+
+{style="table-layout:auto"}
 +++
 
 **Svar**
@@ -2167,12 +2246,29 @@ curl --location --request POST 'https://platform.adobe.io/data/foundation/flowse
     ],
     "transformations": [],
     "scheduleParams": { // specify the scheduling info
-        "interval": 3, // also supports 6, 9, 12, 24 hour increments
-        "timeUnit": "hour",
-        "startTime": 1675901210 // UNIX timestamp start time(in seconds)
+        "exportMode": DAILY_FULL_EXPORT or FIRST_FULL_THEN_INCREMENTAL
+        "interval": 3, // also supports 6, 9, 12 hour increments
+        "timeUnit": "hour", // also supports "day" for daily increments. 
+        "interval": 1, // when you select "timeUnit": "day"
+        "startTime": 1675901210, // UNIX timestamp start time (in seconds)
+        "endTime": 1975901210, // UNIX timestamp end time (in seconds)
+        "foldernameTemplate": "%DESTINATION%_%DATASET_ID%_%DATETIME(YYYYMMdd_HHmmss)%"
     }
 }'
 ```
+
+Tabellen nedan innehåller beskrivningar av alla parametrar i avsnittet `scheduleParams` som gör att du kan anpassa exporttider, frekvens, plats och annat för datauppsättningsexporter.
+
+| Parameter | Beskrivning |
+|---------|----------|
+| `exportMode` | Välj `"DAILY_FULL_EXPORT"` eller `"FIRST_FULL_THEN_INCREMENTAL"`. Mer information om de två alternativen finns i [exportera fullständiga filer](/help/destinations/ui/activate-batch-profile-destinations.md#export-full-files) och [exportera inkrementella filer](/help/destinations/ui/activate-batch-profile-destinations.md#export-incremental-files) i självstudiekursen om aktivering av gruppmål. De tre tillgängliga exportalternativen är: <br> **Fullständig fil - En gång**: `"DAILY_FULL_EXPORT"` kan bara användas i kombination med `timeUnit`:`day` och `interval`:`0` för en engångs fullständig export av datauppsättningen. Daglig fullständig export av datauppsättningar stöds inte. Om du behöver exportera varje dag använder du alternativet för stegvis export. <br> **Inkrementell daglig export**: Välj `"FIRST_FULL_THEN_INCREMENTAL"`, `timeUnit`:`day` och `interval` :`1` för daglig inkrementell export. <br> **Inkrementell timexport**: Välj `"FIRST_FULL_THEN_INCREMENTAL"`, `timeUnit`:`hour` och `interval` :`3`,`6`,`9` eller `12` för timvis inkrementell export. |
+| `timeUnit` | Välj `day` eller `hour` beroende på hur ofta du vill exportera datauppsättningsfiler. |
+| `interval` | Välj `1` när `timeUnit` är dag och `3`,`6`,`9`,`12` när tidsenheten är `hour`. |
+| `startTime` | Datum och tid i UNIX-sekunder då datauppsättningsexporten ska starta. |
+| `endTime` | Datum och tid i UNIX-sekunder då datauppsättningsexporten ska avslutas. |
+| `foldernameTemplate` | Ange den förväntade mappnamnsstrukturen på lagringsplatsen där de exporterade filerna ska placeras. <ul><li><code>DATASET_ID</code> = <span>En unik identifierare för datauppsättningen.</span></li><li><code>MÅL</code> = <span>Målets namn.</span></li><li><code>DATETIME</code> = <span>Datum och tid formaterat som yyyyMMdd_HHmmss.</span></li><li><code>EXPORT_TIME</code> = <span>Den schemalagda tiden för dataexport formaterad som `exportTime=YYYYMMDDHHMM`.</span></li><li><code>DESTINATION_INSTANCE_NAME</code> = <span>Namnet på målinstansen.</span></li><li><code>DESTINATION_INSTANCE_ID</code> = <span>En unik identifierare för målinstansen.</span></li><li><code>SANDBOX_NAME</code> = <span>Namnet på sandlådemiljön.</span></li><li><code>ORGANIZATION_NAME</code> = <span>Organisationens namn.</span></li></ul> |
+
+{style="table-layout:auto"}
 
 +++
 
@@ -2220,12 +2316,29 @@ curl --location --request POST 'https://platform.adobe.io/data/foundation/flowse
     ],
     "transformations": [],
     "scheduleParams": { // specify the scheduling info
-        "interval": 3, // also supports 6, 9, 12, 24 hour increments
-        "timeUnit": "hour",
-        "startTime": 1675901210 // UNIX timestamp start time(in seconds)
+        "exportMode": DAILY_FULL_EXPORT or FIRST_FULL_THEN_INCREMENTAL
+        "interval": 3, // also supports 6, 9, 12 hour increments
+        "timeUnit": "hour", // also supports "day" for daily increments. 
+        "interval": 1, // when you select "timeUnit": "day"
+        "startTime": 1675901210, // UNIX timestamp start time (in seconds)
+        "endTime": 1975901210, // UNIX timestamp end time (in seconds)
+        "foldernameTemplate": "%DESTINATION%_%DATASET_ID%_%DATETIME(YYYYMMdd_HHmmss)%"
     }
 }'
 ```
+
+Tabellen nedan innehåller beskrivningar av alla parametrar i avsnittet `scheduleParams` som gör att du kan anpassa exporttider, frekvens, plats och annat för datauppsättningsexporter.
+
+| Parameter | Beskrivning |
+|---------|----------|
+| `exportMode` | Välj `"DAILY_FULL_EXPORT"` eller `"FIRST_FULL_THEN_INCREMENTAL"`. Mer information om de två alternativen finns i [exportera fullständiga filer](/help/destinations/ui/activate-batch-profile-destinations.md#export-full-files) och [exportera inkrementella filer](/help/destinations/ui/activate-batch-profile-destinations.md#export-incremental-files) i självstudiekursen om aktivering av gruppmål. De tre tillgängliga exportalternativen är: <br> **Fullständig fil - En gång**: `"DAILY_FULL_EXPORT"` kan bara användas i kombination med `timeUnit`:`day` och `interval`:`0` för en engångs fullständig export av datauppsättningen. Daglig fullständig export av datauppsättningar stöds inte. Om du behöver exportera varje dag använder du alternativet för stegvis export. <br> **Inkrementell daglig export**: Välj `"FIRST_FULL_THEN_INCREMENTAL"`, `timeUnit`:`day` och `interval` :`1` för daglig inkrementell export. <br> **Inkrementell timexport**: Välj `"FIRST_FULL_THEN_INCREMENTAL"`, `timeUnit`:`hour` och `interval` :`3`,`6`,`9` eller `12` för timvis inkrementell export. |
+| `timeUnit` | Välj `day` eller `hour` beroende på hur ofta du vill exportera datauppsättningsfiler. |
+| `interval` | Välj `1` när `timeUnit` är dag och `3`,`6`,`9`,`12` när tidsenheten är `hour`. |
+| `startTime` | Datum och tid i UNIX-sekunder då datauppsättningsexporten ska starta. |
+| `endTime` | Datum och tid i UNIX-sekunder då datauppsättningsexporten ska avslutas. |
+| `foldernameTemplate` | Ange den förväntade mappnamnsstrukturen på lagringsplatsen där de exporterade filerna ska placeras. <ul><li><code>DATASET_ID</code> = <span>En unik identifierare för datauppsättningen.</span></li><li><code>MÅL</code> = <span>Målets namn.</span></li><li><code>DATETIME</code> = <span>Datum och tid formaterat som yyyyMMdd_HHmmss.</span></li><li><code>EXPORT_TIME</code> = <span>Den schemalagda tiden för dataexport formaterad som `exportTime=YYYYMMDDHHMM`.</span></li><li><code>DESTINATION_INSTANCE_NAME</code> = <span>Namnet på målinstansen.</span></li><li><code>DESTINATION_INSTANCE_ID</code> = <span>En unik identifierare för målinstansen.</span></li><li><code>SANDBOX_NAME</code> = <span>Namnet på sandlådemiljön.</span></li><li><code>ORGANIZATION_NAME</code> = <span>Organisationens namn.</span></li></ul> |
+
+{style="table-layout:auto"}
 
 +++
 
@@ -2345,15 +2458,20 @@ Observera skillnaden i filformat mellan de två filtyperna när de komprimeras:
 
 * Vid export av komprimerade JSON-filer är det exporterade filformatet `json.gz`
 * Vid export av komprimerade parquet-filer är det exporterade filformatet `gz.parquet`
+* JSON-filer kan bara exporteras i komprimerat läge.
 
 ## API-felhantering {#api-error-handling}
 
 API-slutpunkterna i den här självstudiekursen följer de allmänna felmeddelandeprinciperna för Experience Platform API. Mer information om hur du tolkar felsvar finns i [API-statuskoder](/help/landing/troubleshooting.md#api-status-codes) och [begäranrubrikfel](/help/landing/troubleshooting.md#request-header-errors) i felsökningsguiden för plattformen.
+
+## Vanliga frågor {#faq}
+
+Visa en [lista med vanliga frågor](/help/destinations/ui/export-datasets.md#faq) om datauppsättningsexporter.
 
 ## Nästa steg {#next-steps}
 
 Genom att följa den här självstudiekursen har du anslutit Platform till en av dina favoritplatser för batchmolnlagring och konfigurerat ett dataflöde till respektive mål för att exportera datauppsättningar. På följande sidor finns mer information, till exempel om hur du redigerar befintliga dataflöden med API:t för Flow Service:
 
 * [Översikt över destinationer](../home.md)
-* [Översikt över destinationskatalogen](../catalog/overview.md)
+* [Översikt över målkatalog](../catalog/overview.md)
 * [Uppdatera måldataflöden med API:t för Flow Service](../api/update-destination-dataflows.md)
