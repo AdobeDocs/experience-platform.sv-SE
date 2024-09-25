@@ -3,9 +3,9 @@ solution: Experience Platform
 title: Användargränssnittshandbok för Segment Builder
 description: Segmentbyggaren i Adobe Experience Platform-användargränssnittet har en omfattande arbetsyta som du kan använda för att interagera med profildataelement. Arbetsytan innehåller intuitiva kontroller för att skapa och redigera regler, till exempel dra-och-släpp-paneler som används för att representera dataegenskaper.
 exl-id: b27516ea-8749-4b44-99d0-98d3dc2f4c65
-source-git-commit: 6e1fecf2f986cbb39a2a92c28b05131e22d14b6e
+source-git-commit: 6ceb28b2c9bab3b9df212764a43b202980ae239c
 workflow-type: tm+mt
-source-wordcount: '4630'
+source-wordcount: '4697'
 ht-degree: 0%
 
 ---
@@ -98,6 +98,11 @@ När rapportsviterna har mappats kan du använda dessa nyligen mappade fält i d
 | Flera rapportsviter | Inga egna namnbeskrivningar ingår i generiska variabler. <br><br>**Exempel:** eVar2 | <ul><li>Alla fält med flera beskrivningar visas som generiska. Det innebär att inga egna namn visas i användargränssnittet.</li><li>Frågor kan använda data från alla datauppsättningar som innehåller eVarna, vilket kan resultera i blandade eller felaktiga resultat.</li></ul> | Frågor använder korrekt kombinerade resultat från flera datauppsättningar. |
 
 ### Målgrupper
+
+>[!CONTEXTUALHELP]
+>id="platform_segmentation_segmentBuilder_b2b_decomposition"
+>title="Komplex utvärdering"
+>abstract="Följande uttryck är för komplicerat för att uttryckas som en enskild målgrupp. Om du vill använda både B2B-regler och personbaserade händelser i samma segmentdefinition följer du stegen nedan.<ol><li>Skapa en segmentdefinition som bara refererar till personbaserade händelser och spara den som en egen segmentdefinition.</li><li>I en ny segmentdefinition importerar du den segmentdefinition som skapats tidigare och refererar till B2B-reglerna.</li></ol>"
 
 >[!NOTE]
 >
