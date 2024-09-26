@@ -1,13 +1,14 @@
 ---
 title: Merkury Enterprise Connections Destination
 description: Lär dig hur du skapar en Merkury Enterprise Connections-målanslutning med Adobe Experience Platform-gränssnittet.
-source-git-commit: 01ce38d26cf61706de84ec143e3dd8af720d0591
+last-substantial-update: 2024-07-20T00:00:00Z
+exl-id: dffc6f4d-b756-4c13-96f3-b1cc57caacdb
+source-git-commit: 2b84b5106105339ab243a9f4412b47692caedf3c
 workflow-type: tm+mt
 source-wordcount: '1371'
-ht-degree: 0%
+ht-degree: 2%
 
 ---
-
 
 # Merkury Enterprise Connections Destination
 
@@ -17,7 +18,7 @@ ht-degree: 0%
 
 ## Översikt
 
-Använd målet [!DNL Merkury Enterprise Connections] för att leverera målgrupper säkert till [!DNL Merkury]. Med [!DNL Merkury] kan marknadsförarna enkelt matcha och leverera personbaserade målgrupper till mer än 80 premiumadresserbara TV-/CTV-anslutningar, utgivare och reklamtekniska anslutningar för [!DNL Merkury]. [!DNL Merkury] drivs av ett omfattande amerikanskt foto med 268+ miljoner människor.
+Använd destinationen [!DNL Merkury Enterprise Connections] för att leverera målgrupper till [!DNL Merkury] på ett säkert sätt. Med [!DNL Merkury] kan marknadsförarna enkelt matcha och leverera personbaserade målgrupper till mer än 80 premiumadresserbara TV-/CTV-anslutningar, utgivare och reklamtekniska anslutningar för [!DNL Merkury]. [!DNL Merkury] drivs av ett omfattande identitetsdiagram med vuxna kunder i USA som innehåller fler än 268 miljoner människor.
 
 ![Ett diagram som visar kopplingen mellan Merkury och Experience Platform, inklusive förtäring och aktivering](../../assets/catalog/data-partners/merkury-connections/media/image1.png)
 

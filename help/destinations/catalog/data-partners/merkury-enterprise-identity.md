@@ -1,13 +1,14 @@
 ---
 title: Merkury Enterprise Identity Destination
 description: Lär dig hur du skapar en Merkury Enterprise Identity-målanslutning med Adobe Experience Platform-gränssnittet.
-source-git-commit: 0a1d024b5642c08cd9349220a9686d8d4cbfd55a
+last-substantial-update: 2024-07-20T00:00:00Z
+exl-id: a5452183-289c-49c3-9574-e09b0153dc00
+source-git-commit: 2b84b5106105339ab243a9f4412b47692caedf3c
 workflow-type: tm+mt
 source-wordcount: '1465'
-ht-degree: 0%
+ht-degree: 1%
 
 ---
-
 
 # Merkury Enterprise Identity Destination
 
@@ -17,7 +18,7 @@ ht-degree: 0%
 
 ## Översikt
 
-Använd målet [!DNL Merkury Enterprise Identity] för att skapa mer korrekta, heltäckande och insiktsfulla konsumentprofiler. Med förbättrade profildata kan marknadsförarna ge bättre insikter, segment och modeller, vilket ger exaktare målinriktning och prediktiv modellering.
+Använd destinationen [!DNL Merkury Enterprise Identity] för att skapa mer korrekta, heltäckande och insiktsfulla konsumentprofiler. Med förbättrade profildata kan marknadsförarna ge bättre insikter, segment och modeller, vilket ger exaktare målinriktning och prediktiv modellering.
 
 ![Ett diagram som visar kopplingen mellan Merkury och Experience Platform, inklusive förtäring och aktivering](../../assets/catalog/data-partners/merkury-identity/media/image1.png)
 
