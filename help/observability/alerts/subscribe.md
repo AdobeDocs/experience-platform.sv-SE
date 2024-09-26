@@ -4,9 +4,9 @@ title: Prenumerera på händelsemeddelanden från Adobe I/O
 description: Det här dokumentet innehåller anvisningar om hur du prenumererar på händelsemeddelanden i Adobe I/O för Adobe Experience Platform-tjänster. Referensinformation om tillgängliga händelsetyper finns också, tillsammans med länkar till ytterligare dokumentation om hur du tolkar returnerade händelsedata för varje tillämplig [!DNL Platform] tjänst.
 feature: Alerts
 exl-id: c0ad7217-ce84-47b0-abf6-76bcf280f026
-source-git-commit: 1070c34bcd4577fcc5f0ac160196450db3aab9b0
+source-git-commit: 8e6301c5f834465acff99b4cd668017581c1dfa9
 workflow-type: tm+mt
-source-wordcount: '737'
+source-wordcount: '751'
 ht-degree: 0%
 
 ---
@@ -64,6 +64,10 @@ På nästa skärm visas en lista med händelsetyper att prenumerera på. Välj d
 >
 >* [Plattformsmeddelanden](./rules.md)
 >* [Privacy Service-meddelanden](../../privacy-service/privacy-events.md)
+
+>[!IMPORTANT]
+>
+>Edge-relaterade aviseringar finns för närvarande i betaversionen och är endast tillgängliga för vissa betatestare.
 
 ![](../images/notifications/choose-event-subscriptions.png)
 
