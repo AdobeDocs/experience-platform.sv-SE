@@ -4,9 +4,9 @@ user-guide-title: Hjälp med sandlådor i Adobe Experience Platform
 breadcrumb-title: Användarhandbok för sandlådor
 user-guide-description: Läs om hur sandlådor fungerar och partitionera en Platform-instans i virtuella miljöer för utveckling, testning och programdistribution.
 feature: Sandboxes
-source-git-commit: e828485ad5b0904c9dc66b43d1cdb3c4707885b1
+source-git-commit: 06f9846c2b58071827a1c1d5360eb49ba6b1c34a
 workflow-type: tm+mt
-source-wordcount: '70'
+source-wordcount: '74'
 ht-degree: 50%
 
 ---
@@ -19,6 +19,7 @@ ht-degree: 50%
    * [Översikt över användargränssnittet i Sandbox](ui/overview.md)
    * [Handbok för sandlådeanvändare](ui/user-guide.md)
    * [Verktyg i sandlådan](ui/sandbox-tooling.md)
+   * [Dela paket mellan organisationer](ui/sharing-packages-across-orgs.md)
 * Sandbox-API {#api}
    * [Översikt](api/overview.md)
    * [Komma igång](api/getting-started.md)
