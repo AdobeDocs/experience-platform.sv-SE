@@ -5,9 +5,9 @@ user-guide-description: Aktivera kända och okända data för marknadsföringska
 description: I det här dokumentet visas innehållsförteckningen för Adobe Experience Platform-destinationer
 feature: Destinations
 role: Admin,User
-source-git-commit: 029cd5bdf58a143f765b37190428b817825317b0
+source-git-commit: 7db60161b638cce1845c430f6086441599a0bc61
 workflow-type: tm+mt
-source-wordcount: '1247'
+source-wordcount: '1251'
 ht-degree: 1%
 
 ---
@@ -67,6 +67,7 @@ ht-degree: 1%
       * [Experience Platform-målgruppsdelning](https://experienceleague.adobe.com/docs/audience-manager/user-guide/implementation-integration-guides/integration-experience-platform/aam-aep-audience-sharing.html)
       * [Anslutning av Audience Composition (begränsad tillgänglighet) med federerad publik ](https://www.adobe.com/go/destinations-federated-audience-composition)
    * Advertising-mål{#advertising}
+      * [(Beta) Acxiom Audience Distribution](./catalog/advertising/acxiom-audience-distribution.md)
       * [Översikt över Advertising destinationer](./catalog/advertising/overview.md)
       * [Adobe Advertising Cloud](./catalog/advertising/adobe-advertising-cloud-connection.md)
       * [Adobe Advertising Cloud-tillägg](./catalog/advertising/adobe-advertising-cloud.md)
