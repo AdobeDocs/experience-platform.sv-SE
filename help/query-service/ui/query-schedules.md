@@ -2,9 +2,9 @@
 title: Frågescheman
 description: Lär dig hur du automatiserar schemalagda frågekörningar, tar bort eller inaktiverar ett frågeschema och använder tillgängliga schemaläggningsalternativ via Adobe Experience Platform-gränssnittet.
 exl-id: 984d5ddd-16e8-4a86-80e4-40f51f37a975
-source-git-commit: c69311b3188a8d066a24235466afad1e725d489c
+source-git-commit: c0d2f4b4f8e294d5a7b0a519ab9dad8b78558b26
 workflow-type: tm+mt
-source-wordcount: '1957'
+source-wordcount: '1972'
 ht-degree: 0%
 
 ---
@@ -163,6 +163,11 @@ Följande tabell innehåller beskrivningar av de kolumner som är tillgängliga 
 | [!UICONTROL Compute Hours] | Visar beräkningstiden som används för varje frågekörning, mätt i timmar. Detta hjälper till att spåra resursanvändning och optimera frågeprestanda. |
 
 {style="table-layout:auto"}
+
+>[!NOTE]
+>
+>Data för beräkningstimmar är tillgängliga från 2024-08-15. Data före detta datum visas som Inte tillgängligt.
+
 
 I guiden [Övervaka schemalagd fråga](./monitor-queries.md#inline-actions) finns fullständig information om hur du övervakar statusen för alla frågefunktioner via användargränssnittet.
 

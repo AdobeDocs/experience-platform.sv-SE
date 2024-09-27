@@ -1,9 +1,9 @@
 ---
 title: Adobe Experience Platform Release Notes september 2024
 description: Versionsinformation för september 2024 för Adobe Experience Platform.
-source-git-commit: e93d27ef67802c5fbdffdacb3a0649d373a41a2d
+source-git-commit: 059ed53ace6d54a0c0fb406c2f0379588fea2c44
 workflow-type: tm+mt
-source-wordcount: '2141'
+source-wordcount: '2146'
 ht-degree: 23%
 
 ---
@@ -14,15 +14,16 @@ ht-degree: 23%
 
 Uppdateringar av befintliga funktioner och dokumentation i Adobe Experience Platform:
 
-- [Aviseringar](#alerts)
-- [Kontrollpaneler](#dashboards)
-- [Dataförberedelse](#data-prep)
-- [Mål ](#destinations)
-- [Experience Data Model (XDM)](#xdm)
-- [Identitetstjänst](#identity-service)
-- [Frågetjänst](#query-service)
-- [Segmenteringstjänst](#segmentation-service)
-- [Källor](#sources)
+- [Versionsinformation om Adobe Experience Platform](#adobe-experience-platform-release-notes)
+   - [Varningar {#alerts}](#alerts-alerts)
+   - [Instrumentpaneler {#dashboards}](#dashboards-dashboards)
+   - [Dataprep {#data-prep}](#data-prep-data-prep)
+   - [Mål {#destinations}](#destinations-destinations)
+   - [Experience Data Model (XDM) {#xdm}](#experience-data-model-xdm-xdm)
+   - [Identitetstjänst {#identity-service}](#identity-service-identity-service)
+   - [Frågetjänst {#query-service}](#query-service-query-service)
+   - [Segmenteringstjänst {#segmentation-service}](#segmentation-service-segmentation-service)
+   - [Källor {#sources}](#sources-sources)
 
 ## Aviseringar {#alerts}
 
@@ -139,7 +140,7 @@ Med frågetjänsten kan du använda standard SQL för att söka efter data i Ado
 | Funktion | Beskrivning |
 | --- | --- |
 | Data Distiller-målgrupper | Skapa, hantera och aktivera enkelt målgrupper med SQL-målgruppstillägget i Experience Platform Data Distiller. Definiera målgruppssegment med SQL-kommandon direkt från datasjön, utan att behöva använda rådata i profiler. Förfina målinriktningsstrategierna och synkronisera automatiskt målgrupperna till filbaserade destinationer med denna flexibla, datadrivna strategi. Effektivisera arbetsflödena, optimera målgruppshanteringen och utnyttja datas fulla potential. Läs [guiden om hur du använder SQL-målgruppstillägget](../../query-service/data-distiller-audiences/overview.md) för att få fler strategier för målgruppen. |
-| Data Distiller Statistics - Hyperkuber | Optimera big data-analyser med hyperkuber. Hantera komplexa beräkningar - som distinkta antal och flerdimensionell analys - utan att behöva bearbeta historiska data på nytt. Uppdatera data stegvis, effektivisera arbetsflödena och minska behandlingstiden samtidigt som ni bibehåller exaktheten och effektiviteten. Få snabbare, skalbara och kostnadseffektiva insikter som förändrar beslutsfattandet. Utforska [guiden om hur du använder hyperkuber](../../query-service/hypercubes.md) för att låsa upp avancerad analys. |
+| Data Distiller Statistics - Hyperkuber | Optimera big data-analyser med hyperkuber. Hantera komplexa beräkningar - som distinkta antal och flerdimensionell analys - utan att behöva bearbeta historiska data på nytt. Uppdatera data stegvis, effektivisera arbetsflödena och minska behandlingstiden samtidigt som ni bibehåller exaktheten och effektiviteten. Få snabbare, skalbara och kostnadseffektiva insikter som förändrar beslutsfattandet. Utforska [guiden om hur du använder hyperkuber](../../query-service/hypercubes/overview.md) för att låsa upp avancerad analys. |
 | Frågeredigeringsobjektets webbläsare | Öka frågans effektivitet med den nya objektbläddraren i Frågeredigeraren. Sök, filtrera och kom snabbt åt datauppsättningar för att skriva och förfina frågor snabbare. Med schemauppdateringar i realtid och direkt tabellmetadata kan du effektivisera arbetsflöden, minska navigeringstiden och förbättra frågeupplevelsen. Frigör potentialen i era data och optimera analysen. Läs [handboken om hur du använder objektbläddraren](../../query-service/ui/user-guide.md#object-browser) om du vill ha mer information. |
 | Beräkna timmar | Få kontroll över resursanvändningen med det nya synliga måttet Beräkningstider för schemalagda frågor. Visa Comput Hours på frågekörningsnivå för att övervaka och optimera resursanvändningen för CTAS/ITAS-batchfrågor. Spåra starttider, slutförandestatus och beräkningstid för varje frågekörning. Finjustera prestanda och minska kostnaderna utan problem. Läs [guiden om beräkningstimmar](../../query-service/ui/query-schedules.md#compute-hours-at-job-level) om du vill ha mer information om hur du maximerar frågans effektivitet. |
 

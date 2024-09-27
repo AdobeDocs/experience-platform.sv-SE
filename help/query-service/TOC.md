@@ -5,9 +5,9 @@ breadcrumb-title: Användarhandbok om Query Service
 user-guide-description: Använd standard-SQL för att fråga efter data i datasjön i Experience Platform.
 feature: Queries
 role: User,Developer
-source-git-commit: bdd3d37baa05c8da3213f425657a00fef6afecb8
+source-git-commit: 67d4bcbf2a055d4427218ba7d98355f09d860a8c
 workflow-type: tm+mt
-source-wordcount: '333'
+source-wordcount: '339'
 ht-degree: 12%
 
 ---
@@ -41,7 +41,6 @@ ht-degree: 12%
       - [AI/ML-arbetsflöde för berikning av data från början till slut](data-distiller/ml-feature-pipelines/end-to-end-notebook-workflow.md)
 - Data för Distiller-målgrupper {#data-distiller-audiences}
    - [Bygg externa målgrupper med SQL](data-distiller-audiences/overview.md)
-- [DATA DISTILLER HYPERCUBES](hypercubes.md)
 - Exempel {#use-cases}
    - [Översikt](use-cases/overview.md)
    - [Bläddra överges](use-cases/abandoned-browse.md)
@@ -70,6 +69,8 @@ ht-degree: 12%
    - [Datadeduplicering](key-concepts/deduplication.md)
    - [Datauppsättningsexempel](key-concepts/dataset-samples.md)
    - [Datauppsättningsstatistikberäkning](key-concepts/dataset-statistics.md)
+- Data, Distiller-hyperkuber {#hypercubes}
+   - [Effektiv big data-analys med hyperkuber](hypercubes/overview.md)
 - Anslut klienter till frågetjänsten {#clients}
    - [Översikt över klientanslutningar](clients/overview.md)
    - [SSL-läge](./clients/ssl-modes.md)
