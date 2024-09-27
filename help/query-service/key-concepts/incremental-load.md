@@ -2,9 +2,9 @@
 title: Inkrementell inläsning i frågetjänsten
 description: Funktionen för inkrementell belastning använder både anonyma funktioner för block och ögonblicksbilder för att ge en nästan realtidslösning för att flytta data från dataljön till datalagret samtidigt som matchande data ignoreras.
 exl-id: 1418d041-29ce-4153-90bf-06bd8da8fb78
-source-git-commit: 99cd69234006e6424be604556829b77236e92ad7
+source-git-commit: 65eeeb1df1d512c4cd6c67892905a63cc1cc4fc5
 workflow-type: tm+mt
-source-wordcount: '688'
+source-wordcount: '671'
 ht-degree: 0%
 
 ---
@@ -125,10 +125,6 @@ Stegen nedan visar hur du skapar och läser in data stegvis med hjälp av ögonb
 Denna logik kan tillämpas på alla tabeller för att utföra inkrementella inläsningar.
 
 ## Utgångna ögonblicksbilder
-
->[!IMPORTANT]
->
->Metadata för ögonblicksbilder upphör att gälla efter **två** dagar. En ögonblicksbild som har gått ut gör logiken i skriptet ovan ogiltig.
 
 För att lösa problemet med att ett ögonblicksbild-ID har gått ut infogar du följande kommando i början av det anonyma blocket. Följande kodrad åsidosätter `@from_snapshot_id` med den tidigaste tillgängliga `snapshot_id` från metadata.
 
