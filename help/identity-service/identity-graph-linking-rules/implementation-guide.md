@@ -3,9 +3,9 @@ title: Implementeringsguide för regler för länkning av identitetsdiagram
 description: Lär dig de rekommenderade stegen som ska följas när du implementerar data med länkningsregler för identitetsdiagram.
 badge: Beta
 exl-id: 368f4d4e-9757-4739-aaea-3f200973ef5a
-source-git-commit: 1e9d16c53100c1ee930cf4bf5e9a9a5b6bd9c347
+source-git-commit: adfb1e83289435e6991d4cdd2e2a45e3d5a9b32f
 workflow-type: tm+mt
-source-wordcount: '1518'
+source-wordcount: '1536'
 ht-degree: 0%
 
 ---
@@ -168,6 +168,8 @@ Använd alternativet **[!UICONTROL Beta feedback]** på identitetstjänstens arb
 ## Validera dina diagram {#validate}
 
 Använd identitetspanelen för att få insikter om identitetsgrafernas tillstånd, som det övergripande antalet identiteter och trender för antal diagram, antalet identiteter per namnområde och antalet diagram per diagramstorlek. Du kan också använda identitetspanelen för att visa trender för diagram med två eller flera identiteter, ordnade efter namnområde.
+
+Markera ellipserna (`...`) och välj sedan **[!UICONTROL View more]** om du vill ha mer information och om du vill verifiera att det inte finns några komprimerade diagram.
 
 ## Bilaga {#appendix}
 

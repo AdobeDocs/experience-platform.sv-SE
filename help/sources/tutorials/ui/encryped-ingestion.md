@@ -3,9 +3,9 @@ title: Infoga krypterade data i källanvändargränssnittet i Workspace
 description: Lär dig hur du importerar krypterade data i källans arbetsyta.
 badge: Beta
 exl-id: 34aaf9b6-5c39-404b-a70a-5553a4db9cdb
-source-git-commit: 990be6351f1ea8b1a9288c55067bb81f075d1c4f
+source-git-commit: 70bfebc747c7e6267939eb313048cb2d0e132202
 workflow-type: tm+mt
-source-wordcount: '1442'
+source-wordcount: '1434'
 ht-degree: 0%
 
 ---
@@ -14,7 +14,7 @@ ht-degree: 0%
 
 >[!AVAILABILITY]
 >
->Stöd för krypterad datainmatning i källans användargränssnitt finns i betaversion och kanske inte är tillgängligt för din organisation. Funktionen och dokumentationen kan komma att ändras.
+>Stöd för krypterad datainmatning i källans användargränssnitt finns i betaversionen. Funktionen och dokumentationen kan komma att ändras.
 
 Du kan importera krypterade datafiler och mappar till Adobe Experience Platform med batchkällor för molnlagring. Med krypterad datainmatning kan ni utnyttja asymmetriska krypteringsmekanismer för att på ett säkert sätt överföra batchdata till Experience Platform. De asymmetriska krypteringsmekanismer som stöds är PGP och GPG.
 

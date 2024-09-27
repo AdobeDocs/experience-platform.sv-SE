@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Hantera dataformat med Data Prep
 description: Det här dokumentet ger en översikt över hur olika datatyper hanteras i Data Prep.
 exl-id: 4ad253b7-3f83-48cd-9c46-8b5ba627c09e
-source-git-commit: d39ae3a31405b907f330f5d54c91b95c0f999eee
+source-git-commit: a49140853124f4f7beee87a739c8e670838947f4
 workflow-type: tm+mt
-source-wordcount: '602'
+source-wordcount: '626'
 ht-degree: 3%
 
 ---
@@ -75,6 +75,10 @@ När strängfält från inkommande data mappas till datumfält i scheman med hj�
 > Data Prep försöker konvertera strängar till datum så gott som möjligt. Dessa konverteringar kan dock ge oönskade resultat. Strängvärdet &quot;12112020&quot; matchar mönstret &quot;MMyyyy&quot;, men användaren kan ha tänkt att datumet ska läsas med mönstret &quot;ddMMyyyy&quot;. Därför bör användare uttryckligen ange datumformatet för strängar.
 
 ### Formatsträngar för datum/tid {#format}
+
+>[!TIP]
+>
+>För närvarande tar datumfunktionen i gruppinmatning bort millisekunder om datumvärdena har det här formatet: `2024-05-05 20:39:00.005` PST. Använd följande format om du vill bevara millisekunder: `2024-05-05 20:39:00.005-0800`
 
 Tabellen nedan visar vilka mönsterbokstäver som är definierade för formatsträngar. Please note that the letters are case sensitive.
 
