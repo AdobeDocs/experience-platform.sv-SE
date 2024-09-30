@@ -5,9 +5,9 @@ user-guide-description: Aktivera kända och okända data för marknadsföringska
 description: I det här dokumentet visas innehållsförteckningen för Adobe Experience Platform-destinationer
 feature: Destinations
 role: Admin,User
-source-git-commit: 7db60161b638cce1845c430f6086441599a0bc61
+source-git-commit: 5e2e8996ee48d7816d78fc9cacf6ba102f7ae66f
 workflow-type: tm+mt
-source-wordcount: '1251'
+source-wordcount: '1253'
 ht-degree: 1%
 
 ---
@@ -77,6 +77,7 @@ ht-degree: 1%
       * [Bing Ads UET-tillägg (Universal Event Tracking)](./catalog/advertising/bing-ads.md)
       * [Förgreningstillägg](./catalog/advertising/branch.md)
       * [(Beta) Kriterieanslutning](./catalog/advertising/criteo.md)
+      * [Demandbase-anslutning](./catalog/advertising/demandbase.md)
       * [DoubleClick Floodlight-tillägg (Beta)](./catalog/advertising/doubleclick-floodlight.md)
       * [Facebook Pixel-tillägg](./catalog/advertising/facebook-pixel.md)
       * [Flashtalk OneTag-tillägg](./catalog/advertising/flashtalking.md)
