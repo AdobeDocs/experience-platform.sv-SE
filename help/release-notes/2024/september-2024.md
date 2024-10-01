@@ -1,10 +1,10 @@
 ---
 title: Adobe Experience Platform Release Notes september 2024
 description: Versionsinformation för september 2024 för Adobe Experience Platform.
-source-git-commit: 059ed53ace6d54a0c0fb406c2f0379588fea2c44
+source-git-commit: a342f38f09b84ef720d6135bc555844df12ee251
 workflow-type: tm+mt
-source-wordcount: '2146'
-ht-degree: 23%
+source-wordcount: '2196'
+ht-degree: 22%
 
 ---
 
@@ -14,16 +14,15 @@ ht-degree: 23%
 
 Uppdateringar av befintliga funktioner och dokumentation i Adobe Experience Platform:
 
-- [Versionsinformation om Adobe Experience Platform](#adobe-experience-platform-release-notes)
-   - [Varningar {#alerts}](#alerts-alerts)
-   - [Instrumentpaneler {#dashboards}](#dashboards-dashboards)
-   - [Dataprep {#data-prep}](#data-prep-data-prep)
-   - [Mål {#destinations}](#destinations-destinations)
-   - [Experience Data Model (XDM) {#xdm}](#experience-data-model-xdm-xdm)
-   - [Identitetstjänst {#identity-service}](#identity-service-identity-service)
-   - [Frågetjänst {#query-service}](#query-service-query-service)
-   - [Segmenteringstjänst {#segmentation-service}](#segmentation-service-segmentation-service)
-   - [Källor {#sources}](#sources-sources)
+- [Varningar {#alerts}](#alerts)
+- [Instrumentpaneler {#dashboards}](#dashboards)
+- [Dataprep {#data-prep}](#data-prep)
+- [Mål {#destinations}](#destinations)
+- [Experience Data Model (XDM) {#xdm}](#xdm)
+- [Identitetstjänst {#identity-service}](#identity-service)
+- [Frågetjänst {#query-service}](#query-service)
+- [Segmenteringstjänst {#segmentation-service}](#segmentation-service)
+- [Källor {#sources}](#sources)
 
 ## Aviseringar {#alerts}
 
@@ -76,6 +75,8 @@ Mer information om dataförberedelse finns i [översikten över dataförberedels
 
 ## Mål  {#destinations}
 
+**Uppdaterad: 30 september 2024**
+
 [!DNL Destinations] är förbyggda integrationer med målplattformar som möjliggör sömlös aktivering av data från Adobe Experience Platform. Du kan använda mål för att aktivera dina kända och okända data för marknadsföringskampanjer över flera kanaler, e-postkampanjer, riktad reklam och många andra användningsområden.
 
 **Nya eller uppdaterade mål** {#new-updated-destinations}
@@ -83,6 +84,7 @@ Mer information om dataförberedelse finns i [översikten över dataförberedels
 | Mål | Beskrivning |
 | --- | --- |
 | [Amazon Ads](/help/destinations/catalog/advertising/amazon-ads.md) | Septemberversionen 2024 lägger till mappningsalternativet för att exportera parametern `countryCode` till Amazon Ads. Använd `countryCode` i [mappningssteget](/help/destinations/catalog/advertising/amazon-ads.md#map) om du vill förbättra identitetsmatchningsfrekvensen med Amazon. |
+| [[!BADGE B2B]{type=Informative} Demandbase](/help/destinations/catalog/advertising/demandbase.md) | Använd den här destinationen för att aktivera era kontomålgrupper för Account-Based Marketing-användningsfall (ABM). Annonsera relevanta personer och roller i målkontona via DemandBans B2B Demand Side Platform (DSP). Målkonton kan också berikas med tredjepartsdata från Demandbase, för andra användningsfall i senare led i marknadsförings- och säljprocessen. |
 
 {style="table-layout:auto"}
 

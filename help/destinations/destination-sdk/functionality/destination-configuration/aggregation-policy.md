@@ -2,7 +2,7 @@
 description: Lär dig hur du ställer in en aggregeringsprincip för att bestämma hur HTTP-begäranden till ditt mål ska grupperas och grupperas.
 title: Samlingsprincip
 exl-id: 2dfa8815-2d69-4a22-8938-8ea41be8b9c5
-source-git-commit: 82ba4e62d5bb29ba4fef22c5add864a556e62c12
+source-git-commit: 3ff20e51458cb9cccafb6da92414def9eeaaf821
 workflow-type: tm+mt
 source-wordcount: '1006'
 ht-degree: 0%
@@ -109,8 +109,8 @@ I exempelkonfigurationen nedan visas en konfigurerbar aggregeringskonfiguration.
 |---------|----------|------|
 | `aggregationType` | Sträng | Anger vilken typ av aggregeringsprincip som ditt mål ska använda. Aggregeringstyper som stöds: <ul><li>`BEST_EFFORT`</li><li>`CONFIGURABLE_AGGREGATION`</li></ul> |
 | `configurableAggregation.splitUserById` | Boolean | Använd den här flaggan om anropet till målet ska delas efter identitet. Ange den här flaggan som `true` om servern bara accepterar en identitet per anrop för ett givet ID-namnområde. |
-| `configurableAggregation.maxBatchAgeInSecs` | Heltal | Den här parametern används tillsammans med `maxNumEventsInBatch` och avgör hur länge Experience Platform ska vänta tills ett API-anrop skickas till slutpunkten. <ul><li>Minsta värde (sekunder): 1 800</li><li>Högsta värde (sekunder): 3 600</li></ul> Om du till exempel använder maxvärdet för båda parametrarna väntar Experience Platform antingen 3600 sekunder ELLER tills det finns 1000 kvalificerade profiler innan API-anropet görs, beroende på vilket som inträffar först. |
-| `configurableAggregation.maxNumEventsInBatch` | Heltal | Den här parametern används tillsammans med `maxBatchAgeInSecs` och avgör hur många kvalificerade profiler som ska aggregeras i ett API-anrop. <ul><li>Minsta värde: 1000</li><li>Högsta värde: 10000</li></ul> Om du till exempel använder maxvärdet för båda parametrarna väntar Experience Platform antingen 3600 sekunder ELLER tills det finns 1000 kvalificerade profiler innan API-anropet görs, beroende på vilket som inträffar först. |
+| `configurableAggregation.maxBatchAgeInSecs` | Heltal | Den här parametern används tillsammans med `maxNumEventsInBatch` och avgör hur länge Experience Platform ska vänta tills ett API-anrop skickas till slutpunkten. <ul><li>Minsta värde (sekunder): 1 800</li><li>Högsta värde (sekunder): 3 600</li></ul> Om du till exempel använder maxvärdet för båda parametrarna väntar Experience Platform antingen 3 600 sekunder ELLER tills det finns 1 000 kvalificerade profiler innan API-anropet görs, beroende på vilket som inträffar först. |
+| `configurableAggregation.maxNumEventsInBatch` | Heltal | Den här parametern används tillsammans med `maxBatchAgeInSecs` och avgör hur många kvalificerade profiler som ska aggregeras i ett API-anrop. <ul><li>Minsta värde: 1 000</li><li>Högsta värde: 10 000</li></ul> Om du till exempel använder maxvärdet för båda parametrarna väntar Experience Platform antingen 3 600 sekunder ELLER tills det finns 10 000 kvalificerade profiler innan API-anropet görs, beroende på vilket som inträffar först. |
 | `configurableAggregation.aggregationKey` | – | Gör att du kan sammanställa de exporterade profilerna som är mappade till målet baserat på parametrarna som beskrivs nedan. |
 | `configurableAggregation.aggregationKey.includeSegmentId` | Boolean | Ange den här parametern till `true` om du vill gruppera profiler som exporterats till målet efter målgrupps-ID. |
 | `configurableAggregation.aggregationKey.includeSegmentStatus` | Boolean | Ange både den här parametern och `includeSegmentId` som `true` om du vill gruppera profiler som exporterats till ditt mål efter målgrupps-ID och målgruppsstatus. |

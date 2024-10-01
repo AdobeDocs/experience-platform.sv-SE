@@ -3,7 +3,8 @@ title: Demandbase-anslutning
 description: Använd den här destinationen för att aktivera era kontomålgrupper för Account-Based Marketing-användningsfall (ABM). Annonsera relevanta personer och roller i målkontona via DemandBans B2B Demand Side Platform (DSP). Målkonton kan också berikas med tredjepartsdata från Demandbase, för andra användningsfall i senare led i marknadsförings- och säljprocessen.
 badgeB2B: label="B2B Edition" type="Informative" url=" https://experienceleague.adobe.com/docs/experience-platform/rtcdp/intro/rtcdp-intro/overview.html?lang=en#rtcdp-editions newtab=true"
 badgeB2P: label="B2P Edition" type="Positive" url=" https://experienceleague.adobe.com/docs/experience-platform/rtcdp/intro/rtcdp-intro/overview.html?lang=en#rtcdp-editions newtab=true"
-source-git-commit: 5c694dfab7e53cf8a78500e3ecd086a3986b9b91
+last-substantial-update: 2024-09-30T00:00:00Z
+source-git-commit: 92abae6bc63c13f1103364ae82cc9c04459ce00f
 workflow-type: tm+mt
 source-wordcount: '671'
 ht-degree: 0%
