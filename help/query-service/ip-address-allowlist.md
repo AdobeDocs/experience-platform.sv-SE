@@ -3,9 +3,9 @@ keywords: IP-adress, IP-intervall, tillåtelselista, tillåtelselista, frågetj�
 title: IP-adressen Tillåtelselista för frågetjänsten
 description: Den här sidan innehåller uppdaterade IP-intervall som du kan lägga till på tillåtelselista för säker åtkomst till frågetjänsten.
 exl-id: f6745e0f-d387-45f2-9f72-054e721016ff
-source-git-commit: 029d0ad63460a71770e5ba3cd75a29cb04c0cb9c
+source-git-commit: a48b3995abc1ee2033e3827b12581f4771cdb2d7
 workflow-type: tm+mt
-source-wordcount: '0'
+source-wordcount: '268'
 ht-degree: 0%
 
 ---
@@ -15,14 +15,11 @@ ht-degree: 0%
 >[!IMPORTANT]
 >
 > * Adobe rekommenderar att du bokmärker den här sidan och går tillbaka till den var tredje månad för att kontrollera de senaste IP-adresserna. Adobe meddelar inte om nya IP-intervall.
-> * Adobe stöder dataexport till SFTP-servrar, men de rekommenderade molnlagringsplatserna för dataexport är [!DNL Amazon S3] och [!DNL Azure Blob].
 > * Från 15 oktober 2024 har nya IP-intervall ersatt de befintliga. Se till att både gamla och nya IP-adresser läggs till i tillåtelselista före detta datum för att undvika avbrott i tjänsten.
 
 ## Översikt {#overview}
 
-Den här sidan innehåller IP-adresser som du kan lägga till på tillåtelselista för att på ett säkert sätt exportera data från Experience Platform till din [SFTP-server](../destinations/catalog/cloud-storage/sftp.md).
-
-Du kan definiera nätverksåtkomstkontroller via nätverkets brandvägg. Genom att ange rätt IP-intervall kan du tillåta trafik för dataöverföringstjänsten.
+Du kan definiera nätverksåtkomstkontroller via nätverkets brandvägg. Genom att ange rätt IP-intervall kan du tillåta trafik för åtkomst till frågetjänsten.
 
 Som en del av de pågående förbättringarna har Adobe uppdaterat IP-intervallen som används för nätverksåtkomst till frågetjänsten den 15 oktober 2024. De befintliga IP-adresserna kommer att bli inaktuella och nya IP-adresser kommer att ersätta dem. Det är viktigt att lägga till både det gamla och nya IP-intervallet på tillåtelselista under övergångsperioden för att säkerställa oavbruten service.
 

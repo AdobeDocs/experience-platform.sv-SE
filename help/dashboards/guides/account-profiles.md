@@ -2,14 +2,14 @@
 title: Kontrollpanel för kontoprofiler
 description: Adobe Experience Platform tillhandahåller en kontrollpanel där du kan visa viktig information om din organisations B2B-kontoprofiler.
 exl-id: c9a3d786-6240-4ba4-96c8-05f658e1150c
-source-git-commit: b6811d447f76a671adc98bddef6e760c8be8cd9b
+source-git-commit: 8caa10010109f9936271cb45a2166455f3678687
 workflow-type: tm+mt
-source-wordcount: '1675'
+source-wordcount: '1741'
 ht-degree: 0%
 
 ---
 
-# Kontrollpanel för [!UICONTROL Account Profiles]
+# Kontrollpanel för kontoprofiler
 
 Adobe Experience Platform användargränssnitt (UI) är en kontrollpanel där du kan visa viktig information om dina kontoprofiler, som de tagits under en daglig ögonblicksbild. I den här handboken beskrivs hur du kommer åt och arbetar med kontrollpanelen [!UICONTROL Account Profiles] i användargränssnittet och den innehåller mer information om de visualiseringar som visas på kontrollpanelen.
 
@@ -64,6 +64,11 @@ Välj [!UICONTROL Profile ID] bland resultaten som visas på fliken [!UICONTROL 
 Kontoprofilinformationen som visas på fliken [!UICONTROL Details] har sammanfogats från flera profilfragment till en enda vy av det enskilda kontot. Läs dokumentationen om [att bläddra bland kontoprofiler i Adobe Real-time Customer Data Platform](../../rtcdp/accounts/account-profile-ui-guide.md#browse-account-profiles) om du vill veta mer om visningsfunktioner för kontoprofiler i användargränssnittet för plattformen.
 
 ## Standardwidgetar {#standard-widgets}
+
+>[!CONTEXTUALHELP]
+>id="platform_dashboards_accountprofiles_customersperaccountoverview"
+>title="Översikt över kunder per konto"
+>abstract="Denna fördjupningswidget ger insikter i B2B-datastrukturen. Det hjälper dig att identifiera hur många kontoprofiler som inte har några kopplade kundprofiler eller som har en eller flera kundprofiler kopplade till sig.<ul><li>Direktkunder: är kundprofiler som är direkt kopplade till ett konto via vägen `personComponents`.</li><li>Indirekta kunder: är kundprofiler som är länkade till ett konto via vägen `Account-Person`.</li></ul>"
 
 Adobe tillhandahåller standardwidgetar som du kan använda för att visualisera olika mätvärden för dina kontoprofiler.
 
