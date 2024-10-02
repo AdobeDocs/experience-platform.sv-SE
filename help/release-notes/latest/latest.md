@@ -2,7 +2,7 @@
 title: Adobe Experience Platform Release Notes september 2024
 description: Versionsinformation för september 2024 för Adobe Experience Platform.
 exl-id: f854f9e5-71be-4d56-a598-cfeb036716cb
-source-git-commit: a342f38f09b84ef720d6135bc555844df12ee251
+source-git-commit: 33d1305aef7c763e7b0bd8c6db6a1a9417cc2a9d
 workflow-type: tm+mt
 source-wordcount: '2196'
 ht-degree: 22%
@@ -15,15 +15,15 @@ ht-degree: 22%
 
 Uppdateringar av befintliga funktioner och dokumentation i Adobe Experience Platform:
 
-- [Varningar {#alerts}](#alerts)
-- [Instrumentpaneler {#dashboards}](#dashboards)
-- [Dataprep {#data-prep}](#data-prep)
-- [Mål {#destinations}](#destinations)
-- [Experience Data Model (XDM) {#xdm}](#xdm)
-- [Identitetstjänst {#identity-service}](#identity-service)
-- [Frågetjänst {#query-service}](#query-service)
-- [Segmenteringstjänst {#segmentation-service}](#segmentation-service)
-- [Källor {#sources}](#sources)
+- [Aviseringar](#alerts)
+- [Kontrollpaneler](#dashboards)
+- [Dataförberedelse](#data-prep)
+- [Mål ](#destinations)
+- [Experience Data Model (XDM)](#xdm)
+- [Identitetstjänst](#identity-service)
+- [Frågetjänst](#query-service)
+- [Segmenteringstjänst](#segmentation-service)
+- [Källor](#sources)
 
 ## Aviseringar {#alerts}
 
