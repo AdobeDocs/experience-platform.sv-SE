@@ -3,9 +3,9 @@ solution: Experience Platform
 title: Användargränssnittshandbok för Segment Builder
 description: Segmentbyggaren i Adobe Experience Platform-användargränssnittet har en omfattande arbetsyta som du kan använda för att interagera med profildataelement. Arbetsytan innehåller intuitiva kontroller för att skapa och redigera regler, till exempel dra-och-släpp-paneler som används för att representera dataegenskaper.
 exl-id: b27516ea-8749-4b44-99d0-98d3dc2f4c65
-source-git-commit: 6ceb28b2c9bab3b9df212764a43b202980ae239c
+source-git-commit: e74d04119593dddcaf6a5c710b685c606f5998d6
 workflow-type: tm+mt
-source-wordcount: '4697'
+source-wordcount: '4868'
 ht-degree: 0%
 
 ---
@@ -28,6 +28,19 @@ ht-degree: 0%
 >abstract="De tre fälttyperna som utgör en segmentdefinition är attribut, händelser och målgrupper. Med attribut kan du använda profilattribut som tillhör klassen XDM Individual Profile, händelser gör att du kan skapa en målgrupp baserat på åtgärder och händelser som inträffar med hjälp av dataelementen XDM ExperienceEvent, och målgrupper låter dig använda importerade målgrupper från externa källor."
 
 De grundläggande byggstenarna för segmentdefinitioner är attribut och händelser. Dessutom kan attribut och händelser i befintliga målgrupper användas som komponenter för nya definitioner.
+
+>[!CONTEXTUALHELP]
+>id="platform_segments_createsegment_segmentbuilder_summarydata"
+>title="Sammanfattningsdata"
+>abstract="Sammanfattningsdata visas bara för profilattribut och <b>visas inte</b> för antingen händelse- eller målgruppsattribut.<br/><br/>Sammanfattningsdata för profilattribut får inte visas under följande omständigheter: <ol><li>Vissa av värdena i attributet är längre än 100 tecken.</li><li>Det finns mer än 3000 unika värden för attributet.</li></ol>"
+
+>[!NOTE]
+>
+>Om du väljer informationsbubblan för ett attribut kan du visa fältets värdefördelning, även känd som sammanfattningsdata. Dessa är **endast** tillgängliga på fliken Attribut och är inte tillgängliga för användning på fliken Händelser eller målgrupper.
+>
+>Sammanfattningsdata visas om attributet uppfyller följande kriterier: Alla värden för attributet är 100 tecken eller färre och det finns 3 000 eller färre unika värden för attributet.
+>
+>Ett attribut kommer **inte** att ha sammanfattningsdata om det är data med flera enheter som är länkade till profilen via en relation. Om du till exempel har ett anpassat schema med namnet `Vehicle` kommer **-egenskaperna** i `Vehicle`-schemat **inte** att ha sammanfattningsdata.
 
 Dessa byggstenar visas i avsnittet **[!UICONTROL Fields]** till vänster på arbetsytan i [!DNL Segment Builder]. **[!UICONTROL Fields]** innehåller en flik för varje huvudbyggsten: [!UICONTROL Attributes], [!UICONTROL Events] och [!UICONTROL Audiences].
 
