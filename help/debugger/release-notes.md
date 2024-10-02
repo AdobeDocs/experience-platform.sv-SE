@@ -4,14 +4,20 @@ description: Den senaste versionsinformationen om Adobe Experience Platform Debu
 keywords: debugger;experience Platform Debugger tillägg;chrome;tillägg;versionsinformation
 uuid: 47a5d6f3-c074-4ad5-ad4b-e6030496689b
 exl-id: 3eed44da-5f85-413e-a783-3a0df03a2baf
-source-git-commit: 877e38154f6959d50bd0620290c2dce9decfc2b5
-workflow-type: ht
-source-wordcount: '781'
-ht-degree: 100%
+source-git-commit: e82cd0b24504f807f7511aae1f5a0c9d77a40f74
+workflow-type: tm+mt
+source-wordcount: '801'
+ht-degree: 97%
 
 ---
 
 # Versionsinformation om Adobe Experience Platform Debugger
+
+## Version 1.6.2 - 1 oktober 2024
+
+### Åtgärder och förbättringar
+
+* Ett problem där felsökaren var för känslig för alla CSP-fel har korrigerats
 
 ## Version 1.6.1 – 25 juli 2024
 
