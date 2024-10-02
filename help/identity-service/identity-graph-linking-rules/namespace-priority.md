@@ -1,12 +1,11 @@
 ---
 title: Namnområdesprioritet
 description: Läs om namnområdesprioritet i identitetstjänsten.
-badge: Beta
 exl-id: bb04f02e-3826-45af-b935-752ea7e6ed7c
-source-git-commit: 2a2e3fcc4c118925795951a459a2ed93dfd7f7d7
+source-git-commit: cfe0181104f09bfd91b22d165c23154a15cd5344
 workflow-type: tm+mt
-source-wordcount: '1622'
-ht-degree: 0%
+source-wordcount: '1601'
+ht-degree: 1%
 
 ---
 
@@ -14,7 +13,7 @@ ht-degree: 0%
 
 >[!AVAILABILITY]
 >
->Länkningsregler för identitetsdiagram finns för närvarande i betaversionen. Kontakta ditt Adobe-kontoteam för att få information om deltagandekriterierna. Funktionen och dokumentationen kan komma att ändras.
+>Regler för länkning av identitetsdiagram är för närvarande begränsade. Kontakta ditt Adobe-kontoteam om du vill ha information om hur du kommer åt funktionen i utvecklingssandlådor.
 
 Varje kundimplementering är unik och skräddarsydd för att uppfylla en viss organisations mål, och som sådan varierar vikten av en viss namnrymd från kund till kund. Exempel från verkligheten:
 
@@ -90,7 +89,7 @@ För relativt komplexa diagramstrukturer spelar namnområdesprioriteten en vikti
 >
 >* Primär identitet är den identitet som ett profilfragment lagras mot. Ett profilfragment är en datapost som lagrar information om en viss användare: attribut (som vanligtvis hämtas via CRM-poster) eller händelser (som vanligtvis hämtas från upplevelsehändelser eller onlinedata).
 
-### Exempeldiagram
+### Exempel på scenario
 
 I det här avsnittet finns ett exempel på hur prioritetskonfigurationen kan påverka dina data.
 
@@ -110,11 +109,11 @@ Med tanke på de konfigurationer som beskrivs ovan kommer användaråtgärder oc
 
 | Användaråtgärd (Experience-händelse) | Autentiseringstillstånd | Datakälla | Identitetskarta | Primär identitet (primärnyckel för profilfragment) |
 | --- | --- | --- | --- | --- |
-| Visa erbjudandesida för kreditkort | Oautentiserad (anonym) | Webb-SDK | {ECID} | ECID |
-| Visa hjälpsidan | Oautentiserad | Mobil-SDK | {ECID, IDFA} | IDFA |
-| Visa saldo för checkkonto | Autentiserad | Webb-SDK | {CRMID, ECID} | CRMID |
+| Visa erbjudandesida för kreditkort | Oautentiserad (anonym) | Web SDK | {ECID} | ECID |
+| Visa hjälpsidan | Oautentiserad | Mobile SDK | {ECID, IDFA} | IDFA |
+| Visa saldo för checkkonto | Autentiserad | Web SDK | {CRMID, ECID} | CRMID |
 | Registrera dig för bostadslån | Autentiserad | Källanslutning för analyser | {CRMID, ECID, AAID} | CRMID |
-| Överför 1 000 dollar från kontroll till besparingar | Autentiserad | Mobil-SDK | {CRMID, GAID, ECID} | CRMID |
+| Överför 1 000 dollar från kontroll till besparingar | Autentiserad | Mobile SDK | {CRMID, GAID, ECID} | CRMID |
 
 {style="table-layout:auto"}
 
@@ -137,7 +136,7 @@ Om kriterierna för godkännande av segment endast baserades på anonyma händel
 
 I det här avsnittet beskrivs hur namnområdesprioriteten kan påverka andra Experience Platform-tjänster.
 
-### Avancerad livscykelhantering av data
+### Hantering av avancerad datalivscykel
 
 Funktioner för borttagning av datahygienpost på följande sätt för en viss identitet:
 
@@ -184,6 +183,6 @@ Mer information finns i dokumenten på [Attribution AI](../../intelligent-servic
 
 Mer information finns i [Översikt över sekretesstjänsten](../../privacy-service/home.md).
 
-### Adobe Target och Edge personalization
+### Adobe Target
 
-[Edge-personalisering](../../server-api/personalization-target.md) fortsätter att referera till hur du konfigurerade kryssrutan&quot;Primär&quot; för dataelementtypen i WebSDK (som motsvarar `primary=true` i identityMap).
+Du kan bara aktivera grupp- och direktuppspelningssegmentering till Adobe Target.

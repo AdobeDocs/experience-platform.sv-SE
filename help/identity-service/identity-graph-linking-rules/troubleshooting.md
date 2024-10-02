@@ -1,11 +1,10 @@
 ---
 title: Felsökningsguide för länkningsregler för identitetsdiagram
 description: Lär dig hur du felsöker vanliga problem i länkningsregler för identitetsdiagram.
-badge: Beta
 exl-id: 98377387-93a8-4460-aaa6-1085d511cacc
-source-git-commit: 6cdb622e76e953c42b58363c98268a7c46c98c99
+source-git-commit: cfe0181104f09bfd91b22d165c23154a15cd5344
 workflow-type: tm+mt
-source-wordcount: '3219'
+source-wordcount: '3240'
 ht-degree: 0%
 
 ---
@@ -14,7 +13,7 @@ ht-degree: 0%
 
 >[!AVAILABILITY]
 >
->Regelfunktionen för länkning av identitetsdiagram finns för närvarande i betaversionen. Kontakta ditt Adobe-kontoteam för att få information om deltagandekriterierna. Funktionen och dokumentationen kan komma att ändras.
+>Regler för länkning av identitetsdiagram är för närvarande begränsade. Kontakta ditt Adobe-kontoteam om du vill ha information om hur du kommer åt funktionen i utvecklingssandlådor.
 
 När du testar och validerar regler för länkning av identitetsdiagram kan du stöta på problem som rör datainmatning och diagrambeteende. Läs det här dokumentet om du vill veta mer om hur du felsöker några vanliga problem som kan uppstå när du arbetar med länkningsregler för identitetsdiagram.
 
@@ -167,7 +166,10 @@ Du kan också köra följande fråga för att kontrollera om det inte sker någo
   FROM dataset_name)) WHERE (col.id = '' or _testimsorg.identification.core.email = '') and key = 'Email' 
 ```
 
-Dessa två frågor förutsätter att en identitet skickas från identityMap och att en annan identitet skickas från en identitetsbeskrivare. **OBS!**: I XDM-scheman (Experience Data Model) är identitetsbeskrivningen det fält som markerats som en identitet.
+De här två frågorna förutsätter att:
+
+* En identitet skickas från identityMap och en annan identitet skickas från en identitetsbeskrivning. **OBS!**: I XDM-scheman (Experience Data Model) är identitetsbeskrivningen det fält som markerats som en identitet.
+* CRMID skickas via identityMap. Om CRMID skickas som ett fält tar du bort `key='Email'` från WHERE-satsen.
 
 ### Mina upplevelsehändelsefragment är inkapslade, men har fel primära identitet i profilen
 
@@ -398,7 +400,7 @@ Generellt sett bör testning i en utvecklingssandlåda efterlikna de användning
 | Testfall | Teststeg | Förväntat resultat |
 | --- | --- | --- |
 | Korrekt personentitetsrepresentation | <ul><li>Mimisk anonym surfning</li><li>Mimitera två personer (John, Jane) som loggar in med samma enhet</li></ul> | <ul><li>Både John och Jane ska associeras med sina attribut och autentiserade händelser.</li><li>Den senast autentiserade användaren bör kopplas till de anonyma surfhändelserna.</li></ul> |
-| Segmentering | Skapa fyra segmentdefinitioner (**Obs!**: Varje segmentdefinitionspar ska ha en utvärderad med hjälp av batch och en annan direktuppspelning.) <ul><li>Segmentdefinition A: Segmentkvalificering baserad på Johns autentiserade händelser.</li><li>Segmentdefinition B: Segmentkvalificering baserad på Jane autentiserade händelser.</li></ul> | Oberoende av scenarier med delade enheter bör John och Jane alltid vara kvalificerade för sina respektive segment. |
+| Segmentering | Skapa fyra segmentdefinitioner (**Obs!**: Varje segmentdefinitionspar ska ha en utvärderad med hjälp av batch och en annan direktuppspelning.) <ul><li>Segmentdefinition A: Segmentkvalificering baserad på Johns autentiserade händelser och/eller attribut.</li><li>Segmentdefinition B: Segmentkvalificering baserad på Jane autentiserade händelser och/eller attribut.</li></ul> | Oberoende av scenarier med delade enheter bör John och Jane alltid vara kvalificerade för sina respektive segment. |
 | Målgruppskvalifikationer/enhetsresor på Adobe Journey Optimizer | <ul><li>Skapa en resa som börjar med en målgruppskvalifikationsaktivitet (t.ex. den direktuppspelningssegmentering som skapas ovan).</li><li>Skapa en resa som börjar med ett enastående evenemang. Den här enhetshändelsen ska vara en autentiserad händelse.</li><li>Du måste inaktivera återinträde när du skapar dessa resor.</li></ul> | <ul><li>Oberoende av scenarier med delade enheter bör John och Jane utlösa resorna som de ska delta i.</li><li>John och Jane bör inte återkomma till resan när ECID överförs till dem.</li></ul> |
 
 {style="table-layout:auto"}

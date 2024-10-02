@@ -1,11 +1,10 @@
 ---
 title: Exempel på diagramkonfigurationer
 description: Lär dig mer om vanliga diagramscenarier som du kan stöta på när du arbetar med länkningsregler för identitetsdiagram och identitetsdata.
-badge: Beta
 exl-id: fd0afb0b-a368-45b9-bcdc-f2f3b7508cee
-source-git-commit: 6ad4709d8d361c16c22eddeef5f7ccdd1f4b2fb3
+source-git-commit: cfe0181104f09bfd91b22d165c23154a15cd5344
 workflow-type: tm+mt
-source-wordcount: '2786'
+source-wordcount: '2783'
 ht-degree: 1%
 
 ---
@@ -14,13 +13,12 @@ ht-degree: 1%
 
 >[!AVAILABILITY]
 >
->Länkningsregler för identitetsdiagram finns för närvarande i betaversionen. Kontakta ditt Adobe-kontoteam för att få information om deltagandekriterierna. Funktionen och dokumentationen kan komma att ändras.
+>Regler för länkning av identitetsdiagram är för närvarande begränsade. Kontakta ditt Adobe-kontoteam om du vill ha information om hur du kommer åt funktionen i utvecklingssandlådor.
 
 >[!NOTE]
 >
 >* &quot;CRMID&quot; och &quot;loginID&quot; är egna namnutrymmen. I det här dokumentet är &quot;CRMID&quot; en personidentifierare och &quot;loginID&quot; är en inloggningsidentifierare som är associerad med en viss person.
 >* Om du vill simulera de exempeldiagramscenarier som beskrivs i det här dokumentet måste du först skapa två anpassade namnutrymmen, ett med identitetssymbolen &quot;CRMID&quot; och ett annat med identitetssymbolen &quot;loginID&quot;. Identitetssymboler är skiftlägeskänsliga.
-
 
 Det här dokumentet innehåller exempel på diagramkonfigurationer av vanliga scenarier som du kan stöta på när du arbetar med länkningsregler för identitetsdiagram och identitetsdata.
 
@@ -32,7 +30,7 @@ Detta är ett exempel på ett enkelt implementeringsscenario där online-händel
 
 | Använda namnutrymmen | Samlingsmetod för webbeteenden |
 | --- | --- |
-| CRMID, ECID | Webb-SDK |
+| CRMID, ECID | Web SDK |
 
 **Händelser:**
 
@@ -97,7 +95,7 @@ I det här scenariot är ett CRMID inkapslat och representerar både online- (up
 
 | Använda namnutrymmen | Samlingsmetod för webbeteenden |
 | --- | --- |
-| CRMID, Email_LC_SHA256, ECID | Webb-SDK |
+| CRMID, Email_LC_SHA256, ECID | Web SDK |
 
 **Händelser:**
 
@@ -185,7 +183,7 @@ Detta scenario liknar det föregående. I det här scenariot markeras däremot h
 
 | Använda namnutrymmen | Samlingsmetod för webbeteenden |
 | --- | --- |
-| CRMID, Email_LC_SHA256, Phone_SHA256, GAID, IDFA, ECID | Webb-SDK |
+| CRMID, Email_LC_SHA256, Phone_SHA256, GAID, IDFA, ECID | Web SDK |
 
 **Händelser:**
 
@@ -365,7 +363,7 @@ I det här scenariot finns det ett enda CRMID som representerar en personenhet. 
 
 | Använda namnutrymmen | Samlingsmetod för webbeteenden |
 | --- | --- |
-| CRMID, loginID, ECID | Webb-SDK |
+| CRMID, loginID, ECID | Web SDK |
 
 **Händelser:**
 
@@ -651,7 +649,7 @@ I diagramkonfigurationsexemplen i det här avsnittet beskrivs användningsexempe
 
 | Använda namnutrymmen | Samlingsmetod för webbeteenden |
 | --- | --- |
-| CRMID, Email, ECID | Webb-SDK |
+| CRMID, Email, ECID | Web SDK |
 
 **Händelser:**
 

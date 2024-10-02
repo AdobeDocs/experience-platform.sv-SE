@@ -3,9 +3,9 @@ title: Implementeringsguide för regler för länkning av identitetsdiagram
 description: Lär dig de rekommenderade stegen som ska följas när du implementerar data med länkningsregler för identitetsdiagram.
 badge: Beta
 exl-id: 368f4d4e-9757-4739-aaea-3f200973ef5a
-source-git-commit: adfb1e83289435e6991d4cdd2e2a45e3d5a9b32f
+source-git-commit: 0bb99a359e7331f2235cd5385dcf546ab4c2b494
 workflow-type: tm+mt
-source-wordcount: '1536'
+source-wordcount: '1625'
 ht-degree: 0%
 
 ---
@@ -14,7 +14,7 @@ ht-degree: 0%
 
 >[!AVAILABILITY]
 >
->Länkningsregler för identitetsdiagram finns för närvarande i betaversionen. Kontakta ditt Adobe-kontoteam för att få information om deltagandekriterierna. Funktionen och dokumentationen kan komma att ändras.
+>Regler för länkning av identitetsdiagram är för närvarande begränsade. Kontakta ditt Adobe-kontoteam om du vill ha information om hur du kommer åt funktionen i utvecklingssandlådor.
 
 Läs det här dokumentet för att få en stegvis handledning som du kan följa när du implementerar dina data med Adobe Experience Platform Identity Service.
 
@@ -61,8 +61,67 @@ Om du använder [Adobe Analytics-källkopplingen](../../sources/tutorials/ui/cre
 
 ### XDM-upplevelsehändelser
 
-* Under förimplementeringsprocessen måste du se till att de autentiserade händelser som skickas till Experience Platform alltid innehåller en personidentifierare, till exempel CRMID.
-* Skicka inte en tom sträng som identitetsvärde när händelser skickas med XDM-upplevelsehändelser. Om du gör det kommer det att leda till systemfel.
+Under förimplementeringsprocessen måste du se till att de autentiserade händelser som skickas till Experience Platform alltid innehåller en personidentifierare, till exempel CRMID.
+
+>[!BEGINTABS]
+
+>[!TAB Autentiserade händelser med personidentifierare]
+
+```json
+{
+  "_id": "test_id",
+  "identityMap": {
+      "ECID": [
+          {
+              "id": "62486695051193343923965772747993477018",
+              "primary": false
+          }
+      ],
+      "CRMID": [
+          {
+              "id": "John",
+              "primary": true
+          }
+      ]
+  },
+  "timestamp": "2024-09-24T15:02:32+00:00",
+  "web": {
+      "webPageDetails": {
+          "URL": "https://business.adobe.com/",
+          "name": "Adobe Business"
+      }
+  }
+}
+```
+
+>[!TAB Autentiserade händelser utan personidentifierare]
+
+
+```json
+{
+    "_id": "test_id"
+    "identityMap": {
+        "ECID": [
+            {
+                "id": "62486695051193343923965772747993477018",
+                "primary": false
+            }
+        ]
+    },
+    "timestamp": "2024-09-24T15:02:32+00:00",
+    "web": {
+        "webPageDetails": {
+            "URL": "https://business.adobe.com/",
+            "name": "Adobe Business"
+        }
+    }
+}
+```
+
+
+>[!ENDTABS]
+
+Skicka inte en tom sträng som identitetsvärde när händelser skickas med XDM-upplevelsehändelser. Om identitetsvärdet för namnutrymmet med den högsta namnområdesprioriteten är en tom sträng, ignoreras posten från kundprofilen i realtid. Detta gäller både identityMap och fält som är markerade som en identitet.
 
 +++Välj för att visa ett exempel på en nyttolast med en tom sträng
 
@@ -170,6 +229,12 @@ Använd alternativet **[!UICONTROL Beta feedback]** på identitetstjänstens arb
 Använd identitetspanelen för att få insikter om identitetsgrafernas tillstånd, som det övergripande antalet identiteter och trender för antal diagram, antalet identiteter per namnområde och antalet diagram per diagramstorlek. Du kan också använda identitetspanelen för att visa trender för diagram med två eller flera identiteter, ordnade efter namnområde.
 
 Markera ellipserna (`...`) och välj sedan **[!UICONTROL View more]** om du vill ha mer information och om du vill verifiera att det inte finns några komprimerade diagram.
+
+![Identitetspanelen på identitetstjänstens arbetsyta.](../images/implementation/identity_dashboard.png)
+
+Använd det fönster som visas för att visa information om komprimerade diagram. I det här exemplet markeras både e-post och telefon som unika namnutrymmen, så det finns inga komprimerade diagram i sandlådan.
+
+![Popup-fönstret för diagram med flera identiteter.](../images/implementation/graphs.png)
 
 ## Bilaga {#appendix}
 
