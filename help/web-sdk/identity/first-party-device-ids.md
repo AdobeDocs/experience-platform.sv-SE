@@ -2,9 +2,9 @@
 title: Första parts enhets-ID i Web SDK
 description: Lär dig hur du konfigurerar FPID (First-party device ID) i Adobe Experience Platform Web SDK.
 exl-id: c3b17175-8a57-43c9-b8a0-b874fecca952
-source-git-commit: 1cb38e3eaa83f2ad0e7dffef185d5edaf5e6c38c
+source-git-commit: 04ef39cbfc614369cb15f4d947474b491c34ef33
 workflow-type: tm+mt
-source-wordcount: '1900'
+source-wordcount: '2051'
 ht-degree: 0%
 
 ---
@@ -219,6 +219,16 @@ Felsvaret som Edge Network returnerade i det här fallet liknar följande:
     }
 }
 ```
+
+## Ställa in ett FPID på din egen domän {#setting-fpid-domain}
+
+Förutom att ange [!DNL FPID] i identitetskartan kan du ange [!DNL FPID]-cookien på din egen domän, om du har konfigurerat en första part-datainsamling [!DNL CNAME].
+
+När datainsamling från första part aktiveras med en [!DNL CNAME] skickas alla cookies för din domän på begäranden som görs till datainsamlingsslutpunkten.
+
+Alla cookies som inte är relevanta för Adobe datainsamling tas bort. För [!DNL FPID] kan du ange namnet på cookien [!DNL FPID] i datastream-konfigurationen. När du gör detta läser Edge Network innehållet i cookien [!DNL FPID] i stället för att leta efter [!DNL FPID] i identitetskartan.
+
+Om du vill använda den här funktionen måste du ange [!DNL FPID] på den översta nivån i din domän i stället för en specifik underdomän. Om du anger värdet för en underdomän skickas inte cookie-värdet till Edge Network och lösningen [!DNL FPID] fungerar inte som den ska.
 
 ## ID-hierarki {#id-hierarchy}
 
