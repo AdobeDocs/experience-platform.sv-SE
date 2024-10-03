@@ -236,7 +236,7 @@ ht-degree: 8%
    * [Ta bort ett XDM-fält i API:t](tutorials/field-deprecation-api.md)
    * [Definiera en schemarelation i användargränssnittet](tutorials/relationship-ui.md)
    * [Definiera en schemarelation i API:t](tutorials/relationship-api.md)
-   * [Definiera en schemarelation i Real-Time CDP B2B Edition](tutorials/relationship-b2b.md)
+   * [Definiera en schemarelation i Real-Time CDP B2B edition](tutorials/relationship-b2b.md)
    * [Hantera dataanvändningsetiketter för ett schema](tutorials/labels.md)
    * [Skapa ett ad hoc-schema](tutorials/ad-hoc.md)
 * [Felsökningsguide](troubleshooting-guide.md)
