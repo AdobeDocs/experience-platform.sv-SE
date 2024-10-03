@@ -2,7 +2,7 @@
 title: Dataelementtyper i Adobe Experience Platform Web SDK-tillägget
 description: Lär dig mer om de olika dataelementtyperna i taggtillägget Adobe Experience Platform Web SDK.
 exl-id: 3c2c257f-1fbc-4722-8040-61ad19aa533f
-source-git-commit: fbca8a47c500e89d82cf636e8cb639f2bb59c2e6
+source-git-commit: e34a9ee5b1a09ff3391e5b0e981215fefbc157fc
 workflow-type: tm+mt
 source-wordcount: '625'
 ht-degree: 0%
