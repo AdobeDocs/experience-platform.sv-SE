@@ -3,9 +3,9 @@ keywords: Experience Platform;hem;populära ämnen;direktuppspelningsanslutning;
 title: Skapa en HTTP API Streaming Connection med API:t för Flow Service
 description: I den här självstudiekursen beskrivs hur du skapar en direktuppspelningsanslutning med hjälp av HTTP API-källan för både raw- och XDM-data med API:t för Flow Service
 exl-id: 9f7fbda9-4cd3-4db5-92ff-6598702adc34
-source-git-commit: 84ffbb86e8973c2795d19122d3866e980949759d
+source-git-commit: 6ea5eaf28f260f974d168db2bed9bc95fcfa52af
 workflow-type: tm+mt
-source-wordcount: '1658'
+source-wordcount: '1646'
 ht-degree: 0%
 
 ---
@@ -470,9 +470,9 @@ POST /flows
 
 >[!BEGINTABS]
 
->[!TAB Utan omformningar]
+>[!TAB XDM]
 
-Följande begäran skapar ett direktuppspelat dataflöde för HTTP API utan dataomvandlingar.
+Följande begäran skapar ett direktuppspelat dataflöde för XDM-data.
 
 ```shell
 curl -X POST \
@@ -498,9 +498,9 @@ curl -X POST \
     }'
 ```
 
->[!TAB Med omformningar]
+>[!TAB RAW]
 
-Följande begäranden skapar ett dataflöde för direktuppspelning för HTTP API med mappningsomformningar tillämpade på dina data.
+Följande begäran skapar ett direktuppspelat dataflöde för rådata.
 
 När du skapar ett dataflöde med omformningar kan parametern `name` inte ändras. Värdet måste alltid anges till `Mapping`.
 
@@ -559,7 +559,7 @@ Ett lyckat svar returnerar HTTP-status 201 med information om det nya dataflöde
 }
 ```
 
-## Post-data som ska importeras till plattformen {#ingest-data}
+## Bokför data som ska importeras till plattformen {#ingest-data}
 
 >[!NOTE]
 >
