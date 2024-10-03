@@ -2,9 +2,9 @@
 title: Dela paket mellan organisationer med hjälp av verktygslådan
 description: Lär dig hur du använder sandlådeverktyg i Adobe Experience Platform för att dela paket mellan olika organisationer.
 badge: Beta
-source-git-commit: 492f1d9dc08965dba3f1c5b6e1d479ef645afd04
+source-git-commit: 209aaaf0c2bfdb321f75257309980c7a48cb1eb4
 workflow-type: tm+mt
-source-wordcount: '603'
+source-wordcount: '598'
 ht-degree: 0%
 
 ---
@@ -15,29 +15,27 @@ ht-degree: 0%
 >
 >Paket som delas mellan olika organisationer är för närvarande i betaversion och endast tillgängliga för vissa betakunder.
 
-Det här dokumentet beskriver hur du använder sandlådeverktyg i Adobe Experience Platform för att dela paket mellan olika organisationer.
+Förbättra konfigurationsnoggrannheten i olika sandlådor och exportera och importera smidigt sandlådekonfigurationer mellan sandlådor i olika organisationer med sandlådeverktygen. Det här dokumentet beskriver hur du använder sandlådeverktyg i Adobe Experience Platform för att dela paket mellan olika organisationer. Det finns två typer av delade paket:
 
-Förbättra konfigurationsnoggrannheten i olika sandlådor och exportera och importera smidigt sandlådekonfigurationer mellan sandlådor i olika organisationer med sandlådeverktygen. Det finns två typer av delade paket:
+- **Privat paket**
 
-**Privat paket**
+[Privata paket](#private-packages) kan bara delas med organisationer som har godkänt delningsbegäran från källorganisationen via en tillåtelselista som väljer att delta.
 
-Privata paket kan bara delas med organisationer som har godkänt delningsbegäran från källorganisationen via ett deltagande i tillåtelselista.
+- **Offentligt paket**
 
-**Offentligt paket**
+[Offentliga paket](./sandbox-tooling.md/#export-and-import-an-entire-sandbox) är tillgängliga för import utan ytterligare godkännande. Dessa paket kan delas på en partners webbplats, blogg eller plattform. Paketets nyttolast tillåter att paket kopieras och klistras in från dessa kanaler till målorganisationen.
 
-Offentliga paket kan importeras utan ytterligare godkännande. Dessa paket kan delas på en partners webbplats, blogg eller plattform. Paketets nyttolast tillåter att paket kopieras och klistras in från dessa kanaler till målorganisationen.
-
-## Privata paket
+## Privata paket {#private-packages}
 
 >[!NOTE]
 >
 >Om du vill initiera och godkänna en delningsbegäran och dela paket mellan organisationer måste du ha rollbaserad behörighet för **package-share**.
 
-Med sandlådeverktygen kan du skapa partnerskap, följa upp statusen för en partnerskapsförfrågan, hantera befintliga partnerskap och dela paket med partnerorganisationer.
+Använd sandlådeverktygen för att skapa partnerskap, spåra status för partnerförfrågningar, hantera befintliga partnerskap och dela paket med partnerorganisationer.
 
 ### Skapa en förfrågan om organisationskoppling
 
-Navigera till fliken [!UICONTROL Sandboxes] **[!UICONTROL Partner orgs]** om du vill skapa en förfrågan om organisationskoppling. Välj sedan **[!UICONTROL Manage partner orgs]**.
+Navigera till fliken **[!UICONTROL Sandboxes]** **[!UICONTROL Partner orgs]** om du vill skapa en förfrågan om organisationskoppling. Välj sedan **[!UICONTROL Manage partner orgs]**.
 
 ![Användargränssnittet för sandlådor, med fliken Partnerorgan och Hantera partnerorganisationer markerade.](../images/ui/sandbox-tooling/private-manage-partner-orgs.png)
 
@@ -53,13 +51,13 @@ Delningsbegäran har skickats till partnerorganisationen och du återgår till f
 
 ![Fliken Partnerorganisation med utgående begäran markerad.](../images/ui/sandbox-tooling/private-outgoing-request.png)
 
-### Auktorisera en partnerbegäran
+### Auktorisera en partnerbegäran {#authorize-request}
 
 Navigera till fliken [!UICONTROL Sandboxes] **[!UICONTROL Partner orgs]** om du vill godkänna en förfrågan om organisationskoppling. Välj sedan **[!UICONTROL Incoming request]**.
 
 ![Användargränssnittet för sandlådor med fliken Partnerorgan och fliken Inkommande begäran markerad.](../images/ui/sandbox-tooling/private-authorise-partner-org.png)
 
-Aktuell **[!UICONTROL Status]** för begäran är **Väntande**. Om du vill godkänna begäran markerar du ellipsen (`...`) bredvid den valda begäran och väljer sedan **[!UICONTROL Approve]** i listrutan.
+Aktuell **[!UICONTROL Status]** för begäran är **Väntar** i det här skedet. Om du vill godkänna begäran markerar du ellipsen (`...`) bredvid den valda begäran och väljer sedan **[!UICONTROL Approve]** i listrutan.
 
 ![Lista över inkommande begäranden som visar listrutan med Godkänn markerat.](../images/ui/sandbox-tooling/private-approve-partner-org.png)
 
@@ -71,9 +69,9 @@ Du återgår till sidan [!UICONTROL Incoming request] och status för begäran h
 
 ![Listan över inkommande begäranden med Godkänt är markerad.](../images/ui/sandbox-tooling/private-approved-partner-org.png)
 
-Nu kan du dela paket mellan din organisation och källorganisationen.
+Använd det här arbetsflödet/den här processen för att dela paket mellan organisationen och källorganisationen.
 
-### Dela paket med partnerorganisationer
+### Dela paket med partnerorganisationer {#share-package}
 
 >[!NOTE]
 >
@@ -85,14 +83,14 @@ Om du vill dela ett paket med en godkänd partnerorganisation går du till flike
 
 I dialogrutan **[!UICONTROL Share package]** väljer du det paket som ska delas i listrutan **[!UICONTROL Share settings]** och sedan **[!UICONTROL Confirm]**.
 
-![Dialogrutan Dela paket med Dela-inställningar och Bekräfta markerat.](../images/ui/sandbox-tooling/private-share-package-confirm.png)
-
 >[!TIP]
 >
 >Det går att välja flera organisationer. De valda organisationerna visas under listrutan [!UICONTROL Share settings].
 
-## Nästa steg
+![Dialogrutan Dela paket med Dela-inställningar och Bekräfta markerat.](../images/ui/sandbox-tooling/private-share-package-confirm.png)
+
+## Nästa steg {#next-steps}
 
 Det här dokumentet visar hur du använder sandlådeverktygen för att dela paket mellan olika organisationer. Mer information finns i [Verktygshandboken för sandlådan](../ui/sandbox-tooling.md).
 
-Anvisningar om hur du utför olika åtgärder med sandbox-API:t finns i [utvecklarhandboken för sandlådan](../api/getting-started.md). En översikt över sandlådor i Experience Platform på hög nivå finns i [översiktsdokumentationen](../home.md).
+Mer information om hur du utför olika åtgärder med sandbox-API:t finns i [utvecklarhandboken för sandlådan](../api/getting-started.md). En översikt över sandlådor i Experience Platform på hög nivå finns i [översiktsdokumentationen](../home.md).

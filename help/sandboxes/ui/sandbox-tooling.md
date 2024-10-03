@@ -2,9 +2,9 @@
 title: Verktyg för sandlåda
 description: Exportera och importera sömlöst sandlådekonfigurationer mellan sandlådor.
 exl-id: f1199ab7-11bf-43d9-ab86-15974687d182
-source-git-commit: 50f3976d73c8a34a51179157a7c93e3d9b1c0ff4
+source-git-commit: 209aaaf0c2bfdb321f75257309980c7a48cb1eb4
 workflow-type: tm+mt
-source-wordcount: '2237'
+source-wordcount: '2236'
 ht-degree: 0%
 
 ---
@@ -58,7 +58,7 @@ Tabellen nedan visar [!DNL Adobe Journey Optimizer] objekt som för närvarande 
 | [!DNL Adobe Journey Optimizer] | Händelse | Händelser och händelseinformation som används under resan kopieras. Den skapar alltid en ny version i målsandlådan. |
 | [!DNL Adobe Journey Optimizer] | Åtgärd | E-post och push-meddelanden som används under resan kan kopieras som beroende objekt. Kanalåtgärdsaktiviteterna som används i resefälten, som används för personalisering i meddelandet, kontrolleras inte för fullständighet. Innehållsblock kopieras inte.<br><br>Åtgärden för att uppdatera profil som används under resan kan kopieras. Anpassade åtgärder och åtgärdsinformation som används under resan kopieras också. Den skapar alltid en ny version i målsandlådan. |
 | [!DNL Adobe Journey Optimizer] | Resa | Om du lägger till en hel resa i ett paket kopieras huvuddelen av de objekt som resan är beroende av, inklusive målgrupper, scheman, händelser och åtgärder. |
-| [!DNL Adobe Journey Optimizer] | Innehållsmall | En innehållsmall kan kopieras som ett beroende objekt för reseobjektet. Fristående mallar som gör det enkelt att återanvända anpassat innehåll i Journey Optimizer kampanjer och resor. |
+| [!DNL Adobe Journey Optimizer] | Innehållsmall | En innehållsmall kan kopieras som ett beroende objekt för reseobjektet. Med fristående mallar kan ni enkelt återanvända anpassat innehåll i Journey Optimizer kampanjer och resor. |
 | [!DNL Adobe Journey Optimizer] | Fragment | Ett fragment kan kopieras som ett beroende objekt för reseobjektet. Fragment är återanvändbara komponenter som kan refereras i ett eller flera e-postmeddelanden mellan Journey Optimizer kampanjer och resor. |
 
 Ytor (till exempel förinställningar) kopieras inte över. Systemet väljer automatiskt den närmsta möjliga matchningen i målsandlådan baserat på meddelandetyp och ytnamn. Om det inte finns några ytor i målsandlådan, kommer ytkopian att misslyckas, vilket gör att meddelandekopian misslyckas eftersom ett meddelande kräver att en yta är tillgänglig för konfiguration. I det här fallet måste minst en yta skapas för den högra kanalen i meddelandet för att kopian ska fungera.
