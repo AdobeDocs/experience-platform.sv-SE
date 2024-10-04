@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Användargränssnittshandbok för frågeredigeraren
 description: Frågeredigeraren är ett interaktivt verktyg som tillhandahålls av Adobe Experience Platform Query Service, som gör att du kan skriva, validera och köra frågor för kundupplevelsedata i användargränssnittet i Experience Platform. Frågeredigeraren har stöd för att utveckla frågor för analys och datautforskande, och gör att du kan köra interaktiva frågor i utvecklingssyfte samt icke-interaktiva frågor för att fylla i datauppsättningar i Experience Platform.
 exl-id: d7732244-0372-467d-84e2-5308f42c5d51
-source-git-commit: 7ba9eb6891657e7f3d7ebbd41314b7973e31ea61
+source-git-commit: d83604b2bf6a8e2f2b5802a5e7f26447fbf7eb2e
 workflow-type: tm+mt
-source-wordcount: '2720'
+source-wordcount: '2739'
 ht-degree: 0%
 
 ---
@@ -102,6 +102,10 @@ En bekräftelsedialogruta visas. Välj **[!UICONTROL Confirm]** om du vill avbry
 ### Resultatantal {#result-count}
 
 Frågeredigeraren har maximalt 50 000 radutdata. Du kan välja hur många rader som ska visas samtidigt i frågeredigeringskonsolen. Om du vill ändra antalet rader som visas i konsolen väljer du listrutan **[!UICONTROL Result count]** och väljer bland alternativen 50, 100, 150, 300 och 500.
+
+>[!NOTE]
+>
+>Eftersom användargränssnittet för plattformen bara har stöd för upp till 500 rader ignoreras överföring av ett LIMIT-värde över 500.
 
 ![Frågeredigeraren med listrutan Resultatantal markerad.](../images/ui/query-editor/result-count.png)
 

@@ -2,9 +2,9 @@
 title: Övervaka användning av batchfrågelicens
 description: Adobe Experience Platform användargränssnitt innehåller en kontrollpanel där du kan visa viktig information om hur din organisation använder din Data Distiller-licens.
 exl-id: a1e365a0-cc65-4fd6-b36f-8d79b7d9ec7c
-source-git-commit: 971c462a18a2a3ff3c98936c99b54a0d03b7c488
+source-git-commit: d83604b2bf6a8e2f2b5802a5e7f26447fbf7eb2e
 workflow-type: tm+mt
-source-wordcount: '252'
+source-wordcount: '232'
 ht-degree: 0%
 
 ---
@@ -22,10 +22,6 @@ Kontrollpanelen tillhandahåller användningsstatistik för varje köpt produkt,
 ## Beräkningstimmar {#compute-hours}
 
 Måttet [!UICONTROL Compute hours] gäller endast för kunder med Data Distiller-licensen för batchfrågor. [!UICONTROL Compute hours] är det tidsmått som används av frågetjänstmotorer för att läsa, bearbeta och skriva data tillbaka till datasjön när en gruppfråga körs.
-
->[!NOTE]
->
->Visade data för [!UICONTROL Compute hours]-användning börjar antingen 15 september 2023 eller det datum då ditt kontrakt förnyas årsvis, beroende på vilket som inträffar senare.
 
 ![Kontrollpanelen för licensanvändning med måttet för antal beräknade timmar markerat.](../images/data-distiller/compute-hours.png)
 
