@@ -2,9 +2,9 @@
 title: Dela paket mellan organisationer med hjälp av verktygslådan
 description: Lär dig hur du använder sandlådeverktyg i Adobe Experience Platform för att dela paket mellan olika organisationer.
 badge: Beta
-source-git-commit: 209aaaf0c2bfdb321f75257309980c7a48cb1eb4
+source-git-commit: 0e280972feb990221272d272aa2a9e3852beb5e8
 workflow-type: tm+mt
-source-wordcount: '598'
+source-wordcount: '602'
 ht-degree: 0%
 
 ---
@@ -39,7 +39,7 @@ Navigera till fliken **[!UICONTROL Sandboxes]** **[!UICONTROL Partner orgs]** om
 
 ![Användargränssnittet för sandlådor, med fliken Partnerorgan och Hantera partnerorganisationer markerade.](../images/ui/sandbox-tooling/private-manage-partner-orgs.png)
 
-Ange organisations-ID i **[!UICONTROL Enter Org ID]** i dialogrutan [!UICONTROL Package partner management] och tryck på Retur. Organisations-ID:t visas i avsnittet **[!UICONTROL Selected Org IDs]** nedan. När du har lagt till ID:n väljer du **[!UICONTROL Confirm]**.
+I dialogrutan [!UICONTROL Package partner management] anger du organisations-ID i **[!UICONTROL Enter Org ID]** och trycker på Enter (Windows) eller Retur (Mac). Organisations-ID:t visas i avsnittet **[!UICONTROL Selected Org IDs]** nedan. När du har lagt till ID:n väljer du **[!UICONTROL Confirm]**.
 
 >[!TIP]
 >
