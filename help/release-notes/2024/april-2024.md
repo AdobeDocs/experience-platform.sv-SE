@@ -1,11 +1,11 @@
 ---
-title: Versionsinformation om Adobe Experience Platform
+title: Versionsinformation om Adobe Experience Platform april 2024
 description: Versionsinformationen för Adobe Experience Platform från april 2024.
 exl-id: 86d72fd8-a464-4715-abc9-4177236e423c
-source-git-commit: 14dccb993b38ca352c6de3ed851bafe7c44ca631
-workflow-type: ht
-source-wordcount: '1895'
-ht-degree: 100%
+source-git-commit: d6e306294d0a119108e2de7ba03ebed4f633fba1
+workflow-type: tm+mt
+source-wordcount: '1897'
+ht-degree: 99%
 
 ---
 
@@ -67,7 +67,7 @@ Läs mer på [översikten över datainsamling](../../collection/home.md).
 
 ## Mål  {#destinations}
 
-[!DNL Destinations] är färdiga integreringar med destinationsplattformar som möjliggör sömlös aktivering av data från Adobe Experience Platform. Du kan använda mål för att aktivera dina kända och okända data för marknadsföringskampanjer över flera kanaler, e-postkampanjer, riktad reklam och många andra användningsområden.
+[!DNL Destinations] är förbyggda integrationer med målplattformar som möjliggör sömlös aktivering av data från Adobe Experience Platform. Du kan använda mål för att aktivera dina kända och okända data för marknadsföringskampanjer över flera kanaler, e-postkampanjer, riktad reklam och många andra användningsområden.
 
 **Ny eller uppdaterad funktion** {#destinations-new-updated-functionality}
 
@@ -144,7 +144,7 @@ Mer information om sandlådor finns i [översikten över sandlådor](../../sandb
 
 ## Segmenteringstjänst {#segmentation}
 
-Med [!DNL Segmentation Service] kan du segmentera data som lagras i [!DNL Experience Platform] och som avser individer (t.ex. kunder, prospekt, användare eller organisationer) i målgrupper. Du kan skapa målgrupper med hjälp av segmentdefinitioner eller andra källor från dina [!DNL Real-Time Customer Profile]-data. Dessa målgrupper är centralt konfigurerade och underhållna på [!DNL Platform] och är tillgängliga för alla Adobe-lösningar.
+Med [!DNL Segmentation Service] kan du segmentera data som lagras i [!DNL Experience Platform] och som relaterar till individer (t.ex. kunder, potentiella kunder, användare eller organisationer) till målgrupper. Du kan skapa målgrupper med hjälp av segmentdefinitioner eller andra källor från dina [!DNL Real-Time Customer Profile]-data. Dessa målgrupper är centralt konfigurerade och underhållna på [!DNL Platform] och är tillgängliga för alla Adobe-lösningar.
 
 **Uppdaterad funktion**
 

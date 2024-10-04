@@ -1,37 +1,37 @@
 ---
-title: Versionsinformation om Adobe Experience Platform
-description: Versionsinformation från augusti 2023 för Adobe Experience Platform.
+title: Versionsinformation om Adobe Experience Platform från augusti 2023
+description: Versionsinformation för augusti 2023 för Adobe Experience Platform.
 exl-id: c67dca3a-eccb-427e-8ab3-b69c51b57938
-source-git-commit: b4334b4f73428f94f5a7e5088f98e2459afcaf3c
+source-git-commit: d6e306294d0a119108e2de7ba03ebed4f633fba1
 workflow-type: tm+mt
-source-wordcount: '1713'
-ht-degree: 3%
+source-wordcount: '1715'
+ht-degree: 40%
 
 ---
 
-# Versionsinformation för Adobe Experience Platform
+# Versionsinformation om Adobe Experience Platform
 
 **Releasedatum: 23 augusti 2023**
 
 Uppdateringar av befintliga funktioner i Adobe Experience Platform:
 
-- [Real-Time Customer Data Platform](#rtcdp)
+- [Plattform för kunddata i realtid](#rtcdp)
 - [Attributbaserad åtkomstkontroll](#abac)
 - [Kontrollpaneler](#dashboards)
 - [Datainsamling](#data-collection)
 - [Datainmatning](#data-ingestion)
 - [Dataförberedelse](#data-prep)
-- [Mål ](#destinations)
+- [Mål](#destinations)
 - [Experience Data Model (XDM)](#xdm)
 - [Identitetstjänst](#identity-service)
 - [Segmenteringstjänst](#segmentation)
 - [Källor](#sources)
 
-## Real-Time Customer Data Platform {#rtcdp}
+## Plattform för kunddata i realtid {#rtcdp}
 
 Real-time Customer Data Platform ([!DNL Real-Time CDP]) bygger på Experience Platform och hjälper företag att sammanföra kända och okända data för att aktivera kundprofiler med intelligent beslutsfattande under hela kundresan.
 
-[!DNL Real-Time CDP] kombinerar flera företagsdatakällor för att skapa kundprofiler i realtid. Segment som byggts utifrån dessa profiler kan sedan skickas till efterföljande destinationer för att tillhandahålla personliga kundupplevelser i alla kanaler och enheter.
+[!DNL Real-Time CDP] kombinerar flera datakällor från företag för att skapa kundprofiler i realtid. Segment som byggs upp utifrån dessa profiler kan sedan skickas till mål i senare led för att ge personliga kundupplevelser i alla kanaler och på alla enheter.
 
 **Nya eller uppdaterade funktioner**
 
@@ -48,7 +48,7 @@ Mer information finns i [Real-Time CDP-översikten](../../rtcdp/overview.md).
 
 Attributbaserad åtkomstkontroll är en funktion hos Adobe Experience Platform som ger sekretessmedvetna varumärken större flexibilitet att hantera användaråtkomst. Enskilda objekt som schemafält och segment kan tilldelas användarroller. Med den här funktionen kan du bevilja eller återkalla åtkomst till enskilda objekt för specifika plattformsanvändare i organisationen.
 
-Tack vare attributbaserad åtkomstkontroll kan administratören styra användarnas åtkomst till, känsliga personuppgifter (SPD), personligt identifierbar information (PII) och andra anpassade typer av data i alla plattformsarbetsflöden och resurser. Administratörer kan definiera användarroller som bara har åtkomst till specifika fält och data som motsvarar dessa fält.
+Tack vare attributbaserad åtkomstkontroll kan administratören styra användarnas åtkomst till känsliga personuppgifter (SPD), personligt identifierbar information (PII) och andra anpassade typer av data i alla plattformsarbetsflöden och resurser. Administratörer kan definiera användarroller som bara har åtkomst till specifika fält och data som motsvarar dessa fält.
 
 **Nya eller uppdaterade funktioner**
 
@@ -58,11 +58,11 @@ Tack vare attributbaserad åtkomstkontroll kan administratören styra användarn
 
 {style="table-layout:auto"}
 
-Mer information om attributbaserad åtkomstkontroll finns i [Översikt över attributbaserad åtkomstkontroll](../../access-control/abac/overview.md). En utförlig guide om det attributbaserade arbetsflödet för åtkomstkontroll finns i [attributbaserad åtkomstkontroll från början till slut](../../access-control/abac/end-to-end-guide.md).
+Mer information om attributbaserad åtkomstkontroll finns i [översikt över attributbaserad åtkomstkontroll](../../access-control/abac/overview.md). En utförlig guide om det attributbaserade arbetsflödet för åtkomstkontroll finns i [heltäckande attributbaserad åtkomstkontroll](../../access-control/abac/end-to-end-guide.md).
 
 ## Kontrollpaneler {#dashboards}
 
-Adobe Experience Platform tillhandahåller flera instrumentpaneler där du kan se viktiga insikter om organisationens data, som de har hämtats in under dagliga ögonblicksbilder.
+Adobe Experience Platform tillhandahåller flera instrumentpaneler där du kan visa viktiga insikter om organisationens data, som fångas upp under dagliga ögonblicksbilder.
 
 **Nya eller uppdaterade funktioner**
 
@@ -76,13 +76,13 @@ Mer information om kontrollpaneler, inklusive hur du ger åtkomstbehörigheter o
 
 ## Datainsamling {#data-collection}
 
-Adobe Experience Platform erbjuder en serie teknologier som gör att ni kan samla in kundupplevelsedata på klientsidan och skicka dem till Adobe Experience Platform Edge Network där de kan berikas, omformas och distribueras till Adobe eller andra destinationer än Adobe.
+Adobe Experience Platform tillhandahåller en uppsättning tekniker som gör att du kan samla in kundupplevelsedata på klientsidan och skicka dem till Adobe Experience Platform Edge Network där de kan berikas, omvandlas och distribueras till mål inom eller utanför Adobe.
 
 **Nya eller uppdaterade funktioner**
 
 | Typ | Funktion | Beskrivning |
 | --- | --- | --- |
-| Taggar och händelsevidarebefordran | [Experience Platform-taggar (Kina)](/help/tags/ui/publishing/premium-cdn.md) | Den nya funktionen Experience Platform Tags (China) förbättrar webbplatsens tillförlitlighet och latens, vilket ger kortare svarstider för kunder som använder taggar på webbplatser i Kina. Kunder kan nu använda JavaScript-koden i taggbiblioteket när de implementerar webbplatser i Kina. Den här funktionen har också lagts till i UPP-protokollet (Unified Provisioning Protocol), vilket gör att produktdistributionen kan automatiseras efter köpet. |
+| Taggar och vidarebefordran av händelser | [Experience Platform-taggar (Kina)](/help/tags/ui/publishing/premium-cdn.md) | Den nya funktionen Experience Platform Tags (China) förbättrar webbplatsens tillförlitlighet och latens, vilket ger kortare svarstider för kunder som använder taggar på webbplatser i Kina. Kunder kan nu använda JavaScript-koden i taggbiblioteket när de implementerar webbplatser i Kina. Den här funktionen har också lagts till i UPP-protokollet (Unified Provisioning Protocol), vilket gör att produktdistributionen kan automatiseras efter köpet. |
 
 {style="table-layout:auto"}
 
@@ -90,7 +90,7 @@ Mer information finns i [översikten över datainsamlingar](../../tags/home.md).
 
 ## Datainmatning {#data-ingestion}
 
-Adobe Experience Platform har en omfattande uppsättning funktioner för att importera alla typer av data och all fördröjning. Du kan importera med hjälp av API:er för gruppbearbetning eller direktuppspelning, med hjälp av Adobe-byggda källor, dataintegrationspartners eller Adobe Experience Platform användargränssnitt.
+Adobe Experience Platform har en omfattande uppsättning funktioner för att mata in alla typer av data med alla fördröjningar. Du kan mata in med grupp- eller strömnings-API:er, med Adobe-byggda källor, partners för dataintegration eller Adobe Experience Platform-gränssnittet.
 
 **Nya eller uppdaterade funktioner**
 
@@ -102,7 +102,7 @@ Mer information finns i [översikten över dataöverföring](../../ingestion/hom
 
 ## Dataförberedelse {#data-prep}
 
-Med Data Prep kan datatekniker mappa, omvandla och validera data till och från Experience Data Model (XDM).
+Med dataförberedelse kan utvecklare mappa, omvandla och validera data till och från Experience Data Model (XDM).
 
 **Nya eller uppdaterade funktioner**
 
@@ -114,9 +114,9 @@ Med Data Prep kan datatekniker mappa, omvandla och validera data till och från 
 
 Mer information finns i [översikten över dataförberedelser](../../data-prep/home.md).
 
-## Mål  {#destinations}
+## Mål {#destinations}
 
-[!DNL Destinations] är färdiga integreringar med målplattformar som möjliggör smidig aktivering av data från Adobe Experience Platform. Ni kan använda destinationer för att aktivera kända och okända data för flerkanalskampanjer, e-postkampanjer, riktad reklam och många andra användningsfall.
+[!DNL Destinations] är förbyggda integrationer med målplattformar som möjliggör sömlös aktivering av data från Adobe Experience Platform. Du kan använda mål för att aktivera dina kända och okända data för marknadsföringskampanjer över flera kanaler, e-postkampanjer, riktad reklam och många andra användningsområden.
 
 **Ny eller uppdaterad funktion** {#destinations-new-updated-functionality}
 
@@ -127,7 +127,7 @@ Mer allmän information om destinationer finns i [målöversikten](../../destina
 
 ## Experience Data Model (XDM) {#xdm}
 
-XDM är en öppen källkodsspecifikation som innehåller gemensamma strukturer och definitioner (scheman) för data som hämtas till Adobe Experience Platform. Genom att följa XDM-standarder kan alla kundupplevelsedata införlivas i en gemensam representation för att ge insikter på ett snabbare och mer integrerat sätt. Ni kan få värdefulla insikter från kundåtgärder, definiera kundmålgrupper genom segment och använda kundattribut i personaliseringssyfte.
+XDM är en specifikation med öppen källkod som tillhandahåller gemensamma strukturer och definitioner (scheman) för data som förs in i Adobe Experience Platform. Genom att följa XDM-standarder kan all data om kundupplevelsen införlivas i en gemensam representation för att leverera insikter på ett snabbare och mer integrerat sätt. Du kan få värdefulla insikter från kundåtgärder, definiera kundmålgrupper genom segment och använda kundattribut för personalisering.
 
 **Nya XDM-komponenter**
 
@@ -150,7 +150,7 @@ Mer information finns i [XDM-systemöversikt](../../xdm/home.md).
 
 ## Identitetstjänst {#identity-service}
 
-Adobe Experience Platform identitetstjänst ger er en heltäckande bild av era kunder och deras beteende genom att skapa en bro mellan identiteter på olika enheter och system, så att ni kan leverera slagkraftiga, personliga digitala upplevelser i realtid.
+Adobe Experience Platforms identitetstjänst ger dig en heltäckande bild av dina kunder och deras beteende genom att koppla samman identiteter mellan enheter och system så att du kan leverera effektiva, personliga digitala upplevelser i realtid.
 
 **Nya eller uppdaterade funktioner**
 
@@ -176,7 +176,7 @@ Mer information finns i [Segmenteringsöversikt](../../segmentation/home.md).
 
 ## Källor {#sources}
 
-Experience Platform tillhandahåller ett RESTful-API och ett interaktivt användargränssnitt som gör att du enkelt kan konfigurera källanslutningar för olika dataleverantörer. Dessa källanslutningar gör att du kan autentisera och ansluta till externa lagringssystem och CRM-tjänster, ange tider för matning och hantera dataöverföringshastigheter.
+Experience Platform tillhandahåller ett RESTful API och ett interaktivt användargränssnitt som gör att du enkelt kan konfigurera källanslutningar för olika dataleverantörer. Med dessa källanslutningar kan du autentisera och ansluta till externa lagringssystem och CRM-tjänster, ställa in tider för inmatningskörningar och hantera datainmatningens genomströmning.
 
 **Nya eller uppdaterade funktioner**
 

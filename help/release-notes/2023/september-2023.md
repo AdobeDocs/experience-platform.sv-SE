@@ -1,15 +1,15 @@
 ---
-title: Versionsinformation om Adobe Experience Platform
-description: Versionsinformation för september 2023 för Adobe Experience Platform.
+title: Versionsinformation om Adobe Experience Platform september 2023
+description: Versionsinformationen för Adobe Experience Platform från september 2023.
 exl-id: ff7fb0c1-6941-4339-8648-58f9b9e9a91f
-source-git-commit: c35b43654d31f0f112258e577a1bb95e72f0a971
+source-git-commit: d6e306294d0a119108e2de7ba03ebed4f633fba1
 workflow-type: tm+mt
-source-wordcount: '2238'
-ht-degree: 2%
+source-wordcount: '2240'
+ht-degree: 28%
 
 ---
 
-# Versionsinformation för Adobe Experience Platform
+# Versionsinformation om Adobe Experience Platform
 
 **Releasedatum: 28 september 2023**
 
@@ -19,12 +19,12 @@ Nya funktioner i Adobe Experience Platform:
 
 Uppdateringar av befintliga funktioner i Experience Platform:
 
-- [Larm](#alerts)
+- [Aviseringar](#alerts)
 - [Kontrollpaneler](#dashboards)
 - [Datainsamling](#data-collection)
-- [Datastyrning](#data-governance)
+- [Dataförvaltning](#data-governance)
 - [Datahygien](#hygiene)
-- [Mål ](#destinations)
+- [Mål](#destinations)
 - [Experience Data Model (XDM)](#xdm)
 - [Identitetstjänst](#identity-service)
 - [Frågetjänst](#query-service)
@@ -35,9 +35,9 @@ Uppdateringar av befintliga funktioner i Experience Platform:
 
 Beräknade attribut gör det enkelt att sammanfatta händelsedata i profilattribut via ett intuitivt gränssnitt för förbättrad beteendebaserad segmentering, personalisering och aktivering. Med den här funktionen kan du skapa beräknade attribut på ett självbetjäningssätt, hantera dem och använda dem vid segmentering, Real-Time CDP-destinationer eller Adobe Journey Optimizer. Dessutom förenklar beräkningsattribut segmenterings- och researbetsflödena så att ni smidigt kan leverera relevanta upplevelser. Läs [översikten över beräknade attribut](../../profile/computed-attributes/overview.md) om du vill veta mer om beräknade attribut.
 
-## Larm {#alerts}
+## Aviseringar {#alerts}
 
-Med Experience Platform kan du prenumerera på händelsebaserade aviseringar för olika plattformsaktiviteter. Du kan prenumerera på olika varningsregler via fliken [!UICONTROL Alerts] i användargränssnittet för plattformen och du kan välja att ta emot varningsmeddelanden i själva användargränssnittet eller via e-postmeddelanden.
+Med Experience Platform kan du prenumerera på händelsebaserade aviseringar för olika Platform-aktiviteter. Du kan prenumerera på olika aviseringsregler på fliken [!UICONTROL Alerts] i Platform-användargränssnittet och du kan välja att ta emot aviseringssmeddelanden i själva användargränssnittet eller via e-postmeddelanden.
 
 **Nya eller uppdaterade funktioner**
 
@@ -63,7 +63,7 @@ Mer information om kontrollpanelen för licensanvändning finns i [översikten �
 
 ## Datainsamling {#data-collection}
 
-Adobe Experience Platform erbjuder en serie teknologier som gör att ni kan samla in kundupplevelsedata på klientsidan och skicka dem till Adobe Experience Platform Edge Network där de kan berikas, omformas och distribueras till Adobe eller andra destinationer än Adobe.
+Adobe Experience Platform tillhandahåller en uppsättning tekniker som gör att du kan samla in kundupplevelsedata på klientsidan och skicka dem till Adobe Experience Platform Edge Network där de kan berikas, omvandlas och distribueras till mål inom eller utanför Adobe.
 
 **Nya eller uppdaterade funktioner**
 
@@ -76,9 +76,9 @@ Adobe Experience Platform erbjuder en serie teknologier som gör att ni kan saml
 
 Läs [datainsamlingsöversikten](../../tags/home.md) om du vill veta mer om datainsamling.
 
-## Datastyrning {#data-governance}
+## Dataförvaltning {#data-governance}
 
-Adobe Experience Platform Data Governance är en serie strategier och tekniker som används för att hantera kunddata och säkerställa att regler, begränsningar och policyer som gäller för dataanvändning följs. Det spelar en nyckelroll på olika nivåer inom Experience Platform, bland annat för katalogisering, datalinje, märkning av dataanvändning, dataåtkomstregler och åtkomstkontroll av data för marknadsföringsåtgärder.
+Dataförvaltning i Adobe Experience Platform är en serie strategier och tekniker som används för att hantera kunddata och säkerställa att regler, begränsningar och policyer som gäller för dataanvändning följs. Den spelar en viktig roll inom Experience Platform på olika nivåer, bland annat katalogföring, datahärkomst, märkning av dataanvändning, dataåtkomstprinciper och åtkomstkontroll av data för marknadsföringsåtgärder.
 
 **Nya funktioner**
 
@@ -92,7 +92,7 @@ Läs [översikten över datastyrning](../../data-governance/home.md) om du vill 
 
 ## Datahygien {#hygiene}
 
-Experience Platform har en rad funktioner för datahygien som gör att du kan hantera lagrade data genom att programmatiskt ta bort konsumentposter och datauppsättningar. Med arbetsytan [!UICONTROL Data Lifecycle] i användargränssnittet eller genom anrop till API:t för datahygien kan du hantera dina datalager effektivt. Använd dessa funktioner för att säkerställa att informationen används som förväntat, uppdateras när felaktiga data behöver korrigeras och tas bort när organisationsprofiler anser det nödvändigt.
+Experience Platform har en rad funktioner för datahygien som gör att du kan hantera lagrade data genom att programmatiskt ta bort konsumentposter och datauppsättningar. Med arbetsytan [!UICONTROL Data Lifecycle] i användargränssnittet eller genom anrop till API:t för datahygien kan du hantera dina datalager effektivt. Använd dessa funktioner för att säkerställa att informationen används som förväntat, uppdateras när felaktiga data behöver korrigeras och tas bort när organisationspolicyer anser det nödvändigt.
 
 **Nya funktioner**
 
@@ -105,16 +105,16 @@ Experience Platform har en rad funktioner för datahygien som gör att du kan ha
 
 Mer information om plattformens datahygien finns i [översikten över datahygien](../../hygiene/home.md).
 
-## Mål  {#destinations}
+## Mål {#destinations}
 
-[!DNL Destinations] är färdiga integreringar med målplattformar som möjliggör smidig aktivering av data från Adobe Experience Platform. Ni kan använda destinationer för att aktivera kända och okända data för flerkanalskampanjer, e-postkampanjer, riktad reklam och många andra användningsfall.
+[!DNL Destinations] är förbyggda integrationer med målplattformar som möjliggör sömlös aktivering av data från Adobe Experience Platform. Du kan använda mål för att aktivera dina kända och okända data för marknadsföringskampanjer över flera kanaler, e-postkampanjer, riktad reklam och många andra användningsområden.
 
 **Nya eller uppdaterade mål** {#new-updated-destinations}
 
 | Mål | Nytt eller uppdaterat | Beskrivning |
 | ----------- |----------------|----------- |
-| [[!DNL LiveRamp - Distribution]](../../destinations/catalog/advertising/liveramp-distribution.md) | Nytt | Aktivera målgrupper som tidigare har anslutit till [!DNL LiveRamp] för premiumutgivare på olika medier för mobil, webb, skärm och ansluten TV. <br> När du har introducerat målgrupper till ditt [!DNL LiveRamp]-konto via [LiveRamp - introduktion](../../destinations/catalog/advertising/liveramp-onboarding.md) använder du den nya [[!DNL LiveRamp - Distribution]](../../destinations/catalog/advertising/liveramp-distribution.md)-anslutningen för att aktivera målgrupperna till underordnade mål. |
-| [[!DNL HubSpot]](../../destinations/catalog/crm/hubspot.md) | Nytt | [[!DNL HubSpot]](https://www.hubspot.com) är en CRM-plattform med all programvara, alla integreringar och resurser du behöver för att koppla samman marknadsföring, försäljning, innehållshantering och kundtjänst. Ni kan koppla samman data, team och kunder på en och samma CRM-plattform. |
+| [[!DNL LiveRamp - Distribution]](../../destinations/catalog/advertising/liveramp-distribution.md) | Nyhet | Aktivera målgrupper som tidigare har anslutit till [!DNL LiveRamp] för premiumutgivare på olika medier för mobil, webb, skärm och ansluten TV. <br> När du har introducerat målgrupper till ditt [!DNL LiveRamp]-konto via [LiveRamp - introduktion](../../destinations/catalog/advertising/liveramp-onboarding.md) använder du den nya [[!DNL LiveRamp - Distribution]](../../destinations/catalog/advertising/liveramp-distribution.md)-anslutningen för att aktivera målgrupperna till underordnade mål. |
+| [[!DNL HubSpot]](../../destinations/catalog/crm/hubspot.md) | Nyhet | [[!DNL HubSpot]](https://www.hubspot.com) är en CRM-plattform med all programvara, alla integreringar och resurser du behöver för att koppla samman marknadsföring, försäljning, innehållshantering och kundtjänst. Ni kan koppla samman data, team och kunder på en och samma CRM-plattform. |
 | [[!DNL Microsoft Dynamics 365]](../../destinations/catalog/crm/microsoft-dynamics-365.md) | Uppdaterat | Stöd har lagts till för [!DNL Dynamics 365] anpassade fältprefix för anpassade fält som inte skapades i standardlösningen i [!DNL Dynamics 365]. Ett nytt inmatningsfält, **[!UICONTROL Customization Prefix]**, har lagts till i steget [Fyll i målinformation](#destination-details). |
 | [[!DNL Experience Cloud Audiences]](../../destinations/catalog/adobe/experience-cloud-audiences.md) | Uppdaterat | Målgruppen Experience Cloud är nu allmänt tillgänglig. Använd det här målet för att aktivera målgrupper från Real-Time CDP till Audience Manager och Adobe Analytics. Ni behöver en licens för Audience Manager för att skicka ut målgrupper till Adobe Analytics. |
 
@@ -146,7 +146,7 @@ Mer allmän information om destinationer finns i [målöversikten](../../destina
 
 ## Experience Data Model (XDM) {#xdm}
 
-XDM är en öppen källkodsspecifikation som innehåller gemensamma strukturer och definitioner (scheman) för data som hämtas till Adobe Experience Platform. Genom att följa XDM-standarder kan alla kundupplevelsedata införlivas i en gemensam representation för att ge insikter på ett snabbare och mer integrerat sätt. Ni kan få värdefulla insikter från kundåtgärder, definiera kundmålgrupper genom segment och använda kundattribut i personaliseringssyfte.
+XDM är en specifikation med öppen källkod som tillhandahåller gemensamma strukturer och definitioner (scheman) för data som förs in i Adobe Experience Platform. Genom att följa XDM-standarder kan all data om kundupplevelsen införlivas i en gemensam representation för att leverera insikter på ett snabbare och mer integrerat sätt. Du kan få värdefulla insikter från kundåtgärder, definiera kundmålgrupper genom segment och använda kundattribut för personalisering.
 
 **Nya funktioner**
 
@@ -184,7 +184,7 @@ Mer information om XDM i Platform finns i [systemöversikten för XDM](../../xdm
 
 ## Identitetstjänst {#identity-service}
 
-Adobe Experience Platform identitetstjänst ger er en heltäckande bild av era kunder och deras beteende genom att skapa en bro mellan identiteter på olika enheter och system, så att ni kan leverera slagkraftiga, personliga digitala upplevelser i realtid.
+Adobe Experience Platforms identitetstjänst ger dig en heltäckande bild av dina kunder och deras beteende genom att koppla samman identiteter mellan enheter och system så att du kan leverera effektiva, personliga digitala upplevelser i realtid.
 
 **Nya eller uppdaterade funktioner**
 
@@ -195,11 +195,11 @@ Adobe Experience Platform identitetstjänst ger er en heltäckande bild av era k
 
 {style="table-layout:auto"}
 
-Läs [Översikt över identitetstjänsten](../../identity-service/home.md) om du vill veta mer om identitetstjänsten.
+Om du vill veta mer om identitetstjänsten kan du läsa [översikt över identitetstjänsten](../../identity-service/home.md).
 
 ## Frågetjänst {#query-service}
 
-Med frågetjänsten kan du använda standard-SQL för att fråga efter data i Adobe Experience Platform [!DNL Data Lake]. Du kan ansluta till alla datauppsättningar från [!DNL Data Lake] och samla in frågeresultaten som en ny datamängd som kan användas för rapportering, Data Science Workspace eller för förtäring i kundprofilen i realtid.
+Med frågetjänsten kan du använda standard SQL för att söka efter data i Adobe Experience Platform [!DNL Data Lake]. Du kan koppla samman alla datauppsättningar från [!DNL Data Lake] och samla in sökresultaten som en ny datauppsättning för användning i rapportering, arbetsytan för datavetenskap eller för inmatning i kundprofilen i realtid.
 
 **Uppdaterade funktioner**
 
@@ -210,7 +210,7 @@ Med frågetjänsten kan du använda standard-SQL för att fråga efter data i Ad
 
 {style="table-layout:auto"}
 
-Mer information om frågetjänster finns i [Översikt över frågetjänsten](../../query-service/home.md).
+Mer information om frågetjänster finns i [översikten över frågetjänster](../../query-service/home.md).
 
 ## Segmenteringstjänst {#segmentation}
 
@@ -227,7 +227,7 @@ Läs [Översikt över segmenteringstjänsten](../../segmentation/home.md) om du 
 
 ## Källor {#sources}
 
-Experience Platform tillhandahåller ett RESTful-API och ett interaktivt användargränssnitt som gör att du enkelt kan konfigurera källanslutningar för olika dataleverantörer. Dessa källanslutningar gör att du kan autentisera och ansluta till externa lagringssystem och CRM-tjänster, ange tider för matning och hantera dataöverföringshastigheter.
+Experience Platform tillhandahåller ett RESTful API och ett interaktivt användargränssnitt som gör att du enkelt kan konfigurera källanslutningar för olika dataleverantörer. Med dessa källanslutningar kan du autentisera och ansluta till externa lagringssystem och CRM-tjänster, ställa in tider för inmatningskörningar och hantera datainmatningens genomströmning.
 
 **Nya eller uppdaterade funktioner**
 

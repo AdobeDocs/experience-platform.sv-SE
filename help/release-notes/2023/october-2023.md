@@ -1,15 +1,15 @@
 ---
-title: Versionsinformation om Adobe Experience Platform
+title: Versionsinformation om Adobe Experience Platform oktober 2023
 description: Versionsinformationen för Adobe Experience Platform i oktober 2023.
 exl-id: e9cf5299-8350-4b40-8f56-05e598846875
-source-git-commit: f2d0848952902d94b441566da677ef174518192e
+source-git-commit: d6e306294d0a119108e2de7ba03ebed4f633fba1
 workflow-type: tm+mt
-source-wordcount: '1046'
-ht-degree: 4%
+source-wordcount: '1048'
+ht-degree: 37%
 
 ---
 
-# Versionsinformation för Adobe Experience Platform
+# Versionsinformation om Adobe Experience Platform
 
 **Releasedatum: 25 oktober 2023**
 
@@ -24,7 +24,7 @@ Uppdateringar av befintliga funktioner i Experience Platform:
 
 ## Kontrollpaneler {#dashboards}
 
-Adobe Experience Platform tillhandahåller flera instrumentpaneler där du kan se viktiga insikter om organisationens data, som de har hämtats in under dagliga ögonblicksbilder.
+Adobe Experience Platform tillhandahåller flera instrumentpaneler där du kan visa viktiga insikter om organisationens data, som fångas upp under dagliga ögonblicksbilder.
 
 **Nya eller uppdaterade funktioner**
 
@@ -38,7 +38,7 @@ Mer information om kontrollpaneler, inklusive hur du ger åtkomstbehörigheter o
 
 ## Datainsamling {#data-collection}
 
-Adobe Experience Platform erbjuder en serie teknologier som gör att ni kan samla in kundupplevelsedata på klientsidan och skicka dem till Adobe Experience Platform Edge Network där de kan berikas, omformas och distribueras till Adobe eller andra destinationer än Adobe.
+Adobe Experience Platform tillhandahåller en uppsättning tekniker som gör att du kan samla in kundupplevelsedata på klientsidan och skicka dem till Adobe Experience Platform Edge Network där de kan berikas, omvandlas och distribueras till mål inom eller utanför Adobe.
 
 **Nya eller uppdaterade funktioner**
 
@@ -52,16 +52,16 @@ Adobe Experience Platform erbjuder en serie teknologier som gör att ni kan saml
 
 Mer information om datainsamling finns i [översikten över datainsamlingar](../../tags/home.md).
 
-## Mål  {#destinations}
+## Mål {#destinations}
 
-[!DNL Destinations] är färdiga integreringar med målplattformar som möjliggör smidig aktivering av data från Adobe Experience Platform. Ni kan använda destinationer för att aktivera kända och okända data för flerkanalskampanjer, e-postkampanjer, riktad reklam och många andra användningsfall.
+[!DNL Destinations] är förbyggda integrationer med målplattformar som möjliggör sömlös aktivering av data från Adobe Experience Platform. Du kan använda mål för att aktivera dina kända och okända data för marknadsföringskampanjer över flera kanaler, e-postkampanjer, riktad reklam och många andra användningsområden.
 
 **Nya eller uppdaterade mål** {#new-updated-destinations}
 
 | Mål | Nytt eller uppdaterat | Beskrivning |
 | ----------- |----------------|----------- |
-| [[!DNL MoEngage]](/help/destinations/catalog/mobile-engagement/moengage.md) | Nytt | Använd Moengage-målet för att ansluta och mappa dina Adobe-data (användarattribut, segment och händelser) till Moengage i realtid. Sedan kan kunderna agera utifrån dessa data och leverera personaliserade, målinriktade upplevelser. |
-| [[!DNL Qualtrics Automations]](/help/destinations/catalog/survey/qualtrics-automations.md) | Nytt | Använd aggregering av flera olika källor med driftsdata i Adobe Experience Platform som indata i Qualtrics Experience ID för att bättre förstå era kunder och möjliggöra riktad utåtriktad marknadsföring för att överbrygga klyftan när det gäller att förstå avsikter, känslor och upplevelsedrivrutiner. |
+| [[!DNL MoEngage]](/help/destinations/catalog/mobile-engagement/moengage.md) | Nyhet | Använd Moengage-målet för att ansluta och mappa dina Adobe-data (användarattribut, segment och händelser) till Moengage i realtid. Sedan kan kunderna agera utifrån dessa data och leverera personaliserade, målinriktade upplevelser. |
+| [[!DNL Qualtrics Automations]](/help/destinations/catalog/survey/qualtrics-automations.md) | Nyhet | Använd aggregering av flera olika källor med driftsdata i Adobe Experience Platform som indata i Qualtrics Experience ID för att bättre förstå era kunder och möjliggöra riktad utåtriktad marknadsföring för att överbrygga klyftan när det gäller att förstå avsikter, känslor och upplevelsedrivrutiner. |
 
 {style="table-layout:auto"}
 
@@ -76,11 +76,11 @@ Mer information om datainsamling finns i [översikten över datainsamlingar](../
 
 **Korrigeringar och förbättringar** {#destinations-fixes-and-enhancements}
 
-Mer allmän information om destinationer finns i [målöversikten](../../destinations/home.md).
+Mer allmän information om destinationer finns i [översikten över destinationer](../../destinations/home.md).
 
 ## Sandlådor {#sandboxes}
 
-Adobe Experience Platform är utvecklat för att berika applikationer för digitala upplevelser på global nivå. Företagen kör ofta flera program för digitala upplevelser parallellt och måste ta hänsyn till utveckling, testning och driftsättning av dessa applikationer samtidigt som man ser till att de uppfyller gällande krav. För att tillgodose detta behov tillhandahåller Experience Platform sandlådor som partitionerar en enda plattformsinstans i separata virtuella miljöer för att utveckla och utveckla program för digitala upplevelser.
+Adobe Experience Platform är utvecklad för att berika program för digitala upplevelser på global nivå. Företagen kör ofta flera program för digitala upplevelser parallellt och måste ta hänsyn till utveckling, testning och driftsättning av dessa program samtidigt som de måste se till att de uppfyller gällande krav. För att tillgodose det här behovet tillhandahåller Experience Platform sandlådor som partitionerar en enda Platform-sinstans i separata virtuella miljöer för att utveckla och förbättra program för digitala upplevelser.
 
 **Ny funktion**
 
@@ -98,13 +98,13 @@ Med [!DNL Segmentation Service] kan du segmentera data som lagras i [!DNL Experi
 
 | Funktion | Beskrivning |
 | ------- | ----------- |
-| Kontomålgrupper (Limited GA GA) | I Real-time Customer Data Platform B2B Edition kan du nu använda kontosegmentering för att göra marknadsföringssegmenteringen från personbaserade målgrupper till kontobaserade målgrupper så enkel och avancerad som möjligt. Mer information om den här funktionen finns i [översikten över målgrupper på kontot](../../segmentation/ui/account-audiences.md). |
+| Kontomålgrupper (Limited GA GA) | I Real-time Customer Data Platform B2B edition kan ni nu använda kontosegmentering för att göra marknadsföringssegmenteringen från personbaserade målgrupper till kontobaserade målgrupper så enkel och avancerad som möjligt. Mer information om den här funktionen finns i [översikten över kontomålgrupper](../../segmentation/ui/account-audiences.md). |
 
 Läs [Översikt över segmenteringstjänsten](../../segmentation/home.md) om du vill veta mer om segmenteringstjänsten.
 
 ## Källor {#sources}
 
-Experience Platform tillhandahåller ett RESTful-API och ett interaktivt användargränssnitt som gör att du enkelt kan konfigurera källanslutningar för olika dataleverantörer. Dessa källanslutningar gör att du kan autentisera och ansluta till externa lagringssystem och CRM-tjänster, ange tider för matning och hantera dataöverföringshastigheter.
+Experience Platform tillhandahåller ett RESTful API och ett interaktivt användargränssnitt som gör att du enkelt kan konfigurera källanslutningar för olika dataleverantörer. Med dessa källanslutningar kan du autentisera och ansluta till externa lagringssystem och CRM-tjänster, ställa in tider för inmatningskörningar och hantera datainmatningens genomströmning.
 
 **Nya eller uppdaterade funktioner**
 
