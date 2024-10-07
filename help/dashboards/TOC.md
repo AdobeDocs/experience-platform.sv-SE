@@ -5,10 +5,10 @@ breadcrumb-title: Användarhandbok om instrumentpaneler
 user-guide-description: Lär dig visualisera data i Experience Platform via anpassningsbara instrumentpaneler.
 feature: Dashboards
 role: Developer,User
-source-git-commit: 18d768f296d1f7087d05208fdff317b2fd9770af
+source-git-commit: 06e319a6f7e2294a9c5daea0f41e89a09d93efd2
 workflow-type: tm+mt
-source-wordcount: '135'
-ht-degree: 22%
+source-wordcount: '134'
+ht-degree: 23%
 
 ---
 
@@ -21,7 +21,6 @@ ht-degree: 22%
 * [Kontrollpaneler](user-defined-dashboards.md)
 * [Hämta instrumentpaneler till PDF](download.md)
 * Data Distiller {#data-distiller}
-   * [Översikt](data-distiller/overview.md)
    * SQl Insights för utökad apprapportering {#sql-insights}
       * [Översikt](data-distiller/sql-insights/overview.md)
    * Frågepro-läge {#query-pro-mode}
@@ -38,12 +37,12 @@ ht-degree: 22%
    * [Profiler](guides/profiles.md)
    * [Kontoprofiler](guides/account-profiles.md)
    * [Målgrupper](guides/audiences.md)
-   * [Mål ](guides/destinations.md)
+   * [Mål](guides/destinations.md)
    * [Licensanvändning](guides/license-usage.md)
 * Tillgängliga insikter {#insights}
    * [Profiler](insights/profiles.md)
    * [Målgrupper](insights/audiences.md)
-   * [Mål ](insights/destinations.md)
+   * [Mål](insights/destinations.md)
    * [Kontoprofiler](insights/account-profiles.md)
 * Anpassa instrumentpaneler {#customize}
    * [Anpassningsöversikt](customize/overview.md)

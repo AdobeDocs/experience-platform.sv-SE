@@ -2,7 +2,7 @@
 title: SQL Insights
 description: Lär dig mer om användningsexempel, grundläggande funktioner och nödvändiga steg för att utveckla en instrumentpanel för SQL-insikter med Data Distiller. Upptäck hur SQL Insights-funktionen i Data Distiller kan förbättra transparensen och få operativa insikter i olika dimensioner, som profiler, målgrupper, kampanjer, resor, berättiganden och samtycke.
 exl-id: f807d0fd-c8ec-42d4-96a0-5ffc5681943b
-source-git-commit: 3435ddd4b235c1c66cd29c75b779bcca607a5d4f
+source-git-commit: 4e78a7983fba492ded866a8f1fc6f98e20510b2b
 workflow-type: tm+mt
 source-wordcount: '941'
 ht-degree: 0%
@@ -13,7 +13,7 @@ ht-degree: 0%
 
 Skapa skräddarsydda rapportdatamodeller för att få djupare insikter, optimera strategier och anpassa analyser efter specifika affärsbehov med Data Distiller SQL Insights. Använd SQL Insights-funktionen för att förbättra transparensen och få operativa insikter från era Adobe Experience Platform-data i olika dimensioner som profiler, målgrupper, kampanjer, resor, berättiganden och samtycke. Denna funktion är en flexibel, anpassningsbar lösning som skräddarsyr organisationens rapporteringsdatamodeller för att passa just era affärsbehov.
 
-Om du vill [visualisera dina SQL-insikter](../../../dashboards/data-distiller/overview.md) kan du använda [frågeproffsläget](../../../dashboards/data-distiller/query-pro-mode/overview.md) för att utföra komplexa analyser med anpassade SQL-frågor och omvandla dina data till lätttolkade diagram. Använd frågeproffsläget för att skapa skräddarsydda insikter och visualiseringar på kontrollpanelerna och ta hänsyn till både tekniska och icke-tekniska målgrupper genom att ladda ned insikter som CSV-filer.
+Om du vill [visualisera dina SQL-insikter](../../../dashboards/data-distiller/sql-insights/overview.md) kan du använda [frågeproffsläget](../../../dashboards/data-distiller/query-pro-mode/overview.md) för att utföra komplexa analyser med anpassade SQL-frågor och omvandla dina data till lätttolkade diagram. Använd frågeproffsläget för att skapa skräddarsydda insikter och visualiseringar på kontrollpanelerna och ta hänsyn till både tekniska och icke-tekniska målgrupper genom att ladda ned insikter som CSV-filer.
 
 Det här dokumentet innehåller användningsexempel, viktiga funktioner och nödvändiga steg för att utveckla en SQL insights-instrumentpanel med Data Distiller.
 

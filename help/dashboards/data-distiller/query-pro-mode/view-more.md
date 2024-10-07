@@ -2,7 +2,7 @@
 title: Visa mer
 description: Lär dig mer om de olika visningsalternativen för SQL-analyserade data. På din anpassade kontrollpanel kan du visa resultaten av analysen i tabellform eller hämta bearbetade data i CSV-format.
 exl-id: f57d85cf-dbd2-415c-bf01-8faa49871377
-source-git-commit: ed1565fad1c539d69b85fb644d4bc16d4a262673
+source-git-commit: 1ef8208ccde2f44b6c5188bd5b9a57ff876da30f
 workflow-type: tm+mt
 source-wordcount: '527'
 ht-degree: 0%
@@ -41,7 +41,7 @@ Du kan sortera kolumner genom att markera listrutan bredvid kolumnnamnet och sed
 
 >[!NOTE]
 >
->Alternativen [!UICONTROL Sort Ascending] och [!UICONTROL Sort Descending] visas bara för kolumner som har konfigurerats med [sorteringsfunktionen](../overview.md/#advanced-attributes).
+>Alternativen [!UICONTROL Sort Ascending] och [!UICONTROL Sort Descending] visas bara för kolumner som har konfigurerats med [sorteringsfunktionen](./overview.md#advanced-attributes).
 
 ![En listruta med tabellkolumner där alternativen Sortera stigande och Sortera fallande är markerade.](../../images/query-pro-mode/advanced-sort-dropdown.png)
 
