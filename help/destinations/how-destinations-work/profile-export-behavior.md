@@ -2,9 +2,9 @@
 title: Beteende vid export av profiler
 description: Lär dig hur beteendet vid export av profiler varierar mellan de olika integreringsmönster som stöds i Experience Platform-mål.
 exl-id: 2be62843-0644-41fa-a860-ccd65472562e
-source-git-commit: 223734e2998568f3b9b78933fa5adf740b521f5f
+source-git-commit: 6c2d10cffa30d9feb4d342014ea1b712094bb673
 workflow-type: tm+mt
-source-wordcount: '2930'
+source-wordcount: '2939'
 ht-degree: 0%
 
 ---
@@ -192,7 +192,7 @@ När du har konfigurerat aktiveringsarbetsflödet exporteras hela målgruppspopu
 
 >[!TIP]
 >
->Som en påminnelse kan ändringar i attributvärden eller i identitetskartor för en profil inte innebära att en profil inkluderas i en stegvis filexport.
+>Som en påminnelse kan ändringar i identitetskartor för en profil innebära att den inkluderas i en stegvis filexport. Ändringar i attributvärdena *ger inte* rätt att inkluderas i en stegvis filexport.
 
 ## Nästa steg {#next-steps}
 
