@@ -1,21 +1,27 @@
 ---
-keywords: Experience Platform;hem;populära ämnen;ip-adress;ip address;ip address tillåtelselista; tillåtelselista;
-description: IP-adresser måste läggas till tillåtelselista innan du kan arbeta med källanslutningar.
-solution: Experience Platform
-title: IP-adress Tillåtelselista för Source-anslutningar
+description: Lär dig mer om de IP-adresser som du måste lägga till i tillåtelselista för att kunna använda Adobe Experience Platform-källor.
+title: TILLÅTELSELISTA för IP-adress för källor
 exl-id: 40093c80-dbdb-4dc1-97bb-81a8200b731f
-source-git-commit: bcd74083169c40966d7de8ba7b79082931a6744d
+source-git-commit: 2c069df7552b5f03f3edbbf0bccd4ba7cbe397d3
 workflow-type: tm+mt
-source-wordcount: '152'
+source-wordcount: '210'
 ht-degree: 0%
 
 ---
 
 # IP-adress tillåtelselista
 
-Du kan definiera nätverksåtkomstkontroller via nätverkets brandvägg. Genom att ange lämpligt käll-IP-intervall kan du tillåta trafik för dataöverföringstjänsten. Följande IP-adresser måste läggas till tillåtelselista innan du kan arbeta med källanslutningar. Om du inte lägger till dina regionspecifika IP-adresser i tillåtelselista kan det leda till fel eller sämre prestanda när du använder källor.
+Du kan definiera nätverksåtkomstkontroller via nätverkets brandvägg. Genom att ange rätt IP-källintervall kan du tillåta trafikflödet för dataöverföringstjänsten. Följande IP-adresser måste läggas till tillåtelselista innan du kan arbeta med källanslutningar. Om du inte lägger till dina regionspecifika IP-adresser i tillåtelselista kan det leda till fel eller sämre prestanda när du använder källor.
 
-## VA7: Nordamerika
+## IP-adressen tillåtelselista för batchkällor {#batch}
+
+Du måste lägga till följande IP-adresser i tillåtelselista för att tillåta trafikflödet för dataöverföringstjänsten för batchkällor.
+
+>[!BEGINTABS]
+
+>[!TAB VA7: Nordamerika]
+
+### VA7: Nordamerika
 
 - `20.42.2.0/23`
 - `20.42.4.0/26`
@@ -35,7 +41,9 @@ Du kan definiera nätverksåtkomstkontroller via nätverkets brandvägg. Genom a
 - `20.98.195.172/32`
 - `172.210.218.144/28`
 
-## NLD2: Europa
+>[!TAB NLD2: Europa]
+
+### NLD2: Europa
 
 - `13.69.67.192/28`
 - `13.69.107.112/28`
@@ -45,7 +53,9 @@ Du kan definiera nätverksåtkomstkontroller via nätverkets brandvägg. Genom a
 - `40.113.176.232/29`
 - `52.236.187.112/28`
 
-## AUS5: Australien
+>[!TAB AUS5: Australien]
+
+### AUS5: Australien
 
 - `13.70.74.144/28`
 - `20.37.193.0/25`
@@ -56,7 +66,9 @@ Du kan definiera nätverksåtkomstkontroller via nätverkets brandvägg. Genom a
 - `40.79.163.80/28`
 - `40.79.171.160/28`
 
-## CAN2: Kanada
+>[!TAB CAN2: Kanada]
+
+### CAN2: Kanada
 
 - `13.71.175.80/28`
 - `20.38.147.224/28`
@@ -67,13 +79,31 @@ Du kan definiera nätverksåtkomstkontroller via nätverkets brandvägg. Genom a
 - `52.228.86.144/29`
 - `52.246.155.224/28`
 
+>[!TAB IND2: Indien]
+
+### IND2: Indien
+
+- `20.43.121.48/28`
+- `20.192.42.0/24`
+- `20.192.43.0/26`
+- `20.192.102.80/28`
+- `20.204.193.112/29`
+- `40.80.51.160/28`
+- `52.140.104.128/25`
+- `52.140.105.0/26`
+- `52.140.108.208/29`
+
+>[!ENDTABS]
+
 ## IP-adress tillåtelselista för strömningskällor {#streaming}
 
-Du måste lägga till följande IP-adresser i tillåtelselista för att tillåta trafik för dataöverföringstjänsten för strömningskällor som [[!DNL Amazon Kinesis]](./connectors/cloud-storage/kinesis.md), [[!DNL Azure Event Hub]](./connectors/cloud-storage/eventhub.md), [[!DNL Google PubSub]](./connectors/cloud-storage/google-pubsub.md) och [[!DNL Snowflake Streaming]](./connectors/databases/snowflake-streaming.md).
+Du måste lägga till följande IP-adresser i tillåtelselista för att tillåta trafikflödet för dataöverföringstjänsten för strömningskällor som [[!DNL Amazon Kinesis]](./connectors/cloud-storage/kinesis.md), [[!DNL Azure Event Hub]](./connectors/cloud-storage/eventhub.md), [[!DNL Google PubSub]](./connectors/cloud-storage/google-pubsub.md) och [[!DNL Snowflake Streaming]](./connectors/databases/snowflake-streaming.md).
 
 >[!BEGINTABS]
 
->[!TAB VA7]
+>[!TAB VA7: Nordamerika]
+
+### VA7: Nordamerika
 
 - `52.254.106.240/28`
 - `52.254.107.144/28`
@@ -98,7 +128,9 @@ Du måste lägga till följande IP-adresser i tillåtelselista för att tillåta
 - `52.254.107.80/28`
 - `20.186.185.227`
 
->[!TAB NLD2]
+>[!TAB NLD2: Europa]
+
+### NLD2: Europa
 
 - `51.138.17.0/28`
 - `51.138.16.176/28`
@@ -123,7 +155,9 @@ Du måste lägga till följande IP-adresser i tillåtelselista för att tillåta
 - `51.138.16.192/28`
 - `51.138.12.100`
 
->[!TAB AUS5]
+>[!TAB AUS5: Australien]
+
+### AUS5: Australien
 
 - `20.40.188.194`
 - `20.53.206.128`
@@ -151,7 +185,9 @@ Du måste lägga till följande IP-adresser i tillåtelselista för att tillåta
 - `20.227.35.177`
 - `20.43.104.48/28`
 
->[!TAB CAN2]
+>[!TAB CAN2: Kanada]
+
+### CAN2: Kanada
 
 - `20.200.70.240/28`
 - `20.200.94.116`
@@ -179,7 +215,9 @@ Du måste lägga till följande IP-adresser i tillåtelselista för att tillåta
 - `20.200.70.192/28`
 - `20.200.71.144/28`
 
->[!TAB GBR9]
+>[!TAB GBR9: Storbritannien]
+
+### GBR9: Storbritannien
 
 - `20.254.2.128/28`
 - `20.26.131.71`
@@ -206,5 +244,37 @@ Du måste lägga till följande IP-adresser i tillåtelselista för att tillåta
 - `20.254.3.32/28`
 - `20.26.128.247`
 - `20.26.64.112/28`
+
+>[!TAB IND2: Indien]
+
+### IND2: Indien
+
+- `4.224.74.0/28`
+- `20.244.79.80/28`
+- `20.244.79.128/28`
+- `4.188.4.154`
+- `4.213.223.207`
+- `20.244.77.16/28`
+- `4.224.74.80/28`
+- `4.224.74.64/28`
+- `4.224.74.96/28`
+- `4.188.4.99`
+- `20.244.79.0/28`
+- `20.244.79.224/28`
+- `20.244.77.208/28`
+- `4.188.4.11`
+- `20.244.79.208/28`
+- `20.244.78.0/28`
+- `20.244.79.144/28`
+- `20.244.74.112/28`
+- `20.244.79.192/28`
+- `20.244.79.48/28`
+- `20.244.79.16/28`
+- `20.244.78.208/28`
+- `4.213.40.145`
+- `4.188.4.167`
+- `20.244.77.160/28`
+- `20.244.77.0/28`
+- `4.188.4.138`
 
 >[!ENDTABS]
