@@ -3,9 +3,9 @@ title: Versionsinformation om Adobe Experience Platform september 2024
 description: Versionsinformationen för Adobe Experience Platform från september 2024.
 exl-id: f854f9e5-71be-4d56-a598-cfeb036716cb
 source-git-commit: 33d1305aef7c763e7b0bd8c6db6a1a9417cc2a9d
-workflow-type: tm+mt
+workflow-type: ht
 source-wordcount: '2196'
-ht-degree: 82%
+ht-degree: 100%
 
 ---
 
@@ -50,11 +50,11 @@ Experience Platform tillhandahåller flera instrumentpaneler där du kan visa vi
 
 | Funktion | Beskrivning |
 | --- | --- |
-| Register för licensanvändningstillägg | Få detaljerad insyn i licensanvändningen och hantera era plattformsresurser med dedikerade tabeller för kärnprodukter och tillägg. Spåra och analysera nyckelvärden för varje kärnprodukt med detaljerade vyer på sandlådenivå. Tilläggsstatistik kan integreras smidigt med kärnproduktstatistik, vilket ger en heltäckande bild av användningen. Ökad synlighet hjälper er att optimera licenshanteringen och anpassa resurserna efter organisationens behov. Mer information finns i [[!UICONTROL License Usage]-handboken för kontrollpanelen ](../../dashboards/guides/license-usage.md#overview-tab). |
+| Register för licensanvändningstillägg | Få detaljerad insyn i licensanvändningen och hantera dina plattformsresurser med dedikerade tabeller för kärnprodukter och tillägg. Spåra och analysera nyckeltal för varje kärnprodukt med genomgångsvyer på sandlådenivå. Tilläggsstatistik integreras sömlöst med kärnproduktens mätningar och ger en heltäckande bild av användningen. Förbättrad synlighet hjälper dig att optimera licenshanteringen och anpassa resurserna till organisationens behov. Se [[!UICONTROL License Usage] guiden för kontrollpanelen](../../dashboards/guides/license-usage.md#overview-tab) för mer information. |
 | Query Pro-läge - globala filteruppgraderingar | Förbättra analysen med det nya datumfiltret i Query Pro-läget. Förfina insikterna med dynamiska datumparametrar i dina SQL-frågor och filtrera data efter specifika tidsramar. Välj förinställda eller anpassade datumintervall med ett intuitivt användargränssnitt, så att kontrollpanelerna blir relevanta för alla användare. Förenkla arbetsflödena, bibehåll precisionen och fatta vältajmade beslut. Läs [guiden om hur du skapar datumfilter](../../dashboards/data-distiller/query-pro-mode/filters/global-filter.md) för mer information. |
 | Query Pro-lägen - detaljnivå | Få djupare insikter med Query Pro Mode&#39;s detaljnivåfunktion och navigera sömlöst från diagram på hög nivå till detaljerade kontrollpaneler. Använd den här funktionen för att enkelt gå från sammanfattningar till djupgående analyser och utforska trender, kundbeteenden och nyckeltal. Automatiska genomströmningar av filter och detaljnivå på flera nivåer håller data konsekventa, vilket ger en smidig utforskning. Förenkla arbetsflöden, håll rätt sammanhang och snabba upp beslutsfattandet. Läs [steg-för-steg-guiden om hur du skapar fördjupningar](../../dashboards/data-distiller/query-pro-mode/drill-through.md) för mer information. |
 | Query Pro-läge - avancerade tabellattribut | Använd Query Pro Mode för avancerade tabellattribut för att effektivisera datavisualisering, förbättra arbetsflödets effektivitet och förbättra tydlighet i data. Lägg till automatisk sortering, storleksändring och sidnumrering i tabellerna direkt från anpassade kontrollpaneler. Sortera kolumner för att prioritera nyckeldata, ändra storlek för optimal läsbarhet och navigera smidigt i stora datauppsättningar utan att ändra SQL-frågorna. Läs guiden ”[Visa mer](../../dashboards/data-distiller/query-pro-mode/view-more.md)” för att lära dig hur du integrerar dessa funktioner och förbättrar dina datainsikter. |
-| Total datavolym | Mätvärdet för genomsnittlig profilnoggrannhet har ersatts med måttet Total datavolym. Total datavolym avser den totala mängden tillgängliga data som kan användas med kundprofilen i realtid för engagemangs- och personaliseringsarbetsflöden. Mer information om den här ändringen finns i guiden [Total datavolym](../../landing/license-usage-and-guardrails/total-data-volume.md). |
+| Total datavolym | Måttet ”Genomsnittlig profilnoggrannhet” har ersatts med måttet ”Total datavolym”. Total datavolym avser den totala mängden tillgängliga data som kan användas med kundprofil i realtid för arbetsflöden för engagemang och personalisering. Mer information om den här ändringen finns i guiden [Total datavolym](../../landing/license-usage-and-guardrails/total-data-volume.md). |
 
 {style="table-layout:auto"}
 
@@ -85,7 +85,7 @@ Mer information om dataförberedelse finns i [översikten över dataförberedels
 | Mål | Beskrivning |
 | --- | --- |
 | [Amazon Ads](/help/destinations/catalog/advertising/amazon-ads.md) | Septemberversionen 2024 lägger till mappningsalternativet för att exportera `countryCode` parametern till Amazon Ads. Använd `countryCode` i [mappningssteget](/help/destinations/catalog/advertising/amazon-ads.md#map) om du vill förbättra identitetsmatchningsfrekvensen med Amazon. |
-| [[!BADGE B2B]{type=Informative} Demandbase](/help/destinations/catalog/advertising/demandbase.md) | Använd den här destinationen för att aktivera era kontomålgrupper för Account-Based Marketing-användningsfall (ABM). Annonsera relevanta personer och roller i målkontona via DemandBans B2B Demand Side Platform (DSP). Målkonton kan också berikas med tredjepartsdata från Demandbase, för andra användningsfall i senare led i marknadsförings- och säljprocessen. |
+| [[!BADGE B2B]{type=Informative} Demandbase](/help/destinations/catalog/advertising/demandbase.md) | Använd den här destinationen för att aktivera dina kontomålgrupper för användningsfall inom Account-Based Marketing (ABM). Annonsera till relevanta personas och roller i dina målgruppskonton via DemandBases B2B Demand Side Platform (DSP). Målgruppskonton kan också berikas med tredjepartsdata från Demandbase, för andra användningsfall i senare led av marknadsförings- och säljprocessen. |
 
 {style="table-layout:auto"}
 
@@ -121,7 +121,7 @@ Använd identitetstjänsten för Adobe Experience Platform för att skapa en hel
 
 | Funktion | Beskrivning |
 | --- | --- |
-| Begränsad tillgänglighet för länkningsregler för identitetsdiagram | Regler för länkning av identitetsdiagram är en uppsättning verktyg i identitetstjänsten som du kan använda för att säkerställa korrekt personalisering för dina användare. <ul><li>Du kan nu använda [identitetoptimeringsalgoritmen](../../identity-service/identity-graph-linking-rules/identity-optimization-algorithm.md) för att se till att ett identitetsdiagram representerar en enskild person och förhindrar därför oönskad sammanslagning av identiteter i kundprofilen i realtid.</li><li>Konfigurera [namnområdesprioriteter](../../identity-service/identity-graph-linking-rules/namespace-priority.md) för att definiera vikten av dina respektive namnutrymmen och påverka hur profilerna formateras och segmenteras.</li><li>Använd [diagramsimuleringsverktyget i gränssnittet](../../identity-service/identity-graph-linking-rules/graph-simulation.md) för att simulera identitetsdiagram med olika konfigurationer.</li><li>Använd gränssnittet för [identitetsinställningar](../../identity-service/identity-graph-linking-rules/identity-settings-ui.md) för att ange ditt unika namnutrymme och ange prioriteter för alla namnutrymmen i organisationen.</li><li>Gå till [identitetspanelen](../../identity-service/identity-graph-linking-rules/implementation-guide.md#validate-your-graphs) om du vill ha statistik och trender om dina diagramdata.</li></ul> Om du vill testa länkningsregler för identitetsdiagram kontaktar du ditt Adobe-kontoteam för att få tillgång till utvecklingssandlådor. |
+| Begränsad tillgänglighet för länkningsregler till identitetsdiagram | Regler för länkning av identitetsdiagram är en uppsättning verktyg i identitetstjänsten som du kan använda för att säkerställa korrekt personalisering för dina användare. <ul><li>Du kan nu använda [algoritmen för identitetsoptimering](../../identity-service/identity-graph-linking-rules/identity-optimization-algorithm.md) för att se till att ett identitetsdiagram representerar en enskild person och förhindrar därför oönskad sammanslagning av identiteter i kundprofilen i realtid.</li><li>Konfigurera [prioriteter för namnrymd](../../identity-service/identity-graph-linking-rules/namespace-priority.md) för att definiera vikten av respektive namnrymd och påverka hur profilerna formateras och segmenteras.</li><li>Använd [verktyget för diagramsimulering i användargränssnittet](../../identity-service/identity-graph-linking-rules/graph-simulation.md) för att simulera identitetsdiagram med olika konfigurationer.</li><li>Använd [gränssnittet för identitetsinställningar](../../identity-service/identity-graph-linking-rules/identity-settings-ui.md) för att ange din unika namnrymd och ange prioriteter för alla namnutrymder i organisationen.</li><li>Gå till [identitetspanelen](../../identity-service/identity-graph-linking-rules/implementation-guide.md#validate-your-graphs) om du vill ha statistik och trender om dina diagramdata.</li></ul> Om du vill testa länkningsregler för identitetsdiagram kontaktar du ditt Adobe-kontoteam för att få tillgång till utvecklingssandlådor. |
 
 **Uppdaterad dokumentation**
 
@@ -159,7 +159,7 @@ Om du vill veta mer om frågetjänsten kan du läsa [Översikt över frågetjän
 
 | Funktion | Beskrivning |
 | ------- | ----------- |
-| Uppdatering av kriterier för direktuppspelningssegmentering | Från och med versionen från september 2024 har kriterierna för att era målgrupper ska vara berättigade till direktuppspelningssegmentering uppdaterats. Mer information om de här ändringarna finns i [uppgraderingen av kvalificeringsvillkor för direktuppspelningssegmentering](../../segmentation/eligibility-criteria-update.md). |
+| Uppdatering av kriterier för segmentering av strömning | Från och med september 2024-versionen har kriterierna för att dina målgrupper ska vara berättigade till segmentering av strömning uppdaterats. Mer information om de här ändringarna finns i [uppdatering av kriterier för strömningssegmentering](../../segmentation/eligibility-criteria-update.md). |
 | Implementering av enhetlig sökning | Sökbeteendet i Segment Builder kommer nu att använda enhetlig sökning. Detta ger en mer robust upplevelse när du hanterar och söker efter målgrupper som kan återanvändas för segmentmedlemskap. Mer information om den här ändringen finns i [guiden för Segment Builder](../../segmentation/ui/segment-builder.md#rule-builder-canvas). |
 
 {style="table-layout:auto"}
