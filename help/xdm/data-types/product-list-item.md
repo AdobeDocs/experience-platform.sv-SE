@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Artikeldatatyp för produktlista
 description: Läs mer om XDM-datatypen för produktlistobjektet.
 exl-id: 056fdb5b-6782-4e29-9d62-90b270c05795
-source-git-commit: de8e944cfec3b52d25bb02bcfebe57d6a2a35e39
+source-git-commit: ba6c6eb2c6b0fc1dfc4e7440fd16a85bc7b46457
 workflow-type: tm+mt
-source-wordcount: '325'
+source-wordcount: '321'
 ht-degree: 0%
 
 ---
@@ -28,7 +28,7 @@ De värden som registreras i den här datatypen kan skilja sig från produktpost
 | `discountAmount` | [!UICONTROL Double] | Om produkten diskonteras motsvarar detta skillnaden mellan det ordinarie priset och specialpriset för produkten. |
 | `name` | [!UICONTROL String] | Visningsnamnet för produkten som det visas för användaren för den här produktvyn. |
 | `priceTotal` | [!UICONTROL Double] | Det totala priset för produktartikeln. |
-| `product` | [!UICONTROL String] (URI) | URI `$id` för XDM-schemat som hämtar själva produkten. |
+| `product` | [!UICONTROL String] (URI) | XDM-identifieraren för själva produkten. |
 | `productAddMethod` | [!UICONTROL String] | Den metod som användes för att lägga till en produktartikel i listan av besökaren. |
 | `productImageUrl` | [!UICONTROL String] | En URL för produktens huvudbild. |
 | `quantity` | [!UICONTROL Integer] | Antalet enheter som kunden har angett att de behöver av produkten. |
