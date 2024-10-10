@@ -4,9 +4,9 @@ solution: Experience Platform
 title: SQL-syntax i frågetjänst
 description: Det här dokumentet innehåller information om och förklarar den SQL-syntax som stöds av Adobe Experience Platform Query Service.
 exl-id: 2bd4cc20-e663-4aaa-8862-a51fde1596cc
-source-git-commit: 65eeeb1df1d512c4cd6c67892905a63cc1cc4fc5
+source-git-commit: 654a8b6a3f961514ef96eaec879697cde36f8b1b
 workflow-type: tm+mt
-source-wordcount: '4291'
+source-wordcount: '4265'
 ht-degree: 1%
 
 ---
@@ -577,7 +577,7 @@ I följande tabell visas skillnaden i resultat som `auto_to_json`-inställningen
 
 ### Lös reservögonblicksbild vid fel {#resolve-fallback-snapshot-on-failure}
 
-Alternativet `resolve_fallback_snapshot_on_failure` används för att lösa problemet med ett ögonblicksbild-ID som har gått ut. Metadata för ögonblicksbilder går ut efter två dagar och en ögonblicksbild som gått ut kan göra skriptets logik ogiltig. Detta kan vara ett problem när anonyma block används.
+Alternativet `resolve_fallback_snapshot_on_failure` används för att lösa problemet med ett ögonblicksbild-ID som har gått ut.
 
 Ange alternativet `resolve_fallback_snapshot_on_failure` till true om du vill åsidosätta en ögonblicksbild med ett tidigare ID för ögonblicksbild.
 

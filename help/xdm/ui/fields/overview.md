@@ -4,10 +4,10 @@ solution: Experience Platform
 title: Definiera XDM-fält i användargränssnittet
 description: Lär dig hur du definierar XDM-fält i användargränssnittet för Experience Platform.
 exl-id: 2adb03d4-581b-420e-81f8-e251cf3d9fb9
-source-git-commit: 89519918aa830dc09365fa80449099229dc475d5
+source-git-commit: 807ce0b0304fd73a455f228529d75cfc68769bf5
 workflow-type: tm+mt
-source-wordcount: '1636'
-ht-degree: 0%
+source-wordcount: '1518'
+ht-degree: 1%
 
 ---
 
@@ -88,8 +88,7 @@ När du definierar ett nytt fält kan ytterligare konfigurationsalternativ visas
 
 | Fältegenskap | Kompatibla typer | Beskrivning |
 | --- | --- | --- |
-| [!UICONTROL Map value type] | [!UICONTROL Map] | Egenskapen [!UICONTROL Map value type] visas bara i användargränssnittet om du väljer värdet för Karta bland alternativen i listrutan [!UICONTROL Type]. Du kan välja mellan värdetyperna String och Integer för kartan.<br>![Schemaredigeraren med fälten för typ och mappningsvärdetyp markerade.](../../images/ui/fields/overview/map-type.png "Schemaredigeraren med fälten för typ och mappningsvärdetyp markerade."){width="100" zoomable="yes"}<br>Obs! Alla mappningsdatatyper som skapas via API som inte är antingen en sträng eller en heltalstyp visas som datatypen [!UICONTROL Complex]. Du kan inte skapa datatyperna [!UICONTROL Complex] via användargränssnittet. |
-| [!UICONTROL Default value] | [!UICONTROL String], [!UICONTROL Double], [!UICONTROL Long], [!UICONTROL Integer], [!UICONTROL Short], [!UICONTROL Byte], [!UICONTROL Boolean] | Ett standardvärde som tilldelas det här fältet om inget annat värde anges vid inmatningen. Värdet måste överensstämma med fältets valda typ.<br><br>Standardvärdena sparas inte i datauppsättningen vid tidpunkten för inmatningen eftersom de kan ändras över tid. De standardvärden som anges i schemat härleds av plattformstjänster och program som är längre fram i kedjan när de läser data från datauppsättningen. Om attributet har ett NULL-värde och standardvärdet är `5` på schemanivå när data efterfrågas med hjälp av frågetjänsten, förväntas frågetjänsten returnera `5` i stället för NULL. Observera att detta för närvarande inte är enhetligt i alla AEP-tjänster. |
+| [!UICONTROL Map value type] | [!UICONTROL Map] | Egenskapen [!UICONTROL Map value type] visas bara i användargränssnittet om du väljer värdet för Karta bland alternativen i listrutan [!UICONTROL Type]. Du kan välja mellan värdetyperna String och Integer för kartan.<br>![Schemaredigeraren med fälten för typ och kartvärdestyp markerade.](../../images/ui/fields/overview/map-type.png "Schemaredigeraren med fälten för typ och mappningsvärdestyp markerade."){width="100" zoomable="yes"}<br>Obs! Alla mappningsdatatyper som skapas via API som inte är antingen en sträng eller en heltalstyp visas som datatypen [!UICONTROL Complex]. Du kan inte skapa datatyperna [!UICONTROL Complex] via användargränssnittet. |
 | [!UICONTROL Pattern] | [!UICONTROL String] | Ett [reguljärt uttryck](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions) som värdet för det här fältet måste uppfylla för att accepteras vid förtäring. |
 | [!UICONTROL Format] | [!UICONTROL String] | Välj i en lista över fördefinierade format för strängar som värdet måste överensstämma med. Tillgängliga format: <ul><li>[[!UICONTROL date-time]](https://tools.ietf.org/html/rfc3339)</li><li>[[!UICONTROL email]](https://tools.ietf.org/html/rfc2822)</li><li>[[!UICONTROL hostname]](https://tools.ietf.org/html/rfc1123#page-13)</li><li>[[!UICONTROL ipv4]](https://tools.ietf.org/html/rfc791)</li><li>[[!UICONTROL ipv6]](https://tools.ietf.org/html/rfc2460)</li><li>[[!UICONTROL uri]](https://tools.ietf.org/html/rfc3986)</li><li>[[!UICONTROL uri-reference]](https://tools.ietf.org/html/rfc3986#section-4.1)</li><li>[[!UICONTROL url-template]](https://tools.ietf.org/html/rfc6570)</li><li>[[!UICONTROL json-pointer]](https://tools.ietf.org/html/rfc6901)</li></ul> |
 | [!UICONTROL Minimum length] | [!UICONTROL String] | Det minsta antal tecken som strängen måste innehålla för att värdet ska accepteras vid förtäring. |
