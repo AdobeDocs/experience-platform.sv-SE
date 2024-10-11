@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Sekretessregler - terminologi
 description: Det här dokumentet innehåller definitioner för nyckeltermer relaterade till sekretessregler som stöds av Adobe Experience Cloud.
 exl-id: 9c0a7d26-0571-41d4-8cf5-6356025d51ef
-source-git-commit: be219530f33209cb4f3fe70425bb293edff4b309
+source-git-commit: c4ca3dc975b13e2dce2e12784480e53bd0c4ee02
 workflow-type: tm+mt
-source-wordcount: '2020'
+source-wordcount: '2301'
 ht-degree: 0%
 
 ---
@@ -91,6 +91,8 @@ Det här dokumentet innehåller definitioner för nyckeltermer relaterade till s
 
 **IMS-organisations-ID**: Refererar till en Adobe-auktoriseringstoken för autentisering av tjänst-till-tjänst, som inte kräver användarinloggning. Den utfärdas till en IMS-klient och har ingen associerad användare. En IMS-klient behöver en tjänsttoken för att auktorisera begäranden i bakkanalen mellan tjänster. (Termen &quot;systemtoken&quot; används ibland för att beteckna tjänsttoken.)
 
+**[!DNL Iowa Consumer Data Protection Act]**: En statlig integritetslagstiftning som ger personer bosatta i Iowa rätt att få tillgång till, ta bort och avanmäla försäljning av sina personuppgifter. ICDPA gäller företag som behandlar data för mer än 100 000 invånare i Iowa eller som får över 50 % av intäkterna från dataförsäljningen. Avsevärda undantag är ideella organisationer och utbildningsinstitutioner. Lagen ger företag en 90-dagars botemedel för att korrigera överträdelser innan påföljder utdöms.
+
 ## J
 
 ## K
@@ -105,7 +107,16 @@ Det här dokumentet innehåller definitioner för nyckeltermer relaterade till s
 
 **MHMDAa**: [[!DNL Washington My Health My Data Act]](https://app.leg.wa.gov/RCW/default.aspx?cite=19.373&amp;full=true) förbättrar konsumenternas sekretesspolicy när det gäller hälsodata. Det föreskriver att personuppgifter, konsumentens samtycke och raderingsrättigheter ska offentliggöras, och förbjuder försäljning av hälsodata utan tillstånd. Lagen gör det dessutom olagligt att använda geofencing runt vårdinrättningar.
 
+**[!DNL Montana Consumer Data Privacy Act]**: Den här lagen ger personer bosatta i Montana rätt att få tillgång till, korrigera, ta bort och begära kopior av sina personuppgifter. MCDPA gäller företag som behandlar uppgifter för över 50 000 Montana-konsumenter och betonar skyddet av känsliga personuppgifter, såsom biometrisk och genetisk information. Det genomsyrar genomskinlighet kring datainsamling, delning och försäljning.
+
 ## N
+
+**[!DNL Nebraska Data Protection Act]**: En integritetslagstiftning som ger Nebraskans rätt att få tillgång till, korrigera, ta bort och avanmäla försäljning av sina personuppgifter. Det gäller företag som uppfyller vissa tröskelvärden för databehandling och intäkter. NDPA kräver också att företagen vidtar rimliga åtgärder för datasäkerhet och erbjuder en 30-dagars botemedel för att åtgärda överträdelser innan påföljder tillämpas.
+
+**[!DNL New Hampshire Data Privacy Act]**: Den här förordningen skyddar personuppgifter för boende i New Hampshire genom att ge dem behörighet att få tillgång till, ta bort och överföra sina data. Det innebär att företag får ge uttryck för sina rutiner för datainsamling och delning och att konsumenterna kan välja bort sin försäljning av data. NHDPA gäller företag som uppfyller angivna tröskelvärden för databehandling.
+
+**[!DNL New Jersey Data Protection Act]**: En omfattande statlig integritetslagstiftning som ger New Jersey-invånare behörighet att få tillgång till, korrigera och ta bort personuppgifter. Det innehåller avanmälningsmekanismer för dataförsäljning och riktad annonsering. NJDPA gäller företag som behandlar stora volymer konsumentdata och kräver transparens i hur företag hanterar personuppgifter.
+
 
 ## O
 

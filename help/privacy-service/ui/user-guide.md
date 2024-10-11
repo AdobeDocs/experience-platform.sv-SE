@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Hantera sekretessjobb i Privacy Servicens användargränssnitt
 description: Lär dig hur du använder Privacy Servicens användargränssnitt för att samordna och övervaka sekretessförfrågningar i olika Experience Cloud-program.
 exl-id: aa8b9f19-3e47-4679-9679-51add1ca2ad9
-source-git-commit: 341cc4cb150717f08b2e59412ef58fbd6f7b3450
+source-git-commit: 25c173e22f2aa4922aed89f7c9721e2303d5d4b9
 workflow-type: tm+mt
-source-wordcount: '1662'
+source-wordcount: '1667'
 ht-degree: 0%
 
 ---
@@ -36,26 +36,36 @@ Kontrollpanelen för användargränssnittet [!DNL Privacy Service] innehåller t
 
 [!DNL Privacy Service] stöder jobbförfrågningar för flera sekretessregler. I följande tabell visas vilka regler som stöds och deras motsvarande etikett som representeras i användargränssnittet:
 
-| Gränssnittsetikett | Förordning |
-| --- | --- |
-| [!UICONTROL APA_AUS] | [!DNL Australia Privacy Act (Privacy Act)] |
-| [!UICONTROL CPA] | [!DNL Colorado Privacy Act] |
-| [!UICONTROL CCPA] | [!DNL California Consumer Privacy Act] |
-| [!UICONTROL CPRA_USA] | [!DNL California Consumer Privacy Rights Act (CPRA)] |
-| [!UICONTROL CTDPA] | [!DNL Connecticut Data Privacy Act] |
-| [!UICONTROL FDBR_USA] | [!DNL Florida Digital Bill of Rights] |
-| [!UICONTROL GDPR] | Europeiska unionens [!DNL General Data Protection Regulation] |
-| [!UICONTROL HIPAA_AUS] | [!DNL Health Insurance Portability and Accountability Act] |
-| [!UICONTROL LGPD_BRA] | Brasiliens [!DNL Lei Geral de Proteção de Dados] |
-| [!UICONTROL MHMDA] | [!DNL Washington My Health My Data Act] |
-| [!UICONTROL NZPA_NZL] | Nya Zeeland [!DNL Privacy Act] |
-| [!UICONTROL OCPA_USA] | [!DNL Oregon Consumer Privacy Act] |
-| [!UICONTROL PDPA_THA] | Thailands [!DNL Personal Data Protection Act] |
-| [!UICONTROL TDPSA_USA] | [!DNL Texas Data Privacy and Security Act] |
-| [!UICONTROL UCPA] | [!DNL Utah Consumer Privacy Act] |
-| [!UICONTROL VCDPA_USA] | [!DNL Virginia Consumer Data Protection Act] |
+| UI-etikett | Förordning |
+|-------------------------------------|------------------------|
+| [!UICONTROL APA_AUS  (Australia)] | [!DNL Australia Privacy Act] |
+| [!UICONTROL CCPA (California)] | [!DNL California Consumer Privacy Act] |
+| [!UICONTROL CPA_USA (Colorado)] | [!DNL Colorado Privacy Act] |
+| [!UICONTROL CPRA_USA (California)] | [!DNL California Consumer Privacy Rights Act (CPRA)] |
+| [!UICONTROL CTDPA_USA (Connecticut)] | [!DNL Connecticut Data Privacy Act] |
+| [!UICONTROL FDBR_USA (Florida)] | [!DNL Florida Digital Bill of Rights] |
+| [!UICONTROL GDPR (European Union)] | Europeiska unionens [!DNL General Data Protection Regulation] |
+| [!UICONTROL HIPPA_USA (United States)] | [!DNL Health Insurance Portability and Accountability Act] |
+| [!UICONTROL ICDPA_USA] (Iowa) | [!DNL Iowa Consumer Data Protection Act] |
+| [!UICONTROL LGPD_BRA (Brazil)] | Brasiliens [!DNL General Data Protection Law] [!DNL Lei Geral de Proteção de Dados] |
+| [!UICONTROL MHMDA_USA (Washington)] | [!DNL Washington My Health My Data Act] |
+| [!UICONTROL MCDPA_USA (Montana)] | [!DNL Montana Consumer Data Privacy Act] |
+| [!UICONTROL NDPA_USA (Nebraska)] | [!DNL Nebraska Data Protection Act] |
+| [!UICONTROL NZPA_NZL (New Zealand)] | Nya Zeelands [!DNL Privacy Act] |
+| [!UICONTROL NHPA_USA (New Hampshire)] | [!DNL New Hampshire Data Privacy Act] |
+| [!UICONTROL NJDPA_USA (New Jersey)] | [!DNL New Jersey Data Protection Act] |
+| [!UICONTROL OCPA USA (Oregon)] | [!DNL Oregon Consumer Privacy Act] |
+| [!UICONTROL PDPA_THA (Thailand)] | Thailands [!DNL Personal Data Protection Act] |
+| [!UICONTROL TDPSA USA (Texas)] | [!DNL Texas Data Privacy and Security Act] |
+| [!UICONTROL UCPA_USA (Utah)] | [!DNL Utah Consumer Privacy Act] |
+| [!UICONTROL VCDPA_USA (Virginia)] | [!DNL Virginia Consumer Data Protection Act] |
 
 {style="table-layout:auto"}
+
+<!-- 
+Waiting:
+| **[!UICONTROL PIPA_KOR]**  ?        | South Korea [!DNL Personal Information Privacy Act] |
+ -->
 
 >[!NOTE]
 >
