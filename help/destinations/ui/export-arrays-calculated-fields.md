@@ -3,9 +3,9 @@ title: Använd beräkningsfält för att exportera arrayer som strängar
 type: Tutorial
 description: Lär dig hur du använder beräkningsfält för att exportera arrayer från Real-Time CDP till molnlagringsmål som strängar.
 exl-id: ff13d8b7-6287-4315-ba71-094e2270d039
-source-git-commit: 6fec0432f71e58d0e17ac75121fb1028644016e1
+source-git-commit: ea3ff80ed1e1de37d5d96bff96f73183a6fa3927
 workflow-type: tm+mt
-source-wordcount: '1506'
+source-wordcount: '1513'
 ht-degree: 0%
 
 ---
@@ -40,7 +40,7 @@ Få omfattande information om beräkningsfält - vad dessa är och varför de sp
 
 ## Arrayer och andra objekttyper i Platform {#arrays-strings-other-objects}
 
-I Experience Platform kan du använda [XDM-scheman](/help/xdm/home.md) för att hantera olika fälttyper. Tidigare kunde du exportera enkla nyckelvärdepar, t.ex. strängar från Experience Platform till önskade mål. Ett exempel på ett sådant fält som tidigare hade stöd för export är `personalEmail.address`:`johndoe@acme.org`.
+I Experience Platform kan du använda [XDM-scheman](/help/xdm/home.md) för att hantera olika fälttyper. Innan stöd för arrayexport lades till kunde du exportera enkla nyckelvärdepar, t.ex. strängar från Experience Platform till önskade mål. Ett exempel på ett sådant fält som tidigare hade stöd för export är `personalEmail.address`:`johndoe@acme.org`.
 
 Andra fälttyper i Experience Platform är arrayfält. Läs mer om att [hantera matrisfält i användargränssnittet för Experience Platform](/help/xdm/ui/fields/array.md). Förutom de fälttyper som tidigare stöds kan du nu exportera arrayobjekt som exemplet nedan, sammanfogade till en sträng med funktionen `array_to_string`.
 
@@ -146,15 +146,6 @@ First_Name,Last_Name,Personal_Email,Organization
 John,Doe,johndoe@acme.org, "{'id':123,'orgName':'Acme Inc','founded':1990,'latestInteraction':1708041600000}_{'id':456,'orgName':'Superstar Inc','founded':2004,'latestInteraction':1692921600000}_{'id':789,'orgName':'Energy Corp','founded':2021,'latestInteraction':1725753600000}"
 ```
 
-### Funktionen `flattenArray` för att exportera separerade arrayer
-
-Använd funktionen `flattenArray` för att förenkla en exporterad flerdimensionell array. Du kan kombinera den här funktionen med funktionen `array_to_string` som beskrivs ytterligare ovan.
-
-Om du fortsätter med arrayobjektet `organizations` ovan kan du skriva en funktion som `array_to_string('_', flattenArray(organizations))`. Observera att funktionen `array_to_string` förenklar inmatningsarrayen som standard till en sträng.
-
-Resultatet är detsamma som för funktionen `array_to_string` som beskrivs ovan.
-
-
 ### funktionen `filterArray` för att exportera filtrerade arrayer
 
 Använd funktionen `filterArray` för att filtrera elementen i en exporterad array. Du kan kombinera den här funktionen med funktionen `array_to_string` som beskrivs ytterligare ovan.
@@ -210,6 +201,14 @@ I det här fallet ser utdatafilen ut så här nedan. Observera hur arrayens tre 
 `First_Name,Last_Name,Personal_Email,Organization_Member_2023
 John,Doe, johndoe@acme.org,"Marketing_Sales_Finance_2023"
 ```
+
+### Funktionen `flattenArray` för att exportera separerade arrayer
+
+Använd funktionen `flattenArray` för att förenkla en exporterad flerdimensionell array. Du kan kombinera den här funktionen med funktionen `array_to_string` som beskrivs ytterligare ovan.
+
+Om du fortsätter med arrayobjektet `organizations` ovan kan du skriva en funktion som `array_to_string('_', flattenArray(organizations))`. Observera att funktionen `array_to_string` förenklar inmatningsarrayen som standard till en sträng.
+
+Resultatet är detsamma som för funktionen `array_to_string` som beskrivs ovan.
 
 ### `coalesce`-funktion för att exportera arrayer {#coalesce-function-export-arrays}
 
