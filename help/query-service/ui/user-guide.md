@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Användargränssnittshandbok för frågeredigeraren
 description: Frågeredigeraren är ett interaktivt verktyg som tillhandahålls av Adobe Experience Platform Query Service, som gör att du kan skriva, validera och köra frågor för kundupplevelsedata i användargränssnittet i Experience Platform. Frågeredigeraren har stöd för att utveckla frågor för analys och datautforskande, och gör att du kan köra interaktiva frågor i utvecklingssyfte samt icke-interaktiva frågor för att fylla i datauppsättningar i Experience Platform.
 exl-id: d7732244-0372-467d-84e2-5308f42c5d51
-source-git-commit: d83604b2bf6a8e2f2b5802a5e7f26447fbf7eb2e
+source-git-commit: f68dd020b05d1eaf6d873b9cdc2a40007ad60c84
 workflow-type: tm+mt
-source-wordcount: '2739'
+source-wordcount: '2763'
 ht-degree: 0%
 
 ---
@@ -200,19 +200,18 @@ Om en fråga har schemalagts ger fliken [!UICONTROL Scheduled Queries] förbätt
 >
 >Frågor som inte körs sparas inte av loggen. För att frågan ska vara tillgänglig i frågetjänsten måste den köras eller sparas i frågeredigeraren.
 
-### Objektläsare {#object-browser}
+### [!BADGE Beta]{type=Informative} Objektwebbläsare {#object-browser}
 
 >[!AVAILABILITY]
 >
->Datauppsättningsnavigeringsfältet är bara tillgängligt för Data Distiller-kunder. Plattformsgränssnittet kanske inte innehåller den vänstra datamängdsnavigeringslisten.  Andra bilder i det här dokumentet kanske inte motsvarar navigeringslisten för datauppsättningar. Kontakta din Adobe-representant om du vill ha mer information.
+Datauppsättningsnavigeringsfältet är bara tillgängligt för Data Distiller-kunder. Plattformsgränssnittet kanske inte innehåller den vänstra datamängdsnavigeringslisten. Andra bilder i det här dokumentet kanske inte motsvarar navigeringslisten för datauppsättningar. Kontakta din Adobe-representant om du vill ha mer information.<br>
+Objektwebbläsaren är för närvarande i betaversion och endast tillgänglig i en **begränsad version** . Kontakta din Adobe-representant för att få tillgång till tidig release.
 
 Använd objektwebbläsaren för att enkelt söka efter och filtrera datauppsättningar. Objektwebbläsaren minskar tiden som går åt till att söka efter tabeller och datauppsättningar i stora miljöer med många datauppsättningar. Med smidig åtkomst till relevanta data och metadata kan du fokusera mer på att skapa frågor och inte på navigering.
 
-Om du vill navigera i databasen med objektwebbläsaren anger du ett tabellnamn i sökfältet eller väljer **[!UICONTROL Tables]** för att expandera listan med tillgängliga datauppsättningar och tabeller. När du använder sökfältet filtreras listan med tillgängliga tabeller dynamiskt baserat på dina indata.
+Om du vill navigera i databasen med objektets webbläsare anger du ett tabellnamn i sökfältet eller väljer **[!UICONTROL Tables]** för att expandera listan med tillgängliga datauppsättningar och tabeller. När du använder sökfältet filtreras listan med tillgängliga tabeller dynamiskt baserat på dina indata.
 
->[!NOTE]
->
->Alla datauppsättningar som finns i [den valda databasen](#database-dropdown) visas i en navigeringsruta till vänster om Frågeredigeraren.
+Alla datauppsättningar som finns i [den valda databasen](#database-dropdown) visas i en navigeringsruta till vänster om Frågeredigeraren.
 
 ![Datauppsättningsnavigeringsfältet i frågeredigeraren med sökindata markerat.](../images/ui/query-editor/search-tables.png)
 
@@ -233,7 +232,7 @@ Förutom snabba sökningar kan du nu enkelt komma åt metadata för alla tabelle
 
 #### Utforska underordnade tabeller
 
-Om du vill utforska underordnade eller länkade tabeller väljer du listrutepilen bredvid ett tabellnamn i listan. Detta utökar tabellen så att den visar alla associerade underordnade tabeller och ger en tydlig vy av datastrukturen och möjliggör mer komplexa frågekonstruktioner. Ikonen bredvid fältnamnet anger kolumnens datatyp så att du lättare kan identifiera den vid komplexa frågor.
+Om du vill utforska underordnade eller länkade tabeller väljer du listrutepilen bredvid ett tabellnamn i listan. Detta utökar tabellen så att den visar alla associerade underordnade tabeller och ger en tydlig vy av datastrukturen och möjliggör mer komplexa frågekonstruktioner. Ikonen bredvid fältnamnet anger kolumnens datatyp, to hjälper dig att identifiera det under komplexa frågor.
 
 ![Frågeredigeraren med den filtrerade tabelllistan visas.](../images/ui/query-editor/child-table-list.png)
 
@@ -249,7 +248,7 @@ Konsolen ger information om status och funktion för frågetjänsten. Konsolen v
 
 >[!NOTE]
 >
->Konsolen visar bara fel som uppstått efter körningen av en fråga. Det visar inte de frågevalideringsfel som inträffar innan en fråga körs.
+Konsolen visar bara fel som uppstått efter körningen av en fråga. Det visar inte de frågevalideringsfel som inträffar innan en fråga körs.
 
 ### Frågeresultat {#query-results}
 
@@ -269,7 +268,7 @@ I följande video visas hur du kör frågor i Adobe Experience Platform-gränssn
 
 >[!NOTE]
 >
->Gränssnittet som visas i videon är inaktuellt, men logiken som används i arbetsflödet är densamma.
+Gränssnittet som visas i videon är inaktuellt, men logiken som används i arbetsflödet är densamma.
 
 >[!VIDEO](https://video.tv.adobe.com/v/29796?quality=12&learn=on)
 
