@@ -3,9 +3,9 @@ title: Använd beräkningsfält för att exportera arrayer som strängar
 type: Tutorial
 description: Lär dig hur du använder beräkningsfält för att exportera arrayer från Real-Time CDP till molnlagringsmål som strängar.
 exl-id: ff13d8b7-6287-4315-ba71-094e2270d039
-source-git-commit: ea3ff80ed1e1de37d5d96bff96f73183a6fa3927
+source-git-commit: 849d42e36921e60b6ac3a5e89336b954e64a35d7
 workflow-type: tm+mt
-source-wordcount: '1513'
+source-wordcount: '1549'
 ht-degree: 0%
 
 ---
@@ -76,6 +76,16 @@ Observera följande kända begränsningar som för närvarande gäller för den 
 [Anslut](/help/destinations/ui/connect-destination.md) till önskat molnlagringsmål, gå igenom [aktiveringsstegen för molnlagringsmål](/help/destinations/ui/activate-batch-profile-destinations.md) och gå till [mappningssteget](/help/destinations/ui/activate-batch-profile-destinations.md#mapping).
 
 ## Så här exporterar du beräknade fält {#how-to-export-calculated-fields}
+
+>[!CONTEXTUALHELP]
+>id="platform_destinations_export_arrays_control"
+>title="Aktivera hierarkiskt utdataschema"
+>abstract="Aktivera det här alternativet om du vill exportera hierarkiska strukturer som arrayer."
+
+>[!CONTEXTUALHELP]
+>id="platform_destinations_export_arrays_calculated_field_disabled"
+>title="Lägg till beräknade fält inaktiverat"
+>abstract="Den här kontrollen är inaktiverad eftersom du valde att exportera platta strukturer vid anslutning till målet."
 
 Välj **[!UICONTROL Add calculated field]** i mappningssteget i aktiveringsarbetsflödet för molnlagringsmål.
 
