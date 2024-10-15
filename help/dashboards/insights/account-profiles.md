@@ -4,7 +4,7 @@ description: Upptäck den SQL som ger er insikter om er kontoprofil och använd 
 badgeB2B: label="B2B Edition" type="Informative" url="https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform-b2b-edition-prime-and-ultimate-packages.html newtab=true"
 badgeB2P: label="B2P Edition" type="Informative" url="https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform-b2p-edition-prime-and-ultimate-packages.html newtab=true"
 exl-id: a953dd56-7dd8-4cd0-baa0-85f92d192789
-source-git-commit: 8b6cd84a31f9cdccef9f342df7f7b8450c2405dc
+source-git-commit: ddf886052aedc025ff125c03ab63877cb049583d
 workflow-type: tm+mt
 source-wordcount: '549'
 ht-degree: 0%
@@ -19,7 +19,7 @@ Med tillgång till den SQL som ger er insikt kan ni bättre förstå era B2B-dat
 
 <!-- Add link to new generate insights with SQL workflow doc after April release.-->
 
-Följande insikter är tillgängliga för dig att använda som en del av kontrollpanelen [Kontoprofiler](../guides/account-profiles.md) eller en [anpassad kontrollpanel](../user-defined-dashboards.md). Se [anpassningsöversikten](../customize/overview.md) för instruktioner om hur du anpassar din instrumentpanel eller [skapar och redigerar nya widgetar](../customize/custom-widgets.md) i widgetbiblioteket och [användardefinierad instrumentpanel](../user-defined-dashboards.md#create-widget).
+Följande insikter är tillgängliga för dig att använda som en del av kontrollpanelen [Kontoprofiler](../guides/account-profiles.md) eller en [anpassad kontrollpanel](../standard-dashboards.md). Se [anpassningsöversikten](../customize/overview.md) för instruktioner om hur du anpassar din instrumentpanel eller [skapar och redigerar nya widgetar](../customize/custom-widgets.md) i widgetbiblioteket och [användardefinierad instrumentpanel](../standard-dashboards.md#create-widget).
 
 ## Kontoprofiler har lagts till {#account-profiles-added}
 

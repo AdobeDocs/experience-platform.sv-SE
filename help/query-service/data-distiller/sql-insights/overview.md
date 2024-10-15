@@ -2,7 +2,7 @@
 title: SQL Insights
 description: Lär dig mer om användningsexempel, grundläggande funktioner och nödvändiga steg för att utveckla en instrumentpanel för SQL-insikter med Data Distiller. Upptäck hur SQL Insights-funktionen i Data Distiller kan förbättra transparensen och få operativa insikter i olika dimensioner, som profiler, målgrupper, kampanjer, resor, berättiganden och samtycke.
 exl-id: f807d0fd-c8ec-42d4-96a0-5ffc5681943b
-source-git-commit: 4e78a7983fba492ded866a8f1fc6f98e20510b2b
+source-git-commit: ddf886052aedc025ff125c03ab63877cb049583d
 workflow-type: tm+mt
 source-wordcount: '941'
 ht-degree: 0%
@@ -13,13 +13,13 @@ ht-degree: 0%
 
 Skapa skräddarsydda rapportdatamodeller för att få djupare insikter, optimera strategier och anpassa analyser efter specifika affärsbehov med Data Distiller SQL Insights. Använd SQL Insights-funktionen för att förbättra transparensen och få operativa insikter från era Adobe Experience Platform-data i olika dimensioner som profiler, målgrupper, kampanjer, resor, berättiganden och samtycke. Denna funktion är en flexibel, anpassningsbar lösning som skräddarsyr organisationens rapporteringsdatamodeller för att passa just era affärsbehov.
 
-Om du vill [visualisera dina SQL-insikter](../../../dashboards/data-distiller/sql-insights/overview.md) kan du använda [frågeproffsläget](../../../dashboards/data-distiller/query-pro-mode/overview.md) för att utföra komplexa analyser med anpassade SQL-frågor och omvandla dina data till lätttolkade diagram. Använd frågeproffsläget för att skapa skräddarsydda insikter och visualiseringar på kontrollpanelerna och ta hänsyn till både tekniska och icke-tekniska målgrupper genom att ladda ned insikter som CSV-filer.
+Om du vill [visualisera dina SQL-insikter](../../../dashboards/sql-insights-query-pro-mode/overview.md) kan du använda [frågeproffsläget](../../../dashboards/sql-insights-query-pro-mode/overview.md) för att utföra komplexa analyser med anpassade SQL-frågor och omvandla dina data till lätttolkade diagram. Använd frågeproffsläget för att skapa skräddarsydda insikter och visualiseringar på kontrollpanelerna och ta hänsyn till både tekniska och icke-tekniska målgrupper genom att ladda ned insikter som CSV-filer.
 
 Det här dokumentet innehåller användningsexempel, viktiga funktioner och nödvändiga steg för att utveckla en SQL insights-instrumentpanel med Data Distiller.
 
 ## Förhandskrav
 
-I den här självstudien används användardefinierade kontrollpaneler för att visualisera data från din anpassade datamodell i plattformsgränssnittet. Mer information om den här funktionen finns i [användardefinierad dokumentation för kontrollpaneler](../../../dashboards/user-defined-dashboards.md).
+I den här självstudien används användardefinierade kontrollpaneler för att visualisera data från din anpassade datamodell i plattformsgränssnittet. Mer information om den här funktionen finns i [användardefinierad dokumentation för kontrollpaneler](../../../dashboards/standard-dashboards.md).
 
 ## Komma igång
 
@@ -72,7 +72,7 @@ Följ instruktionerna nedan om du vill utveckla en SQL Insights-instrumentpanel 
 1. **Ad hoc-frågeutforskande:** Börja med att köra ad hoc `SELECT` -frågor för att utforska raw-data i datasjön. På så sätt kan man experimentera direkt och experimentera med data och validera data där resultaten av frågorna inte lagras i datasjön.
 1. **Använd batchfråga:** Använd batchfrågor för att [skapa schemalagda jobb](../../api/scheduled-queries.md#create-a-new-scheduled-query) för att generera sammanställda insikter, vilket ger en systematisk och automatiserad databearbetning. Gruppfrågor kör `INSERT TABLE AS SELECT`- och `CREATE TABLE AS SELECT`-frågor för att rensa, forma, manipulera och förbättra data. Resultatet av dessa frågor lagras i datasjön.
 1. **Aggregerade insikter läses in:** Läs in de genererade aggregerade insikterna i det accelererade arkivet och använd SQL för att testa frågor, och se till att data hämtas på ett korrekt och effektivt sätt. Mer information om hur du [ställer tillståndslösa frågor till det accelererade arkivet](../../api/accelerated-queries.md) finns i dokumentationen.
-1. **Åtkomst och integrering:** Få tillgång till insikter som lagras i den accelererade butiken sömlöst genom att integrera med Adobe Experience Platform [användardefinierade Dashboards](../../../dashboards/user-defined-dashboards.md) eller andra BI-verktyg (Business Intelligence preferred tools). Dessa integreringar med tredjepartsklienter underlättar en sammanhängande och intuitiv upplevelse för användarna.
+1. **Åtkomst och integrering:** Få tillgång till insikter som lagras i den accelererade butiken sömlöst genom att integrera med Adobe Experience Platform [användardefinierade Dashboards](../../../dashboards/standard-dashboards.md) eller andra BI-verktyg (Business Intelligence preferred tools). Dessa integreringar med tredjepartsklienter underlättar en sammanhängande och intuitiv upplevelse för användarna.
 
 ![En infografik som illustrerar de fyra stegen till SQL Insights i Data Distiller.](../../images/data-distiller/sql-insights/steps-to-customizable-insights.png)
 

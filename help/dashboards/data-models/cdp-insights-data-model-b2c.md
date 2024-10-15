@@ -4,7 +4,7 @@ description: Lär dig hur du använder SQL-frågor med Real-time Customer Data P
 badgeB2B: label="B2B Edition" type="Informative" url="https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform-b2b-edition-prime-and-ultimate-packages.html newtab=true"
 badgeB2P: label="B2P Edition" type="Informative" url="https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform-b2p-edition-prime-and-ultimate-packages.html newtab=true"
 exl-id: 61bc7f23-9f79-4c75-a515-85dd9dda2d02
-source-git-commit: 0970fd8fbea86115d92dc78cdba753da69cc2ee6
+source-git-commit: ddf886052aedc025ff125c03ab63877cb049583d
 workflow-type: tm+mt
 source-wordcount: '1061'
 ht-degree: 0%
@@ -21,7 +21,7 @@ Real-time Customer Data Platform Insights-datamodellen för [B2C Edition](../../
 
 ## Förhandskrav
 
-Den här handboken kräver en fungerande förståelse av den [användardefinierade instrumentpanelsfunktionen](../user-defined-dashboards.md). Läs dokumentationen innan du fortsätter med den här guiden.
+Den här handboken kräver en fungerande förståelse av den [användardefinierade instrumentpanelsfunktionen](../standard-dashboards.md). Läs dokumentationen innan du fortsätter med den här guiden.
 
 ## Real-Time CDP insiktsrapporter och användningsexempel
 

@@ -4,7 +4,7 @@ solution: Experience Platform
 title: Översikt över frågetjänsten
 description: Läs mer om frågetjänstens roll i Experience Platform.
 exl-id: fdaefc12-a97d-4e4e-9aed-d3dbd0f43ea0
-source-git-commit: e0af1f0110ceb514a5b249c42a05bf780ea834c6
+source-git-commit: ddf886052aedc025ff125c03ab63877cb049583d
 workflow-type: tm+mt
 source-wordcount: '860'
 ht-degree: 0%
@@ -54,7 +54,7 @@ Det här exemplet på [bläddringsavhopp fokuserar på att använda data från A
 
 ## Generera insikter med anpassade instrumentpaneler {#custom-dashboards}
 
-Med Adobe Experience Platform kan ni importera, lagra, strukturera och hämta in alla lagrade datauppsättningar, inklusive beteendedata, CRM-data och butiksdata. Med [!DNL Experience Platform's Query Service] kan du fråga om dessa datauppsättningar och besvara specifika frågor om verksamheten och sedan börja generera slagkraftiga insikter. Lär dig hur du skapar och hanterar anpassade instrumentpaneler där du kan skapa, lägga till och redigera anpassade widgetar för att visualisera nyckelvärden med [användardefinierade instrumentpaneler](../dashboards/user-defined-dashboards.md). Du kan till och med [anpassa dina egna Real-Time CDP-rapporter](../dashboards/data-models/cdp-insights-data-model-b2c.md) för dina marknadsförings- och KPI-användningsfall genom att använda SQL-frågor med Real-time Customer Data Platform Insights-datamodeller.
+Med Adobe Experience Platform kan ni importera, lagra, strukturera och hämta in alla lagrade datauppsättningar, inklusive beteendedata, CRM-data och butiksdata. Med [!DNL Experience Platform's Query Service] kan du fråga om dessa datauppsättningar och besvara specifika frågor om verksamheten och sedan börja generera slagkraftiga insikter. Lär dig hur du skapar och hanterar anpassade instrumentpaneler där du kan skapa, lägga till och redigera anpassade widgetar för att visualisera nyckelvärden med [användardefinierade instrumentpaneler](../dashboards/standard-dashboards.md). Du kan till och med [anpassa dina egna Real-Time CDP-rapporter](../dashboards/data-models/cdp-insights-data-model-b2c.md) för dina marknadsförings- och KPI-användningsfall genom att använda SQL-frågor med Real-time Customer Data Platform Insights-datamodeller.
 
 ## Nästa steg och ytterligare resurser
 

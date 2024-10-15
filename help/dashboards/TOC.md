@@ -5,10 +5,10 @@ breadcrumb-title: Användarhandbok om instrumentpaneler
 user-guide-description: Lär dig visualisera data i Experience Platform via anpassningsbara instrumentpaneler.
 feature: Dashboards
 role: Developer,User
-source-git-commit: 06e319a6f7e2294a9c5daea0f41e89a09d93efd2
+source-git-commit: ddf886052aedc025ff125c03ab63877cb049583d
 workflow-type: tm+mt
-source-wordcount: '134'
-ht-degree: 23%
+source-wordcount: '128'
+ht-degree: 22%
 
 ---
 
@@ -18,21 +18,18 @@ ht-degree: 23%
 * [Översikt över instrumentpaneler](home.md)
 * [Åtkomstbehörigheter för instrumentpanel](permissions.md)
 * [Instrumentpaneler](inventory.md)
-* [Kontrollpaneler](user-defined-dashboards.md)
+* [Standardinstrumentpaneler](standard-dashboards.md)
 * [Hämta instrumentpaneler till PDF](download.md)
-* Data Distiller {#data-distiller}
-   * SQl Insights för utökad apprapportering {#sql-insights}
-      * [Översikt](data-distiller/sql-insights/overview.md)
-   * Frågepro-läge {#query-pro-mode}
-      * [Översikt](data-distiller/query-pro-mode/overview.md)
-      * Filter {#filters}
-         * [Datumfilter](data-distiller/query-pro-mode/filters/date-filter.md)
-         * [Global filter](data-distiller/query-pro-mode/filters/global-filter.md)
-      * [Detaljgranska](data-distiller/query-pro-mode/drill-through.md)
-      * [Visa mer](data-distiller/query-pro-mode/view-more.md)
-      * [Visa SQL](data-distiller/query-pro-mode/view-sql.md)
-      * [Hämta som CSV](data-distiller/query-pro-mode/download-csv.md)
-      * [Exportera som PDF](data-distiller/query-pro-mode/export-pdf.md)
+* SQL-insikter: frågeproffsläge {#sql-insights-query-pro-mode}
+   * [Översikt](sql-insights-query-pro-mode/overview.md)
+   * Filter {#filters}
+      * [Datumfilter](sql-insights-query-pro-mode/filters/date-filter.md)
+      * [Global filter](sql-insights-query-pro-mode/filters/global-filter.md)
+   * [Detaljgranska](sql-insights-query-pro-mode/drill-through.md)
+   * [Visa mer](sql-insights-query-pro-mode/view-more.md)
+   * [Visa SQL](sql-insights-query-pro-mode/view-sql.md)
+   * [Hämta som CSV](sql-insights-query-pro-mode/download-csv.md)
+   * [Exportera som PDF](sql-insights-query-pro-mode/export-pdf.md)
 * Tillgängliga instrumentpaneler {#guides}
    * [Profiler](guides/profiles.md)
    * [Kontoprofiler](guides/account-profiles.md)

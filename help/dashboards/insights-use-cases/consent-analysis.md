@@ -2,7 +2,7 @@
 title: Analys och spårning av samtycke
 description: Lär dig hur du bygger en kontrollpanel för samtyckesanalys för att spåra hur användarens samtycke har utvecklats över tid.
 exl-id: 34accae5-8b4f-4281-8333-187a91db8199
-source-git-commit: e0af1f0110ceb514a5b249c42a05bf780ea834c6
+source-git-commit: ddf886052aedc025ff125c03ab63877cb049583d
 workflow-type: tm+mt
 source-wordcount: '1804'
 ht-degree: 0%
@@ -112,13 +112,13 @@ När du har skapat en målgrupp som arbetar med samtycke, till exempel&quot;Anv�
 
 Du kan också bygga ut egna widgetar med användardefinierade instrumentpaneler. När du skapar en egen widget får du fullständig kontroll över typen av widget, tillsammans med flexibilitet att lägga till filter och mycket annat, direkt i Adobe Real-Time CDP.
 
-Om du t.ex. vill skapa en trend för flera olika grupper av samtycke i samma diagram så att du med tiden kan se hur var och en av dina inställningar för samtycke har ändrats. Den här typen av visualisering är möjlig med användardefinierade kontrollpaneler med minimala steg och en engångskonfiguration. Välj först **[!UICONTROL Dashboards]** i den vänstra navigeringen. Arbetsytan [!UICONTROL Dashboards] visas. Välj sedan **[!UICONTROL Create dashboard]**. Fullständiga anvisningar om hur du [skapar en instrumentpanel och anpassad widget](../user-defined-dashboards.md) finns i den användardefinierade handboken för instrumentpaneler.
+Om du t.ex. vill skapa en trend för flera olika grupper av samtycke i samma diagram så att du med tiden kan se hur var och en av dina inställningar för samtycke har ändrats. Den här typen av visualisering är möjlig med användardefinierade kontrollpaneler med minimala steg och en engångskonfiguration. Välj först **[!UICONTROL Dashboards]** i den vänstra navigeringen. Arbetsytan [!UICONTROL Dashboards] visas. Välj sedan **[!UICONTROL Create dashboard]**. Fullständiga anvisningar om hur du [skapar en instrumentpanel och anpassad widget](../standard-dashboards.md) finns i den användardefinierade handboken för instrumentpaneler.
 
-![Kontrollpanelernas arbetsyta med kontrollpaneler och kontrollpanelen Skapa är markerad.](../images/user-defined-dashboards/create-dashboard.png)
+![Kontrollpanelernas arbetsyta med kontrollpaneler och kontrollpanelen Skapa är markerad.](../images/standard-dashboards/create-dashboard.png)
 
-När du [väljer din datamodell](../user-defined-dashboards.md#select-data-model) i widgetdispositionen väljer du `CDPInsights` följt av **[!UICONTROL Next]**. Dialogrutan [!UICONTROL Select table] visas.
+När du [väljer din datamodell](../standard-dashboards.md#select-data-model) i widgetdispositionen väljer du `CDPInsights` följt av **[!UICONTROL Next]**. Dialogrutan [!UICONTROL Select table] visas.
 
-![Dialogrutan Välj datamodell med CDPInsights-modellen markerad.](../images/user-defined-dashboards/select-data-model-dialog.png)
+![Dialogrutan Välj datamodell med CDPInsights-modellen markerad.](../images/standard-dashboards/select-data-model-dialog.png)
 
 I nästa vy visas en lista med tillgängliga tabeller i den vänstra listen. Markera `adwh_fact_profile_by_segment_and_namespace_trendlines`.
 
@@ -126,16 +126,16 @@ I nästa vy visas en lista med tillgängliga tabeller i den vänstra listen. Mar
 
 Utför stegen nedan när widgetens disposition har fyllts i med data från den tabell du har valt:
 
-- [Sök [!UICONTROL Attributes]](../user-defined-dashboards.md#add-filter-attributes) efter `[!UICONTROL date]` och använd sedan ikonen + för att lägga till attributet `[!UICONTROL date]` på X-axeln i listrutan.
-  ![Widgetdispositionen med tilläggsikonen och listrutan markerad.](../images/user-defined-dashboards/attributes-dropdown.png)
+- [Sök [!UICONTROL Attributes]](../standard-dashboards.md#add-filter-attributes) efter `[!UICONTROL date]` och använd sedan ikonen + för att lägga till attributet `[!UICONTROL date]` på X-axeln i listrutan.
+  ![Widgetdispositionen med tilläggsikonen och listrutan markerad.](../images/standard-dashboards/attributes-dropdown.png)
 - Sök efter [!UICONTROL Attributes] efter `[!UICONTROL count_of_profiles]` och använd sedan ikonen + för att lägga till attributet `[!UICONTROL count_of_profiles]` på Y-axeln i listrutan.
 - Markera ikonen `...` (ellipser) i fältet [!UICONTROL Y-axis] och välj sedan sammanställningsfunktionen [!UICONTROL SUM] i listrutan.
   ![Widgetens widget för godkännande av disposition av trender med datamodell, tabell och listrutan Y-axel och SUM-funktionen markerad. ](../images/insights-use-cases/consent-analysis/y-axis-sum-function.png)
 - Välj listrutan [!UICONTROL Marks] och ändra diagramtyp till [!UICONTROL Line].
 - Sök efter [!UICONTROL Attributes] efter `[!UICONTROL segment_name]` och använd sedan ikonen + för att lägga till `segment_name` som en [!UICONTROL Filter] i listrutan. Dialogrutan [!UICONTROL Filter: Segment_name] visas. Välj målgrupper som skapats tidigare och som hör till samtycke. I det här exemplet väljer du **[!UICONTROL Users Consented to Calls]**, **[!UICONTROL Users Consented to SMS]** och **[!UICONTROL Users Consented to Email]** följt av **[!UICONTROL Apply]**.
 - Sök efter [!UICONTROL Attributes] efter `[!UICONTROL segment_name]` och välj sedan +-ikonen för att lägga till `segment_name` som [!UICONTROL Color] i listrutan.
-- Öppna [panelen [!UICONTROL Properties]](../user-defined-dashboards.md#widget-properties) och ange lämplig [!UICONTROL Widget title] och [!UICONTROL Axis label].
-  ![Widgetdispositionen med egenskapsikonen och widgettiteln markerad.](../images/user-defined-dashboards/properties-panel.png)
+- Öppna [panelen [!UICONTROL Properties]](../standard-dashboards.md#widget-properties) och ange lämplig [!UICONTROL Widget title] och [!UICONTROL Axis label].
+  ![Widgetdispositionen med egenskapsikonen och widgettiteln markerad.](../images/standard-dashboards/properties-panel.png)
 - Välj **[!UICONTROL Save and close]** för att bekräfta dina inställningar.
 
 >[!TIP]

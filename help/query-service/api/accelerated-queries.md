@@ -3,7 +3,7 @@ title: Slutpunkt för accelererade frågor
 description: Lär dig hur du får åtkomst till frågeflödat arkiv på ett tillståndslöst sätt för att snabbt returnera resultat baserat på aggregerade data. Det här dokumentet innehåller ett exempel på HTTP-begäran och svar för frågetjänstens accelererade frågeslutpunkt.
 role: Developer
 exl-id: 29ea4d25-9c46-4b29-a6d7-45ac33dcb0fb
-source-git-commit: c16ce1020670065ecc5415bc3e9ca428adbbd50c
+source-git-commit: ddf886052aedc025ff125c03ab63877cb049583d
 workflow-type: tm+mt
 source-wordcount: '560'
 ht-degree: 0%
@@ -12,7 +12,7 @@ ht-degree: 0%
 
 # Slutpunkt för accelererade frågor
 
-Som en del av Data Distiller SKU kan du med [Query Service API](https://developer.adobe.com/experience-platform-apis/references/query-service/) skapa tillståndslösa frågor i det accelererade arkivet. De returnerade resultaten baseras på aggregerade data. Den försämrade tidsfördröjningen för resultaten möjliggör ett mer interaktivt informationsutbyte. API:erna för accelererade frågor används även för att driva [användardefinierade instrumentpaneler](../../dashboards/user-defined-dashboards.md).
+Som en del av Data Distiller SKU kan du med [Query Service API](https://developer.adobe.com/experience-platform-apis/references/query-service/) skapa tillståndslösa frågor i det accelererade arkivet. De returnerade resultaten baseras på aggregerade data. Den försämrade tidsfördröjningen för resultaten möjliggör ett mer interaktivt informationsutbyte. API:erna för accelererade frågor används även för att driva [användardefinierade instrumentpaneler](../../dashboards/standard-dashboards.md).
 
 Innan du fortsätter med den här guiden kontrollerar du att du har läst och förstått [API-handboken för frågetjänsten](./getting-started.md) för att kunna använda API:t för frågetjänsten.
 

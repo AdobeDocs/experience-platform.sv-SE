@@ -2,7 +2,7 @@
 title: Profilinsikter
 description: Upptäck den SQL som ger er profilinsikter och använder dessa frågor för att generera anpassade insikter som ytterligare utforskar era kunder och deras kundupplevelser.
 exl-id: f3792076-3e01-4e26-8788-32927202a2e5
-source-git-commit: 34eb9151cc6bb8551553b0a8427e58871acb4dbb
+source-git-commit: ddf886052aedc025ff125c03ab63877cb049583d
 workflow-type: tm+mt
 source-wordcount: '1655'
 ht-degree: 0%
@@ -17,7 +17,7 @@ Förstå era profilinsikter genom att få tillgång till den SQL som ligger till
 
 Se [Visa SQL-dokumentation](../view-sql.md) om du vill ha mer information om hur du anpassar dina insikter direkt via plattformsgränssnittet.
 
-Följande insikter är tillgängliga för dig att använda som en del av [profilkontrollpanelen](../guides/profiles.md) eller en anpassad [användardefinierad kontrollpanel](../user-defined-dashboards.md). Se [anpassningsöversikten](../customize/overview.md) för instruktioner om hur du anpassar din instrumentpanel eller [skapar och redigerar nya widgetar](../customize/custom-widgets.md) i widgetbiblioteket och [användardefinierad instrumentpanel](../user-defined-dashboards.md#create-widget).
+Följande insikter är tillgängliga för dig att använda som en del av [profilkontrollpanelen](../guides/profiles.md) eller en anpassad [användardefinierad kontrollpanel](../standard-dashboards.md). Se [anpassningsöversikten](../customize/overview.md) för instruktioner om hur du anpassar din instrumentpanel eller [skapar och redigerar nya widgetar](../customize/custom-widgets.md) i widgetbiblioteket och [användardefinierad instrumentpanel](../standard-dashboards.md#create-widget).
 
 ## Målgruppsöverlappning efter sammanfogningspolicy {#audience-overlap-by-merge-policy}
 

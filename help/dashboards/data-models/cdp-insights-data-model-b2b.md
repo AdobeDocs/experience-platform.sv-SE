@@ -1,10 +1,10 @@
 ---
-title: Real-time Customer Data Platform Insights - datamodell B2B Edition
+title: Real-time Customer Data Platform Insights - datamodell B2B edition
 description: Lär dig hur du använder SQL-frågor med Real-time Customer Data Platform Insights-datamodeller (B2B Edition) för att anpassa dina egna Real-Time CDP-rapporter för din marknadsföring och dina KPI-användningsfall.
 badgeB2B: label="B2B Edition" type="Informative" url="https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform-b2b-edition-prime-and-ultimate-packages.html newtab=true"
 badgeB2P: label="B2P Edition" type="Informative" url="https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform-b2p-edition-prime-and-ultimate-packages.html newtab=true"
 exl-id: 7b77ca19-e4c6-4e93-b9e7-c4ef77d6d6d1
-source-git-commit: 0970fd8fbea86115d92dc78cdba753da69cc2ee6
+source-git-commit: ddf886052aedc025ff125c03ab63877cb049583d
 workflow-type: tm+mt
 source-wordcount: '452'
 ht-degree: 0%
@@ -13,7 +13,7 @@ ht-degree: 0%
 
 # Real-time Customer Data Platform Insights, datamodell B2B Edition
 
-Datamodellen Real-time Customer Data Platform Insights för B2B Edition visar de datamodeller och SQL som används för insikterna för [kontoprofiler](https://experienceleague.adobe.com/en/docs/experience-platform/rtcdp/account/account-profile-overview). Du kan anpassa de här SQL-frågemallarna för att skapa Real-Time CDP-rapporter för användning av B2B-marknadsföring och KPI-indikatorer. Dessa insikter kan sedan användas som anpassade widgetar för dina instrumentpaneler.
+Real-time Customer Data Platform Insights-datamodellen för B2B edition visar de datamodeller och SQL som stöder insikterna för [kontoprofiler](https://experienceleague.adobe.com/en/docs/experience-platform/rtcdp/account/account-profile-overview). Du kan anpassa de här SQL-frågemallarna för att skapa Real-Time CDP-rapporter för användning av B2B-marknadsföring och KPI-indikatorer. Dessa insikter kan sedan användas som anpassade widgetar för dina instrumentpaneler.
 
 >[!AVAILABILITY]
 >
@@ -25,7 +25,7 @@ See the query accelerated store reporting insights documentation to learn [how t
 
 ## Förhandskrav
 
-Den här handboken kräver en fungerande förståelse av anpassade instrumentpaneler. Läs dokumentationen om [hur du skapar en anpassad kontrollpanel](../user-defined-dashboards.md) innan du fortsätter med den här guiden.
+Den här handboken kräver en fungerande förståelse av anpassade instrumentpaneler. Läs dokumentationen om [hur du skapar en anpassad kontrollpanel](../standard-dashboards.md) innan du fortsätter med den här guiden.
 
 ## Real-Time CDP B2B-rapporter och användningsexempel {#B2B-insight-reports-and-use-cases}
 

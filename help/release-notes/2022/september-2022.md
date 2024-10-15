@@ -1,15 +1,15 @@
 ---
-title: Adobe Experience Platform Release Notes september 2022
-description: Versionsinformation för september 2022 för Adobe Experience Platform.
+title: Versionsinformation om Adobe Experience Platform september 2022
+description: Versionsinformationen för Adobe Experience Platform från september 2022.
 exl-id: a7a4dcf8-2cf3-4e39-879d-bdfcbacb737a
-source-git-commit: e0af1f0110ceb514a5b249c42a05bf780ea834c6
+source-git-commit: ddf886052aedc025ff125c03ab63877cb049583d
 workflow-type: tm+mt
 source-wordcount: '2711'
-ht-degree: 2%
+ht-degree: 22%
 
 ---
 
-# Versionsinformation för Adobe Experience Platform
+# Versionsinformation om Adobe Experience Platform
 
 **Releasedatum: 28 september 2022**
 
@@ -23,7 +23,7 @@ Uppdateringar av befintliga funktioner i Adobe Experience Platform:
 - [Granskningsloggar](#audit-logs)
 - [[!DNL Dashboards]](#dashboards)
 - [Datainsamling](#data-collection)
-- [Mål ](#destinations)
+- [Mål](#destinations)
 - [Experience Data Model (XDM)](#xdm)
 - [Identitetstjänst](#identity-service)
 - [Frågetjänst](#query-service)
@@ -37,14 +37,14 @@ Uppdateringar av befintliga funktioner i Adobe Experience Platform:
 
 Attributbaserad åtkomstkontroll är en funktion hos Adobe Experience Platform som ger sekretessmedvetna varumärken större flexibilitet att hantera användaråtkomst. Enskilda objekt som schemafält och segment kan tilldelas användarroller. Med den här funktionen kan du bevilja eller återkalla åtkomst till enskilda objekt för specifika plattformsanvändare i organisationen.
 
-Tack vare attributbaserad åtkomstkontroll kan administratören styra användarnas åtkomst till, känsliga personuppgifter (SPD), personligt identifierbar information (PII) och andra anpassade typer av data i alla plattformsarbetsflöden och resurser. Administratörer kan definiera användarroller som bara har åtkomst till specifika fält och data som motsvarar dessa fält.
+Tack vare attributbaserad åtkomstkontroll kan administratören styra användarnas åtkomst till känsliga personuppgifter (SPD), personligt identifierbar information (PII) och andra anpassade typer av data i alla plattformsarbetsflöden och resurser. Administratörer kan definiera användarroller som bara har åtkomst till specifika fält och data som motsvarar dessa fält.
 
 | Funktion | Beskrivning |
 | --- | --- |
 | Attributbaserad åtkomstkontroll | Med attributbaserad åtkomstkontroll kan du etikettera XDM-schemafält (Experience Data Model) och segment med etiketter som definierar användningsområde för organisation eller data. Samtidigt kan administratörer använda användar- och rolladministrationsgränssnittet för att definiera åtkomstprinciper som omfattar XDM-schemafält och -segment för att bättre hantera åtkomsten som ges till användare eller användargrupper (interna, externa eller externa användare). Mer information finns i [Översikt över den attributbaserade åtkomstkontrollen](../../access-control/abac/overview.md). |
 | Behörigheter | Behörigheter är det område i Experience Cloud där administratörer kan definiera användarroller och åtkomstprinciper för att hantera åtkomstbehörigheter för funktioner och objekt i ett produktprogram. Med behörigheter kan du skapa och hantera roller, tilldela önskade resursbehörigheter för de här rollerna och skapa profiler för att utnyttja etiketter och definiera vilka användarroller som har åtkomst till specifika plattformsresurser. Med behörigheter kan du också hantera etiketter, sandlådor och användare som är kopplade till en viss roll. Mer information finns i [Användargränssnittsguiden för behörigheter](../../access-control/abac/ui/browse.md). |
 
-Mer information om attributbaserad åtkomstkontroll finns i [Översikt över attributbaserad åtkomstkontroll](../../access-control/abac/overview.md). En utförlig guide om det attributbaserade arbetsflödet för åtkomstkontroll finns i [attributbaserad åtkomstkontroll från början till slut](../../access-control/abac/end-to-end-guide.md).
+Mer information om attributbaserad åtkomstkontroll finns i [översikt över attributbaserad åtkomstkontroll](../../access-control/abac/overview.md). En utförlig guide om det attributbaserade arbetsflödet för åtkomstkontroll finns i [heltäckande attributbaserad åtkomstkontroll](../../access-control/abac/end-to-end-guide.md).
 
 ## [!DNL Artificial Intelligence/Machine Learning services] {#ai-and-ml-services}
 
@@ -88,12 +88,12 @@ Mer information om de olika resursspecifika händelsetyperna som spåras av gran
 
 ## [!DNL Dashboards] {#dashboards}
 
-Adobe Experience Platform tillhandahåller flera instrumentpaneler där du kan se viktiga insikter om organisationens data, som de har hämtats in under dagliga ögonblicksbilder.
+Adobe Experience Platform tillhandahåller flera instrumentpaneler där du kan visa viktiga insikter om organisationens data, som fångas upp under dagliga ögonblicksbilder.
 
 | Funktion | Beskrivning |
 | --- | --- |
 | Etikett för användning | När den visas i widgetbiblioteket identifierar etiketten som används enkelt att det finns befintliga widgetar på din instrumentpanel. Det gör det enkelt att undvika duplicering, även om du kan lägga till samma widget flera gånger om du vill. |
-| Användardefinierade kontrollpaneler | Användardefinierade kontrollpaneler hjälper dig att få bättre insikter och anpassa visualiseringar genom att du kan skapa och hantera anpassade kontrollpaneler. Med användardefinierade kontrollpaneler kan du skapa, lägga till och redigera anpassade widgetar för att visualisera viktiga nyckeltal som är relevanta för organisationen. Läs [funktionsguiden](../../dashboards/user-defined-dashboards.md) om du vill veta mer. |
+| Användardefinierade kontrollpaneler | Användardefinierade kontrollpaneler hjälper dig att få bättre insikter och anpassa visualiseringar genom att du kan skapa och hantera anpassade kontrollpaneler. Med användardefinierade kontrollpaneler kan du skapa, lägga till och redigera anpassade widgetar för att visualisera viktiga nyckeltal som är relevanta för organisationen. Läs [funktionsguiden](../../dashboards/standard-dashboards.md) om du vill veta mer. |
 | Datamodell för Insikter om kunddataplattform | Funktionen CDP (Customer Data Platform) Insights Data Model visar de datamodeller och SQL som driver insikterna för olika profil-, mål- och segmenteringswidgetar. Du kan anpassa de här SQL-frågemallarna för att skapa CDP-rapporter för dina användningsfall för marknadsförings- och nyckelutförandeindikatorer. Dessa insikter kan sedan användas som anpassade widgetar för dina användardefinierade instrumentpaneler. Läs funktionsguiden [CDP Insights Data Model](../../dashboards/data-models/cdp-insights-data-model-b2c.md) om du vill veta mer. |
 | Rapportwidget för publiköverlappning | Den här widgeten är tillgänglig för både [!UICONTROL Profiles]- och [!UICONTROL Segments]-instrumentpaneler. Rapporten innehåller en ordnad lista över målgrupper som rangordnas efter de högsta eller lägsta överlappningsprocentsatserna för det valda segmentet. Från kontrollpanelen [!UICONTROL Profiles] kan du filtrera och visa målgruppsöverlappning genom att sammanfoga principer från alla tillgängliga segment. Med kontrollpanelerna [!UICONTROL Segments] kan du filtrera målgruppsöverlappningen efter ett visst segment.<br>Använd den här analysen för att skapa nya högpresterande segment och undvika att skicka samma målgrupp till olika destinationer. Rapporten kan också hjälpa till att identifiera dolda insikter för att förbättra segmenteringen eller hitta unika profiler att eftersträva. Läs respektive [profiler](../../dashboards/guides/profiles.md#audience-overlap-report) och [segmentwidgetguider](../../dashboards/guides/audiences.md#audience-overlap-report) om du vill veta mer. |
 
@@ -101,15 +101,15 @@ Mer information om [!DNL Dashboards] finns i [[!DNL Dashboards] översikten](../
 
 ## Datainsamling {#data-collection}
 
-Adobe Experience Platform erbjuder en serie teknologier som gör att ni kan samla in kundupplevelsedata på klientsidan och skicka dem till Adobe Experience Platform Edge Network där de kan berikas, omformas och distribueras till Adobe eller andra destinationer än Adobe.
+Adobe Experience Platform tillhandahåller en uppsättning tekniker som gör att du kan samla in kundupplevelsedata på klientsidan och skicka dem till Adobe Experience Platform Edge Network där de kan berikas, omvandlas och distribueras till mål inom eller utanför Adobe.
 
 **Nya eller uppdaterade funktioner**
 
 | Funktion | Beskrivning |
 | --- | --- |
-| Integrering med vänster navigering i plattformsgränssnittet | Alla funktioner som tidigare var exklusiva för användargränssnittet för datainsamling (inklusive taggar, vidarebefordran av händelser och datastreams) är nu även tillgängliga via den vänstra navigeringen i Experience Platform, under kategorin **[!UICONTROL Data Collection]**. Detta eliminerar behovet av att växla mellan användargränssnitt när du arbetar med datainsamlingsfunktioner i Platform. |
+| Integrering med vänster navigering i plattformsgränssnittet | Alla funktioner som tidigare var exklusiva för användargränssnittet för datainsamling (inklusive taggar, vidarebefordran av händelser och datastreams) är nu även tillgängliga via den vänstra navigeringen i Experience Platform, under kategorin **[!UICONTROL Data Collection]**. Detta eliminerar behovet av att växla mellan användargränssnitt när man arbetar med datainsamlingsfunktioner i plattformen. |
 | Användarattribuering i taggar och händelsevidarebefordran | När [!UICONTROL Properties] listas i taggar och händelsevidarebefordran visas nu varje egenskap i listan när den senast uppdaterades och vilken användare som gjorde uppdateringen. |
-| [[!DNL Snap Conversions API] tillägg](https://exchange.adobe.com/apps/ec/108550) för händelsevidarebefordran | Du kan nu skicka data till [!DNL Snapchat Conversions API] med ett [vidarebefordringstillägg](../../tags/ui/event-forwarding/overview.md). Mer information om hur du autentiserar och använder API:t finns i [[!DNL Snapchat Marketing API] dokumentationen](https://marketingapi.snapchat.com/docs/conversion.html). |
+| [[!DNL Snap Conversions API] tillägg](https://exchange.adobe.com/apps/ec/108550) för händelsevidarebefordran | Du kan nu skicka data till [!DNL Snapchat Conversions API] med ett [vidarebefordringstillägg](../../tags/ui/event-forwarding/overview.md). Mer information om hur du autentiserar dig och använder API:et finns i [[!DNL Snapchat Marketing API] dokumentationen](https://marketingapi.snapchat.com/docs/conversion.html). |
 | [Klienttips för användaragent i Web SDK](/help/web-sdk/use-cases/client-hints.md) | Web SDK har nu stöd för [klienttips för användaragent](https://developer.chrome.com/docs/privacy-sandbox/user-agent/). Klienttips gör att webbplatsägare kan komma åt mycket av den information som finns i strängen [!DNL User-Agent], men på ett mer sekretessbeständigt sätt. |
 | [Migrering av sida vid sida för Web SDK](../../web-sdk/home.md#migrating-to-web-sdk) | Du kan nu migrera dina befintliga webbegenskaper från andra Experience Cloud-bibliotek, som [!DNL at.js], till Web SDK, en sida i taget. Detta möjliggör en stegvis hantering av Web SDK-migrering, utan att du behöver migrera alla sidor samtidigt. |
 | [[!DNL Adobe Journey Optimizer] stöd för datastreams](../../datastreams/overview.md#aep) | Adobe Experience Platform-tjänsten för datastreams stöder nu [!DNL Adobe Journey Optimizer]. Med det här alternativet kan du använda webb- och appbaserade inkommande kanaler i [!DNL Adobe Journey Optimizer]. |
@@ -120,7 +120,7 @@ Mer information om datainsamling i Platform finns i [datainsamlingsöversikten](
 
 ## [!DNL Destinations] {#destinations}
 
-[!DNL Destinations] är färdiga integreringar med målplattformar som möjliggör smidig aktivering av data från Adobe Experience Platform. Ni kan använda destinationer för att aktivera kända och okända data för flerkanalskampanjer, e-postkampanjer, riktad reklam och många andra användningsfall.
+[!DNL Destinations] är förbyggda integrationer med målplattformar som möjliggör sömlös aktivering av data från Adobe Experience Platform. Du kan använda mål för att aktivera dina kända och okända data för marknadsföringskampanjer över flera kanaler, e-postkampanjer, riktad reklam och många andra användningsområden.
 
 **Nya eller uppdaterade funktioner**
 
@@ -149,7 +149,7 @@ Mer allmän information om destinationer finns i [målöversikten](../../destina
 
 ## Experience Data Model (XDM) {#xdm}
 
-XDM är en öppen källkodsspecifikation som innehåller gemensamma strukturer och definitioner (scheman) för data som hämtas till Adobe Experience Platform. Genom att följa XDM-standarder kan alla kundupplevelsedata införlivas i en gemensam representation för att ge insikter på ett snabbare och mer integrerat sätt. Ni kan få värdefulla insikter från kundåtgärder, definiera kundmålgrupper genom segment och använda kundattribut i personaliseringssyfte.
+XDM är en specifikation med öppen källkod som tillhandahåller gemensamma strukturer och definitioner (scheman) för data som förs in i Adobe Experience Platform. Genom att följa XDM-standarder kan all data om kundupplevelsen införlivas i en gemensam representation för att leverera insikter på ett snabbare och mer integrerat sätt. Du kan få värdefulla insikter från kundåtgärder, definiera kundmålgrupper genom segment och använda kundattribut för personalisering.
 
 **Nya funktioner**
 
@@ -190,7 +190,7 @@ XDM är en öppen källkodsspecifikation som innehåller gemensamma strukturer o
 
 {style="table-layout:auto"}
 
-Mer information om XDM i Platform finns i [XDM-systemöversikt](../../xdm/home.md).
+Mer information om XDM i Platform finns i [XDM-systemöversikten](../../xdm/home.md).
 
 ## Identitetstjänst {#identity-service}
 
@@ -208,7 +208,7 @@ Läs [Översikt över identitetstjänsten](../../identity-service/home.md) om du
 
 ## Frågetjänst {#query-service}
 
-Med frågetjänsten kan du använda standard-SQL för att fråga efter data i Adobe Experience Platform [!DNL Data Lake]. Du kan ansluta till alla datauppsättningar från [!DNL Data Lake] och samla in frågeresultaten som en ny datamängd som kan användas för rapportering, Data Science Workspace eller för förtäring i kundprofilen i realtid.
+Med frågetjänsten kan du använda standard SQL för att söka efter data i Adobe Experience Platform [!DNL Data Lake]. Du kan koppla samman alla datauppsättningar från [!DNL Data Lake] och samla in sökresultaten som en ny datauppsättning för användning i rapportering, arbetsytan för datavetenskap eller för inmatning i kundprofilen i realtid.
 
 **Uppdaterade funktioner**
 
@@ -225,7 +225,7 @@ Läs [frågevarningsdokumentationen](../../query-service/api/alert-subscriptions
 
 Adobe Experience Platform kan importera data från externa källor och samtidigt strukturera, etikettera och förbättra dessa data med hjälp av plattformstjänster. Du kan importera data från en mängd olika källor som Adobe-program, molnbaserad lagring, tredjepartsprogram och ditt CRM-system.
 
-Experience Platform tillhandahåller ett RESTful-API och ett interaktivt användargränssnitt som gör att du enkelt kan konfigurera källanslutningar för olika dataleverantörer. Dessa källanslutningar gör att du kan autentisera och ansluta till externa lagringssystem och CRM-tjänster, ange tider för matning och hantera dataöverföringshastigheter.
+Experience Platform tillhandahåller ett RESTful API och ett interaktivt användargränssnitt som gör att du enkelt kan konfigurera källanslutningar för olika dataleverantörer. Med dessa källanslutningar kan du autentisera och ansluta till externa lagringssystem och CRM-tjänster, ställa in tider för inmatningskörningar och hantera datainmatningens genomströmning.
 
 **Uppdaterade funktioner**
 
@@ -237,4 +237,4 @@ Experience Platform tillhandahåller ett RESTful-API och ett interaktivt använd
 | API-stöd för nya försök med misslyckade dataflöden för batchkällor | Använd åtgärden `re-trigger` om du vill försöka återskapa det misslyckade dataflödet via API:t. Mer information finns i guiden [Återförsöken av misslyckade dataflöden med API](../../sources/tutorials/api/retry-flows.md). |
 | API-stöd för filtrering av radnivådata för källorna [!DNL Google BigQuery] och [!DNL Snowflake] | Använd logiska operatorer och jämförelseoperatorer för att filtrera radnivådata för källorna [!DNL Google BigQuery] och [!DNL Snowflake]. Mer information finns i guiden [om att filtrera data för en källa med API](../../sources/tutorials/api/filter.md). |
 
-Läs [Källöversikten](../../sources/home.md) om du vill veta mer om källor.
+Mer information om källor finns i [översikten över källor](../../sources/home.md).

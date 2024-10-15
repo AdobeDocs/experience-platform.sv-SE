@@ -2,7 +2,7 @@
 title: Query Accelerated Store Reporting Insights Guide
 description: Lär dig hur du bygger en datamodell med rapportinsikter med hjälp av frågetjänsten för användning med accelererade lagringsdata och användardefinierade instrumentpaneler.
 exl-id: 216d76a3-9ea3-43d3-ab6f-23d561831048
-source-git-commit: 0970fd8fbea86115d92dc78cdba753da69cc2ee6
+source-git-commit: ddf886052aedc025ff125c03ab63877cb049583d
 workflow-type: tm+mt
 source-wordcount: '1034'
 ht-degree: 0%
@@ -19,7 +19,7 @@ Real-Time CDP datamodell från Adobe Experience Platform ger insikter om profile
 
 ## Förhandskrav
 
-I den här självstudien används användardefinierade kontrollpaneler för att visualisera data från din anpassade datamodell i plattformsgränssnittet. Mer information om den här funktionen finns i [användardefinierad dokumentation för kontrollpaneler](../../../dashboards/user-defined-dashboards.md).
+I den här självstudien används användardefinierade kontrollpaneler för att visualisera data från din anpassade datamodell i plattformsgränssnittet. Mer information om den här funktionen finns i [användardefinierad dokumentation för kontrollpaneler](../../../dashboards/standard-dashboards.md).
 
 ## Komma igång
 
@@ -228,4 +228,4 @@ Bilden nedan visar ett exempel på möjliga anpassade visualiseringar med datamo
 
 ![Ett matchningsantal per mål och målgruppswidget som har skapats från den nya datamodellen för rapportinsikter.](../../images/data-distiller/sql-insights/user-defined-dashboard-widget.png)
 
-Din anpassade datamodell finns i listan över tillgängliga datamodeller på den användardefinierade kontrollpanelens arbetsyta. I handboken [för användardefinierade kontrollpaneler](../../../dashboards/user-defined-dashboards.md) finns mer information om hur du använder din anpassade datamodell.
+Din anpassade datamodell finns i listan över tillgängliga datamodeller på den användardefinierade kontrollpanelens arbetsyta. I handboken [för användardefinierade kontrollpaneler](../../../dashboards/standard-dashboards.md) finns mer information om hur du använder din anpassade datamodell.

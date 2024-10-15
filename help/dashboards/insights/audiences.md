@@ -2,7 +2,7 @@
 title: Målgruppsinsikt
 description: Upptäck den SQL som ger er målgruppsinsikter och använder dessa frågor för att generera anpassade insikter för att ytterligare utforska målgruppsdata från Adobe Experience Platform.
 exl-id: 99624234-c4e1-44bb-9567-505bc0c4723e
-source-git-commit: 34eb9151cc6bb8551553b0a8427e58871acb4dbb
+source-git-commit: ddf886052aedc025ff125c03ab63877cb049583d
 workflow-type: tm+mt
 source-wordcount: '1118'
 ht-degree: 0%
@@ -17,7 +17,7 @@ Förstå era målgruppsinsikter genom att få tillgång till den SQL som ligger 
 
 Se [Visa SQL-dokumentation](../view-sql.md) om du vill ha mer information om hur du anpassar dina insikter direkt via användargränssnittet i PLatform.
 
-Följande insikter är tillgängliga för dig att använda som en del av [Publikkontrollpanelen](../guides/audiences.md) eller en anpassad [användardefinierad kontrollpanel](../user-defined-dashboards.md). Se [anpassningsöversikten](../customize/overview.md) för instruktioner om hur du anpassar din instrumentpanel eller [skapar och redigerar nya widgetar](../customize/custom-widgets.md) i widgetbiblioteket och [användardefinierad instrumentpanel](../user-defined-dashboards.md#create-widget).
+Följande insikter är tillgängliga för dig att använda som en del av [Publikkontrollpanelen](../guides/audiences.md) eller en anpassad [användardefinierad kontrollpanel](../standard-dashboards.md). Se [anpassningsöversikten](../customize/overview.md) för instruktioner om hur du anpassar din instrumentpanel eller [skapar och redigerar nya widgetar](../customize/custom-widgets.md) i widgetbiblioteket och [användardefinierad instrumentpanel](../standard-dashboards.md#create-widget).
 
 Du kan använda följande insikter som en del av [Publikkontrollpanelen](../guides/audiences.md) eller en anpassad kontrollpanel.
 

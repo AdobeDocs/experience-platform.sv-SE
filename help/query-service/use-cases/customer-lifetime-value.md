@@ -2,7 +2,7 @@
 title: Spåra datasignaler för att generera kundens livstidsvärde
 description: Den här guiden ger en heltäckande demonstration av hur man använder Data Distiller och användardefinierade dashboards med Real-time Customer Data Platform för att mäta och visualisera kundens livstidsvärde.
 exl-id: c74b5bff-feb2-4e21-9ee4-1e0973192570
-source-git-commit: 0970fd8fbea86115d92dc78cdba753da69cc2ee6
+source-git-commit: ddf886052aedc025ff125c03ab63877cb049583d
 workflow-type: tm+mt
 source-wordcount: '1263'
 ht-degree: 0%
@@ -62,7 +62,7 @@ Se till att du ställer in ett schema för att uppdatera din anpassade datamodel
 
 ## Bygg en instrumentpanel för att få insikter {#build-a-custom-dashboard}
 
-Nu när du har skapat en anpassad datamodell är du redo att visualisera dina data med anpassade frågor och användardefinierade dashboards. Mer information om hur du [skapar en anpassad kontrollpanel](../../dashboards/user-defined-dashboards.md) finns i översikten över användardefinierade kontrollpaneler. Användargränssnittshandboken innehåller information om:
+Nu när du har skapat en anpassad datamodell är du redo att visualisera dina data med anpassade frågor och användardefinierade dashboards. Mer information om hur du [skapar en anpassad kontrollpanel](../../dashboards/standard-dashboards.md) finns i översikten över användardefinierade kontrollpaneler. Användargränssnittshandboken innehåller information om:
 
 * Skapa en widget.
 * Så här använder du widgetens disposition.

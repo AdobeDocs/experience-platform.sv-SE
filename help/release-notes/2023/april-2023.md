@@ -2,14 +2,14 @@
 title: Versionsinformation om Adobe Experience Platform april 2023
 description: Versionsinformationen för Adobe Experience Platform från april 2023.
 exl-id: 7b501467-99a7-4aee-ae86-66c851250ecf
-source-git-commit: 322510055bd8b8803292a2b4af9df9e1dbee7ffb
+source-git-commit: ddf886052aedc025ff125c03ab63877cb049583d
 workflow-type: tm+mt
 source-wordcount: '2011'
-ht-degree: 3%
+ht-degree: 28%
 
 ---
 
-# Versionsinformation för Adobe Experience Platform
+# Versionsinformation om Adobe Experience Platform
 
 >[!IMPORTANT]
 >
@@ -22,30 +22,30 @@ Uppdateringar av befintliga funktioner i Adobe Experience Platform:
 - [Kontrollpaneler](#dashboards)
 - [Dataförberedelse](#data-prep)
 - [Datainsamling](#data-collection)
-- [Mål ](#destinations)
+- [Mål](#destinations)
 - [Experience Data Model](#xdm)
-- [Real-Time Customer Data Platform](#rtcdp)
+- [Plattform för kunddata i realtid](#rtcdp)
 - [Kundprofil i realtid](#profile)
 - [Segmenteringstjänst](#segmentation)
 - [Källor](#sources)
 
 ## Kontrollpaneler {#dashboards}
 
-Adobe Experience Platform tillhandahåller flera instrumentpaneler där du kan se viktiga insikter om organisationens data, som de har hämtats in under dagliga ögonblicksbilder.
+Adobe Experience Platform tillhandahåller flera instrumentpaneler där du kan visa viktiga insikter om organisationens data, som fångas upp under dagliga ögonblicksbilder.
 
 **Nya eller uppdaterade funktioner** {#dashboards-new-updated-features}
 
 | Funktion | Beskrivning |
 | --- | --- |
-| Användardefinierade kontrollpaneler | Du kan nu **filtrera historiska data** från dina widgetinsikter och använda antingen senaste data eller en anpassad analysperiod. Mer information finns i handboken [användardefinierade kontrollpaneler](../../dashboards/user-defined-dashboards.md#filter-historical-data).<br>Du kan nu även **duplicera dina befintliga widgetar**. Genom att anpassa en dubblett och redigera deras attribut kan du undvika att starta om från början när du skapar en ny, unik widget. Läs [widgetens dupliceringsguide](../../dashboards/user-defined-dashboards.md#duplicate-a-widget) om du vill veta mer. |
+| Användardefinierade kontrollpaneler | Du kan nu **filtrera historiska data** från dina widgetinsikter och använda antingen senaste data eller en anpassad analysperiod. Mer information finns i handboken [användardefinierade kontrollpaneler](../../dashboards/standard-dashboards.md#filter-historical-data).<br>Du kan nu även **duplicera dina befintliga widgetar**. Genom att anpassa en dubblett och redigera deras attribut kan du undvika att starta om från början när du skapar en ny, unik widget. Läs [widgetens dupliceringsguide](../../dashboards/standard-dashboards.md#duplicate-a-widget) om du vill veta mer. |
 
 {style="table-layout:auto"}
 
-Mer information om kontrollpaneler, inklusive hur du ger åtkomstbehörigheter och skapar anpassade widgetar, får du genom att läsa [översikten för kontrollpaneler](../../dashboards/home.md).
+Läs [översikt över kontrollpaneler](../../dashboards/home.md) för mer information om kontrollpaneler, bland annat hur du beviljar åtkomstbehörigheter och skapar anpassade widgetar.
 
 ## Dataförberedelse {#data-prep}
 
-Med Data Prep kan datatekniker mappa, omvandla och validera data till och från Experience Data Model (XDM).
+Med dataförberedelse kan utvecklare mappa, omvandla och validera data till och från Experience Data Model (XDM).
 
 **Uppdaterade funktioner**
 
@@ -60,7 +60,7 @@ Mer information om dataprep finns i [översikten för dataprep](../../data-prep/
 
 ## Datainsamling {#data-collection}
 
-Adobe Experience Platform erbjuder en serie teknologier som gör att ni kan samla in kundupplevelsedata på klientsidan och skicka dem till Adobe Experience Platform Edge Network där de kan berikas, omformas och distribueras till Adobe eller andra destinationer än Adobe.
+Adobe Experience Platform tillhandahåller en uppsättning tekniker som gör att du kan samla in kundupplevelsedata på klientsidan och skicka dem till Adobe Experience Platform Edge Network där de kan berikas, omvandlas och distribueras till mål inom eller utanför Adobe.
 
 **Nya eller uppdaterade funktioner**
 
@@ -73,11 +73,11 @@ Adobe Experience Platform erbjuder en serie teknologier som gör att ni kan saml
 
 {style="table-layout:auto"}
 
-## Mål  {#destinations}
+## Mål {#destinations}
 
-[!DNL Destinations] är färdiga integreringar med målplattformar som möjliggör smidig aktivering av data från Adobe Experience Platform. Ni kan använda destinationer för att aktivera kända och okända data för flerkanalskampanjer, e-postkampanjer, riktad reklam och många andra användningsfall.
+[!DNL Destinations] är förbyggda integrationer med målplattformar som möjliggör sömlös aktivering av data från Adobe Experience Platform. Du kan använda mål för att aktivera dina kända och okända data för marknadsföringskampanjer över flera kanaler, e-postkampanjer, riktad reklam och många andra användningsområden.
 
-**Nya mål** {#new-destinations}
+**Nya destinationer** {#new-destinations}
 
 | Mål | Beskrivning |
 | ----------- | ----------- |
@@ -109,7 +109,7 @@ Mer allmän information om destinationer finns i [målöversikten](../../destina
 
 ## Experience Data Model (XDM) {#xdm}
 
-XDM är en öppen källkodsspecifikation som innehåller gemensamma strukturer och definitioner (scheman) för data som hämtas till Adobe Experience Platform. Genom att följa XDM-standarder kan alla kundupplevelsedata införlivas i en gemensam representation för att ge insikter på ett snabbare och mer integrerat sätt. Ni kan få värdefulla insikter från kundåtgärder, definiera kundmålgrupper genom segment och använda kundattribut i personaliseringssyfte.
+XDM är en specifikation med öppen källkod som tillhandahåller gemensamma strukturer och definitioner (scheman) för data som förs in i Adobe Experience Platform. Genom att följa XDM-standarder kan all data om kundupplevelsen införlivas i en gemensam representation för att leverera insikter på ett snabbare och mer integrerat sätt. Du kan få värdefulla insikter från kundåtgärder, definiera kundmålgrupper genom segment och använda kundattribut för personalisering.
 
 **Uppdaterade funktioner**
 
@@ -141,9 +141,9 @@ XDM är en öppen källkodsspecifikation som innehåller gemensamma strukturer o
 
 Mer information om XDM i Platform finns i [XDM-systemöversikt](../../xdm/home.md).
 
-## Real-Time Customer Data Platform
+## Plattform för kunddata i realtid
 
-Real-time Customer Data Platform ([!DNL Real-Time CDP]) bygger på Experience Platform och hjälper företag att sammanföra kända och okända data för att aktivera kundprofiler med intelligent beslutsfattande under hela kundresan. [!DNL Real-Time CDP] kombinerar flera företagsdatakällor för att skapa kundprofiler i realtid. Segment som byggts utifrån dessa profiler kan sedan skickas till efterföljande destinationer för att tillhandahålla personliga kundupplevelser i alla kanaler och enheter.
+Plattformen för kunddata i realtid ([!DNL Real-Time CDP]) bygger på Experience Platform och hjälper företag att sammanföra kända och okända data för att aktivera kundprofiler med intelligenta beslut under hela kundresan. [!DNL Real-Time CDP] kombinerar flera datakällor från företag för att skapa kundprofiler i realtid. Segment som byggs upp utifrån dessa profiler kan sedan skickas till mål i senare led för att ge personliga kundupplevelser i alla kanaler och på alla enheter.
 
 **Nya funktioner**
 
@@ -156,7 +156,7 @@ Mer information om [!DNL Real-Time CDP] finns i [[!DNL Real-Time CDP] översikte
 
 ## Kundprofil i realtid {#profile}
 
-Med Adobe Experience Platform kan ni skapa samordnade, enhetliga och relevanta upplevelser för era kunder oavsett var och när de interagerar med ert varumärke. Med kundprofilen i realtid kan ni se en helhetsbild av varje enskild kund som kombinerar data från flera kanaler, inklusive online-, offline-, CRM- och tredjepartsdata. Med hjälp av profilen kan ni sammanställa kunddata i en enhetlig vy som ger ett användbart, tidsstämplat konto för varje kundinteraktion.
+Med Adobe Experience Platform kan du skapa samordnade, konsekventa och relevanta upplevelser för dina kunder, oavsett var eller när de interagerar med ditt varumärke. Med kundprofilen i realtid får du en helhetsbild av varje enskild kund som kombinerar data från flera kanaler, inklusive online, offline, CRM och data från tredje part. Med profilen kan du konsolidera kunddata till en enhetlig vy som ger en handlingsbar, tidsstämplad redogörelse för varje kundinteraktion.
 
 **Uppdaterade funktioner**
 
@@ -168,7 +168,7 @@ Med Adobe Experience Platform kan ni skapa samordnade, enhetliga och relevanta u
 
 ## Segmenteringstjänst {#segmentation}
 
-[!DNL Segmentation Service] definierar en viss delmängd av profiler genom att beskriva kriterierna som särskiljer en marknadsföringsbar grupp av personer inom din kundbas. Segment kan baseras på registerdata (t.ex. demografisk information) eller tidsseriehändelser som representerar kundinteraktioner med ert varumärke.
+[!DNL Segmentation Service] definierar en viss deluppsättning av profiler genom att beskriva de kriterier som skiljer en säljbar grupp människor inom din kundbas. Segmenten kan baseras på registerdata (t.ex. demografisk information) eller tidsseriehändelser som representerar kundinteraktioner med ditt varumärke.
 
 **Nya eller uppdaterade funktioner**
 
@@ -178,13 +178,13 @@ Med Adobe Experience Platform kan ni skapa samordnade, enhetliga och relevanta u
 
 {style="table-layout:auto"}
 
-Mer information om [!DNL Segmentation Service] finns i [Segmenteringsöversikt](../../segmentation/home.md).
+Mer information om [!DNL Segmentation Service] finns i [segmenteringsöversikten](../../segmentation/home.md).
 
 ## Källor {#sources}
 
 Adobe Experience Platform kan importera data från externa källor och göra det möjligt att strukturera, etikettera och förbättra dessa data med hjälp av plattformstjänster. Du kan importera data från en mängd olika källor som Adobe-program, molnbaserad lagring, tredjepartsprogram och ditt CRM-system.
 
-Experience Platform tillhandahåller ett RESTful-API och ett interaktivt användargränssnitt som gör att du enkelt kan konfigurera källanslutningar för olika dataleverantörer. Dessa källanslutningar gör att du kan autentisera och ansluta till externa lagringssystem och CRM-tjänster, ange tider för matning och hantera dataöverföringshastigheter.
+Experience Platform tillhandahåller ett RESTful API och ett interaktivt användargränssnitt som gör att du enkelt kan konfigurera källanslutningar för olika dataleverantörer. Med dessa källanslutningar kan du autentisera och ansluta till externa lagringssystem och CRM-tjänster, ställa in tider för inmatningskörningar och hantera datainmatningens genomströmning.
 
 **Uppdaterade funktioner**
 
@@ -197,4 +197,4 @@ Experience Platform tillhandahåller ett RESTful-API och ett interaktivt använd
 
 {style="table-layout:auto"}
 
-Läs [Källöversikten](../../sources/home.md) om du vill veta mer om källor.
+Mer information om källor finns i [översikten över källor](../../sources/home.md).
