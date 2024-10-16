@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Komma igång med API:t för schemaregister
 description: Det här dokumentet innehåller en introduktion till de centrala koncept du behöver känna till innan du försöker anropa API:t för schemaregister.
 exl-id: 7daebb7d-72d2-4967-b4f7-1886736db69f
-source-git-commit: fcd44aef026c1049ccdfe5896e6199d32b4d1114
+source-git-commit: eb1cf204e95591082b27dc97cd3c709a23b20b08
 workflow-type: tm+mt
-source-wordcount: '1345'
+source-wordcount: '1361'
 ht-degree: 0%
 
 ---
@@ -254,6 +254,7 @@ I följande exempelfält visas ett korrekt formaterat XDM-fält, med mer informa
 * Namnet på ett fältobjekt kan innehålla alfanumeriska tecken, bindestreck eller understreck, men **får inte** börja med ett understreck.
    * **Korrekt:** `fieldName`, `field_name2`, `Field-Name`, `field-name_3`
    * **Felaktigt:** `_fieldName`
+* Fältnamn är inte skiftlägeskänsliga och måste ha olika namn på samma nivå i schemat.
 * camelCase är att föredra som fältobjektets namn. Exempel: `fieldName`
 * Fältet ska innehålla `title`, skrivet i versaler. Exempel: `Field Name`
 * Fältet kräver `type`.
