@@ -2,9 +2,9 @@
 title: Översikt över målportalen
 description: Lär dig hur du använder Audience Portal för att visa, hantera och skapa målgrupper i Adobe Experience Platform.
 exl-id: 505ac22e-05f3-423a-a9a0-7f3470af8945
-source-git-commit: b59f5ffeb8af6f3bab7ed79189219f39533d2f1b
+source-git-commit: 919e5c183296e3fbf1fc385c2a9c34dc36349660
 workflow-type: tm+mt
-source-wordcount: '4046'
+source-wordcount: '4094'
 ht-degree: 0%
 
 ---
@@ -210,6 +210,11 @@ Listan med tillgängliga filter visas.
 
 #### Massåtgärder {#bulk-actions}
 
+>[!CONTEXTUALHELP]
+>id="platform_segmentation_browse_flexibleaudienceevaluation"
+>title="Flexibla gränser för målgruppsutvärdering"
+>abstract="Ni kan utvärdera upp till 20 målgrupper i en enda flexibel utvärderingsrunda.<br/><br/>Även om utvärderingsjobbet körs så snart som möjligt kan det uppstå systemfördröjningar eftersom on-demand-utvärderingar <b>inte</b> kan köras samtidigt som en annan on-demand- eller batch-utvärdering."
+
 Dessutom kan ni välja upp till 25 olika målgrupper och utföra olika åtgärder på dessa målgrupper. Dessa åtgärder omfattar [flytt till en mapp](#folders), [redigering eller användning av en tagg](#tags), [användning av åtkomstetiketter](../../access-control/abac/ui/labels.md) och [borttagning](#browse).
 
 ![De tillgängliga alternativen för gruppåtgärder är markerade.](../images/ui/audience-portal/bulk-actions.png)
@@ -375,9 +380,9 @@ Om du väljer **[!UICONTROL Build rule]** kommer du till segmentbyggaren. Den h�
 
 ![Arbetsytan i Segment Builder visas.](../images/ui/audience-portal/segment-builder.png)
 
-### Sammansatt målgrupp {#fac}
+### Federerad målgruppssammansättning {#fac}
 
-Förutom målgruppskompositioner och segmentdefinitioner kan du använda Adobe Federated Audience Composition för att skapa nya målgrupper från företagsdatauppsättningar utan att kopiera underliggande data och lagra dessa målgrupper i Adobe Experience Platform Audience Portal. Ni kan också berika befintliga målgrupper i Adobe Experience Platform genom att använda sammansatta målgruppsdata som har federerats från företagets datalager. Läs guiden om [Federated Audience Composition](https://experienceleague.adobe.com/en/docs/federated-audience-composition/using/home).
+Förutom målgruppskompositioner och segmentdefinitioner kan du använda Adobe Federated Audience Composition för att skapa nya målgrupper från företagsdatauppsättningar utan att kopiera underliggande data och lagra dessa målgrupper i Adobe Experience Platform Audience Portal. Ni kan också berika befintliga målgrupper i Adobe Experience Platform genom att använda sammansatta målgruppsdata som har federerats från företagets datalager. Läs guiden om [Federated Audience Composition](https://experienceleague.adobe.com/sv/docs/federated-audience-composition/using/home).
 
 ![En lista över målgrupper som skapats i Federated Audience Composition för din organisation.](../images/ui/overview/federated-audience-composition.png)
 
