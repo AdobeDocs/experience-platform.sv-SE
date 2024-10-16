@@ -2,9 +2,9 @@
 title: Översikt över målportalen
 description: Lär dig hur du använder Audience Portal för att visa, hantera och skapa målgrupper i Adobe Experience Platform.
 exl-id: 505ac22e-05f3-423a-a9a0-7f3470af8945
-source-git-commit: 919e5c183296e3fbf1fc385c2a9c34dc36349660
+source-git-commit: f74e91ba1fe2be58e1e933fa81f590566f02fff7
 workflow-type: tm+mt
-source-wordcount: '4094'
+source-wordcount: '4116'
 ht-degree: 0%
 
 ---
@@ -286,6 +286,10 @@ Uppskattningar genereras med en provstorlek för den aktuella dagens exempeldata
 ### Inmatningsinformation {#ingestion-details}
 
 För målgrupper med ursprung **[!UICONTROL Custom upload]** visar avsnittet **[!UICONTROL Ingestion details]** både profilsumman och information om datauppsättningen som den externt genererade målgruppen har importerats till.
+
+>[!NOTE]
+>
+>Det kan ta upp till 30 minuter efter exportjobbet för att profilantalet för målgruppen ska uppdateras fullständigt.
 
 ![Avsnittet med information om målgruppsinformation visas.](../images/ui/audience-portal/audience-details-ingestion-details.png)
 
