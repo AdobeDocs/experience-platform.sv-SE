@@ -3,9 +3,9 @@ keywords: Experience Platform;felsökning;skyddsförslag;riktlinjer;
 title: Guardsedningar för datainmatning
 description: Läs om hur du skyddar dig mot dataintrång i Adobe Experience Platform.
 exl-id: f07751cb-f9d3-49ab-bda6-8e6fec59c337
-source-git-commit: 9c3f7f522ce6451e1d312a0221cc34287d3e8ae3
+source-git-commit: b8f64793b7f869e50c33ead3a5f02f3a8af51ff4
 workflow-type: tm+mt
-source-wordcount: '737'
+source-wordcount: '810'
 ht-degree: 0%
 
 ---
@@ -35,6 +35,7 @@ I följande tabell visas skyddsutkast som ska beaktas när [API:t för batchimpo
 | Gruppinmatning till profil | <ul><li>Den största tillåtna storleken för en postklass är 100 kB (hård).</li><li>Den största tillåtna storleken för en ExperienceEvent-klass är 10 kB (hårddisk).</li></ul> | |
 | Antal profiler eller ExperienceEvent-batchar som har importerats per dag | **Det maximala antalet profiler eller ExperienceEvent-batchar som har skickats in per dag är 90.** Det innebär att den sammanlagda summan av de profiler och ExperienceEvent-batchar som hämtas varje dag inte får överstiga 90. Om ytterligare batchar registreras påverkas systemets prestanda. | Det här är en mjuk gräns. Det går att gå längre än en mjuk gräns, men mjuka gränser ger en rekommenderad vägledning för systemprestanda. |
 | Krypterad dataöverföring | Den största tillåtna storleken för en krypterad fil är 1 GB. Du kan till exempel importera 2 eller fler GB-data i en enda dataflödeskörning, men ingen enskild fil i dataflödeskörningen kan överstiga 1 GB. | Processen med att importera krypterade data kan ta längre tid än den som sker vid vanlig datainmatning. Mer information finns i [API-handboken för krypterad datainhämtning](../sources/tutorials/api/encrypt-data.md). |
+| Uppgradera batchinmatning | Inmatning av uppgraderingsbatchar kan vara upp till 10 gånger långsammare än vanliga batchar. Därför bör du **hålla dina uppgraderingsbatchar under två miljoner poster** för att säkerställa en effektiv körningstid och undvika att blockera andra batchar från att bearbetas i sandlådan. | Även om du utan tvekan kan importera batchar som överskrider två miljoner poster, kommer tiden för ditt intag att bli avsevärt längre på grund av begränsningar i små sandlådor. |
 
 {style="table-layout:auto"}
 
