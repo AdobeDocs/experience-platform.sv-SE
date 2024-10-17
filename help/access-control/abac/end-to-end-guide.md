@@ -4,10 +4,10 @@ title: Attributbaserad åtkomstkontroll - från början till slut
 description: Det här dokumentet innehåller en komplett guide om attributbaserad åtkomstkontroll i Adobe Experience Platform
 role: Developer
 exl-id: 7e363adc-628c-4a66-a3bd-b5b898292394
-source-git-commit: c89ae9befa3befbffab9d6468f3c207ab8e7b74f
+source-git-commit: 9c415b7721eeceff75d46463853f22dd3310cb9a
 workflow-type: tm+mt
 source-wordcount: '1664'
-ht-degree: 0%
+ht-degree: 1%
 
 ---
 
@@ -45,8 +45,7 @@ Du kommer att:
 
 * [Ange en etikett för rollerna för dina användare](#label-roles): Använd exemplet med en vårdleverantör (ACME Business Group) vars marknadsföringsgrupp fungerar med externa byråer.
 * [Etikettera dina resurser (schemafält och segment)](#label-resources): Tilldela etiketten **[!UICONTROL PHI/ Regulated Health Data]** till schemaresurser och segment.
-* 
-   * [Aktivera principen som länkar ihop dem:](#policy): Aktivera standardprincipen för att förhindra åtkomst till schemafält och segment genom att ansluta etiketterna på dina resurser till etiketterna i din roll. Användare med matchande etiketter får sedan tillgång till schemafältet och segmentet i alla sandlådor.
+* [Aktivera principen som länkar ihop dem](#policy): Aktivera standardprincipen för att förhindra åtkomst till schemafält och segment genom att ansluta etiketterna på dina resurser till etiketterna i din roll. Användare med matchande etiketter får sedan tillgång till schemafältet och segmentet i alla sandlådor.
 
 ## Behörigheter
 
