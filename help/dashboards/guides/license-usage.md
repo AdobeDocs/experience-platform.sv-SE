@@ -4,9 +4,9 @@ title: Kontrollpanel för licensanvändning
 description: Adobe Experience Platform tillhandahåller en kontrollpanel där du kan visa viktig information om din organisations licensanvändning.
 type: Documentation
 exl-id: 143d16bb-7dc3-47ab-9b93-9c16683b9f3f
-source-git-commit: 67d4bcbf2a055d4427218ba7d98355f09d860a8c
+source-git-commit: 80380fb1287d710460ad2c75d73ea5c2c38f5ebd
 workflow-type: tm+mt
-source-wordcount: '2618'
+source-wordcount: '2720'
 ht-degree: 0%
 
 ---
@@ -117,7 +117,6 @@ Hantera och optimera era licensieringsresurser proaktivt baserat på insiktsfull
 
 Om du vill se en sammanfattning av en produkts tillståndsanvändning väljer du en produkt i tabellen [!UICONTROL Core products].
 
-<!-- update image ... -->
 ![[!UICONTROL License usage] [!UICONTROL Overview] med en produkt och den förväntade användningskolumnen markerad.](../images/license-usage/product-predicted-usage.png)
 
 Fliken Sammanfattning visas. Du kan använda de detaljerade förutsägelser som finns på flikarna [!UICONTROL Summary] och [!UICONTROL Details] för att säkerställa ett välgrundat beslutsfattande för effektiv licensanvändning.
@@ -126,7 +125,6 @@ Fliken Sammanfattning visas. Du kan använda de detaljerade förutsägelser som 
 >
 >Observera att prognoserna för licensanvändning är approximationer baserade på tidigare användning. Du ansvarar för att förstå hur din organisation faktiskt används och se till att användningen inte går utanför räckvidden för din organisations licens med Adobe.
 
-<!-- update image ... -->
 ![Sammanfattningsvyn för en plattformsprodukt med den förväntade användningskolumnen markerad.](../images/license-usage/summary-predicted-usage.png)
 
 Procentandelen av förväntad användning bestäms enligt följande:
@@ -142,10 +140,9 @@ Procentandelen av förväntad användning bestäms enligt följande:
 Funktionen för förväntad användning har stöd för följande mått:
 
 - [!UICONTROL Addressable audience]
-- [!UICONTROL Average profile richness]
 - [!UICONTROL Compute hours]
 - [!UICONTROL Customer Journey Audience number of rows]
-- [!UICONTROL Total storage]
+- [!UICONTROL Total Data Volume]
 
 ## Fliken [!UICONTROL Summary] {#summary-tab}
 
@@ -204,6 +201,10 @@ Du kan också välja **[!UICONTROL Custom date]** för att välja den tidsperiod
 
 ## Tillgängliga mått {#available-metrics}
 
+>[!IMPORTANT]
+>
+>Från och med den 20 augusti såg kunder med berättiganden för [!UICONTROL Average Profile Richness] och [!UICONTROL Total Storage] i stället [!UICONTROL Total Data Volume] i kontrollpanelen för licensanvändning. Inga förändringar i kundens rättigheter, utan bara en förenkling av spårningsstatistiken. [!UICONTROL Total Data Volume] representerar de data som är tillgängliga i Adobe Experience Platform Profile Service för interaktions- och personaliseringsarbetsflöden. Detta förenklade mätresultat förbättrade hanteringen och mätningen av användningen av profiltjänsten. Kunderna uppmanades att kontakta sin Adobe-representant för att få ytterligare klargöranden om denna förändring.
+
 Kontrollpanelen för licensanvändning rapporterar om flera unika mätvärden som gäller för flera produkter i organisationen. Tillgängliga mätvärden är:
 
 | Mått | Beskrivning |
@@ -211,6 +212,7 @@ Kontrollpanelen för licensanvändning rapporterar om flera unika mätvärden so
 | [!UICONTROL Audience Activation Size] | Den totala storleken på profiler som har aktiverats för ett filbaserat mål på ett år. Obs! Detta inkluderar inte profiler som skickas via direktuppspelningsmål. |
 | [!UICONTROL Addressable Audience] | Summan av er rätt till företagspass och rätt till rätt målgrupp. En konsumentpublik definieras som antalet personprofiler som identifieras som en&quot;konsumentpublik&quot; på försäljningsordern. En målgrupp definieras som antalet affärspersonsprofiler som identifieras som&quot;affärsmålgrupp&quot; på försäljningsordern. |
 | [!UICONTROL Adhoc Query Service Users Packs] | Ett tillägg som ökar dina behörigheter för samtidiga frågetjänstanvändare med ytterligare fem samtidiga frågetjänstanvändare och ytterligare en ad hoc-fråga som körs samtidigt per paket. Flera ytterligare Ad hoc-frågeanvändarpaket kan licensieras. |
+| [!UICONTROL Average profile richness] | **Borttagen** - Summan av alla produktionsdata som lagras i navprofiltjänsten vid någon tidpunkt, dividerat med fem gånger antalet auktoriserade affärspersonsprofiler. [!UICONTROL Average profile richness] är en delad funktion. |
 | [!UICONTROL CJA Rows Available] | De dagliga genomsnittliga dataraderna som är tillgängliga för analys inom Customer Journey Analytics. |
 | [!UICONTROL Computed Attributes] | Det totala antalet aggregerade profilbeteendedata. Sammanlagda profilbeteendedata baseras på upplevelsehändelser som konverteras till ett profilattribut och kan inkluderas i en personprofil eller en företagsprofil. |
 | [!UICONTROL Consumer Audience] | Antalet personprofiler som identifieras som&quot;Konsumentpublik&quot; på försäljningsordern. |

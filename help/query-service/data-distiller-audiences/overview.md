@@ -1,9 +1,9 @@
 ---
 title: Bygg målgrupper med SQL
 description: Lär dig hur du använder SQL-målgruppstillägget i Adobe Experience Platform Data Distiller för att skapa, hantera och publicera målgrupper med hjälp av SQL-kommandon. Den här guiden täcker alla aspekter av målgruppens livscykel, inklusive skapande, uppdatering och borttagning av profiler samt användning av datadrivna målgruppsdefinitioner för filbaserade mål.
-source-git-commit: 8b9a46d9dd35a60fc3f3087d5fd3c4dad395b1aa
+source-git-commit: b790dc0a485011022ac637f9d9c55f21c882d5fc
 workflow-type: tm+mt
-source-wordcount: '1279'
+source-wordcount: '1165'
 ht-degree: 0%
 
 ---
@@ -135,15 +135,13 @@ Aktivera era målgrupper genom att rikta dem mot valfritt filbaserat mål, till 
 
 I det här avsnittet behandlas vanliga frågor om hur du skapar och hanterar externa målgrupper med hjälp av SQL i Data Distiller.
 
-+++Välj för att visa frågor och svar
-
 **Frågor**:
 
 - Stöds målgruppsgenerering endast för platta datauppsättningar?
 
 +++Svar
 
-Kapslade datauppsättningar stöds också, men endast platta attribut är tillgängliga i målgruppen.
+För närvarande är målgruppsframtagningen begränsad till platta (rotnivå) attribut när målgruppen definieras.
 
 +++
 
@@ -167,15 +165,15 @@ Nej, datauppsättningen som skapades när målgrupper skapades markeras inte fö
 
 +++Svar
 
-Ja, datauppsättningen skapas på datasjön.
+Ja, den datauppsättning som är associerad med målgruppen skapas på datasjön. Attributen från den här datauppsättningen är tillgängliga i Audience Composer och målflödet som förhöjda attribut.
 
 +++
 
-- Är attributen i målgruppen begränsade till att endast användas i gruppfilsbaserade mål för företag? (Ja eller Nej)
+- Är attributen i målgruppen begränsade till gruppfilsbaserade mål för företag? (Ja eller Nej)
 
 +++Svar
 
-Ja, attribut i målgruppen är begränsade till att endast användas i gruppfilsbaserade mål för företag.
+Nej. Utökade attribut för målgruppen kan användas både i grupper och på filbaserade destinationer. Om du råkar ut för ett fel som&quot;Följande segment-ID:n har namnutrymmen som inte tillåts för det här målet: e917f626-a038-42f7-944c-xyxyx&quot; skapar du ett nytt segment i Data Distiller och använder det med alla tillgängliga mål.
 
 +++
 
@@ -195,45 +193,11 @@ Målgrupper som framställer data är inte tillgängliga i Adobe Journey Optimiz
 
 +++
 
-- Hur ska jag skapa två Data Distiller-målgrupper med olika scheman? Hur många datauppsättningar som skapas och markeras de för profil?
-
-+++Svar
-
-Två datauppsättningar skapas eftersom varje målgrupp har en underliggande datauppsättning. Dessa datauppsättningar är dock inte markerade som Profil. De två datauppsättningarna hanteras enligt sina egna individuella scheman.
-
-+++
-
-- Hur tar jag bort en publik?
-
-+++Svar
-
-Om du vill ta bort en målgrupp kan du använda kommandot [`DROP AUDIENCE`](#delete-audience) i kommandoradsgränssnittet eller använda snabbåtgärderna på arbetsytan [Publiker](../../segmentation/ui/audience-portal.md#quick-actions). Obs! Publiker som används i underordnade destinationer eller är beroende av andra målgrupper kan inte tas bort.
-
-+++
-
-- När jag publicerar en målgrupp till en profil, hur snart är den tillgänglig i segmentbyggargränssnittet och när blir den tillgänglig i Destinations?
-
-+++Svar
-
-När exporten av ögonblicksbilder är klar kan profiler ses i publiken.
-
-+++
-
 - Tar Data Distiller-målgrupper bort var 30:e dag eftersom de är externa målgrupper?
 
 +++Svar
 
 Ja, Distiller målgrupper tas bort var 30:e dag eftersom de är externa målgrupper.
-
-+++
-
-- Visas Data Distiller Audiences i publikinventeringen?
-
-+++Svar
-
-Ja, Data Distiller Audiences visas i publiklagret under det ursprungliga namnet Data Distiller.
-
-+++
 
 +++
 
