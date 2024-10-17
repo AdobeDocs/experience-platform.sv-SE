@@ -4,10 +4,10 @@ solution: Experience Platform
 title: API-slutpunkt för mått
 description: Lär dig hur du hämtar mätvärden för observerbarhet i Experience Platform med API:t för observationsinsikter.
 exl-id: 08d416f0-305a-44e2-a2b7-d563b2bdd2d2
-source-git-commit: fcd44aef026c1049ccdfe5896e6199d32b4d1114
+source-git-commit: 39eda018611d0244eaff908e924afa93dc46e14d
 workflow-type: tm+mt
-source-wordcount: '1360'
-ht-degree: 0%
+source-wordcount: '1278'
+ht-degree: 1%
 
 ---
 
@@ -56,8 +56,7 @@ curl -X POST \
                 "groupBy": true
               }
             ],
-            "aggregator": "sum",
-            "downsample": "sum"
+            "aggregator": "sum"
           },
           {
             "name": "timeseries.ingestion.dataset.dailysize",
@@ -79,12 +78,11 @@ curl -X POST \
 | --- | --- |
 | `start` | Det tidigaste datum/den tidigaste tid från vilken mätdata ska hämtas. |
 | `end` | Det senaste datumet/den senaste tiden från vilket mätdata ska hämtas. |
-| `granularity` | Ett valfritt fält som anger tidsintervallet för att dividera mätdata med. Värdet `DAY` returnerar till exempel mått för varje dag mellan `start` och `end`, medan värdet `MONTH` grupperar mätresultaten per månad i stället. När du använder det här fältet måste även en motsvarande `downsample`-egenskap anges för att ange aggregeringsfunktionen som data ska grupperas med. |
+| `granularity` | Ett valfritt fält som anger tidsintervallet för att dividera mätdata med. Värdet `DAY` returnerar till exempel mått för varje dag mellan `start` och `end`, medan värdet `MONTH` grupperar mätresultaten per månad i stället. |
 | `metrics` | En array med objekt, en för varje mätvärde som du vill hämta. |
 | `name` | Namnet på ett mätvärde som identifieras av observabilitetsinsikter. I [bilagan](#available-metrics) finns en fullständig lista över giltiga måttnamn. |
 | `filters` | Ett valfritt fält där du kan filtrera mätvärden efter specifika datauppsättningar. Fältet är en array med objekt (ett för varje filter), där varje objekt innehåller följande egenskaper: <ul><li>`name`: Den typ av entitet som mätvärden ska filtreras mot. För närvarande stöds bara `dataSets`.</li><li>`value`: ID för en eller flera datauppsättningar. Flera datauppsättnings-ID kan anges som en enda sträng, där varje ID avgränsas med lodräta streck (`\|`).</li><li>`groupBy`: Om värdet är true anger det att motsvarande `value` representerar flera datauppsättningar vars mätresultat ska returneras separat. Om värdet är false grupperas mätresultaten för de datauppsättningarna tillsammans.</li></ul> |
-| `aggregator` | Anger den aggregeringsfunktion som ska användas för att gruppera poster med flera serier till enstaka resultat. Mer information om tillgängliga aggregerare finns i [OpenTSDB-dokumentationen](https://docs.w3cub.com/opentsdb/user_guide/query/aggregators). |
-| `downsample` | Ett valfritt fält som gör att du kan ange en aggregeringsfunktion för att minska samplingsfrekvensen för mätdata genom att sortera fält i intervall (eller&quot;bucket&quot;). Intervallet för nedsampling bestäms av egenskapen `granularity`. Mer information om nedsampling finns i [OpenTSDB-dokumentationen](https://docs.w3cub.com/opentsdb/user_guide/query/aggregators). |
+| `aggregator` | Anger den aggregeringsfunktion som ska användas för att gruppera poster med flera serier till enstaka resultat. De aggregerare som stöds för närvarande är min, max, sum och avg beroende på metrisk definition. |
 
 {style="table-layout:auto"}
 
@@ -221,8 +219,7 @@ I följande tabell visas mätvärden för Adobe Experience Platform [!DNL Identi
 | ---- | ---- | ---- |
 | timeseries.identity.dataset.recordsuccess.count | Antal poster som skrivits till deras datakälla av [!DNL Identity Service], för en datamängd eller alla datamängder. | Datauppsättnings-ID |
 | timeseries.identity.dataset.recordfailed.count | Antal poster som misslyckades av [!DNL Identity Service], för en datauppsättning eller för alla datauppsättningar. | Datauppsättnings-ID |
-| timeseries.identity.dataset.namespacecode.recordfailed.count | Antal Identity-poster som misslyckades av ett namnutrymme. | Namnområdes-ID (**Obligatoriskt**) |
-| timeseries.identity.dataset.namespacecode.recordskipped.count | Antal Identitetsposter som hoppats över av ett namnutrymme. | Namnområdes-ID (**Obligatoriskt**) |
+| timeseries.identity.dataset.namespacecode.recordskipped.count | Antal Identitetsposter som hoppats över. | Organisations-ID |
 | timeseries.identity.graph.imsorg.uniqueidentities.count | Antal unika identiteter som lagras i identitetsdiagrammet för din organisation. | N/A |
 | timeseries.identity.graph.imsorg.namespacecode.uniqueidentities.count | Antal unika identiteter som lagras i identitetsdiagrammet för ett namnutrymme. | Namnområdes-ID (**Obligatoriskt**) |
 | timeseries.identity.graph.imsorg.graphstrength.uniqueidentities.count | Antal unika identiteter som lagras i identitetsdiagrammet för din organisation för en viss grafikstyrka (&quot;unknown&quot;,&quot;svag&quot; eller&quot;strong&quot;). | Diagramstyrka (**krävs**) |
