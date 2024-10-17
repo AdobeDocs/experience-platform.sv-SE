@@ -3,9 +3,9 @@ solution: Experience Platform
 title: PQL filterfunktioner
 description: Filterfunktioner används för att filtrera data i arrayer i Profile Query Language (PQL).
 exl-id: 09d66be3-30dc-4488-84a1-cfd09c44470d
-source-git-commit: dbb7e0987521c7a2f6512f05eaa19e0121aa34c6
+source-git-commit: 7c282594e66c8c7700471a94947448fd91596814
 workflow-type: tm+mt
-source-wordcount: '203'
+source-wordcount: '211'
 ht-degree: 0%
 
 ---
@@ -16,7 +16,7 @@ Filterfunktioner används för att filtrera data inom arrayer i [!DNL Profile Qu
 
 ## Filter
 
-Funktionen `[]` (filter) tillåter att filter tillämpas på en array och returnerar en delmängd av arrayen som matchar det angivna villkoret.
+Funktionen `[]` (filter) tillåter att filter tillämpas på en array och returnerar en delmängd av arrayen som matchar det angivna villkoret. Därför returnerar den här funktionen en array.
 
 **Format**
 

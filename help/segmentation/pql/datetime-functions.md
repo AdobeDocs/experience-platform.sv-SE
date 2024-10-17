@@ -3,9 +3,9 @@ solution: Experience Platform
 title: Datum- och tidsfunktioner i PQL
 description: Datum- och tidsfunktioner används för att utföra datum- och tidsåtgärder på värden inom Profile Query Language (PQL).
 exl-id: 8cbffcb6-1c25-454f-8f02-eca602318e5e
-source-git-commit: dbb7e0987521c7a2f6512f05eaa19e0121aa34c6
+source-git-commit: c4d034a102c33fda81ff27bee73a8167e9896e62
 workflow-type: tm+mt
-source-wordcount: '493'
+source-wordcount: '496'
 ht-degree: 0%
 
 ---
@@ -124,7 +124,7 @@ product.sale.getDayOfMonth() <= 15
 
 ## Inträffar
 
-Funktionen `occurs` jämför den angivna tidsstämpelfunktionen med en fast tidsperiod.
+Funktionen `occurs` jämför den angivna tidsstämpelfunktionen med en fast tidsperiod som ett booleskt värde.
 
 **Format**
 

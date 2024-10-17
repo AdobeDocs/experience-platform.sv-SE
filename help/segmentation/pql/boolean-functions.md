@@ -3,9 +3,9 @@ solution: Experience Platform
 title: PQL booleska funktioner
 description: Booleska funktioner används för att utföra boolesk logik för olika element i Profile Query Language (PQL).
 exl-id: 68a4a8cc-88ad-41b1-b9fc-c2b4ab7d0122
-source-git-commit: dbb7e0987521c7a2f6512f05eaa19e0121aa34c6
+source-git-commit: c4d034a102c33fda81ff27bee73a8167e9896e62
 workflow-type: tm+mt
-source-wordcount: '239'
+source-wordcount: '248'
 ht-degree: 0%
 
 ---
@@ -16,7 +16,7 @@ Booleska funktioner används för att utföra boolesk logik för olika element i
 
 ## Och
 
-Funktionen `and` används för att skapa en logisk koppling.
+Funktionen `and` används för att skapa en logisk koppling som ett booleskt värde.
 
 **Format**
 
@@ -34,7 +34,7 @@ homeAddress.countryISO = "CA" and person.birthYear = 1985
 
 ## eller
 
-Funktionen `or` används för att skapa en logisk förskjutning.
+Funktionen `or` används för att skapa en logisk avvikelse som ett booleskt värde.
 
 **Format**
 
@@ -71,7 +71,7 @@ not (homeAddress.countryISO = "CA")
 
 ## If
 
-Funktionen `if` används för att matcha ett uttryck beroende på om ett angivet villkor är sant.
+Funktionen `if` används för att matcha ett uttryck beroende på om ett angivet villkor är true som booleskt värde.
 
 **Format**
 

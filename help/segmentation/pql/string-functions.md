@@ -3,9 +3,9 @@ solution: Experience Platform
 title: Strängfunktioner i PQL
 description: Profile Query Language (PQL) har funktioner som underlättar interaktion med strängar.
 exl-id: 9fd79d86-0802-4312-abce-f6ef5ba5bb34
-source-git-commit: dbb7e0987521c7a2f6512f05eaa19e0121aa34c6
+source-git-commit: c4d034a102c33fda81ff27bee73a8167e9896e62
 workflow-type: tm+mt
-source-wordcount: '815'
+source-wordcount: '848'
 ht-degree: 1%
 
 ---
@@ -16,7 +16,7 @@ ht-degree: 1%
 
 ## Gilla
 
-Funktionen `like` används för att avgöra om en sträng matchar ett angivet mönster.
+Funktionen `like` används för att avgöra om en sträng matchar ett angivet mönster som ett booleskt värde.
 
 **Format**
 
@@ -39,7 +39,7 @@ city like "%es%"
 
 ## Börjar med
 
-Funktionen `startsWith` används för att avgöra om en sträng börjar med en angiven delsträng.
+Funktionen `startsWith` används för att avgöra om en sträng börjar med en angiven delsträng som boolesk.
 
 **Format**
 
@@ -63,7 +63,7 @@ person.name.startsWith("Joe")
 
 ## Börjar inte med
 
-Funktionen `doesNotStartWith` används för att avgöra om en sträng inte börjar med en angiven delsträng.
+Funktionen `doesNotStartWith` används för att avgöra om en sträng inte börjar med en angiven delsträng som boolesk.
 
 **Format**
 
@@ -87,7 +87,7 @@ person.name.doesNotStartWith("Joe")
 
 ## Slutar med
 
-Funktionen `endsWith` används för att avgöra om en sträng avslutas med en angiven delsträng.
+Funktionen `endsWith` används för att avgöra om en sträng avslutas med en angiven delsträng som boolesk.
 
 **Format**
 
@@ -111,7 +111,7 @@ person.emailAddress.endsWith(".com")
 
 ## Slutar inte med
 
-Funktionen `doesNotEndWith` används för att avgöra om en sträng inte avslutas med en angiven delsträng.
+Funktionen `doesNotEndWith` används för att avgöra om en sträng inte avslutas med en angiven delsträng som boolesk.
 
 **Format**
 
@@ -135,7 +135,7 @@ person.emailAddress.doesNotEndWith(".com")
 
 ## Innehåller
 
-Funktionen `contains` används för att avgöra om en sträng innehåller en angiven delsträng.
+Funktionen `contains` används för att avgöra om en sträng innehåller en angiven delsträng som boolesk.
 
 **Format**
 
@@ -159,7 +159,7 @@ person.emailAddress.contains("2010@gm")
 
 ## Innehåller inte
 
-Funktionen `doesNotContain` används för att avgöra om en sträng inte innehåller en angiven delsträng.
+Funktionen `doesNotContain` används för att avgöra om en sträng inte innehåller en angiven delsträng som boolesk.
 
 **Format**
 
@@ -183,7 +183,7 @@ person.emailAddress.doesNotContain("2010@gm")
 
 ## Lika med
 
-Funktionen `equals` används för att avgöra om en sträng är lika med den angivna strängen.
+Funktionen `equals` används för att avgöra om en sträng är lika med den angivna strängen som ett booleskt värde.
 
 **Format**
 
@@ -206,7 +206,7 @@ person.name.equals("John")
 
 ## Inte lika med
 
-Funktionen `notEqualTo` används för att avgöra om en sträng inte är lika med den angivna strängen.
+Funktionen `notEqualTo` används för att avgöra om en sträng inte är lika med den angivna strängen som ett booleskt värde.
 
 **Format**
 
@@ -229,7 +229,7 @@ person.name.notEqualTo("John")
 
 ## Matchar
 
-Funktionen `matches` används för att avgöra om en sträng matchar ett visst reguljärt uttryck. Mer information om att matcha mönster i reguljära uttryck finns i [det här dokumentet](https://docs.oracle.com/javase/8/docs/api/java/util/regex/Pattern.html).
+Funktionen `matches` används för att avgöra om en sträng matchar ett visst reguljärt uttryck. Mer information om att matcha mönster i reguljära uttryck som booleska uttryck finns i [det här dokumentet](https://docs.oracle.com/javase/8/docs/api/java/util/regex/Pattern.html).
 
 **Format**
 
@@ -251,7 +251,7 @@ person.name.matches("(?i)^John")
 
 ## Grupp för reguljära uttryck
 
-Funktionen `regexGroup` används för att extrahera specifik information baserat på det reguljära uttrycket som anges.
+Funktionen `regexGroup` används för att extrahera specifik information baserat på det reguljära uttrycket som anges som en sträng.
 
 **Format**
 

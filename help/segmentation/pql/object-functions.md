@@ -3,9 +3,9 @@ solution: Experience Platform
 title: PQL objektfunktioner
 description: Profile Query Language (PQL) har funktioner som gör det enklare att interagera med objekt.
 exl-id: e65257d8-5bc8-46c8-8487-33bc7ce4059b
-source-git-commit: dbb7e0987521c7a2f6512f05eaa19e0121aa34c6
+source-git-commit: c4d034a102c33fda81ff27bee73a8167e9896e62
 workflow-type: tm+mt
-source-wordcount: '121'
+source-wordcount: '127'
 ht-degree: 0%
 
 ---
@@ -16,7 +16,7 @@ ht-degree: 0%
 
 ## Är null
 
-Funktionen `isNull` avgör om en objektreferens inte finns.
+Funktionen `isNull` avgör om en objektreferens inte finns som boolesk.
 
 **Format**
 
@@ -34,7 +34,7 @@ person.homeAddress.isNull()
 
 ## Är inte null
 
-Funktionen `isNotNull` avgör om det finns en objektreferens.
+Funktionen `isNotNull` avgör om en objektreferens finns som boolesk.
 
 **Format**
 

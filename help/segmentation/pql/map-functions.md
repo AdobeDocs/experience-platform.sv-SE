@@ -3,9 +3,9 @@ solution: Experience Platform
 title: PQL Map-funktioner
 description: Profile Query Language (PQL) har funktioner som underlättar interaktion med kartor.
 exl-id: f23616f2-c0dd-40ce-8cfc-c757542fbd05
-source-git-commit: dbb7e0987521c7a2f6512f05eaa19e0121aa34c6
+source-git-commit: c4d034a102c33fda81ff27bee73a8167e9896e62
 workflow-type: tm+mt
-source-wordcount: '156'
+source-wordcount: '169'
 ht-degree: 0%
 
 ---
@@ -16,7 +16,7 @@ ht-degree: 0%
 
 ## Hämta
 
-Funktionen `get` används för att hämta värdet för en karta för en given nyckel.
+Funktionen `get` används för att hämta värdet för en karta för en given nyckel som ett objekt.
 
 **Format**
 
@@ -34,7 +34,7 @@ identityMap.get("example@example.com")
 
 ## Tangenter
 
-Funktionen `keys` används för att hämta alla nycklar för en given karta.
+Funktionen `keys` används för att hämta alla nycklar för en given karta som en matris eller lista.
 
 **Format**
 
@@ -52,7 +52,7 @@ identityMap.keys()
 
 ## Värden
 
-Funktionen `values` används för att hämta alla värden för en given karta.
+Funktionen `values` används för att hämta alla värden för en given karta som en matris eller lista.
 
 **Format**
 

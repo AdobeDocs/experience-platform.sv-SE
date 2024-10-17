@@ -3,9 +3,9 @@ solution: Experience Platform
 title: PAL - aritmetiska funktioner
 description: Aritmetiska funktioner används för att utföra grundläggande beräkningar av värden i Profile Query Language (PQL).
 exl-id: 3540ef7c-dbe4-4302-a414-3cf85618f870
-source-git-commit: dbb7e0987521c7a2f6512f05eaa19e0121aa34c6
+source-git-commit: c4d034a102c33fda81ff27bee73a8167e9896e62
 workflow-type: tm+mt
-source-wordcount: '243'
+source-wordcount: '258'
 ht-degree: 0%
 
 ---
@@ -16,7 +16,7 @@ Aritmetiska funktioner används för att utföra grundläggande beräkningar på
 
 ## Lägg till
 
-Funktionen `+` (addition) används för att hitta summan av två argumentuttryck.
+Funktionen `+` (addition) används för att hitta summan av två argumentuttryck som ett tal.
 
 **Format**
 
@@ -34,7 +34,7 @@ product1.price + product2.price
 
 ## Multiplicera
 
-Funktionen `*` (multiplikation) används för att hitta produkten av två argumentuttryck.
+Funktionen `*` (multiplikation) används för att hitta produkten av två argumentuttryck som ett tal.
 
 **Format**
 
@@ -52,7 +52,7 @@ product.inventory * product.price
 
 ## Ta bort
 
-Funktionen `-` (subtraktion) används för att hitta skillnaden mellan två argumentuttryck.
+Funktionen `-` (subtraktion) används för att hitta skillnaden mellan två argumentuttryck som ett tal.
 
 **Format**
 
@@ -70,7 +70,7 @@ product1.price - product2.price
 
 ## Dela
 
-Funktionen `/` (division) används för att hitta kvoten mellan två argumentuttryck.
+Funktionen `/` (division) används för att hitta kvoten av två argumentuttryck som ett tal.
 
 **Format**
 
@@ -88,7 +88,7 @@ totalProduct.price / totalProduct.sold
 
 ## Återstående
 
-Funktionen `%` (modulo/rest) används för att hitta resten efter att de två argumentuttrycken har delats.
+Funktionen `%` (modulo/rest) används för att hitta resten efter att de två argumentuttrycken delats som ett tal.
 
 **Format**
 
