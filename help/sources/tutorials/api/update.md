@@ -1,22 +1,23 @@
 ---
-keywords: Experience Platform;hem;populära ämnen;flödestjänst;uppdatera konton
-solution: Experience Platform
 title: Uppdatera konton med API:t för Flow Service
-type: Tutorial
 description: I den här självstudiekursen beskrivs stegen för hur du uppdaterar information och autentiseringsuppgifter för ett konto med API:t för Flow Service.
 exl-id: a93385fd-ed36-457f-8882-41e37f6f209d
-source-git-commit: 59dfa862388394a68630a7136dee8e8988d0368c
+source-git-commit: 9e1edaa4183a8025b8391f58d480063adc834616
 workflow-type: tm+mt
-source-wordcount: '519'
+source-wordcount: '539'
 ht-degree: 0%
 
 ---
 
 # Uppdatera konton med API:t för Flow Service
 
-Under vissa omständigheter kan det vara nödvändigt att uppdatera informationen för en befintlig källanslutning. [!DNL Flow Service] ger dig möjlighet att lägga till, redigera och ta bort information om en befintlig batch- eller direktuppspelningsanslutning, inklusive namn, beskrivning och autentiseringsuppgifter.
+Under vissa omständigheter kan det vara nödvändigt att uppdatera informationen för en befintlig basanslutning. [!DNL Flow Service] ger dig möjlighet att lägga till, redigera och ta bort information om en befintlig batch- eller direktuppspelningsanslutning, inklusive namn, beskrivning och autentiseringsuppgifter.
 
 I den här självstudien beskrivs stegen för hur du uppdaterar information och autentiseringsuppgifter för en anslutning med [[!DNL Flow Service] API](https://www.adobe.io/experience-platform-apis/references/flow-service/).
+
+>[!TIP]
+>
+>Du behöver inte skapa en ny basanslutning när en uppdatering krävs. Alla ändringar du gör i din basanslutning återspeglas i det tillhörande dataflödet.
 
 ## Komma igång
 

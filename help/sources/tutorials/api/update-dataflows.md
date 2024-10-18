@@ -1,13 +1,10 @@
 ---
-keywords: Experience Platform;hem;populära ämnen;flödestjänst;uppdatera dataflöden
-solution: Experience Platform
 title: Uppdatera dataflöden med API:t för Flow Service
-type: Tutorial
-description: I den här självstudiekursen beskrivs stegen för att uppdatera ett dataflöde, inklusive namn, beskrivning och schema, med API:t för Flow Service.
+description: Lär dig hur du skapar ett dataflöde, inklusive dess namn, beskrivning och schema, med API:t för Flow Service.
 exl-id: 367a3a9e-0980-4144-a669-e4cfa7a9c722
-source-git-commit: 59dfa862388394a68630a7136dee8e8988d0368c
+source-git-commit: 9e1edaa4183a8025b8391f58d480063adc834616
 workflow-type: tm+mt
-source-wordcount: '603'
+source-wordcount: '656'
 ht-degree: 0%
 
 ---
@@ -15,6 +12,10 @@ ht-degree: 0%
 # Uppdatera dataflöden med API:t för Flow Service
 
 I den här självstudiekursen beskrivs stegen för att uppdatera ett dataflöde, inklusive dess grundläggande information, schema och mappningsuppsättningar med [[!DNL Flow Service] API](https://www.adobe.io/experience-platform-apis/references/flow-service/).
+
+>[!TIP]
+>
+>Källanslutningen och målanslutningen bör mappas till ett enda dataflöde. Du bör inte uppdatera käll- och målanslutningarna separat eftersom ändringarna inte återspeglas i deras motsvarande dataflöde. Om ditt användningsfall kräver en uppdatering av käll- och målanslutningarna måste du skapa ett nytt par käll- och målanslutningar samt ett nytt dataflöde.
 
 ## Komma igång
 
@@ -49,11 +50,11 @@ Följande begäran hämtar uppdaterad information om ditt flödes-ID.
 
 ```shell
 curl -X GET \
-    'https://platform.adobe.io/data/foundation/flowservice/flows/2edc08ac-4df5-4fe6-936f-81a19ce92f5c' \
-    -H 'Authorization: Bearer {ACCESS_TOKEN}' \
-    -H 'x-api-key: {API_KEY}' \
-    -H 'x-gw-ims-org-id: {ORG_ID}' \
-    -H 'x-sandbox-name: {SANDBOX_NAME}'
+  'https://platform.adobe.io/data/foundation/flowservice/flows/2edc08ac-4df5-4fe6-936f-81a19ce92f5c' \
+  -H 'Authorization: Bearer {ACCESS_TOKEN}' \
+  -H 'x-api-key: {API_KEY}' \
+  -H 'x-gw-ims-org-id: {ORG_ID}' \
+  -H 'x-sandbox-name: {SANDBOX_NAME}'
 ```
 
 **Svar**
