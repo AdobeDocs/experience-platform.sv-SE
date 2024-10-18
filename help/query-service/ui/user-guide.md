@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Användargränssnittshandbok för frågeredigeraren
 description: Frågeredigeraren är ett interaktivt verktyg som tillhandahålls av Adobe Experience Platform Query Service, som gör att du kan skriva, validera och köra frågor för kundupplevelsedata i användargränssnittet i Experience Platform. Frågeredigeraren har stöd för att utveckla frågor för analys och datautforskande, och gör att du kan köra interaktiva frågor i utvecklingssyfte samt icke-interaktiva frågor för att fylla i datauppsättningar i Experience Platform.
 exl-id: d7732244-0372-467d-84e2-5308f42c5d51
-source-git-commit: f68dd020b05d1eaf6d873b9cdc2a40007ad60c84
+source-git-commit: e66f3540d22a441089916183538921ea5654b312
 workflow-type: tm+mt
-source-wordcount: '2763'
+source-wordcount: '2761'
 ht-degree: 0%
 
 ---
@@ -200,12 +200,12 @@ Om en fråga har schemalagts ger fliken [!UICONTROL Scheduled Queries] förbätt
 >
 >Frågor som inte körs sparas inte av loggen. För att frågan ska vara tillgänglig i frågetjänsten måste den köras eller sparas i frågeredigeraren.
 
-### [!BADGE Beta]{type=Informative} Objektwebbläsare {#object-browser}
+### [!BADGE Begränsad tillgänglighet]{type=Informative} Objektwebbläsare {#object-browser}
 
 >[!AVAILABILITY]
 >
 Datauppsättningsnavigeringsfältet är bara tillgängligt för Data Distiller-kunder. Plattformsgränssnittet kanske inte innehåller den vänstra datamängdsnavigeringslisten. Andra bilder i det här dokumentet kanske inte motsvarar navigeringslisten för datauppsättningar. Kontakta din Adobe-representant om du vill ha mer information.<br>
-Objektwebbläsaren är för närvarande i betaversion och endast tillgänglig i en **begränsad version** . Kontakta din Adobe-representant för att få tillgång till tidig release.
+Objektwebbläsaren är för närvarande bara tillgänglig i en **begränsad version** . Kontakta din Adobe-representant för att få tillgång till tidig release.
 
 Använd objektwebbläsaren för att enkelt söka efter och filtrera datauppsättningar. Objektwebbläsaren minskar tiden som går åt till att söka efter tabeller och datauppsättningar i stora miljöer med många datauppsättningar. Med smidig åtkomst till relevanta data och metadata kan du fokusera mer på att skapa frågor och inte på navigering.
 
