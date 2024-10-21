@@ -2,9 +2,9 @@
 title: Namnområdesprioritet
 description: Läs om namnområdesprioritet i identitetstjänsten.
 exl-id: bb04f02e-3826-45af-b935-752ea7e6ed7c
-source-git-commit: aae82bc84eff7584098ddb35a481d7349ff837c4
+source-git-commit: b50633a8518f32051549158b23dfc503db255a82
 workflow-type: tm+mt
-source-wordcount: '1601'
+source-wordcount: '1696'
 ht-degree: 1%
 
 ---
@@ -107,7 +107,7 @@ Anta att följande konfigurationer har skapats för en viss sandlåda:
 
 Med tanke på de konfigurationer som beskrivs ovan kommer användaråtgärder och fastställande av primär identitet att lösas som sådana:
 
-| Användaråtgärd (Experience-händelse) | Autentiseringstillstånd | Datakälla | Identitetskarta | Primär identitet (primärnyckel för profilfragment) |
+| Användaråtgärd (Experience-händelse) | Autentiseringstillstånd | Datakälla | Namnutrymmen i händelse | Namnområde för primär identitet |
 | --- | --- | --- | --- | --- |
 | Visa erbjudandesida för kreditkort | Oautentiserad (anonym) | Web SDK | {ECID} | ECID |
 | Visa hjälpsidan | Oautentiserad | Mobile SDK | {ECID, IDFA} | IDFA |
@@ -121,12 +121,16 @@ Med tanke på de konfigurationer som beskrivs ovan kommer användaråtgärder oc
 
 ![Ett diagram över segmentmedlemskapslagring](../images/namespace-priority/segment-membership-storage.png)
 
-För en given sammanfogad profil lagras segmentmedlemskap mot identiteten med namnutrymmet med högst prioritet.
+För en given sammanfogad profil lagras segmentmedlemskap mot identiteten med den högsta namnområdesprioriteten.
 
 Anta till exempel att det finns två profiler:
 
-* Den första profilen representerar John.
-* Den andra profilen representerar Jane.
+* Profil 1 representerar John.
+   * Johns profil kvalificerar sig för S1 (segmentmedlemskap 1). S1 kan till exempel referera till ett kundsegment som identifierar som manligt.
+   * Johns profil berättigar också till S2 (segmentmedlemskap 2). Detta kan gälla ett segment av kunder vars lojalitetsstatus är guld.
+* Profil 2 representerar Jane.
+   * Jane&#39;s profile eligibility for S3 (segment membership 3). Detta kan gälla ett segment av kunder som identifieras som kvinnliga.
+   * Jane&#39;s profile also eligible for S4 (segment membership 4). Detta kan gälla ett segment av kunder vars lojalitetsstatus är platina.
 
 Om John och Jane delar en enhet överförs ECID (webbläsare) från en person till en annan. Detta påverkar dock inte segmentmedlemskapsinformationen som lagras mot John och Jane.
 
@@ -141,15 +145,13 @@ I det här avsnittet beskrivs hur namnområdesprioriteten kan påverka andra Exp
 Funktioner för borttagning av datahygienpost på följande sätt för en viss identitet:
 
 * Kundprofil i realtid: Tar bort alla profilfragment med angiven identitet som primär identitet. **Den primära identiteten i profilen bestäms nu utifrån namnområdesprioritet.**
-* Datasjön: Tar bort alla poster med den angivna identiteten som primär identitet.
+* Datasjön: Tar bort alla poster med den angivna identiteten som primär identitet. Till skillnad från kundprofil i realtid baseras den primära identiteten i datasjön på den primära identitet som anges i WebSDK (`primary=true`) eller ett fält som markerats som primär identitet
 
 Mer information finns i [Översikt över avancerad livscykelhantering](../../hygiene/home.md).
 
 ### Beräknade attribut
 
-Beräknade attribut använder inte namnområdesprioritet för att beräkna värden. Om du använder beräknade attribut måste du se till att CRMID har angetts som din primära identitet för WebSDK. Denna begränsning förväntas bli löst i augusti 2024.
-
-Mer information finns i användargränssnittshandboken för [beräknade attribut](../../profile/computed-attributes/ui.md).
+Beräknade attribut använder inte namnområdesprioritet för att beräkna värden. Om du använder beräknade attribut måste du se till att CRMID har angetts som din primära identitet för WebSDK. Mer information finns i användargränssnittshandboken för [beräknade attribut](../../profile/computed-attributes/ui.md).
 
 ### Data Lake
 

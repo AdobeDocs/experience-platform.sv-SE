@@ -2,9 +2,9 @@
 title: Felsökningsguide för länkningsregler för identitetsdiagram
 description: Lär dig hur du felsöker vanliga problem i länkningsregler för identitetsdiagram.
 exl-id: 98377387-93a8-4460-aaa6-1085d511cacc
-source-git-commit: cfe0181104f09bfd91b22d165c23154a15cd5344
+source-git-commit: b50633a8518f32051549158b23dfc503db255a82
 workflow-type: tm+mt
-source-wordcount: '3240'
+source-wordcount: '3328'
 ht-degree: 0%
 
 ---
@@ -59,8 +59,8 @@ Inom ramen för länkningsreglerna för identitetsdiagram kan en post refuseras 
 
 Tänk på följande händelse med två antaganden:
 
-* Fältnamnet CRMID är markerat som en identitet med namnutrymmet CRMID.
-* Namnutrymmets CRMID definieras som ett unikt namnutrymme.
+1. Fältnamnet CRMID är markerat som en identitet med namnutrymmet CRMID.
+2. Namnutrymmets CRMID definieras som ett unikt namnutrymme.
 
 Följande händelse returnerar ett felmeddelande som anger att importen misslyckades.
 
@@ -123,6 +123,24 @@ När du har kört frågan letar du reda på den händelsepost som du förväntad
 >
 >Om de två identiteterna är exakt likadana, och om händelsen hämtas via direktuppspelning, kommer både Identitet och Profil att deduplicera identiteten.
 
+### ExperienceEvents efter autentisering tilldelas fel autentiserade profil
+
+Namnområdesprioriteten spelar en viktig roll i hur händelsefragment bestämmer den primära identiteten.
+
+* När du har konfigurerat och sparat dina [identitetsinställningar](./identity-settings-ui.md) för en viss sandlåda använder profilen [namnområdesprioritet](namespace-priority.md#real-time-customer-profile-primary-identity-determination-for-experience-events) för att fastställa den primära identiteten. När det gäller identityMap kommer Profile inte längre att använda flaggan `primary=true`.
+* Profilen refererar inte längre till den här flaggan, men andra tjänster på Experience Platform kan fortsätta använda flaggan `primary=true`.
+
+För att [autentiserade användarhändelser](implementation-guide.md#ingest-your-data) ska kunna kopplas till personnamnområdet måste alla autentiserade händelser innehålla personnamnområdet (CRMID). Detta innebär att även efter att en användare har loggat in måste personens namnutrymme fortfarande finnas på varje autentiserad händelse.
+
+Du kan fortsätta att se flaggan `primary=true` events när du söker efter en profil i profilvisningsprogrammet. Detta ignoreras dock och används inte av profilen.
+
+AAID:n blockeras som standard. Om du använder [Adobe Analytics-källkopplingen](../../sources/tutorials/ui/create/adobe-applications/analytics.md) måste du därför se till att ECID prioriteras högre än ECID så att de oautentiserade händelserna får en primär ECID-identitet.
+
+**Felsökningssteg**
+
+1. Om du vill verifiera att autentiserade händelser innehåller både namnområdet för person och cookie läser du stegen som beskrivs i avsnittet [felsökningsfel för data som inte hämtas till identitetstjänsten](#my-identities-are-not-getting-ingested-into-identity-service).
+2. Om du vill verifiera att autentiserade händelser har den primära identiteten för personnamnutrymmet (t.ex. CRMID), söker du i namnutrymmet person i profilvisningsprogrammet med principen för sammanfogning utan sammanfogning (detta är den sammanfogningsprincip som inte använder ett privat diagram). Den här sökningen returnerar bara händelser som är associerade med personnamnutrymmet.
+
 ### Mina upplevelsehändelsefragment importeras inte till profilen {#my-experience-event-fragments-are-not-getting-ingested-into-profile}
 
 Det finns olika orsaker till varför dina händelsefragment inte kommer in i profilen, bland annat men inte begränsat till:
@@ -171,29 +189,11 @@ De här två frågorna förutsätter att:
 * En identitet skickas från identityMap och en annan identitet skickas från en identitetsbeskrivning. **OBS!**: I XDM-scheman (Experience Data Model) är identitetsbeskrivningen det fält som markerats som en identitet.
 * CRMID skickas via identityMap. Om CRMID skickas som ett fält tar du bort `key='Email'` från WHERE-satsen.
 
-### Mina upplevelsehändelsefragment är inkapslade, men har fel primära identitet i profilen
-
-Namnområdesprioriteten spelar en viktig roll i hur händelsefragment bestämmer den primära identiteten.
-
-* När du har konfigurerat och sparat dina [identitetsinställningar](./identity-settings-ui.md) för en viss sandlåda använder profilen [namnområdesprioritet](namespace-priority.md#real-time-customer-profile-primary-identity-determination-for-experience-events) för att fastställa den primära identiteten. När det gäller identityMap kommer Profile inte längre att använda flaggan `primary=true`.
-* Profilen refererar inte längre till den här flaggan, men andra tjänster på Experience Platform kan fortsätta använda flaggan `primary=true`.
-
-För att [autentiserade användarhändelser](implementation-guide.md#ingest-your-data) ska kunna kopplas till personnamnområdet måste alla autentiserade händelser innehålla personnamnområdet (CRMID). Detta innebär att även efter att en användare har loggat in måste personens namnutrymme fortfarande finnas på varje autentiserad händelse.
-
-Du kan fortsätta att se flaggan `primary=true` events när du söker efter en profil i profilvisningsprogrammet. Detta ignoreras dock och används inte av profilen.
-
-AAID:n blockeras som standard. Om du använder [Adobe Analytics-källkopplingen](../../sources/tutorials/ui/create/adobe-applications/analytics.md) måste du därför se till att ECID prioriteras högre än ECID så att de oautentiserade händelserna får en primär ECID-identitet.
-
-**Felsökningssteg**
-
-* Om du vill verifiera att autentiserade händelser innehåller både namnområdet för person och cookie läser du stegen som beskrivs i avsnittet [felsökningsfel för data som inte hämtas till identitetstjänsten](#my-identities-are-not-getting-ingested-into-identity-service).
-* Om du vill verifiera att autentiserade händelser har den primära identiteten för personnamnutrymmet (t.ex. CRMID), söker du i namnutrymmet person i profilvisningsprogrammet med principen för sammanfogning utan sammanfogning (detta är den sammanfogningsprincip som inte använder ett privat diagram). Den här sökningen returnerar bara händelser som är associerade med personnamnutrymmet.
-
 ## Problem relaterade till diagrambeteende {#graph-behavior-related-issues}
 
 I det här avsnittet beskrivs vanliga problem som du kan råka ut för när identitetsdiagrammet fungerar.
 
-### Identiteten länkas till fel person
+### Oautentiserade ExperienceEvents kopplas till fel autentiserade profil
 
 Identitetsoptimeringsalgoritmen respekterar [de senast upprättade länkarna och tar bort de äldsta länkarna](./identity-optimization-algorithm.md#identity-optimization-algorithm-details). Det är därför möjligt att när den här funktionen är aktiverad kan ECID:n omtilldelas (länkas) från en person till en annan. Följ stegen nedan för att förstå hur en identitet länkas över tid:
 
@@ -209,11 +209,11 @@ Identitetsoptimeringsalgoritmen respekterar [de senast upprättade länkarna och
 
 Först måste du samla in följande information:
 
-* Identitetssymbolen (namespaceCode) för cookie-namnutrymmet (t.ex. ECID) och det namnutrymme (t.ex. CRMID) som skickades.
-   * För Web SDK-implementeringar är dessa vanligtvis de namnutrymmen som ingår i identityMap.
-   * För källkopplingsimplementationer för analyser är detta cookie-identifieraren som ingår i identityMap. Personidentifieraren är ett eVar-fält som är markerat som en identitet.
-* Den datauppsättning som händelsen skickades i (dataset_name).
-* Identitetsvärdet för det cookie-namnutrymme som ska slås upp (identity_value).
+1. Identitetssymbolen (namespaceCode) för cookie-namnutrymmet (t.ex. ECID) och det namnutrymme (t.ex. CRMID) som skickades.
+1.1. För Web SDK-implementeringar är dessa vanligtvis de namnutrymmen som ingår i identityMap.
+1.2. För implementeringar av Analytics-källanslutningar är detta cookie-identifieraren som ingår i identityMap. Personidentifieraren är ett eVar-fält som är markerat som en identitet.
+2. Den datauppsättning som händelsen skickades i (dataset_name).
+3. Identitetsvärdet för det cookie-namnutrymme som ska slås upp (identity_value).
 
 Identitetssymboler (namespaceCode) är skiftlägeskänsliga. Om du vill hämta alla identitetssymboler för en viss datauppsättning i identityMap kör du följande fråga:
 
@@ -241,7 +241,7 @@ Om du inte känner till identitetsvärdet för din cookie-identifierare och du v
 
 >[!ENDTABS]
 
-Granska sedan associationen för cookie-namnutrymmet i tidsstämpelordning genom att köra följande fråga:
+Nu när du har identifierat cookie-värden som är länkade till flera person-ID:n kan du ta ett av resultaten och använda det i följande fråga för att få en kronologisk vy över när det cookie-värdet länkades till en annan person-ID:
 
 >[!BEGINTABS]
 
@@ -368,6 +368,13 @@ De viktigaste punkterna som ska markeras är följande:
    * Om det till exempel finns ett väntevillkor mellan åtgärderna och ECID-överföringar under vänteperioden kan en annan profil användas.
    * Med den här funktionen är ECID inte längre kopplat till en profil.
    * Rekommendationen är att påbörja resor med personliga namnutrymmen.
+
+>[!TIP]
+>
+>Resor bör leta upp en profil med ett unikt namnutrymme eftersom ett icke-unikt namnutrymme kan tilldelas en annan användare.
+>
+>* ECID och icke-unika namnutrymmen för e-post/telefon kan flyttas från en person till en annan.
+>* Om en resa har ett väntevillkor och om de icke-unika namnutrymmena används för att söka efter en profil på en resa, kan färdmeddelandet skickas till fel person.
 
 ## Namnområdesprioritet
 
