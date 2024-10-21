@@ -2,9 +2,9 @@
 title: Implementeringshandbok för identitetstjänsten
 description: Lär dig hur data som tillhandahålls till Adobe Experience Platform behandlas innan de används av identitetstjänsten för att skapa identitetsdiagram.
 exl-id: c961bbf6-6b46-470f-a671-93ff4173876c
-source-git-commit: 8be502c9eea67119dc537a5d63a6c71e0bff1697
+source-git-commit: 4ba25ed684ff126ab1c4f1a33e6503f0342e8720
 workflow-type: tm+mt
-source-wordcount: '581'
+source-wordcount: '600'
 ht-degree: 0%
 
 ---
@@ -46,6 +46,7 @@ Genom att till exempel märka fält med telefonnummer som identitetsfält kan id
 >
 >* Array- och mappningstypsfält stöds inte och kan inte markeras och märkas som identitetsfält.
 >* Namnutrymmet för resulterande identiteter anges när fältet etiketteras.
+>* Ett fält kan markeras som en identitet, förutsatt att det här fältet inte finns under ett arrayobjekt.
 
 Mer information finns i guiden om att [definiera identitetsfält i användargränssnittet](../xdm/ui/fields/identity.md).
 
