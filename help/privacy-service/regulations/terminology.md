@@ -4,7 +4,7 @@ solution: Experience Platform
 title: Sekretessregler - terminologi
 description: Det här dokumentet innehåller definitioner för nyckeltermer relaterade till sekretessregler som stöds av Adobe Experience Cloud.
 exl-id: 9c0a7d26-0571-41d4-8cf5-6356025d51ef
-source-git-commit: c4ca3dc975b13e2dce2e12784480e53bd0c4ee02
+source-git-commit: 0a8d7c4414f6091025d36ed85dc09e057ee24df9
 workflow-type: tm+mt
 source-wordcount: '2301'
 ht-degree: 0%
@@ -113,7 +113,7 @@ Det här dokumentet innehåller definitioner för nyckeltermer relaterade till s
 
 **[!DNL Nebraska Data Protection Act]**: En integritetslagstiftning som ger Nebraskans rätt att få tillgång till, korrigera, ta bort och avanmäla försäljning av sina personuppgifter. Det gäller företag som uppfyller vissa tröskelvärden för databehandling och intäkter. NDPA kräver också att företagen vidtar rimliga åtgärder för datasäkerhet och erbjuder en 30-dagars botemedel för att åtgärda överträdelser innan påföljder tillämpas.
 
-**[!DNL New Hampshire Data Privacy Act]**: Den här förordningen skyddar personuppgifter för boende i New Hampshire genom att ge dem behörighet att få tillgång till, ta bort och överföra sina data. Det innebär att företag får ge uttryck för sina rutiner för datainsamling och delning och att konsumenterna kan välja bort sin försäljning av data. NHDPA gäller företag som uppfyller angivna tröskelvärden för databehandling.
+**[!DNL New Hampshire Privacy Act]**: Den här förordningen skyddar personuppgifter för boende i New Hampshire genom att ge dem behörighet att få tillgång till, ta bort och överföra sina data. Det innebär att företag får ge uttryck för sina rutiner för datainsamling och delning och att konsumenterna kan välja bort sin försäljning av data. NHDPA gäller företag som uppfyller angivna tröskelvärden för databehandling.
 
 **[!DNL New Jersey Data Protection Act]**: En omfattande statlig integritetslagstiftning som ger New Jersey-invånare behörighet att få tillgång till, korrigera och ta bort personuppgifter. Det innehåller avanmälningsmekanismer för dataförsäljning och riktad annonsering. NJDPA gäller företag som behandlar stora volymer konsumentdata och kräver transparens i hur företag hanterar personuppgifter.
 
