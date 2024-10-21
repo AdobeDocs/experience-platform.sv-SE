@@ -2,9 +2,9 @@
 description: På den här sidan finns all information du behöver för att kunna granska en produkterad målplats som skapats med Destination SDK.
 title: Skicka för granskning av ett produkterat mål som skapats i Destination SDK
 exl-id: eef0d858-ebd9-426e-91a1-5c93903b0eb5
-source-git-commit: 2c778f98815af87453e84f24ba8bf077774349a1
+source-git-commit: 756c14c67e349a9ca906c027a07766e952485525
 workflow-type: tm+mt
-source-wordcount: '1032'
+source-wordcount: '1052'
 ht-degree: 0%
 
 ---
@@ -32,6 +32,7 @@ På den här sidan visas all information du behöver ange när du skickar eller 
 * En beskrivning av de användningsfall som målet löser. Detta är endast nödvändigt om du skickar in en ny målkonfiguration.
 * En beskrivning av anledningen till att du skickat in destinationen. Detta är endast nödvändigt om du uppdaterar en befintlig målkonfiguration.
 * Testa resultaten efter att du har använt API-slutpunkten för testmålet för att utföra ett HTTP-anrop till målet. Dela ett API-anrop till målslutpunkten med Adobe och det API-svar som tas emot från målslutpunkten.
+* En skärminspelning som visar användarupplevelsen för någon som ansluter till destinationen och fortsätter genom aktiveringsstegen.
 * Ytterligare krav för filbaserade mål:
    * Dela en begäran och ett svarsexempel efter att du har använt testnings-API:t för att [testa ditt filbaserade mål med exempelprofiler](../testing-api/batch-destinations/file-based-destination-testing-api.md).
    * Bifoga en exempelfil som har genererats av ditt mål och exporterats till din lagringsplats.
@@ -59,7 +60,7 @@ Ge en kort beskrivning av problemet som ditt bidrag löser för det befintliga m
 
 ## Testresultat efter användning av testmåls-API {#testing-api-response}
 
-Ange testresultat efter att du har använt [testmålets API](../testing-api/streaming-destinations/streaming-destination-testing-overview.md)-slutpunkt för att utföra ett HTTP-anrop till målet. Detta omfattar följande:
+Ange testresultat efter att du har använt [testmålets API](../testing-api/streaming-destinations/streaming-destination-testing-overview.md)-slutpunkt för att utföra ett HTTP-anrop till målet. Detta inkluderar:
 
 * Den fullständiga API-begäran (huvuden och brödtext) som görs till målslutpunkten med hjälp av testnings-API:t.
 * API-svaret som togs emot från målslutpunkten.
