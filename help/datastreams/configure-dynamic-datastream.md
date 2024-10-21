@@ -4,9 +4,9 @@ description: Lär dig hur du skapar dynamiska datastream-konfigurationer för at
 hide: true
 hidefromtoc: true
 badge: label="Beta" type="Informative"
-source-git-commit: 86416dc11f92a774cda5d95365d3981a637a5595
+source-git-commit: 615318744c233930fb9bc20e55ff42c3a396e651
 workflow-type: tm+mt
-source-wordcount: '555'
+source-wordcount: '556'
 ht-degree: 0%
 
 ---
@@ -57,7 +57,7 @@ När du har [skapat en datastream](configure.md) och [lagt till en tjänst](conf
 
    ![Bild av användargränssnittet för datastreams som visar den dynamiska konfigurationsregeln.](assets/configure-dynamic-datastream/drag-resources.png)
 
-1. I avsnittet **[!UICONTROL Configuration]** växlar du de tjänster som du vill aktivera eller inaktivera för varje regel, beroende på om du vill att data ska skickas till varje tjänst. Om du stänger av växlingsknappen inaktiveras regeln och *alla data* skickas till den överordnade tjänsten.
+1. I avsnittet **[!UICONTROL Configuration]** växlar du de tjänster som du vill aktivera eller inaktivera för varje regel, beroende på om du vill att data ska skickas till varje tjänst. Om du stänger av omkopplaren inaktiveras tjänstens routning och *inga data* skickas till den överordnade tjänsten.
 
    ![Bild av användargränssnittet för datastreams som visar den dynamiska konfigurationsregeln.](assets/configure-dynamic-datastream/enable-service.png)
 
