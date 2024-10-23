@@ -2,9 +2,9 @@
 title: Implementeringsguide för regler för länkning av identitetsdiagram
 description: Lär dig de rekommenderade stegen som ska följas när du implementerar data med länkningsregler för identitetsdiagram.
 exl-id: 368f4d4e-9757-4739-aaea-3f200973ef5a
-source-git-commit: 5d1bcaa84875e55595996253fb72cf768af16e05
+source-git-commit: 720ffa1ca0ee69cfc802cd50aef26b6f38d2142c
 workflow-type: tm+mt
-source-wordcount: '1624'
+source-wordcount: '1656'
 ht-degree: 0%
 
 ---
@@ -23,7 +23,7 @@ Stegvisa dispositioner:
 1. [Kompletta krav för implementering](#prerequisites-for-implementation)
 2. [Skapa nödvändiga identitetsnamnutrymmen](#namespace)
 3. [Använd verktyget för diagramsimulering för att bekanta dig med algoritmen för identitetsoptimering](#graph-simulation)
-4. [Använd identitetsinställningsverktyget för att ange unika namnutrymmen och konfigurera prioritetsklassificeringar för dina namnutrymmen](#identity-settings)
+4. [Använd användargränssnittet för identitetsinställningar för att ange unika namnutrymmen och konfigurera prioritetsklassificeringar för dina namnutrymmen](#identity-settings)
 5. [Skapa ett XDM-schema (Experience Data Model)](#schema)
 6. [Skapa en datauppsättning](#dataset)
 7. [Importera data till Experience Platform](#ingest)
@@ -183,9 +183,13 @@ Genom att skapa olika konfigurationer kan du använda verktyget för diagramsimu
 
 ## Konfigurera identitetsinställningar {#identity-settings}
 
-När du har fått en bättre uppfattning om hur du vill att diagrammet ska fungera går du till [identitetsinställningsverktyget](./identity-settings-ui.md) på arbetsytan för identitetstjänstens gränssnitt.
+När du har fått en bättre uppfattning om hur du vill att diagrammet ska fungera går du till gränssnittet [för identitetsinställningar](./identity-settings-ui.md) på arbetsytan för identitetstjänstens användargränssnitt. Om du vill komma åt användargränssnittet för identitetsinställningar väljer du **[!UICONTROL Identities]** i den vänstra navigeringen och sedan **[!UICONTROL Settings]**.
 
-Använd verktyget för identitetsinställningar för att ange unika namnutrymmen och konfigurera namnutrymmen efter prioritetsordning. När du är klar med att använda inställningarna måste du vänta minst sex timmar innan du kan fortsätta att importera data, eftersom det tar minst sex timmar innan nya inställningar återspeglas i identitetstjänsten.
+![Identiteterna bläddrar på sidan med inställningsknappen markerad.](../images/implementation/settings.png)
+
+Använd användargränssnittet för identitetsinställningar för att ange unika namnutrymmen och konfigurera dina namnutrymmen efter prioritetsordning. När du är klar med att använda inställningarna måste du vänta minst sex timmar innan du kan fortsätta att importera data, eftersom det tar minst sex timmar innan nya inställningar återspeglas i identitetstjänsten.
+
+Mer information finns i användargränssnittsguiden för [identitetsinställningar](./identity-settings-ui.md).
 
 ## Skapa ett XDM-schema {#schema}
 

@@ -2,7 +2,7 @@
 title: Länkningsregler för identitetsdiagram
 description: Lär dig mer om länkningsregler för identitetsdiagram i identitetstjänsten.
 exl-id: 317df52a-d3ae-4c21-bcac-802dceed4e53
-source-git-commit: cfe0181104f09bfd91b22d165c23154a15cd5344
+source-git-commit: 5092421ed8d0ff61fb3ed7f0849d2271f1fa144c
 workflow-type: tm+mt
 source-wordcount: '1424'
 ht-degree: 0%
@@ -98,11 +98,11 @@ Du kan konfigurera ett namnutrymme så att det blir unikt med hjälp av arbetsyt
 
 Tänk på följande scenario:
 
-* Scott använder en surfplatta och öppnar sin webbläsare Google Chrome för att gå till nike<span>.com, där han loggar in och bläddrar efter nya basketskor.
+* Scott använder en surfplatta och öppnar sin webbläsare Google Chrome för att gå till acme<span>.com, där han loggar in och bläddrar efter nya basketskor.
    * Bakom scenerna loggar det här scenariot följande identiteter:
       * Ett ECID-namnutrymme och -värde som representerar webbläsarens användning
       * Ett CRMID-namnutrymme och -värde som representerar den autentiserade användaren (Scott loggade in med sin kombination av användarnamn och lösenord).
-* Hans son Peter använder sedan samma surfplatta och även Google Chrome för att gå till nike<span>.com, där han loggar in med sitt eget konto för att söka efter fotbollsutrustning.
+* Hans son Peter använder sedan samma surfplatta och även Google Chrome för att åka till acme<span>.com, där han loggar in med sitt eget konto för att söka efter fotbollsutrustning.
    * Bakom scenerna loggar det här scenariot följande identiteter:
       * Samma ECID-namnutrymme och värde som representerar webbläsaren.
       * Ett nytt CRMID-namnutrymme och värde som representerar den autentiserade användaren.
