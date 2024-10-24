@@ -1,29 +1,29 @@
 ---
-keywords: Experience Platform;hem;populära ämnen;flödestjänst;Flödestjänst-API;källor;Källor
 title: Filtrera radnivådata för en Source med API:t för flödestjänsten
 description: I den här självstudiekursen beskrivs hur du filtrerar data på källnivå med API:t för Flow Service
 exl-id: 224b454e-a079-4df3-a8b2-1bebfb37d11f
-source-git-commit: b0e2fc4767fb6fbc90bcdd3350b3add965988f8f
+source-git-commit: 544bb7b5aff437fd49c30ac3d6261f103a609cac
 workflow-type: tm+mt
-source-wordcount: '778'
-ht-degree: 0%
+source-wordcount: '1817'
+ht-degree: 2%
 
 ---
 
 # Filtrera radnivådata för en källa med API:t [!DNL Flow Service]
 
->[!IMPORTANT]
+>[!AVAILABILITY]
 >
 >Stöd för filtrering av data på radnivå är för närvarande bara tillgängligt för följande källor:
 >
->* [Google BigQuery](../../connectors/databases/bigquery.md)
->* [Microsoft Dynamics](../../connectors/crm/ms-dynamics.md)
->* [Salesforce](../../connectors/crm/salesforce.md)
->* [Snowflake](../../connectors/databases/snowflake.md)
+>* [[!DNL Google BigQuery]](../../connectors/databases/bigquery.md)
+>* [[!DNL Microsoft Dynamics]](../../connectors/crm/ms-dynamics.md)
+>* [[!DNL Salesforce]](../../connectors/crm/salesforce.md)
+>* [[!DNL Snowflake]](../../connectors/databases/snowflake.md)
+>* [[!DNL Marketo Engage] standardaktiviteter](../../connectors/adobe-applications/marketo/marketo.md)
 
-I den här självstudien beskrivs hur du filtrerar radnivådata för en källa med [[!DNL Flow Service] API](https://www.adobe.io/experience-platform-apis/references/flow-service/).
+Läs den här guiden för steg om hur du filtrerar radnivådata för en källa med [[!DNL Flow Service] API](https://www.adobe.io/experience-platform-apis/references/flow-service/).
 
-## Komma igång
+## Kom igång
 
 Den här självstudiekursen kräver att du har en fungerande förståelse för följande komponenter i Adobe Experience Platform:
 
@@ -34,13 +34,13 @@ Den här självstudiekursen kräver att du har en fungerande förståelse för f
 
 Mer information om hur du kan anropa plattforms-API:er finns i guiden [Komma igång med plattforms-API:er](../../../landing/api-guide.md).
 
-## Filtrera källdata
+## Filtrera källdata {#filter-source-data}
 
 Följande textkonturer används för att filtrera radnivådata för källan.
 
-### Söka efter anslutningsspecifikationer
+### Hämta dina anslutningsspecifikationer {#retrieve-your-connection-specs}
 
-Innan du kan använda API:t för att filtrera data på radnivå för en källa måste du först hämta källans anslutningsinformation för att kunna avgöra vilka operatorer och språk som stöds av en viss källa.
+Det första steget för att filtrera data på radnivå för källan är att hämta källans anslutningsspecifikationer och avgöra vilka operatorer och språk som stöds av källan.
 
 Om du vill hämta en viss källas anslutningsspecifikation gör du en GET-förfrågan till `/connectionSpecs`-slutpunkten för [!DNL Flow Service]-API:t och anger egenskapsnamnet för källan som en del av frågeparametrarna.
 
@@ -54,9 +54,9 @@ GET /connectionSpecs/{QUERY_PARAMS}
 | --- | --- |
 | `{QUERY_PARAMS}` | De valfria frågeparametrarna som resultaten ska filtreras efter. Du kan hämta anslutningsspecifikationen [!DNL Google BigQuery] genom att använda egenskapen `name` och ange `"google-big-query"` i sökningen. |
 
-**Begäran**
++++Begäran
 
-Följande begäran hämtar anslutningsspecifikationer för [!DNL Google BigQuery].
+Följande begäran hämtar anslutningsspecifikationerna för [!DNL Google BigQuery].
 
 ```shell
 curl -X GET \
@@ -67,13 +67,11 @@ curl -X GET \
   -H 'x-sandbox-name: {SANDBOX_NAME}'
 ```
 
-**Svar**
++++
 
-Ett lyckat svar returnerar anslutningsspecifikationerna för [!DNL Google BigQuery], inklusive information om dess frågespråk och logiska operatorer som stöds.
++++svar
 
->[!NOTE]
->
->API-svaret nedan är förkortat.
+Ett lyckat svar returnerar statuskoden 200 och anslutningsspecifikationerna för [!DNL Google BigQuery], inklusive information om dess frågespråk och logiska operatorer som stöds.
 
 ```json
 "attributes": {
@@ -111,7 +109,9 @@ Ett lyckat svar returnerar anslutningsspecifikationerna för [!DNL Google BigQue
 
 {style="table-layout:auto"}
 
-#### Jämförelseoperatorer
++++
+
+#### Jämförelseoperatorer {#comparison-operators}
 
 | Operatör | Beskrivning |
 | --- | --- |
@@ -126,7 +126,7 @@ Ett lyckat svar returnerar anslutningsspecifikationerna för [!DNL Google BigQue
 
 {style="table-layout:auto"}
 
-### Ange filtervillkor för förtäring
+### Ange filtervillkor för förtäring {#specify-filtering-conditions-for-ingestion}
 
 När du har identifierat de logiska operatorerna och frågespråket som din källa stöder kan du använda Profile Query Language (PQL) för att ange de filtreringsvillkor som du vill tillämpa på dina källdata.
 
@@ -153,7 +153,7 @@ I exemplet nedan används villkor bara för att markera data som är lika med de
 }
 ```
 
-### Förhandsgranska data
+### Förhandsgranska data {#preview-your-data}
 
 Du kan förhandsgranska dina data genom att göra en GET-förfrågan till `/explore`-slutpunkten för [!DNL Flow Service] API:t, samtidigt som du anger `filters` som en del av frågeparametrarna och anger dina PQL-indatavillkor i [!DNL Base64].
 
@@ -169,7 +169,7 @@ GET /connections/{BASE_CONNECTION_ID}/explore?objectType=table&object={TABLE_PAT
 | `{TABLE_PATH}` | Egenskapen path för den tabell som du vill inspektera. |
 | `{FILTERS}` | Dina PQL-filtreringsvillkor kodade i [!DNL Base64]. |
 
-**Begäran**
++++Begäran
 
 ```shell
 curl -X GET \
@@ -180,9 +180,11 @@ curl -X GET \
   -H 'x-sandbox-name: {SANDBOX_NAME}'
 ```
 
-**Svar**
++++
 
-En slutförd begäran returnerar följande svar.
++++svar
+
+Ett lyckat svar returnerar innehållet och strukturen för dina data.
 
 ```json
 {
@@ -328,9 +330,11 @@ En slutförd begäran returnerar följande svar.
 }
 ```
 
++++
+
 ### Skapa en källanslutning för filtrerade data
 
-Om du vill skapa en källanslutning och importera filtrerade data gör du en POST till `/sourceConnections`-slutpunkten samtidigt som du anger filtervillkoren som en del av innehållsparametrarna.
+Om du vill skapa en källanslutning och importera filtrerade data gör du en POST till `/sourceConnections`-slutpunkten och anger filtervillkoren i parametrarna för begärandeinnehållet.
 
 **API-format**
 
@@ -338,7 +342,7 @@ Om du vill skapa en källanslutning och importera filtrerade data gör du en POS
 POST /sourceConnections
 ```
 
-**Begäran**
++++Begäran
 
 Följande begäran skapar en källanslutning för import av data från `test1.fasTestTable` där `city` = `DDN`.
 
@@ -385,7 +389,9 @@ curl -X POST \
     }'
 ```
 
-**Svar**
++++
+
++++svar
 
 Ett lyckat svar returnerar den unika identifieraren (`id`) för den nyligen skapade källanslutningen.
 
@@ -396,6 +402,493 @@ Ett lyckat svar returnerar den unika identifieraren (`id`) för den nyligen skap
 }
 ```
 
++++
+
+## Filtrera aktivitetsenheter för [!DNL Marketo Engage] {#filter-for-marketo}
+
+Du kan använda filtrering på radnivå för att filtrera efter aktivitetsenheter när du använder [[!DNL Marketo Engage] källkopplingen](../../connectors/adobe-applications/marketo/marketo.md). För närvarande kan du bara filtrera efter aktivitetsenheter och standardaktivitetstyper. Anpassade aktiviteter styrs fortfarande under [[!DNL Marketo] fältmappningar](../../connectors/adobe-applications/mapping/marketo.md).
+
+### [!DNL Marketo] standardaktivitetstyper {#marketo-standard-activity-types}
+
+Följande tabell visar standardaktivitetstyperna för [!DNL Marketo]. Använd den här tabellen som referens för filtervillkoren.
+
+| ID för aktivitetstyp | Namn på aktivitetstyp |
+| --- | --- |
+| 1 | Besök webbsidan |
+| 2 | Fyll i formulär |
+| 3 | Klicka på Länk |
+| 6 | Skicka e-post |
+| 7 | E-post levererad |
+| 8 | E-post studsade |
+| 9 | Avbeställ e-post |
+| 10 | Öppna e-post |
+| 11 | Klicka på E-post |
+| 12 | Nytt lead |
+| 21 | Konvertera lead |
+| 22 | Ändra poäng |
+| 24 | Lägg till i listan |
+| 25 | Ta bort från lista |
+| 27 | Mjuk e-poststudsning |
+| 32 | Sammanfoga leads |
+| 34 | Lägg till i affärsmöjlighet |
+| 35 | Ta bort från affärsmöjlighet |
+| 36 | Uppdatera affärsmöjlighet |
+| 46 | Intressant stund |
+| 101 | Ändra intäktsfas |
+| 104 | Ändra status i progression |
+| 110 | Ring webkrok |
+| 113 | Lägg till i struktur |
+| 114 | Ändra strukturspår |
+| 115 | Ändra vårdnad |
+
+{style="table-layout:auto"}
+
+Följ stegen nedan för att filtrera standardenheter för aktivitet när du använder [!DNL Marketo]-källkopplingen.
+
+### Skapa ett utkast till dataflöde
+
+Skapa först ett [[!DNL Marketo] dataflöde](../ui/create/adobe-applications/marketo.md) och spara det som ett utkast. Mer information om hur du skapar ett utkast till dataflöde finns i följande dokumentation:
+
+* [Spara ett dataflöde som ett utkast med användargränssnittet](../ui/draft.md)
+* [Spara ett dataflöde som ett utkast med API:t](../api/draft.md)
+
+### Hämta ditt dataflödes-ID
+
+När du har ett utkast till dataflöde måste du hämta dess motsvarande ID.
+
+Gå till källkatalogen i användargränssnittet och välj sedan **[!UICONTROL Dataflows]** i den övre rubriken. Använd statuskolumnen för att identifiera alla dataflöden som har sparats i utkastläge och välj sedan dataflödets namn. Använd sedan panelen **[!UICONTROL Properties]** till höger för att hitta ditt dataflöde-ID.
+
+### Hämta dataflödesinformation
+
+Därefter måste du hämta dataflödesinformationen, särskilt källanslutnings-ID:t som är kopplat till dataflödet. Om du vill hämta dataflödesinformationen skickar du en GET-förfrågan till slutpunkten `/flows` och anger ditt dataflödes-ID som en sökvägsparameter.
+
+**API-format**
+
+```http
+GET /flows/{FLOW_ID}
+```
+
+| Parameter | Beskrivning |
+| --- | --- |
+| `{FLOW_ID}` | ID:t för det dataflöde som du vill hämta. |
+
++++Begäran
+
+Följande begäran hämtar information om dataflödes-ID: `a7e88a01-40f9-4ebf-80b2-0fc838ff82ef`.
+
+```shell
+curl -X GET \
+  'https://platform.adobe.io/data/foundation/flowservice/flows/a7e88a01-40f9-4ebf-80b2-0fc838ff82ef' \
+  -H 'Authorization: Bearer {ACCESS_TOKEN}' \
+  -H 'x-api-key: {API_KEY}' \
+  -H 'x-gw-ims-org-id: {ORG_ID}' \
+  -H 'x-sandbox-name: {SANDBOX_NAME}'
+```
+
++++
+
++++svar
+
+Ett lyckat svar returnerar dina dataflödesdetaljer, inklusive information om dess motsvarande käll- och målanslutningar. Du måste tänka på ditt käll- och målanslutnings-ID, eftersom dessa värden krävs senare, för att kunna publicera dataflödet.
+
+```json {line-numbers="true" start-line="1" highlight="23, 26"}
+{
+    "items": [
+        {
+            "id": "a7e88a01-40f9-4ebf-80b2-0fc838ff82ef",
+            "createdAt": 1728592929650,
+            "updatedAt": 1728597187444,
+            "createdBy": "acme@AdobeID",
+            "updatedBy": "acme@AdobeID",
+            "createdClient": "exc_app",
+            "updatedClient": "acme",
+            "sandboxId": "7f3419ce-53e2-476b-b419-ce53e2376b02",
+            "sandboxName": "prod",
+            "imsOrgId": "acme@AdobeOrg",
+            "name": "Marketo Engage Standard Activities ACME",
+            "description": "",
+            "flowSpec": {
+                "id": "15f8402c-ba66-4626-b54c-9f8e54244d61",
+                "version": "1.0"
+            },
+            "state": "enabled",
+            "version": "\"600290fc-0000-0200-0000-67084cc30000\"",
+            "etag": "\"600290fc-0000-0200-0000-67084cc30000\"",
+            "sourceConnectionIds": [
+                "56f7eb3a-b544-4eaa-b167-ef1711044c7a"
+            ],
+            "targetConnectionIds": [
+                "7e53e6e8-b432-4134-bb29-21fc6e8532e5"
+            ],
+            "inheritedAttributes": {
+                "properties": {
+                    "isSourceFlow": true
+                },
+                "sourceConnections": [
+                    {
+                        "id": "56f7eb3a-b544-4eaa-b167-ef1711044c7a",
+                        "connectionSpec": {
+                            "id": "bf1f4218-73ce-4ff0-b744-48d78ffae2e4",
+                            "version": "1.0"
+                        },
+                        "baseConnection": {
+                            "id": "0137118b-373a-4c4e-847c-13a0abf73b33",
+                            "connectionSpec": {
+                                "id": "bf1f4218-73ce-4ff0-b744-48d78ffae2e4",
+                                "version": "1.0"
+                            }
+                        }
+                    }
+                ],
+                "targetConnections": [
+                    {
+                        "id": "7e53e6e8-b432-4134-bb29-21fc6e8532e5",
+                        "connectionSpec": {
+                            "id": "c604ff05-7f1a-43c0-8e18-33bf874cb11c",
+                            "version": "1.0"
+                        }
+                    }
+                ]
+            },
+            "options": {
+                "isSampleDataflow": false,
+                "errorDiagnosticsEnabled": true
+            },
+            "transformations": [
+                {
+                    "name": "Mapping",
+                    "params": {
+                        "mappingVersion": 0,
+                        "mappingId": "f6447514ef95482889fac1818972e285"
+                    }
+                }
+            ],
+            "runs": "/runs?property=flowId==a7e88a01-40f9-4ebf-80b2-0fc838ff82ef",
+            "lastOperation": {
+                "started": 1728592929650,
+                "updated": 0,
+                "operation": "create"
+            },
+            "lastRunDetails": {
+                "id": "2d7863d5-ca4d-4313-ac52-2603eaf2cdbe",
+                "state": "success",
+                "startedAtUTC": 1728594713537,
+                "completedAtUTC": 1728597183080
+            },
+            "labels": [],
+            "recordTypes": [
+                {
+                    "type": "experienceevent",
+                    "extensions": {}
+                }
+            ]
+        }
+    ]
+}
+```
+
++++
+
+### Hämta din källanslutningsinformation
+
+Använd sedan ditt källanslutnings-ID och gör en GET-förfrågan till slutpunkten `/sourceConnections` för att hämta källanslutningsinformationen.
+
+**API-format**
+
+```http
+GET /sourceConnections/{SOURCE_CONNECTION_ID}
+```
+
+| Parameter | Beskrivning |
+| --- | --- |
+| `{SOURCE_CONNECTION_ID}` | ID för den källanslutning som du vill hämta. |
+
++++Begäran
+
+```shell
+curl -X GET \
+  'https://platform.adobe.io/data/foundation/flowservice/sourceConnections/56f7eb3a-b544-4eaa-b167-ef1711044c7a' \
+  -H 'Authorization: Bearer {ACCESS_TOKEN}' \
+  -H 'x-api-key: {API_KEY}' \
+  -H 'x-gw-ims-org-id: {ORG_ID}' \
+  -H 'x-sandbox-name: {SANDBOX_NAME}'
+```
+
++++
+
++++svar
+
+Ett lyckat svar returnerar information om din källanslutning. Notera versionen eftersom du behöver det här värdet i nästa steg för att kunna uppdatera din källanslutning.
+
+```json {line-numbers="true" start-line="1" highlight="30"}
+{
+    "items": [
+        {
+            "id": "b85b895f-a289-42e9-8fe1-ae448ccc7e53",
+            "createdAt": 1729634331185,
+            "updatedAt": 1729634331185,
+            "createdBy": "acme@AdobeID",
+            "updatedBy": "acme@AdobeID",
+            "createdClient": "exc_app",
+            "updatedClient": "acme",
+            "sandboxId": "7f3419ce-53e2-476b-b419-ce53e2376b02",
+            "sandboxName": "prod",
+            "imsOrgId": "acme@AdobeOrg",
+            "name": "New Source Connection - 2024-10-23T03:28:50+05:30",
+            "description": "Source connection created from the workflow",
+            "baseConnectionId": "fd9f7455-1e23-4831-9283-7717e20bee40",
+            "state": "draft",
+            "data": {
+                "format": "tabular",
+                "schema": null,
+                "properties": null
+            },
+            "connectionSpec": {
+                "id": "2d31dfd1-df1a-456b-948f-226e040ba102",
+                "version": "1.0"
+            },
+            "params": {
+                "columns": [],
+                "tableName": "Activity"
+            },
+            "version": "\"210068a6-0000-0200-0000-6718201b0000\"",
+            "etag": "\"210068a6-0000-0200-0000-6718201b0000\"",
+            "inheritedAttributes": {
+                "baseConnection": {
+                    "id": "fd9f7455-1e23-4831-9283-7717e20bee40",
+                    "connectionSpec": {
+                        "id": "2d31dfd1-df1a-456b-948f-226e040ba102",
+                        "version": "1.0"
+                    }
+                }
+            },
+            "lastOperation": {
+                "started": 1729634331185,
+                "updated": 0,
+                "operation": "draft_create"
+            }
+        }
+    ]
+}
+```
+
++++
+
+### Uppdatera din källanslutning med filtervillkor
+
+Nu när du har ditt källanslutnings-ID och dess motsvarande version kan du nu göra en PATCH-begäran med filtervillkoren som anger dina standardaktivitetstyper.
+
+Om du vill uppdatera din källanslutning gör du en PATCH-begäran till `/sourceConnections`-slutpunkten och anger ditt källanslutnings-ID som en frågeparameter. Dessutom måste du ange en `If-Match`-huvudparameter med motsvarande version av källanslutningen.
+
+>[!TIP]
+>
+>Rubriken `If-Match` krävs när du gör en PATCH-begäran. Värdet för den här rubriken är den unika versionen/taggen för det dataflöde som du vill uppdatera. Versions-/etag-värdet uppdateras med varje lyckad uppdatering av ett dataflöde.
+
+**API-format**
+
+```http
+GET /sourceConnections/{SOURCE_CONNECTION_ID}
+```
+
+| Parameter | Beskrivning |
+| --- | --- |
+| `{SOURCE_CONNECTION_ID}` | ID för den källanslutning som du vill hämta. |
+
++++Begäran
+
+```shell
+curl -X PATCH \
+  'https://platform.adobe.io/data/foundation/flowservice/sourceConnections/56f7eb3a-b544-4eaa-b167-ef1711044c7a' \
+  -H 'Authorization: Bearer {ACCESS_TOKEN}' \
+  -H 'x-api-key: {API_KEY}' \
+  -H 'x-gw-ims-org-id: {ORG_ID}' \
+  -H 'x-sandbox-name: {SANDBOX_NAME}' \
+  -H 'If-Match: {VERSION_HERE}'
+  -d '
+      {
+        "op": "add",
+        "path": "/params/filters",
+        "value": {
+            "type": "PQL",
+            "format": "pql/json",
+            "value": {
+                "nodeType": "fnApply",
+                "fnName": "in",
+                "params": [
+                    {
+                        "nodeType": "fieldLookup",
+                        "fieldName": "activityType"
+                    },
+                    {
+                        "nodeType": "literal",
+                        "value": [
+                            "Change Status in Progression",
+                            "Fill Out Form"
+                        ]
+                    }
+                ]
+            }
+        }
+    }'
+```
+
++++
+
++++svar
+
+Ett lyckat svar returnerar ditt källanslutnings-ID och -tagg (version).
+
+```json
+{
+    "id": "56f7eb3a-b544-4eaa-b167-ef1711044c7a",
+    "etag": "\"210068a6-0000-0200-0000-6718201b0000\""
+}
+```
+
++++
+
+### Publish din källanslutning
+
+När källanslutningen har uppdaterats med filtervillkoren kan du nu gå vidare från utkastläget och publicera källanslutningen. Om du vill göra det skickar du en POST till slutpunkten `/sourceConnections` och anger ID:t för din utkastkällanslutning samt en åtgärd för publicering.
+
+**API-format**
+
+```http
+POST /sourceConnections/{SOURCE_CONNECTION_ID}/action?op=publish
+```
+
+| Parameter | Beskrivning |
+| --- | --- |
+| `{SOURCE_CONNECTION_ID}` | ID för den källanslutning som du vill publicera. |
+| `op` | En åtgärd som uppdaterar tillståndet för den efterfrågade källanslutningen. Om du vill publicera en utkastskällanslutning anger du `op` till `publish`. |
+
++++Begäran
+
+Följande begäran publicerar en kopplad källanslutning.
+
+```shell
+curl -X POST \
+  'https://platform.adobe.io/data/foundation/flowservice/sourceConnections/56f7eb3a-b544-4eaa-b167-ef1711044c7a/action?op=publish' \
+  -H 'Authorization: Bearer {ACCESS_TOKEN}' \
+  -H 'Content-Type: application/json' \
+  -H 'x-api-key: {API_KEY}' \
+  -H 'x-gw-ims-org-id: {ORG_ID}' \
+  -H 'x-sandbox-name: {SANDBOX_NAME}' \
+```
+
++++
+
++++svar
+
+Ett lyckat svar returnerar ditt källanslutnings-ID och -tagg (version).
+
+```json
+{
+    "id": "56f7eb3a-b544-4eaa-b167-ef1711044c7a",
+    "etag": "\"9f007f7b-0000-0200-0000-670ef1150000\""
+}
+```
+
++++
+
+### Publish din målanslutning
+
+På samma sätt som i föregående steg måste du även publicera målanslutningen för att kunna fortsätta och publicera ditt utkast till dataflöde. Gör en begäran om POST till `/targetConnections`-slutpunkten och ange ID:t för den utkastmålanslutning som du vill publicera samt en åtgärd för publicering.
+
+**API-format**
+
+```http
+POST /targetConnections/{TARGET_CONNECTION_ID}/action?op=publish
+```
+
+| Parameter | Beskrivning |
+| --- | --- |
+| `{TARGET_CONNECTION_ID}` | ID:t för målanslutningen som du vill publicera. |
+| `op` | En åtgärd som uppdaterar tillståndet för den efterfrågade målanslutningen. Om du vill publicera ett utkast till målanslutning anger du `op` till `publish`. |
+
++++Begäran
+
+Följande begäran publicerar målanslutningen med ID: `7e53e6e8-b432-4134-bb29-21fc6e8532e5`.
+
+```shell
+curl -X POST \
+  'https://platform.adobe.io/data/foundation/flowservice/connections/7e53e6e8-b432-4134-bb29-21fc6e8532e5/action?op=publish' \
+  -H 'Authorization: Bearer {ACCESS_TOKEN}' \
+  -H 'Content-Type: application/json' \
+  -H 'x-api-key: {API_KEY}' \
+  -H 'x-gw-ims-org-id: {ORG_ID}' \
+  -H 'x-sandbox-name: {SANDBOX_NAME}' \
+```
+
++++
+
++++svar
+
+Ett lyckat svar returnerar ID:t och motsvarande tagg för den publicerade målanslutningen.
+
+```json
+{
+    "id": "7e53e6e8-b432-4134-bb29-21fc6e8532e5",
+    "etag": "\"8e000533-0000-0200-0000-5f3c40fd0000\""
+}
+```
+
++++
+
+
+### Publish ditt dataflöde
+
+Med både käll- och målanslutningarna publicerade kan du nu fortsätta till det sista steget och publicera ditt dataflöde. Om du vill publicera ditt dataflöde skickar du en POST till `/flows`-slutpunkten och anger ditt dataflödes-ID och en åtgärd för publicering.
+
+**API-format**
+
+```http
+POST /flows/{FLOW_ID}/action?op=publish
+```
+
+| Parameter | Beskrivning |
+| --- | --- |
+| `{FLOW_ID}` | ID för det dataflöde som du vill publicera. |
+| `op` | En åtgärd som uppdaterar tillståndet för det efterfrågade dataflödet. Om du vill publicera ett dataflöde för utkast anger du `op` till `publish`. |
+
++++Begäran
+
+Följande begäran publicerar ditt utkast till dataflöde.
+
+```shell
+curl -X POST \
+  'https://platform.adobe.io/data/foundation/flowservice/flows/a7e88a01-40f9-4ebf-80b2-0fc838ff82ef/action?op=publish' \
+  -H 'Authorization: Bearer {ACCESS_TOKEN}' \
+  -H 'Content-Type: application/json' \
+  -H 'x-api-key: {API_KEY}' \
+  -H 'x-gw-ims-org-id: {ORG_ID}' \
+  -H 'x-sandbox-name: {SANDBOX_NAME}' \
+```
+
++++
+
++++svar
+
+Ett lyckat svar returnerar ID:t och motsvarande `etag` i dataflödet.
+
+```json
+{
+  "id": "a7e88a01-40f9-4ebf-80b2-0fc838ff82ef",
+  "etag": "\"4b0354b7-0000-0200-0000-6716ce1f0000\""
+}
+```
+
++++
+
+Du kan använda användargränssnittet för Experience Platform för att verifiera att ditt dataflöde har publicerats. Navigera till dataflödessidan i källkatalogen och referera till **[!UICONTROL Status]** i dataflödet. Om det lyckas bör statusen nu anges till **Aktiverad**.
+
+>[!TIP]
+>
+>* Ett dataflöde med filtrering aktiverat fylls bara i i bakgrunden en gång. Alla ändringar i filtervillkoren (vare sig det är ett tillägg eller en borttagning) kan bara börja gälla för inkrementella data.
+>* Om du behöver importera historiska data för nya aktivitetstyper rekommenderar vi att du skapar ett nytt dataflöde och definierar filtervillkoren med lämpliga aktivitetstyper i filtervillkoret.
+>* Du kan inte filtrera anpassade aktivitetstyper.
+>* Du kan inte förhandsgranska filtrerade data.
+
 ## Bilaga
 
 Det här avsnittet innehåller ytterligare exempel på olika nyttolaster för filtrering.
@@ -403,6 +896,8 @@ Det här avsnittet innehåller ytterligare exempel på olika nyttolaster för fi
 ### Enkelt villkor
 
 Du kan utelämna den ursprungliga `fnApply` för scenarier som bara kräver ett villkor.
+
++++Markera för att visa exempel
 
 ```json
 {
@@ -425,9 +920,13 @@ Du kan utelämna den ursprungliga `fnApply` för scenarier som bara kräver ett 
 }
 ```
 
++++
+
 ### Använda operatorn `in`
 
 Se exempelnyttolasten nedan för ett exempel på operatorn `in`.
+
++++Markera för att visa exempel
 
 ```json
 {
@@ -459,7 +958,11 @@ Se exempelnyttolasten nedan för ett exempel på operatorn `in`.
 }
 ```
 
++++
+
 ### Använda operatorn `isNull`
+
++++Markera för att visa exempel
 
 Se exempelnyttolasten nedan för ett exempel på operatorn `isNull`.
 
@@ -480,9 +983,14 @@ Se exempelnyttolasten nedan för ett exempel på operatorn `isNull`.
 }
 ```
 
++++
+
 ### Använda operatorn `NOT`
 
 Se exempelnyttolasten nedan för ett exempel på operatorn `NOT`.
+
+
++++Markera för att visa exempel
 
 ```json
 {
@@ -507,9 +1015,13 @@ Se exempelnyttolasten nedan för ett exempel på operatorn `NOT`.
 }
 ```
 
++++
+
 ### Exempel med kapslade villkor
 
 Se exempelnyttolasten nedan för ett exempel på komplexa kapslade villkor.
+
++++Markera för att visa exempel
 
 ```json
 {
@@ -585,3 +1097,5 @@ Se exempelnyttolasten nedan för ett exempel på komplexa kapslade villkor.
   }
 }
 ```
+
++++
