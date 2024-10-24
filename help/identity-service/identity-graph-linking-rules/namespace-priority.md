@@ -2,9 +2,9 @@
 title: Namnområdesprioritet
 description: Läs om namnområdesprioritet i identitetstjänsten.
 exl-id: bb04f02e-3826-45af-b935-752ea7e6ed7c
-source-git-commit: b50633a8518f32051549158b23dfc503db255a82
+source-git-commit: e8e8914c41d7a083395b0bf53aaac8021fcf9e9a
 workflow-type: tm+mt
-source-wordcount: '1696'
+source-wordcount: '1685'
 ht-degree: 1%
 
 ---
@@ -109,11 +109,11 @@ Med tanke på de konfigurationer som beskrivs ovan kommer användaråtgärder oc
 
 | Användaråtgärd (Experience-händelse) | Autentiseringstillstånd | Datakälla | Namnutrymmen i händelse | Namnområde för primär identitet |
 | --- | --- | --- | --- | --- |
-| Visa erbjudandesida för kreditkort | Oautentiserad (anonym) | Web SDK | {ECID} | ECID |
-| Visa hjälpsidan | Oautentiserad | Mobile SDK | {ECID, IDFA} | IDFA |
-| Visa saldo för checkkonto | Autentiserad | Web SDK | {CRMID, ECID} | CRMID |
-| Registrera dig för bostadslån | Autentiserad | Källanslutning för analyser | {CRMID, ECID, AAID} | CRMID |
-| Överför 1 000 dollar från kontroll till besparingar | Autentiserad | Mobile SDK | {CRMID, GAID, ECID} | CRMID |
+| Visa erbjudandesida för kreditkort | Oautentiserad (anonym) | Web SDK | `{ECID}` | ECID |
+| Visa hjälpsidan | Oautentiserad | Mobile SDK | `{ECID, IDFA}` | IDFA |
+| Visa saldo för checkkonto | Autentiserad | Web SDK | `{CRMID, ECID}` | CRMID |
+| Registrera dig för bostadslån | Autentiserad | Källanslutning för analyser | `{CRMID, ECID, AAID}` | CRMID |
+| Överför 1 000 dollar från kontroll till besparingar | Autentiserad | Mobile SDK | `{CRMID, GAID, ECID}` | CRMID |
 
 {style="table-layout:auto"}
 

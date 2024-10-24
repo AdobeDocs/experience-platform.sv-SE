@@ -2,7 +2,7 @@
 title: Filtrera radnivådata för en Source med API:t för flödestjänsten
 description: I den här självstudiekursen beskrivs hur du filtrerar data på källnivå med API:t för Flow Service
 exl-id: 224b454e-a079-4df3-a8b2-1bebfb37d11f
-source-git-commit: 544bb7b5aff437fd49c30ac3d6261f103a609cac
+source-git-commit: e8e8914c41d7a083395b0bf53aaac8021fcf9e9a
 workflow-type: tm+mt
 source-wordcount: '1817'
 ht-degree: 2%
@@ -687,12 +687,12 @@ Om du vill uppdatera din källanslutning gör du en PATCH-begäran till `/source
 **API-format**
 
 ```http
-GET /sourceConnections/{SOURCE_CONNECTION_ID}
+PATCH /sourceConnections/{SOURCE_CONNECTION_ID}
 ```
 
 | Parameter | Beskrivning |
 | --- | --- |
-| `{SOURCE_CONNECTION_ID}` | ID för den källanslutning som du vill hämta. |
+| `{SOURCE_CONNECTION_ID}` | ID:t för den källanslutning som du vill uppdatera |
 
 +++Begäran
 
