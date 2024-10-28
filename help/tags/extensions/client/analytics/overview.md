@@ -2,10 +2,10 @@
 title: Adobe Analytics Extension - översikt
 description: Läs mer om Adobe Analytics-taggtillägg i Adobe Experience Platform.
 exl-id: 33ebdcb6-9bf0-44e6-b016-e93fe78af578
-source-git-commit: 88939d674c0002590939004e0235d3da8b072118
+source-git-commit: 764a9a29df0be6064d36f952d2e8a61acfa9bd33
 workflow-type: tm+mt
-source-wordcount: '2083'
-ht-degree: 1%
+source-wordcount: '2309'
+ht-degree: 2%
 
 ---
 
@@ -13,7 +13,7 @@ ht-degree: 1%
 
 >[!NOTE]
 >
->Adobe Experience Platform Launch har omklassificerats som en serie datainsamlingstekniker i Adobe Experience Platform. Som ett resultat av detta har flera terminologiska förändringar införts i produktdokumentationen. I följande [dokument](../../../term-updates.md) finns en konsoliderad referens till de ändrade terminologin.
+>Adobe Experience Platform Launch har omprofilerats till en serie tekniker för datainsamling i Adobe Experience Platform. Som ett resultat av detta har flera terminologiska förändringar genomförts i produktdokumentationen. Se följande [dokument](../../../term-updates.md) för en konsoliderad referens av terminologiändringarna.
 
 Använd den här referensen för information om hur du konfigurerar Adobe Analytics-tillägget och de alternativ som är tillgängliga när du använder det här tillägget för att skapa en regel.
 
@@ -289,7 +289,19 @@ Analystillägget innehåller följande åtgärder:
 
 ### Ange variabler {#set-variables}
 
-Viktigt: Beacon skickas inte om du använder en åtgärd av typen &quot;ange variabler&quot;. Du måste använda åtgärden&quot;skicka fyr&quot;.
+>[!IMPORTANT]
+>
+>Du kan inte skicka beacon med åtgärden &quot;set variables&quot;. Om du vill skicka beacon måste du välja åtgärden&quot;skicka beacon&quot;.
+
+Du kan välja mellan två olika vyer i **Ange variabler**:
+
+>[!BEGINTABS]
+
+>[!TAB Ange enskilda attribut]
+
+I den här vyn kan du ange olika variabler som `eVars`, `Props`, `Events`.
+
+![Adobe Analytics formulärvy, där ytterligare attribut finns med.](../../../images/adobe_analytics_extension_form_view.png)
 
 #### eVars
 
@@ -319,6 +331,25 @@ Ange en eller flera [händelser](https://experienceleague.adobe.com/docs/analyti
 1. (Valfritt) Välj eller ange ett dataelement som används för [händelseserialisering](https://experienceleague.adobe.com/docs/analytics/implementation/vars/page-vars/events/event-serialization.html).
 1. (Valfritt) Välj **[!UICONTROL Add event]** om du vill ange fler händelser.
 1. Välj **[!UICONTROL Keep Changes]**.
+
+>[!TAB JSON-vy]
+
+I den här vyn kan du visa och redigera en JSON-version av åtgärden **Ange variabler**.
+
+![En vy som representerar den aktuella uppsättningsvariabelkonfigurationen i JSON-format i Adobe Analytics-tillägg.](../../../images/adobe_analytics_extension_json_view.png)
+
+#### JSON
+
+I åtgärden **Ange variabler** använder du JSON-vyn för att överföra, kopiera eller hämta JSON-data och lagra dem på din enhet.
+
+Det finns dock vissa begränsningar:
+
+* **Anpassad kod**: Om du använder anpassad kod för att fylla i variabler visas den inte i JSON-vyn. I stället visas ett varningsmeddelande när du visar, kopierar eller hämtar JSON som anger att ändringar som gjorts med anpassad kod inte kommer att inkluderas.
+* **Kopiera från URL-attribut**: Det går inte att kopiera ett värde från en URL i JSON-vyn. En varning visas som indikerar den här begränsningen.
+* **Indragna variabler**: Indragna eller inaktuella variabler visas i JSON-vyn och en varning visas som talar om att inaktuella variabler har angetts.
+* **Dataelement**: Dataelement representeras i JSON-vyn. Om JSON-data kopieras till en annan Tags-egenskap kanske motsvarande dataelement inte definieras där och inte tolkas korrekt när de körs.
+
+>[!ENDTABS]
 
 #### Hierarki
 
