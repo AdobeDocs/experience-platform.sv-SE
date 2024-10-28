@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Övervaka dataflöden för mål i användargränssnittet
 type: Tutorial
 exl-id: 8eb7bb3c-f2dc-4dbc-9cf5-3d5d3224f5f1
-source-git-commit: 27802292a7a06f2edaea9efc39d4a63507e0e7e1
+source-git-commit: 25dc27d890cb2e0e23f8fa797ac9edea929164fd
 workflow-type: tm+mt
-source-wordcount: '3377'
+source-wordcount: '3470'
 ht-degree: 0%
 
 ---
@@ -94,6 +94,17 @@ Varje enskild dataflödeskörning visar följande information:
 - **[!UICONTROL Identities activated]**: Det totala antalet profilidentiteter som aktiverades till det valda målet som en del av dataflödeskörningen. Det här måttet inkluderar identiteter som skapas, uppdateras och tas bort från exporterade målgrupper.
 - **[!UICONTROL Identities excluded]**: Det totala antalet profilidentiteter som har uteslutits från aktivering baserat på saknade attribut och brott mot medgivande.
 - **[!UICONTROL Identities failed]** Det totala antalet profilidentiteter som inte har aktiverats till målet på grund av fel.
+
+  >[!IMPORTANT]
+  >
+  > Från och med oktober 2024 lanserar Adobe en uppdatering som ökar rapporteringsnoggrannheten för direktuppspelningsdestinationer. Den här förbättringen ger bättre anpassning mellan Experience Platform och målplattformarna.
+  >
+  > Före den här uppdateringen innehöll **[!UICONTROL Identities failed]** alla aktiveringsförsök. Efter den här uppdateringen inkluderas endast det senaste aktiveringsförsöket i det totala antalet.
+  > 
+  > Den här förbättringen gäller för närvarande för [Google kundmatchningsmålet](../../destinations/catalog/advertising/google-customer-match.md), men kommer gradvis att lanseras för andra direktuppspelningsmål för Experience Platform.
+  > Efter den här förbättringen kan användare av [Google kundmatchningsmål](../../destinations/catalog/advertising/google-customer-match.md) se en förväntad minskning av antalet **[!UICONTROL Identities failed]**.
+
+
 - **[!UICONTROL Activation rate]**: Procentandelen mottagna identiteter som antingen har aktiverats eller hoppats över. Följande formel visar hur det här värdet beräknas:
   ![Formel för aktiveringsfrekvens.](../assets/ui/monitor-destinations/activation-rate-formula.png)
 - **[!UICONTROL Status]**: Representerar det tillstånd som dataflödet är i: [!UICONTROL Completed] eller [!UICONTROL Processing]. [!UICONTROL Completed] betyder att alla identiteter för motsvarande dataflödeskörning exporterades inom en timme. [!UICONTROL Processing] betyder att dataflödeskörningen inte har slutförts än.
@@ -205,7 +216,7 @@ Om du vill komma åt kontrollpanelen [!UICONTROL Monitoring] väljer du **[!UICO
 
 Använd kontrollpanelen [!UICONTROL Destinations] för att få en övergripande uppfattning om hälsotillståndet för dina aktiveringsflöden. Börja med att få samlade insikter om alla grupper och direktuppspelningsmål och fördjupa er sedan i detaljerade vyer för dataflöden, dataflöden och aktiverade målgrupper för en djupgående genomgång av era aktiveringsdata. Skärmarna på kontrollpanelen [!UICONTROL Monitoring] innehåller åtgärdbara insikter via mått och felbeskrivningar som hjälper dig att felsöka eventuella problem som kan uppstå i dina aktiveringsscenarier.
 
-Du kan filtrera den visade informationen efter datatyp - kunder, konton (endast för Adobe Real-Time CDP B2B-utgåvan), potentiella kunder och kontoberikning. Läs mer om de här alternativen i [guiden för kontrollpanelen](/help/dataflows/ui/monitor.md#monitoring-dashboard-overview).
+Du kan filtrera den visade informationen efter datatyp - kunder, konton (endast för Adobe Real-Time CDP B2B edition), potentiella kunder och kontoberikning. Läs mer om de här alternativen i [guiden för kontrollpanelen](/help/dataflows/ui/monitor.md#monitoring-dashboard-overview).
 
 ![Datatypsfiltret är markerat i kontrollpanelsvyn.](/help/dataflows/assets/ui/monitor-destinations/add-data-filter.png)
 
