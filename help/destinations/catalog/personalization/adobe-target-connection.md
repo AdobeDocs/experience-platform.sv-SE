@@ -3,9 +3,9 @@ keywords: målanpassning; mål; mål för upplevelseplattform; mål för uppleve
 title: Adobe Target
 description: Adobe Target är en applikation som innehåller AI-baserade personaliserings- och experimenteringsfunktioner i realtid för alla inkommande kundinteraktioner på webbplatser, i mobilappar med mera.
 exl-id: 3e3c405b-8add-4efb-9389-5ad695bc9799
-source-git-commit: 14dccb993b38ca352c6de3ed851bafe7c44ca631
+source-git-commit: dae0cb108c62b078d0c7dd5bec466091d4937c53
 workflow-type: tm+mt
-source-wordcount: '1726'
+source-wordcount: '1739'
 ht-degree: 0%
 
 ---
@@ -126,7 +126,8 @@ När [konfigurerar](../../ui/connect-destination.md) för det här målet måste
 
   >[!IMPORTANT]
   >
-  >DataStream-ID:t är unikt för varje Adobe Target-målanslutning. Om du behöver mappa samma målgrupper till flera datastreams måste du [skapa en ny målanslutning](../../ui/connect-destination.md) för varje datastream-ID och gå igenom [målgruppsaktiveringsflödet](#activate).
+  >DataStream-ID:t är unikt för varje Adobe Target-målanslutning. Du kan inte använda samma datastream-ID för flera Adobe Target-målanslutningar.
+  >Om du behöver mappa samma målgrupper till flera datastreams måste du [skapa en ny målanslutning](../../ui/connect-destination.md) för varje datastream-ID och gå igenom [målgruppsaktiveringsflödet](#activate).
 
    * **[!UICONTROL None]**: Välj det här alternativet om du behöver konfigurera Adobe Target-personalisering men inte kan implementera [Experience Platform Web SDK](/help/web-sdk/home.md). När du använder det här alternativet har målgrupper som exporterats från Experience Platform till Target endast stöd för nästa sessionspersonalisering, och kantsegmentering är inaktiverat. Referera tabellen i avsnittet [Användningsfall som stöds](#supported-use-cases) för en jämförelse av tillgängliga användningsfall per implementeringstyp.
 
