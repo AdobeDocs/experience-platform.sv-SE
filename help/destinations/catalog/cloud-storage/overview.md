@@ -3,9 +3,9 @@ keywords: molnlagringsmål;molnlagring
 title: Översikt över destinationer för molnlagring
 description: Adobe Experience Platform kan leverera dina målgrupper som datafiler till dina lagringsplatser i Amazon S3, AWS Kinesis, Azure Event Hubs eller SFTP.
 exl-id: d29f0a6e-b323-4f78-bbd0-dee2f1e0fedb
-source-git-commit: 9c1699471d5b3c3c725e46581e256a0c07f08a49
+source-git-commit: 2e21e62de624c5e7e9fac4d36dbf41b46198062a
 workflow-type: tm+mt
-source-wordcount: '453'
+source-wordcount: '463'
 ht-degree: 0%
 
 ---
@@ -40,7 +40,7 @@ För att kunna skicka målgrupper till molnlagringsmål för era kampanjer måst
 
 >[!NOTE]
 >
-> Funktionen som beskrivs i det här avsnittet är för närvarande endast tillgänglig för [Amazon S3](amazon-s3.md) -mål.
+> De funktioner som beskrivs i det här avsnittet är tillgängliga för alla molnlagringsmål. [Amazon S3](amazon-s3.md)-målet stöder för närvarande bara makrona `%SEGMENT_ID%` och `%SEGMENT_NAME%`.
 
 Om du vill skapa en anpassad mapp per målgruppsfil på din lagringsplats kan du använda makron i mappsökvägsindatafältet. Infoga makrona i slutet av inmatningsfältet, vilket visas nedan.
 
