@@ -3,9 +3,9 @@ title: Aktivera målgrupper för att batchprofilera exportmål
 type: Tutorial
 description: Lär dig hur du aktiverar de målgrupper du har i Adobe Experience Platform genom att skicka dem till batchprofilbaserade destinationer.
 exl-id: 82ca9971-2685-453a-9e45-2001f0337cda
-source-git-commit: ad33eaa48928b25502ef279f000b92f31e1667ca
+source-git-commit: fdb92a0c03ce6a0d44cfc8eb20c2e3bd1583b1ce
 workflow-type: tm+mt
-source-wordcount: '3922'
+source-wordcount: '3981'
 ht-degree: 0%
 
 ---
@@ -133,11 +133,11 @@ Välj **[!UICONTROL Export full files]** om du vill utlösa exporten av en fil s
 
 2. Använd växlingsknappen **[!UICONTROL Time]** för att välja om exporten ska ske omedelbart efter målgruppsutvärderingen eller på schemalagd basis vid en angiven tidpunkt. När du väljer alternativet **[!UICONTROL Scheduled]** kan du använda väljaren för att välja tidpunkten på dagen, i formatet [!DNL UTC], när exporten ska ske.
 
-   >[!NOTE]
-   >
-   >Alternativet **[!UICONTROL After segment evaluation]** som beskrivs nedan är bara tillgängligt för vissa Beta-kunder.
+   Använd alternativet **[!UICONTROL After segment evaluation]** om du vill att aktiveringsjobbet ska köras direkt när det dagliga batchsegmenteringsjobbet för plattformen har slutförts. Med det här alternativet exporteras de senaste profilerna till målet när aktiveringsjobbet körs. Detta kan leda till att en målgrupp exporteras flera gånger per dag, baserat på dina åtgärder.
 
-   Använd alternativet **[!UICONTROL After segment evaluation]** om du vill att aktiveringsjobbet ska köras direkt när det dagliga batchsegmenteringsjobbet för plattformen har slutförts. Med det här alternativet exporteras de senaste profilerna till målet när aktiveringsjobbet körs.
+   >[!IMPORTANT]
+   >
+   >Om du kör [flexibel målgruppsutvärdering](../../segmentation/ui/audience-portal.md#flexible-audience-evaluation) för målgrupper som redan är inställda på att aktiveras efter segmentutvärderingen, kommer målgrupperna att aktiveras så snart det flexibla målgruppsutvärderingsjobbet har slutförts, oavsett eventuella tidigare dagliga aktiveringsjobb. Detta kan leda till att målgrupper exporteras flera gånger om dagen, baserat på dina åtgärder.
 
    <!-- Batch segmentation currently runs at {{insert time of day}} and lasts for an average {{x hours}}. Adobe reserves the right to modify this schedule. -->
 
