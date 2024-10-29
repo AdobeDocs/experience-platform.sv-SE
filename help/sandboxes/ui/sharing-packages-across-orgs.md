@@ -1,29 +1,24 @@
 ---
 title: Dela paket mellan organisationer med hjälp av verktygslådan
 description: Lär dig hur du använder sandlådeverktyg i Adobe Experience Platform för att dela paket mellan olika organisationer.
-badge: Beta
-source-git-commit: 0e280972feb990221272d272aa2a9e3852beb5e8
+source-git-commit: 77994c1cdd185cc8a2963c5aa2eb345c8702fe02
 workflow-type: tm+mt
-source-wordcount: '602'
+source-wordcount: '861'
 ht-degree: 0%
 
 ---
 
 # Dela paket mellan organisationer med hjälp av sandlådeverktyg
 
->[!NOTE]
->
->Paket som delas mellan olika organisationer är för närvarande i betaversion och endast tillgängliga för vissa betakunder.
-
 Förbättra konfigurationsnoggrannheten i olika sandlådor och exportera och importera smidigt sandlådekonfigurationer mellan sandlådor i olika organisationer med sandlådeverktygen. Det här dokumentet beskriver hur du använder sandlådeverktyg i Adobe Experience Platform för att dela paket mellan olika organisationer. Det finns två typer av delade paket:
 
 - **Privat paket**
 
-[Privata paket](#private-packages) kan bara delas med organisationer som har godkänt delningsbegäran från källorganisationen via en tillåtelselista som väljer att delta.
+[Privata paket](#private-packages) kan bara delas med organisationer som har godkänt delningsbegäran från källorganisationen.
 
 - **Offentligt paket**
 
-[Offentliga paket](./sandbox-tooling.md/#export-and-import-an-entire-sandbox) är tillgängliga för import utan ytterligare godkännande. Dessa paket kan delas på en partners webbplats, blogg eller plattform. Paketets nyttolast tillåter att paket kopieras och klistras in från dessa kanaler till målorganisationen.
+[Offentliga paket](#public-packages) är tillgängliga för import utan ytterligare godkännande. Dessa paket kan delas på en partners webbplats, blogg eller plattform. Paketets nyttolast tillåter att paket kopieras och klistras in från dessa kanaler till målorganisationen.
 
 ## Privata paket {#private-packages}
 
@@ -88,6 +83,52 @@ I dialogrutan **[!UICONTROL Share package]** väljer du det paket som ska delas 
 >Det går att välja flera organisationer. De valda organisationerna visas under listrutan [!UICONTROL Share settings].
 
 ![Dialogrutan Dela paket med Dela-inställningar och Bekräfta markerat.](../images/ui/sandbox-tooling/private-share-package-confirm.png)
+
+## Offentliga paket {#public-packages}
+
+Använd sandlådeverktygen för att skapa delningsbara offentliga paket som inte kräver något ytterligare godkännande och som enkelt importeras med hjälp av paketets nyttolast.
+
+### Uppdatera paketets tillgänglighet till allmänheten {#update-package}
+
+Om du vill uppdatera ett pakets tillgänglighetstyp går du till fliken [!UICONTROL Sandboxes] **[!UICONTROL Packages]**. Markera sedan ellipsen (`...`) bredvid paketet och välj **[!UICONTROL Update to public package]** i listrutan.
+
+![Användargränssnittet för sandlådor med fliken Paket och den nedrullningsbara alternativmenyn med Uppdatera till publika paket markerat.](../images/ui/sandbox-tooling/update-to-public.png)
+
+Kontrollera att paketnamnet är korrekt i dialogrutan **[!UICONTROL Change package availability to public]** och välj **[!UICONTROL Confirm]**.
+
+>[!IMPORTANT]
+>
+> När ett paket har publicerats kan det inte ändras tillbaka till privat.
+
+![Ändra paketets tillgänglighet till offentlig dialogruta med Bekräfta markerat.](../images/ui/sandbox-tooling/change-package-availability.png)
+
+### Dela paket med paketnyttolasten
+
+Om du vill dela det offentliga paketet markerar du ellipserna (`...`) bredvid paketet och väljer sedan **[!UICONTROL Copy package payload]**.
+
+![Användargränssnittet för sandlådor visar en listruta för enskilda paket med Kopiera paketnyttolast markerat.](../images/ui/sandbox-tooling/copy-package-payload.png)
+
+Dialogrutan **[!UICONTROL Copy package payload]** visar paketnamnet och nyttolasten. Välj **[!UICONTROL Copy package payload]** om du vill kopiera nyttolasten som är associerad med paketet.
+
+![Dialogrutan Kopiera paketnyttolast visar JSON-nyttolasten med Kopiera paketnyttolast markerad.](../images/ui/sandbox-tooling/confirm-payload-copy.png)
+
+### Skapa ett nytt paket med en paketnyttolast
+
+Om du vill skapa ett paket med en paketnyttolast går du till fliken [!UICONTROL Sandboxes] **[!UICONTROL Packages]**. Välj sedan **[!UICONTROL Create package]**.
+
+![Användargränssnittet för sandlådor visar paketet Create markerat.](../images/ui/sandbox-tooling/create-package.png)
+
+I dialogrutan **[!UICONTROL Create package]** väljer du alternativet **[!UICONTROL Paste package payload]** och sedan **[!UICONTROL Select]**.
+
+![Skapa en paketdialogruta med Klistra in paketnyttolast markerad och Markera markerad.](../images/ui/sandbox-tooling/create-package-options.png)
+
+Klistra in den kopierade paketnyttolasten i textfältet och välj **[!UICONTROL Create]**.
+
+![Skapa en paketdialogruta med det tomma textfältet och Skapa markerat.](../images/ui/sandbox-tooling/paste-payload.png)
+
+Om du vill visa den aktuella statusen för din delningsförfrågan går du till **[!UICONTROL Sharing status]**. Aktuell status för begäran visas i kolumnen **[!UICONTROL Sharing status]**.
+
+![Fliken Delningsstatus visar en väntande nyttolastbegäran.](../images/ui/sandbox-tooling/sharing-status.png)
 
 ## Nästa steg {#next-steps}
 
