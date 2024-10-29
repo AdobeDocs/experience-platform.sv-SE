@@ -2,9 +2,9 @@
 title: API-slutpunkt för sandlådeverktygspaket
 description: Med slutpunkten /packages i sandlådeverktygets API kan du programmässigt hantera paket i Adobe Experience Platform.
 exl-id: 46efee26-d897-4941-baf4-d5ca0b8311f0
-source-git-commit: f81e15ccfd89e2d0cb450f596743341264187f52
+source-git-commit: 1e271a88890f41f66aad93d96dbef23a09d33077
 workflow-type: tm+mt
-source-wordcount: '1621'
+source-wordcount: '2541'
 ht-degree: 1%
 
 ---
@@ -58,7 +58,7 @@ curl -X POST \
 | `name` | Paketets namn. | Sträng | Ja |
 | `description` | En beskrivning som ger mer information om ditt paket. | Sträng | Nej |
 | `packageType` | Pakettypen är **PARTIAL** för att ange att du inkluderar specifika artefakter i ett paket. | Sträng | JA |
-| `sourceSandbox` | Paketets källsandlåda. | Sträng | Nej |
+| `sourceSandbox` | Paketets källsandlåda. | Objekt | Nej |
 | `expiry` | Tidsstämpeln som definierar paketets förfallodatum. Standardvärdet är 90 dagar från skapandedatumet. Svarets förfallofält är epoch UTC-tid. | Sträng (UTC-tidsstämpelformat) | Nej |
 | `artifacts` | En lista med artefakter som ska exporteras till paketet. Värdet `artifacts` ska vara **null** eller **empty** när `packageType` är `FULL`. | Array | Nej |
 
@@ -200,7 +200,6 @@ Ett lyckat svar returnerar det uppdaterade paketet. Svaret innehåller motsvaran
 
 Om du vill ta bort artefakter från ett paket måste du ange `id` och inkludera **DELETE** för `action`.
 
-
 **API-format**
 
 ```http
@@ -308,7 +307,7 @@ curl -X PUT \
 | `id` | ID:t för paketet som ska uppdateras. | Sträng | Ja |
 | `action` | Om du vill uppdatera metadatafälten i ett paket ska åtgärdsvärdet vara **UPDATE**. Den här åtgärden stöds bara för pakettyperna **PARTIAL**. | Sträng | Ja |
 | `name` | Paketets uppdaterade namn. Dubblettpaketnamn tillåts inte. | Array | Ja |
-| `sourceSandbox` | Source sandlåda ska tillhöra samma organisation som anges i begärans huvud. | Sträng | Ja |
+| `sourceSandbox` | Source sandlåda ska tillhöra samma organisation som anges i begärans huvud. | Objekt | Ja |
 
 **Svar**
 
@@ -356,7 +355,7 @@ DELETE /packages/{PACKAGE_ID}
 
 | Parameter | Beskrivning |
 | --- | --- |
-| {PACKAGE_ID} | ID:t för det paket som du vill ta bort. |
+| `{PACKAGE_ID}` | ID:t för det paket som du vill ta bort. |
 
 **Begäran**
 
@@ -392,7 +391,7 @@ GET /packages/{PACKAGE_ID}/export
 
 | Parameter | Beskrivning |
 | --- | --- |
-| {PACKAGE_ID} | ID:t för det paket som du vill publicera. |
+| `{PACKAGE_ID}` | ID:t för det paket som du vill publicera. |
 
 **Begäran**
 
@@ -441,7 +440,7 @@ GET /packages/{PACKAGE_ID}
 
 | Parameter | Beskrivning |
 | --- | --- |
-| {PACKAGE_ID} | ID:t för det paket som du vill söka efter. |
+| `{PACKAGE_ID}` | ID:t för det paket som du vill söka efter. |
 
 **Begäran**
 
@@ -508,7 +507,7 @@ GET /packages/?{QUERY_PARAMS}
 
 | Parameter | Beskrivning |
 | --- | --- |
-| {QUERY_PARAMS} | Valfria frågeparametrar för att filtrera resultat efter. Mer information finns i avsnittet om [frågeparametrar](./appendix.md). |
+| `{QUERY_PARAMS}` | Valfria frågeparametrar för att filtrera resultat efter. Mer information finns i avsnittet om [frågeparametrar](./appendix.md). |
 
 **Begäran**
 
@@ -613,7 +612,7 @@ GET /packages/{PACKAGE_ID}/import?targetSandbox=targetSandboxName
 
 | Parameter | Beskrivning |
 | --- | --- |
-| {PACKAGE_ID} | ID:t för det paket som du vill söka efter. |
+| `{PACKAGE_ID}` | ID:t för det paket som du vill söka efter. |
 
 **Begäran**
 
@@ -632,7 +631,7 @@ curl -X GET \
 
 Konflikter returneras i svaret. Svaret visar det ursprungliga paketet plus `alternatives`-fragmentet som en array som sorterats efter rangordning.
 
-Visa svar+++
++++Visa svar
 
 ```json
 [
@@ -826,7 +825,7 @@ POST /packages/{PACKAGE_ID}/children
 
 | Parameter | Beskrivning |
 | --- | --- |
-| {PACKAGE_ID} | Paketets ID. |
+| `{PACKAGE_ID}` | Paketets ID. |
 
 **Begäran**
 
@@ -905,7 +904,7 @@ GET /packages/preflight/{packageId}?targetSandbox=<sandbox_name
 
 | Parameter | Beskrivning |
 | --- | --- |
-| {PACKAGE_ID} | ID:t för det paket som du vill importera. |
+| `{PACKAGE_ID}` | ID:t för det paket som du vill importera. |
 
 **Begäran**
 
@@ -924,7 +923,7 @@ curl -X GET \
 
 Ett lyckat svar returnerar resursbehörigheter för målsandlådan, inklusive en lista över nödvändiga behörigheter, saknade behörigheter, typ av artefakt och ett beslut om huruvida skapandet är tillåtet.
 
-Visa svar+++
++++Visa svar
 
 ```json
 {
@@ -1053,7 +1052,7 @@ GET /packages/jobs?{QUERY_PARAMS}
 
 | Parameter | Beskrivning |
 | --- | --- |
-| {QUERY_PARAMS} | Valfria frågeparametrar för att filtrera resultat efter. Mer information finns i avsnittet om [frågeparametrar](./appendix.md). |
+| `{QUERY_PARAMS}` | Valfria frågeparametrar för att filtrera resultat efter. Mer information finns i avsnittet om [frågeparametrar](./appendix.md). |
 
 **Begäran**
 
@@ -1150,5 +1149,867 @@ Ett lyckat svar returnerar alla slutförda importjobb.
             "createdBy": "{CREATED_BY}"
         }
     ]
+}
+```
+
+## Dela paket mellan olika organisationer {#org-linking}
+
+Med slutpunkten `/handshake` i sandlådeverktygs-API kan du samarbeta med andra organisationer för att dela paket.
+
+### Skicka en delningsbegäran {#send-request}
+
+Skicka en begäran till en målpartnerorganisation för att dela godkännande genom att göra en POST-förfrågan till slutpunkten `/handshake/bulkCreate`. Detta krävs innan du kan dela privata paket.
+
+**API-format**
+
+```http
+POST /handshake/bulkCreate
+```
+
+**Begäran**
+
+Följande begäran initierar delningsgodkännande mellan en målpartnerorganisation och källorganisationen.
+
+```shell
+curl -X POST \
+  https://platform.adobe.io/data/foundation/exim/handshake/bulkCreate \
+  -H 'x-api-key: {API_KEY}' \
+  -H 'x-gw-ims-org-id: {ORG_ID}' \
+  -H 'x-sandbox-name: {SANDBOX_NAME}' \
+  -H 'Accept: application/json' \
+  -H 'Authorization: {ACCESS_TOKEN}' \
+  -H 'Content-Type: application/json' \
+  -d '{
+      "targetIMSOrgIds":["acme@AdobeOrg"],
+      "sourceIMSDetails":{
+        "id":"acme@AdobeOrg",
+        "name":"acme_org"
+      } 
+  }' 
+```
+
+| Egenskap | Beskrivning | Typ | Obligatoriskt |
+| --- | --- | --- | --- |
+| `targetIMSOrgIds` | En lista över målorganisationer att skicka delningsbegäran till. | Array | Ja |
+| `sourceIMSDetails` | Information om källorganisationen. | Objekt | Ja |
+
+**Svar**
+
+Ett godkänt svar returnerar information om din delningsförfrågan.
+
+```json
+{
+    "successfulRequests": {
+        "acme@AdobeOrg": {
+            "id": "{ID}",
+            "version": 0,
+            "createdDate": 1724938816798,
+            "modifiedDate": 1724938816798,
+            "createdBy": "{CREATED_BY}",
+            "modifiedBy": "{MODIFIED_BY}",
+            "sourceIMSOrgId": "{ORG_ID}",
+            "targetIMSOrgId": "{TARGET_ID}",
+            "sourceRegion": "va6",
+            "sourceIMSOrgName": "{SOURCE_NAME}",
+            "status": "APPROVAL_PENDING",
+            "createdByName": "{CREATED_BY}",
+            "modifiedByName": "{MODIFIED_BY}",
+            "modifiedByIMSOrgId": "{ORG_ID}",
+            "statusHistory": "[{\"actionTakenBy\":\"acme@98ff67fa661fdf6549420b.e\",\"actionTakenByName\":\"{NAME}\",\"actionTakenByImsOrgID\":\"{ORG_ID}\",\"action\":\"INITIATED\",\"actionTimeStamp\":1724938816885}]",
+            "linkingId": "{LINKIND_ID}"
+        }
+    },
+    "failedRequests": {}
+}
+```
+
+### Godkänna mottagna delningsbegäranden {#approve-requests}
+
+Godkänn delningsbegäranden från målpartnerorganisationer genom att göra en POST-förfrågan till slutpunkten `/handshake/action`. Efter godkännande kan källpartnerorganisationer dela privata paket.
+
+**API-format**
+
+```http
+POST /handshake/action
+```
+
+**Begäranden**
+
+Följande begäran godkänner en delningsbegäran från en målpartnerorganisation.
+
+```shell
+curl -X POST  \
+  https://platform.adobe.io/data/foundation/exim/handshake/action \
+  -H 'x-api-key: {API_KEY}' \
+  -H 'x-gw-ims-org-id: {ORG_ID}' \
+  -H 'x-sandbox-name: {SANDBOX_NAME}' \
+  -H 'Accept: application/json' \
+  -H 'Authorization: Bearer {ACCESS_TOKEN}' \
+  -H 'Content-Type: application/json' \
+  -d '{
+      "linkingID":"{LINKING_ID}",
+      "status":"APPROVED",
+      "reason":"Done",
+      "targetIMSOrgDetails":{
+          "id":"acme@AdobeOrg",
+          "name":"acme",
+          "region":"va7"
+      }
+  }'
+```
+
+| Egenskap | Beskrivning | Typ | Obligatoriskt |
+| --- | --- | --- | --- |
+| `linkingID` | ID:t för delningsbegäran som du svarar på. | Sträng | Ja |
+| `status` | Åtgärden som utförs på delningsbegäran. | Sträng | Ja |
+| `reason` | Orsaken till att åtgärden vidtas. | Sträng | Ja |
+| `targetIMSOrgDetails` | Information om målorganisationen där ID-värdet ska vara målorganisationens **ID**, namnvärdet ska vara målorganisationens **NAME** och regionsvärdet ska vara målorganisationens **REGION**. | Objekt | Ja |
+
+**Svar**
+
+Ett godkänt svar returnerar information om den godkända delningsbegäran.
+
+```json
+{
+    "id": "{ID}",
+    "version": 1,
+    "createdDate": 1726737474000,
+    "modifiedDate": 1726737541731,
+    "createdBy": "{CREATED_BY}",
+    "modifiedBy": "{MODIFIED_BY}",
+    "sourceIMSOrgId": "{ORG_ID}",
+    "targetIMSOrgId": "{TARGET_ID}",
+    "sourceRegion": "va7",
+    "targetRegion": "va7",
+    "sourceOrgName": "{SOURCE_ORG}",
+    "targetOrgName": "{TARGET_ORG}",
+    "status": "APPROVED",
+    "createdByName": "{CREATED_BY}",
+    "modifiedByIMSOrgId": "{MODIFIED_BY}",
+    "statusHistory": "[{\"actionTakenBy\":\"{ACTION_BY}\",\"actionTakenByName\":\"{NAME}\",\"actionTakenByImsOrgID\":\"acme@AdobeOrg\",\"action\":\"INITIATED\",\"actionTimeStamp\":1726737474450,\"reason\":null},{\"actionTakenBy\":null,\"actionTakenByName\":null,\"actionTakenByImsOrgID\":\"745F37C35E4B776E0A49421B@AdobeOrg\",\"action\":\"APPROVED\",\"actionTimeStamp\":1726737541818,\"reason\":\"Done\"}]",
+    "linkingId": "{LINKING_ID}"
+}
+```
+
+### Visa utgående/inkommande delningsbegäranden {#outgoing-and-incoming-requests}
+
+Visa utgående och inkommande delningsbegäranden genom att göra en GET-förfrågan till slutpunkten `handshake/list?property=status%3D%3DAPPROVED&requestType=INCOMING`.
+
+**API-format**
+
+```http
+POST handshake/list?property=status%3D%3DAPPROVED&requestType=INCOMING
+```
+
+| Parameter | Godkända/standardvärden |
+| --- | --- |
+| `property` | Anger den egenskap som ska filtreras efter, till exempel status. Godtagbara värden för status är: `APPROVED`, `REJECTED` och `IN_PROGRESS`. |
+| `start` | Standardvärdet för start är `0`. |
+| `limit` | Standardvärdet för gräns är `20`. |
+| `orderBy` | Sorterar posterna i stigande eller fallande ordning. |
+| `requestType` | Accepterar antingen `INCOMING` eller `OUTGOING`. |
+
+**Begäran**
+
+Följande begäran returnerar en lista över alla utgående och inkommande delningsbegäranden.
+
+```shell
+curl -X GET \
+  https://platform.adobe.io/data/foundation/exim/handshake/list?property=status%3D%3DAPPROVED&requestType=INCOMING \
+  -H 'x-api-key: {API_KEY}' \
+  -H 'x-gw-ims-org-id:{ORG_ID}' \
+  -H 'x-sandbox-name: {SANDBOX_NAME}' \
+  -H 'Accept: application/json' \
+  -H 'Authorization: Bearer {ACCESS_TOKEN}' \
+  -H 'Content-Type: application/json' \
+```
+
+**Svar**
+
+Ett godkänt svar returnerar en lista över utgående och inkommande delningsbegäranden och deras information.
+
+```json
+{
+    "totalElements": 1,
+    "currentPage": 0,
+    "totalPages": 1,
+    "hasPreviousPage": false,
+    "hasNextPage": false,
+    "data": [
+        {
+            "id": "{ID}",
+            "version": 1,
+            "createdDate": 1724929446000,
+            "modifiedDate": 1724929617000,
+            "modifiedBy": "{MODIFIED_BY}",
+            "sourceIMSOrgId": "{ORG_ID}",
+            "targetIMSOrgId": "{TARGET_ID}",
+            "sourceRegion": "va7",
+            "targetRegion": "va6",
+             "sourceOrgName": "{SOURCE_ORG}",
+            "targetOrgName": "{TARGET_ORG}",
+            "status": "APPROVED",
+            "createdByName": "{CREATED_BY}",
+            "modifiedByName": "{MODIFIED_BY}",
+            "modifiedByIMSOrgId": "{MODIFIED_BY}",
+            "statusHistory": "[{\"actionTakenBy\":\"{ACTION_BY}\",\"actionTakenByName\":\"{NAME}\",\"actionTakenByImsOrgID\":\"{ORG_ID}\",\"action\":\"INITIATED\",\"actionTimeStamp\":1724929442467,\"reason\":null},{\"actionTakenBy\":null,\"actionTakenByName\":\"{NAME}\",\"actionTakenByImsOrgID\":\"{ORG_ID}\",\"action\":\"APPROVED\",\"actionTimeStamp\":1724929617531,\"reason\":\"Done\"}]",
+            "linkingId": "{LINKING_ID}"
+        }
+    ],
+    "nextPage": null,
+    "pageSize": null
+}
+```
+
+## Överför paket
+
+Använd slutpunkten `/transfer` i sandlådans verktyg-API för att hämta och skapa nya paketdelningsbegäranden.
+
+### Ny delningsbegäran {#share-request}
+
+Hämta en publicerad källorganisations paket och dela det med en målorganisation genom att göra en POST-förfrågan till slutpunkten `/transfer` samtidigt som paket-ID och målorganisations-ID tillhandahålls.
+
+**API-format**
+
+```http
+POST /transfer
+```
+
+**Begäran**
+
+Följande begäran hämtar ett paket med källorganisationer och delar det med en målorganisation.
+
+```shell
+curl -X POST \
+  https://platform.adobe.io/data/foundation/exim/transfer/ \
+  -H 'x-api-key: {API_KEY}' \
+  -H 'x-gw-ims-org-id: {IMS_ORG}' \
+  -H 'x-sandbox-name: {SANDBOX_NAME}' \
+  -H 'Authorization: Bearer {ACCESS_TOKEN}' \
+  -H 'Content-Type: application/json' \
+  -d '{
+      "packageId": "{PACKAGE_ID}",
+      "targets": [
+          {
+              "imsOrgId": "{TARGET_IMS_ORG}"
+          }
+      ]
+  }'
+```
+
+| Egenskap | Beskrivning | Typ | Obligatoriskt |
+| --- | --- | --- | --- |
+| `packageId` | ID:t för det paket som du vill dela. | Sträng | Ja |
+| `targets` | En lista över organisationer att dela till paketera med. | Array | Ja |
+
+**Svar**
+
+Ett lyckat svar returnerar information om det begärda paketet och dess delningsstatus.
+
+```json
+[
+    {
+        "id": "{ID}",
+        "version": 0,
+        "createdDate": 1726480559313,
+        "modifiedDate": 1726480559313,
+        "createdBy": "{CREATED_BY}",
+        "modifiedBy": "{MODIFIED_BY}",
+        "sourceIMSOrgId": "{ORG_ID}",
+        "targetIMSOrgId": "{TARGET_ID}",
+        "packageId": "{PACKAGE_ID}",
+        "status": "PENDING",
+        "initiatedBy": "acme@3ec9197a65a86f34494221.e",
+        "transferDetails": {
+            "messages": [
+                "Fetched Package",
+                "Fetched Manifest"
+            ],
+            "additionalMetadata": null
+        },
+        "requestType": "PRIVATE"
+    }
+]
+```
+
+### Hämta en delningsbegäran via ID {#fetch-transfer-by-id}
+
+Hämta information om en delningsbegäran genom att göra en GET-begäran till `/transfer/{TRANSFER_ID}`-slutpunkten och ange överförings-ID.
+
+**API-format**
+
+```http
+GET /transfer/{TRANSFER_ID}
+```
+
+| Parameter | Beskrivning |
+| --- | --- |
+| `{TRANSFER_ID}` | ID:t för överföringen som du vill hämta. |
+
+**Begäran**
+
+Följande begäran hämtar en överföring med ID:t {TRANSFER_ID}.
+
+```shell
+curl -X GET \
+  https://platform.adobe.io/data/foundation/exim/transfer/0c843180a64c445ca1beece339abc04b \
+  -H 'x-api-key: {API__KEY}' \
+  -H 'x-gw-ims-org-id: {ORG_ID}' \
+  -H 'x-sandbox-name: {SANDBOX_NAME}' \
+  -H 'Authorization: Bearer {ACCESS_TOKEN}'
+```
+
+**Svar**
+
+Ett svar om att åtgärden lyckades returnerar information om en delningsbegäran.
+
+```json
+{
+    "id": "{ID}",
+    "sourceIMSOrgId": "{ORG_ID}",
+    "sourceOrgName": "{SOURCE_ORG}",
+    "targetIMSOrgId": "{TARGET_ID}",
+    "targetOrgName": "{TARGET_ORG}",
+    "packageId": "{PACKAGE_ID}",
+    "packageName": "{PACKAGE_NAME}",
+    "status": "COMPLETED",
+    "initiatedBy": "{INITIATED_BY}",
+    "createdDate": 1724442856000,
+    "transferDetails": {
+        "messages": [
+            "Fetched Package",
+            "Fetched Manifest",
+            "Tenant Identified",
+            "Fetched Sandbox Id",
+            "Fetched Blob Files",
+            "Message Published to Kafka",
+            "Completed Transfer"
+        ],
+        "additionalMetadata": null
+    },
+    "requestType": "PRIVATE"
+}
+```
+
+### Hämta resurslista {#transfers-list}
+
+Hämta en lista över överföringsbegäranden genom att göra en GET-begäran till `/transfer/list?{QUERY_PARAMETERS}`-slutpunkten och ändra frågeparametrarna efter behov.
+
+**API-format**
+
+```http
+GET `/transfer/list?{QUERY_PARAMETERS}`
+```
+
+| Parameter | Godkända/standardvärden |
+| --- | --- |
+| `property` | Anger den egenskap som ska filtreras efter, till exempel status. Godtagbara värden för status är: `COMPLETED`, `PENDING`, `IN_PROGRESS`, `FAILED`. |
+| `start` | Standardvärdet för start är `0`. |
+| `limit` | Standardvärdet för gräns är `20`. |
+| `orderBy` | Beställningen accepterar endast fältet `createdDate`. |
+
+**Begäran**
+
+Följande begäran hämtar en lista med överföringsbegäranden från de angivna sökparametrarna.
+
+```shell
+curl -X GET \
+  https://platform.adobe.io/data/foundation/exim/transfer/list?property=status==COMPLETED&start=0&limit=2&orderBy=-createdDate \
+  -H 'x-api-key: {API_KEY}' \
+  -H 'x-gw-ims-org-id: {ORG_ID}' \
+  -H 'x-sandbox-name: {SANDBOX_NAME}' \
+  -H 'Authorization: Bearer {ACCESS_TOKEN}'
+```
+
+**Svar**
+
+Ett godkänt svar returnerar en lista med alla överföringsbegäranden från de angivna sökparametrarna.
+
+```json
+{
+    "totalElements": 43,
+    "currentPage": 0,
+    "totalPages": 22,
+    "hasPreviousPage": false,
+    "hasNextPage": true,
+    "data": [
+        {
+            "id": "{ID}",
+            "sourceIMSOrgId": "{ORG_ID}",
+            "sourceOrgName": "{SOURCE_ORG}",
+            "targetIMSOrgId": "{TARGET_ID}",
+            "targetOrgName": "{TARGET_ORG}",
+            "packageId": "{PACKAGE_ID}",
+            "packageName": "{PACKAGE_NAME}",
+            "status": "COMPLETED",
+            "initiatedBy": "{INITIATED_BY}",
+            "completedTime": 1726129077000,
+            "createdDate": 1726129062000,
+            "transferDetails": {
+                "messages": [
+                    "Fetched Package",
+                    "Fetched Manifest",
+                    "Tenant Identified",
+                    "Fetched Sandbox Id",
+                    "Fetched Blob Files",
+                    "Message Published to Kafka",
+                    "Completed Transfer",
+                    "Finished with status: COMPLETED"
+                ],
+                "additionalMetadata": null
+            },
+            "requestType": "PRIVATE"
+        },
+        {
+            "id": "{ID}",
+            "sourceIMSOrgId": "{ORG_ID}",
+            "sourceOrgName": "{SOURCE_ORG}",
+            "targetIMSOrgId": "{TARGET_ID}",
+            "targetOrgName": "{TARGET_ORG}",
+            "packageId": "{PACKAGE_ID}",
+            "packageName": "{PACKAGE_NAME}",
+            "status": "COMPLETED",
+            "initiatedBy": "{INITIATED_BY}",
+            "completedTime": 1726066046000,
+            "createdDate": 1726065936000,
+            "transferDetails": {
+                "messages": [
+                    "Fetched Package",
+                    "Fetched Manifest",
+                    "Tenant Identified",
+                    "Fetched Sandbox Id",
+                    "Fetched Blob Files",
+                    "Message Published to Kafka",
+                    "Completed Transfer",
+                    "Finished with status: COMPLETED"
+                ],
+                "additionalMetadata": null
+            },
+            "requestType": "PRIVATE"
+        }
+    ],
+    "nextPage": null,
+    "pageSize": null
+}
+```
+
+### Uppdatera paketets tillgänglighet från privat till offentlig {#update-availability}
+
+Ändra ett paket från privat till offentlig genom att göra en GET-begäran till slutpunkten `/transfer/list?property=status%3D%3DCOMPLETED%2CFAILED&requestType=PUBLIC`. Som standard skapas ett paket med privat tillgänglighet.
+
+**Begäran**
+
+Följande begäran ändrar ett pakets tillgänglighet från privat till offentlig.
+
+```shell
+curl -X GET \
+  http://platform.adobe.io/data/foundation/transfer/list?property=status%3D%3DCOMPLETED%2CFAILED&requestType=PUBLIC \
+  -H 'Authorization: Bearer {ACCESS_TOKEN}' \
+  -H 'Content-type: application/json' \
+  -H 'x-sandbox-name: {SANDBOX_NAME}' \
+  -H 'x-api-key: {API_KEY}' \
+  -H 'x-gw-ims-org-id: {ORG_ID}' \
+  -d '{
+      "id":"{ID}",
+      "action":"UPDATE",
+      "packageVisibility":"PUBLIC"
+  }'
+```
+
+| Egenskap | Beskrivning | Typ | Obligatoriskt |
+| --- | --- | --- | --- |
+| `id` | ID:t för paketet som ska uppdateras. | Sträng | Ja |
+| `action` | Om du vill uppdatera synligheten till publik ska åtgärdsvärdet vara **UPDATE**. | Sträng | Ja |
+| `packageVisbility` | PaketVisibility-värdet bör vara **PUBLIC** för att uppdatera synligheten. | Sträng | Ja |
+
+**Svar**
+
+Ett godkänt svar returnerar information om ett paket och dess synlighet.
+
+```json
+{
+    "id": "{ID}",
+    "version": 7,
+    "createdDate": 1729624618000,
+    "modifiedDate": 1729658596340,
+    "createdBy": "{CREATED_BY}",
+    "modifiedBy": "{MODIFIED_BY}",
+    "name": "acme",
+    "imsOrgId": "{ORG_ID}",
+    "packageType": "PARTIAL",
+    "expiry": 1737434596325,
+    "status": "PUBLISH_FAILED",
+    "packageVisibility": "PUBLIC",
+    "artifactsList": [
+        {
+            "id": "{ID}",
+            "type": "PROFILE_SEGMENT",
+            "found": false,
+            "count": 0,
+            "title": "Acme Profile Segment"
+        }
+    ],
+    "schemaMapping": {},
+    "sourceSandbox": {
+        "name": "acme-sandbox",
+        "imsOrgId": "{ORG_ID}",
+        "empty": false
+    }
+}
+```
+
+### Begäran om att importera ett publikt paket {#pull-public-package}
+
+Importera ett paket från en källorganisation med publik tillgänglighet genom att göra en POST-förfrågan till slutpunkten `/transfer/pullRequest`.
+
+**API-format**
+
+```http
+POST /transfer/pullRequest
+```
+
+**Begäran**
+
+Följande begäran importerar ett paket och anger dess tillgänglighet som publik.
+
+```shell
+curl -X POST \
+  https://platform.adobe.io/data/foundation/exim/transfer/pullRequest \
+  -H 'x-api-key: {API_KEY}' \
+  -H 'x-gw-ims-org-id: {ORG_ID}' \
+  -H 'x-sandbox-name: {SANDBOX_NAME}' \
+  -H 'Accept: application/json' \
+  -H 'Authorization: Bearer {ACCESS_TOKEN}' \
+  -H 'Content-Type: application/json' \
+  -d '{
+      "imsOrgId": "{ORG_ID}",
+      "packageId": "{PACKAGE_ID}"
+  }'
+```
+
+| Egenskap | Beskrivning | Typ | Obligatoriskt |
+| --- | --- | --- | --- |
+| `imsOrgId` | ID:t från paketets källorganisation. | Sträng | Ja |
+| `packageId` | ID:t från paketet som ska importeras. | Sträng | Ja |
+
+**Svar**
+
+Ett lyckat svar returnerar information om det importerade publika paketet.
+
+```json
+{
+    "id": "{ID}",
+    "version": 0,
+    "createdDate": 1729658890425,
+    "modifiedDate": 1729658890425,
+    "createdBy": "{CREATED_BY}",
+    "modifiedBy": "{MODIFIED_BY}",
+    "sourceIMSOrgId": "{ORG_ID}",
+    "targetIMSOrgId": "{TARGET_ID}",
+    "packageId": "{PACKAGE_ID}",
+    "status": "PENDING",
+    "initiatedBy": "{INITIATED_BY}",
+    "pipelineMessageId": "{MESSAGE_ID}",
+    "requestType": "PUBLIC"
+}
+```
+
+### Visa offentliga paket {#list-public-packages}
+
+Hämta en lista över paket med offentlig synlighet genom att göra en GET-begäran till slutpunkten `/transfer/list?{QUERY_PARAMS}`.
+
+**API-format**
+
+```http
+GET /transfer/list?{QUERY_PARAMS}
+```
+
+| Parameter | Godkända/standardvärden |
+| --- | --- |
+| `property` | Anger den egenskap som ska filtreras efter, till exempel status. Godtagbara värden för status är: `COMPLETED` och `FAILED`. |
+| `start` | Standardvärdet för start är `0`. |
+| `limit` | Standardvärdet för gräns är `20`. |
+| `orderBy` | Beställningen accepterar endast fältet `createdDate`. |
+| `requestType` | Accepterar antingen `PUBLIC` eller `PRIVATE`. |
+
+**Begäran**
+
+Följande begäran hämtar en lista över paket med allmän tillgänglighet.
+
+```shell
+curl -X GET \
+  https://platform.adobe.io/data/foundation/exim/transfer/list?property=status%3D%3DCOMPLETED%2CFAILED&requestType=PUBLIC&orderby=-createdDate \
+  -H 'x-api-key: {API_KEY}' \
+  -H 'x-gw-ims-org-id: {ORG_ID}' \
+  -H 'x-sandbox-name: {SANDBOX_NAME}' \
+  -H 'Accept: application/json' \
+  -H 'Authorization: {ACCESS_TOKEN}' \
+  -H 'Content-Type: application/json' \
+```
+
+**Svar**
+
+Ett lyckat svar returnerar en lista med publika paket och deras information.
+
++++Visa svar
+
+```json
+{
+    "totalElements": 14,
+    "currentPage": 0,
+    "totalPages": 1,
+    "hasPreviousPage": false,
+    "hasNextPage": false,
+    "data": [
+        {
+            "id": "{ID}",
+            "sourceIMSOrgId": "{ORG_ID}",
+            "sourceOrgName": "{SOURCE_NAME}",
+            "targetIMSOrgId": "{TARGET_ID}",
+            "targetOrgName": "{TARGET_ORG}",
+            "packageId": "{PACKAGE_ID}",
+            "packageName": "Public package demo",
+            "status": "COMPLETED",
+            "initiatedBy": "{INITIATED_BY}",
+            "completedTime": 1729359318000,
+            "createdDate": 1729359316000,
+            "requestType": "PUBLIC"
+        },
+        {
+            "id": "{ID}",
+            "sourceIMSOrgId": "{ORG_ID}",
+            "sourceOrgName": "{SOURCE_NAME}",
+            "targetIMSOrgId": "{TARGET_ID}",
+            "targetOrgName": "{TARGET_NAME}",
+            "packageId": "{PACKAGE_ID}",
+            "packageName": "Public package demo",
+            "status": "COMPLETED",
+            "initiatedBy": "{INITIATED_BY}",
+            "completedTime": 1729359284000,
+            "createdDate": 1729359283000,
+            "requestType": "PUBLIC"
+        },
+        {
+            "id": "{ID}",
+            "sourceIMSOrgId": "{ORG_ID}",
+            "sourceOrgName": "{SOURCE_NAME}",
+            "targetIMSOrgId": "{TARGET_ID}",
+            "targetOrgName": "{TARGET_NAME}",
+            "packageId": "{PACKAGE_ID}",
+            "packageName": "Test Private Flow Final",
+            "status": "COMPLETED",
+            "initiatedBy": "{INITIATED_BY}",
+            "completedTime": 1729284462000,
+            "createdDate": 1729275962000,
+            "requestType": "PUBLIC"
+        },
+        {
+            "id": "{ID}",
+            "sourceIMSOrgId": "{ORG_ID}",
+            "sourceOrgName": "{SOUCE_NAME}",
+            "targetIMSOrgId": "{TARGET_ID}",
+            "targetOrgName": "{TARGET_NAME}",
+            "packageId": "{PACKAGE_ID}",
+            "packageName": "Fest",
+            "status": "FAILED",
+            "initiatedBy": "{INITIATED_BY}",
+            "completedTime": 1729284104000,
+            "createdDate": 1729253854000,
+            "requestType": "PUBLIC"
+        },
+        {
+            "id": "{ID}",
+            "sourceIMSOrgId": "{ORG_ID}",
+            "sourceOrgName": "{SOURCE_NAME}",
+            "targetIMSOrgId": "{TARGET_ID}",
+            "targetOrgName": "{TARGET_NAME}",
+            "packageId": "{PACKAGE_ID}",
+            "packageName": "PublicPackageSharing",
+            "status": "COMPLETED",
+            "initiatedBy": "{INITIATED_BY}",
+            "completedTime": 1729284835000,
+            "createdDate": 1729253556000,
+            "requestType": "PUBLIC"
+        },
+        {
+            "id": "{ID}",
+            "sourceIMSOrgId": "{ORG_ID}",
+            "sourceOrgName": "{SOURCE_NAME}",
+            "targetIMSOrgId": "{TARGET_ID}",
+            "targetOrgName": "{TARGET_NAME}",
+            "packageId": "{PACKAGE_ID}",
+            "packageName": "PublicPackageSharing",
+            "status": "COMPLETED",
+            "initiatedBy": "{INITIATED_BY}",
+            "completedTime": 1729284835000,
+            "createdDate": 1729253556000,
+            "requestType": "PUBLIC"
+        },
+        {
+            "id": "{ID}",
+            "sourceIMSOrgId": "{ORG_ID}",
+            "sourceOrgName": "{SOURCE_NAME}",
+            "targetIMSOrgId": "{TARGET_ID}",
+            "targetOrgName": "{TARGET_NAME}",
+            "packageId": "{PACKAGE_ID}",
+            "packageName": "PublicPackageSharing",
+            "status": "COMPLETED",
+            "initiatedBy": "{INITIATED_BY}",
+            "completedTime": 1729284835000,
+            "createdDate": 1729253556000,
+            "requestType": "PUBLIC"
+        },
+        {
+            "id": "{ID}",
+            "sourceIMSOrgId": "{ORG_ID}",
+            "sourceOrgName": "{SOURCE_NAME}",
+            "targetIMSOrgId": "{TARGET_ID}",
+            "targetOrgName": "{TARGET_NAME}",
+            "packageId": "{PACKAGE_ID}",
+            "packageName": "Public Package Audit Test",
+            "status": "COMPLETED",
+            "initiatedBy": "{INITIATED_BY}",
+            "completedTime": 1729284667000,
+            "createdDate": 1729253421000,
+            "requestType": "PUBLIC"
+        },
+        {
+            "id": "{ID}",
+            "sourceIMSOrgId": "{ORG_ID}",
+            "sourceOrgName": "{SOURCE_NAME}",
+            "targetIMSOrgId": "{TARGET_ID}",
+            "targetOrgName": "{TARGET_NAME}",
+            "packageId": "{PACKAGE_ID}",
+            "packageName": "Public Package Audit Test",
+            "status": "COMPLETED",
+            "initiatedBy": "{INITIATED_BY}",
+            "completedTime": 1729284957000,
+            "createdDate": 1729253143000,
+            "requestType": "PUBLIC"
+        },
+        {
+            "id": "{ID}",
+            "sourceIMSOrgId": "{ORG_ID}",
+            "sourceOrgName": "{SOURCE_NAME}",
+            "targetIMSOrgId": "{TARGET_ID}",
+            "targetOrgName": "{TARGET_NAME}",
+            "packageId": "{PACKAGE_ID}",
+            "packageName": "Public Package Audit Test",
+            "status": "COMPLETED",
+            "initiatedBy": "{INITIATED_BY}",
+            "completedTime": 1729284562000,
+            "createdDate": 1729252975000,
+            "requestType": "PUBLIC"
+        },
+        {
+               "id": "{ID}",
+            "sourceIMSOrgId": "{ORG_ID}",
+            "sourceOrgName": "{SOURCE_NAME}",
+            "targetIMSOrgId": "{TARGET_ID}",
+            "targetOrgName": "{TARGET_NAME}",
+            "packageId": "{PACKAGE_ID}",
+            "packageName": "Private Package Test 1",
+            "status": "COMPLETED",
+            "initiatedBy": "{INITIATED_BY}",
+            "completedTime": 1729284262000,
+            "createdDate": 1729229755000,
+            "requestType": "PUBLIC"
+        },
+        {
+            "id": "{ID}",
+            "sourceIMSOrgId": "{ORG_ID}",
+            "sourceOrgName": "{SOURCE_NAME}",
+            "targetIMSOrgId": "{TARGET_ID}",
+            "targetOrgName": "{TARGET_NAME}",
+            "packageId": "{PACKAGE_ID}",
+            "packageName": "Demo Package 1016",
+            "status": "COMPLETED",
+            "initiatedBy": "{INITIATED_BY}",
+            "completedTime": 1729284784000,
+            "createdDate": 1729208888000,
+            "requestType": "PUBLIC"
+        },
+        {
+            "id": "{ID}",
+            "sourceIMSOrgId": "{ORG_ID}",
+            "sourceOrgName": "{SOURCE_NAME}",
+            "targetIMSOrgId": "{TARGET_ID}",
+            "targetOrgName": "{TARGET_NAME}",
+            "packageId": "{PACKAGE_ID}",
+            "packageName": "Public Package test 1",
+            "status": "COMPLETED",
+            "initiatedBy": "{INITIATED_BY}",
+            "completedTime": 1729284934000,
+            "createdDate": 1729153097000,
+            "requestType": "PUBLIC"
+        },
+        {
+            "id": "{ID}",
+            "sourceIMSOrgId": "{ORG_ID}",
+            "sourceOrgName": "{SOURCE_NAME}",
+            "targetIMSOrgId": "{TARGET_ID}",
+            "targetOrgName": "{TARGET_NAME}",
+            "packageId": "{PACKAGE_ID}",
+            "packageName": "Public Package test 1",
+            "status": "COMPLETED",
+            "initiatedBy": "{INITIATED_BY}",
+            "completedTime": 1729284912000,
+            "createdDate": 1729153043000,
+            "requestType": "PUBLIC"
+        }
+    ],
+    "nextPage": null,
+    "pageSize": null
+}
+```
+
++++
+
+## Kopiera paketnyttolast (#package-payload)
+
+Du kan kopiera ett publikt pakets nyttolast genom att göra en GET-begäran till slutpunkten `/packages/payload` som innehåller motsvarande ID för paketet i sökvägen för begäran.
+
+**API-format**
+
+```http
+GET /packages/payload/{PACKAGE_ID}
+```
+
+| Parameter | Beskrivning |
+| --- | --- |
+| `{PACKAGE_ID}` | ID:t för det paket som du vill kopiera. |
+
+**Begäran**
+
+Följande begäran hämtar ett pakets nyttolast med ID:t {PACKAGE_ID}.
+
+```shell
+curl -X GET \
+  https://platform.adobe.io/data/foundation/exim/packages/payload/{PACKAGE_ID} \
+  -H 'x-api-key: {API_KEY}' \
+  -H 'x-gw-ims-org-id: {ORG_ID}' \
+  -H 'x-sandbox-name: {SANDBOX_NAME}' \
+  -H 'Accept: application/json' \
+  -H 'Authorization: Bearer {ACCESS_TOKEN}' \
+  -H 'Content-Type: application/json' \
+  -d '{
+      "imsOrgId": "{ORG_ID}",
+      "packageId": "{PACKAGE_ID}"
+  }'
+```
+
+| Egenskap | Beskrivning | Typ | Obligatoriskt |
+| --- | --- | --- | --- |
+| `imsOrdId` | ID:t för organisationen som paketet tillhör. | Sträng | Ja |
+| `packageId` | ID:t för det paket som du begär nyttolast. | Sträng | Ja |
+
+**Svar**
+
+Ett lyckat svar returnerar paketets nyttolast.
+
+```json
+{
+    "imsOrgId": "{ORG_ID}",
+    "packageId": "{PACKAGE_ID}"
 }
 ```
