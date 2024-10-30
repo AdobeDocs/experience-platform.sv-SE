@@ -2,7 +2,7 @@
 title: Versionsinformation om Adobe Experience Platform oktober 2024
 description: Versionsinformationen för Adobe Experience Platform i oktober 2024.
 exl-id: f854f9e5-71be-4d56-a598-cfeb036716cb
-source-git-commit: 5fc786058a187b161a147a8bd361d19c5f35105d
+source-git-commit: f30a124a40928abf69366d311131e353c2779191
 workflow-type: tm+mt
 source-wordcount: '1138'
 ht-degree: 35%
@@ -15,12 +15,12 @@ ht-degree: 35%
 
 Uppdateringar av befintliga funktioner och dokumentation i Adobe Experience Platform:
 
-- [Kontrollpaneler {#dashboards}](#dashboards-dashboards)<!-- omit in toc -->
-- [Datainsamling {#collection}](#data-collection-collection)
-- [Mål {#destinations}](#destinations-destinations)
-- [Segmenteringstjänst {#segmentation-service}](#segmentation-service-segmentation-service)
-- [Sandlådor {#sandboxes}](#sandboxes-sandboxes)
-- [Källor {#sources}](#sources-sources)
+- [Kontrollpaneler](#dashboards)
+- [Datainsamling](#data-collection-)
+- [Mål ](#destinations)
+- [Segmenteringstjänst](#segmentation-service)
+- [Sandlådor](#sandboxes)
+- [Källor](#sources)
 
 ## Kontrollpaneler {#dashboards}
 
@@ -40,7 +40,7 @@ Experience Platform tillhandahåller flera instrumentpaneler där du kan visa vi
 
 Mer information om kontrollpaneler, inklusive hur du ger åtkomstbehörigheter och skapar anpassade widgetar, får du genom att läsa [översikten för kontrollpaneler](../../dashboards/home.md).
 
-## Datainsamling {#collection}
+## Datainsamling {#data-collection}
 
 Adobe Experience Platform erbjuder en rad olika tekniker som gör att ni kan samla in kundupplevelsedata på klientsidan och skicka dem till Experience Platform Edge Network där de kan berikas, omformas och distribueras till Adobe eller andra destinationer än Adobe.
 

@@ -1,7 +1,7 @@
 ---
 title: Versionsinformation om Adobe Experience Platform oktober 2024
 description: Versionsinformationen för Adobe Experience Platform i oktober 2024.
-source-git-commit: 5fc786058a187b161a147a8bd361d19c5f35105d
+source-git-commit: f30a124a40928abf69366d311131e353c2779191
 workflow-type: tm+mt
 source-wordcount: '1138'
 ht-degree: 35%
@@ -14,12 +14,12 @@ ht-degree: 35%
 
 Uppdateringar av befintliga funktioner och dokumentation i Adobe Experience Platform:
 
-- [Kontrollpaneler {#dashboards}](#dashboards-dashboards)<!-- omit in toc -->
-- [Datainsamling {#collection}](#data-collection-collection)
-- [Mål {#destinations}](#destinations-destinations)
-- [Segmenteringstjänst {#segmentation-service}](#segmentation-service-segmentation-service)
-- [Sandlådor {#sandboxes}](#sandboxes-sandboxes)
-- [Källor {#sources}](#sources-sources)
+- [Kontrollpaneler](#dashboards)
+- [Datainsamling](#data-collection-)
+- [Mål ](#destinations)
+- [Segmenteringstjänst](#segmentation-service)
+- [Sandlådor](#sandboxes)
+- [Källor](#sources)
 
 ## Kontrollpaneler {#dashboards}
 
