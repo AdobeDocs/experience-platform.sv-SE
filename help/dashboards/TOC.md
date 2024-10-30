@@ -5,10 +5,10 @@ breadcrumb-title: Användarhandbok om instrumentpaneler
 user-guide-description: Lär dig visualisera data i Experience Platform via anpassningsbara instrumentpaneler.
 feature: Dashboards
 role: Developer,User
-source-git-commit: ddf886052aedc025ff125c03ab63877cb049583d
+source-git-commit: cb3cc06a31c0390d9b1f152c2186da3847647f64
 workflow-type: tm+mt
-source-wordcount: '128'
-ht-degree: 22%
+source-wordcount: '142'
+ht-degree: 21%
 
 ---
 
@@ -22,6 +22,12 @@ ht-degree: 22%
 * [Hämta instrumentpaneler till PDF](download.md)
 * SQL-insikter: frågeproffsläge {#sql-insights-query-pro-mode}
    * [Översikt](sql-insights-query-pro-mode/overview.md)
+   * Distiller-mallar för data {#templates}
+      * [Översikt](sql-insights-query-pro-mode/templates/overview.md)
+      * [Avancerade målgruppsöverlappningar](sql-insights-query-pro-mode/templates/overlaps.md)
+      * [Målgruppsjämförelse](sql-insights-query-pro-mode/templates/comparison.md)
+      * [Målgruppstrender](sql-insights-query-pro-mode/templates/trends.md)
+      * [Målgruppsidentitetsöverlappningar](sql-insights-query-pro-mode/templates/identity-overlaps.md)
    * Filter {#filters}
       * [Datumfilter](sql-insights-query-pro-mode/filters/date-filter.md)
       * [Global filter](sql-insights-query-pro-mode/filters/global-filter.md)
@@ -51,7 +57,7 @@ ht-degree: 22%
 * Insikter - användningsfall {#insights-use-cases}
    * [Samtyckesanalys](insights-use-cases/consent-analysis.md)
 * Tillgängliga datamodeller {#data-models}
-   * [Real-time Customer Data Platform Insights, datamodell B2B Edition](data-models/cdp-insights-data-model-b2b.md)
+   * [Real-time Customer Data Platform Insights datamodell B2B edition](data-models/cdp-insights-data-model-b2b.md)
    * [Real-time Customer Data Platform Insights, datamodell B2C Edition](data-models/cdp-insights-data-model-b2c.md)
 * Programintegreringar {#integrations}
    * [Power BI](integrations/power-bi.md)
