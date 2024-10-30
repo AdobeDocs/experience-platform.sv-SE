@@ -2,10 +2,10 @@
 title: Komma igång med tilläggsutveckling
 description: Kom igång med att utveckla egna taggtillägg i Adobe Experience Platform.
 exl-id: 3925b928-0180-4a4f-aaa6-42f342089560
-source-git-commit: 0a4883cff4f8e04dd0dd62a9e01435fa302a9e54
+source-git-commit: 077d3ac5a34f052ef6293927d67e3cc8afb27563
 workflow-type: tm+mt
-source-wordcount: '448'
-ht-degree: 0%
+source-wordcount: '510'
+ht-degree: 9%
 
 ---
 
@@ -13,7 +13,7 @@ ht-degree: 0%
 
 >[!NOTE]
 >
->Adobe Experience Platform Launch har omklassificerats som en serie datainsamlingstekniker i Adobe Experience Platform. Som ett resultat av detta har flera terminologiska förändringar införts i produktdokumentationen. I följande [dokument](../term-updates.md) finns en konsoliderad referens till de ändrade terminologin.
+>Adobe Experience Platform Launch har omprofilerats till en serie tekniker för datainsamling i Adobe Experience Platform. Som ett resultat av detta har flera terminologiska förändringar genomförts i produktdokumentationen. Se följande [dokument](../term-updates.md) för en konsoliderad referens av terminologiändringarna.
 
 För att du ska komma igång och bygga tillägg kommer vi att använda verktyget för öppen källkod, som tillhandahålls av Adobe-ingenjörer för att skapa de filer och den filstruktur som behövs för ditt tilläggspaket, så allt du har kvar att göra är den värdefulla delen: skriv koden i själva verket.
 
@@ -40,9 +40,13 @@ npx @adobe/reactor-scaffold
 Ställningsverktyget frågar efter några initiala konfigurationsalternativ enligt följande:
 
 * Visningsnamn - det synliga namnet på tillägget
+* Plattform - Anger om tillägget har utvecklats för webb, mobil eller kant
 * Version - Tilläggets version
 * Beskrivning - En kort beskrivning av syftet med tillägget
 * Författare - Namnet på tilläggets författare
+
+>[!NOTE]
+> För mobiltillägg kommer flera frågor att ställas om strukturen för dina Android- och iOS-program.
 
 Verktyget kommer sedan att innehålla alternativ för att skapa tilläggsstrukturen:
 
@@ -52,8 +56,10 @@ Verktyget kommer sedan att innehålla alternativ för att skapa tilläggsstruktu
 Detta kan till exempel returneras om användarens webbläsare är Chrome, om användaren använder en iPad eller om användaren finns på en viss domän.
 * [Åtgärdstyper](./web/action-types.md): Den åtgärd som ska utföras när en händelse inträffar. Skicka till exempel en analysfyr, visa ett erbjudande, spara en cookie eller öppna en supportchatt.
 * [Dataelementtyper](./web/data-element-types.md): Ett dataelement hämtar en datadel. Dessa data kan lagras lokalt, i en cookie, i ett DOM-element eller på en anpassad plats.
-* [Delade moduler](./web/shared.md): En delad modul är en mekanism genom vilken tillägg kan kommunicera med andra tillägg.
+* [Delade moduler](./web/shared.md) (endast webben): En delad modul är en mekanism genom vilken tillägg kan kommunicera med andra tillägg.
 * [Vyer](./web/views.md): Varje händelse, villkor, åtgärd eller dataelementtyp kan innehålla en vy som gör att användaren kan ange inställningar.
+* URL för Exchange (endast webb och kant): När ett tillägg publiceras till den offentliga Adobe-katalogen anger du den URL som ska visas här.
+* Ikonsökväg: En sökväg till en ikonfil för tillägget.
 
 >[!NOTE]
 >

@@ -2,10 +2,10 @@
 title: Översikt över överföringsprocessen för tillägg
 description: Lär dig hur du skickar in ditt tillägg i Adobe Experience Platform från utveckling till release.
 exl-id: 7a30ae5c-f9c7-45f9-b648-3fb31006b1ce
-source-git-commit: dc81da58594fac4ce304f9d030f2106f0c3de271
+source-git-commit: fa50e101e5756923eddcd2cab409bda2a629a8a3
 workflow-type: tm+mt
-source-wordcount: '230'
-ht-degree: 0%
+source-wordcount: '231'
+ht-degree: 19%
 
 ---
 
@@ -13,7 +13,7 @@ ht-degree: 0%
 
 >[!NOTE]
 >
->Adobe Experience Platform Launch har omklassificerats som en serie datainsamlingstekniker i Adobe Experience Platform. Som ett resultat av detta har flera terminologiska förändringar införts i produktdokumentationen. I följande [dokument](../../term-updates.md) finns en konsoliderad referens till de ändrade terminologin.
+>Adobe Experience Platform Launch har omprofilerats till en serie tekniker för datainsamling i Adobe Experience Platform. Som ett resultat av detta har flera terminologiska förändringar genomförts i produktdokumentationen. Se följande [dokument](../../term-updates.md) för en konsoliderad referens av terminologiändringarna.
 
 Att skicka ett tillägg till datainsamlingskatalogen i Adobe Experience Platform kan verka vara en svår uppgift. I det här dokumentet finns en stegvis guide för hur du skickar in tillägget med hjälp av individuella stödlinjer. Om du vill skicka in ditt tillägg måste du utföra följande steg:
 
@@ -21,7 +21,7 @@ Att skicka ett tillägg till datainsamlingskatalogen i Adobe Experience Platform
 1. [Bevilja användaråtkomst för tilläggsutveckling](./access.md)
 1. [Utveckla ett tillägg](./develop.md)
 1. [Skapa en börslista](./create-listing.md)
-1. Skapa tilläggspaketet
+1. [Skapa zip-filen för tilläggspaketet](./create-extension-package-zip.md)
 1. [Överför och testa tillägget](./upload-and-test.md)
 1. [Släpp tillägget](./release.md)
 

@@ -6,9 +6,9 @@ user-guide-description: Lär dig att driftsätta och hantera analyser, marknadsf
 feature: Tags
 solution: Data Collection
 role: Developer
-source-git-commit: 5cbc2f6809156bc1a554154527ff2c5e35d3a922
+source-git-commit: fa50e101e5756923eddcd2cab409bda2a629a8a3
 workflow-type: tm+mt
-source-wordcount: '773'
+source-wordcount: '778'
 ht-degree: 15%
 
 ---
@@ -24,7 +24,7 @@ ht-degree: 15%
    * [Översikt](./ui/managing-resources/overview.md)
    * Tillägg {#extensions}
       * [Översikt](./ui/managing-resources/extensions/overview.md)
-      * [Tillägg - uppgraderingar](./ui/managing-resources/extensions/extension-upgrade.md)
+      * [Tilläggsuppgraderingar](./ui/managing-resources/extensions/extension-upgrade.md)
    * [Dataelement](./ui/managing-resources/data-elements.md)
    * [Regler](./ui/managing-resources/rules.md)
    * [Anteckningar](./ui/managing-resources/notes.md)
@@ -55,7 +55,7 @@ ht-degree: 15%
    * [Stöd för CSP (Content Security Policy)](./ui/client-side/content-security-policy.md)
    * [Stöd för SRI (Subresource Integrity)](./ui/client-side/sri.md)
    * [Säkerhet för transportlager](./ui/client-side/transport-layer-security.md)
-* Vidarebefordrar händelse {#event-forwarding}
+* Vidarebefordra {#event-forwarding}
    * [Översikt](./ui/event-forwarding/overview.md)
    * [Komma igång](./ui/event-forwarding/getting-started.md)
    * [Konfigurera hemligheter](./ui/event-forwarding/secrets.md)
@@ -188,8 +188,8 @@ ht-degree: 15%
       * [OneTrust-hantering för cookies](https://exchange.adobe.com/apps/ec/100340)
       * [Pepperjam](https://exchange.adobe.com/apps/ec/103587)
       * [Persado Connect](https://exchange.adobe.com/apps/ec/103745)
-      * [Pinterest Conversion Tracking](https://exchange.adobe.com/apps/ec/100523)
-      * [Pixelinläsare](https://exchange.adobe.com/apps/ec/100152)
+      * [Pinterest-konverteringsspårning](https://exchange.adobe.com/apps/ec/100523)
+      * [Pixelladdare](https://exchange.adobe.com/apps/ec/100152)
       * [Frågor och svar om webbplatsen](https://exchange.adobe.com/apps/ec/101569)
       * [Kvantmått](https://exchange.adobe.com/apps/ec/101535)
       * [Lös kortskrift](https://exchange.adobe.com/apps/ec/108352)
@@ -265,6 +265,7 @@ ht-degree: 15%
       * [Bevilja användaråtkomst](./extension-dev/submit/access.md)
       * [Utveckla ett tillägg](./extension-dev/submit/develop.md)
       * [Skapa en börslista](./extension-dev/submit/create-listing.md)
+      * [Skapa en ZIP-fil för tilläggspaket](./extension-dev/submit/create-extension-package-zip.md)
       * [Ladda upp och implementera testning från början till slut](./extension-dev/submit/upload-and-test.md)
       * [Frigöra ett tillägg](./extension-dev/submit/release.md)
    * [Tilläggskonfiguration](./extension-dev/configuration.md)
@@ -313,13 +314,13 @@ ht-degree: 15%
       * [Sök](./api/endpoints/search.md)
       * [Hemligheter](./api/endpoints/secrets.md)
    * Stödlinjer {#guides}
-      * [Delegera beskrivnings-ID:n](./api/guides/delegate-descriptor-ids.md)
-      * [Krypteringsvärden](./api/guides/encrypting-values.md)
+      * [Delegera beskrivnings-ID](./api/guides/delegate-descriptor-ids.md)
+      * [Krypterar värden](./api/guides/encrypting-values.md)
       * [Felhantering](./api/guides/error-handling.md)
       * [Dela privata tilläggspaket](./api/guides/extension-packages.md)
       * [Filtrera svar](./api/guides/filtering.md)
-      * [Sidinisera svar](./api/guides/pagination.md)
-      * [Sortera svar](./api/guides/sorting.md)
+      * [Sidnumrera svar](./api/guides/pagination.md)
+      * [Sorterar svar](./api/guides/sorting.md)
       * [Relationer](./api/guides/relationships.md)
       * [Sökresurser](./api/guides/search.md)
       * [Hemligheter](./api/guides/secrets.md)

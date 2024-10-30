@@ -2,10 +2,10 @@
 title: Ladda upp och implementera kompletta tester för ett tillägg
 description: Lär dig hur du validerar, överför och testar tillägg i Adobe Experience Platform.
 exl-id: 6176a9e1-fa06-447e-a080-42a67826ed9e
-source-git-commit: 9b99ec5e526fcbe34a41d3ce397b34a9b4105819
+source-git-commit: 8e843ce14d726f18b77189b5523b823bfa4473be
 workflow-type: tm+mt
-source-wordcount: '2359'
-ht-degree: 0%
+source-wordcount: '2342'
+ht-degree: 2%
 
 ---
 
@@ -13,7 +13,7 @@ ht-degree: 0%
 
 >[!NOTE]
 >
->Adobe Experience Platform Launch har omklassificerats som en serie datainsamlingstekniker i Adobe Experience Platform. Som ett resultat av detta har flera terminologiska förändringar införts i produktdokumentationen. I följande [dokument](../../term-updates.md) finns en konsoliderad referens till de ändrade terminologin.
+>Adobe Experience Platform Launch har omprofilerats till en serie tekniker för datainsamling i Adobe Experience Platform. Som ett resultat av detta har flera terminologiska förändringar genomförts i produktdokumentationen. Se följande [dokument](../../term-updates.md) för en konsoliderad referens av terminologiändringarna.
 
 Om du vill testa taggtillägg i Adobe Experience Platform använder du taggens API och/eller kommandoradsverktygen för att överföra dina tilläggspaket. Använd sedan användargränssnittet för plattformen eller användargränssnittet för datainsamling för att installera tilläggspaketet i en egenskap och använda funktionerna i ett taggbibliotek och skapa det.
 
@@ -43,9 +43,9 @@ Mer information om hur du skapar ett tekniskt konto som ska användas med taggar
 
 >[!IMPORTANT]
 >
->För att kunna skapa en integrering i Adobe I/O måste du vara en Experience Cloud-organisationsadministratör eller en Experience Cloud-grupputvecklare.
+>För att kunna skapa en integrering i Adobe I/O måste du vara en Experience Cloud-organisationsadministratör eller en Experience Cloud Org-utvecklare.
 
-Om du inte kan skapa en integrering har du förmodligen inte rätt behörighet. Detta kräver antingen en organisationsadministratör för att slutföra stegen åt dig eller för att du ska kunna utses till utvecklare.
+Om du inte kan skapa en integrering är det troligtvis så att du inte har rätt behörighet. Detta kräver antingen en organisationsadministratör för att slutföra stegen åt dig eller för att du ska kunna utses till utvecklare.
 
 ## Överför ditt tilläggspaket {#upload}
 
@@ -61,14 +61,16 @@ npx @adobe/reactor-uploader
 
 Med `npx` kan du hämta och köra ett npm-paket utan att installera det på datorn. Detta är det enklaste sättet att köra Uploader.
 
-I Uploader måste du ange flera uppgifter. Det tekniska konto-ID:t, API-nyckeln och annan information kan hämtas från Adobe I/O-konsolen. Navigera till [integreringssidan](https://console.adobe.io/integrations) i I/O-konsolen. Välj rätt organisation i listrutan, hitta rätt integrering och välj **[!UICONTROL View]**.
+>[!NOTE]
+> Som standard förväntar sig uploader-objektet Adobe I/O-referenser för ett Oauth-flöde från server till server. De gamla `jwt-auth`-autentiseringsuppgifterna
+> kan användas genom att köra `npx @adobe/reactor-uploader@v5.2.0` tills borttagningen är den 1 januari 2025. De parametrar som krävs
+> för att köra `jwt-auth`-versionen finns [här](https://github.com/adobe/reactor-uploader/tree/cdc27f4f0e9fa3136b8cd5ca8c7271428b842452).
 
-- Vilken är sökvägen till din privata nyckel? /path/to/private.key. Det här är den plats där du sparade din privata nyckel i steg 2 ovan.
-- Vad är ditt Org ID? Kopiera och klistra in det här från översiktssidan för I/O-konsolen som du lämnade öppen tidigare.
-- Vad är ditt ID för tekniskt konto? Kopiera och klistra in det här från I/O-konsolen.
-- Vad är din API-nyckel? Kopiera och klistra in det här från I/O-konsolen.
-- Vad är klienthemligheten? Kopiera och klistra in det här från I/O-konsolen.
-- Vilken sökväg till det extension_package som du vill överföra? /path/to/extension_package.zip. Om du anropar den som laddar upp filen från den katalog som innehåller ditt ZIP-paket kan du bara välja den i listan i stället för att skriva sökvägen.
+Överföraren kräver att du bara anger ett fåtal delar av informationen. `clientId` och `clientSecret` kan hämtas från Adobe I/O-konsolen. Navigera till [integreringssidan](https://console.adobe.io/integrations) i I/O-konsolen. Välj rätt organisation i listrutan, hitta rätt integrering och välj **[!UICONTROL View]**.
+
+- Vad är din `clientId`? Kopiera och klistra in det här från I/O-konsolen.
+- Vad är din `clientSecret`? Kopiera och klistra in det här från I/O-konsolen.
+- Om du anropar den som laddar upp filen från den katalog som innehåller ditt ZIP-paket kan du bara välja den i listan i stället för att skriva sökvägen.
 
 Tilläggspaketet kommer sedan att överföras och den överförande filen ger dig ID:t för extension_package.
 
@@ -79,6 +81,8 @@ Tilläggspaketet kommer sedan att överföras och den överförande filen ger di
 >[!NOTE]
 >
 >Om du tänker köra överföringen ofta kan det vara en börda att skicka all den här informationen varje gång. Du kan också skicka dessa som argument från kommandoraden. Mer information finns i avsnittet [Kommandoradsargument](https://www.npmjs.com/package/@adobe/reactor-uploader#command-line-arguments) i NPM-dokumenten.
+
+Om du vill hantera överföringen av tillägget med API:t direkt kan du läsa exempelanropen för [skapa](../../api/endpoints/extension-packages.md/#create) eller [uppdatera](../../api/endpoints/extension-packages.md#update) ett tilläggspaket i API-dokumenten för mer information.
 
 ## Skapa en utvecklingsegenskap {#property}
 
