@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Grundläggande om schemakomposition
 description: Lär dig mer om XDM-scheman (Experience Data Model) och byggstenarna, principerna och de bästa sätten att komponera scheman i Adobe Experience Platform.
 exl-id: d449eb01-bc60-4f5e-8d6f-ab4617878f7e
-source-git-commit: 42038ecfeecc774b3a57e05d961bbd80f3178c21
+source-git-commit: 595d9bd6a0aa0c9f1059e485c54e89ce02b7ec68
 workflow-type: tm+mt
-source-wordcount: '4251'
+source-wordcount: '0'
 ht-degree: 0%
 
 ---
@@ -223,6 +223,10 @@ I följande skärmbild visas hur fältgrupper representeras i användargränssni
 
 Den senaste listan över tillgängliga standardfältgrupper i XDM finns i [den officiella XDM-databasen](https://github.com/adobe/xdm/tree/master/components/fieldgroups). Du kan också läsa guiden [utforska XDM-komponenter](../ui/explore.md) om du hellre vill visa resurser i användargränssnittet.
 
+>[!NOTE]
+>
+> XDM-standardfältgrupper utvecklas alltid och vissa fältgrupper har tagits bort. Den senaste uppdateringslistan över inaktuella fältgrupper finns i avsnittet [inaktuella fältgrupper](https://github.com/adobe/xdm/tree/master/components/fieldgroups/deprecated) i den officiella XDM-databasen.
+
 ### Datatyp {#data-type}
 
 Datatyper används som referensfälttyper i klasser eller scheman på samma sätt som grundläggande litteralfält. Den största skillnaden är att datatyper kan definiera flera delfält på samma sätt som fältgrupper. Den största skillnaden mellan dem är att datatyper kan inkluderas var som helst i ett schema genom att lägga till den som&quot;datatyp&quot; för ett fält. Fältgrupper är bara kompatibla med vissa klasser, men datatyper kan inkluderas i alla överordnade klasser eller fältgrupper.
@@ -238,6 +242,10 @@ I följande skärmbild visas hur datatyperna visas i användargränssnittet för
 ![Ett diagram i Schemaredigeraren för en enskild person med objektet Fullständigt namn och attributen markerade.](../images/schema-composition/data-type.png)
 
 Den senaste listan över tillgängliga XDM-standarddatatyper finns i [den officiella XDM-databasen](https://github.com/adobe/xdm/tree/master/components/datatypes). Du kan också läsa guiden [utforska XDM-komponenter](../ui/explore.md) om du hellre vill visa resurser i användargränssnittet.
+
+>[!NOTE]
+>
+> Standarddatatyperna XDM utvecklas alltid och vissa datatyper har tagits bort. Den senaste uppdateringslistan över borttagna datatyper finns i avsnittet [inaktuella datatyper](https://github.com/adobe/xdm/tree/master/components/datatypes/deprecated) i den officiella XDM-databasen.
 
 ### Fält {#field}
 
