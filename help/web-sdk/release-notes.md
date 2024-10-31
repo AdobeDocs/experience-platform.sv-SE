@@ -3,10 +3,10 @@ title: Versionsinformation för Adobe Experience Platform Web SDK
 description: Den senaste versionsinformationen om webb-SDK för Adobe Experience Platform.
 keywords: Adobe Experience Platform Web SDK;Platform Web SDK;Web SDK;versionsinformation;
 exl-id: efd4e866-6a27-4bd5-af83-4a97ca8adebd
-source-git-commit: c1fb9fe7d4863e316b824d6c8dd2ff0d3405d7ea
+source-git-commit: f31d250cfbe42680ee6f4d1334bf04a2ee8643a1
 workflow-type: tm+mt
-source-wordcount: '1920'
-ht-degree: 0%
+source-wordcount: '2044'
+ht-degree: 2%
 
 ---
 
@@ -15,6 +15,26 @@ ht-degree: 0%
 
 Det här dokumentet innehåller versionsinformation för Adobe Experience Platform Web SDK.
 Den senaste versionsinformationen om Web SDK-taggtillägget finns i [Versionsinformationen för Web SDK-taggtillägg](../tags/extensions/client/web-sdk/web-sdk-ext-release-notes.md).
+
+## Version 2.24.0 - 31 oktober 2024
+
+**Nya funktioner**
+
+- [Åsidosättningar av dataström](../datastreams/overrides.md) stöds nu när mediesessioner startas.
+
+- Stöd för Adobe Target svarstoken har lagts till i återgivningsövervakningskiten.
+
+**Korrigeringar och förbättringar**
+
+- När flera meddelanden i appen returneras visas endast meddelanden med den högsta prioriteten. De andra spelas in som undertryckta.
+- Tomma datastream-åsidosättningar skickas inte längre till Edge Network, vilket minskar eventuella konflikter med routningskonfigurationer på serversidan.
+- Följande loggningsmeddelandekomponentnamn har bytt namn så att de justeras mot andra Adobe SDK:er:
+   - `DecisioningEngine` har bytt namn till `RulesEngine`
+   - `LegacyMediaAnalytics` har bytt namn till `MediaAnalyticsBridge`
+   - `Privacy` har bytt namn till `Consent`
+- Korrigerade ett fel som uppstod när standardinnehållsobjekt renderades via [`applyPropositions`](../web-sdk/commands/applypropositions.md).
+- Korrigerade ett CSS-fel i Adobe Target åtgärder för att flytta och ändra storlek.
+- Nyckeln `machineLearning` har tagits bort från [`sendEvent`](../web-sdk/commands/sendevent/overview.md) svar.
 
 ## Version 2.23.0 - 19 september 2024
 
@@ -72,7 +92,7 @@ Den senaste versionsinformationen om Web SDK-taggtillägget finns i [Versionsinf
 - Ett problem har korrigerats där längst ned på sidanrop aldrig skulle skickas när det fanns ett överst på sidanropet med `renderDecisions` inställt på `false`.
 - Korrigerade ett problem där Web SDK inte kunde läsa korsdomänsidentiteter när det fanns flera `adobe_mc` frågesträngsparametrar.
 
-## Version 2.19.1 - 10 november 2023
+## Version 2.19.1 – 10 november 2023
 
 **Korrigeringar och förbättringar**
 

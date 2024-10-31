@@ -2,16 +2,25 @@
 title: Versionsinformation om Adobe Experience Platform Web SDK Extension
 description: Adobe Experience Platform Web SDK Tag Extension
 exl-id: 91de8c91-023a-45b6-9f67-ac75ee471e50
-source-git-commit: c1fb9fe7d4863e316b824d6c8dd2ff0d3405d7ea
+source-git-commit: c38456ab44f3e143a0120f1a756105213a46fab5
 workflow-type: tm+mt
-source-wordcount: '2278'
-ht-degree: 0%
+source-wordcount: '2319'
+ht-degree: 1%
 
 ---
 
 # Versionsinformation om Adobe Experience Platform Web SDK-tillägg
 
 Det här dokumentet innehåller versionsinformation för taggtillägget Adobe Experience Platform Web SDK. Den senaste versionsinformationen om SDK:t finns i [Versionsinformationen för Platform Web SDK](/help/web-sdk/release-notes.md).
+
+## Version 2.27.0 - 31 oktober 2024
+
+**Nya funktioner**
+
+- [Datastream-åsidosättningar](../web-sdk/web-sdk-extension-configuration.md#datastream-overrides) innehåller nu inställningar för att inaktivera Experience Cloud-lösningar och Adobe Experience Platform-tjänster.
+- Du kan nu skapa [datastream-åsidosättningar](../web-sdk/web-sdk-extension-configuration.md) för mediesessioner.
+
+Innehåller version 2.24.0 av Adobe Experience Platform Web SDK.
 
 ## Version 2.26.1 - 19 september 2024
 
@@ -88,7 +97,7 @@ Innehåller version 2.19.2 av Adobe Experience Platform Web SDK.
 
 Innehåller version 2.19.2 av Adobe Experience Platform Web SDK.
 
-## Version 2.21.3 - 10 november 2023
+## Version 2.21.3 – 10 november 2023
 
 Innehåller version 2.19.1 av Adobe Experience Platform Web SDK.
 
