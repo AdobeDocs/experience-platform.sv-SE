@@ -3,9 +3,9 @@ title: Händelsetyper i Adobe Experience Platform Web SDK-tillägget
 description: Lär dig hur du använder händelsetyper från Adobe Experience Platform Web SDK-tillägget i Adobe Experience Platform Launch.
 solution: Experience Platform
 exl-id: b3162406-c5ce-42ec-ab01-af8ac8c63560
-source-git-commit: 666e8c6fcccf08d0841c5796677890409b22d794
+source-git-commit: b37bf09e3ec16f29d6acee3bca71463fa2c876ce
 workflow-type: tm+mt
-source-wordcount: '1067'
+source-wordcount: '1419'
 ht-degree: 0%
 
 ---
@@ -13,6 +13,34 @@ ht-degree: 0%
 # Händelsetyper
 
 Den här sidan beskriver de Adobe Experience Platform-händelsetyper som finns i taggtillägget Adobe Experience Platform Web SDK. Dessa används för att [skapa regler](https://experienceleague.adobe.com/docs/platform-learn/data-collection/tags/build-rules.html) och ska inte blandas ihop med fältet `eventType` i [`xdm` object](/help/web-sdk/commands/sendevent/xdm.md).
+
+## Övervakningkrok utlöses {#monitoring-hook-triggered}
+
+Adobe Experience Platform Web SDK innehåller övervakningskopplingar som du kan använda för att övervaka olika systemhändelser. De här verktygen är användbara när du vill utveckla egna felsökningsverktyg och hämta Web SDK-loggar.
+
+Fullständig information om vilka parametrar varje övervakningshändelse innehåller finns i [dokumentationen för Web SDK-övervakning av kopplingar](../../../../web-sdk/monitoring-hooks.md).
+
+![Taggar användargränssnittsbilden som visar typen för Övervakningshändelse ](assets/monitoring-hook-triggered.png)
+
+Web SDK-taggtillägget stöder följande övervakningskopplingar:
+
+* **[!UICONTROL onInstanceCreated]**: Den här övervakningshändelsen utlöses när du har skapat en ny Web SDK-instans.
+* **[!UICONTROL onInstanceConfigured]**: Den här övervakningshändelsen utlöses av Web SDK när kommandot [`configure`](../../../../web-sdk/commands/configure/overview.md) har lösts
+* **[!UICONTROL onBeforeCommand]**: Den här övervakningshändelsen utlöses av Web SDK innan något annat kommando körs. Du kan använda den här övervakningsfunktionen för att hämta konfigurationsalternativen för ett specifikt kommando.
+* **[!UICONTROL onCommandResolved]**: Den här övervakningshändelsen utlöses innan kommandolöftet löses. Du kan använda den här funktionen för att se kommandoalternativen och resultatet.
+* **[!UICONTROL onCommandRejected]**: Den här övervakningshändelsen utlöses när ett kommandolöfte avvisas och innehåller information om felets orsak.
+* **[!UICONTROL onBeforeNetworkRequest]**: Den här övervakningshändelsen utlöses innan en nätverksbegäran körs.
+* **[!UICONTROL onNetworkResponse]**: Den här övervakningshändelsen utlöses när webbläsaren får ett svar.
+* **[!UICONTROL onNetworkError]**: Den här övervakningshändelsen utlöses när nätverksbegäran misslyckas.
+* **[!UICONTROL onBeforeLog]**: Den här övervakningshändelsen utlöses innan Web SDK loggar något till konsolen.
+* **[!UICONTROL onContentRendering]**: Den här övervakningshändelsen aktiveras av komponenten `personalization` och hjälper dig att felsöka återgivningen av personaliseringsinnehållet. Den här händelsen kan ha olika status:
+   * `rendering-started`: Anger att Web SDK håller på att återge förslag. Innan Web SDK börjar återge ett beslutsområde eller en vy kan du i objektet `data` se de förslag som ska återges av komponenten `personalization` och scopenamnet.
+   * `no-offers`: Anger att ingen nyttolast har tagits emot för de begärda parametrarna.
+   * `rendering-failed`: Anger att Web SDK inte kunde återge ett förslag.
+   * `rendering-succeeded`: Anger att återgivningen har slutförts för ett beslutsområde.
+   * `rendering-redirect`: Anger att Web SDK kommer att köra en omdirigeringsdisposition.
+* **[!UICONTROL onContentHiding]**: Den här övervakningshändelsen utlöses när ett fördolt format används eller tas bort.
+
 
 ## [!UICONTROL Send event complete]
 
