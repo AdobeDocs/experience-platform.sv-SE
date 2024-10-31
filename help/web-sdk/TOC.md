@@ -6,7 +6,7 @@ breadcrumb-title: Användarhandbok om webb-SDK
 user-guide-description: Interagera med Experience Cloud-tjänsterna via Edge Network.
 feature: Web SDK
 role: Developer
-source-git-commit: 02ae1fce01895d83d9c68248397e5288613ffe58
+source-git-commit: 7231d3a5ad9553707392c32004d02e355e3c919f
 workflow-type: tm+mt
 source-wordcount: '229'
 ht-degree: 19%
@@ -76,7 +76,6 @@ ht-degree: 19%
    * [Återge personaliserat innehåll](personalization/rendering-personalization-content.md)
    * [Personalization via hybridimplementering](personalization/hybrid-personalization.md)
    * [Hantera flimmer](personalization/manage-flicker.md)
-   * [Övervaka kopplingar](monitoring-hooks.md)
    * Adobe Target {#adobe-target}
       * [Översikt](personalization/adobe-target/target-overview.md)
       * [Programimplementering på en sida](personalization/adobe-target/spa-implementation.md)
@@ -109,6 +108,6 @@ ht-degree: 19%
    * [Felsökningsmetoder](use-cases/debugging.md)
    * [Använda flera Web SDK-instanser](use-cases/multiple-instances.md)
    * [Konfigurera händelser för övre och nedre sidor](use-cases/top-bottom-page-events.md)
-
+* [Övervaka kopplingar](monitoring-hooks.md)
 * [Vanliga frågor](faq.md)
 * [Resurser](resources.md)
