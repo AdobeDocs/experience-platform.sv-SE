@@ -2,9 +2,9 @@
 title: Namnområdesprioritet
 description: Läs om namnområdesprioritet i identitetstjänsten.
 exl-id: bb04f02e-3826-45af-b935-752ea7e6ed7c
-source-git-commit: e8e8914c41d7a083395b0bf53aaac8021fcf9e9a
+source-git-commit: 07d54bf341ef2aacc6612ad323585609c0830824
 workflow-type: tm+mt
-source-wordcount: '1685'
+source-wordcount: '1728'
 ht-degree: 1%
 
 ---
@@ -150,6 +150,8 @@ Funktioner för borttagning av datahygienpost på följande sätt för en viss i
 Mer information finns i [Översikt över avancerad livscykelhantering](../../hygiene/home.md).
 
 ### Beräknade attribut
+
+Beräknade attribut använder namnområdesprioritet för att lagra det beräknade attributvärdet. För en given händelse kommer identiteten med den högsta namnområdesprioriteten att ha värdet för det beräknade attributet skrivet mot den. Mer information finns i användargränssnittshandboken för [beräknade attribut](../../profile/computed-attributes/ui.md).
 
 Beräknade attribut använder inte namnområdesprioritet för att beräkna värden. Om du använder beräknade attribut måste du se till att CRMID har angetts som din primära identitet för WebSDK. Mer information finns i användargränssnittshandboken för [beräknade attribut](../../profile/computed-attributes/ui.md).
 
