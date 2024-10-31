@@ -2,9 +2,9 @@
 title: Verktyg för sandlåda
 description: Exportera och importera sömlöst sandlådekonfigurationer mellan sandlådor.
 exl-id: f1199ab7-11bf-43d9-ab86-15974687d182
-source-git-commit: 209aaaf0c2bfdb321f75257309980c7a48cb1eb4
+source-git-commit: 85476ea8a667cf3e74cd7a24da07d81c635e1628
 workflow-type: tm+mt
-source-wordcount: '2236'
+source-wordcount: '2264'
 ht-degree: 0%
 
 ---
@@ -151,6 +151,8 @@ Sidan [!UICONTROL Package object and dependencies] innehåller en lista med alla
 >[!NOTE]
 >
 >Beroende objekt kan ersättas med befintliga objekt i målsandlådan, vilket gör att du kan återanvända befintliga objekt i stället för att skapa en ny version. Om du till exempel importerar ett paket som innehåller scheman kan du återanvända befintliga anpassade fältgrupper och identitetsnamnutrymmen i målsandlådan. När du importerar ett paket som innehåller Journeys kan du också återanvända befintliga segment i målsandlådan.
+>
+>Sandlådeverktyg har för närvarande inte stöd för uppdatering eller överskrivning av befintliga objekt. Du kan välja att skapa ett nytt objekt eller fortsätta att använda det befintliga objektet utan ändringar.
 
 Om du vill använda ett befintligt objekt väljer du pennikonen bredvid det beroende objektet.
 
