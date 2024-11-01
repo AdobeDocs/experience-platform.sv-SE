@@ -5,10 +5,10 @@ breadcrumb-title: Användarhandbok om Query Service
 user-guide-description: Använd standard-SQL för att fråga efter data i datasjön i Experience Platform.
 feature: Queries
 role: User,Developer
-source-git-commit: 3583f6e0ac72e4f813abd87949cb640d0b20b6e2
+source-git-commit: c94213b37813730911d207cb0de773d8aac22c13
 workflow-type: tm+mt
-source-wordcount: '341'
-ht-degree: 12%
+source-wordcount: '357'
+ht-degree: 11%
 
 ---
 
@@ -39,6 +39,16 @@ ht-degree: 12%
       - [Teknikfunktioner för XML](data-distiller/ml-feature-pipelines/feature-engineering.md)
       - [Exportera data till ML-miljöer](data-distiller/ml-feature-pipelines/export-data.md)
       - [AI/ML-arbetsflöde för berikning av data från början till slut](data-distiller/ml-feature-pipelines/end-to-end-notebook-workflow.md)
+- Data, Distiller-statistik {#advanced-statistics}
+   - [Översikt](advanced-statistics/overview.md)
+   - [Funktionsteknik](advanced-statistics/feature-engineering.md)
+   - [Modeller](advanced-statistics/models.md)
+Implementeringsmodeller {#implement-models}
+      - [Implementeringsmodeller](advanced-statistics/implement-models/implement-models.md)
+      - [Regression](advanced-statistics/implement-models/regression.md)
+      - [Klassificering](advanced-statistics/implement-models/classification.md)
+      - [Klustring](advanced-statistics/implement-models/clustering.md)
+   - [Omvandling av funktioner](advanced-statistics/feature-transformation.md)
 - Data för Distiller-målgrupper {#data-distiller-audiences}
    - [Bygg externa målgrupper med SQL](data-distiller-audiences/overview.md)
 - Exempel {#use-cases}
