@@ -1,24 +1,43 @@
 ---
 keywords: Experience Platform;hem;populära ämnen;frågetjänst;frågetjänst;felsökningsguide;faq;felsökning;
 solution: Experience Platform
-title: Vanliga frågor
-description: Det här dokumentet innehåller vanliga frågor och svar relaterade till frågetjänsten. Här finns ämnen som export av data, verktyg från tredje part och PSQL-fel.
+title: Fråga service och data Distiller frågor och svar
+description: Det här dokumentet innehåller vanliga frågor och svar om Query Service och Data Distiller. Här finns ämnen som export av data, verktyg från tredje part och PSQL-fel.
 exl-id: 14cdff7a-40dd-4103-9a92-3f29fa4c0809
-source-git-commit: 84f30a47102a51b40d6811cd4815c36f6ffd34b5
+source-git-commit: dc15ab9b94513d3acdf0e62ef0fec710c05a9fc9
 workflow-type: tm+mt
-source-wordcount: '4546'
+source-wordcount: '5037'
 ht-degree: 0%
 
 ---
 
-# Vanliga frågor och svar
+# Fråga service och data Distiller frågor och svar
 
-Det här dokumentet innehåller svar på vanliga frågor om frågetjänsten och en lista med vanliga felkoder när frågetjänsten används. För frågor och felsökning som rör andra tjänster i Adobe Experience Platform, se [felsökningsguiden för Experience Platform](../landing/troubleshooting.md).
+Det här dokumentet besvarar vanliga frågor om Query Service och Data Distiller. Den innehåller även vanliga felkoder när man använder produkten &quot;Frågor&quot; för datavalidering eller skriver transformerade data tillbaka till datasjön. Om du har frågor eller vill felsöka andra Adobe Experience Platform-tjänster kan du läsa [felsökningsguiden för Experience Platform](../landing/troubleshooting.md).
+
+Här är två grundläggande frågor för att klargöra hur Query Service och Data Distiller samverkar inom Adobe Experience Platform.
+
+## Vilken är relationen mellan Query Service och Data Distiller?
+
+Query Service och Data Distiller är distinkta, kompletterande komponenter som ger specifika funktioner för datafrågor. Frågetjänsten är avsedd för ad hoc-frågor för att utforska, validera och experimentera med importerade data utan att ändra datasjön. Data Distiller fokuserar däremot på batchfrågor som omformar och berikar data, med resultat som lagras tillbaka i datasjön för framtida bruk. Batchfrågor i Data Distiller kan schemaläggas, övervakas och hanteras, vilket stöder mer omfattande databearbetning och -hantering som inte enbart kan hanteras med Query Service.
+
+Frågetjänsten ger tillsammans snabba insikter, medan Data Distiller möjliggör djupgående, permanenta dataomvandlingar.
+
+## Vad är skillnaden mellan Query Service och Data Distiller?
+
+**Frågetjänst**: Används för SQL-frågor med fokus på datautforskande, validering och experimenterande. Utdata lagras inte i datasjön och körningstiden är begränsad till 10 minuter. Ad hoc-frågor är lämpliga för enkla, interaktiva datakontroller och analyser.
+
+**Data Distiller**: Aktiverar gruppfrågor som bearbetar, rensar och berikar data, med resultat som lagras i datasjön. Dessa frågor har stöd för längre körningstid (upp till 24 timmar) och ytterligare funktioner som schemaläggning, övervakning och snabbare rapportering. Data Distiller är idealiskt för omfattande datamanipulering och schemalagda databehandlingsåtgärder.
+
+Mer information finns i paketeringsdokumentet för [frågetjänsten](./packaging.md).
+
+## Frågekategorier {#categories}
 
 Följande lista med svar på vanliga frågor är indelad i följande kategorier:
 
 - [Allmänt](#general)
-- [Frågor, användargränssnitt](#queries-ui) 
+- [Data Distiller](#data-distiller)
+- [Användargränssnitt för frågor](#queries-ui)
 - [Datauppsättningsexempel](#dataset-samples)
 - [Exportera data](#exporting-data)
 - [SQL-syntax](#sql-syntax) 
@@ -589,7 +608,7 @@ Ja, attributbaserad åtkomstkontroll används om den har konfigurerats. Mer info
 Nej, frågetjänsten stöder inte kommandot INSERT OVERWRITE INTO.
 +++
 
-### Hur ofta uppdateras användningsdata på kontrollpanelen för licensanvändning för datatimmar för Distiller?
+### Hur ofta uppdateras användningsdata på kontrollpanelen för licensanvändning för Data Distiller Compute-timmar?
 
 +++Svar
 Kontrollpanelen för licensanvändning för datavärden i Distiller uppdateras fyra gånger om dagen, var sjätte timme.
@@ -605,6 +624,38 @@ Ja, du kan använda kommandot `CREATE VIEW` utan åtkomst till Data Distiller. D
 
 +++Svar
 Ja. Vissa tredjepartsklienter, som DbVisualizer, kan kräva en separat identifierare före och efter ett SQL-block för att ange att en del av ett skript ska hanteras som en enda sats. Mer information finns i [anonym blockdokumentation](./key-concepts/anonymous-block.md) eller i [den officiella DbVisualizer-dokumentationen](https://confluence.dbvis.com/display/UG120/Executing+Complex+Statements#ExecutingComplexStatements-UsinganSQLDialect).
++++
+
+## Data Distiller {#data-distiller}
+
+### Hur spåras användningen av Data Distiller-licenser och var kan jag se den här informationen?
+
++++Svar\
+Huvudmåttet som används för att spåra batchfrågeanvändning är beräkningstiden. Du har tillgång till den här informationen och din nuvarande förbrukning via kontrollpanelen för [licensanvändning](../dashboards/guides/license-usage.md).
++++
+
+### Vad är en Compute Hour?
+
++++Svar\
+Beräkningstimmar är det tidsmått som Query Service-motorerna tar för att läsa, bearbeta och skriva data tillbaka till datasjön när en batchfråga körs.
++++
+
+### Hur mäts Beräkna timmar?
+
++++Svar\
+Beräkna timmar mäts kumulativt över alla dina godkända sandlådor.
++++
+
+### Varför märker jag ibland en variation i konsumtionen av Beräkna timmar även när jag kör samma fråga i följd?
+
++++Svar\
+Beräkningstimmar för en fråga kan fluktuera på grund av flera faktorer. Dessa omfattar den bearbetade datavolymen, komplexiteten hos omformningsåtgärder i SQL-frågan och så vidare. Frågetjänsten skalar klustret baserat på ovanstående parametrar för varje fråga, vilket kan leda till skillnader i beräkningstimmar.
++++
+
+### Är det normalt att lägga märke till en minskning av beräkningstimmar när jag kör samma fråga med samma data under en lång tid? Varför händer detta?
+
++++Svar\
+Infrastruktur för serverdelen har ständigt förbättrats för att optimera användningen av timmor för beräkning och bearbetningstid. Det innebär att du kan märka att prestandaförbättringarna förändras över tid.
 +++
 
 ## Användargränssnitt för frågor

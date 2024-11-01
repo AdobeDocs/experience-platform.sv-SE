@@ -4,9 +4,9 @@ title: Kontrollpanel för licensanvändning
 description: Adobe Experience Platform tillhandahåller en kontrollpanel där du kan visa viktig information om din organisations licensanvändning.
 type: Documentation
 exl-id: 143d16bb-7dc3-47ab-9b93-9c16683b9f3f
-source-git-commit: 80380fb1287d710460ad2c75d73ea5c2c38f5ebd
+source-git-commit: 37192addffea094cb2d2f3b0201bb128c912e762
 workflow-type: tm+mt
-source-wordcount: '2720'
+source-wordcount: '2732'
 ht-degree: 0%
 
 ---
@@ -226,7 +226,7 @@ Kontrollpanelen för licensanvändning rapporterar om flera unika mätvärden so
 | [!UICONTROL Profile Richness No of Packs] | En ökning av din auktoriserade totala datavolym med 25 kB per profil för varje ytterligare profilnoggrannhetspaket. |
 | [!UICONTROL Query Service Compute Hours] | Ett mått på hur lång tid det tar för frågetjänstmotorerna att läsa, bearbeta och skriva data tillbaka till datasjön när en batchfråga körs. |
 | [!UICONTROL Streaming Segmentation No of Packs] | Paketuppdateringssegmentmedlemskapet för en personprofil när nya data matas in i segmenteringstjänsten via ett strömningsflöde. Segmentmedlemskap utvärderas baserat på attributen för den aktuella personprofilen och värdet för den aktuella händelsen, utan hänsyn till historiskt beteende. Direktuppspelningssegmentering är en delad funktion. |
-| [!UICONTROL Total Data Volume] | Den totala mängden data som är tillgängliga för Adobe Experience Platform Profile Service för användning i engagemangsarbetsflöden. |
+| [!UICONTROL Total Data Volume] | Den totala mängden data som är tillgängliga för Adobe Experience Platform Profile Service för användning i engagemangsarbetsflöden. Läs [vanliga frågor om Total Data Volume](../../landing/license-usage-and-guardrails/total-data-volume.md) om du vill veta mer. |
 
 <!-- |  [!UICONTROL Sandbox No of Packs] |  A logical separation within your instance of any Adobe On-demand Service that accesses Adobe Experience Platform isolating data and operations | -->
 
