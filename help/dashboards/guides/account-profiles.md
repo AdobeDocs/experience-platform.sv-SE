@@ -2,9 +2,9 @@
 title: Kontrollpanel för kontoprofiler
 description: Adobe Experience Platform tillhandahåller en kontrollpanel där du kan visa viktig information om din organisations B2B-kontoprofiler.
 exl-id: c9a3d786-6240-4ba4-96c8-05f658e1150c
-source-git-commit: 8caa10010109f9936271cb45a2166455f3678687
+source-git-commit: 442fcee17cbe38a9e1608324581ebedee4ba7fe6
 workflow-type: tm+mt
-source-wordcount: '1741'
+source-wordcount: '2226'
 ht-degree: 0%
 
 ---
@@ -17,7 +17,7 @@ Det här dokumentet innehåller en översikt över funktionerna på kontrollpane
 
 ## Komma igång
 
-Du måste ha behörighet till [Adobe Real-time Customer Data Platform B2B Edition](../../rtcdp/b2b-overview.md) för att få åtkomst till B2B [!UICONTROL Account Profiles]-instrumentpanelen.
+Du måste ha behörighet till [Adobe Real-time Customer Data Platform B2B edition](../../rtcdp/b2b-overview.md) för åtkomst till B2B [!UICONTROL Account Profiles]-instrumentpanelen.
 
 ## Data för kontoprofiler {#data}
 
@@ -79,6 +79,10 @@ Adobe tillhandahåller standardwidgetar som du kan använda för att visualisera
 Om du vill veta mer om de tillgängliga standardwidgetarna väljer du namnet på en widget i följande lista:
 
 * [Kontoprofiler har lagts till](#account-profiles-added)
+* [Översikt över kunder per konto](#customers-per-account-overview)
+   * [Affärsmöjligheter per konto - översikt](#opportunities-per-account-overview)
+   * [Affärsmöjligheter per kontoinformation](#opportunities-per-account-detail)
+   * [Kunder per konto - information](#customers-per-account-detail)
 * [Nya konton efter bransch](#accounts-by-industry)
 * [Nya konton efter typ](#accounts-by-type)
 * [Nya möjligheter per personroll](#opportunities-by-person-role)
@@ -94,6 +98,52 @@ Om du vill veta mer om de tillgängliga standardwidgetarna väljer du namnet på
 Widgeten [!UICONTROL Account profiles added] använder ett linjediagram för att visa antalet kontoprofiler som läggs till varje dag under en tidsperiod. Använd det globala datumfiltret längst upp på kontrollpanelen för att fastställa analysperioden. Om inget datumfilter anges visas de kontoprofiler som lagts till för året före idag i standardbeteendet. Resultatet kan användas för att skapa en trend i antalet kontoprofiler som läggs till.
 
 ![Kontoprofilerna har lagt till widget.](../images/account-profiles/account-profiles-added.png)
+
+### Översikt över kunder per konto {#customers-per-account-overview}
+
+Diagrammet [!UICONTROL Customers per account overview] innehåller en sammanfattning av konton baserat på deras kundtyper. Den visar en tabell med fyra rader som kategoriserar konton som antingen direkta eller indirekta kunder, eller som inte har det. Här anges det totala antalet konton för varje kategori. Diagrammet hjälper till att identifiera fördelningen av konton som har direkta eller indirekta kunder.
+
+Direktkunder är kundprofiler som är direkt kopplade till ett konto via vägen `personComponents`. Den här relationen är mer okomplicerad och innefattar en direkt, explicit koppling mellan kunden och kontot.
+
+Indirekta kunder är kundprofiler som är länkade till ett konto via vägen `Account-Person`. Den här relationen är mindre enkel och innefattar en mellanliggande enhet eller en mer komplex koppling mellan kunden och kontot, vanligtvis via andra konton eller relationer.
+
+![Widgeten Kunder per konto - översikt.](../images/account-profiles/customers-per-account-overview-widget.png)
+
+Om du vill få mer detaljerade insikter väljer du ellipsen (**...**) i [!UICONTROL Customers per account overview]-diagrammet och väljer **[!UICONTROL Drill through]** i listrutan.
+
+![Widgeten Kunder per konto - översikt med listrutan ellips och detaljnivån markerad.](../images/account-profiles/customers-per-account-overview-dropdown.png)
+
+Detaljvyn visas. Utforska sedan de tillgängliga detaljdiagrammen för att få en djupare förståelse för strukturen hos era B2B-data. Du kan använda dessa detaljerade diagram för att identifiera hur många kontoprofiler som inte har några kopplade kundprofiler eller som har en eller flera kopplade kundprofiler. Du kan också använda dem för att identifiera hur många direkta eller indirekta kunder som är kopplade till dina konton.
+
+* [[!UICONTROL Customers per account detail]](#customers-per-account-detail)
+* [[!UICONTROL Accounts per opportunity overview]](#accounts-per-opportunity-overview)
+* [[!UICONTROL Opportunities per account detail]](#accounts-per-opportunity-detail)
+
+### [!UICONTROL Navigate between dashboard views] {#dashboard-view-navigation}
+
+Välj mappikonen (![En mappikon om du vill växla mellan genomgången och kontrollpanelen för kontoprofiler.](../images/account-profiles/folder-icon.png)) följt av rätt vy i listrutan.
+
+![Detaljvyn i kontrollpanelen Kontoprofiler med navigeringslistrutan markerad.](../images/account-profiles/navigation-dropdown.png)
+
+Om du vill veta mer om genomgång i plattformsgränssnittet läser du [Detaljguiden](../sql-insights-query-pro-mode/drill-through.md).
+
+#### [!UICONTROL Customers per account detail] {#customers-per-account-detail}
+
+Diagrammet [!UICONTROL Customers per account detail] innehåller mer detaljerad information om antalet konton som är associerade med olika kundtyper. Den visar en tabell med tre kolumner, med information om antalet konton per kundtyp (direkt eller indirekt) och det kundintervall som är associerat med dem. I det här diagrammet får du hjälp att förstå hur kunderna fördelas mellan olika kundkategorier och det totala antalet konton som är kopplade till varje kund.
+
+![Detaljwidgeten Kunder per konto.](../images/account-profiles/customers-per-account-detail.png)
+
+#### [!UICONTROL Opportunities per account overview] {#opportunities-per-account-overview}
+
+Diagrammet [!UICONTROL Opportunities per account overview] innehåller en sammanfattning av konton som antingen har eller inte har affärsmöjligheter. Den här tvåradiga tabellen hjälper till att snabbt fastställa antalet konton som är kopplade till affärsmöjligheter, vilket ger en ögonblicksbild av hur många affärstillfällen som har aktiverats mellan olika konton.
+
+![Widgeten Affärsmöjligheter per konto - översikt.](../images/account-profiles/opportunities-per-account-overview.png)
+
+#### [!UICONTROL Opportunities per account detail] {#opportunities-per-account-detail}
+
+Diagrammet [!UICONTROL Opportunities per account detail] ger en mer detaljerad uppdelning av konton baserat på antalet affärsmöjligheter de har. Tabellen visar antalet konton grupperade efter intervall för antal affärstillfällen, t.ex. 1-10 affärsmöjligheter eller 100+ affärsmöjligheter. I det här diagrammet kan du identifiera hur konton distribueras utifrån antalet affärsmöjligheter som de hanterar.
+
+![Widgeten för affärsmöjligheter per konto.](../images/account-profiles/opportunities-per-account-detail.png)
 
 ### Nya konton efter bransch {#accounts-by-industry}
 
@@ -185,4 +235,4 @@ För att lösa problemet måste du importera B2B-entitetsdata, till exempel *aff
 
 ## Nästa steg
 
-Genom att följa det här dokumentet bör du nu veta hur du hittar kontrollpanelen [!UICONTROL Account Profiles] och även förstå de mått som visas i de tillgängliga widgetarna. Mer information om hur du arbetar med kontoprofiler som en del av dina B2B-data i användargränssnittet för Experience Platform finns i [kontoprofilöversikten](../../rtcdp/accounts/account-profile-overview.md) för Adobe Real-Time CDP, B2B Edition.
+Genom att följa det här dokumentet bör du nu veta hur du hittar kontrollpanelen [!UICONTROL Account Profiles] och även förstå de mått som visas i de tillgängliga widgetarna. Mer information om hur du arbetar med kontoprofiler som en del av dina B2B-data i användargränssnittet för Experience Platform finns i [kontoprofilöversikten](../../rtcdp/accounts/account-profile-overview.md) för Adobe Real-Time CDP, B2B edition.
