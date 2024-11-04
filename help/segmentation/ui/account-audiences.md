@@ -1,21 +1,21 @@
 ---
 title: Målgrupper
 description: Lär dig hur du skapar och använder kontomålgrupper för att rikta in kontoprofiler på efterföljande destinationer.
-badgeB2B: label="B2B Edition" type="Informative" url="https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform-b2b-edition-prime-and-ultimate-packages.html newtab=true"
+badgeB2B: label="B2B edition" type="Informative" url="https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform-b2b-edition-prime-and-ultimate-packages.html newtab=true"
 badgeB2P: label="B2P Edition" type="Informative" url="https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform-b2p-edition-prime-and-ultimate-packages.html newtab=true"
 exl-id: 047930d6-939f-4418-bbcb-8aafd2cf43ba
-source-git-commit: c2f9bcd9aeb0073b8b26413ec29e2dff1ee5c80d
+source-git-commit: fd0a495d68d6a09ccca66c400993d2e72673321c
 workflow-type: tm+mt
-source-wordcount: '1110'
+source-wordcount: '1488'
 ht-degree: 0%
 
 ---
 
-# Målgrupper
+# Kontomålgrupper
 
 >[!AVAILABILITY]
 >
->Kontomålgrupper är bara tillgängliga i [B2B-utgåvan av Real-time Customer Data Platform](../../rtcdp/overview.md#rtcdp-b2b) och [B2P-utgåvan av Real-time Customer Data Platform](../../rtcdp/overview.md#rtcdp-b2p).
+>Kontomålgrupper är bara tillgängliga i [B2B edition för Real-time Customer Data Platform](../../rtcdp/overview.md#rtcdp-b2b) och [B2P-utgåvan av Real-time Customer Data Platform](../../rtcdp/overview.md#rtcdp-b2p).
 
 Med kontosegmentering kan Adobe Experience Platform göra marknadsföringssegmenteringen från personbaserade målgrupper till kontobaserade målgrupper så enkel och sofistikerad som möjligt.
 
@@ -66,6 +66,39 @@ Under fliken [!UICONTROL Audiences] kan du lägga till tidigare skapade personba
 ![Fliken Publiker i segmentbyggaren är markerad.](../images/ui/account-audiences/audiences.png)
 
 Mer information om hur du använder Segment Builder finns i [användargränssnittsguiden för Segment Builder](./segment-builder.md).
+
+### Upprätta relationer {#relationships}
+
+Som standard visas den direkta relationen mellan ett konto och en person i gränssnittet i Segment Builder. Andra relationstyper är dock tillgängliga för kontomålgrupper.
+
+Om du vill använda de alternativa relationstyperna väljer du ![inställningsikonen](../../images/icons/settings.png).
+
+![Inställningsikonen är markerad i avsnittet Fält.](../images/ui/account-audiences/select-settings.png)
+
+På fliken [!UICONTROL Settings] väljer du **[!UICONTROL Show relationship selectors]** i avsnittet **[!UICONTROL Relationship of fields]**.
+
+![Växlingsknappen Visa relationsväljare är markerad i fältavsnittet Relation på fliken Inställningar.](../images/ui/account-audiences/show-relation-selectors.png)
+
+Välj ![inställningsikonen](../../images/icons/settings.png) igen om du vill gå tillbaka till fliken [!UICONTROL Fields]. Du kan nu se avsnittet **[!UICONTROL Establish relationships]** där du kan fastställa hur kontot är anslutet till personen och hur personen är ansluten till affärsmöjligheten.
+
+![Avsnittet Etablera relationer är markerat, med alternativ för hur du ansluter ett konto till en person och hur du ansluter en person till en affärsmöjlighet.](../images/ui/account-audiences/establish-relationships.png)
+
+När du ansluter kontot till personen kan du välja mellan följande alternativ:
+
+| Alternativ | Beskrivning |
+| ------ | ----------- |
+| Direkt relation | Den direkta kopplingen mellan kontot och personen. Detta anger vilka konton varje person är länkad till via arrayen med `accountID` värden i arrayen `personComponents` i personschemat. Den här sökvägen används oftast. |
+| Kontorelation | Relationen mellan kontot och personen, som definieras av objektet `accountPersonRelation`. Med den här sökvägen kan varje person även anslutas till flera konton. Den används när din organisation har definierat en explicit relationstabell från dina källdata. |
+| Relation mellan möjlighet och person | Relationen mellan affärsmöjligheten och personen, som definieras av objektet `opportunityPersonRelation`. Detta kopplar personen till ett konto genom att gå från affärsmöjligheten till kontot. På så sätt kan du beskriva vilka företag personen är kopplad till affärsmöjligheterna. |
+
+När du ansluter affärsmöjligheten till personen kan du välja mellan följande alternativ:
+
+| Alternativ | Beskrivning |
+| ------ | ----------- |
+| Konto | Den direkta anslutningen mellan kontot och affärsmöjligheten. När du använder detta för en kontompubliken kopplar den här vägen alla personer på företaget till affärsmöjligheten. |
+| Relation mellan möjlighet och person | Förhållandet mellan affärsmöjligheten och personen, som baseras på objektet affärsmöjlighet/person. Den här vägen ansluter bara personer som har identifierats som engagerade i en möjlighet till den möjligheten. |
+
+När du har etablerat önskat förhållande kan du lägga till nödvändiga personer/målgrupper i din segmentdefinition.
 
 ## Aktivera målgrupp {#activate}
 
