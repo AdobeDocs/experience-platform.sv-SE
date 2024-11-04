@@ -3,9 +3,9 @@ solution: Experience Platform
 title: Användargränssnittshandbok för målgrupper
 description: Audience Composition i Adobe Experience Platform UI har en omfattande arbetsyta där du kan interagera med profildataelement. Arbetsytan innehåller intuitiva kontroller för att skapa och redigera målgrupper för din organisation.
 exl-id: 0dda0cb1-49e0-478b-8004-84572b6cf625
-source-git-commit: e17403f0529c5b94869d3bd4e860c798db620d31
+source-git-commit: 3c0fdab5d7561238a64e79e5bab5fd4843fccb0a
 workflow-type: tm+mt
-source-wordcount: '1839'
+source-wordcount: '1840'
 ht-degree: 0%
 
 ---
@@ -88,7 +88,7 @@ När du har lagt till en anpassad regel väljer du **[!UICONTROL Save]** för at
 
 ## [!UICONTROL Exclude] {#exclude-block}
 
-Blocktypen **[!UICONTROL Exclude]** gör att du kan exkludera angivna undermålgrupper eller attribut från din nya större målgrupp.
+Blocktypen **[!UICONTROL Exclude]** gör att du kan exkludera en angiven underpublik eller attribut från din nya större publik.
 
 Om du vill lägga till ett **[!UICONTROL Exclude]**-block väljer du ikonen **+** följt av **[!UICONTROL Exclude]**.
 
@@ -100,7 +100,7 @@ Blocket **[!UICONTROL Exclude]** har lagts till. När det här blocket är marke
 
 ### Exkludera efter målgrupp {#exclude-audience}
 
-Om du exkluderar utifrån målgrupp kan du välja vilka målgrupper du vill exkludera genom att välja **[!UICONTROL Add Audience]**.
+Om du exkluderar utifrån målgrupp kan du välja vilken målgrupp du vill utesluta genom att välja **[!UICONTROL Add Audience]**.
 
 ![Knappen [!UICONTROL Add audience] är markerad, vilket gör att du kan välja vilken målgrupp du vill utesluta.](../images/ui/audience-composition/add-excluded-audience.png)
 
@@ -108,7 +108,7 @@ Om du exkluderar utifrån målgrupp kan du välja vilka målgrupper du vill exkl
 >
 >Endast **publicerade** målgrupper som skapats med Segment Builder kan användas. Publiker som skapats med Audience Composition och externt genererade målgrupper är **inte** tillgängliga.
 
-En lista över målgrupper visas. Välj **[!UICONTROL Add]** om du vill lägga till de målgrupper som du vill utesluta i exkluderingsblocket.
+En lista över målgrupper visas. Välj **[!UICONTROL Add]** om du vill lägga till målgruppen som du vill utesluta i exkluderingsblocket.
 
 ![En lista över målgrupper visas. Du kan välja vilken målgrupp du vill lägga till i den här dialogrutan.](../images/ui/audience-composition/select-audience.png)
 
