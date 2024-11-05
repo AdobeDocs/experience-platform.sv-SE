@@ -2,9 +2,9 @@
 title: Konfigurera SDK-taggtillägget för webben
 description: Lär dig hur du konfigurerar taggtillägget Experience Platform Web SDK i tagggränssnittet.
 exl-id: 22425daa-10bd-4f06-92de-dff9f48ef16e
-source-git-commit: 660d4e72bd93ca65001092520539a249eae23bfc
+source-git-commit: f2f61c8e68fa794317e3b4f845f1950cebc59ec7
 workflow-type: tm+mt
-source-wordcount: '1878'
+source-wordcount: '2357'
 ht-degree: 0%
 
 ---
@@ -170,6 +170,66 @@ Som ett alternativ till att skicka åsidosättningarna via ett Web SDK-kommando 
 Åsidosättningar av dataström måste konfigureras per miljö. Utvecklings-, staging- och produktionsmiljöerna har alla olika åsidosättningar. Du kan kopiera inställningarna mellan dem med hjälp av de dedikerade alternativen som visas på skärmen nedan.
 
 ![Bild som visar åsidosättningar av dataströmskonfigurationer med hjälp av tilläggssidan för Web SDK-taggen.](assets/datastream-overrides.png)
+
+Som standard är åsidosättningen av datastream-konfigurationen inaktiverad. Alternativet **[!UICONTROL Match datastream configuration]** är markerat som standard.
+
+![Användargränssnittet för SDK-taggtillägget för Web DK visar att datastream-konfigurationen åsidosätter standardinställningen.](assets/datastream-override-default.png)
+
+Om du vill aktivera datastream-åsidosättningar i taggtillägget väljer du **[!UICONTROL Enabled]** i listrutan.
+
+![Användargränssnittet för SDK-taggtillägget för Web SDK visar inställningen Aktiverad för datastream-konfigurationen.](assets/datastream-override-enabled.png)
+
+När du har aktiverat åsidosättningar av dataströmskonfigurationer kan du konfigurera åsidosättningar för varje tjänst som beskrivs nedan.
+
+Inställningarna för åsidosättning av datastream nedan åsidosätter alla datastream-konfigurationer och regler på serversidan för den valda miljön.
+
+### Adobe Analytics {#analytics}
+
+Använd inställningarna i det här avsnittet för att åsidosätta dataroutning till Adobe Analytics-tjänsten.
+
+![Användargränssnittsbild för SDK-taggtillägg för webben visar inställningarna för åsidosättning av Adobe Analytics datastream.](assets/datastream-override-analytics.png)
+
+* **[!UICONTROL Enabled]** / **[!UICONTROL Disabled]**: Använd den här nedrullningsbara menyn om du vill aktivera eller inaktivera dataroutning till Adobe Analytics-tjänsten.
+* **[!UICONTROL Report suites]**: ID för målrapportsviterna i Adobe Analytics. Värdet måste vara en förkonfigurerad åsidosättningsrapportssvit (eller en kommaavgränsad lista över rapportsviter) från din datastream-konfiguration. Den här inställningen åsidosätter den primära rapportsviten.
+* **[!UICONTROL Add Report Suite]**: Välj det här alternativet om du vill lägga till ytterligare rapportsviter.
+
+### Adobe Audience Manager {#audience-manager}
+
+Använd inställningarna i det här avsnittet för att åsidosätta dataroutning till Adobe Audience Manager-tjänsten.
+
+![Användargränssnittsbild för SDK-taggtillägg för webben visar inställningarna för åsidosättning av Adobe Audience Manager datastream.](assets/datastream-override-audience-manager.png)
+
+* **[!UICONTROL Enabled]** / **[!UICONTROL Disabled]**: Använd den här nedrullningsbara menyn om du vill aktivera eller inaktivera dataroutning till Adobe Audience Manager-tjänsten.
+* **[!UICONTROL Third-party ID sync container]**: ID:t för målets synkroniseringsbehållare för tredjeparts-ID i Audience Manager. Värdet måste vara en förkonfigurerad sekundär behållare från din datastream-konfiguration och åsidosätter den primära behållaren.
+
+### Adobe Experience Platform {#experience-platform}
+
+Använd inställningarna i det här avsnittet för att åsidosätta dataroutning till Adobe Experience Platform-tjänsten.
+
+![Användargränssnittsbild för SDK-taggtillägg för webben visar inställningarna för åsidosättning av Adobe Experience Platform datastream.](assets/datastream-override-experience-platform.png)
+
+* **[!UICONTROL Enabled]** / **[!UICONTROL Disabled]**: Använd den här nedrullningsbara menyn om du vill aktivera eller inaktivera dataroutning till Adobe Experience Platform-tjänsten.
+* **[!UICONTROL Event dataset]**: ID:t för målhändelsedatauppsättningen i Adobe Experience Platform. Värdet måste vara en förkonfigurerad sekundär datauppsättning från din datastream-konfiguration.
+* **[!UICONTROL Offer Decisioning]**: Använd den här nedrullningsbara menyn för att aktivera eller inaktivera dataroutning till tjänsten [!DNL Offer Decisioning].
+* **[!UICONTROL Edge Segmentation]**: Använd den här nedrullningsbara menyn för att aktivera eller inaktivera dataroutning till tjänsten [!DNL Edge Segmentation].
+* **[!UICONTROL Personalization Destinations]**: Använd den här nedrullningsbara menyn för att aktivera eller inaktivera dataroutning till personaliseringsmål.
+* **[!UICONTROL Adobe Journey Optimizer]**: Använd den här nedrullningsbara menyn för att aktivera eller inaktivera dataroutning till tjänsten [!DNL Adobe Journey Optimizer].
+
+### Vidarebefordran av händelser på serversidan i Adobe {#ssf}
+
+Använd inställningarna i det här avsnittet om du vill åsidosätta dataroutning till tjänsten för händelsespårning på serversidan i Adobe.
+
+![Användargränssnittsbild för SDK-taggtillägg för webben visar inställningarna för åsidosättning av dataströmmen på Adobe-serversidan.](assets/datastream-override-ssf.png)
+
+* **[!UICONTROL Enabled]** / **[!UICONTROL Disabled]**: Använd den här nedrullningsbara menyn om du vill aktivera eller inaktivera dataroutning till händelsevidarebefordringstjänsten på Adobe-serversidan.
+
+### Adobe Target {#target}
+
+Använd inställningarna i det här avsnittet för att åsidosätta dataroutning till Adobe Target-tjänsten.
+
+![Användargränssnittsbild för SDK-taggtillägg för webben visar inställningarna för åsidosättning av Adobe Target datastream.](assets/datastream-override-target.png)
+
+* **[!UICONTROL Enabled]** / **[!UICONTROL Disabled]**: Använd den här nedrullningsbara menyn om du vill aktivera eller inaktivera dataroutning till Adobe Target-tjänsten.
 
 ## Konfigurera avancerade inställningar
 

@@ -2,9 +2,9 @@
 title: Åsidosättningar av dataströmskonfiguration
 description: Lär dig hur du konfigurerar datastream-åsidosättningar via Web SDK.
 exl-id: 8e327892-9520-43f5-abf4-d65a5ca34e6d
-source-git-commit: 8be502c9eea67119dc537a5d63a6c71e0bff1697
+source-git-commit: 2b8ca4bc1d5cf896820a5de95dcdfcd15edc2392
 workflow-type: tm+mt
-source-wordcount: '842'
+source-wordcount: '1119'
 ht-degree: 0%
 
 ---
@@ -24,19 +24,14 @@ Det här objektet är användbart när du har olika webbplatser eller underdomä
 1. Först måste du definiera åsidosättningen av din datastream-konfiguration på [datastream-konfigurationssidan](../../datastreams/configure.md) i datastreams-gränssnittet. I dokumentationen för [datastream-konfigurationen åsidosätter](../../datastreams/overrides.md#configure-overrides) finns information om hur du konfigurerar åsidosättningar.
 2. När du har konfigurerat åsidosättningen av datastream i användargränssnittet måste du skicka åsidosättningarna till Edge Network på något av följande sätt:
    * Via Web SDK-taggtillägget [1.](#tag-extension)
-   * Via kommandona `sendEvent` eller `configure` Web SDK.
-   * Via Mobile SDK `sendEvent`-kommandot.
+   * Via kommandona [`sendEvent`](../commands/sendevent/overview.md) eller [`configure`](../commands/configure/overview.md) Web SDK.
+   * Via Mobile SDK [`sendEvent`](https://developer.adobe.com/client-sdks/home/getting-started/track-events/#send-events-to-edge-network)-kommandot.
 
 Om du anger åsidosättningar både i Web SDK-konfigurationen och i ett specifikt kommando (till exempel [`sendEvent`](sendevent/overview.md)) får åsidosättningarna i det specifika kommandot prioritet.
 
-## Objektegenskaper
-
-Följande egenskaper är tillgängliga i det här objektet:
-
-* **Åsidosättning av dataström**: Skicka anrop till en annan dataström. Om du anger det här värdet måste andra åsidosättningar som kräver en datastream-konfiguration konfigureras i den datastream som anges här.
-* **Synkroniseringsbehållare för ID från tredje part**: ID:t för målets synkroniseringsbehållare för ID från tredje part i Adobe Audience Manager. Du måste konfigurera åsidosättning av en ID-behållare från tredje part i datastreams-inställningarna innan du kan använda det här fältet.
-* **Målegenskapstoken**: Token för målegenskapen i Adobe Target. Du måste konfigurera åsidosättning av en token för Target-egenskap i datastreams-inställningarna innan du kan använda det här fältet.
-* **Rapportsviter**: ID:n för rapportsviten som ska åsidosättas i Adobe Analytics. Du måste konfigurera åsidosättningar av rapportsviten i datastreams inställningar innan du kan använda det här fältet.
+>[!NOTE]
+>
+>Om du vill att en konfigurationsåsidosättning ska *inaktivera* en Experience Cloud-tjänst måste du se till att tjänsten först *aktiveras* i datastream-konfigurationen. I dokumentationen om hur du [konfigurerar datastreams](../../datastreams/configure.md#add-services) finns mer information om hur du lägger till tjänster i ett datastream.
 
 ## Skicka åsidosättningar av datastream till Edge Network via taggtillägget Web SDK {#tag-extension}
 
@@ -87,87 +82,143 @@ Alternativ som anges globalt kan åsidosättas av konfigurationsalternativet fö
 
 ### Skicka konfigurationsåsidosättningar via Web SDK-kommandot `sendEvent` {#send-event}
 
-I exemplet nedan visas hur en konfigurationsåsidosättning kan se ut för ett `sendEvent`-kommando.
+I exemplet nedan visas alla dynamiska datastream-konfigurationsalternativ som stöds av ett `sendEvent`-anrop.
 
-```js {line-numbers="true" highlight="5-25"}
+Om din datastream-konfiguration har alla tjänster som stöds aktiverade, kommer exemplet nedan att åsidosätta den här inställningen och inaktivera alla tjänster (se `enabled: false`-inställningen för varje tjänst).
+
+```js
 alloy("sendEvent", {
-  xdm: {
-    /* ... */
-  },
+  renderDecisions: true,
   edgeConfigOverrides: {
-    datastreamId: "{DATASTREAM_ID}"
+    datastreamId: "bfa8fe21-6157-42d3-b47a-78310920b39d",
     com_adobe_experience_platform: {
+      enabled: false,
       datasets: {
         event: {
-          datasetId: "SampleEventDatasetIdOverride"
-        }
-      }
+          datasetId: "64b6f949a8a6891ca8a28911",
+        },
+      },
+      com_adobe_edge_ode: {
+        enabled: false,
+      },
+      com_adobe_edge_segmentation: {
+        enabled: false,
+      },
+      com_adobe_edge_destinations: {
+        enabled: false,
+      },
+      com_adobe_edge_ajo: {
+        enabled: false,
+      },
     },
     com_adobe_analytics: {
-      reportSuites: [
-        "MyFirstOverrideReportSuite",
-        "MySecondOverrideReportSuite",
-        "MyThirdOverrideReportSuite"
-        ]
+      enabled: false,
+      reportSuites: ["ujslconfigoverrides3"],
     },
     com_adobe_identity: {
-      idSyncContainerId: "1234567"
+      idSyncContainerId: 34374,
     },
     com_adobe_target: {
-      propertyToken: "63a46bbc-26cb-7cc3-def0-9ae1b51b6c62"
-    }
-  }
+      enabled: false,
+      propertyToken: "f3fd55e1-a06d-8650-9aa5-c8356c6e2223",
+    },
+    com_adobe_audience_manager: {
+      enabled: false,
+    },
+    com_adobe_launch_ssf: {
+      enabled: false,
+    },
+  },
 });
 ```
 
 | Parameter | Beskrivning |
 |---|---|
+| `renderDecisions` |  |
 | `edgeConfigOverrides.datastreamId` | Använd den här parametern för att tillåta att en enda begäran går till en annan datastream än den som definieras av kommandot `configure`. |
-| `com_adobe_analytics.reportSuites[]` | En array med strängar som avgör till vilka rapportsviter som vill skicka Analytics-data. |
-| `com_adobe_identity.idSyncContainerId` | Synkroniseringsbehållaren för tredjeparts-ID som du vill använda i Audience Manager. |
+| `edgeConfigOverrides.com_adobe_experience_platform` | Definierar den dynamiska datastream-konfigurationen för tjänsten Experience Platform. |
+| `edgeConfigOverrides.com_adobe_experience_platform.enabled` | Definierar om händelsen ska skickas till tjänsten Experience Platform eller inte. |
+| `edgeConfigOverrides.com_adobe_experience_platform.datasets` | Definierar de datamängder som används för händelsen. |
+| `edgeConfigOverrides.com_adobe_experience_platform.com_adobe_edge_ode.enabled` | Definierar om händelsen skickas till Offera decisioningen eller inte. |
+| `edgeConfigOverrides.com_adobe_experience_platform.com_adobe_edge_segmentation.enabled` | Definierar om händelsen skickas till kantsegmenteringstjänsten eller inte. |
+| `edgeConfigOverrides.com_adobe_experience_platform.com_adobe_edge_destinations.enabled` | Definierar om händelsedata skickas till kantmålen eller inte. |
+| `edgeConfigOverrides.com_adobe_experience_platform.com_adobe_edge_ajo.enabled` | Definierar om händelsedata skickas till Adobe Journey Optimizer-tjänsten eller inte. |
+| `com_adobe_analytics.enabled` | Definierar om händelsedata skickas till Adobe Analytics eller inte. |
+| `com_adobe_analytics.reportSuites[]` | En array med strängar som avgör till vilka rapportsviter du vill skicka Analytics-data. |
+| `com_adobe_identity.idSyncContainerId` | Synkroniseringsbehållaren för tredjeparts-ID som du vill använda i Audience Manager. För att den här ID-synkroniseringsbehållaren ska fungera måste du ange `com_adobe_audience_manager.enabled` till `true`. Annars är tjänsten Audience Manager inaktiverad. |
+| `com_adobe_target.enabled` | Definierar om händelsedata skickas till Adobe Target. |
 | `com_adobe_target.propertyToken` | Token för Adobe Target-destinationsegenskapen. |
+| `com_adobe_audience_manager.enabled` | Definierar om händelsedata skickas till tjänsten Audience Manager. |
+| `com_adobe_launch_ssf` | Definierar om händelsedata skickas till vidarebefordran på serversidan. |
 
 ### Skicka konfigurationsåsidosättningar via Web SDK-kommandot `configure` {#send-configure}
 
 I exemplet nedan visas hur en konfigurationsåsidosättning kan se ut för ett `configure`-kommando.
 
-```js {line-numbers="true" highlight="8-30"}
+Om din datastream-konfiguration har alla tjänster som stöds aktiverade, kommer exemplet nedan att åsidosätta den här inställningen och inaktivera alla tjänster (se `enabled: false`-inställningen för varje tjänst).
+
+```js
 alloy("configure", {
-  defaultConsent: "in",
-  edgeDomain: "etc",
-  edgeBasePath: "ee",
-  datastreamId: "{DATASTREAM_ID}",
-  orgId: "org",
-  debugEnabled: true,
+  orgId: "97D1F3F459CE0AD80A495CBE@AdobeOrg",
+  datastreamId: "db9c70a1-6f11-4563-b0e9-b5964ab3a858",
   edgeConfigOverrides: {
-    "com_adobe_experience_platform": {
-      "datasets": {
-        "event": {
-          datasetId: "SampleProfileDatasetIdOverride"
-        }
-      }
+    com_adobe_experience_platform: {
+      enabled: false,
+      datasets: {
+        event: {
+          datasetId: "64b6f930753dd41ca8d4fd77",
+        },
+      },
+      com_adobe_edge_ode: {
+        enabled: false,
+      },
+      com_adobe_edge_segmentation: {
+        enabled: false,
+      },
+      com_adobe_edge_destinations: {
+        enabled: false,
+      },
+      com_adobe_edge_ajo: {
+        enabled: false,
+      },
     },
-    "com_adobe_analytics": {
-      "reportSuites": [
-        "MyFirstOverrideReportSuite",
-        "MySecondOverrideReportSuite",
-        "MyThirdOverrideReportSuite"
-      ]
+    com_adobe_analytics: {
+      enabled: false,
+      reportSuites: ["ujslconfigoverrides2"],
     },
-    "com_adobe_identity": {
-      "idSyncContainerId": "1234567"
+    com_adobe_identity: {
+      idSyncContainerId: 34373,
     },
-    "com_adobe_target": {
-      "propertyToken": "63a46bbc-26cb-7cc3-def0-9ae1b51b6c62"
-    }
+    com_adobe_target: {
+      enabled: false,
+      propertyToken: "01dbc634-07c1-d8f9-ca69-b489a5ac5e94",
+    },
+    com_adobe_audience_manager: {
+      enabled: false,
+    },
+    com_adobe_launch_ssf: {
+      enabled: false,
+    },
   },
-  onBeforeEventSend: function() { /* … */ });
-};
+});
 ```
 
 | Parameter | Beskrivning |
 |---|---|
+| `orgId` | Det IMS-organisations-ID som motsvarar ditt Adobe-konto. |
 | `edgeConfigOverrides.datastreamId` | Använd den här parametern för att tillåta att en enda begäran går till en annan datastream än den som definieras av kommandot `configure`. |
-| `com_adobe_analytics.reportSuites[]` | En array med strängar som avgör till vilka rapportsviter som vill skicka Analytics-data. |
-| `com_adobe_identity.idSyncContainerId` | Synkroniseringsbehållaren för tredjeparts-ID som du vill använda i Audience Manager. |
+| `edgeConfigOverrides.com_adobe_experience_platform` | Definierar den dynamiska datastream-konfigurationen för tjänsten Experience Platform. |
+| `edgeConfigOverrides.com_adobe_experience_platform.enabled` | Definierar om händelsen ska skickas till tjänsten Experience Platform eller inte. |
+| `edgeConfigOverrides.com_adobe_experience_platform.datasets` | Definierar de datamängder som används för händelsen. |
+| `edgeConfigOverrides.com_adobe_experience_platform.com_adobe_edge_ode.enabled` | Definierar om händelsen skickas till Offera decisioningen eller inte. |
+| `edgeConfigOverrides.com_adobe_experience_platform.com_adobe_edge_segmentation.enabled` | Definierar om händelsen skickas till kantsegmenteringstjänsten eller inte. |
+| `edgeConfigOverrides.com_adobe_experience_platform.com_adobe_edge_destinations.enabled` | Definierar om händelsedata skickas till kantmålen eller inte. |
+| `edgeConfigOverrides.com_adobe_experience_platform.com_adobe_edge_ajo.enabled` | Definierar om händelsedata skickas till Adobe Journey Optimizer-tjänsten eller inte. |
+| `com_adobe_analytics.enabled` | Definierar om händelsedata skickas till Adobe Analytics eller inte. |
+| `com_adobe_analytics.reportSuites[]` | En array med strängar som avgör till vilka rapportsviter du vill skicka Analytics-data. |
+| `com_adobe_identity.idSyncContainerId` | Synkroniseringsbehållaren för tredjeparts-ID som du vill använda i Audience Manager. För att den här ID-synkroniseringsbehållaren ska fungera måste du ange `com_adobe_audience_manager.enabled` till `true`. Annars är tjänsten Audience Manager inaktiverad. |
+| `com_adobe_target.enabled` | Definierar om händelsedata skickas till Adobe Target. |
 | `com_adobe_target.propertyToken` | Token för Adobe Target-destinationsegenskapen. |
+| `com_adobe_audience_manager.enabled` | Definierar om händelsedata skickas till tjänsten Audience Manager. |
+| `com_adobe_launch_ssf` | Definierar om händelsedata skickas till vidarebefordran på serversidan. |
+
