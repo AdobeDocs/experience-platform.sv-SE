@@ -5,18 +5,18 @@ title: Skapa en kuchbase-anslutning med API:t för Flow Service
 type: Tutorial
 description: Lär dig hur du ansluter Couchbase till Adobe Experience Platform med API:t för Flow Service.
 exl-id: 625e3acf-fc27-44cf-b4e6-becf1d107ff2
-source-git-commit: e37c00863249e677f1645266859bf40fe6451827
+source-git-commit: 0e3fee4d78646b1d1d6730495358b3ced4127f4e
 workflow-type: tm+mt
-source-wordcount: '446'
+source-wordcount: '449'
 ht-degree: 0%
 
 ---
 
 # Skapa en [!DNL Couchbase]-basanslutning med API:t [!DNL Flow Service]
 
->[!NOTE]
+>[!IMPORTANT]
 >
->[!DNL Couchbase]-kopplingen är i betaversion. Mer information om hur du använder betatecknade anslutningar finns i [Källöversikt](../../../../home.md#terms-and-conditions).
+>[!DNL Couchbase]-källan kommer att bli inaktuell i slutet av maj 2025. Du kan också använda källan [[!DNL Data Landing Zone]](../cloud-storage/data-landing-zone.md).
 
 En basanslutning representerar den autentiserade anslutningen mellan en källa och Adobe Experience Platform.
 

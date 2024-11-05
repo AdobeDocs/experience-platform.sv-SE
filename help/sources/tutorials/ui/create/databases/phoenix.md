@@ -2,14 +2,18 @@
 title: Anslut ditt Phoenix-konto med användargränssnittet i Experience Platform
 description: Lär dig hur du ansluter ditt Phoenix-konto och överför data från din Phoenix-databas till Experience Platform via användargränssnittet.
 exl-id: 2ed469bc-1c72-4f04-a5f0-6a0bb519a6c2
-source-git-commit: b7e42eb180b8f16344afedadf763c33bcf22fa35
+source-git-commit: 0e3fee4d78646b1d1d6730495358b3ced4127f4e
 workflow-type: tm+mt
-source-wordcount: '582'
+source-wordcount: '601'
 ht-degree: 0%
 
 ---
 
 # Anslut ditt [!DNL Phoenix]-konto till Experience Platform med användargränssnittet
+
+>[!IMPORTANT]
+>
+>[!DNL Phoenix]-källan kommer att bli inaktuell i slutet av maj 2025. Du kan också använda källan [[!DNL Data Landing Zone]](../cloud-storage/data-landing-zone.md).
 
 I den här självstudien beskrivs hur du ansluter ditt [!DNL Phoenix]-konto och överför data från din [!DNL Phoenix]-databas till Experience Platform.
 

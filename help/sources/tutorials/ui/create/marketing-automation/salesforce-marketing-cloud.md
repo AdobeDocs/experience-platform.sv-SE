@@ -1,10 +1,10 @@
 ---
-title: Anslut ditt Salesforce Marketing Cloud-konto till Experience Platform via användargränssnittet
+title: Koppla ditt Salesforce Marketing Cloud-konto till Experience Platform via användargränssnittet
 description: Lär dig hur du ansluter ditt Salesforce Marketing Cloud-konto till Experience Platform via användargränssnittet.
 exl-id: 1d9bde60-31e0-489c-9c1c-b6471e0ea554
-source-git-commit: 30f1e8a0424ee0f81d8e98fb24886ad1480b270c
+source-git-commit: 0e3fee4d78646b1d1d6730495358b3ced4127f4e
 workflow-type: tm+mt
-source-wordcount: '476'
+source-wordcount: '495'
 ht-degree: 0%
 
 ---
@@ -13,7 +13,7 @@ ht-degree: 0%
 
 >[!IMPORTANT]
 >
->Inläsning av anpassade objekt stöds för närvarande inte av källintegreringen [!DNL Salesforce Marketing Cloud].
+>[!DNL Salesforce Marketing Cloud]-källan kommer att bli inaktuell i slutet av maj 2025. Du kan också använda källan [[!DNL Data Landing Zone]](../cloud-storage/data-landing-zone.md).
 
 I den här självstudien beskrivs hur du ansluter ditt [!DNL Salesforce Marketing Cloud]-konto till Adobe Experience Platform via användargränssnittet.
 
@@ -42,13 +42,17 @@ Mer information om autentisering för [!DNL Salesforce Marketing Cloud] finns i 
 
 ## Anslut ditt [!DNL Salesforce Marketing Cloud]-konto
 
+>[!IMPORTANT]
+>
+>Inläsning av anpassade objekt stöds för närvarande inte av källintegreringen [!DNL Salesforce Marketing Cloud].
+
 I plattformsgränssnittet väljer du **[!UICONTROL Sources]** i den vänstra navigeringen för att komma åt arbetsytan i [!UICONTROL Sources]. [!UICONTROL Catalog] visar en mängd olika källor som stöds av Experience Platform.
 
 Du kan välja lämplig kategori i listan med kategorier. Du kan också använda sökfältet för att filtrera efter en viss källa.
 
 Under kategorin [!UICONTROL Marketing automation] väljer du **[!UICONTROL Salesforce Marketing Cloud]** och sedan **[!UICONTROL Set up]**.
 
-![Källkatalogen med Salesforce Marketing Cloud-källan markerad.](../../../../images/tutorials/create/salesforce-marketing-cloud/catalog.png)
+![Källkatalogen med Salesforce Marketing Cloud-källan vald.](../../../../images/tutorials/create/salesforce-marketing-cloud/catalog.png)
 
 Sidan **[!UICONTROL Connect to Salesforce Marketing Cloud]** visas. På den här sidan kan du antingen skapa ett nytt konto eller använda ett befintligt konto.
 

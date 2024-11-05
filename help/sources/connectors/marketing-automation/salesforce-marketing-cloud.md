@@ -4,14 +4,18 @@ title: Salesforce Marketing Cloud Source - översikt
 description: Lär dig hur du ansluter Salesforce Marketing Cloud till Adobe Experience Platform med hjälp av API:er eller användargränssnittet.
 exl-id: 2177d68c-0cef-4031-a0e7-8bf22ee2e70b
 last-substantial-update: 2023-05-25T00:00:00Z
-source-git-commit: bc37d41d0f7b0ff0cf4d52242f41467f2891d613
+source-git-commit: 0e3fee4d78646b1d1d6730495358b3ced4127f4e
 workflow-type: tm+mt
-source-wordcount: '322'
+source-wordcount: '341'
 ht-degree: 0%
 
 ---
 
 # [!DNL Salesforce Marketing Cloud]
+
+>[!IMPORTANT]
+>
+>[!DNL Salesforce Marketing Cloud]-källan kommer att bli inaktuell i slutet av maj 2025. Du kan också använda källan [[!DNL Data Landing Zone]](../cloud-storage/data-landing-zone.md).
 
 Med Adobe Experience Platform kan data hämtas från externa källor samtidigt som du kan strukturera, märka och förbättra inkommande data med hjälp av plattformstjänster. Du kan importera data från en mängd olika källor, till exempel Adobe-program, molnbaserad lagring, databaser och många andra.
 
@@ -40,7 +44,7 @@ En lista med IP-adresser måste läggas till tillåtelselista innan du kan arbet
 
 Dokumentationen nedan innehåller information om hur du ansluter [!DNL Salesforce Marketing Cloud] till plattformen med API:er:
 
-* [Skapa en Salesforce Marketing Cloud-basanslutning med API:t för Flow Service](../../tutorials/api/create/marketing-automation/salesforce-marketing-cloud.md)
+* [Skapa en Salesforce Marketing Cloud base-anslutning med API:t för Flow Service](../../tutorials/api/create/marketing-automation/salesforce-marketing-cloud.md)
 * [Utforska datatabeller med API:t för Flow Service](../../tutorials/api/explore/tabular.md)
 * [Skapa ett dataflöde för en källa för automatiserad marknadsföring med API:t för Flow Service](../../tutorials/api/collect/marketing-automation.md)
 

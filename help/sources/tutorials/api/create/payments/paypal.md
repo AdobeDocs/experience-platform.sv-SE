@@ -5,14 +5,18 @@ title: Skapa en PayPal-basanslutning med API:t för Flow Service
 type: Tutorial
 description: Lär dig hur du ansluter PayPal till Adobe Experience Platform med API:t för Flow Service.
 exl-id: 5e6ca7b4-5e2f-4706-a339-ac159e2e0938
-source-git-commit: 90eb6256179109ef7c445e2a5a8c159fb6cbfe28
+source-git-commit: 0e3fee4d78646b1d1d6730495358b3ced4127f4e
 workflow-type: tm+mt
-source-wordcount: '455'
+source-wordcount: '474'
 ht-degree: 0%
 
 ---
 
 # Skapa en [!DNL PayPal]-basanslutning med API:t [!DNL Flow Service]
+
+>[!IMPORTANT]
+>
+>[!DNL PayPal]-källan kommer att bli inaktuell i slutet av maj 2025. Du kan också använda källan [[!DNL Data Landing Zone]](../cloud-storage/data-landing-zone.md).
 
 En basanslutning representerar den autentiserade anslutningen mellan en källa och Adobe Experience Platform.
 

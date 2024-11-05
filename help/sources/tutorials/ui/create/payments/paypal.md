@@ -5,14 +5,18 @@ title: Skapa en PayPal Source-anslutning i användargränssnittet
 type: Tutorial
 description: Lär dig hur du skapar en PayPal-källanslutning med Adobe Experience Platform-gränssnittet.
 exl-id: bbd3f634-cb28-45d8-9b7b-ed3873101882
-source-git-commit: ed92bdcd965dc13ab83649aad87eddf53f7afd60
+source-git-commit: 0e3fee4d78646b1d1d6730495358b3ced4127f4e
 workflow-type: tm+mt
-source-wordcount: '432'
+source-wordcount: '451'
 ht-degree: 0%
 
 ---
 
 # Skapa en [!DNL PayPal]-källanslutning i användargränssnittet
+
+>[!IMPORTANT]
+>
+>[!DNL PayPal]-källan kommer att bli inaktuell i slutet av maj 2025. Du kan också använda källan [[!DNL Data Landing Zone]](../cloud-storage/data-landing-zone.md).
 
 Source-anslutningar i Adobe Experience Platform gör det möjligt att importera externa data på schemalagd basis. I den här självstudiekursen beskrivs hur du skapar en [!DNL PayPal]-källanslutning med hjälp av användargränssnittet för plattformen.
 

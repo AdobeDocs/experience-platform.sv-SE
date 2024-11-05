@@ -1,10 +1,10 @@
 ---
-title: Skapa en Salesforce Marketing Cloud Base-anslutning med API:t för flödestjänsten
-description: Lär dig hur du autentiserar ditt Salesforce Marketing Cloud-konto mot Experience Platform med API:t för Flow Service.
+title: Skapa en Salesforce Marketing Cloud Base-anslutning med API:t för Flow Service
+description: Lär dig hur du autentiserar ditt Salesforce Marketing Cloud-konto mot Experience Platform med hjälp av API:t för Flow Service.
 exl-id: fbf68d3a-f8b1-4618-bd56-160cc6e3346d
-source-git-commit: 30f1e8a0424ee0f81d8e98fb24886ad1480b270c
+source-git-commit: 0e3fee4d78646b1d1d6730495358b3ced4127f4e
 workflow-type: tm+mt
-source-wordcount: '489'
+source-wordcount: '508'
 ht-degree: 0%
 
 ---
@@ -13,7 +13,7 @@ ht-degree: 0%
 
 >[!IMPORTANT]
 >
->Inläsning av anpassade objekt stöds för närvarande inte av källintegreringen [!DNL Salesforce Marketing Cloud].
+>[!DNL Salesforce Marketing Cloud]-källan kommer att bli inaktuell i slutet av maj 2025. Du kan också använda källan [[!DNL Data Landing Zone]](../cloud-storage/data-landing-zone.md).
 
 En basanslutning representerar den autentiserade anslutningen mellan en källa och Adobe Experience Platform.
 
@@ -46,6 +46,10 @@ För att [!DNL Flow Service] ska kunna ansluta till [!DNL Salesforce Marketing C
 Mer information om hur du kommer igång finns i det här [[!DNL Salesforce Marketing Cloud] dokumentet](<https://developer.salesforce.com/docs/atlas.en-us.mc-apis.meta/mc-apis/authentication.htm>).
 
 ## Skapa en basanslutning
+
+>[!IMPORTANT]
+>
+>Inläsning av anpassade objekt stöds för närvarande inte av källintegreringen [!DNL Salesforce Marketing Cloud].
 
 En basanslutning bevarar information mellan källan och plattformen, inklusive källans autentiseringsuppgifter, anslutningsstatus och ditt unika basanslutnings-ID. Med det grundläggande anslutnings-ID:t kan du utforska och navigera bland filer inifrån källan och identifiera de specifika objekt som du vill importera, inklusive information om deras datatyper och format.
 

@@ -3,14 +3,18 @@ keywords: Experience Platform;hem;populära ämnen;Oracle Service Cloud;oracle s
 title: Skapa en Oracle Service Cloud Source Connection i användargränssnittet
 description: Lär dig hur du skapar en källanslutning till Oracle Service Cloud med hjälp av Adobe Experience Platform användargränssnitt.
 exl-id: e5869c09-b61e-4d23-a594-5a07769da3c4
-source-git-commit: 1695b7d638feb648d5cd7af07879f3ed13f938eb
+source-git-commit: 0e3fee4d78646b1d1d6730495358b3ced4127f4e
 workflow-type: tm+mt
-source-wordcount: '447'
+source-wordcount: '466'
 ht-degree: 0%
 
 ---
 
 # Skapa en källanslutning till Oracle Service Cloud i användargränssnittet
+
+>[!IMPORTANT]
+>
+>[!DNL Oracle Service Cloud]-källan kommer att bli inaktuell i slutet av maj 2025. Du kan också använda källan [[!DNL Data Landing Zone]](../cloud-storage/data-landing-zone.md).
 
 I den här självstudiekursen beskrivs hur du skapar en Oraclena Service Cloud-källanslutning med Adobe Experience Platform användargränssnitt.
 

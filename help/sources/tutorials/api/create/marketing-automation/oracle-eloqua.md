@@ -2,14 +2,18 @@
 title: Skapa en Oracle Eloqua-basanslutning med API:t för flödestjänsten
 description: Lär dig hur du ansluter Adobe Experience Platform till Oracle Eloqua med API:t för Flow Service.
 exl-id: 866e408f-6e0b-4e81-9ad8-9d74c485c89a
-source-git-commit: e8f54f06ad3431227e140219a9960e8e04f83ccc
+source-git-commit: 0e3fee4d78646b1d1d6730495358b3ced4127f4e
 workflow-type: tm+mt
-source-wordcount: '546'
+source-wordcount: '565'
 ht-degree: 0%
 
 ---
 
 # Skapa en [!DNL Oracle Eloqua]-basanslutning med API:t [!DNL Flow Service]
+
+>[!IMPORTANT]
+>
+>[!DNL Oracle Eloqua]-källan kommer att bli inaktuell i slutet av maj 2025. Du kan också använda källan [[!DNL Data Landing Zone]](../cloud-storage/data-landing-zone.md).
 
 En basanslutning representerar den autentiserade anslutningen mellan en källa och Adobe Experience Platform.
 

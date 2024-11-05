@@ -5,14 +5,18 @@ title: Skapa en Zoho CRM Source-anslutning i användargränssnittet
 type: Tutorial
 description: Lär dig hur du skapar en Zoho CRM-källanslutning med Adobe Experience Platform-gränssnittet.
 exl-id: c648fc3e-beea-4030-8d36-dd8a7e2c281e
-source-git-commit: ed92bdcd965dc13ab83649aad87eddf53f7afd60
+source-git-commit: 0e3fee4d78646b1d1d6730495358b3ced4127f4e
 workflow-type: tm+mt
-source-wordcount: '521'
+source-wordcount: '540'
 ht-degree: 0%
 
 ---
 
 # Skapa en [!DNL Zoho CRM]-källanslutning i användargränssnittet
+
+>[!IMPORTANT]
+>
+>[!DNL Zoho CRM]-källan kommer att bli inaktuell i slutet av maj 2025. Du kan också använda källan [[!DNL Data Landing Zone]](../cloud-storage/data-landing-zone.md).
 
 Source-anslutningar i Adobe Experience Platform ger möjlighet att importera externt källkodsdata i CRM på schemalagd basis. I den här självstudiekursen beskrivs hur du skapar en [!DNL Zoho CRM]-källkoppling med användargränssnittet i [!DNL Platform].
 
