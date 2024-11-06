@@ -2,9 +2,9 @@
 title: Översikt över målportalen
 description: Lär dig hur du använder Audience Portal för att visa, hantera och skapa målgrupper i Adobe Experience Platform.
 exl-id: 505ac22e-05f3-423a-a9a0-7f3470af8945
-source-git-commit: 0378cc313445ff22d1d2d003c9ae248d791b3707
+source-git-commit: a48df00b61fd5736cfb6fd29c60cf73a02342451
 workflow-type: tm+mt
-source-wordcount: '4320'
+source-wordcount: '4337'
 ht-degree: 0%
 
 ---
@@ -244,7 +244,7 @@ Popovern **[!UICONTROL Evaluate audiences on demand]** visas med en lista över 
 
 ![De målgrupper som kan utvärderas med flexibel målgruppsutvärdering visas.](../images/ui/audience-portal/evaluate-audiences-modal.png)
 
-När du har bekräftat att rätt målgrupper finns med i listan kan du fortsätta med begäran och den flexibla utvärderingen av målgruppen börjar.
+När du har bekräftat att rätt målgrupper finns med i listan kan du fortsätta med begäran och den flexibla utvärderingen av målgruppen börjar. Du kan visa status för den här målgruppsutvärderingen i [utvärderingsjobbövervakningsvyn](../../dataflows/ui/monitor-audiences.md#evaluation-job-details).
 
 >[!NOTE]
 >
