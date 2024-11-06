@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Kuchbase Source Connector - översikt
 description: Lär dig hur du ansluter Couchbase till Adobe Experience Platform med API:er eller användargränssnittet.
 exl-id: 4b1cc352-3b1a-4015-baee-b1d42c15a400
-source-git-commit: 0e3fee4d78646b1d1d6730495358b3ced4127f4e
+source-git-commit: 0781d04af12c4c11dfc917adfdec8673cf3be8de
 workflow-type: tm+mt
-source-wordcount: '211'
+source-wordcount: '212'
 ht-degree: 0%
 
 ---
@@ -15,7 +15,7 @@ ht-degree: 0%
 
 >[!IMPORTANT]
 >
->[!DNL Couchbase]-källan kommer att bli inaktuell i slutet av maj 2025. Du kan också använda källan [[!DNL Data Landing Zone]](../cloud-storage/data-landing-zone.md).
+>[!DNL Couchbase]-källan kommer att bli inaktuell i slutet av maj 2025. Du kan använda [[!DNL Data Landing Zone]](../cloud-storage/data-landing-zone.md) i stället för [!DNL Couchbase]-källan.
 
 Adobe Experience Platform erbjuder inbyggd anslutning för databasleverantörer som [!DNL Microsoft], MySQL och [!DNL Azure], vilket gör att du kan hämta data från dessa system. Olika typer av tredjepartsdatabaser stöds, bland annat relationsdatabaser, NoSQL-databaser och datalagerarkiv. Stöd för databasproviders inkluderar [!DNL Couchbase].
 
