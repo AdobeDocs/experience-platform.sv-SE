@@ -2,9 +2,9 @@
 title: Kontrollpanel för kontoprofiler
 description: Adobe Experience Platform tillhandahåller en kontrollpanel där du kan visa viktig information om din organisations B2B-kontoprofiler.
 exl-id: c9a3d786-6240-4ba4-96c8-05f658e1150c
-source-git-commit: 442fcee17cbe38a9e1608324581ebedee4ba7fe6
+source-git-commit: a0b762cb89f45313724187ce36b80b2f3d0548eb
 workflow-type: tm+mt
-source-wordcount: '2226'
+source-wordcount: '2245'
 ht-degree: 0%
 
 ---
@@ -100,6 +100,10 @@ Widgeten [!UICONTROL Account profiles added] använder ett linjediagram för att
 ![Kontoprofilerna har lagt till widget.](../images/account-profiles/account-profiles-added.png)
 
 ### Översikt över kunder per konto {#customers-per-account-overview}
+
+>[!NOTE]
+>
+>[!UICONTROL Customers per account overview]-insikten och dess detaljerade diagram ([!UICONTROL Customers per account detail], [!UICONTROL Opportunities per account overview], [!UICONTROL Opportunities per account detail]) påverkas inte av globala datumfilter som du har angett.
 
 Diagrammet [!UICONTROL Customers per account overview] innehåller en sammanfattning av konton baserat på deras kundtyper. Den visar en tabell med fyra rader som kategoriserar konton som antingen direkta eller indirekta kunder, eller som inte har det. Här anges det totala antalet konton för varje kategori. Diagrammet hjälper till att identifiera fördelningen av konton som har direkta eller indirekta kunder.
 

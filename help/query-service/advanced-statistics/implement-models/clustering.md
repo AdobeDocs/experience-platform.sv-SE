@@ -2,9 +2,9 @@
 title: Klusteralgoritmer
 description: Lär dig hur du konfigurerar och optimerar olika klusteralgoritmer med hjälp av nyckelparametrar, beskrivningar och exempelkod för att implementera avancerade statistiska modeller.
 role: Developer
-source-git-commit: 4d4e9ae527deb149f02edb39716851e995c23d21
+source-git-commit: 4ee7ce2468c1ea5f0960349c288d406f43a8bb91
 workflow-type: tm+mt
-source-wordcount: '878'
+source-wordcount: '874'
 ht-degree: 2%
 
 ---
@@ -112,7 +112,7 @@ Create MODEL modelname OPTIONS(
 
 **Parametrar**
 
-| Parameter | Beskrivning | Standardvärde | Möjliga värden |                                                                                                                                                                  | Standardvärde | Möjliga värden |
+| Parameter | Beskrivning | Standardvärde | Möjliga värden |
 |-------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------|----------------|------------------------------------------|
 | `MAX_ITER` | Maximalt antal iterationer som algoritmen körs. | 20 | (>= 0) |
 | `OPTIMIZER` | Optimeraren eller härledningsalgoritmen som används för att beräkna LDA-modellen. De alternativ som stöds är `"online"` (Online Variational Bayes) och `"em"` (Expectation-Maximization). | online | `online`, `em` |
@@ -127,6 +127,8 @@ Create MODEL modelname OPTIONS(
 | `SUBSAMPLING_RATE` | För optimeraren för `online`: den del av korpus som provats och som används i varje iteration av övertoningsdescent för minibatteri, i intervallet `(0, 1]`. | 0,05 | `(0, 1]` |
 | `TOPIC_CONCENTRATION` | Koncentrationsparameter (&quot;beta&quot; eller&quot;eta&quot;) för tidigare versioner av ämnesdistributioner över villkor. | Automatisk | (>= 0) |
 | `TOPIC_DISTRIBUTION_COL` | Utdatakolumn med uppskattningar av ämnesblandningsfördelningen för varje dokument. | INTE ANGIVEN | Valfri sträng |
+
+{style="table-layout:auto"}
 
 **Exempel**
 
