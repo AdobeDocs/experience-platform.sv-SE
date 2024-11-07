@@ -2,9 +2,9 @@
 title: Namnområdesprioritet
 description: Läs om namnområdesprioritet i identitetstjänsten.
 exl-id: bb04f02e-3826-45af-b935-752ea7e6ed7c
-source-git-commit: 07d54bf341ef2aacc6612ad323585609c0830824
+source-git-commit: a2a60f429836e26179f68a40fce91a90d73d8eee
 workflow-type: tm+mt
-source-wordcount: '1728'
+source-wordcount: '1784'
 ht-degree: 1%
 
 ---
@@ -177,6 +177,15 @@ När du väljer data måste du ange ett namnutrymme, som används för att avgö
 Den här konfigurationen resulterar endast i beräkning av bakgrundsmusik med hjälp av autentiserade händelser.
 
 Mer information finns i dokumenten på [Attribution AI](../../intelligent-services/attribution-ai/overview.md) och [Kund-AI](../../intelligent-services/customer-ai/overview.md).
+
+### Partnerbyggda destinationer
+
+Uppdaterade resultat för identifiering av målgrupper för profiler som är kopplade till en delad enhet kan inte skickas till nedströmsdestinationer. Detta kan inträffa i vissa sällsynta fall där:
+
+* Målgruppskvalificering baseras endast på anonym aktivitet.
+* Inloggningar för flera profiler sker på kort tid.
+
+Mer information om partnerbyggda mål finns i [målöversikten](../../destinations/home.md#adobe-built-and-partner-built-destinations).
 
 ### Integritetstjänst
 
