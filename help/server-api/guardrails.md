@@ -2,9 +2,9 @@
 title: Prestandaskydd för Edge Network Server API
 description: Lär dig hur du använder server-API:t med optimala prestandaresäkerhetsprofiler.
 exl-id: 063d0fbb-26d1-4727-9dea-8e7223b2173d
-source-git-commit: 5d6b70e397a252e037589c3200053ebcb7eb8291
+source-git-commit: 316efe577274b389bd1bf50e896ad6ef53e44b7b
 workflow-type: tm+mt
-source-wordcount: '531'
+source-wordcount: '569'
 ht-degree: 1%
 
 ---
@@ -21,6 +21,8 @@ Adobe ansvarar inte för prestandaförsämringar orsakade av överskridna använ
 >[!IMPORTANT]
 >
 >Kontrollera dina licensrättigheter i din försäljningsorder och motsvarande [produktbeskrivning](https://helpx.adobe.com/legal/product-descriptions.html) om faktiska användningsbegränsningar, utöver den här sidan med skyddsförslag.
+
+Alla säkerhetsutkast som beskrivs på den här sidan gäller på IMS-organisationsnivå. För användare med flera konfigurerade IMS-organisationer omfattas varje organisation av prestandaresäkerhetsriktlinjerna nedan. Mer information om [!DNL IMS Organizations] finns i [Experience Platform-ordlistan](../landing/glossary.md).
 
 ## Definitioner
 
