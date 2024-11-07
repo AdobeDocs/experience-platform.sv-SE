@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Sekretessregler - terminologi
 description: Det här dokumentet innehåller definitioner för nyckeltermer relaterade till sekretessregler som stöds av Adobe Experience Cloud.
 exl-id: 9c0a7d26-0571-41d4-8cf5-6356025d51ef
-source-git-commit: 0a8d7c4414f6091025d36ed85dc09e057ee24df9
+source-git-commit: 16a3900e7cb54ae1525c11c9316b3928e5f43096
 workflow-type: tm+mt
-source-wordcount: '2301'
+source-wordcount: '2404'
 ht-degree: 0%
 
 ---
@@ -52,6 +52,8 @@ Det här dokumentet innehåller definitioner för nyckeltermer relaterade till s
 **Dataskyddsansvarig**: En expert på dataintegritet som arbetar självständigt för att säkerställa att en enhet följer de policyer och förfaranden som anges i den allmänna dataskyddsförordningen.
 
 **Registrerad**: En fysisk person vars personuppgifter behandlas av en personuppgiftsansvarig eller personuppgiftsbiträde.
+
+**[!DNL Delaware Personal Data Privacy Act]**: [!DNL Delaware Personal Data Privacy Act] ger Delaware-boende behörighet att komma åt, korrigera, ta bort och avanmäla försäljning av personuppgifter och riktad reklam. Lagen gäller företag som bearbetar data för minst 35 000 konsumenter eller tjänar över 20 % av intäkterna från dataförsäljning som påverkar mer än 10 000 konsumenter. Enligt justitiedepartementet innehåller det obligatoriska dataskyddsrutiner och en period på 60 dagar för att åtgärda överträdelser.
 
 **Delegerade akter**: Icke-lagstiftningsakter som antagits för att komplettera den befintliga lagstiftningen och tillhandahålla kriterier eller tydlighet.
 
@@ -141,6 +143,8 @@ Det här dokumentet innehåller definitioner för nyckeltermer relaterade till s
 **Pseudonymisering**: Bearbetningen av personuppgifter så att de inte längre kan tillskrivas en enskild registrerade utan att använda ytterligare data, så länge som ytterligare data är åtskilda för att säkerställa icke-attribuering.
 
 ## Q
+
+**[!DNL Quebec Law 25]**: [!DNL Quebec Law 25] utökar integritetsrättigheterna för boende, vilket kräver uttryckligt medgivande, minimering av data och rättigheter att få tillgång till, korrigera, ta bort och överföra personuppgifter. Organisationer måste utse en integritetsansvarig, genomföra konsekvensbedömningar av integritetsskyddet och rapportera överträdelser. Tidsfrister för efterlevnad och betydande påföljder gäller vid överträdelser.
 
 ## R
 
