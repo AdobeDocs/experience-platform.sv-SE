@@ -5,9 +5,9 @@ title: Skapa en Zoho CRM-basanslutning med API:t för flödestjänsten
 type: Tutorial
 description: Lär dig hur du ansluter Adobe Experience Platform till Zoho CRM med API:t för Flow Service.
 exl-id: 33995927-8f5e-44c5-b809-4db8706bbd34
-source-git-commit: 0781d04af12c4c11dfc917adfdec8673cf3be8de
+source-git-commit: a32d0d7ed7d18454099d2b55b3f6809cfbcd9b62
 workflow-type: tm+mt
-source-wordcount: '658'
+source-wordcount: '649'
 ht-degree: 0%
 
 ---
@@ -16,7 +16,7 @@ ht-degree: 0%
 
 >[!IMPORTANT]
 >
->[!DNL Zoho CRM]-källan kommer att bli inaktuell i slutet av juni 2025. Du kan använda [[!DNL Data Landing Zone]](../cloud-storage/data-landing-zone.md) i stället för [!DNL Zoho CRM]-källan.
+>[!DNL Zoho CRM]-källan kommer att bli inaktuell i slutet av juni 2025.
 
 En basanslutning representerar den autentiserade anslutningen mellan en källa och Adobe Experience Platform.
 

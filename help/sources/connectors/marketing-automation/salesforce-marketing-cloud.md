@@ -4,9 +4,9 @@ title: Salesforce Marketing Cloud Source - översikt
 description: Lär dig hur du ansluter Salesforce Marketing Cloud till Adobe Experience Platform med hjälp av API:er eller användargränssnittet.
 exl-id: 2177d68c-0cef-4031-a0e7-8bf22ee2e70b
 last-substantial-update: 2023-05-25T00:00:00Z
-source-git-commit: 0781d04af12c4c11dfc917adfdec8673cf3be8de
+source-git-commit: a32d0d7ed7d18454099d2b55b3f6809cfbcd9b62
 workflow-type: tm+mt
-source-wordcount: '342'
+source-wordcount: '333'
 ht-degree: 0%
 
 ---
@@ -15,7 +15,7 @@ ht-degree: 0%
 
 >[!IMPORTANT]
 >
->[!DNL Salesforce Marketing Cloud]-källan kommer att bli inaktuell i slutet av maj 2025. Du kan använda [[!DNL Data Landing Zone]](../cloud-storage/data-landing-zone.md) i stället för [!DNL Salesforce Marketing Cloud]-källan.
+>[!DNL Salesforce Marketing Cloud]-källan kommer att bli inaktuell i slutet av maj 2025.
 
 Med Adobe Experience Platform kan data hämtas från externa källor samtidigt som du kan strukturera, märka och förbättra inkommande data med hjälp av plattformstjänster. Du kan importera data från en mängd olika källor, till exempel Adobe-program, molnbaserad lagring, databaser och många andra.
 

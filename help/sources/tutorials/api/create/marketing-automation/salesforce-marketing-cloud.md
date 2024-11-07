@@ -2,9 +2,9 @@
 title: Skapa en Salesforce Marketing Cloud Base-anslutning med API:t för Flow Service
 description: Lär dig hur du autentiserar ditt Salesforce Marketing Cloud-konto mot Experience Platform med hjälp av API:t för Flow Service.
 exl-id: fbf68d3a-f8b1-4618-bd56-160cc6e3346d
-source-git-commit: 0781d04af12c4c11dfc917adfdec8673cf3be8de
+source-git-commit: a32d0d7ed7d18454099d2b55b3f6809cfbcd9b62
 workflow-type: tm+mt
-source-wordcount: '509'
+source-wordcount: '500'
 ht-degree: 0%
 
 ---
@@ -13,7 +13,7 @@ ht-degree: 0%
 
 >[!IMPORTANT]
 >
->[!DNL Salesforce Marketing Cloud]-källan kommer att bli inaktuell i slutet av maj 2025. Du kan använda [[!DNL Data Landing Zone]](../cloud-storage/data-landing-zone.md) i stället för [!DNL Salesforce Marketing Cloud]-källan.
+>[!DNL Salesforce Marketing Cloud]-källan kommer att bli inaktuell i slutet av maj 2025.
 
 En basanslutning representerar den autentiserade anslutningen mellan en källa och Adobe Experience Platform.
 

@@ -3,9 +3,9 @@ title: Phoenix Source - översikt
 description: Lär dig hur du ansluter ditt Phoenix-konto till Adobe Experience Platform med hjälp av API:er eller användargränssnittet.
 last-substantial-update: 2023-07-26T00:00:00Z
 exl-id: 45e6ef18-a0b7-4bb2-b099-b2a878e96637
-source-git-commit: 0781d04af12c4c11dfc917adfdec8673cf3be8de
+source-git-commit: a32d0d7ed7d18454099d2b55b3f6809cfbcd9b62
 workflow-type: tm+mt
-source-wordcount: '204'
+source-wordcount: '195'
 ht-degree: 0%
 
 ---
@@ -14,7 +14,7 @@ ht-degree: 0%
 
 >[!IMPORTANT]
 >
->[!DNL Phoenix]-källan kommer att bli inaktuell i slutet av maj 2025. Du kan använda [[!DNL Data Landing Zone]](../cloud-storage/data-landing-zone.md) i stället för [!DNL Phoenix]-källan.
+>[!DNL Phoenix]-källan kommer att bli inaktuell i slutet av maj 2025.
 
 Adobe Experience Platform Sources har stöd för datainhämtning från tredjepartsdatabaser som [[!DNL Phoenix]](https://phoenix.apache.org/index.html). Det här dokumentet innehåller information om krav innan du ansluter ditt [!DNL Phoenix]-konto via [!DNL Flow Service] API:t eller användargränssnittet i Experience Platform.
 

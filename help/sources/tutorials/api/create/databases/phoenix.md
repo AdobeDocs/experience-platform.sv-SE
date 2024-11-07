@@ -2,9 +2,9 @@
 title: Skapa en Phoenix-basanslutning med API:t för Flow Service
 description: Lär dig hur du ansluter en Phoenix-databas till Adobe Experience Platform med API:t för Flow Service.
 exl-id: b69d9593-06fe-4fff-88a9-7860e4e45eb7
-source-git-commit: 0781d04af12c4c11dfc917adfdec8673cf3be8de
+source-git-commit: a32d0d7ed7d18454099d2b55b3f6809cfbcd9b62
 workflow-type: tm+mt
-source-wordcount: '567'
+source-wordcount: '558'
 ht-degree: 0%
 
 ---
@@ -13,7 +13,7 @@ ht-degree: 0%
 
 >[!IMPORTANT]
 >
->[!DNL Phoenix]-källan kommer att bli inaktuell i slutet av maj 2025. Du kan använda [[!DNL Data Landing Zone]](../cloud-storage/data-landing-zone.md) i stället för [!DNL Phoenix]-källan.
+>[!DNL Phoenix]-källan kommer att bli inaktuell i slutet av maj 2025.
 
 En basanslutning representerar den autentiserade anslutningen mellan en källa och Adobe Experience Platform.
 
