@@ -1,14 +1,14 @@
 ---
-title: Förbered en ZIP-fil för tilläggspaket
+title: Skapa en ZIP-fil för tilläggspaket
 description: Lär dig hur du förbereder en ZIP-fil för ett tilläggspaket.
-source-git-commit: fa50e101e5756923eddcd2cab409bda2a629a8a3
+source-git-commit: 92e519e0662c3c3521bfe5ca814b37464e55c7e1
 workflow-type: tm+mt
-source-wordcount: '101'
+source-wordcount: '102'
 ht-degree: 44%
 
 ---
 
-# Ladda upp och implementera testning från början till slut
+# Skapa en ZIP-fil för tilläggspaket.
 
 >[!NOTE]
 >
