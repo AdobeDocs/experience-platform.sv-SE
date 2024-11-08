@@ -3,9 +3,9 @@ title: Versionsinformation om Adobe Experience Platform oktober 2024
 description: Versionsinformationen för Adobe Experience Platform i oktober 2024.
 exl-id: f854f9e5-71be-4d56-a598-cfeb036716cb
 source-git-commit: f30a124a40928abf69366d311131e353c2779191
-workflow-type: tm+mt
-source-wordcount: '0'
-ht-degree: 0%
+workflow-type: ht
+source-wordcount: '1138'
+ht-degree: 100%
 
 ---
 
@@ -30,11 +30,11 @@ Experience Platform tillhandahåller flera instrumentpaneler där du kan visa vi
 
 | Funktion | Beskrivning |
 | --- | --- |
-| Distiller-mallar för data | Utforska flera mallar för att få strukturerade insikter om målgruppsdata. Använd instrumentpaneler som **Avancerat[!UICONTROL Audience Overlaps]**, **[!UICONTROL Audience Comparison]**, **[!UICONTROL Audience Trends]** och **[!UICONTROL Audience Identity Overlaps]** för att fatta datadrivna beslut, optimera segmentering och förbättra engagemangsstrategier. Mer information finns i [guiden för Distiller-mallar](../../dashboards/sql-insights-query-pro-mode/templates/overview.md). |
-| Avancerade målgruppsöverlappningar | Analysera snabbt olika målgruppsprofiler för specifika målgrupper eller se alla överlappningar för att hitta värdefulla insikter i hela er målgruppsuppsättning. Använd dessa insikter för att förfina segmenteringen, minska antalet redundanta meddelanden och skapa mer målinriktade kampanjer för ökad marknadsföringseffektivitet. Mer information finns i guiden [Avancerad publiköverlappning](../../dashboards/sql-insights-query-pro-mode/templates/overlaps.md). |
-| Förbättringar av målgruppsjämförelse | Visa en jämförelse sida vid sida av nyckelvärden mellan olika målgruppsgrupper med kontrollpanelen **Måljämförelse**. Med den här kontrollpanelen kan du välja specifika tidsramar och nyckeltal, som målgruppsstorlek och identitetssammansättning, för att fatta mer välgrundade beslut om målgruppssegmentering och målinriktningsstrategier. Läs [Målgruppsjämförelseguiden](../../dashboards/sql-insights-query-pro-mode/templates/comparison.md) om du vill ha mer information. |
-| Visualisering av målgruppstrender | Analysera målgruppsmått över tid med kontrollpanelen **[!UICONTROL Audience Trends]**. Visualisera trender för målgruppsstorlek, antal identiteter och antal enskilda identitetsprofiler för att hjälpa er att övervaka målgruppsutvecklingen, mäta tillväxt och förfina era engagemangsstrategier. Mer information finns i [handboken om målgruppstrender](../../dashboards/sql-insights-query-pro-mode/templates/trends.md). |
-| Analys av identitetsåsidosättningar | Analysera identitetsöverlappningar i valda målgrupper med kontrollpanelen **[!UICONTROL Audience Identity Overlaps]**. Visa identitetstrender och uppdelningar för att förstå hur olika identitetstyper relaterar inom er målgrupp, förbättra sammanslagningen av identiteter och förbättra kundsegmenteringens precision. Mer information finns i guiden [Överlappning av publikidentitet](../../dashboards/sql-insights-query-pro-mode/templates/identity-overlaps.md). |
+| Data Distiller-mallar | Utforska flera mallar för att få strukturerade insikter om målgruppsdata. Använd instrumentpaneler som **avancerade[!UICONTROL Audience Overlaps]**, **[!UICONTROL Audience Comparison]**, **[!UICONTROL Audience Trends]** och **[!UICONTROL Audience Identity Overlaps]** för att fatta beslut baserade på aktuella data, optimera segmentering och förbättra engagemangsstrategier. Mer information finns i [guiden för Data Distiller-mallar](../../dashboards/sql-insights-query-pro-mode/templates/overview.md). |
+| Avancerade målgruppsöverlappningar | Analysera snabbt olika målgruppsprofiler för specifika målgrupper eller visa alla överlappningar och få värdefulla insikter från hela målgruppsuppsättningen. Använd insikterna för att förfina segmenteringen, minska antalet överflödiga meddelanden och skapa mer målinriktade kampanjer för effektivare marknadsföring. Mer finns information i [guiden för avancerade målgruppsöverlappningar](../../dashboards/sql-insights-query-pro-mode/templates/overlaps.md). |
+| Förbättringar av målgruppsjämförelse | Visa en jämförelse av nyckeltal mellan olika målgrupper med kontrollpanelen **Målgruppsjämförelse**. På kontrollpanelen kan du välja specifika tidsramar och nyckeltal, till exempel målgruppsstorlek och identitetssammansättning, så att du kan fatta välgrundade beslut om målgruppssegmentering och -strategier. Mer information finns i [guiden för målgruppsjämförelse](../../dashboards/sql-insights-query-pro-mode/templates/comparison.md). |
+| Visualisering av målgruppstrender | Analysera målgruppsvärden över tid med kontrollpanelen **[!UICONTROL Audience Trends]**. Visualisera trender för målgruppsstorlek, antal identiteter och antal enskilda identitetsprofiler i syfte att övervaka målgruppsutveckling, mäta tillväxt och förfina engagemangsstrategier. Mer information finns i [guiden för målgruppstrender](../../dashboards/sql-insights-query-pro-mode/templates/trends.md). |
+| Analys av identitetsöverlappningar | Analysera identitetsöverlappningar i valda målgrupper med kontrollpanelen **[!UICONTROL Audience Identity Overlaps]**. Visa identitetstrender och -analyser för att förstå relationen mellan olika identitetstyper inom målgruppen, förbättra sammanslagningen av identiteter och förbättra kundsegmenteringsprecisionen. Mer information finns i [guiden för identitetsöverlappningar i målgrupper](../../dashboards/sql-insights-query-pro-mode/templates/identity-overlaps.md). |
 
 {style="table-layout:auto"}
 
