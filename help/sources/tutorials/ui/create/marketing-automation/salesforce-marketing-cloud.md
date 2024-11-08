@@ -2,7 +2,7 @@
 title: Koppla ditt Salesforce Marketing Cloud-konto till Experience Platform via användargränssnittet
 description: Lär dig hur du ansluter ditt Salesforce Marketing Cloud-konto till Experience Platform via användargränssnittet.
 exl-id: 1d9bde60-31e0-489c-9c1c-b6471e0ea554
-source-git-commit: a32d0d7ed7d18454099d2b55b3f6809cfbcd9b62
+source-git-commit: 474b81aa8caf58013f8ea7cff9ad59d92466aac8
 workflow-type: tm+mt
 source-wordcount: '487'
 ht-degree: 0%
@@ -11,7 +11,7 @@ ht-degree: 0%
 
 # Anslut ditt [!DNL Salesforce Marketing Cloud]-konto till Experience Platform via användargränssnittet
 
->[!IMPORTANT]
+>[!WARNING]
 >
 >[!DNL Salesforce Marketing Cloud]-källan kommer att bli inaktuell i slutet av maj 2025.
 

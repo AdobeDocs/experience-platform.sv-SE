@@ -5,7 +5,7 @@ title: Skapa en PayPal Source-anslutning i användargränssnittet
 type: Tutorial
 description: Lär dig hur du skapar en PayPal-källanslutning med Adobe Experience Platform-gränssnittet.
 exl-id: bbd3f634-cb28-45d8-9b7b-ed3873101882
-source-git-commit: a32d0d7ed7d18454099d2b55b3f6809cfbcd9b62
+source-git-commit: 474b81aa8caf58013f8ea7cff9ad59d92466aac8
 workflow-type: tm+mt
 source-wordcount: '443'
 ht-degree: 0%
@@ -14,7 +14,7 @@ ht-degree: 0%
 
 # Skapa en [!DNL PayPal]-källanslutning i användargränssnittet
 
->[!IMPORTANT]
+>[!WARNING]
 >
 >[!DNL PayPal]-källan kommer att bli inaktuell i slutet av maj 2025.
 

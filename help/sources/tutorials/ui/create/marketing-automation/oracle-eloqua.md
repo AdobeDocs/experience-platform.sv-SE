@@ -2,7 +2,7 @@
 title: Skapa en Oraclena Eloqua-källanslutning med hjälp av plattformsgränssnittet
 description: Lär dig hur du ansluter Adobe Experience Platform till Oracle Eloqua med hjälp av plattformsgränssnittet.
 exl-id: c4431d85-5948-4122-9a99-dbacdde5a09f
-source-git-commit: a32d0d7ed7d18454099d2b55b3f6809cfbcd9b62
+source-git-commit: 474b81aa8caf58013f8ea7cff9ad59d92466aac8
 workflow-type: tm+mt
 source-wordcount: '504'
 ht-degree: 0%
@@ -11,7 +11,7 @@ ht-degree: 0%
 
 # Skapa en [!DNL Oracle Eloqua]-källanslutning med hjälp av plattformens användargränssnitt
 
->[!IMPORTANT]
+>[!WARNING]
 >
 >[!DNL Oracle Eloqua]-källan kommer att bli inaktuell i slutet av maj 2025.
 
