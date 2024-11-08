@@ -2,9 +2,9 @@
 title: API-slutpunkt för sandlådeverktygspaket
 description: Med slutpunkten /packages i sandlådeverktygets API kan du programmässigt hantera paket i Adobe Experience Platform.
 exl-id: 46efee26-d897-4941-baf4-d5ca0b8311f0
-source-git-commit: 1e271a88890f41f66aad93d96dbef23a09d33077
+source-git-commit: e029380dd970195d1254ee3ea1cd68ba2574bbd3
 workflow-type: tm+mt
-source-wordcount: '2541'
+source-wordcount: '2543'
 ht-degree: 1%
 
 ---
@@ -1595,7 +1595,13 @@ Ett godkänt svar returnerar en lista med alla överföringsbegäranden från de
 
 ### Uppdatera paketets tillgänglighet från privat till offentlig {#update-availability}
 
-Ändra ett paket från privat till offentlig genom att göra en GET-begäran till slutpunkten `/transfer/list?property=status%3D%3DCOMPLETED%2CFAILED&requestType=PUBLIC`. Som standard skapas ett paket med privat tillgänglighet.
+Ändra ett paket från privat till offentlig genom att göra en GET-begäran till slutpunkten `/packages/update`. Som standard skapas ett paket med privat tillgänglighet.
+
+**API-format**
+
+```http
+GET `/packages/update`
+```
 
 **Begäran**
 
@@ -1603,7 +1609,7 @@ Följande begäran ändrar ett pakets tillgänglighet från privat till offentli
 
 ```shell
 curl -X GET \
-  http://platform.adobe.io/data/foundation/transfer/list?property=status%3D%3DCOMPLETED%2CFAILED&requestType=PUBLIC \
+  http://platform.adobe.io/data/foundation/exim/packages/update \
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
   -H 'Content-type: application/json' \
   -H 'x-sandbox-name: {SANDBOX_NAME}' \
