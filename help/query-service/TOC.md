@@ -5,10 +5,10 @@ breadcrumb-title: Användarhandbok om Query Service
 user-guide-description: Använd standard-SQL för att fråga efter data i datasjön i Experience Platform.
 feature: Queries
 role: User,Developer
-source-git-commit: c94213b37813730911d207cb0de773d8aac22c13
+source-git-commit: fed47e132e1ff46fdf3df1a5a3f9f3e99bd1340c
 workflow-type: tm+mt
-source-wordcount: '357'
-ht-degree: 11%
+source-wordcount: '366'
+ht-degree: 12%
 
 ---
 
@@ -104,7 +104,7 @@ Implementeringsmodeller {#implement-models}
    - [Övervaka schemalagda frågor](ui/monitor-queries.md)
    - [Handbok för autentiseringsuppgifter](ui/credentials.md)
    - [Generera utdata från frågeresultat](ui/create-datasets.md)
-- API-slutpunkter för frågetjänst {#api}
+- Frågetjänstens API {#api}
    - [Komma igång](api/getting-started.md)
    - [Frågor](api/queries.md)
    - [Anslutningsparametrar](api/connection-parameters.md)
@@ -113,6 +113,11 @@ Implementeringsmodeller {#implement-models}
    - [Frågemallar](api/query-templates.md)
    - [Snabbare frågor](api/accelerated-queries.md)
    - [Aviseringsprenumerationer](api/alert-subscriptions.md)
+- API för frågetjänstens autentisering {#auth-api}
+   - [Översikt](auth-api/overview.md)
+   - [Komma igång](auth-api/getting-started.md)
+   - [IP-åtkomst](auth-api/ip-access.md)
+   - [Validera](auth-api/validate.md)
 - Datastyrning {#data-governance}
    - [Översikt](data-governance/overview.md)
    - [Granskningsloggguide](data-governance/audit-log-guide.md)
