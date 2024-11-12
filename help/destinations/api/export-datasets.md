@@ -4,9 +4,9 @@ title: Exportera datauppsättningar med API:t för Flow Service
 description: Lär dig hur du använder API:t för Flow Service för att exportera datauppsättningar till utvalda mål.
 type: Tutorial
 exl-id: f23a4b22-da04-4b3c-9b0c-790890077eaa
-source-git-commit: 22a752e28fe3cc4cb3337b456e80ef1b273f6a71
+source-git-commit: c32d2801fe38183225d24f38284b42e3d78e2631
 workflow-type: tm+mt
-source-wordcount: '5095'
+source-wordcount: '5126'
 ht-degree: 0%
 
 ---
@@ -1163,9 +1163,11 @@ Observera anslutnings-ID från svaret. Detta ID krävs i nästa steg när du ska
 
 Därefter måste du skapa en målanslutning som lagrar exportparametrarna för datauppsättningarna. Exportparametrar omfattar plats, filformat, komprimering och annan information. Mer information om vilka egenskaper som stöds för varje måltyp finns i `targetSpec`-egenskaperna i målets anslutningsspecifikation. Referera till flikarna nedan för `targetSpec`-egenskaperna för alla mål som stöds.
 
->[!WARNING]
+>[!IMPORTANT]
 >
->Export till JSON-filer stöds endast i komprimerat läge. Exportera till [!DNL Parquet] filer stöds i komprimerat och okomprimerat läge.
+>Export till JSON-filer stöds endast i komprimerat läge. Exportera till [!DNL Parquet] filer stöds i både komprimerat och okomprimerat läge.
+>
+>Formatet på den exporterade JSON-filen är NDJSON, som är standardformatet för utbyte i big data-ekosystemet. Adobe rekommenderar att du använder en NDJSON-kompatibel klient för att läsa de exporterade filerna.
 
 >[!BEGINTABS]
 

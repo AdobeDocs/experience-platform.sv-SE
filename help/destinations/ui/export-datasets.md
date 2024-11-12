@@ -3,9 +3,9 @@ title: Exportera datauppsättningar till molnlagringsmål
 type: Tutorial
 description: Lär dig hur du exporterar datauppsättningar från Adobe Experience Platform till den molnlagringsplats du föredrar.
 exl-id: e89652d2-a003-49fc-b2a5-5004d149b2f4
-source-git-commit: ad33eaa48928b25502ef279f000b92f31e1667ca
+source-git-commit: 74dcaff91a264062feec262784e056a296072fd7
 workflow-type: tm+mt
-source-wordcount: '2508'
+source-wordcount: '2538'
 ht-degree: 0%
 
 ---
@@ -238,7 +238,7 @@ I [anslut till målarbetsflödet](/help/destinations/ui/connect-destination.md#f
 
 Observera skillnaden i filformat mellan de två filtyperna när de komprimeras:
 
-* Vid export av komprimerade JSON-filer är det exporterade filformatet `json.gz`
+* När du exporterar komprimerade JSON-filer är det exporterade filformatet `json.gz`. Formatet för den exporterade JSON-filen är NDJSON, som är standardformatet för utbyte i big data-ekosystemet. Adobe rekommenderar att du använder en NDJSON-kompatibel klient för att läsa de exporterade filerna.
 * Vid export av komprimerade parquet-filer är det exporterade filformatet `gz.parquet`
 
 Exportera till JSON-filer stöds *endast i komprimerat läge*. Export till Parquet-filer stöds i komprimerat och okomprimerat läge.
