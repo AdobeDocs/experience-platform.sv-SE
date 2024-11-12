@@ -6,9 +6,9 @@ product: experience platform
 type: Documentation
 description: Läs mer om standardanvändning och hastighetsbegränsningar för dataaktivering.
 exl-id: a755f224-3329-42d6-b8a9-fadcf2b3ca7b
-source-git-commit: 3ff20e51458cb9cccafb6da92414def9eeaaf821
+source-git-commit: d01e9b6d64e9040df11c45750c784079a0289477
 workflow-type: tm+mt
-source-wordcount: '1681'
+source-wordcount: '1710'
 ht-degree: 1%
 
 ---
@@ -53,7 +53,7 @@ Skyddsritningarna nedan gäller vanligtvis för aktivering via [alla måltyper](
 | Maximalt antal attribut som har mappats till ett mål | 50 | Prestandaskydd | Om det finns flera mål- och måltyper kan du välja profilattribut och identiteter att mappa för export. För optimala prestanda bör maximalt 50 attribut mappas i ett dataflöde till ett mål. |
 | Högsta antal destinationer | 100 | Systemstyrt skyddsräcke | Du kan skapa högst 100 mål som du kan ansluta och aktivera data till, *per sandbox*. [Edge personaliseringsmål (Anpassad anpassning)](#edge-destinations-activation) kan utgöra högst 10 av de 100 rekommenderade målen. |
 | Typ av data som aktiveras för destinationer | Profildata, inklusive identiteter och identitetskarta | Systemstyrt skyddsräcke | För närvarande går det bara att exportera *profilpostattribut* till mål. XDM-attribut som beskriver händelsedata stöds för närvarande inte för export. |
-| Typ av data som aktiveras för mål - stöd för matris- och mappattribut | Inte tillgängligt | Systemstyrt skyddsräcke | För närvarande är det **inte** möjligt att exportera *matris- eller mappattribut* till mål. Undantaget till den här regeln är [identitetskartan](/help/xdm/field-groups/profile/identitymap.md) som exporteras både i direktuppspelande och filbaserade aktiveringar. |
+| Typ av data som aktiveras för mål - stöd för matris- och mappattribut | Delvis tillgänglig | Systemstyrt skyddsräcke | Du kan exportera matrisattribut till [filbaserade mål](/help/destinations/destination-types.md#file-based). Du måste fortfarande använda funktionen `array_to_string` för att förenkla arrayen till en sträng i målfilen. [Läs mer](/help/release-notes/2024/october-2024.md#destinations-new-updated-functionality) om funktionerna. <br><br> För närvarande är det **inte** möjligt att exportera *mappningsattribut* till mål. Undantaget till den här regeln är [identitetskartan](/help/xdm/field-groups/profile/identitymap.md) som exporteras både i direktuppspelande och filbaserade aktiveringar. |
 
 {style="table-layout:auto"}
 
