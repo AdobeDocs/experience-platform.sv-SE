@@ -2,10 +2,10 @@
 title: applyPropositions
 description: Återge utkast som redan har återgetts med sendEvent.
 exl-id: 6b79f334-4ea6-4ba4-8640-d35b7f90df98
-source-git-commit: 8be502c9eea67119dc537a5d63a6c71e0bff1697
+source-git-commit: 9aab41b338907f3c9fb15d08bfa877eb218f5627
 workflow-type: tm+mt
 source-wordcount: '335'
-ht-degree: 0%
+ht-degree: 1%
 
 ---
 
@@ -46,7 +46,7 @@ Kör kommandot `applyPropositions` när du anropar den konfigurerade instansen a
 * **`viewName`**: Namnet på den vy som ska återges i ett enkelsidigt program. Visningsmeddelandena för dessa beslut cachelagras och kan inkluderas i ett efterföljande `sendEvent`-kommando med `personalization.includePendingDisplayNotifications`.
 
 ```js
-alloy("applyPropositiions",{
+alloy("applyPropositions",{
   "propositions": [],
   "metadata": {},
   "viewName": ""
