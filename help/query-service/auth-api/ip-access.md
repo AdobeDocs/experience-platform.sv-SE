@@ -3,14 +3,19 @@ keywords: Experience Platform; säkerhet; ip-åtkomst; QS-Auth; API guide; fråg
 title: IP-åtkomstslutpunkt
 description: Lär dig hur du hanterar IP-intervall för sandlådeåtkomst i Query Service med API-slutpunkten för IP Access.
 role: Developer
-source-git-commit: 23e5260133f0f16ac30d14346c227a21f251b7e1
+exl-id: fc15ab50-c125-4f00-a311-81fd41697c7d
+source-git-commit: bf696c8836407a2fea82e9078201cb1f5004bcf8
 workflow-type: tm+mt
-source-wordcount: '401'
-ht-degree: 0%
+source-wordcount: '422'
+ht-degree: 1%
 
 ---
 
 # IP-åtkomstslutpunkt
+
+>[!AVAILABILITY]
+>
+>Den här funktionaliteten är tillgänglig för kunder som har köpt Data Distiller-tillägget. Kontakta din Adobe-representant om du vill veta mer.
 
 Använd IP Access-slutpunkten för att hantera tillåtna IP-intervall om du vill skydda dataåtkomsten i en angiven frågetjänstsandlåda. Du kan använda detta API för att hämta, konfigurera eller ta bort IP-intervall som är kopplade till organisationens ID.
 
@@ -163,4 +168,3 @@ Ett lyckat svar returnerar HTTP-status 200 med information om de borttagna IP-in
   ]
 }
 ```
-

@@ -3,14 +3,19 @@ keywords: Experience Platform; frågetjänst; IP-åtkomstkontroll; auktorisering
 title: API-guide för auktorisering av frågetjänst
 description: Lär dig hur du kommer igång med auktorisering och IP-intervallbegränsningar för säker dataåtkomst i Adobe Experience Platform Query Service.
 role: Developer
-source-git-commit: eb6558c2cc3faebb2cb14f49f7517227d57f7162
+exl-id: d93ce774-c8b2-4f15-a4d9-117d9aa5d9e7
+source-git-commit: bf696c8836407a2fea82e9078201cb1f5004bcf8
 workflow-type: tm+mt
-source-wordcount: '455'
-ht-degree: 0%
+source-wordcount: '476'
+ht-degree: 2%
 
 ---
 
 # API-guide för auktorisering av frågetjänst
+
+>[!AVAILABILITY]
+>
+>Den här funktionaliteten är tillgänglig för kunder som har köpt Data Distiller-tillägget. Kontakta din Adobe-representant om du vill veta mer.
 
 Med API:t för frågetjänstens auktorisering får organisationer bättre kontroll över dataåtkomsten via SQL-gränssnittet i Adobe Experience Platform. Du kan använda detta API för att definiera IP-begränsningar, begränsa dataåtkomst till angivna nätverk och förbättra säkerhetsövervakningen.
 

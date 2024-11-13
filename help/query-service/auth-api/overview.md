@@ -2,14 +2,19 @@
 title: API-guide för auktorisering av frågetjänst
 description: Lär dig hur du använder API:t för frågetjänstens auktorisering för att framtvinga nätverksbaserade IP-begränsningar för säkra anslutningar via SQL. Använd detta API för att förbättra dataåtkomstkontrollen för dina Adobe Experience Platform-data.
 role: Developer
-source-git-commit: f673d0d71458fe87491318f06be59719e4c9d76c
+exl-id: bcc5ea0e-cb6d-4c7b-bf9f-a0336f76c4c8
+source-git-commit: bf696c8836407a2fea82e9078201cb1f5004bcf8
 workflow-type: tm+mt
-source-wordcount: '365'
-ht-degree: 0%
+source-wordcount: '386'
+ht-degree: 1%
 
 ---
 
 # API-guide för auktorisering av frågetjänst
+
+>[!AVAILABILITY]
+>
+>Den här funktionaliteten är tillgänglig för kunder som har köpt Data Distiller-tillägget. Kontakta din Adobe-representant om du vill veta mer.
 
 Använd API:t för frågetjänstens auktorisering för att framtvinga IP-baserade begränsningar. Genom att tillämpa dessa åtgärder kan endast godkända nätverk och klientdatorer få åtkomst till data via SQL i Adobe Experience Platform. Dessa kontroller hjälper er att uppfylla strikta säkerhetsstandarder och samtidigt tillhandahålla åtkomstövervakning och larm i realtid.
 
