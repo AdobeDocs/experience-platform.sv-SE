@@ -2,16 +2,18 @@
 title: Översikt över datastreams
 description: Lär dig hur datastreams hjälper dig att koppla samman din integrering med Experience Platform SDK på klientsidan med Adobe-produkter och tredjepartsmål.
 exl-id: 736c75cb-e290-474e-8c47-2a031f215a56
-source-git-commit: 8fc0fd96f13f0642f7671d0e0f4ecfae8ab6761f
+source-git-commit: e3768a3f695abeedc9a3ce2fef591c6ecae9a897
 workflow-type: tm+mt
-source-wordcount: '724'
+source-wordcount: '709'
 ht-degree: 0%
 
 ---
 
 # Översikt över datastreams
 
-En datastream representerar konfigurationen på serversidan när Adobe Experience Platform Web och Mobile SDK implementeras. Medan kommandot [`configure`](/help/web-sdk/commands/configure/overview.md) i SDK styr saker som måste hanteras på klienten (till exempel `edgeDomain`), hanterar datastreams alla andra konfigurationer för SDK. När en begäran skickas till Adobe Experience Platform Edge Network används `datastreamId` för att referera till datastream. På så sätt kan du uppdatera konfigurationen på serversidan utan att behöva göra kodändringar på webbplatsen.
+En datastream representerar serversideskonfigurationen för Adobe Experience Platform Web och Mobile SDK. Medan kommandot [`configure`](/help/web-sdk/commands/configure/overview.md) i SDK hanterar klientinställningar (till exempel `edgeDomain`) hanterar datastreams alla andra konfigurationer.
+
+När du skickar en begäran till Edge Network refererar `datastreamId` till datastream där data skickas. På så sätt kan du uppdatera konfigurationen på serversidan utan att ändra webbplatsens kod.
 
 Du kan skapa och hantera datastölar genom att välja **[!UICONTROL Datastreams]** i den vänstra navigeringen i användargränssnittet för Adobe Experience Platform eller datainsamling.
 
@@ -30,14 +32,14 @@ Regler och krav för datahantering på företag ökar restriktionerna för hur k
 Datastreams erbjuder tre metoder som hjälper dig att hantera känsliga data på ett säkert sätt:
 
 * [Förbättrad kryptering](#encryption)
-* [Datastyrning](#governance)
+* [Dataförvaltning](#governance)
 * [Granskningsloggar](#audit-logs)
 
 ### Förbättrad kryptering {#encryption}
 
 Alla data som överförs genom Edge Network utförs via säkra, krypterade anslutningar med [HTTPS TLS 1.2](https://datatracker.ietf.org/doc/html/rfc5246). Om datastream hämtar in data till Experience Platform krypteras data sedan i vila i Experience Platform datasjön. Mer information finns i dokumentet om [datakryptering i Experience Platform](../landing/governance-privacy-security/encryption.md).
 
-### Datastyrning {#governance}
+### Dataförvaltning {#governance}
 
 Datastreams använder de inbyggda datastyrningsfunktionerna i Experience Platform för att förhindra att känsliga data skickas till icke-HIPAA-klara tjänster. Genom att etikettera specifika fält som innehåller känsliga data i dina datastream-scheman kan du få detaljkontroll över vilka datafält som kan användas för särskilda ändamål.
 

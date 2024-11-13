@@ -2,24 +2,22 @@
 title: Konfigurera objektidentifiering för datastreams
 description: Lär dig hur du konfigurerar identifieringen av robotar för datastreams för att särskilja mänsklig och icke-mänsklig trafik.
 exl-id: 6b221d97-0145-4d3e-a32d-746d72534add
-source-git-commit: ff95e5e105f7b3e1213eab90456b9fa9000918d3
+source-git-commit: e3768a3f695abeedc9a3ce2fef591c6ecae9a897
 workflow-type: tm+mt
-source-wordcount: '1331'
+source-wordcount: '1321'
 ht-degree: 0%
 
 ---
 
 # Konfigurera objektidentifiering för datastreams
 
-Trafik som härrör från icke-mänskliga enheter, som automatiserade program, webbskrapor, spindlar, skriptskannrar, kan göra det svårare att identifiera händelser som inträffar från mänskliga besökare. Den här typen av trafik kan påverka viktiga affärsvärden negativt, vilket leder till felaktig trafikrapportering.
+Överflödig trafik från automatiserade program, webbskrapor, spindlar och skriptskannrar kan göra det svårt att identifiera händelser från besökare. Den här typen av trafik kan påverka viktiga affärsvärden negativt, vilket leder till felaktig trafikrapportering.
 
 Med punktidentifiering kan du identifiera händelser som har genererats av [Web SDK](../web-sdk/home.md), [Mobile SDK](https://developer.adobe.com/client-sdks/home/) och [[!DNL Server API]](../server-api/overview.md) som om de har genererats av kända spindlar och bottar.
 
-Genom att konfigurera robotidentifiering för dina datastreams kan du identifiera specifika IP-adresser, IP-intervall och begäranrubriker som du vill klassificera som båda händelser.
+Genom att konfigurera robotidentifiering för dina datastreams kan du identifiera specifika IP-adresser, IP-intervall och begäranrubriker som ska klassificeras som båda händelser. Detta ger en mer exakt mätning av användaraktivitet på din webbplats eller i mobilapplikationer.
 
-Identifiering av robottrafiken kan ge en mer exakt mätning av användaraktiviteten på er webbplats eller i mobilapplikationen.
-
-När en begäran till Edge Network överensstämmer med någon av robotidentifieringsreglerna uppdateras XDM-schemat med en bockpoäng (alltid inställt på 1), vilket visas nedan.
+När en begäran till Edge Network matchar någon av robotidentifieringsreglerna uppdateras XDM-schemat med ett robotpoäng (alltid inställt på 1), vilket visas nedan:
 
 ```json
 {
@@ -66,9 +64,12 @@ På sidan Regler för punktidentifiering kan du konfigurera robotidentifiering m
 
 ### Använd listan IAB/ABC International Spiders and Bots {#iab-list}
 
-[IAB/ABC International Spiders and Bots List](https://www.iab.com/guidelines/iab-abc-international-spiders-bots-list/) är en tredjeparts lista över Internet-spindlar och bots som är branschstandard. Den hjälper dig att identifiera automatiserad trafik, till exempel crawler för sökmotorer, övervakningsverktyg och annan icke-mänsklig trafik som du kanske inte vill visa i dina analysräkningar.
+Listan [IAB/ABC International Spiders and Bots ](https://www.iab.com/guidelines/iab-abc-international-spiders-bots-list/) är en tredjeparts lista över internetspindlar och -bottnar som följer branschstandard. I den här listan kan du identifiera automatiserad trafik, som crawlningar för sökmotorer, övervakningsverktyg och annan icke-mänsklig trafik som du kanske inte vill ta med i dina analysräkningar.
 
-Om du vill konfigurera datastream så att den använder [!DNL IAB/ABC International Spiders and Bots List] växlar du **[!UICONTROL Use IAB/ABC International Spiders and Bots List for bot detection on this datastream]** och väljer sedan Spara för att använda inställningarna för robotidentifiering på datastream.
+Så här konfigurerar du din datastream att använda listan IAB/ABC International Spiders and Bots:
+
+1. Växla alternativet **[!UICONTROL Use IAB/ABC International Spiders and Bots List for bot detection on this datastream]**.
+2. Välj **[!UICONTROL Save]** om du vill använda inställningarna för robotidentifiering på ditt datastream.
 
 ![IAB-spindlar och robotlista har aktiverats.](assets/bot-detection/bot-detection-list.png)
 
