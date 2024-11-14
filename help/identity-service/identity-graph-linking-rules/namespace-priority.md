@@ -2,9 +2,9 @@
 title: Namnområdesprioritet
 description: Läs om namnområdesprioritet i identitetstjänsten.
 exl-id: bb04f02e-3826-45af-b935-752ea7e6ed7c
-source-git-commit: a2a60f429836e26179f68a40fce91a90d73d8eee
+source-git-commit: 893d8a089dee01e65436b7ac035233ba556b231b
 workflow-type: tm+mt
-source-wordcount: '1784'
+source-wordcount: '1789'
 ht-degree: 1%
 
 ---
@@ -17,10 +17,10 @@ ht-degree: 1%
 
 Varje kundimplementering är unik och skräddarsydd för att uppfylla en viss organisations mål, och som sådan varierar vikten av en viss namnrymd från kund till kund. Exempel från verkligheten:
 
-* Å ena sidan kan du anse att namnutrymmet E-post representerar en personenhet och därmed är unikt per person. En annan kund kan å andra sidan betrakta e-postnamnutrymmet som en otillförlitlig identifierare och kan därför tillåta att ett enskilt CRMID kopplas till flera identiteter med e-postnamnutrymmet.
+* Ditt företag kan betrakta varje e-postadress som en enpersonsenhet och därför använda [identitetsinställningarna](./identity-settings-ui.md) för att konfigurera e-postnamnområdet som unikt. Ett annat företag kanske vill representera enpersonsenheter som har flera e-postadresser och därmed konfigurera e-postnamnutrymmet som inte unikt. Dessa företag måste använda ett annat ID-namnutrymme som unikt, till exempel ett CRMID-namnutrymme, så att det kan finnas en identifierare för en person som är länkad till flera e-postadresser.
 * Du kan samla in onlinebeteende med hjälp av namnutrymmet Inloggnings-ID. Detta inloggnings-ID kan ha en 1:1-relation med CRMID, som sedan lagrar attribut från ett CRM-system och kan betraktas som det viktigaste namnutrymmet. I det här fallet avgör du att CRMID-namnutrymmet är en mer korrekt representation av en person, medan namnutrymmet för inloggnings-ID är det näst viktigaste.
 
-Du måste skapa konfigurationer i identitetstjänsten som återspeglar hur viktiga dina namnutrymmen är, eftersom detta påverkar hur profiler formas och segmenteras.
+Du måste göra konfigurationer i identitetstjänsten som återspeglar vikten av dina namnutrymmen eftersom detta påverkar hur profiler och relaterade identitetsdiagram formateras och delas upp.
 
 ## Ange dina prioriteringar
 
@@ -28,7 +28,7 @@ Bestämning av namnområdesprioritet baseras på följande faktorer:
 
 ### Identitetsdiagramstruktur
 
-Om din organisations strukturerade diagram är i flera lager bör namnområdesprioriteten återspegla detta så att rätt länkar tas bort vid komprimering av diagram.
+Om din organisations diagramstruktur är i flera lager bör namnområdesprioriteten återspegla detta så att rätt länkar tas bort vid komprimering av diagram.
 
 >[!TIP]
 >
@@ -52,11 +52,11 @@ Ett annat sätt att se på det här ämnet är genom kardinalitet. Hur många id
 
 ## Validera inställningarna för namnområdesprioritet
 
-När du har fått en uppfattning om hur du ska prioritera namnutrymmen kan du använda verktyget Diagramsimulering för att testa olika scenarier för komprimering av diagram och se till att dina prioritetskonfigurationer returnerar de förväntade diagramresultaten. Mer information finns i handboken om hur du använder verktyget [Diagramsimulering](./graph-simulation.md).
+När du har fått en uppfattning om hur du ska prioritera namnutrymmen kan du använda verktyget för diagramsimulering i användargränssnittet för att testa olika scenarier för komprimering av diagram och se till att dina prioritetskonfigurationer returnerar de förväntade diagramresultaten. Mer information finns i handboken om hur du använder verktyget [Diagramsimulering](./graph-simulation.md).
 
 ## Konfigurera namnområdesprioritet
 
-Namnområdesprioriteten kan konfigureras med [!UICONTROL Identity Settings]. I gränssnittet [!UICONTROL Identity Settings] kan du dra och släppa ett namnutrymme för att fastställa dess relativa betydelse.
+Namnområdesprioriteten kan konfigureras med hjälp av användargränssnittet [för identitetsinställningar](./identity-settings-ui.md). I gränssnittet för identitetsinställningar kan du dra och släppa ett namnutrymme för att fastställa dess relativa betydelse.
 
 >[!IMPORTANT]
 >
@@ -74,20 +74,20 @@ För relativt komplexa diagramstrukturer spelar namnområdesprioriteten en vikti
 
 ### Kundprofil i realtid: primär identitetsbestämning för upplevelsehändelser
 
-* För upplevelsehändelser bestäms den primära identiteten av den högsta namnområdesprioriteten när du har konfigurerat identitetsinställningar för en viss sandlåda.
+* När du har konfigurerat identitetsinställningar för en viss sandlåda bestäms den primära identiteten för upplevelsehändelser av den högsta namnområdesprioriteten i konfigurationen.
    * Det beror på att upplevelsehändelser är dynamiska till sin natur. En identitetskarta kan innehålla tre eller fler identiteter, och namnområdesprioriteten ser till att det viktigaste namnutrymmet är kopplat till upplevelsehändelsen.
 * Därför kommer följande konfigurationer **inte längre att användas av kundprofilen i realtid**:
-   * Kryssrutan Primär för dataelementtypen i WebSDK (som översätts till `primary=true` i identityMap). **Obs!**: Identitetsnamnrymd och identitetsvärde kommer att fortsätta användas i profilen. Dessutom måste du fortfarande konfigurera inställningarna för den primära kryssrutan eftersom tjänster utanför kundprofilen i realtid fortsätter att referera till den här konfigurationen.
+   * Den primära identitetskonfigurationen (`primary=true`) när identiteter skickas i identityMap med hjälp av Web SDK, Mobile SDK eller Edge Network Server-API (ID-namnområde och identitetsvärde kommer att fortsätta användas i Profile). **Obs!**: Tjänster utanför kundprofilen i realtid, t.ex. datasjölagring eller Adobe Target, fortsätter att använda den primära identitetskonfigurationen (`primary=true`).
    * Alla fält som markerats som primär identitet i ett XDM Experience Event Class-schema.
    * Standardinställningar för primär identitet i Adobe Analytics-källkopplingen (ECID eller AAID).
 * Å andra sidan bestämmer inte namnområdesprioriteten **den primära identiteten för profilposter**.
-   * För profilposter kan du använda arbetsytan för scheman i användargränssnittet för Experience Platform för att definiera dina identitetsfält, inklusive den primära identiteten. Mer information finns i guiden [Definiera identitetsfält i användargränssnittet](../../xdm/ui/fields/identity.md).
+   * För profilposter bör du fortsätta att definiera dina identitetsfält i schemat, inklusive den primära identiteten. Mer information finns i guiden [Definiera identitetsfält i användargränssnittet](../../xdm/ui/fields/identity.md).
 
 >[!TIP]
 >
 >* Namnområdesprioriteten är **en egenskap för ett namnområde**. Det är ett numeriskt värde som tilldelas ett namnutrymme för att ange dess relativa betydelse.
 >
->* Primär identitet är den identitet som ett profilfragment lagras mot. Ett profilfragment är en datapost som lagrar information om en viss användare: attribut (som vanligtvis hämtas via CRM-poster) eller händelser (som vanligtvis hämtas från upplevelsehändelser eller onlinedata).
+>* Primär identitet är den identitet som ett profilfragment lagras mot. Ett profilfragment är en datapost som lagrar information om en viss användare: attribut (till exempel CRM-poster) eller händelser (till exempel webbsurfning).
 
 ### Exempel på scenario
 
@@ -151,9 +151,7 @@ Mer information finns i [Översikt över avancerad livscykelhantering](../../hyg
 
 ### Beräknade attribut
 
-Beräknade attribut använder namnområdesprioritet för att lagra det beräknade attributvärdet. För en given händelse kommer identiteten med den högsta namnområdesprioriteten att ha värdet för det beräknade attributet skrivet mot den. Mer information finns i användargränssnittshandboken för [beräknade attribut](../../profile/computed-attributes/ui.md).
-
-Beräknade attribut använder inte namnområdesprioritet för att beräkna värden. Om du använder beräknade attribut måste du se till att CRMID har angetts som din primära identitet för WebSDK. Mer information finns i användargränssnittshandboken för [beräknade attribut](../../profile/computed-attributes/ui.md).
+Om identitetsinställningarna är aktiverade kommer beräknade attribut att använda namnområdesprioritet för att lagra det beräknade attributvärdet. För en given händelse kommer identiteten med den högsta namnområdesprioriteten att ha värdet för det beräknade attributet skrivet mot den. Mer information finns i användargränssnittshandboken för [beräknade attribut](../../profile/computed-attributes/ui.md).
 
 ### Data Lake
 
@@ -198,4 +196,4 @@ Mer information finns i [Översikt över sekretesstjänsten](../../privacy-servi
 
 ### Adobe Target
 
-Adobe Target kan generera oväntad målinriktning för delade enhetsscenarier.
+Adobe Target kan generera oväntad målinriktning för delade enhetsscenarier när kantsegmentering används.
