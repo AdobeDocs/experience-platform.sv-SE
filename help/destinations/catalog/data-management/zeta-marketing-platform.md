@@ -3,13 +3,13 @@ title: Zeta Marketing Platform
 description: Zeta Marketing Platform (ZMP) är ett molnbaserat system som hjälper er att anskaffa, utöka och behålla kunder på ett effektivare sätt, med hjälp av intelligens (egna data och AI).
 hide: true
 hidefromtoc: true
-source-git-commit: c35b43654d31f0f112258e577a1bb95e72f0a971
+exl-id: 291ee60c-aa81-4f1e-9df2-9905a8eeb612
+source-git-commit: 0c3c192105146dd949e9b11f8925bf4f9d7c15c0
 workflow-type: tm+mt
 source-wordcount: '1324'
 ht-degree: 0%
 
 ---
-
 
 # Zeta Marketing Platform {#zeta-marketing-platform}
 
@@ -31,17 +31,17 @@ En marknadsförare vill skapa unika målgruppsprofiler, identifiera sina mest v�
 
 ### Rikta användare med annonser {#use-case-target-users}
 
-En annonsör siktar på att nå ut till användare inom specifika målgrupper via Zeta Demand Side Platform (DSP), eftersom dessa användare interagerar med sina varumärken. Klicka [här](https://knowledgebase.zetaglobal.com/programmatic-user-guide/) om du vill ha mer information om Zeta-DSP.
+En annonsör siktar på att nå ut till användare inom specifika målgrupper via Zeta Demand Side Platform (DSP), eftersom dessa användare interagerar med sina varumärken. Klicka [här](https://knowledgebase.zetaglobal.com/pug/) om du vill ha mer information om Zeta-DSP.
 
 ## Förhandskrav {#prerequisites}
 
 ### Krav för Zeta Marketing Platform
 
-* Innan du skapar en ny anslutning till Zeta Marketing Platform-målet måste du skapa en tom kundlista i ditt Zeta Marketing Platform-konto. Du måste välja en av dessa kundlistor som mål för att få den Adobe Experience Platform-publik som du tänker skicka. Du kan skapa en tom kundlista i ZMP genom att följa instruktionerna [här](https://knowledgebase.zetaglobal.com/zmp/creating-audiences#CreatingAudiences-CreatingaCustomerList).
+* Innan du skapar en ny anslutning till Zeta Marketing Platform-målet måste du skapa en tom kundlista i ditt Zeta Marketing Platform-konto. Du måste välja en av dessa kundlistor som mål för att få den Adobe Experience Platform-publik som du tänker skicka. Du kan skapa en tom kundlista i ZMP genom att följa instruktionerna [här](https://knowledgebase.zetaglobal.com/kb/creating-audiences#CreatingAudiences-CreatingaCustomerList).
 * Även om Adobe Experience Platform tillåter aktivering av flera målgrupper till en viss ZMP-destinationsinstans är det obligatoriskt att varje ZMP-destinationsinstans endast tar emot en Experience Platform-målinstans. Om du vill hantera flera målgrupper från Experience Platform skapar du ytterligare ZMP-målinstanser för varje målgrupp och väljer en annan kundlista i listrutan. Detta säkerställer att målgrupperna inte skrivs över. Mer information finns i [Fyll i målinformation](#destination-details).
 * Använd följande autentiseringsuppgifter för att konfigurera målet:
    * Användarnamn: **api**
-   * Lösenord: Din ZMP REST API-nyckel. Du hittar din REST API-nyckel genom att logga in på ditt ZMP-konto och navigera till avsnittet **Inställningar** > **Integrationer** > **Tangenter och appar**. Mer information finns i [ZMP-dokumentationen](https://knowledgebase.zetaglobal.com/zmp/integrations).
+   * Lösenord: Din ZMP REST API-nyckel. Du hittar din REST API-nyckel genom att logga in på ditt ZMP-konto och navigera till avsnittet **Inställningar** > **Integrationer** > **Tangenter och appar**. Mer information finns i [ZMP-dokumentationen](https://knowledgebase.zetaglobal.com/kb/integrations).
 
 ## Identiteter som stöds {#supported-identities}
 
@@ -94,7 +94,7 @@ Om du vill ansluta till det här målet följer du stegen som beskrivs i självs
 Fyll i de obligatoriska fälten och välj **[!UICONTROL Connect to destination]** om du vill autentisera mot målet.
 
 * **[!UICONTROL Username]**: `api`
-* **[!UICONTROL Password]**: Din ZMP REST API-nyckel. Du hittar din REST API-nyckel genom att logga in på ditt ZMP-konto och navigera till avsnittet **Inställningar** > **Integrationer** > **Tangenter och appar**. Mer information finns i [ZMP-dokumentationen](https://knowledgebase.zetaglobal.com/zmp/integrations).
+* **[!UICONTROL Password]**: Din ZMP REST API-nyckel. Du hittar din REST API-nyckel genom att logga in på ditt ZMP-konto och navigera till avsnittet **Inställningar** > **Integrationer** > **Tangenter och appar**. Mer information finns i [ZMP-dokumentationen](https://knowledgebase.zetaglobal.com/kb/integrations).
 
 ### Fyll i målinformation {#destination-details}
 
@@ -103,7 +103,7 @@ Om du vill konfigurera information för målet fyller du i de obligatoriska och 
 ![Bild som visar ZMP-konfiguration](../../assets/catalog/data-management-platform/zeta-marketing-platform/zeta-configure-new-destination.png)
 * **[!UICONTROL Name]**: Ett namn som du känner igen det här målet med i framtiden.
 * **[!UICONTROL Description]**: En beskrivning som hjälper dig att identifiera det här målet i framtiden.
-* **[!UICONTROL ZMP Account Site Id]**: Ditt ZMP **Site ID** där du vill skicka dina målgrupper. Du kan visa ditt webbplats-ID genom att gå till avsnittet **Inställningar** > **Integrationer** > **Tangenter och appar**. Mer information finns [här](https://knowledgebase.zetaglobal.com/zmp/integrations).
+* **[!UICONTROL ZMP Account Site Id]**: Ditt ZMP **Site ID** där du vill skicka dina målgrupper. Du kan visa ditt webbplats-ID genom att gå till avsnittet **Inställningar** > **Integrationer** > **Tangenter och appar**. Mer information finns [här](https://knowledgebase.zetaglobal.com/kb/integrations).
 * **[!UICONTROL ZMP Segment]**: Kundlistsegmentet i ditt ZMP-webbplats-ID-konto som du vill ska uppdateras med plattformens målgrupp.
 
 ### Aktivera aviseringar {#enable-alerts}
@@ -152,4 +152,4 @@ Alla [!DNL Adobe Experience Platform]-mål är kompatibla med dataanvändningspr
 
 ## Ytterligare resurser {#additional-resources}
 
-* [Zeta Knowledge Base](https://knowledgebase.zetaglobal.com/zmp/)
+* [Zeta Knowledge Base](https://knowledgebase.zetaglobal.com/kb/)
