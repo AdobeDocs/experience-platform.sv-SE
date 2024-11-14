@@ -4,9 +4,9 @@ title: Autentisera och få åtkomst till Experience Platform API:er
 type: Tutorial
 description: Det här dokumentet innehåller en stegvis självstudiekurs för att få tillgång till ett Adobe Experience Platform-utvecklarkonto för att ringa anrop till Experience Platform API:er.
 exl-id: dfe8a7be-1b86-4d78-a27e-87e4ed8b3d42
-source-git-commit: 2fb0da385baeb96d5665ecc25bf353c7516ef9f7
+source-git-commit: a6da449725d0274ccacc6f6512c9ad395366b689
 workflow-type: tm+mt
-source-wordcount: '2063'
+source-wordcount: '2282'
 ht-degree: 1%
 
 ---
@@ -67,6 +67,10 @@ Mer information finns i handboken om [hantering av användargrupper i [!DNL Admi
 >Om du följer det här dokumentet från [Privacy Service-API-guiden](../privacy-service/api/getting-started.md) kan du nu gå tillbaka till den guiden och generera autentiseringsuppgifter som är unika för [!DNL Privacy Service].
 
 När du har fått utvecklare och användare åtkomst till Platform via [!DNL Admin Console] är nästa steg att generera dina `{ORG_ID}` - och `{API_KEY}` -autentiseringsuppgifter i Adobe Developer Console. Dessa autentiseringsuppgifter behöver bara genereras en gång och kan återanvändas i framtida API-anrop för plattformen.
+
+>[!TIP]
+>
+>I stället för att gå till Developer Console kan du få alla autentiseringsuppgifter som du behöver för att arbeta med Platform API:er direkt från API:ts referensdokumentationssidor. [Läs mer](#get-credentials-functionality) om funktionerna.
 
 ### Lägga till Experience Platform i ett projekt {#add-platform-to-project}
 
@@ -149,6 +153,26 @@ Nästa steg är att generera en `{ACCESS_TOKEN}`-autentiseringsuppgift som kan a
 >[!TIP]
 >
 Du kan också använda en Postman-miljö och en samling för att generera åtkomsttoken. Mer information finns i avsnittet om att [använda Postman för att autentisera och testa API-anrop](#use-postman).
+
+## Skapa och hämta autentiseringsuppgifter direkt i API-referensdokumentationen {#get-credentials-functionality}
+
+Från och med november 2024-utgåvan av Experience Platform kan du få autentiseringsuppgifter för att använda API:erna för Experience Platform direkt från API:ts referenssidor, utan att behöva gå till [!UICONTROL Developer Console]. Visa exemplet nedan från [Flow Service API - Destinations-sidan](https://developer.adobe.com/experience-platform-apis/references/destinations/).
+
+![Hämta inloggningsfunktioner som är markerade högst upp på en API-referenssida.](././images/api-authentication/get-credentials-highlighted.png)
+
+Om du vill ha inloggningsuppgifter för att anropa API:er för plattformar går du till en Experience Platform API-referenssida och väljer **[!UICONTROL Sign in]** högst upp på sidan. Logga in med din **[!UICONTROL Personal Account]** eller **[!UICONTROL Company or School Account]**.
+
+När du har loggat in väljer du **[!UICONTROL Create new credential]** för att skapa en ny uppsättning autentiseringsuppgifter för att komma åt plattforms-API:er.
+
+![Skapa nya autentiseringsuppgifter för att komma åt plattforms-API:er.](././images/api-authentication/create-credentials.gif)
+
+Använd sedan listruteväljaren för att öppna inloggningsfönstret, generera en åtkomsttoken och hämta API-nyckeln och ditt organisations-ID. Kopiera autentiseringsuppgifterna till [**[!UICONTROL Try it]**](/help/release-notes/2024/may-2024.md#interactive-api-documentation)-blocken på API-referenssidorna för att börja arbeta med plattforms-API:er.
+
+![Använd listruteväljaren för att visa autentiseringsuppgifter och generera en åtkomsttoken.](././images/api-authentication/view-copy-credentials.gif)
+
+>[!TIP]
+>
+Det övre referensblocket visas fortfarande när du navigerar mellan olika slutpunktssidor i Experience Platform API-referensdokumentationen.
 
 ## [!BADGE Inaktuell]{type=negative} Generera en JSON-webbtoken (JWT) {#jwt}
 
