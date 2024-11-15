@@ -1,32 +1,40 @@
 ---
-title: Adobe Experience Platform Assurance-användaråtkomst
+title: Adobe Experience Platform Assurance användaråtkomst
 description: I den här guiden beskrivs hur du behåller användaråtkomst till Adobe Experience Platform Assurance genom att hantera det via Admin Console.
 exl-id: b26ff857-5486-4391-b5a0-1e5cb05a1f11
-source-git-commit: 95e5dad03741d06ee33a10c48b481b792140f7f1
+source-git-commit: 464a39bd64ed4ae97cde52eeeb1755c75b0a86a9
 workflow-type: tm+mt
-source-wordcount: '199'
+source-wordcount: '273'
 ht-degree: 0%
 
 ---
 
 # Användaråtkomst
 
->[!WARNING]
->
->Observera att användaråtkomst till Assurance ändras. När Assurance låter betaversionen (Project Griffon) vara allmänt tillgänglig (som Assurance) för alla Adobe Experience Cloud-kunder hanteras åtkomsten till Assurance via [Admin Console](https://helpx.adobe.com/se/enterprise/using/admin-console.html).
->
->Kontakta Adobe Experience Cloud-administratören om du behöver hjälp.
+Ge användare åtkomst till [!UICONTROL Assurance] genom att lägga till dem i en produktprofil i Adobe Experience Platform genom att utföra följande steg i [Adobe Admin Console](https://adminconsole.adobe.com/):
 
-För att få eller bibehålla oavbruten tillgång till Assurance måste följande steg utföras i Admin Console:
+## Lägga till användare i Adobe Experience Platform via en produktprofil {#adding-product-profile}
 
-## Lägga till användare i Experience Platform via en produktprofil
+Om du vill lägga till en användare i en produktprofil loggar du in på [Adobe Admin Console](https://adminconsole.adobe.com/). Välj **[!UICONTROL Add users]** på fliken **[!UICONTROL Overview]** i användargränssnittet för Admin Console.
 
-Om du vill lägga till en användare i en produktprofil loggar du in på Admin Console och väljer **Lägg till användare**.
+![Admin Console-sidan med Lägg till användare markerad.](./images/user-access/admin-console.png)
 
-![Knappen Lägg till användare är markerad.](./images/get-access/product-profile-add-users.png)
+Dialogrutan **[!UICONTROL Add users to your team]** visas. Ange e-postadressen eller användarnamnet för den person som du vill lägga till och välj sedan **[!UICONTROL Add as a new user]**.
 
-Dialogrutan **Lägg till användare i ditt team** visas. I den här dialogrutan kan du ange information om den användare som du vill lägga till. Ange användarens e-postadress, förnamn (valfritt) och efternamn (valfritt).
+![Textrutan för e-post eller användarnamn är markerad i dialogrutan Lägg till användare.](./images/user-access/add-users.png)
 
-Välj pennikonen för att välja produkter och användargrupper. Här väljer du **Adobe Experience Platform** och sedan **AEP-Default-All-Users** följt av **Save**.
+Två textrutor visas för att ange en valfri **[!UICONTROL First name]** och en valfri **[!UICONTROL Last name]**. **[!UICONTROL SSO username]** fylls i automatiskt tillsammans med **[!UICONTROL Country]** inuti listrutan. Kontrollera att båda dessa alternativ är korrekta och gör nödvändiga justeringar. När allt är korrekt väljer du **[!UICONTROL Products]**.
 
-![Dialogrutan som visar hur du lägger till produktprofilen visas.](./images/get-access/product-profile-add-profile.png)
+![De tre fälten för namn och land är markerade i dialogrutan Lägg till användare.](./images/user-access/name-and-products.png)
+
+Dialogrutan **[!UICONTROL Select product]** visas. Välj Adobe Experience Platform.
+
+![Dialogrutan Välj produkter med en lista över tre produkter och alternativet Adobe Experience Platform markerat.](./images/user-access/select-products.png)
+
+Dialogrutan **[!UICONTROL Select product profiles]** visas med en lista över produktprofiler. Välj en produktprofil och välj sedan **[!UICONTROL Apply]**. Du kan lägga till ytterligare produkter och produktprofiler genom att upprepa dessa steg.
+
+![Ett alternativ som är markerat och markerat i dialogrutan Välj produktprofiler.](./images/user-access/select-product-profiles.png)
+
+Dubbelkontrollera att allt är rätt för användaren. Härifrån kan du lägga till ytterligare användare eller spara dina ändringar genom att välja **[!UICONTROL Save]**.
+
+![Lägg till användare i teamdialogrutan med all information ifylld och Spara markerad.](./images/user-access/save-selections.png)
