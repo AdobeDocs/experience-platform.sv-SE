@@ -2,10 +2,9 @@
 keywords: reklamdestinationer;destinationer;plattformsdestinationer
 title: Översikt över Advertising destinationer
 description: Koppla Adobe Experience Platform till en annonsplattform från tredje part (t.ex. DSP, annonsnätverk, SSP) och dela pseudonyma målgrupper med dessa plattformar.
-exl-id: 072743a4-fc62-4a61-92ec-8f9640a47ab2
-source-git-commit: 7db60161b638cce1845c430f6086441599a0bc61
+source-git-commit: 07e01847c6e24564682161e88122948d200ab733
 workflow-type: tm+mt
-source-wordcount: '267'
+source-wordcount: '274'
 ht-degree: 0%
 
 ---
@@ -35,6 +34,8 @@ Mer information om skillnaden mellan anslutningar och tillägg finns i [Anslutni
 * [Google Ad Manager-anslutning](google-ad-manager.md)
 * [(Beta) Google Ad Manager 360-anslutning](google-ad-manager-360-connection.md)
 * [Google Customer Match Connection](google-customer-match.md)
+* [Magnite Batch-anslutning](magnite-batch.md)
+* [Realtidsanslutning för Magnite Streaming](magnite-streaming.md)
 * [Microsoft Bing-anslutning](bing.md)
 * [Pinterest Customer List Connection](pinterest.md)
 * [Mål för PubMatic Connect](pubmatic.md)

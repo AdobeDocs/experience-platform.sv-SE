@@ -5,9 +5,9 @@ user-guide-description: Aktivera kända och okända data för marknadsföringska
 description: I det här dokumentet visas innehållsförteckningen för Adobe Experience Platform-destinationer
 feature: Destinations
 role: Admin,User
-source-git-commit: 8ccdf80885a04280c4a92e1cb3d18e45e2d9d9e5
+source-git-commit: 07e01847c6e24564682161e88122948d200ab733
 workflow-type: tm+mt
-source-wordcount: '1250'
+source-wordcount: '1248'
 ht-degree: 1%
 
 ---
@@ -92,8 +92,8 @@ ht-degree: 1%
       * [LinkedIn Insight Tag Extension](./catalog/advertising/linkedin.md)
       * [LiveRamp - Onboarding-anslutning](./catalog/advertising/liveramp-onboarding.md)
       * [LiveRamp - Distribution Connection](./catalog/advertising/liveramp-distribution.md)
-      * [(Beta) Magnite Batch](/help/destinations/catalog/advertising/magnite-batch.md)
-      * [(Beta) Magnite Streaming Real-time Connection](/help/destinations/catalog/advertising/magnite-streaming.md)
+      * [Magnite Batch](/help/destinations/catalog/advertising/magnite-batch.md)
+      * [Realtidsanslutning för Magnite Streaming](/help/destinations/catalog/advertising/magnite-streaming.md)
       * [Microsoft Bing-anslutning](./catalog/advertising/bing.md)
       * [Pinterest Conversion Tracking-tillägg](./catalog/advertising/pinterest-extension.md)
       * [Pinterest Customer List Connection](./catalog/advertising/pinterest.md)

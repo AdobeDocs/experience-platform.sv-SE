@@ -1,18 +1,16 @@
 ---
 title: Målanslutning för Magnite Real-Time
 description: Använd den här destinationen för att leverera Adobe CDP-målgrupper till Magnite Streaming-plattformen i realtid.
-badgeBeta: label="Beta" type="Informative"
-hide: true
-hidefromtoc: true
-source-git-commit: 8314aca706b47c4cbcb993418c287629f5563189
+last-substantial-update: 2024-11-18T00:00:00Z
+exl-id: 4e08a14b-6800-41e1-95a5-826a6241144d
+source-git-commit: da05db9376893bdbe8f0aa291f19a507e4a73d4f
 workflow-type: tm+mt
-source-wordcount: '1256'
+source-wordcount: '1278'
 ht-degree: 0%
 
 ---
 
-
-# (Beta) Magnite: Målanslutning i realtid
+# Magnite: Målanslutning i realtid
 
 ## Översikt {#overview}
 
@@ -28,8 +26,6 @@ Om du vill aktivera dina målgrupper till [!DNL Magnite Streaming] måste du:
 Obs! När du använder Real-Time-målet kommer [!DNL Magnite Streaming] att ta emot målgrupper i realtid, men Magnite kan bara lagra målgrupper i realtid tillfälligt på sin plattform, och de kommer att tas bort från systemet inom några dagar. Därför måste du, om du vill använda Magniten: Real-Time-målet, *även* använda Magniten: Batch-målet - varje målgrupp som du aktiverar till Real-Time-målet måste du även aktivera till Batch-målet.
 
 >[!IMPORTANT]
->
->Den här målanslutningen är i betaversion och endast tillgänglig för vissa kunder. Kontakta din Adobe-representant om du vill ha åtkomst.
 >
 >Målanslutningen och dokumentationssidan skapas och underhålls av [!DNL Magnite]-teamet. Om du har frågor eller uppdateringsfrågor kontaktar du dem direkt på `adobe-tech@magnite.com`.
 
@@ -101,7 +97,11 @@ Om du vill konfigurera information för målet fyller du i de obligatoriska och 
 
 * **[!UICONTROL Name]**: Ett namn som du känner igen det här målet med i framtiden.
 * **[!UICONTROL Description]**: En beskrivning som hjälper dig att identifiera det här målet i framtiden.
-* **[!UICONTROL Name of your source partner]**: Ditt kund-/företagsnamn. Endast [!DNL Magnite Streaming]-klienter som stöds är tillgängliga för markering.
+* **[!UICONTROL Your company name]**: Ditt kund-/företagsnamn. Endast [!DNL Magnite Streaming]-klienter som stöds är tillgängliga för markering.
+
+>[!NOTE]
+>
+>Företagsnamnet måste vara en sträng som matchar namnet på den Amazon S3-leveransgrupp som du har konfigurerat med Magnite och som har konfigurerats i steget [Autentisera till mål](#authenticate). Tecknen som stöds är a-z, A-Z, 0-9, - eller_ (understreck).
 
 ![autentiseringsfält för målkonfiguration har fyllts i](../../assets/catalog/advertising/magnite/destination-realtime-config-auth-filled.png)
 
