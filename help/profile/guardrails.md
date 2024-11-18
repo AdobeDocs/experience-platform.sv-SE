@@ -5,9 +5,9 @@ product: experience platform
 type: Documentation
 description: Läs om prestanda och systemstyrd säkerhet för profildata och segmentering för att säkerställa en optimal användning av Real-Time CDP-funktionalitet.
 exl-id: 33ff0db2-6a75-4097-a9c6-c8b7a9d8b78c
-source-git-commit: 5d6b70e397a252e037589c3200053ebcb7eb8291
+source-git-commit: 6962bb0ba4968ed4860e95819ac2e949bf744d79
 workflow-type: tm+mt
-source-wordcount: '2455'
+source-wordcount: '2459'
 ht-degree: 1%
 
 ---
@@ -174,7 +174,7 @@ I det här dokumentet finns det flera skyddsutkast som refererar till&quot;profi
 
 ### Sammanfoga profiler {#merge-policies}
 
-När du sammanfogar data från flera olika källor är sammanslagningsprinciper de regler som används av plattformen för att avgöra hur data ska prioriteras och vilka data som ska kombineras för att skapa den enhetliga vyn. Om en kund till exempel interagerar med ert varumärke i flera kanaler kommer organisationen att ha flera profilfragment som är kopplade till den enskilda kunden som visas i flera datauppsättningar. När de här fragmenten hämtas till Platform sammanfogas de för att skapa en enda profil för kunden. När data från flera källor står i konflikt avgör sammanfogningsprincipen vilken information som ska inkluderas i profilen för den enskilda personen. Max fem (5) sammanslagningsprinciper tillåts per organisation. Läs översikten [Sammanslagningsprinciper](merge-policies/overview.md) om du vill veta mer om sammanfogningsprinciper.
+När du sammanfogar data från flera olika källor är sammanslagningsprinciper de regler som används av plattformen för att avgöra hur data ska prioriteras och vilka data som ska kombineras för att skapa den enhetliga vyn. Om en kund till exempel interagerar med ert varumärke i flera kanaler kommer organisationen att ha flera profilfragment som är kopplade till den enskilda kunden som visas i flera datauppsättningar. När de här fragmenten hämtas till Platform sammanfogas de för att skapa en enda profil för kunden. När data från flera källor står i konflikt avgör sammanfogningsprincipen vilken information som ska inkluderas i profilen för den enskilda personen. Högst fem (5) sammanslagningsprinciper som använder schemat `_xdm.context.profile` tillåts per sandlåda. Läs översikten [Sammanslagningsprinciper](merge-policies/overview.md) om du vill veta mer om sammanfogningsprinciper.
 
 ### Adobe Analytics rapportuppsättningar av datauppsättningar i plattformen {#aa-datasets}
 
