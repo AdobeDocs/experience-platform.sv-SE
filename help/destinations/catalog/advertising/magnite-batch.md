@@ -1,16 +1,14 @@
 ---
 title: Magnite Batch Destination
 description: Använd den här destinationen för att leverera Adobe CDP-målgrupper till Magnite Streaming-plattformen i grupp.
-badgeBeta: label="Beta" type="Informative"
-hide: true
-hidefromtoc: true
-source-git-commit: b8921e887b827fcc7b9115045a1954c41a37bce8
+last-substantial-update: 2024-11-18T00:00:00Z
+exl-id: 8cc3890f-84f8-49d1-a329-322c13f9e5af
+source-git-commit: 57e6dc4252c031d993592b963efc089f8427ce25
 workflow-type: tm+mt
-source-wordcount: '1631'
+source-wordcount: '1650'
 ht-degree: 0%
 
 ---
-
 
 # Magnite: Batchanslutning {#magnite-streaming-batch}
 
@@ -31,8 +29,6 @@ Nedan finns mer information om Magnite: Batch-mål, hur du ansluter till den och
 Mer information om Real-Time-målet finns på [den här dokumentationssidan](magnite-streaming.md) i stället.
 
 >[!IMPORTANT]
->
->Den här målanslutningen är i betaversion och endast tillgänglig för vissa kunder. Kontakta din Adobe-representant om du vill ha åtkomst.
 >
 >Målanslutningen och dokumentationssidan skapas och underhålls av [!DNL Magnite]-teamet. Om du har frågor eller uppdateringsfrågor kontaktar du dem direkt på `adobe-tech@magnite.com`.
 
@@ -116,7 +112,11 @@ Om du vill konfigurera information för målet fyller du i de obligatoriska och 
 framtiden.
 * **[!UICONTROL Description]**: En beskrivning som hjälper dig att identifiera detta
 i framtiden.
-* **[!UICONTROL Name of your source partner]**: Det namn du vill använda som källa i Magnite Streaming-plattformen
+* **[!UICONTROL Your company name]**: Ditt kund-/företagsnamn. Endast [!DNL Magnite Streaming]-klienter som stöds är tillgängliga för markering.
+
+>[!NOTE]
+>
+>Företagsnamnet måste vara en sträng som matchar namnet på den Amazon S3-leveransgrupp som du har konfigurerat med Magnite och som har konfigurerats i steget [Autentisera till mål](#authenticate). Tecknen som stöds är a-z, A-Z, 0-9, - eller_ (understreck).
 
 ![autentiseringsfält för målkonfiguration har fyllts i](../../assets/catalog/advertising/magnite/destination-batch-config-auth-filled.png)
 
