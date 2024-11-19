@@ -2,7 +2,7 @@
 title: applyPropositions
 description: Återge utkast som redan har återgetts med sendEvent.
 exl-id: 6b79f334-4ea6-4ba4-8640-d35b7f90df98
-source-git-commit: 9aab41b338907f3c9fb15d08bfa877eb218f5627
+source-git-commit: 4c7313afdce6645ab638b2998573e5a4f7c5de8f
 workflow-type: tm+mt
 source-wordcount: '335'
 ht-degree: 1%
@@ -16,7 +16,7 @@ Med kommandot `applyPropositions` kan du återge utkast som redan har återgetts
 Det här kommandot stöder följande fält:
 
 * **Föreslag**: En array med objekt som du vill återge på nytt.
-* **Visningsnamn**: Namnet på den vy som ska återges. Visningsmeddelandena för dessa beslut cachelagras och kan inkluderas i ett efterföljande `sendEvent`-kommando med alternativet `personalization.includePendingDisplayNotifications`.
+* **Visningsnamn**: Namnet på den vy som ska återges. Visningsmeddelandena för dessa beslut cachelagras och kan inkluderas i ett efterföljande `sendEvent`-kommando med alternativet `personalization.includeRenderedPropositions`.
 * **Metadata**: Ett objekt som avgör hur erbjudanden från HTML kan tillämpas. Den innehåller följande egenskaper:
    * Omfång
    * Väljare
@@ -43,7 +43,7 @@ Kör kommandot `applyPropositions` när du anropar den konfigurerade instansen a
 * **`metadata`**: Anger hur erbjudanden från HTML tillämpas. Det är en karta där nyckeln är ett omfång eller en yta, och värdet är ett objekt som innehåller tangenterna `selector` och `actionType`.
    * `selector`: En sträng som innehåller en CSS-väljare för var HTML ska användas.
    * `actionType`: Den åtgärd som ska utföras med HTML. Giltiga värden är `setHtml`, `replaceHtml` och `appendHtml`.
-* **`viewName`**: Namnet på den vy som ska återges i ett enkelsidigt program. Visningsmeddelandena för dessa beslut cachelagras och kan inkluderas i ett efterföljande `sendEvent`-kommando med `personalization.includePendingDisplayNotifications`.
+* **`viewName`**: Namnet på den vy som ska återges i ett enkelsidigt program. Visningsmeddelandena för dessa beslut cachelagras och kan inkluderas i ett efterföljande `sendEvent`-kommando med `personalization.includeRenderedPropositions`.
 
 ```js
 alloy("applyPropositions",{

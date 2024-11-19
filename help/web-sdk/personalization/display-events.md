@@ -2,7 +2,7 @@
 title: Hantera visningshändelser i Web SDK
 description: I den här artikeln förklaras vad som är visningshändelser och hur du kan använda dem i Web SDK.
 exl-id: 7150ad6e-7693-4f4d-917e-8d08a39a0b41
-source-git-commit: b6e084d2beed58339191b53d0f97b93943154f7c
+source-git-commit: 4c7313afdce6645ab638b2998573e5a4f7c5de8f
 workflow-type: tm+mt
 source-wordcount: '351'
 ht-degree: 0%
@@ -31,7 +31,7 @@ När du skickar visningshändelser får du automatiskt mer korrekta analysmått,
 Om du vill skicka visningshändelser automatiskt när det anpassade innehållet återges på sidan måste du konfigurera följande parametrar:
 
 * `renderDecisions: true`
-* `personalization.sendDisplayNotifications: true` eller inte angivet
+* `personalization.sendDisplayEvent: true` eller inte angivet
 
 Web SDK skickar visningshändelserna omedelbart efter att någon personalisering har renderats som ett resultat av ett `sendEvent`-anrop.
 
@@ -50,9 +50,9 @@ Om du skickar visningshändelser i `sendEvent` anrop minimeras dessutom avhoppsf
 Om du vill skicka visningshändelser för automatiskt återgivna profiler måste du konfigurera följande parametrar i `sendEvent`-anropet:
 
 * `renderDecisions: true`
-* `personalization.sendDisplayNotifications: false` för sidträffens överkant
+* `personalization.sendDisplayEvent: false` för sidträffens överkant
 
-Om du vill skicka visningshändelser anropar du `sendEvent` med `personalization.includePendingDisplayNotifications: true`
+Om du vill skicka visningshändelser anropar du `sendEvent` med `personalization.includeRenderedPropositions: true`
 
 ### Skicka visningshändelser för manuellt återgivna förslag {#manually-rendered-propositions}
 
