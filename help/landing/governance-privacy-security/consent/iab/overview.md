@@ -3,8 +3,10 @@ keywords: Experience Platform;home;IAB;IAB 2.0;medgivande;Samtycke
 solution: Experience Platform
 title: Stöd för IAB TCF 2.0 i Experience Platform
 description: Lär dig hur du konfigurerar dataåtgärder och scheman för att förmedla val av kundsamtycke när du aktiverar segment till mål i Adobe Experience Platform.
+role: Developer
+feature: Consent
 exl-id: af787adf-b46e-43cf-84ac-dfb0bc274025
-source-git-commit: b08c6cf12a38f79e019544dea91913a77bd6490a
+source-git-commit: c0eb5b5c3a1968cae2bc19b7669f70a97379239b
 workflow-type: tm+mt
 source-wordcount: '2477'
 ht-degree: 0%

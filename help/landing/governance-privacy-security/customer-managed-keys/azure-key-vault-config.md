@@ -1,8 +1,10 @@
 ---
 title: Konfigurera ett Azure Key Vault
 description: Lär dig hur du skapar ett nytt Enterprise-konto med Azure, eller använder ett befintligt Enterprise-konto och skapar nyckelvalvet.
+role: Developer
+feature: Privacy
 exl-id: 670e3ca3-a833-4b28-9ad4-73685fa5d74d
-source-git-commit: 4f08e8fcc8d53b981af60226f1397a1d1ac4d8dc
+source-git-commit: c0eb5b5c3a1968cae2bc19b7669f70a97379239b
 workflow-type: tm+mt
 source-wordcount: '561'
 ht-degree: 0%

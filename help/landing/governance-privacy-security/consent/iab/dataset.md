@@ -3,8 +3,10 @@ keywords: Experience Platform;home;IAB;IAB 2.0;medgivande;Samtycke
 solution: Experience Platform
 title: Skapa datauppsättningar för att hämta IAB TCF 2.0-medgivandedata
 description: Det här dokumentet innehåller steg för hur du konfigurerar de två datauppsättningar som krävs för att samla in IAB TCF 2.0-medgivandedata.
+role: Developer
+feature: Consent, Schemas, Datasets
 exl-id: 36b2924d-7893-4c55-bc33-2c0234f1120e
-source-git-commit: ba39f62cd77acedb7bfc0081dbb5f59906c9b287
+source-git-commit: bf651967714745a0b501dcb27373379fe014c9e1
 workflow-type: tm+mt
 source-wordcount: '1580'
 ht-degree: 0%

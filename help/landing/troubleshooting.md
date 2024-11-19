@@ -6,8 +6,10 @@ description: Hitta svar på vanliga frågor och en användarhandbok om felsökni
 landing-page-description: Hitta svar på vanliga frågor och en användarhandbok om felsökning av vanliga fel i Adobe Experience Platform.
 short-description: Hitta svar på vanliga frågor och en användarhandbok om felsökning av vanliga fel i Experience Platform.
 type: Documentation
+role: Developer
+feature: API, Audiences, Data Ingestion, Datasets, Destinations, Privacy, Queries, Schemas, Sandboxes, Sources
 exl-id: 3e6d29aa-2138-421b-8bee-82b632962c01
-source-git-commit: 81f570f8e5401624ccac74696b2323252a4de0a9
+source-git-commit: bf651967714745a0b501dcb27373379fe014c9e1
 workflow-type: tm+mt
 source-wordcount: '1812'
 ht-degree: 3%

@@ -1,8 +1,10 @@
 ---
 title: Konfigurera och konfigurera kundhanterade nycklar med hjälp av plattformsgränssnittet
 description: Lär dig hur du konfigurerar din CMK-app med din Azure-klient och skickar ditt krypteringsnyckel-ID till Adobe Experience Platform.
+role: Developer
+feature: Privacy
 exl-id: 5f38997a-66f3-4f9d-9c2f-fb70266ec0a6
-source-git-commit: c2832821ea6f9f630e480c6412ca07af788efd66
+source-git-commit: c0eb5b5c3a1968cae2bc19b7669f70a97379239b
 workflow-type: tm+mt
 source-wordcount: '1003'
 ht-degree: 0%

@@ -1,11 +1,13 @@
 ---
 title: Översikt över granskningsloggar
 description: Lär dig hur granskningsloggar gör det möjligt för dig att se vilka åtgärder som har utförts och av vem, i Adobe Experience Platform.
+role: Admin,Developer
+feature: Audits
 exl-id: 00baf615-5b71-4e0a-b82a-ca0ce8566e7f
-source-git-commit: 7ae5e9dc79b4e1f08d2bf98876b02db1967ccbe1
+source-git-commit: c0eb5b5c3a1968cae2bc19b7669f70a97379239b
 workflow-type: tm+mt
 source-wordcount: '1320'
-ht-degree: 1%
+ht-degree: 4%
 
 ---
 
@@ -38,30 +40,30 @@ Följande tabell visar vilka åtgärder som resurser registreras av granskningsl
 
 | Resurs | Instruktioner |
 | --- | --- |
-| [Åtkomstkontrollprincip (attributbaserad åtkomstkontroll)](../../../access-control/home.md) | <ul><li>Skapa</li><li>Uppdatera</li><li>Ta bort</li></ul> |
-| [Konto (Adobe)](../../../sources/connectors/tutorials/ui/../../../tutorials/ui/update.md) | <ul><li>Skapa</li><li>Uppdatera</li><li>Ta bort</li></ul> |
-| [Attribution AI-instans](../../../intelligent-services/attribution-ai/overview.md) | <ul><li>Skapa</li><li>Uppdatera</li><li>Ta bort</li><li>Aktivera</li><li>Inaktivera</li></ul> |
+| [Åtkomstkontrollprincip (attributbaserad åtkomstkontroll)](../../../access-control/home.md) | <ul><li>Skapa</li><li>Uppdatering</li><li>Ta bort</li></ul> |
+| [Konto (Adobe)](../../../sources/connectors/tutorials/ui/../../../tutorials/ui/update.md) | <ul><li>Skapa</li><li>Uppdatering</li><li>Ta bort</li></ul> |
+| [Attribution AI-instans](../../../intelligent-services/attribution-ai/overview.md) | <ul><li>Skapa</li><li>Uppdatering</li><li>Ta bort</li><li>Aktivera</li><li>Inaktivera</li></ul> |
 | [Granskningsloggar](../../../landing/governance-privacy-security/audit-logs/overview.md) | <ul><li>Exportera</li></ul> |
-| [Klass](../../../xdm/schema/composition.md#class) | <ul><li>Skapa</li><li>Uppdatera</li><li>Ta bort</li></ul> |
-| Beräknat attribut | <ul><li>Skapa</li><li>Uppdatera</li><li>Ta bort</li></ul> |
-| [Kund-AI-instans](../../../intelligent-services/customer-ai/overview.md) | <ul><li>Skapa</li><li>Uppdatera</li><li>Ta bort</li><li>Aktivera</li><li>Inaktivera</li></ul> |
-| [Datauppsättning](../../../catalog/datasets/overview.md) | <ul><li>Skapa</li><li>Uppdatera</li><li>Ta bort</li><li>Aktivera för [kundprofil i realtid](../../../profile/home.md)</li><li>Inaktivera för profil</li><li>Lägg till data</li><li>Ta bort batch</li></ul> |
-| [Datastream](../../../datastreams/overview.md) | <ul><li>Skapa</li><li>Uppdatera</li><li>Ta bort</li><li>Aktivera</li><li>Inaktivera</li><li>[Redigera mappning](../../../datastreams/data-prep.md)</li></ul> |
-| [Datatyper](../../../xdm/schema/composition.md#data-type) | <ul><li>Skapa</li><li>Uppdatera</li><li>Ta bort</li></ul> |
-| [Mål](../../../destinations/home.md) | <ul><li>Skapa</li><li>Uppdatera</li><li>Ta bort</li><li>Aktivera</li><li>Inaktivera</li><li>Aktivera datauppsättning</li><li>Ta bort datauppsättning</li><li>Aktivera profil</li><li>Ta bort profil</li></ul> |
-| [Fältgrupp](../../../xdm/schema/composition.md#field-group) | <ul><li>Skapa</li><li>Uppdatera</li><li>Ta bort</li></ul> |
+| [Klass](../../../xdm/schema/composition.md#class) | <ul><li>Skapa</li><li>Uppdatering</li><li>Ta bort</li></ul> |
+| Beräknat attribut | <ul><li>Skapa</li><li>Uppdatering</li><li>Ta bort</li></ul> |
+| [Kund-AI-instans](../../../intelligent-services/customer-ai/overview.md) | <ul><li>Skapa</li><li>Uppdatering</li><li>Ta bort</li><li>Aktivera</li><li>Inaktivera</li></ul> |
+| [Datauppsättning](../../../catalog/datasets/overview.md) | <ul><li>Skapa</li><li>Uppdatering</li><li>Ta bort</li><li>Aktivera för [kundprofil i realtid](../../../profile/home.md)</li><li>Inaktivera för profil</li><li>Lägg till data</li><li>Ta bort batch</li></ul> |
+| [Datastream](../../../datastreams/overview.md) | <ul><li>Skapa</li><li>Uppdatering</li><li>Ta bort</li><li>Aktivera</li><li>Inaktivera</li><li>[Redigera mappning](../../../datastreams/data-prep.md)</li></ul> |
+| [Datatyper](../../../xdm/schema/composition.md#data-type) | <ul><li>Skapa</li><li>Uppdatering</li><li>Ta bort</li></ul> |
+| [Mål](../../../destinations/home.md) | <ul><li>Skapa</li><li>Uppdatering</li><li>Ta bort</li><li>Aktivera</li><li>Inaktivera</li><li>Aktivera datauppsättning</li><li>Ta bort datauppsättning</li><li>Aktivera profil</li><li>Ta bort profil</li></ul> |
+| [Fältgrupp](../../../xdm/schema/composition.md#field-group) | <ul><li>Skapa</li><li>Uppdatering</li><li>Ta bort</li></ul> |
 | [Identitetsdiagram](../../../identity-service/features/identity-graph-viewer.md) | <ul><li>Visa</li></ul> |
-| [Identitetsnamnområde](../../../identity-service/features/namespaces.md) | <ul><li>Skapa</li><li>Uppdatera</li></ul> |
-| [Kopplingsprincip](../../../profile/merge-policies/overview.md) | <ul><li>Skapa</li><li>Uppdatera</li><li>Ta bort</li></ul> |
-| [Produktprofil](../../../access-control/home.md) | <ul><li>Skapa</li><li>Uppdatera</li><li>Ta bort</li></ul> |
+| [Identitetsnamnområde](../../../identity-service/features/namespaces.md) | <ul><li>Skapa</li><li>Uppdatering</li></ul> |
+| [Kopplingsprincip](../../../profile/merge-policies/overview.md) | <ul><li>Skapa</li><li>Uppdatering</li><li>Ta bort</li></ul> |
+| [Produktprofil](../../../access-control/home.md) | <ul><li>Skapa</li><li>Uppdatering</li><li>Ta bort</li></ul> |
 | [Fråga](../../../query-service/ui/overview.md) | <ul><li>Kör</li></ul> |
-| [Frågemall](../../../query-service/ui/overview.md) | <ul><li>Skapa</li><li>Uppdatera</li><li>Ta bort</li></ul> |
-| [Roll (attributbaserad åtkomstkontroll)](../../../access-control/home.md) | <ul><li>Skapa</li><li>Uppdatera</li><li>Ta bort</li><li>Lägg till användare</li><li>Ta bort användare</li></ul> |
-| [Sandbox](../../../sandboxes/home.md) | <ul><li>Skapa</li><li>Uppdatera</li><li>Återställ</li><li>Ta bort</li></ul> |
-| [Schemalagd fråga](../../../query-service/ui/overview.md) | <ul><li>Skapa</li><li>Uppdatera</li><li>Ta bort</li></ul> |
-| [Schema](../../../xdm/schema/composition.md) | <ul><li>Skapa</li><li>Uppdatera</li><li>Ta bort</li><li>Aktivera för profil</li></ul> |
+| [Frågemall](../../../query-service/ui/overview.md) | <ul><li>Skapa</li><li>Uppdatering</li><li>Ta bort</li></ul> |
+| [Roll (attributbaserad åtkomstkontroll)](../../../access-control/home.md) | <ul><li>Skapa</li><li>Uppdatering</li><li>Ta bort</li><li>Lägg till användare</li><li>Ta bort användare</li></ul> |
+| [Sandbox](../../../sandboxes/home.md) | <ul><li>Skapa</li><li>Uppdatering</li><li>Återställ</li><li>Ta bort</li></ul> |
+| [Schemalagd fråga](../../../query-service/ui/overview.md) | <ul><li>Skapa</li><li>Uppdatering</li><li>Ta bort</li></ul> |
+| [Schema](../../../xdm/schema/composition.md) | <ul><li>Skapa</li><li>Uppdatering</li><li>Ta bort</li><li>Aktivera för profil</li></ul> |
 | [Segment](../../../segmentation/home.md) | <ul><li>Skapa</li><li>Ta bort</li><li>Aktivera segment</li><li>Ta bort segment</li></ul> |
-| [Source-dataflöde](../../../sources/connectors/tutorials/ui/../../../tutorials/ui/update.md) | <ul><li>Skapa</li><li>Uppdatera</li><li>Ta bort</li><li>Aktivera</li><li>Inaktivera</li><li>Aktivera datauppsättning</li><li>Ta bort datauppsättning</li><li>Profil aktiverad</li><li>Ta bort profil</li></ul> |
+| [Source-dataflöde](../../../sources/connectors/tutorials/ui/../../../tutorials/ui/update.md) | <ul><li>Skapa</li><li>Uppdatering</li><li>Ta bort</li><li>Aktivera</li><li>Inaktivera</li><li>Aktivera datauppsättning</li><li>Ta bort datauppsättning</li><li>Profil aktiverad</li><li>Ta bort profil</li></ul> |
 | [Arbetsorder](../../../hygiene/home.md) | <ul><li>Skapa</li></ul> |
 
 ## Åtkomst till granskningsloggar
@@ -138,7 +140,7 @@ Välj önskat format (antingen **[!UICONTROL CSV]** eller **[!UICONTROL JSON]**)
 
 Du kan aktivera granskningsmeddelanden om du vill få meddelanden om följande regler:
 
-* Skapa målgrupper
+* Skapa målgrupp
 * Målgruppsuppdatering
 * Målgruppsborttagning
 * Skapa datauppsättning

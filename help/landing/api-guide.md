@@ -3,8 +3,10 @@ keywords: Experience Platform;startsida;populära ämnen;Adobe Experience Platfo
 solution: Experience Platform
 title: Komma igång med Adobe Experience Platform API:er
 description: Adobe Experience Platform tillhandahåller API-tjänster som är nära kopplade till varandra. Den här handboken innehåller information om tillgängliga tjänster, nödvändiga huvuden för CRUD-åtgärder, felmeddelanden, Postman-samlingar och exempel på API-anrop.
+role: Developer
+feature: API
 exl-id: a362bcb4-a908-43a8-abd3-0e1d21cb9117
-source-git-commit: f0b9d414d7b08015478c132de6910629d86c9cf9
+source-git-commit: c0eb5b5c3a1968cae2bc19b7669f70a97379239b
 workflow-type: tm+mt
 source-wordcount: '1446'
 ht-degree: 0%

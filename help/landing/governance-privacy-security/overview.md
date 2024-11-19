@@ -3,11 +3,12 @@ keywords: Experience Platform;hem;populära ämnen
 solution: Experience Platform
 title: Styrning, sekretess och säkerhetsöversikt
 description: Adobe Experience Platform tillhandahåller flera tjänster och verktyg som gör att du kan kontrollera dina insamlade upplevelsedata på ett säkert sätt för att följa din affärspraxis, juridiska skyldigheter och utvecklingsprocess.
+feature: Data Governance,Privacy
 exl-id: 1ab5a436-c5dd-4e7a-aba1-549f0613f224
-source-git-commit: 5a14eb5938236fa7186d1a27f28cee15fe6558f6
+source-git-commit: c0eb5b5c3a1968cae2bc19b7669f70a97379239b
 workflow-type: tm+mt
 source-wordcount: '857'
-ht-degree: 1%
+ht-degree: 2%
 
 ---
 
@@ -19,11 +20,11 @@ Experience Platform tillhandahåller flera tjänster och verktyg som gör att ni
 
 Tjänsterna kan kategoriseras i tre domäner:
 
-* [Datastyrning](#governance)
+* [Dataförvaltning](#governance)
 * [Sekretess](#privacy)
 * [Säkerhet](#security)
 
-## Datastyrning {#governance}
+## Dataförvaltning {#governance}
 
 Datastyrning är ett viktigt koncept som är sammankopplat med alla funktioner i Experience Platform. Datastyrning representerar er förmåga att kontrollera och förstå era data under hela resan via Platform. Detta innebär att upprätthålla datakvalitet, datalinje, datakatalogisering med mera.
 

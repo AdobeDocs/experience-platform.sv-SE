@@ -3,8 +3,10 @@ keywords: Experience Platform;startsida;populära ämnen;Adobe Experience Platfo
 solution: Experience Platform
 title: POSTMAN i ADOBE EXPERIENCE PLATFORM
 description: Det här dokumentet innehåller steg som beskriver hur du konfigurerar en Postman-miljö, importerar Postman-samlingar och en lista över tillgängliga samlingar för varje plattformstjänst.
+role: Developer
+feature: API
 exl-id: a09b3875-97f5-47f1-a562-52decbce67b1
-source-git-commit: 5a14eb5938236fa7186d1a27f28cee15fe6558f6
+source-git-commit: c0eb5b5c3a1968cae2bc19b7669f70a97379239b
 workflow-type: tm+mt
 source-wordcount: '520'
 ht-degree: 0%

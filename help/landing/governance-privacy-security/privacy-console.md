@@ -1,10 +1,11 @@
 ---
 title: Översikt över Integritetskonsolen
 description: Lär dig övervaka dina sekretessrelaterade arbetsflöden i Adobe Experience Platform användargränssnitt.
-source-git-commit: 1fac36a0fd767add92283cd256d8bcea783ecf3b
+feature: Privacy
+source-git-commit: c0eb5b5c3a1968cae2bc19b7669f70a97379239b
 workflow-type: tm+mt
 source-wordcount: '400'
-ht-degree: 1%
+ht-degree: 2%
 
 ---
 
@@ -52,6 +53,6 @@ Mer information om de olika plattformstjänsterna som är kopplade till fall av 
 
 * [Attributbaserad åtkomstkontroll](../../access-control/abac/overview.md)
 * [Granskningsloggar](./audit-logs/overview.md)
-* [Datastyrning](../../data-governance/home.md)
+* [Dataförvaltning](../../data-governance/home.md)
 * [Datahygien](../../hygiene/home.md)
 * [Integritetstjänst](../../privacy-service/home.md)
