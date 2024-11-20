@@ -3,9 +3,9 @@ keywords: plattform;mål;målarbetsyta;arbetsyta;ui;destinationer ui;katalog;des
 title: Arbetsytan Destinationer
 description: 'Arbetsytan Destinationer består av fem avsnitt: Översikt, Katalog, Bläddra, Konton och Systemvy. De beskrivs i avsnitten nedan.'
 exl-id: 0f46f08d-0fe3-441d-933a-86bc146c0f19
-source-git-commit: c2832821ea6f9f630e480c6412ca07af788efd66
+source-git-commit: 78168493d712d2ec0974b811d288902fd94f3e40
 workflow-type: tm+mt
-source-wordcount: '1116'
+source-wordcount: '1117'
 ht-degree: 0%
 
 ---
@@ -77,11 +77,11 @@ Fliken **[!UICONTROL Accounts]** visar information om anslutningar som du har up
 
 | Element | Beskrivning |
 |---|---|
-| [!UICONTROL Platform] | Det mål som du har konfigurerat anslutningen för. |
+| [!UICONTROL Destination] | Målkopplingen som du har konfigurerat anslutningen för. |
 | [!UICONTROL Connection Type] | Representerar kontoanslutningstypen för din lagringsbucket eller destination. Beroende på målet är autentiseringsalternativen: <ul><li>För e-postmarknadsföringsmål: Kan vara S3, FTP eller Azure Blob.</li><li>För reklamdestinationer i realtid: server till server</li><li>För Amazon S3-molnlagringsmål: Åtkomstnyckel </li><li>För SFTP-molnlagringsmål: Grundläggande autentisering för SFTP</li><li>OAuth 1- eller OAuth 2-autentisering</li><li>Autentisering av innehavartoken</li></ul> |
-| [!UICONTROL Username] | Användarnamnet som du valde i [guiden för anslutningsmål](../catalog/email-marketing/overview.md#connect-destination). |
-| [!UICONTROL Destinations] | Representerar antalet unika slutförda måldataflöden som är kopplade till grundläggande information som skapats för ett mål. |
-| [!UICONTROL Authorized] | Det datum då anslutningen till det här målet auktoriserades. |
+| [!UICONTROL Username] | Användarnamnet som du valde i [målarbetsflödet för anslutning](../catalog/email-marketing/overview.md#connect-destination). |
+| [!UICONTROL Connections] | Representerar antalet unika slutförda måldataflöden som är kopplade till grundläggande information som skapats för ett mål. |
+| [!UICONTROL Authorization date] | Det datum då anslutningen till det här målet auktoriserades. |
 
 {style="table-layout:auto"}
 
