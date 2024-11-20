@@ -2,18 +2,14 @@
 title: Hantera dataanvändningsetiketter för ett schema
 description: Lär dig hur du lägger till dataanvändningsetiketter i XDM-schemafält (Experience Data Model) i Adobe Experience Platform-gränssnittet.
 exl-id: 92284bf7-f034-46cc-b905-bdfb9fcd608a
-source-git-commit: 22233d2bda488aa223555f85215be31d007eaa37
+source-git-commit: ac6af3e90c417d1c97860394ce8afb07a0a7917d
 workflow-type: tm+mt
-source-wordcount: '779'
+source-wordcount: '741'
 ht-degree: 0%
 
 ---
 
 # Hantera dataanvändningsetiketter för ett schema
-
->[!IMPORTANT]
->
->Schemabaserad märkning ingår i [attributbaserad åtkomstkontroll](../../access-control/abac/overview.md), som för närvarande är tillgänglig i en begränsad version för USA-baserade vårdkunder. Den här funktionen kommer att vara tillgänglig för alla Adobe Real-time Customer Data Platform-kunder när den släpps helt.
 
 Alla data som hämtas till Adobe Experience Platform begränsas av XDM-scheman (Experience Data Model). Dessa data kan vara föremål för användarbegränsningar som fastställts av din organisation eller av juridiska bestämmelser. För att ta hänsyn till detta kan du med hjälp av plattformen begränsa användningen av vissa datauppsättningar och fält genom att använda [dataanvändningsetiketter](../../data-governance/labels/overview.md).
 
