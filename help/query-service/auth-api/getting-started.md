@@ -1,29 +1,29 @@
 ---
 keywords: Experience Platform; frågetjänst; IP-åtkomstkontroll; auktorisering; API; komma igång
-title: API-guide för auktorisering av frågetjänst
+title: API-guide för dataauktorisering i Distiller
 description: Lär dig hur du kommer igång med auktorisering och IP-intervallbegränsningar för säker dataåtkomst i Adobe Experience Platform Query Service.
 role: Developer
 exl-id: d93ce774-c8b2-4f15-a4d9-117d9aa5d9e7
-source-git-commit: bf696c8836407a2fea82e9078201cb1f5004bcf8
+source-git-commit: ac29d10d3774a736d1e54255508ba244ff72f278
 workflow-type: tm+mt
-source-wordcount: '476'
+source-wordcount: '479'
 ht-degree: 2%
 
 ---
 
-# API-guide för auktorisering av frågetjänst
+# Kom igång med Data Distiller Authorization API
 
 >[!AVAILABILITY]
 >
 >Den här funktionaliteten är tillgänglig för kunder som har köpt Data Distiller-tillägget. Kontakta din Adobe-representant om du vill veta mer.
 
-Med API:t för frågetjänstens auktorisering får organisationer bättre kontroll över dataåtkomsten via SQL-gränssnittet i Adobe Experience Platform. Du kan använda detta API för att definiera IP-begränsningar, begränsa dataåtkomst till angivna nätverk och förbättra säkerhetsövervakningen.
+Data Distiller Authorization API ger bättre kontroll över dataåtkomst via Adobe Experience Platform SQL-gränssnitt. Du kan använda detta API för att definiera IP-begränsningar, begränsa dataåtkomst till angivna nätverk och förbättra säkerhetsövervakningen.
 
-I den här handboken beskrivs hur du ställer in autentiseringsuppgifter och behörigheter som krävs för att anropa API:t för frågetjänstens auktorisering.
+I den här handboken beskrivs hur du konfigurerar de autentiseringsuppgifter och behörigheter som krävs för att anropa API:t för Data Distiller Authorization.
 
 ## Komma igång {#getting-started}
 
-I följande avsnitt finns information om hur du förbereder nödvändiga auktoriseringsvärden och gör dina första förfrågningar till API:t för auktorisering av frågetjänst.
+I följande avsnitt finns information om hur du förbereder nödvändiga auktoriseringsvärden och gör dina första förfrågningar till API:t för Data Distiller Authorization.
 
 ### Nödvändiga behörigheter {#required-permissions}
 
@@ -41,7 +41,7 @@ Följande funktioner är tillgängliga med behörigheten **[!UICONTROL Manage Al
 
 ### Samla in värden för obligatoriska rubriker {#gather-values-for-required-headers}
 
-Om du vill anropa API:t för frågetjänstens auktorisering måste du slutföra självstudiekursen [Platform API authentication](../../landing/api-authentication.md), som innehåller värden för obligatoriska huvuden i API-anrop. Inkludera följande rubriker i varje begäran:
+Om du vill ringa anrop till API:t för dataauktorisering i Distiller måste du slutföra [självstudiekursen för autentisering av plattform-API](../../landing/api-authentication.md), som innehåller värden för obligatoriska huvuden i API-anrop. Inkludera följande rubriker i varje begäran:
 
 - **Behörighet**: `Bearer {ACCESS_TOKEN}`
 - **x-api-key**: `{API_KEY}`

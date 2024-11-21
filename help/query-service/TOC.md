@@ -5,7 +5,7 @@ breadcrumb-title: Användarhandbok om Query Service
 user-guide-description: Använd standard-SQL för att fråga efter data i datasjön i Experience Platform.
 feature: Queries
 role: User,Developer
-source-git-commit: fed47e132e1ff46fdf3df1a5a3f9f3e99bd1340c
+source-git-commit: ac29d10d3774a736d1e54255508ba244ff72f278
 workflow-type: tm+mt
 source-wordcount: '366'
 ht-degree: 12%
@@ -113,7 +113,7 @@ Implementeringsmodeller {#implement-models}
    - [Frågemallar](api/query-templates.md)
    - [Snabbare frågor](api/accelerated-queries.md)
    - [Aviseringsprenumerationer](api/alert-subscriptions.md)
-- API för frågetjänstens autentisering {#auth-api}
+- API för dataauktorisering för Distiller {#auth-api}
    - [Översikt](auth-api/overview.md)
    - [Komma igång](auth-api/getting-started.md)
    - [IP-åtkomst](auth-api/ip-access.md)

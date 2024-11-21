@@ -3,7 +3,7 @@ keywords: IP-adress, IP-intervall, tillåtelselista, tillåtelselista, frågetj�
 title: IP-adressen Tillåtelselista för frågetjänsten
 description: Den här sidan innehåller uppdaterade IP-intervall som du kan lägga till på tillåtelselista för säker åtkomst till frågetjänsten.
 exl-id: f6745e0f-d387-45f2-9f72-054e721016ff
-source-git-commit: e6c148b943c68bff5330c7ff021ffa88ba131639
+source-git-commit: ac29d10d3774a736d1e54255508ba244ff72f278
 workflow-type: tm+mt
 source-wordcount: '312'
 ht-degree: 0%
@@ -47,7 +47,7 @@ Adobe rekommenderar att du lägger till följande regionspecifika IP-intervall i
 
 ## Konfigurera IP-baserade begränsningar {#set-ip-restrictions}
 
-Använd [API-guiderna för frågetjänstens auktorisering](./auth-api/overview.md) för att konfigurera IP-baserade begränsningar. Dessa IP-baserade begränsningar säkerställer att endast godkända nätverk och klientdatorer har åtkomst till data via SQL i Adobe Experience Platform. Lär dig hur du konfigurerar, tillämpar och övervakar IP-begränsningar för att upprätthålla höga säkerhetsstandarder, med funktioner för åtkomstspårning i realtid och larm.
+Använd [API-guiderna för dataauktorisering](./auth-api/overview.md) för att konfigurera IP-baserade begränsningar. Dessa IP-baserade begränsningar säkerställer att endast godkända nätverk och klientdatorer har åtkomst till data via SQL i Adobe Experience Platform. Lär dig hur du konfigurerar, tillämpar och övervakar IP-begränsningar för att upprätthålla höga säkerhetsstandarder, med funktioner för åtkomstspårning i realtid och larm.
 
 * [Guiden Komma igång](./auth-api/getting-started.md)
 * [Slutpunktshandbok för IP-åtkomst](./auth-api/ip-access.md)

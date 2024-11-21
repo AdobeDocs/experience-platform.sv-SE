@@ -1,22 +1,22 @@
 ---
-title: API-guide för auktorisering av frågetjänst
-description: Lär dig hur du använder API:t för frågetjänstens auktorisering för att framtvinga nätverksbaserade IP-begränsningar för säkra anslutningar via SQL. Använd detta API för att förbättra dataåtkomstkontrollen för dina Adobe Experience Platform-data.
+title: API-guide för dataauktorisering i Distiller
+description: Lär dig hur du använder API:t för dataauktorisering i Distiller för att framtvinga nätverksbaserade IP-begränsningar för säkra anslutningar via SQL. Använd detta API för att förbättra dataåtkomstkontrollen för dina Adobe Experience Platform-data.
 role: Developer
 exl-id: bcc5ea0e-cb6d-4c7b-bf9f-a0336f76c4c8
-source-git-commit: bf696c8836407a2fea82e9078201cb1f5004bcf8
+source-git-commit: ac29d10d3774a736d1e54255508ba244ff72f278
 workflow-type: tm+mt
 source-wordcount: '386'
 ht-degree: 1%
 
 ---
 
-# API-guide för auktorisering av frågetjänst
+# API-guide för dataauktorisering i Distiller
 
 >[!AVAILABILITY]
 >
 >Den här funktionaliteten är tillgänglig för kunder som har köpt Data Distiller-tillägget. Kontakta din Adobe-representant om du vill veta mer.
 
-Använd API:t för frågetjänstens auktorisering för att framtvinga IP-baserade begränsningar. Genom att tillämpa dessa åtgärder kan endast godkända nätverk och klientdatorer få åtkomst till data via SQL i Adobe Experience Platform. Dessa kontroller hjälper er att uppfylla strikta säkerhetsstandarder och samtidigt tillhandahålla åtkomstövervakning och larm i realtid.
+Använd Data Distiller Authorization API för att tillämpa IP-baserade begränsningar. Genom att tillämpa dessa åtgärder kan endast godkända nätverk och klientdatorer få åtkomst till data via SQL i Adobe Experience Platform. Dessa kontroller hjälper er att uppfylla strikta säkerhetsstandarder och samtidigt tillhandahålla åtkomstövervakning och larm i realtid.
 
 Med detta API kan du konfigurera, tillämpa och övervaka IP-begränsningar för åtkomst av data via SQL-gränssnittet. Det här dokumentet innehåller en översikt på hög nivå över API:ts kärnfunktioner, slutpunktsfunktioner och framtida funktioner.
 
@@ -39,4 +39,4 @@ Mer information om granskningsloggning finns i [Granskningstjänstens dokumentat
 
 ## Nästa steg
 
-Kom igång med API:t för frågetjänstens auktorisering genom att läsa [Komma igång-guiden](./getting-started.md) för viktiga konfigurationssteg, inklusive obligatoriska huvuden och API-anropskonventioner. Utforska sedan de slutpunktsspecifika guiderna för [IP-åtkomst](./ip-access.md) och [IP-validering](./validate.md) för att konfigurera och hantera säker dataåtkomst.
+Kom igång med Data Distiller Authorization API genom att läsa [Komma igång-guiden](./getting-started.md) för viktiga konfigurationssteg, inklusive obligatoriska huvuden och API-anropskonventioner. Utforska sedan de slutpunktsspecifika guiderna för [IP-åtkomst](./ip-access.md) och [IP-validering](./validate.md) för att konfigurera och hantera säker dataåtkomst.
