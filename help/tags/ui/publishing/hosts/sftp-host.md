@@ -2,10 +2,10 @@
 title: SFTP-värdar
 description: Lär dig hur du konfigurerar taggar i Adobe Experience Platform för att leverera biblioteksbyggen till en säker, självvärd SFTP-server.
 exl-id: 3c1dc43b-291c-4df4-94f7-a03b25dbb44c
-source-git-commit: 8ded2aed32dffa4f0923fedac7baf798e68a9ec9
+source-git-commit: 85bd78928b1b503bbb6bbc44075ed0f66e046a4c
 workflow-type: tm+mt
 source-wordcount: '792'
-ht-degree: 0%
+ht-degree: 5%
 
 ---
 
@@ -13,7 +13,7 @@ ht-degree: 0%
 
 >[!NOTE]
 >
->Adobe Experience Platform Launch har omklassificerats som en serie datainsamlingstekniker i Adobe Experience Platform. Som ett resultat av detta har flera terminologiska förändringar införts i produktdokumentationen. I följande [dokument](../../../term-updates.md) finns en konsoliderad referens till de ändrade terminologin.
+>Adobe Experience Platform Launch har omprofilerats till en serie tekniker för datainsamling i Adobe Experience Platform. Som ett resultat av detta har flera terminologiska förändringar genomförts i produktdokumentationen. Se följande [dokument](../../../term-updates.md) för en konsoliderad referens av terminologiändringarna.
 
 Med Adobe Experience Platform kan du leverera kodbiblioteksbyggen till en säker SFTP-server som du har som värd, vilket ger dig större kontroll över hur byggnaderna lagras och hanteras. Den här guiden beskriver hur du konfigurerar en SFTP-värd för en taggegenskap i användargränssnittet för Experience Platform eller datainsamlingen.
 
@@ -70,7 +70,7 @@ Dialogrutan utökas och innehåller ytterligare konfigurationsalternativ för SF
 | [!UICONTROL Don't Use Symlinks] | Som standard använder alla SFTP-värdar symboliska länkar (symboler) till referensbiblioteket [builds](../builds.md) som sparas på servern. Alla servrar har dock inte stöd för symboler. När det här alternativet är markerat använder värden en kopieringsåtgärd för att uppdatera byggmaterialet direkt i stället för att använda symboler. |
 | [!UICONTROL SFTP Server URL] | URL-bassökvägen för servern. |
 | [!UICONTROL Path] | Sökvägen som ska läggas till i basserverns URL för den här värden. |
-| [!UICONTROL Port] | Porten måste vara något av följande:<ul><li>`21`</li><li>`22`</li><li>`80`</li><li>`200-299`</li><li>`443`</li><li>`2000-2999`</li><li>`4343`</li><li>`8080`</li><li>`8888`</li></ul>Av säkerhetsskäl bör Adobe begränsa antalet portar som kan användas för utgående trafik. De valda portarna är vanligtvis tillåtna via brandväggar och innehåller vissa intervall för flexibilitet. |
+| [!UICONTROL Port] | Porten måste vara något av följande:<ul><li>`21`</li><li>`22`</li><li>`201`</li><li>`200`</li><li>`2002`</li><li>`2018`</li><li>`2022`</li><li>`2200`</li><li>`2222`</li><li>`2333`</li><li>`2939`</li><li>`443`</li><li>`4343`</li><li>`80`</li><li>`8080`</li><li>`8888`</li></ul>Av säkerhetsskäl bör Adobe begränsa antalet portar som kan användas för utgående trafik. De valda portarna är vanligtvis tillåtna via brandväggar och innehåller vissa intervall för flexibilitet. |
 | [!UICONTROL Username] | Användarnamnet som ska användas vid åtkomst till servern. |
 | [!UICONTROL Encrypted Private Key] | Den krypterade privata nyckeln som du skapade i ett [föregående steg](#access-key). |
 
