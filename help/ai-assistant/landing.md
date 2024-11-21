@@ -3,9 +3,10 @@ title: AI Assistant i Adobe Experience Platform produktdokumentation
 description: Kom igång med AI Assistant i Adobe Experience Platform
 hide: true
 hidefromtoc: true
-source-git-commit: 4db38ebceaa7ac4ac46b2ac122b5869e6b28cab3
+exl-id: bcb86a41-d5d8-4c1a-a86d-79fa0c167bc7
+source-git-commit: 8d69d7010442519ce02bb9a504d4228742b4f092
 workflow-type: tm+mt
-source-wordcount: '523'
+source-wordcount: '549'
 ht-degree: 4%
 
 ---
@@ -23,15 +24,15 @@ Kom igång genom att läsa materialet i länkarna nedan för att bekanta dig med
 <table style="table-layout:fixed">
   <tr style="border: 0;">
     <td>
-    <a href="./home.md#operational-insights"><img src="./assets/landing/ai-get-started.png"></a>
+    <a href="./home.md#operational-insights"><img src="./assets/landing/ai-get-started.png" style="width:" 100%;max-height: 100%"></a>
     <div><strong>Förstå dina dataobjekt</strong><br/>Hämta operativa insikter om dina dataobjekt för att få en bättre bild av deras status, användning och länkpåverkan.</div>
     </td>
     <td>
-    <a href="./home.md#product-knowledge"><img src="./assets/landing/ai-audience.png"></a>
+    <a href="./home.md#product-knowledge"><img src="./assets/landing/ai-audience.png" style="width:" 100%;max-height: 100%"></a>
     <div><strong>Förbättra din inlärning</strong><br/>Upptäck, felsök och förstärka din förståelse av produktkunskaper utan att avbryta dina arbetsflöden.</div>
     </td>
     <td>
-    <a href="./access.md"><img src="./assets/landing/ai-access.png"></a>
+    <a href="./access.md"><img src="./assets/landing/ai-access.png" style="width:" 100%;max-height: 100%"></a>
     <div><strong>Använd behörigheter baserat på din användning</strong><br/>Bevilja och återkalla åtkomstbehörigheter beroende på teammedlemmarnas roller.</div>
     </td>
   </tr>
@@ -41,6 +42,7 @@ Kom igång genom att läsa materialet i länkarna nedan för att bekanta dig med
     <td align="center"><a href="./access.md"><img src="../rtcdp/assets/do-not-localize/learn-more-button.svg"></a></td>
     </tr>
 </table>
+
 
 ## Nya funktioner
 
@@ -118,6 +120,14 @@ I följande videofilmer finns ytterligare exempel på hur du använder AI Assist
 >[!ENDTABS]
 
 ## Ytterligare resurser
+
+>[!BEGINSHADEBOX]
+
+**Läs faktablad för AI Assistant**
+
+Mer information om AI Assistant finns i [säkerhetsfaktablad för AI Assistant i Adobe Experience Platform](https://www.adobe.com/content/dam/cc/en/trust-center/ungated/whitepapers/experience-cloud/adobe-ai-assistant-in-aep-security-fact-sheet.pdf).
+
+>[!ENDSHADEBOX]
 
 Klicka på länkarna nedan för att få en bättre förståelse för användningsfall, funktioner och mycket annat i AI Assistant.
 

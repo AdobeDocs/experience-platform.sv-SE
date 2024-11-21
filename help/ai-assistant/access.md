@@ -2,9 +2,9 @@
 title: Access AI Assistant i Experience Platform
 description: Lär dig hur du får tillgång till AI Assistant i användargränssnittet för Experience Cloud.
 exl-id: c4cdff25-512c-4b4c-be91-ad9360067a0a
-source-git-commit: 706a20e70aa20adb0f4a554d0ec35518811ea9a1
+source-git-commit: 8d69d7010442519ce02bb9a504d4228742b4f092
 workflow-type: tm+mt
-source-wordcount: '341'
+source-wordcount: '364'
 ht-degree: 0%
 
 ---
@@ -32,6 +32,12 @@ Använd behörighetsgränssnittet för att bevilja behörigheter att använda AI
 När du har de behörigheter som krävs kan du komma åt AI-assistenten genom att välja AI-assistentikonen i det övre huvudet i programmet som du använder.
 
 ![AI-assistenten med förstagångsupplevelse.](./images/ai-assistant.png)
+
+## Få tillgång till AI Assistant
+
+Titta på följande video och lär dig hur du konfigurerar åtkomst till AI Assistant för dina organisationer och användare.
+
+>[!VIDEO](https://video.tv.adobe.com/v/3436470/?learn=on)
 
 ## Nästa steg
 
