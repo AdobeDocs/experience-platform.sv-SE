@@ -4,10 +4,10 @@ title: API-guide för dataauktorisering i Distiller
 description: Lär dig hur du kommer igång med auktorisering och IP-intervallbegränsningar för säker dataåtkomst i Adobe Experience Platform Query Service.
 role: Developer
 exl-id: d93ce774-c8b2-4f15-a4d9-117d9aa5d9e7
-source-git-commit: ac29d10d3774a736d1e54255508ba244ff72f278
+source-git-commit: 804eeb4ec976cf41fdd450bd8f307499c3ebae03
 workflow-type: tm+mt
-source-wordcount: '479'
-ht-degree: 2%
+source-wordcount: '501'
+ht-degree: 1%
 
 ---
 
@@ -66,3 +66,5 @@ När de nödvändiga behörigheterna och rubrikvärdena har samlats in är du re
 Varje API-anropsexempel visar hur du formaterar begäranden och tolkar svar, vilket hjälper dig att få säker åtkomst till dina data i Query Service.
 
 Mer information om hur du konfigurerar och validerar IP-begränsningar finns i dokumentationen för [IP Access-slutpunkten](./ip-access.md) och i dokumentationen för [IP-valideringsslutpunkten](./validate.md).
+
+Se [Data Distiller Authorization OpenAPI-referensdokumentation](https://developer.adobe.com/experience-platform-apis/references/data-distiller-auth/) om du vill visa ett standardiserat, maskinläsbart format för enklare integrering, testning och utforskning.

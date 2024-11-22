@@ -4,9 +4,9 @@ solution: Experience Platform
 title: API-guide för dataåtkomst
 description: API:t för dataåtkomst stöder Adobe Experience Platform genom att ge utvecklarna ett RESTful-gränssnitt som fokuserar på att upptäcka och tillgängliggöra inkapslade datauppsättningar i Experience Platform.
 exl-id: 278ec322-dafa-4e3f-ae45-2d20459c5653
-source-git-commit: 1070c34bcd4577fcc5f0ac160196450db3aab9b0
+source-git-commit: 804eeb4ec976cf41fdd450bd8f307499c3ebae03
 workflow-type: tm+mt
-source-wordcount: '554'
+source-wordcount: '566'
 ht-degree: 1%
 
 ---
@@ -23,7 +23,7 @@ API:t för dataåtkomst stöder Adobe Experience Platform genom att förse anvä
 
 ## API-specifikationsreferens
 
-OpenAPI-referensdokumentationen finns [här](https://developer.adobe.com/experience-platform-apis/references/data-access/).
+Se [OpenAPI-referensdokumentationen för dataåtkomst](https://developer.adobe.com/experience-platform-apis/references/data-access/) för att visa ett standardiserat, maskinläsbart format för enklare integrering, testning och utforskning.
 
 ## Terminologi {#terminology}
 

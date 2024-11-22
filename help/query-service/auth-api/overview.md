@@ -3,9 +3,9 @@ title: API-guide för dataauktorisering i Distiller
 description: Lär dig hur du använder API:t för dataauktorisering i Distiller för att framtvinga nätverksbaserade IP-begränsningar för säkra anslutningar via SQL. Använd detta API för att förbättra dataåtkomstkontrollen för dina Adobe Experience Platform-data.
 role: Developer
 exl-id: bcc5ea0e-cb6d-4c7b-bf9f-a0336f76c4c8
-source-git-commit: ac29d10d3774a736d1e54255508ba244ff72f278
+source-git-commit: 804eeb4ec976cf41fdd450bd8f307499c3ebae03
 workflow-type: tm+mt
-source-wordcount: '386'
+source-wordcount: '424'
 ht-degree: 1%
 
 ---
@@ -30,13 +30,17 @@ Följande funktioner gör att du kan definiera IP-baserade åtkomstbegränsninga
 
 ## Gransknings- och övervakningsfunktioner
 
-För att ge stöd åt säkra dataåtkomstmetoder loggar frågetjänsten alla klient-IP:n som har åtkomst till eller försöker få åtkomst till AEP. Granskningshändelser, inklusive nekade anslutningar, skickas till plattformsgranskningsloggar. Detta gör att:
+För att ge stöd åt säkra dataåtkomstmetoder loggar frågetjänsten alla IP-adresser för klienter som har åtkomst till eller försöker få åtkomst till Experience Platform. Granskningshändelser, inklusive nekade anslutningar, skickas till plattformsgranskningsloggar. Detta gör att:
 
 - **Realtidsövervakning**: Spåra IP-baserade åtkomstmönster för att säkerställa regelefterlevnad.
 - **Varning vid obehörig åtkomst**: Identifiera och svara på åtkomstförsök från obehöriga IP-adresser.
 
-Mer information om granskningsloggning finns i [Granskningstjänstens dokumentation](https://experienceleague.adobe.com/docs/experience-platform/audit/audit-overview.html).
+Mer information finns i [Översikt över granskningsloggar](../../landing/governance-privacy-security/audit-logs/overview.md).
 
 ## Nästa steg
 
 Kom igång med Data Distiller Authorization API genom att läsa [Komma igång-guiden](./getting-started.md) för viktiga konfigurationssteg, inklusive obligatoriska huvuden och API-anropskonventioner. Utforska sedan de slutpunktsspecifika guiderna för [IP-åtkomst](./ip-access.md) och [IP-validering](./validate.md) för att konfigurera och hantera säker dataåtkomst.
+
+Se [Data Distiller Authorization OpenAPI-referensdokumentation](https://developer.adobe.com/experience-platform-apis/references/data-distiller-auth/) om du vill visa ett standardiserat, maskinläsbart format för enklare integrering, testning och utforskning.
+
+Mer information om de olika svarsparametrarna för varje returnerad datauppsättning finns i [API-utvecklardokumentationen för datauppsättningar](https://developer.adobe.com/experience-platform-apis/references/catalog/#tag/Datasets/operation/listDatasets).
