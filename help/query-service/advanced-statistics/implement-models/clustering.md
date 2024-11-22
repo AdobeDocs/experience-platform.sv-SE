@@ -2,9 +2,10 @@
 title: Klusteralgoritmer
 description: Lär dig hur du konfigurerar och optimerar olika klusteralgoritmer med hjälp av nyckelparametrar, beskrivningar och exempelkod för att implementera avancerade statistiska modeller.
 role: Developer
-source-git-commit: 4ee7ce2468c1ea5f0960349c288d406f43a8bb91
+exl-id: 273853c6-85d2-43e5-b51a-aa9d20b313ae
+source-git-commit: 69c08f688d355e689e78426dd4b0ed1f4934965c
 workflow-type: tm+mt
-source-wordcount: '874'
+source-wordcount: '1019'
 ht-degree: 2%
 
 ---
@@ -15,7 +16,7 @@ Klusteralgoritmer grupperar datapunkter i distinkta kluster baserat på deras li
 
 >[!NOTE]
 >
->Kontrollera att du förstår parameterkraven för den valda algoritmen. Vissa parametrar kan vara positionerade och kräver att alla föregående parametrar anges om anpassade värden anges. Om du väljer att inte anpassa vissa parametrar används standardinställningarna. Läs den relevanta dokumentationen för att förstå de olika parametrarnas funktion och standardvärden.
+>Kontrollera att du förstår parameterkraven för den valda algoritmen. Om du väljer att inte anpassa vissa parametrar används standardinställningarna. Läs den relevanta dokumentationen för att förstå de olika parametrarnas funktion och standardvärden.
 
 ## [!DNL K-Means] {#kmeans}
 
@@ -27,12 +28,12 @@ När du använder `K-Means` kan följande parametrar anges i `OPTIONS` -satsen:
 
 | Parameter | Beskrivning | Standardvärde | Möjliga värden |
 |---------------------|---------------------------------------------------------------------------------------------------------------|-----------------|----------------------------------|
-| `MAX_ITERATIONS` | Antalet iterationer som algoritmen ska köras. | `20` | (>= 0) |
+| `MAX_ITER` | Antalet iterationer som algoritmen ska köras. | `20` | (>= 0) |
 | `TOL` | Konvergenstoleransnivån. | `0.0001` | (>= 0) |
 | `NUM_CLUSTERS` | Antalet kluster som ska skapas (`k`). | `2` | (>1) |
-| `DISTANCE_TYPE` | Den algoritm som används för att beräkna avståndet mellan två punkter. | `euclidean` | `euclidean`, `cosine` |
-| `KMEANS_INIT_METHOD` | Initieringsalgoritmen för klustercentren. | `k-means` | `random`, `k-means` |
-| `INIT_STEPS` | Antalet steg för initieringsläget `k-means`. | `2` | (>0) |
+| `DISTANCE_TYPE` | Den algoritm som används för att beräkna avståndet mellan två punkter. Värdet är skiftlägeskänsligt. | `euclidean` | `euclidean`, `cosine` |
+| `KMEANS_INIT_METHOD` | Initieringsalgoritmen för klustercentren. | `k-means\|\|` | `random`, `k-means\|\|` (En parallell version av k-means++) |
+| `INIT_STEPS` | Antalet steg för initieringsläget `k-means\|\|` (gäller endast när `KMEANS_INIT_METHOD` är `k-means\|\|`). | `2` | (>0) |
 | `PREDICTION_COL` | Namnet på den kolumn där förutsägelser ska lagras. | `prediction` | Valfri sträng |
 | `SEED` | Ett slumpmässigt utsäde för reproducerbarhet. | `-1689246527` | Valfritt 64-bitars tal |
 | `WEIGHT_COL` | Namnet på den kolumn som används för instansvikter. Om inget anges vägs alla instanser lika. | `not set` | N/A |
@@ -87,10 +88,10 @@ Create MODEL modelname OPTIONS(
 | Parameter | Beskrivning | Standardvärde | Möjliga värden |
 |-----------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------|----------------|------------------------------------------|
 | `MAX_ITER` | Maximalt antal iterationer som algoritmen ska köras. | 100 | (>= 0) |
-| `WEIGHT_COL` | Kolumnnamnet, till exempel, vikter. Om den inte anges eller är tom behandlas alla instansvikter som `1.0`. | INTE ANGIVEN | Valfri sträng |
+| `WEIGHT_COL` | Kolumnnamnet, till exempel, vikter. Om den inte anges eller är tom behandlas alla instansvikter som `1.0`. | INTE ANGIVEN | Alla giltiga kolumnnamn eller tomma |
 | `NUM_CLUSTERS` | Antalet oberoende Gaussisk-fördelningar i blandningsmodellen. | 2 | (> 1) |
 | `SEED` | Det slumpmässiga startvärde som används för att styra slumpmässiga processer i algoritmen. | INTE ANGIVEN | Valfritt 64-bitars tal |
-| `AGGREGATION_DEPTH` | Det djup som används för aggregering under beräkning. | 2 | (>= 1) |
+| `AGGREGATION_DEPTH` | Den här parametern styr djupet på aggregeringsträd som används vid beräkning. | 2 | (>= 1) |
 | `PROBABILITY_COL` | Kolumnnamnet för villkorliga klasssannolikheter. Dessa bör behandlas som konfidensgrader i stället för som exakta sannolikheter. | &quot;sannolikhet&quot; | Valfri sträng |
 | `TOL` | Konvergenstoleransen för iterativa algoritmer. | 0,01 | (>= 0) |
 | `PREDICTION_COL` | Kolumnnamnet för förutsägelseutdata. | &quot;förutsägelse&quot; | Valfri sträng |
@@ -115,18 +116,18 @@ Create MODEL modelname OPTIONS(
 | Parameter | Beskrivning | Standardvärde | Möjliga värden |
 |-------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------|----------------|------------------------------------------|
 | `MAX_ITER` | Maximalt antal iterationer som algoritmen körs. | 20 | (>= 0) |
-| `OPTIMIZER` | Optimeraren eller härledningsalgoritmen som används för att beräkna LDA-modellen. De alternativ som stöds är `"online"` (Online Variational Bayes) och `"em"` (Expectation-Maximization). | online | `online`, `em` |
+| `OPTIMIZER` | Optimeraren eller härledningsalgoritmen som används för att beräkna LDA-modellen. De alternativ som stöds är `"online"` (Online Variational Bayes) och `"em"` (Expectation-Maximization). | online | `online`, `em` (skiftlägesokänslig) |
 | `NUM_CLUSTERS` | Antalet kluster som ska skapas (k). | 10 | (> 1) |
 | `CHECKPOINT_INTERVAL` | Anger hur ofta cachelagrade nod-ID:n ska kontrolleras. | 10 | (>= 1) |
-| `DOC_CONCENTRATION` | Koncentrationsparameter (&quot;alfa&quot;) för föregående placering på dokumentets distributioner över ämnen. Kontrollerar regularisering (utjämning). | Automatisk | Ett enda värde eller en vektor med längden k |
-| `KEEP_LAST_CHECKPOINT` | Anger om den sista kontrollpunkten ska behållas när optimeraren för `em` används. | `true` | `true`, `false` |
+| `DOC_CONCENTRATION` | Koncentrationsparametern (&quot;alfa&quot;) bestämmer tidigare antaganden om ämnesdistribution mellan dokument. Standardbeteendet avgörs av optimeraren. Alfavärdena för optimeraren `EM` ska vara större än 1,0 (standard: jämnt fördelat som (50/k) + 1), vilket säkerställer symmetrisk ämnesfördelning. För optimeraren `online` kan alfavärden vara 0 eller högre (standard: jämnt fördelat som 1,0/k), vilket ger en mer flexibel ämnesinitiering. | Automatisk | Ett enda värde eller en vektor med längden k där värden > 1 för EM |
+| `KEEP_LAST_CHECKPOINT` | Anger om den sista kontrollpunkten ska behållas när optimeraren för `em` används. Om du tar bort kontrollpunkten kan fel uppstå om en datapartition förloras. Kontrollpunkter tas automatiskt bort från lager när de inte längre behövs, vilket bestäms av referensinventeringen. | `true` | `true`, `false` |
 | `LEARNING_DECAY` | Inlärningsfrekvens för optimeraren `online`, angiven som en exponentiell minskningsgrad mellan `(0.5, 1.0]`. | 0,51 | `(0.5, 1.0]` |
 | `LEARNING_OFFSET` | En inlärningsparameter för optimeraren `online` som minskar vikten av tidiga iterationer så att antalet tidiga iterationer minskar. | 1024 | (> 0) |
 | `SEED` | Slumpmässigt startvärde för styrning av slumpmässiga processer i algoritmen. | INTE ANGIVEN | Valfritt 64-bitars tal |
 | `OPTIMIZE_DOC_CONCENTRATION` | För optimeraren `online`: Anger om `docConcentration` (Dirichlet-parametern för dokumentämnesdistribution) ska optimeras under utbildning. | `false` | `true`, `false` |
 | `SUBSAMPLING_RATE` | För optimeraren för `online`: den del av korpus som provats och som används i varje iteration av övertoningsdescent för minibatteri, i intervallet `(0, 1]`. | 0,05 | `(0, 1]` |
-| `TOPIC_CONCENTRATION` | Koncentrationsparameter (&quot;beta&quot; eller&quot;eta&quot;) för tidigare versioner av ämnesdistributioner över villkor. | Automatisk | (>= 0) |
-| `TOPIC_DISTRIBUTION_COL` | Utdatakolumn med uppskattningar av ämnesblandningsfördelningen för varje dokument. | INTE ANGIVEN | Valfri sträng |
+| `TOPIC_CONCENTRATION` | Koncentrationsparametern (&quot;beta&quot; eller&quot;eta&quot;) definierar de tidigare antaganden som gjorts om ämnesfördelningen över villkor. Standardvärdet bestäms av optimeraren: För `EM`, värden > 1.0 (standard = 0.1 + 1). För `online`, värden ≥ 0 (standard = 1,0/k). | Automatisk | Ett enstaka värde eller vektor med längden k, där värden > 1 för EM |
+| `TOPIC_DISTRIBUTION_COL` | Den här parametern visar den uppskattade fördelningen av ämnesblandningar för varje dokument, som ofta kallas&quot;theta&quot; i litteraturen. För tomma dokument returneras en vektor med nollor. Uppskattningar härleds med hjälp av en variationsuppskattning (gamma). | INTE ANGIVEN | Valfri sträng |
 
 {style="table-layout:auto"}
 

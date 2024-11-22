@@ -2,9 +2,10 @@
 title: Models
 description: Modelllivscykelhantering med Data Distiller SQL-tillägget. Lär dig skapa, utbilda och hantera avancerade statistiska modeller med SQL, inklusive nyckelprocesser som modellversionshantering, utvärdering och förutsägelse, för att få användbara insikter från era data.
 role: Developer
-source-git-commit: b248e8f8420b617a117d36aabad615e5bbf66b58
+exl-id: c609a55a-dbfd-4632-8405-55e99d1e0bd8
+source-git-commit: 6a61900b19543f110c47e30f4d321d0016b65262
 workflow-type: tm+mt
-source-wordcount: '1180'
+source-wordcount: '1229'
 ht-degree: 0%
 
 ---
@@ -76,19 +77,33 @@ Använd SQL för att referera till datauppsättningen som används för utbildni
 
 ## Uppdatera en modell {#update}
 
-Lär dig hur du uppdaterar en befintlig maskininlärningsmodell genom att använda nya funktionskonverteringar och konfigureringsalternativ som algoritmtyp och etikettkolumn. I SQL nedan visas hur du ökar modellens versionsnummer med varje uppdatering och ser till att ändringarna spåras så att modellen kan återanvändas i framtida utvärderings- eller förutsägelsesteg.
+Lär dig hur du uppdaterar en befintlig maskininlärningsmodell genom att använda nya funktionskonverteringar och konfigureringsalternativ som algoritmtyp och etikettkolumn. Varje uppdatering skapar en ny version av modellen, som ökas stegvis från den senaste versionen. Detta säkerställer att ändringarna spåras och att modellen kan återanvändas i framtida utvärderings- eller förutsägelsesteg.
+
+I följande exempel visas hur du uppdaterar en modell med nya omformningar och alternativ:
 
 ```sql
-UPDATE model <model_alias> transform( one_hot_encoder(NAME) ohe_name, string_indexer(gender) gendersi) options ( type = 'LogisticRegression', label = <label-COLUMN>, ) ASSELECT col1,
-       col2,
-       col3
-FROM   training-dataset.
+UPDATE MODEL <model_alias> TRANSFORM (vector_assembler(array(current_customers, previous_customers)) features)  OPTIONS(MODEL_TYPE='logistic_reg', LABEL='churn_rate')  AS SELECT * FROM churn_with_rate ORDER BY period;
 ```
 
-För att du enklare ska förstå hur du hanterar modellversioner och tillämpar omformningar effektivt, beskrivs de viktigaste komponenterna och alternativen i arbetsflödet för modelluppdatering i följande anteckningar.
+**Exempel**
 
-- `UPDATE model <model_alias>`: Uppdateringskommandot hanterar versionshantering och ökar modellens versionsnummer vid varje uppdatering.
-- `version`: Ett valfritt nyckelord används bara under uppdateringar för att skapa en ny version av modellen.
+Ta följande kommando för att få en bättre förståelse för versionsprocessen:
+
+```sql
+UPDATE MODEL model_vdqbrja OPTIONS(MODEL_TYPE='logistic_reg', LABEL='Survived') AS SELECT * FROM titanic_e2e_dnd;
+```
+
+När det här kommandot har körts har modellen en ny version, vilket visas i tabellen nedan:
+
+| Uppdaterat modell-ID | Uppdaterad modell | Ny version |
+|--------------------------------------------|---------------|-------------|
+| a8f6a254-8f28-42ec-8b26-94edeb4698e8 | model_vdqbrja | 2 |
+
+Följande anmärkningar beskriver de viktigaste komponenterna och alternativen i arbetsflödet för modelluppdatering.
+
+- `UPDATE model <model_alias>`: Uppdateringskommandot hanterar versionshantering och skapar en ny modellversion som har ökats från den senaste versionen.
+- `version`: Ett valfritt nyckelord som bara används under uppdateringar för att explicit ange att en ny version ska skapas. Om det utelämnas ökas versionen automatiskt.
+
 
 ## Utvärdera modeller {#evaluate-model}
 

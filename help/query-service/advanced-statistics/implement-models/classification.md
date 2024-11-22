@@ -2,9 +2,10 @@
 title: Klassificeringsalgoritmer
 description: Lär dig hur du konfigurerar och optimerar olika klassificeringsalgoritmer med nyckelparametrar, beskrivningar och exempelkod som hjälper dig att implementera avancerade statistiska modeller.
 role: Developer
-source-git-commit: b248e8f8420b617a117d36aabad615e5bbf66b58
+exl-id: 9105ab04-b480-48a0-b8f7-cf0ed5e5399d
+source-git-commit: 489063fcd003e20f233a9c9d85d8cb6c22708d88
 workflow-type: tm+mt
-source-wordcount: '2360'
+source-wordcount: '2449'
 ht-degree: 2%
 
 ---
@@ -27,13 +28,13 @@ Tabellen nedan visar nyckelparametrar för konfigurering och optimering av prest
 | `CACHE_NODE_IDS` | Om det är `false` skickar algoritmen träd till exekverare för att matcha instanser med noder. Om `true` cachelagras nod-ID:n för varje instans, vilket snabbar upp utbildningen av djupare träd. | `false` | `true`, `false` |
 | `CHECKPOINT_INTERVAL` | Anger hur ofta cachelagrade nod-ID:n ska kontrolleras. `10` betyder till exempel att cachen är kontrollpunkt var 10:e iteration. | 10 | (>= 1) |
 | `IMPURITY` | Det kriterium som används för beräkning av informationsvinst (skiftlägesokänslig). | &quot;gini&quot; | `entropy`, `gini` |
-| `MAX_DEPTH` | Trädets maximala djup (icke-negativt). Djup `0` betyder till exempel 1 lövnod och djup `1` betyder 1 intern nod och 2 lövnoder. | 5 | [0, 30] |
+| `MAX_DEPTH` | Trädets maximala djup (icke-negativt). Djup `0` betyder till exempel 1 lövnod och djup `1` betyder 1 intern nod och 2 lövnoder. | 5 | (>= 0) (intervall: [0,30]) |
 | `MIN_INFO_GAIN` | Den minsta informationsökning som krävs för att en delning ska kunna beaktas vid en trädnod. | 0,0 | (>= 0.0) |
 | `MIN_WEIGHT_FRACTION_PER_NODE` | Den minsta fraktionen av det viktade antalet sampel som varje underordnad måste ha efter en delning. Om en delning gör att andelen av den totala vikten i något av de underordnade blir mindre än det här värdet, tas den bort. | 0,0 | (>= 0.0, &lt;= 0.5) |
 | `MIN_INSTANCES_PER_NODE` | Det minsta antalet instanser som varje underordnad måste ha efter en delning. Om en delning resulterar i färre instanser än det här värdet ignoreras delningen. | 1 | (>= 1) |
-| `MAX_MEMORY_IN_MB` | Det maximala minne (i MB) som allokeras till histogramaggregering. Om det här värdet är för litet delas endast en nod per iteration, och dess aggregat kan överskrida den här storleken. | 256 |                    |
+| `MAX_MEMORY_IN_MB` | Det maximala minne (i MB) som allokeras till histogramaggregering. Om det här värdet är för litet delas endast en nod per iteration, och dess aggregat kan överskrida den här storleken. | 256 | (>= 0) |
 | `PREDICTION_COL` | Kolumnnamnet för förutsägelseutdata. | &quot;förutsägelse&quot; | Valfri sträng |
-| `SEED` | Det slumpmässiga utsädet. | INTE ANGIVEN | Valfritt 64-bitars tal |
+| `SEED` | Det slumpmässiga utsädet. | N/A | Valfritt 64-bitars tal |
 | `WEIGHT_COL` | Kolumnnamnet, till exempel, vikter. Om den inte anges eller är tom behandlas alla instansvikter som `1.0`. | INTE ANGIVEN | Valfri sträng |
 | `ONE_VS_REST` | Aktiverar eller inaktiverar radbrytning av den här algoritmen med ett mot ett, som används för klassproblem i flera klasser. | `false` | `true`, `false` |
 
@@ -64,9 +65,9 @@ Tabellen nedan visar nyckelparametrar för konfigurering och optimering av prest
 | `FIT_LINEAR` | Anger om den linjära termen ska passas in (kallas även envägsperioden). | `true` | `true`, `false` |
 | `INIT_STD` | Standardavvikelsen för initieringskoefficient. | 0,01 | (>= 0) |
 | `MAX_ITER` | Maximalt antal iterationer som algoritmen ska köras. | 100 | (>= 0) |
-| `MINI_BATCH_FRACTION` | Den del av data som ska användas i minibatchar under utbildning. Måste vara i intervallet `(0, 1]`. | 1,0 | `(0, 1]` |
+| `MINI_BATCH_FRACTION` | Den del av data som ska användas i minibatchar under utbildning. Måste vara i intervallet `(0, 1]`. | 1,0 | 0 &lt; värde &lt;= 1 |
 | `REG_PARAM` | Parametern för reglering, som hjälper till att kontrollera modellens komplexitet och förhindra överpassning. | 0,0 | (>= 0) |
-| `SEED` | Det slumpmässiga startvärdet för styrning av slumpmässiga processer i algoritmen. | INTE ANGIVEN | Valfritt 64-bitars tal |
+| `SEED` | Det slumpmässiga startvärdet för styrning av slumpmässiga processer i algoritmen. | N/A | Valfritt 64-bitars tal |
 | `SOLVER` | Den lösaralgoritm som används för optimering. De alternativ som stöds är `gd` (övertoningsfall) och `adamW`. | &quot;adamW&quot; | `gd`, `adamW` |
 | `STEP_SIZE` | Den inledande stegstorleken för optimering, som ofta tolkas som inlärningsgraden. | 1,0 | > 0 |
 | `PROBABILITY_COL` | Kolumnnamnet för villkorliga klasssannolikheter. Obs! Alla modeller ger inte upphov till väl kalibrerade sannolikheter, utan bör behandlas som konfidensgrader i stället för som exakta sannolikheter. | &quot;sannolikhet&quot; | Valfri sträng |
@@ -102,17 +103,17 @@ Tabellen nedan visar nyckelparametrar för konfigurering och optimering av prest
 | `MIN_INFO_GAIN` | Den minsta informationsökning som krävs för att en delning ska kunna beaktas vid en trädnod. | 0,0 | (>= 0.0) |
 | `MIN_WEIGHT_FRACTION_PER_NODE` | Den minsta fraktionen av det viktade antalet sampel som varje underordnad måste ha efter en delning. Om en delning gör att andelen av den totala vikten i något av de underordnade blir mindre än det här värdet, tas den bort. | 0,0 | (>= 0.0, &lt;= 0.5) |
 | `MIN_INSTANCES_PER_NODE` | Det minsta antalet instanser som varje underordnad måste ha efter en delning. Om en delning resulterar i färre instanser än det här värdet ignoreras delningen. | 1 | (>= 1) |
-| `MAX_MEMORY_IN_MB` | Det maximala minne (i MB) som allokeras till histogramaggregering. Om det här värdet är för litet delas endast en nod per iteration, och dess aggregat kan överskrida den här storleken. | 256 |                                                                                                      |
+| `MAX_MEMORY_IN_MB` | Det maximala minne (i MB) som allokeras till histogramaggregering. Om det här värdet är för litet delas endast en nod per iteration, och dess aggregat kan överskrida den här storleken. | 256 | (>= 0) |
 | `PREDICTION_COL` | Kolumnnamnet för förutsägelseutdata. | &quot;förutsägelse&quot; | Valfri sträng |
-| `VALIDATION_INDICATOR_COL` | Kolumnnamnet anger om varje rad används för utbildning eller validering. `false` för utbildning och `true` för validering. | INTE ANGIVEN | Valfri sträng |
+| `VALIDATION_INDICATOR_COL` | Kolumnnamnet anger om varje rad används för utbildning eller validering. Värdet `false` anger utbildning och `true` anger validering. Om inget värde anges är standardvärdet `None`. | &quot;Ingen&quot; | Valfri sträng |
 | `RAW_PREDICTION_COL` | Kolumnnamnet för råa förutsägelsevärden (kallas även konfidensvärden). | &quot;rawPredication&quot; | Valfri sträng |
 | `LEAF_COL` | Kolumnnamnet för bladindex, som är det förväntade lövindexet för varje instans i varje träd, som genereras av förordertraversal. | &quot;&quot; | Valfri sträng |
-| `FEATURE_SUBSET_STRATEGY` | Antalet funktioner som kan delas vid varje trädnod. Alternativ som stöds: `auto`, `all`, `onethird`, `sqrt`, `log2` och `n` (för en del funktioner). | &quot;auto&quot; | `auto`, `all`, `onethird`, `sqrt`, `log2`, `n` (där `n` är ett bråk mellan 0 och 1.0) |
-| `WEIGHT_COL` | Kolumnnamnet, till exempel, vikter. Om den inte anges eller är tom behandlas alla instansvikter som `1.0`. | INTE ANGIVEN |                                                                                                      |
-| `LOSS_TYPE` | Förlustfunktionen som modellen [!DNL Gradient Boosted Tree] försöker minimera. Alternativ som stöds: `logistic`. | &quot;logistik&quot; | `logistic` |
-| `STEP_SIZE` | Stegstorleken (kallas även inlärningsgrad) i intervallet `(0, 1]`, som används för att minska bidraget från varje uppskattare. | 0,1 | `(0, 1]` |
+| `FEATURE_SUBSET_STRATEGY` | Antalet funktioner som kan delas vid varje trädnod. Alternativ som stöds: `auto` (bestäms automatiskt utifrån aktiviteten), `all` (använd alla funktioner), `onethird` (använd en tredjedel av funktionerna), `sqrt` (använd kvadratroten av antalet funktioner), `log2` (använd bas-2-logaritmen av antalet funktioner) och `n` (där n är antingen en del av funktionerna om de finns i intervallet `(0, 1]` eller ett visst antal funktioner om i intervallet `[1, total number of features]`). | &quot;auto&quot; | `auto`, `all`, `onethird`, `sqrt`, `log2`, `n` |
+| `WEIGHT_COL` | Kolumnnamnet, till exempel, vikter. Om den inte anges eller är tom behandlas alla instansvikter som `1.0`. | INTE ANGIVEN | Valfri sträng |
+| `LOSS_TYPE` | Förlustfunktionen som modellen [!DNL Gradient Boosted Tree] försöker minimera. | &quot;logistik&quot; | `logistic` (skiftlägesokänslig) |
+| `STEP_SIZE` | Stegstorleken (kallas även inlärningsgrad) i intervallet `(0, 1]`, som används för att minska bidraget från varje uppskattare. | 0,1 | (>= 0.0, &lt;= 1) |
 | `MAX_ITER` | Maximalt antal iterationer för algoritmen. | 20 | (>= 0) |
-| `SUBSAMPLING_RATE` | Den del av utbildningsdata som används för att utbilda varje beslutsträd, i intervallet `(0, 1]`. | 1,0 | `(0, 1]` |
+| `SUBSAMPLING_RATE` | Den del av utbildningsdata som används för att utbilda varje beslutsträd. Värdet måste ligga i intervallet 0 &lt; värdet &lt;= 1. | 1,0 | `(0, 1]` |
 | `PROBABILITY_COL` | Kolumnnamnet för villkorliga klasssannolikheter. Obs! Alla modeller ger inte upphov till väl kalibrerade sannolikheter, utan bör behandlas som konfidensgrader i stället för som exakta sannolikheter. | &quot;sannolikhet&quot; | Valfri sträng |
 | `ONE_VS_REST` | Aktiverar eller inaktiverar kapsling av den här algoritmen med One-vs-Rest för klassificering i flera klasser. | `false` | `true`, `false` |
 
@@ -138,12 +139,12 @@ Tabellen nedan visar nyckelparametrar för konfigurering och optimering av prest
 | Parameter | Beskrivning | Standardvärde | Möjliga värden |
 |--------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|---------------|------------------------------------------------------------------------------------------------------|
 | `MAX_ITER` | Maximalt antal iterationer som algoritmen ska köras. | 100 | (>= 0) |
-| `AGGREGATION_DEPTH` | Det föreslagna djupet för trädaggregering. | 2 |                                                                                                      |
+| `AGGREGATION_DEPTH` | Djupet för trädaggregering. Den här parametern används för att minska kostnaderna för nätverkskommunikation. | 2 | Valfritt positivt heltal |
 | `FIT_INTERCEPT` | Om en spärrterm ska passas in. | `true` | `true`, `false` |
-| `TOL` | Konvergenstoleransen för optimering. | 1E-6 | (>= 0) |
-| `MAX_BLOCK_SIZE_IN_MB` | Maximalt minne i MB för att stapla indata i block. Data lagras inom partitioner och om den återstående datastorleken i en partition är mindre justeras det här värdet därefter. | 0,0 | (>= 0) |
+| `TOL` | Den här parametern avgör tröskelvärdet för att stoppa iterationer. | 1E-6 | (>= 0) |
+| `MAX_BLOCK_SIZE_IN_MB` | Maximalt minne i MB för att stapla indata i block. Om parametern är inställd på `0` väljs det optimala värdet automatiskt (vanligtvis ca 1 MB). | 0,0 | (>= 0) |
 | `REG_PARAM` | Parametern för reglering, som hjälper till att kontrollera modellens komplexitet och förhindra överpassning. | 0,0 | (>= 0) |
-| `STANDARDIZATION` | Om utbildningsfunktionerna ska standardiseras innan modellen anpassas. | `true` | `true`, `false` |
+| `STANDARDIZATION` | Den här parametern anger om utbildningsfunktionerna ska standardiseras innan modellen anpassas. | `true` | `true`, `false` |
 | `PREDICTION_COL` | Kolumnnamnet för förutsägelseutdata. | &quot;förutsägelse&quot; | Valfri sträng |
 | `RAW_PREDICTION_COL` | Kolumnnamnet för råa förutsägelsevärden (kallas även konfidensvärden). | &quot;rawPredication&quot; | Valfri sträng |
 | `ONE_VS_REST` | Aktiverar eller inaktiverar kapsling av den här algoritmen med One-vs-Rest för klassificering i flera klasser. | `false` | `true`, `false` |
@@ -161,7 +162,7 @@ Create MODEL modelname OPTIONS(
 
 ## [!DNL Logistic Regression] {#logistic-regression}
 
-[!DNL Logistic Regression] är en övervakad algoritm som används för binär klassificering. Den modellerar sannolikheten för att en instans tillhör en klass med hjälp av logistikfunktionen, vilket gör den lämplig för uppgifter där målet är att klassificera instanser i en av två kategorier.
+[!DNL Logistic Regression] är en övervakad algoritm som används för binära klassificeringsuppgifter. Den modellerar sannolikheten för att en instans tillhör en klass med logistikfunktionen och tilldelar instansen till klassen med den högre sannolikheten. Detta gör det lämpligt för problem där målet är att dela upp data i en av två kategorier.
 
 **Parametrar**
 
@@ -186,7 +187,7 @@ Create MODEL modelname OPTIONS(
 
 ## [!DNL Multilayer Perceptron Classifier] {#multilayer-perceptron-classifier}
 
-[!DNL Multilayer Perceptron Classifier] är en artificiell neuralnätverksklassificerare som består av flera fullständigt anslutna lager av noder. Varje nod i ett lager mappar indata till utdata med en viktad linjär kombination av indata, med nodvikter (`w`) och avvikelse (`b`), följt av en aktiveringsfunktion. Denna process hjälper till att konfigurera och optimera avancerade statistiska modeller genom att justera nyckelparametrar, med kodexempel som ger ytterligare vägledning. —>
+[!DNL Multilayer Perceptron Classifier] (MLPC) är en klassificerare för artificiellt neuralt nätverk. Det består av flera helt anslutna lager med noder, där varje nod använder en viktad linjär kombination av indata, följt av en aktiveringsfunktion. MLPC används för komplexa klassificeringsuppgifter som kräver icke-linjära beslutsgränser.
 
 **Parametrar**
 
@@ -215,15 +216,15 @@ CREATE MODEL modelname OPTIONS(
 
 ## [!DNL Naive Bayes Classifier] {#naive-bayes-classifier}
 
-[!DNL Naive Bayes Classifier] är en enkel sannolikhetsklassificerare i flera klasser som baseras på Bayes&#39; sats med starka (naiva) antaganden om oberoende mellan funktioner. Det är mycket effektivt i utbildningen och kräver endast en överföring av utbildningsdata för att beräkna den villkorliga sannolikhetsfördelningen för varje egenskap som anges på respektive etikett. För förutsägelser använder den Bayes teori för att beräkna den villkorliga sannolikhetsfördelningen för varje etikett utifrån en observation.
+[!DNL Naive Bayes Classifier] är en enkel sannolikhetsklassificerare i flera klasser som baseras på Bayes&#39; sats med starka (naiva) antaganden om oberoende mellan funktioner. Den utbildar effektivt genom att beräkna villkorliga sannolikheter i en enda omgång för att beräkna den villkorliga sannolikhetsfördelningen för varje egenskap som anges på varje etikett. För förutsägelser använder den Bayes teori för att beräkna den villkorliga sannolikhetsfördelningen för varje etikett utifrån en observation.
 
 **Parametrar**
 
 | Parameter | Beskrivning | Standardvärde | Möjliga värden |
-|------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|----------------|------------------------------------------------|
+|------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|----------------|------------------------------------------------|
 | `MODEL_TYPE` | Anger modelltypen. De alternativ som stöds är `"multinomial"`, `"complement"`, `"bernoulli"` och `"gaussian"`. Modelltypen är skiftlägeskänslig. | &quot;multi omial&quot; | `"multinomial"`, `"complement"`, `"bernoulli"`, `"gaussian"` |
-| `SMOOTHING` | Parametern smoothing, som används för att jämna ut kategoriserade data och hantera osynliga funktioner. | 1,0 | (>= 0) |
-| `PROBABILITY_COL` | Kolumnnamnet för villkorliga klasssannolikheter. Dessa bör behandlas som konfidensgrader i stället för som exakta sannolikheter. | &quot;sannolikhet&quot; | Valfri sträng |
+| `SMOOTHING` | Parametern smoothing används för att hantera nollfrekvensproblem i kategoriserade data. | 1,0 | (>= 0) |
+| `PROBABILITY_COL` | Den här parametern anger kolumnnamnet för villkorliga sannolikheter för den förväntade klassen. Obs! Alla modeller innehåller inte välkalibrerade sannolikhetsskattningar. Behandla dessa värden som konfidenser i stället för exakta sannolikheter. | &quot;sannolikhet&quot; | Valfri sträng |
 | `WEIGHT_COL` | Kolumnnamnet för instansvikter. Om den inte anges eller är tom behandlas alla instansvikter som `1.0`. | INTE ANGIVEN | Valfri sträng |
 | `PREDICTION_COL` | Kolumnnamnet för förutsägelseutdata. | &quot;förutsägelse&quot; | Valfri sträng |
 | `RAW_PREDICTION_COL` | Kolumnnamnet för råa förutsägelsevärden (kallas även konfidensvärden). | &quot;rawPredication&quot; | Valfri sträng |
@@ -258,13 +259,13 @@ CREATE MODEL modelname OPTIONS(
 | `MIN_INSTANCES_PER_NODE` | Det minsta antalet instanser som varje underordnad måste ha efter en delning. Om en delning resulterar i färre instanser än det här värdet ignoreras delningen. | 1 | (>= 1) |
 | `MAX_MEMORY_IN_MB` | Det maximala minne (i MB) som allokeras till histogramaggregering. Om det här värdet är för litet delas endast en nod per iteration, och dess aggregat kan överskrida den här storleken. | 256 | (>= 1) |
 | `PREDICTION_COL` | Kolumnnamnet för förutsägelseutdata. | &quot;förutsägelse&quot; | Valfri sträng |
-| `WEIGHT_COL` | Kolumnnamnet, till exempel, vikter. Om den inte anges eller är tom behandlas alla instansvikter som `1.0`. | INTE ANGIVEN | Valfri sträng |
+| `WEIGHT_COL` | Kolumnnamnet, till exempel, vikter. Om den inte anges eller är tom behandlas alla instansvikter som `1.0`. | INTE ANGIVEN | Alla giltiga kolumnnamn eller tomma |
 | `SEED` | Det slumpmässiga startvärde som används för att styra slumpmässiga processer i algoritmen. | -1689246527 | Valfritt 64-bitars tal |
 | `BOOTSTRAP` | Anger om bootstrap-prover ska användas när träd byggs. | `true` | `true`, `false` |
 | `NUM_TREES` | Antalet träd som ska tränas. Om `1` används ingen startspärr. Om det är större än `1` används startspärr. | 20 | (>= 1) |
 | `SUBSAMPLING_RATE` | Den del av utbildningsdata som används för inlärning av varje beslutsträd. | 1,0 | (> 0, &lt;= 1) |
 | `LEAF_COL` | Kolumnnamnet för bladindexen, som innehåller det förväntade bladindexet för varje instans i varje träd efter förordning. | &quot;&quot; | Valfri sträng |
-| `PROBABILITY_COL` | Kolumnnamnet för villkorliga klasssannolikheter. Dessa bör behandlas som konfidensgrader i stället för som exakta sannolikheter. | &quot;sannolikhet&quot; | Valfri sträng |
+| `PROBABILITY_COL` | Kolumnnamnet för villkorliga klasssannolikheter. Dessa bör behandlas som konfidensgrader i stället för som exakta sannolikheter. | INTE ANGIVEN | Valfri sträng |
 | `RAW_PREDICTION_COL` | Kolumnnamnet för råa förutsägelsevärden (kallas även konfidensvärden). | &quot;rawPredication&quot; | Valfri sträng |
 | `ONE_VS_REST` | Anger om One-vs-Rest ska aktiveras för multiclass-klassificering. | `false` | `true`, `false` |
 
@@ -282,4 +283,3 @@ Create MODEL modelname OPTIONS(
 ## Nästa steg
 
 När du har läst det här dokumentet vet du nu hur du konfigurerar och använder olika klassificeringsalgoritmer. Läs sedan dokumenten om [regression](./regression.md) och [klustring](./clustering.md) om du vill veta mer om andra typer av avancerade statistiska modeller.
-

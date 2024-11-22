@@ -2,9 +2,10 @@
 title: SQL-tillägg för funktionskonstruktion
 description: Läs mer om SQL-tillägget Data Distiller för framtagning av data för avancerad statistisk modellering. Det täcker de tillgängliga teknikerna för extrahering, omformning och markering.
 role: Developer
-source-git-commit: 1fcfb5c41750e853daaf036ceaae3527b805391c
+exl-id: 622c8ef3-9651-46b3-ad22-021a93190149
+source-git-commit: e7bc30c153f67c59e9c04e8c8df60394f48871d0
 workflow-type: tm+mt
-source-wordcount: '717'
+source-wordcount: '735'
 ht-degree: 0%
 
 ---
@@ -41,9 +42,10 @@ Förutom extraheringsfunktioner använder du följande allmänna transformatorer
 
 Nedan finns en lista med verktyg för bearbetning av ett stort antal datatyper som förbättrar arbetsflödet för förbehandling av data.
 
-- **[Numerisk import](./feature-transformation.md#numeric-imputer)**: Fyll i saknade värden i numeriska kolumner med en
-- **[Strängimport](./feature-transformation.md#string-imputer)**: Ersätt saknade strängvärden med ett angivet
-- **[Vektorgasamling](./feature-transformation.md#vector-assembler)**: Kombinera flera kolumner till en enda vektorkolumn.
+- **[Numerisk import](./feature-transformation.md#numeric-imputer)**: Fyll i värden som saknas i numeriska kolumner med ett angivet värde, till exempel medelvärdet eller medianen.
+- **[Strängimport](./feature-transformation.md#string-imputer)**: Ersätt saknade strängvärden med ett angivet värde, till exempel den mest frekventa strängen i kolumnen.
+- **[Vector Assembler](./feature-transformation.md#vector-assembler)**: Kombinera flera kolumner till en enda vektorkolumn för att förbereda data för maskininlärningsmodeller.
+- **[Boolean Imputer](./feature-transformation.md#boolean-imputer)**: Fyll i booleska värden som saknas med ett angivet värde, till exempel `true` eller `false`.
 
 #### Numeriska omformare
 
@@ -88,7 +90,7 @@ Use a clustering algorithm to group data points into distinct clusters based on 
 
 ## Implementera OPTIONS-satsen {#options-clause}
 
-När du definierar modellen använder du `OPTIONS`-satsen för att ange algoritmen och dess parametrar. Börja med att ange parametern `type` för att ange den algoritm som du använder, till exempel `K-Means`. Definiera sedan de relevanta parametrarna i `OPTIONS`-satsen som nyckelvärdepar för att finjustera modellen. Förstå att vissa parametrar kan vara positionerade och kräver att alla föregående parametrar anges om anpassade värden anges. Om du väljer att inte anpassa vissa parametrar används standardinställningarna. Läs den relevanta dokumentationen för att förstå de olika parametrarnas funktion och standardvärden.
+När du definierar modellen använder du `OPTIONS`-satsen för att ange algoritmen och dess parametrar. Börja med att ange parametern `type` för att ange den algoritm som du använder, till exempel `K-Means`. Definiera sedan de relevanta parametrarna i `OPTIONS`-satsen som nyckelvärdepar för att finjustera modellen. Om du väljer att inte anpassa vissa parametrar används standardinställningarna. Läs den relevanta dokumentationen för att förstå de olika parametrarnas funktion och standardvärden.
 
 ### Nästa steg
 

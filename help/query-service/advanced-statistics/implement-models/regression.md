@@ -2,9 +2,10 @@
 title: Regressionsalgoritmer
 description: Lär dig hur du konfigurerar och optimerar olika regressionsalgoritmer med hjälp av nyckelparametrar, beskrivningar och exempelkod för att implementera avancerade statistiska modeller.
 role: Developer
-source-git-commit: b248e8f8420b617a117d36aabad615e5bbf66b58
+exl-id: d38733bb-0420-40bf-a70b-19e0e0e58730
+source-git-commit: 8b9cfb48a11701f0e4b358416c6b627bedf1db8b
 workflow-type: tm+mt
-source-wordcount: '2150'
+source-wordcount: '2384'
 ht-degree: 2%
 
 ---
@@ -23,18 +24,18 @@ Tabellen nedan visar nyckelparametrar för konfiguration och optimering av prest
 
 | Parameter | Beskrivning | Standardvärde | Möjliga värden |
 |------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|---------------|--------------------------------------------------------------------------------------------------------|
-| `MAX_BINS` | Det maximala antalet behållare avgör hur kontinuerliga funktioner delas upp i diskreta intervall. Detta påverkar hur funktioner delas vid varje beslutsträdsnod. Fler behållare ger högre granularitet. | 32 | Måste vara minst 2 och minst antalet kategorier i någon kategorifunktion. |
-| `CACHE_NODE_IDS` | Om det är `false` skickar algoritmen träd till exekverare för att matcha instanser med noder. Om det är `true` cachelagrar algoritmen nod-ID:n för varje instans. Cachelagring kan påskynda utbildningen av djupare träd. | false | `true` eller `false` |
-| `CHECKPOINT_INTERVAL` | Anger hur ofta cachelagrade nod-ID:n ska kontrolleras. `10` betyder till exempel att cachen kontrolleras var 10:e iteration. | 10 | (>=1) |
-| `IMPURITY` | Det kriterium som används för beräkning av informationsvinst (skiftlägesokänslig). | `gini` | `entropy`, `gini` |
-| `MAX_DEPTH` | Trädets maximala djup (icke-negativt). Djup `0` betyder till exempel 1 lövnod och djup `1` betyder 1 intern nod och 2 lövnoder. | 5 | [0, 30] |
-| `MIN_INFO_GAIN` | Den minsta informationsökning som krävs för att en delning ska kunna beaktas vid en trädnod. | 0,0 | (>=0.0) |
-| `MIN_WEIGHT_FRACTION_PER_NODE` | Den minsta fraktionen av det viktade antalet sampel som varje underordnad måste ha efter en delning. Om en delning gör att andelen av den totala vikten i något av de underordnade blir mindre än det här värdet, tas den bort. | 0,0 | (>=0.0, 0.5) |
-| `MIN_INSTANCES_PER_NODE` | Det minsta antalet instanser som varje underordnad måste ha efter en delning. Om en delning resulterar i färre instanser än det här värdet ignoreras delningen. | 1 | (>=1) |
-| `MAX_MEMORY_IN_MB` | Det maximala minne (i MB) som allokeras till histogramaggregering. Om minnet är för litet delas endast en nod per iteration, vilket kan göra att aggregaten överskrider storleken. | 256 |                                                                                                        |
-| `PREDICTION_COL` | Parametern för förutsägelsekolumnnamnet. | &quot;förutsägelse&quot; | Valfri sträng |
-| `SEED` | Parametern för det slumpmässiga startvärdet. | N/A | Valfritt 64-bitars tal |
-| `WEIGHT_COL` | Parametern för viktkolumnnamnet. Om detta inte anges eller är tomt behandlas alla instansvikter som `1.0`. | inte inställd |                                                                                                        |
+| `MAX_BINS` | Den här parametern anger det maximala antalet behållare som används för att diskretisera kontinuerliga funktioner och bestämma delningar vid varje nod. Fler behållare ger finare granularitet och detaljskärpa. | 32 | Måste vara minst 2 och minst antalet kategorier i någon kategorifunktion. |
+| `CACHE_NODE_IDS` | Den här parametern avgör om nod-ID:n för varje instans ska cachelagras. Om det är `false` skickar algoritmen träd till exekverare för att matcha instanser med noder. Om `true` cachelagras nod-ID:n för varje instans, vilket kan snabba upp träningen av djupare träd. Användare kan konfigurera hur ofta cachen ska kontrolleras eller inaktivera den genom att ställa in `CHECKPOINT_INTERVAL`. | false | `true` eller `false` |
+| `CHECKPOINT_INTERVAL` | Den här parametern anger hur ofta de cachelagrade nod-ID:n ska kontrolleras. Om du till exempel anger `10` kontrolleras cachen var 10:e iteration. Detta gäller endast om `CACHE_NODE_IDS` är inställt på `true` och kontrollpunktskatalogen är konfigurerad i `org.apache.spark.SparkContext`. | 10 | (>=1) |
+| `IMPURITY` | Den här parametern anger det kriterium som används för att beräkna informationsökning. Värden som stöds är `entropy` och `gini`. | `gini` | `entropy`, `gini` |
+| `MAX_DEPTH` | Den här parametern anger trädets maximala djup. Ett djup på `0` betyder till exempel 1 lövnod, medan ett djup på `1` betyder 1 intern nod och 2 lövnoder. Djupet måste ligga inom intervallet `[0, 30]`. | 5 | [0, 30] |
+| `MIN_INFO_GAIN` | Den här parametern anger den minsta informationsökning som krävs för att en delning ska anses giltig i en trädnod. | 0,0 | (>=0.0) |
+| `MIN_WEIGHT_FRACTION_PER_NODE` | Den här parametern anger den minsta delen av det viktade samplingsantalet som varje underordnad nod måste ha efter en delning. Om någon av de underordnade noderna har en bråkdel som är mindre än det här värdet ignoreras delningen. | 0,0 | [0.0, 0.5] |
+| `MIN_INSTANCES_PER_NODE` | Den här parametern anger det minsta antal instanser som varje underordnad nod måste ha efter en delning. Om en delning resulterar i färre instanser än det här värdet ignoreras delningen som ogiltig. | 1 | (>=1) |
+| `MAX_MEMORY_IN_MB` | Den här parametern anger det maximala minne (i MB) som tilldelats för histogramaggregering. Om minnet är för litet delas bara en nod per iteration, och dess aggregat kan överskrida den här storleken. | 256 | Valfritt positivt heltalsvärde |
+| `PREDICTION_COL` | Den här parametern anger namnet på den kolumn som används för att lagra förutsägelser. | &quot;förutsägelse&quot; | Valfri sträng |
+| `SEED` | Den här parametern anger det slumpmässiga startvärde som används i modellen. | Ingen | Valfritt 64-bitars tal |
+| `WEIGHT_COL` | Den här parametern anger namnet på viktkolumnen. Om den här parametern inte har angetts eller är tom behandlas alla instansvikter som `1.0`. | Ej angiven | Valfri sträng |
 
 {style="table-layout:auto"}
 
@@ -53,22 +54,22 @@ CREATE MODEL modelname OPTIONS(
 
 **Parametrar**
 
-Tabellen nedan visar nyckelparametrar för konfigurering och optimering av prestandan för [!DNL Factorization Machines]-regression.
+Tabellen nedan visar nyckelparametrar för konfigurering och optimering av prestandan för regressionen [!DNL Factorization Machines].
 
 | Parameter | Beskrivning | Standardvärde | Möjliga värden |
-|------------------------|--------------------------------------------------------------------------------------|---------------|----------------|
-| `TOL` | Konvergenstoleransen. | `1E-6` | (>= 0) |
-| `FACTOR_SIZE` | Faktorernas dimensionalitet. | 8 | (>= 0) |
-| `FIT_INTERCEPT` | Om en spärrterm ska passas in. | `true` | `true`, `false` |
-| `FIT_LINEAR` | Anger om den linjära termen ska passas in (kallas även ettvägsperioden). | `true` | `true`, `false` |
-| `INIT_STD` | Standardavvikelsen för initialkoefficienterna. | 0,01 | (>= 0) |
-| `MAX_ITER` | Antalet iterationer som algoritmen ska köras. | 100 | (>= 0) |
-| `MINI_BATCH_FRACTION` | Mini-batch-fraktionen, som måste vara inom intervallet `(0, 1]`. | 1,0 | `(0, 1]` |
-| `REG_PARAM` | Parametern för reglering. | 0,0 | (>= 0) |
-| `SEED` | Det slumpmässiga utsädet. | INTE ANGIVEN | Valfritt 64-bitars tal |
-| `SOLVER` | Den lösaralgoritm som används för optimering. | &quot;adamW&quot; | `gd`, `adamW` |
-| `STEP_SIZE` | Den inledande stegstorleken för det första steget (liknande inlärningsgraden). | 1,0 |                   |
-| `PREDICTION_COL` | Kolumnnamnet för förutsägelse. | &quot;förutsägelse&quot; | Valfri sträng |
+|------------------------|-------------------------------------------------------------------------------------------------|---------------|-----------------------|
+| `TOL` | Den här parametern anger algoritmens konverteringstolerans. Högre värden kan ge snabbare konvergens men mindre precision. | `1E-6` | (>= 0) |
+| `FACTOR_SIZE` | Den här parametern definierar faktorernas dimensionalitet. Högre värden ökar modellens komplexitet. | 8 | (>= 0) |
+| `FIT_INTERCEPT` | Den här parametern anger om modellen ska innehålla en spärrterm. | `true` | `true`, `false` |
+| `FIT_LINEAR` | Den här parametern anger om en linjär term (kallas även 1-vägsterm) ska inkluderas i modellen. | `true` | `true`, `false` |
+| `INIT_STD` | Den här parametern definierar standardavvikelsen för de ursprungliga koefficienterna som används i modellen. | 0,01 | (>= 0) |
+| `MAX_ITER` | Den här parametern anger det maximala antalet iterationer som algoritmen ska köras. | 100 | (>= 0) |
+| `MINI_BATCH_FRACTION` | Den här parametern ställer in minibatchfraktionen, som bestämmer den del av data som används i varje sats. Det måste vara inom intervallet `(0, 1]`. | 1,0 | `(0, 1]` |
+| `REG_PARAM` | Den här parametern ställer in regulariseringsparametern för att förhindra överpassning. | 0,0 | (>= 0) |
+| `SEED` | Den här parametern anger det slumpmässiga startvärde som används för modellinitiering. | Ingen | Valfritt 64-bitars tal |
+| `SOLVER` | Den här parametern anger den lösaralgoritm som används för optimering. | &quot;adamW&quot; | `gd` (övertoningsdescent), `adamW` |
+| `STEP_SIZE` | Den här parametern anger den inledande stegstorleken (eller inlärningsgraden) för det första optimeringssteget. | 1,0 | Valfritt positivt värde |
+| `PREDICTION_COL` | Den här parametern anger namnet på kolumnen där förutsägelser lagras. | &quot;förutsägelse&quot; | Valfri sträng |
 
 {style="table-layout:auto"}
 
@@ -98,12 +99,12 @@ Tabellen nedan visar nyckelparametrar för konfigurering och optimering av prest
 | `FAMILY` | Family-parametern som beskriver felfördelningen som används i modellen. De alternativ som stöds är `gaussian`, `binomial`, `poisson`, `gamma` och `tweedie`. | &quot;gaussian&quot; | `gaussian`, `binomial`, `poisson`, `gamma`, `tweedie` |
 | `FIT_INTERCEPT` | Om en spärrterm ska passas in. | `true` | `true`, `false` |
 | `LINK` | Länk-funktionen som definierar relationen mellan den linjära prediktorn och fördelningsfunktionens medelvärde. De alternativ som stöds är `identity`, `log`, `inverse`, `logit`, `probit`, `cloglog` och `sqrt`. | INTE ANGIVEN | `identity`, `log`, `inverse`, `logit`, `probit`, `cloglog`, `sqrt` |
-| `LINK_POWER` | Indexet i funktionen för strömlänk, som gäller för familjen [!DNL Tweedie]. Om den inte anges blir den som standard `1 - variancePower` efter R `statmod`-paketet. Länkpotenser på 0, 1, -1 och 0,5 motsvarar länken Log, Identity, Inverse och Sqrt. | 1 |
+| `LINK_POWER` | Den här parametern anger indexvärdet i funktionen för strömlänk. Parametern gäller bara för familjen [!DNL Tweedie]. Om den inte anges är den som standard `1 - variancePower`, vilket justeras mot R `statmod`-paketet. Specifika länkkrafter på 0, 1, -1 och 0,5 motsvarar länkarna Log, Identity, Inverse och Sqrt. | 1 | Valfritt numeriskt värde |
 | `SOLVER` | Den lösaralgoritm som används för optimering. Alternativ som stöds: `irls` (iterativt omviktade minst fyrkanter). | &quot;irls&quot; | `irls` |
-| `VARIANCE_POWER` | Kraften i variansfunktionen för fördelningen [!DNL Tweedie], som definierar relationen mellan varians och medelvärde. Värden som stöds är 0 och `[1, inf)`. | 0,0 | 0, `[1, inf)` |
+| `VARIANCE_POWER` | Den här parametern anger kraften i variansfunktionen för distributionen [!DNL Tweedie], vilket definierar relationen mellan variansen och medelvärdet. Värden som stöds är 0 och `[1, inf)`. Varianseffekterna 0, 1 och 2 motsvarar familjerna Gaussian, Poisson och Gamma. | 0,0 | 0, `[1, inf)` |
 | `LINK_PREDICTION_COL` | Kolumnnamnet för länkförutsägelse (linjär prediktor). | INTE ANGIVEN | Valfri sträng |
-| `OFFSET_COL` | Förskjutningskolumnens namn. Om den inte anges behandlas alla förekomstförskjutningar som 0,0. Förskjutningsfunktionen har en konstant koefficient på 1,0. | INTE ANGIVEN |                                                                        |
-| `WEIGHT_COL` | Namnet på viktkolumnen. Om den inte anges eller är tom behandlas alla instansvikter som `1.0`. I Binomialfamiljen motsvarar vikter antalet försök och vikter som inte är heltal avrundas vid AIC-beräkning. | INTE ANGIVEN |                                                                        |
+| `OFFSET_COL` | Förskjutningskolumnens namn. Om den inte anges behandlas alla förekomstförskjutningar som 0,0. Förskjutningsfunktionen har en konstant koefficient på 1,0. | INTE ANGIVEN | Valfri sträng |
+| `WEIGHT_COL` | Namnet på viktkolumnen. Om den inte anges eller är tom behandlas alla instansvikter som `1.0`. I Binomialfamiljen motsvarar vikter antalet försök och vikter som inte är heltal avrundas vid AIC-beräkning. | INTE ANGIVEN | Valfri sträng |
 
 {style="table-layout:auto"}
 
@@ -133,14 +134,14 @@ Tabellen nedan visar nyckelparametrar för konfigurering och optimering av prest
 | `MIN_INFO_GAIN` | Den minsta informationsökning som krävs för att en delning ska kunna beaktas vid en trädnod. | 0,0 | (>= 0.0) |
 | `MIN_WEIGHT_FRACTION_PER_NODE` | Den minsta fraktionen av det viktade antalet sampel som varje underordnad måste ha efter en delning. Om en delning gör att den totala viktdelen i något av de underordnade blir mindre än det här värdet, tas den bort. | 0,0 | (>= 0.0, &lt;= 0.5) |
 | `MIN_INSTANCES_PER_NODE` | Det minsta antalet instanser som varje underordnad måste ha efter en delning. Om en delning resulterar i färre instanser än det här värdet ignoreras delningen. | 1 | (>= 1) |
-| `MAX_MEMORY_IN_MB` | Det maximala minne (i MB) som allokeras till histogramaggregering. Om det här värdet är för litet delas endast en nod per iteration, och dess aggregat kan överskrida den här storleken. | 256 |                                                                                                      |
+| `MAX_MEMORY_IN_MB` | Det maximala minne (i MB) som allokeras till histogramaggregering. Om det här värdet är för litet delas endast en nod per iteration, och dess aggregat kan överskrida den här storleken. | 256 | Valfritt positivt heltalsvärde |
 | `PREDICTION_COL` | Kolumnnamnet för förutsägelseutdata. | &quot;förutsägelse&quot; | Valfri sträng |
 | `VALIDATION_INDICATOR_COL` | Kolumnnamnet anger om varje rad används för utbildning eller validering. `false` för utbildning och `true` för validering. | INTE ANGIVEN | Valfri sträng |
 | `LEAF_COL` | Kolumnnamnet för bladindex. Det förväntade lövindexvärdet för varje instans i varje träd, som genereras av förorderbläddring. | &quot;&quot; | Valfri sträng |
-| `FEATURE_SUBSET_STRATEGY` | Antalet funktioner som kan delas vid varje trädnod. | &quot;auto&quot; | `auto`, `all`, `onethird`, `sqrt`, `log2`, `n` (där `n` är ett bråk mellan 0 och 1.0) |
+| `FEATURE_SUBSET_STRATEGY` | Den här parametern anger hur många funktioner som ska användas för delning vid varje trädnod. | &quot;auto&quot; | `auto`, `all`, `onethird`, `sqrt`, `log2` eller ett bråk mellan 0 och 1.0 |
 | `SEED` | Det slumpmässiga utsädet. | INTE ANGIVEN | Valfritt 64-bitars tal |
-| `WEIGHT_COL` | Kolumnnamnet, till exempel, vikter. Om den inte anges eller är tom behandlas alla instansvikter som `1.0`. | INTE ANGIVEN |                                                                                                      |
-| `LOSS_TYPE` | Förlustfunktionen som modellen [!DNL Gradient Boosted Tree] försöker minimera. | &quot;fyrkant&quot; | `squared` (L2) och `absolute` (L1). Obs! Värdena är skiftlägeskänsliga. |
+| `WEIGHT_COL` | Kolumnnamnet, till exempel, vikter. Om den inte anges eller är tom behandlas alla instansvikter som `1.0`. | INTE ANGIVEN | Valfri sträng |
+| `LOSS_TYPE` | Den här parametern anger den förlustfunktion som modellen [!DNL Gradient Boosted Tree] minimerar. | &quot;fyrkant&quot; | `squared` (L2) och `absolute` (L1). Obs! Värdena är skiftlägeskänsliga. |
 | `STEP_SIZE` | Stegstorleken (kallas även inlärningsgrad) i intervallet `(0, 1]`, som används för att minska bidraget från varje uppskattare. | 0,1 | `(0, 1]` |
 | `MAX_ITER` | Maximalt antal iterationer för algoritmen. | 20 | (>= 0) |
 | `SUBSAMPLING_RATE` | Den del av utbildningsdata som används för att lära sig varje beslutsträd, i intervallet `(0, 1]`. | 1,0 | `(0, 1]` |
@@ -169,7 +170,7 @@ Tabellen nedan visar nyckelparametrar för konfigurering och optimering av prest
 | `ISOTONIC` | Anger om utdatasekvensen ska vara isoton (ökas) när `true` eller antitonisk (minskas) när `false`. | `true` | `true`, `false` |
 | `WEIGHT_COL` | Kolumnnamnet, till exempel, vikter. Om den inte anges eller är tom behandlas alla instansvikter som `1.0`. | INTE ANGIVEN | Valfri sträng |
 | `PREDICTION_COL` | Kolumnnamnet för förutsägelseutdata. | &quot;förutsägelse&quot; | Valfri sträng |
-| `FEATURE_INDEX` | Indexvärdet för funktionen, som används när `featuresCol` är en vektorkolumn. Om det inte anges är standardvärdet `0`. Annars har det ingen effekt. | 0 |                 |
+| `FEATURE_INDEX` | Indexvärdet för funktionen, som används när `featuresCol` är en vektorkolumn. Om det inte anges är standardvärdet `0`. Annars har det ingen effekt. | 0 | Valfritt icke-negativt heltal |
 
 {style="table-layout:auto"}
 
@@ -221,14 +222,14 @@ Tabellen nedan visar nyckelparametrar för konfigurering och optimering av prest
 | `CACHE_NODE_IDS` | Om det är `false` skickar algoritmen träd till exekverare för att matcha instanser med noder. Om `true` cachelagras nod-ID:n för varje instans, vilket snabbar upp utbildningen av djupare träd. | `false` | `true`, `false` |
 | `CHECKPOINT_INTERVAL` | Anger hur ofta cachelagrade nod-ID:n ska kontrolleras. `10` betyder till exempel att cachen är kontrollerad var 10:e iteration. | 10 | (>= 1) |
 | `IMPURITY` | Det kriterium som används för beräkning av informationsvinst (skiftlägesokänslig). | &quot;entropi&quot; | `entropy`, `gini` |
-| `MAX_DEPTH` | Trädets maximala djup (icke-negativt). Djup `0` betyder till exempel 1 lövnod och djup `1` betyder 1 intern nod och 2 lövnoder. | 5 | [0, 30] |
+| `MAX_DEPTH` | Trädets maximala djup (icke-negativt). Djup `0` betyder till exempel 1 lövnod och djup `1` betyder 1 intern nod och 2 lövnoder. | 5 | Valfritt icke-negativt heltal |
 | `MIN_INFO_GAIN` | Den minsta informationsökning som krävs för att en delning ska kunna beaktas vid en trädnod. | 0,0 | (>= 0.0) |
 | `MIN_WEIGHT_FRACTION_PER_NODE` | Den minsta fraktionen av det viktade antalet sampel som varje underordnad måste ha efter en delning. Om en delning gör att andelen av den totala vikten i något av de underordnade blir mindre än det här värdet, tas den bort. | 0,0 | (>= 0.0, &lt;= 0.5) |
 | `MIN_INSTANCES_PER_NODE` | Det minsta antalet instanser som varje underordnad måste ha efter en delning. Om en delning resulterar i färre instanser än det här värdet ignoreras delningen. | 1 | (>= 1) |
-| `MAX_MEMORY_IN_MB` | Det maximala minne (i MB) som allokeras till histogramaggregering. Om det här värdet är för litet delas endast en nod per iteration, och dess aggregat kan överskrida den här storleken. | 256 |                                                                                                      |
+| `MAX_MEMORY_IN_MB` | Det maximala minne (i MB) som allokeras till histogramaggregering. Om det här värdet är för litet delas endast en nod per iteration, och dess aggregat kan överskrida den här storleken. | 256 | (>= 1) |
 | `BOOTSTRAP` | Om bootstrap-prover ska användas när träd byggs. | TRUE | `true`, `false` |
 | `NUM_TREES` | Antalet träd som ska tränas (minst 1). Om `1` används ingen startspärr. Om det är större än `1` används startspärr. | 20 | (>= 1) |
-| `SUBSAMPLING_RATE` | Den del av utbildningsdata som används för att utbilda varje beslutsträd, i intervallet `(0, 1]`. | 1,0 | `(0, 1]` |
+| `SUBSAMPLING_RATE` | Den del av utbildningsdata som används för att utbilda varje beslutsträd, i intervallet `(0, 1]`. | 1,0 | (>= 0.0, &lt;= 1) |
 | `LEAF_COL` | Kolumnnamnet för bladindex, som är det förväntade lövindexet för varje instans i varje träd, som genereras av förordertraversal. | &quot;&quot; | Valfri sträng |
 | `PREDICTION_COL` | Kolumnnamnet för förutsägelseutdata. | &quot;förutsägelse&quot; | Valfri sträng |
 | `SEED` | Det slumpmässiga utsädet. | INTE ANGIVEN | Valfritt 64-bitars tal |

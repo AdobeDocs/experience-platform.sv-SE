@@ -2,9 +2,10 @@
 title: Funktionsomformningstekniker
 description: Lär dig mer om viktiga förbehandlingstekniker som dataomvandling, kodning och funktionsskalning, som förbereder data för utbildning i statistiska modeller. Det täcker vikten av att hantera saknade värden och konvertera kategoriserade data för att förbättra modellens prestanda och precision.
 role: Developer
-source-git-commit: b248e8f8420b617a117d36aabad615e5bbf66b58
+exl-id: ed7fa9b7-f74e-481b-afba-8690ce50c777
+source-git-commit: e7bc30c153f67c59e9c04e8c8df60394f48871d0
 workflow-type: tm+mt
-source-wordcount: '3437'
+source-wordcount: '3450'
 ht-degree: 5%
 
 ---
@@ -55,14 +56,14 @@ CREATE model modelname options(model_type='logistic_reg', label='rating') AS SEL
 
 Om du vill definiera anpassad förbearbetning av data i `CREATE MODEL`-satsen använder du `TRANSFORM`-satsen i kombination med valfritt antal tillgängliga omformningsfunktioner. Dessa manuella förbearbetningsfunktioner kan också användas utanför `TRANSFORM`-satsen. Alla omformningar som beskrivs i avsnittet [transformator nedan](#available-transformations) kan användas för att förbearbeta data manuellt.
 
-### Viktiga egenskaper
+### Viktiga egenskaper {#key-characteristics}
 
 Följande är viktiga egenskaper i funktionsomformningen som du bör tänka på när du definierar förbearbetningsfunktionerna:
 
 - **Syntax**: `TRANSFORM(functionName(colName, parameters) <aliasNAME>)`
    - Aliasnamnet är obligatoriskt i syntaxen. Du måste ange ett aliasnamn, annars misslyckas frågan.
 
-- **Parametrar**: Parametrarna är positioneringsargument. Det innebär att varje parameter bara kan ta vissa värden. Mer information om vilken funktion som tar vilket argument finns i respektive dokumentation.
+- **Parametrar**: Parametrarna är positioneringsargument. Det innebär att varje parameter bara kan ta vissa värden och att alla föregående parametrar måste anges om anpassade värden anges. Mer information om vilken funktion som tar vilket argument finns i respektive dokumentation.
 
 - **Klinande transformatorer**: Utdata från en transformator kan bli indata till en annan transformator.
 
@@ -180,7 +181,7 @@ transform(string_imputer(name, 'unknown_name') as name_imputed)
 | 1 | ml_unknown |
 | 2 | Alice |
 
-#### Boolean imputer {#imputer}
+#### Boolean imputer {#boolean-imputer}
 
 Transformeraren **Boolean imputer** slutför saknade värden i en datauppsättning för en boolesk kolumn. Indata- och utdatakolumnerna ska vara av typen `Boolean`.
 
