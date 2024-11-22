@@ -5,9 +5,9 @@ user-guide-description: Aktivera kända och okända data för marknadsföringska
 description: I det här dokumentet visas innehållsförteckningen för Adobe Experience Platform-destinationer
 feature: Destinations
 role: Admin,User
-source-git-commit: 07e01847c6e24564682161e88122948d200ab733
+source-git-commit: 6414168c1deb047af30d8636ef8d61316f56aecf
 workflow-type: tm+mt
-source-wordcount: '1248'
+source-wordcount: '1257'
 ht-degree: 1%
 
 ---
@@ -42,6 +42,7 @@ ht-degree: 1%
       * [Aktivera målgrupper för att direktuppspela exportmål för profiler](./ui/activate-streaming-profile-destinations.md)
       * [Aktivera målgrupper för att batchprofilera exportmål](./ui/activate-batch-profile-destinations.md)
       * [Aktivera målgrupper för att kanalisera personaliseringsmål](./ui/activate-edge-personalization-destinations.md)
+      * [Söka efter profilattribut i kanten i realtid](./ui/activate-edge-profile-lookup.md)
       * [Aktivera målgrupper för kuraterade destinationer baserat på LiveRamp-identifierare](./ui/activate-curated-destinations.md)
       * [Aktivera potentiella målgrupper till destinationer](./ui/activate-prospect-audiences.md)
       * [Aktivera målgrupper på konton för destinationer](./ui/activate-account-audiences.md)
