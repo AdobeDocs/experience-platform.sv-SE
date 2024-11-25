@@ -1,13 +1,11 @@
 ---
 title: AI Assistant i Adobe Experience Platform produktdokumentation
-description: Kom igång med AI Assistant i Adobe Experience Platform
-hide: true
-hidefromtoc: true
+description: Kom igång med AI Assistant i Adobe Experience Platform.
 exl-id: bcb86a41-d5d8-4c1a-a86d-79fa0c167bc7
-source-git-commit: 8d69d7010442519ce02bb9a504d4228742b4f092
+source-git-commit: 653c97c8632eeaf4cad02accc63d3e4dbffb54dd
 workflow-type: tm+mt
-source-wordcount: '549'
-ht-degree: 4%
+source-wordcount: '547'
+ht-degree: 1%
 
 ---
 
@@ -15,7 +13,7 @@ ht-degree: 4%
 
 AI Assistant i Adobe Experience Platform är ett konversationsverktyg som du kan använda för att snabba upp arbetsflödena med program och tjänster från Experience Platform. Använd AI Assistant för att öka den övergripande produktiviteten, få en bättre förståelse för produktkunskaper och driftsinsikter samt samla in rekommendationer som är relevanta för dina frågor och användningsfall.
 
-AI-assistenten stöder Experience Platform, plattformen för kunddata i realtid, Adobe Journey Optimizer och Customer Journey Analytics.
+AI Assistant har stöd för Experience Platform, Real-Time CDP, Adobe Journey Optimizer och Customer Journey Analytics.
 
 ## Kom igång
 
