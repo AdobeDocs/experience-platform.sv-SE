@@ -4,18 +4,18 @@ title: Attributbaserad åtkomstkontroll - från början till slut
 description: Det här dokumentet innehåller en komplett guide om attributbaserad åtkomstkontroll i Adobe Experience Platform
 role: Developer
 exl-id: 7e363adc-628c-4a66-a3bd-b5b898292394
-source-git-commit: b9ce27b6feb0300464507a21510f40900677c3be
+source-git-commit: 5b9200b9e534519ce2f3c1a529a30b032642ab7f
 workflow-type: tm+mt
-source-wordcount: '1689'
+source-wordcount: '1713'
 ht-degree: 1%
 
 ---
 
 # Attributbaserad åtkomstkontroll från början till slut
 
-Använd attributbaserad åtkomstkontroll på Adobe Experience Platform för att ge dig själv och andra kunder som är medvetna om flervarumärkets integritet större flexibilitet när det gäller att hantera användarnas åtkomst. Åtkomst till enskilda objekt, t.ex. schemafält och segment, kan beviljas med profiler som baseras på objektets attribut och roll. Med den här funktionen kan du bevilja eller återkalla åtkomst till enskilda objekt för specifika plattformsanvändare i organisationen.
+Använd attributbaserad åtkomstkontroll på Adobe Experience Platform för att ge dig själv och andra kunder som är medvetna om flervarumärkets integritet större flexibilitet när det gäller att hantera användarnas åtkomst. Åtkomst till enskilda objekt, som schemafält och målgrupper, kan beviljas med profiler som baseras på objektets attribut och roll. Med den här funktionen kan du bevilja eller återkalla åtkomst till enskilda objekt för specifika plattformsanvändare i organisationen.
 
-Med den här funktionen kan du kategorisera schemafält, segment och så vidare med etiketter som definierar användningsområde för organisation eller data. Du kan använda samma etiketter på resor, erbjudanden och andra objekt i Adobe Journey Optimizer. Samtidigt kan administratörer definiera åtkomstprinciper runt XDM-schemafält (Experience Data Model) och bättre hantera vilka användare och grupper (interna, externa eller externa användare) som har åtkomst till dessa fält.
+Med den här funktionen kan du kategorisera schemafält, målgrupper och så vidare med etiketter som definierar användningsområde för organisation eller data. Du kan använda samma etiketter på resor, erbjudanden och andra objekt i Adobe Journey Optimizer. Samtidigt kan administratörer definiera åtkomstprinciper runt XDM-schemafält (Experience Data Model) och bättre hantera vilka användare och grupper (interna, externa eller externa användare) som har åtkomst till dessa fält.
 
 >[!NOTE]
 >
@@ -44,8 +44,8 @@ För att kunna göra detta måste du konfigurera roller, resurser och principer.
 Du kommer att:
 
 * [Ange en etikett för rollerna för dina användare](#label-roles): Använd exemplet med en vårdleverantör (ACME Business Group) vars marknadsföringsgrupp fungerar med externa byråer.
-* [Etikettera dina resurser (schemafält och segment)](#label-resources): Tilldela etiketten **[!UICONTROL PHI/ Regulated Health Data]** till schemaresurser och segment.
-* [Aktivera principen som länkar ihop dem](#policy): Aktivera standardprincipen för att förhindra åtkomst till schemafält och segment genom att ansluta etiketterna på dina resurser till etiketterna i din roll. Användare med matchande etiketter får sedan tillgång till schemafältet och segmentet i alla sandlådor.
+* [Etikettera dina resurser (schemafält och målgrupper)](#label-resources): Tilldela etiketten **[!UICONTROL PHI/ Regulated Health Data]** till schemaresurser och målgrupper.
+* [Aktivera principen som länkar ihop dem](#policy): Aktivera standardprincipen för att förhindra åtkomst till schemafält och målgrupper genom att ansluta etiketterna på dina resurser till etiketterna i din roll. Användare med matchande etiketter får sedan tillgång till schemafältet och segmentet i alla sandlådor.
 
 ## Behörigheter
 
@@ -59,7 +59,7 @@ När du har administratörsbehörighet går du till [Adobe Experience Cloud](htt
 
 ![Bild som visar den behörighetsprodukt som väljs i Adobe Experience Cloud](../images/flac-ui/flac-select-product.png)
 
-Arbetsytan Behörigheter för plattformsgränssnittet visas och öppnas på sidan **[!UICONTROL Roles]**.
+Arbetsytan Behörigheter för plattformsgränssnittet visas och öppnas på sidan **[!UICONTROL Overview]**.
 
 ## Använd etiketter för en roll {#label-roles}
 
@@ -94,15 +94,15 @@ Arbetsytan Behörigheter för plattformsgränssnittet visas och öppnas på sida
 
 Roller är sätt att kategorisera de typer av användare som interagerar med din plattformsinstans och är byggstenar för åtkomstkontrollprinciper. En roll har en given uppsättning behörigheter, och medlemmar i organisationen kan tilldelas till en eller flera roller, beroende på vilken typ av åtkomst de behöver.
 
-Välj **[!UICONTROL ACME Business Group]** på sidan **[!UICONTROL Roles]** för att komma igång.
+Om du vill komma igång väljer du **[!UICONTROL Roles]** i den vänstra navigeringen och sedan **[!UICONTROL ACME Business Group]**.
 
-![Bild som visar ACME Business Role som väljs i roller](../images/abac-end-to-end-user-guide/abac-select-role.png)
+![Bild som visar ACME Business Group som väljs i roller](../images/abac-end-to-end-user-guide/abac-select-role.png)
 
 Välj sedan **[!UICONTROL Labels]** och sedan **[!UICONTROL Add Labels]**.
 
 ![Bild som visar Lägg till etiketter som markeras på fliken Etiketter](../images/abac-end-to-end-user-guide/abac-select-add-labels.png)
 
-En lista över alla etiketter i organisationen visas. Välj **[!UICONTROL RHD]** om du vill lägga till etiketten för **[!UICONTROL PHI/Regulated Health Data]**. Tillåt att en blå bockmarkering visas intill etiketten och välj sedan **[!UICONTROL Save]**.
+En lista över alla etiketter i organisationen visas. Välj **[!UICONTROL RHD]** om du vill lägga till etiketten för **[!UICONTROL PHI/Regulated Health Data]** och välj sedan **[!UICONTROL Save]**.
 
 ![Bild som visar den RHD-etikett som markeras och sparas](../images/abac-end-to-end-user-guide/abac-select-role-label.png)
 
@@ -113,6 +113,10 @@ En lista över alla etiketter i organisationen visas. Välj **[!UICONTROL RHD]**
 ## Tillämpa etiketter på schemafält {#label-resources}
 
 Nu när du har konfigurerat en användarroll med etiketten [!UICONTROL RHD] är nästa steg att lägga till samma etikett till resurserna som du vill styra för den rollen.
+
+I den övre navigeringen väljer du **programväljaren**, som representeras av ikonen ![programväljaren](/help/images/icons/apps.png) och sedan **[!UICONTROL Experience Platform]**.
+
+![Bild som visar Experience Platform som väljs från programväljarens listruta](../images/abac-end-to-end-user-guide/abac-select-experience-platform.png)
 
 Välj **[!UICONTROL Schemas]** i den vänstra navigeringen och välj sedan **[!UICONTROL ACME Healthcare]** i listan med scheman som visas.
 
@@ -130,30 +134,30 @@ Dialogrutan **[!UICONTROL Edit labels]** visas, där du kan välja etiketter som
 >
 >När en etikett läggs till i ett fält används den etiketten på den överordnade resursen för det fältet (antingen en klass eller en fältgrupp). Om den överordnade klassen eller fältgruppen används av andra scheman ärver dessa scheman samma etikett.
 
-## Använd etiketter på segment
+## Tillämpa etiketter på målgrupper
 
 >[!NOTE]
 >
->Alla segment som använder ett etiketterat attribut måste också märkas om du vill att samma åtkomstbegränsningar ska gälla för det.
+>Alla målgrupper som använder ett etiketterat attribut måste också märkas om du vill att samma åtkomstbegränsningar ska gälla för det.
 
-När du har etiketterat dina schemafält kan du nu börja märka segmenten.
+När du har etiketterat schemafälten kan du nu börja märka målgrupperna.
 
-Välj **[!UICONTROL Segments]** i den vänstra navigeringen. En lista över segment som är tillgängliga i din organisation visas. I det här exemplet ska följande två segment märkas som om de innehåller känsliga hälsodata:
+Välj **[!UICONTROL Audiences]** i den vänstra navigeringen under avsnittet **[!UICONTROL Customers]**. En lista över tillgängliga målgrupper i din organisation visas. I det här exemplet ska följande två målgrupper märkas som om de innehåller känsliga hälsodata:
 
 * Blodglukos >100
 * Insulin &lt;50
 
-Välj **[!UICONTROL Blood Glucose >100]** om du vill börja märka segmentet.
+Välj **[!UICONTROL Blood Glucose >100]** (efter målgruppens namn, inte kryssrutan) för att börja märka målgruppen.
 
-![Bild som visar den blodglukos >100 som väljs på fliken Segment](../images/abac-end-to-end-user-guide/abac-select-segment.png)
+![Bild som visar den blodglukos >100 som väljs på fliken Publiker](../images/abac-end-to-end-user-guide/abac-select-audience.png)
 
 Skärmen för segmentet **[!UICONTROL Details]** visas. Välj **[!UICONTROL Manage Access]**.
 
-![Bild som visar urvalet av hanteringsåtkomst](../images/abac-end-to-end-user-guide/abac-segment-fields-manage-access.png)
+![Bild som visar urvalet av hanteringsåtkomst](../images/abac-end-to-end-user-guide/abac-audience-fields-manage-access.png)
 
-Dialogrutan **[!UICONTROL Edit labels]** visas, där du kan välja vilka etiketter du vill använda för segmentet. I det här fallet väljer du etiketten **[!UICONTROL PHI/ Regulated Health Data]** och sedan **[!UICONTROL Save]**.
+Dialogrutan **[!UICONTROL Apply access and data governance labels]** visas så att du kan välja vilka etiketter du vill använda för målgruppen. I det här fallet väljer du etiketten **[!UICONTROL PHI/ Regulated Health Data]** och sedan **[!UICONTROL Save]**.
 
-![Bild som visar markeringen av RHD-etiketten och spara som markeras](../images/abac-end-to-end-user-guide/abac-select-segment-labels.png)
+![Bild som visar markeringen av RHD-etiketten och spara som markeras](../images/abac-end-to-end-user-guide/abac-select-audience-labels.png)
 
 Upprepa stegen ovan med **[!UICONTROL Insulin <50]**.
 
@@ -163,13 +167,13 @@ Upprepa stegen ovan med **[!UICONTROL Insulin <50]**.
 
 ## Aktivera åtkomstkontrollprincipen {#policy}
 
-Standardprincipen för åtkomstkontroll använder etiketter för att definiera vilka användarroller som har åtkomst till specifika plattformsresurser. I det här exemplet nekas åtkomst till schemafält och segment i alla sandlådor för användare som inte är i en roll som har motsvarande etiketter i schemafältet.
+Standardprincipen för åtkomstkontroll använder etiketter för att definiera vilka användarroller som har åtkomst till specifika plattformsresurser. I det här exemplet nekas åtkomst till schemafält och målgrupper i alla sandlådor för användare som inte är i en roll som har motsvarande etiketter i schemafältet.
 
 Om du vill aktivera åtkomstkontrollprincipen väljer du [!UICONTROL Permissions] i den vänstra navigeringen och sedan **[!UICONTROL Policies]**.
 
 ![Lista över profiler som visas](../images/abac-end-to-end-user-guide/abac-policies-page.png)
 
-Markera sedan ellipsen (`...`) bredvid profilnamnet, så visas en listruta med kontroller för att redigera, aktivera, ta bort eller duplicera rollen. Välj **[!UICONTROL Activate]** i listrutan.
+Därefter markerar du ellipsen (`...`) bredvid **[!UICONTROL Default-Field-Level-Access-Control-Policy]**, och i en listruta visas kontroller för att redigera, aktivera, ta bort eller duplicera rollen. Välj **[!UICONTROL Activate]** i listrutan.
 
 ![Listruta för att aktivera princip](../images/abac-end-to-end-user-guide/abac-policies-activate.png)
 
@@ -216,7 +220,7 @@ Access control policies leverage labels to define which user roles have access t
 >[!NOTE]
 >
 >A "deny policy" is created to grant access to sensitive resources because the role grants permission to the subjects. The written policy in this example **denies** you access if you are missing the required labels.
-
+a
 To create an access control policy, select **[!UICONTROL Permissions]** from the left navigation and then select **[!UICONTROL Policies]**. Next, select **[!UICONTROL Create policy]**.
 
 ![Image showing Create policy being selected in the Permissions](../images/abac-end-to-end-user-guide/abac-create-policy.png)
@@ -260,7 +264,7 @@ Select **[!UICONTROL Activate]** to activate the policy, and a dialog appears wh
 
 ## Nästa steg
 
-Du har slutfört användningen av etiketter för en roll, schemafält och segment. Den externa byrå som tilldelats de här rollerna är begränsad från att visa dessa etiketter och deras värden i schemat, datauppsättningen och profilvyn. Dessa fält är också begränsade från att användas i segmentdefinitionen när segmentbyggaren används.
+Du har slutfört användningen av etiketter för en roll, schemafält och målgrupper. Den externa byrå som tilldelats de här rollerna är begränsad från att visa dessa etiketter och deras värden i schemat, datauppsättningen och profilvyn. Dessa fält är också begränsade från att användas i segmentdefinitionen när segmentbyggaren används.
 
 Mer information om attributbaserad åtkomstkontroll finns i [Översikt över attributbaserad åtkomstkontroll](./overview.md).
 
