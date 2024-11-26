@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Översikt över Privacy Service
 description: Upptäck hur Privacy Service kan underlätta automatiserad efterlevnad av juridiska sekretessregler i dataåtgärder från Experience Cloud.
 exl-id: 585f7619-5072-413b-9a62-be0ea0cd4d1b
-source-git-commit: 19b33ddf2fc3f8d889d370eedfc732ac54178dcd
+source-git-commit: 61a5b4fd7af68e7379b456ddd37218d183e76256
 workflow-type: tm+mt
-source-wordcount: '1528'
+source-wordcount: '1656'
 ht-degree: 0%
 
 ---
@@ -68,6 +68,14 @@ Läs dokumentet om [identitetsdata för sekretessförfrågningar](./identity-dat
 
 När du har fastställt ditt företags sekretessbehov och bestämt vilka identitetsvärden som ska skickas till Privacy Servicen kan du börja göra sekretessförfrågningar. Använd Privacy Service för att skicka sekretessförfrågningar via API:t eller användargränssnittet.
 
+#### Filinformation om åtkomstbegäran {#access-requests}
+
+Som svar på en lyckad åtkomstbegäran finns det en **hämtnings-URL** som innehåller flera filer. En fil tillhandahålls för varje Adobe-program där data begärdes. Observera att filformatet för varje program kan variera beroende på programmets datastruktur.
+
+#### Ta bort begäranden - ingen hämtnings-URL {#delete-requests}
+
+Det finns **ingen hämtnings-URL** i svaret på en **borttagningsbegäran** eftersom inga kunddata hämtas.
+
 >[!IMPORTANT]
 >
 >Avsnitten nedan innehåller länkar till dokumentation som beskriver hur du gör allmänna sekretessförfrågningar i API:t eller användargränssnittet. Beroende på vilka [!DNL Experience Cloud]-program du använder kan dock de fält som du måste skicka i nyttolasten för begäran skilja sig från de exempel som visas i dessa handböcker.
@@ -97,6 +105,10 @@ När du har gjort sekretessjobb har du flera alternativ för att övervaka statu
 | Privacy Servicens användargränssnitt | Du kan visa en visuell representation av statusen för alla aktiva begäranden med kontrollpanelen för användargränssnittsövervakning för Privacy Service. Mer information finns i användarhandboken för [Privacy Service](ui/overview.md). |
 | Privacy Services-API | Du kan programmässigt övervaka sekretessjobbens status med hjälp av sökslutpunkterna från Privacy Service-API:t. Mer information om hur du använder API:t finns i [Privacy Services-API-handboken](./api/overview.md). |
 | [!DNL Privacy Events] | [!DNL Privacy Events] använder Adobe I/O-händelser som skickas till en konfigurerad webkrok för att underlätta automatisering av jobbförfrågningar. De minskar eller eliminerar behovet av att avfråga Privacy Service-API för att kontrollera om ett jobb är färdigt eller om en viss milstolpe i ett arbetsflöde har nåtts. Mer information finns i självstudiekursen om att [prenumerera på sekretesshändelser](./privacy-events.md). |
+
+#### Svar för användare som inte finns {#non-existing-users}
+
+När du skickar en begäran om åtkomst eller borttagning returneras alltid `success` om anropet slutfördes utan fel, även om användardata inte hittas. Detta innebär att även om data inte finns kan en åtkomst eller borttagning slutföras utan att data hämtas eller tas bort.
 
 ## Nästa steg
 
