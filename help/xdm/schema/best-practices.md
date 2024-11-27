@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Bästa praxis för datamodellering
 description: Detta dokument innehåller en introduktion till XDM-scheman (Experience Data Model) och de byggstenar, principer och bästa metoderna för att sammanställa scheman som ska användas i Adobe Experience Platform.
 exl-id: 2455a04e-d589-49b2-a3cb-abb5c0b4e42f
-source-git-commit: 8e13918abe9a63b186970b24b87bf85d1c73c3a8
+source-git-commit: fed8502afad1dfcb0b4dc91141dd621eacda720c
 workflow-type: tm+mt
-source-wordcount: '3232'
+source-wordcount: '3214'
 ht-degree: 0%
 
 ---
@@ -246,12 +246,12 @@ Om du vill ange begränsningar för ett visst fält väljer du fältet i Schemar
 Följande är en samling förslag som bevarar dataintegriteten när du skapar ett schema.
 
 * **Överväg primära identiteter**: För Adobe-produkter som web SDK, mobile SDK, Adobe Analytics och Adobe Journey Optimizer fungerar fältet `identityMap` ofta som primär identitet. Undvik att ange ytterligare fält som primära identiteter för det schemat.
-* **Undvik att använda `_id` som en identitet**: Undvik att använda fältet `_id` i Experience Event-scheman som en identitet. Den är avsedd för unikt register, inte för att användas som identitet.
+* **Kontrollera att `_id` inte används som en identitet**: Fältet `_id` i Experience Event-scheman kan inte användas som en identitet eftersom det är avsett för postidentitet.
 * **Ange längdbegränsningar**: Det är bäst att ange minsta och högsta längd för fält som markerats som identiteter. En varning utlöses om du försöker tilldela ett anpassat namnutrymme till ett identitetsfält utan att uppfylla begränsningarna för minsta och högsta längd. Dessa begränsningar bidrar till att upprätthålla enhetlighet och datakvalitet.
 * **Använd mönster för konsekventa värden**: Om dina identitetsvärden följer ett specifikt mönster bör du använda inställningen **[!UICONTROL Pattern]** för att framtvinga den här begränsningen. Den här inställningen kan omfatta regler som enbart siffror, versaler, gemener eller specifika teckenkombinationer. Använd reguljära uttryck för att matcha mönster i strängarna.
 * **Begränsa eVars i analysscheman**: Vanligtvis ska ett analysschema endast ha en eVar angiven som en identitet. Om du tänker använda mer än en eVar som identitet bör du dubbelkontrollera om datastrukturen kan optimeras.
-* **Se till att ett markerat fält är unikt**: Det valda fältet ska vara unikt jämfört med den primära identiteten i schemat. Om så inte är fallet ska du inte markera det som en identitet. Om flera kunder till exempel kan ange samma e-postadress är namnutrymmet inte en lämplig identitet. Den här principen gäller även andra ID-namnutrymmen som telefonnummer.
-* **Begränsningar utlöser varningar för anpassade namnområdesfält**: Ange begränsningar för att utlösa en varning när ett schemafält har markerats med ett anpassat namnutrymme utan att ange både minsta och högsta längd. Varningen är en viktig försiktighet för att upprätthålla dataintegriteten. I dokumentationen för [typspecifika fältegenskaper](../ui/fields/overview.md#type-specific-properties) finns mer information om hur du ställer in begränsningar för ett visst fält.
+* **Se till att ett markerat fält är unikt**: Det valda fältet ska vara unikt jämfört med den primära identiteten i schemat. Om så inte är fallet ska du inte markera det som en identitet. Om flera kunder till exempel kan ange samma e-postadress är namnutrymmet inte en lämplig identitet. Den här principen gäller även andra ID-namnutrymmen som telefonnummer. Om du markerar ett icke-unikt fält som en identitet kan det orsaka oönskad profilkomprimering.
+* **Verifiera minsta stränglängd**: Alla strängfält måste vara minst ett tecken långa eftersom strängvärden aldrig får vara tomma. Null-värden för fält som inte är obligatoriska tillåts.
 
 ## Nästa steg
 
