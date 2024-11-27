@@ -5,7 +5,7 @@ title: Skapa en Couchbase Source Connection i användargränssnittet
 type: Tutorial
 description: Lär dig hur du skapar en källanslutning till Couchbase med hjälp av Adobe Experience Platform-gränssnittet.
 exl-id: 4270a48a-843c-4f1e-b280-35b620581d68
-source-git-commit: 474b81aa8caf58013f8ea7cff9ad59d92466aac8
+source-git-commit: 9ca4f19f7b59f075250bce7035303e11d3f3710f
 workflow-type: tm+mt
 source-wordcount: '440'
 ht-degree: 0%
@@ -16,7 +16,7 @@ ht-degree: 0%
 
 >[!WARNING]
 >
->[!DNL Couchbase]-källan kommer att bli inaktuell i slutet av maj 2025.
+>[!DNL Couchbase]-källan kommer att bli inaktuell i slutet av juni 2025.
 
 Source-anslutningar i [!DNL Adobe Experience Platform] ger möjlighet att importera externt källdata på schemalagd basis. I den här självstudiekursen beskrivs hur du skapar en [!DNL Couchbase]-källkoppling med användargränssnittet i [!DNL Platform].
 

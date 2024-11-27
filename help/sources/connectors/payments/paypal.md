@@ -4,7 +4,7 @@ solution: Experience Platform
 title: PayPal Source Connector - översikt
 description: Lär dig hur du ansluter PayPal till Adobe Experience Platform med API:er eller användargränssnittet.
 exl-id: c70a9b91-b883-4e58-9ec5-6fc9b2163efd
-source-git-commit: 474b81aa8caf58013f8ea7cff9ad59d92466aac8
+source-git-commit: 9ca4f19f7b59f075250bce7035303e11d3f3710f
 workflow-type: tm+mt
 source-wordcount: '231'
 ht-degree: 0%
@@ -15,7 +15,7 @@ ht-degree: 0%
 
 >[!WARNING]
 >
->[!DNL PayPal]-källan kommer att bli inaktuell i slutet av maj 2025.
+>[!DNL PayPal]-källan kommer att bli inaktuell i slutet av juni 2025.
 
 Med Adobe Experience Platform kan data hämtas från externa källor samtidigt som du kan strukturera, märka och förbättra inkommande data med hjälp av plattformstjänster. Du kan importera data från en mängd olika källor, till exempel Adobe-program, molnbaserad lagring, databaser och många andra.
 

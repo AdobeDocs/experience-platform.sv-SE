@@ -2,7 +2,7 @@
 title: Översikt över Oracle Eloqua Connector
 description: Lär dig hur du ansluter Oraclet Eloqua till Adobe Experience Platform med hjälp av API:er eller användargränssnittet.
 exl-id: ebe16bff-4c89-4d45-9973-e5aa13b61a36
-source-git-commit: 474b81aa8caf58013f8ea7cff9ad59d92466aac8
+source-git-commit: 9ca4f19f7b59f075250bce7035303e11d3f3710f
 workflow-type: tm+mt
 source-wordcount: '229'
 ht-degree: 0%
@@ -13,7 +13,7 @@ ht-degree: 0%
 
 >[!WARNING]
 >
->[!DNL Oracle Eloqua]-källan kommer att bli inaktuell i slutet av maj 2025.
+>[!DNL Oracle Eloqua]-källan kommer att bli inaktuell i slutet av juni 2025.
 
 Adobe Experience Platform tillåter att data hämtas från externa källor samtidigt som du får möjlighet att strukturera, etikettera och förbättra inkommande data med [!DNL Platform]-tjänster. Du kan importera data från en mängd olika källor, till exempel Adobe-program, molnbaserad lagring, databaser och många andra.
 
