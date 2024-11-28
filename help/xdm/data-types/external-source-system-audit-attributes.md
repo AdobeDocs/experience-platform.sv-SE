@@ -2,9 +2,9 @@
 title: Extern datatyp för Source-systemgranskningsattribut
 description: Läs mer om datatypen XDM (External Source System Audit Attributes Experience Data Model).
 exl-id: ebdd8707-9675-4232-a5b7-4e4a481d706a
-source-git-commit: de8e944cfec3b52d25bb02bcfebe57d6a2a35e39
+source-git-commit: 03735e7099ffb2cfd44fc7fffd35e3a4a858e3ba
 workflow-type: tm+mt
-source-wordcount: '156'
+source-wordcount: '174'
 ht-degree: 0%
 
 ---
@@ -24,7 +24,7 @@ ht-degree: 0%
 | `lastActivityDate` | DateTime | Det senaste aktivitetsdatumet för källsystemet. |
 | `lastReferencedDate` | DateTime | Det senaste referensdatumet för källsystemet. |
 | `lastUpdatedBy` | Sträng | Namnet på den person som senast uppdaterade den här posten. |
-| `lastUpdatedDate` | DateTime | Det senaste uppdateringsdatumet för källsystemet. |
+| `lastUpdatedDate` | DateTime | Det senaste uppdateringsdatumet för källsystemet. Det här värdet används av [attributsammanfogningsprincipen](../../profile/api/merge-policies.md#attribute-merge) för att fastställa prioritet vid sammanfogningskonflikter. |
 | `lastViewedDate` | DateTime | Det senast visade datumet för källsystemet. |
 
 {style="table-layout:auto"}
