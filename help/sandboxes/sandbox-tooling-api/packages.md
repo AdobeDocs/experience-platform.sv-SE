@@ -2,9 +2,9 @@
 title: API-slutpunkt för sandlådeverktygspaket
 description: Med slutpunkten /packages i sandlådeverktygets API kan du programmässigt hantera paket i Adobe Experience Platform.
 exl-id: 46efee26-d897-4941-baf4-d5ca0b8311f0
-source-git-commit: e029380dd970195d1254ee3ea1cd68ba2574bbd3
+source-git-commit: 47e4616e5465ec97512647b9280f461c6971aa42
 workflow-type: tm+mt
-source-wordcount: '2543'
+source-wordcount: '2547'
 ht-degree: 1%
 
 ---
@@ -367,6 +367,7 @@ curl -X DELETE \
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
   -H 'x-api-key: {API_KEY}' \
   -H 'x-gw-ims-org-id: {ORG_ID}' \
+  -H 'x-sandbox-name: {SANDBOX_NAME}' \
 ```
 
 **Svar**
@@ -403,6 +404,7 @@ curl -X GET \
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
   -H 'x-api-key: {API_KEY}' \
   -H 'x-gw-ims-org-id: {ORG_ID}' \
+  -H 'x-sandbox-name: {SANDBOX_NAME}' \
 ```
 
 | Egenskap | Beskrivning | Typ | Obligatoriskt |
@@ -424,7 +426,8 @@ Ett lyckat svar returnerar det publicerade paketet.
         "imsOrgId": "5C1328435BF324E90A49402A@AdobeOrg"
     },
     "type": "PARTIAL",
-    "correlationId": "48effe5e-1bef-4250-9c71-23b93ef5d285"
+    "correlationId": "48effe5e-1bef-4250-9c71-23b93ef5d285",
+    "jobId": "18abab44e25f40c284a4bd6e8f52fd29"
 }
 ```
 
@@ -452,6 +455,7 @@ curl -X GET \
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
   -H 'x-api-key: {API_KEY}' \
   -H 'x-gw-ims-org-id: {ORG_ID}' \
+  -H 'x-sandbox-name: {SANDBOX_NAME}' \
 ```
 
 **Svar**
@@ -809,7 +813,8 @@ curl -X POST \
         "imsOrgId": "5C1328435BF324E90A49402A@AdobeOrg"
     },
     "type": "PARTIAL",
-    "correlationId": "48effe5e-1bef-4250-9c71-23b93ef5d285"
+    "correlationId": "48effe5e-1bef-4250-9c71-23b93ef5d285",
+    "jobId": "18abab44e25f40c284a4bd6e8f52fd29"
 }
 ```
 
@@ -833,10 +838,11 @@ I följande begäran visas alla beroende objekt för {PACKAGE_ID}.
 
 ```shell
 curl -X POST \
-  https://platform.adobe.io/data/foundation/exim/packages/{PACKAGE_ID}/import?targetSandbox=targetSandboxName \
+  https://platform.adobe.io/data/foundation/exim/packages/{PACKAGE_ID}/children \
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
   -H 'x-api-key: {API_KEY}' \
   -H 'x-gw-ims-org-id: {ORG_ID}' \
+  -H 'x-sandbox-name: {SANDBOX_NAME}' \
   -d'[
       {
         "id": "4d4c874ec3344d64bf8b3160e60ac78b",
@@ -1064,6 +1070,7 @@ curl -X GET \
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
   -H 'x-api-key: {API_KEY}' \
   -H 'x-gw-ims-org-id: {ORG_ID}' \
+  -H 'x-sandbox-name: {SANDBOX_NAME}' \
 ```
 
 **Svar**
@@ -1261,7 +1268,7 @@ curl -X POST  \
 | Egenskap | Beskrivning | Typ | Obligatoriskt |
 | --- | --- | --- | --- |
 | `linkingID` | ID:t för delningsbegäran som du svarar på. | Sträng | Ja |
-| `status` | Åtgärden som utförs på delningsbegäran. | Sträng | Ja |
+| `status` | Åtgärden som utförs på delningsbegäran. Godtagbara värden är `APPROVED` eller `REJECTED`. | Sträng | Ja |
 | `reason` | Orsaken till att åtgärden vidtas. | Sträng | Ja |
 | `targetIMSOrgDetails` | Information om målorganisationen där ID-värdet ska vara målorganisationens **ID**, namnvärdet ska vara målorganisationens **NAME** och regionsvärdet ska vara målorganisationens **REGION**. | Objekt | Ja |
 
@@ -1298,7 +1305,7 @@ Visa utgående och inkommande delningsbegäranden genom att göra en GET-förfr�
 **API-format**
 
 ```http
-POST handshake/list?property=status%3D%3DAPPROVED&requestType=INCOMING
+GET handshake/list?property=status%3D%3DAPPROVED&requestType=INCOMING
 ```
 
 | Parameter | Godkända/standardvärden |
@@ -1420,13 +1427,6 @@ Ett lyckat svar returnerar information om det begärda paketet och dess delnings
         "packageId": "{PACKAGE_ID}",
         "status": "PENDING",
         "initiatedBy": "acme@3ec9197a65a86f34494221.e",
-        "transferDetails": {
-            "messages": [
-                "Fetched Package",
-                "Fetched Manifest"
-            ],
-            "additionalMetadata": null
-        },
         "requestType": "PRIVATE"
     }
 ]
@@ -1475,18 +1475,6 @@ Ett svar om att åtgärden lyckades returnerar information om en delningsbegära
     "status": "COMPLETED",
     "initiatedBy": "{INITIATED_BY}",
     "createdDate": 1724442856000,
-    "transferDetails": {
-        "messages": [
-            "Fetched Package",
-            "Fetched Manifest",
-            "Tenant Identified",
-            "Fetched Sandbox Id",
-            "Fetched Blob Files",
-            "Message Published to Kafka",
-            "Completed Transfer"
-        ],
-        "additionalMetadata": null
-    },
     "requestType": "PRIVATE"
 }
 ```
@@ -1545,19 +1533,6 @@ Ett godkänt svar returnerar en lista med alla överföringsbegäranden från de
             "initiatedBy": "{INITIATED_BY}",
             "completedTime": 1726129077000,
             "createdDate": 1726129062000,
-            "transferDetails": {
-                "messages": [
-                    "Fetched Package",
-                    "Fetched Manifest",
-                    "Tenant Identified",
-                    "Fetched Sandbox Id",
-                    "Fetched Blob Files",
-                    "Message Published to Kafka",
-                    "Completed Transfer",
-                    "Finished with status: COMPLETED"
-                ],
-                "additionalMetadata": null
-            },
             "requestType": "PRIVATE"
         },
         {
@@ -1572,19 +1547,6 @@ Ett godkänt svar returnerar en lista med alla överföringsbegäranden från de
             "initiatedBy": "{INITIATED_BY}",
             "completedTime": 1726066046000,
             "createdDate": 1726065936000,
-            "transferDetails": {
-                "messages": [
-                    "Fetched Package",
-                    "Fetched Manifest",
-                    "Tenant Identified",
-                    "Fetched Sandbox Id",
-                    "Fetched Blob Files",
-                    "Message Published to Kafka",
-                    "Completed Transfer",
-                    "Finished with status: COMPLETED"
-                ],
-                "additionalMetadata": null
-            },
             "requestType": "PRIVATE"
         }
     ],
@@ -1600,7 +1562,7 @@ Ett godkänt svar returnerar en lista med alla överföringsbegäranden från de
 **API-format**
 
 ```http
-GET `/packages/update`
+PUT `/packages/update`
 ```
 
 **Begäran**
@@ -1608,8 +1570,8 @@ GET `/packages/update`
 Följande begäran ändrar ett pakets tillgänglighet från privat till offentlig.
 
 ```shell
-curl -X GET \
-  http://platform.adobe.io/data/foundation/exim/packages/update \
+curl -X PUT \
+  https://platform.adobe.io/data/foundation/exim/packages \
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
   -H 'Content-type: application/json' \
   -H 'x-sandbox-name: {SANDBOX_NAME}' \
@@ -1998,10 +1960,6 @@ curl -X GET \
   -H 'Accept: application/json' \
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
   -H 'Content-Type: application/json' \
-  -d '{
-      "imsOrgId": "{ORG_ID}",
-      "packageId": "{PACKAGE_ID}"
-  }'
 ```
 
 | Egenskap | Beskrivning | Typ | Obligatoriskt |
