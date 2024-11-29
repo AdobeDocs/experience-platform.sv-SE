@@ -2,16 +2,16 @@
 title: Profilinsikter
 description: Upptäck den SQL som ger er profilinsikter och använder dessa frågor för att generera anpassade insikter som ytterligare utforskar era kunder och deras kundupplevelser.
 exl-id: f3792076-3e01-4e26-8788-32927202a2e5
-source-git-commit: ddf886052aedc025ff125c03ab63877cb049583d
+source-git-commit: cce576c00823a0c02e4b639f0888a466a5af6a0c
 workflow-type: tm+mt
-source-wordcount: '1655'
+source-wordcount: '1653'
 ht-degree: 0%
 
 ---
 
 # Profilinsikter
 
-De insikter som bygger på analysen av er datamodell gör era Adobe Real-time Customer Data Platform-data mer tillgängliga, begripliga och slagkraftiga för beslutsfattandet.
+De insikter som bygger på analysen av er datamodell gör era Adobe Real-Time CDP-data mer tillgängliga, begripliga och slagkraftiga för beslutsfattandet.
 
 Förstå era profilinsikter genom att få tillgång till den SQL som ligger till grund för dem och generera sedan egna insikter för att ytterligare utforska era kunder och deras kundupplevelser som tillsammans utgör era profiler. Omvandla era rådata till nya användbara insikter genom att använda Real-Time CDP datamodell SQL som inspiration för att skapa frågor som passar just era affärsbehov.
 

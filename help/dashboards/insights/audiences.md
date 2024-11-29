@@ -2,16 +2,16 @@
 title: Målgruppsinsikt
 description: Upptäck den SQL som ger er målgruppsinsikter och använder dessa frågor för att generera anpassade insikter för att ytterligare utforska målgruppsdata från Adobe Experience Platform.
 exl-id: 99624234-c4e1-44bb-9567-505bc0c4723e
-source-git-commit: ddf886052aedc025ff125c03ab63877cb049583d
+source-git-commit: cce576c00823a0c02e4b639f0888a466a5af6a0c
 workflow-type: tm+mt
-source-wordcount: '1118'
+source-wordcount: '1116'
 ht-degree: 0%
 
 ---
 
 # Målgruppsinsikter
 
-De insikter som bygger på analysen av er datamodell gör era Adobe Real-time Customer Data Platform-data mer tillgängliga, begripliga och slagkraftiga för beslutsfattandet.
+De insikter som bygger på analysen av er datamodell gör era Adobe Real-Time CDP-data mer tillgängliga, begripliga och slagkraftiga för beslutsfattandet.
 
 Förstå era målgruppsinsikter genom att få tillgång till den SQL som ligger till grund för dem och generera sedan egna insikter för att ytterligare utforska de identiteter och profiler som era målgrupper består av. Omvandla era rådata till nya användbara insikter genom att använda Real-Time CDP datamodell SQL som inspiration för att skapa frågor som passar just era affärsbehov.
 

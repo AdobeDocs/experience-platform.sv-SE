@@ -2,16 +2,16 @@
 title: Destinationsinsikter
 description: Upptäck den SQL som ger er målgruppsinsikter och använder dessa frågor för att generera anpassade insikter för att ytterligare utforska aktiveringen av data från Adobe Experience Platform.
 exl-id: 762a9960-e7a5-4796-80c7-ef745157cc04
-source-git-commit: ddf886052aedc025ff125c03ab63877cb049583d
+source-git-commit: cce576c00823a0c02e4b639f0888a466a5af6a0c
 workflow-type: tm+mt
-source-wordcount: '1139'
+source-wordcount: '1137'
 ht-degree: 0%
 
 ---
 
 # Målinsikter
 
-De insikter som bygger på analysen av er datamodell gör era Adobe Real-time Customer Data Platform-data mer tillgängliga, begripliga och slagkraftiga för beslutsfattandet.
+De insikter som bygger på analysen av er datamodell gör era Adobe Real-Time CDP-data mer tillgängliga, begripliga och slagkraftiga för beslutsfattandet.
 
 Förstå era målinsikter genom att använda den SQL som ligger till grund för dem och generera sedan egna insikter för att ytterligare utforska aktiveringen av data från Adobe Experience Platform till målplattformarna. Omvandla era rådata till nya användbara insikter genom att använda Real-Time CDP datamodell SQL som inspiration för att skapa frågor som passar just era affärsbehov.
 

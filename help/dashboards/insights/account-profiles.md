@@ -4,16 +4,16 @@ description: Upptäck den SQL som ger er insikter om er kontoprofil och använd 
 badgeB2B: label="B2B edition" type="Informative" url="https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform-b2b-edition-prime-and-ultimate-packages.html newtab=true"
 badgeB2P: label="B2P Edition" type="Informative" url="https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform-b2p-edition-prime-and-ultimate-packages.html newtab=true"
 exl-id: a953dd56-7dd8-4cd0-baa0-85f92d192789
-source-git-commit: f9ef0e25dac1715bbb6d73db52d6368c543bf7ec
+source-git-commit: cce576c00823a0c02e4b639f0888a466a5af6a0c
 workflow-type: tm+mt
-source-wordcount: '757'
+source-wordcount: '755'
 ht-degree: 0%
 
 ---
 
 # Kontoprofilsinsikter
 
-[Kontoprofiler](../../rtcdp/accounts/account-profile-overview.md) används för att konsolidera kontoinformation från olika källor, inklusive flera marknadsföringskanaler och organisationssystem. Denna enhetliga vy ger en heltäckande bild av kundkonton och förbättrar B2B-marknadsföringskampanjer. De insikter som bygger på analysen av er datamodell gör era Adobe Real-time Customer Data Platform B2B-data mer tillgängliga, begripliga och effektiva för beslutsfattande.
+[Kontoprofiler](../../rtcdp/accounts/account-profile-overview.md) används för att konsolidera kontoinformation från olika källor, inklusive flera marknadsföringskanaler och organisationssystem. Denna enhetliga vy ger en heltäckande bild av kundkonton och förbättrar B2B-marknadsföringskampanjer. De insikter som bygger på analysen av er datamodell gör era Adobe Real-Time CDP B2B-data mer tillgängliga, begripliga och effektiva för beslutsfattande.
 
 Med tillgång till den SQL som ger er insikt kan ni bättre förstå era B2B-data och generera egna anpassningsbara återanvändbara insikter för att ytterligare utforska kundkontoinformationen. Omvandla era rådata till nya användbara insikter genom att använda Real-Time CDP datamodell SQL som inspiration för att skapa frågor som passar just era affärsbehov.
 
