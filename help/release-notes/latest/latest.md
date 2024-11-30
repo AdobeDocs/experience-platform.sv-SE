@@ -2,9 +2,9 @@
 title: Versionsinformation om Adobe Experience Platform november 2024
 description: Versionsinformation november 2024 för Adobe Experience Platform.
 exl-id: f854f9e5-71be-4d56-a598-cfeb036716cb
-source-git-commit: 4786a1f33c76b6023f6e3edfd4f70c18230fda5f
+source-git-commit: 3f43e120225bcca640cc46ebdce1e4d61100ad45
 workflow-type: tm+mt
-source-wordcount: '852'
+source-wordcount: '850'
 ht-degree: 29%
 
 ---
@@ -13,7 +13,7 @@ ht-degree: 29%
 
 >[!TIP]
 >
->Landningssidan för den nya [AI Assistant-produktdokumentationen](../../ai-assistant/landing.md) är nu tillgänglig. Använd den här sidan som nav för alla AI Assistant-relaterade resurser.
+>Den nya [AI Assistant-produktdokumentationen](../../ai-assistant/landing.md) är nu tillgänglig. Använd den här sidan som nav för alla AI Assistant-relaterade resurser.
 
 **Releasedatum: 26 november 2024**
 

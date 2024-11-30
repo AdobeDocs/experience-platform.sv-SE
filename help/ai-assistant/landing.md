@@ -2,9 +2,9 @@
 title: AI Assistant i Adobe Experience Platform produktdokumentation
 description: Kom igång med AI Assistant i Adobe Experience Platform.
 exl-id: bcb86a41-d5d8-4c1a-a86d-79fa0c167bc7
-source-git-commit: 653c97c8632eeaf4cad02accc63d3e4dbffb54dd
+source-git-commit: 3f43e120225bcca640cc46ebdce1e4d61100ad45
 workflow-type: tm+mt
-source-wordcount: '547'
+source-wordcount: '545'
 ht-degree: 1%
 
 ---
@@ -130,7 +130,7 @@ Mer information om AI Assistant finns i [säkerhetsfaktablad för AI Assistant i
 Klicka på länkarna nedan för att få en bättre förståelse för användningsfall, funktioner och mycket annat i AI Assistant.
 
 <table style="table-layout:fixed"><tr style="border: 0;">
-<td><strong>Real-time Customer Data Platform</strong><br/>
+<td><strong>Real-Time CDP</strong><br/>
 <a href="./home.md" target="_blank">Dokumentation</a> - <a href="./ui-guide.md" target="_blank">Användargränssnittsguide</a> - <a href="./access.md" target="_blank">Åtkomst till AI Assistant</a> - <a href="./privacy.md" target="_blank">Integritet, säkerhet och styrning</a> - <a href="./faq.md" target="_blank">Vanliga frågor</a>
 </td>
 <td><strong>Adobe Journey Optimizer</strong><br/>

@@ -2,9 +2,9 @@
 title: Namnområdesprioritet
 description: Läs om namnområdesprioritet i identitetstjänsten.
 exl-id: bb04f02e-3826-45af-b935-752ea7e6ed7c
-source-git-commit: 893d8a089dee01e65436b7ac035233ba556b231b
+source-git-commit: 3efbb9614f08a74ad33eb1fbb4861c34c762b66b
 workflow-type: tm+mt
-source-wordcount: '1789'
+source-wordcount: '1788'
 ht-degree: 1%
 
 ---
@@ -48,7 +48,7 @@ En identitet representerar ett objekt i verkligheten. Det finns tre objekt som v
 
 Personnamnutrymmen är relativt oföränderliga jämfört med maskinvaruenheter (som IDFA, GAID), som är relativt oföränderliga jämfört med webbläsare. I princip är du (människa) alltid en enda enhet som kan ha flera maskinvaruenheter (telefon, bärbar dator, surfplatta osv.) och använda flera webbläsare (Google Chrome, Safari, FireFox osv.)
 
-Ett annat sätt att se på det här ämnet är genom kardinalitet. Hur många identiteter kommer att skapas för en viss person? I de flesta fall har en person ett CRMID, en handfull identifierare för hårdvaruenheter (IDFA/GAID-återställning bör inte ske så ofta) och ännu fler cookies (en person kan navigera på flera enheter, använda inkognitoläge eller återställa cookies när som helst). I allmänhet anger **lägre kardinalitet ett namnutrymme med ett högre värde**.
+Ett annat sätt att se på det här ämnet är genom kardinalitet. Hur många identiteter kommer att skapas för en viss person? I de flesta fall har en person ett CRMID, en handfull identifierare för hårdvaruenheter (IDFA/GAID-återställningar bör inte ske så ofta) och ännu fler cookies (en person kan navigera på flera enheter, använda inkogenläge eller återställa cookies när som helst). I allmänhet anger **lägre kardinalitet ett namnutrymme med ett högre värde**.
 
 ## Validera inställningarna för namnområdesprioritet
 
