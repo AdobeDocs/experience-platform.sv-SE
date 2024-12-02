@@ -1,11 +1,11 @@
 ---
-title: Versionsinformation om Adobe Experience Platform november 2024
-description: Versionsinformation november 2024 för Adobe Experience Platform.
+title: Versionsinformation om Adobe Experience Platform – november 2024
+description: Versionsinformationen för Adobe Experience Platform från november 2024.
 exl-id: f854f9e5-71be-4d56-a598-cfeb036716cb
 source-git-commit: 3f43e120225bcca640cc46ebdce1e4d61100ad45
 workflow-type: tm+mt
 source-wordcount: '850'
-ht-degree: 29%
+ht-degree: 98%
 
 ---
 
@@ -13,9 +13,9 @@ ht-degree: 29%
 
 >[!TIP]
 >
->Den nya [AI Assistant-produktdokumentationen](../../ai-assistant/landing.md) är nu tillgänglig. Använd den här sidan som nav för alla AI Assistant-relaterade resurser.
+>Den nya [AI Assistant-produktdokumentationen](../../ai-assistant/landing.md) är nu tillgänglig. Använd den här sidan som nav för alla AI-assistent-relaterade resurser.
 
-**Releasedatum: 26 november 2024**
+**Versionens datum: 26 november 2024**
 
 Uppdateringar av befintliga funktioner och dokumentation i Adobe Experience Platform:
 
@@ -25,8 +25,8 @@ Uppdateringar av befintliga funktioner och dokumentation i Adobe Experience Plat
 - [Sandlådor](#sandboxes)
 - [Dokumentationsuppdateringar](#documentation-updates)
    - [Interaktiv Experience Platform API-dokumentation](#interactive-experience-platform-api-documentation)
-   - [Ny innehållsförteckning på Experience League](#new-table-of-contents-on-experience-league)
-   - [Ny startsida för AI Assistant](#new-ai-assistant-landing-page)
+   - [Ny innehållsförteckning i Experience League](#new-table-of-contents-on-experience-league)
+   - [Ny landningssida för AI-assistenten](#new-ai-assistant-landing-page)
 
 ## AI-assistenten {#ai-assistant}
 
@@ -36,8 +36,8 @@ AI-assistenten i Adobe Experience Platform är en konversationsupplevelse som du
 
 | Funktion | Beskrivning |
 | --- | --- |
-| [!BADGE Alpha]{type=Informative} Övervaka viktiga ändringar och prognostisera målgruppstillväxt | Använd AI Assistant för att övervaka betydande förändringar och tillhandahålla tillväxtprognoser för er målgrupp och era datauppsättningsstorlekar. Sedan kan ni använda den här informationen för att säkerställa integriteten för era målgruppsdata och erbjuda förutseende prognoser som stöder dataunderbyggda beslut. Mer information finns i guiden [Övervaka viktiga ändringar och prognostisera målgruppstillväxt](../../ai-assistant/new-features/audience-forecasting.md). |
-| [!BADGE Alpha]{type=Informative} Naturlig språkuppskattning | Använd AI Assistants naturliga funktioner för språkinskattning för att uppskatta målgruppsstorlekar och förutse målgruppernas egenskaper baserat på enkla, konversationsfrågor. Mer information finns i guiden om [att använda beräkning av naturligt språk med AI Assistant](../../ai-assistant/new-features/natural-language.md). |
+| [!BADGE Alpha]{type=Informative} Övervaka viktiga ändringar och prognostisera målgruppstillväxt | Använd AI-assistenten för att övervaka betydande förändringar och tillhandahålla tillväxtprognoser för din målgrupp och dina datauppsättningsstorlekar. Sedan kan du använda den här informationen för att säkerställa integriteten för dina målgruppsdata och erbjuda förutseende prognoser som stöder dataunderbyggda beslut. Mer information finns i guiden om [att övervaka viktiga ändringar och prognostisera målgruppstillväxt](../../ai-assistant/new-features/audience-forecasting.md). |
+| [!BADGE Alpha]{type=Informative} Naturlig språkuppskattning | Använd AI-assistentens funktioner för naturlig språkuppskattning för att uppskatta målgruppsstorlekar och förutsäga målgruppsbenägenhet baserat på enkla samtalsfrågor. Mer information finns i guiden om [att använda naturlig språkuppskattning med AI-assistenten](../../ai-assistant/new-features/natural-language.md). |
 
 {style="table-layout:auto"}
 
@@ -49,8 +49,8 @@ AI-assistenten i Adobe Experience Platform är en konversationsupplevelse som du
 
 | Mål | Beskrivning |
 | --- | --- |
-| [Direktuppspelning i realtid](/help/destinations/catalog/advertising/magnite-streaming.md) | Exportera målgrupper för aktivering, målgruppsanpassning eller nedtryckning i Magnite Streaming-plattformen. Observera att för att målgrupper ska kunna exporteras korrekt till Magnite måste du använda både realtids- och gruppmålen. |
-| [Streaming Batch för drapport](/help/destinations/catalog/advertising/magnite-batch.md) | Exportera målgrupper för aktivering, målgruppsanpassning eller nedtryckning i Magnite Streaming-plattformen. Observera att för att målgrupper ska kunna exporteras korrekt till Magnite måste du använda både realtids- och gruppmålen. |
+| [Magnite-strömning i realtid](/help/destinations/catalog/advertising/magnite-streaming.md) | Exportera målgrupper för aktivering, målgruppsanpassning eller nedtryckning i strömningsplattformen Magnite. Observera att för att målgrupper ska kunna exporteras korrekt till Magnite måste du använda både realtids- och gruppmålen. |
+| [Strömningsgrupp för Magnite](/help/destinations/catalog/advertising/magnite-batch.md) | Exportera målgrupper för aktivering, målgruppsanpassning eller nedtryckning i strömningsplattformen Magnite. Observera att för att målgrupper ska kunna exporteras korrekt till Magnite måste du använda både realtids- och gruppmålen. |
 
 {style="table-layout:auto"}
 
@@ -58,7 +58,7 @@ AI-assistenten i Adobe Experience Platform är en konversationsupplevelse som du
 
 | Funktion | Beskrivning |
 | --- | --- |
-| [Leta upp profilattribut i realtid på kanten](/help/destinations/ui/activate-edge-profile-lookup.md) | Lär dig hur du söker upp edge-profilattribut i realtid för att leverera personaliserade upplevelser eller informerar beslutsregler via program längre fram i kedjan med hjälp av API:t för anpassade Personalization-mål och Edge Network. |
+| [Leta upp profilattribut i realtid på Edge](/help/destinations/ui/activate-edge-profile-lookup.md) | Läs mer om hur du söker upp Edge-profilattribut i realtid för att leverera personanpassade upplevelser eller informerar beslutsregler via program i senare led med hjälp av API:et för personanpassade mål och Edge Network. |
 
 {style="table-layout:auto"}
 
@@ -66,13 +66,13 @@ Mer information finns i [översikten över destinationer](../../destinations/hom
 
 ## Frågetjänst {#query-service}
 
-Frågedata i Adobe Experience Platform datasjön med hjälp av standard-SQL med Query Service. Kombinera enkelt datauppsättningar och generera nya från frågeresultaten till kraftfull rapportering, möjliggör arbetsflöden för datavetenskap eller underlättar inmatning i kundprofilen i realtid. Ni kan till exempel sammanfoga kundtransaktionsdata med beteendedata för att identifiera värdefulla målgrupper för riktade marknadsföringskampanjer.
+Fråga efter data i Adobe Experience Platforms datasjö med hjälp av standard-SQL med Frågetjänst. Kombinera datauppsättningar sömlöst och generera nya från dina frågeresultat för att driva rapportering, aktivera datavetenskapliga arbetsflöden eller underlätta inmatning i kundprofil i realtid. Du kan till exempel sammanfoga kundtransaktionsdata med beteendedata för att identifiera värdefulla målgrupper för riktade marknadsföringskampanjer.
 
 **Uppdaterade funktioner**
 
 | Funktion | Beskrivning |
 | --- | --- |
-| Dater Distiller Authorization API | Hantera och tillämpa IP-baserade åtkomstbegränsningar för frågetjänstsandlådor, för att förbättra datasäkerheten och säkerställa efterlevnad av organisationsprofiler. Mer information om nyckelfunktioner och -funktioner finns i [API-handboken för dataauktorisering](../../query-service/auth-api/overview.md), eller i [OpenAPI-dokumentationen](https://developer.adobe.com/experience-platform-apis/references/data-distiller-auth/), som innehåller information om slutpunkter, parameterlistor, exempel på begäran/svar och testningsfunktioner. |
+| Auktoriserings-API för Data Distiller | Hantera och tillämpa IP-baserade åtkomstbegränsningar för frågetjänstsandlådor för att förbättra datasäkerheten och säkerställa efterlevnad av organisationspolicyer. Se [guiden om auktoriserings-API:et för Data Distiller](../../query-service/auth-api/overview.md) för mer information om dess nyckelfunktioner och möjligheter, eller [OpenAPI-dokumentationen](https://developer.adobe.com/experience-platform-apis/references/data-distiller-auth/) för omfattande information inklusive slutpunktsdetaljer, parameterlistor, begäran/ svarsexempel och testmöjligheter. |
 
 Mer information om [!DNL Query Service] finns i [[!DNL Query Service] översikten](../../query-service/home.md).
 
@@ -84,7 +84,7 @@ Adobe Experience Platform är utvecklad för att berika program för digitala up
 
 | Funktion | Beskrivning |
 | --- | --- |
-| Paketdelning med sandlådeverktygs-API | Använd två nya API-slutpunkter, [`/handshake`](../../sandboxes/sandbox-tooling-api/packages.md#org-linking) och [`/transfers`](../../sandboxes/sandbox-tooling-api/packages.md#transfer-packages), för att hantera paketdelning i olika organisationer, till exempel begära godkännanden, paketsynlighet och importera paket, med sandlådeverktygets API. |
+| Paketdelning med API:et för verktyg i sandlådan | Använd två nya API-slutpunkter, [`/handshake`](../../sandboxes/sandbox-tooling-api/packages.md#org-linking) och [`/transfers`](../../sandboxes/sandbox-tooling-api/packages.md#transfer-packages), för att hantera paketdelning i olika organisationer, till exempel begära godkännanden, paketsynlighet och importera paket, med API:et för verktyg i sandlådan. |
 
 Mer information om sandlådor finns i [översikten över sandlådor](../../sandboxes/home.md).
 
@@ -92,12 +92,12 @@ Mer information om sandlådor finns i [översikten över sandlådor](../../sandb
 
 ### Interaktiv Experience Platform API-dokumentation {#interactive-api-documentation}
 
-[Experience Platform API-dokumentationen](https://developer.adobe.com/experience-platform-apis/) är nu helt interaktiv, vilket gör att du kan autentisera och utforska API:er direkt på API:ts referensdokumentationssida. Du kan nu gå till den önskade API-referensdokumentationssidan, skapa eller hämta dina API-autentiseringsuppgifter, klistra in dem i blocket **[!UICONTROL Try it]** och köra anropet. Allt på en sida. [Läs mer](/help/landing/api-authentication.md#get-credentials-functionality) om funktionerna.
+[Dokumentationen om Experience Platform API](https://developer.adobe.com/experience-platform-apis/) är nu helt interaktiv, vilket gör att du kan autentisera och utforska API:er direkt på API:ets referensdokumentationssida. Du kan nu gå till den önskade API-referensdokumentationssidan, skapa eller hämta dina API-autentiseringsuppgifter, klistra in dem i blocket **[!UICONTROL Try it]** och köra anropet. Allt på en sida. [Läs mer](/help/landing/api-authentication.md#get-credentials-functionality) om funktionaliteten.
 
-### Ny innehållsförteckning på Experience League {#new-table-of-contents-on-experience-league}
+### Ny innehållsförteckning i Experience League {#new-table-of-contents-on-experience-league}
 
-Innehållsförteckningen på Experience League dokumentationssidor har förbättrats så att läsarna får en bättre upplevelse, bland annat ett nyckelordsfilter för att identifiera exakt vilken sida du behöver, möjligheten att expandera alla sidor med mera. <br> ![Ny innehållsförteckning, inklusive nyckelordsfilter och möjlighet att expandera alla sidor.](../2024/assets/november/new-toc-experience.gif "Ny upplevelse av innehållsförteckning, inklusive nyckelordsfilter och möjlighet att expandera alla sidor."){width="250" align="center" zoomable="yes"}
+Innehållsförteckningen på Experience Leagues dokumentationssidor har förbättrats så att läsarna får en bättre upplevelse, bland annat ett nyckelordsfilter för att identifiera exakt vilken sida du behöver, möjligheten att expandera alla sidor med mera. <br> ![Ny upplevelse av innehållsförteckningen, inklusive nyckelordsfilter och möjligheten att expandera alla sidor.](../2024/assets/november/new-toc-experience.gif "Ny upplevelse av innehållsförteckningen, inklusive nyckelordsfilter och möjligheten att expandera alla sidor."){width="250" align="center" zoomable="yes"}
 
-### Ny startsida för AI Assistant {#new-ai-assistant-landing-page}
+### Ny landningssida för AI-assistenten {#new-ai-assistant-landing-page}
 
-Använd den nya produktdokumentationssidan för [AI Assistant](../../ai-assistant/landing.md) som nav för allt som AI Assistant. I produktdokumentationen finns videokurser, teknisk dokumentation, användningsfall och länkar till blogginlägg om AI Assistant.
+Använd den nya [produktdokumentationssidan för AI-assistenten](../../ai-assistant/landing.md) som nav för allt som har med AI-assistenten att göra. I produktdokumentationen finns videosjälvstudiekurser, teknisk dokumentation, användningsfall och länkar till blogginlägg om AI-assistenten.
