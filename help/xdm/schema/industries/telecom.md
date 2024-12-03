@@ -3,7 +3,7 @@ solution: Experience Platform
 title: Datamodell ERD för telekombranschen
 description: Visa ett entitetsrelationsdiagram (ERD) som beskriver en standardiserad datamodell för telekombranschen som är kompatibel med Experience Data Model (XDM) för användning i Adobe Experience Platform.
 exl-id: 96f267ce-a177-4384-a512-841c89d942ba
-source-git-commit: 60c0bd62b4effaa161c61ab304718ab8c20a06e1
+source-git-commit: 23bf89977b13a1f51e1ea7a0bb0561522a09745d
 workflow-type: tm+mt
 source-wordcount: '378'
 ht-degree: 0%
@@ -21,13 +21,13 @@ Följande enhetsrelationsdiagram representerar en standardiserad datamodell för
 Använd följande förklaring för att tolka denna ERD:
 
 * Varje entitet som visas i är baserad på en underliggande [XDM-klass (Experience Data Model)](../composition.md#class).
-* För en given entitet representerar varje rad som är markerad med **bold** en fältgrupp eller en datatyp, med de relevanta fält som anges nedan i oformaterad text.
+* Fält som är indragna under ett överordnat fält representerar ett underordnat fält, eller underfält, som tillhör den överordnade fältgruppen.
 * De viktigaste fälten för en viss enhet markeras med rött.
 * Alla egenskaper som kan användas för att identifiera enskilda kunder markeras som&quot;identitet&quot;, med en av dessa egenskaper markerad som&quot;primär identitet&quot;.
 * Enhetsrelationer markeras som icke-beroende eftersom cookie-baserade händelser ofta inte kan avgöra vem eller vilka personer som gjorde transaktionen.
 
 
-![](../../images/industries/telecom.png)
+![Ett exempel på ERD för en telekombranschdatamodell](../../images/industries/telecom.png)
 
 >[!NOTE]
 >

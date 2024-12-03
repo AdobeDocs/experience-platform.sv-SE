@@ -3,7 +3,7 @@ solution: Experience Platform
 title: ERD för datamodell för finanssektorn
 description: Visa ett enhetsrelationsdiagram (ERD) som beskriver en standardiserad datamodell för banksektorn, finanssektorn och försäkringssektorn (BFSI). Den här datamodellen är kompatibel med Experience Data Model (XDM) för användning i Adobe Experience Platform.
 exl-id: 2e8f6b2a-10e7-4394-b45f-c03db0f25400
-source-git-commit: 60c0bd62b4effaa161c61ab304718ab8c20a06e1
+source-git-commit: 23bf89977b13a1f51e1ea7a0bb0561522a09745d
 workflow-type: tm+mt
 source-wordcount: '364'
 ht-degree: 0%
@@ -21,12 +21,12 @@ Följande företagsrelationsdiagram representerar en standardiserad datamodell f
 Använd följande förklaring för att tolka denna ERD:
 
 * Varje entitet som visas i är baserad på en underliggande [XDM-klass (Experience Data Model)](../composition.md#class).
-* För en given entitet representerar varje rad som är markerad med **bold** en fältgrupp eller en datatyp, med de relevanta fält som anges nedan i oformaterad text.
+* Fält som är indragna under ett överordnat fält representerar ett underordnat fält, eller underfält, som tillhör den överordnade fältgruppen.
 * De viktigaste fälten för en viss enhet markeras med rött.
 * Alla egenskaper som kan användas för att identifiera enskilda kunder markeras som&quot;identitet&quot;, med en av dessa egenskaper markerad som&quot;primär identitet&quot;.
 * Enhetsrelationer markeras som icke-beroende eftersom cookie-baserade händelser ofta inte kan avgöra vem eller vilka personer som gjorde transaktionen.
 
-![](../../images/industries/financial.png)
+![Ett exempel på ERD för en datamodell för en finansiell bransch](../../images/industries/financial.png)
 
 >[!NOTE]
 >

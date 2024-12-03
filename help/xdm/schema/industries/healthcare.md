@@ -2,9 +2,9 @@
 title: Datamodell ERD för hälso- och sjukvård
 description: Visa ett diagram över företagsrelationer som beskriver en standardiserad datamodell för hälso- och sjukvården. Den här datamodellen är kompatibel med Experience Data Model (XDM) för användning i Adobe Experience Platform.
 exl-id: ebcf97ec-f5a4-46e5-b1ad-c80d55aa2c6e
-source-git-commit: 2fd35c4ac29f43391f9dc03c636d20558b701be7
+source-git-commit: 23bf89977b13a1f51e1ea7a0bb0561522a09745d
 workflow-type: tm+mt
-source-wordcount: '537'
+source-wordcount: '525'
 ht-degree: 0%
 
 ---
@@ -20,12 +20,12 @@ Följande enhetsrelationsdiagram (ERD) representerar en standardiserad datamodel
 Använd följande förklaring för att tolka denna ERD:
 
 * Varje entitet som visas i är baserad på en underliggande [XDM-klass (Experience Data Model)](../composition.md#class).
-* För en given entitet representerar varje rad som är markerad med **bold** en fältgrupp eller en datatyp, med de relevanta fält som anges nedan i oformaterad text.
+* Fält som är indragna under ett överordnat fält representerar ett underordnat fält, eller underfält, som tillhör den överordnade fältgruppen.
 * De viktigaste fälten för en viss enhet markeras med rött.
 * Alla egenskaper som kan användas för att identifiera enskilda kunder markeras som&quot;identitet&quot;, med en av dessa egenskaper markerad som&quot;primär identitet&quot;.
 * Enhetsrelationer markeras som icke-beroende eftersom cookie-baserade händelser ofta inte kan avgöra vem eller vilka personer som gjorde transaktionen.
 
-![Bild som visar entitetsrelationsdiagrammet för vårdbranschens datamodell](../../images/industries/healthcare.png)
+![Ett exempel på en ERD för en datamodell för hälso- och sjukvården](../../images/industries/healthcare.png)
 
 >[!NOTE]
 >

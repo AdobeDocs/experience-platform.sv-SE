@@ -3,7 +3,7 @@ solution: Experience Platform
 title: Resor och turism - branschdatamodell ERD
 description: Visa en datamodell (ERD) som beskriver en standardiserad datamodell för rese- och turismbranschen som är kompatibel med Experience Data Model (XDM) för användning i Adobe Experience Platform.
 exl-id: 4d454160-9066-4702-815b-9509942f709e
-source-git-commit: 5caa4c750c9f786626f44c3578272671d85b8425
+source-git-commit: 23bf89977b13a1f51e1ea7a0bb0561522a09745d
 workflow-type: tm+mt
 source-wordcount: '442'
 ht-degree: 0%
@@ -21,12 +21,12 @@ Följande enhetsrelationsdiagram representerar en standardiserad datamodell för
 Använd följande förklaring för att tolka denna ERD:
 
 * Varje entitet som visas i är baserad på en underliggande [XDM-klass (Experience Data Model)](../composition.md#class).
-* För en given entitet representerar varje rad som är markerad med **bold** en fältgrupp eller en datatyp, med de relevanta fält som anges nedan i oformaterad text.
+* Fält som är indragna under ett överordnat fält representerar ett underordnat fält, eller underfält, som tillhör den överordnade fältgruppen.
 * De viktigaste fälten för en viss enhet markeras med rött.
 * Alla egenskaper som kan användas för att identifiera enskilda kunder markeras som&quot;identitet&quot;, med en av dessa egenskaper markerad som&quot;primär identitet&quot;.
 * Enhetsrelationer markeras som icke-beroende eftersom cookie-baserade händelser ofta inte kan avgöra vem eller vilka personer som gjorde transaktionen.
 
-![](../../images/industries/travel-hospitality.png)
+![Ett exempel på en ERD-fil för en resegästdatamodell](../../images/industries/travel-hospitality.png)
 
 >[!NOTE]
 >
