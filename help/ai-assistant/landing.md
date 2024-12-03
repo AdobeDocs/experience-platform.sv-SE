@@ -2,9 +2,9 @@
 title: AI Assistant i Adobe Experience Platform produktdokumentation
 description: Kom igång med AI Assistant i Adobe Experience Platform.
 exl-id: bcb86a41-d5d8-4c1a-a86d-79fa0c167bc7
-source-git-commit: 3f43e120225bcca640cc46ebdce1e4d61100ad45
+source-git-commit: 830daf12b1ae9718a16308d16774f4357f431f6c
 workflow-type: tm+mt
-source-wordcount: '545'
+source-wordcount: '581'
 ht-degree: 1%
 
 ---
@@ -29,15 +29,10 @@ Kom igång genom att läsa materialet i länkarna nedan för att bekanta dig med
     <a href="./home.md#product-knowledge"><img src="./assets/landing/ai-audience.png" style="width:" 100%;max-height: 100%"></a>
     <div><strong>Förbättra din inlärning</strong><br/>Upptäck, felsök och förstärka din förståelse av produktkunskaper utan att avbryta dina arbetsflöden.</div>
     </td>
-    <td>
-    <a href="./access.md"><img src="./assets/landing/ai-access.png" style="width:" 100%;max-height: 100%"></a>
-    <div><strong>Använd behörigheter baserat på din användning</strong><br/>Bevilja och återkalla åtkomstbehörigheter beroende på teammedlemmarnas roller.</div>
-    </td>
   </tr>
   <tr style="border: 0;">
     <td align="center"><a href="./home.md"><img src="../rtcdp/assets/do-not-localize/learn-more-button.svg"></a></td>
     <td align="center"><a href="./home.md#product-knowledge"><img src="../rtcdp/assets/do-not-localize/learn-more-button.svg"></a></td>
-    <td align="center"><a href="./access.md"><img src="../rtcdp/assets/do-not-localize/learn-more-button.svg"></a></td>
     </tr>
 </table>
 
@@ -84,11 +79,23 @@ I följande video visas en översikt över AI Assistant.
 
 >[!VIDEO](https://video.tv.adobe.com/v/3429845?learn=on)
 
+Mer information finns i [gränssnittsguiden för AI-assistenten](ui-guide.md).
+
 ### Få tillgång till AI Assistant
 
 Titta på följande video och lär dig hur du konfigurerar åtkomst till AI Assistant för dina organisationer och användare.
 
 >[!VIDEO](https://video.tv.adobe.com/v/3436470/?learn=on)
+
+Mer information finns i [åtkomstguiden för AI-assistenten](access.md).
+
+### Använd AI Assistant för att minska starttiden
+
+Titta på följande video för att lära dig hur du kan använda produktkunskapen för AI Assistant för att minska introduktionstiden.
+
+>[!VIDEO](https://video.tv.adobe.com/v/3438032/?learn=on)
+
+Mer information finns i [produktkunskap i AI Assistant](home.md#product-knowledge)
 
 ### Använd AI Assistant för att rensa bort störande partier
 
