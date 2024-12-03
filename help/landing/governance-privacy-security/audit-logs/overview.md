@@ -4,9 +4,9 @@ description: Lär dig hur granskningsloggar gör det möjligt för dig att se vi
 role: Admin,Developer
 feature: Audits
 exl-id: 00baf615-5b71-4e0a-b82a-ca0ce8566e7f
-source-git-commit: c0eb5b5c3a1968cae2bc19b7669f70a97379239b
+source-git-commit: f6e413d2d8b644775b6714739113174f5d9cb0d9
 workflow-type: tm+mt
-source-wordcount: '1320'
+source-wordcount: '1358'
 ht-degree: 4%
 
 ---
@@ -31,6 +31,10 @@ ht-degree: 4%
 För att öka insynen i och synligheten i de aktiviteter som utförs i systemet kan du med Adobe Experience Platform granska användaraktiviteter för olika tjänster och funktioner i form av &quot;granskningsloggar&quot;. Loggarna utgör en verifieringskedja som kan hjälpa till med felsökningsproblem på plattformen och hjälpa ditt företag att effektivt följa företagets policyer för datahantering och lagstadgade krav.
 
 I grundläggande bemärkelse anger en granskningslogg **vem** utförde **vad**-åtgärden och **när**. Varje åtgärd som registreras i en logg innehåller metadata som anger åtgärdstyp, datum och tid, e-post-ID för användaren som utförde åtgärden samt ytterligare attribut som är relevanta för åtgärdstypen.
+
+>[!NOTE]
+>
+> Metadata för åtgärderna **Lägg till användare** och **Ta bort användare** i **rollen**-resursen kommer inte att innehålla e-post-ID:t för den användare som utförde åtgärden. Loggarna visar i stället systemgenererat e-post-ID (system@adobe.com).
 
 Det här dokumentet innehåller granskningsloggar i Platform, inklusive hur du visar och hanterar dem i användargränssnittet eller API.
 
