@@ -3,9 +3,9 @@ keywords: länkad anslutning;länkad anslutning;länkade destinationer;länkad;
 title: Länkad matchad målgruppsanslutning
 description: Aktivera profiler för era LinkedIn-kampanjer för målgruppsanpassning, personalisering och nedtryckning, baserat på hashad-e-post.
 exl-id: 74c233e9-161a-4e4a-98ef-038a031feff0
-source-git-commit: c35b43654d31f0f112258e577a1bb95e72f0a971
+source-git-commit: 74d7c48042b0d2b938705b588c185f3c3f96f1cd
 workflow-type: tm+mt
-source-wordcount: '1062'
+source-wordcount: '1058'
 ht-degree: 0%
 
 ---
@@ -149,7 +149,7 @@ Se [Aktivera målgruppsdata för att direktuppspela målgruppsexportmål](../../
 
 ## Exporterade data {#exported-data}
 
-En lyckad aktivering innebär att en anpassad [!DNL LinkedIn]-målgrupp skapas programmatiskt i [[!DNL LinkedIn Campaign Manager]](https://www.linkedin.com/campaignmanager/login). Målgruppsmedlemskap läggs till och tas bort eftersom användarna är kvalificerade eller diskvalificerade för de aktiverade målgrupperna.
+En lyckad aktivering innebär att en anpassad [!DNL LinkedIn]-målgrupp skapas programmatiskt i [[!DNL LinkedIn Campaign Manager]](https://www.linkedin.com/campaignmanager/login). Målgruppsmedlemskapet justeras eftersom användarna är kvalificerade eller diskvalificerade för de aktiverade målgrupperna.
 
 >[!TIP]
 >

@@ -5,9 +5,9 @@ user-guide-description: Aktivera kända och okända data för marknadsföringska
 description: I det här dokumentet visas innehållsförteckningen för Adobe Experience Platform-destinationer
 feature: Destinations
 role: Admin,User
-source-git-commit: 6414168c1deb047af30d8636ef8d61316f56aecf
+source-git-commit: 3a66902ab169c555a52741e3630d2b9f50149155
 workflow-type: tm+mt
-source-wordcount: '1257'
+source-wordcount: '1262'
 ht-degree: 1%
 
 ---
@@ -201,6 +201,7 @@ ht-degree: 1%
    * Sociala mål {#social}
       * [Översikt över sociala mål](./catalog/social/overview.md)
       * [Facebook](./catalog/social/facebook.md)
+      * [(Företag) LinkedIn Matched Auditions connection](./catalog/social/linkedin-b2b.md)
       * [LinkedIn Matched Auditions connection](./catalog/social/linkedin.md)
       * [TikTok](./catalog/social/tiktok.md)
       * [[!DNL Twitter Custom Audiences]-anslutning](./catalog/social/twitter.md)
