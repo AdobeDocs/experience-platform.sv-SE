@@ -3,7 +3,7 @@ title: Använd beräkningsfält för att exportera arrayer som strängar
 type: Tutorial
 description: Lär dig hur du använder beräkningsfält för att exportera arrayer från Real-Time CDP till molnlagringsmål som strängar.
 exl-id: ff13d8b7-6287-4315-ba71-094e2270d039
-source-git-commit: 849d42e36921e60b6ac3a5e89336b954e64a35d7
+source-git-commit: 9b64e39d25ad94aa834c8e207396b37c2a121243
 workflow-type: tm+mt
 source-wordcount: '1549'
 ht-degree: 0%
@@ -21,7 +21,7 @@ ht-degree: 0%
 
 >[!AVAILABILITY]
 >
->* Funktionen för att exportera arrayer via beräkningsfält är vanligtvis tillgänglig.
+>Funktionen för att exportera arrayer via beräkningsfält är vanligtvis tillgänglig.
 
 Lär dig hur du exporterar arrayer via beräknade fält från Real-Time CDP till [molnlagringsmål](/help/destinations/catalog/cloud-storage/overview.md) som strängar. Läs det här dokumentet om du vill veta mer om de användningsområden som den här funktionen har aktiverat.
 

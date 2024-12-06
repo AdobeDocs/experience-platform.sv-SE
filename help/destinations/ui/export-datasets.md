@@ -3,9 +3,9 @@ title: Exportera datauppsättningar till molnlagringsmål
 type: Tutorial
 description: Lär dig hur du exporterar datauppsättningar från Adobe Experience Platform till den molnlagringsplats du föredrar.
 exl-id: e89652d2-a003-49fc-b2a5-5004d149b2f4
-source-git-commit: 74dcaff91a264062feec262784e056a296072fd7
+source-git-commit: 9b64e39d25ad94aa834c8e207396b37c2a121243
 workflow-type: tm+mt
-source-wordcount: '2538'
+source-wordcount: '2547'
 ht-degree: 0%
 
 ---
@@ -293,54 +293,54 @@ Tänk på följande begränsningar för den allmänna tillgänglighetsreleasen f
 
 **Kan vi generera en fil utan en mapp om vi bara sparar på `/` som mappsökväg? Om vi inte behöver någon mappsökväg, hur genereras filer med duplicerade namn i en mapp eller på en plats?**
 
-+++
++++Svar
 Från och med versionen från september 2024 är det möjligt att anpassa mappnamnet och till och med använda `/` för att exportera filer för alla datauppsättningar i samma mapp. Adobe rekommenderar inte detta för mål som exporterar flera datauppsättningar eftersom systemgenererade filnamn som tillhör olika datauppsättningar kommer att blandas i samma mapp.
 +++
 
 **Kan du dirigera manifestfilen till en mapp och datafiler till en annan mapp?**
 
-+++
++++Svar
 Nej, det går inte att kopiera manifestfilen till en annan plats.
 +++
 
 **Kan vi styra sekvensering och timing för filleverans?**
 
-+++
++++Svar
 Det finns alternativ för att schemalägga exporten. Det finns inga alternativ för att fördröja eller sekvensera kopian av filerna. De kopieras till din lagringsplats så snart de har skapats.
 +++
 
 **Vilka format är tillgängliga för manifestfilen?**
 
-+++
++++Svar
 Manifestfilen har formatet .json.
 +++
 
 **Finns det API-tillgänglighet för manifestfilen?**
 
-+++
++++Svar
 Det finns inget API tillgängligt för manifestfilen, men det innehåller en lista över filer som innehåller exporten.
 +++
 
 **Kan vi lägga till ytterligare information i manifestfilen (dvs. antal poster)? Om så är fallet, hur?**
 
-+++
++++Svar
 Det finns ingen möjlighet att lägga till ytterligare information i manifestfilen. Antalet poster är tillgängligt via entiteten `flowRun` (kan frågas via API). Läs mer om övervakning av destinationer.
 +++
 
 **Hur delas datafiler? Hur många poster per fil?**
 
-+++
++++Svar
 Datafiler delas upp enligt standardpartitionen i datavjön i Experience Platform. Större datauppsättningar har ett större antal partitioner. Standardpartitioneringen kan inte konfigureras av användaren eftersom den är optimerad för läsning.
 +++
 
 **Kan vi ange ett tröskelvärde (antal poster per fil)?**
 
-+++
++++Svar
 Nej, det är inte möjligt.
 +++
 
 **Hur skickar vi om en datauppsättning om den första sändningen inte fungerar?**
 
-+++
++++Svar
 Försök utförs automatiskt för de flesta typer av systemfel.
 +++
