@@ -2,7 +2,7 @@
 title: sendMediaEvent
 description: Lär dig hur du använder kommandot sendMediaEvent för att spåra mediesessioner i Web SDK.
 exl-id: a38626fd-4810-40a0-8893-e98136634fac
-source-git-commit: 57d42d88ec9a93744450a2a352590ab57d9e5bb7
+source-git-commit: 877e12f1d53bb4a8d7c2564490d4e8f3e9e34e34
 workflow-type: tm+mt
 source-wordcount: '762'
 ht-degree: 0%
@@ -626,7 +626,7 @@ sessionPromise.then(sessionID => {
 
 ### Tillståndsuppdateringar {#state-updates}
 
-Händelsetypen `media.stateUpdate` används för att spåra när spelarläget ändras. Den här händelsen ska skickas när spelarläget ändras.
+Händelsetypen `media.statesUpdate` används för att spåra när spelarläget ändras. Den här händelsen ska skickas när spelarläget ändras.
 
 >[!BEGINTABS]
 
@@ -636,7 +636,7 @@ Händelsetypen `media.stateUpdate` används för att spåra när spelarläget ä
 alloy("sendMediaEvent", {
     playerId: "movie-test",
     xdm: {
-        eventType: "media.stateUpdate",
+        eventType: "media.statesUpdate",
         mediaCollection: {
             statesStart: [{
                     name: "mute"
