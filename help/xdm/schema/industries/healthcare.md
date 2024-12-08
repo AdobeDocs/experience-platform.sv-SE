@@ -2,7 +2,7 @@
 title: Datamodell ERD för hälso- och sjukvård
 description: Visa ett diagram över företagsrelationer som beskriver en standardiserad datamodell för hälso- och sjukvården. Den här datamodellen är kompatibel med Experience Data Model (XDM) för användning i Adobe Experience Platform.
 exl-id: ebcf97ec-f5a4-46e5-b1ad-c80d55aa2c6e
-source-git-commit: 8f026501cf5c8087cc512ac374163908cebd17c6
+source-git-commit: a4fc19599ea6639ee5762ee1542cb08b9ed3b6a8
 workflow-type: tm+mt
 source-wordcount: '525'
 ht-degree: 0%
@@ -42,3 +42,4 @@ I följande tabell beskrivs de rekommenderade klasserna och schemafältgrupperna
 | Förbättra registreringen och kontots generering i hälsoplaner genom att spåra marknadsföring av försäkringar via olika kanaler, för att förstå hur en kund fick reda på om ett försäkringsföretag. | <ul><li>**[[!UICONTROL XDM Individual Profile]](../../classes/individual-profile.md)**:<ul><li>[[!UICONTROL Healthcare Member Details]](../../field-groups/profile/healthcare-member-details.md)</li></ul></li><li>**[[!UICONTROL Payer]](../../classes/payer.md)**</li><li>**[[!UICONTROL Plan]](../../classes/plan.md)**:<ul><li>[[!UICONTROL Healthcare Plan Details]](../../field-groups/plan/healthcare-plan-details.md)</li></ul></li><li>**[[!UICONTROL XDM ExperienceEvent]](../../classes/experienceevent.md)**:<ul><li>[[!UICONTROL Web Details]](../../field-groups/event/web-details.md)</li><li>[[!UICONTROL Advertising Details]](../../field-groups/event/advertising-details.md)</li></ul></li></ul> |
 | Undvik avbrott i sjukförsäkringsskyddet. | <ul><li>**[[!UICONTROL XDM Individual Profile]](../../classes/individual-profile.md)**:<ul><li>[[!UICONTROL Healthcare Member Details]](../../field-groups/profile/healthcare-member-details.md)</li></ul></li><li>**[[!UICONTROL Plan]](../../classes/plan.md)**:<ul><li>[[!UICONTROL Healthcare Plan Details]](../../field-groups/plan/healthcare-plan-details.md)</li></ul></li></ul> |
 | Befordra läkemedelsinformation till leverantörer som använder annonser som är direkt till kunden (DTC). | <ul><li>**[[!UICONTROL XDM Individual Profile]](../../classes/individual-profile.md)**:<ul><li>[[!UICONTROL Healthcare Member Details]](../../field-groups/profile/healthcare-member-details.md)</li></ul></li><li>**[[!UICONTROL Medication]](../../classes/medication.md)**:<ul><li>[[!UICONTROL Healthcare medication]](../../field-groups/medication/healthcare-medication.md)</li></ul></li><li>**[[!UICONTROL XDM ExperienceEvent]](../../classes/experienceevent.md)**:<ul><li>[[!UICONTROL Web Details]](../../field-groups/event/web-details.md)</li><li>[[!UICONTROL Advertising Details]](../../field-groups/event/advertising-details.md)</li></ul></li></ul> |
+
