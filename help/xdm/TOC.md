@@ -5,9 +5,9 @@ breadcrumb-title: Användarhandbok om XDM (Experience Data Model)
 user-guide-description: Utforska en översikt över XDM-systemet (Experience Data Model) i Experience Platform och läs mer om hur du använder klasser och schemafältgrupper för att standardisera upplevelsedata.
 feature: Schemas
 role: Developer
-source-git-commit: d2baf74bb5fd87045f5d25b2996911c7bce36f36
+source-git-commit: 670b8ed3abd0e6e9ab35a15ae47a524a2528eb44
 workflow-type: tm+mt
-source-wordcount: '718'
+source-wordcount: '704'
 ht-degree: 7%
 
 ---
@@ -29,30 +29,30 @@ ht-degree: 7%
       * [Sjukvård](./schema/industries/healthcare.md)
       * [Telekommunikation](./schema/industries/telecom.md)
       * [Resor och turism](./schema/industries/travel-hospitality.md)
-   * Hälsovårdsdatamodell V2 {#health-care-data-model-v2}
-      * [Sjukvård V2](./schema/industries/healthcare-v2.md)
-      * Klasser {#health-care-classes}
+   * Vårddatamodell V2 {#healthcare}
+      * [Sjukvård V2](./schema/healthcare-v2.md)
+      * Klasser {#classes}
          * [Plats](./classes/location.md)
-      * Fältgrupper {#health-care-v2-field-groups}
-         * XDM-individuell profil {#health-care-v2-profile}
-            * [Sjukvårdskonto](./field-groups/profile/healthcare-account.md)
+      * Fältgrupper {#field-groups}
+         * XDM-individuell profil {#profile}
+            * [Konto](./field-groups/profile/healthcare-account.md)
             * [Vårdplan](./field-groups/profile/healthcare-care-plan.md)
-            * [Hälsovårdsmål](./field-groups/profile/healthcare-goal.md)
-            * [Hälsovårdsorganisation](./field-groups/profile/healthcare-organization.md)
-            * [Vårdpatient](./field-groups/profile/healthcare-patient.md)
-            * [Hälso- och sjukvård](./field-groups/profile/healthcare-practioner.md)
-            * [Sjukvårdsschema](./field-groups/profile/healthcare-schedule.md)
-         * XDM Experience Event {#health-care-v2-event}
-            * [Hälsovårdsvaccination](./field-groups/event/healthcare-immunization.md)
-         * Plats {#health-care-v2-location}
-            * [Vårdplats](./field-groups/location/healthcare-location.md)
-         * Medication {#health-care-v2-medication}
-            * [Sjukvårdsavdelning](./field-groups/medication/healthcare-medication-dispense.md)
-            * [Begäran om hälsovård](./field-groups/medication/healthcare-medication-request.md)
-            * [Sjukvård](./field-groups/medication/healthcare-medication-v2.md)
-         * Planer {#health-care-v2-plans}
-            * [Sjukvård](./field-groups/plan/healthcare-coverage.md)
-      * Datatyper {#health-care-v2-data-types}
+            * [Mål](./field-groups/profile/healthcare-goal.md)
+            * [Organisation](./field-groups/profile/healthcare-organization.md)
+            * [Patient](./field-groups/profile/healthcare-patient.md)
+            * [Yrkesverksamma](./field-groups/profile/healthcare-practioner.md)
+            * [Schema](./field-groups/profile/healthcare-schedule.md)
+         * XDM Experience Event {#event}
+            * [Immunisering](./field-groups/event/healthcare-immunization.md)
+         * Plats {#location}
+            * [Plats](./field-groups/location/healthcare-location.md)
+         * Medication {#medication}
+            * [Medicinsk befrielse](./field-groups/medication/healthcare-medication-dispense.md)
+            * [Begäran om medicinering](./field-groups/medication/healthcare-medication-request.md)
+            * [Medicin](./field-groups/medication/healthcare-medication-v2.md)
+         * Planera {#plan}
+            * [Täckning](./field-groups/plan/healthcare-coverage.md)
+      * Datatyper {#data-types}
          * [Adress](./data-types/healthcare/address.md)
          * [Anteckning](./data-types/healthcare/annotation.md)
          * [Tillgänglighet](./data-types/healthcare/availability.md)
