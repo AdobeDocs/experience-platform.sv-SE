@@ -5,10 +5,10 @@ breadcrumb-title: Användarhandbok om XDM (Experience Data Model)
 user-guide-description: Utforska en översikt över XDM-systemet (Experience Data Model) i Experience Platform och läs mer om hur du använder klasser och schemafältgrupper för att standardisera upplevelsedata.
 feature: Schemas
 role: Developer
-source-git-commit: 15de9351203f6b43653042ab73ede17781486160
+source-git-commit: d2baf74bb5fd87045f5d25b2996911c7bce36f36
 workflow-type: tm+mt
-source-wordcount: '636'
-ht-degree: 8%
+source-wordcount: '718'
+ht-degree: 7%
 
 ---
 
@@ -29,6 +29,53 @@ ht-degree: 8%
       * [Sjukvård](./schema/industries/healthcare.md)
       * [Telekommunikation](./schema/industries/telecom.md)
       * [Resor och turism](./schema/industries/travel-hospitality.md)
+   * Hälsovårdsdatamodell V2 {#health-care-data-model-v2}
+      * [Sjukvård V2](./schema/industries/healthcare-v2.md)
+      * Klasser {#health-care-classes}
+         * [Plats](./classes/location.md)
+      * Fältgrupper {#health-care-v2-field-groups}
+         * XDM-individuell profil {#health-care-v2-profile}
+            * [Sjukvårdskonto](./field-groups/profile/healthcare-account.md)
+            * [Vårdplan](./field-groups/profile/healthcare-care-plan.md)
+            * [Hälsovårdsmål](./field-groups/profile/healthcare-goal.md)
+            * [Hälsovårdsorganisation](./field-groups/profile/healthcare-organization.md)
+            * [Vårdpatient](./field-groups/profile/healthcare-patient.md)
+            * [Hälso- och sjukvård](./field-groups/profile/healthcare-practioner.md)
+            * [Sjukvårdsschema](./field-groups/profile/healthcare-schedule.md)
+         * XDM Experience Event {#health-care-v2-event}
+            * [Hälsovårdsvaccination](./field-groups/event/healthcare-immunization.md)
+         * Plats {#health-care-v2-location}
+            * [Vårdplats](./field-groups/location/healthcare-location.md)
+         * Medication {#health-care-v2-medication}
+            * [Sjukvårdsavdelning](./field-groups/medication/healthcare-medication-dispense.md)
+            * [Begäran om hälsovård](./field-groups/medication/healthcare-medication-request.md)
+            * [Sjukvård](./field-groups/medication/healthcare-medication-v2.md)
+         * Planer {#health-care-v2-plans}
+            * [Sjukvård](./field-groups/plan/healthcare-coverage.md)
+      * Datatyper {#health-care-v2-data-types}
+         * [Adress](./data-types/healthcare/address.md)
+         * [Anteckning](./data-types/healthcare/annotation.md)
+         * [Tillgänglighet](./data-types/healthcare/availability.md)
+         * [Kodningsbart koncept](./data-types/healthcare/codeable-concept.md)
+         * [Kodningsreferens](./data-types/healthcare/codeable-reference.md)
+         * [Kodning](./data-types/healthcare/coding.md)
+         * [Kontaktpunkt](./data-types/healthcare/contact-point.md)
+         * [Dosering](./data-types/healthcare/dosage.md)
+         * [Varaktighet](./data-types/healthcare/duration.md)
+         * [Information om utökad kontakt](./data-types/healthcare/extended-contact-detail.md)
+         * [Personnamn](./data-types/healthcare/human-name.md)
+         * [Identifierare](./data-types/healthcare/identifier.md)
+         * [Pengar](./data-types/healthcare/money.md)
+         * [Period](./data-types/healthcare/period.md)
+         * [Person](./data-types/healthcare/person.md)
+         * [Kvantitet](./data-types/healthcare/quantity.md)
+         * [Intervall](./data-types/healthcare/range.md)
+         * [Förhållande](./data-types/healthcare/ratio.md)
+         * [Referens](./data-types/healthcare/reference.md)
+         * [Upprepa](./data-types/healthcare/repeat.md)
+         * [Enkel kvantitet](./data-types/healthcare/simple-quantity.md)
+         * [Timing](./data-types/healthcare/timing.md)
+         * [Virtuell tjänst](./data-types/healthcare/virtual-service-detail.md)
    * [XDM-fältordlista](schema/field-dictionary.md)
 * Klasser {#classes}
    * [Individuell XDM-profil](./classes/individual-profile.md)
@@ -54,9 +101,9 @@ ht-degree: 8%
    * XDM-individuell profil {#profile}
       * [Innehåll och inställningar](./field-groups/profile/consents.md)
       * [Demografiska detaljer](./field-groups/profile/demographic-details.md)
+      * [Information om sjukvårdsmedlem](./field-groups/profile/healthcare-member-details.md)
       * [IAB TCF 2.0-samtycke](./field-groups/profile/iab.md)
       * [IdentityMap](./field-groups/profile/identitymap.md)
-      * [Information om sjukvårdsmedlem](./field-groups/profile/healthcare-member-details.md)
       * [Förmånsinformation](./field-groups/profile/loyalty-details.md)
       * [Kontaktinformation, privat](./field-groups/profile/personal-contact-details.md)
       * [Profile Partner Enrichment (exempel)](./field-groups/profile/profile-partner-enrichment.md)
