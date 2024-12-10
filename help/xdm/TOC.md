@@ -5,9 +5,9 @@ breadcrumb-title: Användarhandbok om XDM (Experience Data Model)
 user-guide-description: Utforska en översikt över XDM-systemet (Experience Data Model) i Experience Platform och läs mer om hur du använder klasser och schemafältgrupper för att standardisera upplevelsedata.
 feature: Schemas
 role: Developer
-source-git-commit: 670b8ed3abd0e6e9ab35a15ae47a524a2528eb44
+source-git-commit: 3071d16b6b98040ea3f2e3a34efffae517253b8e
 workflow-type: tm+mt
-source-wordcount: '704'
+source-wordcount: '695'
 ht-degree: 7%
 
 ---
@@ -30,52 +30,47 @@ ht-degree: 7%
       * [Telekommunikation](./schema/industries/telecom.md)
       * [Resor och turism](./schema/industries/travel-hospitality.md)
    * Vårddatamodell V2 {#healthcare}
-      * [Sjukvård V2](./schema/healthcare-v2.md)
+      * [Sjukvård V2](./schema/healthcare/healthcare-v2.md)
       * Klasser {#classes}
-         * [Plats](./classes/location.md)
+         * [Plats](./schema/healthcare/classes/location.md)
       * Fältgrupper {#field-groups}
-         * XDM-individuell profil {#profile}
-            * [Konto](./field-groups/profile/healthcare-account.md)
-            * [Vårdplan](./field-groups/profile/healthcare-care-plan.md)
-            * [Mål](./field-groups/profile/healthcare-goal.md)
-            * [Organisation](./field-groups/profile/healthcare-organization.md)
-            * [Patient](./field-groups/profile/healthcare-patient.md)
-            * [Yrkesverksamma](./field-groups/profile/healthcare-practioner.md)
-            * [Schema](./field-groups/profile/healthcare-schedule.md)
-         * XDM Experience Event {#event}
-            * [Immunisering](./field-groups/event/healthcare-immunization.md)
-         * Plats {#location}
-            * [Plats](./field-groups/location/healthcare-location.md)
-         * Medication {#medication}
-            * [Medicinsk befrielse](./field-groups/medication/healthcare-medication-dispense.md)
-            * [Begäran om medicinering](./field-groups/medication/healthcare-medication-request.md)
-            * [Medicin](./field-groups/medication/healthcare-medication-v2.md)
-         * Planera {#plan}
-            * [Täckning](./field-groups/plan/healthcare-coverage.md)
+         * [Konto](./schema/healthcare/field-groups/account.md)
+         * [Vårdplan](./schema/healthcare/field-groups/care-plan.md)
+         * [Täckning](./schema/healthcare/field-groups/coverage.md)
+         * [Mål](./schema/healthcare/field-groups/goal.md)
+         * [Immunisering](./schema/healthcare/field-groups/immunization.md)
+         * [Plats](./schema/healthcare/field-groups/location.md)
+         * [Medicin](./schema/healthcare/field-groups/medication.md)
+         * [Medicinsk befrielse](./schema/healthcare/field-groups/medication-dispense.md)
+         * [Begäran om medicinering](./schema/healthcare/field-groups/medication-request.md)
+         * [Organisation](./schema/healthcare/field-groups/organization.md)
+         * [Patient](./schema/healthcare/field-groups/patient.md)
+         * [Yrkesverksamma](./schema/healthcare/field-groups/practioner.md)
+         * [Schema](./schema/healthcare/field-groups/schedule.md)
       * Datatyper {#data-types}
-         * [Adress](./data-types/healthcare/address.md)
-         * [Anteckning](./data-types/healthcare/annotation.md)
-         * [Tillgänglighet](./data-types/healthcare/availability.md)
-         * [Kodningsbart koncept](./data-types/healthcare/codeable-concept.md)
-         * [Kodningsreferens](./data-types/healthcare/codeable-reference.md)
-         * [Kodning](./data-types/healthcare/coding.md)
-         * [Kontaktpunkt](./data-types/healthcare/contact-point.md)
-         * [Dosering](./data-types/healthcare/dosage.md)
-         * [Varaktighet](./data-types/healthcare/duration.md)
-         * [Information om utökad kontakt](./data-types/healthcare/extended-contact-detail.md)
-         * [Personnamn](./data-types/healthcare/human-name.md)
-         * [Identifierare](./data-types/healthcare/identifier.md)
-         * [Pengar](./data-types/healthcare/money.md)
-         * [Period](./data-types/healthcare/period.md)
-         * [Person](./data-types/healthcare/person.md)
-         * [Kvantitet](./data-types/healthcare/quantity.md)
-         * [Intervall](./data-types/healthcare/range.md)
-         * [Förhållande](./data-types/healthcare/ratio.md)
-         * [Referens](./data-types/healthcare/reference.md)
-         * [Upprepa](./data-types/healthcare/repeat.md)
-         * [Enkel kvantitet](./data-types/healthcare/simple-quantity.md)
-         * [Timing](./data-types/healthcare/timing.md)
-         * [Virtuell tjänst](./data-types/healthcare/virtual-service-detail.md)
+         * [Adress](./schema/healthcare/data-types/address.md)
+         * [Anteckning](./schema/healthcare/data-types/annotation.md)
+         * [Tillgänglighet](./schema/healthcare/data-types/availability.md)
+         * [Kodningsbart koncept](./schema/healthcare/data-types/codeable-concept.md)
+         * [Kodningsreferens](./schema/healthcare/data-types/codeable-reference.md)
+         * [Kodning](./schema/healthcare/data-types/coding.md)
+         * [Kontaktpunkt](./schema/healthcare/data-types/contact-point.md)
+         * [Dosering](./schema/healthcare/data-types/dosage.md)
+         * [Varaktighet](./schema/healthcare/data-types/duration.md)
+         * [Information om utökad kontakt](./schema/healthcare/data-types/extended-contact-detail.md)
+         * [Personnamn](./schema/healthcare/data-types/human-name.md)
+         * [Identifierare](./schema/healthcare/data-types/identifier.md)
+         * [Pengar](./schema/healthcare/data-types/money.md)
+         * [Period](./schema/healthcare/data-types/period.md)
+         * [Person](./schema/healthcare/data-types/person.md)
+         * [Kvantitet](./schema/healthcare/data-types/quantity.md)
+         * [Intervall](./schema/healthcare/data-types/range.md)
+         * [Förhållande](./schema/healthcare/data-types/ratio.md)
+         * [Referens](./schema/healthcare/data-types/reference.md)
+         * [Upprepa](./schema/healthcare/data-types/repeat.md)
+         * [Enkel kvantitet](./schema/healthcare/data-types/simple-quantity.md)
+         * [Timing](./schema/healthcare/data-types/timing.md)
+         * [Virtuell tjänst](./schema/healthcare/data-types/virtual-service-detail.md)
    * [XDM-fältordlista](schema/field-dictionary.md)
 * Klasser {#classes}
    * [Individuell XDM-profil](./classes/individual-profile.md)
