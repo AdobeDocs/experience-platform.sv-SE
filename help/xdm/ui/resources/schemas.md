@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Skapa och redigera scheman i användargränssnittet
 description: Lär dig grunderna i hur du skapar och redigerar scheman i användargränssnittet i Experience Platform.
 exl-id: be83ce96-65b5-4a4a-8834-16f7ef9ec7d1
-source-git-commit: f530e4ff755ac89141ee67bef80700b46acf0868
+source-git-commit: 02b709c01347c1d03f870132dff437b97f239a9c
 workflow-type: tm+mt
-source-wordcount: '3703'
+source-wordcount: '3888'
 ht-degree: 0%
 
 ---
@@ -37,7 +37,7 @@ Välj **[!UICONTROL Create schema]** i det övre högra hörnet på arbetsytan [
 
 Dialogrutan [!UICONTROL Create a schema] visas. I den här dialogrutan kan du välja att antingen skapa ett schema manuellt genom att lägga till fält och fältgrupper, eller så kan du överföra en CSV-fil och använda ML-algoritmer för att generera ett schema. Välj ett arbetsflöde för att skapa schema i dialogrutan.
 
-![Dialogrutan Skapa ett schema med arbetsflödesalternativen och välj markerad.](../../images/tutorials/create-schema/create-a-schema-dialog.png)
+![Dialogrutan Skapa ett schema med arbetsflödesalternativen och välj markerad.](../../images/ui/resources/schemas/create-a-schema-dialog.png)
 
 ### [!BADGE Beta]{type=Informative} Manuell eller ML-assisterad schemagenerering {#manual-or-assisted}
 
@@ -49,15 +49,35 @@ Arbetsflödet [!UICONTROL Create schema] visas. Du kan välja en basklass för s
 
 ![Arbetsflödet [!UICONTROL Create schema] med tre klassalternativ och [!UICONTROL Next] markerat.](../../images/ui/resources/schemas/schema-class-options.png)
 
+När du väljer **[!UICONTROL Other]** visas en lista med tillgängliga klasser. Härifrån kan du bläddra bland och filtrera befintliga klasser.
+
+![Arbetsflödet [!UICONTROL Create schema] med [!UICONTROL Other] markerat i avsnittet [!UICONTROL Schema details].](../../images/ui/resources/schemas/other-schema-details.png)
+
+Markera en alternativknapp om du vill filtrera klasserna baserat på om de är anpassade eller standardklasser. Du kan även filtrera tillgängliga resultat baserat på bransch eller söka efter en viss klass med hjälp av sökfältet.
+
+![Arbetsflödet [!UICONTROL Create schema] med sökfältet, [!UICONTROL Custom] och [!UICONTROL Industries] markerat.](../../images/ui/resources/schemas/filter-and-search.png)
+
+Det finns info- och förhandsgranskningsikoner för varje klass som kan hjälpa dig att bestämma vilken klass som ska användas. Informationsikonen (![En informationsikon.](/help/images/icons/info.png)) öppnar en dialogruta som innehåller en beskrivning av klassen och den bransch som den är associerad med.
+
+![Informationsikonen och verktygstipset för den markerade klassen är markerade.](../../images/ui/resources/schemas/class-info.png)
+
+Ikonen för förhandsgranskning (![En förhandsvisningsikon.](/help/images/icons/preview.png)) öppnar en förhandsvisningsdialogruta för klassen som innehåller ett schemaritecken och dess egenskaper.
+
+![En förhandsgranskning av den valda klassen med schemaritecknet och klassegenskaperna.](../../images/ui/resources/schemas/class-preview.png)
+
+Markera en rad för att välja en klass och välj sedan **[!UICONTROL Next]** för att bekräfta ditt val.
+
+![Arbetsflödet [!UICONTROL Create schema] med en klass vald från tabellen med tillgängliga klasser och [!UICONTROL Next] markerad.](../../images/ui/resources/schemas/select-class.png)
+
 När du har valt en klass visas avsnittet [!UICONTROL Name and review]. I det här avsnittet anger du ett namn och en beskrivning som identifierar ditt schema. &#x200B;Schemats grundstruktur (tillhandahålls av klassen) visas på arbetsytan så att du kan granska och verifiera den valda klassen och schemastrukturen.
 
 Ange en [!UICONTROL Schema display name] som är användarvänlig i textfältet. Ange sedan en lämplig beskrivning för att identifiera schemat. När du har granskat din schemastruktur och är nöjd med dina inställningar väljer du **[!UICONTROL Finish]** för att skapa ditt schema.
 
 ![Avsnittet [!UICONTROL Name and review] i arbetsflödet [!UICONTROL Create schema] med [!UICONTROL Schema display name], [!UICONTROL Description] och [!UICONTROL Finish] markerade.](../../images/ui/resources/schemas/name-and-review.png)
 
-Fliken [!UICONTROL Schema] [!UICONTROL Browse] visas. Ditt nyligen skapade schema visas nu i schemabiblioteket och kan redigeras i [!DNL Schema Editor].
+Schemaredigeraren visas med schemats struktur på arbetsytan. Om du vill kan du nu börja [lägga till fält i klassen](../../ui/resources/classes.md#add-fields).
 
-![Fliken Bläddra på arbetsytan Scheman som visar det schema som du nyligen har skapat.](../../images/ui/resources/schemas/example-schema.png)
+![Schemaredigeraren med schemats struktur som visas på arbetsytan.](../../images/ui/resources/schemas/edit.png)
 
 ## Redigera ett befintligt schema {#edit}
 
