@@ -1,11 +1,11 @@
 ---
-title: Versionsinformation för Adobe Experience Platform Web SDK
+title: Versionsinformation om Adobe Experience Platform Web SDK
 description: Den senaste versionsinformationen om webb-SDK för Adobe Experience Platform.
 keywords: Adobe Experience Platform Web SDK;Platform Web SDK;Web SDK;versionsinformation;
 exl-id: efd4e866-6a27-4bd5-af83-4a97ca8adebd
-source-git-commit: 3dacc991fd7760c1c358bec07aca83ffeb4f4f4d
+source-git-commit: 3a50468a7596b9ba870920a8188ae50b40aaef69
 workflow-type: tm+mt
-source-wordcount: '2042'
+source-wordcount: '2085'
 ht-degree: 2%
 
 ---
@@ -14,7 +14,13 @@ ht-degree: 2%
 # Versionsinformation
 
 Det här dokumentet innehåller versionsinformation för Adobe Experience Platform Web SDK.
-Den senaste versionsinformationen om Web SDK-taggtillägget finns i [Versionsinformationen för Web SDK-taggtillägg](../tags/extensions/client/web-sdk/web-sdk-ext-release-notes.md).
+Den senaste versionsinformationen om SDK-taggtillägget för webben finns i [Versionsinformationen om SDK-taggtillägg för webben](../tags/extensions/client/web-sdk/web-sdk-ext-release-notes.md).
+
+## Version 2.24.1 - 6 december 2024
+
+**Korrigerade och förbättrade**
+
+- Ett beroendeproblem relaterat till [Adobe Experience Platform Rules Engine](https://github.com/adobe/aepsdk-rulesengine-typescript/) som orsakade fel i vissa kundintegreringar har åtgärdats. Web SDK kräver nu [Adobe Experience Platform Rules Engine](https://github.com/adobe/aepsdk-rulesengine-typescript/) version 2.0.3 eller senare.
 
 ## Version 2.24.0 - 31 oktober 2024
 
@@ -127,7 +133,7 @@ Den senaste versionsinformationen om Web SDK-taggtillägget finns i [Versionsinf
 
 **Korrigeringar och förbättringar**
 
-- Web SDK kodar nu målvärden för cookie i Audience Manager, som liknar [Data Integration Library (DIL)](https://experienceleague.adobe.com/docs/audience-manager/user-guide/dil-api/dil-overview.html).
+- SDK för webben kodar nu destinationsvärdena för cookie-filen Audience Manager, som liknar målvärdena för [Datan Integration Library (DIL)](https://experienceleague.adobe.com/docs/audience-manager/user-guide/dil-api/dil-overview.html).
 
 ## Version 2.16.0 - 25 april 2023
 
@@ -167,7 +173,7 @@ Den senaste versionsinformationen om Web SDK-taggtillägget finns i [Versionsinf
 
 **Nya funktioner**
 
-- Stöd har lagts till för [Fullständig sidmigrering](home.md#migrating-to-web-sdk). Adobe Target-profilen bevaras nu när en besökare förflyttar sig mellan at.js- och Web SDK-sidor.
+- Stöd har lagts till för [Fullständig sidmigrering](home.md#migrating-to-web-sdk). Adobe Target-profilen bevaras nu när en besökare förflyttar sig mellan at.js och SDK webbsidor.
 - Konfigurerbart stöd för [hög entropi-klienttips för användaragent ](/help/web-sdk/use-cases/client-hints.md) har lagts till.
 - Stöd för kommandot [`applyResponse`](/help/web-sdk/commands/applyresponse.md) har lagts till. Detta aktiverar hybridanpassning via [Edge Network Server-API](../server-api/overview.md).
 - QA-lägeslänkar fungerar nu på flera sidor.
@@ -277,12 +283,12 @@ Den senaste versionsinformationen om Web SDK-taggtillägget finns i [Versionsinf
 - Felkorrigering: `sendBeacon` användes inte när `documentUnloading` var inställt på `true` eller när länkklick spårades automatiskt.
 - Felkorrigering: En länk spåras inte automatiskt om ankarelementet innehåller HTML-innehåll.
 - Felkorrigering: Vissa webbläsarfel som innehåller en skrivskyddad `message`-egenskap hanterades inte korrekt, vilket resulterade i att ett annat fel exponerades för kunden.
-- Felkorrigering: Om SDK körs i en iframe uppstår ett fel om iframe-fönstrets HTML-sida kommer från en annan underdomän än det överordnade fönstrets HTML-sida.
+- Felkorrigering: Om du kör SDK i en iframe uppstår ett fel om iframe-fönstrets HTML-sida kommer från en annan underdomän än det överordnade fönstrets HTML-sida.
 
 ## Version 2.2.0 - oktober 2020
 
-- Felkorrigering: Opt-in-objektet blockerade Web SDK från att ringa anrop när `idMigrationEnabled` är `true`.
-- Felkorrigering: Gör Web SDK uppmärksam på förfrågningar som bör returnera personaliseringserbjudanden för att förhindra flimmer.
+- Felkorrigering: Opt-in-objektet blockerade webb-SDK från att ringa anrop när `idMigrationEnabled` är `true`.
+- Felkorrigering: Gör Web SDK medveten om förfrågningar som bör returnera personaliseringserbjudanden för att förhindra flimmer.
 
 ## Version 2.1.0 - augusti 2020
 
