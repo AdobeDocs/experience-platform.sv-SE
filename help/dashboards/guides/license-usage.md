@@ -4,9 +4,9 @@ title: Kontrollpanel för licensanvändning
 description: Adobe Experience Platform tillhandahåller en kontrollpanel där du kan visa viktig information om din organisations licensanvändning.
 type: Documentation
 exl-id: 143d16bb-7dc3-47ab-9b93-9c16683b9f3f
-source-git-commit: 37192addffea094cb2d2f3b0201bb128c912e762
+source-git-commit: 5d40af5c0645e9e4ee44f0c0c2133f3b3153bcb1
 workflow-type: tm+mt
-source-wordcount: '2732'
+source-wordcount: '2773'
 ht-degree: 0%
 
 ---
@@ -41,6 +41,11 @@ ht-degree: 0%
 >abstract="Kontrollpanelen för licensanvändning ger dig insikt i vilka Adobe Experience Platform-produkter du har köpt. I översikten på kontrollpanelen visas de primära mätvärdena för dina produkter, inklusive din användning för var och en av de primära mätvärdena och ditt avtalade licensbelopp. På arbetsytan Detaljer visas en beskrivning av dina mätvärden för varje produkt i specifika sandlådor."
 >additional-url="https://experienceleague.adobe.com/en/docs/experience-platform/data-lifecycle/ui/dataset-expiration" text="Automatiska förfallodatum för datauppsättningar"
 >additional-url="https://experienceleague.adobe.com/en/docs/experience-platform/profile/pseudonymous-profiles" text="Förfallodatum för pseudonyma profiler"
+
+>[!CONTEXTUALHELP]
+>id="platform_dashboards_licenseusage_predictedusage_computehours"
+>title="Förutsagda beräkningstimmar"
+>abstract="Användningen kan nå den tillåtna mängden. Om du vill utvärdera eller minska beräkningstiden går du till Frågor > Logg och granskar frågehistoriken. Om du inte har behörighet att komma åt arbetsytan Frågor kontaktar du administratören."
 
 Du kan visa viktig information om din organisations licensanvändning via Adobe Experience Platform [!UICONTROL License usage]-kontrollpanelen. Den information som visas här fångas in vid en daglig ögonblicksbild av din Platform-instans.
 
