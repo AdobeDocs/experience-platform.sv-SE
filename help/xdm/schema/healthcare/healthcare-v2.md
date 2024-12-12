@@ -5,9 +5,9 @@ badgePrivateBeta: label="Private Beta" type="Informative"
 hide: true
 hidefromtoc: true
 exl-id: a796b58b-b36f-4277-870b-0d3939af8061
-source-git-commit: 36f1a443eda47917d5b6bd84d4765ff044b5093a
+source-git-commit: 8eaff2361e76a7856b3371156ed9fe5c542fec28
 workflow-type: tm+mt
-source-wordcount: '536'
+source-wordcount: '518'
 ht-degree: 1%
 
 ---
@@ -18,179 +18,13 @@ ht-degree: 1%
 
 I följande tabell beskrivs de rekommenderade klasserna och schemafältgrupperna för flera vanliga hälsoanvändningsfall.
 
-<table>
-  <thead>
-    <tr>
-      <th>Användningsfall</th>
-      <th>Fältgrupper</th>
-      <th>Kompatibla klasser</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><strong>Skapa/uppdatera patient</strong>: När en patient anländer till sjukhusets skrivbord skapas en patientpost, med bland annat demografisk information som identifierare (valfritt), patientens namn, födelsedatum, kön och adress. Detta är en viktig del av IT inom hälso- och sjukvården.</td>
-      <td><a href="./field-groups/patient.md">Patient</a></td>
-      <td>
-        <li><a href="../../classes/individual-profile.md">Individuell XDM-profil</a></li>
-      </td>
-    </tr>
-    <tr>
-      <td rowspan="6"><strong>Vaccinering</strong>: Underlättar vaccinationsprocessen, hanterar patientimmuniseringsposter och integrerar EMR med Vaccinationshanteringssystem.</td>
-      <td><a href="./field-groups/immunization.md">Immunisering</a></td>
-      <td>
-        <li><a href="../../classes/experienceevent.md">XDM Experience Event</a></li>
-      </td>
-    </tr>
-    <tr>
-      <td><a href="./field-groups/patient.md">Patient</a></td>
-      <td>
-        <li><a href="../../classes/individual-profile.md">Individuell XDM-profil</a></li>
-      </td>
-    </tr>
-    <tr>
-      <td><a href="./field-groups/location.md">Plats</a></td>
-      <td>
-        <li><a href="./classes/location.md">Plats</a></li>
-      </td>
-    </tr>
-    <tr>
-      <td><a href="./field-groups/medication.md">Medicin</a></td>
-      <td>
-        <li><a href="../../classes/medication.md">Medicin</a></li>
-      </td>
-    </tr>
-    <tr>
-      <td><a href="./field-groups/medication-dispense.md">Medicinsk befrielse</a></td>
-      <td>
-        <li><a href="../../classes/medication.md">Medicin</a></li>
-        <li><a href="../../classes/individual-profile.md">Individuell XDM-profil</a></li>
-        <li><a href="../../classes/provider.md">Provider</a></li>
-      </td>
-    </tr>
-    <tr>
-      <td><a href="./field-groups/medication-request.md">Begäran om medicinering</a></td>
-      <td>
-        <li><a href="../../classes/medication.md">Medicin</a></li>
-        <li><a href="../../classes/individual-profile.md">Individuell XDM-profil</a></li>
-        <li><a href="../../classes/provider.md">Provider</a></li>
-      </td>
-    </tr>
-    <tr>
-      <td rowspan="4"><strong>Efterhandsföljsamhet</strong>: Motiverar patienter och vårdgivare till att slutföra sina behandlingsplaner och minska remitteringsgraden.</td>
-      <td><a href="./field-groups/patient.md">Patient</a></td>
-      <td>
-        <li><a href="../../classes/individual-profile.md">Individuell XDM-profil</a></li>
-      </td>
-    </tr>
-    <tr>
-      <td><a href="./field-groups/location.md">Plats</a></td>
-      <td>
-        <li><a href="./classes/location.md">Plats</a></li>
-      </td>
-    </tr>
-    <tr>
-      <td><a href="./field-groups/care-plan.md">Vårdplan</a></td>
-      <td>
-        <li><a href="../../classes/individual-profile.md">Individuell XDM-profil</a></li>
-      </td>
-    </tr>
-    <tr>
-      <td><a href="./field-groups/goal.md">Mål</a></td>
-      <td>
-        <li><a href="../../classes/individual-profile.md">Individuell XDM-profil</a></li>
-        <li><a href="../../classes/provider.md">Provider</a></li>
-      </td>
-    </tr>
-    <tr>
-      <td rowspan="7"><strong>Konsumentupplevelse för försäkringar</strong>: Förbättra digitala förvärv och upplevelser bland konsumenter som handlar för försäkringar. Exempel: 
-        <li> Förstå konsumenternas beteende när det gäller att skicka reklamannonser eller riktade tredjepartsannonser till personer som kommer åt sidor som innehåller allmän information (t.ex. planer, plannamn/nivåer, medicinskt stöd eller välhetsprogram)
-        </li> 
-        <li> Skicka vaccinrelaterad information om hjärtat för att skapa varumärkeskänslighet eller förfrågningar om att schemalägga vacciner till personer som söker efter information om hjärthälsa och vaccin.
-        </li>
-      </td>
-      <td><a href="./field-groups/patient.md">Patient</a></td>
-      <td>
-        <li><a href="../../classes/individual-profile.md">Individuell XDM-profil</a></li>
-      </td>
-    </tr>
-    <tr>
-      <td><a href="./field-groups/coverage.md">Täckning</a></td>
-      <td>
-        <li><a href="../../classes/plan.md">Plan</a></li>
-      </td>
-    </tr>
-    <tr>
-      <td><a href="./field-groups/account.md">Konto</a></td>
-      <td>
-        <li><a href="../../classes/individual-profile.md">Individuell XDM-profil</a></li>
-        <li><a href="../../classes/provider.md">Provider</a></li>
-      </td>
-    </tr>
-    <tr>
-      <td><a href="./field-groups/location.md">Plats</a></td>
-      <td>
-        <li><a href="./classes/location.md">Plats</a></li>
-      </td>
-    </tr>
-      <tr>
-      <td><a href="./field-groups/medication.md">Medicin</a></td>
-      <td>
-        <li><a href="../../classes/medication.md">Medicin</a></li>
-      </td>
-    </tr>
-    <tr>
-      <td><a href="./field-groups/medication-dispense.md">Medicinsk befrielse</a></td>
-      <td>
-        <li><a href="../../classes/medication.md">Medicin</a></li>
-        <li><a href="../../classes/individual-profile.md">Individuell XDM-profil</a></li>
-        <li><a href="../../classes/provider.md">Provider</a></li>
-      </td>
-    </tr>
-    <tr>
-      <td><a href="./field-groups/medication-request.md">Begäran om medicinering</a></td>
-      <td>
-        <li><a href="../../classes/medication.md">Medicin</a></li>
-        <li><a href="../../classes/individual-profile.md">Individuell XDM-profil</a></li>
-        <li><a href="../../classes/provider.md">Provider</a></li>
-      </td>
-    </tr>
-    <tr>
-      <td rowspan="5"><strong>Förbättrad providerupplevelse</strong>: Använder providerdata från EMR-systemet för att föreslå alternativa providrar baserat på tillgänglighet, plats och specialitet för avtalade tider. <br> <br>Förbättrar providersökningar för att visa resultat med önskad tillgänglighet, verifiera att den valda providern är en del av betalarnätverket och tillhandahålla kostnadsberäkningar.
-      </td>
-      <td><a href="./field-groups/patient.md">Patient</a></td>
-      <td>
-        <li><a href="../../classes/individual-profile.md">Individuell XDM-profil</a></li>
-      </td>
-    </tr>
-    <tr>
-      <td><a href="./field-groups/location.md">Plats</a></td>
-      <td>
-        <li><a href="./classes/location.md">Plats</a></li>
-      </td>
-    </tr>
-    <tr>
-      <td><a href="./field-groups/organization.md">Organisation</a></td>
-      <td>
-        <li><a href="../../classes/individual-profile.md">Individuell XDM-profil</a></li>
-        <li><a href="../../classes/provider.md">Provider</a></li>
-      </td>
-    </tr>
-    <tr>
-      <td><a href="./field-groups/practioner.md">Yrkesverksamma</a></td>
-      <td>
-        <li><a href="../../classes/individual-profile.md">Individuell XDM-profil</a></li>
-        <li><a href="../../classes/provider.md">Provider</a></li>
-      </td>
-    </tr>
-    <tr>
-      <td><a href="./field-groups/schedule.md">Schema</a></td>
-      <td>
-        <li><a href="../../classes/individual-profile.md">Individuell XDM-profil</a></li>
-        <li><a href="../../classes/provider.md">Provider</a></li>
-      </td>
-    </tr>
-  </tbody>
-</table>
+| Användningsfall | Fältgrupper och kompatibla klasser |
+| --- | --- |
+| **Skapa/uppdatera patient**: När en patient anländer till sjukhusets skrivbord skapas en patientpost, med bland annat demografisk information som identifierare (valfritt), patientens namn, födelsedatum, kön och adress. Detta är en viktig del av IT inom hälso- och sjukvården. | <ul><li>**[enskilda XDM-profiler](../../classes/individual-profile.md)**:<ul><li>[Patient](./field-groups/patient.md)</li></ul></li></ul> |
+| **Vaccinering**: Underlättar vaccinationsprocessen, hanterar patientimmuniseringsposter och integrerar EMR med Vaccinationshanteringssystem. | <ul><li>**[XDM ExperienceEvent](../../classes/experienceevent.md)**:<ul><li>[Immunisering](./field-groups/immunization.md)</li></ul></li><li>**[XDM-individuell profil](../../classes/individual-profile.md)**:<ul><li>[Läkemedelsbefrielse](./field-groups/medication-dispense.md)</li><li>[Begäran om medicinering](./field-groups/medication-request.md)</li><li>[Patient](./field-groups/patient.md)</li></ul></li><li>**[Plats](./classes/location.md)**:<ul><li>[Plats](./field-groups/location.md)</li></ul><li>**[Medication](../../classes/medication.md)**:<ul><li>[Medication](./field-groups/medication.md)</li><li>[Läkemedelsbefrielse](./field-groups/medication-dispense.md)</li><li>[Begäran om medicinering](./field-groups/medication-request.md)</li></ul></li><li>**[Provider](../../classes/provider.md)**:<ul><li>[Läkemedelsbefrielse](./field-groups/medication-dispense.md)</li><li>[Begäran om medicinering](./field-groups/medication-request.md)</li></ul></li></ul> |
+| **Efterhandsföljsamhet**: Motiverar patienter och vårdgivare till att slutföra sina behandlingsplaner och minska remitteringsgraden. | <ul><li>**[XDM-individuell profil](../../classes/individual-profile.md)**:<ul><li>[Vårdplan](./field-groups/care-plan.md)</li><li>[Mål](./field-groups/goal.md)</li><li>[Patient](./field-groups/patient.md)</li></ul></li><li>**[Plats](./classes/location.md)**:<ul><li>[Plats](./field-groups/location.md)</li></ul><li>**[Provider](../../classes/provider.md)**:<ul><li>[Mål](./field-groups/goal.md)</li></ul></li></ul> |
+| **Konsumentupplevelse för försäkringar**: Förbättra digitala förvärv och upplevelser bland konsumenter som handlar för försäkringar. Exempel: <li> Förstå konsumenternas beteende när det gäller att skicka reklamannonser eller riktade tredjepartsannonser till personer som kommer åt sidor som innehåller allmän information (t.ex. planer, plannamn/nivåer, medicinskt stöd eller välhetsprogram)</li><li> Skicka vaccinrelaterad information om hjärtat för att skapa varumärkeskänslighet eller förfrågningar om att schemalägga vacciner till personer som söker efter information om hjärthälsa och vaccin. </li> | <ul><li>**[XDM-individuell profil](../../classes/individual-profile.md)**:<ul><li>[Konto](./field-groups/account.md)</li><li>[Läkemedelsbefrielse](./field-groups/medication-dispense.md)</li><li>[Begäran om medicinering](./field-groups/medication-request.md)</li><li>[Patient](./field-groups/patient.md)</li></ul></li><li>**[Plats](./classes/location.md)**:<ul><li>[Plats](./field-groups/location.md)</li></ul><li>**[Medication](../../classes/medication.md)**:<ul><li>[Medication](./field-groups/medication.md)</li><li>[Läkemedelsbefrielse](./field-groups/medication-dispense.md)</li><li>[Begäran om medicinering](./field-groups/medication-request.md)</li></ul></li><li>**[Provider](../../classes/provider.md)**:<ul><li>[Konto](./field-groups/account.md)</li><li>[Läkemedelsbefrielse](./field-groups/medication-dispense.md)</li><li>[Begäran om medicinering](./field-groups/medication-request.md)</li></ul><li>**[Planera](../../classes/plan.md)**:<ul><li>[Mål](./field-groups/coverage.md)</li></ul></li></ul> |
+| **Förbättrad providerupplevelse**: Använder providerdata från EMR-systemet för att föreslå alternativa providrar baserat på tillgänglighet, plats och specialitet för avtalade tider. <br> <br>Förbättrar providersökningar för att visa resultat med önskad tillgänglighet, verifiera att den valda providern är en del av betalarnätverket och tillhandahålla kostnadsuppskattningar. | <ul><li>**[enskilda XDM-profiler](../../classes/individual-profile.md)**:<ul><li>[Organisation](./field-groups/organization.md)</li><li>[Patient](./field-groups/patient.md)</li><li>[Deltagare](./field-groups/practioner.md)</li><li>[Schema](./field-groups/schedule.md)</li></ul></li><li>**[Plats](./classes/location.md)**:<ul><li>[Plats](./field-groups/location.md)</li></ul><li>**[Provider](../../classes/provider.md)**:<ul><li>[Organisation](./field-groups/organization.md)</li><li>[Deltagare](./field-groups/practioner.md)</li><li>[Schema](./field-groups/schedule.md)</li></ul></li></ul> |
 
 ## Datatyper {#data-types}
 
