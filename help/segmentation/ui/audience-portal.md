@@ -2,9 +2,9 @@
 title: Översikt över målportalen
 description: Lär dig hur du använder Audience Portal för att visa, hantera och skapa målgrupper i Adobe Experience Platform.
 exl-id: 505ac22e-05f3-423a-a9a0-7f3470af8945
-source-git-commit: a48df00b61fd5736cfb6fd29c60cf73a02342451
+source-git-commit: 1aa10d9cbde66a174ddc64ba9ce11149436393c1
 workflow-type: tm+mt
-source-wordcount: '4337'
+source-wordcount: '4347'
 ht-degree: 0%
 
 ---
@@ -236,6 +236,7 @@ När du väljer målgrupper för flexibel utvärdering av målgrupper gäller f�
 - Alla målgrupper som **måste** har ursprunget till segmenteringstjänsten.
 - Alla målgrupper **måste** utvärderas med gruppsegmentering.
 - Alla målgrupper **måste** vara personbaserade.
+- Målgrupperna kan **endast** aktiveras för mål i Platform.
 - Du kan bara välja högst 20 målgrupper.
 
 ![De målgrupper som du vill använda flexibel målgruppsutvärdering för har valts.](../images/ui/audience-portal/evaluate-audiences.png)

@@ -3,9 +3,9 @@ solution: Experience Platform
 title: Användargränssnittshandbok för direktuppspelningssegmentering
 description: Med direktuppspelad segmentering på Adobe Experience Platform kan ni segmentera i nära realtid samtidigt som ni fokuserar på datamöjligheter. Med direktuppspelningssegmentering sker nu segmentkvalificering allt eftersom data når plattformen, vilket minskar behovet av att schemalägga och köra segmenteringsjobb. Med den här funktionen kan de flesta segmentregler utvärderas när data överförs till plattformen, vilket innebär att segmentmedlemskapet hålls uppdaterat utan att schemalagda segmenteringsjobb körs.
 exl-id: cb9b32ce-7c0f-4477-8c49-7de0fa310b97
-source-git-commit: a1c9003a1b219325daf8fa38cda8bb1a019a55c6
+source-git-commit: e6e9abc7ffe27a2ff9c4ccf4ca243cabdae3d631
 workflow-type: tm+mt
-source-wordcount: '1436'
+source-wordcount: '1461'
 ht-degree: 0%
 
 ---
@@ -37,7 +37,7 @@ En fråga utvärderas automatiskt med direktuppspelningssegmentering om den uppf
 | En händelse inom ett tidsfönster på mindre än 24 timmar | En segmentdefinition som refererar till en enda inkommande händelse inom ett tidsfönster på mindre än 24 timmar. |
 | Endast profil | En segmentdefinition som bara refererar till ett profilattribut. |
 | En händelse med ett profilattribut inom ett relativt tidsfönster på mindre än 24 timmar | En segmentdefinition som refererar till en enda inkommande händelse, med ett eller flera profilattribut, och som inträffar inom ett relativt tidsfönster på mindre än 24 timmar. |
-| Segmentering | En segmentdefinition som innehåller en eller flera grupper eller direktuppspelningssegment. **Obs!** Om ett segment används, inaktiveras profiler **var 24:e timme**. |
+| Segmentering | En segmentdefinition som innehåller en eller flera gruppdefinitioner eller definitioner för direktuppspelade segment. **Obs!** Om segmentet används med **batch**-segmentdefinitioner kan det ta **upp till 24 timmar** att diskvalificera profilen. Om segment används med segmentdefinitioner för **direktuppspelning**, kommer profilinaktiveringen att ske på ett direktuppspelningssätt. |
 | Flera händelser med ett profilattribut | Alla segmentdefinitioner som refererar till flera händelser **under de senaste 24 timmarna** och (valfritt) har ett eller flera profilattribut. |
 
 En segmentdefinition kommer **inte** att aktiveras för direktuppspelningssegmentering i följande scenarier:

@@ -4,9 +4,9 @@ title: Utvärdera händelser i nära realtid med strömmande segmentering
 description: Det här dokumentet innehåller exempel på hur du använder direktuppspelningssegmentering med Adobe Experience Platform Segmentation Service API.
 role: Developer
 exl-id: 119508bd-5b2e-44ce-8ebf-7aef196abd7a
-source-git-commit: a1c9003a1b219325daf8fa38cda8bb1a019a55c6
+source-git-commit: e6e9abc7ffe27a2ff9c4ccf4ca243cabdae3d631
 workflow-type: tm+mt
-source-wordcount: '2027'
+source-wordcount: '2052'
 ht-degree: 0%
 
 ---
@@ -76,7 +76,7 @@ För att en segmentdefinition ska kunna utvärderas med hjälp av direktuppspeln
 | En händelse inom ett tidsfönster på mindre än 24 timmar | En segmentdefinition som refererar till en enda inkommande händelse inom ett tidsfönster på mindre än 24 timmar. |
 | Endast profil | En segmentdefinition som bara refererar till ett profilattribut. |
 | En händelse med ett profilattribut inom ett relativt tidsfönster på mindre än 24 timmar | En segmentdefinition som refererar till en enda inkommande händelse, med ett eller flera profilattribut, och som inträffar inom ett relativt tidsfönster på mindre än 24 timmar. |
-| Segmentering | En segmentdefinition som innehåller en eller flera grupper eller direktuppspelningssegment. **Obs!** Om ett segment används, inaktiveras profiler **var 24:e timme**. |
+| Segmentering | En segmentdefinition som innehåller en eller flera gruppdefinitioner eller definitioner för direktuppspelade segment. **Obs!** Om segmentet används med **batch**-segmentdefinitioner kan det ta **upp till 24 timmar** att diskvalificera profilen. Om segment används med segmentdefinitioner för **direktuppspelning**, kommer profilinaktiveringen att ske på ett direktuppspelningssätt. |
 | Flera händelser med ett profilattribut | Alla segmentdefinitioner som refererar till flera händelser **under de senaste 24 timmarna** och (valfritt) har ett eller flera profilattribut. |
 
 En segmentdefinition kommer **inte** att aktiveras för direktuppspelningssegmentering i följande scenarier:
