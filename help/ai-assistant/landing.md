@@ -2,9 +2,9 @@
 title: AI Assistant i Adobe Experience Platform produktdokumentation
 description: Kom igång med AI Assistant i Adobe Experience Platform.
 exl-id: bcb86a41-d5d8-4c1a-a86d-79fa0c167bc7
-source-git-commit: 830daf12b1ae9718a16308d16774f4357f431f6c
+source-git-commit: 86edf0c8eeca5b3d2be5776664c397fcf5028e29
 workflow-type: tm+mt
-source-wordcount: '581'
+source-wordcount: '688'
 ht-degree: 1%
 
 ---
@@ -77,31 +77,57 @@ Se filmerna nedan för att ytterligare förstärka dina kunskaper om AI Assistan
 
 I följande video visas en översikt över AI Assistant.
 
++++Markera för att visa en översiktsvideo om AI Assistant
+
 >[!VIDEO](https://video.tv.adobe.com/v/3429845?learn=on)
 
 Mer information finns i [gränssnittsguiden för AI-assistenten](ui-guide.md).
+
++++
 
 ### Få tillgång till AI Assistant
 
 Titta på följande video och lär dig hur du konfigurerar åtkomst till AI Assistant för dina organisationer och användare.
 
++++Välj för att visa en video om hur du får tillgång till AI Assistant
+
 >[!VIDEO](https://video.tv.adobe.com/v/3436470/?learn=on)
 
 Mer information finns i [åtkomstguiden för AI-assistenten](access.md).
+
++++
 
 ### Använd AI Assistant för att minska starttiden
 
 Titta på följande video för att lära dig hur du kan använda produktkunskapen för AI Assistant för att minska introduktionstiden.
 
++++Välj för att visa en video om hur du kan använda AI Assistant för att minska starttiden
+
 >[!VIDEO](https://video.tv.adobe.com/v/3438032/?learn=on)
 
 Mer information finns i [produktkunskap i AI Assistant](home.md#product-knowledge)
+
++++
 
 ### Använd AI Assistant för att rensa bort störande partier
 
 Titta på följande video och lär dig hur du använder AI Assistant för att rensa bort störande detaljer i målgruppen och optimera marknadsföringsåtgärderna.
 
++++Välj för att visa en video om hur du använder AI Assistant för att rensa bort störande delar av dina målgrupper
+
 >[!VIDEO](https://video.tv.adobe.com/v/3435532?learn=on)
+
++++
+
+### Använd panelen Discovery för att hjälpa dig komma igång
+
+Titta på följande video för att lära dig mer om hur du kan hitta i AI Assistant och hur du kan använda den för att komma igång med AI Assistant
+
++++Välj för att visa en video om upptäckt
+
+>[!VIDEO](https://video.tv.adobe.com/v/3440962/?learn=on)
+
++++
 
 ## AI Assistant - fallbibliotek
 
@@ -133,6 +159,10 @@ I följande videofilmer finns ytterligare exempel på hur du använder AI Assist
 Mer information om AI Assistant finns i [säkerhetsfaktablad för AI Assistant i Adobe Experience Platform](https://www.adobe.com/content/dam/cc/en/trust-center/ungated/whitepapers/experience-cloud/adobe-ai-assistant-in-aep-security-fact-sheet.pdf).
 
 >[!ENDSHADEBOX]
+
+I följande video finns mer information om säkerhetsfunktionerna i AI Assistant:
+
+>[!VIDEO](https://video.tv.adobe.com/v/3441066/?learn=on)
 
 Klicka på länkarna nedan för att få en bättre förståelse för användningsfall, funktioner och mycket annat i AI Assistant.
 
