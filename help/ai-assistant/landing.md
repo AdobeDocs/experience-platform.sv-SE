@@ -2,9 +2,9 @@
 title: AI Assistant i Adobe Experience Platform produktdokumentation
 description: Kom igång med AI Assistant i Adobe Experience Platform.
 exl-id: bcb86a41-d5d8-4c1a-a86d-79fa0c167bc7
-source-git-commit: 26232fbf67418e0a75fe489b6e34890058cd4d81
+source-git-commit: 4d89ac33843acd536fbadc85a07bee90a50e6407
 workflow-type: tm+mt
-source-wordcount: '629'
+source-wordcount: '657'
 ht-degree: 1%
 
 ---
@@ -88,6 +88,14 @@ Titta på följande video och lär dig hur du konfigurerar åtkomst till AI Assi
 >[!VIDEO](https://video.tv.adobe.com/v/3436470/?learn=on)
 
 Mer information finns i [åtkomstguiden för AI-assistenten](access.md).
+
+### Förstå produktkunskaper i AI Assistant
+
+Titta på följande video för att lära dig mer om produktkunskaper i AI Assistant.
+
+>[!VIDEO](https://video.tv.adobe.com/v/3441024?learn=on)
+
+Mer information finns i [produktkunskap i AI Assistant](home.md#product-knowledge)
 
 ### Använd AI Assistant för att minska starttiden
 
