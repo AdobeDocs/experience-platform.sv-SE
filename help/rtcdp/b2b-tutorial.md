@@ -1,21 +1,21 @@
 ---
-keywords: RTCDP;CDP;B2B Edition;Real-time Customer Data Platform;kunddataplattform i realtid;cdp i realtid;b2b;cdp
+keywords: RTCDP;CDP;B2B edition;Real-time Customer Data Platform;kunddataplattform i realtid;cdp i realtid;b2b;cdp
 solution: Experience Platform
-title: Komma igång med Real-time Customer Data Platform B2B Edition
-description: Använd det här exempelscenariot som exempel när du konfigurerar din implementering av Adobe Real-time Customer Data Platform B2B Edition.
+title: Komma igång med Real-time Customer Data Platform B2B edition
+description: Använd det här exempelscenariot som exempel när du konfigurerar din implementering av Adobe Real-time Customer Data Platform B2B edition.
 feature: Get Started, B2B
-badgeB2B: label="B2B Edition" type="Informative" url="https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform-b2b-edition-prime-and-ultimate-packages.html newtab=true"
+badgeB2B: label="B2B edition" type="Informative" url="https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform-b2b-edition-prime-and-ultimate-packages.html newtab=true"
 exl-id: ad9ace46-9915-4b8f-913a-42e735859edf
-source-git-commit: 8a487d948d2eb7db167298b61045ef8dd2099da6
+source-git-commit: 90323c32833b0d8a2b4feb88b8eb851bc767c2f8
 workflow-type: tm+mt
 source-wordcount: '1164'
 ht-degree: 0%
 
 ---
 
-# Komma igång med Real-time Customer Data Platform B2B Edition
+# Komma igång med Real-time Customer Data Platform B2B edition
 
-Det här dokumentet innehåller ett avancerat arbetsflöde från början till slut för att komma igång med Real-time Customer Data Platform (CDP) B2B Edition, där man kan använda exempel för att illustrera viktiga koncept.
+Det här dokumentet innehåller ett avancerat arbetsflöde från början till slut för att komma igång med Real-time Customer Data Platform (CDP) B2B edition, där man kan använda ett exempel för att illustrera viktiga koncept.
 
 Teknikföretaget Bodea vill kombinera person- och kontodata från olika externa datakällor för att effektivt kunna rikta in sig på kunderna med ett e-postmeddelande och en reklamkampanj från LinkedIn för sin nya produkt. Bodea använder Marketo Engage som sin automatiseringsplattform för marknadsföring och behöver segmentera en B2B-specifik målgrupp från flera CRM-system som innehåller kunddata.
 
@@ -23,10 +23,10 @@ Teknikföretaget Bodea vill kombinera person- och kontodata från olika externa 
 
 Det här självstudiearbetsflödet bygger på flera Adobe Experience Platform-tjänster som en del av demonstrationen. Om du vill följa med i utvecklingen rekommenderar vi att du har god förståelse för följande tjänster:
 
-- [Experience Data Modal (XDM)](../xdm/home.md)
+- [Experience Data Model (XDM)](../xdm/home.md)
 - [Källor](../sources/home.md)
 - [Segmentering](../segmentation/home.md)
-- [Mål ](../destinations/home.md)
+- [Mål](../destinations/home.md)
 
 ## Skapa scheman för dina data
 
@@ -58,7 +58,7 @@ Kundprofilen i realtid sammanfogar data från olika källor för att skapa konso
 
 ## Infoga data i Experience Platform
 
-Därefter använder Bodea-marknadsföraren [Marketo Engage-kopplingen](../sources/connectors/adobe-applications/marketo/marketo.md) för att importera data till plattformen för användning i underordnade tjänster. Du kan även importera data genom att använda någon av de godkända källorna för Real-Time CDP B2B Edition.
+Därefter använder Bodea-marknadsföraren [Marketo Engage-kopplingen](../sources/connectors/adobe-applications/marketo/marketo.md) för att importera data till plattformen för användning i underordnade tjänster. Du kan även importera data med någon av de godkända källorna för Real-Time CDP B2B edition.
 
 >[!NOTE]
 > 
@@ -86,7 +86,7 @@ I det här exemplet hittar målgruppen alla personer som arbetar på försäljni
 
 >[!NOTE]
 > 
->Instruktioner om hur du skapar målgrupper för att utvärdera dina data finns i [gränssnittshandboken för segmentbyggaren](../segmentation/ui/segment-builder.md). Mer specifika användningsexempel för B2B-segmentering finns i [segmenteringsöversikten för Real-Time CDP B2B Edition](./segmentation/b2b.md).
+>Instruktioner om hur du skapar målgrupper för att utvärdera dina data finns i [gränssnittshandboken för segmentbyggaren](../segmentation/ui/segment-builder.md). Mer specifika användningsexempel för B2B-segmentering finns i [segmenteringsöversikten för Real-Time CDP B2B edition](./segmentation/b2b.md).
 
 Med Segment Builder kan ni skapa en marknadsföringsbar publik utifrån kundprofildata i realtid och visa uppskattningar av er presumtiva målgrupp baserat på den kombination av attribut, händelser och befintliga målgrupper som ni har definierat.
 
@@ -106,4 +106,4 @@ Bodea-marknadsföraren aktiverar målgruppen till Marketo-destinationen, vilket 
 
 ## Nästa steg
 
-Genom att följa den här självstudiekursen har du lyckats dra nytta av de olika Adobe Experience Platform-tjänster som används av Real-Time CDP B2B Edition. Därför har ni lärt er att importera, segmentera, utvärdera och exportera era B2B-data som användbara målgrupper som kan engageras i olika kanaler.
+Genom att följa den här självstudiekursen har du lyckats utnyttja de olika Adobe Experience Platform-tjänster som används av Real-Time CDP B2B edition. Därför har ni lärt er att importera, segmentera, utvärdera och exportera era B2B-data som användbara målgrupper som kan engageras i olika kanaler.
