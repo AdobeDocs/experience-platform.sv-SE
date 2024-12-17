@@ -5,9 +5,9 @@ breadcrumb-title: Användarhandbok om XDM (Experience Data Model)
 user-guide-description: Utforska en översikt över XDM-systemet (Experience Data Model) i Experience Platform och läs mer om hur du använder klasser och schemafältgrupper för att standardisera upplevelsedata.
 feature: Schemas
 role: Developer
-source-git-commit: 3071d16b6b98040ea3f2e3a34efffae517253b8e
+source-git-commit: 25d74df335e3d7930b7f3a4f4836bd20556780ed
 workflow-type: tm+mt
-source-wordcount: '695'
+source-wordcount: '696'
 ht-degree: 7%
 
 ---
@@ -35,6 +35,7 @@ ht-degree: 7%
          * [Plats](./schema/healthcare/classes/location.md)
       * Fältgrupper {#field-groups}
          * [Konto](./schema/healthcare/field-groups/account.md)
+         * [Avtalad tid](./schema/healthcare/field-groups/appointment.md)
          * [Vårdplan](./schema/healthcare/field-groups/care-plan.md)
          * [Täckning](./schema/healthcare/field-groups/coverage.md)
          * [Mål](./schema/healthcare/field-groups/goal.md)
