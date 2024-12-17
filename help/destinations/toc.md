@@ -5,9 +5,9 @@ user-guide-description: Aktivera kända och okända data för marknadsföringska
 description: I det här dokumentet visas innehållsförteckningen för Adobe Experience Platform-destinationer
 feature: Destinations
 role: Admin,User
-source-git-commit: 3a66902ab169c555a52741e3630d2b9f50149155
+source-git-commit: cc9c6f476a2b50e09cc14df915fc4dfa851a3bb9
 workflow-type: tm+mt
-source-wordcount: '1262'
+source-wordcount: '1267'
 ht-degree: 1%
 
 ---
@@ -175,6 +175,8 @@ ht-degree: 1%
       * [SendGrid-anslutning](./catalog/email-marketing/sendgrid.md)
    * Märkordstillägg {#launch-extensions}
       * [Översikt över taggtillägg](./catalog/launch-extensions/overview.md)
+   * Automatisering av marknadsföring {#marketing-automation}
+      * [RainFocus Attendee-profiler](/help/destinations/catalog/marketing-automation/rainfocus.md)
    * Destinationer för mobilengagemang {#mobile-engagement}
       * [Översikt över mål för mobilengagemang](./catalog/mobile-engagement/overview.md)
       * [Luftfartygsattribut, anslutning](./catalog/mobile-engagement/airship-attributes.md)
