@@ -4,7 +4,8 @@ description: Lär dig mer om schemafältgruppen Möte.
 badgePrivateBeta: label="Private Beta" type="Informative"
 hide: true
 hidefromtoc: true
-source-git-commit: 2a58f6f1663e95c1c7576cd4909fa937b41ae099
+exl-id: 8224a2ee-51ac-4512-b0e4-5f1ab6bfddc4
+source-git-commit: cb39966de77846758c16153f78fcf521f6a421e3
 workflow-type: tm+mt
 source-wordcount: '1089'
 ht-degree: 0%
@@ -120,3 +121,4 @@ Mer information om fältgruppen finns i den offentliga XDM-databasen:
 | [!UICONTROL nth Week Of Month] | `nthWeekOfMonth` | [[!UICONTROL Coding]](../data-types/coding.md) | Anger den n:e veckan i månaden som den avtalade tiden ska återkomma. |
 | [!UICONTROL Day Of Month] | `dayOfMonth` | Heltal | Anger att avtalade tider ska äga rum den här specifika dagen i månaden. |
 | [!UICONTROL Month Interval] | `monthInterval` | Heltal | Anger att återkommande avtalade tider ska inträffa varje månad. |
+

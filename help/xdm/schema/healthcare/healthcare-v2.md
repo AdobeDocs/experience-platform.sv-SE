@@ -5,7 +5,7 @@ badgePrivateBeta: label="Private Beta" type="Informative"
 hide: true
 hidefromtoc: true
 exl-id: a796b58b-b36f-4277-870b-0d3939af8061
-source-git-commit: 8520be2a000edfd2d92bfbc6ebed41b1536fffc1
+source-git-commit: cb39966de77846758c16153f78fcf521f6a421e3
 workflow-type: tm+mt
 source-wordcount: '520'
 ht-degree: 1%
@@ -57,3 +57,4 @@ I följande tabell visas de datatyper som skapats enligt specifikationerna för 
 | [[!UICONTROL Simple Quantity]](./data-types/simple-quantity.md) | Ett uppmätt eller mätbart belopp. |
 | [[!UICONTROL Timing]](./data-types/timing.md) | Information om en händelse som kan inträffa flera gånger. |
 | [[!UICONTROL Virtual Service Detail]](./data-types/virtual-service-detail.md) | Kontaktinformation för virtuell tjänst. |
+
