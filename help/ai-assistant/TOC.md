@@ -4,10 +4,10 @@ user-guide-title: AI Assistant i Adobe Experience Platform Guide
 user-guide-description: Lär dig använda AI Assistant för att snabba upp arbetsflödet med Adobe Experience Platform och Real-time Customer Data Platform.
 description: I det här dokumentet visas innehållsförteckningen för AI Assistant i Adobe Experience Platform.
 role: Admin,User,Developer,Leader
-source-git-commit: 3d16118367c4eab1aea61efd943fe0773b756a98
+source-git-commit: ed09335f7b703be49ed08448ed03ed7bc91831f1
 workflow-type: tm+mt
-source-wordcount: '97'
-ht-degree: 27%
+source-wordcount: '102'
+ht-degree: 26%
 
 ---
 
@@ -23,6 +23,7 @@ ht-degree: 27%
 * [Vanliga frågor och svar](faq.md)
 * Nya funktioner {#new-features}
    * [AI Assistant i Alpha och Beta](./new-features/alpha-beta.md)
+   * [AI-assistenten för kundsupport](./new-features/customer-support.md)
    * [Övervaka viktiga förändringar och förutse målgrupper](./new-features/audience-forecasting.md)
    * [Naturlig språkuppskattning](./new-features/natural-language.md)
    * [XDM-fältidentifiering för målgruppsgenerering](./new-features/xdm-field-discovery.md)
