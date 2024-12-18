@@ -2,9 +2,9 @@
 title: AI Assistant i Adobe Experience Platform produktdokumentation
 description: Kom igång med AI Assistant i Adobe Experience Platform.
 exl-id: bcb86a41-d5d8-4c1a-a86d-79fa0c167bc7
-source-git-commit: 4d89ac33843acd536fbadc85a07bee90a50e6407
+source-git-commit: 38ce83fe0d1c5c558a2e03e0057ac4996097409b
 workflow-type: tm+mt
-source-wordcount: '657'
+source-wordcount: '712'
 ht-degree: 1%
 
 ---
@@ -66,6 +66,14 @@ Ni kan använda AI Assistants naturliga funktioner för att beräkna målgruppss
 Du kan använda AI Assistant för att hjälpa dig att identifiera XDM-fält (Experience Data Model) som du sedan kan använda för att skapa målgrupper i Experience Platform.
 
 [![bild](../rtcdp/assets/do-not-localize/learn-more-button.svg)](./new-features/xdm-field-discovery.md)
+
+>[!TAB AI-assistenten för kundsupport]
+
+### AI-assistenten för kundsupport
+
+Du kan använda AI Assistant för kundsupport för att felsöka utan att behöva lämna dina arbetsflöden. Vid behov kan supportadministratörer nu använda AI Assistant för kundsupport för att skapa kundsupportärenden, med kontext- och sessionsinformation från dina interaktioner med AI Assistant.
+
+[![bild](../rtcdp/assets/do-not-localize/learn-more-button.svg)](./new-features/customer-support.md)
 
 >[!ENDTABS]
 
