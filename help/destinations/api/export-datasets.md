@@ -4,9 +4,9 @@ title: Exportera datauppsättningar med API:t för Flow Service
 description: Lär dig hur du använder API:t för Flow Service för att exportera datauppsättningar till utvalda mål.
 type: Tutorial
 exl-id: f23a4b22-da04-4b3c-9b0c-790890077eaa
-source-git-commit: 3bce663866e7a6e8288444121331fc931a74076a
+source-git-commit: 6f8922f972546d8cceeba63e1bb4d1a75f7ef5c3
 workflow-type: tm+mt
-source-wordcount: '5126'
+source-wordcount: '5134'
 ht-degree: 0%
 
 ---
@@ -2469,6 +2469,10 @@ Observera skillnaden i filformat mellan de två filtyperna när de komprimeras:
 ## API-felhantering {#api-error-handling}
 
 API-slutpunkterna i den här självstudiekursen följer de allmänna felmeddelandeprinciperna för Experience Platform API. Mer information om hur du tolkar felsvar finns i [API-statuskoder](/help/landing/troubleshooting.md#api-status-codes) och [begäranrubrikfel](/help/landing/troubleshooting.md#request-header-errors) i felsökningsguiden för plattformen.
+
+## Kända begränsningar {#known-limitations}
+
+Visa [kända begränsningar](/help/destinations/ui/export-datasets.md#known-limitations) om datauppsättningsexporter.
 
 ## Vanliga frågor {#faq}
 

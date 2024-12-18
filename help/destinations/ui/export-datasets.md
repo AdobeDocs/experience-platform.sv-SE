@@ -3,9 +3,9 @@ title: Exportera datauppsättningar till molnlagringsmål
 type: Tutorial
 description: Lär dig hur du exporterar datauppsättningar från Adobe Experience Platform till den molnlagringsplats du föredrar.
 exl-id: e89652d2-a003-49fc-b2a5-5004d149b2f4
-source-git-commit: 9b64e39d25ad94aa834c8e207396b37c2a121243
+source-git-commit: 5624dab337bcd27e28b4153459bb4e85fab22d6f
 workflow-type: tm+mt
-source-wordcount: '2547'
+source-wordcount: '2529'
 ht-degree: 0%
 
 ---
@@ -14,7 +14,7 @@ ht-degree: 0%
 
 >[!AVAILABILITY]
 >
->* Den här funktionaliteten är tillgänglig för kunder som har köpt Real-Time CDP Prime- eller Ultimate-paketet, Adobe Journey Optimizer eller Customer Journey Analytics. Kontakta din Adobe-representant om du vill ha mer information.
+>* Den här funktionen är tillgänglig för kunder som har köpt Real-Time CDP Prime- eller Ultimate-paketet, Adobe Journey Optimizer eller Customer Journey Analytics. Kontakta din Adobe-representant om du vill ha mer information.
 
 I den här artikeln förklaras det arbetsflöde som krävs för att exportera [datauppsättningar](/help/catalog/datasets/overview.md) från Adobe Experience Platform till den molnlagringsplats som du föredrar, till exempel [!DNL Amazon S3], SFTP-platser eller [!DNL Google Cloud Storage] med hjälp av användargränssnittet i Experience Platform.
 
@@ -22,7 +22,7 @@ Du kan också använda API:erna för Experience Platform för att exportera data
 
 ## Tillgängliga datauppsättningar för export {#datasets-to-export}
 
-De datauppsättningar som du kan exportera varierar beroende på Experience Platform (Real-Time CDP, Adobe Journey Optimizer), nivån (Prime eller Ultimate) och eventuella tillägg som du har köpt (till exempel Data Distiller).
+Vilka datauppsättningar du kan exportera varierar beroende på Experience Platform (Real-Time CDP, Adobe Journey Optimizer), skiktet (Prime eller Ultimate) och eventuella tillägg som du har köpt (till exempel Data Distiller).
 
 Använd tabellen nedan för att förstå vilka datamängdstyper du kan exportera beroende på ditt program, produktnivå och eventuella köpta tillägg:
 
@@ -271,7 +271,7 @@ Följ stegen nedan för att ta bort datauppsättningar från ett befintligt data
 
 Läs produktbeskrivningsdokumenten för att ta reda på hur mycket data du har rätt att exportera för varje Experience Platform-program, per år. Du kan till exempel visa Real-Time CDP produktbeskrivning [här](https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform-b2c-edition-prime-and-ultimate-packages.html).
 
-Observera att dataexporträttigheterna för olika program inte är additiva. Det innebär att om du köper Real-Time CDP Ultimate och Adobe Journey Optimizer Ultimate blir behörigheten för profilexport det större av de två berättigandena enligt produktbeskrivningarna. Volymberättigandena beräknas genom att man räknar ut det totala antalet licensierade profiler och multiplicerar med 500 kB för Real-Time CDP Prime eller 700 kB för Real-Time CDP Ultimate för att avgöra hur mycket data ni har rätt till.
+Observera att dataexporträttigheterna för olika program inte är additiva. Det innebär att om du köper Real-Time CDP Ultimate och Adobe Journey Optimizer Ultimate blir behörigheten för export av profiler den större av de två berättigandena enligt produktbeskrivningarna. Volymberättigandena beräknas genom att man räknar ut det totala antalet licensierade profiler och multiplicerar med 500 kB för Real-Time CDP Prime eller 700 kB för Real-Time CDP Ultimate för att avgöra hur stor datavolym man har rätt till.
 
 Om du å andra sidan har köpt tillägg som Data Distiller, representerar dataexportgränsen som du är berättigad till summan av produktnivån och tillägget.
 
@@ -281,7 +281,6 @@ Du kan visa och spåra din profilexport mot avtalsgränserna på kontrollpanelen
 
 Tänk på följande begränsningar för den allmänna tillgänglighetsreleasen för datauppsättningsexporter:
 
-* För närvarande kan du bara exportera inkrementella filer och ett slutdatum kan inte väljas för datauppsättningsexporter.
 * Experience Platform kan exportera flera filer även för små datauppsättningar. Datauppsättningsexport är utformad för system-till-system-integration och optimerad för prestanda. Därför går det inte att anpassa antalet exporterade filer.
 * Det går för närvarande inte att anpassa exporterade filnamn.
 * Datauppsättningar som skapas via API är för närvarande inte tillgängliga för export.
