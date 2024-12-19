@@ -3,9 +3,9 @@ keywords: Experience Platform;hem;populära ämnen;frågetjänst;frågetjänst;a
 title: SSL-alternativ för frågetjänst
 description: Lär dig mer om SSL-stöd för tredjepartsanslutningar till Adobe Experience Platform Query Service och hur du ansluter i SSL-läge för verifiering.
 exl-id: 41b0a71f-165e-49a2-8a7d-d809f5f683ae
-source-git-commit: 229ce98da8f1c97e421ef413826b0d23754d16df
+source-git-commit: 37c30fc1a040efbce0c221c10b36e105d5b1a962
 workflow-type: tm+mt
-source-wordcount: '1017'
+source-wordcount: '1008'
 ht-degree: 0%
 
 ---
@@ -30,8 +30,8 @@ De olika `sslmode`-parametervärdena ger olika skyddsnivåer. Genom att kryptera
 
 | sslmode | Eavesdroppskydd | MITM-skydd | Beskrivning |
 |---|---|---|---|
-| `allow` | Delvis | Nej | Säkerhet är inte en prioritet, snabbhet och låga bearbetningskostnader är viktigare. Det här läget väljer bara kryptering om servern har tillgång till det. |
-| `prefer` | Delvis | Nej | Kryptering krävs inte, men kommunikationen krypteras om servern stöder den. |
+| `allow` | Ja | Nej | Kryptering krävs för all kommunikation. Nätverket är betrott för att ansluta till rätt server. |
+| `prefer` | Ja | Nej | Kryptering krävs för all kommunikation. Nätverket är betrott för att ansluta till rätt server. |
 | `require` | Ja | Nej | Kryptering krävs för all kommunikation. Nätverket är betrott för att ansluta till rätt server. Server SSL-certifikatvalidering krävs inte. |
 | `verify-ca` | Ja | Beroende på CA-princip | Kryptering krävs för all kommunikation. Servervalidering krävs innan data delas. Detta kräver att du konfigurerar ett rotcertifikat i din [!DNL PostgreSQL]-arbetskatalog. [Mer information finns nedan](#instructions) |
 | `verify-full` | Ja | Ja | Kryptering krävs för all kommunikation. Servervalidering krävs innan data delas. Detta kräver att du konfigurerar ett rotcertifikat i din [!DNL PostgreSQL]-arbetskatalog. [Mer information finns nedan](#instructions). |
