@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Frågor och svar om sekretessregler
 description: Det här dokumentet innehåller svar på vanliga frågor om vilka sekretessregler som stöds och hur de implementeras i Adobe Experience Cloud.
 exl-id: ec553e53-664b-4e18-abb1-4e4063fdd2c9
-source-git-commit: b66a50e40aaac8df312a2c9a977fb8d4f1fb0c80
+source-git-commit: d643b2aeadd4080fa89d6a7b0f84a9f6882d7b89
 workflow-type: tm+mt
-source-wordcount: '1631'
+source-wordcount: '1606'
 ht-degree: 0%
 
 ---
@@ -87,7 +87,7 @@ Om man utgår ifrån att företaget har samlat in personuppgifter och att det ka
 | Förordning | Tidsram för svar | Anteckningar |
 | --- | --- | --- |
 | CCPA (California) | 45 dagar | |
-| GDPR (EU) | 30 dagar | Om begäran är komplex, eller om flera förfrågningar har gjorts av samma registrerade, kan begäran förlängas till 60 dagar. |
+| GDPR (EU) | 30 dagar | |
 | LGPD (Brasilien) | 15 dagar | |
 | PDPA (Thailand) | 30 dagar | Om ett företag inte kan besvara en begäran från en registrerad inom efterlevnadsperioden, kommer företaget att ha ytterligare 30 dagar från den dag då de inte kunde besvara en skriftlig begäran till den registrerade. |
 
