@@ -5,7 +5,7 @@ badgePrivateBeta: label="Private Beta" type="Informative"
 hide: true
 hidefromtoc: true
 exl-id: a796b58b-b36f-4277-870b-0d3939af8061
-source-git-commit: cb39966de77846758c16153f78fcf521f6a421e3
+source-git-commit: 6d1745b93d2ad7cf6ef96510bd5128a43de9ef03
 workflow-type: tm+mt
 source-wordcount: '520'
 ht-degree: 1%
@@ -26,7 +26,7 @@ I följande tabell beskrivs de rekommenderade klasserna och schemafältgrupperna
 | **Konsumentupplevelse för försäkringar**: Förbättra digitala förvärv och upplevelser bland konsumenter som handlar för försäkringar. Exempel: <li> Förstå konsumenternas beteende när det gäller att skicka reklamannonser eller riktade tredjepartsannonser till personer som kommer åt sidor som innehåller allmän information (t.ex. planer, plannamn/nivåer, medicinskt stöd eller välhetsprogram)</li><li> Skicka vaccinrelaterad information om hjärtat för att skapa varumärkeskänslighet eller förfrågningar om att schemalägga vacciner till personer som söker efter information om hjärthälsa och vaccin. </li> | <ul><li>**[XDM-individuell profil](../../classes/individual-profile.md)**:<ul><li>[Konto](./field-groups/account.md)</li><li>[Läkemedelsbefrielse](./field-groups/medication-dispense.md)</li><li>[Begäran om medicinering](./field-groups/medication-request.md)</li><li>[Patient](./field-groups/patient.md)</li></ul></li><li>**[Plats](./classes/location.md)**:<ul><li>[Plats](./field-groups/location.md)</li></ul><li>**[Medication](../../classes/medication.md)**:<ul><li>[Medication](./field-groups/medication.md)</li><li>[Läkemedelsbefrielse](./field-groups/medication-dispense.md)</li><li>[Begäran om medicinering](./field-groups/medication-request.md)</li></ul></li><li>**[Provider](../../classes/provider.md)**:<ul><li>[Konto](./field-groups/account.md)</li><li>[Läkemedelsbefrielse](./field-groups/medication-dispense.md)</li><li>[Begäran om medicinering](./field-groups/medication-request.md)</li></ul><li>**[Planera](../../classes/plan.md)**:<ul><li>[Mål](./field-groups/coverage.md)</li></ul></li></ul> |
 | **Förbättrad providerupplevelse**: Använder providerdata från EMR-systemet för att föreslå alternativa providrar baserat på tillgänglighet, plats och specialitet för avtalade tider. <br> <br>Förbättrar providersökningar för att visa resultat med önskad tillgänglighet, verifiera att den valda providern är en del av betalarnätverket och tillhandahålla kostnadsuppskattningar. | <ul><li>**[enskilda XDM-profiler](../../classes/individual-profile.md)**:<ul><li>[Avtalad tid](./field-groups/appointment.md)</li><li>[Organisation](./field-groups/organization.md)</li><li>[Patient](./field-groups/patient.md)</li><li>[Deltagare](./field-groups/practioner.md)</li><li>[Schema](./field-groups/schedule.md)</li></ul></li><li>**[Plats](./classes/location.md)**:<ul><li>[Plats](./field-groups/location.md)</li></ul><li>**[Provider](../../classes/provider.md)**:<ul><li>[Avtalad tid](./field-groups/appointment.md)</li><li>[Organisation](./field-groups/organization.md)</li><li>[Deltagare](./field-groups/practioner.md)</li><li>[Schema](./field-groups/schedule.md)</li></ul></li></ul> |
 
-{style="table-layout:auto"}
+{style="table-layout:fixed"}
 
 ## Datatyper {#data-types}
 
