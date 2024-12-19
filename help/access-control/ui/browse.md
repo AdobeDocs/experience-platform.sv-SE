@@ -4,10 +4,10 @@ solution: Experience Platform
 title: Välj en produktprofil för att redigera åtkomstkontrollsbehörigheter
 description: Det här dokumentet innehåller de steg som krävs för att bläddra på arbetsytan för åtkomstkontroll. Om du vill konfigurera åtkomstkontroll för Experience Platform via Adobe Admin Console måste du vara administratör för en organisation som har ett abonnemang på Experience Platform.
 exl-id: 1d3c894e-b412-43ba-ba91-ddfa35303d73
-source-git-commit: 81f48de908b274d836f551bec5693de13c5edaf1
+source-git-commit: ca204a6bdbf867268e774d5db6f8e5941d38f0ae
 workflow-type: tm+mt
 source-wordcount: '296'
-ht-degree: 0%
+ht-degree: 2%
 
 ---
 
@@ -30,3 +30,4 @@ Den här användarhandboken fokuserar på hur du använder [!DNL Admin Console] 
 ## Nästa steg
 
 När du har navigerat på arbetsytan för åtkomstkontroll fortsätter du till nästa steg för att [skapa en ny produktprofil](create-profile.md)
+
