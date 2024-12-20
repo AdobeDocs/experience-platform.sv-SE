@@ -2,9 +2,9 @@
 title: Översikt över målportalen
 description: Lär dig hur du använder Audience Portal för att visa, hantera och skapa målgrupper i Adobe Experience Platform.
 exl-id: 505ac22e-05f3-423a-a9a0-7f3470af8945
-source-git-commit: 1aa10d9cbde66a174ddc64ba9ce11149436393c1
+source-git-commit: 260d63d5eebd62cc5a617fccc189af52fd4d0b09
 workflow-type: tm+mt
-source-wordcount: '4347'
+source-wordcount: '4358'
 ht-degree: 0%
 
 ---
@@ -249,7 +249,7 @@ När du har bekräftat att rätt målgrupper finns med i listan kan du fortsätt
 
 >[!NOTE]
 >
-Om du kör en flexibel målgruppsutvärdering på målgrupper som redan är inställda på att aktiveras [efter segmentutvärderingen](../../destinations/ui/activate-batch-profile-destinations.md#export-full-files), kommer målgrupperna att aktiveras så snart det flexibla målgruppsutvärderingsjobbet har slutförts, oavsett eventuella tidigare dagliga aktiveringsjobb.
+Om du kör en flexibel publikutvärdering måste du se till att frekvensen är inställd på **[!UICONTROL After segment evaluation]**. Om du kör en flexibel målgruppsutvärdering på målgrupper som redan är inställda på att aktiveras [efter segmentutvärderingen](../../destinations/ui/activate-batch-profile-destinations.md#export-full-files) aktiveras målgrupperna så snart det flexibla målgruppsutvärderingsjobbet har slutförts, oavsett eventuella tidigare dagliga aktiveringsjobb.
 
 ## Målgruppsinformation {#audience-details}
 

@@ -3,9 +3,9 @@ title: Målgrupps-API-slutpunkt
 description: Använd målgruppsslutpunkten i Adobe Experience Platform Segmentation Service API för att skapa, hantera och uppdatera målgrupper för er organisation programmatiskt.
 role: Developer
 exl-id: cb1a46e5-3294-4db2-ad46-c5e45f48df15
-source-git-commit: 9c50ca0db55ce4b21978273d7b4d1de9b5f9338d
+source-git-commit: 260d63d5eebd62cc5a617fccc189af52fd4d0b09
 workflow-type: tm+mt
-source-wordcount: '1438'
+source-wordcount: '1452'
 ht-degree: 0%
 
 ---
@@ -45,6 +45,7 @@ Följande frågeparametrar kan användas när en lista över målgrupper hämtas
 | `property` | Ett filter som gör att du kan ange målgrupper som **exakt** matchar ett attributvärde. Detta skrivs i formatet `property=` | `property=audienceId==test-audience-id` |
 | `name` | Ett filter som gör att du kan ange målgrupper vars namn **innehåller** det angivna värdet. Det här värdet är inte skiftlägeskänsligt. | `name=Sample` |
 | `description` | Ett filter som gör att du kan ange målgrupper vars beskrivningar **innehåller** det angivna värdet. Det här värdet är inte skiftlägeskänsligt. | `description=Test Description` |
+| `entityType` | Ett filter som gör att du kan ange vilken typ av målgrupp du söker. | `entityType=_xdm.context.account` |
 
 **Begäran**
 

@@ -4,9 +4,9 @@ description: Lär dig hur du skapar och använder kontomålgrupper för att rikt
 badgeB2B: label="B2B edition" type="Informative" url="https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform-b2b-edition-prime-and-ultimate-packages.html newtab=true"
 badgeB2P: label="B2P Edition" type="Informative" url="https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform-b2p-edition-prime-and-ultimate-packages.html newtab=true"
 exl-id: 047930d6-939f-4418-bbcb-8aafd2cf43ba
-source-git-commit: fd0a495d68d6a09ccca66c400993d2e72673321c
+source-git-commit: 260d63d5eebd62cc5a617fccc189af52fd4d0b09
 workflow-type: tm+mt
-source-wordcount: '1488'
+source-wordcount: '1465'
 ht-degree: 0%
 
 ---
@@ -195,10 +195,6 @@ Följande avsnitt innehåller ytterligare information om kontomaterial.
 >abstract="Publiken bryter mot en begränsning. Läs det länkade dokumentet för mer information."
 
 När du använder kontomålgrupper måste målgruppen **** uppfylla följande begränsningar:
-
->[!NOTE]
->
->I följande lista visas **standardbegränsningarna** för kontomålgrupper. Dessa värden **kan** ändras beroende på inställningarna som implementeras av organisationens administratör.
 
 - Det maximala uppslagsfönstret för Experience Events är **30 dagar**.
 - Det maximala djupet för kapslade behållare är **5**.
