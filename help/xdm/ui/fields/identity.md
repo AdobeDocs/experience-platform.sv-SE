@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Definiera identitetsfält i användargränssnittet
 description: Lär dig hur du definierar ett identitetsfält i användargränssnittet i Experience Platform.
 exl-id: 11a53345-4c3f-4537-b3eb-ee7a5952df2a
-source-git-commit: 6020f1c294f123cbf57629405128580efc5642ec
+source-git-commit: 0d16bbbaf81b2057c6b3518a5b8a8698920c36f7
 workflow-type: tm+mt
-source-wordcount: '601'
+source-wordcount: '643'
 ht-degree: 0%
 
 ---
@@ -43,6 +43,10 @@ Ytterligare kontroller visas när du har markerat kryssrutan. Om du vill att det
 Under **[!UICONTROL Identity namespace]** använder du listrutemenyn för att välja lämpligt namnutrymme för identitetsfältet. Standardnamnutrymmen som tillhandahålls av Adobe visas tillsammans med anpassade namnutrymmen som definieras av din organisation.
 
 När du är klar väljer du **[!UICONTROL Apply]** för att tillämpa ändringen på schemat.
+
+>[!IMPORTANT]
+>
+>Om ett primärt identitetsfält redan är inställt kan du ändra det primära identitetsfältet i ditt schema genom att följa stegen ovan. Du måste dock inaktivera och sedan återaktivera alla associerade datauppsättningar i profilen för att ändringen ska börja gälla.
 
 ![](../../images/ui/fields/special/identity-config.png)
 
