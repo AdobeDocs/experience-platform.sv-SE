@@ -4,7 +4,7 @@ solution: Experience Platform
 title: Definiera identitetsfält i användargränssnittet
 description: Lär dig hur du definierar ett identitetsfält i användargränssnittet i Experience Platform.
 exl-id: 11a53345-4c3f-4537-b3eb-ee7a5952df2a
-source-git-commit: d1b571fe72208cf2f2ae339273f05cc38dda9845
+source-git-commit: 6020f1c294f123cbf57629405128580efc5642ec
 workflow-type: tm+mt
 source-wordcount: '601'
 ht-degree: 0%
@@ -59,3 +59,4 @@ Om du har definierat en primär identitet för schemat kan du nu [aktivera schem
 I den här handboken beskrivs hur du definierar ett identitetsfält i användargränssnittet. När data importeras med det här schemat uppdateras dina kundidentitetsdiagram så att de återspeglar schemats identitetsfält. Se guiden för [identitetsdiagramvisningsprogrammet](../../../identity-service/features/identity-graph-viewer.md) om du vill veta mer om hur du utforskar organisationens privata diagram i användargränssnittet.
 
 Mer information om hur du definierar andra XDM-fälttyper i [!DNL Schema Editor] finns i översikten [Definiera fält i användargränssnittet](./overview.md#special).
+
