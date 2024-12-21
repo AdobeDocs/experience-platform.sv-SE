@@ -4,9 +4,9 @@ title: Edge Segmentering med API
 description: Det här dokumentet innehåller exempel på hur du använder kantsegmentering med Adobe Experience Platform Segmentation Service API.
 role: Developer
 exl-id: effce253-3d9b-43ab-b330-943fb196180f
-source-git-commit: e6e9abc7ffe27a2ff9c4ccf4ca243cabdae3d631
+source-git-commit: 828a586f0264147676da5c43c73d3b3b9d50b9c2
 workflow-type: tm+mt
-source-wordcount: '808'
+source-wordcount: '809'
 ht-degree: 0%
 
 ---
@@ -47,7 +47,7 @@ För att ett segment ska kunna utvärderas med hjälp av kantsegmentering måste
 | Endast profil | En segmentdefinition som bara refererar till ett profilattribut. |
 | En händelse med ett profilattribut inom ett relativt tidsfönster på mindre än 24 timmar | En segmentdefinition som refererar till en enda inkommande händelse, med ett eller flera profilattribut, och som inträffar inom ett relativt tidsfönster på mindre än 24 timmar. |
 | Segmentering | En segmentdefinition som innehåller en eller flera gruppdefinitioner eller definitioner för direktuppspelade segment. **Obs!** Om segmentet används med **batch**-segmentdefinitioner kan det ta **upp till 24 timmar** att diskvalificera profilen. Om segment används med segmentdefinitioner för **direktuppspelning**, kommer profilinaktiveringen att ske på ett direktuppspelningssätt. |
-| Flera händelser med ett profilattribut | Alla segmentdefinitioner som refererar till flera händelser **under de senaste 24 timmarna** och (valfritt) har ett eller flera profilattribut. |
+| Flera händelser med ett profilattribut | Alla segmentdefinitioner som refererar till flera icke-sekventiella händelser **under de senaste 24 timmarna** och (valfritt) har ett eller flera profilattribut. |
 
 Dessutom måste segmentet **** vara kopplat till en sammanfogningsprincip som är aktiv på kanten. Mer information om sammanfogningsprinciper finns i [policyguiden för sammanfogning](../../profile/api/merge-policies.md).
 

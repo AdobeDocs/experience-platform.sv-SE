@@ -3,9 +3,9 @@ solution: Experience Platform
 title: Användargränssnittshandbok för segmentering i Edge
 description: Lär dig hur du använder kantsegmentering för att utvärdera segmentdefinitioner i plattformar direkt, vilket möjliggör användning av samma sida och nästa sidpersonalisering.
 exl-id: eae948e6-741c-45ce-8e40-73d10d5a88f1
-source-git-commit: e6e9abc7ffe27a2ff9c4ccf4ca243cabdae3d631
+source-git-commit: 828a586f0264147676da5c43c73d3b3b9d50b9c2
 workflow-type: tm+mt
-source-wordcount: '594'
+source-wordcount: '595'
 ht-degree: 0%
 
 ---
@@ -42,7 +42,7 @@ En fråga kan utvärderas med kantsegmentering om den uppfyller något av villko
 | Endast profil | En segmentdefinition som bara refererar till ett profilattribut. |
 | En händelse med ett profilattribut inom ett relativt tidsfönster på mindre än 24 timmar | En segmentdefinition som refererar till en enda inkommande händelse, med ett eller flera profilattribut, och som inträffar inom ett relativt tidsfönster på mindre än 24 timmar. |
 | Segmentering | En segmentdefinition som innehåller en eller flera gruppdefinitioner eller definitioner för direktuppspelade segment. **Obs!** Om segmentet används med **batch**-segmentdefinitioner kan det ta **upp till 24 timmar** att diskvalificera profilen. Om segment används med segmentdefinitioner för **direktuppspelning**, kommer profilinaktiveringen att ske på ett direktuppspelningssätt. |
-| Flera händelser med ett profilattribut | Alla segmentdefinitioner som refererar till flera händelser **under de senaste 24 timmarna** och (valfritt) har ett eller flera profilattribut. |
+| Flera händelser med ett profilattribut | Alla segmentdefinitioner som refererar till flera icke-sekventiella händelser **under de senaste 24 timmarna** och (valfritt) har ett eller flera profilattribut. |
 
 En segmentdefinition kommer **inte** att aktiveras för kantsegmentering i följande scenario:
 
