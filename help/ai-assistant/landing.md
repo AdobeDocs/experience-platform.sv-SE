@@ -2,9 +2,9 @@
 title: AI Assistant i Adobe Experience Platform produktdokumentation
 description: Kom igång med AI Assistant i Adobe Experience Platform.
 exl-id: bcb86a41-d5d8-4c1a-a86d-79fa0c167bc7
-source-git-commit: 38ce83fe0d1c5c558a2e03e0057ac4996097409b
+source-git-commit: 9a8b1527f932e8b0091af7fb999ed638e28de2d0
 workflow-type: tm+mt
-source-wordcount: '712'
+source-wordcount: '790'
 ht-degree: 1%
 
 ---
@@ -125,6 +125,20 @@ Titta på följande video för att lära dig mer om hur du kan hitta i AI Assist
 
 >[!VIDEO](https://video.tv.adobe.com/v/3440962/?learn=on)
 
+### Använd AI-assistenten för att validera svar
+
+Titta på följande video för att lära dig hur du kan använda AI Assistant för att verifiera och validera svar.
+
+>[!VIDEO](https://video.tv.adobe.com/v/3441738/?learn=on)
+
+Mer information finns i dokumentationen om [verifiering av AI Assistant-svar](ui-guide.md#verify-operational-insights-responses).
+
+### Använd AI Assistant för effektanalys
+
+Titta på följande video för att lära dig hur du kan använda AI Assistant för att utföra mer effektiv effektanalys innan du gör några ändringar i dataobjekten.
+
+>[!VIDEO](https://video.tv.adobe.com/v/3441680/?learn=on)
+
 ## AI Assistant - fallbibliotek
 
 >[!BEGINTABS]
@@ -136,6 +150,7 @@ Läs följande för exempel på användning av AI Assistant:
 * [Minska introduktionstiden för nya medlemmar i ditt team](https://experienceleaguecommunities.adobe.com/t5/adobe-experience-platform-blogs/onboard-new-team-members-in-less-than-half-the-time-with-ai/ba-p/706153)
 * [Tydligare målgrupper och optimerade marknadsföringsåtgärder](https://experienceleaguecommunities.adobe.com/t5/adobe-experience-platform-blogs/ai-assistant-helps-optimize-marketing-operations-by-de/ba-p/696002)
 * [Kontrollera beroenden och minimera risken under dataperifieringar](https://experienceleaguecommunities.adobe.com/t5/adobe-experience-platform-blogs/ai-assistant-minimizes-risk-during-data-updates-by-checking/ba-p/713364)
+* [Minimera risken under datauppdateringar genom att kontrollera beroenden på några sekunder](https://experienceleaguecommunities.adobe.com/t5/adobe-experience-platform-blogs/ai-assistant-minimizes-risk-during-data-updates-by-checking/ba-p/713364)
 
 >[!TAB Ytterligare videoinnehåll]
 
