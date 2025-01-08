@@ -3,9 +3,9 @@ title: Amazon Redshift Source Connector - översikt
 description: Lär dig hur du ansluter Amazon Redshift till Adobe Experience Platform med hjälp av API:er eller användargränssnittet.
 badgeUltimate: label="Ultimate" type="Positive"
 exl-id: 75e577dd-a0b0-4f82-a371-5ec9255544f8
-source-git-commit: 9a8139c26b5bb5ff937a51986967b57db58aab6c
+source-git-commit: dbeeab9182ae67e5c9c691707faeddf04f4e94b2
 workflow-type: tm+mt
-source-wordcount: '249'
+source-wordcount: '308'
 ht-degree: 0%
 
 ---
@@ -24,7 +24,17 @@ Experience Platform har stöd för att importera data från en tredjepartsdataba
 
 En lista med IP-adresser måste läggas till tillåtelselista innan du kan arbeta med källanslutningar. Om du inte lägger till dina regionspecifika IP-adresser i tillåtelselista kan det leda till fel eller sämre prestanda när du använder källor. Mer information finns på sidan [IP-adress tillåtelselista](../../ip-address-allow-list.md).
 
-Dokumentationen nedan innehåller information om hur du ansluter [!DNL Amazon Redshift] till plattformen med API:er eller användargränssnittet:
+## Konfigurera din [!DNL Amazon Redshift]-källa för Experience Platform på Amazon Web Services {#aws}
+
+>[!AVAILABILITY]
+>
+>Detta avsnitt gäller för implementeringar av Experience Platform som körs på Amazon Web Services (AWS). Experience Platform som körs på AWS är för närvarande tillgängligt för ett begränsat antal kunder. Mer information om den Experience Platform-infrastruktur som stöds finns i [Översikt över flera moln i Experience Platform](../../../landing/multi-cloud.md).
+
+Lägg till följande IP-adresser i tillåtelselista för att ansluta ditt [!DNL Amazon Redshift]-konto till Experience Platform på Amazon Web Services (AWS):
+
+- `34.193.63.59`
+- `44.217.93.240`
+- `44.194.79.229`
 
 ## Anslut [!DNL Amazon Redshift] till plattformen med API:er
 
