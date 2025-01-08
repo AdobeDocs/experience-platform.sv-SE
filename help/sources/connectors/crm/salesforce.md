@@ -2,9 +2,9 @@
 title: Salesforce Source Connector - översikt
 description: Lär dig hur du ansluter Salesforce till Adobe Experience Platform med API:er eller användargränssnittet.
 exl-id: 597778ad-3cf8-467c-ad5b-e2850967fdeb
-source-git-commit: 5d28db34edd377269e8710b1741098a08616ae5f
+source-git-commit: 258e54b969e7b392eec97459e0a51931f2109fe7
 workflow-type: tm+mt
-source-wordcount: '864'
+source-wordcount: '1483'
 ht-degree: 0%
 
 ---
@@ -69,7 +69,7 @@ Följande tabell innehåller exempelvärden samt ytterligare information om hur 
 
 {style="table-layout:auto"}
 
-### Köra skript
+### Kör skripten
 
 När din [!DNL Postman]-samling och miljö är konfigurerad kan du nu köra skriptet via gränssnittet [!DNL Postman].
 
@@ -83,7 +83,183 @@ Gränssnittet [!DNL Runner] visas. Se till att alla kryssrutor är markerade och
 
 En lyckad begäran skapar B2B-namnutrymmen och scheman enligt betaspecifikationerna.
 
-## Anslut [!DNL Salesforce] till plattformen med API:er
+## Konfigurera din [!DNL Salesforce]-källa för Experience Platform på Amazon Web Services {#aws}
+
+>[!AVAILABILITY]
+>
+>Detta avsnitt gäller för implementeringar av Experience Platform som körs på Amazon Web Services (AWS). Experience Platform som körs på AWS är för närvarande tillgängligt för ett begränsat antal kunder. Mer information om den Experience Platform-infrastruktur som stöds finns i [Översikt över flera moln i Experience Platform](../../../landing/multi-cloud.md).
+
+Följ stegen nedan för att lära dig hur du kan konfigurera ditt [!DNL Salesforce]-konto för Experience Platform på Amazon Web Services (AWS).
+
+### Förhandskrav
+
+Om du vill ansluta ditt [!DNL Salesforce]-konto till Experience Platform i en AWS-region måste du ha följande:
+
+- Ett [!DNL Salesforce]-konto med API-åtkomst.
+- A [!DNL Salesforce Connected App] som du sedan kan använda för att aktivera JWT_BEARER OAuth-flöde.
+- Nödvändiga behörigheter i [!DNL Salesforce] för att komma åt data.
+
+Du måste också lägga till följande IP-adresser i tillåtelselista för att kunna ansluta ditt [!DNL Salesforce]-konto till Experience Platform på Amazon Web Services (AWS):
+
+- `34.193.63.59`
+- `44.217.93.240`
+- `44.194.79.229`
+
+### Skapa en [!DNL Salesforce Connected App]
+
+Använd först följande för att skapa PEM-filer med certifikat/nyckelpar.
+
+```shell
+openssl req -newkey rsa:4096 -new -nodes -x509 -days 3650 -keyout key.pem -out cert.pem  
+```
+
+1. Välj inställningar (![Inställningsikonen på kontrollpanelen [!DNL Salesforce].](/help/images/icons/settings.png)) och välj sedan **[!DNL Setup]**.
+2. Navigera till [!DNL App Manager] och välj sedan **[!DNL New Connection App]**.
+3. Ange ett namn för appen och låt resten av fälten fyllas i automatiskt.
+4. Aktivera rutan för [!DNL Enable OAuth Settings].
+5. Ange en återanrops-URL. Eftersom detta inte kommer att användas för JWT kan du använda `https://localhost`.
+6. Aktivera rutan för [!DNL Use Digital Signatures].
+7. Överför filen cert.perm som skapades tidigare.
+
+#### Lägg till nödvändiga behörigheter
+
+Lägg till följande behörigheter:
+
+1. Hantera användardata via API:er (api)
+2. Åtkomst till anpassade behörigheter (custom_permissions)
+3. Öppna URL-tjänsten för identitet (id, profil, e-post, adress, telefon)
+4. Åtkomst till unika identifierare (openID)
+5. Utför begäranden när som helst (refresh_token, offline_access)
+
+När du har lagt till dina behörigheter måste du aktivera rutan för **[!DNL Issue JSON Web Token (JWT)-based access tokens for named user]**.
+
+Välj sedan **[!DNL Save]**, **[!DNL Continue]** och sedan **[!DNL Manage Customer Details]**. Använd panelen med konsumentinformation för att hämta följande:
+
+- **Konsumentnyckel**: Du kommer senare att använda den här konsumentnyckeln som ditt klient-ID när du autentiserar ditt [!DNL Salesforce]-konto för Experience Platform.
+- **Konsumenthemlighet**: Du kommer senare att använda den här konsumenthemligheten som ditt klient-ID när du autentiserar ditt [!DNL Salesforce]-konto för Experience Platform.
+
+### Auktorisera din [!DNL Salesforce]-användare till den anslutna appen
+
+Följ stegen nedan för att få behörighet att använda den anslutna appen:
+
+1. Navigera till **[!DNL Manage Connected Apps]**.
+2. Välj **[!DNL Edit]**.
+3. Konfigurera **[!DNL Permitted Users]** som **[!DNL Admin approved users are pre-authorized]** och välj sedan **[!DNL Save]**.
+4. Navigera till **[!DNL Settings]> [!DNL Manage Users] >[!DNL Profiles]**.
+5. Redigera den profil som är kopplad till användaren.
+6. Navigera till **[!DNL Connected App Access]** och markera sedan appen som du skapade i ett tidigare steg.
+
+### Generera JWT Bearer-token
+
+Följ stegen nedan för att generera din JWT Bearer-token.
+
+#### Konvertera nyckelpar till pkcs12
+
+Om du vill generera en JWT Bärartoken måste du först använda följande kommando för att konvertera ditt certifikat/nyckelpar till pkcs12-format. Under det här steget måste du även **ange ett exportlösenord** när du uppmanas till det.
+
+```shell
+openssl pkcs12 -export -in cert.pem -inkey key.pem -name jwtcert >jwtcert.p12
+```
+
+#### Skapa java-nyckelbehållare baserat på pkcs12
+
+Använd sedan följande kommando för att skapa en java-nyckelbehållare baserad på de pkcs12 som du just genererade. Under det här steget måste du även ange ett **lösenord för målnyckelbehållare** när du uppmanas till det. Dessutom måste du ange det tidigare exportlösenordet som källnyckelbehållarlösenord.
+
+```shell
+keytool -importkeystore -srckeystore jwtcert.p12 -destkeystore keystore.jks -srcstoretype pkcs12 -alias jwtcert
+```
+
+#### Bekräfta att ditt keystroke.jks innehåller ett jwtcert-alias
+
+Använd sedan följande kommando för att bekräfta att `keystroke.jks` innehåller ett `jwtcert`-alias. Under det här steget uppmanas du att ange lösenordet för målnyckelbehållaren som skapades i det föregående steget.
+
+```shell
+keytool -keystore keystore.jks -list
+```
+
+#### Generera signerad token
+
+Använd slutligen Java-klassens JWTExample nedan för att generera din signerade token.
+
+```java
+package org.example;
+ 
+import org.apache.commons.codec.binary.Base64;
+ 
+import java.io.*;
+import java.security.*;
+import java.text.MessageFormat;
+ 
+public class Main {
+ 
+    public static void main(String[] args) {
+ 
+        String header = "{\"alg\":\"RS256\"}";
+        String claimTemplate = "'{'\"iss\": \"{0}\", \"sub\": \"{1}\", \"aud\": \"{2}\", \"exp\": \"{3}\"'}'";
+ 
+        try {
+            StringBuffer token = new StringBuffer();
+ 
+            //Encode the JWT Header and add it to our string to sign
+            token.append(Base64.encodeBase64URLSafeString(header.getBytes("UTF-8")));
+ 
+            //Separate with a period
+            token.append(".");
+ 
+            //Create the JWT Claims Object
+            String[] claimArray = new String[5];
+            claimArray[0] = "{CLIENT_ID}";
+            claimArray[1] = "{AUTHORIZED_SALESFORCE_USERNAME}";
+            claimArray[2] = "{SALESFORCE_LOGIN_URL}";
+            claimArray[3] = Long.toString((System.currentTimeMillis() / 1000) + 2629746*4);
+            MessageFormat claims;
+            claims = new MessageFormat(claimTemplate);
+            String payload = claims.format(claimArray);
+ 
+            //Add the encoded claims object
+            token.append(Base64.encodeBase64URLSafeString(payload.getBytes("UTF-8")));
+ 
+            //Load the private key from a keystore
+            KeyStore keystore = KeyStore.getInstance("JKS");
+            keystore.load(new FileInputStream("path/to/keystore"), "keystorepassword".toCharArray());
+            PrivateKey privateKey = (PrivateKey) keystore.getKey("jwtcert", "privatekeypassword".toCharArray());
+ 
+            //Sign the JWT Header + "." + JWT Claims Object
+            Signature signature = Signature.getInstance("SHA256withRSA");
+            signature.initSign(privateKey);
+            signature.update(token.toString().getBytes("UTF-8"));
+            String signedPayload = Base64.encodeBase64URLSafeString(signature.sign());
+ 
+            //Separate with a period
+            token.append(".");
+ 
+            //Add the encoded signature
+            token.append(signedPayload);
+ 
+            System.out.println(token.toString());
+ 
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+}
+```
+
+| Egenskap | Konfigurationer |
+| --- | --- |
+| `claimArray[0]` | Uppdatera `claimArray[0]` med ditt klient-ID. |
+| `claimArray[1]` | Uppdatera `claimArray[1]` med användarnamnet [!DNL Salesforce] som är auktoriserat för appen. |
+| `claimArray[2]` | Uppdatera `claimArray[2]` med din [!DNL Salesforce]-inloggnings-URL. |
+| `claimArray[3]` | Uppdatera `claimArray[3]` med ett förfallodatum som är formaterat i millisekunder sedan epoktiden. `3660624000000` är till exempel 12-31-2085. |
+| `/path/to/keystore` | Ersätt `/path/to/keystore` med rätt sökväg till din keystore.jks |
+| `keystorepassword` | Ersätt `keystorepassword` med lösenordet för målnyckelbehållaren. |
+| `privatekeypassword` | Ersätt `privatekeypassword` med ditt källnyckellösenord. |
+
+## Nästa steg
+
+När du har slutfört kravkonfigurationen för ditt [!DNL Salesforce]-konto kan du fortsätta att ansluta ditt [!DNL Salesforce]-konto till Experience Platform och importera dina CRM-data. Läs dokumentationen nedan för mer information:
+
+### Anslut [!DNL Salesforce] till plattformen med API:er
 
 Dokumentationen nedan innehåller information om hur du ansluter [!DNL Salesforce] till plattformen med API:er eller användargränssnittet:
 
@@ -91,7 +267,7 @@ Dokumentationen nedan innehåller information om hur du ansluter [!DNL Salesforc
 - [Utforska datatabeller med API:t för Flow Service](../../tutorials/api/explore/tabular.md)
 - [Skapa ett dataflöde för en CRM-källa med API:t för Flow Service](../../tutorials/api/collect/crm.md)
 
-## Anslut [!DNL Salesforce] till plattformen med användargränssnittet
+### Anslut [!DNL Salesforce] till plattformen med användargränssnittet
 
 - [Skapa en Salesforce-källanslutning i användargränssnittet](../../tutorials/ui/create/crm/salesforce.md)
 - [Skapa ett dataflöde för en CRM-anslutning i användargränssnittet](../../tutorials/ui/dataflow/crm.md)
