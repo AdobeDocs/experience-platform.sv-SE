@@ -4,9 +4,9 @@ description: Lär dig hur du konfigurerar egna krypteringsnycklar för data som 
 role: Developer
 feature: Privacy
 exl-id: cd33e6c2-8189-4b68-a99b-ec7fccdc9b91
-source-git-commit: c0eb5b5c3a1968cae2bc19b7669f70a97379239b
+source-git-commit: f2737355ca0652f434bd5f86acc65139f767e56f
 workflow-type: tm+mt
-source-wordcount: '743'
+source-wordcount: '819'
 ht-degree: 0%
 
 ---
@@ -14,6 +14,10 @@ ht-degree: 0%
 # Kundhanterade nycklar i Adobe Experience Platform
 
 Data som lagras på Adobe Experience Platform krypteras i vila med hjälp av systemnivånycklar. Om du använder ett program som är byggt på plattformen kan du välja att använda dina egna krypteringsnycklar istället, vilket ger dig större kontroll över datasäkerheten.
+
+>[!AVAILABILITY]
+>
+>Om implementeringen av Experience Platform körs på Amazon Web Services (AWS) kan du välja att använda nyckelhanteringstjänsten (KMS) för plattformsdatakryptering. Experience Platform som körs på AWS är för närvarande tillgängligt för ett begränsat antal kunder. Mer information om den Experience Platform-infrastruktur som stöds finns i [Översikt över flera moln i Experience Platform](https://experienceleague.adobe.com/en/docs/experience-platform/landing/multi-cloud). Mer information om hur du skapar och hanterar krypteringsnycklar i AWS KMS finns i [AWS KMS-krypteringsguiden](../key-management-service/overview.md).
 
 >[!NOTE]
 >

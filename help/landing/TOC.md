@@ -3,9 +3,9 @@ audience: user
 user-guide-title: Översikt över Adobe Experience Platform
 breadcrumb-title: Översikt över Experience Platform
 user-guide-description: Läs mer om hur Experience Platform kan leverera personaliserade upplevelser till era kunder i realtid med användarhandböcker, dokumentation och självstudiekurser.
-source-git-commit: dde5c1367706d015308ebea687d7f2a41947fb20
+source-git-commit: 37a94874d2c104c753b0f1efbae20c1cce0b29f3
 workflow-type: tm+mt
-source-wordcount: '282'
+source-wordcount: '288'
 ht-degree: 18%
 
 ---
@@ -71,6 +71,8 @@ ht-degree: 18%
       * [Konfigurera ett Azure Key Vault](./governance-privacy-security/customer-managed-keys/azure-key-vault-config.md)
       * [Använd API:t för att konfigurera CMK](./governance-privacy-security/customer-managed-keys/api-set-up.md)
       * [Använd användargränssnittet för att konfigurera CMK](./governance-privacy-security/customer-managed-keys/ui-set-up.md)
+   * Nyckelhanteringstjänst {#key-management-service}
+      * [Nyckelhanteringstjänst](./governance-privacy-security/key-management-service/overview.md)
 * Licensanvändning och skyddsräcken {#license}
    * [Bästa praxis för berättigande av datahanteringslicens](./license-usage-and-guardrails/data-management-best-practices.md)
    * [Kontrollpanel för licensanvändning](./license-usage-and-guardrails/license-usage-dashboard.md)
