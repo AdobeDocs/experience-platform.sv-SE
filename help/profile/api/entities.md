@@ -5,9 +5,9 @@ type: Documentation
 description: Med Adobe Experience Platform kan du få åtkomst till kundprofildata i realtid med RESTful API:er eller användargränssnittet. I den här handboken beskrivs hur du får åtkomst till entiteter, som ofta kallas"profiler", med hjälp av profilens API.
 role: Developer
 exl-id: 06a1a920-4dc4-4468-ac15-bf4a6dc885d4
-source-git-commit: c16ce1020670065ecc5415bc3e9ca428adbbd50c
+source-git-commit: 9f9823a23c488e63b8b938cb885f050849836e36
 workflow-type: tm+mt
-source-wordcount: '1734'
+source-wordcount: '2181'
 ht-degree: 0%
 
 ---
@@ -20,11 +20,13 @@ Med Adobe Experience Platform kan du komma åt [!DNL Real-Time Customer Profile]
 
 API-slutpunkten som används i den här guiden ingår i [[!DNL Real-Time Customer Profile API]](https://www.adobe.com/go/profile-apis-en). Innan du fortsätter bör du läsa [kom igång-guiden](getting-started.md) för att få länkar till relaterad dokumentation, en guide till hur du läser exempelanropen för API i det här dokumentet och viktig information om vilka huvuden som krävs för att kunna anropa ett [!DNL Experience Platform] -API.
 
-## Åtkomst till profildata via identitet
+## Hämta en entitet {#retrieve-entity}
 
-Du kan komma åt en [!DNL Profile]-entitet genom att göra en GET-förfrågan till `/access/entities`-slutpunkten och ange entitetens identitet som en serie frågeparametrar. Den här identiteten består av ett ID-värde (`entityId`) och identitetsnamnområdet (`entityIdNS`).
+Du kan hämta antingen en profilentitet eller dess tidsseriedata genom att göra en GET-förfrågan till slutpunkten `/access/entities` tillsammans med de obligatoriska frågeparametrarna.
 
-Frågeparametrar som anges i sökvägen anger vilka data som ska användas. Du kan inkludera flera parametrar, avgränsade med et-tecken (&amp;). En fullständig lista över giltiga parametrar finns i avsnittet [frågeparametrar](#query-parameters) i bilagan.
+>[!BEGINTABS]
+
+>[!TAB Profilentitet]
 
 **API-format**
 
@@ -32,20 +34,37 @@ Frågeparametrar som anges i sökvägen anger vilka data som ska användas. Du k
 GET /access/entities?{QUERY_PARAMETERS}
 ```
 
+Frågeparametrar som anges i sökvägen anger vilka data som ska användas. Du kan inkludera flera parametrar, avgränsade med et-tecken (&amp;).
+
+Om du vill komma åt en profilentitet måste **du** ange följande frågeparametrar:
+
+- `schema.name`: Namnet på entitetens XDM-schema. I det här fallet `schema.name=_xdm.context.profile`.
+- `entityId`: ID:t för entiteten som du försöker hämta.
+- `entityIdNS`: Namnområdet för entiteten som du försöker hämta. Det här värdet måste anges om `entityId` är **inte** ett XID.
+
+En fullständig lista över giltiga parametrar finns i avsnittet [frågeparametrar](#query-parameters) i bilagan.
+
 **Begäran**
 
-Följande begäran hämtar en kunds e-postadress och namn med hjälp av en identitet:
+Följande begäran hämtar en kunds e-postadress och namn med hjälp av en identitet.
+
++++ Ett exempel på en begäran om att hämta en entitet med en identitet
 
 ```shell
-curl -X GET \
-  'https://platform.adobe.io/data/core/ups/access/entities?schema.name=_xdm.context.profile&entityId=janedoe@example.com&entityIdNS=email&fields=identities,person.name,workEmail' \
+curl -X GET 'https://platform.adobe.io/data/core/ups/access/entities?schema.name=_xdm.context.profile&entityId=janedoe@example.com&entityIdNS=email&fields=identities,person.name,workEmail' \
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
   -H 'x-api-key: {API_KEY}' \
   -H 'x-gw-ims-org-id: {ORG_ID}' \
   -H 'x-sandbox-name: {SANDBOX_NAME}'
 ```
 
++++
+
 **Svar**
+
+Ett lyckat svar returnerar HTTP-status 200 med den begärda entiteten.
+
++++ Ett exempelsvar som innehåller den begärda entiteten
 
 ```json
 {
@@ -69,7 +88,7 @@ curl -X GET \
                     }
                 },
                 {
-                    "id": "janesmith@example.com",
+                    "id": "johnsmith@example.com",
                     "namespace": {
                         "code": "email"
                     }
@@ -114,13 +133,305 @@ curl -X GET \
 }
 ```
 
++++
+
 >[!NOTE]
 >
 >Om ett relaterat diagram länkar mer än 50 identiteter returnerar den här tjänsten HTTP-status 422 och meddelandet&quot;För många relaterade identiteter&quot;. Om du får det här felet kan du lägga till fler frågeparametrar för att begränsa sökningen.
 
-## Åtkomst till profildata via lista över identiteter
+>[!TAB Händelse för tidsserie]
 
-Du kan få åtkomst till flera profilentiteter via deras identiteter genom att göra en POST-förfrågan till `/access/entities`-slutpunkten och ange identiteterna i nyttolasten. Dessa identiteter består av ett ID-värde (`entityId`) och ett identitetsnamnområde (`entityIdNS`).
+**API-format**
+
+```http
+GET /access/entities?{QUERY_PARAMETERS}
+```
+
+Frågeparametrar som anges i sökvägen anger vilka data som ska användas. Du kan inkludera flera parametrar, avgränsade med et-tecken (&amp;).
+
+Du **måste** tillhandahålla följande frågeparametrar för att få åtkomst till tidsseriens händelsedata:
+
+- `schema.name`: Namnet på entitetens XDM-schema. I det här fallet är värdet `schema.name=_xdm.context.experienceevent`.
+- `relatedSchema.name`: Namnet på det relaterade schemat. Eftersom schemanamnet är Experience Event måste värdet för **det här** vara `relatedSchema.name=_xdm.context.profile`.
+- `relatedEntityId`: ID:t för den relaterade entiteten.
+- `relatedEntityIdNS`: Namnområdet för den relaterade entiteten. Det här värdet måste anges om `relatedEntityId` är **inte** ett XID.
+
+En fullständig lista över giltiga parametrar finns i avsnittet [frågeparametrar](#query-parameters) i bilagan.
+
+**Begäran**
+
+Följande begäran hittar en profilentitet efter ID och hämtar värdena för egenskaperna `endUserIDs`, `web` och `channel` för alla tidsseriehändelser som är associerade med entiteten.
+
++++ En exempelbegäran om att hämta tidsseriehändelser som är associerade med en entitet
+
+```shell
+curl -X GET 'https://platform.adobe.io/data/core/ups/access/entities?schema.name=_xdm.context.experienceevent&relatedSchema.name=_xdm.context.profile&relatedEntityId=89149270342662559642753730269986316900&relatedEntityIdNS=ECID&fields=endUserIDs,web,channel&startTime=1531260476000&endTime=1531260480000&limit=1' \
+  -H 'Authorization: Bearer {ACCESS_TOKEN}' \
+  -H 'x-api-key: {API_KEY}' \
+  -H 'x-gw-ims-org-id: {ORG_ID}' \
+  -H 'x-sandbox-name: {SANDBOX_NAME}'
+```
+
++++
+
+**Svar**
+
+Ett lyckat svar returnerar HTTP-status 200 med en sidnumrerad lista över tidsseriehändelser och associerade fält som har angetts i frågeparametrarna för begäran.
+
+>[!NOTE]
+>
+>Begäran angav en gräns på ett (`limit=1`), därför är `count` i svaret nedan 1 och bara en entitet returneras.
+
++++ Ett exempelsvar som innehåller data för begärda tidsseriehändelser
+
+```json
+{
+    "_page": {
+        "orderby": "timestamp",
+        "start": "c8d11988-6b56-4571-a123-b6ce74236036",
+        "count": 1,
+        "next": "c8d11988-6b56-4571-a123-b6ce74236037"
+    },
+    "children": [
+        {
+            "relatedEntityId": "A29cgveD5y64e2RixjUXNzcm",
+            "entityId": "c8d11988-6b56-4571-a123-b6ce74236036",
+            "timestamp": 1531260476000,
+            "entity": {
+                "endUserIDs": {
+                    "_experience": {
+                        "ecid": {
+                            "id": "89149270342662559642753730269986316900",
+                            "namespace": {
+                                "code": "ecid"
+                            }
+                        }
+                    }
+                },
+                "channel": {
+                    "_type": "web"
+                },
+                "web": {
+                    "webPageDetails": {
+                        "name": "Fernie Snow",
+                        "pageViews": {
+                            "value": 1
+                        }
+                    }
+                }
+            },
+            "lastModifiedAt": "2018-08-21T06:49:02Z"
+        }
+    ],
+    "_links": {
+        "next": {
+            "href": "/entities?start=c8d11988-6b56-4571-a123-b6ce74236037&orderby=timestamp&schema.name=_xdm.context.experienceevent&relatedSchema.name=_xdm.context.profile&relatedEntityId=89149270342662559642753730269986316900&relatedEntityIdNS=ECID&fields=endUserIDs,web,channel&startTime=1531260476000&endTime=1531260480000&limit=1"
+        }
+    }
+}
+```
+
++++
+
+>[!TAB B2B-konto]
+
+**API-format**
+
+```http
+GET /access/entities?{QUERY_PARAMETERS}
+```
+
+Frågeparametrar som anges i sökvägen anger vilka data som ska användas. Du kan inkludera flera parametrar, avgränsade med et-tecken (&amp;).
+
+Om du vill komma åt B2B-kontodata **måste** ange följande frågeparametrar:
+
+- `schema.name`: Namnet på entitetens XDM-schema. I det här fallet är värdet `schema.name=_xdm.context.account`.
+- `entityId`: ID:t för entiteten som du försöker hämta.
+- `entityIdNS`: Namnområdet för entiteten som du försöker hämta. Det här värdet måste anges om `entityId` är **inte** ett XID.
+
+En fullständig lista över giltiga parametrar finns i avsnittet [frågeparametrar](#query-parameters) i bilagan.
+
+**Begäran**
+
++++ Ett exempel på en begäran om att hämta ett B2B-konto
+
+```shell
+curl -X GET 'https://platform.adobe.io/data/core/ups/access/entities?schema.name=_xdm.context.account&entityIdNs=b2b_account&entityId=2334262' \
+  -H 'Authorization: Bearer {ACCESS_TOKEN}' \
+  -H 'x-api-key: {API_KEY}' \
+  -H 'x-gw-ims-org-id: {ORG_ID}' \
+  -H 'x-sandbox-name: {SANDBOX_NAME}'
+```
+
++++
+
+**Svar**
+
+Ett lyckat svar returnerar HTTP-status 200 med den begärda entiteten.
+
++++ Ett exempelsvar som innehåller den begärda entiteten
+
+```json
+{
+    "GuQ-AUFjgjaeIw": {
+        "entityId": "GuQ-AUFjgjaeIw",
+        "mergePolicy": {
+            "id": "a6150f47-a94f-4c9d-bfa0-958a370020ee"
+        },
+        "sources": [
+            "er_m_attr"
+        ],
+        "entity": {
+            "_id": "id1",
+            "extSourceSystemAudit": {
+                "lastReferencedDate": "2024-03-09 12:21:43.0",
+                "lastActivityDate": "2024-03-09 12:21:43.0",
+                "lastUpdatedDate": "2024-03-09 12:21:43.0",
+                "lastUpdatedBy": "{USER_ID}",
+                "externalKey": {
+                    "sourceID": "{SOURCE_ID}",
+                    "sourceKey": "{SOURCE_KEY}",
+                    "sourceInstanceID": "{SOURCE_INSTANCE_ID}",
+                    "sourceType": "{SOURCE_TYPE}"
+                },
+                "lastViewedDate": "2024-03-09 12:21:43.0",
+                "createdDate": "2024-03-09 12:21:43.0"
+            },
+            "accountID": "2334262",
+            "identityMap": {
+                "b2b_account": [
+                    {
+                        "id": "2334263"
+                    },
+                    {
+                        "id": "2334262"
+                    },
+                    {
+                        "id": "{SOURCE_ID}"
+                    }
+                ]
+            },
+            "isDeleted": false,
+            "accountKey": {
+                "sourceID": "2334262",
+                "sourceKey": "2334262",
+                "sourceInstanceID": "2334262",
+                "sourceType": "Random"
+            }
+        }
+    }
+}
+```
+
++++
+
+>[!TAB B2B-säljprojekt]
+
+**API-format**
+
+```http
+GET /access/entities?{QUERY_PARAMETERS}
+```
+
+Frågeparametrar som anges i sökvägen anger vilka data som ska användas. Du kan inkludera flera parametrar, avgränsade med et-tecken (&amp;).
+
+Om du vill komma åt en B2B-säljprojektsenhet **måste** ange följande frågeparametrar:
+
+- `schema.name`: Namnet på entitetens XDM-schema. I det här fallet `schema.name=_xdm.context.opportunity`.
+- `entityId`: ID:t för entiteten som du försöker hämta.
+- `entityIdNS`: Namnområdet för entiteten som du försöker hämta. Det här värdet måste anges om `entityId` är **inte** ett XID.
+
+En fullständig lista över giltiga parametrar finns i avsnittet [frågeparametrar](#query-parameters) i bilagan.
+
+**Begäran**
+
++++ En exempelbegäran om att hämta en B2B-säljprojektsenhet
+
+```shell
+curl -X GET 'https://platform.adobe.io/data/core/ups/access/entities?schema.name=_xdm.context.opportunity&entityIdNs=b2b_opportunity&entityId=2334262' \
+  -H 'Authorization: Bearer {ACCESS_TOKEN}' \
+  -H 'x-api-key: {API_KEY}' \
+  -H 'x-gw-ims-org-id: {ORG_ID}' \
+  -H 'x-sandbox-name: {SANDBOX_NAME}'
+```
+
++++
+
+**Svar**
+
+Ett lyckat svar returnerar HTTP-status 200 med den begärda entiteten.
+
++++ Ett exempelsvar som innehåller den begärda entiteten
+
+```json
+{
+  "Ggw_AUFjgjaeIw": {
+        "entityId": "Ggw_AUFjgjaeIw",
+        "mergePolicy": {
+            "id": "162824be-07f5-4cd0-aa85-2ff3c8f6c775"
+        },
+        "sources": [
+            "er_m_attr"
+        ],
+        "entity": {
+            "_id": "id1",
+            "extSourceSystemAudit": {
+                "lastReferencedDate": "2024-03-09 12:21:43.0",
+                "lastActivityDate": "2024-03-09 12:21:43.0",
+                "lastUpdatedDate": "2024-03-09 12:21:43.0",
+                "lastUpdatedBy": "{USER_ID}",
+                "externalKey": {
+                    "sourceID": "00394S0001xpG6xABE",
+                    "sourceKey": "0043c329201xpG6xAAE@00DC0000000Q35nWIN.Salesforce",
+                    "sourceInstanceID": "00DC0000000Q35nMAC",
+                    "sourceType": "Salesforce"
+                },
+                "lastViewedDate": "2024-03-09 12:21:43.0",
+                "createdDate": "2024-03-09 12:21:43.0"
+            },
+            "accountID": "2334262",
+            "identityMap": {
+                "b2b_opportunity": [
+                    {
+                        "id": "0043c329201xpG6xAAE@00DC0000000Q35nWIN.Salesforce"
+                    },
+                    {
+                        "id": "2334263"
+                    },
+                    {
+                        "id": "2334262"
+                    }
+                ]
+            },
+            "isDeleted": false,
+            "opportunityKey": {
+                "sourceID": "2334262",
+                "sourceKey": "2334262",
+                "sourceInstanceID": "2334262",
+                "sourceType": "Random"
+            },
+            "accountKey": {
+                "sourceID": "2334262",
+                "sourceKey": "2334262",
+                "sourceInstanceID": "2334262",
+                "sourceType": "Random"
+            }
+        }
+    }
+}
+```
+
++++
+
+>[!ENDTABS]
+
+## Hämta flera entiteter {#retrieve-entities}
+
+Du kan hämta flera profilentiteter eller tidsseriehändelser genom att göra en POST-förfrågan till `/access/entities`-slutpunkten och ange identiteterna i nyttolasten.
+
+>[!BEGINTABS]
+
+>[!TAB Profilentiteter]
 
 **API-format**
 
@@ -130,11 +441,12 @@ POST /access/entities
 
 **Begäran**
 
-Följande begäran hämtar namnen och e-postadresserna för flera kunder med hjälp av en lista över identiteter:
+Följande begäran hämtar namnen och e-postadresserna för flera kunder med hjälp av en lista över identiteter.
+
++++En exempelbegäran för att hämta flera entiteter
 
 ```shell
-curl -X POST \
-  https://platform.adobe.io/data/core/ups/access/entities \
+curl -X POST https://platform.adobe.io/data/core/ups/access/entities \
   -H 'Content-Type: application/json' \
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
   -H 'x-api-key: {API_KEY}' \
@@ -174,26 +486,29 @@ curl -X POST \
             "endTime": 1539838510
         },
         "limit": 10,
-        "orderby": "-timestamp",
-        "withCA": true
+        "orderby": "-timestamp"
       }'
 ```
 
-| Egenskap | Beskrivning |
-|---|---|
-| `schema.name` | ***(Obligatoriskt)*** Namnet på XDM-schemat som entiteten tillhör. |
-| `fields` | XDM-fälten som ska returneras, som en array med strängar. Som standard returneras alla fält. |
-| `identities` | ***(Obligatoriskt)*** En array som innehåller en lista över identiteter för de entiteter som du vill komma åt. |
-| `identities.entityId` | ID för en enhet som du vill komma åt. |
-| `identities.entityIdNS.code` | Namnområdet för ett enhets-ID som du vill komma åt. |
-| `timeFilter.startTime` | Starttid för tidsintervallfiltret, som ingår. Ska vara i millisekundens granularitet. Om inget anges är standardvärdet början av tillgänglig tid. |
-| `timeFilter.endTime` | Sluttid för tidsintervallfilter, exkluderad. Ska vara i millisekundens granularitet. Om inget anges är standardvärdet slutet av tillgänglig tid. |
-| `limit` | Antal poster som ska returneras. Gäller endast antalet returnerade upplevelsehändelser. Standard: 1 000. |
-| `orderby` | Sorteringsordningen för hämtade upplevelsehändelser efter tidsstämpel, skriven som `(+/-)timestamp` med standardvärdet `+timestamp`. |
-| `withCA` | Funktionsflagga för aktivering av beräknade attribut för sökning. Standard: false. |
+| Egenskap | Typ | Beskrivning |
+| -------- |----- | ----------- |
+| `schema.name` | Sträng | **(Obligatoriskt)** Namnet på XDM-schemat som entiteten tillhör. |
+| `fields` | Array | XDM-fälten som ska returneras, som en array med strängar. Som standard returneras alla fält. |
+| `identities` | Array | **(Obligatoriskt)** En array som innehåller en lista över identiteter för de entiteter som du vill komma åt. |
+| `identities.entityId` | Sträng | ID för en enhet som du vill komma åt. |
+| `identities.entityIdNS.code` | Sträng | Namnområdet för ett enhets-ID som du vill komma åt. |
+| `timeFilter.startTime` | Heltal | Anger starttiden för filtrering av profilentiteter (i millisekunder). Som standard anges det här värdet som början av tillgänglig tid. |
+| `timeFilter.endTime` | Heltal | Anger sluttiden för filtrering av profilentiteter (i millisekunder). Som standard är det här värdet inställt som slutet på tillgänglig tid. |
+| `limit` | Heltal | Det maximala antalet poster som ska returneras. Som standard är det här värdet 1 000. |
+| `orderby` | Sträng | Sorteringsordningen för hämtade upplevelsehändelser efter tidsstämpel, skriven som `(+/-)timestamp` med standardvärdet `+timestamp`. |
+
++++
 
 **Svar**
-Ett lyckat svar returnerar de begärda fälten för entiteter som anges i begärandetexten.
+
+Ett lyckat svar returnerar HTTP-status 200 med de begärda fälten för entiteter angivna i begärandetexten.
+
++++ Ett exempelsvar som innehåller begärda entiteter
 
 ```json
 {
@@ -332,171 +647,9 @@ Ett lyckat svar returnerar de begärda fälten för entiteter som anges i begär
 }
 ```
 
-## Åtkomst till tidsseriehändelser för en profil per identitet
++++
 
-Du kan komma åt tidsseriehändelser via identiteten för deras associerade profilentitet genom att göra en GET-begäran till slutpunkten `/access/entities`. Den här identiteten består av ett ID-värde (`entityId`) och ett identitetsnamnområde (`entityIdNS`).
-
-Frågeparametrar som anges i sökvägen anger vilka data som ska användas. Du kan inkludera flera parametrar, avgränsade med et-tecken (&amp;). En fullständig lista över giltiga parametrar finns i avsnittet [frågeparametrar](#query-parameters) i bilagan.
-
-**API-format**
-
-```http
-GET /access/entities?{QUERY_PARAMETERS}
-```
-
-**Begäran**
-
-Följande begäran hittar en profilentitet efter ID och hämtar värdena för egenskaperna `endUserIDs`, `web` och `channel` för alla tidsseriehändelser som är associerade med entiteten.
-
-```shell
-curl -X GET \
-  'https://platform.adobe.io/data/core/ups/access/entities?schema.name=_xdm.context.experienceevent&relatedSchema.name=_xdm.context.profile&relatedEntityId=89149270342662559642753730269986316900&relatedEntityIdNS=ECID&fields=endUserIDs,web,channel&startTime=1531260476000&endTime=1531260480000&limit=1' \
-  -H 'Authorization: Bearer {ACCESS_TOKEN}' \
-  -H 'x-api-key: {API_KEY}' \
-  -H 'x-gw-ims-org-id: {ORG_ID}' \
-  -H 'x-sandbox-name: {SANDBOX_NAME}'
-```
-
-**Svar**
-
-Ett lyckat svar returnerar en numrerad lista över händelser i tidsserier och associerade fält som har angetts i frågeparametrarna för begäran.
-
->[!NOTE]
->
->Begäran angav en gräns på ett (`limit=1`), därför är `count` i svaret nedan 1 och bara en entitet returneras.
-
-```json
-{
-    "_page": {
-        "orderby": "timestamp",
-        "start": "c8d11988-6b56-4571-a123-b6ce74236036",
-        "count": 1,
-        "next": "c8d11988-6b56-4571-a123-b6ce74236037"
-    },
-    "children": [
-        {
-            "relatedEntityId": "A29cgveD5y64e2RixjUXNzcm",
-            "entityId": "c8d11988-6b56-4571-a123-b6ce74236036",
-            "timestamp": 1531260476000,
-            "entity": {
-                "endUserIDs": {
-                    "_experience": {
-                        "ecid": {
-                            "id": "89149270342662559642753730269986316900",
-                            "namespace": {
-                                "code": "ecid"
-                            }
-                        }
-                    }
-                },
-                "channel": {
-                    "_type": "web"
-                },
-                "web": {
-                    "webPageDetails": {
-                        "name": "Fernie Snow",
-                        "pageViews": {
-                            "value": 1
-                        }
-                    }
-                }
-            },
-            "lastModifiedAt": "2018-08-21T06:49:02Z"
-        }
-    ],
-    "_links": {
-        "next": {
-            "href": "/entities?start=c8d11988-6b56-4571-a123-b6ce74236037&orderby=timestamp&schema.name=_xdm.context.experienceevent&relatedSchema.name=_xdm.context.profile&relatedEntityId=89149270342662559642753730269986316900&relatedEntityIdNS=ECID&fields=endUserIDs,web,channel&startTime=1531260476000&endTime=1531260480000&limit=1"
-        }
-    }
-}
-```
-
-### Åtkomst till en efterföljande resultatsida
-
-Resultaten sidnumreras när tidsseriehändelser hämtas. Om det finns efterföljande resultatsidor kommer egenskapen `_page.next` att innehålla ett ID. Dessutom innehåller egenskapen `_links.next.href` en URI för begäran för hämtning av nästa sida. Om du vill hämta resultaten gör du en ny GET-begäran till `/access/entities`-slutpunkten, men du måste se till att ersätta `/entities` med värdet för den angivna URI:n.
-
->[!NOTE]
->
->Se till att du inte råkar upprepa `/entities/` i sökvägen för begäran av misstag. Den får bara visas en gång, `/access/entities?start=...`
-
-**API-format**
-
-```http
-GET /access/{NEXT_URI}
-```
-
-| Parameter | Beskrivning |
-|---|---|
-| `{NEXT_URI}` | URI-värdet är taget från `_links.next.href`. |
-
-**Begäran**
-
-Följande begäran hämtar nästa resultatsida genom att använda URI:n `_links.next.href` som begärandesökväg.
-
-```shell
-curl -X GET \
-  'https://platform.adobe.io/data/core/ups/access/entities?start=c8d11988-6b56-4571-a123-b6ce74236037&orderby=timestamp&schema.name=_xdm.context.experienceevent&relatedSchema.name=_xdm.context.profile&relatedEntityId=89149270342662559642753730269986316900&relatedEntityIdNS=ECID&fields=endUserIDs,web,channel&startTime=1531260476000&endTime=1531260480000&limit=1' \
-  -H 'Authorization: Bearer {ACCESS_TOKEN}' \
-  -H 'x-api-key: {API_KEY}' \
-  -H 'x-gw-ims-org-id: {ORG_ID}' \
-  -H 'x-sandbox-name: {SANDBOX_NAME}'
-```
-
-**Svar**
-
-Ett godkänt svar returnerar nästa resultatsida. Det här svaret har inga efterföljande resultatsidor, vilket anges av de tomma strängvärdena `_page.next` och `_links.next.href`.
-
-```json
-{
-    "_page": {
-        "orderby": "timestamp",
-        "start": "c8d11988-6b56-4571-a123-b6ce74236037",
-        "count": 1,
-        "next": ""
-    },
-    "children": [
-        {
-            "relatedEntityId": "A29cgveD5y64e2RixjUXNzcm",
-            "entityId": "c8d11988-6b56-4571-a123-b6ce74236037",
-            "timestamp": 1531260477000,
-            "entity": {
-                "endUserIDs": {
-                    "_experience": {
-                        "ecid": {
-                            "id": "89149270342662559642753730269986316900",
-                            "namespace": {
-                                "code": "ecid"
-                            }
-                        }
-                    }
-                },
-                "channel": {
-                    "_type": "web"
-                },
-                "web": {
-                    "webPageDetails": {
-                        "name": "Fernie Snow",
-                        "pageViews": {
-                            "value": 1
-                        }
-                    }
-                }
-            },
-            "lastModifiedAt": "2018-08-21T06:50:01Z"
-        }
-    ],
-    "_links": {
-        "next": {
-            "href": ""
-        }
-    }
-}
-```
-
-## Få åtkomst till tidsseriehändelser för flera profiler per identitet
-
-Du kan komma åt tidsseriehändelser från flera associerade profiler genom att göra en POST-förfrågan till `/access/entities`-slutpunkten och ange profilidentiteterna i nyttolasten. Dessa identiteter består av ett ID-värde (`entityId`) och ett identitetsnamnutrymme (`entityIdNS`).
+>[!TAB Tidsseriehändelser]
 
 **API-format**
 
@@ -506,11 +659,12 @@ POST /access/entities
 
 **Begäran**
 
-Följande begäran hämtar användar-ID:n, lokala tider och landskoder för tidsseriehändelser som är associerade med en lista över profilidentiteter:
+Följande begäran hämtar användar-ID:n, lokala tider och landskoder för tidsseriehändelser som är associerade med en lista över profilidentiteter.
+
++++ En exempelbegäran om att hämta tidsseriedata
 
 ```shell
-curl -X POST \
-  https://platform.adobe.io/data/core/ups/access/entities \
+curl -X POST https://platform.adobe.io/data/core/ups/access/entities \
   -H 'Content-Type: application/json' \
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
   -H 'x-api-key: {API_KEY}' \
@@ -541,26 +695,29 @@ curl -X POST \
         "startTime": 11539838505
         "endTime": 1539838510
     },
-    "limit": 10
+    "limit": 10,
+    "orderby": "-timestamp"
 }'
 ```
 
-| Egenskap | Beskrivning |
-|---|---|
-| `schema.name` | **(OBLIGATORISKT)** XDM-schemat för entiteten som ska hämtas |
-| `relatedSchema.name` | Om `schema.name` är `_xdm.context.experienceevent` måste det här värdet ange schemat för den profilentitet som tidsseriehändelser är relaterade till. |
-| `identities` | **(OBLIGATORISKT)** En array med profiler som associerade tidsseriehändelser ska hämtas från. Varje post i arrayen anges på ett av två sätt: 1) med en fullständigt kvalificerad identitet som består av ID-värde och namnutrymme eller 2) med ett XID. |
-| `fields` | Isolerar de data som returneras till en angiven uppsättning fält. Använd detta för att filtrera vilka schemafält som ska inkluderas i hämtade data. Exempel: personalEmail,person.name,person.kön |
-| `mergePolicyId` | Identifierar den sammanfogningsprincip som ska användas för att styra returnerade data. Om ingen anges i servicesamtalet används organisationens standardvärde för det schemat. Om ingen standardprincip för sammanslagning har konfigurerats är standardinställningen ingen profilsammanslagning och ingen identitetssammanfogning. |
-| `orderby` | Sorteringsordningen för hämtade upplevelsehändelser efter tidsstämpel, skriven som `(+/-)timestamp` med standardvärdet `+timestamp`. |
-| `timeFilter.startTime` | Ange starttid för att filtrera tidsserieobjekt (i millisekunder). |
-| `timeFilter.endTime` | Ange sluttiden för filtrering av tidsserieobjekt (i millisekunder). |
-| `limit` | Numeriskt värde som anger det maximala antalet objekt som ska returneras. Standard: 1000 |
-| `withCA` | Funktionsflagga för aktivering av beräknade attribut för sökning. Standard: false |
+| Egenskap | Typ | Beskrivning |
+| -------- | ---- | ----------- |
+| `schema.name` | Sträng | **(Obligatoriskt)** Namnet på XDM-schemat som entiteten tillhör. |
+| `relatedSchema.name` | Sträng | Om `schema.name` är `_xdm.context.experienceevent` måste det här värdet ange schemat för den profilentitet som tidsseriehändelser är relaterade till. |
+| `identities` | Array | **(Obligatoriskt)** En array med profiler som associerade tidsseriehändelser ska hämtas från. Varje post i arrayen anges på ett av två sätt: <ol><li>Använda en fullständigt kvalificerad identitet som består av ID-värde och namnutrymme</li><li>Ange ett XID</li></ol> |
+| `fields` | Sträng | XDM-fälten som ska returneras, som en array med strängar. Som standard returneras alla fält. |
+| `orderby` | Sträng | Sorteringsordningen för hämtade upplevelsehändelser efter tidsstämpel, skriven som `(+/-)timestamp` med standardvärdet `+timestamp`. |
+| `timeFilter.startTime` | Heltal | Ange starttid för att filtrera tidsserieobjekt (i millisekunder). Som standard anges det här värdet som början av tillgänglig tid. |
+| `timeFilter.endTime` | Heltal | Ange sluttiden för filtrering av tidsserieobjekt (i millisekunder). Som standard är det här värdet inställt som slutet på tillgänglig tid. |
+| `limit` | Heltal | Det maximala antalet poster som ska returneras. Som standard är det här värdet 1 000. |
+
++++
 
 **Svar**
 
-Ett lyckat svar returnerar en numrerad lista över händelser i tidsserier som är associerade med de flera profiler som anges i begäran.
+Ett lyckat svar returnerar HTTP-status 200 med en sidnumrerad lista över tidsseriehändelser som är associerade med de flera profiler som anges i begäran.
+
++++ Ett exempelsvar som innehåller tidsseriehändelser
 
 ```json
 {
@@ -768,110 +925,625 @@ Ett lyckat svar returnerar en numrerad lista över händelser i tidsserier som �
 }`
 ```
 
-I det här exemplet ger den första listade profilen (&quot;GkouAW-yD9aoRCPhRYROJ-TetAFW&quot;) ett värde för `_links.next.payload`, vilket innebär att det finns fler resultatsidor för den här profilen. I följande avsnitt om [åtkomst till ytterligare resultat](#access-additional-results) finns mer information om hur du kommer åt dessa ytterligare resultat.
++++
 
-### Få tillgång till ytterligare resultat {#access-additional-results}
+>[!NOTE]
+>
+>I det här exemplet ger den första listade profilen (&quot;GkouAW-yD9aoRCPhRYROJ-TetAFW&quot;) ett värde för `_links.next.payload`, vilket innebär att det finns fler resultatsidor för den här profilen.
+>
+>Om du vill få åtkomst till de här resultaten kan du utföra ytterligare en begäran om POST till slutpunkten `/access/entities` med den angivna nyttolasten som begärandeinnehåll.
 
-När tidsseriehändelser hämtas kan det finnas många resultat som returneras, och därför sidnumreras ofta resultaten. Om det finns efterföljande resultatsidor för en viss profil innehåller värdet `_links.next.payload` för den profilen ett nyttolastobjekt.
-
-Om du använder den här nyttolasten i begärandetexten kan du utföra en extra begäran om POST till slutpunkten `access/entities` för att hämta efterföljande sida med tidsseriedata för den profilen.
-
-## Få åtkomst till tidsseriehändelser i flera schemaentiteter
-
-Du kan komma åt flera enheter som är anslutna via en relationsbeskrivare. I följande exempel på API-anrop förutsätts att en relation redan har definierats mellan två scheman. Mer information om relationsbeskrivare finns i [!DNL Schema Registry] API-utvecklarhandboken [descriptors endpoint guide](../../xdm/api/descriptors.md).
-
-Du kan inkludera frågeparametrar i sökvägen för begäran för att ange vilka data som ska användas. Du kan inkludera flera parametrar, avgränsade med et-tecken (&amp;). En fullständig lista över giltiga parametrar finns i avsnittet [frågeparametrar](#query-parameters) i bilagan.
+>[!TAB B2B-konto]
 
 **API-format**
 
 ```http
-GET /access/entities?{QUERY_PARAMETERS}
+POST /access/entities
 ```
 
 **Begäran**
 
-Följande begäran hämtar en entitet som innehåller en tidigare etablerad relationsbeskrivare för att få tillgång till information över olika scheman.
+Följande begäran hämtar begärda B2B-konton.
+
++++En exempelbegäran för att hämta flera entiteter
 
 ```shell
-curl -X GET \
-  https://platform.adobe.io/data/core/ups/access/entities?relatedSchema.name=_xdm.context.profile&schema.name=_xdm.context.experienceevent&relatedEntityId=GkouAW-2Xkftzer3bBtHiW8GkaFL \
+curl -X POST https://platform.adobe.io/data/core/ups/access/entities \
   -H 'Content-Type: application/json' \
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
   -H 'x-api-key: {API_KEY}' \
   -H 'x-gw-ims-org-id: {ORG_ID}' \
+  -H 'x-sandbox-name: {SANDBOX_NAME}' \
+  -d '{
+        "schema":{
+            "name":"_xdm.context.account"
+        },
+        "identities": [
+            {
+                "entityId": "2334262",
+                "entityIdNS": {
+                    "code":"b2b_account"
+                }
+            },
+            {
+                "entityId": "2334263",
+                "entityIdNS": {
+                    "code":"b2b_account"
+                }
+            },
+            {
+                "entityId": "2334264",
+                "entityIdNS": {
+                    "code":"b2b_account"
+                }
+            }
+        ]
+    }'
 ```
+
+| Egenskap | Typ | Beskrivning |
+| -------- |----- | ----------- |
+| `schema.name` | Sträng | **(Obligatoriskt)** Namnet på XDM-schemat som entiteten tillhör. |
+| `identities` | Array | **(Obligatoriskt)** En array som innehåller en lista över identiteter för de entiteter som du vill komma åt. |
+| `identities.entityId` | Sträng | ID för en enhet som du vill komma åt. |
+| `identities.entityIdNS.code` | Sträng | Namnområdet för ett enhets-ID som du vill komma åt. |
+
++++
 
 **Svar**
 
-Ett lyckat svar returnerar en numrerad lista över händelser i tidsserier som är associerade med de flera entiteterna.
+Ett lyckat svar returnerar HTTP-status 200 med de begärda entiteterna.
+
++++ Ett exempelsvar som innehåller begärda entiteter
+
+```json
+{
+    "GuQ-AUFjgjeeIw": {
+        "requestedIdentity": {
+            "entityId": "2334263",
+            "entityIdNS": {
+                "code": "b2b_account"
+            }
+        },
+        "entityId": "GuQ-AUFjgjeeIw",
+        "mergePolicy": {
+            "id": "a6150f47-a94f-4c9d-bfa0-958a370020ee"
+        },
+        "sources": [
+            "er_m_attr"
+        ],
+        "entity": {
+            "_id": "id1",
+            "extSourceSystemAudit": {
+                "lastReferencedDate": "2024-03-09 12:21:43.0",
+                "lastActivityDate": "2024-03-09 12:21:43.0",
+                "lastUpdatedDate": "2024-03-09 12:21:43.0",
+                "lastUpdatedBy": "{USER_ID}",
+                "externalKey": {
+                    "sourceID": "00394S0001xpG6xABE",
+                    "sourceKey": "0043c329201xpG6xAAE@00DC0000000Q35nWIN.Salesforce",
+                    "sourceInstanceID": "00DC0000000Q35nMAC",
+                    "sourceType": "Salesforce"
+                },
+                "lastViewedDate": "2024-03-09 12:21:43.0",
+                "createdDate": "2024-03-09 12:21:43.0"
+            },
+            "accountID": "2334262",
+            "identityMap": {
+                "b2b_account": [
+                    {
+                        "id": "2334263"
+                    },
+                    {
+                        "id": "2334262"
+                    },
+                    {
+                        "id": "0043c329201xpG6xAAE@00DC0000000Q35nWIN.Salesforce"
+                    }
+                ]
+            },
+            "isDeleted": false,
+            "accountKey": {
+                "sourceID": "2334262",
+                "sourceKey": "2334262",
+                "sourceInstanceID": "2334262",
+                "sourceType": "Random"
+            }
+        }
+    },
+    "GuQ-AUFjgjaeIw": {
+        "requestedIdentity": {
+            "entityId": "2334262",
+            "entityIdNS": {
+                "code": "b2b_account"
+            }
+        },
+        "entityId": "GuQ-AUFjgjaeIw",
+        "mergePolicy": {
+            "id": "a6150f47-a94f-4c9d-bfa0-958a370020ee"
+        },
+        "sources": [
+            "er_m_attr"
+        ],
+        "entity": {
+            "_id": "id1",
+            "extSourceSystemAudit": {
+                "lastReferencedDate": "2024-03-09 12:21:43.0",
+                "lastActivityDate": "2024-03-09 12:21:43.0",
+                "lastUpdatedDate": "2024-03-09 12:21:43.0",
+                "lastUpdatedBy": "{USER_ID}",
+                "externalKey": {
+                    "sourceID": "00394S0001xpG6xABE",
+                    "sourceKey": "0043c329201xpG6xAAE@00DC0000000Q35nWIN.Salesforce",
+                    "sourceInstanceID": "00DC0000000Q35nMAC",
+                    "sourceType": "Salesforce"
+                },
+                "lastViewedDate": "2024-03-09 12:21:43.0",
+                "createdDate": "2024-03-09 12:21:43.0"
+            },
+            "accountID": "2334262",
+            "identityMap": {
+                "b2b_account": [
+                    {
+                        "id": "2334263"
+                    },
+                    {
+                        "id": "2334262"
+                    },
+                    {
+                        "id": "0043c329201xpG6xAAE@00DC0000000Q35nWIN.Salesforce"
+                    }
+                ]
+            },
+            "isDeleted": false,
+            "accountKey": {
+                "sourceID": "2334262",
+                "sourceKey": "2334262",
+                "sourceInstanceID": "2334262",
+                "sourceType": "Random"
+            }
+        }
+    },
+    "GuQ-AUFjgjmeIw": {
+        "requestedIdentity": {
+            "entityId": "2334265",
+            "entityIdNS": {
+                "code": "b2b_account"
+            }
+        },
+        "entityId": "GuQ-AUFjgjmeIw",
+        "mergePolicy": {
+            "id": "a6150f47-a94f-4c9d-bfa0-958a370020ee"
+        },
+        "sources": [
+            "er_m_attr"
+        ],
+        "entity": {
+            "_id": "id1",
+            "extSourceSystemAudit": {
+                "lastReferencedDate": "2024-03-09 12:21:43.0",
+                "lastActivityDate": "2024-03-09 12:21:43.0",
+                "lastUpdatedDate": "2024-03-09 12:21:43.0",
+                "lastUpdatedBy": "{USER_ID}",
+                "externalKey": {
+                    "sourceID": "00394S0001xpG6xABE",
+                    "sourceKey": "0054c329201xpG6xAAE@00DC0000000Q35nWIN.Salesforce",
+                    "sourceInstanceID": "00DC0000000Q35nMAC",
+                    "sourceType": "Salesforce"
+                },
+                "lastViewedDate": "2024-03-09 12:21:43.0",
+                "createdDate": "2024-03-09 12:21:43.0"
+            },
+            "accountID": "2334265",
+            "identityMap": {
+            "b2b_account": [
+                {
+                    "id": "0054c329201xpG6xAAE@00DC0000000Q35nWIN.Salesforce"
+                },
+                {
+                    "id": "2334265"
+                }
+            ]
+        },
+        "isDeleted": false,
+        "accountKey": {
+            "sourceID": "2334265",
+            "sourceKey": "2334265",
+            "sourceInstanceID": "2334265",
+            "sourceType": "Random"
+        }
+    }
+}
+```
+
++++
+
+>[!TAB B2B-säljprojekt]
+
+**API-format**
+
+```http
+POST /access/entities
+```
+
+**Begäran**
+
+Följande begäran hämtar de begärda B2B-affärsmöjligheterna.
+
++++ En exempelbegäran om att hämta flera entiteter
+
+```shell
+curl -X POST https://platform.adobe.io/data/core/ups/access/entities \
+  -H 'Content-Type: application/json' \
+  -H 'Authorization: Bearer {ACCESS_TOKEN}' \
+  -H 'x-api-key: {API_KEY}' \
+  -H 'x-gw-ims-org-id: {ORG_ID}' \
+  -H 'x-sandbox-name: {SANDBOX_NAME}' \
+  -d '{
+        "schema":{
+            "name":"_xdm.context.opportunity"
+        },
+        "identities": [
+            {
+                "entityId": "2334262",
+                "entityIdNS": {
+                    "code":"b2b_opportunity"
+                }
+            },
+            {
+                "entityId": "2334263",
+                "entityIdNS": {
+                    "code":"b2b_opportunity"
+                }
+            },
+            {
+                "entityId": "2334264",
+                "entityIdNS": {
+                    "code":"b2b_opportunity"
+                }
+            },
+            {
+                "entityId": "2334265",
+                "entityIdNS": {
+                    "code":"b2b_opportunity"
+                }
+            }
+        ]
+    }'
+```
+
+| Egenskap | Typ | Beskrivning |
+| -------- |----- | ----------- |
+| `schema.name` | Sträng | **(Obligatoriskt)** Namnet på XDM-schemat som entiteten tillhör. |
+| `identities` | Array | **(Obligatoriskt)** En array som innehåller en lista över identiteter för de entiteter som du vill komma åt. |
+| `identities.entityId` | Sträng | ID för en enhet som du vill komma åt. |
+| `identities.entityIdNS.code` | Sträng | Namnområdet för ett enhets-ID som du vill komma åt. |
+
++++
+
+**Svar**
+
+Ett lyckat svar returnerar HTTP-status 200 med de begärda entiteterna.
+
++++ Ett exempelsvar som innehåller begärda entiteter
+
+```json
+{
+    "Ggw_AUFjgjaeIw": {
+        "requestedIdentity": {
+            "entityId": "2334262",
+            "entityIdNS": {
+                "code": "b2b_opportunity"
+            }
+        },
+        "entityId": "Ggw_AUFjgjaeIw",
+        "mergePolicy": {
+            "id": "162824be-07f5-4cd0-aa85-2ff3c8f6c775"
+        },
+        "sources": [
+            "er_m_attr"
+        ],
+        "entity": {
+            "_id": "id1",
+            "extSourceSystemAudit": {
+                "lastReferencedDate": "2024-03-09 12:21:43.0",
+                "lastActivityDate": "2024-03-09 12:21:43.0",
+                "lastUpdatedDate": "2024-03-09 12:21:43.0",
+                "lastUpdatedBy": "{USER_ID}",
+                "externalKey": {
+                    "sourceID": "00394S0001xpG6xABE",
+                    "sourceKey": "0043c329201xpG6xAAE@00DC0000000Q35nWIN.Salesforce",
+                    "sourceInstanceID": "00DC0000000Q35nMAC",
+                    "sourceType": "Salesforce"
+                },
+                "lastViewedDate": "2024-03-09 12:21:43.0",
+                "createdDate": "2024-03-09 12:21:43.0"
+            },
+            "accountID": "2334262",
+            "identityMap": {
+                "b2b_opportunity": [
+                    {
+                        "id": "0043c329201xpG6xAAE@00DC0000000Q35nWIN.Salesforce"
+                    },
+                    {
+                        "id": "2334263"
+                    },
+                    {
+                        "id": "2334262"
+                    }
+                ]
+            },
+            "isDeleted": false,
+            "opportunityKey": {
+                "sourceID": "2334262",
+                "sourceKey": "2334262",
+                "sourceInstanceID": "2334262",
+                "sourceType": "Random"
+            },
+            "accountKey": {
+                "sourceID": "2334262",
+                "sourceKey": "2334262",
+                "sourceInstanceID": "2334262",
+                "sourceType": "Random"
+            }
+        }
+    },
+    "Ggw_AUFjgjieIw": {
+        "requestedIdentity": {
+            "entityId": "2334264",
+            "entityIdNS": {
+                "code": "b2b_opportunity"
+            }
+        },
+        "entityId": "Ggw_AUFjgjieIw",
+        "mergePolicy": {
+            "id": "162824be-07f5-4cd0-aa85-2ff3c8f6c775"
+        },
+        "sources": [
+            "er_m_attr"
+        ],
+        "entity": {
+            "_id": "id1",
+            "extSourceSystemAudit": {
+                "lastReferencedDate": "2024-03-09 12:21:43.0",
+                "lastActivityDate": "2024-03-09 12:21:43.0",
+                "lastUpdatedDate": "2024-03-09 12:21:43.0",
+                "lastUpdatedBy": "{USER_ID}",
+                "externalKey": {
+                    "sourceID": "00394S0001xpG6xABE",
+                    "sourceKey": "0041c329201xpG6xAAE@00DC0000000Q35nWIN.Salesforce",
+                    "sourceInstanceID": "00DC0000000Q35nMAC",
+                    "sourceType": "Salesforce"
+                },
+                "lastViewedDate": "2024-03-09 12:21:43.0",
+                "createdDate": "2024-03-09 12:21:43.0"
+            },
+            "accountID": "2334264",
+            "identityMap": {
+                "b2b_opportunity": [
+                    {
+                        "id": "2334264"
+                    },
+                    {
+                        "id": "0041c329201xpG6xAAE@00DC0000000Q35nWIN.Salesforce"
+                    }
+                ]
+            },
+            "isDeleted": false,
+            "opportunityKey": {
+                "sourceID": "2334262",
+                "sourceKey": "2334262",
+                "sourceInstanceID": "2334262",
+                "sourceType": "Random"
+            },
+            "accountKey": {
+                "sourceID": "2334264",
+                "sourceKey": "2334264",
+                "sourceInstanceID": "2334264",
+                "sourceType": "Salesforce"
+            }
+        }
+    },
+    "Ggw_AUFjgjeeIw": {
+        "requestedIdentity": {
+            "entityId": "2334263",
+            "entityIdNS": {
+                "code": "b2b_opportunity"
+            }
+        },
+        "entityId": "Ggw_AUFjgjeeIw",
+        "mergePolicy": {
+            "id": "162824be-07f5-4cd0-aa85-2ff3c8f6c775"
+        },
+        "sources": [
+            "er_m_attr"
+        ],
+        "entity": {
+            "_id": "id1",
+            "extSourceSystemAudit": {
+                "lastReferencedDate": "2024-03-09 12:21:43.0",
+                "lastActivityDate": "2024-03-09 12:21:43.0",
+                "lastUpdatedDate": "2024-03-09 12:21:43.0",
+                "lastUpdatedBy": "{USER_ID}",
+                "externalKey": {
+                    "sourceID": "00394S0001xpG6xABE",
+                    "sourceKey": "0043c329201xpG6xAAE@00DC0000000Q35nWIN.Salesforce",
+                    "sourceInstanceID": "00DC0000000Q35nMAC",
+                    "sourceType": "Salesforce"
+                },
+                "lastViewedDate": "2024-03-09 12:21:43.0",
+                "createdDate": "2024-03-09 12:21:43.0"
+            },
+            "accountID": "2334262",
+            "identityMap": {
+                "b2b_opportunity": [
+                    {
+                        "id": "0043c329201xpG6xAAE@00DC0000000Q35nWIN.Salesforce"
+                    },
+                    {
+                        "id": "2334263"
+                    },
+                    {
+                        "id": "2334262"
+                    }
+                ]
+            },
+            "isDeleted": false,
+            "opportunityKey": {
+                "sourceID": "2334262",
+                "sourceKey": "2334262",
+                "sourceInstanceID": "2334262",
+                "sourceType": "Random"
+            },
+            "accountKey": {
+                "sourceID": "2334262",
+                "sourceKey": "2334262",
+                "sourceInstanceID": "2334262",
+                "sourceType": "Random"
+            }
+        }
+    },
+    "Ggw_AUFjgjmeIw": {
+        "requestedIdentity": {
+            "entityId": "2334265",
+            "entityIdNS": {
+                "code": "b2b_opportunity"
+            }
+        },
+        "entityId": "Ggw_AUFjgjmeIw",
+        "mergePolicy": {
+            "id": "162824be-07f5-4cd0-aa85-2ff3c8f6c775"
+        },
+        "sources": [
+            "er_m_attr"
+        ],
+        "entity": {
+            "_id": "id1",
+            "extSourceSystemAudit": {
+                "lastReferencedDate": "2024-03-09 12:21:43.0",
+                "lastActivityDate": "2024-03-09 12:21:43.0",
+                "lastUpdatedDate": "2024-03-09 12:21:43.0",
+                "lastUpdatedBy": "{USER_ID}",
+                "externalKey": {
+                    "sourceID": "00394S0001xpG6xABE",
+                    "sourceKey": "0054c329201xpG6xAAE@00DC0000000Q35nWIN.Salesforce",
+                    "sourceInstanceID": "00DC0000000Q35nMAC",
+                    "sourceType": "Salesforce"
+                },
+                "lastViewedDate": "2024-03-09 12:21:43.0",
+                "createdDate": "2024-03-09 12:21:43.0"
+            },
+            "accountID": "2334265",
+            "identityMap": {
+                "b2b_opportunity": [
+                    {
+                        "id": "2334265"
+                    },
+                    {
+                        "id": "0054c329201xpG6xAAE@00DC0000000Q35nWIN.Salesforce"
+                    }
+                ]
+            },
+            "isDeleted": false,
+            "opportunityKey": {
+                "sourceID": "2334262",
+                "sourceKey": "2334262",
+                "sourceInstanceID": "2334262",
+                "sourceType": "Random"
+            },
+            "accountKey": {
+                "sourceID": "2334265",
+                "sourceKey": "2334265",
+                "sourceInstanceID": "2334265",
+                "sourceType": "Random"
+            }
+        }
+    }
+}
+```
+
++++
+
+>[!ENDTABS]
+
+### Åtkomst till en efterföljande resultatsida
+
+Resultaten sidnumreras när tidsseriehändelser hämtas. Om det finns efterföljande resultatsidor kommer egenskapen `_page.next` att innehålla ett ID. Dessutom innehåller egenskapen `_links.next.href` en URI för begäran för hämtning av nästa sida. Om du vill hämta resultaten gör du en ny GET-begäran till `/access/entities`-slutpunkten och ersätter `/entities` med värdet för den angivna URI:n.
+
+>[!NOTE]
+>
+>Se till att du inte oavsiktligt upprepar `/entities/` i sökvägen för begäran. Den får bara visas en gång, `/access/entities?start=...`
+
+**API-format**
+
+```http
+GET /access/{NEXT_URI}
+```
+
+| Parameter | Beskrivning |
+|---|---|
+| `{NEXT_URI}` | URI-värdet är taget från `_links.next.href`. |
+
+**Begäran**
+
+Följande begäran hämtar nästa resultatsida genom att använda URI:n `_links.next.href` som begärandesökväg.
+
++++ Ett exempel på en förfrågan om att få åtkomst till nästa resultatsida
+
+```shell
+curl -X GET \
+  'https://platform.adobe.io/data/core/ups/access/entities?start=c8d11988-6b56-4571-a123-b6ce74236037&orderby=timestamp&schema.name=_xdm.context.experienceevent&relatedSchema.name=_xdm.context.profile&relatedEntityId=89149270342662559642753730269986316900&relatedEntityIdNS=ECID&fields=endUserIDs,web,channel&startTime=1531260476000&endTime=1531260480000&limit=1' \
+  -H 'Authorization: Bearer {ACCESS_TOKEN}' \
+  -H 'x-api-key: {API_KEY}' \
+  -H 'x-gw-ims-org-id: {ORG_ID}' \
+  -H 'x-sandbox-name: {SANDBOX_NAME}'
+```
+
++++
+
+**Svar**
+
+Ett godkänt svar returnerar nästa resultatsida. Det här svaret har inga efterföljande resultatsidor, vilket anges av de tomma strängvärdena `_page.next` och `_links.next.href`.
+
++++ Ett exempelsvar som innehåller nästa sida med entiteter
 
 ```json
 {
     "_page": {
         "orderby": "timestamp",
-        "start": "cb10369f-a47b-4e65-afb4-06e1ad78a648",
+        "start": "c8d11988-6b56-4571-a123-b6ce74236037",
         "count": 1,
         "next": ""
     },
     "children": [
         {
-            "relatedEntityId": "GkouAW-2Xkftzer3bBtHiW8GkaFL",
-            "entityId": "cb10369f-a47b-4e65-afb4-06e1ad78a648",
-            "timestamp": 1564614939000,
+            "relatedEntityId": "A29cgveD5y64e2RixjUXNzcm",
+            "entityId": "c8d11988-6b56-4571-a123-b6ce74236037",
+            "timestamp": 1531260477000,
             "entity": {
-                "environment": {
-                    "browserDetails": {}
-                },
-                "identityMap": {
-                    "CRMId": [
-                        {
-                            "id": "78520026455138218785449796480922109723",
-                            "primary": true
-                        }
-                    ]
-                },
-
-                "commerce": {
-                    "productViews": {
-                        "value": 1
-                    }
-                },
-                "productListItems": [
-                    {
-                        "name": "Red shoe",
-                        "quantity": 85,
-                        "storesAvailableIn": [
-                            "da6dced5-9574-4dda-89b5-9dc106903f80",
-                            "981bb433-2ee5-4db0-a19a-449ec9dbf39f"
-                        ],
-                        "SKU": "8f998279-797b-4da2-9e60-88bf73a9f15a",
-                        "priceTotal": 934.8
-                    }
-                ],
-                "_id": "cb10369f-a47b-4e65-afb4-06e1ad78a648",
-                "commerce": {
-                    "order": {}
-                },
-                "placeContext": {
-                    "geo": {
-                        "_schema": {}
-                    }
-                },
-                "device": {},
-                "timestamp": "2019-07-31T23:15:39Z",
-                "_experience": {
-                    "profile": {
-                        "identityNamespaces": {
-                            "/productListItems[*]/SKU": {
-                                "namespace": {
-                                    "code": "ECID"
-                                }
+                "endUserIDs": {
+                    "_experience": {
+                        "ecid": {
+                            "id": "89149270342662559642753730269986316900",
+                            "namespace": {
+                                "code": "ecid"
                             }
+                        }
+                    }
+                },
+                "channel": {
+                    "_type": "web"
+                },
+                "web": {
+                    "webPageDetails": {
+                        "name": "Fernie Snow",
+                        "pageViews": {
+                            "value": 1
                         }
                     }
                 }
             },
-            "lastModifiedAt": "2019-10-10T00:14:19Z"
+            "lastModifiedAt": "2018-08-21T06:50:01Z"
         }
     ],
     "_links": {
@@ -882,9 +1554,46 @@ Ett lyckat svar returnerar en numrerad lista över händelser i tidsserier som �
 }
 ```
 
-### Åtkomst till en efterföljande resultatsida
++++
 
-Resultaten sidnumreras när tidsseriehändelser hämtas. Om det finns efterföljande resultatsidor kommer egenskapen `_page.next` att innehålla ett ID. Dessutom innehåller egenskapen `_links.next.href` en URI för begäran om att hämta efterföljande sida genom att göra ytterligare GET-begäranden till slutpunkten `access/entities`.
+## Ta bort en entitet {#delete-entity}
+
+Du kan ta bort en entitet från profilarkivet genom att göra en DELETE-begäran till `/access/entities`-slutpunkten tillsammans med de obligatoriska frågeparametrarna.
+
+**API-format**
+
+```http
+DELETE /access/entities?{QUERY_PARAMETERS}
+```
+
+Frågeparametrar som anges i sökvägen anger vilka data som ska användas. Du kan inkludera flera parametrar, avgränsade med et-tecken (&amp;).
+
+Om du vill ta bort en entitet **måste** ange följande frågeparametrar:
+
+- `schema.name`: Namnet på entitetens XDM-schema. I det här fallet kan du **endast** använda `schema.name=_xdm.context.profile`.
+- `entityId`: ID:t för entiteten som du försöker hämta.
+- `entityIdNS`: Namnområdet för entiteten som du försöker hämta. Det här värdet måste anges om `entityId` är **inte** ett XID.
+- `mergePolicyId`: Enhetens ID för sammanslagningsprincip. Sammanslagningsprincipen innehåller information om identitetssammanfogning och XDM-objektsammanfogning med nyckelvärden. Om det här värdet inte anges används standardprincipen för sammanslagning.
+
+**Begäran**
+
+Följande begäran tar bort den angivna entiteten.
+
++++ En exempelbegäran om att ta bort en entitet
+
+```shell
+curl -X DELETE 'https://platform.adobe.io/data/core/ups/access/entities?schema.name=_xdm.context.profile&entityId=janedoe@example.com&entityIdNS=email' \
+  -H 'Authorization: Bearer {ACCESS_TOKEN}' \
+  -H 'x-api-key: {API_KEY}' \
+  -H 'x-gw-ims-org-id: {ORG_ID}' \
+  -H 'x-sandbox-name: {SANDBOX_NAME}'
+```
+
++++
+
+**Svar**
+
+Ett lyckat svar returnerar HTTP-status 202 med en tom svarstext.
 
 ## Nästa steg
 
@@ -899,18 +1608,17 @@ Följande avsnitt innehåller ytterligare information om åtkomst av [!DNL Profi
 Följande parametrar används i sökvägen för GET-begäranden till slutpunkten `/access/entities`. De används för att identifiera den profilentitet som du vill komma åt och filtrera data som returneras i svaret. Obligatoriska parametrar är märkta, medan resten är valfria.
 
 | Parameter | Beskrivning | Exempel |
-|---|---|---|
-| `schema.name` | **(OBLIGATORISKT)** XDM-schemat för entiteten som ska hämtas | `schema.name=_xdm.context.experienceevent` |
-| `relatedSchema.name` | Om `schema.name` är&quot;_xdm.context.experienceevent&quot; måste det här värdet ange schemat för den profilentitet som tidsseriehändelserna är relaterade till. | `relatedSchema.name=_xdm.context.profile` |
-| `entityId` | **(OBLIGATORISKT)** ID för entiteten. Om värdet för den här parametern inte är ett XID måste även en parameter för identitetsnamnrymd anges (se `entityIdNS` nedan). | `entityId=janedoe@example.com` |
-| `entityIdNS` | Om `entityId` inte anges som ett XID måste det här fältet ange identitetsnamnområdet. | `entityIdNE=email` |
-| `relatedEntityId` | Om `schema.name` är&quot;_xdm.context.experienceevent&quot; måste det här värdet ange den relaterade profilentitetens identitetsnamnutrymme. Det här värdet följer samma regler som `entityId`. | `relatedEntityId=69935279872410346619186588147492736556` |
+| --------- | ----------- | ------- |
+| `schema.name` | **(Obligatoriskt)** Namnet på entitetens XDM-schema. | `schema.name=_xdm.context.experienceevent` |
+| `relatedSchema.name` | Om `schema.name` är `_xdm.context.experienceevent` måste det här värdet **** ange schemat för den profilentitet som tidsseriehändelserna är relaterade till. | `relatedSchema.name=_xdm.context.profile` |
+| `entityId` | **(Obligatoriskt)** ID för entiteten. Om värdet för den här parametern inte är ett XID måste även en identitetsnamnområdesparameter (`entityIdNS`) anges. | `entityId=janedoe@example.com` |
+| `entityIdNS` | Om `entityId` inte anges som ett XID måste **** ange identitetsnamnområdet i det här fältet. | `entityIdNS=email` |
+| `relatedEntityId` | Om `schema.name` är `_xdm.context.experienceevent` måste det här värdet **** ange den relaterade profilentitetens ID. Det här värdet följer samma regler som `entityId`. | `relatedEntityId=69935279872410346619186588147492736556` |
 | `relatedEntityIdNS` | Om `schema.name` är&quot;_xdm.context.experienceevent&quot; måste det här värdet ange identitetsnamnutrymmet för entiteten som anges i `relatedEntityId`. | `relatedEntityIdNS=CRMID` |
-| `fields` | Filtrerar de data som returneras i svaret. Använd detta för att ange vilka schemafältvärden som ska inkluderas i hämtade data. För flera fält avgränsar du värden med kommatecken utan blanksteg mellan | `fields=personalEmail,person.name,person.gender` |
-| `mergePolicyId` | Identifierar den sammanfogningsprincip som ska användas för att styra returnerade data. Om ingen anges i samtalet används organisationens standardvärde för det schemat. Om ingen standardprincip för sammanslagning har konfigurerats är standardinställningen ingen profilsammanslagning och ingen identitetssammanfogning. | `mergePoilcyId=5aa6885fcf70a301dabdfa4a` |
-| `orderBy` | Sorteringsordningen för hämtade upplevelsehändelser efter tidsstämpel, skriven som `(+/-)timestamp` med standardvärdet `+timestamp`. | `orderby=-timestamp` |
-| `startTime` | Ange starttid för att filtrera tidsserieobjekt (i millisekunder). | `startTime=1539838505` |
-| `endTime` | Ange sluttiden för filtrering av tidsserieobjekt (i millisekunder). | `endTime=1539838510` |
-| `limit` | Numeriskt värde som anger det maximala antalet objekt som ska returneras. Standard: 1000 | `limit=100` |
-| `property` | Filtrerar efter egenskapsvärdet. Stöder följande utvärderare: =, !=, &lt;, &lt;=, >, >=. Kan endast användas med upplevelsehändelser med stöd för maximalt tre egenskaper. | `property=webPageDetails.isHomepage=true&property=localTime<="2020-07-20"` |
-| `withCA` | Funktionsflagga för aktivering av beräknade attribut för sökning. Standard: false | `withCA=true` |
+| `fields` | Filtrerar de data som returneras i svaret. Använd detta för att ange vilka schemafältvärden som ska inkluderas i hämtade data. För flera fält avgränsar du värden med kommatecken utan blanksteg mellan. | `fields=personalEmail,person.name,person.gender` |
+| `mergePolicyId` | Identifierar den sammanfogningsprincip som ska användas för att styra returnerade data. Om ingen anges i samtalet används organisationens standardvärde för det schemat. Om ingen standardprincip för sammanslagning har konfigurerats är standardinställningen ingen profilsammanslagning och ingen identitetssammanfogning. | `mergePolicyId=5aa6885fcf70a301dabdfa4a` |
+| `orderBy` | Sorteringsordningen för hämtade entiteter efter tidsstämpel. Detta skrivs som `(+/-)timestamp`, med standardvärdet `+timestamp`. | `orderby=-timestamp` |
+| `startTime` | Anger starttiden som entiteterna ska filtreras (i millisekunder). | `startTime=1539838505` |
+| `endTime` | Anger sluttiden för filtrering av enheter (i millisekunder). | `endTime=1539838510` |
+| `limit` | Anger det maximala antalet enheter som ska returneras. Som standard är det här värdet 1 000. | `limit=100` |
+| `property` | Filtrerar efter egenskapsvärdet. Frågeparametern stöder följande utvärderare: =, !=, &lt;, &lt;=, >, >=. Detta kan bara användas med upplevelsehändelser, med maximalt tre egenskaper som stöds. | `property=webPageDetails.isHomepage=true&property=localTime<="2020-07-20"` |
