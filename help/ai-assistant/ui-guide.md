@@ -2,9 +2,9 @@
 title: AI Assistant i Adobe Experience Platform
 description: Lär dig hur du använder AI Assistant för att navigera bland och förstå koncept för Experience Platform och Real-time Customer Data Platform, samt användningsinformation om dina objekt.
 exl-id: 3fed2b1d-75fc-47ce-98d1-a811eb8a1d8e
-source-git-commit: 6f95cae48b0f4c304eb3dbd2d95e01e00e0f01c9
+source-git-commit: 0ee9135b2b303f4abcc4d5e5c7345e2bff9332f3
 workflow-type: tm+mt
-source-wordcount: '1464'
+source-wordcount: '1718'
 ht-degree: 0%
 
 ---
@@ -75,10 +75,6 @@ AI Assistant uppdaterar gränssnittet och ger dig länkar till dokumentation som
 
 ![En listruta med de citat som AI Assistant tillhandahåller för konceptfrågor.](./images/citations.png)
 
-Du kan också använda de förslag som AI Assistant ger under **[!UICONTROL Related suggestions]** för att ytterligare utforska ämnen som hör till din ursprungliga fråga.
-
-![En lista med förslag från AI Assistant.](./images/related-suggestions.png)
-
 +++
 
 ### Driftsinsikter {#operational-insights}
@@ -127,9 +123,9 @@ När AI Assistant får en fråga om driftsinsikter kan du använda den för att 
 
 +++
 
-### Använd automatisk komplettering {#use-auto-complete}
+### Använd enhet som slutförs automatiskt {#use-entity-auto-complete}
 
-Du kan använda funktionen för automatisk komplettering för att ta emot en lista med dataobjekt som finns i din sandlåda. Rekommendationer som fylls i automatiskt finns tillgängliga för följande domäner: målgrupper, scheman, datamängder, källor och destinationer.
+Du kan använda funktionen för automatisk komplettering för att ta emot en lista med dataobjekt som finns i din sandlåda. Rekommendationer som fylls i automatiskt finns tillgängliga för följande domäner: målgrupper, scheman, datamängder, resor, källor och destinationer.
 
 +++Markera för att visa ett exempel på automatisk komplettering
 
@@ -176,6 +172,44 @@ Om du vill visa upptäckbarhet väljer du glödlampsikonen i det övre huvudet i
 Välj sedan en kategori och välj en fråga i listan. Du kan använda den här funktionen för att få en bättre uppfattning om vilka typer av frågor som AI Assistant kan svara på. Du kan även uppdatera befintliga uppmaningar med specifik information som gäller din sandlåda med fritext eller [autofyll](#use-auto-complete).
 
 ![AI-assistenten uppmanar till identifiering.](./images/prompt.png)
+
++++
+
+### Använd automatisk ifyllning av fråga {#use-question-autocomplete}
+
+Du kan använda funktionen för automatisk komplettering av frågor i AI Assistant för att välja en fråga från en lista med rekommendationer från AI Assistant.
+
++++Markera för att visa ett exempel på automatisk ifyllning av fråga
+
+Om du vill visa panelen med förslag på frågor skriver du minst sju (7) tecken i indatarutan. Välj sedan den fråga som är relevant för dig på menyn som visas.
+
+![Popup-panelen med förslag på frågor från AI Assistant.](./images/suggested_questions.png)
+
+Du kan behöva uppdatera platshållare i vissa fall där en föreslagen fråga innehåller operativa insikter. Du kan till exempel behöva lägga till det specifika namnet för en datauppsättning eller en målgrupp om AI Assistant-förslaget innehåller platshållare.
+
+![Ett förslag från AI Assistant som innehåller platshållare.](./images/placeholder.png)
+
+Platshållare markeras med blått. Markera platshållaren för att börja uppdatera värdet. Du får bäst resultat om du använder siffror i stället för text på numeriska platshållare. Du kan också använda funktionen för automatisk komplettering av entiteten för att uppdatera platshållarvärdena. Du kan inte skicka en fråga som har ofyllda platshållare.
+
+**OBS!**: Förslag är aktiverade som standard. Välj **[!UICONTROL Suggest ideas]** för att inaktivera funktionen.
+
+![Ett förslag från AI Assistant med uppdaterade platshållare.](./images/updated_placeholder.png)
+
++++
+
+### Använd relaterade förslag {#use-related-suggestions}
+
+Du kan använda avsnittet med relaterade förslag i varje AI Assistant-svar för att fortsätta konversationen.
+
++++Markera för att visa exempel på relaterade förslag
+
+Relaterade förslag returneras med alla svar från AI Assistant. Om du vill fortsätta konversationen väljer du något av förslagen i avsnittet med relaterade förslag.
+
+![En lista med relaterade förslag från AI-assistenten.](./images/related_suggestions.png)
+
+På samma sätt som platshållarna i fråga fyller i automatiskt måste du uppdatera platshållare som ingår i relaterade förslag innan du kan skicka frågan.
+
+![En fråga från relaterade förslag med platshållarna uppdaterade.](./images/related_suggestions_placeholder.png)
 
 +++
 
