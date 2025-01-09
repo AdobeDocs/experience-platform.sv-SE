@@ -3,9 +3,9 @@ title: Data Landing Zone-mål
 description: Lär dig hur du ansluter till Data Landing Zone för att aktivera målgrupper och exportera datamängder.
 last-substantial-update: 2023-07-26T00:00:00Z
 exl-id: 40b20faa-cce6-41de-81a0-5f15e6c00e64
-source-git-commit: 5362690047be6dd1f2d8f6f18d633e0a903807d2
+source-git-commit: cc7c8c14fe5ee4bb9001cae84d28a385a3b4b448
 workflow-type: tm+mt
-source-wordcount: '1551'
+source-wordcount: '1915'
 ht-degree: 0%
 
 ---
@@ -19,13 +19,13 @@ ht-degree: 0%
 
 ## Översikt {#overview}
 
-[!DNL Data Landing Zone] är ett [!DNL Azure Blob] lagringsgränssnitt som tillhandahålls av Adobe Experience Platform, vilket ger dig tillgång till en säker, molnbaserad fillagringsfunktion för att exportera filer från plattformen. Du har åtkomst till en [!DNL Data Landing Zone]-behållare per sandlåda, och den totala datavolymen för alla behållare är begränsad till den totala datamängden som tillhandahålls med plattformsprodukten och tjänstlicensen. Alla kunder med Platform och dess program som [!DNL Customer Journey Analytics], [!DNL Journey Orchestration], [!DNL Intelligent Services] och [!DNL Real-Time Customer Data Platform] etableras med en [!DNL Data Landing Zone]-behållare per sandlåda. Du kan läsa och skriva filer till behållaren via [!DNL Azure Storage Explorer] eller kommandoradsgränssnittet.
-
-[!DNL Data Landing Zone] har stöd för SAS-baserad autentisering och dess data skyddas med standardsäkerhetsmekanismer för lagring i [!DNL Azure Blob] vid vila och överföring. SAS står för [signatur för delad åtkomst](https://learn.microsoft.com/en-us/azure/ai-services/translator/document-translation/how-to-guides/create-sas-tokens?tabs=Containers).
-
-Med SAS-baserad autentisering kan du få säker åtkomst till din [!DNL Data Landing Zone]-behållare via en offentlig internetanslutning. Du behöver inte göra några nätverksändringar för att komma åt din [!DNL Data Landing Zone]-behållare, vilket innebär att du inte behöver konfigurera några tillåtelselista- eller korsregionsinställningar för ditt nätverk.
+[!DNL Data Landing Zone] är ett molnlagringsgränssnitt som tillhandahålls av Adobe Experience Platform, vilket ger dig åtkomst till en säker, molnbaserad fillagringsfunktion för att exportera filer från plattformen. Du har åtkomst till en [!DNL Data Landing Zone]-behållare per sandlåda, och den totala datavolymen för alla behållare är begränsad till den totala datamängden som tillhandahålls med plattformsprodukten och tjänstlicensen. Alla kunder med Platform och dess program som [!DNL Customer Journey Analytics], [!DNL Journey Orchestration], [!DNL Intelligent Services] och [!DNL Real-Time Customer Data Platform] etableras med en [!DNL Data Landing Zone]-behållare per sandlåda.
 
 Plattformen tvingar en strikt TTL (time-to-live) på sju dagar för alla filer som överförs till en [!DNL Data Landing Zone]-behållare. Alla filer tas bort efter sju dagar.
+
+Målanslutningen [!DNL Data Landing Zone] är tillgänglig för kunder som använder molnstödet för Azure eller Amazon Web Service. Autentiseringsmekanismen skiljer sig åt beroende på vilket moln som målet etableras i, allt annat om målet och dess användningsfall är desamma. Läs mer om de två olika autentiseringsmekanismerna i avsnitten [Autentisera till den datalandningszon som har etablerats i Azure-blobben] och [Autentisera till den datastartzon som har etablerats av AWS](#authenticate-dlz-aws).
+
+![Diagram som visar hur implementeringen av Data Landing Zone-målet skiljer sig åt beroende på molnstödet.](/help/destinations/assets/catalog/cloud-storage/data-landing-zone/dlz-workflow-based-on-cloud-implementation.png)
 
 ## Anslut till ditt [!UICONTROL Data Landing Zone]-lagringsutrymme via API eller användargränssnittet {#connect-api-or-ui}
 
@@ -67,9 +67,17 @@ När du exporterar *målgruppsdata* skapar Platform en `.csv` -, `parquet` - ell
 
 När du exporterar *datauppsättningar* skapar Platform en `.parquet` - eller `.json` -fil på den lagringsplats som du angav. Mer information om filerna finns i avsnittet [Verifiera lyckad datauppsättningsexport](../../ui/export-datasets.md#verify) i självstudiekursen om exportdatamängder.
 
-## Förhandskrav {#prerequisites}
+## Autentisera till den datalandningszon som har etablerats i Azure-blobben {#authenticate-dlz-azure}
 
-Observera följande krav som måste uppfyllas innan du kan använda målet [!DNL Data Landing Zone].
+>[!AVAILABILITY]
+>
+>Det här avsnittet gäller implementeringar av Experience Platform som körs på Microsoft Azure. Mer information om den Experience Platform-infrastruktur som stöds finns i [Översikt över flera moln i Experience Platform](https://experienceleague.adobe.com/en/docs/experience-platform/landing/multi-cloud).
+
+Du kan läsa och skriva filer till behållaren via [!DNL Azure Storage Explorer] eller kommandoradsgränssnittet.
+
+[!DNL Data Landing Zone] har stöd för SAS-baserad autentisering och dess data skyddas med standardsäkerhetsmekanismer för lagring i [!DNL Azure Blob] vid vila och överföring. SAS står för [signatur för delad åtkomst](https://learn.microsoft.com/en-us/azure/ai-services/translator/document-translation/how-to-guides/create-sas-tokens?tabs=Containers).
+
+Med SAS-baserad autentisering kan du få säker åtkomst till din [!DNL Data Landing Zone]-behållare via en offentlig internetanslutning. Du behöver inte göra några nätverksändringar för att komma åt din [!DNL Data Landing Zone]-behållare, vilket innebär att du inte behöver konfigurera några tillåtelselista- eller korsregionsinställningar för ditt nätverk.
 
 ### Anslut [!DNL Data Landing Zone]-behållaren till [!DNL Azure Storage Explorer]
 
@@ -197,6 +205,76 @@ En anslutning uppdaterar användargränssnittet för [!DNL Azure Storage Explore
 ![Sammanfattning av DLZ-användarbehållaren markerad i Azure-gränssnittet.](/help/sources/images/tutorials/create/dlz/dlz-user-container.png)
 
 Med din [!DNL Data Landing Zone]-behållare ansluten till [!DNL Azure Storage Explorer] kan du nu börja exportera filer från Experience Platform till [!DNL Data Landing Zone]-behållaren. Om du vill exportera filer måste du upprätta en anslutning till [!DNL Data Landing Zone]-målet i användargränssnittet i Experience Platform, vilket beskrivs i avsnittet nedan.
+
+## Autentisera till AWS-allokerade datalandningszon {#authenticate-dlz-aws}
+
+>[!AVAILABILITY]
+>
+>Detta avsnitt gäller för implementeringar av Experience Platform som körs på Amazon Web Services (AWS). Experience Platform som körs på AWS är för närvarande tillgängligt för ett begränsat antal kunder. Mer information om den Experience Platform-infrastruktur som stöds finns i [Översikt över flera moln i Experience Platform](https://experienceleague.adobe.com/en/docs/experience-platform/landing/multi-cloud).
+
+Utför åtgärderna nedan för att hämta autentiseringsuppgifter till din Data Landing Zone-instans som har etablerats på AWS. Använd sedan en valfri klient för att ansluta till din Data Landing Zone-instans.
+
+>[!BEGINSHADEBOX]
+
+### Hämta autentiseringsuppgifterna för [!DNL Data Landing Zone] {#retrieve-dlz-credentials-aws}
+
+Du måste använda plattforms-API:erna för att hämta dina [!DNL Data Landing Zone]-autentiseringsuppgifter. API-anropet för att hämta dina autentiseringsuppgifter beskrivs nedan. Mer information om hur du hämtar de värden som krävs för rubrikerna finns i guiden [Komma igång med Adobe Experience Platform API:er](/help/landing/api-guide.md).
+
+**API-format**
+
+```http
+GET /data/foundation/connectors/landingzone/credentials?type=dlz_destination'
+```
+
+| Frågeparametrar | Beskrivning |
+| --- | --- |
+| `dlz_destination` | Typen `dlz_destination` gör att API:t kan skilja en målbehållare för en landningszon från andra typer av behållare som är tillgängliga för dig. |
+
+{style="table-layout:auto"}
+
+**Begäran**
+
+I följande exempel på begäran hämtas autentiseringsuppgifter för en befintlig landningszon.
+
+```shell
+curl --request GET \
+  --url 'https://platform.adobe.io/data/foundation/connectors/landingzone/credentials?type=dlz_destination' \
+  --header 'Authorization: Bearer ***' \
+  --header 'Content-Type: application/json' \
+  --header 'x-api-key: your_api_key' \
+  --header 'x-gw-ims-org-id: yourorg@AdobeOrg'
+```
+
+**Svar**
+
+Följande svar returnerar autentiseringsuppgifter för din landningszon, inklusive din aktuella `awsAccessKeyId`, `awsSecretAccessKey` och annan information.
+
+```json
+{
+    "credentials": {
+        "awsAccessKeyId": "ABCDW3MEC6HE2T73ZVKP",
+        "awsSecretAccessKey": "A1B2Zdxj6y4xfR0QZGtf/phj/hNMAbOGtzM/JNeE",
+        "awsSessionToken": "***"
+    },
+    "dlzPath": {
+        "bucketName": "your-bucket-name",
+        "dlzFolder": "dlz-destination"
+    },
+    "dlzProvider": "Amazon S3",
+    "expiryTime": 1734494017
+}
+```
+
+| Egenskap | Beskrivning |
+| --- | --- |
+| `credentials` | Det här objektet innehåller `awsAccessKeyId`, `awsSecretAccessKey` och `awsSessionToken` som Experience Platform använder för att exportera filer till din tilldelade Data Landing Zone-plats. |
+| `dlzPath` | Det här objektet innehåller sökvägen till den AWS-plats som har tilldelats av Adobe, där exporterade filer placeras. |
+| `dlzProvider` | Anger att detta är en Amazon S3-provisionerad Data Landing Zone. |
+| `expiryTime` | Anger när inloggningsuppgifterna i objektet längre fram upphör att gälla. Du kan uppdatera dessa genom att ringa samtalet igen. |
+
+{style="table-layout:auto"}
+
+>[!ENDSHADEBOX]
 
 ## Anslut till målet {#connect}
 
