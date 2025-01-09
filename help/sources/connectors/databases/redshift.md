@@ -3,9 +3,9 @@ title: Amazon Redshift Source Connector - översikt
 description: Lär dig hur du ansluter Amazon Redshift till Adobe Experience Platform med hjälp av API:er eller användargränssnittet.
 badgeUltimate: label="Ultimate" type="Positive"
 exl-id: 75e577dd-a0b0-4f82-a371-5ec9255544f8
-source-git-commit: dbeeab9182ae67e5c9c691707faeddf04f4e94b2
+source-git-commit: 84d09038ded1f35269ebf67c6bc1a5dacaafe4ac
 workflow-type: tm+mt
-source-wordcount: '308'
+source-wordcount: '351'
 ht-degree: 0%
 
 ---
@@ -14,7 +14,10 @@ ht-degree: 0%
 
 >[!IMPORTANT]
 >
->Källan [!DNL Amazon Redshift] är tillgänglig i källkatalogen för användare som har köpt Real-time Customer Data Platform Ultimate.
+>- Källan [!DNL Amazon Redshift] är tillgänglig i källkatalogen för användare som har köpt Real-Time CDP Ultimate.
+>
+>- Du kan nu använda källan [!DNL Amazon Redshift] när du kör Adobe Experience Platform på Amazon Web Services (AWS). Experience Platform som körs på AWS är för närvarande tillgängligt för ett begränsat antal kunder. Mer information om den Experience Platform-infrastruktur som stöds finns i [Översikt över flera moln i Experience Platform](../../../landing/multi-cloud.md).
+
 
 Med Adobe Experience Platform kan data hämtas från externa källor samtidigt som du kan strukturera, märka och förbättra inkommande data med hjälp av plattformstjänster. Du kan importera data från en mängd olika källor, till exempel Adobe-program, molnbaserad lagring, databaser och många andra.
 

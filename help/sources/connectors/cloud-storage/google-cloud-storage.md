@@ -4,14 +4,18 @@ solution: Experience Platform
 title: Google Cloud Storage Source Connector - översikt
 description: Lär dig hur du ansluter Google Cloud-lagring till Adobe Experience Platform med API:er eller användargränssnittet.
 exl-id: f7ebd213-f914-4c49-aebd-1df4514ffec0
-source-git-commit: ae22e423119bf378a068349d481f0717a75171bb
+source-git-commit: ee659ded9701132b12d5b93672b4c958e9720028
 workflow-type: tm+mt
-source-wordcount: '552'
+source-wordcount: '597'
 ht-degree: 0%
 
 ---
 
 # Google Cloud Storage Connector
+
+>[!IMPORTANT]
+>
+>Du kan nu använda källan [!DNL Google Cloud Storage] när du kör Adobe Experience Platform på Amazon Web Services (AWS). Experience Platform som körs på AWS är för närvarande tillgängligt för ett begränsat antal kunder. Mer information om den Experience Platform-infrastruktur som stöds finns i [Översikt över flera moln i Experience Platform](../../../landing/multi-cloud.md).
 
 Adobe Experience Platform erbjuder inbyggd anslutning för molnleverantörer som AWS, [!DNL Google Cloud Platform] och [!DNL Azure], vilket gör att du kan hämta data från dessa system.
 

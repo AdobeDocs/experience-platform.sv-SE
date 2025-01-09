@@ -4,14 +4,18 @@ solution: Experience Platform
 title: Marketo Engage-kontakt
 description: Det här dokumentet innehåller en översikt över Marketo Engage-källkopplingen, inklusive information om autentisering, mappning och datalatens.
 exl-id: 063ec5d9-d643-4141-bf6d-878273f22b33
-source-git-commit: 0c695e11e7d7c14ef7e047cd007668e1099bf127
+source-git-commit: 37e23b060c34c628b2be80256cffd1480c899ce7
 workflow-type: tm+mt
-source-wordcount: '683'
+source-wordcount: '728'
 ht-degree: 0%
 
 ---
 
 # [!DNL Marketo Engage]-koppling
+
+>[!IMPORTANT]
+>
+>Du kan nu använda källan [!DNL Marketo Engage] när du kör Adobe Experience Platform på Amazon Web Services (AWS). Experience Platform som körs på AWS är för närvarande tillgängligt för ett begränsat antal kunder. Mer information om den Experience Platform-infrastruktur som stöds finns i [Översikt över flera moln i Experience Platform](../../../../landing/multi-cloud.md).
 
 Med Adobe Experience Platform kan data hämtas från externa källor samtidigt som du kan strukturera, märka och förbättra inkommande data med hjälp av plattformstjänster. Du kan importera data från en mängd olika källor, till exempel Adobe-program, molnbaserad lagring, databaser och många andra.
 
@@ -21,7 +25,7 @@ Med [!DNL Marketo Engage]-källkopplingen kan du hämta B2B-data från [!DNL Mar
 
 >[!IMPORTANT]
 >
->Du måste ha tillgång till [Adobe Real-time Customer Data Platform B2B Edition](../../../../rtcdp/b2b-overview.md) för att kunna använda alla Marketo-datauppsättningar för segmentering med [kundprofilen i realtid](../../../../profile/home.md). Utan Real-Time CDP B2B Edition kan du fortfarande använda Marketo-källan för att överföra data från persondata och aktivitetsdatauppsättningar till kundprofilen i realtid för segmentering.
+>Du måste ha tillgång till [Adobe Real-time Customer Data Platform B2B edition](../../../../rtcdp/b2b-overview.md) för att kunna använda alla Marketo-datauppsättningar för segmentering med [kundprofilen i realtid](../../../../profile/home.md). Utan Real-Time CDP B2B edition kan ni fortfarande använda Marketo-källan för att överföra data från persondata och aktivitetsdatauppsättningar till kundprofilen i realtid för segmentering.
 
 Det här dokumentet innehåller en översikt över [!DNL Marketo Engage]-källkopplingen, inklusive information om hur du autentiserar kopplingen, hur du mappar [!DNL Marketo Engage]-fält till Experience Data Model (XDM) och anslutningsens datalatens.
 

@@ -2,14 +2,19 @@
 title: Salesforce Source Connector - översikt
 description: Lär dig hur du ansluter Salesforce till Adobe Experience Platform med API:er eller användargränssnittet.
 exl-id: 597778ad-3cf8-467c-ad5b-e2850967fdeb
-source-git-commit: 258e54b969e7b392eec97459e0a51931f2109fe7
+source-git-commit: ee659ded9701132b12d5b93672b4c958e9720028
 workflow-type: tm+mt
-source-wordcount: '1483'
+source-wordcount: '1528'
 ht-degree: 0%
 
 ---
 
 # [!DNL Salesforce]
+
+>[!IMPORTANT]
+>
+>Du kan nu använda källan [!DNL Salesforce] när du kör Adobe Experience Platform på Amazon Web Services (AWS). Experience Platform som körs på AWS är för närvarande tillgängligt för ett begränsat antal kunder. Mer information om den Experience Platform-infrastruktur som stöds finns i [Översikt över flera moln i Experience Platform](../../../landing/multi-cloud.md).
+
 
 Med Adobe Experience Platform kan data hämtas från externa källor samtidigt som du kan strukturera, märka och förbättra inkommande data med hjälp av plattformstjänster. Du kan importera data från en mängd olika källor, till exempel Adobe-program, molnbaserad lagring, databaser och många andra.
 

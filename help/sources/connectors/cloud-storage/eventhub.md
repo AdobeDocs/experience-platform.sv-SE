@@ -3,9 +3,9 @@ title: Azure Event Hubs Source Connector - översikt
 description: Lär dig hur du ansluter Azure Event Hubs till Adobe Experience Platform med hjälp av API:er eller användargränssnittet.
 badgeUltimate: label="Ultimate" type="Positive"
 exl-id: b4d4bc7f-2241-482d-a5c2-4422c31705bf
-source-git-commit: 12ddf87d594b7e25a0356cd419e990b262c1734e
+source-git-commit: 84d09038ded1f35269ebf67c6bc1a5dacaafe4ac
 workflow-type: tm+mt
-source-wordcount: '517'
+source-wordcount: '560'
 ht-degree: 0%
 
 ---
@@ -14,7 +14,9 @@ ht-degree: 0%
 
 >[!IMPORTANT]
 >
->Källan [!DNL Azure Event Hubs] är tillgänglig i källkatalogen för användare som har köpt Real-time Customer Data Platform Ultimate.
+>* Källan [!DNL Azure Event Hubs] är tillgänglig i källkatalogen för användare som har köpt Real-Time CDP Ultimate.
+>
+>* Du kan nu använda källan [!DNL Azure Event Hubs] när du kör Adobe Experience Platform på Amazon Web Services (AWS). Experience Platform som körs på AWS är för närvarande tillgängligt för ett begränsat antal kunder. Mer information om den Experience Platform-infrastruktur som stöds finns i [Översikt över flera moln i Experience Platform](../../../landing/multi-cloud.md).
 
 Adobe Experience Platform erbjuder inbyggd anslutning för molnleverantörer som AWS, [!DNL Google Cloud Platform] och [!DNL Azure]. Ni kan överföra data från dessa system till plattformen.
 

@@ -3,9 +3,9 @@ title: Amazon Kinesis Source Connector - översikt
 description: Lär dig hur du ansluter Amazon Kinesis till Adobe Experience Platform med hjälp av API:er eller användargränssnittet.
 badgeUltimate: label="Ultimate" type="Positive"
 exl-id: b71fc922-7722-4279-8fc6-e5d7735e1ebb
-source-git-commit: 9a8139c26b5bb5ff937a51986967b57db58aab6c
+source-git-commit: 84d09038ded1f35269ebf67c6bc1a5dacaafe4ac
 workflow-type: tm+mt
-source-wordcount: '486'
+source-wordcount: '529'
 ht-degree: 0%
 
 ---
@@ -14,7 +14,10 @@ ht-degree: 0%
 
 >[!IMPORTANT]
 >
->Källan [!DNL Amazon Kinesis] är tillgänglig i källkatalogen för användare som har köpt Real-time Customer Data Platform Ultimate.
+>- Källan [!DNL Amazon Kinesis] är tillgänglig i källkatalogen för användare som har köpt Real-Time CDP Ultimate.
+>
+>- Du kan nu använda källan [!DNL Amazon Kinesis] när du kör Adobe Experience Platform på Amazon Web Services (AWS). Experience Platform som körs på AWS är för närvarande tillgängligt för ett begränsat antal kunder. Mer information om den Experience Platform-infrastruktur som stöds finns i [Översikt över flera moln i Experience Platform](../../../landing/multi-cloud.md).
+
 
 Adobe Experience Platform erbjuder inbyggd anslutning för molnleverantörer som AWS, [!DNL Google Cloud Platform] och [!DNL Azure]. Du kan hämta data från dessa system till [!DNL Platform].
 
