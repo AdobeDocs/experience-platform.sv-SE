@@ -2,9 +2,9 @@
 title: Pinterest Customer List Connection
 description: Skapa målgrupper utifrån kundlistor, personer som har besökt er webbplats eller personer som redan har interagerat med ert innehåll på Pinterest.
 exl-id: e601f75f-0d40-4cd0-93ca-54d7439f1db7
-source-git-commit: 8a48ce4185f8044b8563d0435dcec17030b90830
+source-git-commit: 83e2c014e62509fee2843505d7975cde368665ef
 workflow-type: tm+mt
-source-wordcount: '698'
+source-wordcount: '798'
 ht-degree: 1%
 
 ---
@@ -67,11 +67,27 @@ Om du vill ansluta till det här målet följer du stegen som beskrivs i självs
 
 ### Anslutningsparametrar {#parameters}
 
-När [konfigurerar](../../ui/connect-destination.md) för det här målet måste du ange följande information:
+När [konfigurerar](../../ui/connect-destination.md) det här målet måste du ange följande information:
 
 * **[!UICONTROL Name]**: Ett namn som du känner igen det här målet med i framtiden.
 * **[!UICONTROL Description]**: En beskrivning som hjälper dig att identifiera det här målet i framtiden.
 * **[!UICONTROL Ad Account ID]**: Ditt Pinterest-annonser-ID.
+
+### Uppdatera autentiseringsuppgifter {#refresh-authentication-credentials}
+
+Pinterest-token upphör att gälla var 30:e dag. När token har gått ut slutar dataexporten till målet att fungera. Du kan förhindra detta genom att utföra följande steg:
+
+1. Navigera till **[!UICONTROL Destinations]** > **[!UICONTROL Accounts]**
+2. (Valfritt) Använd de tillgängliga filtren på sidan om du bara vill visa Pinterest-konton.
+   ![Filtrera så att endast Pinterest-konton visas](/help/destinations/assets/catalog/advertising/pinterest-customer-list/refresh-oauth-filters.png)
+3. Markera det konto som du vill uppdatera, markera ellipsen och välj **[!UICONTROL Edit details]**.
+   ![Välj kontrollen Redigera information](/help/destinations/assets/catalog/advertising/pinterest-customer-list/refresh-oauth-edit-details.png)
+4. I det modala fönstret väljer du **[!UICONTROL Reconnect OAuth]** och autentiserar igen med dina Pinterest-autentiseringsuppgifter.
+   ![Modalt fönster med alternativet Återanslut OAuth](/help/destinations/assets/catalog/advertising/pinterest-customer-list/reconnect-oauth-control.png)
+
+>[!SUCCESS]
+> 
+>Dina autentiseringsuppgifter uppdateras och deras förfallotid återställs till 30 dagar.
 
 ### Aktivera aviseringar {#enable-alerts}
 

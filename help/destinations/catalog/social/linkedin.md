@@ -3,9 +3,9 @@ keywords: länkad anslutning;länkad anslutning;länkade destinationer;länkad;
 title: Länkad matchad målgruppsanslutning
 description: Aktivera profiler för era LinkedIn-kampanjer för målgruppsanpassning, personalisering och nedtryckning, baserat på hashad-e-post.
 exl-id: 74c233e9-161a-4e4a-98ef-038a031feff0
-source-git-commit: 74d7c48042b0d2b938705b588c185f3c3f96f1cd
+source-git-commit: 4f82aab78e74cb7cdd76b603a1e182fbd7fe627c
 workflow-type: tm+mt
-source-wordcount: '1058'
+source-wordcount: '1158'
 ht-degree: 0%
 
 ---
@@ -118,6 +118,22 @@ I videon nedan visas också stegen för att konfigurera ett [!DNL LinkedIn Match
 2. Välj **[!UICONTROL Connect to destination]**.
    ![Autentisera till LinkedIn](/help/destinations/assets/catalog/social/linkedin/authenticate-linkedin-destination.png)
 3. Ange dina LinkedIn-autentiseringsuppgifter och välj **Logga in**.
+
+### Uppdatera autentiseringsuppgifter {#refresh-authentication-credentials}
+
+LinkedIn-tokens upphör var 60:e dag. När token har gått ut slutar dataexporten till målet att fungera. Du kan förhindra detta genom att utföra följande steg:
+
+1. Navigera till **[!UICONTROL Destinations]** > **[!UICONTROL Accounts]**
+2. (Valfritt) Använd de tillgängliga filtren på sidan om du bara vill visa LinkedIn-konton.
+   ![Filtrera så att endast LinkedIn-konton visas](/help/destinations/assets/catalog/social/linkedin/refresh-oauth-filters.png)
+3. Markera det konto som du vill uppdatera, markera ellipsen och välj **[!UICONTROL Edit details]**.
+   ![Välj kontrollen Redigera information](/help/destinations/assets/catalog/social/linkedin/refresh-oauth-edit-details.png)
+4. I det modala fönstret väljer du **[!UICONTROL Reconnect OAuth]** och autentiserar igen med dina LinkedIn-autentiseringsuppgifter.
+   ![Modalt fönster med alternativet Återanslut OAuth](/help/destinations/assets/catalog/social/linkedin/reconnect-oauth-control.png)
+
+>[!SUCCESS]
+> 
+>Dina autentiseringsuppgifter uppdateras och deras förfallotid återställs till 60 dagar.
 
 ### Fyll i målinformation {#destination-details}
 
