@@ -1,16 +1,16 @@
 ---
-title: Använd beräkningsfält för att exportera arrayer som strängar
+title: Exportera arrayobjekt från Real-Time CDP till molnlagringsmål
 type: Tutorial
 description: Lär dig hur du använder beräkningsfält för att exportera arrayer från Real-Time CDP till molnlagringsmål som strängar.
 exl-id: ff13d8b7-6287-4315-ba71-094e2270d039
-source-git-commit: 9b64e39d25ad94aa834c8e207396b37c2a121243
+source-git-commit: a99fc58b8296b2b9ce6e30d14857529570cd3e8a
 workflow-type: tm+mt
-source-wordcount: '1549'
+source-wordcount: '1613'
 ht-degree: 0%
 
 ---
 
-# Använd beräkningsfält för att exportera arrayer som strängar{#use-calculated-fields-to-export-arrays-as-strings}
+# Exportera arrayobjekt från Real-Time CDP till molnlagringsmål {#export-arrays-cloud-storage}
 
 >[!CONTEXTUALHELP]
 >id="platform_destinations_export_arrays_flat_files"
@@ -21,22 +21,16 @@ ht-degree: 0%
 
 >[!AVAILABILITY]
 >
->Funktionen för att exportera arrayer via beräkningsfält är vanligtvis tillgänglig.
+>Funktionen för att exportera matriser till molnlagringsmål är vanligtvis tillgänglig.
 
-Lär dig hur du exporterar arrayer via beräknade fält från Real-Time CDP till [molnlagringsmål](/help/destinations/catalog/cloud-storage/overview.md) som strängar. Läs det här dokumentet om du vill veta mer om de användningsområden som den här funktionen har aktiverat.
+Lär dig hur du exporterar arrayer från Real-Time CDP till [molnlagringsmål](/help/destinations/catalog/cloud-storage/overview.md). Läs det här dokumentet om du vill veta mer om exportarbetsflödet, vilka användningsfall som den här funktionen har aktiverat och kända begränsningar.
 
-Få omfattande information om beräkningsfält - vad dessa är och varför de spelar någon roll. Läs de länkade sidorna nedan för en introduktion till beräknade fält i Data Prep och mer information om alla tillgängliga funktioner:
+Matriser måste för närvarande exporteras som strängar med funktionen `array_to_string`.
+
+Om du vill exportera arrayer måste du använda funktionen för beräknade fält i mappningssteget i exportarbetsflödet, *såvida du inte [exporterar enskilda element i en array](#index-based-array-access)*. Detaljerad information om beräkningsfält finns på de sidor som är länkade nedan. Detta inkluderar en introduktion till beräknade fält i Data Prep och mer information om alla tillgängliga funktioner:
 
 * [Användargränssnittsguide och översikt](/help/data-prep/ui/mapping.md#calculated-fields)
 * [Förinställningsfunktioner för data](/help/data-prep/functions.md)
-
-<!--
-
->[!IMPORTANT]
->
->Not all functions listed above are supported *when exporting fields to cloud storage destinations* using the calculated fields functionality. See the [supported functions section](#supported-functions) further below for more information.
-
--->
 
 ## Arrayer och andra objekttyper i Platform {#arrays-strings-other-objects}
 
@@ -259,6 +253,10 @@ johndoe@acme.org,"5"
 ```
 
 ### Indexbaserad arrayåtkomst {#index-based-array-access}
+
+>[!IMPORTANT]
+>
+>Till skillnad från andra funktioner som beskrivs på den här sidan behöver du *inte* för att kunna exportera enskilda element i en array med kontrollen **[!UICONTROL Calculated fields]** i användargränssnittet.
 
 Du kan komma åt ett index för en array och exportera ett enskilt objekt från arrayen. Om du till exempel, som i exemplet ovan för funktionen `size_of`, bara vill komma åt och exportera första gången som en kund har köpt en viss produkt, kan du använda `purchaseTime[0]` för att exportera det första elementet i tidsstämpeln, `purchaseTime[1]` för att exportera det andra elementet i tidsstämpeln, `purchaseTime[2]` för att exportera det tredje elementet i tidsstämpeln och så vidare.
 

@@ -3,9 +3,9 @@ title: Data Landing Zone-mål
 description: Lär dig hur du ansluter till Data Landing Zone för att aktivera målgrupper och exportera datamängder.
 last-substantial-update: 2023-07-26T00:00:00Z
 exl-id: 40b20faa-cce6-41de-81a0-5f15e6c00e64
-source-git-commit: cc7c8c14fe5ee4bb9001cae84d28a385a3b4b448
+source-git-commit: 5f932f3de2b875d77904582dfb320e0b6ce17afd
 workflow-type: tm+mt
-source-wordcount: '1915'
+source-wordcount: '1927'
 ht-degree: 0%
 
 ---
@@ -23,9 +23,9 @@ ht-degree: 0%
 
 Plattformen tvingar en strikt TTL (time-to-live) på sju dagar för alla filer som överförs till en [!DNL Data Landing Zone]-behållare. Alla filer tas bort efter sju dagar.
 
-Målanslutningen [!DNL Data Landing Zone] är tillgänglig för kunder som använder molnstödet för Azure eller Amazon Web Service. Autentiseringsmekanismen skiljer sig åt beroende på vilket moln som målet etableras i, allt annat om målet och dess användningsfall är desamma. Läs mer om de två olika autentiseringsmekanismerna i avsnitten [Autentisera till den datalandningszon som har etablerats i Azure-blobben] och [Autentisera till den datastartzon som har etablerats av AWS](#authenticate-dlz-aws).
+Målanslutningen [!DNL Data Landing Zone] är tillgänglig för kunder som använder molnstödet för Azure eller Amazon Web Service. Autentiseringsmekanismen skiljer sig åt beroende på vilket moln som målet etableras i, allt annat om målet och dess användningsfall är desamma. Läs mer om de två olika autentiseringsmekanismerna i avsnitten [Autentisera till den datalandningszon som har etablerats i Azure-blobben](#authenticate-dlz-azure) och [Autentisera till den datastartzon som har etablerats av AWS](#authenticate-dlz-aws).
 
-![Diagram som visar hur implementeringen av Data Landing Zone-målet skiljer sig åt beroende på molnstödet.](/help/destinations/assets/catalog/cloud-storage/data-landing-zone/dlz-workflow-based-on-cloud-implementation.png)
+![Diagram som visar hur implementeringen av Data Landing Zone-destinationen skiljer sig åt beroende på molnstödet.](/help/destinations/assets/catalog/cloud-storage/data-landing-zone/dlz-workflow-based-on-cloud-implementation.png "Målimplementering för Data Landing Zone via molnstöd"){zoomable="yes"}
 
 ## Anslut till ditt [!UICONTROL Data Landing Zone]-lagringsutrymme via API eller användargränssnittet {#connect-api-or-ui}
 
@@ -77,7 +77,7 @@ Du kan läsa och skriva filer till behållaren via [!DNL Azure Storage Explorer]
 
 [!DNL Data Landing Zone] har stöd för SAS-baserad autentisering och dess data skyddas med standardsäkerhetsmekanismer för lagring i [!DNL Azure Blob] vid vila och överföring. SAS står för [signatur för delad åtkomst](https://learn.microsoft.com/en-us/azure/ai-services/translator/document-translation/how-to-guides/create-sas-tokens?tabs=Containers).
 
-Med SAS-baserad autentisering kan du få säker åtkomst till din [!DNL Data Landing Zone]-behållare via en offentlig internetanslutning. Du behöver inte göra några nätverksändringar för att komma åt din [!DNL Data Landing Zone]-behållare, vilket innebär att du inte behöver konfigurera några tillåtelselista- eller korsregionsinställningar för ditt nätverk.
+Om du vill skydda dina data över en offentlig internetanslutning använder du SAS-baserad autentisering för att få säker åtkomst till [!DNL Data Landing Zone]-behållaren. Du behöver inte göra några nätverksändringar för att komma åt din [!DNL Data Landing Zone]-behållare, vilket innebär att du inte behöver konfigurera några tillåtelselista- eller korsregionsinställningar för ditt nätverk.
 
 ### Anslut [!DNL Data Landing Zone]-behållaren till [!DNL Azure Storage Explorer]
 
@@ -212,7 +212,7 @@ Med din [!DNL Data Landing Zone]-behållare ansluten till [!DNL Azure Storage Ex
 >
 >Detta avsnitt gäller för implementeringar av Experience Platform som körs på Amazon Web Services (AWS). Experience Platform som körs på AWS är för närvarande tillgängligt för ett begränsat antal kunder. Mer information om den Experience Platform-infrastruktur som stöds finns i [Översikt över flera moln i Experience Platform](https://experienceleague.adobe.com/en/docs/experience-platform/landing/multi-cloud).
 
-Utför åtgärderna nedan för att hämta autentiseringsuppgifter till din Data Landing Zone-instans som har etablerats på AWS. Använd sedan en valfri klient för att ansluta till din Data Landing Zone-instans.
+Utför åtgärderna nedan för att hämta autentiseringsuppgifter till din [!DNL Data Landing Zone]-instans som har etablerats på AWS. Använd sedan en valfri klient för att ansluta till din [!DNL Data Landing Zone]-instans.
 
 >[!BEGINSHADEBOX]
 
@@ -228,7 +228,7 @@ GET /data/foundation/connectors/landingzone/credentials?type=dlz_destination'
 
 | Frågeparametrar | Beskrivning |
 | --- | --- |
-| `dlz_destination` | Typen `dlz_destination` gör att API:t kan skilja en målbehållare för en landningszon från andra typer av behållare som är tillgängliga för dig. |
+| `dlz_destination` | Lägg till frågeparametern `dlz_destination` för att ange att du vill att [!DNL Data Landing Zone] *destination*-typen för behållarautentiseringsuppgifter ska hämtas. Om du vill ansluta och hämta autentiseringsuppgifter för en Data Landing Zone *source* läser du [källdokumentationen](/help/sources/connectors/cloud-storage/data-landing-zone.md). |
 
 {style="table-layout:auto"}
 
@@ -270,7 +270,7 @@ Följande svar returnerar autentiseringsuppgifter för din landningszon, inklusi
 | `credentials` | Det här objektet innehåller `awsAccessKeyId`, `awsSecretAccessKey` och `awsSessionToken` som Experience Platform använder för att exportera filer till din tilldelade Data Landing Zone-plats. |
 | `dlzPath` | Det här objektet innehåller sökvägen till den AWS-plats som har tilldelats av Adobe, där exporterade filer placeras. |
 | `dlzProvider` | Anger att detta är en Amazon S3-provisionerad Data Landing Zone. |
-| `expiryTime` | Anger när inloggningsuppgifterna i objektet längre fram upphör att gälla. Du kan uppdatera dessa genom att ringa samtalet igen. |
+| `expiryTime` | Anger när autentiseringsuppgifterna i objektet `credentials` upphör att gälla. Uppdatera autentiseringsuppgifterna genom att utföra begäran igen. |
 
 {style="table-layout:auto"}
 
