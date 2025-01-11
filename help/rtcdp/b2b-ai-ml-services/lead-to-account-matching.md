@@ -3,11 +3,11 @@ title: Lead till kontomatchning i Real-Time CDP B2B
 type: Documentation
 description: En översikt och mer information om funktionen för att matcha lead-till-konto i Experience Platform CDP B2B.
 feature: Get Started, Profiles, B2B
-badgeB2B: label="B2B Edition" type="Informative" url="https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform-b2b-edition-prime-and-ultimate-packages.html newtab=true"
+badgeB2B: label="B2B edition" type="Informative" url="https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform-b2b-edition-prime-and-ultimate-packages.html newtab=true"
 exl-id: 2f853599-6bca-4ba6-bbba-131a49d8854e
-source-git-commit: db57fa753a3980dca671d476521f9849147880f1
+source-git-commit: 4ba609e777716b1b38f5b143587e5476d851e344
 workflow-type: tm+mt
-source-wordcount: '601'
+source-wordcount: '404'
 ht-degree: 0%
 
 ---
@@ -24,7 +24,7 @@ Kontobaserad marknadsföring är en allt viktigare strategi för B2B-marknadsfö
 - Färre resurser som går förlorade
 - En kortare säljcykel
 
-Kontobaserad marknadsföring ger möjlighet att länka kända personer och anonyma webbbesökare till försäljningskonton. På så sätt kan marknadsföringsteamen interagera med potentiella leads från målkontona tidigt under kundresan för att öka sina chanser till konvertering. En känd personpost innehåller vanligtvis delar av eller all följande information:
+Kontobaserad marknadsföring ger möjlighet att länka kända kunder till försäljningskonton. På så sätt kan marknadsföringsteamen interagera med potentiella leads från målkontona tidigt under kundresan för att öka sina chanser till konvertering. En känd personpost innehåller vanligtvis delar av eller all följande information:
 
 - Personnamn
 - E-postadress
@@ -33,30 +33,6 @@ Kontobaserad marknadsföring ger möjlighet att länka kända personer och anony
 - Företagets webbplats
 - Befattning
 - Plats
-
-Lead till kontomatchning gör att du kan gå med i kända personprofiler till kontoprofiler. Sedan kan ni segmentera och rikta in data i ett B2B-sammanhang som konton, affärsmöjligheter och så vidare. Personprofilerna kan delas in i följande tre kategorier:
-
-- **Kontopersonprofil:** Personprofilen är redan associerad med minst en kontoprofil via relationen från en datakälla. Det innebär att det finns minst ett kontaktfragment.
-
->[!NOTE]
->
-> Kontopersonsprofiler matchas inte när lead körs för kontomatchningsjobb.
-
-- **Känd personprofil:** Personprofilen är INTE associerad med någon kontoprofil och minst ett av följande personprofilattribut har ett värde:
-
-   - E-postadress
-   - Företag
-   - Företagets webbplats
-
-- **Anonym personprofil:** Personprofilen är INTE associerad med någon kontoprofil och inga av följande attribut för personprofiler har ett värde:
-
-   - E-postadress
-   - Företag
-   - Företagets webbplats
-
->[!NOTE]
->
-> En personprofil kan vara relaterad till flera kontoprofiler. Processen för att matcha lead-till-konto kommer dock endast att matcha den bästa matchningen. Om en större uppsättning matchningar krävs, kopplar du leadet till kontomatchningen med funktionen för relaterade konton.
 
 ## Så fungerar det {#how-it-works}
 
