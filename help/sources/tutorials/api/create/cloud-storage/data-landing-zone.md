@@ -1,13 +1,10 @@
 ---
-keywords: Experience Platform;hemmabruk;populära ämnen;
-solution: Experience Platform
 title: Anslut Data Landing Zone till Adobe Experience Platform med API:t för Flow Service
-type: Tutorial
 description: Lär dig hur du ansluter Adobe Experience Platform till Data Landing Zone med API:t för Flow Service.
 exl-id: bdb60ed3-7c63-4a69-975a-c6f1508f319e
-source-git-commit: 521bfd29405d30c0e35c4095b1ba2bf29f840e8a
+source-git-commit: 527e62e5fb90bc32ef3788f261e0a24b680f29c0
 workflow-type: tm+mt
-source-wordcount: '1326'
+source-wordcount: '1375'
 ht-degree: 1%
 
 ---
@@ -29,9 +26,9 @@ Handboken kräver en fungerande förståelse av följande komponenter i Experien
 * [Källor](../../../../home.md): Experience Platform tillåter data att hämtas från olika källor samtidigt som du kan strukturera, etikettera och förbättra inkommande data med hjälp av plattformstjänster.
 * [Sandlådor](../../../../../sandboxes/home.md): Experience Platform tillhandahåller virtuella sandlådor som partitionerar en enda plattformsinstans till separata virtuella miljöer för att utveckla och utveckla program för digitala upplevelser.
 
-I följande avsnitt finns ytterligare information som du behöver känna till för att kunna skapa en [!DNL Data Landing Zone]-källanslutning med API:t [!DNL Flow Service].
-
 Den här självstudien kräver även att du läser guiden [komma igång med plattforms-API:er](../../../../../landing/api-guide.md) för att lära dig hur du autentiserar till plattforms-API:er och tolkar de exempelanrop som finns i dokumentationen.
+
+I följande avsnitt finns ytterligare information som du behöver känna till för att kunna skapa en [!DNL Data Landing Zone]-källanslutning med API:t [!DNL Flow Service].
 
 ## Hämta en användbar landningszon
 
@@ -63,7 +60,11 @@ curl -X GET \
 
 **Svar**
 
-Följande svar returnerar information om en landningszon, inklusive dess motsvarande `containerName` och `containerTTL`.
+Beroende på din leverantör returnerar en slutförd begäran följande:
+
+>[!BEGINTABS]
+
+>[!TAB Svar på Azure]
 
 ```json
 {
@@ -76,6 +77,26 @@ Följande svar returnerar information om en landningszon, inklusive dess motsvar
 | --- | --- |
 | `containerName` | Namnet på den landningszon som du hämtade. |
 | `containerTTL` | Förfallotid (i dagar) som gäller för dina data inom landningszonen. Alla inom en viss landningszon ska strykas efter sju dagar. |
+
+
+>[!TAB Svar på AWS]
+
+```json
+{
+  "dlzPath": {
+    "bucketName": "dlz-prod-sandboxName",
+    "dlzFolder": "dlz-adf-connectors"
+  },
+  "dataTTL": {
+    "timeUnit": "days",
+    "timeQuantity": 7
+  },
+  "dlzProvider": "Amazon S3"
+}
+```
+
+>[!ENDTABS]
+
 
 ## Hämta autentiseringsuppgifter för [!DNL Data Landing Zone]
 
@@ -103,7 +124,11 @@ curl -X GET \
 
 **Svar**
 
-Följande svar returnerar autentiseringsuppgifter för din datalandningszon, inklusive ditt nuvarande `SASToken`, `SASUri`, `storageAccountName` och förfallodatum.
+Beroende på din leverantör returnerar en slutförd begäran följande:
+
+>[!BEGINTABS]
+
+>[!TAB Svar på Azure]
 
 ```json
 {
@@ -117,10 +142,43 @@ Följande svar returnerar autentiseringsuppgifter för din datalandningszon, ink
 
 | Egenskap | Beskrivning |
 | --- | --- |
-| `containerName` | Namnet på din landningszon. |
-| `SASToken` | Den delade åtkomstsignaturtoken för din landningszon. Strängen innehåller all information som krävs för att godkänna en begäran. |
-| `SASUri` | Den delade åtkomstsignaturens URI för din landningszon. Den här strängen är en kombination av URI:n till den landningszon som du autentiseras mot och dess motsvarande SAS-token, |
-| `expiryDate` | Det datum då din SAS-token upphör att gälla. Du måste uppdatera din token före förfallodatumet för att kunna fortsätta använda den i ditt program för att överföra data till Data Landing Zone. Om du inte uppdaterar din token manuellt före det angivna förfallodatumet uppdateras den automatiskt och en ny token skapas när GETENS inloggningsanrop utförs. |
+| `containerName` | Namnet på din [!DNL Data Landing Zone]. |
+| `SASToken` | Underskriftstoken för delad åtkomst för din [!DNL Data Landing Zone]. Strängen innehåller all information som krävs för att godkänna en begäran. |
+| `storageAccountName` | Namnet på ditt lagringskonto. |
+| `SASUri` | Den delade åtkomstsignaturens URI för din [!DNL Data Landing Zone]. Den här strängen är en kombination av URI:n till [!DNL Data Landing Zone] som du autentiseras mot och dess motsvarande SAS-token. |
+| `expiryDate` | Det datum då din SAS-token upphör att gälla. Du måste uppdatera din token före förfallodatumet för att kunna fortsätta använda den i ditt program för att överföra data till [!DNL Data Landing Zone]. Om du inte uppdaterar din token manuellt före det angivna förfallodatumet uppdateras den automatiskt och en ny token skapas när GETENS inloggningsanrop utförs. |
+
+>[!TAB Svar på AWS]
+
+```json
+{
+  "credentials": {
+    "clientId": "example-client-id",
+    "awsAccessKeyId": "example-access-key-id",
+    "awsSecretAccessKey": "example-secret-access-key",
+    "awsSessionToken": "example-session-token"
+  },
+  "dlzPath": {
+    "bucketName": "dlz-prod-sandboxName",
+    "dlzFolder": "user_drop_zone"
+  },
+  "dlzProvider": "Amazon S3",
+  "expiryTime": 1735689599
+}
+```
+
+| Egenskap | Beskrivning |
+| --- | --- |
+| `credentials.clientId` | Klient-ID för din [!DNL Data Landing Zone] i AWS. |
+| `credentials.awsAccessKeyId` | Åtkomstnyckel-ID för din [!DNL Data Landing Zone] i AWS. |
+| `credentials.awsSecretAccessKey` | Den hemliga åtkomstnyckeln för din [!DNL Data Landing Zone] i AWS. |
+| `credentials.awsSessionToken` | Din AWS sessionstoken. |
+| `dlzPath.bucketName` | Namnet på din AWS-bucket. |
+| `dlzPath.dlzFolder` | Mappen [!DNL Data Landing Zone] som du använder. |
+| `dlzProvider` | Providern [!DNL Data Landing Zone] som du använder. För Amazon blir detta [!DNL Amazon S3]. |
+| `expiryTime` | Utgångsdatum i unix-tid. |
+
+>[!ENDTABS]
 
 ### Hämta obligatoriska fält med API:er
 
