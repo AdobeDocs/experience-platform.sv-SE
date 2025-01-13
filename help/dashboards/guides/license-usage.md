@@ -4,9 +4,9 @@ title: Kontrollpanel för licensanvändning
 description: Adobe Experience Platform tillhandahåller en kontrollpanel där du kan visa viktig information om din organisations licensanvändning.
 type: Documentation
 exl-id: 143d16bb-7dc3-47ab-9b93-9c16683b9f3f
-source-git-commit: 5d40af5c0645e9e4ee44f0c0c2133f3b3153bcb1
+source-git-commit: 7605ccef8553fc775ea5496c73971f92ed4c06ab
 workflow-type: tm+mt
-source-wordcount: '2773'
+source-wordcount: '2812'
 ht-degree: 0%
 
 ---
@@ -46,6 +46,14 @@ ht-degree: 0%
 >id="platform_dashboards_licenseusage_predictedusage_computehours"
 >title="Förutsagda beräkningstimmar"
 >abstract="Användningen kan nå den tillåtna mängden. Om du vill utvärdera eller minska beräkningstiden går du till Frågor > Logg och granskar frågehistoriken. Om du inte har behörighet att komma åt arbetsytan Frågor kontaktar du administratören."
+>additional-url="https://experience.adobe.com/#/platform/query/log" text="Arbetsytan Frågelogg"
+
+>[!CONTEXTUALHELP]
+>id="platform_dashboards_licenseusage_predictedusage_addressableaudience"
+>title="Förutsedd adresserbar publik"
+>abstract="Användningen kan nå den tillåtna mängden. För att minska användningen kan du konfigurera datauppsättningar eller pseudonyma utgångsdatum för profildata för sandlådor och datauppsättningar."
+>additional-url="https://experienceleague.adobe.com/en/docs/experience-platform/profile/event-expirations" text="Förfallodatum för upplevelsehändelser"
+>additional-url="https://experienceleague.adobe.com/en/docs/experience-platform/profile/pseudonymous-profiles" text="Förfallodatum för pseudonyma profiler"
 
 Du kan visa viktig information om din organisations licensanvändning via Adobe Experience Platform [!UICONTROL License usage]-kontrollpanelen. Den information som visas här fångas in vid en daglig ögonblicksbild av din Platform-instans.
 
