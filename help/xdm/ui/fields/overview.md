@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Definiera XDM-fält i användargränssnittet
 description: Lär dig hur du definierar XDM-fält i användargränssnittet för Experience Platform.
 exl-id: 2adb03d4-581b-420e-81f8-e251cf3d9fb9
-source-git-commit: 807ce0b0304fd73a455f228529d75cfc68769bf5
+source-git-commit: 0360d0eb9f4a01e12ce8619e8d2c5bac9301631f
 workflow-type: tm+mt
-source-wordcount: '1518'
+source-wordcount: '1517'
 ht-degree: 1%
 
 ---
@@ -52,7 +52,7 @@ I den högra listen under **[!UICONTROL Field properties]** kan du konfigurera i
 
 | Fältegenskap | Beskrivning |
 | --- | --- |
-| [!UICONTROL Field name] | Ett unikt, beskrivande namn för fältet. Observera att fältets namn inte kan ändras när schemat har sparats. Det här värdet används för att identifiera och referera till fältet i koden och i andra efterföljande program<br><br>Namnet bör helst skrivas i camelCase. Det kan innehålla alfanumeriska tecken, bindestreck eller understreck, men **får inte** börja med ett understreck.<ul><li>**Korrigera**: `fieldName`</li><li>**Godtagbart:** `field_name2`, `Field-Name`, `field-name_3`</li><li>**Felaktigt**: `_fieldName`</li></ul> |
+| [!UICONTROL Field name] | Ett unikt, beskrivande namn för fältet. Observera att fältets namn inte kan ändras när schemat har sparats. Det här värdet används för att identifiera och referera till fältet i koden och i andra efterföljande program<br><br>Namnet bör helst skrivas i camelCase. Det kan innehålla alfanumeriska tecken eller understreck, men **får inte** börja med ett understreck.<ul><li>**Korrigera**: `fieldName`</li><li>**Godtagbart:** `field_name2`, `fieldName_3`</li><li>**Felaktigt**: `_fieldName`</li></ul> |
 | [!UICONTROL Display name] | Ett visningsnamn för fältet. Det här namnet kommer att användas för att representera fältet på arbetsytan i Schemaredigeraren. Fältnamnet kan ändras till visningsnamnet med [växlingsknappen för visningsnamn](../resources/schemas.md#display-name-toggle). |
 | [!UICONTROL Type] | Den typ av data som fältet innehåller. I den här listrutan kan du välja en av de [standardskalärtyper](../../schema/field-constraints.md) som stöds av XDM, eller en av de [datatyper ](../resources/data-types.md) för flera fält som tidigare definierats i [!DNL Schema Registry] .<br>Obs! Om du väljer datatypen Map visas egenskapen [!UICONTROL Map value type] .<br><br>Du kan också välja **[!UICONTROL Advanced type search]** om du vill söka efter och filtrera befintliga datatyper och hitta den önskade typen enklare. |
 | [!UICONTROL Map value type] | Det här värdet är obligatoriskt om du väljer [!UICONTROL Map] som datatyp för fältet. Tillgängliga värden för kartan är [!UICONTROL String] och [!UICONTROL Integer]. Välj ett värde i listrutan med tillgängliga alternativ.<br>Mer information om [typspecifika fältegenskaper](#type-specific-properties) finns i översikten över definierade fält. |
