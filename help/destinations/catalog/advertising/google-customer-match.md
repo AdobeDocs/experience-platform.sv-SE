@@ -1,12 +1,12 @@
 ---
 keywords: Google customer match;Google customer match;Google Customer Match
 title: Google Customer Match Connection
-description: Med Google Customer Match kan ni använda era online- och offlinedata för att nå ut till och återengagera era kunder via Google egna och styrda egendomar som Search, Shopping, Gmail och YouTube.
+description: Med Google Customer Match kan ni använda era online- och offlinedata för att nå ut till och återengagera era kunder via Google egna och styrda egendomar som Search, Shopping och Gmail.
 exl-id: 8209b5eb-b05c-4ef7-9fdc-22a528d5f020
-source-git-commit: 25dc27d890cb2e0e23f8fa797ac9edea929164fd
+source-git-commit: bbf48bb3478e90c1502083d0ea97e3cc0aef1bb9
 workflow-type: tm+mt
-source-wordcount: '2058'
-ht-degree: 1%
+source-wordcount: '2098'
+ht-degree: 2%
 
 ---
 
@@ -22,7 +22,11 @@ ht-degree: 1%
 ><br/>
 >Kunder som inte har köpt Adobe sekretess- och säkerhetssköld måste använda [segmentdefinitionsfunktionerna](../../../segmentation/home.md#segment-definitions) i [Segment Builder](../../../segmentation/ui/segment-builder.md) för att filtrera bort profiler som inte godkänts, så att de kan fortsätta använda Real-Time CDP Google-destinationer utan avbrott.
 
-Med [[!DNL Google Customer Match]](https://support.google.com/google-ads/answer/6379332?hl=en) kan du använda dina online- och offlinedata för att nå och återengagera dina kunder via egenskaper som ägs och hanteras av Google, till exempel: [!DNL Search], [!DNL Shopping], [!DNL Gmail] och [!DNL YouTube].
+Med [[!DNL Google Customer Match]](https://support.google.com/google-ads/answer/6379332?hl=en) kan du använda dina online- och offlinedata för att nå och återengagera dina kunder via egenskaper som ägs och hanteras av Google, till exempel: [!DNL Search], [!DNL Shopping] och [!DNL Gmail].
+
+>[!TIP]
+>
+>Om du vill nå kunder på [!DNL YouTube] lager använder du [Google kundmatchning + DV360](/help/destinations/catalog/advertising/google-customer-match-dv360.md) som använder Google Audience Partner API.
 
 ![Google kundmatchningsmål i Adobe Experience Platform-gränssnittet.](../../assets/catalog/advertising/google-customer-match/catalog.png)
 
@@ -35,6 +39,10 @@ För att du bättre ska kunna förstå hur och när du ska använda målet [!DNL
 Ett sportklädmärke vill nå befintliga kunder genom [!DNL Google Search] och [!DNL Google Shopping] för att personalisera erbjudanden och objekt baserat på deras tidigare köp och webbhistorik. Kläddervarumärket kan importera e-postadresser från sin egen CRM till Experience Platform och bygga målgrupper utifrån sina egna offlinedata. Sedan kan de skicka dessa målgrupper till [!DNL Google Customer Match] för användning i [!DNL Search] och [!DNL Shopping], vilket optimerar deras annonsutgifter.
 
 ### Använd skiftläge 2
+
+>[!TIP]
+>
+>Om du vill köra det här användningsfallet för [!DNL YouTube]-lager använder du det nya [Google kundmatchning + DV360](/help/destinations/catalog/advertising/google-customer-match-dv360.md)-målet, som använder Google Audience Partner API.
 
 Ett framstående teknikföretag lanserade en ny telefon. För att marknadsföra den nya telefonmodellen vill de öka medvetenheten om de nya funktionerna i telefonen för kunder som äger tidigare modeller av sina telefoner.
 
@@ -222,7 +230,7 @@ När du har anslutit till målet och etablerat ett måldataflöde kan du använd
 
 >[!IMPORTANT]
 >
-> Från och med oktober 2024 lanserar Adobe en uppdatering som ökar rapporteringsnoggrannheten för direktuppspelningsdestinationer. Den här förbättringen ger bättre anpassning mellan Experience Platform och målplattformarna.
+> Från och med oktober 2024 lanserar Adobe en uppdatering som ökar rapporteringsnoggrannheten för strömningsmål. Den här förbättringen ger bättre anpassning mellan Experience Platform och målplattformarna.
 >
 > Före den här uppdateringen innehöll **[!UICONTROL Identities failed]** alla aktiveringsförsök. Efter den här uppdateringen inkluderas endast det senaste aktiveringsförsöket i det totala antalet.
 >
