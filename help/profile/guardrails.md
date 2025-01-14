@@ -5,9 +5,9 @@ product: experience platform
 type: Documentation
 description: Läs om prestanda och systemstyrd säkerhet för profildata och segmentering för att säkerställa en optimal användning av Real-Time CDP-funktionalitet.
 exl-id: 33ff0db2-6a75-4097-a9c6-c8b7a9d8b78c
-source-git-commit: 6962bb0ba4968ed4860e95819ac2e949bf744d79
+source-git-commit: 22daff3f422cd4ec5bbf5c77583e24dac6c53c76
 workflow-type: tm+mt
-source-wordcount: '2459'
+source-wordcount: '2470'
 ht-degree: 1%
 
 ---
@@ -67,7 +67,7 @@ Följande skyddsprofiler ger rekommenderade gränser vid modellering av kundprof
 | JSON-djup för ID-fält som används i relationer med flera enheter | 4 | Prestandaskydd | Rekommenderat maximalt JSON-djup för ett ID-fält som används i relationer med flera enheter är 4. Detta innebär att i ett mycket kapslat schema ska fält som är kapslade mer än fyra nivåer djupa inte användas som ID-fält i en relation. |
 | Matriskardinalitet i ett profilfragment | &lt;=500 | Prestandaskydd | Den optimala arraykardinaliteten i ett profilfragment (tidsoberoende data) är &lt;=500. |
 | Array-kardinalitet i ExperienceEvent | &lt;=10 | Prestandaskydd | Den optimala arraykardinaliteten i en ExperienceEvent (tidsseriedata) är &lt;=10. |
-| Identitetsantal för individuell profil identitetsdiagram | 50 | Systemstyrt skyddsräcke | **Det maximala antalet identiteter i ett identitetsdiagram för en enskild profil är 50.** Alla profiler med fler än 50 identiteter exkluderas från segmentering, export och uppslag. |
+| Identitetsantal för individuell profil identitetsdiagram | 50 | Systemstyrt skyddsräcke | **Det maximala antalet identiteter i ett identitetsdiagram för en enskild profil är 50.** Alla profiler med fler än 50 identiteter exkluderas från segmentering, export och uppslag. Mer information finns i handboken om [att förstå logik för identitetsborttagning](../identity-service/guardrails.md#understanding-the-deletion-logic-when-an-identity-graph-at-capacity-is-updated). |
 
 {style="table-layout:auto"}
 
@@ -186,6 +186,6 @@ Följande dokumentation innehåller mer information om andra Experience Platform
 
 * [Real-Time CDP skyddsräcken](/help/rtcdp/guardrails/overview.md)
 * [Latensdiagram från början till slut](https://experienceleague.adobe.com/docs/blueprints-learn/architecture/architecture-overview/deployment/guardrails.html?lang=en#end-to-end-latency-diagrams) för olika Experience Platform-tjänster.
-* [Real-time Customer Data Platform (B2C-utgåva - Premiere- och Ultimate-paket)](https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform-b2c-edition-prime-and-ultimate-packages.html)
+* [Real-time Customer Data Platform (B2C Edition - Prime- och Ultimate-paket)](https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform-b2c-edition-prime-and-ultimate-packages.html)
 * [Real-time Customer Data Platform (B2P - Prime- och Ultimate-paket)](https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform-b2p-edition-prime-and-ultimate-packages.html)
 * [Real-time Customer Data Platform (B2B - Prime- och Ultimate-paket)](https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform-b2b-edition-prime-and-ultimate-packages.html)
