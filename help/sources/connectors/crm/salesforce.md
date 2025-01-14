@@ -2,9 +2,9 @@
 title: Salesforce Source Connector - översikt
 description: Lär dig hur du ansluter Salesforce till Adobe Experience Platform med API:er eller användargränssnittet.
 exl-id: 597778ad-3cf8-467c-ad5b-e2850967fdeb
-source-git-commit: ee659ded9701132b12d5b93672b4c958e9720028
+source-git-commit: f62e13e97cc82fef759d06b94337f4cc25d4fb10
 workflow-type: tm+mt
-source-wordcount: '1528'
+source-wordcount: '1533'
 ht-degree: 0%
 
 ---
@@ -14,7 +14,6 @@ ht-degree: 0%
 >[!IMPORTANT]
 >
 >Du kan nu använda källan [!DNL Salesforce] när du kör Adobe Experience Platform på Amazon Web Services (AWS). Experience Platform som körs på AWS är för närvarande tillgängligt för ett begränsat antal kunder. Mer information om den Experience Platform-infrastruktur som stöds finns i [Översikt över flera moln i Experience Platform](../../../landing/multi-cloud.md).
-
 
 Med Adobe Experience Platform kan data hämtas från externa källor samtidigt som du kan strukturera, märka och förbättra inkommande data med hjälp av plattformstjänster. Du kan importera data från en mängd olika källor, till exempel Adobe-program, molnbaserad lagring, databaser och många andra.
 
@@ -50,6 +49,8 @@ Om du vill använda källan [!DNL Salesforce] som en del av [!DNL B2B-CDP] måst
 
 Med en plattformsutvecklarkonsol och [!DNL Postman] konfigurerad kan du nu börja använda lämpliga miljövärden i din [!DNL Postman] -miljö.
 
++++Visa den variabla tabellstödlinjen
+
 Följande tabell innehåller exempelvärden samt ytterligare information om hur du fyller i din [!DNL Postman]-miljö:
 
 | Variabel | Beskrivning | Exempel |
@@ -73,6 +74,8 @@ Följande tabell innehåller exempelvärden samt ytterligare information om hur 
 | `has_msi` | Ett booleskt värde som anger om du prenumererar på [!DNL Marketo Sales Insight]. | `false` |
 
 {style="table-layout:auto"}
+
++++
 
 ### Kör skripten
 
@@ -124,7 +127,7 @@ openssl req -newkey rsa:4096 -new -nodes -x509 -days 3650 -keyout key.pem -out c
 4. Aktivera rutan för [!DNL Enable OAuth Settings].
 5. Ange en återanrops-URL. Eftersom detta inte kommer att användas för JWT kan du använda `https://localhost`.
 6. Aktivera rutan för [!DNL Use Digital Signatures].
-7. Överför filen cert.perm som skapades tidigare.
+7. Överför filen cert.pem som skapades tidigare.
 
 #### Lägg till nödvändiga behörigheter
 
