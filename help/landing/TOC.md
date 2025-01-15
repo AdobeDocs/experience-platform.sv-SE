@@ -3,9 +3,9 @@ audience: user
 user-guide-title: Översikt över Adobe Experience Platform
 breadcrumb-title: Översikt över Experience Platform
 user-guide-description: Läs mer om hur Experience Platform kan leverera personaliserade upplevelser till era kunder i realtid med användarhandböcker, dokumentation och självstudiekurser.
-source-git-commit: b3fe3f50c133a819921aef05ee5b00af16b7f58f
+source-git-commit: 90b8a3253e8298a634c0deaf82ac8be05f478622
 workflow-type: tm+mt
-source-wordcount: '290'
+source-wordcount: '304'
 ht-degree: 17%
 
 ---
@@ -69,11 +69,13 @@ ht-degree: 17%
    * [Datakryptering](./governance-privacy-security/encryption.md)
    * Kundhanterade nycklar {#customer-managed-keys}
       * [Kundhanterade nycklar](./governance-privacy-security/customer-managed-keys/overview.md)
-      * [Konfigurera ett Azure Key Vault](./governance-privacy-security/customer-managed-keys/azure-key-vault-config.md)
-      * [Använd API:t för att konfigurera CMK](./governance-privacy-security/customer-managed-keys/api-set-up.md)
-      * [Använd användargränssnittet för att konfigurera CMK](./governance-privacy-security/customer-managed-keys/ui-set-up.md)
-   * Nyckelhanteringstjänst {#key-management-service}
-      * [Nyckelhanteringstjänst](./governance-privacy-security/key-management-service/overview.md)
+      * Azure {#azure}
+         * [Konfigurera ett Azure Key Vault](./governance-privacy-security/customer-managed-keys/azure/azure-key-vault-config.md)
+         * [Använd API:t för att konfigurera CMK](./governance-privacy-security/customer-managed-keys/azure/api-set-up.md)
+         * [Använd användargränssnittet för att konfigurera CMK](./governance-privacy-security/customer-managed-keys/azure/ui-set-up.md)
+      * Amazon Web Services {#aws}
+         * [Konfigurera AWS KMS för CMK](./governance-privacy-security/customer-managed-keys/aws/configure-kms.md)
+         * [Använda användargränssnittet för att konfigurera CMK på AWS](./governance-privacy-security/customer-managed-keys/aws/ui-set-up.md)
 * Licensanvändning och skyddsräcken {#license}
    * [Bästa praxis för berättigande av datahanteringslicens](./license-usage-and-guardrails/data-management-best-practices.md)
    * [Kontrollpanel för licensanvändning](./license-usage-and-guardrails/license-usage-dashboard.md)
