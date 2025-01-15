@@ -5,7 +5,7 @@ title: Skapa ett direktuppspelat dataflöde för rådata med API:t för flödest
 type: Tutorial
 description: Den här självstudiekursen beskriver stegen för att hämta direktuppspelningsdata och föra in dem på plattformen med hjälp av källanslutningar och API:er.
 exl-id: 898df7fe-37a9-4495-ac05-30029258a6f4
-source-git-commit: 39b5a2b76c28033b9e98dcefc4cdcaa9964f4d2e
+source-git-commit: 863889984e5e77770638eb984e129e720b3d4458
 workflow-type: tm+mt
 source-wordcount: '1169'
 ht-degree: 0%
@@ -265,7 +265,7 @@ Ett svar returnerar den nya målanslutningens unika identifierare (`id`). Detta 
 
 För att källdata ska kunna hämtas till en måldatamängd måste den först mappas till målschemat som måldatamängden följer.
 
-Om du vill skapa en mappningsuppsättning skickar du en POST till `mappingSets`-slutpunkten för [[!DNL Data Prep]  API](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/data-prep.yaml) samtidigt som du anger ditt mål-XDM-schema `$id` och information om de mappningsuppsättningar du vill skapa.
+Om du vill skapa en mappningsuppsättning skickar du en POST till `mappingSets`-slutpunkten för [[!DNL Data Prep]  API](https://developer.adobe.com/experience-platform-apis/references/data-prep/) samtidigt som du anger ditt mål-XDM-schema `$id` och information om de mappningsuppsättningar du vill skapa.
 
 **API-format**
 
@@ -482,7 +482,7 @@ Ett lyckat svar returnerar ID:t (`id`) för det nyskapade dataflödet.
 }
 ```
 
-## Post data för intag
+## Bokför data för intag
 
 Se exempelnyttolasten nedan för exempel på råformat eller XDM-kompatibel json som du kan skicka för förtäring.
 

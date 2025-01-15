@@ -5,7 +5,7 @@ title: API-guide för Sensei Machine Learning
 description: Med Sensei Machine Learning API kan utvecklare utföra CRUD-åtgärder på olika Data Science Workspace-resurser. Följ den här användarhandboken om du vill lära dig hur du utför viktiga åtgärder med API:t.
 role: Developer
 exl-id: d51d0eb2-b1e9-4cc1-889a-9487395703b0
-source-git-commit: 5d98dc0cbfaf3d17c909464311a33a03ea77f237
+source-git-commit: 863889984e5e77770638eb984e129e720b3d4458
 workflow-type: tm+mt
 source-wordcount: '255'
 ht-degree: 5%
@@ -22,7 +22,7 @@ ht-degree: 5%
 
 API:t [!DNL Sensei Machine Learning] innehåller en mekanism för datavetare som organiserar och hanterar maskininlärningstjänster, från algoritmregistrering till experimenterande och till tjänstdistribution.
 
-Den här utvecklarhandboken innehåller steg som hjälper dig att börja använda [Sensei Machine Learning API](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/sensei-ml-api.yaml) och demonstrerar API-anrop för att utföra CRUD-åtgärder på olika Data Science Workspace-resurser.
+Den här utvecklarhandboken innehåller steg som hjälper dig att börja använda [Sensei Machine Learning API](https://developer.adobe.com/experience-platform-apis/references/sensei-machine-learning/) och demonstrerar API-anrop för att utföra CRUD-åtgärder på olika Data Science Workspace-resurser.
 
 ## Komma igång
 

@@ -1,18 +1,18 @@
 ---
-title: Adobe Experience Platform Versionsinformation september 2019
-description: Versionsinformation för september 2019 för Adobe Experience Platform.
+title: Versionsinformation om Adobe Experience Platform september 2019
+description: Versionsinformationen för Adobe Experience Platform från september 2019.
 doc-type: release notes
 last-update: September 13, 2019
 author: ens28527
 exl-id: 7f503046-a3b4-4fdb-833c-4205b6e9fa04
-source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
+source-git-commit: 863889984e5e77770638eb984e129e720b3d4458
 workflow-type: tm+mt
 source-wordcount: '531'
-ht-degree: 1%
+ht-degree: 6%
 
 ---
 
-# Versionsinformation för Adobe Experience Platform
+# Versionsinformation om Adobe Experience Platform
 
 **Releasedatum: 10 september 2019**
 
@@ -48,7 +48,7 @@ Adobe Experience Platform [!DNL Data Science Workspace] är en helt hanterad tj�
 
 **Kända fel**
 
-* Det finns för närvarande inget tillgängligt sätt i [!DNL Service Gallery] att ta bort en befintlig tjänst. Under tiden kan du läsa [API-referensen för Sensei Machine Learning](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/sensei-ml-api.yaml) för att ta bort en befintlig tjänst via API-anrop.
+* Det finns för närvarande inget tillgängligt sätt i [!DNL Service Gallery] att ta bort en befintlig tjänst. Under tiden kan du läsa [API-referensen för Sensei Machine Learning](https://developer.adobe.com/experience-platform-apis/references/sensei-machine-learning/) för att ta bort en befintlig tjänst via API-anrop.
 * [!DNL Service Gallery] har inte stöd för sidnumrering för att filtrera en tjänsts utbildning och poängsättning.
 * När schemalagd utbildning eller poängsättning konfigureras går igenom [!DNL Service Gallery] kan du ange att frekvensen ska vara timvis för att förhindra att schemat tillämpas.
 

@@ -3,7 +3,7 @@ title: Skapa en källanslutning och ett dataflöde för SAP Commerce med API:t f
 description: Lär dig hur du skapar en källanslutning och ett dataflöde för att överföra SAP Commerce-data till Experience Platform med API:t för Flow Service.
 badge: Beta
 exl-id: 580731b9-0c04-4f83-a475-c1890ac5b7cd
-source-git-commit: b4334b4f73428f94f5a7e5088f98e2459afcaf3c
+source-git-commit: 863889984e5e77770638eb984e129e720b3d4458
 workflow-type: tm+mt
 source-wordcount: '2314'
 ht-degree: 0%
@@ -692,7 +692,7 @@ Detaljerade steg om hur du skapar ett mål-XDM-schema finns i självstudiekursen
 
 ### Skapa en måldatauppsättning {#target-dataset}
 
-En måldatamängd kan skapas genom att utföra en POST-begäran till [katalogtjänstens API](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/catalog.yaml), som anger målschemats ID i nyttolasten.
+En måldatamängd kan skapas genom att utföra en POST-begäran till [katalogtjänstens API](https://developer.adobe.com/experience-platform-apis/references/catalog/), som anger målschemats ID i nyttolasten.
 
 Detaljerade steg om hur du skapar en måldatauppsättning finns i självstudiekursen [Skapa en datauppsättning med API:t](../../../../../catalog/api/create-dataset.md).
 

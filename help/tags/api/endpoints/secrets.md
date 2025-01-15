@@ -2,7 +2,7 @@
 title: Slutpunkt för hemlighet
 description: Lär dig hur du anropar slutpunkten /secrets i Reaktors API.
 exl-id: 76875a28-5d13-402d-8543-24db7e2bee8e
-source-git-commit: b66a50e40aaac8df312a2c9a977fb8d4f1fb0c80
+source-git-commit: 863889984e5e77770638eb984e129e720b3d4458
 workflow-type: tm+mt
 source-wordcount: '1239'
 ht-degree: 1%
@@ -17,7 +17,7 @@ Den här guiden visar hur du anropar `/secrets`-slutpunkten i Reaktors API. En d
 
 ## Komma igång
 
-Slutpunkten som används i den här guiden ingår i [Reaktors-API](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/reactor.yaml). Innan du fortsätter bör du läsa [kom igång-guiden](../getting-started.md) för att få viktig information om hur du autentiserar dig för API:t.
+Slutpunkten som används i den här guiden ingår i [Reaktors-API](https://developer.adobe.com/experience-platform-apis/references/reactor/). Innan du fortsätter bör du läsa [kom igång-guiden](../getting-started.md) för att få viktig information om hur du autentiserar dig för API:t.
 
 ## Hämta en lista med hemligheter för en egenskap {#list-property}
 

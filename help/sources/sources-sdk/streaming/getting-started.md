@@ -3,7 +3,7 @@ title: Komma igång med självbetjäningskällor (Streaming SDK)
 description: Det här dokumentet innehåller en introduktion till den information som krävs för att du ska kunna skapa en ny källa med självbetjäningskällor (Streaming SDK).
 exl-id: 6cc13279-ce0b-45bc-ad25-e2e6aafc2af0
 badge: Beta
-source-git-commit: 256857103b4037b2cd7b5b52d6c5385121af5a9f
+source-git-commit: 863889984e5e77770638eb984e129e720b3d4458
 workflow-type: tm+mt
 source-wordcount: '543'
 ht-degree: 0%
@@ -14,9 +14,9 @@ ht-degree: 0%
 
 >[!NOTE]
 >
->SDK för självbetjäningsströmning för källor är i betaversion. Läs [källöversikten](../../home.md#terms-and-conditions) om du vill ha mer information om hur du använder betatecknade källor.
+>Självbetjäning Källströmning SDK är en betaversion. Läs [källöversikten](../../home.md#terms-and-conditions) om du vill ha mer information om hur du använder betatecknade källor.
 
-Med självbetjäningskällor (Streaming SDK) kan du integrera din egen källa för att skicka strömmande data till Adobe Experience Platform. Det här dokumentet innehåller en introduktion till de centrala koncept som du behöver känna till innan du försöker anropa [[!DNL Flow Service] API](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/flow-service.yaml).
+Med självbetjäningskällor (Streaming SDK) kan ni integrera er egen källa för att skicka strömmande data till Adobe Experience Platform. Det här dokumentet innehåller en introduktion till de centrala koncept som du behöver känna till innan du försöker anropa [[!DNL Flow Service] API](https://developer.adobe.com/experience-platform-apis/references/flow-service/).
 
 ## Högnivåprocess
 
@@ -24,7 +24,7 @@ Hur du konfigurerar källan i Experience Platform beskrivs nedan:
 
 ### Integrering
 
-* [Skapa en ny anslutningsspecifikation för Streaming SDK](create.md).
+* [Skapa en ny anslutningsspecifikation för direktuppspelning av SDK](create.md).
 * [Uppdatera specifikationen för direktuppspelningsflödet med ditt nya anslutningsspecifikation-ID ](update-flow-specs.md).
 * [Testa och skicka strömningskällan](submit.md).
 
@@ -33,8 +33,8 @@ Hur du konfigurerar källan i Experience Platform beskrivs nedan:
 * Om du vill börja dokumentera källan läser du [översikten om att skapa dokumentation för självbetjäningskällor](../documentation/doc-overview.md).
 * Läs guiden på [med GitHub-webbgränssnittet](../documentation/github.md) för steg om hur du skapar dokumentation med GitHub.
 * Läs guiden på [med en textredigerare](../documentation/text-editor.md) för steg om hur du skapar dokumentation med din lokala dator.
-* [Använd dokumentationsmallen för SDK API för direktuppspelning för att dokumentera källan i API:t](streaming-template-api.md).
-* [Använd dokumentationsmallen för SDK-användargränssnittet för direktuppspelning för att dokumentera källan i användargränssnittet](streaming-template-ui.md).
+* [Använd dokumentationsmallen för direktuppspelande SDK API för att dokumentera källan i API:t](streaming-template-api.md).
+* [Använd dokumentationsmallen för direktuppspelande SDK-gränssnitt för att dokumentera källan i användargränssnittet](streaming-template-ui.md).
 
 Du kan även hämta dokumentationsmallarna nedan:
 
@@ -80,4 +80,4 @@ Alla begäranden som innehåller en nyttolast (POST, PUT, PATCH) kräver ytterli
 
 ## Nästa steg
 
-Om du vill börja skapa en ny källa med självbetjäningskällor (SDK för direktuppspelning) ska du titta i självstudiekursen [Skapa en ny källa](./create.md).
+Om du vill börja skapa en ny källa med självbetjäningskällor (direktuppspelande SDK) ska du titta i självstudiekursen [Skapa en ny källa](./create.md).

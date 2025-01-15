@@ -5,7 +5,7 @@ title: Publish a Model as a Service Using the Sensei Machine Learning API
 type: Tutorial
 description: I den här självstudiekursen beskrivs hur du publicerar en modell som en tjänst med Sensei Machine Learning API.
 exl-id: f78b1220-0595-492d-9f8b-c3a312f17253
-source-git-commit: 5d98dc0cbfaf3d17c909464311a33a03ea77f237
+source-git-commit: 863889984e5e77770638eb984e129e720b3d4458
 workflow-type: tm+mt
 source-wordcount: '1541'
 ht-degree: 0%
@@ -20,7 +20,7 @@ ht-degree: 0%
 >
 >Denna dokumentation är avsedd för befintliga kunder med tidigare tillstånd till Data Science Workspace.
 
-I den här självstudien beskrivs processen att publicera en modell som en tjänst med hjälp av [[!DNL Sensei Machine Learning API]](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/sensei-ml-api.yaml).
+I den här självstudien beskrivs processen att publicera en modell som en tjänst med hjälp av [[!DNL Sensei Machine Learning API]](https://developer.adobe.com/experience-platform-apis/references/sensei-machine-learning/).
 
 ## Komma igång
 

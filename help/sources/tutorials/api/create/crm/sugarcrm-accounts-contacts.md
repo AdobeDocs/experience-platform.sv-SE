@@ -2,7 +2,7 @@
 title: Skapa en källanslutning och ett dataflöde för SugarCRM-konton och kontakter med hjälp av API:t för Flow Service
 description: Lär dig hur du ansluter Adobe Experience Platform till SugarCRM-konton och -kontakter med hjälp av API:t för Flow Service.
 exl-id: 2b422b39-5b86-4313-a214-725044d9812c
-source-git-commit: 0edc7a6a68ee4dc5ea24f16a8bc12aba85af0dff
+source-git-commit: 863889984e5e77770638eb984e129e720b3d4458
 workflow-type: tm+mt
 source-wordcount: '2104'
 ht-degree: 0%
@@ -677,7 +677,7 @@ Detaljerade steg om hur du skapar ett mål-XDM-schema finns i självstudiekursen
 
 ### Skapa en måldatauppsättning {#target-dataset}
 
-En måldatamängd kan skapas genom att utföra en POST-begäran till [katalogtjänstens API](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/catalog.yaml), som anger målschemats ID i nyttolasten.
+En måldatamängd kan skapas genom att utföra en POST-begäran till [katalogtjänstens API](https://developer.adobe.com/experience-platform-apis/references/catalog/), som anger målschemats ID i nyttolasten.
 
 Detaljerade steg om hur du skapar en måldatauppsättning finns i självstudiekursen [Skapa en datauppsättning med API:t](https://experienceleague.adobe.com/docs/experience-platform/catalog/api/create-dataset.html).
 

@@ -6,7 +6,7 @@ user-guide-description: Använd maskininlärning för att utveckla, utbilda och 
 feature: Data Science Workspace
 solution: Experience Platform
 role: User, Developer
-source-git-commit: e828485ad5b0904c9dc66b43d1cdb3c4707885b1
+source-git-commit: 863889984e5e77770638eb984e129e720b3d4458
 workflow-type: tm+mt
 source-wordcount: '225'
 ht-degree: 15%
@@ -41,7 +41,7 @@ ht-degree: 15%
    * [Produktinköpsprognos](pre-built-recipes/product-purchase-prediction.md)
    * [Butiksförsäljningsrecept](pre-built-recipes/retail-sales.md)
 * Modellredigering {#authoring}
-   * [SDK för modellredigering](authoring/sdk.md)
+   * [Model Authoring SDK](authoring/sdk.md)
    * [Skapa en rörledning för funktioner](authoring/feature-pipeline.md)
    * [Skapa modeller med Platform SDK (Python)](authoring/platform-sdk.md)
    * [Åtkomst till Python-data](authoring/python.md)
@@ -64,5 +64,5 @@ ht-degree: 15%
    * [Publish en modell som en tjänst (API)](models-recipes/publish-model-service-api.md)
    * [Schemalägg automatiserad utbildning och poängsättning för en tjänst (UI)](models-recipes/schedule-models-ui.md)
 * [Felsökningsguide](troubleshooting-guide.md)
-* [API-referens](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/sensei-ml-api.yaml)
+* [API-referens](https://developer.adobe.com/experience-platform-apis/references/sensei-machine-learning/)
 * [Versionsinformation för plattform](https://experienceleague.adobe.com/en/docs/experience-platform/release-notes/latest)

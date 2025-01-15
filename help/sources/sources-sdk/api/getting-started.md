@@ -1,23 +1,23 @@
 ---
 keywords: Experience Platform;hem;populära ämnen;källor;kopplingar;källkopplingar;källor sdk;sdk;SDK
 solution: Experience Platform
-title: Komma igång med självbetjäningskällor (batch-SDK)
+title: Komma igång med självbetjäningskällor (Batch SDK)
 description: Det här dokumentet innehåller en introduktion till den information som krävs för att du ska kunna skapa en ny källa med självbetjäningskällor (Batch SDK).
 exl-id: ba131442-ff20-4854-87fe-918aa313382d
-source-git-commit: 2a5d545db18a5dd33c5ff2ac5c543ec35db4ca00
+source-git-commit: 863889984e5e77770638eb984e129e720b3d4458
 workflow-type: tm+mt
 source-wordcount: '375'
 ht-degree: 0%
 
 ---
 
-# Komma igång med självbetjäningskällor (batch-SDK)
+# Komma igång med självbetjäningskällor (Batch SDK)
 
-Med självbetjäningskällor (Batch SDK) kan du integrera din egen REST-baserade källa för att skicka batchdata till Adobe Experience Platform. Det här dokumentet innehåller en introduktion till de centrala koncept som du behöver känna till innan du försöker anropa [[!DNL Flow Service] API](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/flow-service.yaml).
+Med självbetjäningskällor (Batch SDK) kan du integrera din egen REST-baserade källa för att skicka batchdata till Adobe Experience Platform. Det här dokumentet innehåller en introduktion till de centrala koncept som du behöver känna till innan du försöker anropa [[!DNL Flow Service] API](https://developer.adobe.com/experience-platform-apis/references/flow-service/).
 
 ## Förhandskrav
 
-Om du vill använda självbetjäningskällor (Batch SDK) måste du se till att du har tillgång till en sandlåda för en organisation som har etablerats med Adobe Experience Platform-källor.
+Om du vill använda självbetjäningskällor (Batch SDK) måste du se till att du har tillgång till en sandlåda för en organisation som är etablerad med Adobe Experience Platform-källor.
 
 Handboken kräver även en fungerande förståelse av följande komponenter i Adobe Experience Platform:
 

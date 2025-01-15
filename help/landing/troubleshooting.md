@@ -9,7 +9,7 @@ type: Documentation
 role: Developer
 feature: API, Audiences, Data Ingestion, Datasets, Destinations, Privacy, Queries, Schemas, Sandboxes, Sources
 exl-id: 3e6d29aa-2138-421b-8bee-82b632962c01
-source-git-commit: bf651967714745a0b501dcb27373379fe014c9e1
+source-git-commit: 863889984e5e77770638eb984e129e720b3d4458
 workflow-type: tm+mt
 source-wordcount: '1812'
 ht-degree: 3%
@@ -213,7 +213,7 @@ Nedan följer en lista över felsökningsguider och API-referensdokumentation f�
 | Åtkomstkontroll | [API för åtkomstkontroll](https://www.adobe.io/experience-platform-apis/references/access-control/) | [Felsökningsguide för åtkomstkontroll](../access-control/troubleshooting-guide.md) |
 | Adobe Experience Platform datainmatning | [[!DNL Batch Ingestion API]](https://developer.adobe.com/experience-platform-apis/references/batch-ingestion/) | [Felsökningsguide för gruppinmatning](../ingestion/batch-ingestion/troubleshooting.md) |
 | Adobe Experience Platform datainmatning | [[!DNL Streaming Ingestion API]](https://developer.adobe.com/experience-platform-apis/references/streaming-ingestion/) | [Felsökningsguide för direktuppspelning av frågor](../ingestion/streaming-ingestion/troubleshooting.md) |
-| Adobe Experience Platform Data Science Workspace | [[!DNL Sensei Machine Learning API]](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/sensei-ml-api.yaml) | [[!DNL Data Science Workspace] felsökningsguide](../data-science-workspace/troubleshooting-guide.md) |
+| Adobe Experience Platform Data Science Workspace | [[!DNL Sensei Machine Learning API]](https://developer.adobe.com/experience-platform-apis/references/sensei-machine-learning/) | [[!DNL Data Science Workspace] felsökningsguide](../data-science-workspace/troubleshooting-guide.md) |
 | Adobe Experience Platform datastyrning | [[!DNL Policy Service API]](https://www.adobe.io/experience-platform-apis/references/policy-service/) |  |
 | Adobe Experience Platform Identity Service | [[!DNL Identity Service API]](https://www.adobe.io/experience-platform-apis/references/identity-service) | [[!DNL Identity Service] felsökningsguide](../identity-service/troubleshooting-guide.md) |
 | Adobe Experience Platform Query Service | [[!DNL Query Service API]](https://www.adobe.io/experience-platform-apis/references/query-service/) | [[!DNL Query Service] felsökningsguide](../query-service/troubleshooting-guide.md) |

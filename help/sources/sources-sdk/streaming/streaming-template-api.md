@@ -3,7 +3,7 @@ title: Självbetjäningsmall för direktuppspelning av SDK API
 description: Lär dig hur du hämtar strömmande data från en källa till Adobe Experience Platform med API:t för Flow Service.
 exl-id: a06384a2-cd99-456d-9f00-babcf3f7b7d9
 badge: Beta
-source-git-commit: 256857103b4037b2cd7b5b52d6c5385121af5a9f
+source-git-commit: 863889984e5e77770638eb984e129e720b3d4458
 workflow-type: tm+mt
 source-wordcount: '1638'
 ht-degree: 0%
@@ -47,7 +47,7 @@ Mer information om de här autentiseringsuppgifterna finns i *YOURSOURCE* -auten
 
 ### Integrera *DIN KÄLLA* med din webkrok
 
-*SDK för direktuppspelning kräver att din källa har stöd för webhooks för att kunna kommunicera med Experience Platform. I det här avsnittet måste du ange de steg som användarna måste följa för att kunna integrera YOURSOURCE med en webkrok.*
+*Direktuppspelning av SDK kräver att din källa har stöd för webbböcker för att kunna kommunicera med Experience Platform. I det här avsnittet måste du ange de steg som användarna måste följa för att kunna integrera YOURSOURCE med en webkrok.*
 
 ## Anslut *DIN KÄLLA* till plattformen med API:t [!DNL Flow Service]
 
@@ -117,7 +117,7 @@ Detaljerade steg om hur du skapar ett mål-XDM-schema finns i självstudiekursen
 
 ### Skapa en måldatauppsättning {#target-dataset}
 
-En måldatamängd kan skapas genom att utföra en POST-begäran till [katalogtjänstens API](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/catalog.yaml), som anger målschemats ID i nyttolasten.
+En måldatamängd kan skapas genom att utföra en POST-begäran till [katalogtjänstens API](https://developer.adobe.com/experience-platform-apis/references/catalog/), som anger målschemats ID i nyttolasten.
 
 Detaljerade steg om hur du skapar en måldatauppsättning finns i självstudiekursen [Skapa en datauppsättning med API:t](https://experienceleague.adobe.com/docs/experience-platform/catalog/api/create-dataset.html).
 
