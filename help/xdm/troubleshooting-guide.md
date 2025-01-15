@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Felsökningsguide för XDM-system
 description: Hitta svar på vanliga frågor om Experience Data Model (XDM), inklusive steg för att lösa vanliga API-fel.
 exl-id: a0c7c661-bee8-4f66-ad5c-f669c52c9de3
-source-git-commit: ae98a185fdfad5b6ba787e78ad17296928216d08
+source-git-commit: b345330595aadcfe2380dd1795802470b249cb4a
 workflow-type: tm+mt
-source-wordcount: '2380'
+source-wordcount: '2337'
 ht-degree: 0%
 
 ---
@@ -142,13 +142,7 @@ Schemat aktiveras inte automatiskt för kundprofil i realtid. Du måste uttryckl
 
 Du kan inte ta bort ett schema efter att det har aktiverats för kundprofil i realtid. När ett schema har aktiverats för profilen kan det inte inaktiveras eller tas bort och fält kan inte tas bort från schemat. Därför är det viktigt att planera och verifiera schemakonfigurationen noggrant innan du aktiverar den för profil. Du kan dock ta bort en profilaktiverad datauppsättning. Information finns här: <https://experienceleague.adobe.com/en/docs/experience-platform/catalog/datasets/user-guide#delete-a-profile-enabled-dataset>
 
->[!IMPORTANT]
->
->Om du vill ta bort ett profilaktiverat schema behöver du hjälp av XDM Platform Support Team och måste följa dessa steg:
->
-> 1. Ta bort alla datauppsättningar som är associerade med schemat (som har aktiverats för profilen)
-> 2. Ta bort ögonblicksbilden av profilexporten från sandlådan (detta kräver hjälp av XDM Platform Support Team)
-> 3. Tvinga borttagning av schema från sandlådan (detta kan bara göras av XDM Platform Support Team)
+Om du inte längre vill att ett profilaktiverat schema ska användas rekommenderar vi att du byter namn på schemat så att det innehåller **Använd inte** eller **Inaktiv**.
 
 ## Schemaändring och -begränsningar
 
