@@ -1,13 +1,13 @@
 ---
 audience: user
 user-guide-title: Hjälp med sandlådor i Adobe Experience Platform
-breadcrumb-title: Handbok för sandlådor
+breadcrumb-title: Användarhandbok för sandlådor
 user-guide-description: Läs om hur sandlådor fungerar och partitionera en Platform-instans i virtuella miljöer för utveckling, testning och programdistribution.
 feature: Sandboxes
 source-git-commit: ecace5503fcd054ef992763044304b03b9661b3b
 workflow-type: tm+mt
 source-wordcount: '82'
-ht-degree: 42%
+ht-degree: 45%
 
 ---
 
