@@ -3,9 +3,9 @@ keywords: Experience Platform;hem;populära ämnen;källor;kopplingar;källkoppl
 title: Skapa en Adobe Campaign Managed Cloud Services-källanslutning med hjälp av plattformsgränssnittet
 description: Lär dig hur du ansluter Adobe Experience Platform till Adobe Campaign Managed Cloud Services med hjälp av plattformsgränssnittet.
 exl-id: 067ed558-b239-4845-8c85-3bf9b1d4caed
-source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
+source-git-commit: 77d755e4ebf97521efa1dfdfe9ee40312800ad28
 workflow-type: tm+mt
-source-wordcount: '1105'
+source-wordcount: '1141'
 ht-degree: 0%
 
 ---
@@ -101,6 +101,8 @@ Plattformen ger intelligenta rekommendationer för automatiskt mappade fält bas
 >[!IMPORTANT]
 >
 >När du mappar dina källfält till mål-XDM-fält måste du se till att du mappar det avsedda primära identitetsfältet till rätt mål-XDM-fält.
+>
+>För varje målgrupp kan du lägga till upp till 20 fält för att mappa till Adobe Campaign. Du kan ändra den här gränsen genom att uppdatera värdet för alternativet `NmsCdp_Aep_Sources_Max_Columns` i mappen Administration > Plattform > Alternativ i Campaign Explorer.
 
 När källdata har mappats väljer du **[!UICONTROL Next]**.
 
