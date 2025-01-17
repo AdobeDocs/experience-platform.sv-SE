@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Bästa praxis för datamodellering
 description: Detta dokument innehåller en introduktion till XDM-scheman (Experience Data Model) och de byggstenar, principer och bästa metoderna för att sammanställa scheman som ska användas i Adobe Experience Platform.
 exl-id: 2455a04e-d589-49b2-a3cb-abb5c0b4e42f
-source-git-commit: fed8502afad1dfcb0b4dc91141dd621eacda720c
+source-git-commit: b144a93374fc627f9001b80695cad3f17e28a6fe
 workflow-type: tm+mt
-source-wordcount: '3214'
+source-wordcount: '3201'
 ht-degree: 0%
 
 ---
@@ -28,24 +28,24 @@ Eftersom den här guiden enbart fokuserar på viktiga överväganden när det g�
 Den rekommenderade metoden för att utforma din datamodell för användning i Experience Platform kan sammanfattas på följande sätt:
 
 1. Förstå användningsexemplen för era data.
-1. Identifiera de primära datakällor som ska hämtas till [!DNL Platform] för att hantera de här användningsfallen.
-1. Identifiera eventuella sekundära datakällor som också kan vara av intresse. Om till exempel bara en affärsenhet i organisationen för närvarande är intresserad av att portera sina data till [!DNL Platform], kan en liknande affärsenhet också vara intresserad av att portera liknande data i framtiden. Med dessa sekundära källor blir datamodellen standardiserad i hela organisationen.
+1. Identifiera de primära datakällor som ska hämtas till Platform för att hantera dessa användningsfall.
+1. Identifiera eventuella sekundära datakällor som också kan vara av intresse. Om till exempel bara en affärsenhet i organisationen för närvarande är intresserad av att portera sina data till Platform, kan en liknande affärsenhet också vara intresserad av att portera liknande data i framtiden. Med dessa sekundära källor blir datamodellen standardiserad i hela organisationen.
 1. Skapa ett högnivådiagram över entitetsrelationer (ERD) för de datakällor som har identifierats.
-1. Konvertera högnivåresursen till en [!DNL Platform]-centrerad resurshanteringssats (inklusive profiler, upplevelsehändelser och sökentiteter).
+1. Konvertera högnivåundervisningen till en plattformscentrerad ERD (inklusive profiler, upplevelsehändelser och sökenheter).
 
-Stegen för att identifiera de datakällor som krävs för att du ska kunna använda ditt företag varierar från organisation till organisation. Medan resten av avsnitten i det här dokumentet fokuserar på de senare stegen för att organisera och konstruera en ERD efter att datakällorna har identifierats, kan förklaringarna för diagrammets olika komponenter ge dig underlag för dina beslut om vilken av datakällorna som ska migreras till [!DNL Platform].
+Stegen för att identifiera de datakällor som krävs för att du ska kunna använda ditt företag varierar från organisation till organisation. Medan resten av avsnitten i detta dokument fokuserar på de senare stegen för att organisera och konstruera en ERD efter det att datakällorna har identifierats, kan förklaringarna av diagrammets olika komponenter ge er underlag för beslut om vilka datakällor som ska migreras till plattformen.
 
 ## Skapa en högnivå av ERD {#create-an-erd}
 
-När du har bestämt vilka datakällor du vill hämta till [!DNL Platform] kan du skapa en högnivå av ERD som hjälper dig att mappa dina data till XDM-scheman.
+När du har bestämt vilka datakällor du vill ta med i plattformen kan du skapa en högnivåteknisk ERD som hjälper dig att mappa dina data till XDM-scheman.
 
-Exemplet nedan representerar en förenklad ERD för ett företag som vill hämta data till [!DNL Platform]. Bilden visar de viktigaste enheterna som bör sorteras i XDM-klasser, inklusive kundkonton, hotell, adresser och flera vanliga e-handelshändelser.
+Exemplet nedan representerar en förenklad ERD för ett företag som vill hämta data till Platform. Bilden visar de viktigaste enheterna som bör sorteras i XDM-klasser, inklusive kundkonton, hotell och flera vanliga e-handelshändelser.
 
 ![Ett entitetsrelationsdiagram som markerar viktiga entiteter som ska sorteras i XDM-klasser för datainmatning.](../images/best-practices/erd.png)
 
 ## Sortera entiteter i profil-, uppslags- och händelsekategorier {#sort-entities}
 
-När du har skapat en ERD för att identifiera de nödvändiga entiteter som du vill hämta till [!DNL Platform] måste dessa entiteter sorteras i profil-, uppslags- och händelsekategorier:
+När du har skapat en ERD för att identifiera de enheter du vill ta med i plattformen måste dessa enheter sorteras i profil-, uppslags- och händelsekategorier:
 
 | Kategori | Beskrivning |
 | --- | --- |
@@ -79,7 +79,7 @@ Om ett företag innehåller attribut som är kopplade till en enskild kund är d
 
 #### Spåra data över tid {#track-data}
 
-Om du vill analysera hur vissa attribut inom en enhet ändras över tid är det troligast en händelsenhet. Om du till exempel lägger till produktartiklar i en kundvagn kan du spåra dem som tilläggshändelser i kundvagnen i [!DNL Platform]:
+Om du vill analysera hur vissa attribut inom en enhet ändras över tid är det troligast en händelsenhet. Om du till exempel lägger till produktartiklar i en kundvagn kan du spåra dem som tilläggshändelser i kundvagnen i Platform:
 
 | Kund-ID | Typ | Produkt-ID | Kvantitet | Tidsstämpel |
 | --- | --- | --- | --- | --- |
@@ -113,7 +113,7 @@ Ett företag vill till exempel skapa en målgrupp baserat på antalet kundvagnsk
 
 >[!CAUTION]
 >
->Experience Platform utför för närvarande inte automatisk värdeaggregering, även om detta är planerat för framtida releaser. Om du väljer att använda aggregerade värden måste du utföra beräkningarna externt innan du skickar data till [!DNL Platform].
+>Experience Platform utför för närvarande inte automatisk värdeaggregering, även om detta är planerat för framtida releaser. Om du väljer att använda aggregerade värden måste du utföra beräkningarna externt innan du skickar data till plattformen.
 
 #### Kardinalitet {#cardinality}
 
@@ -127,9 +127,9 @@ I följande tabell visas några vanliga entitetsrelationer och de kategorier som
 
 | Relation | Kardinalitet | Enhetskategorier |
 | --- | --- | --- |
-| Kunder- och kundvagnscheckout | En till många | En enskild kund kan ha många kassor, vilket är händelser som kan spåras över tiden. Kunderna skulle därför vara en profilenhet, medan kundvagnsutcheckningar skulle vara en händelseenhet. |
-| Kunder- och förmånskonton | En till en | En enskild kund kan bara ha ett förmånskonto, och ett förmånskonto kan bara tillhöra en kund. Eftersom relationen är en-till-en representerar både kunder och lojalitetskonton profilentiteter. |
-| Kunder och prenumerationer | En till många | En enskild kund kan ha många prenumerationer. Eftersom företaget bara är berört med en kunds aktuella prenumerationer är kunderna en profilenhet, medan prenumerationer är en sökenhet. |
+| Kund- och kundkassa | En till många | En enskild kund kan ha många kassor, vilket är händelser som kan spåras över tiden. Kunden skulle därför vara en profilenhet, medan Cart Checkout skulle vara en händelseenhet. |
+| Kund- och förmånskonto | En till en | En enskild kund kan bara ha ett förmånskonto, och ett förmånskonto kan bara tillhöra en kund. Eftersom relationen är en-till-en representerar både kund- och förmånskontot profilentiteter. |
+| Kund och prenumeration | En till många | En enskild kund kan ha många prenumerationer. Eftersom företaget bara är berört med en kunds aktuella prenumerationer är kunden en profilenhet, medan prenumerationen är en sökenhet. |
 
 {style="table-layout:auto"}
 
@@ -146,7 +146,7 @@ I det här scenariot har företaget två möjliga alternativ för att represente
 
 #### Metod 1: Använd profilattribut {#profile-approach}
 
-Det första sättet är att inkludera en array med prenumerationer som attribut i profilentiteten för kunder. Objekt i den här arrayen skulle innehålla fält för `category`, `status`, `planName`, `startDate` och `endDate`.
+Det första sättet är att inkludera en matris på `subscriptionID` i profilentiteten för kunden.
 
 ![Kundschemat i Schemaredigeraren med klassen och strukturen markerade](../images/best-practices/profile-schema.png)
 
@@ -162,7 +162,7 @@ Det första sättet är att inkludera en array med prenumerationer som attribut 
 
 #### Metod 2: Använd händelseentiteter {#event-approach}
 
-Det andra sättet är att använda händelsescheman för att representera prenumerationer. Detta innebär att man måste importera samma prenumerationsfält som det första tillvägagångssättet, med tillägg av ett prenumerations-ID, ett kund-ID och en tidsstämpel för när prenumerationshändelsen inträffade.
+Det andra sättet är att använda händelsescheman för att representera en prenumerationshändelse. Detta inkluderar prenumerations-ID tillsammans med ett kund-ID och en tidsstämpel för när prenumerationshändelsen inträffade.
 
 ![Ett diagram över prenumerationshändelseschemat med XDM Experience Event-klassen och prenumerationsstrukturen markerat.](../images/best-practices/event-schema.png)
 
@@ -192,7 +192,7 @@ Kategorin som en entitet har sorterats under bör avgöra vilken XDM-klass du ba
 >
 >Händelseentiteter representeras nästan alltid av separata scheman, men entiteter i profilen eller uppslagskategorierna kan kombineras i ett enda XDM-schema, beroende på deras kardinalitet.
 >
->Eftersom kundentiteten till exempel har en 1:1-relation med LoyaltyAccounts-entiteten, kan schemat för kundentiteten även innehålla ett `LoyaltyAccount`-objekt som innehåller rätt lojalitetsfält för varje kund. Om relationen är en till många kan den entitet som representerar&quot;många&quot; däremot representeras av ett separat schema eller en array med profilattribut, beroende på hur komplex den är.
+>Eftersom kundentiteten till exempel har en 1:1-relation med LoyaltyAccount-entiteten, kan schemat för kundentiteten även innehålla ett `LoyaltyAccount`-objekt som innehåller rätt lojalitetsfält för varje kund. Om relationen är en till många kan den entitet som representerar&quot;många&quot; däremot representeras av ett separat schema eller en array med profilattribut, beroende på hur komplex den är.
 
 Avsnitten nedan innehåller allmän vägledning om hur du konstruerar scheman baserade på din ERD.
 
@@ -245,7 +245,7 @@ Om du vill ange begränsningar för ett visst fält väljer du fältet i Schemar
 
 Följande är en samling förslag som bevarar dataintegriteten när du skapar ett schema.
 
-* **Överväg primära identiteter**: För Adobe-produkter som web SDK, mobile SDK, Adobe Analytics och Adobe Journey Optimizer fungerar fältet `identityMap` ofta som primär identitet. Undvik att ange ytterligare fält som primära identiteter för det schemat.
+* **Överväg primära identiteter**: För Adobe-produkter som SDK, SDK, Adobe Analytics och Adobe Journey Optimizer fungerar fältet `identityMap` ofta som primär identitet. Undvik att ange ytterligare fält som primära identiteter för det schemat.
 * **Kontrollera att `_id` inte används som en identitet**: Fältet `_id` i Experience Event-scheman kan inte användas som en identitet eftersom det är avsett för postidentitet.
 * **Ange längdbegränsningar**: Det är bäst att ange minsta och högsta längd för fält som markerats som identiteter. En varning utlöses om du försöker tilldela ett anpassat namnutrymme till ett identitetsfält utan att uppfylla begränsningarna för minsta och högsta längd. Dessa begränsningar bidrar till att upprätthålla enhetlighet och datakvalitet.
 * **Använd mönster för konsekventa värden**: Om dina identitetsvärden följer ett specifikt mönster bör du använda inställningen **[!UICONTROL Pattern]** för att framtvinga den här begränsningen. Den här inställningen kan omfatta regler som enbart siffror, versaler, gemener eller specifika teckenkombinationer. Använd reguljära uttryck för att matcha mönster i strängarna.
