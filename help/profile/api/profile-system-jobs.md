@@ -5,9 +5,9 @@ type: Documentation
 description: Med Adobe Experience Platform kan du ta bort en datauppsättning eller batch från profilbutiken för att ta bort kundprofildata i realtid som inte längre behövs eller som har lagts till av misstag. Detta kräver att du använder profil-API:t för att skapa ett profilsystemjobb eller för att ta bort en begäran.
 role: Developer
 exl-id: 75ddbf2f-9a54-424d-8569-d6737e9a590e
-source-git-commit: 3664d3d1f6433bce4678ab8b17c008c064d8e943
+source-git-commit: 16778d0edbad4539a4ff5084a2f22ca5f08e83ec
 workflow-type: tm+mt
-source-wordcount: '1977'
+source-wordcount: '2020'
 ht-degree: 0%
 
 ---
@@ -64,6 +64,8 @@ GET /system/jobs?{QUERY_PARAMETERS}
 
 >[!TAB Microsoft Azure]
 
++++ Ett exempel på en förfrågan om att visa systemjobben.
+
 ```shell
 curl -X GET https://platform.adobe.io/data/core/ups/system/jobs \
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
@@ -72,11 +74,15 @@ curl -X GET https://platform.adobe.io/data/core/ups/system/jobs \
   -H 'x-sandbox-name: {SANDBOX_NAME}' \
 ```
 
++++
+
 >[!TAB Amazon Web Services (AWS)]
 
 >[!IMPORTANT]
 >
 >Du **måste** använda begärandehuvudet `x-sandbox-id` i stället för begärandehuvudet `x-sandbox-name` när du använder den här slutpunkten med AWS.
+
++++ Ett exempel på en förfrågan om att visa systemjobben.
 
 ```shell
 curl -X GET https://platform.adobe.io/data/core/ups/system/jobs \
@@ -85,6 +91,8 @@ curl -X GET https://platform.adobe.io/data/core/ups/system/jobs \
   -H 'x-gw-ims-org-id: {ORG_ID}' \
   -H 'x-sandbox-id: {SANDBOX_ID}' \
 ```
+
++++
 
 >[!ENDTABS]
 
@@ -133,8 +141,6 @@ Ett lyckat svar innehåller en &quot;child&quot;-array med ett objekt för varje
 }
 ```
 
-+++
-
 | Egenskap | Beskrivning |
 | -------- | ----------- |
 | `_page.count` | Totalt antal begäranden. Svaret har trunkerats för utrymme. |
@@ -142,6 +148,8 @@ Ett lyckat svar innehåller en &quot;child&quot;-array med ett objekt för varje
 | `jobType` | Den typ av jobb som skapas. I det här fallet returneras alltid `"DELETE"`. |
 | `status` | Status för borttagningsbegäran. Möjliga värden är `"NEW"`, `"PROCESSING"`, `"COMPLETED"` och `"ERROR"`. |
 | `metrics` | Ett objekt som innehåller antalet poster som har bearbetats (`"recordsProcessed"`) och tiden i sekunder som begäran har bearbetats, eller hur lång tid det tog att slutföra begäran (`"timeTakenInSec"`). |
+
++++
 
 >[!TAB Amazon Web Services (AWS)]
 
@@ -222,6 +230,8 @@ POST /system/jobs
 
 >[!TAB Microsoft Azure]
 
++++ En exempelbegäran om att ta bort en datauppsättning.
+
 ```shell
 curl -X POST \
   https://platform.adobe.io/data/core/ups/system/jobs \
@@ -235,6 +245,8 @@ curl -X POST \
       }'
 ```
 
++++
+
 | Egenskap | Beskrivning |
 | -------- | ----------- |
 | `dataSetId` | ID:t för den datauppsättning som du vill ta bort. |
@@ -244,6 +256,8 @@ curl -X POST \
 >[!IMPORTANT]
 >
 >Du **måste** använda begärandehuvudet `x-sandbox-id` i stället för begärandehuvudet `x-sandbox-name` när du använder den här slutpunkten med AWS.
+
++++ En exempelbegäran om att ta bort en datauppsättning.
 
 ```shell
 curl -X POST \
@@ -257,6 +271,8 @@ curl -X POST \
         "dataSetId": "5c802d3cd83fc114b741c4b5"
       }'
 ```
+
++++
 
 | Egenskap | Beskrivning |
 | -------- | ----------- |
@@ -290,12 +306,12 @@ Ett lyckat svar returnerar information om den nyligen skapade borttagningsbegär
 }
 ```
 
-+++
-
 | Egenskap | Beskrivning |
 | -------- | ----------- |
 | `id` | Det unika, systemgenererade skrivskyddade ID:t för borttagningsbegäran. |
 | `dataSetId` | Datauppsättningens ID, enligt POSTENS begäran. |
+
++++
 
 >[!TAB Amazon Web Services (AWS)]
 
@@ -322,14 +338,14 @@ Ett lyckat svar returnerar information om den nyligen skapade systembegäran.
 }
 ```
 
-+++
-
 | Egenskap | Beskrivning |
 | -------- | ----------- |
 | `requestId` | ID:t för systemjobbet. |
 | `requestType` | Systemjobbets typ. Möjliga värden är `BACKFILL_TTL`, `DELETE_EE_BATCH` och `TRUNCATE_DATASET`. |
 | `status` | Systemjobbets status. Möjliga värden är `NEW`, `SUCCESS`, `ERROR`, `FAILED` och `IN-PROGRESS`. |
 | `properties` | Ett objekt som innehåller batch- och/eller datauppsättnings-ID för systemjobbet. |
+
++++
 
 >[!ENDTABS]
 
@@ -359,6 +375,8 @@ POST /system/jobs
 
 >[!TAB Microsoft Azure]
 
++++ En exempelbegäran om att ta bort en sats.
+
 ```shell
 curl -X POST \
   https://platform.adobe.io/data/core/ups/system/jobs \
@@ -373,6 +391,8 @@ curl -X POST \
       }'
 ```
 
++++
+
 | Egenskap | Beskrivning |
 | -------- | ----------- |
 | `datasetId` | ID:t för datauppsättningen för den grupp som du vill ta bort. |
@@ -383,6 +403,8 @@ curl -X POST \
 >[!IMPORTANT]
 >
 >Du **måste** använda begärandehuvudet `x-sandbox-id` i stället för begärandehuvudet `x-sandbox-name` när du använder den här slutpunkten med AWS.
+
++++ En exempelbegäran om att ta bort en sats.
 
 ```shell
 curl -X POST \
@@ -398,13 +420,14 @@ curl -X POST \
       }'
 ```
 
++++
+
 | Egenskap | Beskrivning |
 | -------- | ----------- |
 | `datasetId` | ID:t för datauppsättningen för den grupp som du vill ta bort. |
 | `batchId` | ID:t för gruppen som du vill ta bort. |
 
 >[!ENDTABS]
-
 
 **Svar**
 
@@ -417,6 +440,8 @@ curl -X POST \
 >[!TAB Microsoft Azure]
 
 Ett lyckat svar returnerar information om den nyligen skapade borttagningsbegäran, inklusive ett unikt, systemgenererat, skrivskyddat ID för begäran. Detta kan användas för att slå upp begäran och kontrollera dess status. `"status"` för begäran när den skapas är `"NEW"` tills bearbetningen börjar. Värdet `"batchId"` i svaret ska matcha värdet `"batchId"` som skickades i begäran.
+
++++ Ett svar på begäran om borttagning.
 
 ```json
 {
@@ -436,6 +461,8 @@ Ett lyckat svar returnerar information om den nyligen skapade borttagningsbegär
 | `id` | Det unika, systemgenererade skrivskyddade ID:t för borttagningsbegäran. |
 | `datasetId` | ID för den angivna datauppsättningen. |
 | `batchId` | Batchens ID, som anges i begäran om POST. |
+
++++
 
 >[!TAB Amazon Web Services (AWS)]
 
@@ -462,14 +489,14 @@ Ett lyckat svar returnerar information om den nyligen skapade systembegäran.
 }
 ```
 
-+++
-
 | Egenskap | Beskrivning |
 | -------- | ----------- |
 | `requestId` | ID:t för systemjobbet. |
 | `requestType` | Systemjobbets typ. Möjliga värden är `BACKFILL_TTL`, `DELETE_EE_BATCH` och `TRUNCATE_DATASET`. |
 | `status` | Systemjobbets status. Möjliga värden är `NEW`, `SUCCESS`, `ERROR`, `FAILED` och `IN-PROGRESS`. |
 | `properties` | Ett objekt som innehåller batch- och/eller datauppsättnings-ID för systemjobbet. |
+
++++
 
 >[!ENDTABS]
 
@@ -517,13 +544,17 @@ GET /system/jobs/{DELETE_REQUEST_ID}
 
 >[!TAB Microsoft Azure]
 
++++ Ett exempel på en förfrågan om att visa ett profiljobb.
+
 ```shell
 curl -X GET https://platform.adobe.io/data/core/ups/system/jobs/9c2018e2-cd04-46a4-b38e-89ef7b1fcdf4 \
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
   -H 'x-api-key: {API_KEY}' \
   -H 'x-gw-ims-org-id: {ORG_ID}' \
-  -H 'x-sandbox-name: {SANDBOX_NAME}' \
+  -H 'x-sandbox-name: {SANDBOX_NAME}'
 ```
+
++++
 
 >[!TAB Amazon Web Services (AWS)]
 
@@ -531,13 +562,17 @@ curl -X GET https://platform.adobe.io/data/core/ups/system/jobs/9c2018e2-cd04-46
 >
 >Du **måste** använda begärandehuvudet `x-sandbox-id` i stället för begärandehuvudet `x-sandbox-name` när du använder den här slutpunkten med AWS.
 
++++ Ett exempel på en förfrågan om att visa ett profiljobb.
+
 ```shell
 curl -X GET https://platform.adobe.io/data/core/ups/system/jobs/9c2018e2-cd04-46a4-b38e-89ef7b1fcdf4 \
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
   -H 'x-api-key: {API_KEY}' \
   -H 'x-gw-ims-org-id: {ORG_ID}' \
-  -H 'x-sandbox-id: {SANDBOX_ID}' \
+  -H 'x-sandbox-id: {SANDBOX_ID}'
 ```
+
++++
 
 >[!ENDTABS]
 
@@ -553,6 +588,8 @@ curl -X GET https://platform.adobe.io/data/core/ups/system/jobs/9c2018e2-cd04-46
 >[!TAB Microsoft Azure]
 
 Svaret innehåller information om borttagningsbegäran, inklusive dess uppdaterade status. ID:t för borttagningsbegäran i svaret (värdet `"id"`) ska matcha det ID som skickades i begärandesökvägen.
+
++++ Ett godkänt svar för att visa en borttagningsbegäran.
 
 ```json
 {
@@ -572,6 +609,8 @@ Svaret innehåller information om borttagningsbegäran, inklusive dess uppdatera
 | `jobType` | Den typ av jobb som skapas returnerar alltid `"DELETE"`. |
 | `status` | Status för borttagningsbegäran. Möjliga värden är `NEW`, `PROCESSING`, `COMPLETED` och `ERROR`. |
 | `metrics` | En matris som innehåller antalet poster som har bearbetats (`"recordsProcessed"`) och tiden i sekunder som begäran har bearbetats, eller hur lång tid det tog att slutföra begäran (`"timeTakenInSec"`). |
+
++++
 
 >[!TAB Amazon Web Services (AWS)]
 
@@ -598,14 +637,14 @@ Ett lyckat svar returnerar information om den angivna systembegäran.
 }
 ```
 
-+++
-
 | Egenskap | Beskrivning |
 | -------- | ----------- |
 | `requestId` | ID:t för systemjobbet. |
 | `requestType` | Systemjobbets typ. Möjliga värden är `BACKFILL_TTL`, `DELETE_EE_BATCH` och `TRUNCATE_DATASET`. |
 | `status` | Systemjobbets status. Möjliga värden är `NEW`, `SUCCESS`, `ERROR`, `FAILED` och `IN-PROGRESS`. |
 | `properties` | Ett objekt som innehåller batch- och/eller datauppsättnings-ID för systemjobbet. |
+
++++
 
 >[!ENDTABS]
 
@@ -626,45 +665,18 @@ DELETE /system/jobs/{DELETE_REQUEST_ID}
 ```
 
 | Parameter | Beskrivning |
-|---|---|
+| --------- | ----------- |
 | {DELETE_REQUEST_ID} | ID för den borttagningsbegäran som du vill ta bort. |
 
 **Begäran**
 
->[!IMPORTANT]
->
->Följande begäran skiljer sig mellan Azure- och AWS-instanserna.
-
->[!BEGINTABS]
-
->[!TAB Microsoft Azure]
-
 ```shell
-curl -X POST \
-  https://platform.adobe.io/data/core/ups/system/jobs/9c2018e2-cd04-46a4-b38e-89ef7b1fcdf4 \
+curl -X POST https://platform.adobe.io/data/core/ups/system/jobs/9c2018e2-cd04-46a4-b38e-89ef7b1fcdf4 \
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
   -H 'x-api-key: {API_KEY}' \
   -H 'x-gw-ims-org-id: {ORG_ID}' \
-  -H 'x-sandbox-name: {SANDBOX_NAME}' \
+  -H 'x-sandbox-name: {SANDBOX_NAME}'
 ```
-
->[!TAB Amazon Web Services (AWS)]
-
->[!IMPORTANT]
->
->Du **måste** använda begärandehuvudet `x-sandbox-id` i stället för begärandehuvudet `x-sandbox-name` när du använder den här slutpunkten med AWS.
-
-```shell
-curl -X POST \
-  https://platform.adobe.io/data/core/ups/system/jobs/9c2018e2-cd04-46a4-b38e-89ef7b1fcdf4 \
-  -H 'Authorization: Bearer {ACCESS_TOKEN}' \
-  -H 'x-api-key: {API_KEY}' \
-  -H 'x-gw-ims-org-id: {ORG_ID}' \
-  -H 'x-sandbox-id: {SANDBOX_ID}' \
-```
-
->[!ENDTABS]
-
 
 **Svar**
 
