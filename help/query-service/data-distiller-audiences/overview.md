@@ -2,7 +2,7 @@
 title: Bygg målgrupper med SQL
 description: Lär dig hur du använder SQL-målgruppstillägget i Adobe Experience Platform Data Distiller för att skapa, hantera och publicera målgrupper med hjälp av SQL-kommandon. Den här guiden täcker alla aspekter av målgruppens livscykel, inklusive skapande, uppdatering och borttagning av profiler samt användning av datadrivna målgruppsdefinitioner för filbaserade mål.
 exl-id: c35757c1-898e-4d65-aeca-4f7113173473
-source-git-commit: 7db055f598e3fa7d5a50214a0cfa86e28e5bfe47
+source-git-commit: c66a7cf779c1b6e55ace86916985087dfaa3363b
 workflow-type: tm+mt
 source-wordcount: '1479'
 ht-degree: 0%
@@ -44,7 +44,7 @@ Använd de här parametrarna för att definiera frågan för att skapa SQL-målg
 | `schema` | Valfritt. Definierar XDM-schemat för den datauppsättning som skapas av frågan. |
 | `table_name` | Namnet på tabellen och målgruppen. |
 | `primary_identity` | Anger den primära identitetskolumnen för målgruppen. |
-| `identity_namespace` | Identitetens namnområde. Du kan använda ett befintligt namnutrymme eller skapa ett nytt. Om du vill visa tillgängliga namnutrymmen använder du kommandot `SHOW NAMESPACE`. Använd `CREATE NAMESPACE` om du vill skapa ett nytt namnområde. Till exempel: `CREATE NAMESPACE lumaCrmId WITH (code='testns', TYPE='Email')`. |
+| `identity_namespace` | Identitetens namnområde. Du kan använda ett befintligt namnutrymme eller skapa ett nytt. Om du vill visa tillgängliga namnutrymmen använder du kommandot `SHOW NAMESPACES`. Använd `CREATE NAMESPACE` om du vill skapa ett nytt namnområde. Till exempel: `CREATE NAMESPACE lumaCrmId WITH (code='testns', TYPE='Email')`. |
 | `select_query` | En SELECT-sats som definierar målgruppen. Syntaxen för SELECT-frågan finns i avsnittet [SELECT-frågor](../sql/syntax.md#select-queries). |
 
 {style="table-layout:auto"}
