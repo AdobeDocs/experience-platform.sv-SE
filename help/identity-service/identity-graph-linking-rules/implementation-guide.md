@@ -2,9 +2,9 @@
 title: Implementeringsguide för regler för länkning av identitetsdiagram
 description: Lär dig de rekommenderade stegen som ska följas när du implementerar data med länkningsregler för identitetsdiagram.
 exl-id: 368f4d4e-9757-4739-aaea-3f200973ef5a
-source-git-commit: 720ffa1ca0ee69cfc802cd50aef26b6f38d2142c
+source-git-commit: 79efdff6f6068af4768fc4bad15c0521cca3ed2a
 workflow-type: tm+mt
-source-wordcount: '1656'
+source-wordcount: '1573'
 ht-degree: 0%
 
 ---
@@ -119,31 +119,6 @@ Under förimplementeringsprocessen måste du se till att de autentiserade hände
 
 
 >[!ENDTABS]
-
-Skicka inte en tom sträng som identitetsvärde när händelser skickas med XDM-upplevelsehändelser. Om identitetsvärdet för namnutrymmet med den högsta namnområdesprioriteten är en tom sträng, ignoreras posten från kundprofilen i realtid. Detta gäller både identityMap och fält som är markerade som en identitet.
-
-+++Välj för att visa ett exempel på en nyttolast med en tom sträng
-
-I följande exempel returneras ett fel eftersom identitetsvärdet för `Phone` skickas som en tom sträng.
-
-```json
-    "identityMap": {
-        "ECID": [
-            {
-                "id": "24165048599243194405404369473457348936",
-                "primary": false
-            }
-        ],
-        "Phone": [
-            {
-                "id": "",
-                "primary": true
-            }
-        ]
-    }
-```
-
-+++
 
 Du måste se till att du har en fullständigt kvalificerad identitet när du skickar händelser med XDM-upplevelsehändelser.
 

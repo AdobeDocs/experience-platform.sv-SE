@@ -2,9 +2,9 @@
 title: Felsökningsguide för länkningsregler för identitetsdiagram
 description: Lär dig hur du felsöker vanliga problem i länkningsregler för identitetsdiagram.
 exl-id: 98377387-93a8-4460-aaa6-1085d511cacc
-source-git-commit: b50633a8518f32051549158b23dfc503db255a82
+source-git-commit: 79efdff6f6068af4768fc4bad15c0521cca3ed2a
 workflow-type: tm+mt
-source-wordcount: '3328'
+source-wordcount: '3279'
 ht-degree: 0%
 
 ---
@@ -149,12 +149,8 @@ Det finns olika orsaker till varför dina händelsefragment inte kommer in i pro
 * [Ett verifieringsfel kan ha inträffat i profilen ](../../xdm/classes/experienceevent.md).
    * En upplevelsehändelse måste till exempel innehålla både `_id` och `timestamp`.
    * Dessutom måste `_id` vara unik för varje händelse (post).
-* Namnutrymmet med högst prioritet är en tom sträng.
 
-När det gäller namnområdesprioritet avvisar profilen:
-
-* Alla händelser som innehåller två eller flera identiteter med den högsta namnområdesprioriteten. Om exempelvis GAID inte är markerat som ett unikt namnutrymme och två identiteter båda med ett GAID-namnutrymme och olika identitetsvärden kommer in, kommer profilen inte att lagra någon av händelserna.
-* Alla händelser där namnutrymmet med högst prioritet är en tom sträng.
+När det gäller namnområdesprioritet, kommer profilen att ignorera alla händelser som innehåller två eller flera identiteter med den högsta namnområdesprioriteten. Om exempelvis GAID inte är markerat som ett unikt namnutrymme och två identiteter båda med ett GAID-namnutrymme och olika identitetsvärden kommer in, kommer profilen inte att lagra någon av händelserna.
 
 **Felsökningssteg**
 
@@ -175,16 +171,7 @@ Om dina data skickas till en datalinje, men inte till en profil, och du tror att
   FROM dataset_name)) WHERE col.id != _testimsorg.identification.core.email and key = 'Email' 
 ```
 
-Du kan också köra följande fråga för att kontrollera om det inte sker någon inmatning till profilen på grund av att det högsta namnutrymmet har en tom sträng:
-
-```sql
-  SELECT identityMap, key, col.id as identityValue, _testimsorg.identification.core.email, _id, timestamp 
-  FROM (SELECT key, explode(value), * 
-  FROM (SELECT explode(identityMap), * 
-  FROM dataset_name)) WHERE (col.id = '' or _testimsorg.identification.core.email = '') and key = 'Email' 
-```
-
-De här två frågorna förutsätter att:
+Frågan förutsätter att:
 
 * En identitet skickas från identityMap och en annan identitet skickas från en identitetsbeskrivning. **OBS!**: I XDM-scheman (Experience Data Model) är identitetsbeskrivningen det fält som markerats som en identitet.
 * CRMID skickas via identityMap. Om CRMID skickas som ett fält tar du bort `key='Email'` från WHERE-satsen.
@@ -225,7 +212,7 @@ Om du inte känner till identitetsvärdet för din cookie-identifierare och du v
 
 >[!BEGINTABS]
 
->[!TAB Web SDK-implementering]
+>[!TAB Webbimplementering av SDK]
 
 ```sql
   SELECT identityMap['ECID'][0]['id'], count(distinct identityMap['CRMID'][0]['id']) as crmidCount FROM dataset_name GROUP BY identityMap['ECID'][0]['id'] ORDER BY crmidCount desc 
@@ -245,7 +232,7 @@ Nu när du har identifierat cookie-värden som är länkade till flera person-ID
 
 >[!BEGINTABS]
 
->[!TAB Web SDK-implementering]
+>[!TAB Webbimplementering av SDK]
 
 ```sql
   SELECT identityMap['CRMID'][0]['id'] as personEntity, * 
