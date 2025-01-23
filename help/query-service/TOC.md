@@ -5,10 +5,10 @@ breadcrumb-title: Användarhandbok om Query Service
 user-guide-description: Använd standard-SQL för att fråga efter data i datasjön i Experience Platform.
 feature: Queries
 role: User,Developer
-source-git-commit: c3065710e5f50541b074fc493df07130221d8078
+source-git-commit: 20869e76976ff3868f1d4dbc7c6d97b58682e5c3
 workflow-type: tm+mt
-source-wordcount: '382'
-ht-degree: 12%
+source-wordcount: '397'
+ht-degree: 11%
 
 ---
 
@@ -50,6 +50,7 @@ Implementeringsmodeller {#implement-models}
       - [Klassificering](advanced-statistics/implement-models/classification.md)
       - [Klustring](advanced-statistics/implement-models/clustering.md)
 Exempel {#examples}
+      - [Filtrera snabbt med statistik och maskininlärning](advanced-statistics/examples/statistics-and-ml-bot-filtering.md)
       - [Förutse kundbortfall med SQL-baserad logistisk regression](advanced-statistics/examples/predict-customer-churn.md)
 - Data för Distiller-målgrupper {#data-distiller-audiences}
    - [Bygg externa målgrupper med SQL](data-distiller-audiences/overview.md)
@@ -58,6 +59,7 @@ Exempel {#examples}
    - [Bläddra överges](use-cases/abandoned-browse.md)
    - [Attributanalys](use-cases/attribution-analysis.md)
    - [Punktfiltrering](use-cases/bot-filtering.md)
+   - [Rotfiltrering med statistik och introduktion av maskininlärning](use-cases/statistics-and-ml-bot-filtering-stub.md)
    - [Skapa en trendrapport över händelser](use-cases/trended-report-of-events.md)
    - [Samtyckesanalys](use-cases/consent-analysis.md)
    - [Kundens livstidsvärde](use-cases/customer-lifetime-value.md)
