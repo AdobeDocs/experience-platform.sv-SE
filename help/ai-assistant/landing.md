@@ -3,9 +3,9 @@ title: AI Assistant i Adobe Experience Platform produktdokumentation
 description: Kom igång med AI Assistant i Adobe Experience Platform.
 feature: AI Assistant
 exl-id: bcb86a41-d5d8-4c1a-a86d-79fa0c167bc7
-source-git-commit: fcda4dc3ecdd4ae9272f1cc65cabb20b6236c71a
+source-git-commit: 8022195e755df92b7ceacea52214f81593994e2a
 workflow-type: tm+mt
-source-wordcount: '821'
+source-wordcount: '810'
 ht-degree: 1%
 
 ---
@@ -156,7 +156,6 @@ Läs följande för exempel på användning av AI Assistant:
 * [Minska introduktionstiden för nya medlemmar i ditt team](https://experienceleaguecommunities.adobe.com/t5/adobe-experience-platform-blogs/onboard-new-team-members-in-less-than-half-the-time-with-ai/ba-p/706153)
 * [Tydligare målgrupper och optimerade marknadsföringsåtgärder](https://experienceleaguecommunities.adobe.com/t5/adobe-experience-platform-blogs/ai-assistant-helps-optimize-marketing-operations-by-de/ba-p/696002)
 * [Kontrollera beroenden och minimera risken under dataperifieringar](https://experienceleaguecommunities.adobe.com/t5/adobe-experience-platform-blogs/ai-assistant-minimizes-risk-during-data-updates-by-checking/ba-p/713364)
-* [Minimera risken under datauppdateringar genom att kontrollera beroenden på några sekunder](https://experienceleaguecommunities.adobe.com/t5/adobe-experience-platform-blogs/ai-assistant-minimizes-risk-during-data-updates-by-checking/ba-p/713364)
 * [Upptäck och distribuera nya funktioner snabbare](https://experienceleaguecommunities.adobe.com/t5/adobe-experience-platform-blogs/discover-and-deploy-new-features-faster-with-ai-assistant-in/ba-p/731125)
 
 >[!TAB Ytterligare videoinnehåll]
