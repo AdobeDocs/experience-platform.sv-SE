@@ -2,16 +2,29 @@
 title: Versionsinformation om Adobe Experience Platform Web SDK Extension
 description: Adobe Experience Platform Web SDK Tag Extension
 exl-id: 91de8c91-023a-45b6-9f67-ac75ee471e50
-source-git-commit: c38456ab44f3e143a0120f1a756105213a46fab5
+source-git-commit: 08b07aa874b9ca9b5ea76850d6c0320bddddc85e
 workflow-type: tm+mt
-source-wordcount: '2319'
+source-wordcount: '2400'
 ht-degree: 1%
 
 ---
 
-# Versionsinformation om Adobe Experience Platform Web SDK-tillägg
+# Versionsinformation om Adobe Experience Platform Web SDK-tillägget
 
-Det här dokumentet innehåller versionsinformation för taggtillägget Adobe Experience Platform Web SDK. Den senaste versionsinformationen om SDK:t finns i [Versionsinformationen för Platform Web SDK](/help/web-sdk/release-notes.md).
+Det här dokumentet innehåller versionsinformation för taggtillägget Adobe Experience Platform Web SDK. Den senaste versionsinformationen om SDK finns i [Versionsinformationen för Platform Web SDK](/help/web-sdk/release-notes.md).
+
+## Version 2.28.0 - 23 januari 2024
+
+**Korrigeringar och förbättringar**
+
+- Ett problem har korrigerats där åsidosättningar av ID Sync Container inte kunde anges utan att Audience Manager aktiverades.
+- Ett problem har korrigerats där åsidosättningar av datastream-konfiguration inaktiverades vid uppgradering till den senaste versionen.
+- Ett problem har korrigerats där användare inte kunde spara inställningarna för automatisk klickning av mål.
+
+**Nya funktioner**
+
+- En ny funktion har lagts till för att växla mellan tekniska namn och visningsnamn i XDM-objektet.
+- Innehåller [version 2.25.0](../../../../web-sdk/release-notes.md#2-25-0) av Adobe Experience Platform Web SDK.
 
 ## Version 2.27.0 - 31 oktober 2024
 

@@ -3,9 +3,9 @@ title: Versionsinformation om Adobe Experience Platform Web SDK
 description: Den senaste versionsinformationen om webb-SDK för Adobe Experience Platform.
 keywords: Adobe Experience Platform Web SDK;Platform Web SDK;Web SDK;versionsinformation;
 exl-id: efd4e866-6a27-4bd5-af83-4a97ca8adebd
-source-git-commit: 3a50468a7596b9ba870920a8188ae50b40aaef69
+source-git-commit: 08b07aa874b9ca9b5ea76850d6c0320bddddc85e
 workflow-type: tm+mt
-source-wordcount: '2085'
+source-wordcount: '2149'
 ht-degree: 2%
 
 ---
@@ -15,6 +15,18 @@ ht-degree: 2%
 
 Det här dokumentet innehåller versionsinformation för Adobe Experience Platform Web SDK.
 Den senaste versionsinformationen om SDK-taggtillägget för webben finns i [Versionsinformationen om SDK-taggtillägg för webben](../tags/extensions/client/web-sdk/web-sdk-ext-release-notes.md).
+
+## Version 2.25.0 - 23 januari 2024 {#2-25-0}
+
+**Korrigerade och förbättrade**
+
+- Validering av alternativ har lagts till för kommandot `setDebug`.
+- En varning lades till när en `onBeforeLinkClickSend`-funktion eller en nedladdningslänkkvalificerare konfigurerades när klicksamlingen är inaktiverad.
+- Ett problem har korrigerats där renderade inlägg inte inkluderades i visningsmeddelanden
+
+**Nya funktioner**
+
+- Implementerade en reserv till den konfigurerade Edge-domänen när cookies från tredje part är aktiverade och förfrågningar till adobedc.demdex.net blockeras.
 
 ## Version 2.24.1 - 6 december 2024
 
