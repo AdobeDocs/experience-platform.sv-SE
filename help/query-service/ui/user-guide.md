@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Användargränssnittshandbok för frågeredigeraren
 description: Frågeredigeraren är ett interaktivt verktyg som tillhandahålls av Adobe Experience Platform Query Service, som gör att du kan skriva, validera och köra frågor för kundupplevelsedata i användargränssnittet i Experience Platform. Frågeredigeraren har stöd för att utveckla frågor för analys och datautforskande, och gör att du kan köra interaktiva frågor i utvecklingssyfte samt icke-interaktiva frågor för att fylla i datauppsättningar i Experience Platform.
 exl-id: d7732244-0372-467d-84e2-5308f42c5d51
-source-git-commit: e66f3540d22a441089916183538921ea5654b312
+source-git-commit: 4c11a35ce914cd0b1aa0084368f5a5929f883963
 workflow-type: tm+mt
-source-wordcount: '2761'
+source-wordcount: '2725'
 ht-degree: 0%
 
 ---
@@ -217,12 +217,9 @@ Alla datauppsättningar som finns i [den valda databasen](#database-dropdown) vi
 
 Schemat som visas i objektwebbläsaren är ett observerbart schema. Det innebär att du kan använda det för att övervaka ändringar och uppdateringar i realtid när ändringarna syns direkt. De observerbara schemana hjälper till att säkerställa datasynkronisering och hjälper till med felsökning och analysåtgärder.
 
-#### Aktuella begränsningar {#current-limitations}
+#### Aktuell begränsning {#current-limitation}
 
-Här följer en lista över aktuella begränsningar:
-
-- Sekventiell frågekörning: Det går endast att köra en fråga åt gången. När en fråga bearbetas kan inga ytterligare tabeller öppnas i den vänstra navigeringen eftersom frågor bearbetas sekventiellt.
-- Extra rader i frågeloggar: Du kan stöta på ovidkommande frågor som är märkta som &quot;VISA TABELLER&quot; i loggarna. Dessa kommer att tas bort i framtida versioner.
+Systemet bearbetar frågor sekventiellt, vilket innebär att bara en fråga kan köras i taget. När en fråga bearbetas går det inte att komma åt ytterligare tabeller i den vänstra navigeringen.
 
 #### Åtkomst till tabellmetadata {#table-metadata}
 

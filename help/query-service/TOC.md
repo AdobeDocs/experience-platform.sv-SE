@@ -5,9 +5,9 @@ breadcrumb-title: Användarhandbok om Query Service
 user-guide-description: Använd standard-SQL för att fråga efter data i datasjön i Experience Platform.
 feature: Queries
 role: User,Developer
-source-git-commit: 83d15e8d6488a400a87f111ec97f06401431b339
+source-git-commit: c3065710e5f50541b074fc493df07130221d8078
 workflow-type: tm+mt
-source-wordcount: '369'
+source-wordcount: '382'
 ht-degree: 12%
 
 ---
@@ -42,13 +42,15 @@ ht-degree: 12%
 - Data, Distiller-statistik och maskininlärning {#advanced-statistics}
    - [Översikt](advanced-statistics/overview.md)
    - [Funktionsteknik](advanced-statistics/feature-engineering.md)
-   - [Modeller](advanced-statistics/models.md)
+   - [Models](advanced-statistics/models.md)
+   - [Funktionsomformning](advanced-statistics/feature-transformation.md)
 Implementeringsmodeller {#implement-models}
       - [Implementeringsmodeller](advanced-statistics/implement-models/implement-models.md)
       - [Regression](advanced-statistics/implement-models/regression.md)
       - [Klassificering](advanced-statistics/implement-models/classification.md)
       - [Klustring](advanced-statistics/implement-models/clustering.md)
-   - [Omvandling av funktioner](advanced-statistics/feature-transformation.md)
+Exempel {#examples}
+      - [Förutse kundbortfall med SQL-baserad logistisk regression](advanced-statistics/examples/predict-customer-churn.md)
 - Data för Distiller-målgrupper {#data-distiller-audiences}
    - [Bygg externa målgrupper med SQL](data-distiller-audiences/overview.md)
 - Exempel {#use-cases}
@@ -64,6 +66,7 @@ Implementeringsmodeller {#implement-models}
    - [Fuzzy-matchning](use-cases/fuzzy-match.md)
    - [Visa en användares sidvyer](use-cases/list-visitor-sessions.md)
    - [Visa besökarna i deras sidvy](use-cases/visitors-by-number-of-page-views.md)
+   - [Förutse kundbortfall med SQL](use-cases/predict-customer-churn-stub.md)
    - [Propensionstest](use-cases/propensity-score.md)
    - [Hämta liknande poster med funktioner i högre ordning](use-cases/retrieve-similar-records.md)
    - [Returnera och använda försäljningsvariabler från analysdata](use-cases/merchandising-variables.md)
