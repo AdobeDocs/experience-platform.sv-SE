@@ -2,9 +2,9 @@
 title: Användargränssnittshandbok för diagramsimulering
 description: Lär dig hur du använder Graph Simulation i gränssnittet för identitetstjänsten.
 exl-id: 89f0cf6e-c43f-40ec-859a-f3b73a6da8c8
-source-git-commit: cfe0181104f09bfd91b22d165c23154a15cd5344
+source-git-commit: af36856dbf37e69cbc5c6952c583f583fd5b8e96
 workflow-type: tm+mt
-source-wordcount: '1403'
+source-wordcount: '1452'
 ht-degree: 0%
 
 ---
@@ -50,6 +50,12 @@ Simulerat diagramvisningsprogram: Det simulerade diagramvisningsprogrammet visar
 >[!ENDTABS]
 
 ## Lägg till händelser {#add-events}
+
+>[!CONTEXTUALHELP]
+>id="platform_identities_graphsimulation"
+>title="Lägg till händelser"
+>abstract="Simulera diagram för att förstå hur identitetstjänsten länkar identiteter och hur identitetsoptimeringsalgoritmen fungerar."
+>additional-url="https://experienceleague.adobe.com/docs/experience-platform/data-governance/labels/overview.html#understanding-data-usage-labels" text="Översikt över etiketter för dataanvändning"
 
 Börja genom att välja **[!UICONTROL Add events]**.
 
@@ -126,6 +132,16 @@ Om du vill ta bort en händelse markerar du ellipserna (`...`) bredvid en viss h
 ![Ikonen för borttagningshändelsen har valts.](../images/graph-simulation/delete.png)
 
 ## Konfigurera algoritm {#configure-algorithm}
+
+>[!CONTEXTUALHELP]
+>id="platform_identities_algorithmconfiguration"
+>title="Algoritmkonfiguration"
+>abstract="Konfigurera unik namnområdes- och namnområdesprioritet som är anpassad efter dina inkapslade identiteter."
+
+>[!CONTEXTUALHELP]
+>id="platform_identities_namespacepriority"
+>title="Algoritmkonfiguration"
+>abstract="Namnområdesprioriteten avgör hur länkar tas bort från identitetsdiagrammet."
 
 >[!IMPORTANT]
 >

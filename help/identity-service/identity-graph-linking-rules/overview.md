@@ -2,9 +2,9 @@
 title: Länkningsregler för identitetsdiagram
 description: Lär dig mer om länkningsregler för identitetsdiagram i identitetstjänsten.
 exl-id: 317df52a-d3ae-4c21-bcac-802dceed4e53
-source-git-commit: 5092421ed8d0ff61fb3ed7f0849d2271f1fa144c
+source-git-commit: af36856dbf37e69cbc5c6952c583f583fd5b8e96
 workflow-type: tm+mt
-source-wordcount: '1424'
+source-wordcount: '1440'
 ht-degree: 0%
 
 ---
@@ -34,6 +34,11 @@ Följande dokument är viktiga när det gäller att förstå regler för länkni
 I det här avsnittet beskrivs exempelscenarier som du kan överväga när du konfigurerar länkningsregler för identitetsdiagram.
 
 ### Delad enhet
+
+>[!CONTEXTUALHELP]
+>id="platform_identities_graphcollapsescenarios"
+>title="Diagramkomprimeringsscenarier"
+>abstract="Det finns flera orsaker till varför diagram kan&quot;komprimera&quot; eller representera flera personenheter."
 
 Det finns instanser där flera inloggningar kan förekomma på en enda enhet:
 
