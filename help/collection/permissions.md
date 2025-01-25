@@ -2,14 +2,19 @@
 title: Behörighetshantering för datainsamling i Experience Platform
 description: En översikt på hög nivå över hur du hanterar behörigheter och styr åtkomsten till datainsamlingsfunktioner i Adobe Experience Platform.
 exl-id: 8426d54b-ec1d-475a-a769-f45a8c924fe7
-source-git-commit: 60590a77859320891717244eec58b556935354b5
+source-git-commit: 2d71eafb00098d958c8cff9350caa27bd3f0260d
 workflow-type: tm+mt
-source-wordcount: '1315'
+source-wordcount: '1333'
 ht-degree: 1%
 
 ---
 
-# Behörighetshantering för datainsamling i Experience Platform
+# Behörighetshantering för datainsamling i Experience Platform {#permission-management}
+
+>[!CONTEXTUALHELP]
+>id="platform_tags_permissions"
+>title="Behörigheter"
+>abstract="Förstå de nyckelbehörigheter som krävs för att arbeta med datastreams, scheman, identiteter och sandlådor i Adobe Experience Platform."
 
 [Datainsamling i Adobe Experience Platform](./home.md) består av flera olika tekniker som arbetar tillsammans för att samla in och överföra dina data. Åtkomsten till dessa tekniker regleras genom detaljerade rollbaserade behörigheter i Adobe Admin Console.
 

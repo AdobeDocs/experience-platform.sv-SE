@@ -2,18 +2,23 @@
 title: Publiceringsflöde
 description: Lär dig hur du skapar bibliotek, testar byggen och godkänner dem för produktion i Adobe Experience Platform.
 exl-id: 4885f60b-6401-4ec7-aa1a-29c135087847
-source-git-commit: 8ded2aed32dffa4f0923fedac7baf798e68a9ec9
+source-git-commit: 2d71eafb00098d958c8cff9350caa27bd3f0260d
 workflow-type: tm+mt
-source-wordcount: '1388'
-ht-degree: 0%
+source-wordcount: '1407'
+ht-degree: 3%
 
 ---
 
-# Publiceringsflöde
+# Publiceringsflöde {#publishing-flow}
+
+>[!CONTEXTUALHELP]
+>id="platform_tags_publishing_flow"
+>title="Publiceringsflöde"
+>abstract="Förstå vilka nivåer av användarbehörigheter som krävs för publiceringsflödet, inklusive Utveckla, Godkänn och Publish-behörigheter."
 
 >[!NOTE]
 >
->Adobe Experience Platform Launch har omklassificerats som en serie datainsamlingstekniker i Adobe Experience Platform. Som ett resultat av detta har flera terminologiska förändringar införts i produktdokumentationen. I följande [dokument](../../term-updates.md) finns en konsoliderad referens till de ändrade terminologin.
+>Adobe Experience Platform Launch har omprofilerats till en serie tekniker för datainsamling i Adobe Experience Platform. Som ett resultat av detta har flera terminologiska förändringar genomförts i produktdokumentationen. Se följande [dokument](../../term-updates.md) för en konsoliderad referens av terminologiändringarna.
 
 Taggpubliceringsflödet i Adobe Experience Platform avser processen att skapa bibliotek, testa byggen och godkänna dem för produktion.
 
