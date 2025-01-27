@@ -2,9 +2,9 @@
 title: SFTP-värdar
 description: Lär dig hur du konfigurerar taggar i Adobe Experience Platform för att leverera biblioteksbyggen till en säker, självvärd SFTP-server.
 exl-id: 3c1dc43b-291c-4df4-94f7-a03b25dbb44c
-source-git-commit: 85bd78928b1b503bbb6bbc44075ed0f66e046a4c
+source-git-commit: b3c3bf0a39a30e8c9baf81ec20945497acef5465
 workflow-type: tm+mt
-source-wordcount: '792'
+source-wordcount: '791'
 ht-degree: 5%
 
 ---
@@ -15,7 +15,7 @@ ht-degree: 5%
 >
 >Adobe Experience Platform Launch har omprofilerats till en serie tekniker för datainsamling i Adobe Experience Platform. Som ett resultat av detta har flera terminologiska förändringar genomförts i produktdokumentationen. Se följande [dokument](../../../term-updates.md) för en konsoliderad referens av terminologiändringarna.
 
-Med Adobe Experience Platform kan du leverera kodbiblioteksbyggen till en säker SFTP-server som du har som värd, vilket ger dig större kontroll över hur byggnaderna lagras och hanteras. Den här guiden beskriver hur du konfigurerar en SFTP-värd för en taggegenskap i användargränssnittet för Experience Platform eller datainsamlingen.
+Med Experience Platform kan du leverera kodbiblioteksbyggen till en säker SFTP-server som du har som värd, vilket ger dig större kontroll över hur byggnaderna lagras och hanteras. Den här guiden beskriver hur du konfigurerar en SFTP-värd för en taggegenskap i användargränssnittet för Experience Platform eller datainsamlingen.
 
 >[!NOTE]
 >
