@@ -2,9 +2,9 @@
 title: Översikt över målportalen
 description: Lär dig hur du använder Audience Portal för att visa, hantera och skapa målgrupper i Adobe Experience Platform.
 exl-id: 505ac22e-05f3-423a-a9a0-7f3470af8945
-source-git-commit: 260d63d5eebd62cc5a617fccc189af52fd4d0b09
+source-git-commit: 4ef3f6dc07cb5d17146d48c7a41e3745fd9a3a58
 workflow-type: tm+mt
-source-wordcount: '4358'
+source-wordcount: '4356'
 ht-degree: 0%
 
 ---
@@ -25,7 +25,7 @@ I Audience Portal kan du utföra följande uppgifter:
 - [Skapa en målgrupp](#create-audience)
    - [Använd Segment Builder för att skapa en målgrupp](#segment-builder)
    - [Använd Audience Composition för att skapa en målgrupp](#audience-composition)
-   - [Använd Federated Audience Composition för att skapa en målgrupp med data från ditt befintliga datalager](#fac) (begränsad tillgänglighet)
+   - [Använd Federated Audience Composition för att skapa en målgrupp med data från ert befintliga datalager](#fac)
 - [Importera externt genererade målgrupper](#import-audience)
 
 Om du vill öppna målportalen väljer du fliken **[!UICONTROL Browse]** i segmenteringsavsnittet.

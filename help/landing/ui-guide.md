@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Experience Platform - översikt
 description: Adobe Experience Platform
 exl-id: 47f9a3fb-731d-4ade-8069-faaa18f224dc
-source-git-commit: 9844a7bf5e7198e7d5112ec924220aba71cdc14b
+source-git-commit: 6210f78e79c6c528296378756c9d11e35d092736
 workflow-type: tm+mt
-source-wordcount: '1880'
+source-wordcount: '1857'
 ht-degree: 0%
 
 ---
@@ -157,7 +157,7 @@ I avsnittet **[!UICONTROL Queries]** kan du skapa och hantera frågor, logga SQL
 
 I avsnittet **[!UICONTROL Monitoring]** kan du övervaka inmatning av grupper och strömning. Mer information om övervakning finns i användarhandboken för [övervakning av datainhämtning](../ingestion/quality/monitor-data-ingestion.md).
 
-### [!UICONTROL Federated data] (begränsad tillgänglighet)
+### [!UICONTROL Federated data]
 
 I avsnittet **[!UICONTROL Models]** kan du utforma och skapa datamodeller och scheman som definierar datastrukturen, relationerna och begränsningarna. Mer information om datamodeller och scheman finns i användarhandboken [Federated Audience Composition](https://experienceleague.adobe.com/en/docs/federated-audience-composition/using/config/datamodel/schemas).
 
@@ -165,10 +165,6 @@ Avsnittet **[!UICONTROL Audit trail]** innehåller en detaljerad och kronologisk
 
 
 I avsnittet **[!UICONTROL Federated databases]** kan du ansluta Adobe Experience Platform till ditt företagsdatalager. Mer information om anslutning till federerade databaser finns i användarhandboken [Federated Audience Composition](https://experienceleague.adobe.com/en/docs/federated-audience-composition/using/config/federated-db).
-
->[!AVAILABILITY]
->
->Federated Audience Composition är för närvarande bara tillgängligt för en uppsättning organisationer (begränsad tillgänglighet). Kontakta din Adobe-representant om du vill veta mer.
 
 ### [!UICONTROL Decisioning]
 

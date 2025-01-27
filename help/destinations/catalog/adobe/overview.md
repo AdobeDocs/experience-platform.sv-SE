@@ -3,9 +3,9 @@ keywords: mål;Experience Cloud-lösningar; mål; mål; mål; mål; moln; annons
 title: Översikt över destinationer i Adobe
 description: Hantera kundupplevelsen genom att koppla era data i Platform till andra Adobe Experience Cloud-lösningar för annonsanpassning, personalisering, automatiserad marknadsföring med mera
 exl-id: 15a22a93-b4d6-4b94-bc6c-3634920c7689
-source-git-commit: 515a7cc3ba12afe14aab3e882b7fd55d5cc09069
+source-git-commit: 6210f78e79c6c528296378756c9d11e35d092736
 workflow-type: tm+mt
-source-wordcount: '231'
+source-wordcount: '229'
 ht-degree: 0%
 
 ---
@@ -30,7 +30,7 @@ Mer information om skillnaden mellan anslutningar och tillägg finns i [Anslutni
 * [(Beta) Experience Cloud målgrupper](/help/destinations/catalog/adobe/experience-cloud-audiences.md)
 * [Marketo Engage-anslutning](/help/destinations/catalog/adobe/marketo-engage.md)
 * [Marketo Measure Ultimate-anslutning](/help/destinations/catalog/adobe/marketo-measure-ultimate.md)
-* [Sammansättningsanslutning för federerad publik](https://www.adobe.com/go/destinations-federated-audience-composition){target="_blank"} (begränsad tillgänglighet)
+* [Sammansättningsanslutning för federerad publik](https://www.adobe.com/go/destinations-federated-audience-composition){target="_blank"}
 
 ### Tillägg
 
