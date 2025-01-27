@@ -2,7 +2,7 @@
 title: Identitetsoptimeringsalgoritm
 description: Lär dig mer om algoritm för identitetsoptimering i identitetstjänsten.
 exl-id: 5545bf35-3f23-4206-9658-e1c33e668c98
-source-git-commit: f067f8d4628d76b4a87b9dd97d1d703c54688871
+source-git-commit: c1aaad7d7169e63c49d62ab8a7a06c4c11c85cb4
 workflow-type: tm+mt
 source-wordcount: '1560'
 ht-degree: 0%
@@ -25,7 +25,7 @@ I det här avsnittet finns information om unika namnutrymmen och namnområdespri
 
 >[!CONTEXTUALHELP]
 >id="platform_identities_uniquenamespace"
->title="Algoritmkonfiguration"
+>title="Unikt namnutrymme"
 >abstract="Ett diagram kan inte ha två identiteter med ett unikt namnutrymme. Om ett diagram försöker att överskrida gränsen behålls de senaste länkarna och de äldsta länkarna tas bort."
 
 Ett unikt namnutrymme avgör vilka länkar som tas bort om diagramkomprimering inträffar.

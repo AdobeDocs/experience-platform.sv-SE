@@ -2,7 +2,7 @@
 title: Användargränssnittshandbok för diagramsimulering
 description: Lär dig hur du använder Graph Simulation i gränssnittet för identitetstjänsten.
 exl-id: 89f0cf6e-c43f-40ec-859a-f3b73a6da8c8
-source-git-commit: a9fcc93f4bc82880a52cc43179484a30e485369c
+source-git-commit: c1aaad7d7169e63c49d62ab8a7a06c4c11c85cb4
 workflow-type: tm+mt
 source-wordcount: '1447'
 ht-degree: 0%
@@ -53,8 +53,9 @@ Simulerat diagramvisningsprogram: Det simulerade diagramvisningsprogrammet visar
 
 >[!CONTEXTUALHELP]
 >id="platform_identities_graphsimulation"
->title="Lägg till händelser"
+>title="Diagramsimulering"
 >abstract="Simulera diagram för att förstå hur identitetstjänsten länkar identiteter och hur identitetsoptimeringsalgoritmen fungerar."
+>text="Learn more in documentation"
 
 Börja genom att välja **[!UICONTROL Add events]**.
 
@@ -139,7 +140,7 @@ Om du vill ta bort en händelse markerar du ellipserna (`...`) bredvid en viss h
 
 >[!CONTEXTUALHELP]
 >id="platform_identities_namespacepriority"
->title="Algoritmkonfiguration"
+>title="Namnområdesprioritet"
 >abstract="Namnområdesprioriteten avgör hur länkar tas bort från identitetsdiagrammet."
 
 >[!IMPORTANT]
