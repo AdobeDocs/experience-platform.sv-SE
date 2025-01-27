@@ -2,20 +2,15 @@
 title: Innehålls-API-slutpunkt
 description: Lär dig hur du hämtar åtkomstdata med Privacy Services-API:t.
 role: Developer
-badgePrivateBeta: label="Private Beta" type="Informative"
 exl-id: b3b7ea0f-957d-4e51-bf92-121e9ae795f5
-source-git-commit: e3a453ad166fe244b82bd1f90e669579fcf09d17
+source-git-commit: ac54398ae8e9e06ea3581baf867ab1cf650042a2
 workflow-type: tm+mt
-source-wordcount: '696'
+source-wordcount: '669'
 ht-degree: 0%
 
 ---
 
 # Innehållsslutpunkt
-
->[!IMPORTANT]
->
->Slutpunkten `/content` är för närvarande i betaversion och din organisation har kanske inte åtkomst till den än. Funktionen och dokumentationen kan komma att ändras.
 
 Använd slutpunkten `/content` för att på ett säkert sätt hämta *åtkomstinformation* (den information som ett sekretessämne kan begära åtkomst till) för dina kunder. Hämtnings-URL:en som anges i svaret på en `/jobs/{JOB_ID}` GET-förfrågan pekar på en Adobe-tjänstslutpunkt. Du kan sedan göra en GET-förfrågan till `/jobs/:JOB_ID/content` för att returnera dina kunddata i JSON-format. Den här åtkomstmetoden implementerar flera lager av autentisering och åtkomstkontroll för att förbättra säkerheten.
 
