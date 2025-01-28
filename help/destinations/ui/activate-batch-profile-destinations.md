@@ -3,9 +3,9 @@ title: Aktivera målgrupper för att batchprofilera exportmål
 type: Tutorial
 description: Lär dig hur du aktiverar de målgrupper du har i Adobe Experience Platform genom att skicka dem till batchprofilbaserade destinationer.
 exl-id: 82ca9971-2685-453a-9e45-2001f0337cda
-source-git-commit: de9c838c8a9d07165b4cc8a602df0c627a8b749c
+source-git-commit: b4b185cab4defbf9559089e5152075674dab52d1
 workflow-type: tm+mt
-source-wordcount: '4225'
+source-wordcount: '4217'
 ht-degree: 1%
 
 ---
@@ -439,25 +439,32 @@ När du exporterar profiler till filbaserade mål säkerställer borttagning av 
 
 * **Deterministisk markering**: När flera profiler har identiska dedupliceringsnycklar och samma referenstidstämpel avgör dedupliceringslogiken vilken profil som ska exporteras genom att sortera värdena för andra markerade kolumner (exklusive komplexa typer som arrayer, kartor eller objekt). De sorterade värdena utvärderas i lexikografisk ordning och den första profilen markeras.
 
-* **Exempelscenario**:\
-  Tänk på följande data, där dedupliceringsnyckeln är kolumnen `Email`:\
-  |E-post*|förnamn|efternamn|tidsstämpel|\
-  |—|—|—|—|\
-  |test1@test.com|John|Morris|2024-10-12T09:50|\
-  |test1@test.com|John|Doe|2024-10-12T09:50|\
-  |test2@test.com|Frank|Smith|2024-10-12T09:50|
+* **Exempelscenario**
 
-  Efter borttagning av dubbletter kommer exportfilen att innehålla:\
-  |E-post*|förnamn|efternamn|tidsstämpel|\
-  |—|—|—|—|\
-  |test1@test.com|John|Doe|2024-10-12T09:50|\
-  |test2@test.com|Frank|Smith|2024-10-12T09:50|
+Tänk på följande data, där dedupliceringsnyckeln är kolumnen `Email`:
 
-  **Förklaring**: För `test1@test.com` har båda profilerna samma dedupliceringsnyckel och tidsstämpel. Algoritmen sorterar `first_name`- och `last_name`-kolumnvärdena lexikografiskt. Eftersom förnamnen är identiska löses tidsgränsen med kolumnen `last_name`, där &quot;Doe&quot; kommer före &quot;Morris&quot;.
+| E-post* | first_name | last_name | tidsstämpel |
+|---|---|---|---|  
+| `test1@test.com` | John | Morris | 2024-10-12T09:50 |
+| `test1@test.com` | John | Doe | 2024-10-12T09:50 |
+| `test2@test.com` | Frank | Smith | 2024-10-12T09:50 |
 
-* **Förbättrad tillförlitlighet**: Den här uppdaterade processen för borttagning av dubbletter säkerställer att efterföljande körningar med samma koordinater alltid ger samma resultat, vilket förbättrar konsekvensen.
+{style="table-layout:auto"}
 
-### [!BADGE Beta]{type=Informative} Exportera arrayer via beräknade fält {#export-arrays-calculated-fields}
+Efter borttagning av dubbletter kommer exportfilen att innehålla:
+
+| E-post* | first_name | last_name | tidsstämpel |
+|---|---|---|---|  
+| `test1@test.com` | John | Doe | 2024-10-12T09:50 |
+| `test2@test.com` | Frank | Smith | 2024-10-12T09:50 |
+
+{style="table-layout:auto"}
+
+**Förklaring**: För `test1@test.com` har båda profilerna samma dedupliceringsnyckel och tidsstämpel. Algoritmen sorterar `first_name`- och `last_name`-kolumnvärdena lexikografiskt. Eftersom förnamnen är identiska löses tidsgränsen med kolumnen `last_name`, där &quot;Doe&quot; kommer före &quot;Morris&quot;.
+
+**Förbättrad tillförlitlighet**: Den här uppdaterade processen för borttagning av dubbletter säkerställer att efterföljande körningar med samma koordinater alltid ger samma resultat, vilket förbättrar konsekvensen.
+
+### Exportera arrayer via beräknade fält {#export-arrays-calculated-fields}
 
 Vissa betakunder kan exportera arrayobjekt från Experience Platform till molnlagringsplatser. Läs mer om [att exportera arrayer och beräknade fält](/help/destinations/ui/export-arrays-calculated-fields.md) och kontakta din Adobe-representant för att få tillgång till funktionen.
 
@@ -474,10 +481,10 @@ På grund av en känd begränsning kan du för närvarande inte använda fönstr
 
 >[!NOTE]
 >
-För molnlagringsmål läggs följande attribut till i mappningen som standard:
+>För molnlagringsmål läggs följande attribut till i mappningen som standard:
 >
-* `segmentMembership.seg_namespace.seg_id.status`
-* `segmentMembership.seg_namespace.seg_id.lastQualificationTime`
+>* `segmentMembership.seg_namespace.seg_id.status`
+>* `segmentMembership.seg_namespace.seg_id.lastQualificationTime`
 
 Filexporter varierar på följande sätt, beroende på om `segmentMembership.seg_namespace.seg_id.status` har valts:
 
@@ -500,9 +507,9 @@ Som en tillfällig lösning kan du antingen:
 
 >[!IMPORTANT]
 > 
-Alla molnlagringsmål i katalogen kan visa ett förbättrat [[!UICONTROL Mapping]-steg ](#mapping) som ersätter det **[!UICONTROL Select attributes]**-steg som beskrivs i det här avsnittet.
+>Alla molnlagringsmål i katalogen kan visa ett förbättrat [[!UICONTROL Mapping]-steg ](#mapping) som ersätter det **[!UICONTROL Select attributes]**-steg som beskrivs i det här avsnittet.
 >
-Det här **[!UICONTROL Select attributes]** steget visas fortfarande för e-postmarknadsföringsmålen Adobe Campaign, Oracle Responsys, Oracle Eloqua och Salesforce Marketing Cloud.
+>Det här **[!UICONTROL Select attributes]** steget visas fortfarande för e-postmarknadsföringsmålen Adobe Campaign, Oracle Responsys, Oracle Eloqua och Salesforce Marketing Cloud.
 
 För profilbaserade mål måste du välja de profilattribut som du vill skicka till målmålet.
 
@@ -522,15 +529,15 @@ För profilbaserade mål måste du välja de profilattribut som du vill skicka t
 
 >[!NOTE]
 >
-Adobe Experience Platform fyller markeringen i förväg med fyra rekommenderade attribut från schemat: `person.name.firstName`, `person.name.lastName`, `personalEmail.address`, `segmentMembership.seg_namespace.seg_id.status`.
+> Adobe Experience Platform fyller markeringen i förväg med fyra rekommenderade attribut från schemat: `person.name.firstName`, `person.name.lastName`, `personalEmail.address`, `segmentMembership.seg_namespace.seg_id.status`.
 
 ![Bild som visar förfyllda rekommenderade attribut i mappningssteget i målgruppsaktiveringsarbetsflödet.](../assets/ui/activate-batch-profile-destinations/prefilled-fields.png)
 
 >[!IMPORTANT]
 >
-På grund av en känd begränsning kan du för närvarande inte använda fönstret **[!UICONTROL Select field]** för att lägga till `segmentMembership.seg_namespace.seg_id.status` i din filexport. I stället måste du klistra in värdet `xdm: segmentMembership.seg_namespace.seg_id.status` manuellt i schemafältet, vilket visas nedan.
+>På grund av en känd begränsning kan du för närvarande inte använda fönstret **[!UICONTROL Select field]** för att lägga till `segmentMembership.seg_namespace.seg_id.status` i din filexport. I stället måste du klistra in värdet `xdm: segmentMembership.seg_namespace.seg_id.status` manuellt i schemafältet, vilket visas nedan.
 >
-![Skärminspelning som visar målgruppsmedlemskapets tillfälliga lösning i aktiveringsarbetsflödet.](..//assets/ui/activate-batch-profile-destinations/segment-membership.gif)
+>![Skärminspelning som visar målgruppsmedlemskapets tillfälliga lösning i aktiveringsarbetsflödet.](..//assets/ui/activate-batch-profile-destinations/segment-membership.gif)
 
 Filexporter varierar på följande sätt, beroende på om `segmentMembership.seg_namespace.seg_id.status` har valts:
 * Om fältet `segmentMembership.seg_namespace.seg_id.status` är markerat innehåller exporterade filer **[!UICONTROL Active]** medlemmar i den första fullständiga ögonblicksbilden och **[!UICONTROL Active]**- och **[!UICONTROL Expired]**-medlemmar i efterföljande stegvisa exporter.
@@ -538,14 +545,14 @@ Filexporter varierar på följande sätt, beroende på om `segmentMembership.seg
 
 ## Välj anrikningsattribut {#select-enrichment-attributes}
 
-[!CONTEXTUALHELP]
-id="platform_destinations_activate_exclude_enrichment_attributes"
-title="Uteslut anrikningsattribut"
-abstract="Aktivera det här alternativet om du vill exportera profilerna från de valda anpassade överförda målgrupperna till ditt mål, samtidigt som alla deras attribut utesluts."
+>[!CONTEXTUALHELP]
+>id="platform_destinations_activate_exclude_enrichment_attributes"
+>title="Uteslut anrikningsattribut"
+>abstract="Aktivera det här alternativet om du vill exportera profilerna från de valda anpassade överförda målgrupperna till ditt mål, samtidigt som alla deras attribut utesluts."
 
 >[!IMPORTANT]
 >
-Det här steget visas bara om du valde **[!UICONTROL Custom upload]** målgrupper under steget [målgruppsval](#select-audiences).
+>Det här steget visas bara om du valde **[!UICONTROL Custom upload]** målgrupper under steget [målgruppsval](#select-audiences).
 
 Anrikningsattribut motsvarar anpassade överförda målgrupper som kapslats i Experience Platform som **[!UICONTROL Custom uploads]**. I det här steget kan du välja vilka attribut du vill exportera till målet, för varje vald extern publik.
 
@@ -572,12 +579,12 @@ Välj **[!UICONTROL Next]** om du vill gå till steget [Granska](#review).
 
 >[!NOTE]
 > 
-Om några dataanvändningsetiketter har tillämpats på vissa fält i en datauppsättning (i stället för på hela datauppsättningen), tillämpas dessa fältetiketter vid aktiveringen på följande villkor:
+>Om några dataanvändningsetiketter har tillämpats på vissa fält i en datauppsättning (i stället för på hela datauppsättningen), tillämpas dessa fältetiketter vid aktiveringen på följande villkor:
 >
-* Fälten används i målgruppsdefinitionen.
-* Fälten konfigureras som projicerade attribut för målmålet.
+>* Fälten används i målgruppsdefinitionen.
+>* Fälten konfigureras som projicerade attribut för målmålet.
 >
-Om till exempel fältet `person.name.firstName` har vissa etiketter för dataanvändning som är i konflikt med målets marknadsföringsåtgärd, visas en överträdelse av dataanvändningsprincipen i granskningssteget. Mer information finns i [Datastyrning i Adobe Experience Platform](../../rtcdp/privacy/data-governance-overview.md#destinations).
+> Om till exempel fältet `person.name.firstName` har vissa etiketter för dataanvändning som är i konflikt med målets marknadsföringsåtgärd, visas en överträdelse av dataanvändningsprincipen i granskningssteget. Mer information finns i [Datastyrning i Adobe Experience Platform](../../rtcdp/privacy/data-governance-overview.md#destinations).
 
 På sidan **[!UICONTROL Review]** kan du se en sammanfattning av ditt val. Välj **[!UICONTROL Cancel]** om du vill dela upp flödet, **[!UICONTROL Back]** om du vill ändra inställningarna eller **[!UICONTROL Finish]** om du vill bekräfta ditt val och börja skicka data till målet.
 
@@ -585,10 +592,10 @@ På sidan **[!UICONTROL Review]** kan du se en sammanfattning av ditt val. Välj
 
 ### Principutvärdering av samtycke {#consent-policy-evaluation}
 
-[!CONTEXTUALHELP]
-id="platform_governance_policies_viewApplicableConsentPolicies"
-title="Visa tillämpliga policyer för samtycke"
-abstract="Om din organisation har köpt **Adobe Healthcare Shield** eller **Adobe Privacy &amp; Security Shield** väljer du **[!UICONTROL View applicable consent policies]** för att se vilka medgivandepolicyer som tillämpas och hur många profiler som inkluderas i aktiveringen som ett resultat av dem. Den här kontrollen inaktiveras om ditt företag inte har tillgång till de SKU:er som nämns ovan."
+>[!CONTEXTUALHELP]
+>id="platform_governance_policies_viewApplicableConsentPolicies"
+>title="Visa tillämpliga policyer för samtycke"
+>abstract="Om din organisation har köpt **Adobe Healthcare Shield** eller **Adobe Privacy &amp; Security Shield** väljer du **[!UICONTROL View applicable consent policies]** för att se vilka medgivandepolicyer som tillämpas och hur många profiler som inkluderas i aktiveringen som ett resultat av dem. Den här kontrollen inaktiveras om ditt företag inte har tillgång till de SKU:er som nämns ovan."
 
 Om din organisation har köpt **Adobe Healthcare Shield** eller **Adobe Privacy &amp; Security Shield** väljer du **[!UICONTROL View applicable consent policies]** för att se vilka medgivandepolicyer som tillämpas och hur många profiler som inkluderas i aktiveringen som ett resultat av dem. Läs mer om [utvärdering av medgivandeprincip](/help/data-governance/enforcement/auto-enforcement.md#consent-policy-evaluation).
 
