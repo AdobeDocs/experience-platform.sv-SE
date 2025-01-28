@@ -2,14 +2,20 @@
 title: Namnområdesprioritet
 description: Läs om namnområdesprioritet i identitetstjänsten.
 exl-id: bb04f02e-3826-45af-b935-752ea7e6ed7c
-source-git-commit: 3efbb9614f08a74ad33eb1fbb4861c34c762b66b
+source-git-commit: 0c5924b4e47cf4afcf76080a10d142b3e280c4d8
 workflow-type: tm+mt
-source-wordcount: '1788'
+source-wordcount: '1804'
 ht-degree: 1%
 
 ---
 
-# Namnområdesprioritet
+# Namnområdesprioritet {#namespace-priority}
+
+>[!CONTEXTUALHELP]
+>id="platform_identities_namespacepriority"
+>title="Namnområdesprioritet"
+>abstract="Namnområdesprioriteten avgör hur länkar tas bort från identitetsdiagrammet."
+>additional-url="http://www.adobe.com/go/identity-namespace-priority" text="Läs mer"
 
 >[!AVAILABILITY]
 >
@@ -77,7 +83,7 @@ För relativt komplexa diagramstrukturer spelar namnområdesprioriteten en vikti
 * När du har konfigurerat identitetsinställningar för en viss sandlåda bestäms den primära identiteten för upplevelsehändelser av den högsta namnområdesprioriteten i konfigurationen.
    * Det beror på att upplevelsehändelser är dynamiska till sin natur. En identitetskarta kan innehålla tre eller fler identiteter, och namnområdesprioriteten ser till att det viktigaste namnutrymmet är kopplat till upplevelsehändelsen.
 * Därför kommer följande konfigurationer **inte längre att användas av kundprofilen i realtid**:
-   * Den primära identitetskonfigurationen (`primary=true`) när identiteter skickas i identityMap med hjälp av Web SDK, Mobile SDK eller Edge Network Server-API (ID-namnområde och identitetsvärde kommer att fortsätta användas i Profile). **Obs!**: Tjänster utanför kundprofilen i realtid, t.ex. datasjölagring eller Adobe Target, fortsätter att använda den primära identitetskonfigurationen (`primary=true`).
+   * Den primära identitetskonfigurationen (`primary=true`) när identiteter skickas i identityMap med API:t för Web SDK, Mobile SDK eller Edge Network Server (ID-namnområde och identitetsvärde används fortfarande i Profile). **Obs!**: Tjänster utanför kundprofilen i realtid, t.ex. datasjölagring eller Adobe Target, fortsätter att använda den primära identitetskonfigurationen (`primary=true`).
    * Alla fält som markerats som primär identitet i ett XDM Experience Event Class-schema.
    * Standardinställningar för primär identitet i Adobe Analytics-källkopplingen (ECID eller AAID).
 * Å andra sidan bestämmer inte namnområdesprioriteten **den primära identiteten för profilposter**.
@@ -155,7 +161,7 @@ Om identitetsinställningarna är aktiverade kommer beräknade attribut att anv�
 
 ### Data Lake
 
-Inmatningen av data i sjön fortsätter att följa de primära identitetsinställningarna som konfigurerats för [Web SDK](../../tags/extensions/client/web-sdk/data-element-types.md#identity-map) och scheman.
+Inmatningen av data i sjön fortsätter att följa de primära identitetsinställningarna som konfigurerats på [Web SDK](../../tags/extensions/client/web-sdk/data-element-types.md#identity-map) och scheman.
 
 Datasjön kommer inte att fastställa den primära identiteten baserat på namnområdesprioriteten. Adobe Customer Journey Analytics kommer till exempel att fortsätta använda värden i identitetskartan även efter det att namnområdesprioriteten har aktiverats (till exempel när en datauppsättning läggs till i en ny anslutning), eftersom Customer Journey Analytics använder data från datavjön.
 

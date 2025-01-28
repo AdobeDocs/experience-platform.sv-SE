@@ -2,14 +2,20 @@
 title: Länkningslogik för identitetstjänst
 description: Läs om hur identitetstjänsten länkar olika identiteter för att skapa en heltäckande bild av en kund.
 exl-id: 1c958c0e-0777-48db-862c-eb12b2e7a03c
-source-git-commit: f067f8d4628d76b4a87b9dd97d1d703c54688871
+source-git-commit: 627b2e5ecde28b26e7d4717e13713c38c3c09651
 workflow-type: tm+mt
-source-wordcount: '968'
+source-wordcount: '971'
 ht-degree: 0%
 
 ---
 
-# Länkningslogik för identitetstjänst
+# Länkningslogik för identitetstjänst {#identity-service-linking-logic}
+
+>[!CONTEXTUALHELP]
+>id="platform_identities_simulatedgraph"
+>title="Simulerat diagram"
+>abstract="Identiteter länkas när identitetsnamnutrymmet och identitetsvärdet matchar."
+>additional-url="https://experienceleague.adobe.com/en/docs/experience-platform/identity/features/identity-linking-logic" text="Läs mer"
 
 En länk mellan två identiteter skapas när identitetsnamnutrymmet och identitetsvärdena matchar.
 
@@ -29,12 +35,7 @@ En identitet representerar en verklighetstrogen enhet. Om det finns en länk mel
 | Slutanvändaren loggar in med Google Chrome och sedan Firefox. | CRMID är länkat till två olika ECID. | En person (CRMID) är kopplad till två webbläsare (**Obs!**: Varje webbläsare har ett eget ECID). |
 | En datatekniker importerar en CRM-post som innehåller två fält som är markerade som en identitet: CRMID och Email. | CRMID och Email är länkade. | En person (CRMID) är kopplad till e-postadressen. |
 
-## Länkningslogik för identitetstjänsten {#identity-linking-logic}
-
->[!CONTEXTUALHELP]
->id="platform_identities_simulatedgraph"
->title="Simulerat diagram"
->abstract="Identiteter länkas när identitetsnamnutrymmet och identitetsvärdet matchar."
+## Länkningslogik för identitetstjänsten
 
 En identitet består av ett identitetsnamnutrymme och ett identitetsvärde.
 

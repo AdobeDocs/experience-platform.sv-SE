@@ -2,14 +2,20 @@
 title: Användargränssnittshandbok för diagramsimulering
 description: Lär dig hur du använder Graph Simulation i gränssnittet för identitetstjänsten.
 exl-id: 89f0cf6e-c43f-40ec-859a-f3b73a6da8c8
-source-git-commit: c1aaad7d7169e63c49d62ab8a7a06c4c11c85cb4
+source-git-commit: 0c5924b4e47cf4afcf76080a10d142b3e280c4d8
 workflow-type: tm+mt
-source-wordcount: '1447'
+source-wordcount: '1424'
 ht-degree: 0%
 
 ---
 
-# Användargränssnittshandbok för [!DNL Graph Simulation]
+# Användargränssnittshandbok för [!DNL Graph Simulation] {#graph-simulation}
+
+>[!CONTEXTUALHELP]
+>id="platform_identities_graphsimulation"
+>title="Diagramsimulering"
+>abstract="Simulera diagram för att förstå hur identitetstjänsten länkar identiteter och hur identitetsoptimeringsalgoritmen fungerar."
+>additional-url="http://www.adobe.com/go/identity-graph-simulation" text="Läs mer"
 
 >[!AVAILABILITY]
 >
@@ -50,12 +56,6 @@ Simulerat diagramvisningsprogram: Det simulerade diagramvisningsprogrammet visar
 >[!ENDTABS]
 
 ## Lägg till händelser {#add-events}
-
->[!CONTEXTUALHELP]
->id="platform_identities_graphsimulation"
->title="Diagramsimulering"
->abstract="Simulera diagram för att förstå hur identitetstjänsten länkar identiteter och hur identitetsoptimeringsalgoritmen fungerar."
->text="Learn more in documentation"
 
 Börja genom att välja **[!UICONTROL Add events]**.
 
@@ -132,16 +132,6 @@ Om du vill ta bort en händelse markerar du ellipserna (`...`) bredvid en viss h
 ![Ikonen för borttagningshändelsen har valts.](../images/graph-simulation/delete.png)
 
 ## Konfigurera algoritm {#configure-algorithm}
-
->[!CONTEXTUALHELP]
->id="platform_identities_algorithmconfiguration"
->title="Algoritmkonfiguration"
->abstract="Konfigurera unik namnområdes- och namnområdesprioritet som är anpassad efter dina inkapslade identiteter."
-
->[!CONTEXTUALHELP]
->id="platform_identities_namespacepriority"
->title="Namnområdesprioritet"
->abstract="Namnområdesprioriteten avgör hur länkar tas bort från identitetsdiagrammet."
 
 >[!IMPORTANT]
 >
