@@ -1,30 +1,28 @@
 ---
-title: (Beta) Trade Desk - CRM-anslutning
+title: Trade Desk - CRM-anslutning
 description: Aktivera profiler på ert Trade Desk-konto för målgruppsanpassning och undertryckning baserat på CRM-data.
-last-substantial-update: 2023-01-25T00:00:00Z
+last-substantial-update: 2025-01-16T00:00:00Z
 exl-id: e09eaede-5525-4a51-a0e6-00ed5fdc662b
-source-git-commit: 3c645ccf5b9dd17e4c3cc1267b60a9c4f1131668
+source-git-commit: a189a86749996c0ee7b6146bcd030d8495745e12
 workflow-type: tm+mt
-source-wordcount: '1114'
+source-wordcount: '1083'
 ht-degree: 0%
 
 ---
 
-# (Beta) [!DNL Trade Desk] - CRM-anslutningen
+# [!DNL Trade Desk] - CRM-anslutning
 
 >[!IMPORTANT]
->
->[!DNL The Trade Desk - CRM]-målet i Platform är för närvarande i betaversion. Dokumentationen och funktionaliteten kan komma att ändras.
 >
 >I och med lanseringen av EUID (European Unified ID) ser du nu två [!DNL The Trade Desk - CRM] mål i [målkatalogen](/help/destinations/catalog/overview.md).
 >* Använd målet **[!DNL The Trade Desk - CRM (EU)]** om du hämtar data i EU.
 >* Använd målet **[!DNL The Trade Desk - CRM (NAMER & APAC)]** om du hämtar data i APAC- eller NAMER-regionerna.
 >
->Båda destinationerna i Experience Platform är för närvarande betaversioner. Målanslutningen och dokumentationssidan skapas och underhålls av *[!DNL Trade Desk]*-teamet. Om du har frågor eller uppdateringsfrågor kontaktar du din [!DNL Trade Desk]-representant. Dokumentationen och funktionen kan komma att ändras.
+>Målanslutningen och dokumentationssidan skapas och underhålls av *[!DNL Trade Desk]*-teamet. Kontakta din [!DNL Trade Desk]-representant om du har frågor eller uppdateringsfrågor.
 
 ## Översikt {#overview}
 
-Det här dokumentet är utformat för att hjälpa dig att aktivera profiler för ditt [!DNL Trade Desk]-konto för målgruppsanpassning och inaktivering baserat på CRM-data.
+Förstå hur du kan aktivera profiler för ditt [!DNL Trade Desk]-konto för målgruppsanpassning och inaktivering baserat på CRM-data.
 
 Den här kopplingen skickar data till den [!DNL The Trade Desk] första partens slutpunkt. Integrationen mellan Adobe Experience Platform och [!DNL The Trade Desk] stöder inte export av data till slutpunkten för [!DNL The Trade Desk] från tredje part.
 
@@ -36,7 +34,9 @@ Den här kopplingen skickar data till den [!DNL The Trade Desk] första partens 
 
 ## Förhandskrav {#prerequisites}
 
-Innan du kan aktivera målgrupper för [!DNL The Trade Desk] måste du kontakta din [!DNL The Trade Desk]-kontohanterare för att signera CRM-introduktionskontraktet. [!DNL The Trade Desk] ger sedan tillstånd och delar ditt annonsörs-ID för att konfigurera ditt mål.
+>[!IMPORTANT]
+>
+>Innan du kan aktivera målgrupper för handelsavdelningen måste du kontakta din [!DNL Trade Desk]-kontoansvarige för att signera CRM-introduktionskontraktet. [!DNL The Trade Desk] aktiverar användning av UID2/EUID och delar annan information så att du kan konfigurera ditt mål.
 
 ## Krav för ID-matchning {#id-matching-requirements}
 

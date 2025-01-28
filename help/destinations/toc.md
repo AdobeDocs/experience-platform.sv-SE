@@ -5,9 +5,9 @@ user-guide-description: Aktivera kända och okända data för marknadsföringska
 description: I det här dokumentet visas innehållsförteckningen för Adobe Experience Platform-destinationer
 feature: Destinations
 role: Admin,User
-source-git-commit: 6210f78e79c6c528296378756c9d11e35d092736
+source-git-commit: e916488be3d10e47193e66c1f9516cb5da93c3a7
 workflow-type: tm+mt
-source-wordcount: '1271'
+source-wordcount: '1270'
 ht-degree: 1%
 
 ---
@@ -103,7 +103,7 @@ ht-degree: 1%
       * [PubMatic Connect-anslutning](./catalog/advertising/pubmatic.md)
       * [Snapchat Ads-anslutning](./catalog/advertising/snap-inc.md)
       * [The Trade Desk connection](./catalog/advertising/tradedesk.md)
-      * [(Beta) The Trade Desk CRM connection](./catalog/advertising/tradedesk-emails.md)
+      * [CRM-anslutningen för Trade Desk](./catalog/advertising/tradedesk-emails.md)
       * [Tillägget Twitter Universal Website Tag](./catalog/advertising/twitter-uwt.md)
       * [Yahoo/Verizon DataX-anslutning](./catalog/advertising/datax.md)
    * Analysmål {#analytics}
