@@ -3,10 +3,10 @@ title: Aktivera målgrupper för att batchprofilera exportmål
 type: Tutorial
 description: Lär dig hur du aktiverar de målgrupper du har i Adobe Experience Platform genom att skicka dem till batchprofilbaserade destinationer.
 exl-id: 82ca9971-2685-453a-9e45-2001f0337cda
-source-git-commit: fdb92a0c03ce6a0d44cfc8eb20c2e3bd1583b1ce
+source-git-commit: de9c838c8a9d07165b4cc8a602df0c627a8b749c
 workflow-type: tm+mt
-source-wordcount: '3981'
-ht-degree: 0%
+source-wordcount: '4225'
+ht-degree: 1%
 
 ---
 
@@ -137,7 +137,7 @@ Välj **[!UICONTROL Export full files]** om du vill utlösa exporten av en fil s
 
    >[!IMPORTANT]
    >
-   >Om du kör [flexibel målgruppsutvärdering](../../segmentation/ui/audience-portal.md#flexible-audience-evaluation) för målgrupper som redan är inställda på att aktiveras efter segmentutvärderingen, kommer målgrupperna att aktiveras så snart det flexibla målgruppsutvärderingsjobbet har slutförts, oavsett eventuella tidigare dagliga aktiveringsjobb. Detta kan leda till att målgrupper exporteras flera gånger om dagen, baserat på dina åtgärder.
+   >Om du kör [flexibel målgruppsutvärdering](../../segmentation/ui/audience-portal.md#flexible-audience-evaluation) för målgrupper som redan är inställda på att aktiveras efter segmentutvärderingen kommer målgrupperna att aktiveras så snart det flexibla målgruppsutvärderingsjobbet har slutförts, oavsett om det utförts tidigare dagliga aktiveringsjobb. Detta kan leda till att målgrupper exporteras flera gånger om dagen, baserat på dina åtgärder.
 
    <!-- Batch segmentation currently runs at {{insert time of day}} and lasts for an average {{x hours}}. Adobe reserves the right to modify this schedule. -->
 
@@ -431,14 +431,31 @@ Om den sammansatta nyckeln `personalEmail + lastName` tar bort dubbletter inneh�
 
 Adobe rekommenderar att du väljer ett identitetsnamnutrymme som [!DNL CRM ID] eller en e-postadress som en dedupliceringsnyckel för att se till att alla profilposter identifieras unikt.
 
->[!NOTE]
-> 
->Om några dataanvändningsetiketter har tillämpats på vissa fält i en datauppsättning (i stället för på hela datauppsättningen), tillämpas dessa fältetiketter vid aktiveringen på följande villkor:
->
->* Fälten används i målgruppsdefinitionen.
->* Fälten konfigureras som projicerade attribut för målmålet.
->
-> Om till exempel fältet `person.name.firstName` har vissa etiketter för dataanvändning som är i konflikt med målets marknadsföringsåtgärd, visas en överträdelse av dataanvändningsprincipen i granskningssteget. Mer information finns i [Datastyrning i Adobe Experience Platform](../../rtcdp/privacy/data-governance-overview.md#destinations).
+### Funktionen för borttagning av dubbletter för profiler med samma tidsstämpel {#deduplication-same-timestamp}
+
+När du exporterar profiler till filbaserade mål säkerställer borttagning av dubbletter att endast en profil exporteras när flera profiler delar samma nyckel för borttagning av dubbletter och samma referenstidstämpel. Den här tidsstämpeln representerar det ögonblick då en profils målgruppsmedlemskap eller identitetsdiagram senast uppdaterades. Mer information om hur profiler uppdateras och exporteras finns i dokumentet om [exportbeteende för profiler](https://experienceleague.adobe.com/en/docs/experience-platform/destinations/how-destinations-work/profile-export-behavior#what-determines-a-data-export-and-what-is-included-in-the-export-2).
+
+#### Viktiga överväganden
+
+* **Deterministisk markering**: När flera profiler har identiska dedupliceringsnycklar och samma referenstidstämpel avgör dedupliceringslogiken vilken profil som ska exporteras genom att sortera värdena för andra markerade kolumner (exklusive komplexa typer som arrayer, kartor eller objekt). De sorterade värdena utvärderas i lexikografisk ordning och den första profilen markeras.
+
+* **Exempelscenario**:\
+  Tänk på följande data, där dedupliceringsnyckeln är kolumnen `Email`:\
+  |E-post*|förnamn|efternamn|tidsstämpel|\
+  |—|—|—|—|\
+  |test1@test.com|John|Morris|2024-10-12T09:50|\
+  |test1@test.com|John|Doe|2024-10-12T09:50|\
+  |test2@test.com|Frank|Smith|2024-10-12T09:50|
+
+  Efter borttagning av dubbletter kommer exportfilen att innehålla:\
+  |E-post*|förnamn|efternamn|tidsstämpel|\
+  |—|—|—|—|\
+  |test1@test.com|John|Doe|2024-10-12T09:50|\
+  |test2@test.com|Frank|Smith|2024-10-12T09:50|
+
+  **Förklaring**: För `test1@test.com` har båda profilerna samma dedupliceringsnyckel och tidsstämpel. Algoritmen sorterar `first_name`- och `last_name`-kolumnvärdena lexikografiskt. Eftersom förnamnen är identiska löses tidsgränsen med kolumnen `last_name`, där &quot;Doe&quot; kommer före &quot;Morris&quot;.
+
+* **Förbättrad tillförlitlighet**: Den här uppdaterade processen för borttagning av dubbletter säkerställer att efterföljande körningar med samma koordinater alltid ger samma resultat, vilket förbättrar konsekvensen.
 
 ### [!BADGE Beta]{type=Informative} Exportera arrayer via beräknade fält {#export-arrays-calculated-fields}
 
@@ -552,6 +569,15 @@ Om du vill aktivera externa målgrupper till dina mål utan att exportera något
 Välj **[!UICONTROL Next]** om du vill gå till steget [Granska](#review).
 
 ## Granska {#review}
+
+>[!NOTE]
+> 
+Om några dataanvändningsetiketter har tillämpats på vissa fält i en datauppsättning (i stället för på hela datauppsättningen), tillämpas dessa fältetiketter vid aktiveringen på följande villkor:
+>
+* Fälten används i målgruppsdefinitionen.
+* Fälten konfigureras som projicerade attribut för målmålet.
+>
+Om till exempel fältet `person.name.firstName` har vissa etiketter för dataanvändning som är i konflikt med målets marknadsföringsåtgärd, visas en överträdelse av dataanvändningsprincipen i granskningssteget. Mer information finns i [Datastyrning i Adobe Experience Platform](../../rtcdp/privacy/data-governance-overview.md#destinations).
 
 På sidan **[!UICONTROL Review]** kan du se en sammanfattning av ditt val. Välj **[!UICONTROL Cancel]** om du vill dela upp flödet, **[!UICONTROL Back]** om du vill ändra inställningarna eller **[!UICONTROL Finish]** om du vill bekräfta ditt val och börja skicka data till målet.
 
