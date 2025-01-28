@@ -2,9 +2,9 @@
 title: Identitetsoptimeringsalgoritm
 description: Lär dig mer om algoritm för identitetsoptimering i identitetstjänsten.
 exl-id: 5545bf35-3f23-4206-9658-e1c33e668c98
-source-git-commit: 0c5924b4e47cf4afcf76080a10d142b3e280c4d8
+source-git-commit: 048d915d33a19a9d50a4951e165b5ade1b9d9734
 workflow-type: tm+mt
-source-wordcount: '1563'
+source-wordcount: '1560'
 ht-degree: 0%
 
 ---
@@ -15,7 +15,6 @@ ht-degree: 0%
 >id="platform_identities_uniquenamespace"
 >title="Unikt namnutrymme"
 >abstract="Ett diagram kan inte ha två identiteter med ett unikt namnutrymme. Om ett diagram försöker att överskrida gränsen behålls de senaste länkarna och de äldsta länkarna tas bort."
->additional-url="http://www.adobe.com/go/identity-ido-algo" text="Läs mer"
 
 >[!AVAILABILITY]
 >

@@ -2,9 +2,9 @@
 title: Namnområdesprioritet
 description: Läs om namnområdesprioritet i identitetstjänsten.
 exl-id: bb04f02e-3826-45af-b935-752ea7e6ed7c
-source-git-commit: 0c5924b4e47cf4afcf76080a10d142b3e280c4d8
+source-git-commit: 048d915d33a19a9d50a4951e165b5ade1b9d9734
 workflow-type: tm+mt
-source-wordcount: '1804'
+source-wordcount: '1801'
 ht-degree: 1%
 
 ---
@@ -15,7 +15,6 @@ ht-degree: 1%
 >id="platform_identities_namespacepriority"
 >title="Namnområdesprioritet"
 >abstract="Namnområdesprioriteten avgör hur länkar tas bort från identitetsdiagrammet."
->additional-url="http://www.adobe.com/go/identity-namespace-priority" text="Läs mer"
 
 >[!AVAILABILITY]
 >

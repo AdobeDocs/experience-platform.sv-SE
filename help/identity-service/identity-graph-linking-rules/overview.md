@@ -2,9 +2,9 @@
 title: Länkningsregler för identitetsdiagram
 description: Lär dig mer om länkningsregler för identitetsdiagram i identitetstjänsten.
 exl-id: 317df52a-d3ae-4c21-bcac-802dceed4e53
-source-git-commit: 42c2b2afff49422a539d573280e9bc3f30369c3f
+source-git-commit: 048d915d33a19a9d50a4951e165b5ade1b9d9734
 workflow-type: tm+mt
-source-wordcount: '1443'
+source-wordcount: '1436'
 ht-degree: 0%
 
 ---
@@ -29,17 +29,16 @@ Följande dokument är viktiga när det gäller att förstå regler för länkni
 * [Gränssnitt för diagramsimulering](./graph-simulation.md)
 * [Användargränssnitt för identitetsinställningar](./identity-settings-ui.md)
 
-## Exempel på scenarier där komprimering av diagram kan inträffa {#example-scenarios-where-graph-collapse-could-happen}
-
-I det här avsnittet beskrivs exempelscenarier som du kan överväga när du konfigurerar länkningsregler för identitetsdiagram.
-
-### Delad enhet {#shared-device}
+## Diagramkomprimeringsscenarier {#graph-collapse-scenarios}
 
 >[!CONTEXTUALHELP]
 >id="platform_identities_graphcollapsescenarios"
 >title="Diagram, komprimera scenarier"
 >abstract="Det finns flera orsaker till varför diagram kan&quot;komprimera&quot; eller representera flera personenheter."
->additional-url="https://experienceleague.adobe.com/en/docs/experience-platform/identity/features/identity-graph-linking-rules/overview" text="Läs mer"
+
+I det här avsnittet beskrivs exempelscenarier som du kan överväga när du konfigurerar länkningsregler för identitetsdiagram.
+
+### Delad enhet
 
 Det finns instanser där flera inloggningar kan förekomma på en enda enhet:
 
