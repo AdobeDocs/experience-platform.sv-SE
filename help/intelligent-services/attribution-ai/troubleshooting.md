@@ -6,9 +6,9 @@ title: Felsökning av Attribution AI
 description: Hitta svar på vanliga fel i Attribution AI.
 type: Documentation
 exl-id: c2ff700a-1e36-4ba2-876c-9f8b56344241
-source-git-commit: 07a110f6d293abff38804b939014e28f308e3b30
+source-git-commit: e028fbb82b37b3940b308a860c26f8b5f9884d3a
 workflow-type: tm+mt
-source-wordcount: '167'
+source-wordcount: '171'
 ht-degree: 0%
 
 ---
@@ -21,7 +21,7 @@ Det här dokumentet innehåller svar på vanliga frågor om Attribution AI.
 
 Det finns inläsningsfel i Google Chrome inkognito-läge på grund av uppdateringar i Google Chrome inkognito-lägessäkerhetsinställningarna. Vi arbetar aktivt med Chrome för att göra experience.adobe.com till en betrodd domän.
 
-<img src="./images/faq/error.PNG" width="500" /><br />
+![Felbild](./images/faq/error.PNG){width=500}
 
 ### Rekommenderad åtgärd
 

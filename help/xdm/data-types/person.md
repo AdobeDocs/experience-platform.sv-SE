@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Persondatatyp
 description: Läs mer om datatypen XDM (Person Experience Data Model).
 exl-id: f28a52be-90c7-4ed0-a460-97165bb58046
-source-git-commit: de8e944cfec3b52d25bb02bcfebe57d6a2a35e39
+source-git-commit: e028fbb82b37b3940b308a860c26f8b5f9884d3a
 workflow-type: tm+mt
-source-wordcount: '314'
+source-wordcount: '318'
 ht-degree: 0%
 
 ---
@@ -15,7 +15,7 @@ ht-degree: 0%
 
 [!UICONTROL Person] är en XDM-datatyp (Standard Experience Data Model) som beskriver en enskild person. Den här datatypen kan representera en person som agerar i olika roller, till exempel en kund, kontakt eller ägare.
 
-<img src="../images/data-types/person.PNG" width="500" /><br />
+![personbild](../images/data-types/person.PNG){width=500}
 
 | Egenskap | Datatyp | Beskrivning |
 | --- | --- | --- |

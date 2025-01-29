@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Programdatatyp
 description: Läs mer om datatypen XDM (Application Experience Data Model).
 exl-id: ac7d6761-7b58-4e0d-85e7-6f157fb2eea5
-source-git-commit: de8e944cfec3b52d25bb02bcfebe57d6a2a35e39
+source-git-commit: e028fbb82b37b3940b308a860c26f8b5f9884d3a
 workflow-type: tm+mt
-source-wordcount: '407'
+source-wordcount: '411'
 ht-degree: 0%
 
 ---
@@ -15,7 +15,7 @@ ht-degree: 0%
 
 [!UICONTROL Application] är en XDM-datatyp (Standard Experience Data Model) som beskriver detaljer som rör interaktioner som genereras av ett program. Ett program avser en programvaruupplevelse, till exempel ett mobil- eller datorprogram som kan installeras, köras, stängas eller avinstalleras av en slutanvändare. Egenskaperna för den här datatypen är inte avsedda att beskriva agenter som chattbottar, webbläsarbaserade plugin-program eller andra upplevelser som inte gäller för program.
 
-<img src="../images/data-types/application.PNG" width="500" /><br />
+![programbild](../images/data-types/application.PNG){width=500}
 
 | Egenskap | Datatyp | Beskrivning |
 | --- | --- | --- |

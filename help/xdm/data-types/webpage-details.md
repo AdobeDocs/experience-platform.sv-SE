@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Datatyp för webbsidesinformation
 description: Läs mer om webbsidans XDM-datatyp (Experience Data Model).
 exl-id: 31108e57-d416-485b-a6c3-4ebc4f5b1152
-source-git-commit: de8e944cfec3b52d25bb02bcfebe57d6a2a35e39
+source-git-commit: e028fbb82b37b3940b308a860c26f8b5f9884d3a
 workflow-type: tm+mt
-source-wordcount: '376'
+source-wordcount: '379'
 ht-degree: 0%
 
 ---
@@ -17,7 +17,7 @@ ht-degree: 0%
 
 Datatypen är avsedd för fullständig sidinformation och inledande sidinläsning av webbprogram med en sida (SPA). Information om interaktioner som sker på en inläst sida och som inte utlöser en ny sidinläsning finns i datatypen [webbinteraktion](./web-interaction.md) .
 
-<img src="../images/data-types/web-page-details.PNG" width="500" /><br />
+![webbsidesinformation](../images/data-types/web-page-details.PNG){width="500"}
 
 | Egenskap | Datatyp | Beskrivning |
 | --- | --- | --- |

@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Typ av betalningsartikeldata
 description: Läs mer om datatypen XDM (Payment Item Experience Data Model).
 exl-id: d25a358b-73c1-468b-a9c5-808385689932
-source-git-commit: de8e944cfec3b52d25bb02bcfebe57d6a2a35e39
+source-git-commit: e028fbb82b37b3940b308a860c26f8b5f9884d3a
 workflow-type: tm+mt
-source-wordcount: '135'
+source-wordcount: '140'
 ht-degree: 0%
 
 ---
@@ -15,7 +15,7 @@ ht-degree: 0%
 
 [!UICONTROL Payment Item] är en XDM-datatyp (Standard Experience Data Model) som beskriver en betalning som är associerad med en order som definierar betalningstypen, beloppet och den associerade valutan.
 
-<img src="../images/data-types/payment-item.PNG" width="400" /><br />
+![bild för betalningsartikel](../images/data-types/payment-item.PNG){width=400}
 
 | Egenskap | Datatyp | Beskrivning |
 | --- | --- | --- |

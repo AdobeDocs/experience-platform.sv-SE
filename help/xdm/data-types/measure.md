@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Mätdatatyp
 description: Läs mer om datatypen Mät Experience Data Model (XDM).
 exl-id: 5d6cc15d-63cf-4af5-9ae9-12c886dd6735
-source-git-commit: de8e944cfec3b52d25bb02bcfebe57d6a2a35e39
+source-git-commit: e028fbb82b37b3940b308a860c26f8b5f9884d3a
 workflow-type: tm+mt
-source-wordcount: '202'
+source-wordcount: '206'
 ht-degree: 0%
 
 ---
@@ -15,7 +15,7 @@ ht-degree: 0%
 
 [!UICONTROL Measure] är en XDM-datatyp (Standard Experience Data Model) som innehåller en konkret kvantifierbar datapunkt för ett visst mått. Ett mått består av en unik identifierare och ett värde.
 
-<img src="../images/data-types/measure.PNG" width="500" /><br />
+![mät bild](../images/data-types/measure.PNG){width=500}
 
 | Egenskap | Datatyp | Beskrivning |
 | --- | --- | --- |
