@@ -4,9 +4,9 @@ title: Available Use Case Playbooks for Real-time Customer Data Platform and Ado
 description: En lista över alla spelböcker i Real-time Customer Data Platform och Adobe Journey Optimizer.
 role: User
 exl-id: 00f16761-3759-4de0-882d-b77e18f7c1fe
-source-git-commit: 5b1209ed96c78810b6bd7489825b19496d8b0b6a
+source-git-commit: 0cfe3e87ae4f9e8dc9ad53e9acb096efb590b72d
 workflow-type: tm+mt
-source-wordcount: '965'
+source-wordcount: '955'
 ht-degree: 0%
 
 ---
@@ -65,9 +65,9 @@ Läs den här sidan för att få en översikt över alla tillgängliga spelböck
 
 | Spelboksnamn | Beskrivning |
 | ------------- | ----------- |
-| Övergiven bläddring: Merchandise - för aktivering | Återmarknadsför fansen efter att de lämnat webbplatsen eller appen efter att ha lagt till varorna i kundvagnen. |
-| Borttagen surfning: Produkt - För aktivering | Återmarknadsför kunderna efter att de lämnat webbplatsen eller appen efter att ha lagt produkterna i kundvagnen. |
-| Övergiven surfning: Reservation - För aktivering | Återannonsera gäster efter att de lämnat webbplatsen eller appen efter att ha lagt till en ny reservation i kundvagnen. |
+| Övergiven bläddring: Merchandise - för aktivering | Återmarknadsför fansen efter att de lämnat webbplatsen eller appen efter att ha surfar på varorna. |
+| Borttagen surfning: Produkt - För aktivering | Återannonsera för kunderna efter att de lämnat webbplatsen eller appen efter att ha bläddrat i en produkt. |
+| Övergiven surfning: Reservation - För aktivering | Återannonsera gäster efter att de lämnat webbplatsen eller appen efter att ha bläddrat efter en eventuell reservation. |
 | Övergiven kundvagn: Merchandise - For Activation | Återmarknadsför fansen efter att de lämnat webbplatsen eller appen efter att ha lagt till sportvarorna i kundvagnen. |
 | Övergiven kundvagn: Produkt - För aktivering | Återmarknadsför kunderna efter att de lämnat webbplatsen eller appen efter att ha lagt till produkterna i kundvagnen. |
 | Övergiven kundvagn: Reservation - För aktivering | Återannonsera gäster efter att de lämnat webbplatsen eller appen efter att ha lagt till en ny reservation i kundvagnen. |
