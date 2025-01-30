@@ -5,9 +5,9 @@ breadcrumb-title: Användarhandbok om Query Service
 user-guide-description: Använd standard-SQL för att fråga efter data i datasjön i Experience Platform.
 feature: Queries
 role: User,Developer
-source-git-commit: 20869e76976ff3868f1d4dbc7c6d97b58682e5c3
+source-git-commit: e63ecbd14db2e9e4f35fb89aaaa406a4c584416a
 workflow-type: tm+mt
-source-wordcount: '397'
+source-wordcount: '402'
 ht-degree: 11%
 
 ---
@@ -23,6 +23,7 @@ ht-degree: 11%
 - Data Distiller {#data-distiller}
    - [Översikt](data-distiller/overview.md)
    - [Licensanvändning](data-distiller/license-usage.md)
+   - [De viktigaste tipsen för att maximera värdet](data-distiller/top-tips-to-maximize-value.md)
    - Härledda datauppsättningar {#derived-datasets}
       - [Översikt](data-distiller/derived-datasets/overview.md)
       - [Skapa härledda datauppsättningar med SQL](data-distiller/derived-datasets/create-derived-datasets-with-sql.md)
@@ -43,13 +44,13 @@ ht-degree: 11%
    - [Översikt](advanced-statistics/overview.md)
    - [Funktionsteknik](advanced-statistics/feature-engineering.md)
    - [Models](advanced-statistics/models.md)
-   - [Funktionsomformning](advanced-statistics/feature-transformation.md)
-Implementeringsmodeller {#implement-models}
+   - [Omvandling av funktioner](advanced-statistics/feature-transformation.md)
+   - Implementeringsmodeller {#implement-models}
       - [Implementeringsmodeller](advanced-statistics/implement-models/implement-models.md)
       - [Regression](advanced-statistics/implement-models/regression.md)
       - [Klassificering](advanced-statistics/implement-models/classification.md)
       - [Klustring](advanced-statistics/implement-models/clustering.md)
-Exempel {#examples}
+   - Exempel {#examples}
       - [Filtrera snabbt med statistik och maskininlärning](advanced-statistics/examples/statistics-and-ml-bot-filtering.md)
       - [Förutse kundbortfall med SQL-baserad logistisk regression](advanced-statistics/examples/predict-customer-churn.md)
 - Data för Distiller-målgrupper {#data-distiller-audiences}
