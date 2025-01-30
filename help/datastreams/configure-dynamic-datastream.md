@@ -4,13 +4,13 @@ description: Lär dig hur du skapar dynamiska datastream-konfigurationer för at
 hide: true
 hidefromtoc: true
 badge: label="Beta" type="Informative"
-source-git-commit: 615318744c233930fb9bc20e55ff42c3a396e651
+exl-id: 528ddf89-ad87-4021-b5a6-8e25b4469ac4
+source-git-commit: 39e65f1f74b95fffffb3c5400ce1b7e60aa81bad
 workflow-type: tm+mt
-source-wordcount: '556'
+source-wordcount: '621'
 ht-degree: 0%
 
 ---
-
 
 # Skapa dynamiska dataströmskonfigurationer
 
@@ -30,6 +30,14 @@ Om du vill skapa en dynamisk konfiguration för din datastream måste du uppfyll
 * Du måste ha *minst* Experience Cloud-tjänst tillagd i ditt datastream. Mer information finns i dokumentationen om hur du [lägger till en tjänst](configure.md#add-services) i ett datastream.
 
 När du har skapat ett datastream och lagt till en Experience Cloud-tjänst kan du [skapa en dynamisk konfiguration](#create-dynamic-configuration).
+
+## Dynamiska datastream-konfigurationer kontra åsidosättningar av datastream-konfigurationer {#dynamic-versus-overrides}
+
+Dynamiska datastream-konfigurationer och [datastream-konfigurationsåsidosättningar](overrides.md) är funktioner som utesluter varandra.
+
+Det innebär att du inte kan använda dynamiska datastream-konfigurationer tillsammans med åsidosättningar av datastream-konfigurationer. Du måste välja det ena eller det andra.
+
+Om du aktiverar både dynamiska datastream-konfigurationer och åsidosättningar av datastream-konfigurationer får konfigurationsåsidosättningarna företräde och de dynamiska datastream-konfigurationsreglerna ignoreras.
 
 ## Skapa en dynamisk datastream-konfiguration {#create-dynamic-configuration}
 
