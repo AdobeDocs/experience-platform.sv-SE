@@ -2,10 +2,10 @@
 title: Adobe Target v2 Extension - översikt
 description: Läs mer om taggtillägget Adobe Target v2 i Adobe Experience Platform.
 exl-id: 8f491d67-86da-4e27-92bf-909cd6854be1
-source-git-commit: 88939d674c0002590939004e0235d3da8b072118
+source-git-commit: 5b88692117c984cd6331e7886d5bf0846309acee
 workflow-type: tm+mt
-source-wordcount: '1314'
-ht-degree: 0%
+source-wordcount: '1347'
+ht-degree: 3%
 
 ---
 
@@ -13,7 +13,7 @@ ht-degree: 0%
 
 >[!NOTE]
 >
->Adobe Experience Platform Launch har omklassificerats som en serie datainsamlingstekniker i Adobe Experience Platform. Som ett resultat av detta har flera terminologiska förändringar införts i produktdokumentationen. I följande [dokument](../../../term-updates.md) finns en konsoliderad referens till de ändrade terminologin.
+>Adobe Experience Platform Launch har omprofilerats till en serie tekniker för datainsamling i Adobe Experience Platform. Som ett resultat av detta har flera terminologiska förändringar genomförts i produktdokumentationen. Se följande [dokument](../../../term-updates.md) för en konsoliderad referens av terminologiändringarna.
 
 Använd den här referensen för information om de alternativ som är tillgängliga när du använder det här tillägget för att skapa en regel.
 
@@ -69,11 +69,13 @@ Lägg till den här åtgärden i taggregeln där det är klokt att läsa in Targ
 
 Ingen konfiguration behövs.
 
-### Load Target with On-Device Decisioning
+### Load Target med enhetsspecifik beslutsfattande
 
-Lägg till den här åtgärden i din taggregel där det är rimligt att läsa in Target med [enhetsbeslut](https://experienceleague.adobe.com/docs/target/using/implement-target/client-side/at-js-implementation/on-device-decisioning/on-device-decisioning.html) aktiverat i regelsammanhanget. Detta läser in at.js-biblioteket med enhetsbeslut aktiverat på sidan. I de flesta implementeringar bör Target läsas in på alla sidor på webbplatsen. Adobe rekommenderar att du endast använder åtgärden Läs in mål med enhetsbeslut om den föregås av ett Target-anrop. Annars kan du råka ut för problem som att Analytics-anropet fördröjs.
+Lägg till den här åtgärden i din taggregel där det är rimligt att läsa in Target med [enhetsbeslut](https://experienceleague.adobe.com/docs/target/using/implement-target/client-side/at-js-implementation/on-device-decisioning/on-device-decisioning.html) aktiverat i regelsammanhanget. Detta läser in at.js-biblioteket med enhetsbeslut aktiverat på sidan. I de flesta implementeringar bör Target läsas in på alla sidor på webbplatsen. Adobe rekommenderar att du endast använder åtgärden Load Target med enhetsspecifik beslutsåtgärd om den föregås av ett Target-anrop. Annars kan du råka ut för problem som att Analytics-anropet fördröjs.
 
-Ingen konfiguration behövs.
+>[!IMPORTANT]
+>
+>Använd bara en sidinläsningsbegäran med enhetsbeslut om den redan är konfigurerad. Om du lägger till den här åtgärden i din regel ökar storleken på det slutgiltiga startpaketet eftersom det innehåller beslutsregelmotorn på enheten.
 
 ### Lägg till parametrar i alla begäranden
 
