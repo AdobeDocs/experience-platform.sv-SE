@@ -2,9 +2,9 @@
 title: Versionsinformation om Adobe Analytics Extension
 description: Den senaste versionsinformationen om taggtillägget Adobe Analytics i Adobe Experience Platform.
 exl-id: 3c7b4ec0-4b81-4ef4-b15f-6ad102525840
-source-git-commit: c783906b20db2b86d58aea7b3a94bde007c0a465
+source-git-commit: 5f4e157a39bf927b3821931d55f968862b2ed16d
 workflow-type: tm+mt
-source-wordcount: '1451'
+source-wordcount: '1524'
 ht-degree: 0%
 
 ---
@@ -16,6 +16,14 @@ Nedan följer en lista över versionsinformation för Adobe Analytics-taggtillä
 >[!NOTE]
 >
 >Analytics-taggtillägget uppdateras ofta som svar på uppdateringar av [AppMeasurement JavaScript-biblioteket](https://experienceleague.adobe.com/docs/analytics/implementation/js/overview.html). Mer information om de specifika versionerna som nämns nedan finns i [versionsinformationen för AppMeasurementet](https://experienceleague.adobe.com/docs/analytics/implementation/appmeasurement-updates.html).
+
+## 28 oktober 2024
+
+**Adobe Analytics Extension 1.9.6**
+
+**Funktioner**:
+
+* En ny funktion har lagts till så att användare kan visa och redigera en JSON-version av [åtgärden Ange variabler](https://experienceleague.adobe.com/en/docs/experience-platform/tags/extensions/client/analytics/overview#set-variables). Adobe Web SDK Extension innehåller även en åtgärd för att [fylla i en analysvariabel](https://experienceleague.adobe.com/en/docs/experience-platform/tags/extensions/client/web-sdk/data-element-types) genom att tillhandahålla JSON. Genom att kopiera JSON-data från AA-tillägget till Web SDK-tillägget kan du enkelt överföra flera inställningar samtidigt i stället för att lägga till varje variabel manuellt.
 
 ## 12 augusti 2024
 
