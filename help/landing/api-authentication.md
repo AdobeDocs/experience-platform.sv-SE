@@ -6,9 +6,9 @@ description: Det här dokumentet innehåller en stegvis självstudiekurs för at
 role: Developer
 feature: API
 exl-id: dfe8a7be-1b86-4d78-a27e-87e4ed8b3d42
-source-git-commit: 48c75f88d6862fa602e43929b72a6eac27d20e07
+source-git-commit: 850a4ae82fda22a761a28ac9059d7dea57c9662a
 workflow-type: tm+mt
-source-wordcount: '2282'
+source-wordcount: '2388'
 ht-degree: 1%
 
 ---
@@ -30,7 +30,7 @@ För att skydda program och användare måste alla förfrågningar till Experien
 
 I den här självstudiekursen beskrivs hur du samlar in nödvändiga inloggningsuppgifter för att autentisera API-anrop för plattformar, enligt vad som beskrivs i nedanstående flödesschema. Du kan samla de flesta nödvändiga autentiseringsuppgifter i den första engångsinställningen. Åtkomsttoken måste dock uppdateras var 24:e timme.
 
-![](./images/api-authentication/authentication-flowchart.png)
+![Autentiseringsflödeskraven för den första engångsinstallationen och varje efterföljande session.](./images/api-authentication/authentication-flowchart.png)
 
 ## Förhandskrav {#prerequisites}
 
@@ -52,15 +52,15 @@ Innan du skapar integreringar på Adobe Developer Console måste ditt konto ha u
 
 ### Få utvecklaråtkomst {#gain-developer-access}
 
-Kontakta en [!DNL Admin Console]-administratör i din organisation om du vill lägga till dig som utvecklare till en Experience Platform-produktprofil med hjälp av [[!DNL Admin Console]](https://adminconsole.adobe.com/). I [!DNL Admin Console]-dokumentationen finns specifika instruktioner om hur du [hanterar utvecklaråtkomst för produktprofiler](https://helpx.adobe.com/enterprise/admin-guide.html/enterprise/using/manage-developers.ug.html).
+Kontakta en Admin Console-administratör i din organisation om du vill lägga till dig som utvecklare i en produktprofil för Experience Platform. Mer information om hur du [hanterar utvecklaråtkomst för produktprofiler](https://helpx.adobe.com/enterprise/admin-guide.html/enterprise/using/manage-developers.ug.html) finns i dokumentationen för Admin Console.
 
 När du har tilldelats en utvecklare kan du börja skapa integreringar i [Adobe Developer Console](https://www.adobe.com/go/devs_console_ui). Dessa integreringar är en pipeline från externa program och tjänster till Adobe-API:er.
 
 ### Få användaråtkomst {#gain-user-access}
 
-Din [!DNL Admin Console]-administratör måste också lägga till dig som användare i samma produktprofil. Med användaråtkomst kan du i gränssnittet se resultatet av de API-åtgärder du utför.
+Din Admin Console-administratör måste också lägga till dig som användare i samma produktprofil. Med användaråtkomst kan du i gränssnittet se resultatet av de API-åtgärder du utför.
 
-Mer information finns i handboken om [hantering av användargrupper i [!DNL Admin Console]](https://helpx.adobe.com/enterprise/admin-guide.html/enterprise/using/user-groups.ug.html).
+Mer information finns i handboken om [hantering av användargrupper i Admin Console](https://helpx.adobe.com/enterprise/admin-guide.html/enterprise/using/user-groups.ug.html).
 
 ## Generera en API-nyckel (klient-ID) och ett företags-ID {#generate-credentials}
 
@@ -68,11 +68,11 @@ Mer information finns i handboken om [hantering av användargrupper i [!DNL Admi
 >
 >Om du följer det här dokumentet från [Privacy Service-API-guiden](../privacy-service/api/getting-started.md) kan du nu gå tillbaka till den guiden och generera autentiseringsuppgifter som är unika för [!DNL Privacy Service].
 
-När du har fått utvecklare och användare åtkomst till Platform via [!DNL Admin Console] är nästa steg att generera dina `{ORG_ID}` - och `{API_KEY}` -autentiseringsuppgifter i Adobe Developer Console. Dessa autentiseringsuppgifter behöver bara genereras en gång och kan återanvändas i framtida API-anrop för plattformen.
+När du har fått utvecklare och användare åtkomst till Platform via Admin Console är nästa steg att generera autentiseringsuppgifterna för `{ORG_ID}` och `{API_KEY}` i Adobe Developer Console. Dessa autentiseringsuppgifter behöver bara genereras en gång och kan återanvändas i framtida API-anrop för plattformen.
 
 >[!TIP]
 >
->I stället för att gå till Developer Console kan du få alla autentiseringsuppgifter som du behöver för att arbeta med Platform API:er direkt från API:ts referensdokumentationssidor. [Läs mer](#get-credentials-functionality) om funktionerna.
+>I stället för att gå till Developer Console kan du få alla autentiseringsuppgifter som du behöver för att arbeta med Platform API:er direkt från API:ts referensdokumentationssidor. [Läs mer](#get-credentials-functionality) om funktionaliteten.
 
 ### Lägga till Experience Platform i ett projekt {#add-platform-to-project}
 
@@ -86,9 +86,9 @@ När du har skapat ett nytt projekt väljer du **[!UICONTROL Add API]** på skä
 
 ![Developer Console-skärmen med alternativet Lägg till API markerat.](./images/api-authentication/add-api.png)
 
-Skärmen **[!UICONTROL Add an API]** visas. Markera produktikonen för Adobe Experience Platform och välj sedan **[!UICONTROL Experience Platform API]** innan du väljer **[!UICONTROL Next]**.
+Skärmen **[!UICONTROL Add an API]** visas. Välj produktikonen för **[!UICONTROL Adobe Experience Platform]** och välj sedan **[!UICONTROL Experience Platform API]** innan du väljer **[!UICONTROL Next]**.
 
-![Välj Experience Platform-API.](./images/api-authentication/platform-api.png)
+![Välj Experience Platform-API på skärmen Lägg till ett API.](./images/api-authentication/platform-api.png)
 
 >[!TIP]
 >
@@ -96,22 +96,17 @@ Skärmen **[!UICONTROL Add an API]** visas. Markera produktikonen för Adobe Exp
 
 ### Välj autentiseringstypen [!UICONTROL OAuth Server-to-Server] {#select-oauth-server-to-server}
 
-Välj sedan autentiseringstypen [!UICONTROL OAuth Server-to-Server] för att generera åtkomsttokens och få åtkomst till Experience Platform-API:t.
+Välj sedan autentiseringstypen **[!UICONTROL OAuth Server-to-Server]** för att generera åtkomsttokens och få åtkomst till Experience Platform-API:t. Ge dina autentiseringsuppgifter ett beskrivande namn i textfältet **[!UICONTROL Credential name]** innan du väljer **[!UICONTROL Next]**.
 
 >[!IMPORTANT]
 >
->Metoden **[!UICONTROL OAuth Server-to-Server]** är den enda tokengenereringsmetod som stöds för att gå framåt. Metoden **[!UICONTROL Service Account (JWT)]** som tidigare stöddes är föråldrad och kan inte väljas för nya integreringar. Befintliga integreringar som använder JWT-autentiseringsmetoden fortsätter att fungera fram till 1 januari 2025, men Adobe rekommenderar starkt att du migrerar befintliga integreringar till den nya [!UICONTROL OAuth Server-to-Server]-metoden före det datumet. Hämta mer information i avsnittet [!BADGE Föråldrat]{type=negative}[Skapa en JSON-webbtoken (JWT)](#jwt).
+>Metoden **[!UICONTROL OAuth Server-to-Server]** är den enda tokengenereringsmetod som stöds för att gå framåt. Metoden **[!UICONTROL Service Account (JWT)]** som tidigare stöddes är föråldrad och kan inte väljas för nya integreringar. Befintliga integreringar som använder JWT-autentiseringsmetoden fortsätter att fungera fram till 30 juni 2025, men Adobe rekommenderar starkt att du migrerar befintliga integreringar till den nya [!UICONTROL OAuth Server-to-Server]-metoden före det datumet. Hämta mer information i avsnittet [!BADGE Föråldrat]{type=negative}[Skapa en JSON-webbtoken (JWT)](#jwt).
 
 ![Välj autentiseringsmetoden OAuth Server-till-Server för Experience Platform API:t.](./images/api-authentication/oauth-authentication-method.png)
 
 ### Välj produktprofiler för integreringen {#select-product-profiles}
 
-Välj **[!UICONTROL AEP-Default-All-Users]** på skärmen **[!UICONTROL Configure API]**.
-
-<!--
-Your integration's service account will gain access to granular features through the product profiles selected here.
-
--->
+På skärmen **[!UICONTROL Configure API]** väljer du **[!UICONTROL AEP-Default-All-Users]** tillsammans med eventuella ytterligare produktprofiler som du vill ha tillgång till.
 
 >[!IMPORTANT]
 >
@@ -127,7 +122,7 @@ En genomgång av de steg som beskrivs ovan för att konfigurera en integrering m
 
 ### Samla in inloggningsuppgifter {#gather-credentials}
 
-När API:t har lagts till i projektet visar **[!UICONTROL Experience Platform API]**-sidan för projektet följande autentiseringsuppgifter som krävs i alla anrop till API:er för Experience Platform:
+När API:t har lagts till i projektet visar **[!UICONTROL OAuth Server-to-Server]**-sidan för projektet följande autentiseringsuppgifter som krävs i alla anrop till API:er för Experience Platform:
 
 ![Integreringsinformation efter att ett API har lagts till i Developer Console.](./images/api-authentication/api-integration-information.png)
 
@@ -148,9 +143,9 @@ In addition to the above credentials, you also need the generated **[!UICONTROL 
 
 ## Generera en åtkomsttoken {#generate-access-token}
 
-Nästa steg är att generera en `{ACCESS_TOKEN}`-autentiseringsuppgift som kan användas i API-anrop för plattformar. Till skillnad från värdena för `{API_KEY}` och `{ORG_ID}` måste en ny token genereras var 24:e timme för att du ska kunna fortsätta använda plattforms-API:er. Välj **[!UICONTROL Generate access token]** enligt nedan.
+Nästa steg är att generera en `{ACCESS_TOKEN}`-autentiseringsuppgift som kan användas i API-anrop för plattformar. Till skillnad från värdena för `{API_KEY}` och `{ORG_ID}` måste en ny token genereras var 24:e timme för att du ska kunna fortsätta använda plattforms-API:er. Välj **[!UICONTROL Generate access token]** som skapar din åtkomsttoken, så som visas nedan.
 
-![Visa hur du genererar åtkomsttoken](././images/api-authentication/generate-access-token.gif)
+![Visa hur du genererar åtkomsttoken](././images/api-authentication/generate-access-token.png)
 
 >[!TIP]
 >
@@ -180,7 +175,7 @@ Det övre referensblocket visas fortfarande när du navigerar mellan olika slutp
 
 >[!WARNING]
 >
-JWT-metoden för att generera åtkomsttoken har tagits bort. Alla nya integreringar måste skapas med autentiseringsmetoden [OAuth Server-till-server](#select-oauth-server-to-server). Adobe kräver också att du migrerar dina befintliga integreringar till OAuth-metoden senast 1 januari 2025 för att dina integreringar ska fortsätta fungera. Läs följande viktiga dokumentation:
+JWT-metoden för att generera åtkomsttoken har tagits bort. Alla nya integreringar måste skapas med autentiseringsmetoden [OAuth Server-till-server](#select-oauth-server-to-server). Adobe kräver också att du migrerar dina befintliga integreringar till OAuth-metoden senast 30 juni 2025 för att dina integreringar ska fortsätta fungera. Läs följande viktiga dokumentation:
 > 
 * [Migreringsguide för program från JWT till OAuth](https://developer.adobe.com/developer-console/docs/guides/authentication/ServerToServerAuthentication/migration/)
 * [Implementeringsguide för nya och gamla program med OAuth](https://developer.adobe.com/developer-console/docs/guides/authentication/ServerToServerAuthentication/implementation/)
@@ -331,71 +326,47 @@ This [Medium post](https://medium.com/adobetech/using-postman-for-jwt-authentica
 
 ## Systemadministratörer: Bevilja utvecklare och API-åtkomstkontroll med Experience Platform behörigheter {#grant-developer-and-api-access-control}
 
+Innan du kan skapa integreringar på Adobe Developer Console måste ditt konto ha utvecklar- och användarbehörigheter för en produktprofil för Experience Platform.
+
 >[!NOTE]
 >
 Det är bara systemadministratörer som kan visa och hantera API-autentiseringsuppgifter i behörigheter.
 
-Innan du skapar integreringar på Adobe Developer Console måste ditt konto ha utvecklar- och användarbehörigheter för en produktprofil för Experience Platform i Adobe Admin Console.
-
 ### Lägg till utvecklare i produktprofilen {#add-developers-to-product-profile}
 
-Gå till [[!DNL Admin Console]](https://adminconsole.adobe.com/) och logga in med din Adobe ID.
+Navigera till [Admin Console](https://adminconsole.adobe.com/) och logga in med din Adobe ID.
 
-Välj **[!UICONTROL Products]** och sedan **[!UICONTROL Adobe Experience Platform]** i produktlistan.
+Välj **[!UICONTROL Products]** i navigeringsfältet och välj sedan **[!UICONTROL Adobe Experience Platform]** i produktlistan.
 
-![Produktlista på Admin Console](././images/api-authentication/products.png)
+![Produktsidan på Adobe Admin Console med Adobe Experience Platform-produkten markerad.](././images/api-authentication/products.png)
 
 Välj **[!UICONTROL AEP-Default-All-Users]** på fliken **[!UICONTROL Product Profiles]**. Du kan också använda sökfältet för att söka efter produktprofilen genom att ange namnet.
 
-![Sök efter produktprofilen](././images/api-authentication/select-product-profile.png)
+![Produktprofilsidan med sökfältet och produkten AEP-Default-All-Users markerad.](././images/api-authentication/select-product-profile.png)
 
 Välj fliken **[!UICONTROL Developers]** och välj sedan **[!UICONTROL Add Developer]**.
 
-![Lägg till utvecklare från fliken Utvecklare](././images/api-authentication/add-developer1.png)
+![Fliken Utvecklare visas med alternativet Lägg till utvecklare markerat.](././images/api-authentication/add-developer1.png)
 
-Ange utvecklarens **[!UICONTROL Email or username]**. En giltig [!UICONTROL Email or username] visar utvecklarinformationen. Välj **[!UICONTROL Save]**.
+Dialogrutan **[!UICONTROL Add developers]** visas. Ange utvecklarens **[!UICONTROL Email or username]**. En giltig [!UICONTROL Email or username] visar utvecklarinformationen. Välj **[!UICONTROL Save]**.
 
-![Lägg till utvecklare via e-post eller användarnamn](././images/api-authentication/add-developer-email.png)
+![Dialogrutan Lägg till utvecklare med utvecklarinformation ifylld och alternativet Spara markerat.](././images/api-authentication/add-developer-email.png)
 
-Utvecklaren har lagts till och visas på fliken [!UICONTROL Developers].
+Utvecklaren har lagts till och visas på fliken **[!UICONTROL Developers]**.
 
-![Utvecklare listade på fliken Utvecklare](././images/api-authentication/developer-added.png)
+![Fliken Utvecklare som visar listan över alla tillagda utvecklare med den nytillagda utvecklaren markerad.](././images/api-authentication/developer-added.png)
 
-<!--
+### Tilldela API-autentiseringsuppgifter till en roll
 
-Commenting out this part since it duplicates information from the section Add Experience Platform to a project
+>[!NOTE]
+>
+Endast en systemadministratör kan tilldela API:er till roller i användargränssnittet i Experience Platform.
 
-### Set up an API
+Om du vill använda och utföra åtgärder på API:er i Experience Platform måste en systemadministratör lägga till API-autentiseringsuppgifterna utöver en rolls angivna behörighetsuppsättning. Mer information finns i avsnittet om att [hantera API-autentiseringsuppgifter för en roll](../access-control/abac/ui/permissions.md#manage-api-credentials-for-a-role).
 
-A developer can add and configure an API within a project in the Adobe Developer Console.
+En genomgång av stegen som beskrivs ovan för att lägga till utvecklare i produktprofiler och tilldela API:er till roller finns också i videosjälvstudien nedan:
 
-Select your project, then select **[!UICONTROL Add API]**.
-
-![Add API to a project](././images/api-authentication/add-api-project.png)
-
-In the **[!UICONTROL Add an API]** dialog box select **[!UICONTROL Adobe Experience Platform]**, then select **[!UICONTROL Experience Platform API]**.
-
-![Add an API in Experience Platform](././images/api-authentication/add-api-platform.png)
-
-In the **[!UICONTROL Configure API]** screen, select **[!UICONTROL AEP-Default-All-Users]**.
-
--->
-
-### Tilldela API till en roll
-
-En systemadministratör kan tilldela API:er till roller i användargränssnittet i Experience Platform.
-
-Välj **[!UICONTROL Permissions]** och rollen som du vill lägga till API:t i. Välj fliken **[!UICONTROL API credentials]** och välj sedan **[!UICONTROL Add API credentials]**.
-
-![Fliken API-autentiseringsuppgifter i den valda rollen](././images/api-authentication/api-credentials.png)
-
-Välj det API som du vill lägga till i rollen och välj sedan **[!UICONTROL Save]**.
-
-![Lista över tillgängliga API:er för markering](././images/api-authentication/select-api.png)
-
-Du återgår till fliken [!UICONTROL API credentials], där det nya API:t listas.
-
-![Fliken API-autentiseringsuppgifter med nyligen tillagt API](././images/api-authentication/api-credentials-with-added-api.png)
+>[!VIDEO](https://video.tv.adobe.com/v/3426407/?learn=on)
 
 ## Ytterligare resurser {#additional-resources}
 
