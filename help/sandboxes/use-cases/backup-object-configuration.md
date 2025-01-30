@@ -2,9 +2,9 @@
 title: Säkerhetskopiera objektkonfigurationer med sandlådeverktyg
 description: Om du vill återställa sandlådor säkert och lägga till versionshanteringsstöd säkerhetskopierar du objektkonfigurationer (eller metadata) med verktygspaket för sandlådor. Säkerhetskopieringspaket förhindrar förlust av kritiska konfigurationer som scheman, datauppsättningar och målgrupper, särskilt under utvecklingsiterationer.
 exl-id: cccbaaf1-ee68-4a00-9a44-aa5db4a83a14
-source-git-commit: 2a700788d9b59bcdb4195e34d77eccd278803d42
+source-git-commit: d4df5606228347b5fb69fdaa24c637c329099895
 workflow-type: tm+mt
-source-wordcount: '1154'
+source-wordcount: '1152'
 ht-degree: 0%
 
 ---
@@ -13,7 +13,7 @@ ht-degree: 0%
 
 Om du vill återställa sandlådor säkert och lägga till versionshanteringsstöd säkerhetskopierar du objektkonfigurationer (eller metadata) med verktygspaket för sandlådor. Säkerhetskopieringspaket förhindrar förlust av kritiska konfigurationer som scheman, datauppsättningar och målgrupper, särskilt under utvecklingsiterationer.
 
-![Översikt som visar fördelarna med sandlådeverktyg](../images/use-cases/tooling-overview.png)
+![Översikt som visar fördelarna med sandlådeverktyg](../images/use-cases/tooling-overview.png){zoomable="yes"}
 
 ## Varför ska man tänka på det här användningsexemplet? {#why-this-use-case}
 
@@ -63,9 +63,9 @@ Innan du börjar skapa ett säkerhetskopieringspaket bör du överväga paketets
 >
 > Om du funderar på att säkerhetskopiera din sandlåda för att återställa den bör du vara medveten om de [begränsningar](../ui/user-guide.md#reset-a-sandbox) som omger återställningen av sandlådor.
 
-### Exportera de metadata du valt till ett paket
+### Exportera valda metadata till ett paket
 
-Nu är du redo att säkerhetskopiera din sandlåda med användargränssnittet för sandlådeverktyg. Det här steget omfattar både säkerhetskopiering av en hel sandlåda och säkerhetskopiering av specifika objekt.
+Nu är du redo att säkerhetskopiera din sandlåda med användargränssnittet för sandlådeverktyg. I det här steget beskrivs både säkerhetskopiering av en hel sandlåda och säkerhetskopiering av specifika objekt.
 
 >[!NOTE]
 >
