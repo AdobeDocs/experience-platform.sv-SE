@@ -5,9 +5,9 @@ user-guide-description: Aktivera kända och okända data för marknadsföringska
 description: I det här dokumentet visas innehållsförteckningen för Adobe Experience Platform-destinationer
 feature: Destinations
 role: Admin,User
-source-git-commit: e916488be3d10e47193e66c1f9516cb5da93c3a7
+source-git-commit: e2dfa2ee23d854ff3a8ecba4a1cf3e4a1e72f0f7
 workflow-type: tm+mt
-source-wordcount: '1270'
+source-wordcount: '1269'
 ht-degree: 1%
 
 ---
@@ -73,7 +73,7 @@ ht-degree: 1%
       * [Översikt över Advertising destinationer](./catalog/advertising/overview.md)
       * [Adobe Advertising Cloud](./catalog/advertising/adobe-advertising-cloud-connection.md)
       * [Adobe Advertising Cloud-tillägg](./catalog/advertising/adobe-advertising-cloud.md)
-      * [(Beta) Amazon Ads-anslutning](./catalog/advertising/amazon-ads.md)
+      * [Amazon Ads-anslutning](./catalog/advertising/amazon-ads.md)
       * [Tillägget Awin Advertiser Conversion Tag](./catalog/advertising/awin-conversiontag.md)
       * [Awin Advertiser Mastertag extension](./catalog/advertising/awin-mastertag.md)
       * [Bing Ads UET-tillägg (Universal Event Tracking)](./catalog/advertising/bing-ads.md)

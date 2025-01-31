@@ -1,16 +1,16 @@
 ---
 title: Amazon Ads
 description: Amazon Ads erbjuder en rad alternativ som hjälper er att nå era annonsmål för registrerade säljare, leverantörer, bokleverantörer, KDP-författare (Kindle Direct Publishing), apputvecklare och/eller byråer. Integreringen av Amazon Ads med Adobe Experience Platform ger körklar integrering med Amazon Ads-produkter, inklusive Amazon DSP (ADSP). Med Amazon Ads-destinationen i Adobe Experience Platform kan man definiera målgrupper för annonsörer för målinriktning och aktivering i Amazon DSP.
-last-substantial-update: 2024-09-20T00:00:00Z
+last-substantial-update: 2025-01-07T00:00:00Z
 exl-id: 724f3d32-65e0-4612-a882-33333e07c5af
-source-git-commit: 2b84b5106105339ab243a9f4412b47692caedf3c
+source-git-commit: 8543f76565f22b8cdfb0be71a1332696bc079ec7
 workflow-type: tm+mt
-source-wordcount: '1718'
-ht-degree: 0%
+source-wordcount: '1784'
+ht-degree: 1%
 
 ---
 
-# (Beta) Amazon Ads-anslutning {#amazon-ads}
+# Amazon Ads-anslutning {#amazon-ads}
 
 ## Översikt {#overview}
 
@@ -24,7 +24,7 @@ AMC sammanför unika signaler från olika Amazon-ägda och styrda kanaler, som o
 
 >[!IMPORTANT]
 >
->Målanslutningen och dokumentationssidan skapas och underhålls av *[!DNL Amazon Ads]*-teamet. Detta är för närvarande en betaprodukt och funktionaliteten kan komma att ändras. Om du har frågor eller uppdateringsfrågor kontaktar du dem direkt på *`amc-support@amazon.com`.*
+>Målanslutningen och dokumentationssidan skapas och underhålls av *[!DNL Amazon Ads]*-teamet. Om du har frågor eller uppdateringsfrågor kontaktar du dem direkt på *`amc-support@amazon.com`.*
 
 ## Användningsfall {#use-cases}
 
@@ -85,8 +85,6 @@ Fyll i de obligatoriska fälten och välj **[!UICONTROL Connect to destination]*
 
 Du dirigeras till [!DNL Amazon Ads]-anslutningsgränssnittet där du först väljer de annonserarkonton som du vill ansluta till. När du ansluter omdirigeras du tillbaka till Adobe Experience Platform med en ny anslutning som medföljer ID:t för det Advertiser-konto du har valt. Välj lämpligt Advertiser-konto på målkonfigurationsskärmen för att fortsätta.
 
-* **[!UICONTROL Bearer token]**: Fyll i bearer-token för att autentisera mot målet.
-
 ### Fyll i målinformation {#destination-details}
 
 Om du vill konfigurera information för målet fyller du i de obligatoriska och valfria fälten nedan. En asterisk bredvid ett fält i användargränssnittet anger att fältet är obligatoriskt.
@@ -101,9 +99,13 @@ Om du vill konfigurera information för målet fyller du i de obligatoriska och 
 
 * **[!UICONTROL Advertiser Region]**: Välj lämplig region där annonsören finns. Mer information om vilka marknadsplatser som stöds av respektive region finns i [Amazon Ads-dokumentationen](https://advertising.amazon.com/API/docs/en-us/info/api-overview#api-endpoints).
 
+>[!IMPORTANT]
+>
+>Uppdateringen som innehåller **[!UICONTROL Amazon Ads Consent Signal]** är planerad att bli aktiv den 7 februari 2025.
 
+* **[!UICONTROL Amazon Ads Consent Signal]**: Bekräfta att alla data som skickas via den här anslutningen har samtyckt till att använda personuppgifter för annonsändamål. &quot;GRANTED&quot; innebär att Amazon samtycker till att använda kundens personuppgifter för annonsering. Tillåtna värden är &quot;GRANTED&quot; och &quot;DENIED&quot;. Alla poster som skickas via anslutningar med &quot;DENIED&quot; kommer att refuseras för vidare användning inom Amazon Ads.
 
-![Konfigurera nytt mål](../../assets/catalog/advertising/amazon_ads_image_4.png)
+![Konfigurera nytt mål](../../assets/catalog/advertising/amazon-ads/amazon_ads_consent_input.png)
 
 ### Aktivera aviseringar {#enable-alerts}
 
@@ -124,7 +126,7 @@ Läs [Aktivera profiler och målgrupper för att direktuppspela målgruppsexport
 
 Anslutningen [!DNL Amazon Ads] har stöd för hash-kodade e-postadresser och hashade telefonnummer för identitetsmatchningssyften. Skärmbilden nedan innehåller ett exempel på matchning som är kompatibel med anslutningen [!DNL Amazon Ads]:
 
-Mappning av ![Adobe till Amazon Ads](../../assets/catalog/advertising/amazon_ads_image_2.png)
+Mappning av ![Adobe till Amazon Ads](../../assets/catalog/advertising/amazon-ads/amazon_ads_image_2.png)
 
 * Om du vill mappa hash-kodade e-postadresser väljer du identitetsnamnområdet `Email_LC_SHA256` som ett källfält.
 * Om du vill mappa hash-kodade telefonnummer markerar du identitetsnamnområdet `Phone_SHA256` som ett källfält.
@@ -143,7 +145,7 @@ När målgruppen har överförts kan du validera att målgruppen har skapats och
 
 Navigera till din **[!UICONTROL Advertiser ID]** > **[!UICONTROL Audiences]** > **[!UICONTROL Advertiser Audiences]**. Om målgruppen skapades och uppfyller det minsta antalet målgruppsmedlemmar visas statusen `Active`. Mer information om er målgruppsstorlek och räckvidd finns i den prognostiserade panelen Reach till höger om Amazon DSP användargränssnitt.
 
-![Verifiering av att målgrupper skapats med Amazon DSP](../../assets/catalog/advertising/amazon_ads_image_3.png)
+![Verifiering av att målgrupper skapats med Amazon DSP](../../assets/catalog/advertising/amazon-ads/amazon_ads_image_3.png)
 
 **För[!DNL Amazon Marketing Cloud]**
 
@@ -151,8 +153,7 @@ I den vänstra schemaläsaren hittar du målgruppen under **[!UICONTROL Advertis
 
 `select count(user_id) from adobeexperienceplatf_audience_view_000xyz where external_audience_segment_name = '1234567'`
 
-![Verifiering av målgruppsgenerering i Amazon Marketing Cloud](../../assets/catalog/advertising/amazon_ads_image_5.png)
-
+![Verifiering av målgruppsgenerering i Amazon Marketing Cloud](../../assets/catalog/advertising/amazon-ads/amazon_ads_image_5.png)
 
 ## Dataanvändning och styrning {#data-usage-governance}
 
@@ -172,6 +173,7 @@ I det här avsnittet beskrivs funktionaliteten och viktiga dokumentationsuppdate
 
 | Releasamånad | Uppdateringstyp | Beskrivning |
 |---|---|---|
+| Februari 2025 | Lagt till kravet att lägga till **[!UICONTROL Amazon Ads Consent Signal]** i exportdataflöden och befordrade målet från betaversionen till allmänt tillgängligt. |
 | Maj 2024 | Funktioner och dokumentation | Mappningsalternativet har lagts till för att exportera parametern `countryCode` till Amazon Ads. Använd `countryCode` i [mappningssteget](#map) om du vill förbättra identitetsmatchningsfrekvensen med Amazon. |
 | Mars 2024 | Funktioner och dokumentation | Lagt till alternativet att exportera målgrupper som ska användas i [!DNL Amazon Marketing Cloud] (AMC). |
 | Maj 2023 | Funktioner och dokumentation | <ul><li>Stöd har lagts till för markering av reklamregion i [målanslutningsarbetsflödet](#destination-details).</li><li>Uppdaterad dokumentation som återspeglar tillägget av Advertiser Region. Mer information om hur du väljer rätt annonsregion finns i [Amazon-dokumentationen](https://advertising.amazon.com/API/docs/en-us/info/api-overview#api-endpoints).</li></ul> |
