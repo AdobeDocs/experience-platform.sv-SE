@@ -2,7 +2,7 @@
 title: autoCollectPropositionInteractions
 description: Lär dig hur du konfigurerar Experience Platform Web SDK att automatiskt samla in länkdata.
 exl-id: c70db76a-3f2f-45a6-86ab-36efcb18d20f
-source-git-commit: 405f161dee633b7230be944cd17093616826e27f
+source-git-commit: 55c656e7fd08e98b75c20f0688a6697baf533291
 workflow-type: tm+mt
 source-wordcount: '593'
 ht-degree: 0%
@@ -123,11 +123,11 @@ alloy("sendEvent", {
 ## Aktivera automatiska förslag och interaktioner klickspårning via taggtillägget Web SDK {#tag-extension}
 
 1. Logga in på [experience.adobe.com](https://experience.adobe.com) med dina Adobe ID-autentiseringsuppgifter.
-2. Navigera till **Datainsamling** > **Taggar**.
-3. Välj önskad taggegenskap.
-4. Navigera till **Tillägg** och välj sedan **Konfigurera** på Adobe Experience Platform Web SDK-kortet.
-5. Bläddra ned till avsnittet **[!UICONTROL Data Collection]** och markera kryssrutan **Aktivera förslag och spårning av interaktionslänk**.
-6. Välj **Spara** och publicera sedan ändringarna.
+1. Navigera till **Datainsamling** > **Taggar**.
+1. Välj önskad taggegenskap.
+1. Navigera till **Tillägg** och välj sedan **Konfigurera** på Adobe Experience Platform Web SDK-kortet.
+1. Bläddra ned till avsnittet **[!UICONTROL Data Collection]** och markera kryssrutan **Aktivera förslag och spårning av interaktionslänk**.
+1. Välj **Spara** och publicera sedan ändringarna.
 
 ## Aktivera automatisk spårning av interaktionslänkar i Web SDK JavaScript-biblioteket {#library}
 
