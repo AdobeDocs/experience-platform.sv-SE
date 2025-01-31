@@ -3,9 +3,9 @@ title: AI-assistenten för kundsupport
 description: Lär dig hur du kan använda AI Assistant för att effektivisera felsökningen och ansökningsprocessen till kundsupportärenden.
 badge: Alpha
 exl-id: 263b8a44-8902-42b9-8390-d7da8e9b5129
-source-git-commit: 88c4ba5fd7d5cd4fdd1e1da3f2eac43b03149e5e
+source-git-commit: e224716f8fba59529c5d7634d4b4a3013a0986a3
 workflow-type: tm+mt
-source-wordcount: '349'
+source-wordcount: '374'
 ht-degree: 0%
 
 ---
@@ -56,3 +56,8 @@ Se enkelt status för supportärenden.
    * &quot;Vad är uppdateringen av biljett E-67890?&quot;
 
 Kontakta ditt Adobe-kontoteam om du vill få tillgång till AI Assistant för kundsupport.
+
+Titta på följande video om du vill veta mer om hur du kan använda AI Assistant för kundsupport för att felsöka utan att lämna dina arbetsflöden.
+
+>[!VIDEO](https://video.tv.adobe.com/v/3443183?learn=on)
+
