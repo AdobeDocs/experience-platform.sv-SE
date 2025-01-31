@@ -6,7 +6,7 @@ breadcrumb-title: Användarhandbok om webb-SDK
 user-guide-description: Interagera med Experience Cloud-tjänsterna via Edge Network.
 feature: Web SDK
 role: Developer
-source-git-commit: 7231d3a5ad9553707392c32004d02e355e3c919f
+source-git-commit: d5bf1b207900009829454d0b7aa095a08c1e1718
 workflow-type: tm+mt
 source-wordcount: '229'
 ht-degree: 19%
@@ -16,9 +16,9 @@ ht-degree: 19%
 
 # Webb-SDK för Adobe Experience Platform {#web-sdk}
 
-* [Web SDK - översikt](home.md)
+* [SDK - översikt](home.md)
 * [Versionsinformation](release-notes.md)
-* Web SDK-installation {#install}
+* Webbinstallation av SDK {#install}
    * [Översikt](install/overview.md)
    * [Installera Web SDK med hjälp av taggtillägget](install/extension.md)
    * [Installera Web SDK med JavaScript-biblioteket](install/library.md)
@@ -26,7 +26,7 @@ ht-degree: 19%
 * Kommandon {#commands}
    * konfigurera {#configure}
       * [Översikt](commands/configure/overview.md)
-      * [autoTrackPropositionInteractionsEnabled](commands/configure/autotrackpropositioninteractionsenabled.md)
+      * [autoCollectPropositionInteractions](commands/configure/autocollectpropositioninteractions.md)
       * [clickCollectionEnabled](commands/configure/clickcollectionenabled.md)
       * [clickCollection](commands/configure/clickcollection.md)
       * [kontext](commands/configure/context.md)
@@ -81,7 +81,7 @@ ht-degree: 19%
       * [Programimplementering på en sida](personalization/adobe-target/spa-implementation.md)
       * [Åtkomst till svarstoken](personalization/adobe-target/accessing-response-tokens.md)
       * [Använda tredje parts-ID i mbox](personalization/adobe-target/using-mbox-3rdpartyid.md)
-      * [Jämföra biblioteket at.js med Web SDK](personalization/adobe-target/web-sdk-atjs-comparison.md)
+      * [Jämföra biblioteket at.js med SDK](personalization/adobe-target/web-sdk-atjs-comparison.md)
       * Analyser för målloggning (A4T) {#a4t}
          * [Översikt](personalization/adobe-target/analytics-logging/overview.md)
          * [Loggning på klientsidan](personalization/adobe-target/analytics-logging/client-side.md)
@@ -91,7 +91,7 @@ ht-degree: 19%
    * Adobe Journey Optimizer {#ajo}
       * [Översikt](personalization/ajo/overview.md)
       * [Programimplementering på en sida](personalization/ajo/web-spa-implementation.md)
-      * [Konfigurera stöd för webb-meddelanden i appen i Web SDK](personalization/web-in-app-messaging.md)
+      * [Konfigurera stöd för webb-meddelanden i appen i SDK](personalization/web-in-app-messaging.md)
 
 * Godkännande {#consent}
    * IAB Transparency och Consent Framework 2.0 {#iab-tcf}
