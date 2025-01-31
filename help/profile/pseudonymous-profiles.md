@@ -4,16 +4,16 @@ solution: Experience Platform
 title: Pseudonymt utgångsdatum för profildata
 description: Det här dokumentet innehåller allmän vägledning om hur du konfigurerar förfallodatum för pseudonyma profiler inom Adobe Experience Platform.
 exl-id: e8d31718-0b50-44b5-a15b-17668a063a9c
-source-git-commit: e52eb90b64ae9142e714a46017cfd14156c78f8b
+source-git-commit: 9489156617f29d4aab2038b74f75a832ff4dc8eb
 workflow-type: tm+mt
-source-wordcount: '1004'
+source-wordcount: '1005'
 ht-degree: 0%
 
 ---
 
 # Förfallodatum för pseudonyma profiler
 
-I Adobe Experience Platform kan du konfigurera förfallotider för pseudonyma profiler så att du automatiskt kan ta bort data från profilarkivet som inte längre är giltiga eller användbara i dina fall.
+I Adobe Experience Platform kan du konfigurera förfallotider för pseudonyma profiler så att du automatiskt kan ta bort data från profilarkivet som inte längre är giltiga eller användbara för dina användningsfall.
 
 ## Pseudonym profil {#pseudonymous-profile}
 
@@ -36,15 +36,15 @@ Det går inte att konfigurera förfallodatum för pseudonyma profildata via plat
 
 I följande avsnitt visas vanliga frågor om förfallodatum för pseudonyma profiler:
 
-### Hur skiljer sig Pseudonymous Profile Data från utgångsdatum från Experience Event data?
+### Hur skiljer sig förfallodatum för pseudonyma profildata från utgångsdatum för Experience Event-data?
 
-Förfallodatum för pseudonyma profildata och utgångsdatum för upplevelsedata är komplementära funktioner.
+Förfallodatum för pseudonyma profildata och utgångsdatum för upplevelsehändelsedata är komplementära funktioner.
 
 #### Kornighet
 
 Pseudonym förfallotid för profildata fungerar på en **sandbox**-nivå. Därför kommer förfallodatumet för data att påverka alla profiler i sandlådan.
 
-Utgångsdatumet för händelsens data fungerar på en **datamängd**-nivå. Därför kan varje datauppsättning ha olika inställningar för när data förfaller.
+Utgångsdatumet för händelsens data fungerar på en **datamängd**-nivå. Därför kan varje datauppsättning ha olika förfalloinställningar för data.
 
 #### Identitetstyper
 
@@ -58,17 +58,17 @@ Pseudonym förfallotid för profildata tar bort **både** händelse- och profilp
 
 Experience Event-data förfaller **endast** och händelser tas **inte** bort profilklassdata. Profilklassdata tas bara bort när alla data har tagits bort från **alla** datauppsättningar och det finns **inga** profilklassposter kvar för profilen.
 
-### Hur kan Pseudonymous Profile data förfalla i samband med att Experience Event-data förfaller?
+### Hur kan pseudonyma profildata som förfaller användas tillsammans med Experience Event-data som förfaller?
 
-Pseudonyma utgångsdatum för profildata och utgångsdatum för Experience Event-data kan användas som komplement till varandra.
+Pseudonyma utgångsdatum för profildata och utgångsdatum för upplevelsehändelsedata kan användas som komplement till varandra.
 
-Du bör **alltid** ställa in Experience Event-dataförfallodatum i dina datauppsättningar, baserat på dina behov av att lagra data om dina kända kunder. När Experience Event-data har förfallit kan du använda Pseudonymous Profile data som förfaller för att automatiskt ta bort pseudonyma profiler. Vanligtvis är dataförfalloperioden för pseudonyma profiler kortare än dataförfalloperioden för Experience Events.
+Du bör **alltid** konfigurera förfallodatum för Experience Event-data i dina datauppsättningar, baserat på dina behov av att lagra data om dina kända kunder. När Experience Event-data har förfallit kan du använda pseudonyma profildata som förfaller för att automatiskt ta bort pseudonyma profiler. Vanligtvis är utgångsdatumet för pseudonyma profiler kortare än utgångsdatumet för Experience Events.
 
-I ett typiskt fall kan du ange att Experience Event-data ska upphöra att gälla baserat på värdena för dina kända användardata, och du kan ange att Pseudonymous-profildata ska ha en mycket kortare varaktighet för att begränsa effekten av pseudonyma profiler på plattformslicensens efterlevnad.
+I ett typiskt fall kan du ange att dina Experience Event-data ska upphöra att gälla baserat på värdena för dina kända användardata, och du kan ange att dina pseudonyma profildata ska upphöra att gälla en mycket kortare tid för att begränsa effekten av pseudonyma profiler på plattformslicensernas efterlevnad.
 
 ### Vilka användare bör använda pseudonyma profiler när data förfaller?
 
-- Om du använder Web SDK för att skicka data direkt till plattformen.
+- Om du använder Web SDK för att skicka data direkt till Platform.
 - Om du har en webbplats som skickar oautentiserade kunder i stor skala.
 - Om du har ett stort antal profiler i datauppsättningarna och har bekräftat att det här stora antalet profiler beror på anonym cookie-baserad ID-namnrymd.
    - För att avgöra detta bör du använda överlappningsrapporten för identitetsnamnutrymme. Mer information om den här rapporten finns i [rapporten om identitetsöverlappning](./api/preview-sample-status.md#identity-overlap-report) i API-handboken för förhandsgranskning av exempelstatus.
