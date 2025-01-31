@@ -6,9 +6,9 @@ user-guide-description: Lär dig att driftsätta och hantera analyser, marknadsf
 feature: Tags
 solution: Data Collection
 role: Developer
-source-git-commit: 82d6d2e7d0d7f0f9484c4ebcd34339fd63e04b59
+source-git-commit: 1b2f8e5a9cc85887efe9d623baa346956ae5d93d
 workflow-type: tm+mt
-source-wordcount: '778'
+source-wordcount: '775'
 ht-degree: 15%
 
 ---
@@ -105,9 +105,9 @@ ht-degree: 15%
          * [Åtgärdstyper](./extensions/client/web-sdk/action-types.md)
          * [Dataelementtyper](./extensions/client/web-sdk/data-element-types.md)
          * [Åtkomst till ECID](./extensions/client/web-sdk/accessing-the-ecid.md)
-         * [Web SDK-plugin](./extensions/client/web-sdk/web-sdk-plugins.md)
-         * [Versionsinformation för Web SDK-tillägg](./extensions/client/web-sdk/web-sdk-ext-release-notes.md)
-         * [Versionsinformation om plugin-program för Web SDK](./extensions/client/web-sdk/web-sdk-plugins-release-notes.md)
+         * [SDK-plugins för webben](./extensions/client/web-sdk/web-sdk-plugins.md)
+         * [Versionsinformation om SDK-tillägg](./extensions/client/web-sdk/web-sdk-ext-release-notes.md)
+         * [Versionsinformation om SDK-plugin-program för webben](./extensions/client/web-sdk/web-sdk-plugins-release-notes.md)
       * Adobe Experience Manager tillgångsinsikter {#asset-insights}
          * [Översikt](./extensions/client/asset-insights/overview.md)
          * [Versionsinformation](./extensions/client/asset-insights/release-notes.md)
@@ -206,9 +206,8 @@ ht-degree: 15%
       * [Vimeo Playback](https://exchange.adobe.com/apps/ec/108937)
       * [Webbsäkra](https://exchange.adobe.com/apps/ec/106769)
       * [XDM-disposition](https://exchange.adobe.com/apps/ec/106062)
-      * [Yahoo-punkt](https://exchange.adobe.com/apps/ec/106062)
       * [ÅttaKonverteringsspårning](https://exchange.adobe.com/apps/ec/103174)
-      * [[!DNL Youtube] Uppspelning](https://exchange.adobe.com/apps/ec/103174)
+      * [[!DNL Youtube] Uppspelning](https://exchange.adobe.com/apps/ec/104160)
       * [!DNL YouTube] videospårning {#youtube}
          * [Översikt](./extensions/client/youtube/overview.md)
          * [Versionsinformation](./extensions/client/youtube/release-notes.md)
