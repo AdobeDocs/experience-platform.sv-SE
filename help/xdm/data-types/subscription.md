@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Typ av prenumerationsdata
 description: Läs mer om datatypen XDM (Subscription Experience Data Model).
 exl-id: 6fd1e073-441b-45f0-bb4f-54f51ab18694
-source-git-commit: de8e944cfec3b52d25bb02bcfebe57d6a2a35e39
+source-git-commit: 1d1224b263b55b290d2cac9c07dfd1b852c4cef5
 workflow-type: tm+mt
-source-wordcount: '383'
+source-wordcount: '385'
 ht-degree: 0%
 
 ---
@@ -15,7 +15,7 @@ ht-degree: 0%
 
 [!UICONTROL Subscription] är en XDM-datatyp (Standard Experience Data Model) som beskriver licensierade rättigheter till programvara, tjänster eller varor som används baserat på tid eller användning.
 
-<img src="../images/data-types/subscription-data-type.png" width="500" /><br />
+![](../images/data-types/subscription-data-type.png){width=500}
 
 | Egenskap | Datatyp | Beskrivning |
 | --- | --- | --- |

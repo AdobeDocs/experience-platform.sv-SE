@@ -3,9 +3,9 @@ solution: Experience Platform
 title: Schemafältgrupp för information om segmentmedlemskap
 description: Lär dig mer om schemafältgruppen Segmentmedlemsdetaljer.
 exl-id: 4d463f3a-2247-4307-8afe-9527e7fd72a7
-source-git-commit: de8e944cfec3b52d25bb02bcfebe57d6a2a35e39
+source-git-commit: 1d1224b263b55b290d2cac9c07dfd1b852c4cef5
 workflow-type: tm+mt
-source-wordcount: '392'
+source-wordcount: '396'
 ht-degree: 0%
 
 ---
@@ -23,7 +23,7 @@ ht-degree: 0%
 >
 >Fältet `segmentMembership` måste läggas till manuellt i ditt profilschema med den här fältgruppen, men du bör inte försöka fylla i eller uppdatera det här fältet manuellt. Systemet uppdaterar automatiskt kartan `segmentMembership` för varje profil när segmenteringsjobb utförs.
 
-<img src="../../images/data-types/profile-segmentation.png" width="400" /><br />
+![profilsegmentering](../../images/data-types/profile-segmentation.png){width=400}
 
 | Egenskap | Datatyp | Beskrivning |
 | --- | --- | --- |

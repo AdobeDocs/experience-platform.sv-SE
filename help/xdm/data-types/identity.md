@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Identitetsdatatyp
 description: Läs mer om datatypen Identity XDM.
 exl-id: fb02b6b4-255b-442f-895c-600022231a1c
-source-git-commit: de8e944cfec3b52d25bb02bcfebe57d6a2a35e39
+source-git-commit: 1d1224b263b55b290d2cac9c07dfd1b852c4cef5
 workflow-type: tm+mt
-source-wordcount: '259'
+source-wordcount: '261'
 ht-degree: 1%
 
 ---
@@ -15,7 +15,7 @@ ht-degree: 1%
 
 [!UICONTROL Identity] är en standard-XDM-datatyp som används för att tydligt skilja personer som interagerar med digitala upplevelser åt. Identiteten har etablerats av en identitetsleverantör, som själv refereras i ett `namespace`-attribut. I varje `namespace` är identiteten unik.
 
-<img src="../images/data-types/identity.png" width="550" /><br />
+![](../images/data-types/identity.png){width=550}
 
 | Egenskap | Datatyp | Beskrivning |
 | --- | --- | --- |

@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Hantera sekretessjobb i Privacy Servicens användargränssnitt
 description: Lär dig hur du använder Privacy Servicens användargränssnitt för att samordna och övervaka sekretessförfrågningar i olika Experience Cloud-program.
 exl-id: aa8b9f19-3e47-4679-9679-51add1ca2ad9
-source-git-commit: c870b6be603073d6dd909b272c619deb5b246f05
+source-git-commit: 1d1224b263b55b290d2cac9c07dfd1b852c4cef5
 workflow-type: tm+mt
-source-wordcount: '1668'
+source-wordcount: '1684'
 ht-degree: 0%
 
 ---
@@ -159,29 +159,29 @@ Om du vill börja använda Request Builder väljer du **[!UICONTROL Create Reque
 
 Dialogrutan **[!UICONTROL Create Request]** öppnas och visar tillgängliga alternativ för att skicka en begäran om sekretessjobb för den valda regeltypen.
 
-<img src="../images/user-guide/request-builder.png" width="500" /><br/>
+![](../images/user-guide/request-builder.png){width=500}
 
 Välj **[!UICONTROL Job Type]** för begäran (&quot;Ta bort&quot; eller&quot;Åtkomst&quot;) och en eller flera tillgängliga produkter i listan.
 
 Privacy Servicen stöder två typer av jobbförfrågningar för personliga data: [!UICONTROL Access] (läs) och/eller [!UICONTROL Delete]. Du kan antingen skicka in en begäran om att få alla uppgifter som finns i produkten och som rör ämnet för förfrågan, eller begära att få ta bort alla uppgifter som rör ämnet för förfrågan.
 
-<img src="../images/user-guide/type-and-products.png" width="500" /><br/>
+![](../images/user-guide/type-and-products.png){width=500}
 
 Under **[!UICONTROL Namespace type]** väljer du lämplig namnområdestyp för de kund-ID som skickas till [!DNL Privacy Service].
 
-<img src="../images/user-guide/namespace-type.png" width="500" /><br/>
+![](../images/user-guide/namespace-type.png){width=500}
 
 När du använder standardnamnområdestypen väljer du ett namnutrymme på den nedrullningsbara menyn (e-post, ECID eller AAID), skriver sedan ID-värdena i textrutan till höger och trycker på **\&lt;enter>** för varje ID för att lägga till det i listan.
 
-<img src="../images/user-guide/standard-namespace.png" width="500" /><br/>
+![](../images/user-guide/standard-namespace.png){width=500}
 
 När du använder den anpassade namnområdestypen måste du skriva in namnutrymmet manuellt innan du anger ID-värdena nedan.
 
-<img src="../images/user-guide/custom-namespace.png" width="500" /><br/>
+![](../images/user-guide/custom-namespace.png){width=500}
 
 När du är klar väljer du **[!UICONTROL Create]**.
 
-<img src="../images/user-guide/request-builder-create.png" width="500" /><br/>
+![](../images/user-guide/request-builder-create.png){width=500}
 
 Dialogrutan försvinner och det nya jobbet (eller de nya jobben) visas i widgeten Jobbförfrågningar tillsammans med deras aktuella bearbetningsstatus.
 
@@ -195,12 +195,12 @@ Välj pilen bredvid **[!UICONTROL Create Request]**, under widgeten Statusrappor
 
 Dialogrutan **[!UICONTROL Upload JSON]** visas med ett fönster där du kan dra och släppa JSON-filen i.
 
-<img src="../images/user-guide/upload-json.png" width="500" /><br/>
+![](../images/user-guide/upload-json.png){width=500}
 
 Om du inte har någon JSON-fil att överföra väljer du **[!UICONTROL Download Adobe-GDPR-Request.json]** för att hämta en mall som du kan fylla i enligt de värden som du har samlat in från dina registrerade.
 
 
-<img src="../images/user-guide/privacy-template.png" width="500" /><br/>
+![](../images/user-guide/privacy-template.png){width=500}
 
 
 Leta reda på JSON-filen på datorn och dra den till dialogfönstret. Om överföringen lyckas visas filnamnet i dialogrutan. Du kan fortsätta lägga till fler JSON-filer om det behövs genom att dra och släppa dem i dialogrutan.

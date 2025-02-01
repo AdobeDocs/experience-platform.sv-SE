@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Datatypen Webbläsarinformation
 description: Läs mer om datatypen XDM i webbläsarinformationen.
 exl-id: c67ff8bc-0614-4422-9bb7-689b98d7086d
-source-git-commit: de8e944cfec3b52d25bb02bcfebe57d6a2a35e39
+source-git-commit: 1d1224b263b55b290d2cac9c07dfd1b852c4cef5
 workflow-type: tm+mt
-source-wordcount: '236'
+source-wordcount: '238'
 ht-degree: 0%
 
 ---
@@ -15,7 +15,7 @@ ht-degree: 0%
 
 [!UICONTROL Browser details] är en standard-XDM-datatyp som beskriver information som relaterar till en webbläsare eller ett program.
 
-<img src="../images/data-types/browser-details.png" width="450" /><br />
+![](../images/data-types/browser-details.png){width=450}
 
 | Egenskap | Datatyp | Beskrivning |
 | --- | --- | --- |

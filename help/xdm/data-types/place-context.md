@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Montera kontextdatatyp
 description: Läs mer om datatypen Place Context XDM.
 exl-id: d7cf7366-0136-49ee-84d2-ec663db66eb4
-source-git-commit: de8e944cfec3b52d25bb02bcfebe57d6a2a35e39
+source-git-commit: 1d1224b263b55b290d2cac9c07dfd1b852c4cef5
 workflow-type: tm+mt
-source-wordcount: '147'
+source-wordcount: '149'
 ht-degree: 0%
 
 ---
@@ -15,7 +15,7 @@ ht-degree: 0%
 
 [!UICONTROL Place context] är en standard-XDM-datatyp som beskriver platsen för en observerad händelse, inklusive intressepunktsinformation och geografiska koordinater.
 
-<img src="../images/data-types/place-context.png" width="500" /><br />
+![](../images/data-types/place-context.png){width=500}
 
 | Egenskap | Datatyp | Beskrivning |
 | --- | --- | --- |

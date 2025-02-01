@@ -6,9 +6,9 @@ title: Felsökning av kund-AI
 description: Hitta svar på vanliga fel i kundens AI.
 type: Documentation
 exl-id: 37ff4e85-da92-41ca-afd4-b7f3555ebd43
-source-git-commit: e028fbb82b37b3940b308a860c26f8b5f9884d3a
+source-git-commit: 1d1224b263b55b290d2cac9c07dfd1b852c4cef5
 workflow-type: tm+mt
-source-wordcount: '1716'
+source-wordcount: '1720'
 ht-degree: 0%
 
 ---
@@ -21,7 +21,7 @@ Kund-AI visar fel när modellutbildning, poängsättning och konfiguration missl
 
 Om **[!UICONTROL Failed]** eller **[!UICONTROL Training issue]** visas kan du välja körningsstatus för att öppna en sidopanel. Sidpanelen innehåller din **[!UICONTROL Last run status]** och **[!UICONTROL Last run details]**. **[!UICONTROL Last run details]** innehåller information om varför körningen misslyckades. Om kundens AI inte kan ge detaljerad information om felet kontaktar du supporten med den felkod som anges.
 
-<img src="./images/errors/last-run-details.png" width="300" /><br />
+![](./images/errors/last-run-details.png){width=300}
 
 ## Det går inte att komma åt kundens AI i Chrome Incognito
 
@@ -39,7 +39,7 @@ För att lösa det här problemet måste du lägga till experience.adobe.com som
 
 Om du får felet [!UICONTROL Model Quality is poor. We recommend creating a new app with the modified configuration]. Följ de rekommenderade stegen nedan för att felsöka.
 
-<img src="./images/errors/model-quality.png" width="300" /><br />
+![](./images/errors/model-quality.png){width=300}
 
 ### Rekommenderad åtgärd
 

@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Geo-datatyp
 description: Läs mer om datatypen Geo XDM.
 exl-id: d0eef943-ef86-4abd-8a51-dc45f2ed782d
-source-git-commit: de8e944cfec3b52d25bb02bcfebe57d6a2a35e39
+source-git-commit: 1d1224b263b55b290d2cac9c07dfd1b852c4cef5
 workflow-type: tm+mt
-source-wordcount: '170'
+source-wordcount: '172'
 ht-degree: 0%
 
 ---
@@ -15,7 +15,7 @@ ht-degree: 0%
 
 [!UICONTROL Geo] är en standard-XDM-datatyp som beskriver det geografiska område där en händelse observerades.
 
-<img src="../images/data-types/geo.png" width="400" /><br />
+![](../images/data-types/geo.png){width=400}
 
 | Egenskap | Datatyp | Beskrivning |
 | --- | --- | --- |

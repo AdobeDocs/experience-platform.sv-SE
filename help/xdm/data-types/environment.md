@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Miljödatatyp
 description: Läs mer om datatypen Environment XDM.
 exl-id: ec806ee5-ed65-4148-9dbe-e297d9e8cd73
-source-git-commit: de8e944cfec3b52d25bb02bcfebe57d6a2a35e39
+source-git-commit: 1d1224b263b55b290d2cac9c07dfd1b852c4cef5
 workflow-type: tm+mt
-source-wordcount: '437'
+source-wordcount: '439'
 ht-degree: 0%
 
 ---
@@ -19,7 +19,7 @@ ht-degree: 0%
 >
 >Alla värden ska justeras mot databasen [DeviceAtlas](https://deviceatlas.com), som licensieras av Adobe.
 
-<img src="../images/data-types/environment.png" width="400" /><br />
+![](../images/data-types/environment.png){width=400}
 
 | Egenskap | Datatyp | Beskrivning |
 | --- | --- | --- |

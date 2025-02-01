@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Beacon-datatyp
 description: Lär dig mer om klassen XDM Individual Profile.
 exl-id: a3767c8d-a009-49b4-81a4-b084b6e5101a
-source-git-commit: de8e944cfec3b52d25bb02bcfebe57d6a2a35e39
+source-git-commit: 1d1224b263b55b290d2cac9c07dfd1b852c4cef5
 workflow-type: tm+mt
-source-wordcount: '230'
+source-wordcount: '232'
 ht-degree: 1%
 
 ---
@@ -15,7 +15,7 @@ ht-degree: 1%
 
 [!UICONTROL Beacon] är en standard-XDM-datatyp som beskriver den trådlösa enheten som kommunicerar identitetsinformation till mobilprogram när mobila enheter finns inom räckhåll.
 
-<img src="../images/data-types/beacon.png" width="450" /><br />
+![](../images/data-types/beacon.png){width=450}
 
 | Egenskap | Datatyp | Beskrivning |
 | --- | --- | --- |

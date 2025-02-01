@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Geo Circle, datatyp
 description: Läs mer om datatypen Geo Circle XDM.
 exl-id: fa041f4f-9955-44e9-b235-a643e07d402c
-source-git-commit: de8e944cfec3b52d25bb02bcfebe57d6a2a35e39
+source-git-commit: 1d1224b263b55b290d2cac9c07dfd1b852c4cef5
 workflow-type: tm+mt
-source-wordcount: '118'
+source-wordcount: '120'
 ht-degree: 0%
 
 ---
@@ -15,7 +15,7 @@ ht-degree: 0%
 
 [!UICONTROL Geo Circle] är en standard-XDM-datatyp som beskriver den cirkulära geografiska regionen, med en viss radie centrerad på en viss uppsättning koordinater. Den här datatypen baseras på den offentliga specifikationen som dokumenteras på [schema.org](https://schema.org/GeoCircle).
 
-<img src="../images/data-types/geo-circle.png" width="400" /><br />
+![](../images/data-types/geo-circle.png){width=400}
 
 | Egenskap | Datatyp | Beskrivning |
 | --- | --- | --- |

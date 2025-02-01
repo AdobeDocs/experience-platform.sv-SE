@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Datatyp för intressepunktsinteraktion
 description: Läs mer om XDM-datatypen Point of Interest Interaction.
 exl-id: 398f56d9-1802-458d-b565-4096beb5b014
-source-git-commit: de8e944cfec3b52d25bb02bcfebe57d6a2a35e39
+source-git-commit: 1d1224b263b55b290d2cac9c07dfd1b852c4cef5
 workflow-type: tm+mt
-source-wordcount: '150'
+source-wordcount: '152'
 ht-degree: 0%
 
 ---
@@ -15,7 +15,7 @@ ht-degree: 0%
 
 [!UICONTROL Point of interest interaction] är en standard-XDM-datatyp som beskriver den trådlösa enheten som kommunicerar identitetsinformation till mobilprogram när mobila enheter finns inom räckhåll.
 
-<img src="../images/data-types/poi-interaction.png" width="400" /><br />
+![](../images/data-types/poi-interaction.png){width=400}
 
 | Egenskap | Datatyp | Beskrivning |
 | --- | --- | --- |

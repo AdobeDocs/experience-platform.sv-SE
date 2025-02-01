@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Schemafältgrupp för detaljer för slutanvändar-ID
 description: Läs mer om schemafältgruppen för information om slutanvändar-ID.
 exl-id: ff5b74f4-7700-4d10-821e-b50f80ea8c05
-source-git-commit: de8e944cfec3b52d25bb02bcfebe57d6a2a35e39
+source-git-commit: 1d1224b263b55b290d2cac9c07dfd1b852c4cef5
 workflow-type: tm+mt
-source-wordcount: '192'
+source-wordcount: '194'
 ht-degree: 0%
 
 ---
@@ -20,7 +20,7 @@ ht-degree: 0%
 
 [!UICONTROL End User ID Details] är en standardschemafältgrupp för [[!DNL XDM ExperienceEvent] klassen](../../classes/experienceevent.md) som används för att beskriva en persons identitetsinformation i flera Adobe-program. Fältgruppen tillhandahåller ett `endUserIDs`-objekt på rotnivå, som i sin tur innehåller ett skrivskyddat `_experience`-fält vars värden uppdateras automatiskt när data hämtas.
 
-<img src="../../images/field-groups/enduserids.png" width="700" /><br />
+![](../../images/field-groups/enduserids.png){width=700}
 
 | Egenskap | Datatyp | Beskrivning |
 | --- | --- | --- |

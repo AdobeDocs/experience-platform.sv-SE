@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Datatyp för personnamn
 description: Läs mer om datatypen XDM för personnamn.
 exl-id: 5cf55fb1-b6b0-4d1c-93c3-7e2b7766599e
-source-git-commit: de8e944cfec3b52d25bb02bcfebe57d6a2a35e39
+source-git-commit: 1d1224b263b55b290d2cac9c07dfd1b852c4cef5
 workflow-type: tm+mt
-source-wordcount: '226'
+source-wordcount: '228'
 ht-degree: 0%
 
 ---
@@ -17,7 +17,7 @@ ht-degree: 0%
 
 Dessutom innehåller datatypen ett antal valfria egenskaper som kan användas i situationer där bara ett fragment av det fullständiga namnet måste användas, till exempel för att skapa en formell eller informell hälsning.
 
-<img src="../images/data-types/person-name.png" width="500" /><br />
+![](../images/data-types/person-name.png){width=500}
 
 | Egenskap | Beskrivning |
 | --- | --- |

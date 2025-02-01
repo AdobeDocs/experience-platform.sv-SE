@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Enhetsdatatyp
 description: Läs mer om datatypen Device XDM.
 exl-id: 049a2ca1-6bc3-4b9c-832a-77102e8a0ed2
-source-git-commit: de8e944cfec3b52d25bb02bcfebe57d6a2a35e39
+source-git-commit: 1d1224b263b55b290d2cac9c07dfd1b852c4cef5
 workflow-type: tm+mt
-source-wordcount: '302'
+source-wordcount: '304'
 ht-degree: 0%
 
 ---
@@ -15,7 +15,7 @@ ht-degree: 0%
 
 [!UICONTROL Device] är en standard-XDM-datatyp som beskriver en identifierad enhet. En enhet är en program- eller webbläsarinstans som kan spåras mellan sessioner, vanligtvis via cookies.
 
-<img src="../images/data-types/device.png" width="450" /><br />
+![](../images/data-types/device.png){width=450}
 
 | Egenskap | Datatyp | Beskrivning |
 | --- | --- | --- |

@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Datatyp för postadress
 description: Läs mer om datatypen XDM för postadress.
 exl-id: 94457fe5-80bc-4822-9f6c-48f77d56c89b
-source-git-commit: de8e944cfec3b52d25bb02bcfebe57d6a2a35e39
+source-git-commit: 1d1224b263b55b290d2cac9c07dfd1b852c4cef5
 workflow-type: tm+mt
-source-wordcount: '309'
+source-wordcount: '311'
 ht-degree: 0%
 
 ---
@@ -15,7 +15,7 @@ ht-degree: 0%
 
 [!UICONTROL Postal address] är en standard-XDM-datatyp som beskriver informationen för en postadress.
 
-<img src="../images/data-types/postal-address.png" width="450" /><br />
+![](../images/data-types/postal-address.png){width=450}
 
 | Egenskap | Beskrivning |
 | --- | --- |
