@@ -2,10 +2,10 @@
 title: Quickstart Guide
 description: Lär dig hur du snabbt kommer igång med taggar i Adobe Experience Platform.
 exl-id: 490ee344-3b18-4189-9293-2378f86fb10d
-source-git-commit: 60d88be5d710314cdc6900f4b63643c740b91fa6
+source-git-commit: 8c881d99554a8694da79bdc29ad30ebbc870db20
 workflow-type: tm+mt
 source-wordcount: '1517'
-ht-degree: 0%
+ht-degree: 3%
 
 ---
 
@@ -13,7 +13,7 @@ ht-degree: 0%
 
 >[!NOTE]
 >
->Adobe Experience Platform Launch har omklassificerats som en serie datainsamlingstekniker i Adobe Experience Platform. Som ett resultat av detta har flera terminologiska förändringar införts i produktdokumentationen. I följande [dokument](../term-updates.md) finns en konsoliderad referens till de ändrade terminologin.
+>Adobe Experience Platform Launch har omprofilerats till en serie tekniker för datainsamling i Adobe Experience Platform. Som ett resultat av detta har flera terminologiska förändringar genomförts i produktdokumentationen. Se följande [dokument](../term-updates.md) för en konsoliderad referens av terminologiändringarna.
 
 Taggar är Adobe Experience Platform nästa generation av tagghanteringsteknik. Den är uppbyggd från grunden för att stödja ett öppet och hållbart ekosystem där alla kan bygga egna integreringar som Adobe-kunder kan driftsätta på sina sajter. Det är ett API-program först, så allt du kan göra via användargränssnittet kan du också göra programmatiskt via ett API.
 
@@ -134,6 +134,6 @@ Mer information om olika lägen och alternativ som är tillgängliga under publi
 
 Mer information om taggar finns i följande resurser:
 
-* **[Samhälle för datainsamling](https://forums.adobe.com/community/experience-cloud/platform/launch)**: Ställ frågor och svar, skicka idéer, rösta på andras idéer. Logga in med din Adobe ID.
+* **[Samhälle för datainsamling](https://experienceleaguecommunities.adobe.com/t5/adobe-experience-platform-data/ct-p/adobe-launch-community)**: Ställ frågor och svar, skicka idéer, rösta på andras idéer. Logga in med din Adobe ID.
 * **[Utvecklardokumentation](../api/overview.md)**: Bygg tillägg eller använd tagg-API:er genom att engagera utvecklarcommunityn för taggar
 * **[Översikt över Tutorials](https://experienceleague.adobe.com/docs/core-services-learn/tutorials/overview.html)**: I de här dokumenten introduceras taggar som händelsevidarebefordran och Mobile SDK i Android-appar.
