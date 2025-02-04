@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Pseudonymt utgångsdatum för profildata
 description: Det här dokumentet innehåller allmän vägledning om hur du konfigurerar förfallodatum för pseudonyma profiler inom Adobe Experience Platform.
 exl-id: e8d31718-0b50-44b5-a15b-17668a063a9c
-source-git-commit: 9489156617f29d4aab2038b74f75a832ff4dc8eb
+source-git-commit: 208f327d35749c97ac77f337493d8759e8622dcd
 workflow-type: tm+mt
-source-wordcount: '1005'
+source-wordcount: '1039'
 ht-degree: 0%
 
 ---
@@ -16,6 +16,12 @@ ht-degree: 0%
 I Adobe Experience Platform kan du konfigurera förfallotider för pseudonyma profiler så att du automatiskt kan ta bort data från profilarkivet som inte längre är giltiga eller användbara för dina användningsfall.
 
 ## Pseudonym profil {#pseudonymous-profile}
+
+>[!CONTEXTUALHELP]
+>id="platform_profile_pseudonymousprofile"
+>title="Vad är en pseudonym profil?"
+>abstract="En pseudonym profil är en profil som har ett pseudonymt eller okänt identitetsnamnutrymme eller en profil som inte har haft någon aktivitet under en viss tid."
+>text="Learn more in documentation"
 
 En profil används för att pseudonyma data ska upphöra att gälla om den uppfyller följande villkor:
 
