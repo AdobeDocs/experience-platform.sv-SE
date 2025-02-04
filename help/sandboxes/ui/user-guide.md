@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Användargränssnittshandbok för sandlådan
 description: Det här dokumentet innehåller steg om hur du utför olika åtgärder relaterade till sandlådor i Adobe Experience Platform användargränssnitt.
 exl-id: b258c822-5182-4217-9d1b-8196d889740f
-source-git-commit: f8c39d2cc12e77ebdc974f931880cdf0d6367591
+source-git-commit: b9b00f41f146b34a1326c4c2ac104c022a416dc9
 workflow-type: tm+mt
-source-wordcount: '1036'
+source-wordcount: '1085'
 ht-degree: 0%
 
 ---
@@ -82,6 +82,7 @@ När du har skapat sandlådan uppdaterar du sidan och den nya sandlådan visas p
 >* En användarskapad produktionssandlåda som används för dubbelriktad segmentdelning med Adobe Audience Manager eller Audience Core Service kan återställas efter ett varningsmeddelande.
 >* Innan du initierar en sandlådeåterställning måste du ta bort dina kompositioner manuellt för att se till att de associerade målgruppsdata rensas ordentligt.
 >* Sandbox-ID:t ändras när återställningen är klar.
+>* För [Journey Optimizer B2B edition](https://experienceleague.adobe.com/en/docs/journey-optimizer-b2b/user/guide-overview) stöds **inte återställning av sandlådor**. Om du återställer eller tar bort en sandlåda som är mappad till Journey Optimizer B2B edition kan data i Journey Optimizer B2B edition gå förlorade permanent och en ny Journey Optimizer B2B edition-instans kan behöva etableras.
 
 ### Ta bort målgruppskompositioner
 
