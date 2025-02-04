@@ -3,10 +3,10 @@ title: Komma igång med händelsevidarebefordran
 description: Följ den här steg-för-steg-självstudiekursen för att komma igång med att vidarebefordra event i Adobe Experience Platform.
 feature: Event Forwarding
 exl-id: f82bfac9-dc2d-44de-a308-651300f107df
-source-git-commit: 0a95d09eb1ce59e45d52372c4b08725c009001c3
+source-git-commit: e9f98e1f94aa6ae2ecf29940912d296813611d4c
 workflow-type: tm+mt
 source-wordcount: '849'
-ht-degree: 1%
+ht-degree: 7%
 
 ---
 
@@ -14,11 +14,11 @@ ht-degree: 1%
 
 >[!NOTE]
 >
->Vidarebefordran av händelser är en betalfunktion som ingår i Adobe Real-time Customer Data Platform Connections, Prime eller Ultimate.
+>Vidarebefordran är en betalfunktion som ingår i Adobe Real-time Customer Data Platform Connections, Prime eller Ultimate.
 
 >[!NOTE]
 >
->Adobe Experience Platform Launch har omklassificerats som en serie datainsamlingstekniker i Adobe Experience Platform. Som ett resultat av detta har flera terminologiska förändringar införts i produktdokumentationen. I följande [dokument](../../term-updates.md) finns en konsoliderad referens till de ändrade terminologin.
+>Adobe Experience Platform Launch har omprofilerats till en serie tekniker för datainsamling i Adobe Experience Platform. Som ett resultat av detta har flera terminologiska förändringar genomförts i produktdokumentationen. Se följande [dokument](../../term-updates.md) för en konsoliderad referens av terminologiändringarna.
 
 Om du vill använda händelsevidarebefordran i Adobe Experience Platform måste data skickas till Adobe Experience Platform Edge Network med ett eller flera av följande tre alternativ:
 
@@ -33,7 +33,7 @@ När du har skickat data till Edge nätverk kan du aktivera Adobe-lösningar fö
 
 ## Förhandskrav
 
-* Adobe Real-Time CDP Connections, Prime, or Ultimate (kontakta ditt Adobe-kontoteam för att få priser)
+* Adobe Real-Time CDP Connections, Prime, or Ultimate (Contact your Adobe account team for pricing)
 * Vidarebefordran av händelser i Adobe Experience Platform
 * Adobe Experience Platform Web SDK, Mobile SDK eller Edge Network Server API har konfigurerats för att skicka data till Edge Network
 * Mappa data till Experience Data Model (XDM) (Den här mappningen kan göras med taggar)
@@ -82,7 +82,7 @@ Beskrivningen hjälper till att identifiera konfigurationer i en lista med flera
 
 1. Välj **[!UICONTROL Save]**.
 
-## Aktivera vidarebefordran av händelser
+## Aktivera vidarebefordran av händelser {#enable-event-forwarding}
 
 Konfigurera sedan Edge Network att skicka data till händelsevidarebefordran och till andra Adobe-produkter.
 
@@ -100,9 +100,9 @@ Konfigurera sedan Edge Network att skicka data till händelsevidarebefordran och
 
 Observera miljö-ID:n för den nya egenskapen när du har konfigurerat den.
 
-## Konfigurera Platform Web SDK-tillägget för att skicka data till dataströmmen som skapats tidigare
+## Konfigurera Platform Web SDK-tillägget för att skicka data till den dataström som skapats tidigare
 
-Skapa din egenskap på arbetsytan **[!UICONTROL Tags]**, navigera sedan till **[!UICONTROL Extensions]** och välj Experience Platform Web SDK-tillägget från katalogen för att konfigurera och installera det.
+Skapa din egenskap på arbetsytan **[!UICONTROL Tags]**, navigera sedan till **[!UICONTROL Extensions]** och välj Experience Platform Web SDK-tillägget i katalogen för att konfigurera och installera det.
 
 Mer information om konfigurationsalternativ finns i [dokumentationen för Web SDK-tillägget](../../extensions/client/web-sdk/overview.md).
 
@@ -110,7 +110,7 @@ Mer information om konfigurationsalternativ finns i [dokumentationen för Web SD
 
 När ovanstående är på plats kan du skapa datadefinitioner, regler och så vidare, som använder händelsevidarebefordran och taggar, men som bara behöver en enda begäran från sidan.
 
-Skapa en sidinläsningsregel med hjälp av plattformens SDK-tillägg och åtgärdstypen &quot;Skicka händelse&quot;:
+Skapa en sidinläsningsregel med tillägget Platform Web SDK och åtgärdstypen&quot;Skicka händelse&quot;:
 
 1. Öppna fliken **[!UICONTROL Rules]** och välj sedan **[!UICONTROL Create New Rule]**.
 
@@ -120,7 +120,7 @@ Skapa en sidinläsningsregel med hjälp av plattformens SDK-tillägg och åtgär
 
 1. Lägg till en händelse genom att välja ett tillägg och en av de händelsetyper som är tillgängliga för tillägget och konfigurera sedan inställningarna för händelsen. Välj till exempel **[!UICONTROL Core - Window Loaded]**.
 
-1. Lägg till en åtgärd med plattformens SDK-tillägg. Välj **[!UICONTROL Send Event]** i listan **[!UICONTROL Action Type]**, markera önskad instans (Alloy-instans konfigurerad tidigare) och markera sedan ett dataelement som ska läggas till i XDM-datablocket i Alloy-träffen.
+1. Lägg till en åtgärd med Platform Web SDK-tillägget. Välj **[!UICONTROL Send Event]** i listan **[!UICONTROL Action Type]**, markera önskad instans (Alloy-instans konfigurerad tidigare) och markera sedan ett dataelement som ska läggas till i XDM-datablocket i Alloy-träffen.
 
 1. Lämna resten av inställningarna som standard för det här exemplet och välj **[!UICONTROL Save]**.
 

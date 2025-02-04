@@ -1,10 +1,10 @@
 ---
-title: API-tillägg för konvertering av Adobe Snapchat
-description: Med Adobe Experience Platform webbevent-API kan du dela webbplatsinteraktioner direkt med Snapchat.
+title: Översikt över API-tillägg för Snapchat Conversions
+description: Använd Snapchat-konverteringen för att skicka händelsedata på serversidan till Snap.
 last-substantial-update: 2025-01-20T00:00:00Z
-source-git-commit: 6403c339b2407410e282a25a0382845214bb6a95
+source-git-commit: 79e19b12dd39208827c215094b6c8ec9163d6624
 workflow-type: tm+mt
-source-wordcount: '922'
+source-wordcount: '919'
 ht-degree: 0%
 
 ---
@@ -15,9 +15,12 @@ Konverterings-API-tillägget [!DNL Snap] är ett säkert [Edge Network Server-AP
 
 ## Krav för [!DNL Snapchat] {#prerequisites}
 
-Om du vill använda konverterings-API:t [!DNL Snapchat] måste du ha en [händelsevidarebefordringsegenskap](https://experienceleague.adobe.com/en/docs/experience-platform/tags/event-forwarding/getting-started) konfigurerad i Adobe Experience Platform och de [nödvändiga behörigheterna](https://experienceleague.adobe.com/en/docs/experience-platform/collection/permissions) för att kunna redigera egenskapen.
+Så här använder du konverterings-API:t för [!DNL Snapchat]:
 
-Skapa en [dataström](/help/tags/ui/event-forwarding/getting-started.md) och lägg till tjänsten [Händelsevidarebefordran](/help/tags/ui/event-forwarding/getting-started#enable-event-forwarding) i den.
+* Du måste ha konfigurerat en [händelsevidarebefordringsegenskap](/help/tags/ui/event-forwarding/getting-started.md) i Adobe Experience Platform.
+* Du måste också ha de [nödvändiga behörigheterna](/help/collection/permissions.md) för att kunna redigera egenskapen.
+
+Skapa en [dataström](/help/tags/ui/event-forwarding/getting-started.md) och lägg till tjänsten [Händelsevidarebefordran](/help/tags/ui/event-forwarding/getting-started.md#enable-event-forwarding) i den.
 
 Ett **[!DNL Snapchat]** [Business Manager](https://business.snapchat.com/)-konto krävs för att använda konverterings-API:t. Business Manager hjälper annonsörer att integrera marknadsföringsaktiviteter från **[!DNL Snapchat]** i sina företag och med externa partner. Se artikeln **[!DNL Snapchat]** [Help center](https://businesshelp.snapchat.com/s/article/get-started?language=en_US) om hur du skapar ett Business Manager-konto om du inte har ett.
 
@@ -34,7 +37,7 @@ Följ de här stegen när du har valt önskad egenskap:
 1. Välj **[!UICONTROL Extensions]** i den vänstra navigeringspanelen.
 2. Sök efter **[!UICONTROL Snap Conversion API Extension]** och välj **[!UICONTROL Install]**.
 
-   ![Installationsknappen ](../../../images/extensions/server/snap/install.png) visas i bilden.
+   ![Bilden visar installationsknappen](../../../images/extensions/server/snap/install.png)
 
 3. Ange följande värden på konfigurationsskärmen:
 
@@ -43,17 +46,17 @@ Följ de här stegen när du har valt önskad egenskap:
 
 När du är klar väljer du **[!UICONTROL Save]**.
 
-![Bild som visar Pixel-ID och API-tokenknapp](../../../images/extensions/server/snap/configure.png).
+![Bild som visar knapp för Pixel-ID och API-token](../../../images/extensions/server/snap/configure.png)
 <!-- 
 ![[!DNL Snap] configuration screen for the [!DNL Snap] conversion API extension.](../../../images/extensions/server/snap/configure.png) -->
 
 ## Skapa dataelement {#create-data-elements}
 
-Om du vill skicka datapunkter som parametrar till API-tillägget [!DNL Snapchat] för konvertering måste du skapa [dataelement](https://experienceleague.adobe.com/en/docs/platform-learn/implement-web-sdk/event-forwarding/setup-event-forwarding#create-an-event-forwarding-data-element) för varje datapunkt. Följ de här stegen:
+Om du vill skicka data till API-tillägget för [!DNL Snapchat]-konverteringar skapar du [dataelement](https://experienceleague.adobe.com/en/docs/platform-learn/implement-web-sdk/event-forwarding/setup-event-forwarding#create-an-event-forwarding-data-element) för varje dataparameter. Följ de här stegen:
 
 1. Navigera till **[!UICONTROL Authoring]**>**[!UICONTROL Data Elements]** på egenskapens **[!UICONTROL Property Info]**-skärm och välj sedan **[!UICONTROL Add Data Element]**.
 
-   ![Bilden visar knappen för att lägga till dataelement](../../../images/extensions/server/snap/add_data_element.png).
+   ![Bilden visar knappen för att lägga till dataelement](../../../images/extensions/server/snap/add_data_element.png)
 
 2. Ange ett namn för dataelementet.
 
@@ -61,19 +64,19 @@ Om du vill skicka datapunkter som parametrar till API-tillägget [!DNL Snapchat]
 
 4. I listrutan väljer du lämpligt alternativ och fyller i fältet [!UICONTROL Path] på den högra panelen för att referera till önskade data i ditt schema.
 
-   ![Bild som visar skärmen för att skapa dataelement](../../../images/extensions/server/snap/create_data_element.png).
+   ![Bild som visar skärmen Skapa dataelement](../../../images/extensions/server/snap/create_data_element.png)
 
 Om du till exempel skapar ett dataelement som refererar till `snapClickId` i schemat som visas nedan:
 
-![Bilden visar schemat ](../../../images/extensions/server/snap/schema.png).
+![Bilden visar schemat ](../../../images/extensions/server/snap/schema.png)
 
 Du måste konfigurera dataelementet eftersom `snapClickId` finns under `_snap.inc.exchange` i XDM-schemat.
 
-![Bild som visar skärmen för redigeringsdataelement](../../../images/extensions/server/snap/edit_data_element.png).
+![Bild som visar skärmen för redigeringsdataelement](../../../images/extensions/server/snap/edit_data_element.png)
 
-Mer information om hur du skapar dataelement finns i dokumentationen [Egenskaper för vidarebefordran av händelser](/help/tags/ui/event-forwarding/overview#data-elements.md).
+Mer information om hur du skapar dataelement finns i dokumentationen [Egenskaper för vidarebefordran av händelser](/help/tags/ui/event-forwarding/overview.md#data-elements).
 
-## Skapa regler för att skicka konverteringshändelser som ska snabbas {#create-snap-rules}
+## Skapa regler för att skicka konverteringshändelser till Fäst {#create-snap-rules}
 
 [Regler](https://experienceleague.adobe.com/en/docs/platform-learn/implement-web-sdk/event-forwarding/setup-event-forwarding#create-an-event-forwarding-rule) används för att utlösa tillägg i plattformen. I det här avsnittet beskrivs hur du skapar regler i egenskapen för vidarebefordring av händelser för att skicka konverteringshändelser till Snap med tillägget för Conversions API.
 
@@ -81,11 +84,11 @@ Mer information om hur du skapar dataelement finns i dokumentationen [Egenskaper
 
 1. Navigera till egenskapen för vidarebefordran av händelser och välj **[!UICONTROL Rules]** på redigeringsmenyn. Klicka sedan på **[!UICONTROL Create New Rule]**.
 
-   ![Bild som visar regler i den vänstra navigeringen](../../../images/extensions/server/snap/create_new_rule.png).
+   ![Bild som visar regler i vänsternavigering](../../../images/extensions/server/snap/create_new_rule.png)
 
 2. Ge regeln ett namn och konfigurera ett villkor för att aktivera Snap-händelsen. Om du till exempel vill skicka en `PURCHASE`-händelse när en händelse innehåller ett ordernummer anger du ett villkor för att kontrollera om användarinteraktionen innehåller ett giltigt inköpsordernummer.
 
-   ![Bilden visar konfigurationsskärmen för villkor](../../../images/extensions/server/snap/action_configuration.png).
+   ![Bilden visar konfigurationsskärmen för villkor](../../../images/extensions/server/snap/action_configuration.png)
 
 3. När du har sparat villkoret lägger du till en åtgärd som utlöser API:t för fästkonvertering. I den vänstra panelen:
 
@@ -95,7 +98,7 @@ Mer information om hur du skapar dataelement finns i dokumentationen [Egenskaper
 
    * Namnge regeln därefter.
 
-   ![Bilden visar åtgärdskonfigurationsskärmen](../../../images/extensions/server/snap/action_configuration.png).
+   ![Bild som visar åtgärdskonfigurationsskärmen](../../../images/extensions/server/snap/action_configuration.png)
 
 4. Konfigurera de [CAPI-parametervärden](https://developers.snap.com/api/marketing-api/Conversions-API/Parameters) som du vill skicka för händelsen i avsnittet **[!UICONTROL Data Bindings]** på den högra panelen. Fälten i tillägget mappas till CAPI-parametrar enligt nedan. Mer information om de olika parametrarna finns i [API-dokumentationen för Snapchat-konverteringar](https://developers.snap.com/api/marketing-api/Conversions-API/Parameters).
 
@@ -136,17 +139,15 @@ Mer information om hur du skapar dataelement finns i dokumentationen [Egenskaper
 | Begränsad dataanvändning | `data_processing_options` |
 | Sidadress | `event_source_url` |
 
+{style="table-layout:auto"}
+
 ### Obligatoriska och valfria fält
 
-* Obligatoriska fält:
+Varje händelse kräver `event_source`, som alltid är inställd på `WEB.` För matchning, minst ett av följande fält eller kombinationer krävs också:
 
-   * Alla händelser har `event_source` inställt på `WEB`.
-
-   * Minst ett av följande fält eller kombinationer krävs för matchning:
-
-      * E-post
-      * Telefonnummer
-      * IP-adress och användaragent
+* E-post
+* Telefonnummer
+* IP-adress och användaragent
 
 **Ytterligare information:**
 
@@ -175,21 +176,21 @@ Exempel:
 }
 ```
 
-Om du vill använda [anpassade konverteringsvärden och ROAS-rapportering](https://businesshelp.snapchat.com/s/article/custom-conversions-value-roas?language=en_US) inkluderar du relevanta parametrar i fältet `contents`. Exempel: `brand`, `item_price`, `id`.
+Om du vill använda [anpassade konverteringsvärden och ROAS-rapportering](https://businesshelp.snapchat.com/s/article/custom-conversions-value-roas?language=en_US) inkluderar du relevanta parametrar i fältet `contents`. En exempelkonfiguration för en köphändelse kan se ut så här: `brand`, `item_price`, `id`.
 
 Exempelkonfiguration för en `Purchase`-händelse:
 
-[Bild som visar databindningar](../../../images/extensions/server/snap/data_bindings.png)
+![Bild som visar databindningar](../../../images/extensions/server/snap/data_bindings.png)
 
 De valfria fälten kan anges enligt följande:
 
-[Bild som visar valfria fält](../../../images/extensions/server/snap/optional_fields.png)
+![Bild med valfria fält](../../../images/extensions/server/snap/optional_fields.png)
 
 När du har angett regelns namn, villkor och åtgärd enligt beskrivningen ovan, sparar du regeln och kontrollerar att den är aktiverad.
 
-[Bild som visar aktiverad regel](../../../images/extensions/server/snap/enabled_rule.png)
+![Bilden visar aktiverad regel](../../../images/extensions/server/snap/enabled_rule.png)
 
-Du kan nu publicera dessa ändringar i din egenskap. Mer information finns i dokumentationen om [publiceringsflödet](https://experienceleague.adobe.com/en/docs/experience-platform/tags/publish/overview).
+Du kan nu publicera dessa ändringar i din egenskap. Mer information finns i dokumentationen om [publiceringsflödet](/help/tags/ui/publishing/overview.md)(https://experienceleague.adobe.com/en/docs/experience-platform/tags/publish/overview).
 
 ## Felsökning {#troubleshoot}
 
