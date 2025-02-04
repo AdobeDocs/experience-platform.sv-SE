@@ -2,9 +2,9 @@
 title: Salesforce Source Connector - översikt
 description: Lär dig hur du ansluter Salesforce till Adobe Experience Platform med API:er eller användargränssnittet.
 exl-id: 597778ad-3cf8-467c-ad5b-e2850967fdeb
-source-git-commit: f62e13e97cc82fef759d06b94337f4cc25d4fb10
+source-git-commit: 77941e08df893fab6dfdaf987c56c4d5a3fd4757
 workflow-type: tm+mt
-source-wordcount: '1533'
+source-wordcount: '1560'
 ht-degree: 0%
 
 ---
@@ -19,11 +19,15 @@ Med Adobe Experience Platform kan data hämtas från externa källor samtidigt s
 
 Experience Platform har stöd för inmatning av data från ett CRM-system från tredje part. Stöd för CRM-providers omfattar [!DNL Salesforce].
 
-## IP-adress tillåtelselista
+## Konfigurera din [!DNL Salesforce]-källa för Experience Platform på Azure {#azure}
+
+Följ stegen nedan för att lära dig hur du kan konfigurera ditt [!DNL Salesforce]-konto för Experience Platform på Azure.
+
+### IP-adress tillåtelselista
 
 En lista med IP-adresser måste läggas till tillåtelselista innan du kan arbeta med källanslutningar. Om du inte lägger till dina regionspecifika IP-adresser i tillåtelselista kan det leda till fel eller sämre prestanda när du använder källor. Mer information finns på sidan [IP-adress tillåtelselista](../../ip-address-allow-list.md).
 
-## Fältmappning från [!DNL Salesforce] till XDM
+### Fältmappning från [!DNL Salesforce] till XDM
 
 Om du vill upprätta en källanslutning mellan [!DNL Salesforce] och plattformen måste [!DNL Salesforce]-källdatafälten mappas till rätt mål-XDM-fält innan de hämtas till plattformen.
 
@@ -38,7 +42,7 @@ Mer information om fältmappningsregler mellan [!DNL Salesforce]-datamängder oc
 - [Kampanjmedlemmar](../adobe-applications/mapping/salesforce.md#campaign-member)
 - [Kontaktrelation för konto](../adobe-applications/mapping/salesforce.md#account-contact-relation)
 
-## Konfigurera det automatiska genereringsverktyget för namnutrymmet [!DNL Salesforce] och schemat
+### Konfigurera det automatiska genereringsverktyget för namnutrymmet [!DNL Salesforce] och schemat
 
 Om du vill använda källan [!DNL Salesforce] som en del av [!DNL B2B-CDP] måste du först konfigurera ett [!DNL Postman]-verktyg för att automatiskt generera [!DNL Salesforce] namnutrymmen och scheman. Följande dokumentation innehåller ytterligare information om hur du konfigurerar verktyget [!DNL Postman]:
 
@@ -271,7 +275,7 @@ När du har slutfört kravkonfigurationen för ditt [!DNL Salesforce]-konto kan 
 
 Dokumentationen nedan innehåller information om hur du ansluter [!DNL Salesforce] till plattformen med API:er eller användargränssnittet:
 
-- [Skapa en Salesforce-basanslutning med API:t för Flow Service](../../tutorials/api/create/crm/salesforce.md)
+- [Anslut Salesforce till Experience Platform med API:t för flödestjänst](../../tutorials/api/create/crm/salesforce.md)
 - [Utforska datatabeller med API:t för Flow Service](../../tutorials/api/explore/tabular.md)
 - [Skapa ett dataflöde för en CRM-källa med API:t för Flow Service](../../tutorials/api/collect/crm.md)
 

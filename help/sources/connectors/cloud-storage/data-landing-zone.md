@@ -2,9 +2,9 @@
 title: Data Landing Zone Source
 description: Lär dig ansluta Data Landing Zone till Adobe Experience Platform
 exl-id: bdc10095-7de4-4183-bfad-a7b5c89197e3
-source-git-commit: 1530d7b9815688ab58fb6349ef77e92124741883
+source-git-commit: b9a409db2f1aee852faf9038a25236b78f76d4dd
 workflow-type: tm+mt
-source-wordcount: '1178'
+source-wordcount: '1282'
 ht-degree: 0%
 
 ---
@@ -19,11 +19,15 @@ ht-degree: 0%
 
 [!DNL Data Landing Zone] har stöd för SAS-baserad autentisering och dess data skyddas med standardsäkerhetsmekanismer för lagring i [!DNL Azure Blob] vid vila och överföring. Med SAS-baserad autentisering kan du få säker åtkomst till din [!DNL Data Landing Zone]-behållare via en offentlig internetanslutning. Du behöver inte göra några nätverksändringar för att komma åt din [!DNL Data Landing Zone]-behållare, vilket innebär att du inte behöver konfigurera några tillåtelselista- eller korsregionsinställningar för ditt nätverk. Experience Platform tillämpar en strikt 7-dagars förfallotid för alla filer och mappar som överförts till en [!DNL Data Landing Zone]-behållare. Alla filer och mappar tas bort efter sju dagar.
 
+## Konfigurera din [!DNL Data Landing Zone]-källa för Experience Platform på Azure {#azure}
+
+Följ stegen nedan för att lära dig hur du kan konfigurera ditt [!DNL Data Landing Zone]-konto för Experience Platform på Azure.
+
 >[!NOTE]
 >
 >Om du vill komma åt [!DNL Data Landing Zone] från [!DNL Azure Data Factory] måste du skapa en länkad tjänst för [!DNL Data Landing Zone] med hjälp av [ SAS-autentiseringsuppgifterna](../../tutorials/ui/create/cloud-storage/data-landing-zone.md#retrieve-your-data-landing-zone-credentials) som tillhandahålls av Experience Platform. När du har skapat den länkade tjänsten kan du utforska din [!DNL Data Landing Zone] genom att välja behållarsökvägen i stället för standardrotsökvägen.
 
-## Namnbegränsningar för filer och kataloger
+### Namnbegränsningar för filer och kataloger
 
 Nedan följer en lista över begränsningar som du måste ta hänsyn till när du namnger molnlagringsfiler eller -kataloger.
 
@@ -34,17 +38,17 @@ Nedan följer en lista över begränsningar som du måste ta hänsyn till när d
 - Ogiltiga URL-sökvägstecken tillåts inte. Kodpunkter som `\uE000` är inte giltiga Unicode-tecken, men de är giltiga i NTFS-filnamn. Dessutom tillåts inte vissa ASCII- eller Unicode-tecken, som kontrolltecken (som `0x00` till `0x1F`, `\u0081` och så vidare). Information om regler som styr Unicode-strängar i HTTP/1.1 finns i [RFC 2616, Section 2.2: Basic Rules](https://www.ietf.org/rfc/rfc2616.txt) och [RFC 3987](https://www.ietf.org/rfc/rfc3987.txt).
 - Följande filnamn tillåts inte: LPT1, LPT2, LPT3, LPT4, LPT5, LPT6, LPT7, LPT8, LPT9, COM1, COM2, COM3, COM4, COM5, COM6, COM7, COM8, COM9, PRN, AUX, NUL, CON, CLOCK$, punkttecken (.) och två punkttecken (. .).
 
-## Hantera innehållet i din Data Landing Zone{#manage-the-contents-of-your-data-landing-zone}
+### Hantera innehållet i din Data Landing Zone{#manage-the-contents-of-your-data-landing-zone}
 
 Du kan använda [[!DNL Azure Storage Explorer]](https://azure.microsoft.com/en-us/features/storage-explorer/) för att hantera innehållet i [!DNL Data Landing Zone]-behållaren.
 
 I användargränssnittet för [!DNL Azure Storage Explorer] väljer du anslutningsikonen i den vänstra navigeringen. Fönstret **Välj resurs** visas med alternativ att ansluta till. Välj **[!DNL Blob container]** om du vill ansluta till [!DNL Data Landing Zone].
 
-![select-resource](../../images/tutorials/create/dlz/select-resource.png)
+![Arbetsytan Välj resurs i Azure Explorer.](../../images/tutorials/create/dlz/select-resource.png)
 
 Välj sedan **URL för delad åtkomstsignatur (SAS)** som anslutningsmetod och välj sedan **Nästa**.
 
-![select-connection-method](../../images/tutorials/create/dlz/select-connection-method.png)
+![Den valda anslutningsmetoden i Azure Explorer, med signatur för delad åtkomst vald.](../../images/tutorials/create/dlz/select-connection-method.png)
 
 När du har valt anslutningsmetod måste du sedan ange **visningsnamn** och **[!DNL Blob]behållar-SAS-URL:en** som motsvarar [!DNL Data Landing Zone]-behållaren.
 
@@ -54,19 +58,19 @@ När du har valt anslutningsmetod måste du sedan ange **visningsnamn** och **[!
 
 Ange din [!DNL Data Landing Zone] SAS-URL och välj sedan **Nästa**
 
-![enter-connection-info](../../images/tutorials/create/dlz/enter-connection-info.png)
+![Arbetsytan Ange anslutningsinformation i Azure Explorer där visningsnamnet och SAS-URL:en anges.](../../images/tutorials/create/dlz/enter-connection-info.png)
 
 Fönstret **Sammanfattning** visas med en översikt över dina inställningar, inklusive information om din [!DNL Blob]-slutpunkt och behörigheter. Välj **Anslut** när du är klar.
 
-![sammanfattning](../../images/tutorials/create/dlz/summary.png)
+![Sammanfattningsarbetsytan i Azure Explorer som fångar upp inställningarna för din resursanslutning.](../../images/tutorials/create/dlz/summary.png)
 
 En anslutning uppdaterar användargränssnittet för [!DNL Azure Storage Explorer] med behållaren för [!DNL Data Landing Zone].
 
-![dlz-user-container](../../images/tutorials/create/dlz/dlz-user-container.png)
+![Navigeringsarbetsytan för datalandningszon i Azure Explorer.](../../images/tutorials/create/dlz/dlz-user-container.png)
 
 Med din [!DNL Data Landing Zone]-behållare ansluten till [!DNL Azure Storage Explorer] kan du nu börja överföra filer till [!DNL Data Landing Zone]-behållaren. Om du vill överföra väljer du **Överför** och sedan **Överför filer**.
 
-![överföring](../../images/tutorials/create/dlz/upload.png)
+![Arbetsytan för överföring av filer i Azure Explorer.](../../images/tutorials/create/dlz/upload.png)
 
 När du har valt den fil som du vill överföra måste du sedan identifiera den [!DNL Blob]-typ som du vill överföra den som och den målkatalog som du vill använda. När du är klar väljer du **Överför**.
 
@@ -75,9 +79,9 @@ När du har valt den fil som du vill överföra måste du sedan identifiera den 
 | Blockera [!DNL Blob] | Blocket [!DNL Blobs] är optimerat för att överföra stora mängder data på ett effektivt sätt. Block [!DNL Blobs] är standardalternativet för [!DNL Data Landing Zone]. |
 | Lägg till [!DNL Blob] | Tillägget [!DNL Blobs] är optimerat för att lägga till data i slutet av filen. |
 
-![upload-files](../../images/tutorials/create/dlz/upload-files.png)
+![Fönstret för överföring av filer i Azure Explorer där de markerade filerna, blobtypen och målkategorin visas.](../../images/tutorials/create/dlz/upload-files.png)
 
-## Överför filer till [!DNL Data Landing Zone] med kommandoradsgränssnittet
+### Överför filer till [!DNL Data Landing Zone] med kommandoradsgränssnittet
 
 Du kan också använda kommandoradsgränssnittet för enheten och få åtkomst till överföringsfiler till [!DNL Data Landing Zone].
 
