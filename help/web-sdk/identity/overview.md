@@ -2,7 +2,7 @@
 title: Identitetsdata i Web SDK
 description: Lär dig hur du hämtar och hanterar Adobe Experience Cloud ID:n (ECID) med Adobe Experience Platform Web SDK.
 exl-id: 03060cdb-becc-430a-b527-60c055c2a906
-source-git-commit: c99831cf2bb1b862d65851701b38c6d3dfe99000
+source-git-commit: 3724c43090e37d21384e9dfe45e60ee2eec68a81
 workflow-type: tm+mt
 source-wordcount: '1553'
 ht-degree: 0%
@@ -12,20 +12,20 @@ ht-degree: 0%
 
 # Identitetsdata i Web SDK
 
-Adobe Experience Platform Web SDK använder [Adobe Experience Cloud ID:n (ECID:n)](../../identity-service/features/ecid.md) för att spåra besökares beteende. Om du använder [!DNL ECIDs] kan du se till att varje enhet har en unik identifierare som kan finnas kvar i flera sessioner och koppla alla träffar som inträffar under och mellan webbsessioner till en viss enhet.
+Adobe Experience Platform Web SDK använder [Adobe Experience Cloud ID:n (ECID)](../../identity-service/features/ecid.md) för att spåra besökares beteende. Om du använder [!DNL ECIDs] kan du se till att varje enhet har en unik identifierare som kan finnas kvar i flera sessioner och koppla alla träffar som inträffar under och mellan webbsessioner till en viss enhet.
 
 Det här dokumentet innehåller en översikt över hur du hanterar [!DNL ECIDs] och [!DNL CORE IDs] med Web SDK.
 
 ## Spåra ECID:n med Web SDK {#tracking-ecids-web-sdk}
 
-Web SDK tilldelar och spårar [!DNL ECIDs] med hjälp av cookies, med flera tillgängliga metoder för att konfigurera hur dessa cookies genereras.
+SDK tilldelar och spårar [!DNL ECIDs] med hjälp av cookies, med flera tillgängliga metoder för att konfigurera hur dessa cookies genereras.
 
 När en ny användare kommer till din webbplats försöker [Adobe Experience Cloud Identity Service](../../identity-service/home.md) att ange en cookie för enhetsidentifiering för den användaren.
 
 * För förstagångsbesökare genereras en [!DNL ECID] och returneras i det första svaret från Experience Platform Edge Network.
 * För återkommande besökare hämtas [!DNL ECID] från cookien `kndctr_{YOUR-ORG-ID}_AdobeOrg_identity` och läggs till i nyttolasten för begäran av Edge Network.
 
-När cookie-filen som innehåller [!DNL ECID] har ställts in, kommer varje efterföljande begäran som genereras av Web SDK att innehålla en kodad [!DNL ECID] i `kndctr_{YOUR-ORG-ID}_AdobeOrg_identity`-cookien.
+När cookie-filen som innehåller [!DNL ECID] har ställts in, kommer varje efterföljande begäran som skapas av Web SDK att innehålla en kodad [!DNL ECID] i `kndctr_{YOUR-ORG-ID}_AdobeOrg_identity`-cookien.
 
 När du använder cookies för enhetsidentifiering har du två sätt att interagera med Edge Network:
 
@@ -172,8 +172,8 @@ Om du använder fältet `identityMap` för att identifiera enheter eller använd
 När du migrerar från med Visitor API kan du även migrera befintliga AMCV-cookies. Om du vill aktivera ECID-migrering anger du parametern `idMigrationEnabled` i konfigurationen. ID-migrering aktiverar följande användningsfall:
 
 * När vissa sidor i en domän använder Visitor API och andra sidor använder denna SDK. Som stöd för detta fall läser SDK befintliga AMCV-cookies och skriver en ny cookie med befintligt ECID. Dessutom skriver SDK AMCV-cookies så att efterföljande sidor som är instrumenterade med Visitor API har samma ECID om ECID hämtas först på en sida som är instrumenterad med SDK.
-* När Adobe Experience Platform Web SDK har konfigurerats på en sida som även har Visitor API. Om AMCV-cookien inte är inställd söker SDK efter besökar-API:t på sidan och anropar den för att hämta ECID.
-* När hela webbplatsen använder Adobe Experience Platform Web SDK och inte har något Visitor-API är det bra att migrera ECID:n så att den returnerade besökarinformationen behålls. När SDK har distribuerats med `idMigrationEnabled` en tid så att de flesta besöks-cookies migreras, kan inställningen inaktiveras.
+* När Adobe Experience Platform Web SDK är konfigurerat på en sida som även har Visitor API. Om AMCV-cookien inte är inställd söker SDK efter besökar-API:t på sidan och anropar den för att hämta ECID.
+* När hela webbplatsen använder Adobe Experience Platform Web SDK och saknar Visitor-API är det bra att migrera ECID:n så att den returnerade besökarinformationen bevaras. När SDK har distribuerats med `idMigrationEnabled` en tid så att de flesta besöks-cookies migreras, kan inställningen inaktiveras.
 
 ### Uppdaterar egenskaper för migrering
 
