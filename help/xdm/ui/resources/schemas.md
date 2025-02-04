@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Skapa och redigera scheman i användargränssnittet
 description: Lär dig grunderna i hur du skapar och redigerar scheman i användargränssnittet i Experience Platform.
 exl-id: be83ce96-65b5-4a4a-8834-16f7ef9ec7d1
-source-git-commit: 02b709c01347c1d03f870132dff437b97f239a9c
+source-git-commit: 24b26e256fb346ccd1a03984f3e0d199c640159c
 workflow-type: tm+mt
-source-wordcount: '3888'
+source-wordcount: '3899'
 ht-degree: 0%
 
 ---
@@ -354,7 +354,7 @@ Tänk på att visningsnamnen för fält som tillhör standardklasser eller fält
 >
 När du ändrar visningsnamnen för ett schemas fält återspeglas dessa ändringar omedelbart i befintliga datauppsättningar som baseras på det schemat.
 
-Om du vill redigera visningsnamnet för ett schemafält markerar du fältet på arbetsytan. Ange det nya namnet under **[!UICONTROL Display name]** i den högra listen.
+Ändra fältnamnen till visningsnamnen genom att aktivera **[!UICONTROL Show display names for fields]**. Om du vill redigera visningsnamnet för ett schemafält markerar du fältet på arbetsytan. Ange det nya namnet under **[!UICONTROL Display name]** i den högra listen.
 
 ![](../../images/ui/resources/schemas/display-name.png)
 
