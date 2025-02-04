@@ -3,14 +3,20 @@ keywords: Experience Platform;hem;populära ämnen;åtkomstkontroll;attributbase
 title: Attributbaserad åtkomstkontroll Hantera rollbehörigheter
 description: Det här dokumentet innehåller information om hur du konfigurerar behörigheter för en roll via gränssnittet Behörigheter i Adobe Experience Cloud
 exl-id: 8acd2bb6-eef8-4b23-8fd8-3566c7508fe7
-source-git-commit: 0c275dc18dac101455f77aa58d33f0808122b77f
+source-git-commit: 207317d16a21cc2461ebd3f7867735735227c173
 workflow-type: tm+mt
-source-wordcount: '1381'
+source-wordcount: '1513'
 ht-degree: 0%
 
 ---
 
-# Hantera behörigheter för en roll
+# Hantera behörigheter för en roll {#manage-role-permissions}
+
+>[!CONTEXTUALHELP]
+>id="platform_permissions_roles_about"
+>title="Vad är roller?"
+>abstract="Roller definierar åtkomsten som en administratör, en specialist eller en slutanvändare har till resurser i organisationen. De kategoriserar de användare som interagerar med din plattformsinstans och är byggstenarna för åtkomstkontrollprinciper. En roll har en given uppsättning behörigheter och medlemmar i organisationen kan tilldelas till en eller flera roller, beroende på vilket synområde eller vilken skrivbehörighet de behöver."
+>additional-url="https://experienceleague.adobe.com/docs/experience-platform/access-control/abac/permissions-ui/roles.html" text="Hantera roller"
 
 >[!IMPORTANT]
 >
@@ -41,7 +47,14 @@ Om du vill ta bort ett filter väljer du X på ikonen för piller för filtret i
 
 ![Kontrollpanelen Roller i Behörighetsgränssnittet med X och Rensa alla val markerade på de valda filtren.](../../images/flac-ui/flac-clear-filters.png)
 
-## Rollinformation
+## Rollinformation {#role-details}
+
+>[!CONTEXTUALHELP]
+>id="platform_permissions_roles_details"
+>title="Rollöversikt"
+>abstract="I dialogrutan för rollöversikt visas rollens information, inklusive de resurser och sandlådor som en viss roll har åtkomst till. Du kan hantera etiketter, användare, användargrupper och API-autentiseringsuppgifter för rollen genom att navigera till motsvarande flik på rollens arbetsyta."
+>additional-url="https://experienceleague.adobe.com/en/docs/experience-platform/access-control/abac/permissions-ui/permissions#manage-labels-for-a-role" text="Hantera etiketter för en roll"
+>additional-url="https://experienceleague.adobe.com/en/docs/experience-platform/access-control/abac/permissions-ui/permissions#manage-users-for-a-role" text="Hantera användare för en roll"
 
 Välj rollen på fliken **[!UICONTROL Roles]** som öppnar rollens [!UICONTROL Details]-kontrollpanel.
 

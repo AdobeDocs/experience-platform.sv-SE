@@ -4,9 +4,9 @@ title: Attributbaserad åtkomstkontroll - från början till slut
 description: Det här dokumentet innehåller en komplett guide om attributbaserad åtkomstkontroll i Adobe Experience Platform
 role: Developer
 exl-id: 7e363adc-628c-4a66-a3bd-b5b898292394
-source-git-commit: 5b9200b9e534519ce2f3c1a529a30b032642ab7f
+source-git-commit: 74980c6108a32ec6736ab5892d89590e04e8a500
 workflow-type: tm+mt
-source-wordcount: '1713'
+source-wordcount: '1512'
 ht-degree: 1%
 
 ---
@@ -66,31 +66,8 @@ Arbetsytan Behörigheter för plattformsgränssnittet visas och öppnas på sida
 >[!CONTEXTUALHELP]
 >id="platform_permissions_labels_about"
 >title="Vad är etiketter?"
->abstract="Med etiketter kan du kategorisera datauppsättningar och fält enligt de användarprofiler som gäller för dessa data. Plattformen har flera Adobe-definierade etiketter för dataanvändning, som omfattar ett stort antal vanliga begränsningar för datastyrning. Känsliga&quot;S&quot;-etiketter, till exempel RHD (Regulated Health Data), gör att du kan kategorisera data som hänvisar till Skyddad hälsoinformation (PHI). Du kan också definiera egna etiketter som passar organisationens behov."
+>abstract="Använd etiketter för att kategorisera datauppsättningar och fält utifrån de användnings- och åtkomstprinciper som gäller för dessa data. Plattformen innehåller flera Adobe-definierade <strong>core</strong>-dataanvändningsetiketter, som omfattar ett stort antal vanliga begränsningar som gäller för datastyrning. Känsliga <strong>S</strong>-etiketter som RHD (Regulated Health Data) kan till exempel användas för att kategorisera data som refererar till Skyddad hälsoinformation (PHI). Du kan också definiera egna etiketter som passar organisationens behov."
 >additional-url="https://experienceleague.adobe.com/docs/experience-platform/data-governance/labels/overview.html#understanding-data-usage-labels" text="Översikt över etiketter för dataanvändning"
-
->[!CONTEXTUALHELP]
->id="platform_permissions_labels_about_create"
->title="Skapa ny etikett"
->abstract="Du kan skapa egna etiketter som passar organisationens behov. Anpassade etiketter kan användas för att tillämpa både datastyrning och åtkomstkontrollskonfigurationer på dina data."
->additional-url="https://experienceleague.adobe.com/docs/experience-platform/data-governance/labels/overview.html#manage-labels" text="Hantera anpassade etiketter"
-
->[!CONTEXTUALHELP]
->id="platform_permissions_roles_about"
->title="Vad är roller?"
->abstract="Roller är sätt att kategorisera de typer av användare som interagerar med din plattformsinstans och är byggstenar för åtkomstkontrollprinciper. En roll har en given uppsättning behörigheter och medlemmar i organisationen kan tilldelas till en eller flera roller, beroende på vilket synområde eller vilken skrivbehörighet de behöver."
->additional-url="https://experienceleague.adobe.com/docs/experience-platform/access-control/abac/permissions-ui/roles.html" text="Hantera roller"
-
->[!CONTEXTUALHELP]
->id="platform_permissions_roles_about_create"
->title="Skapa ny roll"
->abstract="Du kan skapa en ny roll för att kategorisera användare som har åtkomst till din Platform-instans bättre. Du kan till exempel skapa en roll för ett internt marknadsföringsteam och använda RHD-etiketten på den rollen, så att ditt interna marknadsföringsteam kan komma åt informationen om den skyddade hälsan (PHI). Du kan också skapa en roll för ett externt organ och neka rollåtkomst till PHI-data genom att inte använda RHD-etiketten på den rollen."
->additional-url="https://experienceleague.adobe.com/docs/experience-platform/access-control/abac/permissions-ui/roles.html#create-a-new-role" text="Skapa en ny roll"
-
->[!CONTEXTUALHELP]
->id="platform_permissions_roles_details"
->title="Rollöversikt"
->abstract="I dialogrutan för rollöversikt visas de resurser och sandlådor som en viss roll har åtkomst till."
 
 Roller är sätt att kategorisera de typer av användare som interagerar med din plattformsinstans och är byggstenar för åtkomstkontrollprinciper. En roll har en given uppsättning behörigheter, och medlemmar i organisationen kan tilldelas till en eller flera roller, beroende på vilken typ av åtkomst de behöver.
 
