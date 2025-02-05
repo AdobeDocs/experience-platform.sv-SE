@@ -2,10 +2,10 @@
 title: Frågeguide för AI Assistant
 description: Läs det här dokumentet om du vill veta mer om exempelfrågor som du kan använda när du frågar i AI Assistant.
 exl-id: d16d1262-cc2d-45c9-94c4-b86132183442
-source-git-commit: 0926a0e8c7ae560bf5f4f9ff6853b191af047738
+source-git-commit: 7268895d0b1924f9d3e7cee24e549c79245ef099
 workflow-type: tm+mt
-source-wordcount: '1519'
-ht-degree: 0%
+source-wordcount: '2105'
+ht-degree: 1%
 
 ---
 
@@ -60,7 +60,7 @@ Följande frågor grupperas efter dataobjekt och klassificeras antingen som [ope
    * Vilka scheman används inte i några datauppsättningar?
    * Hur många datauppsättningar har jag?
 * **Destinationer - driftsinsikter**
-   * Vilka destinationer befinner sig i ett aktivt läge?
+   * Vilka mål befinner sig i ett aktivt läge?
    * Vilka målkonton har 0 målgrupper aktiverade?
    * Hur många målgrupper aktiveras för varje mål?
    * Vilka destinationer har det högsta antalet aktiva målgrupper?
@@ -69,7 +69,7 @@ Följande frågor grupperas efter dataobjekt och klassificeras antingen som [ope
    * Vilka resor har skapats i {RELATIVE_DATE} (t.ex. den sista veckan) eller {RELATIVE_DATE} (t.ex. före/efter/på ett visst datum)?
    * Visa mig listan över resor som har ändrats i {RELATIVE_DATE} (t.ex. den senaste veckan) eller {RELATIVE_DATE} (t.ex. före/efter/på ett visst datum)?
    * Ange de resor jag har.
-   * Ange de målgrupper som används i direktresor.
+   * Lista de målgrupper som används i live-resor.
 * **Källor - driftsinsikter**
    * Vilka källor är i ett aktivt läge?
    * Vilken källanslutning som är associerad med datauppsättningen {USE_AUTO_COMPLETE_TO_FILL_DATASET_NAME}.
@@ -82,7 +82,7 @@ Följande frågor grupperas efter dataobjekt och klassificeras antingen som [ope
    * Vad är skillnaden mellan en identitet och en primär eller extern nyckel?
 * **Felsökning - produktkunskap (Real-Time CDP och Journey Optimizer)**
    * Vad kan AI Assistant hjälpa till med?
-   * Kan jag ta bort ett profilaktiverat schema efter att data har importerats?
+   * Kan jag ta bort ett profilaktiverat schema efter att data har matats in?
    * Varför kan jag inte ta bort en publik?
    * Hur lång tid tar det för målgrupperna att utvärderas och resultaten blir tillgängliga för målinriktning?
 
@@ -115,6 +115,75 @@ I följande tabeller beskrivs de effektivaste strategierna du kan följa när du
 | Utelämna villkor eller parametrar. | Visa datauppsättningar. |
 
 {style="table-layout:auto"}
+
+## Datauppsättningssynlighet {#dataset-observability}
+
+AI Assistant kan nu besvara frågor om specifika datamängdsmått som lagringsstorlek och radantal.
+
+* Vilka är mina största datauppsättningar efter storlek?
+* Vilken är min största datauppsättning av rader?
+* Hur många datauppsättningar är tomma?
+* Vilka datauppsättningar är tomma?
+
+Dessutom kan ni förmedla liknande avsikter via ett antal olika varianter till de fyra ovannämnda frågorna.
+
++++Välj för att visa godkända varianter av frågor om datauppsättningens observerbarhet
+
+* Vilka är de fem viktigaste datauppsättningarna efter storlek?
+* Vilken datauppsättning har det största antalet rader?
+* Hur många datauppsättningar saknar data?
+* Vill du visa datauppsättningar med en storlek på >10 MB?
+* Visa datauppsättningar med rader under 10.
+* Kan du visa de datauppsättningar som är helt tomma?
+* Vilken datamängd är störst av lagringsstorleken?
+* Vilken är den minsta datauppsättningen när det gäller radantal?
+* Hur många av mina datauppsättningar har data och hur många är tomma?
+* Vad är antalet rader för datauppsättningen med namnet {DATASET_NAME}?
+* Hur är storleken på {DATASET_NAME} jämfört med mina andra datauppsättningar?
+* Vilken är storleken på {DATASET_NAME}?
+* Hur många rader har {DATASET_NAME}?
+* Vad är storleken och antalet rader för {DATASET_NAME}?
+* Kan du lista de största och minsta datauppsättningarna efter lagringsstorlek?
+
++++
+
+Du kan också förfina dina frågor om datasynlighet med en kvalificerare för att filtrera frågan efter en viss tidsperiod:
+
+* Datauppsättningar som tar emot batchar under de senaste (x) dagarna
+* Datauppsättningar som inte tar emot batchar under de senaste (x) dagarna
+* Datauppsättningar med de mest insamlade data de senaste (x) dagarna
+* Antal poster för en viss datauppsättning under de senaste (x) dagarna
+
++++Välj för att visa godkända varianter av frågor om datauppsättningens observerbarhet
+
+* Hur många datauppsättningar har tagit emot batchar under de senaste (x) dagarna?
+* Vilka datauppsättningar har tagit emot batchar under de senaste (x) dagarna?
+* Kan du lista de datauppsättningar som hade inhämtats under de senaste (x) dagarna?
+* Hur många datauppsättningar fick nya batchar under de föregående (x) dagarna?
+* Vilka datauppsättningar har uppdaterats med nya data under de senaste (x) dagarna?
+* Visa datauppsättningar som haft batchaktivitet under de senaste (x) dagarna.
+* Hur många datauppsättningar har inte tagit emot batchar under de senaste (x) dagarna?
+* Vilka datauppsättningar har inte tagit emot några batchar under de senaste (x) dagarna?
+* Kan du identifiera datauppsättningar utan dataintag under de senaste (x) dagarna?
+* Hur många datauppsättningar fick inte uppdateringar under de senaste (x) dagarna?
+* Vilka datauppsättningar har varit inaktiva de senaste (x) dagarna?
+* Visa datauppsättningar som inte har fått nya grupper under de senaste (x) dagarna.
+* När var senaste gången data hämtades på datauppsättningen (x)?
+* Vilka är de tio populäraste datauppsättningarna där de flesta data har importerats under de senaste (x) dagarna?
+* Vilka är de 10 viktigaste datauppsättningarna per datavolym som har importerats under de senaste (x) dagarna?
+* Vilka 10 datauppsättningar hade det största dataintaget de senaste (x) dagarna?
+* Visa de 10 främsta datauppsättningarna med det högsta dataintaget under de föregående (x) dagarna.
+* Vilka är de viktigaste datauppsättningarna för data som tagits emot under de senaste (x) dagarna?
+* Visa en lista över de 10 mest använda datauppsättningarna som har inhämtat de senaste (x) dagarna.
+* Hur många poster har tagits emot i datauppsättningen (x) under de senaste (y) dagarna?
+* Hur många poster har datauppsättningen (x) fått under de senaste (y) dagarna?
+* Hur många poster har importerats för datauppsättningen (x) under de senaste (y) dagarna?
+* Kan du ange antalet poster som lagts till i datauppsättningen (x) under de senaste (y) dagarna?
+* Hur mycket data har tagits emot av datauppsättningen (x) under de senaste (y) dagarna?
+* Hur många poster som har importerats för datauppsättningen (x) under de föregående (y) dagarna?
+
++++
+
 
 ## Exempel på frågor som inte stöds {#unsupported-questions}
 
