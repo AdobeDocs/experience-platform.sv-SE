@@ -2,9 +2,10 @@
 title: Översikt över API-tillägg för Snapchat Conversions
 description: Använd Snapchat-konverteringen för att skicka händelsedata på serversidan till Snap.
 last-substantial-update: 2025-01-20T00:00:00Z
-source-git-commit: 79e19b12dd39208827c215094b6c8ec9163d6624
+exl-id: 1c2d7243-5bcd-40a0-8515-9ab72613c5f3
+source-git-commit: 7cece312a2f019d48653dbd208cc8b7593ab0ee3
 workflow-type: tm+mt
-source-wordcount: '919'
+source-wordcount: '918'
 ht-degree: 0%
 
 ---
@@ -24,7 +25,7 @@ Skapa en [dataström](/help/tags/ui/event-forwarding/getting-started.md) och lä
 
 Ett **[!DNL Snapchat]** [Business Manager](https://business.snapchat.com/)-konto krävs för att använda konverterings-API:t. Business Manager hjälper annonsörer att integrera marknadsföringsaktiviteter från **[!DNL Snapchat]** i sina företag och med externa partner. Se artikeln **[!DNL Snapchat]** [Help center](https://businesshelp.snapchat.com/s/article/get-started?language=en_US) om hur du skapar ett Business Manager-konto om du inte har ett.
 
-En **[!DNL Snap Pixel]**(https://businesshelp.snapchat.com/s/article/pixel-website-install?language=en_US) måste konfigureras i Snapchat Ads Manager och du måste ha åtkomst för att kunna visa `Pixel ID`. `Pixel ID` finns i avsnittet **[!UICONTROL Events Manager]**(https://businesshelp.snapchat.com/s/article/events-manager?language=en_US).
+En [!DNL [Snap Pixel]](https://businesshelp.snapchat.com/s/article/pixel-website-install?language=en_US) måste konfigureras i Snapchat Ads Manager och du måste ha åtkomst för att kunna visa `Pixel ID`. `Pixel ID` finns i avsnittet [!UICONTROL [Events Manager]](https://businesshelp.snapchat.com/s/article/events-manager?language=en_US).
 
 Du behöver en statisk, långlivad API-token. Se [[!DNL Snapchat] Konverterings-API-dokumentationen](https://developers.snap.com/api/marketing-api/Conversions-API/GetStarted#access-token) för att hämta denna token.
 
@@ -190,7 +191,7 @@ När du har angett regelns namn, villkor och åtgärd enligt beskrivningen ovan,
 
 ![Bilden visar aktiverad regel](../../../images/extensions/server/snap/enabled_rule.png)
 
-Du kan nu publicera dessa ändringar i din egenskap. Mer information finns i dokumentationen om [publiceringsflödet](/help/tags/ui/publishing/overview.md)(https://experienceleague.adobe.com/en/docs/experience-platform/tags/publish/overview).
+Du kan nu publicera dessa ändringar i din egenskap. Mer information finns i dokumentationen om [publiceringsflödet](/help/tags/ui/publishing/overview.md).
 
 ## Felsökning {#troubleshoot}
 
