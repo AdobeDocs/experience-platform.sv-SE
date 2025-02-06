@@ -3,9 +3,9 @@ title: Exportera arrayobjekt från Real-Time CDP till molnlagringsmål
 type: Tutorial
 description: Lär dig hur du använder beräkningsfält för att exportera arrayer från Real-Time CDP till molnlagringsmål som strängar.
 exl-id: ff13d8b7-6287-4315-ba71-094e2270d039
-source-git-commit: a99fc58b8296b2b9ce6e30d14857529570cd3e8a
+source-git-commit: 6b182df562ea59d537050aa26e3c813fc2007e9f
 workflow-type: tm+mt
-source-wordcount: '1613'
+source-wordcount: '1689'
 ht-degree: 0%
 
 ---
@@ -72,6 +72,11 @@ Observera följande kända begränsningar som för närvarande gäller för den 
 ## Så här exporterar du beräknade fält {#how-to-export-calculated-fields}
 
 >[!CONTEXTUALHELP]
+>id="platform_destinations_export_arrays_maps_objects"
+>title="Aktivera hierarkiskt utdataschema"
+>abstract="<p> Växla den här inställningen **på** om du vill aktivera export av arrayer, kartor och objekt till JSON- eller Parquet-filer.</p><p>När du avaktiverar det här alternativet kan du använda alternativet för beräknade fält när du aktiverar målgrupper, men inte exportera arrayer, kartor och objekt till JSON- eller Parquet-filer</p>"
+
+>[!CONTEXTUALHELP]
 >id="platform_destinations_export_arrays_control"
 >title="Aktivera hierarkiskt utdataschema"
 >abstract="Aktivera det här alternativet om du vill exportera hierarkiska strukturer som arrayer."
@@ -79,7 +84,7 @@ Observera följande kända begränsningar som för närvarande gäller för den 
 >[!CONTEXTUALHELP]
 >id="platform_destinations_export_arrays_calculated_field_disabled"
 >title="Lägg till beräknade fält inaktiverat"
->abstract="Den här kontrollen är inaktiverad eftersom du valde att exportera platta strukturer vid anslutning till målet."
+>abstract="Den här kontrollen är inaktiverad eftersom du valde **Exportera arrayer, kartor, objekt** växla *på* när du konfigurerade den här målanslutningen. Om du vill använda beräkningsfält och de funktioner som är tillgängliga i dem skapar du en ny målanslutning med **Exportera arrayer, kartor, objekt** och *av*."
 
 Välj **[!UICONTROL Add calculated field]** i mappningssteget i aktiveringsarbetsflödet för molnlagringsmål.
 
