@@ -4,10 +4,10 @@ solution: Experience Platform
 title: Översikt över datainsamling
 description: Läs mer om de olika tekniker som används för att samla in data om kundupplevelser i Adobe Experience Platform.
 exl-id: 03ce5339-e68d-4adf-8c3c-82846a626dad
-source-git-commit: b6e084d2beed58339191b53d0f97b93943154f7c
+source-git-commit: b8332686043311c4dd3afeff12300fbd2827498c
 workflow-type: tm+mt
-source-wordcount: '489'
-ht-degree: 2%
+source-wordcount: '472'
+ht-degree: 3%
 
 ---
 
@@ -38,7 +38,7 @@ Den här guiden ger en introduktion på hög nivå till datainsamling och hur de
 
 ## Taggar, Web SDK och Mobile SDK
 
-Platform Web SDK och Platform Mobile SDK komprimerar och komprimerar alla Adobe-produktbibliotek till ett enda utvecklingspaket för webb- respektive mobilplattformar. Dessa kan implementeras med råkod eller med [tags](../tags/home.md) via användargränssnittet för datainsamling eller Adobe Experience Platform-gränssnittet.
+Platform Web SDK och Platform Mobile SDK komprimerar och komprimerar alla Adobe produktbibliotek till ett enda utvecklingsverktyg för webb- och mobilplattformar. Dessa kan implementeras med råkod eller med [tags](../tags/home.md) via användargränssnittet för datainsamling eller Adobe Experience Platform-gränssnittet.
 
 Komprimering av dessa bibliotek snabbar upp datainsamlingen och konsoliderar operationer till en enda ström från klientenheter till Platform Edge Network.
 
@@ -52,10 +52,6 @@ Dessutom är datastreams integrerade med flera plattformsfunktioner som säkerst
 
 ![Datastreams och Adobe solutions](./images/home/adobe-solutions.png)
 
->[!NOTE]
->
->En introduktion på hög nivå till Platform Edge Network finns i följande [interaktiva produktdemo](https://adobe-ideacloud.forgedx.com/adobe-adobe-edge-collection/adobe-experience-edge/public/mx?SUID=hgb1a48ICSCpbM6MzBYHbxnsh9DgjUy1).
-
 ## Vidarebefordran av händelser
 
 [Vidarebefordring av händelser](../tags/ui/event-forwarding/overview.md) kan utnyttja valfri dataström i Experience Platform, vilket gör att du kan omforma, berika och skicka data till andra mål än Adobe med extrem låg latens och utan att lägga till någon tredjepartskod till klientenheten.
@@ -64,7 +60,7 @@ Dessutom är datastreams integrerade med flera plattformsfunktioner som säkerst
 
 >[!NOTE]
 >
->Vidarebefordran av händelser är en betalfunktion som ingår i Adobe Real-time Customer Data Platform Connections, Prime eller Ultimate.
+>Vidarebefordran är en betalfunktion som ingår i Adobe Real-time Customer Data Platform Connections, Prime eller Ultimate.
 
 ## Nästa steg
 
