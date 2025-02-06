@@ -3,9 +3,9 @@ title: AI Assistant i Adobe Experience Platform produktdokumentation
 description: Kom igång med AI Assistant i Adobe Experience Platform.
 feature: AI Assistant
 exl-id: bcb86a41-d5d8-4c1a-a86d-79fa0c167bc7
-source-git-commit: 96e138cc12fdedaa73e3aaf69341806271413680
+source-git-commit: 9a10db0da1985c5ccaaeb84e040eea9e76ec1ae4
 workflow-type: tm+mt
-source-wordcount: '851'
+source-wordcount: '899'
 ht-degree: 1%
 
 ---
@@ -109,7 +109,15 @@ Titta på följande video för att lära dig mer om produktkunskaper i AI Assist
 
 >[!VIDEO](https://video.tv.adobe.com/v/3441024?learn=on)
 
-Mer information finns i [produktkunskap i AI Assistant](home.md#product-knowledge)
+Mer information finns i [produktkunskap i AI Assistant](home.md#product-knowledge).
+
+### Driftsinsikter i AI Assistant
+
+Titta på följande video och lär dig hur du kan använda AI Assistant för att få tillgång till dina operativa insikter och få en heltäckande bild av dina dataobjekt.
+
+>[!VIDEO](https://video.tv.adobe.com/v/3444031?learn=on&enablevpops)
+
+Mer information finns i [operativa insikter i AI Assistant](home.md#operational-insights).
 
 ### Använd AI Assistant för att minska starttiden
 
@@ -165,6 +173,7 @@ Läs följande för exempel på användning av AI Assistant:
 * [Tydligare målgrupper och optimerade marknadsföringsåtgärder](https://experienceleaguecommunities.adobe.com/t5/adobe-experience-platform-blogs/ai-assistant-helps-optimize-marketing-operations-by-de/ba-p/696002)
 * [Kontrollera beroenden och minimera risken under dataperifieringar](https://experienceleaguecommunities.adobe.com/t5/adobe-experience-platform-blogs/ai-assistant-minimizes-risk-during-data-updates-by-checking/ba-p/713364)
 * [Upptäck och distribuera nya funktioner snabbare](https://experienceleaguecommunities.adobe.com/t5/adobe-experience-platform-blogs/discover-and-deploy-new-features-faster-with-ai-assistant-in/ba-p/731125)
+* [Revolutionera kundsupporten med AI Assistant](https://experienceleaguecommunities.adobe.com/t5/adobe-experience-platform-blogs/ai-assistant-in-adobe-experience-platform-revolutionizing/ba-p/735416)
 
 >[!TAB Ytterligare videoinnehåll]
 

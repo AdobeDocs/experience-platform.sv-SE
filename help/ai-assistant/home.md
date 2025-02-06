@@ -2,9 +2,9 @@
 title: AI Assistant i Adobe Experience Platform - översikt
 description: Lär dig mer om AI Assistant, dess nyanser och användningsexempel, och hur du kan använda det för att snabba upp arbetsflödet med Adobe Experience Platform och Real-time Customer Data Platform.
 exl-id: cfd4ac22-fff3-4b50-bbc2-85b6328f603c
-source-git-commit: 1910ac68be2c154467d250a614d0d13d62ef6875
+source-git-commit: 9a10db0da1985c5ccaaeb84e040eea9e76ec1ae4
 workflow-type: tm+mt
-source-wordcount: '938'
+source-wordcount: '950'
 ht-degree: 8%
 
 ---
@@ -91,6 +91,10 @@ Du kan ställa frågor till AI Assistant om dina operativa insikter i följande 
 {style="table-layout:auto"}
 
 När det gäller frågor om driftsinsikter kanske svaren inte speglar det aktuella läget för användargränssnittet. De data som stödjer dessa frågor uppdateras en gång var 24:e timme. De ändringar som användare gör i Real-Time CDP under dagtid synkroniseras till exempel med datalager på natten och blir sedan tillgängliga för användarfrågor på morgonen. Du måste logga in i en sandlåda för att få veta mer om specifika data som är relaterade till objekt.
+
+I följande video finns mer information om AI Assistant-driftsinsikter:
+
+>[!VIDEO](https://video.tv.adobe.com/v/3444031?learn=on&enablevpops)
 
 ### Funktionsomfång {#feature-scope}
 
