@@ -2,9 +2,9 @@
 title: Vanliga frågor om beräknade attribut
 description: Få svar på vanliga frågor om hur du använder beräknade attribut.
 exl-id: a4d3c06a-d135-453b-9637-4f98e62737a7
-source-git-commit: e300e57df998836a8c388511b446e90499185705
+source-git-commit: 7d515401eb49ffd2ad5cf0bd074896b274c4fb05
 workflow-type: tm+mt
-source-wordcount: '1083'
+source-wordcount: '1091'
 ht-degree: 0%
 
 ---
@@ -49,7 +49,7 @@ Eftersom beräknade attribut skapas med Experience Event-fält och finns i ett P
 
 ## Finns det några begränsningar för hur många beräknade attribut jag kan skapa?
 
-Ja, det finns en gräns för hur många beräknade attribut du kan skapa. Se produktbeskrivningen eller kontakta kontogruppen på Adobe för mer information.
+Ja, det finns en gräns för hur många beräknade attribut du kan skapa. Den här gränsen gäller endast för **aktiva** beräknade attribut. Se produktbeskrivningen eller kontakta kontogruppen på Adobe för mer information.
 
 ## Kommer det att påverka nedladdningen av ett beräknat attribut?
 

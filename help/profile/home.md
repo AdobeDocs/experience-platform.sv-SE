@@ -2,16 +2,16 @@
 title: Kundprofilöversikt i realtid
 description: Kundprofilen i realtid sammanfogar data från olika källor och ger åtkomst till dessa data i form av enskilda kundprofiler och relaterade tidsseriehändelser. Med den här funktionen kan marknadsförarna skapa samordnade, enhetliga och relevanta upplevelser med sina målgrupper i flera kanaler.
 exl-id: c93d8d78-b215-4559-a806-f019c602c4d2
-source-git-commit: e52eb90b64ae9142e714a46017cfd14156c78f8b
+source-git-commit: 7d515401eb49ffd2ad5cf0bd074896b274c4fb05
 workflow-type: tm+mt
 source-wordcount: '1821'
-ht-degree: 0%
+ht-degree: 1%
 
 ---
 
 # [!DNL Real-Time Customer Profile] översikt
 
-Med Adobe Experience Platform kan ni skapa samordnade, enhetliga och relevanta upplevelser för era kunder oavsett var och när de interagerar med ert varumärke. Med [!DNL Real-Time Customer Profile] kan du se en helhetsbild av varje enskild kund genom att kombinera data från flera kanaler, inklusive online, offline, CRM och tredje part. Med [!DNL Profile] kan du konsolidera dina kunddata i en enhetlig vy som ger ett åtgärdbart, tidsstämplat konto för varje kundinteraktion. Den här översikten hjälper dig att förstå rollen och användningen av [!DNL Real-Time Customer Profile] i [!DNL Experience Platform].
+Med Adobe Experience Platform kan du skapa samordnade, konsekventa och relevanta upplevelser för dina kunder, oavsett var eller när de interagerar med ditt varumärke. Med [!DNL Real-Time Customer Profile] kan du se en helhetsbild av varje enskild kund genom att kombinera data från flera kanaler, inklusive online, offline, CRM och tredje part. Med [!DNL Profile] kan du konsolidera dina kunddata i en enhetlig vy som ger ett åtgärdbart, tidsstämplat konto för varje kundinteraktion. Den här översikten hjälper dig att förstå rollen och användningen av [!DNL Real-Time Customer Profile] i [!DNL Experience Platform].
 
 ## [!DNL Profile] i Experience Platform
 
@@ -49,7 +49,7 @@ Profilarkivet använder en Microsoft Azure Cosmos DB-infrastruktur och Platform 
 
 ### Profilskyddsutkast
 
-Experience Platform tillhandahåller en serie skyddsutkast som hjälper dig att undvika att skapa [XDM-scheman (Experience Data Model)](../xdm/home.md) som kundprofilen i realtid inte stöder. Detta inkluderar mjuka gränser som resulterar i försämrade prestanda, samt hårda gränser som resulterar i fel och systemfel. Mer information, inklusive en lista över riktlinjer och exempel på användningsfall, finns i dokumentationen för [profilskyddsförslag](guardrails.md).
+Experience Platform tillhandahåller en serie skyddsutkast som hjälper dig att undvika att skapa [XDM-scheman (Experience Data Model)](../xdm/home.md) som kundprofilen i realtid inte stöder. Detta inkluderar mjuka gränser som resulterar i försämrade prestanda samt hårda gränser som resulterar i fel och systemfel. Mer information, inklusive en lista över riktlinjer och exempel på användningsfall, finns i dokumentationen för [profilskyddsförslag](guardrails.md).
 
 ### Kontrollpanel för profil {#profile-dashboard}
 
