@@ -2,9 +2,9 @@
 title: Anslut datalandningszonen till plattformen med användargränssnittet
 description: Lär dig hur du skapar en källanslutning för en Data Landing Zone med hjälp av användargränssnittet för plattformen.
 exl-id: 653c9958-5d89-4b0c-af3d-a3e74aa47a08
-source-git-commit: 22f3b76c02e641d2f4c0dd7c0e5cc93038782836
+source-git-commit: cdcce07a5adf08bf9d5e6a08d6bc965d37458a5d
 workflow-type: tm+mt
-source-wordcount: '710'
+source-wordcount: '737'
 ht-degree: 0%
 
 ---
@@ -27,6 +27,10 @@ Den här självstudiekursen kräver en fungerande förståelse av följande komp
 * [Sandlådor](../../../../../sandboxes/home.md): Experience Platform tillhandahåller virtuella sandlådor som partitionerar en enda plattformsinstans till separata virtuella miljöer för att utveckla och utveckla program för digitala upplevelser.
 
 ## Hämta filer från [!DNL Data Landing Zone] till plattformen
+
+>[!IMPORTANT]
+>
+> Om du vill ansluta till källan måste du ha åtkomstkontrollsbehörigheterna **[!UICONTROL View Sources]** och **[!UICONTROL Manage Sources]**. Läs [åtkomstkontrollsöversikten](../../../../../access-control/home.md) eller kontakta produktadministratören för att få den behörighet som krävs.
 
 I plattformsgränssnittet väljer du **[!UICONTROL Sources]** i den vänstra navigeringen för att komma åt arbetsytan i [!UICONTROL Sources]. På skärmen [!UICONTROL Catalog] visas en mängd olika källor som du kan skapa ett konto med.
 

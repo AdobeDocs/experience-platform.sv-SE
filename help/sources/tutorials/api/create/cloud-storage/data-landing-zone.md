@@ -2,9 +2,9 @@
 title: Anslut Data Landing Zone till Adobe Experience Platform med API:t för Flow Service
 description: Lär dig hur du ansluter Adobe Experience Platform till Data Landing Zone med API:t för Flow Service.
 exl-id: bdb60ed3-7c63-4a69-975a-c6f1508f319e
-source-git-commit: 527e62e5fb90bc32ef3788f261e0a24b680f29c0
+source-git-commit: 1d4dd60180ef2a3cbf6dcd565c2f09dd575716b9
 workflow-type: tm+mt
-source-wordcount: '1375'
+source-wordcount: '1408'
 ht-degree: 1%
 
 ---
@@ -31,6 +31,10 @@ Den här självstudien kräver även att du läser guiden [komma igång med plat
 I följande avsnitt finns ytterligare information som du behöver känna till för att kunna skapa en [!DNL Data Landing Zone]-källanslutning med API:t [!DNL Flow Service].
 
 ## Hämta en användbar landningszon
+
+>[!IMPORTANT]
+>
+>Du måste ha åtkomstkontrollbehörighet **[!UICONTROL Manage Sources]** för att kunna använda API:erna för [!DNL Data Landing Zone] och hämta `type=user_drop_zone`. Mer information finns i [åtkomstkontrollsöversikten](../../../../../access-control/home.md) eller kontakta produktadministratören för att få den behörighet som krävs.
 
 Det första steget i att använda API:er för att få åtkomst till [!DNL Data Landing Zone] är att göra en GET-begäran till `/landingzone`-slutpunkten för [!DNL Connectors] API:t och samtidigt tillhandahålla `type=user_drop_zone` som en del av din begäranderubrik.
 

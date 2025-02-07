@@ -2,9 +2,9 @@
 title: Data Landing Zone Source
 description: Lär dig ansluta Data Landing Zone till Adobe Experience Platform
 exl-id: bdc10095-7de4-4183-bfad-a7b5c89197e3
-source-git-commit: b9a409db2f1aee852faf9038a25236b78f76d4dd
+source-git-commit: 1d4dd60180ef2a3cbf6dcd565c2f09dd575716b9
 workflow-type: tm+mt
-source-wordcount: '1282'
+source-wordcount: '1312'
 ht-degree: 0%
 
 ---
@@ -299,6 +299,12 @@ Navigera slutligen till den genererade URL:en för att logga in direkt på AWS C
 
 ## Anslut [!DNL Data Landing Zone] till Experience Platform
 
+>[!IMPORTANT]
+>
+>- Om du vill ansluta till källan måste du ha åtkomstkontrollsbehörigheterna **[!UICONTROL View Sources]** och **[!UICONTROL Manage Sources]**. Mer information finns i [åtkomstkontrollsöversikten](../../../access-control/home.md) eller kontakta produktadministratören för att få den behörighet som krävs.
+>
+>- Privata länkar stöds för närvarande inte vid anslutning till Experience Platform med [!DNL Data Landing Zone]. De enda metoder som stöds för åtkomst är de metoder som anges [här](#manage-the-contents-of-your-data-landing-zone).
+
 Dokumentationen nedan innehåller information om hur du hämtar data från din [!DNL Data Landing Zone]-behållare till Adobe Experience Platform med hjälp av API:er eller användargränssnittet.
 
 ### Använda API:er
@@ -310,8 +316,4 @@ Dokumentationen nedan innehåller information om hur du hämtar data från din [
 
 - [Anslut [!DNL Data Landing Zone] till plattformen med användargränssnittet](../../tutorials/ui/create/cloud-storage/data-landing-zone.md)
 - [Skapa ett dataflöde för en molnlagringsanslutning i användargränssnittet](../../tutorials/ui/dataflow/batch/cloud-storage.md)
-
->[!IMPORTANT]
->
->Privata länkar stöds för närvarande inte vid anslutning till Experience Platform med [!DNL Data Landing Zone]. De enda metoder som stöds för åtkomst är de metoder som anges [här](#manage-the-contents-of-your-data-landing-zone).
 
