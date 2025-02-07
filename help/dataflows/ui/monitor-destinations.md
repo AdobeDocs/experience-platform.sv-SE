@@ -4,10 +4,10 @@ solution: Experience Platform
 title: Övervaka dataflöden för mål i användargränssnittet
 type: Tutorial
 exl-id: 8eb7bb3c-f2dc-4dbc-9cf5-3d5d3224f5f1
-source-git-commit: 25dc27d890cb2e0e23f8fa797ac9edea929164fd
+source-git-commit: f10706fbbde9cef112460f5431af24d09b0e0460
 workflow-type: tm+mt
-source-wordcount: '3470'
-ht-degree: 0%
+source-wordcount: '3467'
+ht-degree: 1%
 
 ---
 
@@ -97,15 +97,15 @@ Varje enskild dataflödeskörning visar följande information:
 
   >[!IMPORTANT]
   >
-  > Från och med oktober 2024 lanserar Adobe en uppdatering som ökar rapporteringsnoggrannheten för direktuppspelningsdestinationer. Den här förbättringen ger bättre anpassning mellan Experience Platform och målplattformarna.
+  > Från och med oktober 2024 lanserar Adobe en uppdatering som ökar rapporteringsnoggrannheten för strömningsmål. Den här förbättringen ger bättre anpassning mellan Experience Platform och målplattformarna.
   >
   > Före den här uppdateringen innehöll **[!UICONTROL Identities failed]** alla aktiveringsförsök. Efter den här uppdateringen inkluderas endast det senaste aktiveringsförsöket i det totala antalet.
   > 
   > Den här förbättringen gäller för närvarande för [Google kundmatchningsmålet](../../destinations/catalog/advertising/google-customer-match.md), men kommer gradvis att lanseras för andra direktuppspelningsmål för Experience Platform.
-  > Efter den här förbättringen kan användare av [Google kundmatchningsmål](../../destinations/catalog/advertising/google-customer-match.md) se en förväntad minskning av antalet **[!UICONTROL Identities failed]**.
+  > Efter förbättringen kan användare av [Google Customer Match-mål](../../destinations/catalog/advertising/google-customer-match.md) se färre **[!UICONTROL Identities failed]**, vilket är helt normalt.
 
 
-- **[!UICONTROL Activation rate]**: Procentandelen mottagna identiteter som antingen har aktiverats eller hoppats över. Följande formel visar hur det här värdet beräknas:
+- **[!UICONTROL Activation rate]**: Procentandel mottagna identiteter som har aktiverats. Följande formel visar hur det här värdet beräknas:
   ![Formel för aktiveringsfrekvens.](../assets/ui/monitor-destinations/activation-rate-formula.png)
 - **[!UICONTROL Status]**: Representerar det tillstånd som dataflödet är i: [!UICONTROL Completed] eller [!UICONTROL Processing]. [!UICONTROL Completed] betyder att alla identiteter för motsvarande dataflödeskörning exporterades inom en timme. [!UICONTROL Processing] betyder att dataflödeskörningen inte har slutförts än.
 
