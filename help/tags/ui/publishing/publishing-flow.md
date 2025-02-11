@@ -14,7 +14,7 @@ ht-degree: 3%
 >[!CONTEXTUALHELP]
 >id="platform_tags_publishing_flow"
 >title="Publiceringsflöde"
->abstract="Förstå vilka nivåer av användarbehörigheter som krävs för publiceringsflödet, inklusive Utveckla, Godkänn och Publish-behörigheter."
+>abstract="Förstå nivåerna på de användarbehörigheter som krävs för publiceringsflödet, inklusive Utveckla, Godkänn och Publicera."
 
 >[!NOTE]
 >
@@ -68,7 +68,7 @@ I följande tabell visas de tillgängliga åtgärderna för ett bibliotek i läg
 | [!UICONTROL Submit for Approval] | Ta bort tilldelningen av biblioteket från utvecklingsmiljön och flytta biblioteket till kolumnen [!UICONTROL Submitted] för en användare med godkännandebehörighet att arbeta med. Den senaste versionen av biblioteket måste slutföras för att det här alternativet ska kunna aktiveras. |
 | [!UICONTROL Submit & Build to Staging] | Detta kan bara utföras av en användare med både utvecklings- och godkännanderättigheter. Den här åtgärden tar bort tilldelningen av biblioteket från utvecklingsmiljön, flyttar biblioteket till tillståndet [!UICONTROL Submitted] och skapar biblioteket till mellanlagringsmiljön. Den senaste versionen av biblioteket måste slutföras för att det här alternativet ska kunna aktiveras. |
 | [!UICONTROL Approve for Publishing] | Detta kan bara utföras av en användare med både utvecklings- och godkännanderättigheter. Den här åtgärden tar bort tilldelningen av biblioteket från utvecklingsmiljön och flyttar det till läget [!UICONTROL Approved], vilket innebär att mellanlagringsmiljön och läget [!UICONTROL Submitted] hoppas över helt. Den senaste versionen av biblioteket måste slutföras för att det här alternativet ska kunna aktiveras. |
-| [!UICONTROL Approve & Publish to Production] | Detta kan bara utföras av en användare med behörigheterna Framkalla, Godkänn och Publish. Den här åtgärden frigör biblioteket från utvecklingsmiljön, flyttar det till tillståndet [!UICONTROL Approved] och publicerar det i produktion. När produktionsbygget har slutförts flyttas biblioteket till tillståndet [!UICONTROL Published]. Den senaste versionen av biblioteket måste slutföras för att det här alternativet ska kunna aktiveras. |
+| [!UICONTROL Approve & Publish to Production] | Detta kan bara utföras av en användare med behörigheterna Framkalla, Godkänn och Publicera. Den här åtgärden frigör biblioteket från utvecklingsmiljön, flyttar det till tillståndet [!UICONTROL Approved] och publicerar det i produktion. När produktionsbygget har slutförts flyttas biblioteket till tillståndet [!UICONTROL Published]. Den senaste versionen av biblioteket måste slutföras för att det här alternativet ska kunna aktiveras. |
 | [!UICONTROL Delete] | Ta bort biblioteket från systemet. Detta tar inte bort bygget från miljön. |
 
 ### [!UICONTROL Submitted] {#submitted}
@@ -82,7 +82,7 @@ I följande tabell visas de tillgängliga åtgärderna för ett bibliotek i läg
 | [!UICONTROL Open] | Visa innehållet i biblioteket. Ändringar tillåts inte för bibliotek utanför kolumnen [!UICONTROL Development]. Om ändringar behövs bör biblioteket avvisas så ändringar kan göras i [!UICONTROL Development]. |
 | [!UICONTROL Build for Staging] | Bygg biblioteket i testmiljön för distribution. |
 | [!UICONTROL Approve for Publishing] | Flytta biblioteket till kolumnen [!UICONTROL Approved] för en användare med publiceringsbehörigheter att arbeta med. |
-| [!UICONTROL Approve & Publish to Production] | Detta kan bara utföras av en användare med både behörigheten Godkänn och Publish. Den här åtgärden frigör biblioteket från mellanlagringsmiljön, flyttar det till tillståndet [!UICONTROL Approved] och publicerar det i produktion. När produktionsbygget har slutförts flyttas biblioteket till tillståndet [!UICONTROL Published]. Detta kan utföras med vår utan att du lyckas bygga i staging-miljön. |
+| [!UICONTROL Approve & Publish to Production] | Detta kan bara utföras av en användare med både behörigheten Godkänn och Publicera. Den här åtgärden frigör biblioteket från mellanlagringsmiljön, flyttar det till tillståndet [!UICONTROL Approved] och publicerar det i produktion. När produktionsbygget har slutförts flyttas biblioteket till tillståndet [!UICONTROL Published]. Detta kan utföras med vår utan att du lyckas bygga i staging-miljön. |
 | [!UICONTROL Reject] | Ta bort tilldelningen av biblioteket från mellanlagringsmiljön och flytta biblioteket tillbaka till kolumnen [!UICONTROL Development] för ytterligare ändringar. |
 
 ### [!UICONTROL Approved] {#approved}

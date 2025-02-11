@@ -1,9 +1,9 @@
 ---
-keywords: Experience Platform;hem;populära ämnen;ui;XDM;XDM system;experience data model;Experience data model;experience data model;data model;data model;schema register;schema Registry;schema;schema;scheman;scheman;scheman;scheman;create;data type;data types;
+keywords: Experience Platform;home;populära topics;ui;XDM;XDM system;experience data model;Experience data model;experience data model;data model;data model;schema register;schema Registry;schema;schema;scheman;scheman;scheman;scheman;create;data type;data types;
 solution: Experience Platform
 title: Skapa och redigera datatyper med användargränssnittet
 type: Tutorial
-description: Lär dig hur du skapar och redigerar datatyper i användargränssnittet i Experience Platform.
+description: Lär dig hur du skapar och redigerar datatyper i Experience Platform användargränssnitt.
 exl-id: 2c917154-c425-463c-b8c8-04ba37d9247b
 source-git-commit: c04e5a49f2a4e90345ca20ecd0547d02b5004fcf
 workflow-type: tm+mt
@@ -17,7 +17,7 @@ ht-degree: 0%
 >[!CONTEXTUALHELP]
 >id="platform_schemas_datatype_filter"
 >title="Standarddatatypsfilter eller -filter"
->abstract="Listan med tillgängliga datatyper filtreras i förväg baserat på hur de skapades. Välj alternativknappen för att välja mellan alternativen Standard och Egen. Alternativet Standard visar entiteter som skapats av Adobe och alternativet Anpassad visar entiteter som skapats i din organisation. Mer information om hur du skapar och redigerar datatyper finns i dokumentationen."
+>abstract="Listan med tillgängliga datatyper filtreras i förväg baserat på hur de skapades. Välj alternativknappen för att välja mellan alternativen Standard och Egen. Alternativet Standard visar entiteter som skapats av Adobe och alternativet Egen visar entiteter som skapats i din organisation. Mer information om hur du skapar och redigerar datatyper finns i dokumentationen."
 
 I Experience Data Model (XDM) är datatyper återanvändbara fält som innehåller flera underfält. Även om datatyperna liknar schemafältgrupper på så sätt att de medger konsekvent användning av en flerfältsstruktur, är datatyperna mer flexibla eftersom de kan inkluderas var som helst i schemastrukturen medan fältgrupper bara kan läggas till på rotnivån.
 
@@ -31,7 +31,7 @@ I den här självstudiekursen beskrivs stegen för att skapa och redigera anpass
 
 ## Förhandskrav {#prerequisites}
 
-Handboken kräver en fungerande förståelse för XDM System. Se [XDM-översikten](../../home.md) för en introduktion till XDM-rollen i ekosystemet Experience Platform och [grunderna i schemakomposition](../../schema/composition.md) för hur datatyper bidrar till XDM-scheman.
+Handboken kräver en fungerande förståelse för XDM System. Se [XDM-översikten](../../home.md) för en introduktion till XDM-rollen i Experience Platform-ekosystemet och [grunderna i schemakomposition](../../schema/composition.md) för hur datatyper bidrar till XDM-scheman.
 
 Även om det inte krävs för den här guiden rekommenderar vi att du också följer självstudiekursen om att [komponera ett schema i användargränssnittet](../../tutorials/create-schema-ui.md) för att bekanta dig med de olika funktionerna i [!DNL Schema Editor].
 

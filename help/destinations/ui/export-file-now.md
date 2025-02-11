@@ -1,7 +1,7 @@
 ---
-title: Exportera filer on demand till gruppmål med hjälp av användargränssnittet i Experience Platform
+title: Exportera filer on demand till gruppmål med hjälp av Experience Platform UI
 type: Tutorial
-description: Lär dig hur du exporterar filer på begäran till gruppmål med hjälp av användargränssnittet i Experience Platform.
+description: Lär dig hur du exporterar filer på begäran till gruppmål med hjälp av Experience Platform användargränssnitt.
 exl-id: 0cbe5089-b73d-4584-8451-2fc34d47c357
 source-git-commit: 47d0e2a7fae973edfda035d046f66c88d34bf8b2
 workflow-type: tm+mt
@@ -11,7 +11,7 @@ ht-degree: 0%
 ---
 
 
-# Exportera filer on demand till gruppmål med hjälp av användargränssnittet i Experience Platform
+# Exportera filer on demand till gruppmål med hjälp av Experience Platform UI
 
 >[!IMPORTANT]
 > 
@@ -22,13 +22,13 @@ ht-degree: 0%
 >[!CONTEXTUALHELP]
 >id="platform_destinations_activationchaining_activatenow"
 >title="Exportera filen nu"
->abstract="Välj den här kontrollen om du vill leverera en fullständig filexport utöver tidigare schemalagda exporter. Filexporten utlöses omedelbart och det senaste resultatet från segmentering i Experience Platform plockas upp."
+>abstract="Välj den här kontrollen om du vill leverera en fullständig filexport utöver tidigare schemalagda exporter. Filexporten utlöses omedelbart och det senaste resultatet från Experience Platform segmentering hämtas."
 
 I den här artikeln beskrivs hur du använder användargränssnittet i Experience Platform för att exportera filer på begäran till batchmål som [molnlagring](/help/destinations/catalog/cloud-storage/overview.md) och [e-postmarknadsföring](/help/destinations/catalog/email-marketing/overview.md) .
 
-Kontrollen **[!UICONTROL Export file now]** gör att du kan exportera en fullständig fil utan att avbryta det aktuella exportschemat för en tidigare schemalagd målgrupp. Denna export sker utöver tidigare schemalagd export och ändrar inte exportfrekvensen för målgruppen. Filexporten utlöses omedelbart och det senaste resultatet från segmentering i Experience Platform plockas upp.
+Kontrollen **[!UICONTROL Export file now]** gör att du kan exportera en fullständig fil utan att avbryta det aktuella exportschemat för en tidigare schemalagd målgrupp. Denna export sker utöver tidigare schemalagd export och ändrar inte exportfrekvensen för målgruppen. Filexporten utlöses omedelbart och det senaste resultatet från Experience Platform segmentering hämtas.
 
-Du kan också använda Experience Platform API:er för detta ändamål. Läs om hur du [aktiverar målgrupper på begäran till batchmål via API:t för ad hoc-aktivering](/help/destinations/api/ad-hoc-activation-api.md).
+Du kan också använda Experience Platform API:er för detta. Läs om hur du [aktiverar målgrupper på begäran till batchmål via API:t för ad hoc-aktivering](/help/destinations/api/ad-hoc-activation-api.md).
 
 ## Förhandskrav {#prerequisites}
 
@@ -77,5 +77,5 @@ När du använder kontrollen **[!UICONTROL Export file now]** kan du få något 
 
 ## Relaterad information {#related-information}
 
-* [Aktivera målgrupper för batchdestinationer on-demand med hjälp av Experience Platform API:er](/help/destinations/api/ad-hoc-activation-api.md)
+* [Aktivera målgrupper för batchdestinationer on demand med Experience Platform API:er](/help/destinations/api/ad-hoc-activation-api.md)
 * [Aktivera målgruppsdata för att batchprofilera exportmål](/help/destinations/ui/activate-batch-profile-destinations.md)

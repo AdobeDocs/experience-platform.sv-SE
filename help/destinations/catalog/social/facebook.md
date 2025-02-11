@@ -1,6 +1,6 @@
 ---
-keywords: facebook-anslutning;facebook-anslutning;facebook-mål;facebook;instagram;messenger;facebook messenger
-title: Facebook
+keywords: Facebook-anslutning;facebook-anslutning;facebook-mål;facebook;instagram;messenger;facebook messenger
+title: Facebook-anslutning
 description: Aktivera profiler för era Facebook-kampanjer för målgruppsanpassning, personalisering och nedtryckning baserat på hashad-e-post.
 exl-id: 51e8c8f0-5e79-45b9-afbc-110bae127f76
 source-git-commit: 83e2c014e62509fee2843505d7975cde368665ef
@@ -54,7 +54,7 @@ I det här avsnittet beskrivs vilka typer av målgrupper du kan exportera till d
 
 | Målgruppsursprung | Stöds | Beskrivning |
 |---------|----------|----------|
-| [!DNL Segmentation Service] | ✓ | Publiker som genererats via Experience Platform [segmenteringstjänsten](../../../segmentation/home.md). |
+| [!DNL Segmentation Service] | ✓ | Publiker som genererats via Experience Platform [segmenteringstjänst](../../../segmentation/home.md). |
 | Anpassade överföringar | ✓ | Publikerna [importerade](../../../segmentation/ui/audience-portal.md#import-audience) till Experience Platform från CSV-filer. |
 
 {style="table-layout:auto"}
@@ -70,20 +70,20 @@ Se tabellen nedan för information om exporttyp och frekvens för destinationen.
 
 {style="table-layout:auto"}
 
-## Krav för facebook-konton {#facebook-account-prerequisites}
+## Krav för Facebook-konto {#facebook-account-prerequisites}
 
 Innan du kan skicka dina målgrupper till [!DNL Facebook] måste du kontrollera att du uppfyller följande krav:
 
 * Ditt [!DNL Facebook]-användarkonto måste ha fullständig åtkomst till [!DNL Facebook Business Account] som äger det annonskonto som du använder.
 * Ditt [!DNL Facebook]-användarkonto måste ha behörigheten **[!DNL Manage campaigns]** aktiverad för annonskontot som du tänker använda.
-* Affärskontot **Adobe Experience Cloud** måste läggas till som annonspartner i [!DNL Facebook Ad Account]. Använd `business ID=206617933627973`. Mer information finns i [Lägg till partner i din Business Manager](https://www.facebook.com/business/help/1717412048538897) i Facebook-dokumentationen.
+* Affärskontot **Adobe Experience Cloud** måste läggas till som annonspartner i [!DNL Facebook Ad Account]. Använd `business ID=206617933627973`. Mer information finns i [Lägg till partner i din Business Manager](https://www.facebook.com/business/help/1717412048538897) i dokumentationen för Facebook.
   >[!IMPORTANT]
   >
   > När du konfigurerar behörigheter för Adobe Experience Cloud måste du aktivera behörigheten **Hantera kampanjer**. Behörighet krävs för integreringen av [!DNL Adobe Experience Platform].
 * Läs och signera [!DNL Facebook Custom Audiences] användarvillkoren. Om du vill göra det går du till `https://business.facebook.com/ads/manage/customaudiences/tos/?act=[accountID]&business_id=206617933627973`, där `accountID` är din [!DNL Facebook Ad Account ID]. Kontrollera att avsnittet `business_id=206617933627973` finns i URL:en när du signerar användarvillkoren.
   >[!IMPORTANT]
   >
-  >När du signerar [!DNL Facebook Custom Audiences]-användarvillkoren måste du använda samma användarkonto som du använde för att autentisera i Facebook API.
+  >När du signerar [!DNL Facebook Custom Audiences]-användarvillkoren måste du se till att använda samma användarkonto som du använde för att autentisera i Facebook API.
 
 ## Krav för ID-matchning {#id-matching-requirements}
 
@@ -104,9 +104,9 @@ Det finns två metoder för att aktivera telefonnummer i [!DNL Facebook]:
 
 ## Krav för e-posthashning {#email-hashing-requirements}
 
-Du kan hash-koda e-postadresser innan du importerar dem till Adobe Experience Platform, eller använda e-postadresser i klartext i Experience Platform, och få [!DNL Platform] hash-kodade adresser när de aktiveras.
+Du kan hash-koda e-postadresser innan du importerar dem till Adobe Experience Platform, eller använda e-postadresser som är tydliga i Experience Platform, och få [!DNL Platform] hash-kodade adresser när de aktiveras.
 
-Om du vill veta mer om hur du kan importera e-postadresser i Experience Platform kan du läsa översikten över [gruppimporten](/help/ingestion/batch-ingestion/overview.md) och översikten över [direktuppspelningsuppläsningen](/help/ingestion/streaming-ingestion/overview.md).
+Om du vill veta mer om hur du kan importera e-postadresser i Experience Platform kan du läsa översikten över [gruppimporten](/help/ingestion/batch-ingestion/overview.md) och översikten över [direktuppspelningsinläsningen](/help/ingestion/streaming-ingestion/overview.md).
 
 Om du väljer att hash-koda e-postadresserna själv måste du se till att uppfylla följande krav:
 
@@ -127,7 +127,7 @@ Om du väljer att hash-koda e-postadresserna själv måste du se till att uppfyl
 
 ## Använda anpassade namnutrymmen {#custom-namespaces}
 
-Innan du kan använda namnområdet `Extern_ID` för att skicka data till [!DNL Facebook] måste du synkronisera dina egna identifierare med [!DNL Facebook Pixel]. Mer information finns i [Facebook officiella dokumentation](https://developers.facebook.com/docs/marketing-api/audiences/guides/custom-audiences/#external_identifiers).
+Innan du kan använda namnområdet `Extern_ID` för att skicka data till [!DNL Facebook] måste du synkronisera dina egna identifierare med [!DNL Facebook Pixel]. Mer information finns i den officiella dokumentationen för [Facebook](https://developers.facebook.com/docs/marketing-api/audiences/guides/custom-audiences/#external_identifiers).
 
 ## Anslut till målet {#connect}
 
@@ -143,18 +143,18 @@ I videon nedan visas också stegen för att konfigurera ett [!DNL Facebook]-mål
 
 >[!NOTE]
 >
->Användargränssnittet i Experience Platform uppdateras ofta och kan ha ändrats sedan videon spelades in. Den senaste informationen finns i [självstudiekursen för målkonfiguration](../../ui/connect-destination.md).
+>Experience Platform användargränssnitt uppdateras ofta och kan ha ändrats sedan den här videon spelades in. Den senaste informationen finns i [självstudiekursen för målkonfiguration](../../ui/connect-destination.md).
 
 ### Autentisera till mål {#authenticate}
 
 1. Hitta Facebook-målet i målkatalogen och välj **[!UICONTROL Set Up]**.
 2. Välj **[!UICONTROL Connect to destination]**.
-   ![Autentisera till Facebook-steg som visas i aktiveringsarbetsflödet.](/help/destinations/assets/catalog/social/facebook/authenticate-facebook-destination.png)
-3. Ange dina Facebook-autentiseringsuppgifter och välj **Logga in**.
+   ![Autentisera till Facebook-steget som visas i aktiveringsarbetsflödet.](/help/destinations/assets/catalog/social/facebook/authenticate-facebook-destination.png)
+3. Ange dina inloggningsuppgifter för Facebook och välj **Logga in**.
 
 ### Uppdatera autentiseringsuppgifter {#refresh-authentication-credentials}
 
-Facebook-tokens upphör var 60:e dag. När token har gått ut slutar dataexporten till målet att fungera. Du kan förhindra detta genom att utföra följande steg:
+Facebook-tokens går ut var 60:e dag. När token har gått ut slutar dataexporten till målet att fungera. Du kan förhindra detta genom att utföra följande steg:
 
 1. Navigera till **[!UICONTROL Destinations]** > **[!UICONTROL Accounts]**
 2. (Valfritt) Använd de tillgängliga filtren på sidan om du bara vill visa Facebook-konton.
@@ -192,7 +192,7 @@ Välj **[!UICONTROL Next]** när du är klar med att ange information för måla
 >[!CONTEXTUALHELP]
 >id="platform_destinations_activate_facebook_originofaudience"
 >title="Målgruppens ursprung"
->abstract="Välj hur kunddata i målgruppen ursprungligen samlades in. Data visas i Facebook när en användare anges i segmentet"
+>abstract="Välj hur kunddata i målgruppen ursprungligen samlades in. Data visas på Facebook när en användare är en målanvändare i segmentet"
 
 >[!CONTEXTUALHELP]
 >id="platform_destinations_activate_facebook_originofaudience_customers"
@@ -218,7 +218,7 @@ Se [Aktivera målgruppsdata för att direktuppspela målgruppsexportmål](../../
 
 I steget **[!UICONTROL Segment schedule]** måste du ange [!UICONTROL Origin of audience] när du skickar målgrupper till [!DNL Facebook Custom Audiences].
 
-![Audience-listrutans ursprung visas i Facebook aktiveringssteg.](../../assets/catalog/social/facebook/facebook-origin-audience.png)
+![Audience-listrutans ursprung visas i Facebook-aktiveringssteget.](../../assets/catalog/social/facebook/facebook-origin-audience.png)
 
 ### Mappningsexempel: aktiverar målgruppsdata i [!DNL Facebook Custom Audience] {#example-facebook}
 
@@ -271,6 +271,6 @@ Det här felet inträffar när kunder använder nyligen skapade konton och behö
 >
 >Kontrollera att du godkänner [!DNL Facebook Custom Audience Terms of Service] under `business ID 206617933627973`, vilket visas i URL-mallen i avsnittet [Kontokrav](#facebook-account-prerequisites).
 
-Om du får felmeddelandet `400 Bad Request` efter att du har följt stegen i [Facebook-kontokraven](#facebook-account-prerequisites) kan det ta några dagar innan [!DNL Facebook]-behörigheterna börjar gälla.
+Om du får felmeddelandet `400 Bad Request` efter att du har följt stegen i [Krav för Facebook-konto](#facebook-account-prerequisites) kan det ta några dagar innan behörigheterna för [!DNL Facebook] börjar gälla.
 
 

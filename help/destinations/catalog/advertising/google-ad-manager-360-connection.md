@@ -17,7 +17,7 @@ ht-degree: 3%
 ><br/>
 >För att kunna följa EU:s policy för användargodkännande och fortsätta att skapa målgruppslistor för användare i Europeiska ekonomiska samarbetsområdet (EES) måste annonsörer och partners se till att slutanvändarnas samtycke skickas när målgruppsdata överförs. Som Google-partner tillhandahåller Adobe verktygen som krävs för att uppfylla dessa krav på medgivande enligt DMA i Europeiska unionen.
 ><br/>
->Kunder som har köpt Adobe sekretess- och säkerhetssköld och konfigurerat en [medgivandeprincip](../../../data-governance/enforcement/auto-enforcement.md#consent-policy-evaluation) för att filtrera bort profiler som inte godkänts behöver inte vidta några åtgärder.
+>Kunder som har köpt Adobe sekretess- och säkerhetssköld och har konfigurerat en [medgivandeprincip](../../../data-governance/enforcement/auto-enforcement.md#consent-policy-evaluation) för att filtrera bort profiler som inte godkänts behöver inte vidta några åtgärder.
 ><br/>
 >Kunder som inte har köpt Adobe sekretess- och säkerhetssköld måste använda [segmentdefinitionsfunktionerna](../../../segmentation/home.md#segment-definitions) i [Segment Builder](../../../segmentation/ui/segment-builder.md) för att filtrera bort profiler som inte godkänts, så att de kan fortsätta använda Real-Time CDP Google-destinationer utan avbrott.
 
@@ -27,7 +27,7 @@ Mer information om hur utgivaren tillhandahöll identifierare fungerar i Google 
 
 >[!IMPORTANT]
 >
->Den här destinationen finns för närvarande i Beta och är endast tillgänglig för ett begränsat antal kunder. Om du vill begära åtkomst till anslutningen [!DNL Google Ad Manager 360] kontaktar du din Adobe-representant och anger din [!DNL organization ID].
+>Den här destinationen finns för närvarande i Beta och är endast tillgänglig för ett begränsat antal kunder. Kontakta din Adobe-representant och uppge din [!DNL organization ID] om du vill få åtkomst till anslutningen [!DNL Google Ad Manager 360].
 
 [!DNL Google Ad Manager 360]-målet exporterar [!DNL CSV]-filer till [!DNL Google Cloud Storage]-bucket. När du har exporterat [!DNL CSV]-filerna måste du importera dem till ditt [!DNL Google Ad Manager 360]-konto.
 
@@ -54,7 +54,7 @@ I det här avsnittet beskrivs vilka typer av målgrupper du kan exportera till d
 
 | Målgruppsursprung | Stöds | Beskrivning |
 |---------|----------|----------|
-| [!DNL Segmentation Service] | ✓ | Publiker som genererats via Experience Platform [segmenteringstjänsten](../../../segmentation/home.md). |
+| [!DNL Segmentation Service] | ✓ | Publiker som genererats via Experience Platform [segmenteringstjänst](../../../segmentation/home.md). |
 | Anpassade överföringar | ✓ | Publikerna [importerade](../../../segmentation/ui/audience-portal.md#import-audience) till Experience Platform från CSV-filer. |
 
 {style="table-layout:auto"}
@@ -106,7 +106,7 @@ Mer information om dessa värden finns i handboken [Google Cloud Storage HMAC ke
 >[!CONTEXTUALHELP]
 >id="platform_destinations_gam360_appendSegmentID"
 >title="Bifoga målgrupps-ID till målgruppsnamn"
->abstract="Välj det här alternativet om målgruppsnamnet i det här målet ska innehålla målgrupps-ID:t från Experience Platform, så här: `Audience Name (Audience ID)`"
+>abstract="Välj det här alternativet om målgruppsnamnet ska innehålla målgrupps-ID:t från Experience Platform, så här: `Audience Name (Audience ID)`"
 
 Om du vill konfigurera information för målet fyller du i de obligatoriska och valfria fälten nedan. En asterisk bredvid ett fält i användargränssnittet anger att fältet är obligatoriskt.
 
@@ -140,7 +140,7 @@ I steget för identitetsmappning ser du följande förifyllda mappningar:
 | Mappning i förväg | Beskrivning |
 |---------|----------|
 | `ECID` -> `ppid` | Detta är den enda användaranpassade förifyllda mappningen. Du kan välja attribut eller identitetsnamnutrymmen från plattformen och mappa dem till `ppid`. |
-| `metadata.segment.alias` -> `list_id` | Mappar Experience Platform målgruppsnamn till målgrupps-ID:n i Google. |
+| `metadata.segment.alias` -> `list_id` | Mappar Experience Platform målgruppsnamn till målgrupps-ID:n på Google-plattformen. |
 | `iif(${segmentMembership.ups.seg_id.status}=="exited", "1","0")` -> `delete` | Anger Google när diskvalificerade användare ska tas bort från segment. |
 
 Dessa mappningar krävs av [!DNL Google Ad Manager 360] och skapas automatiskt av Adobe Experience Platform för alla [!DNL Google Ad Manager 360]-anslutningar.
@@ -153,9 +153,9 @@ Kontrollera [!DNL Google Cloud Storage]-pytsen och se till att de exporterade fi
 
 ## Felsökning {#troubleshooting}
 
-Om du råkar ut för några fel när du använder det här målet och behöver kontakta antingen Adobe eller Google, ska du ha följande ID:n till hands.
+Om du råkar ut för några fel när du använder det här målet och behöver kontakta Adobe eller Google, ska du ha följande ID:n till hands.
 
-Följande är Adobe Google konto-ID:
+Detta är Adobe Google konto-ID:
 
 * **[!UICONTROL Account ID]**: 87933855
 * **[!UICONTROL Customer ID]**: 89690775

@@ -3,9 +3,9 @@ title: Exportera arrayobjekt från Real-Time CDP till molnlagringsmål
 type: Tutorial
 description: Lär dig hur du använder beräkningsfält för att exportera arrayer från Real-Time CDP till molnlagringsmål som strängar.
 exl-id: ff13d8b7-6287-4315-ba71-094e2270d039
-source-git-commit: 6b182df562ea59d537050aa26e3c813fc2007e9f
+source-git-commit: 546ef0f9a5a9c37de3891aba02491540a5c6f8c9
 workflow-type: tm+mt
-source-wordcount: '1689'
+source-wordcount: '1721'
 ht-degree: 0%
 
 ---
@@ -34,9 +34,9 @@ Om du vill exportera arrayer måste du använda funktionen för beräknade fält
 
 ## Arrayer och andra objekttyper i Platform {#arrays-strings-other-objects}
 
-I Experience Platform kan du använda [XDM-scheman](/help/xdm/home.md) för att hantera olika fälttyper. Innan stöd för arrayexport lades till kunde du exportera enkla nyckelvärdepar, t.ex. strängar från Experience Platform till önskade mål. Ett exempel på ett sådant fält som tidigare hade stöd för export är `personalEmail.address`:`johndoe@acme.org`.
+I Experience Platform kan du använda [XDM-scheman](/help/xdm/home.md) för att hantera olika fälttyper. Innan stöd för matrisexport lades till kunde du exportera enkla nyckelvärdepar, t.ex. strängar från Experience Platform, till önskade mål. Ett exempel på ett sådant fält som tidigare hade stöd för export är `personalEmail.address`:`johndoe@acme.org`.
 
-Andra fälttyper i Experience Platform är arrayfält. Läs mer om att [hantera matrisfält i användargränssnittet för Experience Platform](/help/xdm/ui/fields/array.md). Förutom de fälttyper som tidigare stöds kan du nu exportera arrayobjekt som exemplet nedan, sammanfogade till en sträng med funktionen `array_to_string`.
+Andra fälttyper i Experience Platform är arrayfält. Läs mer om att [hantera matrisfält i Experience Platform-gränssnittet](/help/xdm/ui/fields/array.md). Förutom de fälttyper som tidigare stöds kan du nu exportera arrayobjekt som exemplet nedan, sammanfogade till en sträng med funktionen `array_to_string`.
 
 ```
 organizations = [{
@@ -73,8 +73,8 @@ Observera följande kända begränsningar som för närvarande gäller för den 
 
 >[!CONTEXTUALHELP]
 >id="platform_destinations_export_arrays_maps_objects"
->title="Aktivera hierarkiskt utdataschema"
->abstract="<p> Växla den här inställningen **på** om du vill aktivera export av arrayer, kartor och objekt till JSON- eller Parquet-filer.</p><p>När du avaktiverar det här alternativet kan du använda alternativet för beräknade fält när du aktiverar målgrupper, men inte exportera arrayer, kartor och objekt till JSON- eller Parquet-filer</p>"
+>title="Exportera arrayer, kartor och objekt"
+>abstract="<p> Växla den här inställningen <b>på</b> om du vill aktivera export av arrayer, kartor och objekt till JSON- eller Parquet-filer. Du kan välja dessa objekttyper i källfältsvyn i mappningssteget.</p><p>Med den här växlingen <b> av</b> kan du använda alternativet för beräknade fält och tillämpa olika dataomformningsfunktioner när du aktiverar målgrupper. Du kan <i>inte</i> exportera arrayer, kartor och objekt till JSON- eller Parquet-filer och måste konfigurera ett separat mål för det ändamålet.</p>"
 
 >[!CONTEXTUALHELP]
 >id="platform_destinations_export_arrays_control"

@@ -1,7 +1,7 @@
 ---
 keywords: Experience Platform;publicera en modell;Data Science Workspace;populära ämnen;göra en tjänst
 solution: Experience Platform
-title: Publish a Model as a Service in the Data Science Workspace UI
+title: Publicera en modell som en tjänst i användargränssnittet för datavetenskap i Workspace
 type: Tutorial
 description: Adobe Experience Platform Data Science Workspace gör det möjligt att publicera din utbildade och utvärderade modell som en tjänst, så att användarna i organisationen kan få sina data att räcka utan att behöva skapa egna modeller.
 exl-id: ebbec1b1-20d3-43b5-82d3-89c79757625a
@@ -12,7 +12,7 @@ ht-degree: 0%
 
 ---
 
-# Publish är en modell som en tjänst i användargränssnittet för datavetenskapen i Workspace {#publish-a-model-as-a-service}
+# Publicera en modell som en tjänst i användargränssnittet för datavetenskap i Workspace {#publish-a-model-as-a-service}
 
 >[!NOTE]
 >
@@ -22,7 +22,7 @@ ht-degree: 0%
 
 >[!CONTEXTUALHELP]
 >id="platform_intelligentservices_publishmodel"
->title="Publish a Model as a Service"
+>title="Publicera en modell som en tjänst"
 >abstract=""
 
 Adobe Experience Platform Data Science Workspace gör det möjligt att publicera din utbildade och utvärderade modell som en tjänst, så att användarna i organisationen kan få sina data att räcka utan att behöva skapa egna modeller.
@@ -35,7 +35,7 @@ Den här självstudiekursen kräver en befintlig modell med en lyckad utbildning
 
 Om du föredrar att publicera en modell med Sensei Machine Learning API:er, se [API-självstudiekursen](./publish-model-service-api.md).
 
-## Publish a Model {#publish-a-model}
+## Publicera en modell {#publish-a-model}
 
 I Adobe Experience Platform väljer du **[!UICONTROL Models]** i den vänstra navigeringskolumnen och sedan fliken **[!UICONTROL Browse]** för att visa alla befintliga modeller. Välj namnet på den modell som du vill publicera som en tjänst.
 

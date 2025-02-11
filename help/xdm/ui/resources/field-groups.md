@@ -1,8 +1,8 @@
 ---
-keywords: Experience Platform;hem;populära ämnen;api;API;XDM;XDM system;experience data model;data model;ui;workspace;field group;field groups;
+keywords: Experience Platform;home;populära topics;api;API;XDM;XDM system;experience data model;data model;ui;workspace;field group;field groups;
 solution: Experience Platform
 title: Skapa och redigera schemafältgrupper i användargränssnittet
-description: Lär dig hur du skapar och redigerar schemafältgrupper i användargränssnittet i Experience Platform.
+description: Lär dig hur du skapar och redigerar schemafältgrupper i Experience Platform användargränssnitt.
 exl-id: 928d70a6-0468-4fb7-a53a-6686ac77f2a3
 source-git-commit: c2832821ea6f9f630e480c6412ca07af788efd66
 workflow-type: tm+mt
@@ -16,7 +16,7 @@ ht-degree: 0%
 >[!CONTEXTUALHELP]
 >id="platform_schemas_fieldgroup_filter"
 >title="Standardfilter för anpassad fältgrupp"
->abstract="Listan med tillgängliga fältgrupper filtreras i förväg baserat på hur de skapades. Välj alternativknappen för att välja mellan alternativen Standard och Egen. Alternativet Standard visar entiteter som skapats av Adobe och alternativet Anpassad visar entiteter som skapats i din organisation. Mer information om hur du skapar och redigerar fältgrupper finns i dokumentationen."
+>abstract="Listan med tillgängliga fältgrupper filtreras i förväg baserat på hur de skapades. Välj alternativknappen för att välja mellan alternativen Standard och Egen. Alternativet Standard visar entiteter som skapats av Adobe och alternativet Egen visar entiteter som skapats i din organisation. Mer information om hur du skapar och redigerar fältgrupper finns i dokumentationen."
 
 I Experience Data Model (XDM) är schemafältgrupper återanvändbara komponenter som definierar ett eller flera fält som implementerar vissa funktioner, till exempel personuppgifter, hotellinställningar eller adress. Fältgrupper är avsedda att ingå i ett schema som implementerar en kompatibel klass.
 
@@ -26,7 +26,7 @@ Adobe Experience Platform erbjuder många standardfältgrupper som täcker ett b
 
 ## Förhandskrav {#prerequisites}
 
-Handboken kräver en fungerande förståelse för XDM System. Se [XDM-översikten](../../home.md) för en introduktion till XDM-rollen i ekosystemet Experience Platform och [grunderna i schemakomposition](../../schema/composition.md) för hur fältgrupper bidrar till XDM-scheman.
+Handboken kräver en fungerande förståelse för XDM System. Se [XDM-översikten](../../home.md) för en introduktion till XDM-rollen i Experience Platform-ekosystemet och [grunderna i schemakomposition](../../schema/composition.md) för hur fältgrupper bidrar till XDM-scheman.
 
 Även om det inte krävs för den här guiden rekommenderar vi att du också följer självstudiekursen om att [komponera ett schema i användargränssnittet](../../tutorials/create-schema-ui.md) för att bekanta dig med de olika funktionerna i [!DNL Schema Editor].
 

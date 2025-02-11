@@ -1,8 +1,8 @@
 ---
-keywords: Experience Platform;hem;populära ämnen;DULE;Schedule
+keywords: Experience Platform;home;populära topics;DULE;Schedule
 solution: Experience Platform
 title: Datastyrning - översikt
-description: Med Adobe Experience Platform Data Governance kan ni hantera kunddata och säkerställa att ni följer regler, begränsningar och policyer som gäller för dataanvändning. Det spelar en nyckelroll på olika nivåer inom Experience Platform, bland annat för katalogisering, datalinje, märkning av dataanvändning, dataanvändningspolicyer och kontroll av användningen av data för marknadsföringsåtgärder.
+description: Med Adobe Experience Platform Data Governance kan ni hantera kunddata och säkerställa att ni följer regler, begränsningar och policyer som gäller för dataanvändning. Det spelar en nyckelroll inom Experience Platform på olika nivåer, bland annat i fråga om katalogisering, datalinje, dataanvändningsetiketter, dataanvändningspolicyer och kontroll av användningen av data för marknadsföringsåtgärder.
 exl-id: 00ca6bc2-1c58-4ea2-8bb5-30fd3fa5944a
 source-git-commit: 1a050cfb41a28053606f07931c7c97d15989ac3e
 workflow-type: tm+mt
@@ -16,13 +16,13 @@ ht-degree: 0%
 >[!CONTEXTUALHELP]
 >id="platform_datagovernance_framework"
 >title="Datastyrningsskyldighet"
->abstract="Kom ihåg att det är ditt enda ansvar att följa din organisations policyer för datastyrning och uppfylla dina lagstadgade krav. Experience Platform tillhandahåller datastyrningsverktyg som du kan använda för att hantera dina dataanvändningsskyldigheter. Använd lämpliga etiketter för dataanvändning innan du frågar eller bearbetar data. Läs dokumentationen om du vill veta mer om verktyg för datastyrning och metodtips."
+>abstract="Kom ihåg att det är ditt enda ansvar att följa din organisations policyer för datastyrning och uppfylla dina lagstadgade krav. Experience Platform tillhandahåller datastyrningsverktyg som du kan använda för att hantera dina skyldigheter när det gäller dataanvändning. Använd lämpliga etiketter för dataanvändning innan du frågar eller bearbetar data. Läs dokumentationen om du vill veta mer om verktyg för datastyrning och metodtips."
 >additional-url="https://experienceleague.adobe.com/docs/experience-platform/data-governance/home.html" text="Datastyrning - översikt"
 >additional-url="https://experienceleague.adobe.com/docs/experience-platform/data-governance/labels/overview.html" text="Översikt över etiketter för datastyrning"
 
 En av de viktigaste funktionerna i Adobe Experience Platform är att samla data från olika affärssystem så att marknadsförarna bättre kan identifiera, förstå och engagera sina kunder. Dessa data kan vara föremål för användarbegränsningar som fastställts av din organisation eller av juridiska bestämmelser. Det är därför viktigt att se till att dina dataåtgärder i [!DNL Platform] är kompatibla med dataanvändningsprinciper.
 
-Hantera kunddata och säkerställ att regler, begränsningar och regler som gäller för dataanvändning följs med Adobe Experience Platform Data Governance. Datastyrning spelar en viktig roll inom Experience Platform på olika nivåer, inklusive katalogisering, datalinje, etikettering av dataanvändning, dataanvändningspolicyer och kontroll av användningen av data för marknadsföringsåtgärder.
+Hantera kunddata och säkerställ att regler, begränsningar och regler som gäller för dataanvändning följs med Adobe Experience Platform Data Governance. Datastyrning spelar en nyckelroll inom Experience Platform på olika nivåer, inklusive katalogisering, datalinje, etikettering av dataanvändning, policyer för dataanvändning och kontroll av användningen av data för marknadsföringsåtgärder.
 
 >[!NOTE]
 >
@@ -77,7 +77,7 @@ Ramverket för datastyrning innehåller fördefinierade etiketter för dataanvä
 >
 >I guiden om [dataanvändningsetiketter som stöds](labels/reference.md) finns en fullständig lista över tillgängliga etiketter och definitioner för varje etiketttyp.
 
-Etiketter kan användas när som helst, vilket ger flexibilitet i hur du väljer att styra data. Bästa praxis uppmuntrar till etikettdata när de hämtas till Experience Platform, eller så snart data blir tillgängliga i [!DNL Platform].
+Etiketter kan användas när som helst, vilket ger flexibilitet i hur du väljer att styra data. Bästa praxis uppmuntrar till etikettdata när de importeras till Experience Platform, eller så snart data blir tillgängliga i [!DNL Platform].
 
 Mer information om hur dataanvändningsetiketter används för att framtvinga regelefterlevnad för datastyrning finns i översikten för [dataanvändningsetiketter](./labels/overview.md).
 
@@ -93,11 +93,11 @@ Det finns två typer av principer:
 * **[!UICONTROL Data governance policy]**: Begränsa dataaktiveringen baserat på den marknadsföringsåtgärd som utförs och de dataanvändningsetiketter som medföljer data i fråga.
 * **[!UICONTROL Consent policy]**: Filtrera de profiler som kan aktiveras till [mål](../destinations/home.md) baserat på dina kunders samtycke eller önskemål.
 
-När dataanvändningsetiketterna har tillämpats kan datafördelare skapa principer med hjälp av principtjänstens API eller användargränssnittet i Experience Platform. Mer information om dataanvändningsprinciper och marknadsföringsåtgärder finns i [principöversikt](./policies/overview.md).
+När dataanvändningsetiketterna har tillämpats kan datafördelare skapa profiler med hjälp av principtjänste-API:t eller Experience Platform användargränssnitt. Mer information om dataanvändningsprinciper och marknadsföringsåtgärder finns i [principöversikt](./policies/overview.md).
 
 >[!IMPORTANT]
 >
->Alla dataanvändningsprinciper (inklusive huvudprinciper som tillhandahålls av Adobe) inaktiveras som standard. För att en enskild princip ska kunna användas måste du manuellt aktivera den principen.
+>Alla dataanvändningspolicyer (inklusive kärnpolicyer från Adobe) är inaktiverade som standard. För att en enskild princip ska kunna användas måste du manuellt aktivera den principen.
 
 ## Nästa steg
 
@@ -123,7 +123,7 @@ I följande tabell beskrivs nyckeltermer för datastyrning och ramverket för da
 | **Geofence** | En geofence är en virtuell geografisk gräns, som definieras av GPS- eller RFID-teknik, som gör att programvara kan utlösa ett svar när en mobil enhet kommer in i eller lämnar ett visst område. |
 | **Identitetsetiketter** | Identitet&quot;I&quot;-etiketter används för att kategorisera data som kan identifiera eller kontakta en viss person. |
 | **Intressebaserad målinriktning** | Intressebaserad målinriktning, som också kallas personalisering, inträffar om följande tre villkor uppfylls:<br>Data som samlas in på webbplatsen är <br><ul><li>Används för att dra slutsatser om en användares intresse,</li><li>Används i ett annat sammanhang, t.ex. på en annan webbplats eller i en annan app (utanför webbplatsen)</li><li>Används för att välja vilket innehåll eller vilka annonser som ska hanteras baserat på dessa slutsatser.</li></ul> |
-| **Marknadsföringsåtgärd** | En marknadsföringsåtgärd, inom ramen för datastyrningsramverket, är en åtgärd som en datakonsument i Experience Platform vidtar, där det finns ett behov av att kontrollera överträdelser av dataanvändningspolicyer |
+| **Marknadsföringsåtgärd** | En marknadsföringsåtgärd, inom ramen för datastyrningsramverket, är en åtgärd som en Experience Platform-datakonsument vidtar och där det finns ett behov av att kontrollera om dataanvändningspolicyer har överträtts |
 | **Princip** | I ramverket för datastyrning är en regel som beskriver vilka typer av marknadsföringsåtgärder som tillåts eller inte får vidtas för specifika data. |
 | **Schemaetiketter** | Hantera etiketterna för datastyrning, samtycke och åtkomstkontroll på schemanivå. Detta sprider etiketterna till alla datauppsättningar som använder det schemat. |
 | **Känsliga etiketter** | Känsliga S-etiketter används för att kategorisera data som du, och din organisation, anser vara känsliga. |

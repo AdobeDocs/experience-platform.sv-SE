@@ -1,7 +1,7 @@
 ---
 description: Lär dig hur du använder mallar i Adobe Experience Platform användargränssnitt för att snabba upp dataöverföringsprocessen för B2B-data.
 title: Skapa ett källdataflöde med mallar i användargränssnittet
-badge1: "Beta"
+badge1: Beta
 exl-id: 48aa36ca-656d-4b9d-954c-48c8da9df1e9
 source-git-commit: c2832821ea6f9f630e480c6412ca07af788efd66
 workflow-type: tm+mt
@@ -15,7 +15,7 @@ ht-degree: 0%
 >[!CONTEXTUALHELP]
 >id="platform_sources_marketo_mapping"
 >title="Mallar för källor i plattformens användargränssnitt"
->abstract="Mallar innehåller automatiskt genererade resurser som scheman, datauppsättningar, identiteter, mappningsregler, identitetsnamnutrymmen och dataflöden som du kan använda när du hämtar data från en källa till Experience Platform. Du kan uppdatera automatiskt genererade resurser för anpassning så att de passar dina användningsexempel."
+>abstract="Mallar innehåller automatiskt genererade resurser som scheman, datauppsättningar, identiteter, mappningsregler, identitetsnamnutrymmen och dataflöden som du kan använda när du hämtar in data från en källa till Experience Platform. Du kan uppdatera automatiskt genererade resurser för anpassning så att de passar dina användningsexempel."
 
 >[!IMPORTANT]
 >
@@ -27,7 +27,7 @@ ht-degree: 0%
 >
 >Dokumentationen och funktionerna kan komma att ändras.
 
-Adobe Experience Platform tillhandahåller förkonfigurerade mallar som du kan använda för att snabba upp dataöverföringsprocessen. Mallar innehåller automatiskt genererade resurser som scheman, datauppsättningar, identiteter, mappningsregler, identitetsnamnutrymmen och dataflöden som du kan använda när du hämtar data från en källa till Experience Platform.
+Adobe Experience Platform tillhandahåller förkonfigurerade mallar som du kan använda för att snabba upp dataöverföringsprocessen. Mallar innehåller automatiskt genererade resurser som scheman, datauppsättningar, identiteter, mappningsregler, identitetsnamnutrymmen och dataflöden som du kan använda när du hämtar in data från en källa till Experience Platform.
 
 Med mallar kan man
 
@@ -41,7 +41,7 @@ I följande självstudiekurs beskrivs hur du använder mallar i användargränss
 
 Den här självstudiekursen kräver en fungerande förståelse av följande komponenter i Experience Platform:
 
-* [Källor](../../home.md): Experience Platform tillåter data att hämtas från olika källor samtidigt som du kan strukturera, etikettera och förbättra inkommande data med hjälp av plattformstjänster.
+* [Källor](../../home.md): Med Experience Platform kan data hämtas från olika källor samtidigt som du kan strukturera, etikettera och förbättra inkommande data med hjälp av plattformstjänster.
 * [[!DNL Experience Data Model (XDM)] System](../../../xdm/home.md): Det standardiserade ramverk som Experience Platform använder för att ordna kundupplevelsedata.
 * [Sandlådor](../../../sandboxes/home.md): Experience Platform tillhandahåller virtuella sandlådor som partitionerar en enda plattformsinstans till separata virtuella miljöer för att utveckla och utveckla program för digitala upplevelser.
 
@@ -50,7 +50,7 @@ Den här självstudiekursen kräver en fungerande förståelse av följande komp
 >[!CONTEXTUALHELP]
 >id="platform_sources_templates_accounttype"
 >title="Välj affärstyp"
->abstract="Välj lämplig affärstyp för ditt användningsfall. Åtkomsten kan variera beroende på ditt Real-time Customer Data Platform-prenumerationskonto."
+>abstract="Välj lämplig affärstyp för ditt användningsfall. Åtkomsten kan variera beroende på ditt Real-Time Customer Data Platform-prenumerationskonto."
 >additional-url="https://experienceleague.adobe.com/docs/experience-platform/rtcdp/intro/rtcdp-intro/overview.html" text="Real-Time CDP - översikt"
 
 I plattformsgränssnittet väljer du **[!UICONTROL Sources]** i den vänstra navigeringen för att komma åt arbetsytan i [!UICONTROL Sources] och visa en katalog med tillgängliga källor i Experience Platform.
@@ -237,7 +237,7 @@ Du kan använda schemaredigeringsvyn för att göra uppdateringar i det automati
 >
 >![En lista över befintliga dataflöden i dataflödeskatalogen för källarbetsytan.](../../images/tutorials/templates/dataflows.png)
 
-### Publish ditt dataflöde
+### Publicera dataflödet
 
 Börja publiceringsprocessen genom att gå igenom källarbetsflödet. När du har valt [!UICONTROL Update dataflow] dirigeras du till arbetsflödets *[!UICONTROL Add data]*-steg. Välj **[!UICONTROL Next]** om du vill fortsätta.
 

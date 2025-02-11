@@ -1,8 +1,8 @@
 ---
 keywords: Experience Platform;hem;populära ämnen;export;Exportera
 solution: Experience Platform
-title: Hantera sekretessjobb i Privacy Servicens användargränssnitt
-description: Lär dig hur du använder Privacy Servicens användargränssnitt för att samordna och övervaka sekretessförfrågningar i olika Experience Cloud-program.
+title: Hantera sekretessjobb i Privacy Service användargränssnitt
+description: Lär dig hur du använder Privacy Service användargränssnitt för att samordna och övervaka sekretessförfrågningar i olika Experience Cloud-program.
 exl-id: aa8b9f19-3e47-4679-9679-51add1ca2ad9
 source-git-commit: 1d1224b263b55b290d2cac9c07dfd1b852c4cef5
 workflow-type: tm+mt
@@ -11,7 +11,7 @@ ht-degree: 0%
 
 ---
 
-# Hantera sekretessjobb i Privacy Servicens användargränssnitt {#user-guide}
+# Hantera sekretessjobb i Privacy Service användargränssnitt {#user-guide}
 
 >[!CONTEXTUALHELP]
 >id="platform_privacyConsole_requests_description"
@@ -22,9 +22,9 @@ Det här dokumentet innehåller steg för att skapa och hantera sekretessbegära
 
 >[!IMPORTANT]
 >
->Privacy Service är endast avsedd för den registrerade och för förfrågningar om konsumenträttigheter. All annan användning av Privacy Service för datarensning eller underhåll stöds inte eller tillåts inte. Adobe har en rättslig skyldighet att uppfylla dem i tid. Därför är lasttestning inte tillåtet på Privacy Service eftersom det är en produktionsmiljö och skapar en onödig eftersläpning av giltiga sekretessbegäranden.
+>Privacy Service är endast avsett för den registrerade och för förfrågningar om konsumenträttigheter. All annan användning av Privacy Service för datarensning eller datareferenser stöds inte eller tillåts inte. Adobe har en rättslig skyldighet att uppfylla dem i tid. Därför är lasttestning inte tillåtet på Privacy Service eftersom det är en produktionsmiljö och skapar en onödig eftersläpning av giltiga sekretessbegäranden.
 >
->Det finns nu en hög överföringsgräns per dag för att förhindra missbruk av tjänsten. Användare som råkar missbruka systemet kommer att ha åtkomst till tjänsten inaktiverad. Därefter kommer ett möte att hållas med dem för att diskutera deras åtgärder och hur Privacy Servicen kan användas.
+>Det finns nu en hög överföringsgräns per dag för att förhindra missbruk av tjänsten. Användare som råkar missbruka systemet kommer att ha åtkomst till tjänsten inaktiverad. Därefter kommer ett möte att hållas med dem för att diskutera hur Privacy Service kan användas.
 
 ## Bläddra i [!DNL Privacy Service]-gränssnittspanelen
 
@@ -136,7 +136,7 @@ Om du vill hämta alla jobbdata som en CSV-fil väljer du **[!UICONTROL Export t
 >[!CONTEXTUALHELP]
 >id="platform_privacyConsole_requests_instructions"
 >title="Instruktioner"
->abstract="<ul><li>Välj <a href="https://experienceleague.adobe.com/docs/experience-platform/privacy/ui/overview.html#logging-in-from-experience-platform">Förfrågningar</a> i den vänstra navigeringen för att öppna sekretesspolicyn och välj sedan <b>Skapa förfrågan</b>.</li><li>Härifrån kan du antingen använda begärandeverktyget eller överföra en JSON-fil med registrerade.</li><li>Om du använder begärandebyggaren väljer du jobbtyp (åtkomst och/eller borttagning) och sedan den typ av identitet som du anger (e-post, ECID eller AAID) eller anger ett anpassat ID-namnutrymme. Ange lämpliga identitetsvärden för kunderna och välj <b>Skapa</b> när du är klar.</li><li>Om du överför en JSON-fil markerar du pilen bredvid Skapa begäran. I listan med alternativ väljer du <b>Överför JSON</b> och överför filen. Om du inte har någon JSON-fil att överföra väljer du <b>Hämta Adobe-GDPR-Request.json</b> för att hämta en mall som du kan fylla i. Ladda upp JSON och välj <b>Create</b> när du är klar.</li><li>Mer hjälp om den här funktionen finns i <a href="https://experienceleague.adobe.com/docs/experience-platform/privacy/ui/user-guide.html">Privacy Servicens användarhandbok</a> på Experience League.</li></ul>"
+>abstract="<ul><li>Välj <a href="https://experienceleague.adobe.com/docs/experience-platform/privacy/ui/overview.html#logging-in-from-experience-platform">Förfrågningar</a> i den vänstra navigeringen för att öppna sekretesspolicyn och välj sedan <b>Skapa förfrågan</b>.</li><li>Härifrån kan du antingen använda begärandeverktyget eller överföra en JSON-fil med registrerade.</li><li>Om du använder begärandebyggaren väljer du jobbtyp (åtkomst och/eller borttagning) och sedan den typ av identitet som du anger (e-post, ECID eller AAID) eller anger ett anpassat ID-namnutrymme. Ange lämpliga identitetsvärden för kunderna och välj <b>Skapa</b> när du är klar.</li><li>Om du överför en JSON-fil markerar du pilen bredvid Skapa begäran. I listan med alternativ väljer du <b>Överför JSON</b> och överför filen. Om du inte har någon JSON-fil att överföra väljer du <b>Hämta Adobe-GDPR-Request.json</b> för att hämta en mall som du kan fylla i. Ladda upp JSON och välj <b>Create</b> när du är klar.</li><li>Mer hjälp om den här funktionen finns i <a href="https://experienceleague.adobe.com/docs/experience-platform/privacy/ui/user-guide.html">Privacy Service användarhandbok</a> för Experience League.</li></ul>"
 
 >[!NOTE]
 >
@@ -163,7 +163,7 @@ Dialogrutan **[!UICONTROL Create Request]** öppnas och visar tillgängliga alte
 
 Välj **[!UICONTROL Job Type]** för begäran (&quot;Ta bort&quot; eller&quot;Åtkomst&quot;) och en eller flera tillgängliga produkter i listan.
 
-Privacy Servicen stöder två typer av jobbförfrågningar för personliga data: [!UICONTROL Access] (läs) och/eller [!UICONTROL Delete]. Du kan antingen skicka in en begäran om att få alla uppgifter som finns i produkten och som rör ämnet för förfrågan, eller begära att få ta bort alla uppgifter som rör ämnet för förfrågan.
+Privacy Service stöder två typer av jobbförfrågningar för personliga data: [!UICONTROL Access] (läs) och/eller [!UICONTROL Delete]. Du kan antingen skicka in en begäran om att få alla uppgifter som finns i produkten och som rör ämnet för förfrågan, eller begära att få ta bort alla uppgifter som rör ämnet för förfrågan.
 
 ![](../images/user-guide/type-and-products.png){width=500}
 

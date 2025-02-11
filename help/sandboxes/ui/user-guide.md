@@ -1,5 +1,5 @@
 ---
-keywords: Experience Platform;hem;populära ämnen;användarhandbok för sandlådan;sandlådeguide
+keywords: Experience Platform;home;populära topics;sandbox user guide;sandbox guide
 solution: Experience Platform
 title: Användargränssnittshandbok för sandlådan
 description: Det här dokumentet innehåller steg om hur du utför olika åtgärder relaterade till sandlådor i Adobe Experience Platform användargränssnitt.
@@ -17,7 +17,7 @@ Det här dokumentet innehåller steg om hur du utför olika åtgärder relaterad
 
 ## Visa sandlådor
 
-I användargränssnittet för Experience Platform väljer du **[!UICONTROL Sandboxes]** i den vänstra navigeringen och sedan fliken **[!UICONTROL Browse]** för att öppna kontrollpanelen [!UICONTROL Sandboxes]. På kontrollpanelen visas alla tillgängliga sandlådor för din organisation, inklusive deras respektive typer (produktion eller utveckling).
+I Experience Platform-gränssnittet väljer du **[!UICONTROL Sandboxes]** i den vänstra navigeringen och sedan fliken **[!UICONTROL Browse]** för att öppna kontrollpanelen [!UICONTROL Sandboxes]. På kontrollpanelen visas alla tillgängliga sandlådor för din organisation, inklusive deras respektive typer (produktion eller utveckling).
 
 ![Kontrollpanelen för sandlådor med fliken Bläddra markerad, som visar en lista över tillgängliga sandlådor.](../images/ui/view-sandboxes.png)
 
@@ -45,13 +45,13 @@ När en sandlåda är markerad uppdateras skärmen och uppdateras till den sandl
 >[!CONTEXTUALHELP]
 >id="platform_sandboxes_sandboxtitle"
 >title="Sandlådetitel"
->abstract="Sandlådans titel är det visningsnamn som representerar sandlådan i menyer och listrutor i hela användargränssnittet i Experience Platform."
+>abstract="Sandlådans titel är det visningsnamn som representerar sandlådan i menyer och listrutor i hela Experience Platform användargränssnitt."
 
 >[!WARNING]
 >
 >Om du vill skapa en ny sandlåda måste du lägga till den i en roll i [[!UICONTROL Permissions]](../../access-control/abac/ui/permissions.md) innan du kan börja använda den. Mer information om hur du etablerar en sandlåda för en roll finns i [dokumentationen för att hantera sandlådor för en roll](../../access-control/abac/ui/permissions.md#managing-sandboxes-for-role).
 
-Använd följande video för en snabb översikt över hur du använder sandlådor i Experience Platform.
+I följande video får du en snabb översikt över hur du använder sandlådor i Experience Platform.
 
 >[!VIDEO](https://video.tv.adobe.com/v/29838/?quality=12&learn=on)
 
@@ -138,6 +138,6 @@ I det sista bekräftelsefönstret anger du namnet på sandlådan i dialogrutan o
 
 ## Nästa steg
 
-Det här dokumentet visar hur du hanterar sandlådor i användargränssnittet för Experience Platform. Nu när du vet hur du hanterar sandlådor kan du lära dig att förbättra konfigurationsnoggrannheten i sandlådor och sömlöst exportera och importera sandlådekonfigurationer mellan sandlådor med [sandlådeverktygen](./sandbox-tooling.md) .
+Det här dokumentet visar hur du hanterar sandlådor i Experience Platform-gränssnittet. Nu när du vet hur du hanterar sandlådor kan du lära dig att förbättra konfigurationsnoggrannheten i sandlådor och sömlöst exportera och importera sandlådekonfigurationer mellan sandlådor med [sandlådeverktygen](./sandbox-tooling.md) .
 
 Mer information om hur du hanterar sandlådor med hjälp av API:t för sandlådan finns i [utvecklarhandboken för sandlådan](../api/getting-started.md).

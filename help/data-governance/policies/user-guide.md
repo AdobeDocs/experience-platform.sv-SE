@@ -2,7 +2,7 @@
 keywords: Experience Platform;hem;populära ämnen;datastyrning;användarhandbok för dataanvändningspolicy
 solution: Experience Platform
 title: Hantera dataanvändningsprinciper i användargränssnittet
-description: Adobe Experience Platform Data Governance har ett användargränssnitt där du kan skapa och hantera dataanvändningspolicyer. Det här dokumentet innehåller en översikt över de åtgärder som du kan utföra på arbetsytan Profiler i användargränssnittet för Experience Platform.
+description: Adobe Experience Platform Data Governance har ett användargränssnitt där du kan skapa och hantera dataanvändningspolicyer. Det här dokumentet innehåller en översikt över de åtgärder som du kan utföra på arbetsytan Profiler i Experience Platform användargränssnitt.
 exl-id: 29434dc1-02c2-4267-a1f1-9f73833e76a0
 source-git-commit: e52eb90b64ae9142e714a46017cfd14156c78f8b
 workflow-type: tm+mt
@@ -26,13 +26,13 @@ Det här dokumentet beskriver hur du använder arbetsytan **[!UICONTROL Policies
 
 >[!IMPORTANT]
 >
->Alla dataanvändningsprinciper (inklusive huvudprinciper som tillhandahålls av Adobe) inaktiveras som standard. För att en enskild princip ska kunna användas för verkställighet måste du manuellt aktivera den principen. I avsnittet [Aktivera principer](#enable) finns mer information om hur du gör detta i användargränssnittet.
+>Alla dataanvändningspolicyer (inklusive kärnpolicyer från Adobe) är inaktiverade som standard. För att en enskild princip ska kunna användas för verkställighet måste du manuellt aktivera den principen. I avsnittet [Aktivera principer](#enable) finns mer information om hur du gör detta i användargränssnittet.
 
 ## Förhandskrav
 
 Handboken kräver en fungerande förståelse av följande [!DNL Experience Platform]-koncept:
 
-* [Datastyrning](../home.md)
+* [Dataförvaltning](../home.md)
 * [Dataanvändningspolicyer](./overview.md)
 
 ## Visa befintliga policyer {#view-policies}
@@ -104,7 +104,7 @@ Fliken **[!UICONTROL Browse]** visas igen, där den nya principen visas med stat
 >[!CONTEXTUALHELP]
 >id="platform_privacyConsole_dataUsagePolicies_instructions"
 >title="Instruktioner"
->abstract="<ul><li>Se till att du samlar in inställningsdata i dina fackliga scheman via OneTrust-källkopplingen eller XDM-standardschemat för samtycke.</li><li>Välj <a href="https://experienceleague.adobe.com/docs/experience-platform/data-governance/policies/overview.html">Profiler</a> i den vänstra navigeringen och välj sedan <a href="https://experienceleague.adobe.com/docs/experience-platform/data-governance/policies/user-guide.html#create-governance-policy">Skapa profil</a>.</li><li>Beskriv villkoren eller åtgärderna som kommer att utlösa principkontrollen under avsnittet <b>If</b>.</li><li>Under avsnittet <b>Sedan</b> anger du de medgivandeattribut som måste finnas för en profil som ska inkluderas i den åtgärd som utlöste principen.</li><li>Välj <b>Spara</b> för att skapa profilen. Om du vill aktivera principen väljer du alternativet <b>Status</b> i den högra listen.</li><li>Experience Platform tillämpar automatiskt de regler för samtycke som är aktiverade när ni aktiverar segment till destinationer och ger information om hur varje policy påverkar er målgruppsstorlek.</li><li>Mer hjälp om den här funktionen finns i guiden om att <a href="https://experienceleague.adobe.com/docs/experience-platform/data-governance/policies/user-guide.html#consent-policy">skapa medgivandeprinciper</a> på Experience League.</li></ul>"
+>abstract="<ul><li>Se till att du samlar in inställningsdata i dina fackliga scheman via OneTrust-källkopplingen eller XDM-standardschemat för samtycke.</li><li>Välj <a href="https://experienceleague.adobe.com/docs/experience-platform/data-governance/policies/overview.html">Profiler</a> i den vänstra navigeringen och välj sedan <a href="https://experienceleague.adobe.com/docs/experience-platform/data-governance/policies/user-guide.html#create-governance-policy">Skapa profil</a>.</li><li>Beskriv villkoren eller åtgärderna som kommer att utlösa principkontrollen under avsnittet <b>If</b>.</li><li>Under avsnittet <b>Sedan</b> anger du de medgivandeattribut som måste finnas för en profil som ska inkluderas i den åtgärd som utlöste principen.</li><li>Välj <b>Spara</b> för att skapa profilen. Om du vill aktivera principen väljer du alternativet <b>Status</b> i den högra listen.</li><li>Experience Platform tillämpar automatiskt de regler för samtycke du har aktiverat när du aktiverar segment till destinationer och ger information om hur varje policy påverkar målgruppens storlek.</li><li>Mer hjälp om den här funktionen finns i guiden <a href="https://experienceleague.adobe.com/docs/experience-platform/data-governance/policies/user-guide.html#consent-policy">Skapa medgivandeprinciper</a> för Experience League.</li></ul>"
 
 >[!IMPORTANT]
 >
@@ -173,7 +173,7 @@ När du har skapat och aktiverat en medgivandeprincip kan du förhandsgranska hu
 
 ## Aktivera eller inaktivera en profil {#enable}
 
-Alla dataanvändningsprinciper (inklusive huvudprinciper som tillhandahålls av Adobe) inaktiveras som standard. För att en enskild princip ska kunna användas måste du manuellt aktivera den principen via API:t eller användargränssnittet.
+Alla dataanvändningspolicyer (inklusive kärnpolicyer från Adobe) är inaktiverade som standard. För att en enskild princip ska kunna användas måste du manuellt aktivera den principen via API:t eller användargränssnittet.
 
 Du kan aktivera eller inaktivera profiler på fliken **[!UICONTROL Browse]** på arbetsytan i **[!UICONTROL Policies]**. Välj en anpassad profil i listan för att visa informationen till höger. Under **[!UICONTROL Status]** markerar du växlingsknappen för att aktivera eller inaktivera principen.
 
@@ -181,7 +181,7 @@ Du kan aktivera eller inaktivera profiler på fliken **[!UICONTROL Browse]** på
 
 ## Visa marknadsföringsaktiviteter {#view-marketing-actions}
 
-I arbetsytan **[!UICONTROL Policies]** väljer du fliken **[!UICONTROL Marketing actions]** för att visa en lista över tillgängliga marknadsföringsåtgärder som definierats av Adobe och din egen organisation.
+På arbetsytan **[!UICONTROL Policies]** väljer du fliken **[!UICONTROL Marketing actions]** för att visa en lista över tillgängliga marknadsföringsåtgärder som definierats av Adobe och din egen organisation.
 
 ![](../images/policies/marketing-actions.png)
 
@@ -205,7 +205,7 @@ Den nyligen skapade åtgärden visas på fliken **[!UICONTROL Marketing actions]
 >
 >Endast anpassade marknadsföringsåtgärder som definieras av din organisation kan redigeras. Marknadsföringsåtgärder som definieras av Adobe kan inte ändras eller tas bort.
 
-I arbetsytan **[!UICONTROL Policies]** väljer du fliken **[!UICONTROL Marketing actions]** för att visa en lista över tillgängliga marknadsföringsåtgärder som definierats av Adobe och din egen organisation. Välj en anpassad marknadsföringsåtgärd i listan och använd sedan fälten i den högra delen för att redigera information om marknadsföringsåtgärden.
+På arbetsytan **[!UICONTROL Policies]** väljer du fliken **[!UICONTROL Marketing actions]** för att visa en lista över tillgängliga marknadsföringsåtgärder som definierats av Adobe och din egen organisation. Välj en anpassad marknadsföringsåtgärd i listan och använd sedan fälten i den högra delen för att redigera information om marknadsföringsåtgärden.
 
 ![](../images/policies/edit-marketing-action.png)
 

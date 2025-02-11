@@ -1,6 +1,6 @@
 ---
-title: (API) Oraclena Eloqua-anslutning
-description: Med API-Oraclet Eloqua kan du exportera dina kontouppgifter och aktivera dem i Oracle Eloqua efter dina affärsbehov.
+title: (API) Oracle Eloqua-anslutning
+description: (API) Oracle Eloqua-destinationen gör att du kan exportera dina kontodata och aktivera dem i Oracle Eloqua för dina affärsbehov.
 last-substantial-update: 2023-03-14T00:00:00Z
 exl-id: 97ff41a2-2edd-4608-9557-6b28e74c4480
 source-git-commit: 5aefa362d7a7d93c12f9997d56311127e548497e
@@ -25,7 +25,7 @@ Marknadsföringsavdelningen på en onlineplattform vill sända en e-postbaserad 
 
 ## Förhandskrav {#prerequisites}
 
-### Förutsättningar för Experience Platform {#prerequisites-in-experience-platform}
+### Krav för Experience Platform {#prerequisites-in-experience-platform}
 
 Innan du aktiverar data till målet [!DNL Oracle Eloqua] måste du ha ett [schema](/help/xdm/schema/composition.md), en [datamängd](https://experienceleague.adobe.com/docs/platform-learn/tutorials/data-ingestion/create-datasets-and-ingest-data.html) och [segment](https://experienceleague.adobe.com/docs/platform-learn/tutorials/segments/create-segments.html) som skapats i [!DNL Experience Platform].
 
@@ -58,7 +58,7 @@ Mer information finns i [Logga in på [!DNL Oracle Eloqua]](https://docs.oracle.
 
 * [!DNL Oracle Eloqua] har en maxgräns på 250 anpassade kontaktfält.
 * Innan du exporterar nya målgrupper ser du till att antalet plattformsmålgrupper och antalet befintliga målgrupper inom [!DNL Oracle Eloqua] inte överskrider denna gräns.
-* Om denna gräns överskrids kommer ett fel att uppstå i Experience Platform. Detta beror på att [!DNL Oracle Eloqua]-API:t inte kan validera begäran och svarar med ett - *400: Det fanns ett valideringsfel* - felmeddelande som beskriver problemet.
+* Om den här gränsen överskrids uppstår ett fel i Experience Platform. Detta beror på att [!DNL Oracle Eloqua]-API:t inte kan validera begäran och svarar med ett - *400: Det fanns ett valideringsfel* - felmeddelande som beskriver problemet.
 * Om du har nått gränsen ovan måste du ta bort befintliga mappningar från målet och ta bort motsvarande anpassade kontaktfält i ditt [!DNL Oracle Eloqua]-konto innan du kan exportera fler segment.
 
 * Mer information om ytterligare begränsningar finns på sidan [[!DNL Oracle Eloqua] Skapa kontaktfält](https://docs.oracle.com/en/cloud/saas/marketing/eloqua-user/Help/ContactFields/Tasks/CreatingContactFields.htm).
@@ -97,7 +97,7 @@ I **[!UICONTROL Destinations]** > **[!UICONTROL Catalog]** söker du efter [!DNL
 >[!CONTEXTUALHELP]
 >id="platform_destinations_apioracleeloqua_companyname_username"
 >title="Företag\Användarnamn"
->abstract="Fyll i det här fältet med ditt företagsnamn och ditt användarnamn från Oraclet Eloqua i formuläret `{COMPANY_NAME}\{USERNAME}`"
+>abstract="Fyll i det här fältet med ditt företagsnamn och ditt användarnamn från Oracle Eloqua i formatet `{COMPANY_NAME}\{USERNAME}`"
 
 Fyll i de obligatoriska fälten nedan. Mer information finns i avsnittet [Samla [!DNL Oracle Eloqua] inloggningsuppgifter](#gather-credentials).
 * **[!UICONTROL Password]**: Lösenordet för ditt [!DNL Oracle Eloqua]-konto.
@@ -113,7 +113,7 @@ Om den angivna informationen är giltig visas statusen **[!UICONTROL Connected]*
 >[!CONTEXTUALHELP]
 >id="platform_destinations_apioracleeloqua_pod"
 >title="Pod"
->abstract="Logga in på Oracle Eloqua för att hitta ditt podnummer. Anteckna URL-adressen i webbläsaren när du har loggat in. "
+>abstract="Du hittar ditt podnummer genom att logga in på Oracle Eloqua. Anteckna URL-adressen i webbläsaren när du har loggat in. "
 
 <!-- >additional-url="https://support.oracle.com/knowledge/Oracle%20Cloud/2307176_1.html" text="Oracle Knowledge base - find out your Pod number" -->
 
@@ -208,7 +208,7 @@ Följ stegen nedan för att verifiera att du har konfigurerat målet korrekt:
 
 1. Logga in på webbplatsen [!DNL Oracle Eloqua] och navigera sedan till sidan **[!UICONTROL Contacts Overview]** för att kontrollera om profilerna från målgruppen har lagts till. Om du vill visa målgruppens status går du ned till en **[!UICONTROL Contact Detail]**-sida och kontrollerar om kontaktfältet med det valda målgruppsnamnet som prefix har skapats.
 
-![Oraclet Eloqua UI, bild som visar kontaktinformationssidan med ett anpassat kontaktfält som skapats med målgruppens namn.](../../assets/catalog/email-marketing/oracle-eloqua-api/contact.png)
+![Oracle Eloqua UI, skärmbild som visar sidan Kontaktinformation med anpassat kontaktfält som skapats med målgruppens namn.](../../assets/catalog/email-marketing/oracle-eloqua-api/contact.png)
 
 ## Dataanvändning och styrning {#data-usage-governance}
 
@@ -226,7 +226,7 @@ På sidorna [[!DNL Oracle Eloqua] HTTP-statuskoder](https://docs.oracle.com/en/c
 Mer information finns i [!DNL Oracle Eloqua]-dokumentationen:
 
 * [Oracle Eloqua Marketing Automation](https://docs.oracle.com/en/cloud/saas/marketing/eloqua.html)
-* [REST API för tjänsten Oracle Eloqua Marketing Cloud](https://docs.oracle.com/en/cloud/saas/marketing/eloqua-rest-api/rest-endpoints.html)
+* [REST API for Oracle Eloqua Marketing Cloud Service](https://docs.oracle.com/en/cloud/saas/marketing/eloqua-rest-api/rest-endpoints.html)
 
 ### Changelog
 
@@ -236,7 +236,7 @@ I det här avsnittet beskrivs funktionaliteten och viktiga dokumentationsuppdate
 
 | Releasamånad | Uppdateringstyp | Beskrivning |
 |---|---|---|
-| April 2023 | Dokumentation - uppdatering | <ul><li>Vi uppdaterade avsnittet [use-cases](#use-cases) med ett tydligare exempel på när kunder skulle kunna dra nytta av det här målet.</li> <li>Vi uppdaterade avsnittet [mapping](#mapping-considerations-example) med tydliga exempel på både obligatoriska och valfria mappningar.</li> <li>Vi uppdaterade avsnittet [Anslut till målet](#connect) med ett exempel på hur du skapar det sammanfogade värdet för fältet **[!UICONTROL Username]** med hjälp av företagsnamnet [!DNL Oracle Eloqua] och användarnamnet för [!DNL Oracle Eloqua]. (PLATIR-28343)</li><li>Vi uppdaterade avsnitten [Samla [!DNL Oracle Eloqua] in](#gather-credentials) och [Fyll i målinformation](#destination-details) med vägledning om [!DNL Oracle Eloqua] **[!UICONTROL Pod]**-val. Värdet *&quot;Pod&quot;* används av målet för att skapa bas-URL:en för API-anropen. Avsnittet [[!DNL Oracle Eloqua] Krav](#prerequisites-destination) uppdaterades också med vägledning om hur du tilldelar *&quot;Avancerade användare - marknadsföringsbehörigheter&quot;* som en obligatorisk *&quot;Säkerhetsgrupper&quot;* för din [!DNL Oracle Eloqua]-instans.</li></ul> |
+| April 2023 | Uppdatering av dokumentation | <ul><li>Vi uppdaterade avsnittet [use-cases](#use-cases) med ett tydligare exempel på när kunder skulle kunna dra nytta av det här målet.</li> <li>Vi uppdaterade avsnittet [mapping](#mapping-considerations-example) med tydliga exempel på både obligatoriska och valfria mappningar.</li> <li>Vi uppdaterade avsnittet [Anslut till målet](#connect) med ett exempel på hur du skapar det sammanfogade värdet för fältet **[!UICONTROL Username]** med hjälp av företagsnamnet [!DNL Oracle Eloqua] och användarnamnet för [!DNL Oracle Eloqua]. (PLATIR-28343)</li><li>Vi uppdaterade avsnitten [Samla [!DNL Oracle Eloqua] in](#gather-credentials) och [Fyll i målinformation](#destination-details) med vägledning om [!DNL Oracle Eloqua] **[!UICONTROL Pod]**-val. Värdet *&quot;Pod&quot;* används av målet för att skapa bas-URL:en för API-anropen. Avsnittet [[!DNL Oracle Eloqua] Krav](#prerequisites-destination) uppdaterades också med vägledning om hur du tilldelar *&quot;Avancerade användare - marknadsföringsbehörigheter&quot;* som en obligatorisk *&quot;Säkerhetsgrupper&quot;* för din [!DNL Oracle Eloqua]-instans.</li></ul> |
 | Mars 2023 | Inledande version | Ursprunglig målversion och dokumentationspublicering. |
 
 {style="table-layout:auto"}

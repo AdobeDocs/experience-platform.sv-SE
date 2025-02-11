@@ -16,7 +16,7 @@ ht-degree: 0%
 >[!CONTEXTUALHELP]
 >id="platform_privacyConsole_dataUsageLabels_description"
 >title="Styr åtkomsten till känsliga och skyddade data"
->abstract="<h2>Beskrivning</h2><p>Styr åtkomsten till specifika dataattribut och/eller segment, så att ni kan utforma flexibla arbetsflöden för de olika personer och team som arbetar med Experience Platform.</p>"
+>abstract="<h2>Beskrivning</h2><p>Styr åtkomsten till specifika dataattribut och/eller segment så att ni kan utforma flexibla arbetsflöden för de olika personer och team som arbetar med Experience Platform.</p>"
 
 Med Adobe Experience Platform kan du tillämpa dataanvändningsetiketter på datauppsättningar och fält och kategorisera dem enligt relaterade [datastyrningsprinciper](../policies/overview.md) och [åtkomstkontrollprinciper](../../access-control/abac/ui/policies.md).
 

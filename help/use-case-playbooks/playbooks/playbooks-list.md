@@ -1,7 +1,7 @@
 ---
 solution: Experience Platform
-title: Available Use Case Playbooks for Real-time Customer Data Platform and Adobe Journey Optimizer.
-description: En lista över alla spelböcker i Real-time Customer Data Platform och Adobe Journey Optimizer.
+title: Available Use Case Playbooks for Real-Time Customer Data Platform and Adobe Journey Optimizer.
+description: En lista över alla spelböcker i Real-Time Customer Data Platform och Adobe Journey Optimizer.
 role: User
 exl-id: 00f16761-3759-4de0-882d-b77e18f7c1fe
 source-git-commit: 0cfe3e87ae4f9e8dc9ad53e9acb096efb590b72d
@@ -13,14 +13,14 @@ ht-degree: 0%
 
 # Available Use Case Playbooks
 
-Läs den här sidan för att få en översikt över alla tillgängliga spelböcker som du kan upptäcka och använda i Real-time Customer Data Platform och Adobe Journey Optimizer.
+Läs den här sidan för att få en översikt över alla tillgängliga spelböcker som du kan identifiera och använda i kunddataplattformen i realtid och Adobe Journey Optimizer.
 
 ## Använd fallspelningsböcker i Journey Optimizer {#optimizer-playbooks}
 
 >[!CONTEXTUALHELP]
 >id="platform_playbooks_list"
 >title="Tillgängliga spelböcker"
->abstract="En lista över alla spelböcker i Real-time Customer Data Platform och Adobe Journey Optimizer."
+>abstract="En lista över alla spelböcker i kunddataplattformen i realtid och Adobe Journey Optimizer."
 
 | Spelboksnamn | Beskrivning |
 | ------------- |  ----------- |
@@ -61,7 +61,7 @@ Läs den här sidan för att få en översikt över alla tillgängliga spelböck
 
 {style="table-layout:auto"}
 
-## Använd fallspelningsböcker i Real-time Customer Data Platform {#rtcdp-playbooks}
+## Använd fallspelningsböcker i Real-Time Customer Data Platform {#rtcdp-playbooks}
 
 | Spelboksnamn | Beskrivning |
 | ------------- | ----------- |

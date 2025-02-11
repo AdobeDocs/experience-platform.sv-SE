@@ -14,7 +14,7 @@ ht-degree: 0%
 >[!CONTEXTUALHELP]
 >id="platform_privacyConsole_scheduleDatasetExpiration_description"
 >title="Ta bort oönskade eller utgångna kundposter och datauppsättningar"
->abstract="<h2>Beskrivning</h2><p>Om du vill hantera livscykeln för dina Experience Platform-data som inte har att göra med efterlevnad av gällande bestämmelser, kan du ta bort konsumentposter och schemalägga förfallodatum för datauppsättningar. Mer information om hur du skapar eller hanterar förfrågningar från registrerade personer finns i avsnittet om att uppfylla förfrågningar om personlig integritet.</p>"
+>abstract="<h2>Beskrivning</h2><p>Om du vill hantera livscykeln för dina Experience Platform-data utan att följa gällande regelverk kan du ta bort konsumentposter och schemalägga förfallodatum för datauppsättningar. Mer information om hur du skapar eller hanterar förfrågningar från registrerade personer finns i avsnittet om att uppfylla förfrågningar om personlig integritet.</p>"
 
 Med arbetsytan [[!UICONTROL Data Lifecycle] ](./overview.md) i Adobe Experience Platform-gränssnittet kan du schemalägga förfallodatum för datauppsättningar. När en datauppsättning når sitt förfallodatum startar datasjön, identitetstjänsten och kundprofilen i realtid separata processer för att ta bort datauppsättningens innehåll från sina respektive tjänster. När data har tagits bort från alla tre tjänsterna markeras förfallotiden som slutförd.
 
@@ -26,7 +26,7 @@ Det här dokumentet beskriver hur du schemalägger och automatiserar förfalloda
 
 >[!NOTE]
 >
->När datauppsättningen förfaller tas inga data bort från Adobe Experience Platform Edge Network. Det finns dock ingen möjlighet att data stannar kvar i Edge Network efter att datauppsättningen har satts till förfallodatum. Detta beror på att 15-dagars servicelicensavtalet för förfallodatum för datauppsättning överlappar den 14-dagarsperiod då data finns i Edge Network innan de kasseras.
+>När datauppsättningen förfaller tas inga data bort från Adobe Experience Platform Edge Network. Det finns dock ingen möjlighet att data stannar kvar i Edge Network när datauppsättningen har satts till att upphöra. Detta beror på att 15-dagars servicelicensavtalet för förfallodatum för datauppsättning överlappar den 14-dagarsperiod då data finns i Edge Network innan de kasseras.
 
 Avancerad livscykelhantering för data stöder borttagning av datauppsättningar via [datamängdens slutpunkt](../api/dataset-expiration.md) och ID-borttagningar (radnivådata) med hjälp av primära identiteter via [arbetsorderslutpunkten](../api/workorder.md). Du kan också hantera datauppsättningens förfallodatum och [postborttagningar](./record-delete.md) via plattformens användargränssnitt. Mer information finns i den länkade dokumentationen.
 
@@ -45,7 +45,7 @@ Om du vill skapa en begäran väljer du **[!UICONTROL Create request]** på huvu
 
 >[!IMPORTANT]
 >
->Användare av Real-Time CDP, Adobe Journey Optimizer och Customer Journey Analytics har 20 väntande arbetsorder för schemalagda datauppsättningar. Användare av hälso- och sjukvårdsskölden och skölden för skydd av privatlivet och privatlivet har 50 väntande schemalagda arbetsorder för förfallodatum. Det innebär att du kan ha 20 eller 50 datauppsättningar schemalagda att tas bort när som helst.<br>Om du t.ex. har 20 schemalagda datauppsättningar som förfaller och en datauppsättning ska tas bort i morgon, kan du inte ange fler förfallodatum förrän den datauppsättningen har tagits bort.
+>Real-Time CDP-, Adobe Journey Optimizer- och Customer Journey Analytics-användare har 20 väntande arbetsbeställningar för schemalagda datauppsättningar. Användare av hälso- och sjukvårdsskölden och skölden för skydd av privatlivet och privatlivet har 50 väntande schemalagda arbetsorder för förfallodatum. Det innebär att du kan ha 20 eller 50 datauppsättningar schemalagda att tas bort när som helst.<br>Om du t.ex. har 20 schemalagda datauppsättningar som förfaller och en datauppsättning ska tas bort i morgon, kan du inte ange fler förfallodatum förrän den datauppsättningen har tagits bort.
 
 ![Arbetsytan [!UICONTROL Data Lifecycle] med [!UICONTROL Create request] markerad.](../images/ui/ttl/create-request-button.png)
 
@@ -89,6 +89,6 @@ På informationssidan om datauppsättningens förfallodatum, visar den högra li
 
 ## Nästa steg
 
-I det här dokumentet beskrivs hur du schemalägger förfallodatum för datauppsättningar i användargränssnittet i Experience Platform. Mer information om hur du utför andra datamängdsåtgärder i användargränssnittet finns i [översikten för användargränssnittet för datatillgång](./overview.md).
+I det här dokumentet beskrivs hur du schemalägger förfallodatum för datauppsättningar i Experience Platform användargränssnitt. Mer information om hur du utför andra datamängdsåtgärder i användargränssnittet finns i [översikten för användargränssnittet för datatillgång](./overview.md).
 
 Mer information om hur du schemalägger förfallodatum för datauppsättningar med API:t för datahygien finns i [slutpunktshandboken för datauppsättningar](../api/dataset-expiration.md).

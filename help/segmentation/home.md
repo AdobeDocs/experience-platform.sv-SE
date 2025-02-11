@@ -93,10 +93,10 @@ Batchmålgrupper utvärderas automatiskt var 24:e timme. Om du vill utvärdera e
 >[!CONTEXTUALHELP]
 >id="platform_segments_evaluation_edge"
 >title="Edge-utvärdering"
->abstract="Edge segmentering är möjligheten att omedelbart utvärdera segment i Platform på Edge Network, vilket möjliggör användning av samma sida och nästa sida."
+>abstract="Edge segmentering är möjligheten att omedelbart utvärdera segment i Platform i Edge Network, vilket möjliggör användning av samma sida och nästa sida."
 >additional-url="https://experienceleague.adobe.com/docs/experience-platform/segmentation/ui/edge-segmentation.html" text="Användargränssnittsguide för Edge-segmentering"
 
-Edge segmentering är möjligheten att omedelbart utvärdera segment i plattformen [ på Edge Network](../web-sdk/home.md), vilket möjliggör användning av samma sida och nästa sida.
+Edge segmentering är möjligheten att omedelbart utvärdera segment i plattformen [på Edge Network](../web-sdk/home.md), vilket möjliggör användning av samma sida och nästa sida.
 
 Läs antingen [API-dokumentationen](./api/edge-segmentation.md) eller [gränssnittsdokumentationen](./ui/edge-segmentation.md) om du vill veta mer om kantsegmentering.
 

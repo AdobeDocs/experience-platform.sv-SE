@@ -1,5 +1,5 @@
 ---
-keywords: Experience Platform;hem;populära ämnen;åtkomstkontroll;attributbaserad åtkomstkontroll;
+keywords: Experience Platform;home;populära topics;access control;attribute-based access control;
 title: Attributbaserad åtkomstkontroll - från början till slut
 description: Det här dokumentet innehåller en komplett guide om attributbaserad åtkomstkontroll i Adobe Experience Platform
 role: Developer
@@ -49,13 +49,13 @@ Du kommer att:
 
 ## Behörigheter
 
-[!UICONTROL Permissions] är det område på Experience Cloud där administratörer kan definiera användarroller och profiler för att hantera behörigheter för funktioner och objekt i ett produktprogram.
+[!UICONTROL Permissions] är det område i Experience Cloud där administratörer kan definiera användarroller och profiler för att hantera behörigheter för funktioner och objekt i ett produktprogram.
 
 Genom [!UICONTROL Permissions] kan du skapa och hantera roller och tilldela önskade resursbehörigheter för dessa roller. I [!UICONTROL Permissions] kan du även hantera etiketter, sandlådor och användare som är associerade med en viss roll.
 
 Kontakta systemadministratören för att få åtkomst om du inte har administratörsbehörighet.
 
-När du har administratörsbehörighet går du till [Adobe Experience Cloud](https://experience.adobe.com/) och loggar in med dina inloggningsuppgifter för Adobe. När du är inloggad visas sidan **[!UICONTROL Overview]** för din organisation som du har administratörsbehörighet för. På den här sidan visas vilka produkter din organisation prenumererar på, tillsammans med andra kontroller för att lägga till användare och administratörer i organisationen. Välj **[!UICONTROL Permissions]** om du vill öppna arbetsytan för plattformsintegreringen.
+När du har administratörsbehörighet går du till [Adobe Experience Cloud](https://experience.adobe.com/) och loggar in med dina Adobe-autentiseringsuppgifter. När du är inloggad visas sidan **[!UICONTROL Overview]** för din organisation som du har administratörsbehörighet för. På den här sidan visas vilka produkter din organisation prenumererar på, tillsammans med andra kontroller för att lägga till användare och administratörer i organisationen. Välj **[!UICONTROL Permissions]** om du vill öppna arbetsytan för plattformsintegreringen.
 
 ![Bild som visar den behörighetsprodukt som väljs i Adobe Experience Cloud](../images/flac-ui/flac-select-product.png)
 
@@ -66,7 +66,7 @@ Arbetsytan Behörigheter för plattformsgränssnittet visas och öppnas på sida
 >[!CONTEXTUALHELP]
 >id="platform_permissions_labels_about"
 >title="Vad är etiketter?"
->abstract="Använd etiketter för att kategorisera datauppsättningar och fält utifrån de användnings- och åtkomstprinciper som gäller för dessa data. Plattformen innehåller flera Adobe-definierade <strong>core</strong>-dataanvändningsetiketter, som omfattar ett stort antal vanliga begränsningar som gäller för datastyrning. Känsliga <strong>S</strong>-etiketter som RHD (Regulated Health Data) kan till exempel användas för att kategorisera data som refererar till Skyddad hälsoinformation (PHI). Du kan också definiera egna etiketter som passar organisationens behov."
+>abstract="Använd etiketter för att kategorisera datauppsättningar och fält utifrån de användnings- och åtkomstprinciper som gäller för dessa data. Plattformen innehåller flera Adobe-definierade <strong>core</strong>-etiketter för dataanvändning, som omfattar ett stort antal vanliga begränsningar för datastyrning. Känsliga <strong>S</strong>-etiketter som RHD (Regulated Health Data) kan till exempel användas för att kategorisera data som refererar till Skyddad hälsoinformation (PHI). Du kan också definiera egna etiketter som passar organisationens behov."
 >additional-url="https://experienceleague.adobe.com/docs/experience-platform/data-governance/labels/overview.html#understanding-data-usage-labels" text="Översikt över etiketter för dataanvändning"
 
 Roller är sätt att kategorisera de typer av användare som interagerar med din plattformsinstans och är byggstenar för åtkomstkontrollprinciper. En roll har en given uppsättning behörigheter, och medlemmar i organisationen kan tilldelas till en eller flera roller, beroende på vilken typ av åtkomst de behöver.
@@ -93,7 +93,7 @@ Nu när du har konfigurerat en användarroll med etiketten [!UICONTROL RHD] är 
 
 I den övre navigeringen väljer du **programväljaren**, som representeras av ikonen ![programväljaren](/help/images/icons/apps.png) och sedan **[!UICONTROL Experience Platform]**.
 
-![Bild som visar Experience Platform som väljs från programväljarens listruta](../images/abac-end-to-end-user-guide/abac-select-experience-platform.png)
+![Bild som visar att Experience Platform har valts i programväljarens listruta](../images/abac-end-to-end-user-guide/abac-select-experience-platform.png)
 
 Välj **[!UICONTROL Schemas]** i den vänstra navigeringen och välj sedan **[!UICONTROL ACME Healthcare]** i listan med scheman som visas.
 
