@@ -3,9 +3,9 @@ title: Amazon Ads
 description: Amazon Ads erbjuder en rad alternativ som hjälper er att nå era annonsmål för registrerade säljare, leverantörer, bokleverantörer, KDP-författare (Kindle Direct Publishing), apputvecklare och/eller byråer. Integreringen av Amazon Ads med Adobe Experience Platform ger körklar integrering med Amazon Ads-produkter, inklusive Amazon DSP (ADSP). Med Amazon Ads-destinationen i Adobe Experience Platform kan man definiera målgrupper för annonsörer för målinriktning och aktivering i Amazon DSP.
 last-substantial-update: 2025-01-07T00:00:00Z
 exl-id: 724f3d32-65e0-4612-a882-33333e07c5af
-source-git-commit: 8543f76565f22b8cdfb0be71a1332696bc079ec7
+source-git-commit: 546ef0f9a5a9c37de3891aba02491540a5c6f8c9
 workflow-type: tm+mt
-source-wordcount: '1784'
+source-wordcount: '1770'
 ht-degree: 1%
 
 ---
@@ -18,7 +18,7 @@ ht-degree: 1%
 
 Integreringen av [!DNL Amazon Ads] med Adobe Experience Platform ger körklar integrering med [!DNL Amazon Ads]-produkter, inklusive Amazon DSP (ADSP) och Amazon Marketing Cloud (AMC).
 
-Med målplatsen [!DNL Amazon Ads] i Adobe Experience Platform kan användare definiera annonsörer för målinriktning och aktivering i Amazon DSP.  Dessutom kan användare överföra sina data till [!DNL Amazon Marketing Cloud] för att förstå målgruppens prestanda, annonsörens tillhandahållna dimensioner, medlemskap i Amazon-segment eller andra signaler som är tillgängliga i AMC. När annonsörer har överförts till AMC kan användare använda [!DNL Amazon Marketing Cloud] för att ändra, förbättra eller lägga till i målgruppsmedlemmar med hjälp av Amazon-signaler inifrån [!DNL Amazon Marketing Cloud].
+Med målplatsen [!DNL Amazon Ads] i Adobe Experience Platform kan användare definiera annonsörgrupper för målinriktning och aktivering i Amazon DSP.  Dessutom kan användare överföra sina data till [!DNL Amazon Marketing Cloud] för att förstå målgruppens prestanda, annonsörens tillhandahållna dimensioner, medlemskap i Amazon-segment eller andra signaler som är tillgängliga i AMC. När annonsörer har överförts till AMC kan användare använda [!DNL Amazon Marketing Cloud] för att ändra, förbättra eller lägga till i målgruppsmedlemmar med hjälp av Amazon-signaler inifrån [!DNL Amazon Marketing Cloud].
 
 AMC sammanför unika signaler från olika Amazon-ägda och styrda kanaler, som omfattar alla medier, inklusive visning, video, direktuppspelad TV, ljud och sponsrade annonser. Användare kan enkelt skicka kuraterade segment från Adobe Experience Platform till AMC för att förbättra inlärningen, som målgruppernas marknadsgrupper, livsstilskohorter och varumärkesinteraktionsmönster. Augmenterade segment kan sedan användas för att optimera medieaktiveringar i Amazon DSP.
 
@@ -32,7 +32,7 @@ För att du bättre ska kunna förstå hur och när du ska använda målet *[!DN
 
 ### Aktivering och målinriktning {#activation-and-targeting}
 
-Tack vare den här integreringen med Amazon DSP kan [!DNL Amazon Ads]-annonsörer skicka CDP-målgrupper från Adobe Experience Platform till Amazon DSP för att skapa annonsörer för annonsmålgrupper. Målgrupper kan väljas i Amazon-DSP för positiv målinriktning och negativ målinriktning (undertryckning).
+Tack vare den här integreringen med Amazon DSP kan [!DNL Amazon Ads]-annonsörer skicka CDP-målgrupper från Adobe Experience Platform till Amazon DSP för att skapa marknadsföringsmålgrupper för annonsering. Målgrupper kan väljas inom Amazon DSP för positiv målinriktning och negativ målinriktning (undertryckning).
 
 ### Analyser och mätningar {#analytics-and-measurement}
 
@@ -40,7 +40,7 @@ Integrationen med [!DNL Amazon Marketing Cloud] (AMC) gör att [!DNL Amazon Ads]
 
 ### Advertising-optimering
 
-Tack vare den här integreringen med [!DNL Amazon Marketing Cloud] (AMC) kan annonsörer överföra egna kundlistor och använda [!DNL Amazon Marketing Cloud] SQL för att utföra överlappningsanalyser, undertryckanden, tillägg eller optimeringar till målgrupper med jämna mellanrum innan en aktiveringsklar målgrupp skapas i Amazon DSP för målgruppsanpassning.
+Tack vare den här integreringen med [!DNL Amazon Marketing Cloud] (AMC) kan annonsörer överföra egna kundlistor och använda [!DNL Amazon Marketing Cloud] SQL för att utföra överlappningsanalyser, undertryckanden, tillägg eller optimeringar till målgrupper med jämna mellanrum innan de skapar en aktiveringsklar målgrupp i Amazon DSP för målgruppsanpassning.
 
 ## Förhandskrav {#prerequisites}
 
@@ -99,10 +99,6 @@ Om du vill konfigurera information för målet fyller du i de obligatoriska och 
 
 * **[!UICONTROL Advertiser Region]**: Välj lämplig region där annonsören finns. Mer information om vilka marknadsplatser som stöds av respektive region finns i [Amazon Ads-dokumentationen](https://advertising.amazon.com/API/docs/en-us/info/api-overview#api-endpoints).
 
->[!IMPORTANT]
->
->Uppdateringen som innehåller **[!UICONTROL Amazon Ads Consent Signal]** är planerad att bli aktiv den 7 februari 2025.
-
 * **[!UICONTROL Amazon Ads Consent Signal]**: Bekräfta att alla data som skickas via den här anslutningen har samtyckt till att använda personuppgifter för annonsändamål. &quot;GRANTED&quot; innebär att Amazon samtycker till att använda kundens personuppgifter för annonsering. Tillåtna värden är &quot;GRANTED&quot; och &quot;DENIED&quot;. Alla poster som skickas via anslutningar med &quot;DENIED&quot; kommer att refuseras för vidare användning inom Amazon Ads.
 
 ![Konfigurera nytt mål](../../assets/catalog/advertising/amazon-ads/amazon_ads_consent_input.png)
@@ -126,7 +122,7 @@ Läs [Aktivera profiler och målgrupper för att direktuppspela målgruppsexport
 
 Anslutningen [!DNL Amazon Ads] har stöd för hash-kodade e-postadresser och hashade telefonnummer för identitetsmatchningssyften. Skärmbilden nedan innehåller ett exempel på matchning som är kompatibel med anslutningen [!DNL Amazon Ads]:
 
-Mappning av ![Adobe till Amazon Ads](../../assets/catalog/advertising/amazon-ads/amazon_ads_image_2.png)
+![Mappning av Adobe till Amazon Ads](../../assets/catalog/advertising/amazon-ads/amazon_ads_image_2.png)
 
 * Om du vill mappa hash-kodade e-postadresser väljer du identitetsnamnområdet `Email_LC_SHA256` som ett källfält.
 * Om du vill mappa hash-kodade telefonnummer markerar du identitetsnamnområdet `Phone_SHA256` som ett källfält.
@@ -143,9 +139,9 @@ När målgruppen har överförts kan du validera att målgruppen har skapats och
 
 **För Amazon DSP**
 
-Navigera till din **[!UICONTROL Advertiser ID]** > **[!UICONTROL Audiences]** > **[!UICONTROL Advertiser Audiences]**. Om målgruppen skapades och uppfyller det minsta antalet målgruppsmedlemmar visas statusen `Active`. Mer information om er målgruppsstorlek och räckvidd finns i den prognostiserade panelen Reach till höger om Amazon DSP användargränssnitt.
+Navigera till din **[!UICONTROL Advertiser ID]** > **[!UICONTROL Audiences]** > **[!UICONTROL Advertiser Audiences]**. Om målgruppen skapades och uppfyller det minsta antalet målgruppsmedlemmar visas statusen `Active`. Mer information om er målgruppsstorlek och räckvidd finns i den prognostiserade panelen Reach till höger om användargränssnittet i Amazon DSP.
 
-![Verifiering av att målgrupper skapats med Amazon DSP](../../assets/catalog/advertising/amazon-ads/amazon_ads_image_3.png)
+![Verifiering av målgruppsgenerering i Amazon DSP](../../assets/catalog/advertising/amazon-ads/amazon_ads_image_3.png)
 
 **För[!DNL Amazon Marketing Cloud]**
 
