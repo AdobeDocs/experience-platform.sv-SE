@@ -2,9 +2,9 @@
 title: Översikt över målportalen
 description: Lär dig hur du använder Audience Portal för att visa, hantera och skapa målgrupper i Adobe Experience Platform.
 exl-id: 505ac22e-05f3-423a-a9a0-7f3470af8945
-source-git-commit: 4ef3f6dc07cb5d17146d48c7a41e3745fd9a3a58
+source-git-commit: 9f4facebcd55dc15761db1bf744acfef9ccb15ff
 workflow-type: tm+mt
-source-wordcount: '4356'
+source-wordcount: '4384'
 ht-degree: 0%
 
 ---
@@ -97,7 +97,7 @@ Du kan lägga till fler fält i målportalen genom att välja ![filterattributsi
 | ----- | ----------- |
 | [!UICONTROL Name] | Namnet på publiken. |
 | [!UICONTROL Profile count] | Det totala antalet profiler som är kvalificerade för målgruppen. |
-| [!UICONTROL Origin] | Målgruppens ursprung. Det är här som publiken kommer ifrån. Möjliga värden är Segmenteringstjänst, Anpassad överföring, Målgruppskomposition och Audience Manager. |
+| [!UICONTROL Origin] | Målgruppens ursprung. Det är här som publiken kommer ifrån. Möjliga värden är segmenteringstjänsten, anpassad överföring, målgruppskomposition och Audience Manager. |
 | [!UICONTROL Lifecycle status] | Publiken. Möjliga värden för fältet är `Draft`, `Inactive` och `Published`. Mer information om livscykelstatus, inklusive vad de olika stadierna innebär och hur du flyttar målgrupper till olika livscykeltillstånd, finns i avsnittet [livscykelstatus i Vanliga frågor om segmentering](../faq.md#lifecycle-status). |
 | [!UICONTROL Update frequency] | Ett värde som anger hur ofta målgruppens data uppdateras. Möjliga värden för fältet är [!UICONTROL Batch], [!UICONTROL Streaming], [!UICONTROL Edge] och [!UICONTROL Not Scheduled]. |
 | [!UICONTROL Last updated by] | Namnet på den person som senast uppdaterade målgruppen. |
@@ -198,7 +198,7 @@ Listan med tillgängliga filter visas.
 
 | Filter | Beskrivning |
 | ------ | ----------- |
-| [!UICONTROL Origin] | Gör att du kan filtrera baserat på målgruppens ursprung. De tillgängliga alternativen är Segmenteringstjänst, Anpassad överföring, Målgruppskomposition och Audience Manager. |
+| [!UICONTROL Origin] | Gör att du kan filtrera baserat på målgruppens ursprung. De tillgängliga alternativen är segmenteringstjänst, anpassad överföring, målgruppskomposition och Audience Manager. |
 | [!UICONTROL Has any tag] | Gör att du kan filtrera efter taggar. Du kan välja mellan **[!UICONTROL Has any tag]** och **[!UICONTROL Has all tags]**. När **[!UICONTROL Has any tag]** har valts kommer de filtrerade målgrupperna att inkludera **alla** av de taggar som du har lagt till. När **[!UICONTROL Has all tags]** har valts måste de filtrerade målgrupperna innehålla **all** av de taggar du har lagt till. |
 | [!UICONTROL Lifecycle status] | Gör att du kan filtrera baserat på målgruppens livscykelstatus. De tillgängliga alternativen är [!UICONTROL Deleted], [!UICONTROL Draft], [!UICONTROL Inactive] och [!UICONTROL Published]. |
 | [!UICONTROL Update frequency] | Gör att du kan filtrera baserat på målgruppens uppdateringsfrekvens (utvärderingsmetod). Tillgängliga alternativ är [!UICONTROL Batch], [!UICONTROL Streaming] och [!UICONTROL Edge] |
@@ -233,6 +233,8 @@ Med flexibel målgruppsutvärdering kan ni köra ett segmenteringsjobb på begä
 >
 När du väljer målgrupper för flexibel utvärdering av målgrupper gäller följande villkor:
 >
+- Du kan bara använda den flexibla målgruppsutvärderingen **två gånger** per dag. Den här gränsen återställs vid midnatt (UTC).
+- Du har **maximalt** av 50 flexibla målgruppsutvärderingar som körs per år.
 - Alla målgrupper som **måste** har ursprunget till segmenteringstjänsten.
 - Alla målgrupper **måste** utvärderas med gruppsegmentering.
 - Alla målgrupper **måste** vara personbaserade.
