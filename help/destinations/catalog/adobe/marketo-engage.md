@@ -1,15 +1,15 @@
 ---
-title: Marketo Engage destination
+title: Marketo Engage Destination
 description: Marketo Engage är den enda heltäckande CXM-lösningen (Customer Experience Management) för marknadsföring, reklam, analys och handel. Ni kan automatisera och hantera aktiviteter från CRM-ledhantering och kundengagemang till kontobaserad marknadsföring och intäktsattribuering.
 exl-id: 5ae5f114-47ba-4ff6-8e42-f8f43eb079f7
-source-git-commit: c35b43654d31f0f112258e577a1bb95e72f0a971
+source-git-commit: 58be4f2f44312116a3aa2e8f5a7889424000fd9f
 workflow-type: tm+mt
-source-wordcount: '846'
+source-wordcount: '864'
 ht-degree: 0%
 
 ---
 
-# Marketo Engage {#beta-marketo-engage-destination}
+# Marketo Engage destination {#beta-marketo-engage-destination}
 
 ## Destinationsändringslogg {#changelog}
 
@@ -49,7 +49,7 @@ Målgruppen gör det möjligt för marknadsförare att skicka målgrupper som sk
 
 ### Attribut som stöds {#supported-attributes}
 
-Du kan mappa attribut från Experience Platform till alla attribut som din organisation har åtkomst till i Marketo. I Marketo kan du använda [Beskriv API-begäran](https://developers.marketo.com/rest-api/lead-database/leads/#describe) för att hämta de attributfält som din organisation har åtkomst till.
+Du kan mappa attribut från Experience Platform till alla attribut som din organisation har tillgång till i Marketo. I Marketo kan du använda [Beskriv API-begäran](https://developers.marketo.com/rest-api/lead-database/leads/#describe) för att hämta de attributfält som din organisation har åtkomst till.
 
 ## Målgrupper {#supported-audiences}
 
@@ -57,7 +57,7 @@ I det här avsnittet beskrivs vilka typer av målgrupper du kan exportera till d
 
 | Målgruppsursprung | Stöds | Beskrivning |
 |---------|----------|----------|
-| [!DNL Segmentation Service] | ✓ | Publiker som genererats via Experience Platform [segmenteringstjänsten](../../../segmentation/home.md). |
+| [!DNL Segmentation Service] | ✓ | Publiker som genererats via Experience Platform [segmenteringstjänst](../../../segmentation/home.md). |
 | Anpassade överföringar | ✓ | Publikerna [importerade](../../../segmentation/ui/audience-portal.md#import-audience) till Experience Platform från CSV-filer. |
 
 {style="table-layout:auto"}
@@ -88,8 +88,8 @@ I videon nedan visas också stegen för att konfigurera ett Marketo-mål och akt
 >
 >Videon återspeglar inte helt den aktuella funktionen. Den mest aktuella informationen finns i guiden ovan. Följande delar av videon är inaktuella:
 > 
->* Målkortet som du bör använda i användargränssnittet för Experience Platform är **[!UICONTROL Marketo V2]**.
->* I videon visas inte det nya **[!UICONTROL Person creation]**-väljarfältet i arbetsflödet för anslutning till mål.
+>* Målkortet som du bör använda i Experience Platform-gränssnittet är **[!UICONTROL Marketo V2]**.
+>* I videon visas inte det nya **[!UICONTROL Person creation]**-väljarfältet i arbetsflödet för anslutning till mål. Om du vill använda det fältet måste du mappa både förnamn och efternamn under steget för attributmappning.
 >* De två begränsningar som anges i videon gäller inte längre. Du kan nu mappa många andra profilattributfält utöver den information om målgruppsmedlemskap som stöddes när videon spelades in. Du kan också exportera målgruppsmedlemmar till Marketo som ännu inte finns i dina statiska Marketo-listor, och dessa läggs till i listorna.
 >* I **[!UICONTROL Schedule audience step]** av aktiveringsarbetsflödet behövde du i Marketo V1 lägga till en **[!UICONTROL Mapping ID]** manuellt för att kunna exportera data till Marketo. Det här manuella steget behövs inte längre i Marketo V2.
 
