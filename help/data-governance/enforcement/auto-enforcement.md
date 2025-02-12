@@ -1,12 +1,12 @@
 ---
-keywords: Experience Platform;hem;populära ämnen;Politiska åtgärder;Automatisk tillsyn;API-baserad tillämpning;datastyrning
+keywords: Experience Platform;hem;populära ämnen;Politiska frågor;Automatisk tillsyn;API-baserad tillämpning;datastyrning
 solution: Experience Platform
 title: Automatisk policytillämpning
-description: Det här dokumentet beskriver hur dataanvändningspolicyer tillämpas automatiskt när målgrupper aktiveras till destinationer i Experience Platform.
+description: Det här dokumentet beskriver hur dataanvändningspolicyer tillämpas automatiskt när målgrupper aktiveras till mål i Experience Platform.
 exl-id: c6695285-77df-48c3-9b4c-ccd226bc3f16
-source-git-commit: b0c4a26c2e8bb90a3494fcd6eb76c4d0d7421219
+source-git-commit: f9072a0fc287c8061a3d28972096577317a0a2c9
 workflow-type: tm+mt
-source-wordcount: '2096'
+source-wordcount: '2094'
 ht-degree: 0%
 
 ---
@@ -46,7 +46,7 @@ När en målgrupp aktiveras första gången söker [!DNL Policy Service] efter t
 
 >[!NOTE]
 >
->Om det finns dataanvändningsetiketter som bara har tillämpats på vissa fält i en datamängd (i stället för hela datamängden), tillämpas dessa fältetiketter endast under följande förhållanden:
+>Om det finns dataanvändningsetiketter som bara har tillämpats på vissa fält, gäller kravet på dessa fältetiketter endast om minst ett av följande villkor är uppfyllt:
 >
 >* Fälten används i målgruppen.
 >* Fälten konfigureras som projicerade attribut för målmålet.
@@ -57,7 +57,7 @@ Datalindelningen spelar en viktig roll när det gäller hur policyer tillämpas 
 
 När det gäller datastyrning gör länkning det möjligt för dataanvändningsetiketter att sprida information från scheman till tjänster i senare led som förbrukar deras data, som kundprofil i realtid och destinationer. Detta gör det möjligt att utvärdera och tillämpa principer vid flera viktiga punkter i dataöverföringen via Platform och ger kontext till datakonsumenterna om varför en policyöverträdelse inträffade.
 
-I Experience Platform berörs den politiska kontrollen av följande:
+I Experience Platform gäller följande:
 
 1. Data hämtas till plattformen och lagras i **datamängder**.
 1. Kundprofiler identifieras och konstrueras utifrån dessa datauppsättningar genom att sammanfoga datafragment enligt **sammanfogningsprincipen**.
