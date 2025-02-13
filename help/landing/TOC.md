@@ -3,10 +3,10 @@ audience: user
 user-guide-title: Översikt över Adobe Experience Platform
 breadcrumb-title: Översikt över Experience Platform
 user-guide-description: Läs mer om hur Experience Platform kan leverera personaliserade upplevelser till era kunder i realtid med användarhandböcker, dokumentation och självstudiekurser.
-source-git-commit: 90b8a3253e8298a634c0deaf82ac8be05f478622
+source-git-commit: 08a63fb854fe1c2aa83e7a7f74df4c02580e4d4c
 workflow-type: tm+mt
-source-wordcount: '304'
-ht-degree: 17%
+source-wordcount: '309'
+ht-degree: 16%
 
 ---
 
@@ -16,6 +16,7 @@ ht-degree: 17%
 * [Plattformsöversikt](home.md)
 * [Plattformsöversikt (video)](video/platform-overview.md)
 * [Översikt över flera moln](multi-cloud.md)
+* [Edge Network och navet - jämförelse](./edge-and-hub-comparison.md)
 * [Plattformssjälvstudiekurser](https://experienceleague.adobe.com/docs/platform-learn/tutorials/overview.html)
 * [En kundupplevelse som bygger på Platform (Video)](video/customer-experience.md)
 * [Bakom scenen med en kundupplevelse som bygger på Platform (Video)](video/customer-experience-bts.md)
@@ -42,7 +43,7 @@ ht-degree: 17%
    * [Språkstöd](documentation/language-support.md)
 * Program byggda på plattformen {#ecosystem}
    * [Översikt](application-services.md)
-   * [Adobe Real-time Customer Data Platform (alla utgåvor)](https://experienceleague.adobe.com/docs/real-time-customer-data-platform.html)
+   * [Adobe Real-Time Customer Data Platform (alla utgåvor)](https://experienceleague.adobe.com/docs/real-time-customer-data-platform.html)
    * [Program och intelligenta tjänster (video)](video/application-intelligent-services.md)
    * [Customer Journey Analytics](https://experienceleague.adobe.com/docs/customer-journey-analytics.html)
    * [Adobe Journey Optimizer](https://experienceleague.adobe.com/docs/journey-optimizer.html)
