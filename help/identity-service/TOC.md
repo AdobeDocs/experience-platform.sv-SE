@@ -5,9 +5,9 @@ breadcrumb-title: Användarhandbok om Platform Identity Service
 user-guide-description: Kombinera kundidentiteter över olika enheter och system för att leverera personanpassade digitala upplevelser.
 feature: Identities
 role: Admin,Developer
-source-git-commit: 6cdb622e76e953c42b58363c98268a7c46c98c99
+source-git-commit: cbdfa76d546be631a8c1fa588896648835d2a159
 workflow-type: tm+mt
-source-wordcount: '146'
+source-wordcount: '143'
 ht-degree: 19%
 
 ---
@@ -44,7 +44,6 @@ ht-degree: 19%
    - [Skapa ett anpassat namnutrymme](api/create-custom-namespace.md)
    - [Lista det inbyggda ID:t för en identitet](api/list-native-id.md)
    - [API-referens](https://www.adobe.io/experience-platform-apis/references/identity-service)
-- [Delad enhetsidentifiering](shared-device-detection.md)
 - [Definiera identitetsfält i användargränssnittet](label-identities.md)
 - [Behandling av sekretessförfrågningar](privacy.md)
 - [Felsökningsguide](troubleshooting-guide.md)

@@ -3,10 +3,10 @@ keywords: Experience Platform;hem;populära ämnen
 title: Behandling av sekretessförfrågningar i identitetstjänsten
 description: Adobe Experience Platform Privacy Service behandlar kundförfrågningar om åtkomst, avanmälan eller radering av personuppgifter enligt ett flertal sekretessbestämmelser. Det här dokumentet innehåller viktiga begrepp som rör behandling av sekretessförfrågningar för identitetstjänsten.
 exl-id: ab84450b-1a4b-4fdd-b77d-508c86bbb073
-source-git-commit: ba39f62cd77acedb7bfc0081dbb5f59906c9b287
+source-git-commit: a75a5603eacc1b4625a19adfddbb2f4bb81f66d3
 workflow-type: tm+mt
-source-wordcount: '1014'
-ht-degree: 0%
+source-wordcount: '998'
+ht-degree: 1%
 
 ---
 
@@ -18,9 +18,9 @@ Det här dokumentet innehåller viktiga begrepp som rör bearbetning av sekretes
 
 >[!NOTE]
 >
->Den här handboken beskriver bara hur du gör sekretessförfrågningar för identitetsdatalagret i Experience Platform. Om du även planerar att göra sekretessförfrågningar för plattformsdatasjön eller [!DNL Real-Time Customer Profile], kan du läsa [Handboken om behandling av sekretessförfrågningar i datasjön](../catalog/privacy.md) och handboken om [bearbetning av sekretessförfrågningar för profil](../profile/privacy.md) förutom den här självstudiekursen.
+>Den här guiden beskriver bara hur du gör sekretessförfrågningar för Identity-datalagret i Experience Platform. Om du även planerar att göra sekretessförfrågningar för plattformsdatasjön eller [!DNL Real-Time Customer Profile], kan du läsa [Handboken om behandling av sekretessförfrågningar i datasjön](../catalog/privacy.md) och handboken om [bearbetning av sekretessförfrågningar för profil](../profile/privacy.md) förutom den här självstudiekursen.
 >
->Anvisningar om hur du gör sekretessförfrågningar för andra Adobe Experience Cloud-program finns i [Privacy Servicens dokumentation](../privacy-service/experience-cloud-apps.md).
+>Anvisningar om hur du gör sekretessförfrågningar för andra Adobe Experience Cloud-program finns i [Privacy Service-dokumentationen](../privacy-service/experience-cloud-apps.md).
 
 ## Komma igång
 
@@ -32,7 +32,7 @@ Vi rekommenderar att du har en fungerande förståelse för följande [!DNL Expe
 
 ## Identitetsnamnutrymmen {#namespaces}
 
-Adobe Experience Platform [!DNL Identity Service] förenar data för kundidentitet mellan system och enheter. [!DNL Identity Service] använder **identitetsnamnutrymmen** för att ge kontext till identitetsvärden genom att koppla dem till deras ursprungssystem. Ett namnutrymme kan representera ett allmänt koncept, t.ex. en e-postadress (&quot;E-post&quot;) eller associera identiteten med ett visst program, t.ex. ett Adobe Advertising Cloud-id (&quot;AdCloud&quot;) eller ett Adobe Target-id (&quot;TNTID&quot;).
+Adobe Experience Platform [!DNL Identity Service] förenar data för kundidentitet mellan system och enheter. [!DNL Identity Service] använder **identitetsnamnutrymmen** för att ge kontext till identitetsvärden genom att koppla dem till deras ursprungssystem. Ett namnutrymme kan representera ett allmänt koncept, t.ex. en e-postadress (&quot;e-post&quot;) eller associera identiteten med ett visst program, t.ex. ett Adobe Advertising Cloud-ID (&quot;AdCloud&quot;) eller ett Adobe Target-ID (&quot;TNTID&quot;).
 
 Identitetstjänsten underhåller ett arkiv med globalt definierade (standard) och användardefinierade (anpassade) identitetsnamnutrymmen. Standardnamnutrymmen är tillgängliga för alla organisationer (till exempel&quot;E-post&quot; och&quot;ECID&quot;), medan din organisation också kan skapa anpassade namnutrymmen som passar organisationens behov.
 
@@ -40,7 +40,7 @@ Mer information om identitetsnamnutrymmen i [!DNL Experience Platform] finns i [
 
 ## Skicka begäranden {#submit}
 
-Avsnitten nedan beskriver hur du gör sekretessförfrågningar för [!DNL Identity Service] med API:t [!DNL Privacy Service] eller gränssnittet. Innan du läser dessa avsnitt rekommenderar vi att du läser igenom dokumentationen för [Privacy Services-API](../privacy-service/api/getting-started.md) eller [Privacy Servicens användargränssnitt](../privacy-service/ui/overview.md) för att få instruktioner om hur du skickar ett sekretessjobb, inklusive hur du formaterar användardata korrekt i nyttolaster.
+Avsnitten nedan beskriver hur du gör sekretessförfrågningar för [!DNL Identity Service] med API:t [!DNL Privacy Service] eller gränssnittet. Innan du läser dessa avsnitt rekommenderar vi att du läser igenom dokumentationen för [Privacy Service API](../privacy-service/api/getting-started.md) eller [Privacy Service UI](../privacy-service/ui/overview.md) för att få information om hur du skickar ett sekretessjobb, inklusive hur du formaterar användardata korrekt i nyttolaster.
 
 ### Använda API:et
 
@@ -52,7 +52,7 @@ Följande begäran skapar ett nytt sekretessjobb under GDPR för en enskild kund
 
 >[!TIP]
 >
->När du tar bort ett anpassat namnutrymme med API:t måste du ange identitetssymbolen som namnutrymme i stället för visningsnamnet.
+>Du måste ange identitetssymbolen som namnutrymme i stället för visningsnamnet när du tar bort identiteter med GDPR-borttagning.
 
 ```shell
 curl -X POST \
@@ -96,7 +96,7 @@ curl -X POST \
 
 >[!TIP]
 >
->När du tar bort ett anpassat namnutrymme med användargränssnittet måste du ange identitetssymbolen som namnutrymme i stället för visningsnamnet. Du kan inte heller ta bort anpassade namnutrymmen i användargränssnittet för icke-produktionssandlådor.
+>Du måste ange identitetssymbolen som namnutrymme i stället för visningsnamnet när du tar bort identiteter med GDPR-borttagning.
 
 När du skapar jobbförfrågningar i användargränssnittet måste du markera **[!UICONTROL Identity]** under **[!UICONTROL Products]** för att kunna bearbeta jobb för data som lagras i [!DNL Identity Service].
 
