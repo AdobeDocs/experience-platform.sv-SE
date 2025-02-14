@@ -1,10 +1,10 @@
 ---
-keywords: Experience Platform;hem;populära ämnen;api;API;XDM;XDM system;experience data model;data model;ui;workspace;schema;schemas;schemas;
+keywords: Experience Platform;home;populära topics;api;API;XDM;XDM system;experience data model;data model;ui;workspace;schema;schemas;
 solution: Experience Platform
 title: Skapa och redigera scheman i användargränssnittet
-description: Lär dig grunderna i hur du skapar och redigerar scheman i användargränssnittet i Experience Platform.
+description: Lär dig grunderna i hur du skapar och redigerar scheman i Experience Platform användargränssnitt.
 exl-id: be83ce96-65b5-4a4a-8834-16f7ef9ec7d1
-source-git-commit: 24b26e256fb346ccd1a03984f3e0d199c640159c
+source-git-commit: 9691ce1ca560acce7a9512df7eb92e61962bc467
 workflow-type: tm+mt
 source-wordcount: '3899'
 ht-degree: 0%
@@ -23,7 +23,7 @@ Den här guiden ger en översikt över hur du skapar, redigerar och hanterar XDM
 
 ## Förhandskrav {#prerequisites}
 
-Handboken kräver en fungerande förståelse för XDM System. Se [XDM-översikten](../../home.md) för en introduktion till XDM-rollen i ekosystemet Experience Platform och [grunderna i schemakomposition](../../schema/composition.md) för en översikt över hur scheman är uppbyggda.
+Handboken kräver en fungerande förståelse för XDM System. Se [XDM-översikten](../../home.md) för en introduktion till XDM-rollen i Experience Platform-ekosystemet och [grunderna i schemakomposition](../../schema/composition.md) för en översikt över hur scheman är uppbyggda.
 
 ## Skapa ett nytt schema {#create}
 
@@ -159,7 +159,7 @@ När du har valt fältgrupper väljer du **[!UICONTROL Add field groups]** för 
 
 >[!NOTE]
 >
-I Schemaredigeraren visas standardklasser (som genererats av Adobe) och fältgrupper med hänglåsikonen (![En hänglåsikon.](/help/images/icons/lock-closed.png). hänglåset visas i den vänstra listen bredvid namnet på klassen eller fältgruppen, samt intill ett fält i schemagrafiken som är en del av en systemgenererad resurs.
+I Schemaredigeraren anges standardklasser (Adobe-genererade) och fältgrupper med hänglåsikonen ![En hänglåsikon.](/help/images/icons/lock-closed.png). hänglåset visas i den vänstra listen bredvid namnet på klassen eller fältgruppen, samt intill ett fält i schemagrafiken som är en del av en systemgenererad resurs.
 >
 ![Schemaredigeraren med hänglåsikonen markerad](../../images/ui/explore/schema-editor-padlock-icon.png)
 
