@@ -3,18 +3,18 @@ title: AI Assistant i Adobe Experience Platform produktdokumentation
 description: Kom igång med AI Assistant i Adobe Experience Platform.
 feature: AI Assistant
 exl-id: bcb86a41-d5d8-4c1a-a86d-79fa0c167bc7
-source-git-commit: 9a10db0da1985c5ccaaeb84e040eea9e76ec1ae4
+source-git-commit: 49c06a1dfb3431ce8fe416d35a22567ce614107a
 workflow-type: tm+mt
-source-wordcount: '899'
-ht-degree: 1%
+source-wordcount: '902'
+ht-degree: 0%
 
 ---
 
 # AI Assistant i Adobe Experience Platform produktdokumentation
 
-AI Assistant i Adobe Experience Platform är ett konversationsverktyg som du kan använda för att snabba upp arbetsflödena med program och tjänster från Experience Platform. Använd AI Assistant för att öka den övergripande produktiviteten, få en bättre förståelse för produktkunskaper och driftsinsikter samt samla in rekommendationer som är relevanta för dina frågor och användningsfall.
+AI Assistant i Adobe Experience Platform är ett konversationsverktyg som du kan använda för att snabba upp dina arbetsflöden med Experience Platform program och tjänster. Använd AI Assistant för att öka den övergripande produktiviteten, få en bättre förståelse för produktkunskaper och driftsinsikter samt samla in rekommendationer som är relevanta för dina frågor och användningsfall.
 
-AI Assistant har stöd för Experience Platform, Real-Time CDP, Adobe Journey Optimizer och Customer Journey Analytics.
+AI Assistant stöder Experience Platform, Real-Time CDP, Adobe Journey Optimizer och Customer Journey Analytics.
 
 ## Kom igång
 
@@ -42,10 +42,9 @@ Kom igång genom att läsa materialet i länkarna nedan för att bekanta dig med
     </tr>
 </table>
 
-
 ## Nya funktioner
 
-Få en glimt av de senaste förbättringarna i AI Assistant, inklusive funktioner som finns i Alpha eller Beta.
+Få en glimt av de senaste förbättringarna i AI Assistant, inklusive funktioner som finns i Alpha- eller Beta-stadierna.
 
 >[!BEGINTABS]
 
@@ -69,7 +68,7 @@ Ni kan använda AI Assistants naturliga funktioner för att beräkna målgruppss
 
 ### Upptäck XDM-fält för målgruppsgenerering
 
-Du kan använda AI Assistant för att hjälpa dig att identifiera XDM-fält (Experience Data Model) som du sedan kan använda för att skapa målgrupper i Experience Platform.
+Du kan använda AI Assistant för att hjälpa dig att identifiera XDM-fält (Experience Data Model) som du sedan kan använda för att skapa målgrupper inom Experience Platform.
 
 [![bild](../rtcdp/assets/do-not-localize/learn-more-button.svg)](./new-features/xdm-field-discovery.md)
 
@@ -82,6 +81,21 @@ Du kan använda AI Assistant för kundsupport för att felsöka utan att behöva
 [![bild](../rtcdp/assets/do-not-localize/learn-more-button.svg)](./new-features/customer-support.md)
 
 >[!ENDTABS]
+
+## Säkerhetsfunktioner i AI Assistant {#security}
+
+
+I följande video finns mer information om säkerhetsfunktionerna i AI Assistant:
+
+>[!VIDEO](https://video.tv.adobe.com/v/3441066/?learn=on)
+
+>[!BEGINSHADEBOX]
+
+**Läs faktablad för AI Assistant**
+
+Mer information om AI Assistant finns i [säkerhetsfaktablad för AI Assistant i Adobe Experience Platform](https://www.adobe.com/content/dam/cc/en/trust-center/ungated/whitepapers/experience-cloud/adobe-ai-assistant-in-aep-security-fact-sheet.pdf).
+
+>[!ENDSHADEBOX]
 
 ## Videobibliotek
 
@@ -183,20 +197,6 @@ I följande videofilmer finns ytterligare exempel på hur du använder AI Assist
 * [Lär känna AI Assistant för målgrupper](https://www.youtube.com/live/DYsyii7ldck)
 
 >[!ENDTABS]
-
-## Ytterligare resurser
-
->[!BEGINSHADEBOX]
-
-**Läs faktablad för AI Assistant**
-
-Mer information om AI Assistant finns i [säkerhetsfaktablad för AI Assistant i Adobe Experience Platform](https://www.adobe.com/content/dam/cc/en/trust-center/ungated/whitepapers/experience-cloud/adobe-ai-assistant-in-aep-security-fact-sheet.pdf).
-
->[!ENDSHADEBOX]
-
-I följande video finns mer information om säkerhetsfunktionerna i AI Assistant:
-
->[!VIDEO](https://video.tv.adobe.com/v/3441066/?learn=on)
 
 Klicka på länkarna nedan för att få en bättre förståelse för användningsfall, funktioner och mycket annat i AI Assistant.
 
