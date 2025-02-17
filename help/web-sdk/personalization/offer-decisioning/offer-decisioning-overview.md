@@ -1,22 +1,18 @@
 ---
-title: Använda Offer decisioning med Platform Web SDK
-description: Adobe Experience Platform Web SDK kan leverera och återge personaliserade erbjudanden som hanteras i Offer decisioning. Du kan skapa erbjudanden och andra relaterade objekt med hjälp av Offera decisioningens gränssnitt eller API.
-keywords: offer decisioning;beslut;Web SDK;Platform Web SDK;personaliserade erbjudanden;leverera erbjudanden;erbjudandeleverans;erbjudandepersonalisering;
+title: Använda Offer Decisioning med Platform Web SDK
+description: Adobe Experience Platform Web SDK kan leverera och återge personaliserade erbjudanden som hanteras i Offer Decisioning. Du kan skapa erbjudanden och andra relaterade objekt med Offer Decisioning gränssnitt eller API.
+keywords: offertbeslut;beslut;Web SDK;Platform Web SDK;personaliserade erbjudanden;leverera erbjudanden;erbjudandeleverans;erbjudandepersonalisering;
 exl-id: 4ab51f9d-3c44-4855-b900-aa2cde673a9a
-source-git-commit: 22477c11a977059849d9b47871a5c2aef1da4b24
+source-git-commit: b2c3b1160782a81ea66f42e21e494e0a7d90e037
 workflow-type: tm+mt
-source-wordcount: '818'
+source-wordcount: '791'
 ht-degree: 0%
 
 ---
 
-# Använda Offer decisioning med Platform Web SDK
+# Använda Offer Decisioning med Platform Web SDK
 
->[!NOTE]
->
->Offer decisioning i Adobe Experience Platform Web SDK är tillgänglig i ett tidigt skede för vissa användare. Den här funktionen är inte tillgänglig för alla organisationer.
-
-Adobe Experience Platform [!DNL Web SDK] kan leverera och återge personaliserade erbjudanden som hanteras i Offer decisioning. Du kan skapa erbjudanden och andra relaterade objekt med hjälp av användargränssnittet (UI) eller API:erna för Offera decisioningen.
+Adobe Experience Platform [!DNL Web SDK] kan leverera och återge personaliserade erbjudanden som hanteras i Offer Decisioning. Du kan skapa erbjudanden och andra relaterade objekt med Offer Decisioning användargränssnitt (UI) eller API:er.
 
 ## Förhandskrav
 
@@ -26,9 +22,9 @@ Adobe Experience Platform [!DNL Web SDK] kan leverera och återge personaliserad
 
 ## Terminologi
 
-Det är viktigt att förstå följande terminologi när du arbetar med Offer decisioning. Om du vill ha mer information och visa ytterligare villkor går du till [Offera decisioningens ordlista](https://experienceleague.adobe.com/docs/offer-decisioning/using/get-started/glossary.html).
+Det är viktigt att förstå följande terminologi när du arbetar med Offer Decisioning. Om du vill ha mer information och visa ytterligare villkor går du till [Offer Decisioning-ordlistan](https://experienceleague.adobe.com/docs/offer-decisioning/using/get-started/glossary.html).
 
-* **Beslutsomfattningar:** För Offer decisioning är beslutsomfattningar de Base64-kodade strängarna för JSON som innehåller de aktivitets- och placerings-ID som du vill att offera decisioningen ska använda för att föreslå erbjudanden.
+* **Beslutsomfattningar:** För Offer Decisioning är beslutsomfattningar de Base64-kodade strängarna för JSON som innehåller de aktivitets- och placerings-ID som du vill att beslutsprocessen för erbjudandet ska använda för att föreslå erbjudanden.
 
   *Beslutsomfattnings-JSON:*
 
@@ -55,18 +51,18 @@ Det är viktigt att förstå följande terminologi när du arbetar med Offer dec
 
 * **Identitet**: Mer information finns i den här dokumentationen som beskriver hur [Platform Web SDK använder identitetstjänsten](../../identity/overview.md).
 
-## Aktivera Offer decisioning
+## Aktivera Offer Decisioning
 
-Så här aktiverar du Offer decisioning:
+Så här aktiverar du Offer Decisioning:
 
-1. Aktiverade Adobe Experience Platform i din [datastream](/help/datastreams/overview.md) och markera kryssrutan Offer decisioning
+1. Aktivera Adobe Experience Platform i din [datastream](/help/datastreams/overview.md) och markera kryssrutan Offer Decisioning
 
    ![offer-decisioning-edge-config](./assets/offer-decisioning-edge-config.png)
 
 1. Följ instruktionerna för att [installera SDK](/help/web-sdk/install/overview.md) (SDK kan installeras fristående eller via användargränssnittet. Mer information finns i [snabbstartsguiden för taggar](/help/tags/quick-start/quick-start.md)).
-1. Konfigurera SDK för Offer decisioning med `personalization.decisionScopes`. Ytterligare Offer decisioning-specifika steg finns nedan.
+1. Konfigurera SDK för Offer Decisioning med `personalization.decisionScopes`. Ytterligare Offer Decisioning-specifika steg finns nedan.
 
-   * Installera fristående SDK
+   * Installera den fristående SDK
 
       1. Konfigurera åtgärden sendEvent med `personalization.decisionScopes`
 
@@ -92,7 +88,7 @@ Så här aktiverar du Offer decisioning:
 
          ![configure-aep-web-sdk-extension](./assets/configure-aep-web-sdk-extension.png)
 
-      1. Skapa nödvändiga [dataelement](/help/tags/ui/managing-resources/data-elements.md). Minimikravet är att du måste skapa en plattformsbaserad SDK-identitetskarta och ett XDM-objektdataelement för plattformswebben.
+      1. Skapa nödvändiga [dataelement](/help/tags/ui/managing-resources/data-elements.md). Minimikravet är att du skapar en plattformsbaserad SDK-identitetskarta och ett XDM-objektdataelement för plattformswebben.
 
          ![identity-map-data-element](./assets/identity-map-data-element.png)
 
@@ -100,7 +96,7 @@ Så här aktiverar du Offer decisioning:
 
       1. Skapa dina [regler](/help/tags/ui/managing-resources/rules.md).
 
-         * Lägg till en SDK-sändningsåtgärd för en plattform och lägg till relevant `decisionScopes` i åtgärdens konfiguration
+         * Lägg till en Skicka-händelse för SDK för plattform och lägg till relevant `decisionScopes` i åtgärdens konfiguration
 
          ![send-event-action-DecisionScopes](./assets/send-event-action-decisionScopes.png)
 
@@ -332,4 +328,4 @@ Så här aktiverar du Offer decisioning:
 
 ## Begränsningar
 
-Vissa begränsningar för erbjudanden stöds för närvarande inte i arbetsflödena för mobila Edge Network, till exempel Capping. Fältvärdet för begränsning anger hur många gånger ett erbjudande kan visas för alla användare. Mer information finns i [Erbjud berättiganderegler och begränsningsdokumentation](https://experienceleague.adobe.com/docs/offer-decisioning/using/managing-offers-in-the-offer-library/creating-personalized-offers.html#eligibility).
+Vissa begränsningar för erbjudanden stöds för närvarande inte i Edge Network mobila arbetsflöden, till exempel Capping. Fältvärdet för begränsning anger hur många gånger ett erbjudande kan visas för alla användare. Mer information finns i [Erbjud berättiganderegler och begränsningsdokumentation](https://experienceleague.adobe.com/docs/offer-decisioning/using/managing-offers-in-the-offer-library/creating-personalized-offers.html#eligibility).
