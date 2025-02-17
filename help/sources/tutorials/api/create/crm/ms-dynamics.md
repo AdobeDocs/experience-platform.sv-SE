@@ -1,29 +1,28 @@
 ---
-keywords: Experience Platform;hem;populära ämnen;Microsoft Dynamics;microsoft dynamics;dynamics;Dynamics
-solution: Experience Platform
 title: Skapa en Microsoft Dynamics-basanslutning med API:t för flödestjänsten
-type: Tutorial
-description: Lär dig hur du ansluter plattformen till ett Microsoft Dynamics-konto med API:t för Flow Service.
+description: Lär dig hur du ansluter en plattform till ett Microsoft Dynamics-konto med API:t för Flow Service.
 exl-id: 423c6047-f183-4d92-8d2f-cc8cc26647ef
-source-git-commit: d22c71fb77655c401f4a336e339aaf8b3125d1b6
+source-git-commit: bda26fa4ecf4f54cb36ffbedf6a9aa13faf7a09d
 workflow-type: tm+mt
-source-wordcount: '728'
+source-wordcount: '1102'
 ht-degree: 0%
 
 ---
 
-# Skapa en [!DNL Microsoft Dynamics]-basanslutning med API:t [!DNL Flow Service]
+# Anslut [!DNL Microsoft Dynamics] till Experience Platform med API:t [!DNL Flow Service]
 
-En basanslutning representerar den autentiserade anslutningen mellan en källa och Adobe Experience Platform.
+Läs den här vägledningen när du vill veta hur du kan ansluta din [!DNL Microsoft Dynamics]-källa till Adobe Experience Platform med [[!DNL Flow Service] API](https://developer.adobe.com/experience-platform-apis/references/flow-service/).
 
-I den här självstudiekursen får du hjälp med att skapa en basanslutning för [!DNL Microsoft Dynamics] (kallas nedan [!DNL Dynamics]) med [[!DNL Flow Service] API](https://www.adobe.io/experience-platform-apis/references/flow-service/).
-
-## Komma igång
+## Kom igång
 
 Handboken kräver en fungerande förståelse av följande komponenter i Adobe Experience Platform:
 
-* [Källor](../../../../home.md): Experience Platform tillåter data att hämtas från olika källor samtidigt som du kan strukturera, etikettera och förbättra inkommande data med hjälp av plattformstjänster.
+* [Källor](../../../../home.md): Med Experience Platform kan data hämtas från olika källor samtidigt som du kan strukturera, etikettera och förbättra inkommande data med hjälp av plattformstjänster.
 * [Sandlådor](../../../../../sandboxes/home.md): Experience Platform tillhandahåller virtuella sandlådor som partitionerar en enda plattformsinstans till separata virtuella miljöer för att utveckla och utveckla program för digitala upplevelser.
+
+### Använda plattforms-API:er
+
+Mer information om hur du kan anropa plattforms-API:er finns i guiden [Komma igång med plattforms-API:er](../../../../../landing/api-guide.md).
 
 Följande avsnitt innehåller ytterligare information som du behöver känna till för att kunna ansluta plattformen till ett Dynamics-konto med API:t [!DNL Flow Service].
 
@@ -52,29 +51,15 @@ För att [!DNL Flow Service] ska kunna ansluta till [!DNL Dynamics] måste du an
 
 Mer information om hur du kommer igång finns i [det här [!DNL Dynamics] dokumentet](https://docs.microsoft.com/en-us/powerapps/developer/common-data-service/authenticate-oauth).
 
-### Använda plattforms-API:er
-
-Mer information om hur du kan anropa plattforms-API:er finns i guiden [Komma igång med plattforms-API:er](../../../../../landing/api-guide.md).
-
 ## Skapa en basanslutning
 
 >[!TIP]
 >
 >När du väl har skapat den kan du inte ändra autentiseringstypen för en [!DNL Dynamics]-basanslutning. Om du vill ändra autentiseringstypen måste du skapa en ny basanslutning.
 
-En basanslutning bevarar information mellan källan och plattformen, inklusive källans autentiseringsuppgifter, anslutningsstatus och ditt unika basanslutnings-ID. Med det grundläggande anslutnings-ID:t kan du utforska och navigera bland filer inifrån källan och identifiera de specifika objekt som du vill importera, inklusive information om deras datatyper och format.
+En basanslutning bevarar information mellan källan och Experience Platform, inklusive autentiseringsuppgifter för källan, anslutningens aktuella tillstånd och ditt unika basanslutnings-ID. Med det grundläggande anslutnings-ID:t kan du utforska och navigera bland filer inifrån källan och identifiera de specifika objekt som du vill importera, inklusive information om deras datatyper och format.
 
-Om du vill skapa ett grundläggande anslutnings-ID skickar du en POST till slutpunkten `/connections` och anger dina autentiseringsuppgifter för [!DNL Dynamics] som en del av parametrarna för begäran.
-
-### Skapa en [!DNL Dynamics]-basanslutning
-
->[!TIP]
->
->När du väl har skapat den kan du inte ändra autentiseringstypen för en [!DNL Dynamics]-basanslutning. Om du vill ändra autentiseringstypen måste du skapa en ny basanslutning.
-
-Det första steget i att skapa en källanslutning är att autentisera [!DNL Dynamics]-källan och generera ett grundläggande anslutnings-ID. Med ett grundläggande anslutnings-ID kan du utforska och navigera bland filer inifrån källan och identifiera specifika objekt som du vill importera, inklusive information om deras datatyper och format.
-
-Om du vill skapa ett grundläggande anslutnings-ID skickar du en POST till slutpunkten `/connections` och anger dina autentiseringsuppgifter för [!DNL Dynamics] som en del av parametrarna för begäran.
+Om du vill skapa ett basanslutnings-ID skickar du en POST-begäran till `/connections`-slutpunkten och anger dina [!DNL Dynamics]-autentiseringsuppgifter som en del av parametrarna för begäran.
 
 **API-format**
 
@@ -86,34 +71,38 @@ POST /connections
 
 >[!TAB Grundläggande autentisering]
 
-Om du vill skapa en [!DNL Dynamics]-basanslutning med grundläggande autentisering kan du göra en POST-förfrågan till [!DNL Flow Service]-API:t och ange värden för din anslutnings `serviceUri`, `username` och `password`.
+Om du vill skapa en [!DNL Dynamics]-basanslutning med grundläggande autentisering gör du en POST-begäran till [!DNL Flow Service]-API:t och anger värden för din anslutnings `serviceUri`, `username` och `password`.
 
-+++Begäran
+**Begäran**
+
+Följande begäran skapar en basanslutning för en [!DNL Dynamics]-källa med grundläggande autentisering.
+
++++Markera för att visa ett exempel på en begäran
 
 ```shell
 curl -X POST \
-    'https://platform.adobe.io/data/foundation/flowservice/connections' \
-    -H 'Authorization: Bearer {ACCESS_TOKEN}' \
-    -H 'x-api-key: {API_KEY}' \
-    -H 'x-gw-ims-org-id: {ORG_ID}' \
-    -H 'x-sandbox-name: {SANDBOX_NAME}' \
-    -H 'Content-Type: application/json' \
-    -d '{
-        "name": "Dynamics connection",
-        "description": "Dynamics connection using basic auth",
-        "auth": {
-            "specName": "Basic Authentication for Dynamics-Online",
-            "params": {
-                "serviceUri": "{SERVICE_URI}",
-                "username": "{USERNAME}",
-                "password": "{PASSWORD}"
-            }
-        },
-        "connectionSpec": {
-            "id": "38ad80fe-8b06-4938-94f4-d4ee80266b07",
-            "version": "1.0"
-        }
-    }'
+  'https://platform.adobe.io/data/foundation/flowservice/connections' \
+  -H 'Authorization: Bearer {ACCESS_TOKEN}' \
+  -H 'x-api-key: {API_KEY}' \
+  -H 'x-gw-ims-org-id: {ORG_ID}' \
+  -H 'x-sandbox-name: {SANDBOX_NAME}' \
+  -H 'Content-Type: application/json' \
+  -d '{
+      "name": "Dynamics connection",
+      "description": "Dynamics connection using basic auth",
+      "auth": {
+          "specName": "Basic Authentication for Dynamics-Online",
+          "params": {
+              "serviceUri": "{SERVICE_URI}",
+              "username": "{USERNAME}",
+              "password": "{PASSWORD}"
+          }
+      },
+      "connectionSpec": {
+          "id": "38ad80fe-8b06-4938-94f4-d4ee80266b07",
+          "version": "1.0"
+      }
+  }'
 ```
 
 | Egenskap | Beskrivning |
@@ -125,9 +114,11 @@ curl -X POST \
 
 +++
 
-+++svar
+**Svar**
 
-Ett svar returnerar den nyligen skapade anslutningen, inklusive dess unika identifierare (`id`). Detta ID krävs för att undersöka ditt CRM-system i nästa steg.
+Ett svar returnerar den nyskapade basanslutningen, inklusive dess unika identifierare (`id`).
+
++++Markera för att visa svarsexempel
 
 ```json
 {
@@ -140,9 +131,13 @@ Ett svar returnerar den nyligen skapade anslutningen, inklusive dess unika ident
 
 >[!TAB Huvudnyckelbaserad autentisering för tjänst]
 
-Om du vill skapa en [!DNL Dynamics]-basanslutning med huvudnyckelbaserad autentisering, ska du göra en POST-förfrågan till [!DNL Flow Service]-API:t och ange värden för din anslutnings `serviceUri`, `servicePrincipalId` och `servicePrincipalKey`.
+Om du vill skapa en [!DNL Dynamics]-basanslutning med huvudnyckelbaserad autentisering skapar du en POST-begäran till [!DNL Flow Service]-API:t och anger värden för `serviceUri`, `servicePrincipalId` och `servicePrincipalKey` för anslutningen.
 
-+++Begäran
+**Begäran**
+
+Följande begäran skapar en basanslutning för en [!DNL Dynamics]-källa med grundläggande nyckelbaserad autentisering av tjänstens huvudnyckel.
+
++++Markera för att visa ett exempel på en begäran
 
 ```shell
 curl -X POST \
@@ -179,9 +174,11 @@ curl -X POST \
 
 +++
 
-+++svar
+**Svar**
 
-Ett svar returnerar den nyligen skapade anslutningen, inklusive dess unika identifierare (`id`). Detta ID krävs för att undersöka ditt CRM-system i nästa steg.
+Ett svar returnerar den nyligen skapade anslutningen, inklusive dess unika identifierare (`id`).
+
++++Markera för att visa svarsexempel
 
 ```json
 {
@@ -194,6 +191,396 @@ Ett svar returnerar den nyligen skapade anslutningen, inklusive dess unika ident
 
 >[!ENDTABS]
 
+## Utforska era datatabeller
+
+Om du vill utforska dina [!DNL Dynamics]-datatabeller skickar du en GET-begäran till `/connections/{BASE_CONNECTION_ID}/explore`-slutpunkten och anger ditt grundläggande anslutnings-ID som en del av frågeparametrarna.
+
+**API-format**
+
+```http
+GET /connections/{BASE_CONNECTION_ID}/explore?objectType=root
+```
+
+| Frågeparametrar | Beskrivning |
+| --- | --- |
+| `{BASE_CONNECTION_ID}` | ID för basanslutningen. Använd det här ID:t för att utforska källans innehåll och struktur. |
+
+**Begäran**
+
+Följande begäran hämtar listan med tillgängliga tabeller och vyer för en [!DNL Dynamics]-källa med basanslutnings-ID: `dd668808-25da-493f-8782-f3433b976d1e`.
+
++++Markera för att visa ett exempel på en begäran
+
+```shell
+curl -X GET \
+  'https://platform.adobe.io/data/foundation/flowservice/connections/dd668808-25da-493f-8782-f3433b976d1e/explore?objectType=root' \
+  -H 'Authorization: Bearer {ACCESS_TOKEN}' \
+  -H 'x-api-key: {API_KEY}' \
+  -H 'x-gw-ims-org-id: {ORG_ID}' \
+  -H 'x-sandbox-name: {SANDBOX_NAME}' \
+  -H 'Content-Type: application/json' \
+```
+
++++
+
+**Svar**
+
+Ett lyckat svar returnerar katalogen [!DNL Dynamics] för tabeller och vyer på rotnivån.
+
++++Markera för att visa svarsexempel
+
+```json
+[
+    {
+        "type": "table",
+        "name": "systemuserlicenses",
+        "path": "systemuserlicenses",
+        "canPreview": true,
+        "canFetchSchema": true
+    },
+    {
+        "type": "table",
+        "name": "Process Dependency",
+        "path": "workflowdependency",
+        "canPreview": true,
+        "canFetchSchema": true
+    },
+    {
+        "type": "view",
+        "name": "accountView1",
+        "path": "accountView1",
+        "canPreview": true,
+        "canFetchSchema": true
+    },
+    {
+        "type": "view",
+        "name": "Inactive_ACC_custom",
+        "path": "Inactive_ACC_custom",
+        "canPreview": true,
+        "canFetchSchema": true
+    }
+]
+```
+
++++
+
+
+## Inspektera strukturen i en tabell
+
+Om du vill inspektera strukturen för en viss tabell gör du en GET-begäran till `/connections/{BASE_CONNECTION_ID}/explore` och anger sökvägen till den specifika tabellen som en frågeparameter.
+
+**API-format**
+
+```http
+GET /connections/{BASE_CONNECTION_ID}/explore?object={TABLE_PATH}&objectType=table
+```
+
+| Frågeparameter | Beskrivning |
+| --- | --- |
+| `{BASE_CONNECTION_ID}` | ID för basanslutningen. Använd det här ID:t för att utforska källans innehåll och struktur. |
+| `{TABLE_PATH}` | Sökvägen till den tabell som du vill utforska. |
+
+**Begäran**
+
+Följande begäran hämtar strukturen och innehållet i en [!DNL Dynamics]-tabell med sökvägen `workflowdependency`.
+
++++Markera för att visa ett exempel på en begäran
+
+```shell
+curl -X GET \
+  'https://platform.adobe.io/data/foundation/flowservice/connections/dd668808-25da-493f-8782-f3433b976d1e/explore?object=workflowdependency&objectType=table' \
+  -H 'Authorization: Bearer {ACCESS_TOKEN}' \
+  -H 'x-api-key: {API_KEY}' \
+  -H 'x-gw-ims-org-id: {ORG_ID}' \
+  -H 'x-sandbox-name: {SANDBOX_NAME}' \
+  -H 'Content-Type: application/json' \
+```
+
++++
+
+**Svar**
+
+Ett godkänt svar returnerar innehållet i sökvägen `workflowdependency`.
+
++++Markera för att visa svarsexempel
+
+```json
+{
+    "format": "flat",
+    "schema": {
+        "columns": [
+            {
+                "name": "first_name",
+                "type": "string",
+                "meta": {
+                    "originalType": "String"
+                }
+            },
+            {
+                "name": "last_name",
+                "type": "string",
+                "meta": {
+                    "originalType": "String"
+                }
+            },
+            {
+                "name": "email",
+                "type": "string",
+                "meta": {
+                    "originalType": "String"
+                }
+            }
+        ]
+    }
+}
+```
+
++++
+
+## Granska strukturen för en vy
+
+I [!DNL Dynamics] refererar en vy till de kolumner som ska visas, bredden på varje kolumn, standardsystemet där en lista med poster sorteras och standardfiltren som används för att begränsa vilka poster som ska visas i listan.
+
+Om du vill inspektera strukturen för en vy gör du en GET-förfrågan till `/connections/{BASE_CONNECTION_ID}/explore` och anger visningssökvägen i frågeparametrarna. Dessutom måste du ange `objectType` som `view`.
+
+**API-format**
+
+```http
+GET /connections/{BASE_CONNECTION_ID}/explore?object={VIEW_PATH}&objectType=view
+```
+
+| Frågeparameter | Beskrivning |
+| --- | --- |
+| `{BASE_CONNECTION_ID}` | ID för basanslutningen. Använd det här ID:t för att utforska källans innehåll och struktur. |
+| `{VIEW_PATH}` | Sökvägen till den vy som du vill inspektera. |
+
+**Begäran**
+
+Följande begäran hämtar `accountView1`.
+
++++Markera för att visa ett exempel på en begäran
+
+```shell
+curl -X GET \
+  'https://platform.adobe.io/data/foundation/flowservice/connections/dd668808-25da-493f-8782-f3433b976d1e/explore?object=accountView1&objectType=view' \
+  -H 'Authorization: Bearer {ACCESS_TOKEN}' \
+  -H 'x-api-key: {API_KEY}' \
+  -H 'x-gw-ims-org-id: {ORG_ID}' \
+  -H 'x-sandbox-name: {SANDBOX_NAME}' \
+  -H 'Content-Type: application/json' \
+```
+
++++
+
+**Svar**
+
+Ett lyckat svar returnerar strukturen för `accountView1`.
+
++++Markera för att visa svarsexempel
+
+```json
+{
+    "format": "flat",
+    "schema": {
+        "columns": [
+            {
+                "name": "name",
+                "type": "string",
+                "meta": {
+                    "originalType": "string"
+                },
+                "xdm": {
+                    "type": "string"
+                }
+            },
+            {
+                "name": "fetchxml",
+                "type": "string",
+                "meta": {
+                    "originalType": "string"
+                },
+                "xdm": {
+                    "type": "string"
+                }
+            },
+            {
+                "name": "querytype",
+                "type": "integer",
+                "meta": {
+                    "originalType": "int"
+                },
+                "xdm": {
+                    "type": "integer",
+                    "minimum": -2147483648,
+                    "maximum": 2147483647
+                }
+            },
+            {
+                "name": "userqueryid",
+                "type": "string",
+                "meta": {
+                    "originalType": "guid"
+                },
+                "xdm": {
+                    "type": "string"
+                }
+            }
+        ]
+    }
+}
+```
+
++++
+
+## Förhandsgranska entitetstypvy
+
+Om du vill förhandsgranska innehållet i en vy skickar du en GET-begäran till `/connections/{BASE_CONNECTION_ID}/explore` och tar med vysökvägen samt `preview=true` i frågeparametrarna.
+
+**API-format**
+
+```http
+GET /connections/{BASE_CONNECTION_ID}/explore?object={VIEW_PATH}&preview=true&objectType=view
+```
+
+| Frågeparameter | Beskrivning |
+| --- | --- |
+| `{BASE_CONNECTION_ID}` | ID för basanslutningen. Använd det här ID:t för att utforska källans innehåll och struktur. |
+| `{VIEW_PATH}` | Sökvägen till den vy som du vill inspektera. |
+
+
+**Begäran**
+
+Följande begäran förhandsgranskar innehållet i `accountView1`.
+
++++Markera för att visa ett exempel på en begäran
+
+```shell
+curl -X GET \
+  'https://platform.adobe.io/data/foundation/flowservice/connections/dd668808-25da-493f-8782-f3433b976d1e/explore?object=accountView1&preview=true&objectType=view' \
+  -H 'Authorization: Bearer {ACCESS_TOKEN}' \
+  -H 'x-api-key: {API_KEY}' \
+  -H 'x-gw-ims-org-id: {ORG_ID}' \
+  -H 'x-sandbox-name: {SANDBOX_NAME}' \
+  -H 'Content-Type: application/json' \
+```
+
++++
+
+**Svar**
+
+Ett godkänt svar returnerar innehållet i `accountView1`.
+
++++Markera för att visa svarsexempel
+
+```json
+{
+    "format": "flat",
+    "schema": {
+        "columns": [
+            {
+                "name": "emailaddress1",
+                "type": "string",
+                "meta": {
+                    "originalType": "string"
+                },
+                "xdm": {
+                    "type": "string"
+                }
+            },
+            {
+                "name": "contactid",
+                "type": "string",
+                "meta": {
+                    "originalType": "guid"
+                },
+                "xdm": {
+                    "type": "string"
+                }
+            },
+            {
+                "name": "fullname",
+                "type": "string",
+                "meta": {
+                    "originalType": "string"
+                },
+                "xdm": {
+                    "type": "string"
+                }
+            }
+        ]
+    },
+    "data": [
+        {
+            "contactid": "396e19de-0852-ec11-8c62-00224808a1df",
+            "fullname": "Tim Barr",
+            "emailaddress1": "barrtim@googlemedia.com"
+        }
+    ]
+}
+```
+
++++
+
+## Skapa en källanslutning till importvyn
+
+Om du vill skapa en källanslutning och importera en vy gör du en POST-begäran till `/sourceConnections`-slutpunkten, anger tabellnamnet och anger `entityType` as `view` i begärandetexten.
+
+**API-format**
+
+```http
+POST /sourceConnections
+```
+
+**Begäran**
+
+Följande begäran skapar en [!DNL Dynamics]-källanslutning och importerar vyer.
+
++++Markera för att visa ett exempel på en begäran
+
+```shell
+curl -X POST \
+  'https://platform.adobe.io/data/foundation/flowservice/sourceConnections' \
+  -H 'Authorization: Bearer {ACCESS_TOKEN}' \
+  -H 'x-api-key: {API_KEY}' \
+  -H 'x-gw-ims-org-id: {ORG_ID}' \
+  -H 'x-sandbox-name: {SANDBOX_NAME}' \
+  -H 'Content-Type: application/json' \
+  -d '{
+      "name": "Dynamics Source Connection",
+      "description": "Dynamics Source Connection",
+      "baseConnectionId": "dd668808-25da-493f-8782-f3433b976d1e",
+      "data": {
+          "format": "tabular",
+          "schema": null,
+          "properties": null
+      },
+      "params": {
+          "tableName": "Contacts with name TIM",
+          "entityType": "view"
+      },
+      "connectionSpec": {
+          "id": "38ad80fe-8b06-4938-94f4-d4ee80266b07",
+          "version": "1.0"
+      }
+  }'
+```
+
++++
+
+**Svar**
+
+Ett lyckat svar returnerar det nyligen genererade källanslutnings-ID:t och dess motsvarande tagg.
+
++++Markera för att visa svarsexempel
+
+```json
+{
+    "id": "e566bab3-1b58-428c-b751-86b8cc79a3b4",
+    "etag": "\"82009592-0000-0200-0000-678121030000\""
+}
+```
+
++++
 
 ## Nästa steg
 
