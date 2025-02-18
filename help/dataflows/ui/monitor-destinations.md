@@ -1,12 +1,12 @@
 ---
-description: Lär dig hur du kan övervaka dataflöden för dina mål med hjälp av användargränssnittet i Experience Platform.
+description: Lär dig hur du kan övervaka dataflöden för dina mål med hjälp av Experience Platform användargränssnitt.
 solution: Experience Platform
 title: Övervaka dataflöden för mål i användargränssnittet
 type: Tutorial
 exl-id: 8eb7bb3c-f2dc-4dbc-9cf5-3d5d3224f5f1
-source-git-commit: f10706fbbde9cef112460f5431af24d09b0e0460
+source-git-commit: b814becaed88ce23527dc58f7ec056c05a48379f
 workflow-type: tm+mt
-source-wordcount: '3467'
+source-wordcount: '3468'
 ht-degree: 1%
 
 ---
@@ -17,7 +17,7 @@ Använd de olika destinationerna i Experience Platform-katalogen för att aktive
 
 Kontrollpanelen ger dig en visuell representation av ett dataflödes resa, inklusive målet som data aktiveras till, vilken typ av data du visar, exporterade data per dataflöde och mycket annat.
 
-I den här självstudiekursen finns anvisningar om hur du antingen kan övervaka dataflöden direkt på arbetsytan för mål eller använda kontrollpanelen för övervakning för att övervaka dataflöden för dina mål med hjälp av användargränssnittet i Experience Platform.
+I den här självstudiekursen får du anvisningar om hur du antingen kan övervaka dataflöden direkt på arbetsytan för mål eller använda kontrollpanelen för att övervaka dataflöden för dina mål med hjälp av Experience Platform användargränssnitt.
 
 ## Komma igång {#getting-started}
 
@@ -101,7 +101,7 @@ Varje enskild dataflödeskörning visar följande information:
   >
   > Före den här uppdateringen innehöll **[!UICONTROL Identities failed]** alla aktiveringsförsök. Efter den här uppdateringen inkluderas endast det senaste aktiveringsförsöket i det totala antalet.
   > 
-  > Den här förbättringen gäller för närvarande för [Google kundmatchningsmålet](../../destinations/catalog/advertising/google-customer-match.md), men kommer gradvis att lanseras för andra direktuppspelningsmål för Experience Platform.
+  > Den här förbättringen gäller för närvarande för [Google kundmatchningsmålet](../../destinations/catalog/advertising/google-customer-match.md), men kommer gradvis att lanseras för andra Experience Platform-direktuppspelningsmål.
   > Efter förbättringen kan användare av [Google Customer Match-mål](../../destinations/catalog/advertising/google-customer-match.md) se färre **[!UICONTROL Identities failed]**, vilket är helt normalt.
 
 
@@ -121,7 +121,12 @@ På informationssidan visas också en lista över misslyckade identiteter och id
 
 #### (Beta) Körningsövervakning av dataflöde på målnivå för direktuppspelningsmål {#audience-level-dataflow-runs-for-streaming-destinations}
 
-Du kan visa information om aktiverade, uteslutna eller misslyckade identiteter som är uppdelade på en målgruppsnivå för varje målgrupp som är en del av dataflödet. Övervakning på målgruppsnivå för direktuppspelningsmål är för närvarande endast tillgängligt för [[!DNL Google Customer Match + Display & Video 360] målet](/help/destinations/catalog/advertising/google-customer-match-dv360.md).
+Du kan visa information om aktiverade, uteslutna eller misslyckade identiteter som är uppdelade på en målgruppsnivå för varje målgrupp som är en del av dataflödet.
+
+Övervakning på målgruppsnivå för direktuppspelningsmål är för närvarande endast tillgängligt för följande mål:
+
+- [[!DNL Google Customer Match + Display & Video 360]](/help/destinations/catalog/advertising/google-customer-match-dv360.md)
+- [[!DNL Marketo Engage]](/help/destinations/catalog/adobe/marketo-engage.md)
 
 ![Övervakning på målgruppsnivå för direktuppspelningsmål.](/help/dataflows/assets/ui/monitor-destinations/audience-level-monitoring-streaming.png)
 
@@ -205,7 +210,7 @@ Du kan också välja att visa omfattande information om ett visst dataflöde och
 
 >[!NOTE]
 >
->Funktionen för målövervakning stöds för närvarande för alla mål i Experience Platform *förutom* för [Adobe Target](/help/destinations/catalog/personalization/adobe-target-connection.md) och [Anpassad ](/help/destinations/catalog/personalization/custom-personalization.md) -destinationer.
+>Funktionen för målövervakning stöds för närvarande för alla mål i Experience Platform *förutom* för [Adobe Target](/help/destinations/catalog/personalization/adobe-target-connection.md) och [Anpassad personalisering](/help/destinations/catalog/personalization/custom-personalization.md) .
 
 >[!CONTEXTUALHELP]
 >id="platform_monitoring_activation"
