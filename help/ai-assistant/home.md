@@ -1,11 +1,11 @@
 ---
 title: AI Assistant i Adobe Experience Platform - översikt
-description: Lär dig mer om AI Assistant, dess nyanser och användningsexempel, och hur du kan använda det för att snabba upp arbetsflödet med Adobe Experience Platform och Real-time Customer Data Platform.
+description: Lär dig mer om AI Assistant, dess nyanser och användningsexempel, och hur du kan använda det för att snabba upp arbetsflödet med Adobe Experience Platform och Real-Time Customer Data Platform.
 exl-id: cfd4ac22-fff3-4b50-bbc2-85b6328f603c
-source-git-commit: 9a10db0da1985c5ccaaeb84e040eea9e76ec1ae4
+source-git-commit: e90333d09585c8aa0ef176dcfc4717e86364fd54
 workflow-type: tm+mt
-source-wordcount: '950'
-ht-degree: 8%
+source-wordcount: '927'
+ht-degree: 9%
 
 ---
 
@@ -49,7 +49,7 @@ Det finns två frågeklasser att tänka på innan du frågar AI Assistant:
 
 ### Produktkunskap {#product-knowledge}
 
-Produktkännedom avser begrepp och ämnen som anges i Experience League dokumentation. Produktkunskapsfrågor kan specificeras ytterligare i följande undergrupper:
+Produktkännedom avser begrepp och ämnen som beskrivs i Experience League dokumentation. Produktkunskapsfrågor kan specificeras ytterligare i följande undergrupper:
 
 | Produktkunskap | Exempel |
 | --- | --- |
@@ -64,10 +64,6 @@ I följande video finns mer information om produktkännedom för AI Assistant:
 >[!VIDEO](https://video.tv.adobe.com/v/3438032/?learn=on)
 
 ### Driftsinsikter {#operational-insights}
-
->[!IMPORTANT]
->
->Svar på frågor om driftsinsikter finns i betaversionen. Alla som har åtkomst till behörigheten **Visa driftsinsikter** har åtkomst till användningsinsikter och svar.
 
 Användningsinsikter hänvisar till svar på AI Assistant genererar om dina metadata-objekt (attribut, målgrupper, dataflöden, datauppsättningar, destinationer, resor, scheman och källor), inklusive antal, sökningar och linjepåverkan. Den tittar inte på några data i sandlådan.
 
@@ -100,7 +96,7 @@ I följande video finns mer information om AI Assistant-driftsinsikter:
 
 För närvarande har AI Assistant följande omfattning:
 
-* [Produktkunskap](./home.md#product-knowledge): AI Assistant kan besvara produktkunskapsfrågor för Experience Platform, Real-time Customer Data Platform och Adobe Journey Optimizer. Du kan också gå in i produktinformationsämnen för Customer Journey Analytics, men bara via användargränssnittet i Customer Journey Analytics.
+* [Produktkunskap](./home.md#product-knowledge): AI Assistant kan besvara produktkunskapsfrågor för Experience Platform, Real-Time Customer Data Platform och Adobe Journey Optimizer. Du kan också gå in i produktinformationsämnen för Customer Journey Analytics, men bara via Customer Journey Analytics användargränssnitt.
 * [Driftsinsikter](./home.md#operational-insights): Du kan ställa frågor till AI Assistant om driftsinsikter för följande dataobjekt: attribut, målgrupper, dataflöden, datauppsättningar, destinationer, resor, scheman och källor.
 
 ## Nästa steg

@@ -1,10 +1,10 @@
 ---
 title: AI Assistant i Adobe Experience Platform
-description: Lär dig hur du använder AI Assistant för att navigera bland och förstå koncept för Experience Platform och Real-time Customer Data Platform, samt användningsinformation om dina objekt.
+description: Lär dig hur du använder AI Assistant för att navigera bland och förstå koncept i Experience Platform och Real-Time Customer Data Platform, samt användningsinformation om dina objekt.
 exl-id: 3fed2b1d-75fc-47ce-98d1-a811eb8a1d8e
-source-git-commit: 0ee9135b2b303f4abcc4d5e5c7345e2bff9332f3
+source-git-commit: 4fd40d66ecc2fe7604e157fcd230883c6c48d761
 workflow-type: tm+mt
-source-wordcount: '1718'
+source-wordcount: '1693'
 ht-degree: 0%
 
 ---
@@ -13,11 +13,11 @@ ht-degree: 0%
 
 Läs den här guiden och lär dig hur du kan använda AI Assistant i Adobe Experience Platform-gränssnittet.
 
-## Åtkomst till AI-assistenten i användargränssnittet i Experience Platform
+## Åtkomst till AI-assistenten i Experience Platform användargränssnitt
 
-Om du vill starta AI Assistant väljer du **[!UICONTROL AI Assistant icon]** i Experience Platform-gränssnittets övre sidhuvud.
+Om du vill starta AI Assistant väljer du **[!UICONTROL AI Assistant icon]** i det övre huvudet i Experience Platform-gränssnittet.
 
-![Hemsidan för Experience Platform, med ikonen AI-assistenten markerad och gränssnittet AI-assistenten öppet.](./images/ai-assistant-full-icon.png)
+![Experience Platform hemsida med ikonen AI Assistant vald och gränssnittet AI Assistant öppet.](./images/ai-assistant-full-icon.png)
 
 Gränssnittet för AI Assistant visas och du får information om hur du kommer igång direkt. Du kan använda alternativen under [!UICONTROL Ideas to get started] för att besvara frågor och kommandon som:
 
@@ -45,7 +45,7 @@ När du har fått ett svar från AI Assistant kan du välja bland ett antal alte
 
 ### AI Assistant-funktioner {#features}
 
-I det här avsnittet beskrivs de olika funktionerna i AI Assistant som du kan använda i dina arbetsflöden på Experience Platform.
+I det här avsnittet beskrivs de olika funktionerna i AI Assistant som du kan använda i dina arbetsflöden i Experience Platform.
 
 ### Visa operativa dataobjekt {#view-operational-data-objects}
 
@@ -87,7 +87,7 @@ I exemplet nedan tillfrågas följande om AI Assistant: **Visa dataflöden som h
 
 ![En fråga om driftsinsikter.](./images/op-insights-question.png)
 
-AI Assistant svarar sedan med en tabell över dina dataflöden och deras motsvarande ID:n. Om du vill visa hela datatabellen väljer du ikonen Expandera högst upp till höger.
+AI Assistant svarar sedan med en tabell över dina dataflöden och deras motsvarande ID:n. Välj hämtningsikonen (![hämtningsikonen](/help/images/icons/download.png)) om du vill hämta tabellen som en CSV-fil. Om du vill visa hela tabellen väljer du ikonen Expandera (![ikonen Expandera](/help/images/icons/expand.png)).
 
 ![Ett svar på användbara insikter](./images/op-insights-answer.png)
 
@@ -100,10 +100,6 @@ När AI Assistant tillfrågas om driftsinsikter kan den förklara hur svaret har
 ![AI Assistant ger en förklaring av hur svaret beräknades.](./images/answer-explained.png)
 
 Du kan även lägga till filter och ändringar i dina frågor och du kan instruera AI Assistant att återge resultatet baserat på de filter som du inkluderar. Du kan till exempel be AI Assistant att visa en trend för antalet segmentdefinitioner i den ordning som de skapades, ta bort segmentdefinitioner med noll som summor och använda namn på månader i stället för heltal när data visas.
-
-**Obs!** Svaren om driftsinsikter finns för närvarande i betaversion. Klicka på verktygstipsikonen i AI Assistant-användargränssnittet för att visa Beta-meddelandet och för en länk till dokumentationen.
-
-![AI Assistant-verktygstipsikonen har valts.](./images/op-insights-beta-note.png)
 
 +++
 
