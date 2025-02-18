@@ -4,10 +4,10 @@ user-guide-title: Användarhandbok om kataloger och datauppsättningar
 user-guide-description: Utforska datalinjer, metadata, filbeskrivningar, kataloger och datauppsättningar i Data Lake och läs mer om Catalog Service-systemet.
 feature: Catalog
 role: Developer
-source-git-commit: 71fc03194c38a155822d6fc1ee69c82e6f71ad73
+source-git-commit: 74b6e5f10f7532745180760adf1d96bc57e7b590
 workflow-type: tm+mt
-source-wordcount: '115'
-ht-degree: 26%
+source-wordcount: '123'
+ht-degree: 24%
 
 ---
 
@@ -34,6 +34,7 @@ ht-degree: 26%
    * [Skapa och fylla i en datauppsättning med API:er](datasets/create.md)
    * [Aktivera en datauppsättning för profil och identitet](datasets/enable-for-profile.md)
    * [Aktivera en datauppsättning för profiluppdateringar (upsert)](datasets/enable-upsert.md)
+   * [Upplev kvarhållande av händelsedatauppsättningar i datasjön](datasets/experience-event-dataset-retention-ttl-guide.md)
 * [Behandling av sekretessförfrågningar i Data Lake](privacy.md)
 * [API-referens](https://www.adobe.io/experience-platform-apis/references/catalog/)
 * [Vanliga frågor och svar](catalog-faq.md)
