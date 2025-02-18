@@ -1,11 +1,11 @@
 ---
 title: TikTok
-description: Bygg anpassade målgrupper på TikTok med era data för målinriktning med era annonskampanjer. Dessa målgrupper kan vara personer som besökt er webbplats eller interagerat med ert innehåll. Knuffa snabbt och säkert den önskade målgruppen från Adobe Experience Platform till TikTok med hjälp av Adobe realtidsintegrering med TikTok Ads Manager.
+description: Bygg anpassade målgrupper på TikTok med era data för målinriktning med era annonskampanjer. Dessa målgrupper kan vara personer som besökt er webbplats eller interagerat med ert innehåll. Knuffa snabbt och säkert den önskade målgruppen från Adobe Experience Platform till TikTok med Adobe realtidsintegrering med TikTok Ads Manager.
 last-substantial-update: 2023-03-20T00:00:00Z
 exl-id: 7b12d17f-7d9a-4615-9830-92bffe3f6927
-source-git-commit: ba39f62cd77acedb7bfc0081dbb5f59906c9b287
+source-git-commit: 9a80a9b49b1983e8e488d11b114c02130b045686
 workflow-type: tm+mt
-source-wordcount: '998'
+source-wordcount: '1048'
 ht-degree: 1%
 
 ---
@@ -14,7 +14,7 @@ ht-degree: 1%
 
 ## Översikt {#overview}
 
-Bygg anpassade målgrupper på TikTok med era data för målinriktning med era annonskampanjer. Dessa målgrupper kan vara personer som besökt er webbplats eller interagerat med ert innehåll. Knuffa snabbt och säkert den önskade målgruppen från Adobe Experience Platform till TikTok med hjälp av Adobe realtidsintegrering med TikTok Ads Manager. Mer information finns på [TikTok hjälpcenter för företag](https://ads.tiktok.com/help/article/audiences).
+Bygg anpassade målgrupper på TikTok med era data för målinriktning med era annonskampanjer. Dessa målgrupper kan vara personer som besökt er webbplats eller interagerat med ert innehåll. Knuffa snabbt och säkert den önskade målgruppen från Adobe Experience Platform till TikTok med Adobe realtidsintegrering med TikTok Ads Manager. Mer information finns på [TikTok hjälpcenter för företag](https://ads.tiktok.com/help/article/audiences).
 
 >[!IMPORTANT]
 >
@@ -32,7 +32,7 @@ Ett sportklädvarumärke vill nå befintliga kunder via sina konton för sociala
 
 Du måste ha [!DNL Admin] eller [!DNL Operator] åtkomst till det TikTok Ads Manager-konto som du vill skicka målgrupper till. Mer instruktioner finns på [TikTok Help Center](https://ads.tiktok.com/help/article/add-users-tiktok-business-center).
 
-Innan du skickar data till ditt TikTok Ads Manager-konto måste du ge Adobe Experience Platform behörighet att komma åt ditt annonskonto för `Audience Management`. Den här behörigheten kan ges genom att [ange ditt ID för annonshanteraren](#authenticate) i användargränssnittet för Experience Platform och bevilja behörigheten efter att ha omdirigerats till ditt TikTok Ads Manager-konto.
+Innan du skickar data till ditt TikTok Ads Manager-konto måste du ge Adobe Experience Platform behörighet att komma åt ditt annonskonto för `Audience Management`. Den här behörigheten kan ges genom att [ange ditt ID för annonshanteraren](#authenticate) i Experience Platform-gränssnittet och bevilja behörigheten efter att ha omdirigerats till ditt TikTok Ads Manager-konto.
 
 ## Identiteter som stöds {#supported-identities}
 
@@ -44,6 +44,18 @@ TikTok stöder aktivering av identiteter som beskrivs i tabellen nedan. Läs mer
 | IDFA | Apple ID för annonsörer | Välj IDFA-målidentitet när din källidentitet är ett IDFA-namnutrymme. |
 | Telefonnummer | Telefonnummer hashas med SHA256-algoritmen | Både oformaterad text och SHA256-hashade telefonnummer stöds av Adobe Experience Platform och måste vara i E.164-format. Om källfältet innehåller ohashade attribut bör du kontrollera alternativet **[!UICONTROL Apply transformation]** så att [!DNL Platform] automatiskt hash-kodar data vid aktiveringen. |
 | E-post | E-postadresser som hashas med SHA256-algoritmen | Både oformaterad text och SHA256-hashade e-postadresser stöds av Adobe Experience Platform. Om källfältet innehåller ohashade attribut bör du kontrollera alternativet **[!UICONTROL Apply transformation]** så att [!DNL Platform] automatiskt hash-kodar data vid aktiveringen. |
+
+{style="table-layout:auto"}
+
+## Målgrupper {#supported-audiences}
+
+I det här avsnittet beskrivs vilka typer av målgrupper du kan exportera till det här målet.
+
+| Målgruppsursprung | Stöds | Beskrivning |
+|---------|----------|----------|
+| [!DNL Segmentation Service] | ✓ | Publiker som genererats via Experience Platform [segmenteringstjänst](../../../segmentation/home.md). |
+| Anpassade överföringar | ✓ | Publikerna [importerade](../../../segmentation/ui/audience-portal.md#import-audience) till Experience Platform från CSV-filer. |
+| [!DNL Federated Audience Composition] | ✓ | Publiker som importerats till Experience Platform via [Federated Audience Composition](https://experienceleague.adobe.com/en/docs/federated-audience-composition/using/start/audiences). |
 
 {style="table-layout:auto"}
 
@@ -115,7 +127,7 @@ Markera målfält:
 
 ## Exporterade data {#exported-data}
 
-Kontrollera ditt [!DNL TikTok Ads Manager]-konto (under **Assets > Publiker**) för att kontrollera om din Experience Platform-målgrupp exporterades. Publiken fylls i som en målgruppstyp: `Partner Audience`.
+Kontrollera ditt [!DNL TikTok Ads Manager]-konto (under **Assets > Publiker**) för att kontrollera om din Experience Platform-publik har exporterats korrekt. Publiken fylls i som en målgruppstyp: `Partner Audience`.
 
 ## Dataanvändning och styrning {#data-usage-governance}
 
