@@ -1,16 +1,22 @@
 ---
-keywords: Experience Platform;hem;populära ämnen;åtkomstkontroll;attributbaserad åtkomstkontroll;ABAC
+keywords: Experience Platform;home;populära topics;access control;attribute-based access control;ABAC
 title: Attributbaserad åtkomstkontroll Hantera användare
 description: Det här dokumentet innehåller information om hur du hanterar användare och användargrupper via gränssnittet Behörigheter i Adobe Experience Cloud
 exl-id: 16450867-040a-4be1-a6c0-f03d0a1b90ba
-source-git-commit: d410e7ea635471f2bbc93c9d332ad7e2f619d054
+source-git-commit: afd883c530ab1b335888e79b5f4075e774fced4b
 workflow-type: tm+mt
-source-wordcount: '252'
+source-wordcount: '280'
 ht-degree: 0%
 
 ---
 
-# Hantera användare
+# Hantera användare {#manage-users}
+
+>[!CONTEXTUALHELP]
+>id="platform_permissions_users_about"
+>title="Vad är användare?"
+>abstract="Användare är de personer som har tillgång till Experience Platform. En enskild användares åtkomst till en organisations resurser hanteras via roller."
+>additional-url="https://experienceleague.adobe.com/en/docs/experience-platform/access-control/abac/permissions-ui/roles" text="Hantera roller"
 
 Om du vill visa användarinformation och roller som de är tilldelade till väljer du fliken **[!UICONTROL Users]**.
 

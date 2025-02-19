@@ -1,18 +1,18 @@
 ---
-keywords: Experience Platform;hem;populära ämnen;åtkomstkontroll;attributbaserad åtkomstkontroll;ABAC
+keywords: Experience Platform;home;populära topics;access control;attribute-based access control;ABAC
 title: Hantera åtkomstkontrollprinciper
 description: Det här dokumentet innehåller information om hur du hanterar åtkomstkontrollprinciper via gränssnittet Behörigheter i Adobe Experience Cloud.
 exl-id: 66820711-2db0-4621-908d-01187771de14
-source-git-commit: 7cafe1f7e9dd6789db4199631cb605be666ce48a
+source-git-commit: afd883c530ab1b335888e79b5f4075e774fced4b
 workflow-type: tm+mt
-source-wordcount: '577'
+source-wordcount: '648'
 ht-degree: 0%
 
 ---
 
 # Hantera åtkomstkontrollprinciper
 
-Åtkomstkontrollprinciper är satser som sammanför attribut för att fastställa tillåtna och otillåtna åtgärder. Åtkomstprinciper kan antingen vara lokala eller globala och kan åsidosätta andra principer. Adobe tillhandahåller en standardprincip som kan aktiveras omedelbart eller när din organisation är redo att börja styra åtkomsten till specifika objekt baserat på etiketter. Standardprincipen använder etiketter som används på resurser för att neka åtkomst, såvida inte användarna har en roll med en matchande etikett.
+Åtkomstkontrollprinciper är satser som sammanför attribut för att fastställa tillåtna och otillåtna åtgärder. Åtkomstprinciper kan antingen vara lokala eller globala och kan åsidosätta andra principer. Adobe har en standardpolicy som kan aktiveras omedelbart eller när din organisation är redo att börja styra åtkomsten till specifika objekt baserat på etiketter. Standardprincipen använder etiketter som används på resurser för att neka åtkomst, såvida inte användarna har en roll med en matchande etikett.
 
 >[!IMPORTANT]
 >
@@ -184,7 +184,13 @@ Dialogrutan **[!UICONTROL Remove]** visas och du uppmanas att bekräfta ditt val
 >
 >Den valda sandlådan har tagits bort från principen.
 
-## Aktivera en profil
+## Aktivera en profil {#activate-policy}
+
+>[!CONTEXTUALHELP]
+>id="platform_permissions_policies_about"
+>title="Vad är policyer?"
+>abstract="Profiler är satser som sammanför attribut för att fastställa tillåtna och otillåtna åtgärder. Alla organisationer har en standardprofil som du måste aktivera för att kunna styra åtkomsten till specifika objekt baserat på etiketter. Etiketter som används på resurser nekar åtkomst såvida inte användare tilldelas till en roll med en matchande etikett. Standardprofiler kan inte redigeras eller tas bort, men de kan aktiveras eller inaktiveras."
+>additional-url="https://experienceleague.adobe.com/en/docs/experience-platform/access-control/abac/permissions-ui/labels" text="Hantera etiketter"
 
 Om du vill aktivera en befintlig princip väljer du den på fliken **[!UICONTROL Policies]**.
 

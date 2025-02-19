@@ -1,11 +1,11 @@
 ---
-keywords: Experience Platform;hem;populära ämnen;åtkomstkontroll;attributbaserad åtkomstkontroll;ABAC
+keywords: Experience Platform;home;populära topics;access control;attribute-based access control;ABAC
 title: Attributbaserad åtkomstkontroll Hantera rollbehörigheter
 description: Det här dokumentet innehåller information om hur du konfigurerar behörigheter för en roll via gränssnittet Behörigheter i Adobe Experience Cloud
 exl-id: 8acd2bb6-eef8-4b23-8fd8-3566c7508fe7
-source-git-commit: 207317d16a21cc2461ebd3f7867735735227c173
+source-git-commit: afd883c530ab1b335888e79b5f4075e774fced4b
 workflow-type: tm+mt
-source-wordcount: '1513'
+source-wordcount: '1604'
 ht-degree: 0%
 
 ---
@@ -20,7 +20,7 @@ ht-degree: 0%
 
 >[!IMPORTANT]
 >
->Åtkomstkontrollen använder användar-ID (ett internt unikt ID som tilldelats en användare) för att bevilja behörigheter. När en organisation migreras från Adobe ID till Business ID, kommer alla behörigheter som angetts för dess användare att gå förlorade eftersom användar-ID ändras och åtkomstkontrollen kommer att använda det nyligen genererade användar-ID:t. Om din organisation migreras till ditt företags-ID kontaktar du din Adobe-representant för att migrera ditt användar-ID från Adobe ID till ditt företags-ID.
+>Åtkomstkontrollen använder användar-ID (ett internt unikt ID som tilldelats en användare) för att bevilja behörigheter. När en organisation migreras från Adobe ID till Business ID, kommer alla behörigheter som angetts för dess användare att gå förlorade eftersom användar-ID ändras och åtkomstkontrollen kommer att använda det nyligen genererade användar-ID:t. Om din organisation migreras till ditt företags-ID, ska du kontakta din Adobe-representant för att migrera ditt användar-ID från Adobe ID till ditt företags-ID.
 
 Behörigheter är det område i Experience Cloud där administratörer kan definiera användarroller och åtkomstprinciper för att hantera åtkomstbehörigheter för funktioner och objekt i ett produktprogram.
 
@@ -120,11 +120,17 @@ Följande video är tänkt att ge stöd för din förståelse för att skapa en 
 
 ## Hantera API-autentiseringsuppgifter för en roll {#manage-api-credentials-for-role}
 
+>[!CONTEXTUALHELP]
+>id="platform_permissions_apicredentials_about"
+>title="Vad är API-autentiseringsuppgifter?"
+>abstract="API-autentiseringsuppgifter tilldelas roller för att ge användare och utvecklare åtkomst till plattforms-API:er. Med hjälp av plattforms-API:er kan du programmässigt utföra grundläggande CRUD-åtgärder (Skapa, Läs, Uppdatera, Ta bort) på data, som att konfigurera beräknade attribut, komma åt data/enheter, exportera data, ta bort onödiga data eller batchar med mera."
+>additional-url="https://experienceleague.adobe.com/en/docs/experience-platform/landing/platform-apis/api-guide" text="Plattforms-API-guide"
+
 >[!IMPORTANT]
 >
 > Om du vill använda och hantera API-autentiseringsuppgifter i [!UICONTROL Permissions] måste användarna ha systemadministratörsbehörighet.
 
-Om du vill använda Experience Platform API:er som användare eller utvecklare måste en systemadministratör lägga till API-autentiseringsuppgifter utöver en rolls angivna behörighetsuppsättning. En fullständig guide om hur du skapar och tilldelar API-autentiseringsuppgifter samt de behörigheter som behövs finns i den stegvisa självstudiekursen i [autentisera och få åtkomst till Experience Platform API:er](../../../landing/api-authentication.md#generate-credentials).
+Om du vill använda Experience Platform API:er som användare eller utvecklare måste en systemadministratör lägga till API-autentiseringsuppgifter utöver en rolls angivna behörighetsgrupp. En fullständig guide om hur du skapar och tilldelar API-autentiseringsuppgifter samt de behörigheter som behövs finns i den stegvisa självstudiekursen i [autentisera och få åtkomst till Experience Platform API:er](../../../landing/api-authentication.md#generate-credentials).
 
 Välj fliken **[!UICONTROL API credentials]** för att öppna arbetsytan för roller-API-autentiseringsuppgifter och välj sedan **[!UICONTROL Add API credentials]** för att tilldela API-autentiseringsuppgifter till rollen.
 
@@ -148,7 +154,13 @@ Dialogrutan **[!UICONTROL Remove API credentials]** visas och du uppmanas att be
 
 Du återgår till fliken **[!UICONTROL API credentials]**.
 
-## Hantera användargrupper för en roll
+## Hantera användargrupper för en roll {#manage-user-groups}
+
+>[!CONTEXTUALHELP]
+>id="platform_permissions_usergroups_about"
+>title="Vad är användargrupper?"
+>abstract="Användargrupper är samlingar med flera användare som delar åtkomst till samma funktioner. Åtkomst till resurser i en organisation hanteras via roller som tilldelats användargrupper."
+>additional-url="https://experienceleague.adobe.com/en/docs/experience-platform/access-control/abac/permissions-ui/roles" text="Hantera roller"
 
 Användargrupper är flera användare som har grupperats tillsammans och har tillgång till samma funktioner.
 
@@ -178,7 +190,7 @@ Du återgår till fliken **[!UICONTROL User groups]**.
 
 Som systemadministratör kan du ge utvecklare åtkomst till en användare så att de kan [skapa integreringar](../../../landing/api-authentication.md#generate-credentials) i Adobe Developer Console.
 
-Om du vill lägga till en användare Experience Platform loggar du in på [Admin Console](https://adminconsole.adobe.com) och väljer **[!UICONTROL Add users]**.
+Om du vill lägga till en Experience Platform-användare loggar du in på [Admin Console](https://adminconsole.adobe.com) och väljer **[!UICONTROL Add users]**.
 
 ![Adobe Admin Console-instrumentpanelen med alternativet Lägg till användare markerat.](../../images/flac-ui/product-profile-add-users.png)
 

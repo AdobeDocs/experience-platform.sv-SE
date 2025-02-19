@@ -1,21 +1,16 @@
 ---
-keywords: Experience Platform;hem;populära ämnen;åtkomstkontroll;attributbaserad åtkomstkontroll;
+keywords: Experience Platform;home;populära topics;access control;attribute-based access control;
 title: Attributbaserad åtkomstkontroll - översikt
 description: Det här dokumentet innehåller information om attributbaserad åtkomstkontroll i Adobe Experience Platform
 exl-id: 5495c55f-b808-40c1-8896-e03eace0ca4d
-source-git-commit: c35b43654d31f0f112258e577a1bb95e72f0a971
+source-git-commit: 37131ce16b70bfaa737ee1cd896d0042e06bab15
 workflow-type: tm+mt
-source-wordcount: '1864'
-ht-degree: 0%
+source-wordcount: '1860'
+ht-degree: 9%
 
 ---
 
 # Attributbaserad åtkomstkontroll - översikt {#attribute-based-access-control-overview}
-
->[!CONTEXTUALHELP]
->id="platform_accesscontrol_abac_labelusageaccesspolicy"
->title="Åtkomstprincip för etikettanvändning"
->abstract=""
 
 Attributbaserad åtkomstkontroll är en funktion i Adobe Experience Platform som gör att administratörer kan styra åtkomsten till specifika objekt och/eller funktioner baserat på attribut. Attribut kan läggas till i ett objekt, t.ex. en etikett som lagts till i ett schemafält eller segment. En administratör definierar åtkomstprinciper som innehåller attribut för att hantera behörigheter för användaråtkomst.
 
@@ -23,7 +18,7 @@ Använd den här funktionen för att etikettera XDM-schemafält (Experience Data
 
 >[!IMPORTANT]
 >
->Attributbaserad åtkomstkontroll ska inte blandas ihop med Experience Platform datastyrningsfunktioner, som gör att du kan använda etiketter och policyer för att styra hur data används i plattformar i stället för vilka användare i organisationen har tillgång till dem. Mer information finns i [översikten över datastyrning](../../data-governance/home.md).
+>Attributbaserad åtkomstkontroll ska inte blandas ihop med Experience Platform datastyrningsfunktioner, som gör att du kan använda etiketter och policyer för att styra hur data används i plattformar i stället för vilka användare i organisationen som har tillgång till dem. Mer information finns i [översikten över datastyrning](../../data-governance/home.md).
 
 Med attributbaserad åtkomstkontroll kan administratören styra användarnas tillgång till känsliga personuppgifter (SPD), personligt identifierbar information (PII) och anpassad typ av data i alla plattformsarbetsflöden och resurser. Administratörer kan definiera användarroller som bara har åtkomst till specifika fält och data som motsvarar dessa fält.
 
@@ -83,9 +78,9 @@ Administrationsarbetsflödena för alla Experience Platform-baserade program fr�
 
 Mer information om åtkomstkontroll finns i [åtkomstkontrollsöversikten](../home.md).
 
-### Mål  {#destinations}
+### Mål {#destinations}
 
-[!DNL Destinations] är färdiga integreringar med målplattformar som möjliggör smidig aktivering av data från plattformen. Ni kan använda destinationer för att aktivera kända och okända data för flerkanalskampanjer, e-postkampanjer, riktad reklam och många andra användningsfall.
+[!DNL Destinations] är färdiga integreringar med målplattformar som möjliggör smidig aktivering av data från plattformen. Du kan använda mål för att aktivera dina kända och okända data för marknadsföringskampanjer över flera kanaler, e-postkampanjer, riktad reklam och många andra användningsområden.
 
 Som administratör kan du använda attributbaserade åtkomstkontrollsfunktioner för att:
 
@@ -114,7 +109,7 @@ Mer information om [!DNL Identity Service] finns i [[!DNL Identity Service] öve
 
 ### Kundprofil i realtid
 
-Plattformen gör att ni kan skapa samordnade, enhetliga och relevanta upplevelser för era kunder oavsett var och när de interagerar med ert varumärke. Med kundprofilen i realtid kan ni se en helhetsbild av varje enskild kund som kombinerar data från flera kanaler, inklusive online-, offline-, CRM- och tredjepartsdata. Med hjälp av en profil kan ni sammanställa olika kunddata i en enhetlig vy som ger ett användbart, tidsstämplat konto för varje kundinteraktion.
+Plattformen gör att ni kan skapa samordnade, enhetliga och relevanta upplevelser för era kunder oavsett var och när de interagerar med ert varumärke. Med kundprofilen i realtid får du en helhetsbild av varje enskild kund som kombinerar data från flera kanaler, inklusive online, offline, CRM och data från tredje part. Med hjälp av en profil kan ni sammanställa olika kunddata i en enhetlig vy som ger ett användbart, tidsstämplat konto för varje kundinteraktion.
 
 Som administratör kan du använda attributbaserade åtkomstkontrollsfunktioner för att:
 
@@ -127,7 +122,7 @@ Mer information om profil finns i [Profilöversikt](../../profile/home.md).
 
 ### Segmenteringstjänst
 
-[!DNL Segmentation Service] definierar en viss delmängd av profiler genom att beskriva kriterierna som särskiljer en marknadsföringsbar grupp av personer inom din kundbas. Segment kan baseras på registerdata (t.ex. demografisk information) eller tidsseriehändelser som representerar kundinteraktioner med ert varumärke.
+[!DNL Segmentation Service] definierar en viss deluppsättning av profiler genom att beskriva de kriterier som skiljer en säljbar grupp människor inom din kundbas. Segmenten kan baseras på registerdata (t.ex. demografisk information) eller tidsseriehändelser som representerar kundinteraktioner med ditt varumärke.
 
 Som administratör kan du använda attributbaserade åtkomstkontrollsfunktioner för att:
 
@@ -138,7 +133,7 @@ Mer information om [!DNL Segmentation Service] finns i [[!DNL Segmentation Servi
 
 ### XML
 
-Experience Data Model (XDM) är en öppen källkodsspecifikation som är utformad för att förbättra kraften i digitala upplevelser. Det innehåller gemensamma strukturer och definitioner för alla program som ska kommunicera med tjänster på plattformen. Genom att följa XDM-standarder kan alla kundupplevelsedata införlivas i en gemensam representation för att ge insikter på ett snabbare och mer integrerat sätt. Ni kan få värdefulla insikter från kundåtgärder, definiera kundmålgrupper genom segment och använda kundattribut i personaliseringssyfte.
+Experience Data Model (XDM) är en öppen källkodsspecifikation som är utformad för att förbättra kraften i digitala upplevelser. Det innehåller gemensamma strukturer och definitioner för alla program som ska kommunicera med tjänster på plattformen. Genom att följa XDM-standarder kan all data om kundupplevelsen införlivas i en gemensam representation för att leverera insikter på ett snabbare och mer integrerat sätt. Du kan få värdefulla insikter från kundåtgärder, definiera kundmålgrupper genom segment och använda kundattribut för personalisering.
 
 Med attributbaserad åtkomstkontroll kan du:
 
