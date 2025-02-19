@@ -2,30 +2,32 @@
 keywords: Experience Platform;hem;populära ämnen;filter;filter;filterdata;Filterdata;datumintervall
 solution: Experience Platform
 title: Filtrera katalogdata med hjälp av frågeparametrar
-description: Med Catalog Service API kan svarsdata filtreras med hjälp av frågeparametrar. En del av de bästa sätten för Catalog är att använda filter i alla API-anrop, eftersom de minskar belastningen på API:t och bidrar till att förbättra prestanda generellt.
+description: Använd frågeparametrar för att filtrera svarsdata i katalogtjänstens API och hämta endast den information du behöver. Använd filter på API-anrop för att minska inläsningen och förbättra prestandan, vilket ger snabbare och effektivare datahämtning.
 exl-id: 0cdb5a7e-527b-46be-9ad8-5337c8dc72b7
-source-git-commit: 75099d39fbdb9488105a9254bbbcca9b12349238
+source-git-commit: 14ecb971af3f6cdcc605caa05ef6609ecb9b38fd
 workflow-type: tm+mt
-source-wordcount: '2117'
+source-wordcount: '2339'
 ht-degree: 0%
 
 ---
 
 # Filtrera [!DNL Catalog]-data med frågeparametrar
 
-API:t [!DNL Catalog Service] tillåter att svarsdata filtreras med hjälp av frågeparametrar för begäran. En del av de bästa sätten för [!DNL Catalog] är att använda filter i alla API-anrop, eftersom de minskar belastningen på API:t och bidrar till att förbättra den övergripande prestandan.
+Om du vill förbättra prestanda och hämta relevanta resultat använder du frågeparametrar för att filtrera [!DNL Catalog Service] API-svarsdata.
 
-Det här dokumentet innehåller de vanligaste metoderna för filtrering av [!DNL Catalog]-objekt i API:t. Vi rekommenderar att du refererar till det här dokumentet när du läser [katalogutvecklarhandboken](getting-started.md) för att lära dig mer om hur du interagerar med [!DNL Catalog] API:t. Mer allmän information om [!DNL Catalog Service] finns i [[!DNL Catalog] översikten](../home.md).
+Lär dig mer om vanliga filtreringsmetoder för [!DNL Catalog]-objekt i API:t. Använd det här dokumentet tillsammans med [Utvecklarhandbok för katalog](getting-started.md) om du vill ha mer information om API-interaktioner. Allmän information om [!DNL Catalog Service] finns i [[!DNL Catalog] översikten](../home.md).
 
-## Begränsa returnerade objekt
+## Begränsa returnerade objekt {#limit-returned-objects}
 
-Frågeparametern `limit` begränsar antalet objekt som returneras i ett svar. [!DNL Catalog] svar mäts automatiskt enligt de konfigurerade gränserna:
+Frågeparametern `limit` begränsar antalet objekt som returneras i ett svar. [!DNL Catalog] svar följer fördefinierade gränser:
 
-* Om ingen `limit`-parameter anges är det maximala antalet objekt per svarsnyttolast 20.
+* Om parametern `limit` inte anges är det maximala antalet objekt per svar 20.
 * Om `observableSchema` begärs med frågeparametern `properties` för datauppsättningsfrågor är det maximala antalet returnerade datauppsättningar 20.
-* Den globala gränsen för alla andra katalogfrågor är 100 objekt.
-* Ogiltiga `limit`-parametrar (inklusive `limit=0`) resulterar i felsvar på 400-nivå som anger korrekta intervall.
-* Gränser eller förskjutningar som skickas som frågeparametrar har företräde framför de som skickas som rubriker.
+* För användartoken är maxgränsen 1.
+* För tjänsttoken är maxgränsen 20.
+* Den globala gränsen för andra katalogfrågor är 100 objekt.
+* Ogiltiga `limit`-värden (inklusive `limit=0`) resulterar i felsvar på 400-nivå som anger korrekta intervall.
+* Gränser eller förskjutningar som skickas som frågeparametrar har företräde framför dem i rubriker.
 
 **API-format**
 
@@ -35,8 +37,8 @@ GET /{OBJECT_TYPE}?limit={LIMIT}
 
 | Parameter | Beskrivning |
 | --- | --- |
-| `{OBJECT_TYPE}` | Den typ av [!DNL Catalog]-objekt som ska hämtas. Giltiga objekt är: <ul><li>`batches`</li><li>`dataSets`</li><li>`dataSetFiles`</li></ul> |
-| `{LIMIT}` | Ett heltal som anger antalet objekt som ska returneras, från 1 till 100. |
+| `{OBJECT_TYPE}` | Den typ av [!DNL Catalog]-objekt som ska hämtas. Giltiga objekt: <ul><li>`batches`</li><li>`dataSets`</li><li>`dataSetFiles`</li></ul> |
+| `{LIMIT}` | Ett heltal som anger antalet objekt som ska returneras (intervall: 1-100). |
 
 **Begäran**
 
@@ -73,7 +75,7 @@ Ett lyckat svar returnerar en lista med datauppsättningar, begränsad till det 
 }
 ```
 
-## Begränsa visade egenskaper
+## Begränsa visade egenskaper {#limit-displayed-properties}
 
 Även om du filtrerar antalet objekt som returneras med parametern `limit` kan de returnerade objekten ofta innehålla mer information än du faktiskt behöver. För att ytterligare minska belastningen på systemet är det bäst att filtrera svaren så att de bara innehåller de egenskaper som du behöver.
 
@@ -158,7 +160,7 @@ Baserat på ovanstående svar kan man dra slutsatsen följande:
 >
 >I egenskapen `schemaRef` för varje datauppsättning anger versionsnumret den senaste delversionen av schemat. Mer information finns i avsnittet [schemaversion](../../xdm/api/getting-started.md#versioning) i XDM API-guiden.
 
-## Startindex för förskjutning av svarslista
+## Startindex för förskjutning av svarslista {#offset-starting-index}
 
 Frågeparametern `start` förskjuter svarslistan framåt med ett angivet nummer, med nollbaserad numrering. `start=2` skulle till exempel förskjuta svaret så att det startar på det tredje listade objektet.
 
@@ -207,7 +209,7 @@ Det finns några begränsningar att tänka på när du använder taggar:
 
 * De enda katalogobjekt som för närvarande stöder taggar är datamängder, grupper och anslutningar.
 * Taggnamnen är unika för din organisation.
-* Adobe kan använda taggar för vissa beteenden. Namnen på dessa taggar har prefixet&quot;adobe&quot; som standard. Därför bör du undvika den här regeln när du deklarerar taggnamn.
+* Adobe-processer kan utnyttja taggar för vissa beteenden. Namnen på dessa taggar har prefixet&quot;adobe&quot; som standard. Därför bör du undvika den här regeln när du deklarerar taggnamn.
 * Följande taggnamn är reserverade för användning i [!DNL Experience Platform] och kan därför inte deklareras som ett taggnamn för din organisation:
    * `unifiedProfile`: Det här taggnamnet är reserverat för datauppsättningar som ska importeras av [[!DNL Real-Time Customer Profile]](../../profile/home.md).
    * `unifiedIdentity`: Det här taggnamnet är reserverat för datauppsättningar som ska importeras av [[!DNL Identity Service]](../../identity-service/home.md).
@@ -455,6 +457,10 @@ Ett godkänt svar innehåller en lista med [!DNL Catalog] objekt som är sortera
 * [Använda enkla filter](#using-simple-filters): Filtrera efter om en viss egenskap matchar ett visst värde.
 * [Använder egenskapsparametern](#using-the-property-parameter): Använd villkorsuttryck för att filtrera baserat på om det finns en egenskap eller om en egenskaps värde matchar, uppskattar eller jämför med ett annat angivet värde eller reguljärt uttryck.
 
+>[!NOTE]
+>
+>Alla attribut i ett Catalog-objekt kan användas för att filtrera resultat i katalogtjänstens API.
+
 ### Använda enkla filter {#using-simple-filters}
 
 Med enkla filter kan du filtrera svar baserat på specifika egenskapsvärden. Ett enkelt filter har formen `{PROPERTY_NAME}={VALUE}`.
@@ -524,6 +530,22 @@ Ett godkänt svar innehåller en lista med datauppsättningar, exklusive dataupp
 
 Frågeparametern `property` ger större flexibilitet för egenskapsbaserad filtrering än enkla filter. Förutom filtrering baserad på om en egenskap har ett visst värde kan parametern `property` använda andra jämförelseoperatorer (till exempel&quot;mer än&quot; (`>`) och&quot;mindre än&quot; (`<`)) samt reguljära uttryck för att filtrera efter egenskapsvärden. Det kan också filtrera efter om en egenskap finns eller inte, oavsett dess värde.
 
+Använd ett et-tecken (`&`) om du vill kombinera flera filter och förfina frågan i en enda begäran. När du filtrerar efter flera fält används en `AND`-relation som standard.
+
+>[!NOTE]
+>
+>Om du kombinerar flera `property`-parametrar i en enda fråga måste minst en gälla för fältet `id` eller `created`. Följande fråga returnerar objekt där `id` är `abc123` **AND** `name` inte är `test`:
+>
+>```http
+>GET /datasets?property=id==abc123&property=name!=test
+>```
+
+Om du använder flera `property`-parametrar i samma fält börjar bara den senast angivna parametern gälla.
+
+>[!IMPORTANT]
+>
+>Du **kan inte** använda en enda `property`-parameter för att filtrera flera fält samtidigt. Varje fält måste ha en egen `property`-parameter. Följande exempel (`property=id>abc,name==myDataset`) är **inte** tillåtet eftersom det försöker tillämpa villkor på `id` och `name` inom en **enkel `property`-parameter**.
+
 Parametern `property` kan acceptera alla nivåobjektsegenskaper. `sampleKey` kan användas för filtrering med `?properties=subItem.sampleKey`.
 
 ```json
@@ -562,6 +584,8 @@ Värdet för parametern `property` stöder flera olika typer av villkorsuttryck.
 | &lt;= | Returnerar endast objekt vars egenskapsvärden är mindre än (eller lika med) ett angivet värde. | `property=version<=1.0.0` |
 | > | Returnerar endast objekt vars egenskapsvärden är större än (men inte lika med) ett angivet värde. | `property=version>1.0.0` |
 | >= | Returnerar endast objekt vars egenskapsvärden är större än (eller lika med) ett angivet värde. | `property=version>=1.0.0` |
+| * | Ett jokertecken används för alla strängegenskaper och matchar alla teckensekvenser. Använd `**` för att undvika en literal asterisk. | `property=name==te*st` |
+| &amp; | Kombinerar flera `property`-parametrar med en `AND`-relation mellan dem. | `property=id==abc&property=name!=test` |
 
 >[!NOTE]
 >
@@ -619,12 +643,38 @@ Ett godkänt svar innehåller en lista med datauppsättningar vars versionsnumme
 }
 ```
 
-## Kombinera flera filter
+## Filtrera arrayer med parametern property {#filter-arrays}
 
-Med ett et-tecken (`&`) kan du kombinera flera filter i en enda begäran. När ytterligare villkor läggs till i en begäran antas en AND-relation.
+Använd operatorer för likhet och olikhet för att inkludera eller exkludera specifika värden när du filtrerar resultat baserat på arrayegenskaper.
+
+### Likhetsfilter {#equality-filters}
+
+Om du vill filtrera ett arrayfält efter flera värden använder du separata egenskapsparametrar för varje värde. Använd likhetsfilter om du bara vill returnera de poster i arraydata som matchar de angivna värdena.
+
+>[!NOTE]
+>
+>Kravet på att inkludera `id` eller `created` vid filtrering av flera fält gäller **inte** vid filtrering av flera värden i ett matrisfält.
+
+Exempelfrågan nedan returnerar bara resultat från den array som innehåller både `val1` och `val2`.
 
 **API-format**
 
 ```http
-GET /{OBJECT_TYPE}?{FILTER_1}={VALUE}&{FILTER_2}={VALUE}&{FILTER_3}={VALUE}
+GET /{OBJECT_TYPE}?property=arrayField=val1&property=arrayField=val2
 ```
+
+### Okvalitetsfilter {#inequality-filters}
+
+Använd olikhetsoperatorer (`!=`) i ett matrisfält för att exkludera poster i data där matrisen innehåller de angivna värdena.
+
+**API-format**
+
+```http
+GET /{OBJECT_TYPE}?property=arrayField!=val1&property=arrayField!=val2
+```
+
+Den här frågan returnerar dokument där arrayField inte innehåller `val1` eller `val2`.
+
+### Begränsningar för likhet och olikhet {#equality-inequality-limitations}
+
+Du kan inte använda både likhet (`=`) och olikhet (`!=`) för samma fält i en enskild fråga.
