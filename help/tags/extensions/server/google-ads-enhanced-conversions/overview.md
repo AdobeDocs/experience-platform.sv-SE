@@ -3,7 +3,7 @@ title: Google Ads Enhanced Conversions Extension
 description: Läs mer om tillägget Google Ads Enhanced Conversions för vidarebefordran av händelser i Adobe Experience Platform.
 exl-id: 65cdff40-276f-4481-9621-6c6861dbd412
 last-substantial-update: 2022-11-23T00:00:00Z
-source-git-commit: c2832821ea6f9f630e480c6412ca07af788efd66
+source-git-commit: 0d98183838125fac66768b94bc1993bde9a374b5
 workflow-type: tm+mt
 source-wordcount: '1188'
 ht-degree: 0%
@@ -47,7 +47,7 @@ Om du vill skicka en konverteringshändelse från på en webbplats måste [!DNL 
 
 ### Konfigurera och installera tillägget [!DNL Google Global Site Tag]
 
-Navigera till användargränssnittet för [!UICONTROL Data Collection] eller Experience Platform och markera **[!UICONTROL Tags]** i den vänstra navigeringen. Välj den taggegenskap som du vill installera tillägget på och välj sedan **[!UICONTROL Extensions]** i den vänstra navigeringen. Gå till fliken **[!UICONTROL Catalog]**, leta upp tillägget [!UICONTROL Google Global Site Tag (gtag)] och välj **[!UICONTROL Install]**.
+Navigera till användargränssnittet för [!UICONTROL Data Collection] eller Experience Platform och välj **[!UICONTROL Tags]** i den vänstra navigeringen. Välj den taggegenskap som du vill installera tillägget på och välj sedan **[!UICONTROL Extensions]** i den vänstra navigeringen. Gå till fliken **[!UICONTROL Catalog]**, leta upp tillägget [!UICONTROL Google Global Site Tag (gtag)] och välj **[!UICONTROL Install]**.
 
 ![Det [!UICONTROL Google Global Site Tag (gtag)]-tillägg som markeras under vyn [!UICONTROL Extensions] i gränssnittet [!UICONTROL Data Collection].](../../../images/extensions/server/google-ads-enhanced-conversions/install-gtag-extension.png)
 
@@ -74,6 +74,7 @@ Ytterligare kontroller visas som gör att du kan konfigurera [!DNL gtag]-händel
 1. **[!UICONTROL Event Name (Action)]**: Ange `conversion` som värde.
 1. Lägg till ett nytt fält där nyckeln är `transaction_id` och värdet är ett [dataelement](../../../ui/managing-resources/data-elements.md) som innehåller [transaktions-ID](https://support.google.com/google-ads/answer/6386790)-värdet.
 1. **[!UICONTROL Conversion Label]**: Ange lämplig konverteringsetikett från ditt [!DNL Google Ads]-konto. Om du vill hitta det här värdet loggar du in på Google Ads och går till **[!DNL Tools and Settings]** > **[!DNL Conversions]** > **[!DNL Select a conversion action]** > **[!DNL Tag Setup]** > **[!DNL Use Google Tag Manager]**. Konverteringsetiketten finns under [!DNL Instructions].
+
    >[!IMPORTANT]
    >
    >Kontrollera att Förbättrade konverteringar är aktiverade när du är i tagginställningsområdet för ditt [!DNL Google Ads]-konto. Om du vill göra det granskar och godkänner du användarvillkoren och väljer sedan **[!DNL Turn on enhanced conversions]** och **[!DNL API]** som implementeringsmetod.
@@ -142,4 +143,4 @@ Publicera slutligen en ny händelse som vidarebefordrar [build](../../../ui/publ
 
 ## Nästa steg
 
-I den här guiden beskrivs hur du skickar konverteringshändelser till [!DNL Google Ads] med hjälp av tillägget [!DNL Enhanced Conversions] för vidarebefordran av händelser. Mer information om funktioner för att vidarebefordra händelser i Experience Platform finns i [översikten över vidarebefordran av händelser](../../../ui/event-forwarding/overview.md).
+I den här guiden beskrivs hur du skickar konverteringshändelser till [!DNL Google Ads] med hjälp av tillägget [!DNL Enhanced Conversions] för vidarebefordran av händelser. Mer information om funktioner för vidarebefordran av händelser i Experience Platform finns i [översikten över vidarebefordran av händelser](../../../ui/event-forwarding/overview.md).

@@ -2,7 +2,7 @@
 title: Översikt över segmenttillägg
 description: Läs mer om Splunk-tillägget för händelsevidarebefordran i Adobe Experience Platform.
 exl-id: 653b5897-493b-44f2-aeea-be492da2b108
-source-git-commit: bfbad3c11df64526627e4ce2d766b527df678bca
+source-git-commit: 0d98183838125fac66768b94bc1993bde9a374b5
 workflow-type: tm+mt
 source-wordcount: '958'
 ht-degree: 0%
@@ -11,7 +11,7 @@ ht-degree: 0%
 
 # Översikt över segmenttillägg
 
-[Splunk](https://www.splunk.com) är en observerbarhetsplattform som tillhandahåller sökning, analys och visualisering för åtgärdbara insikter i dina data. Tillägget [Splunk ](../../../ui/event-forwarding/overview.md) för händelsevidarebefordran[ utnyttjar REST API:t för HTTP-händelseinsamlaren ](https://docs.splunk.com/Documentation/Splunk/8.2.5/Data/HECRESTendpoints) för att skicka händelser från Adobe Experience Platform Edge Network till [Splunk HTTP Event Collector](https://docs.splunk.com/Documentation/Splunk/8.2.5/Data/UsetheHTTPEventCollector).
+[Splunk](https://www.splunk.com) är en observerbarhetsplattform som tillhandahåller sökning, analys och visualisering för åtgärdbara insikter i dina data. Tillägget [Splunk ](../../../ui/event-forwarding/overview.md) för händelsevidarebefordran[utnyttjar REST API:t för HTTP-händelseinsamlaren](https://docs.splunk.com/Documentation/Splunk/8.2.5/Data/HECRESTendpoints) för att skicka händelser från Adobe Experience Platform Edge Network till [Splunk HTTP Event Collector](https://docs.splunk.com/Documentation/Splunk/8.2.5/Data/UsetheHTTPEventCollector).
 
 Splunk använder lagertoken som autentiseringsmekanism för att kommunicera med Splunk Event Collector API.
 
@@ -38,6 +38,7 @@ Du måste också ha följande tekniska värden för att konfigurera tillägget:
 
 * En [händelseinsamlingstoken](https://docs.splunk.com/Documentation/Splunk/8.2.5/Data/UsetheHTTPEventCollector#Create_an_Event_Collector_token_on_Splunk_Cloud_Platform). Token har oftast UUIDv4-format som följande: `12345678-1234-1234-1234-1234567890AB`.
 * Splunk-plattformens instansadress och port för din organisation. En plattformsinstansadress och port har vanligtvis följande format: `mysplunkserver.example.com:443`.
+
   >[!IMPORTANT]
   >
   > Splunk-slutpunkter som refereras inom händelsevidarebefordran bör endast använda port `443`. Portar som inte är standard stöds för närvarande inte i implementeringar av händelsevidarebefordran.
@@ -84,7 +85,7 @@ Nästa steg är att mappa Splunk-händelseegenskaperna till dataelement som du t
 
 ### Validera data i Splunk {#validate}
 
-När du har skapat och kört regeln för vidarebefordran av händelser, kontrollerar du om händelsen som skickas till Splunk API visas som förväntat i Splunk-gränssnittet. Om händelseinsamlingen och integreringen med Experience Platform lyckades ser du händelser i Splunk-konsolen som:
+När du har skapat och kört regeln för vidarebefordran av händelser, kontrollerar du om händelsen som skickas till Splunk API visas som förväntat i Splunk-gränssnittet. Om händelseinsamlingen och Experience Platform-integreringen lyckades kommer du att se händelser i Splunk-konsolen som:
 
 ![Händelsedata visas i Splunk-gränssnittet under validering](../../../images/extensions/server/splunk/splunk-data.png)
 

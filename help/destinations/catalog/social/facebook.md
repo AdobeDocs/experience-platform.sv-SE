@@ -3,7 +3,7 @@ keywords: Facebook-anslutning;facebook-anslutning;facebook-mål;facebook;instagr
 title: Facebook-anslutning
 description: Aktivera profiler för era Facebook-kampanjer för målgruppsanpassning, personalisering och nedtryckning baserat på hashad-e-post.
 exl-id: 51e8c8f0-5e79-45b9-afbc-110bae127f76
-source-git-commit: 83e2c014e62509fee2843505d7975cde368665ef
+source-git-commit: 0d98183838125fac66768b94bc1993bde9a374b5
 workflow-type: tm+mt
 source-wordcount: '2042'
 ht-degree: 0%
@@ -77,10 +77,13 @@ Innan du kan skicka dina målgrupper till [!DNL Facebook] måste du kontrollera 
 * Ditt [!DNL Facebook]-användarkonto måste ha fullständig åtkomst till [!DNL Facebook Business Account] som äger det annonskonto som du använder.
 * Ditt [!DNL Facebook]-användarkonto måste ha behörigheten **[!DNL Manage campaigns]** aktiverad för annonskontot som du tänker använda.
 * Affärskontot **Adobe Experience Cloud** måste läggas till som annonspartner i [!DNL Facebook Ad Account]. Använd `business ID=206617933627973`. Mer information finns i [Lägg till partner i din Business Manager](https://www.facebook.com/business/help/1717412048538897) i dokumentationen för Facebook.
+
   >[!IMPORTANT]
   >
   > När du konfigurerar behörigheter för Adobe Experience Cloud måste du aktivera behörigheten **Hantera kampanjer**. Behörighet krävs för integreringen av [!DNL Adobe Experience Platform].
+
 * Läs och signera [!DNL Facebook Custom Audiences] användarvillkoren. Om du vill göra det går du till `https://business.facebook.com/ads/manage/customaudiences/tos/?act=[accountID]&business_id=206617933627973`, där `accountID` är din [!DNL Facebook Ad Account ID]. Kontrollera att avsnittet `business_id=206617933627973` finns i URL:en när du signerar användarvillkoren.
+
   >[!IMPORTANT]
   >
   >När du signerar [!DNL Facebook Custom Audiences]-användarvillkoren måste du se till att använda samma användarkonto som du använde för att autentisera i Facebook API.
