@@ -3,9 +3,9 @@ solution: Experience Platform
 title: Användargränssnittshandbok för målgrupper
 description: Audience Composition i Adobe Experience Platform UI har en omfattande arbetsyta där du kan interagera med profildataelement. Arbetsytan innehåller intuitiva kontroller för att skapa och redigera målgrupper för din organisation.
 exl-id: 0dda0cb1-49e0-478b-8004-84572b6cf625
-source-git-commit: 3c0fdab5d7561238a64e79e5bab5fd4843fccb0a
+source-git-commit: 65871f307468428ee0e3b67c1a6577e913f3a312
 workflow-type: tm+mt
-source-wordcount: '1840'
+source-wordcount: '2116'
 ht-degree: 0%
 
 ---
@@ -36,7 +36,17 @@ Målgruppens kompositionsyta består av fyra olika typer av block: **[[!UICONTRO
 
 ## [!UICONTROL Audience] {#audience-block}
 
-Med blocktypen **[!UICONTROL Audience]** kan du lägga till de undermålgrupper som du vill skapa din nya större publik. Som standard inkluderas ett **[!UICONTROL Audience]**-block högst upp på kompositionens arbetsyta.
+>[!CONTEXTUALHELP]
+>id="platform_segmentation_ao_audience"
+>title="Målgrupp"
+>abstract="Med Audience-blocket kan ni nå de undermålgrupper som ni vill använda för att sätta samman er nya målgrupp."
+
+>[!CONTEXTUALHELP]
+>id="platform_segmentation_ao_merge_types"
+>title="Sammanfoga typer"
+>abstract="Sammanslagningstyperna avgör hur de valda undermålgrupperna kombineras. Värden som stöds är överlappning mellan Union, Intersection och Exclude."
+
+Med blocktypen **[!UICONTROL Audience]** kan du lägga till de undermålgrupper som du vill använda för att skapa din nya större publik. Som standard inkluderas ett **[!UICONTROL Audience]**-block högst upp på kompositionens arbetsyta.
 
 När du markerar **[!UICONTROL Audience]**-blocket visas kontroller för att märka målgruppen, lägga till målgrupper i blocket samt skapa anpassade regler för målgruppsblocket i den högra listen.
 
@@ -88,6 +98,16 @@ När du har lagt till en anpassad regel väljer du **[!UICONTROL Save]** för at
 
 ## [!UICONTROL Exclude] {#exclude-block}
 
+>[!CONTEXTUALHELP]
+>id="platform_segmentation_ao_exclude"
+>title="Exkludera block"
+>abstract="Med blocket Uteslut kan du utesluta angivna målgrupper eller attribut från din komposition."
+
+>[!CONTEXTUALHELP]
+>id="platform_segmentation_ao_exclude_type"
+>title="Uteslut typ"
+>abstract="Du kan antingen exkludera profiler som tillhör en viss målgrupp (Exkludera efter målgrupp) eller exkludera profiler baserat på ett visst attribut (Exkludera efter attribut)."
+
 Blocktypen **[!UICONTROL Exclude]** gör att du kan exkludera en angiven underpublik eller attribut från din nya större publik.
 
 Om du vill lägga till ett **[!UICONTROL Exclude]**-block väljer du ikonen **+** följt av **[!UICONTROL Exclude]**.
@@ -127,6 +147,26 @@ En lista med profilattribut visas. Välj den attributtyp som du vill exkludera, 
 >När du exkluderar efter attribut kan du bara ange **ett**-värde som ska exkluderas. Om du använder någon form av avgränsare, som ett komma eller semikolon, utesluts bara det exakta värdet. Om du till exempel anger värdet som `red, blue` utesluts termen `red, blue` från attributet, men **inte** leder till att varken termen `red` eller `blue` utesluts.
 
 ## [!UICONTROL Enrich] {#enrich-block}
+
+>[!CONTEXTUALHELP]
+>id="platform_segmentation_ao_enrich"
+>title="Förstärk block"
+>abstract="Med Enrich-blocket kan ni berika er målgrupp med ytterligare attribut från Adobe Experience Platform datamängder."
+
+>[!CONTEXTUALHELP]
+>id="platform_segmentation_ao_dataset"
+>title="Datauppsättning för berikning"
+>abstract="Anrikningsdatauppsättningen innehåller de data som du vill associera med kompositionen."
+
+>[!CONTEXTUALHELP]
+>id="platform_segmentation_ao_enrich_criteria"
+>title="Anrikningskriterier"
+>abstract="Anrikningsvillkoren innehåller Source-anslutningsnyckeln och sammanfogningsnyckeln för datauppsättningen Enrichment. Dessa två nycklar matchar källdatauppsättningen och anrikningsdatauppsättningen."
+
+>[!CONTEXTUALHELP]
+>id="platform_segmentation_ao_enrich_attributes"
+>title="Attribut för berikning"
+>abstract="Berikeringsattributen är de attribut som du vill associera med kompositionen."
 
 >[!IMPORTANT]
 >
@@ -206,6 +246,16 @@ Your selected audiences now appear within the right rail when the **[!UICONTROL 
 
 ## [!UICONTROL Rank] {#rank-block}
 
+>[!CONTEXTUALHELP]
+>id="platform_segmentation_ao_ranking"
+>title="Rankningsblock"
+>abstract="Med Rank-blocket kan du rangordna profiler baserat på ett specifikt attribut och inkludera dem i din komposition."
+
+>[!CONTEXTUALHELP]
+>id="platform_segmentation_ao_rank_profilelimit_text"
+>title="Lägg till profilgräns"
+>abstract="Med alternativet Lägg till profilgräns kan du ange ett maximalt antal profiler som ska ingå i rankningsprocessen."
+
 Blocktypen **[!UICONTROL Rank]** gör att du kan rangordna och sortera profiler baserat på ett angivet attribut och inkludera de rankade profilerna i din komposition.
 
 Om du vill lägga till ett **[!UICONTROL Rank]**-block väljer du ikonen **+** följt av **[!UICONTROL Rank]**.
@@ -231,6 +281,21 @@ Dessutom kan du begränsa antalet profiler som returneras genom att aktivera vä
 ![Växeln Lägg till profilgräns är markerad, vilket gör att du kan begränsa antalet returnerade profiler.](../images/ui/audience-composition/add-profile-limit.png)
 
 ## [!UICONTROL Split] {#split-block}
+
+>[!CONTEXTUALHELP]
+>id="platform_segmentation_ao_split"
+>title="Delat block"
+>abstract="Med det delade blocket kan du dela upp kompositionen i flera banor."
+
+>[!CONTEXTUALHELP]
+>id="platform_segmentation_ao_split_type"
+>title="Delad text"
+>abstract="Du kan dela upp kompositionen genom att dela procent eller dela attribut. Procentandel delar slumpmässigt upp profiler i flera banor. Med attributdelning kan du dela profiler baserat på ett angivet attribut."
+
+>[!CONTEXTUALHELP]
+>id="platform_segmentation_ao_split_otherprofiles_text"
+>title="Andra profiler"
+>abstract="Med alternativet Andra profiler kan du skapa ytterligare en sökväg med de återstående profilerna som inte matchar något av de andra sökvägarnas angivna villkor."
 
 Med blocktypen **[!UICONTROL Split]** kan du dela upp din nya målgrupp i olika undermålgrupper. Du kan antingen dela den här målgruppen baserat på procent eller ett attribut. När du delar upp din målgrupp i undermålgrupper är den här delningen **inte** beständig. Detta innebär att profilerna kan finnas i olika undergrupper för varje utvärdering.
 
@@ -274,11 +339,11 @@ Dessutom kan du aktivera växlingsknappen **[!UICONTROL Other profiles]** för a
 
 När du har skapat kompositionen kan du spara och publicera den genom att välja **[!UICONTROL Publish]**.
 
-![Knappen Publish är markerad och visar hur du sparar och publicerar kompositionen.](../images/ui/audience-composition/publish.png)
+![Knappen Publicera är markerad och visar hur du sparar och publicerar kompositionen.](../images/ui/audience-composition/publish.png)
 
 Om det uppstår fel när målgruppen skapas visas ett varningsmeddelande som talar om hur du löser problemet.
 
-![Knappen Publish är markerad och visar hur du sparar och publicerar kompositionen.](../images/ui/audience-composition/audience-alert.png)
+![Knappen Publicera är markerad och visar hur du sparar och publicerar kompositionen.](../images/ui/audience-composition/audience-alert.png)
 
 ## Nästa steg
 
