@@ -5,9 +5,9 @@ user-guide-description: Aktivera kända och okända data för marknadsföringska
 description: I det här dokumentet visas innehållsförteckningen för Adobe Experience Platform-destinationer
 feature: Destinations
 role: Admin,User
-source-git-commit: e2dfa2ee23d854ff3a8ecba4a1cf3e4a1e72f0f7
+source-git-commit: f6fb88cbc89d419e3dbb39c9cc8958f9455b2953
 workflow-type: tm+mt
-source-wordcount: '1269'
+source-wordcount: '1268'
 ht-degree: 1%
 
 ---
@@ -46,8 +46,8 @@ ht-degree: 1%
       * [Aktivera målgrupper för kuraterade destinationer baserat på LiveRamp-identifierare](./ui/activate-curated-destinations.md)
       * [Aktivera potentiella målgrupper till destinationer](./ui/activate-prospect-audiences.md)
       * [Aktivera målgrupper på konton för destinationer](./ui/activate-account-audiences.md)
-      * [Exportera filer on demand till gruppmål med hjälp av användargränssnittet i Experience Platform](./ui/export-file-now.md)
-      * [Exportera datauppsättningar med användargränssnittet i Experience Platform](./ui/export-datasets.md)
+      * [Exportera filer on demand till gruppmål med hjälp av Experience Platform UI](./ui/export-file-now.md)
+      * [Exportera datauppsättningar med hjälp av användargränssnittet i Experience Platform](./ui/export-datasets.md)
       * [(Beta) Använd den senaste kvalificeringstiden för XDM-attributet i det nya betmolnlagringsmålet](./ui/activate-last-qualification-time.md)
       * [Använd beräkningsfält för att exportera arrayer som strängar](/help/destinations/ui/export-arrays-calculated-fields.md)
    * [Visa målinformation](./ui/destination-details-page.md)
@@ -60,28 +60,28 @@ ht-degree: 1%
    * [Prenumerera på aviseringar om destinationer i sitt sammanhang](ui/alerts.md)
 * Målkatalogen {#catalog}
    * [Översikt över målkatalog](./catalog/overview.md)
-   * Adobe mål{#adobe}
-      * [Översikt över destinationer i Adobe](./catalog/adobe/overview.md)
+   * Adobe-mål{#adobe}
+      * [Översikt över Adobe destinationer](./catalog/adobe/overview.md)
       * [Experience Cloud målgrupper](/help/destinations/catalog/adobe/experience-cloud-audiences.md)
-      * [Marketo Engage-anslutning](./catalog/adobe/marketo-engage.md)
+      * [Marketo Engage](./catalog/adobe/marketo-engage.md)
       * [(Beta) Marketo Engage Person Sync-anslutning](./catalog/adobe/marketo-engage-person-sync.md)
       * [Marketo Measure Ultimate-anslutning](./catalog/adobe/marketo-measure-ultimate.md)
-      * [Experience Platform-målgruppsdelning](https://experienceleague.adobe.com/docs/audience-manager/user-guide/implementation-integration-guides/integration-experience-platform/aam-aep-audience-sharing.html)
+      * [Experience Platform målgruppsdelning](https://experienceleague.adobe.com/docs/audience-manager/user-guide/implementation-integration-guides/integration-experience-platform/aam-aep-audience-sharing.html)
       * [Sammansättningsanslutning för federerad publik](https://www.adobe.com/go/destinations-federated-audience-composition)
    * Advertising-mål{#advertising}
       * [(Beta) Acxiom Audience Distribution](./catalog/advertising/acxiom-audience-distribution.md)
       * [Översikt över Advertising destinationer](./catalog/advertising/overview.md)
-      * [Adobe Advertising Cloud](./catalog/advertising/adobe-advertising-cloud-connection.md)
+      * [Adobe Advertising Cloud-anslutning](./catalog/advertising/adobe-advertising-cloud-connection.md)
       * [Adobe Advertising Cloud-tillägg](./catalog/advertising/adobe-advertising-cloud.md)
       * [Amazon Ads-anslutning](./catalog/advertising/amazon-ads.md)
       * [Tillägget Awin Advertiser Conversion Tag](./catalog/advertising/awin-conversiontag.md)
       * [Awin Advertiser Mastertag extension](./catalog/advertising/awin-mastertag.md)
       * [Bing Ads UET-tillägg (Universal Event Tracking)](./catalog/advertising/bing-ads.md)
       * [Förgreningstillägg](./catalog/advertising/branch.md)
-      * [(Beta) Kriterieanslutning](./catalog/advertising/criteo.md)
+      * [Kriterieanslutning](./catalog/advertising/criteo.md)
       * [Demandbase-anslutning](./catalog/advertising/demandbase.md)
       * [DoubleClick Floodlight-tillägg (Beta)](./catalog/advertising/doubleclick-floodlight.md)
-      * [Facebook Pixel-tillägg](./catalog/advertising/facebook-pixel.md)
+      * [Pixeltillägg för Facebook](./catalog/advertising/facebook-pixel.md)
       * [Flashtalk OneTag-tillägg](./catalog/advertising/flashtalking.md)
       * [Google Ads-anslutning](./catalog/advertising/google-ads-destination.md)
       * [Google Ads-tillägg](./catalog/advertising/google-ads-extension.md)
@@ -91,7 +91,7 @@ ht-degree: 1%
       * [(Beta) Google kundmatchning + DV360-anslutning](./catalog/advertising/google-customer-match-dv360.md)
       * [Google Display &amp; Video 360-anslutning](./catalog/advertising/google-dv360.md)
       * [Google Gtag-tillägg](./catalog/advertising/gtag-advertising.md)
-      * [LinkedIn Insight Tag Extension](./catalog/advertising/linkedin.md)
+      * [Tillägget LinkedIn Insight-tagg](./catalog/advertising/linkedin.md)
       * [LiveRamp - Onboarding-anslutning](./catalog/advertising/liveramp-onboarding.md)
       * [LiveRamp - Distribution Connection](./catalog/advertising/liveramp-distribution.md)
       * [Magnite Batch](/help/destinations/catalog/advertising/magnite-batch.md)
@@ -99,12 +99,12 @@ ht-degree: 1%
       * [Microsoft Bing-anslutning](./catalog/advertising/bing.md)
       * [Pinterest Conversion Tracking-tillägg](./catalog/advertising/pinterest-extension.md)
       * [Pinterest Customer List Connection](./catalog/advertising/pinterest.md)
-      * [Uppgradering av pinterest-anslutning](./catalog/advertising/pinterest-upgrade.md)
+      * [Uppgradering av Pinterest-anslutning](./catalog/advertising/pinterest-upgrade.md)
       * [PubMatic Connect-anslutning](./catalog/advertising/pubmatic.md)
       * [Snapchat Ads-anslutning](./catalog/advertising/snap-inc.md)
       * [The Trade Desk connection](./catalog/advertising/tradedesk.md)
       * [CRM-anslutningen för Trade Desk](./catalog/advertising/tradedesk-emails.md)
-      * [Tillägget Twitter Universal Website Tag](./catalog/advertising/twitter-uwt.md)
+      * [Twitter Universal Website Tag-tillägg](./catalog/advertising/twitter-uwt.md)
       * [Yahoo/Verizon DataX-anslutning](./catalog/advertising/datax.md)
    * Analysmål {#analytics}
       * [Översikt över Analytics-mål](./catalog/analytics/overview.md)
@@ -147,7 +147,7 @@ ht-degree: 1%
       * [Zendesk-anslutning](catalog/crm/zendesk.md)
    * Plattformsmål för datahantering {#data-management}
       * [Översikt över mål för datahanteringsplattformen (DMP)](./catalog/data-management/overview.md)
-      * [Audience Manager DIL utökningen](./catalog/data-management/aam-dil-extension.md)
+      * [Audience Manager DIL-tillägg](./catalog/data-management/aam-dil-extension.md)
       * [Zeta Marketing Platform](/help/destinations/catalog/data-management/zeta-marketing-platform.md)
    * Data- och identitetspartner {#data-partner}
       * [Proportionerna för Acxiom undertryckning](./catalog/data-partner/acxiom-prospect-suppression.md)
@@ -167,9 +167,9 @@ ht-degree: 1%
       * [Adobe Campaign Managed Cloud Services](./catalog/email-marketing/adobe-campaign-managed-services.md)
       * [Intressekategorier för e-postmeddelanden](./catalog/email-marketing/mailchimp-interest-categories.md)
       * [Mailchimp-taggar](./catalog/email-marketing/mailchimp-tags.md)
-      * [(API) Oraclena Eloqua-anslutning](./catalog/email-marketing/oracle-eloqua-api.md)
-      * [(Filer) Oraclet Eloqua-anslutning](./catalog/email-marketing/oracle-eloqua.md)
-      * [Oraclena svarssystemanslutning](./catalog/email-marketing/oracle-responsys.md)
+      * [(API) Oracle Eloqua-anslutning](./catalog/email-marketing/oracle-eloqua-api.md)
+      * [(Filer) Oracle Eloqua-anslutning](./catalog/email-marketing/oracle-eloqua.md)
+      * [Oracle Responsys-anslutning](./catalog/email-marketing/oracle-responsys.md)
       * [(API) Salesforce Marketing Cloud-anslutning](./catalog/email-marketing/salesforce-marketing-cloud-exact-target.md)
       * [(Filer) Salesforce Marketing Cloud-anslutning](./catalog/email-marketing/salesforce-marketing-cloud.md)
       * [[!DNL Salesforce Marketing Cloud Account Engagement]](./catalog/email-marketing/salesforce-marketing-cloud-account-engagement.md)
@@ -195,7 +195,7 @@ ht-degree: 1%
       * [Beemray-tillägg](./catalog/personalization/beemray.md)
       * [Anpassad personaliseringsanslutning](./catalog/personalization/custom-personalization.md)
       * [D&amp;B Visitor Intelligence-tillägg](./catalog/personalization/dnb.md)
-      * [Experience Cloud ID-tjänsttillägg](./catalog/personalization/adobe-ecid.md)
+      * [Tjänsttillägg för Experience Cloud ID](./catalog/personalization/adobe-ecid.md)
       * [Gainsight-tillägg](./catalog/personalization/gainsight.md)
       * [KickFire-tillägg](./catalog/personalization/kickfire.md)
       * [Marketo Web Personalization-tillägg](./catalog/personalization/marketo-web-personalization.md)
@@ -203,8 +203,8 @@ ht-degree: 1%
       * [Pega-profilanslutning](./catalog/personalization/pega-profile.md)
    * Sociala mål {#social}
       * [Översikt över sociala mål](./catalog/social/overview.md)
-      * [Facebook](./catalog/social/facebook.md)
-      * [(Företag) LinkedIn Matched Auditions connection](./catalog/social/linkedin-b2b.md)
+      * [Facebook-anslutning](./catalog/social/facebook.md)
+      * [(Företag) LinkedIn Matched Auditions-anslutning](./catalog/social/linkedin-b2b.md)
       * [LinkedIn Matched Auditions connection](./catalog/social/linkedin.md)
       * [TikTok](./catalog/social/tiktok.md)
       * [[!DNL Twitter Custom Audiences]-anslutning](./catalog/social/twitter.md)
@@ -254,9 +254,9 @@ ht-degree: 1%
       * [Regler för hastighetsbegränsning och återförsök för direktuppspelningsmål](./destination-sdk/functionality/rate-limiting-retry-policy.md)
       * [Hantering av målgruppsmetadata](./destination-sdk/functionality/audience-metadata-management.md)
    * Stödlinjer {#guides}
-      * [Använd Destination SDK för att konfigurera ett direktuppspelningsmål](./destination-sdk/guides/configure-destination-instructions.md)
+      * [Använd Destination SDK för att konfigurera ett mål för direktuppspelning](./destination-sdk/guides/configure-destination-instructions.md)
       * [Använd Destination SDK för att konfigurera ett filbaserat mål](./destination-sdk/guides/configure-file-based-destination-instructions.md)
-      * [Skicka för granskning av ett mål som skapats i Destination SDK](./destination-sdk/guides/submit-destination.md)
+      * [Skicka för granskning till ett mål som skapats i Destination SDK](./destination-sdk/guides/submit-destination.md)
       * Konfigurera filbaserade mål {#configure-file-based-destinations}
          * [Konfigurera filformateringsalternativ](/help/destinations/destination-sdk/guides/batch/configure-file-formatting-options.md)
          * [Konfigurera ett Amazon S3-mål med fördefinierade filformateringsalternativ och anpassad filnamnskonfiguration](../destinations/destination-sdk/guides/batch/configure-amazon-s3-destination-with-predefined-file-formatting.md)

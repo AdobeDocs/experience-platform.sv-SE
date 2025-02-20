@@ -3,9 +3,9 @@ keywords: reklamdestinationer;destinationer;plattformsdestinationer
 title: Översikt över Advertising destinationer
 description: Koppla Adobe Experience Platform till en annonsplattform från tredje part (t.ex. DSP, annonsnätverk, SSP) och dela pseudonyma målgrupper med dessa plattformar.
 exl-id: 072743a4-fc62-4a61-92ec-8f9640a47ab2
-source-git-commit: e2dfa2ee23d854ff3a8ecba4a1cf3e4a1e72f0f7
+source-git-commit: f6fb88cbc89d419e3dbb39c9cc8958f9455b2953
 workflow-type: tm+mt
-source-wordcount: '273'
+source-wordcount: '272'
 ht-degree: 0%
 
 ---
@@ -14,7 +14,7 @@ ht-degree: 0%
 
 ## Översikt {#overview}
 
-Koppla Adobe Experience Platform till annonsplattformar som DSP, SSP och nätverk för att dela kända och pseudonyma målgrupper med dessa plattformar.
+Koppla Adobe Experience Platform till reklamplattformar som DSP (Demand-Side Plattforms), SSP (Supply-Side Plattforms) och nätverk för att dela kända och pseudonyma målgrupper med dessa plattformar.
 
 När ni ansluter till en annonsdestination skickas era målgrupper som ID:n till målplattformen, där de mappas till ett ID som är känt av målplattformen.
 
@@ -27,9 +27,9 @@ Mer information om skillnaden mellan anslutningar och tillägg finns i [Anslutni
 ### Anslutningar
 
 * [(Beta) Acxiom Audience Distribution](acxiom-audience-distribution.md)
-* [Adobe Advertising Cloud](adobe-advertising-cloud-connection.md)
+* [Adobe Advertising Cloud-anslutning](adobe-advertising-cloud-connection.md)
 * [Amazon Ads-anslutning](amazon-ads.md)
-* [(Beta) Kriterieanslutning](criteo.md)
+* [Kriterieanslutning](criteo.md)
 * [Google Display &amp; Video 360-anslutning](google-dv360.md)
 * [Google Ads-anslutning](google-ads-destination.md)
 * [Google Ad Manager-anslutning](google-ad-manager.md)
@@ -53,13 +53,13 @@ Mer information om skillnaden mellan anslutningar och tillägg finns i [Anslutni
 * [Bing Ads Universal Event Tracking-tillägg](bing-ads.md)
 * [Förgreningstillägg](branch.md)
 * [Dubbelklicka på FlowLight-tillägg](doubleclick-floodlight.md)
-* [Facebook Pixel-tillägg](facebook-pixel.md)
+* [Pixeltillägg för Facebook](facebook-pixel.md)
 * [Flashtalk OneTag-tillägg](flashtalking.md)
 * [Google Ads-tillägg](google-ads-extension.md)
 * [Google Gtag-tillägg](gtag-advertising.md)
-* [LinkedIn Insight Tag Extension](linkedin.md)
+* [Tillägget LinkedIn Insight-tagg](linkedin.md)
 * [Pinterest Conversion Tracking-tillägg](pinterest-extension.md)
-* [Tillägget Twitter Universal Website Tag](twitter-uwt.md)
+* [Twitter Universal Website Tag-tillägg](twitter-uwt.md)
 
 ## Anslut till ett nytt annonsmål {#connect-destination}
 

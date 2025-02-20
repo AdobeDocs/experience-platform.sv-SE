@@ -3,20 +3,20 @@ keywords: Reklam; villkor.
 title: Kriterieanslutning
 description: Kriteriet ger betrodd och slagkraftig annonsering för att ge alla konsumenter bättre upplevelser över det öppna internet. Med världens största datauppsättning för e-handel och AI av allra högsta klass ser Criteo till att alla kontaktytor under hela kundresan är personaliserade för att nå kunder med rätt annons, vid rätt tidpunkt.
 exl-id: e6f394b2-ab82-47bb-8521-1cf9d01a203b
-source-git-commit: c3ef732ee82f6c0d56e89e421da0efc4fbea2c17
+source-git-commit: e594e473ac78663203c9254623fe8e324985fa39
 workflow-type: tm+mt
-source-wordcount: '1011'
+source-wordcount: '998'
 ht-degree: 1%
 
 ---
 
-# (Beta) Kriterieanslutning
+# Kriterieanslutning
 
 ## Översikt {#overview}
 
 >[!IMPORTANT]
 >
->Målanslutningen och dokumentationssidan skapas och underhålls av Criteo. Detta är för närvarande en betaprodukt och funktionaliteten kan komma att ändras. Om du har frågor eller uppdateringsfrågor kontaktar du Villkor direkt [här](mailto:criteoTechnicalPartnerships@criteo.com).
+>Målanslutningen och dokumentationssidan skapas och underhålls av Criteo. Om du har frågor eller uppdateringsfrågor kontaktar du Villkor direkt [här](mailto:criteoTechnicalPartnerships@criteo.com).
 
 Kriteriet ger betrodd och slagkraftig annonsering för att ge alla konsumenter bättre upplevelser över det öppna internet. Med världens största datauppsättning för e-handel och AI av allra högsta klass ser Criteo till att alla kontaktytor under hela kundresan är personaliserade för att nå kunder med rätt annons, vid rätt tidpunkt.
 
@@ -57,11 +57,11 @@ För att du bättre ska kunna förstå hur du använder målet [!DNL Criteo] fin
 
 ### Användningsfall 1: Hämta trafik
 
-Visa upp er verksamhet med relevanta produkterbjudanden och flexibla kreatörer. Med intelligenta produktrekommendationer kommer era annonser automatiskt att innehålla de produkter som mest troligt kommer att utlösa besök och engagemang. Flexibel målinriktning gör att ni kan bygga målgrupper utifrån Criteos uppsättning av e-handelsdata eller från era egna listor över potentiella kunder och CDP-segment för Adobe.
+Visa upp er verksamhet med relevanta produkterbjudanden och flexibla kreatörer. Med intelligenta produktrekommendationer kommer era annonser automatiskt att innehålla de produkter som mest troligt kommer att utlösa besök och engagemang. Med flexibel målinriktning kan ni bygga målgrupper utifrån Criteos uppsättning av e-handelsdata eller från era egna listor över potentiella kunder och Adobe CDP-segment.
 
 ### Använd fall 2: Öka konverteringen av webbplatser
 
-När besökarna lämnar er webbplats bör du påminna dem om vad de missar med återannonser som ökar konverteringsgraden genom att visa specialerbjudanden och hyperrelevanta erbjudanden, vart de än går. Koppla samman era Adobe CDP-målgrupper för att återengagera befintliga kunder eller inrikta er på konsumenter som liknar era mest lojala kunder.
+När besökarna lämnar er webbplats bör du påminna dem om vad de missar med återannonser som ökar konverteringsgraden genom att visa specialerbjudanden och hyperrelevanta erbjudanden, vart de än går. Koppla samman er Adobe CDP-målgrupp för att återengagera befintliga kunder eller inrikta er på kunder som liknar era mest lojala kunder.
 
 ## Anslut till villkor {#connect}
 
