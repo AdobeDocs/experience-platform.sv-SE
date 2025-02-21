@@ -5,9 +5,9 @@ product: experience platform
 type: Documentation
 description: Läs om prestanda och systemstyrd säkerhet för profildata och segmentering för att säkerställa en optimal användning av Real-Time CDP-funktionalitet.
 exl-id: 33ff0db2-6a75-4097-a9c6-c8b7a9d8b78c
-source-git-commit: 1150b7726a7cabe6df6bbc7a850fb4d48afa208e
+source-git-commit: 5d972b6b4f59ca58ff3c4b76383db9ee7667dba3
 workflow-type: tm+mt
-source-wordcount: '2509'
+source-wordcount: '2521'
 ht-degree: 1%
 
 ---
@@ -118,7 +118,7 @@ De skyddsutkast som beskrivs i detta avsnitt avser antalet och typen av målgrup
 
 | Guardrail | Gräns | Begränsa typ | Beskrivning |
 | --------- | ----- | ---------- | ----------- |
-| Målgrupper per sandlåda | 4000 | Prestandaskydd | Du kan ha upp till 4 000 **aktiva** målgrupper per sandlåda. Du kan ha fler än 4000 sandlådor per organisation, förutsatt att det finns färre än 4000 målgrupper i varje **enskild** sandlåda. Detta inkluderar grupper, strömning och gränspubliken. Försök att skapa fler målgrupper kan påverka systemets prestanda. Läs mer om att [skapa målgrupper](/help/segmentation/ui/segment-builder.md) med segmentbyggaren. |
+| Målgrupper per sandlåda | 4000 | Prestandaskydd | Du kan ha upp till 4 000 **aktiva** målgrupper per sandlåda. Du kan ha fler än 4 000 målgrupper per organisation, förutsatt att det finns färre än 4 000 målgrupper i varje **enskild** sandlåda. Detta inkluderar grupper, strömning och gränspubliken. Försök att skapa fler målgrupper kan påverka systemets prestanda. Läs mer om att [skapa målgrupper](/help/segmentation/ui/segment-builder.md) med segmentbyggaren. |
 | Edge målgrupper per sandlåda | 150 | Prestandaskydd | Du kan ha upp till 150 **aktiva**-målgrupper per sandlåda. Du kan ha fler än 150 målgrupper per organisation, förutsatt att det finns färre än 150 målgrupper i varje **enskild** sandlåda. Om du försöker skapa fler målgrupper kan det påverka systemets prestanda. Läs mer om [målgrupper](/help/segmentation/methods/edge-segmentation.md). |
 | Edge genomströmning i alla sandlådor | 1 500 RPS | Prestandaskydd | Edge segmentering stöder ett toppvärde på 1 500 inkommande händelser per sekund i Adobe Experience Platform Edge Network. Edge-segmentering kan ta upp till 350 millisekunder att bearbeta en inkommande händelse när den kommer in i Adobe Experience Platform Edge Network. Läs mer om [målgrupper](/help/segmentation/methods/edge-segmentation.md). |
 | Direktuppspelande målgrupper per sandlåda | 500 | Prestandaskydd | Du kan ha upp till 500 **aktiva** direktuppspelade målgrupper per sandlåda. Du kan ha fler än 500 direktuppspelade målgrupper per organisation, förutsatt att det finns färre än 500 direktuppspelade målgrupper i varje **enskild** sandlåda. Detta inkluderar både strömnings- och edge-målgrupper. Försök att skapa fler direktuppspelade målgrupper kan påverka systemets prestanda. Läs mer om [direktuppspelade målgrupper](/help/segmentation/methods/streaming-segmentation.md). |
@@ -162,7 +162,7 @@ Tidsoberoende attribut, som också kallas postdata, modelleras med [!DNL XDM Ind
 
 Profildatalagret som bevarar profildata är inte ett relationslager, men profilen tillåter integrering med små dimensionsenheter för att skapa målgrupper på ett förenklat och intuitivt sätt. Integrationen kallas [segmentering för flera enheter](../segmentation/tutorials/multi-entity-segmentation.md).
 
-Din organisation kan också definiera XDM-klasser för att beskriva andra saker än enskilda, t.ex. butiker, produkter eller egenskaper. Dessa icke-[!DNL XDM Individual Profile]-scheman kallas för dimensionsenheter (kallas även för sökentiteter) och innehåller inga tidsseriedata. Scheman som representerar dimensionsenheter är länkade till profilentiteter med hjälp av [schemarelationer](../xdm/tutorials/relationship-ui.md).
+Din organisation kan också definiera XDM-klasser för att beskriva andra saker än enskilda, t.ex. butiker, produkter eller egenskaper. Dessa scheman, som är modellerade med hjälp av andra XDM-klasser än den enskilda XDM-profilklassen, kallas&quot;dimensionsenheter&quot; (kallas även&quot;uppslagsenheter&quot;) och innehåller inte tidsseriedata. Scheman som representerar dimensionsenheter är länkade till profilentiteter med hjälp av [schemarelationer](../xdm/tutorials/relationship-ui.md).
 
 Dimension-entiteter tillhandahåller sökdata som underlättar och förenklar definitioner av flerenhetssegment och måste vara tillräckligt små för att segmenteringsmotorn ska kunna läsa in hela datauppsättningen i minnet för optimal bearbetning (snabbpunktssökning).
 

@@ -3,9 +3,9 @@ solution: Experience Platform
 title: Look-Alike Audiences
 description: Lär dig målinrikta nya värdefulla målgrupper i Adobe Experience Platform med lookalike-målgrupper.
 exl-id: c43dac6c-18a0-482f-803e-b75e1b211e98
-source-git-commit: acc0c1b3f088e412c68557a4a7310889f2ad65a7
+source-git-commit: f981b26a468a1d5ab9931a9cce59b176cd0fd9b3
 workflow-type: tm+mt
-source-wordcount: '2154'
+source-wordcount: '2157'
 ht-degree: 0%
 
 ---
@@ -118,6 +118,7 @@ I avsnittet för lookalike-målgrupper visas en lista med alla lookalike-målgru
 >id="platform_audiences_lookAlike_influentialFactors"
 >title="Influensafaktorer"
 >abstract="Inflytelserika faktorer är attribut, händelser och målgruppsmedlemskap som är viktiga när det gäller att förklara en profils likhet med medlemmarna i den grundläggande målgruppen. Dataanvändningsetiketter och dataprofiler kan användas för att utesluta vissa data från att betraktas som inflytelserika faktorer i lookalike-modeller."
+>additional-url="https://experienceleague.adobe.com/docs/experience-platform/segmentation/types/lookalike-audiences.html#exclude" text="Uteslut data"
 
 I avsnittet Inflytelserika faktorer visas de 100 viktigaste faktorerna som påverkar den look-alike-modellen för den valda baspubliken. Dessa inflytelserika faktorer är profilattribut, upplevelsehändelser och målgruppsmedlemskap som är de viktigaste när det gäller att förklara likheter hos den grundläggande målgruppen. Genom att förstå de viktigaste inflytelserika faktorerna kan ni personalisera ert marknadsföringsinnehåll bättre för den här målgruppen och alla lookalike-målgrupper ni skapar utifrån den. Observera att inte alla inflytelserika faktorer som påverkar lookalike-modellen visas.
 

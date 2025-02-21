@@ -3,9 +3,9 @@ solution: Experience Platform
 title: Översikt över segmenteringstjänsten
 description: Läs om Adobe Experience Platform segmenteringstjänst och vilken roll den spelar i plattformens ekosystem.
 exl-id: 2c18a806-88ed-4659-bdfd-2377f5a09a1a
-source-git-commit: acc0c1b3f088e412c68557a4a7310889f2ad65a7
+source-git-commit: f981b26a468a1d5ab9931a9cce59b176cd0fd9b3
 workflow-type: tm+mt
-source-wordcount: '1665'
+source-wordcount: '1678'
 ht-degree: 1%
 
 ---
@@ -67,6 +67,7 @@ Förutom målgruppskompositioner och segmentdefinitioner kan du använda Adobe F
 >id="platform_segments_evaluation_streaming"
 >title="Utvärdering av strömning"
 >abstract="Direktuppspelningssegmentering är en kontinuerlig process för datamarkering som uppdaterar era målgrupper som svar på användaraktivitet."
+>additional-url="https://experienceleague.adobe.com/docs/experience-platform/segmentation/methods/streaming-segmentation.html" text="Utvärdera händelser i nära realtid med strömmande segmentering"
 
 Plattformen har för närvarande stöd för tre metoder för att utvärdera målgrupper: direktuppspelningssegmentering, gruppsegmentering och kantsegmentering.
 
@@ -93,6 +94,7 @@ Batchmålgrupper utvärderas automatiskt var 24:e timme. Om du vill utvärdera e
 >id="platform_segments_evaluation_edge"
 >title="Edge-utvärdering"
 >abstract="Edge segmentering är möjligheten att omedelbart utvärdera segment i Platform i Edge Network, vilket möjliggör användning av samma sida och nästa sida."
+>additional-url="https://experienceleague.adobe.com/docs/experience-platform/segmentation/methods/edge-segmentation.html" text="Edge segmenteringsguide"
 
 Edge segmentering är möjligheten att omedelbart utvärdera segment i plattformen [på Edge Network](../landing/edge-and-hub-comparison.md), vilket möjliggör användning av samma sida och nästa sida.
 
