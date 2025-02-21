@@ -1,10 +1,10 @@
 ---
 title: Versionsinformation om Adobe Experience Platform – februari 2025
 description: Versionsinformationen för Adobe Experience Platform från februari 2025.
-source-git-commit: 03c0b782d0763a1638afeab34d61f89db8075d5b
+source-git-commit: b29c63942b00fdf597ebfd3ab105519a6b05a476
 workflow-type: tm+mt
-source-wordcount: '1436'
-ht-degree: 21%
+source-wordcount: '1375'
+ht-degree: 22%
 
 ---
 
@@ -38,13 +38,14 @@ AI-assistenten i Adobe Experience Platform är en konversationsupplevelse som du
 
 | Funktion | Beskrivning |
 | --- | --- |
-| Allmän tillgång till operativa insikter | Driftsinsikter i AI Assistant finns nu i GA. Användningsinsikter avser svar på AI Assistant genererar om dina metadataobjekt (attribut, målgrupper, dataflöden, datauppsättningar, mål, resor, scheman och källor), inklusive antal, sökningar och linjepåverkan. Användningsinsikter tittar inte på några data i sandlådan. Mer information finns i [gränssnittsguiden för AI-assistenten](../../ai-assistant/ui-guide.md). |
 | Stöd för automatisk ifyllnad av frågor | När du skickar in en fråga till AI Assistant kan du nu välja från en lista med rekommenderade frågor som finns i AI Assistant. Använd den här funktionen för att ytterligare snabba upp arbetsflödena med AI Assistant. Mer information finns i guiden om [att använda automatisk komplettering av frågor med AI Assistant](../../ai-assistant/ui-guide.md#use-question-autocomplete). |
 | Stöd för datauppsättningssynlighet | Nu kan du använda AI Assistant för att besvara frågor om specifika datamängdsmått, som lagringsstorlekar och radantal. Frågor som rör datasynkronisering stöder kvalificerare som du kan använda för att filtrera dina frågor under en viss tidsperiod. Mer information finns i [AI Assistant-frågeguiden](../../ai-assistant/questions.md). |
 
 {style="table-layout:auto"}
 
 Mer information finns i [AI Assistant-översikten](../../ai-assistant/home.md).
+
+<!-- | General availability of operational insights | Operational insights in AI Assistant are now in GA. Operational insights refer to answers AI Assistant generates about your metadata objects (attributes, audiences, dataflows, datasets, destinations, journeys, schemas, and sources), including counts, lookups, and lineage impact. Operational insights does not look at any data within the sandbox. For more information, read the [AI Assistant UI guide](../../ai-assistant/ui-guide.md). | -->
 
 ## Katalogtjänst {#catalog-service}
 
