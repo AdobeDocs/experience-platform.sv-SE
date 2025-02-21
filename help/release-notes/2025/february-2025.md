@@ -1,10 +1,10 @@
 ---
 title: Versionsinformation om Adobe Experience Platform – februari 2025
 description: Versionsinformationen för Adobe Experience Platform från februari 2025.
-source-git-commit: b29c63942b00fdf597ebfd3ab105519a6b05a476
+source-git-commit: 8786ac8ab42d2b9e0c43000bbc6604462ea06f64
 workflow-type: tm+mt
-source-wordcount: '1375'
-ht-degree: 22%
+source-wordcount: '1474'
+ht-degree: 21%
 
 ---
 
@@ -73,7 +73,7 @@ Använd dataförberedelse för att mappa, omvandla och validera data till och fr
 
 Mer information finns i [översikten över dataförberedelser](../../data-prep/home.md).
 
-## Mål {#destinations}
+## Destinationer (uppdaterad 20 februari) {#destinations}
 
 [!DNL Destinations] är förbyggda integrationer med målplattformar som möjliggör sömlös aktivering av data från Adobe Experience Platform. Du kan använda mål för att aktivera dina kända och okända data för marknadsföringskampanjer över flera kanaler, e-postkampanjer, riktad reklam och många andra användningsområden.
 
@@ -96,6 +96,7 @@ Mer information finns i [översikten över dataförberedelser](../../data-prep/h
 | Använd åtkomstetiketter för att hantera användaråtkomst till måldataflöden | Som en del av funktionen [[!UICONTROL attribute-based access control]](/help/access-control/abac/overview.md) i Real-Time CDP kan du nu använda åtkomstetiketter i [måldataflöden](/help/dataflows/ui/monitor-destinations.md). På så sätt kan du se till att bara en delmängd av användarna i organisationen får tillgång till specifika måldataflöden. <br> **Viktigt**: När du söker efter måldataflöden med sökrutan högst upp i Experience Platform användargränssnitt, kan resultatet innehålla måldataflöden som dina användaretiketter begränsar dig från att se. Detta beteende kommer att korrigeras i en framtida uppdatering. |
 | [Målgruppsrapportering](/help/dataflows/ui/monitor-destinations.md#audience-level-dataflow-runs-for-streaming-destinations) för [Marketo Engage-anslutningen](/help/destinations/catalog/adobe/marketo-engage.md) | Du kan nu [visa information](/help/dataflows/ui/monitor-destinations.md#audience-level-dataflow-runs-for-streaming-destinations) om aktiverade, exkluderade eller misslyckade identiteter som har delats upp på en målgruppsnivå för varje målgrupp som ingår i dataflödena för det här målet. |
 | Externa målgrupper har stöd för [TikTok](/help/destinations/catalog/social/tiktok.md)- och [Snap Inc](/help/destinations/catalog/advertising/snap-inc.md)-anslutningar | Du kan aktivera externa målgrupper för dessa mål från [anpassade överföringar](../../segmentation/ui/audience-portal.md#import-audience) och [Federated Audience Composition](https://experienceleague.adobe.com/en/docs/federated-audience-composition/using/start/audiences). |
+| Exportera arrayer, kartor och objekt till molnlagringsmål | Genom att använda den nya växlingsknappen **[!UICONTROL Export arrays, maps, objects]** när du ansluter till ett molnlagringsmål kan du exportera komplexa objekt till utvalda mål. [Läs mer](/help/destinations/ui/export-arrays-calculated-fields.md) om funktionaliteten. |
 
 {style="table-layout:auto"}
 
@@ -103,6 +104,10 @@ Mer information finns i [översikten över dataförberedelser](../../data-prep/h
 
 - Ett problem i Destination SDK testverktyg har åtgärdats. Vissa kunder eller partners stötte på problem med [exempelprofilgenereringsverktyget](/help/destinations/destination-sdk/testing-api/streaming-destinations/sample-profile-generation-api.md) på grund av ett format som inte stöds när det schema som används för att generera profiler innehöll datatyper med en `No format`-väljare.
 - Ett problem har korrigerats när `targetConnection`-specifikationen för destinationer uppdaterades med API:t för Flow Service. I vissa fall fungerar PATCH-åtgärden på ungefär samma sätt som en POST-åtgärd, vilket gör att befintliga dataflöden skadas. Problemet är nu åtgärdat och alla kunder kan använda API:t för Flow Service för att uppdatera sin `targetConnection`-specifikation. [Läs mer](/help/destinations/api/edit-destination.md#patch-target-connection).
+- När du exporterar profiler till filbaserade mål säkerställer borttagning av dubbletter att endast en profil exporteras när flera profiler delar samma nyckel för borttagning av dubbletter och samma referenstidstämpel. Den här versionen innehåller en uppdatering av processen för borttagning av dubbletter, vilket säkerställer att efterföljande körningar med samma koordinater alltid ger samma resultat, vilket förbättrar konsekvensen. [Läs mer](/help/destinations/ui/activate-batch-profile-destinations.md#deduplication-same-timestamp).
+
+Mer information finns i [översikten över destinationer](../../destinations/home.md).
+
 
 ## Källor {#sources}
 
