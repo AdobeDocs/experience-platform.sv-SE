@@ -1,14 +1,14 @@
 ---
 title: Söka efter kantprofilattribut i realtid
-description: Lär dig hur du söker efter kantprofilattribut i realtid med hjälp av det anpassade Personalization-målet och Edge Network API:t
+description: Lär dig hur du söker efter kantprofilattribut i realtid med det anpassade Personalization-målet och Edge Network API
 type: Tutorial
-source-git-commit: 6414168c1deb047af30d8636ef8d61316f56aecf
+exl-id: e185d741-af30-4706-bc8f-d880204d9ec7
+source-git-commit: 276fd7c532843c9589e1d51b0bc7a76cb5c3eb9f
 workflow-type: tm+mt
 source-wordcount: '1832'
 ht-degree: 0%
 
 ---
-
 
 # Söka efter profilattribut i kanten i realtid
 
@@ -30,13 +30,13 @@ När du konfigurerar det användningsfall som beskrivs på den här sidan använ
 * [Datastreams](../../datastreams/overview.md): En datastream tar emot inkommande händelsedata från Web SDK och svarar med edge-profildata.
 * [Sammanslagningsprinciper](../../segmentation/ui/segment-builder.md#merge-policies): Du skapar en [!UICONTROL Active-On-Edge] sammanfogningsprincip för att se till att kantprofilerna använder rätt profildata.
 * [Anpassad Personalization-anslutning](../catalog/personalization/custom-personalization.md): Du konfigurerar en ny anpassad personaliseringsanslutning som skickar profilattributen till Edge Network.
-* [Edge Network-API](../../server-api/overview.md): Du använder Edge Network-API:t [interaktiv datainsamling](../../server-api/interactive-data-collection.md) för att snabbt hämta profilattribut från kantprofilerna.
+* [Edge Network API](../../server-api/overview.md): Du använder Edge Network API-funktionen [interaktiv datainsamling](../../server-api/interactive-data-collection.md) för att snabbt hämta profilattribut från kantprofilerna.
 
 ## Prestandaskydd {#guardrails}
 
-Användningsexempel för Edge-profilsökning beror på de specifika säkerhetsbeskrivningar som beskrivs i tabellen nedan. Mer information om Edge Network API-skyddsutkast finns på [dokumentationssidan](https://developer.adobe.com/data-collection-apis/docs/getting-started/guardrails/).
+Användningsexempel för Edge-profilsökning beror på de specifika säkerhetsbeskrivningar som beskrivs i tabellen nedan. Mer information om Edge Network API-skyddsutkast finns i [dokumentationssidan](https://developer.adobe.com/data-collection-apis/docs/getting-started/guardrails/).
 
-| Tjänsten Edge Network | Edge Segmentering | Begäranden per sekund |
+| Edge Network Service | Edge Segmentering | Begäranden per sekund |
 |---------|----------|---------|
 | [Anpassat anpassningsmål](../catalog/personalization/custom-personalization.md) via [Edge Network API](https://developer.adobe.com/data-collection-apis/docs/api/) | Ja | 1500 |
 | [Anpassat anpassningsmål](../catalog/personalization/custom-personalization.md) via [Edge Network API](https://developer.adobe.com/data-collection-apis/docs/api/) | Nej | 1500 |
@@ -61,7 +61,7 @@ Följ stegen i dokumentationen för [datastream-konfigurationen](../../datastrea
 
 Om du vill söka efter profilattribut i kanten måste målgrupperna konfigureras för kantutvärdering.
 
-Kontrollera att [Active-on-Edge Merge Policy](../../segmentation/ui/segment-builder.md#merge-policies) har angetts som standard för de målgrupper som du tänker aktivera. Sammanslagningsprincipen [!DNL Active-On-Edge] säkerställer att målgrupperna hela tiden utvärderas [ vid sidan om ](../../segmentation/ui/edge-segmentation.md) och är tillgängliga för personalisering i realtid.
+Kontrollera att [Active-on-Edge Merge Policy](../../segmentation/ui/segment-builder.md#merge-policies) har angetts som standard för de målgrupper som du tänker aktivera. Sammanslagningsprincipen [!DNL Active-On-Edge] säkerställer att målgrupperna hela tiden utvärderas [ vid sidan om ](../../segmentation/methods/edge-segmentation.md) och är tillgängliga för personalisering i realtid.
 
 Följ instruktionerna på [skapa en sammanfogningsprincip](../../profile/merge-policies/ui-guide.md#create-a-merge-policy) och se till att aktivera alternativet **[!UICONTROL Active-On-Edge Merge Policy]**.
 
@@ -71,7 +71,7 @@ Följ instruktionerna på [skapa en sammanfogningsprincip](../../profile/merge-p
 
 ## Steg 3: Skicka profilattributsdata till Edge Network{#configure-custom-personalization-connection}
 
-För att kunna slå upp kantprofiler, inklusive attribut och data om målgruppsmedlemskap, i realtid måste data göras tillgängliga på Edge Network. Därför måste du skapa en anslutning till ett **[!UICONTROL Custom Personalization With Attributes]**-mål och aktivera målgrupperna, inklusive de attribut som du vill söka efter kantprofilerna.
+För att kunna slå upp edge-profiler, inklusive attribut och data om målgruppsmedlemskap i realtid, måste data göras tillgängliga på Edge Network. Därför måste du skapa en anslutning till ett **[!UICONTROL Custom Personalization With Attributes]**-mål och aktivera målgrupperna, inklusive de attribut som du vill söka efter kantprofilerna.
 
 +++ Konfigurera en anpassad Personalization med attributanslutning
 
@@ -95,7 +95,7 @@ När du har skapat en **[!UICONTROL Custom Personalization With Attributes]**-an
 
 1. Gå till **[!UICONTROL Connections > Destinations]** och välj fliken **[!UICONTROL Catalog]**.
 
-   ![Fliken Målkatalog markerad i användargränssnittet för Experience Platform.](../assets/ui/activate-edge-personalization-destinations/catalog-tab.png)
+   ![Fliken Målkatalog markerad i Experience Platform-gränssnittet.](../assets/ui/activate-edge-personalization-destinations/catalog-tab.png)
 
 1. Hitta målkortet **[!UICONTROL Custom Personalization With Attributes]** och välj sedan **[!UICONTROL Activate audiences]**, så som visas i bilden nedan.
 
@@ -109,7 +109,7 @@ När du har skapat en **[!UICONTROL Custom Personalization With Attributes]**-an
 
    Du kan välja mellan flera typer av målgrupper, beroende på deras ursprung:
 
-   * **[!UICONTROL Segmentation Service]**: Publiker som genererats i Experience Platform av segmenteringstjänsten. Mer information finns i [segmenteringsdokumentationen](../../segmentation/ui/overview.md).
+   * **[!UICONTROL Segmentation Service]**: Publiker som genererats inom Experience Platform av segmenteringstjänsten. Mer information finns i [segmenteringsdokumentationen](../../segmentation/ui/overview.md).
    * **[!UICONTROL Custom upload]**: Publiker som genererats utanför Experience Platform och överförts till Platform som CSV-filer. Mer information om externa målgrupper finns i dokumentationen om att [importera en målgrupp](../../segmentation/ui/overview.md#import-audience).
    * Andra typer av målgrupper som kommer från andra Adobe-lösningar, till exempel [!DNL Audience Manager].
 
@@ -160,13 +160,13 @@ Om du är nöjd med ditt val och inga principöverträdelser har identifierats, 
 
 ## Steg 4: Slå upp profilattributen på kanten {#configure-edge-profile-lookup}
 
-Nu bör du ha [konfigurerat din datastream](#create-datastream), [skapat en ny anpassad Personalization med attributmålanslutning](#configure-destination) och du har använt den här anslutningen för att [skicka profilattributen](#activate-audiences) som du kan söka efter i Edge Network.
+Nu bör du ha [konfigurerat din datastream](#create-datastream), [skapat en ny anpassad Personalization med attributmålanslutning](#configure-destination) och du har använt den här anslutningen för att [skicka profilattributen](#activate-audiences) som du kommer att kunna söka efter i Edge Network.
 
 Nästa steg är att konfigurera din personaliseringslösning för att hämta profilattribut från edge-profilerna.
 
 >[!IMPORTANT]
 >
->Profilattribut kan innehålla känsliga data. För att skydda dessa data måste du hämta profilattributen via [Edge Network API](../../server-api/overview.md). Du måste dessutom hämta profilattributen via Edge Network API:t [för interaktiv datainsamling ](../../server-api/interactive-data-collection.md) för att API-anropen ska kunna autentiseras.
+>Profilattribut kan innehålla känsliga data. För att skydda dessa data måste du hämta profilattributen via [Edge Network API](../../server-api/overview.md). Du måste dessutom hämta profilattributen via Edge Network API [interaktiv datainsamlingsslutpunkt](../../server-api/interactive-data-collection.md) för att API-anropen ska kunna autentiseras.
 ><br>Om du inte uppfyller kraven ovan kommer personaliseringen endast att baseras på målgruppsmedlemskap och profilattributen kommer inte att vara tillgängliga för dig.
 
 Datastream som du konfigurerade i [steg 1](#create-datastream) är nu klar att acceptera inkommande händelsedata och svara med edge-profilinformation.
@@ -282,7 +282,7 @@ Objektet `handle` innehåller den information som beskrivs i tabellen nedan.
 | `attributes` | Den här arrayen innehåller kantprofilattributen för de målgrupper som du aktiverade i [steg 3](#configure-custom-personalization-connection). |
 | `segments` | Den här arrayen innehåller de målgrupper som du har aktiverat i [steg 3](#configure-custom-personalization-connection). |
 | `type` | `handle` objekt grupperas efter typ. Vid användning av sökningar efter kantprofil är typen för `handle`-objektet alltid `activation:pull`. |
-| `eventIndex` | Edge Network får händelser från klienten i form av arrayer. Ordningen på händelserna i arrayen bevaras under bearbetningen och återspeglas av detta index. Händelseindexeringen börjar med `0`. |
+| `eventIndex` | Edge Network får evenemang från klienten i form av matriser. Ordningen på händelserna i arrayen bevaras under bearbetningen och återspeglas av detta index. Händelseindexeringen börjar med `0`. |
 
 >[!TAB Profilen finns inte på kanten]
 
@@ -307,7 +307,7 @@ Objektet `handle` innehåller den information som beskrivs i tabellen nedan.
 |---------|----------|
 | `payload` | När profilen inte finns på kanten är objektet `payload` tomt. |
 | `type` | `payload` objekt grupperas efter typ. Vid användning av sökningar efter kantprofil är typen för `payload`-objektet alltid `activation:pull`. |
-| `eventIndex` | Edge Network får händelser från klienten i form av arrayer. Ordningen på händelserna i arrayen bevaras under bearbetningen och återspeglas av detta index. Händelseindexeringen börjar med `0`. |
+| `eventIndex` | Edge Network tar emot händelser från klienten i form av arrayer. Ordningen på händelserna i arrayen bevaras under bearbetningen och återspeglas av detta index. Händelseindexeringen börjar med `0`. |
 
 >[!ENDTABS]
 

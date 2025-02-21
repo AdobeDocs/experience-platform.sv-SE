@@ -3,7 +3,7 @@ title: Prospekt
 description: Lär dig hur du skapar och använder profiler för potentiella kunder för att samla in information om okända kunder med hjälp av tredjepartsinformation.
 type: Documentation
 exl-id: 194d25d6-88ae-4a7a-9b79-39120bced5c7
-source-git-commit: b4334b4f73428f94f5a7e5088f98e2459afcaf3c
+source-git-commit: e7c0551276d31d6809ace096c00e0dc2665090e6
 workflow-type: tm+mt
 source-wordcount: '388'
 ht-degree: 0%
@@ -56,10 +56,10 @@ Dialogrutan [!UICONTROL View JSON] visas. Attributen för den potentiella kunden
 
 ## Föreslagna användningsfall {#use-cases}
 
-Om du vill veta hur du kan använda profilfunktionerna i Experience Platform i kombination med andra plattformsfunktioner läser du följande dokumentation om användningsfall:
+Läs följande falldokumentation om du vill veta hur du kan använda profilfunktionerna i Experience Platform tillsammans med andra plattformsfunktioner:
 
 - [Engagera och värva nya kunder med prospekteringsfunktionen](../../rtcdp/partner-data/prospecting.md)
 
 ## Nästa steg
 
-När du har läst den här guiden får du nu veta hur profiler för potentiella kunder kan användas i Adobe Experience Platform. Om du vill veta hur dessa profiler för potentiella kunder kan användas i målgrupper kan du läsa [guiden för potentiella målgrupper](../../segmentation/ui/prospect-audience.md).
+När du har läst den här guiden får du nu veta hur profiler för potentiella kunder kan användas i Adobe Experience Platform. Om du vill veta hur dessa profiler för potentiella kunder kan användas i målgrupper kan du läsa [guiden för potentiella målgrupper](../../segmentation/types/prospect-audiences.md).

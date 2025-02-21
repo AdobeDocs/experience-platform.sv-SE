@@ -5,7 +5,7 @@ product: experience platform
 type: Documentation
 description: Läs om prestanda och systemstyrd säkerhet för profildata och segmentering för att säkerställa en optimal användning av Real-Time CDP-funktionalitet.
 exl-id: 33ff0db2-6a75-4097-a9c6-c8b7a9d8b78c
-source-git-commit: 1f682fc5c109f3dc8a7ed8513260a1a3c3108bbb
+source-git-commit: 1150b7726a7cabe6df6bbc7a850fb4d48afa208e
 workflow-type: tm+mt
 source-wordcount: '2509'
 ht-degree: 1%
@@ -71,7 +71,7 @@ Följande skyddsprofiler ger rekommenderade gränser vid modellering av kundprof
 
 {style="table-layout:auto"}
 
-### Skyddsutkast för Dimension
+### Dimension skyddsräcken
 
 | Guardrail | Gräns | Begränsa typ | Beskrivning |
 | --------- | ----- | ---------- | ----------- |
@@ -102,13 +102,13 @@ Följande skyddsutkast hänvisar till datastorlek och innehåller rekommenderade
 
 {style="table-layout:auto"}
 
-### Skyddsutkast för Dimension
+### Dimension skyddsräcken
 
 | Guardrail | Gräns | Begränsa typ | Beskrivning |
 | --------- | ----- | ---------- | ----------- |
 | Total storlek för alla dimensionella enheter | 5 GB | Prestandaskydd | Den rekommenderade totala storleken för alla dimensionella enheter är 5 GB. Inmatning av enheter med stora dimensioner kan påverka systemets prestanda. Vi rekommenderar till exempel inte att du försöker läsa in en produktkatalog på 10 GB som en dimensionsenhet. |
 | Datamängder per dimensionellt entitetsschema | 5 | Prestandaskydd | Högst 5 datauppsättningar som är associerade med varje dimensionellt enhetsschema rekommenderas. Om du till exempel skapar ett schema för&quot;produkter&quot; och lägger till fem bidragande datauppsättningar, bör du inte skapa en sjätte datauppsättning som är kopplad till produktschemat. |
-| Inkapslade batchar för Dimension per dag | 4 per enhet | Prestandaskydd | Rekommenderat maximalt antal inkapslade dimensionsentitetsbatchar per dag är 4 per entitet. Du kan till exempel importera uppdateringar till en produktkatalog upp till 4 gånger per dag. Om ytterligare dimensionsenhetsbatchar för samma enhet anges kan det påverka systemets prestanda. |
+| Insticksbatchar i Dimension per dag | 4 per enhet | Prestandaskydd | Rekommenderat maximalt antal inkapslade dimensionsentitetsbatchar per dag är 4 per entitet. Du kan till exempel importera uppdateringar till en produktkatalog upp till 4 gånger per dag. Om ytterligare dimensionsenhetsbatchar för samma enhet anges kan det påverka systemets prestanda. |
 
 {style="table-layout:auto"}
 
@@ -119,12 +119,12 @@ De skyddsutkast som beskrivs i detta avsnitt avser antalet och typen av målgrup
 | Guardrail | Gräns | Begränsa typ | Beskrivning |
 | --------- | ----- | ---------- | ----------- |
 | Målgrupper per sandlåda | 4000 | Prestandaskydd | Du kan ha upp till 4 000 **aktiva** målgrupper per sandlåda. Du kan ha fler än 4000 sandlådor per organisation, förutsatt att det finns färre än 4000 målgrupper i varje **enskild** sandlåda. Detta inkluderar grupper, strömning och gränspubliken. Försök att skapa fler målgrupper kan påverka systemets prestanda. Läs mer om att [skapa målgrupper](/help/segmentation/ui/segment-builder.md) med segmentbyggaren. |
-| Edge målgrupper per sandlåda | 150 | Prestandaskydd | Du kan ha upp till 150 **aktiva**-målgrupper per sandlåda. Du kan ha fler än 150 målgrupper per organisation, förutsatt att det finns färre än 150 målgrupper i varje **enskild** sandlåda. Om du försöker skapa fler målgrupper kan det påverka systemets prestanda. Läs mer om [målgrupper](/help/segmentation/ui/edge-segmentation.md). |
-| Edge genomströmning i alla sandlådor | 1 500 RPS | Prestandaskydd | Edge segmentering stöder ett toppvärde på 1 500 inkommande händelser per sekund som kommer in i Adobe Experience Platform Edge Network. Edge-segmentering kan ta upp till 350 millisekunder att bearbeta en inkommande händelse när den kommer in i Adobe Experience Platform Edge Network. Läs mer om [målgrupper](/help/segmentation/ui/edge-segmentation.md). |
-| Direktuppspelande målgrupper per sandlåda | 500 | Prestandaskydd | Du kan ha upp till 500 **aktiva** direktuppspelade målgrupper per sandlåda. Du kan ha fler än 500 direktuppspelade målgrupper per organisation, förutsatt att det finns färre än 500 direktuppspelade målgrupper i varje **enskild** sandlåda. Detta inkluderar både strömnings- och edge-målgrupper. Försök att skapa fler direktuppspelade målgrupper kan påverka systemets prestanda. Läs mer om [direktuppspelade målgrupper](/help/segmentation/ui/streaming-segmentation.md). |
-| Direktuppspelningsgenomströmning över alla sandlådor | 1 500 RPS | Prestandaskydd | Direktuppspelningssegmentering stöder ett toppvärde på 1 500 inkommande händelser per sekund. Det kan ta upp till 5 minuter att kvalificera en profil för segmentmedlemskap. Läs mer om [direktuppspelade målgrupper](/help/segmentation/ui/streaming-segmentation.md). |
+| Edge målgrupper per sandlåda | 150 | Prestandaskydd | Du kan ha upp till 150 **aktiva**-målgrupper per sandlåda. Du kan ha fler än 150 målgrupper per organisation, förutsatt att det finns färre än 150 målgrupper i varje **enskild** sandlåda. Om du försöker skapa fler målgrupper kan det påverka systemets prestanda. Läs mer om [målgrupper](/help/segmentation/methods/edge-segmentation.md). |
+| Edge genomströmning i alla sandlådor | 1 500 RPS | Prestandaskydd | Edge segmentering stöder ett toppvärde på 1 500 inkommande händelser per sekund i Adobe Experience Platform Edge Network. Edge-segmentering kan ta upp till 350 millisekunder att bearbeta en inkommande händelse när den kommer in i Adobe Experience Platform Edge Network. Läs mer om [målgrupper](/help/segmentation/methods/edge-segmentation.md). |
+| Direktuppspelande målgrupper per sandlåda | 500 | Prestandaskydd | Du kan ha upp till 500 **aktiva** direktuppspelade målgrupper per sandlåda. Du kan ha fler än 500 direktuppspelade målgrupper per organisation, förutsatt att det finns färre än 500 direktuppspelade målgrupper i varje **enskild** sandlåda. Detta inkluderar både strömnings- och edge-målgrupper. Försök att skapa fler direktuppspelade målgrupper kan påverka systemets prestanda. Läs mer om [direktuppspelade målgrupper](/help/segmentation/methods/streaming-segmentation.md). |
+| Direktuppspelningsgenomströmning över alla sandlådor | 1 500 RPS | Prestandaskydd | Direktuppspelningssegmentering stöder ett toppvärde på 1 500 inkommande händelser per sekund. Det kan ta upp till 5 minuter att kvalificera en profil för segmentmedlemskap. Läs mer om [direktuppspelade målgrupper](/help/segmentation/methods/streaming-segmentation.md). |
 | Gruppera målgrupper per sandlåda | 4000 | Prestandaskydd | Du kan ha upp till 4 000 **aktiva** gruppmålgrupper per sandlåda. Du kan ha fler än 4000 gruppmålgrupper per organisation, förutsatt att det finns färre än 4000 gruppmålgrupper i varje **enskild** sandlåda. Om du försöker skapa fler gruppmålgrupper kan det påverka systemets prestanda. |
-| Målgrupper per sandlåda | 50 | Systemstyrt skyddsräcke | Du kan skapa högst 50 kontomålgrupper i en sandlåda. När du har nått 50 målgrupper i en sandlåda inaktiveras kontrollen **[!UICONTROL Create audience]** när du försöker skapa en ny målgrupp. Läs mer om [kontominnen](/help/segmentation/ui/account-audiences.md). |
+| Målgrupper per sandlåda | 50 | Systemstyrt skyddsräcke | Du kan skapa högst 50 kontomålgrupper i en sandlåda. När du har nått 50 målgrupper i en sandlåda inaktiveras kontrollen **[!UICONTROL Create audience]** när du försöker skapa en ny målgrupp. Läs mer om [kontominnen](/help/segmentation/types/account-audiences.md). |
 | Publicerade kompositioner per sandlåda | 10 | Prestandaskydd | Du kan ha högst 10 publicerade kompositioner i en sandlåda. Läs mer om [målgruppssammansättning i gränssnittsguiden](/help/segmentation/ui/audience-composition.md). |
 | Maximal målgruppsstorlek | 30 procent | Prestandaskydd | Rekommenderat maximalt medlemskap för en målgrupp är 30 procent av det totala antalet profiler i systemet. Det är möjligt att skapa målgrupper med över 30 % av profilerna som medlemmar eller flera stora målgrupper, men det påverkar systemets prestanda. |
 
@@ -160,11 +160,11 @@ Tidsoberoende attribut, som också kallas postdata, modelleras med [!DNL XDM Ind
 
 #### Dimension
 
-Profildatalagret som bevarar profildata är inte ett relationslager, men profilen tillåter integrering med små dimensionsenheter för att skapa målgrupper på ett förenklat och intuitivt sätt. Integrationen kallas [segmentering för flera enheter](../segmentation/multi-entity-segmentation.md).
+Profildatalagret som bevarar profildata är inte ett relationslager, men profilen tillåter integrering med små dimensionsenheter för att skapa målgrupper på ett förenklat och intuitivt sätt. Integrationen kallas [segmentering för flera enheter](../segmentation/tutorials/multi-entity-segmentation.md).
 
 Din organisation kan också definiera XDM-klasser för att beskriva andra saker än enskilda, t.ex. butiker, produkter eller egenskaper. Dessa icke-[!DNL XDM Individual Profile]-scheman kallas för dimensionsenheter (kallas även för sökentiteter) och innehåller inga tidsseriedata. Scheman som representerar dimensionsenheter är länkade till profilentiteter med hjälp av [schemarelationer](../xdm/tutorials/relationship-ui.md).
 
-Dimensioner tillhandahåller sökdata som underlättar och förenklar definitioner av flerenhetssegment och måste vara tillräckligt små för att segmenteringsmotorn ska kunna läsa in hela datauppsättningen i minnet för optimal bearbetning (snabbpunktssökning).
+Dimension-entiteter tillhandahåller sökdata som underlättar och förenklar definitioner av flerenhetssegment och måste vara tillräckligt små för att segmenteringsmotorn ska kunna läsa in hela datauppsättningen i minnet för optimal bearbetning (snabbpunktssökning).
 
 ![En infografik som visar att en profilentitet består av dimensionsenheter.](images/guardrails/profile-and-dimension-entities.png)
 
@@ -182,10 +182,10 @@ Flera rapportsviter kan aktiveras för profilen så länge som alla datakonflikt
 
 ## Nästa steg
 
-Följande dokumentation innehåller mer information om andra Experience Platform-servicesäkrar, om total latenstid och licensinformation från Real-Time CDP produktbeskrivningsdokument:
+I följande dokumentation finns mer information om andra Experience Platform servicemarginaler, om total latenstid och licensieringsinformation från Real-Time CDP produktbeskrivningsdokument:
 
 * [Real-Time CDP skyddsräcken](/help/rtcdp/guardrails/overview.md)
-* [Latensdiagram från början till slut](https://experienceleague.adobe.com/docs/blueprints-learn/architecture/architecture-overview/deployment/guardrails.html?lang=en#end-to-end-latency-diagrams) för olika Experience Platform-tjänster.
-* [Real-time Customer Data Platform (B2C Edition - Prime- och Ultimate-paket)](https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform-b2c-edition-prime-and-ultimate-packages.html)
-* [Real-time Customer Data Platform (B2P - Prime- och Ultimate-paket)](https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform-b2p-edition-prime-and-ultimate-packages.html)
-* [Real-time Customer Data Platform (B2B - Prime- och Ultimate-paket)](https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform-b2b-edition-prime-and-ultimate-packages.html)
+* [Avancerade latensdiagram](https://experienceleague.adobe.com/docs/blueprints-learn/architecture/architecture-overview/deployment/guardrails.html?lang=en#end-to-end-latency-diagrams) för olika Experience Platform-tjänster.
+* [Real-Time Customer Data Platform (B2C Edition - Prime- och Ultimate-paket)](https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform-b2c-edition-prime-and-ultimate-packages.html)
+* [Real-Time Customer Data Platform (B2P - Prime- och Ultimate-paket)](https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform-b2p-edition-prime-and-ultimate-packages.html)
+* [Real-Time Customer Data Platform (B2B - Prime- och Ultimate-paket)](https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform-b2b-edition-prime-and-ultimate-packages.html)

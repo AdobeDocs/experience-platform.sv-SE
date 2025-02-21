@@ -3,7 +3,7 @@ title: Aktivera potentiella målgrupper till destinationer
 type: Tutorial
 description: Lär dig hur du aktiverar potentiella målgrupper till destinationer
 exl-id: 3e034a14-09d0-4b08-b171-5afb62ae4b62
-source-git-commit: fbc2a6c81682797af4674adabff358a62d973007
+source-git-commit: e7c0551276d31d6809ace096c00e0dc2665090e6
 workflow-type: tm+mt
 source-wordcount: '596'
 ht-degree: 0%
@@ -14,9 +14,9 @@ ht-degree: 0%
 
 >[!AVAILABILITY]
 >
->Den här funktionaliteten är tillgänglig för kunder som har köpt Real-Time CDP Prime- och Ultimate-paketet. Kontakta din Adobe-representant om du vill ha mer information.
+>Den här funktionaliteten är tillgänglig för kunder som har köpt Real-Time CDP Prime- och Ultimate-paketet. Kontakta Adobe om du vill ha mer information.
 
-I den här artikeln förklaras det arbetsflöde som krävs för att exportera [potentiella målgrupper](/help/segmentation/ui/prospect-audience.md) från Adobe Experience Platform till det önskade målet.
+I den här artikeln förklaras det arbetsflöde som krävs för att exportera [potentiella målgrupper](/help/segmentation/types/prospect-audiences.md) från Adobe Experience Platform till det önskade målet.
 
 ## Mål som stöds {#supported-destinations}
 
@@ -26,7 +26,7 @@ Gå till **[!UICONTROL Connections]** > **[!UICONTROL Destinations]** och välj 
 
 ## Förhandskrav {#prerequisites}
 
-* Du måste först importera [profiler för potentiella kunder](/help/profile/ui/prospect-profile.md) och skapa [målgrupper för potentiella kunder](/help/segmentation/ui/prospect-audience.md) innan du kan aktivera dem till underordnade mål.
+* Du måste först importera [profiler för potentiella kunder](/help/profile/ui/prospect-profile.md) och skapa [målgrupper för potentiella kunder](/help/segmentation/types/prospect-audiences.md) innan du kan aktivera dem till underordnade mål.
 * Om du vill aktivera potentiella målgrupper för destinationer måste du ha anslutit till ett mål. Om du inte redan har gjort det går du till [målkatalogen](../catalog/overview.md), bläddrar bland de mål som stöds och konfigurerar det mål som du vill använda. Mer information finns i självstudiekursen [Ansluta till mål](./connect-destination.md).
 
 ### Nödvändiga behörigheter {#permissions}

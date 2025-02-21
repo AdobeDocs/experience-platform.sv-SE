@@ -4,16 +4,16 @@ description: Kom igång med Adobe Real-Time CDP, förstå de avancerade funktion
 solution: Real-Time Customer Data Platform
 product: Real Time CDP
 exl-id: 92179d9a-be79-4a39-b2ab-9a85a542f53c
-source-git-commit: 7a909c362b9e367fa4b86a8525fe98f203e3c2d5
+source-git-commit: 4afb2c76f2022423e8f1fa29c91d02b43447ba90
 workflow-type: tm+mt
 source-wordcount: '1169'
-ht-degree: 2%
+ht-degree: 14%
 
 ---
 
-# Dokumentation för Adobe [!DNL Real-Time CDP] {#rtcdp-documentation}
+# Adobe [!DNL Real-Time CDP] - dokumentation {#rtcdp-documentation}
 
-Använd Adobe Real-time Customer Data Platform (Real-Time CDP) för att samla in kända och anonyma data från flera olika företagskällor för att skapa kundprofiler som kan användas för att leverera personaliserade kundupplevelser i alla kanaler och enheter i realtid. Läs [Real-Time CDP-översikten](/help/rtcdp/overview.md) om du vill ha mer information.
+Använd Adobe Real-Time Customer Data Platform (Real-Time CDP) för att samla in kända och anonyma data från flera olika företagskällor för att skapa kundprofiler som kan användas för att leverera personaliserade kundupplevelser i alla kanaler och enheter i realtid. Läs [Real-Time CDP-översikten](/help/rtcdp/overview.md) om du vill ha mer information.
 
 ## Nyheter? {#whats-new}
 
@@ -21,11 +21,11 @@ Få en glimt av de senaste förbättringarna i Real-Time CDP-produkter och -doku
 
 >[!BEGINTABS]
 
->[!TAB Sammansatt målgruppskomposition]
+>[!TAB Federerad målgruppssammansättning]
 
-Med Federated Audience Composition kan företag sammanställa data för bättre användning i olika situationer. Med detta nya tillvägagångssätt, som Adobe Real-time Customer Data Platform- och/eller Adobe Journey Optimizer-användare, kan ni federera datauppsättningar direkt från ert befintliga datalager för att skapa och berika Adobe Experience Platform målgrupper och attribut i ett och samma system.
+Med Federerad målgruppssammansättning kan företag sammanställa data för bättre användning i olika situationer. Med detta nya tillvägagångssätt, som Adobe Real-Time Customer Data Platform- och/eller Adobe Journey Optimizer-användare, kan ni federera datauppsättningar direkt från ert befintliga datalager för att skapa och berika Adobe Experience Platform-målgrupper och attribut i ett och samma system.
 
-[![bild](assets/do-not-localize/learn-more-button.svg)](https://experienceleague.adobe.com/en/docs/federated-audience-composition/using/home)
+[![bild](assets/do-not-localize/learn-more-button.svg)](https://experienceleague.adobe.com/sv/docs/federated-audience-composition/using/home)
 
 >[!TAB Använd fallspelningsböcker]
 
@@ -47,7 +47,7 @@ Sammanfatta enkelt händelsedata i profilattribut med ett intuitivt användargr�
 
 >[!TAB Dataexport]
 
-Funktionen för datauppsättningsexport är nu allmänt tillgänglig. Se [vilka datauppsättningar du kan exportera baserat på appen Experience Platform](../destinations/ui/export-datasets.md#datasets-to-export) som du har köpt, och kontrollera [skyddsutkast för export av datauppsättningar](/help/destinations/guardrails.md#dataset-exports).
+Funktionen för datauppsättningsexport är nu allmänt tillgänglig. Se [vilka datauppsättningar du kan exportera baserat på den Experience Platform-app](../destinations/ui/export-datasets.md#datasets-to-export) du har köpt och kontrollera [skyddsutkast för export av datauppsättningar](/help/destinations/guardrails.md#dataset-exports).
 
 [![bild](assets/do-not-localize/learn-more-button.svg)](../destinations/ui/export-datasets.md)
 
@@ -136,11 +136,11 @@ Länkarna till produktdokumentationen nedan visar hur de fyra grundpelarna i Ado
     </td>
     <td>
       <img src="assets/do-not-localize/icon-cloud.svg" width="35px"><br/>
-      <strong> Funktionerna för moln och AI/ML </strong><br/>AI och ML hjälper dig vid varje steg på vägen i flera instrumentpaneler. Vissa högdagrar är områden nedan. <br/> <a href="/help/segmentation/ui/lookalike-audiences.md">Lookalike-målgrupper</a> - <a href="/help/rtcdp/segmentation/customer-ai.md">Kund-AI</a> - <a href="/help/rtcdp/b2b-ai-ml-services/related-accounts.md">Relaterade konton</a> - <a href="/help/rtcdp/b2b-ai-ml-services/predictive-lead-and-account-scoring.md">Prediktiv lead- och kontopoängsättning</a> - <a href="/help/rtcdp/b2b-ai-ml-services/lead-to-account-matching.md">Lead-till-konto-matchning</a>
+      <strong> Funktionerna för moln och AI/ML </strong><br/>AI och ML hjälper dig vid varje steg på vägen i flera instrumentpaneler. Vissa högdagrar är områden nedan. <br/> <a href="/help/segmentation/types/account-audiences.md">Lookalike-målgrupper</a> - <a href="/help/rtcdp/segmentation/customer-ai.md">Kund-AI</a> - <a href="/help/rtcdp/b2b-ai-ml-services/related-accounts.md">Relaterade konton</a> - <a href="/help/rtcdp/b2b-ai-ml-services/predictive-lead-and-account-scoring.md">Prediktiv lead- och kontopoängsättning</a> - <a href="/help/rtcdp/b2b-ai-ml-services/lead-to-account-matching.md">Lead-till-konto-matchning</a>
     </td>
     <td>
       <img src="assets/do-not-localize/icon-learn.svg" width="35px"><br/>
-      <strong> Garantier och bästa praxis </strong><br/>Lär dig mer om bästa praxis och aktuella begränsningar när du arbetar med data i Real-Time CDP.<br/><a href="/help/rtcdp/guardrails/overview.md">Bästa praxis för tillstånd för datahantering</a> - <a href="/help/landing/license-usage-and-guardrails/data-management-best-practices.md">Bästa praxis för tillstånd för datahantering</a> - <a href="/help/xdm/schema/best-practices.md">Bästa praxis för datamodellering</a> - <a href="/help/privacy-service/best-practices.md">Bästa praxis för Privacy Service</a> 
+      <strong> Garantier och bästa praxis </strong><br/>Lär dig mer om bästa praxis och aktuella begränsningar när du arbetar med data i Real-Time CDP.<br/><a href="/help/rtcdp/guardrails/overview.md">Bästa praxis för tillstånd för datahantering</a> - <a href="/help/landing/license-usage-and-guardrails/data-management-best-practices.md">Bästa praxis för tillstånd för datahantering</a> - <a href="/help/xdm/schema/best-practices.md">Bästa praxis för datamodellering</a> - <a href="/help/privacy-service/best-practices.md">Privacy Service bästa praxis</a> 
     </td>
     <td>
       <img src="assets/do-not-localize/icon-code.svg" width="35px"><br/>
@@ -203,7 +203,7 @@ Klicka på länkarna nedan om du vill veta mer om Real-Time CDP användningsomr�
 
 <table style="table-layout:fixed"><tr style="border: 0;">
 <td><strong>Real-Time CDP</strong><br/>
-<a href="https://experienceleague.adobe.com/docs/platform-learn/tutorials/overview.html?lang=sv" target="_blank">Tutorials</a> - <a href="https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform-b2c-edition-prime-and-ultimate-packages.html" target="_blank">Produktbeskrivning Real-Time CDP B2C Edition</a> - <a href="https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform-b2c-edition-prime-and-ultimate-packages.html" target="_blank">B2B Edition</a> - <a href="https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform-b2c-edition-prime-and-ultimate-packages.html" target="_blank">B2B Edition</a> - <a href="https://www.adobe.com/content/dam/cc/en/trust-center/ungated/whitepapers/experience-cloud/ADB_Experience_Platform_Security_Overview.pdf" target="_blank">Säkerhetsöversikt (PDF)</a> - <a href="https://experienceleague.adobe.com/docs/blueprints-learn/architecture/overview.html" target="_blank">Implementeringsutkast</a> - <a href="https://experienceleague.adobe.com/docs/experience-platform/landing/glossary.html" target="_blank">Ordlista</a>
+<a href="https://experienceleague.adobe.com/docs/platform-learn/tutorials/overview.html?lang=sv" target="_blank">Självstudiekurser</a> - <a href="https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform-b2c-edition-prime-and-ultimate-packages.html" target="_blank">Produktbeskrivning Real-Time CDP B2C Edition</a> - <a href="https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform-b2c-edition-prime-and-ultimate-packages.html" target="_blank">B2B edition</a> - <a href="https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform-b2c-edition-prime-and-ultimate-packages.html" target="_blank">B2B edition</a> - <a href="https://www.adobe.com/content/dam/cc/en/trust-center/ungated/whitepapers/experience-cloud/ADB_Experience_Platform_Security_Overview.pdf" target="_blank">Säkerhetsöversikt (PDF)</a> - <a href="https://experienceleague.adobe.com/docs/blueprints-learn/architecture/overview.html" target="_blank">Implementeringsutkast</a> - <a href="https://experienceleague.adobe.com/docs/experience-platform/landing/glossary.html" target="_blank">Ordlista</a>
 </td>
 <td><strong>Adobe Experience Platform</strong><br/>
 <a href="https://experienceleague.adobe.com/docs/experience-platform/landing/home.html" target="_blank">Dokumentation</a> - <a href="https://developer.adobe.com/experience-platform-apis/" target="_blank">API-referens - <a href="https://experienceleague.adobe.com/docs/courses/using/experienceplatform-u-1-2020-1.html" target="_blank">Kurs: Introduktion till Experience Platform</a></a>
@@ -211,4 +211,4 @@ Klicka på länkarna nedan om du vill veta mer om Real-Time CDP användningsomr�
 </tr></table>
 
 <table style="table-layout:auto"><tr style="border: 0;"><td><img src="assets/do-not-localize/newsletter.png"></td><td>
-<b>Håll dig informerad, delta i communityn och höj din Adobe Real-Time CDP-upplevelse!</b><br/>Besök Real-time Customer Data Platform community och diskutera funktionalitet med andra verksamma. <a href="https://experienceleaguecommunities.adobe.com/t5/real-time-customer-data-platform/ct-p/Real-time-CDP">Gå med i communityn idag!</a></td></tr></table>
+<b>Håll dig informerad, delta i communityn och höj din Adobe Real-Time CDP-upplevelse!</b><br/>Besök Real-Time Customer Data Platform community och diskutera funktionalitet med andra verksamma. <a href="https://experienceleaguecommunities.adobe.com/t5/real-time-customer-data-platform/ct-p/Real-time-CDP">Gå med i communityn idag!</a></td></tr></table>

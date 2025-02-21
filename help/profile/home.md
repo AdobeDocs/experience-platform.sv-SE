@@ -2,7 +2,7 @@
 title: Kundprofilöversikt i realtid
 description: Kundprofilen i realtid sammanfogar data från olika källor och ger åtkomst till dessa data i form av enskilda kundprofiler och relaterade tidsseriehändelser. Med den här funktionen kan marknadsförarna skapa samordnade, enhetliga och relevanta upplevelser med sina målgrupper i flera kanaler.
 exl-id: c93d8d78-b215-4559-a806-f019c602c4d2
-source-git-commit: 7d515401eb49ffd2ad5cf0bd074896b274c4fb05
+source-git-commit: fc53d1b32eb3fc0251f307d5b2f076b1153a2931
 workflow-type: tm+mt
 source-wordcount: '1821'
 ht-degree: 1%
@@ -53,7 +53,7 @@ Experience Platform tillhandahåller en serie skyddsutkast som hjälper dig att 
 
 ### Kontrollpanel för profil {#profile-dashboard}
 
-Användargränssnittet i Experience Platform innehåller en kontrollpanel där du kan visa viktig information om kundprofildata i realtid, som du har tagit med en daglig ögonblicksbild. Om du vill lära dig hur du får åtkomst till och arbetar med kontrollpanelen [!DNL Profile] i användargränssnittet, och detaljerad information om mätvärden som visas på kontrollpanelen, kan du läsa [Användargränssnittsguiden för profilkontrollpanelen](ui/profile-dashboard.md).
+Experience Platform användargränssnitt innehåller en kontrollpanel där du kan visa viktig information om dina kundprofildata i realtid, som du har tagit med en daglig ögonblicksbild. Om du vill lära dig hur du får åtkomst till och arbetar med kontrollpanelen [!DNL Profile] i användargränssnittet, och detaljerad information om mätvärden som visas på kontrollpanelen, kan du läsa [Användargränssnittsguiden för profilkontrollpanelen](ui/profile-dashboard.md).
 
 ### Profilfragment jämfört med sammanslagna profiler {#profile-fragments-vs-merged-profiles}
 
@@ -81,7 +81,7 @@ När du sammanfogar datafragment från flera källor och kombinerar dem för att
 
 När det finns data som är i konflikt med varandra från flera datauppsättningar avgör kopplingsregeln hur data ska behandlas och vilket värde som ska användas. Med RESTful API:er eller användargränssnittet kan du skapa nya kopplingsprofiler, hantera befintliga profiler och ange en standardkopplingsprofil för organisationen.
 
-Om du vill veta mer om sammanfogningsprinciper och deras roll i Experience Platform börjar du med att läsa översikten [för sammanfogningsprinciper](merge-policies/overview.md).
+Om du vill veta mer om sammanfogningsprinciper och deras roll i Experience Platform kan du börja med att läsa översikten [för sammanfogningsprinciper](merge-policies/overview.md).
 
 ### Unionens system {#profile-fragments-and-union-schemas}
 
@@ -135,8 +135,8 @@ Datastyrning hanteras vid flera tillfällen. Det kan vara att bestämma vilka da
 
 ### Hantera avanmälan och förfrågningar om datasekretess
 
-[!DNL Experience Platform] gör det möjligt för dina kunder att skicka avanmälningsbegäranden som rör användning och lagring av deras data i [!DNL Real-Time Customer Profile]. Mer information om hur avanmälningsbegäranden hanteras finns i dokumentationen om [hur avanmälningsbegäranden ](../segmentation/consents.md) respekteras.
+[!DNL Experience Platform] gör det möjligt för dina kunder att skicka avanmälningsbegäranden som rör användning och lagring av deras data i [!DNL Real-Time Customer Profile]. Mer information om hur avanmälningsbegäranden hanteras finns i dokumentationen om [hur avanmälningsbegäranden ](../segmentation/tutorials/consents.md) respekteras.
 
 ## Nästa steg och ytterligare resurser
 
-Om du vill veta mer om hur du arbetar med kundprofildata i realtid med hjälp av Experience Platform-gränssnittet eller profil-API:t börjar du med att läsa [gränssnittshandboken för profilen](ui/user-guide.md) respektive [API-utvecklarhandboken](api/overview.md).
+Om du vill veta mer om hur du arbetar med kundprofildata i realtid med Experience Platform-gränssnittet eller profil-API:t börjar du med att läsa [gränssnittshandboken för profilen](ui/user-guide.md) respektive [API-utvecklarhandboken](api/overview.md).

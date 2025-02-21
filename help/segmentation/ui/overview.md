@@ -3,7 +3,7 @@ solution: Experience Platform
 title: Användargränssnittshandbok för segmenteringstjänst
 description: Lär dig hur du skapar och hanterar målgrupper och segmentdefinitioner i Adobe Experience Platform användargränssnitt.
 exl-id: 0a2e8d82-281a-4c67-b25b-08b7a1466300
-source-git-commit: 9844a7bf5e7198e7d5112ec924220aba71cdc14b
+source-git-commit: 276fd7c532843c9589e1d51b0bc7a76cb5c3eb9f
 workflow-type: tm+mt
 source-wordcount: '1025'
 ht-degree: 0%
@@ -31,7 +31,7 @@ Du bör också förstå följande nyckeltermer som används i det här dokumente
 
 ## Översikt
 
-I användargränssnittet för Experience Platform väljer du **[!UICONTROL Audiences]** i den vänstra navigeringen för att öppna fliken **[!UICONTROL Overview]** med kontrollpanelen [!UICONTROL Audiences].
+I Experience Platform-gränssnittet väljer du **[!UICONTROL Audiences]** i den vänstra navigeringen för att öppna fliken **[!UICONTROL Overview]** med kontrollpanelen [!UICONTROL Audiences].
 
 >[!NOTE]
 >
@@ -90,9 +90,9 @@ Om du vill se hur målgruppen är sammansatt väljer du en målgrupps namn på f
 
 Sidan Audience Composition visas med de byggstenar som utgör målgruppen. Mer information om hur du använder Audience Composition finns i handboken [Audience Composition UI](./audience-composition.md).
 
-## Sammansatt målgrupp {#fac}
+## Federerad målgruppssammansättning {#fac}
 
-Förutom målgruppskompositioner och segmentdefinitioner kan du använda Adobe Federated Audience Composition för att skapa nya målgrupper från företagsdatauppsättningar utan att kopiera underliggande data och lagra dessa målgrupper i Adobe Experience Platform Audience Portal. Ni kan också berika befintliga målgrupper i Adobe Experience Platform genom att använda sammansatta målgruppsdata som har federerats från företagets datalager. Läs guiden om [Federated Audience Composition](https://experienceleague.adobe.com/en/docs/federated-audience-composition/using/home).
+Förutom målgruppskompositioner och segmentdefinitioner kan du använda Adobe Federated Audience Composition för att skapa nya målgrupper från företagsdatauppsättningar utan att kopiera underliggande data och lagra dessa målgrupper i Adobe Experience Platform Audience Portal. Ni kan också berika befintliga målgrupper i Adobe Experience Platform genom att använda sammansatta målgruppsdata som har federerats från företagets datalager. Läs guiden om [Federated Audience Composition](https://experienceleague.adobe.com/sv/docs/federated-audience-composition/using/home).
 
 ![En lista över målgrupper som skapats i Federated Audience Composition för din organisation.](../images/ui/overview/federated-audience-composition.png)
 
@@ -100,7 +100,7 @@ Förutom målgruppskompositioner och segmentdefinitioner kan du använda Adobe F
 
 Direktuppspelningssegmentering är möjligheten att segmentera på [!DNL Platform] i nära realtid, samtidigt som dataverifikation fokuseras. Med direktuppspelningssegmentering blir kvalificering för segmentering nu allt eftersom data landar i [!DNL Platform], vilket minskar behovet av att schemalägga och köra segmenteringsjobb.
 
-Mer information om direktuppspelningssegmentering finns i användarhandboken för [direktuppspelningssegmentering](./streaming-segmentation.md).
+Mer information om direktuppspelningssegmentering finns i användarhandboken för [direktuppspelningssegmentering](../methods/streaming-segmentation.md).
 
 >[!NOTE]
 >
@@ -110,7 +110,7 @@ Mer information om direktuppspelningssegmentering finns i användarhandboken fö
 
 Edge segmentering är möjligheten att omedelbart utvärdera målgrupper i Platform, vilket möjliggör användning av samma sida och nästa sida vid personalisering.
 
-Mer information om kantsegmentering finns i [gränssnittsguiden för kantsegmentering](./edge-segmentation.md)
+Mer information om kantsegmentering finns i [gränssnittsguiden för kantsegmentering](../methods/edge-segmentation.md)
 
 ## Policyöverträdelser
 

@@ -3,7 +3,7 @@ keywords: Experience Platform;profil;kundprofil i realtid;felsökning;API;enhetl
 title: Användargränssnittshandbok för kundprofil i realtid
 description: Kundprofilen i realtid skapar en helhetsbild av varje enskild kund och kombinerar data från flera kanaler, inklusive online-, offline-, CRM- och tredjepartsdata. Det här dokumentet är en guide för interaktion med kundprofilen i realtid i Adobe Experience Platform användargränssnitt.
 exl-id: 792a3a73-58a4-4163-9212-4d43d24c2770
-source-git-commit: dc31258dad5cf03a8f4f60db4d4aefc29e8157c8
+source-git-commit: 4afb2c76f2022423e8f1fa29c91d02b43447ba90
 workflow-type: tm+mt
 source-wordcount: '2128'
 ht-degree: 0%
@@ -24,7 +24,7 @@ Den här gränssnittshandboken kräver förståelse för de olika [!DNL Experien
 
 ## [!UICONTROL Overview]
 
-I användargränssnittet för Experience Platform väljer du **[!UICONTROL Profiles]** i den vänstra navigeringen för att öppna fliken **[!UICONTROL Overview]** med profilkontrollpanelen.
+I Experience Platform-gränssnittet väljer du **[!UICONTROL Profiles]** i den vänstra navigeringen för att öppna fliken **[!UICONTROL Overview]** med profilkontrollpanelen.
 
 >[!NOTE]
 >
@@ -54,7 +54,7 @@ Förutom dessa mått innehåller det här avsnittet ett senaste uppdaterat datum
 
 ### Profilantal {#profile-count}
 
-Profilantalet visar det totala antalet profiler som din organisation har i Experience Platform, efter att organisationens standardpolicy för sammanfogning har sammanfogats med profilfragment för att bilda en enda profil för varje enskild kund. Med andra ord kan din organisation ha flera profilfragment kopplade till en enskild kund som interagerar med ert varumärke i olika kanaler, men dessa fragment skulle slås samman (enligt standardprincipen för sammanslagning) och skulle returnera antalet&quot;1&quot;-profil eftersom de alla är kopplade till samma individ.
+Profilantalet visar det totala antalet profiler som din organisation har inom Experience Platform, efter att organisationens standardpolicy för sammanslagning har sammanfogats med profilfragment för att bilda en enda profil för varje enskild kund. Med andra ord kan din organisation ha flera profilfragment kopplade till en enskild kund som interagerar med ert varumärke i olika kanaler, men dessa fragment skulle slås samman (enligt standardprincipen för sammanslagning) och skulle returnera antalet&quot;1&quot;-profil eftersom de alla är kopplade till samma individ.
 
 Profilantalet omfattar även både profiler med attribut (postdata) och profiler som endast innehåller tidsseriedata (händelsedata), t.ex. Adobe Analytics-profiler. Profilantalet uppdateras regelbundet för att ge ett aktuellt totalt antal profiler inom plattformen.
 
@@ -171,11 +171,11 @@ Händelser kan också visas som ett JSON-objekt genom att välja till **[!UICONT
 
 Fliken **[!UICONTROL Audience membership]** visar en lista med namn och beskrivning av målgrupper som den enskilda kundprofilen för närvarande tillhör. Listan uppdateras automatiskt när profilen kvalificerar sig eller upphör att gälla. Det totala antalet målgrupper som profilen är kvalificerad för visas till höger på fliken.
 
-Mer information om segmentering i Experience Platform finns i [dokumentationen för segmenteringstjänsten i Adobe ](../../segmentation/home.md).
+Mer information om segmentering i Experience Platform finns i [dokumentationen för Experience Platform segmenteringstjänst](../../segmentation/home.md).
 
 ![Fliken Målgruppsmedlemskap är markerad. Profilens medlemsinformation visas.](../images/user-guide/audience-membership.png)
 
-Om du vill visa målgruppsmedlemskapet för de profiler som är tillgängliga på Edge väljer du **[!UICONTROL Edge]** i dataplatsväljaren. Mer information om kantsegmentering finns i [kantsegmenteringsguiden](../../segmentation/ui/edge-segmentation.md).
+Om du vill visa målgruppsmedlemskapet för de profiler som är tillgängliga på Edge väljer du **[!UICONTROL Edge]** i dataplatsväljaren. Mer information om kantsegmentering finns i [kantsegmenteringsguiden](../../segmentation/methods/edge-segmentation.md).
 
 ![Dataplatsväljaren på fliken för målgruppsmedlemskap är markerad.](../images/user-guide/audience-membership-select.png)
 
@@ -205,4 +205,4 @@ Mer information om beräknade attribut finns i [översikten över beräknade att
 
 ## Nästa steg
 
-Genom att läsa den här guiden kan du visa och hantera din organisations profildata med hjälp av användargränssnittet i Experience Platform. Mer information om hur du arbetar med profildata med hjälp av Experience Platform API:er finns i [API-handboken för kundprofiler i realtid](../api/overview.md).
+Genom att läsa den här guiden kan du visa och hantera din organisations profildata med hjälp av Experience Platform användargränssnitt. Mer information om hur du arbetar med profildata med Experience Platform API:er finns i [API-handboken för kundprofiler i realtid](../api/overview.md).

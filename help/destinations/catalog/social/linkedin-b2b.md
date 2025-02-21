@@ -1,28 +1,29 @@
 ---
 title: (Företag) LinkedIn-anslutning
-description: Använd den här destinationen för att aktivera dina kontomålgrupper för användningsfall inom Account-Based Marketing (ABM). Aktivera profiler för era LinkedIn-kampanjer för målgruppsanpassning, personalisering och nedtryckning, baserat på hashad-e-post.
+description: Använd den här destinationen för att aktivera dina kontomålgrupper för användningsfall inom Account-Based Marketing (ABM). Aktivera profiler för era LinkedIn-kampanjer för målgruppsanpassning, personalisering och nedtryckning, baserat på hash-kodade e-postmeddelanden.
 badgeB2B: label="B2B edition" type="Informative" url=" https://experienceleague.adobe.com/docs/experience-platform/rtcdp/intro/rtcdp-intro/overview.html?lang=en#rtcdp-editions newtab=true"
 badgeB2P: label="B2P Edition" type="Positive" url=" https://experienceleague.adobe.com/docs/experience-platform/rtcdp/intro/rtcdp-intro/overview.html?lang=en#rtcdp-editions newtab=true"
-source-git-commit: e45c50a6447be4a60145eea6956d30d51166e675
+exl-id: 68d2cca3-952b-49d0-8ea2-e776a233b752
+source-git-commit: e7c0551276d31d6809ace096c00e0dc2665090e6
 workflow-type: tm+mt
 source-wordcount: '650'
 ht-degree: 2%
 
 ---
 
-# (Företag) LinkedIn Matcha målgrupper {#companies-linkedin}
+# (Företag) LinkedIn Match Audiences-anslutning {#companies-linkedin}
 
 >[!AVAILABILITY]
 >
->Funktionen för att aktivera kontomålgrupper för LinkedIn-destinationen (företag) är tillgänglig för företag som köper utgåvorna [Business-to-Business](/help/rtcdp/overview.md#rtcdp-b2b) och [Business-to-Person](/help/rtcdp/overview.md#rtcdp-b2p) av Real-time Customer Data Platform.
+>Funktionen för att aktivera kontomålgrupper för LinkedIn-destinationen (Companies) är tillgänglig för företag som köper utgåvorna [Business-to-Business](/help/rtcdp/overview.md#rtcdp-b2b) och [Business-to-Person](/help/rtcdp/overview.md#rtcdp-b2p) av Real-Time Customer Data Platform.
 
-Använd det här målet för att aktivera dina [kontomålgrupper](/help/segmentation/ui/account-audiences.md) för Account-Based Marketing-användningsfall (ABM). Annonsera relevanta personer och roller i dina målkonton via målet **[!UICONTROL (Companies) LinkedIn]** business-to-business. Gå till LinkedIn-dokumentationen och [läs mer om målinriktning för konton](https://business.linkedin.com/marketing-solutions/cx/21/10/ad-targeting/account-targeting) på LinkedIn-plattformen.
+Använd det här målet för att aktivera dina [kontomålgrupper](/help/segmentation/types/account-audiences.md) för Account-Based Marketing-användningsfall (ABM). Annonsera relevanta personer och roller i dina målkonton via målet **[!UICONTROL (Companies) LinkedIn]** business-to-business. Besök LinkedIn-dokumentationen för att [lära dig mer om målinriktning för konton](https://business.linkedin.com/marketing-solutions/cx/21/10/ad-targeting/account-targeting) på LinkedIn-plattformen.
 
 >[!TIP]
 >
 >För enskilda (eller företag-till-kund) användningsområden rekommenderar Adobe att du använder målet [LinkedIn Matched Audience](/help/destinations/catalog/social/linkedin.md).
 
-![LinkedIn-kontomålet visas i användargränssnittet för Experience Platform.](/help/destinations/assets/catalog/social/linkedin-b2b/linkedin-b2b-destination.png)
+![LinkedIn-kontomålet visas i Experience Platform-gränssnittet.](/help/destinations/assets/catalog/social/linkedin-b2b/linkedin-b2b-destination.png)
 
 ## Målgrupper {#supported-audiences}
 
@@ -30,7 +31,7 @@ I det här avsnittet beskrivs vilken typ av målgrupper du kan exportera till de
 
 | Målgruppsursprung | Stöds | Beskrivning |
 ---------|----------|----------|
-| [!DNL Segmentation Service] | ✓ | Publiker som genererats via Experience Platform [segmenteringstjänsten](../../../segmentation/home.md). |
+| [!DNL Segmentation Service] | ✓ | Publiker som genererats via Experience Platform [segmenteringstjänst](../../../segmentation/home.md). |
 | Anpassade överföringar | X | Publikerna [importerade](../../../segmentation/ui/overview.md#import-audience) till Experience Platform från CSV-filer. |
 
 {style="table-layout:auto"}
@@ -50,11 +51,11 @@ Se tabellen nedan för information om exporttyp och frekvens för destinationen.
 
 Kontrollera att du uppfyller kraven nedan för att kunna exportera kontomaterial till LinkedIn:
 
-### Krav för linkedIn-konton {#LinkedIn-account-prerequisites}
+### Krav för LinkedIn-konto {#LinkedIn-account-prerequisites}
 
 Innan du kan använda målet [!UICONTROL (Companies) LinkedIn Matched Audience] måste du kontrollera att ditt [!DNL LinkedIn Campaign Manager]-konto har behörighetsnivån [!DNL Creative Manager] eller högre.
 
-Mer information om hur du redigerar användarbehörigheter för [!DNL LinkedIn Campaign Manager] finns i [Lägg till, redigera och ta bort användarbehörigheter för Advertising-konton](https://www.linkedin.com/help/lms/answer/5753) i LinkedIn-dokumentationen.
+Mer information om hur du redigerar användarbehörigheter för [!DNL LinkedIn Campaign Manager] finns i [Lägg till, redigera och ta bort användarbehörigheter för Advertising-konton](https://www.linkedin.com/help/lms/answer/5753) i dokumentationen för LinkedIn.
 
 ## Anslut till målet {#connect}
 
@@ -69,7 +70,7 @@ Om du vill ansluta till det här målet följer du stegen som beskrivs i självs
 1. Hitta [!DNL (Companies) LinkedIn Matched Audiences]-målet i målkatalogen och välj **[!UICONTROL Set Up]**.
 2. Välj **[!UICONTROL Connect to destination]**.
    ![Autentisera till LinkedIn](/help/destinations/assets/catalog/social/linkedin-b2b/authenticate-linkedin-destination.png)
-3. Ange dina LinkedIn-autentiseringsuppgifter och välj **Logga in**.
+3. Ange dina inloggningsuppgifter för LinkedIn och välj **Logga in**.
 
 När du har slutfört inloggningsprocessen med LinkedIn kan du gå vidare till nästa steg.
 
@@ -81,7 +82,7 @@ Om du vill konfigurera information för målet fyller du i de obligatoriska och 
 * **[!UICONTROL Description]**: En beskrivning som hjälper dig att identifiera det här målet i framtiden.
 * **[!UICONTROL Account ID]**: Din [!DNL LinkedIn Campaign Manager Account ID]. Du kan hitta det här ID:t i ditt [!DNL LinkedIn Campaign Manager]-konto.
 
-Nu kan du aktivera kontomålgrupper för LinkedIn.
+Nu kan du aktivera kontomaterial för LinkedIn.
 
 ## Aktivera målgrupper till det här målet {#activate}
 

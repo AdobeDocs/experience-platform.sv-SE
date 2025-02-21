@@ -5,7 +5,7 @@ description: Lär dig hur du aktiverar målgrupper för konton på destinationer
 badgeB2B: label="B2B edition" type="Informative" url=" https://experienceleague.adobe.com/docs/experience-platform/rtcdp/intro/rtcdp-intro/overview.html?lang=en#rtcdp-editions newtab=true"
 badgeB2P: label="B2P Edition" type="Positive" url=" https://experienceleague.adobe.com/docs/experience-platform/rtcdp/intro/rtcdp-intro/overview.html?lang=en#rtcdp-editions newtab=true"
 exl-id: ad69d0a8-bf5b-42ac-97a3-401eadda62cd
-source-git-commit: 1c31dd978298191dd10500b60eb446d2ca37139c
+source-git-commit: 4afb2c76f2022423e8f1fa29c91d02b43447ba90
 workflow-type: tm+mt
 source-wordcount: '789'
 ht-degree: 0%
@@ -16,13 +16,13 @@ ht-degree: 0%
 
 >[!AVAILABILITY]
 >
->Funktionen för att aktivera kontomålgrupper för mål är tillgänglig för företag som köper utgåvorna [Business-to-Business](/help/rtcdp/overview.md#rtcdp-b2b) och [Business-to-Person](/help/rtcdp/overview.md#rtcdp-b2p) av Real-time Customer Data Platform.
+>Funktionen för att aktivera kontomålgrupper för mål är tillgänglig för företag som köper utgåvorna [Business-to-Business](/help/rtcdp/overview.md#rtcdp-b2b) och [Business-to-Person](/help/rtcdp/overview.md#rtcdp-b2p) av Real-Time Customer Data Platform.
 
-I den här artikeln förklaras det arbetsflöde som krävs för att exportera [kontomålgrupper](/help/segmentation/ui/account-audiences.md) från Adobe Experience Platform till det önskade målet.
+I den här artikeln förklaras det arbetsflöde som krävs för att exportera [kontomålgrupper](/help/segmentation/types/account-audiences.md) från Adobe Experience Platform till det önskade målet.
 
 ## Mål som stöds {#supported-destinations}
 
-Gå till **[!UICONTROL Connections]** > **[!UICONTROL Destinations]** och välj fliken **[!UICONTROL Catalog]**. Använd filtret **[!UICONTROL Data types]** och välj **[!UICONTROL Accounts]** för att se vilka mål som stöder aktivering av målgrupper. För närvarande är export av kontomålgrupper bara tillgängligt för vissa molnlagringsmål ([Amazon S3](/help/destinations/catalog/cloud-storage/amazon-s3.md), [ADLS Gen 2](/help/destinations/catalog/cloud-storage/adls-gen2.md), [Azure Blob Storage](/help/destinations/catalog/cloud-storage/azure-blob.md), [Data Landing Zone](/help/destinations/catalog/cloud-storage/data-landing-zone.md) och [SFTP](/help/destinations/catalog/cloud-storage/sftp.md)) samt [Demandbase](/help/destinations/catalog/advertising/demandbase.md) och [(Companies) LinkedIn Matched Auditions ](/help/destinations/catalog/social/linkedin-b2b.md) -mål för direktuppspelning.
+Gå till **[!UICONTROL Connections]** > **[!UICONTROL Destinations]** och välj fliken **[!UICONTROL Catalog]**. Använd filtret **[!UICONTROL Data types]** och välj **[!UICONTROL Accounts]** för att se vilka mål som stöder aktivering av målgrupper. För närvarande är export av kontomålgrupper bara tillgängligt för vissa molnlagringsmål ([Amazon S3](/help/destinations/catalog/cloud-storage/amazon-s3.md), [ADLS Gen 2](/help/destinations/catalog/cloud-storage/adls-gen2.md), [Azure Blob Storage](/help/destinations/catalog/cloud-storage/azure-blob.md), [Data Landing Zone](/help/destinations/catalog/cloud-storage/data-landing-zone.md) och [SFTP](/help/destinations/catalog/cloud-storage/sftp.md)) och [Demandbase](/help/destinations/catalog/advertising/demandbase.md) och [(Companies) LinkedIn Matching direktuppspelningsmål för ](/help/destinations/catalog/social/linkedin-b2b.md) .
 
 ![Destinationer som stöder målgrupper.](/help/destinations/assets/ui/activate-account-audiences/data-types-filter.png)
 
@@ -34,7 +34,7 @@ I videon nedan finns en översikt över hur du skapar och aktiverar kontomålgru
 
 ## Förhandskrav {#prerequisites}
 
-* Du måste först importera [kontoprofiler](/help/rtcdp/accounts/account-profile-overview.md) och skapa [kontomålgrupper](/help/segmentation/ui/account-audiences.md) innan du kan aktivera dem till underordnade mål.
+* Du måste först importera [kontoprofiler](/help/rtcdp/accounts/account-profile-overview.md) och skapa [kontomålgrupper](/help/segmentation/types/account-audiences.md) innan du kan aktivera dem till underordnade mål.
 * Om du vill aktivera kontomålgrupper för destinationer måste du ha anslutit till en destination. Om du inte redan har gjort det går du till [målkatalogen](../catalog/overview.md), bläddrar bland de mål som stöds och konfigurerar det mål som du vill använda. Mer information finns i självstudiekursen [Ansluta till mål](./connect-destination.md).
 
 ### Nödvändiga behörigheter {#permissions}

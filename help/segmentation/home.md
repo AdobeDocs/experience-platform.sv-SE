@@ -3,9 +3,9 @@ solution: Experience Platform
 title: Översikt över segmenteringstjänsten
 description: Läs om Adobe Experience Platform segmenteringstjänst och vilken roll den spelar i plattformens ekosystem.
 exl-id: 2c18a806-88ed-4659-bdfd-2377f5a09a1a
-source-git-commit: 4ef3f6dc07cb5d17146d48c7a41e3745fd9a3a58
+source-git-commit: acc0c1b3f088e412c68557a4a7310889f2ad65a7
 workflow-type: tm+mt
-source-wordcount: '1679'
+source-wordcount: '1665'
 ht-degree: 1%
 
 ---
@@ -67,7 +67,6 @@ Förutom målgruppskompositioner och segmentdefinitioner kan du använda Adobe F
 >id="platform_segments_evaluation_streaming"
 >title="Utvärdering av strömning"
 >abstract="Direktuppspelningssegmentering är en kontinuerlig process för datamarkering som uppdaterar era målgrupper som svar på användaraktivitet."
->additional-url="https://experienceleague.adobe.com/docs/experience-platform/segmentation/api/streaming-segmentation.html" text="Utvärdera händelser i nära realtid med strömmande segmentering"
 
 Plattformen har för närvarande stöd för tre metoder för att utvärdera målgrupper: direktuppspelningssegmentering, gruppsegmentering och kantsegmentering.
 
@@ -75,7 +74,7 @@ Plattformen har för närvarande stöd för tre metoder för att utvärdera mål
 
 Direktuppspelningssegmentering är en kontinuerlig process för datamarkering som uppdaterar era målgrupper som svar på användaraktivitet. När en målgrupp har skapats och sparats tillämpas segmentdefinitionen på inkommande data till [!DNL Real-Time Customer Profile]. Tillägg och borttagningar till målgruppen behandlas regelbundet, vilket säkerställer att målgruppen förblir relevant.
 
-Läs [dokumentationen om direktuppspelningssegmentering](./api/streaming-segmentation.md) om du vill veta mer om direktuppspelningssegmentering.
+Läs [dokumentationen om direktuppspelningssegmentering](./methods/streaming-segmentation.md) om du vill veta mer om direktuppspelningssegmentering.
 
 ### Gruppsegmentering {#batch}
 
@@ -94,11 +93,10 @@ Batchmålgrupper utvärderas automatiskt var 24:e timme. Om du vill utvärdera e
 >id="platform_segments_evaluation_edge"
 >title="Edge-utvärdering"
 >abstract="Edge segmentering är möjligheten att omedelbart utvärdera segment i Platform i Edge Network, vilket möjliggör användning av samma sida och nästa sida."
->additional-url="https://experienceleague.adobe.com/docs/experience-platform/segmentation/ui/edge-segmentation.html" text="Användargränssnittsguide för Edge-segmentering"
 
-Edge segmentering är möjligheten att omedelbart utvärdera segment i plattformen [på Edge Network](../web-sdk/home.md), vilket möjliggör användning av samma sida och nästa sida.
+Edge segmentering är möjligheten att omedelbart utvärdera segment i plattformen [på Edge Network](../landing/edge-and-hub-comparison.md), vilket möjliggör användning av samma sida och nästa sida.
 
-Läs antingen [API-dokumentationen](./api/edge-segmentation.md) eller [gränssnittsdokumentationen](./ui/edge-segmentation.md) om du vill veta mer om kantsegmentering.
+Läs antingen [API-dokumentationen](./methods/edge-segmentation.md) eller [gränssnittsdokumentationen](./methods/edge-segmentation.md) om du vill veta mer om kantsegmentering.
 
 ## Få tillgång till segmenteringsresultat
 
@@ -165,7 +163,7 @@ Genom att tilldela en variabel till inköpsattributet förenklar er definition a
 
 ### Segmentering för flera enheter {#multi-entity}
 
-Med den avancerade segmenteringsfunktionen för flera enheter kan du utöka [!DNL Real-Time Customer Profile]-data med ytterligare data baserade på produkter, butiker eller andra icke-personella enheter, även kallade dimensionsenheter. Därför kan [!DNL Segmentation Service] komma åt ytterligare fält under segmentdefinitionen som om de vore inbyggda i datalagret [!DNL Profile]. Multientitetssegmentering ger flexibilitet när det gäller att identifiera målgrupper baserat på data som är relevanta för era unika affärsbehov. Mer information, inklusive användningsexempel och arbetsflöden, finns i [segmenteringsguiden för flera enheter](multi-entity-segmentation.md).
+Med den avancerade segmenteringsfunktionen för flera enheter kan du utöka [!DNL Real-Time Customer Profile]-data med ytterligare data baserade på produkter, butiker eller andra icke-personella enheter, även kallade dimensionsenheter. Därför kan [!DNL Segmentation Service] komma åt ytterligare fält under segmentdefinitionen som om de vore inbyggda i datalagret [!DNL Profile]. Multientitetssegmentering ger flexibilitet när det gäller att identifiera målgrupper baserat på data som är relevanta för era unika affärsbehov. Mer information, inklusive användningsexempel och arbetsflöden, finns i [segmenteringsguiden för flera enheter](./tutorials/multi-entity-segmentation.md).
 
 ## [!DNL Segmentation Service] datatyper
 

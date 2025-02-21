@@ -2,16 +2,16 @@
 title: Frågor och svar
 description: Få svar på vanliga frågor om målgrupper och andra segmenteringsrelaterade koncept.
 exl-id: 79d54105-a37d-43f7-adcb-97f2b8e4249c
-source-git-commit: 29d9445e6e71c60f4b596a5e645a56d2b70e133c
+source-git-commit: 4afb2c76f2022423e8f1fa29c91d02b43447ba90
 workflow-type: tm+mt
-source-wordcount: '4215'
+source-wordcount: '4810'
 ht-degree: 0%
 
 ---
 
 # Vanliga frågor och svar
 
-Adobe Experience Platform [!DNL Segmentation Service] innehåller ett användargränssnitt och RESTful API som gör att du kan skapa målgrupper med hjälp av segmentdefinitioner eller andra källor från dina [!DNL Real-Time Customer Profile]-data. Dessa målgrupper är centralt konfigurerade och underhållna på Platform och är tillgängliga för alla Adobe-lösningar. Nedan följer en lista med vanliga frågor om målgrupper och segmentering.
+Adobe Experience Platform [!DNL Segmentation Service] innehåller ett användargränssnitt och RESTful API som gör att du kan skapa målgrupper med hjälp av segmentdefinitioner eller andra källor från dina [!DNL Real-Time Customer Profile]-data. Dessa målgrupper är centralt konfigurerade och underhållna på Platform och är tillgängliga via alla Adobe-lösningar. Nedan följer en lista med vanliga frågor om målgrupper och segmentering.
 
 ## Målgruppsportal
 
@@ -19,7 +19,7 @@ I följande avsnitt listas frågor som rör Audience Portal.
 
 ### Har jag tillgång till Audience Portal och Audience Composition?
 
-Audience Portal och Audience Composition är tillgängliga för alla Real-Time CDP Prime- och Ultimate-kunder (B2C, B2B och B2P Editions) och Journey Optimizer Select-, Prime-, Ultimate Starter- och Ultimate-kunder.
+Audience Portal och Audience Composition är tillgängliga för alla Real-Time CDP Prime- och Ultimate-kunder (B2C, B2B och B2P Editions) samt för Journey Optimizer Select-, Prime-, Ultimate Starter- och Ultimate-kunder.
 
 I nuläget stöds endast profilbaserade målgrupper. Stöd för kontobaserade målgrupper kommer att läggas till i en senare version.
 
@@ -358,6 +358,16 @@ I följande avsnitt listas frågor som rör medlemskap för målgrupper.
 
 Om du vill bekräfta en profils målgruppsmedlemskap går du till sidan med profilinformation för den profil du vill bekräfta. Välj **[!UICONTROL Attributes]**, följt av **[!UICONTROL View JSON]**, så kan du bekräfta att objektet `segmentMembership` innehåller målgruppens ID.
 
+### Kan målgruppsmedlemskapet växla mellan idealiskt och faktiskt medlemskap?
+
+Ja, målgruppsmedlemskapet kan avvika från det idealiska och det faktiska medlemskapet om en målgrupp utvärderas med hjälp av direktuppspelningssegmentering **och** som målgruppen baseras på en målgrupp som utvärderats med batchsegmentering.
+
+Om till exempel Audience A är baserad på Audience B och Audience B utvärderas med batchsegmentering, eftersom Audience B bara uppdateras var 24:e timme, kommer Audience A att gå längre bort från de faktiska data som synkroniseras om med Audience B-uppdateringarna.
+
+## Gruppsegmentering {#batch-segmentation}
+
+I följande avsnitt visas frågor som rör gruppsegmentering.
+
 ### Hur löser batchsegmentering profilmedlemskapet?
 
 Publiker som utvärderats med batchsegmentering löses dagligen, med målgruppsmedlemskapsresultaten registrerade i profilens `segmentMembership`-attribut. Profilsökningar genererar en ny version av profilen vid tidpunkten för sökningen, men uppdaterar **inte** gruppsegmenteringsresultaten.
@@ -380,3 +390,44 @@ Det kan ta upp till tre timmar innan strömmande data är tillgängliga i arbets
 
 Om ett batchsegmenteringsjobb till exempel körs vid 9:0, är det garanterat att det innehåller direktuppspelade indata **fram till** 6:0. Direktuppspelning av inkapslade data som har importerats efter 6.0 men före 20.00 **inkluderas.**
 
+## Edge segmentering {#edge-segmentation}
+
+I följande avsnitt visas frågor om kantsegmentering.
+
+### Hur lång tid tar det innan en segmentdefinition är tillgänglig på Edge Network?
+
+Det tar upp till en timme innan en segmentdefinition är tillgänglig på Edge Network.
+
+## Direktuppspelningssegmentering {#streaming-segmentation}
+
+I följande avsnitt visas frågor om direktuppspelningssegmentering.
+
+### Händer direktuppspelad segmentering&quot;utan kvalificering&quot; också i realtid?
+
+I de flesta fall sker icke-kvalificering av direktuppspelad segmentering i realtid. Direktuppspelningssegment som använder segment av segment saknar dock **inte** behörighet i realtid, utan kvalificerar sig inte efter 24 timmar.
+
+### Vilka data fungerar direktuppspelningssegmentering på?
+
+Direktuppspelningssegmentering fungerar på alla data som har importerats från en direktuppspelningskälla. Data som hämtas in med hjälp av en batchbaserad källa utvärderas nightly, även om de kvalificerar för direktuppspelningssegmentering. Händelser som direktuppspelas i systemet med en tidsstämpel som är äldre än 24 timmar kommer att bearbetas i det efterföljande batchjobbet.
+
+### Hur definieras segment som grupp- eller direktuppspelningssegmentering?
+
+En segmentdefinition definieras som grupp-, direktuppspelnings- eller kantsegmentering baserat på en kombination av frågetyp och händelsehistorikens varaktighet. En lista över vilka segment som ska utvärderas som en definition av ett direktuppspelat segment finns i avsnittet [frågetyper för direktuppspelningssegmentering](#query-types).
+
+Observera att om en segmentdefinition innehåller **både** och `inSegment` uttryck och en direkt enkel händelsekedja, kan den inte kvalificera för direktuppspelningssegmentering. Om du vill att den här segmentdefinitionen ska vara giltig för direktuppspelningssegmentering, bör du göra den direkta single-event-kedjan till ett eget segment.
+
+### Varför ökar antalet&quot;totalt kvalificerade&quot; segment medan antalet under&quot;Senaste X dagarna&quot; är noll i avsnittet med segmentdefinitionsdetaljer?
+
+Antalet kvalificerade segment baseras på det dagliga segmenteringsjobbet, som omfattar målgrupper som är kvalificerade för både batch- och direktuppspelningssegment. Detta värde visas för både grupp- och direktuppspelningssegment.
+
+Talet under de senaste X dagarna **endast** innehåller målgrupper som är kvalificerade för direktuppspelningssegmentering, och **endast** ökar om du har direktuppspelade data i systemet och det räknas mot den direktuppspelningsdefinitionen. Det här värdet visas **endast** för direktuppspelningssegment. Därför kan det här värdet **** visas som 0 för gruppsegment.
+
+Om du ser att talet under&quot;De senaste X dagarna&quot; är noll och linjediagrammet också visar noll, har du **inte** direktuppspelat några profiler i systemet som skulle kvalificera för det segmentet.
+
+### Hur lång tid tar det innan en segmentdefinition är tillgänglig?
+
+Det tar upp till en timme innan en segmentdefinition är tillgänglig.
+
+### Finns det några begränsningar för de data som strömmas in?
+
+För att direktuppspelade data ska kunna användas vid direktuppspelningssegmentering måste det finnas **ett** mellanrum mellan de direktuppspelade händelserna. Om för många händelser direktuppspelas inom samma sekund kommer Platform att behandla dessa händelser som robotgenererade data och de kommer att ignoreras. Som bästa praxis bör du ha **minst** fem sekunder mellan händelsedata för att säkerställa att data används på rätt sätt.

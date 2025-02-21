@@ -3,9 +3,9 @@ solution: Experience Platform
 title: Användargränssnittshandbok för Segment Builder
 description: Segmentbyggaren i Adobe Experience Platform-användargränssnittet har en omfattande arbetsyta som du kan använda för att interagera med profildataelement. Arbetsytan innehåller intuitiva kontroller för att skapa och redigera regler, till exempel dra-och-släpp-paneler som används för att representera dataegenskaper.
 exl-id: b27516ea-8749-4b44-99d0-98d3dc2f4c65
-source-git-commit: e74d04119593dddcaf6a5c710b685c606f5998d6
+source-git-commit: e7c0551276d31d6809ace096c00e0dc2665090e6
 workflow-type: tm+mt
-source-wordcount: '4868'
+source-wordcount: '4889'
 ht-degree: 0%
 
 ---
@@ -101,14 +101,14 @@ I det här fallet kan du mappa de två rapportsviterna med följande schema:
 
 >[!NOTE]
 >
->De generiska eVarna fylls i men du bör **inte** använda dem i dina segmentdefinitioner (om det är möjligt), eftersom värdena kan betyda andra saker än vad de ursprungligen var i sina rapporter.
+>De generiska eVar-värdena fylls i men du bör **inte** använda dem i dina segmentdefinitioner (om det är möjligt), eftersom värdena kan betyda andra saker än vad de ursprungligen var i sina rapporter.
 
 När rapportsviterna har mappats kan du använda dessa nyligen mappade fält i dina profilrelaterade arbetsflöden och segmentering.
 
 | Scenario | Unionens schemaupplevelse | Generisk variabel för segmentering | Segmentmappad variabel |
 | -------- | ----------------------- | ----------------------------- | ---------------------------- |
 | Ett rapportpaket | En egen namnbeskrivning ingår i generiska variabler. <br><br>**Exempel:** Sidnamn (eVar2) | <ul><li>Egen namnbeskrivning ingår i generiska variabler</li><li>Frågor använder data från den specifika datauppsättningen, eftersom det är den enda</li></ul> | Frågor kan använda Adobe Analytics-data och eventuellt andra källor. |
-| Flera rapportsviter | Inga egna namnbeskrivningar ingår i generiska variabler. <br><br>**Exempel:** eVar2 | <ul><li>Alla fält med flera beskrivningar visas som generiska. Det innebär att inga egna namn visas i användargränssnittet.</li><li>Frågor kan använda data från alla datauppsättningar som innehåller eVarna, vilket kan resultera i blandade eller felaktiga resultat.</li></ul> | Frågor använder korrekt kombinerade resultat från flera datauppsättningar. |
+| Flera rapportsviter | Inga egna namnbeskrivningar ingår i generiska variabler. <br><br>**Exempel:** eVar2 | <ul><li>Alla fält med flera beskrivningar visas som generiska. Det innebär att inga egna namn visas i användargränssnittet.</li><li>Frågor kan använda data från alla datauppsättningar som innehåller eVar, vilket kan resultera i blandade eller felaktiga resultat.</li></ul> | Frågor använder korrekt kombinerade resultat från flera datauppsättningar. |
 
 ### Målgrupper
 
@@ -241,6 +241,10 @@ Tidsbegränsningar gör att du kan tillämpa tidsbegränsningar för tidsbaserad
 >[!IMPORTANT]
 >
 >Om du har skapat en segmentdefinition med tidsbegränsningen &quot;Den här månaden&quot; eller &quot;Det här året&quot; före juni 2024 måste du spara om segmentdefinitionerna. Före juni 2024 baserades&quot;Denna månad&quot; på 30 dagar och&quot;Detta år&quot; på 365 dagar.
+
+>[!NOTE]
+>
+>Både tidsbegränsningen [för ignorering av årstid](./ignore-year.md) och [tidsbegränsningen på regelnivå](./segment-refactoring.md) har redan omarbetats, med mer information tillgänglig i de länkade översikterna.
 
 Listan över tillgängliga tidsbegränsningar är följande:
 
@@ -394,7 +398,7 @@ När du fortsätter att skapa segmentdefinitionen kan du visa en sidnumrerad fö
 
 Du kan också välja en utvärderingsmetod. Om du vet vilken utvärderingsmetod du vill använda kan du välja önskad utvärderingsmetod med hjälp av listrutan. Om du vill veta vilka utvärderingstyper som den här segmentdefinitionen kvalificerar för kan du välja bläddringsikonen ![mappikon med ett förstoringsglas ](/help/images/icons/folder-search.png) för att visa en lista över tillgängliga metoder för utvärdering av segmentdefinition.
 
-[!UICONTROL Evaluation method eligibility]-pekaren visas. Den här drivrutinen visar tillgängliga utvärderingsmetoder, som batchvis, direktuppspelning och kant. Förvisaren visar vilka utvärderingsmetoder som är kvalificerade och inte berättigade. Beroende på vilka parametrar du har använt i segmentdefinitionen kanske den inte uppfyller kraven för vissa utvärderingsmetoder. Mer information om kraven för respektive bedömningsmetod finns i översikterna för [direktuppspelningssegmentering](./streaming-segmentation.md#query-types) eller [kantsegmentering](./edge-segmentation.md#query-types).
+[!UICONTROL Evaluation method eligibility]-pekaren visas. Den här drivrutinen visar tillgängliga utvärderingsmetoder, som batchvis, direktuppspelning och kant. Förvisaren visar vilka utvärderingsmetoder som är kvalificerade och inte berättigade. Beroende på vilka parametrar du har använt i segmentdefinitionen kanske den inte uppfyller kraven för vissa utvärderingsmetoder. Mer information om kraven för respektive bedömningsmetod finns i översikterna för [direktuppspelningssegmentering](../methods/streaming-segmentation.md#query-types) eller [kantsegmentering](../methods/edge-segmentation.md#query-types).
 
 Du kan också ändra utvärderingsmetoden för segmentdefinitionen när du är klar med att skapa den. Om du ändrar utvärderingsmetoden från Edge eller Streaming till Batch kan du **inte** ändra tillbaka till Edge eller Streaming. Ändringen av utvärderingsmetoden träder **endast** i kraft när du väljer **[!UICONTROL Save]** i povern. Om du avbryter dialogrutan **behålls** den ursprungliga utvärderingsmetoden.
 

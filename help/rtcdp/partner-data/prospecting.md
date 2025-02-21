@@ -3,7 +3,7 @@ title: Engagera och skaffa nya kunder utan att vara beroende av cookies från tr
 description: Lär dig hur du engagerar och skaffar nya kunder genom prospektering av användningsfall, utan att förlita dig på tredjepartscookies.
 feature: Use Cases, Customer Acquisition
 exl-id: b9e7b3af-2a13-4904-bd12-e3ed05a1988e
-source-git-commit: e52eb90b64ae9142e714a46017cfd14156c78f8b
+source-git-commit: e7c0551276d31d6809ace096c00e0dc2665090e6
 workflow-type: tm+mt
 source-wordcount: '2027'
 ht-degree: 1%
@@ -14,7 +14,7 @@ ht-degree: 1%
 
 >[!AVAILABILITY]
 >
->* Den här funktionen är tillgänglig för kunder som har licens för Real-Time CDP (App Service), Adobe Experience Platform Activation, Real-Time CDP, Real-Time CDP Prime, Real-Time CDP Ultimate. Läs mer om de här paketen i [produktbeskrivningarna](https://helpx.adobe.com/legal/product-descriptions.html) och kontakta din Adobe-representant för mer information.
+>* Den här funktionen är tillgänglig för kunder som har licens för Real-Time CDP (App Service), Adobe Experience Platform Activation, Real-Time CDP, Real-Time CDP Prime och Real-Time CDP Ultimate. Läs mer om de här paketen i [produktbeskrivningarna](https://helpx.adobe.com/legal/product-descriptions.html) och kontakta din Adobe-representant för mer information.
 
 Utnyttja datastödet från tredje part i Real-Time CDP för att utöka er profilbas med profiler för potentiella kunder från datapartners och engagera dem i kundvärvningen eller nå nya kunder.
 
@@ -24,7 +24,7 @@ Utnyttja datastödet från tredje part i Real-Time CDP för att utöka er profil
 
 Varumärken står samtidigt inför utmaningar när det gäller att på ett ansvarsfullt sätt genomföra kundvärvningsärenden utan att vara beroende av cookies från tredje part, begränsade budgetar och högre krav på transparens och avkastning på annonskostnaderna.
 
-Adobe Real-time Customer Data Platform kan hjälpa varumärken att på ett säkert sätt övergå från fall av användning med Data Management Platform (DMP) till alternativ som inte kräver cookies och göra detta på ett sätt som gör att man kan utveckla den fullständiga finessen och kraften hos självbetjäningssegmentering, målgruppsböjning och aktivering till ett enda system. Utan att kompromissa med Adobe fokuserar vi på ansvarsfull dataanvändning via en patenterad datastyrning och ett regelverk för samtycke.
+Adobe Real-Time Customer Data Platform kan hjälpa varumärken att på ett säkert sätt övergå till att använda sina datahanteringsplattformar (DMP) till cookie-fria alternativ och göra detta på ett sätt som gör att självbetjäningssegmentering, målgruppsböjning och aktivering kan utvecklas till ett enda system. Utan att kompromissa med Adobe orubbliga fokus på ansvarsfull dataanvändning via en patenterad ramverk för datastyrning och samtycke.
 
 Följ till exempel de steg som beskrivs i det här fallet när du behöver köra en kampanj för att locka potentiella kunder att bli användare eller kända kunder.
 
@@ -71,12 +71,12 @@ När du är klar med implementeringen av användningsexemplet kommer du att anv�
 * [Datauppsättningar](/help/catalog/datasets/overview.md)
 * [Källor](/help/sources/home.md)
 * [Prospekteringsprofiler](/help/profile/ui/prospect-profile.md)
-* [Potentiella målgrupper](/help/segmentation/ui/prospect-audience.md)
-* [Mål ](/help/destinations/home.md)
+* [Potentiella målgrupper](/help/segmentation/types/prospect-audiences.md)
+* [Mål](/help/destinations/home.md)
 
 ### Licensiera profilinformation från partnern {#license-profiles-from-partner}
 
-Det här steget beskrivs i [förutsättningarna](#prerequisites-and-planning) och Adobe antar att du har rätt avtalsavtal på plats med betrodda dataleverantörer för att importera profiler för potentiella kunder från dataparten.
+Det här steget beskrivs i [förutsättningarna](#prerequisites-and-planning) och Adobe förutsätter att du har rätt avtalsavtal på plats med betrodda dataleverantörer för att kunna importera profiler för potentiella kunder från dataparten.
 
 ### Utöka er profildata och styrningsmodell för att passa profiler som tillhandahålls av partners {#extend-governance-model}
 
@@ -96,7 +96,7 @@ Börja med att skapa en ny identitetstyp för de profiler som du ska ta emot fr�
 ![Skapa ett nytt namnområde för en partner-ID.](/help/rtcdp/assets/partner-data/prospecting/create-partner-identity-namespace.png)
 
 * Läs mer om namnutrymmen för partner-ID i avsnittet [identitetstyper](/help/identity-service/features/namespaces.md).
-* Läs om [hur du definierar identitetsfält](/help/xdm/ui/fields/identity.md) i användargränssnittet i Experience Platform.
+* Läs om [hur du definierar identitetsfält](/help/xdm/ui/fields/identity.md) i Experience Platform användargränssnitt.
 
 #### Skapa ett nytt schema med klassen **[!UICONTROL XDM Individual Prospect Profile]**
 
@@ -168,7 +168,7 @@ Om du vill läsa in en fil som du har fått från partnern till datauppsättning
 
 ![Lägg till fil i datauppsättning.](/help/rtcdp/assets/partner-data/prospecting/add-file-to-dataset.png)
 
-När du har läst in listan över profiler från dataparten till Real-Time CDP fortsätter du till [Inspect-avsnittet med inlästa profiler för potentiella kunder](#inspect-profiles) för att kontrollera att profilerna för potentiella kunder fylls i i användargränssnittet.
+När du har läst in listan över profiler från dataparten till Real-Time CDP fortsätter du till avsnittet [Inspektera de inlästa profilerna för potentiella kunder](#inspect-profiles) för att kontrollera att profilerna för potentiella kunder fylls i i användargränssnittet.
 
 #### Importera data för potentiella kunder via källanslutningar
 
@@ -181,7 +181,7 @@ Några av de rekommenderade källanslutningarna för detta ändamål finns i lis
 
 När du har läst in listan över profiler från dataparten till Real-Time CDP fortsätter du till nästa avsnitt för att kontrollera att profilerna för potentiella kunder fylls i i användargränssnittet.
 
-#### Inspect: profiler för inlästa potentiella kunder {#inspect-profiles}
+#### Inspektera de inlästa profilerna för potentiell kund {#inspect-profiles}
 
 Navigera till **[!UICONTROL Prospects]** > **[!UICONTROL Profiles]** i den vänstra listen om du vill se en lista över profiler för potentiella kunder.
 
@@ -213,7 +213,7 @@ Observera att målgruppsupplevelsen för profiler med potentiella kunder skiljer
 * Endast utvärdering av batchprofil.
 * Har inte stöd för att bygga målgrupper baserat på tidsseriehändelser.
 
-Läs mer om [potentiella målgrupper](/help/segmentation/ui/prospect-audience.md).
+Läs mer om [potentiella målgrupper](/help/segmentation/types/prospect-audiences.md).
 
 ### Aktivera profiler för potentiella kunder till mål {#activate-to-destinations}
 

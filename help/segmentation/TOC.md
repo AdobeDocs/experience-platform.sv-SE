@@ -5,9 +5,9 @@ breadcrumb-title: Användarhandbok om segmenteringstjänst
 user-guide-description: Bygg målgrupper utifrån dina kundprofildata i realtid med segmentdefinitioner som har genererats av Adobe Experience Platform eller externa källor.
 feature: Segments
 role: User
-source-git-commit: 4ef3f6dc07cb5d17146d48c7a41e3745fd9a3a58
+source-git-commit: be480fee733eb786c5488a9a10d04a62ef845566
 workflow-type: tm+mt
-source-wordcount: '192'
+source-wordcount: '200'
 ht-degree: 24%
 
 ---
@@ -22,14 +22,12 @@ ht-degree: 24%
    - [Översikt](api/overview.md)
    - [Komma igång](api/getting-started.md)
    - [Målgrupper](api/audiences.md)
-   - [Edge segmentering](api/edge-segmentation.md)
    - [Exportera jobb](api/export-jobs.md)
    - [Förhandsvisningar och uppskattningar](api/previews-and-estimates.md)
    - [Scheman](api/schedules.md)
    - [Segmentdefinitioner](api/segment-definitions.md)
    - [Segmentjobb](api/segment-jobs.md)
    - [Segmentsökning](api/segment-search.md)
-   - [Direktuppspelningssegmentering](api/streaming-segmentation.md)
 - Segmenteringsgränssnitt {#ui}
    - [Översikt](ui/overview.md)
    - [Audience dashboard](ui/audience-dashboard.md)
@@ -37,19 +35,33 @@ ht-degree: 24%
    - [Målgruppssammansättning](ui/audience-composition.md)
    - [Segment Builder](ui/segment-builder.md)
    - [Federerad målgruppssammansättning](https://experienceleague.adobe.com/sv/docs/federated-audience-composition/using/home)
-   - [Kontomålgrupper](ui/account-audiences.md)
-   - [Målgrupper som ser likadana ut](ui/lookalike-audiences.md)
-   - [Potentiella målgrupper](ui/prospect-audience.md)
-   - [Edge segmentering](ui/edge-segmentation.md)
-   - [Direktuppspelningssegmentering](ui/streaming-segmentation.md)
-   - [Direktuppspelningssegmentering (video)](video/streaming-segmentation-overview.md)
    - [Ignorera uppdatering av tidsbegränsning för år](ui/ignore-year.md)
    - [Omfaktorisering av tidsbegränsningar](ui/segment-refactoring.md)
    - Segmentmatchning {#segment-match}
       - [Översikt över segmentmatchning](ui/segment-match/overview.md)
       - [Felsökning](ui/segment-match/troubleshooting.md)
-- [Godkännande](consents.md)
-- [Segmentering för flera enheter](multi-entity-segmentation.md)
+- Segmenteringsmetoder {#methods}
+   - [Översikt](methods/overview.md)
+   - [Gruppsegmentering](methods/batch-segmentation.md)
+   - [Direktuppspelningssegmentering](methods/streaming-segmentation.md)
+   - [Edge segmentering](methods/edge-segmentation.md)
+- Målgruppstyper {#types}
+   - [Översikt](types/overview.md)
+   - [Målgrupper](types/people-audiences.md)
+   - [Potentiella målgrupper](types/prospect-audiences.md)
+   - [Kontomålgrupper](types/account-audiences.md)
+   - [Målgrupper som ser likadana ut](types/lookalike-audiences.md)
+- Självstudiekurser {#tutorials}
+   - [Skapa en segmentdefinition](tutorials/create-a-segment.md)
+   - [Skapa en segmentdefinition (video)](video/create-segment.md)
+   - [Skapa en dynamisk segmentdefinition (video)](video/create-a-dynamic-segment.md)
+   - [Skapa en segmentdefinition för flera enheter (video)](video/create-multi-entity-segments.md)
+   - [Segmentering för flera enheter](tutorials/multi-entity-segmentation.md)
+   - [Godkännande](tutorials/consents.md)
+   - [Utvärdera en segmentdefinition](tutorials/evaluate-a-segment.md)
+   - [Importera och använda externa målgrupper](tutorials/using-external-audiences.md)
+   - [Skapa en datauppsättning för att exportera data](tutorials/create-dataset-export-segment.md)
+   - [Tvinga målgrupper att följa dataanvändningen](tutorials/governance.md)
 - Profile Query Language {#pql}
    - [Översikt](pql/overview.md)
    - [Booleska funktioner](pql/boolean-functions.md)
@@ -64,15 +76,6 @@ ht-degree: 24%
    - [Filterfunktioner](pql/filter-functions.md)
    - [Logiska kvantifierare](pql/logical-quantifiers.md)
    - [Diverse funktioner](pql/misc-functions.md)
-- Tutorials {#tutorials}
-   - [Skapa ett segment](tutorials/create-a-segment.md)
-   - [Skapa ett segment (video)](video/create-segment.md)
-   - [Skapa ett dynamiskt segment (video)](video/create-a-dynamic-segment.md)
-   - [Skapa ett flerenhetssegment (video)](video/create-multi-entity-segments.md)
-   - [Utvärdera ett segment](tutorials/evaluate-a-segment.md)
-   - [Importera och använda externa målgrupper](tutorials/using-external-audiences.md)
-   - [Skapa en datauppsättning för att exportera data](tutorials/create-dataset-export-segment.md)
-   - [Stärk regelefterlevnaden för datasegment](tutorials/governance.md)
 - [Uppdatering av kvalificeringskriterier](./eligibility-criteria-update.md)
 - [Vanliga frågor och svar](./faq.md)
 - [API-referens](https://www.adobe.io/experience-platform-apis/references/segmentation/)

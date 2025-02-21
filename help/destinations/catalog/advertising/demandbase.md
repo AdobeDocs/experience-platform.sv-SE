@@ -1,30 +1,30 @@
 ---
 title: Demandbase-anslutning
-description: Använd den här destinationen för att aktivera era kontomålgrupper för Account-Based Marketing-användningsfall (ABM). Annonsera relevanta personer och roller i målkontona via DemandBans B2B Demand Side Platform (DSP). Målkonton kan också berikas med tredjepartsdata från Demandbase, för andra användningsfall i senare led i marknadsförings- och säljprocessen.
-badgeB2B: label="B2B Edition" type="Informative" url=" https://experienceleague.adobe.com/docs/experience-platform/rtcdp/intro/rtcdp-intro/overview.html?lang=en#rtcdp-editions newtab=true"
+description: Använd den här destinationen för att aktivera dina kontomålgrupper för användningsfall inom Account-Based Marketing (ABM). Annonsera till relevanta personas och roller i dina målgruppskonton via DemandBases B2B Demand Side Platform (DSP). Målgruppskonton kan också berikas med tredjepartsdata från Demandbase, för andra användningsfall i senare led av marknadsförings- och säljprocessen.
+badgeB2B: label="B2B edition" type="Informative" url=" https://experienceleague.adobe.com/docs/experience-platform/rtcdp/intro/rtcdp-intro/overview.html?lang=en#rtcdp-editions newtab=true"
 badgeB2P: label="B2P Edition" type="Positive" url=" https://experienceleague.adobe.com/docs/experience-platform/rtcdp/intro/rtcdp-intro/overview.html?lang=en#rtcdp-editions newtab=true"
 last-substantial-update: 2024-09-30T00:00:00Z
-source-git-commit: 92abae6bc63c13f1103364ae82cc9c04459ce00f
+exl-id: a84609a2-f1d3-4998-9db4-ad59c0a0b631
+source-git-commit: 08c2c7f5080f0e6afb7be53aad9f88ba0fccf923
 workflow-type: tm+mt
 source-wordcount: '671'
-ht-degree: 0%
+ht-degree: 15%
 
 ---
-
 
 # Demandbase-anslutning {#demandbase}
 
 >[!AVAILABILITY]
 >
->>Funktionen för att aktivera kontomålgrupper för Demandbase-målet är tillgänglig för företag som köper utgåvorna [Business-to-Business](/help/rtcdp/overview.md#rtcdp-b2b) och [Business-to-Person](/help/rtcdp/overview.md#rtcdp-b2p) av Real-time Customer Data Platform.
+>>Funktionen för att aktivera kontomålgrupper för Demandbase-målet är tillgänglig för företag som köper utgåvorna [Business-to-Business](/help/rtcdp/overview.md#rtcdp-b2b) och [Business-to-Person](/help/rtcdp/overview.md#rtcdp-b2p) av Real-Time Customer Data Platform.
 
-Aktivera profiler för dina Demandbase-kampanjer för målgruppsanpassning, personalisering och nedtryckning, baserat på [målgrupper](/help/segmentation/ui/account-audiences.md) .
+Aktivera profiler för dina Demandbase-kampanjer för målgruppsanpassning, personalisering och nedtryckning, baserat på [målgrupper](/help/segmentation/types/account-audiences.md) .
 
 ## Användningsfall {#use-case}
 
-Använd den här destinationen för att aktivera era kontomålgrupper för Account-Based Marketing-användningsfall (ABM). Annonsera relevanta personer och roller i målkontona via DemandBans B2B Demand Side Platform (DSP). Målkonton kan också berikas med tredjepartsdata från Demandbase, för andra användningsfall i senare led i marknadsförings- och säljprocessen.
+Använd den här destinationen för att aktivera dina kontomålgrupper för användningsfall inom Account-Based Marketing (ABM). Annonsera till relevanta personas och roller i dina målgruppskonton via DemandBases B2B Demand Side Platform (DSP). Målgruppskonton kan också berikas med tredjepartsdata från Demandbase, för andra användningsfall i senare led av marknadsförings- och säljprocessen.
 
-Använd till exempel Demandbase:s DSP för att inrikta sig på specifika personer eller roller inom nyckelkonton för generering av leads i topptrattform, eller skapa och utöka inköpsgrupper. Använd Demandbase-målet för att utforska andra användningsfall för att effektivt rikta in dina konton.
+Använd till exempel Demandbase:s reklamtekniker DSP för att inrikta dig på specifika personer eller roller inom nyckelkonton för ledande generering av leads, eller skapa och utöka inköpsgrupper. Använd Demandbase-målet för att utforska andra användningsfall för att effektivt rikta in dina konton.
 
 Med den här integreringen kan ni också personalisera webbplatsupplevelsen med kontosökning i realtid för att optimera engagemanget.
 
@@ -34,7 +34,7 @@ I det här avsnittet beskrivs vilken typ av målgrupper du kan exportera till de
 
 | Målgruppsursprung | Stöds | Beskrivning |
 ---------|----------|----------|
-| [!DNL Segmentation Service] | ✓ | Publiker som genererats via Experience Platform [segmenteringstjänsten](../../../segmentation/home.md). |
+| [!DNL Segmentation Service] | ✓ | Publiker som genererats via Experience Platform [segmenteringstjänst](../../../segmentation/home.md). |
 | Anpassade överföringar | X | Publikerna [importerade](../../../segmentation/ui/overview.md#import-audience) till Experience Platform från CSV-filer. |
 
 {style="table-layout:auto"}

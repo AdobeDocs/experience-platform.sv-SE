@@ -2,10 +2,10 @@
 title: Versionsinformation om Adobe Experience Platform oktober 2023
 description: Versionsinformationen för Adobe Experience Platform i oktober 2023.
 exl-id: e9cf5299-8350-4b40-8f56-05e598846875
-source-git-commit: d6e306294d0a119108e2de7ba03ebed4f633fba1
+source-git-commit: 4afb2c76f2022423e8f1fa29c91d02b43447ba90
 workflow-type: tm+mt
 source-wordcount: '1048'
-ht-degree: 37%
+ht-degree: 38%
 
 ---
 
@@ -45,7 +45,7 @@ Adobe Experience Platform tillhandahåller en uppsättning tekniker som gör att
 | Typ | Funktion | Beskrivning |
 | --- | --- | --- |
 | Tillägg | Förbättring av konverterings-API för [!DNL Meta] | Det finns tre förbättringar i tillägget [Metakonverterings-API](/help/tags/extensions/server/meta/overview.md): <ul><li>Integrering med [[!DNL Meta Business Extension (MBE)]](/help/tags/extensions/server/meta/overview.md#integration-with-meta-business-extension-mbe): Skapar en sömlös inloggning genom att du kan dela ditt pixelID och din åtkomsttoken för Conversions API-integrering med Adobe.</li><li>Integrering med [[!DNL Event Match Quality Score (EMQ)]](/help/tags/extensions/server/meta/overview.md#integration-with-event-quality-match-score-emq): Gör att du kan leverera annonser till personer som troligtvis kommer att slutföra en önskad åtgärd och länka åtgärden tillbaka till de annonser som levereras.</li><li>Integrering med [[!DNL LiveRamp (Alpha)]](/help/tags/extensions/server/meta/overview.md#integration-with-liveramp-alpha): Gör att du kan skicka LiveRamp-ID:t i CIP-fältet, vilket eliminerar behovet av att dela PII direkt med partner eller Meta. </li></ul> |
-| Tillägg | API för konvertering av [!DNL LinkedIn] | Med [[!DNL LinkedIn] API:t för konverteringar](../../tags/extensions/server/linkedin/overview.md) kan du utvärdera effekten av dina LinkedIn-marknadsföringskampanjer genom att skicka händelsedata från Experience Platform till LinkedIn. |
+| Tillägg | API för konvertering av [!DNL LinkedIn] | Med [[!DNL LinkedIn] API:t för konvertering](../../tags/extensions/server/linkedin/overview.md) kan du utvärdera effekten av dina LinkedIn-marknadsföringskampanjer genom att skicka händelsedata från Experience Platform till LinkedIn. |
 | Hemlighet | [!DNL LinkedIn] OAuth 2-hemlighet | Med [[!DNL LinkedIn] OAuth2-hemligheten](../../tags/ui/event-forwarding/secrets.md#linkedin-oauth-2) kan du skicka server-server-interaktioner till [!DNL LinkedIn] vid händelsevidarebefordran. |
 | Vidarebefordran av händelser | Uppdatera till taggar och händelsevidarebefordran | För att bevara prestanda för [taggar](https://experienceleague.adobe.com/docs/experience-platform/tags/home.html?lang=sv) och [händelsevidarebefordring](https://experienceleague.adobe.com/docs/experience-platform/tags/event-forwarding/overview.html) i plattformen behålls endast de senaste utvecklings- och scenbyggnaderna, både lyckade och misslyckade,. Alla byggen som inte längre används tas bort. Dessutom har begränsning och hastighetsbegränsning implementerats för att säkerställa att ett fåtal tunga API-användningar inte försämrar API-prestanda för andra. |
 | Tillägg | Element, regler och tillägg | [Element, regler och tillägg](https://experienceleague.adobe.com/docs/experience-platform/tags/extensions/overview.html) sorteras nu i bibliotekets utdata för att säkerställa mer konsekvens mellan flera versioner och distributioner av samma bibliotek. |
@@ -70,7 +70,7 @@ Mer information om datainsamling finns i [översikten över datainsamlingar](../
 | Funktionalitet | Beskrivning |
 | ----------- | ----------- |
 | (Beta) Stöd för hash-funktioner i beräknade fält | Förutom de funktioner som är specifika för [att exportera arrayer](../../destinations/ui/export-arrays-calculated-fields.md) eller element från en array, kan du nu använda ytterligare [hash-funktioner](../../destinations/ui/export-arrays-calculated-fields.md#hashing-functions) för att hash-formatera attribut i de exporterade filerna. De hash-funktioner som stöds är: `sha`, `sha256`, `sha512`, `hash`, `md5`, `crc32`. |
-| (Begränsad GA) Aktivera kontomålgrupper för vissa destinationer | Real-Time CDP B2B-kunder kan nu aktivera [kontomålgrupper](../../segmentation/ui/account-audiences.md) för vissa destinationer. Mer information om den här funktionen finns i självstudiekursen [Aktivera kontomålgrupper](/help/destinations/ui/activate-account-audiences.md). |
+| (Begränsad GA) Aktivera kontomålgrupper för vissa destinationer | Real-Time CDP B2B-kunder kan nu aktivera [kontomålgrupper](../../segmentation/types/account-audiences.md) för vissa destinationer. Mer information om den här funktionen finns i självstudiekursen [Aktivera kontomålgrupper](/help/destinations/ui/activate-account-audiences.md). |
 
 {style="table-layout:auto"}
 
@@ -98,7 +98,7 @@ Med [!DNL Segmentation Service] kan du segmentera data som lagras i [!DNL Experi
 
 | Funktion | Beskrivning |
 | ------- | ----------- |
-| Kontomålgrupper (Limited GA GA) | I Real-time Customer Data Platform B2B edition kan ni nu använda kontosegmentering för att göra marknadsföringssegmenteringen från personbaserade målgrupper till kontobaserade målgrupper så enkel och avancerad som möjligt. Mer information om den här funktionen finns i [översikten över kontomålgrupper](../../segmentation/ui/account-audiences.md). |
+| Kontomålgrupper (Limited GA GA) | I Real-Time Customer Data Platform B2B edition kan ni nu använda kontosegmentering för att göra marknadsföringssegmenteringen från personbaserade målgrupper till kontobaserade målgrupper så enkel och avancerad som möjligt. Mer information om den här funktionen finns i [översikten över kontomålgrupper](../../segmentation/types/account-audiences.md). |
 
 Läs [Översikt över segmenteringstjänsten](../../segmentation/home.md) om du vill veta mer om segmenteringstjänsten.
 

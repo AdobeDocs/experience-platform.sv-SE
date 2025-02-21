@@ -3,7 +3,7 @@ title: Personalisera upplevelser på plats för okända besökare med partnerst�
 description: Lär dig hur du använder partnerstödd igenkänning av besökare för att leverera personaliserade upplevelser på plats för besökarna.
 feature: Use Cases, Personalization, Customer Acquisition
 exl-id: 99677988-1df8-47b1-96b1-0ef6db818a1d
-source-git-commit: 5b37b51308dc2097c05b0e763293467eb12a2f21
+source-git-commit: 02f2082e695d157415c9e0c59ca5d371c94bb991
 workflow-type: tm+mt
 source-wordcount: '2565'
 ht-degree: 1%
@@ -14,7 +14,7 @@ ht-degree: 1%
 
 >[!AVAILABILITY]
 >
->Den här funktionen är tillgänglig för kunder som har licens för Real-Time CDP (App Service), Adobe Experience Platform Activation, Real-Time CDP, Real-Time CDP Prime, Real-Time CDP Ultimate. Läs mer om de här paketen i [produktbeskrivningarna](https://helpx.adobe.com/legal/product-descriptions.html) och kontakta din Adobe-representant för mer information.
+>Den här funktionen är tillgänglig för kunder som har licens för Real-Time CDP (App Service), Adobe Experience Platform Activation, Real-Time CDP, Real-Time CDP Prime och Real-Time CDP Ultimate. Läs mer om de här paketen i [produktbeskrivningarna](https://helpx.adobe.com/legal/product-descriptions.html) och kontakta din Adobe-representant för mer information.
 
 Lär dig hur du kan använda partnerstödd igenkänning för att leverera personaliserade upplevelser till besökare på era webbegenskaper. Använd den här självstudiekursen för att förstå implementeringssekvensen för olika element i Experience Platform och andra Experience Cloud-lösningar för att visa en personaliserad upplevelse för autentiserade och oautentiserade besökare.
 
@@ -24,7 +24,7 @@ Lär dig hur du kan använda partnerstödd igenkänning för att leverera person
 
 Fragmentering av digitala upplevelser när konsumenterna interagerar med varumärken på många olika sätt är mycket verkligt och blir allt svårare att lösa. De bästa strategierna för kundengagemang för sammanhängande upplevelser, målinriktade rekommendationer och skräddarsydda interaktioner begränsas alla av användarigenkänningen.
 
-Här kan partnerstödd realtidsigenkänning göra en meningsfull skillnad. Med Adobe kan identitetspartners ansluta sig till våra avancerade datainsamlingar på klientsidan och marknadsledande upplevelseoptimeringserbjudanden för att effektivt höja ribban när det gäller upplevelseleverans från första besöket och framåt, utan tidigare historik eller autentisering.
+Här kan partnerstödd realtidsigenkänning göra en meningsfull skillnad. Adobe gör det möjligt för identitetspartners att delta i vår avancerade datainsamling på klientsidan och marknadsledande upplevelseoptimering, för att effektivt höja ribban vid upplevelseleverans från första besöket och framåt, utan tidigare historik eller autentisering.
 
 Detta är särskilt värdefullt för vertikala annonser med låga autentiseringsnivåer, som konsumentförpackade varor, onlinebutiker med mera.
 
@@ -44,7 +44,7 @@ När du planerar att använda attribut som tillhandahålls av partners för att 
 
 ### UI-funktionalitet, plattformskomponenter och Experience Cloud-produkter som du kommer att använda {#ui-functionality-and-elements}
 
-För att implementera det här användningsexemplet måste du använda flera olika delar av Real-time Customer Data Platform och andra Experience Cloud-lösningar. Kontrollera att du har de [attributbaserade åtkomstkontrollsbehörigheterna](/help/access-control/abac/overview.md) som krävs för alla dessa områden, eller be systemadministratören att ge dig de behörigheter som krävs.
+För att implementera det här användningsexemplet måste du använda flera olika delar av Real-Time Customer Data Platform och andra Experience Cloud-lösningar. Kontrollera att du har de [attributbaserade åtkomstkontrollsbehörigheterna](/help/access-control/abac/overview.md) som krävs för alla dessa områden, eller be systemadministratören att ge dig de behörigheter som krävs.
 
 * Datainsamling
    * [Webb-SDK för Adobe Experience Platform](/help/web-sdk/home.md)
@@ -56,7 +56,7 @@ För att implementera det här användningsexemplet måste du använda flera oli
    * [Dataanvändningsetiketter](/help/data-governance/labels/overview.md)
    * [Datauppsättningar](/help/catalog/datasets/overview.md)
 * Webbegenskapspersonalisering
-   * [Edge segmentering](/help/segmentation/ui/edge-segmentation.md)
+   * [Edge segmentering](/help/segmentation/methods/edge-segmentation.md)
    * [Edge Personalization-mål](/help/destinations/destination-types.md#edge-personalization-destinations)
    * [Adobe Target](/help/destinations/catalog/personalization/adobe-target-connection.md) (eller en valfri personaliseringsplattform. Den här självstudiekursen om hur du använder Adobe Target som personaliseringsmotor)
 
@@ -71,7 +71,7 @@ Se videosjälvstudiekursen nedan för en genomgång av hur ni personaliserar web
 ![En infografik som beskriver hur du använder partnertillhandahållna attribut för att leverera personaliserade upplevelser till dina besökare.](/help/rtcdp/assets/partner-data/onsite-personalization/onsite-personalization-steps.png)
 
 1. Som **kund** licensierar du från **datapartnern** möjligheten att hämta insikter i realtid om annars anonyma webbplatsbesökare.
-2. Som **kund** distribuerar du bibliotek på klientsidan på dina egenskaper för att anropa **partner** API:er och du konfigurerar Web SDK eller Mobile SDK för att skicka signaler från partner till Real-Time CDP.
+2. Som **kund** distribuerar du bibliotek på klientsidan på dina egenskaper för att anropa **partner** API:er och du konfigurerar Web SDK eller Mobile SDK för att skicka partnerskickade signaler till Real-Time CDP.
 3. När du surfar på din webbplats eller i din app identifieras **besökaren** troligtvis av **partnern** som returnerar attribut tillsammans med ett ID.
 4. Real-Time CDP kör kantsegmentering för att utvärdera inkommande händelseträffar och kvarstår resultat mot [ECID-identifieraren](https://experienceleague.adobe.com/docs/id-service/using/home.html).
 5. Adobe Target använder kantsegmenteringsutdata för att återge upplevelsen till **besökaren** för anpassning under sessionen.
@@ -95,7 +95,7 @@ Läs mer om hur du [skapar ett namnområde för en partner-ID ](/help/rtcdp/part
 
 #### Skapa ett schema
 
-Skapa sedan ett [!UICONTROL Experience Event]-schema för de tidsseriedata som du senare samlar in från dina webbegenskaper och se till att du använder [!UICONTROL XDM ExperienceEvent] som basklass för schemat. Läs om hur du [skapar ett schema med hjälp av användargränssnittet i Experience Platform](/help/xdm/ui/resources/schemas.md#create).
+Skapa sedan ett [!UICONTROL Experience Event]-schema för de tidsseriedata som du senare samlar in från dina webbegenskaper och se till att du använder [!UICONTROL XDM ExperienceEvent] som basklass för schemat. Läs om hur du [skapar ett schema med Experience Platform-gränssnittet](/help/xdm/ui/resources/schemas.md#create).
 
 ![Arbetsytan Scheman med schemat Skapa och XDM Experience-händelsen har markerats.](/help/rtcdp/assets/partner-data/onsite-personalization/create-experience-event-schema.png)
 
@@ -115,7 +115,7 @@ På samma sätt som när du skapar ett schema måste du aktivera datauppsättnin
 
 ### Implementera händelsedatainsamling på din webbegenskap {#implement-data-collection}
 
-När du har konfigurerat datahanteringskonfigurationen måste du nu implementera [datainsamling](/help/collection/home.md) i realtid för händelsen på din webbegenskap. Du måste mäta din egendom med datainsamlingsbiblioteket Adobe - [!UICONTROL Web SDK] - för att samla in händelsesamtal i realtid och skicka tillbaka dem till Real-Time CDP. Det här objektet består av ett par olika åtgärder för ett fåtal datainsamlingskomponenter.
+När du har konfigurerat datahanteringskonfigurationen måste du nu implementera [datainsamling](/help/collection/home.md) i realtid för händelsen på din webbegenskap. Du måste mäta din egendom med Adobe datainsamlingsbibliotek - [!UICONTROL Web SDK] - för att samla in händelsesamtal i realtid och skicka tillbaka dem till Real-Time CDP. Det här objektet består av ett par olika åtgärder för ett fåtal datainsamlingskomponenter.
 
 >[!IMPORTANT]
 >
@@ -185,7 +185,7 @@ Använd [Experience Cloud ID-tjänsttillägget](/help/tags/extensions/client/id-
 
 #### Konfigurera miljöer
 
-Gå sedan vidare till avsnittet **[!UICONTROL Environments]** från den vänstra navigeringen. I det här steget måste du ansluta webbplatsen till Adobe Edge Network för att hämta och leverera besöksinformation i realtid.
+Gå sedan vidare till avsnittet **[!UICONTROL Environments]** från den vänstra navigeringen. I det här steget måste du ansluta din webbplats till Adobe Edge Network för att hämta och leverera besöksinformation i realtid.
 
 Markera ruteikonen till höger om utvecklingsmiljön och kopiera standardversionen av JavaScript-kodfragmentet som visas i ett modalt fönster.
 
@@ -215,7 +215,7 @@ I schemat väljer du de tredjepartsattribut som motsvarar de värden som du för
 
 #### Ställ in regler
 
-I avsnittet **[!UICONTROL Rules]** kan du konfigurera din webbplats så att den skickar en personaliseringsbegäran till Adobe med de inlästa attributen i de dataelement som du just har skapat. Läs mer om [att skapa regler](/help/tags/ui/managing-resources/rules.md).
+I avsnittet **[!UICONTROL Rules]** kan du konfigurera din webbplats så att den skickar en personaliseringsbegäran till Adobe med attributen inlästa i de dataelement som du just har skapat. Läs mer om [att skapa regler](/help/tags/ui/managing-resources/rules.md).
 
 Välj **[!UICONTROL Create new Rule]**.  Ge den här regeln namnet **[!UICONTROL Personalize]** och välj plustecknet bredvid **[!UICONTROL Events]**. Välj **[!UICONTROL Page Bottom]** som händelse och spara.
 
@@ -249,7 +249,7 @@ Välj **[!UICONTROL Add all Changed Resources]**, ge biblioteket ett namn, stäl
 
 Nu bör webbplatsen vara helt integrerad med Web SDK. Om du vill testa att datainsamlingen fungerar som förväntat kan du navigera till webbplatsen och använda webbläsarens utvecklarverktyg för att inspektera nätverkstrafiken.
 
-Ange `interact` i sökrutan, uppdatera sidan och se nätverksanrop från din webbplats till Adobe Edge-nätverkets ifyllnad.
+Ange `interact` i sökrutan, uppdatera sidan och du bör se nätverksanrop från din webbplats till Adobe Edge-nätverket.
 
 ![Vy över nätverkshändelser i utvecklarverktyg.](/help/rtcdp/assets/partner-data/onsite-personalization/events-filtered.png)
 
@@ -263,7 +263,7 @@ I plattformsgränssnittet går du till **[!UICONTROL Customer]** > **[!UICONTROL
 
 ![Vy över hur du navigerar till målgrupper.](/help/rtcdp/assets/partner-data/onsite-personalization/navigate-to-audiences.png)
 
-Du måste konfigurera din målgrupp med [kantsegmentering](/help/segmentation/ui/edge-segmentation.md) så att besökarnas målgruppsmedlemskap utvärderas i realtid när de besöker din webbegenskap.
+Du måste konfigurera din målgrupp med [kantsegmentering](/help/segmentation/methods/edge-segmentation.md) så att besökarnas målgruppsmedlemskap utvärderas i realtid när de besöker din webbegenskap.
 
 Se även till att ställa in en [aktiv-vid-kant-sammanfogningsprincip](/help/destinations/ui/activate-edge-personalization-destinations.md#create-merge-policy) för kantmålgrupperna.
 

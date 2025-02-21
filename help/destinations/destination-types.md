@@ -3,7 +3,7 @@ keywords: mål;mål;måltyper
 title: Måltyper och -kategorier
 description: Läs mer om de olika typerna och kategorierna av destinationer i Adobe Experience Platform.
 exl-id: 7826d1e2-bd6b-4f65-9da9-0a3b3e8bb93b
-source-git-commit: 322510055bd8b8803292a2b4af9df9e1dbee7ffb
+source-git-commit: 4afb2c76f2022423e8f1fa29c91d02b43447ba90
 workflow-type: tm+mt
 source-wordcount: '800'
 ht-degree: 0%
@@ -18,7 +18,7 @@ Läs den här sidan om du vill veta mer om de olika typerna och kategorierna av 
 
 I Adobe Experience Platform skiljer vi mellan olika måltyper - anslutningar, datauppsättningsexport och tillägg. Det finns flera typer av anslutningsmål, så att du kan exportera data till API-baserade mål, sociala mål, CRM-plattformar och många andra.
 
-Slutligen kan anslutningar även särskiljas mellan offentliga destinationer som är tillgängliga för alla organisationer i destinationskatalogen och privata destinationer som Real-Time CDP Ultimate-kunder kan skapa för att tillgodose sina specifika exportanvändningsfall.
+Slutligen kan anslutningar även särskiljas mellan offentliga destinationer som är tillgängliga för alla organisationer i destinationskatalogen och privata destinationer som Real-Time CDP Ultimate-kunder kan skapa för att tillgodose deras specifika exportanvändningsfall.
 
 >[!BEGINSHADEBOX]
 
@@ -41,9 +41,9 @@ Profilexportdestinationer tar emot rådata, ofta med e-postadress som primärnyc
 
 >[!IMPORTANT]
 >
->Avancerade företagsmål, eller exportmål för direktuppspelningsprofiler, är endast tillgängliga för [Adobe Real-time Customer Data Platform Ultimate](https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform.html) -kunder.
+>Avancerade företagsmål, eller exportmål för direktuppspelningsprofiler, är endast tillgängliga för [Adobe Real-Time Customer Data Platform Ultimate](https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform.html) -kunder.
 
-Använd de avancerade dataanslutningarna för företag för att leverera Adobe Real-time Customer Data Platform-profiler i nära realtid till interna system eller till andra tredjepartssystem för datasynkronisering, analys och fler användningsfall för profilberikning.
+Använd de avancerade dataanslutningarna för företag för att leverera Adobe Real-Time Customer Data Platform-profiler i nära realtid till interna system eller till andra tredjepartssystem för datasynkronisering, analys och fler användningsfall för profilberikning.
 
 Dessa mål tar emot målgrupps- och profildata som dataströmmar från Experience Platform.
 
@@ -59,7 +59,7 @@ Filbaserade mål tar emot `.csv` filer som innehåller profiler och/eller attrib
 
 ## Målgrupper för direktuppspelad export {#streaming-destinations}
 
-Målgrupper för målgruppsexport tar emot Experience Platform-målgruppsdata. Dessa mål använder målgrupps-ID eller användar-ID. Advertising och sociala mål som [[!DNL Google Display & Video 360]](catalog/advertising/google-dv360.md), [[!DNL Google Ads]](catalog/advertising/google-ads-destination.md) eller [Facebook](catalog/social/facebook.md) är exempel på sådana mål.
+Målgrupper för målgruppsexport tar emot data om Experience Platform målgrupper. Dessa mål använder målgrupps-ID eller användar-ID. Advertising och sociala mål som [[!DNL Google Display & Video 360]](catalog/advertising/google-dv360.md), [[!DNL Google Ads]](catalog/advertising/google-ads-destination.md) eller [Facebook](catalog/social/facebook.md) är exempel på sådana mål.
 
 ## Edge personaliseringsmål {#edge-personalization-destinations}
 
@@ -78,10 +78,10 @@ I videon nedan beskrivs de två typerna av destinationer:
 Du kan exportera tre typer av målgrupper från Experience Platform till olika destinationer:
 
 * Målgrupper
-* Målgrupper
+* Kontomålgrupper
 * Potentiella målgrupper
 
-Läs mer om [olika målgruppstyper](/help/segmentation/ui/account-audiences.md#terminology).
+Läs mer om [olika målgruppstyper](/help/segmentation/types/account-audiences.md#terminology).
 
 En symbol på målkortet visar vilka typer av målgrupper du kan exportera till varje mål.
 

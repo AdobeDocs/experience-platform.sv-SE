@@ -2,7 +2,7 @@
 title: Analys och spårning av samtycke
 description: Lär dig hur du bygger en kontrollpanel för samtyckesanalys för att spåra hur användarens samtycke har utvecklats över tid.
 exl-id: 34accae5-8b4f-4281-8333-187a91db8199
-source-git-commit: ddf886052aedc025ff125c03ab63877cb049583d
+source-git-commit: adc6d50f2784fe665d0590c3af053a057f8e4e38
 workflow-type: tm+mt
 source-wordcount: '1804'
 ht-degree: 0%
@@ -11,7 +11,7 @@ ht-degree: 0%
 
 # Analys och spårning av samtycke
 
-I dagens marknadsföringslandskap måste ni förstå och respektera kundernas önskemål om samtycke. Adobe Real-time Customer Data Platform ger marknadsförarna möjlighet att analysera kundernas samtycke för att bygga förtroende, följa sekretessregler och leverera mer personaliserade upplevelser.
+I dagens marknadsföringslandskap måste ni förstå och respektera kundernas önskemål om samtycke. Adobe Real-Time Customer Data Platform ger marknadsförarna möjlighet att analysera kundernas samtycke för att bygga förtroende, följa sekretessregler och leverera mer personaliserade upplevelser.
 
 Det här dokumentet innehåller information om hur du skapar en kontrollpanel för godkännande för olika användningsfall för marknadsföring för Real-Time CDP-data. Det handlar främst om hur man skapar en målgrupp med de attribut som passar ert företag bäst, och sedan får insikt genom att använda förkonfigurerade widgetar i Adobe Experience Platform användargränssnitt. Ett annat sätt att skapa en egen anpassad widget med den användardefinierade funktionen för instrumentpaneler visas också.
 
@@ -24,7 +24,7 @@ De användningsfall som behandlas i den här handboken är samtyckettrender och 
 
 ## Skapa godkända målgrupper {#create-consent-audiences}
 
-Om du vill skapa en kontrollpanel för samtycke måste du först skapa en målgrupp med alla profiler som har gett sitt samtycke till att kontakta. Om du vill navigera till Real-time Customer Data Platform Segment Builder väljer du **[!UICONTROL Audiences]** i den vänstra navigeringen i plattformsgränssnittet. På fliken [!UICONTROL Customer] på kontrollpanelen [!UICONTROL Audiences] väljer du **[!UICONTROL Create audience]** längst upp till höger i vyn och sedan **[!UICONTROL Build rules]**.
+Om du vill skapa en kontrollpanel för samtycke måste du först skapa en målgrupp med alla profiler som har gett sitt samtycke till att kontakta. Om du vill navigera till Real-Time Customer Data Platform Segment Builder väljer du **[!UICONTROL Audiences]** i den vänstra navigeringen i plattformsgränssnittet. På fliken [!UICONTROL Customer] på kontrollpanelen [!UICONTROL Audiences] väljer du **[!UICONTROL Create audience]** längst upp till höger i vyn och sedan **[!UICONTROL Build rules]**.
 
 ![Kontrollpanelen [!UICONTROL Audiences] med [!UICONTROL Customer], [!UICONTROL Audiences] och [!UICONTROL Create segment] markerade.](../images/insights-use-cases/consent-analysis/create-audience.png)
 
@@ -36,9 +36,9 @@ Leta upp dina medgivandeattribut bland de tillgängliga alternativen. Välj **[!
 
 >[!NOTE]
 >
->Om du har behållit ditt användargodkännande i ett annat attribut än det som rekommenderas av Adobe måste du välja dessa attribut i stället för de som visas nedan.
+>Om du har behållit ditt användargodkännande i ett annat attribut än det som rekommenderas av Adobe måste du välja dessa attribut istället för de som visas nedan.
 
-Mer information om [hantering av samtycke i dokumentation för segmentering](../../segmentation/consents.md#handling-consent-in-segmentation) finns.
+Mer information om [hantering av samtycke i dokumentation för segmentering](../../segmentation/tutorials/consents.md#handling-consent-in-segmentation) finns.
 
 ![Segmentbyggaren med attributmappen [!UICONTROL Consent and Preferences] markerad.](../images/insights-use-cases/consent-analysis/consent-and-preferences.png)
 

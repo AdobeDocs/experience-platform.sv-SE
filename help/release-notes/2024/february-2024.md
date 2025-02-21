@@ -2,8 +2,8 @@
 title: Versionsinformation om Adobe Experience Platform – februari 2024
 description: Versionsinformationen för Adobe Experience Platform från februari 2024.
 exl-id: 7e4b76b7-4027-4890-b869-1dbb79670c3e
-source-git-commit: aa33f7006b1a3abf7d19ffe3e0d5e5ee39fe9a5d
-workflow-type: ht
+source-git-commit: 02f2082e695d157415c9e0c59ca5d371c94bb991
+workflow-type: tm+mt
 source-wordcount: '1243'
 ht-degree: 100%
 
@@ -66,7 +66,7 @@ For more information on Data Prep, read the [Data Prep overview](../../data-prep
 
 ## Mål  {#destinations}
 
-[!DNL Destinations] är färdiga integreringar med destinationsplattformar som möjliggör sömlös aktivering av data från Adobe Experience Platform. Du kan använda mål för att aktivera dina kända och okända data för marknadsföringskampanjer över flera kanaler, e-postkampanjer, riktad reklam och många andra användningsområden.
+[!DNL Destinations] är förbyggda integrationer med målplattformar som möjliggör sömlös aktivering av data från Adobe Experience Platform. Du kan använda mål för att aktivera dina kända och okända data för marknadsföringskampanjer över flera kanaler, e-postkampanjer, riktad reklam och många andra användningsområden.
 
 **Nya destinationer** {#new-destinations}
 
@@ -115,7 +115,7 @@ Med [!DNL Segmentation Service] kan du segmentera data som lagras i [!DNL Experi
 
 | Funktion | Beskrivning |
 | ------- | ----------- |
-| Kontomålgrupper | Kontomålgrupper är nu allmänt tillgängliga! Nu kan du använda kontosegmentering för att förenkla och förbättra marknadsföringssegmenteringen från personbaserade målgrupper till kontobaserade målgrupper i både B2B- och B2P-utgåvorna av Real-Time Customer Platform. I den här versionen kan du använda personbaserade målgrupper som en grund för kontobaserade målgrupper, lägga till sökfunktioner, stödja användningen av anpassade entiteter och säkerställa dataförvaltning. Mer information om den här funktionen finns i [översikten över kontomålgrupper](../../segmentation/ui/account-audiences.md). |
+| Kontomålgrupper | Kontomålgrupper är nu allmänt tillgängliga! Nu kan du använda kontosegmentering för att förenkla och förbättra marknadsföringssegmenteringen från personbaserade målgrupper till kontobaserade målgrupper i både B2B- och B2P-utgåvorna av Real-Time Customer Platform. I den här versionen kan du använda personbaserade målgrupper som en grund för kontobaserade målgrupper, lägga till sökfunktioner, stödja användningen av anpassade entiteter och säkerställa dataförvaltning. Mer information om den här funktionen finns i [översikten över kontomålgrupper](../../segmentation/types/account-audiences.md). |
 
 {style="table-layout:auto"}
 

@@ -2,7 +2,7 @@
 title: Versionsinformation om Adobe Experience Platform från augusti 2023
 description: Versionsinformation för augusti 2023 för Adobe Experience Platform.
 exl-id: c67dca3a-eccb-427e-8ab3-b69c51b57938
-source-git-commit: d6e306294d0a119108e2de7ba03ebed4f633fba1
+source-git-commit: 4afb2c76f2022423e8f1fa29c91d02b43447ba90
 workflow-type: tm+mt
 source-wordcount: '1715'
 ht-degree: 40%
@@ -29,7 +29,7 @@ Uppdateringar av befintliga funktioner i Adobe Experience Platform:
 
 ## Plattform för kunddata i realtid {#rtcdp}
 
-Real-time Customer Data Platform ([!DNL Real-Time CDP]) bygger på Experience Platform och hjälper företag att sammanföra kända och okända data för att aktivera kundprofiler med intelligent beslutsfattande under hela kundresan.
+Real-Time Customer Data Platform ([!DNL Real-Time CDP]) bygger på Experience Platform och hjälper företag att sammanföra kända och okända data för att aktivera kundprofiler med intelligent beslutsfattande under hela kundresan.
 
 [!DNL Real-Time CDP] kombinerar flera datakällor från företag för att skapa kundprofiler i realtid. Segment som byggs upp utifrån dessa profiler kan sedan skickas till mål i senare led för att ge personliga kundupplevelser i alla kanaler och på alla enheter.
 
@@ -156,7 +156,7 @@ Adobe Experience Platforms identitetstjänst ger dig en heltäckande bild av din
 
 | Funktion | Beskrivning |
 | --- | --- |
-| Ändringar av begränsningar för identitetsdiagram | I slutet av september kommer identitetsdiagrammet att ändras till 50 identiteter per diagram och den senaste identiteten kommer att importeras. Den äldsta identiteten kommer därför att tas bort baserat på tidsstämpeln för inmatningen och identitetstypen, och cookie-identitetstyperna tas bort först. I dag har identitetsdiagram en gräns på 150 identiteter per diagram, och när gränsen har nåtts uppdateras inte längre diagram. Kontakta din kontorepresentant för att begära en ändring av identitetstypen om din produktionssandlåda innehåller: <ul><li>ett anpassat namnutrymme där personidentifierarna (t.ex. CRM-ID:n) är konfigurerade som cookie/enhetsidentitetstyp.</li><li>ett anpassat namnutrymme där cookie-/enhetsidentifierare har konfigurerats som identitetstyp för olika enheter.</li></ul> Dessa förfrågningar behandlas manuellt av Adobe. Mer information finns i [skyddsjournalerna för identitetstjänstens data](../../identity-service/guardrails.md). |
+| Ändringar av begränsningar för identitetsdiagram | I slutet av september kommer identitetsdiagrammet att ändras till 50 identiteter per diagram och den senaste identiteten kommer att importeras. Den äldsta identiteten kommer därför att tas bort baserat på tidsstämpeln för inmatningen och identitetstypen, och cookie-identitetstyperna tas bort först. I dag har identitetsdiagram en gräns på 150 identiteter per diagram, och när gränsen har nåtts uppdateras inte längre diagram. Kontakta din kontorepresentant för att begära en ändring av identitetstypen om din produktionssandlåda innehåller: <ul><li>ett anpassat namnutrymme där personidentifierarna (t.ex. CRM-ID:n) är konfigurerade som cookie/enhetsidentitetstyp.</li><li>ett anpassat namnutrymme där cookie-/enhetsidentifierare har konfigurerats som identitetstyp för olika enheter.</li></ul> Dessa förfrågningar behandlas manuellt av Adobe Engineering. Mer information finns i [skyddsjournalerna för identitetstjänstens data](../../identity-service/guardrails.md). |
 
 Mer information finns i [Översikt över identitetstjänsten](../../identity-service/home.md).
 
@@ -168,7 +168,7 @@ Med [!DNL Segmentation Service] kan du segmentera data som lagras i [!DNL Experi
 
 | Funktion | Beskrivning |
 | --- | --- |
-| Målgrupper som ser likadana ut (begränsad tillgänglighet) | Målgrupper som ser likadana ut ger intelligenta insikter om var och en av era målgrupper och utnyttjar maskininlärningsbaserade insikter för att identifiera och inrikta er på värdefulla kunder med era marknadsföringskampanjer. Med lookalike-målgrupper kan ni skapa expanderade målgrupper som riktar sig till kunder som liknar era högpresterande målgrupper eller målgrupper som liknar tidigare konverterade målgrupper. Mer information om lookalike-målgrupper finns i översikten [Look-alike-målgrupper](../../segmentation/ui/lookalike-audiences.md). |
+| Målgrupper som ser likadana ut (begränsad tillgänglighet) | Målgrupper som ser likadana ut ger intelligenta insikter om var och en av era målgrupper och utnyttjar maskininlärningsbaserade insikter för att identifiera och inrikta er på värdefulla kunder med era marknadsföringskampanjer. Med lookalike-målgrupper kan ni skapa expanderade målgrupper som riktar sig till kunder som liknar era högpresterande målgrupper eller målgrupper som liknar tidigare konverterade målgrupper. Mer information om lookalike-målgrupper finns i översikten [Look-alike-målgrupper](../../segmentation/types/account-audiences.md). |
 
 {style="table-layout:auto"}
 
