@@ -2,20 +2,16 @@
 keywords: Experience Platform;home;populära topics;Query editor;query editor;Query service;query service;
 solution: Experience Platform
 title: Användargränssnittshandbok för frågeredigeraren
-description: Frågeredigeraren är ett interaktivt verktyg som tillhandahålls av Adobe Experience Platform Query Service, som gör att du kan skriva, validera och köra frågor för kundupplevelsedata i användargränssnittet i Experience Platform. Frågeredigeraren har stöd för att utveckla frågor för analys och datautforskande, och gör att du kan köra interaktiva frågor i utvecklingssyfte samt icke-interaktiva frågor för att fylla i datauppsättningar i Experience Platform.
+description: Frågeredigeraren är ett interaktivt verktyg som tillhandahålls av Adobe Experience Platform Query Service, som gör att du kan skriva, validera och köra frågor för kundupplevelsedata i Experience Platform användargränssnitt. Frågeredigeraren stöder utveckling av frågor för analys och datautforskning och gör att du kan köra interaktiva frågor i utvecklingssyfte samt icke-interaktiva frågor för att fylla i datauppsättningar i Experience Platform.
 exl-id: d7732244-0372-467d-84e2-5308f42c5d51
-source-git-commit: 4c11a35ce914cd0b1aa0084368f5a5929f883963
+source-git-commit: e1ecdb5d701093d9c73b6a05dad9a4dd848e0083
 workflow-type: tm+mt
-source-wordcount: '2725'
+source-wordcount: '2663'
 ht-degree: 0%
 
 ---
 
 # Användargränssnittshandbok för frågeredigeraren
-
->[!NOTE]
->
->Den gamla redigeraren togs bort den 24 maj 2024. Det är inte längre tillgängligt för användning. Du kan nu använda den [förbättrade frågeredigeraren](#enhanced-editor-toggle) för att skriva, validera och köra frågor
 
 Frågeredigeraren är ett interaktivt verktyg som tillhandahålls av Adobe Experience Platform Query Service, som gör att du kan skriva, validera och köra frågor för kundupplevelsedata i [!DNL Experience Platform]-användargränssnittet. Frågeredigeraren har stöd för att utveckla frågor för analys och datautforskande. Du kan även köra interaktiva frågor i utvecklingssyfte och icke-interaktiva frågor för att fylla i datauppsättningar i [!DNL Experience Platform].
 
@@ -42,10 +38,6 @@ Frågeredigeraren tar några sekunder att initiera och ansluta till frågetjäns
 Frågor som körs i Frågeredigeraren körs interaktivt, vilket innebär att frågan avbryts om du stänger webbläsaren eller navigerar bort. Detsamma gäller för frågor som skapas för att generera datauppsättningar från frågeutdata.
 
 ## Redigera frågor med den förbättrade Frågeredigeraren {#query-authoring}
-
->[!NOTE]
->
->Den gamla redigeraren togs bort den 24 maj 2024. Det är inte längre tillgängligt för användning. Nu kan du använda den förbättrade frågeredigeraren för att skriva, validera och köra frågor.
 
 Med Frågeredigeraren kan du skriva, köra och spara frågor om kundupplevelsedata. Alla frågor som körs eller sparas i Frågeredigeraren är tillgängliga för alla användare i organisationen som har tillgång till Frågetjänsten.
 
@@ -101,11 +93,11 @@ En bekräftelsedialogruta visas. Välj **[!UICONTROL Confirm]** om du vill avbry
 
 ### Resultatantal {#result-count}
 
-Frågeredigeraren har maximalt 50 000 radutdata. Du kan välja hur många rader som ska visas samtidigt i frågeredigeringskonsolen. Om du vill ändra antalet rader som visas i konsolen väljer du listrutan **[!UICONTROL Result count]** och väljer bland alternativen 50, 100, 150, 300 och 500.
+Frågeredigeraren har maximalt 50 000 radutdata. Du kan välja hur många rader som ska visas samtidigt i frågeredigeringskonsolen. Om du vill ändra antalet rader som visas i konsolen väljer du listrutan **[!UICONTROL Result count]** och väljer bland alternativen 50, 100, 150, 300, 500 och 1 000.
 
 >[!NOTE]
 >
->Eftersom användargränssnittet för plattformen bara har stöd för upp till 500 rader ignoreras överföring av ett LIMIT-värde över 500.
+>Eftersom plattformsgränssnittet kan hantera upp till 1 000 rader ignoreras överföring av ett LIMIT-värde över 1 000.
 
 ![Frågeredigeraren med listrutan Resultatantal markerad.](../images/ui/query-editor/result-count.png)
 
@@ -204,8 +196,8 @@ Om en fråga har schemalagts ger fliken [!UICONTROL Scheduled Queries] förbätt
 
 >[!AVAILABILITY]
 >
-Datauppsättningsnavigeringsfältet är bara tillgängligt för Data Distiller-kunder. Plattformsgränssnittet kanske inte innehåller den vänstra datamängdsnavigeringslisten. Andra bilder i det här dokumentet kanske inte motsvarar navigeringslisten för datauppsättningar. Kontakta din Adobe-representant om du vill ha mer information.<br>
-Objektwebbläsaren är för närvarande bara tillgänglig i en **begränsad version** . Kontakta din Adobe-representant för att få tillgång till tidig release.
+Datauppsättningsnavigeringsfältet är bara tillgängligt för Data Distiller-kunder. Plattformsgränssnittet kanske inte innehåller den vänstra datamängdsnavigeringslisten. Andra bilder i det här dokumentet kanske inte motsvarar navigeringslisten för datauppsättningar. Kontakta Adobe om du vill ha mer information.<br>
+Objektwebbläsaren är för närvarande bara tillgänglig i en **begränsad version** . Kontakta din Adobe-representant för att få tillgång till tidiga versioner.
 
 Använd objektwebbläsaren för att enkelt söka efter och filtrera datauppsättningar. Objektwebbläsaren minskar tiden som går åt till att söka efter tabeller och datauppsättningar i stora miljöer med många datauppsättningar. Med smidig åtkomst till relevanta data och metadata kan du fokusera mer på att skapa frågor och inte på navigering.
 
@@ -249,7 +241,7 @@ Konsolen visar bara fel som uppstått efter körningen av en fråga. Det visar i
 
 ### Frågeresultat {#query-results}
 
-När en fråga har slutförts visas resultaten på fliken **[!UICONTROL Results]** bredvid fliken **[!UICONTROL Console]**. I den här vyn visas frågans tabellutdata, med mellan 50 och 500 resultatrader beroende på ditt valda [resultatantal](#result-count). I den här vyn kan du verifiera att frågan ger förväntat resultat. Om du vill generera en datauppsättning med din fråga tar du bort begränsningar för returnerade rader och kör frågan med `CREATE TABLE tablename AS SELECT` för att generera en datauppsättning med utdata. Se självstudiekursen [om att generera datauppsättningar](./create-datasets.md) för instruktioner om hur du genererar en datauppsättning från frågeresultat i Frågeredigeraren.
+När en fråga har slutförts visas resultaten på fliken **[!UICONTROL Results]** bredvid fliken **[!UICONTROL Console]**. I den här vyn visas frågans tabellutdata, med mellan 50 och 1 000 resultatrader beroende på ditt valda [resultatantal](#result-count). I den här vyn kan du verifiera att frågan ger förväntat resultat. Om du vill generera en datauppsättning med din fråga tar du bort begränsningar för returnerade rader och kör frågan med `CREATE TABLE tablename AS SELECT` för att generera en datauppsättning med utdata. Se självstudiekursen [om att generera datauppsättningar](./create-datasets.md) för instruktioner om hur du genererar en datauppsättning från frågeresultat i Frågeredigeraren.
 
 ![Fliken Resultat i frågeredigeringskonsolen som visar resultatet av en frågekörning.](../images/ui/query-editor/query-results.png)
 
