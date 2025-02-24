@@ -3,9 +3,9 @@ solution: Experience Platform
 title: Användargränssnittshandbok för målgrupper
 description: Audience Composition i Adobe Experience Platform UI har en omfattande arbetsyta där du kan interagera med profildataelement. Arbetsytan innehåller intuitiva kontroller för att skapa och redigera målgrupper för din organisation.
 exl-id: 0dda0cb1-49e0-478b-8004-84572b6cf625
-source-git-commit: 65871f307468428ee0e3b67c1a6577e913f3a312
+source-git-commit: f2abd9445c6b725c166f031407e330a2c15e9edb
 workflow-type: tm+mt
-source-wordcount: '2116'
+source-wordcount: '2230'
 ht-degree: 0%
 
 ---
@@ -39,7 +39,7 @@ Målgruppens kompositionsyta består av fyra olika typer av block: **[[!UICONTRO
 >[!CONTEXTUALHELP]
 >id="platform_segmentation_ao_audience"
 >title="Målgrupp"
->abstract="Med Audience-blocket kan ni nå de undermålgrupper som ni vill använda för att sätta samman er nya målgrupp."
+>abstract="Med Audience-blocket kan ni lägga till de undermålgrupper som ni vill använda för att sätta samman er nya målgrupp."
 
 >[!CONTEXTUALHELP]
 >id="platform_segmentation_ao_merge_types"
@@ -83,6 +83,11 @@ De valda målgrupperna visas nu i den högra listen när **[!UICONTROL Audience]
 | [!UICONTROL Exclude overlap] | Målgrupperna kombineras med endast de målgrupper som delas i **en, men inte alla** av dem. Detta motsvarar en XOR-åtgärd. |
 
 ### [!UICONTROL Build rule] {#build-rule}
+
+>[!CONTEXTUALHELP]
+>id="platform_segmentation_ao_rule_builder"
+>title="Segment Builder"
+>abstract="Du kan använda Segment Builder för att lägga till en anpassad regel för din komposition."
 
 Om du vill lägga till en anpassad regel i målgruppsblocket väljer du **[!UICONTROL Build rule]**.
 
@@ -134,7 +139,12 @@ En lista över målgrupper visas. Välj **[!UICONTROL Add]** om du vill lägga t
 
 ### Exkludera efter attribut {#exclude-attribute}
 
-Om du utelämnar efter attribut kan du välja vilka attribut du vill utesluta genom att markera ikonen ![filter](/help/images/icons/project-edit.png) i avsnittet **[!UICONTROL Exclusion rule]**.
+>[!CONTEXTUALHELP]
+>id="platform_segmentation_ao_exclude_attribute"
+>title="Exkludera efter attribut"
+>abstract="När du exkluderar efter attribut kan du utesluta vissa profiler från att visas i kompositionen baserat på de valda attributen."
+
+Om du utelämnar efter attribut kan du välja vilka attribut du vill utesluta genom att markera ikonen ![filter](/help/images/icons/project-edit.png) i avsnittet **[!UICONTROL Exclusion rule]**. Genom att exkludera attributet kan du utesluta profiler som innehåller det här attributet från den slutliga målgruppen.
 
 ![Attributavsnittet är markerat och visar var du ska välja vilket attribut som ska uteslutas.](../images/ui/audience-composition/exclude-attribute.png)
 
@@ -307,6 +317,16 @@ När ni delar er målgrupp kan ni antingen dela efter procent eller dela efter a
 
 ### Dela efter procent {#split-percentage}
 
+>[!CONTEXTUALHELP]
+>id="platform_segmentation_ao_split_percentage"
+>title="Dela efter procent"
+>abstract="Ni kan slumpmässigt dela upp målgruppen i flera målgrupper baserat på antalet banor och procentandelar."
+
+>[!CONTEXTUALHELP]
+>id="platform_segmentation_ao_split_persistent"
+>title="Beständig delning"
+>abstract="Du kan göra procentandelen bestående genom att aktivera det här alternativet och välja vilket identitetsnamnutrymme som delningen ska fortsätta på."
+
 Vid uppdelning efter procent delas målgrupperna slumpmässigt, baserat på antalet banor och procentandelar.
 
 Du kan t.ex. ha tre banor med olika profiler.
@@ -331,7 +351,12 @@ Dessutom kan du aktivera växlingsknappen **[!UICONTROL Other profiles]** för a
 
 ![Växlingsknappen Andra profiler är markerad.](../images/ui/audience-composition/split-other-profiles.png)
 
-## Publicera era målgrupper
+## Publicera era målgrupper {#publish}
+
+>[!CONTEXTUALHELP]
+>id="platform_segmentation_ao_publish"
+>title="Publicera"
+>abstract="Du kan publicera din komposition för att skapa den eller de målgrupper som blir resultatet i Adobe Experience Platform."
 
 >[!IMPORTANT]
 >
