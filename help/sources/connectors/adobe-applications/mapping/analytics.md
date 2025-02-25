@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Mappningsfält för Adobe Analytics Source Connector
 description: Mappa Adobe Analytics-fält till XDM-fält med Analytics Source Connector.
 exl-id: 15dc1368-5cf1-42e1-9683-d5158f8aa2db
-source-git-commit: 6cbd902c6a1159d062fb38bf124a09bb18ad1ba8
+source-git-commit: 15d63db308ea9d2daf7660b463785d04ff94e296
 workflow-type: tm+mt
-source-wordcount: '2388'
+source-wordcount: '2415'
 ht-degree: 0%
 
 ---
@@ -173,9 +173,9 @@ Markera fält som kommer från ADC måste omformas, vilket kräver logik utöver
 | `ip` | `environment.ipV4` | string | IP-adressen, baserad på HTTP-huvudet i bildbegäran. |
 | `j_jscript` | `environment.browserDetails.javaScriptEnabled` | boolesk | Den version av JavaScript som användes. |
 | `mcvisid_high` + `mcvisid_low` | identityMap | object | Experience Cloud Visitor-ID. |
-| `mcvisid_high` + `mcvisid_low` | endUserID:n._experience.mcid.id | string | Experience Cloud ID (ECID) kallas också MCID och används ibland i namnutrymmen. |
-| `mcvisid_high` | `endUserIDs._experience.mcid.primary` | boolesk | Experience Cloud ID (ECID) kallas också MCID och används ibland i namnutrymmen. |
-| `mcvisid_high` | `endUserIDs._experience.mcid.namespace.code` | string | Experience Cloud ID (ECID) kallas också MCID och används ibland i namnutrymmen. |
+| `mcvisid_high` + `mcvisid_low` | endUserID:n._experience.mcid.id | string | Experience Cloud-id (ECID) kallas även MCID och används ibland i namnutrymmen. |
+| `mcvisid_high` | `endUserIDs._experience.mcid.primary` | boolesk | Experience Cloud-id (ECID) kallas även MCID och används ibland i namnutrymmen. |
+| `mcvisid_high` | `endUserIDs._experience.mcid.namespace.code` | string | Experience Cloud-id (ECID) kallas även MCID och används ibland i namnutrymmen. |
 | `mcvisid_low` | `identityMap` | object | Experience Cloud Visitor-ID. |
 | `sdid_high` + `sdid_low` | `_experience.target.supplementalDataID` | string | Tryck på Stitching ID. Analysfältet sdid_high och sdid_low är det kompletterande data-id som används för att sammanfoga två (eller flera) inkommande träffar. |
 | `mobilebeaconproximity` | `placeContext.POIinteraction.POIDetail.`<br/>`beaconInteractionDetails.proximity` | string | Mobiltjänster är nära. |
@@ -186,7 +186,9 @@ Markera fält som kommer från ADC måste omformas, vilket kräver logik utöver
 
 ## Avancerade mappningsfält
 
-Markera fält (så kallade&quot;postvärden&quot;) innehåller data efter att Adobe har justerat deras värden med bearbetningsregler, VISTA-regler och uppslagstabeller. De flesta postvärden har en förbearbetad motsvarighet. Din organisation kan bestämma om du vill använda det förbearbetade fältet, det efterbearbetade fältet eller båda.
+Markera fält (så kallade&quot;postvärden&quot;) innehåller data efter att Adobe har justerat deras värden med bearbetningsregler, VISTA-regler och uppslagstabeller. De flesta postvärden har en förbearbetad motsvarighet.
+
+Analysens källanslutning skickar förbearbetade data till en datauppsättning i Experience Platform. Du kan omforma dessa data till den efterbehandlade motsvarigheten med hjälp av omformningar. Mer information om hur du utför dessa omformningar med hjälp av frågetjänsten finns i [Adobe-definierade funktioner](/help/query-service/sql/adobe-defined-functions.md) i användarhandboken för frågetjänsten.
 
 Mer information om hur du utför dessa omformningar med hjälp av frågetjänsten finns i [Adobe-definierade funktioner](/help/query-service/sql/adobe-defined-functions.md) i användarhandboken för frågetjänsten.
 
