@@ -2,7 +2,7 @@
 title: Användargränssnitt för identitetsinställningar
 description: Lär dig hur du använder användargränssnittet för identitetsinställningar.
 exl-id: 738b7617-706d-46e1-8e61-a34855ab976e
-source-git-commit: ee0f6d6dbbbdf55a1a0f10038b785e48f2b41474
+source-git-commit: 7c2e5cad997b7e7b9e0a08d3a3a1f5c9b218329e
 workflow-type: tm+mt
 source-wordcount: '525'
 ht-degree: 0%
@@ -13,7 +13,7 @@ ht-degree: 0%
 
 >[!AVAILABILITY]
 >
->Regler för länkning av identitetsdiagram är för närvarande begränsade. Kontakta ditt Adobe-kontoteam om du vill ha information om hur du kommer åt funktionen i utvecklingssandlådor.
+>Regler för länkning av identitetsdiagram är för närvarande begränsade. Kontakta ditt Adobe-kontoteam för information om hur du får tillgång till funktionen i utvecklingssandlådor.
 
 Identitetsinställningar är en funktion i användargränssnittet för Adobe Experience Platform Identity Service som du kan använda för att ange unika namnutrymmen och konfigurera namnområdesprioritet.
 
@@ -46,7 +46,7 @@ Om du vill konfigurera namnområdesprioriteten väljer du ett namnutrymme på me
 
 ### Ange ditt unika namnutrymme
 
-Om du vill ange ett unikt namnutrymme markerar du kryssrutan [!UICONTROL Unique per graph] som motsvarar det namnutrymmet. Du kan välja mer än ett unikt namnutrymme för konfigurationen av identitetsinställningarna.
+Om du vill ange ett unikt namnutrymme markerar du kryssrutan [!UICONTROL Unique per graph] som motsvarar det namnutrymmet. Du kan välja upp till tre unika namnutrymmen för konfigurationen av identitetsinställningarna.
 
 ![Två namnutrymmen har markerats och definierats som unika.](../images/rules/unique-namespace.png)
 
