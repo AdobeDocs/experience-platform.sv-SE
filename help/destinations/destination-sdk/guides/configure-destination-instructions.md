@@ -1,27 +1,27 @@
 ---
 description: På den här sidan visas och beskrivs stegen för hur du konfigurerar ett mål för direktuppspelning med Destination SDK.
-title: Använd Destination SDK för att konfigurera ett direktuppspelningsmål
+title: Använd Destination SDK för att konfigurera ett mål för direktuppspelning
 exl-id: d8aa7353-ba55-4a0d-81c4-ea2762387638
-source-git-commit: c35b43654d31f0f112258e577a1bb95e72f0a971
+source-git-commit: 804370a778a4334603f3235df94edaa91b650223
 workflow-type: tm+mt
 source-wordcount: '865'
 ht-degree: 0%
 
 ---
 
-# Använd Destination SDK för att konfigurera ett direktuppspelningsmål
+# Använd Destination SDK för att konfigurera ett mål för direktuppspelning
 
 ## Översikt {#overview}
 
-På den här sidan beskrivs hur du använder informationen i [Konfigurationsalternativen i Destinations SDK](../functionality/configuration-options.md) och i andra Destinationer SDK och API-referensdokument för att konfigurera ett [direktuppspelningsmål](../../destination-types.md#streaming-destinations). Stegen beskrivs i sekventiell ordning nedan.
+Den här sidan beskriver hur du använder informationen i [Konfigurationsalternativen i Destinations SDK](../functionality/configuration-options.md) och i andra Destination SDK-funktioner och API-referensdokument för att konfigurera ett [direktuppspelningsmål](../../destination-types.md#streaming-destinations). Stegen beskrivs i sekventiell ordning nedan.
 
 ## Förhandskrav {#prerequisites}
 
-Innan du går vidare till stegen som visas nedan bör du läsa sidan [Komma igång för Destination SDK](../getting-started.md) för att få information om hur du får de autentiseringsuppgifter för Adobe I/O och andra krav som krävs för att arbeta med Destination SDK-API:er. Detta förutsätter att du har slutfört villkoren för partnerskap och behörighet och är redo att börja utveckla ditt mål.
+Innan du går vidare till stegen som visas nedan bör du läsa sidan [Komma igång](../getting-started.md) för Destination SDK för att få information om hur du får nödvändiga inloggningsuppgifter för Adobe I/O och andra krav för att arbeta med API:er för Destination SDK. Detta förutsätter att du har slutfört villkoren för partnerskap och behörighet och är redo att börja utveckla ditt mål.
 
-## Steg för att använda konfigurationsalternativen i Destinationen SDK för att konfigurera destinationen {#steps}
+## Steg för hur du använder konfigurationsalternativen i Destination SDK för att konfigurera destinationen {#steps}
 
-![Illustrerade steg för att använda Destinationens SDK slutpunkter](../assets/guides/destination-sdk-steps.png)
+![Illustrerade steg för att använda Destination SDK-slutpunkter](../assets/guides/destination-sdk-steps.png)
 
 ## Steg 1: Skapa en server- och mallkonfiguration {#create-server-template-configuration}
 
@@ -117,12 +117,14 @@ POST platform.adobe.io/data/core/activation/authoring/destinations
          "acceptsCustomNamespaces":true
       }
    },
-   "audienceMetadataConfig":{
+   "segmentMappingConfig":{
       "mapExperiencePlatformSegmentName":false,
       "mapExperiencePlatformSegmentId":false,
-      "mapUserInput":false,
+      "mapUserInput":false
+   },
+   "audienceMetadataConfig":{
       "audienceTemplateId":"cbf90a70-96b4-437b-86be-522fbdaabe9c"
-   },   
+   },  
    "aggregation":{
       "aggregationType":"CONFIGURABLE_AGGREGATION",
       "configurableAggregation":{
@@ -176,7 +178,7 @@ När du har skapat en meddelandeomformningsmall som fungerar för dig lägger du
 
 ## Steg 4: Skapa konfiguration av målgruppsmetadata {#create-audience-metadata-configuration}
 
-För vissa destinationer kräver Destinationen SDK att du konfigurerar en målgruppsmetadatakonfiguration för att skapa, uppdatera eller ta bort målgrupper i målgruppen. Mer information om när du behöver konfigurera konfigurationen och hur du gör den finns i [Hantering av målgruppsmetadata](../functionality/audience-metadata-management.md).
+För vissa destinationer kräver Destination SDK att du konfigurerar en målgruppsmetadatakonfiguration för att skapa, uppdatera eller ta bort målgrupper i målgruppen. Mer information om när du behöver konfigurera konfigurationen och hur du gör den finns i [Hantering av målgruppsmetadata](../functionality/audience-metadata-management.md).
 
 Om du använder en konfiguration för målgruppsmetadata måste du ansluta den till målkonfigurationen som du skapade i steg 2. Lägg till instans-ID för målgruppens metadatakonfiguration i målkonfigurationen som `audienceTemplateId`.
 
@@ -229,10 +231,12 @@ Om du använder en konfiguration för målgruppsmetadata måste du ansluta den t
          "acceptsCustomNamespaces":true
       }
    },
-   "audienceMetadataConfig":{
+   "segmentMappingConfig":{
       "mapExperiencePlatformSegmentName":false,
       "mapExperiencePlatformSegmentId":false,
-      "mapUserInput":false,
+      "mapUserInput":false
+   },
+   "audienceMetadataConfig":{
       "audienceTemplateId":"cbf90a70-96b4-437b-86be-522fbdaabe9c"
    },   
    "aggregation":{
@@ -277,18 +281,18 @@ Om du valde `"authenticationRule": "PLATFORM_AUTHENTICATION"` måste du skapa en
 
 När du har konfigurerat ditt mål med hjälp av konfigurationsslutpunkterna i föregående steg kan du använda [måltestningsverktyget](../testing-api/streaming-destinations/streaming-destination-testing-overview.md) för att testa integrationen mellan Adobe Experience Platform och ditt mål.
 
-Som en del av processen för att testa destinationen måste du använda användargränssnittet i Experience Platform för att skapa segment, som du aktiverar för destinationen. Se de två resurserna nedan för instruktioner om hur du skapar målgrupper i Experience Platform:
+Som en del av processen för att testa målet måste du använda Experience Platform-gränssnittet för att skapa segment, som du aktiverar för destinationen. Se de två resurserna nedan för instruktioner om hur du skapar målgrupper i Experience Platform:
 
 * [Skapa en publikdokumentationssida](/help/segmentation/ui/audience-portal.md#create-audience)
 * [Skapa en genomgång av en målgruppsvideo](https://experienceleague.adobe.com/docs/platform-learn/tutorials/segments/create-segments.html)
 
-## Steg 7: Publish ditt mål {#publish-destination}
+## Steg 7: Publicera destinationen {#publish-destination}
 
 >[!NOTE]
 >
 >Det här steget är inte nödvändigt om du skapar ett privat mål för eget bruk och inte vill publicera det i målkatalogen för andra kunder.
 
-När du har konfigurerat och testat målet kan du använda [API:t för målpublicering](../publishing-api/create-publishing-request.md) för att skicka konfigurationen till Adobe för granskning.
+När du har konfigurerat och testat målet kan du skicka konfigurationen till Adobe för granskning med [API:t för målpublicering](../publishing-api/create-publishing-request.md).
 
 ## Steg 8: Dokumentera destinationen {#document-destination}
 
@@ -296,7 +300,7 @@ När du har konfigurerat och testat målet kan du använda [API:t för målpubli
 >
 >Det här steget är inte nödvändigt om du skapar ett privat mål för eget bruk och inte vill publicera det i målkatalogen för andra kunder.
 
-Om du är en oberoende programvaruleverantör (ISV) eller systemintegratör (SI) som skapar en [tillverkad integrering](../overview.md#productized-custom-integrations) använder du [självbetjäningsdokumentationsprocessen](../docs-framework/documentation-instructions.md) för att skapa en produktdokumentationssida för destinationen i [Experience Platform-målkatalogen](/help/destinations/catalog/overview.md).
+Om du är en oberoende programvaruleverantör (ISV) eller systemintegratör (SI) som skapar en [tillverkad integrering](../overview.md#productized-custom-integrations) använder du [självbetjäningsdokumentationsprocessen](../docs-framework/documentation-instructions.md) för att skapa en produktdokumentationssida för destinationen i [Experience Platform målkatalog](/help/destinations/catalog/overview.md).
 
 ## Steg 9: Skicka mål för Adobe granskning {#submit-for-review}
 
@@ -304,4 +308,4 @@ Om du är en oberoende programvaruleverantör (ISV) eller systemintegratör (SI)
 >
 >Det här steget är inte nödvändigt om du skapar ett privat mål för eget bruk och inte vill publicera det i målkatalogen för andra kunder.
 
-Innan destinationen kan publiceras i Experience Platform-katalogen och vara synlig för alla Experience Platform-kunder måste du skicka in destinationen för Adobe granskning officiellt. Hitta fullständig information om hur du [skickar för granskning av ett produkterat mål som har skapats i Destinationen SDK ](../guides/submit-destination.md).
+Innan destinationen kan publiceras i Experience Platform-katalogen och visas för alla Experience Platform-kunder måste du skicka in destinationen för Adobe granskning. Hitta fullständig information om hur du [skickar för granskning av ett produkterat mål som har skapats i Destination SDK](../guides/submit-destination.md).
