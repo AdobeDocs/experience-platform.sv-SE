@@ -6,7 +6,7 @@ user-guide-description: Lär dig att driftsätta och hantera analyser, marknadsf
 feature: Tags
 solution: Data Collection
 role: Developer
-source-git-commit: 77432a559009d29711a8afa4ca6d8f6ea11d70cf
+source-git-commit: 5e3f1517b321cab756305cd61ad5f1def93d3de7
 workflow-type: tm+mt
 source-wordcount: '776'
 ht-degree: 15%
@@ -90,7 +90,7 @@ ht-degree: 15%
       * Adobe Client Data Layer {#client-data-layer}
          * [Översikt](./extensions/client/client-data-layer/overview.md)
          * [Versionsinformation](./extensions/client/client-data-layer/release-notes.md)
-      * Adobe Content Analytics {#contentanalytics}
+      * Adobe Content Analytics {#content-analytics}
          * [Översikt](./extensions/client/content-analytics/overview.md)
       * Adobe ContextHub {#contexthub}
          * [Översikt](./extensions/client/contexthub/overview.md)
