@@ -6,9 +6,9 @@ user-guide-description: Lär dig att driftsätta och hantera analyser, marknadsf
 feature: Tags
 solution: Data Collection
 role: Developer
-source-git-commit: 18690a72c8a84c6426677b3e8993d8453a8e7cf1
+source-git-commit: 77432a559009d29711a8afa4ca6d8f6ea11d70cf
 workflow-type: tm+mt
-source-wordcount: '772'
+source-wordcount: '776'
 ht-degree: 15%
 
 ---
@@ -37,7 +37,7 @@ ht-degree: 15%
    * [Publiceringsflöde](./ui/publishing/publishing-flow.md)
    * Värdar {#hosts}
       * [Översikt](./ui/publishing/hosts/hosts-overview.md)
-      * [Värdar som hanteras av Adobe](./ui/publishing/hosts/managed-by-adobe-host.md)
+      * [Adobe-hanterade värdar](./ui/publishing/hosts/managed-by-adobe-host.md)
       * [SFTP-värdar](./ui/publishing/hosts/sftp-host.md)
    * Miljöer {#environments}
       * [Översikt](./ui/publishing/environments.md)
@@ -87,9 +87,11 @@ ht-degree: 15%
       * [Adobe Analytics via Adobe Experience Platform Web SDK](https://exchange.adobe.com/apps/ec/108985/search-discovery-for-adobe-analytics-via-aep-web-sdk)
       * Adobe Audience Manager {#audience-manager}
          * [Översikt](./extensions/client/audience-manager/overview.md)
-      * Adobe-klientdatalagret {#client-data-layer}
+      * Adobe Client Data Layer {#client-data-layer}
          * [Översikt](./extensions/client/client-data-layer/overview.md)
          * [Versionsinformation](./extensions/client/client-data-layer/release-notes.md)
+      * Adobe Content Analytics {#contentanalytics}
+         * [Översikt](./extensions/client/content-analytics/overview.md)
       * Adobe ContextHub {#contexthub}
          * [Översikt](./extensions/client/contexthub/overview.md)
       * [Adobe Experience Manager Forms](https://exchange.adobe.com/apps/ec/107493)
@@ -118,7 +120,7 @@ ht-degree: 15%
       * Adobe Media Analytics (3.x SDK) {#media-analytics-3x}
          * [Översikt](./extensions/client/media-analytics-3x/overview.md)
          * [Versionsinformation](./extensions/client/media-analytics-3x/release-notes.md)
-      * Sekretess för Adobe {#privacy}
+      * Adobe sekretess {#privacy}
          * [Översikt](./extensions/client/privacy/overview.md)
       * [Adobe Report Suite-väljare](https://exchange.adobe.com/apps/ec/100640)
       * Adobe Target {#target}
@@ -129,7 +131,7 @@ ht-degree: 15%
          * [Versionsinformation](./extensions/client/target-v2/release-notes.md)
       * [Adobe Target Toolkit](https://exchange.adobe.com/apps/ec/100640)
       * [Advertising Cloud](https://exchange.adobe.com/apps/ec/100640)
-      * [AEM tillgångsinsikter](https://exchange.adobe.com/apps/ec/103406)
+      * [AEM-resursinsikter](https://exchange.adobe.com/apps/ec/103406)
       * [Airbroms-JS-aviserare](https://exchange.adobe.com/apps/ec/103342)
       * [Amplitud](https://exchange.adobe.com/apps/ec/108010)
       * [Apollo QAX](https://exchange.adobe.com/apps/ec/105068)
@@ -161,7 +163,7 @@ ht-degree: 15%
       * [Decibel](https://exchange.adobe.com/apps/ec/100913)
       * [Demandbase](https://exchange.adobe.com/apps/ec/101605)
       * [Differentiell sekretess](https://exchange.adobe.com/apps/ec/104535)
-      * [Dynamic Media-visningsprogram](https://exchange.adobe.com/apps/ec/103048)
+      * [Dynamiska mediavisare](https://exchange.adobe.com/apps/ec/103048)
       * [EDDL-hjälp](https://exchange.adobe.com/apps/ec/107691)
       * [Flashtalk OneTag](https://exchange.adobe.com/apps/ec/101392)
       * [ForeSee](https://exchange.adobe.com/apps/ec/100164)
