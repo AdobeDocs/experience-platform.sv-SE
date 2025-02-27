@@ -2,9 +2,9 @@
 title: Dataförberedelse för datainsamling
 description: Lär dig hur du mappar data till ett XDM-händelseschema (Experience Data Model) när du konfigurerar ett datastam för Adobe Experience Platform Web och Mobile SDK.
 exl-id: 87a70d56-1093-445c-97a5-b8fa72a28ad0
-source-git-commit: c2832821ea6f9f630e480c6412ca07af788efd66
+source-git-commit: e90bd5abe502a7638ae54fca5eb0f051a925a2d8
 workflow-type: tm+mt
-source-wordcount: '1155'
+source-wordcount: '1171'
 ht-degree: 0%
 
 ---
@@ -13,11 +13,11 @@ ht-degree: 0%
 
 Data Prep är en Adobe Experience Platform-tjänst som gör att du kan mappa, omvandla och validera data till och från [Experience Data Model (XDM)](../xdm/home.md). När du konfigurerar en [datastream](./overview.md) som är aktiverad för plattformen kan du använda Data Prep-funktioner för att mappa dina källdata till XDM när du skickar dem till Platform Edge Network.
 
-Alla data som skickas från en webbsida måste landas i Experience Platform som XDM. Det finns tre sätt att översätta data från ett datalager på en sida till den XDM som accepteras av Experience Platform:
+Alla data som skickas från en webbsida måste landas i Experience Platform som XDM. Det finns tre sätt att översätta data från ett datalager på sidan till den XDM som accepteras av Experience Platform:
 
 1. Formatera om datalagret till XDM på själva webbsidan.
 2. Använd funktionen för taggar för inbyggda dataelement för att formatera om en webbsidas befintliga datalagerformat till XDM.
-3. Formatera om en webbsidas befintliga datalagerformat till XDM via Edge Network, med Data Prep för datainsamling.
+3. Formatera om en webbsidas befintliga datalagerformat till XDM via Edge Network med Data Prep for Data Collection.
 
 Den här guiden fokuserar på det tredje alternativet.
 
@@ -25,14 +25,14 @@ Den här guiden fokuserar på det tredje alternativet.
 
 Det finns två användningsområden där Data Prep för datainsamling är användbart:
 
-1. Webbplatsen har ett välformat, styrt och underhållet datalager och det finns en inställning för att skicka det direkt till Edge Network i stället för att använda JavaScript-manipulering för att konvertera det till XDM på sidan (antingen via taggar eller via manuell manipulering av JavaScript).
+1. Webbplatsen har ett välformat, styrt och underhållet datalager och det finns en inställning för att skicka det direkt till Edge Network i stället för att använda JavaScript-manipulering för att konvertera det till XDM på sidan (antingen via taggar eller via manuell JavaScript-manipulering).
 2. Ett annat taggsystem än Taggar distribueras på webbplatsen.
 
 ## Skicka ett befintligt datalager till Edge Network via WebSDK {#send-datalayer-via-websdk}
 
 Det befintliga datalagret måste skickas med objektet [`data`](/help/web-sdk/commands/sendevent/data.md) i kommandot `sendEvent`.
 
-Om du använder taggar måste du använda fältet **[!UICONTROL Data]** för åtgärdstypen **[!UICONTROL Send Event]** enligt beskrivningen i [dokumentationen för Web SDK-taggtillägget](/help/tags/extensions/client/web-sdk/action-types.md).
+Om du använder taggar måste du använda fältet **[!UICONTROL Data]** för åtgärdstypen **[!UICONTROL Send Event]** enligt beskrivningen i [dokumentationen för SDK-taggtillägg för webben](/help/tags/extensions/client/web-sdk/action-types.md).
 
 Resten av guiden fokuserar på hur datalagret ska mappas till XDM-standarder när det har skickats av WebSDK.
 
@@ -166,6 +166,10 @@ Steg **[!UICONTROL Mapping]** visas, så att du kan mappa fälten i källdata ti
 
 * [Skapa mappningsregler](#create-mapping) för den här datastream via en manuell process.
 * [Importera mappningsregler](#import-mapping) från en befintlig datastream.
+
+>[!IMPORTANT]
+>
+>Mappning av dataprep åsidosätter `identityMap` XDM-nyttolaster, vilket ytterligare kan påverka profilmatchning mot Real-Time CDP-målgrupper.
 
 ### Skapa mappningsregler {#create-mapping}
 
