@@ -2,10 +2,10 @@
 title: Versionsinformation om Adobe Experience Platform – februari 2025
 description: Versionsinformationen för Adobe Experience Platform från februari 2025.
 exl-id: f854f9e5-71be-4d56-a598-cfeb036716cb
-source-git-commit: 300be2f922f81f0666a794815cb27777802efb60
+source-git-commit: c4064771a384a90d94903ba1761fc9ee20f47747
 workflow-type: tm+mt
-source-wordcount: '1535'
-ht-degree: 94%
+source-wordcount: '1638'
+ht-degree: 92%
 
 ---
 
@@ -24,6 +24,7 @@ Uppdateringar av befintliga funktioner och dokumentation i Adobe Experience Plat
 - [Dataförberedelse](#data-prep)
 - [Mål](#destinations)
 - [Källor](#sources)
+- [Segmenteringstjänst](#segmentation)
 - [Dokumentationsuppdateringar](#documentation-updates)
    - [Jämförelse mellan Edge Network och Hub](#edge)
    - [Utökat API för flödestjänst för källor](#flow-service)
@@ -107,6 +108,18 @@ Mer information finns i [översikten över Dataförberedelse](../../data-prep/ho
 - När du exporterar profiler till filbaserade mål säkerställer borttagning av dubbletter att endast en profil exporteras när flera profiler delar samma nyckel för borttagning av dubbletter och samma referenstidstämpel. Den här versionen innehåller en uppdatering av processen för borttagning av dubbletter, vilket säkerställer att efterföljande körningar med samma koordinater alltid ger samma resultat, vilket förbättrar konsekvensen. [Läs mer](/help/destinations/ui/activate-batch-profile-destinations.md#deduplication-same-timestamp).
 
 Mer information finns i [översikten över destinationer](../../destinations/home.md).
+
+## Segmenteringstjänst {#segmentation-service}
+
+[!DNL Segmentation Service] definierar en viss deluppsättning av profiler genom att beskriva de kriterier som skiljer en säljbar grupp människor inom din kundbas. Segmenten kan baseras på registerdata (t.ex. demografisk information) eller tidsseriehändelser som representerar kundinteraktioner med ditt varumärke.
+
+**Nya eller uppdaterade funktioner**
+
+| Funktion | Beskrivning |
+| ------- | ----------- |
+| Beständig delning | Audience Composition har nu stöd för beständiga delningar. Du kan låta de delade målgrupperna förbli konstanta när du delar efter profil genom att lägga till ett identitetsnamnutrymme i det delade blocket. Mer information om den här funktionen finns i [dokumentationen för målgruppskomposition](../../segmentation/ui/audience-composition.md). |
+
+Mer information om [!DNL Segmentation Service] finns i [segmenteringsöversikten](../../segmentation/home.md).
 
 ## Källor {#sources}
 

@@ -1,10 +1,11 @@
 ---
 title: Versionsinformation om Adobe Experience Platform – februari 2025
 description: Versionsinformationen för Adobe Experience Platform från februari 2025.
-source-git-commit: 300be2f922f81f0666a794815cb27777802efb60
+exl-id: 734a9484-516e-4dd7-9503-8fcdc50cbaac
+source-git-commit: c4064771a384a90d94903ba1761fc9ee20f47747
 workflow-type: tm+mt
-source-wordcount: '1535'
-ht-degree: 94%
+source-wordcount: '1638'
+ht-degree: 92%
 
 ---
 
@@ -22,6 +23,7 @@ Uppdateringar av befintliga funktioner och dokumentation i Adobe Experience Plat
 - [Katalogtjänst](#catalog-service)
 - [Dataförberedelse](#data-prep)
 - [Mål](#destinations)
+- [Segmenteringstjänst](#segmentation)
 - [Källor](#sources)
 - [Dokumentationsuppdateringar](#documentation-updates)
    - [Jämförelse mellan Edge Network och Hub](#edge)
@@ -107,6 +109,17 @@ Mer information finns i [översikten över Dataförberedelse](../../data-prep/ho
 
 Mer information finns i [översikten över destinationer](../../destinations/home.md).
 
+## Segmenteringstjänst {#segmentation-service}
+
+[!DNL Segmentation Service] definierar en viss deluppsättning av profiler genom att beskriva de kriterier som skiljer en säljbar grupp människor inom din kundbas. Segmenten kan baseras på registerdata (t.ex. demografisk information) eller tidsseriehändelser som representerar kundinteraktioner med ditt varumärke.
+
+**Nya eller uppdaterade funktioner**
+
+| Funktion | Beskrivning |
+| ------- | ----------- |
+| Beständig delning | Audience Composition har nu stöd för beständiga delningar. Du kan låta de delade målgrupperna förbli konstanta när du delar efter profil genom att lägga till ett identitetsnamnutrymme i det delade blocket. Mer information om den här funktionen finns i [dokumentationen för målgruppskomposition](../../segmentation/ui/audience-composition.md). |
+
+Mer information om [!DNL Segmentation Service] finns i [segmenteringsöversikten](../../segmentation/home.md).
 
 ## Källor {#sources}
 

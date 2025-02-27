@@ -3,9 +3,9 @@ solution: Experience Platform
 title: Användargränssnittshandbok för målgrupper
 description: Audience Composition i Adobe Experience Platform UI har en omfattande arbetsyta där du kan interagera med profildataelement. Arbetsytan innehåller intuitiva kontroller för att skapa och redigera målgrupper för din organisation.
 exl-id: 0dda0cb1-49e0-478b-8004-84572b6cf625
-source-git-commit: f2abd9445c6b725c166f031407e330a2c15e9edb
+source-git-commit: c4064771a384a90d94903ba1761fc9ee20f47747
 workflow-type: tm+mt
-source-wordcount: '2230'
+source-wordcount: '2210'
 ht-degree: 0%
 
 ---
@@ -60,7 +60,7 @@ När du markerar **[!UICONTROL Audience]**-blocket visas kontroller för att mä
 
 Lägga till målgrupper i Audience-blocket. välj **[!UICONTROL Add Audience]**.
 
-![Knappen Lägg till målgrupp är markerad.](../images/ui/audience-composition/add-audience.png)
+![Knappen Lägg till målgrupp är markerad.](../images/ui/audience-composition/select-add-audience.png)
 
 >[!IMPORTANT]
 >
@@ -91,7 +91,7 @@ De valda målgrupperna visas nu i den högra listen när **[!UICONTROL Audience]
 
 Om du vill lägga till en anpassad regel i målgruppsblocket väljer du **[!UICONTROL Build rule]**.
 
-![Knappen Bygg regel är markerad.](../images/ui/audience-composition/build-rule.png)
+![Knappen Bygg regel är markerad.](../images/ui/audience-composition/select-build-rule.png)
 
 Segmentbyggaren visas. Du kan använda Segment Builder för att skapa en anpassad regel som målgruppen ska följa. Mer information om hur du använder Segment Builder finns i [guiden för segmentbyggaren](./segment-builder.md).
 
@@ -196,7 +196,7 @@ Om du vill välja den datauppsättning som ska berika målgruppen med väljer du
 
 **[!UICONTROL Select dataset]**-pekaren visas. Välj den datauppsättning som du vill lägga till för berikning, följt av **[!UICONTROL Select]**, för att lägga till datauppsättningen för anrikning.
 
-![Den valda datauppsättningen har valts.](../images/ui/audience-composition/enrich-dataset-selected.png)
+![Den valda datauppsättningen har valts.](../images/ui/audience-composition/select-dataset.png)
 
 >[!IMPORTANT]
 >
@@ -212,27 +212,21 @@ Avsnittet **[!UICONTROL Enrichment criteria]** visas nu till höger. I det här 
 
 Om du vill markera **[!UICONTROL Source join key]** väljer du ikonen ![filter](/help/images/icons/project-edit.png) .
 
-![Filterikonen för [!UICONTROL Source join key] är markerad.](../images/ui/audience-composition/enrich-select-source-join-key.png)
-
 **[!UICONTROL Select a profile attribute]**-pekaren visas. Välj det profilattribut som du vill använda som källkopplingsnyckel, följt av **[!UICONTROL Select]**, för att välja det attributet som källkopplingsnyckel.
 
-![Attributet som du vill använda som källanslutningsnyckel är markerat.](../images/ui/audience-composition/enrich-select-profile-attribute.png)
+![Attributet som du vill använda som källanslutningsnyckel är markerat.](../images/ui/audience-composition/select-source-join-key.png)
 
 Om du vill markera **[!UICONTROL Enrichment dataset join key]** väljer du ikonen ![filter](/help/images/icons/project-edit.png) .
 
-![Filterikonen för [!UICONTROL Enrichment dataset join key] är markerad.](../images/ui/audience-composition/enrich-select-enrichment-dataset-join-key.png)
-
 **[!UICONTROL Enrichment attributes]**-pekaren visas. Välj det attribut som du vill använda som kopplingsnyckel för anrikningsdatauppsättningen, följt av **[!UICONTROL Select]**, för att välja det attributet som kopplingsnyckel för anrikningsdatauppsättningen.
 
-![Attributet som du vill använda som kopplingsnyckel för anrikningsdatauppsättningen är markerat.](../images/ui/audience-composition/enrich-select-enrichment-dataset-attribute.png)
+![Attributet som du vill använda som kopplingsnyckel för anrikningsdatauppsättningen är markerat.](../images/ui/audience-composition/select-enrichment-dataset-join-key.png)
 
 Nu när du har lagt till båda dina kopplingsnycklar visas avsnittet **[!UICONTROL Enrichment attributes]**. Nu kan du lägga till det attribut du vill förbättra din publik med. Om du vill lägga till dessa attribut väljer du **[!UICONTROL Add attribute]**.
 
-![Knappen [!UICONTROL Add attribute] är markerad.](../images/ui/audience-composition/enrich-select-add-attribute.png)
-
 **[!UICONTROL Enrichment attributes]**-pekaren visas. Du kan välja de attribut från datauppsättningen som ska berika din målgrupp med, följt av **[!UICONTROL Select]**, för att lägga till attributen till din målgrupp.
 
-![De anrikningsattribut du vill lägga till är markerade.](../images/ui/audience-composition/enrich-add-enrichment-attributes.png)
+![De anrikningsattribut du vill lägga till är markerade.](../images/ui/audience-composition/select-enrichment-attribute.png)
 
 <!-- ## [!UICONTROL Join] {#join-block}
 
@@ -282,13 +276,13 @@ Välj ikonen ![filter](/help/images/icons/project-edit.png) om du vill välja vi
 
 En lista med profilattribut visas. I den här povern kan du välja den attributtyp som du vill rangordna målgruppen efter. Välj **[!UICONTROL Select]** om du vill lägga till den i rangblocket. Observera att det markerade attributet kan **endast** vara tal.
 
-![En lista över attribut visas.](../images/ui/audience-composition/select-attribute-rank.png)
+![En lista över attribut visas.](../images/ui/audience-composition/rank-attribute.png)
 
 När du har valt attributet kan du välja den ordning som det ska rangordnas efter. Detta sker antingen i stigande ordning (från lägsta till högsta) eller i fallande ordning (från högsta till lägsta).
 
 Dessutom kan du begränsa antalet profiler som returneras genom att aktivera växlingsknappen **[!UICONTROL Add profile limit]**. När den här växlingen är aktiverad kan du ange det maximala antalet profiler som returneras i fältet **[!UICONTROL Included profiles]**.
 
-![Växeln Lägg till profilgräns är markerad, vilket gör att du kan begränsa antalet returnerade profiler.](../images/ui/audience-composition/add-profile-limit.png)
+![Växeln Lägg till profilgräns är markerad, vilket gör att du kan begränsa antalet returnerade profiler.](../images/ui/audience-composition/add-profile-limit-rank.png)
 
 ## [!UICONTROL Split] {#split-block}
 
@@ -307,7 +301,7 @@ Dessutom kan du begränsa antalet profiler som returneras genom att aktivera vä
 >title="Andra profiler"
 >abstract="Med alternativet Andra profiler kan du skapa ytterligare en sökväg med de återstående profilerna som inte matchar något av de andra sökvägarnas angivna villkor."
 
-Med blocktypen **[!UICONTROL Split]** kan du dela upp din nya målgrupp i olika undermålgrupper. Du kan antingen dela den här målgruppen baserat på procent eller ett attribut. När du delar upp din målgrupp i undermålgrupper är den här delningen **inte** beständig. Detta innebär att profilerna kan finnas i olika undergrupper för varje utvärdering.
+Med blocktypen **[!UICONTROL Split]** kan du dela upp din nya målgrupp i olika undermålgrupper. Du kan antingen dela den här målgruppen baserat på procent eller ett attribut.
 
 Om du vill lägga till ett **[!UICONTROL Split]**-block väljer du ikonen **+** följt av **[!UICONTROL Split]**.
 
@@ -325,23 +319,25 @@ När ni delar er målgrupp kan ni antingen dela efter procent eller dela efter a
 >[!CONTEXTUALHELP]
 >id="platform_segmentation_ao_split_persistent"
 >title="Beständig delning"
->abstract="Du kan göra procentandelen bestående genom att aktivera det här alternativet och välja vilket identitetsnamnutrymme som delningen ska fortsätta på."
+>abstract="Du kan göra procentandelen beständig genom att aktivera det här alternativet och välja ett identitetsnamnutrymme."
 
 Vid uppdelning efter procent delas målgrupperna slumpmässigt, baserat på antalet banor och procentandelar.
 
-Du kan t.ex. ha tre banor med olika profiler.
+![Procentdelningen är markerad.](../images/ui/audience-composition/split-by-percentage.png)
 
-![Uppdelningen i antal sparade målgrupper och procentandelar visas.](../images/ui/audience-composition/percentages.png)
+Du kan också ange en identitet, vilket gör att den procentuella delningen blir bestående. Tillgängliga identitetstyper omfattar alla identitetsnamnutrymmen som är tillgängliga i din organisation.
+
+![Kryssrutan Dela efter identitet är markerad. Dessutom är listrutan som du kan använda för att välja med identitet att dela efter markerad.](../images/ui/audience-composition/split-by-identity.png)
 
 ### Dela efter attribut {#split-attribute}
 
 Vid uppdelning efter attribut delas målgrupperna upp utifrån de angivna attributen. Om du vill markera attributet som ska delas med markerar du **[!UICONTROL Split]**-blocket följt av ikonen ![filter](/help/images/icons/project-edit.png) .
 
-![Filterknappen är markerad och visar hur du filtrerar efter attribut.](../images/ui/audience-composition/select-split-attribute.png)
+![Filterknappen är markerad och visar hur du filtrerar efter attribut.](../images/ui/audience-composition/split-by-attribute.png)
 
 En lista med profilattribut visas. Markera attributtypen, följt av **[!UICONTROL Select]**, för att lägga till den i det delade blocket.
 
-![En lista över attribut visas.](../images/ui/audience-composition/select-attribute-exclude.png)
+![En lista över attribut visas.](../images/ui/audience-composition/select-attribute.png)
 
 När du har valt attributet kan du välja vilka profiler som ska tillhöra vilka undermålgrupper genom att lägga till värdena i fältet **[!UICONTROL Values]**.
 
