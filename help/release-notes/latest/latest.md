@@ -5,7 +5,7 @@ exl-id: f854f9e5-71be-4d56-a598-cfeb036716cb
 source-git-commit: c4064771a384a90d94903ba1761fc9ee20f47747
 workflow-type: tm+mt
 source-wordcount: '1638'
-ht-degree: 92%
+ht-degree: 97%
 
 ---
 
@@ -97,7 +97,7 @@ Mer information finns i [översikten över Dataförberedelse](../../data-prep/ho
 | Använd åtkomstetiketter för att hantera användaråtkomst till destinationsdataflöden | Som en del av funktionen [[!UICONTROL attribute-based access control]](/help/access-control/abac/overview.md) i Real-Time CDP kan du nu tillämpa åtkomstetiketter i [destinationsdataflöden](/help/dataflows/ui/monitor-destinations.md). På så sätt kan du se till att bara en deluppsättning av användarna i organisationen får tillgång till specifika destinationsdataflöden. <br> **Viktigt**: När du söker efter destinationsdataflöden med sökrutan högst upp i användargränssnittet Experience Platform kan resultatet innehålla destinationsdataflöden som dina användaretiketter begränsar dig från att se. Detta beteende kommer att korrigeras i en framtida uppdatering. |
 | [Rapportering på målgruppsnivå](/help/dataflows/ui/monitor-destinations.md#audience-level-dataflow-runs-for-streaming-destinations) för [anslutningen Marketo Engage](/help/destinations/catalog/adobe/marketo-engage.md) | Du kan nu [visa information](/help/dataflows/ui/monitor-destinations.md#audience-level-dataflow-runs-for-streaming-destinations) om aktiverade, exkluderade eller misslyckade identiteter som har delats upp på en målgruppsnivå för varje målgrupp som ingår i dataflödena för den här destinationen. |
 | Externa målgrupper har stöd för anslutningarna [TikTok](/help/destinations/catalog/social/tiktok.md) och [Snap Inc](/help/destinations/catalog/advertising/snap-inc.md) | Du kan aktivera externa målgrupper för dessa mål från [anpassade uppladdningar](../../segmentation/ui/audience-portal.md#import-audience) och [Federerad målgruppssammansättning](https://experienceleague.adobe.com/sv/docs/federated-audience-composition/using/start/audiences). |
-| Exportera arrayer, kartor och objekt till molnlagringsmål | Genom att använda den nya växlingsknappen **[!UICONTROL Export arrays, maps, objects]** när du ansluter till ett molnlagringsmål kan du exportera komplexa objekt till utvalda mål. [Läs mer](/help/destinations/ui/export-arrays-calculated-fields.md) om funktionaliteten. |
+| Exportera matriser, kartor och objekt till molnlagringsdestinationer | Genom att använda den nya växlingsknappen **[!UICONTROL Export arrays, maps, objects]** när du ansluter till en molnlagringsdestination kan du exportera komplexa objekt till utvalda destinationer. [Läs mer](/help/destinations/ui/export-arrays-calculated-fields.md) om funktionaliteten. |
 
 {style="table-layout:auto"}
 
@@ -105,7 +105,7 @@ Mer information finns i [översikten över Dataförberedelse](../../data-prep/ho
 
 - Ett problem i testverktygen i Destination SDK har korrigerats. Vissa kunder eller partners stötte på problem med [verktyg för generering av provprofiler](/help/destinations/destination-sdk/testing-api/streaming-destinations/sample-profile-generation-api.md) på grund av ett format som inte stöds när det schema som används för att generera profiler innehöll datatyper med en `No format`-väljare.
 - Ett problem när `targetConnection`-specifikationen för destinationer uppdaterades med API för flödestjänst har korrigerats. I vissa fall fungerar PATCH-åtgärden på ungefär samma sätt som en POST-åtgärd, vilket gör att befintliga dataflöden skadas. Problemet är nu åtgärdat och alla kunder kan använda API för flödestjänst för att uppdatera sin `targetConnection`-specifikation. [Läs mer](/help/destinations/api/edit-destination.md#patch-target-connection).
-- När du exporterar profiler till filbaserade mål säkerställer borttagning av dubbletter att endast en profil exporteras när flera profiler delar samma nyckel för borttagning av dubbletter och samma referenstidstämpel. Den här versionen innehåller en uppdatering av processen för borttagning av dubbletter, vilket säkerställer att efterföljande körningar med samma koordinater alltid ger samma resultat, vilket förbättrar konsekvensen. [Läs mer](/help/destinations/ui/activate-batch-profile-destinations.md#deduplication-same-timestamp).
+- När du exporterar profiler till filbaserade måldestinationer ser dedupliceringen till att endast en profil exporteras när flera profiler delar samma nyckel för deduplicering och samma referenstidsstämpel. Den här versionen innehåller en uppdatering av dedupliceringsprocessen, vilket säkerställer att efterföljande körningar med samma koordinater alltid ger samma resultat, vilket förbättrar konsekvensen. [Läs mer](/help/destinations/ui/activate-batch-profile-destinations.md#deduplication-same-timestamp).
 
 Mer information finns i [översikten över destinationer](../../destinations/home.md).
 
