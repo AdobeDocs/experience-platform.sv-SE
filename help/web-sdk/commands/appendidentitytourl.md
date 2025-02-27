@@ -2,7 +2,7 @@
 title: appendIdentityToUrl
 description: Leverera personaliserade upplevelser mer exakt mellan appar, webben och olika domäner.
 exl-id: 09dd03bd-66d8-4d53-bda8-84fc4caadea6
-source-git-commit: 153c5bae42c027c25a38a8b63070249d1b1a8f01
+source-git-commit: 7c262e5819f8e3488c5ddd5a0221d1c52c28c029
 workflow-type: tm+mt
 source-wordcount: '368'
 ht-degree: 1%
@@ -13,13 +13,13 @@ ht-degree: 1%
 
 Med kommandot `appendIdentityToUrl` kan du lägga till en användaridentifierare i URL:en som en frågesträng. Den här åtgärden gör att du kan föra en besökares identitet mellan domäner, vilket förhindrar att besökarantal dupliceras för datauppsättningar som innehåller både domäner och kanaler. Det finns på Web SDK version 2.11.0 eller senare.
 
-Frågesträngen som genereras och läggs till i URL:en är `adobe_mc`. Om Web SDK inte kan hitta ett ECID anropar den `/acquire`-slutpunkten för att generera ett.
+Frågesträngen som genereras och läggs till i URL:en är `adobe_mc`. Om Web SDK inte kan hitta ett ECID, anropas slutpunkten `/acquire` för att generera ett.
 
 >[!NOTE]
 >
 >Om samtycke inte har angetts returneras URL:en från den här metoden oförändrad. Det här kommandot körs omedelbart, det väntar inte på någon uppdatering av medgivandet.
 
-## Lägg till identitet i URL med hjälp av Web SDK-tillägget {#extension}
+## Bifoga identitet till URL med Web SDK-tillägget {#extension}
 
 En URL-adress läggs till som en åtgärd i en regel i tagggränssnittet för Adobe Experience Platform Data Collection.
 
@@ -72,12 +72,16 @@ Lägg till identiteten i URL:en.
 
 +++
 
-## Bifoga identitet till URL med hjälp av JavaScript-biblioteket för Web SDK
+## Bifoga identitet till URL med hjälp av SDK Web-biblioteket
 
 Kör kommandot `appendIdentityToUrl` med en URL som parameter. Metoden returnerar en URL med identifieraren tillagd som en frågesträng.
 
 ```js
-alloy("appendIdentityToUrl",document.location);
+alloy("appendIdentityToUrl",
+  {
+    url: document.location.href
+  }
+);
 ```
 
 Du kan lägga till en händelseavlyssnare för alla klick som tas emot på sidan och kontrollera om URL:en matchar önskade domäner. Om den gör det lägger du till identiteten i URL:en och dirigerar om användaren.
