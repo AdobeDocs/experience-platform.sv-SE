@@ -1,9 +1,10 @@
 ---
 title: Hantera lagring av Experience Event-datauppsättningar i Data Lake med TTL
 description: Lär dig hur du utvärderar, ställer in och hanterar lagring av Experience Event-datauppsättningar i datasjön med hjälp av TTL-konfigurationer (Time-To-Live) med Adobe Experience Platform API:er. Den här guiden förklarar hur TTL-radnivåförfallodatum stöder principer för datalagring, optimerar lagringseffektiviteten och säkerställer effektiv livscykelhantering. Här finns också användningsexempel och metodtips som hjälper dig att effektivt tillämpa TTL.
-source-git-commit: 74b6e5f10f7532745180760adf1d96bc57e7b590
+exl-id: d688d4d0-aa8b-4e93-a74c-f1a1089d2df0
+source-git-commit: affaeb0869423292a44eb7ada8343482bb163ca6
 workflow-type: tm+mt
-source-wordcount: '2105'
+source-wordcount: '2195'
 ht-degree: 0%
 
 ---
@@ -28,6 +29,12 @@ TTL är användbart vid hantering av tidskänsliga data som blir mindre relevant
 - Förbättra frågeprestanda genom att minimera irrelevanta data.
 - Upprätthåll datahygien genom att endast lagra relevant information.
 - Optimera datalagringen för att stödja affärsmålen.
+
+>[!NOTE]
+>
+>Experience Event DataSet Retention gäller händelsedata som lagras i datasjön. Om du hanterar kvarhållning i Real-Time Customer Data Platform bör du överväga att använda [Experience Event Expiration](../../profile/event-expirations.md) och [Pseudonymous Profile Expiration](../../profile/pseudonymous-profiles.md) tillsammans med inställningarna för kvarhållning av datarina.
+>
+>TTL-konfigurationer hjälper dig att optimera lagring baserat på berättiganden. Data från Profile Store (används i Real-Time CDP) kan anses vara inaktuella och tas bort efter 30 dagar, men samma händelsedata i datasjön kan vara tillgängliga i 12-13 månader (eller längre baserat på tillstånd) för analyser och dataanvändning i Distiller.
 
 ### Branschexempel {#industry-example}
 
@@ -121,7 +128,7 @@ Ett lyckat svar returnerar TTL-konfigurationen för datauppsättningen, inklusiv
                 "rowExpiration": {
                     "defaultValue": "P12M",
                     "maxValue": "P12M",
-                    "minValue": "P7D"
+                    "minValue": "P30D"
                 }
             },
             "adobe_unifiedProfile": {  
@@ -254,7 +261,7 @@ Ett lyckat svar visar TTL-konfigurationen för datauppsättningen. Den innehåll
 | `extensions` | En behållare för ytterligare metadata relaterade till datauppsättningen. |
 | `extensions.adobe_lakeHouse` | Anger inställningar för lagringsarkitektur, inklusive förfallokonfigurationer på radnivå |
 | `rowExpiration` | Objektet innehåller TTL-inställningar som definierar kvarhållningsperioden för datauppsättningen. |
-| `rowExpiration.ttlValue` | Definierar längden innan poster i datauppsättningen tas bort automatiskt. Använder periodformatet ISO-8601 (till exempel `P3M` för 3 månader eller `P7D` för en vecka). |
+| `rowExpiration.ttlValue` | Definierar längden innan poster i datauppsättningen tas bort automatiskt. Använder periodformatet ISO-8601 (till exempel `P3M` för 3 månader eller `P30D` för en vecka). |
 | `rowExpiration.valueStatus` | Strängen anger om TTL-inställningen är ett standardsystemvärde eller ett anpassat värde som angetts av en användare. Möjliga värden är: `default`, `custom`. |
 | `rowExpiration.setBy` | Anger vem som senast ändrade TTL-inställningen. Möjliga värden är: `user` (manuellt angivet) eller `service` (automatiskt tilldelat). |
 | `rowExpiration.updated` | Tidsstämpeln för den senaste TTL-uppdateringen. Det här värdet anger när TTL-inställningen senast ändrades. |
@@ -418,4 +425,3 @@ Nu när du har lärt dig hur du hanterar TTL-inställningar för förfallodatum 
 - Kvarhållningsjobb: Lär dig att schemalägga och automatisera datauppsättningens förfallodatum i plattformsgränssnittet med [gränssnittsguiden för datalivscykler](../../hygiene/ui/dataset-expiration.md), eller kontrollera konfigurationer för kvarhållande av datauppsättningar och verifiera att utgångna poster tas bort.
 - [API-slutpunktsguide för förfallodatum för datauppsättning](../../hygiene/api/dataset-expiration.md): Upptäck hur du tar bort hela datauppsättningar i stället för bara rader. Lär dig hur du schemalägger, hanterar och automatiserar utgångsdatum för datauppsättningar med API:t för att säkerställa effektiv datalagring.
 - [Översikt över dataanvändningsprinciper](../../data-governance/policies/overview.md): Lär dig hur du anpassar din datalagringsstrategi till bredare efterlevnadskrav och begränsningar för användning av marknadsföringsmaterial.
-
