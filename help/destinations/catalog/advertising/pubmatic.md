@@ -1,14 +1,15 @@
 ---
 title: PubMatic Connect
 description: PubMatic maximerar kundvärdet genom att leverera framtidens programstyrda digitala marknadsföringskedja. PubMatic Connect kombinerar plattformsteknik och dedikerad tjänst för att förbättra hur lager och data paketeras och hanteras.
-last-substantial-update: 2023-12-14T00:00:00Z
+last-substantial-update: 2025-02-12T00:00:00Z
 exl-id: 21e07d2c-9a6a-4cfa-a4b8-7ca48613956c
-source-git-commit: c35b43654d31f0f112258e577a1bb95e72f0a971
+source-git-commit: 2041c06e660e24f63d4c44adc0e8f3082bb007ae
 workflow-type: tm+mt
-source-wordcount: '886'
+source-wordcount: '1019'
 ht-degree: 0%
 
 ---
+
 
 # Mål för PubMatic Connect {#pubmatic-connect}
 
@@ -16,11 +17,21 @@ ht-degree: 0%
 
 Använd [!DNL PubMatic Connect] för att maximera kundens värde genom att leverera framtidens programbaserade leveranskedja för digital marknadsföring. [!DNL PubMatic Connect] kombinerar plattformsteknik och dedikerad tjänst för att förbättra hur lager och data paketeras och överförs.
 
-Använd det här målet för att skicka målgruppsdata till plattformen [!DNL PubMatic Connect].
+Det finns två tillgängliga mål som gör att du kan skicka målgruppsdata till PubMatic Connect-plattformen. De skiljer sig något när det gäller funktionalitet:
+
+1. PubMatic Connect
+
+   Under den initiala aktiveringen registreras målgrupperna automatiskt i PubMatic-plattformen och det interna Adobe Experience Platform-id:t används för mappning.
+
+2. PubMatic Connect (Custom Audience ID Mapping)
+
+   På den här platsen kan du välja att manuellt lägga till ett mappnings-ID under aktiveringsarbetsflödet. Använd det här målet när data ska skickas till befintliga målgrupper i PubMatic-plattformen eller om ett anpassat &#39;Source Audience ID&#39; krävs.
+
+![Visa sida vid sida om de två PubMatic-anslutningarna i målkatalogen.](/help/destinations/assets/catalog/advertising/pubmatic/two-pubmatic-connectors-side-by-side.png)
 
 >[!IMPORTANT]
 >
->Målanslutningen och dokumentationssidan skapas och underhålls av [!DNL PubMatic]-teamet. Om du har frågor eller uppdateringsförfrågningar kontaktar du dem direkt på `support@pubmatic.com`.
+> Målanslutningen och dokumentationssidan skapas och underhålls av [!DNL PubMatic]-teamet. Om du har frågor eller uppdateringsförfrågningar kontaktar du dem direkt på `support@pubmatic.com`.
 
 ## Användningsfall {#use-cases}
 
@@ -39,7 +50,7 @@ Tala med din kontohanterare för [!DNL PubMatic] för att kontrollera att ditt k
 [!DNL PubMatic Connect] stöder aktivering av identiteter som beskrivs i tabellen nedan. Läs mer om [identiteter](/help/identity-service/features/namespaces.md).
 
 | Målidentitet | Beskrivning | Överväganden |
-| --------------- | ------ | --- |
+| --------------- | ------------------------ | ------------------------------------------------------------------------------- |
 | GAID | GOOGLE ADVERTISING ID | Välj målidentiteten för GAID när källidentiteten är ett GAID-namnområde. |
 | IDFA | Apple ID för annonsörer | Välj IDFA-målidentitet när din källidentitet är ett IDFA-namnutrymme. |
 | extern_id | Anpassade användar-ID:n | Välj den här målidentiteten när källidentiteten är ett anpassat namnutrymme. |
@@ -51,8 +62,8 @@ Tala med din kontohanterare för [!DNL PubMatic] för att kontrollera att ditt k
 I det här avsnittet beskrivs vilken typ av målgrupper du kan exportera till det här målet.
 
 | Målgruppsursprung | Stöds | Beskrivning |
-| --- | --------- | ------ |
-| [!DNL Segmentation Service] | ✓ | Publiker som genererats via Experience Platform [segmenteringstjänsten](../../../segmentation/home.md). |
+| --------------------------- | --------- | -------------------------------------------------------------------------------------------------------------------------- |
+| [!DNL Segmentation Service] | ✓ | Publiker som genererats via Experience Platform [segmenteringstjänst](../../../segmentation/home.md). |
 | Anpassade överföringar | ✓ | Publikerna [importerade](../../../segmentation/ui/audience-portal.md#import-audience) till Experience Platform från CSV-filer. |
 
 {style="table-layout:auto"}
@@ -62,7 +73,7 @@ I det här avsnittet beskrivs vilken typ av målgrupper du kan exportera till de
 Se tabellen nedan för information om exporttyp och frekvens för destinationen.
 
 | Objekt | Typ | Anteckningar |
-| --- | --- | --- |
+| ---------------- | ------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | Exporttyp | **[!UICONTROL Segment export]** | Du exporterar alla medlemmar i ett segment (publik) med de identifierare (namn, telefonnummer eller andra) som används i PubMatic Connect-målet. |
 | Exportfrekvens | **[!UICONTROL Streaming]** | Direktuppspelningsmål är alltid på API-baserade anslutningar. När en profil uppdateras i Experience Platform baserat på segmentutvärdering, skickar kopplingen uppdateringen nedåt till målplattformen. Läs mer om [direktuppspelningsmål](/help/destinations/destination-types.md#streaming-destinations). |
 
@@ -128,6 +139,12 @@ Markera målfält:
 - Välj det [!DNL PubMatic UID]-typnummer som matchar den identifierare som du valde i det första steget.
 
 ![Mappa attribut och identiteter](../..//assets/catalog/advertising/pubmatic/export-identities-to-destination.png)
+
+### Målgruppsplanering
+
+Om du använder målet PubMatic Connect (Custom Audience ID Mapping) måste du ange ett mappnings-ID för varje målgrupp som motsvarar &quot;Source Audience ID&quot; i PubMatic-plattformen.
+
+![Målgruppsplanering](../..//assets/catalog/advertising/pubmatic/audience-scheduling-mapping-id.png)
 
 ## Exporterade data/Validera dataexport {#exported-data}
 
