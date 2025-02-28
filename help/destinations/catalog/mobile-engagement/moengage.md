@@ -3,9 +3,9 @@ title: Moengage connection
 description: Moengage är en plattform för kundengagemang som driver kundcentrerade interaktioner mellan konsumenter och varumärken i realtid.
 last-substantial-update: 2023-10-11T00:00:00Z
 exl-id: 051f1a10-3c41-4c0a-b187-bf80de0565f0
-source-git-commit: c3ef732ee82f6c0d56e89e421da0efc4fbea2c17
+source-git-commit: 1e22ad63414876af45d156ed030b8103908de8a1
 workflow-type: tm+mt
-source-wordcount: '947'
+source-wordcount: '987'
 ht-degree: 0%
 
 ---
@@ -16,7 +16,7 @@ ht-degree: 0%
 
 Använd målet [!DNL Moengage] för att ansluta och mappa dina Adobe-data (användarattribut, segment och händelser) till Motion i realtid. Sedan kan kunderna agera utifrån dessa data och leverera personaliserade, målinriktade upplevelser.
 
-Med Adobe är integreringen mycket enkel och intuitiv. Ta vilken användarprofil som helst i Adobe och mappa den till ett MobilEngage-användarattribut.
+Med Adobe är integreringen mycket enkel och intuitiv. Ta vilken Adobe-användarprofil som helst och mappa den till ett MoEngage-användarattribut.
 
 >[!IMPORTANT]
 >
@@ -51,7 +51,7 @@ Se tabellen nedan för information om exporttyp och frekvens för destinationen.
 | Objekt | Typ | Anteckningar |
 ---------|----------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | Exporttyp | **[!UICONTROL Profile-based]** | Du exporterar alla medlemmar i ett segment (publik) med identifierarna (user_id, anonymous_id) tillsammans med anpassade attribut som definieras av dig och som har exporterats till [!DNL Moengage]. |
-| Exportfrekvens | **[!UICONTROL Streaming]** | Direktuppspelningsmål är alltid på API-baserade anslutningar. Så snart en profil uppdateras i Experience Platform baserat på segmentutvärdering skickar kopplingen uppdateringen nedåt till målplattformen. Läs mer om [direktuppspelningsmål](/help/destinations/destination-types.md#streaming-destinations). |
+| Exportfrekvens | **[!UICONTROL Streaming]** | Direktuppspelningsmål är alltid på API-baserade anslutningar. Så snart en profil uppdateras i Experience Platform baserat på segmentutvärdering skickar anslutningsprogrammet uppdateringen nedåt till målplattformen. Läs mer om [direktuppspelningsmål](/help/destinations/destination-types.md#streaming-destinations). |
 
 {style="table-layout:auto"}
 
@@ -143,7 +143,10 @@ Upprepa föregående steg om du vill lägga till fler mappningar.
 
 ## Exporterade data/Validera dataexport {#exported-data}
 
-Gå till användarprofilen på ditt [!DNL Moengage]-konto för att kontrollera om data har exporterats till målet [!DNL Moengage]. Du ser ett användarattribut som kallas AEP-segment.
+Gå till användarprofilen i ditt [!DNL Moengage]-konto för att kontrollera om data har exporterats till målet [!DNL Moengage]. Här bör du hitta ett användarattribut med namnet `AEPSegments`, som skapas automatiskt och de andra anpassade attributen som har mappats i tidigare steg i Adobe Experience Platform.
+
+`AEPSegments` är ett matristypsattribut i [!DNL Moengage]. Här listas alla Adobe målgruppsnamn som användaren är kopplad till i Experience Platform.
+
 
 ![Målmappning för Moengage slutförd](../../assets/catalog/mobile-engagement/moengage/validation.png)
 
