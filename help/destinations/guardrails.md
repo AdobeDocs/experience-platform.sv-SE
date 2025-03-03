@@ -1,14 +1,14 @@
 ---
-keywords: Experience Platform;aktivering;felsökning;skyddsförslag;riktlinjer;gräns
+keywords: Experience Platform;aktivering;felsökning;skyddsförslag;riktlinjer;limit
 title: Standardskyddsutkast för dataaktivering
 solution: Experience Platform
 product: experience platform
 type: Documentation
 description: Läs mer om standardanvändning och hastighetsbegränsningar för dataaktivering.
 exl-id: a755f224-3329-42d6-b8a9-fadcf2b3ca7b
-source-git-commit: d01e9b6d64e9040df11c45750c784079a0289477
+source-git-commit: 818d751996cb84440f620ada50c6e6ec33cff40d
 workflow-type: tm+mt
-source-wordcount: '1710'
+source-wordcount: '1661'
 ht-degree: 1%
 
 ---
@@ -53,7 +53,7 @@ Skyddsritningarna nedan gäller vanligtvis för aktivering via [alla måltyper](
 | Maximalt antal attribut som har mappats till ett mål | 50 | Prestandaskydd | Om det finns flera mål- och måltyper kan du välja profilattribut och identiteter att mappa för export. För optimala prestanda bör maximalt 50 attribut mappas i ett dataflöde till ett mål. |
 | Högsta antal destinationer | 100 | Systemstyrt skyddsräcke | Du kan skapa högst 100 mål som du kan ansluta och aktivera data till, *per sandbox*. [Edge personaliseringsmål (Anpassad anpassning)](#edge-destinations-activation) kan utgöra högst 10 av de 100 rekommenderade målen. |
 | Typ av data som aktiveras för destinationer | Profildata, inklusive identiteter och identitetskarta | Systemstyrt skyddsräcke | För närvarande går det bara att exportera *profilpostattribut* till mål. XDM-attribut som beskriver händelsedata stöds för närvarande inte för export. |
-| Typ av data som aktiveras för mål - stöd för matris- och mappattribut | Delvis tillgänglig | Systemstyrt skyddsräcke | Du kan exportera matrisattribut till [filbaserade mål](/help/destinations/destination-types.md#file-based). Du måste fortfarande använda funktionen `array_to_string` för att förenkla arrayen till en sträng i målfilen. [Läs mer](/help/release-notes/2024/october-2024.md#destinations-new-updated-functionality) om funktionerna. <br><br> För närvarande är det **inte** möjligt att exportera *mappningsattribut* till mål. Undantaget till den här regeln är [identitetskartan](/help/xdm/field-groups/profile/identitymap.md) som exporteras både i direktuppspelande och filbaserade aktiveringar. |
+| Typ av data som aktiveras för mål - stöd för matris- och mappattribut | Delvis tillgänglig | Systemstyrt skyddsräcke | Du kan exportera matrisattribut till [filbaserade mål](/help/destinations/destination-types.md#file-based). [Läs mer](/help/destinations/ui/export-arrays-calculated-fields.md) om funktionaliteten. |
 
 {style="table-layout:auto"}
 
@@ -126,7 +126,7 @@ När det gäller datauppsättningar som baseras på XDM Experience Events-schema
 **Datauppsättningar baserade på schemat för enskild XDM-profil**
 När det gäller datauppsättningar som baseras på XDM-schemat för enskild profil, innehåller datasetet inte en *timestamp* -kolumn på den översta nivån. Data hämtas in på ett sätt som präglas av förändring.
 
-Skyddsknappen nedan gäller alla datauppsättningar som exporteras från Experience Platform. Granska även de hårda garantierna nedan, som gäller olika datamängder och komprimeringstyper.
+Skyddsutkastet nedan gäller alla datauppsättningar som exporteras från Experience Platform. Granska även de hårda garantierna nedan, som gäller olika datamängder och komprimeringstyper.
 
 | Guardrail | Gräns | Begränsa typ | Beskrivning |
 | --- | --- | --- | --- |
@@ -171,13 +171,13 @@ The guardrails below are the same whether you are exporting parquet of JSON file
 Läs mer om [att exportera datauppsättningar](/help/destinations/ui/export-datasets.md).
 
 
-### Destinationens SDK skyddsräcken {#destination-sdk-guardrails}
+### Destination SDK skyddsräcken {#destination-sdk-guardrails}
 
 [Destination SDK](/help/destinations/destination-sdk/overview.md) är en uppsättning konfigurations-API:er som gör att du kan konfigurera målintegreringsmönster så att Experience Platform kan leverera målgrupps- och profildata till slutpunkten, baserat på vilka data- och autentiseringsformat du väljer. Skyddsritningarna nedan gäller de mål som du konfigurerar med Destination SDK.
 
 | Guardrail | Gräns | Begränsa typ | Beskrivning |
 | --- | --- | --- | --- |
-| Maximalt antal [privata anpassade mål](/help/destinations/destination-sdk/overview.md#productized-custom-integrations) | 5 | Prestandaskydd | Du kan skapa högst 5 privata anpassade direktuppspelnings- eller gruppmål med hjälp av Destination SDK. Kontakta en kundtjänstrepresentant om du behöver skapa fler än fem sådana destinationer. |
+| Maximalt antal [privata anpassade mål](/help/destinations/destination-sdk/overview.md#productized-custom-integrations) | 5 | Prestandaskydd | Du kan skapa högst 5 privata anpassade direktuppspelnings- eller gruppmål med Destination SDK. Kontakta en kundtjänstrepresentant om du behöver skapa fler än fem sådana destinationer. |
 | Profilexportpolicy för Destination SDK | <ul><li>`maxBatchAgeInSecs` (minst 1 800 och högst 3 600)</li><li>`maxNumEventsInBatch` (minst 1 000 och högst 10 000)</li></ul> | Systemstyrt skyddsräcke | När du använder alternativet [konfigurerbar aggregering](destination-sdk/functionality/destination-configuration/aggregation-policy.md#configurable-aggregation) för ditt mål bör du tänka på minimi- och maximivärdena som avgör hur ofta HTTP-meddelanden skickas till ditt API-baserade mål och hur många profiler meddelandena ska innehålla. |
 
 {style="table-layout:auto"}
@@ -188,16 +188,16 @@ Uppgifter om begränsningströsklar eller begränsningar för angivna destinatio
 
 | Typ av mål | Beskrivning |
 | --- | --- |
-| Företagsmål (HTTP API, Amazon Kinesis, Azure EventHubs) | På 95 % av tiden försöker Experience Platform att erbjuda en genomströmningslatens på mindre än 10 minuter för meddelanden som skickats utan fel med en hastighet på mindre än 10 000 förfrågningar per sekund för varje dataflöde till en företagsdestination. <br> Om det uppstår misslyckade begäranden till ditt företagsmål lagrar Experience Platform de misslyckade förfrågningarna och försöker skicka dem till din slutpunkt två gånger. |
+| Företagsmål (HTTP API, Amazon Kinesis, Azure EventHubs) | På 95 % av tiden försöker Experience Platform erbjuda en genomströmningslatens på mindre än 10 minuter för meddelanden som skickats utan fel med en hastighet på mindre än 10 000 förfrågningar per sekund för varje dataflöde till en företagsdestination. <br> Om det uppstår misslyckade begäranden till ditt företagsmål, lagrar Experience Platform de misslyckade förfrågningarna och försöker skicka dem till din slutpunkt två gånger. |
 
 {style="table-layout:auto"}
 
 ## Nästa steg
 
-Följande dokumentation innehåller mer information om andra Experience Platform-servicesäkrar, om total latenstid och licensinformation från Real-Time CDP produktbeskrivningsdokument:
+I följande dokumentation finns mer information om andra Experience Platform servicemarginaler, om total latenstid och licensieringsinformation från Real-Time CDP produktbeskrivningsdokument:
 
 * [Real-Time CDP skyddsräcken](/help/rtcdp/guardrails/overview.md)
-* [Latensdiagram från början till slut](https://experienceleague.adobe.com/docs/blueprints-learn/architecture/architecture-overview/deployment/guardrails.html?lang=en#end-to-end-latency-diagrams) för olika Experience Platform-tjänster.
-* [Real-time Customer Data Platform (B2C-utgåva - Premiere- och Ultimate-paket)](https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform-b2c-edition-prime-and-ultimate-packages.html)
-* [Real-time Customer Data Platform (B2P - Prime- och Ultimate-paket)](https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform-b2p-edition-prime-and-ultimate-packages.html)
-* [Real-time Customer Data Platform (B2B - Prime- och Ultimate-paket)](https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform-b2b-edition-prime-and-ultimate-packages.html)
+* [Avancerade latensdiagram](https://experienceleague.adobe.com/docs/blueprints-learn/architecture/architecture-overview/deployment/guardrails.html?lang=en#end-to-end-latency-diagrams) för olika Experience Platform-tjänster.
+* [Real-Time Customer Data Platform (B2C Edition - Prime- och Ultimate-paket)](https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform-b2c-edition-prime-and-ultimate-packages.html)
+* [Real-Time Customer Data Platform (B2P - Prime- och Ultimate-paket)](https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform-b2p-edition-prime-and-ultimate-packages.html)
+* [Real-Time Customer Data Platform (B2B - Prime- och Ultimate-paket)](https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform-b2b-edition-prime-and-ultimate-packages.html)
