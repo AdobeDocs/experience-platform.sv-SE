@@ -2,7 +2,7 @@
 title: Versionsinformation om Adobe Experience Platform september 2023
 description: Versionsinformationen för Adobe Experience Platform från september 2023.
 exl-id: ff7fb0c1-6941-4339-8648-58f9b9e9a91f
-source-git-commit: d6e306294d0a119108e2de7ba03ebed4f633fba1
+source-git-commit: 2d640b282feb783694276c69366b1fccadddfd78
 workflow-type: tm+mt
 source-wordcount: '2240'
 ht-degree: 28%
@@ -70,7 +70,7 @@ Adobe Experience Platform tillhandahåller en uppsättning tekniker som gör att
 | Typ | Funktion | Beskrivning |
 | --- | --- | --- |
 | Dataströmmar | Stöd för enhetssökning | När du konfigurerar en datastream kan du nu välja vilken nivå av enhetssökningsinformation som ska samlas in. Enhetssökningsinformation innehåller information om enheten, maskinvaran, operativsystemet och webbläsaren som används för att interagera med sidan. <br> Det går inte att samla in information om enhetssökning tillsammans med användaragent- och klienttips. Om du väljer att samla in enhetsinformation inaktiveras samlingen av användaragent- och klienttips och vice versa. All enhetssökningsinformation lagras i fältgruppen `xdm:device`. Läs mer i dokumentationen om [konfiguration av datastreams](../../datastreams/configure.md#geolocation-device-lookup). |
-| Tillägg | API-tillägg för [!DNL TikTok]-webbhändelser | Med tillägget [[!DNL TikTok] Webbhändelser-API](https://exchange.adobe.com/apps/ec/109834/tiktok-web-events-api) kan du utnyttja data som samlats in i Adobe Experience Platform Edge Network och skicka dem till [!DNL TikTok] i form av händelser på serversidan med hjälp av API:t [!DNL TikTok] Webbhändelser. |
+| Tillägg | API-tillägg för [!DNL TikTok]-webbhändelser | Med tillägget [[!DNL TikTok] API:t för webbhändelser](https://exchange.adobe.com/apps/ec/109834/tiktok-web-events-api) kan du utnyttja data som samlats in i Adobe Experience Platform Edge Network och skicka det till [!DNL TikTok] i form av händelser på serversidan med hjälp av API:t för webbhändelser i [!DNL TikTok] . |
 
 {style="table-layout:auto"}
 
@@ -92,7 +92,7 @@ Läs [översikten över datastyrning](../../data-governance/home.md) om du vill 
 
 ## Datahygien {#hygiene}
 
-Experience Platform har en rad funktioner för datahygien som gör att du kan hantera lagrade data genom att programmatiskt ta bort konsumentposter och datauppsättningar. Med arbetsytan [!UICONTROL Data Lifecycle] i användargränssnittet eller genom anrop till API:t för datahygien kan du hantera dina datalager effektivt. Använd dessa funktioner för att säkerställa att informationen används som förväntat, uppdateras när felaktiga data behöver korrigeras och tas bort när organisationspolicyer anser det nödvändigt.
+Experience Platform har en serie funktioner för datthygien som gör att du kan hantera lagrade data genom att ta bort konsumentposter och datauppsättningar programmatiskt. Med arbetsytan [!UICONTROL Data Lifecycle] i användargränssnittet eller genom anrop till API:t för datahygien kan du hantera dina datalager effektivt. Använd dessa funktioner för att säkerställa att informationen används som förväntat, uppdateras när felaktiga data behöver korrigeras och tas bort när organisationspolicyer anser det nödvändigt.
 
 **Nya funktioner**
 
@@ -116,7 +116,7 @@ Mer information om plattformens datahygien finns i [översikten över datahygien
 | [[!DNL LiveRamp - Distribution]](../../destinations/catalog/advertising/liveramp-distribution.md) | Nyhet | Aktivera målgrupper som tidigare har anslutit till [!DNL LiveRamp] för premiumutgivare på olika medier för mobil, webb, skärm och ansluten TV. <br> När du har introducerat målgrupper till ditt [!DNL LiveRamp]-konto via [LiveRamp - introduktion](../../destinations/catalog/advertising/liveramp-onboarding.md) använder du den nya [[!DNL LiveRamp - Distribution]](../../destinations/catalog/advertising/liveramp-distribution.md)-anslutningen för att aktivera målgrupperna till underordnade mål. |
 | [[!DNL HubSpot]](../../destinations/catalog/crm/hubspot.md) | Nyhet | [[!DNL HubSpot]](https://www.hubspot.com) är en CRM-plattform med all programvara, alla integreringar och resurser du behöver för att koppla samman marknadsföring, försäljning, innehållshantering och kundtjänst. Ni kan koppla samman data, team och kunder på en och samma CRM-plattform. |
 | [[!DNL Microsoft Dynamics 365]](../../destinations/catalog/crm/microsoft-dynamics-365.md) | Uppdaterat | Stöd har lagts till för [!DNL Dynamics 365] anpassade fältprefix för anpassade fält som inte skapades i standardlösningen i [!DNL Dynamics 365]. Ett nytt inmatningsfält, **[!UICONTROL Customization Prefix]**, har lagts till i steget [Fyll i målinformation](#destination-details). |
-| [[!DNL Experience Cloud Audiences]](../../destinations/catalog/adobe/experience-cloud-audiences.md) | Uppdaterat | Målgruppen Experience Cloud är nu allmänt tillgänglig. Använd det här målet för att aktivera målgrupper från Real-Time CDP till Audience Manager och Adobe Analytics. Ni behöver en licens för Audience Manager för att skicka ut målgrupper till Adobe Analytics. |
+| [[!DNL Experience Cloud Audiences]](../../destinations/catalog/adobe/experience-cloud-audiences.md) | Uppdaterat | Experience Cloud Audiences-målet är nu allmänt tillgängligt. Använd det här målet för att aktivera målgrupper från Real-Time CDP till Audience Manager och Adobe Analytics. Du behöver en Audience Manager-licens för att skicka målgrupper till Adobe Analytics. |
 
 {style="table-layout:auto"}
 
@@ -133,13 +133,13 @@ Add these to release notes as they go out
 
 | Funktionalitet | Beskrivning |
 | ----------- | ----------- |
-| Dataexport i Real-Time CDP | Funktionen för [datauppsexport](../../destinations/ui/export-datasets.md) är nu allmänt tillgänglig. Se [vilka datauppsättningar du kan exportera baserat på appen Experience Platform](../../destinations/ui/export-datasets.md#datasets-to-export) som du har köpt, och kontrollera [skyddsutkast för export av datauppsättningar](/help/destinations/guardrails.md#dataset-exports). |
-| (Beta) Stöd för export av arraytypobjekt | Exportera matriser med primitiva värden (sträng-, int- eller booleska värden) som platta schemafiler till molnlagringsplatser. Läs mer om funktionerna i [dokumentationen](../../destinations/ui/export-arrays-calculated-fields.md). |
-| Dynamiska listruteväljare i Destinationen SDK | När du skapar ett mål via Destination SDK kan du nu använda [dynamiska listruteväljare](../../destinations/destination-sdk/functionality/destination-configuration/customer-data-fields.md#dynamic-dropdown-selectors) för att fylla i fälten i en nedrullningsbar väljare med värden som hämtats från ett API. |
+| Dataexport i Real-Time CDP | Funktionen för [datauppsexport](../../destinations/ui/export-datasets.md) är nu allmänt tillgänglig. Se [vilka datauppsättningar du kan exportera baserat på den Experience Platform-app](../../destinations/ui/export-datasets.md#datasets-to-export) du har köpt och kontrollera [skyddsutkast för export av datauppsättningar](/help/destinations/guardrails.md#dataset-exports). |
+| (Beta) Stöd för export av arraytypobjekt | Exportera matriser med primitiva värden (sträng-, int- eller booleska värden) som platta schemafiler till molnlagringsplatser. Läs mer om funktionerna i [dokumentationen](../../destinations/ui/export-arrays-maps-objects.md). |
+| Dynamiska listruteväljare i Destination SDK | När du skapar ett mål via Destination SDK kan du nu använda [dynamiska listruteväljare](../../destinations/destination-sdk/functionality/destination-configuration/customer-data-fields.md#dynamic-dropdown-selectors) för att fylla i fälten i en nedrullningsbar väljare med värden som hämtats från ett API. |
 
 **Korrigeringar och förbättringar** {#destinations-fixes-and-enhancements}
 
-- Använd [övervakning av genomskinlighet](../../dataflows/ui/monitor-destinations.md#dataflow-runs-for-streaming-destinations) som nu är tillgänglig för företagsmål ([HTTP API](../../destinations/catalog/streaming/http-destination.md), [Amazon Kinesis](../../destinations/catalog/cloud-storage/amazon-kinesis.md) och [Azure Event Hubs](../../destinations/catalog/cloud-storage/azure-event-hubs.md)) på dataflödets körnivå för att övervaka aktiveringsmått och status i [dataflödets detaljvy](../../dataflows/ui/monitor-destinations.md#dataflow-run-details-page), med ytterligare information via felkoder och felsökningsmeddelanden.
+- Använd [övervakning av genomskinlighet](../../dataflows/ui/monitor-destinations.md#dataflow-runs-for-streaming-destinations) som nu är tillgänglig för företagsmål ([HTTP API](../../destinations/catalog/streaming/http-destination.md), [Amazon Kinesis](../../destinations/catalog/cloud-storage/amazon-kinesis.md) och [Azure Event Hubs](../../destinations/catalog/cloud-storage/azure-event-hubs.md)) vid körningsnivån för att övervaka aktiveringsmått och status i [dataflödesdetaljvyn](../../dataflows/ui/monitor-destinations.md#dataflow-run-details-page), med ytterligare information via felkoder och felsökningsmeddelanden.
 - När du uppdaterar namnet på målgrupper som är mappade till [Google Ad Manager](../../destinations/catalog/advertising/google-ad-manager.md), [Google Display &amp; Video 360](../../destinations/catalog/advertising/google-dv360.md) och andra mål som använder [målgruppsuppdateringsmallar](../../destinations/destination-sdk/metadata-api/update-audience-template.md), återspeglas nu dessa namnändringar nedströms i målet.
 
 Mer allmän information om destinationer finns i [målöversikten](../../destinations/home.md).
@@ -190,8 +190,8 @@ Adobe Experience Platforms identitetstjänst ger dig en heltäckande bild av din
 
 | Funktion | Beskrivning |
 | --- | --- |
-| Förbättringar i användargränssnittet för identitetstjänsten | Använd det förbättrade verktyget för att skapa namnutrymmen i användargränssnittet i Experience Platform för att bättre hantera dina anpassade namnutrymmen och motsvarande identitetstyper. Det förbättrade användargränssnittet för identitetstjänsten ger dig: <ul><li>Sammanhangsbaserad upplevelse: visuella indikeringar, klarhet och sammanhang för vad ett identitetsnamnutrymme är och identitetstyper är.</li><li>Noggrannhet: Bättre felhantering utan fler dubblerade identitetsnamn.</li><li>Identifiering: Åtkomst till dokumentation inifrån en produktdialogruta.</li></ul> Mer information finns i handboken [Skapa anpassade namnutrymmen](../../identity-service/features/namespaces.md#create-namespaces). |
-| Ändringar av begränsningar för identitetsdiagram | Gränsen för identitetsdiagram har ändrats från 150 identiteter till 50 identiteter. När en ny identitet har importerats till ett fullständigt diagram tas den äldsta identiteten som baseras på tidsstämpeln för inmatningen och identitetstypen bort. Cookie-identitetstyper prioriteras för borttagning. Kontakta kontoteamet på Adobe för att begära en ändring av identitetstypen om din produktionssandlåda innehåller: <ul><li>ett anpassat namnutrymme där personidentifierarna (t.ex. CRM-ID:n) är konfigurerade som cookie/enhetsidentitetstyp.</li><li>ett anpassat namnutrymme där cookie-/enhetsidentifierare har konfigurerats som identitetstyp för olika enheter.</li></ul> Dessa förfrågningar behandlas manuellt av Adobe. Mer information finns i [skyddsutkastet för Identity Service-data](../../identity-service/guardrails.md) och i guiden om [tillstånd för datahanteringslicenser ](../../landing/license-usage-and-guardrails/data-management-best-practices.md). |
+| Förbättringar i användargränssnittet för identitetstjänsten | Använd det förbättrade verktyget för att skapa namnutrymmen i Experience Platform-användargränssnittet för att bättre hantera dina anpassade namnutrymmen och motsvarande identitetstyper. Det förbättrade användargränssnittet för identitetstjänsten ger dig: <ul><li>Sammanhangsbaserad upplevelse: visuella indikeringar, klarhet och sammanhang för vad ett identitetsnamnutrymme är och identitetstyper är.</li><li>Noggrannhet: Bättre felhantering utan fler dubblerade identitetsnamn.</li><li>Identifiering: Åtkomst till dokumentation inifrån en produktdialogruta.</li></ul> Mer information finns i handboken [Skapa anpassade namnutrymmen](../../identity-service/features/namespaces.md#create-namespaces). |
+| Ändringar av begränsningar för identitetsdiagram | Gränsen för identitetsdiagram har ändrats från 150 identiteter till 50 identiteter. När en ny identitet har importerats till ett fullständigt diagram tas den äldsta identiteten som baseras på tidsstämpeln för inmatningen och identitetstypen bort. Cookie-identitetstyper prioriteras för borttagning. Kontakta Adobe Account Team om du vill ändra identitetstypen om din produktionssandlåda innehåller: <ul><li>ett anpassat namnutrymme där personidentifierarna (t.ex. CRM-ID:n) är konfigurerade som cookie/enhetsidentitetstyp.</li><li>ett anpassat namnutrymme där cookie-/enhetsidentifierare har konfigurerats som identitetstyp för olika enheter.</li></ul> Dessa förfrågningar behandlas manuellt av Adobe Engineering. Mer information finns i [skyddsutkastet för Identity Service-data](../../identity-service/guardrails.md) och i guiden om [tillstånd för datahanteringslicenser ](../../landing/license-usage-and-guardrails/data-management-best-practices.md). |
 
 {style="table-layout:auto"}
 
@@ -233,7 +233,7 @@ Experience Platform tillhandahåller ett RESTful API och ett interaktivt använd
 
 | Funktion | Beskrivning |
 | --- | --- |
-| Nya parametrar för `offset`-sidindelning i självbetjäningskällor (batch-SDK) | Du kan nu ange `endConditionName` och `endConditionValue` för källan när du använder sidnumrering `offset`. Med de här parametrarna kan du ange vilket villkor som ska avsluta pagineringsslingan i nästa HTTP-begäran. Mer information finns i [pagineringsguiden för självbetjäningskällor (SDK för grupper)](../../sources/sources-sdk/config/sourcespec.md#pagination). |
+| Nya parametrar för `offset`-sidindelning i självbetjäningskällor (Batch SDK) | Du kan nu ange `endConditionName` och `endConditionValue` för källan när du använder sidnumrering `offset`. Med de här parametrarna kan du ange vilket villkor som ska avsluta pagineringsslingan i nästa HTTP-begäran. Mer information finns i [pagineringsguiden för självbetjäningskällor (Batch SDK)](../../sources/sources-sdk/config/sourcespec.md#pagination). |
 
 {style="table-layout:auto"}
 

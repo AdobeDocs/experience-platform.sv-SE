@@ -2,7 +2,7 @@
 title: Versionsinformation om Adobe Experience Platform oktober 2023
 description: Versionsinformationen för Adobe Experience Platform i oktober 2023.
 exl-id: e9cf5299-8350-4b40-8f56-05e598846875
-source-git-commit: 4afb2c76f2022423e8f1fa29c91d02b43447ba90
+source-git-commit: 2d640b282feb783694276c69366b1fccadddfd78
 workflow-type: tm+mt
 source-wordcount: '1048'
 ht-degree: 38%
@@ -69,7 +69,7 @@ Mer information om datainsamling finns i [översikten över datainsamlingar](../
 
 | Funktionalitet | Beskrivning |
 | ----------- | ----------- |
-| (Beta) Stöd för hash-funktioner i beräknade fält | Förutom de funktioner som är specifika för [att exportera arrayer](../../destinations/ui/export-arrays-calculated-fields.md) eller element från en array, kan du nu använda ytterligare [hash-funktioner](../../destinations/ui/export-arrays-calculated-fields.md#hashing-functions) för att hash-formatera attribut i de exporterade filerna. De hash-funktioner som stöds är: `sha`, `sha256`, `sha512`, `hash`, `md5`, `crc32`. |
+| (Beta) Stöd för hash-funktioner i beräknade fält | Förutom de funktioner som är specifika för [att exportera arrayer](../../destinations/ui/export-arrays-maps-objects.md) eller element från en array, kan du nu använda ytterligare [hash-funktioner](../../destinations/ui/export-arrays-maps-objects.md#hashing-functions) för att hash-formatera attribut i de exporterade filerna. De hash-funktioner som stöds är: `sha`, `sha256`, `sha512`, `hash`, `md5`, `crc32`. |
 | (Begränsad GA) Aktivera kontomålgrupper för vissa destinationer | Real-Time CDP B2B-kunder kan nu aktivera [kontomålgrupper](../../segmentation/types/account-audiences.md) för vissa destinationer. Mer information om den här funktionen finns i självstudiekursen [Aktivera kontomålgrupper](/help/destinations/ui/activate-account-audiences.md). |
 
 {style="table-layout:auto"}

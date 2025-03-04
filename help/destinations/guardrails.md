@@ -6,7 +6,7 @@ product: experience platform
 type: Documentation
 description: Läs mer om standardanvändning och hastighetsbegränsningar för dataaktivering.
 exl-id: a755f224-3329-42d6-b8a9-fadcf2b3ca7b
-source-git-commit: 818d751996cb84440f620ada50c6e6ec33cff40d
+source-git-commit: 2d640b282feb783694276c69366b1fccadddfd78
 workflow-type: tm+mt
 source-wordcount: '1661'
 ht-degree: 1%
@@ -53,7 +53,7 @@ Skyddsritningarna nedan gäller vanligtvis för aktivering via [alla måltyper](
 | Maximalt antal attribut som har mappats till ett mål | 50 | Prestandaskydd | Om det finns flera mål- och måltyper kan du välja profilattribut och identiteter att mappa för export. För optimala prestanda bör maximalt 50 attribut mappas i ett dataflöde till ett mål. |
 | Högsta antal destinationer | 100 | Systemstyrt skyddsräcke | Du kan skapa högst 100 mål som du kan ansluta och aktivera data till, *per sandbox*. [Edge personaliseringsmål (Anpassad anpassning)](#edge-destinations-activation) kan utgöra högst 10 av de 100 rekommenderade målen. |
 | Typ av data som aktiveras för destinationer | Profildata, inklusive identiteter och identitetskarta | Systemstyrt skyddsräcke | För närvarande går det bara att exportera *profilpostattribut* till mål. XDM-attribut som beskriver händelsedata stöds för närvarande inte för export. |
-| Typ av data som aktiveras för mål - stöd för matris- och mappattribut | Delvis tillgänglig | Systemstyrt skyddsräcke | Du kan exportera matrisattribut till [filbaserade mål](/help/destinations/destination-types.md#file-based). [Läs mer](/help/destinations/ui/export-arrays-calculated-fields.md) om funktionaliteten. |
+| Typ av data som aktiveras för mål - stöd för matris- och mappattribut | Delvis tillgänglig | Systemstyrt skyddsräcke | Du kan exportera matrisattribut till [filbaserade mål](/help/destinations/destination-types.md#file-based). [Läs mer](/help/destinations/ui/export-arrays-maps-objects.md) om funktionaliteten. |
 
 {style="table-layout:auto"}
 

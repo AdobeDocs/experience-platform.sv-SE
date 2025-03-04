@@ -2,7 +2,7 @@
 title: Versionsinformation om Adobe Experience Platform – februari 2025
 description: Versionsinformationen för Adobe Experience Platform från februari 2025.
 exl-id: f854f9e5-71be-4d56-a598-cfeb036716cb
-source-git-commit: c4064771a384a90d94903ba1761fc9ee20f47747
+source-git-commit: 2d640b282feb783694276c69366b1fccadddfd78
 workflow-type: tm+mt
 source-wordcount: '1638'
 ht-degree: 97%
@@ -97,7 +97,7 @@ Mer information finns i [översikten över Dataförberedelse](../../data-prep/ho
 | Använd åtkomstetiketter för att hantera användaråtkomst till destinationsdataflöden | Som en del av funktionen [[!UICONTROL attribute-based access control]](/help/access-control/abac/overview.md) i Real-Time CDP kan du nu tillämpa åtkomstetiketter i [destinationsdataflöden](/help/dataflows/ui/monitor-destinations.md). På så sätt kan du se till att bara en deluppsättning av användarna i organisationen får tillgång till specifika destinationsdataflöden. <br> **Viktigt**: När du söker efter destinationsdataflöden med sökrutan högst upp i användargränssnittet Experience Platform kan resultatet innehålla destinationsdataflöden som dina användaretiketter begränsar dig från att se. Detta beteende kommer att korrigeras i en framtida uppdatering. |
 | [Rapportering på målgruppsnivå](/help/dataflows/ui/monitor-destinations.md#audience-level-dataflow-runs-for-streaming-destinations) för [anslutningen Marketo Engage](/help/destinations/catalog/adobe/marketo-engage.md) | Du kan nu [visa information](/help/dataflows/ui/monitor-destinations.md#audience-level-dataflow-runs-for-streaming-destinations) om aktiverade, exkluderade eller misslyckade identiteter som har delats upp på en målgruppsnivå för varje målgrupp som ingår i dataflödena för den här destinationen. |
 | Externa målgrupper har stöd för anslutningarna [TikTok](/help/destinations/catalog/social/tiktok.md) och [Snap Inc](/help/destinations/catalog/advertising/snap-inc.md) | Du kan aktivera externa målgrupper för dessa mål från [anpassade uppladdningar](../../segmentation/ui/audience-portal.md#import-audience) och [Federerad målgruppssammansättning](https://experienceleague.adobe.com/sv/docs/federated-audience-composition/using/start/audiences). |
-| Exportera matriser, kartor och objekt till molnlagringsdestinationer | Genom att använda den nya växlingsknappen **[!UICONTROL Export arrays, maps, objects]** när du ansluter till en molnlagringsdestination kan du exportera komplexa objekt till utvalda destinationer. [Läs mer](/help/destinations/ui/export-arrays-calculated-fields.md) om funktionaliteten. |
+| Exportera matriser, kartor och objekt till molnlagringsdestinationer | Genom att använda den nya växlingsknappen **[!UICONTROL Export arrays, maps, objects]** när du ansluter till en molnlagringsdestination kan du exportera komplexa objekt till utvalda destinationer. [Läs mer](/help/destinations/ui/export-arrays-maps-objects.md) om funktionaliteten. |
 
 {style="table-layout:auto"}
 

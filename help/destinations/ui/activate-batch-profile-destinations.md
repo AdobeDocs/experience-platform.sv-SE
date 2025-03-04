@@ -3,9 +3,9 @@ title: Aktivera målgrupper för att batchprofilera exportmål
 type: Tutorial
 description: Lär dig hur du aktiverar de målgrupper du har i Adobe Experience Platform genom att skicka dem till batchprofilbaserade destinationer.
 exl-id: 82ca9971-2685-453a-9e45-2001f0337cda
-source-git-commit: b4b185cab4defbf9559089e5152075674dab52d1
+source-git-commit: 2d640b282feb783694276c69366b1fccadddfd78
 workflow-type: tm+mt
-source-wordcount: '4217'
+source-wordcount: '4204'
 ht-degree: 1%
 
 ---
@@ -63,7 +63,7 @@ Om du vill välja vilka målgrupper du vill aktivera för målet använder du kr
 
 Du kan välja mellan flera typer av målgrupper, beroende på deras ursprung:
 
-* **[!UICONTROL Segmentation Service]**: Publiker som genererats i Experience Platform av segmenteringstjänsten. Mer information finns i [segmenteringsdokumentationen](../../segmentation/ui/overview.md).
+* **[!UICONTROL Segmentation Service]**: Publiker som genererats inom Experience Platform av segmenteringstjänsten. Mer information finns i [segmenteringsdokumentationen](../../segmentation/ui/overview.md).
 * **[!UICONTROL Custom upload]**: Publiker som genererats utanför Experience Platform och överförts till Platform som CSV-filer. Mer information om externa målgrupper finns i dokumentationen om att [importera en målgrupp](../../segmentation/ui/audience-portal.md#import-audience).
 * Andra typer av målgrupper som kommer från andra Adobe-lösningar, till exempel [!DNL Audience Manager].
 
@@ -92,7 +92,7 @@ Experience Platform anger automatiskt ett standardschema för varje filexport. D
 
 Om du vill redigera flera scheman samtidigt markerar du målgrupperna med kryssrutorna till vänster på skärmen och väljer sedan **[!UICONTROL Edit schedule]**. Schemat som du konfigurerar tillämpas sedan på alla exporterade filer för de valda målgrupperna.
 
-![Bild av användargränssnittet i Experience Platform som visar alternativet för redigeringsschema för flera valda målgrupper.](../assets/ui/activate-batch-profile-destinations/edit-schedule.png)
+![Bild av Experience Platform användargränssnitt som visar alternativet för redigeringsschema för flera valda målgrupper.](../assets/ui/activate-batch-profile-destinations/edit-schedule.png)
 
 >[!TIP]
 >
@@ -214,14 +214,14 @@ Målnamnet och målgrupps-ID:t kan inte tas bort från filnamn. Förutom dessa a
 | **[!UICONTROL Custom text]** | All egen text som du vill lägga till i filnamnen. |
 | **[!UICONTROL Destination ID]** | ID:t för måldataflödet som du använder för att exportera målgruppen. |
 | **[!UICONTROL Destination name]** | Namnet på måldataflödet som du använder för att exportera målgruppen. |
-| **[!UICONTROL Organization name]** | Organisationens namn i Experience Platform. |
+| **[!UICONTROL Organization name]** | Ditt företagsnamn i Experience Platform. |
 | **[!UICONTROL Sandbox name]** | ID:t för sandlådan som du använder för att exportera målgruppen. |
 
 {style="table-layout:auto"}
 
 Om du vill redigera flera filnamn samtidigt markerar du målgrupperna med kryssrutorna till vänster på skärmen och väljer sedan **[!UICONTROL Edit file name]**. Alternativen för filnamn som du konfigurerar tillämpas sedan på alla exporterade filer för de valda målgrupperna.
 
-![Bild av användargränssnittet i Experience Platform som visar alternativet för redigering av filnamn för flera valda målgrupper.](../assets/ui/activate-batch-profile-destinations/edit-file-name.png)
+![Bild av Experience Platform användargränssnitt som visar alternativet för att redigera filnamn för flera valda målgrupper.](../assets/ui/activate-batch-profile-destinations/edit-file-name.png)
 
 Välj **[!UICONTROL Apply changes]** för att bekräfta ditt val.
 
@@ -433,7 +433,7 @@ Adobe rekommenderar att du väljer ett identitetsnamnutrymme som [!DNL CRM ID] e
 
 ### Funktionen för borttagning av dubbletter för profiler med samma tidsstämpel {#deduplication-same-timestamp}
 
-När du exporterar profiler till filbaserade mål säkerställer borttagning av dubbletter att endast en profil exporteras när flera profiler delar samma nyckel för borttagning av dubbletter och samma referenstidstämpel. Den här tidsstämpeln representerar det ögonblick då en profils målgruppsmedlemskap eller identitetsdiagram senast uppdaterades. Mer information om hur profiler uppdateras och exporteras finns i dokumentet om [exportbeteende för profiler](https://experienceleague.adobe.com/en/docs/experience-platform/destinations/how-destinations-work/profile-export-behavior#what-determines-a-data-export-and-what-is-included-in-the-export-2).
+När du exporterar profiler till filbaserade måldestinationer ser dedupliceringen till att endast en profil exporteras när flera profiler delar samma nyckel för deduplicering och samma referenstidsstämpel. Den här tidsstämpeln representerar det ögonblick då en profils målgruppsmedlemskap eller identitetsdiagram senast uppdaterades. Mer information om hur profiler uppdateras och exporteras finns i dokumentet om [exportbeteende för profiler](https://experienceleague.adobe.com/en/docs/experience-platform/destinations/how-destinations-work/profile-export-behavior#what-determines-a-data-export-and-what-is-included-in-the-export-2).
 
 #### Viktiga överväganden
 
@@ -464,9 +464,9 @@ Efter borttagning av dubbletter kommer exportfilen att innehålla:
 
 **Förbättrad tillförlitlighet**: Den här uppdaterade processen för borttagning av dubbletter säkerställer att efterföljande körningar med samma koordinater alltid ger samma resultat, vilket förbättrar konsekvensen.
 
-### Exportera arrayer via beräknade fält {#export-arrays-calculated-fields}
+### Utför dataomvandlingar via beräknade fält {#calculated-fields}
 
-Vissa betakunder kan exportera arrayobjekt från Experience Platform till molnlagringsplatser. Läs mer om [att exportera arrayer och beräknade fält](/help/destinations/ui/export-arrays-calculated-fields.md) och kontakta din Adobe-representant för att få tillgång till funktionen.
+Du kan använda kontrollen [Beräknade fält](/help/destinations/ui/data-transformations-calculated-fields.md) för att utföra olika dataomformningar på data som exporteras till filbaserade mål.
 
 ### Kända begränsningar {#known-limitations}
 
@@ -501,7 +501,7 @@ Det går inte att markera identitetsnamnutrymmen för export, vilket visas i bil
 
 Som en tillfällig lösning kan du antingen:
 * Använd de gamla molnlagringsmålen för dataflödena där du vill inkludera identitetsnamnutrymmen i exporter
-* Överför identiteter som attribut till Experience Platform och exportera dem sedan till dina molnlagringsplatser.
+* Ladda upp identiteter som attribut till Experience Platform och exportera dem sedan till molnlagringsplatserna.
 
 ## Välj profilattribut {#select-attributes}
 
@@ -554,7 +554,7 @@ Filexporter varierar på följande sätt, beroende på om `segmentMembership.seg
 >
 >Det här steget visas bara om du valde **[!UICONTROL Custom upload]** målgrupper under steget [målgruppsval](#select-audiences).
 
-Anrikningsattribut motsvarar anpassade överförda målgrupper som kapslats i Experience Platform som **[!UICONTROL Custom uploads]**. I det här steget kan du välja vilka attribut du vill exportera till målet, för varje vald extern publik.
+Anrikningsattribut motsvarar anpassade överförda målgrupper som importerats till Experience Platform som **[!UICONTROL Custom uploads]**. I det här steget kan du välja vilka attribut du vill exportera till målet, för varje vald extern publik.
 
 ![Gränssnittsbild som visar urvalssteget för anrikningsattribut.](../assets/ui/activate-batch-profile-destinations/select-enrichment-attributes-step.png)
 
