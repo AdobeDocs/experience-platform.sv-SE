@@ -2,18 +2,14 @@
 title: Versionsinformation om Adobe Experience Platform – februari 2025
 description: Versionsinformationen för Adobe Experience Platform från februari 2025.
 exl-id: f854f9e5-71be-4d56-a598-cfeb036716cb
-source-git-commit: 2d640b282feb783694276c69366b1fccadddfd78
+source-git-commit: e8c1d7d3b5cc205b9258b4fec5dc7fa68d0d3b27
 workflow-type: tm+mt
-source-wordcount: '1638'
+source-wordcount: '1621'
 ht-degree: 97%
 
 ---
 
 # Versionsinformation om Adobe Experience Platform
-
->[!TIP]
->
->Den här versionen innehåller förbättringar av tillägget Federerad målgruppssammansättning. Mer information finns i [Versionsinformationen om Federerad målgruppssammansättning](https://experienceleague.adobe.com/sv/docs/federated-audience-composition/using/release-notes).
 
 **Releasedatum: 18 februari 2025**
 
@@ -23,6 +19,7 @@ Uppdateringar av befintliga funktioner och dokumentation i Adobe Experience Plat
 - [Katalogtjänst](#catalog-service)
 - [Dataförberedelse](#data-prep)
 - [Mål](#destinations)
+- [Sammansatt målgruppskomposition](https://experienceleague.adobe.com/sv/docs/federated-audience-composition/using/release-notes){target="_blank"}
 - [Källor](#sources)
 - [Segmenteringstjänst](#segmentation)
 - [Dokumentationsuppdateringar](#documentation-updates)
