@@ -3,14 +3,24 @@ solution: Experience Platform
 title: Användargränssnittshandbok för målgrupper
 description: Audience Composition i Adobe Experience Platform UI har en omfattande arbetsyta där du kan interagera med profildataelement. Arbetsytan innehåller intuitiva kontroller för att skapa och redigera målgrupper för din organisation.
 exl-id: 0dda0cb1-49e0-478b-8004-84572b6cf625
-source-git-commit: c4064771a384a90d94903ba1761fc9ee20f47747
+source-git-commit: 758ec9de9bf3e6bb9853c9455c69e0b5ca7948d5
 workflow-type: tm+mt
-source-wordcount: '2210'
+source-wordcount: '2241'
 ht-degree: 0%
 
 ---
 
 # Användargränssnittsguide för målgruppskomposition
+
+>[!AVAILABILITY]
+>
+>Om du vill använda den här funktionen måste du ha följande behörigheter:
+>
+>- Hantera segment
+>- Hantera profiler
+>- Hantera kopplingsprofiler
+>
+>Mer information om behörigheter inom plattformen finns i [åtkomstkontrollsöversikten](../../access-control/home.md#permissions).
 
 >[!NOTE]
 >
