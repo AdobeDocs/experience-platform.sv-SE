@@ -1,10 +1,10 @@
 ---
-keywords: Experience Platform;hemmabruk;populära ämnen;datainmatning;inmatade data;strömning;översikt;strömningsupptagning;latens;strömningstid;
+keywords: Experience Platform;hem;populära ämnen;datainmatning;inmatade data;strömning;översikt;strömningsupptagning;latens;strömningstid;
 solution: Experience Platform
 title: Direktuppspelning - översikt
-description: Direktuppspelning för Adobe Experience Platform ger användare en metod för att skicka data från klient- och serverenheter till Experience Platform i realtid.
+description: Direktuppspelning för Adobe Experience Platform ger användarna en metod för att skicka data från klient- och serverenheter till Experience Platform i realtid.
 exl-id: 851f15fd-7ac5-4a9f-934d-6b907057da87
-source-git-commit: d6424e2a9afc046f4bff329797954fd43939a819
+source-git-commit: 9b2d0c8fad1ed328725129664be94cf1800f6631
 workflow-type: tm+mt
 source-wordcount: '424'
 ht-degree: 0%
@@ -35,7 +35,7 @@ När du är säker på att dina data är rena kan du aktivera dina datauppsättn
 
 Mer information om hur du aktiverar en datauppsättning för [!DNL Profile] och [!DNL Identity Service] finns i [Konfigurera en datauppsättningsguide](../../profile/tutorials/dataset-configuration.md).
 
-## Vilken fördröjning förväntas för direktuppspelad förtäring på Experience Platform?
+## Vilken fördröjning förväntas för direktuppspelning på Experience Platform?
 
 >[!IMPORTANT]
 >
@@ -53,7 +53,7 @@ Tabellen nedan visar vägledning om gränsen per sekund för direktuppspelning v
 | RPS-gräns | Anteckningar |
 | --- | --- |
 | 1 000 begäranden per sekund | Dessa kan innehålla flera meddelanden när `/collection/batch`-slutpunkten används. |
-| 10000 enskilda meddelanden per sekund | Meddelandena kan grupperas i färre faktiska begäranden när slutpunkten `/collection/batch` används. |
+| 10000 enskilda meddelanden per sekund | Meddelandena kan grupperas i färre faktiska begäranden när slutpunkten `/collection/` används. |
 
 >[!IMPORTANT]
 >
@@ -61,4 +61,4 @@ Tabellen nedan visar vägledning om gränsen per sekund för direktuppspelning v
 
 ## Adobe Experience Platform-tillägg
 
-Du kan använda Adobe Experience Platform-tillägget för att skapa en ny direktuppspelningsanslutning. Tillägget [!DNL Experience Platform] innehåller åtgärder för att skicka beacons som är formaterade i [!DNL Experience Data Model] (XDM) för realtidsförtäring till [!DNL Experience Platform]. Mer information finns i dokumentationen för [Experience Platform-tillägget](../../tags/extensions/client/web-sdk/overview.md).
+Du kan använda Adobe Experience Platform-tillägget för att skapa en ny direktuppspelningsanslutning. Tillägget [!DNL Experience Platform] innehåller åtgärder för att skicka beacons som är formaterade i [!DNL Experience Data Model] (XDM) för realtidsförtäring till [!DNL Experience Platform]. Mer information finns i dokumentationen för [Experience Platform Extension](../../tags/extensions/client/web-sdk/overview.md).
