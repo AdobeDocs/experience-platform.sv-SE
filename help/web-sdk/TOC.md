@@ -6,10 +6,10 @@ breadcrumb-title: Användarhandbok om webb-SDK
 user-guide-description: Interagera med Experience Cloud-tjänsterna via Edge Network.
 feature: Web SDK
 role: Developer
-source-git-commit: d5bf1b207900009829454d0b7aa095a08c1e1718
+source-git-commit: bed63cb9be1ffe39a538d1c3f8be9065ffb2ca28
 workflow-type: tm+mt
-source-wordcount: '229'
-ht-degree: 19%
+source-wordcount: '239'
+ht-degree: 18%
 
 ---
 
@@ -23,6 +23,7 @@ ht-degree: 19%
    * [Installera Web SDK med hjälp av taggtillägget](install/extension.md)
    * [Installera Web SDK med JavaScript-biblioteket](install/library.md)
    * [Installera Web SDK med NPM-paketet](install/npm.md)
+   * [Skapa en anpassad Web SDK-version med NPM-paketet](install/create-custom-build.md)
 * Kommandon {#commands}
    * konfigurera {#configure}
       * [Översikt](commands/configure/overview.md)
@@ -86,7 +87,7 @@ ht-degree: 19%
          * [Översikt](personalization/adobe-target/analytics-logging/overview.md)
          * [Loggning på klientsidan](personalization/adobe-target/analytics-logging/client-side.md)
          * [Loggning på serversidan](personalization/adobe-target/analytics-logging/server-side.md)
-   * Offer decisioning {#offer-decisioning}
+   * Offer Decisioning {#offer-decisioning}
       * [Översikt](personalization/offer-decisioning/offer-decisioning-overview.md)
    * Adobe Journey Optimizer {#ajo}
       * [Översikt](personalization/ajo/overview.md)
