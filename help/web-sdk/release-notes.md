@@ -3,9 +3,9 @@ title: Versionsinformation om Adobe Experience Platform Web SDK
 description: Den senaste versionsinformationen om webb-SDK för Adobe Experience Platform.
 keywords: Adobe Experience Platform Web SDK;Platform Web SDK;Web SDK;versionsinformation;
 exl-id: efd4e866-6a27-4bd5-af83-4a97ca8adebd
-source-git-commit: 5bf69773d0502185bbe8db3b13cb2684d6d06ac4
+source-git-commit: 8fd86a170433c4eb07a7370dbd3aa2cb3ef10922
 workflow-type: tm+mt
-source-wordcount: '2149'
+source-wordcount: '2285'
 ht-degree: 2%
 
 ---
@@ -15,6 +15,18 @@ ht-degree: 2%
 
 Det här dokumentet innehåller versionsinformation för Adobe Experience Platform Web SDK.
 Den senaste versionsinformationen om SDK-taggtillägget för webben finns i [Versionsinformationen om SDK-taggtillägg för webben](../tags/extensions/client/web-sdk/web-sdk-ext-release-notes.md).
+
+## Version 2.26.0 - 5 mars 2025
+
+**Nya funktioner**
+
+- Nu kan du använda Web SDK NPM-paketet för att skapa anpassade Web SDK-byggen och endast välja de bibliotekskomponenter som du behöver. Detta leder till mindre biblioteksstorlek och optimerade inläsningstider. Se dokumentationen om hur du [skapar en anpassad Web SDK-version med NPM-paketet](install/create-custom-build.md).
+- Kommandot [`getIdentity`](commands/getidentity.md) läser nu automatiskt ECID direkt från identitetscookien `kndctr`. Om du anropar `getIdentity` med namnutrymmet `ECID` och det redan finns en identitetscookie, skickar Web SDK inte längre någon begäran till Edge Network om att hämta identiteten. Nu läser den identiteten från kakan.
+
+**Korrigeringar och förbättringar**
+
+- Ett problem har korrigerats där `getIdentity`-kommandon inte returnerade identiteten efter att ett `collect`-anrop skickades.
+- Ett problem där omdirigering av personalisering orsakade att innehållet flimrades innan omdirigeringen inträffade har åtgärdats.
 
 ## Version 2.25.0 - 23 januari 2025
 
@@ -46,7 +58,7 @@ Den senaste versionsinformationen om SDK-taggtillägget för webben finns i [Ver
 
 - När flera meddelanden i appen returneras visas endast meddelanden med den högsta prioriteten. De andra spelas in som undertryckta.
 - Tomma datastream-åsidosättningar skickas inte längre till Edge Network, vilket minskar eventuella konflikter med routningskonfigurationer på serversidan.
-- Följande loggningsmeddelandekomponentnamn har bytt namn så att de justeras mot andra Adobe SDK:er:
+- Följande loggningsmeddelandekomponentnamn har bytt namn så att de överensstämmer med andra Adobe SDK:er:
    - `DecisioningEngine` har bytt namn till `RulesEngine`
    - `LegacyMediaAnalytics` har bytt namn till `MediaAnalyticsBridge`
    - `Privacy` har bytt namn till `Consent`
@@ -145,7 +157,7 @@ Den senaste versionsinformationen om SDK-taggtillägget för webben finns i [Ver
 
 **Korrigeringar och förbättringar**
 
-- SDK för webben kodar nu destinationsvärdena för cookie-filen Audience Manager, som liknar målvärdena för [Datan Integration Library (DIL)](https://experienceleague.adobe.com/docs/audience-manager/user-guide/dil-api/dil-overview.html).
+- SDK för webben kodar nu Audience Manager cookie-målvärden, som liknar [Data Integration Library (DIL)](https://experienceleague.adobe.com/docs/audience-manager/user-guide/dil-api/dil-overview.html).
 
 ## Version 2.16.0 - 25 april 2023
 
@@ -178,7 +190,7 @@ Den senaste versionsinformationen om SDK-taggtillägget för webben finns i [Ver
 
 ## Version 2.13.1 - 13 oktober 2022
 
-- Korrigerade ett problem där besökarmigrering inte fungerar om window.Visitor definieras efter konfiguration. Det här är ett särskilt problem när du använder Adobe-taggar.
+- Korrigerade ett problem där besökarmigrering inte fungerar om window.Visitor definieras efter konfiguration. Det här är ett särskilt problem när du kör med Adobe Tags.
 - Korrigerade ett problem där `device.screenWidth` och `device.screenHeight` fylldes i som strängar i vissa miljöer.
 
 ## Version 2.13.0 - 28 september 2022
@@ -215,7 +227,7 @@ Den senaste versionsinformationen om SDK-taggtillägget för webben finns i [Ver
 
 - Uppdaterade cookie-inställningar för att använda `sameSite="none"` och `secure`-flaggan på [!DNL HTTPS] sidor.
 - Ett problem har korrigerats där anpassat innehåll inte tillämpades korrekt när pseudoväljaren `eq` användes.
-- Korrigerade ett problem där `localTimezoneOffset` kunde misslyckas vid validering i Experience Platform.
+- Korrigerade ett problem där `localTimezoneOffset` kunde misslyckas med Experience Platform-validering.
 
 ## Version 2.10.1 - 3 maj 2022
 
@@ -248,7 +260,7 @@ Den senaste versionsinformationen om SDK-taggtillägget för webben finns i [Ver
 
 ## Version 2.6.4 - 7 september 2021
 
-- Ett problem har korrigerats där angivna HTML Adobe Target-åtgärder för elementet `head` ersatte hela `head`-innehållet. Ange HTML-åtgärder som används för elementet `head` ändras till Lägg till HTML.
+- Ett problem har korrigerats där de angivna HTML Adobe Target-åtgärderna för elementet `head` ersatte hela `head`-innehållet. Ange nu att HTML-åtgärder som används för elementet `head` ska läggas till i HTML.
 
 ## Version 2.6.3 - 16 augusti 2021
 
@@ -281,8 +293,8 @@ Den senaste versionsinformationen om SDK-taggtillägget för webben finns i [Ver
 - Använder nu en XDM-schemafältgrupp i stället för `meta.personalization` när händelser skickas om anpassat innehåll som återges eller klickas.
 - Kommandot [`getIdentity`](/help/web-sdk/commands/getidentity.md) returnerar nu kantområdes-ID:t bredvid identiteten.
 - Varningar och fel som tagits emot från servern har förbättrats och hanteras på ett mer lämpligt sätt.
-- Stöd för Adobe Consent 2.0-standarden för kommandot [`setConsent`](/help/web-sdk/commands/setconsent.md) har lagts till.
-- Inställningarna för samtycke, när de tas emot, hashas och lagras i lokala lager för en optimerad integrering mellan CMP, Platform Web SDK och Platform Edge Network. Om du samlar in medgivandeinställningar får du nu gärna ringa `setConsent` vid varje sidinläsning.
+- Stöd har lagts till för Adobe Consent 2.0-standarden för kommandot [`setConsent`](/help/web-sdk/commands/setconsent.md).
+- Inställningarna för samtycke, när de tas emot, hashas och lagras i en lokal lagringsplats för optimerad integrering mellan CMP, Platform Web SDK och Platform Edge Network. Om du samlar in medgivandeinställningar får du nu gärna ringa `setConsent` vid varje sidinläsning.
 - Två [övervakningskopplingar ](https://github.com/adobe/alloy/wiki/Monitoring-Hooks), `onCommandResolved` och `onCommandRejected` har lagts till.
 - Felkorrigering: Meddelandehändelser för interaktion i Personalization innehåller dubblettinformation om samma aktivitet när en användare navigerade till en ny enkelsidig programvy, tillbaka till den ursprungliga vyn och klickade på ett element som är kvalificerat för konvertering.
 - Felkorrigering: Om den första händelsen som skickades av SDK hade `documentUnloading` inställt på `true`, skulle [`sendBeacon`](https://developer.mozilla.org/en-US/docs/Web/API/Navigator/sendBeacon) användas för att skicka händelsen, vilket resulterar i ett fel om att en identitet inte har etablerats.

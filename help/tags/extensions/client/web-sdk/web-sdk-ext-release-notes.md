@@ -2,9 +2,9 @@
 title: Versionsinformation om Adobe Experience Platform Web SDK Extension
 description: Adobe Experience Platform Web SDK Tag Extension
 exl-id: 91de8c91-023a-45b6-9f67-ac75ee471e50
-source-git-commit: 5bf69773d0502185bbe8db3b13cb2684d6d06ac4
+source-git-commit: 8fd86a170433c4eb07a7370dbd3aa2cb3ef10922
 workflow-type: tm+mt
-source-wordcount: '2400'
+source-wordcount: '2567'
 ht-degree: 1%
 
 ---
@@ -12,6 +12,19 @@ ht-degree: 1%
 # Versionsinformation om Adobe Experience Platform Web SDK-tillägget
 
 Det här dokumentet innehåller versionsinformation för taggtillägget Adobe Experience Platform Web SDK. Den senaste versionsinformationen om SDK finns i [Versionsinformationen för Platform Web SDK](/help/web-sdk/release-notes.md).
+
+## Version 2.29.0 - 5 mars 2025
+
+**Nya funktioner**
+
+- Nu kan du skapa anpassade Web SDK-byggen och välja de komponenter du behöver från taggtilläggets användargränssnitt. Detta kan leda till mindre byggen genom att utesluta oanvända komponenter. Mer information finns i dokumentationen om att [skapa en anpassad SDK-version](web-sdk-extension-configuration.md#custom-build) för webben.
+- Innehåller [version 2.26.0](../../../../web-sdk/release-notes.md#2-26-0) av Adobe Experience Platform Web SDK.
+
+**Korrigeringar och förbättringar**
+
+- En smidig hantering av saknade dataelement har lagts till i [uppdateringsvariabelåtgärderna](action-types.md#update-variable). Tidigare visades ett felmeddelande när en åtgärd för uppdateringsvariabel redigerades med ett dataelement som saknas. Nu kan du välja ett annat dataelement och alla inställningar för åtgärden för att uppdatera variabel fortfarande tillämpas. Dataelement kan saknas om de tas bort eller om en taggegenskap dupliceras.
+- Stöd har lagts till för att öppna en ny flik med åtgärden [omdirigering med identitet](action-types.md#redirect-with-identity). När åtgärden används används nu attributet `target` för ankartaggen när webbläsaren omdirigeras.
+- Ett problem har korrigerats där Adobe Audience Manager inte kunde inaktiveras vid åsidosättning av konfiguration.
 
 ## Version 2.28.0 - 23 januari 2025
 
@@ -201,7 +214,7 @@ Innehåller version 2.14.0 av Adobe Experience Platform Web SDK.
 
 ## Version 2.14.1 - 13 oktober 2022
 
-- Ett problem har korrigerats där Web SDK inte följer ID:t från Experience Cloud ID-tjänsten.
+- Ett problem har korrigerats där webb-SDK inte följer ID:t från Experience Cloud ID-tjänsten.
 
 Innehåller version 2.13.1 av Adobe Experience Platform Web SDK Library.
 
@@ -310,7 +323,7 @@ Innehåller version 2.4.0 av Adobe Experience Platform Web SDK Library.
 - [&quot;Borttagning av dokument&quot;](/help/web-sdk/commands/sendevent/documentunloading.md) har lagts till i användargränssnittet för åtgärden Skicka händelse.
 - Stöd för ett `out`-alternativ har lagts till när [standardmedgivande](/help/web-sdk/commands/configure/defaultconsent.md) konfigureras, vilket innebär att alla händelser utesluts tills medgivande tas (det befintliga `pending`-alternativet köar händelser och skickar dem när medgivande tas emot).
 - Ett verktygstips har lagts till i standardfältet för samtycke.
-- Stöd för Adobe Consent 2.0-standarden har lagts till när kommandot [`setConsent`](/help/web-sdk/commands/setconsent.md) användes.
+- Stöd för Adobe Consent 2.0-standarden har lagts till när kommandot [`setConsent`](/help/web-sdk/commands/setconsent.md) används.
 - Ett bättre fel visas nu i användargränssnittet för XDM-objektets dataelement om användarens åtkomsttoken är ogiltig eller felaktigt etablerad.
 - Korsfel (som inte påverkar tilläggsprogrammets funktion) som visades på webbläsarens utvecklarkonsol när ett XDM-objektdataelement visades har åtgärdats.
 
