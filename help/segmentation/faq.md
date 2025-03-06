@@ -2,9 +2,9 @@
 title: Frågor och svar
 description: Få svar på vanliga frågor om målgrupper och andra segmenteringsrelaterade koncept.
 exl-id: 79d54105-a37d-43f7-adcb-97f2b8e4249c
-source-git-commit: 4afb2c76f2022423e8f1fa29c91d02b43447ba90
+source-git-commit: 16ffdd0e28687c04b4b8a2b33f10ddceea9ec03a
 workflow-type: tm+mt
-source-wordcount: '4810'
+source-wordcount: '4812'
 ht-degree: 0%
 
 ---
@@ -83,7 +83,7 @@ Den organisationsspecifika standardprincipen för sammanfogning tillämpas autom
 
 ### Var kan jag aktivera externt genererade målgrupper?
 
-En externt genererad målgrupp kan mappas till alla målgrupper och kan användas i Adobe Journey Optimizer-kampanjer.
+En externt genererad målgrupp kan mappas till vilken destination som helst och kan användas i Adobe Journey Optimizer kampanjer och resor.
 
 ### Kan jag ta bort en externt genererad publik?
 
