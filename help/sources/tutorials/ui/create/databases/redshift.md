@@ -3,9 +3,9 @@ title: Ansluta AWS Redshift till Experience Platform med användargränssnittet
 description: Lär dig hur du ansluter ett AWS Redshift-konto till Experience Platform med hjälp av källgränssnittet.
 badgeUltimate: label="Ultimate" type="Positive"
 exl-id: 4faf3200-673b-4a20-8f94-d049e800444b
-source-git-commit: dd9aee1ac887637d4761188d6dbcf55ad5bde407
+source-git-commit: 8533aa3527bfb74a77f5b15dacf9ecfe622477d5
 workflow-type: tm+mt
-source-wordcount: '697'
+source-wordcount: '700'
 ht-degree: 0%
 
 ---
@@ -16,7 +16,7 @@ ht-degree: 0%
 >
 >Källan [!DNL AWS Redshift] är tillgänglig i källkatalogen för användare som har köpt Real-Time Customer Data Platform Ultimate.
 
-Läs den här vägledningen när du vill lära dig hur du ansluter ditt [!DNL AWS Redshift]-konto till Adobe Experience Platform med användargränssnittet.
+Läs den här vägledningen när du vill lära dig hur du ansluter ditt [!DNL AWS Redshift]-konto till Adobe Experience Platform med hjälp av källarbetsytan i användargränssnittet.
 
 ## Komma igång
 
