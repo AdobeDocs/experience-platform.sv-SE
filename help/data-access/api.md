@@ -4,7 +4,7 @@ solution: Experience Platform
 title: API-guide för dataåtkomst
 description: API:t för dataåtkomst stöder Adobe Experience Platform genom att ge utvecklarna ett RESTful-gränssnitt som fokuserar på att upptäcka och tillgängliggöra inkapslade datauppsättningar i Experience Platform.
 exl-id: 278ec322-dafa-4e3f-ae45-2d20459c5653
-source-git-commit: 804eeb4ec976cf41fdd450bd8f307499c3ebae03
+source-git-commit: 78dbb735bad70e2115cbbaabb6cf74bf38983460
 workflow-type: tm+mt
 source-wordcount: '566'
 ht-degree: 1%
@@ -154,7 +154,7 @@ curl -X GET https://platform.adobe.io/data/foundation/export/files/{FILE_ID} \
 
 | Egenskap | Beskrivning |
 | -------- | ----------- |
-| `data.name` | Filens namn (till exempel `profiles.csv`). |
+| `data.name` | Filens namn (till exempel `profiles.parquet`). |
 | `data.length` | Filens storlek (i byte). |
 | `data._links.self.href` | Den URL som filen ska hämtas från. |
 
@@ -201,7 +201,7 @@ När en katalog returneras innehåller den en array med alla filer i katalogen.
 
 | Egenskap | Beskrivning |
 | -------- | ----------- |
-| `data.name` | Filens namn (till exempel `profiles.csv`). |
+| `data.name` | Filens namn (till exempel `profiles.parquet`). |
 | `data._links.self.href` | Den URL som filen ska hämtas från. |
 
 ## Åtkomst till innehållet i en fil {#access-file-contents}
@@ -231,7 +231,7 @@ curl -X GET https://platform.adobe.io/data/foundation/export/files/{FILE_ID}?pat
 | Egenskap | Beskrivning |
 | -------- | ----------- |
 | `{FILE_ID}` | ID för filen i en datauppsättning. |
-| `{FILE_NAME}` | Filens fullständiga namn (till exempel `profiles.csv`). |
+| `{FILE_NAME}` | Filens fullständiga namn (till exempel `profiles.parquet`). |
 
 **Svar**
 
@@ -243,4 +243,4 @@ Fler exempel finns i [dataåtkomstsjälvstudiekursen](tutorials/dataset-data.md)
 
 ## Prenumerera på dataöverföringshändelser {#subscribe-to-data-ingestion-events}
 
-Du kan prenumerera på specifika värdefulla händelser via [Adobe Developer Console](https://developer.adobe.com/console/). Du kan t.ex. prenumerera på dataöverföringshändelser för att få meddelanden om eventuella förseningar och fel. Mer information finns i självstudiekursen om att [prenumerera på händelsemeddelanden från Adobe](../observability/alerts/subscribe.md).
+Du kan prenumerera på specifika värdefulla händelser via [Adobe Developer Console](https://developer.adobe.com/console/). Du kan t.ex. prenumerera på dataöverföringshändelser för att få meddelanden om eventuella förseningar och fel. Mer information finns i självstudiekursen om att [prenumerera på Adobe händelsemeddelanden](../observability/alerts/subscribe.md).
