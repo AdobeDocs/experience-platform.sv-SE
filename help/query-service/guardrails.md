@@ -3,9 +3,9 @@ keywords: Experience Platform;fråga;frågetjänst;felsökning;skyddsförslag;ri
 title: Guardsutkast för frågetjänsten
 description: Det här dokumentet innehåller information om användningsgränser för frågetjänstdata som hjälper dig att optimera användningen av frågan.
 exl-id: 1ad5dcf4-d048-49ff-97e3-07040392b65b
-source-git-commit: 5d6b70e397a252e037589c3200053ebcb7eb8291
+source-git-commit: 23c7a4590b365a49edb066567b6ebe2ac08c67e8
 workflow-type: tm+mt
-source-wordcount: '1181'
+source-wordcount: '1168'
 ht-degree: 1%
 
 ---
@@ -27,15 +27,13 @@ Innan du fortsätter med det här dokumentet bör du ha god förståelse för de
 
 * **Gruppfrågor**: För att köra `INSERT TABLE AS SELECT` - och `CREATE TABLE AS SELECT`-frågor för att rensa, forma, manipulera och förbättra data. Resultaten av de här frågorna **lagras** på datarjön. Mätvärdet för att mäta användningen av den här funktionen är beräkningstimmar.
 
-* **Query Service-användare**: Frågetjänstanvändare som tillhandahålls i din aktuella licens för Customer Journey Analytics, Adobe Real-time Customer Data Platform och/eller Adobe Journey Optimizer kan också användas med Data Distiller. Frågetjänstanvändare delas mellan funktioner.
+* **Query Service-användare**: Frågetjänstanvändare som tillhandahålls i din aktuella licens för Customer Journey Analytics, Adobe Real-Time Customer Data Platform och/eller Adobe Journey Optimizer kan också användas med Data Distiller. Frågetjänstanvändare delas mellan funktioner.
 
 * **Ad hoc-användare**: Det är Ad hoc-användare som kör ad hoc-frågor.
 
 * **Gruppanvändare**: Det är gruppanvändare som kör gruppfrågor.
 
 * **Rapporterings-API**: Ett API för att anropa datahämtning (internt eller externt). Utökade rapporteringsdatamodeller härleds från de inbyggda rapportdatamodellerna i Adobe Experience Platform, t.ex. datamodellen för Real-Time CDP dashboards.
-
-Bilden nedan sammanfattar hur funktionerna i tjänsten Query är paketerade och licensierade:
 
 ## Skyddstyper
 
@@ -101,10 +99,10 @@ Mer information om frågetjänsten finns i följande dokumentation:
 * [API för frågetjänst](./api/getting-started.md)
 * [Användargränssnitt för frågetjänst](./ui/overview.md)
 
-Följande dokumentation innehåller mer information om andra Experience Platform-servicesäkrar, om total latenstid och licensinformation från Real-Time CDP produktbeskrivningsdokument:
+I följande dokumentation finns mer information om andra Experience Platform servicemarginaler, om total latenstid och licensieringsinformation från Real-Time CDP produktbeskrivningsdokument:
 
 * [Real-Time CDP skyddsräcken](/help/rtcdp/guardrails/overview.md)
-* [Latensdiagram från början till slut](https://experienceleague.adobe.com/docs/blueprints-learn/architecture/architecture-overview/deployment/guardrails.html?lang=en#end-to-end-latency-diagrams) för olika Experience Platform-tjänster.
-* [Real-time Customer Data Platform (B2C-utgåva - Premiere- och Ultimate-paket)](https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform-b2c-edition-prime-and-ultimate-packages.html)
-* [Real-time Customer Data Platform (B2P - Prime- och Ultimate-paket)](https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform-b2p-edition-prime-and-ultimate-packages.html)
-* [Real-time Customer Data Platform (B2B - Prime- och Ultimate-paket)](https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform-b2b-edition-prime-and-ultimate-packages.html)
+* [Avancerade latensdiagram](https://experienceleague.adobe.com/docs/blueprints-learn/architecture/architecture-overview/deployment/guardrails.html?lang=en#end-to-end-latency-diagrams) för olika Experience Platform-tjänster.
+* [Real-Time Customer Data Platform (B2C Edition - Prime- och Ultimate-paket)](https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform-b2c-edition-prime-and-ultimate-packages.html)
+* [Real-Time Customer Data Platform (B2P - Prime- och Ultimate-paket)](https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform-b2p-edition-prime-and-ultimate-packages.html)
+* [Real-Time Customer Data Platform (B2B - Prime- och Ultimate-paket)](https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform-b2b-edition-prime-and-ultimate-packages.html)

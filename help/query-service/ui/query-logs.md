@@ -2,18 +2,14 @@
 title: Frågeloggar
 description: Frågeloggar genereras automatiskt varje gång en fråga körs och är tillgängliga via användargränssnittet som hjälp vid felsökning. I det här dokumentet beskrivs hur du använder och navigerar i avsnittet Loggar för frågetjänst i användargränssnittet.
 exl-id: 929e9fba-a9ba-4bf9-a363-ca8657a84f75
-source-git-commit: c2832821ea6f9f630e480c6412ca07af788efd66
+source-git-commit: db0ba3bb32b5458ab3a32525c3c63939fe804ab4
 workflow-type: tm+mt
-source-wordcount: '962'
+source-wordcount: '901'
 ht-degree: 0%
 
 ---
 
 # Frågeloggar
-
->[!IMPORTANT]
->
->Vissa frågeloggfunktioner är för närvarande i en begränsad version och inte tillgängliga för alla kunder. Gränssnittet kan se lite annorlunda ut utan en redigeringsikon. Dessutom kan processen att välja ett frågenamn navigera till frågeredigeraren i stället för till vyn [!UICONTROL Query log details].
 
 Adobe Experience Platform har en logg över alla frågehändelser som inträffar via både API och gränssnittet. Den här informationen är tillgänglig i gränssnittet för frågetjänsten på fliken [!UICONTROL Logs].
 
@@ -52,10 +48,6 @@ På panelen med logginformation kan du utföra olika åtgärder. Du kan köra fr
 >Alternativet för [!UICONTROL Run as CTAS] är bara tillgängligt för en SELECT-fråga.
 
 ![Arbetsytan Frågelogg med en markerad rad, Kör som CTAS, Ta bort fråga och ikonen Kopiera SQL markerad.](../images/ui/query-log/edit-output-dataset.png)
-
->[!IMPORTANT]
->
->Vissa frågeloggfunktioner är för närvarande i en begränsad version och inte tillgängliga för alla kunder.
 
 Du kan också välja ett frågemallnamn i kolumnen [!UICONTROL Name] för att navigera direkt till vyn [!UICONTROL Query log details].
 

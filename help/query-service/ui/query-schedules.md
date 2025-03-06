@@ -2,9 +2,9 @@
 title: Frågescheman
 description: Lär dig hur du automatiserar schemalagda frågekörningar, tar bort eller inaktiverar ett frågeschema och använder tillgängliga schemaläggningsalternativ via Adobe Experience Platform-gränssnittet.
 exl-id: 984d5ddd-16e8-4a86-80e4-40f51f37a975
-source-git-commit: c0d2f4b4f8e294d5a7b0a519ab9dad8b78558b26
+source-git-commit: db0ba3bb32b5458ab3a32525c3c63939fe804ab4
 workflow-type: tm+mt
-source-wordcount: '1972'
+source-wordcount: '1933'
 ht-degree: 0%
 
 ---
@@ -119,10 +119,6 @@ En översikt över aviseringar i Adobe Experience Platform, inklusive strukturen
 
 ### Ange parametrar för en schemalagd parametriserad fråga {#set-parameters}
 
->[!IMPORTANT]
->
->Gränssnittsfunktionen för parametriserade frågor är för närvarande tillgänglig i en **begränsad version endast** och är inte tillgänglig för alla kunder. Om du inte har tillgång till parametriserade frågor kan du fortsätta med [ta bort eller inaktivera ett schema](#delete-schedule)-avsnitt.
-
 Om du skapar en schemalagd fråga för en parametriserad fråga måste du nu ange parametervärden för dessa frågekörningar.
 
 ![Avsnittet Schemainformation i arbetsflödet för att skapa schema med avsnittet Frågeparametrar markerat.](../images/ui/query-schedules/scheduled-query-parameter.png)
@@ -147,7 +143,7 @@ Spåra beräknade timmar som förbrukats på frågekörningsnivån för dina CTA
 
 >[!AVAILABILITY]
 >
->Funktionen Beräkna timmar är exklusiv för användare som har köpt [Data Distiller SKU](../data-distiller/overview.md). Kontakta din Adobe-representant om du vill ha mer information.
+>Funktionen Beräkna timmar är exklusiv för användare som har köpt [Data Distiller SKU](../data-distiller/overview.md). Kontakta Adobe om du vill ha mer information.
 
 ![Informationsavsnittet på arbetsytan Schemalagda frågor med en lista över frågor som körs markerade för en schemalagd fråga.](../images/ui/query-schedules/list-of-scheduled-runs.png)
 
