@@ -1,41 +1,75 @@
 ---
-title: Skapa en Snowflake Source-anslutning i användargränssnittet
+title: Ansluta Snowflake till Experience Platform med användargränssnittet
 type: Tutorial
-description: Lär dig hur du skapar en Snowflake-källanslutning med Adobe Experience Platform användargränssnitt.
+description: Lär dig hur du skapar en källanslutning till Snowflake med Adobe Experience Platform användargränssnitt.
 badgeUltimate: label="Ultimate" type="Positive"
 exl-id: fb2038b9-7f27-4818-b5de-cc8072122127
-source-git-commit: ae322ee421edd73cd5a3fb8499267cd417491318
+source-git-commit: cde31b692e9a11b15cf91a505133f75f69604cba
 workflow-type: tm+mt
-source-wordcount: '864'
-ht-degree: 2%
+source-wordcount: '1122'
+ht-degree: 1%
 
 ---
 
-# Skapa en [!DNL Snowflake]-källanslutning i användargränssnittet
+# Anslut [!DNL Snowflake] till Experience Platform med användargränssnittet
 
 >[!IMPORTANT]
 >
->Källan [!DNL Snowflake] är tillgänglig i källkatalogen för användare som har köpt Real-time Customer Data Platform Ultimate.
+>Källan [!DNL Snowflake] är tillgänglig i källkatalogen för användare som har köpt Real-Time Customer Data Platform Ultimate.
 
-I den här självstudiekursen beskrivs hur du skapar en [!DNL Snowflake]-källanslutning med Adobe Experience Platform-användargränssnittet.
+Läs den här vägledningen när du vill lära dig hur du ansluter ditt [!DNL Snowflake]-konto till Adobe Experience Platform med användargränssnittet.
 
 ## Komma igång
 
 Den här självstudiekursen kräver en fungerande förståelse av följande komponenter i Experience Platform:
 
-* [Källor](../../../../home.md): [!DNL Experience Platform] tillåter att data kan hämtas från olika källor samtidigt som du kan strukturera, etikettera och förbättra inkommande data med [!DNL Platform]-tjänster.
-* [Sandlådor](../../../../../sandboxes/home.md): [!DNL Experience Platform] innehåller virtuella sandlådor som partitionerar en enskild [!DNL Platform]-instans till separata virtuella miljöer för att hjälpa till att utveckla och utveckla program för digitala upplevelser.
+* [Källor](../../../../home.md): Med Experience Platform kan data hämtas från olika källor samtidigt som du kan strukturera, etikettera och förbättra inkommande data med hjälp av [!DNL Platform]-tjänster.
+* [Sandlådor](../../../../../sandboxes/home.md): Experience Platform tillhandahåller virtuella sandlådor som partitionerar en enda Experience Platform-instans till separata virtuella miljöer för att utveckla och utveckla program för digitala upplevelser.
 
-### Samla in nödvändiga inloggningsuppgifter
+>[!NOTE]
+>
+>Du måste ange flaggan `PREVENT_UNLOAD_TO_INLINE_URL` till `FALSE` för att tillåta dataradering från din [!DNL Snowflake]-databas till Experience Platform.
 
-Du måste ange värden för följande autentiseringsegenskaper för att autentisera [!DNL Snowflake]-källan.
+## Navigera i källkatalogen {#navigate}
+
+I plattformsgränssnittet väljer du **[!UICONTROL Sources]** i den vänstra navigeringen för att komma åt arbetsytan i [!UICONTROL Sources]. Du kan välja lämplig kategori i katalogen till vänster på skärmen. Du kan också hitta den källa du vill arbeta med med med sökalternativet.
+
+Välj **[!DNL Snowflake]** under kategorin *[!UICONTROL Databases]* och välj sedan **[!UICONTROL Set up]**.
+
+>[!TIP]
+>
+>Källor i källkatalogen visar alternativet **[!UICONTROL Set up]** när en angiven källa ännu inte har något autentiserat konto. När det finns ett autentiserat konto ändras det här alternativet till **[!UICONTROL Add data]**.
+
+![Källkatalogen med Snowflake-kortet valt..](../../../../images/tutorials/create/snowflake/catalog.png)
+
+## Använd ett befintligt konto {#existing}
+
+Därefter går du till autentiseringssteget i arbetsflödet för källor. Här kan du antingen använda ett befintligt konto eller skapa ett nytt.
+
+Om du vill använda ett befintligt konto markerar du det [!DNL Snowflake]-konto du vill ansluta till och väljer sedan **[!UICONTROL Next]** för att fortsätta.
+
+![Det befintliga kontogränssnittet i källarbetsflödet.](../../../../images/tutorials/create/snowflake/existing.png)
+
+## Skapa ett nytt konto {#create}
+
+Om du inte har något befintligt konto måste du skapa ett nytt konto genom att ange de autentiseringsuppgifter som motsvarar källan.
+
+Om du vill skapa ett nytt konto väljer du **[!UICONTROL New account]** och anger sedan ett namn och kan lägga till en beskrivning för ditt konto.
+
+### Anslut till Experience Platform på Azure {#azure}
+
+Du kan ansluta ditt [!DNL Snowflake]-konto till Experience Platform på Azure med autentisering av kontonycklar eller autentisering med nyckelpar.
 
 >[!BEGINTABS]
 
 >[!TAB Autentisering av kontonyckel]
 
+Om du vill använda kontonyckelautentisering väljer du **[!UICONTROL Account key authentication]**, anger anslutningssträngen i indataformuläret och väljer sedan **[!UICONTROL Connect to source]**.
+
+![Autentiseringsgränssnittet för kontonyckeln.](../../../../images/tutorials/create/snowflake/account-key-auth.png)
+
 | Autentiseringsuppgifter | Beskrivning |
-| ---------- | ----------- |
+| --- | --- |
 | Konto | Ett kontonamn identifierar unikt ett konto inom organisationen. I det här fallet måste du unikt identifiera ett konto i olika [!DNL Snowflake]-organisationer. Om du vill göra det måste du lägga till ditt organisationsnamn i kontonamnet. Till exempel: `orgname-account_name`. Läs guiden om att [hämta din [!DNL Snowflake] kontoidentifierare](../../../../connectors/databases/snowflake.md#retrieve-your-account-identifier) om du vill ha mer information. Mer information finns i [[!DNL Snowflake] dokumentationen](https://docs.snowflake.com/en/user-guide/admin-account-identifier#format-1-preferred-account-name-in-your-organization). |
 | Lagerställe | Lagerstället [!DNL Snowflake] hanterar frågekörningsprocessen för programmet. Varje [!DNL Snowflake]-lagerställe är oberoende av varandra och måste nås individuellt när data överförs till plattformen. |
 | Databas | Databasen [!DNL Snowflake] innehåller de data som du vill ta med plattformen. |
@@ -46,7 +80,11 @@ Du måste ange värden för följande autentiseringsegenskaper för att autentis
 
 >[!TAB Autentisering med nyckelpar]
 
-Om du vill använda autentisering med nyckelpar måste du generera ett 2 048-bitars RSA-nyckelpar och sedan ange följande värden när du skapar ett konto för [!DNL Snowflake]-källan.
+Om du vill använda nyckelpars-autentisering väljer du **[!UICONTROL KeyPair authentication]**, anger värden för ditt konto, användarnamn, privat nyckel, lösenfras för privat nyckel, databas och lagerställe och väljer sedan **[!UICONTROL Connect to source]**.
+
+![Autentiseringsgränssnittet för kontonyckelpar.](../../../../images/tutorials/create/snowflake/key-pair-auth.png)
+
+Med autentisering med nyckelpar måste du generera ett 2 048-bitars RSA-nyckelpar och sedan ange följande värden när du skapar ett konto för [!DNL Snowflake]-källan.
 
 | Autentiseringsuppgifter | Beskrivning |
 | --- | --- |
@@ -61,49 +99,25 @@ Mer information om dessa värden finns i [det här Snowflake-dokumentet](https:/
 
 >[!ENDTABS]
 
->[!NOTE]
+### Anslut till Experience Platform på AWS {#aws}
+
+>[!AVAILABILITY]
 >
->Du måste ange flaggan `PREVENT_UNLOAD_TO_INLINE_URL` till `FALSE` för att tillåta dataradering från din [!DNL Snowflake]-databas till Experience Platform.
+>Detta avsnitt gäller implementeringar av Experience Platform som körs på Amazon Web Services (AWS). Experience Platform som körs på AWS är för närvarande tillgängligt för ett begränsat antal kunder. Mer information om den Experience Platform-infrastruktur som stöds finns i [Experience Platform översikt över flera moln](../../../../../landing/multi-cloud.md).
 
-## Anslut ditt Snowflake-konto
+Om du vill skapa ett nytt [!DNL Snowflake]-konto och ansluta till Experience Platform på AWS kontrollerar du att du befinner dig i en VA6-sandlåda och anger sedan de nödvändiga autentiseringsuppgifterna för autentisering.
 
-I plattformsgränssnittet väljer du **[!UICONTROL Sources]** i den vänstra navigeringen för att komma åt arbetsytan i [!UICONTROL Sources].
+![Det nya kontosteget i källarbetsflödet där du kan ansluta Snowflake till Experience Platform på AWS.](../../../../images/tutorials/create/snowflake/aws-auth.png)
 
-Du kan välja lämplig kategori i katalogen till vänster på skärmen. Du kan också använda sökfältet till att hitta den källa du vill arbeta med.
-
-Under kategorin [!UICONTROL Databases] väljer du **[!UICONTROL Snowflake]** och sedan **[!UICONTROL Add data]**.
-
-![Källkatalogen med [!DNL Snowflake] markerad.](../../../../images/tutorials/create/snowflake/catalog.png)
-
-Sidan **[!UICONTROL Connect to Snowflake]** visas. På den här sidan kan du antingen använda nya autentiseringsuppgifter eller befintliga.
-
-### Befintligt konto
-
-Om du vill använda ett befintligt konto markerar du det [!DNL Snowflake]-konto du vill ansluta till och väljer sedan **[!UICONTROL Next]** för att fortsätta.
-
-![Det befintliga kontogränssnittet i källarbetsflödet.](../../../../images/tutorials/create/snowflake/existing.png)
-
-### Nytt konto
-
-Om du vill skapa ett nytt konto väljer du **[!UICONTROL New account]** och anger sedan ett namn och en valfri beskrivning för det nya [!DNL Snowflake]-kontot.
-
-![Det nya kontogränssnittet i källarbetsflödet.](../../../../images/tutorials/create/snowflake/new.png)
-
->[!BEGINTABS]
-
->[!TAB Autentisering av kontonyckel]
-
-Om du vill använda kontonyckelautentisering anger du anslutningssträngen i indataformuläret och väljer sedan **[!UICONTROL Connect to source]**.
-
-![Autentiseringsgränssnittet för kontonyckeln.](../../../../images/tutorials/create/snowflake/connection-string.png)
-
->[!TAB Autentisering med nyckelpar]
-
-Om du vill använda nyckelpars-autentisering anger du värden för ditt konto, ditt användarnamn, din privata nyckel, lösenfras för privat nyckel, databas och lagerställe och väljer sedan **[!UICONTROL Connect to source]**.
-
-![Autentiseringsgränssnittet för kontonyckelpar.](../../../../images/tutorials/create/snowflake/key-pair.png)
-
->[!ENDTABS]
+| Autentiseringsuppgifter | Beskrivning |
+| --- | --- |
+| Värd | Den värd-URL som ditt [!DNL Snowflake]-konto ansluter till. |
+| Port | Portnumret som används av [!DNL Snowflake] vid anslutning till en server via Internet. |
+| Användarnamn | Användarnamnet som är associerat med ditt [!DNL Snowflake]-konto. |
+| Lösenord | Lösenordet som är kopplat till ditt [!DNL Snowflake]-konto. |
+| Databas | Databasen [!DNL Snowflake] från vilken data hämtas. |
+| Schema | Namnet på schemat som är associerat med din [!DNL Snowflake]-databas. Du måste se till att användaren som du vill ge databasåtkomst till också har åtkomst till det här schemat. |
+| Lagerställe | Det [!DNL Snowflake]-lagerställe som du använder. |
 
 ### Hoppa över förhandsgranskning av exempeldata {#skip-preview-of-sample-data}
 

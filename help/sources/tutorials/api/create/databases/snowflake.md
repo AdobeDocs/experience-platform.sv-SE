@@ -1,24 +1,22 @@
 ---
-title: Skapa en Snowflake-basanslutning med API:t för flödestjänsten
+title: Anslut Snowflake till Experience Platform med API:t för flödestjänst
 description: Lär dig hur du ansluter Adobe Experience Platform till Snowflake med API:t för Flow Service.
 badgeUltimate: label="Ultimate" type="Positive"
 exl-id: 0ef34d30-7b4c-43f5-8e2e-cde05da05aa5
-source-git-commit: d89e0c81bd250e41a863b8b28d358cc6ddea1c37
+source-git-commit: cde31b692e9a11b15cf91a505133f75f69604cba
 workflow-type: tm+mt
-source-wordcount: '955'
-ht-degree: 2%
+source-wordcount: '1187'
+ht-degree: 1%
 
 ---
 
-# Skapa en [!DNL Snowflake]-basanslutning med API:t [!DNL Flow Service]
+# Anslut [!DNL Snowflake] till Experience Platform med API:t [!DNL Flow Service]
 
 >[!IMPORTANT]
 >
->Källan [!DNL Snowflake] är tillgänglig i källkatalogen för användare som har köpt Real-time Customer Data Platform Ultimate.
+>Källan [!DNL Snowflake] är tillgänglig i källkatalogen för användare som har köpt Real-Time Customer Data Platform Ultimate.
 
-En basanslutning representerar den autentiserade anslutningen mellan en källa och Adobe Experience Platform.
-
-Använd följande självstudiekurs för att lära dig hur du skapar en basanslutning för [!DNL Snowflake] med [[!DNL Flow Service] API](<https://www.adobe.io/experience-platform-apis/references/flow-service/>).
+Läs den här vägledningen när du vill veta hur du kan ansluta ditt [!DNL Snowflake]-källkonto till Adobe Experience Platform med [[!DNL Flow Service] API](https://developer.adobe.com/experience-platform-apis/references/flow-service/).
 
 ## Komma igång
 
@@ -32,6 +30,10 @@ Handboken kräver en fungerande förståelse av följande komponenter i Adobe Ex
 Mer information om hur du kan anropa plattforms-API:er finns i guiden [Komma igång med plattforms-API:er](../../../../../landing/api-guide.md).
 
 Följande avsnitt innehåller ytterligare information som du behöver känna till för att kunna ansluta till [!DNL Snowflake] med API:t [!DNL Flow Service].
+
+## Anslut [!DNL Snowflake] till Experience Platform på Azure {#azure}
+
+Läs stegen nedan om du vill ha information om hur du ansluter din [!DNL Snowflake]-källa till Experience Platform på Azure.
 
 ### Samla in nödvändiga inloggningsuppgifter
 
@@ -62,7 +64,7 @@ Om du vill använda autentisering med nyckelpar måste du generera ett 2 048-bit
 | `privateKey` | Den [!DNL Base64-]kodade privata nyckeln för ditt [!DNL Snowflake]-konto. Du kan generera antingen krypterade eller okrypterade privata nycklar. Om du använder en krypterad privat nyckel måste du även ange en lösenfras för den privata nyckeln vid autentisering mot Experience Platform. Läs guiden om att [hämta din [!DNL Snowflake] privata nyckel](../../../../connectors/databases/snowflake.md) om du vill ha mer information. |
 | `privateKeyPassphrase` | Lösenfrasen för den privata nyckeln är ett extra säkerhetslager som du måste använda när du autentiserar med en krypterad privat nyckel. Du behöver inte ange lösenfrasen om du använder en okrypterad privat nyckel. |
 | `database` | Databasen [!DNL Snowflake] som innehåller de data som du vill importera till Experience Platform. |
-| `warehouse` | Lagerstället [!DNL Snowflake] hanterar frågekörningsprocessen för programmet. Varje [!DNL Snowflake]-lagerställe är oberoende av varandra och måste nås individuellt när du överför data till Experience Platform. |
+| `warehouse` | Lagerstället [!DNL Snowflake] hanterar frågekörningsprocessen för programmet. Varje [!DNL Snowflake]-lagerställe är oberoende av varandra och måste nås individuellt när data överförs till Experience Platform. |
 
 Mer information om dessa värden finns i [[!DNL Snowflake] autentiseringsguiden för nyckelpar](https://docs.snowflake.com/en/user-guide/key-pair-auth.html).
 
@@ -72,11 +74,11 @@ Mer information om dessa värden finns i [[!DNL Snowflake] autentiseringsguiden 
 >
 >Du måste ange flaggan `PREVENT_UNLOAD_TO_INLINE_URL` till `FALSE` för att tillåta dataradering från din [!DNL Snowflake]-databas till Experience Platform.
 
-## Skapa en basanslutning
+### Skapa en basanslutning för [!DNL Snowflake] på Experience Platform på Azure {#azure-base}
 
 En basanslutning bevarar information mellan källan och plattformen, inklusive källans autentiseringsuppgifter, anslutningsstatus och ditt unika basanslutnings-ID. Med det grundläggande anslutnings-ID:t kan du utforska och navigera bland filer inifrån källan och identifiera de specifika objekt som du vill importera, inklusive information om deras datatyper och format.
 
-Om du vill skapa ett grundläggande anslutnings-ID skickar du en POST till `/connections`-slutpunkten och anger dina [!DNL Snowflake] autentiseringsuppgifter som en del av begärandetexten.
+Om du vill skapa ett basanslutnings-ID skapar du en POST-begäran till `/connections`-slutpunkten och anger dina [!DNL Snowflake]-autentiseringsuppgifter som en del av begärandetexten.
 
 **API-format**
 
@@ -252,6 +254,85 @@ Ett svar returnerar den nyligen skapade anslutningen, inklusive dess unika anslu
 +++
 
 >[!ENDTABS]
+
+## Anslut [!DNL Snowflake] till Experience Platform på Amazon Web Services (AWS) {#aws}
+
+>[!AVAILABILITY]
+>
+>Detta avsnitt gäller implementeringar av Experience Platform som körs på Amazon Web Services (AWS). Experience Platform som körs på AWS är för närvarande tillgängligt för ett begränsat antal kunder. Mer information om den Experience Platform-infrastruktur som stöds finns i [Experience Platform översikt över flera moln](../../../../../landing/multi-cloud.md).
+
+Läs stegen nedan om du vill ha information om hur du ansluter din [!DNL Snowflake]-källa till Experience Platform på AWS.
+
+### Skapa en basanslutning för [!DNL Snowflake] på Experience Platform i AWS {#aws-base}
+
+**API-format**
+
+```http
+POST /connections
+```
+
+**Begäran**
+
+Följande begäran skapar en basanslutning för [!DNL Snowflake] som ska importera datum till Experience Platform på AWS:
+
++++Markera för att visa exempel
+
+```shell
+curl -X POST \
+  'https://platform.adobe.io/data/foundation/flowservice/connections' \
+  -H 'Authorization: Bearer {ACCESS_TOKEN}' \
+  -H 'x-api-key: {API_KEY}' \
+  -H 'x-gw-ims-org-id: {ORG_ID}' \
+  -H 'x-sandbox-name: {SANDBOX_NAME}' \
+  -H 'Content-Type: application/json' \
+  -d '{
+      "name": "Snowflake base connection for Experience Platform on AWS",
+      "description": "Snowflake base connection for Experience Platform on AWS",
+      "auth": {
+          "specName": "Basic Authentication",
+          "params": {
+              "host": "acme.snowflakecomputing.com",
+              "port": "443",
+              "username": "acme-cj123",
+              "password": "{PASSWORD}",
+              "database": "ACME_DB",
+              "warehouse": "COMPUTE_WH",
+              "schema": "{SCHEMA}"
+          }
+      },
+      "connectionSpec": {
+          "id": "b2e08744-4f1a-40ce-af30-7abac3e23cf3",
+          "version": "1.0"
+      }
+  }'
+```
+
+| Egenskap | Beskrivning |
+| --- | --- |
+| `auth.params.host` | Den värd-URL som ditt [!DNL Snowflake]-konto ansluter till. |
+| `auth.params.port` | Portnumret som används av [!DNL Snowflake] vid anslutning till en server via Internet. |
+| `auth.params.username` | Användarnamnet som är associerat med ditt [!DNL Snowflake]-konto. |
+| `auth.params.database` | Databasen [!DNL Snowflake] från vilken data hämtas. |
+| `auth.params.password` | Lösenordet som är kopplat till ditt [!DNL Snowflake]-konto. |
+| `auth.params.warehouse` | Det [!DNL Snowflake]-lagerställe som du använder. |
+| `auth.params.schema` | Namnet på schemat som är associerat med din [!DNL Snowflake]-databas. Du måste se till att användaren som du vill ge databasåtkomst till också har åtkomst till det här schemat. |
+
++++
+
+**Svar**
+
+Ett lyckat svar returnerar information om den nyligen skapade anslutningen, inklusive dess unika identifierare (`id`). Detta ID krävs för att du ska kunna utforska ditt lagringsutrymme i nästa självstudiekurs.
+
++++Markera för att visa exempel
+
+```json
+{
+    "id": "4cb0c374-d3bb-4557-b139-5712880adc55",
+    "etag": "\"1700d77b-0000-0200-0000-5e3b41a10000\""
+}
+```
+
++++
 
 Genom att följa den här självstudiekursen har du skapat en [!DNL Snowflake]-basanslutning med API:t [!DNL Flow Service]. Du kan använda detta grundläggande anslutnings-ID i följande självstudier:
 
