@@ -1,12 +1,12 @@
 ---
-keywords: Experience Platform;hem;populära ämnen;api;API;XDM;XDM system;experience data model;Experience data model;experience data model;data model;data model;schema register;schema Registry;descriptor;descriptor;descriptors;descriptors;identity;identity;friendly name;Friendname;alternatedisplayinfo;reference;relationship;relationship
+keywords: Experience Platform;hem;populära ämnen;api;API;XDM;XDM system;Experience data model;Experience data model;data model;data model;schema register;schema Registry;descriptor;descriptor;descriptors;descriptors;identity;identity;friendly name;Friendname;alternatedisplayinfo;reference;relation;relation;relation
 solution: Experience Platform
 title: API-slutpunkt för beskrivare
 description: Med slutpunkten /descriptors i API:t för schemaregister kan du programmässigt hantera XDM-beskrivningar i ditt upplevelseprogram.
 exl-id: bda1aabd-5e6c-454f-a039-ec22c5d878d2
-source-git-commit: 866e00459c66ea4678cd98d119a7451fd8e78253
+source-git-commit: d6015125e3e29bdd6a6c505b5f5ad555bd17a0e0
 workflow-type: tm+mt
-source-wordcount: '1918'
+source-wordcount: '2190'
 ht-degree: 0%
 
 ---
@@ -27,7 +27,7 @@ Slutpunkten som används i den här guiden ingår i [[!DNL Schema Registry] API]
 
 ## Hämta en lista med beskrivningar {#list}
 
-Du kan visa alla beskrivningar som har definierats av din organisation genom att göra en GET-förfrågan till `/tenant/descriptors`.
+Du kan visa alla beskrivningar som har definierats av din organisation genom att göra en GET-begäran till `/tenant/descriptors`.
 
 **API-format**
 
@@ -86,7 +86,7 @@ När du använder rubriken `link` `Accept` visas varje beskrivning som ett array
 
 ## Söka efter en beskrivning {#lookup}
 
-Om du vill visa information om en viss beskrivning kan du slå upp (GET) en enskild beskrivning med hjälp av dess `@id`.
+Om du vill visa information om en viss beskrivning kan du söka efter (GET) en enskild beskrivning med hjälp av dess `@id`.
 
 **API-format**
 
@@ -139,7 +139,7 @@ Ett lyckat svar returnerar information om beskrivningen, inklusive dess `@type` 
 
 ## Skapa en beskrivning {#create}
 
-Du kan skapa en ny beskrivning genom att göra en POST-förfrågan till slutpunkten `/tenant/descriptors`.
+Du kan skapa en ny beskrivning genom att göra en POST-begäran till slutpunkten `/tenant/descriptors`.
 
 >[!IMPORTANT]
 >
@@ -195,7 +195,7 @@ Ett lyckat svar returnerar HTTP-status 201 (Skapad) och information om den nyska
 
 ## Uppdatera en beskrivning {#put}
 
-Du kan uppdatera en beskrivning genom att ta med dess `@id` i sökvägen för en PUT-begäran.
+Du kan uppdatera en beskrivning genom att ta med dess `@id` i sökvägen till en PUT-begäran.
 
 **API-format**
 
@@ -215,7 +215,7 @@ Denna begäran skriver i princip om beskrivningen, så begärandetexten måste i
 
 >[!IMPORTANT]
 >
->Precis som när du skapar beskrivningar med hjälp av POST-begäranden, kräver varje beskrivningstyp att egna specifika fält skickas i nyttolasterna för PUT-begäran. I [bilagan](#defining-descriptors) finns en fullständig lista över beskrivningar och de fält som krävs för att definiera dem.
+>Precis som när du skapar beskrivningar med POST-begäranden, kräver varje beskrivningstyp att egna specifika fält skickas i PUT-begärannyttolaster. I [bilagan](#defining-descriptors) finns en fullständig lista över beskrivningar och de fält som krävs för att definiera dem.
 
 I följande exempel uppdateras en identitetsbeskrivning så att den refererar till en annan `xdm:sourceProperty` (`mobile phone`) och `xdm:namespace` ändras till `Phone`.
 
@@ -248,7 +248,7 @@ Ett lyckat svar returnerar HTTP-status 201 (Skapad) och `@id` för den uppdatera
 }
 ```
 
-Om du utför en [sökbegäran (GET)](#lookup) för att visa beskrivningen visas att fälten nu har uppdaterats för att återspegla de ändringar som skickats i PUT-begäran.
+Om du utför en [sökbegäran (GET)](#lookup) för att visa beskrivningen visas att fälten nu har uppdaterats för att återspegla de ändringar som har skickats i PUT-begäran.
 
 ## Ta bort en beskrivning {#delete}
 
@@ -369,7 +369,7 @@ Med egna namnbeskrivningar kan en användare ändra värdena `title`, `descripti
 
 {style="table-layout:auto"}
 
-#### Relationsbeskrivning
+#### Relationsbeskrivning {#relationship-descriptor}
 
 Relationsbeskrivare beskriver en relation mellan två olika scheman, som är aktiverade för egenskaperna som beskrivs i `sourceProperty` och `destinationProperty`. Mer information finns i självstudiekursen [om hur du definierar en relation mellan två scheman](../tutorials/relationship-api.md).
 
@@ -389,13 +389,49 @@ Relationsbeskrivare beskriver en relation mellan två olika scheman, som är akt
 
 | Egenskap | Beskrivning |
 | --- | --- |
-| `@type` | Den typ av beskrivning som definieras. För en relationsbeskrivare måste det här värdet anges till `xdm:descriptorOneToOne`. |
+| `@type` | Den typ av beskrivning som definieras. För en relationsbeskrivare måste det här värdet anges till `xdm:descriptorOneToOne`, såvida du inte har åtkomst till Real-Time CDP B2B edition. Med B2B edition har du möjlighet att använda `xdm:descriptorOneToOne` eller [`xdm:descriptorRelationship`](#b2b-relationship-descriptor). |
 | `xdm:sourceSchema` | URI `$id` för schemat där beskrivningen definieras. |
 | `xdm:sourceVersion` | Huvudversionen av källschemat. |
-| `xdm:sourceProperty` | Sökväg till fältet i källschemat där relationen definieras. Ska börja med ett &quot;/&quot; och inte sluta med ett. Ta inte med&quot;egenskaper&quot; i sökvägen (till exempel&quot;/personalEmail/address&quot; istället för&quot;/properties/personalEmail/properties/address&quot;). |
+| `xdm:sourceProperty` | Sökväg till fältet i källschemat där relationen definieras. Bör börja med &quot;/&quot; och inte sluta med &quot;/&quot;. Ta inte med&quot;egenskaper&quot; i sökvägen (till exempel&quot;/personalEmail/address&quot; istället för&quot;/properties/personalEmail/properties/address&quot;). |
 | `xdm:destinationSchema` | URI `$id` för det referensschema som den här beskrivningen definierar en relation med. |
 | `xdm:destinationVersion` | Huvudversionen av referensschemat. |
-| `xdm:destinationProperty` | Valfri sökväg till ett målfält i referensschemat. Om den här egenskapen utelämnas härleds målfältet av alla fält som innehåller en matchande identitetsbeskrivning för referens (se nedan). |
+| `xdm:destinationProperty` | (Valfritt) Sökväg till ett målfält i referensschemat. Om den här egenskapen utelämnas härleds målfältet av alla fält som innehåller en matchande identitetsbeskrivning för referens (se nedan). |
+
+{style="table-layout:auto"}
+
+##### B2B-relationsbeskrivning {#B2B-relationship-descriptor}
+
+Real-Time CDP B2B edition introducerar ett alternativt sätt att definiera relationer mellan scheman, vilket möjliggör många-till-ett-relationer. Den nya relationen måste ha typen `@type: xdm:descriptorRelationship` och nyttolasten måste innehålla fler fält än relationen `@type: xdm:descriptorOneToOne`. Mer information finns i självstudiekursen [Definiera en schemarelation för B2B edition](../tutorials/relationship-b2b.md).
+
+```json
+{
+   "@type": "xdm:descriptorRelationship",
+   "xdm:sourceSchema" : "https://ns.adobe.com/{TENANT_ID}/schemas/9f2b2f225ac642570a110d8fd70800ac0c0573d52974fa9a",
+   "xdm:sourceVersion" : 1,
+   "xdm:sourceProperty" : "/person-ref",
+   "xdm:destinationSchema" : "https://ns.adobe.com/{TENANT_ID/schemas/628427680e6b09f1f5a8f63ba302ee5ce12afba8de31acd7",
+   "xdm:destinationVersion" : 1,
+   "xdm:destinationProperty": "/personId",
+   "xdm:destinationNamespace" : "People", 
+   "xdm:destinationToSourceTitle" : "Opportunity Roles",
+   "xdm:sourceToDestinationTitle" : "People",
+   "xdm:cardinality": "M:1"
+}
+```
+
+| Egenskap | Beskrivning |
+| --- | --- |
+| `@type` | Den typ av beskrivning som definieras. För oss med följande fält måste värdet anges till `xdm:descriptorRelationship`. Mer information om ytterligare typer finns i avsnittet [Relationsbeskrivningar](#relationship-descriptor). |
+| `xdm:sourceSchema` | URI `$id` för schemat där beskrivningen definieras. |
+| `xdm:sourceVersion` | Huvudversionen av källschemat. |
+| `xdm:sourceProperty` | Sökväg till fältet i källschemat där relationen definieras. Bör börja med &quot;/&quot; och inte sluta med &quot;/&quot;. Ta inte med&quot;egenskaper&quot; i sökvägen (till exempel&quot;/personalEmail/address&quot; istället för&quot;/properties/personalEmail/properties/address&quot;). |
+| `xdm:destinationSchema` | URI `$id` för det referensschema som den här beskrivningen definierar en relation med. |
+| `xdm:destinationVersion` | Huvudversionen av referensschemat. |
+| `xdm:destinationProperty` | (Valfritt) Sökväg till ett målfält i referensschemat, som måste vara schemats primära ID. Om den här egenskapen utelämnas härleds målfältet av alla fält som innehåller en matchande identitetsbeskrivning för referens (se nedan). |
+| `xdm:destinationNamespace` | Namnområdet för det primära ID:t från referensschemat. |
+| `xdm:destinationToSourceTitle` | Visningsnamnet för relationen från referensschemat till källschemat. |
+| `xdm:sourceToDestinationTitle` | Visningsnamnet för relationen från källschemat till referensschemat. |
+| `xdm:cardinality` | Kopplingsförhållandet mellan scheman. Det här värdet ska anges till `M:1`, vilket hänvisar till en många-till-en-relation. |
 
 {style="table-layout:auto"}
 
