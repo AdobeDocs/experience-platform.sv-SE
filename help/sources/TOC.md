@@ -5,9 +5,9 @@ breadcrumb-title: Användarhandbok om Source Connectors
 user-guide-description: Mata in data från olika källor. Lär dig strukturera, etikettera och förbättra inmatad data.
 feature: Sources
 role: Developer
-source-git-commit: b18f93078d3cdbd0498b5b282236ac9b7bad153c
+source-git-commit: b900ef8cbbab78071d462484f088e17eb20fe9b6
 workflow-type: tm+mt
-source-wordcount: '1043'
+source-wordcount: '1047'
 ht-degree: 6%
 
 ---
@@ -20,20 +20,20 @@ ht-degree: 6%
    - Adobe-program {#adobe-applications}
       - [Källa för analysklassificeringar](connectors/adobe-applications/classifications.md)
       - [Analyskälla](connectors/adobe-applications/analytics.md)
-      - [Audience Manager source](connectors/adobe-applications/audience-manager.md)
+      - [Audience Manager-källa](connectors/adobe-applications/audience-manager.md)
       - [Adobe Campaign Managed Cloud Services-källa](connectors/adobe-applications/campaign.md)
       - [Adobe Commerce-källa](connectors/adobe-applications/commerce.md)
       - [Källa för kundattribut](connectors/adobe-applications/customer-attributes.md)
       - [Datainsamlingskälla](connectors/adobe-applications/data-collection.md)
       - Fältmappningar {#mapping}
          - [Mappningar av analysfält](connectors/adobe-applications/mapping/analytics.md)
-         - [Fältkopplingar i Audience Manager](connectors/adobe-applications/mapping/audience-manager.md)
-         - [Fältkopplingar i Marketo Engage](connectors/adobe-applications/mapping/marketo.md)
-         - [Fältkopplingar för Microsoft Dynamics](connectors/adobe-applications/mapping/dynamics.md)
-         - [Salesforce-fältmappningar](connectors/adobe-applications/mapping/salesforce.md)
+         - [Audience Manager fältkopplingar](connectors/adobe-applications/mapping/audience-manager.md)
+         - [Marketo Engage fältkopplingar](connectors/adobe-applications/mapping/marketo.md)
+         - [Microsoft Dynamics fältkopplingar](connectors/adobe-applications/mapping/dynamics.md)
+         - [Salesforce fältkopplingar](connectors/adobe-applications/mapping/salesforce.md)
       - Marketo {#marketo}
-         - [Marketo Engage-kontakt](connectors/adobe-applications/marketo/marketo.md)
-         - [Autentiseringsguide för Marketo Engage](connectors/adobe-applications/marketo/marketo-auth.md)
+         - [Marketo Engage Connector](connectors/adobe-applications/marketo/marketo.md)
+         - [Marketo Engage autentiseringsguide](connectors/adobe-applications/marketo/marketo-auth.md)
          - [B2B-namnutrymmen och scheman](connectors/adobe-applications/marketo/marketo-namespaces.md)
          - [Migreringsguide för ECID-mappning](connectors/adobe-applications/marketo/migration.md)
    - Advertising {#advertising}
@@ -44,7 +44,7 @@ ht-degree: 6%
       - [Pendo](connectors/analytics/pendo-webhook.md)
       - [Regnfokus](connectors/analytics/rainfocus.md)
    - Molnlagring {#cloud-storage}
-      - [Amazon Kinesis Connector](connectors/cloud-storage/kinesis.md)
+      - [Amazon Kinesis-kontakt](connectors/cloud-storage/kinesis.md)
       - [Amazon S3-anslutning](connectors/cloud-storage/s3.md)
       - [Apache HDFS-kontakt](connectors/cloud-storage/hdfs.md)
       - [Azure Data Lake Storage Gen2-anslutning](connectors/cloud-storage/adls-gen2.md)
@@ -62,7 +62,7 @@ ht-degree: 6%
       - [OneTrust-integrering](connectors/consent-and-preferences/onetrust.md)
    - CRM {#crm}
       - [Microsoft Dynamics-koppling](connectors/crm/ms-dynamics.md)
-      - [Salesforce-koppling](connectors/crm/salesforce.md)
+      - [Salesforce Connector](connectors/crm/salesforce.md)
       - [SugarCRM-koppling](connectors/crm/sugarcrm.md)
       - [Veeva CRM-koppling](connectors/crm/veeva.md)
       - [Zoho CRM-koppling](connectors/crm/zoho.md)
@@ -76,7 +76,7 @@ ht-degree: 6%
       - [Apache Hive på Azure HDInsights-kontakten](connectors/databases/hive.md)
       - [Apache Spark på Azure HDInsights-kontakten](connectors/databases/spark.md)
       - [Azure Data Explorer Connector](connectors/databases/data-explorer.md)
-      - [Azure synapse Analytics-kontakt](connectors/databases/synapse-analytics.md)
+      - [Azure Synapse Analytics Connector](connectors/databases/synapse-analytics.md)
       - [Azure Table Storage-koppling](connectors/databases/ats.md)
       - [Koppling till kuchbase](connectors/databases/couchbase.md)
       - [Google BigQuery-koppling](connectors/databases/bigquery.md)
@@ -86,12 +86,12 @@ ht-degree: 6%
       - [MariaDB-koppling](connectors/databases/mariadb.md)
       - [Microsoft SQL Server-anslutning](connectors/databases/sql-server.md)
       - [MySQL-koppling](connectors/databases/mysql.md)
-      - [Oraclena koppling](connectors/databases/oracle.md)
+      - [Oracle Connector](connectors/databases/oracle.md)
       - [Phoenix-kontakt](connectors/databases/phoenix.md)
       - [PostgreSQL-koppling](connectors/databases/postgres.md)
-      - [Snowflake-direktuppspelningskontakt](connectors/databases/snowflake-streaming.md)
-      - [Snowflake-kontakt](connectors/databases/snowflake.md)
-      - [Teradata Vantage-kontakt](connectors/databases/teradata-vantage.md)
+      - [Snowflake Streaming Connector](connectors/databases/snowflake-streaming.md)
+      - [Snowflake Connector](connectors/databases/snowflake.md)
+      - [Teradata Vantage-anslutning](connectors/databases/teradata-vantage.md)
    - Data- och identitetspartner {#data-partner}
       - [Acxiom-datainmatning](connectors/data-partners/acxiom-data-ingestion.md)
       - [Acxiom Prospecting Data Import](connectors/data-partners/acxiom-prospecting-data-import.md)
@@ -108,15 +108,15 @@ ht-degree: 6%
       - [Customer.io](connectors/marketing-automation/customerio-webhook.md)
       - [HubSpot-anslutning](connectors/marketing-automation/hubspot.md)
       - [Mailchimp-anslutning](connectors/marketing-automation/mailchimp.md)
-      - [Oraclena Eloqua-koppling](connectors/marketing-automation/oracle-eloqua.md)
+      - [Oracle Eloqua-kontakt](connectors/marketing-automation/oracle-eloqua.md)
       - [Oracle NetSuite](connectors/marketing-automation/oracle-netsuite.md)
-      - [Oraclena svarssystemskontakt](connectors/marketing-automation/oracle-responsys.md)
+      - [Oracle Responsys Connector](connectors/marketing-automation/oracle-responsys.md)
       - [PathFactory](connectors/marketing-automation/pathfactory.md)
       - [Salesforce Marketing Cloud](connectors/marketing-automation/salesforce-marketing-cloud.md)
    - Betalningar {#payments}
       - [PayPal-anslutning](connectors/payments/paypal.md)
       - [Kvadratisk koppling](connectors/payments/square.md)
-      - [Stripe-kontakt](connectors/payments/stripe.md)
+      - [Stripe Connector](connectors/payments/stripe.md)
    - Protokoll {#protocols}
       - [Allmän OData-koppling](connectors/protocols/odata.md)
       - [Allmän REST API-koppling](connectors/protocols/generic-rest.md)
@@ -162,8 +162,8 @@ ht-degree: 6%
          - [Amazon Redshift](tutorials/api/create/databases/redshift.md)
          - [Apache Hive på Azure HDInsights](tutorials/api/create/databases/hive.md)
          - [Apache Spark på Azure HDInsights](tutorials/api/create/databases/spark.md)
-         - [Azure-Data Explorer](tutorials/api/create/databases/data-explorer.md)
-         - [Azure synapse Analytics](tutorials/api/create/databases/synapse-analytics.md)
+         - [Azure Data Explorer](tutorials/api/create/databases/data-explorer.md)
+         - [Azure Synapse Analytics](tutorials/api/create/databases/synapse-analytics.md)
          - [Azure Table Storage](tutorials/api/create/databases/ats.md)
          - [Kuchbase](tutorials/api/create/databases/couchbase.md)
          - [Google BigQuery](tutorials/api/create/databases/bigquery.md)
@@ -190,9 +190,9 @@ ht-degree: 6%
          - [MailChimp-kampanj](tutorials/api/create/marketing-automation/mailchimp-campaign.md)
          - [MailChimp-medlemmar](tutorials/api/create/marketing-automation/mailchimp-members.md)
          - [Oracle Eloqua](tutorials/api/create/marketing-automation/oracle-eloqua.md)
-         - [Oraclets NetSuite-aktiviteter](tutorials/api/create/marketing-automation/oracle-netsuite-activities.md)
-         - [Oraclets NetSuite-entiteter](tutorials/api/create/marketing-automation/oracle-netsuite-entities.md)
-         - [Oraclets svar](tutorials/api/create/marketing-automation/oracle-responsys.md)
+         - [Oracle NetSuite-aktiviteter](tutorials/api/create/marketing-automation/oracle-netsuite-activities.md)
+         - [Oracle NetSuite-entiteter](tutorials/api/create/marketing-automation/oracle-netsuite-entities.md)
+         - [Oracle Responsys](tutorials/api/create/marketing-automation/oracle-responsys.md)
          - [PathFactory](tutorials/api/create/marketing-automation/pathfactory.md)
          - [Salesforce Marketing Cloud](tutorials/api/create/marketing-automation/salesforce-marketing-cloud.md)
       - Betalningar {#payments}
@@ -286,8 +286,8 @@ ht-degree: 6%
          - [Amazon Redshift](tutorials/ui/create/databases/redshift.md)
          - [Apache Hive på Azure HDInsights](tutorials/ui/create/databases/hive.md)
          - [Apache Spark på Azure HDInsights](tutorials/ui/create/databases/spark.md)
-         - [Azure-Data Explorer](tutorials/ui/create/databases/data-explorer.md)
-         - [Azure synapse Analytics](tutorials/ui/create/databases/synapse-analytics.md)
+         - [Azure Data Explorer](tutorials/ui/create/databases/data-explorer.md)
+         - [Azure Synapse Analytics](tutorials/ui/create/databases/synapse-analytics.md)
          - [Azure Table Storage](tutorials/ui/create/databases/ats.md)
          - [Kuchbase](tutorials/ui/create/databases/couchbase.md)
          - [Google Big Query](tutorials/ui/create/databases/bigquery.md)
@@ -306,6 +306,8 @@ ht-degree: 6%
       - Data- och identitetspartner {#data-partner}
          - [Acxiom-datainmatning](tutorials/ui/create/data-partners/acxiom-data-ingestion.md)
          - [Acxiom Prospecting Data Import](tutorials/ui/create/data-partners/acxiom-prospecting-data-import.md)
+         - [Bomborametod](tutorials/ui/create/data-partners/bombora.md)
+         - [Demandbase-metod](tutorials/ui/create/data-partners/demandbase.md)
          - [Merkury Enterprise Identity Resolution](tutorials/ui/create/data-partners/merkury.md)
       - eCommerce {#ecommerce}
          - [SAP COMMERCE](tutorials/ui/create/ecommerce/sap-commerce.md)
@@ -321,9 +323,9 @@ ht-degree: 6%
          - [Mailchimp-kampanjer](tutorials/ui/create/marketing-automation/mailchimp-campaigns.md)
          - [Mailchimp-medlemmar](tutorials/ui/create/marketing-automation/mailchimp-members.md)
          - [Oracle Eloqua](tutorials/ui/create/marketing-automation/oracle-eloqua.md)
-         - [Oraclets NetSuite-aktiviteter](tutorials/ui/create/marketing-automation/oracle-netsuite-activities.md)
-         - [Oraclets NetSuite-entiteter](tutorials/ui/create/marketing-automation/oracle-netsuite-entities.md)
-         - [Oraclets svar](tutorials/ui/create/marketing-automation/oracle-responsys.md)
+         - [Oracle NetSuite-aktiviteter](tutorials/ui/create/marketing-automation/oracle-netsuite-activities.md)
+         - [Oracle NetSuite-entiteter](tutorials/ui/create/marketing-automation/oracle-netsuite-entities.md)
+         - [Oracle Responsys](tutorials/ui/create/marketing-automation/oracle-responsys.md)
          - [PathFactory](tutorials/ui/create/marketing-automation/pathfactory.md)
          - [Salesforce Marketing Cloud](tutorials/ui/create/marketing-automation/salesforce-marketing-cloud.md)
       - Betalningar {#payments}
@@ -359,7 +361,7 @@ ht-degree: 6%
    - [Ta bort dataflöden](tutorials/ui/delete.md)
    - [Prenumerera på källvarningar](tutorials/ui/alerts.md)
    - [Spara ett dataflöde som ett utkast](tutorials/ui/draft.md)
-- Självbetjänade källor (batch-SDK) {#sdk}
+- Självbetjänade källor (Batch SDK) {#sdk}
    - [Översikt](sources-sdk/overview.md)
    - Konfigurera anslutningsspecifikationen {#config}
       - [Konfigurationsalternativ](sources-sdk/config/config.md)
@@ -367,7 +369,7 @@ ht-degree: 6%
       - [Konfigurera källspecifikation](sources-sdk/config/sourcespec.md)
       - [Konfigurera specifikation för utforskande](sources-sdk/config/explorespec.md)
    - Självbetjänade källor (Batch SDK) API-guide {#self-serve-api}
-      - [Självbetjänade källor (Batch SDK) - API-översikt](sources-sdk/api/api-overview.md)
+      - [Självbetjänade källor (Batch SDK) - API - översikt](sources-sdk/api/api-overview.md)
       - [Komma igång](sources-sdk/api/getting-started.md)
       - [Skapa en anslutningsspecifikation](sources-sdk/api/create.md)
       - [Uppdatera en anslutningsspecifikation](sources-sdk/api/update-connection-specs.md)
