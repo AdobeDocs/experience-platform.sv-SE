@@ -1,11 +1,11 @@
 ---
-keywords: Experience Platform;hem;populära ämnen;schema;schema;XDM;individuell profil;fält;scheman;scheman;identityMap;identity map;identity map;Schema design;map;union schema;union schema
+keywords: Experience Platform;home;populära topics;schema;Schema;XDM;individual profile;fields;schemas;Schemas;identityMap;identity map;Identity map;Schema design;map;union schema;union schema
 title: Fältgrupp för IdentityMap-schema
 description: Lär dig mer om klassen XDM Individual Profile.
 exl-id: c9928e85-ef1e-4739-ba1d-80505a9e60c3
-source-git-commit: de8e944cfec3b52d25bb02bcfebe57d6a2a35e39
+source-git-commit: cfa3e5c6811f148376a2d2012f5687be6fad2299
 workflow-type: tm+mt
-source-wordcount: '136'
+source-wordcount: '144'
 ht-degree: 0%
 
 ---
@@ -16,7 +16,7 @@ ht-degree: 0%
 >
 >Namnen på flera schemafältgrupper har ändrats. Mer information finns i dokumentet om [uppdatering av fältgruppnamn](../name-updates.md).
 
-[!UICONTROL IdentityMap] är en standardschemafältgrupp för [[!DNL XDM Individual Profile] klassen](../../classes/individual-profile.md). Fältgruppen innehåller ett enda mappningsfält som innehåller en uppsättning användaridentiteter som angetts av namnutrymmet.
+[!UICONTROL IdentityMap] är en standardschemafältgrupp för [[!UICONTROL XDM ExperienceEvent] class ](../../classes/experienceevent.md) och en kompatibel fältgrupp för [[!UICONTROL XDM Individual Profile] class](../../classes/individual-profile.md). Fältgruppen innehåller ett enda mappningsfält som innehåller en uppsättning användaridentiteter som angetts av namnutrymmet.
 
 ![Ett diagram över [!UICONTROL IdentityMap] schemafältgruppen ](../../images/field-groups/identitymap.png)
 
