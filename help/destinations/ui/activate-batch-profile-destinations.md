@@ -3,9 +3,9 @@ title: Aktivera målgrupper för att batchprofilera exportmål
 type: Tutorial
 description: Lär dig hur du aktiverar de målgrupper du har i Adobe Experience Platform genom att skicka dem till batchprofilbaserade destinationer.
 exl-id: 82ca9971-2685-453a-9e45-2001f0337cda
-source-git-commit: 2d640b282feb783694276c69366b1fccadddfd78
+source-git-commit: 8a1ac01c503bd1e5b9873714514d438b22f45cfb
 workflow-type: tm+mt
-source-wordcount: '4204'
+source-wordcount: '4235'
 ht-degree: 1%
 
 ---
@@ -64,18 +64,18 @@ Om du vill välja vilka målgrupper du vill aktivera för målet använder du kr
 Du kan välja mellan flera typer av målgrupper, beroende på deras ursprung:
 
 * **[!UICONTROL Segmentation Service]**: Publiker som genererats inom Experience Platform av segmenteringstjänsten. Mer information finns i [segmenteringsdokumentationen](../../segmentation/ui/overview.md).
-* **[!UICONTROL Custom upload]**: Publiker som genererats utanför Experience Platform och överförts till Platform som CSV-filer. Mer information om externa målgrupper finns i dokumentationen om att [importera en målgrupp](../../segmentation/ui/audience-portal.md#import-audience).
+* **[!UICONTROL Custom upload]**: Publiker som genererats utanför Experience Platform och överförts till Platform som CSV-filer. Mer information om externa målgrupper finns i dokumentationen om att [importera en målgrupp](../../segmentation/ui/audience-portal.md#import-audience). Om du väljer målgrupper som kommer från **[!UICONTROL Custom uploads]** aktiveras steget [Välj anrikningsattribut](#select-enrichment-attributes) automatiskt.
 * Andra typer av målgrupper som kommer från andra Adobe-lösningar, till exempel [!DNL Audience Manager].
+
+>[!IMPORTANT]
+>
+>När du aktiverar anpassade överförda målgrupper till batchfilbaserade mål finns det en gräns på 10 sådana målgrupper som du kan aktivera i ett dataflöde.
 
 ![Kryssrutor visas när du väljer en eller flera målgrupper att aktivera.](../assets/ui/activate-batch-profile-destinations/select-audiences.png)
 
 >[!TIP]
 >
->Om du väljer målgrupper som kommer från **[!UICONTROL Custom uploads]** aktiveras steget [Välj anrikningsattribut](#select-enrichment-attributes) automatiskt.
-
->[!TIP]
->
->Du kan ta bort målgrupper från befintliga aktiveringsflöden från sidan **[!UICONTROL Activation data]**. Mer information finns i den [dedikerade dokumentationen](../ui/destination-details-page.md#bulk-remove).
+>Om du vill ta bort målgrupper från befintliga aktiveringsflöden använder du sidan **[!UICONTROL Activation data]**. Läs avsnittet om hur du [tar bort flera målgrupper från aktiveringsflöden](../ui/destination-details-page.md#bulk-remove) för mer information.
 
 ## Schemalägg målgruppsexport {#scheduling}
 

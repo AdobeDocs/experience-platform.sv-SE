@@ -6,9 +6,9 @@ product: experience platform
 type: Documentation
 description: Läs mer om standardanvändning och hastighetsbegränsningar för dataaktivering.
 exl-id: a755f224-3329-42d6-b8a9-fadcf2b3ca7b
-source-git-commit: 2d640b282feb783694276c69366b1fccadddfd78
+source-git-commit: 8a1ac01c503bd1e5b9873714514d438b22f45cfb
 workflow-type: tm+mt
-source-wordcount: '1661'
+source-wordcount: '1713'
 ht-degree: 1%
 
 ---
@@ -76,6 +76,7 @@ Skyddskisserna nedan gäller aktivering via [gruppbaserade (filbaserade) mål](/
 | Aktiveringsfrekvens | En daglig hel export eller mer frekvent stegvis export var 3, 6, 8 eller 12: e timme. | Systemstyrt skyddsräcke | Läs avsnitten om [export av fullständiga filer](/help/destinations/ui/activate-batch-profile-destinations.md#export-full-files) och [export av stegvisa filer](/help/destinations/ui/activate-batch-profile-destinations.md#export-incremental-files) om du vill ha mer information om frekvensökningarna för batchexport. |
 | Maximalt antal målgrupper som kan exporteras vid en given timme | 100 | Prestandaskydd | Rekommendationen är att lägga till högst 100 målgrupper i batchmåldataflöden. |
 | Maximalt antal rader (poster) per fil som ska aktiveras | 5 miljoner | Systemstyrt skyddsräcke | Adobe Experience Platform delar automatiskt upp de exporterade filerna i 5 miljoner poster (rader) per fil. Varje rad representerar en profil. Delade filnamn läggs till med ett nummer som anger att filen är en del av en större export, till exempel: `filename.csv`, `filename_2.csv`, `filename_3.csv`. Mer information finns i [schemaläggningsavsnittet](/help/destinations/ui/activate-batch-profile-destinations.md#scheduling) i självstudiekursen om aktivering av batchmål. |
+| Maximalt antal anpassade överförda målgrupper som ska aktiveras i ett dataflöde | 10 | Systemstyrt skyddsräcke | När du aktiverar [anpassade överförda målgrupper](/help/segmentation/ui/audience-portal.md#import-audience) till batchfilbaserade mål finns det en gräns på 10 sådana målgrupper som du kan aktivera i ett dataflöde. Läs mer om arbetsflödet för att [aktivera anpassade överförda målgrupper till batchfilbaserade mål](/help/destinations/ui/activate-batch-profile-destinations.md#select-audiences). |
 
 {style="table-layout:auto"}
 
