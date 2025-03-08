@@ -1,10 +1,10 @@
 ---
 title: Inmatning on demand för källdataflöden i användargränssnittet
-description: Lär dig hur du skapar dataflöden on demand för dina källanslutningar med användargränssnittet i Experience Platform.
+description: Lär dig hur du skapar dataflöden on demand för dina källanslutningar med Experience Platform användargränssnitt.
 exl-id: e5a70044-2484-416a-8098-48e6d99c2d98
-source-git-commit: 38da1c1d5e563ea3f66cc25a69ad726f709784d0
+source-git-commit: 7a287c8de3c3fd0670cbdf29cd58558b30982122
 workflow-type: tm+mt
-source-wordcount: '494'
+source-wordcount: '521'
 ht-degree: 0%
 
 ---
@@ -31,7 +31,7 @@ Flödeskörningar är en instans av körning av dataflöde. Om ett dataflöde ti
 
 Dokumentet kräver en fungerande förståelse av följande komponenter i Experience Platform:
 
-* [Källor](../../home.md): Experience Platform tillåter data att hämtas från olika källor samtidigt som du kan strukturera, etikettera och förbättra inkommande data med hjälp av plattformstjänster.
+* [Källor](../../home.md): Med Experience Platform kan data hämtas från olika källor samtidigt som du kan strukturera, etikettera och förbättra inkommande data med hjälp av plattformstjänster.
 * [Dataflöden](../../../dataflows/home.md): Ett dataflöde är en representation av datajobb som flyttar data mellan plattformar. Dataflöden är konfigurerade för olika tjänster, vilket hjälper dig att flytta data från källkopplingar till måldatauppsättningar, till identitetstjänsten och kundprofilen i realtid samt till destinationer.
 * [Sandlådor](../../../sandboxes/home.md): Experience Platform tillhandahåller virtuella sandlådor som partitionerar en enda plattformsinstans till separata virtuella miljöer för att hjälpa till att utveckla och utveckla program för digitala upplevelser.
 
@@ -57,7 +57,7 @@ Välj **[!UICONTROL Schedule]** och tillåt ett par stunder så att dataflödet 
 
 ![Schemaläggningskonfigurationsfönstret för on demand-inmatning.](../../images/tutorials/on-demand/configure-schedule.png)
 
-Välj dataflödets namn för att visa dataflödesaktiviteten. Här visas en lista över dataflödeskörningar som har bearbetats. Välj en dataflödeskörning och välj sedan **[!UICONTROL Retry]** från den högra listen för att försöka lägga på igen för en vald dataflödeskörningsuppskrivning.
+Välj dataflödets namn för att visa dataflödesaktiviteten. Här visas en lista över dataflödeskörningar som har bearbetats. Du kan köra enskilda versioner av ditt dataflöde på nytt oavsett om de har misslyckats eller slutförts. För körningsiterationer som har misslyckats kan du använda **[!UICONTROL Retry]** för att starta körningen igen efter att ha diagnostiserat och åtgärdat eventuella fel som kan ha påträffats under skapandeprocessen.
 
 ![En lista över bearbetade flödeskörningar för ett valt dataflöde.](../../images/tutorials/on-demand/processed.png)
 
