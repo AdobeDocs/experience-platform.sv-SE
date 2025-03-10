@@ -3,9 +3,9 @@ keywords: Experience Platform;hem;populära ämnen;källor;kopplingar;källkoppl
 title: Skapa en Adobe Campaign Managed Cloud Services-källanslutning med hjälp av plattformsgränssnittet
 description: Lär dig hur du ansluter Adobe Experience Platform till Adobe Campaign Managed Cloud Services med hjälp av plattformsgränssnittet.
 exl-id: 067ed558-b239-4845-8c85-3bf9b1d4caed
-source-git-commit: 77d755e4ebf97521efa1dfdfe9ee40312800ad28
+source-git-commit: 67f42c155bf34f2b8adc3b08536bb3310bb77390
 workflow-type: tm+mt
-source-wordcount: '1141'
+source-wordcount: '1189'
 ht-degree: 0%
 
 ---
@@ -136,6 +136,12 @@ Sidan för datauppsättningsaktivitet visas. Härifrån kan du se information om
 På den här sidan finns också ett gränssnitt där du kan uppdatera metadatabeskrivningen för dataflödet, aktivera partiell import- och feldiagnostik samt lägga till nya data i datauppsättningen.
 
 ![Ett gränssnitt med diagram som representerar inmatningsfrekvensen för en markerad datauppsättning.](../../../../images/tutorials/create/campaign/dataset-activity.png)
+
+
+>[!IMPORTANT]
+>
+>Du kan inte fylla i gamla händelseloggar baklänges med Adobe Campaign Managed Cloud Services-källan. Om bakåtfyllnad krävs använder du ett anpassat arbetsflöde eller en anpassad implementering för att exportera data till Amazon S3 eller Azure Blob, eller från Amazon S3 eller Azure Blob till en Adobe Experience Platform-datamängd.
+
 
 ## Nästa steg
 
