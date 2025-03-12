@@ -2,9 +2,9 @@
 title: Hantera lagring av Experience Event-datauppsättningar i Data Lake med TTL
 description: Lär dig hur du utvärderar, ställer in och hanterar lagring av Experience Event-datauppsättningar i datasjön med hjälp av TTL-konfigurationer (Time-To-Live) med Adobe Experience Platform API:er. Den här guiden förklarar hur TTL-radnivåförfallodatum stöder principer för datalagring, optimerar lagringseffektiviteten och säkerställer effektiv livscykelhantering. Här finns också användningsexempel och metodtips som hjälper dig att effektivt tillämpa TTL.
 exl-id: d688d4d0-aa8b-4e93-a74c-f1a1089d2df0
-source-git-commit: affaeb0869423292a44eb7ada8343482bb163ca6
+source-git-commit: 3b5fcc3eec6f2c2e749c86a7baf9995fb88b27d6
 workflow-type: tm+mt
-source-wordcount: '2195'
+source-wordcount: '2335'
 ht-degree: 0%
 
 ---
@@ -416,6 +416,20 @@ Historiska användningsrapporter för datauppsättningar är inte tillgängliga 
 
 +++Svar
 Nej, när en lagringsprincip används tas alla data som är äldre än kvarhållningsperioden bort permanent och kan inte återställas.
++++
+
+### Vilken är den minsta TTL-gräns jag kan konfigurera för en Data Lake Experience Event-datauppsättning?
+
++++Svar
+Den minsta TTL-värdet för en Data Lake Experience Event-datamängd är 30 dagar. Datasjön fungerar som ett säkerhetskopierings- och återställningssystem vid första intag och bearbetning. Därför måste data finnas kvar i datasjön i minst 30 dagar efter intag innan de kan upphöra att gälla.
++++
+
+### Hur gör jag om jag behöver behålla vissa datavinefält längre än vad min TTL-policy tillåter?
+
++++Svar
+Använd Data Distiller för att bevara specifika fält utanför datamängdens TTL-värde samtidigt som du håller dig inom användningsgränserna. Skapa ett jobb som regelbundet bara skriver de fält som behövs till en härledd datauppsättning. Det här arbetsflödet säkerställer överensstämmelse med en kortare TTL-gräns samtidigt som viktiga data bevaras för utökad användning.
+
+Mer information finns i [Skapa härledda datauppsättningar med SQL-guiden](../../query-service/data-distiller/derived-datasets/create-derived-datasets-with-sql.md).
 +++
 
 ## Nästa steg {#next-steps}
