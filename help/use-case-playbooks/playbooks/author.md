@@ -4,14 +4,15 @@ title: Lär dig hur du skapar och delar dina egna Playbooks med hjälp av AI Ass
 description: Skapa och dela egna fallspelningsböcker.
 role: User
 exl-id: 0bc49710-ad9e-4509-b7e6-55f9b9037aa9
-source-git-commit: f76db5c8d397c6c7b006c70147c054dc0a67be04
+source-git-commit: aa1e155fb8d71497958d0de1f6c10cf47e58dbf0
 workflow-type: tm+mt
-source-wordcount: '1091'
+source-wordcount: '1092'
 ht-degree: 0%
 
 ---
 
-# Skriv och dela dina egna spelböcker
+
+# Skapa och dela dina egna spelböcker (Beta)
 
 Med [!DNL Playbook Authoring Framework], som drivs av AI Assistant i Adobe Experience Platform, kan du skapa, hantera och dela spelböcker effektivt i Adobe Experience Platform.
 
