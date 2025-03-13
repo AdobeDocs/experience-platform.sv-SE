@@ -2,7 +2,7 @@
 title: Översikt över målportalen
 description: Lär dig hur du använder Audience Portal för att visa, hantera och skapa målgrupper i Adobe Experience Platform.
 exl-id: 505ac22e-05f3-423a-a9a0-7f3470af8945
-source-git-commit: a862e532382472eadf29aee2568c550b1a71211a
+source-git-commit: 5220fa9be3f567d72f864d35596f6b219f15fb9d
 workflow-type: tm+mt
 source-wordcount: '4396'
 ht-degree: 0%
@@ -114,7 +114,7 @@ Om nedbrytning är markerat visas ett stolpdiagram med procentandelen profiler s
 | Status | Beskrivning |
 | ------ | ----------- |
 | [!UICONTROL Realized] | Antalet profiler som **kvalificerat** för målgruppen under de senaste 24 timmarna sedan det senaste batchsegmentjobbet kördes. |
-| [!UICONTROL Existing] | Antalet profiler som **förblev** i publiken under de senaste 24 timmarna sedan det senaste batchsegmentjobbet kördes. Det här fältet är **beräknat** och visas inte i objektet `segmentMembership`. |
+| [!UICONTROL Existing] | Antalet profiler som **förblev** i publiken under de senaste 24 timmarna sedan det senaste batchsegmentjobbet kördes. Det här fältet är **beräknat** och visas inte i [`segmentMembership`-objektet ](../../xdm/field-groups/profile/segmentation.md). |
 | [!UICONTROL Exiting] | Antalet profiler som **slutade** publiken under de senaste 24 timmarna sedan det senaste batchsegmentjobbet kördes. |
 
 När du har markerat de fält som du vill visa kan du även ändra storlek på de visade kolumnernas bredd. Du kan antingen göra detta genom att dra området mellan kolumnerna eller genom att markera ![pilikonen](/help/images/icons/chevron-down.png) för kolumnen som du vill ändra storlek på, följt av **[!UICONTROL Resize column]**.
