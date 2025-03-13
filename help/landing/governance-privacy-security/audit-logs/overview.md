@@ -4,9 +4,9 @@ description: Lär dig hur granskningsloggar gör det möjligt för dig att se vi
 role: Admin,Developer
 feature: Audits
 exl-id: 00baf615-5b71-4e0a-b82a-ca0ce8566e7f
-source-git-commit: f6e413d2d8b644775b6714739113174f5d9cb0d9
+source-git-commit: acbd46b5810a491d838f1c4c3366d19c91c15d51
 workflow-type: tm+mt
-source-wordcount: '1358'
+source-wordcount: '1436'
 ht-degree: 4%
 
 ---
@@ -83,11 +83,13 @@ För att kunna visa och exportera granskningsloggar måste du ha åtkomstkontrol
 >title="Instruktioner"
 >abstract="<ul><li>Välj <b>Granskningar</b> i den vänstra navigeringen. På arbetsytan Granskningar visas en lista med inspelade loggar. Som standard sorteras de från senaste till senaste.</li>   <li> Obs! Granskningsloggarna sparas i 365 dagar, varefter de tas bort från systemet. Därför kan du bara gå tillbaka under en period på högst 365 dagar. Om du behöver titta tillbaka på data som är äldre än 365 dagar bör du exportera loggar med en regelbunden gräns för att uppfylla dina interna policykrav. </li><li>Välj en händelse i listan om du vill visa information om händelsen i den högra listen. </li><li>Markera trattsymbolen om du vill visa en lista med filterkontroller för att begränsa resultatet. Endast de 1 000 sista posterna visas, oavsett vilket filter du har valt. </li><li>Om du vill exportera den aktuella listan med granskningsloggar väljer du **Hämta logg**.</li><li>Mer hjälp om den här funktionen finns i <a href="https://experienceleague.adobe.com/docs/experience-platform/landing/governance-privacy-security/audit-logs/overview.html">Översikt över granskningsloggar</a> på Experience League.</li></ul>"
 
-Du kan visa granskningsloggar för olika Experience Platform-funktioner på arbetsytan för **[!UICONTROL Audits]** i plattformsgränssnittet. På arbetsytan visas en lista med inspelade loggar. Som standard sorteras de från senaste till senaste.
+Du kan visa granskningsloggar för olika Experience Platform-funktioner på arbetsytan **[!UICONTROL Audits]** i plattformsgränssnittet. På arbetsytan visas en lista med inspelade loggar. Som standard sorteras de från senaste till senaste.
 
 ![Kontrollpanelen Granskningar markerar Granskningar på den vänstra menyn.](../../images/audit-logs/audits.png)
 
-Granskningsloggarna sparas i 365 dagar efter vilka de kommer att tas bort från systemet. Därför kan du bara gå tillbaka under en period på högst 365 dagar. Om du behöver data som är längre än 365 dagar bör du exportera loggar med en regelbunden mellanrum för att uppfylla dina interna policykrav.
+Granskningsloggarna sparas i 365 dagar efter vilka de kommer att tas bort från systemet. Om du behöver data som är längre än 365 dagar bör du exportera loggar med en regelbunden mellanrum för att uppfylla dina interna policykrav.
+
+Metoden för att begära granskningsloggar ändrar den tillåtna tidsperioden och antalet poster som du har åtkomst till. [Genom att exportera loggar](#export-audit-logs) kan du gå tillbaka 365 dagar (med 90 dagars intervall) till maximalt 1 000 poster, där [aktivitetsloggens användargränssnitt](#filter-audit-logs) i Experience Platform visar de senaste 90 dagarna till maximalt 1 000 poster.
 
 Välj en händelse i listan om du vill visa information om händelsen i den högra listen.
 
@@ -95,12 +97,11 @@ Välj en händelse i listan om du vill visa information om händelsen i den hög
 
 ### Filtrera granskningsloggar
 
+Markera trattikonen (![Filterikon](/help/images/icons/filter.png)) om du vill visa en lista med filterkontroller för att begränsa resultatet.
+
 >[!NOTE]
 >
->Eftersom det här är en ny funktion går de data som visas endast tillbaka till mars 2022. Beroende på vilken resurs som valts kan tidigare data vara tillgängliga från januari 2022.
-
-
-Markera trattikonen (![Filterikon](/help/images/icons/filter.png)) om du vill visa en lista med filterkontroller för att begränsa resultatet. Endast de 1000 sista posterna visas oavsett vilket filter du har valt.
+>Experience Platform-gränssnittet visar bara de senaste 90 dagarna upp till högst 1 000 poster, oavsett vilka filter som används. Om du behöver fler loggar än så (högst 365 dagar) måste du [exportera dina granskningsloggar](#export-audit-logs).
 
 ![Kontrollpanelen Granskningar med den filtrerade aktivitetsloggen markerad.](../../images/audit-logs/filters.png)
 
@@ -130,9 +131,13 @@ Returnerade granskningsloggdata innehåller följande information om alla frågo
 
 ![Kontrollpanelen Granskningar med den filtrerade aktivitetsloggen markerad.](../../images/audit-logs/filtered.png)
 
-### Exportera granskningsloggar
+### Exportera granskningsloggar {#export-audit-logs}
 
 Om du vill exportera den aktuella listan med granskningsloggar väljer du **[!UICONTROL Download log]**.
+
+>[!NOTE]
+>
+>Loggar kan begäras i 90 dagars intervall upp till 365 dagar tidigare. Det maximala antalet loggar som kan returneras under en enskild export är dock 10 000.
 
 ![Kontrollpanelen Granskningar med [!UICONTROL Download log] markerat.](../../images/audit-logs/download.png)
 
