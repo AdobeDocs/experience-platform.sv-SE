@@ -1,19 +1,19 @@
 ---
 solution: Experience Platform
-title: AI Assistant för användningsfall - Skapa och dela dina egna Playbooks.
+title: Lär dig hur du skapar och delar dina egna Playbooks med hjälp av AI Assistant.
 description: Skapa och dela egna fallspelningsböcker.
 role: User
-source-git-commit: f813db7599409a8fc048480f7803ed86c9f397fe
+exl-id: 0bc49710-ad9e-4509-b7e6-55f9b9037aa9
+source-git-commit: f76db5c8d397c6c7b006c70147c054dc0a67be04
 workflow-type: tm+mt
-source-wordcount: '1100'
+source-wordcount: '1091'
 ht-degree: 0%
 
 ---
 
-
 # Skriv och dela dina egna spelböcker
 
-Med **Playbook Authoring Framework**, som drivs av Adobe AI Assistant, kan du skapa, hantera och dela spelböcker effektivt i Adobe Experience Platform.
+Med [!DNL Playbook Authoring Framework], som drivs av AI Assistant i Adobe Experience Platform, kan du skapa, hantera och dela spelböcker effektivt i Adobe Experience Platform.
 
 Ramverket följer en trestegsprocess:
 
@@ -23,35 +23,33 @@ Ramverket följer en trestegsprocess:
 
 3. **Playbook-distribution**: Dela spelböcker mellan olika organisationer. ACME:s Martech Center of Excellence i Tyskland kan till exempel skapa en &quot;gyllene&quot; spelbok och distribuera den till regionala organisationer i Thailand, Australien osv. för att standardisera användningsexemplen för marknadsföring.
 
-## Skapa en spelbok med Adobe AI Assistant
+## Skapa en spelningsbok
+
+Du kan skapa en spelbok på två sätt: antingen med hjälp av AI-assistenten eller manuellt. Läs följande avsnitt om du vill veta mer.
 
 ### Spelboksöversikt
 
-Du kan skapa en spelbok på två sätt: antingen med Adobe AI Assistant eller manuellt.
+Så här skapar du en spelbok med AI-assistenten:
 
-Så här skapar du en spelbok med Adobe AI Assistant:
-
-1. Välj **Playbooks** i den vänstra navigeringsrutan.
+Välj **[!UICONTROL Playbooks]** i den vänstra navigeringspanelen.
 
 ![&quot;Playbooks&quot; markeras i den vänstra navigeringsrutan i användargränssnittet.](/help/use-case-playbooks/assets/playbooks/authoring/playbooks.png)
 
-1. Välj **Ny spelningsbok** och välj sedan **Generera spelbok med AI-assistenten**.
+Välj **[!UICONTROL New Playbook]** och välj sedan **Generera spelbok med AI Assistant**.
 
-![Välj knappen Ny spelbok.](/help/use-case-playbooks/assets/playbooks/authoring/new-playbook.png)
+![Spelningsbokens gränssnitt med Generera spelbok med AI Assistant har valts.](/help/use-case-playbooks/assets/playbooks/authoring/generate-playbook.png)
 
-![Välj knappen Generera spelbok med AI-assistenten markerad.](/help/use-case-playbooks/assets/playbooks/authoring/generate-playbook.png)
-
-1. Beskriv användningsfallet i promptfältet.
+Beskriv användningsfallet i promptfältet.
 
 **Exempel**:&quot;Engagera ACME-kunder som bläddrade skor men inte slutförde köpet.&quot;
 
-![Välj knappen Generera spelbok med AI-assistenten.](/help/use-case-playbooks/assets/playbooks/authoring/prompt.png)
+![Spelningsbokens gränssnitt med webbformulärsområdet markerat.](/help/use-case-playbooks/assets/playbooks/authoring/prompt.png)
 
-1. Välj **Generera** om du vill skapa spelbokens metadata.
+Välj **[!UICONTROL Generate]** om du vill skapa spelbokens metadata.
 
 ![Frågeområdet med spelboksknappen &quot;Generera&quot; markerad.](/help/use-case-playbooks/assets/playbooks/authoring/generate.png)
 
-1. Välj **[!UICONTROL Edit]** om du vill ändra den genererade titeln, beskrivningen och metadata efter behov.
+Välj **[!UICONTROL Edit]** om du vill ändra den genererade titeln, beskrivningen och metadata efter behov.
 
 ![Den genererade spelboken med knappen Redigera markerad.](/help/use-case-playbooks/assets/playbooks/authoring/edit.png)
 
@@ -61,17 +59,15 @@ Fyll i avsnittet **[!UICONTROL Playbook detail]** för att se till att datatekni
 * **Målgrupp**
 * **Marknadsföringskanal**
 
-![Avsnittet med information om spelningsbok med knappen Redigera markerat.](/help/use-case-playbooks/assets/playbooks/authoring/edit-details.png)
+![Avsnittet med information om spelningsboken med knappen Redigera markerat.](/help/use-case-playbooks/assets/playbooks/authoring/edit-details.png)
 
-När metadata har genererats väljer du knappen **Redigera färdplan** för att justera stegen i färdplanen efter behov.
+När metadata har genererats väljer du **[!UICONTROL Edit journey map]** om du vill justera stegen i färdplanen efter behov.
 
 ![Redigera knappen för resekarta.](/help/use-case-playbooks/assets/playbooks/authoring/edit-journey-map-button.png)
 
 ![Redigera färdplanen när du har fångat in metadata för spelningsboken.](/help/use-case-playbooks/assets/playbooks/authoring/edit-journey-map.png)
 
-Fortsätt sedan att koppla spelboken till tekniska resurser.
-
-Om du vill skapa en spelbok manuellt väljer du **Skapa spelbok manuellt**.
+Fortsätt sedan att associera spelboken med tekniska resurser. Om du vill skapa en spelbok manuellt väljer du **[!UICONTROL Create playbook manually]**.
 
 ![Skapa spelbok manuellt](/help/use-case-playbooks/assets/playbooks/authoring/create-manually.png)
 
@@ -79,13 +75,13 @@ En tom spelningsboksmall visas. Fyll i detaljer som **Titel** och **Beskrivning*
 
 ## Associera spelbok med tekniska resurser
 
-Oavsett om du skapar en spelbok manuellt eller med AI-assistenten måste du koppla den till de tekniska resurser som krävs. Gå till fliken **[!UICONTROL Technical Assets]** och välj önskad produkt. Välj **[!UICONTROL Journey Optimizer]** för det här exemplet.
+Oavsett om du skapar en spelbok manuellt eller med AI-assistenten måste du koppla den till de tekniska resurser som krävs. Gå till fliken **[!UICONTROL Technical Assets]** och välj önskad produkt. I det här exemplet väljer du **[!UICONTROL Journey Optimizer]**.
 
 >[!NOTE]
 >
-> Stöd för Real-Time Customer Data Platform kommer att läggas till i en kommande version.
+> Stöd för Real-Time CDP kommer att läggas till i en kommande version.
 
-Fliken ![&quot;Tekniska resurser&quot; och knappen&quot;Lägg till nödvändig produkt&quot; är markerad.](/help/use-case-playbooks/assets/playbooks/authoring/technical-assets-add-required-product.png)
+![Fliken &quot;Tekniska resurser&quot; och knappen &quot;Lägg till nödvändig produkt&quot; är markerade.](/help/use-case-playbooks/assets/playbooks/authoring/technical-assets-add-required-product.png)
 
 Välj **[!UICONTROL Select an Asset]** om du vill associera den här spelboken med en resa enligt bilden nedan. Välj sedan **Publicera spelningsbok** för att slutföra spelningsboken.
 
@@ -162,4 +158,4 @@ Om en spelbok flaggas för olämpligt eller stötande innehåll rapporteras den 
 
 ## Nästa steg
 
-Nu när du förstår hur du skapar och publicerar spelböcker med Adobe AI Assistant kan du lära dig hur du kommer igång med de tillgängliga spelböckerna och välja rätt i [Spellistan](/help/use-case-playbooks/playbooks/choose.md).
+Nu när du förstår hur du skapar och publicerar spelböcker med AI Assistant kan du lära dig hur du kommer igång med de tillgängliga spelböckerna och välja rätt i [Spellistan](/help/use-case-playbooks/playbooks/choose.md).
