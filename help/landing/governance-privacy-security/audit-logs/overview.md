@@ -4,7 +4,7 @@ description: Lär dig hur granskningsloggar gör det möjligt för dig att se vi
 role: Admin,Developer
 feature: Audits
 exl-id: 00baf615-5b71-4e0a-b82a-ca0ce8566e7f
-source-git-commit: acbd46b5810a491d838f1c4c3366d19c91c15d51
+source-git-commit: 9bc80c2ee01e7a739db55cc7fc77ea19e609b265
 workflow-type: tm+mt
 source-wordcount: '1436'
 ht-degree: 4%
@@ -89,7 +89,7 @@ Du kan visa granskningsloggar för olika Experience Platform-funktioner på arbe
 
 Granskningsloggarna sparas i 365 dagar efter vilka de kommer att tas bort från systemet. Om du behöver data som är längre än 365 dagar bör du exportera loggar med en regelbunden mellanrum för att uppfylla dina interna policykrav.
 
-Metoden för att begära granskningsloggar ändrar den tillåtna tidsperioden och antalet poster som du har åtkomst till. [Genom att exportera loggar](#export-audit-logs) kan du gå tillbaka 365 dagar (med 90 dagars intervall) till maximalt 1 000 poster, där [aktivitetsloggens användargränssnitt](#filter-audit-logs) i Experience Platform visar de senaste 90 dagarna till maximalt 1 000 poster.
+Metoden för att begära granskningsloggar ändrar den tillåtna tidsperioden och antalet poster som du har åtkomst till. [Med export av loggar](#export-audit-logs) kan du gå tillbaka 365 dagar (med 90 dagars intervall) till maximalt 10 000 poster, där [aktivitetsloggens användargränssnitt](#filter-audit-logs) i Experience Platform visar de senaste 90 dagarna till maximalt 1 000 poster.
 
 Välj en händelse i listan om du vill visa information om händelsen i den högra listen.
 
