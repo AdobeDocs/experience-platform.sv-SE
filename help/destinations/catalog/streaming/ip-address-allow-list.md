@@ -4,9 +4,9 @@ title: IP-adress tillåtelselista för direktuppspelningsmål
 type: Documentation
 description: Den här sidan innehåller IP-intervall som du kan lägga till i tillåtelselista för att på ett säkert sätt exportera data från Experience Platform till HTTP REST API-slutpunkten, Amazon Kinesis eller Azure Event Hubs-instansen.
 exl-id: f41303bd-c886-4c67-9e39-21efc3f5b768
-source-git-commit: ccb0f80334241afd3f8d8b6ce2833cfd39b223ac
+source-git-commit: 118b0b5e6a1936b644da4153fe7bfeb872ae137e
 workflow-type: tm+mt
-source-wordcount: '275'
+source-wordcount: '307'
 ht-degree: 0%
 
 ---
@@ -26,13 +26,13 @@ De IP-intervall som beskrivs här gäller följande destinationer:
 * [[!DNL Amazon Kinesis]](/help/destinations/catalog/cloud-storage/amazon-kinesis.md)
 * [[!DNL Azure Event Hubs]](/help/destinations/catalog/cloud-storage/azure-event-hubs.md)
 
-Utgående trafik från Experience Platform till dessa destinationer går alltid igenom de IP-adresser som anges på denna sida.
+Utgående trafik från Experience Platform till dessa destinationer går alltid igenom de IP-adresser som anges på den här sidan.
 
 Den här sidan innehåller IP-intervall som du kan lägga till i tillåtelselista för att på ett säkert sätt exportera data från Experience Platform till HTTP-slutpunkten, [!DNL Amazon Kinesis] eller [!DNL Azure Event Hubs]-instansen. Den här funktionen är särskilt användbar om HTTP-slutpunkten finns bakom en brandvägg för företag eller om företagets säkerhets- och efterlevnadsstandarder kräver att en lista över IP-intervall tillåtslista.
 
 Du kan definiera nätverksåtkomstkontroller via nätverkets brandvägg. Genom att ange rätt IP-intervall kan du tillåta trafik för dataöverföringstjänsten.
 
-Adobe rekommenderar att du lägger till följande IP-intervall till en tillåtelselista innan du börjar arbeta med de mål som nämns ovan på den här sidan. Om du inte lägger till ditt regionspecifika IP-intervall på tillåtelselista kan det leda till fel eller utebliven prestanda när du använder dessa direktuppspelningsmål.
+Adobe rekommenderar att du lägger till följande IP-intervall till en tillåtelselista innan du börjar arbeta med de mål som anges ovan på den här sidan. Om du inte lägger till ditt regionspecifika IP-intervall på tillåtelselista kan det leda till fel eller utebliven prestanda när du använder dessa direktuppspelningsmål.
 
 ## VA7: Kunder i USA och Amerika {#us-americas}
 
@@ -57,6 +57,12 @@ Adobe rekommenderar att du lägger till följande IP-intervall till en tillåtel
 `52.254.107.0/28`
 `52.254.107.144/28`
 `20.22.83.112`
+
+## VA6: Kunder i USA och Amerika som använder AWS {#aws}
+
+IP-intervallet nedan gäller för Experience Platform-kunder som använder Amazon Web Services (AWS). Mer information finns i [Experience Platform Multi-Cloud-översikt](../../../landing/multi-cloud.md).
+
+`66.117.18.0/24`
 
 ## NLD2: EMEA-kunder {#emea}
 
