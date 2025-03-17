@@ -3,9 +3,9 @@ title: IP-adress tillåtelselista för filbaserade molnlagringsmål
 type: Documentation
 description: På den här sidan finns IP-intervall som du kan lägga till i tillåtelselista för att på ett säkert sätt exportera data från Experience Platform till molnlagringsplatser.
 exl-id: 0b8086aa-786e-4244-b2a5-a3f57ad59a8b
-source-git-commit: 118b0b5e6a1936b644da4153fe7bfeb872ae137e
+source-git-commit: ee4c42a2298c588590b1535524ed8f3dfe13b603
 workflow-type: tm+mt
-source-wordcount: '284'
+source-wordcount: '234'
 ht-degree: 0%
 
 ---
@@ -40,14 +40,14 @@ Adobe rekommenderar att du lägger till följande IP-intervall till en tillåtel
 ## Krävs för alla kunder {#all-customers}
 
 * `52.247.108.70`
+<!-- 
+## US customers running on AWS {#aws}
 
-## Kunder i USA som kör på AWS {#aws}
-
-IP-intervallet nedan gäller för Experience Platform-kunder som använder Amazon Web Services (AWS). Mer information finns i [Experience Platform Multi-Cloud-översikt](../../../landing/multi-cloud.md).
+The IP range below applies to Experience Platform customers running on Amazon Web Services (AWS). See the [Experience Platform Multi-Cloud overview](../../../landing/multi-cloud.md) for more information.
 
 >[!NOTE]
 >
->Det här IP-intervallet stöds inte för kunder som använder filbaserade destinationer i AWS för att exportera data till Amazon S3.
+>This IP range is not supported for customers running on AWS who use file-based destinations to export data to Amazon S3. -->
 
 * `66.117.18.0/24`
 
