@@ -2,9 +2,9 @@
 title: Användargränssnitt för identitetsinställningar
 description: Lär dig hur du använder användargränssnittet för identitetsinställningar.
 exl-id: 738b7617-706d-46e1-8e61-a34855ab976e
-source-git-commit: f2e2c094b42248369b4a59d0ad6f950e62e0a7c1
+source-git-commit: 7174c2c0d8c4ada8d5bba334492bad396c1cfb34
 workflow-type: tm+mt
-source-wordcount: '559'
+source-wordcount: '589'
 ht-degree: 0%
 
 ---
@@ -13,7 +13,9 @@ ht-degree: 0%
 
 >[!AVAILABILITY]
 >
->Regler för länkning av identitetsdiagram är för närvarande begränsade. Kontakta ditt Adobe-kontoteam för information om hur du får tillgång till funktionen i utvecklingssandlådor.
+>* Länkningsreglerna för identitetsdiagram är för närvarande begränsade. Kontakta ditt Adobe-kontoteam för information om hur du får tillgång till funktionen i utvecklingssandlådor.
+>
+>* Ditt konto måste ha behörigheten **Visa identitetsdiagram** för att kunna komma åt identitetsinställningarna i gränssnittet. Mer information finns i [handboken om behörigheter i attributbaserad åtkomstkontroll](../../access-control/abac/ui/permissions.md).
 
 Identitetsinställningar är en funktion i användargränssnittet för Adobe Experience Platform Identity Service som du kan använda för att ange unika namnutrymmen och konfigurera namnområdesprioritet.
 

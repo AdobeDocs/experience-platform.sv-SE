@@ -2,9 +2,9 @@
 title: Implementeringsguide för regler för länkning av identitetsdiagram
 description: Lär dig de rekommenderade stegen som ska följas när du implementerar data med länkningsregler för identitetsdiagram.
 exl-id: 368f4d4e-9757-4739-aaea-3f200973ef5a
-source-git-commit: 79efdff6f6068af4768fc4bad15c0521cca3ed2a
+source-git-commit: 7174c2c0d8c4ada8d5bba334492bad396c1cfb34
 workflow-type: tm+mt
-source-wordcount: '1573'
+source-wordcount: '1676'
 ht-degree: 0%
 
 ---
@@ -13,7 +13,7 @@ ht-degree: 0%
 
 >[!AVAILABILITY]
 >
->Regler för länkning av identitetsdiagram är för närvarande begränsade. Kontakta ditt Adobe-kontoteam om du vill ha information om hur du kommer åt funktionen i utvecklingssandlådor.
+>Länkningsreglerna för identitetsdiagram är för närvarande begränsade. Kontakta ditt Adobe-kontoteam för information om hur du får tillgång till funktionen i utvecklingssandlådor.
 
 Läs det här dokumentet för att få en stegvis handledning som du kan följa när du implementerar dina data med Adobe Experience Platform Identity Service.
 
@@ -60,7 +60,7 @@ Om du använder [Adobe Analytics-källkopplingen](../../sources/tutorials/ui/cre
 
 ### XDM-upplevelsehändelser
 
-Under förimplementeringsprocessen måste du se till att de autentiserade händelser som skickas till Experience Platform alltid innehåller en personidentifierare, till exempel CRMID.
+Under förimplementeringsprocessen kontrollerar du att de autentiserade händelser som skickas till Experience Platform alltid innehåller en personidentifierare, till exempel CRMID.
 
 >[!BEGINTABS]
 
@@ -120,20 +120,22 @@ Under förimplementeringsprocessen måste du se till att de autentiserade hände
 
 >[!ENDTABS]
 
-Du måste se till att du har en fullständigt kvalificerad identitet när du skickar händelser med XDM-upplevelsehändelser.
+Under förimplementeringsprocessen måste du se till att de autentiserade händelser som skickas till Experience Platform alltid innehåller en **enskild**-personidentifierare, till exempel ett CRMID.
 
-+++Välj för att visa ett exempel på en händelse med en fullständigt kvalificerad identitet
+* (Rekommenderas) Autentiserade händelser med en person-ID.
+* (Rekommenderas inte) Autentiserade händelser med två personidentifierare.
+* (Rekommenderas inte) Autentiserade händelser utan någon personidentifierare.
 
-```json
-    "identityMap": {
-        "ECID": [
-            {
-                "id": "24165048599243194405404369473457348936",
-                "primary": false
-            }
-        ]
-    }
-```
+Om systemet skickar två personidentifierare kan implementeringen misslyckas med kravet på namnutrymme för en person. Om identityMap i din webSDK-implementering till exempel innehåller ett CRMID, ett customerID och ett ECID-namnutrymme, kan två personer som delar en enhet kopplas felaktigt till olika namnutrymmen.
+
+Inom identitetstjänsten kan den här implementeringen se ut så här:
+
+* `timestamp1` = John loggar in -> systemhämtningar `CRMID: John, ECID: 111`.
+* `timestamp2` = Jane loggar in -> systemhämtningar `customerID: Jane, ECID: 111`.
+
++++Visa hur implementeringen kan se ut i diagramsimuleringar
+
+![Gränssnittet för diagramsimulering med ett exempeldiagram återgivet.](../images/implementation/example-graph.png)
 
 +++
 
@@ -190,11 +192,11 @@ Nu bör du ha följande:
 * Minst ett XDM-schema. (Beroende på dina data och specifika användningsfall kan du behöva skapa både profil- och upplevelsehändelsescheman.)
 * En datauppsättning som baseras på ditt schema.
 
-När du har alla objekt som listas ovan kan du börja importera dina data till Experience Platform. Du kan utföra dataöverföring på flera olika sätt. Du kan använda följande tjänster för att skicka data till Experience Platform:
+När du har alla objekt som listas ovan kan du börja inhämta data till Experience Platform. Du kan utföra dataöverföring på flera olika sätt. Du kan använda följande tjänster för att skicka data till Experience Platform:
 
 * [Inmatning av gruppbearbetning och direktuppspelning](../../ingestion/home.md)
 * [Datainsamling i Experience Platform](../../collection/home.md)
-* [Experience Platform Källor](../../sources/home.md)
+* [Experience Platform-källor](../../sources/home.md)
 
 >[!TIP]
 >

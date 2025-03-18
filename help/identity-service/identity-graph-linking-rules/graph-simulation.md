@@ -2,9 +2,9 @@
 title: Användargränssnittshandbok för diagramsimulering
 description: Lär dig hur du använder Graph Simulation i gränssnittet för identitetstjänsten.
 exl-id: 89f0cf6e-c43f-40ec-859a-f3b73a6da8c8
-source-git-commit: 31d4c895294e779ef39639710fad0e517fa03cf2
+source-git-commit: 7174c2c0d8c4ada8d5bba334492bad396c1cfb34
 workflow-type: tm+mt
-source-wordcount: '1467'
+source-wordcount: '1465'
 ht-degree: 0%
 
 ---
@@ -18,9 +18,9 @@ ht-degree: 0%
 
 >[!AVAILABILITY]
 >
->* Regler för länkning av identitetsdiagram är för närvarande begränsade. Kontakta ditt Adobe-kontoteam för information om hur du får tillgång till funktionen i utvecklingssandlådor.
+>* Länkningsreglerna för identitetsdiagram är för närvarande begränsade. Kontakta ditt Adobe-kontoteam för information om hur du får tillgång till funktionen i utvecklingssandlådor.
 >
->* Ditt konto måste etableras med behörigheten **Visa identitetsdiagram** för att du ska kunna komma åt verktyget [!DNL Graph Simulation]. Mer information finns i [handboken om behörigheter i attributbaserad åtkomstkontroll](../../access-control/abac/ui/permissions.md).
+>* Ditt konto måste ha behörigheten **Visa identitetsdiagram** för att kunna komma åt verktyget [!DNL Graph Simulation]. Mer information finns i [handboken om behörigheter i attributbaserad åtkomstkontroll](../../access-control/abac/ui/permissions.md).
 
 [!DNL Graph Simulation] är ett verktyg i identitetstjänstens gränssnitt som du kan använda för att simulera hur ett identitetsdiagram beter sig när en viss kombination av identiteter anges och hur du konfigurerar [identitetsoptimeringsalgoritmen](./identity-optimization-algorithm.md).
 

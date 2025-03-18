@@ -2,7 +2,7 @@
 title: Felsökningsguide för länkningsregler för identitetsdiagram
 description: Lär dig hur du felsöker vanliga problem i länkningsregler för identitetsdiagram.
 exl-id: 98377387-93a8-4460-aaa6-1085d511cacc
-source-git-commit: 4d9954dd61b56125ae1e828432c8cc359806d280
+source-git-commit: 7174c2c0d8c4ada8d5bba334492bad396c1cfb34
 workflow-type: tm+mt
 source-wordcount: '3279'
 ht-degree: 0%
@@ -13,7 +13,7 @@ ht-degree: 0%
 
 >[!AVAILABILITY]
 >
->Regler för länkning av identitetsdiagram är för närvarande begränsade. Kontakta ditt Adobe-kontoteam om du vill ha information om hur du kommer åt funktionen i utvecklingssandlådor.
+>Länkningsreglerna för identitetsdiagram är för närvarande begränsade. Kontakta ditt Adobe-kontoteam för information om hur du får tillgång till funktionen i utvecklingssandlådor.
 
 När du testar och validerar regler för länkning av identitetsdiagram kan du stöta på problem som rör datainmatning och diagrambeteende. Läs det här dokumentet om du vill veta mer om hur du felsöker några vanliga problem som kan uppstå när du arbetar med länkningsregler för identitetsdiagram.
 
@@ -40,7 +40,7 @@ Det är viktigt att notera följande faktorer:
 
 >[!NOTE]
 >
->* I det här avsnittet förutsätts att data har importerats till datasjön och att det inte fanns några syntaxfel eller andra fel som skulle förhindra att data hämtas in till Experience Platform från början.
+>* I det här avsnittet förutsätts att data har importerats till datasjön och att det inte fanns några syntaxfel eller andra fel som skulle förhindra att data hämtas till Experience Platform.
 >
 >* I exemplen används ECID som cookie-namnutrymme och CRMID som personnamnutrymme.
 
@@ -250,7 +250,7 @@ WHERE identitymap['ECID'][0].id ='identity_value'
 ORDER BY timestamp desc 
 ```
 
-**Obs!**: I det här exemplet antas att `eVar10` har markerats som en identitet. För dina konfigurationer måste du ändra eVarna baserat på implementeringen i din egen organisation.
+**Obs!**: I det här exemplet antas att `eVar10` har markerats som en identitet. För dina konfigurationer måste du ändra eVar baserat på implementeringen i din egen organisation.
 
 >[!ENDTABS]
 

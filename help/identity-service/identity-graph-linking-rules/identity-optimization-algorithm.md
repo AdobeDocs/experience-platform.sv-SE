@@ -2,7 +2,7 @@
 title: Identitetsoptimeringsalgoritm
 description: Lär dig mer om algoritm för identitetsoptimering i identitetstjänsten.
 exl-id: 5545bf35-3f23-4206-9658-e1c33e668c98
-source-git-commit: 048d915d33a19a9d50a4951e165b5ade1b9d9734
+source-git-commit: 7174c2c0d8c4ada8d5bba334492bad396c1cfb34
 workflow-type: tm+mt
 source-wordcount: '1560'
 ht-degree: 0%
@@ -18,7 +18,7 @@ ht-degree: 0%
 
 >[!AVAILABILITY]
 >
->Regler för länkning av identitetsdiagram är för närvarande begränsade. Kontakta ditt Adobe-kontoteam om du vill ha information om hur du kommer åt funktionen i utvecklingssandlådor.
+>Länkningsreglerna för identitetsdiagram är för närvarande begränsade. Kontakta ditt Adobe-kontoteam för information om hur du får tillgång till funktionen i utvecklingssandlådor.
 
 Identitetsoptimeringsalgoritmen är en diagramalgoritm i identitetstjänsten som hjälper till att säkerställa att ett identitetsdiagram är representativt för en enskild person och därför förhindrar oönskad sammanslagning av identiteter i kundprofilen i realtid.
 

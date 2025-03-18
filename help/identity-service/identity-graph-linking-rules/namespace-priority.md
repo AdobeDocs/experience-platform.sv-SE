@@ -2,7 +2,7 @@
 title: Namnområdesprioritet
 description: Läs om namnområdesprioritet i identitetstjänsten.
 exl-id: bb04f02e-3826-45af-b935-752ea7e6ed7c
-source-git-commit: 048d915d33a19a9d50a4951e165b5ade1b9d9734
+source-git-commit: 7174c2c0d8c4ada8d5bba334492bad396c1cfb34
 workflow-type: tm+mt
 source-wordcount: '1801'
 ht-degree: 1%
@@ -18,7 +18,7 @@ ht-degree: 1%
 
 >[!AVAILABILITY]
 >
->Regler för länkning av identitetsdiagram är för närvarande begränsade. Kontakta ditt Adobe-kontoteam om du vill ha information om hur du kommer åt funktionen i utvecklingssandlådor.
+>Länkningsreglerna för identitetsdiagram är för närvarande begränsade. Kontakta ditt Adobe-kontoteam för information om hur du får tillgång till funktionen i utvecklingssandlådor.
 
 Varje kundimplementering är unik och skräddarsydd för att uppfylla en viss organisations mål, och som sådan varierar vikten av en viss namnrymd från kund till kund. Exempel från verkligheten:
 
@@ -141,7 +141,7 @@ Om John och Jane delar en enhet överförs ECID (webbläsare) från en person ti
 
 Om kriterierna för godkännande av segment endast baserades på anonyma händelser som sparats mot ECID, skulle Jane kvalificera sig för det segmentet
 
-## Konsekvenser för andra Experience Platform-tjänster {#implications}
+## Inverkan på andra Experience Platform-tjänster {#implications}
 
 I det här avsnittet beskrivs hur namnområdesprioriteten kan påverka andra Experience Platform-tjänster.
 
@@ -179,7 +179,7 @@ När du väljer data måste du ange ett namnutrymme, som används för att avgö
 
 Den här konfigurationen resulterar endast i beräkning av bakgrundsmusik med hjälp av autentiserade händelser.
 
-Mer information finns i dokumenten på [Attribution AI](../../intelligent-services/attribution-ai/overview.md) och [Kund-AI](../../intelligent-services/customer-ai/overview.md).
+Mer information finns i dokumenten om [Attribution AI](../../intelligent-services/attribution-ai/overview.md) och [Customer AI](../../intelligent-services/customer-ai/overview.md).
 
 ### Partnerbyggda destinationer
 
@@ -192,7 +192,7 @@ Mer information om partnerbyggda mål finns i [målöversikten](../../destinatio
 
 ### Integritetstjänst
 
-[Borttagningsbegäranden](../privacy.md) för Privacy Service fungerar på följande sätt, för en viss identitet:
+[Borttagningsbegäranden](../privacy.md) från Privacy Service fungerar på följande sätt för en viss identitet:
 
 * Kundprofil i realtid: Tar bort alla profilfragment med angivet identitetsvärde som primär identitet. **Den primära identiteten i profilen bestäms nu utifrån namnområdesprioritet.**
 * Datasjön: Tar bort alla poster med den angivna identiteten som primär eller sekundär identitet.
