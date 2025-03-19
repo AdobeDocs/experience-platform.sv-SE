@@ -5,9 +5,9 @@ breadcrumb-title: Användarhandbok om Query Service
 user-guide-description: Använd standard-SQL för att fråga efter data i datasjön i Experience Platform.
 feature: Queries
 role: User,Developer
-source-git-commit: e63ecbd14db2e9e4f35fb89aaaa406a4c584416a
+source-git-commit: 9eee0f65c4aa46c61b699b734aba9fe2deb0f44a
 workflow-type: tm+mt
-source-wordcount: '402'
+source-wordcount: '400'
 ht-degree: 11%
 
 ---
@@ -23,7 +23,6 @@ ht-degree: 11%
 - Data Distiller {#data-distiller}
    - [Översikt](data-distiller/overview.md)
    - [Licensanvändning](data-distiller/license-usage.md)
-   - [De viktigaste tipsen för att maximera värdet](data-distiller/top-tips-to-maximize-value.md)
    - Härledda datauppsättningar {#derived-datasets}
       - [Översikt](data-distiller/derived-datasets/overview.md)
       - [Skapa härledda datauppsättningar med SQL](data-distiller/derived-datasets/create-derived-datasets-with-sql.md)
@@ -40,6 +39,7 @@ ht-degree: 11%
       - [Teknikfunktioner för XML](data-distiller/ml-feature-pipelines/feature-engineering.md)
       - [Exportera data till ML-miljöer](data-distiller/ml-feature-pipelines/export-data.md)
       - [AI/ML-arbetsflöde för berikning av data från början till slut](data-distiller/ml-feature-pipelines/end-to-end-notebook-workflow.md)
+   - [Summit 2025-sessionen](data-distiller/top-tips-to-maximize-value.md)
 - Data, Distiller-statistik och maskininlärning {#advanced-statistics}
    - [Översikt](advanced-statistics/overview.md)
    - [Funktionsteknik](advanced-statistics/feature-engineering.md)
@@ -135,7 +135,7 @@ ht-degree: 11%
 - SQL-referens {#sql}
    - [SQL-översikt](sql/overview.md)
    - [SQL-syntax](sql/syntax.md)
-   - [Funktioner som definieras av Adobe](sql/adobe-defined-functions.md)
+   - [Adobe-definierade funktioner](sql/adobe-defined-functions.md)
    - [Funktioner för högre ordning](sql/higher-order-functions.md)
    - [Spark SQL-funktioner](sql/spark-sql-functions.md)
    - [Metadata-kommandon](sql/metadata.md)

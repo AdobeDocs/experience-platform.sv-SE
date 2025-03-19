@@ -1,17 +1,15 @@
 ---
-title: De bästa tipsen för att maximera värdet med Adobe Experience Platform Data Distiller
+title: Tips för att maximera värdet med Adobe Experience Platform Data Distiller - OS656
 description: Lär dig att maximera värdet med Adobe Experience Platform Data Distiller genom att berika kundprofildata i realtid och använda beteendeinsikter för att skapa riktade målgrupper. Den här resursen innehåller ett exempel på en datamängd och en fallstudie som visar hur man använder modellen för senaste, frekventa, monetära (RFM) för kundsegmentering.
-hide: true
-hidefromtoc: true
 exl-id: f3af4b9a-5024-471a-b740-a52fd226a985
-source-git-commit: c7a6a37679541dc37bdfed33b72d2396db7ce054
+source-git-commit: 9eee0f65c4aa46c61b699b734aba9fe2deb0f44a
 workflow-type: tm+mt
-source-wordcount: '3428'
+source-wordcount: '3577'
 ht-degree: 0%
 
 ---
 
-# De bästa tipsen för att maximera värdet med Adobe Experience Platform Data Distiller
+# De bästa tipsen för att maximera värdet med Adobe Experience Platform Data Distiller - OS656
 
 Den här sidan innehåller exempeldatauppsättningen för att du ska kunna använda det du lärt dig i Adobe Summit-sessionen&quot;OS656 - De bästa tipsen för att maximera värdet med Adobe Experience Platform Data Distiller&quot;. Du får lära dig att snabba upp implementeringen av Adobe Real-Time Customer Data Platform och Journey Optimizer genom att förbättra kundprofildata i realtid. Denna fördjupning utnyttjar djupgående insikter i kundbeteendemönster för att skapa målgrupper för upplevelseleverans och optimering.
 
@@ -53,7 +51,7 @@ Följ de här stegen för att överföra en CSV-fil till Adobe Experience Platfo
 
 #### Skapa en datauppsättning från en CSV-fil {#create-a-dataset}
 
-I Experience Platform-gränssnittet navigerar du till **[!UICONTROL Workflows]** i den vänstra navigeringslisten och väljer **[!UICONTROL Create dataset from CSV file]** bland de tillgängliga alternativen. Ett nytt sidofält visas till höger på skärmen. Välj **[!UICONTROL Launch]**.
+I Experience Platform-gränssnittet väljer du **[!UICONTROL Datasets]** i den vänstra navigeringslisten, följt av **[!UICONTROL Create dataset]**. Välj sedan **[!UICONTROL Create dataset from CSV file]** bland de tillgängliga alternativen.
 
 Panelen [!UICONTROL Configure Dataset] visas. I fältet **[!UICONTROL Name]** anger du datauppsättningsnamnet som luma_web_data och väljer **[!UICONTROL Next]**.
 
@@ -135,7 +133,7 @@ Följande frågor visar hur du identifierar och exkluderar annullerade order fr�
 Den första frågan markerar alla köp-ID som inte är null och som är associerade med en annullering och sammanställer dem med `GROUP BY`. De resulterande köp-ID:n måste uteslutas från datauppsättningen.
 
 ```sql
-CREATE OR replace VIEW orders_cancelled
+CREATE VIEW orders_cancelled
 AS
   SELECT purchase_id
   FROM   luma_web_data
@@ -241,7 +239,7 @@ Resultatet ser ut som bilden nedan.
 Om du vill förbättra frågans effektivitet och återanvändbarhet skapar du en `VIEW` som lagrar de aggregerade RFM-värdena.
 
 ```sql
-CREATE OR replace VIEW rfm_values
+CREATE VIEW rfm_values
 AS
   SELECT userid,
          DATEDIFF(current_date, MAX(purchase_date)) AS days_since_last_purchase,
@@ -258,7 +256,7 @@ Resultatet liknar följande bild men med ett annat ID.
 Som bästa praxis kan du även köra en enkel utforska fråga för att inspektera data i vyn. Använd följande programsats.
 
 ```sql
-SELECT * FROM RFM_Values;
+SELECT * FROM rfm_values;
 ```
 
 I följande skärmbild visas ett exempelresultat av frågan med de beräknade RFM-värdena för varje användare. Resultatet motsvarar vy-ID:t från frågan `CREATE VIEW`.
@@ -289,7 +287,7 @@ SELECT userid,
        NTILE(4)
          OVER (
            ORDER BY total_revenue DESC)                AS monetization
-FROM   rfm_val ues; 
+FROM rfm_values; 
 ```
 
 Resultatet ser ut som bilderna nedan.
@@ -320,6 +318,10 @@ AS
              ORDER BY total_revenue DESC)                AS monetization
   FROM   rfm_values;
 ```
+
+Resultatet ser ut ungefär som i följande bild men med ett annat vy-ID.
+
+![Dialogrutan Frågeresultat för VYN rfm_scores.](../images/data-distiller/top-tips-to-maximize-value/rfm_score-view-result.png)
 
 #### Modell-RFM-segment {#model-rfm-segments}
 
@@ -398,7 +400,7 @@ I följande skärmbilder visas ett exempelresultat av frågan `SELECT * FROM rfm
 
 ### Steg 4: Använd SQL för att batchimportera RFM-data till kundprofilen i realtid {#sql-batch-ingest-rfm-data}
 
-De, batchimporterar RFM-berikade kunddata till kundprofilen i realtid. Börja med att skapa en profilaktiverad datauppsättning och infoga transformerade data med SQL.
+Därefter gruppimporterar vi RFM-berikade kunddata till kundprofilen i realtid. Börja med att skapa en profilaktiverad datauppsättning och infoga transformerade data med SQL.
 
 #### Skapa en härledd datauppsättning för att lagra RFM-attribut {#create-a-derived-dataset}
 
@@ -426,7 +428,13 @@ I den här SQL-satsen:
 >
 >Mer information om hur du definierar identitetsfält och arbetar med identitetsnamnutrymmen finns i [dokumentationen för identitetstjänsten](../../identity-service/home.md) eller i handboken [om hur du definierar ett identitetsfält i Adobe Experience Platform-gränssnittet](../../xdm/ui/fields/identity.md).
 
-Följande SQL skapar en profilaktiverad tabell för lagring av RFM-attribut
+Eftersom Frågeredigeraren stöder sekventiell körning kan du inkludera frågor om att skapa och infoga data i en enda session. I följande SQL skapas först en profilaktiverad tabell för lagring av RFM-attribut. Sedan infogar den RFM-berikade kunddata från `rfm_model_segment` i tabellen `adls_rfm_profile`, vilket strukturerar varje post under ditt klientspecifika namnområde, vilket krävs för att kunna lägga till kundprofil i realtid.
+
+Eftersom Frågeredigeraren stöder sekventiell körning kan du köra frågor om att skapa och infoga data i en enda session. I följande SQL skapas först en profilaktiverad tabell för lagring av RFM-attribut. Sedan infogas RFM-berikade kunddata från `rfm_model_segment` i tabellen `adls_rfm_profile`, vilket säkerställer att varje post är korrekt strukturerad under ditt klientspecifika namnutrymme (`_{TENANT_ID}`). Det här namnutrymmet är nödvändigt för kundprofilsinmatning i realtid och korrekt identitetsupplösning.
+
+>[!IMPORTANT]
+>
+>Ersätt `_{TENANT_ID}` med din organisations klientnamnområde. Namnutrymmet är unikt för din organisation och säkerställer att alla inkapslade data tilldelas korrekt i Adobe Experience Platform.
 
 ```sql
 CREATE TABLE IF NOT EXISTS adls_rfm_profile (
@@ -439,15 +447,20 @@ CREATE TABLE IF NOT EXISTS adls_rfm_profile (
     monetization INTEGER, -- Monetary score
     rfm_model TEXT -- RFM segment classification
 ) WITH (LABEL = 'PROFILE'); -- Enable the table for Real-Time Customer Profile
+
+INSERT INTO adls_rfm_profile
+SELECT STRUCT(userId, days_since_last_purchase, orders, total_revenue, recency,
+              frequency, monetization, rfm_model) _{TENANT_ID}
+FROM rfm_model_segment;
 ```
 
 Resultatet av den här frågan liknar tidigare datauppsättningar i den här spelningsboken, men med ett annat ID.
 
-När du har skapat datauppsättningen går du till Datauppsättningar > Bläddra > `adls_rfm_profile` för att verifiera att datauppsättningen är tom.
+När du har skapat datauppsättningen navigerar du till **[!UICONTROL Datasets]** > **[!UICONTROL Browse]** > `adls_rfm_profile` för att verifiera att datauppsättningen är tom.
 
 ![Arbetsytan för datauppsättningar med information om datamängden adls_rfm_profile som visas och den profilaktiverade växeln markeras.](../images/data-distiller/top-tips-to-maximize-value/profile-enabled-toggle.png)
 
-Du kan även navigera till **[!UICONTROL Schemas]** > **[!UICONTROL Browse]** > `adls_rfm_profile` för att visa schemat för enskilda XDM-profiler för din nya datamängd, och det är anpassade fältgrupper.
+Du kan också navigera till **[!UICONTROL Schemas]** > **[!UICONTROL Browse]** > `adls_rfm_profile` för att visa XDM-schemat för enskild profil för din nya datamängd och dess anpassade fältgrupper.
 
 ![XDM-arbetsytan med diagrammet adls_rfm_profile som visas på arbetsytan i schemat.](../images/data-distiller/top-tips-to-maximize-value/xdm-individual-profile-schema.png)
 
@@ -459,12 +472,12 @@ Kontrollera att fältordningen i `SELECT`-frågan för programsatsen `INSERT` ma
 
 >[!NOTE]
 >
->Den här frågan körs i gruppläge, vilket kräver att ett kluster snurras för att processen ska kunna utföras. Åtgärden läser data från datasjön, bearbetar dem i klustret och skriver tillbaka resultaten till datasjön.
+>Den här frågan körs i batchläge, vilket kräver att ett kluster snurras för att processen ska kunna köras. Åtgärden läser data från datasjön, bearbetar dem i klustret och skriver tillbaka resultaten till datasjön.
 
 ```sql
 INSERT INTO adls_rfm_profile
 SELECT Struct(userid, days_since_last_purchase, orders, total_revenue, recency,
-              frequency, monetization, rfm_model) _pfreportingonprod
+              frequency, monetization, rfm_model) _{TENANT_ID}
 FROM   rfm_model_segment; 
 ```
 
@@ -490,10 +503,10 @@ Mer information om schemaläggning av frågor finns i [dokumentationen för frå
 
 Vyn [!UICONTROL Schedule details] visas. Här anger du följande information för att konfigurera schemat:
 
-- **[!UICONTROL Execution Frequency]**: **År**
-- **[!UICONTROL Day of Execution]**: **30 april**
-- **[!UICONTROL Schedule Execution Time]**: **11 PM UTC**
-- **[!UICONTROL Schedule Period]**: **1 april - 31 maj 2024**
+- **[!UICONTROL Execution Frequency]**: **Varje vecka**
+- **[!UICONTROL Day of Execution]**: **Måndag och tisdag**
+- **[!UICONTROL Schedule Execution Time]**: **10:10 UTC**
+- **[!UICONTROL Schedule Period]**: **17 mars - 30 april 2025**
 
 Välj **[!UICONTROL Save]** för att bekräfta schemat.
 
@@ -518,11 +531,11 @@ Välj den metod som passar ditt arbetsflöde bäst.
 
 Använd kommandot `CREATE AUDIENCE AS SELECT` för att definiera en ny målgrupp. Den skapade målgruppen sparas i en datauppsättning och registreras i arbetsytan **[!UICONTROL Audiences]** under **[!UICONTROL Data Distiller]**.
 
-Publiker som skapas med SQL-tillägget registreras automatiskt under [!UICONTROL Data Distiller]-origo på arbetsytan i [!UICONTROL Audiences]. I användargränssnittet för [!UICONTROL Audiences] kan du visa, hantera och aktivera dina målgrupper efter behov.
+Publiker som skapas med SQL-tillägget registreras automatiskt under [!UICONTROL Data Distiller]-origo på arbetsytan i [!UICONTROL Audiences]. Från [målgruppsportalen](../../segmentation/ui/audience-portal.md) kan du visa, hantera och aktivera dina målgrupper efter behov.
 
-![Arbetsytan Publiker visar tillgängliga målgrupper.](../images/data-distiller/top-tips-to-maximize-value/audiences-workspace-1.png)
+![Målportalen som visar tillgängliga målgrupper.](../images/data-distiller/top-tips-to-maximize-value/audiences-workspace-1.png)
 
-![Arbetsytan Publiker visar tillgängliga målgrupper med filtersidofältet och Data Distiller markerat.](../images/data-distiller/top-tips-to-maximize-value/audiences-workspace-2.png)
+![Målportalen visar tillgängliga målgrupper med filtersidofältet och Data Distiller markerat.](../images/data-distiller/top-tips-to-maximize-value/audiences-workspace-2.png)
 
 Mer information om SQL-målgrupper finns i [Data Distiller Audiences-dokumentationen](../data-distiller-audiences/overview.md). Mer information om hur du hanterar målgrupper i användargränssnittet finns i [Översikt över publikportalen](../../segmentation/ui/audience-portal.md#audience-list).
 
@@ -534,19 +547,19 @@ Använd följande SQL-kommandon om du vill skapa en målgrupp:
 -- Define an audience for best customers based on RFM scores
 CREATE AUDIENCE rfm_best_customer 
 WITH (
-    primary_identity = _pfreportingonprod.userId, 
+    primary_identity = _{TENANT_ID}.userId, 
     identity_namespace = queryService
 ) AS ( 
     SELECT * FROM adls_rfm_profile 
-    WHERE _pfreportingonprod.recency = 1 
-        AND _pfreportingonprod.frequency = 1 
-        AND _pfreportingonprod.monetization = 1 
+    WHERE _{TENANT_ID}.recency = 1 
+        AND _{TENANT_ID}.frequency = 1 
+        AND _{TENANT_ID}.monetization = 1 
 );
 
 -- Define an audience that includes all customers
 CREATE AUDIENCE rfm_all_customer 
 WITH (
-    primary_identity = _pfreportingonprod.userId, 
+    primary_identity = _{TENANT_ID}.userId, 
     identity_namespace = queryService
 ) AS ( 
     SELECT * FROM adls_rfm_profile 
@@ -555,33 +568,33 @@ WITH (
 -- Define an audience for core customers based on email identity
 CREATE AUDIENCE rfm_core_customer 
 WITH (
-    primary_identity = _pfreportingonprod.userId, 
+    primary_identity = _{TENANT_ID}.userId, 
     identity_namespace = Email
 ) AS ( 
     SELECT * FROM adls_rfm_profile 
-    WHERE _pfreportingonprod.recency = 1 
-        AND _pfreportingonprod.frequency = 1 
-        AND _pfreportingonprod.monetization = 1 
+    WHERE _{TENANT_ID}.recency = 1 
+        AND _{TENANT_ID}.frequency = 1 
+        AND _{TENANT_ID}.monetization = 1 
 );
 ```
 
 #### Infoga en målgrupp {#insert-an-audience}
 
-Om du vill lägga till profiler till en befintlig målgrupp använder du kommandot `INSERT INTO`. På så sätt kan ni lägga till enskilda profiler eller hela målgruppssegment i en befintlig målgruppsdatauppsättning.
+Om du vill lägga till profiler till en befintlig målgrupp använder du kommandot `INSERT INTO`. På så sätt kan ni lägga till enskilda profiler eller hela målgrupper i en befintlig målgruppsdatauppsättning.
 
 ```sql
 -- Insert profiles into the audience dataset
 INSERT INTO AUDIENCE adls_rfm_audience 
 SELECT 
-    _pfreportingonprod.userId, 
-    _pfreportingonprod.days_since_last_purchase, 
-    _pfreportingonprod.orders, 
-    _pfreportingonprod.total_revenue, 
-    _pfreportingonprod.recency, 
-    _pfreportingonprod.frequency, 
-    _pfreportingonprod.monetization 
+    _{TENANT_ID}.userId, 
+    _{TENANT_ID}.days_since_last_purchase, 
+    _{TENANT_ID}.orders, 
+    _{TENANT_ID}.total_revenue, 
+    _{TENANT_ID}.recency, 
+    _{TENANT_ID}.frequency, 
+    _{TENANT_ID}.monetization 
 FROM adls_rfm_profile 
-WHERE _pfreportingonprod.rfm_model = '6. Slipping - Once Loyal, Now Gone';
+WHERE _{TENANT_ID}.rfm_model = '6. Slipping - Once Loyal, Now Gone';
 ```
 
 #### Lägga till profiler till en målgrupp {#add-profiles-to-audience}
@@ -649,4 +662,4 @@ Om du vill skapa en målgrupp med RFM-attribut drar och släpper du attributet `
 
 Slutför målgruppen genom att välja **[!UICONTROL Save and Publish]** i det övre högra hörnet. När du har sparat visas den nya målgruppen på arbetsytan [!UICONTROL Audiences], där du kan granska sammanfattningen och kvalificeringskriterierna.
 
-Använd segmentbyggaren för att komma åt de härledda RFM-attributen och utforma ytterligare målgrupper. Aktivera den nyskapade SQL-målgruppen baserat på RFM-poäng och skicka den till valfri destination, inklusive Adobe Journey Optimizer.
+Använd Segment Builder för att komma åt de härledda RFM-attributen och utforma ytterligare målgrupper. Aktivera den nyskapade SQL-målgruppen baserat på RFM-poäng och skicka den till valfri destination, inklusive Adobe Journey Optimizer.
