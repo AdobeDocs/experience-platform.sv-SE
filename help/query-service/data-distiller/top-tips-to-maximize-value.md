@@ -2,7 +2,7 @@
 title: Tips för att maximera värdet med Adobe Experience Platform Data Distiller - OS656
 description: Lär dig att maximera värdet med Adobe Experience Platform Data Distiller genom att berika kundprofildata i realtid och använda beteendeinsikter för att skapa riktade målgrupper. Den här resursen innehåller ett exempel på en datamängd och en fallstudie som visar hur man använder modellen för senaste, frekventa, monetära (RFM) för kundsegmentering.
 exl-id: f3af4b9a-5024-471a-b740-a52fd226a985
-source-git-commit: 9eee0f65c4aa46c61b699b734aba9fe2deb0f44a
+source-git-commit: fac4ca20f15bdfd765b73fde9db8dd7e2fc1a149
 workflow-type: tm+mt
 source-wordcount: '3577'
 ht-degree: 0%
@@ -328,11 +328,11 @@ Resultatet ser ut ungefär som i följande bild men med ett annat vy-ID.
 När RFM-poängen har beräknats kan kunderna kategoriseras i följande sex prioriterade segment:
 
 1. `Core`: Bästa kunder med hög Recency, Frequency och monetärt värde (Recency = 1, Frequency = 1, Economic = 1).
-2. `Loyal`: Vanliga kunder som är konsekventa men inte topputlånade (frekvens = 1).
-3. `Whales`: De högsta intervallen, oavsett senaste och frekvens (monetär = 1).
-4. `Promising`: Vanliga men lägre intervall (frekvens = 1, 2, 3; Monetär = 2, 3, 4).
-5. `Rookies`: Nya kunder med låg frekvens (senaste aktivitet = 1, frekvens = 4).
-6. `Slipping`: Tidigare lojala kunder med minskad aktivitet (Recency = 2, 3, 4; Frequency = 4).
+1. `Loyal`: Vanliga kunder som är konsekventa men inte topputlånade (frekvens = 1).
+1. `Whales`: De högsta intervallen, oavsett senaste och frekvens (monetär = 1).
+1. `Promising`: Vanliga men lägre intervall (frekvens = 1, 2, 3; Monetär = 2, 3, 4).
+1. `Rookies`: Nya kunder med låg frekvens (senaste aktivitet = 1, frekvens = 4).
+1. `Slipping`: Tidigare lojala kunder med minskad aktivitet (Recency = 2, 3, 4; Frequency = 4).
 
 Om du vill effektivisera åtkomst och återanvändning skapar du en `VIEW` som lagrar RFM-segment, poäng och värden.
 
