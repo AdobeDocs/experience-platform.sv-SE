@@ -2,9 +2,9 @@
 title: Tips för att maximera värdet med Adobe Experience Platform Data Distiller - OS656
 description: Lär dig att maximera värdet med Adobe Experience Platform Data Distiller genom att berika kundprofildata i realtid och använda beteendeinsikter för att skapa riktade målgrupper. Den här resursen innehåller ett exempel på en datamängd och en fallstudie som visar hur man använder modellen för senaste, frekventa, monetära (RFM) för kundsegmentering.
 exl-id: f3af4b9a-5024-471a-b740-a52fd226a985
-source-git-commit: fac4ca20f15bdfd765b73fde9db8dd7e2fc1a149
+source-git-commit: cfa8395e68ed828be5095a979d5bf0ea6e9a9ae9
 workflow-type: tm+mt
-source-wordcount: '3577'
+source-wordcount: '3578'
 ht-degree: 0%
 
 ---
@@ -438,15 +438,15 @@ Eftersom Frågeredigeraren stöder sekventiell körning kan du köra frågor om 
 
 ```sql
 CREATE TABLE IF NOT EXISTS adls_rfm_profile (
-    userId TEXT PRIMARY IDENTITY NAMESPACE 'Email', -- Primary identity field using the 'Email' namespace
-    days_since_last_purchase INTEGER, -- Days since the last purchase
-    orders INTEGER, -- Total number of orders
-    total_revenue DECIMAL(18, 2), -- Total revenue with two decimal precision
-    recency INTEGER, -- Recency score
-    frequency INTEGER, -- Frequency score
-    monetization INTEGER, -- Monetary score
-    rfm_model TEXT -- RFM segment classification
-) WITH (LABEL = 'PROFILE'); -- Enable the table for Real-Time Customer Profile
+    userId TEXT PRIMARY IDENTITY NAMESPACE 'Email',
+    days_since_last_purchase INTEGER,
+    orders INTEGER,
+    total_revenue DECIMAL(18, 2),
+    recency INTEGER,
+    frequency INTEGER,
+    monetization INTEGER,
+    rfm_model TEXT
+) WITH (LABEL = 'PROFILE');
 
 INSERT INTO adls_rfm_profile
 SELECT STRUCT(userId, days_since_last_purchase, orders, total_revenue, recency,
@@ -578,28 +578,9 @@ WITH (
 );
 ```
 
-#### Infoga en målgrupp {#insert-an-audience}
+#### Skapa en tom målgruppsdatauppsättning {#create-empty-audience-dataset}
 
-Om du vill lägga till profiler till en befintlig målgrupp använder du kommandot `INSERT INTO`. På så sätt kan ni lägga till enskilda profiler eller hela målgrupper i en befintlig målgruppsdatauppsättning.
-
-```sql
--- Insert profiles into the audience dataset
-INSERT INTO AUDIENCE adls_rfm_audience 
-SELECT 
-    _{TENANT_ID}.userId, 
-    _{TENANT_ID}.days_since_last_purchase, 
-    _{TENANT_ID}.orders, 
-    _{TENANT_ID}.total_revenue, 
-    _{TENANT_ID}.recency, 
-    _{TENANT_ID}.frequency, 
-    _{TENANT_ID}.monetization 
-FROM adls_rfm_profile 
-WHERE _{TENANT_ID}.rfm_model = '6. Slipping - Once Loyal, Now Gone';
-```
-
-#### Lägga till profiler till en målgrupp {#add-profiles-to-audience}
-
-Använd följande SQL-kommandon för att skapa och fylla i en målgrupp:
+Skapa en tom datauppsättning för att lagra målgruppsposter innan du lägger till profiler.
 
 ```sql
 -- Create an empty audience dataset
@@ -620,11 +601,28 @@ SELECT
 WHERE FALSE;
 ```
 
+#### Infoga profiler i en befintlig målgrupp {#insert-an-audience}
+
+Om du vill lägga till profiler till en befintlig publik använder du kommandot INSERT INTO. På så sätt kan ni lägga till enskilda profiler eller hela målgruppssegment i en befintlig målgruppsdatauppsättning.
+
+```sql
+-- Insert profiles into the audience dataset
+INSERT INTO AUDIENCE adls_rfm_audience 
+SELECT 
+    _{TENANT_ID}.userId, 
+    _{TENANT_ID}.days_since_last_purchase, 
+    _{TENANT_ID}.orders, 
+    _{TENANT_ID}.total_revenue, 
+    _{TENANT_ID}.recency, 
+    _{TENANT_ID}.frequency, 
+    _{TENANT_ID}.monetization 
+FROM adls_rfm_profile 
+WHERE _{TENANT_ID}.rfm_model = '6. Slipping - Once Loyal, Now Gone';
+```
+
 #### Ta bort en målgrupp {#delete-an-audience}
 
-Om du vill ta bort en befintlig målgrupp använder du kommandot `DROP AUDIENCE`. Om målgruppen inte finns inträffar ett undantag om inte `IF EXISTS` anges.
-
-Använd följande SQL-kommando för att ta bort en målgrupp:
+Om du vill ta bort en befintlig målgrupp använder du kommandot DROP AUDIENCE. Om målgruppen inte finns inträffar ett undantag såvida inte IF EXISTS anges.
 
 ```sql
 DROP AUDIENCE IF EXISTS adls_rfm_audience;
