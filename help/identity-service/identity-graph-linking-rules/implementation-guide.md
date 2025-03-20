@@ -2,9 +2,9 @@
 title: Implementeringsguide för regler för länkning av identitetsdiagram
 description: Lär dig de rekommenderade stegen som ska följas när du implementerar data med länkningsregler för identitetsdiagram.
 exl-id: 368f4d4e-9757-4739-aaea-3f200973ef5a
-source-git-commit: 7174c2c0d8c4ada8d5bba334492bad396c1cfb34
+source-git-commit: 9243da3ebe5e963ec457da5ae3e300e852787d37
 workflow-type: tm+mt
-source-wordcount: '1676'
+source-wordcount: '1713'
 ht-degree: 0%
 
 ---
@@ -58,7 +58,12 @@ Med ett unikt namnutrymme (i det här fallet ett CRMID i stället för två olik
 
 Om du använder [Adobe Analytics-källkopplingen](../../sources/tutorials/ui/create/adobe-applications/analytics.md) för att importera data måste du ge dina ECID högre prioritet än Adobe Analytics ID (AAID) eftersom identitetstjänsten blockerar AAID. Genom att prioritera ECID kan du instruera kundprofilen i realtid att lagra oautentiserade händelser i ECID i stället för i AID.
 
-### XDM-upplevelsehändelser
+### XDM-upplevelsehändelser {#xdm-experience-events}
+
+>[!CONTEXTUALHELP]
+>id="platform_identities_linkingrules_xdm"
+>title="Se till att du har en identifierare för en person"
+>abstract="Under förimplementeringsprocessen måste du se till att de autentiserade händelser som skickas till Experience Platform alltid innehåller en **enskild**-personidentifierare, till exempel ett CRMID."
 
 Under förimplementeringsprocessen kontrollerar du att de autentiserade händelser som skickas till Experience Platform alltid innehåller en personidentifierare, till exempel CRMID.
 
