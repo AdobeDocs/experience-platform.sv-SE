@@ -2,9 +2,9 @@
 title: Tips för att maximera värdet med Adobe Experience Platform Data Distiller - OS656
 description: Lär dig att maximera värdet med Adobe Experience Platform Data Distiller genom att berika kundprofildata i realtid och använda beteendeinsikter för att skapa riktade målgrupper. Den här resursen innehåller ett exempel på en datamängd och en fallstudie som visar hur man använder modellen för senaste, frekventa, monetära (RFM) för kundsegmentering.
 exl-id: f3af4b9a-5024-471a-b740-a52fd226a985
-source-git-commit: cfa8395e68ed828be5095a979d5bf0ea6e9a9ae9
+source-git-commit: 30db967fc94d8f5b9ded22ce81da3d51001610af
 workflow-type: tm+mt
-source-wordcount: '3578'
+source-wordcount: '3624'
 ht-degree: 0%
 
 ---
@@ -18,6 +18,16 @@ Genom fallstudien Luma kommer du att analysera användarbeteendedata och skapa e
 ## Förutsättning
 
 Din Adobe Experience Platform-instans måste ha licens för [Data Distiller](./overview.md) för att kunna köra det här användningsfallet. Kontakta Adobe om du vill ha mer information.
+
+Du måste också känna till din **organisations klient-ID**, vilket krävs för att köra frågor. Ditt klient-ID är den första delen av webbadressen när du loggar in på Experience Platform, som visas direkt efter @-symbolen.
+
+I följande URL:
+
+```http
+https://experience.adobe.com/#/@pfreportingonprod/sname:prod/platform/home
+```
+
+Klient-ID är `pfreportingonprod`.
 
 ## Översikt över RFM-modellen {#rfm-overview}
 
