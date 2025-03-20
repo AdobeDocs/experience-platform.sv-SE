@@ -1,19 +1,19 @@
 ---
-keywords: Experience Platform;hem;populära ämnen;frågetjänst;frågetjänst;felsökningsguide;faq;felsökning;
+keywords: Experience Platform;home;populära topics;query service;Query service;felsökningsguide;faq;troubleshooting;
 solution: Experience Platform
 title: Fråga service och data Distiller frågor och svar
 description: Det här dokumentet innehåller vanliga frågor och svar om Query Service och Data Distiller. Här finns ämnen som export av data, verktyg från tredje part och PSQL-fel.
 exl-id: 14cdff7a-40dd-4103-9a92-3f29fa4c0809
-source-git-commit: dc15ab9b94513d3acdf0e62ef0fec710c05a9fc9
+source-git-commit: ef4c7f20710f56ca0de7c0dfdb99751ff2fe8ebe
 workflow-type: tm+mt
-source-wordcount: '5037'
+source-wordcount: '5006'
 ht-degree: 0%
 
 ---
 
 # Fråga service och data Distiller frågor och svar
 
-Det här dokumentet besvarar vanliga frågor om Query Service och Data Distiller. Den innehåller även vanliga felkoder när man använder produkten &quot;Frågor&quot; för datavalidering eller skriver transformerade data tillbaka till datasjön. Om du har frågor eller vill felsöka andra Adobe Experience Platform-tjänster kan du läsa [felsökningsguiden för Experience Platform](../landing/troubleshooting.md).
+Det här dokumentet besvarar vanliga frågor om Query Service och Data Distiller. Den innehåller även vanliga felkoder när man använder produkten &quot;Frågor&quot; för datavalidering eller skriver transformerade data tillbaka till datasjön. Om du har frågor eller vill felsöka andra Adobe Experience Platform-tjänster kan du läsa [Experience Platform felsökningsguide](../landing/troubleshooting.md).
 
 Här är två grundläggande frågor för att klargöra hur Query Service och Data Distiller samverkar inom Adobe Experience Platform.
 
@@ -86,17 +86,6 @@ I gruppfrågor stöds inte uppdatering av en rad i datauppsättningen.
 Nej. Det finns ingen gräns för datastorlek, men det finns en timeout för frågor på 10 minuter från en interaktiv session. Om frågan körs som en batch-CTAS gäller inte en 10-minuterstimeout. Mer information finns i vägledningen om [interaktiv frågekörning](./best-practices/writing-queries.md#interactive-query-execution).
 +++
 
-### Hur åsidosätter jag gränsen för antalet utgående rader i en SELECT-fråga?
-
-+++Svar
-Om du vill kringgå gränsen för utdataraden använder du &quot;LIMIT 0&quot; i frågan. Exempel:
-
-```sql
-SELECT * FROM customers LIMIT 0;
-```
-
-+++
-
 ### Hur stoppar jag mina frågor från att tajma ut på tio minuter?
 
 +++Svar
@@ -159,19 +148,19 @@ Det kan finnas många orsaker till att en fråga har fastnat under bearbetningen
 ### Hur kontaktar jag Adobe kundsupport? {#customer-support}
 
 +++Svar
-[En fullständig lista över telefonnummer till kundsupport för Adobe](https://helpx.adobe.com/ca/contact/phone.html) finns på hjälpsidan för Adobe. Du kan även hitta hjälp online genom att utföra följande steg:
+[En fullständig lista över Adobe telefonnummer för kundsupport](https://helpx.adobe.com/ca/contact/phone.html) finns på hjälpsidan för Adobe. Du kan även hitta hjälp online genom att utföra följande steg:
 
 - Navigera till [https://www.adobe.com/](https://www.adobe.com/) i webbläsaren.
 - Välj **[!UICONTROL Sign In]** till höger om det övre navigeringsfältet.
 
-![Webbplatsen Adobe med inloggning markerad.](./images/troubleshooting/adobe-sign-in.png)
+![Adobe webbplats med inloggning markerad.](./images/troubleshooting/adobe-sign-in.png)
 
-- Använd ditt Adobe ID och lösenord som är registrerat med din licens för Adobe.
+- Använd ditt Adobe ID och lösenord som är registrerat med din Adobe-licens.
 - Välj **[!UICONTROL Help & Support]** i det övre navigeringsfältet.
 
 ![Den översta listrutan i navigeringsfältet med Hjälp och support, Enterprise Support och Kontakta oss är markerade.](./images/troubleshooting/help-and-support.png)
 
-En rullgardinsmeny med avsnittet [!UICONTROL Help and support] visas. Välj **[!UICONTROL Contact us]** om du vill öppna den virtuella kundtjänstassistenten på Adobe eller välj **[!UICONTROL Enterprise support]** om du vill ha dedikerad hjälp för stora organisationer.
+En rullgardinsmeny med avsnittet [!UICONTROL Help and support] visas. Välj **[!UICONTROL Contact us]** om du vill öppna den virtuella kundtjänstassistenten för Adobe, eller välj **[!UICONTROL Enterprise support]** om du vill ha dedikerad hjälp för stora organisationer.
 +++
 
 ### Hur implementerar jag en sekventiell serie med jobb, utan att köra efterföljande jobb om det tidigare jobbet inte slutförs korrekt?
@@ -187,7 +176,7 @@ Mer information finns i [dokumentationen för anonyma block](./key-concepts/anon
 +++Svar
 Det finns två sätt att implementera anpassad attribuering:
 
-1. Använd en kombination av de befintliga [Adobe-definierade funktionerna](./sql/adobe-defined-functions.md) för att identifiera om användningsbehoven uppfylls.
+1. Använd en kombination av befintliga [Adobe-definierade funktioner](./sql/adobe-defined-functions.md) för att identifiera om användningsbehoven uppfylls.
 1. Om föregående förslag inte uppfyller ditt användningssätt bör du använda en kombination av [fönsterfunktioner](./sql/adobe-defined-functions.md#window-functions). Fönsterfunktioner tittar på alla händelser i en sekvens. De gör det även möjligt att granska historiska data och kan användas i valfri kombination.
 +++
 
@@ -204,7 +193,7 @@ Om du vill hämta felloggar för en viss fråga måste du först använda API:t 
 
 Använd kommandot GET för att hämta flera frågor. Information om hur du anropar API finns i [exempeldokumentationen för API-anrop](./api/queries.md#sample-api-calls).
 
-Identifiera den fråga du vill undersöka från svaret och gör en annan GET-förfrågan med hjälp av dess `id`-värde. Fullständiga instruktioner finns i [Hämta en fråga efter ID-dokumentation](./api/queries.md#retrieve-a-query-by-id).
+Identifiera den fråga du vill undersöka från svaret och gör en annan GET-begäran med hjälp av dess `id`-värde. Fullständiga instruktioner finns i [Hämta en fråga efter ID-dokumentation](./api/queries.md#retrieve-a-query-by-id).
 
 Ett lyckat svar returnerar HTTP-status 200 och innehåller arrayen `errors`. Svaret har förkortats av kortfattad anledning.
 
@@ -738,7 +727,7 @@ INSERT INTO-frågor kallas ITAS-frågor. Observera att CREATE TABLE-frågor kall
 
 ## Tredjepartsverktyg {#third-party-tools}
 
-Detta avsnitt innehåller information om användning av tredjepartsverktyg som PSQL och Power BI.
+I det här avsnittet finns information om hur du använder verktyg från tredje part som PSQL och Power BI.
 
 ### Kan jag ansluta frågetjänsten till ett verktyg från tredje part?
 
@@ -768,7 +757,7 @@ Alla SQL-redigerare från tredje part som är PSQL- eller [!DNL Postgres]-klient
 ### Kan jag ansluta Power BI-verktyget till Query Service?
 
 +++Svar
-Ja, du kan ansluta Power BI till frågetjänsten. I dokumentationen finns [instruktioner om hur du ansluter Power BI-datorprogrammet till frågetjänsten](./clients/power-bi.md).
+Ja, du kan ansluta Power BI till Query Service. I dokumentationen finns [instruktioner om hur du ansluter Power BI-datorprogrammet till frågetjänsten](./clients/power-bi.md).
 +++
 
 ### Varför tar det lång tid att läsa in kontrollpanelerna när de är anslutna till Query Service?
@@ -776,7 +765,7 @@ Ja, du kan ansluta Power BI till frågetjänsten. I dokumentationen finns [instr
 +++Svar
 När systemet är anslutet till frågetjänsten är det anslutet till en interaktiv motor eller batchbearbetningsmotor. Detta kan leda till längre inläsningstider för att återspegla de bearbetade data.
 
-Om du vill förbättra svarstiderna för dina instrumentpaneler bör du implementera en Business Intelligence-server (BI) som ett cachelagringslager mellan Query Service och BI-verktyg. I allmänhet har de flesta BI-verktyg ett extra erbjudande för en server.
+Om du vill förbättra svarstiderna för dina instrumentpaneler bör du implementera en Business Intelligence (BI)-server som ett cachelagringslager mellan Query Service och BI-verktyg. I allmänhet har de flesta BI-verktyg ett extra erbjudande för en server.
 
 Syftet med att lägga till cacheserverlagret är att cachelagra data från frågetjänsten och använda samma för kontrollpaneler för att snabba upp svaret. Detta är möjligt eftersom resultaten för frågor som körs cachelagras i BI-servern varje dag. Cachelagringsservern skickar sedan dessa resultat till alla användare med samma fråga för att minska fördröjningen. Se dokumentationen för verktyget eller tredjepartsverktyget som du använder för att få mer information om den här konfigurationen.
 +++

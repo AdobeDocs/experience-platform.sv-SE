@@ -2,7 +2,7 @@
 title: Textbundna mallar
 description: Lär dig återanvända flera villkor i flera frågor med infogade mallar.
 exl-id: 78959070-f9e5-4736-b72a-a8ef518bfa4f
-source-git-commit: 37aeff5131b9f67dbc99f6199918403e699478c8
+source-git-commit: ef4c7f20710f56ca0de7c0dfdb99751ff2fe8ebe
 workflow-type: tm+mt
 source-wordcount: '486'
 ht-degree: 0%
@@ -42,7 +42,7 @@ När frågan körs ersätter frågetjänsten mallnamnet med början från hash-s
 
 Du kan använda mallar för att lagra ett eller flera villkor. De behöver inte vara en komplett fråga själva. Om mallen innehåller en giltig fråga kan du köra frågan genom att anropa mallnamnet som föregås av en hash-symbol. Om du till exempel lagrade `SELECT * FROM JUNE_2023_LOYALTY_MEMBERS;` som en mall med namnet `JUNE_2023_LOYALTY_MEMBERS` kör kommandot `#JUNE_2023_LOYALTY_MEMBERS;` den giltiga frågan som finns i mallen.
 
->
+>[!NOTE]
 >
 >I Adobe Experience Platform-användargränssnittet stöds textbundna mallar i form av parametriserade frågor bara på överordnad nivå. Detta innebär att parametriserade frågor bara fungerar när de används i den ursprungliga mallen. Den underordnade mallen måste vara en statisk mall och kan inte ha dynamiska parametrar. Mer information finns i [dokumentationen för parametriserade frågor](../ui/parameterized-queries.md).
 
