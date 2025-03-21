@@ -5,9 +5,9 @@ breadcrumb-title: Användarhandbok om segmenteringstjänst
 user-guide-description: Bygg målgrupper utifrån dina kundprofildata i realtid med segmentdefinitioner som har genererats av Adobe Experience Platform eller externa källor.
 feature: Segments
 role: User
-source-git-commit: be480fee733eb786c5488a9a10d04a62ef845566
+source-git-commit: a0543777e9a72f3a9ed6ff19e8b11973eb647b6b
 workflow-type: tm+mt
-source-wordcount: '200'
+source-wordcount: '203'
 ht-degree: 24%
 
 ---
@@ -45,6 +45,7 @@ ht-degree: 24%
    - [Gruppsegmentering](methods/batch-segmentation.md)
    - [Direktuppspelningssegmentering](methods/streaming-segmentation.md)
    - [Edge segmentering](methods/edge-segmentation.md)
+   - [Flexibel utvärdering av målgrupper](methods/flexible-audience-evaluation.md)
 - Målgruppstyper {#types}
    - [Översikt](types/overview.md)
    - [Målgrupper](types/people-audiences.md)

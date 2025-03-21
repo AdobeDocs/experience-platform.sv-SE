@@ -2,9 +2,9 @@
 title: Översikt över målportalen
 description: Lär dig hur du använder Audience Portal för att visa, hantera och skapa målgrupper i Adobe Experience Platform.
 exl-id: 505ac22e-05f3-423a-a9a0-7f3470af8945
-source-git-commit: 5220fa9be3f567d72f864d35596f6b219f15fb9d
+source-git-commit: a0543777e9a72f3a9ed6ff19e8b11973eb647b6b
 workflow-type: tm+mt
-source-wordcount: '4396'
+source-wordcount: '4348'
 ht-degree: 0%
 
 ---
@@ -221,11 +221,6 @@ När du tillämpar gruppåtgärder på målgrupper gäller följande villkor:
 - Om du väljer ett filter återställs de valda målgrupperna **till**.
 
 #### [!BADGE Begränsad tillgänglighet]{type=Informative} Flexibel målgruppsutvärdering {#flexible-audience-evaluation}
-
->[!CONTEXTUALHELP]
->id="platform_segmentation_browse_flexibleaudienceevaluation"
->title="Flexibla gränser för målgruppsutvärdering"
-abstract="Ni kan utvärdera upp till 20 målgrupper i en enda flexibel utvärderingsrunda.<br/><br/>Även om utvärderingsjobbet körs så snart som möjligt kan det uppstå systemfördröjningar eftersom on-demand-utvärderingar <b>inte</b> kan köras samtidigt som en annan on-demand- eller batch-utvärdering."
 
 Med flexibel målgruppsutvärdering kan ni köra ett segmenteringsjobb på begäran. Välj de målgrupper som du vill ha utvärderade och välj **[!UICONTROL Evaluate audiences]**.
 
