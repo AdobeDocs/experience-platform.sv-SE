@@ -2,9 +2,9 @@
 title: Implementeringsguide för regler för länkning av identitetsdiagram
 description: Lär dig de rekommenderade stegen som ska följas när du implementerar data med länkningsregler för identitetsdiagram.
 exl-id: 368f4d4e-9757-4739-aaea-3f200973ef5a
-source-git-commit: 9243da3ebe5e963ec457da5ae3e300e852787d37
+source-git-commit: 2dadb3a0a79f4d187dd096177130802f511a6917
 workflow-type: tm+mt
-source-wordcount: '1713'
+source-wordcount: '1766'
 ht-degree: 0%
 
 ---
@@ -65,11 +65,16 @@ Om du använder [Adobe Analytics-källkopplingen](../../sources/tutorials/ui/cre
 >title="Se till att du har en identifierare för en person"
 >abstract="Under förimplementeringsprocessen måste du se till att de autentiserade händelser som skickas till Experience Platform alltid innehåller en **enskild**-personidentifierare, till exempel ett CRMID."
 
-Under förimplementeringsprocessen kontrollerar du att de autentiserade händelser som skickas till Experience Platform alltid innehåller en personidentifierare, till exempel CRMID.
+Under förimplementeringsprocessen måste du se till att de autentiserade händelser som skickas till Experience Platform alltid innehåller en **enskild**-personidentifierare, till exempel ett CRMID.
+
+* (Rekommenderas) Autentiserade händelser med en person-ID.
+* (Rekommenderas inte) Autentiserade händelser med två personidentifierare.
+* (Rekommenderas inte) Autentiserade händelser utan någon personidentifierare.
+
 
 >[!BEGINTABS]
 
->[!TAB Autentiserade händelser med personidentifierare]
+>[!TAB Autentiserade händelser med en person-ID]
 
 ```json
 {
@@ -98,8 +103,57 @@ Under förimplementeringsprocessen kontrollerar du att de autentiserade händels
 }
 ```
 
->[!TAB Autentiserade händelser utan personidentifierare]
+>[!TAB Autentiserade händelser med två personidentifierare]
 
+Om systemet skickar två personidentifierare kan implementeringen misslyckas med kravet på namnutrymme för en person. Om identityMap i din webSDK-implementering till exempel innehåller ett CRMID, ett customerID och ett ECID-namnutrymme, finns det ingen garanti för att varje enskild händelse ska innehålla både CRMID och customerID.
+
+Bäst är att du skickar en nyttolast som ser ut så här:
+
+```json
+{
+  "_id": "test_id",
+  "identityMap": {
+      "ECID": [
+          {
+              "id": "62486695051193343923965772747993477018",
+              "primary": false
+          }
+      ],
+      "CRMID": [
+          {
+              "id": "John",
+              "primary": true
+          }
+      ],
+      "customerID": [
+          {
+            "id": "Jane",
+            "primary": false
+          }
+      ],
+  },
+  "timestamp": "2024-09-24T15:02:32+00:00",
+  "web": {
+      "webPageDetails": {
+          "URL": "https://business.adobe.com/",
+          "name": "Adobe Business"
+      }
+  }
+}
+```
+
+Det är dock viktigt att komma ihåg att det inte finns någon garanti för att en oönskad komprimering av diagram kan förhindras på grund av implementerings- eller datafel, även om du kan skicka två personidentifierare. Tänk på följande scenario:
+
+* `timestamp1` = John loggar in -> systemhämtningar `CRMID: John, ECID: 111`. `customerID: John` finns dock inte i den här händelsenyttolasten.
+* `timestamp2` = Jane loggar in -> systemhämtningar `customerID: Jane, ECID: 111`. `CRMID: Jane` finns dock inte i den här händelsenyttolasten.
+
+Därför är det bäst att endast skicka en person-ID med dina autentiserade händelser.
+
+I diagramsimuleringar kan det här intrycket se ut så här:
+
+![Gränssnittet för diagramsimulering med ett exempeldiagram återgivet.](../images/implementation/example-graph.png)
+
+>[!TAB Autentiserade händelser utan personidentifierare]
 
 ```json
 {
@@ -122,27 +176,7 @@ Under förimplementeringsprocessen kontrollerar du att de autentiserade händels
 }
 ```
 
-
 >[!ENDTABS]
-
-Under förimplementeringsprocessen måste du se till att de autentiserade händelser som skickas till Experience Platform alltid innehåller en **enskild**-personidentifierare, till exempel ett CRMID.
-
-* (Rekommenderas) Autentiserade händelser med en person-ID.
-* (Rekommenderas inte) Autentiserade händelser med två personidentifierare.
-* (Rekommenderas inte) Autentiserade händelser utan någon personidentifierare.
-
-Om systemet skickar två personidentifierare kan implementeringen misslyckas med kravet på namnutrymme för en person. Om identityMap i din webSDK-implementering till exempel innehåller ett CRMID, ett customerID och ett ECID-namnutrymme, kan två personer som delar en enhet kopplas felaktigt till olika namnutrymmen.
-
-Inom identitetstjänsten kan den här implementeringen se ut så här:
-
-* `timestamp1` = John loggar in -> systemhämtningar `CRMID: John, ECID: 111`.
-* `timestamp2` = Jane loggar in -> systemhämtningar `customerID: Jane, ECID: 111`.
-
-+++Visa hur implementeringen kan se ut i diagramsimuleringar
-
-![Gränssnittet för diagramsimulering med ett exempeldiagram återgivet.](../images/implementation/example-graph.png)
-
-+++
 
 ## Ange behörigheter {#set-permissions}
 

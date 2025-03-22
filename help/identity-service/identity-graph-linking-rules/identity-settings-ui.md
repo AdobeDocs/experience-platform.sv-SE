@@ -2,9 +2,9 @@
 title: Användargränssnitt för identitetsinställningar
 description: Lär dig hur du använder användargränssnittet för identitetsinställningar.
 exl-id: 738b7617-706d-46e1-8e61-a34855ab976e
-source-git-commit: 7174c2c0d8c4ada8d5bba334492bad396c1cfb34
+source-git-commit: 0b4d9a493df6125decc6c46ddcd404f0bb1c9c6a
 workflow-type: tm+mt
-source-wordcount: '589'
+source-wordcount: '623'
 ht-degree: 0%
 
 ---
@@ -13,9 +13,7 @@ ht-degree: 0%
 
 >[!AVAILABILITY]
 >
->* Länkningsreglerna för identitetsdiagram är för närvarande begränsade. Kontakta ditt Adobe-kontoteam för information om hur du får tillgång till funktionen i utvecklingssandlådor.
->
->* Ditt konto måste ha behörigheten **Visa identitetsdiagram** för att kunna komma åt identitetsinställningarna i gränssnittet. Mer information finns i [handboken om behörigheter i attributbaserad åtkomstkontroll](../../access-control/abac/ui/permissions.md).
+>Länkningsreglerna för identitetsdiagram är för närvarande begränsade. Kontakta ditt Adobe-kontoteam för information om hur du får tillgång till funktionen i utvecklingssandlådor.
 
 Identitetsinställningar är en funktion i användargränssnittet för Adobe Experience Platform Identity Service som du kan använda för att ange unika namnutrymmen och konfigurera namnområdesprioritet.
 
@@ -31,6 +29,15 @@ Läs följande dokument innan du börjar arbeta med identitetsinställningar:
 * [Exempel på diagramkonfigurationer](./example-configurations.md)
 * [Namnområdesprioritet](./namespace-priority.md)
 * [Diagramsimulering](./graph-simulation.md)
+
+### Ange behörigheter {#set-permissions}
+
+Därefter måste du se till att ditt konto har följande behörigheter:
+
+* **[!UICONTROL View Identity Settings]**: Använd den här behörigheten för att kunna visa unika namnutrymmen och namnområdesprioritet på ID-namnutrymmets bläddringssida.
+* **[!UICONTROL Edit Identity Settings]**: Använd den här behörigheten för att kunna redigera och spara dina identitetsinställningar.
+
+Kontakta administratören om du inte har dessa behörigheter. Mer information finns i [behörighetshandboken](../../access-control/abac/ui/permissions.md).
 
 ## Konfigurera dina identitetsinställningar
 
