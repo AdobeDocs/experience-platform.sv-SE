@@ -1,22 +1,30 @@
 ---
 keywords: luftfartygsattribut;luftfartygets destination
 title: Luftfartygsattribut, anslutning
-description: Skicka smidigt data från Adobe till Airship som målgruppsattribut för målinriktning inom Airship.
+description: Skicka enkelt Adobe Audience Data till Airship som målgruppsattribut för målinriktning inom Airship.
 exl-id: bfc1b52f-2d68-40d6-9052-c2ee1e877961
-source-git-commit: c35b43654d31f0f112258e577a1bb95e72f0a971
+source-git-commit: 453884612e787439ea58f312d8080622ee0441f7
 workflow-type: tm+mt
-source-wordcount: '1001'
+source-wordcount: '1102'
 ht-degree: 0%
 
 ---
 
 # [!DNL Airship Attributes]-anslutning {#airship-attributes-destination}
 
+>[!IMPORTANT]
+>
+>* Från och med 25 mars 2025 kan du se två [!DNL Airship Attributes]-kort sida vid sida i målkatalogen. Detta beror på en intern uppgradering av måltjänsten. Den befintliga [!DNL Airship Attributes]-målkopplingen har bytt namn till **[!UICONTROL (Deprecated) Airship Attributes]** och du har nu tillgång till ett nytt kort med namnet **[!UICONTROL Airship Attributes]**.
+>* Använd anslutningen **[!UICONTROL Airship Attributes]** i katalogen för nya aktiveringsdataflöden. Om du har aktiva dataflöden till målet **[!UICONTROL (Deprecated) Airship Attributes]** uppdateras de automatiskt, så ingen åtgärd krävs från dig.
+>* Om du skapar dataflöden via [Flow Service API](https://developer.adobe.com/experience-platform-apis/references/destinations/) måste du uppdatera [!DNL flow spec ID] och [!DNL connection spec ID] till följande värden:
+>   * Flödesspecifikation-ID: `a862e0be-966e-4e5a-80d3-1bb566461986`
+>   * Anslutningsspecifikation-ID: `594bc002-4a47-49b7-8a98-ac0d21045502`
+
 ## Översikt {#overview}
 
 [!DNL Airship] är den ledande kundinteraktionsplattformen, som hjälper dig att leverera meningsfulla, personaliserade flerkanalsmeddelanden till användarna i alla faser av kundlivscykeln.
 
-Den här integreringen skickar profildata för Adobe till [!DNL Airship] som [Attribut](https://docs.airship.com/guides/audience/attributes/) för målinriktning eller utlösande åtgärder.
+Den här integreringen skickar Adobe-profildata till [!DNL Airship] som [Attribut](https://docs.airship.com/guides/audience/attributes/) för målinriktning eller utlösande åtgärder.
 
 Mer information om [!DNL Airship] finns i [Airship Docs](https://docs.airship.com).
 
@@ -41,7 +49,7 @@ I det här avsnittet beskrivs vilka typer av målgrupper du kan exportera till d
 
 | Målgruppsursprung | Stöds | Beskrivning |
 |---------|----------|----------|
-| [!DNL Segmentation Service] | ✓ | Publiker som genererats via Experience Platform [segmenteringstjänsten](../../../segmentation/home.md). |
+| [!DNL Segmentation Service] | ✓ | Publiker som genererats via Experience Platform [segmenteringstjänst](../../../segmentation/home.md). |
 | Anpassade överföringar | ✓ | Publikerna [importerade](../../../segmentation/ui/audience-portal.md#import-audience) till Experience Platform från CSV-filer. |
 
 {style="table-layout:auto"}
@@ -83,7 +91,7 @@ Utnyttja profildata som samlats in inom Adobe Experience Platform för att perso
 
 ### Använd skiftläge 2
 
-Utnyttja attribut från Adobe Experience Platform för att ytterligare berika [!DNL Airship]-profiler och kombinera dem med SDK eller [!DNL Airship] prediktiva data. En återförsäljare kan t.ex. skapa en målgrupp med lojalitetsstatus och platsdata (attribut från Platform) och [!DNL Airship] förväntas ändra data för att skicka extremt målinriktade meddelanden till användare med guldlojalitetsstatus som bor i Las Vegas, NV och har en hög sannolikhet för att bli bestulen.
+Utnyttja attribut från Adobe Experience Platform för att ytterligare berika [!DNL Airship]-profiler och kombinera dem med prediktiva data från SDK eller [!DNL Airship]. En återförsäljare kan t.ex. skapa en målgrupp med lojalitetsstatus och platsdata (attribut från Platform) och [!DNL Airship] förväntas ändra data för att skicka extremt målinriktade meddelanden till användare med guldlojalitetsstatus som bor i Las Vegas, NV och har en hög sannolikhet för att bli bestulen.
 
 ## Anslut till målet {#connect}
 
