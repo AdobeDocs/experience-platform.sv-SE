@@ -5,9 +5,9 @@ breadcrumb-title: Användarhandbok om Source Connectors
 user-guide-description: Mata in data från olika källor. Lär dig strukturera, etikettera och förbättra inmatad data.
 feature: Sources
 role: Developer
-source-git-commit: b900ef8cbbab78071d462484f088e17eb20fe9b6
+source-git-commit: 3ada2136e712abd1dad956cd579d6877b3e729c9
 workflow-type: tm+mt
-source-wordcount: '1047'
+source-wordcount: '1059'
 ht-degree: 6%
 
 ---
@@ -236,6 +236,7 @@ ht-degree: 6%
    - [Ta bort dataflöden](tutorials/api/delete-dataflows.md)
    - [Importera krypterade data](tutorials/api/encrypt-data.md)
    - [Spara ett dataflöde som ett utkast](tutorials/api/draft.md)
+   - [Tillämpa åtkomstetiketter på ett dataflöde](tutorials/api/labels.md)
 - Självstudiekurser för användargränssnitt {#ui-tutorials}
    - Skapa en källanslutning {#create}
       - Adobe-program {#adobe-applications}
@@ -361,6 +362,7 @@ ht-degree: 6%
    - [Ta bort dataflöden](tutorials/ui/delete.md)
    - [Prenumerera på källvarningar](tutorials/ui/alerts.md)
    - [Spara ett dataflöde som ett utkast](tutorials/ui/draft.md)
+   - [Tillämpa åtkomstetiketter på ett dataflöde](tutorials/ui/labels.md)
 - Självbetjänade källor (Batch SDK) {#sdk}
    - [Översikt](sources-sdk/overview.md)
    - Konfigurera anslutningsspecifikationen {#config}
