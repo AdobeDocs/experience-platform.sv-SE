@@ -1,19 +1,21 @@
 ---
-description: Lär dig mer om de IP-adresser som du måste lägga till i tillåtelselista för att kunna använda Adobe Experience Platform-källor.
-title: TILLÅTELSELISTA för IP-adress för källor
+description: Lär dig mer om IP-adresserna som du måste lägga till i tillåtelselista för att kunna använda Adobe Experience Platform-källor.
+title: IP-adress Tillåtelselista för källor
 exl-id: 40093c80-dbdb-4dc1-97bb-81a8200b731f
-source-git-commit: bb0e84ff26027e92d617b7fd0b85979dff501a7d
+source-git-commit: 719f1bca20d5118de14ebe324675bb0aab6161e8
 workflow-type: tm+mt
-source-wordcount: '210'
+source-wordcount: '242'
 ht-degree: 0%
 
 ---
 
 # IP-adress tillåtelselista
 
-Du kan definiera nätverksåtkomstkontroller via nätverkets brandvägg. Genom att ange rätt IP-källintervall kan du tillåta trafikflödet för dataöverföringstjänsten. Följande IP-adresser måste läggas till tillåtelselista innan du kan arbeta med källanslutningar. Om du inte lägger till dina regionspecifika IP-adresser i tillåtelselista kan det leda till fel eller sämre prestanda när du använder källor.
+Du kan definiera nätverksåtkomstkontroller via nätverkets brandvägg. Genom att ange rätt IP-källintervall kan du tillåta trafikflödet för dataöverföringstjänsten. Följande IP-adresser måste läggas till i en tillåtelselista innan du kan arbeta med källanslutningar. Om du inte lägger till dina regionspecifika IP-adresser i tillåtelselista kan det leda till fel eller sämre prestanda när du använder källor.
 
-## IP-adressen tillåtelselista för batchkällor {#batch}
+## IP-adresserna tillåtslista för källor som ansluter till Experience Platform på [!DNL Azure] {#azure}
+
+### Batchkällor på Experience Platform på [!DNL Azure] {#batch}
 
 Du måste lägga till följande IP-adresser i tillåtelselista för att tillåta trafikflödet för dataöverföringstjänsten för batchkällor.
 
@@ -21,7 +23,7 @@ Du måste lägga till följande IP-adresser i tillåtelselista för att tillåta
 
 >[!TAB VA7: Nordamerika]
 
-### VA7: Nordamerika
+#### VA7: Nordamerika
 
 - `20.42.2.0/23`
 - `20.42.4.0/26`
@@ -48,7 +50,7 @@ Du måste lägga till följande IP-adresser i tillåtelselista för att tillåta
 
 >[!TAB NLD2: Europa]
 
-### NLD2: Europa
+#### NLD2: Europa
 
 - `13.69.67.192/28`
 - `13.69.107.112/28`
@@ -60,7 +62,7 @@ Du måste lägga till följande IP-adresser i tillåtelselista för att tillåta
 
 >[!TAB AUS5: Australien]
 
-### AUS5: Australien
+#### AUS5: Australien
 
 - `13.70.74.144/28`
 - `20.37.193.0/25`
@@ -75,7 +77,7 @@ Du måste lägga till följande IP-adresser i tillåtelselista för att tillåta
 
 >[!TAB CAN2: Kanada]
 
-### CAN2: Kanada
+#### CAN2: Kanada
 
 - `13.71.175.80/28`
 - `20.38.147.224/28`
@@ -88,7 +90,7 @@ Du måste lägga till följande IP-adresser i tillåtelselista för att tillåta
 
 >[!TAB IND2: Indien]
 
-### IND2: Indien
+#### IND2: Indien
 
 - `20.43.121.48/28`
 - `20.192.42.0/24`
@@ -102,15 +104,15 @@ Du måste lägga till följande IP-adresser i tillåtelselista för att tillåta
 
 >[!ENDTABS]
 
-## IP-adress tillåtelselista för strömningskällor {#streaming}
+### Direktuppspelningskällor på Experience Platform på [!DNL Azure] {#streaming}
 
-Du måste lägga till följande IP-adresser i tillåtelselista för att tillåta trafikflödet för dataöverföringstjänsten för strömningskällor som [[!DNL Amazon Kinesis]](./connectors/cloud-storage/kinesis.md), [[!DNL Azure Event Hub]](./connectors/cloud-storage/eventhub.md), [[!DNL Google PubSub]](./connectors/cloud-storage/google-pubsub.md) och [[!DNL Snowflake Streaming]](./connectors/databases/snowflake-streaming.md).
+Du måste lägga till följande IP-adresser på tillåtelselista för att tillåta trafikflödet för dataöverföringstjänsten för direktuppspelningskällor som [[!DNL Amazon Kinesis]](./connectors/cloud-storage/kinesis.md), [[!DNL Azure Event Hub]](./connectors/cloud-storage/eventhub.md), [[!DNL Google PubSub]](./connectors/cloud-storage/google-pubsub.md) och [[!DNL Snowflake Streaming]](./connectors/databases/snowflake-streaming.md).
 
 >[!BEGINTABS]
 
 >[!TAB VA7: Nordamerika]
 
-### VA7: Nordamerika
+#### VA7: Nordamerika
 
 - `52.254.106.240/28`
 - `52.254.107.144/28`
@@ -137,7 +139,7 @@ Du måste lägga till följande IP-adresser i tillåtelselista för att tillåta
 
 >[!TAB NLD2: Europa]
 
-### NLD2: Europa
+#### NLD2: Europa
 
 - `51.138.17.0/28`
 - `51.138.16.176/28`
@@ -164,7 +166,7 @@ Du måste lägga till följande IP-adresser i tillåtelselista för att tillåta
 
 >[!TAB AUS5: Australien]
 
-### AUS5: Australien
+#### AUS5: Australien
 
 - `20.40.188.194`
 - `20.53.206.128`
@@ -194,7 +196,7 @@ Du måste lägga till följande IP-adresser i tillåtelselista för att tillåta
 
 >[!TAB CAN2: Kanada]
 
-### CAN2: Kanada
+#### CAN2: Kanada
 
 - `20.200.70.240/28`
 - `20.200.94.116`
@@ -224,7 +226,7 @@ Du måste lägga till följande IP-adresser i tillåtelselista för att tillåta
 
 >[!TAB GBR9: Storbritannien]
 
-### GBR9: Storbritannien
+#### GBR9: Storbritannien
 
 - `20.254.2.128/28`
 - `20.26.131.71`
@@ -254,7 +256,7 @@ Du måste lägga till följande IP-adresser i tillåtelselista för att tillåta
 
 >[!TAB IND2: Indien]
 
-### IND2: Indien
+#### IND2: Indien
 
 - `4.224.74.0/28`
 - `20.244.79.80/28`
@@ -285,3 +287,9 @@ Du måste lägga till följande IP-adresser i tillåtelselista för att tillåta
 - `4.188.4.138`
 
 >[!ENDTABS]
+
+## IP-adresser som ska tillåtslista för källanslutning till Experience Platform på [!DNL Amazon Web Services] (AWS) {#aws}
+
+Du måste lägga till följande IP-adress i tillåtelselista för att kunna ansluta källan till Experience i AWS:
+
+- `66.117.18.0/24`
