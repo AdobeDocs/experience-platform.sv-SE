@@ -2,9 +2,9 @@
 title: SFTP-värdar
 description: Lär dig hur du konfigurerar taggar i Adobe Experience Platform för att leverera biblioteksbyggen till en säker, självvärd SFTP-server.
 exl-id: 3c1dc43b-291c-4df4-94f7-a03b25dbb44c
-source-git-commit: b3c3bf0a39a30e8c9baf81ec20945497acef5465
+source-git-commit: 5b362d28eb3be5e2a45464390c694f7ae59f899c
 workflow-type: tm+mt
-source-wordcount: '791'
+source-wordcount: '856'
 ht-degree: 5%
 
 ---
@@ -19,7 +19,7 @@ Med Experience Platform kan du leverera kodbiblioteksbyggen till en säker SFTP-
 
 >[!NOTE]
 >
->Du kan också välja att använda en värd som hanteras av Adobe i stället. Mer information finns i guiden för [värdar som hanteras av Adobe](./managed-by-adobe-host.md).
+>Du kan också välja att använda en värd som hanteras av Adobe i stället. Mer information finns i guiden om [Adobe-hanterade värdar](./managed-by-adobe-host.md).
 >
 >Mer information om fördelar och begränsningar med självvärdande bibliotek finns i [självvärdshandboken](./self-hosting-libraries.md).
 
@@ -36,6 +36,22 @@ Du måste ha ett nyckelpar för offentlig/privat nyckel installerat på SFTP-ser
 Den privata nyckeln används för att kryptera den offentliga nyckeln. Du måste ange din privata nyckel när du skapar SFTP-värden. Mer information om hur du krypterar offentliga nycklar finns i avsnittet [Kryptera värden](../../../api/guides/encrypting-values.md) i Reaktors API-guide. Använd produktionsmiljöns GPG-nyckel om du inte vet att du behöver en viss. Slutligen kan du kryptera din privata nyckel från vilken dator som helst, så du behöver inte installera GPG på servern för att slutföra det här steget.
 
 ### IP-adresser för Tillåtslista-plattformen
+
+>[!IMPORTANT]
+>
+> Den 23 juni 2025 uppdaterar Adobe Launch externa IP-adresser som används för att ge stöd åt SFTP-värdtyp och API-funktioner för återanrop. Om du vill fortsätta använda någon av dessa funktioner måste du se till att brandväggsreglerna tillåter trafik från de nya IP-adresserna.
+>
+> För att upprätthålla oavbruten åtkomst rekommenderar vi att du lägger till de nya IP-adresserna nu och tar bort de gamla efter den 23 juni 2025.
+>
+>**Gamla IP-adresser:**
+> * `184.72.239.68`
+> * `23.20.85.113`
+> * `54.226.193.184`
+>
+>**Nya IP-adresser:**
+> * `34.227.138.75 `
+> * `44.194.43.191`
+> * `3.215.163.18`
 
 Du kan behöva godkänna en uppsättning IP-adresser som ska användas i företagets brandvägg för att plattformen ska kunna nå din SFTP-server och ansluta till den. Dessa IP-adresser är:
 
@@ -70,7 +86,7 @@ Dialogrutan utökas och innehåller ytterligare konfigurationsalternativ för SF
 | [!UICONTROL Don't Use Symlinks] | Som standard använder alla SFTP-värdar symboliska länkar (symboler) till referensbiblioteket [builds](../builds.md) som sparas på servern. Alla servrar har dock inte stöd för symboler. När det här alternativet är markerat använder värden en kopieringsåtgärd för att uppdatera byggmaterialet direkt i stället för att använda symboler. |
 | [!UICONTROL SFTP Server URL] | URL-bassökvägen för servern. |
 | [!UICONTROL Path] | Sökvägen som ska läggas till i basserverns URL för den här värden. |
-| [!UICONTROL Port] | Porten måste vara något av följande:<ul><li>`21`</li><li>`22`</li><li>`201`</li><li>`200`</li><li>`2002`</li><li>`2018`</li><li>`2022`</li><li>`2200`</li><li>`2222`</li><li>`2333`</li><li>`2939`</li><li>`443`</li><li>`4343`</li><li>`80`</li><li>`8080`</li><li>`8888`</li></ul>Av säkerhetsskäl bör Adobe begränsa antalet portar som kan användas för utgående trafik. De valda portarna är vanligtvis tillåtna via brandväggar och innehåller vissa intervall för flexibilitet. |
+| [!UICONTROL Port] | Porten måste vara något av följande:<ul><li>`21`</li><li>`22`</li><li>`201`</li><li>`200`</li><li>`2002`</li><li>`2018`</li><li>`2022`</li><li>`2200`</li><li>`2222`</li><li>`2333`</li><li>`2939`</li><li>`443`</li><li>`4343`</li><li>`80`</li><li>`8080`</li><li>`8888`</li></ul>Som en god säkerhetsrutin begränsar Adobe antalet portar som kan användas för utgående trafik. De valda portarna är vanligtvis tillåtna via brandväggar och innehåller vissa intervall för flexibilitet. |
 | [!UICONTROL Username] | Användarnamnet som ska användas vid åtkomst till servern. |
 | [!UICONTROL Encrypted Private Key] | Den krypterade privata nyckeln som du skapade i ett [föregående steg](#access-key). |
 
