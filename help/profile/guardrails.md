@@ -5,9 +5,9 @@ product: experience platform
 type: Documentation
 description: Läs om prestanda och systemstyrd säkerhet för profildata och segmentering för att säkerställa en optimal användning av Real-Time CDP-funktionalitet.
 exl-id: 33ff0db2-6a75-4097-a9c6-c8b7a9d8b78c
-source-git-commit: 5d972b6b4f59ca58ff3c4b76383db9ee7667dba3
+source-git-commit: 31f725fc30b8fd9a045c0aac5ee65832cd995363
 workflow-type: tm+mt
-source-wordcount: '2521'
+source-wordcount: '2609'
 ht-degree: 1%
 
 ---
@@ -127,6 +127,9 @@ De skyddsutkast som beskrivs i detta avsnitt avser antalet och typen av målgrup
 | Målgrupper per sandlåda | 50 | Systemstyrt skyddsräcke | Du kan skapa högst 50 kontomålgrupper i en sandlåda. När du har nått 50 målgrupper i en sandlåda inaktiveras kontrollen **[!UICONTROL Create audience]** när du försöker skapa en ny målgrupp. Läs mer om [kontominnen](/help/segmentation/types/account-audiences.md). |
 | Publicerade kompositioner per sandlåda | 10 | Prestandaskydd | Du kan ha högst 10 publicerade kompositioner i en sandlåda. Läs mer om [målgruppssammansättning i gränssnittsguiden](/help/segmentation/ui/audience-composition.md). |
 | Maximal målgruppsstorlek | 30 procent | Prestandaskydd | Rekommenderat maximalt medlemskap för en målgrupp är 30 procent av det totala antalet profiler i systemet. Det är möjligt att skapa målgrupper med över 30 % av profilerna som medlemmar eller flera stora målgrupper, men det påverkar systemets prestanda. |
+| Flexibla utvärderingsmöjligheter | 50 per år (produktionssandlåda)<br/>100 per år (utvecklingssandlåda) | Systemstyrt skyddsräcke | Du har högst 50 flexibla målgruppsutvärderingar per år per **produktion** sandlåda. Du har högst 100 flexibla målgruppsutvärderingar per år och **utvecklingssandlåda**. |
+| Flexibla utvärderingsmöjligheter | 2 per dag | Systemstyrt skyddsräcke | Du har högst två körningar per dag och sandlåda. |
+| Målgrupper per flexibel utvärderingsprocess | 20 | Systemstyrt skyddsräcke | Ni kan ha högst 20 målgrupper per flexibel utvärderingsperiod. |
 
 {style="table-layout:auto"}
 

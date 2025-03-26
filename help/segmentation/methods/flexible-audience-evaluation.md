@@ -2,11 +2,9 @@
 title: Flexibel guide för utvärdering av målgrupper
 description: Lär dig hur du använder flexibel målgruppsutvärdering för att köra batchsegmenteringsjobb på begäran.
 role: Developer, User
-hide: true
-hidefromtoc: true
-source-git-commit: a0543777e9a72f3a9ed6ff19e8b11973eb647b6b
+source-git-commit: 5c86161a2f9442d99426f2c05fb762cf50004049
 workflow-type: tm+mt
-source-wordcount: '877'
+source-wordcount: '980'
 ht-degree: 0%
 
 ---
@@ -32,6 +30,10 @@ Tänk på följande när du gör en flexibel utvärdering av målgruppen:
 - Alla målgrupper **måste** utvärderas med gruppsegmentering.
 - Alla målgrupper **måste** vara personbaserade.
 - Ni kan bara välja högst 20 målgrupper per flexibel utvärderingsperiod.
+
+>[!NOTE]
+>
+>Du *kan* köpa ytterligare flexibla utvärderingsversioner av målgrupper per år. Mer information får du av Adobe kundtjänst.
 
 ## Åtkomst {#access}
 
@@ -308,11 +310,17 @@ När du har bekräftat att rätt målgrupper finns med i listan kan du fortsätt
 
 >[!NOTE]
 >
->Om du kör en flexibel publikutvärdering måste du se till att frekvensen är inställd på **[!UICONTROL After segment evaluation]**. Om du kör en flexibel målgruppsutvärdering på målgrupper som redan är inställda på att aktiveras [efter segmentutvärderingen](../../destinations/ui/activate-batch-profile-destinations.md#export-full-files) aktiveras målgrupperna så snart det flexibla målgruppsutvärderingsjobbet har slutförts, oavsett eventuella tidigare dagliga aktiveringsjobb.
+>Status för segmentjobbet kan rapporteras som i läget&quot;Köad&quot; på kontrollpanelen. Du kan visa den senaste statusen för segmentjobbet genom att göra en GET-begäran till slutpunkten `/segment/jobs` och ange ID:t för segmentjobbet i sökvägen för begäran. Mer information om hur du använder den här slutpunkten finns på fliken API.
+>
+>Om du kör en flexibel målgruppsutvärdering och vill att utvärderingen ska aktivera målgruppen för ett mål, måste du se till att frekvensen är inställd på **[!UICONTROL After segment evaluation]**. Om du kör en flexibel målgruppsutvärdering på målgrupper som redan är inställda på att aktiveras [efter segmentutvärderingen](../../destinations/ui/activate-batch-profile-destinations.md#export-full-files) aktiveras målgrupperna så snart det flexibla målgruppsutvärderingsjobbet har slutförts, oavsett eventuella tidigare dagliga aktiveringsjobb.
 
 >[!ENDTABS]
 
-## Nästa steg {#next-steps}
+## Video {#video}
+
+I följande videofilm visas hur du får tillgång till och använder en flexibel målgruppsutvärdering i Experience Platform.
+
+>[!VIDEO](https://video.tv.adobe.com/v/3453640?)
 
 ## Vanliga frågor och svar {#faq}
 

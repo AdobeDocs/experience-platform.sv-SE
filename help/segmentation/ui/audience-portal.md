@@ -2,9 +2,9 @@
 title: Översikt över målportalen
 description: Lär dig hur du använder Audience Portal för att visa, hantera och skapa målgrupper i Adobe Experience Platform.
 exl-id: 505ac22e-05f3-423a-a9a0-7f3470af8945
-source-git-commit: a0543777e9a72f3a9ed6ff19e8b11973eb647b6b
+source-git-commit: 9eb5ccc24db58a887473f61c66a83aa92e16efa7
 workflow-type: tm+mt
-source-wordcount: '4348'
+source-wordcount: '4106'
 ht-degree: 0%
 
 ---
@@ -220,33 +220,9 @@ När du tillämpar gruppåtgärder på målgrupper gäller följande villkor:
 - Du **kan inte** ta bort en målgrupp som används i en målaktivering.
 - Om du väljer ett filter återställs de valda målgrupperna **till**.
 
-#### [!BADGE Begränsad tillgänglighet]{type=Informative} Flexibel målgruppsutvärdering {#flexible-audience-evaluation}
+#### Flexibel utvärdering av målgrupper {#flexible-audience-evaluation}
 
-Med flexibel målgruppsutvärdering kan ni köra ett segmenteringsjobb på begäran. Välj de målgrupper som du vill ha utvärderade och välj **[!UICONTROL Evaluate audiences]**.
-
->[!IMPORTANT]
->
-När du väljer målgrupper för flexibel utvärdering av målgrupper gäller följande villkor:
->
-- Du kan bara använda den flexibla målgruppsutvärderingen **två gånger** per dag. Den här gränsen återställs vid midnatt (UTC).
-- Du har **maximalt** av 50 flexibla målgruppsutvärderingar som körs per år.
-- Alla målgrupper som **måste** har ursprunget till segmenteringstjänsten.
-- Alla målgrupper **måste** utvärderas med gruppsegmentering.
-- Alla målgrupper **måste** vara personbaserade.
-- Målgrupperna kan **endast** aktiveras för mål i Platform.
-- Du kan bara välja högst 20 målgrupper.
-
-![De målgrupper som du vill använda flexibel målgruppsutvärdering för har valts.](../images/ui/audience-portal/evaluate-audiences.png)
-
-Popovern **[!UICONTROL Evaluate audiences on demand]** visas med en lista över målgrupper som ska utvärderas med segmentjobbet on demand. Om en målgrupp inte är berättigad att utvärderas på begäran tas den automatiskt bort från utvärderingsjobbet. Bekräfta att de listade målgrupperna är de som du vill ska utvärderas.
-
-![De målgrupper som kan utvärderas med flexibel målgruppsutvärdering visas.](../images/ui/audience-portal/evaluate-audiences-modal.png)
-
-När du har bekräftat att rätt målgrupper finns med i listan kan du fortsätta med begäran och den flexibla utvärderingen av målgruppen börjar. Du kan visa status för den här målgruppsutvärderingen i [utvärderingsjobbövervakningsvyn](../../dataflows/ui/monitor-audiences.md#evaluation-job-details).
-
->[!NOTE]
->
-Om du kör en flexibel publikutvärdering måste du se till att frekvensen är inställd på **[!UICONTROL After segment evaluation]**. Om du kör en flexibel målgruppsutvärdering på målgrupper som redan är inställda på att aktiveras [efter segmentutvärderingen](../../destinations/ui/activate-batch-profile-destinations.md#export-full-files) aktiveras målgrupperna så snart det flexibla målgruppsutvärderingsjobbet har slutförts, oavsett eventuella tidigare dagliga aktiveringsjobb.
+Med flexibel målgruppsutvärdering kan ni köra ett segmenteringsjobb på begäran. Om du vill veta mer om flexibel målgruppsutvärdering kan du läsa [den flexibla guiden för målgruppsutvärdering](../methods/flexible-audience-evaluation.md).
 
 ## Målgruppsinformation {#audience-details}
 
@@ -302,7 +278,7 @@ För plattformsgenererade målgrupper och kompositioner visar avsnittet **[!UICO
 
 >[!NOTE]
 >
-Det kan ta upp till 30 minuter för det totala antalet målgrupper att uppdatera när exportjobbet är klart.
+>Det kan ta upp till 30 minuter för det totala antalet målgrupper att uppdatera när exportjobbet är klart.
 
 Uppskattningar genereras med en provstorlek för den aktuella dagens exempeldata. Om det finns mindre än 1 miljon enheter i din profilbutik används hela datauppsättningen, för mellan 1 och 20 miljoner enheter används 1 miljon enheter och för över 20 miljoner enheter används 5 % av det totala antalet enheter. Mer information om hur du genererar uppskattningar finns i [uppskattningsgenereringsavsnittet](../tutorials/create-a-segment.md#estimate-and-preview-an-audience) i självstudiekursen för att skapa målgrupper.
 
@@ -312,7 +288,7 @@ För målgrupper med ursprung **[!UICONTROL Custom upload]** visar avsnittet **[
 
 >[!NOTE]
 >
-Det kan ta upp till 30 minuter efter exportjobbet för att profilantalet för målgruppen ska uppdateras fullständigt.
+>Det kan ta upp till 30 minuter efter exportjobbet för att profilantalet för målgruppen ska uppdateras fullständigt.
 
 ![Avsnittet med information om målgruppsinformation visas.](../images/ui/audience-portal/audience-details-ingestion-details.png)
 
@@ -330,7 +306,7 @@ Det kan ta upp till 30 minuter efter exportjobbet för att profilantalet för m�
 
 >[!NOTE]
 >
-Det bästa sättet att använda dataanvändningsetiketter på schemat är att använda dem. Du **kan inte** använda en dataanvändningsetikett direkt på målgruppen.
+>Det bästa sättet att använda dataanvändningsetiketter på schemat är att använda dem. Du **kan inte** använda en dataanvändningsetikett direkt på målgruppen.
 
 ### Aktiverade mål {#activated-destinations}
 
@@ -338,7 +314,7 @@ Avsnittet **[!UICONTROL Activated destinations]** visar de mål som den här må
 
 >[!NOTE]
 >
-Destinationer är en funktion som är tillgänglig med [!DNL Adobe Real-Time Customer Data Platform] och som gör att du kan exportera data till externa plattformar. Mer information om destinationer finns i [målöversikten](../../destinations/home.md). Mer information om hur du aktiverar ett segment till ett mål finns i [aktiveringsöversikt](../../destinations/ui/activation-overview.md).
+> Destinationer är en funktion som är tillgänglig med [!DNL Adobe Real-Time Customer Data Platform] och som gör att du kan exportera data till externa plattformar. Mer information om destinationer finns i [målöversikten](../../destinations/home.md). Mer information om hur du aktiverar ett segment till ett mål finns i [aktiveringsöversikt](../../destinations/ui/activation-overview.md).
 
 ### Profilexempel {#profile-samples}
 
@@ -364,10 +340,10 @@ Mer detaljerad information om varje [!DNL Profile] kan du se genom att välja [!
 
 ## Schemalagd segmentering {#scheduled-segmentation}
 
-[!CONTEXTUALHELP]
-id="platform_segments_browse_addallsegmentstoschedule"
-title="Lägg till alla målgrupper som ska schemaläggas"
-abstract="Gör det möjligt att inkludera alla målgrupper som utvärderats med batchsegmentering i den dagliga schemalagda uppdateringen. Inaktivera borttagning av alla målgrupper från den schemalagda uppdateringen."
+>[!CONTEXTUALHELP]
+>id="platform_segments_browse_addallsegmentstoschedule"
+>title="Lägg till alla målgrupper som ska schemaläggas"
+>abstract="Gör det möjligt att inkludera alla målgrupper som utvärderats med batchsegmentering i den dagliga schemalagda uppdateringen. Inaktivera borttagning av alla målgrupper från den schemalagda uppdateringen."
 
 När målgrupperna har skapats kan du sedan utvärdera dem via on-demand eller schemalagd (kontinuerlig) utvärdering. Utvärdering innebär att [!DNL Real-Time Customer Profile] data flyttas genom segmentjobb för att skapa motsvarande målgrupper. När målgrupperna har skapats sparas och lagras de så att de kan exporteras med [!DNL Experience Platform] API:er.
 
@@ -379,7 +355,7 @@ Du kan aktivera dina målgrupper för schemalagd utvärdering med hjälp av grä
 
 >[!NOTE]
 >
-Schemalagd utvärdering kan aktiveras för sandlådor med högst fem (5) sammanslagningsprinciper för [!DNL XDM Individual Profile]. Om din organisation har fler än fem sammanfogningsprinciper för [!DNL XDM Individual Profile] i en enda sandlådemiljö kommer du inte att kunna använda schemalagd utvärdering.
+>Schemalagd utvärdering kan aktiveras för sandlådor med högst fem (5) sammanslagningsprinciper för [!DNL XDM Individual Profile]. Om din organisation har fler än fem sammanfogningsprinciper för [!DNL XDM Individual Profile] i en enda sandlådemiljö kommer du inte att kunna använda schemalagd utvärdering.
 
 Scheman kan för närvarande bara skapas med API:t. Detaljerade steg för hur du skapar, redigerar och arbetar med scheman med API:t finns i självstudiekursen för utvärdering och åtkomst av segmenteringsresultat, särskilt avsnittet [schemalagd utvärdering med API:t](../tutorials/evaluate-a-segment.md#scheduled-evaluation).
 
@@ -393,7 +369,7 @@ Du kan välja **[!UICONTROL Create audience]** för att skapa en målgrupp.
 
 En pover visas där du kan välja mellan att sätta ihop en målgrupp eller skapa regler.
 
-![En portfölj som visar de två typerna of målgrupper som du kan skapa.](../images/ui/audience-portal/create-audience-type.png)
+![En portfölj som visar de två typer av målgrupper som du kan skapa.](../images/ui/audience-portal/create-audience-type.png)
 
 ### Målgruppssammansättning {#audience-composition}
 
@@ -417,7 +393,7 @@ Förutom målgruppskompositioner och segmentdefinitioner kan du använda Adobe F
 
 >[!IMPORTANT]
 >
-För att kunna importera en externt genererad publik måste **ha följande behörigheter:**, [!UICONTROL View segments], [!UICONTROL Manage segments] och [!UICONTROL Import audience]. Mer information om den här behörigheten finns i [åtkomstkontrollsöversikten](../../access-control/home.md#permissions).
+>För att kunna importera en externt genererad publik måste **ha följande behörigheter:**, [!UICONTROL View segments], [!UICONTROL Manage segments] och [!UICONTROL Import audience]. Mer information om den här behörigheten finns i [åtkomstkontrollsöversikten](../../access-control/home.md#permissions).
 
 Du kan välja **[!UICONTROL Import audience]** om du vill importera en externt genererad publik.
 
@@ -429,11 +405,11 @@ Arbetsflödet **[!UICONTROL Import audience CSV]** visas. Du kan välja en CSV-f
 
 >[!NOTE]
 >
-Den externa målgruppen **måste** vara i CSV-format, ha **maximalt** på 25 kolumner och vara mindre än 1 GB.
+>Den externa målgruppen **måste** vara i CSV-format, ha **maximalt** på 25 kolumner och vara mindre än 1 GB.
 >
-Dessutom kan du **inte** använda blanksteg eller streck i den första raden eller i de associerade kolumnerna i CSV-filen.
+>Dessutom kan du **inte** använda blanksteg eller streck i den första raden eller i de associerade kolumnerna i CSV-filen.
 >
-Den första radens värde kan till exempel vara &quot;FirstName&quot; eller &quot;First_Name&quot;, men det kan inte vara &quot;First Name&quot; eller &quot;First-Name&quot;.
+>Den första radens värde kan till exempel vara &quot;FirstName&quot; eller &quot;First_Name&quot;, men det kan inte vara &quot;First Name&quot; eller &quot;First-Name&quot;.
 
 När du har valt den CSV-fil som ska importeras visas en lista med exempeldata för den externt genererade målgruppen. När du har bekräftat att exempeldata är korrekta väljer du **[!UICONTROL Next]**.
 
@@ -449,10 +425,10 @@ Du kan också lägga till ytterligare information till den externt genererade m�
 
 >[!NOTE]
 >
-Om du använder ett anpassat externt målgrupps-ID måste det följa följande riktlinjer:
+>Om du använder ett anpassat externt målgrupps-ID måste det följa följande riktlinjer:
 >
-- Det **måste** börja med en bokstav (a-z eller A-Z), ett understreck (_) eller ett dollartecken ($).
-- Alla efterföljande tecken kan vara alfanumeriska (a-z, A-Z, 0-9), understreck (_) eller dollartecken ($).
+> - Det **måste** börja med en bokstav (a-z eller A-Z), ett understreck (_) eller ett dollartecken ($).
+> - Alla efterföljande tecken kan vara alfanumeriska (a-z, A-Z, 0-9), understreck (_) eller dollartecken ($).
 
 När du har fyllt i målgruppsinformationen väljer du **[!UICONTROL Next]**.
 
@@ -466,11 +442,11 @@ När du har bekräftat att informationen är korrekt väljer du **[!UICONTROL Fi
 
 >[!IMPORTANT]
 >
-Som standard har externt genererade målgrupper en dataförfallotid på 30 dagar. Förfallodatumet för data återställs om målgruppen uppdateras eller ändras på något sätt.
+>Som standard har externt genererade målgrupper en dataförfallotid på 30 dagar. Förfallodatumet för data återställs om målgruppen uppdateras eller ändras på något sätt.
 >
-Om din externt genererade publik dessutom innehåller känslig och/eller vårdrelaterad information måste du **använda** nödvändiga dataanvändningsetiketter innan du aktiverar den på något mål. Eftersom variabler från externt genererade målgrupper lagras i datasjön i stället för i kundprofilen i realtid, bör du **inte** ta med medgivandedata i CSV-filen.
+>Om din externt genererade publik dessutom innehåller känslig och/eller vårdrelaterad information måste du **använda** nödvändiga dataanvändningsetiketter innan du aktiverar den på något mål. Eftersom variabler från externt genererade målgrupper lagras i datasjön i stället för i kundprofilen i realtid, bör du **inte** ta med medgivandedata i CSV-filen.
 >
-Mer information om hur du använder dataanvändningsetiketter finns i dokumentationen om [hantering av etiketter](../../access-control/abac/ui/labels.md). Mer information om etiketter för dataanvändning på plattformen i allmänhet finns i översikten över [etiketter för dataanvändning](../../data-governance/labels/overview.md). Läs [Frågor och svar](../faq.md#consent) om du vill veta hur samtycke fungerar i externt genererade målgrupper.
+>Mer information om hur du använder dataanvändningsetiketter finns i dokumentationen om [hantering av etiketter](../../access-control/abac/ui/labels.md). Mer information om etiketter för dataanvändning på plattformen i allmänhet finns i översikten över [etiketter för dataanvändning](../../data-governance/labels/overview.md). Läs [Frågor och svar](../faq.md#consent) om du vill veta hur samtycke fungerar i externt genererade målgrupper.
 
 ## Nästa steg
 

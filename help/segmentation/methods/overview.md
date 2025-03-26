@@ -1,13 +1,13 @@
 ---
 title: Metoder för utvärdering av målgrupper
 description: Läs om de olika typerna av utvärderingsmetoder som finns i Adobe Experience Platform.
-source-git-commit: cffd7bad831f0f58bd2b62585bfd0b84280b1732
+exl-id: 54513369-42fa-4bab-803a-21d6dcd87660
+source-git-commit: 9eb5ccc24db58a887473f61c66a83aa92e16efa7
 workflow-type: tm+mt
-source-wordcount: '215'
+source-wordcount: '241'
 ht-degree: 0%
 
 ---
-
 
 # Metoder för utvärdering av målgrupper
 
@@ -18,6 +18,10 @@ Adobe Experience Platform erbjuder en mängd olika utvärderingsmetoder för att
 Gruppsegmentering är en metod för segmenteringsutvärdering som du kan använda för att flytta alla profildata samtidigt för att skapa motsvarande målgrupper. Du kan använda gruppsegmentering för att skapa detaljerade och innehållsrika målgrupper som kan användas för stora grupper av profiler.
 
 Mer information om gruppsegmentering finns i [översikten över gruppsegmentering](./batch-segmentation.md).
+
+### Flexibel utvärdering av målgrupper
+
+Med flexibel målgruppsutvärdering kan ni köra ett batchsegmenteringsjobb på begäran. Du kan läsa den [flexibla utvärderingsguiden](./flexible-audience-evaluation.md) för målgrupper om du vill ha mer information.
 
 ## Direktuppspelningssegmentering
 
