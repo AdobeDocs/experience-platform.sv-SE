@@ -5,9 +5,9 @@ breadcrumb-title: Användarhandbok om Source Connectors
 user-guide-description: Mata in data från olika källor. Lär dig strukturera, etikettera och förbättra inmatad data.
 feature: Sources
 role: Developer
-source-git-commit: 3ada2136e712abd1dad956cd579d6877b3e729c9
+source-git-commit: 86f17ed4dc012481c2b4a7f1a40b492bfac5e137
 workflow-type: tm+mt
-source-wordcount: '1059'
+source-wordcount: '1061'
 ht-degree: 6%
 
 ---
@@ -95,6 +95,7 @@ ht-degree: 6%
    - Data- och identitetspartner {#data-partner}
       - [Acxiom-datainmatning](connectors/data-partners/acxiom-data-ingestion.md)
       - [Acxiom Prospecting Data Import](connectors/data-partners/acxiom-prospecting-data-import.md)
+      - [Bomborametod](connectors/data-partners/bombora.md)
       - [Merkury Enterprise Identity Resolution](connectors/data-partners/merkury.md)
    - eCommerce {#ecommerce}
       - [SAP COMMERCE](connectors/ecommerce/sap-commerce.md)

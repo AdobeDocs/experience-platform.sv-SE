@@ -1,11 +1,10 @@
 ---
 title: Koppla Bombora-återgivning till Experience Platform med användargränssnittet
 description: Lär dig hur du ansluter Bombora Intent till Experience Platform
-hide: true
-hidefromtoc: true
-source-git-commit: 81a615b9826ed69bb050cae9c074a4e457ba128a
+exl-id: 76a4fed5-b2d5-46d5-9245-b52792a7d323
+source-git-commit: 9f6f84d16c30c1e32184007ebc2a401db5f8b9ac
 workflow-type: tm+mt
-source-wordcount: '356'
+source-wordcount: '918'
 ht-degree: 0%
 
 ---
@@ -24,33 +23,83 @@ Den här självstudiekursen kräver en fungerande förståelse av följande komp
 
 ## Navigera i källkatalogen
 
-I plattformsgränssnittet väljer du **[!UICONTROL Sources]** i den vänstra navigeringen för att komma åt arbetsytan i [!UICONTROL Sources]. Du kan välja lämplig kategori i katalogen till vänster på skärmen. Du kan också hitta den källa du vill arbeta med med med sökalternativet.
+I Experience Platform-gränssnittet väljer du **[!UICONTROL Sources]** i den vänstra navigeringen för att komma åt arbetsytan i *[!UICONTROL Sources]*. Du kan välja lämplig kategori på panelen *[!UICONTROL Categories]*. Du kan också använda sökfältet för att navigera till den specifika källa som du vill använda.
 
-Välj **[!DNL Bombora Intent]** under kategorin *[!UICONTROL B2B]* och välj sedan **[!UICONTROL Set up]**.
+Om du vill använda [!DNL Bombora] väljer du **[!UICONTROL Bombora Intent]**-källkortet under *[!UICONTROL Data & Identity Partners]* och sedan **[!UICONTROL Add data]**.
 
 >[!TIP]
 >
 >Källor i källkatalogen visar alternativet **[!UICONTROL Set up]** när en angiven källa ännu inte har något autentiserat konto. När det finns ett autentiserat konto ändras det här alternativet till **[!UICONTROL Add data]**.
 
+![Källkatalogen med kortet &quot;Bombora Intent&quot; valt.](../../../../images/tutorials/create/bombora/catalog.png)
 
+## Autentisering {#authentication}
 
-## Använd ett befintligt konto {#existing}
+### Använd ett befintligt konto {#existing}
 
-## Skapa ett nytt konto {#create}
+Om du vill använda ett befintligt konto väljer du **[!UICONTROL Existing account]** och sedan det konto som du vill använda i listan över konton i gränssnittet.
+
+När du har valt ditt konto väljer du **[!UICONTROL Next]** för att fortsätta till nästa steg.
+
+![Det befintliga kontogränssnittet i källarbetsflödet.](../../../../images/tutorials/create/bombora/existing.png)
+
+### Skapa ett nytt konto {#create}
+
+Om du inte har något befintligt konto måste du skapa ett nytt konto genom att ange de autentiseringsuppgifter som motsvarar källan.
+
+Om du vill skapa ett nytt konto väljer du **[!UICONTROL New account]** och anger sedan ett kontonamn och eventuellt en beskrivning av din kontoinformation. Ange sedan lämpliga autentiseringsvärden för att autentisera källan mot Experience Platform. Om du vill ansluta ditt [!DNL Bombora]-konto måste du ha följande autentiseringsuppgifter:
+
+* **Åtkomstnyckel-ID**: Ditt [!DNL Bombora]-ID för åtkomstnyckel. Det här är en 61 tecken lång alfanumerisk sträng som krävs för att autentisera ditt konto för Experience Platform.
+* **Hemlig åtkomstnyckel**: Den hemliga [!DNL Bombora]-åtkomstnyckeln. Detta är en 40-siffrig, base-64-kodad sträng som krävs för att autentisera ditt konto för Experience Platform.
+* **Bucket-namn**: Din [!DNL Bombora]-bucket som data hämtas från.
+
+![Det nya kontogränssnittet i källarbetsflödet.](../../../../images/tutorials/create/bombora/new.png)
 
 ## Ange information om dataflöde {#provide-dataflow-details}
 
->[!CONTEXTUALHELP]
->id="platform_sources_bombora_domain"
->title="Domänkälla"
->abstract="Adobe använder XDM accountOrganization.website, men det kan finnas kunder som använder anpassade fält för sina respektive webbplatser. Därför måste du se till att domänkällan är det domän-/webbplatsfält som matchar dina Bombora-kontoposter mot Experience Platform-konton."
+När ditt konto har autentiserats och anslutits måste du nu ange följande information för ditt dataflöde:
+
+* **Dataflödesnamn**: Namnet på dataflödet. Du kan använda det här namnet för att söka efter dataflödet i användargränssnittet när det har skapats och bearbetats.
+* **Beskrivning**: (Valfritt) En kort förklaring eller ytterligare information om dataflödet.
+* **Domänkälla**: Domänfältet eller webbplatsfältet som matchar källkontoposterna mot Experience Platform-konton. Detta värde kan bero på dina konfigurationer. Om det inte anges används som standard accountOrganization.website i domänen.
+
+![Gränssnittet för information om dataflöde i källarbetsflödet.](../../../../images/tutorials/create/bombora/dataflow-detail.png)
 
 ## Schemalägg dataflöde {#schedule-dataflow}
 
->[!CONTEXTUALHELP]
->id="platform_sources_bombora_schedule"
->title="Schemalägg ditt dataflöde"
->abstract="Bombora släpper data en gång i veckan på måndag morgon klockan 17:00 UTC. Därför måste du konfigurera starttiden för ditt intag efter 17:00 UTC. Dessutom måste du bekräfta tiden det tar att få tag på Bombora eftersom de kan ändra deras schema när de släpper filer till Adobe."
+Använd sedan schemaläggningsgränssnittet för att konfigurera ett intag-schema för dataflödet.
 
+* **Frekvens**: Konfigurera frekvens för att ange hur ofta dataflödet ska köras. Du kan schemalägga ditt [!DNL Bombora]-dataflöde att importera data varje vecka.
+* **Intervall**: Intervall representerar tidsintervallet mellan varje inmatningscykel. Det enda intervall som stöds för ett [!DNL Bombora]-dataflöde är 1. Det innebär att dataflödet kommer att importera data en gång i veckan, varje vecka.
+* **Starttid**: Starttiden bestämmer när dataflödets första körningstid inträffar. [!DNL Bombora] släpper data till Adobe en gång i veckan, på måndagar, klockan 12:00 UTC. Därför måste du ange starttiden för ditt intag efter 12:00 UTC. Dessutom måste du bekräfta tiden för inläsning med [!DNL Bombora] eftersom de kan ändra deras schema när filer släpps till Adobe.
+
+Välj **[!UICONTROL Next]** när du har konfigurerat dataflödets schema för inmatning.
+
+![Källarbetsflödets schemaläggningsgränssnitt.](../../../../images/tutorials/create/bombora/scheduling.png)
 
 ## Granska dataflöde {#review-dataflow}
+
+Det sista steget i processen för att skapa dataflöde är att granska dataflödet innan det körs. Använd steget *[!UICONTROL Review]* om du vill granska informationen om det nya dataflödet innan det körs. Detaljerna är grupperade i följande kategorier:
+
+* **Anslutning**: Visar källtypen, den relevanta sökvägen för den valda källfilen och antalet kolumner i källfilen.
+* **Schemaläggning**: Visar den aktiva perioden, frekvensen och intervallet för intagsschemat.
+
+När du har granskat dataflödet väljer du **[!UICONTROL Finish]**.
+
+![Källarbetsflödets granskningsgränssnitt.](../../../../images/tutorials/create/bombora/review.png)
+
+## Nästa steg
+
+Genom att följa den här självstudiekursen har du skapat ett dataflöde för att överföra återgivningsdata från [!DNL Bombora]-källan till Experience Platform. Ytterligare resurser finns i dokumentationen nedan.
+
+### Övervaka dataflödet
+
+När dataflödet har skapats kan du övervaka de data som hämtas genom det för att visa information om hur mycket data som har importerats, hur bra de är och vilka fel som har uppstått. Mer information om hur du övervakar dataflöde finns i självstudiekursen [Övervaka konton och dataflöden i användargränssnittet](../../../../../dataflows/ui/monitor-sources.md).
+
+### Uppdatera ditt dataflöde
+
+Om du vill uppdatera konfigurationer för schemaläggning, mappning och allmän information för dina dataflöden går du till självstudiekursen [Uppdatera källornas dataflöden i användargränssnittet](../../update-dataflows.md).
+
+### Ta bort ditt dataflöde
+
+Du kan ta bort dataflöden som inte längre är nödvändiga eller som har skapats felaktigt med funktionen **[!UICONTROL Delete]** som finns på arbetsytan i **[!UICONTROL Dataflows]**. Mer information om hur du tar bort dataflöden finns i självstudiekursen [Ta bort dataflöden i användargränssnittet](../../delete.md).
