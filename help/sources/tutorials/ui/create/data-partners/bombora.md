@@ -2,9 +2,9 @@
 title: Koppla Bombora-återgivning till Experience Platform med användargränssnittet
 description: Lär dig hur du ansluter Bombora Intent till Experience Platform
 exl-id: 76a4fed5-b2d5-46d5-9245-b52792a7d323
-source-git-commit: 9f6f84d16c30c1e32184007ebc2a401db5f8b9ac
+source-git-commit: 0a6a9fe759d71fd62e3eaf5c93a091614f3c76a0
 workflow-type: tm+mt
-source-wordcount: '918'
+source-wordcount: '931'
 ht-degree: 0%
 
 ---
@@ -20,6 +20,10 @@ Den här självstudiekursen kräver en fungerande förståelse av följande komp
 * [Real-Time CDP B2B edition](../../../../../rtcdp/b2b-overview.md): Real-Time CDP B2B edition är särskilt utformat för marknadsförare som använder en tjänstmodell som bygger på business-to-business. Den sammanför data från flera källor och kombinerar dem i en enda vy över personer och kontoprofiler. Tack vare dessa enhetliga data kan marknadsförarna inrikta sig exakt på specifika målgrupper och engagera dessa målgrupper i alla tillgängliga kanaler.
 * [Källor](../../../../home.md): Med Experience Platform kan data hämtas från olika källor samtidigt som du kan strukturera, etikettera och förbättra inkommande data med hjälp av Experience Platform tjänster.
 * [Sandlådor](../../../../../sandboxes/home.md): Experience Platform tillhandahåller virtuella sandlådor som partitionerar en enda Experience Platform-instans till separata virtuella miljöer för att utveckla och utveckla program för digitala upplevelser.
+
+### Förhandskrav
+
+Läs [[!DNL Bombora Intent] översikten](../../../../connectors/data-partners/bombora.md) om du vill ha mer information om hur du hämtar autentiseringsuppgifter.
 
 ## Navigera i källkatalogen
 

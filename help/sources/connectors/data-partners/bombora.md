@@ -2,9 +2,10 @@
 title: Bomborametod
 description: Läs mer om Bombora Intent-källan på Experience Platform.
 last-substantial-update: 2025-03-26T00:00:00Z
-source-git-commit: c558ed7c5ce5fcb26d98a47ad7b7c1461192dc9b
+exl-id: d2e81207-8ef5-4e52-bbac-a2fa262d8d08
+source-git-commit: 39bbd9505b931b82aa925cba0bf8675f25dbf498
 workflow-type: tm+mt
-source-wordcount: '1605'
+source-wordcount: '1601'
 ht-degree: 0%
 
 ---
@@ -41,7 +42,7 @@ Läs igenom följande avsnitt för nödvändiga steg innan du ansluter [!DNL Bom
 
 ### IP-adress tillåtelselista
 
-En lista med IP-adresser måste läggas till tillåtelselista innan du kan arbeta med källanslutningar. Om du inte lägger till dina regionspecifika IP-adresser i tillåtelselista kan det leda till fel eller sämre prestanda när du använder källor. Mer information finns på sidan [IP-adress tillåtelselista](../../ip-address-allow-list.md).
+En lista med IP-adresser måste läggas till i en tillåtelselista innan du kan arbeta med källanslutningar. Om du inte lägger till dina regionspecifika IP-adresser i tillåtelselista kan det leda till fel eller sämre prestanda när du använder källor. Mer information finns på sidan [IP-adress i tillåtelselista ](../../ip-address-allow-list.md).
 
 ### Konfigurera behörigheter i Experience Platform
 

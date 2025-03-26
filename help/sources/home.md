@@ -1,12 +1,12 @@
 ---
-keywords: Experience Platform;hem;populära ämnen;källkopplingar;källanslutning;källor;datakällor;datakällor;datakällanslutning;datakällanslutning
+keywords: Experience Platform;hem;populära ämnen;källanslutningar;källanslutning;källor;datakällor;datakälla;datakällanslutning
 solution: Experience Platform
 title: Source Connectors Overview
 description: Med Adobe Experience Platform kan data hämtas från externa källor samtidigt som du kan strukturera, märka och förbättra inkommande data med hjälp av plattformstjänster. Du kan importera data från en mängd olika källor, till exempel Adobe-program, molnbaserad lagring, databaser och många andra.
 exl-id: efdbed4d-5697-43ef-a47a-a8bcf0f13237
-source-git-commit: 8541af0e2c0a2f5709f1621877ca204b0d3d64bd
+source-git-commit: 0a6a9fe759d71fd62e3eaf5c93a091614f3c76a0
 workflow-type: tm+mt
-source-wordcount: '1518'
+source-wordcount: '1522'
 ht-degree: 0%
 
 ---
@@ -28,7 +28,7 @@ Med Experience Platform kan ni centralisera data som ni samlar in från olika k�
 
 ## Avancerade företagskällor {#advanced-enterprise-sources}
 
-Följande källor är endast tillgängliga för [Adobe Real-time Customer Data Platform Ultimate](https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform-b2c-edition-prime-and-ultimate-packages.html)-kunder.
+Följande källor är endast tillgängliga för [Adobe Real-Time Customer Data Platform Ultimate](https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform-b2c-edition-prime-and-ultimate-packages.html)-kunder.
 
 - [[!DNL Amazon Kinesis]](connectors/cloud-storage/kinesis.md) [!BADGE Direktuppspelning]{type=Positive}
 - [[!DNL Amazon Redshift]](connectors/databases/redshift.md) [!BADGE Gruppera]{type=Informative}
@@ -39,11 +39,11 @@ Följande källor är endast tillgängliga för [Adobe Real-time Customer Data P
 - [[!DNL Snowflake]](connectors/databases/snowflake-streaming.md) [!BADGE Direktuppspelning]{type=Positive}
 - [[!DNL Snowflake]](connectors/databases/snowflake.md) [!BADGE Gruppera]{type=Informative}
 
-## Källor som byggts av Adobe och av partners {#adobe-and-partner-built-sources}
+## Adobe-byggda och partnerbyggda källor {#adobe-and-partner-built-sources}
 
-Vissa av anslutningarna i Experience Platform-källkatalogen byggs och underhålls av Adobe, medan andra byggs och underhålls av partnerföretag med hjälp av [Sources SDK](/help/sources/sources-sdk/overview.md). En anteckning högst upp på dokumentationssidan för varje partnerbyggd koppling anropar om en källa skapas och underhålls av partnern. Till exempel skapas [Amazon S3-anslutningen](/help/sources/connectors/cloud-storage/s3.md) av Adobe, medan [RainFocus-kopplingen](/help/sources/connectors/analytics/rainfocus.md) skapas och underhålls av RainFocus-teamet.
+Vissa av anslutningarna i Experience Platform-källkatalogen byggs och underhålls av Adobe, medan andra byggs och underhålls av partnerföretag med hjälp av [Källorna i SDK](/help/sources/sources-sdk/overview.md). En anteckning högst upp på dokumentationssidan för varje partnerbyggd koppling anropar om en källa skapas och underhålls av partnern. Till exempel skapas [Amazon S3-kopplingen](/help/sources/connectors/cloud-storage/s3.md) av Adobe medan [RainFocus-kopplingen](/help/sources/connectors/analytics/rainfocus.md) skapas och underhålls av RainFocus-teamet.
 
-För partnerskapade och underhållna anslutningar innebär detta att problem med kopplingen kan behöva lösas av partnerteamet (kontaktmetoden finns i anteckningen på dokumentationssidan). Om du har problem med kontakter som utvecklats och underhålls av Adobe kontaktar du Adobe eller kundtjänst.
+För partnerskapade och underhållna anslutningar innebär detta att problem med kopplingen kan behöva lösas av partnerteamet (kontaktmetoden finns i anteckningen på dokumentationssidan). Kontakta Adobe eller kundtjänst om du har problem med kontakter som skapats och underhålls av Adobe.
 
 ## Källkategorier
 
@@ -51,7 +51,7 @@ Källor i Experience Platform är grupperade i följande kategorier:
 
 ### Adobe-program {#adobe-applications}
 
-Experience Platform tillåter att data kan hämtas från andra Adobe-program, inklusive Adobe Analytics och Adobe Audience Manager. Mer information finns i följande relaterade dokument:
+Med Experience Platform kan data hämtas från andra Adobe-program, inklusive Adobe Analytics och Adobe Audience Manager. Mer information finns i följande relaterade dokument:
 
 - [Översikt över Adobe Audience Manager-källa](connectors/adobe-applications/audience-manager.md)
    - [Skapa en Adobe Audience Manager-källanslutning i användargränssnittet](./tutorials/ui/create/adobe-applications/audience-manager.md)
@@ -62,7 +62,7 @@ Experience Platform tillåter att data kan hämtas från andra Adobe-program, in
 - [Översikt över Adobe Campaign Managed Cloud Services-källa](connectors/adobe-applications/campaign.md)
    - [Skapa en Adobe Campaign Managed Cloud Services-källanslutning i användargränssnittet](./tutorials/ui/create/adobe-applications/campaign.md)
 - [Översikt över Adobe Commerce-källa](connectors/adobe-applications/commerce.md)
-- [Översikt över datakällan för Adobe Data Collection](connectors/adobe-applications/data-collection.md)
+- [Översikt över Adobe Data Collection-källa](connectors/adobe-applications/data-collection.md)
    - [Skapa en källanslutning för kundattribut i användargränssnittet](./tutorials/ui/create/adobe-applications/customer-attributes.md)
 - [[!DNL Marketo Engage] - källöversikt](connectors/adobe-applications/marketo/marketo.md)
    - [Skapa en  [!DNL Marketo Engage] källanslutning i användargränssnittet](./tutorials/ui/create/adobe-applications/marketo.md)
@@ -76,7 +76,7 @@ Experience Platform stöder inmatning av data från ett annonssystem från tredj
 
 ### Analytics  {#analytics}
 
-Experience Platform stöder inmatning av data från en analysplattform från tredje part. Läs följande relaterade dokument för mer information:
+Experience Platform har stöd för inmatning av data från en analysplattform från tredje part. Läs följande relaterade dokument för mer information:
 
 - [[!DNL Mixpanel]](connectors/analytics/mixpanel.md) [!BADGE Gruppera]{type=Informative}
 - [[!DNL Pendo]](connectors/analytics/pendo-webhook.md) [!BADGE Direktuppspelning]{type=Positive}
@@ -99,13 +99,13 @@ Lagringskällor i molnet kan hämta dina egna data till plattformen utan att du 
 
 ### Samtycke och inställningar {#consent}
 
-Experience Platform har stöd för inmatning av data från en plattform för hantering av samtycke och preferenser från tredje part. Mer information finns i följande relaterade dokument:
+Experience Platform har stöd för inmatning av data från en plattform för hantering av medgivanden och preferenser från tredje part. Mer information finns i följande relaterade dokument:
 
 - [[!DNL OneTrust Integration]](connectors/consent-and-preferences/onetrust.md) [!BADGE Gruppera]{type=Informative}
 
 ### Kundrelationshantering (CRM) {#customer-relationship-management}
 
-CRM-system tillhandahåller data som kan hjälpa till att bygga upp kundrelationer, vilket i sin tur skapar lojalitet och driver kundlojalitet. Experience Platform har stöd för att importera CRM-data från [!DNL Microsoft Dynamics 365] och [!DNL Salesforce]. Mer information finns i följande relaterade dokument:
+CRM-system tillhandahåller data som kan hjälpa till att bygga upp kundrelationer, vilket i sin tur skapar lojalitet och driver kundlojalitet. Experience Platform har stöd för inhämtning av CRM-data från [!DNL Microsoft Dynamics 365] och [!DNL Salesforce]. Mer information finns i följande relaterade dokument:
 
 - [[!DNL Microsoft Dynamics]](connectors/crm/ms-dynamics.md) [!BADGE Gruppera]{type=Informative}
 - [[!DNL Salesforce]](connectors/crm/salesforce.md) [!BADGE Gruppera]{type=Informative}
@@ -115,7 +115,7 @@ CRM-system tillhandahåller data som kan hjälpa till att bygga upp kundrelation
 
 ### Nöjda kunder {#customer-success}
 
-Experience Platform har stöd för inhämtning av data från tredjepartsprogram. Mer information finns i följande relaterade dokument:
+Experience Platform har stöd för inmatning av data från tredjepartsprogram. Mer information finns i följande relaterade dokument:
 
 - [[!DNL Oracle Service Cloud]](connectors/customer-success/oracle-service-cloud.md) [!BADGE Gruppera]{type=Informative}
 - [[!DNL Salesforce Service Cloud]](connectors/customer-success/salesforce-service-cloud.md) [!BADGE Gruppera]{type=Informative}
@@ -124,7 +124,7 @@ Experience Platform har stöd för inhämtning av data från tredjepartsprogram.
 
 ### Databas {#database}
 
-Experience Platform har stöd för att importera data från en tredjepartsdatabas. Mer information om specifika källanslutningar finns i följande relaterade dokument:
+Experience Platform har stöd för inmatning av data från en tredjepartsdatabas. Mer information om specifika källanslutningar finns i följande relaterade dokument:
 
 - [[!DNL Apache Hive on Azure HDInsights]](connectors/databases/hive.md) [!BADGE Gruppera]{type=Informative}
 - [[!DNL Apache Spark on Azure HDInsights]](connectors/databases/spark.md) [!BADGE Gruppera]{type=Informative}
@@ -144,10 +144,12 @@ Experience Platform har stöd för att importera data från en tredjepartsdataba
 
 ### Data- och identitetspartners {#data-partner}
 
-Experience Platform har stöd för att importera data från en tredjepartsdatabas. Mer information om specifika källanslutningar finns i följande relaterade dokument:
+Experience Platform har stöd för inmatning av data från en data- och identitetspartner. Mer information om specifika källanslutningar finns i följande relaterade dokument:
 
 - [[!DNL Acxiom Data Ingestion]](connectors/data-partners/acxiom-data-ingestion.md) [!BADGE Gruppera]{type=Informative}
 - [[!DNL Acxiom Prospecting Data Import]](connectors/data-partners/acxiom-prospecting-data-import.md) [!BADGE Gruppera]{type=Informative}
+- [[!DNL Bombora Intent]](connectors/data-partners/bombora.md) [!BADGE Gruppera]{type=Informative}
+- [[!DNL Demandbase Intent]](connectors/data-partners/demandbase.md) [!BADGE Gruppera]{type=Informative}
 - [[!DNL Merkury Enterprise Identity Resolution]](connectors/data-partners/merkury.md) [!BADGE Gruppera]{type=Informative}
 
 ### eCommerce {#ecommerce}
@@ -166,7 +168,7 @@ Experience Platform har stöd för inmatning av data från ditt lokala system. M
 
 ### Marknadsföringsautomatisering {#marketing-automation}
 
-Experience Platform stöder inmatning av data från ett system för automatisering av marknadsföring från tredje part. Mer information om specifika källanslutningar finns i följande relaterade dokument:
+Experience Platform har stöd för inmatning av data från ett automatiseringssystem för tredjepartsmarknadsföring. Mer information om specifika källanslutningar finns i följande relaterade dokument:
 
 - [[!DNL Braze]](connectors/marketing-automation/braze.md) [!BADGE Direktuppspelning]{type=Positive}
 - [[!DNL Chatlio]](connectors/marketing-automation/chatlio-webhook.md) [!BADGE Direktuppspelning]{type=Positive}
@@ -183,7 +185,7 @@ Experience Platform stöder inmatning av data från ett system för automatiseri
 
 ### Betalningar {#payments}
 
-Experience Platform stöder inmatning av data från tredje parts betalningssystem. Mer information om specifika källanslutningar finns i följande relaterade dokument:
+Experience Platform har stöd för inmatning av data från tredje parts betalningssystem. Mer information om specifika källanslutningar finns i följande relaterade dokument:
 
 - [[!DNL PayPal]](connectors/payments/paypal.md) [!BADGE Gruppera]{type=Informative}
 - [[!DNL Square]](connectors/payments/square.md) [!BADGE Gruppera]{type=Informative}
@@ -197,7 +199,7 @@ Experience Platform stöder inmatning av data från strömningskällor. Mer info
 
 ### Protokoll {#protocols}
 
-Experience Platform har stöd för inmatning av data från ett tredjepartsprotokollsystem. Mer information om specifika källanslutningar finns i följande relaterade dokument:
+Experience Platform har stöd för inmatning av data från tredjepartsprotokoll. Mer information om specifika källanslutningar finns i följande relaterade dokument:
 
 - [[!DNL Generic OData]](connectors/protocols/odata.md) [!BADGE Gruppera]{type=Informative}
 - [[!DNL Generic REST API]](connectors/protocols/generic-rest.md) [!BADGE Gruppera]{type=Informative}
@@ -214,7 +216,7 @@ Följande tabell visar hur användargränssnittet beter sig baserat på olika ko
 | **[!UICONTROL Manage Sources]** på | Förutom funktionerna i **[!UICONTROL View Sources]** ger åtkomst till alternativet **[!UICONTROL Connect Source]** i **[!UICONTROL Catalog]** och till alternativet **[!UICONTROL Select Data]** i **[!UICONTROL Browse]**. Med **[!UICONTROL Manage Sources]** kan du även aktivera eller inaktivera **[!UICONTROL DataFlows]** och redigera deras scheman. |
 | **[!UICONTROL View Sources]** av och **[!UICONTROL Manage Sources]** av | Återkalla all åtkomst till källor. |
 
-Mer information om tillgängliga behörigheter som beviljats via behörigheter i Adobe finns i [åtkomstkontrollsöversikten](../access-control/home.md).
+Mer information om de behörigheter som ges via Adobe-behörigheter finns i [åtkomstkontrollsöversikten](../access-control/home.md).
 
 ### Attributbaserad åtkomstkontroll
 
@@ -238,8 +240,8 @@ Mer information om attributbaserad åtkomstkontroll finns i [attributbaserad åt
 
 Genom att använda någon av källorna som är märkta som betaversion (&quot;Beta&quot;) bekräftar du härmed att Beta tillhandahålls ***i befintligt skick utan garanti av något slag***.
 
-Adobe ska inte ha någon skyldighet att upprätthålla, korrigera, uppdatera, ändra, modifiera eller på annat sätt stödja Beta. Du rekommenderas att använda Informativ och inte på något sätt förlita dig på att sådana Beta och/eller medföljande material fungerar korrekt eller fungerar korrekt. Beta betraktas som Konfidentiell information om Adobe.
+Adobe har ingen skyldighet att upprätthålla, korrigera, uppdatera, ändra, modifiera eller på annat sätt stödja Beta. Du rekommenderas att använda Informativ och inte på något sätt förlita dig på att sådana Beta och/eller medföljande material fungerar korrekt eller fungerar korrekt. Beta betraktas som Konfidentiell information om Adobe.
 
-All &quot;feedback&quot; (information om Beta, inklusive men inte begränsad till problem eller defekter som du stöter på när du använder Beta, förslag, förbättringar och rekommendationer) som du får från You till Adobe tilldelas härmed Adobe, inklusive alla rättigheter, titlar och intressen i och för sådan feedback.
+All &quot;Feedback&quot; (information om Beta, inklusive men inte begränsad till problem eller defekter som du stöter på när du använder Beta, förslag, förbättringar och rekommendationer) som du ger Adobe tilldelas härmed till Adobe, inklusive alla rättigheter, titlar och intressen i och för sådan feedback.
 
 Skicka Öppna feedback eller skapa en supportanmälan för att dela dina förslag eller rapportera ett fel, sök efter en funktionsförbättring.
