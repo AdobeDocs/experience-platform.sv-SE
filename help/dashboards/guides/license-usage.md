@@ -4,9 +4,9 @@ title: Kontrollpanel för licensanvändning
 description: Adobe Experience Platform tillhandahåller en kontrollpanel där du kan visa viktig information om din organisations licensanvändning.
 type: Documentation
 exl-id: 143d16bb-7dc3-47ab-9b93-9c16683b9f3f
-source-git-commit: 1c31ef58eec727638cab28202afc762da0e226a2
+source-git-commit: 7332b39b0e213632e595dc52eda390aa0b9a24ec
 workflow-type: tm+mt
-source-wordcount: '2990'
+source-wordcount: '3339'
 ht-degree: 0%
 
 ---
@@ -45,48 +45,90 @@ ht-degree: 0%
 >[!CONTEXTUALHELP]
 >id="platform_dashboards_licenseusage_predictedusage_computehours"
 >title="Förutsagda beräkningstimmar"
->abstract="Användningen kan nå den tillåtna mängden. Om du vill utvärdera eller minska beräkningstiden går du till Frågor > Logg och granskar frågehistoriken. Om du inte har behörighet att komma åt arbetsytan Frågor kontaktar du administratören."
+>abstract="Beräkningstimmar mäter den tid som Query Service-motorer lägger på att läsa, bearbeta och skriva data när gruppfrågor körs.<br>Användningen kan nå det licensierade antalet. Om du vill utvärdera eller minska användningen går du till Frågor > Logg och granskar frågehistoriken. Om du inte har åtkomst till arbetsytan Frågor kontaktar du administratören."
 >additional-url="https://experience.adobe.com/#/platform/query/log.html" text="Arbetsytan Frågelogg"
 
 >[!CONTEXTUALHELP]
 >id="platform_dashboards_licenseusage_predictedusage_addressableaudience"
 >title="Förutsedd adresserbar publik"
->abstract="Användningen kan nå den tillåtna mängden. För att minska användningen kan du konfigurera datauppsättningar eller pseudonyma utgångsdatum för profildata för sandlådor och datauppsättningar."
+>abstract="Den adresserbara målgruppen är den uppsättning personprofiler i kundprofilen i realtid som din organisation har rätt att engagera. Detta inkluderar både direkt identifierbara och pseudonyma profiler.<br>Användningen kan nå det licensierade antalet. Om du vill minska användningen konfigurerar du datauppsättningen eller pseudonyma utgångsdatum för profildata."
 >additional-url="https://experienceleague.adobe.com/docs/experience-platform/profile/event-expirations.html" text="Förfallodatum för upplevelsehändelser"
 >additional-url="https://experienceleague.adobe.com/docs/experience-platform/profile/pseudonymous-profiles.html" text="Förfallodatum för pseudonyma profiler"
 
 >[!CONTEXTUALHELP]
 >id="platform_dashboards_licenseusage_predictedusage_engageableprofiles"
 >title="Förutsägda engagerande profiler"
->abstract="Användningen kan nå den tillåtna mängden. För att minska användningen kan du konfigurera datauppsättningar eller pseudonyma utgångsdatum för profildata för sandlådor och datauppsättningar."
+>abstract="Engagerande profiler är personprofiler i realtidskundprofilen som din organisation har försökt att använda Journey Optimizer under de senaste 12 månaderna.<br>Användningen kan nå det licensierade antalet. Om du vill minska användningen konfigurerar du datauppsättningen eller pseudonyma utgångsdatum för profildata."
 >additional-url="https://experienceleague.adobe.com/docs/experience-platform/profile/event-expirations.html" text="Förfallodatum för upplevelsehändelser"
 >additional-url="https://experienceleague.adobe.com/docs/experience-platform/profile/pseudonymous-profiles.html" text="Förfallodatum för pseudonyma profiler"
 
 >[!CONTEXTUALHELP]
 >id="platform_dashboards_licenseusage_predictedusage_businesspersonprofile"
 >title="Profil för predicerad affärsperson"
->abstract="Användningen kan nå den tillåtna mängden. För att minska användningen kan du konfigurera datauppsättningar eller pseudonyma utgångsdatum för profildata för sandlådor och datauppsättningar."
+>abstract="Affärspersonprofiler är poster i realtidskundprofil som representerar individer i B2B-sammanhang.<br>Användningen kan nå det licensierade antalet. Om du vill minska användningen konfigurerar du datauppsättningen eller pseudonyma utgångsdatum för profildata."
 >additional-url="https://experienceleague.adobe.com/docs/experience-platform/profile/event-expirations.html" text="Förfallodatum för upplevelsehändelser"
 >additional-url="https://experienceleague.adobe.com/docs/experience-platform/profile/pseudonymous-profiles.html" text="Förfallodatum för pseudonyma profiler"
 
 >[!CONTEXTUALHELP]
 >id="platform_dashboards_licenseusage_predictedusage_corehours"
 >title="Förväntade kärntimmar"
->abstract="Användningen kan nå den tillåtna mängden. För att minska användningen kan du konfigurera datauppsättningar eller pseudonyma utgångsdatum för profildata för sandlådor och datauppsättningar."
+>abstract="Kärntimmarna representerar bearbetningstid som förbrukas av Experience Platform tjänster.<br>Användningen kan nå det licensierade antalet. Om du vill minska användningen konfigurerar du datauppsättningen eller pseudonyma utgångsdatum för profildata."
 >additional-url="https://experienceleague.adobe.com/docs/experience-platform/profile/event-expirations.html" text="Förfallodatum för upplevelsehändelser"
 >additional-url="https://experienceleague.adobe.com/docs/experience-platform/profile/pseudonymous-profiles.html" text="Förfallodatum för pseudonyma profiler"
 
 >[!CONTEXTUALHELP]
 >id="platform_dashboards_licenseusage_predictedusage_totaldatavolume"
 >title="Förväntad total datavolym"
->abstract="Användningen kan nå den tillåtna mängden. För att minska användningen kan du konfigurera datauppsättningar eller pseudonyma utgångsdatum för profildata för sandlådor och datauppsättningar."
+>abstract="Total datavolym är den mängd data som finns tillgängliga i kundprofilen i realtid för användning i engagemangs- och personaliseringsarbetsflöden.<br>Användningen kan nå det licensierade antalet. Om du vill minska användningen konfigurerar du datauppsättningen eller pseudonyma utgångsdatum för profildata."
 >additional-url="https://experienceleague.adobe.com/docs/experience-platform/profile/event-expirations.html" text="Förfallodatum för upplevelsehändelser"
 >additional-url="https://experienceleague.adobe.com/docs/experience-platform/profile/pseudonymous-profiles.html" text="Förfallodatum för pseudonyma profiler"
 
 >[!CONTEXTUALHELP]
 >id="platform_dashboards_licenseusage_predictedusage_cjaRowsAvailable"
 >title="Förutsedda CJA-rader tillgängliga"
->abstract="Användningen kan nå den tillåtna mängden. För att minska användningen kan du konfigurera datauppsättningar eller pseudonyma utgångsdatum för profildata för sandlådor och datauppsättningar."
+>abstract="Tillgängliga CJA-rader avser de dagliga genomsnittliga dataraderna som är tillgängliga för analys i Customer Journey Analytics.<br>Användningen kan nå det licensierade antalet. Om du vill minska användningen konfigurerar du datauppsättningen eller pseudonyma utgångsdatum för profildata."
+>additional-url="https://experienceleague.adobe.com/docs/experience-platform/profile/event-expirations.html" text="Förfallodatum för upplevelsehändelser"
+>additional-url="https://experienceleague.adobe.com/docs/experience-platform/profile/pseudonymous-profiles.html" text="Förfallodatum för pseudonyma profiler"
+
+>[!CONTEXTUALHELP]
+>id="platform_dashboards_licenseusage_exceededusage_addressableaudience"
+>title="Förutsedd adresserbar publik"
+>abstract="Den adresserbara målgruppen är den uppsättning personprofiler i kundprofilen i realtid som din organisation har rätt att engagera. Detta inkluderar både direkt identifierbara och pseudonyma profiler.<br>Användningen har överskridit det tillåtna antalet. Om du vill minska användningen konfigurerar du datauppsättningen eller pseudonyma utgångsdatum för profildata."
+>additional-url="https://experienceleague.adobe.com/docs/experience-platform/profile/event-expirations.html" text="Förfallodatum för upplevelsehändelser"
+>additional-url="https://experienceleague.adobe.com/docs/experience-platform/profile/pseudonymous-profiles.html" text="Förfallodatum för pseudonyma profiler"
+
+>[!CONTEXTUALHELP]
+>id="platform_dashboards_licenseusage_exceededusage_engageableprofiles"
+>title="Förutsägda engagerande profiler"
+>abstract="Engagerande profiler är personprofiler i realtidskundprofilen som din organisation har försökt att använda Journey Optimizer under de senaste 12 månaderna.<br>Användningen har överskridit det tillåtna antalet. Om du vill minska användningen konfigurerar du datauppsättningen eller pseudonyma utgångsdatum för profildata."
+>additional-url="https://experienceleague.adobe.com/docs/experience-platform/profile/event-expirations.html" text="Förfallodatum för upplevelsehändelser"
+>additional-url="https://experienceleague.adobe.com/docs/experience-platform/profile/pseudonymous-profiles.html" text="Förfallodatum för pseudonyma profiler"
+
+>[!CONTEXTUALHELP]
+>id="platform_dashboards_licenseusage_exceededusage_businesspersonprofile"
+>title="Profil för predicerad affärsperson"
+>abstract="Affärspersonprofiler är poster i realtidskundprofil som representerar individer i B2B-sammanhang.<br>Användningen har överskridit det tillåtna antalet. Om du vill minska användningen konfigurerar du datauppsättningen eller pseudonyma utgångsdatum för profildata."
+>additional-url="https://experienceleague.adobe.com/docs/experience-platform/profile/event-expirations.html" text="Förfallodatum för upplevelsehändelser"
+>additional-url="https://experienceleague.adobe.com/docs/experience-platform/profile/pseudonymous-profiles.html" text="Förfallodatum för pseudonyma profiler"
+
+>[!CONTEXTUALHELP]
+>id="platform_dashboards_licenseusage_exceededusage_corehours"
+>title="Förväntade kärntimmar"
+>abstract="Kärntimmarna representerar bearbetningstid som förbrukas av Experience Platform tjänster.<br>Användningen har överskridit det tillåtna antalet. Om du vill minska användningen konfigurerar du datauppsättningen eller pseudonyma utgångsdatum för profildata."
+>additional-url="https://experienceleague.adobe.com/docs/experience-platform/profile/event-expirations.html" text="Förfallodatum för upplevelsehändelser"
+>additional-url="https://experienceleague.adobe.com/docs/experience-platform/profile/pseudonymous-profiles.html" text="Förfallodatum för pseudonyma profiler"
+
+>[!CONTEXTUALHELP]
+>id="platform_dashboards_licenseusage_exceededusage_totaldatavolume"
+>title="Förväntad total datavolym"
+>abstract="Total datavolym är den mängd data som finns tillgängliga i kundprofilen i realtid för användning i engagemangs- och personaliseringsarbetsflöden.<br>Användningen har överskridit det tillåtna antalet. Om du vill minska användningen konfigurerar du datauppsättningen eller pseudonyma utgångsdatum för profildata."
+>additional-url="https://experienceleague.adobe.com/docs/experience-platform/profile/event-expirations.html" text="Förfallodatum för upplevelsehändelser"
+>additional-url="https://experienceleague.adobe.com/docs/experience-platform/profile/pseudonymous-profiles.html" text="Förfallodatum för pseudonyma profiler"
+
+>[!CONTEXTUALHELP]
+>id="platform_dashboards_licenseusage_exceededusage_cjaRowsAvailable"
+>title="Förutsedda CJA-rader tillgängliga"
+>abstract="Tillgängliga CJA-rader avser de dagliga genomsnittliga dataraderna som är tillgängliga för analys i Customer Journey Analytics.<br>Användningen har överskridit det tillåtna antalet. Om du vill minska användningen konfigurerar du datauppsättningen eller pseudonyma utgångsdatum för profildata."
 >additional-url="https://experienceleague.adobe.com/docs/experience-platform/profile/event-expirations.html" text="Förfallodatum för upplevelsehändelser"
 >additional-url="https://experienceleague.adobe.com/docs/experience-platform/profile/pseudonymous-profiles.html" text="Förfallodatum för pseudonyma profiler"
 
@@ -146,7 +188,7 @@ Tabellerna anger det primära måttet för varje produkt, eftersom varje produkt
 >[!CONTEXTUALHELP]
 >id="platform_dashboards_licenseUsage_prediction"
 >title="Förutsedd användning"
->abstract="Förutsättningarna baseras på användningen under de senaste 6-7 månaderna och genereras den 15:e varje månad. Observera att prognoserna för licensanvändning är approximationer baserade på tidigare användning. Du ansvarar för att förstå hur din organisation faktiskt används och se till att användningen inte går utanför räckvidden för din organisations licens med Adobe. För att minska användningen kan du konfigurera datauppsättningar eller pseudonyma utgångsdatum för profildata för sandlådor och datauppsättningar."
+>abstract="Förutsättningarna baseras på användningen under de senaste 6-7 månaderna och genereras varje vecka varje fredag. Observera att prognoserna för licensanvändning är approximationer baserade på tidigare användning. Du ansvarar för att förstå hur din organisation faktiskt används och se till att användningen inte går utanför räckvidden för din organisations licens med Adobe. För att minska användningen kan du konfigurera datauppsättningar eller pseudonyma utgångsdatum för profildata för sandlådor och datauppsättningar."
 >additional-url="https://experienceleague.adobe.com/docs/experience-platform/data-lifecycle/ui/dataset-expiration.html" text="Automatiska förfallodatum för datauppsättningar"
 >additional-url="https://experienceleague.adobe.com/docs/experience-platform/profile/pseudonymous-profiles.html" text="Förfallodatum för pseudonyma profiler"
 
@@ -157,11 +199,11 @@ Tabellerna anger det primära måttet för varje produkt, eftersom varje produkt
 >additional-url="https://experienceleague.adobe.com/docs/experience-platform/data-lifecycle/ui/dataset-expiration.html" text="Automatiska förfallodatum för datauppsättningar"
 >additional-url="https://experienceleague.adobe.com/docs/experience-platform/profile/pseudonymous-profiles.html" text="Förfallodatum för pseudonyma profiler"
 
-Hantera och optimera era licensieringsresurser proaktivt baserat på insiktsfulla användningsprognoser. Kolumnen [!UICONTROL Predicted Usage] förutsäger exakt framtida licensanvändning på sandlådenivå, för alla produktions- och utvecklingssandlådor, för alla köpta produkter. Denna varningsfunktion ger en prognos över licensanvändningen för sex veckor i framtiden, baserat på din användning fram till den 15 i den här kalendermånaden. Förutsägelser har en nedre och en övre gräns.
+Hantera och optimera era licensresurser proaktivt med korrekta och aktuella användningsprognoser. Kolumnen [!UICONTROL Predicted Usage] prognostiserar framtida licensanvändning på sandlådenivå för alla produktions- och utvecklingssandlådor för alla köpta produkter. Prediktionerna uppdateras nu varje vecka och innehåller en prognos för sex veckor baserat på de senaste användningsdata. Varje förutsägelse omfattar både en nedre och övre gräns för att stödja välinformerad planering.
 
 >[!IMPORTANT]
 >
->Förutsättningarna uppdateras varje månad. Uppdateringsdatumet ingår i en informationsikon (![Den här informationsikonen.](../images/license-usage/info-icon.png)) ovanför kolumnrubriken.
+>Förutsättningarna uppdateras varje vecka varje fredag. Uppdateringsdatumet ingår i en informationsikon (![Den här informationsikonen.](../images/license-usage/info-icon.png)) ovanför kolumnrubriken.
 
 Om du vill se en sammanfattning av en produkts tillståndsanvändning väljer du en produkt i tabellen [!UICONTROL Core products].
 
@@ -188,8 +230,10 @@ Procentandelen av förväntad användning bestäms enligt följande:
 Funktionen för förväntad användning har stöd för följande mått:
 
 - [!UICONTROL Addressable audience]
+- [!UICONTROL Businessperson profiles]
 - [!UICONTROL Compute hours]
 - [!UICONTROL Customer Journey Audience number of rows]
+- [!UICONTROL Engageable profiles]
 - [!UICONTROL Total Data Volume]
 
 ## Fliken [!UICONTROL Summary] {#summary-tab}
@@ -251,30 +295,34 @@ Du kan också välja **[!UICONTROL Custom date]** för att välja den tidsperiod
 
 >[!IMPORTANT]
 >
->Från och med den 20 augusti såg kunder med berättiganden för [!UICONTROL Average Profile Richness] och [!UICONTROL Total Storage] i stället [!UICONTROL Total Data Volume] i kontrollpanelen för licensanvändning. Inga förändringar i kundens rättigheter, utan bara en förenkling av spårningsstatistiken. [!UICONTROL Total Data Volume] representerar de data som är tillgängliga i Adobe Experience Platform Profile Service för interaktions- och personaliseringsarbetsflöden. Detta förenklade mätresultat förbättrade hanteringen och mätningen av användningen av profiltjänsten. Kunderna uppmanades att kontakta sin Adobe-representant för att få ytterligare information om denna förändring.
+>Från och med den 20 augusti såg kunder med berättiganden för [!UICONTROL Average Profile Richness] och [!UICONTROL Total Storage] i stället [!UICONTROL Total Data Volume] i kontrollpanelen för licensanvändning. Inga förändringar i kundens rättigheter, utan bara en förenkling av spårningsstatistiken. [!UICONTROL Total Data Volume] representerar de data som är tillgängliga i kundprofilen i realtid för engagemangs- och personaliseringsarbetsflöden. Detta förenklade mätresultat förbättrade hanteringen och mätningen av kundprofilanvändningen i realtid. Kunderna uppmanades att kontakta sin Adobe-representant för att få ytterligare information om denna förändring.
 
 Kontrollpanelen för licensanvändning rapporterar om flera unika mätvärden som gäller för flera produkter i organisationen. Tillgängliga mätvärden är:
 
 | Mått | Beskrivning |
 |---|---|
 | [!UICONTROL Audience Activation Size] | Den totala storleken på profiler som har aktiverats för ett filbaserat mål på ett år. Obs! Detta inkluderar inte profiler som skickas via direktuppspelningsmål. |
-| [!UICONTROL Addressable Audience] | Summan av er rätt till företagspass och rätt till rätt målgrupp. En konsumentpublik definieras som antalet personprofiler som identifieras som en&quot;konsumentpublik&quot; på försäljningsordern. En målgrupp definieras som antalet affärspersonsprofiler som identifieras som&quot;affärsmålgrupp&quot; på försäljningsordern. |
+| [!UICONTROL Addressable Audience] | Den uppsättning personprofiler i kundprofilen i realtid som din organisation har rätt att använda, inklusive både direkt identifierbara och pseudonyma profiler. Dessa profiler kan innehålla attribut, beteenden och data om segmentmedlemskap. Profilvolymer beräknas med Adobe Experience Platform standarddeterministiska identitetsdiagram och betraktas som en delad funktion. |
 | [!UICONTROL Adhoc Query Service Users Packs] | Ett tillägg som ökar dina behörigheter för samtidiga frågetjänstanvändare med ytterligare fem samtidiga frågetjänstanvändare och ytterligare en ad hoc-fråga som körs samtidigt per paket. Flera ytterligare Ad hoc-frågeanvändarpaket kan licensieras. |
 | [!UICONTROL Average profile richness] | **Borttagen** - Summan av alla produktionsdata som lagras i navprofiltjänsten vid någon tidpunkt, dividerat med fem gånger antalet auktoriserade affärspersonsprofiler. [!UICONTROL Average profile richness] är en delad funktion. |
 | [!UICONTROL CJA Rows Available] | De dagliga genomsnittliga dataraderna som är tillgängliga för analys inom Customer Journey Analytics. |
-| [!UICONTROL Computed Attributes] | Det totala antalet aggregerade profilbeteendedata. Sammanlagda profilbeteendedata baseras på upplevelsehändelser som konverteras till ett profilattribut och kan inkluderas i en personprofil eller en företagsprofil. |
+| [!UICONTROL Computed Attributes] | Samlade profilbeteendedata baserade på upplevelsehändelser som konverteras till ett profilattribut och kan inkluderas i en personprofil. |
 | [!UICONTROL Consumer Audience] | Antalet personprofiler som identifieras som&quot;Konsumentpublik&quot; på försäljningsordern. |
 | [!UICONTROL Data Export Size] | Mängden data som skickas via datauppsättningsaktiveringar under ett år. |
 | [!UICONTROL Data Exports] | Den totala storleken på datauppsättningar som kan exporteras till andra lösningar än Adobe (direkt eller indirekt) under ett år. |
 | [!UICONTROL Data Lake Storage] | Den kvantitet som används i analysdatalagret i Adobe Experience Platform. |
-| [!UICONTROL Engageable Audience] | Det här måttet avser målgruppen med profiler som kan användas. En engagerande profil är ett register med information som representerar en individ och representeras i profiltjänsten. Dessa poster är profiler som du har försökt att använda Journey Optimizer funktioner för att skapa, fatta beslut, leverera, experimentera eller orkestrera under de senaste 12 månaderna. |
-| [!UICONTROL Look-alike Audiences] | Antalet målgrupper som genereras genom att en befintlig konsumentmålgrupp modelleras för att identifiera personprofiler som liknar den befintliga konsumentmålgruppen. |
+| [!UICONTROL Engageable Audience] | En grupp personprofiler i kundprofilen i realtid som du har försökt att engagera under de senaste 12 månaderna med Journey Optimizer funktioner för att skapa, fatta beslut, leverera, experimentera eller orkestrera. |
+| [!UICONTROL Look-alike Audiences] | En konsumentlookalike-målgrupp är en målgrupp som genereras genom att modellera en befintlig konsumentpublik för att identifiera personprofiler med liknande attribut eller beteenden. |
 | [!UICONTROL Number of AMM Models] | Antal maskininlärningsmodeller (inbyggda Adobe Mix Modeler) som används för att mäta och/eller förutsäga ett specifikt resultat baserat på dina investeringar. |
 | [!UICONTROL Number of Sandboxes] | Antalet logiska separationer i din instans av en Adobe On-demand-tjänst som använder Adobe Experience Platform för att isolera data och åtgärder. |
 | [!UICONTROL Profile Richness No of Packs] | En ökning av din auktoriserade totala datavolym med 25 kB per profil för varje ytterligare profilnoggrannhetspaket. |
 | [!UICONTROL Query Service Compute Hours] | Ett mått på hur lång tid det tar för frågetjänstmotorerna att läsa, bearbeta och skriva data tillbaka till datasjön när en batchfråga körs. |
 | [!UICONTROL Streaming Segmentation No of Packs] | Paketuppdateringssegmentmedlemskapet för en personprofil när nya data matas in i segmenteringstjänsten via ett strömningsflöde. Segmentmedlemskap utvärderas baserat på attributen för den aktuella personprofilen och värdet för den aktuella händelsen, utan hänsyn till historiskt beteende. Direktuppspelningssegmentering är en delad funktion. |
-| [!UICONTROL Total Data Volume] | Den totala mängden data som är tillgängliga för Adobe Experience Platform Profile Service för användning i engagemangsarbetsflöden. Läs [vanliga frågor om Total Data Volume](../../landing/license-usage-and-guardrails/total-data-volume.md) om du vill veta mer. |
+| [!UICONTROL Total Data Volume] | Den totala mängden data som är tillgängliga för kundprofil i realtid som kan användas i engagemangsarbetsflöden. Läs [vanliga frågor om Total Data Volume](../../landing/license-usage-and-guardrails/total-data-volume.md) om du vill veta mer. |
+| [!UICONTROL Total Volume of Data Egress] | Den sammanlagda årliga datavolymen som exporteras från Adobe Experience Platform till datalager från tredje part. |
+
+<!-- Approval needed on my revision above.
+Original PM version: | [!UICONTROL Total Volume of Data Egress] | The cumulative annual amount of data processed from third-party data warehouses. | -->
 
 <!-- |  [!UICONTROL Sandbox No of Packs] |  A logical separation within your instance of any Adobe On-demand Service that accesses Adobe Experience Platform isolating data and operations | -->
 
