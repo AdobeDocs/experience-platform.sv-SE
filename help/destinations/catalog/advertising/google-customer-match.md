@@ -3,10 +3,10 @@ keywords: Google customer match;Google customer match;Google Customer Match
 title: Google Customer Match Connection
 description: Med Google Customer Match kan ni använda era online- och offlinedata för att nå ut till och återengagera era kunder via Google egna och styrda egendomar som Search, Shopping och Gmail.
 exl-id: 8209b5eb-b05c-4ef7-9fdc-22a528d5f020
-source-git-commit: bbf48bb3478e90c1502083d0ea97e3cc0aef1bb9
+source-git-commit: 38c1020a7e7ff556ed16963239a30bf906ff79e7
 workflow-type: tm+mt
-source-wordcount: '2098'
-ht-degree: 2%
+source-wordcount: '2008'
+ht-degree: 1%
 
 ---
 
@@ -18,7 +18,7 @@ ht-degree: 2%
 ><br/>
 >För att kunna följa EU:s policy för användargodkännande och fortsätta att skapa målgruppslistor för användare i Europeiska ekonomiska samarbetsområdet (EES) måste annonsörer och partners se till att slutanvändarnas samtycke skickas när målgruppsdata överförs. Som Google-partner tillhandahåller Adobe verktygen som krävs för att uppfylla dessa krav på medgivande enligt DMA i Europeiska unionen.
 ><br/>
->Kunder som har köpt Adobe sekretess- och säkerhetssköld och konfigurerat en [medgivandeprincip](../../../data-governance/enforcement/auto-enforcement.md#consent-policy-evaluation) för att filtrera bort profiler som inte godkänts behöver inte vidta några åtgärder.
+>Kunder som har köpt Adobe sekretess- och säkerhetssköld och har konfigurerat en [medgivandeprincip](../../../data-governance/enforcement/auto-enforcement.md#consent-policy-evaluation) för att filtrera bort profiler som inte godkänts behöver inte vidta några åtgärder.
 ><br/>
 >Kunder som inte har köpt Adobe sekretess- och säkerhetssköld måste använda [segmentdefinitionsfunktionerna](../../../segmentation/home.md#segment-definitions) i [Segment Builder](../../../segmentation/ui/segment-builder.md) för att filtrera bort profiler som inte godkänts, så att de kan fortsätta använda Real-Time CDP Google-destinationer utan avbrott.
 
@@ -36,7 +36,7 @@ För att du bättre ska kunna förstå hur och när du ska använda målet [!DNL
 
 ### Använd skiftläge 1
 
-Ett sportklädmärke vill nå befintliga kunder genom [!DNL Google Search] och [!DNL Google Shopping] för att personalisera erbjudanden och objekt baserat på deras tidigare köp och webbhistorik. Kläddervarumärket kan importera e-postadresser från sin egen CRM till Experience Platform och bygga målgrupper utifrån sina egna offlinedata. Sedan kan de skicka dessa målgrupper till [!DNL Google Customer Match] för användning i [!DNL Search] och [!DNL Shopping], vilket optimerar deras annonsutgifter.
+Ett sportklädmärke vill nå befintliga kunder genom [!DNL Google Search] och [!DNL Google Shopping] för att personalisera erbjudanden och objekt baserat på deras tidigare köp och webbhistorik. Det klädvarumärket kan importera e-postadresser från sin egen CRM till Experience Platform och bygga målgrupper utifrån sina egna offlinedata. Sedan kan de skicka dessa målgrupper till [!DNL Google Customer Match] för användning i [!DNL Search] och [!DNL Shopping], vilket optimerar deras annonsutgifter.
 
 ### Använd skiftläge 2
 
@@ -50,7 +50,7 @@ För att befordra releasen överför de e-postadresser från sin CRM-databas til
 
 ## Datastyrning för [!DNL Google Customer Match] mål {#data-governance}
 
-Vissa destinationer i Experience Platform har vissa regler och skyldigheter för data som skickas till eller tas emot från destinationsplattformen. Du ansvarar för att förstå begränsningar och skyldigheter för dina data och hur du använder dessa data i Adobe Experience Platform och målplattformen. Adobe Experience Platform tillhandahåller datastyrningsverktyg som hjälper er att hantera vissa av dessa dataanvändningsskyldigheter. [Läs mer](../../../data-governance/labels/overview.md) om verktyg och principer för datastyrning.
+Vissa destinationer i Experience Platform har vissa regler och skyldigheter för data som skickas till eller tas emot från målplattformen. Du ansvarar för att förstå begränsningar och skyldigheter för dina data och hur du använder dessa data i Adobe Experience Platform och målplattformen. Adobe Experience Platform tillhandahåller datastyrningsverktyg som hjälper er att hantera vissa av dessa dataanvändningsskyldigheter. [Läs mer](../../../data-governance/labels/overview.md) om verktyg och principer för datastyrning.
 
 ## Identiteter som stöds {#supported-identities}
 
@@ -72,7 +72,7 @@ I det här avsnittet beskrivs vilka typer av målgrupper du kan exportera till d
 
 | Målgruppsursprung | Stöds | Beskrivning |
 |---------|----------|----------|
-| [!DNL Segmentation Service] | ✓ | Publiker som genererats via Experience Platform [segmenteringstjänsten](../../../segmentation/home.md). |
+| [!DNL Segmentation Service] | ✓ | Publiker som genererats via Experience Platform [segmenteringstjänst](../../../segmentation/home.md). |
 | Anpassade överföringar | ✓ | Publikerna [importerade](../../../segmentation/ui/audience-portal.md#import-audience) till Experience Platform från CSV-filer. |
 
 {style="table-layout:auto"}
@@ -119,7 +119,7 @@ Det finns två metoder för att aktivera telefonnummer i [!DNL Google Customer M
 
 ### Krav för e-posthashning {#hashing-requirements}
 
-Du kan hash-koda e-postadresser innan du importerar dem till Adobe Experience Platform, eller använda e-postadresser i klartext i Experience Platform, och få [!DNL Platform] hash-kodade adresser när de aktiveras.
+Du kan hash-koda e-postadresser innan du importerar dem till Adobe Experience Platform, eller använda e-postadresser som är tydliga i Experience Platform, och få [!DNL Platform] hash-kodade adresser när de aktiveras.
 
 Mer information om Google hashkrav och andra begränsningar för aktivering finns i följande avsnitt i Google dokumentation:
 
@@ -129,7 +129,7 @@ Mer information om Google hashkrav och andra begränsningar för aktivering finn
 * [[!DNL Customer Match] med ID:n för mobila enheter](https://developers.google.com/google-ads/api/docs/remarketing/audience-types/customer-match#customer_match_with_mobile_device_ids)
 
 
-Om du vill veta mer om hur du kan importera e-postadresser i Experience Platform kan du läsa översikten över [gruppimporten](../../../ingestion/batch-ingestion/overview.md) och översikten över [direktuppspelningsuppläsningen](../../../ingestion/streaming-ingestion/overview.md).
+Om du vill veta mer om hur du kan importera e-postadresser i Experience Platform kan du läsa översikten över [gruppimporten](../../../ingestion/batch-ingestion/overview.md) och översikten över [direktuppspelningsinläsningen](../../../ingestion/streaming-ingestion/overview.md).
 
 Om du väljer att hash-koda e-postadresserna själv måste du se till att uppfylla Google krav som beskrivs i länkarna ovan.
 
@@ -227,16 +227,6 @@ Attributkälldata hashas inte automatiskt. Om källfältet innehåller ohashade 
 ## Bildskärmsmål {#monitor-destination}
 
 När du har anslutit till målet och etablerat ett måldataflöde kan du använda [övervakningsfunktionen](/help/dataflows/ui/monitor-destinations.md) i Real-Time CDP för att få omfattande information om de profilposter som är aktiverade för målet i varje dataflödeskörning.
-
->[!IMPORTANT]
->
-> Från och med oktober 2024 lanserar Adobe en uppdatering som ökar rapporteringsnoggrannheten för strömningsmål. Den här förbättringen ger bättre anpassning mellan Experience Platform och målplattformarna.
->
-> Före den här uppdateringen innehöll **[!UICONTROL Identities failed]** alla aktiveringsförsök. Efter den här uppdateringen inkluderas endast det senaste aktiveringsförsöket i det totala antalet.
->
-> Den här förbättringen gäller för närvarande för [Google kundmatchningsmålet](google-customer-match.md), men kommer gradvis att lanseras för andra direktuppspelningsmål för Experience Platform.
-> Efter den här förbättringen kan användare med det här målet se en förväntad minskning av antalet **[!UICONTROL Identities failed]**.
-
 
 ## Verifiera att målgruppsaktiveringen lyckades {#verify-activation}
 

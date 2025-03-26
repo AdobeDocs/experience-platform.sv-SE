@@ -4,10 +4,10 @@ solution: Experience Platform
 title: Övervaka dataflöden för mål i användargränssnittet
 type: Tutorial
 exl-id: 8eb7bb3c-f2dc-4dbc-9cf5-3d5d3224f5f1
-source-git-commit: b814becaed88ce23527dc58f7ec056c05a48379f
+source-git-commit: 7f3560eaccecc8f42bbfa7d27b82ad71397df035
 workflow-type: tm+mt
-source-wordcount: '3468'
-ht-degree: 1%
+source-wordcount: '3451'
+ht-degree: 0%
 
 ---
 
@@ -97,12 +97,12 @@ Varje enskild dataflödeskörning visar följande information:
 
   >[!IMPORTANT]
   >
-  > Från och med oktober 2024 lanserar Adobe en uppdatering som ökar rapporteringsnoggrannheten för strömningsmål. Den här förbättringen ger bättre anpassning mellan Experience Platform och målplattformarna.
+  > Från och med mars 2025 lanserar Adobe en uppdatering som ökar rapporteringsnoggrannheten för direktuppspelningsdestinationer. Den här förbättringen ger bättre anpassning mellan rapporteringen i Experience Platform och målplattformarna.
   >
   > Före den här uppdateringen innehöll **[!UICONTROL Identities failed]** alla aktiveringsförsök. Efter den här uppdateringen inkluderas endast det senaste aktiveringsförsöket i det totala antalet.
   > 
-  > Den här förbättringen gäller för närvarande för [Google kundmatchningsmålet](../../destinations/catalog/advertising/google-customer-match.md), men kommer gradvis att lanseras för andra Experience Platform-direktuppspelningsmål.
-  > Efter förbättringen kan användare av [Google Customer Match-mål](../../destinations/catalog/advertising/google-customer-match.md) se färre **[!UICONTROL Identities failed]**, vilket är helt normalt.
+  > Den här förbättringen gäller för alla direktuppspelningsmål.
+  > Efter den här förbättringen kan användare av direktuppspelningsmål se en förväntad minskning av antalet **[!UICONTROL Identities failed]**.
 
 
 - **[!UICONTROL Activation rate]**: Procentandel mottagna identiteter som har aktiverats. Följande formel visar hur det här värdet beräknas:
