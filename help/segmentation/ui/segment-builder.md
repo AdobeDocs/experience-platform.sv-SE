@@ -3,7 +3,7 @@ solution: Experience Platform
 title: Användargränssnittshandbok för Segment Builder
 description: Segmentbyggaren i Adobe Experience Platform-användargränssnittet har en omfattande arbetsyta som du kan använda för att interagera med profildataelement. Arbetsytan innehåller intuitiva kontroller för att skapa och redigera regler, till exempel dra-och-släpp-paneler som används för att representera dataegenskaper.
 exl-id: b27516ea-8749-4b44-99d0-98d3dc2f4c65
-source-git-commit: e7c0551276d31d6809ace096c00e0dc2665090e6
+source-git-commit: dc36c5e2eb109d1728f2290ee61e69f458929ba7
 workflow-type: tm+mt
 source-wordcount: '4889'
 ht-degree: 0%
@@ -322,7 +322,7 @@ Listan över tillgängliga tidsbegränsningar för den här åtgärden skiljer s
 
 +++
 
-## Behållare
+## Behållare {#containers}
 
 Segmentregler utvärderas i den ordning som de listas. Behållare ger kontroll över körningsordningen med hjälp av kapslade frågor.
 

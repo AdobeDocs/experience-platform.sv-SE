@@ -1,10 +1,10 @@
 ---
 keywords: segmentering; segmentering rtcdp;kunddataplattformssegmentering i realtid
-title: Segmenteringstjänst i Real-time Customer Data Platform
-description: Adobe Real-time Customer Data Platform bygger på Adobe Experience Platform och utnyttjar många av Experience Platform tjänster och funktioner. Med hjälp av segmenteringstjänsten kan ni erbjuda skräddarsydd marknadsföring genom att dela upp kunderna i mindre grupper med liknande egenskaper.
+title: Segmenteringstjänst i Real-Time Customer Data Platform
+description: Adobe Real-Time Customer Data Platform är byggt på Adobe Experience Platform och utnyttjar många av Experience Platform tjänster och funktioner. Med hjälp av segmenteringstjänsten kan ni erbjuda skräddarsydd marknadsföring genom att dela upp kunderna i mindre grupper med liknande egenskaper.
 feature: Get Started, Audiences, Segments
 exl-id: 140667c0-e288-40c4-8c45-c275e348b84a
-source-git-commit: e52eb90b64ae9142e714a46017cfd14156c78f8b
+source-git-commit: 96c5df4f172815d3b1904ab6614b1ce02d11dbaf
 workflow-type: tm+mt
 source-wordcount: '540'
 ht-degree: 0%
@@ -21,13 +21,13 @@ Real-Time CDP är byggt ovanpå Adobe Experience Platform och utnyttjar många a
 
 Segmentering är processen att definiera specifika attribut eller beteenden som delas av en deluppsättning profiler från din profilbutik för att skilja en marknadsföringsbar grupp av människor från din kundbas. I en e-postkampanj som heter&quot;Har du glömt att köpa dina smygtittare?&quot; kanske du vill ha en målgrupp med alla användare som sökte efter skor de senaste 30 dagarna, men som inte slutförde ett köp. Med olika segmentdefinitioner kan ni fokusera på olika målgrupper och leverera en mer anpassad marknadsföringsupplevelse.
 
-## [!DNL Segment Builder]
+## [!DNL Audience Builder]
 
-Med [!DNL Platform] kan du enkelt skapa och komma åt segmentdefinitioner, samt använda olika byggstenar för att ytterligare beskriva målgrupperna. Mer information om hur du använder Segment Builder finns i [guiden för segmentbyggaren](./segment-builder-guide.md).
+Med [!DNL Platform] kan du enkelt skapa och komma åt segmentdefinitioner, samt använda olika byggstenar för att ytterligare beskriva målgrupperna. Mer information om hur du använder Audience Builder finns i [Audience Builder-handboken](./audience-builder.md).
 
 ## Kund-AI
 
-Med Customer AI, som ingår i Real-time Customer Data Platform, kan ni generera kundprognoser på individnivå med förklaringar.
+Med Customer AI, som ingår i Real-Time Customer Data Platform, kan ni generera kundprognoser på individnivå med förklaringar.
 
 Med hjälp av inflytelserika faktorer kan kundens AI tala om för er vad en kund kan tänkas göra och varför. Dessutom kan ni dra nytta av kundernas AI-prognoser och insikter för att personalisera kundupplevelser genom att leverera de lämpligaste erbjudandena och budskapen. Kundens AI kan hjälpa till med:
 
