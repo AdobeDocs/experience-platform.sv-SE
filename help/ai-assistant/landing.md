@@ -3,9 +3,9 @@ title: AI Assistant i Adobe Experience Platform produktdokumentation
 description: Kom igång med AI Assistant i Adobe Experience Platform.
 feature: AI Assistant
 exl-id: bcb86a41-d5d8-4c1a-a86d-79fa0c167bc7
-source-git-commit: b26a1f12c9ea07d4dd077f1f3c1578e6c69866a7
+source-git-commit: a34c3cae803c9e70530dbd382fbec2ece17fc71a
 workflow-type: tm+mt
-source-wordcount: '1059'
+source-wordcount: '1095'
 ht-degree: 0%
 
 ---
@@ -97,11 +97,9 @@ For more information about AI Assistant, read the [security fact sheet for AI As
 
 >[!ENDSHADEBOX] -->
 
-## Videobibliotek
+## Grundläggande om
 
-Titta på följande videofilmer för att ytterligare förstärka din kunskap om AI Assistant-funktioner och användningsexempel:
-
-### Grundläggande om
+Titta på följande videofilmer för att lära dig mer om några av de grundläggande aspekterna av AI Assistant.
 
 <!-- START CARDS HTML - DO NOT MODIFY BY HAND -->
 <div class="columns">
@@ -252,7 +250,9 @@ Titta på följande videofilmer för att ytterligare förstärka din kunskap om 
 </div>
 <!-- END CARDS HTML - DO NOT MODIFY BY HAND -->
 
-### Använd fallbibliotek
+## Använd fallbibliotek
+
+Titta på följande videofilmer för att lära dig mer om hur du använder AI Assistant.
 
 <!-- START CARDS HTML - DO NOT MODIFY BY HAND -->
 <div class="columns">
@@ -416,7 +416,7 @@ Titta på följande videofilmer för att ytterligare förstärka din kunskap om 
 </div>
 <!-- END CARDS HTML - DO NOT MODIFY BY HAND -->
 
-## AI Assistant - fallbibliotek
+## Fler användningsfall
 
 >[!BEGINTABS]
 
@@ -439,6 +439,14 @@ I följande videofilmer finns ytterligare exempel på hur du använder AI Assist
 * [Lås upp operativa insikter med AI Assistant](https://www.youtube.com/watch?v=fGgFwAOZle8)
 
 >[!ENDTABS]
+
+### Öka produktiviteten med AI Assistant
+
+Nedan finns en praktisk guide om hur du kan höja din produktivitet med AI Assistant.
+
+* [Öka produktiviteten med AI Assistant](./assets/landing/ai-assistant-lab-workbook.pdf)
+
+## Nästa steg
 
 Klicka på länkarna nedan för att få en bättre förståelse för användningsfall, funktioner och mycket annat i AI Assistant.
 
