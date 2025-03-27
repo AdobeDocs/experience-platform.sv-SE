@@ -2,9 +2,9 @@
 title: Skapa en Microsoft Dynamics-basanslutning med API:t för flödestjänsten
 description: Lär dig hur du ansluter en plattform till ett Microsoft Dynamics-konto med API:t för Flow Service.
 exl-id: 423c6047-f183-4d92-8d2f-cc8cc26647ef
-source-git-commit: bda26fa4ecf4f54cb36ffbedf6a9aa13faf7a09d
+source-git-commit: 4e119056c0ab89cfc79eeb46e6f870c89356dc7d
 workflow-type: tm+mt
-source-wordcount: '1102'
+source-wordcount: '1330'
 ht-degree: 0%
 
 ---
@@ -264,6 +264,44 @@ Ett lyckat svar returnerar katalogen [!DNL Dynamics] för tabeller och vyer på 
 
 +++
 
+### Använd primärnyckeln för att optimera datautforskandet
+
+>[!NOTE]
+>
+>Du kan bara använda attribut som inte är sökbara när du använder primärnyckeln för optimering.
+
+Du kan optimera utforska frågor genom att ange `primaryKey` som en del av dina frågeparametrar. Du måste ange primärnyckeln för tabellen [!DNL Dynamics] när du inkluderar `primaryKey` som en frågeparameter.
+
+**API-format**
+
+```http
+GET /connections/{BASE_CONNECTION_ID}/explore?preview=true&object={OBJECT}&objectType={OBJECT_TYPE}&previewCount=10&primaryKey={PRIMARY_KEY}
+```
+
+| Frågeparametrar | Beskrivning |
+| --- | --- |
+| `{BASE_CONNECTION_ID}` | ID för basanslutningen. Använd det här ID:t för att utforska källans innehåll och struktur. |
+| `preview` | Ett booleskt värde som möjliggör förhandsgranskning av data. |
+| `{OBJECT}` | Det [!DNL Dynamics]-objekt som du vill utforska. |
+| `{OBJECT_TYPE}` | Objektets typ. |
+| `previewCount` | En begränsning som begränsar den returnerade förhandsvisningen till ett visst antal poster. |
+| `{PRIMARY_KEY}` | Primärnyckeln för tabellen som du hämtar för förhandsgranskning. |
+
+**Begäran**
+
++++Markera för att visa ett exempel på en begäran
+
+```shell
+curl -X GET \
+  'https://platform-stage.adobe.io/data/foundation/flowservice/connections/dd668808-25da-493f-8782-f3433b976d1e/explore?preview=true&object=lead&objectType=table&previewCount=10&primaryKey=leadid' \
+  -H 'Authorization: Bearer {ACCESS_TOKEN}' \
+  -H 'x-api-key: {API_KEY}' \
+  -H 'x-gw-ims-org-id: {ORG_ID}' \
+  -H 'x-sandbox-name: {SANDBOX_NAME}' \
+  -H 'Content-Type: application/json' \
+```
+
++++
 
 ## Inspektera strukturen i en tabell
 
@@ -581,6 +619,74 @@ Ett lyckat svar returnerar det nyligen genererade källanslutnings-ID:t och dess
 ```
 
 +++
+
+### Använd primärnyckeln för att optimera dataflödet
+
+Du kan även optimera dataflödet för [!DNL Dynamics] genom att ange primärnyckeln som en del av textparametrarna för din begäran.
+
+**API-format**
+
+```http
+POST /sourceConnections
+```
+
+**Begäran**
+
+Följande begäran skapar en [!DNL Dynamics]-källanslutning när primärnyckeln anges som `contactid`.
+
++++Markera för att visa ett exempel på en begäran
+
+```shell
+curl -X POST \
+  'https://platform.adobe.io/data/foundation/flowservice/sourceConnections' \
+  -H 'Authorization: Bearer {ACCESS_TOKEN}' \
+  -H 'x-api-key: {API_KEY}' \
+  -H 'x-gw-ims-org-id: {ORG_ID}' \
+  -H 'x-sandbox-name: {SANDBOX_NAME}' \
+  -H 'Content-Type: application/json' \
+  -d '{
+      "name": "Dynamics Source Connection",
+      "description": "Dynamics Source Connection",
+      "baseConnectionId": "dd668808-25da-493f-8782-f3433b976d1e",
+      "data": {
+          "format": "tabular"
+      },
+      "params": {
+          "tableName": "contact",
+          "primaryKey": "contactid"
+      },
+      "connectionSpec": {
+          "id": "38ad80fe-8b06-4938-94f4-d4ee80266b07",
+          "version": "1.0"
+      }
+  }'
+```
+
+| Egenskap | Beskrivning |
+| --- | --- |
+| `baseConnectionId` | ID för basanslutningen. |
+| `data.format` | Dataformatet. |
+| `params.tableName` | Namnet på tabellen i [!DNL Dynamics]. |
+| `params.primaryKey` | Primärnyckeln för tabellen som optimerar frågor. |
+| `connectionSpec.id` | Anslutningens spec-ID som motsvarar källan [!DNL Dynamics]. |
+
++++
+
+**Svar**
+
+Ett lyckat svar returnerar det nyligen genererade källanslutnings-ID:t och dess motsvarande tagg.
+
++++Markera för att visa svarsexempel
+
+```json
+{
+    "id": "e566bab3-1b58-428c-b751-86b8cc79a3b4",
+    "etag": "\"82009592-0000-0200-0000-678121030000\""
+}
+```
+
++++
+
 
 ## Nästa steg
 
