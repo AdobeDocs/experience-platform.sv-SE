@@ -2,7 +2,7 @@
 title: Versionsinformation om Adobe Experience Platform mars 2025
 description: Versionsinformationen för Adobe Experience Platform i mars 2025.
 exl-id: f854f9e5-71be-4d56-a598-cfeb036716cb
-source-git-commit: b96e1186669c77530a10f1f177c1d99947c27f3b
+source-git-commit: 445bf302baadf478a39b0c11a31ccfe25d5dd726
 workflow-type: tm+mt
 source-wordcount: '1170'
 ht-degree: 27%
@@ -16,6 +16,7 @@ ht-degree: 27%
 Uppdateringar av befintliga funktioner och dokumentation i Adobe Experience Platform:
 
 - [Versionsinformation om Adobe Experience Platform](#adobe-experience-platform-release-notes)
+
    - [Kontrollpaneler](#dashboards)
    - [Mål ](#destinations)
    - [Segmenteringstjänst](#segmentation-service)
