@@ -1,22 +1,36 @@
 ---
-title: Exportera arrayer, kartor och objekt från Real-Time CDP till molnlagringsmål
+title: Exportera arrayer, kartor och objekt från Real-Time CDP
 type: Tutorial
 description: Lär dig hur du exporterar arrayer, kartor och objekt från Real-Time CDP till molnlagringsmål.
 exl-id: ff13d8b7-6287-4315-ba71-094e2270d039
-source-git-commit: 99093e0bbcd3c3560ebe201fdac72e83e67dae43
+source-git-commit: 2d59a92d7ff1e0be7977a90df460190a3b417809
 workflow-type: tm+mt
-source-wordcount: '851'
+source-wordcount: '1080'
 ht-degree: 0%
 
 ---
 
-# Exportera arrayer, kartor och objekt från Real-Time CDP till molnlagringsmål {#export-arrays-cloud-storage}
+# Exportera arrayer, kartor och objekt från Real-Time CDP {#export-arrays-cloud-storage}
 
 >[!AVAILABILITY]
 >
->Funktionen för att exportera arrayer och andra komplexa objekt till molnlagringsmål är vanligtvis tillgänglig för följande mål: [[!DNL Azure Data Lake Storage Gen2]](../../destinations/catalog/cloud-storage/adls-gen2.md), [[!DNL Data Landing Zone]](../../destinations/catalog/cloud-storage/data-landing-zone.md), [[!DNL Google Cloud Storage]](../../destinations/catalog/cloud-storage/google-cloud-storage.md), [[!DNL Amazon S3]](../../destinations/catalog/cloud-storage/amazon-s3.md), [[!DNL Azure Blob]](../../destinations/catalog/cloud-storage/azure-blob.md), [[!DNL SFTP]](../../destinations/catalog/cloud-storage/sftp.md),
+>Funktionen för att exportera arrayer och andra komplexa objekt till molnlagringsmål är vanligtvis tillgänglig för följande mål: [[!DNL Azure Data Lake Storage Gen2]](../../destinations/catalog/cloud-storage/adls-gen2.md), [[!DNL Data Landing Zone]](../../destinations/catalog/cloud-storage/data-landing-zone.md), [[!DNL Google Cloud Storage]](../../destinations/catalog/cloud-storage/google-cloud-storage.md), [[!DNL Amazon S3]](../../destinations/catalog/cloud-storage/amazon-s3.md), [[!DNL Azure Blob]](../../destinations/catalog/cloud-storage/azure-blob.md), [[!DNL SFTP]](../../destinations/catalog/cloud-storage/sftp.md).
+>
+>Dessutom kan du exportera mappningsfält till följande mål: [Amazon Kinesis](/help/destinations/catalog/cloud-storage/amazon-kinesis.md), [HTTP API](/help/destinations/catalog/streaming/http-destination.md), [Azure Event Hubs](/help/destinations/catalog/cloud-storage/azure-event-hubs.md), [Adobe Target](/help/destinations/catalog/personalization/adobe-target-connection.md).
 
-Lär dig hur du exporterar arrayer, kartor och objekt från Real-Time CDP till [molnlagringsmål](/help/destinations/catalog/cloud-storage/overview.md). Läs det här dokumentet om du vill veta mer om exportarbetsflödet, vilka användningsfall som den här funktionen har aktiverat och kända begränsningar.
+
+Lär dig hur du exporterar arrayer, kartor och objekt från Real-Time CDP till [molnlagringsmål](/help/destinations/catalog/cloud-storage/overview.md). Dessutom kan du exportera mappningsfält till [företagsmål](/help/destinations/destination-types.md#advanced-enterprise-destinations) och begränsade [kantanpassningsmål](/help/destinations/destination-types.md#edge-personalization-destinations). Läs det här dokumentet om du vill veta mer om exportarbetsflödet, vilka användningsfall som den här funktionen har aktiverat och kända begränsningar. Se tabellen nedan för att förstå vilka funktioner som är tillgängliga per måltyp.
+
+| Typ av mål | Möjlighet att exportera arrayer, kartor och andra anpassade objekt |
+|---|---|
+| Adobe-skapade molnlagringsmål (Amazon S3, Azure Blob, Azure Data Lake Storage Gen2, Data Landing Zone, Google Cloud Storage, SFTP) | Ja, med Aktivera export av arrayer, kartor och objekt aktiverat när du konfigurerar en målanslutning. |
+| Filbaserade mål för e-postmarknadsföring (Adobe Campaign, Oracle Eloqua, Oracle Responsys, Salesforce Marketing Cloud) | Nej |
+| Befintliga anpassade partnerbyggda molnlagringsmål (anpassade filbaserade mål byggda via Destination SDK) | Nej |
+| Företagsmål (Amazon Kinesis, Azure Event Hubs, HTTP API) | Delvis. Du kan markera och exportera mappningsobjekt i mappningssteget i aktiveringsarbetsflödet. |
+| Direktuppspelningsmål (t.ex. Facebook, Braze, Google Customer Match) | Nej |
+| Edge personaliseringsmål (Adobe Target) | Delvis. Du kan markera och exportera mappningsobjekt i mappningssteget i aktiveringsarbetsflödet. |
+
+{style="table-layout:auto"}
 
 Ta den här sidan som en praktisk plats där du kan hitta det du vill veta om hur du exporterar arrayer, kartor och andra objekttyper från Experience Platform.
 
@@ -24,9 +38,9 @@ Ta den här sidan som en praktisk plats där du kan hitta det du vill veta om hu
 
 Hämta den viktigaste informationen om funktionerna i det här avsnittet och fortsätt till de andra avsnitten i dokumentet för detaljerad information.
 
-* Möjligheten att exportera arrayer, kartor och objekt beror på ditt val av **växlingsknappen Exportera arrayer, kartor, objekt**. Läs mer om det [längre ned på sidan](#export-arrays-maps-objects-toggle).
-* Du kan bara exportera arrayer, kartor och objekt till molnlagringsmål i `JSON`- och `Parquet`-filer. Målgrupper för människor och potentiella kunder stöds, men inte målgrupper för konton.
-* Du *kan* exportera arrayer, kartor och objekt till CSV-filer, men bara genom att använda funktionen för beräknade fält och sammanfoga dem till en sträng med funktionen `array_to_string`.
+* För molnlagringsmål beror möjligheten att exportera arrayer, kartor och objekt på ditt val av **Exportera arrayer, kartor och objekt**. Läs mer om det [längre ned på sidan](#export-arrays-maps-objects-toggle).
+* Du kan exportera arrayer, kartor och objekt till molnlagringsmål i `JSON`- och `Parquet`-filer. För företags- och kantanpassningsmål är den exporterade datatypen `JSON`. Målgrupper för människor och potentiella kunder stöds, men inte målgrupper för konton.
+* För filbaserade molnlagringsmål *kan* exportera arrayer, kartor och objekt till CSV-filer, men bara genom att använda funktionen för beräknade fält och sammanfoga dem till en sträng med funktionen `array_to_string` .
 
 ## Arrayer och andra objekttyper i Platform {#arrays-strings-other-objects}
 
@@ -59,6 +73,10 @@ Förutom arrayer kan du även exportera kartor och objekt från Experience Platf
 
 [Anslut](/help/destinations/ui/connect-destination.md) till önskat molnlagringsmål, gå igenom [aktiveringsstegen för molnlagringsmål](/help/destinations/ui/activate-batch-profile-destinations.md) och gå till [mappningssteget](/help/destinations/ui/activate-batch-profile-destinations.md#mapping). När du ansluter till det önskade molnmålet måste du aktivera alternativet **[!UICONTROL Export arrays, maps, objects]**. Mer information finns i avsnittet nedan.
 
+>[!NOTE]
+>
+>För företags- och kantanpassningsmål är exportstöd för mappningsfält tillgängligt utan att du behöver välja en **[!UICONTROL Export arrays, maps, objects]**-växel. Den här växeln är inte tillgänglig eller behövs vid anslutning till dessa typer av mål.
+
 ## Exportera arrayer, kartor, objektväxling {#export-arrays-maps-objects-toggle}
 
 >[!CONTEXTUALHELP]
@@ -66,7 +84,7 @@ Förutom arrayer kan du även exportera kartor och objekt från Experience Platf
 >title="Exportera arrayer, kartor och objekt"
 >abstract="<p> Växla den här inställningen <b>på</b> om du vill aktivera export av arrayer, kartor och objekt till JSON- eller Parquet-filer. Du kan välja dessa objekttyper i källfältsvyn i mappningssteget. Om du aktiverar växeln kan du inte använda alternativet för beräknade fält i mappningssteget.</p><p>Med den här växlingen <b> av</b> kan du använda alternativet för beräknade fält och tillämpa olika dataomformningsfunktioner när du aktiverar målgrupper. Du kan <i>inte</i> exportera arrayer, kartor och objekt till JSON- eller Parquet-filer och måste konfigurera ett separat mål för det ändamålet.</p>"
 
-När du ansluter till ett molnlagringsmål kan du aktivera eller inaktivera alternativet **[!UICONTROL Export arrays, maps, objects]**.
+När du ansluter till ett filbaserat molnlagringsmål kan du aktivera eller inaktivera **[!UICONTROL Export arrays, maps, objects]**.
 
 ![Exportera matriser, kartor, objekt som växlas mellan att visas med en aktiverings- eller avaktiveringsinställning, samt markera povern.](/help/destinations/assets/ui/export-arrays-calculated-fields/export-objects-toggle.gif)
 
