@@ -3,9 +3,9 @@ keywords: reklamdestinationer;destinationer;plattformsdestinationer
 title: Översikt över Advertising destinationer
 description: Koppla Adobe Experience Platform till en annonsplattform från tredje part (t.ex. DSP, annonsnätverk, SSP) och dela pseudonyma målgrupper med dessa plattformar.
 exl-id: 072743a4-fc62-4a61-92ec-8f9640a47ab2
-source-git-commit: f6fb88cbc89d419e3dbb39c9cc8958f9455b2953
+source-git-commit: b193a7458e4e6e02a748dcac0bbf5550b2979899
 workflow-type: tm+mt
-source-wordcount: '272'
+source-wordcount: '274'
 ht-degree: 0%
 
 ---
@@ -29,6 +29,7 @@ Mer information om skillnaden mellan anslutningar och tillägg finns i [Anslutni
 * [(Beta) Acxiom Audience Distribution](acxiom-audience-distribution.md)
 * [Adobe Advertising Cloud-anslutning](adobe-advertising-cloud-connection.md)
 * [Amazon Ads-anslutning](amazon-ads.md)
+* [Bomboras anslutning](bombora.md)
 * [Kriterieanslutning](criteo.md)
 * [Google Display &amp; Video 360-anslutning](google-dv360.md)
 * [Google Ads-anslutning](google-ads-destination.md)
