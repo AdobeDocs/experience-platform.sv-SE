@@ -3,7 +3,7 @@ solution: Experience Platform
 title: Fältgrupp för innehåll och inställningar
 description: Läs mer om schemafältgruppen Innehåll och inställningar.
 exl-id: ec592102-a9d3-4cac-8b94-58296a138573
-source-git-commit: b08c6cf12a38f79e019544dea91913a77bd6490a
+source-git-commit: be35c5398cd96cdfe424c5088db288ba4061ac4a
 workflow-type: tm+mt
 source-wordcount: '888'
 ht-degree: 0%
@@ -90,7 +90,7 @@ I följande JSON visas ett exempel på vilken typ av data som fältgruppen [!UIC
 
 >[!TIP]
 >
->Du kan generera JSON-exempeldata för alla XDM-scheman som du definierar i Experience Platform för att visualisera hur kundens samtycke och inställningsdata ska mappas. Mer information finns i följande dokumentation:
+>Du kan generera exempel på JSON-data för alla XDM-scheman som du definierar i Experience Platform för att visualisera hur kundens samtycke och inställningsdata ska mappas. Mer information finns i följande dokumentation:
 >
 >* [Generera exempeldata i användargränssnittet](../../ui/sample.md)
 >* [Generera exempeldata i API](../../api/sample-data.md)
@@ -185,7 +185,7 @@ I självstudiekursen [Skapa ett schema i användargränssnittet](https://www.ado
 
 ## Hantera samtycke och ändringar av inställningar
 
-När en kund ändrar sitt samtycke eller sina inställningar på webbplatsen bör dessa ändringar samlas in och tillämpas omedelbart med [Adobe Experience Platform Web SDK](../../../web-sdk/commands/setconsent.md). Om en kund väljer bort från datainsamlingen måste all datainsamling omedelbart upphöra. Om en kund väljer bort personalisering bör det inte finnas någon personalisering på nästa sida de besöker.
+När en kund ändrar sitt samtycke eller sina inställningar på webbplatsen bör dessa ändringar samlas in och tillämpas omedelbart med [Adobe Experience Platform Web SDK](../../../web-sdk/commands/setconsent.md). Om en kund väljer bort från datainsamlingen måste all datainsamling omedelbart upphöra. Om en kund väljer bort personalisering bör det inte finnas någon personalisering på nästa sida som de laddar.
 
 ## Nästa steg
 
