@@ -2,9 +2,9 @@
 title: Implementeringsguide för regler för länkning av identitetsdiagram
 description: Lär dig de rekommenderade stegen som ska följas när du implementerar data med länkningsregler för identitetsdiagram.
 exl-id: 368f4d4e-9757-4739-aaea-3f200973ef5a
-source-git-commit: 2dadb3a0a79f4d187dd096177130802f511a6917
+source-git-commit: 83815c4911f867329d5fb7731763141d950f85bf
 workflow-type: tm+mt
-source-wordcount: '1766'
+source-wordcount: '1807'
 ht-degree: 0%
 
 ---
@@ -67,10 +67,9 @@ Om du använder [Adobe Analytics-källkopplingen](../../sources/tutorials/ui/cre
 
 Under förimplementeringsprocessen måste du se till att de autentiserade händelser som skickas till Experience Platform alltid innehåller en **enskild**-personidentifierare, till exempel ett CRMID.
 
-* (Rekommenderas) Autentiserade händelser med en person-ID.
-* (Rekommenderas inte) Autentiserade händelser med två personidentifierare.
-* (Rekommenderas inte) Autentiserade händelser utan någon personidentifierare.
-
+* (Rekommenderas) Autentiserade händelser med en unik personidentifierare.
+* (Rekommenderas inte) Autentiserade händelser med två unika personidentifierare. Om du har fler än en unik personidentifierare kan du råka ut för en oönskad diagramkomprimering.
+* (Rekommenderas inte) Autentiserade händelser utan unika personidentifierare. Om du inte har några unika personidentifierare kommer både oautentiserade och autentiserade händelser att lagras mot ECID.
 
 >[!BEGINTABS]
 
