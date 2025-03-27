@@ -1,9 +1,8 @@
 ---
 title: Använd åtkomstetiketter för att hantera användaråtkomst till källdata med API
 description: Lär dig hur du använder API:t för Flow Service för att tillämpa åtkomstetiketter och hantera användaråtkomst till källdata.
-hide: true
-hidefromtoc: true
-source-git-commit: 80fb60abdf33eb2a7ca691a9a48a811c632b34fc
+exl-id: 572d6838-3e4c-4fd5-89fa-32cad6280325
+source-git-commit: f57fa04e668fa9c61b9b15778e74969edffae0fa
 workflow-type: tm+mt
 source-wordcount: '567'
 ht-degree: 0%

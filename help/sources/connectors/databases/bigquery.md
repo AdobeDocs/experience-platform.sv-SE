@@ -3,9 +3,9 @@ title: Google BigQuery Source Connector - översikt
 description: Lär dig hur du ansluter Google BigQuery till Adobe Experience Platform med hjälp av API:er eller användargränssnittet.
 badgeUltimate: label="Ultimate" type="Positive"
 exl-id: 35c61382-a909-47f4-a937-15cb725ecbe3
-source-git-commit: 1fa79b31b5a257ebb3cbd60246b757d8a4a63d7c
+source-git-commit: 1900a8c6a3f3119c8b9049b12f5660cc9fd181a2
 workflow-type: tm+mt
-source-wordcount: '529'
+source-wordcount: '582'
 ht-degree: 0%
 
 ---
@@ -14,23 +14,21 @@ ht-degree: 0%
 
 >[!IMPORTANT]
 >
->Källan [!DNL Google BigQuery] är tillgänglig i källkatalogen för användare som har köpt Real-time Customer Data Platform Ultimate.
+>Källan [!DNL Google BigQuery] är tillgänglig i källkatalogen för användare som har köpt Real-Time Customer Data Platform Ultimate.
 
-Med Adobe Experience Platform kan data hämtas från externa källor samtidigt som du kan strukturera, märka och förbättra inkommande data med hjälp av plattformstjänster. Du kan importera data från en mängd olika källor, till exempel Adobe-program, molnbaserad lagring, databaser och många andra.
-
-Läs det här dokumentet om du behöver utföra nödvändiga steg för att kunna ansluta ditt [!DNL Google BigQuery]-konto till Experience Platform.
+Läs det här dokumentet för nödvändiga steg som du måste slutföra för att kunna ansluta ditt [!DNL Google BigQuery]-konto till Adobe Experience Platform på antingen Azure eller Amazon Web Services (AWS).
 
 ## Förhandskrav {#prerequisites}
 
-I följande avsnitt finns mer information om nödvändiga inställningar som krävs innan du kan skapa en [!DNL Google BigQuery]-källanslutning.
+I följande avsnitt finns information om den nödvändiga konfiguration som du måste slutföra innan du kan ansluta ditt [!DNL Google BigQuery]-konto till Experience Platform.
 
 ### IP-adress tillåtelselista
 
-En lista med IP-adresser måste läggas till tillåtelselista innan du kan arbeta med källanslutningar. Om du inte lägger till dina regionspecifika IP-adresser i tillåtelselista kan det leda till fel eller sämre prestanda när du använder källor. Mer information finns på sidan [IP-adress tillåtelselista](../../ip-address-allow-list.md).
+Du måste lägga till regionspecifika IP-adresser i tillåtelselista innan du kan ansluta dina källor till Experience Platform på antingen Azure eller Amazon Web Services (AWS). Mer information finns i guiden [tillåtslista IP-adresser för att ansluta till Experience Platform på Azure och AWS](../../ip-address-allow-list.md).
 
-### Generera dina [!DNL Google BigQuery]-autentiseringsuppgifter {#credentials}
+### Autentisera till Experience Platform på Azure {#azure}
 
-Om du vill ansluta [!DNL Google BigQuery] till Experience Platform måste du generera värden för följande autentiseringsuppgifter:
+Du måste ange följande autentiseringsuppgifter för att ansluta ditt [!DNL Google BigQuery]-konto till Experience Platform på Azure.
 
 >[!BEGINTABS]
 
@@ -64,9 +62,19 @@ Mer information om hur du använder tjänstkonton i [!DNL Google BigQuery] finns
 
 >[!ENDTABS]
 
-## Anslut [!DNL Google BigQuery] till plattformen
+### Autentisera till Experience Platform på AWS {#aws}
 
-Dokumentationen nedan innehåller information om hur du ansluter [!DNL Google BigQuery] till plattformen med API:er eller användargränssnittet:
+Du måste ange följande autentiseringsuppgifter för att kunna ansluta ditt [!DNL Google BigQuery]-konto till Experience Platform på AWS.
+
+| Autentiseringsuppgifter | Beskrivning |
+| --- | --- |
+| `projectId` | ID:t för [!DNL Google BigQuery] som du vill fråga mot. |
+| `keyFileContent` | Nyckelfilen som används för att autentisera tjänstkontot. Du kan hämta det här värdet från [[!DNL Google Cloud service accounts] instrumentpanelen](https://console.cloud.google.com). Nyckelfilens innehåll är i JSON-format. Du måste koda detta i [!DNL Base64] när du autentiserar till Experience Platform. |
+| `datasetId` | Datauppsättnings-ID:t [!DNL Google BigQuery]. Detta ID representerar var datatabellerna finns. |
+
+## Anslut [!DNL Google BigQuery] till Experience Platform
+
+Dokumentationen nedan innehåller information om hur du ansluter [!DNL Google BigQuery] till Experience Platform med API:er eller användargränssnittet:
 
 ### Använda API:er
 

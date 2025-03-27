@@ -1,9 +1,8 @@
 ---
 title: Använda åtkomstetiketter för att hantera användaråtkomst till källfilsflöden i användargränssnittet
 description: Lär dig hur du använder användargränssnittet i Experience Platform för att använda åtkomstetiketter och hantera användaråtkomst till källans dataflöden.
-hide: true
-hidefromtoc: true
-source-git-commit: 80fb60abdf33eb2a7ca691a9a48a811c632b34fc
+exl-id: 7aab9706-2f43-43c7-9878-1959d5a8a6b0
+source-git-commit: f57fa04e668fa9c61b9b15778e74969edffae0fa
 workflow-type: tm+mt
 source-wordcount: '486'
 ht-degree: 0%
