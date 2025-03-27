@@ -1,16 +1,16 @@
 ---
 keywords: Experience Platform;hem;populära ämnen;källor;kopplingar;källkopplingar;källor sdk;sdk;SDK
-title: Konfigurera autentiseringsspecifikationer för självbetjäningskällor (batch-SDK)
+title: Konfigurera autentiseringsspecifikationer för självbetjäningskällor (Batch SDK)
 description: Det här dokumentet innehåller en översikt över de konfigurationer du behöver förbereda för att kunna använda självbetjäningskällor (Batch SDK).
 exl-id: 68ed22fe-1f22-46d2-9d58-72ad8a9e6b98
-source-git-commit: b66a50e40aaac8df312a2c9a977fb8d4f1fb0c80
+source-git-commit: 984de21c134d2fc94ef7dc5f5e449f7a39732bc6
 workflow-type: tm+mt
-source-wordcount: '522'
+source-wordcount: '770'
 ht-degree: 0%
 
 ---
 
-# Konfigurera autentiseringsspecifikationer för självbetjäningskällor (batch-SDK)
+# Konfigurera autentiseringsspecifikationer för självbetjäningskällor (Batch SDK)
 
 Autentiseringsspecifikationer definierar hur Adobe Experience Platform-användare kan ansluta till din källa.
 
@@ -23,6 +23,8 @@ Självbetjäningskällor (Batch SDK) stöder OAuth 2-uppdateringskoder och grund
 ### OAuth 2-uppdateringskod
 
 En OAuth2-uppdateringskod ger säker åtkomst till ett program genom att generera en temporär åtkomsttoken och en uppdateringstoken. Åtkomsttoken ger dig säker åtkomst till dina resurser utan att du behöver ange andra autentiseringsuppgifter, medan uppdateringstoken gör att du kan generera en ny åtkomsttoken när åtkomsttoken upphör att gälla.
+
++++Visa exempel på en OAuth 2-uppdateringskod
 
 ```json
 {
@@ -132,10 +134,13 @@ En OAuth2-uppdateringskod ger säker åtkomst till ett program genom att generer
 
 {style="table-layout:auto"}
 
++++
 
 ### Grundläggande autentisering
 
 Grundläggande autentisering är en autentiseringstyp som gör att du kan komma åt programmet genom att använda en kombination av ditt användarnamn och ditt lösenord för kontot.
+
++++ Visa exempel på grundläggande autentisering
 
 ```json
 {
@@ -175,13 +180,109 @@ Grundläggande autentisering är en autentiseringstyp som gör att du kan komma 
 | `authSpec.spec.properties` | Innehåller information om de autentiseringsuppgifter som används för autentiseringen. |
 | `authSpec.spec.properties.username` | Det kontoanvändarnamn som är associerat med ditt program. |
 | `authSpec.spec.properties.password` | Kontolösenordet som är kopplat till programmet. |
-| `authSpec.spec.required` | Anger de fält som krävs som obligatoriska värden som ska anges i Platform. | `username` |
+| `authSpec.spec.required` | Anger de fält som krävs som obligatoriska värden som ska infogas i Experience Platform. | `username` |
 
 {style="table-layout:auto"}
+
++++
+
+### API-nyckelautentisering {#api-key-authentication}
+
+API-nyckelautentisering är en säker metod för att komma åt API:er genom att tillhandahålla en API-nyckel och andra relevanta autentiseringsparametrar i begäranden. Beroende på din specifika API-information kan du skicka API-nyckeln som en del av begärandehuvudet, frågeparametrarna eller brödtexten.
+
+Följande parametrar krävs vanligtvis vid API-nyckelautentisering:
+
+| Parameter | Typ | Obligatoriskt | Beskrivning |
+| --- | --- | --- | --- |
+| `host` | string | Nej | Resurs-URL. |
+| `authKey1` | string | Ja | Den första autentiseringsnyckeln som krävs för API-åtkomst. Det skickas vanligtvis i begärandehuvudet eller frågeparametrarna. |
+| `authKey2` | string | Valfritt | En andra autentiseringsnyckel. Om det behövs används den här nyckeln ofta för att ytterligare validera begäranden. |
+| `authKeyN` | string | Valfritt | En ytterligare autentiseringsvariabel som kan användas vid behov, men API:t. |
+
+{style="table-layout:auto"}
+
++++Visa API-nyckelautentisering
+
+```json
+{
+  "name": "API Key Authentication",
+  "type": "KeyBased",
+  "spec": {
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "type": "object",
+    "description": "Define authentication parameters required for API access",
+    "properties": {
+      "host": {
+        "type": "string",
+        "description": "Enter resource URL host path"
+      },
+      "authKey1": {
+        "type": "string",
+        "format": "password",
+        "title": "Authentication Key 1",
+        "description": "Primary authentication key for accessing the API",
+        "restAttributes": {
+          "headerParamName": "X-Auth-Key1"
+        }
+      },
+      "authKey2": {
+        "type": "string",
+        "format": "password",
+        "title": "Authentication Key 2",
+        "description": "Secondary authentication key, if required",
+        "restAttributes": {
+          "headerParamName": "X-Auth-Key2"
+        }
+      },
+      ..
+      ..
+      "authKeyN": {
+        "type": "string",
+        "format": "password",
+        "title": "Additional Authentication Key",
+        "description": "Additional authentication keys as needed by the API",
+        "restAttributes": {
+          "headerParamName": "X-Auth-KeyN"
+        }
+      }
+    },
+    "required": [
+      "authKey1"
+    ]
+  }
+}
+```
+
++++
+
+### Autentiseringsbeteende
+
+Du kan använda parametern `restAttributes` för att definiera hur API-nyckeln ska inkluderas i begäran. I exemplet nedan visar attributet `headerParamName` att `X-Auth-Key1` ska skickas som en rubrik.
+
+```json
+  "restAttributes": {
+      "headerParamName": "X-Auth-Key1"
+  }
+```
+
+Varje autentiseringsnyckel (till exempel `authKey1`, `authKey2` osv.) kan kopplas till `restAttributes` för att avgöra hur de skickas som begäranden.
+
+Om `authKey1` har `"headerParamName": "X-Auth-Key1"`. Detta innebär att begärandehuvudet ska innehålla `X-Auth-Key:{YOUR_AUTH_KEY1}`. Dessutom behöver inte nyckelnamnet och `headerParamName` vara samma. Exempel:
+
+* `authKey1` kan ha `headerParamName: X-Custom-Auth-Key`. Detta innebär att begärandehuvudet kommer att använda `X-Custom-Auth-Key` i stället för `authKey1`.
+* Omvänt kan `authKey1` ha `headerParamName: authKey1`. Detta innebär att begärans rubriknamn inte ändras.
+
+**Exempel-API-format**
+
+```http
+GET /data?X-Auth-Key1={YOUR_AUTH_KEY1}&X-Auth-Key2={YOUR_AUTH_KEY2}
+```
 
 ## Exempel på autentiseringsspecifikation
 
 Följande är ett exempel på en slutförd autentiseringsspecifikation som använder en [[!DNL MailChimp Members]](../../tutorials/api/create/marketing-automation/mailchimp-members.md)-källa.
+
++++Visa exempelautentiseringsspecifikation
 
 ```json
   "authSpec": [
@@ -234,6 +335,8 @@ Följande är ett exempel på en slutförd autentiseringsspecifikation som anvä
     }
   ],
 ```
+
++++
 
 ## Nästa steg
 
