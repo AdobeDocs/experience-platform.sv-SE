@@ -5,9 +5,9 @@ user-guide-description: Aktivera kända och okända data för marknadsföringska
 description: I det här dokumentet visas innehållsförteckningen för Adobe Experience Platform-destinationer
 feature: Destinations
 role: Admin,User
-source-git-commit: 26125b0496b8b08443e9a1ccb13a384bf33ab4be
+source-git-commit: 9b9cecc9e1a6e5979fa8eb454cef677b8995f1b6
 workflow-type: tm+mt
-source-wordcount: '1274'
+source-wordcount: '1276'
 ht-degree: 1%
 
 ---
@@ -139,6 +139,7 @@ ht-degree: 1%
       * [Datallandningszon](./catalog/cloud-storage/data-landing-zone.md)
       * [Google Cloud-lagring](./catalog/cloud-storage/google-cloud-storage.md)
       * [SFTP-anslutning](./catalog/cloud-storage/sftp.md)
+      * [Snowflake](./catalog/cloud-storage/snowflake.md)
       * [IP-adress tillåtelselista för filbaserade molnlagringsmål](./catalog/cloud-storage/ip-address-allow-list.md)
    * CRM-mål {#crm}
       * [Delpunktsanslutning](./catalog/crm/hubspot.md)
