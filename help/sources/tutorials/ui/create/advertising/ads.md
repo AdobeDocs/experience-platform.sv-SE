@@ -1,27 +1,23 @@
 ---
-title: Skapa en Google Ads Source Connection i användargränssnittet
-description: Lär dig hur du skapar en Google Ads-källanslutning med Adobe Experience Platform användargränssnitt.
+title: Koppla Google-annonser till Experience Platform med användargränssnittet
+description: Lär dig hur du ansluter ditt Google Ads-konto till Adobe Experience Platform i användargränssnittet.
 exl-id: 33dd2857-aed3-4e35-bc48-1c756a8b3638
-source-git-commit: ce3dabe4ab08a41e581b97b74b3abad352e3267c
+source-git-commit: ac90eea69f493bf944a8f9920426a48d62faaa6c
 workflow-type: tm+mt
-source-wordcount: '662'
+source-wordcount: '833'
 ht-degree: 0%
 
 ---
 
-# Skapa en Google Ads-källanslutning i användargränssnittet
-
->[!WARNING]
->
->[!DNL Google Ads]-källan är inte tillgänglig för tillfället. Adobe arbetar med att lösa problem med den här källan.
+# Anslut [!DNL Google Ads] till Experience Platform med användargränssnittet
 
 >[!NOTE]
 >
->Google Ads-källan är i betaversion. Se [Källöversikt](../../../../home.md#terms-and-conditions) om du vill ha mer information om hur du använder betatecknade källor.
+>Källan [!DNL Google Ads] är i betaversion. Se [Källöversikt](../../../../home.md#terms-and-conditions) om du vill ha mer information om hur du använder betatecknade källor.
 
-I den här självstudiekursen beskrivs hur du skapar en Google Ads-källanslutning med Adobe Experience Platform användargränssnitt.
+Läs den här vägledningen när du vill lära dig hur du ansluter ditt [!DNL Google Ads]-konto till Adobe Experience Platform med hjälp av källarbetsytan i Experience Platform användargränssnitt.
 
-## Komma igång
+## Kom igång
 
 Den här självstudiekursen kräver en fungerande förståelse av följande komponenter i Experience Platform:
 
@@ -30,47 +26,72 @@ Den här självstudiekursen kräver en fungerande förståelse av följande komp
    * [Schemaredigeraren, självstudiekurs](../../../../../xdm/tutorials/create-schema-ui.md): Lär dig hur du skapar anpassade scheman med hjälp av gränssnittet för Schemaredigeraren.
 * [[!DNL Real-Time Customer Profile]](../../../../../profile/home.md): Tillhandahåller en enhetlig konsumentprofil i realtid baserad på aggregerade data från flera källor.
 
-Om du redan har en giltig Google Ads-anslutning kan du hoppa över resten av det här dokumentet och gå vidare till självstudiekursen [Konfigurera ett dataflöde](../../dataflow/advertising.md)
+Om du redan har en giltig [!DNL Google Ads]-anslutning kan du hoppa över resten av det här dokumentet och gå vidare till självstudiekursen [Konfigurera ett dataflöde](../../dataflow/advertising.md)
 
 ### Samla in nödvändiga inloggningsuppgifter
 
-För att få tillgång till din Google Ads-kontoplattform måste du ange följande värden:
-
-| Autentiseringsuppgifter | Beskrivning |
-| ---------- | ----------- |
-| Kund-ID för kund | Klientens kund-ID är det kontonummer som motsvarar det Google Ads-klientkonto som du vill hantera med API:t för Google Ads. Detta ID följer mallen för `123-456-7890`. |
-| ID för inloggningskund | Kund-ID för inloggning är det kontonummer som motsvarar ditt Google Ads Manager-konto och används för att hämta rapportdata från en viss kund. Mer information om användar-ID för inloggning finns i [API-dokumentationen för Google Ads](https://developers.google.com/search-ads/reporting/concepts/login-customer-id). |
-| Utvecklartoken | Med utvecklartoken får du tillgång till Google Ads API. Du kan använda samma utvecklartoken för att göra förfrågningar mot alla dina Google Ads-konton. Hämta din utvecklartoken genom att [logga in på ditt chefskonto](https://ads.google.com/home/tools/manager-accounts/) och sedan navigera till API-centersidan. |
-| Uppdatera token | Uppdateringstoken är en del av [!DNL OAuth2]-autentiseringen. Med denna token kan du återskapa dina åtkomsttoken när de har upphört att gälla. |
-| Klient-ID | Klient-ID används tillsammans med klienthemligheten som en del av [!DNL OAuth2]-autentiseringen. Tillsammans gör klient-ID och klienthemlighet det möjligt för programmet att agera för ditt kontos räkning genom att identifiera ditt program för Google. |
-| Klienthemlighet | Klienthemligheten används tillsammans med klient-ID som en del av [!DNL OAuth2]-autentiseringen. Tillsammans gör klient-ID och klienthemlighet det möjligt för programmet att agera för ditt kontos räkning genom att identifiera ditt program för Google. |
-
-Läs API-översiktsdokumentet för [mer information om hur du kommer igång med Google Ads](https://developers.google.com/google-ads/api/docs/first-call/overview).
+Mer information om autentisering finns i [[!DNL Google Ads] källöversikten](../../../../connectors/advertising/ads.md).
 
 ## Anslut ditt Google Ads-konto
 
-I plattformsgränssnittet väljer du **[!UICONTROL Sources]** i det vänstra navigeringsfältet för att komma åt arbetsytan i [!UICONTROL Sources]. På skärmen [!UICONTROL Catalog] visas en mängd olika källor som du kan använda för att skapa ett konto.
+I Experience Platform-gränssnittet väljer du **[!UICONTROL Sources]** i den vänstra navigeringen för att komma åt arbetsytan i *[!UICONTROL Sources]*. Du kan välja lämplig kategori på panelen *[!UICONTROL Categories]*. Du kan också använda sökfältet för att navigera till den specifika källa som du vill använda.
 
-Du kan välja lämplig kategori i katalogen till vänster på skärmen. Du kan också hitta den källa du vill arbeta med med med sökalternativet.
+Om du vill använda [!DNL Google Ads] väljer du **[!UICONTROL Google Ads]**-källkortet under *[!UICONTROL Advertising]* och sedan **[!UICONTROL Add data]**.
 
-Under kategorin **[!UICONTROL Advertising]** väljer du **[!UICONTROL Google Ads]** och sedan **[!UICONTROL Add data]**.
-
-![Källkatalogen i användargränssnittet för Experience Platform.](../../../../images/tutorials/create/ads/catalog.png).
-
-Sidan **[!UICONTROL Connect to Google Ads]** visas. På den här sidan kan du antingen använda nya autentiseringsuppgifter eller befintliga.
+![Källkatalogen i Experience Platform-gränssnittet.](../../../../images/tutorials/create/ads/catalog.png).
 
 ### Befintligt konto
 
-Om du vill ansluta ett befintligt konto väljer du det Google Ads-konto som du vill ansluta till och sedan **[!UICONTROL Next]** för att fortsätta.
+Om du vill använda ett befintligt konto väljer du **[!UICONTROL Existing account]** och sedan det konto som du vill använda i listan över konton i gränssnittet.
+
+När du har valt ditt konto väljer du **[!UICONTROL Next]** för att fortsätta till nästa steg.
 
 ![Markeringssidan för befintliga konton i källarbetsflödet.](../../../../images/tutorials/create/ads/existing.png).
 
 ### Nytt konto
 
-Om du använder nya autentiseringsuppgifter väljer du **[!UICONTROL New account]**. Ange ett namn, en valfri beskrivning och dina Google Ads-inloggningsuppgifter på det indataformulär som visas. När du är klar väljer du **[!UICONTROL Connect to source]** och tillåt sedan lite tid för att upprätta den nya anslutningen.
+Om du inte har något befintligt konto måste du skapa ett nytt konto genom att ange de autentiseringsuppgifter som motsvarar källan.
+
+Om du vill skapa ett nytt konto väljer du **[!UICONTROL New account]** och anger sedan ett kontonamn och eventuellt en beskrivning av din kontoinformation. Ange sedan lämpliga autentiseringsvärden för att autentisera källan mot Experience Platform:
+
+* **Klientens kund-ID**: Klientens kund-ID är det kontonummer som motsvarar det [!DNL Google Ads]-klientkonto som du vill hantera med [!DNL Google Ads] API. Detta ID följer mallen för `123-456-7890`.
+* **Inloggningskund-ID**: Inloggningskund-ID är det kontonummer som motsvarar ditt [!DNL Google Ads]-hanterarkonto och används för att hämta rapportdata från en viss operativkund. Mer information om användar-ID för inloggning finns i [[!DNL Google Ads] API-dokumentationen](https://developers.google.com/search-ads/reporting/concepts/login-customer-id).
+* **Utvecklartoken**: Med utvecklartoken får du åtkomst till API:t [!DNL Google Ads]. Du kan använda samma utvecklartoken för att göra förfrågningar mot alla dina [!DNL Google Ads]-konton. Hämta din utvecklartoken genom att [logga in på ditt chefskonto](https://ads.google.com/home/tools/manager-accounts/) och sedan navigera till API-centersidan.
+* **Uppdateringstoken**: Uppdateringstoken är en del av [!DNL OAuth2]-autentiseringen. Med denna token kan du återskapa dina åtkomsttoken när de har upphört att gälla.
+* **Klient-ID**: Klient-ID används tillsammans med klienthemligheten som en del av [!DNL OAuth2]-autentiseringen. Tillsammans gör klient-ID och klienthemlighet det möjligt för programmet att agera för ditt kontos räkning genom att identifiera ditt program för [!DNL Google].
+* **Klienthemlighet**: Klienthemligheten används tillsammans med klient-ID som en del av [!DNL OAuth2]-autentiseringen. Tillsammans gör klient-ID och klienthemlighet det möjligt för programmet att agera för ditt kontos räkning genom att identifiera ditt program för [!DNL Google].
+* **[!DNL Google Ads]API-version**: Den aktuella API-versionen stöds av [!DNL Google Ads]. Den senaste versionen är `v18`, men den senaste versionen som stöds på Experience Platform är `v17`.
+
+När du har angett dina autentiseringsuppgifter väljer du **[!UICONTROL Connect to source]** och tillåt en stund så att anslutningen kan bearbetas. När du är klar väljer du **[!UICONTROL Next]**.
 
 ![Det nya kontogränssnittet i källarbetsflödet.](../../../../images/tutorials/create/ads/new.png).
 
-## Nästa steg
+## Markera data {#select-data}
+
+Med [!DNL Google Ads] måste du ange en lista med attribut för inmatning under arbetsflödets dataurvalsfas. För att kunna hämta dessa attribut måste du använda [[!DNL Google Ads Query Builder]](https://developers.google.com/google-ads/api/fields/v17/overview_query_builder).
+
+I [!DNL Google Ads Query Builder] navigerar du till den resurstyp som du vill använda och använder sedan attributväljaren för att välja dina attribut, segment och mått.
+
+![Attributväljaren i Google Ads Query Builder.](../../../../images/tutorials/create/ads/attributes.png)
+
+De attribut du väljer fyller i panelen [!DNL Google Ads Query Language]. Kontrollera att du använder läget [!DNL Standard] och välj sedan **[!DNL Enter or edit a query]**.
+
+![De markerade attributen grupperade tillsammans i en fråga.](../../../../images/tutorials/create/ads/enter-query.png)
+
+Välj sedan **[!DNL Validate Query]** för att validera din [!DNL Google Ads]-fråga.
+
+![Google Ads Query Builder-valideraren.](../../../../images/tutorials/create/ads/validate-query.png)
+
+Om det lyckas returnerar [!DNL Google Ads Query Builder] ett meddelande som anger att din fråga är giltig. Kopiera sedan **endast attributen** från frågan.
+
+![En fråga har validerats.](../../../../images/tutorials/create/ads/copy-query.png)
+
+Gå tillbaka till källarbetsflödets dataurvalsfas i Experience Platform-användargränssnittet och klistra sedan in attributen på panelen *[!UICONTROL List attributes]*.
+
+Välj **[!UICONTROL Preview]** om du vill förhandsgranska data och välj sedan **[!UICONTROL Next]** om du vill fortsätta.
+
+![Listattributpanelen i källarbetsflödet.](../../../../images/tutorials/create/ads/list-attributes.png)
+
+## Skapa ett dataflöde för att importera annonsdata
 
 Genom att följa den här självstudiekursen har du upprättat en anslutning till ditt Google Ads-konto. Du kan nu fortsätta med nästa självstudiekurs och [konfigurera ett dataflöde för att hämta annonsdata till plattformen](../../dataflow/advertising.md).
