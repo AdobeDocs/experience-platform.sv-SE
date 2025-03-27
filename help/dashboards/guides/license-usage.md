@@ -4,9 +4,9 @@ title: Kontrollpanel för licensanvändning
 description: Adobe Experience Platform tillhandahåller en kontrollpanel där du kan visa viktig information om din organisations licensanvändning.
 type: Documentation
 exl-id: 143d16bb-7dc3-47ab-9b93-9c16683b9f3f
-source-git-commit: 7332b39b0e213632e595dc52eda390aa0b9a24ec
+source-git-commit: 03b35ecf940f9b1cb40d8b1243ff530f38bcdcd4
 workflow-type: tm+mt
-source-wordcount: '3339'
+source-wordcount: '3222'
 ht-degree: 0%
 
 ---
@@ -51,7 +51,7 @@ ht-degree: 0%
 >[!CONTEXTUALHELP]
 >id="platform_dashboards_licenseusage_predictedusage_addressableaudience"
 >title="Förutsedd adresserbar publik"
->abstract="Den adresserbara målgruppen är den uppsättning personprofiler i kundprofilen i realtid som din organisation har rätt att engagera. Detta inkluderar både direkt identifierbara och pseudonyma profiler.<br>Användningen kan nå det licensierade antalet. Om du vill minska användningen konfigurerar du datauppsättningen eller pseudonyma utgångsdatum för profildata."
+>abstract="Den adresserbara målgruppen är den uppsättning personprofiler i kundprofilen i realtid som din organisation har rätt att engagera. Detta mätresultat inkluderar både direkt identifierbara och pseudonyma profiler.<br>Användningen kan nå det licensierade antalet. Om du vill minska användningen konfigurerar du datauppsättningen eller pseudonyma utgångsdatum för profildata."
 >additional-url="https://experienceleague.adobe.com/docs/experience-platform/profile/event-expirations.html" text="Förfallodatum för upplevelsehändelser"
 >additional-url="https://experienceleague.adobe.com/docs/experience-platform/profile/pseudonymous-profiles.html" text="Förfallodatum för pseudonyma profiler"
 
@@ -134,7 +134,7 @@ ht-degree: 0%
 
 Du kan visa viktig information om din organisations licensanvändning via Adobe Experience Platform [!UICONTROL License usage]-kontrollpanelen. Den information som visas här fångas in vid en daglig ögonblicksbild av din Platform-instans.
 
-Licensanvändningsrapporter ger en hög grad av granularitet över era användningsvärden för licenser. Kontrollpanelen tillhandahåller användningsstatistik för varje köpt produkt (och tillhörande tillägg), konsoliderad användning av statistik i alla produktions- eller utvecklingssandlådor samt användningsstatistik från en specifik sandlåda. Följande Experience Platform-program kan spåras med användningsstatistik: Real-Time Customer Data Platform, Adobe Journey Optimizer och Customer Journey Analytics.
+Licensanvändningsrapporter ger en hög grad av granularitet. De flesta mätvärden delas mellan flera produkter och återspeglar den samlade användningen för alla produkter som använder dem, inte för summor per produkt. Kontrollpanelen tillhandahåller konsoliderad användning av dessa mått i alla produktions- eller utvecklingssandlådor samt användningsmått från en viss sandlåda. Följande Experience Platform-program kan spåras med användningsstatistik: Real-Time Customer Data Platform, Adobe Journey Optimizer och Customer Journey Analytics.
 
 I den här handboken beskrivs hur du får åtkomst till och arbetar med kontrollpanelen för licensanvändning i användargränssnittet och den innehåller mer information om de visualiseringar som visas på kontrollpanelen.
 
@@ -152,36 +152,87 @@ Informationen i den här instrumentpanelen visas exakt som den visas vid den spe
 
 ## Utforska kontrollpanelen för licensanvändning {#explore}
 
-Om du vill navigera till kontrollpanelen för licensanvändning i plattformsgränssnittet väljer du **[!UICONTROL License usage]** i den vänstra listen. Fliken [!UICONTROL Overview] öppnas och visar en lista över tillgängliga produkter.
+Om du vill navigera till kontrollpanelen för licensanvändning i plattformsgränssnittet väljer du **[!UICONTROL License usage]** i den vänstra listen. Kontrollpanelen innehåller två flikar: **[!UICONTROL Metrics]** och **[!UICONTROL Products]**.
 
 >[!NOTE]
 >
->Kontrollpanelen för licensanvändning är inte aktiverad som standard. Användarna måste beviljas behörigheten &quot;Visa kontrollpanel för licensanvändning&quot; för att kunna visa kontrollpanelen. Anvisningar om hur du beviljar åtkomstbehörigheter för att visa kontrollpanelen för licensanvändning finns i [behörighetsguiden för kontrollpanelen](../permissions.md).
+>Kontrollpanelen för licensanvändning är inte aktiverad som standard. Användarna måste ha behörigheten Visa kontrollpanel för licensanvändning för att kunna visa kontrollpanelen. Anvisningar om hur du beviljar åtkomstbehörigheter finns i [handboken om behörigheter på kontrollpanelen](../permissions.md).
 
-![Fliken Översikt över kontrollpanelen för licensanvändning, med licensanvändningen markerad i det vänstra navigeringsfältet.](../images/license-usage/dashboard-overview.png)
+## Fliken [!UICONTROL Metrics] {#metrics-tab}
 
-## Fliken [!UICONTROL Overview] {#overview-tab}
+Fliken **[!UICONTROL Metrics]** ger en centraliserad vy över alla användningsvärden för licenser i organisationen. Eftersom de flesta mätvärden delas mellan olika produkter finns det ingen separat uppdelning per produkt för dessa mätvärden.
 
-Kontrollpanelen [!UICONTROL License Usage] visar två separata tabeller: **Core products** och **Add-ons**.
+Mättabellen innehåller följande kolumner:
 
-- **[!UICONTROL Core products]table**: Den här tabellen visar de viktigaste Adobe Experience Platform-produkterna som licensierats av din organisation. Varje kärnprodukt har egna mått, användningsspårning och detaljerade vyer på sandlådenivå. Dessa kärnprodukter ger nyckelmätvärden för spårning, och eventuella tillägg ingår i dessa mätvärden.
+| Kolumnnamn | Beskrivning |
+|---|---|
+| **[!UICONTROL Metric Name]** | Namnet på användningsmåttet för licensen. Varje post innehåller en informationsikon (`ⓘ`) som visar en beskrivning och en lista över associerade produkter. |
+| **[!UICONTROL Licensed]** | Antalet enheter som din organisation har rätt att använda, enligt definitionen i ditt avtal. Det här måttet är samma värde som **licensbeloppet** på fliken Produkter. |
+| **[!UICONTROL Measured]** | Mängden mätvärden som används av organisationen. |
+| **[!UICONTROL Usage %]** | Procentandelen av ditt licensierade värde som används för närvarande. |
+| **[!UICONTROL Predicted Usage %]** | Prognostiserat intervall med mätvärden under de kommande 6 veckorna. |
 
-- **[!UICONTROL Add-ons]table**: Den här tabellen visar ytterligare produkter vars licensbelopp kombineras med de värden som stöds av kärnprodukterna. Tillägg har inte olika mätvärden, men förbättrar användningsspårningen för de kärnprodukter de är kopplade till.
+Använd växlingsknappen för sandlådan **[!UICONTROL Production]** eller **[!UICONTROL Development]** för att filtrera mätvärden som visas av sandlådor.
+
+>[!NOTE]
+>
+>Förbrukningsrapporteringen är kumulativ per sandlådetyp. Om du väljer [!UICONTROL Production] eller [!UICONTROL Development] visas kombinerad användning i alla sandlådor av den typen.
+
+![På kontrollpanelen för licensanvändning visas en lista med mått, licensbelopp och användningsdata.](../images/license-usage/metrics-tab.png)
+
+>[!WARNING]
+>
+>Behörighet att visa kontrollpanelen för licensanvändning måste anges på sandlådenivå. Lägg till behörigheter i varje enskild sandlåda för att visa dem på kontrollpanelen. Denna begränsning kommer att åtgärdas i en framtida version. Under tiden finns följande lösning:
+>
+>1. Skapa en produktprofil i Adobe Admin Console.
+>2. Under Behörighet i kategorin Sandbox lägger du till alla sandlådor som du vill visa på kontrollpanelen för licensanvändning.
+>3. Lägg till behörigheten Visa kontrollpanel för licensanvändning under behörighetskategorin för användarinstrumentpanelen.
+
+### Visa måttinformation {#view-metric-details}
+
+Om du vill visa användningsinformation för ett visst mått väljer du ett måttnamn i listan. En detaljerad vy av måttet visas, inklusive:
+
+- Ett historiskt linjediagram som visar användning över tid
+- En jämförelse av licensierade och uppmätta värden
+- Användning via enskild sandlåda
+- En sandlådeväljare för att filtrera data
+- Ett exportalternativ för CSV-nedladdning
+
+Med den här visualiseringen kan du spåra trender, förstå hur varje sandlåda bidrar till den övergripande användningen och exportera data för offlineanalys.
+
+Varje diagram innehåller listrutor för att filtrera data. Använd listrutan för datumintervall för att justera uppslagsperioden (standard: senaste 30 dagar) eller använd listrutan i sandlådan för att visa användningen för en viss produktions- eller utvecklingssandlåda.
+
+![Detaljvyn för adresserbara målgruppsmätningar med historikanvändningsdiagram, sandlådetabell och exportknapp.](../images/license-usage/metric-details-view.png)
+
+Du kan också välja en **[!UICONTROL Custom date]** för att välja den tidsperiod som visas.
+
+![Fliken Översikt över kontrollpanelen för licensanvändning med alternativen för anpassat datumintervall markerade.](../images/license-usage/custom-date-range.png)
+
+### CSV-export {#export-metric-usage-data}
+
+Du kan exportera historiska användningsdata för det valda måttet och sandlådan som en CSV-fil direkt från måttdetaljvyn. Välj ikonen **[!UICONTROL Export]** om du vill hämta diagrammets data i tabellformat. Den exporterade CSV-filen gör det enkelt att analysera trender offline eller dela användningsinformation mellan olika team.
+
+## Fliken [!UICONTROL Products] {#products-tab}
+
+På fliken **[!UICONTROL Products]** visas licensanvändningsdata grupperade efter inköpta produkter och eventuella associerade tillägg. Fliken [!UICONTROL Products] innehåller två tabeller:
+
+- **[!UICONTROL Core products]table**: Den här tabellen visar de viktigaste Adobe Experience Platform-produkterna som licensierats av din organisation. Varje produkt listar sitt primära mätvärde, användningsspårning och förväntad användning.
+- **[!UICONTROL Add-ons]table**: Visar fyllnadsartiklar vars licensbelopp bidrar till kärnproduktstatistik. Tillägg har inte olika mätvärden, men förbättrar användningsspårningen för de kärnprodukter de är kopplade till.
 
 | Kolumnnamn | Beskrivning |
 |---|---|
 | **[!UICONTROL Product]** | Adobe-lösningen som licensieras av er organisation. |
 | **[!UICONTROL Primary Metric]** | Det primära mätvärde som används för spårning inom den produkten. |
-| **[!UICONTROL License Amount]** | Det avtalade värdet för det maximala beloppet för primärt mått enligt villkoren i produktlicensavtalet. |
-| **[!UICONTROL Usage]** | Mängden av ditt primära mått som används. Det här värdet anger den totala användningen av det måttet i alla sandlådor, antingen produktion eller utveckling. |
+| **[!UICONTROL License Amount]** | Det avtalade värdet för den maximala mängden av det primära mätvärdet. |
+| **[!UICONTROL Usage]** | Mängden av ditt primära mått som används. |
 | **[!UICONTROL Usage %]** | Procentandelen av det primära mätvärdet som används i enlighet med licensbeloppet. |
-| **[!UICONTROL Prediction Usage]** | Prognostiserad användningsprocent av det primära mätvärdet enligt licensbeloppet. |
+| **[!UICONTROL Predicted Usage]** | Prognostiserad användningsprocent för det primära mätvärdet. |
 
 >[!NOTE]
 >
->Licensbelopp för tillägg ingår i [!UICONTROL License Amount] för kärnprodukterna. Om du till exempel köper ett paket med fem sandlådor som tillägg läggs beloppet till i basproduktens paket. Tilläggstabellen visar en [!UICONTROL License Amount] specifik för tillägget, men den faktiska användningen spåras genom basprodukten.
+>[!UICONTROL License Amount] för tillägg ingår i kärnproduktens totala licensbelopp. Tillägg spåras inte separat utan förbättrar möjligheterna i deras tillhörande produkter. Om du till exempel köper ett paket med fem sandlådor som tillägg läggs beloppet till i basproduktens paket. Tilläggstabellen visar en [!UICONTROL License Amount] specifik för tillägget, men den faktiska användningen spåras genom basprodukten.
 
-Tabellerna anger det primära måttet för varje produkt, eftersom varje produkt kan spåra flera mätvärden.
+![Kontrollpanelen för licensanvändning - fliken Produkter med tabeller för kärnprodukter och tillägg.](../images/license-usage/products-tab.png)
 
 ### Förutsedd användning {#predicted-usage}
 
@@ -205,17 +256,13 @@ Hantera och optimera era licensresurser proaktivt med korrekta och aktuella anv�
 >
 >Förutsättningarna uppdateras varje vecka varje fredag. Uppdateringsdatumet ingår i en informationsikon (![Den här informationsikonen.](../images/license-usage/info-icon.png)) ovanför kolumnrubriken.
 
-Om du vill se en sammanfattning av en produkts tillståndsanvändning väljer du en produkt i tabellen [!UICONTROL Core products].
+Visa en sammanfattning av en produkts tillståndsanvändning på fliken [!UICONTROL Product] under tabellen [!UICONTROL Core products].
 
-![[!UICONTROL License usage] [!UICONTROL Overview] med en produkt och den förväntade användningskolumnen markerad.](../images/license-usage/product-predicted-usage.png)
-
-Fliken Sammanfattning visas. Du kan använda de detaljerade förutsägelser som finns på flikarna [!UICONTROL Summary] och [!UICONTROL Details] för att säkerställa ett välgrundat beslutsfattande för effektiv licensanvändning.
+![Fliken [!UICONTROL License usage] [!UICONTROL Product] med en produkt och den förväntade användningskolumnen markerad.](../images/license-usage/product-predicted-usage.png)
 
 >[!NOTE]
 >
 >Observera att prognoserna för licensanvändning är approximationer baserade på tidigare användning. Du ansvarar för att förstå hur din organisation faktiskt används och se till att användningen inte går utanför räckvidden för din organisations licens med Adobe.
-
-![Sammanfattningsvyn för en plattformsprodukt med den förväntade användningskolumnen markerad.](../images/license-usage/summary-predicted-usage.png)
 
 Procentandelen av förväntad användning bestäms enligt följande:
 
@@ -236,66 +283,11 @@ Funktionen för förväntad användning har stöd för följande mått:
 - [!UICONTROL Engageable profiles]
 - [!UICONTROL Total Data Volume]
 
-## Fliken [!UICONTROL Summary] {#summary-tab}
-
-Välj ett produktnamn i listan om du vill se fler mätvärden och detaljerade insikter om hur produktlicensen används. Vyn [!UICONTROL Summary] för den produkten visas. Alla tillgängliga mått visas på fliken [!UICONTROL Summary]. Vilka mätvärden som är tillgängliga beror på vilken produkt som är licensierad. Den här vyn ger **en konsoliderad vy över alla mått i alla produktions- eller utvecklingssandlådor**. Samma analysnivå erbjuds för både produktions- och utvecklingssandlådor.
-
-![Sammanfattningsvyn för en plattformsprodukt som visar alla tillgängliga mätvärden för den produkten.](../images/license-usage/summary-tab.png)
-
-På sammanfattningsfliken innehåller tabellen kolumnen [!UICONTROL Metric]. Dessa beskrivningar som kan läsas av människor visar alla mätvärden som används för den typen av sandlåda.
-
-### Markera en sandlåda {#select-sandbox}
-
-Om du vill ändra vyn mellan sandlådetyperna för produktion och utveckling väljer du antingen [!UICONTROL Production sandboxes] eller [!UICONTROL Development sandboxes]. Den valda sandlådetypen indikeras av alternativknappen bredvid namnet på sandlådan.
-
-Konsumtionsrapportering för sandlådor är kumulativ för alla sandlådor av samma typ. Det innebär att om du väljer [!UICONTROL Production] eller [!UICONTROL Development] visas förbrukningsrapporter för alla produktions- respektive utvecklingssandlådor.
-
-![Sammanfattningsvyn för en plattformsprodukt med produktionssandlådor och utvecklingssandlådor markerade.](../images/license-usage/summary-tab-sandboxes.png)
-
->[!WARNING]
->
->Behörighet att visa kontrollpanelen för licensanvändning måste anges på sandlådenivå. Lägg till behörigheter i varje enskild sandlåda för att visa dem på kontrollpanelen. Denna begränsning kommer att åtgärdas i en framtida version. Under tiden finns följande lösning:
->
->1. Skapa en produktprofil i Adobe Admin Console.
->2. Under Behörighet i kategorin Sandbox lägger du till alla sandlådor som du vill visa på kontrollpanelen för licensanvändning.
->3. Lägg till behörigheten Visa kontrollpanel för licensanvändning under behörighetskategorin för användarinstrumentpanelen.
-
-## Fliken [!UICONTROL Details] {#details-tab}
-
-Om du vill visa **ett visst användningsmått från en viss sandlåda** går du till fliken [!UICONTROL Details]. Fliken [!UICONTROL Details] visar alla tillgängliga sandlådor i antingen produktions- eller utvecklingssandlådan.
-
-![Fliken Information på kontrollpanelen för licensanvändning.](../images/license-usage/details-tab.png)
-
-I den här vyn kan du välja ![Ikonen Inspektera.](/help/images/icons/inspect.png) bredvid ett sandlådenamn för att visa visualiseringen för det måttet. En dialogruta öppnas med en visualisering för det måttet.
-
-### Visualiseringar {#visualizations}
-
-Varje visualiseringswidget innehåller följande aspekter:
-
-- Ett linjediagram som spårar måttförändringen över tid
-- En tangent för linjediagrammet
-- Namn på sandlådan
-- En listruta där du kan justera tidsperioden för linjediagrammet
-
-I linjediagrammen jämförs organisationens användarnummer med det totala antalet som finns tillgängligt med din organisations licens och en procentandel av den totala användningen.
-
-![Visualisering av ett mätresultat.](../images/license-usage/visualization.png)
-
-Analysperioden kan justeras i listrutan. Standardvärdet för de senaste 30 dagarna
-
-Om du vill välja ett datumintervall kan du använda listrutan för datumintervall och välja vilken tidsperiod som ska visas på instrumentpanelen. Det finns flera tillgängliga alternativ, bland annat standardvärdet för de senaste 30 dagarna.
-
-![Visualiseringsdialogrutan med listrutan för datumintervall markerad.](../images/license-usage/date-range.png)
-
-Du kan också välja **[!UICONTROL Custom date]** för att välja den tidsperiod som visas.
-
-![Fliken Översikt över kontrollpanelen för licensanvändning med alternativen för anpassat datumintervall markerade.](../images/license-usage/custom-date-range.png)
-
 ## Tillgängliga mått {#available-metrics}
 
 >[!IMPORTANT]
 >
->Från och med den 20 augusti såg kunder med berättiganden för [!UICONTROL Average Profile Richness] och [!UICONTROL Total Storage] i stället [!UICONTROL Total Data Volume] i kontrollpanelen för licensanvändning. Inga förändringar i kundens rättigheter, utan bara en förenkling av spårningsstatistiken. [!UICONTROL Total Data Volume] representerar de data som är tillgängliga i kundprofilen i realtid för engagemangs- och personaliseringsarbetsflöden. Detta förenklade mätresultat förbättrade hanteringen och mätningen av kundprofilanvändningen i realtid. Kunderna uppmanades att kontakta sin Adobe-representant för att få ytterligare information om denna förändring.
+>Från och med den 20 augusti såg kunder med berättiganden för [!UICONTROL Average Profile Richness] och [!UICONTROL Total Storage] i stället [!UICONTROL Total Data Volume] i kontrollpanelen för licensanvändning. Inga förändringar i kundens rättigheter, utan bara en förenkling av spårningsstatistiken. [!UICONTROL Total Data Volume] representerar de data som är tillgängliga i kundprofilen i realtid för engagemangs- och personaliseringsarbetsflöden. Detta förenklade mätresultat förbättrade hanteringen och mätningen av kundprofilanvändningen i realtid. Kunderna uppmanas att kontakta sin Adobe-representant för att få ytterligare information om denna förändring.
 
 Kontrollpanelen för licensanvändning rapporterar om flera unika mätvärden som gäller för flera produkter i organisationen. Tillgängliga mätvärden är:
 
@@ -321,14 +313,11 @@ Kontrollpanelen för licensanvändning rapporterar om flera unika mätvärden so
 | [!UICONTROL Total Data Volume] | Den totala mängden data som är tillgängliga för kundprofil i realtid som kan användas i engagemangsarbetsflöden. Läs [vanliga frågor om Total Data Volume](../../landing/license-usage-and-guardrails/total-data-volume.md) om du vill veta mer. |
 | [!UICONTROL Total Volume of Data Egress] | Den sammanlagda årliga datavolymen som exporteras från Adobe Experience Platform till datalager från tredje part. |
 
-<!-- Approval needed on my revision above.
-Original PM version: | [!UICONTROL Total Volume of Data Egress] | The cumulative annual amount of data processed from third-party data warehouses. | -->
-
 <!-- |  [!UICONTROL Sandbox No of Packs] |  A logical separation within your instance of any Adobe On-demand Service that accesses Adobe Experience Platform isolating data and operations | -->
 
 >[!TIP]
 >
->Du kan kontrollera dina licensrättigheter i din försäljningsorder för att beräkna mått som din &#39;Lagringsersättning&#39;.<br>Exempel:<ul><li>Lagringsutrymme = Antalet &quot;auktoriserade profiler&quot; i ditt kontrakt X Genomsnittlig profilnoggrannhet</li></ul>
+>Du kan kontrollera dina licensrättigheter i din försäljningsorder för att beräkna mätvärden som din &#39;Lagringstilldelning&#39;.<br>Exempel:<ul><li>Lagringsutrymme = Antalet &quot;auktoriserade profiler&quot; i ditt kontrakt X Genomsnittlig profilnoggrannhet</li></ul>
 
 Vilka mätvärden som är tillgängliga och vilken definition som finns för varje mätvärde varierar beroende på vilken licensiering din organisation har köpt. Detaljerade definitioner av mätvärdena finns i produktbeskrivningsdokumentationen:
 
