@@ -4,9 +4,9 @@ title: Kontrollpanel för licensanvändning
 description: Adobe Experience Platform tillhandahåller en kontrollpanel där du kan visa viktig information om din organisations licensanvändning.
 type: Documentation
 exl-id: 143d16bb-7dc3-47ab-9b93-9c16683b9f3f
-source-git-commit: 03b35ecf940f9b1cb40d8b1243ff530f38bcdcd4
+source-git-commit: 243a99748d31cddcb8a550d52f9bb390726644be
 workflow-type: tm+mt
-source-wordcount: '3222'
+source-wordcount: '3245'
 ht-degree: 0%
 
 ---
@@ -144,11 +144,11 @@ En allmän översikt över användargränssnittet för plattformen finns i [anv�
 
 Kontrollpanelen [!UICONTROL License usage] visar en lista över alla Experience Platform-produkter som du har köpt och eventuella tillägg för dessa produkter. Från den här kontrollpanelen hittar du en ögonblicksbild av din organisations licensrelaterade data för Experience Platform i alla associerade sandlådor.
 
-Informationen i den här instrumentpanelen visas exakt som den visas vid den specifika tidpunkt då ögonblicksbilden togs. Ögonblicksbilden är alltså inte en uppskattning eller ett urval av data och instrumentpanelen uppdateras inte i realtid.
+Informationen i den här instrumentpanelen visas exakt som den såg ut vid den specifika tidpunkten när ögonblicksbilden togs. Det är inte en uppskattning eller ett exempel, men instrumentpanelen uppdateras inte i realtid.
 
 >[!NOTE]
 >
->Ändringar eller uppdateringar som gjorts i data sedan ögonblicksbilden togs kommer inte att visas på kontrollpanelen förrän nästa ögonblicksbild tas.
+>De flesta mätvärden på kontrollpanelen uppdateras dagligen utifrån en ögonblicksbild av din Platform-instans. [!UICONTROL CJA Rows Available] är ett undantag och uppdateras varje månad. Mätvärden som är märkta med &quot;paket&quot;, som [!UICONTROL Adhoc Query Service Users Packs], [!UICONTROL Profile Richness No of Packs] och [!UICONTROL Streaming Segmentation No of Packs], återspeglar licensberättiganden för tilläggserbjudanden och spårar inte pågående användning. Ändringar som görs efter ögonblicksbilden visas inte förrän nästa ögonblicksbild tas.
 
 ## Utforska kontrollpanelen för licensanvändning {#explore}
 
