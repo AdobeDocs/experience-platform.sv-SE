@@ -2,15 +2,19 @@
 title: Flexibel guide för utvärdering av målgrupper
 description: Lär dig hur du använder flexibel målgruppsutvärdering för att köra batchsegmenteringsjobb på begäran.
 role: Developer, User
-source-git-commit: 5c86161a2f9442d99426f2c05fb762cf50004049
+exl-id: b85bf735-be02-4bf7-bd63-8d74ae905e58
+source-git-commit: 71818ee273749bb5053286c5b8bbd07a4429c341
 workflow-type: tm+mt
-source-wordcount: '980'
+source-wordcount: '1033'
 ht-degree: 0%
 
 ---
 
-
 # Flexibel guide för målgruppsutvärdering
+
+>[!AVAILABILITY]
+>
+>Flexibel målgruppsutvärdering är **endast** tillgängligt för instanser av Experience Platform som körs på [!DNL Microsoft Azure]. Mer information om den Experience Platform-infrastruktur som stöds finns i [Experience Platform översikt över flera moln](../../landing/multi-cloud.md).
 
 Med flexibel målgruppsutvärdering kan ni köra ett batchsegmenteringsjobb på begäran. Med flexibel målgruppsutvärdering kan ni köra ad hoc-kampanjer, just-in-time-kommunikation eller andra tidskänsliga aktiviteter.
 
@@ -33,7 +37,7 @@ Tänk på följande när du gör en flexibel utvärdering av målgruppen:
 
 >[!NOTE]
 >
->Du *kan* köpa ytterligare flexibla utvärderingsversioner av målgrupper per år. Mer information får du av Adobe kundtjänst.
+>Ni kan köpa ytterligare flexibla utvärderingsversioner per år. Mer information får du av Adobe kundtjänst.
 
 ## Åtkomst {#access}
 
@@ -326,6 +330,14 @@ I följande videofilm visas hur du får tillgång till och använder en flexibel
 
 I följande avsnitt visas vanliga frågor om flexibel utvärdering av målgrupper.
 
+### Hur snart kan jag aktivera en målgrupp med hjälp av en flexibel målgruppsutvärdering?
+
++++ Svar
+
+Ni kan aktivera en målgrupp med hjälp av en flexibel målgruppsutvärdering direkt efter att målgruppen har skapats.
+
++++
+
 ### Kan jag schemalägga med flexibel målgruppsutvärdering?
 
 +++ Svar
@@ -373,4 +385,3 @@ Endast målgrupper med ursprung i segmenteringstjänsten stöds för flexibel m�
 Flexibla målgruppsutvärderingar som skapats antingen med API:t eller UI-antalet mot maxgränsen. Den dagliga batchsegmenteringsjobbskörningen som körs på nattbasis bidrar **inte** till den här gränsen.
 
 +++
-
