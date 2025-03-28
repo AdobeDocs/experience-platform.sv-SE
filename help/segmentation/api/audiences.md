@@ -3,9 +3,9 @@ title: Målgrupps-API-slutpunkt
 description: Använd målgruppsslutpunkten i Adobe Experience Platform Segmentation Service API för att skapa, hantera och uppdatera målgrupper för er organisation programmatiskt.
 role: Developer
 exl-id: cb1a46e5-3294-4db2-ad46-c5e45f48df15
-source-git-commit: 260d63d5eebd62cc5a617fccc189af52fd4d0b09
+source-git-commit: 7b1dedeab8df9678134474045cb87b27550f7fb6
 workflow-type: tm+mt
-source-wordcount: '1452'
+source-wordcount: '1590'
 ht-degree: 0%
 
 ---
@@ -20,7 +20,7 @@ Slutpunkterna som används i den här guiden ingår i [!DNL Adobe Experience Pla
 
 ## Hämta en lista med målgrupper {#list}
 
-Du kan hämta en lista över alla målgrupper för din organisation genom att göra en GET-förfrågan till slutpunkten `/audiences`.
+Du kan hämta en lista över alla målgrupper för din organisation genom att göra en GET-begäran till slutpunkten `/audiences`.
 
 **API-format**
 
@@ -202,7 +202,7 @@ Ett lyckat svar returnerar HTTP-status 200 med en lista över målgrupper som sk
 
 ## Skapa en ny målgrupp {#create}
 
-Du kan skapa en ny målgrupp genom att göra en POST-förfrågan till slutpunkten `/audiences`.
+Du kan skapa en ny målgrupp genom att göra en POST-begäran till slutpunkten `/audiences`.
 
 **API-format**
 
@@ -325,7 +325,7 @@ Ett lyckat svar returnerar HTTP-status 200 med information om den nya målgruppe
 
 ## Söka efter en viss målgrupp {#get}
 
-Du kan söka efter detaljerad information om en viss målgrupp genom att göra en GET-förfrågan till slutpunkten `/audiences` och ange ID:t för den målgrupp som du vill hämta i sökvägen för begäran.
+Du kan söka efter detaljerad information om en viss målgrupp genom att göra en GET-begäran till slutpunkten `/audiences` och ange ID:t för den målgrupp som du vill hämta i sökvägen till begäran.
 
 **API-format**
 
@@ -422,9 +422,9 @@ Ett lyckat svar returnerar HTTP-status 200 med information om den angivna målgr
 
 +++
 
-## Uppdatera en målgrupp {#put}
+## Skriva över en målgrupp {#put}
 
-Du kan uppdatera (skriva över) en viss målgrupp genom att göra en PUT-begäran till slutpunkten `/audiences` och ange ID:t för den målgrupp som du vill uppdatera i sökvägen till begäran.
+Du kan uppdatera (skriva över) en specifik målgrupp genom att göra en PUT-begäran till slutpunkten `/audiences` och ange ID:t för den målgrupp som du vill uppdatera i sökvägen till begäran.
 
 **API-format**
 
@@ -453,6 +453,11 @@ curl -X PUT https://platform.adobe.io/data/core/ups/audiences/4afe34ae-8c98-4513
     "namespace": "AEPSegments",
     "description": "Last 30 days",
     "type": "SegmentDefinition",
+    "expression": {
+        "type": "PQL",
+        "format": "pql/text",
+        "value": "workAddress.country=\"US\""
+    }
     "lifecycleState": "published",
     "datasetId": "6254cf3c97f8e31b639fb14d",
     "labels": [
@@ -468,6 +473,7 @@ curl -X PUT https://platform.adobe.io/data/core/ups/audiences/4afe34ae-8c98-4513
 | `namespace` | Namnutrymmet för målgruppen. |
 | `description` | En beskrivning av publiken. |
 | `type` | Ett systemgenererat fält som visar om publiken genereras av plattformen eller är en externt genererad publik. Möjliga värden är `SegmentDefinition` och `ExternalSegment`. En `SegmentDefinition` refererar till en målgrupp som har skapats i Platform, medan en `ExternalSegment` refererar till en målgrupp som inte har genererats i Platform. |
+| `expression` | Ett objekt som innehåller målgruppens PQL-uttryck. |
 | `lifecycleState` | Publiken. Möjliga värden är `draft`, `published` och `inactive`. `draft` representerar när målgruppen skapas, `published` när målgruppen publiceras och `inactive` när målgruppen inte längre är aktiv. |
 | `datasetId` | ID:t för datauppsättningen som målgruppsdata kan hittas. |
 | `labels` | Dataanvändning på objektnivå och attributbaserade etiketter för åtkomstkontroll som är relevanta för publiken. |
@@ -496,6 +502,81 @@ Ett lyckat svar returnerar HTTP-status 200 med information om din nya uppdaterad
     "description": "Last 30 days",
     "type": "SegmentDefinition",
     "lifecycleState": "published",
+    "createdBy": "{CREATED_BY_ID}",
+    "datasetId": "6254cf3c97f8e31b639fb14d",
+    "_etag": "\"f4102699-0000-0200-0000-625cd61a0000\"",
+    "creationTime": 1650251290000,
+    "updateEpoch": 1650251290,
+    "updateTime": 1650251290000,
+    "createEpoch": 1650251290
+}
+```
+
++++
+
+## Uppdatera en målgrupp {#patch}
+
+Du kan uppdatera en specifik målgrupp genom att göra en PATCH-begäran till slutpunkten `/audiences` och ange ID:t för den målgrupp som du vill uppdatera i sökvägen till begäran.
+
+**API-format**
+
+```http
+PATCH /audiences/{AUDIENCE_ID}
+```
+
+| Parameter | Beskrivning |
+| --------- | ----------- |
+| `{AUDIENCE_ID}` | ID:t för den målgrupp som du vill uppdatera. Observera att det här är fältet `id` och att det **inte** är fältet `audienceId`. |
+
+**Begäran**
+
++++ Ett exempel på en förfrågan om att uppdatera en målgrupp.
+
+```shell
+curl -X PATCH https://platform.adobe.io/data/core/ups/audiences/60ccea95-1435-4180-97a5-58af4aa285ab5
+ -H 'Authorization: Bearer {ACCESS_TOKEN}' \
+ -H 'x-gw-ims-org-id: {ORG_ID}' \
+ -H 'x-api-key: {API_KEY}' \
+ -H 'x-sandbox-name: {SANDBOX_NAME}' \
+ -d '[
+    {
+        "op": "add",
+        "path": "/lifecycleState",
+        "value": "inactive"
+    }
+ ]'
+```
+
+| Egenskap | Beskrivning |
+| -------- | ----------- |
+| `op` | Den typ av PATCH-åtgärd som har utförts. Det här värdet är **always** `/add` för den här slutpunkten. |
+| `path` | Sökvägen för det fält som ska uppdateras. Systemgenererade fält som `id`, `audienceId` och `namespace` **kan inte** redigeras. |
+| `value` | Det nya värdet som tilldelats den egenskap som anges i `path`. |
+
++++
+
+**Svar**
+
+Ett lyckat svar returnerar HTTP-status 200 med den uppdaterade publiken.
+
++++Ett exempelsvar när du korrigerar ett fält i en målgrupp.
+
+```json
+{
+    "id": "60ccea95-1435-4180-97a5-58af4aa285ab5",
+    "audienceId": "test-platform-audience-id",
+    "name": "New Platform audience",
+    "namespace": "AEPSegments",
+    "imsOrgId": "{ORG_ID}",
+    "sandbox": {
+        "sandboxId": "6ed34f6f-fe21-4a30-934f-6ffe21fa3075",
+        "sandboxName": "prod",
+        "type": "production",
+        "default": true
+    },
+    "description": "Last 30 days",
+    "type": "SegmentDefinition",
+    "lifecycleState": "inactive",
     "createdBy": "{CREATED_BY_ID}",
     "datasetId": "6254cf3c97f8e31b639fb14d",
     "_etag": "\"f4102699-0000-0200-0000-625cd61a0000\"",
@@ -542,7 +623,7 @@ Ett lyckat svar returnerar HTTP-status 204 utan något meddelande.
 
 ## Hämta flera målgrupper {#bulk-get}
 
-Du kan hämta flera målgrupper genom att göra en begäran om POST till `/audiences/bulk-get`-slutpunkten och ange ID:n för de målgrupper som du vill hämta.
+Du kan hämta flera målgrupper genom att göra en POST-begäran till `/audiences/bulk-get`-slutpunkten och ange ID:n för de målgrupper som du vill hämta.
 
 **API-format**
 
