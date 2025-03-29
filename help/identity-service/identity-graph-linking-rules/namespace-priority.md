@@ -2,7 +2,7 @@
 title: Namnområdesprioritet
 description: Läs om namnområdesprioritet i identitetstjänsten.
 exl-id: bb04f02e-3826-45af-b935-752ea7e6ed7c
-source-git-commit: 7174c2c0d8c4ada8d5bba334492bad396c1cfb34
+source-git-commit: 8157eaf3d79523995fd50d02234e7873cffcea14
 workflow-type: tm+mt
 source-wordcount: '1801'
 ht-degree: 1%
@@ -73,11 +73,11 @@ För närvarande påverkar namnområdesprioriteten systembeteendet för kundprof
 
 ![Ett diagram över programomfånget för namnområdesprioritet](../images/namespace-priority/application-scope.png)
 
-### Identitetstjänst: Identitetsoptimeringsalgoritm
+## Identitetstjänst: Identitetsoptimeringsalgoritm
 
 För relativt komplexa diagramstrukturer spelar namnområdesprioriteten en viktig roll när det gäller att säkerställa att rätt länkar tas bort när diagramkomprimeringsscenarier inträffar. Mer information finns i [översikten över algoritmen för identitetsoptimering](../identity-graph-linking-rules/identity-optimization-algorithm.md).
 
-### Kundprofil i realtid: primär identitetsbestämning för upplevelsehändelser
+## Kundprofil i realtid: primär identitetsbestämning för upplevelsehändelser
 
 * När du har konfigurerat identitetsinställningar för en viss sandlåda bestäms den primära identiteten för upplevelsehändelser av den högsta namnområdesprioriteten i konfigurationen.
    * Det beror på att upplevelsehändelser är dynamiska till sin natur. En identitetskarta kan innehålla tre eller fler identiteter, och namnområdesprioriteten ser till att det viktigaste namnutrymmet är kopplat till upplevelsehändelsen.
@@ -122,7 +122,7 @@ Med tanke på de konfigurationer som beskrivs ovan kommer användaråtgärder oc
 
 {style="table-layout:auto"}
 
-### Segmenteringstjänst: lagring av metadata för segmentmedlemskap
+## Segmenteringstjänst: lagring av metadata för segmentmedlemskap
 
 ![Ett diagram över segmentmedlemskapslagring](../images/namespace-priority/segment-membership-storage.png)
 
@@ -139,7 +139,7 @@ Anta till exempel att det finns två profiler:
 
 Om John och Jane delar en enhet överförs ECID (webbläsare) från en person till en annan. Detta påverkar dock inte segmentmedlemskapsinformationen som lagras mot John och Jane.
 
-Om kriterierna för godkännande av segment endast baserades på anonyma händelser som sparats mot ECID, skulle Jane kvalificera sig för det segmentet
+Om kriterierna för godkännande av segment enbart baserades på anonyma händelser som sparats mot ECID, skulle Jane kvalificera sig för det segmentet.
 
 ## Inverkan på andra Experience Platform-tjänster {#implications}
 
