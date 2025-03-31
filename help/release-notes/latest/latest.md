@@ -2,9 +2,9 @@
 title: Versionsinformation om Adobe Experience Platform mars 2025
 description: Versionsinformationen för Adobe Experience Platform i mars 2025.
 exl-id: f854f9e5-71be-4d56-a598-cfeb036716cb
-source-git-commit: 16056a35624b4a053e9f50acef0ec3f63254a065
+source-git-commit: edcdf84a8cb954c15f7dd235fb14cf14e11e22c8
 workflow-type: tm+mt
-source-wordcount: '1212'
+source-wordcount: '1235'
 ht-degree: 26%
 
 ---
@@ -19,6 +19,7 @@ Uppdateringar av befintliga funktioner och dokumentation i Adobe Experience Plat
 
    - [Kontrollpaneler](#dashboards)
    - [Mål ](#destinations)
+   - [Federerad målgruppssammansättning](#federated-audience-composition)
    - [Segmenteringstjänst](#segmentation-service)
    - [Källor](#sources)
 
@@ -62,6 +63,10 @@ Läs [översikt över kontrollpaneler](../../dashboards/home.md) för mer inform
 {style="table-layout:auto"}
 
 Mer information finns i [översikten över destinationer](../../destinations/home.md).
+
+## Federerad målgruppssammansättning {#federated-audience-composition}
+
+Information om de senaste uppdateringarna för Federated Audience Composition finns i [dedikerad versionsinformation](https://experienceleague.adobe.com/sv/docs/federated-audience-composition/using/release-notes) här.
 
 ## Segmenteringstjänst {#segmentation-service}
 
