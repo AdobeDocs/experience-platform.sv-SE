@@ -1,10 +1,10 @@
 ---
-keywords: Experience Platform;hem;populära ämnen;schema;schema;schema;fältgrupp;fältgrupp;fältgrupper;fältgrupper;datatyp;datatyp;datatyp;schemadesign;datatyp;datatyp;datatyp;datatyp;scheman;scheman;schemadesign;karta;karta;schema;
+keywords: Experience Platform;hem;populära ämnen;schema;schema;fältgrupp;fältgrupp;fältgrupper;fältgrupper;datatyp;datatyp;datatyp;schemadesign;datatyp;datatyp;datatyp;datatyp;scheman;scheman;schemadesign;karta;karta;
 solution: Experience Platform
 title: Begränsningar för XDM-fälttyp
 description: En referens för fälttypsbegränsningar i Experience Data Model (XDM), inklusive andra serialiseringsformat som de kan mappas till och hur du definierar egna fälttyper i API:t.
 exl-id: 63839a28-6d26-46f1-8bbf-b524e82ac4df
-source-git-commit: eb1cf204e95591082b27dc97cd3c709a23b20b08
+source-git-commit: ca8859c7b71d1b0aad30880ff066d2b4b33b0a35
 workflow-type: tm+mt
 source-wordcount: '634'
 ht-degree: 0%
@@ -19,7 +19,7 @@ I XDM-scheman (Experience Data Model) begränsar fälttypen vilken typ av data s
 
 Granska [grunderna för schemakomposition](./composition.md) innan du använder den här guiden för att få en introduktion till XDM-scheman, klasser och schemafältgrupper.
 
-Om du planerar att definiera dina egna fälttyper i API rekommenderar vi att du börjar med [utvecklarhandboken för schemaregister](../api/getting-started.md) för att lära dig hur du skapar fältgrupper och datatyper som du vill inkludera dina anpassade fält i. Om du använder användargränssnittet för Experience Platform för att skapa dina scheman kan du läsa guiden om att [definiera fält i användargränssnittet](../ui/fields/overview.md) för att lära dig hur du implementerar begränsningar för fält som du definierar i anpassade fältgrupper och datatyper.
+Om du planerar att definiera dina egna fälttyper i API rekommenderar vi att du börjar med [utvecklarhandboken för schemaregister](../api/getting-started.md) för att lära dig hur du skapar fältgrupper och datatyper som du vill inkludera dina anpassade fält i. Om du använder Experience Platform-gränssnittet för att skapa dina scheman kan du läsa guiden [definiera fält i användargränssnittet](../ui/fields/overview.md) för att lära dig hur du implementerar begränsningar för fält som du definierar i anpassade fältgrupper och datatyper.
 
 ## Grundstruktur och exempel {#basic-types}
 
@@ -130,7 +130,7 @@ I följande tabell visas hur varje XDM-typ representeras i JSON-schema, tillsamm
       <td>[!UICONTROL Boolean]</td>
       <td>
         <pre class="JSON language-JSON hljs">
-{"type": "string"}</pre>
+{"type": "boolesk"}</pre>
       </td>
       <td><code>true</code></td>
     </tr>
