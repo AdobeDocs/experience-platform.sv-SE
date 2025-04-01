@@ -3,9 +3,9 @@ title: Aktivera målgrupper för att batchprofilera exportmål
 type: Tutorial
 description: Lär dig hur du aktiverar de målgrupper du har i Adobe Experience Platform genom att skicka dem till batchprofilbaserade destinationer.
 exl-id: 82ca9971-2685-453a-9e45-2001f0337cda
-source-git-commit: 8a1ac01c503bd1e5b9873714514d438b22f45cfb
+source-git-commit: f01a044d3d12ef457c6242a0b93acbfeeaf48588
 workflow-type: tm+mt
-source-wordcount: '4235'
+source-wordcount: '4282'
 ht-degree: 1%
 
 ---
@@ -145,6 +145,10 @@ Välj **[!UICONTROL Export full files]** om du vill utlösa exporten av en fil s
 Använd alternativet **[!UICONTROL Scheduled]** om du vill att aktiveringsjobbet ska köras med en fast tidpunkt. Med det här alternativet exporteras Experience Platform-profildata vid samma tidpunkt varje dag. De profiler du exporterar kanske inte är de mest aktuella, beroende på om gruppsegmenteringsjobbet har slutförts innan aktiveringsjobbet startar.
 
    ![Bilden markerar alternativet Schemalagd i aktiveringsflödet för batchmål och visar tidsväljaren.](../assets/ui/activate-batch-profile-destinations/scheduled-option.png)
+
+   >[!IMPORTANT]
+   >
+   >När du mappar en målgrupp som har skapats inom de senaste 24 timmarna och utvärderats med [gruppsegmentering](../../segmentation/methods/batch-segmentation.md) anger du att ditt dagliga exportschema ska börja tidigast nästa dag. Detta garanterar att det dagliga batchutvärderingsjobbet körs först och att du exporterar fullständiga målgruppsdata.
 
 3. Använd väljaren **[!UICONTROL Date]** för att välja dag eller intervall när exporten ska ske. För daglig export är det bästa sättet att ställa in start- och slutdatum så att de motsvarar kampanjernas längd i era nedströmsplattformar.
 

@@ -5,7 +5,7 @@ title: Aktivera målgrupper för batchdestinationer via ad hoc-aktiverings-API
 description: I den här artikeln illustreras det kompletta arbetsflödet för att aktivera målgrupper via ad hoc-aktiverings-API:t, inklusive segmenteringsjobben som utförs före aktiveringen.
 type: Tutorial
 exl-id: 1a09f5ff-0b04-413d-a9f6-57911a92b4e4
-source-git-commit: deecaf0af269b64af507126dba0523d2b16a5721
+source-git-commit: f01a044d3d12ef457c6242a0b93acbfeeaf48588
 workflow-type: tm+mt
 source-wordcount: '1606'
 ht-degree: 0%
@@ -30,13 +30,11 @@ Bilden nedan visar det kompletta arbetsflödet för att aktivera målgrupper via
 
 ![ad hoc-aktivering](../assets/api/ad-hoc-activation/ad-hoc-activation-overview.png)
 
-
-
 ## Användningsfall {#use-cases}
 
-### Flash, försäljning eller kampanjer
+### Försäljning eller kampanjer i Flash
 
-En webbutik förbereder en begränsad försäljning och vill meddela kunderna med kort varsel. Via Experience Platform ad hoc-aktiverings-API:t kan marknadsföringsteamet exportera målgrupper on-demand och snabbt skicka e-postreklam till kundbasen.
+En webbutik förbereder en begränsad försäljning och vill meddela kunderna med kort varsel. Genom Experience Platform ad hoc-aktiverings-API:t kan marknadsföringsteamet exportera målgrupper on-demand och snabbt skicka e-postreklam till kundbasen.
 
 ### Aktuella event eller senaste nytt
 
@@ -68,7 +66,7 @@ Innan du kan ringa anrop till Adobe Experience Platform API:er måste du kontrol
 
 ## Steg 2: Samla in inloggningsuppgifter {#credentials}
 
-För att kunna ringa anrop till plattforms-API:er måste du först slutföra [autentiseringssjälvstudiekursen](https://www.adobe.com/go/platform-api-authentication-en). När du slutför självstudiekursen för autentisering visas värdena för var och en av de obligatoriska rubrikerna i alla API-anrop för Experience Platform, vilket visas nedan:
+För att kunna ringa anrop till plattforms-API:er måste du först slutföra [autentiseringssjälvstudiekursen](https://www.adobe.com/go/platform-api-authentication-en). När du slutför självstudiekursen för autentisering visas värdena för var och en av de obligatoriska rubrikerna i alla Experience Platform API-anrop, vilket visas nedan:
 
 * Behörighet: Bärare `{ACCESS_TOKEN}`
 * x-api-key: `{API_KEY}`
@@ -82,7 +80,7 @@ Resurser i Experience Platform kan isoleras till specifika virtuella sandlådor.
 >
 >Mer information om sandlådor i Experience Platform finns i översiktsdokumentationen för [sandlådan](../../sandboxes/home.md).
 
-Alla begäranden som innehåller en nyttolast (POST, PUT, PATCH) kräver ytterligare en medietypsrubrik:
+Alla begäranden som innehåller en nyttolast (POST, PUT, PATCH) kräver en extra medietypsrubrik:
 
 * Innehållstyp: `application/json`
 
@@ -126,7 +124,7 @@ Adobe Experience Platform kör schemalagda segmenteringsjobb en gång var 24:e t
 
 >[!IMPORTANT]
 >
->Observera följande engångsbegränsning: Innan du kör ett ad hoc-aktiveringsjobb måste du se till att det har gått minst 20 minuter från det att målgruppen först aktiverades enligt det schema som du angav i [Steg 3 - Skapa aktiveringsflöde i plattformsgränssnittet](#activation-flow).
+>Observera följande engångsbegränsning: Innan du kör ett ad hoc-aktiveringsjobb måste du se till att det har gått minst en timme från det att målgruppen först aktiverades enligt det schema du angav i [Steg 3 - Skapa aktiveringsflöde i plattformsgränssnittet](#activation-flow).
 
 Innan du kör ett ad hoc-aktiveringsjobb kontrollerar du att det schemalagda målgruppsexportjobbet för dina målgrupper är klart. Information om hur du övervakar statusen för aktiveringsflöden finns i [övervakning av måldataflöde](../../dataflows/ui/monitor-destinations.md). Om aktiveringsdataflödet till exempel visar statusen **[!UICONTROL Processing]** väntar du tills det är klart innan du kör ad hoc-aktiveringsjobbet för att exportera en fullständig fil.
 
@@ -239,7 +237,7 @@ Ett lyckat svar returnerar HTTP-status 200.
 
 ## API-felhantering {#api-error-handling}
 
-Destination SDK-API-slutpunkter följer de allmänna felmeddelandeprinciperna för Experience Platform API. Se [API-statuskoder](../../landing/troubleshooting.md#api-status-codes) och [begäranrubrikfel](../../landing/troubleshooting.md#request-header-errors) i felsökningsguiden för plattformen.
+Destination SDK API-slutpunkter följer de allmänna felmeddelandeprinciperna för Experience Platform API. Se [API-statuskoder](../../landing/troubleshooting.md#api-status-codes) och [begäranrubrikfel](../../landing/troubleshooting.md#request-header-errors) i felsökningsguiden för plattformen.
 
 ### API-felkoder och meddelanden som är specifika för API för ad hoc-aktivering {#specific-error-messages}
 
@@ -253,4 +251,4 @@ När du använder API:t för ad hoc-aktivering kan du få felmeddelanden som är
 ## Relaterad information {#related-information}
 
 * [Anslut till gruppmål och aktivera data med API:t för Flow Service](/help/destinations/api/connect-activate-batch-destinations.md)
-* [(Beta) Exportera filer on demand till gruppmål med hjälp av användargränssnittet i Experience Platform](/help/destinations/ui/export-file-now.md)
+* [(Beta) Exportera filer on demand till gruppmål med hjälp av Experience Platform användargränssnitt](/help/destinations/ui/export-file-now.md)
