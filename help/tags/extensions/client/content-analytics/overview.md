@@ -1,13 +1,11 @@
 ---
 title: Adobe Content Analytics Extension - översikt
 description: Läs mer om Adobe Content Analytics-taggtillägg i Adobe Experience Platform.
-hide: true
-hidefromtoc: true
 exl-id: fcc46c86-e765-4bc7-bfdf-b8b10e8afacc
-source-git-commit: 80bfaeb7fec229e77c83230a01b75a200cf37e29
+source-git-commit: 5f852b69b0eb0a5e6a9119f14eb9e1f51c8a2e33
 workflow-type: tm+mt
-source-wordcount: '598'
-ht-degree: 1%
+source-wordcount: '609'
+ht-degree: 0%
 
 ---
 
@@ -78,7 +76,8 @@ I avsnittet **[!UICONTROL Experience Capture & Definition]** kan du aktivera **[
 1. Aktivera **[!UICONTROL Include experiences]**.
 1. Valfritt. Ange parametrarna för hur innehållet återges på webbplatsen. Parametrarna är noll eller flera kombinationer av **[!UICONTROL Domain regular expression]** och **[!UICONTROL Query parameters]**.
    1. Ange en **[!UICONTROL Domain regular expression]**, till exempel `^(?!.*\b(store|help|admin)\b)`.
-   1. Ange en kommaavgränsad lista med **[!UICONTROL Query parameters,]**, till exempel `outdoors, patio, kitchen`.
+   1. Ange en kommaavgränsad lista med **[!UICONTROL Query parameters]**, till exempel `outdoors, patio, kitchen`.
+Använd ![Stäng](./assets/CrossSize300.svg) om du vill ta bort enskilda parametrar eller **[!UICONTROL Clear all]** om du vill ta bort alla parametrar.
 1. Välj **[!UICONTROL Remove]** om du vill ta bort en kombination av reguljära uttryck och frågeparametrar för domäner.
 1. Välj **[!UICONTROL Add Regex]** om du vill lägga till en annan kombination av ett reguljärt uttryck och frågeparametrar.
 
