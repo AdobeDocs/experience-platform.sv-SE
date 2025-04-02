@@ -2,9 +2,9 @@
 title: Översikt över destinationer
 description: Destinationer är färdiga integrationer med målplattformar som möjliggör smidig aktivering av data från Adobe Experience Platform. Ni kan använda Destinationer i Adobe Experience Platform för att aktivera kända och okända data för flerkanalskampanjer, e-postkampanjer, riktad reklam och många andra användningsfall.
 exl-id: afd07ddc-652e-4e22-b298-feba27332462
-source-git-commit: 6d97f132788a249e0bf5c293e34d9d529325f099
+source-git-commit: 8d57694ffe0ac962b988ebcf9f35fbb7bf816c04
 workflow-type: tm+mt
-source-wordcount: '1162'
+source-wordcount: '1287'
 ht-degree: 3%
 
 ---
@@ -47,11 +47,11 @@ Med kontrollerna på [målarbetsytan](./ui/destinations-workspace.md) kan du:
 
 Med Experience Platform kan ni aktivera data till olika typer av destinationer för att tillgodose era användningsbehov. Målen kan vara allt från API-baserade integreringar till integreringar med mottagningssystem för filer, sökmål för profiler och mycket annat. Mer information om alla tillgängliga destinationer finns i översikten över [måltyper och kategorier](./destination-types.md).
 
-## Destinationer byggda av Adobe och partnerbyggda {#adobe-and-partner-built-destinations}
+## Adobe-byggda och partnerbyggda destinationer {#adobe-and-partner-built-destinations}
 
-Vissa av anslutningarna i Experience Platform-målkatalogen byggs och underhålls av Adobe, medan andra byggs och underhålls av partnerföretag som använder [Destination SDK](/help/destinations/destination-sdk/overview.md). En anteckning högst upp på dokumentationssidan för varje partnerbyggd koppling anropar om ett mål skapas och underhålls av partnern. [Amazon S3-anslutningen](/help/destinations/catalog/cloud-storage/amazon-s3.md) skapas till exempel av Adobe, medan [TikTok-anslutningen](/help/destinations/catalog/social/tiktok.md) skapas och underhålls av TikTok-teamet.
+Vissa av anslutningarna i Experience Platform målkatalog byggs och underhålls av Adobe, medan andra byggs och underhålls av partnerföretag som använder [Destination SDK](/help/destinations/destination-sdk/overview.md). En anteckning högst upp på dokumentationssidan för varje partnerbyggd koppling anropar om ett mål skapas och underhålls av partnern. Till exempel skapas [Amazon S3-anslutningen](/help/destinations/catalog/cloud-storage/amazon-s3.md) av Adobe medan [TikTok-anslutningen](/help/destinations/catalog/social/tiktok.md) skapas och underhålls av TikTok-teamet.
 
-För partnerskapade och underhållna anslutningar innebär detta att problem med kopplingen kan behöva lösas av partnerteamet (kontaktmetoden finns i anteckningen på dokumentationssidan). Om du har problem med kontakter som utvecklats och underhålls av Adobe kontaktar du Adobe eller kundtjänst.
+För partnerskapade och underhållna anslutningar innebär detta att problem med kopplingen kan behöva lösas av partnerteamet (kontaktmetoden finns i anteckningen på dokumentationssidan). Kontakta Adobe eller kundtjänst om du har problem med kontakter som skapats och underhålls av Adobe.
 
 ## Destinationer och åtkomstkontroller {#access-controls}
 
@@ -61,7 +61,7 @@ Följande tabell visar vilka behörigheter och behörighetskombinationer som kr�
 
 | Behörighetsnivå | Beskrivning |
 | ---- | ---- |
-| **[!UICONTROL View Destinations]** | Om du vill komma åt målfliken i användargränssnittet i Experience Platform måste du ha **[!UICONTROL View Destinations]** [åtkomstkontrollbehörighet](/help/access-control/home.md#permissions). |
+| **[!UICONTROL View Destinations]** | Om du vill få åtkomst till målfliken i Experience Platform-gränssnittet behöver du **[!UICONTROL View Destinations]** [åtkomstkontrollbehörighet](/help/access-control/home.md#permissions). |
 | **[!UICONTROL View Destinations]**, **[!UICONTROL Manage Destinations]** | Om du vill ansluta till mål behöver du behörigheterna **[!UICONTROL View Destinations]** och **[!UICONTROL Manage Destinations]** [åtkomstkontroll](/help/access-control/home.md#permissions). |
 | **[!UICONTROL View Destinations]**, **[!UICONTROL Activate Destinations]**, **[!UICONTROL View Profiles]** och **[!UICONTROL View Segments]** | Om du vill aktivera målgrupper till mål och aktivera [mappningssteget](ui/activate-batch-profile-destinations.md#mapping) i arbetsflödet behöver du behörigheterna **[!UICONTROL View Destinations]**, **[!UICONTROL Activate Destinations]**, **[!UICONTROL View Profiles]** och **[!UICONTROL View Segments]** [åtkomstkontroll](/help/access-control/home.md#permissions). |
 | **[!UICONTROL View Destinations]**, **[!UICONTROL Activate Segments without Mapping]**, **[!UICONTROL View Profiles]** och **[!UICONTROL View Segments]** | Om du vill lägga till eller ta bort målgrupper från befintliga dataflöden utan att ha tillgång till [mappningssteget](ui/activate-batch-profile-destinations.md#mapping) i arbetsflödet behöver du behörigheterna **[!UICONTROL View Destinations]**, **[!UICONTROL Activate Segments without Mapping]**, **[!UICONTROL View Profiles]** och **[!UICONTROL View Segments]** [åtkomstkontroll](/help/access-control/home.md#permissions). |
@@ -83,6 +83,14 @@ Med attributbaserad åtkomstkontroll i Adobe Experience Platform kan administrat
 Med attributbaserad åtkomstkontroll kan du tillämpa mappningskonfigurationer på fält som du har behörighet till. Dessutom kan du inte exportera data till ett mål om du inte har tillgång till alla fält i datauppsättningen.
 
 Mer information om hur mål fungerar med attributbaserade åtkomstkontroller finns i [attributbaserad åtkomstkontroll](../access-control/abac/overview.md#destinations).
+
+## Profilborttagning från mål {#profile-removal}
+
+När en profil tas bort från en målgrupp som har aktiverats till ett mål tas även den profilen bort från motsvarande målgrupp på målplattformen. Om en profil tas bort från en målgrupp som tidigare aktiverats för LinkedIn, tas den profilen bort från den associerade [!UICONTROL LinkedIn Matched Audience].
+
+Borttagning av profiler från destinationer - som också kallas osegmentering - sker på samma avstånd som segmentering. Så snart en profil har tagits bort från en målgrupp i Experience Platform återspeglas ändringen i nästa schemalagda dataflöde och profilen tas bort från målgruppen.
+
+Den faktiska hastighet med vilken profilborttagningen börjar gälla på målplattformen kan variera beroende på målets beteende vid förtäring och bearbetning.
 
 ## Destinationsövervakning {#destinations-monitoring}
 
@@ -120,8 +128,8 @@ Mer information om brott mot datapolicyer i arbetsflödet för målgruppsaktiver
 
 Genom att använda något av de destinationer som är märkta som betaversioner (&quot;Beta&quot;) bekräftar du härmed att Beta tillhandahålls ***i befintligt skick utan garanti av något slag***.
 
-Adobe ska inte ha någon skyldighet att upprätthålla, korrigera, uppdatera, ändra, modifiera eller på annat sätt stödja Beta. Du rekommenderas att använda Informativ och inte på något sätt förlita dig på att sådana Beta och/eller medföljande material fungerar korrekt eller fungerar korrekt. Beta betraktas som Konfidentiell information om Adobe.
+Adobe har ingen skyldighet att upprätthålla, korrigera, uppdatera, ändra, modifiera eller på annat sätt stödja Beta. Du rekommenderas att använda Informativ och inte på något sätt förlita dig på att sådana Beta och/eller medföljande material fungerar korrekt eller fungerar korrekt. Beta betraktas som Konfidentiell information om Adobe.
 
-All &quot;feedback&quot; (information om Beta, inklusive men inte begränsad till problem eller defekter som du stöter på när du använder Beta, förslag, förbättringar och rekommendationer) som du får från You till Adobe tilldelas härmed Adobe, inklusive alla rättigheter, titlar och intressen i och för sådan feedback.
+All &quot;Feedback&quot; (information om Beta, inklusive men inte begränsad till problem eller defekter som du stöter på när du använder Beta, förslag, förbättringar och rekommendationer) som du ger Adobe tilldelas härmed till Adobe, inklusive alla rättigheter, titlar och intressen i och för sådan feedback.
 
 Skicka Öppna feedback eller skapa en supportanmälan för att dela dina förslag eller rapportera ett fel, sök efter en funktionsförbättring.
