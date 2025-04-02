@@ -4,9 +4,9 @@ title: IP-adress tillåtelselista för direktuppspelningsmål
 type: Documentation
 description: Den här sidan innehåller IP-intervall som du kan lägga till i tillåtelselista för att på ett säkert sätt exportera data från Experience Platform till HTTP REST API-slutpunkten, Amazon Kinesis eller Azure Event Hubs-instansen.
 exl-id: f41303bd-c886-4c67-9e39-21efc3f5b768
-source-git-commit: ee4c42a2298c588590b1535524ed8f3dfe13b603
+source-git-commit: 7cf15550d7619e247052efc4d9b4c72c5d32641a
 workflow-type: tm+mt
-source-wordcount: '275'
+source-wordcount: '307'
 ht-degree: 0%
 
 ---
@@ -57,12 +57,12 @@ Adobe rekommenderar att du lägger till följande IP-intervall till en tillåtel
 `52.254.107.0/28`
 `52.254.107.144/28`
 `20.22.83.112`
-<!-- 
-## VA6: US and Americas customers running on AWS {#aws}
 
-The IP range below applies to Experience Platform customers running on Amazon Web Services (AWS). See the [Experience Platform Multi-Cloud overview](../../../landing/multi-cloud.md) for more information.
+## VA6: Kunder i USA och Amerika som använder AWS {#aws}
 
-`66.117.18.0/24` -->
+IP-intervallet nedan gäller för Experience Platform-kunder som använder Amazon Web Services (AWS). Mer information finns i [Experience Platform Multi-Cloud-översikt](../../../landing/multi-cloud.md).
+
+`66.117.18.0/24`
 
 ## NLD2: EMEA-kunder {#emea}
 
