@@ -1,12 +1,12 @@
 ---
 keywords: direktuppspelning; HTTP-mål
 title: HTTP API-anslutning
-description: Använd HTTP API-målet i Adobe Experience Platform för att skicka profildata till HTTP-slutpunkter från tredje part för att köra egna analyser eller utföra andra åtgärder som du kan behöva för profildata som exporteras utanför Experience Platform.
+description: Använd HTTP API-målet i Adobe Experience Platform för att skicka profildata till HTTP-slutpunkter från tredje part för att köra egna analyser eller utföra andra åtgärder som du kan behöva för profildata som exporteras från Experience Platform.
 badgeUltimate: label="Ultimate" type="Positive"
 exl-id: 165a8085-c8e6-4c9f-8033-f203522bb288
-source-git-commit: fffeb2221c4e25bae8386419de1646c89aa93a06
+source-git-commit: 2fa6997c043ef7ff24b1383dd8626cfe1cca4f54
 workflow-type: tm+mt
-source-wordcount: '2580'
+source-wordcount: '2607'
 ht-degree: 0%
 
 ---
@@ -17,7 +17,7 @@ ht-degree: 0%
 
 >[!IMPORTANT]
 >
-> Det här målet är bara tillgängligt för [Adobe Real-time Customer Data Platform Ultimate](https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform.html)-kunder.
+> Det här målet är bara tillgängligt för [Adobe Real-Time Customer Data Platform Ultimate](https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform.html)-kunder.
 
 HTTP API-målet är ett [!DNL Adobe Experience Platform]-mål för direktuppspelning som hjälper dig att skicka profildata till HTTP-slutpunkter från tredje part.
 
@@ -25,7 +25,7 @@ Om du vill skicka profildata till HTTP-slutpunkter måste du först [ansluta til
 
 ## Användningsfall {#use-cases}
 
-Med HTTP API-målet kan du exportera XDM-profildata och målgrupper till generiska HTTP-slutpunkter. Där kan du köra dina egna analyser eller utföra andra åtgärder du kan behöva för profildata som exporterats från Experience Platform.
+Med HTTP API-målet kan du exportera XDM-profildata och målgrupper till generiska HTTP-slutpunkter. Där kan du köra egna analyser eller utföra andra åtgärder du kan behöva för profildata som exporterats från Experience Platform.
 
 HTTP-slutpunkter kan antingen vara kundernas egna system eller tredjepartslösningar.
 
@@ -35,7 +35,7 @@ I det här avsnittet beskrivs vilka typer av målgrupper du kan exportera till d
 
 | Målgruppsursprung | Stöds | Beskrivning |
 |---------|----------|----------|
-| [!DNL Segmentation Service] | ✓ | Publiker som genererats via Experience Platform [segmenteringstjänsten](../../../segmentation/home.md). |
+| [!DNL Segmentation Service] | ✓ | Publiker som genererats via Experience Platform [segmenteringstjänst](../../../segmentation/home.md). |
 | Anpassade överföringar | ✓ | Publikerna [importerade](../../../segmentation/ui/audience-portal.md#import-audience) till Experience Platform från CSV-filer. |
 
 {style="table-layout:auto"}
@@ -56,7 +56,7 @@ Se tabellen nedan för information om exporttyp och frekvens för destinationen.
 Om du vill använda HTTP API-målet för att exportera data från Experience Platform måste du uppfylla följande krav:
 
 * Du måste ha en HTTP-slutpunkt som stöder REST API.
-* HTTP-slutpunkten måste ha stöd för Experience Platform-profilschemat. Ingen omvandling till ett nyttolastschema från tredje part stöds i HTTP API-målet. Se avsnittet [exporterade data](#exported-data) för ett exempel på Experience Platform-utdataschemat.
+* HTTP-slutpunkten måste ha stöd för Experience Platform-profilschemat. Ingen omvandling till ett nyttolastschema från tredje part stöds i HTTP API-målet. Se avsnittet [exporterade data](#exported-data) för ett exempel på Experience Platform utdataschema.
 * HTTP-slutpunkten måste ha stöd för rubriker.
 
 >[!TIP]
@@ -77,11 +77,11 @@ Om du vill kontrollera att [!DNL Common Name] (CN) och [!DNL Subject Alternative
 
 * [Allmänt certifikat för HTTP API mTLS](../../../landing/images/governance-privacy-security/encryption/destinations-public-certificate.zip)
 
-Du kan även hämta offentliga certifikat på ett säkert sätt genom att göra en GET-förfrågan till MTLS-slutpunkten. Mer information finns i [dokumentationen för slutpunkten för det offentliga certifikatet](../../../data-governance/mtls-api/public-certificate-endpoint.md).
+Du kan även hämta offentliga certifikat på ett säkert sätt genom att göra en GET-begäran till MTLS-slutpunkten. Mer information finns i [dokumentationen för slutpunkten för det offentliga certifikatet](../../../data-governance/mtls-api/public-certificate-endpoint.md).
 
 ## IP-adress tillåtelselista {#ip-address-allowlist}
 
-För att uppfylla kundernas säkerhets- och kompatibilitetskrav tillhandahåller Experience Platform en lista över statiska IP-adresser som du kan tillåtslista för HTTP API-destinationen. Se [IP-adressen tillåtelselista för direktuppspelningsmål](/help/destinations/catalog/streaming/ip-address-allow-list.md) för en fullständig lista över IP-adresser som ska tillåtslista.
+För att uppfylla kundernas säkerhets- och kompatibilitetskrav tillhandahåller Experience Platform en lista med statiska IP-adresser som du kan tillåtslista för HTTP API-destinationen. Se [IP-adressen tillåtelselista för direktuppspelningsmål](/help/destinations/catalog/streaming/ip-address-allow-list.md) för en fullständig lista över IP-adresser som ska tillåtslista.
 
 ## Autentiseringstyper som stöds {#supported-authentication-types}
 
@@ -159,6 +159,10 @@ Om du väljer autentiseringstypen **[!UICONTROL OAuth 2 Client Credentials]** f�
 
 ![Bild av gränssnittsskärmen där du kan ansluta till HTTP API-målet med hjälp av OAuth 2 med autentisering av klientautentiseringsuppgifter.](../../assets/catalog/http/http-api-authentication-oauth2-client-credentials.png)
 
+>[!WARNING]
+> 
+>När du använder [!UICONTROL OAuth 2 Client Credentials]-autentisering kan [!UICONTROL Access Token URL] ha högst en frågeparameter. Om du lägger till en [!UICONTROL Access Token URL] med fler frågeparametrar kan det leda till problem när du ansluter till slutpunkten.
+
 * **[!UICONTROL Access Token URL]**: Den URL på din sida som utfärdar åtkomsttoken och, om du vill, uppdatera tokens.
 * **[!UICONTROL Client ID]**: Den [!DNL client ID] som ditt system tilldelar Adobe Experience Platform.
 * **[!UICONTROL Client Secret]**: Den [!DNL client secret] som ditt system tilldelar Adobe Experience Platform.
@@ -226,7 +230,7 @@ I steget [[!UICONTROL Select attributes]](../../ui/activate-streaming-profile-de
 
 ## Beteende vid export av profiler {#profile-export-behavior}
 
-Experience Platform optimerar beteendet för profilexport till HTTP API-målet, så att endast data exporteras till API-slutpunkten när relevanta uppdateringar av en profil har gjorts efter målgruppskvalifikation eller andra viktiga händelser. Profiler exporteras till ditt mål i följande situationer:
+Experience Platform optimerar beteendet för profilexport till ditt HTTP API-mål, så att endast data exporteras till API-slutpunkten när relevanta uppdateringar av en profil har gjorts efter målgruppsklassificering eller andra viktiga händelser. Profiler exporteras till ditt mål i följande situationer:
 
 * Profiluppdateringen bestäms av en ändring av målgruppsmedlemskap för minst en av målgrupperna som är mappad till målet. Profilen har till exempel kvalificerats för en av de målgrupper som är mappade till målet eller har avslutat en av de målgrupper som är mappade till målet.
 * Profiluppdateringen bestäms av en ändring i [identitetskartan](/help/xdm/field-groups/profile/identitymap.md). En profil som redan är kvalificerad för en av de målgrupper som är mappade till målet har till exempel lagts till som en ny identitet i attributet för identitetskarta.
@@ -256,7 +260,7 @@ När det gäller profilattribut kommer alla ändringar av de fyra attribut som m
 
 ## Bakgrundsfyllning av historiska data {#historical-data-backfill}
 
-När du lägger till en ny målgrupp till ett befintligt mål, eller när du skapar ett nytt mål och mappar målgrupper till det, exporterar Experience Platform historiska data om målgruppskvalificering till målet. Profiler som är kvalificerade för målgruppen *innan* målgruppen lades till i målet exporteras till målet inom ungefär en timme.
+När du lägger till en ny målgrupp till ett befintligt mål, eller när du skapar ett nytt mål och mappar målgrupper till det, exporterar Experience Platform data om målgruppens historiska kvalifikationer till målet. Profiler som är kvalificerade för målgruppen *innan* målgruppen lades till i målet exporteras till målet inom ungefär en timme.
 
 ## Exporterade data {#exported-data}
 
@@ -358,6 +362,6 @@ Nedan visas ytterligare exempel på exporterade data, beroende på vilka UI-inst
 
 ## Begränsningar och återförsöksprincip {#limits-retry-policy}
 
-På 95 % av tiden försöker Experience Platform att erbjuda en genomströmningslatens på mindre än 10 minuter för meddelanden som skickats utan fel med en hastighet på mindre än 10 000 begäranden per sekund för varje dataflöde till en HTTP-destination.
+På 95 % av tiden försöker Experience Platform erbjuda en genomströmningslatens på mindre än 10 minuter för meddelanden som skickats utan fel med en hastighet på mindre än 10 000 begäranden per sekund för varje dataflöde till en HTTP-destination.
 
 Om det uppstår misslyckade begäranden till HTTP API-målet, lagrar Experience Platform de misslyckade förfrågningarna och försöker skicka dem till slutpunkten två gånger.
