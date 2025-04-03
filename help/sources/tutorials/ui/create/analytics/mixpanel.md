@@ -2,16 +2,16 @@
 title: Skapa en Source-anslutning med flera paneler i användargränssnittet
 description: Lär dig hur du skapar en källanslutning till en blandpanel med Adobe Experience Platform-gränssnittet.
 exl-id: 2a02f6a4-08ed-468c-8052-f5b7be82d183
-source-git-commit: e300e57df998836a8c388511b446e90499185705
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '775'
+source-wordcount: '783'
 ht-degree: 0%
 
 ---
 
 # Skapa en [!DNL Mixpanel]-källanslutning i användargränssnittet
 
-I den här självstudiekursen beskrivs hur du skapar en [!DNL Mixpanel]-källanslutning med användargränssnittet för Adobe Experience Platform Platform.
+I den här självstudiekursen beskrivs hur du skapar en [!DNL Mixpanel]-källanslutning med användargränssnittet i Adobe Experience Platform Experience Platform.
 
 ## Komma igång
 
@@ -24,7 +24,7 @@ Den här självstudiekursen kräver en fungerande förståelse av följande komp
 
 ### Samla in nödvändiga inloggningsuppgifter
 
-För att kunna ansluta [!DNL Mixpanel] till plattformen måste du ange värden för följande anslutningsegenskaper:
+För att kunna ansluta [!DNL Mixpanel] till Experience Platform måste du ange värden för följande anslutningsegenskaper:
 
 | Autentiseringsuppgifter | Beskrivning | Exempel |
 | --- | --- | --- |
@@ -37,7 +37,7 @@ Mer information om hur du autentiserar [!DNL Mixpanel]-källan finns i [[!DNL Mi
 
 ## Anslut ditt [!DNL Mixpanel]-konto
 
-I plattformsgränssnittet väljer du **[!UICONTROL Sources]** i det vänstra navigeringsfältet för att komma åt arbetsytan i [!UICONTROL Sources]. På skärmen [!UICONTROL Catalog] visas en mängd olika källor som du kan använda för att skapa ett konto.
+I Experience Platform-gränssnittet väljer du **[!UICONTROL Sources]** i det vänstra navigeringsfältet för att komma åt arbetsytan i [!UICONTROL Sources]. På skärmen [!UICONTROL Catalog] visas en mängd olika källor som du kan använda för att skapa ett konto.
 
 Du kan välja lämplig kategori i katalogen till vänster på skärmen. Du kan också hitta den källa du vill arbeta med med med sökalternativet.
 
@@ -64,12 +64,12 @@ Om du skapar ett nytt konto väljer du **[!UICONTROL New account]** och anger se
 >[!CONTEXTUALHELP]
 >id="platform_sources_mixpanel_timezone"
 >title="Ange en tidszon för blandpanelsinmatning"
->abstract="Tidszonen måste vara densamma som tidszonsinställningen för profilen i Mixpanel, eftersom Platform använder den angivna tidszonen för projektet för att hämta relevanta data från Mixpanel. Mixpanel justerar sin tidszon så att den överensstämmer med projektets tidszon innan händelsen spelas in i ett datalager i Mixpanel."
+>abstract="Tidszonen måste vara densamma som tidszonsinställningen för profilen i Mixpanel, eftersom Experience Platform använder den angivna tidszonen för projektet för att importera relevanta data från Mixpanel. Mixpanel justerar sin tidszon så att den överensstämmer med projektets tidszon innan händelsen spelas in i ett datalager i Mixpanel."
 >additional-url="https://experienceleague.adobe.com/docs/experience-platform/sources/ui-tutorials/create/analytics/mixpanel.html#project-id-and-timezone" text="Läs mer i dokumentationen"
 
 När källan har autentiserats anger du ditt projekt-ID och tidszon och väljer sedan **[!UICONTROL Select]**.
 
-Tidszonen som du anger innan dina [!DNL Mixpanel]-data hämtas till plattformen måste vara samma som tidszonsinställningen för din [!DNL Mixpanel]-profil. Ändringar i tidszonen för dina data kommer endast att tillämpas på nya händelser och gamla händelser kommer att finnas kvar i den tidszon som du angav tidigare. [!DNL Mixpanel] har plats för sommartid och kommer att justera din tidsstämpel för inmatning korrekt. Mer information om hur tidszoner påverkar dina data finns i [!DNL Mixpanel]-guiden om att [hantera tidszoner för projekt](https://help.mixpanel.com/hc/en-us/articles/115004547203-Manage-Timezones-for-Projects-in-Mixpanel).
+Tidszonen som du anger innan dina [!DNL Mixpanel]-data hämtas till Experience Platform måste vara samma som tidszonsinställningen för din [!DNL Mixpanel]-profil. Ändringar i tidszonen för dina data kommer endast att tillämpas på nya händelser och gamla händelser kommer att finnas kvar i den tidszon som du angav tidigare. [!DNL Mixpanel] har plats för sommartid och kommer att justera din tidsstämpel för inmatning korrekt. Mer information om hur tidszoner påverkar dina data finns i [!DNL Mixpanel]-guiden om att [hantera tidszoner för projekt](https://help.mixpanel.com/hc/en-us/articles/115004547203-Manage-Timezones-for-Projects-in-Mixpanel).
 
 Efter en liten stund uppdateras rätt gränssnitt till en förhandsgranskningspanel, vilket gör att du kan kontrollera schemat innan du skapar ett dataflöde. När du är klar väljer du **[!UICONTROL Next]**.
 
@@ -77,7 +77,7 @@ Efter en liten stund uppdateras rätt gränssnitt till en förhandsgranskningspa
 
 ## Nästa steg
 
-Genom att följa den här självstudiekursen har du upprättat en anslutning till ditt [!DNL Mixpanel]-konto. Du kan nu fortsätta med nästa självstudie och [konfigurera ett dataflöde för att hämta analysdata till plattformen](../../dataflow/analytics.md).
+Genom att följa den här självstudiekursen har du upprättat en anslutning till ditt [!DNL Mixpanel]-konto. Du kan nu fortsätta med nästa självstudiekurs och [konfigurera ett dataflöde för att hämta analysdata till Experience Platform](../../dataflow/analytics.md).
 
 ## Ytterligare resurser {#additional-resources}
 
@@ -85,9 +85,9 @@ Avsnitten nedan innehåller ytterligare resurser som du kan referera till när d
 
 ### Validering {#validation}
 
-I följande beskrivs de steg du kan utföra för att verifiera att du har anslutit källan till [!DNL Mixpanel] och att [!DNL Mixpanel]-händelser importeras till plattformen.
+Följande visar hur du kan kontrollera att du har anslutit källan till [!DNL Mixpanel] och att [!DNL Mixpanel]-händelser importeras till Experience Platform.
 
-I plattformsgränssnittet väljer du **[!UICONTROL Datasets]** i det vänstra navigeringsfältet för att komma åt arbetsytan i [!UICONTROL Datasets]. Skärmen [!UICONTROL Dataset Activity] visar information om körningar.
+I Experience Platform-gränssnittet väljer du **[!UICONTROL Datasets]** i det vänstra navigeringsfältet för att komma åt arbetsytan i [!UICONTROL Datasets]. Skärmen [!UICONTROL Dataset Activity] visar information om körningar.
 
 ![datauppsättningsaktivitet](../../../../images/tutorials/create/mixpanel-export-events/dataset-activity.png)
 

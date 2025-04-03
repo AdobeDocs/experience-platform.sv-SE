@@ -1,12 +1,12 @@
 ---
-keywords: Experience Platform;startsida;populära ämnen;XDM;XDM system;XDM individuell profil;XDM ExperienceEvent;XDM Experience Event;experienceEvent;experience event;Field groups;field group;field group;Experience event;XDM Experience Event;XDM ExperienceEvent;experienceEvent;experienceevent;XDM ExperienceEvent;experience data model;Experience data model;Experience data model;datamodell;datamodell;schemaregister;schemaregister;schemabibliotek;schema;postdata;tidsserie;tidsserie
+keywords: Experience Platform;home;populära topics;XDM;XDM system;XDM individuell profil;XDM ExperienceEvent;XDM Experience Event;experienceEvent;experience event;Field groups;field group;field group;Experience event;XDM Experience Event;XDM ExperienceEvent;experienceEvent;experienceevent;XDM ExperienceEvent;experience data model;Experience data model;Experience data model;Experience data model;Experience data model;experience model datamodell;datamodell;schemaregister;schemaregister;schemabibliotek;schema;postdata;tidsserie;tidsserie
 solution: Experience Platform
 title: XDM - systemöversikt
 description: Standardisering och interoperabilitet är viktiga begrepp bakom Adobe Experience Platform. Experience Data Model (XDM), som drivs av Adobe, är ett försök att standardisera kundupplevelsedata och definiera scheman för kundupplevelsehantering.
 exl-id: 294d5f02-850f-47ea-9333-8b94a0bb291e
-source-git-commit: 442df54080b08b7fc3888e8bd5c7bd3e8f301240
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '2084'
+source-wordcount: '2095'
 ht-degree: 0%
 
 ---
@@ -15,9 +15,9 @@ ht-degree: 0%
 
 Standardisering och interoperabilitet är viktiga begrepp bakom Adobe Experience Platform. Experience Data Model (XDM), som drivs av Adobe, är ett försök att standardisera kundupplevelsedata och definiera scheman för kundupplevelsehantering.
 
-XDM är en öppet dokumenterad specifikation som utformats för att förbättra möjligheterna med digitala upplevelser. Den innehåller gemensamma strukturer och definitioner som gör att alla program kan kommunicera med plattformstjänster. Genom att följa XDM-standarder kan alla kundupplevelsedata införlivas i en gemensam representation som kan ge insikter på ett snabbare och mer integrerat sätt. Ni kan få värdefulla insikter från kundåtgärder, definiera kundmålgrupper genom segment och uttrycka kundattribut i personaliseringssyfte.
+XDM är en öppet dokumenterad specifikation som utformats för att förbättra möjligheterna med digitala upplevelser. Här finns gemensamma strukturer och definitioner som gör att alla program kan kommunicera med Experience Platform tjänster. Genom att följa XDM-standarder kan alla kundupplevelsedata införlivas i en gemensam representation som kan ge insikter på ett snabbare och mer integrerat sätt. Ni kan få värdefulla insikter från kundåtgärder, definiera kundmålgrupper genom segment och uttrycka kundattribut i personaliseringssyfte.
 
-XDM är det grundläggande ramverk som gör att Adobe Experience Cloud, som drivs av Experience Platform, kan leverera rätt budskap till rätt person, i rätt kanal, i precis rätt ögonblick. Metoden som Experience Platform bygger på, XDM System, används för att driva Experience Data Model-scheman för användning av plattformstjänster.
+XDM är det grundläggande ramverk som gör att Adobe Experience Cloud, som drivs av Experience Platform, kan leverera rätt budskap till rätt person, i rätt kanal, i precis rätt ögonblick. Metoden som Experience Platform bygger på, XDM System, använder Experience Data Model-scheman för Experience Platform tjänster.
 
 Läs om XDM-systemets roll i Experience Platform.
 
@@ -25,25 +25,25 @@ Läs om XDM-systemets roll i Experience Platform.
 
 Experience Platform använder scheman för att beskriva datastrukturen på ett konsekvent och återanvändbart sätt. Genom att definiera data på ett enhetligt sätt i olika system blir det enklare att behålla sin betydelse och därmed få värde av data.
 
-Innan data kan hämtas in till Platform måste ett schema sättas samman för att beskriva datastrukturen och tillhandahålla begränsningar för den typ av data som kan finnas i varje fält. Scheman består av en basklass och noll eller flera schemafältgrupper.
+Innan data kan hämtas in till Experience Platform måste ett schema sättas samman för att beskriva datastrukturen och tillhandahålla begränsningar för den typ av data som kan finnas i varje fält. Scheman består av en basklass och noll eller flera schemafältgrupper.
 
 Mer information om schemakompositionsmodellen, inklusive designprinciper och bästa praxis, finns i [Grunderna för schemakomposition](schema/composition.md).
 
 ### Standard-XDM-komponenter {#Standard-xdm-components}
 
-XDM erbjuder en robust samling av standardfältgrupper och datatyper, som är avsedda att fånga upp vanliga koncept och användningsfall i olika branscher. Med Experience Platform kan ni filtrera komponenterna efter bransch, så att ni snabbt och säkert kan skapa scheman som passar just era affärsbehov.
+XDM erbjuder en robust samling av standardfältgrupper och datatyper, som är avsedda att fånga upp vanliga koncept och användningsfall i olika branscher. Med Experience Platform kan ni filtrera komponenterna efter bransch, så att ni snabbt och säkert kan skapa scheman som passar just era behov.
 
-När du skapar scheman i användargränssnittet i Experience Platform visas listade fältgrupper med ett popularitetsmått. Detta mått bestäms av hur ofta andra plattformsanvändare använder fältgruppen i sina scheman. Ju högre tal, desto populärare fältgrupp. Som standard visas resultaten från de mest populära till de minst populära och håller dig informerad om trender för datamodellering i din bransch.
+När du skapar scheman i användargränssnittet i Experience Platform visas listade fältgrupper med ett popularitetsmått. Detta mått bestäms av hur ofta andra Experience Platform-användare använder fältgruppen i sina scheman. Ju högre tal, desto populärare fältgrupp. Som standard visas resultaten från de mest populära till de minst populära och håller dig informerad om trender för datamodellering i din bransch.
 
 ![Popularitetskolumnen i dialogrutan [!UICONTROL Add field group].](./images/overview/popularity.png)
 
 ### [!DNL Schema Library] {#schema-library}
 
-Experience Platform tillhandahåller ett användargränssnitt och RESTful API från vilket du kan visa och hantera alla schemarelaterade resurser i Experience Platform **[!DNL Schema Library]**. [!DNL Schema Library] innehåller XDM-standardkomponenter som Adobe har gjort tillgängliga för dig, samt resurser från partners och leverantörer i Experience Platform vars program du använder.
+Experience Platform tillhandahåller ett användargränssnitt och RESTful API från vilket du kan visa och hantera alla schemarelaterade resurser i Experience Platform **[!DNL Schema Library]**. [!DNL Schema Library] innehåller XDM-standardkomponenter som har gjorts tillgängliga av Adobe, samt resurser från Experience Platform partners och leverantörer vars program du använder.
 
-Du kan också skapa och hantera nya scheman och resurser som är unika för din organisation med hjälp av arbetsytan [!DNL Schema Registry API] eller [!UICONTROL Schemas] i plattformsgränssnittet.
+Du kan också skapa och hantera nya scheman och resurser som är unika för din organisation med arbetsytan [!DNL Schema Registry API] eller [!UICONTROL Schemas] i Experience Platform-gränssnittet.
 
-Mer information om hur du hanterar och interagerar med scheman i Platform finns i följande dokumentation:
+Mer information om hur du hanterar och interagerar med scheman i Experience Platform finns i följande dokumentation:
 
 * [Användargränssnittshandbok för XDM](./ui/overview.md)
 * [API-guide för schemaregister](./api/overview.md)
@@ -53,9 +53,9 @@ Mer information om hur du hanterar och interagerar med scheman i Platform finns 
 >[!CONTEXTUALHELP]
 >id="platform_schemas_behavior"
 >title="Databeteenden"
->abstract="Data som är avsedda att användas i Experience Platform är grupperade i tre beteendetyper: post, tidsserie och ad hoc. Registreringsscheman ger information om attributen för ett motiv, medan tidsseriescheman tar en ögonblicksbild av systemet när en åtgärd vidtas. Ad hoc-scheman hämtar fält som namnges för att endast användas av en enskild datauppsättning. Mer information om databeteenden i Platform finns i dokumentationen."
+>abstract="Data som är avsedda att användas i Experience Platform är grupperade i tre beteendetyper: post, tidsserie och ad hoc. Registreringsscheman ger information om attributen för ett motiv, medan tidsseriescheman tar en ögonblicksbild av systemet när en åtgärd vidtas. Ad hoc-scheman hämtar fält som namnges för att endast användas av en enskild datauppsättning. Mer information om databeteenden i Experience Platform finns i dokumentationen."
 
-Data som är avsedda att användas i Experience Platform är indelade i tre beteendetyper:
+Data som är avsedda att användas i Experience Platform är grupperade i tre beteendetyper:
 
 * **Post**: Anger information om attributen för ett ämne. Ett ämne kan vara en organisation eller individ.
 * **Tidsserie**: Ger en ögonblicksbild av systemet när en åtgärd vidtas, antingen direkt eller indirekt, av ett postämne.
@@ -67,7 +67,7 @@ Alla XDM-scheman beskriver data som kan kategoriseras som post- eller tidsserier
 
 >[!NOTE]
 >
->Det finns inga standardklasser baserade på ad hoc-beteendet. Ad hoc-scheman genereras automatiskt av de plattformsprocesser som använder dem, men de kan också [skapas manuellt med API:t för schemaregister](./tutorials/ad-hoc.md).
+>Det finns inga standardklasser baserade på ad hoc-beteendet. Ad hoc-scheman genereras automatiskt av de Experience Platform-processer som använder dem, men de kan också [skapas manuellt med API:t för schemaregister](./tutorials/ad-hoc.md).
 
 ### [!UICONTROL XDM Individual Profile] {#xdm-individual-profile}
 
@@ -91,17 +91,17 @@ Experience Events kan vara antingen explicita eller implicita. Explicit händels
 
 Mer information om struktur och skiftläge för fälten som tillhandahålls av klassen finns i [[!UICONTROL XDM ExperienceEvent]-referenshandboken ](./classes/experienceevent.md).
 
-## XDM-scheman och Experience Platform {#schemas-and-platform-services}
+## XDM-scheman och Experience Platform-tjänster {#schemas-and-platform-services}
 
-Experience Platform är schemagnostiskt, vilket innebär att alla scheman som uppfyller XDM-standarden görs tillgängliga för plattformstjänster. Hur olika plattformstjänster använder scheman beskrivs närmare nedan.
+Experience Platform är schemagnostiskt, vilket innebär att alla scheman som uppfyller XDM-standarden görs tillgängliga för Experience Platform tjänster. Hur olika Experience Platform-tjänster använder scheman beskrivs närmare nedan.
 
 ### Katalogtjänst, datainmatning och datasjön {#ingestion-catalog-and-storage}
 
-Katalogtjänsten är registersystemet för tillgångar i Experience Platform och tillhörande scheman. Katalogen innehåller inte de faktiska datafilerna eller katalogerna, utan innehåller i stället metadata och beskrivningar för dessa filer och kataloger.
+Katalogtjänsten är registersystemet för Experience Platform-resurser och tillhörande scheman. Katalogen innehåller inte de faktiska datafilerna eller katalogerna, utan innehåller i stället metadata och beskrivningar för dessa filer och kataloger.
 
-Katalogdata lagras i datasjön, ett mycket detaljerat datalager som innehåller alla data som hanteras av plattformen, oavsett ursprung eller filformat.
+Katalogdata lagras i datasjön, ett mycket detaljerat datalager som innehåller alla data som hanteras av Experience Platform, oavsett ursprung eller filformat.
 
-Om du vill börja inhämta data till Experience Platform kan du använda katalogtjänsten för att skapa en datauppsättning. Datauppsättningen refererar till ett XDM-schema som beskriver strukturen för de data som ska importeras. Om en datauppsättning skapas utan ett schema, härleds ett &quot;observerat schema&quot; från Experience Platform genom att typen och innehållet i inkapslade datafält kontrolleras. Datauppsättningar spåras sedan i katalogtjänsten och lagras i datasjön tillsammans med de scheman och observerade scheman som de baseras på.
+Om du vill börja inhämta data till Experience Platform kan du använda katalogtjänsten för att skapa en datauppsättning. Datauppsättningen refererar till ett XDM-schema som beskriver strukturen för de data som ska importeras. Om en datauppsättning skapas utan ett schema, härleds ett &quot;observerat schema&quot; av Experience Platform genom att typen och innehållet i inkapslade datafält kontrolleras. Datauppsättningar spåras sedan i katalogtjänsten och lagras i datasjön tillsammans med de scheman och observerade scheman som de baseras på.
 
 Mer information finns i [Katalogtjänstöversikt](../catalog/home.md). Mer information om Adobe Experience Platform datainmatning finns i [Översikt över datainmatning](../ingestion/home.md).
 
@@ -123,7 +123,7 @@ Systemet upprätthåller en instans av varje kundprofil och sammanfogar data til
 
 När [!UICONTROL XDM Individual Profile]- och [!UICONTROL XDM ExperienceEvent]-data hämtas till datasjön, kommer kundprofilen i realtid att innehålla data som har aktiverats för användning. Ju fler interaktioner och detaljer som är inkapslade, desto stabilare blir de enskilda profilerna.
 
-[!UICONTROL XDM Individual Profile]-data hjälper till att informera om och förstärka åtgärder över alla kanaler och Adobe-produktintegreringar. När dessa data kombineras med en lång historik med beteendedata och interaktionsdata kan de användas för att underlätta maskininlärning. Real-Time Customer Profile API kan också användas för att utöka funktionaliteten hos tredjepartslösningar, CRM och företagslösningar.
+[!UICONTROL XDM Individual Profile]-data hjälper till att informera om och förstärka åtgärder över alla kanaler och Adobe-produktintegrering. När dessa data kombineras med en lång historik med beteendedata och interaktionsdata kan de användas för att underlätta maskininlärning. Real-Time Customer Profile API kan också användas för att utöka funktionaliteten hos tredjepartslösningar, CRM och företagslösningar.
 
 Mer information finns i [Översikt över kundprofilen i realtid](../profile/home.md).
 
@@ -135,15 +135,15 @@ Mer information finns i [Översikt över kundprofilen i realtid](../profile/home
 
 Adobe Experience Platform Data Science Workspace använder maskininlärning och artificiell intelligens för att få insikter från data som lagras i Experience Platform. Med Data Science Workspace kan datavetare skapa recept baserat på [!UICONTROL XDM Individual Profile]- och [!UICONTROL XDM ExperienceEvent]-data om kunder och deras aktiviteter. Dessa recept underlättar prognoser som köpbenägenhet och rekommenderade erbjudanden som individen troligtvis uppskattar och använder.
 
-Med Data Science Workspace kan datavetare enkelt skapa API:er för intelligenta tjänster som bygger på maskininlärning. Dessa tjänster fungerar tillsammans med andra Adobe-lösningar, inklusive Adobe Target och Adobe Analytics Cloud, och hjälper er att automatisera personaliserade, målinriktade digitala upplevelser.
+Med Data Science Workspace kan datavetare enkelt skapa API:er för intelligenta tjänster som bygger på maskininlärning. Dessa tjänster fungerar tillsammans med andra lösningar från Adobe, inklusive Adobe Target och Adobe Analytics Cloud, och hjälper er att automatisera personaliserade, målinriktade digitala upplevelser.
 
-Mer information om hur du använder data från Experience Platform för att få bättre insikter finns i [Översikt över Workspace Data Science](../data-science-workspace/home.md).
+Mer information om hur du använder Experience Platform-data för att få bättre insikter finns i [Översikt över Workspace Data Science](../data-science-workspace/home.md).
 
 ## Nästa steg och ytterligare resurser
 
-Nu när du är bättre på att förstå schemats roll i hela Experience Platform är du redo att börja komponera ditt eget.
+Nu när du bättre förstår schemats roll i hela Experience Platform kan du börja skapa egna.
 
-Om du vill lära dig designprinciper och bästa praxis för dispositionsscheman som ska användas med Experience Platform börjar du med att läsa [grunderna för schemakomposition](schema/composition.md). Stegvisa instruktioner om hur du skapar ett schema finns i självstudiekurserna om hur du skapar ett schema [med API](tutorials/create-schema-api.md) eller [med användargränssnittet](tutorials/create-schema-ui.md).
+Om du vill lära dig designprinciper och bästa praxis för att komponera scheman som ska användas med Experience Platform börjar du med att läsa [grunderna för schemakomposition](schema/composition.md). Stegvisa instruktioner om hur du skapar ett schema finns i självstudiekurserna om hur du skapar ett schema [med API](tutorials/create-schema-api.md) eller [med användargränssnittet](tutorials/create-schema-ui.md).
 
 Titta på följande video om du vill få en bättre förståelse för [!DNL XDM System] i Experience Platform:
 

@@ -3,9 +3,9 @@ keywords: Experience Platform;home;populära topics;access control;attribute-bas
 title: Attributbaserad åtkomstkontroll Hantera rollbehörigheter
 description: Det här dokumentet innehåller information om hur du konfigurerar behörigheter för en roll via gränssnittet Behörigheter i Adobe Experience Cloud
 exl-id: 8acd2bb6-eef8-4b23-8fd8-3566c7508fe7
-source-git-commit: afd883c530ab1b335888e79b5f4075e774fced4b
+source-git-commit: fded2f25f76e396cd49702431fa40e8e4521ebf8
 workflow-type: tm+mt
-source-wordcount: '1604'
+source-wordcount: '1608'
 ht-degree: 0%
 
 ---
@@ -15,7 +15,7 @@ ht-degree: 0%
 >[!CONTEXTUALHELP]
 >id="platform_permissions_roles_about"
 >title="Vad är roller?"
->abstract="Roller definierar åtkomsten som en administratör, en specialist eller en slutanvändare har till resurser i organisationen. De kategoriserar de användare som interagerar med din plattformsinstans och är byggstenarna för åtkomstkontrollprinciper. En roll har en given uppsättning behörigheter och medlemmar i organisationen kan tilldelas till en eller flera roller, beroende på vilket synområde eller vilken skrivbehörighet de behöver."
+>abstract="Roller definierar åtkomsten som en administratör, en specialist eller en slutanvändare har till resurser i organisationen. De kategoriserar de användare som interagerar med din Experience Platform-instans och är byggstenarna i åtkomstkontrollpolicyer. En roll har en given uppsättning behörigheter och medlemmar i organisationen kan tilldelas till en eller flera roller, beroende på vilket synområde eller vilken skrivbehörighet de behöver."
 >additional-url="https://experienceleague.adobe.com/docs/experience-platform/access-control/abac/permissions-ui/roles.html" text="Hantera roller"
 
 >[!IMPORTANT]
@@ -123,8 +123,8 @@ Följande video är tänkt att ge stöd för din förståelse för att skapa en 
 >[!CONTEXTUALHELP]
 >id="platform_permissions_apicredentials_about"
 >title="Vad är API-autentiseringsuppgifter?"
->abstract="API-autentiseringsuppgifter tilldelas roller för att ge användare och utvecklare åtkomst till plattforms-API:er. Med hjälp av plattforms-API:er kan du programmässigt utföra grundläggande CRUD-åtgärder (Skapa, Läs, Uppdatera, Ta bort) på data, som att konfigurera beräknade attribut, komma åt data/enheter, exportera data, ta bort onödiga data eller batchar med mera."
->additional-url="https://experienceleague.adobe.com/en/docs/experience-platform/landing/platform-apis/api-guide" text="Plattforms-API-guide"
+>abstract="API-autentiseringsuppgifter tilldelas roller för att ge användare och utvecklare åtkomst till Experience Platform API:er. Med Experience Platform API:er kan du programmässigt utföra grundläggande CRUD-åtgärder (Skapa, Läs, Uppdatera, Ta bort) på data, som att konfigurera beräknade attribut, få åtkomst till data/enheter, exportera data, ta bort onödiga data eller batchar med mera."
+>additional-url="https://experienceleague.adobe.com/en/docs/experience-platform/landing/platform-apis/api-guide" text="Experience Platform API-guide"
 
 >[!IMPORTANT]
 >

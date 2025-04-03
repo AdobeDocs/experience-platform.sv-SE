@@ -1,12 +1,12 @@
 ---
-keywords: Experience Platform;hemanvändare;populära ämnen;datastyrning;dataanvändningsetikett;policytjänst;användarhandbok för dataanvändningsetiketter
+keywords: Experience Platform;hem;populära ämnen;datastyrning;dataanvändningsetikett;policytjänst;användarhandbok för dataanvändningsetiketter
 solution: Experience Platform
 title: Hantera dataanvändningsetiketter i användargränssnittet
 description: Den här guiden innehåller steg för hur du arbetar med dataanvändningsetiketter i Adobe Experience Platform användargränssnitt.
 exl-id: aa44d5cc-416a-4ef2-be14-b4f32aec162c
-source-git-commit: a5efc45f0043cd6eb4a209737b9e430c85ea2f14
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '1491'
+source-wordcount: '1495'
 ht-degree: 0%
 
 ---
@@ -15,7 +15,7 @@ ht-degree: 0%
 
 >[!CONTEXTUALHELP]
 >id="platform_privacyConsole_dataGovernance_description"
->title="Styrd dataanvändning i plattformen"
+>title="Styrd dataanvändning i Experience Platform"
 >abstract="<h2>Beskrivning</h2><p>Med ramverket för datastyrning i Experience Platform kan ni märka attribut och scheman enligt dataanvändningsbegränsningar och skapa policyer som identifierar och följer dessa begränsningar för specifika marknadsföringsåtgärder.</p>"
 
 Den här användarhandboken innehåller steg för att arbeta med dataanvändningsetiketter i användargränssnittet för [!DNL Experience Platform].
@@ -61,11 +61,11 @@ En dialogruta visas där du kan använda och hantera dataanvändningsetiketter p
 >[!CONTEXTUALHELP]
 >id="platform_privacyConsole_dataGovernance_instructions"
 >title="Instruktioner"
->abstract="<ol><li>Välj <a href="https://experienceleague.adobe.com/docs/experience-platform/data-governance/labels/user-guide.html">Datauppsättningar</a> i den vänstra navigeringen och markera sedan den datauppsättning vars data du vill begränsa.</li><li>Välj fliken <b>Datastyrning</b> i informationsvyn för datauppsättningen.</li><li>Markera de datauppsättningsfält som du vill begränsa och välj sedan <b>Redigera styrningsetiketter</b> för att etikettera data baserat på användningsbegränsningar.</li><li>När du har etiketterat dina data väljer du <a href="https://experienceleague.adobe.com/docs/experience-platform/data-governance/policies/overview.html">Profiler</a> i den vänstra navigeringen och sedan <b>Skapa profil</b>.</li><li>Välj om du vill skapa en <a href="https://experienceleague.adobe.com/docs/experience-platform/data-governance/policies/user-guide.html#create-governance-policy">datastyrningsprincip</a> och sedan de dataanvändningsetiketter som principen ska gälla för.</li><li>Välj de marknadsföringsåtgärder som profilen nekar för alla data som innehåller dessa etiketter. När profilen har skapats markerar du den i listan och aktiverar den med hjälp av växlingsknappen till höger.</li><li>För varje aktiverad princip förhindrar Platform att data som innehåller de angivna etiketterna används för definierade marknadsföringsåtgärder. Detta görs automatiskt när du försöker aktivera märkta data till ett mål med associerade marknadsföringsåtgärder (användningsfall).</li></ol>"
+>abstract="<ol><li>Välj <a href="https://experienceleague.adobe.com/docs/experience-platform/data-governance/labels/user-guide.html">Datauppsättningar</a> i den vänstra navigeringen och markera sedan den datauppsättning vars data du vill begränsa.</li><li>Välj fliken <b>Datastyrning</b> i informationsvyn för datauppsättningen.</li><li>Markera de datauppsättningsfält som du vill begränsa och välj sedan <b>Redigera styrningsetiketter</b> för att etikettera data baserat på användningsbegränsningar.</li><li>När du har etiketterat dina data väljer du <a href="https://experienceleague.adobe.com/docs/experience-platform/data-governance/policies/overview.html">Profiler</a> i den vänstra navigeringen och sedan <b>Skapa profil</b>.</li><li>Välj om du vill skapa en <a href="https://experienceleague.adobe.com/docs/experience-platform/data-governance/policies/user-guide.html#create-governance-policy">datastyrningsprincip</a> och sedan de dataanvändningsetiketter som principen ska gälla för.</li><li>Välj de marknadsföringsåtgärder som profilen nekar för alla data som innehåller dessa etiketter. När profilen har skapats markerar du den i listan och aktiverar den med hjälp av växlingsknappen till höger.</li><li>För varje aktiverad princip förhindrar Experience Platform att data som innehåller de angivna etiketterna används för definierade marknadsföringsåtgärder. Detta görs automatiskt när du försöker aktivera märkta data till ett mål med associerade marknadsföringsåtgärder (användningsfall).</li></ol>"
 
 >[!IMPORTANT]
 >
->Etiketter kan inte längre användas på fält på datauppsättningsnivå. Det här arbetsflödet har ersatts med etiketter på schemanivå. Etiketter som tidigare använts på datauppsättningens objektnivå stöds fortfarande i plattformsgränssnittet fram till den 31 maj 2024. För att etiketterna ska vara enhetliga i alla scheman måste du migrera alla etiketter som tidigare har kopplats till fält på datauppsättningsnivå till schemanivån under det kommande året. I dokumentationen finns instruktioner om [hur du migrerar tidigare använda etiketter från datauppsättningen till schemanivån](../e2e.md#migrate-labels).
+>Etiketter kan inte längre användas på fält på datauppsättningsnivå. Det här arbetsflödet har ersatts med etiketter på schemanivå. Etiketter som tidigare använts på datauppsättningens objektnivå stöds fortfarande i Experience Platform-gränssnittet fram till den 31 maj 2024. För att etiketterna ska vara enhetliga i alla scheman måste du migrera alla etiketter som tidigare har kopplats till fält på datauppsättningsnivå till schemanivån under det kommande året. I dokumentationen finns instruktioner om [hur du migrerar tidigare använda etiketter från datauppsättningen till schemanivån](../e2e.md#migrate-labels).
 
 Etiketter kan användas på hela datauppsättningen från fliken **[!UICONTROL Data Governance]** på arbetsytan **[!UICONTROL Datasets]**. På arbetsytan kan du hantera dataanvändningsetiketter på datauppsättningsnivå.
 
@@ -120,7 +120,7 @@ Växeln **[!UICONTROL Show Inherited Labels]** är aktiverad som standard, vilke
 >[!CONTEXTUALHELP]
 >id="platform_governance_createlabels"
 >title="Skapa etiketter"
->abstract="Med etiketter kan du kategorisera datauppsättningar och fält enligt de användarprofiler som gäller för dessa data. Platform har en standarduppsättning med etiketter som du kan använda, men du kan också skapa anpassade etiketter som är specifika för din organisation."
+>abstract="Med etiketter kan du kategorisera datauppsättningar och fält enligt de användarprofiler som gäller för dessa data. Experience Platform har en standarduppsättning med etiketter som du kan använda, men du kan också skapa anpassade etiketter som är specifika för din organisation."
 
 Du kan skapa egna anpassade användningsetiketter på arbetsytan **[!UICONTROL Policies]** i användargränssnittet i [!DNL Experience Platform]. Välj **[!UICONTROL Policies]** i den vänstra navigeringen och välj sedan **[!UICONTROL Labels]** för att visa en lista över befintliga etiketter. Välj **[!UICONTROL Create label]** härifrån.
 

@@ -1,11 +1,11 @@
 ---
-keywords: Experience Platform;hem;populära ämnen;åtkomstkontroll;attributbaserad åtkomstkontroll;ABAC
+keywords: Experience Platform;home;populära topics;access control;attribute-based access control;ABAC
 title: Attributbaserad åtkomstkontroll Skapa en roll
 description: Det här dokumentet innehåller information om hur du hanterar roller via gränssnittet Behörigheter i Adobe Experience Cloud
 exl-id: 85699716-339d-4992-8390-95563c7ea7fe
-source-git-commit: 74980c6108a32ec6736ab5892d89590e04e8a500
+source-git-commit: fded2f25f76e396cd49702431fa40e8e4521ebf8
 workflow-type: tm+mt
-source-wordcount: '593'
+source-wordcount: '594'
 ht-degree: 0%
 
 ---
@@ -19,7 +19,7 @@ Roller definierar åtkomsten som en administratör, en specialist eller en sluta
 >[!CONTEXTUALHELP]
 >id="platform_permissions_roles_about_create"
 >title="Skapa ny roll"
->abstract="Skapa nya roller för att kategorisera användare som interagerar med din Platform-instans bättre. Du kan t.ex. skapa en roll för ett internt marknadsföringsteam och tillämpa etiketten för reglerade hälsodata (RHD) på den rollen, så att ditt interna marknadsföringsteam kan komma åt skyddad hälsoinformation (PHI). Du kan också skapa en roll för en extern byrå och neka rollåtkomst till PHI-data genom att inte använda RHD-etiketten på den rollen."
+>abstract="Skapa nya roller för att kategorisera användare som interagerar med din Experience Platform-instans bättre. Du kan t.ex. skapa en roll för ett internt marknadsföringsteam och tillämpa etiketten för reglerade hälsodata (RHD) på den rollen, så att ditt interna marknadsföringsteam kan komma åt skyddad hälsoinformation (PHI). Du kan också skapa en roll för en extern byrå och neka rollåtkomst till PHI-data genom att inte använda RHD-etiketten på den rollen."
 >additional-url="https://experienceleague.adobe.com/docs/experience-platform/access-control/abac/permissions-ui/roles.html" text="Hantera en roll"
 >additional-url="https://experienceleague.adobe.com/en/docs/experience-platform/access-control/abac/end-to-end-guide#label-roles" text="Använd etiketter för en roll"
 

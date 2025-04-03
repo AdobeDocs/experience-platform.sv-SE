@@ -3,9 +3,9 @@ description: Lär dig hur du använder mallar i Adobe Experience Platform använ
 title: Skapa ett källdataflöde med mallar i användargränssnittet
 badge1: Beta
 exl-id: 48aa36ca-656d-4b9d-954c-48c8da9df1e9
-source-git-commit: c2832821ea6f9f630e480c6412ca07af788efd66
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '2198'
+source-wordcount: '2207'
 ht-degree: 0%
 
 ---
@@ -14,7 +14,7 @@ ht-degree: 0%
 
 >[!CONTEXTUALHELP]
 >id="platform_sources_marketo_mapping"
->title="Mallar för källor i plattformens användargränssnitt"
+>title="Mallar för källor i Experience Platform UI"
 >abstract="Mallar innehåller automatiskt genererade resurser som scheman, datauppsättningar, identiteter, mappningsregler, identitetsnamnutrymmen och dataflöden som du kan använda när du hämtar in data från en källa till Experience Platform. Du kan uppdatera automatiskt genererade resurser för anpassning så att de passar dina användningsexempel."
 
 >[!IMPORTANT]
@@ -35,17 +35,17 @@ Med mallar kan man
 * Minimera antalet fel som kan uppstå under den manuella dataöverföringsprocessen.
 * Uppdatera automatiskt genererade resurser när som helst för att passa dina användningsexempel.
 
-I följande självstudiekurs beskrivs hur du använder mallar i användargränssnittet för plattformen.
+I följande självstudiekurs beskrivs hur du använder mallar i användargränssnittet i Experience Platform.
 
 ## Komma igång
 
 Den här självstudiekursen kräver en fungerande förståelse av följande komponenter i Experience Platform:
 
-* [Källor](../../home.md): Med Experience Platform kan data hämtas från olika källor samtidigt som du kan strukturera, etikettera och förbättra inkommande data med hjälp av plattformstjänster.
+* [Källor](../../home.md): Med Experience Platform kan data hämtas från olika källor samtidigt som du kan strukturera, etikettera och förbättra inkommande data med hjälp av Experience Platform tjänster.
 * [[!DNL Experience Data Model (XDM)] System](../../../xdm/home.md): Det standardiserade ramverk som Experience Platform använder för att ordna kundupplevelsedata.
-* [Sandlådor](../../../sandboxes/home.md): Experience Platform tillhandahåller virtuella sandlådor som partitionerar en enda plattformsinstans till separata virtuella miljöer för att utveckla och utveckla program för digitala upplevelser.
+* [Sandlådor](../../../sandboxes/home.md): Experience Platform tillhandahåller virtuella sandlådor som partitionerar en enda Experience Platform-instans till separata virtuella miljöer för att utveckla och utveckla program för digitala upplevelser.
 
-## Använda mallar i plattformens användargränssnitt {#use-templates-in-the-platform-ui}
+## Använda mallar i Experience Platform användargränssnitt {#use-templates-in-the-platform-ui}
 
 >[!CONTEXTUALHELP]
 >id="platform_sources_templates_accounttype"
@@ -53,7 +53,7 @@ Den här självstudiekursen kräver en fungerande förståelse av följande komp
 >abstract="Välj lämplig affärstyp för ditt användningsfall. Åtkomsten kan variera beroende på ditt Real-Time Customer Data Platform-prenumerationskonto."
 >additional-url="https://experienceleague.adobe.com/docs/experience-platform/rtcdp/intro/rtcdp-intro/overview.html" text="Real-Time CDP - översikt"
 
-I plattformsgränssnittet väljer du **[!UICONTROL Sources]** i den vänstra navigeringen för att komma åt arbetsytan i [!UICONTROL Sources] och visa en katalog med tillgängliga källor i Experience Platform.
+I Experience Platform-gränssnittet väljer du **[!UICONTROL Sources]** i den vänstra navigeringen för att komma åt arbetsytan i [!UICONTROL Sources] och visa en katalog med tillgängliga källor i Experience Platform.
 
 Använd menyn *[!UICONTROL Categories]* för att filtrera källor efter kategori. Du kan också ange ett källnamn i sökfältet för att hitta en viss källa från katalogen.
 
@@ -267,8 +267,8 @@ Genom att följa den här självstudiekursen har du nu skapat dataflöden och re
 
 Mallar stöds av Adobe Experience Platform Alerts och du kan använda meddelandepanelen för att få uppdateringar om statusen för dina resurser och även för att gå tillbaka till granskningssidan.
 
-Välj meddelandeikonen i det övre huvudet i plattformsanvändargränssnittet och välj sedan statusaviseringen för att se vilka resurser du vill granska.
+Markera meddelandeikonen i det övre sidhuvudet i Experience Platform-användargränssnittet och markera sedan statusaviseringen för att se vilka resurser du vill granska.
 
-![Meddelandepanelen i plattformsgränssnittet med ett varningsmeddelande om ett misslyckat dataflöde är markerad.](../../images/tutorials/templates/notifications.png)
+![Meddelandepanelen i Experience Platform-användargränssnittet med ett varningsmeddelande om ett misslyckat dataflöde markerat.](../../images/tutorials/templates/notifications.png)
 
-Du kan uppdatera aviseringsinställningarna för dina mallar så att du kan ta emot både e-post- och plattformsmeddelanden om status för dina dataflöden. Mer information om hur du konfigurerar aviseringar finns i guiden [Prenumerera på aviseringar om källdataflöden](../ui/alerts.md).
+Du kan uppdatera aviseringsinställningarna för dina mallar så att du får både e-post- och Experience Platform-meddelanden om status för dina dataflöden. Mer information om hur du konfigurerar aviseringar finns i guiden [Prenumerera på aviseringar om källdataflöden](../ui/alerts.md).

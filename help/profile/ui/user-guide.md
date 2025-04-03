@@ -3,9 +3,9 @@ keywords: Experience Platform;profil;kundprofil i realtid;felsökning;API;enhetl
 title: Användargränssnittshandbok för kundprofil i realtid
 description: Kundprofilen i realtid skapar en helhetsbild av varje enskild kund och kombinerar data från flera kanaler, inklusive online-, offline-, CRM- och tredjepartsdata. Det här dokumentet är en guide för interaktion med kundprofilen i realtid i Adobe Experience Platform användargränssnitt.
 exl-id: 792a3a73-58a4-4163-9212-4d43d24c2770
-source-git-commit: 4afb2c76f2022423e8f1fa29c91d02b43447ba90
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '2128'
+source-wordcount: '2135'
 ht-degree: 0%
 
 ---
@@ -19,8 +19,8 @@ ht-degree: 0%
 Den här gränssnittshandboken kräver förståelse för de olika [!DNL Experience Platform]-tjänsterna som används för att hantera [!DNL Real-Time Customer Profiles]. Innan du läser den här handboken eller arbetar i användargränssnittet bör du läsa dokumentationen för följande tjänster:
 
 * [[!DNL Real-Time Customer Profile] översikt](../home.md): Tillhandahåller en enhetlig konsumentprofil i realtid baserad på aggregerade data från flera källor.
-* [[!DNL Identity Service]](../../identity-service/home.md): Aktiverar [!DNL Real-Time Customer Profile] genom att brygga identiteter från olika datakällor när de hämtas till [!DNL Platform].
-* [[!DNL Experience Data Model (XDM)]](../../xdm/home.md): Det standardiserade ramverket som [!DNL Platform] organiserar kundupplevelsedata med.
+* [[!DNL Identity Service]](../../identity-service/home.md): Aktiverar [!DNL Real-Time Customer Profile] genom att brygga identiteter från olika datakällor när de hämtas till [!DNL Experience Platform].
+* [[!DNL Experience Data Model (XDM)]](../../xdm/home.md): Det standardiserade ramverket som [!DNL Experience Platform] organiserar kundupplevelsedata med.
 
 ## [!UICONTROL Overview]
 
@@ -28,7 +28,7 @@ I Experience Platform-gränssnittet väljer du **[!UICONTROL Profiles]** i den v
 
 >[!NOTE]
 >
->Om din organisation är ny på Platform och ännu inte har aktiva profildatauppsättningar eller sammanslagningsprinciper skapade, visas inte instrumentpanelen [!UICONTROL Profiles]. Istället visar fliken [!UICONTROL Overview] länkar och dokumentation som hjälper dig att komma igång med kundprofilen i realtid.
+>Om din organisation inte har använt Experience Platform tidigare och ännu inte har några aktiva profildatauppsättningar eller sammanslagningsprinciper skapade, visas inte instrumentpanelen [!UICONTROL Profiles]. Istället visar fliken [!UICONTROL Overview] länkar och dokumentation som hjälper dig att komma igång med kundprofilen i realtid.
 
 ### Kontrollpanel för profil {#profile-dashboard}
 
@@ -56,7 +56,7 @@ Förutom dessa mått innehåller det här avsnittet ett senaste uppdaterat datum
 
 Profilantalet visar det totala antalet profiler som din organisation har inom Experience Platform, efter att organisationens standardpolicy för sammanslagning har sammanfogats med profilfragment för att bilda en enda profil för varje enskild kund. Med andra ord kan din organisation ha flera profilfragment kopplade till en enskild kund som interagerar med ert varumärke i olika kanaler, men dessa fragment skulle slås samman (enligt standardprincipen för sammanslagning) och skulle returnera antalet&quot;1&quot;-profil eftersom de alla är kopplade till samma individ.
 
-Profilantalet omfattar även både profiler med attribut (postdata) och profiler som endast innehåller tidsseriedata (händelsedata), t.ex. Adobe Analytics-profiler. Profilantalet uppdateras regelbundet för att ge ett aktuellt totalt antal profiler inom plattformen.
+Profilantalet omfattar även både profiler med attribut (postdata) och profiler som endast innehåller tidsseriedata (händelsedata), t.ex. Adobe Analytics-profiler. Profilantalet uppdateras regelbundet för att ge ett aktuellt totalt antal profiler i Experience Platform.
 
 #### Uppdaterar måttet för antal profiler
 
@@ -96,7 +96,7 @@ Om du vill visa information om en av exempelprofilerna väljer du **[!UICONTROL 
 
 ![Exempelprofiler som matchar sammanfogningsprincipen visas.](../images/user-guide/sample-profiles.png)
 
-Mer information om sammanfogningsprinciper och deras roll inom plattformen finns i [översikten över sammanfogningsprinciper](../merge-policies/overview.md).
+Mer information om sammanfogningsprinciper och deras roll i Experience Platform finns i [översikten över sammanfogningsprinciper](../merge-policies/overview.md).
 
 ### Bläddra efter [!UICONTROL Identity] {#browse-identity}
 
@@ -131,7 +131,7 @@ När ett värde har angetts väljer du **[!UICONTROL View]** och en enda profil 
 >[!CONTEXTUALHELP]
 >id="platform_errors_uplib_201001_404"
 >title="Enheten hittades inte"
->abstract="Detta innebär att plattformen inte kunde hitta den begärda entiteten. Försök med någon av följande lösningar för att åtgärda felet:<ul><li>Kontrollera att rätt profil-ID finns i URL:en för den entitet du försöker få åtkomst till.</li><li>Kontrollera att du har rätt kombination av organisation och sandlåda för den enhet du försöker få åtkomst till.</li></ul>"
+>abstract="Detta innebär att Experience Platform inte kunde hitta den begärda entiteten. Försök med någon av följande lösningar för att åtgärda felet:<ul><li>Kontrollera att rätt profil-ID finns i URL:en för den entitet du försöker få åtkomst till.</li><li>Kontrollera att du har rätt kombination av organisation och sandlåda för den enhet du försöker få åtkomst till.</li></ul>"
 
 När du har valt **[!UICONTROL Profile ID]** öppnas fliken **[!UICONTROL Detail]**. Profilinformationen som visas på fliken **[!UICONTROL Detail]** har sammanfogats från flera profilfragment till en enda vy över den enskilda kunden. Detta inkluderar kundinformation som grundläggande attribut, länkade identiteter och kanalinställningar.
 
@@ -149,7 +149,7 @@ Om du vill visa ytterligare information om den enskilda kundprofilen väljer du 
 
 Fliken **[!UICONTROL Attributes]** innehåller en listvy med en sammanfattning av alla attribut som hör till en enskild profil, efter att den angivna sammanfogningsprincipen har tillämpats.
 
-Dessa attribut kan också visas som ett JSON-objekt genom att välja till **[!UICONTROL View JSON]**. Detta är praktiskt för alla användare som bättre vill förstå hur profilattributen hämtas till Platform.
+Dessa attribut kan också visas som ett JSON-objekt genom att välja till **[!UICONTROL View JSON]**. Detta är praktiskt för alla som vill förstå hur profilattributen importeras till Experience Platform.
 
 ![Fliken Attribut är markerad. Profilattributen visas.](../images/user-guide/attributes.png)
 
@@ -163,7 +163,7 @@ Mer information om kantprofiler finns i [dokumentationen för kantprofiler](../e
 
 Fliken **[!UICONTROL Events]** innehåller data från de 100 senaste ExperienceEvents som är associerade med kunden. Dessa data kan inkludera öppning av e-post, kundvagnsaktiviteter och sidvyer. Om du väljer **[!UICONTROL View all]** för en enskild händelse hämtas ytterligare fält och värden som en del av händelsen.
 
-Händelser kan också visas som ett JSON-objekt genom att välja till **[!UICONTROL View JSON]**. Detta är praktiskt när du vill veta hur händelser hämtas i Platform.
+Händelser kan också visas som ett JSON-objekt genom att välja till **[!UICONTROL View JSON]**. Detta är praktiskt när du vill veta hur händelser spelas in i Experience Platform.
 
 ![Fliken Händelser är markerad. Profilhändelserna visas.](../images/user-guide/events.png)
 
@@ -201,7 +201,7 @@ På huvudmenyn **[!UICONTROL Profiles]** väljer du fliken **[!UICONTROL Compute
 
 ![Fliken Beräknade attribut är markerad.](../images/user-guide/computed-attributes.png)
 
-Mer information om beräknade attribut finns i [översikten över beräknade attribut](../computed-attributes/overview.md). Mer information om hur du använder beräknade attribut i plattformsgränssnittet finns i [användargränssnittshandboken för beräknade attribut](../computed-attributes/ui.md).
+Mer information om beräknade attribut finns i [översikten över beräknade attribut](../computed-attributes/overview.md). Mer information om hur du använder beräknade attribut i Experience Platform-gränssnittet finns i [användargränssnittshandboken för beräknade attribut](../computed-attributes/ui.md).
 
 ## Nästa steg
 

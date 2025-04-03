@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Hantera dataanvändningsprinciper i användargränssnittet
 description: Adobe Experience Platform Data Governance har ett användargränssnitt där du kan skapa och hantera dataanvändningspolicyer. Det här dokumentet innehåller en översikt över de åtgärder som du kan utföra på arbetsytan Profiler i Experience Platform användargränssnitt.
 exl-id: 29434dc1-02c2-4267-a1f1-9f73833e76a0
-source-git-commit: e52eb90b64ae9142e714a46017cfd14156c78f8b
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '1704'
+source-wordcount: '1705'
 ht-degree: 0%
 
 ---
@@ -16,7 +16,7 @@ ht-degree: 0%
 >[!CONTEXTUALHELP]
 >id="platform_privacyConsole_dataUsagePolicies_description"
 >title="Integrera och få kundens samtycke i era profildata"
->abstract="<h2>Beskrivning</h2><p>Med Platform kan ni integrera de data ni har samlat in från era kunder i deras respektive profiler. Du kan sedan ange profiler för samtycke för att avgöra om dessa data kan inkluderas i segment som aktiveras för vissa destinationer.</p>"
+>abstract="<h2>Beskrivning</h2><p>Med Experience Platform kan ni integrera de data ni samlat in från era kunder i deras respektive profiler. Du kan sedan ange profiler för samtycke för att avgöra om dessa data kan inkluderas i segment som aktiveras för vissa destinationer.</p>"
 
 Det här dokumentet beskriver hur du använder arbetsytan **[!UICONTROL Policies]** i Adobe Experience Platform-gränssnittet för att skapa och hantera dataanvändningsprinciper.
 

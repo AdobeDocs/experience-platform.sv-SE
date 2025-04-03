@@ -3,9 +3,9 @@ title: Användargränssnittshandbok för kopplingsprofiler
 type: Documentation
 description: Lär dig hur du arbetar med sammanfogningsprinciper med hjälp av Adobe Experience Platform användargränssnitt.
 exl-id: 0489217a-6a53-428c-a531-fd0a0e5bb71f
-source-git-commit: 400b20578e9a13fa2f41462b188707a34a462ea9
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '2331'
+source-wordcount: '2334'
 ht-degree: 0%
 
 ---
@@ -13,26 +13,26 @@ ht-degree: 0%
 
 # Användargränssnittshandbok för sammanslagningsprinciper
 
-Med Adobe Experience Platform kan ni sammanföra datafragment från flera olika källor och kombinera dem för att få en fullständig bild av varje enskild kund. När du sammanfogar dessa data är sammanfogningsprinciper de regler som [!DNL Platform] använder för att avgöra hur data ska prioriteras och vilka data som ska kombineras för att skapa den enhetliga vyn.
+Med Adobe Experience Platform kan ni sammanföra datafragment från flera olika källor och kombinera dem för att få en fullständig bild av varje enskild kund. När du sammanfogar dessa data är sammanfogningsprinciper de regler som [!DNL Experience Platform] använder för att avgöra hur data ska prioriteras och vilka data som ska kombineras för att skapa den enhetliga vyn.
 
 Med RESTful API:er eller användargränssnittet kan du skapa nya kopplingsprofiler, hantera befintliga profiler och ange en standardkopplingsprofil för organisationen. Den här handboken innehåller stegvisa instruktioner för hur du arbetar med sammanfogningsprinciper med hjälp av användargränssnittet i Adobe Experience Platform.
 
-Om du vill veta mer om sammanfogningsprinciper och vilken roll de spelar i Experience Platform börjar du med att läsa översikten [för sammanfogningsprinciper](overview.md).
+Om du vill veta mer om sammanfogningsprinciper och vilken roll de spelar i Experience Platform kan du börja med att läsa översikten för [sammanfogningsprinciper](overview.md).
 
 ## Komma igång
 
 Den här handboken kräver en fungerande förståelse av flera viktiga [!DNL Experience Platform]-funktioner. Innan du följer den här handboken bör du läsa dokumentationen för följande tjänster:
 
 * [Kundprofil i realtid](../home.md): Tillhandahåller en enhetlig konsumentprofil i realtid baserad på aggregerade data från flera källor.
-* [Adobe Experience Platform identitetstjänst](../../identity-service/home.md): Aktiverar kundprofil i realtid genom att brygga identiteter från olika datakällor som importeras till [!DNL Platform].
-* [Experience Data Model (XDM)](../../xdm/home.md): Det standardiserade ramverket som [!DNL Platform] organiserar kundupplevelsedata med.
+* [Adobe Experience Platform identitetstjänst](../../identity-service/home.md): Aktiverar kundprofil i realtid genom att brygga identiteter från olika datakällor som importeras till [!DNL Experience Platform].
+* [Experience Data Model (XDM)](../../xdm/home.md): Det standardiserade ramverket som [!DNL Experience Platform] organiserar kundupplevelsedata med.
 
 ## Visa sammanslagningsprinciper {#view-merge-policies}
 
 >[!CONTEXTUALHELP]
 >id="platform_errors_uplib_101221_404"
 >title="Det gick inte att hitta sammanfogningsprincipen"
->abstract="Detta innebär att plattformen inte kunde hitta den begärda sammanfogningsprincipen. Försök med någon av följande lösningar för att åtgärda felet:<ul><li>Kontrollera att rätt ID för sammanfogningsprincip finns i webbadressen.</li><li>Kontrollera att du har rätt kombination av organisation och sandlåda för den sammanslagningsprincip du försöker få åtkomst till.</li></ul>"
+>abstract="Detta innebär att Experience Platform inte kunde hitta den begärda sammanfogningsprincipen. Försök med någon av följande lösningar för att åtgärda felet:<ul><li>Kontrollera att rätt ID för sammanfogningsprincip finns i webbadressen.</li><li>Kontrollera att du har rätt kombination av organisation och sandlåda för den sammanslagningsprincip du försöker få åtkomst till.</li></ul>"
 
 I användargränssnittet för [!DNL Experience Platform] kan du börja arbeta med sammanfogningsprinciper genom att välja **[!UICONTROL Profiles]** i den vänstra navigeringen och sedan välja fliken **[!UICONTROL Merge Policies]** .
 
@@ -77,7 +77,7 @@ När du skapar eller redigerar en sammanfogningsprincip kan du visa unionsschema
 
 ![Knappen Visa unionsschema är markerad i det nya policyarbetsflödet för sammanslagning.](../images/merge-policies/view-union-schema.png)
 
-Dialogrutan [!UICONTROL View Union Schema] öppnas med alla scheman, identiteter och relationer som är kopplade till unionsschemat. Du kan använda dialogrutan för att utforska unionsschemat på samma sätt som du gör genom att gå till fliken [!UICONTROL Union Schema] i avsnittet [!UICONTROL Profiles] i plattformsgränssnittet.
+Dialogrutan [!UICONTROL View Union Schema] öppnas med alla scheman, identiteter och relationer som är kopplade till unionsschemat. Du kan använda dialogrutan för att utforska unionsschemat på samma sätt som du gör genom att gå till fliken [!UICONTROL Union Schema] i avsnittet [!UICONTROL Profiles] i Experience Platform-gränssnittet.
 
 Detaljerad information om unionsscheman, inklusive hur du interagerar med dem på fliken [!UICONTROL Union Schema] eller i dialogrutan [!UICONTROL View Union Schema] som visas i arbetsflödet för sammanfogningsprinciper, finns i [gränssnittshandboken för unionsscheman](../ui/union-schema.md).
 
@@ -207,7 +207,7 @@ När du har gjort de ändringar du behöver granskar du sammanfogningsprincipen 
 
 ## Policyöverträdelser för datastyrning
 
-När du skapar eller uppdaterar en sammanfogningsprincip görs en kontroll för att avgöra om sammanfogningsprincipen bryter mot någon av de dataanvändningsprinciper som din organisation har definierat. Dataanvändningsprinciper ingår i Adobe Experience Platform Data Governance och är regler som beskriver den typ av marknadsföringsåtgärder som du tillåts eller begränsas från för att utföra på specifika [!DNL Platform]-data.
+När du skapar eller uppdaterar en sammanfogningsprincip görs en kontroll för att avgöra om sammanfogningsprincipen bryter mot någon av de dataanvändningsprinciper som din organisation har definierat. Dataanvändningsprinciper ingår i Adobe Experience Platform Data Governance och är regler som beskriver den typ av marknadsföringsåtgärder som du tillåts eller begränsas från för att utföra på specifika [!DNL Experience Platform]-data.
 
 Om en sammanfogningsprincip till exempel användes för att skapa en målgrupp som aktiverats för ett tredjepartsmål, och din organisation har en dataanvändningsprincip som förhindrar export av specifika data till tredje part, får du ett **[!UICONTROL Data governance policy violation detected]**-meddelande när du försöker spara sammanfogningsprincipen.
 
@@ -217,4 +217,4 @@ Om du vill veta mer om hur datastyrning utförs inom Adobe Experience Platform k
 
 ## Nästa steg
 
-Nu när du har skapat och konfigurerat sammanfogningsprinciper för din organisation kan du använda dem för att justera visningen av kundprofiler inom Platform och för att skapa målgrupper utifrån dina profildata. Se [segmenteringsöversikten](../../segmentation/home.md) för mer information om hur du skapar och arbetar med målgrupper med hjälp av [!DNL Experience Platform]-gränssnittet och API:erna.
+Nu när du har skapat och konfigurerat samkörningsprinciper för din organisation kan du använda dem för att justera visningen av kundprofiler inom Experience Platform och för att skapa målgrupper utifrån dina profildata. Se [segmenteringsöversikten](../../segmentation/home.md) för mer information om hur du skapar och arbetar med målgrupper med hjälp av [!DNL Experience Platform]-gränssnittet och API:erna.

@@ -4,9 +4,9 @@ description: Lär dig hur granskningsloggar gör det möjligt för dig att se vi
 role: Admin,Developer
 feature: Audits
 exl-id: 00baf615-5b71-4e0a-b82a-ca0ce8566e7f
-source-git-commit: 9bc80c2ee01e7a739db55cc7fc77ea19e609b265
+source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
 workflow-type: tm+mt
-source-wordcount: '1436'
+source-wordcount: '1446'
 ht-degree: 4%
 
 ---
@@ -16,19 +16,19 @@ ht-degree: 4%
 >[!CONTEXTUALHELP]
 >id="platform_audits_privacyconsole_actions"
 >title="De vanligaste åtgärderna"
->abstract="Den här widgeten visar de vanligaste åtgärderna som har vidtagits i Experience Platform inom den valda tidsramen. Om du vill visa en fullständig lista över registrerade åtgärder i Platform väljer du **Granskningar** i den vänstra navigeringen."
+>abstract="Den här widgeten visar de vanligaste åtgärderna som har vidtagits i Experience Platform inom den valda tidsramen. Om du vill visa en fullständig lista över inspelade åtgärder i Experience Platform väljer du **Granskningar** i den vänstra navigeringen."
 
 >[!CONTEXTUALHELP]
 >id="platform_audits_privacyconsole_users"
 >title="De vanligaste användarna"
->abstract="Den här widgeten visar de användare som har utfört de flesta åtgärderna i Experience Platform inom den valda tidsramen. Om du vill visa en fullständig lista över registrerade åtgärder i Platform väljer du **Granskningar** i den vänstra navigeringen."
+>abstract="Den här widgeten visar de användare som har utfört de flesta åtgärderna i Experience Platform inom den valda tidsramen. Om du vill visa en fullständig lista över inspelade åtgärder i Experience Platform väljer du **Granskningar** i den vänstra navigeringen."
 
 >[!CONTEXTUALHELP]
 >id="platform_privacyConsole_audits_description"
->title="Övervaka användaraktiviteter på plattformen"
->abstract="<h2>Beskrivning</h2><p>Du kan övervaka användaraktivitet för olika plattformstjänster och funktioner i form av granskningsloggar. Dessa loggar utgör ett granskningsspår som registrerar <b>vem</b> utförde <b>vad</b>-åtgärden och <b>när</b>. Granskningsloggar kan hjälpa till med felsökningsproblem på plattformen och hjälpa ert företag att effektivt följa företagets policyer för datahantering och lagstadgade krav.</p>"
+>title="Övervaka användaraktiviteter i Experience Platform"
+>abstract="<h2>Beskrivning</h2><p>Du kan övervaka användaraktiviteten för olika Experience Platform-tjänster och funktioner i form av granskningsloggar. Dessa loggar utgör ett granskningsspår som registrerar <b>vem</b> utförde <b>vad</b>-åtgärden och <b>när</b>. Granskningsloggar kan hjälpa till med felsökningsproblem på Experience Platform och hjälpa ert företag att effektivt följa företagets policyer för datahantering och lagstadgade krav.</p>"
 
-För att öka insynen i och synligheten i de aktiviteter som utförs i systemet kan du med Adobe Experience Platform granska användaraktiviteter för olika tjänster och funktioner i form av &quot;granskningsloggar&quot;. Loggarna utgör en verifieringskedja som kan hjälpa till med felsökningsproblem på plattformen och hjälpa ditt företag att effektivt följa företagets policyer för datahantering och lagstadgade krav.
+För att öka insynen i och synligheten i de aktiviteter som utförs i systemet kan du med Adobe Experience Platform granska användaraktiviteter för olika tjänster och funktioner i form av &quot;granskningsloggar&quot;. Loggarna utgör en verifieringskedja som kan hjälpa till med felsökning på Experience Platform och hjälpa ditt företag att effektivt följa företagets policyer för datahantering och lagstadgade krav.
 
 I grundläggande bemärkelse anger en granskningslogg **vem** utförde **vad**-åtgärden och **när**. Varje åtgärd som registreras i en logg innehåller metadata som anger åtgärdstyp, datum och tid, e-post-ID för användaren som utförde åtgärden samt ytterligare attribut som är relevanta för åtgärdstypen.
 
@@ -36,7 +36,7 @@ I grundläggande bemärkelse anger en granskningslogg **vem** utförde **vad**-�
 >
 > Metadata för åtgärderna **Lägg till användare** och **Ta bort användare** i **rollen**-resursen kommer inte att innehålla e-post-ID:t för den användare som utförde åtgärden. Loggarna visar i stället systemgenererat e-post-ID (system@adobe.com).
 
-Det här dokumentet innehåller granskningsloggar i Platform, inklusive hur du visar och hanterar dem i användargränssnittet eller API.
+Det här dokumentet innehåller granskningsloggar i Experience Platform, inklusive hur du visar och hanterar dem i användargränssnittet eller API.
 
 ## Händelsetyper som hämtats av granskningsloggar {#category}
 
@@ -74,7 +74,7 @@ Följande tabell visar vilka åtgärder som resurser registreras av granskningsl
 
 När funktionen är aktiverad för din organisation samlas granskningsloggarna automatiskt in när aktiviteten inträffar. Du behöver inte aktivera loggsamling manuellt.
 
-För att kunna visa och exportera granskningsloggar måste du ha åtkomstkontrollbehörighet **[!UICONTROL View User Activity Log]** (finns under kategorin [!UICONTROL Data Governance]). Mer information om hur du hanterar individuella behörigheter för plattformsfunktioner finns i [åtkomstkontrollsdokumentationen](../../../access-control/home.md).
+För att kunna visa och exportera granskningsloggar måste du ha åtkomstkontrollbehörighet **[!UICONTROL View User Activity Log]** (finns under kategorin [!UICONTROL Data Governance]). Mer information om hur du hanterar enskilda behörigheter för Experience Platform-funktioner finns i [åtkomstkontrollsdokumentationen](../../../access-control/home.md).
 
 ## Hantera granskningsloggar i användargränssnittet {#managing-audit-logs-in-the-ui}
 
@@ -83,7 +83,7 @@ För att kunna visa och exportera granskningsloggar måste du ha åtkomstkontrol
 >title="Instruktioner"
 >abstract="<ul><li>Välj <b>Granskningar</b> i den vänstra navigeringen. På arbetsytan Granskningar visas en lista med inspelade loggar. Som standard sorteras de från senaste till senaste.</li>   <li> Obs! Granskningsloggarna sparas i 365 dagar, varefter de tas bort från systemet. Därför kan du bara gå tillbaka under en period på högst 365 dagar. Om du behöver titta tillbaka på data som är äldre än 365 dagar bör du exportera loggar med en regelbunden gräns för att uppfylla dina interna policykrav. </li><li>Välj en händelse i listan om du vill visa information om händelsen i den högra listen. </li><li>Markera trattsymbolen om du vill visa en lista med filterkontroller för att begränsa resultatet. Endast de 1 000 sista posterna visas, oavsett vilket filter du har valt. </li><li>Om du vill exportera den aktuella listan med granskningsloggar väljer du **Hämta logg**.</li><li>Mer hjälp om den här funktionen finns i <a href="https://experienceleague.adobe.com/docs/experience-platform/landing/governance-privacy-security/audit-logs/overview.html">Översikt över granskningsloggar</a> på Experience League.</li></ul>"
 
-Du kan visa granskningsloggar för olika Experience Platform-funktioner på arbetsytan **[!UICONTROL Audits]** i plattformsgränssnittet. På arbetsytan visas en lista med inspelade loggar. Som standard sorteras de från senaste till senaste.
+Du kan visa granskningsloggar för olika Experience Platform-funktioner på arbetsytan **[!UICONTROL Audits]** i Experience Platform användargränssnitt. På arbetsytan visas en lista med inspelade loggar. Som standard sorteras de från senaste till senaste.
 
 ![Kontrollpanelen Granskningar markerar Granskningar på den vänstra menyn.](../../images/audit-logs/audits.png)
 
@@ -171,7 +171,7 @@ Mer information om hur du hanterar granskningsloggar för aktiviteter i Adobe Ad
 
 ## Nästa steg och ytterligare resurser
 
-I den här guiden beskrivs hur du hanterar granskningsloggar i Experience Platform. Mer information om hur du övervakar plattformsaktiviteter finns i dokumentationen om [observabilitetsinsikter](../../../observability/home.md) och [övervakning av datainhämtning](../../../ingestion/quality/monitor-data-ingestion.md).
+I den här guiden beskrivs hur du hanterar granskningsloggar i Experience Platform. Mer information om hur du övervakar Experience Platform-aktiviteter finns i dokumentationen om [Insikter om observabilitet](../../../observability/home.md) och [övervakning av datainhämtning](../../../ingestion/quality/monitor-data-ingestion.md).
 
 Titta på följande video för att få en bättre förståelse för granskningsloggar i Experience Platform:
 
