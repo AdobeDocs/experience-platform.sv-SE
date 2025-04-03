@@ -2,9 +2,9 @@
 title: Verktyg för sandlåda
 description: Exportera och importera sömlöst sandlådekonfigurationer mellan sandlådor.
 exl-id: f1199ab7-11bf-43d9-ab86-15974687d182
-source-git-commit: 85476ea8a667cf3e74cd7a24da07d81c635e1628
+source-git-commit: 3cedf019cff7ef0aa06da1242798a533196f9b2a
 workflow-type: tm+mt
-source-wordcount: '2264'
+source-wordcount: '2318'
 ht-degree: 0%
 
 ---
@@ -23,7 +23,7 @@ Du kan använda sandlådeverktygen för att markera olika objekt och exportera d
 
 Verktygsfunktionen i sandlådan ger dig möjlighet att exportera [!DNL Adobe Real-Time Customer Data Platform]- och [!DNL Adobe Journey Optimizer]-objekt till ett paket.
 
-### Real-time Customer Data Platform-objekt {#real-time-cdp-objects}
+### Objekt för kunddataplattform i realtid {#real-time-cdp-objects}
 
 Tabellen nedan visar [!DNL Adobe Real-Time Customer Data Platform] objekt som för närvarande stöds för sandlådeverktyg:
 
@@ -60,6 +60,7 @@ Tabellen nedan visar [!DNL Adobe Journey Optimizer] objekt som för närvarande 
 | [!DNL Adobe Journey Optimizer] | Resa | Om du lägger till en hel resa i ett paket kopieras huvuddelen av de objekt som resan är beroende av, inklusive målgrupper, scheman, händelser och åtgärder. |
 | [!DNL Adobe Journey Optimizer] | Innehållsmall | En innehållsmall kan kopieras som ett beroende objekt för reseobjektet. Med fristående mallar kan ni enkelt återanvända anpassat innehåll i Journey Optimizer kampanjer och resor. |
 | [!DNL Adobe Journey Optimizer] | Fragment | Ett fragment kan kopieras som ett beroende objekt för reseobjektet. Fragment är återanvändbara komponenter som kan refereras i ett eller flera e-postmeddelanden mellan Journey Optimizer kampanjer och resor. |
+| [!DNL Adobe Journey Optimizer] | Kampanjer | Kampanjer kan kopieras tillsammans med alla objekt som hör till profilen, målgruppen, schemat, textbundna meddelanden och beroende objekt. Vissa objekt kopieras inte, t.ex. beslutsobjekt, dataanvändningsetiketter och språkinställningar. En fullständig lista över objekt som inte kan kopieras finns i guiden [Exportera objekt till en annan sandlåda](https://experienceleague.adobe.com/en/docs/journey-optimizer/using/configuration/copy-objects-to-sandbox). |
 
 Ytor (till exempel förinställningar) kopieras inte över. Systemet väljer automatiskt den närmsta möjliga matchningen i målsandlådan baserat på meddelandetyp och ytnamn. Om det inte finns några ytor i målsandlådan, kommer ytkopian att misslyckas, vilket gör att meddelandekopian misslyckas eftersom ett meddelande kräver att en yta är tillgänglig för konfiguration. I det här fallet måste minst en yta skapas för den högra kanalen i meddelandet för att kopian ska fungera.
 
@@ -120,7 +121,7 @@ Listan med objekt som läggs till i paketet visas. Om du vill publicera paketet 
 
 Välj **[!UICONTROL Publish]** för att bekräfta publiceringen av paketet.
 
-![Bekräftelsedialogrutan för Publish-paket som markerar alternativet [!UICONTROL Publish].](../images/ui/sandbox-tooling/publish-package-confirmation.png)
+![Bekräftelsedialogrutan för publiceringspaket, där alternativet [!UICONTROL Publish] markeras.](../images/ui/sandbox-tooling/publish-package-confirmation.png)
 
 >[!NOTE]
 >
@@ -174,7 +175,7 @@ Du återgår till sidan [!UICONTROL Package object and dependencies]. Här välj
 
 >[!NOTE]
 >
->För närvarande stöds bara Real-time Customer Data Platform-objekt när du exporterar eller importerar en hel sandlåda. Adobe Journey Optimizer-objekt som resor stöds inte just nu.
+>För närvarande stöds endast kunddataplattformsobjekt i realtid vid export eller import av en hel sandlåda. Adobe Journey Optimizer-objekt som resor stöds inte just nu.
 
 Du kan exportera alla objekttyper som stöds till ett fullständigt sandlådepaket och sedan importera paketet mellan olika sandlådor för att replikera objektkonfigurationer. Med den här funktionen kan du till exempel:
 
@@ -261,6 +262,6 @@ Följande video är avsedd att ge stöd för din förståelse av sandlådeverkty
 
 ## Nästa steg
 
-Det här dokumentet visar hur du använder sandlådeverktygen i användargränssnittet i Experience Platform. Mer information om sandlådor finns i användarhandboken för [sandlådan](../ui/user-guide.md).
+Det här dokumentet visar hur du använder sandlådeverktygen i Experience Platform-gränssnittet. Mer information om sandlådor finns i användarhandboken för [sandlådan](../ui/user-guide.md).
 
 Anvisningar om hur du utför olika åtgärder med sandbox-API:t finns i [utvecklarhandboken för sandlådan](../api/getting-started.md). En översikt över sandlådor i Experience Platform på hög nivå finns i [översiktsdokumentationen](../home.md).
