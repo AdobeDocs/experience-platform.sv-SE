@@ -5,9 +5,9 @@ description: Följ den här självstudiekursen för att lära dig hur du använd
 exl-id: 56fc8bd3-3e62-4a09-bb9c-6caf0523f3fe
 hide: true
 hidefromtoc: true
-source-git-commit: ba39f62cd77acedb7bfc0081dbb5f59906c9b287
+source-git-commit: f6d700087241fb3a467934ae8e64d04f5c1d98fa
 workflow-type: tm+mt
-source-wordcount: '1685'
+source-wordcount: '1693'
 ht-degree: 0%
 
 ---
@@ -26,7 +26,7 @@ Den här självstudiekursen kräver en fungerande förståelse av de olika [!DNL
 
 - [Segmenteringstjänst](../home.md): Gör att du kan skapa målgrupper från kundprofildata i realtid.
 - [Kundprofil i realtid](../../profile/home.md): Tillhandahåller en enhetlig konsumentprofil i realtid baserad på aggregerade data från flera källor.
-- [Experience Data Model (XDM)](../../xdm/home.md): Det standardiserade ramverk som Platform använder för att organisera kundupplevelsedata. För att du ska kunna använda segmentering bör du se till att dina data är inmatade som profiler och händelser enligt [bästa praxis för datamodellering](../../xdm/schema/best-practices.md).
+- [Experience Data Model (XDM)](../../xdm/home.md): Det standardiserade ramverk som Experience Platform organiserar kundupplevelsedata med. För att du ska kunna använda segmentering bör du se till att dina data är inmatade som profiler och händelser enligt [bästa praxis för datamodellering](../../xdm/schema/best-practices.md).
 - [Datauppsättningar](../../catalog/datasets/overview.md): Konstruktionen för lagring och hantering av databeständighet i Experience Platform.
 - [Direktuppspelningsuppläsning](../../ingestion/streaming-ingestion/overview.md): Hur Experience Platform importerar och lagrar data från klient- och serverenheter i realtid.
 
@@ -44,7 +44,7 @@ Segmentdefinitioner innehåller information som namn, beskrivning, uttryck (om t
 
 ## Skapa ett identitetsnamnutrymme för den externa målgruppen
 
-Det första steget för att använda externa målgrupper är att skapa ett identitetsnamnutrymme. Med identitetsnamnutrymmen kan plattformen associera var en målgrupp kommer ifrån.
+Det första steget för att använda externa målgrupper är att skapa ett identitetsnamnutrymme. Med identitetsnamnutrymmen kan Experience Platform associera var en målgrupp kommer ifrån.
 
 Följ instruktionerna i guiden [Identitetsnamnrymd](../../identity-service/features/namespaces.md#manage-namespaces) om du vill skapa ett identitetsnamnutrymme. När du skapar ditt identitetsnamnutrymme lägger du till källinformationen i identitetsnamnutrymmet och markerar dess [!UICONTROL Type] som en **[!UICONTROL Non-people identifier]**.
 
@@ -70,7 +70,7 @@ När du har markerat fältet `_id` som primär identitet markerar du schemats ti
 
 ![Växlingen för att aktivera schemat för profilen är markerad i Schemaredigeraren.](../images/tutorials/external-audiences/schema-profile.png)
 
-Det här schemat är nu aktiverat för profilen, med den primära identifieringen tilldelad till det icke-personliga ID-namnområdet som du skapade. Detta innebär att segmentmetadata som importeras till plattformen med det här schemat kommer att importeras till profilen utan att sammanfogas med andra personrelaterade profildata.
+Det här schemat är nu aktiverat för profilen, med den primära identifieringen tilldelad till det icke-personliga ID-namnområdet som du skapade. Detta innebär att segmentmetadata som importeras till Experience Platform med det här schemat kommer att importeras till profilen utan att sammanfogas med andra personrelaterade profildata.
 
 ## Skapa en datauppsättning för schemat
 
@@ -86,7 +86,7 @@ När du har skapat datauppsättningen fortsätter du att följa instruktionerna 
 
 ## Konfigurera och importera målgruppsdata
 
-När datauppsättningen är aktiverad kan data nu skickas till plattformen antingen via användargränssnittet eller med Experience Platform API:er. Du kan importera dessa data antingen via en batch- eller direktuppspelningsanslutning.
+När datauppsättningen är aktiverad kan data nu skickas till Experience Platform antingen via användargränssnittet eller med Experience Platform API:er. Du kan importera dessa data antingen via en batch- eller direktuppspelningsanslutning.
 
 ### Infoga data med en batchanslutning
 
@@ -102,7 +102,7 @@ När du har skapat en direktuppspelningsanslutning får du tillgång till din un
 
 ## Struktur för målgruppsmetadata
 
-När du har skapat en anslutning kan du nu importera dina data till plattformen.
+När du har skapat en anslutning kan du nu importera dina data till Experience Platform.
 
 Ett exempel på den externa målgruppens nyttolastmetadata visas nedan:
 
@@ -163,7 +163,7 @@ Nu när ni kan använda externa målgrupper i era segment kan ni använda segmen
 
 ## Bilaga
 
-Förutom att använda importerade externa målgruppsmetadata och använda dem för att skapa segment, kan du även importera externa segmentmedlemskap till plattformen.
+Förutom att använda importerade externa målgruppsmetadata och använda dem för att skapa segment, kan du även importera externa segmentmedlemskap till Experience Platform.
 
 ### Ställ in ett externt målschema för segmentmedlemskap
 
@@ -193,7 +193,7 @@ När du har skapat datauppsättningen fortsätter du att följa instruktionerna 
 
 ## Ställ in och importera externa data för målgruppsmedlemskap
 
-När datauppsättningen är aktiverad kan data nu skickas till plattformen antingen via användargränssnittet eller med Experience Platform API:er. Du kan importera dessa data antingen via en batch- eller direktuppspelningsanslutning.
+När datauppsättningen är aktiverad kan data nu skickas till Experience Platform antingen via användargränssnittet eller med Experience Platform API:er. Du kan importera dessa data antingen via en batch- eller direktuppspelningsanslutning.
 
 ### Infoga data med en batchanslutning
 
@@ -209,7 +209,7 @@ När du har skapat en direktuppspelningsanslutning får du tillgång till din un
 
 ## Segmentmedlemsstruktur
 
-När du har skapat en anslutning kan du nu importera dina data till plattformen.
+När du har skapat en anslutning kan du nu importera dina data till Experience Platform.
 
 Ett exempel på nyttolasten för det externa målgruppsmedlemskapet visas nedan:
 

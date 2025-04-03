@@ -3,9 +3,9 @@ solution: Experience Platform
 title: Användargränssnittshandbok för Segment Builder
 description: Segmentbyggaren i Adobe Experience Platform-användargränssnittet har en omfattande arbetsyta som du kan använda för att interagera med profildataelement. Arbetsytan innehåller intuitiva kontroller för att skapa och redigera regler, till exempel dra-och-släpp-paneler som används för att representera dataegenskaper.
 exl-id: b27516ea-8749-4b44-99d0-98d3dc2f4c65
-source-git-commit: dc36c5e2eb109d1728f2290ee61e69f458929ba7
+source-git-commit: f6d700087241fb3a467934ae8e64d04f5c1d98fa
 workflow-type: tm+mt
-source-wordcount: '4889'
+source-wordcount: '4893'
 ht-degree: 0%
 
 ---
@@ -76,11 +76,11 @@ Som standard visas endast ifyllda schemafält från ditt datalager. Detta inklud
 
 Du kan använda data från en eller flera Adobe Analytics-rapportsviter som händelser inom segmentering.
 
-När du använder data från en enda analysrapportsserie lägger Platform automatiskt till beskrivningar och egna namn till eVars, vilket gör det enklare att hitta fälten i [!DNL Segment Builder].
+När du använder data från en enda analysrapportsserie lägger Experience Platform automatiskt till beskrivningar och egna namn i eVars, vilket gör det enklare att hitta fälten i [!DNL Segment Builder].
 
 ![En bild som visar hur generiska variabler (eVars) mappas med ett användarvänligt namn.](../images/ui/segment-builder/single-report-suite.png)
 
-När du använder data från flera rapportsviter i Analytics kan plattformen **inte** automatiskt lägga till beskrivningar eller egna namn i eVars. Därför måste du mappa till XDM-fält innan du använder data från rapportsviterna i Analytics. Mer information om mappning av Analytics-variabler till XDM finns i [Adobe Analytics källanslutningsguide](../../sources/tutorials/ui/create/adobe-applications/analytics.md#mapping).
+När du använder data från flera rapportsviter i Analytics kan Experience Platform **inte** automatiskt lägga till beskrivningar eller egna namn i eVars. Därför måste du mappa till XDM-fält innan du använder data från rapportsviterna i Analytics. Mer information om mappning av Analytics-variabler till XDM finns i [Adobe Analytics källanslutningsguide](../../sources/tutorials/ui/create/adobe-applications/analytics.md#mapping).
 
 Tänk dig till exempel en situation där du har två rapportsviter med följande variabler:
 
@@ -119,7 +119,7 @@ När rapportsviterna har mappats kan du använda dessa nyligen mappade fält i d
 
 >[!NOTE]
 >
->För målgrupper som skapats inom plattformen visas endast målgrupper som har **same**-sammanslagningsprincipen.
+>För målgrupper som skapats i Experience Platform visas endast målgrupper som har **same**-sammanslagningsprincipen.
 
 På fliken **[!UICONTROL Audiences]** visas alla målgrupper som importerats från externa källor, som Adobe Audience Manager eller Customer Journey Analytics, samt målgrupper som skapats i [!DNL Experience Platform].
 
@@ -182,7 +182,7 @@ Observera att högst 250 värden tillåts. Om du överskrider detta värde måst
 
 Du kan dra och släppa en målgrupp från fliken **[!UICONTROL Audience]** till regelbyggararbetsytan för att referera till målgruppsmedlemskap i den nya segmentdefinitionen. På så sätt kan du inkludera eller exkludera målgruppsmedlemskap som ett attribut i de nya segmentdefinitionsreglerna.
 
-För [!DNL Platform] målgrupper som skapats med [!DNL Segment Builder] får du alternativet att konvertera målgruppen till den uppsättning regler som användes i segmentdefinitionen för den målgruppen. Den här konverteringen skapar en kopia av regellogiken som sedan kan ändras utan att den ursprungliga segmentdefinitionen påverkas. Kontrollera att du har sparat alla senaste ändringar av segmentdefinitionen innan du konverterar den till regellogik.
+För [!DNL Experience Platform] målgrupper som skapats med [!DNL Segment Builder] får du alternativet att konvertera målgruppen till den uppsättning regler som användes i segmentdefinitionen för den målgruppen. Den här konverteringen skapar en kopia av regellogiken som sedan kan ändras utan att den ursprungliga segmentdefinitionen påverkas. Kontrollera att du har sparat alla senaste ändringar av segmentdefinitionen innan du konverterar den till regellogik.
 
 >[!NOTE]
 >
@@ -349,11 +349,11 @@ När du har valt **[!UICONTROL Unwrap container]** tas den underordnade behålla
 >[!CONTEXTUALHELP]
 >id="platform_segmentation_createSegment_segmentBuilder_mergePolicies"
 >title="Sammanfoga profiler"
->abstract="En sammanfogningsprincip gör det möjligt att sammanfoga olika datauppsättningar för att skapa din profil. Plattformen har angett en standardprincip för sammanfogning eller så kan du skapa en ny standardprincip för sammanfogning i profiler. Välj en sammanfogningspolicy som matchar ert marknadsföringssyfte för den här målgruppen."
+>abstract="En sammanfogningsprincip gör det möjligt att sammanfoga olika datauppsättningar för att skapa din profil. Experience Platform har angett en standardprincip för sammanfogning eller så kan du skapa en ny standardprincip för sammanfogning i Profiler. Välj en sammanfogningspolicy som matchar ert marknadsföringssyfte för den här målgruppen."
 
-Med [!DNL Experience Platform] kan du samla data från flera olika källor och kombinera dem för att få en fullständig bild av varje enskild kund. När du sammanfogar dessa data är sammanfogningsprinciper de regler som [!DNL Platform] använder för att avgöra hur data ska prioriteras och vilka data som ska kombineras för att skapa en profil.
+Med [!DNL Experience Platform] kan du samla data från flera olika källor och kombinera dem för att få en fullständig bild av varje enskild kund. När du sammanfogar dessa data är sammanfogningsprinciper de regler som [!DNL Experience Platform] använder för att avgöra hur data ska prioriteras och vilka data som ska kombineras för att skapa en profil.
 
-Du kan välja en sammanfogningsprincip som matchar ditt marknadsföringssyfte för den här målgruppen eller använda standardprincipen för sammanfogning som tillhandahålls av [!DNL Platform]. Du kan skapa flera sammanfogningsprinciper som är unika för din organisation, inklusive skapa en egen standardsammanfogningsprincip. Om du vill ha stegvisa instruktioner om hur du skapar sammanfogningsprinciper för din organisation börjar du med att läsa översikten [för sammanfogningsprinciper](../../profile/merge-policies/overview.md).
+Du kan välja en sammanfogningsprincip som matchar ditt marknadsföringssyfte för den här målgruppen eller använda standardprincipen för sammanfogning som tillhandahålls av [!DNL Experience Platform]. Du kan skapa flera sammanfogningsprinciper som är unika för din organisation, inklusive skapa en egen standardsammanfogningsprincip. Om du vill ha stegvisa instruktioner om hur du skapar sammanfogningsprinciper för din organisation börjar du med att läsa översikten [för sammanfogningsprinciper](../../profile/merge-policies/overview.md).
 
 Om du vill välja en sammanfogningsprincip för segmentdefinitionen väljer du kugghjulsikonen på fliken **[!UICONTROL Fields]** och väljer sedan den sammanfogningsprincip som du vill använda på den nedrullningsbara menyn **[!UICONTROL Merge Policy]**.
 

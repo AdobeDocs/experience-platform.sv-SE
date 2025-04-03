@@ -3,9 +3,9 @@ title: Målgrupps-API-slutpunkt
 description: Använd målgruppsslutpunkten i Adobe Experience Platform Segmentation Service API för att skapa, hantera och uppdatera målgrupper för er organisation programmatiskt.
 role: Developer
 exl-id: cb1a46e5-3294-4db2-ad46-c5e45f48df15
-source-git-commit: 7b1dedeab8df9678134474045cb87b27550f7fb6
+source-git-commit: 2ec6bacb44dc9b31fcd5cb4c457ba109a921aa84
 workflow-type: tm+mt
-source-wordcount: '1590'
+source-wordcount: '1592'
 ht-degree: 0%
 
 ---
@@ -472,7 +472,7 @@ curl -X PUT https://platform.adobe.io/data/core/ups/audiences/4afe34ae-8c98-4513
 | `name` | Namnet på publiken. |
 | `namespace` | Namnutrymmet för målgruppen. |
 | `description` | En beskrivning av publiken. |
-| `type` | Ett systemgenererat fält som visar om publiken genereras av plattformen eller är en externt genererad publik. Möjliga värden är `SegmentDefinition` och `ExternalSegment`. En `SegmentDefinition` refererar till en målgrupp som har skapats i Platform, medan en `ExternalSegment` refererar till en målgrupp som inte har genererats i Platform. |
+| `type` | Ett systemgenererat fält som visar om publiken genereras av plattformen eller är en externt genererad publik. Möjliga värden är `SegmentDefinition` och `ExternalSegment`. En `SegmentDefinition` refererar till en målgrupp som har skapats i Experience Platform, medan en `ExternalSegment` refererar till en målgrupp som inte har genererats i Experience Platform. |
 | `expression` | Ett objekt som innehåller målgruppens PQL-uttryck. |
 | `lifecycleState` | Publiken. Möjliga värden är `draft`, `published` och `inactive`. `draft` representerar när målgruppen skapas, `published` när målgruppen publiceras och `inactive` när målgruppen inte längre är aktiv. |
 | `datasetId` | ID:t för datauppsättningen som målgruppsdata kan hittas. |
@@ -482,7 +482,7 @@ curl -X PUT https://platform.adobe.io/data/core/ups/audiences/4afe34ae-8c98-4513
 
 **Svar**
 
-Ett lyckat svar returnerar HTTP-status 200 med information om din nya uppdaterade målgrupp. Observera att informationen om er målgrupp varierar beroende på om det är en plattformsgenererad publik eller en externt genererad målgrupp.
+Ett lyckat svar returnerar HTTP-status 200 med information om din nya uppdaterade målgrupp. Observera att informationen om er målgrupp varierar beroende på om det är en Experience-Platform-genererad målgrupp eller en externt genererad målgrupp.
 
 +++Ett exempelsvar när en hel publik uppdateras.
 
@@ -490,7 +490,7 @@ Ett lyckat svar returnerar HTTP-status 200 med information om din nya uppdaterad
 {
     "id": "4afe34ae-8c98-4513-8a1d-67ccaa54bc05",
     "audienceId": "test-platform-audience-id",
-    "name": "New Platform audience",
+    "name": "New Experience Platform audience",
     "namespace": "AEPSegments",
     "imsOrgId": "{ORG_ID}",
     "sandbox": {
@@ -565,7 +565,7 @@ Ett lyckat svar returnerar HTTP-status 200 med den uppdaterade publiken.
 {
     "id": "60ccea95-1435-4180-97a5-58af4aa285ab5",
     "audienceId": "test-platform-audience-id",
-    "name": "New Platform audience",
+    "name": "New Experience Platform audience",
     "namespace": "AEPSegments",
     "imsOrgId": "{ORG_ID}",
     "sandbox": {

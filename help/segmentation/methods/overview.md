@@ -2,9 +2,9 @@
 title: Metoder för utvärdering av målgrupper
 description: Läs om de olika typerna av utvärderingsmetoder som finns i Adobe Experience Platform.
 exl-id: 54513369-42fa-4bab-803a-21d6dcd87660
-source-git-commit: 9eb5ccc24db58a887473f61c66a83aa92e16efa7
+source-git-commit: f6d700087241fb3a467934ae8e64d04f5c1d98fa
 workflow-type: tm+mt
-source-wordcount: '241'
+source-wordcount: '242'
 ht-degree: 0%
 
 ---
@@ -25,7 +25,7 @@ Med flexibel målgruppsutvärdering kan ni köra ett batchsegmenteringsjobb på 
 
 ## Direktuppspelningssegmentering
 
-Direktuppspelningssegmentering är en metod för segmenteringsutvärdering som ni kan använda för att utvärdera målgrupper i nära realtid samtidigt som ni fokuserar på datamöjligheter. Du kan använda direktuppspelningssegmentering för att snabbt segmentera direktuppspelningsdata när de hamnar på plattformen.
+Direktuppspelningssegmentering är en metod för segmenteringsutvärdering som ni kan använda för att utvärdera målgrupper i nära realtid samtidigt som ni fokuserar på datamöjligheter. Du kan använda direktuppspelningssegmentering för att snabbt segmentera direktuppspelningsdata när de inträffar i Experience Platform.
 
 Mer information om direktuppspelningssegmentering finns i [översikten över direktuppspelningssegmentering](./streaming-segmentation.md).
 

@@ -1,12 +1,12 @@
 ---
-keywords: Experience Platform;hem;populära ämnen;segmentering;Segmentering;Segmentmatchning;segmentmatchning
+keywords: Experience Platform;home;populära topics;segmentation;Segmentering;Segmentmatchning;segmentmatchning
 solution: Experience Platform
 title: Vanliga frågor om segmentmatchning
-description: Segmentmatchning är en segmentdelningstjänst i Adobe Experience Platform som gör det möjligt för två eller flera plattformsanvändare att utbyta segmentdata på ett säkert, styrt och sekretessvänligt sätt.
+description: Segmentmatchning är en segmentdelningstjänst i Adobe Experience Platform som gör det möjligt för två eller flera Experience Platform-användare att utbyta segmentdata på ett säkert, styrt och sekretessvänligt sätt.
 exl-id: cfa9db16-0bc3-4d25-914d-0d923eccb5a3
-source-git-commit: fcd44aef026c1049ccdfe5896e6199d32b4d1114
+source-git-commit: 0a9028beca36b46d6228c0038366bbac5d32603c
 workflow-type: tm+mt
-source-wordcount: '414'
+source-wordcount: '415'
 ht-degree: 0%
 
 ---
@@ -15,7 +15,7 @@ ht-degree: 0%
 
 Den här guiden ger svar på frågor om sekretess och juridik som ofta ställs om Adobe Experience Platform Segment Match.
 
-## Vilka data delas vid uppskattningen och hur kan Adobe säkerställa att dessa data hämtas på ett säkert sätt?
+## Vilka data delas vid beräknade överlappningar och hur kan Adobe säkerställa att dessa mätvärden hämtas på ett säkert sätt?
 
 ![overlap-report.png](./images/overlap-report.png)
 
@@ -23,7 +23,7 @@ Inga kund- eller segmentdata flyttas över sandlådor för att få fram dessa up
 
 Detta är en envägsprocess, vilket innebär att de ursprungliga förhasrade identifierarna inte visas och inte kan bakåtkompileras.
 
-Dessa datastrukturer har unika egenskaper som gör det möjligt för ingenjörer att utföra union- och skärningsåtgärder mellan dem, även om den kodade informationen är kraftigt komprimerad eller hash-kodad. Dessa åtgärder gör att [!DNL Segment Match] kan få den beräknade skärningspunkten för två datastrukturer som består av ID:n från två olika sandlådor utan att behöva jämföra de faktiska värdena. Eftersom [!DNL Segment Match] bara använder datastrukturerna, lämnar ID:n aldrig sina respektive organisationers profilarkiv i beräkningssyfte. På så sätt kan Adobe uppfylla kundernas sekretess- och säkerhetskrav och samtidigt erbjuda mycket exakta beräkningsverktyg som vägleder datasamarbetsavtalen.
+Dessa datastrukturer har unika egenskaper som gör det möjligt för ingenjörer att utföra union- och skärningsåtgärder mellan dem, även om den kodade informationen är kraftigt komprimerad eller hash-kodad. Dessa åtgärder gör att [!DNL Segment Match] kan få den beräknade skärningspunkten för två datastrukturer som består av ID:n från två olika sandlådor utan att behöva jämföra de faktiska värdena. Eftersom [!DNL Segment Match] bara använder datastrukturerna, lämnar ID:n aldrig sina respektive organisationers profilarkiv i beräkningssyfte. Detta gör att Adobe kan uppfylla kundernas sekretess- och säkerhetskrav och samtidigt erbjuda mycket exakta beräkningsverktyg som vägleder datasamarbetsavtalen.
 
 ## Hur ser det ut när du anger vilka identiteter som ska ta emot ID:n för det delade segmentet?
 

@@ -3,9 +3,9 @@ solution: Experience Platform
 title: Guide för strömningssegmentering
 description: Lär dig mer om direktuppspelningssegmentering, inklusive vad det är, hur du skapar en publik som utvärderas med direktuppspelningssegmentering och hur du visar målgrupper som skapats med direktuppspelningssegmentering.
 exl-id: cb9b32ce-7c0f-4477-8c49-7de0fa310b97
-source-git-commit: 3f0cfd6c36344f481751bf05236df4fb288eab60
+source-git-commit: f6d700087241fb3a467934ae8e64d04f5c1d98fa
 workflow-type: tm+mt
-source-wordcount: '1235'
+source-wordcount: '1238'
 ht-degree: 0%
 
 ---
@@ -14,7 +14,7 @@ ht-degree: 0%
 
 Direktuppspelningssegmentering är möjligheten att utvärdera målgrupper i Adobe Experience Platform i nära realtid samtidigt som man fokuserar på datainsamling.
 
-Med direktuppspelningssegmentering blir det numera en upplevelse av målgruppskvalificering när strömmande data når plattformen, vilket minskar behovet av att schemalägga och köra segmenteringsjobb. På så sätt kan ni utvärdera data när de skickas till Platform och automatiskt hålla målgruppsmedlemskapet uppdaterat.
+Med direktuppspelningssegmentering blir det numera en upplevelse av målgruppskvalificering när data strömmas in i Experience Platform, vilket minskar behovet av att schemalägga och köra segmenteringsjobb. På så sätt kan ni utvärdera data när de skickas till Experience Platform och automatiskt hålla målgruppsmedlemskapet uppdaterat.
 
 ## Berättigade frågetyper {#query-types}
 
@@ -312,7 +312,7 @@ Gå till **[!UICONTROL Update frequency]** och välj [!UICONTROL Streaming] inom
 
 ![Uppdateringsfrekvensen för direktuppspelning har valts och visar alla målgrupper i organisationen som utvärderas med direktuppspelningssegmentering.](../images/methods/streaming/filter-streaming.png)
 
-Läs handboken [Målgruppsportal](../ui/audience-portal.md) om du vill veta mer om hur du visar målgrupper i Platform.
+Om du vill veta mer om hur du visar målgrupper i Experience Platform kan du läsa [guiden för målportalen](../ui/audience-portal.md).
 
 >[!ENDTABS]
 

@@ -4,9 +4,9 @@ description: Lär dig hur du skapar och använder kontomålgrupper för att rikt
 badgeB2B: label="B2B edition" type="Informative" url="https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform-b2b-edition-prime-and-ultimate-packages.html newtab=true"
 badgeB2P: label="B2P Edition" type="Informative" url="https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform-b2p-edition-prime-and-ultimate-packages.html newtab=true"
 exl-id: 047930d6-939f-4418-bbcb-8aafd2cf43ba
-source-git-commit: 78cb7fd24b858859226c737affbb4e93783c884d
+source-git-commit: f6d700087241fb3a467934ae8e64d04f5c1d98fa
 workflow-type: tm+mt
-source-wordcount: '1464'
+source-wordcount: '1465'
 ht-degree: 0%
 
 ---
@@ -53,7 +53,7 @@ Välj **[!UICONTROL Create audience]** på sidan [!UICONTROL Browse] om du vill 
 
 ![Knappen [!UICONTROL Create audience] är markerad på kontomålets webbsida.](../images/types/account/select-create-audience.png)
 
-Segmentbyggaren visas. Kontoattributen och målgrupperna visas i det vänstra navigeringsfältet. På fliken [!UICONTROL Attributes] kan du lägga till både plattformsskapade och anpassade attribut.
+Segmentbyggaren visas. Kontoattributen och målgrupperna visas i det vänstra navigeringsfältet. På fliken [!UICONTROL Attributes] kan du lägga till både Experience-Platform-skapade och anpassade attribut.
 
 ![Segmentbyggaren visas. Observera att bara attributen och målgrupperna visas.](../images/types/account/segment-builder.png)
 
@@ -116,7 +116,7 @@ Sidan [!UICONTROL Activate destination] visas. Mer information om aktiveringspro
 
 ## Nästa steg {#next-steps}
 
-När du har läst den här guiden får du nu en bättre förståelse för hur du skapar och använder kontomålgrupper i Adobe Experience Platform. Läs [översikten över målgruppstypen](./overview.md) om du vill lära dig hur du använder andra typer av målgrupper i Platform.
+När du har läst den här guiden får du nu en bättre förståelse för hur du skapar och använder kontomålgrupper i Adobe Experience Platform. Läs [översikten över målgruppstypen](./overview.md) om du vill lära dig hur du använder andra typer av målgrupper i Experience Platform.
 
 ## Bilaga {#appendix}
 

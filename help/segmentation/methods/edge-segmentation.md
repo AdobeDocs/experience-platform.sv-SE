@@ -1,10 +1,10 @@
 ---
 title: Edge Segmenteringshandbok
-description: Lär dig hur du använder kantsegmentering för att utvärdera målgrupper i plattformar direkt, vilket möjliggör användning av samma sida och nästa sida vid personalisering.
+description: Lär dig hur du använder kantsegmentering för att utvärdera målgrupper i Experience Platform direkt, vilket möjliggör användning av samma sida och nästa sida vid personalisering.
 exl-id: eae948e6-741c-45ce-8e40-73d10d5a88f1
-source-git-commit: 7ed92ed7573f82a2da2fc96f0868fe6f97a61899
+source-git-commit: f6d700087241fb3a467934ae8e64d04f5c1d98fa
 workflow-type: tm+mt
-source-wordcount: '1137'
+source-wordcount: '1139'
 ht-degree: 0%
 
 ---
@@ -302,7 +302,7 @@ Gå till **Uppdateringsfrekvens** inom de tillgängliga filtren och välj Edge. 
 
 ![Edge uppdateringsfrekvens har valts och visar alla målgrupper i organisationen som utvärderas med kantsegmentering.](../images/methods/edge/filter-edge.png)
 
-Läs handboken [Målgruppsportal](../ui/audience-portal.md) om du vill veta mer om hur du visar målgrupper i Platform.
+Om du vill veta mer om hur du visar målgrupper i Experience Platform kan du läsa [guiden för målportalen](../ui/audience-portal.md).
 
 >[!ENDTABS]
 

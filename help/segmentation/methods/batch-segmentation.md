@@ -1,13 +1,13 @@
 ---
 title: Gruppsegmenteringshandbok
 description: Lär dig mer om gruppsegmentering, inklusive vad det är, hur du skapar en målgrupp som utvärderas med batchsegmentering och hur du visar målgrupper som skapats med batchsegmentering.
-source-git-commit: cffd7bad831f0f58bd2b62585bfd0b84280b1732
+exl-id: b6fba2fb-8eec-4429-92fd-ece5c79d379d
+source-git-commit: f6d700087241fb3a467934ae8e64d04f5c1d98fa
 workflow-type: tm+mt
-source-wordcount: '539'
+source-wordcount: '540'
 ht-degree: 0%
 
 ---
-
 
 # Gruppsegmenteringsguide
 
@@ -279,7 +279,7 @@ Gå till **[!UICONTROL Update frequency]** och välj [!UICONTROL Batch] inom de 
 
 ![Frekvensen för batchuppdatering är markerad och visar alla målgrupper i organisationen som utvärderas med batchsegmentering.](../images/methods/batch/filter-batch.png)
 
-Läs handboken [Målgruppsportal](../ui/audience-portal.md) om du vill veta mer om hur du visar målgrupper i Platform.
+Om du vill veta mer om hur du visar målgrupper i Experience Platform kan du läsa [guiden för målportalen](../ui/audience-portal.md).
 
 >[!ENDTABS]
 

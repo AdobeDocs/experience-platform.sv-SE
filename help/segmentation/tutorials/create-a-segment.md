@@ -4,9 +4,9 @@ title: Skapa en segmentdefinition med hjälp av segmenteringstjänstens API
 type: Tutorial
 description: Följ den här självstudiekursen för att lära dig hur du utvecklar, testar, förhandsgranskar och sparar en segmentdefinition med Adobe Experience Platform Segmentation Service API.
 exl-id: 78684ae0-3721-4736-99f1-a7d1660dc849
-source-git-commit: c35b43654d31f0f112258e577a1bb95e72f0a971
+source-git-commit: f6d700087241fb3a467934ae8e64d04f5c1d98fa
 workflow-type: tm+mt
-source-wordcount: '1066'
+source-wordcount: '1067'
 ht-degree: 0%
 
 ---
@@ -23,9 +23,9 @@ Den här självstudiekursen kräver en fungerande förståelse av de olika [!DNL
 
 - [[!DNL Real-Time Customer Profile]](../../profile/home.md): Tillhandahåller en enhetlig konsumentprofil i realtid baserad på aggregerade data från flera källor.
 - [[!DNL Adobe Experience Platform Segmentation Service]](../home.md): Gör att du kan skapa målgrupper med segmentdefinitioner eller andra externa källor från kundprofildata i realtid.
-- [[!DNL Experience Data Model (XDM)]](../../xdm/home.md): Det standardiserade ramverket som [!DNL Platform] organiserar kundupplevelsedata med. För att du ska kunna använda segmentering bör du se till att dina data är inmatade som profiler och händelser enligt [bästa praxis för datamodellering](../../xdm/schema/best-practices.md).
+- [[!DNL Experience Data Model (XDM)]](../../xdm/home.md): Det standardiserade ramverket som [!DNL Experience Platform] organiserar kundupplevelsedata med. För att du ska kunna använda segmentering bör du se till att dina data är inmatade som profiler och händelser enligt [bästa praxis för datamodellering](../../xdm/schema/best-practices.md).
 
-I följande avsnitt finns ytterligare information som du behöver känna till för att kunna anropa API:erna för [!DNL Platform].
+I följande avsnitt finns ytterligare information som du behöver känna till för att kunna anropa API:erna för [!DNL Experience Platform].
 
 ### Läser exempel-API-anrop
 
@@ -33,21 +33,21 @@ I den här självstudiekursen finns exempel-API-anrop som visar hur du formatera
 
 ### Samla in värden för obligatoriska rubriker
 
-För att kunna anropa [!DNL Platform] API:er måste du först slutföra [autentiseringssjälvstudiekursen](https://www.adobe.com/go/platform-api-authentication-en). När du slutför självstudiekursen för autentisering visas värdena för var och en av de obligatoriska rubrikerna i alla [!DNL Experience Platform] API-anrop, vilket visas nedan:
+För att kunna anropa [!DNL Experience Platform] API:er måste du först slutföra [autentiseringssjälvstudiekursen](https://www.adobe.com/go/platform-api-authentication-en). När du slutför självstudiekursen för autentisering visas värdena för var och en av de obligatoriska rubrikerna i alla [!DNL Experience Platform] API-anrop, vilket visas nedan:
 
 - Behörighet: Bärare `{ACCESS_TOKEN}`
 - x-api-key: `{API_KEY}`
 - x-gw-ims-org-id: `{ORG_ID}`
 
-Alla resurser i [!DNL Experience Platform] är isolerade till specifika virtuella sandlådor. Alla begäranden till [!DNL Platform] API:er kräver en rubrik som anger namnet på sandlådan som åtgärden ska utföras i:
+Alla resurser i [!DNL Experience Platform] är isolerade till specifika virtuella sandlådor. Alla begäranden till [!DNL Experience Platform] API:er kräver en rubrik som anger namnet på sandlådan som åtgärden ska utföras i:
 
 - x-sandbox-name: `{SANDBOX_NAME}`
 
 >[!NOTE]
 >
->Mer information om sandlådor i [!DNL Platform] finns i [översiktsdokumentationen för sandlådan](../../sandboxes/home.md).
+>Mer information om sandlådor i [!DNL Experience Platform] finns i [översiktsdokumentationen för sandlådan](../../sandboxes/home.md).
 
-Alla begäranden som innehåller en nyttolast (POST, PUT, PATCH) kräver ytterligare en rubrik:
+Alla begäranden som innehåller en nyttolast (POST, PUT, PATCH) kräver ytterligare ett huvud:
 
 - Content-Type: application/json
 
@@ -55,7 +55,7 @@ Alla begäranden som innehåller en nyttolast (POST, PUT, PATCH) kräver ytterli
 
 Det första steget i segmenteringen är att definiera en segmentdefinition. En segmentdefinition är ett objekt som kapslar in en fråga skriven i [!DNL Profile Query Language] (PQL). Det här objektet kallas även för ett PQL-predikat. PQL förutsäger regler för segmentdefinitionen baserat på villkor som relaterar till alla post- eller tidsseriedata som du skickar till [!DNL Real-Time Customer Profile]. Mer information om hur du skriver PQL-frågor finns i [PQL-handboken](../pql/overview.md).
 
-Du kan skapa en ny segmentdefinition genom att göra en POST-förfrågan till `/segment/definitions`-slutpunkten i [!DNL Segmentation] API. Följande exempel visar hur du formaterar en definitionsbegäran, inklusive vilken information som krävs för att en segmentdefinition ska kunna definieras korrekt.
+Du kan skapa en ny segmentdefinition genom att göra en POST-begäran till `/segment/definitions`-slutpunkten i [!DNL Segmentation] API. Följande exempel visar hur du formaterar en definitionsbegäran, inklusive vilken information som krävs för att en segmentdefinition ska kunna definieras korrekt.
 
 En detaljerad förklaring om hur du definierar en segmentdefinition finns i [utvecklarhandboken för segmentdefinitioner](../api/segment-definitions.md#create).
 
@@ -72,7 +72,7 @@ Det finns två nödvändiga steg för att förhandsgranska eller få en uppskatt
 
 ### Hur uppskattningar genereras
 
-När data som är aktiverade för kundprofilen i realtid hämtas till plattformen lagras de i profildatalagret. När inmatningen av poster i profilarkivet ökar eller minskar det totala antalet profiler med mer än 5 %, utlöses ett samplingsjobb för att uppdatera antalet. Om profilantalet inte ändras med mer än 5 % körs provtagningsjobbet automatiskt varje vecka.
+När data som har aktiverats för kundprofilen i realtid hämtas till Experience Platform lagras de i profildatalagret. När inmatningen av poster i profilarkivet ökar eller minskar det totala antalet profiler med mer än 5 %, utlöses ett samplingsjobb för att uppdatera antalet. Om profilantalet inte ändras med mer än 5 % körs provtagningsjobbet automatiskt varje vecka.
 
 Hur provet utlöses beror på vilken typ av intag som används:
 
@@ -91,7 +91,7 @@ Uppskattningar körs i allmänhet över 10-15 sekunder, med början med en grov 
 
 ### Skapa ett förhandsgranskningsjobb
 
-Du kan skapa ett nytt förhandsgranskningsjobb genom att göra en POST-förfrågan till slutpunkten `/preview`.
+Du kan skapa ett nytt förhandsgranskningsjobb genom att göra en POST-begäran till slutpunkten `/preview`.
 
 Detaljerade instruktioner om hur du skapar ett förhandsgranskningsjobb finns i guiden [för förhandsvisningar och uppskattningar av slutpunkter](../api/previews-and-estimates.md#create-preview).
 

@@ -1,19 +1,19 @@
 ---
-keywords: Experience Platform;hem;populära ämnen;segmentering;Segmentering;Segmentmatchning;segmentmatchning
+keywords: Experience Platform;home;populära topics;segmentation;Segmentering;Segmentmatchning;segmentmatchning
 solution: Experience Platform
 title: Översikt över segmentmatchning
-description: Segmentmatchning är en segmentdelningstjänst i Adobe Experience Platform som gör det möjligt för två eller flera plattformsanvändare att utbyta segmentdata på ett säkert, styrt och sekretessvänligt sätt.
+description: Segmentmatchning är en segmentdelningstjänst i Adobe Experience Platform som gör det möjligt för två eller flera Experience Platform-användare att utbyta segmentdata på ett säkert, styrt och sekretessvänligt sätt.
 exl-id: 4e6ec2e0-035a-46f4-b171-afb777c14850
-source-git-commit: b82bbdf7957e5a8d331d61f02293efdaf878971c
+source-git-commit: 0a9028beca36b46d6228c0038366bbac5d32603c
 workflow-type: tm+mt
-source-wordcount: '1889'
+source-wordcount: '1899'
 ht-degree: 0%
 
 ---
 
 # [!DNL Segment Match] översikt
 
-Adobe Experience Platform Segment Match är en segmentdelningstjänst som gör det möjligt för två eller flera plattformsanvändare att utbyta segmentdata på ett säkert, styrt och sekretessvänligt sätt. [!DNL Segment Match] använder sekretessstandarder för plattformen och personliga identifierare som hash-kodade e-postmeddelanden, hashade telefonnummer och enhetsidentifierare som IDFA och GAID.
+Adobe Experience Platform Segment Match är en segmentdelningstjänst som gör det möjligt för två eller flera Experience Platform-användare att utbyta segmentdata på ett säkert, styrt och sekretessvänligt sätt. [!DNL Segment Match] använder Experience Platform sekretessstandarder och personliga identifierare som hash-kodade e-postmeddelanden, hashade telefonnummer och enhetsidentifierare som IDFA och GAID.
 
 Med [!DNL Segment Match] kan du:
 
@@ -44,7 +44,7 @@ Nedan följer en lista över namnutrymmen som stöds:
 
 | Namnutrymme | Beskrivning |
 | --------- | ----------- |
-| E-post (SHA256, nedsänkt) | Ett namnutrymme för förhasrad e-postadress. Värden som anges i det här namnutrymmet konverteras till gemener innan de hash-kodas med SHA256. Radavståndsavstånd måste trimmas innan en e-postadress normaliseras. Den här inställningen kan inte ändras retroaktivt. Plattformen har två metoder som stöder hashning vid datainsamling, via [`setCustomerIDs`](https://experienceleague.adobe.com/docs/id-service/using/reference/hashing-support.html#hashing-support) och via [data prep](../../../data-prep/functions.md#hashing). |
+| E-post (SHA256, nedsänkt) | Ett namnutrymme för förhasrad e-postadress. Värden som anges i det här namnutrymmet konverteras till gemener innan de hash-kodas med SHA256. Radavståndsavstånd måste trimmas innan en e-postadress normaliseras. Den här inställningen kan inte ändras retroaktivt. Experience Platform erbjuder två metoder som stöder hashning vid datainsamling, via [`setCustomerIDs`](https://experienceleague.adobe.com/docs/id-service/using/reference/hashing-support.html#hashing-support) och via [data prep](../../../data-prep/functions.md#hashing). |
 | Telefon (SHA256_E.164) | Ett namnutrymme som representerar råa telefonnummer som behöver hashas med formaten SHA256 och E.164. |
 | ECID | Ett namnutrymme som representerar ett Experience Cloud ID-värde (ECID). Detta namnutrymme kan även refereras av följande alias:&quot;Adobe Marketing Cloud ID&quot;,&quot;Adobe Experience Cloud ID&quot;,&quot;Adobe Experience Platform ID&quot;. Mer information finns i [ECID-översikten](../../../identity-service/features/ecid.md). |
 | Apple IDFA (ID för annonsörer) | Ett namnutrymme som representerar Apple ID för annonsörer. Mer information finns i följande dokument om [intressebaserade annonser](https://support.apple.com/en-us/HT202074). |
@@ -64,7 +64,7 @@ Mer information om attributet `share` som används för att ange medgivandevärd
 
 Den sista förutsättningen du måste ställa är att konfigurera en ny dataanvändningsetikett för att förhindra datadelning. Genom dataanvändningsetiketter kan du hantera vilka data som får delas via [!DNL Segment Match].
 
-Med etiketter för dataanvändning kan du kategorisera datauppsättningar och fält enligt de användarprofiler som gäller för dessa data. Etiketter kan användas när som helst, vilket ger flexibilitet i hur du väljer att styra data. Bästa tillvägagångssätt uppmuntrar till märkning av data så snart de hämtas till Experience Platform, eller så snart data blir tillgängliga för användning i plattformen.
+Med etiketter för dataanvändning kan du kategorisera datauppsättningar och fält enligt de användarprofiler som gäller för dessa data. Etiketter kan användas när som helst, vilket ger flexibilitet i hur du väljer att styra data. De bästa sätten är att uppmuntra märkningsdata så snart de har importerats till Experience Platform, eller så snart data finns tillgängliga för användning i Experience Platform.
 
 [!DNL Segment Match] använder C11-etiketten, en kontraktsetikett som är specifik för [!DNL Segment Match], som du kan lägga till manuellt i datauppsättningar eller attribut för att säkerställa att de utesluts från partnerdelningsprocessen i [!DNL Segment Match]. C11-etiketten anger data som inte ska användas i [!DNL Segment Match]-processer. När du har fastställt vilka datauppsättningar och/eller fält du vill utesluta från [!DNL Segment Match] och lagt till C11-etiketten i enlighet med detta, används etiketten automatiskt av arbetsflödet i [!DNL Segment Match]. [!DNL Segment Match] aktiverar [!UICONTROL Restrict data sharing]-kärnprincipen automatiskt. Mer information om hur du använder dataanvändningsetiketter på datauppsättningar finns i självstudiekursen [Hantera dataanvändningsetiketter i användargränssnittet](../../../data-governance/labels/user-guide.md).
 
@@ -87,7 +87,7 @@ När du har konfigurerat dina identitetsdata och namnutrymmen, konfiguration fö
 
 ### Hantera partner
 
-I plattformsgränssnittet väljer du **[!UICONTROL Segments]** i den vänstra navigeringen och sedan **[!UICONTROL Feeds]** i den övre rubriken.
+I Experience Platform-gränssnittet väljer du **[!UICONTROL Segments]** i den vänstra navigeringen och sedan **[!UICONTROL Feeds]** i den övre rubriken.
 
 ![segments-feed.png](./images/segments-feed.png)
 
@@ -95,7 +95,7 @@ Sidan [!UICONTROL Feeds] innehåller en lista över feeds som tagits emot från 
 
 ![manage-partners.png](./images/manage-partners.png)
 
-En anslutning mellan två partner är en&quot;tvåvägshandskakning&quot; som fungerar som en självbetjäningsmetod för användare som vill koppla samman sina plattformsorganisationer på sandlådenivå. Anslutningen krävs för att informera plattformen om att ett avtal har upprättats och att plattformen kan underlätta delning av tjänster mellan dig och din partner.
+En koppling mellan två partner är en&quot;tvåvägshandskakning&quot; som fungerar som en självbetjäningsmetod för användare som vill koppla samman sina Experience Platform-organisationer på sandlådenivå. Anslutningen krävs för att informera Experience Platform om att ett avtal har upprättats och att Experience Platform kan underlätta delning av tjänster mellan dig och din partner.
 
 >[!NOTE]
 >
@@ -121,7 +121,7 @@ Om du vill ansluta en partner med hjälp av deras [!UICONTROL connect ID] anger 
 >abstract="Begränsade användningsexempel för marknadsföring hjälper er att ge vägledning till era partner för att säkerställa att delade segment används korrekt enligt era begränsningar för datastyrning."
 >text="Learn more in documentation"
 
-En **feed** är en gruppering av data (segment), reglerna för hur data kan visas eller användas och konfigurationerna som bestämmer hur data matchas mot dina partners data. En feed kan hanteras oberoende av varandra och utbytas med andra plattformsanvändare via [!DNL Segment Match].
+En **feed** är en gruppering av data (segment), reglerna för hur data kan visas eller användas och konfigurationerna som bestämmer hur data matchas mot dina partners data. En feed kan hanteras separat och utbytas med andra Experience Platform-användare via [!DNL Segment Match].
 
 Om du vill skapa en ny feed väljer du **[!UICONTROL Create feed]** på kontrollpanelen [!UICONTROL Feeds].
 

@@ -3,9 +3,9 @@ solution: Experience Platform
 title: Hedrar samtycke i segmentdefinitioner
 description: Lär dig hur du respekterar kundernas önskemål om samtycke vid insamling och delning av personuppgifter i segmenteringsåtgärder.
 exl-id: fe851ce3-60db-4984-a73c-f9c5964bfbad
-source-git-commit: bf0e5065e771b748ee9d6ae3c431e76f08552983
+source-git-commit: f6d700087241fb3a467934ae8e64d04f5c1d98fa
 workflow-type: tm+mt
-source-wordcount: '625'
+source-wordcount: '627'
 ht-degree: 0%
 
 ---
@@ -24,7 +24,7 @@ Om en kund har återkallat eller vägrat samtycke för att få sina personuppgif
 
 Det krävs en förståelse för de olika [!DNL Adobe Experience Platform]-tjänsterna som är inblandade för att uppfylla kundens medgivandevärden. Innan du startar den här självstudiekursen bör du kontrollera följande tjänster:
 
-* [[!DNL Experience Data Model (XDM)]](../../xdm/home.md): Det standardiserade ramverk som Platform använder för att organisera kundupplevelsedata.
+* [[!DNL Experience Data Model (XDM)]](../../xdm/home.md): Det standardiserade ramverk som Experience Platform använder för att ordna kundupplevelsedata.
 * [[!DNL Real-Time Customer Profile]](../../profile/home.md): Tillhandahåller en enhetlig kundprofil i realtid baserad på aggregerade data från flera källor.
 * [[!DNL Adobe Experience Platform Segmentation Service]](../home.md): Gör att du kan skapa målgrupper från [!DNL Real-Time Customer Profile]-data.
 
@@ -75,7 +75,7 @@ När både **[!UICONTROL Data Collection]**- och **[!UICONTROL Share Data]**-med
 
 Genom att följa den här självstudiekursen bör du nu få en bättre förståelse för hur du respekterar kundens samtycke och önskemål när du skapar segmentdefinitioner i Experience Platform.
 
-Mer information om att hantera samtycke i Platform finns i följande dokumentation:
+Mer information om hur du hanterar samtycke i Experience Platform finns i följande dokumentation:
 
 * [Samtyckesbearbetning med Adobe-standarden](../../landing/governance-privacy-security/consent/adobe/overview.md)
 * [Samtyckesbearbetning med IAB TCF 2.0-standarden](../../landing/governance-privacy-security/consent/iab/overview.md)

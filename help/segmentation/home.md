@@ -1,18 +1,18 @@
 ---
 solution: Experience Platform
 title: Översikt över segmenteringstjänsten
-description: Läs om Adobe Experience Platform segmenteringstjänst och vilken roll den spelar i plattformens ekosystem.
+description: Läs om Adobe Experience Platform segmenteringstjänst och vilken roll den spelar i Experience Platform ekosystem.
 exl-id: 2c18a806-88ed-4659-bdfd-2377f5a09a1a
-source-git-commit: f981b26a468a1d5ab9931a9cce59b176cd0fd9b3
+source-git-commit: 0a9028beca36b46d6228c0038366bbac5d32603c
 workflow-type: tm+mt
-source-wordcount: '1678'
+source-wordcount: '1679'
 ht-degree: 1%
 
 ---
 
 # [!DNL Segmentation Service] översikt
 
-Adobe Experience Platform [!DNL Segmentation Service] innehåller ett användargränssnitt och RESTful API som gör att du kan skapa målgrupper med hjälp av segmentdefinitioner eller andra källor från dina [!DNL Real-Time Customer Profile]-data. Dessa målgrupper är centralt konfigurerade och underhållna på [!DNL Platform] och är tillgängliga för alla Adobe-lösningar.
+Adobe Experience Platform [!DNL Segmentation Service] innehåller ett användargränssnitt och RESTful API som gör att du kan skapa målgrupper med hjälp av segmentdefinitioner eller andra källor från dina [!DNL Real-Time Customer Profile]-data. Dessa målgrupper är centralt konfigurerade och underhållna på [!DNL Experience Platform] och är tillgängliga för alla Adobe-lösningar.
 
 Det här dokumentet innehåller en översikt över [!DNL Segmentation Service] och vilken roll det spelar i Adobe Experience Platform.
 
@@ -20,7 +20,7 @@ Det här dokumentet innehåller en översikt över [!DNL Segmentation Service] o
 
 Du bör förstå följande nyckeltermer som används i det här dokumentet:
 
-- **Målgrupp**: En samling personer som delar liknande beteenden och/eller egenskaper. Den här mängden personer kan antingen genereras av Adobe Experience Platform med hjälp av segmentdefinitioner (plattformsgenererad publik) eller från externa källor (externt genererad publik).
+- **Målgrupp**: En samling personer som delar liknande beteenden och/eller egenskaper. Den här mängden personer kan antingen genereras av Adobe Experience Platform med hjälp av segmentdefinitioner (en upplevelseplattformsgenererad publik) eller från externa källor (externt genererad publik).
 - **Segmentdefinition**: Regeluppsättningen Adobe Experience Platform använder för att beskriva nyckelegenskaper eller beteenden för en målpublik.
 - **Segment**: Åtgärden att dela upp profiler i målgrupper.
 
@@ -28,15 +28,15 @@ Du bör förstå följande nyckeltermer som används i det här dokumentet:
 
 Segmentering är processen att definiera specifika attribut eller beteenden som delas av en deluppsättning profiler från din profilbutik för att skilja en marknadsföringsbar grupp av människor från din kundbas. I en e-postkampanj som heter&quot;Har du glömt att köpa dina smygtittare?&quot; kanske du vill ha en målgrupp med alla användare som sökte efter skor de senaste 30 dagarna, men som inte slutförde ett köp.
 
-När en målgrupp har definierats begreppsmässigt är den inbyggd i [!DNL Experience Platform]. Målgrupperna är oftast byggda av marknadsföraren eller målgruppsspecialisten, även om vissa organisationer föredrar att skapa dem av sin marknadsföringsavdelning, i samarbete med sina dataanalytiker. När data som skickas till [!DNL Platform] granskas kan dataanalytikern skapa målgruppen på två sätt, antingen genom att skapa en segmentdefinition genom att välja vilka fält och värden som ska användas för att skapa regler eller villkor för målgruppen, eller genom att komponera en målgrupp med hjälp av målgruppsdispositionen.
+När en målgrupp har definierats begreppsmässigt är den inbyggd i [!DNL Experience Platform]. Målgrupperna är oftast byggda av marknadsföraren eller målgruppsspecialisten, även om vissa organisationer föredrar att skapa dem av sin marknadsföringsavdelning, i samarbete med sina dataanalytiker. När data som skickas till [!DNL Experience Platform] granskas kan dataanalytikern skapa målgruppen på två sätt, antingen genom att skapa en segmentdefinition genom att välja vilka fält och värden som ska användas för att skapa regler eller villkor för målgruppen, eller genom att komponera en målgrupp med hjälp av målgruppsdispositionen.
 
 ## Skapa målgrupper
 
-Målgrupper kan skapas på två olika sätt i Adobe Experience Platform - antingen direkt sammansatta som målgrupper eller med plattformsbaserade segmentdefinitioner.
+Du kan skapa målgrupper på flera sätt i Adobe Experience Platform, bland annat genom kompositioner, segmentdefinitioner, federerade data och Data Distiller.
 
 ### Målgruppskomposition
 
-När du skapar en målgrupp direkt på en plattform kan du använda Audience Composition. Mer information om hur du använder Audience Composition för att skapa en målgrupp finns i [guiden för målgruppssammansättning](./ui/audience-composition.md).
+När du komponerar en målgrupp direkt på Experience Platform kan du använda Audience Composition. Mer information om hur du använder Audience Composition för att skapa en målgrupp finns i [guiden för målgruppssammansättning](./ui/audience-composition.md).
 
 ### Segmentdefinitioner
 
@@ -61,7 +61,7 @@ Förutom målgruppskompositioner och segmentdefinitioner kan du använda Adobe F
 >[!CONTEXTUALHELP]
 >id="platform_segments_evaluation"
 >title="Utvärderingsmetoder"
->abstract="Plattformen har för närvarande stöd för tre metoder för att utvärdera målgrupper: direktuppspelningssegmentering, gruppsegmentering och kantsegmentering."
+>abstract="Experience Platform stöder för närvarande tre metoder för att utvärdera målgrupper: direktuppspelningssegmentering, gruppsegmentering och kantsegmentering."
 
 >[!CONTEXTUALHELP]
 >id="platform_segments_evaluation_streaming"
@@ -69,7 +69,7 @@ Förutom målgruppskompositioner och segmentdefinitioner kan du använda Adobe F
 >abstract="Direktuppspelningssegmentering är en kontinuerlig process för datamarkering som uppdaterar era målgrupper som svar på användaraktivitet."
 >additional-url="https://experienceleague.adobe.com/docs/experience-platform/segmentation/methods/streaming-segmentation.html" text="Utvärdera händelser i nära realtid med strömmande segmentering"
 
-Plattformen har för närvarande stöd för tre metoder för att utvärdera målgrupper: direktuppspelningssegmentering, gruppsegmentering och kantsegmentering.
+Experience Platform stöder för närvarande tre metoder för att utvärdera målgrupper: direktuppspelningssegmentering, gruppsegmentering och kantsegmentering.
 
 ### Direktuppspelningssegmentering {#streaming}
 
@@ -93,12 +93,12 @@ Batchmålgrupper utvärderas automatiskt var 24:e timme. Om du vill utvärdera e
 >[!CONTEXTUALHELP]
 >id="platform_segments_evaluation_edge"
 >title="Edge-utvärdering"
->abstract="Edge segmentering är möjligheten att omedelbart utvärdera segment i Platform i Edge Network, vilket möjliggör användning av samma sida och nästa sida."
+>abstract="Edge segmentering är möjligheten att omedelbart utvärdera segment i Experience Platform på Edge Network, vilket möjliggör användning av samma sida och nästa sida."
 >additional-url="https://experienceleague.adobe.com/docs/experience-platform/segmentation/methods/edge-segmentation.html" text="Edge segmenteringsguide"
 
-Edge segmentering är möjligheten att omedelbart utvärdera segment i plattformen [på Edge Network](../landing/edge-and-hub-comparison.md), vilket möjliggör användning av samma sida och nästa sida.
+Edge segmentering är möjligheten att omedelbart utvärdera segment i Experience Platform [på Edge Network](../landing/edge-and-hub-comparison.md), vilket möjliggör användning av samma sida och nästa sida.
 
-Läs antingen [API-dokumentationen](./methods/edge-segmentation.md) eller [gränssnittsdokumentationen](./methods/edge-segmentation.md) om du vill veta mer om kantsegmentering.
+Läs [Översikt över kantsegmentering](./methods/edge-segmentation.md) om du vill veta mer om kantsegmentering.
 
 ## Få tillgång till segmenteringsresultat
 
@@ -122,7 +122,7 @@ När du skapar en ny segmentdefinition måste du ange ett namn. Segmentdefinitio
 
 Sammanslagningsprinciper är regler som används av [!DNL Profile] för att bestämma hur data ska prioriteras och kombineras till en enhetlig vy under vissa villkor.
 
-Om ingen sammanfogningsprincip har definierats används standardprincipen [!DNL Platform]. Om du hellre vill använda en sammanfogningspolicy som är specifik för din organisation, kan du skapa en egen och markera den som din organisations standardpolicy.
+Om ingen sammanfogningsprincip har definierats används standardprincipen [!DNL Experience Platform]. Om du hellre vill använda en sammanfogningspolicy som är specifik för din organisation, kan du skapa en egen och markera den som din organisations standardpolicy.
 
 Mer information om sammanfogningsprinciper finns i [guiden för sammanfogningsprinciper](../profile/api/merge-policies.md).
 
@@ -137,6 +137,7 @@ Förutom namn- och sammanfogningsprincipen erbjuder [!DNL Segment Builder] ytter
 ## Avancerade segmenteringsfunktioner
 
 Segmentdefinitioner kan konfigureras så att de kontinuerligt genererar en målgrupp genom att kombinera [datainmatning](../ingestion/streaming-ingestion/overview.md) med någon av följande avancerade segmenteringsfunktioner:
+
 - [Sekventiell segmentering](#sequential)
 - [Dynamisk segmentering](#dynamic)
 - [Segmentering för flera enheter](#multi-entity)

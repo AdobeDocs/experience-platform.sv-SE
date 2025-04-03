@@ -2,16 +2,16 @@
 title: Frågor och svar
 description: Få svar på vanliga frågor om målgrupper och andra segmenteringsrelaterade koncept.
 exl-id: 79d54105-a37d-43f7-adcb-97f2b8e4249c
-source-git-commit: 16ffdd0e28687c04b4b8a2b33f10ddceea9ec03a
+source-git-commit: f6d700087241fb3a467934ae8e64d04f5c1d98fa
 workflow-type: tm+mt
-source-wordcount: '4812'
+source-wordcount: '4822'
 ht-degree: 0%
 
 ---
 
 # Vanliga frågor och svar
 
-Adobe Experience Platform [!DNL Segmentation Service] innehåller ett användargränssnitt och RESTful API som gör att du kan skapa målgrupper med hjälp av segmentdefinitioner eller andra källor från dina [!DNL Real-Time Customer Profile]-data. Dessa målgrupper är centralt konfigurerade och underhållna på Platform och är tillgängliga via alla Adobe-lösningar. Nedan följer en lista med vanliga frågor om målgrupper och segmentering.
+Adobe Experience Platform [!DNL Segmentation Service] innehåller ett användargränssnitt och RESTful API som gör att du kan skapa målgrupper med hjälp av segmentdefinitioner eller andra källor från dina [!DNL Real-Time Customer Profile]-data. Dessa målgrupper konfigureras och underhålls centralt på Experience Platform och är tillgängliga via alla Adobe-lösningar. Nedan följer en lista med vanliga frågor om målgrupper och segmentering.
 
 ## Målgruppsportal
 
@@ -35,7 +35,7 @@ För att kunna överföra externt genererade målgrupper måste du ha behörighe
 
 När du överför en externt genererad publik skapas en datauppsättning som är synlig i datamängdslagret. Namnet på datauppsättningen blir **detsamma** som namnet på den externt genererade målgruppen som du överförde.
 
-### Vad består en externt genererad publik av och vad händer med dessa data när de importeras till Platform?
+### Vad består en externt genererad publik av och vad händer med dessa data när de importeras till Experience Platform?
 
 Under arbetsflödet för att importera externa målgrupper måste du ange vilken kolumn i CSV-filen som motsvarar **Primär identitet**. Ett exempel på en primär identitet är e-postadress, ECID eller ett organisationsspecifikt namnområde för en anpassad identitet.
 
@@ -45,9 +45,9 @@ Alla andra data inom den externt genererade målgruppen betraktas som **nyttolas
 
 Även om den externt genererade målgruppen kan refereras när målgrupper skapas med segmentbyggaren, kan enskilda profilattribut **inte** användas.
 
-### Kan jag stämma av externt genererade målgruppsdata med en befintlig profil i Platform?
+### Kan jag stämma av externt genererade målgruppsdata med en befintlig profil i Experience Platform?
 
-Ja, den externt genererade målgruppen sammanfogas med den befintliga profilen i plattformen om de primära identifierarna matchar. Det kan ta upp till 24 timmar att stämma av dessa data. Om det inte redan finns profildata skapas en ny profil när data hämtas.
+Ja, den externt genererade målgruppen sammanfogas med den befintliga profilen i Experience Platform om de primära identifierarna matchar. Det kan ta upp till 24 timmar att stämma av dessa data. Om det inte redan finns profildata skapas en ny profil när data hämtas.
 
 ### Hur respekteras inställningarna för kundsamtycke för externt genererade målgrupper som importeras till Audience Portal?{#consent}
 
@@ -135,7 +135,7 @@ I följande diagram förklaras de olika livscykelstatusarna, vad de representera
 | --- | --- | --- | --- | --- | --- | --- | --- | -- |
 | Utkast | En målgrupp i läget **Utkast** är en målgrupp som fortfarande är under utveckling och ännu inte är redo att användas i andra tjänster. | Ja, men kan vara dold. | Nej | Ja | Kan importeras eller uppdateras under förfiningsprocessen. | Utvärderad för korrekt publiceringsantal. | Ja, men rekommenderas inte. | Ja |
 | Publicerad | En målgrupp i läget **Publicerad** är en målgrupp som är klar att användas för alla tjänster längre fram i kedjan. | Ja | Ja | Ja | Kan importeras eller uppdateras. | Utvärderat med gruppbearbetning, direktuppspelning eller kantsegmentering. | Ja | Ja |
-| Inaktiv | En målgrupp i läget **Inaktiv** är en målgrupp som för närvarande inte används. Den finns fortfarande på plattformen, men **inte** kommer att vara användbar tills den markeras som utkast eller publicerad. | Nej, men kan visas. | Nej | Nej | Uppdaterades inte längre. | Inte längre utvärderat eller uppdaterat av Platform. | Nej | Ja |
+| Inaktiv | En målgrupp i läget **Inaktiv** är en målgrupp som för närvarande inte används. Den finns fortfarande i Experience Platform, men den kommer **inte** att vara användbar förrän den markeras som utkast eller publicerad. | Nej, men kan visas. | Nej | Nej | Uppdaterades inte längre. | Inte längre utvärderat eller uppdaterat av Experience Platform. | Nej | Ja |
 | Borttagen | En målgrupp i läget **Borttagen** är en målgrupp som har tagits bort. Det kan ta upp till några minuter innan data tas bort. | Nej | Nej | Nej | Underliggande data tas bort. | Ingen utvärdering eller körning av data utförs efter att borttagningen har slutförts. | Nej | Nej |
 
 ### I vilka lägen kan jag redigera mina målgrupper i?
@@ -272,7 +272,7 @@ I följande avsnitt listas frågor som rör Audience Composition.
 
 ### När ska jag använda Audience Composition i stället för Segment Builder?
 
-Både Audience Composition och Segment Builder har en viktig roll när det gäller att skapa målgrupper i Platform.
+Både Audience Composition och Segment Builder har en viktig roll när det gäller att skapa målgrupper i Experience Platform.
 
 Segment Builder passar bättre för målgruppen **creation** (för att skapa en målgrupp från grunden), medan Audience Composition är bättre lämpat för målgruppen **kuration och personalisering** (för att skapa nya målgrupper baserat på en befintlig målgrupp).
 
@@ -376,9 +376,9 @@ Detta innebär att när ändringar görs i profilen, som att slå samman två pr
 
 Låt oss till exempel säga att du har skapat två ömsesidigt uteslutande målgrupper: Audience A är till för personer som bor i Washington och Audience B är till för personer som **inte** bor i Washington. Det finns två profiler - profil 1 för en person som bor i Washington och profil 2 för en person som bor i Oregon.
 
-När utvärderingsjobbet för gruppsegmentering körs går profil 1 till Audience A, medan profil 2 går till Audience B. Senare, men innan nästa dags utvärderingsjobb för gruppsegmentering körs, kommer en händelse som synkroniserar de två profilerna att gå in i Platform. Därför skapas en sammanfogad profil som innehåller profilerna 1 och 2.
+När utvärderingsjobbet för gruppsegmentering körs går profil 1 till Audience A, medan profil 2 går till Audience B. Senare, men innan nästa dags utvärderingsjobb för gruppsegmentering körs, kommer en händelse som synkroniserar de två profilerna att gå in i Experience Platform. Därför skapas en sammanfogad profil som innehåller profilerna 1 och 2.
 
-Tills nästa utvärderingsjobb för gruppsegment körs, kommer den nya sammanfogade profilen att ha ett målgruppsmedlemskap i **både** och profil 2. Detta innebär att den kommer att vara medlem i **både** och Audience B, trots att dessa målgrupper har motstridiga definitioner. För slutanvändaren är detta **exakt samma situation** som innan profilerna anslöts, eftersom det alltid bara var den enda berörda personen och plattformen **inte** bara hade tillräcklig information för att koppla ihop de två profilerna.
+Tills nästa utvärderingsjobb för gruppsegment körs, kommer den nya sammanfogade profilen att ha ett målgruppsmedlemskap i **både** och profil 2. Detta innebär att den kommer att vara medlem i **både** och Audience B, trots att dessa målgrupper har motstridiga definitioner. För slutanvändaren är detta **exakt samma situation** som innan profilerna anslöts, eftersom det alltid bara var den enda berörda personen, och Experience Platform har **inte** bara haft tillräckligt med information för att koppla ihop de två profilerna.
 
 Om du använder profilsökning för att hämta den nyligen skapade profilen och tittar på dess målgruppsmedlemskap, kommer det att visa att den är medlem i **både** och Publikens A och Publikens B, trots att båda dessa målgrupper har motsägande definitioner. När det dagliga utvärderingsjobbet för gruppsegmentering körs uppdateras målgruppsmedlemskapet för att återspegla det uppdaterade läget för profildata.
 
@@ -430,4 +430,4 @@ Det tar upp till en timme innan en segmentdefinition är tillgänglig.
 
 ### Finns det några begränsningar för de data som strömmas in?
 
-För att direktuppspelade data ska kunna användas vid direktuppspelningssegmentering måste det finnas **ett** mellanrum mellan de direktuppspelade händelserna. Om för många händelser direktuppspelas inom samma sekund kommer Platform att behandla dessa händelser som robotgenererade data och de kommer att ignoreras. Som bästa praxis bör du ha **minst** fem sekunder mellan händelsedata för att säkerställa att data används på rätt sätt.
+För att direktuppspelade data ska kunna användas vid direktuppspelningssegmentering måste det finnas **ett** mellanrum mellan de direktuppspelade händelserna. Om för många händelser direktuppspelas inom samma sekund, kommer Experience Platform att behandla dessa händelser som robotgenererade data och de kommer att ignoreras. Som bästa praxis bör du ha **minst** fem sekunder mellan händelsedata för att säkerställa att data används på rätt sätt.

@@ -3,9 +3,9 @@ title: API-guide för segmenteringstjänst
 description: Med API:t för segmenteringstjänsten kan utvecklare programmässigt hantera segmenteringsåtgärder i Adobe Experience Platform. Följ den här användarhandboken om du vill lära dig hur du utför viktiga åtgärder med API:t.
 role: Developer
 exl-id: cebecaf3-9746-4b0b-9c50-11789fba66c3
-source-git-commit: c16ce1020670065ecc5415bc3e9ca428adbbd50c
+source-git-commit: f6d700087241fb3a467934ae8e64d04f5c1d98fa
 workflow-type: tm+mt
-source-wordcount: '556'
+source-wordcount: '557'
 ht-degree: 2%
 
 ---
@@ -20,7 +20,7 @@ Om du vill visa alla tillgängliga slutpunkter och CRUD-åtgärder läser du [AP
 
 ## Målgrupper
 
-Målgrupper är en samling personer som delar liknande beteenden och/eller egenskaper. Dessa kan genereras antingen med Platform eller från externa källor. Du kan använda slutpunkten `/audiences` för att hämta alla målgrupper, skapa en ny målgrupp, hämta information om en viss målgrupp, uppdatera en viss målgrupp eller ta bort en viss målgrupp.
+Målgrupper är en samling personer som delar liknande beteenden och/eller egenskaper. Dessa kan genereras antingen med Experience Platform eller från externa källor. Du kan använda slutpunkten `/audiences` för att hämta alla målgrupper, skapa en ny målgrupp, hämta information om en viss målgrupp, uppdatera en viss målgrupp eller ta bort en viss målgrupp.
 
 Mer information om hur du använder den här slutpunkten finns i [målgruppsguiden](./audiences.md).
 
@@ -62,4 +62,4 @@ Segmentsökning används för att söka efter fält som finns i olika datakällo
 
 ## Nästa steg
 
-Om du vill komma igång med API:t [!DNL Segmentation Service] går du igenom de olika slutpunktsguiderna för att få detaljerade anvisningar om hur du anropar tjänstens olika slutpunkter. Mer information om hur du arbetar med segment med användargränssnittet för [!DNL Platform] finns i [Användarhandboken för segmentering](../ui/overview.md).
+Om du vill komma igång med API:t [!DNL Segmentation Service] går du igenom de olika slutpunktsguiderna för att få detaljerade anvisningar om hur du anropar tjänstens olika slutpunkter. Mer information om hur du arbetar med segment med användargränssnittet för [!DNL Experience Platform] finns i [Användarhandboken för segmentering](../ui/overview.md).

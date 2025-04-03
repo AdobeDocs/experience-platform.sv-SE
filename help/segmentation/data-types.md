@@ -1,11 +1,11 @@
 ---
 solution: Experience Platform
 title: Datatyper som stöds i segmenteringstjänsten
-description: Alla XDM-datatyper (Experience Data Model) stöds i segmenteringstjänsten för Adobe. Reglerna som utgör en segmentdefinition är kontextualiserade med följande datatyper.
+description: Alla XDM-datatyper (Experience Data Model) stöds i Adobe segmenteringstjänst. Reglerna som utgör en segmentdefinition är kontextualiserade med följande datatyper.
 exl-id: 73f932a7-f864-4566-ade7-c148a12dc83c
-source-git-commit: dbb7e0987521c7a2f6512f05eaa19e0121aa34c6
+source-git-commit: 0a9028beca36b46d6228c0038366bbac5d32603c
 workflow-type: tm+mt
-source-wordcount: '478'
+source-wordcount: '480'
 ht-degree: 0%
 
 ---
@@ -37,7 +37,7 @@ Med datumdata kan du tilldela tidsbaserade kontexter till dina segmentdefinition
 
 ## Experience Events
 
-Som ett Adobe Experience Platform-schema spelar [!DNL XDM ExperienceEvents] in explicita och implicita kundinteraktioner med [!DNL Platform]-integrerade program, inklusive en ögonblicksbild av systemet när interaktionen ägde rum. [!DNL ExperienceEvents] är faktauppgifter. Därför är de en datakälla som är tillgänglig för dig under segmentdefinitionen.
+Som ett Adobe Experience Platform-schema spelar [!DNL XDM ExperienceEvents] in explicita och implicita kundinteraktioner med Experience-Platform-integrerade program, inklusive en ögonblicksbild av systemet när interaktionen ägde rum. [!DNL ExperienceEvents] är faktauppgifter. Därför är de en datakälla som är tillgänglig för dig under segmentdefinitionen.
 
 Som framgår av tabellen nedan återges händelsedata med nyckelord som hjälper till att förfina händelsebeteendet och ange händelseattribut.
 
@@ -52,11 +52,11 @@ Som framgår av tabellen nedan återges händelsedata med nyckelord som hjälper
 
 Externa målgrupper kan också användas som komponenter i en ny segmentdefinition och lägga till deras attributregler i de nya segmentdefinitionerna.
 
-För närvarande stöds endast Adobe Audience Manager som extern publik, och ytterligare källor aktiveras i framtiden. Mer information om hur du använder Adobe Audience Manager-målgrupper med Platform finns i [målgruppsdelningshandboken i Adobe Audience Manager-dokumentationen](https://experienceleague.adobe.com/docs/audience-manager/user-guide/implementation-integration-guides/integration-experience-platform/aam-aep-audience-sharing.html).
+För närvarande stöds endast Adobe Audience Manager som extern publik, och ytterligare källor aktiveras i framtiden. Mer information om hur du använder Adobe Audience Manager-målgrupper med Experience Platform finns i [målgruppsdelningshandboken i Adobe Audience Manager-dokumentationen](https://experienceleague.adobe.com/docs/audience-manager/user-guide/implementation-integration-guides/integration-experience-platform/aam-aep-audience-sharing.html).
 
 ### Segmentdefinitionsdelning
 
-Segmentdefinitioner som skapats i Platform kan användas i andra [Adobe Experience Cloud Core Services](https://experienceleague.adobe.com/docs/core-services/interface/experience-cloud.html). Om du vill aktivera den här funktionen måste du kontakta din lösningsarkitekt eller din konsult.
+Segmentdefinitioner som har skapats i Experience Platform kan användas i andra [Adobe Experience Cloud Core Services](https://experienceleague.adobe.com/docs/core-services/interface/experience-cloud.html). Om du vill aktivera den här funktionen måste du kontakta din lösningsarkitekt eller din konsult.
 
 ## Andra datatyper
 

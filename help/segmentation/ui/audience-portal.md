@@ -2,9 +2,9 @@
 title: Översikt över målportalen
 description: Lär dig hur du använder Audience Portal för att visa, hantera och skapa målgrupper i Adobe Experience Platform.
 exl-id: 505ac22e-05f3-423a-a9a0-7f3470af8945
-source-git-commit: 9eb5ccc24db58a887473f61c66a83aa92e16efa7
+source-git-commit: c1f06b14cb33a0fc29a50a2851c1fb52ae82c45d
 workflow-type: tm+mt
-source-wordcount: '4106'
+source-wordcount: '4152'
 ht-degree: 0%
 
 ---
@@ -26,6 +26,7 @@ I Audience Portal kan du utföra följande uppgifter:
    - [Använd Segment Builder för att skapa en målgrupp](#segment-builder)
    - [Använd Audience Composition för att skapa en målgrupp](#audience-composition)
    - [Använd Federated Audience Composition för att skapa en målgrupp med data från ert befintliga datalager](#fac)
+   - [Använd Data Distiller för att skapa en målgrupp](#data-distiller)
 - [Importera externt genererade målgrupper](#import-audience)
 
 Om du vill öppna målportalen väljer du fliken **[!UICONTROL Browse]** i segmenteringsavsnittet.
@@ -57,7 +58,7 @@ Bredvid varje publik finns en ellips-ikon. Om du väljer det här alternativet v
 | [!UICONTROL Edit] | Segmenteringstjänst | Öppnar segmentbyggaren för att redigera målgruppen. Observera att om målgruppen skapades via API:t kan du **inte** redigera den med hjälp av Segment Builder. Mer information om hur du använder Segment Builder finns i [användargränssnittsguiden för Segment Builder](./segment-builder.md). |
 | [!UICONTROL Open composition] | Målgruppskomposition | Öppnar Audience-kompositionen för att se er målgrupp. Mer information om publikens komposition finns i [användargränssnittsguiden för målgruppskomposition](./audience-composition.md). |
 | [!UICONTROL Activate to destination] | Segmenteringstjänst | Aktiverar målgruppen till ett mål. Mer information om hur du aktiverar en målgrupp till ett mål finns i [aktiveringsöversikten](../../destinations/ui/activation-overview.md). |
-| [!UICONTROL Share with partners] | Målgruppskomposition, anpassad överföring, segmenteringstjänst | Delar er målgrupp med andra plattformsanvändare. Mer information om den här funktionen finns i översikten [Segmentmatchning](./segment-match/overview.md). |
+| [!UICONTROL Share with partners] | Målgruppskomposition, anpassad överföring, segmenteringstjänst | Delar er målgrupp med andra Experience Platform-användare. Mer information om den här funktionen finns i översikten [Segmentmatchning](./segment-match/overview.md). |
 | [!UICONTROL Manage tags] | Målgruppskomposition, anpassad överföring, segmenteringstjänst | Hanterar de användardefinierade taggar som tillhör målgruppen. Mer information om den här funktionen finns i avsnittet om [filtrering och taggning](#manage-audiences). |
 | [!UICONTROL Move to folder] | Målgruppskomposition, anpassad överföring, segmenteringstjänst | Hanterar den mapp som målgruppen tillhör. Mer information om den här funktionen finns i avsnittet om [filtrering och taggning](#manage-audiences). |
 | [!UICONTROL Copy] | Segmenteringstjänst | Duplicerar den valda målgruppen. Mer information om den här funktionen finns i [Vanliga frågor om segmentering](../faq.md#copy). |
@@ -274,7 +275,7 @@ Om du väljer **[!UICONTROL Edit properties]** kan du redigera grundläggande in
 
 ### Målgruppssumma {#audience-total}
 
-För plattformsgenererade målgrupper och kompositioner visar avsnittet **[!UICONTROL Audience total]** det totala antalet profiler som kvalificerar sig för målgruppen.
+För Experience-Platform-genererade målgrupper och kompositioner visar avsnittet **[!UICONTROL Audience total]** det totala antalet profiler som kvalificerar sig för målgruppen.
 
 >[!NOTE]
 >
@@ -297,7 +298,7 @@ För målgrupper med ursprung **[!UICONTROL Custom upload]** visar avsnittet **[
 | Profilantal | Det totala antalet profiler som är kvalificerade för målgruppen. |
 | Namn på datauppsättning | Namnet på datauppsättningen som målgruppen har importerats till. Du kan markera datauppsättningsnamnet om du vill ha mer information om datauppsättningen. Mer information om datauppsättningar finns i [gränssnittsguiden för datauppsättningar](../../catalog/datasets/user-guide.md). |
 | Datauppsättningsbatch | ID:t för datauppsättningen som målgruppen är inkapslad i. Du kan välja batchens ID för mer information om batchen. Läs [övervakningsguiden](../../ingestion/quality/monitor-data-ingestion.md#viewing-batches) om du vill veta mer om batchar. |
-| Profilbatch | ID för den batch som skapade profilerna på plattformen. Du kan välja batchens ID för mer information om batchen. Läs [övervakningsguiden](../../ingestion/quality/monitor-data-ingestion.md#viewing-batches) om du vill veta mer om batchar. |
+| Profilbatch | ID för den batch som skapade profilerna på Experience Platform. Du kan välja batchens ID för mer information om batchen. Läs [övervakningsguiden](../../ingestion/quality/monitor-data-ingestion.md#viewing-batches) om du vill veta mer om batchar. |
 | Schema | Namnet på schemat som målgruppen tillhör. Du kan markera schemats namn om du vill visa information om schemats struktur och använda dataanvändningsetiketter. Mer information finns i [Hantera dataanvändningsetiketter för en schemaguide](../../xdm/tutorials/labels.md). |
 | Insamlade poster | Antalet poster som har importerats till datauppsättningen. |
 | Misslyckade poster | Antalet poster som inte kunde hämtas till datauppsättningen. |
@@ -385,9 +386,17 @@ Om du väljer **[!UICONTROL Build rule]** kommer du till segmentbyggaren. Den h�
 
 ### Federerad målgruppssammansättning {#fac}
 
-Förutom målgruppskompositioner och segmentdefinitioner kan du använda Adobe Federated Audience Composition för att skapa nya målgrupper från företagsdatauppsättningar utan att kopiera underliggande data och lagra dessa målgrupper i Adobe Experience Platform Audience Portal. Ni kan också berika befintliga målgrupper i Adobe Experience Platform genom att använda sammansatta målgruppsdata som har federerats från företagets datalager. Läs guiden om [Federated Audience Composition](https://experienceleague.adobe.com/sv/docs/federated-audience-composition/using/home).
+Du kan använda Adobe Federated Audience Composition för att skapa nya målgrupper från företagsdatauppsättningar utan att kopiera underliggande data och lagra dessa målgrupper i Adobe Experience Platform Audience Portal.
+
+Ni kan också berika befintliga målgrupper i Adobe Experience Platform genom att använda sammansatta målgruppsdata som har federerats från företagets datalager. Läs guiden om [Federated Audience Composition](https://experienceleague.adobe.com/sv/docs/federated-audience-composition/using/home).
 
 ![En lista över målgrupper som skapats i Federated Audience Composition för din organisation.](../images/ui/overview/federated-audience-composition.png)
+
+### Data Distiller {#data-distiller}
+
+Du kan använda Data Distiller SQL-tillägget för att skapa målgrupper från datarjön. Dessa data innehåller befintliga dimensionsenheter som kundattribut eller produktinformation.
+
+Mer information om Data Distiller finns i [skapa målgrupper med hjälp av SQL-guiden](../../query-service/data-distiller-audiences/overview.md).
 
 ## Importera en målgrupp {#import-audience}
 
@@ -446,7 +455,7 @@ När du har bekräftat att informationen är korrekt väljer du **[!UICONTROL Fi
 >
 >Om din externt genererade publik dessutom innehåller känslig och/eller vårdrelaterad information måste du **använda** nödvändiga dataanvändningsetiketter innan du aktiverar den på något mål. Eftersom variabler från externt genererade målgrupper lagras i datasjön i stället för i kundprofilen i realtid, bör du **inte** ta med medgivandedata i CSV-filen.
 >
->Mer information om hur du använder dataanvändningsetiketter finns i dokumentationen om [hantering av etiketter](../../access-control/abac/ui/labels.md). Mer information om etiketter för dataanvändning på plattformen i allmänhet finns i översikten över [etiketter för dataanvändning](../../data-governance/labels/overview.md). Läs [Frågor och svar](../faq.md#consent) om du vill veta hur samtycke fungerar i externt genererade målgrupper.
+>Mer information om hur du använder dataanvändningsetiketter finns i dokumentationen om [hantering av etiketter](../../access-control/abac/ui/labels.md). Om du vill veta mer om dataanvändningsetiketter på Experience Platform i allmänhet kan du läsa översikten [över dataanvändningsetiketter](../../data-governance/labels/overview.md). Läs [Frågor och svar](../faq.md#consent) om du vill veta hur samtycke fungerar i externt genererade målgrupper.
 
 ## Nästa steg
 

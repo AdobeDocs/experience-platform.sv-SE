@@ -3,9 +3,9 @@ solution: Experience Platform
 title: Look-Alike Audiences
 description: Lär dig målinrikta nya värdefulla målgrupper i Adobe Experience Platform med lookalike-målgrupper.
 exl-id: c43dac6c-18a0-482f-803e-b75e1b211e98
-source-git-commit: f981b26a468a1d5ab9931a9cce59b176cd0fd9b3
+source-git-commit: f6d700087241fb3a467934ae8e64d04f5c1d98fa
 workflow-type: tm+mt
-source-wordcount: '2157'
+source-wordcount: '2158'
 ht-degree: 0%
 
 ---
@@ -33,7 +33,7 @@ Innan du börjar använda lookalike-målgrupper måste du förstå följande kon
 
 För att kunna använda look-alike-insikter måste **basmålgruppen** uppfylla följande kriterier:
 
-- Baskåpubliken **måste** skapas inom plattformen.
+- Baskåpubliken **måste** skapas i Experience Platform.
    - Externt genererade målgrupper är **inte** berättigade till lookalike-insikter.
 - Baskåpubliken **måste** vara på standardprincipen för sammanslagning.
 - Baskåpubliken **får** inte använda fält som begränsas av datastyrning.

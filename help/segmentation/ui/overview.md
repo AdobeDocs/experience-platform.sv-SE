@@ -3,9 +3,9 @@ solution: Experience Platform
 title: Användargränssnittshandbok för segmenteringstjänst
 description: Lär dig hur du skapar och hanterar målgrupper och segmentdefinitioner i Adobe Experience Platform användargränssnitt.
 exl-id: 0a2e8d82-281a-4c67-b25b-08b7a1466300
-source-git-commit: 276fd7c532843c9589e1d51b0bc7a76cb5c3eb9f
+source-git-commit: f6d700087241fb3a467934ae8e64d04f5c1d98fa
 workflow-type: tm+mt
-source-wordcount: '1025'
+source-wordcount: '1028'
 ht-degree: 0%
 
 ---
@@ -20,12 +20,12 @@ Att arbeta med målgrupper och segmentdefinitioner kräver en förståelse för 
 
 - [[!DNL Segmentation Service]](../home.md): [!DNL Segmentation Service] gör att du kan segmentera data som lagras i [!DNL Experience Platform] och som relaterar till enskilda personer (till exempel kunder, potentiella kunder, användare eller organisationer) i mindre grupper.
 - [[!DNL Real-Time Customer Profile]](../../profile/home.md): Tillhandahåller en enhetlig konsumentprofil i realtid baserad på aggregerade data från flera källor.
-- [[!DNL Adobe Experience Platform Identity Service]](../../identity-service/home.md): Gör det möjligt att skapa kundprofiler genom att brygga identiteter från olika datakällor som importeras till [!DNL Platform].
-- [[!DNL Experience Data Model (XDM)]](../../xdm/home.md): Det standardiserade ramverket som [!DNL Platform] organiserar kundupplevelsedata med. För att du ska kunna använda segmentering bör du se till att dina data är inmatade som profiler och händelser enligt [bästa praxis för datamodellering](../../xdm/schema/best-practices.md).
+- [[!DNL Adobe Experience Platform Identity Service]](../../identity-service/home.md): Gör det möjligt att skapa kundprofiler genom att brygga identiteter från olika datakällor som importeras till [!DNL Experience Platform].
+- [[!DNL Experience Data Model (XDM)]](../../xdm/home.md): Det standardiserade ramverket som [!DNL Experience Platform] organiserar kundupplevelsedata med. För att du ska kunna använda segmentering bör du se till att dina data är inmatade som profiler och händelser enligt [bästa praxis för datamodellering](../../xdm/schema/best-practices.md).
 
 Du bör också förstå följande nyckeltermer som används i det här dokumentet och förstå skillnaden mellan dem:
 
-- **Målgrupp**: En samling personer som delar liknande beteenden och/eller egenskaper. Den här mängden personer kan antingen genereras av Adobe Experience Platform med hjälp av segmentdefinitioner (plattformsgenererad publik), målgruppssammansättning eller externa källor som anpassade uppladdningar (externt genererade målgrupper).
+- **Målgrupp**: En samling personer som delar liknande beteenden och/eller egenskaper. Den här mängden personer kan antingen genereras av Adobe Experience Platform med segmentdefinitioner (en upplevelseplattformsgenererad publik), målgruppskomposition eller från externa källor som anpassade uppladdningar (externt genererad publik).
 - **Segmentdefinition**: De regler som Adobe Experience Platform använder för att beskriva nyckelegenskaper eller beteenden hos en målpublik.
 - **Segment**: Åtgärden att dela upp profiler i målgrupper.
 
@@ -35,7 +35,7 @@ I Experience Platform-gränssnittet väljer du **[!UICONTROL Audiences]** i den 
 
 >[!NOTE]
 >
->Om din organisation är ny på Platform och ännu inte har aktiva profildatauppsättningar eller sammanslagningsprinciper skapade, visas inte instrumentpanelen [!UICONTROL Audiences]. Istället visar fliken [!UICONTROL Overview] länkar och dokumentation som hjälper dig att komma igång med målgrupper.
+>Om din organisation inte har använt Experience Platform tidigare och ännu inte har några aktiva profildatauppsättningar eller sammanslagningsprinciper skapade, visas inte instrumentpanelen [!UICONTROL Audiences]. Istället visar fliken [!UICONTROL Overview] länkar och dokumentation som hjälper dig att komma igång med målgrupper.
 
 ### Kontrollpanel för [!UICONTROL Audiences] {#segments-dashboard}
 
@@ -49,7 +49,7 @@ Mer information finns i handboken [Publikpaneler](../../dashboards/guides/audien
 
 Välj fliken **[!UICONTROL Browse]** för att visa målportalen. Audience Portal innehåller en lista med alla målgrupper som tillhör din organisation och sandlåda, och innehåller information som antal profiler, ursprung, skapad den, senaste ändringsdatum, taggar och uppdelning.
 
-Dessutom kan ni med Audience Portal skapa nya målgrupper med hjälp av Segment Builder eller Audience Composition, samt importera externt genererade målgrupper till Platform.
+Dessutom kan ni med Audience Portal skapa nya målgrupper med hjälp av Segment Builder eller Audience Composition, samt importera externt genererade målgrupper till Experience Platform.
 
 Mer information om Audience Portal finns i [Översikt över Audience Portal](./audience-portal.md).
 
@@ -98,7 +98,7 @@ Förutom målgruppskompositioner och segmentdefinitioner kan du använda Adobe F
 
 ## Direktuppspelningssegmentering {#streaming-segmentation}
 
-Direktuppspelningssegmentering är möjligheten att segmentera på [!DNL Platform] i nära realtid, samtidigt som dataverifikation fokuseras. Med direktuppspelningssegmentering blir kvalificering för segmentering nu allt eftersom data landar i [!DNL Platform], vilket minskar behovet av att schemalägga och köra segmenteringsjobb.
+Direktuppspelningssegmentering är möjligheten att segmentera på [!DNL Experience Platform] i nära realtid, samtidigt som dataverifikation fokuseras. Med direktuppspelningssegmentering blir kvalificering för segmentering nu allt eftersom data landar i [!DNL Experience Platform], vilket minskar behovet av att schemalägga och köra segmenteringsjobb.
 
 Mer information om direktuppspelningssegmentering finns i användarhandboken för [direktuppspelningssegmentering](../methods/streaming-segmentation.md).
 
@@ -108,7 +108,7 @@ Mer information om direktuppspelningssegmentering finns i användarhandboken fö
 
 ## Edge segmentering {#edge-segmentation}
 
-Edge segmentering är möjligheten att omedelbart utvärdera målgrupper i Platform, vilket möjliggör användning av samma sida och nästa sida vid personalisering.
+Edge segmentering är möjligheten att omedelbart utvärdera målgrupper i Experience Platform, vilket möjliggör användning av samma sida och nästa sida vid personalisering.
 
 Mer information om kantsegmentering finns i [gränssnittsguiden för kantsegmentering](../methods/edge-segmentation.md)
 
