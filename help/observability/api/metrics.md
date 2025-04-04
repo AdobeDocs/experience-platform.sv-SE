@@ -4,9 +4,9 @@ solution: Experience Platform
 title: API-slutpunkt för mått
 description: Lär dig hur du hämtar mätvärden för observerbarhet i Experience Platform med API:t för observabilitetsinsikter.
 exl-id: 08d416f0-305a-44e2-a2b7-d563b2bdd2d2
-source-git-commit: b48c24ac032cbf785a26a86b50a669d7fcae5d97
+source-git-commit: 3b217f7bcb60f762b5d380d82076cfb17d7a2d13
 workflow-type: tm+mt
-source-wordcount: '1278'
+source-wordcount: '1294'
 ht-degree: 1%
 
 ---
@@ -277,7 +277,7 @@ I följande tabell visas de olika felkoderna som kan returneras av API:t:
 
 | Felkod | Titel | Beskrivning |
 | --- | --- | --- |
-| `INSGHT-1000-400` | Ogiltig nyttolast för begäran | Det uppstod ett fel med nyttolasten för begäran. Kontrollera att du matchar nyttolastens formatering exakt så som visas [ovan](#v2). Alla möjliga orsaker kan utlösa det här felet:<ul><li>Obligatoriska fält som `aggregator` saknas</li><li>Ogiltiga mått</li><li>Begäran innehåller en ogiltig aggregator</li><li>Ett startdatum infaller efter ett slutdatum</li></ul> |
+| `INSGHT-1000-400` | Ogiltig nyttolast för begäran | Det uppstod ett fel med nyttolasten för begäran. Kontrollera att du matchar nyttolastens formatering exakt så som visas [ovan](#v2). Alla möjliga orsaker kan utlösa det här felet:<ul><li>Obligatoriska fält som `aggregator` saknas</li><li>Ogiltiga mått</li><li>Begäran innehåller en ogiltig aggregator</li><li>Ett startdatum infaller efter ett slutdatum</li><li>Begäran har ett tidsintervall (mellan start- och slutdatum) på mer än 32 dagar</li></ul> |
 | `INSGHT-1001-400` | Mätningsfrågan misslyckades | Det uppstod ett fel när mätdatabasen skulle frågas på grund av en felaktig begäran eller att själva frågan inte kunde tolkas. Kontrollera att din begäran är korrekt formaterad innan du försöker igen. |
 | `INSGHT-1001-500` | Mätningsfrågan misslyckades | Det uppstod ett fel när mätdatabasen skulle frågas på grund av ett serverfel. Försök igen och kontakta Adobe support om problemet kvarstår. |
 | `INSGHT-1002-500` | Tjänstfel | Begäran kunde inte behandlas på grund av ett internt fel. Försök igen och kontakta Adobe support om problemet kvarstår. |
