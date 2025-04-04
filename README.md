@@ -1,8 +1,8 @@
 ---
-source-git-commit: 163c6f6bacfd6f0928b1053bd146a2d4fc4c74d0
+source-git-commit: 67adfddf57d3b10bb80688cf0f0a109a704f4fa5
 workflow-type: tm+mt
-source-wordcount: '470'
-ht-degree: 55%
+source-wordcount: '351'
+ht-degree: 74%
 
 ---
 # Bidra med innehåll
@@ -30,20 +30,6 @@ Mindre korrigeringar och förtydliganden som du lämnar in för dokumentation oc
 ### Större ändringar eller nya artiklar från communitymedlemmar
 
 Om du är en del av Adobes community och vill skapa en artikel eller skicka in större ändringar klickar du på fliken **Issues** i GitHub-databasen för att skicka in ett ärende. Det här startar en konversation med dokumentationsteamet. Du måste arbeta med författaren (eller någon annan av Adobes anställda) för att publicera nytt innehåll.
-
-<!--
-If you submit a pull request with significant changes to documentation and code examples, you'll see a message in the pull request asking you to submit an online contribution license agreement (CLA). You must complete the online form before we can review your pull request.
--->
-
-### Större förändringar eller nya artiklar från Adobe Anställda
-
-Om du är teknikskribent, programchef eller utvecklare för en Adobe Experience Cloud-lösning, och det är ditt jobb att bidra till eller skapa tekniska artiklar, bör du använda den privata databasen på `https://git.corp.adobe.com/AdobeDocs`. Mer information finns i [den interna Collaboration-handboken](https://experienceleague.adobe.com/docs/authoring-guide-exl/using/home.html).
-
-<!--Employees from other parts of the Adobe world should use the public repo for minor updates.-->
-
-## Kontakta Experience Platform dokumentationsteam
-
-Som tidigare nämnts kan medlemmar i Adobe-communityn skicka in ett problem som tilldelas rätt skribent. Om du är anställd hos Adobe kan du skicka in ett ärende eller kontakta Experience Platform dokumentationsteam direkt. Om du vill hitta huvudskrivaren för ett visst Experience Platform-område läser du [Adobe Experience Platform Documentation wiki](https://wiki.corp.adobe.com/display/DMSArchitecture/Adobe+Experience+Platform+Documentation).
 
 ## Verktyg och inställningar
 
