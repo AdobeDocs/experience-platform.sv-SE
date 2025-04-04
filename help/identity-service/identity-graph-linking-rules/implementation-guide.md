@@ -2,9 +2,9 @@
 title: Implementeringsguide för regler för länkning av identitetsdiagram
 description: Lär dig de rekommenderade stegen som ska följas när du implementerar data med länkningsregler för identitetsdiagram.
 exl-id: 368f4d4e-9757-4739-aaea-3f200973ef5a
-source-git-commit: 83815c4911f867329d5fb7731763141d950f85bf
+source-git-commit: 45fdce7dc50b237edc511047ec150ecdd6adce50
 workflow-type: tm+mt
-source-wordcount: '1807'
+source-wordcount: '1823'
 ht-degree: 0%
 
 ---
@@ -15,10 +15,13 @@ ht-degree: 0%
 >
 >Länkningsreglerna för identitetsdiagram är för närvarande begränsade. Kontakta ditt Adobe-kontoteam för information om hur du får tillgång till funktionen i utvecklingssandlådor.
 
+>[!IMPORTANT]
+>
+>This document assumes that you are starting your implementation in a new sandbox without any data.
+
 Läs det här dokumentet för att få en stegvis handledning som du kan följa när du implementerar dina data med Adobe Experience Platform Identity Service.
 
 Stegvisa dispositioner:
-
 
 1. [Kompletta krav för implementering](#prerequisites-for-implementation)
 2. [Skapa nödvändiga identitetsnamnutrymmen](#namespace)
